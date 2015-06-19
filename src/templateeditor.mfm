@@ -1,0 +1,372 @@
+object templateeditorfo: ttemplateeditorfo
+  visible = False
+  bounds_x = 147
+  bounds_y = 120
+  bounds_cx = 473
+  bounds_cy = 399
+  container.frame.clientwidthmin = 473
+  container.bounds = (
+    0
+    0
+    473
+    399
+  )
+  options = [fo_freeonclose, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  statfile = tstatfile1
+  caption = 'Code Template Editor'
+  onloaded = createexe
+  onclosequery = closeq
+  moduleclassname = 'tmseform'
+  object tbutton1: tbutton
+    taborder = 12
+    bounds_x = 354
+    bounds_y = 376
+    bounds_cx = 58
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = '&OK'
+    modalresult = mr_ok
+  end
+  object tbutton2: tbutton
+    bounds_x = 418
+    bounds_y = 376
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_localcaption]
+    caption = '&Cancel'
+    modalresult = mr_cancel
+  end
+  object nameed: tstringedit
+    frame.caption = '&Name'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 0
+    bounds_y = 4
+    bounds_cx = 109
+    bounds_cy = 37
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_notnull]
+    reffontheight = 14
+  end
+  object commented: tstringedit
+    frame.caption = 'C&omment'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 2
+    bounds_x = 112
+    bounds_y = 4
+    bounds_cx = 361
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    reffontheight = 14
+  end
+  object paramgrid: tstringgrid
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    frame.caption = '&Parameter'
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 3
+    bounds_x = 0
+    bounds_y = 46
+    bounds_cx = 473
+    bounds_cy = 122
+    anchors = [an_top]
+    optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    datacols.count = 2
+    datacols.options = [co_fill, co_savestate, co_mousescrollrow]
+    datacols.items = <    
+      item
+        width = 100
+        options = [co_savestate, co_mousescrollrow]
+        valuefalse = '0'
+        valuetrue = '1'
+      end    
+      item
+        width = 336
+        options = [co_fill, co_savestate, co_mousescrollrow]
+        valuefalse = '0'
+        valuetrue = '1'
+      end>
+    fixcols.count = 1
+    fixcols.items = <    
+      item
+        width = 30
+        numstart = 1
+        numstep = 1
+      end>
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 16
+        captions.count = 2
+        captions.items = <        
+          item
+            caption = 'Name'
+          end        
+          item
+            caption = 'Default Value'
+          end>
+      end>
+    datarowheight = 16
+    statfile = tstatfile1
+    reffontheight = 14
+  end
+  object tspacer1: tspacer
+    taborder = 13
+    bounds_x = 192
+    bounds_y = 41
+    bounds_cx = 50
+    bounds_cy = 5
+    linktop = commented
+    linkbottom = paramgrid
+  end
+  object tsplitter1: tsplitter
+    color = -1879048189
+    taborder = 14
+    bounds_x = 0
+    bounds_y = 168
+    bounds_cx = 473
+    bounds_cy = 3
+    anchors = [an_top]
+    options = [spo_vmove, spo_vprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
+    linktop = paramgrid
+    linkbottom = templgrid
+    statfile = tstatfile1
+  end
+  object templgrid: twidgetgrid
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    taborder = 4
+    bounds_x = 0
+    bounds_y = 171
+    bounds_cx = 473
+    bounds_cy = 173
+    anchors = [an_top, an_bottom]
+    optionsgrid = [og_focuscellonenter, og_autofirstrow, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    fixcols.count = 1
+    fixcols.items = <    
+      item
+        width = 30
+        numstart = 1
+        numstep = 1
+      end>
+    rowcount = 1
+    datacols.count = 1
+    datacols.options = [co_leftbuttonfocusonly, co_savevalue, co_savestate, co_mousescrollrow]
+    datacols.items = <    
+      item[templed]
+        width = 1016
+        options = [co_leftbuttonfocusonly, co_savevalue, co_savestate, co_mousescrollrow]
+        widgetname = 'templed'
+        dataclass = tgridrichstringdatalist
+        data = (
+          (
+            ''
+          )
+        )
+      end>
+    datarowlinewidth = 0
+    datarowheight = 15
+    reffontheight = 14
+    object templed: tundotextedit
+      optionsskin = [osk_framebuttononly]
+      taborder = 1
+      visible = False
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 1016
+      bounds_cy = 15
+      font.name = 'stf_default'
+      font.xscale = 1
+      font.dummy = 0
+      oneditnotifcation = editnotify
+      reffontheight = 14
+    end
+  end
+  object cursordisp: tstringdisp
+    frame.caption = 'Cursor'
+    frame.captiondist = 2
+    frame.localprops1 = [frl1_captiondist]
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 15
+    bounds_x = 8
+    bounds_y = 359
+    bounds_cx = 68
+    bounds_cy = 36
+    anchors = [an_left, an_bottom]
+    textflags = [tf_xcentered, tf_ycentered]
+    reffontheight = 14
+  end
+  object tsplitter2: tsplitter
+    color = -1879048189
+    taborder = 16
+    visible = False
+    bounds_x = 109
+    bounds_y = 16
+    bounds_cx = 3
+    bounds_cy = 29
+    options = [spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
+    linkleft = nameed
+    linkright = commented
+    statfile = tstatfile1
+  end
+  object coled: tintegeredit
+    frame.caption = 'Col'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 7
+    bounds_x = 216
+    bounds_y = 359
+    bounds_cx = 52
+    bounds_cy = 37
+    anchors = [an_left, an_bottom]
+    value = 1
+    min = 1
+    reffontheight = 14
+  end
+  object rowed: tintegeredit
+    frame.caption = 'Row'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 6
+    bounds_x = 160
+    bounds_y = 359
+    bounds_cx = 52
+    bounds_cy = 37
+    anchors = [an_left, an_bottom]
+    value = 1
+    min = 1
+    reffontheight = 14
+  end
+  object tbutton3: tbutton
+    taborder = 5
+    bounds_x = 80
+    bounds_y = 376
+    bounds_cx = 74
+    bounds_cy = 20
+    anchors = [an_left, an_bottom]
+    state = [as_localcaption, as_localonexecute]
+    caption = '&Set Cursor'
+    onexecute = setcursorex
+  end
+  object selected: tbooleanedit
+    frame.caption = '&select'
+    frame.captionpos = cp_top
+    frame.captiondist = 4
+    frame.localprops1 = [frl1_captiondist]
+    frame.dummy = 0
+    frame.outerframe = (
+      13
+      20
+      14
+      0
+    )
+    taborder = 8
+    bounds_x = 267
+    bounds_y = 359
+    bounds_cx = 40
+    bounds_cy = 33
+    anchors = [an_left, an_bottom]
+  end
+  object indented: tbooleanedit
+    frame.caption = '&indent'
+    frame.captionpos = cp_top
+    frame.captiondist = 4
+    frame.localprops1 = [frl1_captiondist]
+    frame.dummy = 0
+    frame.outerframe = (
+      14
+      20
+      15
+      0
+    )
+    taborder = 9
+    bounds_x = 306
+    bounds_y = 359
+    bounds_cx = 42
+    bounds_cy = 33
+    anchors = [an_left, an_bottom]
+  end
+  object deletebu: tbutton
+    taborder = 11
+    bounds_x = 418
+    bounds_y = 352
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Delete'
+    onexecute = deleteexe
+  end
+  object saveasbu: tbutton
+    taborder = 10
+    bounds_x = 354
+    bounds_y = 352
+    bounds_cx = 58
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Filename'
+    onexecute = saveasexe
+  end
+  object tstatfile1: tstatfile
+    filename = 'templedit.sta'
+    options = [sfo_memory, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
+    onstatafterread = afterstatreadexe
+    left = 104
+    top = 192
+  end
+  object savefiledialog: tfiledialog
+    statfile = tstatfile1
+    controller.filterlist.data = (
+      (
+        'Code Temlate Files'
+        '*.mct'
+      )
+    )
+    controller.defaultext = 'mct'
+    controller.options = [fdo_save, fdo_checkexist, fdo_savelastdir]
+    left = 200
+    top = 192
+  end
+  object c: tstringcontainer
+    strings.data = (
+      'Do you want to delete "'
+      'Code Template Editor'
+      'has been added to ''Project''-''Options''-''Editor''-''Code Templates''.'
+    )
+    left = 104
+    top = 232
+  end
+end

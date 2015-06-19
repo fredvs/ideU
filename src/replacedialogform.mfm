@@ -1,0 +1,157 @@
+object replacedialogfo: treplacedialogfo
+  visible = False
+  bounds_x = 142
+  bounds_y = 302
+  bounds_cx = 421
+  bounds_cy = 163
+  container.bounds = (
+    0
+    0
+    421
+    163
+  )
+  options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  statfile = statfile1
+  caption = 'Find and Replace Text'
+  moduleclassname = 'tmseform'
+  object findtext: thistoryedit
+    frame.caption = 'Text to &find'
+    frame.button.color = -2147483646
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    bounds_x = 8
+    bounds_y = 7
+    bounds_cx = 407
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 14
+  end
+  object replacetext: thistoryedit
+    frame.caption = '&Replace with'
+    frame.button.color = -2147483646
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 8
+    bounds_y = 47
+    bounds_cx = 407
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    statfile = statfile1
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 14
+  end
+  object casesensitive: tbooleanedit
+    frame.caption = '&casesensitive'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      88
+      2
+    )
+    taborder = 2
+    bounds_x = 8
+    bounds_y = 96
+    bounds_cx = 101
+    bounds_cy = 16
+  end
+  object wholeword: tbooleanedit
+    frame.caption = '&whole word'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      73
+      2
+    )
+    taborder = 3
+    bounds_x = 112
+    bounds_y = 96
+    bounds_cx = 86
+    bounds_cy = 16
+  end
+  object tintegerbutton1: tbutton
+    taborder = 6
+    bounds_x = 8
+    bounds_y = 123
+    bounds_cx = 74
+    bounds_cy = 20
+    state = [as_localcaption]
+    caption = '&Replace'
+    modalresult = mr_ok
+  end
+  object tintegerbutton2: tbutton
+    taborder = 7
+    bounds_x = 88
+    bounds_y = 123
+    bounds_cx = 74
+    bounds_cy = 20
+    state = [as_localcaption]
+    caption = 'Replace &all'
+    modalresult = mr_all
+  end
+  object selectedonly: tbooleanedit
+    frame.caption = 'select&ed only'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      86
+      2
+    )
+    taborder = 4
+    bounds_x = 208
+    bounds_y = 96
+    bounds_cx = 99
+    bounds_cy = 16
+    statfile = statfile1
+  end
+  object tintegerbutton3: tbutton
+    taborder = 8
+    bounds_x = 168
+    bounds_y = 123
+    bounds_cx = 74
+    bounds_cy = 20
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = '&Cancel'
+    modalresult = mr_cancel
+  end
+  object promptonreplace: tbooleanedit
+    frame.caption = '&prompt on rep.'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      97
+      2
+    )
+    taborder = 5
+    bounds_x = 312
+    bounds_y = 96
+    bounds_cx = 110
+    bounds_cy = 16
+    statfile = statfile1
+    value = True
+  end
+  object statfile1: tstatfile
+    filename = 'replacedialogfo.sta'
+    options = [sfo_memory]
+    left = 112
+  end
+end

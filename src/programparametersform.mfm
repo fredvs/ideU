@@ -1,0 +1,193 @@
+object programparametersfo: tprogramparametersfo
+  visible = False
+  bounds_x = 272
+  bounds_y = 243
+  bounds_cx = 328
+  bounds_cy = 348
+  container.bounds = (
+    0
+    0
+    328
+    348
+  )
+  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  statfile = statfile1
+  caption = 'Target Environment'
+  moduleclassname = 'tmseform'
+  object workingdirectory: tfilenameedit
+    frame.caption = '&Working directory'
+    frame.button.color = -2147483646
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 1
+    onshowhint = hintexpandedmacros
+    bounds_x = 2
+    bounds_y = 9
+    bounds_cx = 324
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    controller.options = [fdo_directory]
+    controller.captionopen = 'Select program working directory'
+    controller.ongetfilename = expandfilename
+    reffontheight = 14
+  end
+  object ok: tbutton
+    taborder = 4
+    bounds_x = 216
+    bounds_y = 320
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = 'OK'
+    modalresult = mr_ok
+  end
+  object tbutton2: tbutton
+    bounds_x = 272
+    bounds_y = 320
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_localcaption]
+    caption = 'Cancel'
+    modalresult = mr_cancel
+  end
+  object parameters: tmemodialoghistoryedit
+    frame.caption = '&Parameters'
+    frame.button.color = -2147483646
+    frame.buttondialog.color = -2147483646
+    frame.buttondialog.imagenr = 17
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 2
+    onshowhint = hintexpandedmacros
+    bounds_x = 2
+    bounds_y = 57
+    bounds_cx = 324
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 14
+  end
+  object grid: twidgetgrid
+    frame.caption = 'Environment variables'
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 3
+    bounds_x = 2
+    bounds_y = 111
+    bounds_cx = 324
+    bounds_cy = 195
+    anchors = [an_left, an_top, an_right, an_bottom]
+    optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup]
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 16
+        captions.count = 3
+        captions.items = <        
+          item
+            caption = 'on'
+          end        
+          item
+            caption = 'Name'
+          end        
+          item
+            caption = 'Value'
+          end>
+      end>
+    datacols.count = 3
+    datacols.options = [co_savestate]
+    datacols.items = <    
+      item[envvaron]
+        width = 20
+        options = [co_drawfocus, co_savestate]
+        widgetname = 'envvaron'
+        dataclass = tgridintegerdatalist
+      end    
+      item[envvarname]
+        width = 103
+        options = [co_proportional, co_savestate]
+        widgetname = 'envvarname'
+        dataclass = tgridmsestringdatalist
+      end    
+      item[envvarvalue]
+        width = 194
+        options = [co_fill, co_savestate]
+        widgetname = 'envvarvalue'
+        dataclass = tgridmsestringdatalist
+      end>
+    datarowheight = 16
+    statfile = statfile1
+    reffontheight = 14
+    object envvaron: tbooleanedit
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 1
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 20
+      bounds_cy = 16
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+      visible = False
+      valuedefault = True
+    end
+    object envvarname: tstringedit
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 2
+      visible = False
+      bounds_x = 21
+      bounds_y = 0
+      bounds_cx = 103
+      bounds_cy = 16
+      optionsedit1 = []
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+      reffontheight = 14
+    end
+    object envvarvalue: tmemodialogedit
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.button.color = -2147483646
+      frame.button.imagenr = 17
+      taborder = 3
+      onshowhint = hintexpandedmacros
+      visible = False
+      bounds_x = 125
+      bounds_y = 0
+      bounds_cx = 194
+      bounds_cy = 16
+      optionsedit1 = []
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+      reffontheight = 14
+    end
+  end
+  object statfile1: tstatfile
+    filename = 'programparametersfo.sta'
+    options = [sfo_memory]
+    left = 176
+    top = 96
+  end
+end

@@ -1,0 +1,14 @@
+object toolhandlermo: ttoolhandlermo
+  bounds_cx = 100
+  bounds_cy = 100
+  left = 100
+  top = 100
+  moduleclassname = 'tmsedatamodule'
+  object proc: tmseprocess
+    options = [pro_output, pro_erroroutput]
+    output.oninputavailable = inputavailexe
+    onprocfinished = procfinishedexe
+    left = 8
+    top = 8
+  end
+end

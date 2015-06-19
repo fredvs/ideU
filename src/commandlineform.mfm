@@ -1,0 +1,41 @@
+object commandlinefo: tcommandlinefo
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  bounds_x = 241
+  bounds_y = 310
+  bounds_cx = 542
+  bounds_cy = 100
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.bounds = (
+    0
+    0
+    542
+    100
+  )
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  caption = 'Command Line'
+  moduleclassname = 'tmseform'
+  object disp: tmemoedit
+    frame.framei_left = 3
+    frame.framei_top = 3
+    frame.framei_right = 3
+    frame.framei_bottom = 3
+    frame.sbhorz.pagesize = 1
+    frame.sbvert.pagesize = 1
+    frame.localprops = [frl_colorclient]
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 542
+    bounds_cy = 100
+    anchors = []
+    optionsedit1 = [oe1_multiline, oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    reffontheight = 15
+  end
+  object c: tstringcontainer
+    strings.data = (
+      'Make disabled by Default make col!'
+    )
+    left = 184
+    top = 32
+  end
+end

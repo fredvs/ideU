@@ -1,0 +1,76 @@
+object confmseguifo: tconfdesignersfo
+  visible = False
+  bounds_x = 478
+  bounds_y = 267
+  bounds_cx = 341
+  bounds_cy = 192
+  container.bounds = (
+    0
+    0
+    341
+    192
+  )
+  caption = 'Config of MSEgui'
+  moduleclassname = 'tmseform'
+  object msedir: tfilenameedit
+    Tag = 2
+    frame.caption = '${MSEDIR}'
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    hint = 'Root directory of msegui.'
+    bounds_x = 8
+    bounds_y = 14
+    bounds_cx = 324
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    controller.options = [fdo_directory]
+    controller.captionopen = 'MSEgui root directory'
+    reffontheight = 15
+  end
+  object mselibdir: tfilenameedit
+    Tag = 3
+    frame.caption = '${MSELIBDIR}'
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    hint = 'Root directory of msegui library.'
+    bounds_x = 8
+    bounds_y = 69
+    bounds_cx = 324
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    controller.options = [fdo_directory]
+    controller.captionopen = 'MSEgui library directory'
+    reffontheight = 15
+  end
+  object designer: tfilenameedit
+    Tag = 7
+    frame.caption = '${DESIGNER}'
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 2
+    hint = 'Path to designer'
+    bounds_x = 8
+    bounds_y = 121
+    bounds_cx = 324
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    controller.captionopen = 'Designer path'
+    reffontheight = 15
+  end
+end

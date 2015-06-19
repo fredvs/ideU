@@ -1,0 +1,152 @@
+object findinfilepagefo: tfindinfilepagefo
+  optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 382
+  bounds_y = 163
+  bounds_cx = 573
+  bounds_cy = 310
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.onlayout = childscaled
+  container.bounds = (
+    0
+    0
+    573
+    310
+  )
+  icon.options = [bmo_masked]
+  ondestroy = formdestroy
+  onlayout = childscaled
+  moduleclassname = 'tmseform'
+  object grid: twidgetgrid
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    color = -1879048187
+    taborder = 1
+    bounds_x = 0
+    bounds_y = 24
+    bounds_cx = 571
+    bounds_cy = 284
+    anchors = [an_left, an_top, an_right, an_bottom]
+    fixcols.count = 1
+    fixcols.items = <    
+      item
+        width = 38
+        textflags = [tf_right, tf_ycentered]
+        numstart = 1
+        numstep = 1
+      end>
+    rowcount = 1
+    datacols.count = 1
+    datacols.items = <    
+      item[foundlist]
+        width = 1500
+        options = [co_readonly, co_fill]
+        widthmin = 1500
+        widgetname = 'foundlist'
+        dataclass = tgridrichstringdatalist
+        data = (
+          (
+            ''
+          )
+        )
+      end>
+    datarowheight = 16
+    oncellevent = foundlistoncellevent
+    reffontheight = 14
+    object foundlist: ttextedit
+      optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      color = -1879048185
+      taborder = 1
+      visible = False
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 1500
+      bounds_cy = 16
+      optionsedit1 = [oe1_keyexecute, oe1_savestate]
+      optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_exitoncursor]
+      oncellevent = foundlistoncellevent
+      reffontheight = 14
+    end
+  end
+  object filename: tstringdisp
+    frame.dummy = 0
+    taborder = 3
+    bounds_x = 1
+    bounds_y = 0
+    bounds_cx = 406
+    bounds_cy = 18
+    bounds_cxmin = 140
+    anchors = [an_left, an_top, an_right]
+    textflags = [tf_ycentered, tf_ellipseleft]
+    reffontheight = 14
+  end
+  object foundcount: tintegerdisp
+    frame.dummy = 0
+    taborder = 2
+    bounds_x = 407
+    bounds_y = 0
+    bounds_cx = 44
+    bounds_cy = 18
+    anchors = [an_top, an_right]
+    reffontheight = 14
+  end
+  object cancel: tbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
+    color = -2147483645
+    taborder = 5
+    bounds_x = 453
+    bounds_y = 1
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_top, an_right]
+    state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Cancel'
+    onexecute = cancelonexecute
+    reffontheight = 14
+  end
+  object again: tbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
+    color = -2147483645
+    taborder = 4
+    bounds_x = 503
+    bounds_y = 1
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localonexecute]
+    caption = 'again'
+    onexecute = againonexecute
+    reffontheight = 14
+  end
+  object closepage: tstockglyphbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
+    color = -2147483645
+    bounds_x = 553
+    bounds_y = 1
+    bounds_cx = 18
+    bounds_cy = 20
+    anchors = [an_top, an_right]
+    state = [as_localimagelist, as_localimagenr, as_localonexecute]
+    glyph = stg_checked
+    onexecute = closebuonexecute
+    reffontheight = 14
+  end
+  object thread: tthreadcomp
+    onstart = threadonstart
+    onexecute = threadonexecute
+    onterminate = threadonterminate
+    left = 16
+    top = 72
+  end
+  object c: tstringcontainer
+    strings.data = (
+      '*** CANCELED ***'
+      'FINISHED'
+    )
+    left = 136
+    top = 64
+  end
+end

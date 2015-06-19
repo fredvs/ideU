@@ -1,0 +1,353 @@
+object objectinspectorfo: tobjectinspectorfo
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
+  frame.grip_size = 10
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
+  frame.dummy = 0
+  popupmenu = mainpopup
+  onenter = enterexe
+  onactivate = enterexe
+  bounds_x = 185
+  bounds_y = 360
+  bounds_cx = 254
+  bounds_cy = 248
+  container.onlayout = objectinspectoronchildscaled
+  container.bounds = (
+    0
+    0
+    244
+    248
+  )
+  dragdock.splitter_size = 0
+  dragdock.caption = 'Objectinspector'
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize]
+  options = [fo_savepos, fo_savezorder, fo_savestate]
+  statfile = mainfo.projectstatfile
+  caption = 'Object Inspector'
+  icon.transparentcolor = -2147483642
+  icon.image = {
+    0000000000000000180000001800000078070000000000000000000000000000
+    0000000000000000000000000000000000000000F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001D9EEF001AEEEF3018EEDF5019EECF201C5E9EC01E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301EFF2F201
+    A0EFF70160F0FF0257F0FF0144EFFF0128EEFF0161EBF501D9E6E701E3E3E301
+    E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F3019BF1F90174F1FF01
+    8AF1FF0190F2FF0183F1FF016AF0FF0148EFFF0122EEFF0138DDEA01E1E2E201
+    E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501CFF3F60170F1FF0196F2FF01
+    B5F3FF01BFF3FF01ACF2FF0188F1FF0160F0FF0136EFFF010DEEFF0155ADB401
+    DDDDDD01E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501A1F1F9017CF1FF01A9F2FF01
+    D0F4FF01D0F8FF01C5F3FF0198F2FF016BF0FF013EEFFF0111EEFF012AC2CD01
+    96969601E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F50184F0FB0177F1FF01A2F2FF01
+    C8F3FF01D0F5FF01BBF3FF0193F2FF0168F0FF013BEFFF010FEEFF011DD6E401
+    66666601D4D4D401DFDFDF01DDDDDD01DBDBDB01D3D3DB01D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F5019AF1F90163F0FF0186F1FF01
+    A0F2FF01A8F2FF0198F2FF017AF1FF0155F0FF012DEFFF010DEEFF012CC0CB01
+    66666601BABABA01DFDFDF01DDDDDD01ABABE3015B5BF001D8D8D801D7D7D701
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501CCF2F50147EFFF0161F0FF01
+    73F1FF0178F1FF016EF0FF0157F0FF0139EFFF0116EEFF010DEEFF0146979D01
+    66666601BCBCBC01DFDFDF01DDDDDD013737F7010707FE019A9AC101D6D6D601
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F30187F0F90136EFFF01
+    45EFFF0148EFFF0141EFFF012FEFFF0116EEFF010DEEFF0129C5D10166666602
+    D5D5D501DFDFDF019A9AE8010404FF022424D001ABABAB01D5D5D501D3D3D301
+    D2D2D201D0D0D001F5F5F501F3F3F301F1F2F20176D3DA011AE6F60118EEFF01
+    12EEFF010DEEFF010FECFD0138B0B901636B6C01666666019B9B9B01E0E0E001
+    DCDCDF012626FA010404FF0356569001D1D1D101D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F0019FAAAB01548D910143A1A8014F909501
+    6175760168686801676767018B8B8B01DEDEDE01E0E0E0018888EC010404FF04
+    1919DC019F9F9F01D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01CFCFCF01969696017C7C7C01767676018F8F8F01BABABA01
+    E3E3E301E2E2E201D6D6E1011A1AFC010404FF0548489901CBCBCB01D2D2D201
+    D0D0D001F5F5F501F79BA701F9798901F8788801F7778701F6768601F5758502
+    F4748401F3738301EABAC001E3E3E301E2E2E2017474EF010404FF061111E701
+    91919501D2D2D201D0D0D001F5F5F501FC445B01FF002008EF8F9B01E3E3E301
+    CFCFE5010F0FFD010404FF073C3CA301C4C4C401D0D0D001F5F5F501FC445B01
+    FF002008A0404C01767676016161F3010404FF080D0DF10182828E01D0D0D001
+    F5F5F501FC445B01FF002008A0404C01757578017878F0017272F0014141BF01
+    3434B2013333B1023232B0033131AF014F4F7C01BBBBBB01F5F5F501FC445B01
+    FF002008A0404C0176767601E2E2E201B8B8B801656565016464640163636301
+    6262620161616102606060015F5F5F027D7D7D01F5F5F501FC445B01FF002008
+    A0404C0176767601E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01
+    D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501FC445B01
+    FF002008A0404C0176767601E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01
+    DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501
+    FC445B01FF002008A0404C0176767601E2E2E201E0E0E001DFDFDF01DDDDDD01
+    DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501FC445B01FF002008A0404C0176767601E2E2E201E0E0E001DFDFDF01
+    DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201
+    D0D0D001F5F5F501F79BA701EC6C7C01B6364601B5354504B434440284545A01
+    76767601E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301D9D9D901
+    6C6C6C016B6B6B026A6A6A0269696901686868016767670176767601E2E2E201
+    E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501
+    D3D3D301D2D2D201D0D0D001
+  }
+  oncreate = createexe
+  oneventloopstart = objectinspectorfoonloaded
+  onasyncevent = asyncexe
+  onlayout = objectinspectoronchildscaled
+  left = 239
+  top = 180
+  moduleclassname = 'tdockform'
+  object compselector: tdropdownlistedit
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    frame.button.color = -2147483646
+    taborder = 2
+    bounds_x = 0
+    bounds_y = 1
+    bounds_cx = 171
+    bounds_cy = 21
+    anchors = [an_left, an_top, an_right]
+    onsetvalue = compselectoronsetvalue
+    dropdown.options = [deo_selectonly, deo_autodropdown, deo_keydropdown]
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    onbeforedropdown = compselectorbeforedropdown
+    reffontheight = 15
+  end
+  object grid: twidgetgrid
+    frame.localprops = [frl_levelo, frl_colorclient]
+    taborder = 1
+    popupmenu = gridpopup
+    bounds_x = 0
+    bounds_y = 24
+    bounds_cx = 244
+    bounds_cy = 224
+    anchors = [an_top, an_bottom]
+    optionsgrid = [og_colsizing, og_colmoving, og_focuscellonenter, og_colchangeontabkey, og_wrapcol]
+    optionsgrid1 = [og1_noresetselect]
+    rowcolors.count = 1
+    rowcolors.items = (
+      16777202
+    )
+    rowfonts.count = 6
+    rowfonts.items = <    
+      item
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end    
+      item
+        color = 32768
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end    
+      item
+        color = 32768
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end    
+      item
+        color = -1610612723
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end    
+      item
+        style = [fs_bold]
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end    
+      item
+        style = [fs_bold]
+        name = 'stf_default'
+        xscale = 1
+        dummy = 0
+      end>
+    datacols.count = 2
+    datacols.items = <    
+      item[props]
+        linecolor = -1610612731
+        linecolorfix = -1610612733
+        colorselect = -1610612717
+        coloractive = -1879048185
+        width = 90
+        onbeforedrawcell = befdrawcell
+        options = [co_readonly, co_drawfocus, co_mouseselect, co_keyselect, co_multiselect, co_proportional, co_savestate]
+        options1 = [co1_rowfont, co1_rowcolor, co1_zebracolor]
+        widthmin = 10
+        onshowhint = col0onshowhint
+        onselectionchanged = selchanged
+        widgetname = 'props'
+        dataclass = ttreeitemeditlist
+      end    
+      item[values]
+        linecolorfix = -1610612733
+        width = 148
+        rowfontoffset = 4
+        options = [co_fill, co_savestate]
+        options1 = [co1_rowfont, co1_zebracolor]
+        widthmin = 10
+        oncellevent = valuescellevent
+        onshowhint = col1onshowhint
+        widgetname = 'values'
+        dataclass = titemeditlist
+      end>
+    datarowlinecolor = -1610612731
+    datarowheight = 15
+    statfile = mainfo.projectstatfile
+    onrowsdatachanged = gridrowsdatachanged
+    oncellevent = gridcellevent
+    drag.onbeforedragbegin = gridondragbegin
+    drag.onbeforedragover = gridondragover
+    drag.onbeforedragdrop = gridondragdrop
+    reffontheight = 15
+    object props: ttreeitemedit
+      optionswidget1 = [ow1_autoheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_noskin]
+      frame.levelo = 0
+      frame.colorclient = -2147483646
+      frame.localprops = [frl_levelo, frl_colorclient]
+      taborder = 1
+      onpopup = propsonpopup
+      visible = False
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 90
+      bounds_cy = 17
+      optionsedit1 = []
+      optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext, oe_locate]
+      onkeydown = propskeydownexe
+      onupdaterowvalues = propupdaterowvalue
+      options = [teo_treecolnavig, teo_keyrowmoving]
+      oncheckrowmove = propsoncheckrowmove
+    end
+    object values: tmbdropdownitemedit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      color = -1879048185
+      frame.levelo = 0
+      frame.colorclient = -2147483646
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.button.width = 15
+      frame.button.color = -1879048187
+      frame.buttons.count = 2
+      frame.buttons.items = <      
+        item
+          width = 15
+          color = -1879048187
+        end      
+        item
+          width = 15
+          color = -1879048187
+          imagenr = 17
+        end>
+      taborder = 2
+      onenter = valuesenterexe
+      visible = False
+      bounds_x = 91
+      bounds_y = 0
+      bounds_cx = 148
+      bounds_cy = 15
+      optionsedit1 = []
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_forcereturncheckvalue, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
+      font.name = 'stf_default'
+      font.xscale = 1
+      font.dummy = 0
+      onkeydown = valueskeydown
+      onclientmouseevent = valuesonmouseevent
+      onsetvalue = valuessetvalue
+      onpaintimage = paintimageexe
+      onextendimage = extendimageexe
+      onbuttonaction = valuesbuttonaction
+      onupdaterowvalues = valueupdaterowvalue
+      dropdown.options = [deo_autodropdown, deo_keydropdown, deo_cliphint]
+      dropdown.dropdownrowcount = 16
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      onbeforedropdown = valuesbeforedropdown
+      reffontheight = 15
+    end
+  end
+  object compedit: trichbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets, ow_disabledhint, ow_timedhint]
+    optionsskin = [osk_noface]
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16760767
+      15571610
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.dummy = 0
+    hint = 'Show component editor.'
+    bounds_x = 215
+    bounds_y = 2
+    bounds_cx = 27
+    bounds_cy = 19
+    anchors = [an_top, an_right]
+    state = [as_disabled, as_localdisabled, as_localcaption, as_localhint, as_localonexecute]
+    facedisabled.template = guitemplatesmo.fadevertkonvex
+    facedisabled.dummy = 0
+    caption = '&ED'
+    onexecute = compeditonexecute
+    reffontheight = 15
+  end
+  object findbu: tstockglyphbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    taborder = 3
+    bounds_x = 197
+    bounds_y = 2
+    bounds_cx = 18
+    bounds_cy = 19
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localimagelist, as_localimagenr]
+    glyph = stg_ellipsesmall
+    action = actionsmo.findcompallact
+    reffontheight = 15
+  end
+  object gridpopup: tpopupmenu
+    onupdate = popupupdate
+    menu.submenu.count = 3
+    menu.submenu.items = <    
+      item
+        caption = 'Collapse tree'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = collapseexe
+      end    
+      item
+        caption = 'Revert to inherited'
+        name = 'revert'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = revertexe
+      end    
+      item
+        caption = 'Clear Selection'
+        name = 'clearselect'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = clearselect
+      end>
+    left = 112
+    top = 80
+  end
+  object mainpopup: tpopupmenu
+    options = [mo_insertfirst, mo_shortcutright]
+    menu.submenu.count = 1
+    menu.submenu.items = <    
+      item
+        action = actionsmo.findcompallact
+      end>
+    left = 56
+    top = 56
+  end
+end

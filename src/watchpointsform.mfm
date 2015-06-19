@@ -1,0 +1,338 @@
+object watchpointsfo: twatchpointsfo
+  frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_frameimageoffsetactivemouse, frl_frameimageoffsetactiveclicked, frl_optionsskin]
+  frame.grip_size = 10
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
+  frame.dummy = 0
+  visible = False
+  bounds_x = 120
+  bounds_y = 368
+  bounds_cx = 483
+  bounds_cy = 210
+  container.frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_frameimageoffsetactivemouse, frl_frameimageoffsetactiveclicked, frl_optionsskin]
+  container.bounds = (
+    0
+    0
+    473
+    210
+  )
+  dragdock.caption = 'Watchpoints'
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize]
+  options = [fo_savepos, fo_savestate]
+  statfile = mainfo.projectstatfile
+  caption = 'Watchpoints'
+  icon.transparentcolor = -2147483642
+  icon.image = {
+    0000000000000000180000001800000078070000000000000000000000000000
+    0000000000000000000000000000000000000000F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01D6D6D6016868680137373701
+    16161601181818013939390165656501CACACA01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB019F9F9F010F0F0F01000000060D0D0D01
+    8B8B8B01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01C5C5C5010A0A0A01
+    000000011B1B1C017D7D9E018181E0017F7FDD017C7C9D011C1C1D0100000001
+    04040401AAAAAA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED014141410100000001
+    06060C010606DD010000FF040606EA010A0A1601000000012A2A2A01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01E5E5E5010606070100000001000077010000FF0600008D01
+    0000000101010201CCCCCC01D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01C5C5CB010B0B460100002A01
+    0000C5010000FF060000B10100000002A8A8AE01D6D6D601D5D5D501D3D3D301
+    D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE017373F601
+    0000FF0900007A0100000001000016013636B801C9C9C901D4D4D401D3D3D301
+    D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001E9E9EE010707FE01
+    0000FF080000C70100000B010000000100005F010303FA0186868B01D2D2D201
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001C0C0F101
+    0000FF080000D1010000110100000001000031010000F1010000FF0151518201
+    B0B0B001D2D2D202D0D0D001F5F5F501F3F3F301F2F2F201F0F0F0019090F501
+    0000FF070000CC010000120100000001000022010000E8010000FF023C3CA101
+    91919101D1D1D101D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001
+    9090F5010000FF060000E20100000F010000000100001C010000DC010000FF03
+    3B3BA0017A7A7A01D1D1D101D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001C0C0F1010000FF060000560100000001000018010000DB010000FF04
+    4E4E7F016A6A6A01D0D0D001D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001E9E9EE010707FE010000FF040000FC01000007010000000100009601
+    0000FF040303FA01606065017A7A7A01D1D1D101D2D2D201D0D0D001F5F5F501
+    F3F3F301F2F2F201F0F0F001EEEEEE017272F5010000FF040000D80100000002
+    0000D5010000FF042F2FB2016363630191919101D1D1D101D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01E6E6EC012121F4010000FF03
+    0000BE01000008020000ED010000FF031111E4015F5F650164646401B0B0B001
+    D2D2D202D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01
+    C2C2EB011A1AED010000FF081111E40152527B016363630189898901D2D2D201
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01
+    EDEDED01EAEAEA01D5D5DB013A3ABD010303FA010000FF040303FA013131B401
+    616167016464640170707001C9C9C901D4D4D401D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EBEBEB01E9E9E901
+    D9D9D9018F8F940134345201020205010202040139395B016363680165656502
+    8A8A8A01CACACA01D6D6D601D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501
+    F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E7E7E701
+    E3E3E30170707001000000024D4D4D018080800196969601B5B5B501D7D7D703
+    D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001
+    EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E6019E9E9E0138383801
+    37373701A9A9A901DCDCDC01DBDBDB01DADADA02D8D8D801D7D7D701D5D5D501
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01
+    EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501E3E3E301E2E2E201
+    E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01
+    EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501E3E3E301E2E2E201
+    E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501
+    D3D3D301D2D2D201D0D0D001
+  }
+  onshow = watchpointsonshow
+  moduleclassname = 'tdockform'
+  object grid: twidgetgrid
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_frameimageoffsetactivemouse, frl_frameimageoffsetactiveclicked, frl_optionsskin]
+    popupmenu = gripopup
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 473
+    bounds_cy = 210
+    anchors = [an_top, an_bottom]
+    optionsgrid = [og_colsizing, og_rowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+        captions.count = 7
+        captions.items = <        
+          item
+            caption = 'on'
+          end        
+          item
+            caption = 'Kind'
+          end        
+          item
+            caption = 'Expresssion'
+          end        
+          item
+          end        
+          item
+            caption = 'Count'
+          end        
+          item
+            caption = 'Ignore'
+          end        
+          item
+            caption = 'Condition'
+          end>
+      end>
+    datacols.count = 7
+    datacols.items = <    
+      item[wpton]
+        width = 16
+        options = [co_drawfocus, co_fixwidth, co_savestate]
+        widgetname = 'wpton'
+        dataclass = tgridintegerdatalist
+      end    
+      item[wptkind]
+        width = 33
+        options = [co_savevalue, co_savestate]
+        widgetname = 'wptkind'
+        dataclass = tgridenumdatalist
+      end    
+      item[wptexpression]
+        width = 158
+        options = [co_proportional, co_savevalue, co_savestate]
+        widgetname = 'wptexpression'
+        dataclass = tgridmsestringdatalist
+      end    
+      item[wptno]
+        width = 9
+        options = [co_invisible]
+        widgetname = 'wptno'
+        dataclass = tgridintegerdatalist
+      end    
+      item[wptcount]
+        color = -1879048185
+        width = 34
+        options = [co_readonly, co_nofocus, co_savestate]
+        widgetname = 'wptcount'
+        dataclass = tgridintegerdatalist
+      end    
+      item[wptignore]
+        width = 38
+        options = [co_savevalue, co_savestate]
+        widgetname = 'wptignore'
+        dataclass = tgridintegerdatalist
+      end    
+      item[wptcondition]
+        width = 174
+        options = [co_fill, co_savevalue, co_savestate]
+        widgetname = 'wptcondition'
+        dataclass = tgridmsestringdatalist
+      end>
+    datarowheight = 17
+    statfile = mainfo.projectstatfile
+    onrowsdeleting = deleterow
+    reffontheight = 15
+    object wpton: tbooleanedit
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 1
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 16
+      bounds_cy = 17
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+      visible = False
+      onsetvalue = wptononsetvalue
+    end
+    object wptkind: tenumedit
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.button.color = -2147483646
+      taborder = 2
+      visible = False
+      bounds_x = 17
+      bounds_y = 0
+      bounds_cx = 33
+      bounds_cy = 17
+      optionsedit1 = [oe1_savevalue]
+      textflags = [tf_xcentered, tf_ycentered, tf_noselect]
+      ondataentered = wptondataentered
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'W'
+            'R/W'
+            'R'
+          )
+        end>
+      value = 0
+      valuedefault = 0
+      min = 0
+      max = 2
+      reffontheight = 15
+    end
+    object wptexpression: tstringedit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 3
+      visible = False
+      bounds_x = 51
+      bounds_y = 0
+      bounds_cx = 158
+      bounds_cy = 17
+      optionsedit1 = [oe1_savevalue]
+      ondataentered = wptondataentered
+      reffontheight = 15
+    end
+    object wptno: tintegeredit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 4
+      visible = False
+      bounds_x = 210
+      bounds_y = 0
+      bounds_cx = 9
+      bounds_cy = 17
+      optionsedit1 = []
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      reffontheight = 15
+    end
+    object wptcount: tintegeredit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 5
+      visible = False
+      bounds_x = 220
+      bounds_y = 0
+      bounds_cx = 34
+      bounds_cy = 17
+      optionsedit1 = []
+      optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      reffontheight = 15
+    end
+    object wptignore: tintegeredit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 6
+      visible = False
+      bounds_x = 255
+      bounds_y = 0
+      bounds_cx = 38
+      bounds_cy = 17
+      optionsedit1 = [oe1_savevalue]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+      ondataentered = wptondataentered
+      reffontheight = 15
+    end
+    object wptcondition: tstringedit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_colorclient]
+      frame.dummy = 0
+      taborder = 7
+      visible = False
+      bounds_x = 294
+      bounds_y = 0
+      bounds_cx = 174
+      bounds_cy = 17
+      optionsedit1 = [oe1_savevalue]
+      ondataentered = wptondataentered
+      reffontheight = 15
+    end
+  end
+  object gripopup: tpopupmenu
+    menu.submenu.count = 1
+    menu.submenu.items = <    
+      item
+        caption = 'Delete all'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = deleteallonexecute
+      end>
+    menu.name = 'gridpopup'
+    left = 112
+    top = 88
+  end
+  object c: tstringcontainer
+    strings.data = (
+      'Watchpoint error.'
+      'WATCHPOINT ERROR'
+      'Program not loaded.'
+      'Do you wish to delete all watchpoints?'
+      'Confirmation'
+    )
+    left = 216
+    top = 88
+  end
+end

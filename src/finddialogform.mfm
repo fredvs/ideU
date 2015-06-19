@@ -1,0 +1,139 @@
+object finddialogfo: tfinddialogfo
+  optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 365
+  bounds_y = 219
+  bounds_cx = 331
+  bounds_cy = 116
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.bounds = (
+    0
+    0
+    331
+    116
+  )
+  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  statfile = statfile1
+  caption = 'Find Text'
+  moduleclassname = 'tmseform'
+  object tlayouter2: tlayouter
+    frame.dummy = 0
+    taborder = 2
+    bounds_x = 8
+    bounds_y = 45
+    bounds_cx = 283
+    bounds_cy = 40
+    optionsscale = [osc_expandx, osc_shrinkx]
+    optionslayout = [lao_placex]
+    place_mindist = 4
+    place_maxdist = 4
+    object selectedonly: tbooleanedit
+      frame.caption = 'select&ed only'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        82
+        2
+      )
+      bounds_x = 188
+      bounds_y = 10
+      bounds_cx = 95
+      bounds_cy = 17
+      statfile = statfile1
+    end
+    object wholeword: tbooleanedit
+      frame.caption = '&whole word'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        72
+        2
+      )
+      taborder = 1
+      bounds_x = 99
+      bounds_y = 10
+      bounds_cx = 85
+      bounds_cy = 17
+    end
+    object casesensitive: tbooleanedit
+      frame.caption = 'case&sensitive'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        82
+        2
+      )
+      taborder = 2
+      bounds_x = 0
+      bounds_y = 10
+      bounds_cx = 95
+      bounds_cy = 17
+    end
+  end
+  object findtext: thistoryedit
+    frame.caption = 'Text to &find'
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    bounds_x = 8
+    bounds_y = 5
+    bounds_cx = 316
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object tlayouter1: tlayouter
+    frame.dummy = 0
+    taborder = 1
+    bounds_x = 217
+    bounds_y = 88
+    bounds_cx = 105
+    bounds_cy = 21
+    anchors = [an_top, an_right]
+    optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+    optionslayout = [lao_placex, lao_aligny]
+    align_glue = wam_start
+    place_mindist = 5
+    place_maxdist = 5
+    place_mode = wam_end
+    place_options = [plo_syncmaxautosize]
+    object cancel: tbutton
+      bounds_x = 55
+      bounds_y = 0
+      bounds_cx = 50
+      bounds_cy = 21
+      anchors = [an_top, an_right]
+      state = [as_localcaption]
+      caption = '&Cancel'
+      modalresult = mr_cancel
+    end
+    object tbutton2: tbutton
+      taborder = 1
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 50
+      bounds_cy = 21
+      anchors = [an_top, an_right]
+      state = [as_default, as_localdefault, as_localcaption]
+      caption = '&OK'
+      modalresult = mr_ok
+    end
+  end
+  object statfile1: tstatfile
+    filename = 'finddialogfo.sta'
+    options = [sfo_memory]
+    left = 112
+  end
+end

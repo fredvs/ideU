@@ -1,0 +1,325 @@
+object formdesignerfo: tformdesignerfo
+  optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_hinton]
+  optionsskin = [osk_framebuttononly]
+  color = -1879048187
+  frame.grip_size = 0
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
+  frame.grip_face.fade_pos.count = 1
+  frame.grip_face.fade_pos.items = (
+    0
+  )
+  frame.grip_face.fade_color.count = 1
+  frame.grip_face.fade_color.items = (
+    -1610612717
+  )
+  frame.grip_face.dummy = 0
+  frame.dummy = 0
+  popupmenu = popupme
+  onenter = enterexe
+  onactivate = enterexe
+  bounds_x = 174
+  bounds_y = 309
+  bounds_cx = 287
+  bounds_cy = 300
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel]
+  container.color = -1879048187
+  container.oncalcminscrollsize = calcscrollsize
+  container.bounds = (
+    0
+    0
+    287
+    300
+  )
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_propsize]
+  dragdock.onbeforefloat = beffloatexe
+  dragdock.onfloat = floatexe
+  optionswindow = [wo_notaskbar]
+  options = [fo_savepos, fo_savezorder, fo_savestate]
+  statfile = mainfo.projectstatfile
+  icon.transparentcolor = -2147483642
+  icon.image = {
+    00000000000000001800000018000000A4070000000000000000000000000000
+    0000000000000000000000000000000000000000FFFFFF19F2A69501DDD8D301
+    F2A69501FF866D02794034019D534301BB625001D06D5902F7826A01D46F5B01
+    FF866D04A0A0A00680808001FFFFFF01DDD8D30107EFFF01DDD8D301FF866D02
+    783F3301C96A5601B55F4D0187473A01D6705B018B493B01A3564601F27F6701
+    FF866D03A0A0A001D4D4D40180808001A0A0A001D1D1D10180808002FFFFFF01
+    F2A69501DDD8D301F2A69501FF866D02D46F5B01FF866D01DA735D01CC6B5701
+    B45F4D01DE755F01B8614F01FD856C01FF866D03A0A0A001D4D4D40180808001
+    A0A0A001D1D1D10180808002FFFFFF019718001080808007FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808001FFFFFF01E6E6E601
+    E5E5E501E4E4E401E3E3E301E2E2E201E1E1E101E0E0E001DFDFDF01DEDEDE01
+    DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
+    D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808019
+  }
+  onclose = formdeonclose
+  left = 239
+  top = 180
+  moduleclassname = 'tdockform'
+  object popupme: tpopupmenu
+    menu.submenu.count = 31
+    menu.submenu.items = <    
+      item
+        caption = 'Show objectinspector'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doshowobjectinspector
+      end    
+      item
+        caption = 'Show componentpalette'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doshowcomponentpalette
+      end    
+      item
+        caption = 'Show as Text'
+        state = [as_localcaption, as_localonexecute]
+        options = [mao_shortcutcaption, mao_asyncexecute]
+        onexecute = doshowastext
+      end    
+      item
+        options = [mao_separator, mao_shortcutcaption]
+      end    
+      item
+        action = hidecompact
+        options = [mao_checkbox, mao_shortcutcaption]
+      end    
+      item
+        action = hidewidgetact
+        options = [mao_checkbox, mao_shortcutcaption]
+      end    
+      item
+        action = togglehideact
+      end    
+      item
+        action = showallact
+      end    
+      item
+        options = [mao_separator, mao_shortcutcaption]
+      end    
+      item
+        caption = 'Copy Component(s)'
+        name = 'copy'
+        state = [as_localcaption, as_localshortcut, as_localonexecute]
+        onexecute = copyexe
+        sc = (
+          1
+          16451
+        )
+      end    
+      item
+        caption = 'Cut Component(s)'
+        name = 'cut'
+        state = [as_localcaption, as_localshortcut, as_localonexecute]
+        options = [mao_shortcutcaption, mao_asyncexecute]
+        onexecute = cutexe
+        sc = (
+          1
+          16472
+        )
+      end    
+      item
+        caption = 'Paste Component(s)'
+        name = 'paste'
+        state = [as_localcaption, as_localshortcut, as_localonexecute]
+        onexecute = pasteexe
+        sc = (
+          1
+          16470
+        )
+      end    
+      item
+        caption = 'Delete Component(s)'
+        name = 'delete'
+        state = [as_localcaption, as_localshortcut, as_localonexecute]
+        options = [mao_shortcutcaption, mao_asyncexecute]
+        onexecute = deleteexe
+        sc = (
+          1
+          263
+        )
+      end    
+      item
+        caption = 'Undelete Component(s)'
+        name = 'undelete'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = undeleteexe
+      end    
+      item
+        options = [mao_separator, mao_shortcutcaption]
+      end    
+      item
+        action = actionsmo.findcompallact
+        caption = 'Find Component'
+        state = [as_localcaption]
+      end    
+      item
+        caption = 'Select Childwidget'
+        name = 'selectchild'
+        state = [as_localcaption]
+      end    
+      item
+        caption = '&Edit Component'
+        name = 'editcomp'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doeditcomponent
+      end    
+      item
+        caption = 'Bring to Front'
+        name = 'bringtofro'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dobringtofront
+      end    
+      item
+        caption = 'Send to Back'
+        name = 'sendtoba'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dosendtoback
+      end    
+      item
+        caption = '&Iconify'
+        name = 'iconify'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doiconify
+      end    
+      item
+        caption = '&Deiconify'
+        name = 'deiconify'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dodeiconify
+      end    
+      item
+        caption = 'Set Tab Order'
+        name = 'settabord'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dosettaborder
+      end    
+      item
+        caption = 'Set Creation Order'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dosetcreationorder
+      end    
+      item
+        caption = 'Sync. to Font Height'
+        name = 'synctofo'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dosyncfontheight
+      end    
+      item
+        caption = 'Revert to inherited'
+        name = 'revert'
+        state = [as_localcaption, as_localonexecute]
+        options = [mao_shortcutcaption, mao_asyncexecute]
+        onexecute = revertexe
+      end    
+      item
+        options = [mao_separator, mao_shortcutcaption]
+      end    
+      item
+        caption = 'Touch Form'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = dotouch
+      end    
+      item
+        caption = 'Touch all Forms'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = touchallexe
+      end    
+      item
+        caption = 'Insert Submodule'
+        name = 'insertsub'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doinsertsubmodule
+      end    
+      item
+        caption = 'Insert Component'
+        name = 'insertcomp'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = doinsertcomponent
+      end>
+    left = 48
+    top = 40
+  end
+  object hidecompact: taction
+    caption = 'Hide &Components'
+    onchange = hidecompexe
+    left = 144
+    top = 40
+  end
+  object hidewidgetact: taction
+    caption = 'Hide &Widgets'
+    onupdate = updatewidgethideexe
+    onchange = hidewidgetexe
+    left = 144
+    top = 56
+  end
+  object togglehideact: taction
+    caption = '&Hide Widgets<>Components'
+    onexecute = togglehideexe
+    left = 144
+    top = 72
+  end
+  object showallact: taction
+    caption = '&Show all'
+    onexecute = showallexe
+    left = 144
+    top = 88
+  end
+  object c: tstringcontainer
+    strings.data = (
+      'Do you wish to revert to inherited'
+      'the selected component?'
+      'Do you want to touch all loaded forms?'
+    )
+    left = 48
+    top = 72
+  end
+end

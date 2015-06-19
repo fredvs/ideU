@@ -1,0 +1,73 @@
+object compnametreefo: tcompnametreefo
+  visible = False
+  bounds_x = 80
+  bounds_y = 374
+  bounds_cx = 300
+  bounds_cy = 203
+  bounds_cxmin = 200
+  container.bounds = (
+    0
+    0
+    300
+    203
+  )
+  optionswindow = [wo_notaskbar]
+  options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
+  statfile = tstatfile1
+  caption = 'Select Component'
+  moduleclassname = 'tmseform'
+  object grid: twidgetgrid
+    frame.levelo = 0
+    frame.colorframe = -1610612734
+    frame.localprops = [frl_levelo, frl_framewidth, frl_colorframe]
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 300
+    bounds_cy = 203
+    anchors = []
+    datacols.count = 1
+    datacols.items = <    
+      item[treeitem]
+        width = 299
+        options = [co_readonly, co_fill, co_savevalue]
+        widgetname = 'treeitem'
+        dataclass = ttreeitemeditlist
+        datalist.imnr_base = 2
+        datalist.imnr_expanded = 1
+        datalist.imnr_subitems = -2
+        datalist.imagelist = filedialogres.images
+        datalist.imagewidth = 16
+        datalist.imageheight = 16
+        datalist.onitemnotification = treeitemonitemnotification
+        datalist.oncreateitem = treeitemoncreateitem
+      end>
+    datarowlinewidth = 0
+    datarowheight = 16
+    reffontheight = 14
+    object treeitem: ttreeitemedit
+      color = -1879048185
+      cursor = cr_arrow
+      frame.levelo = 0
+      frame.colorclient = -2147483646
+      frame.localprops = [frl_levelo, frl_colorclient]
+      taborder = 1
+      visible = False
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 299
+      bounds_cy = 16
+      optionsedit1 = [oe1_savevalue]
+      optionsedit = [oe_readonly, oe_undoonesc, oe_checkmrcancel, oe_forcereturncheckvalue, oe_locate]
+      ondataentered = treeitemondataentered
+      oncellevent = treeitemoncellevent
+      options = [teo_treecolnavig, teo_enteronimageclick]
+      reffontheight = 14
+    end
+  end
+  object tstatfile1: tstatfile
+    filename = 'compnamedialog.sta'
+    options = [sfo_memory]
+    left = 48
+    top = 48
+  end
+end

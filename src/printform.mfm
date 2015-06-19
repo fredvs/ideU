@@ -1,0 +1,252 @@
+object printfo: tprintfo
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 166
+  bounds_y = 216
+  bounds_cx = 392
+  bounds_cy = 281
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.bounds = (
+    0
+    0
+    392
+    281
+  )
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  statfile = tstatfile1
+  caption = 'Print File'
+  onidle = printidle
+  moduleclassname = 'tmseform'
+  object ok: tbutton
+    bounds_x = 264
+    bounds_y = 232
+    bounds_cx = 50
+    bounds_cy = 22
+    anchors = [an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = '&Ok'
+    onexecute = runonexecute
+  end
+  object cancel: tbutton
+    taborder = 1
+    bounds_x = 328
+    bounds_y = 232
+    bounds_cx = 50
+    bounds_cy = 22
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Cancel'
+    onexecute = cancelexec
+  end
+  object linenum: tbooleanedit
+    frame.caption = 'Print line'#10'&numbers'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      8
+      58
+      9
+    )
+    taborder = 6
+    bounds_x = 112
+    bounds_y = 68
+    bounds_cx = 71
+    bounds_cy = 30
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+  end
+  object fontsize: trealedit
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_destroywidgets]
+    frame.caption = 'Font &size (Pt)'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      16
+      0
+    )
+    taborder = 5
+    bounds_x = 16
+    bounds_y = 55
+    bounds_cx = 84
+    bounds_cy = 37
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    value = 35.2778
+    valuedefault = -Inf
+    formatedit = '0.0'
+    formatdisp = '0.0'
+    valuerange = 0.28346438836889
+    valuestart = 0
+    min = 21.1667
+    max = 49.3889
+    reffontheight = 14
+  end
+  object titlefont: tstringedit
+    frame.caption = '&Title font'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 9
+    bounds_x = 16
+    bounds_y = 119
+    bounds_cx = 361
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    value = 'Helvetica'
+    onsetvalue = titlefosetvalue
+    reffontheight = 14
+  end
+  object sourcefont: tstringedit
+    frame.caption = 'So&urce font'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 10
+    bounds_x = 16
+    bounds_y = 167
+    bounds_cx = 361
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    value = 'Courier'
+    onsetvalue = sourcefosetvalue
+    reffontheight = 14
+  end
+  object colorset: tbooleanedit
+    frame.caption = '&Color'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      35
+      2
+    )
+    taborder = 7
+    bounds_x = 192
+    bounds_y = 75
+    bounds_cx = 48
+    bounds_cy = 16
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+  end
+  object tpagesizeselector1: tpagesizeselector
+    frame.caption = 'Paper size'
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 3
+    bounds_x = 184
+    bounds_y = 7
+    bounds_cx = 79
+    bounds_cy = 37
+    anchors = [an_top, an_right]
+    dropdown.width = 180
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    printer = printer
+    reffontheight = 14
+  end
+  object tpageorientationselector1: tpageorientationselector
+    frame.caption = 'Paper orientation'
+    frame.outerframe = (
+      0
+      17
+      10
+      0
+    )
+    taborder = 4
+    bounds_x = 275
+    bounds_y = 7
+    bounds_cx = 112
+    bounds_cy = 37
+    anchors = [an_top, an_right]
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    printer = printer
+    reffontheight = 14
+  end
+  object rotate: tbooleanedit
+    frame.caption = 'Rotate CCW'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      1
+      76
+      2
+    )
+    taborder = 8
+    bounds_x = 283
+    bounds_y = 75
+    bounds_cx = 89
+    bounds_cy = 16
+    statfile = tstatfile1
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+  end
+  object pages: tstringedit
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
+    frame.caption = 'Pages'
+    frame.dummy = 0
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    taborder = 2
+    bounds_x = 16
+    bounds_y = 7
+    bounds_cx = 156
+    bounds_cy = 37
+    anchors = [an_left, an_top, an_right]
+    onsetvalue = pagessetvalue
+    reffontheight = 14
+  end
+  object printer: tpostscriptprinter
+    canvas.font.color = -1610612734
+    canvas.font.xscale = 1
+    canvas.font.dummy = 0
+    canvas.ppmm = 10
+    onpagestart = pronpagestart
+    pa_width = 210
+    pa_height = 297
+    pa_size = sps_a4
+    tabulators.defaultdist = 0
+    statfile = tstatfile1
+    printcommand = 'lp -'
+    left = 184
+    top = 96
+  end
+  object tstatfile1: tstatfile
+    filename = 'printer.sta'
+    options = [sfo_memory]
+    left = 80
+    top = 112
+  end
+  object c: tstringcontainer
+    strings.data = (
+      'Page'
+      'Do you wish to cancel printing?'
+    )
+    left = 80
+    top = 216
+  end
+end

@@ -1,0 +1,404 @@
+object guitemplatesmo: tguitemplatesmo
+  bounds_cx = 483
+  bounds_cy = 132
+  onloaded = loadedexe
+  left = 119
+  top = 255
+  moduleclassname = 'tmsedatamodule'
+  object fadevertkonvex: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14408667
+      13158600
+    )
+    template.fade_direction = gd_down
+    left = 24
+    top = 16
+  end
+  object fadehorzconvex: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14408667
+      13158600
+    )
+    left = 24
+    top = 40
+  end
+  object fadehorzconcave: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14408667
+      13158600
+    )
+    template.fade_direction = gd_left
+    left = 144
+    top = 40
+  end
+  object fadevertconcave: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14408667
+      13158600
+    )
+    template.fade_direction = gd_up
+    left = 144
+    top = 16
+  end
+  object skin: tskincontroller
+    extenders = 0
+    sb_horz_facebutton = fadevertkonvex
+    sb_horz_faceendbutton = fadevertkonvex
+    sb_vert_facebutton = fadehorzconvex
+    sb_vert_faceendbutton = fadehorzconvex
+    stepbutton_face = fadehorzconvex
+    widget_color = -2147483645
+    container_face = fadehorzconvex
+    grid_fixrows_face = fadevertkonvex
+    button_face = fadevertkonvex
+    databutton_face = fadevertkonvex
+    framebutton_face = fadehorzconvex
+    tabbar_horz_face = fadevertconcave
+    tabbar_horz_tab_face = fadevertkonvex
+    tabbar_horzopo_face = fadevertconcave
+    tabbar_horzopo_tab_face = fadevertkonvex
+    tabbar_vert_face = fadehorzconcave
+    tabbar_vert_tab_face = fadevertkonvex
+    tabbar_vertopo_face = fadehorzconcave
+    tabbar_vertopo_tab_face = fadevertkonvex
+    mainmenu_face = fadevertconcave
+    left = 24
+    top = 72
+  end
+  object fadecontainer: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612731
+      13421772
+    )
+    left = 144
+    top = 72
+  end
+  object nullface: tfacecomp
+    left = 272
+    top = 16
+  end
+  object sysenv: tsysenvmanager
+    helpheader = 'MSEide Copyright 1999-2013 by Martin Schreiber'#10'Usage: mseide [OPTION]... [PROJECTFILE]'#10#10'Options:'
+    helpfooter = #10'Environment variables'#10'FPCDIR, FPCLIBDIR, MSEDIR, MSELIBDIR'#10'SYNTAXDEFDIR, TEMPLATEDIR, COMPSTOREDIR'#10'COMPILER, DEBUGGER, EXEEXT,TARGET,TARGETOSDIR'#10'can be used to override the settings macros.'#10#10'Have a lot of fun!'#10#10'Martin'
+    left = 24
+    top = 96
+    defs = (
+      (
+        ak_pararg
+        '-macrodef'
+        (        )
+        []
+        ''
+        '<name>,<value>{,<name>,<value>}'
+        'Macro definition, will be overridden by ''Project''-''Options''-''Macros''.'#10' Example:'#10' --macrodef=MAC1,abc,MAC2,def'
+        ''
+        ''
+      )
+      (
+        ak_pararg
+        '-macrogroup'
+        (        )
+        []
+        ''
+        '<n>'
+        'Use ''Project''-''Options''-''Macros''-''Active group'' number <n>,'#10'<n> = 1..6.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        'np'
+        (        )
+        []
+        ''
+        ''
+        'Do not load a project.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        'ns'
+        (        )
+        []
+        ''
+        ''
+        'Do not use a skin, no fades.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-help'
+        (        )
+        [arf_help]
+        ''
+        ''
+        'Display this help and exit.'
+        ''
+        ' '
+      )
+      (
+        ak_envvar
+        'FPCDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'FPCLIBDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'MSEDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'MSELIBDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'SYNTAXDEFDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'TEMPLATEDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'COMPSTOREDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'COMPILER'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'DEBUGGER'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'EXEEXT'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'TARGET'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_envvar
+        'TARGETOSDIR'
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_arg
+        ''
+        (        )
+        []
+        ''
+        ''
+        ''
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-NOZORDERHANDLING'
+        (        )
+        []
+        ''
+        ''
+        'Do not touch Z-order of the windows.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-NORESTACKWINDOW'
+        (        )
+        []
+        ''
+        ''
+        'Do not use the NET_RESTACK_WINDOW protocol.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-RESTACKWINDOW'
+        (        )
+        []
+        ''
+        ''
+        'Use the NET_RESTACK_WINDOW protocol.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-NORECONFIGUREWMWINDOW'
+        (        )
+        []
+        ''
+        ''
+        'Do not use xreconfigurewmwindow() for window stacking operation.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-RECONFIGUREWMWINDOW'
+        (        )
+        []
+        ''
+        ''
+        'Use xreconfigurewmwindow() for window stacking operation.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-STACKMODEBELOWWORKAROUND'
+        (        )
+        []
+        ''
+        ''
+        'Necessarry for windowmanagers with buggy xreconfigurewmwindow() handling.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-NOSTACKMODEBELOWWORKAROUND'
+        (        )
+        []
+        ''
+        ''
+        'No workaround.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        '-TOPLEVELRAISE'
+        (        )
+        []
+        ''
+        ''
+        'Use the top level frame window id instead of the application client window id'#10'for window raise operation. Implies --NORESTACKWINDOW and'#10' --NORECONFIGUREWMWINDOW.'
+        ''
+        ''
+      )
+    )
+  end
+end

@@ -1,0 +1,259 @@
+object findinfileadialogfo: tfindinfiledialogfo
+  optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 378
+  bounds_y = 291
+  bounds_cx = 339
+  bounds_cy = 264
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.bounds = (
+    0
+    0
+    339
+    264
+  )
+  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  statfile = statfile1
+  caption = 'Find Text in Files'
+  moduleclassname = 'tmseform'
+  object findtext: thistoryedit
+    frame.caption = '&Text to find'
+    frame.button.color = -2147483646
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    bounds_x = 8
+    bounds_y = 8
+    bounds_cx = 321
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    statfile = statfile1
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object dir: tfilenameedit
+    frame.caption = '&Directory'
+    frame.button.color = -2147483646
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    onshowhint = dirshowhint
+    bounds_x = 8
+    bounds_y = 119
+    bounds_cx = 321
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    statfile = statfile1
+    textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+    controller.options = [fdo_directory]
+    controller.ongetfilename = dirgetfilenameexe
+    controller.onbeforeexecute = dironbeforeexecute
+    reffontheight = 15
+  end
+  object mask: thistoryedit
+    frame.caption = '&File Mask'
+    frame.button.color = -2147483646
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 2
+    bounds_x = 8
+    bounds_y = 170
+    bounds_cx = 321
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    statfile = statfile1
+    value = '"*.pas" "*.pp" "*.inc"'
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object tlayouter1: tlayouter
+    taborder = 3
+    bounds_x = 21
+    bounds_y = 48
+    bounds_cx = 160
+    bounds_cy = 66
+    optionsscale = [osc_expandx, osc_shrinkx]
+    linkright = tlayouter2
+    object indirectories: tbooleaneditradio
+      frame.caption = 'Search in &directories'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        127
+        2
+      )
+      bounds_x = 9
+      bounds_y = 46
+      bounds_cx = 140
+      bounds_cy = 17
+      statfile = statfile1
+      onchange = chaindirectories
+      value = True
+    end
+    object inselectedfile: tbooleaneditradio
+      frame.caption = 'Search in &edited file'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        123
+        2
+      )
+      taborder = 1
+      bounds_x = 9
+      bounds_y = 6
+      bounds_cx = 136
+      bounds_cy = 17
+      statfile = statfile1
+      onchange = chaindirectories
+    end
+    object inopenfiles: tbooleaneditradio
+      Tag = 1
+      frame.caption = 'Search in all &open files'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        138
+        2
+      )
+      taborder = 2
+      bounds_x = 9
+      bounds_y = 26
+      bounds_cx = 151
+      bounds_cy = 17
+      statfile = statfile1
+      onchange = chainopenfiles
+    end
+  end
+  object tlayouter2: tlayouter
+    taborder = 4
+    bounds_x = 181
+    bounds_y = 48
+    bounds_cx = 129
+    bounds_cy = 66
+    optionsscale = [osc_expandx, osc_shrinkx]
+    object wholeword: tbooleanedit
+      frame.caption = '&whole word'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        72
+        2
+      )
+      bounds_x = 35
+      bounds_y = 39
+      bounds_cx = 85
+      bounds_cy = 17
+      statfile = statfile1
+    end
+    object casesensitive: tbooleanedit
+      frame.caption = 'c&asesensitive'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        82
+        2
+      )
+      taborder = 1
+      bounds_x = 34
+      bounds_y = 11
+      bounds_cx = 95
+      bounds_cy = 17
+      statfile = statfile1
+    end
+  end
+  object tlayouter4: tlayouter
+    taborder = 5
+    bounds_x = 0
+    bounds_y = 223
+    bounds_cx = 339
+    bounds_cy = 31
+    anchors = [an_top]
+    optionsscale = [osc_expandy, osc_shrinky]
+    optionslayout = [lao_aligny]
+    align_glue = wam_start
+    object tlayouter3: tlayouter
+      frame.framei_top = 5
+      frame.framei_bottom = 5
+      frame.localprops = [frl_fitop, frl_fibottom]
+      frame.dummy = 0
+      bounds_x = 222
+      bounds_y = 0
+      bounds_cx = 115
+      bounds_cy = 31
+      anchors = [an_top, an_right]
+      optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+      optionslayout = [lao_placex, lao_aligny]
+      align_glue = wam_start
+      place_mindist = 5
+      place_maxdist = 5
+      place_mode = wam_end
+      place_options = [plo_propmargin, plo_syncmaxautosize]
+      object ok: tbutton
+        bounds_x = 5
+        bounds_y = 5
+        bounds_cx = 50
+        bounds_cy = 21
+        anchors = [an_top, an_right]
+        state = [as_default, as_localdefault, as_localcaption]
+        caption = 'OK'
+        modalresult = mr_ok
+      end
+      object cancel: tbutton
+        taborder = 1
+        bounds_x = 60
+        bounds_y = 5
+        bounds_cx = 50
+        bounds_cy = 21
+        anchors = [an_top, an_right]
+        state = [as_localcaption]
+        caption = 'Cancel'
+        modalresult = mr_cancel
+      end
+    end
+    object subdirs: tbooleanedit
+      frame.caption = '&Include subdirectories'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        2
+        137
+        2
+      )
+      taborder = 1
+      bounds_x = 22
+      bounds_y = 7
+      bounds_cx = 150
+      bounds_cy = 17
+      statfile = statfile1
+    end
+  end
+  object statfile1: tstatfile
+    filename = 'findinfiledialogfo.sta'
+    options = [sfo_memory]
+    left = 248
+    top = 72
+  end
+end

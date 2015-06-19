@@ -1,0 +1,582 @@
+object settingsfo: tsettingsfo
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 431
+  bounds_y = 24
+  bounds_cx = 344
+  bounds_cy = 653
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.frame.clientwidthmin = 340
+  container.bounds = (
+    0
+    0
+    344
+    653
+  )
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = tstatfile1
+  caption = 'Configure ideU environment'
+  icon.options = [bmo_masked, bmo_graymask]
+  icon.origformat = 'png'
+  icon.image = {
+    00000000120000001600000016000000FC030000000000000000000000000000
+    00000000000000000000000000000000000000000000001C25FFFF0130FFFF01
+    3DFFFF0153FFFF0173FFFF0196FFFF01B0FFFF01B5FFFF01A4FFFF0185FFFF01
+    0000000C28FFFF0131FFFF0140FFFF0159FFFF017BFFFF01A2FFFF01BDFFFF01
+    BEFFFF01A6FFFF0181FFFF010000000C2AFFFF0135FFFF0145FFFF0160FFFF01
+    86FFFF01AFFFFF01CAFFFF01C6FFFF01A6FFFF017CFFFF010000000907E90701
+    0AEC0A010EF10E0127FFFF0139FFFF014BFFFF0168FFFF0192FFFF01BEFFFF01
+    D7FFFF01CCFFFF01A5FFFF0170FFFF013BFF3B0124FF240116F9160100000006
+    07EA07010AED0A0110F2100127FFFF013DFFFF0153FFFF0174FFFF01A2FFFF01
+    D0FFFF01E5FFFF01D1FFFF01A2FFFF0169FFFF0137FF370121FF210115F81501
+    0000000607EA07010BEE0B0111F4110127FFFF0140FFFF015DFFFF0183FFFF01
+    B6FFFF01E5FFFF01F3FFFF01D6FFFF019DFFFF0162FFFF0135FF350120FF2001
+    14F714010000000607EA07010CEE0C0112F5120123FF940143FFFF0168FFFF01
+    96FFFF01CEFFFF01FDFFFF01FFFFFF01DBFFFF0199FFFF015AFFC00133FF3301
+    1FFF1F0114F614010000000607EA07010BEE0B0113F6130121FF3A0144FFFF01
+    74FFFF01A9FFFF01E7FFFF01FFFFFF02E1FFFF0194FFFF0154FF6A0132FF3201
+    1EFF1E0113F513010000000607E907010BED0B0112F5120120FF20013EFF9601
+    7BFFFF01B5FFFF01F9FFFF01FFFFFF02E2FFFF0189FFD20150FF50012FFF2F01
+    1CFF1C0111F411010000000606E806010AEC0A0110F310011DFF1D0134FF3401
+    0000000678FF780148FF48012AFF2A0119FC19010FF20F010000000605E70501
+    08EB08010EF00E0118FB18012BFF2B010000000661FF61013AFF3A0122FF2201
+    14F714010CEF0C010000000601E2010101E4010102E4020103E503010EEE0E01
+    05D005010000000408D908011CF01C0105E8050104E6040103E5030200000006
+    00E3000101E3010101E4010207E8070103DE03010000000404E204010DEC0D01
+    03E5030102E5020102E402020000000600E1000100E3000201E3010102E40201
+    01E1010102DD020102D3020202DE020102E1020104E5040101E4010201E30102
+    0000000600E2000100E3000300E2000101E0010201DE010201E0010101E20101
+    01E3010200E3000100E1000100E300010000000600E1000100E3000400E20001
+    00E3000400E2000100E3000100E2000100E1000100E2000101E3010100000006
+    00E2000100E3000100E2000A00E1000300E200010000000600E1000100E30004
+    00E2000100E3000400E2000100E3000100E2000100E1000100E2000101E20101
+    0000000600E1000100E3000100E2000A00E1000300E300010000000700E3000B
+    00E2000100E1000100DF00010000000900DD000100E1000100E2000100E30006
+    00E2000100E0000100D300010000000510020000000000000000000000000000
+    00000000000000000000000000000000000026AD8FBDFEFEB697A52200000000
+    000000000000000000007784C3F8FFFFF8BE876E000000000000000000000000
+    00009EE5F7FFFFFFFFF6E493000000000000000000000000D0D0EEFDFFFFFFFF
+    FFFFFCECD0D0000000000000000000DCFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000
+    00000000000000DCFFFFFFB5D7FFFFFFFFD2BAFFFFFFD00000000000000000DC
+    FFFFFFD6A1D0FFFFCBA4D9FFFFFFD00000000000000000DCFFFFFFAE98D5F9F9
+    D196B3FFFFFFD00000000000000000DCFFFFFF67405D64645C3D71FFFFFFD000
+    00000000000000DCFFFFFF510000000000005CFFFFFFD00000000000000000DC
+    FFFFFF510000000000005CFFFFFFD00000000000000000F9FFFFFF8D03000000
+    00049BFFFFFFF40000000000000000F5FFFFFF9D100000000012A9FFFFFFEF00
+    00000000000000FCFFFFFFD739080303093FDEFFFFFFF90000000000000000F5
+    FFFFFFFBA44C34344FAAFCFFFFFFF00000000000000000E6FFFFFFFDFCFDFEFE
+    FDFCFDFFFFFFDD0000000000000000BCFDFFFFFDEEEEF1F1EEEFFDFFFFFCB200
+    0000000000000076EDFFFFFCFCFDFEFEFDFCFCFFFFE86E00000000000000001F
+    BFF7FEFBEDEEF1F1EEEEFBFEF6B51C0000000000000000003CBBEDF7FBFDFEFE
+    FDFBF6EBB3360000000000000000000000125BA2D0E7EDEDE6CE9F5710000000
+    00000000
+  }
+  oncreate = formoncreate
+  moduleclassname = 'tmseform'
+  object tsplitter1: tsplitter
+    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+    color = -2147483645
+    taborder = 2
+    bounds_x = 0
+    bounds_y = 608
+    bounds_cx = 342
+    bounds_cy = 38
+    optionsscale = [osc_expandy, osc_shrinky]
+    linktop = macrogrid
+    grip = stb_none
+    object tbutton2: tbutton
+      taborder = 2
+      bounds_x = 279
+      bounds_y = 16
+      bounds_cx = 50
+      bounds_cy = 22
+      state = [as_localcaption]
+      caption = '&Cancel'
+      modalresult = mr_cancel
+    end
+    object tbutton1: tbutton
+      taborder = 1
+      bounds_x = 223
+      bounds_y = 16
+      bounds_cx = 50
+      bounds_cy = 22
+      state = [as_default, as_localdefault, as_localcaption]
+      caption = '&OK'
+      modalresult = mr_ok
+    end
+    object shortcutbu: tbutton
+      bounds_x = 9
+      bounds_y = 16
+      bounds_cx = 78
+      bounds_cy = 22
+      state = [as_localcaption, as_localonexecute]
+      caption = '&Shortcuts'
+      onexecute = editshortcuts
+    end
+  end
+  object tlayouter1: tlayouter
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 342
+    bounds_cy = 505
+    optionsscale = [osc_expandy, osc_shrinky]
+    linkbottom = macrogrid
+    optionslayout = [lao_placey]
+    object tspacer1: tspacer
+      optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+      taborder = 9
+      visible = True
+      bounds_x = 0
+      bounds_y = 429
+      bounds_cx = 342
+      bounds_cy = 37
+      optionsscale = [osc_expandy, osc_shrinky]
+      object targetosdir: tstringedit
+        Tag = 11
+        frame.caption = '${TARGETOSDIR}'
+        frame.dummy = 0
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 2
+        bounds_x = 202
+        bounds_y = -2
+        bounds_cx = 130
+        bounds_cy = 39
+        onsetvalue = setvalue
+        reffontheight = 15
+      end
+      object tsplitter2: tsplitter
+        color = -1879048189
+        taborder = 3
+        visible = False
+        bounds_x = 192
+        bounds_y = 16
+        bounds_cx = 10
+        bounds_cy = 20
+        options = [spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
+        linkleft = target
+        linkright = targetosdir
+        grip = stb_none
+        statfile = tstatfile1
+      end
+      object target: tstringedit
+        Tag = 10
+        frame.caption = '${TARGET}'
+        frame.dummy = 0
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 1
+        bounds_x = 98
+        bounds_y = -2
+        bounds_cx = 94
+        bounds_cy = 39
+        onsetvalue = setvalue
+        reffontheight = 15
+      end
+      object exeext: tstringedit
+        Tag = 9
+        frame.caption = '${EXEEXT}'
+        frame.dummy = 0
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        bounds_x = 8
+        bounds_y = -2
+        bounds_cx = 80
+        bounds_cy = 39
+        onsetvalue = setvalue
+        reffontheight = 15
+      end
+    end
+    object printcomm: tstringedit
+      frame.caption = 'Print command'
+      frame.dummy = 0
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 10
+      bounds_x = 8
+      bounds_y = 466
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setprintcomm
+      reffontheight = 15
+    end
+    object debugger: tfilenameedit
+      Tag = 8
+      frame.caption = '${DEBUGGER} Path of Default Debugger'
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 8
+      hint = 'Path to debugger (gdb).'
+      bounds_x = 8
+      bounds_y = 390
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.captionopen = 'Debugger path'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object compiler: tfilenameedit
+      Tag = 7
+      frame.caption = '${COMPILER} Path of Default Compiler'
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 7
+      hint = 'Path to compiler (ppc386).'
+      bounds_x = 8
+      bounds_y = 351
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.captionopen = 'Compiler path'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object compstoredir: tfilenameedit
+      Tag = 6
+      frame.colorclient = 16773360
+      frame.caption = '${COMPSTOREDIR} CompStore directory of MSEgui'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 6
+      hint = 'Directory for component store files.'
+      bounds_x = 8
+      bounds_y = 156
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.filterlist.data = (
+        (
+          'Project files'
+          '*.prj'
+        )
+      )
+      controller.options = [fdo_directory]
+      controller.captionopen = 'Directory for component stores'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object templatedir: tfilenameedit
+      Tag = 5
+      frame.caption = '${TEMPLATEDIR} Directory of Templates'
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 5
+      hint = 'Directory for project template files.'
+      bounds_x = 8
+      bounds_y = 273
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.filterlist.data = (
+        (
+          'Project files'
+          '*.prj'
+        )
+      )
+      controller.options = [fdo_directory]
+      controller.captionopen = 'Project template directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object syntaxdefdir: tfilenameedit
+      Tag = 4
+      frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 4
+      hint = 'Directory for syntax definition files.'
+      bounds_x = 8
+      bounds_y = 312
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.filterlist.data = (
+        (
+          'Syntax definitions'
+          '*.sdef'
+        )
+      )
+      controller.options = [fdo_directory]
+      controller.captionopen = 'Directory for syntax definition files'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object mselibdir: tfilenameedit
+      Tag = 3
+      frame.colorclient = 16773360
+      frame.caption = '${MSELIBDIR} Library directory of MSEgui'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 3
+      hint = 'Root directory of msegui library.'
+      bounds_x = 8
+      bounds_y = 117
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.options = [fdo_directory]
+      controller.captionopen = 'MSEgui library directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object msedir: tfilenameedit
+      Tag = 2
+      frame.colorclient = 16773360
+      frame.caption = '${MSEDIR} Root directory of MSEgui'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 2
+      hint = 'Root directory of msegui.'
+      bounds_x = 8
+      bounds_y = 78
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.options = [fdo_directory]
+      controller.captionopen = 'MSEgui root directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object fpclibdir: tfilenameedit
+      Tag = 1
+      frame.colorclient = 15790335
+      frame.caption = '${FPCLIBDIR} Library directory of Free Pascal'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 1
+      hint = 'Root directory of FPC library (not used by the default project templates).'
+      bounds_x = 8
+      bounds_y = 39
+      bounds_cx = 324
+      bounds_cy = 39
+      controller.options = [fdo_directory]
+      controller.captionopen = 'FPC library directory'
+      reffontheight = 15
+    end
+    object fpcdir: tfilenameedit
+      frame.colorclient = 15790335
+      frame.caption = '${FPCDIR} Root directory of Free Pascal'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      hint = 'Root directory of Free Pascal system (not used by the default project templates).'
+      bounds_x = 8
+      bounds_y = 0
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.options = [fdo_directory]
+      controller.captionopen = 'FPC root directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object fpguidir: tfilenameedit
+      Tag = 3
+      frame.colorclient = 15138790
+      frame.caption = '${FPGUIDIR} Root directory of fpGUI'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 11
+      hint = 'Root directory of fpGUI'
+      bounds_x = 8
+      bounds_y = 195
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.options = [fdo_directory]
+      controller.captionopen = 'fpGUI library directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+    object docviewdir: tfilenameedit
+      Tag = 3
+      frame.colorclient = 15138790
+      frame.caption = '${DOCVIEWDIR} Root directory of DocView'
+      frame.localprops = [frl_colorclient]
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 12
+      hint = 'Root directory of DocView'
+      bounds_x = 8
+      bounds_y = 234
+      bounds_cx = 324
+      bounds_cy = 39
+      onsetvalue = setvalue
+      controller.options = [fdo_directory]
+      controller.captionopen = 'DocView directory'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
+  end
+  object macrogrid: twidgetgrid
+    frame.caption = 'Global Macros'
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 8
+    bounds_y = 505
+    bounds_cx = 324
+    bounds_cy = 103
+    bounds_cymin = 80
+    optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    fixcols.count = 1
+    fixcols.items = <    
+      item
+        width = 28
+        numstart = 1
+        numstep = 1
+      end>
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+        captions.count = 4
+        captions.items = <        
+          item
+            caption = 'Name'
+          end        
+          item
+            caption = 'Value'
+          end        
+          item
+          end        
+          item
+          end>
+      end>
+    datacols.count = 2
+    datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+    datacols.items = <    
+      item[macroname]
+        width = 148
+        options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+        widgetname = 'macroname'
+        dataclass = tgridmsestringdatalist
+      end    
+      item[macrovalue]
+        width = 141
+        options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+        widgetname = 'macrovalue'
+        dataclass = tgridmsestringdatalist
+      end>
+    datarowheight = 16
+    reffontheight = 15
+    object macroname: tstringedit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionsskin = [osk_framebuttononly]
+      taborder = 1
+      visible = False
+      bounds_x = 0
+      bounds_y = 0
+      bounds_cx = 148
+      bounds_cy = 16
+      optionsedit1 = [oe1_savevalue]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+      reffontheight = 15
+    end
+    object macrovalue: tmemodialogedit
+      optionswidget1 = [ow1_fontglyphheight]
+      optionsskin = [osk_framebuttononly]
+      frame.levelo = 0
+      frame.colorclient = -2147483645
+      frame.localprops = [frl_levelo, frl_leveli, frl_colorclient]
+      frame.button.color = -1879048187
+      frame.button.imagenr = 17
+      taborder = 2
+      visible = False
+      bounds_x = 149
+      bounds_y = 0
+      bounds_cx = 141
+      bounds_cy = 16
+      optionsedit1 = [oe1_savevalue]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+      reffontheight = 15
+    end
+  end
+  object tstatfile1: tstatfile
+    filename = 'settingsfo.sta'
+    options = [sfo_memory]
+    left = 16
+    top = 32
+  end
+end

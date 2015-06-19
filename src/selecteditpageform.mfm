@@ -1,0 +1,62 @@
+object selecteditpagefo: tselecteditpagefo
+  visible = False
+  bounds_x = 346
+  bounds_y = 207
+  bounds_cx = 704
+  bounds_cy = 473
+  container.onlayout = formonchildscaled
+  container.bounds = (
+    0
+    0
+    704
+    473
+  )
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  caption = 'Select edit page (Ctrl+E)'
+  icon.transparentcolor = -2147483648
+  oneventloopstart = fooncreate
+  onlayout = formonchildscaled
+  moduleclassname = 'tmseform'
+  object list: tlistview
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_destroywidgets, ow_multiplehint]
+    frame.colorclient = -1879048187
+    frame.localprops = [frl_colorclient]
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 704
+    bounds_cy = 451
+    anchors = [an_top, an_bottom]
+    datarowlinewidth = 0
+    datacollinewidth = 0
+    cellwidth = 100
+    cellheight = 20
+    cellframe.leveli = 1
+    cellframe.localprops = [frl_leveli]
+    optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup]
+    options = [lvo_readonly, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
+    onitemevent = doonitemevent
+    reffontheight = 15
+  end
+  object pathdisp: tstringdisp
+    frame.dummy = 0
+    taborder = 2
+    bounds_x = 0
+    bounds_y = 453
+    bounds_cx = 650
+    bounds_cy = 19
+    anchors = [an_left, an_right, an_bottom]
+    textflags = [tf_ycentered, tf_ellipseleft]
+    reffontheight = 15
+  end
+  object openfilebutton: tbutton
+    taborder = 1
+    bounds_x = 652
+    bounds_y = 455
+    bounds_cx = 50
+    bounds_cy = 17
+    anchors = [an_right, an_bottom]
+    state = [as_localcaption, as_localonexecute]
+    caption = '&open'
+    onexecute = openfileonexecute
+  end
+end
