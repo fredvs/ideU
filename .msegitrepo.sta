@@ -384,7 +384,7 @@ commitmessagefo.sta=12
  wsize=0
  active=1
  visible=1
-form.sta=299
+form.sta=302
  [mainfo.dockpanel]
  splitdir=2
  useroptions=33570179
@@ -433,7 +433,7 @@ form.sta=299
  active=0
  visible=0
  [logfo.grid]
- propcolwidthref=0
+ propcolwidthref=807
  width0=36
  sortdescend0=0
  sortdescend1=0
@@ -446,10 +446,11 @@ form.sta=299
  width5=117
  sortdescend5=0
  sortcol=0
- rowstate=0
+ rowstate=1
+  0 0 0
  sorted=1
  col=1
- row=-1073741823
+ row=0
  rowheight=16
  [logfo]
  splitdir=0
@@ -462,9 +463,9 @@ form.sta=299
  ncx=0
  ncy=0
  x=0
- y=312
- cx=505
- cy=259
+ y=318
+ cx=1350
+ cy=263
  rcx=0
  rcy=0
  [diffwindowfo.tabs]
@@ -498,41 +499,43 @@ form.sta=299
  ncx=0
  ncy=0
  x=0
- y=574
- cx=505
- cy=130
+ y=584
+ cx=1350
+ cy=133
  rcx=0
  rcy=0
  [branchfo.remotegrid]
- propcolwidthref=161
- width0=51
+ propcolwidthref=558
+ width0=177
  sortdescend0=0
- width1=53
+ width1=213
  sortdescend1=0
- width2=45
+ width2=156
  sortdescend2=0
  sortdescend3=0
  sortdescend4=0
  sortdescend5=0
  sortdescend6=0
- width7=14
+ width7=49
  sortdescend7=0
- width8=13
+ width8=45
  sortdescend8=0
- rowstate=0
+ rowstate=1
+  0 3
  [branchfo.localgrid]
- propcolwidthref=183
+ propcolwidthref=631
  sortdescend0=0
- width1=115
+ width1=423
  sortdescend1=0
- width2=57
+ width2=197
  sortdescend2=0
  sortdescend3=0
  sortdescend4=0
  sortdescend5=0
- rowstate=0
+ rowstate=1
+  0
  [branchfo.tsplitter1]
- x=265
+ x=713
  y=0
  xprop=0.53069306930693
  yprop=1
@@ -547,9 +550,9 @@ form.sta=299
  ncx=0
  ncy=0
  x=0
- y=97
- cx=505
- cy=212
+ y=99
+ cx=1350
+ cy=216
  rcx=0
  rcy=0
  [remotesfo]
@@ -564,17 +567,17 @@ form.sta=299
  ncy=0
  x=0
  y=0
- cx=505
- cy=94
+ cx=1350
+ cy=96
  rcx=0
  rcy=0
  [remotesfo.grid]
- propcolwidthref=486
- width0=101
+ propcolwidthref=1331
+ width0=277
  sortdescend0=0
- width1=171
+ width1=468
  sortdescend1=0
- width2=186
+ width2=509
  sortdescend2=0
  [stashfo.stashgrid]
  propcolwidthref=435
@@ -619,7 +622,7 @@ form.sta=299
  rcy=0
  [filesfo.filelist.grid]
  propcolwidthref=718
- sortdescend0=0
+ sortdescend0=1
  sortdescend1=1
  width2=174
  sortdescend2=0
@@ -669,24 +672,24 @@ form.sta=299
  ny=0
  ncx=0
  ncy=0
- x=217
+ x=3
  y=24
- cx=515
- cy=704
+ cx=1360
+ cy=717
  rcx=0
  rcy=0
  children=4
-  logfo,0,312,505,259
-  gitconsolefo,0,574,505,130
-  branchfo,0,97,505,212
-  remotesfo,0,0,505,94
- focusedchild=3
+  logfo,0,318,1350,263
+  gitconsolefo,0,584,1350,133
+  branchfo,0,99,1350,216
+  remotesfo,0,0,1350,96
+ focusedchild=1
  wsize=0
- active=1
- visible=1
+ active=0
+ visible=0
 [mainmo.repoobj]
 activeremote=
-activelocallogbranch=
+activelocallogbranch=master
 activeremotelog=
 activeremotelogbranch=
 commitmessages=0
