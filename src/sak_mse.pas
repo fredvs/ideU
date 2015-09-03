@@ -66,8 +66,11 @@ type
   TSAK = class(TObject, iassistiveserver)
   protected
         
-    ES_ExeFileName: ansistring;
-    ES_DataDirectory: ansistring;
+    ES_ExeFileName: filenamety;
+    ES_DataDirectory: filenamety;
+    ES_LibFileName: filenamety;
+
+    PA_LibFileName: filenamety;
     
     old8087cw: word;
     mouseclicked: boolean;
@@ -94,9 +97,9 @@ type
   TheMenuInfo: menucellinfoarty;
   TheMenuIndex : integer;
 
-  TheWord: string;  //// use F11 key in memo
-  TheSentence: string;   //// use F10 key in memo
-  TheLastSentence: string;  //// use F10 key in memo
+  TheWord: msestring;  //// use F11 key in memo
+  TheSentence: msestring;   //// use F10 key in memo
+  TheLastSentence: msestring;  //// use F10 key in memo
 
   isentered: boolean;
   
@@ -118,35 +121,55 @@ type
     procedure ontimeritementer(const Sender: TObject);
     procedure ontimerchange(const Sender: TObject);
     function LoadLib: integer;
-    procedure espeak_key(Text: string);
-    function WhatName(Sender: TObject): string;
-    function WhatChar(Sender: TObject; const info: keyeventinfoty): string;
-    function WhatChange(Sender: TObject) : string;
+    procedure espeak_key(Text: msestring);
+    function WhatName(Sender: TObject): msestring;
+    function WhatChar(Sender: TObject; const info: keyeventinfoty): msestring;
+    function WhatChange(Sender: TObject) : msestring;
+    function WhatPos(sender : Tobject; kind : integer) : msestring ;  // kind 0 = all, , 1 = part
+    function WhatDeleted(sender : Tobject) : msestring;
+    function WhatWord(sender : Tobject) : msestring;
+    function WhatLine(sender : Tobject) : msestring;
+
 
   public
-    constructor Create(const agrid: tstringgrid);
+    constructor Create();
       destructor Destroy(); override;
   end;
+
+{$IFDEF FREEBSD}
+// These are missing for FreeBSD in FPC's RTL
+const
+  S_IRWXU = S_IRUSR or S_IWUSR or S_IXUSR;
+  S_IRWXG = S_IRGRP or S_IWGRP or S_IXGRP;
+  S_IRWXO = S_IROTH or S_IWOTH or S_IXOTH;
+
+{$ENDIF}
   
   var
    sak: TSAK;
-   isenabled : boolean = False;
-
+  
 /// Load with custom sakit dir
 function SAKLoadLib(const SakitDir: filenamety = ''): integer;
                             //'' = default
 
-/// Load with custom
-function SAKLoadLib(const eSpeakBin: filenamety;
+/// Load with custom espeak dir
+function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
                                       const eSpeakDataDir: filenamety): integer;
 /// Unload sak 
 function SAKUnloadLib: integer;
+
+ {$IF DEFINED(unix)}
+function ChangePermission(const thefile: filenamety = ''; raisemessage : boolean = true) : integer ;
+ {$endif} 
+
+ ///// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib, 3 = epeak-data dir)
+function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
 
 //// to know if sak is loaded
 function SakIsEnabled: boolean;
 
 ////////////////////// Voice Config Procedures ///////////////
-function SAKSetVoice(gender: shortint; language: string ; speed: integer ; pitch: integer ; volume : integer ): integer;
+function SAKSetVoice(gender: shortint; language: msestring ; speed: integer ; pitch: integer ; volume : integer ): integer;
 //// gender : 1 = man, 2 = woman.
 //// language : is the language code, for example :
 //// 'en' for english, 'fr' for french, 'pt' for Portugues, etc...
@@ -156,7 +179,7 @@ function SAKSetVoice(gender: shortint; language: string ; speed: integer ; pitch
 // volume range of 0 to 200. The default is 100. => -1
 
 ///// Start speaking the text
-function SAKSay(Text: string): integer;
+function SAKSay(Text: msestring): integer;
 
 // Cancel current speak.
 function SakCancel: integer;
@@ -169,7 +192,159 @@ uses
   
 /////////////////////////// Capture Assistive Procedures
 
-function TSak.WhatChange(Sender: TObject) : string;
+function Tsak.WhatDeleted(sender : Tobject) : msestring;
+var
+ strline, posword1, posword2 : string;
+ pos1 : integer;
+begin
+{
+   with sender as Tmemoedit do
+      begin
+           sakcancel;
+          strline :=  Lines[caretpos.y];
+        posword1 := '';
+             pos1 := cursorpos ;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
+          begin
+        posword1 := copy(strline,pos1,1)   + posword1;
+        dec(pos1);
+          end;
+
+    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
+
+    posword2 := '';
+             pos1 := cursorpos +1 ;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
+          begin
+        posword2 := posword2 + copy(strline,pos1,1)  ;
+        inc(pos1);
+          end;
+
+      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
+
+
+       if  copy(strline,cursorpos+1,1) = ' '   // the letter after cursor is space
+              then
+              begin
+       result := 'deleted, space, after, '  +  posword1 + posword2 + ' in line ' + inttostr(cursorline+1)
+  end else
+   begin
+     result := 'deleted, position, ' + inttostr(length(posword1)+1) +  ', line, ' + inttostr(cursorline+1) +  ', in, ' +  posword1 + posword2;
+        end;
+
+//     writeln(result);
+
+        end;
+
+}
+end;
+
+function Tsak.WhatPos(sender : Tobject; kind : integer) : msestring ;  // kind 0 = all, , 1 = part
+var
+ strline, posword1, posword2 : string;
+ pos1 : integer;
+begin
+{
+            with sender as Tmemoedit do
+           begin
+                  sakcancel;
+
+         strline :=  Lines[cursorline];
+        posword1 := '';
+             pos1 := cursorpos ;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
+          begin
+        posword1 := copy(strline,pos1,1)   + posword1;
+        dec(pos1);
+          end;
+
+    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
+
+    posword2 := '';
+             pos1 := cursorpos +1 ;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
+          begin
+        posword2 := posword2 + copy(strline,pos1,1)  ;
+        inc(pos1);
+          end;
+
+      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
+
+
+       if  copy(strline,cursorpos+1,1) = ' '   // the letter after cursor is space
+              then
+   //      writeln('space, after, '  +  posword1 + posword2 + ' in line ' + inttostr(cursorline) )
+        if kind = 0 then
+         result := 'space, after, '  +  posword1 + posword2 + ', in line, ' + inttostr(cursorline+1)
+         else   result := 'space, after, '  +  posword1 + posword2
+
+   else
+   begin
+   //   writeln(copy(strline,cursorpos+1,1) + ', line, ' + inttostr(cursorline) + ' , position, ' + inttostr(length(posword1)+1) + ', in, ' +
+  // posword1 + posword2);
+     if kind = 0 then
+     result := copy(strline,cursorpos+1,1) +  ' , position, ' + inttostr(length(posword1)+1) + ', line, ' + inttostr(cursorline+1)+ ', in, ' +
+   posword1 + posword2 else
+      result := copy(strline,cursorpos+1,1) +  ' , position, ' + inttostr(length(posword1)+1) + ', in, ' +
+   posword1 + posword2
+
+   end;
+
+  //   writeln(result);
+
+end;
+}
+end;
+
+function  Tsak.WhatLine(sender : Tobject) : msestring;
+begin
+{
+               with sender as Tmemoedit do
+           begin
+                  sakcancel;
+          result := 'line, ' + inttostr(cursorline +1) + ', ' +  Lines[cursorline];
+
+           end;
+}
+end;
+
+function Tsak.WhatWord(sender : Tobject) : msestring ;
+var
+ strline, posword1, posword2 : string;
+ pos1 : integer;
+begin
+{
+            with sender as Tmemoedit do
+           begin
+                  sakcancel;
+          strline :=  Lines[cursorline];
+        posword1 := '';
+             pos1 := cursorpos -1;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
+          begin
+        posword1 := copy(strline,pos1,1)   + posword1;
+        dec(pos1);
+          end;
+
+    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
+
+    posword2 := '';
+             pos1 := cursorpos  ;
+        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
+          begin
+        posword2 := posword2 + copy(strline,pos1,1)  ;
+        inc(pos1);
+          end;
+
+      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
+
+            result := posword1 + posword2  ;
+
+end;
+}
+end;
+
+function TSak.WhatChange(Sender: TObject) : msestring;
 var
 stringtemp : msestring;
 begin
@@ -189,7 +364,7 @@ if (Sender is tbooleaneditradio) then
     Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
 end;
 
-function TSak.WhatChar(Sender: TObject; const info: keyeventinfoty): string;
+function TSak.WhatChar(Sender: TObject; const info: keyeventinfoty): msestring;
 
 procedure checkgrid();
  begin
@@ -223,8 +398,18 @@ begin
         Result := 'Enter';  
         end;
     
-      key_Backspace: Result := 'back space';
-      key_Backtab: Result := 'back tab';
+      key_Backspace: 
+begin  /// backspace
+      if (Sender is TMemoedit) or (Sender is Tstringedit) then
+    begin
+     //  writeln('before : ' + theword);
+      if length(theword) > 1 then   theword := copy(theword,1,length(theword)-1);
+     //  writeln('after : ' + theword);
+     end;
+       Result := 'back space';
+          end;
+
+     key_Backtab: Result := 'back tab';
 
       key_Up:
       begin
@@ -323,7 +508,7 @@ begin
   end;
 end;
 
-function TSak.WhatName(Sender: TObject): string;
+function TSak.WhatName(Sender: TObject): msestring;
 begin
 
   Result := '';
@@ -398,40 +583,44 @@ end;
 
 ////////////////////// Loading Procedure
 
-function SAKLoadLib(const eSpeakBin: filenamety;
+/// Load with custom espeak dir
+function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
                                       const eSpeakDataDir: filenamety): integer;
 begin
  Result := -1;
- if sak = nil then begin
-  sak:= TSAK.Create(nil);
- end;
- if (espeakdatadir = '') or directoryexists(eSpeakDataDir) then begin
+
+ if sak = nil then sak:= TSAK.Create();
+ if (espeakdatadir = '') or (directoryexists(tosysfilepath(eSpeakDataDir))) then
+ begin
   Result:= 0;
   sak.ES_DataDirectory:= tosysfilepath(eSpeakDataDir);
  end;
  if result = 0 then
  begin
  sak.ES_ExeFileName:= tosysfilepath(eSpeakBin);
+ sak.PA_LibFileName:= tosysfilepath(PortaudioLib);
+ sak.ES_LibFileName:= tosysfilepath(eSpeaklib);
+
  Result:= sak.loadlib;
  end;
- if result <> 0 then begin
-  freeandnil(sak);
- end;
+ if result <> 0 then freeandnil(sak);
+
 end;
 
 function SAKLoadLib(const sakitdir: filenamety = ''): integer;
 var
- ordir: filenamety;
- espeakbin,espeakdatadir: filenamety;
+ tmp : string;
+  ordir, sakini, espeakbin, espeaklib, portaudiolib, espeakdatadir : filenamety;
 const
+sakininame = 'sak.ini';
+
 {$ifdef mswindows}
- espeakstarter = 'espeak.bat';
  espeaklibdir = 'libwin32';
  espeakdefault = 'espeak.exe';
 {$else}
- espeakstarter = 'espeak.sh';
  espeakdefault = 'espeak';
 {$endif}
+
 {$if defined(linux) and  defined(cpu64)}
  espeaklibdir = 'liblinux64';
 {$endif}
@@ -443,7 +632,7 @@ const
 {$endif}
 {$if defined(freebsd) and defined(cpu86) } 
  espeaklibdir = 'libfreebsd32';
-{$endif}
+ {$endif}
 {$ifdef darwin}
  espeaklibdir = 'libmac32';
 {$endif}
@@ -458,39 +647,107 @@ begin
   ordir:= sakitdir;
  end;
 
- espeakbin:= ordir + espeakstarter;
+sakini := ordir + sakininame;
+ espeakbin:= ordir + WhatFile(sakini,0);
 
-  if fileexists(espeakbin) then
+ tmp := WhatFile(sakini,1);
+ if tmp <> '' then
+ portaudiolib:= ordir + tmp else  portaudiolib:= '';
+
+ espeaklib:= ordir + WhatFile(sakini,2);
+
+ tmp := WhatFile(sakini,2);
+ if tmp <> '' then
+ espeaklib:= ordir + tmp else  espeaklib:= '';
+
+tmp := WhatFile(sakini,3);
+ if (tmp = '/') or (tmp = './') then
+ espeakdatadir:= ordir else 
+if tmp = '../' then
+ espeakdatadir:= ExtractFilePath(ordir)
+else 
+ espeakdatadir:= tmp ;
+
+   if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
+ and ((findfile(espeaklib)) or (espeaklib = ''))
+ then
   begin
    Result:= 0;
+   espeakdatadir:= ordir ;
    {$ifdef unix}
-  fpchmod(espeakbin, S_IRWXU);
+ result := ChangePermission(espeakbin,true);
    {$endif}
   end
  else begin
-{$ifdef windows}
-  espeakbin:= ordir + '\sakit\'+espeaklibdir+'\'+espeakstarter;
-{$else}
-   espeakbin:= ordir + '/sakit/'+espeaklibdir+'/'+espeakstarter;
-{$endif}
-  if fileexists(espeakbin) then begin
+  sakini:= ordir +  directoryseparator +'sakit' + directoryseparator +
+  espeaklibdir + directoryseparator + sakininame;
+
+  espeakbin:= ordir + directoryseparator + 'sakit' + directoryseparator +
+  espeaklibdir+ directoryseparator + WhatFile(sakini, 0);
+
+  tmp := WhatFile(sakini,1);
+ if tmp <> '' then
+  portaudiolib:= ordir + directoryseparator + 'sakit' + directoryseparator +
+  espeaklibdir+ directoryseparator + tmp else  portaudiolib:= '';
+
+ tmp := WhatFile(sakini,2);
+ if tmp <> '' then
+ espeaklib:= ordir + directoryseparator + 'sakit' + directoryseparator +
+  espeaklibdir+ directoryseparator + tmp else  espeaklib:= '';
+
+ tmp := WhatFile(sakini,3);
+ if (tmp = '/') or (tmp = './') then
+ espeakdatadir:= ordir + directoryseparator + 'sakit' + directoryseparator +
+  espeaklibdir+ directoryseparator else 
+if tmp = '../' then
+ espeakdatadir:= ordir + directoryseparator + 'sakit' + directoryseparator
+else 
+ espeakdatadir:= tmp ;
+
+   if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
+   and ((findfile(espeaklib)) or (espeaklib = ''))   then
+ begin
     Result:= 0;
-     {$ifdef unix}
-   fpchmod(espeakbin, S_IRWXU);
+        {$ifdef unix}
+  result := ChangePermission(espeakbin,true);
     {$endif}
    end
   else begin
-//{$ifdef unix}
-//  if (fileexists('/usr/bin/espeak')) or (fileexists('/usr/local/bin/espeak')) then begin
-   espeakbin:= espeakdefault; //try to run default binary
-     Result:= 0;
-    end;
-//{$endif}
-  end;
- end;
+{$ifdef unix}
+  if (fileexists('/usr/bin/'+espeakdefault)) then begin
+  espeakbin:= '/usr/bin/'+espeakdefault;
+ result := 0;
+end else
+ if
+ (fileexists('/usr/local/bin/'+espeakdefault)) then
+begin
+  espeakbin:= '/usr/local/bin/'+espeakdefault;
+result := 0;
+end;
+ {$endif}
 
+{$ifdef windows}
+  if (fileexists('c:\Program Files (x86)\eSpeak\command_line\'+espeakdefault)) then
+begin
+  espeakbin:= 'c:\Program Files (x86)\eSpeak\command_line\'+espeakdefault;
+ result := 0;
+end else
+ if
+ (fileexists('c:\Program Files\eSpeak\command_line\'+espeakdefault)) then
+begin
+  espeakbin:= 'c:\Program Files\eSpeak\command_line\'+espeakdefault;
+result := 0;
+end;
+ {$endif}
+
+espeakdatadir:= '';
+portaudiolib:= '' ;
+
+end;
+ end;
+ 
  if result = 0 then begin
-  result:= sakloadlib(espeakbin,espeakdatadir);
+  result:= sakloadlib(espeakbin,espeaklib,portaudiolib,espeakdatadir);
  end;
 end;
 
@@ -569,7 +826,7 @@ end;
 procedure TSAK.dokeydown(const Sender: iassistiveclient; const info: keyeventinfoty);
 var
   WhatCh: msestring;
-  oldlang : string;
+  oldlang : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
 begin
   thetimer.Enabled := False;
@@ -743,7 +1000,6 @@ end;
 
 procedure TSAK.doactionexecute(const Sender: TObject; const info: actioninfoty);
 begin
-
 end;
 
 procedure TSAK.docellevent(const sender: iassistiveclient;
@@ -766,7 +1022,7 @@ begin
  }
 end;
 
-constructor TSAK.Create(const agrid: tstringgrid);
+constructor TSAK.Create();
 begin
         thetimer := ttimer.Create(nil);
         thetimer.interval := 500000;
@@ -783,24 +1039,116 @@ begin
 
 ///////////////// loading sak
 
-function TSAK.LoadLib: integer;
+function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
+///// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib)
 var
- str1: string = '' ;
+tf: textfile;
+ffinded : boolean ;
+dataf, whatfil : string;
+len : integer;
+scriptfile : string;
 begin
- result:= -1;
+ffinded := false;
+result := '';
 
- if (getprocessoutput(ES_ExeFileName+' --version','',str1,5000000,
+//writeln( 'sakini is ' + sakini);
+
+if findfile(sakini) then
+begin
+ scriptfile := tosysfilepath(sakini);
+  AssignFile(tf,pchar(scriptfile));
+   Reset(tF);
+
+   case what of
+    0: whatfil := 'BINESPEAK=';
+    1: whatfil := 'LIBPORTAUDIO=';
+    2: whatfil := 'LIBESPEAK=';
+    3: whatfil := 'DIRESPEAKDATA=';
+     end;
+
+  len := length(whatfil);
+  
+   while (eof(tf) = false) and (ffinded = false) do
+     begin
+       Readln(tF, dataf);
+    dataf := trim(dataf);
+
+    if  Pos(whatfil,dataf) > 0 then
+   begin
+    if  Pos('#',dataf) > 0 then  dataf := trim(copy(dataf,1, Pos('#',dataf)-1));
+     result := copy(dataf,Pos(whatfil,dataf)+ len , length(dataf)-len);
+  // writeln( 'Result is ' +  result);
+    ffinded := true;
+   end;
+     end;
+  CloseFile(tf);
+end;
+
+end;
+
+{$IF DEFINED(unix)}
+function ChangePermission(const thefile: filenamety = ''; raisemessage : boolean = true) : integer ;
+var
+info : stat;
+begin
+  result := 0;
+ if (FpStat(thefile,info{%H-})<>-1) and FPS_ISREG(info.st_mode) and
+             (BaseUnix.FpAccess(thefile,BaseUnix.X_OK)=0) then else
+ begin
+  if raisemessage = true then
+  begin
+  
+  if askok('Permission mode of file:' +lineend+ thefile
+   +lineend+ 'is not set as executable...'
+    +lineend+ 'Do you want to reset it?') then begin
+
+  fpchmod(thefile, S_IRWXU);
+  ///// => get error at compil
+// sys_setfilerights(thefile,[s_irusr,s_iwusr,s_ixusr,s_irgrp,s_ixgrp, s_iroth,s_ixoth]);
+
+   end else result := -1;
+  
+ end
+ else result := -1;
+
+end; 
+end;
+
+{$endif}
+
+function TSAK.LoadLib: integer;
+//var
+// str1: msestring = '' ;
+begin
+ {  
+result:= -1;
+if (getprocessoutput(ES_ExeFileName+' --version','',str1,5000000,
                                            [pro_shell,pro_inactive]) = 0) and
                    ((pos('eSpeak',str1) <> 0) or 
                     (pos('speak text-to-speech',str1) <> 0)) then begin 
+}
   result:= 0;
  
   AProcess := TProcess.Create(nil);
   AProcess.Executable :=
-  tosysfilepath(filepath(trim(sak.ES_ExeFileName), fk_file, True));
+  tosysfilepath(filepath(trim(ES_ExeFileName), fk_file, True));
   AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
   AProcess.FreeOnRelease;
-  
+
+   {$ifdef unix}
+  if trim(ES_LibFileName) <> '' then
+begin
+ AProcess.Environment.Text := 'LD_LIBRARY_PATH=' + tosysfilepath(ExtractFilePath(ES_LibFileName)) ;
+if trim(PA_LibFileName) <> '' then
+   AProcess.Environment.Text := AProcess.Environment.Text + ':' + tosysfilepath(ExtractFilePath(PA_LibFileName))
+
+end  else
+  if trim(PA_LibFileName) <> '' then
+   AProcess.Environment.Text := 'LD_PRELOAD=' + tosysfilepath(PA_LibFileName) ;
+{$endif}
+
+ AProcess.Executable :=  tosysfilepath(ES_ExeFileName);
+
   TheWord := '' ;
   TheSentence := '' ;
   TheLastSentence := '' ;
@@ -814,11 +1162,11 @@ begin
   espeak_Key('sak is working...');
 
   assistiveserver:= iassistiveserver(self); //sak is now operable
- end;
+// end;
 end;
 
 ////////////////////// Voice Config Procedures ///////////////
-function SAKSetVoice(gender: shortint; language: string ; speed: integer ; pitch: integer ; volume : integer ): integer;
+function SAKSetVoice(gender: shortint; language: msestring ; speed: integer ; pitch: integer ; volume : integer): integer;
 // gender => 1 = man / => 2 = woman => defaut -1 (man)
 // language => 'en' or 'pt' or 'ru'  => default 'en' => ''
 //  speed sets the speed in words-per-minute , Range 80 to 450. The default value is 175. => -1
@@ -844,13 +1192,12 @@ end;
 
 
 ////////////////////// Speecher Procedures ////////////////
-procedure TSAK.espeak_key(Text: string);
+procedure TSAK.espeak_key(Text: msestring);
 var
- params: string = '';
+ params: msestring = '';
 begin
-
    aprocess.Parameters.clear;
-  
+
 if (voice_gender <> '') or (voice_language <> '') then begin
   params:= params + '-v';
   if voice_language <> '' then begin
@@ -872,18 +1219,15 @@ if voice_speed <> -1 then AProcess.Parameters.Add('-s' + inttostr(voice_speed)) 
 if voice_pitch <> -1 then AProcess.Parameters.Add('-p' + inttostr(voice_pitch)) ;
 if voice_volume <> -1 then AProcess.Parameters.Add('-a' + inttostr(voice_volume)) ;
 
-  {$IF DEFINED(Windows)}
     if es_datadirectory <> ''  then
     AProcess.Parameters.Add('--path=' + ES_DataDirectory);
-      {$endif}  ;
-
+   
   AProcess.Parameters.Add('"' + Text + '"');
   AProcess.Execute;
-
 end;
 
 //// custom speecher procedure => to use also as extra-speecher
-function SAKSay(Text: string): integer;
+function SAKSay(Text: msestring): integer;
 begin
 Result := -1;
 if assigned(sak) then
@@ -910,8 +1254,7 @@ end;
 ///////////// Enabled procedure
 function SakIsEnabled(): boolean;
 begin
-  Result := isenabled;
-// result:= sak <> nil;
+result:= sak <> nil;
 end;
 
 finalization

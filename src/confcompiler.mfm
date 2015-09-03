@@ -4,6 +4,8 @@ object confcompilerfo: tconfcompilerfo
   bounds_y = 191
   bounds_cx = 694
   bounds_cy = 381
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
@@ -73,64 +75,82 @@ object confcompilerfo: tconfcompilerfo
     frame.colorclient = 16769279
     frame.caption = '${PASCALCOMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 18
+    bounds_y = 19
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     value = 'fpc'
     controller.filename = 'fpc'
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object ccompiler: tfilenameedit
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${CCOMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 1
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 18
+    bounds_y = 19
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object javacompiler: tfilenameedit
     Tag = 7
     frame.colorclient = 16777164
     frame.caption = '${JAVACOMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 2
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 172
+    bounds_y = 173
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tbutton1: tbutton
     taborder = 3
@@ -148,253 +168,313 @@ object confcompilerfo: tconfcompilerfo
     frame.colorclient = 16773854
     frame.caption = '${OTHERCOMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 4
     hint = 'Path to Other compiler'
     bounds_x = 191
-    bounds_y = 324
+    bounds_y = 325
     bounds_cx = 327
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object fpccompiler2: tfilenameedit
     Tag = 7
     frame.colorclient = 16769279
     frame.caption = '${PASCAL2COMPILER}'
     frame.localprops = [frl_colorframe, frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 5
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 60
+    bounds_y = 61
     bounds_cx = 329
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object fpccompiler3: tfilenameedit
     Tag = 7
     frame.colorclient = 16769279
     frame.caption = '${PASCAL3COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 6
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 100
+    bounds_y = 101
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object ccompiler2: tfilenameedit
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${C2COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 7
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 60
+    bounds_y = 61
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlabel1: tlabel
     taborder = 8
     bounds_x = 104
     bounds_y = 0
-    bounds_cy = 15
+    bounds_cy = 14
     caption = 'Pascal Compilers'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlabel3: tlabel
     taborder = 9
     bounds_x = 485
     bounds_y = 0
     bounds_cx = 71
-    bounds_cy = 15
+    bounds_cy = 14
     caption = 'C Compilers'
-    reffontheight = 15
+    reffontheight = 14
   end
   object ccompiler3: tfilenameedit
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${C3COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 10
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 100
+    bounds_y = 101
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlabel4: tlabel
     taborder = 11
     bounds_x = 121
     bounds_y = 153
     bounds_cx = 88
-    bounds_cy = 15
+    bounds_cy = 14
     caption = 'Java Compilers'
-    reffontheight = 15
+    reffontheight = 14
   end
   object javacompiler2: tfilenameedit
     Tag = 7
     frame.colorclient = 16777164
     frame.caption = '${JAVA2COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 12
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 215
+    bounds_y = 216
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object javacompiler3: tfilenameedit
     Tag = 7
     frame.colorclient = 16777164
     frame.caption = '${JAVA3COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 13
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 258
+    bounds_y = 259
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlabel5: tlabel
     taborder = 14
     bounds_x = 286
     bounds_y = 308
     bounds_cx = 97
-    bounds_cy = 15
+    bounds_cy = 14
     caption = 'Other Compilers'
-    reffontheight = 15
+    reffontheight = 14
   end
   object pythoncompiler: tfilenameedit
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${PYTHONCOMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 15
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 172
+    bounds_y = 173
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlabel6: tlabel
     taborder = 16
     bounds_x = 465
     bounds_y = 153
     bounds_cx = 105
-    bounds_cy = 15
+    bounds_cy = 14
     caption = 'Python Compilers'
-    reffontheight = 15
+    reffontheight = 14
   end
   object pythoncompiler2: tfilenameedit
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${PYTHON2COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 17
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 215
+    bounds_y = 216
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object pythoncompiler3: tfilenameedit
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${PYTHON3COMPILER}'
     frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 18
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 258
+    bounds_y = 259
     bounds_cx = 328
-    bounds_cy = 39
+    bounds_cy = 37
     controller.captionopen = 'Compiler path'
-    reffontheight = 15
+    reffontheight = 14
   end
 end

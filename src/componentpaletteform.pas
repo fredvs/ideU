@@ -21,7 +21,7 @@ unit componentpaletteform;
 interface
 uses
  msegui,mseclasses,mseforms,msetabs,msetoolbar,msegraphutils,msestat,mseguiglob,
- msedragglob;
+ msedragglob,msestrings;
 
 type
  tcomponentpalettefo = class(tdockform)
@@ -44,7 +44,7 @@ var
 
 implementation
 uses
- componentpaletteform_mfm,projectoptionsform,msedesignintf,mseshapes,
+ componentpaletteform_mfm,main,projectoptionsform,msedesignintf,mseshapes,
  mseactions,classes,mclasses,mseact,componentstore;
 
 procedure tcomponentpalettefo.componentpalettedragdrop(const sender: TObject;
@@ -125,7 +125,7 @@ begin
        options:= [mao_checkbox,mao_radiobutton];
        imagelist:= registeredcomponents.imagelist;
        imagenr:= icon;
-       hint:= classtyp.classname;
+       hint:= msestring(classtyp.classname);
        tagpointer:= classtyp;
       end;
      end;

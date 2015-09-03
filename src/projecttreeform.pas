@@ -22,11 +22,11 @@ unit projecttreeform;
 
 interface
 uses
-msesettings,
- mseforms,msewidgetgrid,mselistbrowser,msedatanodes,msetypes,msemenus,
- mseactions,msefiledialog,msestat,msegrids,msedesigner,
- msegraphutils,msegui,msestrings,mseact,mseguiglob,mseclasses,msebitmap,
- mseglob,msegraphics,msesys,msehash,msestringcontainer;
+ mseforms,msewidgetgrid,mselistbrowser,msedatanodes,msetypes,msemenus,mseevent,
+ mseactions,msefiledialog,msestat,msegrids,msedesigner,msedataedits,
+ msegraphutils,msegui,msestrings,mseact,mseguiglob,mseclasses,msebitmap,mseedit,
+ mseglob,msegraphics,msescrollbar,msesys,msehash,mseifiglob,msestringcontainer,
+ msevaluenodes;
 
 type
  projectnodety = (pnk_none,pnk_source,pnk_form,pnk_files,pnk_dir);
@@ -291,7 +291,7 @@ function isformfile(const aname: filenamety): boolean;
 implementation
 uses
  sysutils,projecttreeform_mfm,msefileutils,main,sourceform,msewidgets,
- sourceupdate,msemacros,projectoptionsform;
+ msedatalist,msedrag,sourceupdate,msemacros,projectoptionsform;
 type
  stringconsts = (
   pascalunits,       //0 Pascal Units
@@ -491,9 +491,9 @@ begin
   except
   end;
   if po1 <> nil then begin
-   fclasstype:= po1^.moduleclassname;
-   fformname:= po1^.instance.Name;
-   finstancevarname:= po1^.instancevarname;
+   fclasstype:= msestring(po1^.moduleclassname);
+   fformname:= msestring(po1^.instance.Name);
+   finstancevarname:= msestring(po1^.instancevarname);
   end
   else begin
    fclasstype:= '';
@@ -514,7 +514,8 @@ begin
  end;
 end;
 
-procedure tformnode.setfieldtext(const fieldindex: integer; var avalue: msestring);
+procedure tformnode.setfieldtext(const fieldindex: integer; 
+                                                var avalue: msestring);
 var
  n1: tfilesnode;
 begin
@@ -522,15 +523,17 @@ begin
  n1.removefilehash(self);
  case fieldindex of
   0: begin
-   fclasstype:= designer.changemoduleclassname(fpath,avalue);
+   fclasstype:= msestring(designer.changemoduleclassname(fpath,
+                                                       ansistring(avalue)));
    avalue:= fclasstype;
   end;
   1: begin
-   fformname:= designer.changemodulename(fpath,avalue);
+   fformname:= msestring(designer.changemodulename(fpath,ansistring(avalue)));
    avalue:= fformname;
   end;
   2: begin
-   finstancevarname:= designer.changeinstancevarname(fpath,avalue);
+   finstancevarname:= msestring(designer.changeinstancevarname(
+                                              fpath,ansistring(avalue)));
    avalue:= finstancevarname;
   end;
  end;
@@ -569,11 +572,16 @@ begin
   clear;
  end
  else begin
-  if fformfile = nil then begin
-   fformfile:= tformnode.create;
-   add(ttreelistitem(fformfile));
+  projecttreefo.projectedit.itemlist.beginupdate();
+  try
+   if fformfile = nil then begin
+    fformfile:= tformnode.create;
+    add(ttreelistitem(fformfile));
+   end;
+   fformfile.filename:= afilename;
+  finally
+   projecttreefo.projectedit.itemlist.endupdate();
   end;
-  fformfile.filename:= afilename;
  end;
  result:= fformfile;
  imagenr:= getcurrentimagenr;
@@ -607,43 +615,31 @@ function tfilesnode.addfile(const currentnode: tprojectnode;
 var
  n1: tprojectnode;
  ind1: integer;
- strtmp, strtmp2 : unicodestring ;
- pos1, len1, len2 : integer;
 begin
  result:= findfile(afilename);
  if result = nil then begin
-  projecttreefo.projectedit.itemlist.beginupdate;
-  n1:= currentnode;
-  if n1 <> nil then begin
-   ind1:= n1.count;
-  end;  
-  while (n1 <> nil) and (n1.fkind <> pnk_dir) do begin
-   ind1:= n1.parentindex;
-   n1:= tprojectnode(n1.parent);
+  projecttreefo.projectedit.itemlist.beginupdate();
+  try
+   n1:= currentnode;
+   if n1 <> nil then begin
+    ind1:= n1.count;
+   end;  
+   while (n1 <> nil) and (n1.fkind <> pnk_dir) do begin
+    ind1:= n1.parentindex;
+    n1:= tprojectnode(n1.parent);
+   end;
+   if (n1 = nil) then begin
+    n1:= self;
+    ind1:= count;   
+   end;
+   result:= createnode;   
+   n1.insert(ind1,result);
+   result.filename:= afilename;
+   fhashlist.add(result.fpath,result);
+   inc(fchangedcount);
+  finally
+   projecttreefo.projectedit.itemlist.endupdate();
   end;
-  if (n1 = nil) then begin
-   n1:= self;
-   ind1:= count;   
-  end;
-  result:= createnode;   
-  n1.insert(ind1,result);
-  
-  // fred  
-    if msePosEx(TheProjectDirectory,afilename) > 0 then
-    begin
-    // for clarity => used variables...
-    pos1 := msePosEx(TheProjectDirectory,afilename) ; 
-    len1 := length(TheProjectDirectory) ;
-    len2 := length(afilename) ;
-    strtmp := trim(copy(afilename,pos1 + len1, len2 - len1)) ; // all after
-    strtmp2 := '${PROJECTDIR}/' + strtmp ;
-    end else strtmp2 := afilename; 
-  
-  //result.filename:= afilename;
-  result.filename:= strtmp2;
-  fhashlist.add(result.fpath,result);
-  inc(fchangedcount);
-  projecttreefo.projectedit.itemlist.endupdate;
  end;
 end;
 
@@ -664,13 +660,12 @@ end;
 procedure tfilesnode.addfiles(const currentnode: tprojectnode;
                                      const afilenames: filenamearty);
 var
- int1 : integer;
+ int1: integer;
 begin
  beginupdate;
  try
   for int1:= 0 to high(afilenames) do begin
-  
-  addfile(currentnode,afilenames[int1]);
+   addfile(currentnode,afilenames[int1]);
   end;
  finally
   endupdate;

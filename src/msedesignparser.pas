@@ -18,7 +18,7 @@ unit msedesignparser;
 {$ifdef FPC}{$mode objfpc}{$h+}{$interfaces corba}{$endif}
 interface
 uses
- mseglob,mselist,mseparser,msetypes,typinfo,msestrings,
+ mseglob,msedatalist,mselist,mseparser,msetypes,typinfo,msestrings,
  msearrayutils;
  
 type
@@ -1035,7 +1035,7 @@ begin
  ar1:= matchmethod(atype,managed);
  setlength(result,length(ar1));
  for int1:= 0 to high(ar1) do begin
-  result[int1]:= getitempo(ar1[int1])^.name;
+  result[int1]:= msestring(getitempo(ar1[int1])^.name);
  end;
 end;
 

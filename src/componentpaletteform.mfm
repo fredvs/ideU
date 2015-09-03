@@ -3,8 +3,9 @@ object componentpalettefo: tcomponentpalettefo
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
   frame.dummy = 0
-  bounds_x = 403
-  bounds_y = 391
+  visible = False
+  bounds_x = 131
+  bounds_y = 289
   bounds_cx = 738
   bounds_cy = 69
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -113,7 +114,7 @@ object componentpalettefo: tcomponentpalettefo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 728
-    bounds_cy = 19
+    bounds_cy = 18
     bounds_cymin = 15
     anchors = [an_top]
     statfile = mainfo.projectstatfile
@@ -121,6 +122,6 @@ object componentpalettefo: tcomponentpalettefo
     options = [tabo_dragsource, tabo_dragdest]
     left = 128
     top = 72
-    reffontheight = 15
+    reffontheight = 14
   end
 end

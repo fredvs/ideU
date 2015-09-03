@@ -1,16 +1,16 @@
 object findinfileadialogfo: tfindinfiledialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 378
-  bounds_y = 291
+  bounds_x = 268
+  bounds_y = 415
   bounds_cx = 339
-  bounds_cy = 264
+  bounds_cy = 251
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.bounds = (
     0
     0
     339
-    264
+    251
   )
   options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
@@ -21,21 +21,21 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.button.color = -2147483646
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     bounds_x = 8
-    bounds_y = 8
+    bounds_y = 9
     bounds_cx = 321
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 14
   end
   object dir: tfilenameedit
     frame.caption = '&Directory'
@@ -43,38 +43,38 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 1
     onshowhint = dirshowhint
     bounds_x = 8
-    bounds_y = 119
+    bounds_y = 113
     bounds_cx = 321
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
     controller.options = [fdo_directory]
     controller.ongetfilename = dirgetfilenameexe
     controller.onbeforeexecute = dironbeforeexecute
-    reffontheight = 15
+    reffontheight = 14
   end
   object mask: thistoryedit
     frame.caption = '&File Mask'
     frame.button.color = -2147483646
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 2
     bounds_x = 8
-    bounds_y = 170
+    bounds_y = 161
     bounds_cx = 321
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     value = '"*.pas" "*.pp" "*.inc"'
@@ -82,13 +82,13 @@ object findinfileadialogfo: tfindinfiledialogfo
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 14
   end
   object tlayouter1: tlayouter
     taborder = 3
-    bounds_x = 21
+    bounds_x = 0
     bounds_y = 48
-    bounds_cx = 160
+    bounds_cx = 154
     bounds_cy = 66
     optionsscale = [osc_expandx, osc_shrinkx]
     linkright = tlayouter2
@@ -97,59 +97,40 @@ object findinfileadialogfo: tfindinfiledialogfo
       frame.dummy = 0
       frame.outerframe = (
         0
-        2
-        127
+        1
+        133
         2
       )
-      bounds_x = 9
-      bounds_y = 46
-      bounds_cx = 140
-      bounds_cy = 17
+      bounds_x = 8
+      bounds_y = 40
+      bounds_cx = 146
+      bounds_cy = 16
       statfile = statfile1
       onchange = chaindirectories
       value = True
     end
-    object inselectedfile: tbooleaneditradio
-      frame.caption = 'Search in &edited file'
+    object casesensitive: tbooleanedit
+      frame.caption = 'c&asesensitive'
       frame.dummy = 0
       frame.outerframe = (
         0
-        2
-        123
+        1
+        88
         2
       )
       taborder = 1
-      bounds_x = 9
-      bounds_y = 6
-      bounds_cx = 136
-      bounds_cy = 17
+      bounds_x = 8
+      bounds_y = 16
+      bounds_cx = 101
+      bounds_cy = 16
       statfile = statfile1
-      onchange = chaindirectories
-    end
-    object inopenfiles: tbooleaneditradio
-      Tag = 1
-      frame.caption = 'Search in all &open files'
-      frame.dummy = 0
-      frame.outerframe = (
-        0
-        2
-        138
-        2
-      )
-      taborder = 2
-      bounds_x = 9
-      bounds_y = 26
-      bounds_cx = 151
-      bounds_cy = 17
-      statfile = statfile1
-      onchange = chainopenfiles
     end
   end
   object tlayouter2: tlayouter
     taborder = 4
-    bounds_x = 181
+    bounds_x = 154
     bounds_y = 48
-    bounds_cx = 129
+    bounds_cx = 166
     bounds_cy = 66
     optionsscale = [osc_expandx, osc_shrinkx]
     object wholeword: tbooleanedit
@@ -157,39 +138,41 @@ object findinfileadialogfo: tfindinfiledialogfo
       frame.dummy = 0
       frame.outerframe = (
         0
-        2
-        72
+        1
+        73
         2
       )
-      bounds_x = 35
-      bounds_y = 39
-      bounds_cx = 85
-      bounds_cy = 17
+      bounds_x = 8
+      bounds_y = 16
+      bounds_cx = 86
+      bounds_cy = 16
       statfile = statfile1
     end
-    object casesensitive: tbooleanedit
-      frame.caption = 'c&asesensitive'
+    object inopenfiles: tbooleaneditradio
+      Tag = 1
+      frame.caption = 'Search in all &open files'
       frame.dummy = 0
       frame.outerframe = (
         0
-        2
-        82
+        1
+        145
         2
       )
       taborder = 1
-      bounds_x = 34
-      bounds_y = 11
-      bounds_cx = 95
-      bounds_cy = 17
+      bounds_x = 8
+      bounds_y = 40
+      bounds_cx = 158
+      bounds_cy = 16
       statfile = statfile1
+      onchange = chainopenfiles
     end
   end
   object tlayouter4: tlayouter
     taborder = 5
     bounds_x = 0
-    bounds_y = 223
+    bounds_y = 208
     bounds_cx = 339
-    bounds_cy = 31
+    bounds_cy = 30
     anchors = [an_top]
     optionsscale = [osc_expandy, osc_shrinky]
     optionslayout = [lao_aligny]
@@ -199,10 +182,10 @@ object findinfileadialogfo: tfindinfiledialogfo
       frame.framei_bottom = 5
       frame.localprops = [frl_fitop, frl_fibottom]
       frame.dummy = 0
-      bounds_x = 222
+      bounds_x = 218
       bounds_y = 0
-      bounds_cx = 115
-      bounds_cy = 31
+      bounds_cx = 119
+      bounds_cy = 30
       anchors = [an_top, an_right]
       optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
       optionslayout = [lao_placex, lao_aligny]
@@ -214,8 +197,8 @@ object findinfileadialogfo: tfindinfiledialogfo
       object ok: tbutton
         bounds_x = 5
         bounds_y = 5
-        bounds_cx = 50
-        bounds_cy = 21
+        bounds_cx = 52
+        bounds_cy = 20
         anchors = [an_top, an_right]
         state = [as_default, as_localdefault, as_localcaption]
         caption = 'OK'
@@ -223,10 +206,10 @@ object findinfileadialogfo: tfindinfiledialogfo
       end
       object cancel: tbutton
         taborder = 1
-        bounds_x = 60
+        bounds_x = 62
         bounds_y = 5
-        bounds_cx = 50
-        bounds_cy = 21
+        bounds_cx = 52
+        bounds_cy = 20
         anchors = [an_top, an_right]
         state = [as_localcaption]
         caption = 'Cancel'
@@ -238,15 +221,15 @@ object findinfileadialogfo: tfindinfiledialogfo
       frame.dummy = 0
       frame.outerframe = (
         0
-        2
-        137
+        1
+        142
         2
       )
       taborder = 1
-      bounds_x = 22
-      bounds_y = 7
-      bounds_cx = 150
-      bounds_cy = 17
+      bounds_x = 8
+      bounds_y = 8
+      bounds_cx = 155
+      bounds_cy = 16
       statfile = statfile1
     end
   end

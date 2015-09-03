@@ -29,7 +29,7 @@ object commandlinefo: tcommandlinefo
     anchors = []
     optionsedit1 = [oe1_multiline, oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-    reffontheight = 15
+    reffontheight = 14
   end
   object c: tstringcontainer
     strings.data = (

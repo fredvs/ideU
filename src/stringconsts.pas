@@ -2,7 +2,7 @@ unit stringconsts;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseglob,mseapplication,mseclasses,msedatamodules,msestringcontainer;
+ mseglob,mseapplication,mseclasses,msedatamodules,msestringcontainer,msestrings;
 
 type
  tstringconstsmo = class(tmsedatamodule)

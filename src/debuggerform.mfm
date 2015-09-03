@@ -1,12 +1,15 @@
 object debuggerfo: tdebuggerfo
+  frame.localprops = []
+  frame.localprops1 = []
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
-  frame.dummy = 0
   visible = False
-  bounds_x = 186
-  bounds_y = 204
+  bounds_x = 371
+  bounds_y = 385
   bounds_cx = 821
   bounds_cy = 63
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
@@ -76,6 +79,8 @@ object debuggerfo: tdebuggerfo
   object commander: ttoolbar
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_destroywidgets, ow_timedhint]
     color = -2147483645
+    frame.localprops = []
+    frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 811

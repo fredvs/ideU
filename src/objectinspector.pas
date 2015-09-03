@@ -21,7 +21,7 @@ unit objectinspector;
 interface
 
 uses
- mseforms,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
+ mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
@@ -156,7 +156,6 @@ type
    function candragsource(const apos: pointty; var row: integer): boolean;
    function candragdest(const apos: pointty; var row: integer): boolean;
    procedure rereadprops;
-   procedure showmethodsource(const aeditor: tmethodpropertyeditor);
   protected
    procedure updatecompselection;
    procedure updatedefaultstate(const aindex: integer);
@@ -175,6 +174,7 @@ type
    destructor destroy; override;
    procedure refresh;
    procedure clickedcomponentchanged(const aclickedcomp: tcomponent);
+   procedure showmethodsource(const aeditor: tmethodpropertyeditor);
 
    //idesignnotification
    procedure itemdeleted(const adesigner: idesigner;
@@ -238,7 +238,7 @@ var
 implementation
 uses
  objectinspector_mfm,sysutils,msearrayprops,actionsmodule,
- msebitmap,msedrag,mseeditglob,msedropdownlist,
+ msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist,
  sourceupdate,sourceform,msekeyboard,main,msedatalist,msecolordialog;
 
 const
@@ -298,7 +298,12 @@ var
  item1: tpropertyitem;
 begin
  if aitem.feditor <> nil then begin
-  aitem.expanded:= true; //else root item
+  try
+   aitem.expanded:= true; //else root item
+  except
+   aitem.expanded:= false; //probably multiselection with less items
+   exit;
+  end;
  end;
  for int1:= 0 to fcount - 1 do begin
   with tproppathinfo(fitems[int1]) do begin
@@ -408,8 +413,8 @@ begin
   cols[0].clear;
   for int1:= 0 to count-1 do begin
    with itempo(int1)^ do begin
-    cols[0].add(designer.getcomponentdispname(instance)+
-          ' ('+designer.getclassname(instance)+')');
+    cols[0].add(msestring(designer.getcomponentdispname(instance))+
+          ' ('+msestring(designer.getclassname(instance))+')');
    end;
   end;
  end;
@@ -567,7 +572,8 @@ begin
  node:= tpropertyvalue.create(sender);
 end;
 
-procedure tobjectinspectorfo.showmethodsource(const aeditor: tmethodpropertyeditor);
+procedure tobjectinspectorfo.showmethodsource(
+                                   const aeditor: tmethodpropertyeditor);
 begin
  if aeditor.method.data <> nil then begin
   sourcefo.showsourcepos(sourceupdater.findmethodpos(aeditor.method,true),true);
@@ -579,10 +585,11 @@ procedure tobjectinspectorfo.valuesonmouseevent(const sender: twidget;
 begin
  if sender.isdblclick(info) then begin
   with tpropertyitem(props.item) do begin
-   if feditor is tmethodpropertyeditor then begin
-    if not values.edited or values.checkvalue then begin
-     showmethodsource(tmethodpropertyeditor(feditor));
-    end;
+//   if feditor is tmethodpropertyeditor then begin
+   if not values.edited or values.checkvalue then begin
+    feditor.valueeditor.navigevent();
+//     showmethodsource(tmethodpropertyeditor(feditor));
+//    end;
    end;
   end;
  end;
@@ -660,7 +667,8 @@ procedure tobjectinspectorfo.moduleactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
  factmodule:= amodule;
- caption:= actionsmo.c[ord(ac_objectinspector)] + ' (' + amodule.Name+')';
+ caption:= actionsmo.c[ord(ac_objectinspector)] + ' (' + 
+                                        msestring(amodule.Name)+')';
  updatecomponentname;
 // clear;
 end;
@@ -745,7 +753,8 @@ begin
     end;
     fillchar(result[int1],length(edar1)*sizeof(result[0]),0);
     result[int1]:= trecordpropertyeditor.create(designer,amodule,acomponent,
-         iobjectinspector(self),copy(str1,1,int2-2),reviseproperties(edar1));
+                      iobjectinspector(self),ansistring(copy(str1,1,int2-2)),
+                                                      reviseproperties(edar1));
     int1:= int3;
    end
    else begin
@@ -1167,10 +1176,10 @@ begin
  if instance <> nil then begin
   if (factmodule <> nil) and not factmodule.checkowned(instance) and 
           (factmodule <> instance) and (instance.owner <> nil) then begin
-   result:=  instance.owner.name+'.';
+   result:=  msestring(instance.owner.name)+'.';
   end;
-  result:= result + designer.getcomponentdispname(instance) +
-                  ' (' + designer.getclassname(instance)+')';
+  result:= result + msestring(designer.getcomponentdispname(instance)) +
+                  ' (' + msestring(designer.getclassname(instance))+')';
  end;
 end;
 
@@ -1192,7 +1201,8 @@ begin
     cols[0].count:= po1^.components.count;
     for int1:= 0 to cols[0].count-1 do begin
      with fcomponentnames[int1] do begin
-      cols[0][int1]:= dispname + ' (' + designer.getclassname(instance)+')';
+      cols[0][int1]:= msestring(dispname) + ' (' + 
+                             msestring(designer.getclassname(instance))+')';
       if cols[0][int1] = str1 then begin
        int2:= int1;
       end;
@@ -1376,9 +1386,12 @@ begin
     edit;
    end
    else begin
+    feditor.valueeditor.navigevent();
+   {
     if (feditor is tmethodpropertyeditor) then begin
      showmethodsource(tmethodpropertyeditor(feditor));
     end;
+   }
    end;
   end;
  end;

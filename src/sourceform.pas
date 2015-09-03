@@ -219,28 +219,29 @@ begin
   if length(ar2) > 1 then begin
    splitstring(ar2[0],ar3,msechar(','));
    if (high(ar3) >= 0) then begin
-    if startsstr(' Error:',ar2[1]) or startsstr(' Fatal:',ar2[1]) then begin
+    if msestartsstr(' Error:',ar2[1]) or 
+                    msestartsstr(' Fatal:',ar2[1]) then begin
      alevel:= el_error;
     end
     else begin
-     if startsstr(' Warning:',ar2[1]) then begin
+     if msestartsstr(' Warning:',ar2[1]) then begin
       alevel:= el_warning;
      end
      else begin
-      if startsstr(' Note:',ar2[1]) then begin
+      if msestartsstr(' Note:',ar2[1]) then begin
        alevel:= el_note;
       end
       else begin
-       if startsstr(' Hint:',ar2[1]) then begin
+       if msestartsstr(' Hint:',ar2[1]) then begin
         alevel:= el_hint;
        end;
       end;
      end;
     end;
-    if trystrtointmse(ar3[0],row) then begin
+    if trystrtoint(ar3[0],row) then begin
      dec(row);
      if high(ar3) >= 1 then begin
-      if trystrtointmse(ar3[1],col) then begin
+      if trystrtoint(ar3[1],col) then begin
        dec(col);
        result:= true;
       end;
@@ -283,9 +284,9 @@ begin
     end;
    end;
    if alevel <> el_none then begin
-    if trystrtointmse(ar1[1],row) then begin
+    if trystrtoint(ar1[1],row) then begin
      dec(row);
-     if trystrtointmse(ar1[2],col) then begin
+     if trystrtoint(ar1[2],col) then begin
       dec(col);
      end
      else begin

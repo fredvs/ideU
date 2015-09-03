@@ -15,9 +15,12 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 }
 unit msesettings;
+
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
+ fpg_iniutils_ideu,
  mseglob,mseguiglob,msegui,mseclasses,mseforms,msestat,msestatfile,
  msesimplewidgets,msefiledialog,msestrings,msemacros,msedataedits,msebitmap,
  msedatanodes,mseedit,mseevent,msegraphutils,msegrids,mselistbrowser,msemenus,
@@ -32,6 +35,8 @@ type
                    sma_exeext,sma_target,sma_targetosdir, sma_fpguidir,
                     sma_ideudir, sma_docviewdir, sma_projectdir);
 const
+
+ ispyv = 1 ;
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
                       'mselibdir','syntaxdefdir','templatedir','compstoredir','compiler','debugger',
@@ -52,13 +57,15 @@ const
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
                  'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','');
   {$endif}
-  
+ 
   {$ifdef freebsd}
-  defaultsettingmacros: array[settingsmacroty] of msestring = (
-                 '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-freebsd','freebsd','','','${IDEUDIR}docview/','');
-  {$endif}
+ defaultsettingmacros: array[settingsmacroty] of msestring = (
+                 '/usr/local/lib/fpc/2.6.4/','/usr/local/lib/fpc/2.6.4/units/x86_64-freebsd/',
+                 '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
+                '/usr/local/share/ideu/templates/','${MSEDIR}apps/ide/compstore/',
+               'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','freebsd',
+               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','');
+   {$endif}
   
   
   {$else}
@@ -80,7 +87,14 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                 'ppc386','gdb','','i386-freebsd','freebsd','','','${IDEUDIR}docview/','');
+                   'ppc386','gdb','','i386-freebsd','freebsd','','','${IDEUDIR}docview/','');
+  // ancien
+ //  defaultsettingmacros: array[settingsmacroty] of msestring = (
+ //                '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
+ //               '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+ //                'ppcx64','gdb','','x86_64-freebsd','freebsd','','','${IDEUDIR}docview/','');
+
+  
    {$endif}
   
   
@@ -138,6 +152,9 @@ type
    fshortcutcontroller: tshortcutcontroller;
   protected
    function widgetstomacros: settingsmacrosty;
+   public
+     destructor destroy; override;
+
  end;
 
 var
@@ -216,6 +233,7 @@ begin
   filer.updatevalue('globmacronames',globmacronames); 
   filer.updatevalue('globmacrovalues',globmacrovalues); 
  end;
+  
 end;
 
 function editsettings(const acaption: msestring = '';
@@ -255,23 +273,60 @@ procedure tsettingsfo.formoncreate(const sender: TObject);
 begin
  with settings,macros do begin
   fpcdir.value:= macros[sma_fpcdir];
-  docviewdir.value := macros[sma_docviewdir];
-  fpguidir.value:= macros[sma_fpguidir];  
   fpclibdir.value:= macros[sma_fpclibdir];
   msedir.value:= macros[sma_msedir];
+  docviewdir.value := macros[sma_docviewdir]; 
   mselibdir.value:= macros[sma_mselibdir];
   syntaxdefdir.value:= macros[sma_syntaxdefdir];
   templatedir.value:= macros[sma_templatedir];
-  compstoredir.value:= macros[sma_compstoredir];
-  compiler.value:= macros[sma_compiler];
+  targetosdir.value:= macros[sma_targetosdir];
+   compiler.value:= macros[sma_compiler];
+   {
+   fpcdir.value := gINI.ReadString('Path', 'fpc_dir', '/usr/local/share/fpc/2.6.4/');
+   fpclibdir.value := gINI.ReadString('Path', 'fpclib_dir', '/usr/local/share/fpc/2.6.4/units/x86_64-freebsd/');
+   fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
+   docviewdir.value := gINI.ReadString('Path', 'docview_dir', '/usr/local/share/docview/');
+    msedir.value := gINI.ReadString('Path', 'mse_dir', '/usr/local/share/msegui/');
+    mselibdir.value := gINI.ReadString('Path', 'mselib_dir', '/usr/local/share/msegui/lib/common/');
+   syntaxdefdir.value := gINI.ReadString('Path', 'syntaxdef_dir', '/usr/local/share/ideu/syntaxdefs/');
+   templatedir.value := gINI.ReadString('Path', 'template_dir', '/usr/local/share/ideu/templates/'); 
+   targetosdir.value := gINI.ReadString('Target', 'osdir', 'freebsd'); 
+    compiler.value:= gINI.ReadString('Path', 'compiler', '/usr/local/share/fpc/2.6.4/ppcx64');
+  }
+  
+  if ispyv = 1 then
+  begin
+   fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
+   end else
+  begin
+   fpguidir.value:= macros[sma_fpguidir];  
+   end;
+ 
+  compstoredir.value:= macros[sma_compstoredir]; 
   debugger.value:= macros[sma_debugger];
   exeext.value:= macros[sma_exeext];
   target.value:= macros[sma_target];
-  targetosdir.value:= macros[sma_targetosdir];
   printcomm.value:= printcommand;
   macroname.gridvalues:= globmacronames;
   macrovalue.gridvalues:= globmacrovalues;
  end;
+end;
+
+destructor tsettingsfo.destroy;
+begin
+ if ispyv = 1 then
+     begin
+    gINI.writeString('Path', 'fpc_dir', fpcdir.value);
+    gINI.writeString('Path', 'fpclib_dir', fpclibdir.value);
+    gINI.writeString('Path', 'fpgui_dir',fpguidir.value);
+    gINI.writeString('Path', 'docview_dir',docviewdir.value);
+    gINI.writeString('Path', 'mse_dir', msedir.value);
+    gINI.writeString('Path', 'mselib_dir', mselibdir.value);
+    gINI.writeString('Path', 'syntaxdef_dir',syntaxdefdir.value);
+    gINI.writeString('Path', 'template_dir',templatedir.value);
+    gINI.writeString('Target', 'osdir', targetosdir.value);  
+  end;
+ inherited;
 end;
 
 function tsettingsfo.widgetstomacros: settingsmacrosty;

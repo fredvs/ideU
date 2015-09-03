@@ -29,16 +29,17 @@ unit main;
 interface
 
 uses
- plugmanager, fpg_iniutils_ideu, msesettings, msetimer,
+ plugmanager, fpg_iniutils_ideu, msetimer,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,
  msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
  classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,sysutils,msesysenv,
- msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob,
+ msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob, msestream,
  mseprocmonitorcomp,msesystypes,mserttistat,
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
 const
+ ispyv = 1 ;
  versiontext = '0.2';
  idecaption = 'ideU';
  statname = 'ideu';
@@ -89,14 +90,14 @@ type
   cfiles,             //41 C program files
   str_newproject,     //42 New Project
   cannotstartprocess, //43 Can not start process
-  aprocess,            //44 Process
+  process,            //44 Process
   running3,           //45 running.
   processterminated,  //46 Process terminated
   proctermnormally,   //47 Process terminated normally.
   makeerror,          //48 Make ***ERROR***
   makeok,             //49 Make OK.
   str_sourcechanged,  //50 Source has changed, do you wish to remake project?
-  loadwindowlayout,   //51 Load Window Layout
+  str_loadwindowlayout,   //51 Load Window Layout
   dockingarea         //52 Docking Area
  );
 
@@ -301,7 +302,6 @@ type
    customoption : integer;
    setcompiler : integer;
    settypecompiler : integer;
-   
    factivedesignmodule: pmoduleinfoty;
    fprojectloaded: boolean;
    errorformfilename: filenamety;
@@ -335,6 +335,9 @@ type
    function openproject(const aname: filenamety;
                              const ascopy: boolean = false): boolean;
    procedure saveproject(aname: filenamety; const ascopy: boolean = false);
+   procedure savewindowlayout(const astream: ttextstream);
+   procedure loadwindowlayout(const astream: ttextstream);
+
    procedure sourcechanged(const sender: tsourcepage);
    function opensource(const filekind: filekindty; const addtoproject: boolean;
                         const aactivate: boolean = true;
@@ -377,7 +380,10 @@ var
 procedure handleerror(const e: exception; const text: string);
 implementation
 uses
- regwidgets,regeditwidgets,regdialogs,regkernel,regprinter,
+  // fred
+ confmsegui, conffpgui, confcompiler, confideu,
+ 
+  regwidgets,regeditwidgets,regdialogs,regkernel,regprinter,
  toolhandlermodule,
 {$ifndef mse_no_math}
  regmath,regmm,
@@ -401,19 +407,17 @@ uses
  {$ifdef morecomponents}
   {$include regcomponents.inc}
  {$endif}
- // fred
- confmsegui, conffpgui, confcompiler, confideu,
- 
- mseparser,msesysintf,memoryform,msedrawtext,
+
+ mseparser,msesysintf,memoryform,msedrawtext,mseformatstr,
  main_mfm,sourceform,watchform,breakpointsform,stackform,
- guitemplates,projectoptionsform,make,
- skeletons,mseact,
+ guitemplates,projectoptionsform,make,msepropertyeditors,
+ skeletons,msedatamodules,mseact,
  mseformdatatools,mseshapes,msefileutils,mseeditglob,
  findinfileform,formdesigner,sourceupdate,actionsmodule,programparametersform,
- objectinspector,msesysutils,msestream,cpuform,disassform,
+ objectinspector,msesysutils,cpuform,disassform,
  panelform,watchpointsform,threadsform,targetconsole,
  debuggerform,componentpaletteform,componentstore,
- messageform, symbolform
+ messageform,msesettings,mseintegerenter,symbolform
  {$ifdef unix},mselibc {$endif}, //SIGRT*
  mseprocutils
  {$ifdef mse_dumpunitgroups},dumpunitgroups{$endif};
@@ -485,7 +489,7 @@ begin
  mainmenu1.menu.deleteitembynames(['file','new','form','pascform']);
 {$endif}
 
-  loadconfigform(sender);
+ loadconfigform(sender)
  
 // sakloadlib;
 end;
@@ -507,12 +511,22 @@ visible := false;
 options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
 fo_savepos,fo_savezorder,fo_savestate];
 
+if ispyv = 0 then
+begin
 templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/helloideu.prj' ;
- 
  mainfo.openproject(templatepath);
-visible := true; 
-thetimer.interval := 2500000 ;
+ thetimer.interval := 2500000 ;
  thetimer.enabled := true;
+end else
+begin
+templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
+ mainfo.openproject(templatepath);
+  gINI.WriteBool('General', 'FirstLoad', false) ;
+ thetimer.free;
+ 
+end; 
+
+visible := true; 
 end else
 begin
  thetimer.free;
@@ -531,6 +545,7 @@ componentpalettefo.visible := false;
 objectinspectorfo.visible := false;
 visible := true;
 end;
+if ispyv = 1 then top := 56 ;
 end;
 
 procedure tmainfo.loadconfigform(const sender: TObject);
@@ -546,8 +561,8 @@ procedure tmainfo.ideureadconfig();
 var
 libpath : string;
 begin
- 
-   {$IFDEF Windows}
+
+  {$IFDEF Windows}
      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext.exe' ;
     {$endif}
     
@@ -556,9 +571,14 @@ begin
     {$endif}
       
     {$IFDEF freebsd}
-     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext' ;
+    if ispyv = 0 then
+     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext'
+     else 
+       libpath :=  '/usr/local/share/designer_ext/designer_ext'
+    ;
     {$endif}
-       
+    
+    
   conffpguifo.fpguidesigner.value := gINI.ReadString('Path', 'designer_fpGUI', libpath);
   
   conffpguifo.ifloadfile.value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', true);
@@ -573,8 +593,6 @@ begin
   conffpguifo.ifquit.value := gINI.ReadBool('ifquit', 'designer_fpGUI', true);
   conffpguifo.edquit.text := gINI.ReadString('edquit', 'designer_fpGUI', 'quit');
     
-  confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
-  confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
   confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
   
   confcompilerfo.javacompiler.value  := gINI.ReadString('java', 'compiler1', '');
@@ -588,21 +606,35 @@ begin
   confcompilerfo.pythoncompiler.value  := gINI.ReadString('python', 'compiler1', '');
   confcompilerfo.pythoncompiler2.value  := gINI.ReadString('python', 'compiler2', '');
   confcompilerfo.pythoncompiler3.value  := gINI.ReadString('python', 'compiler3', '');
-  
-  
-  conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', true); 
+   
+  conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', false); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
   
   confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
+  
+  if ispyv = 1 then
+  begin
+    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/2.6.4/ppcx64');
+   confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.1.1/ppcx64');
+
+  end else begin
+    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
+    confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
+  end;
     
      {$ifdef windows}
    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin\sakit'); 
          {$else}
-   confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin/sakit');  
+            if ispyv = 0 then
+    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin/sakit')
+    else
+    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share')
+    ;  
          {$endif}
          
  if  confideufo.tbassistive.value = true then doassistive;
   
+ 
   case gINI.ReadInteger('General', 'WarnChange', 2) of
  0 : begin
  confideufo.tbfilereload0.value := true;
@@ -671,8 +703,8 @@ begin
    gINI.writeString('python', 'compiler1', confcompilerfo.pythoncompiler.value);
    gINI.writeString('python', 'compiler2', confcompilerfo.pythoncompiler2.value);
    gINI.writeString('python', 'compiler3', confcompilerfo.pythoncompiler3.value);
-    
-  if confideufo.tbfilereload0.value = true then
+   
+   if confideufo.tbfilereload0.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
   if confideufo.tbfilereload1.value = true then
   gINI.WriteInteger('General', 'WarnChange', 1) else
@@ -1351,11 +1383,12 @@ begin
  end;
 end;
 
-procedure tmainfo.gdbserverexe(const sender: tguiapplication; var again: boolean);
+procedure tmainfo.gdbserverexe(const sender: tguiapplication; 
+                                                    var again: boolean);
 begin
  sys_schedyield;
  if timeout(fgdbservertimeout) and 
-     (getprocessexitcode(fgdbserverprocid,fgdbserverexitcode,100000) or
+ ((getprocessexitcode(fgdbserverprocid,fgdbserverexitcode,100000) = pee_ok) or
       projectoptions.d.nogdbserverexit) then begin
   sender.terminatewait;
  end
@@ -1372,7 +1405,7 @@ begin
  if (fgdbserverprocid <> invalidprochandle) and 
         (not projectoptions.d.gdbserverstartonce or force) then begin
   try
-   if not getprocessexitcode(fgdbserverprocid,int1) then begin
+   if getprocessexitcode(fgdbserverprocid,int1) = pee_error then begin
     killprocesstree(fgdbserverprocid);
    end;
   except
@@ -2094,11 +2127,9 @@ end;
 
 procedure tmainfo.viewfpguidesigneronexecute(const sender: TObject);
 begin
- if (conffpguifo.enablefpguidesigner.value = true) and
-  (conffpguifo.ifshow.value = true) then
- begin
+
   LoadfpgDesigner(conffpguifo.edshow.text , '');
-  end;
+  
 end;
 
 procedure tmainfo.resetfpguidesigneronexecute(const sender: TObject);
@@ -2861,24 +2892,29 @@ begin
     mstr1:= mstr1 + ' ' + progparameters;
    end;
    if progworkingdirectory <> '' then begin
-//    pwdbefore:= getcurrentdirmse;
     pwdbefore:= setcurrentdirmse(progworkingdirectory);
    end;
-   frunningprocess:= targetconsolefo.terminal.execprog(mstr1);   
-   if frunningprocess = invalidprochandle then begin
-    setstattext(c[ord(cannotstartprocess)],mtk_error);
-    exit;
-   end;
-   runprocmon.listentoprocess(frunningprocess);
    try
+    if projectoptions.d.externalconsole then begin
+     frunningprocess:= execmse4(mstr1,[exo_newconsole]);
+    end
+    else begin
+     startconsole();
+     frunningprocess:= targetconsolefo.terminal.execprog(mstr1);
+    end;
+    if frunningprocess = invalidprochandle then begin
+     setstattext(c[ord(cannotstartprocess)],mtk_error);
+     exit;
+    end;
+    runprocmon.listentoprocess(frunningprocess);
    finally
     if progworkingdirectory <> '' then begin
      setcurrentdirmse(pwdbefore);
     end;
    end;
   end;
-  setstattext(c[ord(aprocess)]+' '+inttostr(frunningprocess)+' '+
-                     c[ord(running3)],mtk_running);
+  setstattext('*** '+c[ord(process)]+' '+inttostrmse(frunningprocess)+' '+
+                     c[ord(running3)]+' ***',mtk_running);
  end;
 end;
 
@@ -3113,7 +3149,7 @@ begin
              'MSEide version: '+versiontext+c_linefeed+
              'Host: '+ platformtext+ c_linefeed+
              c_linefeed+
-             'Copyright 1999-2014'+c_linefeed+
+             'Copyright 1999-2015'+c_linefeed+
              'by Martin Schreiber'
              ,actionsmo.c[ord(ac_about)]+' MSEide');
 end;
@@ -3246,30 +3282,64 @@ begin
  end;
 end;
 
+procedure tmainfo.savewindowlayout(const astream: ttextstream);
+var
+ statwriter: tstatwriter;
+begin
+ statwriter:= tstatwriter.create(astream,ce_utf8n);
+ try
+  statwriter.setsection('breakpoints');
+  beginpanelplacement();
+  try
+   panelform.updatestat(statwriter);
+   statwriter.setsection('layout');
+   mainfo.projectstatfile.updatestat('windowlayout',statwriter);
+  finally
+   endpanelplacement();
+  end;
+ finally
+  statwriter.free;
+ end;
+end;
 
-procedure tmainfo.loadwindowlayoutexe(const sender: TObject);
+procedure tmainfo.loadwindowlayout(const astream: ttextstream);
 var
  statreader: tstatreader;
 begin
- if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(loadwindowlayout)],
+ statreader:= tstatreader.create(astream,ce_utf8n);
+ try
+  beginpanelplacement();
+  statreader.setsection('breakpoints');
+  panelform.updatestat(statreader);
+  statreader.setsection('layout');
+  projectstatfile.options:= projectstatfile.options + 
+                                          [sfo_nodata,sfo_nooptions];
+  flayoutloading:= true;
+  projectstatfile.readstat('windowlayout',statreader);
+ finally
+  flayoutloading:= false;
+  projectstatfile.options:= projectstatfile.options -
+                                          [sfo_nodata,sfo_nooptions];
+  statreader.free;
+  endpanelplacement();
+ end;
+end;
+
+
+procedure tmainfo.loadwindowlayoutexe(const sender: TObject);
+var
+ str1: ttextstream;
+begin
+ if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(str_loadwindowlayout)],
           [c[ord(projectfiles)],c[ord(str_allfiles)]],['*.prj','*'],'prj',
           nil,nil,nil,[fa_all],[fa_hidden],
-                        @windowlayouthistory) = mr_ok then begin          
-  statreader:= tstatreader.create(windowlayoutfile,ce_utf8n);
-  try
-   statreader.setsection('breakpoints');
-   panelform.updatestat(statreader);
-   statreader.setsection('layout');
-   projectstatfile.options:= projectstatfile.options + 
-                                           [sfo_nodata,sfo_nooptions];
-   flayoutloading:= true;
-   projectstatfile.readstat('windowlayout',statreader);
-  finally
-   flayoutloading:= false;
-   projectstatfile.options:= projectstatfile.options -
-                                           [sfo_nodata,sfo_nooptions];
-   statreader.free;
-  end;
+                        @windowlayouthistory) = mr_ok then begin
+ str1:= ttextstream.create(windowlayoutfile);
+ try
+  loadwindowlayout(str1);
+ finally
+  str1.destroy();
+ end;
  end;
 end;
 

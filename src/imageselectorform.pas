@@ -18,9 +18,9 @@ unit imageselectorform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- classes,mclasses,mseglob,mseguiglob,mseapplication,msestat,msegui,
+ classes,mclasses,mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,
  msegraphics,
- msegraphutils,mseclasses,mseforms,msedataedits,
+ msegraphutils,mseevent,mseclasses,mseforms,msedataedits,msedatanodes,mseedit,
  msegrids,mselistbrowser,msestrings,msetypes,msebitmap,msestatfile;
 type
  timageselectorfo = class(tmseform)
@@ -37,7 +37,7 @@ type
  end;
 implementation
 uses
- imageselectorform_mfm,sysutils;
+ imageselectorform_mfm,sysutils,mseformatstr;
  
 { timageselectorfo }
 
@@ -66,7 +66,7 @@ begin
    for int1:= 0 to count -1 do begin
     with items[int1] do begin
      imagenr:= int1;
-     caption:= inttostr(int1);
+     caption:= inttostrmse(int1);
     end;
    end;
   end;

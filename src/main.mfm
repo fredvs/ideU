@@ -1,13 +1,14 @@
 object mainfo: tmainfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  frame.localprops = []
+  frame.localprops1 = []
   frame.grip_size = 10
   frame.grip_color = 10203291
   frame.grip_coloractive = 12375740
   frame.grip_options = [go_fixsizebutton, go_topbutton, go_backgroundbutton, go_lockbutton]
-  frame.dummy = 0
   visible = False
-  bounds_x = 321
-  bounds_y = 277
+  bounds_x = 447
+  bounds_y = 113
   bounds_cx = 710
   bounds_cy = 228
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -16,14 +17,15 @@ object mainfo: tmainfo
   container.frame.framei_right = 0
   container.frame.framei_bottom = 0
   container.frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom]
+  container.frame.localprops1 = []
   container.frame.sbhorz.options = [sbo_moveauto, sbo_showauto]
   container.frame.sbvert.options = [sbo_moveauto, sbo_showauto]
   container.onlayout = onscale
   container.bounds = (
     0
-    17
+    16
     700
-    211
+    212
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock]
@@ -102,29 +104,29 @@ object mainfo: tmainfo
     bounds_x = 0
     bounds_y = 19
     bounds_cx = 700
-    bounds_cy = 192
+    bounds_cy = 193
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
-    font.dummy = 0
+    font.localprops = [flp_xscale]
     dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background]
     statfile = projectstatfile
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_frameimageoffsetactivemouse, frl_frameimageoffsetactiveclicked]
-    frame.dummy = 0
+    frame.localprops1 = []
     taborder = 1
     bounds_x = 0
     bounds_y = 1
     bounds_cx = 700
-    bounds_cy = 19
+    bounds_cy = 18
     anchors = [an_top]
     font.name = 'stf_default'
     font.xscale = 1
-    font.dummy = 0
+    font.localprops = [flp_xscale]
     options = [dwo_hintclippedtext]
-    reffontheight = 15
+    reffontheight = 14
   end
   object gdb: tgdbmi
     guiintf = True
@@ -886,7 +888,7 @@ object mainfo: tmainfo
             onexecute = viewconfideuexecute
           end        
           item
-            submenu.count = 3
+            submenu.count = 2
             submenu.items = <            
               item
                 caption = ' MSEgui '
@@ -897,10 +899,6 @@ object mainfo: tmainfo
                 caption = ' fpGUI '
                 state = [as_localcaption, as_localonexecute]
                 onexecute = viewconffpguiexecute
-              end            
-              item
-                caption = ' LCL '
-                state = [as_localcaption, as_localonexecute]
               end>
             caption = ' Configure &Widgets'
             state = [as_localcaption, as_localonexecute]

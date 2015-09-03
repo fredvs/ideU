@@ -1,12 +1,14 @@
 object settingsfo: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 431
-  bounds_y = 24
+  bounds_x = 861
+  bounds_y = 71
   bounds_cx = 344
   bounds_cy = 653
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.clientwidthmin = 340
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
@@ -118,7 +120,7 @@ object settingsfo: tsettingsfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 342
-    bounds_cy = 505
+    bounds_cy = 480
     optionsscale = [osc_expandy, osc_shrinky]
     linkbottom = macrogrid
     optionslayout = [lao_placey]
@@ -127,27 +129,28 @@ object settingsfo: tsettingsfo
       taborder = 9
       visible = True
       bounds_x = 0
-      bounds_y = 429
+      bounds_y = 407
       bounds_cx = 342
-      bounds_cy = 37
+      bounds_cy = 36
       optionsscale = [osc_expandy, osc_shrinky]
       object targetosdir: tstringedit
         Tag = 11
         frame.caption = '${TARGETOSDIR}'
-        frame.dummy = 0
+        frame.localprops = []
+        frame.localprops1 = []
         frame.outerframe = (
           0
-          18
+          17
           0
           0
         )
         taborder = 2
         bounds_x = 202
-        bounds_y = -2
+        bounds_y = -1
         bounds_cx = 130
-        bounds_cy = 39
+        bounds_cy = 37
         onsetvalue = setvalue
-        reffontheight = 15
+        reffontheight = 14
       end
       object tsplitter2: tsplitter
         color = -1879048189
@@ -166,116 +169,142 @@ object settingsfo: tsettingsfo
       object target: tstringedit
         Tag = 10
         frame.caption = '${TARGET}'
-        frame.dummy = 0
+        frame.localprops = []
+        frame.localprops1 = []
         frame.outerframe = (
           0
-          18
+          17
           0
           0
         )
         taborder = 1
         bounds_x = 98
-        bounds_y = -2
+        bounds_y = -1
         bounds_cx = 94
-        bounds_cy = 39
+        bounds_cy = 37
         onsetvalue = setvalue
-        reffontheight = 15
+        reffontheight = 14
       end
       object exeext: tstringedit
         Tag = 9
         frame.caption = '${EXEEXT}'
-        frame.dummy = 0
+        frame.localprops = []
+        frame.localprops1 = []
         frame.outerframe = (
           0
-          18
+          17
           0
           0
         )
         bounds_x = 8
-        bounds_y = -2
+        bounds_y = -1
         bounds_cx = 80
-        bounds_cy = 39
+        bounds_cy = 37
         onsetvalue = setvalue
-        reffontheight = 15
+        reffontheight = 14
       end
     end
     object printcomm: tstringedit
       frame.caption = 'Print command'
-      frame.dummy = 0
+      frame.localprops = []
+      frame.localprops1 = []
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 10
       bounds_x = 8
-      bounds_y = 466
+      bounds_y = 443
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       onsetvalue = setprintcomm
-      reffontheight = 15
+      reffontheight = 14
     end
     object debugger: tfilenameedit
       Tag = 8
       frame.caption = '${DEBUGGER} Path of Default Debugger'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 8
       hint = 'Path to debugger (gdb).'
       bounds_x = 8
-      bounds_y = 390
+      bounds_y = 370
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       onsetvalue = setvalue
       controller.captionopen = 'Debugger path'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object compiler: tfilenameedit
       Tag = 7
       frame.caption = '${COMPILER} Path of Default Compiler'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 7
       hint = 'Path to compiler (ppc386).'
       bounds_x = 8
-      bounds_y = 351
+      bounds_y = 333
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/fpc/2.6.4/ppcx64'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/fpc/2.6.4/ppcx64'
+      controller.lastdir = '/usr/local/share/fpc/2.6.4/'
       controller.captionopen = 'Compiler path'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object compstoredir: tfilenameedit
       Tag = 6
       frame.colorclient = 16773360
       frame.caption = '${COMPSTOREDIR} CompStore directory of MSEgui'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 6
       hint = 'Directory for component store files.'
       bounds_x = 8
-      bounds_y = 156
+      bounds_y = 148
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       onsetvalue = setvalue
       controller.filterlist.data = (
         (
@@ -286,25 +315,35 @@ object settingsfo: tsettingsfo
       controller.options = [fdo_directory]
       controller.captionopen = 'Directory for component stores'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object templatedir: tfilenameedit
       Tag = 5
       frame.caption = '${TEMPLATEDIR} Directory of Templates'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 5
       hint = 'Directory for project template files.'
       bounds_x = 8
-      bounds_y = 273
+      bounds_y = 259
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/ideu/templates'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/ideu/templates/'
+      controller.lastdir = '/usr/local/share/ideu/templates/'
       controller.filterlist.data = (
         (
           'Project files'
@@ -314,25 +353,35 @@ object settingsfo: tsettingsfo
       controller.options = [fdo_directory]
       controller.captionopen = 'Project template directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object syntaxdefdir: tfilenameedit
       Tag = 4
       frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 4
       hint = 'Directory for syntax definition files.'
       bounds_x = 8
-      bounds_y = 312
+      bounds_y = 296
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/ideu/syntaxdefs'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/ideu/syntaxdefs/'
+      controller.lastdir = '/usr/local/share/ideu/syntaxdefs/'
       controller.filterlist.data = (
         (
           'Syntax definitions'
@@ -342,86 +391,113 @@ object settingsfo: tsettingsfo
       controller.options = [fdo_directory]
       controller.captionopen = 'Directory for syntax definition files'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object mselibdir: tfilenameedit
       Tag = 3
       frame.colorclient = 16773360
       frame.caption = '${MSELIBDIR} Library directory of MSEgui'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 3
       hint = 'Root directory of msegui library.'
       bounds_x = 8
-      bounds_y = 117
+      bounds_y = 111
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       onsetvalue = setvalue
       controller.options = [fdo_directory]
       controller.captionopen = 'MSEgui library directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object msedir: tfilenameedit
       Tag = 2
       frame.colorclient = 16773360
       frame.caption = '${MSEDIR} Root directory of MSEgui'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 2
       hint = 'Root directory of msegui.'
       bounds_x = 8
-      bounds_y = 78
+      bounds_y = 74
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/msegui'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/msegui/'
+      controller.lastdir = '/usr/local/share/msegui/'
       controller.options = [fdo_directory]
       controller.captionopen = 'MSEgui root directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object fpclibdir: tfilenameedit
       Tag = 1
       frame.colorclient = 15790335
       frame.caption = '${FPCLIBDIR} Library directory of Free Pascal'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 1
       hint = 'Root directory of FPC library (not used by the default project templates).'
       bounds_x = 8
-      bounds_y = 39
+      bounds_y = 37
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       controller.options = [fdo_directory]
       controller.captionopen = 'FPC library directory'
-      reffontheight = 15
+      reffontheight = 14
     end
     object fpcdir: tfilenameedit
       frame.colorclient = 15790335
       frame.caption = '${FPCDIR} Root directory of Free Pascal'
       frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
@@ -429,75 +505,96 @@ object settingsfo: tsettingsfo
       bounds_x = 8
       bounds_y = 0
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/fpc/2.6.4'
+      valuedefault = '/usr/local/share/fpc'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/fpc/2.6.4/'
+      controller.lastdir = '/usr/local/share/fpc/2.6.4/'
       controller.options = [fdo_directory]
       controller.captionopen = 'FPC root directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object fpguidir: tfilenameedit
       Tag = 3
       frame.colorclient = 15138790
       frame.caption = '${FPGUIDIR} Root directory of fpGUI'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 11
       hint = 'Root directory of fpGUI'
       bounds_x = 8
-      bounds_y = 195
+      bounds_y = 185
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
+      value = '/usr/local/share/fpgui'
       onsetvalue = setvalue
+      controller.filename = '/usr/local/share/fpgui/'
+      controller.lastdir = '/usr/local/share/fpgui/'
       controller.options = [fdo_directory]
       controller.captionopen = 'fpGUI library directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
     object docviewdir: tfilenameedit
       Tag = 3
       frame.colorclient = 15138790
       frame.caption = '${DOCVIEWDIR} Root directory of DocView'
       frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
       taborder = 12
       hint = 'Root directory of DocView'
       bounds_x = 8
-      bounds_y = 234
+      bounds_y = 222
       bounds_cx = 324
-      bounds_cy = 39
+      bounds_cy = 37
       onsetvalue = setvalue
       controller.options = [fdo_directory]
       controller.captionopen = 'DocView directory'
       controller.ongetfilename = epandfilenamemacro
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object macrogrid: twidgetgrid
     frame.caption = 'Global Macros'
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 1
     bounds_x = 8
-    bounds_y = 505
+    bounds_y = 480
     bounds_cx = 324
-    bounds_cy = 103
+    bounds_cy = 128
     bounds_cymin = 80
     optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     fixcols.count = 1
@@ -510,7 +607,7 @@ object settingsfo: tsettingsfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 17
+        height = 16
         captions.count = 4
         captions.items = <        
           item
@@ -540,7 +637,7 @@ object settingsfo: tsettingsfo
         dataclass = tgridmsestringdatalist
       end>
     datarowheight = 16
-    reffontheight = 15
+    reffontheight = 14
     object macroname: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
@@ -552,7 +649,7 @@ object settingsfo: tsettingsfo
       bounds_cy = 16
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-      reffontheight = 15
+      reffontheight = 14
     end
     object macrovalue: tmemodialogedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -560,6 +657,13 @@ object settingsfo: tsettingsfo
       frame.levelo = 0
       frame.colorclient = -2147483645
       frame.localprops = [frl_levelo, frl_leveli, frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          color = -1879048187
+          imagenr = 17
+        end>
       frame.button.color = -1879048187
       frame.button.imagenr = 17
       taborder = 2
@@ -570,7 +674,7 @@ object settingsfo: tsettingsfo
       bounds_cy = 16
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object tstatfile1: tstatfile

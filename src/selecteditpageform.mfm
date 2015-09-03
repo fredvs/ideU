@@ -1,7 +1,7 @@
 object selecteditpagefo: tselecteditpagefo
   visible = False
-  bounds_x = 346
-  bounds_y = 207
+  bounds_x = 160
+  bounds_y = 124
   bounds_cx = 704
   bounds_cy = 473
   container.onlayout = formonchildscaled
@@ -35,18 +35,18 @@ object selecteditpagefo: tselecteditpagefo
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup]
     options = [lvo_readonly, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
     onitemevent = doonitemevent
-    reffontheight = 15
+    reffontheight = 14
   end
   object pathdisp: tstringdisp
     frame.dummy = 0
     taborder = 2
     bounds_x = 0
-    bounds_y = 453
+    bounds_y = 454
     bounds_cx = 650
-    bounds_cy = 19
+    bounds_cy = 18
     anchors = [an_left, an_right, an_bottom]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 15
+    reffontheight = 14
   end
   object openfilebutton: tbutton
     taborder = 1

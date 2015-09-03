@@ -21,13 +21,12 @@ unit sourcepage;
 interface
 
 uses
- conffpgui, plugmanager,
- msetextedit,msewidgetgrid,classes,mclasses,msegdbutils,
+ msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
  msegraphedits,mseevent,
- msetabs,msetypes,msedataedits,
+ msehash,msebitmap,msetabs,msetypes,msedataedits,
  mseglob,mseguiglob,msegui,msesyntaxedit,mseeditglob,
- msegraphutils,msegrids,breakpointsform,
- msefilechange,msestrings,mserichstring,mseparser,
+ mseinplaceedit,msedispwidgets,msegraphutils,msegrids,breakpointsform,
+ pascaldesignparser,msefilechange,msestrings,mserichstring,mseparser,
  msegridsglob,projectoptionsform;
 
 
@@ -165,7 +164,7 @@ implementation
 uses
  sourcepage_mfm,msefileutils,sourceform,main,
  sysutils,msewidgets,finddialogform,replacedialogform,msekeyboard,
- sourceupdate,msefiledialog,mseintegerenter,msedesigner,
+ sourceupdate,msefiledialog,mseintegerenter,msedesigner,mseformatstr,
  msesys,make,actionsmodule,msegraphics,sourcehintform,
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
@@ -321,7 +320,7 @@ begin
   updatestatvalues;
  except
   on e: exception do begin
-   handleerror(e,sourcefo.c[ord(syntaxdeffile)]);
+   handleerror(e,ansistring(sourcefo.c[ord(syntaxdeffile)]));
   end;
  end;
 end;
@@ -500,8 +499,6 @@ end;
 
 function tsourcepage.canchangenotify(const info: filechangeinfoty): boolean;
 begin
-// result:= (info.info.extinfo1.modtime - fsavetime > 5.0/(24.0*3600)) or //> 5 sec
-//                  checkfilechanged; 
  result:= (info.changed - [fc_force,fc_accesstime] <> []) or checkfilechanged();
  with projectoptions,o.texp do begin
   if result and making and o.copymessages and
@@ -539,7 +536,7 @@ begin
      textflags:= [tf_wordbreak,tf_noselect];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
-     text:= values[high(values)-int1];
+     text:= msestring(values[high(values)-int1]);
     end;
    end;
    for int1:= high(values) downto 0 do begin
@@ -839,7 +836,8 @@ begin
 // breakpoints.Free;
 end;
 
-procedure tsourcepage.editonmodifiedchanged(const sender: tobject; const value: boolean);
+procedure tsourcepage.editonmodifiedchanged(const sender: tobject;
+                                                         const value: boolean);
 begin
  updatecaption(value);
 end;
@@ -892,11 +890,6 @@ begin
   fsavetime:= info.extinfo1.modtime;
  end;
  updatecaption(false);
- 
- //// fpguidesiner
-  if conffpguifo.enablefpguidesigner.value = true then
-  LoadfpgDesigner(edit.filename , '');
-
 end;
 
 function tsourcepage.modified: boolean;
@@ -1128,7 +1121,7 @@ begin
    if (po1.row <> flasthint.row) or (po1.col <> flasthint.col) or
          (length(str1) <> flasthintlength) then begin
     if str1 <> '' then begin
-     if mainfo.gdb.readpascalvariable(str1,str2) = gdb_ok then begin
+     if mainfo.gdb.readpascalvariable(ansistring(str1),str2) = gdb_ok then begin
       application.showhint(nil,str1 + ' = ' + str2,
        inflaterect(edit.textpostomouserect(po1,true),20),cp_bottomleft,0);
      end
@@ -1188,8 +1181,8 @@ end;
 
 procedure tsourcepage.updatelinedisp;
 begin
- linedisp.value:= inttostr(edit.editpos.row+1) + ':'+
-                                          inttostr(edit.editpos.col+1);
+ linedisp.value:= inttostrmse(edit.editpos.row+1) + ':'+
+                                          inttostrmse(edit.editpos.col+1);
 end;
 
 procedure tsourcepage.editoneditnotification(const sender: tobject;
@@ -1460,7 +1453,8 @@ begin
  with info,tsyntaxedit(sender).editor,projectoptions do begin
   if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and 
                                              (key = key_tab) then begin
-   chars:= charstring(' ',(curindex div e.tabstops + 1) * e.tabstops - curindex);
+   chars:= charstring(msechar(' '),
+                        (curindex div e.tabstops + 1) * e.tabstops - curindex);
   end;
  end;
 end;

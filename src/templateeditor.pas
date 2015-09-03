@@ -2,11 +2,11 @@ unit templateeditor;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msegui,
- msegraphics,msegraphutils,mseclasses,mseforms,msestatfile,
- msesimplewidgets,msewidgets,msedataedits,msegrids,msestrings,msetypes,
+ mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
+ msegraphics,msegraphutils,mseevent,mseclasses,mseforms,msestatfile,
+ msesimplewidgets,msewidgets,msedataedits,mseedit,msegrids,msestrings,msetypes,
  msewidgetgrid,msegraphedits,msesplitter,mseeditglob,msetextedit,msedispwidgets,
- msefiledialog,mselistbrowser,msesystypes,
+ msebitmap,msedatanodes,msefiledialog,mselistbrowser,msescrollbar,msesystypes,
  msesys,msestringcontainer;
 type
  ttemplateeditorfo = class(tmseform)
@@ -54,7 +54,7 @@ type
 implementation
 uses
  templateeditor_mfm,msecodetemplates,projectoptionsform,sysutils,msefileutils,
- msesysintf,msearrayutils;
+ msedatalist,msesysintf,msearrayutils,mseformatstr;
 type
  stringconststy = (
   wantdelete,      //0 Do you want to delete "
@@ -111,7 +111,7 @@ begin
  case info.action of
   ea_indexmoved: begin
    with templed.editpos do begin
-    cursordisp.value:= inttostr(row+1) + ':'+inttostr(col+1);
+    cursordisp.value:= inttostrmse(row+1) + ':'+inttostrmse(col+1);
    end;
   end;
  end;

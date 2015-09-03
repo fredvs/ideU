@@ -17,7 +17,7 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=${PROJECTDIR}/
+projectdir=/home/fred/ideu/src/templates/init
 projectfilename=/home/fred/ideu/src/templates/init/helloideu2.prj
 findinfiledialog=34
  [findinfileadialogfo.subdirs]
@@ -472,6 +472,7 @@ afterconnect=
 beforeload=
 afterload=
 beforerun=
+sourcebase=
 sourcedirs=3
  ${MSELIBDIR}kernel/$TARGETOSDIR/
  ${MSELIBDIR}*/
@@ -495,6 +496,7 @@ startupbkpt=0
 startupbkpton=0
 gdbsimulator=0
 gdbserverstartonce=0
+gdbloadtimeout=
 gdbserverwait=0
 nogdbserverexit=0
 gdbservertty=0
@@ -571,7 +573,6 @@ y=129
 cx=169
 cy=473
 [progparams]
-progparamhistory=0
 envvarons=0
 [edit]
 hintwidth=462
@@ -590,7 +591,7 @@ editpos=1
  0,5
 bookmarks0=0
 sourcefiles=1
- /home/fred/ideu/src/templates/init/readme2.txt
+ ${PROJECTDIR}/readme2.txt
 relpaths=1
  readme2.txt
 ismoduletexts=1
@@ -666,7 +667,7 @@ windowlayout=503
  [memoryfo]
  splitdir=0
  useroptions=16507
- stackedunder=objectinspectorfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -830,7 +831,7 @@ windowlayout=503
  [objectinspectorfo]
  splitdir=0
  useroptions=16491
- stackedunder=componentpalettefo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -955,7 +956,7 @@ windowlayout=503
  [componentstorefo]
  splitdir=0
  useroptions=24699
- stackedunder=cpuc86_64fo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1018,7 +1019,7 @@ windowlayout=503
  [componentpalettefo]
  splitdir=0
  useroptions=24683
- stackedunder=disassfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -1072,6 +1073,26 @@ windowlayout=503
  checked=0
  [actionsmo.bluedotsonact]
  checked=1
+ [cpuc86_64fo]
+ irqoff=0
+ splitdir=0
+ useroptions=16491
+ stackedunder=componentpalettefo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=183
+ y=113
+ cx=352
+ cy=277
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
  [mainfo.panel1]
  splitdir=1
  useroptions=33652203
@@ -1088,26 +1109,6 @@ windowlayout=503
  cy=505
  rcx=0
  rcy=0
- [cpuc86_64fo]
- irqoff=0
- splitdir=0
- useroptions=16491
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=183
- y=113
- cx=352
- cy=277
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
 [targetconsole]
 finddtext=
 findhistory=0

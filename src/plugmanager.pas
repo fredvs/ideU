@@ -212,7 +212,7 @@ begin
  //fpGUI designer
 
 procedure CleanfpgDesigner(); 
-{$ifdef linux}
+{$ifdef unix}
  var
    dataf : string ;
    AProcess : TProcess ;
@@ -221,7 +221,7 @@ begin
    
 // if assigned(TheProcess) then TheProcess.Terminate(0);  
 
- {$ifdef linux}
+ {$ifdef unix}
   dataf := '/usr/bin/killall designer_ext' ;
  
       AProcess := TProcess.Create(nil);

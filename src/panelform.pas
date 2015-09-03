@@ -21,7 +21,8 @@ unit panelform;
 interface
 uses
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,msestrings,
- msedock,msegraphutils,msegraphics,mseguiglob;
+ msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,
+ msestringcontainer;
 
 type
 
@@ -51,8 +52,8 @@ procedure endpanelplacement();
 implementation
 
 uses
- panelform_mfm,main,sysutils,msekeyboard,mselist,msetypes,
- msearrayutils;
+ panelform_mfm,main,sysutils,msekeyboard,mselist,msetypes,msedatalist,
+ msearrayutils,mseformatstr;
 
 var
  panellist: tpointerlist;
@@ -66,7 +67,7 @@ begin
  if filer.iswriter then begin
   setlength(ar1,panellist.count);
   for int1:= 0 to high(ar1) do begin
-   ar1[int1]:= tpanelfo(panellist[int1]).name;
+   ar1[int1]:= msestring(tpanelfo(panellist[int1]).name);
   end;
  end;
  filer.updatevalue('panels',ar1);
@@ -76,7 +77,7 @@ begin
   end;
   for int1:= 0 to high(ar1) do begin
    try
-    newpanel(ar1[int1]);
+    newpanel(ansistring(ar1[int1]));
    except
    end;
   end;
@@ -198,14 +199,14 @@ begin
   onexecute:= {$ifdef FPC}@{$endif}showexecute;
   if fnameindex < 9 then begin
    shortcut:= (ord(key_f1) or key_modctrl) + fnameindex;
-   caption:= '&' + inttostr(fnameindex+1)+' '+acaption;
+   caption:= '&' + inttostrmse(fnameindex+1)+' '+acaption;
   end
   else begin
    shortcut:= 0;
    caption:= acaption;
   end;
   if shortcut <> 0 then begin
-   acaption:= acaption + ' (Ctrl+F' + inttostr(fnameindex+1)+')';
+   acaption:= acaption + ' (Ctrl+F' + inttostrmse(fnameindex+1)+')';
   end;
   self.caption:= acaption;
  end;

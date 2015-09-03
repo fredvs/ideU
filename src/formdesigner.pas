@@ -21,11 +21,11 @@ unit formdesigner;
 interface
 uses
  classes,mclasses,mseforms,mseguiglob,msegui,mseevent,msegraphutils,msegraphics,
- msedesignintf,mseclasses,msemenus,msedesigner,
- typinfo,componentpaletteform,msestrings,msewidgets,
+ msedesignintf,mseclasses,msemenuwidgets,msemenus,msefiledialog,msedesigner,
+ typinfo,componentpaletteform,msestrings,msewidgets,msepointer,
  mseglob{$ifndef mse_no_db}{$ifdef FPC},msereport{$endif}{$endif},msetimer,
- mseact,mseactions,mseifiglob,msestringcontainer,
-msestat,msedock;
+ mseact,mseactions,mseifiglob,msestringcontainer,mseificomp,mseificompglob,
+ msesimplewidgets,msestat,msedock;
 
 type
  areaty = (ar_none,ar_component,ar_componentmove,ar_selectrect,ht_topleft,
@@ -162,6 +162,7 @@ type
    fmodulesetting: integer;
    fmoduleoptions: moduleoptionsty;
    fsizeerrorcount: integer;
+   fupdatecaptionpending: boolean;
 
    fpickpos: pointty;
    fmousepos: pointty;
@@ -171,6 +172,7 @@ type
    fxorpicactive: boolean;
    fxorpicshowed: boolean;
    factarea: areaty;
+   fmovearea: areaty;
    factcompindex: integer;
    fselecting: integer;
    fgridsizex: integer;
@@ -188,6 +190,8 @@ type
    fclientsizevalid: boolean;
    fcompoffsbefore: pointty;
    fsizebefore: sizety;
+   fshift: pointty;
+   fshiftroot: tcomponent;
    procedure drawgrid(const canvas: tcanvas);
    procedure hidexorpic(const canvas: tcanvas);
    procedure showxorpic(const canvas: tcanvas);
@@ -197,6 +201,7 @@ type
    procedure doaddcomponent(acomponent: tcomponent);
    procedure doinitcomponent(const acomponent: tcomponent;
                                             const parent: tcomponent);
+   procedure shiftcomp(child: tcomponent);
 
    procedure setshowgrid(const avalue: boolean);
    procedure setgridsizex(const avalue: integer);
@@ -214,6 +219,8 @@ type
    function getselections: tformdesignerselections;
    function filterfindcomp(const acomponent: tcomponent): boolean;
    function getmodulerect: rectty;
+   procedure setactarea(const avalue: areaty);
+   property actarea: areaty read factarea write setactarea;
   protected
    fselections: tformdesignerselections;
    fformcont: tformcontainer;
@@ -259,6 +266,8 @@ type
    procedure beginselect;
    procedure endselect;
 //   procedure updateselections;
+   procedure updatecursorshape(const ashiftstate: shiftstatesty;
+                                                          const area: areaty);
    procedure updateclickedcomponent;
    procedure deletecomponent(const component: tcomponent);
    procedure selectcomponent(const component: tcomponent;
@@ -419,9 +428,9 @@ function selectinheritedmodule(const amodule: pmoduleinfoty;
 
 implementation
 uses
- formdesigner_mfm,msekeyboard,msepointer,msebits,sysutils,
+ formdesigner_mfm,mselist,msekeyboard,msebits,sysutils,
  msestockobjects,msedrawtext,selectsubmoduledialogform,mseshapes,settaborderform,
- objectinspector,projectoptionsform,main,msedatamodules,msetypes,
+ msedatalist,objectinspector,projectoptionsform,main,msedatamodules,msetypes,
  setcreateorderform,componentstore,msearrayutils,actionsmodule,msecomptree
  {$ifndef FPC},classes_del{$endif};
 
@@ -516,8 +525,8 @@ begin
    end;
   end;
  end;
- raise exception.Create(actionsmo.c[ord(ac_unknownmodclass)]+ aclassname^ +'": "'+
-              designmoduleclassname+'".');
+ raise exception.Create(ansistring(actionsmo.c[ord(ac_unknownmodclass)]+ 
+        msestring(aclassname^) +'": "'+ msestring(designmoduleclassname)+'".'));
 end;
 
 function createdesignform(const aowner: tdesigner; 
@@ -1133,7 +1142,7 @@ begin
  fdesigner:= adesigner;
  fmoduleintf:= aintf;
  fmoduleinfo:= amoduleinfo;
-
+ 
  fshowgrid:= true;
  fsnaptogrid:= true;
  fgridsizex:= defaultgridsizex;
@@ -1228,7 +1237,7 @@ begin
  if fxorpicactive then begin
   canvas.save;
   canvas.setcliprect(markerrect);
-  case factarea of
+  case actarea of
    firsthandle..lasthandle: begin
     with canvas do begin
      save;
@@ -1294,7 +1303,7 @@ begin
  end
  else begin
   result.cx:= complabelleftmargin + 
-                  getcanvas.getstringwidth(component.name) +
+                  getcanvas.getstringwidth(msestring(component.name)) +
                    complabelrightmargin;
   if not bo1 then begin 
    result.cx:= result.cx + componentsize;
@@ -1383,6 +1392,12 @@ begin
  end;
 end;
 
+procedure tformdesignerfo.shiftcomp(child: tcomponent);
+begin
+ setcomponentpos(child,addpoint(getcomponentpos(child),fshift));
+ tcomponent1(child).getchildren(@shiftcomp,fshiftroot);
+end;
+
 procedure tformdesignerfo.doinitcomponent(const acomponent: tcomponent;
                       const parent: tcomponent);
 var
@@ -1429,6 +1444,9 @@ begin
    end;
   end;
   setcomponentpos(acomponent,pt1);
+  fshiftroot:= acomponent.owner;
+  fshift:= subpoint(pt1,pt2);
+  tcomponent1(acomponent).getchildren(@shiftcomp,fshiftroot);
  end;
 end;
 
@@ -1568,7 +1586,7 @@ begin
    for int1:= 0 to count - 1 do begin
     with items[int1] do begin
      if componentstate * [csancestor,csinline] = [csancestor] then begin
-      showmessage(actionsmo.c[ord(ac_inheritedcomp)]+name+
+      showmessage(actionsmo.c[ord(ac_inheritedcomp)]+msestring(name)+
                       actionsmo.c[ord(ac_cannotdel)],actionsmo.c[ord(ac_error)]);
       exit;
      end;             
@@ -1593,10 +1611,10 @@ begin
  with tmenuitem(sender) do begin
   ar1:= splitstring(caption,widechar(' '));
   if fselectwidget <> nil then begin
-   comp1:= fselectwidget.findlogicalchild(ar1[0]);
+   comp1:= fselectwidget.findlogicalchild(ansistring(ar1[0]));
   end
   else begin
-   comp1:= fselectcomp.findcomponent(ar1[0]);
+   comp1:= fselectcomp.findcomponent(ansistring(ar1[0]));
   end;
   if comp1 <> nil then begin
    selectcomponent(comp1,sm_select);
@@ -1691,7 +1709,7 @@ begin
    setlength(ar1,length(ar2));
    for int1:= 0 to high(ar1) do begin
     with ar2[int1] do begin
-     ar1[int1]:= name + ' (' + classname+')';
+     ar1[int1]:= msestring(name + ' (' + classname+')');
     end;
    end;
    sortarray(ar1);
@@ -1826,7 +1844,7 @@ begin
    end;
   end;
   if factcompindex < 0 then begin
-   factarea:= ar_none;
+   actarea:= ar_none;
   end;
   updateselections;
  end;
@@ -2279,12 +2297,12 @@ var
    if not (iswidget or issub) then begin
     if isdatasubmodule(component,true) then begin
      canvas.fillrect(rect1,cl_ltgray);
-     drawtext(canvas,component.name,rect1,[tf_ycentered,tf_xcentered],
+     drawtext(canvas,msestring(component.name),rect1,[tf_ycentered,tf_xcentered],
                        stockobjects.fonts[stf_default]);
     end
     else begin
      rect1.cx:= rect1.cx - complabelrightmargin;
-     drawtext(canvas,component.name,rect1,[tf_ycentered,tf_right],
+     drawtext(canvas,msestring(component.name),rect1,[tf_ycentered,tf_right],
                         stockobjects.fonts[stf_default]);
      rect1.cx:= rect1.cy;
      registeredcomponents.drawcomponenticon(component,canvas,rect1);
@@ -2389,7 +2407,7 @@ var
  mstr1: msestring;
 begin
  if fmodule <> nil then begin
-  mstr1:= fmodule.name;
+  mstr1:= msestring(fmodule.name);
   if fmoduleoptions <> [] then begin
    mstr1:= '-'+mstr1;
   end;
@@ -2407,6 +2425,7 @@ var
 begin
  case designerfoeventty(atag) of
   fde_updatecaption: begin
+   fupdatecaptionpending:= false;
    doupdatecaption();
   end;
   fde_syncsize: begin
@@ -2457,7 +2476,10 @@ end;
 
 procedure tformdesignerfo.updatecaption;
 begin
- asyncevent(integer(fde_updatecaption));
+ if not fupdatecaptionpending then begin
+  fupdatecaptionpending:= true;
+  asyncevent(integer(fde_updatecaption));
+ end;
 end;
 
 procedure tformdesignerfo.formcontainerscrolled;
@@ -3118,7 +3140,7 @@ procedure tformdesignerfo.endstreaming;
 begin
  if fmodule is twidget then begin
   with twidget1(fmodule) do begin
-   fwidgetrect.pos:= paintpos;
+   fwidgetrect.pos:= self.paintpos;
    rootchanged(true);
   end;
  end;
@@ -3291,18 +3313,18 @@ begin
  name1:= '';
 // with tdesignwindow(fwindow) do begin
   if fselections.count > 0 then begin
-   name1:= ownernamepath(fselections[0]);
+   name1:= msestring(ownernamepath(fselections[0]));
   end;
   if compnamedialog(designer.getcomponentnametree(nil,true,true,nil,
                       @filterfindcomp,fmodule),name1,true) = mr_ok then begin
-   if name1 = fmodule.name then begin
+   if name1 = msestring(fmodule.name) then begin
     designer.selectcomponent(fmodule);
    end
    else begin
     replacechar1(name1,':','.');
     designer.selectcomponent(
-      designer.modules.findmodule(fmodule)^.components.getcomponent(name1,
-                                                                        true));
+      designer.modules.findmodule(fmodule)^.
+                          components.getcomponent(ansistring(name1),true));
    end;
   end;
 // end;
@@ -3328,10 +3350,30 @@ begin
  result:= fgridsizey;
 end;
 
+procedure tformdesignerfo.updatecursorshape(const ashiftstate: shiftstatesty;
+                                                            const area: areaty);
+var
+ shape: cursorshapety;
+begin
+ shape:= cr_arrow;
+ if ashiftstate = [] then begin
+  case area of
+   ht_topleft: shape:= cr_topleftcorner;
+   ht_bottomright: shape:= cr_bottomrightcorner;
+   ht_topright: shape:= cr_toprightcorner;
+   ht_bottomleft: shape:= cr_bottomleftcorner;
+   ht_top,ht_bottom: shape:= cr_sizever;
+   ht_left,ht_right: shape:= cr_sizehor;
+  end;
+ end;
+ application.widgetcursorshape:= shape;
+end;
+
 procedure tformdesignerfo.designmouseevent(var info: moeventinfoty;
                                                          capture: twidget);
 var
  mousepos1: pointty;
+ ss1: shiftstatesty;
 
  function griddelta: pointty;
  begin
@@ -3345,7 +3387,7 @@ var
   pos1:= griddelta;
   posbefore:= pos1;
   with fsizerect,pos1 do begin
-   case factarea of
+   case actarea of
     ht_topleft,ht_left,ht_bottomleft: begin
      if x > size.cx then begin
       x:= size.cx
@@ -3360,7 +3402,7 @@ var
      factsizerect.size.cx:= size.cx + x;
     end;
    end;
-   case factarea of
+   case actarea of
     ht_topleft,ht_top,ht_topright: begin
      if y > size.cy then begin
       y:= size.cy
@@ -3376,7 +3418,7 @@ var
     end;
    end;
   end;
-  case factarea of
+  case actarea of
    ht_top,ht_bottom: begin
     mousepos1.x:= fpickpos.x;
    end;
@@ -3386,23 +3428,6 @@ var
   end;
   application.mouse.move(subpoint(pos1,posbefore));
  end;
-
- procedure updatecursorshape(area: areaty);
- var
-  shape: cursorshapety;
- begin
-  case area of
-   ht_topleft: shape:= cr_topleftcorner;
-   ht_bottomright: shape:= cr_bottomrightcorner;
-   ht_topright: shape:= cr_toprightcorner;
-   ht_bottomleft: shape:= cr_bottomleftcorner;
-   ht_top,ht_bottom: shape:= cr_sizever;
-   ht_left,ht_right: shape:= cr_sizehor;
-   else shape:= cr_arrow;
-  end;
-  application.widgetcursorshape:= shape;
- end;
-
 
 var
  component: tcomponent;
@@ -3414,7 +3439,6 @@ var
  area1: areaty;
  isinpaintrect: boolean;
  designactive: boolean;
- ss1: shiftstatesty;
  po1: pformselectedinfoty;
  pt1: pointty; 
 label
@@ -3443,14 +3467,14 @@ begin
    bo1:= false;
    if (eventkind = ek_buttonpress) and (button = mb_left) then begin
     fpickpos:= mousepos1;
-    if (ss1 = [ss_left]) or (ss1 = [ss_left,ss_ctrl]) or 
-                (ss1 = [ss_left,ss_ctrl,ss_shift]) then begin
-     factarea:= fselections.getareainfo(mousepos1,factcompindex);
+    if (ss1 = [ss_left]) or (ss1 = [ss_left,ss_ctrl]){ or 
+                (ss1 = [ss_left,ss_ctrl,ss_shift])} then begin
+     actarea:= fselections.getareainfo(mousepos1,factcompindex);
      if factcompindex >= 0 then begin
       fsizerect:= fselections.itempo(factcompindex)^.rect;
       factsizerect:= fsizerect;
      end;
-     if (factarea in [ar_component,ar_none]) and 
+     if (actarea in [ar_component,ar_none]) and 
                                      not (ss_shift in ss1) then begin
       if isinpaintrect then begin
        component:= componentatpos(mousepos1);
@@ -3467,12 +3491,12 @@ begin
       if component <> nil then begin
        if (factcompindex < 0) or 
                        (component <> fselections[factcompindex]) then begin
-        factarea:= ar_none;
+        actarea:= ar_none;
        end;
        bo1:= true;
       end
       else begin
-       factarea:= ar_none;
+       actarea:= ar_none;
       end;
       fclickedcompbefore:= component;
      end
@@ -3492,7 +3516,8 @@ begin
      info.mouse.pos:= pt1;
     end;
    end;
-   if not (es_processed in eventstate) then begin
+   if not (es_processed in eventstate) and 
+                     (ss1 <> [ss_left,ss_shift,ss_ctrl]) then begin
     area1:= fselections.getareainfo(mousepos1,int1);
     bo2:= not ((eventkind = ek_buttonpress) and (button = mb_left) and 
                      (ss1 = [ss_left]));
@@ -3503,8 +3528,8 @@ begin
         (not (fdesigner.hascurrentcomponent or 
                                     componentstorefo.hasselection))
        ) and 
-       ((factarea < firsthandle) or (factarea > lasthandle)) and 
-       (factarea <> ar_componentmove) then begin
+       ((actarea < firsthandle) or (actarea > lasthandle)) and 
+       (actarea <> ar_componentmove) then begin
      twindow1(window).dispatchmouseevent(info,capture); //"inherited"
      if not designactive then begin
       exclude(eventstate,es_processed);
@@ -3522,7 +3547,7 @@ begin
       if (component = form) and (fselections.count > 1) or bo2 then begin
        selectcomponent(component,sm_select);
        if projectoptions.e.moveonfirstclick then begin
-        factarea:= ar_component;
+        actarea:= ar_component;
        end;
       end
       else begin
@@ -3535,16 +3560,16 @@ begin
       if not designactive then begin
        capturemouse; //capture mouse
       end;
-      updatecursorshape(factarea);
+      updatecursorshape(ss1,actarea);
      end
      else begin
-      factarea:= ar_none;
+      actarea:= ar_none;
      end;
     end;
    end;
    if not (es_processed in eventstate) then begin
     if (eventkind = ek_buttonpress) and (button = mb_left) then begin
-     if ss1 = [ss_left] then begin
+     if (ss1 = [ss_left]) or (ss1 = [ss_left,ss_shift,ss_ctrl]) then begin
       if isinpaintrect then begin
        component:= fdesigner.createcurrentcomponent(module);
        if (component = nil) and componentstorefo.hasselection then begin
@@ -3552,12 +3577,20 @@ begin
        end;
       end;
       if component <> nil then begin
-       placecomponent(component,mousepos1);
+       if (ss1 = [ss_left,ss_shift,ss_ctrl]) and 
+                    (fselections.count = 1) then begin
+                      //insert in current selected widget
+        placecomponent(component,mousepos1,fselections[0]);
+       end
+       else begin
+        placecomponent(component,mousepos1);
+       end;
       end;
      end
      else begin
       if (ss1 = [ss_left,ss_shift]) and isinpaintrect then begin
-       factarea:= ar_selectrect;
+       actarea:= ar_selectrect;
+       capturemouse();
        fxorpicoffset:= mousepos1;
        if form <> nil then begin
         fpickwidget:= widgetatpos(mousepos1,false);
@@ -3571,7 +3604,7 @@ begin
     if (eventkind = ek_buttonrelease) and (button = mb_left) then begin
      hidexorpic(getcanvas(org_widget));
      fxorpicactive:= false;
-     case factarea of
+     case actarea of
       firsthandle..lasthandle: begin
        if (factcompindex >= 0) and 
                     (factcompindex < fselections.count) then begin
@@ -3638,8 +3671,9 @@ begin
          if fpickwidget <> self then begin
           rect1.pos:= translatewidgetpoint(fpickpos,self,fpickwidget);
           for int1:= 0 to fpickwidget.widgetcount -1 do begin
-           widget1:= fpickwidget[int1];
-           if rectinrect(widget1.widgetrect,rect1) then begin
+           widget1:= fpickwidget.widgets[int1];
+           if rectinrect(widget1.widgetrect,rect1) and 
+                         (ws_iswidget in widget1.widgetstate) then begin
             selectcomponent(widget1,selectmode);
            end;
           end;
@@ -3651,7 +3685,7 @@ begin
       end;
      end;
      fpickwidget:= nil;
-     factarea:= ar_none;
+     actarea:= ar_none;
      if factcompindex >= 0 then begin
       factcompindex:= -1;
       updateclickedcomponent; //update objectionspector componentname
@@ -3663,14 +3697,14 @@ begin
      if (eventkind = ek_mousemove) or (eventkind = ek_mousepark) then begin
       hidexorpic(getcanvas(org_widget));
       bo1:= true;
-      case factarea of
+      case actarea of
        firsthandle..lasthandle: begin
         updatesizerect;
        end;
        ar_component: begin
         if (distance(fpickpos,mousepos1) > movethreshold) then begin
          fxorpicoffset:= griddelta;
-         factarea:= ar_componentmove;
+         actarea:= ar_componentmove;
          capturemouse();
         end
         else begin
@@ -3685,12 +3719,13 @@ begin
        end;
        else begin
         bo1:= false;
-        updatecursorshape(fselections.getareainfo(mousepos1,int1));
+        fmovearea:= fselections.getareainfo(mousepos1,int1);
+        updatecursorshape(ss1,fmovearea);
        end;
       end;
       if bo1 then begin
        fxorpicactive:= true;
-       if not (factarea in [ar_component,firsthandle..lasthandle]) then begin
+       if not (actarea in [ar_component,firsthandle..lasthandle]) then begin
         fselections.beforepaintmoving; //resets canvas
        end;
        showxorpic(getcanvas(org_widget));
@@ -3705,7 +3740,7 @@ begin
    po1:= fselections.itempo(0);
    if po1^.selectedinfo.instance <> fmodule then begin
     bo1:= true;
-    case factarea of
+    case actarea of
      ar_component: begin
       if (eventkind = ek_buttonpress) and (button = mb_left) then begin
        pt1:= rectcenter(po1^.handles[ht_topleft]);
@@ -3787,6 +3822,9 @@ begin
   exit;
  end;
  shiftstate1:= info.shiftstate * keyshiftstatesmask;
+ if actarea = ar_none then begin
+  updatecursorshape(shiftstate1,fmovearea);
+ end;
  if eventkind = ek_keypress then begin
   with info do begin
    if shiftstate1 = [] then begin
@@ -3798,18 +3836,18 @@ begin
       end;
      end;
      key_escape: begin
-      if not (factarea in [ar_none,ar_component]) then begin
+      if not (actarea in [ar_none,ar_component]) then begin
        hidexorpic(getcanvas(org_widget));
        fxorpicactive:= false;
-       factarea:= ar_none;
+       actarea:= ar_none;
       end
       else begin      
-       if (fselections.count > 1) and (factarea <> ar_component) then begin
+       if (fselections.count > 1) and (actarea <> ar_component) then begin
         selectcomponent(module);
        end
        else begin
         if fselections.count > 0 then begin
-         if factarea = ar_component then begin
+         if actarea = ar_component then begin
           comp1:= fselections[factcompindex];
          end
          else begin
@@ -3819,7 +3857,7 @@ begin
           repeat
            comp1:= twidget(comp1).parentwidget;
           until (comp1 = nil) or (ws_iswidget in twidget(comp1).widgetstate);
-          actareabefore:= factarea;
+          actareabefore:= actarea;
           if (comp1 <> nil) and (comp1 <> self) then begin
            if fselections.count > 1 then begin
             selectparentwidget(twidget(comp1));
@@ -3831,7 +3869,7 @@ begin
           else begin
            selectcomponent(module);
           end;
-          factarea:= actareabefore;
+          actarea:= actareabefore;
          end
          else begin
 //          if isdatasubmodule(comp1.owner) then begin
@@ -4001,6 +4039,12 @@ end;
 procedure tformdesignerfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
+end;
+
+procedure tformdesignerfo.setactarea(const avalue: areaty);
+begin
+ factarea:= avalue;
+ fmovearea:= factarea;
 end;
 
 { tformdesignerdockcontroller }
