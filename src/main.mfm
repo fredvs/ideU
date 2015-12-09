@@ -7,8 +7,8 @@ object mainfo: tmainfo
   frame.grip_coloractive = 12375740
   frame.grip_options = []
   visible = False
-  bounds_x = 45
-  bounds_y = 165
+  bounds_x = 320
+  bounds_y = 172
   bounds_cx = 514
   bounds_cy = 185
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -648,7 +648,6 @@ object mainfo: tmainfo
             onexecute = viewwatchpointsonexecute
           end        
           item
-            state = [as_invisible, as_localinvisible]
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
@@ -661,14 +660,15 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.toggleformunit
-            caption = ' Toggle Form/Unit '
-            state = [as_invisible, as_localinvisible, as_localcaption, as_localimagelist]
-            options = [mao_shortcutcaption, mao_asyncexecute]
-            imagelist = vievmenuicons
+            state = [as_invisible, as_localinvisible, as_localshortcut]
+            options = []
+            sc = (
+              1
+              315
+            )
           end        
           item
             name = 'formmenuitemstart'
-            state = [as_invisible, as_localinvisible]
             options = [mao_separator, mao_shortcutcaption]
           end>
         caption = ' &View '

@@ -593,13 +593,23 @@ begin
   conffpguifo.ifquit.value := gINI.ReadBool('ifquit', 'designer_fpGUI', true);
   conffpguifo.edquit.text := gINI.ReadString('edquit', 'designer_fpGUI', 'quit');
     
-  confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
+   if ispyv = 1 then
+  begin
+    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/2.6.4/ppcx64');
+   confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.1.1/ppcx64');
+
+  end else begin
+    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
+    confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
+  end;
   
-  confcompilerfo.javacompiler.value  := gINI.ReadString('java', 'compiler1', '');
+   confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler3', '');
+ 
+  confcompilerfo.javacompiler.value  := gINI.ReadString('java', 'compiler1', 'javac');
   confcompilerfo.javacompiler2.value  := gINI.ReadString('java', 'compiler2', '');
   confcompilerfo.javacompiler3.value  := gINI.ReadString('java', 'compiler3', '');
   
-   confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
+  confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
   confcompilerfo.ccompiler2.value  := gINI.ReadString('C', 'compiler2', '');
   confcompilerfo.ccompiler3.value  := gINI.ReadString('C', 'compiler3', '');
   
@@ -612,16 +622,7 @@ begin
   
   confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
   
-  if ispyv = 1 then
-  begin
-    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/2.6.4/ppcx64');
-   confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.1.1/ppcx64');
-
-  end else begin
-    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
-    confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
-  end;
-    
+     
      {$ifdef windows}
    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin\sakit'); 
          {$else}

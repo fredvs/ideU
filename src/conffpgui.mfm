@@ -1,7 +1,7 @@
 object conffpguifo: tconffpguifo
   visible = False
-  bounds_x = 981
-  bounds_y = 451
+  bounds_x = 601
+  bounds_y = 206
   bounds_cx = 288
   bounds_cy = 289
   container.frame.localprops = []
@@ -162,7 +162,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 48
       bounds_cx = 94
       bounds_cy = 21
-      text = 'close'
+      text = 'closeall'
       reffontheight = 15
     end
     object edhide: tedit
@@ -173,7 +173,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 92
       bounds_cx = 94
       bounds_cy = 21
-      text = 'hide'
+      text = 'hideit'
       reffontheight = 15
     end
     object edshow: tedit
@@ -184,7 +184,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 70
       bounds_cx = 94
       bounds_cy = 21
-      text = 'show'
+      text = 'showit'
       reffontheight = 15
     end
     object edquit: tedit
