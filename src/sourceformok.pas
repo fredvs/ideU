@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2014 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -634,6 +634,12 @@ begin
       else begin
        bo1:= ar1[int1];
       end;
+      mstr1:= modulenames[int1];
+      relocatepath(projectoptions.projectdir,'',mstr1,
+                                             [pro_preferenew,pro_rootpath]);
+      po1:= mainfo.openformfile(filepath(mstr1),bo1,false,false,
+                                                         not ar2[int1],true);
+{
       mstr1:= relativepath(modulenames[int1],projectoptions.projectdir);
       if findfile(mstr1) then begin
        po1:= mainfo.openformfile(filepath(mstr1),bo1,false,false,
@@ -643,6 +649,7 @@ begin
        po1:= mainfo.openformfile(modulenames[int1],bo1,false,false,
                                                          not ar2[int1],true);
       end;
+}
       if (po1 <> nil) then begin
        with po1^ do begin
         designformintf.moduleoptions:= 
@@ -720,7 +727,9 @@ var
  visible1: boolean;
  active1: boolean;
 begin
- if (application.activewindow <> nil) and not fasking then begin
+ if (application.activewindow <> nil) and not fasking and 
+               (application.modallevel = 0) and 
+                           (application.keyboardcapturewidget = nil) then begin
   fasking:= true;
   try
    for int1:= 0 to count - 1 do begin
@@ -731,7 +740,11 @@ begin
        filechanged:= false;
        reload;
        mainfo.sourcechanged(items[int1]);
+      end
+      else begin
+       edit.modified:= true;
       end;
+      mainfo.sourcechanged(items[int1]);
      end;
     end;
    end;
@@ -759,6 +772,9 @@ begin
         po1:= designer.loadformfile(fna1,false);
        end;
        po1^.filechanged:= true;
+      end
+      else begin
+       designer.modulechanged(po1);
       end;
      end;
     end;

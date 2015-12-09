@@ -5,12 +5,12 @@ object mainfo: tmainfo
   frame.grip_size = 10
   frame.grip_color = 10203291
   frame.grip_coloractive = 12375740
-  frame.grip_options = [go_fixsizebutton, go_topbutton, go_backgroundbutton, go_lockbutton]
+  frame.grip_options = []
   visible = False
-  bounds_x = 447
-  bounds_y = 113
-  bounds_cx = 710
-  bounds_cy = 228
+  bounds_x = 45
+  bounds_y = 165
+  bounds_cx = 514
+  bounds_cy = 185
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -23,9 +23,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    16
-    700
-    212
+    17
+    504
+    168
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock]
@@ -103,8 +103,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 19
-    bounds_cx = 700
-    bounds_cy = 193
+    bounds_cx = 504
+    bounds_cy = 149
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -114,19 +114,19 @@ object mainfo: tmainfo
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
-    frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_frameimageoffsetactivemouse, frl_frameimageoffsetactiveclicked]
+    frame.localprops = []
     frame.localprops1 = []
     taborder = 1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 700
-    bounds_cy = 18
+    bounds_cx = 504
+    bounds_cy = 19
     anchors = [an_top]
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
     options = [dwo_hintclippedtext]
-    reffontheight = 14
+    reffontheight = 15
   end
   object gdb: tgdbmi
     guiintf = True

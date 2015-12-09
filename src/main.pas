@@ -39,8 +39,8 @@ uses
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
 const
- ispyv = 1 ;
- versiontext = '0.2';
+ ispyv = 0 ;
+ versiontext = '0.3';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -1131,7 +1131,7 @@ begin
      begin
   // if fpgfilename <> page1.filepath then
  //  begin
-   setstattext('  Toggled to form...',mtk_flat); 
+  // setstattext('  Toggled to form...',mtk_flat); 
      toogletag := true;
      
    sysfilename := tosysfilepath(filepath(trim(page1.filepath),fk_file,true));
@@ -1142,7 +1142,7 @@ begin
   //  LoadfpgDesigner('showit','');
      end else
    begin
-    setstattext('  Toggled to source...',mtk_flat);
+   // setstattext('  Toggled to source...',mtk_flat);
        toogletag := false;
   if (conffpguifo.tbfpgonlyone.value = true) and 
   (conffpguifo.ifhide.value = true) then LoadfpgDesigner(conffpguifo.edhide.text,'');
@@ -1175,7 +1175,7 @@ end;
      page1:= nil;
     end
     else begin
-     page1:= sourcefo.findsourcepage(str1);
+    page1:= sourcefo.findsourcepage(str1);
      if page1 = nil then begin //mfm not loaded in editor
       po1:= designer.loadformfile(str1,false);      
       if po1 <> nil then begin
@@ -1187,8 +1187,7 @@ end;
    end
    else begin
     if str2 = formfileext then begin
-     page1:= sourcefo.findsourcepage(
-                 replacefileext(page1.filepath,pasfileext));
+    page1:= sourcefo.findsourcepage(replacefileext(page1.filepath,pasfileext));
       end;
    end;
    if page1 <> nil then begin
@@ -1200,11 +1199,12 @@ end;
   po1:= designer.actmodulepo;
   if po1 <> nil then begin
    str1:= replacefileext(po1^.filename,pasfileext);
-   
+     
   if sourcefo.openfile(str1,true) = nil then 
   begin
-    raise exception.create(c[ord(unableopen)]+str1+'".');
-   end;
+   // raise exception.create(c[ord(unableopen)]+str1+'".');
+  //   setstattext('Unable to find ' +str1+ '...',mtk_flat);
+    end;
   end
   else begin
    if designer.modules.count > 0 then begin
@@ -1217,6 +1217,7 @@ end;
 procedure tmainfo.setstattext(const atext: msestring; 
                    const akind: messagetextkindty = mtk_info);
 begin
+
  with statdisp do begin
   value:= removelinebreaks(atext);
   case akind of
@@ -1232,6 +1233,7 @@ begin
   else font.color:= cl_black;
   end;
  end;
+
 end;
 
 procedure tmainfo.cleardebugdisp;
@@ -1741,7 +1743,8 @@ end;
 
 procedure tmainfo.onscale(const sender: TObject);
 begin
- basedock.bounds_y:= statdisp.bottom + 1;
+
+// basedock.bounds_y:= statdisp.bottom + 1;
  basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
 end;
 
@@ -3286,7 +3289,7 @@ procedure tmainfo.savewindowlayout(const astream: ttextstream);
 var
  statwriter: tstatwriter;
 begin
- statwriter:= tstatwriter.create(astream,ce_utf8n);
+ statwriter:= tstatwriter.create(astream,ce_utf8);
  try
   statwriter.setsection('breakpoints');
   beginpanelplacement();
@@ -3306,7 +3309,7 @@ procedure tmainfo.loadwindowlayout(const astream: ttextstream);
 var
  statreader: tstatreader;
 begin
- statreader:= tstatreader.create(astream,ce_utf8n);
+ statreader:= tstatreader.create(astream,ce_utf8);
  try
   beginpanelplacement();
   statreader.setsection('breakpoints');

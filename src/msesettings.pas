@@ -36,7 +36,7 @@ type
                     sma_ideudir, sma_docviewdir, sma_projectdir);
 const
 
- ispyv = 1 ;
+ ispyv = 0 ;
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
                       'mselibdir','syntaxdefdir','templatedir','compstoredir','compiler','debugger',

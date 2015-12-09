@@ -84,19 +84,19 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 19
+    bounds_y = 18
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     value = 'fpc'
     controller.filename = 'fpc'
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object ccompiler: tfilenameedit
     Tag = 7
@@ -112,18 +112,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 1
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 19
+    bounds_y = 18
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object javacompiler: tfilenameedit
     Tag = 7
@@ -139,18 +139,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 2
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 173
+    bounds_y = 172
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tbutton1: tbutton
     taborder = 3
@@ -177,18 +177,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 4
     hint = 'Path to Other compiler'
     bounds_x = 191
-    bounds_y = 325
+    bounds_y = 324
     bounds_cx = 327
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object fpccompiler2: tfilenameedit
     Tag = 7
@@ -204,18 +204,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 5
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 61
+    bounds_y = 60
     bounds_cx = 329
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object fpccompiler3: tfilenameedit
     Tag = 7
@@ -231,18 +231,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 6
     hint = 'Path to pascal compiler'
     bounds_x = 8
-    bounds_y = 101
+    bounds_y = 100
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object ccompiler2: tfilenameedit
     Tag = 7
@@ -258,35 +258,35 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 7
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 61
+    bounds_y = 60
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlabel1: tlabel
     taborder = 8
     bounds_x = 104
     bounds_y = 0
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'Pascal Compilers'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlabel3: tlabel
     taborder = 9
     bounds_x = 485
     bounds_y = 0
     bounds_cx = 71
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'C Compilers'
-    reffontheight = 14
+    reffontheight = 15
   end
   object ccompiler3: tfilenameedit
     Tag = 7
@@ -302,27 +302,27 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 10
     hint = 'Path to C compiler'
     bounds_x = 361
-    bounds_y = 101
+    bounds_y = 100
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlabel4: tlabel
     taborder = 11
     bounds_x = 121
     bounds_y = 153
     bounds_cx = 88
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'Java Compilers'
-    reffontheight = 14
+    reffontheight = 15
   end
   object javacompiler2: tfilenameedit
     Tag = 7
@@ -338,18 +338,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 12
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 216
+    bounds_y = 215
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object javacompiler3: tfilenameedit
     Tag = 7
@@ -365,27 +365,27 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 13
     hint = 'Path to Java compiler'
     bounds_x = 8
-    bounds_y = 259
+    bounds_y = 258
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlabel5: tlabel
     taborder = 14
     bounds_x = 286
     bounds_y = 308
     bounds_cx = 97
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'Other Compilers'
-    reffontheight = 14
+    reffontheight = 15
   end
   object pythoncompiler: tfilenameedit
     Tag = 7
@@ -401,27 +401,27 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 15
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 173
+    bounds_y = 172
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlabel6: tlabel
     taborder = 16
     bounds_x = 465
     bounds_y = 153
     bounds_cx = 105
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'Python Compilers'
-    reffontheight = 14
+    reffontheight = 15
   end
   object pythoncompiler2: tfilenameedit
     Tag = 7
@@ -437,18 +437,18 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 17
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 216
+    bounds_y = 215
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
   object pythoncompiler3: tfilenameedit
     Tag = 7
@@ -464,17 +464,17 @@ object confcompilerfo: tconfcompilerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 18
     hint = 'Path to python compiler'
     bounds_x = 361
-    bounds_y = 259
+    bounds_y = 258
     bounds_cx = 328
-    bounds_cy = 37
+    bounds_cy = 39
     controller.captionopen = 'Compiler path'
-    reffontheight = 14
+    reffontheight = 15
   end
 end

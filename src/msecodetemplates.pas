@@ -165,7 +165,7 @@ var
 begin
  result:= false;
  initinfo(ainfo);
- stat:= tstatreader.create(afilename,ce_utf8n);
+ stat:= tstatreader.create(afilename,ce_utf8);
  with stat,ainfo do begin
   if findsection('header') then begin
    name:= readmsestring('name','');
@@ -191,7 +191,7 @@ procedure tcodetemplates.savefile(const ainfo: templateinfoty);
 var
  stat: tstatwriter; 
 begin
- stat:= tstatwriter.create(ainfo.path,ce_utf8n,true);
+ stat:= tstatwriter.create(ainfo.path,ce_utf8,true);
  with stat,ainfo do begin
   writesection('header');
   writemsestring('name',name);
@@ -345,7 +345,7 @@ begin
    se.templatename[int1]:= name;
    se.comment[int1]:= comment;
    for int2:= 0 to high(params) do begin
-    edit1:= tstringedit(se.grid.findtagwidget(int2+1,tstringedit));
+    edit1:= tstringedit(se.grid.findtagchild(int2+1,tstringedit));
     if edit1 <> nil then begin
      edit1[int1]:= params[int2];
     end;

@@ -1,7 +1,7 @@
 object confideufo: tconfideufo
   visible = False
-  bounds_x = 771
-  bounds_y = 357
+  bounds_x = 710
+  bounds_y = 275
   bounds_cx = 274
   bounds_cy = 218
   container.frame.localprops = []
@@ -77,14 +77,14 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       241
       2
     )
     bounds_x = 12
-    bounds_y = 31
+    bounds_y = 30
     bounds_cx = 254
-    bounds_cy = 16
+    bounds_cy = 17
     value = True
   end
   object tbfilereload1: tbooleaneditradio
@@ -93,15 +93,15 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       226
       2
     )
     taborder = 1
     bounds_x = 12
-    bounds_y = 53
+    bounds_y = 52
     bounds_cx = 239
-    bounds_cy = 16
+    bounds_cy = 17
   end
   object tbfilereload2: tbooleaneditradio
     frame.caption = '  A dialog box ask what to do...'
@@ -109,24 +109,24 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       190
       2
     )
     taborder = 2
     bounds_x = 12
-    bounds_y = 75
+    bounds_y = 74
     bounds_cx = 203
-    bounds_cy = 16
+    bounds_cy = 17
   end
   object tlabel1: tlabel
     taborder = 3
     bounds_x = 17
     bounds_y = 10
     bounds_cx = 241
-    bounds_cy = 14
+    bounds_cy = 15
     caption = 'When a file has changed from outside...'
-    reffontheight = 14
+    reffontheight = 15
   end
   object ok: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -136,11 +136,11 @@ object confideufo: tconfideufo
     bounds_x = 111
     bounds_y = 189
     bounds_cx = 50
-    bounds_cy = 20
+    bounds_cy = 21
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
-    reffontheight = 14
+    reffontheight = 15
   end
   object tbassistive: tbooleanedit
     frame.caption = 'Enable sak assistive at loading'
@@ -148,15 +148,15 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       186
       2
     )
     taborder = 5
     bounds_x = 27
-    bounds_y = 113
+    bounds_y = 112
     bounds_cx = 199
-    bounds_cy = 16
+    bounds_cy = 17
   end
   object tesakitdir: tfilenameedit
     frame.colorclient = 15790335
@@ -171,21 +171,21 @@ object confideufo: tconfideufo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 6
     hint = 'Dirextory of sakit ( speaker assistve kit )'
     bounds_x = 7
-    bounds_y = 137
+    bounds_y = 136
     bounds_cx = 262
-    bounds_cy = 37
+    bounds_cy = 39
     value = '/usr/local/share/'
     controller.filename = '/usr/local/share/'
     controller.lastdir = '/usr/local/share/'
     controller.options = [fdo_directory]
     controller.captionopen = 'FPC root directory'
-    reffontheight = 14
+    reffontheight = 15
   end
 end

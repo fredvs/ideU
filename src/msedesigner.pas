@@ -420,6 +420,8 @@ type
 //   procedure doasyncevent(var atag: integer); override;
    procedure readererror(reader: treader; const message: string;
                                  var handled: boolean);
+   procedure readerenumerror(const reader: treader; const atype: ptypeinfo;
+                            const aitemname: string; var avalue: longword);
    procedure readerseterror(const reader: treader; const atype: ptypeinfo;
                             const aitemname: string; var avalue: integer);
    procedure forallmethodproperties(const aroot: tcomponent;
@@ -1371,6 +1373,7 @@ var
  end;
  
 begin
+ result:= nil;
  recursionlevel:= 32; //max
  adddescendent(aancestor);
 end;
@@ -2528,7 +2531,7 @@ begin
     po1:= fdesigner.getinheritedmodule(designmoduleclassname);
     if po1 = nil then begin
      raise exception.create(ansistring(actionsmo.c[ord(ac_ancestorfor)])+
-           designmoduleclassname+ansistring(actionsmo.c[ord(ac_notfound)]));
+         designmoduleclassname+ansistring(actionsmo.c[ord(ac_notfound)]));
     end;
     fdesigner.beginstreaming({po1});
     try
@@ -2851,7 +2854,7 @@ begin
  with registeredcomponents do begin
   if (acomponent.ComponentState * [csancestor] = []) or
          (acomponent.Owner = nil) or (acomponent.Owner = module) then begin //probaly inline
-
+   classna:= '';
    str1:= acomponent.Name;
    acomponent.name:= '';
    if csinline in acomponent.componentstate then begin
@@ -4100,7 +4103,7 @@ begin
   raise exception.Create(ansistring(actionsmo.c[ord(ac_modulenotfound)]));
  end;
  if po1 = nil then begin
-  raise exception.Create(ansistring(actionsmo.c[ord(ac_methodnotfound)]));
+ raise exception.Create(ansistring(actionsmo.c[ord(ac_methodnotfound)]));
  end;
  oldname:= po1^.name;
  po1^.name:= newname;
@@ -4566,12 +4569,37 @@ begin
  end;
 end;
 
+procedure tdesigner.readerenumerror(const reader: treader; 
+         const atype: ptypeinfo; const aitemname: string; var avalue: longword);
+begin
+ if atype = typeinfo(charencodingty) then begin
+  if (aitemname = 'ce_utf8n') then begin
+   avalue:= ord(ce_utf8);
+   floadingmodulepo^.readermodified:= true;
+  end;
+ end;
+end;
+
 procedure tdesigner.readerseterror(const reader: treader; 
          const atype: ptypeinfo; const aitemname: string; var avalue: integer);
 begin
  if atype = typeinfo(optioneditty) then begin
   if (aitemname = 'oe_autopopupmenu') or 
             (aitemname = 'oe_keyexecute') then begin
+   avalue:= -2; //skip
+   floadingmodulepo^.readermodified:= true;
+  end;
+ end;
+ if atype = typeinfo(framelocalpropty) then begin
+  if (aitemname = 'frl_frameimageoffsetactivemouse') or 
+            (aitemname = 'frl_frameimageoffsetactiveclicked') then begin
+   avalue:= -2; //skip
+   floadingmodulepo^.readermodified:= true;
+  end;
+ end;
+ if atype = typeinfo(framelocalprop1ty) then begin
+  if (aitemname = 'frl1_framefaceoffsetactivemouse') or 
+            (aitemname = 'frl1_framefaceoffsetactiveclicked') then begin
    avalue:= -2; //skip
    floadingmodulepo^.readermodified:= true;
   end;
@@ -4627,8 +4655,12 @@ var
  exp1: exception;
 
 begin //loadformfile
+
+if fileexists(filename) then begin
+
  filename:= filepath(filename);
  result:= fmodules.findmodule(filename);
+// bo1 := true;
  if result = nil then begin
   designnotifications.closeobjecttext(idesigner(self),filename,bo1);
   if bo1 then begin
@@ -4706,6 +4738,7 @@ begin //loadformfile
          reader.oncreatecomponent:= createcomponent();
          reader.onerror:= {$ifdef FPC}@{$endif}readererror;
          reader.onseterror:= @readerseterror;
+         reader.onenumerror:= @readerenumerror;
          module.Name:= modulename;
          reader.ReadrootComponent(module);
         {$ifndef mse_nomethodswap}
@@ -4784,10 +4817,10 @@ begin //loadformfile
           for int1:= 1 to rootnames.Count - 1 do begin
            wstr1:= wstr1 + ','+msestring(rootnames[int1]);
           end;
-          raise exception.Create(ansistring(
-                                   actionsmo.c[ord(ac_unresolvedref)]+' '+
-                                            msestring(lastmissed)+lineend+
-                          actionsmo.c[ord(ac_modules)]+' '+wstr1+'.'));
+        raise exception.Create(ansistring(
+                                actionsmo.c[ord(ac_unresolvedref)]+' '+
+                                         msestring(lastmissed)+lineend+
+                       actionsmo.c[ord(ac_modules)]+' '+wstr1+'.'));
          end;
          result^.resolved:= true;
         except
@@ -4825,9 +4858,9 @@ begin //loadformfile
     except
      on e: exception do begin
       e.Message:= ansistring(actionsmo.c[ord(ac_cannotreadform)]+filename)+
-                                                        '".'+lineend+e.Message;
-      raise;
-     end;
+                                                    '".'+lineend+e.Message;
+    raise;
+    end;
     end;
    finally
     if fformloadlevel = 0 then begin
@@ -4866,7 +4899,7 @@ begin //loadformfile
       if result <> nil then begin
        dodelete;
       end;
-      raise exp1;
+    raise exp1;
      end;
     end;
    end;
@@ -4887,6 +4920,7 @@ begin //loadformfile
                           '*****loadformfile '+filename);
   {$endif}
   *)
+  end;
 end; //loadformfile
 
 procedure createbackupfile(const newname,origname: filenamety;

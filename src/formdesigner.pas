@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2014 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -213,6 +213,7 @@ type
    procedure clientsizechanged;
    procedure adjustchildcomponentpos(var apos: pointty);
    procedure readjustchildcomponentpos(var apos: pointty);
+   procedure widgetscrolled(const sender: tobject);
 
 
    procedure setmodule(const value: tmsecomponent);
@@ -259,7 +260,8 @@ type
    function componentscrollsize: sizety;
    function componentoffset(): pointty;
    function componentatpos(const apos: pointty): tcomponent;
-   function widgetatpos(const apos: pointty; onlywidgets: boolean): twidget;
+   function widgetatpos(const apos: pointty; const onlywidgets: boolean; 
+                                 const everywhere: boolean = false): twidget;
    procedure updateselections;
 
    procedure setrootpos(const component: tcomponent; const apos: pointty);
@@ -289,6 +291,7 @@ type
    procedure checksynctoformsize();
    procedure checksynctomodulepos();
    procedure formcontainerwidgetregionchanged(const sender: twidget);
+   procedure rootchanged(const aflags: rootchangeflagsty); override;
    procedure parentchanged(); override;
    procedure poschanged; override;
    procedure sizechanged; override;
@@ -623,6 +626,7 @@ var
  bo1,bo2: boolean;
 begin
  result:= false;
+ ar1:= nil;
  amodule:= fowner.fmodule;
  checkowned;
  inherited assign(source);
@@ -1149,7 +1153,7 @@ begin
  fgridsizey:= defaultgridsizey;
  fselections:= tformdesignerselections.create(self);
  fformcont:= tformcontainer.create(self);
- fdragdock:= tformdesignerdockcontroller.create(idockcontroller(self));
+ fdragdock:= tformdesignerdockcontroller.create(self);
 
  createwindow();
  inherited create(aowner);
@@ -1166,6 +1170,25 @@ begin
  inherited;
  fformcont.free();
  fselections.free();
+end;
+
+procedure tformdesignerfo.rootchanged(const aflags: rootchangeflagsty);
+begin
+ if (rcf_windowremove in aflags) and (fwindow <> nil) then begin
+  fwindow.unregisteronscroll(@widgetscrolled);
+ end;
+ inherited;
+ if (rcf_windowset in aflags) then begin
+  window.registeronscroll(@widgetscrolled);
+ end;
+end;
+
+procedure tformdesignerfo.parentchanged();
+begin
+ inherited;
+// checksynctoformsize();
+ updateformcont();
+ updatedockinfo();
 end;
 
 procedure tformdesignerfo.ValidateRename(AComponent: TComponent;
@@ -1285,6 +1308,11 @@ procedure tformdesignerfo.readjustchildcomponentpos(var apos: pointty);
 begin
  addpoint1(apos,componentoffset);
  subpoint1(apos,widgetrefpoint);
+end;
+
+procedure tformdesignerfo.widgetscrolled(const sender: tobject);
+begin
+ fselections.change();
 end;
 
 function tformdesignerfo.getcomponentrect(const component: tcomponent;
@@ -1727,12 +1755,12 @@ begin
 end;
 
 function tformdesignerfo.widgetatpos(const apos: pointty;
-                                onlywidgets: boolean): twidget;
+       const onlywidgets: boolean; const everywhere: boolean = false): twidget;
 var
  widgetinfo: widgetatposinfoty;
 begin
  result:= nil;
- if pointinrect(apos,gridrect) then begin
+ if everywhere or pointinrect(apos,gridrect) then begin
   fillchar(widgetinfo,sizeof(widgetinfo),0);
   with widgetinfo do begin
    pos:= translatewidgetpoint(apos,self,form);
@@ -2551,14 +2579,6 @@ begin
  end;
 end;
 
-procedure tformdesignerfo.parentchanged();
-begin
- inherited;
-// checksynctoformsize();
- updateformcont();
- updatedockinfo();
-end;
-
 procedure tformdesignerfo.beffloatexe(const sender: twidget;
                var arect: rectty);
 begin
@@ -3141,7 +3161,7 @@ begin
  if fmodule is twidget then begin
   with twidget1(fmodule) do begin
    fwidgetrect.pos:= self.paintpos;
-   rootchanged(true);
+   rootchanged([rcf_widgetregioninvalid]);
   end;
  end;
 end;
@@ -3440,7 +3460,8 @@ var
  isinpaintrect: boolean;
  designactive: boolean;
  po1: pformselectedinfoty;
- pt1: pointty; 
+ pt1: pointty;
+// dockintf: idockcontroller;
 label
  1;
 begin
@@ -3481,7 +3502,7 @@ begin
        if (component = nil) then begin
         if (form <> nil) and 
                  not hidewidgetact.checked then begin
-         component:= widgetatpos(mousepos1,true);
+         component:= widgetatpos(mousepos1,true,true);
         end
         else begin
          component:= module;

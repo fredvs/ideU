@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2013 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -1218,6 +1218,11 @@ begin
    end;
    setlength(result,length(result)-1); //remove last space
    result[length(result)]:= ')';
+  end
+  else begin
+   if mef_brackets in flags then begin
+    result:= result + '()';
+   end;
   end;
   if kind = mkfunction then begin
    result:= result + ': ' + params[high(params)].typename;
@@ -1387,11 +1392,29 @@ var
   end;
  end;
 
+ procedure checklineinsert(const info: classinfoty; const startindex: int32;
+                              const startline: int32; const linecount: int32);
+ var
+  po1,pe: pprocedureinfoty;
+ begin
+  po1:= info.procedurelist.datapo;
+  pe:= po1 + info.procedurelist.count;
+  while po1 < pe do begin
+   if po1^.impendpos.pos.row >= startindex then begin
+    inc(po1^.impendpos.pos.row,linecount);
+   end;
+   inc(po1);
+  end;
+ end; //checklineinsert
+ 
 var
  po2: pdefinfoty;   
- newimp: boolean;
+ atstart: boolean;
  classindex1: integer;
  str2: string;
+ i2: int32;
+ insertpos: sourceposty;
+ 
 begin                        //completeclass
  result:= false;
  with infopo^ do begin
@@ -1499,36 +1522,51 @@ begin                        //completeclass
      updateunit(infopo,false);
     end;
    end;
-   newimp:= false;
-   cpo:= infopo^.p.classinfolist[classindex1]; //cpo is invalid after updateunit
+   cpo:= infopo^.p.classinfolist[classindex1]; 
+                                     //cpo is invalid after updateunit
    with cpo^ do begin                     
     if isemptysourcepos(procimpstart) then begin
-     newimp:= true;
-     replacetext(infopo,infopo^.p.implementationend,infopo^.p.implementationend,
-      msestring('{ '+name+' }'+lineend));
-     result:= true;
      procimpstart:= infopo^.p.implementationend;
-     inc(procimpstart.pos.row,1);
+     replacetext(infopo,procimpstart,procimpstart,
+                                 msestring('{ '+name+' }'+lineend+lineend));
+     result:= true;
+     checklineinsert(cpo^,0,procimpstart.pos.row,2);
+     inc(procimpstart.pos.row,2);
      procimpstart.pos.col:= 0;
      procimpend:= procimpstart;
     end;
+    insertpos:= procimpstart;
+    insertpos.pos.col:= 0;
+    atstart:= true;
     for int1:= 0 to procedurelist.count - 1 do begin
      ppo:= procedurelist[int1];
      with ppo^ do begin
-      if isemptysourcepos(impheaderstartpos) and 
-                 not (mef_abstract in params.flags) then begin
-       str1:= lineend +
-           limitlinelength(msestring(composeprocedureheader(ppo,cpo,true)),
-                          fmaxlinelength,procheaderbreakchars,14) + lineend +
-                 'begin'+lineend+
-                 'end;'+lineend;
-       if newimp and (int1 = procedurelist.count - 1) then begin
-        str1:= str1 + lineend;
+      if not (mef_abstract in params.flags) then begin
+       if isemptysourcepos(impheaderstartpos) then begin
+        if atstart then begin
+         str1:= '';
+        end
+        else begin
+         str1:= lineend;
+        end;
+        str1:= str1 +
+              limitlinelength(msestring(composeprocedureheader(ppo,cpo,true)),
+                           fmaxlinelength,procheaderbreakchars,14) + lineend +
+                  'begin'+lineend+
+                  'end;'+lineend;
+        if atstart then begin
+         str1:= str1 + lineend;
+        end;
+        replacetext(infopo,insertpos,insertpos,str1);
+        result:= true;
+        i2:= high(breaklines(str1));
+        checklineinsert(cpo^,insertpos.pos.row,int1,i2);
+        inc(insertpos.pos.row,i2);
+       end
+       else begin
+        insertpos.pos.row:= impendpos.pos.row;
+        atstart:= false;
        end;
-       replacetext(infopo,procimpend,procimpend,str1);
-       result:= true;
-       inc(procimpend.pos.row,high(breaklines(str1)));
-       procimpend.pos.col:= 0;
       end;
      end;
     end;
@@ -1606,6 +1644,8 @@ var
  int1: integer;
 begin
  ar1:= designer.getancestorclassinfo(amodule,false,ar2);
+ po1:= nil;
+ po2:= nil;
  po3:= nil;
  for int1:= high(ar1) downto 0 do begin
   po1:= ar2[int1];

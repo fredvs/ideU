@@ -55,8 +55,9 @@ begin
  try
   with projectoptions,d.t do begin
    fo.parameters.value:= progparameters;
-  // fo.parameters.dropdown.valuelist.asarray:= propgparamhistory;
+   fo.parameters.dropdown.valuelist.asarray:= progparamhistory;
    fo.workingdirectory.value:= progworkingdirectory;
+   fo.workingdirectory.controller.history:= workdirparamhistory;
    fo.envvaron.gridvalues:= envvarons;
    fo.envvarname.gridvalues:= envvarnames;
    fo.envvarvalue.gridvalues:= envvarvalues;
@@ -65,8 +66,9 @@ begin
    fo.grid.removeappendedrow;
    with projectoptions,d.t do begin
     progparameters:= fo.parameters.value;
-   // propgparamhistory:= fo.parameters.dropdown.valuelist.asarray;
+    progparamhistory:= fo.parameters.dropdown.valuelist.asarray;
     progworkingdirectory:= fo.workingdirectory.value;
+    workdirparamhistory:= fo.workingdirectory.controller.history;
     envvarons:= fo.envvaron.gridvalues;
     envvarnames:= fo.envvarname.gridvalues;
     envvarvalues:= fo.envvarvalue.gridvalues;
@@ -84,9 +86,10 @@ begin
  with projectoptions,d,tstatreader(filer) do begin
   if not filer.iswriter then begin
    with t do begin
-    progparameters:= readstring('parameters',progparameters);
+    progparameters:= readmsestring('parameters',progparameters);
 //   progparamhistory:= readarray('progparamhistory',propgparamhistory);
-    progworkingdirectory:= readstring('workingdirectory',progworkingdirectory);
+    progworkingdirectory:=
+                        readmsestring('workingdirectory',progworkingdirectory);
 //    envvarons:= readarray('envvarons',envvarons);
     envvarnames:= readarray('envvarnames',envvarnames);
     envvarvalues:= readarray('envvarvalues',envvarvalues);
@@ -94,7 +97,8 @@ begin
   end;
   
 //   filer.updatevalue('parameters',progparameters);
- // filer.updatevalue('progparamhistory',propgparamhistory);
+  filer.updatevalue('progparamhistory',progparamhistory);
+  filer.updatevalue('workdirparamhistory',workdirparamhistory);
 //   filer.updatevalue('workingdirectory',progworkingdirectory);
   filer.updatevalue('envvarons',envvarons);
  //  filer.updatevalue('envvarnames',envvarnames);
