@@ -21,9 +21,9 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, 
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
  msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,  
-  msesys, msesysutils,
+  msesys, msesysutils, msesimplewidgets,
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
  mseificompglob,mseifiglob;
  
@@ -204,6 +204,7 @@ type
    projectoptionsact: taction;
    projecttreeact: taction;
    projectsourceact: taction;
+   
    projectsaveact: taction;
    projectcloseact: taction;
    c: tstringcontainer;
@@ -280,23 +281,15 @@ type
    // fred
    procedure customselectedrun(const sender: TObject);
    
+   // Setup ready
+   procedure setupcustom ;
+   
    // Custom compile
    procedure customoption1execute(const sender: TObject);
    procedure customoption2execute(const sender: TObject);
    procedure customoption3execute(const sender: TObject);
    procedure customoption4execute(const sender: TObject);
    
-   /// set compiler
-   procedure setcompiler1execute(const sender: TObject);
-   procedure setcompiler2execute(const sender: TObject);
-   procedure setcompiler3execute(const sender: TObject);
-   
-   /// set type of compiler
-   procedure settypecompiler1execute(const sender: TObject); // fpc
-   procedure settypecompiler2execute(const sender: TObject); // Java
-   procedure settypecompiler3execute(const sender: TObject); // C
-   procedure settypecompiler4execute(const sender: TObject); // Python
-      
    //debugger
    procedure resetactonexecute(const sender: tobject);
    procedure interruptactonexecute(const sender: tobject);
@@ -517,75 +510,61 @@ begin
  mainfo.toggleformunit;
 end;
 
+procedure tactionsmo.setupcustom ;
+begin
+  if debuggerfo.compiler_pascal.value = true then mainfo.settypecompiler := 1 ;
+  if debuggerfo.compiler_java.value = true then mainfo.settypecompiler := 2 ;
+  if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
+  if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
+  
+  if debuggerfo.compiler_1.value = true then mainfo.setcompiler := 1 ;
+  if debuggerfo.compiler_2.value = true then mainfo.setcompiler := 2 ;
+  if debuggerfo.compiler_3.value = true then mainfo.setcompiler := 3 ;
+  if debuggerfo.compiler_4.value = true then mainfo.setcompiler := 4 ;
+  
+  if debuggerfo.compiler_pascal.value = true then mainfo.settypecompiler := 1 ;
+  if debuggerfo.compiler_java.value = true then mainfo.settypecompiler := 2 ;
+  if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
+  if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
+  
+  debuggerfo.edited_make1.enabled := false;
+  debuggerfo.edited_make2.enabled := false;
+  debuggerfo.edited_make3.enabled := false;
+  debuggerfo.edited_make4.enabled := false;
+  debuggerfo.edited_abort.enabled := true;
+    
+end;
+
 procedure tactionsmo.customoption1execute(const sender: TObject);
 begin
+setupcustom ;
  mainfo.customoption := 4 ;
-  mainfo.setstattext('  Set on Compiler Option 1',mtk_flat);
+  mainfo.setstattext('  Compile with Option 1',mtk_flat);
+   mainfo.customcompile(sender);
 end;
 
 procedure tactionsmo.customoption2execute(const sender: TObject);
 begin
+setupcustom ;
  mainfo.customoption := 8 ;
-  mainfo.setstattext('  Set on Compiler Option 2',mtk_flat);
+  mainfo.setstattext('  Compile with Option 2',mtk_flat);
+   mainfo.customcompile(sender);
 end;
 
 procedure tactionsmo.customoption3execute(const sender: TObject);
 begin
+setupcustom ;
  mainfo.customoption := 16 ;
-  mainfo.setstattext('  Set on Compiler Option 3',mtk_flat);
+  mainfo.setstattext('  Compile with Option 3',mtk_flat);
+   mainfo.customcompile(sender);
 end;
 
 procedure tactionsmo.customoption4execute(const sender: TObject);
 begin
+  setupcustom ;
  mainfo.customoption := 32 ;
-  mainfo.setstattext('  Set on Compiler Option 4',mtk_flat);
-end;
-
-procedure tactionsmo.setcompiler1execute(const sender: TObject);
-begin
- mainfo.setcompiler := 1 ;
-  mainfo.setstattext('  Set use Compiler 1',mtk_flat);
+  mainfo.setstattext('  Compile with Option 4',mtk_flat);
   mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.setcompiler2execute(const sender: TObject);
-begin
- mainfo.setcompiler := 2 ;
-  mainfo.setstattext('  Set use Compiler 2',mtk_flat);
-  mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.setcompiler3execute(const sender: TObject);
-begin
-  mainfo.setcompiler := 3 ;
-  mainfo.setstattext('  Set use Compiler 3',mtk_flat);
-  mainfo.customcompile(sender);
-end;
-
-
-
-procedure tactionsmo.settypecompiler1execute(const sender: TObject);
-begin
- mainfo.settypecompiler := 1 ;
-  mainfo.setstattext('  Use FPC Compiler',mtk_flat);
-end;
-
-procedure tactionsmo.settypecompiler2execute(const sender: TObject);
-begin
- mainfo.settypecompiler := 2 ;
-  mainfo.setstattext('  Use Java Compiler',mtk_flat);
-end;
-
-procedure tactionsmo.settypecompiler3execute(const sender: TObject);
-begin
- mainfo.settypecompiler := 3 ;
-  mainfo.setstattext('  Use C Compiler',mtk_flat);
-end;
-
-procedure tactionsmo.settypecompiler4execute(const sender: TObject);
-begin
- mainfo.settypecompiler := 4 ;
-  mainfo.setstattext('  Use Python Compiler',mtk_flat);
 end;
 
 procedure tactionsmo.customselectedrun(const sender: TObject);
@@ -705,10 +684,15 @@ begin
   if sender is tmenuitem then begin
    domake(tmenuitem(sender).tag);
   end
+   else begin
+   if sender is tbutton then begin
+   domake(tbutton(sender).tag);
+  end
   else begin
-   domake(0);
+      domake(0);
   end;
-  resetstartcommand;
+  end;
+   resetstartcommand;
  end;
 end;
 
@@ -734,12 +718,14 @@ end;
 
 procedure tactionsmo.continueactonexecute(const sender: tobject);
 begin
+
  with mainfo do begin
   if checkremake(sc_continue) then begin
    cpufo.beforecontinue;
    gdb.continue;
-  end;
+   end;
  end;
+ 
 end;
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);
@@ -789,11 +775,13 @@ end;
 
 procedure tactionsmo.bkptsononexecute(const sender: TObject);
 begin
+bkptsonact.checked := debuggerfo.break_point.value;
  breakpointsfo.bkptson.value:= bkptsonact.checked;
 end;
 
 procedure tactionsmo.watchesononexecute(const sender: TObject);
 begin
+watchesonact.checked := debuggerfo.watches.value;
  watchfo.watcheson.value:= watchesonact.checked;
 end;
 

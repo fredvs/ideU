@@ -20,7 +20,8 @@ unit make;
 
 interface
 uses
- msestrings,msepipestream,msesystypes;
+ msestrings,  debuggerform,
+   msepipestream,msesystypes;
  
 procedure domake(atag: integer);
 procedure abortmake;
@@ -200,6 +201,12 @@ end;
 procedure abortmake;
 begin
  if (maker <> nil) or (custommaker <> nil) then begin
+  debuggerfo.project_abort_compil.enabled := false;
+  debuggerfo.edited_abort.enabled := false;
+  debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
   killmake;
   mainfo.setstattext(actionsmo.c[ord(ac_makeaborted)],mtk_error);
  end;
@@ -285,27 +292,39 @@ begin
  
 case acompiler of
 1: begin // fpc compiler
-if acompilertag = 1 then commandcompiler := confcompilerfo.fpccompiler.value else 
-if acompilertag = 2 then commandcompiler := confcompilerfo.fpccompiler2.value else 
-if acompilertag = 3 then commandcompiler := confcompilerfo.fpccompiler3.value;
+case acompilertag of
+1 : commandcompiler := confcompilerfo.fpccompiler.value ;
+2 : commandcompiler := confcompilerfo.fpccompiler2.value ;
+3 : commandcompiler := confcompilerfo.fpccompiler3.value ; 
+4 : commandcompiler := confcompilerfo.fpccompiler4.value;
+end;
 end;
 
 2: begin // java
-if acompilertag = 1 then commandcompiler := confcompilerfo.javacompiler.value else 
-if acompilertag = 2 then commandcompiler := confcompilerfo.javacompiler2.value else 
-if acompilertag = 3 then commandcompiler := confcompilerfo.javacompiler3.value;
+case acompilertag of
+1 : commandcompiler := confcompilerfo.javacompiler.value ;
+2 : commandcompiler := confcompilerfo.javacompiler2.value ;
+3 : commandcompiler := confcompilerfo.javacompiler3.value ; 
+4 : commandcompiler := confcompilerfo.javacompiler4.value;
+end;
 end;
 
 3: begin // C
-if acompilertag = 1 then commandcompiler := confcompilerfo.ccompiler.value else 
-if acompilertag = 2 then commandcompiler := confcompilerfo.ccompiler2.value else 
-if acompilertag = 3 then commandcompiler := confcompilerfo.ccompiler3.value;
+case acompilertag of
+1 : commandcompiler := confcompilerfo.ccompiler.value ;
+2 : commandcompiler := confcompilerfo.ccompiler2.value ;
+3 : commandcompiler := confcompilerfo.ccompiler3.value ; 
+4 : commandcompiler := confcompilerfo.ccompiler4.value;
+end;
 end;
 
 4: begin // python
-if acompilertag = 1 then commandcompiler := confcompilerfo.pythoncompiler.value else 
-if acompilertag = 2 then commandcompiler := confcompilerfo.pythoncompiler2.value else 
-if acompilertag = 3 then commandcompiler := confcompilerfo.pythoncompiler3.value;
+case acompilertag of
+1 : commandcompiler := confcompilerfo.pythoncompiler.value ;
+2 : commandcompiler := confcompilerfo.pythoncompiler2.value ;
+3 : commandcompiler := confcompilerfo.pythoncompiler3.value ; 
+4 : commandcompiler := confcompilerfo.pythoncompiler4.value;
+end;
 end;
 end;
  
@@ -545,18 +564,36 @@ begin
  fcurrentdir:= getcurrentdirmse;
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
-  mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+ 
+ debuggerfo.project_abort_compil.enabled := true;
+
+ mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
  else begin
+  debuggerfo.project_abort_compil.enabled := false;
   mainfo.setstattext(actionsmo.c[ord(ac_makenotrunning)],mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
+  debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
+  debuggerfo.edited_abort.enabled := false;
  end;
 end;
 
 procedure tmaker.dofinished;
 begin
+ debuggerfo.project_abort_compil.enabled := false;
+ 
+ debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
+ 
+ debuggerfo.edited_abort.enabled := false;
+  
  if ftargettimestamp <> getfilemodtime(gettargetfile) then begin
   mainfo.targetfilemodified;
  end;

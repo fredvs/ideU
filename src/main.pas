@@ -603,19 +603,23 @@ begin
     confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
   end;
   
-   confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler3', '');
+   confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
+   confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '');
  
   confcompilerfo.javacompiler.value  := gINI.ReadString('java', 'compiler1', 'javac');
   confcompilerfo.javacompiler2.value  := gINI.ReadString('java', 'compiler2', '');
   confcompilerfo.javacompiler3.value  := gINI.ReadString('java', 'compiler3', '');
+   confcompilerfo.javacompiler4.value  := gINI.ReadString('java', 'compiler4', '');
   
   confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
   confcompilerfo.ccompiler2.value  := gINI.ReadString('C', 'compiler2', '');
   confcompilerfo.ccompiler3.value  := gINI.ReadString('C', 'compiler3', '');
+  confcompilerfo.ccompiler4.value  := gINI.ReadString('C', 'compiler4', '');
   
   confcompilerfo.pythoncompiler.value  := gINI.ReadString('python', 'compiler1', '');
   confcompilerfo.pythoncompiler2.value  := gINI.ReadString('python', 'compiler2', '');
   confcompilerfo.pythoncompiler3.value  := gINI.ReadString('python', 'compiler3', '');
+  confcompilerfo.pythoncompiler4.value  := gINI.ReadString('python', 'compiler4', '');
    
   conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', false); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
@@ -692,19 +696,24 @@ begin
    gINI.writeString('fpc', 'compiler1', confcompilerfo.fpccompiler.value);
    gINI.writeString('fpc', 'compiler2', confcompilerfo.fpccompiler2.value);
    gINI.writeString('fpc', 'compiler3', confcompilerfo.fpccompiler3.value);
+    gINI.writeString('fpc', 'compiler4', confcompilerfo.fpccompiler4.value);
   
    gINI.writeString('java', 'compiler1', confcompilerfo.javacompiler.value);
    gINI.writeString('java', 'compiler2', confcompilerfo.javacompiler2.value);
    gINI.writeString('java', 'compiler3', confcompilerfo.javacompiler3.value);
+   gINI.writeString('java', 'compiler4', confcompilerfo.javacompiler4.value);
+  
   
    gINI.writeString('C', 'compiler1', confcompilerfo.ccompiler.value);
    gINI.writeString('C', 'compiler2', confcompilerfo.ccompiler2.value);
    gINI.writeString('C', 'compiler3', confcompilerfo.ccompiler3.value);
+   gINI.writeString('C', 'compiler4', confcompilerfo.ccompiler4.value);
    
    gINI.writeString('python', 'compiler1', confcompilerfo.pythoncompiler.value);
    gINI.writeString('python', 'compiler2', confcompilerfo.pythoncompiler2.value);
    gINI.writeString('python', 'compiler3', confcompilerfo.pythoncompiler3.value);
-   
+     gINI.writeString('python', 'compiler4', confcompilerfo.pythoncompiler4.value);
+ 
    if confideufo.tbfilereload0.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
   if confideufo.tbfilereload1.value = true then
@@ -1263,6 +1272,15 @@ begin
  watchfo.clear;
  stackfo.clear;
  threadsfo.clear;
+debuggerfo.project_reset.enabled := false;
+
+debuggerfo.edited_abort.enabled := false ;
+ 
+debuggerfo.project_interrupt.enabled := false;
+debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
 end;
 
 procedure tmainfo.refreshstopinfo(const astopinfo: stopinfoty);
@@ -1343,7 +1361,9 @@ begin
       if reason = sr_detached then begin
        cleardebugdisp;
        setstattext(stopinfo.messagetext,mtk_finished);
-       programfinished;
+          programfinished;
+           debuggerfo.project_reset.enabled := false;
+debuggerfo.project_interrupt.enabled := false;
       end
       else begin
        gdb.debugbegin;
@@ -1356,7 +1376,9 @@ begin
   end;
   gek_running: begin
    resetdebugdisp;
-   setstattext(c[ord(running)],mtk_warning);   
+   setstattext(c[ord(running)],mtk_warning);
+   debuggerfo.project_reset.enabled := true;
+debuggerfo.project_interrupt.enabled := true;   
   end;
   gek_error,gek_writeerror,gek_gdbdied: begin
    setstattext('GDB: '+stopinfo.messagetext,mtk_error);
@@ -1654,6 +1676,8 @@ begin
     end
    end;
    mainfo.setstattext(actionsmo.c[ord(ac_loading)]+'.',mtk_running);
+   debuggerfo.project_reset.enabled := true;
+debuggerfo.project_interrupt.enabled := true;
    application.processmessages();
    application.beginwait();
    if checkgdberror(gdb.fileexec(str1,forcedownload)) then begin
@@ -2919,6 +2943,8 @@ begin
   end;
   setstattext('*** '+c[ord(process)]+' '+inttostrmse(frunningprocess)+' '+
                      c[ord(running3)]+' ***',mtk_running);
+  debuggerfo.project_reset.enabled := true;
+debuggerfo.project_interrupt.enabled := true;
  end;
 end;
 
@@ -2926,6 +2952,7 @@ procedure tmainfo.runprocdied(const sender: TObject;
                           const prochandle: prochandlety;
                const execresult: Integer; const data: Pointer);
 begin
+
  if prochandle = frunningprocess then begin
   frunningprocess:= invalidprochandle;
   if execresult <> 0 then begin
@@ -2936,6 +2963,9 @@ begin
    setstattext(c[ord(proctermnormally)],mtk_finished);
   end;
  end;
+
+ debuggerfo.project_reset.enabled := false;
+debuggerfo.project_interrupt.enabled := false;
 end;
 
 function tmainfo.runtarget: boolean;
@@ -3002,11 +3032,19 @@ end;
 procedure tmainfo.aftermake(const adesigner: idesigner;
                                const exitcode: integer);
 begin
+ debuggerfo.project_abort_compil.enabled := false;
+ debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
+  debuggerfo.edited_abort.enabled := false;
+  
  if exitcode <> 0 then begin
   setstattext(c[ord(makeerror)]+' '+inttostr(exitcode)+'.',mtk_error);
   showfirsterror;
  end
  else begin
+ 
   setstattext(c[ord(makeok)],mtk_finished);
   fcurrent:= true;
   fnoremakecheck:= false;
@@ -3027,10 +3065,20 @@ end;
 
 procedure tmainfo.killtarget;
 begin
+ debuggerfo.project_reset.enabled := false;
+
+debuggerfo.project_interrupt.enabled := false;
+debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
+  
+  debuggerfo.edited_abort.enabled := false;
+
  if frunningprocess <> invalidprochandle then begin
   killprocess(frunningprocess);
   frunningprocess:= invalidprochandle;
- end;
+  end;
 end;
 
 procedure tmainfo.sourcechanged(const sender: tsourcepage);

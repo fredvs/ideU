@@ -4,7 +4,9 @@ interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialog,
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
- msesimplewidgets;
+ msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msegrids,
+ mseificomp,mseificompglob,mseifiglob,mselistbrowser,msemenus,msestat,
+ msestatfile,msestream,msestrings,msesys,sysutils;
  type
  tconfcompilerfo = class(tmseform)
    fpccompiler: tfilenameedit;
@@ -26,6 +28,10 @@ uses
    tlabel6: tlabel;
    pythoncompiler2: tfilenameedit;
    pythoncompiler3: tfilenameedit;
+   ccompiler4: tfilenameedit;
+   fpccompiler4: tfilenameedit;
+   pythoncompiler4: tfilenameedit;
+   javacompiler4: tfilenameedit;
  end;
 var
  confcompilerfo: tconfcompilerfo;

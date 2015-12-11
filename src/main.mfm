@@ -7,8 +7,8 @@ object mainfo: tmainfo
   frame.grip_coloractive = 12375740
   frame.grip_options = []
   visible = False
-  bounds_x = 320
-  bounds_y = 172
+  bounds_x = 56
+  bounds_y = 415
   bounds_cx = 514
   bounds_cy = 185
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -102,7 +102,7 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = 19
+    bounds_y = 18
     bounds_cx = 504
     bounds_cy = 149
     anchors = [an_top, an_bottom]
@@ -384,13 +384,13 @@ object mainfo: tmainfo
         submenu.count = 22
         submenu.items = <        
           item
-            caption = ' En&vironment '
+            caption = 'En&vironment '
             state = [as_localcaption, as_localimagelist, as_localonexecute]
             imagelist = dummyimagelist
             onexecute = parametersonexecute
           end        
           item
-            caption = ' Restart Debugger '
+            caption = 'Restart Debugger '
             state = [as_localcaption, as_localimagelist, as_localonexecute]
             imagelist = dummyimagelist
             onexecute = restartgdbonexecute
@@ -420,27 +420,43 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.continue
+            caption = 'Continue'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.reset
+            caption = 'Reset'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.interrupt
+            caption = 'Interrupt'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.step
+            caption = '&Step'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.stepi
+            caption = 'Step Instruction'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.next
+            caption = 'Next'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.nexti
+            caption = 'Next Instruction'
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.finish
+            caption = 'Finish'
+            state = [as_localcaption]
           end        
           item
             options = [mao_separator, mao_shortcutcaption]

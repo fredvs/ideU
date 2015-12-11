@@ -20,14 +20,76 @@ unit debuggerform;
 
 interface
 uses
- msegui,mseclasses,mseforms;
+ msegui,mseclasses,mseforms,msegraphics,msegraphutils,mseguiglob,msemenus,
+ msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
+ mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes;
 
 type
  tdebuggerfo = class(tdockform)
+   tdockpanel3: tdockpanel;
+   edited_make3: tbutton;
+   edited_make2: tbutton;
+   edited_make1: tbutton;
+   edited_option: tbutton;
+   edited_run: tbutton;
+   compiler_1: tbooleaneditradio;
+   compiler_2: tbooleaneditradio;
+   compiler_3: tbooleaneditradio;
+   edited_abort: tbutton;
+   edited_make4: tbutton;
+   compiler_pascal: tbooleaneditradio;
+   compiler_java: tbooleaneditradio;
+   compiler_c: tbooleaneditradio;
+   compiler_python: tbooleaneditradio;
+   compiler_4: tbooleaneditradio;
+   projectpanel: tdockpanel;
+   project_start: tbutton;
+   project_next: tbutton;
+   project_step: tbutton;
+   project_finish: tbutton;
+   project_reset: tbutton;
+   project_interrupt: tbutton;
+   project_next_instruction: tbutton;
+   project_step_instruction: tbutton;
+   break_point: tbooleanedit;
+   watches: tbooleanedit;
+   hints: tbooleanedit;
+   project_make2: tbutton;
+   project_make1: tbutton;
+   project_build: tbutton;
+   project_option: tbutton;
+   project_abort_compil: tbutton;
+   project_make3: tbutton;
+   project_make: tbutton;
+   tdockpanel2: tdockpanel;
+   open_file: tbutton;
+   find_in_directory: tbutton;
+   assistive: tbutton;
+   toggle_form_unit: tbutton;
+   save_file: tbutton;
+   tbutton2: tbutton;
+   procedure watchonexecute(const sender: TObject);
+   procedure breakonexecute(const sender: TObject);
+    procedure hintonexecute(const sender: TObject);
+ 
  end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- debuggerform_mfm;
+ debuggerform_mfm, actionsmodule;
+procedure tdebuggerfo.breakonexecute(const sender: TObject);
+begin
+actionsmo.bkptsononexecute(sender) ; 
+end;
+
+procedure tdebuggerfo.watchonexecute(const sender: TObject);
+begin
+actionsmo.watchesononexecute(sender) ; 
+end;
+
+procedure tdebuggerfo.hintonexecute(const sender: TObject);
+begin
+actionsmo.bluedotsononchange(sender) ; 
+end;
 end.
