@@ -20,8 +20,7 @@ unit make;
 
 interface
 uses
- msestrings,  debuggerform,
-   msepipestream,msesystypes;
+ msestrings, msepipestream, msesystypes;
  
 procedure domake(atag: integer);
 procedure abortmake;
@@ -201,13 +200,8 @@ end;
 procedure abortmake;
 begin
  if (maker <> nil) or (custommaker <> nil) then begin
-  debuggerfo.project_abort_compil.enabled := false;
-  debuggerfo.edited_abort.enabled := false;
-  debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
-  killmake;
+  actionsmo.finishcustom;
+     killmake;
   mainfo.setstattext(actionsmo.c[ord(ac_makeaborted)],mtk_error);
  end;
 end;
@@ -564,35 +558,22 @@ begin
  fcurrentdir:= getcurrentdirmse;
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
- 
- debuggerfo.project_abort_compil.enabled := true;
 
+ actionsmo.initprojectcompile ;
  mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
  else begin
-  debuggerfo.project_abort_compil.enabled := false;
-  mainfo.setstattext(actionsmo.c[ord(ac_makenotrunning)],mtk_error);
+   mainfo.setstattext(actionsmo.c[ord(ac_makenotrunning)],mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
-  debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
-  debuggerfo.edited_abort.enabled := false;
+  actionsmo.finishcustom ;
  end;
 end;
 
 procedure tmaker.dofinished;
 begin
- debuggerfo.project_abort_compil.enabled := false;
- 
- debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
- 
- debuggerfo.edited_abort.enabled := false;
+ actionsmo.finishcustom ;
   
  if ftargettimestamp <> getfilemodtime(gettargetfile) then begin
   mainfo.targetfilemodified;

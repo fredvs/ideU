@@ -1,16 +1,16 @@
 object confcompilerfo: tconfcompilerfo
   visible = False
-  bounds_x = 192
-  bounds_y = 107
-  bounds_cx = 694
-  bounds_cy = 486
+  bounds_x = 220
+  bounds_y = 200
+  bounds_cx = 675
+  bounds_cy = 459
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    694
-    486
+    675
+    459
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Configuration of Compilers'
@@ -89,7 +89,7 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     hint = 'Path to pascal compiler'
-    bounds_x = 8
+    bounds_x = 6
     bounds_y = 18
     bounds_cx = 328
     bounds_cy = 39
@@ -116,7 +116,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 1
     hint = 'Path to C compiler'
-    bounds_x = 361
+    bounds_x = 342
     bounds_y = 18
     bounds_cx = 328
     bounds_cy = 39
@@ -143,8 +143,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 2
     hint = 'Path to Java compiler'
-    bounds_x = 11
-    bounds_y = 229
+    bounds_x = 6
+    bounds_y = 207
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -152,8 +152,8 @@ object confcompilerfo: tconfcompilerfo
   end
   object tbutton1: tbutton
     taborder = 3
-    bounds_x = 632
-    bounds_y = 449
+    bounds_x = 608
+    bounds_y = 422
     bounds_cx = 34
     bounds_cy = 22
     anchors = [an_top, an_right]
@@ -181,8 +181,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 4
     hint = 'Path to Other compiler'
-    bounds_x = 184
-    bounds_y = 431
+    bounds_x = 181
+    bounds_y = 405
     bounds_cx = 327
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -208,7 +208,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 5
     hint = 'Path to pascal compiler'
-    bounds_x = 8
+    bounds_x = 6
     bounds_y = 60
     bounds_cx = 329
     bounds_cy = 39
@@ -235,7 +235,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 6
     hint = 'Path to pascal compiler'
-    bounds_x = 8
+    bounds_x = 6
     bounds_y = 100
     bounds_cx = 328
     bounds_cy = 39
@@ -262,7 +262,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 7
     hint = 'Path to C compiler'
-    bounds_x = 361
+    bounds_x = 342
     bounds_y = 60
     bounds_cx = 328
     bounds_cy = 39
@@ -306,7 +306,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 10
     hint = 'Path to C compiler'
-    bounds_x = 361
+    bounds_x = 342
     bounds_y = 100
     bounds_cx = 328
     bounds_cy = 39
@@ -315,8 +315,8 @@ object confcompilerfo: tconfcompilerfo
   end
   object tlabel4: tlabel
     taborder = 11
-    bounds_x = 124
-    bounds_y = 210
+    bounds_x = 123
+    bounds_y = 188
     bounds_cx = 88
     bounds_cy = 15
     caption = 'Java Compilers'
@@ -342,8 +342,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 12
     hint = 'Path to Java compiler'
-    bounds_x = 10
-    bounds_y = 274
+    bounds_x = 6
+    bounds_y = 252
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -369,8 +369,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 13
     hint = 'Path to Java compiler'
-    bounds_x = 11
-    bounds_y = 315
+    bounds_x = 6
+    bounds_y = 293
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -378,8 +378,8 @@ object confcompilerfo: tconfcompilerfo
   end
   object tlabel5: tlabel
     taborder = 14
-    bounds_x = 283
-    bounds_y = 413
+    bounds_x = 280
+    bounds_y = 386
     bounds_cx = 97
     bounds_cy = 15
     caption = 'Other Compilers'
@@ -405,8 +405,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 15
     hint = 'Path to python compiler'
-    bounds_x = 364
-    bounds_y = 229
+    bounds_x = 342
+    bounds_y = 207
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -414,8 +414,8 @@ object confcompilerfo: tconfcompilerfo
   end
   object tlabel6: tlabel
     taborder = 16
-    bounds_x = 468
-    bounds_y = 210
+    bounds_x = 467
+    bounds_y = 188
     bounds_cx = 105
     bounds_cy = 15
     caption = 'Python Compilers'
@@ -441,8 +441,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 17
     hint = 'Path to python compiler'
-    bounds_x = 364
-    bounds_y = 272
+    bounds_x = 342
+    bounds_y = 250
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -468,8 +468,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 18
     hint = 'Path to python compiler'
-    bounds_x = 364
-    bounds_y = 315
+    bounds_x = 342
+    bounds_y = 293
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -495,7 +495,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 19
     hint = 'Path to C compiler'
-    bounds_x = 362
+    bounds_x = 342
     bounds_y = 141
     bounds_cx = 328
     bounds_cy = 39
@@ -522,7 +522,7 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 20
     hint = 'Path to pascal compiler'
-    bounds_x = 8
+    bounds_x = 6
     bounds_y = 140
     bounds_cx = 328
     bounds_cy = 39
@@ -549,8 +549,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 21
     hint = 'Path to python compiler'
-    bounds_x = 364
-    bounds_y = 357
+    bounds_x = 342
+    bounds_y = 335
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -576,8 +576,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 22
     hint = 'Path to Java compiler'
-    bounds_x = 11
-    bounds_y = 357
+    bounds_x = 6
+    bounds_y = 335
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'

@@ -22,11 +22,13 @@ interface
 uses
  msegui,mseclasses,mseforms,msegraphics,msegraphutils,mseguiglob,msemenus,
  msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
- mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes;
+ mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
+ msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
+ msestream,msestrings,sysutils;
 
 type
  tdebuggerfo = class(tdockform)
-   tdockpanel3: tdockpanel;
+   editpanel: tdockpanel;
    edited_make3: tbutton;
    edited_make2: tbutton;
    edited_make1: tbutton;
@@ -61,17 +63,22 @@ type
    project_abort_compil: tbutton;
    project_make3: tbutton;
    project_make: tbutton;
-   tdockpanel2: tdockpanel;
+   mainpanel: tdockpanel;
    open_file: tbutton;
    find_in_directory: tbutton;
    assistive: tbutton;
    toggle_form_unit: tbutton;
    save_file: tbutton;
-   tbutton2: tbutton;
+   project_make4: tbutton;
+   layprj: tbooleaneditradio;
+   layedit: tbooleaneditradio;
+   layall: tbooleaneditradio;
+   edited_makeb: tbutton;
+   edited_makem: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
-    procedure hintonexecute(const sender: TObject);
- 
+   procedure hintonexecute(const sender: TObject);
+   procedure layoutchange(const sender: TObject);
  end;
 var
  debuggerfo: tdebuggerfo;
@@ -81,6 +88,31 @@ uses
 procedure tdebuggerfo.breakonexecute(const sender: TObject);
 begin
 actionsmo.bkptsononexecute(sender) ; 
+end;
+
+procedure tdebuggerfo.layoutchange(const sender: TObject);
+begin
+if layall.value = true then
+begin
+projectpanel.left := 250;
+projectpanel.visible := true;
+editpanel.left := 750;
+editpanel.visible := true;
+end
+else
+if layprj.value = true then
+begin
+editpanel.visible := false;
+projectpanel.left := 250;
+projectpanel.visible := true;
+end
+else
+begin
+projectpanel.visible := false;
+editpanel.left := 250;
+editpanel.visible := true;
+end;
+
 end;
 
 procedure tdebuggerfo.watchonexecute(const sender: TObject);

@@ -4,16 +4,16 @@ object debuggerfo: tdebuggerfo
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
   visible = False
-  bounds_x = 225
-  bounds_y = 58
-  bounds_cx = 993
+  bounds_x = 3
+  bounds_y = 75
+  bounds_cx = 1275
   bounds_cy = 93
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    983
+    1265
     93
   )
   dragdock.caption = 'Debugger'
@@ -76,360 +76,6 @@ object debuggerfo: tdebuggerfo
     00000000
   }
   moduleclassname = 'tdockform'
-  object tdockpanel2: tdockpanel
-    color = 13625061
-    frame.framewidth = 1
-    frame.localprops = [frl_framewidth]
-    frame.localprops1 = []
-    frame.grip_size = 0
-    taborder = 2
-    bounds_x = 0
-    bounds_y = 3
-    bounds_cx = 136
-    bounds_cy = 32
-    object open_file: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 1
-      hint = 'Open file'
-      bounds_x = 30
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.opensource
-      imagelist = mainfo.vievmenuicons
-      imagenr = 5
-      focusrectdist = 0
-    end
-    object find_in_directory: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 2
-      hint = 'Find in directory'
-      bounds_x = 82
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.findinfile
-      imagelist = actionsmo.buttonicons
-      imagenr = 38
-      imagenrdisabled = 38
-    end
-    object assistive: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 3
-      hint = 'Assitive on/off'
-      bounds_x = 108
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.assistive
-      imagelist = actionsmo.buttonicons
-      imagenr = 40
-    end
-    object toggle_form_unit: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      hint = 'Toggle form/unit'
-      bounds_x = 4
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.toggleformunit
-      imagelist = actionsmo.buttonicons
-      imagenr = 30
-      imagenrdisabled = 30
-      focusrectdist = 0
-    end
-    object save_file: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 4
-      hint = 'Save edited file'
-      bounds_x = 55
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.save
-      imagelist = actionsmo.buttonicons
-      imagenr = 31
-      focusrectdist = 0
-    end
-  end
-  object tdockpanel3: tdockpanel
-    color = 11642296
-    frame.framewidth = 1
-    frame.captiontextflags = [tf_rotate90]
-    frame.captionpos = cp_left
-    frame.localprops = [frl_framewidth, frl_frameimageleft, frl_frameimagebottom]
-    frame.localprops1 = [frl1_framefaceoffset, frl1_captionoffset]
-    frame.grip_size = 0
-    frame.grip_options = []
-    hint = 'Edited-file commandor'
-    bounds_x = 638
-    bounds_y = 3
-    bounds_cx = 334
-    bounds_cy = 32
-    dragdock.optionsdock = [od_savepos, od_savezorder, od_cansize, od_captionhint, od_childicons]
-    object edited_make3: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      hint = 'Compile edited-file with option 3'
-      bounds_x = 226
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.changeoption3
-      imagelist = actionsmo.buttonicons
-      imagenr = 46
-    end
-    object edited_make2: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 1
-      hint = 'Compile edited-file with option 2'
-      bounds_x = 200
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.changeoption2
-      imagelist = actionsmo.buttonicons
-      imagenr = 45
-      focusrectdist = 0
-    end
-    object edited_make1: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 2
-      hint = 'Compile edited-file with option 1'
-      bounds_x = 174
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.changeoption1
-      imagelist = actionsmo.buttonicons
-      imagenr = 44
-      focusrectdist = 0
-    end
-    object edited_option: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 3
-      hint = 'Edited-file options'
-      bounds_x = 148
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.projectoptionsact
-      imagelist = actionsmo.buttonicons
-      imagenr = 36
-      imagenrdisabled = 36
-      focusrectdist = 0
-    end
-    object edited_run: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 4
-      hint = 'Run compiled'
-      bounds_x = 304
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customrun
-      imagelist = actionsmo.buttonicons
-      imagenr = 4
-      imagenrdisabled = 17
-      focusrectdist = 0
-    end
-    object compiler_1: tbooleaneditradio
-      frame.caption = '1 '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        15
-        2
-      )
-      taborder = 5
-      hint = 'Select compiler 1'
-      bounds_x = 89
-      bounds_y = 0
-      bounds_cx = 28
-      bounds_cy = 17
-      value = True
-      group = 1
-    end
-    object compiler_2: tbooleaneditradio
-      frame.caption = '2 '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        15
-        2
-      )
-      taborder = 6
-      hint = 'Select compiler 2'
-      bounds_x = 118
-      bounds_y = 0
-      bounds_cx = 28
-      bounds_cy = 17
-      group = 1
-    end
-    object compiler_3: tbooleaneditradio
-      frame.caption = '3  '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        19
-        2
-      )
-      taborder = 7
-      hint = 'Select compiler 3'
-      bounds_x = 89
-      bounds_y = 14
-      bounds_cx = 32
-      bounds_cy = 17
-      group = 1
-    end
-    object edited_abort: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 8
-      hint = 'Abort compile'
-      bounds_x = 277
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.abortmakeact
-      imagelist = actionsmo.buttonicons
-      imagenr = 6
-      imagenrdisabled = 15
-      focusrectdist = 0
-    end
-    object edited_make4: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11642296
-      taborder = 9
-      hint = 'Compile edited-file with option 4'
-      bounds_x = 250
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.changeoption4
-      imagelist = actionsmo.buttonicons
-      imagenr = 47
-      focusrectdist = 0
-    end
-    object compiler_pascal: tbooleaneditradio
-      frame.colorclient = 16769279
-      frame.caption = 'pas'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        24
-        2
-      )
-      taborder = 10
-      hint = 'Use Pascal compiler'
-      bounds_x = 5
-      bounds_y = 0
-      bounds_cx = 37
-      bounds_cy = 17
-      value = True
-    end
-    object compiler_java: tbooleaneditradio
-      frame.colorclient = 16777164
-      frame.caption = 'java'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        27
-        2
-      )
-      taborder = 11
-      hint = 'Use Java compiler'
-      bounds_x = 45
-      bounds_y = 0
-      bounds_cx = 40
-      bounds_cy = 17
-    end
-    object compiler_c: tbooleaneditradio
-      frame.colorclient = 14606079
-      frame.caption = 'C   '
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        23
-        2
-      )
-      taborder = 12
-      hint = 'Use C compiler'
-      bounds_x = 5
-      bounds_y = 14
-      bounds_cx = 36
-      bounds_cy = 17
-    end
-    object compiler_python: tbooleaneditradio
-      frame.colorclient = 15138790
-      frame.caption = 'pyt '
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        27
-        2
-      )
-      taborder = 13
-      hint = 'Use python compiler'
-      bounds_x = 45
-      bounds_y = 14
-      bounds_cx = 40
-      bounds_cy = 17
-    end
-    object compiler_4: tbooleaneditradio
-      frame.caption = '4 '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        15
-        2
-      )
-      taborder = 14
-      hint = 'Select compiler 4'
-      bounds_x = 118
-      bounds_y = 14
-      bounds_cx = 28
-      bounds_cy = 17
-      group = 1
-    end
-  end
   object projectpanel: tdockpanel
     color = 11648433
     frame.framewidth = 1
@@ -441,9 +87,9 @@ object debuggerfo: tdebuggerfo
     frame.grip_options = []
     taborder = 1
     hint = 'Project commandor'
-    bounds_x = 138
+    bounds_x = 250
     bounds_y = 3
-    bounds_cx = 497
+    bounds_cx = 498
     bounds_cy = 32
     object project_start: tbutton
       optionswidget = [ow_destroywidgets]
@@ -720,24 +366,23 @@ object debuggerfo: tdebuggerfo
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
       action = actionsmo.make3act
       imagelist = actionsmo.buttonicons
-      imagenr = 43
+      imagenr = 46
     end
     object project_make: tbutton
       Tag = 1
       optionswidget = [ow_destroywidgets]
-      color = 11648433
       taborder = 17
       hint = 'Project make'
       bounds_x = 29
       bounds_y = 3
       bounds_cx = 26
       bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localhint]
       action = actionsmo.makeact
       imagelist = actionsmo.buttonicons
       imagenr = 42
     end
-    object tbutton2: tbutton
+    object project_make4: tbutton
       Tag = 32
       optionswidget = [ow_destroywidgets]
       color = 11648433
@@ -751,6 +396,456 @@ object debuggerfo: tdebuggerfo
       action = actionsmo.make4act
       imagelist = actionsmo.buttonicons
       imagenr = 47
+    end
+  end
+  object mainpanel: tdockpanel
+    color = 13625061
+    frame.framewidth = 1
+    frame.localprops = [frl_framewidth]
+    frame.localprops1 = []
+    frame.grip_size = 0
+    taborder = 2
+    bounds_x = 0
+    bounds_y = 3
+    bounds_cx = 249
+    bounds_cy = 32
+    object open_file: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 1
+      hint = 'Open file'
+      bounds_x = 30
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.opensource
+      imagelist = mainfo.vievmenuicons
+      imagenr = 5
+      focusrectdist = 0
+    end
+    object find_in_directory: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 2
+      hint = 'Find in directory'
+      bounds_x = 82
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.findinfile
+      imagelist = actionsmo.buttonicons
+      imagenr = 38
+      imagenrdisabled = 38
+    end
+    object assistive: tbutton
+      optionswidget = [ow_destroywidgets]
+      taborder = 3
+      hint = 'Assitive on/off'
+      bounds_x = 108
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.assistive
+      imagelist = actionsmo.buttonicons
+      imagenr = 40
+      focusrectdist = 0
+    end
+    object toggle_form_unit: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      hint = 'Toggle form/unit'
+      bounds_x = 4
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.toggleformunit
+      imagelist = actionsmo.buttonicons
+      imagenr = 30
+      imagenrdisabled = 30
+      focusrectdist = 0
+    end
+    object save_file: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 4
+      hint = 'Save edited file'
+      bounds_x = 55
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.save
+      imagelist = actionsmo.buttonicons
+      imagenr = 31
+      focusrectdist = 0
+    end
+    object layprj: tbooleaneditradio
+      frame.colorclient = 11648433
+      frame.caption = 'Project'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        44
+        2
+      )
+      taborder = 5
+      hint = 'Show only Project Commandor'
+      bounds_x = 140
+      bounds_y = 0
+      bounds_cx = 57
+      bounds_cy = 17
+      onchange = layoutchange
+      group = 1
+    end
+    object layedit: tbooleaneditradio
+      frame.colorclient = 11642296
+      frame.caption = 'Edited'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        42
+        2
+      )
+      taborder = 6
+      hint = 'Show only Edited Commador'
+      bounds_x = 140
+      bounds_y = 14
+      bounds_cx = 55
+      bounds_cy = 17
+      onchange = layoutchange
+      group = 1
+    end
+    object layall: tbooleaneditradio
+      frame.caption = 'Both'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        31
+        2
+      )
+      taborder = 7
+      hint = 'Show Project and Edited Commador'
+      bounds_x = 202
+      bounds_y = 7
+      bounds_cx = 44
+      bounds_cy = 17
+      onchange = layoutchange
+      value = True
+      group = 1
+    end
+  end
+  object editpanel: tdockpanel
+    color = 11642296
+    frame.framewidth = 1
+    frame.captiontextflags = [tf_rotate90]
+    frame.captionpos = cp_left
+    frame.localprops = [frl_framewidth, frl_frameimageleft, frl_frameimagebottom]
+    frame.localprops1 = [frl1_framefaceoffset, frl1_captionoffset]
+    frame.grip_size = 0
+    frame.grip_options = []
+    hint = 'Edited-file commandor'
+    bounds_x = 750
+    bounds_y = 3
+    bounds_cx = 386
+    bounds_cy = 32
+    dragdock.optionsdock = [od_savepos, od_savezorder, od_cansize, od_captionhint, od_childicons]
+    object edited_make3: tbutton
+      Tag = 16
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      hint = 'Compile edited-file with option 3'
+      bounds_x = 279
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 46
+    end
+    object edited_make2: tbutton
+      Tag = 8
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 1
+      hint = 'Compile edited-file with option 2'
+      bounds_x = 253
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 45
+      focusrectdist = 0
+    end
+    object edited_make1: tbutton
+      Tag = 4
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 2
+      hint = 'Compile edited-file with option 1'
+      bounds_x = 227
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 44
+      focusrectdist = 0
+    end
+    object edited_option: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 3
+      hint = 'Edited-file options'
+      bounds_x = 148
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.projectoptionsact
+      imagelist = actionsmo.buttonicons
+      imagenr = 36
+      imagenrdisabled = 36
+      focusrectdist = 0
+    end
+    object edited_run: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 4
+      hint = 'Run compiled'
+      bounds_x = 357
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customrun
+      imagelist = actionsmo.buttonicons
+      imagenr = 4
+      imagenrdisabled = 17
+      focusrectdist = 0
+    end
+    object compiler_1: tbooleaneditradio
+      frame.caption = '1 '
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        15
+        2
+      )
+      taborder = 5
+      hint = 'Select compiler 1'
+      bounds_x = 89
+      bounds_y = 0
+      bounds_cx = 28
+      bounds_cy = 17
+      value = True
+      group = 1
+    end
+    object compiler_2: tbooleaneditradio
+      frame.caption = '2 '
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        15
+        2
+      )
+      taborder = 6
+      hint = 'Select compiler 2'
+      bounds_x = 118
+      bounds_y = 0
+      bounds_cx = 28
+      bounds_cy = 17
+      group = 1
+    end
+    object compiler_3: tbooleaneditradio
+      frame.caption = '3  '
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        19
+        2
+      )
+      taborder = 7
+      hint = 'Select compiler 3'
+      bounds_x = 89
+      bounds_y = 14
+      bounds_cx = 32
+      bounds_cy = 17
+      group = 1
+    end
+    object edited_abort: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 8
+      hint = 'Abort compile'
+      bounds_x = 330
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.abortmakeact
+      imagelist = actionsmo.buttonicons
+      imagenr = 6
+      imagenrdisabled = 15
+      focusrectdist = 0
+    end
+    object edited_make4: tbutton
+      Tag = 32
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 9
+      hint = 'Compile edited-file with option 4'
+      bounds_x = 303
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 47
+      focusrectdist = 0
+    end
+    object compiler_pascal: tbooleaneditradio
+      frame.colorclient = 16769279
+      frame.caption = 'pas'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        24
+        2
+      )
+      taborder = 10
+      hint = 'Use Pascal compiler'
+      bounds_x = 5
+      bounds_y = 0
+      bounds_cx = 37
+      bounds_cy = 17
+      value = True
+    end
+    object compiler_java: tbooleaneditradio
+      frame.colorclient = 16777164
+      frame.caption = 'java'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        27
+        2
+      )
+      taborder = 11
+      hint = 'Use Java compiler'
+      bounds_x = 45
+      bounds_y = 0
+      bounds_cx = 40
+      bounds_cy = 17
+    end
+    object compiler_c: tbooleaneditradio
+      frame.colorclient = 14606079
+      frame.caption = 'C   '
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        23
+        2
+      )
+      taborder = 12
+      hint = 'Use C compiler'
+      bounds_x = 5
+      bounds_y = 14
+      bounds_cx = 36
+      bounds_cy = 17
+    end
+    object compiler_python: tbooleaneditradio
+      frame.colorclient = 15138790
+      frame.caption = 'pyt '
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        27
+        2
+      )
+      taborder = 13
+      hint = 'Use python compiler'
+      bounds_x = 45
+      bounds_y = 14
+      bounds_cx = 40
+      bounds_cy = 17
+    end
+    object compiler_4: tbooleaneditradio
+      frame.caption = '4 '
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        15
+        2
+      )
+      taborder = 14
+      hint = 'Select compiler 4'
+      bounds_x = 118
+      bounds_y = 14
+      bounds_cx = 28
+      bounds_cy = 17
+      group = 1
+    end
+    object edited_makeb: tbutton
+      Tag = 2
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 15
+      hint = 'Compile edited-file with option B (build all)'
+      bounds_x = 201
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 43
+      focusrectdist = 0
+    end
+    object edited_makem: tbutton
+      Tag = 1
+      optionswidget = [ow_destroywidgets]
+      color = 11642296
+      taborder = 16
+      hint = 'Compile edited-file with option M'
+      bounds_x = 175
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 42
+      focusrectdist = 0
     end
   end
 end

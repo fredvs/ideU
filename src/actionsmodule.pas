@@ -22,10 +22,9 @@ unit actionsmodule;
 interface
 uses
  classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
- msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,  
-  msesys, msesysutils, msesimplewidgets,
- projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
- mseificompglob,mseifiglob;
+ msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
+ msesys, msesysutils, msesimplewidgets,projecttreeform,msestringcontainer,
+ targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;
  
 type
  stringconsts = (
@@ -212,10 +211,6 @@ type
    findcompact: taction;
    findcompallact: taction;
    forcezorderact: taction;
-   changeoption1: taction;
-   changeoption2: taction;
-   changeoption3: taction;
-   changeoption4: taction;
 
    tool0: taction;
    tool1: taction;
@@ -228,15 +223,9 @@ type
    tool8: taction;
    tool9: taction;
 
-   setcompiler1: taction;
-   setcompiler2: taction;
-   setcompiler3: taction;
-   settypecompiler1: taction;
-   settypecompiler2: taction;
-   settypecompiler3: taction;
-   settypecompiler4: taction;
    customrun: taction;
    assistive: taction;
+   customcompil: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     // assistive
@@ -284,12 +273,14 @@ type
    // Setup ready
    procedure setupcustom ;
    
-   // Custom compile
-   procedure customoption1execute(const sender: TObject);
-   procedure customoption2execute(const sender: TObject);
-   procedure customoption3execute(const sender: TObject);
-   procedure customoption4execute(const sender: TObject);
+   procedure initprojectcompile ;
    
+   // custom is finish
+   procedure finishcustom;
+   
+   // Custom compile
+   procedure customexecute(const sender: TObject);
+    
    //debugger
    procedure resetactonexecute(const sender: tobject);
    procedure interruptactonexecute(const sender: tobject);
@@ -324,6 +315,7 @@ type
    procedure findcompexe(const sender: TObject);
    procedure findcompallexe(const sender: TObject);
    procedure forcezorderexe(const sender: TObject);
+   
   private
    function filterfindcomp(const acomponent: tcomponent): boolean;
  public
@@ -510,6 +502,26 @@ begin
  mainfo.toggleformunit;
 end;
 
+procedure tactionsmo.initprojectcompile ;
+begin
+debuggerfo.project_abort_compil.enabled := true;
+end;
+
+procedure tactionsmo.finishcustom ;
+begin
+  debuggerfo.project_abort_compil.enabled := false;
+  debuggerfo.project_reset.enabled := false;
+  debuggerfo.edited_abort.enabled := false ;
+  debuggerfo.project_interrupt.enabled := false;
+  debuggerfo.edited_make1.enabled := true;
+  debuggerfo.edited_make2.enabled := true;
+  debuggerfo.edited_make3.enabled := true;
+  debuggerfo.edited_make4.enabled := true;
+  debuggerfo.edited_makeb.enabled := true;
+  debuggerfo.edited_makem.enabled := true;
+  debuggerfo.edited_run.enabled := true;
+end;
+
 procedure tactionsmo.setupcustom ;
 begin
   if debuggerfo.compiler_pascal.value = true then mainfo.settypecompiler := 1 ;
@@ -527,51 +539,29 @@ begin
   if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
   if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
   
+  debuggerfo.edited_makem.enabled := false;
+  debuggerfo.edited_makeb.enabled := false;
+    
   debuggerfo.edited_make1.enabled := false;
   debuggerfo.edited_make2.enabled := false;
   debuggerfo.edited_make3.enabled := false;
   debuggerfo.edited_make4.enabled := false;
   debuggerfo.edited_abort.enabled := true;
+  debuggerfo.edited_run.enabled := false;
     
 end;
 
-procedure tactionsmo.customoption1execute(const sender: TObject);
+procedure tactionsmo.customexecute(const sender: TObject);
 begin
 setupcustom ;
- mainfo.customoption := 4 ;
-  mainfo.setstattext('  Compile with Option 1',mtk_flat);
-   mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.customoption2execute(const sender: TObject);
-begin
-setupcustom ;
- mainfo.customoption := 8 ;
-  mainfo.setstattext('  Compile with Option 2',mtk_flat);
-   mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.customoption3execute(const sender: TObject);
-begin
-setupcustom ;
- mainfo.customoption := 16 ;
-  mainfo.setstattext('  Compile with Option 3',mtk_flat);
-   mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.customoption4execute(const sender: TObject);
-begin
-  setupcustom ;
- mainfo.customoption := 32 ;
-  mainfo.setstattext('  Compile with Option 4',mtk_flat);
-  mainfo.customcompile(sender);
+if sender is tbutton then mainfo.customoption := tbutton(sender).tag ;
+mainfo.customcompile(sender);
 end;
 
 procedure tactionsmo.customselectedrun(const sender: TObject);
 begin
  mainfo.customrun(sender) ;
  end;
-
 
 procedure tactionsmo.undoactonexecute(const sender: tobject);
 begin

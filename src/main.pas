@@ -1272,15 +1272,7 @@ begin
  watchfo.clear;
  stackfo.clear;
  threadsfo.clear;
-debuggerfo.project_reset.enabled := false;
-
-debuggerfo.edited_abort.enabled := false ;
- 
-debuggerfo.project_interrupt.enabled := false;
-debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
+actionsmo.finishcustom ;
 end;
 
 procedure tmainfo.refreshstopinfo(const astopinfo: stopinfoty);
@@ -3032,13 +3024,8 @@ end;
 procedure tmainfo.aftermake(const adesigner: idesigner;
                                const exitcode: integer);
 begin
- debuggerfo.project_abort_compil.enabled := false;
- debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
-  debuggerfo.edited_abort.enabled := false;
-  
+ actionsmo.finishcustom ;
+ 
  if exitcode <> 0 then begin
   setstattext(c[ord(makeerror)]+' '+inttostr(exitcode)+'.',mtk_error);
   showfirsterror;
@@ -3065,15 +3052,7 @@ end;
 
 procedure tmainfo.killtarget;
 begin
- debuggerfo.project_reset.enabled := false;
-
-debuggerfo.project_interrupt.enabled := false;
-debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
-  
-  debuggerfo.edited_abort.enabled := false;
+ actionsmo.finishcustom ;
 
  if frunningprocess <> invalidprochandle then begin
   killprocess(frunningprocess);
