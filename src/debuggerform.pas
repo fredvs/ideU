@@ -32,7 +32,6 @@ type
    edited_make3: tbutton;
    edited_make2: tbutton;
    edited_make1: tbutton;
-   edited_option: tbutton;
    edited_run: tbutton;
    compiler_1: tbooleaneditradio;
    compiler_2: tbooleaneditradio;
@@ -59,7 +58,6 @@ type
    project_make2: tbutton;
    project_make1: tbutton;
    project_build: tbutton;
-   project_option: tbutton;
    project_abort_compil: tbutton;
    project_make3: tbutton;
    project_make: tbutton;
@@ -75,6 +73,7 @@ type
    layall: tbooleaneditradio;
    edited_makeb: tbutton;
    edited_makem: tbutton;
+   project_option: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -94,22 +93,22 @@ procedure tdebuggerfo.layoutchange(const sender: TObject);
 begin
 if layall.value = true then
 begin
-projectpanel.left := 250;
+projectpanel.left := 269;
 projectpanel.visible := true;
-editpanel.left := 750;
+editpanel.left := 748;
 editpanel.visible := true;
 end
 else
 if layprj.value = true then
 begin
 editpanel.visible := false;
-projectpanel.left := 250;
+projectpanel.left := 269;
 projectpanel.visible := true;
 end
 else
 begin
 projectpanel.visible := false;
-editpanel.left := 250;
+editpanel.left := 269;
 editpanel.visible := true;
 end;
 

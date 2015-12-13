@@ -815,10 +815,15 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 2
+        submenu.count = 3
         submenu.items = <        
           item
-            submenu.count = 6
+            action = actionsmo.toggleformunit
+            caption = 'Toggle Form/Unit'
+            state = [as_localcaption]
+          end        
+          item
+            submenu.count = 5
             submenu.items = <            
               item
                 caption = ' Component &Palette '
@@ -849,17 +854,12 @@ object mainfo: tmainfo
                 caption = ' Toggle Form/Inspector '
                 state = [as_localcaption, as_localonexecute]
                 onexecute = toggleobjectinspectoronexecute
-              end            
-              item
-                action = actionsmo.toggleformunit
-                caption = ' Toggle Form/Unit '
-                state = [as_localcaption]
               end>
             caption = ' MSEgui'
             state = [as_localcaption]
           end        
           item
-            submenu.count = 5
+            submenu.count = 3
             submenu.items = <            
               item
                 caption = '  Designer '
@@ -867,14 +867,6 @@ object mainfo: tmainfo
                 imagelist = vievmenuicons
                 imagenr = 19
                 onexecute = viewfpguidesigneronexecute
-              end            
-              item
-                options = [mao_separator, mao_shortcutcaption]
-              end            
-              item
-                action = actionsmo.toggleformunit
-                caption = ' Toggle Form/Unit '
-                state = [as_localcaption]
               end            
               item
                 options = [mao_separator, mao_shortcutcaption]

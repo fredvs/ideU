@@ -33,19 +33,19 @@ type
                    sma_syntaxdefdir,sma_templatedir,sma_compstoredir,
                    sma_compiler,sma_debugger,
                    sma_exeext,sma_target,sma_targetosdir, sma_fpguidir,
-                    sma_ideudir, sma_docviewdir, sma_projectdir);
+                    sma_ideudir, sma_docviewdir, sma_projectdir, sma_fpgui);
 const
 
  ispyv = 0 ;
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
                       'mselibdir','syntaxdefdir','templatedir','compstoredir','compiler','debugger',
-                     'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir');
+                     'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir', 'fpgui');
  {$ifdef mswindows}
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                 '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/mse/compstore/',
-                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview/','');
+                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview/','','');
  {$else}
  
  
@@ -55,7 +55,7 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','');
+                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
   {$endif}
  
   {$ifdef freebsd}
@@ -64,7 +64,7 @@ const
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
                 '/usr/local/share/ideu/templates/','${MSEDIR}apps/ide/compstore/',
                'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','freebsd',
-               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','');
+               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '/usr/local/share/msegui/', '');
    {$endif}
   
   
@@ -73,26 +73,26 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','');
+                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
    
    {$ifdef linux}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','');
+                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
    
     {$ifdef freebsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                   'ppc386','gdb','','i386-freebsd','freebsd','','','${IDEUDIR}docview/','');
+                   'ppc386','gdb','','i386-freebsd','freebsd','','','${IDEUDIR}docview/','', '');
   // ancien
  //  defaultsettingmacros: array[settingsmacroty] of msestring = (
  //                '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
  //               '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
- //                'ppcx64','gdb','','x86_64-freebsd','freebsd','','','${IDEUDIR}docview/','');
+ //                'ppcx64','gdb','','x86_64-freebsd','freebsd','','','${IDEUDIR}docview/','', '');
 
   
    {$endif}
@@ -335,6 +335,7 @@ begin
   macros[sma_projectdir]:= TheProjectDirectory;     
   macros[sma_ideudir]:= IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
   macros[sma_fpguidir] := fpguidir.value;
+  macros[sma_fpgui] := macros[sma_fpguidir];
   macros[sma_docviewdir] := docviewdir.value;
   macros[sma_fpcdir]:= fpcdir.value;
   macros[sma_fpclibdir]:= fpclibdir.value;

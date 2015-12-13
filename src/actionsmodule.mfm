@@ -257,7 +257,6 @@ object actionsmo: tactionsmo
     state = [as_checked]
     imagenr = 9
     hint = 'Watches on/off'
-    statfile = mainfo.projectstatfile
     onexecute = watchesononexecute
     left = 152
     top = 236
@@ -3108,7 +3107,6 @@ object actionsmo: tactionsmo
     state = [as_checked]
     imagenr = 14
     hint = 'Executable lines hint on/off'
-    statfile = mainfo.projectstatfile
     onchange = bluedotsononchange
     left = 152
     top = 253
@@ -3749,7 +3747,6 @@ object actionsmo: tactionsmo
       0
       0
     )
-    statfile = mainfo.mainstatfile
     onafterupdate = updateshortcuts
     left = 352
     top = 8

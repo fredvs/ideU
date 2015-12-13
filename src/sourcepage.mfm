@@ -65,26 +65,26 @@ object sourcepage: tsourcepage
         dataclass = tgridintegerdatalist
       end    
       item[edit]
-        width = 2000
+        width = 1940
         options = [co_leftbuttonfocusonly, co_middlebuttonfocus, co_savestate, co_mousescrollrow]
         onchange = textchanged
         widgetname = 'edit'
         dataclass = tgridrichstringdatalist
       end>
     datarowlinewidth = 0
-    datarowheight = 18
+    datarowheight = 19
     onrowsinserted = gridonrowsinserted
     onrowsdeleted = gridonrowsdeleted
     oncellevent = gridoncellevent
-    reffontheight = 14
+    reffontheight = 15
     object edit: tsyntaxedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       visible = False
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 2000
-      bounds_cy = 18
+      bounds_cx = 1940
+      bounds_cy = 19
       font.name = 'mseide_source'
       font.xscale = 1
       font.localprops = [flp_xscale]
@@ -99,14 +99,14 @@ object sourcepage: tsourcepage
       oneditnotifcation = editoneditnotification
       oncellevent = editoncellevent
       maxundocount = 10000
-      reffontheight = 18
+      reffontheight = 19
     end
     object dataicon: tdataicon
       optionsskin = [osk_framebuttononly]
       bounds_x = 50
       bounds_y = 0
       bounds_cx = 15
-      bounds_cy = 18
+      bounds_cy = 19
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       options = [bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey]
@@ -142,14 +142,14 @@ object sourcepage: tsourcepage
     frame.localprops1 = []
     taborder = 2
     bounds_x = 0
-    bounds_y = 209
+    bounds_y = 208
     bounds_cx = 68
-    bounds_cy = 18
+    bounds_cy = 19
     anchors = [an_left, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
     textflags = [tf_xcentered, tf_ycentered]
     textflagsactive = [tf_xcentered, tf_ycentered]
-    reffontheight = 14
+    reffontheight = 15
   end
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
@@ -160,12 +160,12 @@ object sourcepage: tsourcepage
     frame.localprops1 = []
     taborder = 1
     bounds_x = 68
-    bounds_y = 209
+    bounds_y = 208
     bounds_cx = 243
-    bounds_cy = 18
+    bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 14
+    reffontheight = 15
   end
 end

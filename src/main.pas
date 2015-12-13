@@ -1128,23 +1128,52 @@ var
  po1: pmoduleinfoty;
  page1: tsourcepage;
  sysfilename : string;
- str1,str2: filenamety;
+ str1,str2, str3 : filenamety;
 begin
+ 
  if sourcefo.checkancestor(flastform) then begin
   page1:= sourcefo.activepage;
   if (page1 <> nil) then begin
+   str2:= fileext(page1.filepath);
+   str3:=page1.filepath;
+   if str2 = pasfileext then begin  /// it is pascal
+    str1:= replacefileext(page1.filepath,formfileext);
+    po1:= designer.modules.findmodule(str1);
+    if po1 <> nil then begin // mfm finded
+     createmodulemenuitem(po1);
+     po1^.designform.activate(true);
+     
+     setstattext('  Toggled mse form/unit...',mtk_flat); 
+        
+     page1:= nil;
+    end
+    else begin
+    
+    if fileexists(str1) then begin
+     page1:= sourcefo.findsourcepage(str1);
+     if page1 = nil then begin //mfm not loaded in editor
+         po1:= designer.loadformfile(str1,false);      
+      if po1 <> nil then begin
+        setstattext('  Toggled to form...',mtk_flat);       
+       createmodulemenuitem(po1);
+       po1^.designform.activate(true);
+      end; end; end 
+      else
+      begin
   
-  // fred
+     setstattext('',mtk_flat);
+     
+       // fred
    if (conffpguifo.enablefpguidesigner.value = true) then
    begin
      if toogletag = false then
      begin
   // if fpgfilename <> page1.filepath then
  //  begin
-  // setstattext('  Toggled to form...',mtk_flat); 
-     toogletag := true;
+   setstattext('  Toggled to form...',mtk_flat); 
+   toogletag := true;
      
-   sysfilename := tosysfilepath(filepath(trim(page1.filepath),fk_file,true));
+   sysfilename := tosysfilepath(filepath(str3,fk_file,true));
      
     LoadfpgDesigner(sysfilename,'');
  //  fpgfilename := page1.filepath;
@@ -1152,7 +1181,7 @@ begin
   //  LoadfpgDesigner('showit','');
      end else
    begin
-   // setstattext('  Toggled to source...',mtk_flat);
+   setstattext('  Toggled to source...',mtk_flat);
        toogletag := false;
   if (conffpguifo.tbfpgonlyone.value = true) and 
   (conffpguifo.ifhide.value = true) then LoadfpgDesigner(conffpguifo.edhide.text,'');
@@ -1172,34 +1201,21 @@ fpgd_loadfile(pchar(page1.filepath));
 end; 
 end;  
 }
-    // fred
-   str2:= fileext(page1.filepath);
-   
-     
-   if str2 = pasfileext then begin
-    str1:= replacefileext(page1.filepath,formfileext);
-    po1:= designer.modules.findmodule(str1);
-    if po1 <> nil then begin
-     createmodulemenuitem(po1);
-     po1^.designform.activate(true);
-     page1:= nil;
-    end
-    else begin
-    page1:= sourcefo.findsourcepage(str1);
-     if page1 = nil then begin //mfm not loaded in editor
-      po1:= designer.loadformfile(str1,false);      
-      if po1 <> nil then begin
-       createmodulemenuitem(po1);
-       po1^.designform.activate(true);
+    // fred end
+ 
+  /// ici fred
+      
       end;
-     end;
     end;
    end
    else begin
     if str2 = formfileext then begin
-    page1:= sourcefo.findsourcepage(replacefileext(page1.filepath,pasfileext));
-      end;
-   end;
+      setstattext('  Toggled to mse source...',mtk_flat);
+ 
+     page1:= sourcefo.findsourcepage(
+                 replacefileext(page1.filepath,pasfileext));
+    end;
+   end ;
    if page1 <> nil then begin
     page1.activate;
    end;
@@ -1209,12 +1225,9 @@ end;
   po1:= designer.actmodulepo;
   if po1 <> nil then begin
    str1:= replacefileext(po1^.filename,pasfileext);
-     
-  if sourcefo.openfile(str1,true) = nil then 
-  begin
-   // raise exception.create(c[ord(unableopen)]+str1+'".');
-  //   setstattext('Unable to find ' +str1+ '...',mtk_flat);
-    end;
+   if sourcefo.openfile(str1,true) = nil then begin
+    raise exception.create(ansistring(c[ord(unableopen)]+str1+'".'));
+   end;
   end
   else begin
    if designer.modules.count > 0 then begin
@@ -1826,8 +1839,7 @@ begin
   abortmakeact.enabled:= making;
   saveall.enabled:= sourcefo.modified or designer.modified or
                                                   projectoptions.modified;
-  actionsmo.toggleformunit.enabled:= (flastform <> nil) or
-                                            (designer.modules.count > 0);
+  actionsmo.toggleformunit.enabled:= (flastform <> nil) or (designer.modules.count > 0);
   if (sourcefo.activepage <> nil) and 
                                 sourcefo.activepage.activeentered then begin
    setbm0.enabled:= true;

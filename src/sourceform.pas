@@ -105,7 +105,6 @@ type
    ffileloading: boolean;
    ffiletag: longword;
    fnaviglist: tnaviglist;
-   fsourcehintwidget: twidget;
    feditposar: gridcoordarty;
    factbookmark: integer;
    fbookmarkar: array of bookmarkarty;
@@ -124,6 +123,7 @@ type
    procedure setsourcehintwidget(const avalue: twidget);
   public
    hintsize: sizety;
+   fsourcehintwidget: twidget;
    constructor create(aowner: tcomponent); override;
    destructor destroy; override;
 

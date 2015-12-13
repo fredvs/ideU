@@ -42,7 +42,7 @@ uses
   msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, msemenuwidgets, msegui,
   msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, msetimer,
    mseassistiveserver,mseassistiveclient, msegrids, msestrings, msesimplewidgets, 
-  msedataedits, mseedit, msekeyboard, msefileutils,
+  msedataedits, mseedit, msekeyboard, msefileutils, msestringcontainer,msedispwidgets,
   mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact,
   msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes, mseprocess,
   Math, Classes, Process
@@ -540,6 +540,9 @@ begin
    if (Sender is Tstringgrid) then
     Result := 'grid, ' + Tstringgrid(Sender).Name
   else
+   if (Sender is Tstringdisp) then
+    Result := 'Info panel, ' + Tstringdisp(Sender).value 
+  else
   if (Sender is tbooleaneditradio) then
   begin
     if (Tbooleaneditradio(Sender).frame.Caption <> '') then
@@ -830,15 +833,13 @@ var
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
 begin
   thetimer.Enabled := False;
-
-   
   
     WhatCh := WhatChar(Sender.getinstance, info);
     TheSender := Sender.getinstance;
     TheKeyInfo := info;
     thetimer.ontimer := @ontimerkey;
 
-  if (TheSender is Tstringedit) or (TheSender is Tmemoedit) then  
+  if (TheSender is Tstringedit) or (TheSender is Tmemoedit)  or (TheSender is twidgetgrid) then  
   begin 
    oldlang := voice_language;
       if voice_gender = '' then
@@ -908,7 +909,7 @@ stringtemp : msestring = '' ;
 begin
   thetimer.Enabled := False;
 
-  if TheMouseinfo.eventkind = ek_mousemove then
+ if TheMouseinfo.eventkind = ek_mousemove then
   begin
 
     if TComponent(TheSender).Name <> lastname then
@@ -956,7 +957,7 @@ procedure TSAK.clientmouseevent(const sender: iassistiveclient;
     thetimer.Enabled := False;
     if info.eventkind = ek_mousemove then
   thetimer.interval := 60000 else
-  thetimer.interval := 600000 ;
+  thetimer.interval := 6000 ;
   
     thetimer.ontimer := @ontimermouse;
     thetimer.Enabled := True;

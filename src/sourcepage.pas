@@ -546,7 +546,11 @@ begin
    formonresize(nil);
    widgetrect:= placepopuprect(self.window,rect1,cp_bottomleft,size);
    show(false,self.window);
-  end;
+   // fred hint
+  sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 48 ;
+  sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 10 ;
+  sourcefo.fsourcehintwidget.height := 200; // to force resize ;
+   end;
  end
  else begin
   sourcefo.hidesourcehint;
@@ -583,6 +587,7 @@ begin
  setlength(ar1,length(defs));
  for int1:= 0 to high(defs) do begin
   ar1[int1]:= defs[int1]^.name;
+
  end;
  if high(ar1) >= 99 then begin
   ar1[high(ar1)]:= '...';
@@ -597,10 +602,12 @@ procedure tsourcepage.editoncellevent(const sender: TObject;
  var
   pos2: gridcoordty;
  begin
+    mainfo.statdisp.value:= '';
   if info.keyeventinfopo^.shiftstate * shiftstatesmask = [ss_ctrl] then begin
    if edit.mousepostotextpos(translatewidgetpoint(application.mouse.pos,nil,edit),
                                             pos2,true) then begin
-    showlink(pos2);
+  showlink(pos2);
+  
    end;
   end
   else begin
@@ -637,13 +644,18 @@ begin
       pos1.pos:= edit.editpos;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
        case key of
-        key_up,key_down: begin
-         if switchheaderimplementation(edit.filename,pos1,pos2) then begin
-          page1:= sourcefo.showsourcepos(pos2,true);
-          if page1 <> nil then begin
+        key_up,key_down: 
+      begin
+         if switchheaderimplementation(edit.filename,pos1,pos2) then
+        begin
+           page1:= sourcefo.showsourcepos(pos2,true);
+              
+          if page1 <> nil then 
+          begin
            page1.grid.showcell(makegridcoord(1,pos1.pos.row));
           end;
-         end;
+          
+      end;
         end;
         key_space: begin
          showprocheaders(edit.editpos);
@@ -657,6 +669,7 @@ begin
        case key of
         key_space: begin
 {$ifdef mse_with_showsourceitems}
+    mainfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
          showsourceitems(edit.editpos);
 {$endif}
         end
@@ -1465,11 +1478,15 @@ end;
 procedure tsourcepage.editonkeydown(const sender: twidget;
                                                    var info: keyeventinfoty);
 begin
+
+if  (info.chars = '.') then mainfo.statdisp.value:= '. entered' else mainfo.statdisp.value:= '';  
+
  with info,tsyntaxedit(sender).editor,projectoptions do begin
   if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and 
                                              (key = key_tab) then begin
    chars:= charstring(msechar(' '),
                         (curindex div e.tabstops + 1) * e.tabstops - curindex);
+
   end;
  end;
 end;
