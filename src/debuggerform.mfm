@@ -750,70 +750,10 @@ object debuggerfo: tdebuggerfo
       imagenr = 31
       focusrectdist = 0
     end
-    object layprj: tbooleaneditradio
-      frame.colorclient = 11648433
-      frame.caption = 'Project'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        44
-        2
-      )
-      taborder = 5
-      hint = 'Show only Project Commandor'
-      bounds_x = 3
-      bounds_y = 0
-      bounds_cx = 57
-      bounds_cy = 17
-      onchange = layoutchange
-      group = 1
-    end
-    object layedit: tbooleaneditradio
-      frame.colorclient = 11642296
-      frame.caption = 'Edited'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        42
-        2
-      )
-      taborder = 6
-      hint = 'Show only Edited Commador'
-      bounds_x = 3
-      bounds_y = 15
-      bounds_cx = 55
-      bounds_cy = 17
-      onchange = layoutchange
-      group = 1
-    end
-    object layall: tbooleaneditradio
-      frame.caption = 'Both'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        31
-        2
-      )
-      taborder = 7
-      hint = 'Show Project and Edited Commador'
-      bounds_x = 62
-      bounds_y = 7
-      bounds_cx = 44
-      bounds_cy = 17
-      onchange = layoutchange
-      value = True
-      group = 1
-    end
     object project_option: tbutton
       optionswidget = [ow_destroywidgets]
       color = 11648433
-      taborder = 8
+      taborder = 5
       hint = 'Project options'
       bounds_x = 241
       bounds_y = 3
@@ -825,6 +765,65 @@ object debuggerfo: tdebuggerfo
       imagenr = 36
       imagenrdisabled = 36
       focusrectdist = 0
+    end
+    object layedit: tbooleanedit
+      frame.colorclient = 11642296
+      frame.caption = 'Edited'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        42
+        3
+      )
+      taborder = 6
+      hint = 'Show Edited Commador'
+      bounds_x = 3
+      bounds_y = 15
+      bounds_cx = 55
+      bounds_cy = 17
+      onchange = layoutchange
+      value = True
+    end
+    object layprj: tbooleanedit
+      frame.colorclient = 11648433
+      frame.caption = 'Project'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        44
+        3
+      )
+      taborder = 7
+      hint = 'Show Project Commandor'
+      bounds_x = 3
+      bounds_y = 1
+      bounds_cx = 57
+      bounds_cy = 17
+      onchange = layoutchange
+      value = True
+    end
+    object autocomp: tbooleanedit
+      frame.colorclient = 12432268
+      frame.caption = 'Auto'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        31
+        3
+      )
+      taborder = 8
+      hint = 'Auto-complete form '
+      bounds_x = 62
+      bounds_y = 8
+      bounds_cx = 44
+      bounds_cy = 17
+      value = True
     end
   end
 end

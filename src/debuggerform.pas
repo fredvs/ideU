@@ -68,12 +68,12 @@ type
    toggle_form_unit: tbutton;
    save_file: tbutton;
    project_make4: tbutton;
-   layprj: tbooleaneditradio;
-   layedit: tbooleaneditradio;
-   layall: tbooleaneditradio;
    edited_makeb: tbutton;
    edited_makem: tbutton;
    project_option: tbutton;
+   layedit: tbooleanedit;
+   layprj: tbooleanedit;
+   autocomp: tbooleanedit;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -91,25 +91,26 @@ end;
 
 procedure tdebuggerfo.layoutchange(const sender: TObject);
 begin
-if layall.value = true then
-begin
-projectpanel.left := 269;
-projectpanel.visible := true;
-editpanel.left := 748;
-editpanel.visible := true;
-end
-else
+
 if layprj.value = true then
 begin
-editpanel.visible := false;
-projectpanel.left := 269;
+if layedit.value = true then
+begin
+editpanel.visible := true;
+editpanel.left := 748;
+end else editpanel.visible := true;
 projectpanel.visible := true;
 end
 else
 begin
 projectpanel.visible := false;
-editpanel.left := 269;
+
+if layedit.value = true then
+begin
 editpanel.visible := true;
+editpanel.left := 269;
+end else editpanel.visible := false;
+
 end;
 
 end;

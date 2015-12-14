@@ -298,10 +298,12 @@ type
    function candebug: boolean; //run command empty or process attached
    procedure startconsole();
   public
+  
    // fred
    customoption : integer;
    setcompiler : integer;
    settypecompiler : integer;
+   
    factivedesignmodule: pmoduleinfoty;
    fprojectloaded: boolean;
    errorformfilename: filenamety;

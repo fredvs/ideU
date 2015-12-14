@@ -21,7 +21,7 @@ unit sourcepage;
 interface
 
 uses
- msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
+ msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, msetimer, 
  msegraphedits,mseevent,
  msehash,msebitmap,msetabs,msetypes,msedataedits,
  mseglob,mseguiglob,msegui,msesyntaxedit,mseeditglob,
@@ -40,11 +40,16 @@ type
  bookmarkarty = array of bookmarkty;
  
  tsourcepage = class(ttabform)
+   // fred 
+   
+   TheTimer: TTimer;
+    
    grid: twidgetgrid;
    edit: tsyntaxedit;
    dataicon: tdataicon;
    linedisp: tstringedit;
    pathdisp: tstringedit;
+   procedure ontimerhint(const Sender: TObject);
    procedure icononcellevent(const sender: tobject; var info: celleventinfoty);
    procedure sourcefooncreate(const sender: tobject);
    procedure sourcefoondestroy(const sender: tobject);
@@ -162,7 +167,7 @@ procedure findintextedit(const edit: tcustomtextedit; var info: findinfoty;
 implementation
 
 uses
- sourcepage_mfm,msefileutils,sourceform,main,
+ sourcepage_mfm,msefileutils,sourceform,main, debuggerform,
  sysutils,msewidgets,finddialogform,replacedialogform,msekeyboard,
  sourceupdate,msefiledialog,mseintegerenter,msedesigner,mseformatstr,
  msesys,make,actionsmodule,msegraphics,sourcehintform,
@@ -536,6 +541,7 @@ begin
      textflags:= [tf_wordbreak,tf_noselect];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
+     // fred
      text:= msestring(values[high(values)-int1]);
     end;
    end;
@@ -547,10 +553,11 @@ begin
    widgetrect:= placepopuprect(self.window,rect1,cp_bottomleft,size);
    show(false,self.window);
    // fred hint
-  sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 48 ;
-  sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 10 ;
+  sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
+  sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
+ // sourcefo.fsourcehintwidget.width := 120; // to force resize ;
   sourcefo.fsourcehintwidget.height := 200; // to force resize ;
-   end;
+     end;
  end
  else begin
   sourcefo.hidesourcehint;
@@ -566,6 +573,10 @@ var
  pos1: sourceposty;
 begin
  pos1.pos:= apos;
+ 
+ // fred
+ // pos1.pos.col := pos1.pos.col-1;
+ 
  ar1:= listprocheaders(edit.filename,pos1);
  setlength(ar2,length(ar1));
  for int1:= 0 to high(ar1) do begin
@@ -583,6 +594,10 @@ var
  int1: integer;
 begin
  pos1.pos:= apos;
+ 
+ // fred
+ //pos1.pos.col := pos1.pos.col-1;
+ 
  listsourceitems(edit.filename,pos1,scopes,defs,100);
  setlength(ar1,length(defs));
  for int1:= 0 to high(defs) do begin
@@ -621,13 +636,15 @@ var
  shiftstate1: shiftstatesty;
  
 begin
+
  if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate = [ss_double]) then begin
   include(info.mouseeventinfopo^.eventstate,es_processed);
   breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
  end;
- case info.eventkind of
+ 
+  case info.eventkind of
   cek_exit: begin
    edit.removelink;
   end;
@@ -668,11 +685,10 @@ begin
       else begin
        case key of
         key_space: begin
-{$ifdef mse_with_showsourceitems}
-    mainfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
+        // fred
+         mainfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
          showsourceitems(edit.editpos);
-{$endif}
-        end
+      end
         else begin
          exclude(eventstate,es_processed);
         end;
@@ -839,14 +855,29 @@ begin
 // breakpoints.fgdb:= agdb;
 end;
 
+// fred
+procedure tsourcepage.ontimerhint(const Sender: TObject);
+begin
+  thetimer.Enabled := False;
+  showsourceitems(edit.editpos);
+ sleep(20);
+  activate(false,true); //get focus back
+end;
+
+// fred
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
 begin
-// breakpoints:= tbreakpoints.create;
+        thetimer := ttimer.Create(nil);
+        thetimer.interval :=  1500000 ;
+        thetimer.tag := 0;
+        thetimer.Enabled := False;
+        thetimer.ontimer := @ontimerhint;
 end;
 
 procedure tsourcepage.sourcefoondestroy(const sender: tobject);
 begin
-// breakpoints.Free;
+thetimer.Enabled := False;
+thetimer.Free;
 end;
 
 procedure tsourcepage.editonmodifiedchanged(const sender: tobject;
@@ -1475,12 +1506,29 @@ begin
  fbackupcreated:= true;
 end;
 
-procedure tsourcepage.editonkeydown(const sender: twidget;
-                                                   var info: keyeventinfoty);
+procedure tsourcepage.editonkeydown(const sender: twidget; var info: keyeventinfoty);
+  begin
+  
+// fred
+//mainfo.autocomplete := true; /// to do button
+
+if debuggerfo.autocomp.value = true then
 begin
-
-if  (info.chars = '.') then mainfo.statdisp.value:= '. entered' else mainfo.statdisp.value:= '';  
-
+thetimer.Enabled := false;
+sourcefo.hidesourcehint; 
+ mainfo.statdisp.value:= '"' + info.chars + '" entered.';
+ thetimer.Enabled := true;
+ end 
+ else
+ begin
+ if thetimer.Enabled = true then
+ begin
+ thetimer.Enabled := false;
+  mainfo.statdisp.value:= ''; 
+ sourcefo.hidesourcehint; 
+ end;
+  end; 
+  
  with info,tsyntaxedit(sender).editor,projectoptions do begin
   if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and 
                                              (key = key_tab) then begin
