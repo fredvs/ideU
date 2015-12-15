@@ -40,16 +40,18 @@ type
  bookmarkarty = array of bookmarkty;
  
  tsourcepage = class(ttabform)
-   // fred 
-   
-   TheTimer: TTimer;
-    
+ 
    grid: twidgetgrid;
    edit: tsyntaxedit;
    dataicon: tdataicon;
    linedisp: tstringedit;
    pathdisp: tstringedit;
+  
+     // fred
+   TheTimer: TTimer;
+   procedure ontimerhide(const Sender: TObject);
    procedure ontimerhint(const Sender: TObject);
+  
    procedure icononcellevent(const sender: tobject; var info: celleventinfoty);
    procedure sourcefooncreate(const sender: tobject);
    procedure sourcefoondestroy(const sender: tobject);
@@ -536,12 +538,12 @@ begin
      frame.levelo:= 0;
      frame.framewidth:= 1;
      frame.colorframe:= cl_dkgray;
-     
      optionsedit:= optionsedit + [oe_readonly];
      textflags:= [tf_wordbreak,tf_noselect];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
      // fred
+      color := $DEFAC8 ;
      text:= msestring(values[high(values)-int1]);
     end;
    end;
@@ -551,12 +553,12 @@ begin
    size:= sourcefo.hintsize;
    formonresize(nil);
    widgetrect:= placepopuprect(self.window,rect1,cp_bottomleft,size);
-   show(false,self.window);
-   // fred hint
+     // fred hint
   sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
   sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
  // sourcefo.fsourcehintwidget.width := 120; // to force resize ;
   sourcefo.fsourcehintwidget.height := 200; // to force resize ;
+   show(false,self.window);
      end;
  end
  else begin
@@ -860,7 +862,19 @@ procedure tsourcepage.ontimerhint(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   showsourceitems(edit.editpos);
- sleep(20);
+  thetimer.ontimer := @ontimerhide;
+  thetimer.interval :=  30000000 ;
+  sleep(200);
+ thetimer.Enabled := true;
+  activate(false,true); //get focus back
+end;
+
+// fred
+procedure tsourcepage.ontimerhide(const Sender: TObject);
+begin
+  thetimer.Enabled := False;
+  mainfo.statdisp.value:= ''; 
+ sourcefo.hidesourcehint; 
   activate(false,true); //get focus back
 end;
 
@@ -1510,13 +1524,13 @@ procedure tsourcepage.editonkeydown(const sender: twidget; var info: keyeventinf
   begin
   
 // fred
-//mainfo.autocomplete := true; /// to do button
-
 if debuggerfo.autocomp.value = true then
 begin
 thetimer.Enabled := false;
+thetimer.ontimer := @ontimerhint;
 sourcefo.hidesourcehint; 
  mainfo.statdisp.value:= '"' + info.chars + '" entered.';
+ thetimer.interval :=  1000000 ;
  thetimer.Enabled := true;
  end 
  else

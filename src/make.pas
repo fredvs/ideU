@@ -559,7 +559,7 @@ begin
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
 
- actionsmo.initprojectcompile ;
+ actionsmo.initproject ;
  mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];

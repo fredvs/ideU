@@ -29,15 +29,12 @@ uses
 type
  tdebuggerfo = class(tdockform)
    editpanel: tdockpanel;
-   edited_make3: tbutton;
-   edited_make2: tbutton;
-   edited_make1: tbutton;
    edited_run: tbutton;
    compiler_1: tbooleaneditradio;
    compiler_2: tbooleaneditradio;
    compiler_3: tbooleaneditradio;
    edited_abort: tbutton;
-   edited_make4: tbutton;
+   edited_make: tbutton;
    compiler_pascal: tbooleaneditradio;
    compiler_java: tbooleaneditradio;
    compiler_c: tbooleaneditradio;
@@ -55,11 +52,7 @@ type
    break_point: tbooleanedit;
    watches: tbooleanedit;
    hints: tbooleanedit;
-   project_make2: tbutton;
-   project_make1: tbutton;
-   project_build: tbutton;
    project_abort_compil: tbutton;
-   project_make3: tbutton;
    project_make: tbutton;
    mainpanel: tdockpanel;
    open_file: tbutton;
@@ -67,13 +60,12 @@ type
    assistive: tbutton;
    toggle_form_unit: tbutton;
    save_file: tbutton;
-   project_make4: tbutton;
-   edited_makeb: tbutton;
-   edited_makem: tbutton;
    project_option: tbutton;
    layedit: tbooleanedit;
    layprj: tbooleanedit;
    autocomp: tbooleanedit;
+   edit_options: tenumedit;
+   project_options: tenumedit;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -97,7 +89,7 @@ begin
 if layedit.value = true then
 begin
 editpanel.visible := true;
-editpanel.left := 748;
+editpanel.left := 658;
 end else editpanel.visible := true;
 projectpanel.visible := true;
 end

@@ -226,10 +226,8 @@ type
    customrun: taction;
    assistive: taction;
    customcompil: taction;
+   projectcompile: taction;
    procedure findinfileonexecute(const sender: tobject);
-   
-    // assistive
-    procedure assistiveactonexecute(const sender: tobject); 
    
     //file
    procedure opensourceactonexecute(const sender: tobject);
@@ -268,18 +266,24 @@ type
    procedure abortmakeactonexecute(const sender: tobject);
    
    // fred
-   procedure customselectedrun(const sender: TObject);
+    // assistive
+   procedure assistiveactonexecute(const sender: tobject); 
+      
+   procedure runcustom(const sender: TObject);
    
    // Setup ready
    procedure setupcustom ;
    
-   procedure initprojectcompile ;
+   procedure initproject ;
    
    // custom is finish
    procedure finishcustom;
    
    // Custom compile
-   procedure customexecute(const sender: TObject);
+   procedure compilecustom(const sender: TObject);
+   
+   // Project compile
+   procedure compileproject(const sender: TObject);
     
    //debugger
    procedure resetactonexecute(const sender: tobject);
@@ -502,7 +506,9 @@ begin
  mainfo.toggleformunit;
 end;
 
-procedure tactionsmo.initprojectcompile ;
+// fred
+
+procedure tactionsmo.initproject ;
 begin
 debuggerfo.project_abort_compil.enabled := true;
 end;
@@ -510,17 +516,29 @@ end;
 procedure tactionsmo.finishcustom ;
 begin
   debuggerfo.project_abort_compil.enabled := false;
+  debuggerfo.project_make.enabled := true;
   debuggerfo.project_reset.enabled := false;
   debuggerfo.edited_abort.enabled := false ;
   debuggerfo.project_interrupt.enabled := false;
-  debuggerfo.edited_make1.enabled := true;
-  debuggerfo.edited_make2.enabled := true;
-  debuggerfo.edited_make3.enabled := true;
-  debuggerfo.edited_make4.enabled := true;
-  debuggerfo.edited_makeb.enabled := true;
-  debuggerfo.edited_makem.enabled := true;
+  debuggerfo.edited_make.enabled := true;
   debuggerfo.edited_run.enabled := true;
 end;
+
+procedure tactionsmo.compileproject(const sender: TObject);
+begin
+debuggerfo.project_make.enabled := false;
+debuggerfo.project_abort_compil.enabled := true;
+
+ case debuggerfo.project_options.value of
+  0 : domake(1) ;
+   1 : domake(2) ;
+   2 : domake(4) ;
+    3 : domake(8) ;
+     4 : domake(16) ;
+   5 : domake(32) ;   
+  end;
+   mainfo.resetstartcommand;
+ end;
 
 procedure tactionsmo.setupcustom ;
 begin
@@ -539,29 +557,33 @@ begin
   if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
   if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
   
-  debuggerfo.edited_makem.enabled := false;
-  debuggerfo.edited_makeb.enabled := false;
-    
-  debuggerfo.edited_make1.enabled := false;
-  debuggerfo.edited_make2.enabled := false;
-  debuggerfo.edited_make3.enabled := false;
-  debuggerfo.edited_make4.enabled := false;
+  debuggerfo.edited_make.enabled := false;
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
+  
+  case debuggerfo.edit_options.value of
+  0 : mainfo.customoption := 1 ;
+   1 : mainfo.customoption := 2 ;
+   2 : mainfo.customoption := 4 ;
+    3 : mainfo.customoption := 8 ;
+     4 : mainfo.customoption := 16 ;
+   5 : mainfo.customoption := 32 ;   
+  end;
     
 end;
 
-procedure tactionsmo.customexecute(const sender: TObject);
+procedure tactionsmo.compilecustom(const sender: TObject);
 begin
 setupcustom ;
-if sender is tbutton then mainfo.customoption := tbutton(sender).tag ;
 mainfo.customcompile(sender);
 end;
 
-procedure tactionsmo.customselectedrun(const sender: TObject);
+procedure tactionsmo.runcustom(const sender: TObject);
 begin
  mainfo.customrun(sender) ;
  end;
+ 
+ //
 
 procedure tactionsmo.undoactonexecute(const sender: tobject);
 begin
@@ -671,16 +693,13 @@ end;
 procedure tactionsmo.makeactonexecute(const sender: tobject);
 begin
  with mainfo do begin
-  if sender is tmenuitem then begin
+  if sender is tmenuitem then
+   begin
    domake(tmenuitem(sender).tag);
-  end
-   else begin
-   if sender is tbutton then begin
-   domake(tbutton(sender).tag);
-  end
-  else begin
+ end
+  else
+   begin
       domake(0);
-  end;
   end;
    resetstartcommand;
  end;
