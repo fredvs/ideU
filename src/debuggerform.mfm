@@ -7,17 +7,17 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
   visible = False
-  bounds_x = 40
-  bounds_y = 179
-  bounds_cx = 945
-  bounds_cy = 64
+  bounds_x = 194
+  bounds_y = 35
+  bounds_cx = 1132
+  bounds_cy = 179
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    937
-    64
+    1124
+    179
   )
   dragdock.caption = 'Debugger'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
@@ -79,162 +79,6 @@ object debuggerfo: tdebuggerfo
     00000000
   }
   moduleclassname = 'tdockform'
-  object mainpanel: tdockpanel
-    taborder = 2
-    bounds_x = 0
-    bounds_y = 2
-    bounds_cx = 270
-    bounds_cy = 32
-    object open_file: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 1
-      hint = 'Open file'
-      bounds_x = 134
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.opensource
-      imagelist = mainfo.vievmenuicons
-      imagenr = 5
-      focusrectdist = 0
-    end
-    object find_in_directory: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 2
-      hint = 'Find in directory'
-      bounds_x = 187
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.findinfile
-      imagelist = actionsmo.buttonicons
-      imagenr = 38
-      imagenrdisabled = 38
-    end
-    object assistive: tbutton
-      optionswidget = [ow_destroywidgets]
-      taborder = 3
-      hint = 'Assitive on/off'
-      bounds_x = 214
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.assistive
-      imagelist = actionsmo.buttonicons
-      imagenr = 40
-      focusrectdist = 0
-    end
-    object toggle_form_unit: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      hint = 'Toggle form/unit'
-      bounds_x = 108
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
-      action = actionsmo.toggleformunit
-      imagelist = actionsmo.buttonicons
-      imagenr = 30
-      imagenrdisabled = 30
-      focusrectdist = 0
-    end
-    object save_file: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      taborder = 4
-      hint = 'Save edited file'
-      bounds_x = 160
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.save
-      imagelist = actionsmo.buttonicons
-      imagenr = 31
-      focusrectdist = 0
-    end
-    object project_option: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 11648433
-      taborder = 5
-      hint = 'Project options'
-      bounds_x = 241
-      bounds_y = 3
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.projectoptionsact
-      imagelist = actionsmo.buttonicons
-      imagenr = 36
-      imagenrdisabled = 36
-      focusrectdist = 0
-    end
-    object layedit: tbooleanedit
-      frame.colorclient = 11642296
-      frame.caption = 'Edited'
-      frame.localprops = [frl_colorframe, frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        42
-        3
-      )
-      taborder = 6
-      hint = 'Show Edited Commador'
-      bounds_x = 3
-      bounds_y = 15
-      bounds_cx = 55
-      bounds_cy = 17
-      onchange = layoutchange
-      value = True
-    end
-    object layprj: tbooleanedit
-      frame.colorclient = 11648433
-      frame.caption = 'Project'
-      frame.localprops = [frl_colorframe, frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        44
-        3
-      )
-      taborder = 7
-      hint = 'Show Project Commandor'
-      bounds_x = 3
-      bounds_y = 1
-      bounds_cx = 57
-      bounds_cy = 17
-      onchange = layoutchange
-      value = True
-    end
-    object autocomp: tbooleanedit
-      frame.colorclient = 12432268
-      frame.caption = 'Auto'
-      frame.localprops = [frl_colorframe, frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        31
-        3
-      )
-      taborder = 8
-      hint = 'Auto-complete form '
-      bounds_x = 62
-      bounds_y = 8
-      bounds_cx = 44
-      bounds_cy = 17
-      value = True
-    end
-  end
   object projectpanel: tdockpanel
     frame.framewidth = 1
     frame.captiontextflags = [tf_rotate90]
@@ -472,7 +316,6 @@ object debuggerfo: tdebuggerfo
       bounds_x = 4
       bounds_y = 5
       bounds_cx = 35
-      bounds_cy = 21
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -487,8 +330,164 @@ object debuggerfo: tdebuggerfo
         end>
       value = 0
       min = 0
-      max = 5
+      max = 100
       reffontheight = 15
+    end
+  end
+  object mainpanel: tdockpanel
+    taborder = 2
+    bounds_x = 0
+    bounds_y = 2
+    bounds_cx = 270
+    bounds_cy = 32
+    object open_file: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 1
+      hint = 'Open file'
+      bounds_x = 134
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.opensource
+      imagelist = mainfo.vievmenuicons
+      imagenr = 5
+      focusrectdist = 0
+    end
+    object find_in_directory: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 2
+      hint = 'Find in directory'
+      bounds_x = 187
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.findinfile
+      imagelist = actionsmo.buttonicons
+      imagenr = 38
+      imagenrdisabled = 38
+    end
+    object assistive: tbutton
+      optionswidget = [ow_destroywidgets]
+      taborder = 3
+      hint = 'Assitive on/off'
+      bounds_x = 214
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.assistive
+      imagelist = actionsmo.buttonicons
+      imagenr = 40
+      focusrectdist = 0
+    end
+    object toggle_form_unit: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      hint = 'Toggle form/unit'
+      bounds_x = 108
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
+      action = actionsmo.toggleformunit
+      imagelist = actionsmo.buttonicons
+      imagenr = 30
+      imagenrdisabled = 30
+      focusrectdist = 0
+    end
+    object save_file: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 13684944
+      taborder = 4
+      hint = 'Save edited file'
+      bounds_x = 160
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.save
+      imagelist = actionsmo.buttonicons
+      imagenr = 31
+      focusrectdist = 0
+    end
+    object project_option: tbutton
+      optionswidget = [ow_destroywidgets]
+      color = 11648433
+      taborder = 5
+      hint = 'Project options'
+      bounds_x = 241
+      bounds_y = 3
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.projectoptionsact
+      imagelist = actionsmo.buttonicons
+      imagenr = 36
+      imagenrdisabled = 36
+      focusrectdist = 0
+    end
+    object layedit: tbooleanedit
+      frame.colorclient = 11642296
+      frame.caption = 'Edited'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        42
+        3
+      )
+      taborder = 6
+      hint = 'Show Edited Commador'
+      bounds_x = 3
+      bounds_y = 15
+      bounds_cx = 55
+      bounds_cy = 17
+      onchange = layoutchange
+      value = True
+    end
+    object layprj: tbooleanedit
+      frame.colorclient = 11648433
+      frame.caption = 'Project'
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        44
+        3
+      )
+      taborder = 7
+      hint = 'Show Project Commandor'
+      bounds_x = 3
+      bounds_y = 1
+      bounds_cx = 57
+      bounds_cy = 17
+      onchange = layoutchange
+      value = True
+    end
+    object autocomp: tbooleanedit
+      frame.colorclient = 12432268
+      frame.caption = 'List '
+      frame.localprops = [frl_colorframe, frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        28
+        3
+      )
+      taborder = 8
+      hint = 'List of properties form while writing'
+      bounds_x = 65
+      bounds_y = 8
+      bounds_cx = 41
+      bounds_cy = 17
+      value = True
     end
   end
   object editpanel: tdockpanel
@@ -502,13 +501,13 @@ object debuggerfo: tdebuggerfo
     hint = 'Edited-file commandor'
     bounds_x = 658
     bounds_y = 2
-    bounds_cx = 275
+    bounds_cx = 235
     bounds_cy = 32
     dragdock.optionsdock = [od_savepos, od_savezorder, od_cansize, od_captionhint, od_childicons]
     object edited_run: tbutton
       optionswidget = [ow_destroywidgets]
       hint = 'Run compiled'
-      bounds_x = 246
+      bounds_x = 205
       bounds_y = 3
       bounds_cx = 26
       bounds_cy = 26
@@ -519,66 +518,11 @@ object debuggerfo: tdebuggerfo
       imagenrdisabled = 17
       focusrectdist = 0
     end
-    object compiler_1: tbooleaneditradio
-      frame.caption = '1  '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        19
-        2
-      )
-      taborder = 1
-      hint = 'Select compiler 1'
-      bounds_x = 89
-      bounds_y = 0
-      bounds_cx = 32
-      bounds_cy = 17
-      value = True
-      group = 1
-    end
-    object compiler_2: tbooleaneditradio
-      frame.caption = '2  '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        19
-        2
-      )
-      taborder = 2
-      hint = 'Select compiler 2'
-      bounds_x = 120
-      bounds_y = 0
-      bounds_cx = 32
-      bounds_cy = 17
-      group = 1
-    end
-    object compiler_3: tbooleaneditradio
-      frame.caption = '3  '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        19
-        2
-      )
-      taborder = 3
-      hint = 'Select compiler 3'
-      bounds_x = 89
-      bounds_y = 14
-      bounds_cx = 32
-      bounds_cy = 17
-      group = 1
-    end
     object edited_abort: tbutton
       optionswidget = [ow_destroywidgets]
-      taborder = 4
+      taborder = 1
       hint = 'Abort compile'
-      bounds_x = 219
+      bounds_x = 178
       bounds_y = 3
       bounds_cx = 26
       bounds_cy = 26
@@ -592,9 +536,9 @@ object debuggerfo: tdebuggerfo
     object edited_make: tbutton
       Tag = 32
       optionswidget = [ow_destroywidgets]
-      taborder = 5
+      taborder = 2
       hint = 'Compile edited-file with selected option'
-      bounds_x = 192
+      bounds_x = 151
       bounds_y = 3
       bounds_cx = 26
       bounds_cy = 26
@@ -604,106 +548,15 @@ object debuggerfo: tdebuggerfo
       imagenr = 42
       focusrectdist = 0
     end
-    object compiler_pascal: tbooleaneditradio
-      frame.colorclient = 16769279
-      frame.caption = 'pas'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        24
-        2
-      )
-      taborder = 6
-      hint = 'Use Pascal compiler'
-      bounds_x = 3
-      bounds_y = 0
-      bounds_cx = 37
-      bounds_cy = 17
-      value = True
-    end
-    object compiler_java: tbooleaneditradio
-      frame.colorclient = 16777164
-      frame.caption = 'java'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        27
-        2
-      )
-      taborder = 7
-      hint = 'Use Java compiler'
-      bounds_x = 45
-      bounds_y = 0
-      bounds_cx = 40
-      bounds_cy = 17
-    end
-    object compiler_c: tbooleaneditradio
-      frame.colorclient = 14606079
-      frame.caption = 'C   '
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        23
-        2
-      )
-      taborder = 8
-      hint = 'Use C compiler'
-      bounds_x = 3
-      bounds_y = 14
-      bounds_cx = 36
-      bounds_cy = 17
-    end
-    object compiler_python: tbooleaneditradio
-      frame.colorclient = 15138790
-      frame.caption = 'pyt '
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        27
-        2
-      )
-      taborder = 9
-      hint = 'Use python compiler'
-      bounds_x = 45
-      bounds_y = 14
-      bounds_cx = 40
-      bounds_cy = 17
-    end
-    object compiler_4: tbooleaneditradio
-      frame.caption = '4  '
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        19
-        2
-      )
-      taborder = 10
-      hint = 'Select compiler 4'
-      bounds_x = 120
-      bounds_y = 14
-      bounds_cx = 32
-      bounds_cy = 17
-      group = 1
-    end
     object edit_options: tenumedit
       frame.colorclient = 16770809
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
-      taborder = 11
+      taborder = 3
       hint = 'Compiler options for edited file.'
-      bounds_x = 153
+      bounds_x = 112
       bounds_y = 5
-      bounds_cx = 35
+      bounds_cx = 36
       bounds_cy = 21
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -719,7 +572,58 @@ object debuggerfo: tdebuggerfo
         end>
       value = 0
       min = 0
-      max = 5
+      max = 100
+      reffontheight = 15
+    end
+    object edit_compiler: tenumedit
+      frame.colorclient = 13221375
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      taborder = 4
+      hint = 'Type of Compilers'
+      bounds_x = 5
+      bounds_y = 5
+      bounds_cx = 65
+      bounds_cy = 21
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'Pascal'
+            'Java'
+            'C'
+            'Python'
+            'Other'
+          )
+        end>
+      value = 0
+      min = 0
+      max = 100
+      reffontheight = 15
+    end
+    object edit_compilernum: tenumedit
+      frame.colorclient = 15138793
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      taborder = 5
+      hint = 'Compiler number'
+      bounds_x = 73
+      bounds_y = 5
+      bounds_cx = 36
+      bounds_cy = 21
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            '1'
+            '2'
+            '3'
+            '4'
+          )
+        end>
+      value = 0
+      min = 0
+      max = 100
       reffontheight = 15
     end
   end

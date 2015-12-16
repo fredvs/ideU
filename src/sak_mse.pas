@@ -37,19 +37,19 @@ unit sak_mse;
     }
 
 interface
-
 uses
-  msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, msemenuwidgets, msegui,
-  msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, msetimer,
-   mseassistiveserver,mseassistiveclient, msegrids, msestrings, msesimplewidgets, 
-  msedataedits, mseedit, msekeyboard, msefileutils, msestringcontainer,msedispwidgets,
-  mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact,
-  msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes, mseprocess,
-  Math, Classes, Process
-  {$IF not DEFINED(Windows)}
+ msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, 
+  msemenuwidgets, msegui, process, msetabs,mclasses, 
+  msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, 
+  msetimer,mseassistiveserver,mseassistiveclient, msegrids, msestrings,
+  msesimplewidgets,msedataedits, mseedit, msekeyboard, msefileutils,
+  mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, sysutils, msedispwidgets,
+  mseact,
+  msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes,
+  math, classes, mseprocess,msesysintf,msesys
+   {$IF DEFINED(unix)}
   , baseunix
-       {$endif}  ;
-
+       {$endif};
 (*
 {$define darwin}
 {$define freebsd}
@@ -113,8 +113,8 @@ type
                             const items: shapeinfoarty; const aindex: integer);
     procedure doitementer(const sender: iassistiveclient;
                          const items: menucellinfoarty; const aindex: integer);
-   procedure docellevent(const sender: iassistiveclient; 
-                                    const info: celleventinfoty);
+    procedure docellevent(const sender: iassistiveclientgrid; 
+                                      const info: celleventinfoty);
     procedure ontimerkey(const Sender: TObject);
     procedure ontimermouse(const Sender: TObject);
     procedure ontimerenter(const Sender: TObject);
@@ -188,7 +188,7 @@ function SakCancel: integer;
 implementation
 
 uses
-  typinfo, mclasses, mseactions;
+  typinfo, mseactions;
   
 /////////////////////////// Capture Assistive Procedures
 
@@ -360,6 +360,12 @@ if (Sender is tbooleaneditradio) then
        Result := ' changed to ' + stringtemp ;
   end
   else
+  if (sender is tenumedit) then 
+  begin
+  result:= ' changed to ' + (tenumedit(sender).enumname(tenumedit(sender).value));
+  end
+  else
+  
    if (Sender is tslider) then
     Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
 end;
@@ -413,27 +419,23 @@ begin  /// backspace
 
       key_Up:
       begin
-       if not (Sender is Tstringgrid) then Result := 'up';
-     checkgrid();
+       if (Sender is Tstringgrid) or (Sender is Tcustomstringgrid) then checkgrid() else Result := 'up' ;
          end;
       
       key_down:
       begin
-        if not (Sender is Tstringgrid) then Result := 'down';
-       checkgrid();
+      if (Sender is Tstringgrid) or (Sender is Tcustomstringgrid) then checkgrid() else Result := 'down' ;
          end;
 
       key_left:
       begin
-        if not (Sender is Tstringgrid) then Result := 'left';
-        checkgrid();
-         end;
+       if (Sender is Tstringgrid) or (Sender is Tcustomstringgrid) then checkgrid() else result := 'left';
+          end;
 
       key_right:
       begin
-        if not (Sender is Tstringgrid) then Result := 'right';
-    checkgrid();
-        end;
+     if (Sender is Tstringgrid) or (Sender is Tcustomstringgrid) then checkgrid() else Result := 'right';
+         end;
       
       key_Tab:  
       begin
@@ -448,7 +450,7 @@ begin  /// backspace
       key_F3: Result := 'f, 3';
       key_F4: Result := 'f, 4';
       key_F5: Result := 'f, 5';
-      key_F6: Result := 'f, 6';
+      key_F12: Result := 'f, 12';
       key_F7: Result := 'f, 7';
       key_F8: Result := 'f, 8';
       key_F9: if (CheckObject is TMemoedit) then
@@ -464,7 +466,7 @@ begin  /// backspace
                    result := thesentence
                   else result := 'f, 11';
            
-      key_F12: if (Sender is TMemoedit) then
+      key_F6: if (Sender is TMemoedit) then
           with Sender as TMemoedit do
               begin
               //  SAKSetVoice(2,'',165,-1,-1);
@@ -527,6 +529,11 @@ begin
     if (trim(TButton(Sender).hint) <> '') then
       Result := 'button, ' + TButton(Sender).hint;
   end
+  else if (Sender is Tenumedit) then  
+   Result := 'combo box, ' + Tenumedit(Sender).Name
+  else
+   if (Sender is Ttabwidget) then  
+   Result := 'tab, ' + Ttabwidget(Sender).Name
   else
   if (Sender is TStringEdit) then
     Result := 'edit, ' + TStringEdit(Sender).Name
@@ -1003,25 +1010,28 @@ procedure TSAK.doactionexecute(const Sender: TObject; const info: actioninfoty);
 begin
 end;
 
-procedure TSAK.docellevent(const sender: iassistiveclient;
-               const info: celleventinfoty);
-//var
-// mstr1: msestring;
+
+procedure TSAK.docellevent(const sender: iassistiveclientgrid; 
+                                     const info: celleventinfoty);
+var
+ mstr1: msestring;
 begin
-{
+//{
  with info do begin
-  if eventkind = cek_enter then begin
+// if eventkind = cek_enter then begin
    mstr1:= WhatName(grid)+', column' +
               IntToStr(cell.col) + ' , row  ' + 
               IntToStr(cell.row) + 'entered';
-   if info.grid is tcustomstringgrid then begin
-    mstr1:= mstr1+'. ' + tcustomstringgrid(grid).items[grid.focusedcell]; 
-   end;
-   delayedspeak(mstr1);
-  end;
- end;
- }
+  // if info.grid is tcustomstringgrid then begin
+ //   mstr1:= mstr1+'. ' + tcustomstringgrid(grid).items[grid.focusedcell]; 
+ //  end;
+   SakCancel;
+   espeak_key(mstr1); 
+ 
+// end;
+ end; 
 end;
+// }
 
 constructor TSAK.Create();
 begin

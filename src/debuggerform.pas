@@ -30,16 +30,8 @@ type
  tdebuggerfo = class(tdockform)
    editpanel: tdockpanel;
    edited_run: tbutton;
-   compiler_1: tbooleaneditradio;
-   compiler_2: tbooleaneditradio;
-   compiler_3: tbooleaneditradio;
    edited_abort: tbutton;
    edited_make: tbutton;
-   compiler_pascal: tbooleaneditradio;
-   compiler_java: tbooleaneditradio;
-   compiler_c: tbooleaneditradio;
-   compiler_python: tbooleaneditradio;
-   compiler_4: tbooleaneditradio;
    projectpanel: tdockpanel;
    project_start: tbutton;
    project_next: tbutton;
@@ -66,6 +58,8 @@ type
    autocomp: tbooleanedit;
    edit_options: tenumedit;
    project_options: tenumedit;
+   edit_compiler: tenumedit;
+   edit_compilernum: tenumedit;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -90,7 +84,7 @@ if layedit.value = true then
 begin
 editpanel.visible := true;
 editpanel.left := 658;
-end else editpanel.visible := true;
+end else editpanel.visible := false;
 projectpanel.visible := true;
 end
 else
@@ -100,9 +94,8 @@ projectpanel.visible := false;
 if layedit.value = true then
 begin
 editpanel.visible := true;
-editpanel.left := 269;
+editpanel.left := 271;
 end else editpanel.visible := false;
-
 end;
 
 end;

@@ -320,6 +320,16 @@ case acompilertag of
 4 : commandcompiler := confcompilerfo.pythoncompiler4.value;
 end;
 end;
+
+5: begin // other
+case acompilertag of
+1 : commandcompiler := confcompilerfo.othercompiler.value ;
+2 : commandcompiler := confcompilerfo.othercompiler2.value ;
+3 : commandcompiler := confcompilerfo.othercompiler3.value ; 
+4 : commandcompiler := confcompilerfo.othercompiler4.value;
+end;
+end;
+
 end;
  
   str3:= quotefilename(tosysfilepath(commandcompiler));

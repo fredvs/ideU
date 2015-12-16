@@ -12,7 +12,6 @@ uses
    fpccompiler: tfilenameedit;
    ccompiler: tfilenameedit;
    javacompiler: tfilenameedit;
-   tbutton1: tbutton;
    othercompiler: tfilenameedit;
    fpccompiler2: tfilenameedit;
    fpccompiler3: tfilenameedit;
@@ -32,6 +31,9 @@ uses
    fpccompiler4: tfilenameedit;
    pythoncompiler4: tfilenameedit;
    javacompiler4: tfilenameedit;
+   othercompiler2: tfilenameedit;
+   othercompiler4: tfilenameedit;
+   othercompiler3: tfilenameedit;
  end;
 var
  confcompilerfo: tconfcompilerfo;

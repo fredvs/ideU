@@ -542,26 +542,15 @@ debuggerfo.project_abort_compil.enabled := true;
 
 procedure tactionsmo.setupcustom ;
 begin
-  if debuggerfo.compiler_pascal.value = true then mainfo.settypecompiler := 1 ;
-  if debuggerfo.compiler_java.value = true then mainfo.settypecompiler := 2 ;
-  if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
-  if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
-  
-  if debuggerfo.compiler_1.value = true then mainfo.setcompiler := 1 ;
-  if debuggerfo.compiler_2.value = true then mainfo.setcompiler := 2 ;
-  if debuggerfo.compiler_3.value = true then mainfo.setcompiler := 3 ;
-  if debuggerfo.compiler_4.value = true then mainfo.setcompiler := 4 ;
-  
-  if debuggerfo.compiler_pascal.value = true then mainfo.settypecompiler := 1 ;
-  if debuggerfo.compiler_java.value = true then mainfo.settypecompiler := 2 ;
-  if debuggerfo.compiler_c.value = true then mainfo.settypecompiler := 3 ;
-  if debuggerfo.compiler_python.value = true then mainfo.settypecompiler := 4 ;
-  
-  debuggerfo.edited_make.enabled := false;
+   debuggerfo.edited_make.enabled := false;
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
   
-  case debuggerfo.edit_options.value of
+  mainfo.settypecompiler := debuggerfo.edit_compiler.value + 1;
+  
+  mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
+  
+   case debuggerfo.edit_options.value of
   0 : mainfo.customoption := 1 ;
    1 : mainfo.customoption := 2 ;
    2 : mainfo.customoption := 4 ;

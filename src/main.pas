@@ -622,6 +622,11 @@ begin
   confcompilerfo.pythoncompiler2.value  := gINI.ReadString('python', 'compiler2', '');
   confcompilerfo.pythoncompiler3.value  := gINI.ReadString('python', 'compiler3', '');
   confcompilerfo.pythoncompiler4.value  := gINI.ReadString('python', 'compiler4', '');
+  
+  confcompilerfo.othercompiler.value  := gINI.ReadString('other', 'compiler1', '');
+  confcompilerfo.othercompiler2.value  := gINI.ReadString('other', 'compiler2', '');
+  confcompilerfo.othercompiler3.value  := gINI.ReadString('other', 'compiler3', '');
+  confcompilerfo.othercompiler4.value  := gINI.ReadString('other', 'compiler4', '');
    
   conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', false); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
@@ -715,6 +720,11 @@ begin
    gINI.writeString('python', 'compiler2', confcompilerfo.pythoncompiler2.value);
    gINI.writeString('python', 'compiler3', confcompilerfo.pythoncompiler3.value);
      gINI.writeString('python', 'compiler4', confcompilerfo.pythoncompiler4.value);
+     
+     gINI.writeString('other', 'compiler1', confcompilerfo.othercompiler.value);
+   gINI.writeString('other', 'compiler2', confcompilerfo.othercompiler2.value);
+   gINI.writeString('other', 'compiler3', confcompilerfo.othercompiler3.value);
+    gINI.writeString('other', 'compiler4', confcompilerfo.othercompiler4.value);
  
    if confideufo.tbfilereload0.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
