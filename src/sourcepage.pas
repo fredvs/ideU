@@ -21,14 +21,12 @@ unit sourcepage;
 interface
 
 uses
- msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, msetimer, 
- msegraphedits,mseevent,
- msehash,msebitmap,msetabs,msetypes,msedataedits,
- mseglob,mseguiglob,msegui,msesyntaxedit,mseeditglob,
- mseinplaceedit,msedispwidgets,msegraphutils,msegrids,breakpointsform,
- pascaldesignparser,msefilechange,msestrings,mserichstring,mseparser,
- msegridsglob,projectoptionsform;
-
+ msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
+ msegraphedits,mseevent,msehash,msebitmap,msetabs,msetypes,msedataedits,mseglob,
+ mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
+ msegraphutils,msegrids,breakpointsform,pascaldesignparser,msefilechange,
+ msestrings,mserichstring,mseparser,msegridsglob,projectoptionsform,msegraphics,
+ msemenus,msesimplewidgets,msewidgets;
 
 type
  sourcepageasynctagty = (spat_showasform,{spat_checkbracket,}spat_showsource);
@@ -41,14 +39,13 @@ type
  
  tsourcepage = class(ttabform)
  
-   grid: twidgetgrid;
+   source_editor: twidgetgrid;
    edit: tsyntaxedit;
    dataicon: tdataicon;
-   linedisp: tstringedit;
    pathdisp: tstringedit;
   
-     // fred
-   TheTimer: TTimer;
+   linedisp: tlabel;
+   
    procedure ontimerhide(const Sender: TObject);
    procedure ontimerhint(const Sender: TObject);
   
@@ -170,9 +167,9 @@ implementation
 
 uses
  sourcepage_mfm,msefileutils,sourceform,main, debuggerform,
- sysutils,msewidgets,finddialogform,replacedialogform,msekeyboard,
+ sysutils,finddialogform,replacedialogform,msekeyboard,
  sourceupdate,msefiledialog,mseintegerenter,msedesigner,mseformatstr,
- msesys,make,actionsmodule,msegraphics,sourcehintform,
+ msesys,make,actionsmodule,sourcehintform,
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
  mselatex,msesystypes;
@@ -264,7 +261,7 @@ end;
 procedure tsourcepage.sourcefoonloaded(const sender: TObject);
 begin
  updatestatvalues;
- grid.bottom:= linedisp.top - 1;
+ source_editor.bottom:= linedisp.top - 1;
 end;
 
 procedure tsourcepage.textchanged(const sender: tdatacol;
@@ -303,7 +300,7 @@ var
 begin
  with info do begin
   int1:= line-1;
-  if (int1 >= 0) and (int1 <= grid.rowhigh) then begin
+  if (int1 >= 0) and (int1 <= source_editor.rowhigh) then begin
    setbreakpointstate(state,int1);
   end;
  end;
@@ -393,7 +390,7 @@ begin
   edit.editpos:= finitialeditpos;
   for int1:= 0 to high(finitialbookmarks) do begin
    with finitialbookmarks[int1] do begin
-    if (row >= 0) and (bookmarknum >= 0) and (row < grid.rowcount) and 
+    if (row >= 0) and (bookmarknum >= 0) and (row < source_editor.rowcount) and 
              (bookmarknum < 10) then begin
      setbookmark(row,bookmarknum);
     end;
@@ -671,7 +668,7 @@ begin
               
           if page1 <> nil then 
           begin
-           page1.grid.showcell(makegridcoord(1,pos1.pos.row));
+           page1.source_editor.showcell(makegridcoord(1,pos1.pos.row));
           end;
           
       end;
@@ -758,9 +755,9 @@ end;
 function tsourcepage.getbreakpointstate(arow: integer = -1): bkptstatety;
 begin
  if arow = -1 then begin
-  arow:= grid.row;
+  arow:= source_editor.row;
  end;
- if (arow >= 0) and (arow < grid.rowcount) then begin
+ if (arow >= 0) and (arow < source_editor.rowcount) then begin
   result:= convtab[dataicon[arow] and 7];
  end
  else begin
@@ -772,9 +769,9 @@ procedure tsourcepage.setbreakpointstate(astate: bkptstatety;
                                 arow: integer = -1);
 begin
  if arow = -1 then begin
-  arow:= grid.row;
+  arow:= source_editor.row;
  end;
- if (arow >= 0) and (arow < grid.rowcount) then begin
+ if (arow >= 0) and (arow < source_editor.rowcount) then begin
   case astate of
    bkpts_none: dataicon[arow]:= dataicon[arow] and not integer($00000007);
    bkpts_normal: dataicon[arow]:= dataicon[arow] and not integer($00000007) or 
@@ -792,10 +789,10 @@ var
  bpinfo: breakpointinfoty;
  astate: bkptstatety;
 begin
- astate:= getbreakpointstate(grid.row);
+ astate:= getbreakpointstate(source_editor.row);
  fillchar(bpinfo,sizeof(bpinfo),0);
  if arow < 0 then begin
-  bpinfo.line:= grid.row + 1;
+  bpinfo.line:= source_editor.row + 1;
  end
  else begin
   bpinfo.line:= arow + 1;
@@ -808,7 +805,7 @@ begin
   end
   else begin
    breakpointsfo.deletebreakpoint(bpinfo);
-   setbreakpointstate(bkpts_none,grid.row); 
+   setbreakpointstate(bkpts_none,source_editor.row); 
          //if breakpointinfo is not synchronized
   end;
  end;
@@ -822,7 +819,7 @@ begin
  astate:= convtab[dataicon.value and 7];
  fillchar(bpinfo,sizeof(bpinfo),0);
  if arow < 0 then begin
-  bpinfo.line:= grid.row + 1;
+  bpinfo.line:= source_editor.row + 1;
  end
  else begin
   bpinfo.line:= arow + 1;
@@ -840,12 +837,12 @@ end;
 procedure tsourcepage.setactiverow(const Value: integer);
 begin
  if factiverow <> value then begin
-  if (factiverow >= 0) and (factiverow < grid.rowcount) then begin
-   grid.rowcolorstate[factiverow]:= -1;
+  if (factiverow >= 0) and (factiverow < source_editor.rowcount) then begin
+   source_editor.rowcolorstate[factiverow]:= -1;
   end;
-  if (value >= 0) and (value < grid.rowcount) then begin
-   grid.rowcolorstate[value]:= 0;
-   grid.showcell(makegridcoord(0,value),cep_rowcenteredif);
+  if (value >= 0) and (value < source_editor.rowcount) then begin
+   source_editor.rowcolorstate[value]:= 0;
+   source_editor.showcell(makegridcoord(0,value),cep_rowcenteredif);
    edit.editpos:= makegridcoord(0,value)
   end;
  end;
@@ -860,38 +857,36 @@ end;
 // fred
 procedure tsourcepage.ontimerhint(const Sender: TObject);
 begin
-  thetimer.Enabled := False;
+  sourcefo.thetimer.Enabled := False;
+if sourcefo.tabdeleted = false then
+begin 
+  if (edit.editpos.col > -1) and (edit.editpos.row > -1) then
+  begin
   showsourceitems(edit.editpos);
-  thetimer.ontimer := @ontimerhide;
-  thetimer.interval :=  30000000 ;
-  sleep(200);
- thetimer.Enabled := true;
+ sourcefo.thetimer.ontimer := @ontimerhide;
+ sourcefo.thetimer.interval :=  30000000 ;
+ sourcefo.thetimer.Enabled := true;
+ sleep(200);
   activate(false,true); //get focus back
+  end;
+end else sourcefo.tabdeleted := false;
 end;
 
 // fred
 procedure tsourcepage.ontimerhide(const Sender: TObject);
 begin
-  thetimer.Enabled := False;
+  sourcefo.thetimer.Enabled := False;
   mainfo.statdisp.value:= ''; 
  sourcefo.hidesourcehint; 
-  activate(false,true); //get focus back
 end;
 
 // fred
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
 begin
-        thetimer := ttimer.Create(nil);
-        thetimer.interval :=  1500000 ;
-        thetimer.tag := 0;
-        thetimer.Enabled := False;
-        thetimer.ontimer := @ontimerhint;
 end;
 
 procedure tsourcepage.sourcefoondestroy(const sender: tobject);
 begin
-thetimer.Enabled := False;
-thetimer.Free;
 end;
 
 procedure tsourcepage.editonmodifiedchanged(const sender: tobject;
@@ -1026,14 +1021,14 @@ end;
 procedure tsourcepage.beginupdate;
 begin
  edit.beginupdate;
- grid.focuslock;
+ source_editor.focuslock;
  application.beginwait;
 end;
 
 procedure tsourcepage.endupdate;
 begin
  application.endwait;
- grid.focusunlock;
+ source_editor.focusunlock;
  edit.endupdate;
  updatelinedisp;
 end;
@@ -1083,7 +1078,7 @@ begin
      if prompt then begin
       rect1:= edit.textpostomouserect(ffindpos);
       res1:= showmessage(sourcefo.c[ord(replaceoccu)],'',
-       [mr_yes,mr_all,mr_no,mr_cancel],rect1,grid,cp_bottomleft,res1);
+       [mr_yes,mr_all,mr_no,mr_cancel],rect1,source_editor,cp_bottomleft,res1);
      end
      else begin
       res1:= mr_yes;
@@ -1125,9 +1120,9 @@ end;
 
 procedure tsourcepage.doline;
 begin
- if integerenter(fgotoline,1,grid.rowcount,
+ if integerenter(fgotoline,1,source_editor.rowcount,
       sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) = mr_ok then begin
-  grid.row:= fgotoline-1;
+  source_editor.row:= fgotoline-1;
  end;
 end;
 
@@ -1254,8 +1249,7 @@ end;
 
 procedure tsourcepage.updatelinedisp;
 begin
- linedisp.value:= inttostrmse(edit.editpos.row+1) + ':'+
-                                          inttostrmse(edit.editpos.col+1);
+ linedisp.caption:= inttostrmse(edit.editpos.row+1) + ':'+ inttostrmse(edit.editpos.col+1);
 end;
 
 procedure tsourcepage.editoneditnotification(const sender: tobject;
@@ -1265,7 +1259,7 @@ begin
 //  clearbrackets;
 // end
 // else begin
-  if (info.action = ea_indexmoved) and not grid.updating then begin
+  if (info.action = ea_indexmoved) and not source_editor.updating then begin
    updatelinedisp;
   end;
 //  if info.action in [ea_indexmoved,ea_delchar,ea_deleteselection,ea_pasteselection,
@@ -1322,14 +1316,19 @@ begin
  if edit <> nil then begin
   projectoptionstofont(edit.font);
   with projectoptions do begin
-   grid.frame.colorclient:= e.editbkcolor;
-   grid.rowcolors[0]:= e.statementcolor;
-   grid.datarowheight:= edit.font.lineheight;
+   source_editor.frame.colorclient:= e.editbkcolor;
+   source_editor.rowcolors[0]:= e.statementcolor;
+   source_editor.datarowheight:= edit.font.lineheight;
    int1:= edit.getcanvas.getstringwidth('oo') div 2;
-   with grid.fixcols[-1] do begin
+   with source_editor.fixcols[-1] do begin
     visible:= e.linenumberson;
-    font.height:= edit.font.height;
-    font.name:= edit.font.name;
+    width := 50 ;
+    color := $F8F8F8 ;
+   // color := cl_white ;
+    font.color:= $424242 ;
+  //  font.height:= edit.font.height;
+    font.height:= 14;
+   // font.name:= edit.font.name;
    end;
    if e.rightmarginon then begin
     edit.marginlinecolor:= cl_gray;
@@ -1365,7 +1364,7 @@ begin
      edit.encoding:= ce_locale;
     end;
    end;
-   grid.wheelscrollheight:= e.scrollheight;
+   source_editor.wheelscrollheight:= e.scrollheight;
    if edit.syntaxpainterhandle >= 0 then begin
     colors:= edit.syntaxpainter.colors[edit.syntaxpainterhandle];
     with colors do begin
@@ -1373,10 +1372,10 @@ begin
       edit.font.color:= font;
      end;
      if background <> cl_default then begin
-      grid.frame.colorclient:= background;
+      source_editor.frame.colorclient:= background;
      end;
      if statement <> cl_default then begin
-      grid.rowcolors[0]:= statement;
+      source_editor.rowcolors[0]:= statement;
      end;
     end;
    end;
@@ -1399,6 +1398,12 @@ procedure tsourcepage.gridoncellevent(const sender: TObject;
 //var
 // shiftstate1: shiftstatesty;
 begin
+ if (info.eventkind = cek_buttonpress) then
+ begin
+ sourcefo.thetimer.Enabled := false;
+ sourcefo.hidesourcehint; 
+ end; 
+
 {
  if (info.eventkind = cek_keydown) then begin
   with info.keyeventinfopo^ do begin
@@ -1432,7 +1437,7 @@ begin
    loadfile;
    po1:= dataicon.griddata.datapo;
    int2:= 1 shl (bookmarknum + bmbitshift);
-   for int1:= 0 to grid.rowcount - 1 do begin
+   for int1:= 0 to source_editor.rowcount - 1 do begin
     if po1^[int1] and bmbitmask = int2 then begin
      result:= int1;
      break;
@@ -1457,7 +1462,7 @@ procedure tsourcepage.setbookmark(arow: integer; const bookmarknum: integer);
              //arow -1 -> current row, bookmarknum < 1 -> clear
 begin
  if arow < 0 then begin
-  arow:= grid.row;
+  arow:= source_editor.row;
  end;
  if arow >= 0 then begin
   if bookmarknum < 0 then begin
@@ -1481,7 +1486,7 @@ begin
  removebookmark(bookmarknum);
  po1:= dataicon.griddata.datapo;
  int2:= 1 shl (bookmarknum + bmbitshift);
- for int1:= 0 to grid.rowcount - 1 do begin
+ for int1:= 0 to source_editor.rowcount - 1 do begin
   if po1^[int1] and bmbitmask = int2 then begin
    dataicon[int1]:= po1^[int1] and not bmbitmask;
   end;
@@ -1501,7 +1506,7 @@ begin
   po1:= dataicon.griddata.datapo;
   int2:= 0;
   result:= nil;
-  for int1:= 0 to grid.rowcount - 1 do begin
+  for int1:= 0 to source_editor.rowcount - 1 do begin
    lwo1:= po1^[int1] and bmbitmask;
    if lwo1 <> 0 then begin
     additem(result,typeinfo(bookmarkarty),int2);
@@ -1524,21 +1529,19 @@ procedure tsourcepage.editonkeydown(const sender: twidget; var info: keyeventinf
   begin
   
 // fred
-if debuggerfo.autocomp.value = true then
+if debuggerfo.properties_list.tag = 1 then
 begin
-thetimer.Enabled := false;
-thetimer.ontimer := @ontimerhint;
+sourcefo.thetimer.Enabled := false;
+sourcefo.thetimer.ontimer := @ontimerhint;
 sourcefo.hidesourcehint; 
- mainfo.statdisp.value:= '"' + info.chars + '" entered.';
- thetimer.interval :=  1000000 ;
- thetimer.Enabled := true;
+sourcefo.thetimer.interval :=  1000000 ;
+ sourcefo.thetimer.Enabled := true;
  end 
  else
  begin
- if thetimer.Enabled = true then
+ if sourcefo.thetimer.Enabled = true then
  begin
- thetimer.Enabled := false;
-  mainfo.statdisp.value:= ''; 
+ sourcefo.thetimer.Enabled := false;
  sourcefo.hidesourcehint; 
  end;
   end; 

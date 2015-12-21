@@ -276,7 +276,7 @@ type
    
    procedure initproject ;
    
-   // custom is finish
+      // custom is finish
    procedure finishcustom;
    
    // Custom compile
@@ -336,7 +336,7 @@ procedure configureide;
 implementation
 uses
  main,make,actionsmodule_mfm,sourceform,msedesigner,msetypes,msefiledialog,
- projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform,
+ projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, sourcepage,
  disassform,printform,msegdbutils,mseintegerenter,msesettings,
  componentstore,cpuform,sysutils,msecomptree;
  
@@ -400,7 +400,7 @@ end;
   begin
   doassistive ;
   end;
-
+  
 //file
 
 procedure tactionsmo.opensourceactonexecute(const sender: tobject);

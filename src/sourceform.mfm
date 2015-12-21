@@ -10,10 +10,10 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 291
-  bounds_y = 241
+  bounds_x = 356
+  bounds_y = 271
   bounds_cx = 662
-  bounds_cy = 345
+  bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
   container.frame.localprops1 = []
@@ -23,7 +23,7 @@ object sourcefo: tsourcefo
     0
     0
     654
-    345
+    340
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Source'
@@ -90,40 +90,43 @@ object sourcefo: tsourcefo
   onclosequery = sourcefoonclosequery
   onidle = formonidle
   moduleclassname = 'tdockform'
-  object tabwidget: ttabwidget
-    optionsskin = [osk_noproptop]
+  object files_tab: ttabwidget
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 654
-    bounds_cy = 345
+    bounds_cy = 340
     color = 13750737
+    frame.localprops = []
+    frame.localprops1 = []
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
     onpageremoved = tabwidgetpageremoved
-    tab_options = [tabo_dragsource, tabo_dragdest, tabo_vertical, tabo_opposite, tabo_tabsizing, tabo_dblclickedtabfirst, tabo_hintclippedtext]
-    tab_frame.buttonsize = 14
-    tab_frame.buttonpos = sbp_top
-    tab_frame.buttonslast = True
-    tab_frame.buttonsinline = True
+    fontempty.name = 'stf_empty'
+    fontempty.localprops = []
+    tab_options = [tabo_dragsource, tabo_dragdest, tabo_tabsizing, tabo_dblclickedtabfirst, tabo_hintclippedtext]
+    tab_frame.buttonsize = 16
     tab_frame.buttonsinvisible = [sk_right, sk_up, sk_left, sk_down, sk_first, sk_last]
-    tab_frame.buttonsvisible = [sk_right, sk_up, sk_left, sk_down, sk_first, sk_last]
-    tab_frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
+    tab_frame.buttonsvisible = [sk_first, sk_last]
+    tab_frame.localprops = [frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
     tab_frame.localprops1 = []
     tab_textflags = [tf_ycentered]
+    tab_captionframe_left = 4
+    tab_captionframe_top = 2
+    tab_captionframe_right = 4
+    tab_captionframe_bottom = 2
     tab_colortab = 14737632
     tab_coloractivetab = 16579836
     tab_sizemin = 60
-    tab_size = 112
-    tab_optionswidget1 = []
-    object tstockglyphbutton1: tstockglyphbutton
+    tab_size = 60
+    object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
-      bounds_x = 626
+      bounds_x = 606
       bounds_y = 0
-      bounds_cx = 14
-      bounds_cy = 14
+      bounds_cx = 16
+      bounds_cy = 20
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint, as_localonexecute]
       glyph = stg_arrowleft
@@ -131,14 +134,14 @@ object sourcefo: tsourcefo
       colorglyph = 46592
       onexecute = navigback
     end
-    object tstockglyphbutton2: tstockglyphbutton
+    object step_forward: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
       taborder = 1
       hint = 'Step forward in code navigation.'
-      bounds_x = 639
+      bounds_x = 622
       bounds_y = 0
-      bounds_cx = 14
-      bounds_cy = 14
+      bounds_cx = 16
+      bounds_cy = 20
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint]
       glyph = stg_arrowright

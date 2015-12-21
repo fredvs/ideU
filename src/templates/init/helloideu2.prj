@@ -17,8 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/binary_demos/ideu_bin/linux64/templates/init
-projectfilename=/home/fred/binary_demos/ideu_bin/linux64/templates/init/helloideu2.prj
+projectdir=/home/fred/ideu/src/templates/init
+projectfilename=/home/fred/ideu/src/templates/init/helloideu2.prj
 findinfiledialog=34
  [findinfileadialogfo.subdirs]
  value=0
@@ -449,7 +449,7 @@ gridsizex=8
 gridsizey=8
 autoindent=1
 blockindent=2
-linenumberson=1
+linenumberson=0
 rightmarginon=1
 rightmarginchars=80
 scrollheight=0
@@ -578,7 +578,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/ideu/src/templates/init/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -605,10 +605,10 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 0,8
+ 26,9
 bookmarks0=0
 sourcefiles=1
- /home/fred/binary_demos/ideu_bin/linux64/templates/init/readme2.txt
+ ${PROJECTDIR}/readme2.txt
 relpaths=1
  readme2.txt
 ismoduletexts=1
@@ -617,12 +617,12 @@ modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
-[sourcefo.tabwidget]
-tabsize=115
+[sourcefo.files_tab]
+tabsize=60
 firsttab=0
 index=0
 [layout]
-windowlayout=503
+windowlayout=499
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -636,8 +636,8 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=90
- y=45
+ x=191
+ y=60
  cx=1139
  cy=680
  rcx=0
@@ -756,7 +756,7 @@ windowlayout=503
  x=0
  y=0
  cx=159
- cy=506
+ cy=501
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -767,7 +767,7 @@ windowlayout=503
  sortdescend1=0
  sorted=0
  col=0
- row=-1073741823
+ row=0
  rowheight=17
  [stackfo]
  splitdir=0
@@ -965,7 +965,7 @@ windowlayout=503
  ncx=0
  ncy=0
  x=0
- y=548
+ y=549
  cx=1129
  cy=96
  rcx=0
@@ -1067,7 +1067,7 @@ windowlayout=503
  x=0
  y=0
  cx=1129
- cy=36
+ cy=42
  rcx=0
  rcy=0
  [sourcefo]
@@ -1083,13 +1083,9 @@ windowlayout=503
  x=162
  y=0
  cx=967
- cy=506
+ cy=501
  rcx=0
  rcy=0
- [actionsmo.watchesonact]
- checked=0
- [actionsmo.bluedotsonact]
- checked=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -1121,9 +1117,9 @@ windowlayout=503
  ncx=0
  ncy=0
  x=0
- y=39
+ y=45
  cx=1129
- cy=506
+ cy=501
  rcx=0
  rcy=0
 [targetconsole]

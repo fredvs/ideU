@@ -1,7 +1,7 @@
 object conffpguifo: tconffpguifo
   visible = False
-  bounds_x = 601
-  bounds_y = 206
+  bounds_x = 433
+  bounds_y = 209
   bounds_cx = 288
   bounds_cy = 289
   container.frame.localprops = []
@@ -12,7 +12,7 @@ object conffpguifo: tconffpguifo
     288
     289
   )
-  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_screencentered]
   caption = 'Configuration of fpGUI'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'

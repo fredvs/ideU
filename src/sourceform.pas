@@ -21,7 +21,7 @@ unit sourceform;
 interface
 
 uses
- confideu, msesettings, sysutils, 
+ confideu, msesettings, sysutils, msetimer, 
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
  msebitmap,msetabs,sourcepage,mseglob,msetypes,msestrings,mseguiglob,
  msegui,msesyntaxpainter,msemenus,mseactions,msestat,
@@ -66,16 +66,19 @@ type
  end;
 
  tsourcefo = class(tdockform)
+ 
+     // fred
+   TheTimer: TTimer;
    completeclassact: taction;
    tpopupmenu1: tpopupmenu;
-   tabwidget: ttabwidget;
+   files_tab: ttabwidget;
    syntaxpainter: tsyntaxpainter;
    imagelist: timagelist;
    filechangenotifyer: tfilechangenotifyer;
    navigforwardact: taction;
    navigbackact: taction;
-   tstockglyphbutton1: tstockglyphbutton;
-   tstockglyphbutton2: tstockglyphbutton;
+   step_back: tstockglyphbutton;
+   step_forward: tstockglyphbutton;
    c: tstringcontainer;
    procedure formonidle(var again: boolean);
    procedure doselectpage(const sender: TObject);
@@ -122,6 +125,8 @@ type
    function getsourcepos: sourceposty;
    procedure setsourcehintwidget(const avalue: twidget);
   public
+   // fred
+   tabdeleted : boolean;
    hintsize: sizety;
    fsourcehintwidget: twidget;
    constructor create(aowner: tcomponent); override;
@@ -478,12 +483,20 @@ constructor tsourcefo.create(aowner: tcomponent);
 begin
  fnaviglist:= tnaviglist.create;
  fnaviglist.fsourcefo:= self;
- inherited create(aowner);
+ // fred  
+       tabdeleted := false;
+          thetimer := ttimer.Create(nil);
+        thetimer.interval :=  1500000 ;
+        thetimer.tag := 0;
+        thetimer.Enabled := False;
+  inherited create(aowner);
 end;
 
 destructor tsourcefo.destroy;
 begin
- hidesourcehint;
+thetimer.Enabled := False;
+thetimer.Free;
+ //hidesourcehint;
  inherited;
  fnaviglist.Free;
 end;
@@ -501,6 +514,7 @@ end;
 
 procedure tsourcefo.tabwidgetpageremoved(const sender: TObject; const awidget: twidget);
 begin
+tabdeleted := true;
  if awidget = fgdbpage then begin
   fgdbpage:= nil;
  end;
@@ -560,7 +574,7 @@ begin
   updatevalue('hintheight',hintsize.cy);
   updatefindvalues(statfiler,projectoptions.findreplaceinfo.find);
   if iswriter then begin
-   intar1:= tabwidget.idents;
+   intar1:= files_tab.idents;
    sortarray(intar1,intar2);
    setlength(filenames,count);  
    setlength(relpaths,count);  
@@ -661,9 +675,9 @@ begin
   updatevalue('visiblemodules',ar1);
   updatevalue('nomenumodules',ar2);
   if not iswriter then begin
-   tabwidget.window.nofocus;
-   tabwidget.clear;
-   tabwidget.beginupdate;
+   files_tab.window.nofocus;
+   files_tab.clear;
+   files_tab.beginupdate;
    try
     for int1:= 0 to high(filenames) do begin
      page1:= tsourcepage1(createnewpage(''));
@@ -730,10 +744,10 @@ begin
      end;
     end;
     designer.endskipall;
-    tabwidget.activepageindex:= -1; //do not load source
+    files_tab.activepageindex:= -1; //do not load source
 //    updatestat(istatfile(tabwidget));
    finally
-    tabwidget.endupdate;
+    files_tab.endupdate;
    end; 
   end;
 //  if visible and (activepage <> nil) then begin
@@ -741,12 +755,12 @@ begin
 //  end;
   feditposar:= nil; //no longer used
   fbookmarkar:= nil;
-  updatestat(istatfile(tabwidget));
+  updatestat(istatfile(files_tab));
   if mainfo.errorformfilename <> '' then begin
    showsourceline(mainfo.errorformfilename,0,0,true);
   end;
-  if (tabwidget.activepageindex < 0) and (tabwidget.count > 0) then begin
-   tabwidget.activepageindex:= 0; //default
+  if (files_tab.activepageindex < 0) and (files_tab.count > 0) then begin
+   files_tab.activepageindex:= 0; //default
   end;
  end;
 end;
@@ -833,12 +847,12 @@ end;
 
 function tsourcefo.count: integer;
 begin
- result:= tabwidget.count;
+ result:= files_tab.count;
 end;
 
 function tsourcefo.getitems(const index: integer): tsourcepage;
 begin
- result:= tsourcepage(tabwidget[index]);
+ result:= tsourcepage(files_tab[index]);
 end;
 
 function tsourcefo.findsourcepage(afilename: filenamety;
@@ -883,7 +897,7 @@ begin
   result.edit.syntaxpainter:= syntaxpainter;
   result.dataicon.imagelist:= imagelist;
   result.filepath:= afilename;
-  tabwidget.add(result,tabwidget.activepageindex+1);
+  files_tab.add(result,files_tab.activepageindex+1);
   if afilename <> '' then begin
    filechangenotifyer.addnotification(result.filepath,result.filetag);
    designer.designfiles.add(afilename);
@@ -973,10 +987,10 @@ begin
  if result <> nil then begin
   result.show;
   if line >= 0 then begin
-   result.grid.showcell(makegridcoord(0,line),aposition);
+   result.source_editor.showcell(makegridcoord(0,line),aposition);
    if asetfocus then begin
     result.edit.editpos:= makegridcoord(col,line);
-    result.grid.setfocus;
+    result.source_editor.setfocus;
     result.window.bringtofront;
    end;
   end;
@@ -1024,9 +1038,9 @@ var
  int1,int2: integer;
 begin
  result:= mr_none;
- for int1:= 0 to tabwidget.count - 1 do begin
+ for int1:= 0 to files_tab.count - 1 do begin
   result:= mainfo.checksavecancel(
-           tsourcepage(tabwidget[int1]).checksave(noconfirm,true));
+           tsourcepage(files_tab[int1]).checksave(noconfirm,true));
   case result of
    mr_cancel: begin
     exit;
@@ -1035,8 +1049,8 @@ begin
     break;
    end;
    mr_all: begin
-    for int2:= int1 to tabwidget.count - 1 do begin
-     tsourcepage(tabwidget[int2]).checksave(true,true);
+    for int2:= int1 to files_tab.count - 1 do begin
+     tsourcepage(files_tab[int2]).checksave(true,true);
     end;
     break;
    end;
@@ -1084,7 +1098,7 @@ var
  page: tsourcepage;
 
 begin
- page:= tsourcepage(tabwidget.activepage);
+ page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
  end
@@ -1131,10 +1145,10 @@ begin
    filechangenotifyer.removenotification(str1);
    inc(fpagedestroying);
    try
-    bo1:= tabwidget.entered;
+    bo1:= files_tab.entered;
     apage.free;
     if bo1 then begin
-     tabwidget.setfocus;
+     files_tab.setfocus;
     end;
    finally
     dec(fpagedestroying);
@@ -1175,7 +1189,7 @@ begin
   result:= nil;
  end
  else begin
-  result:= tsourcepage(tabwidget.activepage);
+  result:= tsourcepage(files_tab.activepage);
  end;
 end;
 
@@ -1208,7 +1222,7 @@ var
 begin
  wstr1:= filename(path);
  for int1:= 0 to count - 1 do begin
-  with tsourcepage(tabwidget[int1]) do begin
+  with tsourcepage(files_tab[int1]) do begin
    if issamefilename(filename,wstr1) then begin
     try
      updatebreakpointicon(info);
@@ -1337,8 +1351,8 @@ procedure tsourcefo.popupmonupdate(const sender: tcustommenu);
 // gc1: gridcoordty;
 begin
  if (activepage <> nil) and (sender.mouseinfopo <> nil) then begin
-  popuprow:= activepage.grid.cellatpos(translateclientpoint(
-                   sender.mouseinfopo^.pos,activepage,activepage.grid)).row;
+  popuprow:= activepage.source_editor.cellatpos(translateclientpoint(
+                   sender.mouseinfopo^.pos,activepage,activepage.source_editor)).row;
  end
  else begin
   popuprow:= invalidaxis;
@@ -1421,7 +1435,7 @@ begin
   with items[int1] do begin
    int2:= findbookmark(bookmarknum);
    if int2 >= 0 then begin
-    grid.showcell(makegridcoord(invalidaxis,int2),cep_rowcenteredif);
+    source_editor.showcell(makegridcoord(invalidaxis,int2),cep_rowcenteredif);
     edit.editpos:= makegridcoord(0,int2);
     activate;
     result:= true;

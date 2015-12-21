@@ -2,16 +2,15 @@ object mainfo: tmainfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   frame.localprops = []
   frame.localprops1 = []
-  frame.grip_size = 8
-  frame.grip_grip = stb_dens100
+  frame.grip_size = 10
   frame.grip_color = 12434877
-  frame.grip_coloractive = 10066329
+  frame.grip_coloractive = 13421772
   frame.grip_options = [go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton]
   visible = False
-  bounds_x = 32
-  bounds_y = 465
-  bounds_cx = 514
-  bounds_cy = 185
+  bounds_x = 118
+  bounds_y = 146
+  bounds_cx = 1029
+  bounds_cy = 302
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -25,8 +24,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     17
-    506
-    168
+    1019
+    285
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock]
@@ -104,8 +103,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 18
-    bounds_cx = 506
-    bounds_cy = 149
+    bounds_cx = 1019
+    bounds_cy = 266
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -120,7 +119,7 @@ object mainfo: tmainfo
     taborder = 1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 506
+    bounds_cx = 1019
     bounds_cy = 19
     anchors = [an_top]
     font.name = 'stf_default'
@@ -232,7 +231,7 @@ object mainfo: tmainfo
           item
             action = actionsmo.save
             caption = ' &Save '
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
           end        
           item
             action = actionsmo.saveas
@@ -273,7 +272,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 8
+        submenu.count = 7
         submenu.items = <        
           item
             action = actionsmo.line
@@ -305,11 +304,6 @@ object mainfo: tmainfo
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
-          end        
-          item
-            action = actionsmo.findcompallact
-            caption = ' Find &Component  '
-            state = [as_localcaption, as_localshortcut, as_localshortcut1]
           end>
         caption = ' &Search '
         name = 'search'
@@ -422,50 +416,60 @@ object mainfo: tmainfo
           item
             action = actionsmo.continue
             caption = 'Continue'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 27
           end        
           item
             action = actionsmo.reset
             caption = 'Reset'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 2
+            imagenrdisabled = -1
           end        
           item
             action = actionsmo.interrupt
             caption = 'Interrupt'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 1
           end        
           item
             action = actionsmo.step
             caption = '&Step'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 28
           end        
           item
             action = actionsmo.stepi
             caption = 'Step Instruction'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 30
           end        
           item
             action = actionsmo.next
             caption = 'Next'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 31
           end        
           item
             action = actionsmo.nexti
             caption = 'Next Instruction'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 32
           end        
           item
             action = actionsmo.finish
             caption = 'Finish'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+            imagenr = 29
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.bkptsonact
-            state = [as_checked]
+            state = [as_checked, as_localimagenr]
             options = [mao_checkbox, mao_shortcutcaption]
+            imagenr = 3
           end        
           item
             action = actionsmo.togglebkpt
@@ -482,13 +486,15 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.watchesonact
-            state = [as_checked]
+            state = [as_checked, as_localimagenr]
             options = [mao_checkbox, mao_shortcutcaption]
+            imagenr = 5
           end        
           item
             action = actionsmo.bluedotsonact
-            state = [as_checked]
+            state = [as_checked, as_localimagenr]
             options = [mao_checkbox, mao_shortcutcaption]
+            imagenr = 8
           end>
         caption = ' &Target '
         name = 'target'
@@ -668,9 +674,9 @@ object mainfo: tmainfo
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
-            action = actionsmo.toggleinspector
-            caption = ' Toggle Form/Inspector '
-            state = [as_invisible, as_localinvisible, as_localcaption, as_localimagelist, as_localonexecute]
+            action = actionsmo.toggleformunit
+            caption = ' Toggle Form/Unit'
+            state = [as_localinvisible, as_localcaption, as_localimagelist, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
             onexecute = toggleobjectinspectoronexecute
@@ -816,15 +822,10 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 3
+        submenu.count = 2
         submenu.items = <        
           item
-            action = actionsmo.toggleformunit
-            caption = 'Toggle Form/Unit'
-            state = [as_localcaption]
-          end        
-          item
-            submenu.count = 5
+            submenu.count = 8
             submenu.items = <            
               item
                 caption = ' Component &Palette '
@@ -852,9 +853,20 @@ object mainfo: tmainfo
               end            
               item
                 action = actionsmo.toggleinspector
-                caption = ' Toggle Form/Inspector '
+                caption = '  Toggle Form/Inspector '
                 state = [as_localcaption, as_localonexecute]
                 onexecute = toggleobjectinspectoronexecute
+              end            
+              item
+                options = [mao_separator, mao_shortcutcaption]
+              end            
+              item
+                action = actionsmo.findcompallact
+                caption = '  Search Component  '
+                state = [as_localcaption]
+              end            
+              item
+                options = [mao_separator, mao_shortcutcaption]
               end>
             caption = ' MSEgui'
             state = [as_localcaption]
@@ -952,18 +964,20 @@ object mainfo: tmainfo
           end        
           item
             caption = ' About fpGUI '
-            state = [as_localcaption]
+            state = [as_localcaption, as_localonexecute]
+            onexecute = aboutfpguionexecute
           end        
           item
             caption = ' About ideU '
-            state = [as_localcaption]
+            state = [as_localcaption, as_localonexecute]
+            onexecute = aboutideuonexecute
           end>
         caption = ' &About '
         state = [as_localcaption, as_localonexecute]
       end>
     menu.coloractive = -1879048187
-    left = 103
-    top = 88
+    left = 99
+    top = 87
   end
   object openfile: tfiledialog
     statfile = mainstatfile

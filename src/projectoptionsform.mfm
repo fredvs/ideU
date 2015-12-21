@@ -1,8 +1,8 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 20
-  bounds_y = 122
+  bounds_x = 261
+  bounds_y = 111
   bounds_cx = 756
   bounds_cy = 568
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -504,6 +504,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_y = 0
                 bounds_cx = 100
                 bounds_cy = 17
+                value = True
               end
               object editmarkbrackets: tbooleanedit
                 frame.caption = 'Mark Brackets'
@@ -1695,7 +1696,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = []
               taborder = 2
               bounds_x = 0
-              bounds_y = 74
+              bounds_y = 77
               bounds_cx = 754
               bounds_cy = 39
               anchors = [an_top]
@@ -1786,7 +1787,7 @@ object projectoptionsfo: tprojectoptionsfo
               hint = '"--tty DEVICE" to set target terminal'
               onshowhint = hintexpandedmacros
               bounds_x = 1
-              bounds_y = 112
+              bounds_y = 116
               bounds_cx = 752
               bounds_cy = 39
               anchors = [an_left, an_top, an_right]
@@ -1798,7 +1799,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 5
               bounds_x = 0
-              bounds_y = 193
+              bounds_y = 197
               bounds_cx = 754
               bounds_cy = 39
               anchors = [an_top]
@@ -1940,7 +1941,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 6
               bounds_x = 0
-              bounds_y = 227
+              bounds_y = 232
               bounds_cx = 754
               bounds_cy = 39
               anchors = [an_top]
@@ -2045,7 +2046,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 1
               bounds_x = 0
-              bounds_y = 38
+              bounds_y = 39
               bounds_cx = 754
               bounds_cy = 39
               anchors = [an_top]
@@ -2171,7 +2172,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 4
               bounds_x = 0
-              bounds_y = 154
+              bounds_y = 158
               bounds_cx = 585
               bounds_cy = 39
               optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]

@@ -47,29 +47,35 @@ type
    project_abort_compil: tbutton;
    project_make: tbutton;
    mainpanel: tdockpanel;
-   open_file: tbutton;
    find_in_directory: tbutton;
    assistive: tbutton;
    toggle_form_unit: tbutton;
-   save_file: tbutton;
    project_option: tbutton;
-   layedit: tbooleanedit;
-   layprj: tbooleanedit;
-   autocomp: tbooleanedit;
    edit_options: tenumedit;
    project_options: tenumedit;
    edit_compiler: tenumedit;
    edit_compilernum: tenumedit;
+   properties_list: tbutton;
+   find_in_edit: tbutton;
+   tbutton2: tbutton;
+   open_file: tbutton;
+   save_file: tbutton;
+   save_project: tbutton;
+   line_number: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
    procedure layoutchange(const sender: TObject);
- end;
+   procedure listonexecute(const sender: TObject);
+   procedure findinpage(const sender: TObject);
+   procedure shownum(const sender: TObject);
+
+   end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- debuggerform_mfm, actionsmodule;
+ debuggerform_mfm, actionsmodule, sourceform, projectoptionsform ;
 procedure tdebuggerfo.breakonexecute(const sender: TObject);
 begin
 actionsmo.bkptsononexecute(sender) ; 
@@ -77,27 +83,28 @@ end;
 
 procedure tdebuggerfo.layoutchange(const sender: TObject);
 begin
-
-if layprj.value = true then
-begin
-if layedit.value = true then
-begin
+{
+ case debuggerfo.compile_what.value of
+  0 : begin
 editpanel.visible := true;
-editpanel.left := 658;
-end else editpanel.visible := false;
+editpanel.left := 649;
 projectpanel.visible := true;
-end
-else
-begin
-projectpanel.visible := false;
-
-if layedit.value = true then
-begin
-editpanel.visible := true;
-editpanel.left := 271;
-end else editpanel.visible := false;
 end;
-
+   1 : begin
+editpanel.visible := false;
+projectpanel.visible := true;
+end;
+   2 : begin
+editpanel.visible := true;
+editpanel.left := 256;
+projectpanel.visible := false;
+end;
+    3 : begin
+editpanel.visible := false;
+projectpanel.visible := false;
+end;
+  end;
+}
 end;
 
 procedure tdebuggerfo.watchonexecute(const sender: TObject);
@@ -109,4 +116,46 @@ procedure tdebuggerfo.hintonexecute(const sender: TObject);
 begin
 actionsmo.bluedotsononchange(sender) ; 
 end;
+
+procedure tdebuggerfo.listonexecute(const sender: TObject);
+begin
+if debuggerfo.properties_list.tag = 0 then
+begin
+debuggerfo.properties_list.tag := 1 ;
+debuggerfo.properties_list.imagenr := 21 ;
+ end 
+ else
+ begin
+  sourcefo.thetimer.Enabled := false;
+  sourcefo.hidesourcehint; 
+  debuggerfo.properties_list.tag := 0 ;
+  debuggerfo.properties_list.imagenr := 20 ;
+ end;
+ end;
+ 
+ procedure tdebuggerfo.shownum(const sender: TObject);
+ var 
+ int1 : integer;
+begin
+if debuggerfo.line_number.tag = 0 then
+begin
+projectoptions.e.linenumberson := true;
+debuggerfo.line_number.tag := 1 ;
+debuggerfo.line_number.imagenr := 26 ;
+ end 
+ else
+ begin
+  projectoptions.e.linenumberson := false;
+debuggerfo.line_number.tag := 0;
+  debuggerfo.line_number.imagenr := 25 ;
+ end;
+ for int1:= 0 to sourcefo.count - 1 do
+    sourcefo.items[int1].updatestatvalues; 
+end;
+
+procedure tdebuggerfo.findinpage(const sender: TObject);
+begin
+ sourcefo.activepage.dofind;
+end;
+
 end.

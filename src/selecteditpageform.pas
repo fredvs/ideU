@@ -91,7 +91,7 @@ procedure tselecteditpagefo.doonitemevent(const sender: tcustomlistview;
                      const index: Integer; var info: celleventinfoty);
 begin
  if iscellclick(info) then begin
-  sourcefo.tabwidget.activepageindex:= fsortlist[index];
+  sourcefo.files_tab.activepageindex:= fsortlist[index];
   window.modalresult:= mr_ok;
  end
  else begin
@@ -134,7 +134,7 @@ begin
  end;
  sortarray(fnames,sms_upi,fsortlist);
  list.itemlist.add(fnames);
- int2:= sourcefo.tabwidget.activepageindex;
+ int2:= sourcefo.files_tab.activepageindex;
  for int1:= 0 to high(fsortlist) do begin
   if fsortlist[int1] = int2 then begin
    list.focusedindex:= int1;

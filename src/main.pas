@@ -173,6 +173,8 @@ type
    procedure viewconsoleonexecute(const sender: TObject);
    procedure viewfindresults(const sender: TObject);
    procedure aboutonexecute(const sender: TObject);
+   procedure aboutfpguionexecute(const sender: TObject);
+   procedure aboutideuonexecute(const sender: TObject);
    procedure configureexecute(const sender: TObject);
    
      //debugger
@@ -445,7 +447,15 @@ end;
          else thedir :=  confideufo.tesakitdir.text ;
  
    if SakIsEnabled() = false then 
-   sakloadlib(thedir) else sakunloadlib; 
+   begin
+  if sakloadlib(thedir) = 0 then
+   debuggerfo.assistive.imagenr := 19 else
+   debuggerfo.assistive.imagenr := 18;
+   end else
+   begin
+    sakunloadlib;
+    debuggerfo.assistive.imagenr := 18;
+    end; 
  
    end;
 
@@ -565,16 +575,16 @@ libpath : string;
 begin
 
   {$IFDEF Windows}
-     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext.exe' ;
+     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext\designer_ext.exe' ;
     {$endif}
     
      {$IFDEF linux}
-      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext' ;
+      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext' ;
     {$endif}
       
     {$IFDEF freebsd}
     if ispyv = 0 then
-     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext'
+     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext'
      else 
        libpath :=  '/usr/local/share/designer_ext/designer_ext'
     ;
@@ -635,12 +645,12 @@ begin
   
      
      {$ifdef windows}
-   confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin\sakit'); 
+   confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin\'); 
          {$else}
             if ispyv = 0 then
-    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin/sakit')
+    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin/')
     else
-    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share')
+    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share/')
     ;  
          {$endif}
          
@@ -1888,7 +1898,7 @@ begin
     delete.enabled:= edit.hasselection;
     indent.enabled:= true;
     unindent.enabled:= true;
-    line.enabled:= grid.rowcount > 0;
+    line.enabled:= source_editor.rowcount > 0;
     togglebkpt.enabled:= line.enabled;
     togglebkptenable.enabled:= togglebkpt.enabled;
 //    find.enabled:= true;
@@ -3201,13 +3211,41 @@ end;
 procedure tmainfo.aboutonexecute(const sender: TObject);
 begin
  showmessage('MSEgui version: '+mseguiversiontext+c_linefeed+
-             'MSEide version: '+versiontext+c_linefeed+
              'Host: '+ platformtext+ c_linefeed+
              c_linefeed+
              'Copyright 1999-2015'+c_linefeed+
              'by Martin Schreiber'
-             ,actionsmo.c[ord(ac_about)]+' MSEide');
+             ,actionsmo.c[ord(ac_about)]+' MSEgui');
 end;
+
+procedure tmainfo.aboutfpguionexecute(const sender: TObject);
+begin
+ showmessage('fpGUI version: 1.4' + c_linefeed+
+          'Host: '+ platformtext+ c_linefeed+
+             c_linefeed+
+                 'Copyright 1999-2015'+c_linefeed+
+             'by Graeme Geldenhuys' +c_linefeed+
+              '<graemeg@gmail.com>'
+             ,actionsmo.c[ord(ac_about)]+' fpGUI');
+end;
+
+procedure tmainfo.aboutideuonexecute(const sender: TObject);
+begin
+ showmessage('ideU version: 1.0' + c_linefeed+
+ 			 'Host: '+ platformtext+ c_linefeed+
+             c_linefeed+
+                     
+            'Based on MSEide'
+            +c_linefeed+
+             'by Martin Schreiber'
+            +c_linefeed+ c_linefeed+
+             'Copyright 1999-2015'+c_linefeed+
+              'by Fred van Stappen' +c_linefeed+
+               '<fiens@hotmail.com>'
+             ,actionsmo.c[ord(ac_about)]+' ideU');
+end;
+
+
 
 procedure tmainfo.configureexecute(const sender: TObject);
 begin

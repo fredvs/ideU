@@ -70,6 +70,7 @@ var
 begin
  fo:= tfinddialogfo.create(nil);
  try
+ fo.color := $99BF9C ;
   fo.infotovalues(info);
   result:= fo.show(true,nil) = mr_ok;
   if result then begin

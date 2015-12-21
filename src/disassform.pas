@@ -111,7 +111,7 @@ begin
      grid.rowcount:= int2 + 1 + length(ar1);
      grid[3][int2]:= inttostrmse(aline-1);
      if (apage <> nil) and (aline > 0) and 
-                              (aline <= apage.grid.rowcount) then begin
+                              (aline <= apage.source_editor.rowcount) then begin
       grid[1][int2]:= apage.edit[aline-1];
       grid[2][int2]:= fname1;
      end

@@ -1,10 +1,11 @@
 object sourcehintfo: tsourcehintfo
+  optionswidget = [ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 100
-  bounds_y = 291
+  bounds_x = 99
+  bounds_y = 290
   bounds_cx = 314
   bounds_cy = 214
-  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets]
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
   container.frame.framei_right = 0

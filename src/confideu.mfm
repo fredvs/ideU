@@ -1,7 +1,7 @@
 object confideufo: tconfideufo
   visible = False
-  bounds_x = 710
-  bounds_y = 275
+  bounds_x = 475
+  bounds_y = 264
   bounds_cx = 274
   bounds_cy = 218
   container.frame.localprops = []
@@ -13,7 +13,7 @@ object confideufo: tconfideufo
     218
   )
   optionswindow = [wo_message]
-  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_screencentered]
   caption = 'Extra Settings of ideU'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -160,7 +160,7 @@ object confideufo: tconfideufo
   end
   object tesakitdir: tfilenameedit
     frame.colorclient = 15790335
-    frame.caption = '  Directory of sakit'
+    frame.caption = 'Parent-directory of /sakit'
     frame.localprops = [frl_colorframe, frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
