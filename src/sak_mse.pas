@@ -531,7 +531,7 @@ begin
   end
    else
    if (Sender is ttoolbar) then
-    Result := 'tool bar, ' + ttoolbar(Sender).name
+    Result := 'tool bar, ' + ttoolbar(Sender).getassistivehint()
   else
   if (Sender is tslider) then
     Result := 'slider, ' + Tslider(Sender).Name
@@ -952,7 +952,8 @@ begin
  if TheMouseinfo.eventkind = ek_mousemove then
   begin
 
-    if TComponent(TheSender).Name <> lastname then
+  //  if TComponent(TheSender).Name <> lastname then
+if WhatName(TheSender)  <> lastname then
     begin
       SakCancel;
       
@@ -971,7 +972,7 @@ begin
   stringtemp := ' , ' + inttostr(round(tslider(TheSender).value * 100)) + ' ,%, '
   end;
         espeak_Key(WhatName(TheSender) + stringtemp + ' focused.');
-      lastname := TComponent(TheSender).Name;
+      lastname := WhatName(TheSender);
     end;
   end
   else
@@ -979,7 +980,7 @@ begin
   begin
     SakCancel;
     espeak_Key(WhatName(TheSender) + ' clicked.');
-    lastname := TComponent(TheSender).Name;
+    lastname := WhatName(TheSender);
   end;
 
 end;
