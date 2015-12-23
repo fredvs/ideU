@@ -1,7 +1,7 @@
 object confcompilerfo: tconfcompilerfo
   visible = False
-  bounds_x = 316
-  bounds_y = 87
+  bounds_x = 289
+  bounds_y = 76
   bounds_cx = 675
   bounds_cy = 501
   container.frame.localprops = []
@@ -224,8 +224,8 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 5
     hint = 'Path to pascal compiler'
-    bounds_x = -64
-    bounds_y = -3
+    bounds_x = 6
+    bounds_y = 100
     bounds_cx = 328
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
@@ -368,7 +368,7 @@ object confcompilerfo: tconfcompilerfo
   object tlabel5: tlabel
     taborder = 13
     bounds_x = 280
-    bounds_y = 386
+    bounds_y = 384
     bounds_cx = 97
     bounds_cy = 15
     caption = 'Other Compilers'

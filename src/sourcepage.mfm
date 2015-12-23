@@ -2,18 +2,18 @@ object sourcepage: tsourcepage
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   optionsskin = [osk_framebuttononly]
   color = -1879048187
-  bounds_x = 421
-  bounds_y = 266
-  bounds_cx = 740
-  bounds_cy = 218
+  bounds_x = 149
+  bounds_y = 351
+  bounds_cx = 1013
+  bounds_cy = 217
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    740
-    218
+    1013
+    217
   )
   icon.transparentcolor = -2147483648
   oncreate = sourcefooncreate
@@ -23,14 +23,15 @@ object sourcepage: tsourcepage
   onhide = sourcefoondeactivate
   moduleclassname = 'ttabform'
   object source_editor: twidgetgrid
+    optionswidget1 = [ow1_autoscale]
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     optionsskin = [osk_framebuttononly]
     frame.localprops = []
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 740
-    bounds_cy = 196
+    bounds_cx = 1013
+    bounds_cy = 195
     anchors = [an_top, an_bottom]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_wrapcol, og_visiblerowpagestep]
     fixcols.count = 1
@@ -77,7 +78,6 @@ object sourcepage: tsourcepage
     onrowsinserted = gridonrowsinserted
     onrowsdeleted = gridonrowsdeleted
     oncellevent = gridoncellevent
-    reffontheight = 15
     object edit: tsyntaxedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
@@ -136,15 +136,16 @@ object sourcepage: tsourcepage
   end
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
-    color = -2147483645
+    color = 15461355
+    cursor = cr_default
     frame.levelo = -1
     frame.colorclient = -2147483645
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 68
-    bounds_y = 198
-    bounds_cx = 672
+    bounds_x = 67
+    bounds_y = 196
+    bounds_cx = 942
     bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]
@@ -152,15 +153,19 @@ object sourcepage: tsourcepage
     reffontheight = 15
   end
   object linedisp: tlabel
-    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget1 = [ow1_autoscale]
+    color = 15790320
+    frame.framewidth = 1
+    frame.colorframe = -1610612733
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
     taborder = 2
-    bounds_x = 3
-    bounds_y = 198
+    bounds_x = 2
+    bounds_y = 197
     bounds_cx = 61
     bounds_cy = 19
     anchors = [an_left, an_bottom]
     caption = '00.00'
     textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 15
   end
 end

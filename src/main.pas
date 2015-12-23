@@ -475,6 +475,7 @@ end;
 
 destructor tmainfo.destroy;
 begin
+ if SakIsEnabled = true then sakunloadlib; 
  terminategdbserver(false);
  inherited;
 end;
@@ -750,15 +751,15 @@ end;
 
 procedure tmainfo.mainfoondestroy(const sender: tobject);
 begin
+ if SakIsEnabled = true then sakunloadlib; 
+ 
  designnotifications.unRegisternotification(idesignnotification(self));
  abortmake;
  abortdownload;
  sourceupdate.deinit(designer);
  
   ideuwriteconfig(); 
-  
-  if SakIsEnabled = true then sakunloadlib; 
-
+ 
 end;
 
 procedure tmainfo.dofindmodulebyname(const amodule: pmoduleinfoty;
@@ -1267,8 +1268,8 @@ begin
   value:= removelinebreaks(atext);
   case akind of
    mtk_warning : color:= $BEDEBE; 
-   mtk_finished: color:= cl_ltgreen;
-   mtk_error: color:= cl_ltyellow;
+   mtk_finished: color:= $8DE08D;
+   mtk_error: color:=   $F0F097;
    mtk_signal: color:= cl_ltred;
    mtk_running: color:= $E2B4FE ;
    else color:= cl_parent;

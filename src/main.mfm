@@ -114,18 +114,19 @@ object mainfo: tmainfo
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
-    frame.localprops = []
-    frame.localprops1 = []
     taborder = 1
     bounds_x = 0
     bounds_y = 1
     bounds_cx = 1019
-    bounds_cy = 19
+    bounds_cy = 18
     anchors = [an_top]
+    font.shadow_color = 16448250
+    font.gloss_color = 16250871
+    font.height = 12
     font.name = 'stf_default'
-    font.xscale = 1
-    font.localprops = [flp_xscale]
-    options = [dwo_hintclippedtext]
+    font.options = [foo_antialiased]
+    font.localprops = [flp_shadow_color]
+    textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
   object gdb: tgdbmi
@@ -424,7 +425,6 @@ object mainfo: tmainfo
             caption = 'Reset'
             state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
             imagenr = 2
-            imagenrdisabled = -1
           end        
           item
             action = actionsmo.interrupt

@@ -91,7 +91,7 @@ type
      lastname: msestring;
 
   TheTimer: TTimer;
-  TheSender: TObject;
+  TheSender: iassistiveclient;
   TheKeyInfo: keyeventinfoty;
   TheMouseInfo: mouseeventinfoty;
   TheMenuInfo: menucellinfoarty;
@@ -127,17 +127,13 @@ type
     procedure ontimeritementer(const Sender: TObject);
     procedure ontimeritementer2(const Sender: TObject);
     procedure ontimerchange(const Sender: TObject);
+    procedure ontimerfocuschange(const Sender: TObject);
     function LoadLib: integer;
     procedure espeak_key(Text: msestring);
-    function WhatName(Sender: TObject): msestring;
-    function WhatChar(Sender: TObject; const info: keyeventinfoty): msestring;
-    function WhatChange(Sender: TObject) : msestring;
-    function WhatPos(sender : Tobject; kind : integer) : msestring ;  // kind 0 = all, , 1 = part
-    function WhatDeleted(sender : Tobject) : msestring;
-    function WhatWord(sender : Tobject) : msestring;
-    function WhatLine(sender : Tobject) : msestring;
-
-
+    function WhatName(iaSender: iassistiveclient): msestring;
+    function WhatChar(iaSender: iassistiveclient; const info: keyeventinfoty): msestring;
+    function WhatChange(iaSender: iassistiveclient) : msestring;
+  
   public
     constructor Create();
       destructor Destroy(); override;
@@ -199,256 +195,12 @@ uses
   
 /////////////////////////// Capture Assistive Procedures
 
-function Tsak.WhatDeleted(sender : Tobject) : msestring;
+function TSak.WhatName(iaSender: iassistiveclient): msestring;
 var
- strline, posword1, posword2 : string;
- pos1 : integer;
+Sender : Tobject;
 begin
-{
-   with sender as Tmemoedit do
-      begin
-           sakcancel;
-          strline :=  Lines[caretpos.y];
-        posword1 := '';
-             pos1 := cursorpos ;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
-          begin
-        posword1 := copy(strline,pos1,1)   + posword1;
-        dec(pos1);
-          end;
 
-    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
-
-    posword2 := '';
-             pos1 := cursorpos +1 ;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
-          begin
-        posword2 := posword2 + copy(strline,pos1,1)  ;
-        inc(pos1);
-          end;
-
-      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
-
-
-       if  copy(strline,cursorpos+1,1) = ' '   // the letter after cursor is space
-              then
-              begin
-       result := 'deleted, space, after, '  +  posword1 + posword2 + ' in line ' + inttostr(cursorline+1)
-  end else
-   begin
-     result := 'deleted, position, ' + inttostr(length(posword1)+1) +  ', line, ' + inttostr(cursorline+1) +  ', in, ' +  posword1 + posword2;
-        end;
-
-//     writeln(result);
-
-        end;
-
-}
-end;
-
-function Tsak.WhatPos(sender : Tobject; kind : integer) : msestring ;  // kind 0 = all, , 1 = part
-var
- strline, posword1, posword2 : string;
- pos1 : integer;
-begin
-{
-            with sender as Tmemoedit do
-           begin
-                  sakcancel;
-
-         strline :=  Lines[cursorline];
-        posword1 := '';
-             pos1 := cursorpos ;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
-          begin
-        posword1 := copy(strline,pos1,1)   + posword1;
-        dec(pos1);
-          end;
-
-    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
-
-    posword2 := '';
-             pos1 := cursorpos +1 ;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
-          begin
-        posword2 := posword2 + copy(strline,pos1,1)  ;
-        inc(pos1);
-          end;
-
-      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
-
-
-       if  copy(strline,cursorpos+1,1) = ' '   // the letter after cursor is space
-              then
-   //      writeln('space, after, '  +  posword1 + posword2 + ' in line ' + inttostr(cursorline) )
-        if kind = 0 then
-         result := 'space, after, '  +  posword1 + posword2 + ', in line, ' + inttostr(cursorline+1)
-         else   result := 'space, after, '  +  posword1 + posword2
-
-   else
-   begin
-   //   writeln(copy(strline,cursorpos+1,1) + ', line, ' + inttostr(cursorline) + ' , position, ' + inttostr(length(posword1)+1) + ', in, ' +
-  // posword1 + posword2);
-     if kind = 0 then
-     result := copy(strline,cursorpos+1,1) +  ' , position, ' + inttostr(length(posword1)+1) + ', line, ' + inttostr(cursorline+1)+ ', in, ' +
-   posword1 + posword2 else
-      result := copy(strline,cursorpos+1,1) +  ' , position, ' + inttostr(length(posword1)+1) + ', in, ' +
-   posword1 + posword2
-
-   end;
-
-  //   writeln(result);
-
-end;
-}
-end;
-
-function  Tsak.WhatLine(sender : Tobject) : msestring;
-begin
-{
-               with sender as Tmemoedit do
-           begin
-                  sakcancel;
-          result := 'line, ' + inttostr(cursorline +1) + ', ' +  Lines[cursorline];
-
-           end;
-}
-end;
-
-function Tsak.WhatWord(sender : Tobject) : msestring ;
-var
- strline, posword1, posword2 : string;
- pos1 : integer;
-begin
-{
-            with sender as Tmemoedit do
-           begin
-                  sakcancel;
-          strline :=  Lines[cursorline];
-        posword1 := '';
-             pos1 := cursorpos -1;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 > 0) do
-          begin
-        posword1 := copy(strline,pos1,1)   + posword1;
-        dec(pos1);
-          end;
-
-    //    writeln('chars before pos = ' + posword1);  // the letters before cursor
-
-    posword2 := '';
-             pos1 := cursorpos  ;
-        while (copy(strline,pos1,1) <> ' ') and (pos1 < length(strline) +1) do
-          begin
-        posword2 := posword2 + copy(strline,pos1,1)  ;
-        inc(pos1);
-          end;
-
-      if trim(posword1 + posword2) = '' then posword1 := 'empty, ';
-
-            result := posword1 + posword2  ;
-
-end;
-}
-end;
-
-function TSak.WhatChange(Sender: TObject) : msestring;
-var
-stringtemp : msestring;
-begin
-if (Sender is tbooleaneditradio) then
-  begin
-  if tbooleaneditradio(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
-       Result := ' changed to ' + stringtemp ;
-   end
-  else
-  if (Sender is tbooleanedit) then
-  begin
-   if tbooleanedit(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
-       Result := ' changed to ' + stringtemp ;
-  end
-   else
-  if (sender is tenumedit) then 
-  begin
-  result:= ' changed to ' + (tenumedit(sender).enumname(tenumedit(sender).value));
-  end
-  else
-   if (Sender is tslider) then
-    Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
-end;
-
-function TSak.WhatChar(Sender: TObject; const info: keyeventinfoty): msestring;
-
-procedure checkgrid();
- begin
-  if (Sender is Tcustomstringgrid) then begin
-   with tcustomstringgrid(Sender) do begin
-    if focusedcellvalid then begin
-    if col > 0 then
-     Result := Result + ', column  ' +
-              IntToStr(col) + ' , row  ' + 
-              IntToStr(row) + '. ' + items[focusedcell] else
-     Result := Result + ' , row  ' + 
-              IntToStr(row) + '. ' + items[focusedcell];
-     end;
-   end;
-  end;
- end;
- 
-var
-  CheckKey: keyty;
-  
-begin
-  CheckKey := info.key;
-  
-  Result := info.chars;
-    
-   if (checkkey = key_Up) or (checkkey = key_down) or (checkkey = key_left) or (checkkey = key_right) or
-      (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) then
-       if (Sender is Tstringgrid) or (Sender is Tcustomstringgrid) then checkgrid()  ;
-     
-    case CheckKey of
-    
-      key_Backspace: 
-      begin  /// backspace
-      if (Sender is TMemoedit) or (Sender is Tstringedit) then
-    begin
-     //  writeln('before : ' + theword);
-      if length(theword) > 1 then   theword := copy(theword,1,length(theword)-1);
-     //  writeln('after : ' + theword);
-     end;
-        end;
-
-          key_F9: if (CheckObject is TMemoedit) then
-                    result := thelastsentence ;
-            
-
-      key_F10: if (CheckObject is TMemoedit) then
-                   result := theword;
-
-      key_F11: if (CheckObject is TMemoedit) then
-                   result := thesentence;
-           
-      key_F12: if (Sender is TMemoedit) then
-          with Sender as TMemoedit do
-              begin
-             result := Text ;
-               end
-        else
-        if (Sender is Tstringedit) then
-          with Sender as Tstringedit do
-            Result := Text
-        else if (Sender is Tstringgrid) then
-              with Sender as tstringgrid do  Result := Result + ' column  ' + 
-        IntToStr(col) + ' , row  ' + IntToStr(row) + '. ' + Tstringgrid(sender)[col][row]
-        else        
-          Result := '';
-        
-   
-  end;
-end;
-
-function TSak.WhatName(Sender: TObject): msestring;
-begin
+Sender := iaSender.getinstance;
 
   Result := '';
 
@@ -488,9 +240,31 @@ begin
    if (Sender is Tstringgrid) then
     Result := 'grid, ' + Tstringgrid(Sender).Name
   else
+  
     if (Sender is ttabpage) then
-    Result := 'tab, page, ' + ttabpage(Sender).Name
+    Result := 'tab, page, ' + ttabpage(Sender).caption
   else
+  if (Sender is ttab) then
+    Result := 'tab, ' + ttab(Sender).caption
+  else
+   if (Sender is Ttabwidget) then  
+   Result := 'tabwidget, ' + Ttabwidget(Sender).Name
+  else
+    if (Sender is Ttabbar) then  
+    begin
+    if ttabbar(Sender).activetag-1 > 0 then
+   Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
+   Ttabbar(Sender).tabs[ttabbar(Sender).activetag-1].caption
+   else  Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
+   Ttabbar(Sender).tabs[0].caption
+   end
+   else
+   if (Sender is tcustomtabbar) then  
+  Result := 'tab, ' + tcustomtabbar(Sender).tabs[tcustomtabbar(Sender).activetag].caption
+  else
+  if (Sender is tcustomtabbar1) then  
+  Result := 'tab, ' + tcustomtabbar1(Sender).tabs[tcustomtabbar1(Sender).activetag].caption
+    else
    if (Sender is Tstringdisp) then
     Result := 'Info panel, ' + Tstringdisp(Sender).value 
    else
@@ -511,10 +285,7 @@ begin
    else
     if (Sender is Tenumedit) then  
    Result := 'combo box, ' + Tenumedit(Sender).Name
-  else
-   if (Sender is Ttabwidget) then  
-   Result := 'tab, ' + Ttabwidget(Sender).Name
-  else
+   else
   if (Sender is tbooleaneditradio) then
   begin
     if (Tbooleaneditradio(Sender).frame.Caption <> '') then
@@ -531,12 +302,13 @@ begin
   end
    else
    if (Sender is ttoolbar) then
-    Result := 'tool bar, ' + ttoolbar(Sender).getassistivehint()
+   // Result := 'tool bar, ' + ttoolbar(Sender).getassistivehint()
+    Result := 'tool bar, ' + iaSender.getassistivehint()
   else
   if (Sender is tslider) then
     Result := 'slider, ' + Tslider(Sender).Name
   else 
-    if (Sender is ttoolbutton) then
+  if (Sender is ttoolbutton) then
     Result := 'tool button, ' +  ttoolbutton(Sender).hint
   else 
    if (Sender is tmenuitem) then
@@ -549,12 +321,110 @@ begin
   else 
   if (Sender is tmainmenu) or (Sender is tmainmenuwidget) or (Sender is tmenu) or  (Sender is tcustommenu) or   (Sender is tpopupmenu)  then
      Result :=  'menu, '
-     ;
- //   else 
- //    if (Sender is twidget) then
- //   Result := 'widget, ' + Twidget(Sender).Name ;
+   ;
+//else  if (Sender is twidget) then Result := Sender.classname() + ', ' + Twidget(Sender).Name + ', ' ;
     
+end; 
+
+function TSak.WhatChange(iaSender: iassistiveclient) : msestring;
+var
+Sender : Tobject;
+stringtemp : msestring;
+begin
+
+sender := iaSender.getinstance;
+
+if (Sender is tbooleaneditradio) then
+  begin
+  if tbooleaneditradio(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
+       Result := ' changed to ' + stringtemp ;
+   end
+  else
+  if (Sender is tbooleanedit) then
+  begin
+   if tbooleanedit(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
+       Result := ' changed to ' + stringtemp ;
+  end
+   else
+  if (sender is tenumedit) then 
+  begin
+  result:= ' changed to ' + (tenumedit(sender).enumname(tenumedit(sender).value));
+  end
+  else
+   if (Sender is tslider) then
+    Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
 end;
+
+function TSak.WhatChar(iaSender: iassistiveclient; const info: keyeventinfoty): msestring;
+
+procedure checkgrid();
+ begin
+  if (iaSender.getinstance is Tcustomstringgrid) then begin
+   with tcustomstringgrid(iaSender.getinstance) do begin
+    if focusedcellvalid then begin
+    if col > 0 then
+     Result := Result + ', column  ' +
+              IntToStr(col) + ' , row  ' + 
+              IntToStr(row) + '. ' + items[focusedcell] else
+     Result := Result + ' , row  ' + 
+              IntToStr(row) + '. ' + items[focusedcell];
+     end;
+   end;
+  end;
+ end;
+ 
+var
+  CheckKey: keyty;
+  
+begin
+  CheckKey := info.key;
+  
+  Result := info.chars;
+    
+   if (checkkey = key_Up) or (checkkey = key_down) or (checkkey = key_left) or (checkkey = key_right) or
+      (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) then
+       if (iaSender.getinstance is Tstringgrid) or (iaSender.getinstance is Tcustomstringgrid) then checkgrid()  ;
+     
+    case CheckKey of
+    
+      key_Backspace: 
+      begin  /// backspace
+      if (iaSender.getinstance is TMemoedit) or (iaSender.getinstance is Tstringedit) then
+    begin
+     //  writeln('before : ' + theword);
+      if length(theword) > 1 then   theword := copy(theword,1,length(theword)-1);
+     //  writeln('after : ' + theword);
+     end;
+        end;
+
+          key_F9: if (iaSender.getinstance is TMemoedit) then
+                    result := thelastsentence ;
+            
+
+      key_F10: if (iaSender.getinstance is TMemoedit) then
+                   result := theword;
+
+      key_F11: if (iaSender.getinstance is TMemoedit) then
+                   result := thesentence;
+           
+      key_F12: if (iaSender.getinstance is TMemoedit) then
+          with iaSender.getinstance as TMemoedit do
+              begin
+             result := Text ;
+               end
+        else
+        if (iaSender.getinstance is Tstringedit) then
+          with iaSender.getinstance as Tstringedit do
+            Result := Text
+        else if (iaSender.getinstance is Tstringgrid) then
+              with iaSender.getinstance as tstringgrid do  Result := Result + ' column  ' + 
+        IntToStr(col) + ' , row  ' + IntToStr(row) + '. ' + Tstringgrid(iaSender.getinstance)[col][row]
+        else        
+          Result := '';
+       
+  end;
+end;
+
 
 ////////////////////// Loading Procedure
 
@@ -745,10 +615,11 @@ end;
 
 procedure TSAK.dochange(const sender: iassistiveclient);
 begin
- thetimer.enabled := false;
-if WhatName(sender.getinstance) <> '' then
- begin  
-  TheSender := sender.getinstance;  
+ 
+if WhatName(sender) <> '' then
+ begin
+  thetimer.enabled := false;  
+  TheSender := sender;  
   thetimer.interval := 600000 ;
   thetimer.ontimer := @ontimerchange;
   thetimer.enabled := true;
@@ -773,10 +644,10 @@ procedure TSAK.doenter(const Sender: iassistiveclient);
 begin
 //if itementer = false then
 //begin
-  if WhatName(Sender.getinstance) <> '' then
+  if WhatName(Sender) <> '' then
   begin
     thetimer.Enabled := False;
-    TheSender := Sender.getinstance;
+    TheSender := Sender;
     thetimer.interval := 600000;
     thetimer.ontimer := @ontimerenter;
     thetimer.Enabled := True;
@@ -802,10 +673,10 @@ var
   oldlang : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
 begin
-  thetimer.Enabled := False;
-  
-    WhatCh := WhatChar(Sender.getinstance, info);
-    TheSender := Sender.getinstance;
+//if WhatName(Sender) <> '' then
+  //begin
+   thetimer.Enabled := False;
+    WhatCh := WhatChar(Sender, info);
     TheKeyInfo := info;
     thetimer.ontimer := @ontimerkey;
   
@@ -891,10 +762,9 @@ begin
   SakCancel;
  espeak_Key(TheExtraChar) ;
   SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
-  
-  end;
+ end;
  
-   if (TheSender is Tstringedit) or (TheSender is Tmemoedit)  then  
+   if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)  then  
   begin 
    
   if info.key = key_Space then
@@ -926,7 +796,7 @@ begin
    end;
    end else
    begin
-   if (TheSender is Tcustomstringgrid) then
+   if (Sender.getinstance is Tcustomstringgrid) then
    begin
       //SakCancel;
       //espeak_Key(TheExtraChar) ; 
@@ -940,6 +810,7 @@ begin
      thetimer.Enabled := True;
      end;
    end;
+ // end;
   end;
 
 procedure TSAK.ontimermouse(const Sender: TObject);
@@ -957,19 +828,19 @@ if WhatName(TheSender)  <> lastname then
     begin
       SakCancel;
       
-      if(TheSender is tbooleaneditradio) then
+      if(TheSender.getinstance is tbooleaneditradio) then
   begin
-  if tbooleaneditradio(TheSender).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, ';
+  if tbooleaneditradio(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, ';
   end;
   
-    if(TheSender is tbooleanedit) then
+    if(TheSender.getinstance is tbooleanedit) then
   begin
-  if tbooleanedit(TheSender).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, '; 
+  if tbooleanedit(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, '; 
   end;
   
-     if(TheSender is tslider) then
+     if(TheSender.getinstance is tslider) then
   begin
-  stringtemp := ' , ' + inttostr(round(tslider(TheSender).value * 100)) + ' ,%, '
+  stringtemp := ' , ' + inttostr(round(tslider(TheSender.getinstance).value * 100)) + ' ,%, '
   end;
         espeak_Key(WhatName(TheSender) + stringtemp + ' focused.');
       lastname := WhatName(TheSender);
@@ -988,11 +859,11 @@ end;
 procedure TSAK.clientmouseevent(const sender: iassistiveclient;
                                            const info: mouseeventinfoty);
  begin
-// if itementer = false then
-// begin
-  if WhatName(Sender.getinstance) <> '' then
+ if itementer = false then
+ begin
+  if WhatName(Sender) <> '' then
   begin
-    TheSender := Sender.getinstance;
+    TheSender := Sender;
     TheMouseInfo := info;
     thetimer.Enabled := False;
     if info.eventkind = ek_mousemove then
@@ -1002,12 +873,35 @@ procedure TSAK.clientmouseevent(const sender: iassistiveclient;
     thetimer.ontimer := @ontimermouse;
     thetimer.Enabled := True;
   end;
-//  itementer := false;
+end;
+  itementer := false;
+end;
+
+procedure TSAK.ontimerfocuschange(const Sender: TObject);
+begin
+ thetimer.Enabled := false;
+ SakCancel;
+ espeak_Key(WhatName(TheSender) + ' has focus');
+  lastname := WhatName(TheSender);
 end;
 
 procedure TSAK.dofocuschanged(const oldwidget: iassistiveclient; const newwidget: iassistiveclient);
 begin
-
+{
+// if (WhatName(newwidget.getinstance) <> '') 
+ //and (lastname <> WhatName(newwidget.getinstance))
+ //and (newwidget.getinstance is Ttabwidget) 
+ then
+ begin
+    thetimer.Enabled := False; 
+    isentered := True;
+    TheSender := newwidget.getinstance;
+    thetimer.interval := 600000;
+    thetimer.ontimer := @ontimerfocuschange;
+    thetimer.Enabled := True;
+  //  itementer:= true;
+ end;
+}
 end;
 
 procedure TSAK.ontimeritementer(const Sender: TObject);
@@ -1029,42 +923,40 @@ begin
 procedure  TSAK.doitementer(const sender: iassistiveclient; //sender can be nil
                             const items: shapeinfoarty; const aindex: integer);
 begin
- if WhatName(Sender.getinstance) <> '' then
+ if WhatName(Sender) <> '' then
   begin
     thetimer.Enabled := False; 
     isentered := True;
-    TheSender := Sender.getinstance;
+    TheSender := Sender;
     TheItemInfo := items;
     TheMenuIndex := aindex;
     thetimer.interval := 300000;
     thetimer.ontimer := @ontimeritementer2;
     thetimer.Enabled := True;
-  //  itementer:= true;
+    itementer:= true;
   end;
 end;  
 
 procedure TSAK.doitementer(const sender: iassistiveclient;
                         const items: menucellinfoarty; const aindex: integer);
 begin
- if WhatName(Sender.getinstance) <> '' then
+ if WhatName(Sender) <> '' then
   begin
     thetimer.Enabled := False; 
     isentered := True;
-    TheSender := Sender.getinstance;
+    TheSender := Sender;
     TheMenuInfo := items;
     TheMenuIndex := aindex;
-    thetimer.interval := 600000;
+    thetimer.interval := 700000;
     thetimer.ontimer := @ontimeritementer;
     thetimer.Enabled := True;
-    //itementer:= false;
+    itementer:= true;
   end;
 end;
 
 procedure TSAK.doactionexecute(const Sender: TObject; const info: actioninfoty);
 begin
 end;
-
-
 
 // for editor
 
