@@ -1,9 +1,11 @@
 object confideufo: tconfideufo
+  optionswidget = []
   visible = False
-  bounds_x = 475
-  bounds_y = 264
+  bounds_x = 694
+  bounds_y = 222
   bounds_cx = 274
   bounds_cy = 218
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_subfocus, ow_mousetransparent]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
@@ -12,7 +14,6 @@ object confideufo: tconfideufo
     274
     218
   )
-  optionswindow = [wo_message]
   options = [fo_screencentered]
   caption = 'Extra Settings of ideU'
   icon.options = [bmo_masked, bmo_graymask]
@@ -176,16 +177,14 @@ object confideufo: tconfideufo
       0
     )
     taborder = 6
-    hint = 'Dirextory of sakit ( speaker assistve kit )'
+    hint = 'Paren directory of sakit ( speaker assistve kit )'
     bounds_x = 7
     bounds_y = 136
     bounds_cx = 262
     bounds_cy = 39
-    value = '/usr/local/share/'
-    controller.filename = '/usr/local/share/'
     controller.lastdir = '/usr/local/share/'
     controller.options = [fdo_directory]
-    controller.captionopen = 'FPC root directory'
+    controller.captionopen = 'Parent-directory of /sakit'
     reffontheight = 15
   end
 end

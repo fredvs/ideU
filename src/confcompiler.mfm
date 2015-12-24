@@ -1,9 +1,11 @@
 object confcompilerfo: tconfcompilerfo
+  optionswidget = [ow_arrowfocus, ow_destroywidgets]
   visible = False
-  bounds_x = 289
-  bounds_y = 76
+  bounds_x = 455
+  bounds_y = 144
   bounds_cx = 675
   bounds_cy = 501
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (

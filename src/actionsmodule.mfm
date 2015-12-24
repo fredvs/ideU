@@ -3394,4 +3394,9 @@ object actionsmo: tactionsmo
     left = 488
     top = 260
   end
+  object projectcustomcompile: taction
+    onexecute = custcompileproject
+    left = 547
+    top = 156
+  end
 end

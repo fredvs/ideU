@@ -251,19 +251,14 @@ Sender := iaSender.getinstance;
    Result := 'tabwidget, ' + Ttabwidget(Sender).Name
   else
     if (Sender is Ttabbar) then  
-    begin
-    if ttabbar(Sender).activetag-1 > 0 then
-   Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
-   Ttabbar(Sender).tabs[ttabbar(Sender).activetag-1].caption
-   else  Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
-   Ttabbar(Sender).tabs[0].caption
-   end
-   else
+    Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
+   Ttabbar(Sender).tabs[ttabbar(Sender).activetab].caption
+    else
    if (Sender is tcustomtabbar) then  
-  Result := 'tab, ' + tcustomtabbar(Sender).tabs[tcustomtabbar(Sender).activetag].caption
+  Result := 'tab, ' + tcustomtabbar(Sender).tabs[tcustomtabbar(Sender).activetab].caption
   else
   if (Sender is tcustomtabbar1) then  
-  Result := 'tab, ' + tcustomtabbar1(Sender).tabs[tcustomtabbar1(Sender).activetag].caption
+  Result := 'tab, ' + tcustomtabbar1(Sender).tabs[tcustomtabbar1(Sender).activetab].caption
     else
    if (Sender is Tstringdisp) then
     Result := 'Info panel, ' + Tstringdisp(Sender).value 
@@ -275,7 +270,7 @@ Sender := iaSender.getinstance;
     Result := 'Boolean panel, ' + tbooleandisp(Sender).name 
    else
    if (Sender is trealdisp) then
-    Result := 'Date panel, ' + trealdisp(Sender).name
+    Result := 'real panel, ' + trealdisp(Sender).name
    else
    if (Sender is tintegerdisp) then
     Result := 'Integer panel, ' + tintegerdisp(Sender).name 
@@ -302,8 +297,7 @@ Sender := iaSender.getinstance;
   end
    else
    if (Sender is ttoolbar) then
-   // Result := 'tool bar, ' + ttoolbar(Sender).getassistivehint()
-    Result := 'tool bar, ' + iaSender.getassistivehint()
+     Result := 'tool bar, ' + iaSender.getassistivehint()
   else
   if (Sender is tslider) then
     Result := 'slider, ' + Tslider(Sender).Name
@@ -384,30 +378,21 @@ begin
    if (checkkey = key_Up) or (checkkey = key_down) or (checkkey = key_left) or (checkkey = key_right) or
       (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) then
        if (iaSender.getinstance is Tstringgrid) or (iaSender.getinstance is Tcustomstringgrid) then checkgrid()  ;
-     
+     	      
     case CheckKey of
     
-      key_Backspace: 
-      begin  /// backspace
-      if (iaSender.getinstance is TMemoedit) or (iaSender.getinstance is Tstringedit) then
-    begin
-     //  writeln('before : ' + theword);
-      if length(theword) > 1 then   theword := copy(theword,1,length(theword)-1);
-     //  writeln('after : ' + theword);
-     end;
-        end;
-
-          key_F9: if (iaSender.getinstance is TMemoedit) then
-                    result := thelastsentence ;
-            
-
-      key_F10: if (iaSender.getinstance is TMemoedit) then
+        key_Backspace:
+         if (iaSender.getinstance is TMemoedit) or (iaSender.getinstance is Tstringedit) then
+    		begin
+  	  	  if length(theword) > 1 then   theword := copy(theword,1,length(theword)-1);
+     	  result := theword;
+  			end;
+        key_F4: if (iaSender.getinstance is TMemoedit) then
                    result := theword;
-
-      key_F11: if (iaSender.getinstance is TMemoedit) then
+        key_F6: if (iaSender.getinstance is TMemoedit) then
                    result := thesentence;
            
-      key_F12: if (iaSender.getinstance is TMemoedit) then
+        key_F10: if (iaSender.getinstance is TMemoedit) then
           with iaSender.getinstance as TMemoedit do
               begin
              result := Text ;

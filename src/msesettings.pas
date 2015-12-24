@@ -16,6 +16,8 @@
 }
 unit msesettings;
 
+/// for custom compil, edit define.inc
+{$I define.inc}
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
@@ -36,7 +38,6 @@ type
                     sma_ideudir, sma_docviewdir, sma_projectdir, sma_fpgui);
 const
 
- ispyv = 0 ;
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
                       'mselibdir','syntaxdefdir','templatedir','compstoredir','compiler','debugger',
@@ -59,15 +60,23 @@ const
   {$endif}
  
   {$ifdef freebsd}
+ {$ifdef polydev}
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '/usr/local/lib/fpc/2.6.4/','/usr/local/lib/fpc/2.6.4/units/x86_64-freebsd/',
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
                 '/usr/local/share/ideu/templates/','${MSEDIR}apps/ide/compstore/',
-               'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','freebsd',
-               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '/usr/local/share/msegui/', '');
+               'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','linux',
+               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '');
+   {$else}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+                 '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
+                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
+     
    {$endif}
   
-  
+   {$endif}
+    
   {$else}
    {$ifdef CPUARM}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
@@ -87,15 +96,9 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
-                   'ppc386','gdb','','i386-freebsd','freebsd','','','${IDEUDIR}docview/','', '');
-  // ancien
- //  defaultsettingmacros: array[settingsmacroty] of msestring = (
- //                '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
- //               '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
- //                'ppcx64','gdb','','x86_64-freebsd','freebsd','','','${IDEUDIR}docview/','', '');
-
+                   'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '');
   
-   {$endif}
+    {$endif}
   
   
   {$endif}
@@ -294,13 +297,11 @@ begin
     compiler.value:= gINI.ReadString('Path', 'compiler', '/usr/local/share/fpc/2.6.4/ppcx64');
   }
   
-  if ispyv = 1 then
-  begin
-   fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
-   end else
-  begin
+   {$ifdef polydev}
+    fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
+  {$else}
    fpguidir.value:= macros[sma_fpguidir];  
-   end;
+  {$endif}
  
   compstoredir.value:= macros[sma_compstoredir]; 
   debugger.value:= macros[sma_debugger];
@@ -314,8 +315,7 @@ end;
 
 destructor tsettingsfo.destroy;
 begin
- if ispyv = 1 then
-     begin
+  {$ifdef polydev}
     gINI.writeString('Path', 'fpc_dir', fpcdir.value);
     gINI.writeString('Path', 'fpclib_dir', fpclibdir.value);
     gINI.writeString('Path', 'fpgui_dir',fpguidir.value);
@@ -325,7 +325,7 @@ begin
     gINI.writeString('Path', 'syntaxdef_dir',syntaxdefdir.value);
     gINI.writeString('Path', 'template_dir',templatedir.value);
     gINI.writeString('Target', 'osdir', targetosdir.value);  
-  end;
+  {$endif}
  inherited;
 end;
 

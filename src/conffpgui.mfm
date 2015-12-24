@@ -1,9 +1,11 @@
 object conffpguifo: tconffpguifo
+  optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 433
   bounds_y = 209
   bounds_cx = 288
   bounds_cy = 289
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
@@ -87,13 +89,13 @@ object conffpguifo: tconffpguifo
       0
       0
     )
-    hint = 'Path to fpGUI Designer'
+    hint = 'Path of fpGUI Designer'
     bounds_x = 0
     bounds_y = 8
     bounds_cx = 288
     bounds_cy = 41
     anchors = [an_top]
-    controller.captionopen = 'Designer path'
+    controller.captionopen = 'fpGUI Designer path'
     reffontheight = 15
   end
   object enablefpguidesigner: tbooleanedit

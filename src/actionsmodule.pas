@@ -227,6 +227,7 @@ type
    assistive: taction;
    customcompil: taction;
    projectcompile: taction;
+   projectcustomcompile: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -278,6 +279,9 @@ type
    
       // custom is finish
    procedure finishcustom;
+   
+   // Project cust compile
+   procedure custcompileproject(const sender: TObject);
    
    // Custom compile
    procedure compilecustom(const sender: TObject);
@@ -539,6 +543,13 @@ debuggerfo.project_abort_compil.enabled := true;
   end;
    mainfo.resetstartcommand;
  end;
+ 
+ // Project cust compile
+   procedure tactionsmo.custcompileproject(const sender: TObject);
+begin
+saveallactonexecute(sender);
+compileproject(sender);
+end;  
 
 procedure tactionsmo.setupcustom ;
 begin
@@ -563,6 +574,7 @@ end;
 
 procedure tactionsmo.compilecustom(const sender: TObject);
 begin
+saveactonexecute(sender);
 setupcustom ;
 mainfo.customcompile(sender);
 end;
@@ -570,9 +582,7 @@ end;
 procedure tactionsmo.runcustom(const sender: TObject);
 begin
  mainfo.customrun(sender) ;
- end;
- 
- //
+end;
 
 procedure tactionsmo.undoactonexecute(const sender: tobject);
 begin

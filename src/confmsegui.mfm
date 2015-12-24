@@ -12,6 +12,7 @@ object confmseguifo: tconfmseguifo
     377
     167
   )
+  optionswindow = [wo_message]
   options = [fo_screencentered]
   caption = 'Configuration of MSEgui'
   icon.options = [bmo_masked, bmo_graymask]
@@ -39,7 +40,7 @@ object confmseguifo: tconfmseguifo
     bounds_y = 14
     bounds_cx = 360
     bounds_cy = 39
-    anchors = [an_left, an_top, an_right]
+    optionsedit = []
     value = '${MSEDIR}'
     controller.filename = '${MSEDIR}/'
     controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/'

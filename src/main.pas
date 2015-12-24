@@ -26,6 +26,9 @@ unit main;
  {$define mse_no_db}
 {$endif}
 
+/// for custom compil, edit define.inc
+{$I define.inc}
+
 interface
 
 uses
@@ -39,8 +42,7 @@ uses
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
 const
- ispyv = 0 ;
- versiontext = '0.3';
+ versiontext = '1.0.0';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -524,20 +526,17 @@ visible := false;
 options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
 fo_savepos,fo_savezorder,fo_savestate];
 
-if ispyv = 0 then
-begin
-templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/helloideu.prj' ;
- mainfo.openproject(templatepath);
- thetimer.interval := 2500000 ;
- thetimer.enabled := true;
-end else
-begin
+ {$ifdef polydev}
 templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
  mainfo.openproject(templatepath);
   gINI.WriteBool('General', 'FirstLoad', false) ;
  thetimer.free;
- 
-end; 
+ {$else}
+templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/helloideu.prj' ;
+ mainfo.openproject(templatepath);
+ thetimer.interval := 3000000 ;
+ thetimer.enabled := true;
+  {$endif}
 
 visible := true; 
 end else
@@ -558,7 +557,11 @@ componentpalettefo.visible := false;
 objectinspectorfo.visible := false;
 visible := true;
 end;
-if ispyv = 1 then top := 56 ;
+
+{$ifdef polydev}
+top := 56 ;
+ {$endif}
+
 end;
 
 procedure tmainfo.loadconfigform(const sender: TObject);
@@ -584,13 +587,12 @@ begin
     {$endif}
       
     {$IFDEF freebsd}
-    if ispyv = 0 then
-     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext'
-     else 
-       libpath :=  '/usr/local/share/designer_ext/designer_ext'
-    ;
+     {$ifdef polydev}
+       libpath :=  '/usr/local/share/designer_ext/designer_ext' ;
+    {$else}
+        libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext';
     {$endif}
-    
+    {$endif}
     
   conffpguifo.fpguidesigner.value := gINI.ReadString('Path', 'designer_fpGUI', libpath);
   
@@ -606,15 +608,14 @@ begin
   conffpguifo.ifquit.value := gINI.ReadBool('ifquit', 'designer_fpGUI', true);
   conffpguifo.edquit.text := gINI.ReadString('edquit', 'designer_fpGUI', 'quit');
     
-   if ispyv = 1 then
-  begin
+ {$ifdef polydev}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/2.6.4/ppcx64');
    confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.1.1/ppcx64');
 
-  end else begin
+  {$else}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
     confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
-  end;
+  {$endif}
   
    confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
    confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '');
@@ -638,25 +639,25 @@ begin
   confcompilerfo.othercompiler2.value  := gINI.ReadString('other', 'compiler2', '');
   confcompilerfo.othercompiler3.value  := gINI.ReadString('other', 'compiler3', '');
   confcompilerfo.othercompiler4.value  := gINI.ReadString('other', 'compiler4', '');
-   
-  conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', false); 
+  
+  conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', true); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
   
   confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
   
+  libpath :=   IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
      
      {$ifdef windows}
-   confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin\'); 
+   confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', libpath+ 'plugin\'); 
          {$else}
-            if ispyv = 0 then
-    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '${IDEUDIR}plugin/')
-    else
-    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share/')
-    ;  
+         {$ifdef polydev}
+     confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share/');
+    {$else}
+    confideufo.tesakitdir.text := gINI.ReadString('Assistive', 'sakitdir', libpath + 'plugin/');
+       {$endif}
          {$endif}
          
  if  confideufo.tbassistive.value = true then doassistive;
-  
  
   case gINI.ReadInteger('General', 'WarnChange', 2) of
  0 : begin
