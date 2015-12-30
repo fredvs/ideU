@@ -2,7 +2,7 @@ object messagefo: tmessagefo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   frame.localprops = []
   frame.localprops1 = []
-  frame.grip_size = 8
+  frame.grip_size = 10
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
@@ -18,7 +18,7 @@ object messagefo: tmessagefo
   container.bounds = (
     0
     0
-    483
+    481
     317
   )
   dragdock.caption = 'Messages'
@@ -61,7 +61,7 @@ object messagefo: tmessagefo
     popupmenu = tpopupmenu1
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 483
+    bounds_cx = 481
     bounds_cy = 317
     anchors = []
     font.name = 'stf_default'

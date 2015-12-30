@@ -42,7 +42,7 @@ uses
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
 const
- versiontext = '1.0.0';
+ versiontext = '1.0.1';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -3168,25 +3168,35 @@ end;
 //fred
 procedure tmainfo.viewconfmseguiexecute(const sender: TObject);
 begin
+confmseguifo.visible := true;
 confmseguifo.activate;
+//sleep(500);
+confmseguifo.bringtofront;
 end;
 
 procedure tmainfo.viewconfcompilersexecute(const sender: TObject);
 begin
-confcompilerfo.visible := true;
+//
 confcompilerfo.activate;
+//sleep(1500);
+confcompilerfo.visible := true;
+confcompilerfo.bringtofront;
 end;
 
 procedure tmainfo.viewconfideuexecute(const sender: TObject);
 begin
 confideufo.visible := true;
 confideufo.activate;
+//sleep(500);
+confideufo.bringtofront;
 end;
 
 procedure tmainfo.viewconffpguiexecute(const sender: TObject);
 begin
 conffpguifo.visible := true;
 conffpguifo.activate;
+//sleep(500);
+conffpguifo.bringtofront;
 end;
 //
 

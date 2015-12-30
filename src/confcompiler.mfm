@@ -1,8 +1,8 @@
 object confcompilerfo: tconfcompilerfo
-  optionswidget = [ow_arrowfocus, ow_destroywidgets]
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 455
-  bounds_y = 144
+  bounds_x = 334
+  bounds_y = 97
   bounds_cx = 675
   bounds_cy = 501
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -14,7 +14,9 @@ object confcompilerfo: tconfcompilerfo
     675
     501
   )
-  options = [fo_screencentered]
+  optionswindow = [wo_dialog]
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = tstatfile1
   caption = 'Configuration of Compilers'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -654,5 +656,11 @@ object confcompilerfo: tconfcompilerfo
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
+  end
+  object tstatfile1: tstatfile
+    filename = 'confcomp.sta'
+    options = [sfo_memory]
+    left = 16
+    top = 32
   end
 end

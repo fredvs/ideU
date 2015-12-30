@@ -3,9 +3,8 @@ unit conffpgui;
 interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialog,
- msegraphics,msegraphutils,mseclasses,mseforms, mseedit,
- msegraphedits,
- msesimplewidgets;
+ msegraphics,msegraphutils,mseclasses,mseforms, mseedit,msegraphedits,
+ msesimplewidgets,msestat,msestatfile;
 type
  tconffpguifo = class(tmseform)
    fpguidesigner: tfilenameedit;
@@ -24,6 +23,7 @@ type
    ifquit: tbooleanedit;
    edfilter: tedit;
    iffilter: tbooleanedit;
+   tstatfile1: tstatfile;
  end;
 var
  conffpguifo: tconffpguifo;

@@ -627,7 +627,6 @@ type
    makedir: tfilenameedit;
    tsplitter1: tsplitter;
    tsplitter2: tsplitter;
-   tsplitter4: tsplitter;
    tsplitter5: tsplitter;
    ttabpage1: ttabpage;
    macrogrid: twidgetgrid;
@@ -803,6 +802,9 @@ type
    editmarkbrackets: tbooleanedit;
    trimtrailingwhitespace: tbooleanedit;
    fpcgdbworkaround: tbooleanedit;
+   edit_compilernum: tenumedit;
+   edit_compiler: tenumedit;
+   makecommand2: tfilenameedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -2121,6 +2123,8 @@ begin
  projectoptionstoform(fo);
  try
   projectoptionsfo:= fo;
+  // '${COMPILER}'
+  fo.makecommand2.text := fo.makecommand.text ;
   result:= fo.show(true,nil) = mr_ok;
   projectoptionsfo:= nil;
   if result then begin
@@ -2293,10 +2297,12 @@ procedure tprojectoptionsfo.makepageonchildscaled(const sender: TObject);
 var
  int1: integer;
 begin
- placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
-                    defaultmake,makegroupbox],0);
- aligny(wam_center,[mainfile,targetfile,targpref]);
- aligny(wam_center,[makecommand,makedir,messageoutputfile]);
+
+// fred
+// placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
+  //                  defaultmake,makegroupbox],0);
+ // aligny(wam_center,[mainfile,targetfile,targpref]);
+ // aligny(wam_center,[makecommand,makedir,messageoutputfile]);
  int1:= aligny(wam_center,[colorerror,colorwarning,colornote,copymessages]);
  with stripmessageesc do begin
   bounds_y:= int1 - bounds_cy - 2;
@@ -2778,8 +2784,8 @@ begin
  
  closemessages:= true;
  checkmethods:= true;
- fcolorerror:= cl_ltyellow;
- fcolorwarning:= cl_ltred;
+ fcolorerror:= cl_ltred;
+ fcolorwarning:= cl_ltyellow;
  fcolornote:= cl_ltgreen;
  inherited;
 end;

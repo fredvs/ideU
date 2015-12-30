@@ -7,8 +7,8 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton]
   visible = False
-  bounds_x = 118
-  bounds_y = 146
+  bounds_x = 193
+  bounds_y = 310
   bounds_cx = 1029
   bounds_cy = 302
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -102,7 +102,7 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = 18
+    bounds_y = 20
     bounds_cx = 1019
     bounds_cy = 266
     anchors = [an_top, an_bottom]
@@ -1824,7 +1824,7 @@ object mainfo: tmainfo
       'Make OK.'
       'Source has changed, do you wish to remake project?'
       'Load Window Layout'
-      'Docking Area'
+      'Nothing loaded...'
     )
     left = 268
     top = 70

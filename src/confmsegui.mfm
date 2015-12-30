@@ -1,9 +1,11 @@
 object confmseguifo: tconfmseguifo
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 412
-  bounds_y = 275
+  bounds_x = 394
+  bounds_y = 277
   bounds_cx = 377
   bounds_cy = 167
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
@@ -12,8 +14,9 @@ object confmseguifo: tconfmseguifo
     377
     167
   )
-  optionswindow = [wo_message]
-  options = [fo_screencentered]
+  optionswindow = [wo_dialog]
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = tstatfile1
   caption = 'Configuration of MSEgui'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -119,5 +122,11 @@ object confmseguifo: tconfmseguifo
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'
     modalresult = mr_ok
+  end
+  object tstatfile1: tstatfile
+    filename = 'confmse.sta'
+    options = [sfo_memory]
+    left = 16
+    top = 32
   end
 end

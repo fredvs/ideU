@@ -2,7 +2,7 @@ object sourcefo: tsourcefo
   optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
   frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
   frame.localprops1 = []
-  frame.grip_size = 8
+  frame.grip_size = 10
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
@@ -11,7 +11,7 @@ object sourcefo: tsourcefo
   onactivate = enterexe
   visible = False
   bounds_x = 306
-  bounds_y = 194
+  bounds_y = 195
   bounds_cx = 662
   bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -22,7 +22,7 @@ object sourcefo: tsourcefo
   container.bounds = (
     0
     0
-    654
+    652
     340
   )
   dragdock.splitter_size = 0
@@ -93,7 +93,7 @@ object sourcefo: tsourcefo
   object files_tab: ttabwidget
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 654
+    bounds_cx = 652
     bounds_cy = 340
     color = 13750737
     frame.localprops = []
@@ -123,7 +123,7 @@ object sourcefo: tsourcefo
       optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
-      bounds_x = 606
+      bounds_x = 604
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 20
@@ -138,7 +138,7 @@ object sourcefo: tsourcefo
       optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
       taborder = 1
       hint = 'Step forward in code navigation.'
-      bounds_x = 622
+      bounds_x = 620
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 20

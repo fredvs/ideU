@@ -16,6 +16,7 @@ type
    ok: tbutton;
    tbassistive: tbooleanedit;
    tesakitdir: tfilenameedit;
+   tstatfile1: tstatfile;
  end;
 var
  confideufo: tconfideufo;

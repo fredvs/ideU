@@ -1,11 +1,11 @@
 object confideufo: tconfideufo
-  optionswidget = []
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 694
-  bounds_y = 222
+  bounds_x = 522
+  bounds_y = 207
   bounds_cx = 274
   bounds_cy = 218
-  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_subfocus, ow_mousetransparent]
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
@@ -14,7 +14,9 @@ object confideufo: tconfideufo
     274
     218
   )
-  options = [fo_screencentered]
+  optionswindow = [wo_dialog]
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = tstatfile1
   caption = 'Extra Settings of ideU'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -186,5 +188,11 @@ object confideufo: tconfideufo
     controller.options = [fdo_directory]
     controller.captionopen = 'Parent-directory of /sakit'
     reffontheight = 15
+  end
+  object tstatfile1: tstatfile
+    filedir = 'confideu.sta'
+    options = [sfo_memory]
+    left = 16
+    top = 32
   end
 end

@@ -1,8 +1,8 @@
 object conffpguifo: tconffpguifo
-  optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 433
-  bounds_y = 209
+  bounds_x = 429
+  bounds_y = 202
   bounds_cx = 288
   bounds_cy = 289
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -14,7 +14,9 @@ object conffpguifo: tconffpguifo
     288
     289
   )
-  options = [fo_screencentered]
+  optionswindow = [wo_dialog]
+  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = tstatfile1
   caption = 'Configuration of fpGUI'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -312,5 +314,11 @@ object conffpguifo: tconffpguifo
     bounds_y = 255
     bounds_cx = 74
     bounds_cy = 17
+  end
+  object tstatfile1: tstatfile
+    filename = 'conffpg.sta'
+    options = [sfo_memory]
+    left = 16
+    top = 32
   end
 end
