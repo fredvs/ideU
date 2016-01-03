@@ -553,7 +553,6 @@ begin
      // fred hint
   sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
   sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
- // sourcefo.fsourcehintwidget.width := 120; // to force resize ;
   sourcefo.fsourcehintwidget.height := 200; // to force resize ;
    show(false,self.window);
      end;
@@ -880,7 +879,6 @@ begin
  sourcefo.hidesourcehint; 
 end;
 
-// fred
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
 begin
 end;
@@ -1323,6 +1321,7 @@ begin
    with source_editor.fixcols[-1] do begin
     visible:= e.linenumberson;
     width := 50 ;
+    // fred
     color := $F8F8F8 ;
    // color := cl_white ;
     font.color:= $424242 ;
@@ -1398,6 +1397,7 @@ procedure tsourcepage.gridoncellevent(const sender: TObject;
 //var
 // shiftstate1: shiftstatesty;
 begin
+// fred
  if (info.eventkind = cek_buttonpress) then
  begin
  sourcefo.thetimer.Enabled := false;

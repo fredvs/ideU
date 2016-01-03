@@ -18,7 +18,7 @@ unit sak_mse;
 *  1 th release: 2013-06-15  (multi objects, multi forms)                      *
 *******************************************************************************}
     {
-    Copyright (C) 2013 - 2015  Fred van Stappen
+    Copyright (C) 2013 - 2016  Fred van Stappen
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public

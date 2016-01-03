@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2014 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,8 +41,9 @@ uses
  mseprocmonitorcomp,msesystypes,mserttistat,
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
+
 const
- versiontext = '1.0.1';
+ versiontext = '1.0.2';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -3222,36 +3223,36 @@ end;
 
 procedure tmainfo.aboutonexecute(const sender: TObject);
 begin
- showmessage('MSEgui version: '+mseguiversiontext+c_linefeed+
-             'Host: '+ platformtext+ c_linefeed+
+ showmessage('                   MSEgui version: '+mseguiversiontext+c_linefeed+ c_linefeed+
+             '                     Host: '+ platformtext+ c_linefeed+
              c_linefeed+
-             'Copyright 1999-2015'+c_linefeed+
-             'by Martin Schreiber'
+             '  by Martin Schreiber. Copyright 1999-2016. '+c_linefeed+
+             'http://sourceforge.net/projects/mseide-msegui/'
              ,actionsmo.c[ord(ac_about)]+' MSEgui');
 end;
 
 procedure tmainfo.aboutfpguionexecute(const sender: TObject);
 begin
- showmessage('fpGUI version: 1.4' + c_linefeed+
-          'Host: '+ platformtext+ c_linefeed+
+ showmessage('      fpGUI version: 1.4' + c_linefeed+
+          '     Host: '+ platformtext+ c_linefeed+
              c_linefeed+
-                 'Copyright 1999-2015'+c_linefeed+
-             'by Graeme Geldenhuys' +c_linefeed+
-              '<graemeg@gmail.com>'
+                 '  Copyright 1999-2016'+c_linefeed+
+             ' by Graeme Geldenhuys' +c_linefeed+
+              ' <graemeg@gmail.com> '
              ,actionsmo.c[ord(ac_about)]+' fpGUI');
 end;
 
 procedure tmainfo.aboutideuonexecute(const sender: TObject);
 begin
- showmessage('ideU version: 1.0' + c_linefeed+
- 			 'Host: '+ platformtext+ c_linefeed+
+ showmessage('    ideU version: ' + versiontext + c_linefeed+
+ 			 '   Host: '+ platformtext+ c_linefeed+
              c_linefeed+
                      
-            'Based on MSEide'
+            '   Based on MSEide'
             +c_linefeed+
-             'by Martin Schreiber'
+             ' by Martin Schreiber'
             +c_linefeed+ c_linefeed+
-             'Copyright 1999-2015'+c_linefeed+
+             'Copyright 1999-2016'+c_linefeed+
               'by Fred van Stappen' +c_linefeed+
                '<fiens@hotmail.com>'
              ,actionsmo.c[ord(ac_about)]+' ideU');

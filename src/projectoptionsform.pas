@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -428,6 +428,7 @@ type
    fcolorerror: colorty;
    fcolorwarning: colorty;
    fcolornote: colorty;
+   fcolorbkgrbracket: colorty;
    fuid: integer;
    fforcezorder: longbool;
    ftoolshortcuts: integerarty;
@@ -450,6 +451,7 @@ type
    property colorerror: colorty read fcolorerror write fcolorerror;
    property colorwarning: colorty read fcolorwarning write fcolorwarning;
    property colornote: colorty read fcolornote write fcolornote;
+   property colorbkgrbracket: colorty read fcolorbkgrbracket write fcolorbkgrbracket;
 
    property usercolors: colorarty read fusercolors write fusercolors;
    property usercolorcomment: msestringarty read fusercolorcomment 
@@ -585,7 +587,6 @@ type
    stoponexception: tbooleanedit;
    activateonbreak: tbooleanedit;
    makepage: ttabpage;
-   tspacer2: tspacer;
    defaultmake: tenumedit;
    mainfile: tfilenameedit;
    targetfile: tfilenameedit;
@@ -625,9 +626,6 @@ type
    tspacer1: tspacer;
    targpref: tstringedit;
    makedir: tfilenameedit;
-   tsplitter1: tsplitter;
-   tsplitter2: tsplitter;
-   tsplitter5: tsplitter;
    ttabpage1: ttabpage;
    macrogrid: twidgetgrid;
    e0: tbooleanedit;
@@ -778,9 +776,7 @@ type
    formatmacronames: tstringedit;
    formatmacrovalues: tstringedit;
    colorerror: tcoloredit;
-   tspacer5: tspacer;
    colorwarning: tcoloredit;
-   tspacer6: tspacer;
    colornote: tcoloredit;
    c: tstringcontainer;
    xtermcommand: tmemodialogedit;
@@ -788,7 +784,6 @@ type
    tlayouter14: tlayouter;
    rightmarginon: tbooleanedit;
    linenumberson: tbooleanedit;
-   tspacer4: tspacer;
    stripmessageesc: tbooleanedit;
    raiseonbreak: tbooleanedit;
    noformdesignerdocking: tbooleanedit;
@@ -805,6 +800,7 @@ type
    edit_compilernum: tenumedit;
    edit_compiler: tenumedit;
    makecommand2: tfilenameedit;
+   bracketbkgrcolor: tcoloredit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -884,6 +880,7 @@ var
  windowlayoutfile: filenamety;
  windowlayouthistory: filenamearty;
  codetemplates: tcodetemplates;
+ 
 
 implementation
 uses
@@ -901,8 +898,8 @@ uses
  {$ifndef mse_no_ifi}{$ifdef FPC},mseificomponenteditors,
  mseififieldeditor{$endif}{$endif};
 
-var
- projectoptionsfo: tprojectoptionsfo;
+ var
+  projectoptionsfo: tprojectoptionsfo;
 type
 
  stringconststy = (
@@ -1892,6 +1889,11 @@ begin
     fo.sighandle[int1]:= sfl_handle in flags;
    end;
   end;
+  
+   // fred
+  fo.bracketbkgrcolor.value := o.colorbkgrbracket;
+  //
+  
   fo.fontondataentered(nil);
   fo.defaultmake.value:= lowestbit(defaultmake);
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
@@ -2017,7 +2019,11 @@ begin
     o.fontxscales[int1]:= 1.0;
    end;   
   end;
-
+  
+  // fred
+  o.colorbkgrbracket := fo.bracketbkgrcolor.value;
+  //
+  
   defaultmake:= 1 shl fo.defaultmake.value;
   setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
   for int1:= 0 to high(o.fmakeoptionson) do begin
@@ -2294,32 +2300,35 @@ begin
 end;
 
 procedure tprojectoptionsfo.makepageonchildscaled(const sender: TObject);
-var
- int1: integer;
+//var
+// int1: integer;
 begin
 
 // fred
+{
 // placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
   //                  defaultmake,makegroupbox],0);
  // aligny(wam_center,[mainfile,targetfile,targpref]);
  // aligny(wam_center,[makecommand,makedir,messageoutputfile]);
- int1:= aligny(wam_center,[colorerror,colorwarning,colornote,copymessages]);
+// int1:= aligny(wam_center,[colorerror,colorwarning,colornote,copymessages]);
  with stripmessageesc do begin
-  bounds_y:= int1 - bounds_cy - 2;
+ // bounds_y:= int1 - bounds_cy - 2;
  end;
  with copymessages do begin
-  pos:= makepoint(stripmessageesc.bounds_x,int1);
+ // pos:= makepoint(stripmessageesc.bounds_x,int1);
  end;
  
- placexorder(defaultmake.bounds_x,[10-defaultmake.frame.outerframe.right,10],
-             [defaultmake,showcommandline,checkmethods]);
- int1:= aligny(wam_center,[defaultmake,showcommandline]);
+// placexorder(defaultmake.bounds_x,[10-defaultmake.frame.outerframe.right,10],
+  //           [defaultmake,showcommandline,checkmethods]);
+ //int1:= aligny(wam_center,[defaultmake,showcommandline]);
  with checkmethods do begin
-  bounds_y:= int1 - bounds_cy - 2;
+//  bounds_y:= int1 - bounds_cy - 2;
  end;
  with closemessages do begin
-  pos:= makepoint(checkmethods.bounds_x,int1);
+//  pos:= makepoint(checkmethods.bounds_x,int1);
  end;
+ 
+} 
 end;
 
 procedure tprojectoptionsfo.debuggerlayoutexe(const sender: TObject);
@@ -2787,6 +2796,7 @@ begin
  fcolorerror:= cl_ltred;
  fcolorwarning:= cl_ltyellow;
  fcolornote:= cl_ltgreen;
+ fcolorbkgrbracket := cl_yellow;
  inherited;
 end;
 {

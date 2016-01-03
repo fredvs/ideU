@@ -3,24 +3,26 @@
 #  Fred van Stappen
 #
 
-caseinsensitive
-
 # COLORS [[[fontcolor [backgroundcolor [statementcolor]]]
 #                      cl_default for project options settings 
 COLORS cl_black cl_white
 
+caseinsensitive
+
 styles
  default ''
+ words2 'b'
  words 'b' cl_black
  comment '' cl_blue 
  option '' cl_red 
  string '' cl_dkgreen
  symbol '' cl_red
  beginend 'b' $4D006B
+ beginend2 '' $4D006B
 
 keyworddefs pascal
  'ABSOLUTE' 'ABSTRACT' 'AND' 'ARRAY' 'AS' 'ASM' 'ASSEMBLER' 
- 'BREAK' 'CASE' 'CDECL' 'CLASS' 'CONST' 'CONSTREF' 'CONSTRUCTOR'
+ 'BREAK' 'CASE' 'CDECL' 'CONST' 'CONSTREF' 'CONSTRUCTOR'
  'CONTINUE' 'DEFAULT' 'DEPRECATED' 'DESTRUCTOR' 'DISPOSE' 'DIV' 'DO' 'DOWNTO'
  'ELSE' 'EXCEPT' 'EXIT' 'EXPORT' 'EXPORTS' 'EXTERNAL' 'FAIL'
  'FALSE' 'FAR' 'FILE' 'FINALIZATION' 'FINALLY' 'FOR' 'FORWARD' 'FUNCTION' 'GOTO' 'IF'
@@ -32,14 +34,13 @@ keyworddefs pascal
  'PUBLIC' 'PUBLISHED' 'RAISE' 'READ' 'RECORD' 'REINTRODUCE' 'REPEAT' 
  'RESOURCESTRING'
  'SELF' 'SET' 'SHL' 'SHR'
- 'STDCALL' 'STORED' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TRY' 'TYPE' 'UNIT' 'UNTIL'
+ 'STDCALL' 'STORED' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TYPE' 'UNIT' 'UNTIL'
  'USES' 'VAR' 'VIRTUAL' 'WHILE' 'WITH' 'WRITE' 'XOR'
  'OVERLOAD' 'OVERRIDE'
 
 keyworddefs pascalplus
- 'BEGIN' 'END' 
- 
- 
+ 'CLASS' 'CASE' 'END' 'BEGIN' 'TRY'
+
 scope option option
  endtokens
   '}'
@@ -48,6 +49,14 @@ scope comment1 comment
  endtokens
   '}'
 
+scope commentfred beginend2
+ endtokens
+  .'END;'.
+  
+scope commentfred2 beginend2
+ endtokens
+  .'END'
+  
 scope comment2 comment
  endtokens
   ''
@@ -88,10 +97,12 @@ scope main
 
  keywords words
   pascal
-  
- pascalplus beginend
-  
-   calltokens
+
+ pascalplus beginend  
+   
+ calltokens
+ .'TRY'. commentfred2 option
+  .'BEGIN'. commentfred beginend
   '{$' option
   '{' comment1
   '//' comment2
@@ -114,7 +125,8 @@ scope main
   '*' symbol1
   '[' symbol1
   ']' symbol1
- 
+  
+  
   
   
   

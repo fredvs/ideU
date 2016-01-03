@@ -228,6 +228,7 @@ type
    customcompil: taction;
    projectcompile: taction;
    projectcustomcompile: taction;
+   custmakemenu: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -275,6 +276,9 @@ type
    // Setup ready
    procedure setupcustom ;
    
+   // Setup ready from menu
+   procedure setupcustommenu(const sender: TObject); 
+   
    procedure initproject ;
    
       // custom is finish
@@ -285,6 +289,9 @@ type
    
    // Custom compile
    procedure compilecustom(const sender: TObject);
+   
+   // Custom compile
+   procedure compilecustommenu(const sender: TObject);
    
    // Project compile
    procedure compileproject(const sender: TObject);
@@ -576,6 +583,34 @@ procedure tactionsmo.compilecustom(const sender: TObject);
 begin
 saveactonexecute(sender);
 setupcustom ;
+mainfo.customcompile(sender);
+end;
+
+procedure tactionsmo.setupcustommenu(const sender: TObject) ;
+begin
+   debuggerfo.edited_make.enabled := false;
+  debuggerfo.edited_abort.enabled := true;
+  debuggerfo.edited_run.enabled := false;
+  
+  mainfo.settypecompiler := debuggerfo.edit_compiler.value + 1;
+  
+  mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
+  
+   case tmenuitem(sender).tag of
+  0 : mainfo.customoption := 1 ;
+   1 : mainfo.customoption := 2 ;
+   2 : mainfo.customoption := 4 ;
+    3 : mainfo.customoption := 8 ;
+     4 : mainfo.customoption := 16 ;
+   5 : mainfo.customoption := 32 ;   
+  end;
+    
+end;
+
+procedure tactionsmo.compilecustommenu(const sender: TObject);
+begin
+saveactonexecute(sender);
+setupcustommenu(sender) ;
 mainfo.customcompile(sender);
 end;
 

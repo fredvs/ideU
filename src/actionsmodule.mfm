@@ -3399,4 +3399,10 @@ object actionsmo: tactionsmo
     left = 547
     top = 156
   end
+  object custmakemenu: taction
+    tagaction = 9
+    onexecute = compilecustommenu
+    left = 489
+    top = 301
+  end
 end
