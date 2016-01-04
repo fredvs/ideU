@@ -100,7 +100,7 @@ replacedialog=17
  y=302
  cx=421
  cy=163
-options=110
+options=104
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
@@ -187,12 +187,6 @@ options=110
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=4
- [projectoptionsfo.grid]
- propcolwidthref=573
- width0=219
- sortdescend0=0
- width1=566
- sortdescend1=0
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=680
  width0=112
@@ -632,6 +626,7 @@ editfontextraspace=0
 editfontcolor=-1879048183
 editbkcolor=-1879048186
 statementcolor=14745599
+bracketbkgcolor=-1610612713
 editfontantialiased=1
 editmarkbrackets=1
 backupfilecount=0
@@ -759,14 +754,14 @@ address=11
  4782432
  4813366
  4636131
- 8016244
- 8018439
- 8018242
- 8013652
- 8014760
+ 8013332
+ 8015527
+ 8015330
+ 8010740
+ 8011848
  4777027
  4835313
- 7599185
+ 7596273
 addbkpt=11
  0
  0
@@ -916,8 +911,8 @@ editpos=23
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 3,884
- 0,609
+ 0,-1073741823
+ 22,553
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1036,9 +1031,9 @@ nomenumodules=4
 [sourcefo.tabwidget]
 tabsize=172
 firsttab=0
-index=21
+index=22
 [layout]
-windowlayout=554
+windowlayout=553
  [mainfo.openform]
  filenames=0
  filecolwidth=0
@@ -1050,14 +1045,13 @@ windowlayout=554
  filefilterindex=0
  filefilter=
  [mainfo.projectfiledia]
- filecolwidth=0
+ filecolwidth=174
  x=0
  y=0
  cx=0
  cy=0
  [mainfo.openfile]
- filenames=1
-  /home/fred/ideu/src/msesyntaxedit.pas
+ filenames=0
  filecolwidth=174
  x=389
  y=217

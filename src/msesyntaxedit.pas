@@ -13,7 +13,7 @@ unit msesyntaxedit;
 
 interface
 uses
- classes,mclasses,msetextedit,msesyntaxpainter,mseclasses,
+ classes,mclasses,msetextedit,msesyntaxpainter,mseclasses, 
  mseglob,mseguiglob,msetypes,mseevent,
  mseeditglob,msestrings,msewidgetgrid,msedatalist,msemenus,msegui,mseinplaceedit,
  msegrids,mseedit,msegraphics;
@@ -24,8 +24,8 @@ type
  
 const
 // fred
- openbrackets: array[bracketkindty] of msestring = (#0,'(','[','{','b');
- closebrackets: array[bracketkindty] of msestring = (#0,')',']','}','d');
+ openbrackets: array[bracketkindty] of msechar = (#0,'(','[','{','b');
+ closebrackets: array[bracketkindty] of msechar = (#0,')',']','}','d');
 
 type
  syntaxeditoptionty = (seo_autoindent,seo_markbrackets,seo_defaultsyntax);
@@ -548,8 +548,8 @@ var
  po1: pmsecharaty;
  int1, poso, posc: integer;
  // fred
-// openchar,closechar,mch1: msechar;
- openchar,closechar,mch1, mch2: msestring;
+ //openchar,closechar: msechar;
+ openchar,closechar,mch1, mch2: msestring ;
 begin
  result:= invalidcell;
  level:= 0;
@@ -559,63 +559,39 @@ begin
  openchar:= openbrackets[akind];
  closechar:= closebrackets[akind];
  
- if (openchar = 'b') or (closechar = 'd') 
-// or (openchar = 'e') 
-// or (openchar = 'g') 
-//  or (openchar = 'i') 
-//   or (openchar = 'n')
- then
-  begin
-   case openchar of
- 'b' : poso := 0 ;
- 'e' : poso := 1 ;
- 'g' : poso := 2 ;
- 'i' : poso := 3 ;
- 'n' : poso := 4 ;
-   end;
-  case closechar of
- 'e' : posc := 0 ;
- 'n' : posc := 1 ;
- 'd' : posc := 2 ;
-  end; 
-   
- openchar:= 'begin';
+ if (openchar = 'b') or (closechar = 'd') then
+ begin
+  openchar:= 'begin';
   closechar:= 'end';
   end ;
- 
- 
+  
  if open then begin
   while (maxrows > 0) and (y < flines.count) do begin
    strpo:= pmsestring(flines.getitempo(y));
    po1:= pmsecharaty(strpo^);
   
    for int1:= x to length(strpo^)-1 do begin
-   // fred
-   // mch1:= po1^[int1] ;
-   if openchar= 'begin' then begin
-    case poso of
- 0 : mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5];
- 1 : mch1:= po1^[int1-1] + po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3]  + po1^[int1+4];
- 2 : mch1:= po1^[int1-2] + po1^[int1-1]+ po1^[int1] + po1^[int1+1] + po1^[int1+2]  + po1^[int1+3];
- 3 : mch1 := po1^[int1-3] + po1^[int1-2]+ po1^[int1-1] + po1^[int1] + po1^[int1+1] + po1^[int1+2];
- 4 : mch1 := po1^[int1-4] + po1^[int1-3]+ po1^[int1-2] + po1^[int1-1] + po1^[int1] + po1^[int1+1];
-  end;
- 
-   case posc of
- 0 : mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2]  + po1^[int1+3];
- 1 : mch2:= po1^[int1-1]+ po1^[int1] + po1^[int1+1]  + po1^[int1+2] ;
- 2 : mch2:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] ;
- end;  
-      end else 
+   
+     /// Here a loop would be nicer...
+    if openchar= 'begin' then 
+    begin
+    if int1+5 < length(strpo^) then
+     mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
+     mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
+   
+     if int1+1 < length(strpo^) then
+     mch2:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
+     mch2:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
+    end else 
     begin
     mch1:= po1^[int1] ;
     mch2:= mch1 ;
     end;
       
-    if ((mch1) = openchar + ' ' ) or (mch1 = openchar+ #10) or  (mch1 = openchar)   then begin
+    if (mch1 = openchar + ' ') or (mch1 = openchar) then begin
      inc(level);
     end;
-    if ((mch2) = closechar+ ' ') or (mch2 = closechar+ ';') or (mch2 = closechar) or (mch2 = closechar+ #10)  then begin
+    if (mch2 = closechar + ' ') or (mch2 = closechar+ ';') or (mch2 = closechar) then begin
      dec(level);
      if level <= 0 then begin
       result.row:= y;
@@ -637,33 +613,28 @@ begin
    po1:= pmsecharaty(strpo^);
    for int1:= x downto 0 do begin
 
-   // fred
-   // mch1:= po1^[int1];
-  if closechar= 'end' then begin
-    case poso of
- 0 : mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5];
- 1 : mch2:= po1^[int1-1] + po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3]  + po1^[int1+4];
- 2 : mch2:= po1^[int1-2] + po1^[int1-1]+ po1^[int1] + po1^[int1+1] + po1^[int1+2]  + po1^[int1+3];
- 3 : mch2 := po1^[int1-3] + po1^[int1-2]+ po1^[int1-1] + po1^[int1] + po1^[int1+1] + po1^[int1+2];
- 4 : mch2 := po1^[int1-4] + po1^[int1-3]+ po1^[int1-2] + po1^[int1-1] + po1^[int1] + po1^[int1+1];
-  end;
- 
-   case posc of
- 0 : mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2]  + po1^[int1+3] ;
- 1 : mch1:= po1^[int1-1]+ po1^[int1] + po1^[int1+1]  + po1^[int1+2] ;
- 2 : mch1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] ;
- end; 
- 
-    end else 
+   /// Here a loop would be nicer...
+  if closechar= 'end' then 
+   begin
+   if int1+5 < length(strpo^) then
+     mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
+     mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
+  
+   if int1+1 < length(strpo^) then
+     mch1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
+     mch1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
+  
+   end else 
     begin
     mch1:= po1^[int1] ;
     mch2:= mch1 ;
     end;
-     
-      if((mch1) = closechar + ' ' ) or (mch1 = closechar+ ';')  or (mch1 = closechar) or (mch1 = closechar+  #10)  then begin
-     inc(level);
+   
+    if (mch1 = closechar + ' ') or (mch1 = closechar+ ';')
+     or (mch1 = closechar) then begin
+      inc(level);
     end;
-    if ((mch2) = openchar + ' ' ) or (mch2 = openchar+ #10 ) or (mch2 = openchar) then begin
+   if (mch2 = openchar + ' ') or (mch2 = openchar) then begin
      dec(level);
      if level <= 0 then begin
       result.row:= y;
