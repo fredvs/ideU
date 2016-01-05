@@ -55,18 +55,18 @@ findinfiledialog=53
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=2015
+ value=cl_blue
  history=10
+  cl_blue
+  bracketbkgcolor
+  fmarkbracketbkgcolor
+  isbeginend
   2015
   setfontstyle
   fs_bold
   endtokens
   makecommand
   docking area
-  spyv
-  sakitdir
-  mtk_
-  statdisp
  [findinfileadialogfo]
  stackedunder=
  x=636
@@ -520,15 +520,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=4
  FORMDESIGNERFO
  MAINFO
-moduletypes=2
+ PROJECTOPTIONSFO
+ SOURCEPAGE
+moduletypes=4
  TFORMDESIGNERFO
  TMAINFO
-modulefiles=2
+ TPROJECTOPTIONSFO
+ TSOURCEPAGE
+modulefiles=4
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/msegui/apps/ide/sourcepage.mfm
 befcommandon=0
 makeoptionson=6
  63
@@ -714,7 +720,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=32
 [breakpoints]
-on=11
+on=12
  0
  0
  0
@@ -726,7 +732,8 @@ on=11
  0
  0
  0
-path=11
+ 0
+path=12
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -738,8 +745,9 @@ path=11
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/msesyntaxpainter.pas
-line=11
- 677
+ /home/fred/ideu/src/msesyntaxedit.pas
+line=12
+ 678
  2129
  834
  1077
@@ -747,22 +755,24 @@ line=11
  1163
  947
  1010
- 539
- 3186
- 641
-address=11
- 4782432
+ 540
+ 3187
+ 644
+ 117
+address=12
+ 4782480
  4813366
  4636131
- 8013332
- 8015527
- 8015330
- 8010740
- 8011848
- 4777027
+ 8013636
+ 8015831
+ 8015634
+ 8011044
+ 8012152
+ 4777043
  4835313
- 7596273
-addbkpt=11
+ 7596363
+ 7578736
+addbkpt=12
  0
  0
  0
@@ -774,7 +784,8 @@ addbkpt=11
  0
  0
  0
-ignore=11
+ 0
+ignore=12
  0
  0
  0
@@ -786,7 +797,9 @@ ignore=11
  0
  0
  0
-condition=11
+ 0
+condition=12
+ 
  
  
  
@@ -874,24 +887,19 @@ hintheight=0
 finddtext=fred
 findhistory=10
  fred
- getboldchar
- tsyntaxedit.matchbracket
- braket
- versio
- fiens
+ tsourcepage.updatestatvalues;
+ grid.wheelscrollheight:= e.scrollheight;
  bracket
- .tag
- compilecustom
- object custmake3: taction
-+  tagaction = 9
-+  left = 499
-+  top = 392
-+end
-+compilecustom
+ teditoptions = class(toptions)
+ constructor teditoptions.create;
+ if assigned(onlinechanged) then begin
+ function tsyntaxedit.matchbracket(const apos: gridcoordty;
+ bracketbkg
+ fbracket2:= pt2;
 findoptions=1
-editpos=23
+editpos=29
  0,609
- 0,3254
+ 0,1269
  0,12
  0,-1073741823
  0,-1073741823
@@ -908,11 +916,17 @@ editpos=23
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2318
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 22,553
+ 0,1664
+ 0,21
+ 0,217
+ 0,311
+ 0,1276
+ 0,1377
+ 0,0
+ 0,109
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -936,7 +950,13 @@ bookmarks19=0
 bookmarks20=0
 bookmarks21=0
 bookmarks22=0
-sourcefiles=23
+bookmarks23=0
+bookmarks24=0
+bookmarks25=0
+bookmarks26=0
+bookmarks27=0
+bookmarks28=0
+sourcefiles=29
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/formdesigner.pas
@@ -960,7 +980,13 @@ sourcefiles=23
  /home/fred/ideu/src/findinfilepage.pas
  /home/fred/ideu/src/msesyntaxpainter.pas
  /home/fred/ideu/src/msesyntaxedit.pas
-relpaths=23
+ /home/fred/msegui/lib/common/kernel/mserichstring.pas
+ /home/fred/msegui/lib/common/kernel/msetypes.pas
+ /home/fred/msegui/apps/ide/sourcepage.pas
+ /home/fred/ideu/src/sourcepage.pas
+ /home/fred/ideu/src/sourcepage.mfm
+ /home/fred/msegui/lib/common/graphics/msegraphutils.pas
+relpaths=29
  actionsmodule.pas
  main.pas
  formdesigner.pas
@@ -984,7 +1010,13 @@ relpaths=23
  findinfilepage.pas
  msesyntaxpainter.pas
  msesyntaxedit.pas
-ismoduletexts=23
+ ../../msegui/lib/common/kernel/mserichstring.pas
+ ../../msegui/lib/common/kernel/msetypes.pas
+ ../../msegui/apps/ide/sourcepage.pas
+ sourcepage.pas
+ sourcepage.mfm
+ ../../msegui/lib/common/graphics/msegraphutils.pas
+ismoduletexts=29
  0
  0
  0
@@ -1008,32 +1040,76 @@ ismoduletexts=23
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ -1
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/formdesigner.mfm
-moduleoptions=4
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/msegui/apps/ide/sourcepage.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
+ 0
+ 0
+ 0
+ 0
+ -1
+ -1
+nomenumodules=6
+ 0
+ -1
  -1
  0
  0
- -1
-nomenumodules=4
- 0
- -1
- -1
  0
 [sourcefo.tabwidget]
+order=29
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 28
+ 19
+ 20
+ 21
+ 24
+ 23
+ 22
+ 25
+ 26
+ 27
 tabsize=172
-firsttab=0
+firsttab=4
 index=22
 [layout]
-windowlayout=553
+windowlayout=593
  [mainfo.openform]
  filenames=0
  filecolwidth=0
@@ -1051,13 +1127,15 @@ windowlayout=553
  cx=0
  cy=0
  [mainfo.openfile]
- filenames=0
+ filenames=1
+  /home/fred/ideu/src/sourcepage.pas
  filecolwidth=174
  x=389
  y=217
  cx=587
  cy=308
- filehistory=4
+ filehistory=5
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/msesyntaxedit.pas
   /home/fred/msegui/lib/common/designutils/msesyntaxedit.pas
   /home/fred/ideu/src/mserichstring.pas
@@ -1077,13 +1155,13 @@ windowlayout=553
  ny=0
  ncx=0
  ncy=0
- x=6
- y=34
+ x=3
+ y=46
  cx=1360
- cy=621
+ cy=671
  rcx=0
  rcy=0
- wsize=4
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1101,7 +1179,7 @@ windowlayout=553
  cy=347
  rcx=0
  rcy=0
- wsize=0
+ wsize=3
  active=0
  visible=0
  [threadsfo]
@@ -1152,7 +1230,7 @@ windowlayout=553
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1293,14 +1371,14 @@ windowlayout=553
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=breakpointsfo
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=364
+ x=366
  y=100
  cx=839
  cy=629
@@ -1308,7 +1386,7 @@ windowlayout=553
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [objectinspectorfo.grid]
  propcolwidthref=829
  width0=206
@@ -1318,7 +1396,7 @@ windowlayout=553
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=disassfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1404,15 +1482,15 @@ windowlayout=553
  ncx=0
  ncy=0
  x=0
- y=582
- cx=1356
- cy=98
+ y=494
+ cx=1350
+ cy=139
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
  useroptions=268460155
- stackedunder=symbolfo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -1505,8 +1583,8 @@ windowlayout=553
  ncy=0
  x=0
  y=0
- cx=1356
- cy=48
+ cx=1350
+ cy=43
  rcx=0
  rcy=0
  [sourcefo]
@@ -1520,9 +1598,9 @@ windowlayout=553
  ncx=0
  ncy=0
  x=0
- y=51
- cx=1356
- cy=528
+ y=46
+ cx=1350
+ cy=445
  rcx=0
  rcy=0
  [actionsmo.watchesonact]
@@ -1552,7 +1630,7 @@ windowlayout=553
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_formdesignerfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1565,13 +1643,13 @@ windowlayout=553
  cy=302
  rcx=0
  rcy=0
- wsize=0
+ wsize=3
  active=0
- visible=1
+ visible=0
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1582,6 +1660,44 @@ windowlayout=553
  y=239
  cx=297
  cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=162
+ y=111
+ cx=875
+ cy=568
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=192
+ y=245
+ cx=321
+ cy=228
  rcx=0
  rcy=0
  wsize=0

@@ -1318,7 +1318,7 @@ begin
    source_editor.rowcolors[0]:= e.statementcolor;
    source_editor.datarowheight:= edit.font.lineheight;
    int1:= edit.getcanvas.getstringwidth('oo') div 2;
-   with source_editor.fixcols[-1] do begin
+  with source_editor.fixcols[-1] do begin
     visible:= e.linenumberson;
     width := 50 ;
     // fred
@@ -1364,6 +1364,7 @@ begin
     end;
    end;
    source_editor.wheelscrollheight:= e.scrollheight;
+   edit.markbracketbkgcolor:= e.bracketbkgcolor;
    if edit.syntaxpainterhandle >= 0 then begin
     colors:= edit.syntaxpainter.colors[edit.syntaxpainterhandle];
     with colors do begin

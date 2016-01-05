@@ -197,6 +197,7 @@ type
    fencoding: integer;
    fnoformdesignerdocking: boolean;
    ftrimtrailingwhitespace: boolean;
+   fbracketbkgcolor: integer;
    function limitgridsize(const avalue: integer): integer;
    procedure setgridsizex(const avalue: integer);
    procedure setgridsizey(const avalue: integer);
@@ -238,6 +239,9 @@ type
    property editfontcolor: integer read feditfontcolor write feditfontcolor;
    property editbkcolor: integer read feditbkcolor write feditbkcolor;
    property statementcolor: integer read fstatementcolor write fstatementcolor;
+   
+   property bracketbkgcolor: integer read fbracketbkgcolor 
+                                             write fbracketbkgcolor;
    
    property editfontantialiased: boolean read feditfontantialiased 
                                               write feditfontantialiased;
@@ -428,7 +432,6 @@ type
    fcolorerror: colorty;
    fcolorwarning: colorty;
    fcolornote: colorty;
-   fcolorbkgrbracket: colorty;
    fuid: integer;
    fforcezorder: longbool;
    ftoolshortcuts: integerarty;
@@ -451,8 +454,7 @@ type
    property colorerror: colorty read fcolorerror write fcolorerror;
    property colorwarning: colorty read fcolorwarning write fcolorwarning;
    property colornote: colorty read fcolornote write fcolornote;
-   property colorbkgrbracket: colorty read fcolorbkgrbracket write fcolorbkgrbracket;
-
+   
    property usercolors: colorarty read fusercolors write fusercolors;
    property usercolorcomment: msestringarty read fusercolorcomment 
                                                  write fusercolorcomment;
@@ -800,7 +802,7 @@ type
    edit_compilernum: tenumedit;
    edit_compiler: tenumedit;
    makecommand2: tfilenameedit;
-   bracketbkgrcolor: tcoloredit;
+   bracketbkgcolor: tcoloredit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1889,11 +1891,7 @@ begin
     fo.sighandle[int1]:= sfl_handle in flags;
    end;
   end;
-  
-   // fred
-  fo.bracketbkgrcolor.value := o.colorbkgrbracket;
-  //
-  
+
   fo.fontondataentered(nil);
   fo.defaultmake.value:= lowestbit(defaultmake);
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
@@ -2019,10 +2017,6 @@ begin
     o.fontxscales[int1]:= 1.0;
    end;   
   end;
-  
-  // fred
-  o.colorbkgrbracket := fo.bracketbkgrcolor.value;
-  //
   
   defaultmake:= 1 shl fo.defaultmake.value;
   setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
@@ -2796,7 +2790,6 @@ begin
  fcolorerror:= cl_ltred;
  fcolorwarning:= cl_ltyellow;
  fcolornote:= cl_ltgreen;
- fcolorbkgrbracket := cl_yellow;
  inherited;
 end;
 {
@@ -2847,6 +2840,7 @@ begin
  editfontcolor:= integer(cl_text);
  editbkcolor:= integer(cl_foreground);
  statementcolor:= $E0FFFF;
+ bracketbkgcolor:= int32(cl_yellow);
  editfontantialiased:= true;
  editmarkbrackets:= true;
  backupfilecount:= 2;

@@ -13,7 +13,7 @@ unit msesyntaxedit;
 
 interface
 uses
- classes,mclasses,msetextedit,msesyntaxpainter,mseclasses, 
+ classes,mclasses,msetextedit,msesyntaxpainter,mseclasses,msegraphutils,
  mseglob,mseguiglob,msetypes,mseevent,
  mseeditglob,msestrings,msewidgetgrid,msedatalist,msemenus,msegui,mseinplaceedit,
  msegrids,mseedit,msegraphics;
@@ -26,7 +26,7 @@ const
 // fred
  openbrackets: array[bracketkindty] of msechar = (#0,'(','[','{','b');
  closebrackets: array[bracketkindty] of msechar = (#0,')',']','}','d');
-
+ 
 type
  syntaxeditoptionty = (seo_autoindent,seo_markbrackets,seo_defaultsyntax);
  syntaxeditoptionsty = set of syntaxeditoptionty;
@@ -42,6 +42,7 @@ type
    fsyntaxchanging: integer;
    fbracketsetting: integer;
    fbracketchecking: integer;
+   fmarkbracketbkgcolor: colorty;
    procedure setsyntaxpainter(const Value: tsyntaxpainter);
    procedure unregistersyntaxpainter;
    procedure syntaxchanged(const sender: tobject; const index: integer);
@@ -64,8 +65,8 @@ type
    procedure loaded; override;
    function createdatalist(const sender: twidgetcol): tdatalist; override;
    procedure defineproperties(filer: tfiler); override;
-   procedure clearbrackets;
-   procedure checkbrackets;
+   procedure clearbrackets();
+   procedure checkbrackets();
    procedure editnotification(var info: editnotificationinfoty); override;
    procedure doasyncevent(var atag: integer); override;
    procedure doafterpaint(const canvas: tcanvas); override;
@@ -111,13 +112,15 @@ type
 //                             write setdefaultsyntax default false;
    property options: syntaxeditoptionsty read foptions write setoptions 
                                                                   default [];
+   property markbracketbkgcolor: colorty read fmarkbracketbkgcolor 
+                                 write fmarkbracketbkgcolor default cl_none;
  end;
 
 function checkbracketkind(const achar: msechar; out open: boolean): bracketkindty;
 
 implementation
 uses
- mserichstring,msekeyboard,msegraphutils,msepointer;
+ mserichstring,msekeyboard,msepointer;
 const
  checkbrackettag = 84621847;
  
@@ -154,6 +157,7 @@ begin
  flinkpos:= invalidcell;
  fbracket1:= invalidcell;
  fbracket2:= invalidcell;
+ fmarkbracketbkgcolor:= cl_yellow;
  inherited;
 end;
 
@@ -595,9 +599,7 @@ begin
      dec(level);
      if level <= 0 then begin
       result.row:= y;
-    // if openchar= 'begin' then
-    //  result.col:= int1 + 1 else
-       result.col:= int1;
+      result.col:= int1;
       exit;
      end;
     end;
@@ -654,21 +656,24 @@ begin
  end;
 end;
 
-procedure tsyntaxedit.clearbrackets;
+const
+ noboldchars: boldcharinfoty = (backgroundcolor: cl_none; items: nil);
+ 
+procedure tsyntaxedit.clearbrackets();
 begin
  if (fbracket1.col >= 0) and (fbracketsetting = 0) then begin
   inc(fbracketsetting);
   try
    setfontstyle(fbracket1,makegridcoord(fbracket1.col+1,fbracket1.row),
-                                  fs_bold,false);
+                                  fs_bold,false,cl_transparent);
    setfontstyle(fbracket2,makegridcoord(fbracket2.col+1,fbracket2.row),
-                                  fs_bold,false);
+                                  fs_bold,false,cl_transparent);
    refreshsyntax(fbracket1.row,1);
    refreshsyntax(fbracket2.row,1);
    fbracket1:= invalidcell;
    fbracket2:= invalidcell;
    if syntaxpainterhandle >= 0 then begin
-    syntaxpainter.boldchars[syntaxpainterhandle]:= nil;
+    syntaxpainter.boldchars[syntaxpainterhandle]:= noboldchars;
    end;
   finally
    dec(fbracketsetting);
@@ -676,13 +681,14 @@ begin
  end;  
 end;
 
-procedure tsyntaxedit.checkbrackets;
+procedure tsyntaxedit.checkbrackets();
 var
  mch1: msechar;
  br1,br2: bracketkindty;
  open,open2: boolean;
  pt1,pt2: gridcoordty;
  ar1: gridcoordarty;
+ boldinfo1: boldcharinfoty;
 begin
  clearbrackets;
  pt2:= invalidcell;
@@ -713,20 +719,32 @@ begin
  if pt2.col >= 0 then begin
   fbracket1:= pt1;
   fbracket2:= pt2;
-  inc(fbracketsetting);
-  try
-   setfontstyle(pt1,makegridcoord(pt1.col+1,pt1.row),fs_bold,true);
-   setfontstyle(pt2,makegridcoord(pt2.col+1,pt2.row),fs_bold,true);
-  finally
-   dec(fbracketsetting);
-  end;
+  boldinfo1.backgroundcolor:= fmarkbracketbkgcolor;
   if syntaxpainterhandle >= 0 then begin
    setlength(ar1,2);
    ar1[0]:= fbracket1;
    ar1[1]:= fbracket2;
-   syntaxpainter.boldchars[syntaxpainterhandle]:= ar1;
+   boldinfo1.backgroundcolor:= 
+            syntaxpainter.colors[syntaxpainterhandle].bracketbkg;
+   if boldinfo1.backgroundcolor = cl_default then begin
+    boldinfo1.backgroundcolor:= fmarkbracketbkgcolor;
+   end;
+   boldinfo1.items:= ar1;
+   syntaxpainter.boldchars[syntaxpainterhandle]:= boldinfo1;
    refreshsyntax(fbracket1.row,1);
    refreshsyntax(fbracket2.row,1);
+  end;
+  inc(fbracketsetting);
+  try
+   if boldinfo1.backgroundcolor = cl_none then begin
+    boldinfo1.backgroundcolor:= cl_transparent;
+   end;
+   setfontstyle(pt1,makegridcoord(pt1.col+1,pt1.row),fs_bold,true,
+                                             boldinfo1.backgroundcolor);
+   setfontstyle(pt2,makegridcoord(pt2.col+1,pt2.row),fs_bold,true,
+                                             boldinfo1.backgroundcolor);
+  finally
+   dec(fbracketsetting);
   end;
  end;
 end;
@@ -1020,7 +1038,7 @@ begin
  inherited;
  if atag = checkbrackettag then begin
   fbracketchecking:= 0;
-  checkbrackets;
+  checkbrackets();
  end;
 end;
 
