@@ -684,9 +684,11 @@ end;
 procedure tsyntaxedit.checkbrackets();
 var
  mch1: msechar;
+ mstr1 : msestring = '' ;
+ mstr2 : msestring = '' ;
  br1,br2: bracketkindty;
  open,open2: boolean;
- pt1,pt2: gridcoordty;
+ pt1,pt2, pttmp: gridcoordty;
  ar1: gridcoordarty;
  boldinfo1: boldcharinfoty;
 begin
@@ -695,9 +697,81 @@ begin
  pt1:= editpos;
  mch1:= charatpos(pt1);
  br1:= checkbracketkind(mch1,open);
+
+// fred => a function would be nicer
+ if (br1 = bki_beginend) then 
+ begin
+  // => a loop would be nicer
+ // "begin"
+ mstr1 := mch1 ; // b
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // g
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //i
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // n
+ //pttmp.col := pttmp.col +1 ;
+ //mstr1 := mstr1 + charatpos(pttmp); //  " "
+ 
+ // "end"
+ // pttmp := pt1;
+ // pttmp.col := pttmp.col +1 ; 
+ // mstr2 := charatpos(pttmp); // ";" or " "
+ // mstr2 := mch1 + mstr2; // d
+  mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+  if  (mstr1 = 'begin') or (mstr2 = 'end')
+// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
+  then else br1 := bki_none ; 
+     end;
+  
  if (br1 <> bki_none) and (pt1.col > 0) then begin
   dec(pt1.col);
   br2:= checkbracketkind(charatpos(pt1),open2);
+  
+ // fred => a function would be nicer
+ if (br1 = bki_beginend) then 
+ begin
+  // => a loop would be nicer
+ // "begin"
+ mstr1 := mch1 ; // b
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // g
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //i
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // n
+ //pttmp.col := pttmp.col +1 ;
+ //mstr1 := mstr1 + charatpos(pttmp); //  " "
+ 
+ // "end"
+ // pttmp := pt1;
+ // pttmp.col := pttmp.col +1 ; 
+ // mstr2 := charatpos(pttmp); // ";" or " "
+ // mstr2 := mch1 + mstr2; // d
+  mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+  if  (mstr1 = 'begin') or (mstr2 = 'end')
+// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
+  then else br1 := bki_none ; 
+     end;
+    
   if (br2 = bki_none) or (open <> open2) then begin
    inc(pt1.col);
   end
@@ -711,7 +785,42 @@ begin
   if pt1.col >= 0 then begin
    mch1:= charatpos(pt1);
    br1:= checkbracketkind(mch1,open);
-   if br1 <> bki_none then begin
+
+// fred => a function would be nicer
+ if (br1 = bki_beginend) then 
+ begin
+  // => a loop would be nicer
+ // "begin"
+ mstr1 := mch1 ; // b
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // g
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //i
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // n
+ //pttmp.col := pttmp.col +1 ;
+ //mstr1 := mstr1 + charatpos(pttmp); //  " "
+ 
+ // "end"
+ // pttmp := pt1;
+ // pttmp.col := pttmp.col +1 ; 
+ // mstr2 := charatpos(pttmp); // ";" or " "
+ // mstr2 := mch1 + mstr2; // d
+  mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+  if  (mstr1 = 'begin') or (mstr2 = 'end')
+// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
+  then else br1 := bki_none ; 
+     end;
+     if br1 <> bki_none then begin
     pt2:= matchbracket(pt1,br1,open);
    end;
   end;

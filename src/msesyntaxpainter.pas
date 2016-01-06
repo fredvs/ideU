@@ -875,7 +875,8 @@ endlab:
    with boldchars.items[int1] do begin
     if (row >= firstrow) and (row <= lastrow) then begin
      bo1:= not (fs_bold in getcharstyle(
-                       list.richitemspo[row]^.format,col).fontstyle);
+                       list.richitemspo[row]^.format,col).fontstyle);                
+                                         
      bo2:= updatefontstyle1(list.richitemspo[row]^.format,col,1,fs_bold,bo1);
      bo2:= (boldchars.backgroundcolor <> cl_none) and 
         setcolorbackground1(list.richitemspo[row]^.format,col,1,
