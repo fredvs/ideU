@@ -20,12 +20,12 @@ uses
  
 type
 // fred
- bracketkindty = (bki_none,bki_round,bki_square,bki_curly,bki_beginend);
+ bracketkindty = (bki_none,bki_round,bki_square,bki_curly,bki_beginend,bki_caseend,bki_tryend);
  
 const
 // fred
- openbrackets: array[bracketkindty] of msechar = (#0,'(','[','{','b');
- closebrackets: array[bracketkindty] of msechar = (#0,')',']','}','d');
+ openbrackets: array[bracketkindty] of msechar = (#0,'(','[','{','b','c','t');
+ closebrackets: array[bracketkindty] of msechar = (#0,')',']','}','d','d','d');
  
 type
  syntaxeditoptionty = (seo_autoindent,seo_markbrackets,seo_defaultsyntax);
@@ -552,8 +552,8 @@ var
  po1: pmsecharaty;
  int1, poso, posc: integer;
  // fred
- //openchar,closechar: msechar;
- openchar,closechar,mch1, mch2: msestring ;
+openchar,closechar, mch1: msechar;
+closestr1, openstr1, openstr2, openstr3 : msestring ; 
 begin
  result:= invalidcell;
  level:= 0;
@@ -563,12 +563,6 @@ begin
  openchar:= openbrackets[akind];
  closechar:= closebrackets[akind];
  
- if (openchar = 'b') or (closechar = 'd') then
- begin
-  openchar:= 'begin';
-  closechar:= 'end';
-  end ;
-  
  if open then begin
   while (maxrows > 0) and (y < flines.count) do begin
    strpo:= pmsestring(flines.getitempo(y));
@@ -576,26 +570,47 @@ begin
   
    for int1:= x to length(strpo^)-1 do begin
    
-     /// Here a loop would be nicer...
-    if openchar= 'begin' then 
-    begin
+     /// Here loops would be nicer...
+ 
+     if (openchar = 'b') or (openchar = 'c') or (openchar = 't') then begin
+       
+    // begin
     if int1+5 < length(strpo^) then
-     mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
-     mch1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
+     openstr1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
+     openstr1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
    
+     // case
+    if int1+4 < length(strpo^) then
+     openstr2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4]  else
+     openstr2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3]  ;
+     
+      // try
+    if int1+3 < length(strpo^) then
+     openstr3:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3]  else
+     openstr3:= po1^[int1]+ po1^[int1+1] + po1^[int1+2]  ;
+     
+     // end 
      if int1+1 < length(strpo^) then
-     mch2:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
-     mch2:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
-    end else 
+     closestr1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
+     closestr1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
+      end
+    
+       else 
     begin
-    mch1:= po1^[int1] ;
-    mch2:= mch1 ;
+    mch1:= po1^[int1] ; // normal bracket
     end;
-      
-    if (mch1 = openchar + ' ') or (mch1 = openchar) then begin
+    
+     if (mch1 = openchar) or 
+     (openstr1 = 'begin ') or (openstr1 = 'begin') or
+    (openstr2 = 'case ') or (openstr2 = 'case') or
+    (openstr3 = 'try ') or (openstr3 = 'try') 
+     then begin
      inc(level);
     end;
-    if (mch2 = closechar + ' ') or (mch2 = closechar+ ';') or (mch2 = closechar) then begin
+    
+     if (mch1 = closechar) or (closestr1 =  'end ') or
+      (closestr1 = 'end;') or (closestr1 = 'end')
+      then begin
      dec(level);
      if level <= 0 then begin
       result.row:= y;
@@ -615,28 +630,49 @@ begin
    po1:= pmsecharaty(strpo^);
    for int1:= x downto 0 do begin
 
-   /// Here a loop would be nicer...
-  if closechar= 'end' then 
-   begin
-   if int1+5 < length(strpo^) then
-     mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
-     mch2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
-  
-   if int1+1 < length(strpo^) then
-     mch1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
-     mch1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
-  
-   end else 
+    /// Here a loop would be nicer...
+ 
+      if  (closechar = 'd') then begin
+     
+     // "end" 
+        if int1+1 < length(strpo^) then
+     closestr1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1]  + po1^[int1+1] else 
+     closestr1:= po1^[int1-2]+ po1^[int1-1] + po1^[int1] ;
+       
+    // "begin"
+     if int1+5 < length(strpo^) then
+     openstr1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] + po1^[int1+5] else
+     openstr1:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4] ;
+   
+     // "case"
+       if int1+4 < length(strpo^) then
+     openstr2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] + po1^[int1+4]  else
+     openstr2:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3] ;
+   
+      // "try"
+      if int1+3 < length(strpo^) then
+     openstr3:= po1^[int1]+ po1^[int1+1] + po1^[int1+2] + po1^[int1+3]  else
+     openstr3:= po1^[int1]+ po1^[int1+1] + po1^[int1+2]  ;
+       
+      end
+         
+       else 
     begin
     mch1:= po1^[int1] ;
-    mch2:= mch1 ;
     end;
    
-    if (mch1 = closechar + ' ') or (mch1 = closechar+ ';')
-     or (mch1 = closechar) then begin
+    if (mch1 = closechar) or
+    (closestr1 = 'end ') or (closestr1 =  'end;') or (closestr1 = 'end')
+       then begin
       inc(level);
     end;
-   if (mch2 = openchar + ' ') or (mch2 = openchar) then begin
+    
+   if (mch1 = openchar) or 
+     (openstr1 = 'begin ')  or (openstr1 = 'begin') or
+    (openstr2 = 'case ') or (openstr2 = 'case') or
+    (openstr3 = 'try ')  or (openstr3 = 'try') 
+   
+   then begin
      dec(level);
      if level <= 0 then begin
       result.row:= y;
@@ -645,6 +681,7 @@ begin
      end;
     end;
    end;
+   
    dec(maxrows);
    dec(y);
    if y < 0 then begin
@@ -713,15 +750,9 @@ begin
  mstr1 := mstr1 + charatpos(pttmp); //i
  pttmp.col := pttmp.col +1 ;
  mstr1 := mstr1 + charatpos(pttmp); // n
- //pttmp.col := pttmp.col +1 ;
- //mstr1 := mstr1 + charatpos(pttmp); //  " "
  
  // "end"
- // pttmp := pt1;
- // pttmp.col := pttmp.col +1 ; 
- // mstr2 := charatpos(pttmp); // ";" or " "
- // mstr2 := mch1 + mstr2; // d
-  mstr2 := mch1;  // d
+   mstr2 := mch1;  // d
   pttmp := pt1;
   pttmp.col := pttmp.col -1 ;
    mstr2 :=  charatpos(pttmp) + mstr2; //n
@@ -729,16 +760,72 @@ begin
    mstr2 :=  charatpos(pttmp) + mstr2; //e
  
   if  (mstr1 = 'begin') or (mstr2 = 'end')
-// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
+
   then else br1 := bki_none ; 
      end;
+     
+ if (br1 = bki_caseend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "case"
+ mstr1 := mch1 ; // c
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //a 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // s
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e
+  
+ 
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+ 
+  if  (mstr1 = 'case') or (mstr2 = 'end')
+
+  then else br1 := bki_none ; 
+     end;  
+     
+   if (br1 = bki_tryend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "try"
+ mstr1 := mch1 ; // t
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //r
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // y
+  
+ 
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+ 
+  if  (mstr1 = 'try') or (mstr2 = 'end')
+
+  then else br1 := bki_none ; 
+     end;     
   
  if (br1 <> bki_none) and (pt1.col > 0) then begin
   dec(pt1.col);
   br2:= checkbracketkind(charatpos(pt1),open2);
   
  // fred => a function would be nicer
- if (br1 = bki_beginend) then 
+ if (br2 = bki_beginend) then 
  begin
   // => a loop would be nicer
  // "begin"
@@ -752,15 +839,9 @@ begin
  mstr1 := mstr1 + charatpos(pttmp); //i
  pttmp.col := pttmp.col +1 ;
  mstr1 := mstr1 + charatpos(pttmp); // n
- //pttmp.col := pttmp.col +1 ;
- //mstr1 := mstr1 + charatpos(pttmp); //  " "
  
  // "end"
- // pttmp := pt1;
- // pttmp.col := pttmp.col +1 ; 
- // mstr2 := charatpos(pttmp); // ";" or " "
- // mstr2 := mch1 + mstr2; // d
-  mstr2 := mch1;  // d
+   mstr2 := mch1;  // d
   pttmp := pt1;
   pttmp.col := pttmp.col -1 ;
    mstr2 :=  charatpos(pttmp) + mstr2; //n
@@ -768,9 +849,61 @@ begin
    mstr2 :=  charatpos(pttmp) + mstr2; //e
  
   if  (mstr1 = 'begin') or (mstr2 = 'end')
-// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
-  then else br1 := bki_none ; 
+
+  then else br2 := bki_none ; 
      end;
+     
+ if (br2 = bki_caseend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "case"
+ mstr1 := mch1 ; // c
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //a 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // s
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e
+   
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+  
+  if  (mstr1 = 'case') or (mstr2 = 'end')
+
+  then else br2 := bki_none ; 
+     end;  
+     
+   if (br2 = bki_tryend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "try"
+ mstr1 := mch1 ; // t
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //r
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // y
+  
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+  
+  if  (mstr1 = 'try') or (mstr2 = 'end')
+
+  then else br2 := bki_none ; 
+     end;     
     
   if (br2 = bki_none) or (open <> open2) then begin
    inc(pt1.col);
@@ -801,15 +934,9 @@ begin
  mstr1 := mstr1 + charatpos(pttmp); //i
  pttmp.col := pttmp.col +1 ;
  mstr1 := mstr1 + charatpos(pttmp); // n
- //pttmp.col := pttmp.col +1 ;
- //mstr1 := mstr1 + charatpos(pttmp); //  " "
  
  // "end"
- // pttmp := pt1;
- // pttmp.col := pttmp.col +1 ; 
- // mstr2 := charatpos(pttmp); // ";" or " "
- // mstr2 := mch1 + mstr2; // d
-  mstr2 := mch1;  // d
+   mstr2 := mch1;  // d
   pttmp := pt1;
   pttmp.col := pttmp.col -1 ;
    mstr2 :=  charatpos(pttmp) + mstr2; //n
@@ -817,9 +944,66 @@ begin
    mstr2 :=  charatpos(pttmp) + mstr2; //e
  
   if  (mstr1 = 'begin') or (mstr2 = 'end')
-// or (mstr1 = 'begin0') or (mstr1 = 'begin ') or  (mstr2 = 'end ')  or (mstr2 = 'end0') or (mstr2 = 'end;')
+
   then else br1 := bki_none ; 
      end;
+     
+ if (br1 = bki_caseend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "case"
+ mstr1 := mch1 ; // c
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //a 
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // s
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //e
+  
+ 
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+ 
+  if  (mstr1 = 'case') or (mstr2 = 'end')
+
+  then else br1 := bki_none ; 
+     end;  
+     
+   if (br1 = bki_tryend) then 
+ begin
+ 
+  // => a loop would be nicer
+ // "try"
+ mstr1 := mch1 ; // t
+ pttmp := pt1;
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); //r
+ pttmp.col := pttmp.col +1 ;
+ mstr1 := mstr1 + charatpos(pttmp); // y
+  
+ 
+ // "end"
+   mstr2 := mch1;  // d
+  pttmp := pt1;
+  pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //n
+   pttmp.col := pttmp.col -1 ;
+   mstr2 :=  charatpos(pttmp) + mstr2; //e
+ 
+ 
+  if  (mstr1 = 'try') or (mstr2 = 'end')
+
+  then else br1 := bki_none ; 
+     end;     
+     
      if br1 <> bki_none then begin
     pt2:= matchbracket(pt1,br1,open);
    end;
