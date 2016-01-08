@@ -1318,7 +1318,7 @@ begin
    source_editor.rowcolors[0]:= e.statementcolor;
    source_editor.datarowheight:= edit.font.lineheight;
    int1:= edit.getcanvas.getstringwidth('oo') div 2;
-  with source_editor.fixcols[-1] do begin
+    with source_editor.fixcols[-1] do begin
     visible:= e.linenumberson;
     width := 50 ;
     // fred
@@ -1352,6 +1352,7 @@ begin
 //   edit.tabulators.setdefaulttabs(int1 * tabstops / edit.tabulators.ppmm);
    edit.autoindent:= e.autoindent;
    edit.markbrackets:= e.editmarkbrackets;
+   edit.markpairwords:= e.editmarkpairwords;
    case e.encoding of
     1: begin
      edit.encoding:= ce_utf8;
@@ -1364,7 +1365,7 @@ begin
     end;
    end;
    source_editor.wheelscrollheight:= e.scrollheight;
-   edit.markbracketbkgcolor:= e.bracketbkgcolor;
+   edit.pairmarkbkgcolor:= e.pairmarkcolor;
    if edit.syntaxpainterhandle >= 0 then begin
     colors:= edit.syntaxpainter.colors[edit.syntaxpainterhandle];
     with colors do begin

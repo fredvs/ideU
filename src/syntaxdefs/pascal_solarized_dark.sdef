@@ -3,13 +3,30 @@ caseinsensitive
 pairwords
  'BEGIN' 'CASE' 'TRY' 'RECORD' 'CLASS' 'OBJECT' 'INTERFACE' 'END'
  'REPEAT' 'UNTIL'
+
+# COLORS font/paper
+COLORS $93a1a1 $002b36
+
+# base03    $002b36
+# base01    $586e75
+# base0     $839496
+# base1     $93a1a1
+# base2     $eee8d5
+# base3     $fdf6e3
+# red       $dc322f
+# green     $859900
+# cyan      $2aa198
+# blue      $268bd2
+
+
 styles
  default ''
- words 'b'
- comment 'i' cl_dkblue
- option 'b' cl_dkblue
- string '' cl_dkblue
- number '' cl_dkred
+ words 'b' $859900
+ comment 'i' $586e75
+ option '' $268bd2
+ string '' $2aa198
+ symbol '' $dc322f
+ number '' $2aa198
 
 keyworddefs pascal 
  'ABSOLUTE' 'ABSTRACT' 'AND' 'ARRAY' 'AS' 'ASM' 'ASSEMBLER' 'BEGIN'
@@ -62,6 +79,9 @@ scope number
   '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' number
  return
 
+scope symbol1 symbol
+ return
+
 scope word
  jumptokens
   '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' 
@@ -81,8 +101,24 @@ scope main
   '(*' comment3
   '''' string
   '#' number string
+  ':' symbol1
+  '.' symbol1
+  ';' symbol1
+  ',' symbol1
+  '=' symbol1
+  '<>' symbol1
+  '<' symbol1
+  '>' symbol1
+  '(' symbol1
+  ')' symbol1
+  '+' symbol1
+  '-' symbol1
+  '/' symbol1
+  '*' symbol1
+  '[' symbol1
+  ']' symbol1
   
-#  '$' hexnumber number
-#  '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' number number
-#  'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P'
-#  'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '_' word
+  '$' hexnumber number
+  '0' '1' '2' '3' '4' '5' '6' '7' '8' '9' number number
+  'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P'
+  'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X' 'Y' 'Z' '_' word

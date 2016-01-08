@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -193,11 +193,12 @@ type
    fstatementcolor: integer;
    feditfontantialiased: boolean;
    feditmarkbrackets: boolean;
+   feditmarkpairwords: boolean;
    fbackupfilecount: integer;
    fencoding: integer;
    fnoformdesignerdocking: boolean;
    ftrimtrailingwhitespace: boolean;
-   fbracketbkgcolor: integer;
+   fpairmarkcolor: integer;
    function limitgridsize(const avalue: integer): integer;
    procedure setgridsizex(const avalue: integer);
    procedure setgridsizey(const avalue: integer);
@@ -239,14 +240,15 @@ type
    property editfontcolor: integer read feditfontcolor write feditfontcolor;
    property editbkcolor: integer read feditbkcolor write feditbkcolor;
    property statementcolor: integer read fstatementcolor write fstatementcolor;
-   
-   property bracketbkgcolor: integer read fbracketbkgcolor 
-                                             write fbracketbkgcolor;
+   property pairmarkcolor: integer read fpairmarkcolor 
+                                             write fpairmarkcolor;
    
    property editfontantialiased: boolean read feditfontantialiased 
                                               write feditfontantialiased;
    property editmarkbrackets: boolean read feditmarkbrackets 
                                               write feditmarkbrackets;
+   property editmarkpairwords: boolean read feditmarkpairwords 
+                                              write feditmarkpairwords;
    property backupfilecount: integer read fbackupfilecount 
                                               write fbackupfilecount;
    property encoding: integer read fencoding write fencoding;
@@ -454,7 +456,7 @@ type
    property colorerror: colorty read fcolorerror write fcolorerror;
    property colorwarning: colorty read fcolorwarning write fcolorwarning;
    property colornote: colorty read fcolornote write fcolornote;
-   
+
    property usercolors: colorarty read fusercolors write fusercolors;
    property usercolorcomment: msestringarty read fusercolorcomment 
                                                  write fusercolorcomment;
@@ -589,6 +591,7 @@ type
    stoponexception: tbooleanedit;
    activateonbreak: tbooleanedit;
    makepage: ttabpage;
+   tspacer2: tspacer;
    defaultmake: tenumedit;
    mainfile: tfilenameedit;
    targetfile: tfilenameedit;
@@ -628,6 +631,10 @@ type
    tspacer1: tspacer;
    targpref: tstringedit;
    makedir: tfilenameedit;
+   tsplitter1: tsplitter;
+   tsplitter2: tsplitter;
+   tsplitter4: tsplitter;
+   tsplitter5: tsplitter;
    ttabpage1: ttabpage;
    macrogrid: twidgetgrid;
    e0: tbooleanedit;
@@ -681,9 +688,6 @@ type
    editfontheight: tintegeredit;
    editfontname: tstringedit;
    tlayouter11: tlayouter;
-   encoding: tenumedit;
-   scrollheight: tintegeredit;
-   rightmarginchars: tintegeredit;
    tlayouter10: tlayouter;
    backupfilecount: tintegeredit;
    spacetabs: tbooleanedit;
@@ -692,10 +696,8 @@ type
    autoindent: tbooleanedit;
    ttabwidget2: ttabwidget;
    ttabpage13: ttabpage;
-   tspacer3: tspacer;
    filefiltergrid: tstringgrid;
    ttabpage14: ttabpage;
-   grid: tstringgrid;
    serverla: tlayouter;
    uploadcommand: tfilenameedit;
    gdbservercommand: tfilenameedit;
@@ -729,7 +731,6 @@ type
    editfontcolor: tcoloredit;
    editbkcolor: tcoloredit;
    editfontantialiased: tbooleanedit;
-   statementcolor: tcoloredit;
    ttabpage17: ttabpage;
    ttabpage18: ttabpage;
    befcommandgrid: twidgetgrid;
@@ -778,7 +779,9 @@ type
    formatmacronames: tstringedit;
    formatmacrovalues: tstringedit;
    colorerror: tcoloredit;
+   tspacer5: tspacer;
    colorwarning: tcoloredit;
+   tspacer6: tspacer;
    colornote: tcoloredit;
    c: tstringcontainer;
    xtermcommand: tmemodialogedit;
@@ -786,6 +789,7 @@ type
    tlayouter14: tlayouter;
    rightmarginon: tbooleanedit;
    linenumberson: tbooleanedit;
+   tspacer4: tspacer;
    stripmessageesc: tbooleanedit;
    raiseonbreak: tbooleanedit;
    noformdesignerdocking: tbooleanedit;
@@ -797,12 +801,18 @@ type
    toolsc: tstringedit;
    toolscalt: tstringedit;
    editmarkbrackets: tbooleanedit;
-   trimtrailingwhitespace: tbooleanedit;
    fpcgdbworkaround: tbooleanedit;
-   edit_compilernum: tenumedit;
-   edit_compiler: tenumedit;
-   makecommand2: tfilenameedit;
-   bracketbkgcolor: tcoloredit;
+   twidgetgrid6: twidgetgrid;
+   syntaxdeffile: tfilenameedit;
+   syntaxdeffilemask: tmemodialogedit;
+   editmarkpairwords: tbooleanedit;
+   tlayouter15: tlayouter;
+   trimtrailingwhitespace: tbooleanedit;
+   encoding: tenumedit;
+   pairmarkcolor: tcoloredit;
+   statementcolor: tcoloredit;
+   scrollheight: tintegeredit;
+   rightmarginchars: tintegeredit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -849,6 +859,7 @@ type
    procedure toolshortcutdropdown(const sender: TObject);
    procedure toolsrowdatachanged(const sender: tcustomgrid;
                    const acell: gridcoordty);
+   procedure bracketbkcolhint(const sender: TObject; var info: hintinfoty);
   private
    procedure activegroupchanged;
  end;
@@ -882,7 +893,6 @@ var
  windowlayoutfile: filenamety;
  windowlayouthistory: filenamearty;
  codetemplates: tcodetemplates;
- 
 
 implementation
 uses
@@ -900,8 +910,8 @@ uses
  {$ifndef mse_no_ifi}{$ifdef FPC},mseificomponenteditors,
  mseififieldeditor{$endif}{$endif};
 
- var
-  projectoptionsfo: tprojectoptionsfo;
+var
+ projectoptionsfo: tprojectoptionsfo;
 type
 
  stringconststy = (
@@ -1891,7 +1901,6 @@ begin
     fo.sighandle[int1]:= sfl_handle in flags;
    end;
   end;
-
   fo.fontondataentered(nil);
   fo.defaultmake.value:= lowestbit(defaultmake);
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
@@ -1966,8 +1975,10 @@ begin
   end;
 
   fo.sourcedirs.gridvalues:= reversearray(d.t.sourcedirs);
-  fo.grid[0].datalist.asarray:= e.t.syntaxdeffiles;
-  fo.grid[1].datalist.asarray:= e.t.sourcefilemasks;
+  fo.syntaxdeffile.gridvalues:= e.t.syntaxdeffiles;
+  fo.syntaxdeffilemask.gridvalues:= e.t.sourcefilemasks;
+//  fo.grid[0].datalist.asarray:= e.t.syntaxdeffiles;
+//  fo.grid[1].datalist.asarray:= e.t.sourcefilemasks;
   fo.filefiltergrid[0].datalist.asarray:= e.t.filemasknames;
   fo.filefiltergrid[1].datalist.asarray:= e.t.filemasks;
   fo.settingsdataent(nil);
@@ -2017,7 +2028,7 @@ begin
     o.fontxscales[int1]:= 1.0;
    end;   
   end;
-  
+
   defaultmake:= 1 shl fo.defaultmake.value;
   setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
   for int1:= 0 to high(o.fmakeoptionson) do begin
@@ -2054,8 +2065,10 @@ begin
   end;
   storemacros(fo);
   d.t.sourcedirs:= reversearray(fo.sourcedirs.gridvalues);
-  e.t.syntaxdeffiles:= fo.grid[0].datalist.asarray;
-  e.t.sourcefilemasks:= fo.grid[1].datalist.asarray;
+  e.t.syntaxdeffiles:= fo.syntaxdeffile.gridvalues;
+  e.t.sourcefilemasks:= fo.syntaxdeffilemask.gridvalues;
+//  e.t.syntaxdeffiles:= fo.grid[0].datalist.asarray;
+//  e.t.sourcefilemasks:= fo.grid[1].datalist.asarray;
   e.t.filemasknames:= fo.filefiltergrid[0].datalist.asarray;
   e.t.filemasks:= fo.filefiltergrid[1].datalist.asarray;
  end;
@@ -2123,8 +2136,6 @@ begin
  projectoptionstoform(fo);
  try
   projectoptionsfo:= fo;
-  // '${COMPILER}'
-  fo.makecommand2.text := fo.makecommand.text ;
   result:= fo.show(true,nil) = mr_ok;
   projectoptionsfo:= nil;
   if result then begin
@@ -2294,35 +2305,30 @@ begin
 end;
 
 procedure tprojectoptionsfo.makepageonchildscaled(const sender: TObject);
-//var
-// int1: integer;
+var
+ int1: integer;
 begin
-
-// fred
-{
-// placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
-  //                  defaultmake,makegroupbox],0);
- // aligny(wam_center,[mainfile,targetfile,targpref]);
- // aligny(wam_center,[makecommand,makedir,messageoutputfile]);
-// int1:= aligny(wam_center,[colorerror,colorwarning,colornote,copymessages]);
+ placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
+                    defaultmake,makegroupbox],0);
+ aligny(wam_center,[mainfile,targetfile,targpref]);
+ aligny(wam_center,[makecommand,makedir,messageoutputfile]);
+ int1:= aligny(wam_center,[colorerror,colorwarning,colornote,copymessages]);
  with stripmessageesc do begin
- // bounds_y:= int1 - bounds_cy - 2;
+  bounds_y:= int1 - bounds_cy - 2;
  end;
  with copymessages do begin
- // pos:= makepoint(stripmessageesc.bounds_x,int1);
+  pos:= makepoint(stripmessageesc.bounds_x,int1);
  end;
  
-// placexorder(defaultmake.bounds_x,[10-defaultmake.frame.outerframe.right,10],
-  //           [defaultmake,showcommandline,checkmethods]);
- //int1:= aligny(wam_center,[defaultmake,showcommandline]);
+ placexorder(defaultmake.bounds_x,[10-defaultmake.frame.outerframe.right,10],
+             [defaultmake,showcommandline,checkmethods]);
+ int1:= aligny(wam_center,[defaultmake,showcommandline]);
  with checkmethods do begin
-//  bounds_y:= int1 - bounds_cy - 2;
+  bounds_y:= int1 - bounds_cy - 2;
  end;
  with closemessages do begin
-//  pos:= makepoint(checkmethods.bounds_x,int1);
+  pos:= makepoint(checkmethods.bounds_x,int1);
  end;
- 
-} 
 end;
 
 procedure tprojectoptionsfo.debuggerlayoutexe(const sender: TObject);
@@ -2778,6 +2784,12 @@ begin
  end;
 end;
 
+procedure tprojectoptionsfo.bracketbkcolhint(const sender: TObject;
+               var info: hintinfoty);
+begin
+ info.caption:= tcustomedit(sender).text + lineend + info.caption;
+end;
+
 { tprojectoptions }
 
 constructor tprojectoptions.create;
@@ -2787,8 +2799,8 @@ begin
  
  closemessages:= true;
  checkmethods:= true;
- fcolorerror:= cl_ltred;
- fcolorwarning:= cl_ltyellow;
+ fcolorerror:= cl_ltyellow;
+ fcolorwarning:= cl_ltred;
  fcolornote:= cl_ltgreen;
  inherited;
 end;
@@ -2840,9 +2852,10 @@ begin
  editfontcolor:= integer(cl_text);
  editbkcolor:= integer(cl_foreground);
  statementcolor:= $E0FFFF;
- bracketbkgcolor:= int32(cl_yellow);
+ pairmarkcolor:= int32(cl_ltyellow);
  editfontantialiased:= true;
  editmarkbrackets:= true;
+ editmarkpairwords:= true;
  backupfilecount:= 2;
  setlength(ar1,1);
  ar1[0]:= '${TEMPLATEDIR}';
