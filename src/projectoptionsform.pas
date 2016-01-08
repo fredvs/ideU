@@ -194,6 +194,7 @@ type
    feditfontantialiased: boolean;
    feditmarkbrackets: boolean;
    feditmarkpairwords: boolean;
+   ffpgdesignerenabled: boolean;
    fbackupfilecount: integer;
    fencoding: integer;
    fnoformdesignerdocking: boolean;
@@ -249,6 +250,10 @@ type
                                               write feditmarkbrackets;
    property editmarkpairwords: boolean read feditmarkpairwords 
                                               write feditmarkpairwords;
+                                              
+   property fpgdesigner: boolean read ffpgdesignerenabled
+                                              write ffpgdesignerenabled;
+                                            
    property backupfilecount: integer read fbackupfilecount 
                                               write fbackupfilecount;
    property encoding: integer read fencoding write fencoding;
@@ -543,13 +548,6 @@ type
    ok: tbutton;
    tabwidget: ttabwidget;
    editorpage: ttabpage;
-   tgroupbox1: tgroupbox;
-   showgrid: tbooleanedit;
-   snaptogrid: tbooleanedit;
-   gridsizex: tintegeredit;
-   tintegeredit2: tintegeredit;
-   gridsizey: tintegeredit;
-   moveonfirstclick: tbooleanedit;
    debuggerpage: ttabpage;
    debugcommand: tfilenameedit;
    debugoptions: tmemodialogedit;
@@ -792,7 +790,6 @@ type
    tspacer4: tspacer;
    stripmessageesc: tbooleanedit;
    raiseonbreak: tbooleanedit;
-   noformdesignerdocking: tbooleanedit;
    runcommand: tfilenameedit;
    sourcebase: tfilenameedit;
    tspacer7: tspacer;
@@ -813,6 +810,16 @@ type
    statementcolor: tcoloredit;
    scrollheight: tintegeredit;
    rightmarginchars: tintegeredit;
+   tgroupbox1: tgroupbox;
+   noformdesignerdocking: tbooleanedit;
+   moveonfirstclick: tbooleanedit;
+   gridsizey: tintegeredit;
+   gridsizex: tintegeredit;
+   tintegeredit2: tintegeredit;
+   snaptogrid: tbooleanedit;
+   showgrid: tbooleanedit;
+   tgroupbox2: tgroupbox;
+   fpgdesignerenabled: tbooleanedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1746,6 +1753,7 @@ var
 begin
  with statfiler,projectoptions do begin
   if iswriter then begin
+//  e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
    projectdir:= getcurrentdirmse;
    with mainfo,mainmenu1.menu.itembyname('view') do begin
     int3:= formmenuitemstart;
@@ -1754,6 +1762,8 @@ begin
     setlength(moduletypes1,int2);
     setlength(modulefiles1,int2);
 //    setlength(moduledock1,int2);
+
+  
     for int1:= 0 to high(modulenames1) do begin
      with pmoduleinfoty(submenu[int1+int3].tagpointer)^ do begin
       modulenames1[int1]:= msestring(struppercase(instance.name));
@@ -1848,11 +1858,15 @@ begin
  end;
 end;
 
+
 procedure projectoptionstoform(fo: tprojectoptionsfo);
 var
  int1,int2: integer;
 begin
  with projectoptions do begin
+ 
+//  fo.fpgdesignerenabled.value := e.fpgdesigner;
+  
   int1:= length(o.toolshortcuts);
   setlength(o.ftoolshortcuts,length(o.t.toolmenus));
   for int2:= int1 to high(o.toolshortcuts) do begin
@@ -2498,7 +2512,8 @@ begin
  with buffer do begin
   projectfilename:= projectoptions.projectfilename;
   projectdir:= projectoptions.projectdir;
-  if fo <> nil then begin
+   
+   if fo <> nil then begin
    settingsfile:= fo.settingsfile.value;
    settingseditor:= fo.settingseditor.value;
    settingsdebugger:= fo.settingsdebugger.value;
@@ -2684,6 +2699,8 @@ begin
     if sender <> nil then begin
      formtoprojectoptions(sender);
     end;
+    
+  //    e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
     disabled:= getdisabledoptions;
     stat1.setsection('projectoptions');
     if o.settingsprojecttree then begin
@@ -2856,6 +2873,7 @@ begin
  editfontantialiased:= true;
  editmarkbrackets:= true;
  editmarkpairwords:= true;
+ fpgdesigner := true;
  backupfilecount:= 2;
  setlength(ar1,1);
  ar1[0]:= '${TEMPLATEDIR}';

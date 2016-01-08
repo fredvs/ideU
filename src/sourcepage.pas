@@ -1353,6 +1353,7 @@ begin
    edit.autoindent:= e.autoindent;
    edit.markbrackets:= e.editmarkbrackets;
    edit.markpairwords:= e.editmarkpairwords;
+      
    case e.encoding of
     1: begin
      edit.encoding:= ce_utf8;

@@ -745,7 +745,7 @@ begin
   gINI.WriteInteger('General', 'WarnChange', 1) else
   gINI.WriteInteger('General', 'WarnChange', 2) ;
   
-  if (conffpguifo.enablefpguidesigner.value = true) and
+  if  (conffpguifo.enablefpguidesigner.value = true) and
  (conffpguifo.ifquit.value = true)  then
   LoadfpgDesigner(conffpguifo.edquit.text, '');
  
@@ -2069,7 +2069,7 @@ var
 begin
  if fileext(sourcefilename) = pasfileext then begin
  
- if conffpguifo.enablefpguidesigner.value = true then
+ if (conffpguifo.enablefpguidesigner.value = true) then
  begin
    sysfilename := tosysfilepath(filepath(trim(sourcefilename),fk_file,true));
      LoadfpgDesigner(sysfilename,'');

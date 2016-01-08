@@ -1,8 +1,8 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 19
-  bounds_y = 122
+  bounds_x = 403
+  bounds_y = 146
   bounds_cx = 756
   bounds_cy = 568
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -118,9 +118,8 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          taborder = 6
           bounds_x = 0
-          bounds_y = 84
+          bounds_y = 5
           bounds_cx = 754
           bounds_cy = 277
           anchors = [an_top]
@@ -364,7 +363,7 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 1
             bounds_x = 0
             bounds_y = 41
-            bounds_cx = 688
+            bounds_cx = 727
             bounds_cy = 74
             optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
             optionslayout = [lao_aligny]
@@ -409,6 +408,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_y = 0
                 bounds_cx = 100
                 bounds_cy = 17
+                value = True
               end
               object editmarkbrackets: tbooleanedit
                 frame.caption = 'Mark Brackets'
@@ -449,26 +449,26 @@ object projectoptionsfo: tprojectoptionsfo
             object tlayouter15: tlayouter
               taborder = 1
               bounds_x = 143
-              bounds_y = 4
-              bounds_cx = 545
-              bounds_cy = 67
+              bounds_y = 7
+              bounds_cx = 584
+              bounds_cy = 60
               optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky, osc_expandshrinkx, osc_expandshrinky]
               optionslayout = [lao_aligny]
               align_glue = wam_start
               object trimtrailingwhitespace: tbooleanedit
-                frame.caption = 'Trim trailing'#10'Whitspace'#10'on save'
+                frame.caption = 'Trim trailing space'#10'on save'
                 frame.localprops = []
                 frame.localprops1 = []
                 frame.outerframe = (
                   0
-                  17
-                  76
-                  17
+                  9
+                  115
+                  10
                 )
                 bounds_x = 456
-                bounds_y = 20
-                bounds_cx = 89
-                bounds_cy = 47
+                bounds_y = 28
+                bounds_cx = 128
+                bounds_cy = 32
               end
               object encoding: tenumedit
                 frame.caption = 'Encoding'
@@ -735,142 +735,16 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
         end
-        object tgroupbox1: tgroupbox
-          optionswidget = [ow_mousetransparent, ow_destroywidgets]
-          frame.caption = 'Form Designer'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            8
-            0
-            0
-          )
-          bounds_x = 2
-          bounds_y = 7
-          bounds_cx = 750
-          bounds_cy = 74
-          anchors = [an_left, an_top, an_right]
-        end
-        object showgrid: tbooleanedit
-          frame.caption = 'Show Grid'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            2
-            65
-            2
-          )
-          taborder = 1
-          bounds_x = 7
-          bounds_y = 33
-          bounds_cx = 78
-          bounds_cy = 17
-          value = True
-        end
-        object snaptogrid: tbooleanedit
-          optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_hinton]
-          frame.caption = 'Snap to Grid'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            2
-            79
-            2
-          )
-          taborder = 2
-          hint = 'Hint:'#10'Use Ctrl + arrow keys to move selected components without grid snap,'#10'use Shift + arrow keys to resize selected components without grid snap.'
-          bounds_x = 7
-          bounds_y = 57
-          bounds_cx = 92
-          bounds_cy = 17
-          value = True
-        end
-        object gridsizex: tintegeredit
-          frame.caption = 'Grid size X'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            18
-            29
-            0
-          )
-          taborder = 3
-          bounds_x = 151
-          bounds_y = 33
-          bounds_cx = 65
-          bounds_cy = 39
-          value = 8
-          min = 1
-          max = 1000
-          reffontheight = 15
-          object tintegeredit2: tintegeredit
-            frame.caption = 'Grid size X'
-            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-            frame.outerframe = (
-              0
-              18
-              29
-              0
-            )
-            bounds_x = 136
-            bounds_y = 29
-            bounds_cx = 65
-            bounds_cy = 39
-            reffontheight = 15
-          end
-        end
-        object gridsizey: tintegeredit
-          frame.caption = 'Grid size Y'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            18
-            28
-            0
-          )
-          taborder = 4
-          bounds_x = 247
-          bounds_y = 33
-          bounds_cx = 64
-          bounds_cy = 39
-          value = 8
-          min = 1
-          max = 1000
-          reffontheight = 15
-        end
-        object moveonfirstclick: tbooleanedit
-          frame.caption = 'Move on'#10'first Click'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            9
-            58
-            10
-          )
-          taborder = 5
-          bounds_x = 359
-          bounds_y = 45
-          bounds_cx = 71
-          bounds_cy = 32
-          value = True
-        end
         object ttabwidget2: ttabwidget
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
           bounds_x = 0
-          bounds_y = 363
+          bounds_y = 284
           bounds_cx = 754
-          bounds_cy = 153
+          bounds_cy = 232
           bounds_cymin = 84
           anchors = [an_top, an_bottom]
-          taborder = 7
+          taborder = 1
           activepageindex = 0
           tab_frame.localprops = []
           tab_frame.localprops1 = []
@@ -889,7 +763,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 19
             bounds_cx = 754
-            bounds_cy = 134
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' File filter '
             reffontheight = 15
@@ -901,7 +775,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 754
-              bounds_cy = 134
+              bounds_cy = 213
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               datacols.count = 2
@@ -954,7 +828,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 19
             bounds_cx = 754
-            bounds_cy = 134
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Syntax definition files '
             reffontheight = 15
@@ -964,7 +838,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 754
-              bounds_cy = 134
+              bounds_cy = 213
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -1067,7 +941,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 19
             bounds_cx = 754
-            bounds_cy = 134
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Code Templates '
             object twidgetgrid5: twidgetgrid
@@ -1086,7 +960,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 754
-              bounds_cy = 145
+              bounds_cy = 224
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1193,23 +1067,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
           end
-        end
-        object noformdesignerdocking: tbooleanedit
-          frame.caption = 'Docking'
-          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-          frame.outerframe = (
-            0
-            2
-            52
-            2
-          )
-          taborder = 8
-          bounds_x = 510
-          bounds_y = 52
-          bounds_cx = 65
-          bounds_cy = 17
-          options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_reversed]
         end
       end
       object debuggerpage: ttabpage
@@ -2027,7 +1884,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 6
               bounds_x = 0
-              bounds_y = 236
+              bounds_y = 237
               bounds_cx = 754
               bounds_cy = 39
               anchors = [an_top]
@@ -4729,11 +4586,201 @@ object projectoptionsfo: tprojectoptionsfo
           end
         end
       end
-      object ttabpage10: ttabpage
+      object ttabpage25: ttabpage
         frame.framei_bottom = 0
         frame.localprops = [frl_fibottom, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 7
+        bounds_x = 1
+        bounds_y = 20
+        bounds_cx = 754
+        bounds_cy = 516
+        anchors = [an_left, an_top, an_right, an_bottom]
+        caption = ' Designers '
+        object tgroupbox1: tgroupbox
+          optionswidget = [ow_mousetransparent, ow_destroywidgets]
+          frame.caption = 'MSE Form Designer'
+          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.outerframe = (
+            0
+            8
+            0
+            0
+          )
+          bounds_x = 2
+          bounds_y = 24
+          bounds_cx = 750
+          bounds_cy = 74
+          anchors = [an_left, an_top, an_right]
+          object noformdesignerdocking: tbooleanedit
+            frame.caption = 'Docking'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              2
+              52
+              2
+            )
+            bounds_x = 535
+            bounds_y = 40
+            bounds_cx = 65
+            bounds_cy = 17
+            options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_reversed]
+          end
+          object moveonfirstclick: tbooleanedit
+            frame.caption = 'Move on'#10'first Click'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              9
+              58
+              10
+            )
+            taborder = 1
+            bounds_x = 387
+            bounds_y = 31
+            bounds_cx = 71
+            bounds_cy = 32
+            value = True
+          end
+          object gridsizey: tintegeredit
+            frame.caption = 'Grid size Y'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              18
+              28
+              0
+            )
+            taborder = 2
+            bounds_x = 275
+            bounds_y = 24
+            bounds_cx = 64
+            bounds_cy = 39
+            value = 8
+            min = 1
+            max = 1000
+            reffontheight = 15
+          end
+          object gridsizex: tintegeredit
+            frame.caption = 'Grid size X'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              18
+              29
+              0
+            )
+            taborder = 3
+            bounds_x = 179
+            bounds_y = 24
+            bounds_cx = 65
+            bounds_cy = 39
+            value = 8
+            min = 1
+            max = 1000
+            reffontheight = 15
+            object tintegeredit2: tintegeredit
+              frame.caption = 'Grid size X'
+              frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+              frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.outerframe = (
+                0
+                18
+                29
+                0
+              )
+              bounds_x = 136
+              bounds_y = 29
+              bounds_cx = 65
+              bounds_cy = 39
+              reffontheight = 15
+            end
+          end
+          object snaptogrid: tbooleanedit
+            optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_hinton]
+            frame.caption = 'Snap to Grid'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              2
+              79
+              2
+            )
+            taborder = 4
+            hint = 'Hint:'#10'Use Ctrl + arrow keys to move selected components without grid snap,'#10'use Shift + arrow keys to resize selected components without grid snap.'
+            bounds_x = 35
+            bounds_y = 46
+            bounds_cx = 92
+            bounds_cy = 17
+            value = True
+          end
+          object showgrid: tbooleanedit
+            frame.caption = 'Show Grid'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              2
+              65
+              2
+            )
+            taborder = 5
+            bounds_x = 35
+            bounds_y = 24
+            bounds_cx = 78
+            bounds_cy = 17
+            value = True
+          end
+        end
+        object tgroupbox2: tgroupbox
+          optionswidget = [ow_mousetransparent, ow_destroywidgets]
+          frame.caption = 'fpGUI Form Designer'
+          frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+          frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.outerframe = (
+            0
+            8
+            0
+            0
+          )
+          taborder = 1
+          bounds_x = 2
+          bounds_y = 128
+          bounds_cx = 750
+          bounds_cy = 74
+          anchors = [an_left, an_top, an_right]
+          object fpgdesignerenabled: tbooleanedit
+            optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_hinton]
+            frame.caption = 'Integration into ideU'
+            frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+            frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.outerframe = (
+              0
+              2
+              128
+              2
+            )
+            hint = 'Make fpGUI designer integrated into ideU'
+            bounds_x = 60
+            bounds_y = 31
+            bounds_cx = 141
+            bounds_cy = 17
+            value = True
+          end
+        end
+      end
+      object ttabpage10: ttabpage
+        frame.framei_bottom = 0
+        frame.localprops = [frl_fibottom, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+        frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+        taborder = 8
         bounds_x = 1
         bounds_y = 20
         bounds_cx = 754
@@ -4882,7 +4929,7 @@ object projectoptionsfo: tprojectoptionsfo
       object ttabpage21: ttabpage
         frame.localprops = []
         frame.localprops1 = []
-        taborder = 10
+        taborder = 11
         bounds_x = 1
         bounds_y = 20
         bounds_cx = 754
@@ -5559,7 +5606,7 @@ object projectoptionsfo: tprojectoptionsfo
         optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
         frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-        taborder = 8
+        taborder = 9
         bounds_x = 1
         bounds_y = 20
         bounds_cx = 754
@@ -5933,7 +5980,7 @@ object projectoptionsfo: tprojectoptionsfo
       object ttabpage20: ttabpage
         frame.localprops = []
         frame.localprops1 = []
-        taborder = 9
+        taborder = 10
         bounds_x = 1
         bounds_y = 20
         bounds_cx = 754
