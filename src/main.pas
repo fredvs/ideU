@@ -95,7 +95,7 @@ type
   cannotstartprocess, //43 Can not start process
   process,            //44 Process
   running3,           //45 running.
-  processterminated,  //46 Process terminated
+  processterminated,  //46 Process terminated.
   proctermnormally,   //47 Process terminated normally.
   makeerror,          //48 Make ***ERROR***
   makeok,             //49 Make OK.
@@ -206,6 +206,7 @@ type
    procedure basedockpaintexe(const sender: twidget; const acanvas: tcanvas);
    
    //fred
+   procedure menuwindowlayoutexe(const sender: TObject);
    procedure viewconffpguiexecute(const sender: TObject);
    procedure viewconfmseguiexecute(const sender: TObject);
    procedure viewconfcompilersexecute(const sender: TObject);
@@ -3441,6 +3442,35 @@ begin
           nil,nil,nil,[fa_all],[fa_hidden],
                         @windowlayouthistory) = mr_ok then begin
  str1:= ttextstream.create(windowlayoutfile);
+ try
+  loadwindowlayout(str1);
+ finally
+  str1.destroy();
+ end;
+ end;
+end;
+
+// fred layout
+procedure tmainfo.menuwindowlayoutexe(const sender: TObject);
+var
+ str1: ttextstream;
+ strfile, strdir : msestring;
+begin
+
+case tmenuitem(sender).tag of
+0 : strfile := 'c_s_t_m_docked.prj';
+1 : strfile := 'c_s_m_docked.prj';
+2 : strfile := 'c_s_t_m_m_docked.prj';
+3 : strfile := 'c_s_m_m_docked.prj';
+4 : strfile := 'un_docked.prj';
+end;
+
+strdir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
+
+if fileexists(strdir + directoryseparator + 'layout'  + directoryseparator + strfile) then
+begin
+strfile := strdir + directoryseparator + 'layout'  + directoryseparator + strfile;
+ str1:= ttextstream.create(strfile);
  try
   loadwindowlayout(str1);
  finally

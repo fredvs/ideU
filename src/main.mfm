@@ -9,7 +9,7 @@ object mainfo: tmainfo
   visible = False
   bounds_x = 58
   bounds_y = 76
-  bounds_cx = 1029
+  bounds_cx = 549
   bounds_cy = 302
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
@@ -23,9 +23,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    17
-    1019
-    285
+    34
+    539
+    268
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock]
@@ -102,9 +102,9 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = 18
-    bounds_cx = 1019
-    bounds_cy = 266
+    bounds_y = 19
+    bounds_cx = 539
+    bounds_cy = 249
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -117,7 +117,7 @@ object mainfo: tmainfo
     taborder = 1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 1019
+    bounds_cx = 539
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250
@@ -151,7 +151,7 @@ object mainfo: tmainfo
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
     onupdate = mainmenuonupdate
-    menu.submenu.count = 12
+    menu.submenu.count = 13
     menu.submenu.items = <    
       item
         submenu.count = 10
@@ -408,7 +408,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 28
+        submenu.count = 27
         submenu.items = <        
           item
             submenu.count = 2
@@ -433,12 +433,6 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localimagelist]
             options = [mao_checkbox, mao_shortcutcaption]
             imagelist = vievmenuicons
-          end        
-          item
-            caption = ' Load Wi&ndow Layout '
-            state = [as_localcaption, as_localimagelist, as_localonexecute]
-            imagelist = vievmenuicons
-            onexecute = loadwindowlayoutexe
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
@@ -604,6 +598,55 @@ object mainfo: tmainfo
         caption = ' &View '
         name = 'view'
         state = [as_localcaption]
+      end    
+      item
+        submenu.count = 9
+        submenu.items = <        
+          item
+            caption = ' Commandor + Source + Tree + Message = Docked  '
+            state = [as_localcaption, as_localonexecute]
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            caption = ' Commandor + Source + Message = Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 1
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = ' Commandor + Source + Tree + Message + MSE = Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 2
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            caption = ' Commandor + Source + Message + MSE = Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 3
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = ' All Un-Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 4
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = ' Custom Layout '
+            state = [as_localcaption, as_localonexecute]
+            onexecute = loadwindowlayoutexe
+          end>
+        caption = ' La&yout '
+        state = [as_localcaption, as_localonexecute]
       end    
       item
         submenu.count = 21

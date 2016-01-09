@@ -2,9 +2,9 @@ object sourcepage: tsourcepage
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   optionsskin = [osk_framebuttononly]
   color = -1879048187
-  bounds_x = 149
-  bounds_y = 351
-  bounds_cx = 1013
+  bounds_x = 143
+  bounds_y = 107
+  bounds_cx = 590
   bounds_cy = 217
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -12,7 +12,7 @@ object sourcepage: tsourcepage
   container.bounds = (
     0
     0
-    1013
+    590
     217
   )
   icon.transparentcolor = -2147483648
@@ -30,7 +30,7 @@ object sourcepage: tsourcepage
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 1013
+    bounds_cx = 590
     bounds_cy = 195
     anchors = [an_top, an_bottom]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_wrapcol, og_visiblerowpagestep]
@@ -137,7 +137,6 @@ object sourcepage: tsourcepage
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
     color = 15461355
-    cursor = cr_default
     frame.levelo = -1
     frame.colorclient = -2147483645
     frame.localprops = []
@@ -145,7 +144,7 @@ object sourcepage: tsourcepage
     taborder = 1
     bounds_x = 67
     bounds_y = 196
-    bounds_cx = 942
+    bounds_cx = 523
     bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]

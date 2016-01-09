@@ -22,17 +22,16 @@ unit msesettings;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- fpg_iniutils_ideu,
- mseglob,mseguiglob,msegui,mseclasses,mseforms,msestat,msestatfile,
- msesimplewidgets,msefiledialog,msestrings,msemacros,msedataedits,msebitmap,
- msedatanodes,mseedit,mseevent,msegraphutils,msegrids,mselistbrowser,msemenus,
- msesys,msetypes,msegraphics,msewidgets,mseactions,mseifiglob,msesplitter,
- mseificomp,mseificompglob,msememodialog,msewidgetgrid,mseapplication,msestream,
- sysutils;
+ fpg_iniutils_ideu,mseglob,mseguiglob,msegui,mseclasses,mseforms,msestat,
+ msestatfile,msesimplewidgets,msefiledialog,msestrings,msemacros,msedataedits,
+ msebitmap,msedatanodes,mseedit,mseevent,msegraphutils,msegrids,mselistbrowser,
+ msemenus,msesys,msetypes,msegraphics,msewidgets,mseactions,mseifiglob,
+ msesplitter,mseificomp,mseificompglob,msememodialog,msewidgetgrid,
+ mseapplication,msestream,sysutils;
 
 type
  settingsmacroty = (sma_fpcdir,sma_fpclibdir,sma_msedir,sma_mselibdir,
-                   sma_syntaxdefdir,sma_templatedir,sma_compstoredir,
+                   sma_syntaxdefdir,sma_templatedir, sma_layoutdir,sma_compstoredir,
                    sma_compiler,sma_debugger,
                    sma_exeext,sma_target,sma_targetosdir, sma_fpguidir,
                     sma_ideudir, sma_docviewdir, sma_projectdir, sma_fpgui);
@@ -40,12 +39,12 @@ const
 
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
-                      'mselibdir','syntaxdefdir','templatedir','compstoredir','compiler','debugger',
+                      'mselibdir','syntaxdefdir','templatedir','layoutdir','compstoredir','compiler','debugger',
                      'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir', 'fpgui');
  {$ifdef mswindows}
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                 '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/mse/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/mse/compstore/',
                 'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview/','','');
  {$else}
  
@@ -55,7 +54,7 @@ const
   {$ifdef linux}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                  'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
   {$endif}
  
@@ -64,13 +63,13 @@ const
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '/usr/local/lib/fpc/2.6.4/','/usr/local/lib/fpc/2.6.4/units/x86_64-freebsd/',
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
-                '/usr/local/share/ideu/templates/','${MSEDIR}apps/ide/compstore/',
+                '/usr/local/share/ideu/templates/','/usr/local/share/ideu/layout/','${MSEDIR}apps/ide/compstore/',
                'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','linux',
                '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '');
    {$else}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                  'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
      
    {$endif}
@@ -81,21 +80,21 @@ const
    {$ifdef CPUARM}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                  'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
    
    {$ifdef linux}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                  'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
    
     {$ifdef freebsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${MSEDIR}apps/ide/compstore/',
+                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                    'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '');
   
     {$endif}
@@ -143,6 +142,7 @@ type
    macrovalue: tmemodialogedit;
    fpguidir: tfilenameedit;
    docviewdir: tfilenameedit;
+   layoutdir: tfilenameedit;
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
    procedure formoncreate(const sender: TObject);
@@ -281,6 +281,7 @@ begin
   docviewdir.value := macros[sma_docviewdir]; 
   mselibdir.value:= macros[sma_mselibdir];
   syntaxdefdir.value:= macros[sma_syntaxdefdir];
+  layoutdir.value:= macros[sma_layoutdir];
   templatedir.value:= macros[sma_templatedir];
   targetosdir.value:= macros[sma_targetosdir];
    compiler.value:= macros[sma_compiler];
@@ -324,6 +325,7 @@ begin
     gINI.writeString('Path', 'mselib_dir', mselibdir.value);
     gINI.writeString('Path', 'syntaxdef_dir',syntaxdefdir.value);
     gINI.writeString('Path', 'template_dir',templatedir.value);
+    gINI.writeString('Path', 'layout_dir',layoutdir.value);
     gINI.writeString('Target', 'osdir', targetosdir.value);  
   {$endif}
  inherited;
@@ -343,6 +345,7 @@ begin
   macros[sma_mselibdir]:= mselibdir.value;
   macros[sma_syntaxdefdir]:= syntaxdefdir.value;
   macros[sma_templatedir]:= templatedir.value;
+  macros[sma_layoutdir]:= layoutdir.value;
   macros[sma_compstoredir]:= compstoredir.value;
   macros[sma_compiler]:= compiler.value;
   macros[sma_debugger]:= debugger.value;

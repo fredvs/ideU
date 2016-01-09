@@ -9,20 +9,21 @@ object debuggerfo: tdebuggerfo
   visible = False
   bounds_x = 137
   bounds_y = 39
-  bounds_cx = 966
-  bounds_cy = 46
+  bounds_cx = 960
+  bounds_cy = 37
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    956
-    46
+    950
+    37
   )
-  dragdock.caption = 'Debugger'
+  dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
+  caption = 'Commandor'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   icon.image = {

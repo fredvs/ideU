@@ -1,10 +1,10 @@
 object settingsfo: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 477
+  bounds_x = 389
   bounds_y = 54
   bounds_cx = 344
-  bounds_cy = 653
+  bounds_cy = 651
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -13,7 +13,7 @@ object settingsfo: tsettingsfo
     0
     0
     344
-    653
+    651
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
@@ -120,7 +120,7 @@ object settingsfo: tsettingsfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 342
-    bounds_cy = 505
+    bounds_cy = 544
     optionsscale = [osc_expandy, osc_shrinky]
     linkbottom = macrogrid
     optionslayout = [lao_placey]
@@ -129,7 +129,7 @@ object settingsfo: tsettingsfo
       taborder = 9
       visible = True
       bounds_x = 0
-      bounds_y = 429
+      bounds_y = 468
       bounds_cx = 342
       bounds_cy = 37
       optionsscale = [osc_expandy, osc_shrinky]
@@ -196,6 +196,7 @@ object settingsfo: tsettingsfo
           0
           0
         )
+        hint = 'Executale extension.'
         bounds_x = 8
         bounds_y = -2
         bounds_cx = 80
@@ -216,7 +217,7 @@ object settingsfo: tsettingsfo
       )
       taborder = 10
       bounds_x = 8
-      bounds_y = 466
+      bounds_y = 505
       bounds_cx = 324
       bounds_cy = 39
       onsetvalue = setprintcomm
@@ -224,8 +225,9 @@ object settingsfo: tsettingsfo
     end
     object debugger: tfilenameedit
       Tag = 8
+      frame.colorclient = 16108799
       frame.caption = '${DEBUGGER} Path of Default Debugger'
-      frame.localprops = []
+      frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
       frame.buttons.items = <      
@@ -242,7 +244,7 @@ object settingsfo: tsettingsfo
       taborder = 8
       hint = 'Path to debugger (gdb).'
       bounds_x = 8
-      bounds_y = 390
+      bounds_y = 429
       bounds_cx = 324
       bounds_cy = 39
       onsetvalue = setvalue
@@ -252,8 +254,9 @@ object settingsfo: tsettingsfo
     end
     object compiler: tfilenameedit
       Tag = 7
+      frame.colorclient = 16108799
       frame.caption = '${COMPILER} Path of Default Compiler'
-      frame.localprops = []
+      frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
       frame.buttons.items = <      
@@ -270,7 +273,7 @@ object settingsfo: tsettingsfo
       taborder = 7
       hint = 'Path to compiler (ppc386).'
       bounds_x = 8
-      bounds_y = 351
+      bounds_y = 390
       bounds_cx = 324
       bounds_cy = 39
       value = '/usr/local/share/fpc/2.6.4/ppcx64'
@@ -319,8 +322,9 @@ object settingsfo: tsettingsfo
     end
     object templatedir: tfilenameedit
       Tag = 5
+      frame.colorclient = 16777169
       frame.caption = '${TEMPLATEDIR} Directory of Templates'
-      frame.localprops = []
+      frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
       frame.buttons.items = <      
@@ -357,8 +361,9 @@ object settingsfo: tsettingsfo
     end
     object syntaxdefdir: tfilenameedit
       Tag = 4
+      frame.colorclient = 16777169
       frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
-      frame.localprops = []
+      frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
       frame.buttons.items = <      
@@ -579,6 +584,45 @@ object settingsfo: tsettingsfo
       controller.ongetfilename = epandfilenamemacro
       reffontheight = 15
     end
+    object layoutdir: tfilenameedit
+      Tag = 4
+      frame.colorclient = 16777169
+      frame.caption = '${LAYOUTDIR} Directory of Layout samples'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 13
+      hint = 'Directory for layout files.'
+      bounds_x = 8
+      bounds_y = 351
+      bounds_cx = 324
+      bounds_cy = 39
+      value = '/usr/local/share/ideu/layout'
+      onsetvalue = setvalue
+      controller.filename = '/usr/local/share/ideu/layout/'
+      controller.lastdir = '/usr/local/share/ideu/layout/'
+      controller.filterlist.data = (
+        (
+          'Syntax definitions'
+          '*.sdef'
+        )
+      )
+      controller.options = [fdo_directory]
+      controller.captionopen = 'Directory for syntax definition files'
+      controller.ongetfilename = epandfilenamemacro
+      reffontheight = 15
+    end
   end
   object macrogrid: twidgetgrid
     frame.caption = 'Global Macros'
@@ -592,9 +636,9 @@ object settingsfo: tsettingsfo
     )
     taborder = 1
     bounds_x = 8
-    bounds_y = 505
+    bounds_y = 544
     bounds_cx = 324
-    bounds_cy = 103
+    bounds_cy = 80
     bounds_cymin = 80
     optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     fixcols.count = 1
