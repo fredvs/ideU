@@ -1,11 +1,11 @@
-program ${%PROJECTNAME%};
+program fpg_program;
 
 {$mode objfpc}{$H+}
 
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
+  {$IFDEF UNIX}
   cthreads,
-  {$ENDIF}{$ENDIF}
+  {$ENDIF}
   Classes, fpg_main, frm_main;
 
 
@@ -14,7 +14,8 @@ var
   frm: TMainForm;
 begin
   fpgApplication.Initialize;
-  frm := TMainForm.Create(nil);
+  fpgApplication.CreateForm(TMainForm, frm);
+  fpgApplication.MainForm := frm;
   try
     frm.Show;
     fpgApplication.Run;

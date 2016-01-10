@@ -32,7 +32,6 @@ begin
   WindowTitle := 'MainForm';
   Hint := '';
   WindowPosition := wpOneThirdDown;
-
   {@VFD_BODY_END: MainForm}
   {%endregion}
 end;

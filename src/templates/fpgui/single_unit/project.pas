@@ -39,8 +39,8 @@ var
   frm: TMainForm;
 begin
   fpgApplication.Initialize;
-  frm := TMainForm.Create(nil);
-  try
+  fpgApplication.CreateForm(TMainForm, frm);
+ try
     frm.Show;
     fpgApplication.Run;
   finally
