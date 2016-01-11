@@ -43,7 +43,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.0.2';
+ versiontext = '1.0.3';
  idecaption = 'ideU';
  statname = 'ideu';
 
