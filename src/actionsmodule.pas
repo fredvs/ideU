@@ -21,7 +21,7 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform, msefileutils,
  msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
  msesys, msesysutils, msesimplewidgets,projecttreeform,msestringcontainer,
  targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;
@@ -346,8 +346,8 @@ procedure configureide;
 
 implementation
 uses
- main,make,actionsmodule_mfm,sourceform,msedesigner,msetypes,msefiledialog,
- projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, sourcepage,
+plugmanager, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
+ projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
  disassform,printform,msegdbutils,mseintegerenter,msesettings,
  componentstore,cpuform,sysutils,msecomptree;
  
@@ -422,15 +422,22 @@ begin
 end;
 
 procedure tactionsmo.saveactonexecute(const sender: tobject);
+var
+ sysfilename : string;
 begin
  with mainfo do begin
   if factivedesignmodule <> nil then begin
    designer.saveformfile(factivedesignmodule,factivedesignmodule^.filename,true);
    updatemodifiedforms;
-  end
+    end
   else begin
    sourcefo.saveactivepage;
   end;
+ end;
+   if (conffpguifo.enablefpguidesigner.value = true) then
+ begin
+   sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));
+     LoadfpgDesigner(sysfilename,'');
  end;
 end;
 
