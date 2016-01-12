@@ -22,7 +22,8 @@ interface
 uses
  mseforms,msesimplewidgets,msedataedits,msegraphedits,msetextedit,msestrings,
  msetypes,msestat,msestatfile,projectoptionsform,mseglob,mseevent,msegui,
- msemenus,msesplitter,msegraphics,msegraphutils,msewidgets;
+ msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseguiglob,
+ mseificomp,mseificompglob,mseifiglob,msescrollbar;
 
 type
 
@@ -33,10 +34,9 @@ type
    tlayouter1: tlayouter;
    cancel: tbutton;
    tbutton2: tbutton;
-   tlayouter2: tlayouter;
-   selectedonly: tbooleanedit;
-   wholeword: tbooleanedit;
    casesensitive: tbooleanedit;
+   wholeword: tbooleanedit;
+   selectedonly: tbooleanedit;
   private
    procedure valuestoinfo(out info: findinfoty);
    procedure infotovalues(const info: findinfoty);
@@ -48,7 +48,7 @@ function finddialogexecute(var info: findinfoty): boolean;
 
 implementation
 uses
- mseguiglob,finddialogform_mfm;
+ finddialogform_mfm;
 
 procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
@@ -70,7 +70,6 @@ var
 begin
  fo:= tfinddialogfo.create(nil);
  try
- fo.color := $99BF9C ;
   fo.infotovalues(info);
   result:= fo.show(true,nil) = mr_ok;
   if result then begin

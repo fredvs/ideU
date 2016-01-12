@@ -1,10 +1,10 @@
 object confideufo: tconfideufo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 522
-  bounds_y = 207
+  bounds_x = 467
+  bounds_y = 89
   bounds_cx = 274
-  bounds_cy = 218
+  bounds_cy = 241
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,7 +12,7 @@ object confideufo: tconfideufo
     0
     0
     274
-    218
+    241
   )
   optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
@@ -136,8 +136,8 @@ object confideufo: tconfideufo
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
     taborder = 4
-    bounds_x = 111
-    bounds_y = 189
+    bounds_x = 103
+    bounds_y = 205
     bounds_cx = 50
     bounds_cy = 21
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
@@ -156,8 +156,8 @@ object confideufo: tconfideufo
       2
     )
     taborder = 5
-    bounds_x = 27
-    bounds_y = 112
+    bounds_x = 25
+    bounds_y = 137
     bounds_cx = 199
     bounds_cy = 17
   end
@@ -180,14 +180,32 @@ object confideufo: tconfideufo
     )
     taborder = 6
     hint = 'Paren directory of sakit ( speaker assistve kit )'
-    bounds_x = 7
-    bounds_y = 136
+    bounds_x = 5
+    bounds_y = 156
     bounds_cx = 262
     bounds_cy = 39
     controller.lastdir = '/usr/local/share/'
     controller.options = [fdo_directory]
     controller.captionopen = 'Parent-directory of /sakit'
     reffontheight = 15
+  end
+  object nozorderenable: tbooleanedit
+    frame.caption = 'No Z order handling'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      124
+      2
+    )
+    taborder = 7
+    hint = 'No focus on menu-item when mouse-move on it.'
+    bounds_x = 56
+    bounds_y = 103
+    bounds_cx = 137
+    bounds_cy = 17
+    onchange = zorderhandle
   end
   object tstatfile1: tstatfile
     filedir = 'confideu.sta'

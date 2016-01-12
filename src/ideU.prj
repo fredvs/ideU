@@ -17,14 +17,16 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/Z:/home/fred/ideu/src
-projectfilename=/Z:/home/fred/ideu/src/ideU.prj
-findinfiledialog=53
+projectdir=/home/fred/ideu/src
+projectfilename=/home/fred/ideu/src/ideU.prj
+findinfiledialog=55
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.inopenfiles]
  value=0
  [findinfileadialogfo.wholeword]
+ value=0
+ [findinfileadialogfo.inprojectdir]
  value=0
  [findinfileadialogfo.casesensitive]
  value=1
@@ -39,15 +41,15 @@ findinfiledialog=53
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/ideu/src/
+  /home/fred/msegui/
  filecolwidth=174
  x=0
  y=0
  cx=0
  cy=0
  filehistory=6
-  /home/fred/ideu/src/
   /home/fred/msegui/
+  /home/fred/ideu/src/
   /home/fred/msegui/apps/ide/
   /usr/src/ideu_prog/src/
   /home/fred/Téléchargements/mseide-msegui.git/
@@ -55,8 +57,9 @@ findinfiledialog=53
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=pathdisp
+ value=NOZORDERHANDLING
  history=10
+  NOZORDERHANDLING
   pathdisp
   LoadfpgDesigner
   closeall
@@ -66,22 +69,21 @@ findinfiledialog=53
   fpgdesigner
   fpgdesi
   pairmarkbkgcolor
-  markbrackets
  [findinfileadialogfo]
  stackedunder=
  x=636
  y=108
  cx=339
- cy=251
+ cy=275
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
  [finddialogfo]
  stackedunder=
- x=776
- y=254
- cx=425
- cy=138
+ x=510
+ y=249
+ cx=358
+ cy=122
 replacedialog=17
  [replacedialogfo.promptonreplace]
  value=1
@@ -514,9 +516,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=5
+ CONFIDEUFO
+ FINDDIALOGFO
+ FINDINFILEADIALOGFO
+ FINDINFILEFO
+ PROJECTOPTIONSFO
+moduletypes=5
+ TCONFIDEUFO
+ TFINDDIALOGFO
+ TFINDINFILEDIALOGFO
+ TFINDINFILEFO
+ TPROJECTOPTIONSFO
+modulefiles=5
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+ /home/fred/ideu/src/findinfiledialogform.mfm
+ /home/fred/ideu/src/findinfileform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
 befcommandon=0
 makeoptionson=6
  63
@@ -731,7 +748,7 @@ path=12
  /home/fred/ideu/src/msesyntaxpainter.pas
  /home/fred/ideu/src/msesyntaxedit.pas
 line=12
- 681
+ 686
  2129
  841
  1077
@@ -740,7 +757,7 @@ line=12
  947
  1010
  543
- 3190
+ 3197
  644
  119
 address=12
@@ -886,7 +903,7 @@ files=
  a=0,4132,6,Text Files
  )
 [componentstore]
-storedir=/Z:/home/fred/msegui/apps/mse/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -902,8 +919,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=saveactivep
+finddtext=readbo
 findhistory=10
+ readbo
+ writeb
  saveactivep
  uses
  saveformfile
@@ -912,10 +931,8 @@ findhistory=10
  fpgde
  user 
  ttabpage
- user color
- caption =
 findoptions=1
-editpos=24
+editpos=32
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -932,7 +949,6 @@ editpos=24
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,405
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -940,6 +956,15 @@ editpos=24
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -964,7 +989,15 @@ bookmarks20=0
 bookmarks21=0
 bookmarks22=0
 bookmarks23=0
-sourcefiles=24
+bookmarks24=0
+bookmarks25=0
+bookmarks26=0
+bookmarks27=0
+bookmarks28=0
+bookmarks29=0
+bookmarks30=0
+bookmarks31=0
+sourcefiles=32
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/projectoptionsform.mfm
@@ -981,7 +1014,7 @@ sourcefiles=24
  ${PROJECTDIR}/sourceform.mfm
  ${PROJECTDIR}/actionsmodule.mfm
  ${PROJECTDIR}/define.inc
- /Z:/home/fred/ideu/src/actionsmodule.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/plugmanager.pas
@@ -989,7 +1022,15 @@ sourcefiles=24
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/selecteditpageform.pas
-relpaths=24
+ ${PROJECTDIR}/guitemplates.mfm
+ /home/fred/msegui/lib/common/kernel/msegui.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/finddialogform.pas
+ ${PROJECTDIR}/findinfileform.pas
+ /home/fred/ideu/src/findinfiledialogform.pas
+relpaths=32
  projectoptionsform.pas
  main.pas
  projectoptionsform.mfm
@@ -1014,7 +1055,15 @@ relpaths=24
  sourceform.pas
  sourcepage.pas
  selecteditpageform.pas
-ismoduletexts=24
+ guitemplates.mfm
+ msegui/lib/common/kernel/msegui.pas
+ confideu.pas
+ projectoptionsform.pas
+ confideu.pas
+ finddialogform.pas
+ findinfileform.pas
+ findinfiledialogform.pas
+ismoduletexts=32
  0
  0
  -1
@@ -1039,14 +1088,60 @@ ismoduletexts=24
  0
  0
  0
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=8
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+ /home/fred/ideu/src/findinfileform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/findinfiledialogform.mfm
+moduleoptions=8
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+visiblemodules=8
+ -1
+ -1
+ -1
+ -1
+ 0
+ 0
+ 0
+ -1
+nomenumodules=8
+ 0
+ 0
+ 0
+ 0
+ -1
+ -1
+ -1
+ 0
 [sourcefo.files_tab]
-order=24
+order=32
  0
+ 26
+ 27
  1
+ 28
+ 29
+ 30
+ 31
  20
  2
  3
@@ -1057,6 +1152,8 @@ order=24
  8
  9
  16
+ 24
+ 25
  23
  21
  22
@@ -1070,10 +1167,10 @@ order=24
  14
  15
 tabsize=60
-firsttab=10
-index=11
+firsttab=3
+index=7
 [layout]
-windowlayout=495
+windowlayout=587
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1087,13 +1184,13 @@ windowlayout=495
  ny=0
  ncx=0
  ncy=0
- x=95
- y=34
- cx=1029
+ x=288
+ y=97
+ cx=959
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=4
  active=1
  visible=1
  [targetconsolefo]
@@ -1105,8 +1202,8 @@ windowlayout=495
  ny=0
  ncx=0
  ncy=0
- x=495
- y=172
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
@@ -1162,7 +1259,7 @@ windowlayout=495
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1181,7 +1278,7 @@ windowlayout=495
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=disassfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1206,8 +1303,8 @@ windowlayout=495
  ncy=0
  x=0
  y=0
- cx=139
- cy=451
+ cx=159
+ cy=493
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1219,7 +1316,7 @@ windowlayout=495
  sorted=0
  col=0
  row=1
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1303,32 +1400,32 @@ windowlayout=495
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=breakpointsfo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=961
- y=122
+ x=645
+ y=118
  cx=316
  cy=484
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=73
+ width0=151
  sortdescend0=0
- width1=227
+ width1=149
  sortdescend1=0
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1380,8 +1477,8 @@ windowlayout=495
  y=0
  cx=247
  cy=44
- rcx=1129
- rcy=679
+ rcx=1262
+ rcy=583
  [watchfo.grid]
  propcolwidthref=123
  values0=0
@@ -1403,7 +1500,7 @@ windowlayout=495
  value=0
  [messagefo]
  splitdir=0
- useroptions=268550251
+ useroptions=268517483
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1412,15 +1509,15 @@ windowlayout=495
  ncx=0
  ncy=0
  x=0
- y=499
- cx=1019
- cy=88
+ y=550
+ cx=1356
+ cy=132
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
  useroptions=268460155
- stackedunder=symbolfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1483,27 +1580,24 @@ windowlayout=495
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=componentstorefo
- parent=
+ parent=mainfo.basedock
+ visible=0
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=428
- y=66
- cx=440
- cy=129
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
+ x=0
+ y=41
+ cx=949
+ cy=74
+ rcx=949
+ rcy=585
  [componentpalettefo.componentpages]
  activetab=1
  [debuggerfo]
  splitdir=0
- useroptions=122987
+ useroptions=24683
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1513,8 +1607,8 @@ windowlayout=495
  ncy=0
  x=0
  y=0
- cx=1019
- cy=42
+ cx=1356
+ cy=51
  rcx=0
  rcy=0
  [sourcefo]
@@ -1527,17 +1621,17 @@ windowlayout=495
  ny=0
  ncx=0
  ncy=0
- x=142
+ x=162
  y=0
- cx=877
- cy=451
+ cx=1194
+ cy=493
  rcx=0
  rcy=0
  [cpui386fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1555,7 +1649,7 @@ windowlayout=495
  visible=0
  [mainfo.panel1]
  splitdir=1
- useroptions=838893035
+ useroptions=838958571
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1564,11 +1658,106 @@ windowlayout=495
  ncx=0
  ncy=0
  x=0
- y=45
- cx=1019
- cy=451
+ y=54
+ cx=1356
+ cy=493
  rcx=0
  rcy=0
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_confideufo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=311
+ y=169
+ cx=766
+ cy=568
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_finddialogfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=467
+ y=89
+ cx=284
+ cy=241
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_finddialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_findinfilefo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=318
+ y=205
+ cx=373
+ cy=116
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_findinfilefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_findinfileadialogfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=548
+ y=115
+ cx=379
+ cy=198
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_findinfileadialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=268
+ y=415
+ cx=349
+ cy=275
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

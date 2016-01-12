@@ -17,10 +17,18 @@ type
    tbassistive: tbooleanedit;
    tesakitdir: tfilenameedit;
    tstatfile1: tstatfile;
+   nozorderenable: tbooleanedit;
+   procedure zorderhandle(const sender: TObject);
  end;
 var
  confideufo: tconfideufo;
 implementation
 uses
  confideu_mfm;
+procedure tconfideufo.zorderhandle(const sender: TObject);
+begin
+if nozorderenable.value = true then  nozorderhandling:= true else
+ nozorderhandling:= false;
+end;
+
 end.

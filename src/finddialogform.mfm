@@ -1,85 +1,23 @@
 object finddialogfo: tfinddialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
-  color = 10076060
   visible = False
-  bounds_x = 346
-  bounds_y = 73
-  bounds_cx = 300
-  bounds_cy = 114
+  bounds_x = 318
+  bounds_y = 205
+  bounds_cx = 363
+  bounds_cy = 116
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    300
-    114
+    363
+    116
   )
   options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find Text'
   moduleclassname = 'tmseform'
-  object tlayouter2: tlayouter
-    frame.localprops = []
-    frame.localprops1 = []
-    taborder = 2
-    bounds_x = 8
-    bounds_y = 45
-    bounds_cx = 283
-    bounds_cy = 40
-    optionsscale = [osc_expandx, osc_shrinkx]
-    optionslayout = [lao_placex]
-    place_mindist = 4
-    place_maxdist = 4
-    object selectedonly: tbooleanedit
-      frame.caption = 'select&ed only'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        82
-        2
-      )
-      bounds_x = 188
-      bounds_y = 10
-      bounds_cx = 95
-      bounds_cy = 17
-      statfile = statfile1
-    end
-    object wholeword: tbooleanedit
-      frame.caption = '&whole word'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        72
-        2
-      )
-      taborder = 1
-      bounds_x = 99
-      bounds_y = 10
-      bounds_cx = 85
-      bounds_cy = 17
-    end
-    object casesensitive: tbooleanedit
-      frame.caption = 'case&sensitive'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        82
-        2
-      )
-      taborder = 2
-      bounds_x = 0
-      bounds_y = 10
-      bounds_cx = 95
-      bounds_cy = 17
-    end
-  end
   object findtext: thistoryedit
     frame.caption = 'Text to &find'
     frame.localprops = []
@@ -92,7 +30,7 @@ object finddialogfo: tfinddialogfo
     )
     bounds_x = 8
     bounds_y = 5
-    bounds_cx = 283
+    bounds_cx = 348
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -107,7 +45,7 @@ object finddialogfo: tfinddialogfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 186
+    bounds_x = 249
     bounds_y = 88
     bounds_cx = 105
     bounds_cy = 21
@@ -120,30 +58,80 @@ object finddialogfo: tfinddialogfo
     place_mode = wam_end
     place_options = [plo_syncmaxautosize]
     object cancel: tbutton
-      bounds_x = 0
+      bounds_x = 55
       bounds_y = 0
       bounds_cx = 50
       bounds_cy = 21
-      anchors = []
+      anchors = [an_top, an_right]
       state = [as_localcaption]
       caption = '&Cancel'
       modalresult = mr_cancel
     end
     object tbutton2: tbutton
       taborder = 1
-      bounds_x = 55
+      bounds_x = 0
       bounds_y = 0
       bounds_cx = 50
       bounds_cy = 21
-      anchors = []
+      anchors = [an_top, an_right]
       state = [as_default, as_localdefault, as_localcaption]
       caption = '&OK'
       modalresult = mr_ok
     end
   end
+  object casesensitive: tbooleanedit
+    frame.caption = 'case&sensitive'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      82
+      2
+    )
+    taborder = 2
+    bounds_x = 15
+    bounds_y = 53
+    bounds_cx = 95
+    bounds_cy = 17
+  end
+  object wholeword: tbooleanedit
+    frame.caption = '&whole word'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      72
+      2
+    )
+    taborder = 3
+    bounds_x = 133
+    bounds_y = 53
+    bounds_cx = 85
+    bounds_cy = 17
+  end
+  object selectedonly: tbooleanedit
+    frame.caption = 'select&ed only'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      82
+      2
+    )
+    taborder = 4
+    bounds_x = 245
+    bounds_y = 53
+    bounds_cx = 95
+    bounds_cy = 17
+    statfile = statfile1
+  end
   object statfile1: tstatfile
     filename = 'finddialogfo.sta'
     options = [sfo_memory]
-    left = 112
+    left = 167
+    top = 83
   end
 end

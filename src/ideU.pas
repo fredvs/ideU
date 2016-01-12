@@ -49,6 +49,7 @@ begin
  if application.terminated then begin
   exit;
  end;
+ 
  application.createform(tconfideufo,confideufo);
  application.createform(tconfmseguifo,confmseguifo);
  application.createform(tconffpguifo,conffpguifo);

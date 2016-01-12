@@ -369,6 +369,7 @@ type
    procedure stackframechanged(const frameno: integer);
    procedure refreshframe;
    procedure toggleformunit;
+   property projectname: filenamety read fprojectname;
    property lastform: tcustommseform read flastform;
    property execstamp: integer read fexecstamp;
    property stopinfo: stopinfoty read fstopinfo;
@@ -647,6 +648,11 @@ begin
   
   confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
   
+  confideufo.nozorderenable.value := gINI.Readbool('nozorder', 'general', false); 
+  
+  if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
+ nozorderhandling:= false;
+     
   libpath :=   IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
      
      {$ifdef windows}
@@ -703,7 +709,9 @@ begin
   gINI.writeString('edclose', 'designer_fpGUI', conffpguifo.edclose.text);
   
   gINI.writeBool('ifshow', 'designer_fpGUI', conffpguifo.ifshow.value);
-  gINI.writeString('edshow', 'designer_fpGUI', conffpguifo.edshow.text);  
+  gINI.writeString('edshow', 'designer_fpGUI', conffpguifo.edshow.text); 
+  
+  gINI.writebool('nozorder', 'general', confideufo.nozorderenable.value);  
   
   gINI.writebool('Assistive', 'sak', confideufo.tbassistive.value); 
   gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.text);   
