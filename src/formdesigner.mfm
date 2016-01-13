@@ -34,7 +34,7 @@ object formdesignerfo: tformdesignerfo
     287
     300
   )
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_propsize, od_captionhint]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_propsize, od_captionhint, od_buttonhints, od_childicons]
   dragdock.onbeforefloat = beffloatexe
   dragdock.onfloat = floatexe
   optionswindow = [wo_notaskbar]
@@ -114,17 +114,17 @@ object formdesignerfo: tformdesignerfo
     menu.submenu.count = 31
     menu.submenu.items = <    
       item
-        caption = ' Show objectinspector '
+        caption = 'Show objectinspector'
         state = [as_localcaption, as_localonexecute]
         onexecute = doshowobjectinspector
       end    
       item
-        caption = ' Show componentpalette '
+        caption = 'Show componentpalette'
         state = [as_localcaption, as_localonexecute]
         onexecute = doshowcomponentpalette
       end    
       item
-        caption = ' Show as Text '
+        caption = 'Show as Text'
         state = [as_localcaption, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
         onexecute = doshowastext
@@ -150,7 +150,7 @@ object formdesignerfo: tformdesignerfo
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
-        caption = ' Copy Component(s) '
+        caption = 'Copy Component(s)'
         name = 'copy'
         state = [as_localcaption, as_localshortcut, as_localonexecute]
         onexecute = copyexe
@@ -160,7 +160,7 @@ object formdesignerfo: tformdesignerfo
         )
       end    
       item
-        caption = ' Cut Component(s) '
+        caption = 'Cut Component(s)'
         name = 'cut'
         state = [as_localcaption, as_localshortcut, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
@@ -171,7 +171,7 @@ object formdesignerfo: tformdesignerfo
         )
       end    
       item
-        caption = ' Paste Component(s) '
+        caption = 'Paste Component(s)'
         name = 'paste'
         state = [as_localcaption, as_localshortcut, as_localonexecute]
         onexecute = pasteexe
@@ -181,7 +181,7 @@ object formdesignerfo: tformdesignerfo
         )
       end    
       item
-        caption = ' Delete Component(s) '
+        caption = 'Delete Component(s)'
         name = 'delete'
         state = [as_localcaption, as_localshortcut, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
@@ -192,7 +192,7 @@ object formdesignerfo: tformdesignerfo
         )
       end    
       item
-        caption = ' Undelete Component(s) '
+        caption = 'Undelete Component(s)'
         name = 'undelete'
         state = [as_localcaption, as_localonexecute]
         onexecute = undeleteexe
@@ -202,63 +202,63 @@ object formdesignerfo: tformdesignerfo
       end    
       item
         action = actionsmo.findcompallact
-        caption = ' Find Component '
+        caption = 'Find Component'
         state = [as_localcaption]
       end    
       item
-        caption = ' Select Childwidget '
+        caption = 'Select Childwidget'
         name = 'selectchild'
         state = [as_localcaption]
       end    
       item
-        caption = ' &Edit Component '
+        caption = '&Edit Component'
         name = 'editcomp'
         state = [as_localcaption, as_localonexecute]
         onexecute = doeditcomponent
       end    
       item
-        caption = ' Bring to Front '
+        caption = 'Bring to Front'
         name = 'bringtofro'
         state = [as_localcaption, as_localonexecute]
         onexecute = dobringtofront
       end    
       item
-        caption = ' Send to Back '
+        caption = 'Send to Back'
         name = 'sendtoba'
         state = [as_localcaption, as_localonexecute]
         onexecute = dosendtoback
       end    
       item
-        caption = ' &Iconify '
+        caption = '&Iconify'
         name = 'iconify'
         state = [as_localcaption, as_localonexecute]
         onexecute = doiconify
       end    
       item
-        caption = ' &Deiconify '
+        caption = '&Deiconify'
         name = 'deiconify'
         state = [as_localcaption, as_localonexecute]
         onexecute = dodeiconify
       end    
       item
-        caption = ' Set Tab Order '
+        caption = 'Set Tab Order'
         name = 'settabord'
         state = [as_localcaption, as_localonexecute]
         onexecute = dosettaborder
       end    
       item
-        caption = ' Set Creation Order '
+        caption = 'Set Creation Order'
         state = [as_localcaption, as_localonexecute]
         onexecute = dosetcreationorder
       end    
       item
-        caption = ' Sync. to Font Height '
+        caption = 'Sync. to Font Height'
         name = 'synctofo'
         state = [as_localcaption, as_localonexecute]
         onexecute = dosyncfontheight
       end    
       item
-        caption = ' Revert to inherited '
+        caption = 'Revert to inherited'
         name = 'revert'
         state = [as_localcaption, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
@@ -268,23 +268,23 @@ object formdesignerfo: tformdesignerfo
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
-        caption = ' Touch Form '
+        caption = 'Touch Form'
         state = [as_localcaption, as_localonexecute]
         onexecute = dotouch
       end    
       item
-        caption = ' Touch all Forms '
+        caption = 'Touch all Forms'
         state = [as_localcaption, as_localonexecute]
         onexecute = touchallexe
       end    
       item
-        caption = ' Insert Submodule '
+        caption = 'Insert Submodule'
         name = 'insertsub'
         state = [as_localcaption, as_localonexecute]
         onexecute = doinsertsubmodule
       end    
       item
-        caption = ' Insert Component '
+        caption = 'Insert Component'
         name = 'insertcomp'
         state = [as_localcaption, as_localonexecute]
         onexecute = doinsertcomponent
@@ -293,26 +293,26 @@ object formdesignerfo: tformdesignerfo
     top = 40
   end
   object hidecompact: taction
-    caption = ' Hide &Components '
+    caption = 'Hide &Components'
     onchange = hidecompexe
     left = 144
     top = 40
   end
   object hidewidgetact: taction
-    caption = ' Hide &Widgets '
+    caption = 'Hide &Widgets'
     onupdate = updatewidgethideexe
     onchange = hidewidgetexe
     left = 144
     top = 56
   end
   object togglehideact: taction
-    caption = ' &Hide Widgets<>Components '
+    caption = '&Hide Widgets<>Components'
     onexecute = togglehideexe
     left = 144
     top = 72
   end
   object showallact: taction
-    caption = ' &Show all '
+    caption = '&Show all'
     onexecute = showallexe
     left = 144
     top = 88

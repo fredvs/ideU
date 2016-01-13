@@ -93,7 +93,7 @@ const
   '&OK',      //mr_ok
   '&Yes',     //mr_yes
   '&No',      //mr_no
-  'Yes &all',     //mr_all
+  'Y&es all',     //mr_all
   'No all',   //mr_noall
   '&Ignore',  //mr_ignore
   '&Skip',    //mr_skip
@@ -113,7 +113,7 @@ const
   'OK',      //mr_ok
   'Yes',     //mr_yes
   'No',      //mr_no
-  'All',     //mr_all
+  'Yes all',     //mr_all
   'No all',  //mr_noall
   'Ignore',  //mr_ignore
   'Skip',    //mr_skip
@@ -217,7 +217,17 @@ const
   'selected rows?',     //sc_selected_rows
   'Single item only',    //sc_Single_item_only
   'Copy Cells',          //sc_Copy_Cells
-  'Paste Cells'          //sc_Paste_Cells
+  'Paste Cells',         //sc_Paste_Cells
+  'Close',               //sc_close
+  'Maximize',            //sc_maximize
+  'Normalize',           //sc_normalize
+  'Minimize',            //sc_minimize
+  'Fix size',            //sc_fix_size
+  'Float',               //sc_float
+  'Stay on top',         //sc_stay_on_top
+  'Stay in background',  //sc_stay_in_background
+  'Lock children',       //sc_lock_children
+  'No lock'              //sc_no_lock
                        );
 
 function delete_n_selected_rows(const params: array of const): msestring;

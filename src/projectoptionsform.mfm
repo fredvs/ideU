@@ -1,8 +1,8 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 311
-  bounds_y = 169
+  bounds_x = 300
+  bounds_y = 234
   bounds_cx = 756
   bounds_cy = 568
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -4609,7 +4609,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           bounds_x = 2
-          bounds_y = 24
+          bounds_y = 23
           bounds_cx = 750
           bounds_cy = 74
           anchors = [an_left, an_top, an_right]
@@ -4623,8 +4623,8 @@ object projectoptionsfo: tprojectoptionsfo
               52
               2
             )
-            bounds_x = 535
-            bounds_y = 40
+            bounds_x = 473
+            bounds_y = 28
             bounds_cx = 65
             bounds_cy = 17
             options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_reversed]
@@ -4640,8 +4640,8 @@ object projectoptionsfo: tprojectoptionsfo
               10
             )
             taborder = 1
-            bounds_x = 387
-            bounds_y = 31
+            bounds_x = 374
+            bounds_y = 25
             bounds_cx = 71
             bounds_cy = 32
             value = True
@@ -4737,6 +4737,22 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 78
             bounds_cy = 17
             value = True
+          end
+          object componenthints: tbooleanedit
+            frame.caption = 'Component hints'
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.outerframe = (
+              0
+              2
+              107
+              2
+            )
+            taborder = 6
+            bounds_x = 575
+            bounds_y = 28
+            bounds_cx = 120
+            bounds_cy = 17
           end
         end
         object tgroupbox2: tgroupbox
