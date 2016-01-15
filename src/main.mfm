@@ -5,10 +5,10 @@ object mainfo: tmainfo
   frame.grip_size = 10
   frame.grip_color = 12434877
   frame.grip_coloractive = 13421772
-  frame.grip_options = [go_fixsizebutton, go_floatbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints]
   visible = False
-  bounds_x = 434
-  bounds_y = 24
+  bounds_x = 211
+  bounds_y = 147
   bounds_cx = 654
   bounds_cy = 222
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -28,7 +28,7 @@ object mainfo: tmainfo
     205
   )
   dragdock.splitter_color = -1879048190
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_buttonhints, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
   optionswindow = [wo_taskbar]
   mainmenu = mainmenu1
   options = [fo_main, fo_terminateonclose, fo_screencentered, fo_globalshortcuts, fo_savepos, fo_savezorder, fo_savestate]
@@ -109,7 +109,7 @@ object mainfo: tmainfo
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
-    dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint, od_buttonhints, od_childicons]
+    dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background]
     statfile = projectstatfile
   end
   object statdisp: tstringdisp

@@ -153,7 +153,8 @@ type
                                out scope: tdeflist): stringarty; overload;
    function getidentpath(const parser: tpascalparser): stringarty; overload;
    function switchheaderimplementation(const infopo: punitinfoty;
-                             var headerstart,headerstop: sourceposty): boolean;
+                                    var headerstart,headerstop: sourceposty;
+                                       out isimplementation: boolean): boolean;
    function completeclass(const infopo: punitinfoty;
                       const pos: sourceposty): boolean; //true if changed
    procedure sourcechanged(const filename: filenamety);
@@ -216,7 +217,8 @@ procedure deinit(const adesigner: tdesigner);
 
 procedure sourcechanged(const filename: filenamety);
 function switchheaderimplementation(const filename: filenamety;
-                    var astart,astop: sourceposty): boolean;
+                    var astart,astop: sourceposty;
+                               out isimplementation: boolean): boolean;
 function findlinkdest(const edit: tsyntaxedit; var apos: sourceposty;
                          out definition: msestring): boolean;
   //true if dest found
@@ -316,14 +318,14 @@ begin
 end;
 
 function switchheaderimplementation(const filename: filenamety;
-                                 var astart,astop: sourceposty): boolean;
+                var astart,astop: sourceposty; out isimplementation: boolean): boolean;
 var
  po1: punitinfoty;
 begin
  with sourceupdater do begin
   po1:= updatesourceunit(filename,astart.filenum,false);
   if updateline(po1,astart) then begin
-   result:= switchheaderimplementation(po1,astart,astop);
+   result:= switchheaderimplementation(po1,astart,astop,isimplementation);
   end
   else begin
    result:= false;
@@ -795,7 +797,8 @@ function tsourceupdater.getdefinfotext(const adef: pdefinfoty): string;
 var
  item1: sourceitemty;
 begin
- if adef^.kind in [syk_typedef,syk_vardef,syk_classdef,syk_procdef,syk_procimp,
+ if adef^.kind in [syk_typedef,syk_vardef,syk_pardef,syk_classdef,
+                         syk_procdef,syk_procimp,
                          syk_classprocimp,syk_interfacedef] then begin
   item1.filename:= adef^.pos.filename;
   item1.startoffset:= adef^.pos.offset;
@@ -858,7 +861,7 @@ begin
     getidents(po1,sourcefo.gettextstream(designer.designfiles.getname(
                               po1^.pos.filename),false));
    end;
-   syk_typedef,syk_vardef,syk_classdef,syk_procdef,syk_classprocimp,
+   syk_typedef,syk_vardef,syk_pardef,syk_classdef,syk_procdef,syk_classprocimp,
                          syk_procimp,syk_interfacedef: begin
     list1:= nil;
     try
@@ -1096,7 +1099,8 @@ begin
 end;
 
 function tsourceupdater.switchheaderimplementation(const infopo: punitinfoty;
-                             var headerstart,headerstop: sourceposty): boolean;
+                        var headerstart,headerstop: sourceposty; 
+                                      out isimplementation: boolean): boolean;
 var
  po1,po2: pdefinfoty;
  scope: tdeflist;
@@ -1109,11 +1113,13 @@ var
 begin
  result:= false;
  ar1:= nil; //compiler warning
+ isimplementation:= false;
  with infopo^ do begin
   po1:= deflist.finditem(headerstart,false,scope);
   if po1 <> nil then begin
    po2:= nil;
    if po1^.kind = syk_procdef then begin
+    isimplementation:= true;
     if scope.kind = syk_classdef then begin
      str1:= scope.name + '.'+ po1^.name; //as direct procparameter  delphi bug
      po2:= scope.parent.find(str1,syk_classprocimp);
@@ -1127,7 +1133,8 @@ begin
     end;
    end
    else begin
-    while (scope <> nil) and not (scope.kind in [syk_root,syk_classdef]) do begin
+    while (scope <> nil) and 
+              not (scope.kind in [syk_root,syk_classdef]) do begin
      po1:= scope.definfopo;
      scope:= scope.parentscope;
     end;

@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -2531,7 +2531,7 @@ begin
     po1:= fdesigner.getinheritedmodule(designmoduleclassname);
     if po1 = nil then begin
      raise exception.create(ansistring(actionsmo.c[ord(ac_ancestorfor)])+
-         designmoduleclassname+ansistring(actionsmo.c[ord(ac_notfound)]));
+           designmoduleclassname+ansistring(actionsmo.c[ord(ac_notfound)]));
     end;
     fdesigner.beginstreaming({po1});
     try
@@ -4103,7 +4103,7 @@ begin
   raise exception.Create(ansistring(actionsmo.c[ord(ac_modulenotfound)]));
  end;
  if po1 = nil then begin
- raise exception.Create(ansistring(actionsmo.c[ord(ac_methodnotfound)]));
+  raise exception.Create(ansistring(actionsmo.c[ord(ac_methodnotfound)]));
  end;
  oldname:= po1^.name;
  po1^.name:= newname;
@@ -4655,12 +4655,8 @@ var
  exp1: exception;
 
 begin //loadformfile
-
-if fileexists(filename) then begin
-
  filename:= filepath(filename);
  result:= fmodules.findmodule(filename);
-// bo1 := true;
  if result = nil then begin
   designnotifications.closeobjecttext(idesigner(self),filename,bo1);
   if bo1 then begin
@@ -4817,10 +4813,10 @@ if fileexists(filename) then begin
           for int1:= 1 to rootnames.Count - 1 do begin
            wstr1:= wstr1 + ','+msestring(rootnames[int1]);
           end;
-        raise exception.Create(ansistring(
-                                actionsmo.c[ord(ac_unresolvedref)]+' '+
-                                         msestring(lastmissed)+lineend+
-                       actionsmo.c[ord(ac_modules)]+' '+wstr1+'.'));
+          raise exception.Create(ansistring(
+                                   actionsmo.c[ord(ac_unresolvedref)]+' '+
+                                            msestring(lastmissed)+lineend+
+                          actionsmo.c[ord(ac_modules)]+' '+wstr1+'.'));
          end;
          result^.resolved:= true;
         except
@@ -4858,9 +4854,9 @@ if fileexists(filename) then begin
     except
      on e: exception do begin
       e.Message:= ansistring(actionsmo.c[ord(ac_cannotreadform)]+filename)+
-                                                    '".'+lineend+e.Message;
-    raise;
-    end;
+                                                        '".'+lineend+e.Message;
+      raise;
+     end;
     end;
    finally
     if fformloadlevel = 0 then begin
@@ -4899,7 +4895,7 @@ if fileexists(filename) then begin
       if result <> nil then begin
        dodelete;
       end;
-    raise exp1;
+      raise exp1;
      end;
     end;
    end;
@@ -4920,7 +4916,6 @@ if fileexists(filename) then begin
                           '*****loadformfile '+filename);
   {$endif}
   *)
-  end;
 end; //loadformfile
 
 procedure createbackupfile(const newname,origname: filenamety;
@@ -4931,7 +4926,7 @@ var
  mstr2: filenamety;
 begin
  if (backupcount > 0) and not backupcreated and 
-      issamefilename(newname,origname) then begin
+      issamefilename(newname,origname) and findfile(origname) then begin
   backupcreated:= true;
   mstr1:= origname + backupext;
   for int1:= backupcount-1 downto 2 do begin

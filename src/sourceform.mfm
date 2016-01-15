@@ -6,12 +6,12 @@ object sourcefo: tsourcefo
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_buttonhints]
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 94
-  bounds_y = 168
+  bounds_x = 333
+  bounds_y = 219
   bounds_cx = 662
   bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -27,7 +27,7 @@ object sourcefo: tsourcefo
   )
   dragdock.splitter_size = 0
   dragdock.caption = ' Source '
-  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_buttonhints, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize]
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = ' <none> '

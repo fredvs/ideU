@@ -6,7 +6,7 @@ object panelfo: tpanelfo
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints]
   onpaint = paintexe
   visible = False
   bounds_x = 157

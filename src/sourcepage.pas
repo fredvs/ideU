@@ -615,12 +615,10 @@ procedure tsourcepage.editoncellevent(const sender: TObject;
  var
   pos2: gridcoordty;
  begin
-    mainfo.statdisp.value:= '';
   if info.keyeventinfopo^.shiftstate * shiftstatesmask = [ss_ctrl] then begin
    if edit.mousepostotextpos(translatewidgetpoint(application.mouse.pos,nil,edit),
                                             pos2,true) then begin
-  showlink(pos2);
-  
+    showlink(pos2);
    end;
   end
   else begin
@@ -632,17 +630,17 @@ var
  pos1,pos2: sourceposty;
  page1: tsourcepage;
  shiftstate1: shiftstatesty;
+ bo1: boolean;
+ cellpos1: cellpositionty;
  
 begin
-
  if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate = [ss_double]) then begin
   include(info.mouseeventinfopo^.eventstate,es_processed);
   breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
  end;
- 
-  case info.eventkind of
+ case info.eventkind of
   cek_exit: begin
    edit.removelink;
   end;
@@ -654,23 +652,23 @@ begin
    with info.keyeventinfopo^ do begin
     shiftstate1:= shiftstate * shiftstatesmask;
     if not (es_processed in eventstate) then begin
-     if ((shiftstate1 = [ss_shift,ss_ctrl]) or (shiftstate1 = [ss_ctrl])) then begin
+     if ((shiftstate1 = [ss_shift,ss_ctrl]) or 
+                         (shiftstate1 = [ss_ctrl])) then begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
        case key of
-        key_up,key_down: 
-      begin
-         if switchheaderimplementation(edit.filename,pos1,pos2) then
-        begin
-           page1:= sourcefo.showsourcepos(pos2,true);
-              
-          if page1 <> nil then 
-          begin
+        key_up,key_down: begin
+         if switchheaderimplementation(edit.filename,pos1,pos2,bo1) then begin
+          cellpos1:= cep_none;
+          if bo1 then begin
+           cellpos1:= cep_top;
+          end;
+          page1:= sourcefo.showsourcepos(pos2,true,cellpos1);
+          if page1 <> nil then begin
            page1.source_editor.showcell(makegridcoord(1,pos1.pos.row));
           end;
-          
-      end;
+         end;
         end;
         key_space: begin
          showprocheaders(edit.editpos);
@@ -683,10 +681,11 @@ begin
       else begin
        case key of
         key_space: begin
-        // fred
+// fred
          mainfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
          showsourceitems(edit.editpos);
-      end
+         
+        end
         else begin
          exclude(eventstate,es_processed);
         end;

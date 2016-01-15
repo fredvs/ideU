@@ -6,7 +6,7 @@ object messagefo: tmessagefo
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
   visible = False
   bounds_x = 100
   bounds_y = 100
@@ -22,7 +22,7 @@ object messagefo: tmessagefo
     317
   )
   dragdock.caption = 'Messages'
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize]
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   icon.image = {
