@@ -57,8 +57,8 @@ type
    edit_compilernum: tenumedit;
    properties_list: tbutton;
    find_in_edit: tbutton;
-   tbutton2: tbutton;
    open_file: tbutton;
+   open_project: tbutton;
    save_file: tbutton;
    save_project: tbutton;
    line_number: tbutton;

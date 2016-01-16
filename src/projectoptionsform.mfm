@@ -1,7 +1,7 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 376
+  bounds_x = 379
   bounds_y = 133
   bounds_cx = 756
   bounds_cy = 568
@@ -86,10 +86,10 @@ object projectoptionsfo: tprojectoptionsfo
       bounds_y = 0
       bounds_cx = 756
       bounds_cy = 537
-      color = -1879048187
+      color = 15921906
       frame.levelo = -1
       frame.captionoffset = 3
-      frame.localprops = [frl_levelo]
+      frame.localprops = [frl_levelo, frl_colorframeactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       anchors = [an_top, an_bottom]
       taborder = 1
@@ -113,6 +113,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_top]
         caption = ' &Editor '
+        coloractivetab = 16776396
         reffontheight = 15
         object tlayouter13: tlayouter
           color = -2147483645
@@ -766,6 +767,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' File filter '
+            coloractivetab = 16776396
             reffontheight = 15
             object filefiltergrid: tstringgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -831,6 +833,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Syntax definition files '
+            coloractivetab = 16776396
             reffontheight = 15
             object twidgetgrid6: twidgetgrid
               frame.localprops = []
@@ -944,6 +947,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Code Templates '
+            coloractivetab = 16776396
             object twidgetgrid5: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
               frame.options = [cfo_fixtop, cfo_fixbottom]
@@ -1081,6 +1085,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Debugger '
+        coloractivetab = 16776396
         onlayout = debuggerlayoutexe
         object debugcommand: tfilenameedit
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -1173,6 +1178,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Source &directories '
+            coloractivetab = 16776396
             reffontheight = 15
             object sourcedirgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -1285,6 +1291,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Defi&nes '
+            coloractivetab = 16776396
             reffontheight = 15
             object twidgetgrid2: twidgetgrid
               color = -2147483645
@@ -1376,6 +1383,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Signals '
+            coloractivetab = 16776396
             reffontheight = 15
             object signalgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -1543,6 +1551,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Exceptions '
+            coloractivetab = 16776396
             reffontheight = 15
             object exceptionsgrid: twidgetgrid
               color = -2147483645
@@ -1631,6 +1640,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Target '
+            coloractivetab = 16776396
             reffontheight = 15
             object tlayouter2: tlayouter
               color = -2147483645
@@ -2565,6 +2575,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_top, an_bottom]
         caption = ' &Make '
+        coloractivetab = 16776396
         onlayout = makepageonchildscaled
         object tspacer2: tspacer
           color = -2147483645
@@ -2838,6 +2849,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Command before '
+            coloractivetab = 16776396
             object befcommandgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
               color = -2147483645
@@ -3046,6 +3058,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Make options '
+            coloractivetab = 16776396
             reffontheight = 15
             object makeoptionsgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -3255,6 +3268,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Directories '
+            coloractivetab = 16776396
             reffontheight = 15
             object unitdirgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -3649,6 +3663,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Command after '
+            coloractivetab = 16776396
             object aftcommandgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
               color = -2147483645
@@ -4065,6 +4080,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' M&acros '
+        coloractivetab = 16776396
         onlayout = macronchildscaled
         object macrogrid: twidgetgrid
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -4400,6 +4416,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Font Alias '
+        coloractivetab = 16776396
         object fontaliasgrid: twidgetgrid
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_destroywidgets]
           color = -2147483645
@@ -4597,6 +4614,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Designers '
+        coloractivetab = 16776396
         object tgroupbox1: tgroupbox
           optionswidget = [ow_mousetransparent, ow_destroywidgets]
           frame.caption = 'MSE Form Designer'
@@ -4803,6 +4821,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' User &Colors '
+        coloractivetab = 16776396
         object tlayouter7: tlayouter
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
@@ -4953,6 +4972,7 @@ object projectoptionsfo: tprojectoptionsfo
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' F&ormat Macros '
         tabhint = 'Used by formatfloatmse() and formatdatetimemse()'
+        coloractivetab = 16776396
         object formatmacrogrid: twidgetgrid
           frame.localprops = []
           frame.localprops1 = []
@@ -5028,6 +5048,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Templates '
+        coloractivetab = 16776396
         object newfile: ttabwidget
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -5056,6 +5077,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New Project '
+            coloractivetab = 16776396
             onlayout = newprojectchildscaled
             reffontheight = 15
             object copygrid: twidgetgrid
@@ -5269,6 +5291,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New File '
+            coloractivetab = 16776396
             reffontheight = 15
             object twidgetgrid1: twidgetgrid
               color = -2147483645
@@ -5421,6 +5444,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New Form '
+            coloractivetab = 16776396
             onlayout = formtemplateonchildscaled
             reffontheight = 15
             object twidgetgrid4: twidgetgrid
@@ -5629,6 +5653,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Tools '
+        coloractivetab = 16776396
         reffontheight = 15
         object twidgetgrid3: twidgetgrid
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -6003,6 +6028,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Storage '
+        coloractivetab = 16776396
         object settingseditor: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
           frame.caption = 'Load/save editor settings'

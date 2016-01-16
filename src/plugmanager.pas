@@ -143,11 +143,11 @@ len1 := pos('.',dataf2) ;
       AProcess.CommandLine := dataf ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
-      //AProcess.Priority:=ppRealTime;
+      AProcess.Priority:=ppRealTime;
       AProcess.Execute;
       AProcess.Free;
-      mainfo.setstattext('',mtk_flat);  
-         end else mainfo.setstattext('  Not a executable file...',mtk_flat);
+      mainfo.setstattext('' ,mtk_flat);  
+         end else mainfo.setstattext('Not a executable file...',mtk_notok);
     
   end;
  

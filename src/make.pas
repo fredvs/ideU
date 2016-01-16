@@ -570,7 +570,10 @@ begin
  if procid <> invalidprochandle then begin
 
  actionsmo.initproject ;
- mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+ //mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+ 
+  mainfo.setstattext('Making ' + gettargetfile + '...' ,mtk_making);
+  
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
@@ -674,7 +677,9 @@ begin
  fcurrentdir:= getcurrentdirmse;
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
-  mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+ // mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+  mainfo.setstattext('Compiling ' + aname + '...' ,mtk_making);
+    
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
@@ -769,7 +774,7 @@ constructor tloader.create(aowner: tcomponent);
 begin
  inherited create(aowner,false,true);
  if procid <> invalidprochandle then begin
-  mainfo.setstattext(actionsmo.c[ord(ac_downloading)],mtk_running);
+  mainfo.setstattext(actionsmo.c[ord(ac_downloading)],mtk_making);
  end
  else begin
   mainfo.setstattext(actionsmo.c[ord(ac_downloadnotrunning)],mtk_error);

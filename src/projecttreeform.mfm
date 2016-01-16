@@ -31,7 +31,7 @@ object projecttreefo: tprojecttreefo
   ondestroy = projecttreefoondestroy
   onstatupdate = projecttreeonupdatestat
   moduleclassname = 'tdockform'
-  object grid: twidgetgrid
+  object project_tree: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     frame.localprops = []
     frame.localprops1 = []

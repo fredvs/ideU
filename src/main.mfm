@@ -3,9 +3,10 @@ object mainfo: tmainfo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
+  frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 13421772
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints, go_showfloatcaption]
   visible = False
   bounds_x = 211
   bounds_y = 147
@@ -28,7 +29,7 @@ object mainfo: tmainfo
     205
   )
   dragdock.splitter_color = -1879048190
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
   optionswindow = [wo_taskbar]
   mainmenu = mainmenu1
   options = [fo_main, fo_terminateonclose, fo_screencentered, fo_globalshortcuts, fo_savepos, fo_savezorder, fo_savestate]
@@ -270,7 +271,7 @@ object mainfo: tmainfo
           end>
         caption = ' &File '
         name = 'file'
-        state = [as_localcaption]
+        state = [as_localcaption, as_localcolor]
       end    
       item
         submenu.count = 7
@@ -464,7 +465,8 @@ object mainfo: tmainfo
           end        
           item
             caption = ' So&urce '
-            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+            hint = 'Show Source Editor'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
             imagenr = 5
@@ -472,7 +474,8 @@ object mainfo: tmainfo
           end        
           item
             caption = ' &Messages '
-            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+            hint = 'Show Message Panel'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
             imagenr = 4
@@ -480,7 +483,8 @@ object mainfo: tmainfo
           end        
           item
             caption = ' &Find Results '
-            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+            hint = 'Show Find Result Panel'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 15
             onexecute = viewfindresults
@@ -490,7 +494,8 @@ object mainfo: tmainfo
           end        
           item
             caption = ' &Debugger '
-            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+            hint = 'Show Commandor-Debugger'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 2
             onexecute = viewdebuggertoolbaronexecute
@@ -548,7 +553,8 @@ object mainfo: tmainfo
           end        
           item
             caption = ' &Target Console '
-            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+            hint = 'Show Console Panel'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 13
             onexecute = viewconsoleonexecute
@@ -577,7 +583,8 @@ object mainfo: tmainfo
           item
             action = actionsmo.toggleformunit
             caption = ' Toggle Form/Unit '
-            state = [as_localinvisible, as_localcaption, as_localimagelist, as_localonexecute]
+            hint = 'Switch Source<>Form'
+            state = [as_localinvisible, as_localcaption, as_localimagelist, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
             onexecute = toggleobjectinspectoronexecute
@@ -600,10 +607,10 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 9
+        submenu.count = 12
         submenu.items = <        
           item
-            caption = ' Commandor + Source + Tree + Message = Docked  '
+            caption = ' Commandor + Tree + Source + Message = Docked  '
             state = [as_localcaption, as_localonexecute]
             onexecute = menuwindowlayoutexe
           end        
@@ -611,6 +618,21 @@ object mainfo: tmainfo
             caption = ' Commandor + Source + Message = Docked '
             state = [as_localcaption, as_localtag, as_localonexecute]
             tag = 1
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = ' Commandor = Docked | Tree + Source + Message = Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 5
+            onexecute = menuwindowlayoutexe
+          end        
+          item
+            caption = ' Commandor + Message = Docked | Tree + Source = Docked '
+            state = [as_localcaption, as_localtag, as_localonexecute]
+            tag = 6
             onexecute = menuwindowlayoutexe
           end        
           item
@@ -646,7 +668,8 @@ object mainfo: tmainfo
             onexecute = loadwindowlayoutexe
           end>
         caption = ' La&yout '
-        state = [as_localcaption, as_localonexecute]
+        hint = ' Load layout for current project.'
+        state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
         submenu.count = 21
@@ -868,8 +891,9 @@ object mainfo: tmainfo
             onexecute = closeprojectactonexecute
           end>
         caption = ' &Project '
+        hint = ' Actions for the project...'
         name = 'project'
-        state = [as_localcaption, as_localonexecute]
+        state = [as_localcaption, as_localhint, as_localonexecute]
         onexecute = aboutonexecute
       end    
       item
@@ -927,7 +951,7 @@ object mainfo: tmainfo
             state = [as_localcaption]
           end>
         caption = ' Edite&d '
-        hint = 'Edited source file'
+        hint = 'Actions for Edited Source File'
         state = [as_localcaption, as_localhint]
       end    
       item
@@ -1002,7 +1026,8 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localonexecute]
           end>
         caption = ' &Widgets '
-        state = [as_localcaption]
+        hint = 'MSE and fpGUI widgets'
+        state = [as_localcaption, as_localhint]
       end    
       item
         submenu.count = 4
@@ -1039,8 +1064,9 @@ object mainfo: tmainfo
             onexecute = viewconfcompilersexecute
           end>
         caption = ' Sett&ings '
+        hint = 'General and extra settings.'
         name = 'settings'
-        state = [as_localcaption, as_localonexecute]
+        state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
         submenu.count = 1
@@ -1084,7 +1110,7 @@ object mainfo: tmainfo
         caption = ' &About '
         state = [as_localcaption, as_localonexecute]
       end>
-    menu.coloractive = -1879048187
+    menu.coloractive = 15592941
     left = 99
     top = 87
   end

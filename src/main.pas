@@ -105,7 +105,7 @@ type
  );
 
  filekindty = (fk_none,fk_source,fk_unit);
- messagetextkindty = (mtk_warning, mtk_flat,mtk_info,mtk_running,mtk_finished,mtk_error,mtk_signal);
+ messagetextkindty = (mtk_warning, mtk_flat,mtk_info,mtk_making,mtk_finished,mtk_error,mtk_signal,mtk_notok);
 
  startcommandty = (sc_none,sc_step,sc_continue);
 // formkindty = (fok_main,fok_simple,fok_dock,fok_data,fok_subform,
@@ -514,7 +514,7 @@ end;
 
 procedure tmainfo.onthetimer(const sender: TObject);
 var
-templatepath : string;
+templatepath : msestring;
 begin
 thetimer.enabled := false;
 if gINI.ReadBool('General', 'FirstLoad', true)
@@ -578,7 +578,7 @@ thetimer.enabled := true;
 
 procedure tmainfo.ideureadconfig();
 var
-libpath : string;
+libpath : msestring;
 begin
 
   {$IFDEF Windows}
@@ -1282,11 +1282,12 @@ begin
    mtk_finished: color:= $8DE08D;
    mtk_error: color:=   $F0F097;
    mtk_signal: color:= cl_ltred;
-   mtk_running: color:= $E2B4FE ;
+   mtk_making: color:= $E2B4FE ;
+   mtk_notok: color:= $FFB1B4 ;
    else color:= cl_parent;
   end;
   case akind of
-   mtk_running: font.color:= cl_red;
+   mtk_making: font.color:= cl_red;
   else font.color:= cl_black;
   end;
  end;
@@ -1429,7 +1430,7 @@ debuggerfo.project_interrupt.enabled := true;
    with stopinfo do begin
     if sectionsize > 0 then begin
      setstattext(c[ord(str_downloading)]+' '+section+' '+
-         inttostr(round(sectionsent/sectionsize*100))+'%',mtk_running);
+         inttostr(round(sectionsent/sectionsize*100))+'%',mtk_making);
     end;
    end;
   end;
@@ -1714,7 +1715,8 @@ begin
      end;                
     end
    end;
-   mainfo.setstattext(actionsmo.c[ord(ac_loading)]+'.',mtk_running);
+   mainfo.setstattext(actionsmo.c[ord(ac_loading)]+'.',mtk_error);
+
    debuggerfo.project_reset.enabled := true;
 debuggerfo.project_interrupt.enabled := true;
    application.processmessages();
@@ -2980,7 +2982,7 @@ begin
    end;
   end;
   setstattext('*** '+c[ord(process)]+' '+inttostrmse(frunningprocess)+' '+
-                     c[ord(running3)]+' ***',mtk_running);
+                     c[ord(running3)]+' ***',mtk_making);
   debuggerfo.project_reset.enabled := true;
 debuggerfo.project_interrupt.enabled := true;
  end;
@@ -3471,6 +3473,8 @@ case tmenuitem(sender).tag of
 2 : strfile := 'c_s_t_m_m_docked.prj';
 3 : strfile := 'c_s_m_m_docked.prj';
 4 : strfile := 'un_docked.prj';
+5 : strfile := 'c_docked_s_t_m_docked.prj';
+6 : strfile := 'c_m_docked_s_t_docked.prj';
 end;
 
 strdir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;

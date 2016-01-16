@@ -861,7 +861,7 @@ begin
   int1:= 0;
   if integerenter(int1,minint,maxint,self.c[ord(ac_processid)],
                       self.c[ord(ac_attachtoprocess)]) = mr_ok then begin
-   setstattext(self.c[ord(ac_attachingprocess)]+' '+inttostr(int1),mtk_running);
+   setstattext(self.c[ord(ac_attachingprocess)]+' '+inttostr(int1),mtk_making);
    application.processmessages;
    startgdb(false);
    gdb.attach(int1,info);
