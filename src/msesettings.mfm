@@ -1,9 +1,9 @@
 object settingsfo: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 389
-  bounds_y = 54
-  bounds_cx = 344
+  bounds_x = 216
+  bounds_y = 89
+  bounds_cx = 342
   bounds_cy = 651
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.clientwidthmin = 340
@@ -12,7 +12,7 @@ object settingsfo: tsettingsfo
   container.bounds = (
     0
     0
-    344
+    342
     651
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
@@ -81,8 +81,9 @@ object settingsfo: tsettingsfo
     taborder = 2
     bounds_x = 0
     bounds_y = 608
-    bounds_cx = 342
+    bounds_cx = 337
     bounds_cy = 38
+    anchors = [an_left, an_top, an_right]
     optionsscale = [osc_expandy, osc_shrinky]
     linktop = macrogrid
     grip = stb_none
@@ -90,18 +91,20 @@ object settingsfo: tsettingsfo
       taborder = 2
       bounds_x = 279
       bounds_y = 16
-      bounds_cx = 50
+      bounds_cx = 58
       bounds_cy = 22
+      anchors = [an_top, an_right]
       state = [as_localcaption]
       caption = '&Cancel'
       modalresult = mr_cancel
     end
     object tbutton1: tbutton
       taborder = 1
-      bounds_x = 223
+      bounds_x = 219
       bounds_y = 16
       bounds_cx = 50
       bounds_cy = 22
+      anchors = [an_top, an_right]
       state = [as_default, as_localdefault, as_localcaption]
       caption = '&OK'
       modalresult = mr_ok
@@ -119,8 +122,9 @@ object settingsfo: tsettingsfo
   object tlayouter1: tlayouter
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 342
+    bounds_cx = 340
     bounds_cy = 544
+    anchors = [an_left, an_top, an_right]
     optionsscale = [osc_expandy, osc_shrinky]
     linkbottom = macrogrid
     optionslayout = [lao_placey]
@@ -130,8 +134,9 @@ object settingsfo: tsettingsfo
       visible = True
       bounds_x = 0
       bounds_y = 468
-      bounds_cx = 342
+      bounds_cx = 338
       bounds_cy = 37
+      anchors = [an_left, an_top, an_right]
       optionsscale = [osc_expandy, osc_shrinky]
       object targetosdir: tstringedit
         Tag = 11
@@ -147,8 +152,9 @@ object settingsfo: tsettingsfo
         taborder = 2
         bounds_x = 202
         bounds_y = -2
-        bounds_cx = 130
+        bounds_cx = 128
         bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
         onsetvalue = setvalue
         reffontheight = 15
       end
@@ -218,8 +224,9 @@ object settingsfo: tsettingsfo
       taborder = 10
       bounds_x = 8
       bounds_y = 505
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       onsetvalue = setprintcomm
       reffontheight = 15
     end
@@ -245,8 +252,9 @@ object settingsfo: tsettingsfo
       hint = 'Path to debugger (gdb).'
       bounds_x = 8
       bounds_y = 429
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       onsetvalue = setvalue
       controller.captionopen = 'Debugger path'
       controller.ongetfilename = epandfilenamemacro
@@ -274,8 +282,9 @@ object settingsfo: tsettingsfo
       hint = 'Path to compiler (ppc386).'
       bounds_x = 8
       bounds_y = 390
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/fpc/2.6.4/ppcx64'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/fpc/2.6.4/ppcx64'
@@ -306,8 +315,9 @@ object settingsfo: tsettingsfo
       hint = 'Directory for component store files.'
       bounds_x = 8
       bounds_y = 156
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       onsetvalue = setvalue
       controller.filterlist.data = (
         (
@@ -342,8 +352,9 @@ object settingsfo: tsettingsfo
       hint = 'Directory for project template files.'
       bounds_x = 8
       bounds_y = 273
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/ideu/templates'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/ideu/templates/'
@@ -381,8 +392,9 @@ object settingsfo: tsettingsfo
       hint = 'Directory for syntax definition files.'
       bounds_x = 8
       bounds_y = 312
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/ideu/syntaxdefs'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/ideu/syntaxdefs/'
@@ -420,8 +432,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of msegui library.'
       bounds_x = 8
       bounds_y = 117
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       onsetvalue = setvalue
       controller.options = [fdo_directory]
       controller.captionopen = 'MSEgui library directory'
@@ -450,8 +463,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of msegui.'
       bounds_x = 8
       bounds_y = 78
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/msegui'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/msegui/'
@@ -483,8 +497,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of FPC library (not used by the default project templates).'
       bounds_x = 8
       bounds_y = 39
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       controller.options = [fdo_directory]
       controller.captionopen = 'FPC library directory'
       reffontheight = 15
@@ -509,8 +524,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of Free Pascal system (not used by the default project templates).'
       bounds_x = 8
       bounds_y = 0
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/fpc/2.6.4'
       valuedefault = '/usr/local/share/fpc'
       onsetvalue = setvalue
@@ -543,8 +559,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of fpGUI'
       bounds_x = 8
       bounds_y = 195
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/fpgui'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/fpgui/'
@@ -576,8 +593,9 @@ object settingsfo: tsettingsfo
       hint = 'Root directory of DocView'
       bounds_x = 8
       bounds_y = 234
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       onsetvalue = setvalue
       controller.options = [fdo_directory]
       controller.captionopen = 'DocView directory'
@@ -606,8 +624,9 @@ object settingsfo: tsettingsfo
       hint = 'Directory for layout files.'
       bounds_x = 8
       bounds_y = 351
-      bounds_cx = 324
+      bounds_cx = 322
       bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
       value = '/usr/local/share/ideu/layout'
       onsetvalue = setvalue
       controller.filename = '/usr/local/share/ideu/layout/'
@@ -637,9 +656,10 @@ object settingsfo: tsettingsfo
     taborder = 1
     bounds_x = 8
     bounds_y = 544
-    bounds_cx = 324
+    bounds_cx = 323
     bounds_cy = 80
     bounds_cymin = 80
+    anchors = [an_left, an_top, an_right]
     optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     fixcols.count = 1
     fixcols.items = <    
@@ -669,7 +689,7 @@ object settingsfo: tsettingsfo
     datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
     datacols.items = <    
       item[macroname]
-        width = 148
+        width = 147
         options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
         widgetname = 'macroname'
         dataclass = tgridmsestringdatalist
@@ -689,7 +709,7 @@ object settingsfo: tsettingsfo
       visible = False
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 148
+      bounds_cx = 147
       bounds_cy = 16
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
@@ -712,7 +732,7 @@ object settingsfo: tsettingsfo
       frame.button.imagenr = 17
       taborder = 2
       visible = False
-      bounds_x = 149
+      bounds_x = 148
       bounds_y = 0
       bounds_cx = 141
       bounds_cy = 16

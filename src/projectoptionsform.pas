@@ -611,6 +611,11 @@ type
    make2on: tbooleanedit;
    make3on: tbooleanedit;
    make4on: tbooleanedit;
+   make5on: tbooleanedit;
+   make6on: tbooleanedit;
+   make7on: tbooleanedit;
+   make8on: tbooleanedit;
+   make9on: tbooleanedit;
    makeoptions: tmemodialogedit;
    ttabpage11: ttabpage;
    unitdirgrid: twidgetgrid;
@@ -620,6 +625,11 @@ type
    dmake2on: tbooleanedit;
    dmake3on: tbooleanedit;
    dmake4on: tbooleanedit;
+   dmake5on: tbooleanedit;
+   dmake6on: tbooleanedit;
+   dmake7on: tbooleanedit;
+   dmake8on: tbooleanedit;
+   dmake9on: tbooleanedit;
    duniton: tbooleanedit;
    dincludeon: tbooleanedit;
    dlibon: tbooleanedit;
@@ -644,6 +654,9 @@ type
    e3: tbooleanedit;
    e4: tbooleanedit;
    e5: tbooleanedit;
+   e6: tbooleanedit;
+   e7: tbooleanedit;
+   e8: tbooleanedit;
    macronames: tstringedit;
    macrovalues: tmemodialogedit;
    selectactivegroupgrid: twidgetgrid;
@@ -741,6 +754,11 @@ type
    befmake2on: tbooleanedit;
    befmake3on: tbooleanedit;
    befmake4on: tbooleanedit;
+   befmake5on: tbooleanedit;
+   befmake6on: tbooleanedit;
+   befmake7on: tbooleanedit;
+   befmake8on: tbooleanedit;
+   befmake9on: tbooleanedit;
    befcommand: tmemodialogedit;
    aftcommandgrid: twidgetgrid;
    aftmakeon: tbooleanedit;
@@ -749,6 +767,11 @@ type
    aftmake2on: tbooleanedit;
    aftmake3on: tbooleanedit;
    aftmake4on: tbooleanedit;
+   aftmake5on: tbooleanedit;
+   aftmake6on: tbooleanedit;
+   aftmake7on: tbooleanedit;
+   aftmake8on: tbooleanedit;
+   aftmake9on: tbooleanedit;
    aftcommand: tmemodialogedit;
    ttabpage19: ttabpage;
    twidgetgrid5: twidgetgrid;
@@ -1498,6 +1521,11 @@ begin
                      //all but make 4
   fmakeoptionson[2]:= bits[1] or bits[5]; //build + make 4
   fmakeoptionson[3]:= bits[5]; //make 4
+ // fmakeoptionson[4]:= bits[6]; //make 5
+ // fmakeoptionson[5]:= bits[7]; //make 6
+ // fmakeoptionson[6]:= bits[8]; //make 7
+ // fmakeoptionson[7]:= bits[9]; //make 8
+ // fmakeoptionson[8]:= bits[10]; //make 9
   defaultmake:= 1; //make
   additem(funitdirs,'${MSELIBDIR}*/');
 //  additem(funitdirs,'${MSELIBDIR}kernel/');
@@ -1932,6 +1960,11 @@ begin
    fo.make2on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
    fo.make3on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
    fo.make4on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
+   fo.make5on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
+   fo.make6on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
+   fo.make7on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
+   fo.make8on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
+   fo.make9on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
   end;
 
   for int1:= 0 to fo.befcommandgrid.rowhigh do begin
@@ -1944,6 +1977,11 @@ begin
    fo.befmake2on.gridupdatetagvalue(int1,o.befcommandon[int1]);
    fo.befmake3on.gridupdatetagvalue(int1,o.befcommandon[int1]);
    fo.befmake4on.gridupdatetagvalue(int1,o.befcommandon[int1]);
+   fo.befmake5on.gridupdatetagvalue(int1,o.befcommandon[int1]);
+   fo.befmake6on.gridupdatetagvalue(int1,o.befcommandon[int1]);
+   fo.befmake7on.gridupdatetagvalue(int1,o.befcommandon[int1]);
+   fo.befmake8on.gridupdatetagvalue(int1,o.befcommandon[int1]);
+   fo.befmake9on.gridupdatetagvalue(int1,o.befcommandon[int1]);
   end;
 
   for int1:= 0 to fo.aftcommandgrid.rowhigh do begin
@@ -1956,6 +1994,11 @@ begin
    fo.aftmake2on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
    fo.aftmake3on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
    fo.aftmake4on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
+   fo.aftmake5on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
+   fo.aftmake6on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
+   fo.aftmake7on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
+   fo.aftmake8on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
+   fo.aftmake9on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
   end;
 
   fo.unitdirs.gridvalues:= reversearray(o.t.unitdirs);
@@ -1970,6 +2013,11 @@ begin
    fo.dmake2on.gridupdatetagvalue(int2,o.unitdirson[int1]);
    fo.dmake3on.gridupdatetagvalue(int2,o.unitdirson[int1]);
    fo.dmake4on.gridupdatetagvalue(int2,o.unitdirson[int1]);
+   fo.dmake5on.gridupdatetagvalue(int2,o.unitdirson[int1]);
+   fo.dmake6on.gridupdatetagvalue(int2,o.unitdirson[int1]);
+   fo.dmake7on.gridupdatetagvalue(int2,o.unitdirson[int1]);
+   fo.dmake8on.gridupdatetagvalue(int2,o.unitdirson[int1]);
+   fo.dmake9on.gridupdatetagvalue(int2,o.unitdirson[int1]);
    fo.duniton.gridupdatetagvalue(int2,o.unitdirson[int1]);
    fo.dincludeon.gridupdatetagvalue(int2,o.unitdirson[int1]);
    fo.dlibon.gridupdatetagvalue(int2,o.unitdirson[int1]);
@@ -1978,7 +2026,7 @@ begin
   end;
   fo.activemacroselect[o.macrogroup]:= true;
   fo.activegroupchanged;
-  setlength(o.fgroupcomments,6);
+  setlength(o.fgroupcomments,9);
   fo.groupcomment.gridvalues:= o.groupcomments;
 
   for int1:= 0 to fo.macrogrid.rowhigh do begin
@@ -1991,7 +2039,10 @@ begin
    fo.e3.gridupdatetagvalue(int1,o.macroon[int1]);
    fo.e4.gridupdatetagvalue(int1,o.macroon[int1]);
    fo.e5.gridupdatetagvalue(int1,o.macroon[int1]);
-  end;
+   fo.e6.gridupdatetagvalue(int1,o.macroon[int1]);
+   fo.e7.gridupdatetagvalue(int1,o.macroon[int1]);
+   fo.e8.gridupdatetagvalue(int1,o.macroon[int1]);
+   end;
 
   fo.sourcedirs.gridvalues:= reversearray(d.t.sourcedirs);
   fo.syntaxdeffile.gridvalues:= e.t.syntaxdeffiles;
@@ -2016,7 +2067,10 @@ begin
   for int1:= 0 to high(macroon) do begin
    macroon[int1]:= fo.e0.gridvaluetag(int1,0) or fo.e1.gridvaluetag(int1,0) or
                     fo.e2.gridvaluetag(int1,0) or fo.e3.gridvaluetag(int1,0) or
-                    fo.e4.gridvaluetag(int1,0) or fo.e5.gridvaluetag(int1,0);
+                    fo.e4.gridvaluetag(int1,0) or fo.e5.gridvaluetag(int1,0) or
+                    fo.e6.gridvaluetag(int1,0) or fo.e7.gridvaluetag(int1,0) or
+                   fo.e8.gridvaluetag(int1,0)
+                   ;
   end;
   groupcomments:= fo.groupcomment.gridvalues;
  end;
@@ -2054,7 +2108,12 @@ begin
    o.fmakeoptionson[int1]:=
       fo.makeon.gridvaluetag(int1,0) or fo.buildon.gridvaluetag(int1,0) or
       fo.make1on.gridvaluetag(int1,0) or fo.make2on.gridvaluetag(int1,0) or
-      fo.make3on.gridvaluetag(int1,0) or fo.make4on.gridvaluetag(int1,0);
+      fo.make3on.gridvaluetag(int1,0) or fo.make4on.gridvaluetag(int1,0)
+     or fo.make5on.gridvaluetag(int1,0)
+    or fo.make6on.gridvaluetag(int1,0) or
+    fo.make7on.gridvaluetag(int1,0) or fo.make8on.gridvaluetag(int1,0) or
+     fo.make9on.gridvaluetag(int1,0)
+       ;
   end;
 
   setlength(o.fbefcommandon,fo.befcommandgrid.rowcount);
@@ -2062,14 +2121,22 @@ begin
    o.fbefcommandon[int1]:=
       fo.befmakeon.gridvaluetag(int1,0) or fo.befbuildon.gridvaluetag(int1,0) or
       fo.befmake1on.gridvaluetag(int1,0) or fo.befmake2on.gridvaluetag(int1,0) or
-      fo.befmake3on.gridvaluetag(int1,0) or fo.befmake4on.gridvaluetag(int1,0);
+      fo.befmake3on.gridvaluetag(int1,0) or fo.befmake4on.gridvaluetag(int1,0)
+      or fo.befmake5on.gridvaluetag(int1,0) or fo.befmake6on.gridvaluetag(int1,0) or
+       fo.befmake7on.gridvaluetag(int1,0) or fo.befmake8on.gridvaluetag(int1,0) or
+      fo.befmake9on.gridvaluetag(int1,0)
+      ;
   end;
   setlength(o.faftcommandon,fo.aftcommandgrid.rowcount);
   for int1:= 0 to high(o.faftcommandon) do begin
    o.faftcommandon[int1]:=
       fo.aftmakeon.gridvaluetag(int1,0) or fo.aftbuildon.gridvaluetag(int1,0) or
       fo.aftmake1on.gridvaluetag(int1,0) or fo.aftmake2on.gridvaluetag(int1,0) or
-      fo.aftmake3on.gridvaluetag(int1,0) or fo.aftmake4on.gridvaluetag(int1,0);
+      fo.aftmake3on.gridvaluetag(int1,0) or fo.aftmake4on.gridvaluetag(int1,0)
+      or fo.aftmake5on.gridvaluetag(int1,0) or fo.aftmake6on.gridvaluetag(int1,0) or
+      fo.aftmake7on.gridvaluetag(int1,0) or fo.aftmake8on.gridvaluetag(int1,0) or
+      fo.aftmake9on.gridvaluetag(int1,0) 
+       ;
   end;
 
   o.t.unitdirs:= reversearray(fo.unitdirs.gridvalues);
@@ -2079,6 +2146,9 @@ begin
       fo.dmakeon.gridvaluetag(int1,0) or fo.dbuildon.gridvaluetag(int1,0) or
       fo.dmake1on.gridvaluetag(int1,0) or fo.dmake2on.gridvaluetag(int1,0) or
       fo.dmake3on.gridvaluetag(int1,0) or fo.dmake4on.gridvaluetag(int1,0) or
+      fo.dmake5on.gridvaluetag(int1,0) or fo.dmake6on.gridvaluetag(int1,0) or
+      fo.dmake7on.gridvaluetag(int1,0) or fo.dmake8on.gridvaluetag(int1,0) or
+      fo.dmake9on.gridvaluetag(int1,0) or
       fo.duniton.gridvaluetag(int1,0) or fo.dincludeon.gridvaluetag(int1,0) or
       fo.dlibon.gridvaluetag(int1,0) or fo.dobjon.gridvaluetag(int1,0);
   end;
@@ -2179,13 +2249,14 @@ var
  int1,int2: integer;
 begin
  int2:= 0;
- for int1:= 0 to selectactivegroupgrid.rowcount-1 do begin
+   for int1:= 0 to selectactivegroupgrid.rowcount-1 do begin
   if activemacroselect[int1] then begin
    int2:= int1;
    break;
   end;
  end;
- for int1:= 0 to 5 do begin
+ // fred
+ for int1:= 0 to selectactivegroupgrid.rowcount-1 do begin
   if int1 = int2 then begin
    macrogrid.datacols[int1].color:= cl_infobackground;
   end
@@ -2235,6 +2306,7 @@ var
  ar1: array of longboolarty;
  int1: integer;
 begin
+ 
  setlength(ar1,selectactivegroupgrid.rowcount);
  with macrogrid do begin
   beginupdate;

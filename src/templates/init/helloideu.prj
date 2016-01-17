@@ -165,9 +165,9 @@ programparameters=18
  cy=348
 settings=13
  [settingsfo.tsplitter2]
- x=192
+ x=198
  y=16
- xprop=0.5906432748538
+ xprop=0.59763313609468
  yprop=0.97297297297297
  [settingsfo]
  x=483
@@ -398,6 +398,7 @@ showgrid=1
 snaptogrid=1
 moveonfirstclick=1
 noformdesignerdocking=0
+componenthints=1
 gridsizex=8
 gridsizey=8
 autoindent=1
@@ -534,7 +535,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/mseguinew/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -578,13 +579,13 @@ tabsize=60
 firsttab=0
 index=0
 [layout]
-windowlayout=499
+windowlayout=503
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
- useroptions=33554555
+ useroptions=838860927
  stackedunder=
  parent=
  mdistate=0
@@ -598,9 +599,13 @@ windowlayout=499
  cy=680
  rcx=0
  rcy=0
+ children=2
+  basedock,0,19,1129,644
+  statdisp,0,1,1129,18
+ focusedchild=0
  wsize=0
  active=1
- visible=0
+ visible=1
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -686,7 +691,7 @@ windowlayout=499
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -712,17 +717,17 @@ windowlayout=499
  x=0
  y=0
  cx=159
- cy=496
+ cy=495
  rcx=0
  rcy=0
- [projecttreefo.grid]
- propcolwidthref=1
- width0=170
+ [projecttreefo.project_tree]
+ propcolwidthref=18
+ width0=141
  sortdescend0=0
- width1=1
+ width1=12
  sortdescend1=0
  sorted=0
- col=0
+ col=-1073741823
  row=-1073741823
  rowheight=17
  [stackfo]
@@ -912,7 +917,7 @@ windowlayout=499
  value=1
  [messagefo]
  splitdir=0
- useroptions=268517483
+ useroptions=82027
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -921,7 +926,7 @@ windowlayout=499
  ncx=0
  ncy=0
  x=0
- y=550
+ y=549
  cx=1129
  cy=95
  rcx=0
@@ -992,7 +997,7 @@ windowlayout=499
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=disassfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1039,14 +1044,14 @@ windowlayout=499
  x=162
  y=0
  cx=967
- cy=496
+ cy=495
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -1075,7 +1080,7 @@ windowlayout=499
  x=0
  y=51
  cx=1129
- cy=496
+ cy=495
  rcx=0
  rcy=0
 [targetconsole]

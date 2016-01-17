@@ -1,9 +1,9 @@
 object confcompilerfo: tconfcompilerfo
-  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_top, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 334
-  bounds_y = 97
-  bounds_cx = 675
+  bounds_x = 324
+  bounds_y = 62
+  bounds_cx = 676
   bounds_cy = 501
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -11,10 +11,10 @@ object confcompilerfo: tconfcompilerfo
   container.bounds = (
     0
     0
-    675
+    676
     501
   )
-  optionswindow = [wo_dialog]
+  optionswindow = [wo_taskbar]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of Compilers'
@@ -656,6 +656,16 @@ object confcompilerfo: tconfcompilerfo
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
+  end
+  object tnClose: tbutton
+    taborder = 25
+    bounds_x = 628
+    bounds_y = 5
+    bounds_cx = 39
+    bounds_cy = 22
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = '&OK'
+    modalresult = mr_ok
   end
   object tstatfile1: tstatfile
     filename = 'confcomp.sta'

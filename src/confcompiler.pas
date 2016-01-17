@@ -35,6 +35,7 @@ uses
    othercompiler4: tfilenameedit;
    othercompiler3: tfilenameedit;
    tstatfile1: tstatfile;
+   tnClose: tbutton;
  end;
 var
  confcompilerfo: tconfcompilerfo;

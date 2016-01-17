@@ -1,9 +1,9 @@
 object conffpguifo: tconffpguifo
-  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 429
-  bounds_y = 202
-  bounds_cx = 288
+  bounds_x = 578
+  bounds_y = 213
+  bounds_cx = 328
   bounds_cy = 289
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -11,10 +11,9 @@ object conffpguifo: tconffpguifo
   container.bounds = (
     0
     0
-    288
+    328
     289
   )
-  optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of fpGUI'
@@ -94,9 +93,9 @@ object conffpguifo: tconffpguifo
     hint = 'Path of fpGUI Designer'
     bounds_x = 0
     bounds_y = 8
-    bounds_cx = 288
+    bounds_cx = 328
     bounds_cy = 41
-    anchors = [an_top]
+    anchors = [an_left, an_top, an_right]
     controller.captionopen = 'fpGUI Designer path'
     reffontheight = 15
   end
@@ -144,8 +143,8 @@ object conffpguifo: tconffpguifo
       0
     )
     taborder = 3
-    bounds_x = 29
-    bounds_y = 102
+    bounds_x = 49
+    bounds_y = 98
     bounds_cx = 237
     bounds_cy = 143
     object edfilename: tedit
@@ -292,28 +291,43 @@ object conffpguifo: tconffpguifo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 4
-    bounds_x = 89
-    bounds_y = 253
+    bounds_x = 69
+    bounds_y = 254
     bounds_cx = 190
     bounds_cy = 21
-    text = 'TODO => *.fpg , fpg_*.pas , fpgui_*.pas'
+    text = '*.fpg , fpg_*.pas , fpgui_*.pas'
     reffontheight = 15
   end
   object iffilter: tbooleanedit
-    frame.caption = ' Filter =>'
+    frame.caption = ' Filter:'
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
       0
       2
-      61
+      41
       2
     )
     taborder = 5
     bounds_x = 13
     bounds_y = 255
-    bounds_cx = 74
+    bounds_cx = 54
     bounds_cy = 17
+  end
+  object ok: tbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    color = -2147483645
+    taborder = 6
+    bounds_x = 274
+    bounds_y = 255
+    bounds_cx = 45
+    bounds_cy = 21
+    anchors = [an_left, an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localcolor]
+    caption = 'Ok'
+    modalresult = mr_ok
+    reffontheight = 15
   end
   object tstatfile1: tstatfile
     filename = 'conffpg.sta'

@@ -43,7 +43,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.0.3';
+ versiontext = '1.0.4';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -1867,11 +1867,6 @@ begin
   reset.enabled:= (gdb.started or gdb.attached or gdb.downloading) or
                     not bo1 and (frunningprocess <> invalidprochandle);
   makeact.enabled:= not making;
-  buildact.enabled:= not making;
-  make1act.enabled:= not making;
-  make2act.enabled:= not making;
-  make3act.enabled:= not making;
-  make4act.enabled:= not making;
   abortmakeact.enabled:= making;
   saveall.enabled:= sourcefo.modified or designer.modified or
                                                   projectoptions.modified;

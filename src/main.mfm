@@ -35,60 +35,29 @@ object mainfo: tmainfo
   options = [fo_main, fo_terminateonclose, fo_screencentered, fo_globalshortcuts, fo_savepos, fo_savezorder, fo_savestate]
   statfile = projectstatfile
   caption = 'ideU'
-  icon.options = [bmo_masked, bmo_graymask]
-  icon.origformat = 'png'
+  icon.origformat = 'bmp'
   icon.image = {
-    00000000120000001600000016000000FC030000000000000000000000000000
-    00000000000000000000000000000000000000000000001C25FFFF0130FFFF01
-    3DFFFF0153FFFF0173FFFF0196FFFF01B0FFFF01B5FFFF01A4FFFF0185FFFF01
-    0000000C28FFFF0131FFFF0140FFFF0159FFFF017BFFFF01A2FFFF01BDFFFF01
-    BEFFFF01A6FFFF0181FFFF010000000C2AFFFF0135FFFF0145FFFF0160FFFF01
-    86FFFF01AFFFFF01CAFFFF01C6FFFF01A6FFFF017CFFFF010000000907E90701
-    0AEC0A010EF10E0127FFFF0139FFFF014BFFFF0168FFFF0192FFFF01BEFFFF01
-    D7FFFF01CCFFFF01A5FFFF0170FFFF013BFF3B0124FF240116F9160100000006
-    07EA07010AED0A0110F2100127FFFF013DFFFF0153FFFF0174FFFF01A2FFFF01
-    D0FFFF01E5FFFF01D1FFFF01A2FFFF0169FFFF0137FF370121FF210115F81501
-    0000000607EA07010BEE0B0111F4110127FFFF0140FFFF015DFFFF0183FFFF01
-    B6FFFF01E5FFFF01F3FFFF01D6FFFF019DFFFF0162FFFF0135FF350120FF2001
-    14F714010000000607EA07010CEE0C0112F5120123FF940143FFFF0168FFFF01
-    96FFFF01CEFFFF01FDFFFF01FFFFFF01DBFFFF0199FFFF015AFFC00133FF3301
-    1FFF1F0114F614010000000607EA07010BEE0B0113F6130121FF3A0144FFFF01
-    74FFFF01A9FFFF01E7FFFF01FFFFFF02E1FFFF0194FFFF0154FF6A0132FF3201
-    1EFF1E0113F513010000000607E907010BED0B0112F5120120FF20013EFF9601
-    7BFFFF01B5FFFF01F9FFFF01FFFFFF02E2FFFF0189FFD20150FF50012FFF2F01
-    1CFF1C0111F411010000000606E806010AEC0A0110F310011DFF1D0134FF3401
-    0000000678FF780148FF48012AFF2A0119FC19010FF20F010000000605E70501
-    08EB08010EF00E0118FB18012BFF2B010000000661FF61013AFF3A0122FF2201
-    14F714010CEF0C010000000601E2010101E4010102E4020103E503010EEE0E01
-    05D005010000000408D908011CF01C0105E8050104E6040103E5030200000006
-    00E3000101E3010101E4010207E8070103DE03010000000404E204010DEC0D01
-    03E5030102E5020102E402020000000600E1000100E3000201E3010102E40201
-    01E1010102DD020102D3020202DE020102E1020104E5040101E4010201E30102
-    0000000600E2000100E3000300E2000101E0010201DE010201E0010101E20101
-    01E3010200E3000100E1000100E300010000000600E1000100E3000400E20001
-    00E3000400E2000100E3000100E2000100E1000100E2000101E3010100000006
-    00E2000100E3000100E2000A00E1000300E200010000000600E1000100E30004
-    00E2000100E3000400E2000100E3000100E2000100E1000100E2000101E20101
-    0000000600E1000100E3000100E2000A00E1000300E300010000000700E3000B
-    00E2000100E1000100DF00010000000900DD000100E1000100E2000100E30006
-    00E2000100E0000100D300010000000510020000000000000000000000000000
-    00000000000000000000000000000000000026AD8FBDFEFEB697A52200000000
-    000000000000000000007784C3F8FFFFF8BE876E000000000000000000000000
-    00009EE5F7FFFFFFFFF6E493000000000000000000000000D0D0EEFDFFFFFFFF
-    FFFFFCECD0D0000000000000000000DCFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000
-    00000000000000DCFFFFFFB5D7FFFFFFFFD2BAFFFFFFD00000000000000000DC
-    FFFFFFD6A1D0FFFFCBA4D9FFFFFFD00000000000000000DCFFFFFFAE98D5F9F9
-    D196B3FFFFFFD00000000000000000DCFFFFFF67405D64645C3D71FFFFFFD000
-    00000000000000DCFFFFFF510000000000005CFFFFFFD00000000000000000DC
-    FFFFFF510000000000005CFFFFFFD00000000000000000F9FFFFFF8D03000000
-    00049BFFFFFFF40000000000000000F5FFFFFF9D100000000012A9FFFFFFEF00
-    00000000000000FCFFFFFFD739080303093FDEFFFFFFF90000000000000000F5
-    FFFFFFFBA44C34344FAAFCFFFFFFF00000000000000000E6FFFFFFFDFCFDFEFE
-    FDFCFDFFFFFFDD0000000000000000BCFDFFFFFDEEEEF1F1EEEFFDFFFFFCB200
-    0000000000000076EDFFFFFCFCFDFEFEFDFCFCFFFFE86E00000000000000001F
-    BFF7FEFBEDEEF1F1EEEEFBFEF6B51C0000000000000000003CBBEDF7FBFDFEFE
-    FDFBF6EBB3360000000000000000000000125BA2D0E7EDEDE6CE9F5710000000
-    00000000
+    0000000000000000100000001000000050020000000000000000000000000000
+    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
+    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
+    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
+    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
+    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
+    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
+    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
+    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
+    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
+    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
+    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
+    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
+    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
+    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
+    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
+    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
+    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
+    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
+    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
+    FFFFFF02
   }
   oncreate = mainfooncreate
   oneventloopstart = mainonloaded
@@ -274,7 +243,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localcolor]
       end    
       item
-        submenu.count = 7
+        submenu.count = 6
         submenu.items = <        
           item
             action = actionsmo.line
@@ -303,9 +272,6 @@ object mainfo: tmainfo
             action = actionsmo.findinfile
             caption = ' Find in F&iles '
             state = [as_localcaption]
-          end        
-          item
-            options = [mao_separator, mao_shortcutcaption]
           end>
         caption = ' &Search '
         name = 'search'
@@ -672,7 +638,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
-        submenu.count = 21
+        submenu.count = 27
         submenu.items = <        
           item
             action = actionsmo.makeact
@@ -681,34 +647,67 @@ object mainfo: tmainfo
             tag = 1
           end        
           item
-            action = actionsmo.buildact
+            action = actionsmo.makeact
             caption = ' &Build '
             state = [as_localcaption, as_localtag]
             tag = 2
           end        
           item
-            action = actionsmo.make1act
+            action = actionsmo.makeact
             caption = ' Make &1 '
             state = [as_localcaption, as_localtag]
             tag = 4
           end        
           item
-            action = actionsmo.make2act
+            action = actionsmo.makeact
             caption = ' Make &2 '
             state = [as_localcaption, as_localtag]
             tag = 8
           end        
           item
-            action = actionsmo.make3act
+            action = actionsmo.makeact
             caption = ' Make &3 '
             state = [as_localcaption, as_localtag]
             tag = 16
           end        
           item
-            action = actionsmo.make4act
+            action = actionsmo.makeact
             caption = ' Make &4 '
             state = [as_localcaption, as_localtag]
             tag = 32
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &5 '
+            state = [as_localcaption, as_localtag]
+            tag = 64
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &6 '
+            state = [as_localcaption, as_localtag]
+            tag = 128
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &7 '
+            state = [as_localcaption, as_localtag]
+            tag = 256
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &8 '
+            state = [as_localcaption, as_localtag]
+            tag = 512
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &9 '
+            state = [as_localcaption, as_localtag]
+            tag = 1024
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.abortmakeact
@@ -897,7 +896,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 10
+        submenu.count = 18
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -935,11 +934,41 @@ object mainfo: tmainfo
             tag = 5
           end        
           item
+            action = actionsmo.custmakemenu
+            caption = ' Make 5 '
+            state = [as_localcaption, as_localtag]
+            tag = 6
+          end        
+          item
+            action = actionsmo.custmakemenu
+            caption = ' Make 6 '
+            state = [as_localcaption, as_localtag]
+            tag = 7
+          end        
+          item
+            action = actionsmo.custmakemenu
+            caption = ' Make 7 '
+            state = [as_localcaption, as_localtag]
+            tag = 8
+          end        
+          item
+            action = actionsmo.custmakemenu
+            caption = ' Make 8 '
+            state = [as_localcaption, as_localtag]
+            tag = 9
+          end        
+          item
+            action = actionsmo.custmakemenu
+            caption = ' Make 9 '
+            state = [as_localcaption, as_localtag]
+            tag = 10
+          end        
+          item
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.abortmakeact
-            caption = ' Abort '
+            caption = ' Abort Make '
             state = [as_localcaption]
           end        
           item
@@ -948,6 +977,19 @@ object mainfo: tmainfo
           item
             action = actionsmo.customrun
             caption = ' Run '
+            state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            action = actionsmo.opensource
+            caption = ' Open '
+            state = [as_localcaption]
+          end        
+          item
+            action = actionsmo.save
+            caption = ' Save '
             state = [as_localcaption]
           end>
         caption = ' Edite&d '

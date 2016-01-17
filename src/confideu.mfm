@@ -1,20 +1,19 @@
 object confideufo: tconfideufo
-  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 467
-  bounds_y = 89
-  bounds_cx = 274
-  bounds_cy = 241
+  bounds_x = 602
+  bounds_y = 330
+  bounds_cx = 326
+  bounds_cy = 234
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    274
-    241
+    326
+    234
   )
-  optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Extra Settings of ideU'
@@ -84,7 +83,7 @@ object confideufo: tconfideufo
       241
       2
     )
-    bounds_x = 12
+    bounds_x = 30
     bounds_y = 30
     bounds_cx = 254
     bounds_cy = 17
@@ -101,7 +100,7 @@ object confideufo: tconfideufo
       2
     )
     taborder = 1
-    bounds_x = 12
+    bounds_x = 30
     bounds_y = 52
     bounds_cx = 239
     bounds_cy = 17
@@ -117,15 +116,15 @@ object confideufo: tconfideufo
       2
     )
     taborder = 2
-    bounds_x = 12
+    bounds_x = 30
     bounds_y = 74
     bounds_cx = 203
     bounds_cy = 17
   end
   object tlabel1: tlabel
     taborder = 3
-    bounds_x = 17
-    bounds_y = 10
+    bounds_x = 47
+    bounds_y = 7
     bounds_cx = 241
     bounds_cy = 15
     caption = 'When a file has changed from outside...'
@@ -136,10 +135,11 @@ object confideufo: tconfideufo
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
     taborder = 4
-    bounds_x = 103
-    bounds_y = 205
-    bounds_cx = 50
+    bounds_x = 129
+    bounds_y = 206
+    bounds_cx = 64
     bounds_cy = 21
+    anchors = [an_left, an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
@@ -156,7 +156,7 @@ object confideufo: tconfideufo
       2
     )
     taborder = 5
-    bounds_x = 25
+    bounds_x = 43
     bounds_y = 137
     bounds_cx = 199
     bounds_cy = 17
@@ -182,8 +182,9 @@ object confideufo: tconfideufo
     hint = 'Paren directory of sakit ( speaker assistve kit )'
     bounds_x = 5
     bounds_y = 156
-    bounds_cx = 262
+    bounds_cx = 316
     bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
     controller.lastdir = '/usr/local/share/'
     controller.options = [fdo_directory]
     controller.captionopen = 'Parent-directory of /sakit'
@@ -201,7 +202,7 @@ object confideufo: tconfideufo
     )
     taborder = 7
     hint = 'No focus on menu-item when mouse-move on it.'
-    bounds_x = 56
+    bounds_x = 74
     bounds_y = 103
     bounds_cx = 137
     bounds_cy = 17

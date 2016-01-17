@@ -1,9 +1,9 @@
 object confmseguifo: tconfmseguifo
-  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 394
-  bounds_y = 277
-  bounds_cx = 377
+  bounds_y = 276
+  bounds_cx = 376
   bounds_cy = 167
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -11,10 +11,9 @@ object confmseguifo: tconfmseguifo
   container.bounds = (
     0
     0
-    377
+    376
     167
   )
-  optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of MSEgui'
@@ -43,6 +42,7 @@ object confmseguifo: tconfmseguifo
     bounds_y = 14
     bounds_cx = 360
     bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
     optionsedit = []
     value = '${MSEDIR}'
     controller.filename = '${MSEDIR}/'
@@ -72,7 +72,7 @@ object confmseguifo: tconfmseguifo
     hint = 'Root directory of msegui library.'
     bounds_x = 8
     bounds_y = 61
-    bounds_cx = 360
+    bounds_cx = 359
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     value = '${MSEDIR}lib/common/'
@@ -103,7 +103,7 @@ object confmseguifo: tconfmseguifo
     hint = 'Path to compiler (ppc386).'
     bounds_x = 10
     bounds_y = 113
-    bounds_cx = 359
+    bounds_cx = 358
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     value = '${MSEDIR}guidesigner/msedesigner'
@@ -114,7 +114,7 @@ object confmseguifo: tconfmseguifo
   end
   object tbutton1: tbutton
     taborder = 3
-    bounds_x = 334
+    bounds_x = 333
     bounds_y = 4
     bounds_cx = 34
     bounds_cy = 22

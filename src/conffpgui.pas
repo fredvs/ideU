@@ -4,7 +4,7 @@ interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialog,
  msegraphics,msegraphutils,mseclasses,mseforms, mseedit,msegraphedits,
- msesimplewidgets,msestat,msestatfile;
+ msesimplewidgets,msestat,msestatfile,msemenus,msewidgets;
 type
  tconffpguifo = class(tmseform)
    fpguidesigner: tfilenameedit;
@@ -24,6 +24,7 @@ type
    edfilter: tedit;
    iffilter: tbooleanedit;
    tstatfile1: tstatfile;
+   ok: tbutton;
  end;
 var
  conffpguifo: tconffpguifo;
