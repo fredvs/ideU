@@ -3175,37 +3175,23 @@ end;
 //fred
 procedure tmainfo.viewconfmseguiexecute(const sender: TObject);
 begin
-confmseguifo.visible := true;
-confmseguifo.activate;
-//sleep(500);
-confmseguifo.bringtofront;
+ confmseguifo.activate;
 end;
 
 procedure tmainfo.viewconfcompilersexecute(const sender: TObject);
 begin
-//
-confcompilerfo.activate;
-//sleep(1500);
-confcompilerfo.visible := true;
-confcompilerfo.bringtofront;
+ confcompilerfo.activate;
 end;
 
 procedure tmainfo.viewconfideuexecute(const sender: TObject);
 begin
-confideufo.visible := true;
-confideufo.activate;
-//sleep(500);
-confideufo.bringtofront;
+ confideufo.activate;
 end;
 
 procedure tmainfo.viewconffpguiexecute(const sender: TObject);
 begin
-conffpguifo.visible := true;
-conffpguifo.activate;
-//sleep(500);
-conffpguifo.bringtofront;
+ conffpguifo.activate;
 end;
-//
 
 procedure tmainfo.viewsymbolsonexecute(const sender: TObject);
 begin

@@ -558,7 +558,8 @@ debuggerfo.project_abort_compil.enabled := true;
     7 : domake(128) ;
     8 : domake(256) ;
      9 : domake(512) ;
-   10 : domake(1024) ;    
+   10 : domake(1024) ;  
+   11 : domake(2048) ;  
   end;
    mainfo.resetstartcommand;
  end;
@@ -591,7 +592,8 @@ begin
    7 : mainfo.customoption := 128 ;
     8 : mainfo.customoption := 256 ;
      9 : mainfo.customoption := 512 ;
-   10 : mainfo.customoption := 1024 ;   
+   10 : mainfo.customoption := 1024 ; 
+    11 : mainfo.customoption := 2048 ;   
   end;
     
 end;
@@ -624,7 +626,8 @@ begin
    7 : mainfo.customoption := 128 ;
     8 : mainfo.customoption := 256 ;
      9 : mainfo.customoption := 512 ;
-   10 : mainfo.customoption := 1024 ;    
+   10 : mainfo.customoption := 1024 ; 
+   11 : mainfo.customoption := 2048 ;    
   end;
     
 end;

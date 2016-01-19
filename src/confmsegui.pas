@@ -9,7 +9,6 @@ type
  tconfmseguifo = class(tmseform)
    msedir: tfilenameedit;
    mselibdir: tfilenameedit;
-   msedesigner: tfilenameedit;
    tbutton1: tbutton;
    tstatfile1: tstatfile;
  end;

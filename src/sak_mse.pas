@@ -283,15 +283,21 @@ Sender := iaSender.getinstance;
    else
   if (Sender is tbooleaneditradio) then
   begin
-    if (Tbooleaneditradio(Sender).frame.Caption <> '') then
+    if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
       Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption
     else
+     if (Tbooleaneditradio(Sender).hint <> '') then
+      Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
+      else
       Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
   end
   else if (Sender is tbooleanedit) then
   begin
-    if (Tbooleanedit(Sender).frame.Caption <> '') then
+    if (trim(Tbooleanedit(Sender).frame.Caption) <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).frame.Caption
+    else
+    if (Tbooleanedit(Sender).hint <> '') then
+      Result := 'checkbox, ' + Tbooleanedit(Sender).hint
     else
       Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
   end

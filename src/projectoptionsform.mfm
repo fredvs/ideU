@@ -1,7 +1,7 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 323
+  bounds_x = 324
   bounds_y = 164
   bounds_cx = 756
   bounds_cy = 568
@@ -978,8 +978,8 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 17
-                  captions.count = 16
+                  height = 18
+                  captions.count = 17
                   captions.items = <                  
                     item
                       caption = 'Directory'
@@ -999,6 +999,10 @@ object projectoptionsfo: tprojectoptionsfo
                     item
                       caption = 'U'
                       hint = 'Add to unit file search path'
+                    end                  
+                    item
+                      caption = '0'
+                      hint = 'Use in Make 0'
                     end                  
                     item
                       caption = '9'
@@ -2644,6 +2648,7 @@ object projectoptionsfo: tprojectoptionsfo
                 '7 (Make 7)'
                 '8 (Make 8)'
                 '9 (Make 9)'
+                '0 (Make 0)'
                 'None'
               )
             end>
@@ -2891,8 +2896,8 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 17
-                  captions.count = 12
+                  height = 18
+                  captions.count = 13
                   captions.items = <                  
                     item
                       caption = 'M'
@@ -2939,10 +2944,14 @@ object projectoptionsfo: tprojectoptionsfo
                       hint = 'Use in Make 9'
                     end                  
                     item
+                      caption = '0'
+                      hint = 'Use in Make 0'
+                    end                  
+                    item
                       caption = 'Command line before make'
                     end>
                 end>
-              datacols.count = 12
+              datacols.count = 13
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[befmakeon]
@@ -3011,8 +3020,14 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'befmake9on'
                   dataclass = tgridintegerdatalist
                 end              
+                item[befmake0on]
+                  width = 13
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'befmake0on'
+                  dataclass = tgridintegerdatalist
+                end              
                 item[befcommand]
-                  width = 595
+                  width = 581
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befcommand'
                   dataclass = tgridmsestringdatalist
@@ -3151,6 +3166,18 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
+              object befmake0on: tbooleanedit
+                Tag = 2048
+                optionsskin = [osk_framebuttononly]
+                taborder = 12
+                bounds_x = 154
+                bounds_y = 0
+                bounds_cy = 17
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+                visible = False
+                valuedefault = True
+              end
               object befcommand: tmemodialogedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
@@ -3166,12 +3193,12 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 12
+                taborder = 13
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 154
+                bounds_x = 168
                 bounds_y = 0
-                bounds_cx = 595
+                bounds_cx = 581
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -3211,8 +3238,8 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 17
-                  captions.count = 12
+                  height = 18
+                  captions.count = 13
                   captions.items = <                  
                     item
                       caption = 'M'
@@ -3259,10 +3286,14 @@ object projectoptionsfo: tprojectoptionsfo
                       hint = 'Use in Make 9'
                     end                  
                     item
+                      caption = '0'
+                      hint = 'Use in Make 0'
+                    end                  
+                    item
                       caption = 'Command line options'
                     end>
                 end>
-              datacols.count = 12
+              datacols.count = 13
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[makeon]
@@ -3331,8 +3362,14 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'make9on'
                   dataclass = tgridintegerdatalist
                 end              
+                item[make0on]
+                  width = 13
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'make0on'
+                  dataclass = tgridintegerdatalist
+                end              
                 item[makeoptions]
-                  width = 595
+                  width = 581
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'makeoptions'
@@ -3472,6 +3509,18 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
+              object make0on: tbooleanedit
+                Tag = 2048
+                optionsskin = [osk_framebuttononly]
+                taborder = 12
+                bounds_x = 154
+                bounds_y = 0
+                bounds_cy = 17
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+                visible = False
+                valuedefault = True
+              end
               object makeoptions: tmemodialogedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
@@ -3487,12 +3536,12 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 12
+                taborder = 13
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 154
+                bounds_x = 168
                 bounds_y = 0
-                bounds_cx = 595
+                bounds_cx = 581
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -3537,8 +3586,8 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 17
-                  captions.count = 16
+                  height = 18
+                  captions.count = 17
                   captions.items = <                  
                     item
                       caption = 'M'
@@ -3585,6 +3634,10 @@ object projectoptionsfo: tprojectoptionsfo
                       hint = 'Use in Make 9'
                     end                  
                     item
+                      caption = '0'
+                      hint = 'Use in Make 0'
+                    end                  
+                    item
                       caption = 'U'
                       hint = 'Add to unit file search path'
                     end                  
@@ -3604,7 +3657,7 @@ object projectoptionsfo: tprojectoptionsfo
                       caption = 'Directory'
                     end>
                 end>
-              datacols.count = 16
+              datacols.count = 17
               datacols.width = 13
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
@@ -3680,6 +3733,14 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'dmake9on'
                   dataclass = tgridintegerdatalist
                 end              
+                item[dmake0on]
+                  linewidth = 2
+                  linecolorfix = -1610612733
+                  width = 13
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'dmake0on'
+                  dataclass = tgridintegerdatalist
+                end              
                 item[duniton]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
@@ -3706,7 +3767,7 @@ object projectoptionsfo: tprojectoptionsfo
                 end              
                 item[unitdirs]
                   linecolorfix = -1610612733
-                  width = 536
+                  width = 521
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'unitdirs'
@@ -3846,8 +3907,8 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
-              object duniton: tbooleanedit
-                Tag = 65536
+              object dmake0on: tbooleanedit
+                Tag = 2048
                 optionsskin = [osk_framebuttononly]
                 taborder = 12
                 bounds_x = 157
@@ -3858,11 +3919,23 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
+              object duniton: tbooleanedit
+                Tag = 65536
+                optionsskin = [osk_framebuttononly]
+                taborder = 13
+                bounds_x = 172
+                bounds_y = 0
+                bounds_cy = 17
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+                visible = False
+                valuedefault = True
+              end
               object dincludeon: tbooleanedit
                 Tag = 131072
                 optionsskin = [osk_framebuttononly]
-                taborder = 13
-                bounds_x = 171
+                taborder = 14
+                bounds_x = 186
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -3873,8 +3946,8 @@ object projectoptionsfo: tprojectoptionsfo
               object dlibon: tbooleanedit
                 Tag = 262144
                 optionsskin = [osk_framebuttononly]
-                taborder = 14
-                bounds_x = 185
+                taborder = 15
+                bounds_x = 200
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -3889,8 +3962,8 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.colorclient = -2147483645
                 frame.localprops = [frl_levelo, frl_colorclient]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                taborder = 15
-                bounds_x = 199
+                taborder = 16
+                bounds_x = 214
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -3913,12 +3986,12 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 16
+                taborder = 17
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 213
+                bounds_x = 228
                 bounds_y = 0
-                bounds_cx = 536
+                bounds_cx = 521
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4039,8 +4112,8 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 17
-                  captions.count = 12
+                  height = 18
+                  captions.count = 13
                   captions.items = <                  
                     item
                       caption = 'M'
@@ -4087,10 +4160,14 @@ object projectoptionsfo: tprojectoptionsfo
                       hint = 'Use in Make 9'
                     end                  
                     item
+                      caption = '0'
+                      hint = 'Use in Make 0'
+                    end                  
+                    item
                       caption = 'Command line after make'
                     end>
                 end>
-              datacols.count = 12
+              datacols.count = 13
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[aftmakeon]
@@ -4159,8 +4236,14 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'aftmake9on'
                   dataclass = tgridintegerdatalist
                 end              
+                item[aftmake0on]
+                  width = 13
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'aftmake0on'
+                  dataclass = tgridintegerdatalist
+                end              
                 item[aftcommand]
-                  width = 595
+                  width = 581
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftcommand'
                   dataclass = tgridmsestringdatalist
@@ -4299,6 +4382,18 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
+              object aftmake0on: tbooleanedit
+                Tag = 2048
+                optionsskin = [osk_framebuttononly]
+                taborder = 12
+                bounds_x = 154
+                bounds_y = 0
+                bounds_cy = 17
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+                visible = False
+                valuedefault = True
+              end
               object aftcommand: tmemodialogedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
@@ -4314,12 +4409,12 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 12
+                taborder = 13
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 154
+                bounds_x = 168
                 bounds_y = 0
-                bounds_cx = 595
+                bounds_cx = 581
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4558,17 +4653,17 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           taborder = 1
           bounds_x = 0
-          bounds_y = 187
+          bounds_y = 204
           bounds_cx = 754
-          bounds_cy = 330
+          bounds_cy = 313
           bounds_cymin = 40
           anchors = [an_top, an_bottom]
           optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
           fixrows.count = 1
           fixrows.items = <          
             item
-              height = 17
-              captions.count = 11
+              height = 18
+              captions.count = 12
               captions.items = <              
                 item
                   caption = '1'
@@ -4598,14 +4693,17 @@ object projectoptionsfo: tprojectoptionsfo
                   caption = '9'
                 end              
                 item
+                  caption = '0'
+                end              
+                item
                   caption = 'Name'
                 end              
                 item
                   caption = 'Value'
                 end>
             end>
-          rowcount = 9
-          datacols.count = 11
+          rowcount = 10
+          datacols.count = 12
           datacols.width = 13
           datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
           datacols.items = <          
@@ -4616,6 +4714,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
               data = (
                 (
+                  -1
                   -1
                   -1
                   -1
@@ -4644,6 +4743,7 @@ object projectoptionsfo: tprojectoptionsfo
                   -1
                   -1
                   -1
+                  -1
                 )
               )
             end          
@@ -4654,6 +4754,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
               data = (
                 (
+                  -1
                   -1
                   -1
                   -1
@@ -4682,6 +4783,7 @@ object projectoptionsfo: tprojectoptionsfo
                   -1
                   -1
                   -1
+                  -1
                 )
               )
             end          
@@ -4692,6 +4794,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
               data = (
                 (
+                  -1
                   -1
                   -1
                   -1
@@ -4720,6 +4823,7 @@ object projectoptionsfo: tprojectoptionsfo
                   -1
                   -1
                   -1
+                  -1
                 )
               )
             end          
@@ -4730,6 +4834,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
               data = (
                 (
+                  -1
                   -1
                   -1
                   -1
@@ -4758,6 +4863,7 @@ object projectoptionsfo: tprojectoptionsfo
                   -1
                   -1
                   -1
+                  -1
                 )
               )
             end          
@@ -4768,6 +4874,27 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
               data = (
                 (
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                  -1
+                )
+              )
+            end          
+            item[e9]
+              width = 13
+              options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+              widgetname = 'e9'
+              dataclass = tgridintegerdatalist
+              data = (
+                (
+                  -1
                   -1
                   -1
                   -1
@@ -4796,17 +4923,19 @@ object projectoptionsfo: tprojectoptionsfo
                   ''
                   ''
                   ''
+                  ''
                 )
               )
             end          
             item[macrovalues]
-              width = 476
+              width = 462
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               onshowhint = colonshowhint
               widgetname = 'macrovalues'
               dataclass = tgridmsestringdatalist
               data = (
                 (
+                  ''
                   ''
                   ''
                   ''
@@ -4939,12 +5068,25 @@ object projectoptionsfo: tprojectoptionsfo
             value = True
             valuedefault = True
           end
+          object e9: tbooleanedit
+            Tag = 512
+            optionsskin = [osk_framebuttononly]
+            taborder = 10
+            bounds_x = 126
+            bounds_y = 0
+            bounds_cy = 17
+            optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+            optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+            visible = False
+            value = True
+            valuedefault = True
+          end
           object macronames: tstringedit
             optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
             optionsskin = [osk_framebuttononly]
-            taborder = 10
+            taborder = 11
             visible = False
-            bounds_x = 126
+            bounds_x = 140
             bounds_y = 0
             bounds_cx = 146
             bounds_cy = 17
@@ -4968,11 +5110,11 @@ object projectoptionsfo: tprojectoptionsfo
               end>
             frame.button.color = -1879048187
             frame.button.imagenr = 17
-            taborder = 11
+            taborder = 12
             visible = False
-            bounds_x = 273
+            bounds_x = 287
             bounds_y = 0
-            bounds_cx = 476
+            bounds_cx = 462
             bounds_cy = 17
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4994,7 +5136,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = -1
           bounds_cx = 754
-          bounds_cy = 185
+          bounds_cy = 202
           bounds_cymin = 40
           anchors = [an_top]
           optionsgrid = [og_rowmoving, og_keyrowmoving, og_focuscellonenter, og_wrapcol, og_autopopup]
@@ -5005,7 +5147,7 @@ object projectoptionsfo: tprojectoptionsfo
               numstart = 1
               numstep = 1
             end>
-          rowcount = 9
+          rowcount = 10
           datacols.count = 2
           datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
           datacols.items = <          
@@ -5025,6 +5167,7 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                   0
+                  0
                 )
               )
             end          
@@ -5035,6 +5178,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridmsestringdatalist
               data = (
                 (
+                  ''
                   ''
                   ''
                   ''
@@ -5080,7 +5224,7 @@ object projectoptionsfo: tprojectoptionsfo
           color = -1879048189
           taborder = 2
           bounds_x = 0
-          bounds_y = 184
+          bounds_y = 201
           bounds_cx = 754
           bounds_cy = 3
           anchors = [an_top]

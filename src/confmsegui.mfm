@@ -4,7 +4,7 @@ object confmseguifo: tconfmseguifo
   bounds_x = 394
   bounds_y = 276
   bounds_cx = 376
-  bounds_cy = 167
+  bounds_cy = 117
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,7 +12,7 @@ object confmseguifo: tconfmseguifo
     0
     0
     376
-    167
+    117
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
@@ -82,38 +82,8 @@ object confmseguifo: tconfmseguifo
     controller.captionopen = 'MSEgui library directory'
     reffontheight = 15
   end
-  object msedesigner: tfilenameedit
-    Tag = 7
-    frame.caption = '${MSDESIGNER}'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.buttons.count = 1
-    frame.buttons.items = <    
-      item
-        imagenr = 17
-      end>
-    frame.button.imagenr = 17
-    frame.outerframe = (
-      0
-      18
-      0
-      0
-    )
-    taborder = 2
-    hint = 'Path to compiler (ppc386).'
-    bounds_x = 10
-    bounds_y = 113
-    bounds_cx = 358
-    bounds_cy = 39
-    anchors = [an_left, an_top, an_right]
-    value = '${MSEDIR}guidesigner/msedesigner'
-    controller.filename = '${MSEDIR}guidesigner/msedesigner'
-    controller.lastdir = '${MSEDIR}guidesigner/'
-    controller.captionopen = 'Compiler path'
-    reffontheight = 15
-  end
   object tbutton1: tbutton
-    taborder = 3
+    taborder = 2
     bounds_x = 333
     bounds_y = 4
     bounds_cx = 34

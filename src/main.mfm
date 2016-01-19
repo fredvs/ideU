@@ -638,7 +638,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
-        submenu.count = 27
+        submenu.count = 28
         submenu.items = <        
           item
             action = actionsmo.makeact
@@ -705,6 +705,12 @@ object mainfo: tmainfo
             caption = ' Make &9 '
             state = [as_localcaption, as_localtag]
             tag = 1024
+          end        
+          item
+            action = actionsmo.makeact
+            caption = ' Make &0 '
+            state = [as_localcaption, as_localtag]
+            tag = 2048
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
@@ -896,7 +902,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 18
+        submenu.count = 20
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -964,11 +970,17 @@ object mainfo: tmainfo
             tag = 10
           end        
           item
+            action = actionsmo.custmakemenu
+            caption = ' Make 0 '
+            state = [as_localcaption, as_localtag]
+            tag = 11
+          end        
+          item
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.abortmakeact
-            caption = ' Abort Make '
+            caption = ' &Abort Make '
             state = [as_localcaption]
           end        
           item
@@ -984,12 +996,17 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.opensource
-            caption = ' Open '
+            caption = ' &Open '
             state = [as_localcaption]
           end        
           item
             action = actionsmo.save
-            caption = ' Save '
+            caption = ' &Save '
+            state = [as_localcaption]
+          end        
+          item
+            action = actionsmo.close
+            caption = ' &Close '
             state = [as_localcaption]
           end>
         caption = ' Edite&d '
@@ -1000,7 +1017,7 @@ object mainfo: tmainfo
         submenu.count = 2
         submenu.items = <        
           item
-            submenu.count = 8
+            submenu.count = 7
             submenu.items = <            
               item
                 caption = ' Component &Palette '
@@ -1039,9 +1056,6 @@ object mainfo: tmainfo
                 action = actionsmo.findcompallact
                 caption = ' Search Component '
                 state = [as_localcaption]
-              end            
-              item
-                options = [mao_separator, mao_shortcutcaption]
               end>
             caption = ' MSEgui'
             state = [as_localcaption]
