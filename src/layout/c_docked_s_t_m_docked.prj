@@ -535,14 +535,14 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=518
+windowlayout=522
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
- useroptions=838860923
- stackedunder=
+ useroptions=838860927
+ stackedunder=mainfo.panel2
  parent=
  mdistate=0
  nx=0
@@ -551,12 +551,16 @@ windowlayout=518
  ncy=0
  x=208
  y=87
- cx=958
- cy=74
+ cx=964
+ cy=88
  rcx=0
  rcy=0
+ children=2
+  basedock,0,19,954,52
+  statdisp,0,1,954,18
+ focusedchild=0
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -672,15 +676,15 @@ windowlayout=518
  cy=352
  rcx=0
  rcy=0
- [projecttreefo.grid]
+ [projecttreefo.project_tree]
  propcolwidthref=1
- width0=170
+ width0=141
  sortdescend0=0
  width1=1
  sortdescend1=0
  sorted=0
- col=0
- row=1
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -879,7 +883,7 @@ windowlayout=518
  ncy=0
  x=0
  y=355
- cx=949
+ cx=956
  cy=91
  rcx=0
  rcy=0
@@ -949,7 +953,7 @@ windowlayout=518
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=mainfo.panel2
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -979,8 +983,8 @@ windowlayout=518
  ncy=0
  x=0
  y=0
- cx=948
- cy=38
+ cx=954
+ cy=52
  rcx=0
  rcy=0
  [sourcefo]
@@ -995,7 +999,7 @@ windowlayout=518
  ncy=0
  x=142
  y=0
- cx=807
+ cx=814
  cy=352
  rcx=0
  rcy=0
@@ -1031,28 +1035,28 @@ windowlayout=518
  ncy=0
  x=0
  y=0
- cx=949
+ cx=956
  cy=352
  rcx=0
  rcy=0
  [mainfo.panel2]
  splitdir=2
  useroptions=838893035
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=206
- y=195
- cx=959
+ x=207
+ y=231
+ cx=966
  cy=446
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
 [targetconsole]
 finddtext=

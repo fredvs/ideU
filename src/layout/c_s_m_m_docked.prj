@@ -373,6 +373,7 @@ showgrid=1
 snaptogrid=1
 moveonfirstclick=1
 noformdesignerdocking=0
+componenthints=1
 gridsizex=8
 gridsizey=8
 autoindent=1
@@ -497,7 +498,7 @@ files=
  a=0,4133,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/mseguinew/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -539,13 +540,13 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=499
+windowlayout=503
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
- useroptions=33554555
+ useroptions=838860927
  stackedunder=
  parent=
  mdistate=0
@@ -555,10 +556,14 @@ windowlayout=499
  ncy=0
  x=240
  y=61
- cx=959
+ cx=967
  cy=621
  rcx=0
  rcy=0
+ children=2
+  statdisp,0,1,957,18
+  basedock,0,19,957,585
+ focusedchild=1
  wsize=0
  active=1
  visible=1
@@ -628,7 +633,7 @@ windowlayout=499
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentstorefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -647,7 +652,7 @@ windowlayout=499
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -679,15 +684,15 @@ windowlayout=499
  wsize=0
  active=0
  visible=1
- [projecttreefo.grid]
- propcolwidthref=10
- width0=170
+ [projecttreefo.project_tree]
+ propcolwidthref=39
+ width0=141
  sortdescend0=0
- width1=4
+ width1=33
  sortdescend1=0
  sorted=0
- col=0
- row=1
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -768,7 +773,7 @@ windowlayout=499
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=projecttreefo
+ stackedunder=breakpointsfo
  parent=
  mdistate=0
  nx=0
@@ -793,7 +798,7 @@ windowlayout=499
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -876,7 +881,7 @@ windowlayout=499
  value=1
  [messagefo]
  splitdir=0
- useroptions=268517483
+ useroptions=82027
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -886,14 +891,14 @@ windowlayout=499
  ncy=0
  x=0
  y=487
- cx=949
+ cx=957
  cy=98
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
  useroptions=268460155
- stackedunder=symbolfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -965,7 +970,7 @@ windowlayout=499
  ncy=0
  x=0
  y=41
- cx=949
+ cx=957
  cy=74
  rcx=0
  rcy=0
@@ -983,7 +988,7 @@ windowlayout=499
  ncy=0
  x=0
  y=0
- cx=949
+ cx=957
  cy=38
  rcx=0
  rcy=0
@@ -999,7 +1004,7 @@ windowlayout=499
  ncy=0
  x=0
  y=0
- cx=949
+ cx=957
  cy=366
  rcx=0
  rcy=0
@@ -1007,7 +1012,7 @@ windowlayout=499
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=disassfo
+ stackedunder=projecttreefo
  parent=
  mdistate=0
  nx=0
@@ -1035,7 +1040,7 @@ windowlayout=499
  ncy=0
  x=0
  y=118
- cx=949
+ cx=957
  cy=366
  rcx=0
  rcy=0

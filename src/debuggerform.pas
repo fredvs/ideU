@@ -24,7 +24,7 @@ uses
  msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
- msestream,msestrings,sysutils;
+ msestream,msestrings,sysutils,mseimage;
 
 type
  tdebuggerfo = class(tdockform)
@@ -62,6 +62,7 @@ type
    save_file: tbutton;
    save_project: tbutton;
    line_number: tbutton;
+   timage1: timage;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);

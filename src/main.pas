@@ -43,7 +43,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.0.4';
+ versiontext = '1.0.5';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -210,11 +210,13 @@ type
    procedure viewconffpguiexecute(const sender: TObject);
    procedure viewconfmseguiexecute(const sender: TObject);
    procedure viewconfcompilersexecute(const sender: TObject);
+   procedure viewconfdebuggersexecute(const sender: TObject);
    procedure viewconfideuexecute(const sender: TObject);
    procedure viewfpguidesigneronexecute(const sender: TObject);
    procedure resetfpguidesigneronexecute(const sender: TObject);
    procedure customcompile(const sender: TObject);
    procedure customrun(const sender: TObject);
+   procedure runwithoutdebugger;
    procedure ideuwriteconfig;
    procedure ideureadconfig;
    procedure loadconfigform(const sender: TObject);
@@ -309,6 +311,7 @@ type
    customoption : integer;
    setcompiler : integer;
    settypecompiler : integer;
+   thetag : integer;
    
    factivedesignmodule: pmoduleinfoty;
    fprojectloaded: boolean;
@@ -425,7 +428,7 @@ uses
  findinfileform,formdesigner,sourceupdate,actionsmodule,programparametersform,
  objectinspector,msesysutils,cpuform,disassform,
  panelform,watchpointsform,threadsform,targetconsole,
- debuggerform,componentpaletteform,componentstore,
+ debuggerform,componentpaletteform,componentstore, confdebugger,
  messageform,msesettings,mseintegerenter,symbolform
  {$ifdef unix},mselibc {$endif}, //SIGRT*
  mseprocutils
@@ -643,6 +646,11 @@ begin
   confcompilerfo.othercompiler3.value  := gINI.ReadString('other', 'compiler3', '');
   confcompilerfo.othercompiler4.value  := gINI.ReadString('other', 'compiler4', '');
   
+  confdebuggerfo.debugger1.value  := gINI.ReadString('debug', 'debugger1', '');
+  confdebuggerfo.debugger2.value  := gINI.ReadString('debug', 'debugger2', '');
+  confdebuggerfo.debugger3.value  := gINI.ReadString('debug', 'debugger3', '');
+  confdebuggerfo.debugger4.value  := gINI.ReadString('debug', 'debugger4', '');
+  
   conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', true); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
   
@@ -747,6 +755,11 @@ begin
    gINI.writeString('other', 'compiler2', confcompilerfo.othercompiler2.value);
    gINI.writeString('other', 'compiler3', confcompilerfo.othercompiler3.value);
     gINI.writeString('other', 'compiler4', confcompilerfo.othercompiler4.value);
+    
+     gINI.writeString('debug', 'debugger1', confdebuggerfo.debugger1.value);
+   gINI.writeString('debug', 'debugger2', confdebuggerfo.debugger2.value);
+   gINI.writeString('debug', 'debugger3', confdebuggerfo.debugger3.value);
+    gINI.writeString('debug', 'debugger4', confdebuggerfo.debugger4.value);
  
    if confideufo.tbfilereload0.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
@@ -1156,6 +1169,12 @@ var
   RunCustomCompiled(page1.filepath);
    end;
 end;   
+
+procedure tmainfo.runwithoutdebugger;
+ begin
+   setstattext('  Running ' + gettargetfile  ,mtk_flat); 
+  RunWithoutDebug(gettargetfile);
+  end; 
 
 procedure tmainfo.toggleformunit;
 var
@@ -1756,8 +1775,56 @@ begin
 end;
 
 procedure tmainfo.startgdb(const killserver: boolean);
+var
+ int3: integer;
+ str3: msestring;
 begin
  terminategdbserver(killserver);
+ 
+// fred debugger
+str3 := '' ;
+
+case debuggerfo.project_options.value of
+  0 : thetag := 1;
+  1 : thetag := 2;
+  2 : thetag := 4;
+  3 : thetag := 8;
+  4 : thetag := 16;
+  5 : thetag := 32;
+  6 : thetag := 64;
+  7 : thetag := 128;
+  8 : thetag := 256;
+  9 : thetag := 512;
+  10 : thetag := 1024;
+  11 : thetag := 2048;
+  end;
+
+with projectoptions,o,texp do begin  
+for int3:= 0 to high(debuggerused) do begin
+   if (thetag and debuggerusedon[int3] <> 0) and
+         (debuggerused[int3] <> '') then begin
+         
+  if trim(debuggerused[int3]) = 'Default Debugger' then
+    str3:= 'Default Debugger' else
+        
+    if (trim(debuggerused[int3]) = 'Debugger 1')  then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 2') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 3') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
+    
+     if (trim(debuggerused[int3]) = 'Debugger 4') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= '' ;
+ end;
+ end;
+ end;
+ 
+ if str3 <> '' then begin
+  terminategdbserver(killserver);
  with projectoptions,d.texp do begin
   gdb.remoteconnection:= remoteconnection;
   gdb.gdbdownload:= d.gdbdownload;
@@ -1771,12 +1838,18 @@ begin
   gdb.beforerun:= beforerun;
   gdb.startupbkpt:= d.startupbkpt;
   gdb.startupbkpton:= d.startupbkpton;
-  gdb.startgdb(quotefilename(debugcommand)+ ' ' + debugoptions);
- end;
+  
+  if str3 = 'Default Debugger' then 
+  gdb.startgdb(quotefilename(debugcommand)+ ' ' + debugoptions) else
+  gdb.startgdb(quotefilename(str3)+ ' ' + debugoptions);
+  
  updatesigsettings;
  cleardebugdisp;
  checkbluedots;
+ 
+ end; end  else runwithoutdebugger ;
 end;
+
 
 procedure tmainfo.restartgdbonexecute(const sender: tobject);
 begin
@@ -3066,6 +3139,9 @@ end;
 
 procedure tmainfo.aftermake(const adesigner: idesigner;
                                const exitcode: integer);
+var
+str3 : string;
+int3 : integer;
 begin
  actionsmo.finishcustom ;
  
@@ -3082,11 +3158,56 @@ begin
   if projectoptions.o.closemessages then begin
    messagefo.hide;
   end;
-  if fstartcommand <> sc_none then begin
-   runtarget;
+  
+  /// fred debugger
+
+str3 := '' ;
+
+case debuggerfo.project_options.value of
+  0 : thetag := 1;
+  1 : thetag := 2;
+  2 : thetag := 4;
+  3 : thetag := 8;
+  4 : thetag := 16;
+  5 : thetag := 32;
+  6 : thetag := 64;
+  7 : thetag := 128;
+  8 : thetag := 256;
+  9 : thetag := 512;
+  10 : thetag := 1024;
+  11 : thetag := 2048;
+  end;
+
+with projectoptions,o,texp do begin  
+for int3:= 0 to high(debuggerused) do begin
+   if (thetag and debuggerusedon[int3] <> 0) and
+         (debuggerused[int3] <> '') then begin
+         
+  if trim(debuggerused[int3]) = 'Default Debugger' then
+    str3:= 'Default Debugger' else
+        
+    if (trim(debuggerused[int3]) = 'Debugger 1')  then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 2') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 3') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
+    
+     if (trim(debuggerused[int3]) = 'Debugger 4') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= '' ;
+ end;
+ end;
+ end;
+ 
+ if str3 <> '' then else
+ if fstartcommand <> sc_none then  runtarget;
+ 
   end;
  end;
-end;
+
 
 procedure Tmainfo.resetstartcommand;
 begin
@@ -3181,6 +3302,11 @@ end;
 procedure tmainfo.viewconfcompilersexecute(const sender: TObject);
 begin
  confcompilerfo.activate;
+end;
+
+procedure tmainfo.viewconfdebuggersexecute(const sender: TObject);
+begin
+ confdebuggerfo.activate;
 end;
 
 procedure tmainfo.viewconfideuexecute(const sender: TObject);

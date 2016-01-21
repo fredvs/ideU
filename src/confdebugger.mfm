@@ -1,0 +1,145 @@
+object confdebuggerfo: tconfdebuggerfo
+  optionswidget = [ow_top, ow_ultratop, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 475
+  bounds_y = 322
+  bounds_cx = 344
+  bounds_cy = 203
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    344
+    203
+  )
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  caption = 'Debuggers Configuration'
+  moduleclassname = 'tmseform'
+  object tlabel6: tlabel
+    bounds_x = 132
+    bounds_y = 5
+    bounds_cx = 66
+    bounds_cy = 15
+    caption = 'Debuggers'
+    reffontheight = 15
+  end
+  object debugger4: tfilenameedit
+    Tag = 7
+    frame.colorclient = 15138790
+    frame.caption = '${DEBUGGER4}'
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 4
+    hint = 'Path to debugger 4'
+    bounds_x = 11
+    bounds_y = 154
+    bounds_cx = 328
+    bounds_cy = 39
+    controller.captionopen = 'Debugger Path'
+    reffontheight = 15
+  end
+  object debugger3: tfilenameedit
+    Tag = 7
+    frame.colorclient = 15138790
+    frame.caption = '${DEBUGGER3}'
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 3
+    hint = 'Path to debugger 3'
+    bounds_x = 11
+    bounds_y = 112
+    bounds_cx = 328
+    bounds_cy = 39
+    controller.captionopen = 'Debugger Path'
+    reffontheight = 15
+  end
+  object debugger2: tfilenameedit
+    Tag = 7
+    frame.colorclient = 15138790
+    frame.caption = '${DEBUGGER2}'
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 2
+    hint = 'Path to debugger 2'
+    bounds_x = 11
+    bounds_y = 69
+    bounds_cx = 328
+    bounds_cy = 39
+    controller.captionopen = 'Debugger Path'
+    reffontheight = 15
+  end
+  object debugger1: tfilenameedit
+    Tag = 7
+    frame.colorclient = 15138790
+    frame.caption = '${DEBUGGER1}'
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    hint = 'Path to debugger 1'
+    bounds_x = 11
+    bounds_y = 26
+    bounds_cx = 328
+    bounds_cy = 39
+    controller.captionopen = 'Debugger Path'
+    reffontheight = 15
+  end
+  object tnClose: tbutton
+    taborder = 5
+    bounds_x = 292
+    bounds_y = 9
+    bounds_cx = 39
+    bounds_cy = 22
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = '&OK'
+    modalresult = mr_ok
+  end
+end

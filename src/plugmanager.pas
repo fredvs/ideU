@@ -33,6 +33,8 @@ procedure fpgd_mainproc();
 
 procedure RunCustomCompiled(const AFilename: string);
 
+procedure RunWithoutDebug(const AFilename: string);
+
 // for fpGUI
 procedure LoadfpgDesigner(const AfpgFilename: string; param: string);
 
@@ -119,7 +121,6 @@ function fpgd_loadfile(afilename : PChar) : integer ;
  procedure RunCustomCompiled(const AFilename: string);
  var
   dataf, dataf2 : string ;
-  AProcess : TProcess ;
   len1 : integer;
  begin
  
@@ -135,22 +136,29 @@ len1 := pos('.',dataf2) ;
     {$endif}
     
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
-     
-     if fileexists(dataf) then
-     begin
+  
+  RunWithoutDebug(dataf);
+ 
+ end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
+ end;
+ 
+ procedure RunWithoutDebug(const AFilename: string);
+ var
+  AProcess : TProcess ;
+  begin
+ 
+  if fileexists (AFilename) then
+ begin 
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := dataf ;
+      AProcess.CommandLine := AFilename ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;
       AProcess.Execute;
       AProcess.Free;
       mainfo.setstattext('' ,mtk_flat);  
-         end else mainfo.setstattext('Not a executable file...',mtk_notok);
-    
-  end;
- 
+         end else mainfo.setstattext(AFilename + ' does not exist...',mtk_notok); 
  end;
      
    //fpGUI designer

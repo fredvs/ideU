@@ -346,7 +346,7 @@ procedure configureide;
 
 implementation
 uses
-plugmanager, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
+plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
  projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
  disassform,printform,msegdbutils,mseintegerenter,msesettings,
  componentstore,cpuform,sysutils,msecomptree;
@@ -548,18 +548,54 @@ debuggerfo.project_make.enabled := false;
 debuggerfo.project_abort_compil.enabled := true;
 
  case debuggerfo.project_options.value of
-  0 : domake(1) ;
-   1 : domake(2) ;
-   2 : domake(4) ;
-    3 : domake(8) ;
-     4 : domake(16) ;
-   5 : domake(32) ; 
-   6 : domake(64) ;
-    7 : domake(128) ;
-    8 : domake(256) ;
-     9 : domake(512) ;
-   10 : domake(1024) ;  
-   11 : domake(2048) ;  
+  0 : begin 
+  domake(1) ;
+   mainfo.thetag := 1;
+  end;
+   1 : begin 
+  domake(2) ;
+   mainfo.thetag := 2;
+  end;
+   2 : begin 
+  domake(4) ;
+   mainfo.thetag := 4;
+  end;
+    3 : begin 
+  domake(8) ;
+   mainfo.thetag := 8;
+  end;
+     4 : begin 
+  domake(16) ;
+   mainfo.thetag := 16;
+  end;
+   5 : begin 
+  domake(32) ;
+   mainfo.thetag := 32;
+  end;
+   6 : begin 
+  domake(64) ;
+   mainfo.thetag := 64;
+  end;
+    7 : begin 
+  domake(128) ;
+   mainfo.thetag := 128;
+  end;
+    8 : begin 
+  domake(256) ;
+   mainfo.thetag := 256;
+  end;
+     9 : begin 
+  domake(512) ;
+   mainfo.thetag := 512;
+  end;
+   10 : begin 
+  domake(1024) ;
+   mainfo.thetag := 1024;
+  end; 
+   11 : begin 
+  domake(2048) ;
+   mainfo.thetag := 2048;
+  end;
   end;
    mainfo.resetstartcommand;
  end;
@@ -755,10 +791,12 @@ begin
   if sender is tmenuitem then
    begin
    domake(tmenuitem(sender).tag);
+   thetag := tmenuitem(sender).tag;
  end
   else
    begin
       domake(0);
+    thetag := 0; 
   end;
    resetstartcommand;
  end;
@@ -785,15 +823,62 @@ begin
 end;
 
 procedure tactionsmo.continueactonexecute(const sender: tobject);
+var
+str3 : string;
+int3 : integer;
 begin
 
+/// fred debugger
+
+str3 := '' ;
+
+case debuggerfo.project_options.value of
+  0 : mainfo.thetag := 1;
+  1 : mainfo.thetag := 2;
+  2 : mainfo.thetag := 4;
+  3 : mainfo.thetag := 8;
+  4 : mainfo.thetag := 16;
+  5 : mainfo.thetag := 32;
+  6 : mainfo.thetag := 64;
+  7 : mainfo.thetag := 128;
+  8 : mainfo.thetag := 256;
+  9 : mainfo.thetag := 512;
+  10 : mainfo.thetag := 1024;
+  11 : mainfo.thetag := 2048;
+  end;
+
+with projectoptions,o,texp do begin  
+for int3:= 0 to high(debuggerused) do begin
+   if (mainfo.thetag and debuggerusedon[int3] <> 0) and
+         (debuggerused[int3] <> '') then begin
+         
+  if trim(debuggerused[int3]) = 'Default Debugger' then
+    str3:= 'Default Debugger' else
+        
+    if (trim(debuggerused[int3]) = 'Debugger 1')  then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 2') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 3') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
+    
+     if (trim(debuggerused[int3]) = 'Debugger 4') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= '' ;
+ end;
+ end;
+ end;
+ 
+ if str3 <> '' then begin
  with mainfo do begin
   if checkremake(sc_continue) then begin
    cpufo.beforecontinue;
    gdb.continue;
    end;
  end;
- 
+ end else mainfo.runwithoutdebugger ;
 end;
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);

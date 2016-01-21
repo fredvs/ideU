@@ -33,13 +33,14 @@ uses
  msebitmap,msecolordialog,msedrawtext,msewidgets,msepointer,mseguiglob,
  msepipestream,msemenus,sysutils,mseglob,mseedit,msedialog,msescrollbar,
  msememodialog,msecodetemplates,mseifiglob,msestream,msestringcontainer,
- mserttistat,mseificomp,mseificompglob;
+ mserttistat,mseificomp,mseificompglob,msedragglob,mserichstring;
 
 const
  defaultsourceprintfont = 'Courier';
  defaulttitleprintfont = 'Helvetica';
  defaultprintfontsize = 35.2778; //10 point
- maxdefaultmake = $40-1;
+ //maxdefaultmake = $40-1;
+ maxdefaultmake = $1280-1;
  defaultxtermcommand = 'xterm -S${PTSN}/${PTSH}';
  
 type
@@ -81,6 +82,12 @@ type
    ftargpref: msestring;
    fbefcommand: msestringarty;
    faftcommand: msestringarty;
+   // fred compiler
+   fcompilerused: msestringarty;
+   
+   // fred debugger
+   fdebuggerused: msestringarty;
+   
    fmakeoptions: msestringarty;
    ftoolmenus: msestringarty;
    ftoolfiles: msestringarty;
@@ -117,6 +124,13 @@ type
    property befcommand: msestringarty read fbefcommand write fbefcommand;
    property aftcommand: msestringarty read faftcommand write faftcommand;
    property makeoptions: msestringarty read fmakeoptions write fmakeoptions;
+   
+   // fred compiler
+   property compilerused: msestringarty read fcompilerused write fcompilerused;
+   
+   // fred debugger
+   property debuggerused: msestringarty read fdebuggerused write fdebuggerused;
+   
 
    property codetemplatedirs: msestringarty read fcodetemplatedirs
                                                      write fcodetemplatedirs;
@@ -415,7 +429,12 @@ type
    fmodulenames: msestringarty;
    fmoduletypes: msestringarty;
    fmodulefiles: filenamearty;
-//   fmoduleoptions: integerarty;
+   // fred compiler
+   fcompilerusedon: integerarty;
+   
+   // fred debugger
+   fdebuggerusedon: integerarty;
+   
    fbefcommandon: integerarty;
    fmakeoptionson: integerarty;
    faftcommandon: integerarty;
@@ -491,6 +510,13 @@ type
 
    property befcommandon: integerarty read fbefcommandon write fbefcommandon;
    property makeoptionson: integerarty read fmakeoptionson write fmakeoptionson;
+   
+   // fred compiler
+   property compilerusedon: integerarty read fcompilerusedon  write fcompilerusedon;
+   
+   // fred debugger
+   property debuggerusedon: integerarty read fdebuggerusedon  write fdebuggerusedon;
+   
    property aftcommandon: integerarty read faftcommandon write faftcommandon;
    property unitdirson: integerarty read funitdirson write funitdirson;
 
@@ -592,7 +618,6 @@ type
    stoponexception: tbooleanedit;
    activateonbreak: tbooleanedit;
    makepage: ttabpage;
-   tspacer2: tspacer;
    defaultmake: tenumedit;
    mainfile: tfilenameedit;
    targetfile: tfilenameedit;
@@ -644,10 +669,8 @@ type
    tspacer1: tspacer;
    targpref: tstringedit;
    makedir: tfilenameedit;
-   tsplitter1: tsplitter;
    tsplitter2: tsplitter;
    tsplitter4: tsplitter;
-   tsplitter5: tsplitter;
    ttabpage1: ttabpage;
    macrogrid: twidgetgrid;
    e0: tbooleanedit;
@@ -764,6 +787,41 @@ type
    befmake9on: tbooleanedit;
    befmake0on: tbooleanedit;
    befcommand: tmemodialogedit;
+   
+   // fred compiler
+   ttabpage66: ttabpage;
+   compilerusedgrid: twidgetgrid;
+   compmakeon: tbooleanedit;
+   compbuildon: tbooleanedit;
+   compmake1on: tbooleanedit;
+   compmake2on: tbooleanedit;
+   compmake3on: tbooleanedit;
+   compmake4on: tbooleanedit;
+   compmake5on: tbooleanedit;
+   compmake6on: tbooleanedit;
+   compmake7on: tbooleanedit;
+   compmake8on: tbooleanedit;
+   compmake9on: tbooleanedit;
+   compmake0on: tbooleanedit;
+   compcommand: tmemodialogedit;
+   
+   // fred compiler
+   ttabpage77: ttabpage;
+   debuggerusedgrid: twidgetgrid;
+   debmakeon: tbooleanedit;
+   debbuildon: tbooleanedit;
+   debmake1on: tbooleanedit;
+   debmake2on: tbooleanedit;
+   debmake3on: tbooleanedit;
+   debmake4on: tbooleanedit;
+   debmake5on: tbooleanedit;
+   debmake6on: tbooleanedit;
+   debmake7on: tbooleanedit;
+   debmake8on: tbooleanedit;
+   debmake9on: tbooleanedit;
+   debmake0on: tbooleanedit;
+   debcommand: tmemodialogedit;
+   
    aftcommandgrid: twidgetgrid;
    aftmakeon: tbooleanedit;
    aftbuildon: tbooleanedit;
@@ -808,9 +866,7 @@ type
    formatmacronames: tstringedit;
    formatmacrovalues: tstringedit;
    colorerror: tcoloredit;
-   tspacer5: tspacer;
    colorwarning: tcoloredit;
-   tspacer6: tspacer;
    colornote: tcoloredit;
    c: tstringcontainer;
    xtermcommand: tmemodialogedit;
@@ -818,7 +874,6 @@ type
    tlayouter14: tlayouter;
    rightmarginon: tbooleanedit;
    linenumberson: tbooleanedit;
-   tspacer4: tspacer;
    stripmessageesc: tbooleanedit;
    raiseonbreak: tbooleanedit;
    runcommand: tfilenameedit;
@@ -943,7 +998,7 @@ uses
  msesysenvmanagereditor,targetconsole,actionsmodule,mseactions,
  msefilemacros,mseenvmacros,msemacmacros,mseexecmacros,msestrmacros,
  msedesigner,panelform,watchpointsform,commandlineform,messageform,
- componentpaletteform,mserichstring,msesettings,formdesigner,
+ componentpaletteform,msesettings,formdesigner,
  msestringlisteditor,msetexteditor,msepropertyeditors,mseshapes,
  componentstore,cpuform,msesysutils,msecomptree,msefont,typinfo
  {$ifndef mse_no_db}{$ifdef FPC},msedbfieldeditor{$endif}{$endif}
@@ -1464,8 +1519,10 @@ end;
 
 procedure initpr(const expand: boolean);
 const 
- alloptionson = 1+2+4+8+16+32;
- unitson = 1+2+4+8+16+32+$10000;
+ alloptionson = 1+2+4+8+16+32+64+128+256+512+1024+2048;
+ unitson = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
+ compileron = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
+ debuggeron = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
  allon = unitson+$20000+$40000;
 var
  int1: integer;
@@ -1513,6 +1570,48 @@ begin
   end;
   sigsettings:= defaultsigsettings;
   ignoreexceptionclasses:= nil;
+  
+  // fred compiler
+    with projectoptions,o,t do begin
+  additem(fcompilerused,' Default Compiler');
+  additem(fcompilerused,' Pascal 1');
+  additem(fcompilerused,' Pascal 2');
+  additem(fcompilerused,' Pascal 3');
+  additem(fcompilerused,' Pascal 4');
+  additem(fcompilerused,' C 1');
+  additem(fcompilerused,' C 2');
+  additem(fcompilerused,' C 3');
+  additem(fcompilerused,' C 4');
+  additem(fcompilerused,' Java 1');
+  additem(fcompilerused,' Java 2');
+  additem(fcompilerused,' Java 3');
+  additem(fcompilerused,' Java 4');
+  additem(fcompilerused,' Python 1');
+  additem(fcompilerused,' Python 2');
+  additem(fcompilerused,' Python 3');
+  additem(fcompilerused,' Python 4');
+  additem(fcompilerused,' Other 1');
+  additem(fcompilerused,' Other 2');
+  additem(fcompilerused,' Other 3');
+  additem(fcompilerused,' Other 4');
+  setlength(fcompilerusedon,length(fcompilerused));
+ end;
+  fcompilerusedon[0]:= compileron; 
+   //
+   
+ // fred debugger
+    with projectoptions,o,t do begin
+  additem(fdebuggerused,' Default Debugger');
+  additem(fdebuggerused,' Debugger 1');
+  additem(fdebuggerused,' Debugger 2');
+  additem(fdebuggerused,' Debugger 3');
+  additem(fdebuggerused,' Debugger 4');
+  additem(fdebuggerused,' None');
+  
+  setlength(fdebuggerusedon,length(fdebuggerused));
+ end;
+  fdebuggerusedon[0]:= debuggeron; 
+   //  
 
   additem(fmakeoptions,'-l -Mobjfpc -Sh -Fcutf8');
   additem(fmakeoptions,'-gl -O-');
@@ -1736,7 +1835,10 @@ begin
              {$ifdef FPC}@{$endif}storesignalinforec);
    end;
   end;
-  updatevalue('defaultmake',defaultmake,1,maxdefaultmake+1);
+ updatevalue('defaultmake',defaultmake,1,maxdefaultmake+1);
+  
+  // updatevalue('defaultmake',defaultmake,1,maxdefaultmake+6);
+ 
   if not iswriter then begin
    int1:= length(newfinames);
    if int1 > length(newfifilters) then begin
@@ -1955,6 +2057,55 @@ begin
   end;
   fo.fontondataentered(nil);
   fo.defaultmake.value:= lowestbit(defaultmake);
+  
+  // fred compiler
+
+ fo.compcommand.gridvalues:= o.t.compilerused;
+  
+   with projectoptions,o,t do begin
+  for int1:= 0 to fo.compilerusedgrid.rowhigh do begin
+   if int1 > high(o.compilerusedon) then begin
+    break;
+   end;
+   fo.compmakeon.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compbuildon.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake1on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake2on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake3on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake4on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake5on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake6on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake7on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake8on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake9on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+   fo.compmake0on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
+  end;
+ end;
+ 
+ // fred debugger
+
+ fo.debcommand.gridvalues:= o.t.debuggerused;
+  
+   with projectoptions,o,t do begin
+  for int1:= 0 to fo.debuggerusedgrid.rowhigh do begin
+   if int1 > high(o.debuggerusedon) then begin
+    break;
+   end;
+   fo.debmakeon.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debbuildon.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake1on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake2on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake3on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake4on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake5on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake6on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake7on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake8on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake9on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+   fo.debmake0on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
+  end;
+ end;
+     
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
    if int1 > high(o.makeoptionson) then begin
     break;
@@ -2033,6 +2184,7 @@ begin
    fo.dobjon.gridupdatetagvalue(int2,o.unitdirson[int1]);
    dec(int2);
   end;
+  
   fo.activemacroselect[o.macrogroup]:= true;
   fo.activegroupchanged;
   setlength(o.fgroupcomments,10); // ici !
@@ -2124,6 +2276,34 @@ begin
      fo.make9on.gridvaluetag(int1,0) or fo.make0on.gridvaluetag(int1,0)
        ;
   end;
+  
+  /// fred compiler
+  for int1:= 0 to high(o.fcompilerusedon) do begin
+   o.fcompilerusedon[int1]:=
+      fo.compmakeon.gridvaluetag(int1,0) or fo.compbuildon.gridvaluetag(int1,0) or
+      fo.compmake1on.gridvaluetag(int1,0) or fo.compmake2on.gridvaluetag(int1,0) or
+      fo.compmake3on.gridvaluetag(int1,0) or fo.compmake4on.gridvaluetag(int1,0) or 
+      fo.compmake5on.gridvaluetag(int1,0) or fo.compmake6on.gridvaluetag(int1,0) or
+    fo.compmake7on.gridvaluetag(int1,0) or fo.compmake8on.gridvaluetag(int1,0) or
+     fo.compmake9on.gridvaluetag(int1,0) or fo.compmake0on.gridvaluetag(int1,0)
+       ;
+  end;
+ ///
+ 
+ // fred debugger
+
+  for int1:= 0 to high(o.fdebuggerusedon) do begin
+   o.fdebuggerusedon[int1]:=
+      fo.debmakeon.gridvaluetag(int1,0) or fo.debbuildon.gridvaluetag(int1,0) or
+      fo.debmake1on.gridvaluetag(int1,0) or fo.debmake2on.gridvaluetag(int1,0) or
+      fo.debmake3on.gridvaluetag(int1,0) or fo.debmake4on.gridvaluetag(int1,0) or 
+      fo.debmake5on.gridvaluetag(int1,0) or fo.debmake6on.gridvaluetag(int1,0) or
+    fo.debmake7on.gridvaluetag(int1,0) or fo.debmake8on.gridvaluetag(int1,0) or
+     fo.debmake9on.gridvaluetag(int1,0) or fo.debmake0on.gridvaluetag(int1,0)
+       ;
+  end;
+ 
+ ///
 
   setlength(o.fbefcommandon,fo.befcommandgrid.rowcount);
   for int1:= 0 to high(o.fbefcommandon) do begin
@@ -2264,7 +2444,7 @@ begin
    break;
   end;
  end;
- // fred
+ // fred macros
  for int1:= 0 to selectactivegroupgrid.rowcount-1 do begin
   if int1 = int2 then begin
    macrogrid.datacols[int1].color:= cl_infobackground;
@@ -2405,9 +2585,11 @@ begin
 end;
 
 procedure tprojectoptionsfo.makepageonchildscaled(const sender: TObject);
-var
- int1: integer;
+//var
+// int1: integer;
 begin
+{
+
  placeyorder(0,[0,0,0,15],[mainfile,makecommand,colorerror,
                     defaultmake,makegroupbox],0);
  aligny(wam_center,[mainfile,targetfile,targpref]);
@@ -2429,6 +2611,7 @@ begin
  with closemessages do begin
   pos:= makepoint(checkmethods.bounds_x,int1);
  end;
+}
 end;
 
 procedure tprojectoptionsfo.debuggerlayoutexe(const sender: TObject);
@@ -2902,10 +3085,11 @@ begin
  
  closemessages:= true;
  checkmethods:= true;
- fcolorerror:= cl_ltyellow;
- fcolorwarning:= cl_ltred;
+ fcolorerror:= cl_ltred;
+ fcolorwarning:= cl_ltyellow;
  fcolornote:= cl_ltgreen;
- inherited;
+ //showcommandline.color := $F7C6E4 ;
+inherited;
 end;
 {
 destructor tprojectoptions.destroy;

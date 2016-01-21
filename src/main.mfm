@@ -8,7 +8,7 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints, go_showfloatcaption]
   visible = False
-  bounds_x = 211
+  bounds_x = 212
   bounds_y = 147
   bounds_cx = 654
   bounds_cy = 222
@@ -1086,7 +1086,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 4
+        submenu.count = 5
         submenu.items = <        
           item
             caption = ' &General Settings '
@@ -1118,6 +1118,11 @@ object mainfo: tmainfo
             caption = ' Configure Compilers '
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfcompilersexecute
+          end        
+          item
+            caption = ' Configure Debuggers '
+            state = [as_localcaption, as_localonexecute]
+            onexecute = viewconfdebuggersexecute
           end>
         caption = ' Sett&ings '
         hint = 'General and extra settings.'

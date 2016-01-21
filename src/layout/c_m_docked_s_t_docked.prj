@@ -18,7 +18,7 @@ order15=0
 order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/layout
-projectfilename=/home/fred/ideu/src/layout/c_s_t_m_docked.prj
+projectfilename=/home/fred/ideu/src/layout/c_m_docked_s_t_docked.prj
 findinfiledialog=34
  [findinfileadialogfo.subdirs]
  value=0
@@ -534,13 +534,13 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=502
+windowlayout=506
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
- useroptions=838860923
+ useroptions=838860927
  stackedunder=mainfo.panel1
  parent=
  mdistate=0
@@ -550,10 +550,14 @@ windowlayout=502
  ncy=0
  x=166
  y=25
- cx=960
- cy=153
+ cx=968
+ cy=154
  rcx=0
  rcy=0
+ children=2
+  statdisp,0,1,958,18
+  basedock,0,19,958,118
+ focusedchild=1
  wsize=0
  active=0
  visible=1
@@ -668,18 +672,18 @@ windowlayout=502
  x=0
  y=0
  cx=139
- cy=449
+ cy=447
  rcx=0
  rcy=0
- [projecttreefo.grid]
+ [projecttreefo.project_tree]
  propcolwidthref=1
- width0=170
+ width0=141
  sortdescend0=0
  width1=1
  sortdescend1=0
  sorted=0
- col=0
- row=1
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -877,9 +881,9 @@ windowlayout=502
  ncx=0
  ncy=0
  x=0
- y=43
- cx=950
- cy=74
+ y=49
+ cx=958
+ cy=69
  rcx=0
  rcy=0
  [componentstorefo]
@@ -978,8 +982,8 @@ windowlayout=502
  ncy=0
  x=0
  y=0
- cx=950
- cy=40
+ cx=958
+ cy=46
  rcx=0
  rcy=0
  [sourcefo]
@@ -994,8 +998,8 @@ windowlayout=502
  ncy=0
  x=142
  y=0
- cx=846
- cy=449
+ cx=822
+ cy=447
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1028,10 +1032,10 @@ windowlayout=502
  ny=0
  ncx=0
  ncy=0
- x=143
+ x=164
  y=220
- cx=998
- cy=449
+ cx=974
+ cy=447
  rcx=0
  rcy=0
  wsize=0

@@ -222,12 +222,87 @@ function buildmakecommandline(const atag: integer): string;
  end;
  
 var
- int1,int2: integer;
+ int1,int2, int3: integer;
  str1,str2,str3: msestring;
 // wstr1: filenamety;
 begin
  with projectoptions,o,texp do begin
-  str3:= quotefilename(tosysfilepath(makecommand));
+ 
+for int3:= 0 to high(compilerused) do begin
+   if (atag and compilerusedon[int3] <> 0) and
+         (compilerused[int3] <> '') then begin
+         
+  if trim(compilerused[int3]) = 'Default Compiler' then
+    str3:= quotefilename(tosysfilepath(makecommand)) else
+        
+    if (trim(compilerused[int3]) = 'Pascal Compiler 1') or 
+    (trim(compilerused[int3]) = 'Pascal 1') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value)) else
+    
+    if (trim(compilerused[int3]) = 'Pascal Compiler 2') or 
+    (trim(compilerused[int3]) = 'Pascal 2') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value)) else
+    
+    if (trim(compilerused[int3]) = 'Pascal Compiler 3') or 
+    (trim(compilerused[int3]) = 'Pascal 3') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value)) else
+    
+     if (trim(compilerused[int3]) = 'Pascal Compiler 4') or 
+    (trim(compilerused[int3]) = 'Pascal 4') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value)) else
+    
+     if (trim(compilerused[int3]) = 'C Compiler 1') or 
+    (trim(compilerused[int3]) = 'C 1') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value)) else
+    
+    if (trim(compilerused[int3]) = 'C Compiler 2') or 
+    (trim(compilerused[int3]) = 'C 2') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value)) else
+    
+    if (trim(compilerused[int3]) = 'C Compiler 3') or 
+    (trim(compilerused[int3]) = 'C 3') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value)) else
+    
+     if (trim(compilerused[int3]) = 'C Compiler 4') or 
+    (trim(compilerused[int3]) = 'C 4') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value)) else
+    
+     if (trim(compilerused[int3]) = 'Java Compiler 1') or 
+    (trim(compilerused[int3]) = 'Java 1') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value)) else
+    
+    if (trim(compilerused[int3]) = 'Java Compiler 2') or 
+    (trim(compilerused[int3]) = 'Java 2') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value)) else
+    
+    if (trim(compilerused[int3]) = 'Java Compiler 3') or 
+    (trim(compilerused[int3]) = 'Java 3') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value)) else
+    
+     if (trim(compilerused[int3]) = 'Java Compiler 4') or 
+    (trim(compilerused[int3]) = 'Java 4') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value)) else
+    
+     if (trim(compilerused[int3]) = 'Python Compiler 1') or 
+    (trim(compilerused[int3]) = 'Python 1') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value)) else
+    
+    if (trim(compilerused[int3]) = 'Python Compiler 2') or 
+    (trim(compilerused[int3]) = 'Python 2') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value)) else
+    
+    if (trim(compilerused[int3]) = 'Python Compiler 3') or 
+    (trim(compilerused[int3]) = 'Python 3') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value)) else
+    
+     if (trim(compilerused[int3]) = 'Python Compiler 4') or 
+    (trim(compilerused[int3]) = 'Python 4') then
+    str3:= quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value));
+    
+   end;
+  
+  end;
+ 
   str1:= str3;
   if (targetfile <> '') and (targpref <> '') then begin
    str1:= str1 + ' '+quotefilename(targpref+normalizename(targetfile));

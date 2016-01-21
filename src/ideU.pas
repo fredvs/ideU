@@ -29,7 +29,7 @@ uses
 //  mseopenglgdiinit,
 
   // fred
-  confmsegui, confideu, conffpgui, confcompiler,
+  confmsegui, confideu, conffpgui, confcompiler, confdebugger,
   
   mseskindesign,
   msegui,msegraphics,actionsmodule,sourceform,debuggerform,
@@ -54,6 +54,7 @@ begin
  application.createform(tconfmseguifo,confmseguifo);
  application.createform(tconffpguifo,conffpguifo);
  application.createform(tconfcompilerfo,confcompilerfo);
+ application.createform(tconfdebuggerfo,confdebuggerfo);
  conffpguifo.fpguidesigner.value := '';
  
  application.createdatamodule(tstringconstsmo,s);
@@ -81,6 +82,7 @@ begin
  application.createform(ttargetconsolefo,targetconsolefo);
  
  confcompilerfo.visible := false;
+  confdebuggerfo.visible := false;
  //confmseguifo.visible := false;
  //conffpguifo.visible := false;
  

@@ -191,7 +191,7 @@ function SakCancel: integer;
 implementation
 
 uses
-  typinfo, mclasses, mseactions, mseformatstr, msegridsglob;
+  typinfo, mclasses, mseactions, mseformatstr, msegridsglob, mseimage;
   
 /////////////////////////// Capture Assistive Procedures
 
@@ -281,6 +281,14 @@ Sender := iaSender.getinstance;
     if (Sender is Tenumedit) then  
    Result := 'combo box, ' + Tenumedit(Sender).Name
    else
+   if (Sender is timage) then
+  begin
+      if (trim(timage(Sender).hint) <> '') then
+      Result := 'image, ' + timage(Sender).hint 
+      else
+      Result := 'image, ' + Timage(Sender).Name;
+  end
+  else
   if (Sender is tbooleaneditradio) then
   begin
     if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
