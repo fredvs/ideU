@@ -193,7 +193,7 @@ options=108
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=5
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=680
  width0=112
@@ -205,7 +205,7 @@ options=108
  index=1
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=260
@@ -397,13 +397,15 @@ debuggerused=6
   Debugger 3
   Debugger 4
   None
-exeused=11
+exeused=13
  ${EXEEXT}
  No Extension
  .exe
  .com
  .bin
  .prog
+ .pyc
+ .class
  .so
  .dll
  .lib
@@ -592,7 +594,7 @@ makeoptionson=5
  1248
  1279
 compilerusedon=21
- 4095
+ 69631
  0
  0
  0
@@ -614,14 +616,16 @@ compilerusedon=21
  0
  0
 debuggerusedon=6
- 4095
+ 69631
  0
  0
  0
  0
  0
-exeusedon=11
- 4095
+exeusedon=13
+ 69631
+ 0
+ 0
  0
  0
  0
@@ -866,9 +870,9 @@ line=16
  644
  119
  759
- 2216
- 2133
- 2411
+ 2218
+ 2135
+ 2413
 address=16
  4786289
  4817499
@@ -1082,6 +1086,7 @@ findhistory=10
  default
 findoptions=1
 editpos=17
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1092,7 +1097,6 @@ editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 55,9
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1204,8 +1208,8 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 tabsize=60
-firsttab=5
-index=10
+firsttab=0
+index=0
 [layout]
 windowlayout=594
  [mainfo.basedock]
@@ -1441,7 +1445,7 @@ windowlayout=594
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=breakpointsfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1621,7 +1625,7 @@ windowlayout=594
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0

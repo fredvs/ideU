@@ -1670,6 +1670,8 @@ begin
   additem(fexeused,'.com');
   additem(fexeused,'.bin');
   additem(fexeused,'.prog');
+  additem(fexeused,'.pyc');
+  additem(fexeused,'.class');
   additem(fexeused,'.so');
   additem(fexeused,'.dll');
   additem(fexeused,'.lib');
