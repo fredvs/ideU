@@ -223,7 +223,7 @@ function buildmakecommandline(const atag: integer): string;
  
 var
  int1,int2, int3: integer;
- str1,str2,str3: msestring;
+ str1,str2,str3, str4: msestring;
 // wstr1: filenamety;
 begin
  with projectoptions,o,texp do begin
@@ -302,10 +302,25 @@ for int3:= 0 to high(compilerused) do begin
    end;
   
   end;
+  
+  for int3:= 0 to high(exeused) do begin
+   if (atag and exeusedon[int3] <> 0) then begin
+         
+  if (trim(exeused[int3]) = '${EXEEXT}')
+     then
+    begin
+    str4 := '${EXEEXT}';
+    expandprmacros1(str4) end else
+        
+   if (trim(exeused[int3]) = 'No Extension') or
+    (trim(exeused[int3]) = '')  then
+    str4:= '' else str4:= trim(exeused[int3]) ;
+   end;
+  end;
  
   str1:= str3;
   if (targetfile <> '') and (targpref <> '') then begin
-   str1:= str1 + ' '+quotefilename(targpref+normalizename(targetfile));
+   str1:= str1 + ' '+quotefilename(targpref+normalizename(targetfile+str4));
   end;
   int2:= high(unitdirs);
   int1:= high(unitdirson);
@@ -350,8 +365,8 @@ function customcommandline(const aname: filenamety; const acompiler, acompilerta
  end;
  
 var
- int1,int2: integer;
- str1,str2,str3: msestring;
+ int1,int2, int3: integer;
+ str1,str2,str3, str4: msestring;
  optionfilename, optionfilename2 : msestring;
  commandcompiler : msestring;
 // wstr1: filenamety;
@@ -404,24 +419,32 @@ case acompilertag of
 4 : commandcompiler := confcompilerfo.othercompiler4.value;
 end;
 end;
-
 end;
+
+for int3:= 0 to high(exeused) do begin
+   if (atag and exeusedon[int3] <> 0) then begin
+         
+  if (trim(exeused[int3]) = '${EXEEXT}')  then
+    begin
+    str4 := '${EXEEXT}';
+    expandprmacros1(str4) end else
+        
+   if (trim(exeused[int3]) = 'No Extension') or
+    (trim(exeused[int3]) = '')  then
+    str4:= '' else str4:= trim(exeused[int3]) ; 
+ 
+   end; 
+   
+  end;
+
+
  
   str3:= quotefilename(tosysfilepath(commandcompiler));
   str1:= str3;
-  
-// { 
- if (targetfile <> '') and (targpref <> '') then begin
  
- {$IFDEF UNIX}
-  str3 := normalizename(removefileext(aname)) ;
-  {$ELSE}  
- str3 := normalizename(removefileext(aname)) + '.exe' ; 
- {$ENDIF}    
- 
- str1:= str1 + ' '+ quotefilename(targpref+normalizename(str3));
- end;
- // }
+  str3 := aname ;
+
+ str1:= str1 + ' '+ quotefilename(normalizename(str3));
 
   int2:= high(unitdirs);
   int1:= high(unitdirson);
@@ -450,34 +473,11 @@ end;
    if (atag and makeoptionson[int1] <> 0) and
          (makeoptions[int1] <> '') then begin
   
-  {       
-    optionfilename := trim(makeoptions[int1]) ;
-        
-     if (copy(optionfilename,1,3) = '-Fi') then 
-     begin
-     optionfilename2 := copy(optionfilename,4,length(optionfilename)-3) ;
-     if directoryexists(optionfilename2) then  
-     optionfilename := '-Fi' + quotefilename(normalizename(optionfilename2))
-        else optionfilename := trim(makeoptions[int1]) ; 
-      end
-       else  
-      if (copy(optionfilename,1,3) = '-Fu') 
-     then 
-     begin
-     optionfilename2 := copy(optionfilename,4,length(optionfilename)-3) ;
-     if directoryexists(optionfilename2) then  
-     optionfilename := '-Fu' + quotefilename(normalizename(optionfilename2))
-       else optionfilename := trim(makeoptions[int1]) ; 
-      end;   
- 
-  str1:= str1 + ' ' + optionfilename;   
-  }    
- 
-   str1:= str1 + ' ' + makeoptions[int1];
+    str1:= str1 + ' ' + makeoptions[int1];
  
    end;
   end;
-  str1:= str1 + ' ' + quotefilename(normalizename(aname));
+  str1:= str1 + ' ' + quotefilename(normalizename(removefileext(aname)+str4));
  end;
  result:= str1;
 end;

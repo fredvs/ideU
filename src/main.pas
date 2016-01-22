@@ -2798,8 +2798,8 @@ begin
      // orimainfile :=  mainfile ;
       mainfile:= filename(aname);
       aname:= removefileext(mainfile);
-      targetfile:= aname+'${EXEEXT}'
-     end;
+      targetfile:= aname;
+           end;
       expandprojectmacros;
     end;
     aname:= aname + '.prj';

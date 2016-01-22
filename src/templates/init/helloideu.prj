@@ -197,6 +197,41 @@ makeoptions=4
  -gl
  -B
  -O2 -XX -CX -Xs
+compilerused=21
+  Default Compiler
+  Pascal 1
+  Pascal 2
+  Pascal 3
+  Pascal 4
+  C 1
+  C 2
+  C 3
+  C 4
+  Java 1
+  Java 2
+  Java 3
+  Java 4
+  Python 1
+  Python 2
+  Python 3
+  Python 4
+  Other 1
+  Other 2
+  Other 3
+  Other 4
+debuggerused=6
+  Default Debugger
+  Debugger 1
+  Debugger 2
+  Debugger 3
+  Debugger 4
+  None
+exeused=5
+ Default ${EXEEXT}
+ No Extension
+ .exe
+ .com
+ .bin
 codetemplatedirs=1
  ${TEMPLATEDIR}
 toolmenus=1
@@ -334,6 +369,41 @@ makeoptionson=4
  63
  63
  63
+compilerusedon=21
+ 69631
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+debuggerusedon=6
+ 69631
+ 0
+ 0
+ 0
+ 0
+ 0
+exeusedon=5
+ 69631
+ 0
+ 0
+ 0
+ 0
 aftcommandon=0
 unitdirson=2
  65539
@@ -565,7 +635,7 @@ editpos=1
  0,5
 bookmarks0=0
 sourcefiles=1
- /home/fred/ideu/src/templates/init/readme.txt
+ ${PROJECTDIR}/readme.txt
 relpaths=1
  readme.txt
 ismoduletexts=1
@@ -605,7 +675,7 @@ windowlayout=503
  focusedchild=0
  wsize=0
  active=1
- visible=1
+ visible=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -672,7 +742,7 @@ windowlayout=503
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentstorefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -691,7 +761,7 @@ windowlayout=503
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=componentstorefo
  parent=
  mdistate=0
  nx=0
@@ -834,7 +904,7 @@ windowlayout=503
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -997,7 +1067,7 @@ windowlayout=503
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=disassfo
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0

@@ -82,12 +82,16 @@ type
    ftargpref: msestring;
    fbefcommand: msestringarty;
    faftcommand: msestringarty;
+   
    // fred compiler
    fcompilerused: msestringarty;
    
    // fred debugger
    fdebuggerused: msestringarty;
    
+   // fred exe ext
+   fexeused: msestringarty;
+      
    fmakeoptions: msestringarty;
    ftoolmenus: msestringarty;
    ftoolfiles: msestringarty;
@@ -130,6 +134,9 @@ type
    
    // fred debugger
    property debuggerused: msestringarty read fdebuggerused write fdebuggerused;
+   
+   // fred exe ext
+   property exeused: msestringarty read fexeused write fexeused;
    
 
    property codetemplatedirs: msestringarty read fcodetemplatedirs
@@ -435,6 +442,9 @@ type
    // fred debugger
    fdebuggerusedon: integerarty;
    
+   // fred debuggerexe ext
+   fexeusedon: integerarty;
+   
    fbefcommandon: integerarty;
    fmakeoptionson: integerarty;
    faftcommandon: integerarty;
@@ -516,6 +526,9 @@ type
    
    // fred debugger
    property debuggerusedon: integerarty read fdebuggerusedon  write fdebuggerusedon;
+   
+   // fred exe ext
+   property exeusedon: integerarty read fexeusedon  write fexeusedon;
    
    property aftcommandon: integerarty read faftcommandon write faftcommandon;
    property unitdirson: integerarty read funitdirson write funitdirson;
@@ -805,7 +818,7 @@ type
    compmake0on: tbooleanedit;
    compcommand: tmemodialogedit;
    
-   // fred compiler
+   // fred debugger
    ttabpage77: ttabpage;
    debuggerusedgrid: twidgetgrid;
    debmakeon: tbooleanedit;
@@ -821,6 +834,23 @@ type
    debmake9on: tbooleanedit;
    debmake0on: tbooleanedit;
    debcommand: tmemodialogedit;
+   
+    // fred exe extension
+   ttabpage88: ttabpage;
+   exeextgrid: twidgetgrid;
+   exemakeon: tbooleanedit;
+   exebuildon: tbooleanedit;
+   exemake1on: tbooleanedit;
+   exemake2on: tbooleanedit;
+   exemake3on: tbooleanedit;
+   exemake4on: tbooleanedit;
+   exemake5on: tbooleanedit;
+   exemake6on: tbooleanedit;
+   exemake7on: tbooleanedit;
+   exemake8on: tbooleanedit;
+   exemake9on: tbooleanedit;
+   exemake0on: tbooleanedit;
+   execommand: tmemodialogedit;
    
    aftcommandgrid: twidgetgrid;
    aftmakeon: tbooleanedit;
@@ -1211,13 +1241,32 @@ begin
 end;
 
 function gettargetfile: filenamety;
+var
+str4 : msestring;
+int3 : integer;
 begin
+ with projectoptions,o,texp do begin 
+for int3:= 0 to high(exeused) do begin
+   if (mainfo.thetag and exeusedon[int3] <> 0) then begin
+         
+  if (trim(exeused[int3]) = '${EXEEXT}') then
+    begin
+    str4 := '${EXEEXT}';
+    expandprmacros1(str4) end else
+        
+   if (trim(exeused[int3]) = 'No Extension') or
+    (trim(exeused[int3]) = '')  then
+    str4:= '' else str4:= trim(exeused[int3]) ; 
+  end;  
+end;
+end;
+
  with projectoptions,d.texp do begin
   if trim(debugtarget) <> '' then begin
    result:= objpath(debugtarget);
   end
   else begin
-   result:= objpath(o.texp.targetfile);
+   result:= objpath(o.texp.targetfile+str4);
   end;
  end;
 end;
@@ -1597,8 +1646,7 @@ begin
   setlength(fcompilerusedon,length(fcompilerused));
  end;
   fcompilerusedon[0]:= compileron; 
-   //
-   
+     
  // fred debugger
     with projectoptions,o,t do begin
   additem(fdebuggerused,' Default Debugger');
@@ -1611,7 +1659,26 @@ begin
   setlength(fdebuggerusedon,length(fdebuggerused));
  end;
   fdebuggerusedon[0]:= debuggeron; 
-   //  
+  
+   
+   // fred exe ext
+  //{
+    with projectoptions,o,t do begin
+  additem(fexeused,'${EXEEXT}');
+  additem(fexeused,'No Extension');
+  additem(fexeused,'.exe');
+  additem(fexeused,'.com');
+  additem(fexeused,'.bin');
+  additem(fexeused,'.prog');
+  additem(fexeused,'.so');
+  additem(fexeused,'.dll');
+  additem(fexeused,'.lib');
+  additem(fexeused,'.o');
+  additem(fexeused,'.res');
+  setlength(fexeusedon,length(fexeused));
+ end;
+  fexeusedon[0]:= debuggeron; 
+//}
 
   additem(fmakeoptions,'-l -Mobjfpc -Sh -Fcutf8');
   additem(fmakeoptions,'-gl -O-');
@@ -2105,6 +2172,37 @@ begin
    fo.debmake0on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
   end;
  end;
+ 
+ 
+ /// fred exe ext
+ 
+   with projectoptions,o,t do begin
+   setlength(fexeusedon,length(fexeused));
+ end;
+  
+  fo.execommand.gridvalues:= o.t.exeused;
+   
+   with projectoptions,o,t do begin
+  for int1:= 0 to fo.exeextgrid.rowhigh do begin
+   if int1 > high(o.exeusedon) then begin
+    break;
+   end;
+ 
+   fo.exemakeon.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exebuildon.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake1on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake2on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake3on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake4on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake5on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake6on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake7on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake8on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake9on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+   fo.exemake0on.gridupdatetagvalue(int1,o.exeusedon[int1]);
+ 
+  end;
+ end;
      
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
    if int1 > high(o.makeoptionson) then begin
@@ -2159,7 +2257,7 @@ begin
    fo.aftmake9on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
     fo.aftmake0on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
   end;
-
+  
   fo.unitdirs.gridvalues:= reversearray(o.t.unitdirs);
   int2:= high(o.t.unitdirs);
   for int1:= 0 to int2 do begin
@@ -2184,6 +2282,11 @@ begin
    fo.dobjon.gridupdatetagvalue(int2,o.unitdirson[int1]);
    dec(int2);
   end;
+  
+ // for int1:= 0 to fo.unitdirgrid.rowhigh do begin
+ //  fo.duniton.color:= cl_ltblue
+//   fo.unitdirgrid.datacols[int1].color:= cl_ltyellow;
+//   end;
   
   fo.activemacroselect[o.macrogroup]:= true;
   fo.activegroupchanged;
@@ -2278,6 +2381,7 @@ begin
   end;
   
   /// fred compiler
+  // setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
   for int1:= 0 to high(o.fcompilerusedon) do begin
    o.fcompilerusedon[int1]:=
       fo.compmakeon.gridvaluetag(int1,0) or fo.compbuildon.gridvaluetag(int1,0) or
@@ -2303,6 +2407,21 @@ begin
        ;
   end;
  
+
+ // fred exe ext
+   
+  setlength(o.fexeusedon,fo.exeextgrid.rowcount);
+  for int1:= 0 to high(o.fexeusedon) do begin
+   o.exeusedon[int1]:=
+      fo.exemakeon.gridvaluetag(int1,0) or fo.exebuildon.gridvaluetag(int1,0) or
+      fo.exemake1on.gridvaluetag(int1,0) or fo.exemake2on.gridvaluetag(int1,0) or
+      fo.exemake3on.gridvaluetag(int1,0) or fo.exemake4on.gridvaluetag(int1,0) or 
+      fo.exemake5on.gridvaluetag(int1,0) or fo.exemake6on.gridvaluetag(int1,0) or
+    fo.exemake7on.gridvaluetag(int1,0) or fo.exemake8on.gridvaluetag(int1,0) or
+    fo.exemake9on.gridvaluetag(int1,0) or fo.exemake0on.gridvaluetag(int1,0)
+       ;
+  end;
+ 
  ///
 
   setlength(o.fbefcommandon,fo.befcommandgrid.rowcount);
@@ -2316,6 +2435,7 @@ begin
       fo.befmake9on.gridvaluetag(int1,0) or fo.befmake0on.gridvaluetag(int1,0)
       ;
   end;
+ 
   setlength(o.faftcommandon,fo.aftcommandgrid.rowcount);
   for int1:= 0 to high(o.faftcommandon) do begin
    o.faftcommandon[int1]:=
