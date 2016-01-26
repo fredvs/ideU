@@ -1677,6 +1677,7 @@ begin
   additem(fexeused,'.lib');
   additem(fexeused,'.o');
   additem(fexeused,'.res');
+  additem(fexeused,'.inf');
   setlength(fexeusedon,length(fexeused));
  end;
   fexeusedon[0]:= debuggeron; 
