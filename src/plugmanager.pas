@@ -56,7 +56,6 @@ fpgplug : TPlugin ;
 
 var
 iffpgdconsumed : boolean = false ;
-TheProcess : Tprocess;
 
 implementation
 
