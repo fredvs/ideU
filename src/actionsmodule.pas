@@ -446,7 +446,7 @@ saveactonexecute(sender);
    if (conffpguifo.enablefpguidesigner.value = true) then
  begin
    sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));
-     LoadfpgDesigner(sysfilename,'');
+     LoadfpgDesigner(sysfilename);
  end;
 end;
 

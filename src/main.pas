@@ -788,7 +788,7 @@ begin
   
   if  (conffpguifo.enablefpguidesigner.value = true) and
  (conffpguifo.ifquit.value = true)  then
-  LoadfpgDesigner(conffpguifo.edquit.text, '');
+  LoadfpgDesigner(conffpguifo.edquit.text);
  
 end;
 
@@ -1247,16 +1247,16 @@ begin
      
    sysfilename := tosysfilepath(filepath(str3,fk_file,true));
      
-    LoadfpgDesigner(sysfilename,'');
+    LoadfpgDesigner(sysfilename);
  //  fpgfilename := page1.filepath;
   // end else
-  //  LoadfpgDesigner('showit','');
+  //  LoadfpgDesigner('showit');
      end else
    begin
    setstattext('  Toggled to source...',mtk_flat);
        toogletag := false;
   if (conffpguifo.tbfpgonlyone.value = true) and 
-  (conffpguifo.ifhide.value = true) then LoadfpgDesigner(conffpguifo.edhide.text,'');
+  (conffpguifo.ifhide.value = true) then LoadfpgDesigner(conffpguifo.edhide.text);
    end;
    end;
 
@@ -2170,7 +2170,7 @@ begin
  if (conffpguifo.enablefpguidesigner.value = true) then
  begin
    sysfilename := tosysfilepath(filepath(trim(sourcefilename),fk_file,true));
-     LoadfpgDesigner(sysfilename,'');
+     LoadfpgDesigner(sysfilename);
  end;
  
  
@@ -2283,7 +2283,7 @@ end;
 procedure tmainfo.viewfpguidesigneronexecute(const sender: TObject);
 begin
 
-  LoadfpgDesigner(conffpguifo.edshow.text , '');
+  LoadfpgDesigner(conffpguifo.edshow.text);
   
 end;
 
@@ -2292,10 +2292,10 @@ begin
 if (conffpguifo.enablefpguidesigner.value = true) and
   (conffpguifo.ifshow.value = true) then
  begin
-   LoadfpgDesigner('hideit' , '');
+  LoadfpgDesigner('hideit');
    sleep(1000);
-  LoadfpgDesigner(conffpguifo.edshow.text , '');
-  end;
+  LoadfpgDesigner(conffpguifo.edshow.text);
+ end;
 
 
 //CleanfpgDesigner();

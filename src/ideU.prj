@@ -1091,7 +1091,9 @@ findhistory=10
  targetfile
  hintmacros
 findoptions=3
-editpos=23
+editpos=24
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1114,7 +1116,6 @@ editpos=23
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 31,440
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1138,7 +1139,8 @@ bookmarks19=0
 bookmarks20=0
 bookmarks21=0
 bookmarks22=0
-sourcefiles=23
+bookmarks23=0
+sourcefiles=24
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/msesettings.pas
  ${PROJECTDIR}/confideu.pas
@@ -1161,8 +1163,9 @@ sourcefiles=23
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/plugmanager2.pas
  ${PROJECTDIR}/debuggerform.pas
- /home/fred/ideu/src/actionsmodule.pas
-relpaths=23
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+relpaths=24
  ideU.pas
  msesettings.pas
  confideu.pas
@@ -1186,7 +1189,9 @@ relpaths=23
  plugmanager2.pas
  debuggerform.pas
  actionsmodule.pas
-ismoduletexts=23
+ main.pas
+ismoduletexts=24
+ 0
  0
  0
  0
@@ -1247,10 +1252,11 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=23
+order=24
  0
  21
  22
+ 23
  1
  2
  3
@@ -1272,8 +1278,8 @@ order=23
  19
  20
 tabsize=60
-firsttab=0
-index=2
+firsttab=2
+index=4
 [layout]
 windowlayout=613
  [mainfo.basedock]
@@ -1296,10 +1302,10 @@ windowlayout=613
  rcx=0
  rcy=0
  children=2
-  basedock,0,19,1356,682
-  statdisp,0,1,1356,18
- focusedchild=0
- wsize=4
+  statdisp,0,1,956,18
+  basedock,0,19,956,585
+ focusedchild=1
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1413,7 +1419,7 @@ windowlayout=613
  x=0
  y=0
  cx=139
- cy=542
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -1423,7 +1429,7 @@ windowlayout=613
  width1=1
  sortdescend1=0
  sorted=0
- col=-1073741823
+ col=1
  row=-1073741823
  rowheight=17
  [stackfo]
@@ -1509,7 +1515,7 @@ windowlayout=613
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=breakpointsfo
  parent=
  mdistate=0
  nx=0
@@ -1618,8 +1624,8 @@ windowlayout=613
  ncx=0
  ncy=0
  x=0
- y=594
- cx=1356
+ y=497
+ cx=956
  cy=88
  rcx=0
  rcy=0
@@ -1689,7 +1695,7 @@ windowlayout=613
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1719,7 +1725,7 @@ windowlayout=613
  ncy=0
  x=0
  y=0
- cx=1356
+ cx=956
  cy=46
  rcx=0
  rcy=0
@@ -1735,8 +1741,8 @@ windowlayout=613
  ncy=0
  x=142
  y=0
- cx=1214
- cy=542
+ cx=814
+ cy=445
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1771,8 +1777,8 @@ windowlayout=613
  ncy=0
  x=0
  y=49
- cx=1356
- cy=542
+ cx=956
+ cy=445
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

@@ -36,7 +36,7 @@ procedure RunCustomCompiled(const AFilename: string);
 procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
 // for fpGUI
-procedure LoadfpgDesigner(const AfpgFilename: string; Aparam: string);
+procedure LoadfpgDesigner(const AfpgFilename: string);
 
 procedure CleanfpgDesigner(); 
 
@@ -162,7 +162,7 @@ len1 := pos('.',dataf2) ;
  end;
      
    //fpGUI designer
-procedure LoadfpgDesigner(const AfpgFilename: string; AParam: string); 
+procedure LoadfpgDesigner(const AfpgFilename: string); 
  var
   dataf : string ;
  begin
