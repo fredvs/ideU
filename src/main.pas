@@ -599,6 +599,20 @@ begin
         libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext';
     {$endif}
     {$endif}
+          
+  if gINI.ReadBool('Completion', 'proplist', false) = false then
+  begin
+debuggerfo.properties_list.tag := 0 ;
+debuggerfo.properties_list.imagenr := 20 ;
+sourcefo.thetimer.Enabled := false;
+sourcefo.hidesourcehint; 
+ end 
+ else
+ begin
+  debuggerfo.properties_list.tag := 1 ;
+  debuggerfo.properties_list.imagenr := 21 ;
+ end;
+  
     
   conffpguifo.fpguidesigner.value := gINI.ReadString('Path', 'designer_fpGUI', libpath);
   
@@ -721,6 +735,11 @@ begin
   
   gINI.writebool('nozorder', 'general', confideufo.nozorderenable.value);  
   
+   if debuggerfo.properties_list.tag = 0 then
+   gINI.writebool('Completion', 'proplist', false) 
+   else
+  gINI.writebool('Completion', 'proplist', true); 
+ 
   gINI.writebool('Assistive', 'sak', confideufo.tbassistive.value); 
   gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.text);   
   
@@ -1173,7 +1192,7 @@ end;
 procedure tmainfo.runwithoutdebugger;
  begin
    setstattext('  Running ' + gettargetfile  ,mtk_flat); 
-  RunWithoutDebug(gettargetfile);
+  RunWithoutDebug(gettargetfile, '' );
   end; 
 
 procedure tmainfo.toggleformunit;

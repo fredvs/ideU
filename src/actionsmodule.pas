@@ -21,10 +21,10 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform, msefileutils,
- msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
- msesys, msesysutils, msesimplewidgets,projecttreeform,msestringcontainer,
- targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
+  msefileutils,msedatamodules,mseglob,msestat,msegraphics,msegraphutils,
+ mseguiglob,msemenus,msesys, msesysutils, msesimplewidgets,projecttreeform,
+ msestringcontainer,targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;
  
 type
  stringconsts = (
@@ -229,6 +229,7 @@ type
    projectcompile: taction;
    projectcustomcompile: taction;
    custmakemenu: taction;
+   customsave: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -295,6 +296,8 @@ type
    
    // Project compile
    procedure compileproject(const sender: TObject);
+   
+   procedure savecustom(const sender: tobject);
     
    //debugger
    procedure resetactonexecute(const sender: tobject);
@@ -421,9 +424,8 @@ begin
  end;
 end;
 
+
 procedure tactionsmo.saveactonexecute(const sender: tobject);
-var
- sysfilename : string;
 begin
  with mainfo do begin
   if factivedesignmodule <> nil then begin
@@ -434,6 +436,13 @@ begin
    sourcefo.saveactivepage;
   end;
  end;
+end;
+
+procedure tactionsmo.savecustom(const sender: tobject);
+var
+ sysfilename : string;
+begin
+saveactonexecute(sender);
    if (conffpguifo.enablefpguidesigner.value = true) then
  begin
    sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));

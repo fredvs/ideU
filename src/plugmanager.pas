@@ -33,10 +33,10 @@ procedure fpgd_mainproc();
 
 procedure RunCustomCompiled(const AFilename: string);
 
-procedure RunWithoutDebug(const AFilename: string);
+procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
 // for fpGUI
-procedure LoadfpgDesigner(const AfpgFilename: string; param: string);
+procedure LoadfpgDesigner(const AfpgFilename: string; Aparam: string);
 
 procedure CleanfpgDesigner(); 
 
@@ -137,12 +137,12 @@ len1 := pos('.',dataf2) ;
     
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
   
-  RunWithoutDebug(dataf);
+  RunWithoutDebug(dataf, '');
  
  end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
  end;
  
- procedure RunWithoutDebug(const AFilename: string);
+ procedure RunWithoutDebug(const AFilename: string; Aparam: string);
  var
   AProcess : TProcess ;
   begin
@@ -151,7 +151,7 @@ len1 := pos('.',dataf2) ;
  begin 
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := AFilename ;
+      AProcess.CommandLine := AFilename + Aparam ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;
@@ -162,59 +162,24 @@ len1 := pos('.',dataf2) ;
  end;
      
    //fpGUI designer
-procedure LoadfpgDesigner(const AfpgFilename: string; param: string); 
+procedure LoadfpgDesigner(const AfpgFilename: string; AParam: string); 
  var
   dataf : string ;
-  AProcess : TProcess ;
  begin
- 
- if (iffpgdconsumed = false) and (AfpgFilename = 'quit') then
+ if ((iffpgdconsumed = false) and (AfpgFilename = 'quit')) or
+ ((iffpgdconsumed = false) and (AfpgFilename = 'closeall')) or
+ ((iffpgdconsumed = false) and (AfpgFilename = 'hideit'))
+  then
  else 
- begin
- 
-  if fileexists((AfpgFilename)) or (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or (AfpgFilename = 'showit')  or (AfpgFilename = 'hideit') then
- begin 
-
-if assigned(TheProcess) then
-   begin  
- if ((iffpgdconsumed = false) and (AfpgFilename <> 'quit')) or (iffpgdconsumed = true) then 
- begin
+ if (fileexists(AfpgFilename)) or (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or (AfpgFilename = 'showit')  or (AfpgFilename = 'hideit') then
+  begin 
  iffpgdconsumed := true;
  dataf := conffpguifo.fpguidesigner.value ;
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
-     
-     if fileexists((dataf)) then
-     begin
-       AProcess := TProcess.Create(nil);
-      {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := dataf + ' ' + trim(AfpgFilename) ;
-     {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      //AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
-     end;
-end; end else
-begin  
-  iffpgdconsumed := true;
- dataf := conffpguifo.fpguidesigner.value ;
-  dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
-     
-     if fileexists((dataf)) then
-     begin
-     TheProcess := TProcess.Create(nil);
-      {$WARN SYMBOL_DEPRECATED OFF}
-      TheProcess.CommandLine := dataf + ' ' + trim(AfpgFilename) ;
-     {$WARN SYMBOL_DEPRECATED ON}
-      TheProcess.Options := [poNoConsole];
-      //AProcess.Priority:=ppRealTime;
-      TheProcess.Execute;
-      TheProcess.Free;
-     end;
+  RunWithoutDebug(dataf, ' ' + AfpgFilename) ;
   end;
  end;
- end;
- end;
+
 /////////
 
  //fpGUI designer
@@ -223,25 +188,13 @@ procedure CleanfpgDesigner();
 {$ifdef unix}
  var
    dataf : string ;
-   AProcess : TProcess ;
-{$endif}
+  {$endif}
 begin
-   
-// if assigned(TheProcess) then TheProcess.Terminate(0);  
-
  {$ifdef unix}
-  dataf := '/usr/bin/killall designer_ext' ;
- 
-      AProcess := TProcess.Create(nil);
-      {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := dataf ;
-     {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Execute;
-      AProcess.Free;
+  dataf := '/usr/bin/killall' ;
+  RunWithoutDebug(dataf,  ' designer_ext' ) ;
    {$endif}
-  if assigned(TheProcess) then TheProcess := nil; 
-  end;
+end;
 
 /////////
  

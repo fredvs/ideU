@@ -88,7 +88,7 @@ begin
  
  application.createform(tmainfo, mainfo);
  createcpufo; 
- 
+  
  mainfo.ideureadconfig ;
   
  application.run;
