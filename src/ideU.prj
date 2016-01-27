@@ -58,8 +58,10 @@ findinfiledialog=56
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=LoadfpgDesigner
+ value=execommand
  history=10
+  execommand
+  execcommand
   LoadfpgDesigner
   TheProcess
   RunWithoutDebug
@@ -68,8 +70,6 @@ findinfiledialog=56
   targetfile
   exeextgrid
   debuggerusedgrid
-  tgridintegerdatalist
-  linecolorfix
  [findinfileadialogfo]
  stackedunder=
  x=252
@@ -184,7 +184,7 @@ options=108
  sortdescend11=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=5
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -193,7 +193,7 @@ options=108
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=5
+ index=0
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=646
  width0=112
@@ -205,7 +205,7 @@ options=108
  index=1
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=260
@@ -397,7 +397,7 @@ debuggerused=6
   Debugger 3
   Debugger 4
   None
-exeused=13
+exeused=14
  ${EXEEXT}
  No Extension
  .exe
@@ -410,6 +410,7 @@ exeused=13
  .dll
  .lib
  .o
+ .inf
  .res
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -600,7 +601,7 @@ makeoptionson=5
  1248
  1279
 compilerusedon=21
- 69631
+ 4095
  0
  0
  0
@@ -622,14 +623,15 @@ compilerusedon=21
  0
  0
 debuggerusedon=6
- 69631
+ 4095
  0
  0
  0
  0
  0
-exeusedon=13
- 69631
+exeusedon=14
+ 4095
+ 0
  0
  0
  0
@@ -1102,7 +1104,7 @@ editpos=24
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 25,1677
+ 20,2358
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1295,16 +1297,16 @@ windowlayout=613
  ny=0
  ncx=0
  ncy=0
- x=154
- y=26
+ x=110
+ y=24
  cx=966
  cy=621
  rcx=0
  rcy=0
  children=2
-  basedock,0,19,956,585
   statdisp,0,1,956,18
- focusedchild=0
+  basedock,0,19,956,585
+ focusedchild=1
  wsize=0
  active=1
  visible=1
@@ -1400,8 +1402,8 @@ windowlayout=613
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
+ x=326
+ y=147
  cx=678
  cy=414
  rcx=0
@@ -1533,9 +1535,9 @@ windowlayout=613
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=73
+ width0=167
  sortdescend0=0
- width1=227
+ width1=133
  sortdescend1=0
  [symbolfo]
  splitdir=0

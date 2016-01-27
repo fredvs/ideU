@@ -850,7 +850,7 @@ type
    exemake8on: tbooleanedit;
    exemake9on: tbooleanedit;
    exemake0on: tbooleanedit;
-   execommand: tmemodialogedit;
+   exeused: tmemodialogedit;
    
    aftcommandgrid: twidgetgrid;
    aftmakeon: tbooleanedit;
@@ -2183,7 +2183,7 @@ begin
    setlength(fexeusedon,length(fexeused));
  end;
   
-  fo.execommand.gridvalues:= o.t.exeused;
+  fo.exeused.gridvalues:= o.t.exeused;
    
    with projectoptions,o,t do begin
   for int1:= 0 to fo.exeextgrid.rowhigh do begin

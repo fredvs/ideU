@@ -5092,11 +5092,11 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 312
               bounds_cymin = 40
               anchors = []
-              optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
+              optionsgrid = [og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
               fixrows.count = 1
               fixrows.items = <              
                 item
-                  height = 18
+                  height = 19
                   captions.count = 13
                   captions.items = <                  
                     item
@@ -5226,10 +5226,10 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'exemake0on'
                   dataclass = tgridintegerdatalist
                 end              
-                item[execommand]
+                item[exeused]
                   width = 573
-                  options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-                  widgetname = 'execommand'
+                  options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'exeused'
                   dataclass = tgridmsestringdatalist
                 end>
               datarowheight = 17
@@ -5366,7 +5366,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
                 visible = False
               end
-              object execommand: tmemodialogedit
+              object exeused: tmemodialogedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -5378,11 +5378,9 @@ object projectoptionsfo: tprojectoptionsfo
                   item
                     color = -1879048187
                     imagenr = 17
-                    options = [fbo_disabled]
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                frame.button.options = [fbo_disabled]
                 taborder = 13
                 visible = False
                 bounds_x = 168
@@ -5390,7 +5388,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 573
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
-                optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 reffontheight = 15
               end
             end
