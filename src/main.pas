@@ -32,8 +32,8 @@ unit main;
 interface
 
 uses
- plugmanager, fpg_iniutils_ideu, msetimer,
- mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse,
+ plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr,
+ mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse, msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,
  msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
  classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,sysutils,msesysenv,
@@ -420,11 +420,11 @@ uses
   {$include regcomponents.inc}
  {$endif}
 
- mseparser,msesysintf,memoryform,msedrawtext,mseformatstr,
+ mseparser,msesysintf,memoryform,msedrawtext,
  main_mfm,sourceform,watchform,breakpointsform,stackform,
  guitemplates,projectoptionsform,make,msepropertyeditors,
  skeletons,msedatamodules,mseact,
- mseformdatatools,mseshapes,msefileutils,mseeditglob,
+ mseformdatatools,mseshapes,mseeditglob,
  findinfileform,formdesigner,sourceupdate,actionsmodule,programparametersform,
  objectinspector,msesysutils,cpuform,disassform,
  panelform,watchpointsform,threadsform,targetconsole,
@@ -1823,8 +1823,8 @@ for int3:= 0 to high(debuggerused) do begin
    if (thetag and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
          
-  if trim(debuggerused[int3]) = 'Default Debugger' then
-    str3:= 'Default Debugger' else
+  if system.pos('Default',debuggerused[int3]) > 0 then
+   str3:= 'Default Debugger' else
         
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
@@ -3201,9 +3201,9 @@ with projectoptions,o,texp do begin
 for int3:= 0 to high(debuggerused) do begin
    if (thetag and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
-         
-  if trim(debuggerused[int3]) = 'Default Debugger' then
-    str3:= 'Default Debugger' else
+      
+if system.pos('Default',debuggerused[int3]) > 0 then
+   str3:= 'Default Debugger' else
         
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else

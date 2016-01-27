@@ -1248,8 +1248,9 @@ begin
  with projectoptions,o,texp do begin 
 for int3:= 0 to high(exeused) do begin
    if (mainfo.thetag and exeusedon[int3] <> 0) then begin
-         
-  if (trim(exeused[int3]) = '${EXEEXT}') then
+ 
+  if (pos('Default',exeused[int3]) > 0) or            
+   (trim(exeused[int3]) = '${EXEEXT}') then
     begin
     str4 := '${EXEEXT}';
     expandprmacros1(str4) end else
@@ -1572,6 +1573,7 @@ const
  unitson = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
  compileron = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
  debuggeron = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
+ exeon = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
  allon = unitson+$20000+$40000;
 var
  int1: integer;
@@ -1622,39 +1624,39 @@ begin
   
   // fred compiler
     with projectoptions,o,t do begin
-  additem(fcompilerused,' Default Compiler');
-  additem(fcompilerused,' Pascal 1');
-  additem(fcompilerused,' Pascal 2');
-  additem(fcompilerused,' Pascal 3');
-  additem(fcompilerused,' Pascal 4');
-  additem(fcompilerused,' C 1');
-  additem(fcompilerused,' C 2');
-  additem(fcompilerused,' C 3');
-  additem(fcompilerused,' C 4');
-  additem(fcompilerused,' Java 1');
-  additem(fcompilerused,' Java 2');
-  additem(fcompilerused,' Java 3');
-  additem(fcompilerused,' Java 4');
-  additem(fcompilerused,' Python 1');
-  additem(fcompilerused,' Python 2');
-  additem(fcompilerused,' Python 3');
-  additem(fcompilerused,' Python 4');
-  additem(fcompilerused,' Other 1');
-  additem(fcompilerused,' Other 2');
-  additem(fcompilerused,' Other 3');
-  additem(fcompilerused,' Other 4');
+  additem(fcompilerused,'${COMPILER} (Default)');
+  additem(fcompilerused,'Pascal 1');
+  additem(fcompilerused,'Pascal 2');
+  additem(fcompilerused,'Pascal 3');
+  additem(fcompilerused,'Pascal 4');
+  additem(fcompilerused,'C 1');
+  additem(fcompilerused,'C 2');
+  additem(fcompilerused,'C 3');
+  additem(fcompilerused,'C 4');
+  additem(fcompilerused,'Java 1');
+  additem(fcompilerused,'Java 2');
+  additem(fcompilerused,'Java 3');
+  additem(fcompilerused,'Java 4');
+  additem(fcompilerused,'Python 1');
+  additem(fcompilerused,'Python 2');
+  additem(fcompilerused,'Python 3');
+  additem(fcompilerused,'Python 4');
+  additem(fcompilerused,'Other 1');
+  additem(fcompilerused,'Other 2');
+  additem(fcompilerused,'Other 3');
+  additem(fcompilerused,'Other 4');
   setlength(fcompilerusedon,length(fcompilerused));
  end;
   fcompilerusedon[0]:= compileron; 
      
  // fred debugger
     with projectoptions,o,t do begin
-  additem(fdebuggerused,' Default Debugger');
-  additem(fdebuggerused,' Debugger 1');
-  additem(fdebuggerused,' Debugger 2');
-  additem(fdebuggerused,' Debugger 3');
-  additem(fdebuggerused,' Debugger 4');
-  additem(fdebuggerused,' None');
+  additem(fdebuggerused,'${DEBUGGER} (Default)');
+  additem(fdebuggerused,'Debugger 1');
+  additem(fdebuggerused,'Debugger 2');
+  additem(fdebuggerused,'Debugger 3');
+  additem(fdebuggerused,'Debugger 4');
+  additem(fdebuggerused,'None');
   
   setlength(fdebuggerusedon,length(fdebuggerused));
  end;
@@ -1664,7 +1666,7 @@ begin
    // fred exe ext
   //{
     with projectoptions,o,t do begin
-  additem(fexeused,'${EXEEXT}');
+  additem(fexeused,'${EXEEXT} (Default)');
   additem(fexeused,'No Extension');
   additem(fexeused,'.exe');
   additem(fexeused,'.com');
@@ -1680,7 +1682,7 @@ begin
   additem(fexeused,'.inf');
   setlength(fexeusedon,length(fexeused));
  end;
-  fexeusedon[0]:= debuggeron; 
+  fexeusedon[0]:= exeon; 
 //}
 
   additem(fmakeoptions,'-l -Mobjfpc -Sh -Fcutf8');

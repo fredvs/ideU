@@ -231,8 +231,9 @@ begin
 for int3:= 0 to high(compilerused) do begin
    if (atag and compilerusedon[int3] <> 0) and
          (compilerused[int3] <> '') then begin
-         
-  if trim(compilerused[int3]) = 'Default Compiler' then
+ 
+ if (pos('Default',compilerused[int3]) > 0) or 
+  (trim(compilerused[int3]) = '${COMPILER}') then
     str3:= quotefilename(tosysfilepath(makecommand)) else
         
     if (trim(compilerused[int3]) = 'Pascal Compiler 1') or 
@@ -305,8 +306,9 @@ for int3:= 0 to high(compilerused) do begin
   
   for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
-         
-  if (trim(exeused[int3]) = '${EXEEXT}')
+  
+  if (pos('Default',exeused[int3]) > 0) or    
+  (trim(exeused[int3]) = '${EXEEXT}')
      then
     begin
     str4 := '${EXEEXT}';
@@ -423,8 +425,9 @@ end;
 
 for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
-         
-  if (trim(exeused[int3]) = '${EXEEXT}')  then
+  
+   if (pos('Default',exeused[int3]) > 0) or           
+ (trim(exeused[int3]) = '${EXEEXT}')  then
     begin
     str4 := '${EXEEXT}';
     expandprmacros1(str4) end else

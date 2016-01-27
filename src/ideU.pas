@@ -82,7 +82,7 @@ begin
  application.createform(ttargetconsolefo,targetconsolefo);
  
  confcompilerfo.visible := false;
-  confdebuggerfo.visible := false;
+ confdebuggerfo.visible := false;
  //confmseguifo.visible := false;
  //conffpguifo.visible := false;
  

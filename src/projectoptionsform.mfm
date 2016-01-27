@@ -1504,6 +1504,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.button.imagenr = 17
                 frame.button.options = [fbo_disabled]
                 taborder = 13
+                onshowhint = hintexpandedmacros
                 visible = False
                 bounds_x = 168
                 bounds_y = 0
@@ -3503,6 +3504,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.button.imagenr = 17
                 frame.button.options = [fbo_disabled]
                 taborder = 13
+                onshowhint = hintexpandedmacros
                 visible = False
                 bounds_x = 168
                 bounds_y = 0
@@ -5086,8 +5088,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-              bounds_x = 0
-              bounds_y = 0
+              bounds_x = -2
+              bounds_y = 2
               bounds_cx = 746
               bounds_cy = 312
               bounds_cymin = 40
@@ -5382,6 +5384,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
                 taborder = 13
+                onshowhint = hintexpandedmacros
                 visible = False
                 bounds_x = 168
                 bounds_y = 0

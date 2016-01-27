@@ -861,7 +861,7 @@ for int3:= 0 to high(debuggerused) do begin
    if (mainfo.thetag and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
          
-  if trim(debuggerused[int3]) = 'Default Debugger' then
+  if (pos('Default',debuggerused[int3]) > 0) then
     str3:= 'Default Debugger' else
         
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
