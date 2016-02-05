@@ -8,7 +8,7 @@ http://sourceforge.net/projects/mseide-msegui/
 There are binaries-executable
 with plugin fpGUI uidesigner_ext and
 sak assistive voice speacher included.
-For Windows 32 bit, Linux 32/64 bit and FreeBSD 64 bit.
+For Windows 32/64 bit, Linux 32/64 bit and FreeBSD 64 bit.
 
 => https://github.com/fredvs/ideU/releases
 
