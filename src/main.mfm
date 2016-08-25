@@ -186,7 +186,7 @@ object mainfo: tmainfo
                     tag = 7
                     onexecute = newformonexecute
                   end>
-                caption = ' &Form '
+                caption = ' MSE &Form '
                 name = 'form'
                 state = [as_localcaption]
               end>
@@ -459,7 +459,7 @@ object mainfo: tmainfo
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
-            caption = ' &Debugger '
+            caption = ' Comman&dor '
             hint = 'Show Commandor-Debugger'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons

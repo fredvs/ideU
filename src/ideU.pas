@@ -43,6 +43,7 @@ uses
   msegraphutils,msefont,stringconsts;
   
 begin
+
  registerfontalias('mseide_source',gui_getdefaultfontnames[stf_courier],
                     fam_fixnooverwrite,16);
  application.createdatamodule(tguitemplatesmo,guitemplatesmo);

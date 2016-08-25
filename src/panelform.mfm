@@ -3,9 +3,6 @@ object panelfo: tpanelfo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
-  frame.grip_grip = stb_dens100
-  frame.grip_color = 12434877
-  frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints]
   onpaint = paintexe
   visible = False

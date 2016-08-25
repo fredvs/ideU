@@ -15,30 +15,6 @@ object programparametersfo: tprogramparametersfo
   options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Target Environment'
-  icon.origformat = 'bmp'
-  icon.image = {
-    0000000000000000100000001000000050020000000000000000000000000000
-    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
-    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
-    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
-    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
-    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
-    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
-    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
-    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
-    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
-    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
-    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
-    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
-    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
-    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
-    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
-    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
-    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
-    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
-    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
-    FFFFFF02
-  }
   moduleclassname = 'tmseform'
   object workingdirectory: tfilenameedit
     frame.caption = '&Working directory'
@@ -54,21 +30,21 @@ object programparametersfo: tprogramparametersfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 1
     onshowhint = hintexpandedmacros
     bounds_x = 2
-    bounds_y = 8
+    bounds_y = 9
     bounds_cx = 324
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     controller.options = [fdo_directory]
     controller.captionopen = 'Select program working directory'
     controller.ongetfilename = expandfilename
-    reffontheight = 15
+    reffontheight = 14
   end
   object ok: tbutton
     taborder = 4
@@ -100,22 +76,22 @@ object programparametersfo: tprogramparametersfo
     frame.buttondialog.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 2
     onshowhint = hintexpandedmacros
     bounds_x = 2
-    bounds_y = 56
+    bounds_y = 57
     bounds_cx = 324
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 14
   end
   object grid: twidgetgrid
     frame.caption = 'Environment variables'
@@ -123,21 +99,21 @@ object programparametersfo: tprogramparametersfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 3
     bounds_x = 2
-    bounds_y = 110
+    bounds_y = 111
     bounds_cx = 324
-    bounds_cy = 196
+    bounds_cy = 195
     anchors = [an_left, an_top, an_right, an_bottom]
     optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup]
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 17
+        height = 16
         captions.count = 3
         captions.items = <        
           item
@@ -171,9 +147,9 @@ object programparametersfo: tprogramparametersfo
         widgetname = 'envvarvalue'
         dataclass = tgridmsestringdatalist
       end>
-    datarowheight = 18
+    datarowheight = 16
     statfile = statfile1
-    reffontheight = 15
+    reffontheight = 14
     object envvaron: tbooleanedit
       frame.levelo = 0
       frame.colorclient = -2147483645
@@ -183,7 +159,7 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 20
-      bounds_cy = 18
+      bounds_cy = 16
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       visible = False
@@ -199,10 +175,10 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 21
       bounds_y = 0
       bounds_cx = 103
-      bounds_cy = 18
+      bounds_cy = 16
       optionsedit1 = []
-      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 15
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
+      reffontheight = 14
     end
     object envvarvalue: tmemodialogedit
       frame.levelo = 0
@@ -223,10 +199,10 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 125
       bounds_y = 0
       bounds_cx = 194
-      bounds_cy = 18
+      bounds_cy = 16
       optionsedit1 = []
-      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 15
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
+      reffontheight = 14
     end
   end
   object statfile1: tstatfile

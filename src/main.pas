@@ -957,8 +957,8 @@ begin
                          ' '+c[ord(wishsearch)],c[ord(warning)],
                          [mr_yes,mr_cancel]) = mr_yes then begin
     wstr2:= '';
-    if filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ atypename,
-                   [c[ord(formfiles)]],['*.mfm']) = mr_ok then begin
+  if openform.controller.execute(wstr2,fdk_open,c[ord(formfile)]+' '+ 
+                        msestring(atypename),[fdo_checkexist]) then begin
      openformfile(wstr2,false,false,false,false,false);
     end;
    end;

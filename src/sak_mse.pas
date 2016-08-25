@@ -36,6 +36,8 @@ unit sak_mse;
     Boston, MA  02110-1301  USA
     }
 
+{$mode objfpc}{$h+}
+
 interface
 
 uses

@@ -3,7 +3,7 @@ object watchfo: twatchfo
   frame.localprops = [frl_optionsskin]
   frame.localprops1 = []
   frame.grip_size = 10
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton]
+  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
   visible = False
   bounds_x = 291
   bounds_y = 247
@@ -21,34 +21,40 @@ object watchfo: twatchfo
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Watches'
-  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint]
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint, od_childicons]
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Watches'
   icon.transparentcolor = -2147483642
-  icon.origformat = 'bmp'
+  icon.options = [bmo_masked]
   icon.image = {
-    0000000000000000100000001000000050020000000000000000000000000000
-    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
-    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
-    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
-    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
-    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
-    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
-    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
-    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
-    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
-    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
-    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
-    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
-    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
-    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
-    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
-    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
-    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
-    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
-    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
-    FFFFFF02
+    00000000020000001800000018000000CC020000000000000000000000000000
+    0000000000000000000000000000000000000000D0D0D0607C7C7C19D9D9D916
+    FFFFFF017C7C7C01D9D9D903C8C8C801A1A1A101D9D9D905A6A6A601C2C2C201
+    D9D9D904D2D2D2019A9A9A01D9D9D904FFFFFF017C7C7C01D9D9D9024E4E4E01
+    0D0D0D011818180296969601D9D9D901B8B8B8011E1E1E01161616010E0E0E01
+    36363601D9D9D9026A6A6A010F0F0F011C1C1C011111110177777701D9D9D902
+    FFFFFF017C7C7C01D9D9D901B6B6B60108080801BFBFBF01D9D9D90152525201
+    30303001D9D9D9014F4F4F0139393901D9D9D901CCCCCC01121212018A8A8A01
+    D2D2D2010E0E0E0197979701D9D9D9017979790117171701D9D9D902FFFFFF01
+    7C7C7C01D9D9D9019C9C9C0169696901D9D9D9029F9F9F010E0E0E01D9D9D901
+    63636301A1A1A101D9D9D9023C3C3C0151515101B5B5B50156565601D9D9D902
+    D2D2D20102020201C2C2C201D9D9D901FFFFFF017C7C7C01D9D9D90533333301
+    3C3C3C01D9D9D904ABABAB010B0B0B0196969601D9D9D904535353011F1F1F01
+    D9D9D902FFFFFF017C7C7C01D9D9D9044E4E4E011A1A1A01CCCCCC01D9D9D903
+    C2C2C201131313015E5E5E01D9D9D904717171010E0E0E01B4B4B401D9D9D902
+    FFFFFF017C7C7C01D9D9D903B9B9B90109090901B9B9B901D9D9D9044F4F4F01
+    38383801D9D9D9050D0D0D0195959501D9D9D903FFFFFF017C7C7C01D9D9D903
+    8B8B8B0127272701D9D9D9053535350175757501D9D9D904BCBCBC0110101001
+    D9D9D904FFFFFF017C7C7C01D9D9D903D2D2D201C5C5C501D9D9D905C7C7C701
+    CFCFCF01D9D9D904D5D5D501C2C2C201D9D9D904FFFFFF017C7C7C01D9D9D903
+    6F6F6F0114141401D9D9D9051F1F1F015D5D5D01D9D9D9049C9C9C0100000001
+    D5D5D501D9D9D903FFFFFF017C7C7C01D9D9D903B9B9B90192929201D9D9D905
+    99999901B2B2B201D9D9D904C8C8C80186868601D9D9D904FFFFFF017C7C7C01
+    D9D9D916FFFFFF017C7C7C01D9D9D916FFFFFF017C7C7C01FFFFFF17D0D0D060
+    0000000800000008000000BF00000008FFFFFF00FFFFFF08FFFFFF02FFFFFFC0
+    FFFFFF00FFFFFF08FFFFFF00FFFFFF08FFFFFF08FFFFFF08FFFFFFBFFFFFFF08
+    FFFFFF00FFFFFF02FFFFFF08FFFFFF0000000000000000BF0000000000000008
   }
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
@@ -66,14 +72,14 @@ object watchfo: twatchfo
     fixcols.count = 1
     fixcols.items = <    
       item
-        width = 18
+        width = 20
         numstart = 1
         numstep = 1
       end>
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 17
+        height = 16
         captions.count = 6
         captions.items = <        
           item
@@ -82,6 +88,7 @@ object watchfo: twatchfo
           end        
           item
             caption = 'Expression'
+            hint = 'Expressions starting with # are treated as gdb commands'
           end        
           item
             caption = 'Result'
@@ -119,7 +126,7 @@ object watchfo: twatchfo
         dataclass = tgridmsestringdatalist
       end    
       item[expresult]
-        width = 82
+        width = 80
         options = [co_fill]
         widthmin = 50
         oncellevent = resultcellevent
@@ -140,15 +147,15 @@ object watchfo: twatchfo
         widgetname = 'sizecode'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 17
+    datarowheight = 16
     statfile = mainfo.projectstatfile
-    reffontheight = 15
+    reffontheight = 14
     object watchon: tbooleanedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       bounds_x = 0
       bounds_y = 0
-      bounds_cy = 17
+      bounds_cy = 16
       statfile = mainfo.projectstatfile
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
@@ -165,12 +172,12 @@ object watchfo: twatchfo
       bounds_x = 14
       bounds_y = 0
       bounds_cx = 152
-      bounds_cy = 17
+      bounds_cy = 16
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       ondataentered = expressionondataentered
-      reffontheight = 15
+      reffontheight = 14
     end
     object expresult: tstringedit
       optionswidget1 = [ow1_autoscale]
@@ -180,8 +187,8 @@ object watchfo: twatchfo
       visible = False
       bounds_x = 167
       bounds_y = 0
-      bounds_cx = 82
-      bounds_cy = 17
+      bounds_cx = 80
+      bounds_cy = 16
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_noselect, tf_ellipseright]
@@ -192,10 +199,10 @@ object watchfo: twatchfo
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       taborder = 4
-      bounds_x = 250
+      bounds_x = 248
       bounds_y = 0
       bounds_cx = 12
-      bounds_cy = 17
+      bounds_cy = 16
       ondataentered = formatent
       state = [as_invisible, as_localimagelist]
       imagelist = timagelist1
@@ -221,12 +228,12 @@ object watchfo: twatchfo
       frame.localprops1 = []
       taborder = 5
       visible = False
-      bounds_x = 263
+      bounds_x = 261
       bounds_y = 0
       bounds_cx = 13
-      bounds_cy = 17
+      bounds_cy = 16
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object watcheson: tbooleanedit
@@ -235,14 +242,14 @@ object watchfo: twatchfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      74
+      1
+      77
       2
     )
     bounds_x = 8
-    bounds_y = 3
-    bounds_cx = 87
-    bounds_cy = 17
+    bounds_y = 4
+    bounds_cx = 90
+    bounds_cy = 16
     statfile = mainfo.projectstatfile
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
     onchange = watchesononchange

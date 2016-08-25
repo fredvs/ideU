@@ -3,33 +3,37 @@ object finddialogfo: tfinddialogfo
   visible = False
   bounds_x = 319
   bounds_y = 205
-  bounds_cx = 331
-  bounds_cy = 116
+  bounds_cx = 312
+  bounds_cy = 114
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    331
-    116
+    312
+    114
   )
   options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find Text'
   moduleclassname = 'tmseform'
   object tlayouter2: tlayouter
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     taborder = 2
     bounds_x = 8
     bounds_y = 45
     bounds_cx = 294
     bounds_cy = 40
-    optionsscale = [osc_expandx, osc_shrinkx]
+    optionsscale = [osc_expandx, osc_shrinkx, osc_expandshrinkx, osc_expandshrinky]
     optionslayout = [lao_placex]
     place_mindist = 4
     place_maxdist = 4
     object selectedonly: tbooleanedit
       frame.caption = 'select&ed only'
-      frame.dummy = 0
+      frame.localprops = []
+      frame.localprops1 = []
       frame.outerframe = (
         0
         1
@@ -44,7 +48,8 @@ object finddialogfo: tfinddialogfo
     end
     object wholeword: tbooleanedit
       frame.caption = '&whole word'
-      frame.dummy = 0
+      frame.localprops = []
+      frame.localprops1 = []
       frame.outerframe = (
         0
         1
@@ -59,7 +64,8 @@ object finddialogfo: tfinddialogfo
     end
     object casesensitive: tbooleanedit
       frame.caption = 'case&sensitive'
-      frame.dummy = 0
+      frame.localprops = []
+      frame.localprops1 = []
       frame.outerframe = (
         0
         1
@@ -75,6 +81,8 @@ object finddialogfo: tfinddialogfo
   end
   object findtext: thistoryedit
     frame.caption = 'Text to &find'
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
       17
@@ -83,7 +91,7 @@ object finddialogfo: tfinddialogfo
     )
     bounds_x = 8
     bounds_y = 6
-    bounds_cx = 316
+    bounds_cx = 297
     bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -95,9 +103,10 @@ object finddialogfo: tfinddialogfo
     reffontheight = 14
   end
   object tlayouter1: tlayouter
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     taborder = 1
-    bounds_x = 213
+    bounds_x = 194
     bounds_y = 88
     bounds_cx = 109
     bounds_cy = 20

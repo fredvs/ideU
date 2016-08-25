@@ -35,7 +35,7 @@ const
 type
  tdirnode = class;
  tprojecttreefo = class(tdockform)
-   project_tree: twidgetgrid;
+   grid: twidgetgrid;
    projectedit: ttreeitemedit;
    edit: trecordfieldedit;
    unitpopup: tpopupmenu;
@@ -1057,7 +1057,7 @@ begin
  funits.loadlist;
  fcmodules.loadlist;
  ffiles.loadlist;
- projecttreefo.project_tree.invalidate;
+ projecttreefo.grid.invalidate;
 end;
 
 procedure tprojecttree.updatestat(const filer: tstatfiler);
@@ -1270,13 +1270,13 @@ begin
   if askok(c[ord(wishremove)]+ ffilename +
             '"?','') then begin
    if sourcefo.closepage(fpath) then begin
-    rowbefore:= project_tree.row;
+    rowbefore:= grid.row;
     rnode:= rootnode;
     if rnode is tfilesnode then begin
      tfilesnode(rnode).removefile(tfilenode(projectedit.item));
     end;
     projectedit.item.Free;
-    project_tree.row:= rowbefore;
+    grid.row:= rowbefore;
    end;
   end;
  end;
@@ -1317,7 +1317,7 @@ begin
                                 [fdo_directory]) = mr_ok then begin
    int1:= addirectory(filename).index;
    if int1 >= 0 then begin
-    project_tree.row:= int1;
+    grid.row:= int1;
    end;
   end;
  end;
