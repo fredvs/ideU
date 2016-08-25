@@ -124,7 +124,7 @@ object mainfo: tmainfo
     menu.submenu.count = 13
     menu.submenu.items = <    
       item
-        submenu.count = 10
+        submenu.count = 12
         submenu.items = <        
           item
             submenu.count = 1
@@ -190,8 +190,28 @@ object mainfo: tmainfo
                 name = 'form'
                 state = [as_localcaption]
               end>
-            caption = ' &New '
+            caption = ' &New MSE'
             name = 'new'
+            state = [as_localcaption]
+          end        
+          item
+            submenu.count = 1
+            submenu.items = <            
+              item
+                caption = ' TODO (use fpGUI designer for that) '
+                state = [as_localcaption]
+              end>
+            caption = ' New fp&GUI '
+            state = [as_localcaption]
+          end        
+          item
+            submenu.count = 1
+            submenu.items = <            
+              item
+                caption = ' TODO '
+                state = [as_localcaption]
+              end>
+            caption = ' New other '
             state = [as_localcaption]
           end        
           item
