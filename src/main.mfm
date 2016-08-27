@@ -8,8 +8,8 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints, go_showfloatcaption]
   visible = False
-  bounds_x = 212
-  bounds_y = 147
+  bounds_x = 481
+  bounds_y = 260
   bounds_cx = 654
   bounds_cy = 222
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -29,10 +29,10 @@ object mainfo: tmainfo
     205
   )
   dragdock.splitter_color = -1879048190
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
   optionswindow = [wo_taskbar]
   mainmenu = mainmenu1
-  options = [fo_main, fo_terminateonclose, fo_screencentered, fo_globalshortcuts, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_main, fo_terminateonclose, fo_screencentered, fo_globalshortcuts, fo_savepos, fo_savestate]
   statfile = projectstatfile
   caption = 'ideU'
   icon.origformat = 'bmp'
@@ -124,7 +124,7 @@ object mainfo: tmainfo
     menu.submenu.count = 13
     menu.submenu.items = <    
       item
-        submenu.count = 12
+        submenu.count = 16
         submenu.items = <        
           item
             submenu.count = 1
@@ -215,9 +215,15 @@ object mainfo: tmainfo
             state = [as_localcaption]
           end        
           item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
             action = actionsmo.opensource
             caption = ' &Open '
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.save
@@ -233,6 +239,9 @@ object mainfo: tmainfo
             action = actionsmo.saveall
             caption = ' Sa&ve all '
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.close
@@ -251,6 +260,9 @@ object mainfo: tmainfo
             action = actionsmo.print
             caption = ' &Print '
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
           end        
           item
             caption = ' E&xit '

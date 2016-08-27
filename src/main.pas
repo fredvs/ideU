@@ -670,7 +670,7 @@ sourcefo.hidesourcehint;
   
   confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
   
-  confideufo.nozorderenable.value := gINI.Readbool('nozorder', 'general', false); 
+  confideufo.nozorderenable.value := gINI.Readbool('nozorder', 'general', true); 
   
   if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
  nozorderhandling:= false;

@@ -6,8 +6,8 @@ object disassfo: tdisassfo
   onactivate = act
   ondeactivate = deact
   visible = False
-  bounds_x = 162
-  bounds_y = 502
+  bounds_x = 400
+  bounds_y = 352
   bounds_cx = 564
   bounds_cy = 210
   container.frame.localprops = []
@@ -145,10 +145,10 @@ object disassfo: tdisassfo
       14745599
       16777184
     )
-    datarowheight = 16
+    datarowheight = 17
     onscrollrows = scrollrows
     oncellevent = celleventexe
-    reffontheight = 14
+    reffontheight = 15
   end
   object popupmen: tpopupmenu
     onupdate = popupupdate

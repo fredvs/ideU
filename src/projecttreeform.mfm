@@ -5,8 +5,8 @@ object projecttreefo: tprojecttreefo
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
   visible = False
-  bounds_x = 263
-  bounds_y = 431
+  bounds_x = 656
+  bounds_y = 303
   bounds_cx = 286
   bounds_cy = 201
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -65,10 +65,10 @@ object projecttreefo: tprojecttreefo
         widgetname = 'edit'
         dataclass = titemeditlist
       end>
-    datarowheight = 15
+    datarowheight = 16
     statfile = mainfo.projectstatfile
     oncellevent = gridcellevent
-    reffontheight = 14
+    reffontheight = 15
     object projectedit: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -83,7 +83,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 141
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_checkmrcancel, oe_exitoncursor, oe_hintclippedtext, oe_locate]
       onchange = projecteditonchange
@@ -119,7 +119,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 142
       bounds_y = 0
       bounds_cx = 129
-      bounds_cy = 15
+      bounds_cy = 16
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_clipo, tf_noselect, tf_ellipseleft]
@@ -128,7 +128,7 @@ object projecttreefo: tprojecttreefo
       dropdown.cols.items = <      
         item
         end>
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object unitpopup: tpopupmenu
