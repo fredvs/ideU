@@ -6,7 +6,7 @@ uses
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
  msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msegrids,
  mseificomp,mseificompglob,mseifiglob,mselistbrowser,msemenus,msestat,
- msestatfile,msestream,msestrings,msesys,sysutils;
+ msestatfile,msestream,msestrings,msesys,sysutils,msegraphedits,msescrollbar;
  type
  tconfcompilerfo = class(tmseform)
    fpccompiler: tfilenameedit;
@@ -21,7 +21,6 @@ uses
    ccompiler3: tfilenameedit;
    tlabel4: tlabel;
    javacompiler2: tfilenameedit;
-   javacompiler3: tfilenameedit;
    tlabel5: tlabel;
    pythoncompiler: tfilenameedit;
    tlabel6: tlabel;
@@ -36,6 +35,34 @@ uses
    othercompiler3: tfilenameedit;
    tstatfile1: tstatfile;
    tnClose: tbutton;
+   nozorderenable: tbooleanedit;
+   winep1: tbooleanedit;
+   tlabel2: tlabel;
+   winep2: tbooleanedit;
+   winep3: tbooleanedit;
+   winep4: tbooleanedit;
+   twinec1: tbooleanedit;
+   twinec4: tbooleanedit;
+   twinec3: tbooleanedit;
+   twinec2: tbooleanedit;
+   twinej4: tbooleanedit;
+   twinej3: tbooleanedit;
+   twinej2: tbooleanedit;
+   twineo4: tbooleanedit;
+   javacompiler3: tfilenameedit;
+   twinep4: tbooleanedit;
+   twinep3: tbooleanedit;
+   twinep2: tbooleanedit;
+   twinep1: tbooleanedit;
+   twinepy4: tbooleanedit;
+   twinepy3: tbooleanedit;
+   twinepy2: tbooleanedit;
+   twinepy1: tbooleanedit;
+   twineo1: tbooleanedit;
+   twineo2: tbooleanedit;
+   twinej1: tbooleanedit;
+   twineo3: tbooleanedit;
+   tlabel7: tlabel;
  end;
 var
  confcompilerfo: tconfcompilerfo;

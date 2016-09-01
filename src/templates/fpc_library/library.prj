@@ -18,7 +18,7 @@ order15=0
 order16=0
 [projectoptions]
 projectdir=${PROJECTDIR}/
-projectfilename=/home/fred/ideu/src/templates/library/library.prj
+projectfilename=${PROJECTDIR}/library.prj
 options=99
  [projectoptionsfo.twidgetgrid3]
  propcolwidthref=583
@@ -159,7 +159,7 @@ fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
 newprojectfiles=1
- ${TEMPLATEDIR}/library/units/project.pas
+ ${TEMPLATEDIR}/fpc_library/units/project.pas
 newprojectfilesdest=1
  ${%PROJECTNAME%}.pas
 newfinames=3

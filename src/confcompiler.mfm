@@ -1,8 +1,8 @@
 object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_top, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 325
-  bounds_y = 58
+  bounds_x = 237
+  bounds_y = 46
   bounds_cx = 676
   bounds_cy = 501
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -78,6 +78,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16769279
     frame.caption = '${PASCALCOMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -93,9 +94,9 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     hint = 'Path to pascal compiler'
-    bounds_x = 6
-    bounds_y = 18
-    bounds_cx = 328
+    bounds_x = 59
+    bounds_y = 20
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -104,6 +105,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${CCOMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -120,9 +122,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 1
     hint = 'Path to C compiler'
-    bounds_x = 342
+    bounds_x = 402
     bounds_y = 18
-    bounds_cx = 328
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -131,6 +133,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16777164
     frame.caption = '${JAVACOMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -147,9 +150,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 2
     hint = 'Path to Java compiler'
-    bounds_x = 6
+    bounds_x = 59
     bounds_y = 207
-    bounds_cx = 328
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -158,6 +161,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16773854
     frame.caption = '${OTHERCOMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -174,9 +178,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 3
     hint = 'Path to Other compiler'
-    bounds_x = 7
+    bounds_x = 59
     bounds_y = 402
-    bounds_cx = 327
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -185,6 +189,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16769279
     frame.caption = '${PASCAL2COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorframe, frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -201,9 +206,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 4
     hint = 'Path to pascal compiler'
-    bounds_x = 6
+    bounds_x = 59
     bounds_y = 60
-    bounds_cx = 329
+    bounds_cx = 271
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -212,6 +217,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16769279
     frame.caption = '${PASCAL3COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -228,9 +234,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 5
     hint = 'Path to pascal compiler'
-    bounds_x = 6
+    bounds_x = 59
     bounds_y = 100
-    bounds_cx = 328
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -239,6 +245,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${C2COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -255,9 +262,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 6
     hint = 'Path to C compiler'
-    bounds_x = 342
+    bounds_x = 402
     bounds_y = 60
-    bounds_cx = 328
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -272,8 +279,8 @@ object confcompilerfo: tconfcompilerfo
   end
   object tlabel3: tlabel
     taborder = 8
-    bounds_x = 485
-    bounds_y = 0
+    bounds_x = 481
+    bounds_y = 1
     bounds_cx = 71
     bounds_cy = 15
     caption = 'C Compilers'
@@ -283,6 +290,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 14606079
     frame.caption = '${C3COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -299,9 +307,9 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 9
     hint = 'Path to C compiler'
-    bounds_x = 342
+    bounds_x = 402
     bounds_y = 100
-    bounds_cx = 328
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
@@ -319,6 +327,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 16777164
     frame.caption = '${JAVA2COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -335,42 +344,15 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 11
     hint = 'Path to Java compiler'
-    bounds_x = 6
+    bounds_x = 59
     bounds_y = 252
-    bounds_cx = 328
-    bounds_cy = 39
-    controller.captionopen = 'Compiler path'
-    reffontheight = 15
-  end
-  object javacompiler3: tfilenameedit
-    Tag = 7
-    frame.colorclient = 16777164
-    frame.caption = '${JAVA3COMPILER}'
-    frame.localprops = [frl_colorclient]
-    frame.localprops1 = []
-    frame.buttons.count = 1
-    frame.buttons.items = <    
-      item
-        imagenr = 17
-      end>
-    frame.button.imagenr = 17
-    frame.outerframe = (
-      0
-      18
-      0
-      0
-    )
-    taborder = 12
-    hint = 'Path to Java compiler'
-    bounds_x = 6
-    bounds_y = 293
-    bounds_cx = 328
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
   object tlabel5: tlabel
-    taborder = 13
+    taborder = 12
     bounds_x = 280
     bounds_y = 384
     bounds_cx = 97
@@ -382,6 +364,7 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${PYTHONCOMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -396,17 +379,17 @@ object confcompilerfo: tconfcompilerfo
       0
       0
     )
-    taborder = 14
+    taborder = 13
     hint = 'Path to python compiler'
-    bounds_x = 342
+    bounds_x = 402
     bounds_y = 207
-    bounds_cx = 328
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
   object tlabel6: tlabel
-    taborder = 15
+    taborder = 14
     bounds_x = 467
     bounds_y = 188
     bounds_cx = 105
@@ -418,6 +401,35 @@ object confcompilerfo: tconfcompilerfo
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${PYTHON2COMPILER}'
+    frame.captionpos = cp_top
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 15
+    hint = 'Path to python compiler'
+    bounds_x = 402
+    bounds_y = 250
+    bounds_cx = 269
+    bounds_cy = 39
+    controller.captionopen = 'Compiler path'
+    reffontheight = 15
+  end
+  object pythoncompiler3: tfilenameedit
+    Tag = 7
+    frame.colorclient = 15138790
+    frame.caption = '${PYTHON3COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -434,17 +446,18 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 16
     hint = 'Path to python compiler'
-    bounds_x = 342
-    bounds_y = 250
-    bounds_cx = 328
+    bounds_x = 402
+    bounds_y = 293
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object pythoncompiler3: tfilenameedit
+  object ccompiler4: tfilenameedit
     Tag = 7
-    frame.colorclient = 15138790
-    frame.caption = '${PYTHON3COMPILER}'
+    frame.colorclient = 14606079
+    frame.caption = '${C4COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -460,18 +473,19 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     taborder = 17
-    hint = 'Path to python compiler'
-    bounds_x = 342
-    bounds_y = 293
-    bounds_cx = 328
+    hint = 'Path to C compiler'
+    bounds_x = 402
+    bounds_y = 141
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object ccompiler4: tfilenameedit
+  object fpccompiler4: tfilenameedit
     Tag = 7
-    frame.colorclient = 14606079
-    frame.caption = '${C4COMPILER}'
+    frame.colorclient = 16769279
+    frame.caption = '${PASCAL4COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -487,18 +501,19 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     taborder = 18
-    hint = 'Path to C compiler'
-    bounds_x = 342
-    bounds_y = 141
-    bounds_cx = 328
+    hint = 'Path to pascal compiler'
+    bounds_x = 59
+    bounds_y = 140
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object fpccompiler4: tfilenameedit
+  object pythoncompiler4: tfilenameedit
     Tag = 7
-    frame.colorclient = 16769279
-    frame.caption = '${PASCAL4COMPILER}'
+    frame.colorclient = 15138790
+    frame.caption = '${PYTHON4COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -514,18 +529,19 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     taborder = 19
-    hint = 'Path to pascal compiler'
-    bounds_x = 6
-    bounds_y = 140
-    bounds_cx = 328
+    hint = 'Path to python compiler'
+    bounds_x = 402
+    bounds_y = 335
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object pythoncompiler4: tfilenameedit
+  object javacompiler4: tfilenameedit
     Tag = 7
-    frame.colorclient = 15138790
-    frame.caption = '${PYTHON4COMPILER}'
+    frame.colorclient = 16777164
+    frame.caption = '${JAVA4COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -541,18 +557,19 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     taborder = 20
-    hint = 'Path to python compiler'
-    bounds_x = 342
+    hint = 'Path to Java compiler'
+    bounds_x = 59
     bounds_y = 335
-    bounds_cx = 328
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object javacompiler4: tfilenameedit
+  object othercompiler2: tfilenameedit
     Tag = 7
-    frame.colorclient = 16777164
-    frame.caption = '${JAVA4COMPILER}'
+    frame.colorclient = 16773854
+    frame.caption = '${OTHER2COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -568,18 +585,19 @@ object confcompilerfo: tconfcompilerfo
       0
     )
     taborder = 21
-    hint = 'Path to Java compiler'
-    bounds_x = 6
-    bounds_y = 335
-    bounds_cx = 328
+    hint = 'Path to Other compiler'
+    bounds_x = 402
+    bounds_y = 402
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object othercompiler2: tfilenameedit
+  object othercompiler4: tfilenameedit
     Tag = 7
     frame.colorclient = 16773854
-    frame.caption = '${OTHER2COMPILER}'
+    frame.caption = '${OTHER4COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -596,17 +614,18 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 22
     hint = 'Path to Other compiler'
-    bounds_x = 342
-    bounds_y = 402
-    bounds_cx = 327
+    bounds_x = 402
+    bounds_y = 446
+    bounds_cx = 269
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object othercompiler4: tfilenameedit
+  object othercompiler3: tfilenameedit
     Tag = 7
     frame.colorclient = 16773854
-    frame.caption = '${OTHER4COMPILER}'
+    frame.caption = '${OTHER3COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -623,17 +642,229 @@ object confcompilerfo: tconfcompilerfo
     )
     taborder = 23
     hint = 'Path to Other compiler'
-    bounds_x = 342
+    bounds_x = 59
     bounds_y = 446
-    bounds_cx = 327
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object othercompiler3: tfilenameedit
+  object tnClose: tbutton
+    taborder = 24
+    bounds_x = 628
+    bounds_y = 1
+    bounds_cx = 42
+    bounds_cy = 19
+    state = [as_default, as_localdefault, as_localcaption]
+    caption = '&OK'
+    modalresult = mr_ok
+  end
+  object winep1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 25
+    bounds_x = 10
+    bounds_y = 37
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object tlabel2: tlabel
+    taborder = 26
+    bounds_x = 2
+    bounds_y = 20
+    bounds_cx = 55
+    bounds_cy = 15
+    caption = 'Emulator'
+    reffontheight = 15
+  end
+  object winep2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 27
+    bounds_x = 10
+    bounds_y = 82
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object winep3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 28
+    bounds_x = 10
+    bounds_y = 121
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object winep4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 29
+    bounds_x = 10
+    bounds_y = 160
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinec1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 30
+    bounds_x = 355
+    bounds_y = 37
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinec4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 31
+    bounds_x = 355
+    bounds_y = 160
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinec3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 32
+    bounds_x = 355
+    bounds_y = 121
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinec2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 33
+    bounds_x = 355
+    bounds_y = 82
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinej4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 34
+    bounds_x = 10
+    bounds_y = 349
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinej3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 35
+    bounds_x = 11
+    bounds_y = 315
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinej2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 36
+    bounds_x = 10
+    bounds_y = 271
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twineo4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 37
+    bounds_x = 354
+    bounds_y = 465
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object javacompiler3: tfilenameedit
     Tag = 7
-    frame.colorclient = 16773854
-    frame.caption = '${OTHER3COMPILER}'
+    frame.colorclient = 16777164
+    frame.caption = '${JAVA3COMPILER}'
+    frame.captionpos = cp_top
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -648,29 +879,220 @@ object confcompilerfo: tconfcompilerfo
       0
       0
     )
-    taborder = 24
-    hint = 'Path to Other compiler'
-    bounds_x = 7
-    bounds_y = 446
-    bounds_cx = 327
+    taborder = 38
+    hint = 'Path to Java compiler'
+    bounds_x = 59
+    bounds_y = 294
+    bounds_cx = 270
     bounds_cy = 39
     controller.captionopen = 'Compiler path'
     reffontheight = 15
   end
-  object tnClose: tbutton
-    taborder = 25
-    bounds_x = 628
-    bounds_y = 5
-    bounds_cx = 39
-    bounds_cy = 22
-    state = [as_default, as_localdefault, as_localcaption]
-    caption = '&OK'
-    modalresult = mr_ok
+  object twinep4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 39
+    bounds_x = 10
+    bounds_y = 160
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinep3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 40
+    bounds_x = 10
+    bounds_y = 121
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinep2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 41
+    bounds_x = 10
+    bounds_y = 82
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinep1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 42
+    bounds_x = 10
+    bounds_y = 37
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinepy4: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 43
+    bounds_x = 354
+    bounds_y = 352
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinepy3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 44
+    bounds_x = 354
+    bounds_y = 313
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinepy2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 45
+    bounds_x = 354
+    bounds_y = 274
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinepy1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 46
+    bounds_x = 354
+    bounds_y = 229
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twineo1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 47
+    bounds_x = 10
+    bounds_y = 422
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twineo2: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 48
+    bounds_x = 10
+    bounds_y = 467
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twinej1: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 49
+    bounds_x = 10
+    bounds_y = 229
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object twineo3: tbooleanedit
+    frame.caption = 'wine'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      31
+      2
+    )
+    taborder = 50
+    bounds_x = 355
+    bounds_y = 421
+    bounds_cx = 44
+    bounds_cy = 17
+  end
+  object tlabel7: tlabel
+    taborder = 51
+    bounds_x = 344
+    bounds_y = 20
+    bounds_cx = 55
+    bounds_cy = 15
+    caption = 'Emulator'
+    reffontheight = 15
   end
   object tstatfile1: tstatfile
     filename = 'confcomp.sta'
     options = [sfo_memory]
-    left = 16
-    top = 32
+    left = 258
+    top = 1
   end
 end

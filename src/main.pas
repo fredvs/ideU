@@ -43,7 +43,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.0.7';
+ versiontext = '1.0.8';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -382,6 +382,7 @@ type
 var
   mainfo: tmainfo;
   toogletag : boolean = false ;
+  welcomeprj : boolean = false ;
   
   // fred
   thetimer : TTimer;
@@ -532,8 +533,9 @@ visible := false;
 options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
 fo_savepos,fo_savezorder,fo_savestate];
 
+ 
  {$ifdef polydev}
-templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
+ templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
  mainfo.openproject(templatepath);
   gINI.WriteBool('General', 'FirstLoad', false) ;
  thetimer.free;
@@ -627,10 +629,17 @@ sourcefo.hidesourcehint;
   conffpguifo.edhide.text := gINI.ReadString('edhide', 'designer_fpGUI', 'hideit');
   conffpguifo.ifquit.value := gINI.ReadBool('ifquit', 'designer_fpGUI', true);
   conffpguifo.edquit.text := gINI.ReadString('edquit', 'designer_fpGUI', 'quit');
+  
+  confcompilerfo.twinep1.value := gINI.ReadBool('fpc', 'winep1', false);
+  confcompilerfo.twinep2.value := gINI.ReadBool('fpc', 'winep2', false);
+  confcompilerfo.twinep3.value := gINI.ReadBool('fpc', 'winep3', false);
+  confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', false);
     
  {$ifdef polydev}
-    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/2.6.4/ppcx64');
-   confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.1.1/ppcx64');
+    confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/3.0.0/ppcx64');
+   confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.0.0/ppc386');
+ confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_lin');
+ confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '/usr/local/lib/fpc/3.0.0/ppc386.exe');
 
   {$else}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
@@ -640,20 +649,40 @@ sourcefo.hidesourcehint;
    confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
    confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '');
  
+ confcompilerfo.twinej1.value := gINI.ReadBool('java', 'winej1', false);
+  confcompilerfo.twinej2.value := gINI.ReadBool('java', 'winej2', false);
+  confcompilerfo.twinej3.value := gINI.ReadBool('java', 'winej3', false);
+  confcompilerfo.twinej4.value := gINI.ReadBool('java', 'winej4', false);
+ 
   confcompilerfo.javacompiler.value  := gINI.ReadString('java', 'compiler1', 'javac');
   confcompilerfo.javacompiler2.value  := gINI.ReadString('java', 'compiler2', '');
   confcompilerfo.javacompiler3.value  := gINI.ReadString('java', 'compiler3', '');
    confcompilerfo.javacompiler4.value  := gINI.ReadString('java', 'compiler4', '');
   
-  confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
+  confcompilerfo.twinec1.value := gINI.ReadBool('C', 'winec1', false);
+  confcompilerfo.twinec2.value := gINI.ReadBool('C', 'winec2', false);
+  confcompilerfo.twinec3.value := gINI.ReadBool('C', 'winec3', false);
+  confcompilerfo.twinec4.value := gINI.ReadBool('C', 'winec4', false);
+
+    confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
   confcompilerfo.ccompiler2.value  := gINI.ReadString('C', 'compiler2', '');
   confcompilerfo.ccompiler3.value  := gINI.ReadString('C', 'compiler3', '');
   confcompilerfo.ccompiler4.value  := gINI.ReadString('C', 'compiler4', '');
+  
+  confcompilerfo.twinepy1.value := gINI.ReadBool('python', 'winepy1', false);
+  confcompilerfo.twinepy2.value := gINI.ReadBool('python', 'winepy2', false);
+  confcompilerfo.twinepy3.value := gINI.ReadBool('python', 'winepy3', false);
+  confcompilerfo.twinepy4.value := gINI.ReadBool('python', 'winepy4', false);
   
   confcompilerfo.pythoncompiler.value  := gINI.ReadString('python', 'compiler1', '');
   confcompilerfo.pythoncompiler2.value  := gINI.ReadString('python', 'compiler2', '');
   confcompilerfo.pythoncompiler3.value  := gINI.ReadString('python', 'compiler3', '');
   confcompilerfo.pythoncompiler4.value  := gINI.ReadString('python', 'compiler4', '');
+  
+  confcompilerfo.twineo1.value := gINI.ReadBool('other', 'wineo1', false);
+  confcompilerfo.twineo2.value := gINI.ReadBool('other', 'wineo2', false);
+  confcompilerfo.twineo3.value := gINI.ReadBool('other', 'wineo3', false);
+  confcompilerfo.twineo4.value := gINI.ReadBool('other', 'wineo4', false);
   
   confcompilerfo.othercompiler.value  := gINI.ReadString('other', 'compiler1', '');
   confcompilerfo.othercompiler2.value  := gINI.ReadString('other', 'compiler2', '');
@@ -749,26 +778,50 @@ begin
   gINI.writeBool('ifquit', 'designer_fpGUI', conffpguifo.ifquit.value);
   gINI.writeString('edquit', 'designer_fpGUI', conffpguifo.edquit.text);  
     
+    gINI.writeBool('fpc', 'winep1', confcompilerfo.twinep1.value);
+     gINI.writeBool('fpc', 'winep2', confcompilerfo.twinep2.value);
+      gINI.writeBool('fpc', 'winep3', confcompilerfo.twinep3.value);
+       gINI.writeBool('fpc', 'winep4', confcompilerfo.twinep4.value);
+    
    gINI.writeString('fpc', 'compiler1', confcompilerfo.fpccompiler.value);
    gINI.writeString('fpc', 'compiler2', confcompilerfo.fpccompiler2.value);
    gINI.writeString('fpc', 'compiler3', confcompilerfo.fpccompiler3.value);
     gINI.writeString('fpc', 'compiler4', confcompilerfo.fpccompiler4.value);
+  
+  gINI.writeBool('java', 'winej1', confcompilerfo.twinej1.value);
+  gINI.writeBool('java', 'winej2', confcompilerfo.twinej2.value);
+  gINI.writeBool('java', 'winej3', confcompilerfo.twinej3.value);
+  gINI.writeBool('java', 'winej4', confcompilerfo.twinej4.value);
   
    gINI.writeString('java', 'compiler1', confcompilerfo.javacompiler.value);
    gINI.writeString('java', 'compiler2', confcompilerfo.javacompiler2.value);
    gINI.writeString('java', 'compiler3', confcompilerfo.javacompiler3.value);
    gINI.writeString('java', 'compiler4', confcompilerfo.javacompiler4.value);
   
-  
+  gINI.writeBool('C', 'winec1', confcompilerfo.twinec1.value);
+  gINI.writeBool('C', 'winec2', confcompilerfo.twinec2.value);
+  gINI.writeBool('C', 'winec3', confcompilerfo.twinec3.value);
+  gINI.writeBool('C', 'winec4', confcompilerfo.twinec4.value);
+       
    gINI.writeString('C', 'compiler1', confcompilerfo.ccompiler.value);
    gINI.writeString('C', 'compiler2', confcompilerfo.ccompiler2.value);
    gINI.writeString('C', 'compiler3', confcompilerfo.ccompiler3.value);
    gINI.writeString('C', 'compiler4', confcompilerfo.ccompiler4.value);
    
+  gINI.writeBool('python', 'winepy1', confcompilerfo.twinepy1.value);
+  gINI.writeBool('python', 'winepy2', confcompilerfo.twinepy2.value);
+  gINI.writeBool('python', 'winepy3', confcompilerfo.twinepy3.value);
+  gINI.writeBool('python', 'winepy4', confcompilerfo.twinepy4.value);
+   
    gINI.writeString('python', 'compiler1', confcompilerfo.pythoncompiler.value);
    gINI.writeString('python', 'compiler2', confcompilerfo.pythoncompiler2.value);
    gINI.writeString('python', 'compiler3', confcompilerfo.pythoncompiler3.value);
      gINI.writeString('python', 'compiler4', confcompilerfo.pythoncompiler4.value);
+     
+  gINI.writeBool('other', 'wineo1', confcompilerfo.twineo1.value);
+  gINI.writeBool('other', 'wineo2', confcompilerfo.twineo2.value);
+  gINI.writeBool('other', 'wineo3', confcompilerfo.twineo3.value);
+  gINI.writeBool('other', 'wineo4', confcompilerfo.twineo4.value);
      
      gINI.writeString('other', 'compiler1', confcompilerfo.othercompiler.value);
    gINI.writeString('other', 'compiler2', confcompilerfo.othercompiler2.value);
@@ -1897,6 +1950,11 @@ end;
 procedure tmainfo.viewstackonexecute(const sender: tobject);
 begin
  stackfo.activate;
+ if stackfo.width < 50 then
+ begin
+   stackfo.height := 180;
+    stackfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.onscale(const sender: TObject);
@@ -2726,6 +2784,10 @@ begin
  
  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
  
+if  (ExpandFileName(aname) =  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj')
+or (ExpandFileName(aname) =  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu.prj') then
+welcomeprj := true else welcomeprj := false;
+ 
  projectfilebefore:= projectoptions.projectfilename;
  projectdirbefore:= projectoptions.projectdir;
  namebefore:= fprojectname;
@@ -2772,7 +2834,7 @@ begin
     expandprojectmacros;
    end;
   except
-   application.handleexception(nil);
+  if  welcomeprj = false then application.handleexception(nil);
   end;
  end;
 end;
@@ -3345,7 +3407,13 @@ end;
 
 procedure tmainfo.viewthreadsonexecute(const sender: TObject);
 begin
+
  threadsfo.activate;
+ if threadsfo.width < 50 then
+ begin
+   threadsfo.height := 180;
+    threadsfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewconsoleonexecute(const sender: TObject);

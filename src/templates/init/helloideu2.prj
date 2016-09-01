@@ -652,7 +652,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/ideu/src/templates/init/apps/ide/compstore/
+storedir=/home/fred/msegui_new/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -679,7 +679,7 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 30,8
+ 0,3
 bookmarks0=0
 sourcefiles=1
  ${PROJECTDIR}/readme2.txt
@@ -710,16 +710,16 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=112
- y=24
- cx=1139
- cy=680
+ x=154
+ y=26
+ cx=966
+ cy=621
  rcx=0
  rcy=0
  children=2
-  basedock,0,19,1129,644
-  statdisp,0,1,1129,18
- focusedchild=0
+  statdisp,0,1,956,18
+  basedock,0,19,956,585
+ focusedchild=1
  wsize=0
  active=1
  visible=1
@@ -732,8 +732,8 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=680
- y=236
+ x=495
+ y=172
  cx=497
  cy=314
  rcx=0
@@ -750,10 +750,10 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=37
- y=270
- cx=349
- cy=276
+ x=300
+ y=217
+ cx=401
+ cy=126
  rcx=0
  rcy=0
  wsize=0
@@ -762,7 +762,7 @@ windowlayout=503
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=cpuc86_64fo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -808,7 +808,7 @@ windowlayout=503
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -833,18 +833,18 @@ windowlayout=503
  ncy=0
  x=0
  y=0
- cx=159
- cy=500
+ cx=139
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
- propcolwidthref=18
+ propcolwidthref=1
  width0=141
  sortdescend0=0
- width1=12
+ width1=1
  sortdescend1=0
  sorted=0
- col=-1073741823
+ col=1
  row=-1073741823
  rowheight=17
  [stackfo]
@@ -856,10 +856,10 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=407
- y=349
- cx=254
- cy=180
+ x=486
+ y=340
+ cx=371
+ cy=114
  rcx=0
  rcy=0
  wsize=0
@@ -905,7 +905,7 @@ windowlayout=503
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -951,7 +951,7 @@ windowlayout=503
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=componentstorefo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -968,7 +968,7 @@ windowlayout=503
  active=0
  visible=0
  [symbolfo.grid]
- propcolwidthref=222
+ propcolwidthref=207
  values0=14
   
   
@@ -986,7 +986,7 @@ windowlayout=503
   
  width0=111
  sortdescend0=0
- width1=135
+ width1=125
  sortdescend1=0
  [symbolfo.symbol]
  [watchfo]
@@ -1003,8 +1003,8 @@ windowlayout=503
  y=0
  cx=247
  cy=44
- rcx=1235
- rcy=782
+ rcx=1129
+ rcy=644
  [watchfo.grid]
  propcolwidthref=123
  values0=2
@@ -1034,7 +1034,7 @@ windowlayout=503
  value=0
  [messagefo]
  splitdir=0
- useroptions=82027
+ useroptions=114795
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1043,15 +1043,15 @@ windowlayout=503
  ncx=0
  ncy=0
  x=0
- y=548
- cx=1129
- cy=96
+ y=497
+ cx=956
+ cy=88
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
  useroptions=268460155
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1114,15 +1114,15 @@ windowlayout=503
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=disassfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=335
- y=24
+ x=428
+ y=66
  cx=440
  cy=129
  rcx=0
@@ -1131,10 +1131,10 @@ windowlayout=503
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=4
+ activetab=1
  [debuggerfo]
  splitdir=0
- useroptions=24683
+ useroptions=122987
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1144,8 +1144,8 @@ windowlayout=503
  ncy=0
  x=0
  y=0
- cx=1129
- cy=42
+ cx=956
+ cy=46
  rcx=0
  rcy=0
  [sourcefo]
@@ -1158,17 +1158,17 @@ windowlayout=503
  ny=0
  ncx=0
  ncy=0
- x=162
+ x=142
  y=0
- cx=967
- cy=500
+ cx=814
+ cy=445
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1177,16 +1177,16 @@ windowlayout=503
  ncy=0
  x=183
  y=113
- cx=352
- cy=277
+ cx=379
+ cy=307
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [mainfo.panel1]
  splitdir=1
- useroptions=838958571
+ useroptions=838893035
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1195,9 +1195,9 @@ windowlayout=503
  ncx=0
  ncy=0
  x=0
- y=45
- cx=1129
- cy=500
+ y=49
+ cx=956
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]

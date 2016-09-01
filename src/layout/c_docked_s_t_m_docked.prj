@@ -231,6 +231,50 @@ targpref=
 befcommand=0
 aftcommand=0
 makeoptions=0
+compilerused=21
+ ${COMPILER} (Default)
+ Pascal 1
+ Pascal 2
+ Pascal 3
+ Pascal 4
+ C 1
+ C 2
+ C 3
+ C 4
+ Java 1
+ Java 2
+ Java 3
+ Java 4
+ Python 1
+ Python 2
+ Python 3
+ Python 4
+ Other 1
+ Other 2
+ Other 3
+ Other 4
+debuggerused=6
+ ${DEBUGGER} (Default)
+ Debugger 1
+ Debugger 2
+ Debugger 3
+ Debugger 4
+ None
+exeused=14
+ ${EXEEXT} (Default)
+ No Extension
+ .exe
+ .com
+ .bin
+ .prog
+ .pyc
+ .class
+ .so
+ .dll
+ .lib
+ .o
+ .res
+ .inf
 codetemplatedirs=0
 toolmenus=0
 toolfiles=0
@@ -332,6 +376,50 @@ moduletypes=0
 modulefiles=0
 befcommandon=0
 makeoptionson=0
+compilerusedon=21
+ 69631
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+debuggerusedon=6
+ 69631
+ 0
+ 0
+ 0
+ 0
+ 0
+exeusedon=14
+ 69631
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
 aftcommandon=0
 unitdirson=0
 macroon=0
@@ -496,7 +584,7 @@ files=
  a=0,4133,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/mseguinew/apps/ide/compstore/
+storedir=/home/fred/msegui_new/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -535,14 +623,14 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=522
+windowlayout=524
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
  useroptions=838860927
- stackedunder=mainfo.panel2
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -551,16 +639,16 @@ windowlayout=522
  ncy=0
  x=208
  y=87
- cx=964
- cy=88
+ cx=972
+ cy=80
  rcx=0
  rcy=0
  children=2
-  basedock,0,19,954,52
-  statdisp,0,1,954,18
- focusedchild=0
+  statdisp,0,1,962,18
+  basedock,0,19,962,44
+ focusedchild=1
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -589,10 +677,10 @@ windowlayout=522
  ny=0
  ncx=0
  ncy=0
- x=0
- y=0
- cx=0
- cy=0
+ x=340
+ y=258
+ cx=321
+ cy=97
  rcx=0
  rcy=0
  wsize=0
@@ -601,7 +689,7 @@ windowlayout=522
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=cpuc86_64fo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -628,7 +716,7 @@ windowlayout=522
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=symbolfo
  parent=
  mdistate=0
  nx=0
@@ -695,15 +783,15 @@ windowlayout=522
  ny=0
  ncx=0
  ncy=0
- x=0
- y=0
- cx=0
- cy=0
+ x=323
+ y=374
+ cx=357
+ cy=118
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [watchpointsfo]
  splitdir=0
  useroptions=268451945
@@ -790,7 +878,7 @@ windowlayout=522
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -807,7 +895,7 @@ windowlayout=522
  active=0
  visible=0
  [symbolfo.grid]
- propcolwidthref=222
+ propcolwidthref=207
  values0=14
   
   
@@ -825,27 +913,29 @@ windowlayout=522
   
  width0=111
  sortdescend0=0
- width1=135
+ width1=125
  sortdescend1=0
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
  useroptions=268460137
- parent=mainfo.basedock
- visible=0
- mdistate=0
+ parent=
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=53
- y=0
- cx=247
- cy=44
- rcx=1129
- rcy=679
+ x=9
+ y=268
+ cx=954
+ cy=128
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
  [watchfo.grid]
- propcolwidthref=123
+ propcolwidthref=835
  values0=2
   -1
   -1
@@ -953,7 +1043,7 @@ windowlayout=522
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=mainfo
+ stackedunder=stackfo
  parent=
  mdistate=0
  nx=0
@@ -983,8 +1073,8 @@ windowlayout=522
  ncy=0
  x=0
  y=0
- cx=954
- cy=52
+ cx=962
+ cy=44
  rcx=0
  rcy=0
  [sourcefo]
@@ -1042,7 +1132,7 @@ windowlayout=522
  [mainfo.panel2]
  splitdir=2
  useroptions=838893035
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1056,7 +1146,7 @@ windowlayout=522
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
 [targetconsole]
 finddtext=
