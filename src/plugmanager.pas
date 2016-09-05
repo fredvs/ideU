@@ -12,7 +12,7 @@ interface
 uses
 {$IFDEF UNIX}
   cthreads, {$ENDIF}
-  Process, conffpgui, msefileutils,
+  Process, conffpgui, msefileutils, make,
   classes,
   sysutils ;
 
@@ -136,6 +136,7 @@ len1 := pos('.',dataf2) ;
     
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
   
+ 
   RunWithoutDebug(dataf, '');
  
  end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
@@ -144,13 +145,17 @@ len1 := pos('.',dataf2) ;
  procedure RunWithoutDebug(const AFilename: string; Aparam: string);
  var
   AProcess : TProcess ;
+  thecommand : string;
   begin
  
   if fileexists (AFilename) then
  begin 
+   if wineneeded = true then thecommand := 'wine ' + AFilename else
+   thecommand :=  AFilename;
+
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := AFilename + Aparam ;
+      AProcess.CommandLine := thecommand + Aparam ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;

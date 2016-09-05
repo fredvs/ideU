@@ -35,6 +35,8 @@ unit sak_mse;
     Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA  02110-1301  USA
     }
+    
+ {$mode objfpc}{$h+}
 
 interface
 
@@ -57,6 +59,7 @@ uses
 {$define cpu64}
 {$define cpu86}
 *)
+
 
 const
   male = 1;

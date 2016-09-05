@@ -633,17 +633,19 @@ sourcefo.hidesourcehint;
   confcompilerfo.twinep1.value := gINI.ReadBool('fpc', 'winep1', false);
   confcompilerfo.twinep2.value := gINI.ReadBool('fpc', 'winep2', false);
   confcompilerfo.twinep3.value := gINI.ReadBool('fpc', 'winep3', false);
-  confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', false);
     
  {$ifdef polydev}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/3.0.0/ppcx64');
    confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.0.0/ppc386');
- confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_lin');
+ confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_linux');
  confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '/usr/local/lib/fpc/3.0.0/ppc386.exe');
-
+  confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', true);
+  
   {$else}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
     confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
+     confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', false);
+  
   {$endif}
   
    confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');

@@ -41,6 +41,9 @@ function downloadresult: integer;
 function runscript(const script: filenamety;
                              const clearscreen,setmakedir: boolean): boolean;
 
+var
+ wineneeded: boolean = false;
+ 
 implementation
 uses
  mseprocutils,main,projectoptionsform,sysutils,msegrids, confcompiler,
@@ -137,6 +140,7 @@ type
   // fred
  custommaker: tcustommaker;
 
+
 function making: boolean;
 begin
  result:= (maker <> nil) and (maker.procid <> invalidprochandle);
@@ -227,6 +231,7 @@ var
 // wstr1: filenamety;
 begin
 winestr := '';
+wineneeded:= false;
 
  with projectoptions,o,texp do begin
  
@@ -403,7 +408,7 @@ for int3:= 0 to high(compilerused) do begin
   
   end;
   
-  for int3:= 0 to high(exeused) do begin
+   for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
   
   if (pos('Default',exeused[int3]) > 0) or    
@@ -454,7 +459,8 @@ for int3:= 0 to high(compilerused) do begin
   end;
   str1:= str1 + ' ' + quotefilename(normalizename(mainfile));
  end;
- result:= str1;
+ if winestr = 'wine ' then wineneeded := true ;
+   result:= str1;
 end;
 
 /// fred
@@ -473,6 +479,9 @@ var
  winestr : msestring = '';
 
 begin
+
+wineneeded:= false;
+
  with projectoptions,o,texp do begin
  commandcompiler := '' ;
  
@@ -606,6 +615,8 @@ for int3:= 0 to high(exeused) do begin
   str1:= str3;
  
   str3 := aname ;
+  
+  if winestr = 'wine ' then wineneeded := true ;
 
  str1:= winestr + str1 + ' '+ quotefilename(normalizename(str3));
 

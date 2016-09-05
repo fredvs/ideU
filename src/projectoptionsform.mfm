@@ -1,8 +1,8 @@
 object projectoptionsfo: tprojectoptionsfo
-  optionswidget = [ow_top, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 218
-  bounds_y = 85
+  bounds_x = 219
+  bounds_y = 86
   bounds_cx = 748
   bounds_cy = 568
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -18,13 +18,12 @@ object projectoptionsfo: tprojectoptionsfo
     748
     568
   )
-  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
+  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Project Options'
   oncreate = createexe
   moduleclassname = 'tmseform'
   object tlayouter9: tlayouter
-    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 748
@@ -34,7 +33,6 @@ object projectoptionsfo: tprojectoptionsfo
     place_maxdist = 0
     place_options = [plo_endmargin]
     object tlayouter8: tlayouter
-      optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
       color = -2147483645
       frame.framei_top = 5
       frame.framei_bottom = 5
@@ -46,13 +44,13 @@ object projectoptionsfo: tprojectoptionsfo
       bounds_cy = 31
       anchors = [an_bottom]
       optionsscale = [osc_expandy, osc_shrinky]
+      linktop = tabwidget
       optionslayout = [lao_placex, lao_aligny]
       align_glue = wam_center
       place_mindist = 5
       place_maxdist = 5
       place_mode = wam_end
       place_options = [plo_propmargin, plo_syncmaxautosize]
-      linktop = tabwidget
       object cancel: tbutton
         optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
         optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -99,7 +97,7 @@ object projectoptionsfo: tprojectoptionsfo
       tab_frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
       tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       tab_color = -2147483645
-      tab_size = 20
+      tab_size = 19
       statfile = statfile1
       reffontheight = 15
       object editorpage: ttabpage
@@ -110,15 +108,14 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 5
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_top]
         caption = ' &Editor '
         coloractivetab = 16776396
         reffontheight = 15
         object tlayouter13: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -128,12 +125,12 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 277
           anchors = [an_top]
           optionsscale = [osc_expandx, osc_expandy, osc_shrinky]
+          linkbottom = ttabwidget2
+          dist_bottom = 2
           optionslayout = [lao_placey]
           place_mindist = 2
           place_maxdist = 2
           place_options = [plo_endmargin]
-          linkbottom = ttabwidget2
-          dist_bottom = 2
           object dispgrid: twidgetgrid
             optionswidget1 = [ow1_fontglyphheight]
             optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -201,7 +198,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter12: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = -2147483645
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -362,7 +358,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter11: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = -2147483645
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -375,7 +370,6 @@ object projectoptionsfo: tprojectoptionsfo
             optionslayout = [lao_aligny]
             align_glue = wam_start
             object tlayouter14: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               bounds_x = 7
               bounds_y = 0
               bounds_cx = 122
@@ -454,7 +448,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object tlayouter15: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               taborder = 1
               bounds_x = 143
               bounds_y = 7
@@ -605,7 +598,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter10: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = -2147483645
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -750,7 +742,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 284
           bounds_cx = 746
-          bounds_cy = 231
+          bounds_cy = 232
           bounds_cymin = 84
           anchors = [an_top, an_bottom]
           taborder = 1
@@ -758,7 +750,7 @@ object projectoptionsfo: tprojectoptionsfo
           tab_frame.localprops = []
           tab_frame.localprops1 = []
           tab_color = -2147483645
-          tab_size = 20
+          tab_size = 19
           statfile = statfile1
           reffontheight = 15
           object ttabpage13: ttabpage
@@ -770,9 +762,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 1
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 211
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' File filter '
             coloractivetab = 16776396
@@ -785,7 +777,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 211
+              bounds_cy = 213
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               datacols.count = 2
@@ -836,9 +828,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 2
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 211
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Syntax definition files '
             coloractivetab = 16776396
@@ -849,7 +841,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 211
+              bounds_cy = 213
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -950,9 +942,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 3
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 211
+            bounds_cy = 213
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Code Templates '
             coloractivetab = 16776396
@@ -972,7 +964,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 222
+              bounds_cy = 224
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1112,9 +1104,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.sbhorz.options = [sbo_moveauto, sbo_showauto]
         taborder = 4
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Debugger '
         coloractivetab = 16776396
@@ -1186,7 +1178,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 206
           bounds_cx = 746
-          bounds_cy = 310
+          bounds_cy = 311
           anchors = [an_left, an_top, an_right, an_bottom]
           taborder = 6
           activepageindex = 0
@@ -1194,7 +1186,7 @@ object projectoptionsfo: tprojectoptionsfo
           tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           tab_face.localprops = [fal_frameimageoffset]
           tab_color = -2147483645
-          tab_size = 20
+          tab_size = 19
           statfile = statfile1
           reffontheight = 15
           object ttabpage77: ttabpage
@@ -1202,9 +1194,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 1
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Project Debugger '
             coloractivetab = 16776396
@@ -1217,7 +1209,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 290
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1532,9 +1524,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 5
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Source &directories '
             coloractivetab = 16776396
@@ -1548,7 +1540,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 25
               bounds_cx = 746
-              bounds_cy = 265
+              bounds_cy = 267
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1645,9 +1637,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 2
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Defi&nes '
             coloractivetab = 16776396
@@ -1659,7 +1651,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 290
+              bounds_cy = 292
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -1737,9 +1729,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 4
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Signals '
             coloractivetab = 16776396
@@ -1753,7 +1745,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 290
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_colsizing, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_sorted, og_wrapcol, og_autopopup]
@@ -1905,9 +1897,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 3
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Exceptions '
             coloractivetab = 16776396
@@ -1919,7 +1911,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 290
+              bounds_cy = 292
               anchors = []
               optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -1994,15 +1986,14 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 6
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 290
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' &Target '
             coloractivetab = 16776396
             reffontheight = 15
             object tlayouter2: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = -2147483645
               frame.framei_right = 2
               frame.localprops = [frl_firight]
@@ -2014,11 +2005,11 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_top]
               optionsscale = [osc_expandy, osc_shrinky]
+              linktop = serverla
+              linkbottom = remoteconnection
               optionslayout = [lao_placex, lao_aligny]
               place_mindist = 2
               place_maxdist = 2
-              linktop = serverla
-              linkbottom = remoteconnection
               object gdbservercommandattach: tfilenameedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
@@ -2107,7 +2098,6 @@ object projectoptionsfo: tprojectoptionsfo
               reffontheight = 15
             end
             object tlayouter4: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = -2147483645
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2118,10 +2108,10 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_top]
               optionsscale = [osc_expandy, osc_shrinky]
-              optionslayout = [lao_aligny]
-              align_glue = wam_start
               linkbottom = tlayouter5
               dist_top = 3
+              optionslayout = [lao_aligny]
+              align_glue = wam_start
               object beforeconnect: tfilenameedit
                 frame.caption = 'Before connect gdb script'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2250,7 +2240,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object tlayouter5: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = -2147483645
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2261,9 +2250,9 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_top]
               optionsscale = [osc_expandy, osc_shrinky]
+              dist_top = 3
               optionslayout = [lao_aligny]
               align_glue = wam_start
-              dist_top = 3
               object afterconnect: tfilenameedit
                 frame.caption = 'After connect gdb script'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2356,7 +2345,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object serverla: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = -2147483645
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2367,10 +2355,10 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_top]
               optionsscale = [osc_expandy, osc_shrinky]
+              linktop = uploadcommand
               optionslayout = [lao_placex, lao_aligny]
               place_mindist = 2
               place_maxdist = 2
-              linktop = uploadcommand
               object gdbservercommand: tfilenameedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
@@ -2482,7 +2470,6 @@ object projectoptionsfo: tprojectoptionsfo
               reffontheight = 15
             end
             object tlayouter3: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = -2147483645
               frame.framei_left = 1
               frame.localprops = [frl_fileft, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
@@ -2493,13 +2480,13 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 585
               bounds_cy = 39
               optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+              linktop = remoteconnection
+              linkbottom = tlayouter4
+              dist_top = 3
               optionslayout = [lao_placex, lao_aligny]
               align_glue = wam_start
               place_mindist = 5
               place_maxdist = 5
-              linktop = remoteconnection
-              linkbottom = tlayouter4
-              dist_top = 3
               object gdbprocessor: tdropdownlistedit
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Processor'
@@ -2644,7 +2631,6 @@ object projectoptionsfo: tprojectoptionsfo
           end
         end
         object tlayouter1: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2654,13 +2640,13 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 732
           bounds_cy = 32
           optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+          linkbottom = ttabwidget1
+          dist_bottom = 10
           optionslayout = [lao_placex, lao_aligny]
           align_glue = wam_start
           place_mindist = 10
           place_maxdist = 10
           place_options = [plo_noinvisible]
-          linkbottom = ttabwidget1
-          dist_bottom = 10
           object externalconsole: tbooleanedit
             frame.caption = '&External'#10'Console'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2935,9 +2921,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 6
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_top, an_bottom]
         caption = ' &Make '
         coloractivetab = 16776396
@@ -3192,7 +3178,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 187
           bounds_cx = 746
-          bounds_cy = 330
+          bounds_cy = 331
           anchors = [an_top, an_bottom]
           taborder = 14
           activepageindex = 1
@@ -3200,7 +3186,7 @@ object projectoptionsfo: tprojectoptionsfo
           tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           tab_face.localprops = [fal_frameimageoffset]
           tab_color = -2147483645
-          tab_size = 20
+          tab_size = 19
           statfile = statfile1
           reffontheight = 15
           object ttabpage66: ttabpage
@@ -3208,9 +3194,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 5
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Project Compiler '
             coloractivetab = 16776396
@@ -3223,7 +3209,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 310
+              bounds_cy = 312
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -3535,9 +3521,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 3
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Command before '
             coloractivetab = 16776396
@@ -3550,7 +3536,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 310
+              bounds_cy = 312
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -3876,9 +3862,9 @@ object projectoptionsfo: tprojectoptionsfo
             face.localprops = [fal_frameimageoffset]
             taborder = 2
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Make options '
             coloractivetab = 16776396
@@ -3892,7 +3878,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 310
+              bounds_cy = 312
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -4218,9 +4204,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 1
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Directories '
             coloractivetab = 16776396
@@ -4240,7 +4226,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 48
               bounds_cx = 746
-              bounds_cy = 259
+              bounds_cy = 261
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -4753,9 +4739,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 4
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Command after '
             coloractivetab = 16776396
@@ -4768,7 +4754,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 746
-              bounds_cy = 310
+              bounds_cy = 312
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -5090,9 +5076,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = []
             taborder = 6
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 310
+            bounds_cy = 312
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' Exe Extension '
             coloractivetab = 16776396
@@ -5102,10 +5088,10 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-              bounds_x = 0
-              bounds_y = 0
+              bounds_x = -2
+              bounds_y = 2
               bounds_cx = 746
-              bounds_cy = 310
+              bounds_cy = 312
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -5575,9 +5561,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 3
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' M&acros '
         coloractivetab = 16776396
@@ -5591,7 +5577,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 204
           bounds_cx = 746
-          bounds_cy = 312
+          bounds_cy = 313
           bounds_cymin = 40
           anchors = [an_top, an_bottom]
           optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -6176,9 +6162,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 2
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Font Alias '
         coloractivetab = 16776396
@@ -6190,7 +6176,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 746
-          bounds_cy = 515
+          bounds_cy = 516
           anchors = []
           optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
           fixrows.count = 1
@@ -6374,9 +6360,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 7
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Designers '
         coloractivetab = 16776396
@@ -6581,20 +6567,19 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 8
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' User &Colors '
         coloractivetab = 16776396
         object tlayouter7: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           taborder = 1
           bounds_x = 0
-          bounds_y = 998
+          bounds_y = 999
           bounds_cx = 746
           bounds_cy = 42
           anchors = [an_bottom]
@@ -6620,7 +6605,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 746
-          bounds_cy = 515
+          bounds_cy = 516
           anchors = []
           optionsgrid = [og_rowmoving, og_keyrowmoving, og_focuscellonenter, og_colchangeontabkey, og_autopopup, og_mousescrollcol]
           fixcols.count = 1
@@ -6732,9 +6717,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = []
         taborder = 11
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' F&ormat Macros '
         tabhint = 'Used by formatfloatmse() and formatdatetimemse()'
@@ -6745,7 +6730,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 746
-          bounds_cy = 515
+          bounds_cy = 516
           anchors = []
           optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
           fixrows.count = 1
@@ -6809,9 +6794,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 1
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' &Templates '
         coloractivetab = 16776396
@@ -6821,13 +6806,13 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 746
-          bounds_cy = 515
+          bounds_cy = 516
           anchors = []
           activepageindex = 0
           tab_frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           tab_color = -2147483645
-          tab_size = 20
+          tab_size = 19
           statfile = statfile1
           reffontheight = 15
           object ttabpage3: ttabpage
@@ -6838,9 +6823,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 3
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 495
+            bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New Project '
             coloractivetab = 16776396
@@ -6854,7 +6839,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 80
               bounds_cx = 746
-              bounds_cy = 413
+              bounds_cy = 415
               anchors = [an_top, an_bottom]
               optionsgrid = [og_colsizing, og_keycolmoving, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -7052,9 +7037,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 2
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 495
+            bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New File '
             coloractivetab = 16776396
@@ -7066,7 +7051,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 744
-              bounds_cy = 495
+              bounds_cy = 497
               anchors = [an_left, an_top, an_right, an_bottom]
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -7205,9 +7190,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 1
             bounds_x = 0
-            bounds_y = 20
+            bounds_y = 19
             bounds_cx = 746
-            bounds_cy = 495
+            bounds_cy = 497
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = ' New Form '
             coloractivetab = 16776396
@@ -7220,7 +7205,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = -1
               bounds_y = 0
               bounds_cx = 744
-              bounds_cy = 494
+              bounds_cy = 496
               anchors = [an_left, an_top, an_right, an_bottom]
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -7414,9 +7399,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
         taborder = 9
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Tools '
         coloractivetab = 16776396
@@ -7428,7 +7413,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 746
-          bounds_cy = 515
+          bounds_cy = 516
           anchors = []
           optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
           fixcols.count = 1
@@ -7789,9 +7774,9 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops1 = []
         taborder = 10
         bounds_x = 1
-        bounds_y = 21
+        bounds_y = 20
         bounds_cx = 746
-        bounds_cy = 515
+        bounds_cy = 516
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = ' Storage '
         coloractivetab = 16776396
@@ -7845,7 +7830,6 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 17
         end
         object tlayouter6: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           frame.framei_left = 5
           frame.framei_top = 5
           frame.framei_right = 5
