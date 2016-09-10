@@ -197,7 +197,7 @@ options=108
  sortdescend11=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -582,25 +582,28 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=7
+modulenames=8
  ACTIONSMO
  CONFCOMPILERFO
+ CONFIDEUFO
  DEBUGGERFO
  MAINFO
  SETTINGSFO
  PROJECTOPTIONSFO
  STACKFO
-moduletypes=7
+moduletypes=8
  TACTIONSMO
  TCONFCOMPILERFO
+ TCONFIDEUFO
  TDEBUGGERFO
  TMAINFO
  TSETTINGSFO
  TPROJECTOPTIONSFO
  TSTACKFO
-modulefiles=7
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/debuggerform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msesettings.mfm
@@ -1107,8 +1110,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=200
-finddtext=wine
+finddtext=sakit
 findhistory=20
+ sakit
  wine
  gettargetfile
  customdomak
@@ -1128,9 +1132,8 @@ findhistory=20
  timer
  appli
  editontextmouseevent
- editontext
 findoptions=1
-editpos=21
+editpos=23
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1151,7 +1154,9 @@ editpos=21
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 61,359
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1173,7 +1178,9 @@ bookmarks17=0
 bookmarks18=0
 bookmarks19=0
 bookmarks20=0
-sourcefiles=21
+bookmarks21=0
+bookmarks22=0
+sourcefiles=23
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1194,8 +1201,10 @@ sourcefiles=21
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/define.inc
  ${PROJECTDIR}/main.pas
- /home/fred/ideu/src/msesettings.pas
-relpaths=21
+ ${PROJECTDIR}/msesettings.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/confideu.pas
+relpaths=23
  projectoptionsform.pas
  ideU.pas
  confcompiler.pas
@@ -1217,7 +1226,9 @@ relpaths=21
  define.inc
  main.pas
  msesettings.pas
-ismoduletexts=21
+ confideu.pas
+ confideu.pas
+ismoduletexts=23
  0
  0
  0
@@ -1239,7 +1250,9 @@ ismoduletexts=21
  0
  0
  0
-modules=8
+ 0
+ 0
+modules=9
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1248,7 +1261,8 @@ modules=8
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/debuggerform.mfm
  /home/fred/ideu/src/msesettings.mfm
-moduleoptions=8
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=9
  0
  0
  0
@@ -1257,26 +1271,29 @@ moduleoptions=8
  0
  0
  0
-visiblemodules=8
  0
- -1
- -1
- 0
+visiblemodules=9
  0
  -1
  -1
- -1
-nomenumodules=8
- 0
  0
  0
  -1
+ -1
+ -1
+ -1
+nomenumodules=9
+ 0
+ 0
+ 0
+ -1
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=21
+order=23
  0
  1
  2
@@ -1290,6 +1307,8 @@ order=21
  15
  18
  19
+ 22
+ 21
  20
  16
  6
@@ -1302,7 +1321,7 @@ tabsize=60
 firsttab=8
 index=13
 [layout]
-windowlayout=612
+windowlayout=631
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1899,7 +1918,7 @@ windowlayout=612
  [_mse_settingsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1910,6 +1929,25 @@ windowlayout=612
  y=89
  cx=352
  cy=651
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=602
+ y=330
+ cx=336
+ cy=234
  rcx=0
  rcy=0
  wsize=0
