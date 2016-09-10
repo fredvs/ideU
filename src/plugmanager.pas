@@ -196,7 +196,7 @@ procedure CleanfpgDesigner();
 begin
  {$ifdef unix}
   dataf := '/usr/bin/killall' ;
-  RunWithoutDebug(dataf,  ' designer_ext' ) ;
+  RunWithoutDebug(dataf,  ' designer_ext_ideu' ) ;
    {$endif}
 end;
 
