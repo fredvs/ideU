@@ -63,6 +63,22 @@ uses
    twinej1: tbooleanedit;
    twineo3: tbooleanedit;
    tlabel7: tlabel;
+   fpccompiler8: tfilenameedit;
+   twinep8: tbooleanedit;
+   fpccompiler7: tfilenameedit;
+   twinep7: tbooleanedit;
+   fpccompiler6: tfilenameedit;
+   twinep6: tbooleanedit;
+   fpccompiler5: tfilenameedit;
+   twinep5: tbooleanedit;
+   ccompiler7: tfilenameedit;
+   ccompiler8: tfilenameedit;
+   twinec8: tbooleanedit;
+   twinec7: tbooleanedit;
+   twinec6: tbooleanedit;
+   twinec5: tbooleanedit;
+   ccompiler5: tfilenameedit;
+   ccompiler6: tfilenameedit;
  end;
 var
  confcompilerfo: tconfcompilerfo;

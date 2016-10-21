@@ -43,7 +43,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.0.8';
+ versiontext = '1.1.0';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -633,6 +633,11 @@ sourcefo.hidesourcehint;
   confcompilerfo.twinep1.value := gINI.ReadBool('fpc', 'winep1', false);
   confcompilerfo.twinep2.value := gINI.ReadBool('fpc', 'winep2', false);
   confcompilerfo.twinep3.value := gINI.ReadBool('fpc', 'winep3', false);
+  confcompilerfo.twinep5.value := gINI.ReadBool('fpc', 'winep5', false);
+  confcompilerfo.twinep6.value := gINI.ReadBool('fpc', 'winep6', false);
+  confcompilerfo.twinep7.value := gINI.ReadBool('fpc', 'winep7', false);
+  confcompilerfo.twinep8.value := gINI.ReadBool('fpc', 'winep8', false);
+  
     
  {$ifdef polydev}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/3.0.0/ppcx64');
@@ -640,17 +645,22 @@ sourcefo.hidesourcehint;
  confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_linux');
  confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '/usr/local/lib/fpc/3.0.0/ppc386.exe');
   confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', true);
-  
+  confcompilerfo.fpccompiler5.value  := gINI.ReadString('fpc', 'compiler5', '/usr/local/lib/fpc/3.0.0/ppc386_linux');
+
   {$else}
     confcompilerfo.fpccompiler.value  := gINI.ReadString('fpc', 'compiler1', 'fpc');
     confcompilerfo.fpccompiler2.value  := gINI.ReadString('fpc', 'compiler2', '');
      confcompilerfo.twinep4.value := gINI.ReadBool('fpc', 'winep4', false);
-  
+  confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
+   confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '');
   {$endif}
   
-   confcompilerfo.fpccompiler3.value  := gINI.ReadString('fpc', 'compiler3', '');
-   confcompilerfo.fpccompiler4.value  := gINI.ReadString('fpc', 'compiler4', '');
- 
+   confcompilerfo.fpccompiler5.value  := gINI.ReadString('fpc', 'compiler5', '');
+   confcompilerfo.fpccompiler6.value  := gINI.ReadString('fpc', 'compiler6', '');
+    confcompilerfo.fpccompiler7.value  := gINI.ReadString('fpc', 'compiler7', '');
+   confcompilerfo.fpccompiler8.value  := gINI.ReadString('fpc', 'compiler8', '');
+  
+    
  confcompilerfo.twinej1.value := gINI.ReadBool('java', 'winej1', false);
   confcompilerfo.twinej2.value := gINI.ReadBool('java', 'winej2', false);
   confcompilerfo.twinej3.value := gINI.ReadBool('java', 'winej3', false);
@@ -665,11 +675,19 @@ sourcefo.hidesourcehint;
   confcompilerfo.twinec2.value := gINI.ReadBool('C', 'winec2', false);
   confcompilerfo.twinec3.value := gINI.ReadBool('C', 'winec3', false);
   confcompilerfo.twinec4.value := gINI.ReadBool('C', 'winec4', false);
+  confcompilerfo.twinec5.value := gINI.ReadBool('C', 'winec5', false);
+  confcompilerfo.twinec6.value := gINI.ReadBool('C', 'winec6', false);
+  confcompilerfo.twinec7.value := gINI.ReadBool('C', 'winec7', false);
+  confcompilerfo.twinec8.value := gINI.ReadBool('C', 'winec8', false);
 
     confcompilerfo.ccompiler.value  := gINI.ReadString('C', 'compiler1', '');
   confcompilerfo.ccompiler2.value  := gINI.ReadString('C', 'compiler2', '');
   confcompilerfo.ccompiler3.value  := gINI.ReadString('C', 'compiler3', '');
   confcompilerfo.ccompiler4.value  := gINI.ReadString('C', 'compiler4', '');
+    confcompilerfo.ccompiler5.value  := gINI.ReadString('C', 'compiler5', '');
+  confcompilerfo.ccompiler6.value  := gINI.ReadString('C', 'compiler6', '');
+  confcompilerfo.ccompiler7.value  := gINI.ReadString('C', 'compiler7', '');
+  confcompilerfo.ccompiler8.value  := gINI.ReadString('C', 'compiler8', '');
   
   confcompilerfo.twinepy1.value := gINI.ReadBool('python', 'winepy1', false);
   confcompilerfo.twinepy2.value := gINI.ReadBool('python', 'winepy2', false);
@@ -784,11 +802,19 @@ begin
      gINI.writeBool('fpc', 'winep2', confcompilerfo.twinep2.value);
       gINI.writeBool('fpc', 'winep3', confcompilerfo.twinep3.value);
        gINI.writeBool('fpc', 'winep4', confcompilerfo.twinep4.value);
+       gINI.writeBool('fpc', 'winep5', confcompilerfo.twinep5.value);
+     gINI.writeBool('fpc', 'winep6', confcompilerfo.twinep6.value);
+      gINI.writeBool('fpc', 'winep7', confcompilerfo.twinep7.value);
+       gINI.writeBool('fpc', 'winep8', confcompilerfo.twinep8.value);
     
    gINI.writeString('fpc', 'compiler1', confcompilerfo.fpccompiler.value);
    gINI.writeString('fpc', 'compiler2', confcompilerfo.fpccompiler2.value);
    gINI.writeString('fpc', 'compiler3', confcompilerfo.fpccompiler3.value);
-    gINI.writeString('fpc', 'compiler4', confcompilerfo.fpccompiler4.value);
+   gINI.writeString('fpc', 'compiler4', confcompilerfo.fpccompiler4.value);
+   gINI.writeString('fpc', 'compiler5', confcompilerfo.fpccompiler5.value);
+   gINI.writeString('fpc', 'compiler6', confcompilerfo.fpccompiler6.value);
+   gINI.writeString('fpc', 'compiler7', confcompilerfo.fpccompiler7.value);
+   gINI.writeString('fpc', 'compiler8', confcompilerfo.fpccompiler8.value);
   
   gINI.writeBool('java', 'winej1', confcompilerfo.twinej1.value);
   gINI.writeBool('java', 'winej2', confcompilerfo.twinej2.value);
@@ -804,11 +830,19 @@ begin
   gINI.writeBool('C', 'winec2', confcompilerfo.twinec2.value);
   gINI.writeBool('C', 'winec3', confcompilerfo.twinec3.value);
   gINI.writeBool('C', 'winec4', confcompilerfo.twinec4.value);
+  gINI.writeBool('C', 'winec5', confcompilerfo.twinec5.value);
+  gINI.writeBool('C', 'winec6', confcompilerfo.twinec6.value);
+  gINI.writeBool('C', 'winec7', confcompilerfo.twinec7.value);
+  gINI.writeBool('C', 'winec8', confcompilerfo.twinec8.value);
        
    gINI.writeString('C', 'compiler1', confcompilerfo.ccompiler.value);
    gINI.writeString('C', 'compiler2', confcompilerfo.ccompiler2.value);
    gINI.writeString('C', 'compiler3', confcompilerfo.ccompiler3.value);
    gINI.writeString('C', 'compiler4', confcompilerfo.ccompiler4.value);
+    gINI.writeString('C', 'compiler5', confcompilerfo.ccompiler5.value);
+   gINI.writeString('C', 'compiler6', confcompilerfo.ccompiler6.value);
+   gINI.writeString('C', 'compiler7', confcompilerfo.ccompiler7.value);
+   gINI.writeString('C', 'compiler8', confcompilerfo.ccompiler8.value);
    
   gINI.writeBool('python', 'winepy1', confcompilerfo.twinepy1.value);
   gINI.writeBool('python', 'winepy2', confcompilerfo.twinepy2.value);

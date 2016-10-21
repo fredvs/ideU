@@ -26,7 +26,6 @@ program ideU;
 {$endif}
 uses
 {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
-//  mseopenglgdiinit,
 
   // fred
   confmsegui, confideu, conffpgui, confcompiler, confdebugger,

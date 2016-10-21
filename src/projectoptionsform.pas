@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -1629,10 +1629,18 @@ begin
   additem(fcompilerused,'Pascal 2');
   additem(fcompilerused,'Pascal 3');
   additem(fcompilerused,'Pascal 4');
+  additem(fcompilerused,'Pascal 5');
+  additem(fcompilerused,'Pascal 6');
+  additem(fcompilerused,'Pascal 7');
+  additem(fcompilerused,'Pascal 8');
   additem(fcompilerused,'C 1');
   additem(fcompilerused,'C 2');
   additem(fcompilerused,'C 3');
   additem(fcompilerused,'C 4');
+  additem(fcompilerused,'C 5');
+  additem(fcompilerused,'C 6');
+  additem(fcompilerused,'C 7');
+  additem(fcompilerused,'C 8');
   additem(fcompilerused,'Java 1');
   additem(fcompilerused,'Java 2');
   additem(fcompilerused,'Java 3');

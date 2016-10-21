@@ -61,7 +61,7 @@ const
   {$ifdef freebsd}
  {$ifdef polydev}
  defaultsettingmacros: array[settingsmacroty] of msestring = (
-                 '/usr/local/lib/fpc/2.6.4/','/usr/local/lib/fpc/2.6.4/units/x86_64-freebsd/',
+                 '/usr/local/lib/fpc/3.0.0/','/usr/local/lib/fpc/3.0.0/units/x86_64-freebsd/',
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
                 '/usr/local/share/ideu/templates/','/usr/local/share/ideu/layout/','${MSEDIR}apps/ide/compstore/',
                'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','linux',
@@ -285,19 +285,7 @@ begin
   templatedir.value:= macros[sma_templatedir];
   targetosdir.value:= macros[sma_targetosdir];
    compiler.value:= macros[sma_compiler];
-   {
-   fpcdir.value := gINI.ReadString('Path', 'fpc_dir', '/usr/local/share/fpc/2.6.4/');
-   fpclibdir.value := gINI.ReadString('Path', 'fpclib_dir', '/usr/local/share/fpc/2.6.4/units/x86_64-freebsd/');
-   fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
-   docviewdir.value := gINI.ReadString('Path', 'docview_dir', '/usr/local/share/docview/');
-    msedir.value := gINI.ReadString('Path', 'mse_dir', '/usr/local/share/msegui/');
-    mselibdir.value := gINI.ReadString('Path', 'mselib_dir', '/usr/local/share/msegui/lib/common/');
-   syntaxdefdir.value := gINI.ReadString('Path', 'syntaxdef_dir', '/usr/local/share/ideu/syntaxdefs/');
-   templatedir.value := gINI.ReadString('Path', 'template_dir', '/usr/local/share/ideu/templates/'); 
-   targetosdir.value := gINI.ReadString('Target', 'osdir', 'freebsd'); 
-    compiler.value:= gINI.ReadString('Path', 'compiler', '/usr/local/share/fpc/2.6.4/ppcx64');
-  }
-  
+    
    {$ifdef polydev}
     fpguidir.value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
   {$else}

@@ -275,6 +275,38 @@ for int3:= 0 to high(compilerused) do begin
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value));
     end  else
     
+     if (trim(compilerused[int3]) = 'Pascal Compiler 5') or 
+    (trim(compilerused[int3]) = 'Pascal 5') then
+    begin
+     if  confcompilerfo.twinep5.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler5.value));
+    end  else
+    
+     if (trim(compilerused[int3]) = 'Pascal Compiler 6') or 
+    (trim(compilerused[int3]) = 'Pascal 6') then
+    begin
+     if  confcompilerfo.twinep5.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler6.value));
+    end  else
+    
+     if (trim(compilerused[int3]) = 'Pascal Compiler 7') or 
+    (trim(compilerused[int3]) = 'Pascal 7') then
+    begin
+     if  confcompilerfo.twinep7.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler7.value));
+    end  else
+    
+     if (trim(compilerused[int3]) = 'Pascal Compiler 8') or 
+    (trim(compilerused[int3]) = 'Pascal 8') then
+    begin
+     if  confcompilerfo.twinep8.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler8.value));
+    end  else
+    
      if (trim(compilerused[int3]) = 'C Compiler 1') or 
     (trim(compilerused[int3]) = 'C 1') then
     begin
@@ -305,6 +337,38 @@ for int3:= 0 to high(compilerused) do begin
      if  confcompilerfo.twinec4.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler4.value));
+    end else
+    
+     if (trim(compilerused[int3]) = 'C Compiler 5') or 
+    (trim(compilerused[int3]) = 'C 5') then
+    begin
+     if  confcompilerfo.twinec5.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler5.value));
+    end else
+    
+    if (trim(compilerused[int3]) = 'C Compiler 6') or 
+    (trim(compilerused[int3]) = 'C 6') then
+    begin
+     if  confcompilerfo.twinec6.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler6.value));
+    end else
+    
+    if (trim(compilerused[int3]) = 'C Compiler 7') or 
+    (trim(compilerused[int3]) = 'C 7') then
+    begin
+     if  confcompilerfo.twinec7.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler7.value));
+    end else
+    
+     if (trim(compilerused[int3]) = 'C Compiler 8') or 
+    (trim(compilerused[int3]) = 'C 8') then
+    begin
+     if  confcompilerfo.twinec8.value = true then
+     winestr := 'wine ';
+    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler8.value));
     end else
     
      if (trim(compilerused[int3]) = 'Java Compiler 1') or 
@@ -504,6 +568,22 @@ case acompilertag of
     if confcompilerfo.twinep4.value = true then winestr := 'wine ';
     commandcompiler := confcompilerfo.fpccompiler4.value;
     end;
+5 : begin
+    if confcompilerfo.twinep5.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.fpccompiler5.value;
+    end;
+6 : begin
+    if confcompilerfo.twinep6.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.fpccompiler6.value;
+    end;
+7 : begin
+    if confcompilerfo.twinep7.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.fpccompiler7.value;
+    end; 
+8 : begin
+    if confcompilerfo.twinep8.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.fpccompiler8.value;
+    end;
 end;
 end;
 
@@ -545,6 +625,22 @@ case acompilertag of
 4 : begin
     if confcompilerfo.twinec4.value = true then winestr := 'wine ';
     commandcompiler := confcompilerfo.ccompiler4.value;
+    end;
+5 : begin
+    if confcompilerfo.twinec5.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.ccompiler5.value;
+    end;
+6 : begin
+    if confcompilerfo.twinec6.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.ccompiler6.value;
+    end;
+7 : begin
+    if confcompilerfo.twinec7.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.ccompiler7.value;
+    end; 
+8 : begin
+    if confcompilerfo.twinec8.value = true then winestr := 'wine ';
+    commandcompiler := confcompilerfo.ccompiler8.value;
     end;
 end;
 end;
