@@ -128,8 +128,6 @@ type
    fpclibdir: tfilenameedit;
    fpcdir: tfilenameedit;
    tspacer1: tspacer;
-   targetosdir: tstringedit;
-   tsplitter2: tsplitter;
    target: tstringedit;
    exeext: tstringedit;
    tsplitter1: tsplitter;
@@ -142,6 +140,7 @@ type
    fpguidir: tfilenameedit;
    docviewdir: tfilenameedit;
    layoutdir: tfilenameedit;
+   targetosdir: tstringedit;
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
    procedure formoncreate(const sender: TObject);

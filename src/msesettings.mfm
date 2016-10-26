@@ -1,10 +1,10 @@
 object settingsfo: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 403
-  bounds_y = 49
+  bounds_x = 443
+  bounds_y = 30
   bounds_cx = 378
-  bounds_cy = 660
+  bounds_cy = 703
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -13,7 +13,7 @@ object settingsfo: tsettingsfo
     0
     0
     378
-    660
+    703
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
@@ -124,7 +124,7 @@ object settingsfo: tsettingsfo
     bounds_x = 1
     bounds_y = 27
     bounds_cx = 376
-    bounds_cy = 544
+    bounds_cy = 586
     anchors = [an_left, an_top, an_right]
     optionsscale = [osc_expandy, osc_shrinky]
     optionslayout = [lao_placey]
@@ -134,49 +134,14 @@ object settingsfo: tsettingsfo
       taborder = 9
       visible = True
       bounds_x = 0
-      bounds_y = 468
-      bounds_cx = 374
-      bounds_cy = 37
+      bounds_y = 507
+      bounds_cx = 371
+      bounds_cy = 40
       anchors = [an_left, an_top, an_right]
       optionsscale = [osc_expandy, osc_shrinky]
-      object targetosdir: tstringedit
-        Tag = 11
-        frame.caption = '${TARGETOSDIR}'
-        frame.localprops = []
-        frame.localprops1 = []
-        frame.outerframe = (
-          0
-          18
-          0
-          0
-        )
-        taborder = 2
-        hint = 'Default Target OS'
-        bounds_x = 202
-        bounds_y = -2
-        bounds_cx = 164
-        bounds_cy = 39
-        anchors = [an_left, an_top, an_right]
-        onsetvalue = setvalue
-        reffontheight = 15
-      end
-      object tsplitter2: tsplitter
-        color = -1879048189
-        taborder = 3
-        visible = False
-        bounds_x = 192
-        bounds_y = 16
-        bounds_cx = 10
-        bounds_cy = 20
-        options = [spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
-        linkleft = target
-        linkright = targetosdir
-        grip = stb_none
-        statfile = tstatfile1
-      end
       object target: tstringedit
         Tag = 10
-        frame.caption = '${TARGET}'
+        frame.caption = '${TARGET} Default target OS'
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
@@ -187,9 +152,9 @@ object settingsfo: tsettingsfo
         )
         taborder = 1
         hint = 'Default Target'
-        bounds_x = 98
-        bounds_y = -2
-        bounds_cx = 94
+        bounds_x = 133
+        bounds_y = 1
+        bounds_cx = 229
         bounds_cy = 39
         onsetvalue = setvalue
         reffontheight = 15
@@ -206,9 +171,9 @@ object settingsfo: tsettingsfo
           0
         )
         hint = 'Default Executable extension.'
-        bounds_x = 8
-        bounds_y = -2
-        bounds_cx = 80
+        bounds_x = 11
+        bounds_y = 0
+        bounds_cx = 116
         bounds_cy = 39
         onsetvalue = setvalue
         reffontheight = 15
@@ -226,7 +191,7 @@ object settingsfo: tsettingsfo
       )
       taborder = 10
       bounds_x = 8
-      bounds_y = 505
+      bounds_y = 547
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -254,7 +219,7 @@ object settingsfo: tsettingsfo
       taborder = 8
       hint = 'Path to debugger (gdb).'
       bounds_x = 8
-      bounds_y = 429
+      bounds_y = 468
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -284,7 +249,7 @@ object settingsfo: tsettingsfo
       taborder = 7
       hint = 'Path to compiler (ppc386).'
       bounds_x = 8
-      bounds_y = 390
+      bounds_y = 429
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -317,7 +282,7 @@ object settingsfo: tsettingsfo
       taborder = 6
       hint = 'Directory for component store files.'
       bounds_x = 8
-      bounds_y = 156
+      bounds_y = 195
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -354,7 +319,7 @@ object settingsfo: tsettingsfo
       taborder = 5
       hint = 'Directory for project template files.'
       bounds_x = 8
-      bounds_y = 273
+      bounds_y = 312
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -394,7 +359,7 @@ object settingsfo: tsettingsfo
       taborder = 4
       hint = 'Directory for syntax definition files.'
       bounds_x = 8
-      bounds_y = 312
+      bounds_y = 351
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -416,7 +381,7 @@ object settingsfo: tsettingsfo
     object mselibdir: tfilenameedit
       Tag = 3
       frame.colorclient = 16773360
-      frame.caption = '${MSELIBDIR} Library directory of MSEgui'
+      frame.caption = '${MSELIBDIR} Library of MSEgui'
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
@@ -561,7 +526,7 @@ object settingsfo: tsettingsfo
       taborder = 11
       hint = 'Root directory of fpGUI'
       bounds_x = 8
-      bounds_y = 195
+      bounds_y = 234
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -595,7 +560,7 @@ object settingsfo: tsettingsfo
       taborder = 12
       hint = 'Root directory of DocView'
       bounds_x = 8
-      bounds_y = 234
+      bounds_y = 273
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -626,7 +591,7 @@ object settingsfo: tsettingsfo
       taborder = 13
       hint = 'Directory for layout files.'
       bounds_x = 8
-      bounds_y = 351
+      bounds_y = 390
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -645,6 +610,28 @@ object settingsfo: tsettingsfo
       controller.ongetfilename = epandfilenamemacro
       reffontheight = 15
     end
+    object targetosdir: tstringedit
+      Tag = 11
+      frame.colorclient = 16773360
+      frame.caption = '${TARGETOSDIR} Target OS of MSEgui source'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 14
+      hint = 'Default Target OS'
+      bounds_x = 8
+      bounds_y = 156
+      bounds_cx = 357
+      bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
+      onsetvalue = setvalue
+      reffontheight = 15
+    end
   end
   object macrogrid: twidgetgrid
     frame.caption = 'Global Macros'
@@ -658,7 +645,7 @@ object settingsfo: tsettingsfo
     )
     taborder = 1
     bounds_x = 6
-    bounds_y = 571
+    bounds_y = 613
     bounds_cx = 359
     bounds_cy = 80
     bounds_cymin = 80
