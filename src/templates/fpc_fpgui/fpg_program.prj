@@ -17,8 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=${TEMPLATEDIR}/fpc_fpgui
-projectfilename=${TEMPLATEDIR}/fpc_fpgui/fpg_program.prj
+projectdir=/home/fred/ideu/src/templates/fpc_fpgui
+projectfilename=/home/fred/ideu/src/templates/fpc_fpgui/fpg_program.prj
 findinfiledialog=34
  [findinfileadialogfo.subdirs]
  value=0
@@ -79,7 +79,7 @@ replacedialog=15
  y=302
  cx=437
  cy=171
-options=104
+options=108
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
@@ -141,22 +141,26 @@ options=104
  x=0
  y=143
  xprop=1
- yprop=0.32808988764045
+ yprop=0.32882882882883
  [projectoptionsfo.macrogrid]
- propcolwidthref=547
+ propcolwidthref=495
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
  sortdescend4=0
  sortdescend5=0
- width6=146
  sortdescend6=0
- width7=535
  sortdescend7=0
+ sortdescend8=0
+ sortdescend9=0
+ width10=146
+ sortdescend10=0
+ width11=479
+ sortdescend11=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=1
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=724
  width0=47
@@ -245,16 +249,24 @@ makeoptions=7
  -B
  -O2 -XX -Xs -CX
  -vewnhibq
-compilerused=21
+compilerused=29
  ${COMPILER} (Default)
  Pascal 1
  Pascal 2
  Pascal 3
  Pascal 4
+ Pascal 5
+ Pascal 6
+ Pascal 7
+ Pascal 8
  C 1
  C 2
  C 3
  C 4
+ C 5
+ C 6
+ C 7
+ C 8
  Java 1
  Java 2
  Java 3
@@ -303,9 +315,11 @@ scriptaftercopy=
 newprojectfiles=2
  ${TEMPLATEDIR}/fpc_fpgui/default/fpg_program.pas
  ${TEMPLATEDIR}/fpc_fpgui/default/frm_main.pas
- 
-newprojectfilesdest=1
+
+newprojectfilesdest=2
  ${%PROJECTNAME%}.pas
+ frm_main.pas
+  
 newfinames=2
  Program
  Unit
@@ -324,10 +338,9 @@ newfonames=2
 newfonamebases=2
  
  
-newfosources=2
- ${TEMPLATEDIR}/fpc_fpgui/default/fpg_program.pas
-${TEMPLATEDIR}/fpc_fpgui/default/frm_main.pas
-newfoforms=2
+newfosources=1
+ ${TEMPLATEDIR}/fpc_fpgui/default/frm_main.pas 
+newfoforms=1
  
  
 forcezorder=-1
@@ -421,8 +434,16 @@ makeoptionson=7
  2
  48
  63
-compilerusedon=21
- 69631
+compilerusedon=29
+ 4095
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -444,14 +465,14 @@ compilerusedon=21
  0
  0
 debuggerusedon=6
- 69631
+ 4095
  0
  0
  0
  0
  0
 exeusedon=14
- 69631
+ 4095
  0
  0
  0
@@ -493,10 +514,14 @@ macrovalues=5
  win32
  /opt/FPC_Docs/inf/
 macrogroup=0
-groupcomments=6
+groupcomments=10
  Linux 64-bit
  Linux 32-bit
  Windows 32-bit
+ 
+ 
+ 
+ 
  
  
  
@@ -702,7 +727,7 @@ files=
  a=0,4132,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui_new/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -730,8 +755,8 @@ findhistory=7
 findoptions=1
 editpos=0
 sourcefiles=0
- relpaths=0
-ismoduletexts=2
+relpaths=0
+ismoduletexts=0
 modules=0
 moduleoptions=0
 visiblemodules=0
@@ -761,9 +786,9 @@ windowlayout=502
  rcx=0
  rcy=0
  children=2
-  basedock,0,19,956,585
   statdisp,0,1,956,18
- focusedchild=0
+  basedock,0,19,956,585
+ focusedchild=1
  wsize=0
  active=1
  visible=1

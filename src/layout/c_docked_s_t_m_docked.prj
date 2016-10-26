@@ -231,16 +231,24 @@ targpref=
 befcommand=0
 aftcommand=0
 makeoptions=0
-compilerused=21
+compilerused=29
  ${COMPILER} (Default)
  Pascal 1
  Pascal 2
  Pascal 3
  Pascal 4
+ Pascal 5
+ Pascal 6
+ Pascal 7
+ Pascal 8
  C 1
  C 2
  C 3
  C 4
+ C 5
+ C 6
+ C 7
+ C 8
  Java 1
  Java 2
  Java 3
@@ -376,8 +384,16 @@ moduletypes=0
 modulefiles=0
 befcommandon=0
 makeoptionson=0
-compilerusedon=21
+compilerusedon=29
  69631
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -584,7 +600,7 @@ files=
  a=0,4133,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui_new/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -623,14 +639,13 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=524
+windowlayout=523
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
  [mainfo]
  splitdir=0
- useroptions=838860927
- stackedunder=
+ useroptions=838860925
  parent=
  mdistate=0
  nx=0
@@ -644,15 +659,15 @@ windowlayout=524
  rcx=0
  rcy=0
  children=2
-  statdisp,0,1,962,18
   basedock,0,19,962,44
- focusedchild=1
+  statdisp,0,1,962,18
+ focusedchild=0
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
- useroptions=268451945
+ useroptions=805322857
  parent=
  mdistate=0
  nx=0
@@ -670,7 +685,7 @@ windowlayout=524
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=268451945
+ useroptions=805322857
  parent=
  mdistate=0
  nx=0
@@ -688,8 +703,8 @@ windowlayout=524
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=268451963
- stackedunder=disassfo
+ useroptions=805322875
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -716,7 +731,7 @@ windowlayout=524
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=symbolfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -750,7 +765,7 @@ windowlayout=524
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268484715
+ useroptions=805355627
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -764,9 +779,9 @@ windowlayout=524
  cy=352
  rcx=0
  rcy=0
- [projecttreefo.project_tree]
+ [projecttreefo.grid]
  propcolwidthref=1
- width0=141
+ width0=170
  sortdescend0=0
  width1=1
  sortdescend1=0
@@ -776,7 +791,7 @@ windowlayout=524
  rowheight=17
  [stackfo]
  splitdir=0
- useroptions=268460137
+ useroptions=805331049
  parent=
  mdistate=0
  nx=0
@@ -790,11 +805,11 @@ windowlayout=524
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
  [watchpointsfo]
  splitdir=0
- useroptions=268451945
+ useroptions=805322857
  parent=
  mdistate=0
  nx=0
@@ -852,7 +867,7 @@ windowlayout=524
  value=0
  [objectinspectorfo]
  splitdir=0
- useroptions=268451947
+ useroptions=805322859
  stackedunder=breakpointsfo
  parent=
  mdistate=0
@@ -877,8 +892,8 @@ windowlayout=524
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=268451963
- stackedunder=cpuc86_64fo
+ useroptions=805322875
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -918,7 +933,7 @@ windowlayout=524
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=268460137
+ useroptions=805331049
  parent=
  mdistate=3
  nx=0
@@ -935,7 +950,7 @@ windowlayout=524
  active=0
  visible=0
  [watchfo.grid]
- propcolwidthref=835
+ propcolwidthref=833
  values0=2
   -1
   -1
@@ -979,7 +994,7 @@ windowlayout=524
  rcy=0
  [componentstorefo]
  splitdir=0
- useroptions=268460155
+ useroptions=805331067
  stackedunder=
  parent=
  mdistate=0
@@ -1042,8 +1057,8 @@ windowlayout=524
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=268460139
- stackedunder=stackfo
+ useroptions=805331051
+ stackedunder=watchfo
  parent=
  mdistate=0
  nx=0
@@ -1132,7 +1147,7 @@ windowlayout=524
  [mainfo.panel2]
  splitdir=2
  useroptions=838893035
- stackedunder=mainfo
+ stackedunder=stackfo
  parent=
  mdistate=0
  nx=0

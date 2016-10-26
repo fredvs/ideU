@@ -587,18 +587,18 @@ libpath : msestring;
 begin
 
   {$IFDEF Windows}
-     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext\designer_ext_ideu.exe' ;
+     libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext\designer_ext.exe' ;
     {$endif}
     
      {$IFDEF linux}
-      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext_ideu' ;
+      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext' ;
     {$endif}
       
     {$IFDEF freebsd}
      {$ifdef polydev}
-       libpath :=  '/usr/local/share/designer_ext/designer_ext_ideu';
+       libpath :=  '/usr/local/share/designer_ext/designer_ext';
     {$else}
-        libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext_ideu';
+        libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin/designer_ext/designer_ext';
     {$endif}
     {$endif}
           

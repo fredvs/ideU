@@ -70,8 +70,7 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
-     
+                 'ppcx64','gdb','','x86_64-freebsd','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
   
    {$endif}
