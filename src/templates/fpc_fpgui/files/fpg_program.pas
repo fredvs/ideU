@@ -1,5 +1,3 @@
-// Do not forget to create directory /units into project folder.
-
 program ${%PROJECTNAME%}; 
 
 {$mode objfpc}{$H+}

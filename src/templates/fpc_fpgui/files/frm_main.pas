@@ -30,8 +30,7 @@ begin
   Name := 'MainForm';
   SetPosition(374, 228, 490, 258);
   WindowTitle := 'MainForm';
-  Hint := '';
-  WindowPosition := wpOneThirdDown;
+  WindowPosition := wpOneThirdDown;      
   {@VFD_BODY_END: MainForm}
   {%endregion}
 end;
