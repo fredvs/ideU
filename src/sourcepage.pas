@@ -93,8 +93,8 @@ type
    procedure showprocheaders(const apos: gridcoordty);
    procedure showsourceitems(const apos: gridcoordty);
    procedure showlink(const apos: gridcoordty);
-   procedure showsourcehint(const apos: gridcoordty; const values: stringarty);
    procedure setsyntaxdef(const value: filenamety);
+   procedure showsourcehint(const apos: gridcoordty; const values: stringarty);
    procedure updatelinedisp;
   protected
    finitialfilepath: filenamety;
@@ -110,6 +110,7 @@ type
    filechanged: boolean;
    ismoduletext: boolean;
    constructor create(aowner: tcomponent); override;
+   
    destructor destroy; override;
    procedure loadfile(value: filenamety); overload; //no const!
    procedure loadfile; overload; //loads if needed
@@ -173,6 +174,8 @@ uses
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
  mselatex,msesystypes;
+
+
 
 const
  pascaldelims = msestring(' :;+-*/(){},=<>' + c_linefeed + c_return + c_tab);

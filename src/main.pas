@@ -38,7 +38,7 @@ uses
  msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
  classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,sysutils,msesysenv,
  msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob, msestream,
- mseprocmonitorcomp,msesystypes,mserttistat,
+ mseprocmonitorcomp,msesystypes,mserttistat, msedatalist,
  mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
  msewidgets;
 
@@ -221,6 +221,7 @@ type
    procedure ideureadconfig;
    procedure loadconfigform(const sender: TObject);
    procedure onthetimer(const sender: TObject);
+   procedure syntaxdefload(const sender: TObject);
    
   private
    fstartcommand: startcommandty;
@@ -386,8 +387,11 @@ var
   
   // fred
   thetimer : TTimer;
+  thesdef : msestring = '';
 
  procedure doassistive;   
+ 
+ procedure sdefload(sdeffile : msestring);
  
  
 procedure handleerror(const e: exception; const text: string);
@@ -512,9 +516,34 @@ begin
 {$endif}
 
  loadconfigform(sender)
- 
+
 // sakloadlib;
 end;
+
+procedure sdefload(sdeffile : msestring);
+begin
+ sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(sdeffile));
+ sourcefo.activepage.updatestatvalues;
+end;
+
+procedure tmainfo.syntaxdefload(const sender: TObject);
+var
+han : integer;
+begin
+  openfile.controller.lastdir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '/syntaxdefs';
+  openfile.controller.captionopen := 'Load Syntax Definition file';
+  openfile.controller.filter := '*.sdef';
+ // openfile.controller.filterlist := '*.sdef';
+ 
+if openfile.execute = mr_ok then
+begin
+ sdefload(openfile.controller.filename);
+ thesdef := openfile.controller.filename ;
+ openfile.controller.captionopen := 'Open file';
+end;
+end;
+
+
 
 procedure tmainfo.onthetimer(const sender: TObject);
 var
@@ -1157,9 +1186,11 @@ begin
     end;
    end;
   end;
- end;
+  end;
   
  checksavecancel(result);
+ 
+ 
 end;
 
 procedure tmainfo.updatemodifiedforms;
@@ -2872,6 +2903,7 @@ begin
   except
   if  welcomeprj = false then application.handleexception(nil);
   end;
+
  end;
 end;
 
@@ -3677,7 +3709,7 @@ procedure tmainfo.loadwindowlayoutexe(const sender: TObject);
 var
  str1: ttextstream;
 begin
- if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(str_loadwindowlayout)],
+  if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(str_loadwindowlayout)],
           [c[ord(projectfiles)],c[ord(str_allfiles)]],['*.prj','*'],'prj',
           nil,nil,nil,[fa_all],[fa_hidden],
                         @windowlayouthistory) = mr_ok then begin

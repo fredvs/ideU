@@ -436,6 +436,7 @@ begin
    sourcefo.saveactivepage;
   end;
  end;
+ if thesdef <> '' then sdefload(thesdef);
 end;
 
 procedure tactionsmo.savecustom(const sender: tobject);
@@ -488,6 +489,7 @@ begin
   saveprojectoptions;
   updatemodifiedforms;
  end;
+ if thesdef <> '' then sdefload(thesdef);
 end;
 
 procedure tactionsmo.closeactonexecute(const sender: tobject);
@@ -532,6 +534,7 @@ procedure tactionsmo.toggleformunitonexecute(const sender: TObject);
 begin
  mainfo.toggleformunit;
 end;
+
 
 // fred
 

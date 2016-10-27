@@ -10,7 +10,7 @@ object mainfo: tmainfo
   visible = False
   bounds_x = 481
   bounds_y = 260
-  bounds_cx = 654
+  bounds_cx = 744
   bounds_cy = 222
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
@@ -25,7 +25,7 @@ object mainfo: tmainfo
   container.bounds = (
     0
     17
-    644
+    734
     205
   )
   dragdock.splitter_color = -1879048190
@@ -73,7 +73,7 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 19
-    bounds_cx = 644
+    bounds_cx = 734
     bounds_cy = 186
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
@@ -87,7 +87,7 @@ object mainfo: tmainfo
     taborder = 1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 644
+    bounds_cx = 734
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250
@@ -121,7 +121,7 @@ object mainfo: tmainfo
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
     onupdate = mainmenuonupdate
-    menu.submenu.count = 13
+    menu.submenu.count = 14
     menu.submenu.items = <    
       item
         submenu.count = 16
@@ -670,6 +670,11 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
+        caption = ' SynDef '
+        state = [as_localcaption, as_localonexecute]
+        onexecute = syntaxdefload
+      end    
+      item
         submenu.count = 28
         submenu.items = <        
           item
@@ -1203,7 +1208,9 @@ object mainfo: tmainfo
         caption = ' &About '
         state = [as_localcaption, as_localonexecute]
       end>
+    menu.state = [as_localonexecute]
     menu.coloractive = 15592941
+    menu.onexecute = syntaxdefload
     left = 99
     top = 87
   end

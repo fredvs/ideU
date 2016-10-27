@@ -62,8 +62,12 @@ findinfiledialog=70
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=1.1
+ value=syntaxdeffile
  history=20
+  syntaxdeffile
+  buttonok
+  setsyntax
+  syntax
   1.1
   sakit
   designer_ext
@@ -80,10 +84,6 @@ findinfiledialog=70
   (Default)
   3.0.0
   setcompiler
-  edit_compilernum
-  2.6.4
-  fpccompiler4
-  iconv_open
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -198,7 +198,7 @@ options=108
  sortdescend11=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -219,7 +219,7 @@ options=108
  index=1
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=204
@@ -263,8 +263,8 @@ programparameters=18
  cy=348
 settings=8
  [settingsfo]
- x=514
- y=30
+ x=819
+ y=40
  cx=377
  cy=700
  wsize=0
@@ -586,7 +586,8 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=9
+modulenames=12
+ ACTIONSMO
  CONFCOMPILERFO
  CONFFPGUIFO
  CONFIDEUFO
@@ -595,8 +596,11 @@ modulenames=9
  MAINFO
  SETTINGSFO
  PROJECTOPTIONSFO
+ SOURCEFO
+ SOURCEPAGE
  STACKFO
-moduletypes=9
+moduletypes=12
+ TACTIONSMO
  TCONFCOMPILERFO
  TCONFFPGUIFO
  TCONFIDEUFO
@@ -605,8 +609,11 @@ moduletypes=9
  TMAINFO
  TSETTINGSFO
  TPROJECTOPTIONSFO
+ TSOURCEFO
+ TSOURCEPAGE
  TSTACKFO
-modulefiles=9
+modulefiles=12
+ /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/conffpgui.mfm
  /home/fred/ideu/src/confideu.mfm
@@ -615,12 +622,14 @@ modulefiles=9
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msesettings.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/stackform.mfm
 befcommandon=0
 makeoptionson=5
  63
  0
- 62
+ 58
  62
  63
 compilerusedon=29
@@ -902,23 +911,23 @@ path=19
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/msegui/lib/common/kernel/linux/cwstring.pas
 line=19
- 770
+ 798
  2129
- 952
+ 955
  1095
  1195
  1181
  965
  1028
- 561
- 3441
+ 589
+ 3472
  644
  119
  1028
  2232
  2149
  2427
- 641
+ 669
  3215
  119
 address=19
@@ -1132,30 +1141,30 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=200
-finddtext=sma_target
+finddtext=saveactonexecute
 findhistory=20
+ saveactonexecute
+ sdefload
+ setsyntaxdef
+ saveactivepage
+ save
+ windowlayoutfil
+ buttonok
+ sourcepage
+ source
+ sakit
+ openfile
  sma_target
  compcom
  compiler
  customdomake
- sakit
  wine
  gettargetfile
  customdomak
  customcompile
  runcustomc
- customrun
- fpccompiler.v
- welcomeprj
- openproject(
- helloideu
- saveproject
- close(
- exceptioneventty
- close
- mainfoondestroy
 findoptions=1
-editpos=57
+editpos=76
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1203,16 +1212,35 @@ editpos=57
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 20,203
- 0,176
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,0
- 0,84
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,32
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1270,7 +1298,26 @@ bookmarks53=0
 bookmarks54=0
 bookmarks55=0
 bookmarks56=0
-sourcefiles=57
+bookmarks57=0
+bookmarks58=0
+bookmarks59=0
+bookmarks60=0
+bookmarks61=0
+bookmarks62=0
+bookmarks63=0
+bookmarks64=0
+bookmarks65=0
+bookmarks66=0
+bookmarks67=0
+bookmarks68=0
+bookmarks69=0
+bookmarks70=0
+bookmarks71=0
+bookmarks72=0
+bookmarks73=0
+bookmarks74=0
+bookmarks75=0
+sourcefiles=76
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1328,7 +1375,26 @@ sourcefiles=57
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/define.inc
  ${PROJECTDIR}/syntaxdefs/pascal_solarized.sdef
-relpaths=57
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/syntaxdefs/pascal_solarized.sdef
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/sourceform.pas
+ /home/fred/msegui/lib/common/designutils/msesyntaxpainter.pas
+ ${PROJECTDIR}/sourceform.mfm
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/ideU.pas
+ /home/fred/msegui/lib/common/dialogs/msefiledialog.pas
+ /home/fred/msegui/lib/common/dialogs/msefiledialog.mfm
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=76
  projectoptionsform.pas
  ideU.pas
  confcompiler.pas
@@ -1386,7 +1452,26 @@ relpaths=57
  ideU.pas
  define.inc
  syntaxdefs/pascal_solarized.sdef
-ismoduletexts=57
+ projectoptionsform.pas
+ sourceform.pas
+ sourcepage.pas
+ syntaxdefs/pascal_solarized.sdef
+ sourcepage.pas
+ sourceform.pas
+ msegui/lib/common/designutils/msesyntaxpainter.pas
+ sourceform.mfm
+ main.pas
+ sourceform.pas
+ sourcepage.pas
+ ideU.pas
+ msegui/lib/common/dialogs/msefiledialog.pas
+ msegui/lib/common/dialogs/msefiledialog.mfm
+ sourceform.pas
+ sourcepage.pas
+ actionsmodule.pas
+ sourceform.pas
+ actionsmodule.pas
+ismoduletexts=76
  0
  0
  0
@@ -1444,7 +1529,26 @@ ismoduletexts=57
  0
  0
  0
-modules=11
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ -1
+ 0
+ 0
+ 0
+ 0
+ 0
+ -1
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=12
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1456,7 +1560,8 @@ modules=11
  /home/fred/ideu/src/debuggerform.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/confmsegui.mfm
-moduleoptions=11
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=12
  0
  0
  0
@@ -1468,23 +1573,26 @@ moduleoptions=11
  0
  0
  0
-visiblemodules=11
  0
+visiblemodules=12
  0
- 0
- 0
+ -1
+ -1
+ -1
  0
  -1
  0
  0
- 0
- 0
- 0
-nomenumodules=11
- 0
- 0
  -1
  -1
+ 0
+ -1
+nomenumodules=12
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1493,11 +1601,20 @@ nomenumodules=11
  0
  0
 [sourcefo.files_tab]
-order=57
+order=76
  0
  1
  2
  3
+ 75
+ 73
+ 74
+ 71
+ 72
+ 69
+ 70
+ 68
+ 67
  4
  5
  6
@@ -1542,6 +1659,16 @@ order=57
  45
  46
  47
+ 57
+ 64
+ 58
+ 61
+ 59
+ 60
+ 65
+ 66
+ 62
+ 63
  48
  49
  50
@@ -1552,10 +1679,10 @@ order=57
  54
  55
 tabsize=60
-firsttab=47
-index=47
+firsttab=2
+index=6
 [layout]
-windowlayout=669
+windowlayout=688
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1568,17 +1695,17 @@ windowlayout=669
  ny=0
  ncx=0
  ncy=0
- x=105
- y=66
- cx=1161
+ x=205
+ y=25
+ cx=966
  cy=621
  rcx=0
  rcy=0
  children=2
-  statdisp,0,1,1151,18
-  basedock,0,19,1151,585
- focusedchild=1
- wsize=0
+  basedock,0,19,1356,682
+  statdisp,0,1,1356,18
+ focusedchild=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1692,7 +1819,7 @@ windowlayout=669
  x=0
  y=0
  cx=139
- cy=445
+ cy=542
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1702,8 +1829,8 @@ windowlayout=669
  width1=1
  sortdescend1=0
  sorted=0
- col=0
- row=3
+ col=-1073741823
+ row=-1073741823
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1742,7 +1869,7 @@ windowlayout=669
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=352
+ propcolwidthref=332
  sortdescend0=0
  values1=1
   0
@@ -1751,7 +1878,7 @@ windowlayout=669
  sortdescend1=0
  values2=1
   pinteger(0x126c6b4)^
- width2=158
+ width2=149
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1762,7 +1889,7 @@ windowlayout=669
  sortdescend5=0
  values6=1
   
- width6=184
+ width6=172
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1795,8 +1922,8 @@ windowlayout=669
  ny=0
  ncx=0
  ncy=0
- x=676
- y=148
+ x=670
+ y=179
  cx=316
  cy=484
  rcx=0
@@ -1805,10 +1932,10 @@ windowlayout=669
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=73
+ propcolwidthref=291
+ width0=69
  sortdescend0=0
- width1=227
+ width1=216
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1897,8 +2024,8 @@ windowlayout=669
  ncx=0
  ncy=0
  x=0
- y=497
- cx=1151
+ y=594
+ cx=1356
  cy=88
  rcx=0
  rcy=0
@@ -1968,7 +2095,7 @@ windowlayout=669
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_settingsfo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1998,7 +2125,7 @@ windowlayout=669
  ncy=0
  x=0
  y=0
- cx=1151
+ cx=1356
  cy=46
  rcx=0
  rcy=0
@@ -2014,8 +2141,8 @@ windowlayout=669
  ncy=0
  x=142
  y=0
- cx=1009
- cy=445
+ cx=1214
+ cy=542
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2050,14 +2177,14 @@ windowlayout=669
  ncy=0
  x=0
  y=49
- cx=1151
- cy=445
+ cx=1356
+ cy=542
  rcx=0
  rcy=0
  [_mse_confcompilerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_stackfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2076,7 +2203,7 @@ windowlayout=669
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_stackfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2085,13 +2212,13 @@ windowlayout=669
  ncy=0
  x=481
  y=260
- cx=664
+ cx=754
  cy=222
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_stackfo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2114,7 +2241,7 @@ windowlayout=669
  [_mse_settingsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2152,7 +2279,7 @@ windowlayout=669
  [_mse_conffpguifo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=_mse_confmseguifo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2180,17 +2307,17 @@ windowlayout=669
  ncy=0
  x=113
  y=114
- cx=974
- cy=51
+ cx=990
+ cy=49
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_confmseguifo_mse_
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=0
  nx=0
@@ -2205,7 +2332,7 @@ windowlayout=669
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_confmseguifo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2225,6 +2352,25 @@ windowlayout=669
  wsize=0
  active=0
  visible=0
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=143
+ y=107
+ cx=600
+ cy=217
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
