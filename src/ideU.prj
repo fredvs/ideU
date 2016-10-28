@@ -261,7 +261,12 @@ programparameters=18
  y=243
  cx=328
  cy=348
-settings=8
+settings=13
+ [settingsfo.tsplitter2]
+ x=191
+ y=16
+ xprop=0.54010695187166
+ yprop=0.97297297297297
  [settingsfo]
  x=819
  y=40
@@ -914,7 +919,7 @@ path=19
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/msegui/lib/common/kernel/linux/cwstring.pas
 line=19
- 792
+ 800
  2129
  955
  1095
@@ -922,15 +927,15 @@ line=19
  1181
  965
  1028
- 583
- 3473
+ 591
+ 3474
  644
  119
  1028
  2232
  2149
  2427
- 663
+ 671
  3215
  119
 address=19
@@ -1144,9 +1149,8 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=200
-finddtext=opensdef
+finddtext=setsyntaxdef
 findhistory=20
- opensdef
  setsyntaxdef
  saveactonexecute
  sdefload
@@ -1166,12 +1170,13 @@ findhistory=20
  gettargetfile
  customdomak
  customcompile
+ runcustomc
 findoptions=1
-editpos=80
+editpos=79
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,532
+ 0,537
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1245,9 +1250,8 @@ editpos=80
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,3315
+ 0,77
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1327,8 +1331,7 @@ bookmarks75=0
 bookmarks76=0
 bookmarks77=0
 bookmarks78=0
-bookmarks79=0
-sourcefiles=80
+sourcefiles=79
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1408,8 +1411,7 @@ sourcefiles=80
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/templateeditor.pas
- /home/fred/msegui/lib/common/kernel/msefileutils.pas
-relpaths=80
+relpaths=79
  projectoptionsform.pas
  ideU.pas
  confcompiler.pas
@@ -1489,8 +1491,7 @@ relpaths=80
  projectoptionsform.pas
  projectoptionsform.pas
  templateeditor.pas
- msegui/lib/common/kernel/msefileutils.pas
-ismoduletexts=80
+ismoduletexts=79
  0
  0
  0
@@ -1562,7 +1563,6 @@ ismoduletexts=80
  0
  0
  -1
- 0
  0
  0
  0
@@ -1628,7 +1628,7 @@ nomenumodules=13
  0
  0
 [sourcefo.files_tab]
-order=80
+order=79
  0
  1
  2
@@ -1642,7 +1642,6 @@ order=80
  71
  72
  69
- 79
  70
  68
  67
@@ -1710,7 +1709,7 @@ order=80
  54
  55
 tabsize=60
-firsttab=3
+firsttab=2
 index=3
 [layout]
 windowlayout=707
@@ -1737,7 +1736,7 @@ windowlayout=707
   basedock,0,19,956,585
  focusedchild=1
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1824,7 +1823,7 @@ windowlayout=707
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1953,9 +1952,9 @@ windowlayout=707
  ny=0
  ncx=0
  ncy=0
- x=748
- y=171
- cx=431
+ x=670
+ y=179
+ cx=316
  cy=484
  rcx=0
  rcy=0
@@ -1963,10 +1962,10 @@ windowlayout=707
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=406
- width0=187
+ propcolwidthref=306
+ width0=73
  sortdescend0=0
- width1=213
+ width1=227
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2126,7 +2125,7 @@ windowlayout=707
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_mainfo_mse_
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -2135,7 +2134,7 @@ windowlayout=707
  ncy=0
  x=428
  y=66
- cx=560
+ cx=440
  cy=129
  rcx=0
  rcy=0
@@ -2143,7 +2142,7 @@ windowlayout=707
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=1
  [debuggerfo]
  splitdir=0
  useroptions=122987
@@ -2241,8 +2240,8 @@ windowlayout=707
  ny=0
  ncx=0
  ncy=0
- x=607
- y=257
+ x=481
+ y=260
  cx=754
  cy=222
  rcx=0
@@ -2386,7 +2385,7 @@ windowlayout=707
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_templateeditorfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -2405,7 +2404,7 @@ windowlayout=707
  [_mse_templateeditorfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2419,7 +2418,7 @@ windowlayout=707
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
 [targetconsole]
 finddtext=

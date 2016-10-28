@@ -665,12 +665,12 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localonexecute]
             onexecute = loadwindowlayoutexe
           end>
-        caption = ' La&yout '
+        caption = ' Layo&ut '
         hint = ' Load layout for current project.'
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
-        caption = ' SynDef '
+        caption = ' S&yntax '
         state = [as_localcaption, as_localonexecute]
         onexecute = syntaxdefload
       end    
