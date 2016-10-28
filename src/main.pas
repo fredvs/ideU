@@ -223,6 +223,7 @@ type
    procedure ideureadconfig;
    procedure loadconfigform(const sender: TObject);
    procedure onthetimer(const sender: TObject);
+   procedure ontimersdef(const sender: TObject);
    procedure syntaxdefload(const sender: TObject);
    
   private
@@ -315,7 +316,6 @@ type
    setcompiler : integer;
    settypecompiler : integer;
    thetag : integer;
-   
    factivedesignmodule: pmoduleinfoty;
    fprojectloaded: boolean;
    errorformfilename: filenamety;
@@ -390,7 +390,8 @@ var
   // fred
   thetimer : TTimer;
   thesdef : msestring = '';
-
+  thesdeftmp : msestring = '';
+ 
  procedure doassistive;   
  
  procedure sdefload(sdeffile : msestring);
@@ -501,7 +502,6 @@ procedure tmainfo.mainfooncreate(const sender: tobject);
 begin
  designer.ongetmodulenamefile:= {$ifdef FPC}@{$endif}dofindmodulebyname;
  designer.ongetmoduletypefile:= {$ifdef FPC}@{$endif}dofindmodulebytype;
-
  designer.objformat:= of_fp;
  componentpalettefo.updatecomponentpalette(true);
  designnotifications.Registernotification(idesignnotification(self));
@@ -528,14 +528,33 @@ begin
  sourcefo.activepage.updatestatvalues;
 end;
 
-procedure tmainfo.syntaxdefload(const sender: TObject);
+procedure tmainfo.ontimersdef(const sender: TObject);
 begin
-opensdef.controller.lastdir := expandprmacros('${SYNTAXDEFDIR}') ;
+thetimer.enabled := false;
+if opensdef.controller.filename <> thesdeftmp then
+begin
+ thesdeftmp := opensdef.controller.filename ;
+ sdefload(opensdef.controller.filename);
+ end;
+thetimer.enabled := true;
+end;
+
+procedure tmainfo.syntaxdefload(const sender: TObject);
+
+begin
+  opensdef.controller.lastdir := expandprmacros('${SYNTAXDEFDIR}') ;
+
+//  thetimer.interval := 50000 ;
+//  thetimer.ontimer := @ontimersdef;
+//  thetimer.enabled := true;
  
+// if opensdef.execute(fdk_nodir) = mr_ok then
 if opensdef.execute = mr_ok then
 begin
  sdefload(opensdef.controller.filename);
  thesdef := opensdef.controller.filename ;
+ // thetimer.enabled := false;
+ // thesdeftmp := '';
 end;
 end;
 
@@ -561,7 +580,7 @@ fo_savepos,fo_savezorder,fo_savestate];
  templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
  mainfo.openproject(templatepath);
   gINI.WriteBool('General', 'FirstLoad', false) ;
- thetimer.free;
+  thetimer.free;
  {$else}
 templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/helloideu.prj' ;
  mainfo.openproject(templatepath);
@@ -608,7 +627,6 @@ procedure tmainfo.ideureadconfig();
 var
 libpath : msestring;
 begin
-
   {$IFDEF Windows}
      libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 'plugin\designer_ext\designer_ext.exe' ;
     {$endif}
