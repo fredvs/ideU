@@ -128,6 +128,7 @@ type
    basedock: tdockpanel;
    
    openfile: tfiledialog;
+   opensdef: tfiledialog;
 
    dummyimagelist: timagelist;
    vievmenuicons: timagelist;
@@ -206,6 +207,7 @@ type
    procedure basedockpaintexe(const sender: twidget; const acanvas: tcanvas);
    
    //fred
+   procedure picksdef(const sender: tobject; var avalue: msestring; var accept: boolean);
    procedure menuwindowlayoutexe(const sender: TObject);
    procedure viewconffpguiexecute(const sender: TObject);
    procedure viewconfmseguiexecute(const sender: TObject);
@@ -527,23 +529,15 @@ begin
 end;
 
 procedure tmainfo.syntaxdefload(const sender: TObject);
-var
-han : integer;
 begin
-  openfile.controller.lastdir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '/syntaxdefs';
-  openfile.controller.captionopen := 'Load Syntax Definition file';
-  openfile.controller.filter := '*.sdef';
- // openfile.controller.filterlist := '*.sdef';
+opensdef.controller.lastdir := expandprmacros('${SYNTAXDEFDIR}') ;
  
-if openfile.execute = mr_ok then
+if opensdef.execute = mr_ok then
 begin
- sdefload(openfile.controller.filename);
- thesdef := openfile.controller.filename ;
- openfile.controller.captionopen := 'Open file';
+ sdefload(opensdef.controller.filename);
+ thesdef := opensdef.controller.filename ;
 end;
 end;
-
-
 
 procedure tmainfo.onthetimer(const sender: TObject);
 var
@@ -1250,6 +1244,13 @@ begin
    objectinspectorfo.window.stackunder(factivedesignmodule^.designform.window);
   end;
  end;
+end;
+
+// fred
+procedure tmainfo.picksdef(const sender: tobject;
+  var avalue: msestring; var accept: boolean);
+begin
+sdefload(avalue) ;
 end;
 
 //debugger
