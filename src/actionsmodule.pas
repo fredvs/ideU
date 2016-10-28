@@ -21,7 +21,7 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform, dialogfiles,
   msefileutils,msedatamodules,mseglob,msestat,msegraphics,msegraphutils,
  mseguiglob,msemenus,msesys, msesysutils, msesimplewidgets,projecttreeform,
  msestringcontainer,targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;

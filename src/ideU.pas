@@ -28,7 +28,7 @@ uses
 {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
 
   // fred
-  confmsegui, confideu, conffpgui, confcompiler, confdebugger,
+  confmsegui, confideu, conffpgui, confcompiler, confdebugger, dialogfiles,
   
   mseskindesign,
   msegui,msegraphics,actionsmodule,sourceform,debuggerform,
@@ -80,9 +80,13 @@ begin
  application.createform(tmemoryfo, memoryfo);
  application.createform(tthreadsfo, threadsfo);
  application.createform(ttargetconsolefo,targetconsolefo);
+ application.createform(tdialogfilesfo,dialogfilesfo);
  
- confcompilerfo.visible := false;
- confdebuggerfo.visible := false;
+//  dialogfilesfo.visible := false;
+confcompilerfo.close;
+confdebuggerfo.close;
+// confcompilerfo.visible := false;
+// confdebuggerfo.visible := false;
  //confmseguifo.visible := false;
  //conffpguifo.visible := false;
  

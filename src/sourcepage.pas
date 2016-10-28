@@ -1300,7 +1300,8 @@ begin
    on e: exception do begin
     ffileloaderror:= true;
     application.showasyncexception(e,'');
-    hide;
+   // hide;
+   close;
  //   parentwidget:= nil;
     release;
    end;

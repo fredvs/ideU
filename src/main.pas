@@ -32,7 +32,7 @@ unit main;
 interface
 
 uses
- plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr,
+ plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse, msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,
  msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
@@ -128,7 +128,6 @@ type
    basedock: tdockpanel;
    
    openfile: tfiledialog;
-   opensdef: tfiledialog;
 
    dummyimagelist: timagelist;
    vievmenuicons: timagelist;
@@ -206,6 +205,7 @@ type
    procedure statafterread(const sender: TObject);
    procedure basedockpaintexe(const sender: twidget; const acanvas: tcanvas);
    
+  
    //fred
    procedure picksdef(const sender: tobject; var avalue: msestring; var accept: boolean);
    procedure menuwindowlayoutexe(const sender: TObject);
@@ -223,7 +223,6 @@ type
    procedure ideureadconfig;
    procedure loadconfigform(const sender: TObject);
    procedure onthetimer(const sender: TObject);
-   procedure ontimersdef(const sender: TObject);
    procedure syntaxdefload(const sender: TObject);
    
   private
@@ -389,8 +388,6 @@ var
   
   // fred
   thetimer : TTimer;
-  thesdef : msestring = '';
-  thesdeftmp : msestring = '';
  
  procedure doassistive;   
  
@@ -528,34 +525,16 @@ begin
  sourcefo.activepage.updatestatvalues;
 end;
 
-procedure tmainfo.ontimersdef(const sender: TObject);
-begin
-thetimer.enabled := false;
-if opensdef.controller.filename <> thesdeftmp then
-begin
- thesdeftmp := opensdef.controller.filename ;
- sdefload(opensdef.controller.filename);
- end;
-thetimer.enabled := true;
-end;
-
 procedure tmainfo.syntaxdefload(const sender: TObject);
-
 begin
-  opensdef.controller.lastdir := expandprmacros('${SYNTAXDEFDIR}') ;
-
-//  thetimer.interval := 50000 ;
-//  thetimer.ontimer := @ontimersdef;
-//  thetimer.enabled := true;
- 
-// if opensdef.execute(fdk_nodir) = mr_ok then
-if opensdef.execute = mr_ok then
-begin
- sdefload(opensdef.controller.filename);
- thesdef := opensdef.controller.filename ;
- // thetimer.enabled := false;
- // thesdeftmp := '';
+if dialogfilesfo.list_sdef.directory <> expandprmacros('${SYNTAXDEFDIR}') 
+then begin
+dialogfilesfo.list_sdef.directory := expandprmacros('${SYNTAXDEFDIR}') ;
+dialogfilesfo.list_sdef.readlist;
 end;
+//dialogfilesfo.show;
+dialogfilesfo.selected_sdef.text := '' ;
+dialogfilesfo.activate;
 end;
 
 procedure tmainfo.onthetimer(const sender: TObject);
@@ -571,7 +550,8 @@ begin
 thetimer.tag := 1;
 componentpalettefo.visible := false;
 objectinspectorfo.visible := false;
-visible := false;
+//visible := false;
+close;
 options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
 fo_savepos,fo_savezorder,fo_savestate];
 
@@ -587,25 +567,30 @@ templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/
  thetimer.interval := 3000000 ;
  thetimer.enabled := true;
   {$endif}
-
-visible := true; 
+activate;
+//visible := true; 
 end else
 begin
  thetimer.free;
  configureexecute(sender) ; 
- visible := false;
+ // visible := false;
+ close;
 templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
 
  mainfo.openproject(templatepath);
  
  gINI.WriteBool('General', 'FirstLoad', false) ;
- visible := true;
+ //visible := true;
+ activate;
 end; 
 end  else
 begin
-componentpalettefo.visible := false;
-objectinspectorfo.visible := false;
-visible := true;
+componentpalettefo.close;
+objectinspectorfo.close;
+//componentpalettefo.visible := false;
+//objectinspectorfo.visible := false;
+//visible := true;
+activate;
 end;
 
 {$ifdef polydev}
@@ -1257,7 +1242,8 @@ procedure Tmainfo.SelectionChanged(const ADesigner: IDesigner;
 begin
  if (aselection.Count > 0) and (factivedesignmodule <> nil) then begin
 //  objectinspectorfo.bringtofront;
-  objectinspectorfo.show;
+ // objectinspectorfo.show;
+ objectinspectorfo.activate;
   if not objectinspectorfo.active then begin
    objectinspectorfo.window.stackunder(factivedesignmodule^.designform.window);
   end;
@@ -2448,7 +2434,8 @@ end;
 procedure tmainfo.viewdebuggertoolbaronexecute(const sender: TObject);
 begin
  debuggerfo.window.bringtofront;
- debuggerfo.show;
+ //debuggerfo.show;
+ debuggerfo.activate;
 end;
 
 procedure tmainfo.mainonloaded(const sender: tobject);
@@ -3324,7 +3311,8 @@ begin
   fnoremakecheck:= false;
   messagefo.messages.lastrow;
   if projectoptions.o.closemessages then begin
-   messagefo.hide;
+  // messagefo.hide;
+  messagefo.close;
   end;
   
   /// fred debugger
