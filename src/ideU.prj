@@ -592,7 +592,7 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=15
+modulenames=14
  ACTIONSMO
  CONFCOMPILERFO
  CONFFPGUIFO
@@ -606,9 +606,8 @@ modulenames=15
  SOURCEFO
  SOURCEPAGE
  STACKFO
- TFO
  TEMPLATEEDITORFO
-moduletypes=15
+moduletypes=14
  TACTIONSMO
  TCONFCOMPILERFO
  TCONFFPGUIFO
@@ -622,9 +621,8 @@ moduletypes=15
  TSOURCEFO
  TSOURCEPAGE
  TSTACKFO
- TTFO
  TTEMPLATEEDITORFO
-modulefiles=15
+modulefiles=14
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/conffpgui.mfm
@@ -638,7 +636,6 @@ modulefiles=15
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/stackform.mfm
- /home/fred/ideu/src/t.mfm
  /home/fred/ideu/src/templateeditor.mfm
 befcommandon=0
 makeoptionson=5
@@ -1186,7 +1183,7 @@ findhistory=20
  source
  sakit
 findoptions=1
-editpos=97
+editpos=96
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1282,8 +1279,7 @@ editpos=97
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 30,253
- 0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1380,8 +1376,7 @@ bookmarks92=0
 bookmarks93=0
 bookmarks94=0
 bookmarks95=0
-bookmarks96=0
-sourcefiles=97
+sourcefiles=96
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1478,8 +1473,7 @@ sourcefiles=97
  ${PROJECTDIR}/ideU.prj
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/templates/fpc_mse/default.prj
- ${PROJECTDIR}/t.pas
-relpaths=97
+relpaths=96
  projectoptionsform.pas
  ideU.pas
  confcompiler.pas
@@ -1576,8 +1570,7 @@ relpaths=97
  ideU.prj
  main.pas
  templates/fpc_mse/default.prj
- t.pas
-ismoduletexts=97
+ismoduletexts=96
  0
  0
  0
@@ -1674,8 +1667,7 @@ ismoduletexts=97
  0
  0
  0
- 0
-modules=15
+modules=14
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1690,8 +1682,7 @@ modules=15
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/templateeditor.mfm
  /home/fred/msegui/lib/common/kernel/msestockobjects.mfm
- /home/fred/ideu/src/t.mfm
-moduleoptions=15
+moduleoptions=14
  0
  0
  0
@@ -1706,8 +1697,7 @@ moduleoptions=15
  0
  0
  0
- 0
-visiblemodules=15
+visiblemodules=14
  0
  -1
  -1
@@ -1722,9 +1712,7 @@ visiblemodules=15
  -1
  -1
  -1
- -1
-nomenumodules=15
- 0
+nomenumodules=14
  0
  0
  0
@@ -1740,7 +1728,7 @@ nomenumodules=15
  0
  0
 [sourcefo.files_tab]
-order=97
+order=96
  0
  1
  2
@@ -1769,7 +1757,6 @@ order=97
  93
  94
  95
- 96
  85
  84
  70
@@ -1839,10 +1826,10 @@ order=97
  54
  55
 tabsize=60
-firsttab=21
+firsttab=22
 index=28
 [layout]
-windowlayout=745
+windowlayout=726
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1866,7 +1853,7 @@ windowlayout=745
   statdisp,0,1,1081,18
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -2568,25 +2555,6 @@ windowlayout=745
  rcy=0
  wsize=0
  active=0
- visible=1
- [_mse_tfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=337
- y=266
- cx=110
- cy=100
- rcx=0
- rcy=0
- wsize=0
- active=1
  visible=1
 [targetconsole]
 finddtext=
