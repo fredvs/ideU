@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/layout
 projectfilename=/home/fred/ideu/src/layout/un_docked.prj
-options=104
+options=107
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
@@ -44,19 +44,19 @@ options=104
  width9=295
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=547
+ propcolwidthref=549
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=262
+ width3=263
  sortdescend3=0
- width4=275
+ width4=276
  sortdescend4=0
  sorted=0
- col=2
- row=0
+ col=0
+ row=-1073741823
  rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
@@ -81,7 +81,7 @@ options=104
  x=0
  y=121
  xprop=1
- yprop=0.24031007751938
+ yprop=0.24077669902913
  [projectoptionsfo.macrogrid]
  propcolwidthref=530
  sortdescend0=0
@@ -96,7 +96,7 @@ options=104
  sortdescend7=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=707
  width0=47
@@ -115,13 +115,16 @@ options=104
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=2
+ [projectoptionsfo.ttabwidget3]
+ firsttab=0
+ index=0
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=8
+ index=9
  [projectoptionsfo]
  stackedunder=
- x=403
- y=146
+ x=284
+ y=136
  cx=756
  cy=568
 settings=13
@@ -138,9 +141,89 @@ settings=13
  wsize=0
  active=1
  visible=1
+sourcefilemasks=0
+syntaxdeffiles=0
+filemasknames=0
+filemasks=0
+codetemplatedirs=0
+showgrid=1
+snaptogrid=1
+moveonfirstclick=1
+noformdesignerdocking=0
+componenthints=1
+gridsizex=8
+gridsizey=8
+autoindent=1
+blockindent=1
+linenumberson=0
+rightmarginon=1
+rightmarginchars=80
+scrollheight=0
+tabstops=4
+spacetabs=0
+showtabs=0
+tabindent=0
+editfontname=
+editfontheight=0
+editfontwidth=0
+editfontextraspace=0
+editfontcolor=-1879048183
+editbkcolor=-1879048186
+statementcolor=14745599
+pairmarkcolor=-1610612712
+editfontantialiased=1
+editmarkbrackets=1
+editmarkpairwords=1
+backupfilecount=2
+encoding=1
+eolstyle=1
+trimtrailingwhitespace=0
+debugcommand=
+debugoptions=
+debugtarget=
+runcommand=
+xtermcommand=xterm -S${PTSN}/${PTSH}
+remoteconnection=
+uploadcommand=
+gdbprocessor=auto
+gdbservercommand=
+gdbservercommandattach=
+beforeconnect=
+afterconnect=
+beforeload=
+afterload=
+beforerun=
+sourcebase=
+sourcedirs=0
+defines=0
+progparameters=
+progworkingdirectory=
+envvarnames=0
+envvarvalues=0
+defineson=0
+stoponexception=0
+valuehints=1
+activateonbreak=1
+raiseonbreak=1
+showconsole=0
+externalconsole=0
+settty=1
+gdbdownload=0
+downloadalways=0
+startupbkpt=0
+startupbkpton=0
+gdbsimulator=0
+gdbserverstartonce=0
+gdbloadtimeout=
+gdbserverwait=0
+nogdbserverexit=0
+gdbservertty=0
+exceptclassnames=0
+exceptignore=0
+nodebugbeginend=0
+fpcgdbworkaround=1
 mainfile=
 targetfile=
-messageoutputfile=
 makecommand=
 makedir=
 unitdirs=0
@@ -152,83 +235,29 @@ targpref=
 befcommand=0
 aftcommand=0
 makeoptions=0
-compilerused=29
- ${COMPILER} (Default)
- Pascal 1
- Pascal 2
- Pascal 3
- Pascal 4
- Pascal 5
- Pascal 6
- Pascal 7
- Pascal 8
- C 1
- C 2
- C 3
- C 4
- C 5
- C 6
- C 7
- C 8
- Java 1
- Java 2
- Java 3
- Java 4
- Python 1
- Python 2
- Python 3
- Python 4
- Other 1
- Other 2
- Other 3
- Other 4
-debuggerused=6
- ${DEBUGGER} (Default)
- Debugger 1
- Debugger 2
- Debugger 3
- Debugger 4
- None
-exeused=14
- ${EXEEXT} (Default)
- No Extension
- .exe
- .com
- .bin
- .prog
- .pyc
- .class
- .so
- .dll
- .lib
- .o
- .res
- .inf
-codetemplatedirs=0
-toolmenus=0
-toolfiles=0
-toolparams=0
+reversepathorder=0
+befcommandon=0
+makeoptionson=0
+aftcommandon=0
+unitdirson=0
+uid=0
+macroon=0
+macronames=0
+macrovalues=0
+groupcomments=6
+ 
+ 
+ 
+ 
+ 
+ 
+fontalias=0
 fontnames=0
-scriptbeforecopy=
-scriptaftercopy=
-newprojectfiles=0
-newprojectfilesdest=0
-newfinames=0
-newfifilters=0
-newfiexts=0
-newfisources=0
-newfonames=0
-newfonamebases=0
-newfosources=0
-newfoforms=0
-forcezorder=0
-stripmessageesc=0
-copymessages=0
-closemessages=1
-checkmethods=1
-colorerror=-1610612717
-colorwarning=-1610612712
-colornote=-1610612716
+fontancestors=0
+fontoptions=0
+fontheights=0
+fontwidths=0
+fontxscales=0
 usercolors=30
  0
  0
@@ -293,179 +322,58 @@ usercolorcomment=30
  
 formatmacronames=0
 formatmacrovalues=0
-settingsfile=
-settingseditor=0
-settingsdebugger=0
-settingsstorage=0
-settingsprojecttree=0
-settingsautoload=0
-settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
-befcommandon=0
-makeoptionson=0
-compilerusedon=29
- 69631
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-debuggerusedon=6
- 69631
- 0
- 0
- 0
- 0
- 0
-exeusedon=14
- 69631
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-aftcommandon=0
-unitdirson=0
-macroon=0
-macronames=0
-macrovalues=0
-macrogroup=0
-groupcomments=6
- 
- 
- 
- 
- 
- 
+scriptbeforecopy=
+scriptaftercopy=
+newprojectfiles=0
+newprojectfilesdest=0
+newfinames=0
+newfifilters=0
+newfiexts=0
+newfisources=0
+newfonames=0
+newfonamebases=0
+newfosources=0
+newfoforms=0
+expandprojectfilemacros=0
+loadprojectfile=0
+newinheritedforms=0
+toolmenus=0
+toolfiles=0
+toolparams=0
 toolsave=0
 toolhide=0
 toolparse=0
 toolmessages=0
 toolshortcuts=0
-fontalias=0
-fontancestors=0
-fontheights=0
-fontwidths=0
-fontoptions=0
-fontxscales=0
-expandprojectfilemacros=0
-loadprojectfile=0
-newinheritedforms=0
-uid=0
-sourcefilemasks=0
-syntaxdeffiles=0
-filemasknames=0
-filemasks=0
-showgrid=1
-snaptogrid=1
-moveonfirstclick=1
-noformdesignerdocking=0
-componenthints=1
-gridsizex=8
-gridsizey=8
-autoindent=1
-blockindent=1
-linenumberson=0
-rightmarginon=1
-rightmarginchars=80
-scrollheight=0
-tabstops=4
-spacetabs=0
-showtabs=0
-tabindent=0
-editfontname=
-editfontheight=0
-editfontwidth=0
-editfontextraspace=0
-editfontcolor=-1879048183
-editbkcolor=-1879048186
-statementcolor=14745599
-pairmarkcolor=-1610612712
-editfontantialiased=1
-editmarkbrackets=1
-editmarkpairwords=1
-fpgdesigner=1
-backupfilecount=2
-encoding=1
-trimtrailingwhitespace=0
-codetemplatedirs=0
-debugcommand=
-debugoptions=
-debugtarget=
-runcommand=
-xtermcommand=xterm -S${PTSN}/${PTSH}
-remoteconnection=
-uploadcommand=
-gdbprocessor=auto
-gdbservercommand=
-gdbservercommandattach=
-beforeconnect=
-afterconnect=
-beforeload=
-afterload=
-beforerun=
-sourcebase=
-sourcedirs=0
-defines=0
-progparameters=
-progworkingdirectory=
-envvarnames=0
-envvarvalues=0
-defineson=0
-stoponexception=0
-valuehints=1
-activateonbreak=1
-raiseonbreak=1
-showconsole=0
-externalconsole=0
-settty=1
-gdbdownload=0
-downloadalways=0
-startupbkpt=0
-startupbkpton=0
-gdbsimulator=0
-gdbserverstartonce=0
-gdbloadtimeout=
-gdbserverwait=0
-nogdbserverexit=0
-gdbservertty=0
-exceptclassnames=0
-exceptignore=0
-nodebugbeginend=0
-fpcgdbworkaround=1
+settingsfile=
+settingsautoload=0
+settingsautosave=0
+settingseditor=0
+settingsdebugger=0
+settingsmake=1
+settingsmacros=0
+settingsfontalias=0
+settingsusercolors=0
+settingsformatmacros=0
+settingstemplates=0
+settingstools=0
+settingsstorage=0
+settingscomponentstore=0
+settingsprojecttree=0
+settingslayout=0
+messageoutputfile=
+modulenames=0
+moduletypes=0
+modulefiles=0
+macrogroup=0
+forcezorder=0
+stripmessageesc=0
+copymessages=0
+closemessages=1
+checkmethods=1
+colorerror=-1610612717
+colorwarning=-1610612712
+colornote=-1610612716
 sigsettings=27
  1,1,T,F
  3,3,T,F
@@ -551,34 +459,57 @@ modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
-[sourcefo.files_tab]
+[sourcefo.tabwidget]
 tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=489
+windowlayout=516
+ [mainfo.openform]
+ filenames=0
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ filehistory=0
+ filefilterindex=0
+ filefilter=
+ [mainfo.projectfiledia]
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ [mainfo.openfile]
+ filenames=0
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ filehistory=0
+ filefilterindex=0
+ filefilter=
  [mainfo.basedock]
  splitdir=2
- useroptions=15488
+ useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=805306493
+ useroptions=805306491
+ stackedunder=messagefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=242
+ x=176
  y=24
  cx=670
  cy=38
  rcx=0
  rcy=0
- children=2
-  basedock,0,19,660,2
-  statdisp,0,1,660,18
- focusedchild=0
  wsize=0
  active=1
  visible=1
@@ -647,8 +578,8 @@ windowlayout=489
  value=0
  [disassfo]
  splitdir=0
- useroptions=268451947
- stackedunder=
+ useroptions=805322859
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -667,7 +598,7 @@ windowlayout=489
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=symbolfo
  parent=
  mdistate=0
  nx=0
@@ -683,7 +614,7 @@ windowlayout=489
  [projecttreefo]
  splitdir=0
  useroptions=805355627
- stackedunder=debuggerfo
+ stackedunder=sourcefo
  parent=
  mdistate=3
  nx=0
@@ -813,7 +744,7 @@ windowlayout=489
  [symbolfo]
  splitdir=0
  useroptions=805322875
- stackedunder=
+ stackedunder=componentstorefo
  parent=
  mdistate=0
  nx=0
@@ -888,7 +819,7 @@ windowlayout=489
  value=1
  [messagefo]
  splitdir=0
- useroptions=82027
+ useroptions=805388395
  stackedunder=
  parent=
  mdistate=3
@@ -903,12 +834,12 @@ windowlayout=489
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
  [componentstorefo]
  splitdir=0
  useroptions=805331067
- stackedunder=
+ stackedunder=projecttreefo
  parent=
  mdistate=0
  nx=0
@@ -971,7 +902,7 @@ windowlayout=489
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -991,16 +922,16 @@ windowlayout=489
  activetab=0
  [debuggerfo]
  splitdir=0
- useroptions=24683
- stackedunder=sourcefo
+ useroptions=268460139
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=234
- y=89
+ x=241
+ y=109
  cx=970
  cy=53
  rcx=0
@@ -1010,7 +941,7 @@ windowlayout=489
  visible=1
  [sourcefo]
  splitdir=0
- useroptions=16489
+ useroptions=805322857
  parent=
  mdistate=3
  nx=0
@@ -1026,6 +957,10 @@ windowlayout=489
  wsize=0
  active=0
  visible=1
+ [actionsmo.watchesonact]
+ checked=1
+ [actionsmo.bluedotsonact]
+ checked=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
