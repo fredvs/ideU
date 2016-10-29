@@ -29,11 +29,11 @@ findinfiledialog=71
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  history=6
@@ -63,8 +63,9 @@ findinfiledialog=71
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=dummyim
+ value=readdeffile
  history=20
+  readdeffile
   dummyim
   dummy
   syntaxdeffile
@@ -84,7 +85,6 @@ findinfiledialog=71
   designer_ext
   calltokens
   Pascal 4
-  target
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -590,12 +590,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
+modulenames=3
+ DIALOGFILESFO
  MAINFO
-moduletypes=1
+ SOURCEFO
+moduletypes=3
+ TDIALOGFILESFO
  TMAINFO
-modulefiles=1
+ TSOURCEFO
+modulefiles=3
+ /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=5
  63
@@ -888,7 +894,7 @@ path=22
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
 line=22
- 809
+ 812
  2129
  955
  1095
@@ -896,20 +902,20 @@ line=22
  1181
  965
  1028
- 600
- 3486
+ 603
+ 3489
  644
  119
  1028
  2232
  2149
  2427
- 680
+ 683
  3215
  119
- 528
- 599
- 580
+ 531
+ 602
+ 583
 address=22
  4795942
  4826658
@@ -1156,51 +1162,79 @@ findhistory=20
  save
  windowlayoutfil
 findoptions=1
-editpos=3
+editpos=7
  0,-1073741823
+ 0,8
  0,-1073741823
- 50,12
+ 0,24
+ 0,1
+ 0,6
+ 0,509
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ ${PROJECTDIR}/dialogfiles.pas
+ ${PROJECTDIR}/sourceform.pas
+ /home/fred/msegui/lib/common/designutils/msesyntaxpainter.pas
+ ${PROJECTDIR}/main.pas
+relpaths=7
  ideU.pas
  main.pas
  main.pas
-ismoduletexts=3
+ dialogfiles.pas
+ sourceform.pas
+ ../msegui/lib/common/designutils/msesyntaxpainter.pas
+ main.pas
+ismoduletexts=7
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/dialogfiles.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
+ -1
+ 0
+ -1
+ -1
+nomenumodules=4
+ 0
  -1
  0
  0
-nomenumodules=3
- 0
- -1
- -1
 [sourcefo.files_tab]
-order=3
+order=7
  0
  2
+ 3
+ 6
+ 4
+ 5
  1
 tabsize=60
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=517
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1265,7 +1299,7 @@ windowlayout=517
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -1667,7 +1701,7 @@ windowlayout=517
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1702,7 +1736,7 @@ windowlayout=517
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1713,6 +1747,25 @@ windowlayout=517
  y=203
  cx=754
  cy=222
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_dialogfilesfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=335
+ y=157
+ cx=563
+ cy=313
  rcx=0
  rcy=0
  wsize=0

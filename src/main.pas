@@ -520,7 +520,10 @@ end;
 
 procedure sdefload(sdeffile : msestring);
 begin
- sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(sdeffile));
+
+if han <> -1 then sourcefo.syntaxpainter.freedeffile(han); 
+ han := sourcefo.syntaxpainter.readdeffile(sdeffile);
+ sourcefo.activepage.edit.setsyntaxdef(han);
  sourcefo.activepage.updatestatvalues;
 end;
 
