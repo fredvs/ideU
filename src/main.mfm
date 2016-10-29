@@ -192,7 +192,9 @@ object mainfo: tmainfo
               end>
             caption = ' &New MSE'
             name = 'new'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
+            imagelist = vievmenuicons
+            imagenr = 0
           end        
           item
             submenu.count = 1
@@ -202,7 +204,9 @@ object mainfo: tmainfo
                 state = [as_localcaption]
               end>
             caption = ' New fp&GUI '
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
+            imagelist = vievmenuicons
+            imagenr = 21
           end        
           item
             submenu.count = 1
