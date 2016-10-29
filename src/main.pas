@@ -527,13 +527,21 @@ end;
 
 procedure tmainfo.syntaxdefload(const sender: TObject);
 begin
+dialogfilesfo.tag := 0 ;
+
+dialogfilesfo.list_sdef.show ;
+dialogfilesfo.list_layout.hide ;
+
+dialogfilesfo.caption := 'Load a Syntax Definition File'  ;
+
 if dialogfilesfo.list_sdef.directory <> expandprmacros('${SYNTAXDEFDIR}') 
 then begin
 dialogfilesfo.list_sdef.directory := expandprmacros('${SYNTAXDEFDIR}') ;
 dialogfilesfo.list_sdef.readlist;
 end;
-//dialogfilesfo.show;
-dialogfilesfo.selected_sdef.text := '' ;
+dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition of ' +
+dialogfilesfo.list_sdef.directory ;
+dialogfilesfo.selected_file.text := '' ;
 dialogfilesfo.activate;
 end;
 
@@ -3731,33 +3739,25 @@ end;
 
 // fred layout
 procedure tmainfo.menuwindowlayoutexe(const sender: TObject);
-var
- str1: ttextstream;
- strfile, strdir : msestring;
 begin
 
-case tmenuitem(sender).tag of
-0 : strfile := 'c_s_t_m_docked.prj';
-1 : strfile := 'c_s_m_docked.prj';
-2 : strfile := 'c_s_t_m_m_docked.prj';
-3 : strfile := 'c_s_m_m_docked.prj';
-4 : strfile := 'un_docked.prj';
-5 : strfile := 'c_docked_s_t_m_docked.prj';
-6 : strfile := 'c_m_docked_s_t_docked.prj';
+dialogfilesfo.tag := 1 ;
+
+dialogfilesfo.caption := 'Load a Layout File';
+
+dialogfilesfo.list_sdef.hide ;
+dialogfilesfo.list_layout.show ;
+
+if dialogfilesfo.list_layout.directory <> expandprmacros('${LAYOUTDIR}') 
+then begin
+dialogfilesfo.list_layout.directory := expandprmacros('${LAYOUTDIR}') ;
+dialogfilesfo.list_layout.readlist;
 end;
+dialogfilesfo.selected_file.frame.caption := 'Selected Layout File from ' +
+dialogfilesfo.list_layout.directory ;
+dialogfilesfo.selected_file.text := '' ;
+dialogfilesfo.activate;
 
-strdir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
-
-if fileexists(strdir + directoryseparator + 'layout'  + directoryseparator + strfile) then
-begin
-strfile := strdir + directoryseparator + 'layout'  + directoryseparator + strfile;
- str1:= ttextstream.create(strfile);
- try
-  loadwindowlayout(str1);
- finally
-  str1.destroy();
- end;
- end;
 end;
 
 procedure tmainfo.closeprojectactonexecute(const sender: TObject);

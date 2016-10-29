@@ -757,7 +757,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=0
+linenumberson=1
 rightmarginon=1
 rightmarginchars=80
 scrollheight=0
@@ -909,7 +909,7 @@ path=22
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
 line=22
- 800
+ 808
  2129
  955
  1095
@@ -917,20 +917,20 @@ line=22
  1181
  965
  1028
- 591
- 3477
+ 599
+ 3485
  644
  119
  1028
  2232
  2149
  2427
- 671
+ 679
  3215
  119
  529
- 590
- 571
+ 598
+ 579
 address=22
  4795942
  4826658
@@ -1154,8 +1154,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=200
-finddtext=setsyntaxdef
+finddtext=dialogf
 findhistory=20
+ dialogf
+ loadwindowlayout
  setsyntaxdef
  timer
  sakit
@@ -1174,10 +1176,8 @@ findhistory=20
  saveactivepage
  save
  windowlayoutfil
- buttonok
- sourcepage
 findoptions=1
-editpos=43
+editpos=45
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1199,7 +1199,8 @@ editpos=43
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 25,6
+ 0,6
+ 5,528
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1208,18 +1209,19 @@ editpos=43
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
- 0,0
- 0,0
- 0,520
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,8
- 0,0
- 0,40
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1264,7 +1266,9 @@ bookmarks39=0
 bookmarks40=0
 bookmarks41=0
 bookmarks42=0
-sourcefiles=43
+bookmarks43=0
+bookmarks44=0
+sourcefiles=45
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1308,7 +1312,9 @@ sourcefiles=43
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=43
+ ${PROJECTDIR}/dialogfiles.pas
+ ${PROJECTDIR}/dialogfiles.pas
+relpaths=45
  projectoptionsform.pas
  ideU.pas
  confcompiler.pas
@@ -1352,7 +1358,11 @@ relpaths=43
  projectoptionsform.pas
  dialogfiles.pas
  ideU.pas
-ismoduletexts=43
+ dialogfiles.pas
+ dialogfiles.pas
+ismoduletexts=45
+ 0
+ 0
  0
  0
  0
@@ -1437,7 +1447,7 @@ nomenumodules=9
  0
  0
 [sourcefo.files_tab]
-order=43
+order=45
  3
  6
  12
@@ -1461,6 +1471,7 @@ order=43
  20
  21
  22
+ 44
  23
  24
  29
@@ -1477,13 +1488,14 @@ order=43
  31
  32
  33
+ 43
  41
  42
  40
  28
 tabsize=60
-firsttab=34
-index=34
+firsttab=17
+index=22
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1498,8 +1510,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=235
- y=49
+ x=154
+ y=26
  cx=966
  cy=621
  rcx=0
@@ -1632,8 +1644,8 @@ windowlayout=631
  width1=1
  sortdescend1=0
  sorted=0
- col=0
- row=5
+ col=1
+ row=0
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1672,7 +1684,7 @@ windowlayout=631
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=352
+ propcolwidthref=332
  sortdescend0=0
  values1=1
   0
@@ -1681,7 +1693,7 @@ windowlayout=631
  sortdescend1=0
  values2=1
   pinteger(0x126c6b4)^
- width2=158
+ width2=149
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1692,7 +1704,7 @@ windowlayout=631
  sortdescend5=0
  values6=1
   
- width6=184
+ width6=172
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1736,9 +1748,9 @@ windowlayout=631
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=124
+ width0=73
  sortdescend0=0
- width1=176
+ width1=227
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2032,8 +2044,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=411
- y=210
+ x=406
+ y=176
  cx=545
  cy=313
  rcx=0

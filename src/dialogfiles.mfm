@@ -1,7 +1,7 @@
 object dialogfilesfo: tdialogfilesfo
   visible = False
-  bounds_x = 411
-  bounds_y = 210
+  bounds_x = 406
+  bounds_y = 176
   bounds_cx = 535
   bounds_cy = 313
   container.frame.localprops = []
@@ -16,8 +16,8 @@ object dialogfilesfo: tdialogfilesfo
   caption = 'Load a Syntax Definition File'
   moduleclassname = 'tmseform'
   object tbutton1: tbutton
-    bounds_x = 407
-    bounds_y = 16
+    bounds_x = 410
+    bounds_y = 20
     bounds_cx = 50
     bounds_cy = 21
     state = [as_localcaption, as_localonexecute]
@@ -27,7 +27,7 @@ object dialogfilesfo: tdialogfilesfo
   object tbutton2: tbutton
     taborder = 1
     bounds_x = 464
-    bounds_y = 16
+    bounds_y = 20
     bounds_cx = 56
     bounds_cy = 21
     state = [as_localcaption, as_localonexecute]
@@ -43,7 +43,7 @@ object dialogfilesfo: tdialogfilesfo
     bounds_y = 47
     bounds_cx = 527
     bounds_cy = 260
-    cellwidth = 254
+    cellwidth = 260
     cellheight = 19
     cellframe.colorframe = 16774630
     cellframe.localprops = [frl_colorframe]
@@ -51,7 +51,7 @@ object dialogfilesfo: tdialogfilesfo
     onselectionchanged = loaddef
     reffontheight = 15
   end
-  object selected_sdef: tedit
+  object selected_file: tedit
     frame.colorclient = 16774630
     frame.caption = 'Selected Syntax Definition File'
     frame.localprops = [frl_colorclient]
@@ -68,6 +68,23 @@ object dialogfilesfo: tdialogfilesfo
     bounds_cx = 394
     bounds_cy = 39
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
+    reffontheight = 15
+  end
+  object list_layout: tfilelistview
+    color = 16774630
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 4
+    bounds_x = 3
+    bounds_y = 47
+    bounds_cx = 526
+    bounds_cy = 260
+    cellwidth = 520
+    cellheight = 19
+    cellframe.colorframe = 16774630
+    cellframe.localprops = [frl_colorframe]
+    cellframe.localprops1 = []
+    onselectionchanged = loaddef
     reffontheight = 15
   end
 end

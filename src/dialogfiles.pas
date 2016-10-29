@@ -12,7 +12,8 @@ type
    tbutton1: tbutton;
    tbutton2: tbutton;
    list_sdef: tfilelistview;
-   selected_sdef: tedit;
+   selected_file: tedit;
+   list_layout: tfilelistview;
    procedure loaddef(const sender: tcustomlistview);
    procedure butok(const sender: TObject);
    procedure butcancel(const sender: TObject);
@@ -23,35 +24,59 @@ var
  
 implementation
 uses
- dialogfiles_mfm;
+ dialogfiles_mfm, main;
  
 procedure tdialogfilesfo.loaddef(const sender: tcustomlistview);
+var
+ str1: ttextstream;
+ 
 begin
-if list_sdef.selectednames[0] <> '' then
-begin
+
+if (tag = 0) and (list_sdef.selectednames[0] <> '') then
+ begin
+selected_file.text := list_sdef.selectednames[0] ;
 // list_sdef.directory := expandprmacros('${SYNTAXDEFDIR}') ;
-selected_sdef.text := list_sdef.selectednames[0] ;
-sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(list_sdef.directory+ directoryseparator +selected_sdef.text));
+sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(list_sdef.directory+ directoryseparator +selected_file.text));
 sourcefo.activepage.updatestatvalues;
 end;
-end; 
+ 
+ if (tag = 1) and (list_layout.selectednames[0] <> '') then
+ begin
+ selected_file.text := list_layout.selectednames[0] ;
+ str1:= ttextstream.create(list_layout.directory+ directoryseparator +selected_file.text);
+ try
+  mainfo.loadwindowlayout(str1);
+ finally
+  str1.destroy();
+ end;
+end;
+end;
 
 procedure tdialogfilesfo.butok(const sender: TObject);
 begin
-if selected_sdef.text <> '' then 
+if selected_file.text <> '' then 
 begin
-thesdef := list_sdef.directory+ directoryseparator +selected_sdef.text ;
+
+if tag = 0 then
+ begin
+thesdef := list_sdef.directory+ directoryseparator +selected_file.text ;
+end;
+
 end;
 close ;
 end;
 
 procedure tdialogfilesfo.butcancel(const sender: TObject);
 begin
-if (list_sdef.directory+ directoryseparator +selected_sdef.text <> thesdef) and (thesdef <> '') then 
+if tag = 0 then
+ begin
+if (list_sdef.directory+ directoryseparator +selected_file.text <> thesdef) and (thesdef <> '') then 
 begin
 sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(thesdef));
 sourcefo.activepage.updatestatvalues;
 end;
+end;
+
 close ;
 end;
 
