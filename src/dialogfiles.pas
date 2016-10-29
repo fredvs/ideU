@@ -11,9 +11,9 @@ type
  tdialogfilesfo = class(tmseform)
    tbutton1: tbutton;
    tbutton2: tbutton;
-   list_sdef: tfilelistview;
    selected_file: tedit;
    list_layout: tfilelistview;
+   list_sdef: tfilelistview;
    procedure loaddef(const sender: tcustomlistview);
    procedure butok(const sender: TObject);
    procedure butcancel(const sender: TObject);

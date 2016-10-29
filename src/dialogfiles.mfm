@@ -1,58 +1,67 @@
 object dialogfilesfo: tdialogfilesfo
   visible = False
-  bounds_x = 406
-  bounds_y = 176
-  bounds_cx = 535
+  bounds_x = 335
+  bounds_y = 157
+  bounds_cx = 553
   bounds_cy = 313
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    535
+    553
     313
   )
   optionswindow = [wo_dialog]
   caption = 'Load a Syntax Definition File'
+  icon.origformat = 'bmp'
+  icon.image = {
+    0000000000000000100000001000000050020000000000000000000000000000
+    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
+    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
+    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
+    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
+    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
+    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
+    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
+    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
+    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
+    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
+    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
+    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
+    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
+    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
+    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
+    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
+    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
+    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
+    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
+    FFFFFF02
+  }
   moduleclassname = 'tmseform'
   object tbutton1: tbutton
-    bounds_x = 410
+    bounds_x = 428
     bounds_y = 20
     bounds_cx = 50
     bounds_cy = 21
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'OK'
     onexecute = butok
   end
   object tbutton2: tbutton
     taborder = 1
-    bounds_x = 464
+    bounds_x = 488
     bounds_y = 20
-    bounds_cx = 56
+    bounds_cx = 58
     bounds_cy = 21
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'Cancel'
     onexecute = butcancel
   end
-  object list_sdef: tfilelistview
-    color = 16774630
-    frame.localprops = []
-    frame.localprops1 = []
-    taborder = 2
-    bounds_x = 3
-    bounds_y = 47
-    bounds_cx = 527
-    bounds_cy = 260
-    cellwidth = 260
-    cellheight = 19
-    cellframe.colorframe = 16774630
-    cellframe.localprops = [frl_colorframe]
-    cellframe.localprops1 = []
-    onselectionchanged = loaddef
-    reffontheight = 15
-  end
   object selected_file: tedit
-    frame.colorclient = 16774630
+    frame.colorclient = 16646135
     frame.caption = 'Selected Syntax Definition File'
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
@@ -62,28 +71,52 @@ object dialogfilesfo: tdialogfilesfo
       0
       0
     )
-    taborder = 3
+    taborder = 2
     bounds_x = 5
     bounds_y = 2
-    bounds_cx = 394
+    bounds_cx = 412
     bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
     reffontheight = 15
   end
   object list_layout: tfilelistview
-    color = 16774630
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 3
+    bounds_x = 6
+    bounds_y = 50
+    bounds_cx = 543
+    bounds_cy = 255
+    anchors = [an_left, an_top, an_right, an_bottom]
+    colorselect = 16753129
+    cellwidth = 520
+    cellheight = 19
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+      end>
+    onselectionchanged = loaddef
+    reffontheight = 15
+  end
+  object list_sdef: tfilelistview
     frame.localprops = []
     frame.localprops1 = []
     taborder = 4
-    bounds_x = 3
-    bounds_y = 47
-    bounds_cx = 526
-    bounds_cy = 260
-    cellwidth = 520
+    bounds_x = 6
+    bounds_y = 50
+    bounds_cx = 543
+    bounds_cy = 255
+    anchors = [an_left, an_top, an_right, an_bottom]
+    colorselect = 16760476
+    cellwidth = 262
     cellheight = 19
-    cellframe.colorframe = 16774630
-    cellframe.localprops = [frl_colorframe]
-    cellframe.localprops1 = []
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+      end>
     onselectionchanged = loaddef
     reffontheight = 15
   end

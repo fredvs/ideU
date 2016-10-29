@@ -532,6 +532,8 @@ dialogfilesfo.tag := 0 ;
 dialogfilesfo.list_sdef.show ;
 dialogfilesfo.list_layout.hide ;
 
+thesdef := projectoptions.e.t.syntaxdeffiles[0];
+
 dialogfilesfo.caption := 'Load a Syntax Definition File'  ;
 
 if dialogfilesfo.list_sdef.directory <> expandprmacros('${SYNTAXDEFDIR}') 
