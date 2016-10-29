@@ -314,7 +314,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 13
+        submenu.count = 14
         submenu.items = <        
           item
             action = actionsmo.selecteditpage
@@ -341,6 +341,15 @@ object mainfo: tmainfo
             action = actionsmo.copy
             caption = ' &Copy '
             state = [as_localcaption]
+          end        
+          item
+            caption = ' Copy &Word at Cursor '
+            state = [as_localcaption, as_localshortcut, as_localonexecute]
+            onexecute = selectwordactiononexecute
+            sc = (
+              1
+              24663
+            )
           end        
           item
             action = actionsmo.copylatexact

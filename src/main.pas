@@ -224,6 +224,7 @@ type
    procedure onthetimer(const sender: TObject);
    procedure syntaxdefload(const sender: TObject);
    
+   procedure selectwordactiononexecute(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -3788,5 +3789,10 @@ begin
  paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
 end;
 
+procedure tmainfo.selectwordactiononexecute(const sender: TObject);
+begin
+sourcefo.activepage.copywordatcursor();
+end;
+ 
 
 end.

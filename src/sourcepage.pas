@@ -69,6 +69,7 @@ type
    procedure sourcefoondeactivate(const sender: TObject);
    procedure gridoncellevent(const sender: TObject; var info: celleventinfoty);
    procedure editonkeydown(const sender: twidget; var info: keyeventinfoty);
+   
   private
    factiverow: integer;
    flasthint: gridcoordty;
@@ -138,6 +139,7 @@ type
    procedure doredo;
    procedure inserttemplate;
    procedure copylatex;
+   procedure copywordatcursor();
    function canchangenotify(const info: filechangeinfoty): boolean;
    function getbreakpointstate(arow: integer = -1): bkptstatety;
                      //-1 -> current row
@@ -179,6 +181,7 @@ uses
 
 const
  pascaldelims = msestring(' :;+-*/(){},=<>' + c_linefeed + c_return + c_tab);
+ selectdelims = pascaldelims+'.[]';
  nodelimstrings: array[0..0] of msestring = ('->'); //for c
  bmbitshift = 4;
  bmbitmask = integer($3ff0);
@@ -1166,6 +1169,12 @@ begin
  flasthint:= invalidcell;
  flasthintlength:= 0;
  application.hidehint;
+end;
+
+procedure tsourcepage.copywordatcursor();
+begin
+ edit.selectword(edit.editpos,selectdelims);
+ edit.copyselection();
 end;
 
 procedure tsourcepage.showlink(const apos: gridcoordty);
