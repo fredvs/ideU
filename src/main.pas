@@ -129,7 +129,6 @@ type
    
    openfile: tfiledialog;
 
-   dummyimagelist: timagelist;
    vievmenuicons: timagelist;
 
    viewmenu: tframecomp;

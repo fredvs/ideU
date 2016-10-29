@@ -82,14 +82,9 @@ begin
  application.createform(ttargetconsolefo,targetconsolefo);
  application.createform(tdialogfilesfo,dialogfilesfo);
  
-//  dialogfilesfo.visible := false;
 confcompilerfo.close;
 confdebuggerfo.close;
-// confcompilerfo.visible := false;
-// confdebuggerfo.visible := false;
- //confmseguifo.visible := false;
- //conffpguifo.visible := false;
- 
+
  application.createform(tmainfo, mainfo);
  createcpufo; 
   

@@ -20,6 +20,7 @@ type
  end;
 var
  dialogfilesfo: tdialogfilesfo;
+  
  thesdef : msestring = '';
  
 implementation
