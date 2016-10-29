@@ -61,7 +61,6 @@ procedure tdialogfilesfo.butok(const sender: TObject);
 begin
 if selected_file.text <> '' then 
 begin
-
 if tag = 0 then
  begin
 thesdef := list_sdef.directory+ directoryseparator +selected_file.text ;
@@ -77,11 +76,12 @@ if tag = 0 then
  begin
 if (list_sdef.directory+ directoryseparator +selected_file.text <> thesdef) and (thesdef <> '') then 
 begin
-sourcefo.activepage.edit.setsyntaxdef(sourcefo.syntaxpainter.readdeffile(thesdef));
+if han <> -1 then sourcefo.syntaxpainter.freedeffile(han);
+han := sourcefo.syntaxpainter.readdeffile(thesdef);
+sourcefo.activepage.edit.setsyntaxdef(han);
 sourcefo.activepage.updatestatvalues;
 end;
 end;
-
 close ;
 end;
 
