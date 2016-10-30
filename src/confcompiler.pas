@@ -10,13 +10,14 @@ uses
  msedragglob,msetabs,mseact;
  type
  tconfcompilerfo = class(tmseform)
-   tstatfile1: tstatfile;
-   ttabwidget1: ttabwidget;
-   ttabpage1: ttabpage;
-   ttabpage2: ttabpage;
-   ttabpage3: ttabpage;
-   ttabpage4: ttabpage;
-   ttabpage5: ttabpage;
+   tab_compilers: ttabwidget;
+   tab_pascal: ttabpage;
+   tab_c: ttabpage;
+   tab_java: ttabpage;
+   tab_python: ttabpage;
+   tab_other: ttabpage;
+   twinep1: tbooleanedit;
+   twinep2: tbooleanedit;
    twinep3: tbooleanedit;
    twinep4: tbooleanedit;
    twinep5: tbooleanedit;
@@ -30,8 +31,6 @@ uses
    fpccompiler4: tfilenameedit;
    fpccompiler3: tfilenameedit;
    fpccompiler2: tfilenameedit;
-   twinep2: tbooleanedit;
-   twinep1: tbooleanedit;
    tlabel2: tlabel;
    fpccompiler: tfilenameedit;
    othercompiler3: tfilenameedit;
@@ -77,7 +76,7 @@ uses
    pythoncompiler: tfilenameedit;
    tlabel3: tlabel;
    tlabel4: tlabel;
-   tbutton1: tbutton;
+   but_ok: tbutton;
    procedure closeapp(const sender: TObject);
  end;
 var

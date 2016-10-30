@@ -16,7 +16,6 @@ object confcompilerfo: tconfcompilerfo
   )
   optionswindow = [wo_taskbar]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
-  statfile = tstatfile1
   caption = 'Configuration of Compilers'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -74,7 +73,7 @@ object confcompilerfo: tconfcompilerfo
     00000000
   }
   moduleclassname = 'tmseform'
-  object ttabwidget1: ttabwidget
+  object tab_compilers: ttabwidget
     bounds_x = 4
     bounds_y = 4
     bounds_cx = 364
@@ -84,7 +83,7 @@ object confcompilerfo: tconfcompilerfo
     tab_frame.localprops = []
     tab_frame.localprops1 = []
     tab_size = 20
-    object ttabpage1: ttabpage
+    object tab_pascal: ttabpage
       frame.localprops = []
       frame.localprops1 = []
       taborder = 1
@@ -455,7 +454,7 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
     end
-    object ttabpage2: ttabpage
+    object tab_c: ttabpage
       frame.localprops = []
       frame.localprops1 = []
       taborder = 2
@@ -826,7 +825,7 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
     end
-    object ttabpage3: ttabpage
+    object tab_java: ttabpage
       frame.localprops = []
       frame.localprops1 = []
       taborder = 3
@@ -1021,7 +1020,7 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
     end
-    object ttabpage4: ttabpage
+    object tab_python: ttabpage
       frame.localprops = []
       frame.localprops1 = []
       taborder = 4
@@ -1216,7 +1215,7 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
     end
-    object ttabpage5: ttabpage
+    object tab_other: ttabpage
       frame.localprops = []
       frame.localprops1 = []
       taborder = 5
@@ -1402,7 +1401,7 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
     end
-    object tbutton1: tbutton
+    object but_ok: tbutton
       taborder = 6
       bounds_x = 325
       bounds_y = 2
@@ -1413,11 +1412,5 @@ object confcompilerfo: tconfcompilerfo
       caption = 'OK'
       onexecute = closeapp
     end
-  end
-  object tstatfile1: tstatfile
-    filename = 'confcomp.sta'
-    options = [sfo_memory]
-    left = 267
-    top = 43
   end
 end

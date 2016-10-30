@@ -8,8 +8,8 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints, go_showfloatcaption]
   visible = False
-  bounds_x = 63
-  bounds_y = 203
+  bounds_x = 325
+  bounds_y = 193
   bounds_cx = 744
   bounds_cy = 222
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -1082,12 +1082,12 @@ object mainfo: tmainfo
         submenu.count = 5
         submenu.items = <        
           item
-            caption = ' &General Settings '
+            caption = ' &General Setting '
             state = [as_localcaption, as_localonexecute]
             onexecute = configureexecute
           end        
           item
-            caption = ' &Extra Settings '
+            caption = ' &Extra Setting '
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfideuexecute
           end        
@@ -1096,12 +1096,16 @@ object mainfo: tmainfo
             submenu.items = <            
               item
                 caption = ' MSEgui '
-                state = [as_localcaption, as_localonexecute]
+                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+                imagelist = vievmenuicons
+                imagenr = 0
                 onexecute = viewconfmseguiexecute
               end            
               item
                 caption = ' fpGUI '
-                state = [as_localcaption, as_localonexecute]
+                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+                imagelist = vievmenuicons
+                imagenr = 21
                 onexecute = viewconffpguiexecute
               end>
             caption = ' Configure &Widgets'
@@ -1117,8 +1121,8 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfdebuggersexecute
           end>
-        caption = ' Sett&ings '
-        hint = 'General and extra settings.'
+        caption = ' Sett&ing '
+        hint = 'General and extra setting.'
         name = 'settings'
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    

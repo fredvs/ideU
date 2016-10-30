@@ -29,11 +29,11 @@ findinfiledialog=71
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  history=6
@@ -63,8 +63,9 @@ findinfiledialog=71
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=thesdef
+ value=settings
  history=20
+  settings
   thesdef
   readdeffile
   dummyim
@@ -84,7 +85,6 @@ findinfiledialog=71
   1.1
   sakit
   designer_ext
-  calltokens
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -258,8 +258,8 @@ programparameters=18
  rowheight=18
  [programparametersfo]
  stackedunder=
- x=272
- y=243
+ x=388
+ y=191
  cx=328
  cy=348
 settings=8
@@ -612,15 +612,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  CONFCOMPILERFO
  DIALOGFILESFO
-moduletypes=2
+ MAINFO
+moduletypes=3
  TCONFCOMPILERFO
  TDIALOGFILESFO
-modulefiles=2
+ TMAINFO
+modulefiles=3
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/main.mfm
 befcommandon=0
 makeoptionson=5
  63
@@ -1179,8 +1182,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=nozorderenable
+finddtext=tstatfile1
 findhistory=20
+ tstatfile1
  nozorderenable
  dialogf
  loadwindowlayout
@@ -1200,24 +1204,28 @@ findhistory=20
  saveactonexecute
  sdefload
  saveactivepage
- save
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
  0,-1073741823
- 0,71
+ 0,-1073741823
+ 0,7
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confcompiler.pas
-relpaths=3
+ ${PROJECTDIR}/main.pas
+relpaths=4
  dialogfiles.pas
  main.pas
  confcompiler.pas
-ismoduletexts=3
+ main.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1234,13 +1242,13 @@ moduleoptions=5
  0
  0
 visiblemodules=5
- 0
+ -1
  0
  0
  -1
  -1
 nomenumodules=5
- -1
+ 0
  -1
  -1
  0
@@ -1248,7 +1256,7 @@ nomenumodules=5
 [sourcefo.files_tab]
 tabsize=60
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=555
  [mainfo.basedock]
@@ -1263,8 +1271,8 @@ windowlayout=555
  ny=0
  ncx=0
  ncy=0
- x=274
- y=72
+ x=219
+ y=55
  cx=966
  cy=621
  rcx=0
@@ -1315,7 +1323,7 @@ windowlayout=555
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -1490,9 +1498,9 @@ windowlayout=555
  ny=0
  ncx=0
  ncy=0
- x=949
- y=130
- cx=316
+ x=601
+ y=103
+ cx=602
  cy=484
  rcx=0
  rcy=0
@@ -1500,10 +1508,10 @@ windowlayout=555
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=120
+ propcolwidthref=592
+ width0=382
  sortdescend0=0
- width1=180
+ width1=204
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1759,15 +1767,15 @@ windowlayout=555
  ny=0
  ncx=0
  ncy=0
- x=63
- y=203
+ x=325
+ y=193
  cx=754
  cy=222
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=805322875
