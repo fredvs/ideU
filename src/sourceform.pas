@@ -102,6 +102,7 @@ type
    procedure insguiexec(const sender: TObject);
    procedure convpasex(const sender: TObject);
    procedure insuidexec(const sender: TObject);
+   procedure stephintev(const sender: TObject; var info: hintinfoty);
   private
    fasking: boolean;
    fgdbpage: tsourcepage;
@@ -1565,6 +1566,12 @@ begin
    result:= getpascalvarname(edit,edit.editpos,gridcoord1);
   end;
  end;
+end;
+
+procedure tsourcefo.stephintev(const sender: TObject; var info: hintinfoty);
+begin
+ info.caption:= info.caption + '('+
+      encodeshortcutname(tstockglyphbutton(sender).shortcut)+').';
 end;
 
 end.

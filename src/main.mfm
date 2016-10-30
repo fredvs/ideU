@@ -345,7 +345,7 @@ object mainfo: tmainfo
           item
             caption = ' Copy &Word at Cursor '
             state = [as_localcaption, as_localshortcut, as_localonexecute]
-            onexecute = selectwordactiononexecute
+            onexecute = copywordatcur
             sc = (
               1
               24663

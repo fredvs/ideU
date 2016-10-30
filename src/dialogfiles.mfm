@@ -1,7 +1,7 @@
 object dialogfilesfo: tdialogfilesfo
   visible = False
-  bounds_x = 335
-  bounds_y = 157
+  bounds_x = 246
+  bounds_y = 156
   bounds_cx = 553
   bounds_cy = 313
   container.frame.localprops = []
@@ -60,10 +60,26 @@ object dialogfilesfo: tdialogfilesfo
     caption = 'Cancel'
     onexecute = butcancel
   end
+  object list_files: tfilelistview
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 2
+    bounds_x = 4
+    bounds_y = 49
+    bounds_cx = 543
+    bounds_cy = 255
+    anchors = [an_left, an_top, an_right, an_bottom]
+    colorselect = 16760476
+    colorglyph = 16449400
+    cellwidth = 262
+    cellheight = 19
+    optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
+    onselectionchanged = loaddef
+    reffontheight = 15
+  end
   object selected_file: tedit
-    frame.colorclient = 16646135
     frame.caption = 'Selected Syntax Definition File'
-    frame.localprops = [frl_colorclient]
+    frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
       0
@@ -71,53 +87,13 @@ object dialogfilesfo: tdialogfilesfo
       0
       0
     )
-    taborder = 2
-    bounds_x = 5
+    taborder = 3
+    bounds_x = 6
     bounds_y = 2
-    bounds_cx = 412
+    bounds_cx = 414
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
-    reffontheight = 15
-  end
-  object list_layout: tfilelistview
-    frame.localprops = []
-    frame.localprops1 = []
-    taborder = 3
-    bounds_x = 6
-    bounds_y = 50
-    bounds_cx = 543
-    bounds_cy = 255
-    anchors = [an_left, an_top, an_right, an_bottom]
-    colorselect = 16753129
-    cellwidth = 520
-    cellheight = 19
-    fixrows.count = 1
-    fixrows.items = <    
-      item
-        height = 17
-      end>
-    onselectionchanged = loaddef
-    reffontheight = 15
-  end
-  object list_sdef: tfilelistview
-    frame.localprops = []
-    frame.localprops1 = []
-    taborder = 4
-    bounds_x = 6
-    bounds_y = 50
-    bounds_cx = 543
-    bounds_cy = 255
-    anchors = [an_left, an_top, an_right, an_bottom]
-    colorselect = 16760476
-    cellwidth = 262
-    cellheight = 19
-    fixrows.count = 1
-    fixrows.items = <    
-      item
-        height = 17
-      end>
-    onselectionchanged = loaddef
     reffontheight = 15
   end
 end

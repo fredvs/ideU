@@ -29,11 +29,11 @@ findinfiledialog=71
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  history=6
@@ -63,8 +63,9 @@ findinfiledialog=71
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=readdeffile
+ value=thesdef
  history=20
+  thesdef
   readdeffile
   dummyim
   dummy
@@ -84,7 +85,6 @@ findinfiledialog=71
   sakit
   designer_ext
   calltokens
-  Pascal 4
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -220,7 +220,7 @@ options=108
  index=1
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=204
@@ -356,6 +356,28 @@ bmpfiledialog=18
   /home/fred/ideu/src/image/view1.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
+codetemplateselect=21
+ [msetemplateselectfo.grid]
+ propcolwidthref=528
+ width0=60
+ sortdescend0=0
+ width1=252
+ sortdescend1=0
+ width2=51
+ sortdescend2=0
+ width3=51
+ sortdescend3=0
+ width4=51
+ sortdescend4=0
+ width5=51
+ sortdescend5=0
+ sortdescend6=0
+ [msetemplateselectfo]
+ stackedunder=
+ x=398
+ y=233
+ cx=569
+ cy=277
 mainfile=ideU.pas
 targetfile=ideU
 messageoutputfile=
@@ -590,21 +612,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=1
  DIALOGFILESFO
- MAINFO
- SOURCEFO
- SOURCEPAGE
-moduletypes=4
+moduletypes=1
  TDIALOGFILESFO
- TMAINFO
- TSOURCEFO
- TSOURCEPAGE
-modulefiles=4
+modulefiles=1
  /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=5
  63
@@ -850,7 +863,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=1
 [breakpoints]
-on=22
+on=25
  0
  0
  0
@@ -873,7 +886,10 @@ on=22
  0
  0
  0
-path=22
+ 0
+ 0
+ 0
+path=25
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -896,30 +912,36 @@ path=22
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
-line=22
- 813
+ /home/fred/ideu/src/actionsmodule.pas
+ /home/fred/ideu/src/dialogfiles.pas
+ /home/fred/ideu/src/main.pas
+line=25
+ 812
  2129
- 955
+ 964
  1095
  1195
  1181
  965
  1028
- 604
- 3490
+ 603
+ 3489
  644
  119
  1028
  2232
  2149
  2427
- 684
+ 683
  3215
  119
- 532
- 603
- 584
-address=22
+ 534
+ 602
+ 583
+ 450
+ 45
+ 3746
+address=25
  4795942
  4826658
  4643185
@@ -942,7 +964,10 @@ address=22
  4783967
  0
  0
-addbkpt=22
+ 0
+ 0
+ 0
+addbkpt=25
  0
  0
  0
@@ -965,7 +990,10 @@ addbkpt=22
  0
  0
  0
-ignore=22
+ 0
+ 0
+ 0
+ignore=25
  0
  0
  0
@@ -988,7 +1016,13 @@ ignore=22
  0
  0
  0
-condition=22
+ 0
+ 0
+ 0
+condition=25
+ 
+ 
+ 
  
  
  
@@ -1141,7 +1175,7 @@ workdirparamhistory=0
 envvarons=0
 [edit]
 hintwidth=314
-hintheight=200
+hintheight=19
 finddtext=dialogf
 findhistory=20
  dialogf
@@ -1165,107 +1199,46 @@ findhistory=20
  save
  windowlayoutfil
 findoptions=1
-editpos=11
+editpos=2
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,208
+ 14,3741
 bookmarks0=0
 bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-sourcefiles=11
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/dialogfiles.pas
- ${PROJECTDIR}/sourceform.pas
- /home/fred/msegui/lib/common/designutils/msesyntaxpainter.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/msesyntaxpainter_ideu.pas
+sourcefiles=2
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourcepage.pas
-relpaths=11
- ideU.pas
- main.pas
- main.pas
- dialogfiles.pas
- sourceform.pas
- msegui/lib/common/designutils/msesyntaxpainter.pas
- main.pas
- msesyntaxpainter_ideu.pas
+relpaths=2
  dialogfiles.pas
  main.pas
- sourcepage.pas
-ismoduletexts=11
+ismoduletexts=2
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=5
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=5
+moduleoptions=4
  0
  0
  0
  0
+visiblemodules=4
  0
-visiblemodules=5
- -1
  0
- -1
- -1
- -1
-nomenumodules=5
  0
  -1
- 0
- 0
+nomenumodules=4
+ -1
+ -1
+ -1
  0
 [sourcefo.files_tab]
-order=11
- 0
- 2
- 3
- 6
- 4
- 5
- 9
- 10
- 1
- 7
- 8
 tabsize=60
-firsttab=3
-index=7
+firsttab=0
+index=1
 [layout]
-windowlayout=555
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1278,8 +1251,8 @@ windowlayout=555
  ny=0
  ncx=0
  ncy=0
- x=109
- y=99
+ x=238
+ y=80
  cx=966
  cy=621
  rcx=0
@@ -1412,8 +1385,8 @@ windowlayout=555
  width1=1
  sortdescend1=0
  sorted=0
- col=0
- row=12
+ col=1
+ row=0
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1516,9 +1489,9 @@ windowlayout=555
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=126
+ width0=73
  sortdescend0=0
- width1=174
+ width1=227
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1732,7 +1705,7 @@ windowlayout=555
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1767,7 +1740,7 @@ windowlayout=555
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_dialogfilesfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1782,27 +1755,8 @@ windowlayout=555
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_dialogfilesfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=335
- y=157
- cx=563
- cy=313
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=805322875
  stackedunder=mainfo
@@ -1812,10 +1766,10 @@ windowlayout=555
  ny=0
  ncx=0
  ncy=0
- x=143
- y=107
- cx=600
- cy=217
+ x=246
+ y=156
+ cx=563
+ cy=313
  rcx=0
  rcy=0
  wsize=0

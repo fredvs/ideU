@@ -223,8 +223,7 @@ type
    procedure loadconfigform(const sender: TObject);
    procedure onthetimer(const sender: TObject);
    procedure syntaxdefload(const sender: TObject);
-   
-   procedure selectwordactiononexecute(const sender: TObject);
+   procedure copywordatcur(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -530,24 +529,22 @@ end;
 
 procedure tmainfo.syntaxdefload(const sender: TObject);
 begin
+if assigned(sourcefo.activepage) then begin
 dialogfilesfo.tag := 0 ;
 
-dialogfilesfo.list_sdef.show ;
-dialogfilesfo.list_layout.hide ;
+dialogfilesfo.list_files.cellwidth := 264 ;
 
 thesdef := projectoptions.e.t.syntaxdeffiles[0];
 
 dialogfilesfo.caption := 'Load a Syntax Definition File'  ;
 
-if dialogfilesfo.list_sdef.directory <> expandprmacros('${SYNTAXDEFDIR}') 
-then begin
-dialogfilesfo.list_sdef.directory := expandprmacros('${SYNTAXDEFDIR}') ;
-dialogfilesfo.list_sdef.readlist;
-end;
+dialogfilesfo.list_files.path := expandprmacros('${SYNTAXDEFDIR}') ;
+
 dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition of ' +
-dialogfilesfo.list_sdef.directory ;
+dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
 dialogfilesfo.activate;
+end;
 end;
 
 procedure tmainfo.onthetimer(const sender: TObject);
@@ -3750,16 +3747,12 @@ dialogfilesfo.tag := 1 ;
 
 dialogfilesfo.caption := 'Load a Layout File';
 
-dialogfilesfo.list_sdef.hide ;
-dialogfilesfo.list_layout.show ;
+dialogfilesfo.list_files.cellwidth := 524 ;
 
-if dialogfilesfo.list_layout.directory <> expandprmacros('${LAYOUTDIR}') 
-then begin
-dialogfilesfo.list_layout.directory := expandprmacros('${LAYOUTDIR}') ;
-dialogfilesfo.list_layout.readlist;
-end;
+dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
+
 dialogfilesfo.selected_file.frame.caption := 'Selected Layout File from ' +
-dialogfilesfo.list_layout.directory ;
+dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
 dialogfilesfo.activate;
 
@@ -3789,10 +3782,10 @@ begin
  paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
 end;
 
-procedure tmainfo.selectwordactiononexecute(const sender: TObject);
+procedure tmainfo.copywordatcur(const sender: TObject);
 begin
-sourcefo.activepage.copywordatcursor();
+ sourcefo.activepage.copywordatcursor();
 end;
- 
+
 
 end.

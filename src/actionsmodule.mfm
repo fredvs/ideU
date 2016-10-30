@@ -1,7 +1,7 @@
 object actionsmo: tactionsmo
   bounds_cx = 879
   bounds_cy = 439
-  left = 245
+  left = 246
   top = 216
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
@@ -3409,5 +3409,28 @@ object actionsmo: tactionsmo
     onexecute = savecustom
     left = 498
     top = 332
+  end
+  object comment: taction
+    onexecute = commentonexecute
+    onupdate = enablecomment
+    left = 659
+    top = 65
+  end
+  object uncomment: taction
+    onexecute = uncommentonexecute
+    onupdate = enableuncomment
+    left = 597
+    top = 105
+  end
+  object copyword: taction
+    caption = 'Copy &Word at Cursor'
+    options = [ao_globalshortcut]
+    onexecute = selectwordactiononexecute
+    left = 611
+    top = 204
+    sc = (
+      1
+      24663
+    )
   end
 end

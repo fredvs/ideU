@@ -43,7 +43,6 @@ type
    edit: tsyntaxedit;
    dataicon: tdataicon;
    pathdisp: tstringedit;
-  
    linedisp: tlabel;
    
    procedure ontimerhide(const Sender: TObject);
@@ -111,7 +110,6 @@ type
    filechanged: boolean;
    ismoduletext: boolean;
    constructor create(aowner: tcomponent); override;
-   
    destructor destroy; override;
    procedure loadfile(value: filenamety); overload; //no const!
    procedure loadfile; overload; //loads if needed
@@ -140,6 +138,10 @@ type
    procedure inserttemplate;
    procedure copylatex;
    procedure copywordatcursor();
+   function cancomment(): boolean;
+   function canuncomment(): boolean;
+   procedure commentselection();
+   procedure uncommentselection();
    function canchangenotify(const info: filechangeinfoty): boolean;
    function getbreakpointstate(arow: integer = -1): bkptstatety;
                      //-1 -> current row
@@ -1733,6 +1735,102 @@ end;
 procedure tsourcepage.copylatex;
 begin
  copytoclipboard(richstringtolatex(edit.selectedrichtext));
+end;
+
+function tsourcepage.cancomment(): boolean;
+begin
+ result:= edit.hasselection and (edit.selectstart.col = 0) and 
+                                                  (edit.selectend.col = 0);
+end;
+
+function tsourcepage.canuncomment(): boolean;
+var
+ po1,pe: prichstringty;
+ start,stop: int32;
+begin
+ result:= cancomment();
+ if result then begin
+  edit.getselectedrows(start,stop);
+  po1:= edit.datalist.getitempo(start);
+  pe:= po1 + stop - start;
+  while po1 <= pe do begin
+   if (length(po1^.text) < 2) or (po1^.text[1] <> '/') or 
+                                            (po1^.text[2] <> '/') then begin
+    result:= false;
+    break;
+   end;
+   inc(po1);
+  end;
+ end;
+end;
+
+procedure tsourcepage.commentselection();
+var
+ mstr1: msestring;
+ i1: int32;
+ start,stop: int32;
+begin
+ if cancomment() then begin
+  edit.getselectedrows(start,stop);
+  edit.editor.begingroup();
+  mstr1:= edit.selectedtext;
+  insert('//',mstr1,1);
+  i1:= 3;
+  while mstr1[i1] <> #0 do begin
+   if mstr1[i1] = c_return then begin
+    inc(i1);
+   end;
+   if mstr1[i1] = c_linefeed then begin
+    inc(i1);
+    if mstr1[i1] = #0 then begin
+     break;
+    end;
+    insert('//',mstr1,i1);    
+   end;
+   inc(i1);
+  end;
+  source_editor.beginupdate();
+  edit.deleteselection();
+  edit.inserttext(mstr1,true);
+  source_editor.endupdate();
+  edit.editor.endgroup();
+  edit.refreshsyntax(start,stop-start);
+ end;
+end;
+
+procedure tsourcepage.uncommentselection();
+var
+ mstr1: msestring;
+ i1: int32;
+ start,stop: int32;
+begin
+ if canuncomment() then begin
+  edit.getselectedrows(start,stop);
+  edit.editor.begingroup();
+  mstr1:= edit.selectedtext;
+  delete(mstr1,1,2);
+  i1:= 1;
+  while mstr1[i1] <> #0 do begin
+   if mstr1[i1] = c_return then begin
+    inc(i1);
+   end;
+   if mstr1[i1] = c_linefeed then begin
+    inc(i1);
+    if mstr1[i1] = #0 then begin
+     break;
+    end;
+    delete(mstr1,i1,2);
+    dec(i1);
+   end;
+   inc(i1);
+  end;
+  source_editor.beginupdate();
+  edit.deleteselection();
+  edit.inserttext(mstr1,true);
+  source_editor.endupdate();
+  edit.editor.endgroup();
+  edit.refreshsyntax(start,stop-start);
+ end;
 end;
 
 end.

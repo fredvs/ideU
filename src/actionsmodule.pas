@@ -21,10 +21,11 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform, dialogfiles,
-  msefileutils,msedatamodules,mseglob,msestat,msegraphics,msegraphutils,
- mseguiglob,msemenus,msesys, msesysutils, msesimplewidgets,projecttreeform,
- msestringcontainer,targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob;
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, debuggerform,
+ dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,
+ msegraphutils,mseguiglob,msemenus,msesys, msesysutils, msesimplewidgets,
+ projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
+ mseificompglob,mseifiglob;
  
 type
  stringconsts = (
@@ -222,6 +223,7 @@ type
    tool7: taction;
    tool8: taction;
    tool9: taction;
+   
 
    customrun: taction;
    assistive: taction;
@@ -230,6 +232,10 @@ type
    projectcustomcompile: taction;
    custmakemenu: taction;
    customsave: taction;
+   comment: taction;
+   uncomment: taction;
+   copyword: taction;
+   
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -333,6 +339,11 @@ type
    procedure findcompexe(const sender: TObject);
    procedure findcompallexe(const sender: TObject);
    procedure forcezorderexe(const sender: TObject);
+   procedure commentonexecute(const sender: TObject);
+   procedure uncommentonexecute(const sender: TObject);
+   procedure enablecomment(const sender: tcustomaction);
+   procedure enableuncomment(const sender: tcustomaction);
+   procedure selectwordactiononexecute(const sender: TObject);
    
   private
    function filterfindcomp(const acomponent: tcomponent): boolean;
@@ -436,7 +447,7 @@ begin
    sourcefo.saveactivepage;
   end;
  end;
- if thesdef <> '' then sdefload(thesdef);
+ if (thesdef <> '') and (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) then sdefload(thesdef);
 end;
 
 procedure tactionsmo.savecustom(const sender: tobject);
@@ -489,7 +500,7 @@ begin
   saveprojectoptions;
   updatemodifiedforms;
  end;
- if thesdef <> '' then sdefload(thesdef);
+ if (thesdef <> '') and (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) then sdefload(thesdef);
 end;
 
 procedure tactionsmo.closeactonexecute(const sender: tobject);
@@ -736,6 +747,34 @@ end;
 procedure tactionsmo.uppercaseexecute(const sender: TObject);
 begin
  sourcefo.activepage.edit.uppercase;
+end;
+
+procedure tactionsmo.enablecomment(const sender: tcustomaction);
+begin
+ enableonselect(sender);
+ sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
+end;
+
+
+procedure tactionsmo.selectwordactiononexecute(const sender: TObject);
+begin
+ sourcefo.activepage.copywordatcursor();
+end;
+
+procedure tactionsmo.enableuncomment(const sender: tcustomaction);
+begin
+ enableonselect(sender);
+ sender.enabled:= sender.enabled and  sourcefo.activepage.canuncomment();
+end;
+
+procedure tactionsmo.commentonexecute(const sender: TObject);
+begin
+ sourcefo.activepage.commentselection();
+end;
+
+procedure tactionsmo.uncommentonexecute(const sender: TObject);
+begin
+ sourcefo.activepage.uncommentselection();
 end;
 
 procedure tactionsmo.enableonselect(const sender: tcustomaction);
