@@ -612,11 +612,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
+modulenames=2
+ CONFCOMPILERFO
  DIALOGFILESFO
-moduletypes=1
+moduletypes=2
+ TCONFCOMPILERFO
  TDIALOGFILESFO
-modulefiles=1
+modulefiles=2
+ /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/dialogfiles.mfm
 befcommandon=0
 makeoptionson=5
@@ -1176,8 +1179,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=dialogf
+finddtext=nozorderenable
 findhistory=20
+ nozorderenable
  dialogf
  loadwindowlayout
  setsyntaxdef
@@ -1197,48 +1201,56 @@ findhistory=20
  sdefload
  saveactivepage
  save
- windowlayoutfil
 findoptions=1
-editpos=2
+editpos=3
  0,-1073741823
- 14,3741
+ 0,-1073741823
+ 0,71
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/main.pas
-relpaths=2
+ ${PROJECTDIR}/confcompiler.pas
+relpaths=3
  dialogfiles.pas
  main.pas
-ismoduletexts=2
+ confcompiler.pas
+ismoduletexts=3
  0
  0
-modules=4
+ 0
+modules=5
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
-moduleoptions=4
+ /home/fred/ideu/src/confcompiler.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  0
  0
  0
  -1
-nomenumodules=4
+ -1
+nomenumodules=5
  -1
  -1
  -1
+ 0
  0
 [sourcefo.files_tab]
 tabsize=60
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=536
+windowlayout=555
  [mainfo.basedock]
  splitdir=2
  useroptions=15488
@@ -1251,8 +1263,8 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=238
- y=80
+ x=274
+ y=72
  cx=966
  cy=621
  rcx=0
@@ -1478,8 +1490,8 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=670
- y=179
+ x=949
+ y=130
  cx=316
  cy=484
  rcx=0
@@ -1489,9 +1501,9 @@ windowlayout=536
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=73
+ width0=120
  sortdescend0=0
- width1=227
+ width1=180
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1658,8 +1670,8 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=428
- y=66
+ x=885
+ y=34
  cx=440
  cy=129
  rcx=0
@@ -1668,7 +1680,7 @@ windowlayout=536
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=1
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=122987
@@ -1759,7 +1771,7 @@ windowlayout=536
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_confcompilerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1770,6 +1782,25 @@ windowlayout=536
  y=156
  cx=563
  cy=313
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confcompilerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=447
+ y=150
+ cx=382
+ cy=399
  rcx=0
  rcy=0
  wsize=0
