@@ -431,7 +431,11 @@ begin
    sourcefo.saveactivepage;
   end;
  end;
- if (thesdef <> '') and (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) then sdefload(thesdef);
+ if (thesdef <> '') and
+  (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) and
+ (theactivepage = sourcefo.activepage.filepath + 
+ sourcefo.activepage.filename)
+  then sdefload(thesdef);
 end;
 
 procedure tactionsmo.savecustom(const sender: tobject);
@@ -484,7 +488,12 @@ begin
   saveprojectoptions;
   updatemodifiedforms;
  end;
- if (thesdef <> '') and (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) then sdefload(thesdef);
+ if (thesdef <> '') and 
+ (thesdef <> projectoptions.e.t.syntaxdeffiles[0])
+  and
+ (theactivepage = sourcefo.activepage.filepath + 
+ sourcefo.activepage.filename)
+  then sdefload(thesdef);
 end;
 
 procedure tactionsmo.closeactonexecute(const sender: tobject);
