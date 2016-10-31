@@ -170,7 +170,9 @@ procedure LoadfpgDesigner(const AfpgFilename: string);
  var
   dataf : string ;
  begin
- if ((iffpgdconsumed = false) and (AfpgFilename = 'quit')) or
+ if fileexists(conffpguifo.fpguidesigner.value) then
+ begin
+  if ((iffpgdconsumed = false) and (AfpgFilename = 'quit')) or
  ((iffpgdconsumed = false) and (AfpgFilename = 'closeall')) or
  ((iffpgdconsumed = false) and (AfpgFilename = 'hideit'))
   then
@@ -183,7 +185,7 @@ procedure LoadfpgDesigner(const AfpgFilename: string);
   RunWithoutDebug(dataf, ' ' + AfpgFilename) ;
   end;
  end;
-
+end;
 /////////
 
  //fpGUI designer

@@ -522,7 +522,7 @@ thesdef := projectoptions.e.t.syntaxdeffiles[0];
 dialogfilesfo.caption := 'Load a Syntax Definition File'  ;
 
 dialogfilesfo.list_files.path := expandprmacros('${SYNTAXDEFDIR}') ;
-
+dialogfilesfo.list_files.mask := '*.sdef';
 dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition of ' +
 dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
@@ -543,8 +543,7 @@ begin
 thetimer.tag := 1;
 componentpalettefo.visible := false;
 objectinspectorfo.visible := false;
-//visible := false;
-close;
+visible := false;
 options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
 fo_savepos,fo_savezorder,fo_savestate];
 
@@ -566,8 +565,7 @@ end else
 begin
  thetimer.free;
  configureexecute(sender) ; 
- // visible := false;
- close;
+ visible := false;
 templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
 
  mainfo.openproject(templatepath);
@@ -3745,7 +3743,7 @@ dialogfilesfo.tag := 1 ;
 dialogfilesfo.caption := 'Load a Layout File';
 
 dialogfilesfo.list_files.cellwidth := 524 ;
-
+dialogfilesfo.list_files.mask := '*.prj';
 dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
 
 dialogfilesfo.selected_file.frame.caption := 'Selected Layout File from ' +

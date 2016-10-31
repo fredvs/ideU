@@ -6,7 +6,7 @@ uses
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
  msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,mseificomp,
  mseificompglob,mseifiglob,mselistbrowser,msestatfile,msestream,msestrings,
- msesys,sysutils,msesimplewidgets, sourceform;
+ msesys,sysutils,msesimplewidgets, sourceform, commandorform;
 type
  tdialogfilesfo = class(tmseform)
    tbutton1: tbutton;
@@ -49,8 +49,9 @@ if assigned(list_files.selectednames) and (tag = 1) then
  selected_file.text := list_files.selectednames[0] ;
  str1:= ttextstream.create(list_files.directory+ directoryseparator +selected_file.text);
  try
+ debuggerfo.close;
   mainfo.loadwindowlayout(str1);
- finally
+  finally
   str1.destroy();
  end;
 end;

@@ -1,7 +1,7 @@
 object dialogfilesfo: tdialogfilesfo
   visible = False
-  bounds_x = 246
-  bounds_y = 156
+  bounds_x = 428
+  bounds_y = 193
   bounds_cx = 553
   bounds_cy = 313
   container.frame.localprops = []
@@ -13,6 +13,7 @@ object dialogfilesfo: tdialogfilesfo
     313
   )
   optionswindow = [wo_dialog]
+  options = [fo_screencentered]
   caption = 'Load a Syntax Definition File'
   icon.origformat = 'bmp'
   icon.image = {

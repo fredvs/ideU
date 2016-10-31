@@ -3,9 +3,6 @@
 
 
 
-
-
-
                        Welcome in ideU world...
                           
                           
@@ -14,14 +11,5 @@
                                     
                      You may check your settings...
                
-                       
-                                  
-        
-        
-                                   
              
-                                    
-     
-     
-     
-                                                                                      
+                                                                           
