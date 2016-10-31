@@ -1,19 +1,3 @@
-{ MSEide Copyright (c) 1999-2014 by Martin Schreiber
-    
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-}
 unit sourceform;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
@@ -21,7 +5,7 @@ unit sourceform;
 interface
 
 uses
- confideu, msesettings, sysutils, msetimer, 
+ confideu, ideusettings, sysutils, msetimer, 
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
  msebitmap,msetabs,sourcepage,mseglob,msetypes,msestrings,mseguiglob,
  msegui,msesyntaxpainter,msemenus,mseactions,msestat,
@@ -201,7 +185,7 @@ function locateerrormessage(const text: msestring; var apage: tsourcepage;
 
 implementation
 uses
- sourceform_mfm,msefileutils,mseformatstr,
+ sourceform_mfm,msefileutils,mseformatstr, dialogfiles, 
  projectoptionsform,main,mseeditglob,watchform,msesys,msewidgets,msedesigner,
  selecteditpageform,sourceupdate,mseclasses,msearrayutils,
  msebits,msesysutils,mseintegerenter,panelform;
@@ -497,6 +481,7 @@ destructor tsourcefo.destroy;
 begin
 thetimer.Enabled := False;
 thetimer.Free;
+if han <> -1 then syntaxpainter.freedeffile(han);
  //hidesourcehint;
  inherited;
  fnaviglist.Free;

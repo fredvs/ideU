@@ -1,11 +1,11 @@
-unit debuggerform_mfm;
+unit commandorform_mfm;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
 
 implementation
 uses
- mseclasses,debuggerform;
+ mseclasses,commandorform;
 
 const
  objdata: record size: integer; data: array[0..19068] of byte end =

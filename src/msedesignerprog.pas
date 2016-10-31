@@ -32,7 +32,7 @@ uses
    
   mseskindesign,
   msegui,msegraphics,actionsmodule,
-  //sourceform,debuggerform,
+  //sourceform,commandorform,
   componentpaletteform,componentstore,
   //messageform,watchform,
   objectinspector,

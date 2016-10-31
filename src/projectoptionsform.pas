@@ -1028,7 +1028,7 @@ uses
  msesysenvmanagereditor,targetconsole,actionsmodule,mseactions,
  msefilemacros,mseenvmacros,msemacmacros,mseexecmacros,msestrmacros,
  msedesigner,panelform,watchpointsform,commandlineform,messageform,
- componentpaletteform,msesettings,formdesigner,
+ componentpaletteform,ideusettings,formdesigner,
  msestringlisteditor,msetexteditor,msepropertyeditors,mseshapes,
  componentstore,cpuform,msesysutils,msecomptree,msefont,typinfo
  {$ifndef mse_no_db}{$ifdef FPC},msedbfieldeditor{$endif}{$endif}

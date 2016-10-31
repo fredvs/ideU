@@ -1,11 +1,11 @@
-unit msesettings_mfm;
+unit ideusettings_mfm;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
 
 implementation
 uses
- mseclasses,msesettings;
+ mseclasses,ideusettings;
 
 const
  objdata: record size: integer; data: array[0..15188] of byte end =
