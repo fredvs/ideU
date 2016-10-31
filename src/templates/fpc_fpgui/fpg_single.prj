@@ -491,18 +491,13 @@ panels=1
 units=
  (
  a=0,4149,6,Pascal Units
- c=2
+ c=1
   (
   file=${PROJECTDIR}/${PROJECTNAME}.pas
   kind=1
   a=0,4100,0,${PROJECTNAME}.pas
   )
-  (
-  file=${PROJECTDIR}/frm_main.pas
-  kind=1
-  a=0,4100,0,frm_main.pas
   )
- )
 cmodules=
  (
  a=0,4132,6,C Modules
@@ -512,7 +507,6 @@ files=
  a=0,4132,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -943,14 +937,11 @@ windowlayout=502
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
- filenames=1
-  /home/mse/test/msegui/apps/ide/compstore/
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- lastdir=/home/mse/test/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=

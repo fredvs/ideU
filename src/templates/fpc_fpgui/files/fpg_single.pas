@@ -12,8 +12,8 @@ type
 
   TMainForm = class(TfpgForm)
   private
-    {@VFD_HEAD_BEGIN: ${%PROJECTNAME%}}
-    {@VFD_HEAD_END: ${%PROJECTNAME%}}
+    {@VFD_HEAD_BEGIN: MainForm}
+    {@VFD_HEAD_END: MainForm}
   public
     procedure AfterCreate; override;
   end;
@@ -25,12 +25,12 @@ type
 procedure TMainForm.AfterCreate;
 begin
   {%region 'Auto-generated GUI code' -fold}
-  {@VFD_BODY_BEGIN: ${%PROJECTNAME%}}
+  {@VFD_BODY_BEGIN: MainForm}
   Name := 'MainForm';
   SetPosition(574, 167, 300, 250);
   WindowTitle := 'MainForm';
   WindowPosition := wpOneThirdDown;      
-  {@VFD_BODY_END: ${%PROJECTNAME%}}
+  {@VFD_BODY_END: MainForm}
   {%endregion}
 end;
 
