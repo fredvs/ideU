@@ -570,7 +570,7 @@ begin
 debuggerfo.project_make.enabled := false;
 debuggerfo.project_abort_compil.enabled := true;
 
- case debuggerfo.project_options.value of
+case debuggerfo.project_options.value of
   0 : begin 
   domake(1) ;
    mainfo.thetag := 1;

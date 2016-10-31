@@ -6,12 +6,12 @@ object mainfo: tmainfo
   frame.grip_grip = stb_dens100
   frame.grip_color = 12434877
   frame.grip_coloractive = 13421772
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_nolockbutton, go_buttonhints, go_showfloatcaption]
+  frame.grip_options = [go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints, go_showsplitcaption, go_showfloatcaption]
   visible = False
-  bounds_x = 325
-  bounds_y = 193
-  bounds_cx = 744
-  bounds_cy = 222
+  bounds_x = 236
+  bounds_y = 212
+  bounds_cx = 790
+  bounds_cy = 277
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -25,8 +25,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     17
-    734
-    205
+    780
+    260
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -72,32 +72,15 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = 19
-    bounds_cx = 734
-    bounds_cy = 186
+    bounds_y = 0
+    bounds_cx = 780
+    bounds_cy = 294
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
-    dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background]
+    dragdock.optionsdock = [od_savepos, od_savezorder, od_acceptsdock, od_splitvert, od_splithorz, od_proportional, od_background]
     statfile = projectstatfile
-  end
-  object statdisp: tstringdisp
-    optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
-    taborder = 1
-    bounds_x = 0
-    bounds_y = 1
-    bounds_cx = 734
-    bounds_cy = 18
-    anchors = [an_top]
-    font.shadow_color = 16448250
-    font.gloss_color = 16250871
-    font.height = 12
-    font.name = 'stf_default'
-    font.options = [foo_antialiased]
-    font.localprops = [flp_shadow_color]
-    textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 15
   end
   object gdb: tgdbmi
     guiintf = True
@@ -2043,6 +2026,7 @@ object mainfo: tmainfo
       'Make OK.'
       'Source has changed, do you wish to remake project?'
       'Load Window Layout'
+      ' '
       'Nothing loaded...'
     )
     left = 268

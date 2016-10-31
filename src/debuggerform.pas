@@ -24,7 +24,7 @@ uses
  msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
- msestream,msestrings,sysutils,mseimage;
+ msestream,msestrings,sysutils,mseimage,msedispwidgets,mserichstring;
 
 type
  tdebuggerfo = class(tdockform)
@@ -63,6 +63,8 @@ type
    save_project: tbutton;
    line_number: tbutton;
    timage1: timage;
+   basedock: tdockpanel;
+   statdisp: tstringdisp;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -71,12 +73,13 @@ type
    procedure findinpage(const sender: TObject);
    procedure shownum(const sender: TObject);
 
+   procedure paintdock(const sender: twidget; const acanvas: tcanvas);
    end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- debuggerform_mfm, actionsmodule, sourceform, projectoptionsform ;
+ debuggerform_mfm, actionsmodule, main, sourceform, projectoptionsform ;
 procedure tdebuggerfo.breakonexecute(const sender: TObject);
 begin
 actionsmo.bkptsononexecute(sender) ; 
@@ -157,6 +160,11 @@ end;
 procedure tdebuggerfo.findinpage(const sender: TObject);
 begin
  sourcefo.activepage.dofind;
+end;
+
+procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
+begin
+ paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
 end;
 
 end.

@@ -123,7 +123,6 @@ type
    symboltypedisp: tstringdisp;
    mainstatfile: tstatfile;
    mainmenu1: tmainmenu;
-   statdisp: tstringdisp;
    errordisp: tstringdisp;
    basedock: tdockpanel;
    
@@ -1448,7 +1447,7 @@ procedure tmainfo.setstattext(const atext: msestring;
                    const akind: messagetextkindty = mtk_info);
 begin
 
- with statdisp do begin
+ with debuggerfo.statdisp do begin
   value:= removelinebreaks(atext);
   case akind of
    mtk_warning : color:= $BEDEBE; 
@@ -1465,6 +1464,20 @@ begin
   end;
  end;
 
+{
+with mainfo do begin
+  case akind of
+   mtk_warning : color:= $BEDEBE; 
+   mtk_finished: color:= $8DE08D;
+   mtk_error: color:=   $F0F097;
+   mtk_signal: color:= cl_ltred;
+   mtk_making: color:= $E2B4FE ;
+   mtk_notok: color:= $FFB1B4 ;
+   else color:= cl_parent;
+  end;
+  end;
+ }
+    
 end;
 
 procedure tmainfo.cleardebugdisp;
@@ -2041,9 +2054,9 @@ end;
 
 procedure tmainfo.onscale(const sender: TObject);
 begin
-
+basedock.bounds_y:= 0;
 // basedock.bounds_y:= statdisp.bottom + 1;
- basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+// basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
 end;
 
 procedure tmainfo.parametersonexecute(const sender: TObject);

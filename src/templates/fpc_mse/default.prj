@@ -17,6 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_mse
+projectfilename=/home/fred/ideu/src/templates/fpc_mse/default.prj
 options=99
  [projectoptionsfo.twidgetgrid3]
  propcolwidthref=788
@@ -660,10 +662,23 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=495
+windowlayout=523
  [mainfo.basedock]
  splitdir=2
- useroptions=15488
+ useroptions=11395
+ parent=mainfo.container
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=668
+ ncy=0
+ x=0
+ y=0
+ cx=958
+ cy=585
+ rcx=0
+ rcy=0
  [mainfo]
  splitdir=0
  useroptions=838860925
@@ -679,9 +694,8 @@ windowlayout=495
  cy=621
  rcx=0
  rcy=0
- children=2
-  basedock,0,19,958,585
-  statdisp,0,1,958,18
+ children=1
+  basedock,0,0,958,585
  focusedchild=0
  wsize=0
  active=1
@@ -725,7 +739,7 @@ windowlayout=495
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=stackfo
  parent=
  mdistate=0
  nx=0
@@ -751,7 +765,7 @@ windowlayout=495
  value=0
  [disassfo]
  splitdir=0
- useroptions=268451947
+ useroptions=805322859
  stackedunder=
  parent=
  mdistate=0
@@ -771,7 +785,7 @@ windowlayout=495
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -786,7 +800,7 @@ windowlayout=495
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -800,14 +814,14 @@ windowlayout=495
  cy=381
  rcx=0
  rcy=0
- [projecttreefo.grid]
+ [projecttreefo.project_tree]
  propcolwidthref=18
  width0=141
  sortdescend0=0
  width1=12
  sortdescend1=0
  sorted=0
- col=-1073741823
+ col=1
  row=-1073741823
  rowheight=17
  [stackfo]
@@ -893,7 +907,7 @@ windowlayout=495
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=breakpointsfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1081,9 +1095,9 @@ windowlayout=495
  ncx=0
  ncy=0
  x=0
- y=47
+ y=59
  cx=958
- cy=53
+ cy=41
  rcx=0
  rcy=0
  [componentpalettefo.componentpages]
@@ -1101,7 +1115,23 @@ windowlayout=495
  x=0
  y=0
  cx=958
- cy=44
+ cy=56
+ rcx=0
+ rcy=0
+ [debuggerfo.basedock]
+ splitdir=2
+ useroptions=146563
+ parent=debuggerfo.container
+ visible=1
+ mdistate=0
+ nx=0
+ ny=52
+ ncx=955
+ ncy=307
+ x=0
+ y=52
+ cx=958
+ cy=4
  rcx=0
  rcy=0
  [sourcefo]
@@ -1124,7 +1154,7 @@ windowlayout=495
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0

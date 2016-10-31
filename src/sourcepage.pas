@@ -690,7 +690,7 @@ begin
        case key of
         key_space: begin
 // fred
-         mainfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
+         debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
          showsourceitems(edit.editpos);
          
         end
@@ -882,7 +882,7 @@ end;
 procedure tsourcepage.ontimerhide(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
-  mainfo.statdisp.value:= ''; 
+  debuggerfo.statdisp.value:= ''; 
  sourcefo.hidesourcehint; 
 end;
 
