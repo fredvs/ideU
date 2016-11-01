@@ -9,9 +9,9 @@ object mainfo: tmainfo
   frame.grip_options = [go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints, go_showsplitcaption, go_showfloatcaption]
   visible = False
   bounds_x = 449
-  bounds_y = 239
-  bounds_cx = 641
-  bounds_cy = 30
+  bounds_y = 237
+  bounds_cx = 640
+  bounds_cy = 22
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -25,8 +25,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     17
-    631
-    13
+    630
+    5
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -73,7 +73,7 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 616
+    bounds_cx = 615
     bounds_cy = 75
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'

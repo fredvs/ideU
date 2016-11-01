@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 602
-  bounds_y = 330
+  bounds_x = 453
+  bounds_y = 310
   bounds_cx = 326
   bounds_cy = 234
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -83,6 +83,7 @@ object confideufo: tconfideufo
       241
       2
     )
+    taborder = 1
     bounds_x = 30
     bounds_y = 30
     bounds_cx = 254
@@ -99,7 +100,7 @@ object confideufo: tconfideufo
       226
       2
     )
-    taborder = 1
+    taborder = 2
     bounds_x = 30
     bounds_y = 52
     bounds_cx = 239
@@ -115,14 +116,14 @@ object confideufo: tconfideufo
       190
       2
     )
-    taborder = 2
+    taborder = 3
     bounds_x = 30
     bounds_y = 74
     bounds_cx = 203
     bounds_cy = 17
   end
   object tlabel1: tlabel
-    taborder = 3
+    taborder = 7
     bounds_x = 47
     bounds_y = 7
     bounds_cx = 241
@@ -134,7 +135,6 @@ object confideufo: tconfideufo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
-    taborder = 4
     bounds_x = 129
     bounds_y = 206
     bounds_cx = 64
@@ -180,8 +180,8 @@ object confideufo: tconfideufo
     )
     taborder = 6
     hint = 'Paren directory of sakit ( speaker assistve kit )'
-    bounds_x = 5
-    bounds_y = 156
+    bounds_x = 3
+    bounds_y = 158
     bounds_cx = 316
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
@@ -202,7 +202,7 @@ object confideufo: tconfideufo
       124
       2
     )
-    taborder = 7
+    taborder = 4
     hint = 'No focus on menu-item when mouse-move on it.'
     bounds_x = 74
     bounds_y = 103

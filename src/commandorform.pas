@@ -63,10 +63,13 @@ var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, actionsmodule, main, sourceform, projectoptionsform ;
+ commandorform_mfm, actionsmodule, breakpointsform, main, sourceform, projectoptionsform ;
+
+
 procedure tdebuggerfo.breakonexecute(const sender: TObject);
 begin
-actionsmo.bkptsononexecute(sender) ; 
+actionsmo.bkptsonact.checked := debuggerfo.break_point.value;
+// breakpointsfo.bkptson.value:= actionsmo.bkptsonact.checked;
 end;
 
 procedure tdebuggerfo.layoutchange(const sender: TObject);
@@ -97,12 +100,15 @@ end;
 
 procedure tdebuggerfo.watchonexecute(const sender: TObject);
 begin
-actionsmo.watchesononexecute(sender) ; 
+actionsmo.watchesonact.checked := debuggerfo.watches.value;
+//tchfo.watcheson.value:= actionsmo.watchesonact.checked; 
 end;
 
 procedure tdebuggerfo.hintonexecute(const sender: TObject);
 begin
-actionsmo.bluedotsononchange(sender) ; 
+actionsmo.bluedotsonact.tag := 1;
+actionsmo.bluedotsonact.checked := debuggerfo.hints.value;
+//mainfo.checkbluedots;
 end;
 
 procedure tdebuggerfo.listonexecute(const sender: TObject);
@@ -148,7 +154,7 @@ end;
 
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
 begin
- paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
+// paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
 end;
 
 end.

@@ -86,7 +86,7 @@ object confcompilerfo: tconfcompilerfo
     object tab_pascal: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 1
+      taborder = 2
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 364
@@ -103,6 +103,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
+        taborder = 5
         bounds_x = 22
         bounds_y = 113
         bounds_cx = 44
@@ -118,7 +119,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 1
+        taborder = 7
         bounds_x = 22
         bounds_y = 152
         bounds_cx = 44
@@ -134,7 +135,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 2
+        taborder = 9
         bounds_x = 23
         bounds_y = 193
         bounds_cx = 44
@@ -150,7 +151,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 3
+        taborder = 11
         bounds_x = 23
         bounds_y = 238
         bounds_cx = 44
@@ -166,7 +167,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 4
+        taborder = 13
         bounds_x = 23
         bounds_y = 277
         bounds_cx = 44
@@ -182,7 +183,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 5
+        taborder = 15
         bounds_x = 23
         bounds_y = 316
         bounds_cx = 44
@@ -207,7 +208,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 6
+        taborder = 14
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 296
@@ -235,7 +236,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 7
+        taborder = 12
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 256
@@ -263,7 +264,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 8
+        taborder = 10
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 216
@@ -291,7 +292,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 9
+        taborder = 8
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 176
@@ -319,7 +320,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 10
+        taborder = 6
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 132
@@ -347,7 +348,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 11
+        taborder = 4
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 92
@@ -375,7 +376,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 12
+        taborder = 2
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 52
@@ -394,7 +395,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 13
+        taborder = 3
         bounds_x = 22
         bounds_y = 74
         bounds_cx = 44
@@ -410,14 +411,14 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 14
+        taborder = 1
         bounds_x = 22
         bounds_y = 29
         bounds_cx = 44
         bounds_cy = 17
       end
       object tlabel2: tlabel
-        taborder = 15
+        taborder = 16
         bounds_x = 9
         bounds_y = 11
         bounds_cx = 55
@@ -426,7 +427,6 @@ object confcompilerfo: tconfcompilerfo
         reffontheight = 15
       end
       object fpccompiler: tfilenameedit
-        Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCALCOMPILER}'
         frame.captionpos = cp_top
@@ -444,7 +444,6 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 16
         hint = 'Path to pascal compiler'
         bounds_x = 71
         bounds_y = 15
@@ -457,7 +456,7 @@ object confcompilerfo: tconfcompilerfo
     object tab_c: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 2
+      taborder = 3
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 364
@@ -483,6 +482,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
+        taborder = 2
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 52
@@ -510,7 +510,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 1
+        taborder = 4
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 94
@@ -538,7 +538,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 2
+        taborder = 6
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 135
@@ -566,7 +566,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 3
+        taborder = 8
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 175
@@ -594,7 +594,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 4
+        taborder = 10
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 216
@@ -622,7 +622,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 5
+        taborder = 12
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 257
@@ -650,7 +650,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 6
+        taborder = 14
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 298
@@ -669,7 +669,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 7
+        taborder = 15
         bounds_x = 24
         bounds_y = 317
         bounds_cx = 44
@@ -685,7 +685,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 8
+        taborder = 13
         bounds_x = 24
         bounds_y = 278
         bounds_cx = 44
@@ -701,7 +701,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 9
+        taborder = 11
         bounds_x = 24
         bounds_y = 239
         bounds_cx = 44
@@ -717,7 +717,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 10
+        taborder = 9
         bounds_x = 24
         bounds_y = 194
         bounds_cx = 44
@@ -733,7 +733,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 11
+        taborder = 7
         bounds_x = 24
         bounds_y = 154
         bounds_cx = 44
@@ -749,7 +749,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 12
+        taborder = 5
         bounds_x = 24
         bounds_y = 115
         bounds_cx = 44
@@ -765,7 +765,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 13
+        taborder = 3
         bounds_x = 24
         bounds_y = 76
         bounds_cx = 44
@@ -781,14 +781,14 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 14
+        taborder = 1
         bounds_x = 24
         bounds_y = 31
         bounds_cx = 44
         bounds_cy = 17
       end
       object tlabel7: tlabel
-        taborder = 15
+        taborder = 16
         bounds_x = 10
         bounds_y = 13
         bounds_cx = 55
@@ -815,7 +815,6 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 16
         hint = 'Path to C compiler'
         bounds_x = 71
         bounds_y = 12
@@ -828,7 +827,7 @@ object confcompilerfo: tconfcompilerfo
     object tab_java: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 3
+      taborder = 4
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 364
@@ -845,6 +844,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
+        taborder = 1
         bounds_x = 19
         bounds_y = 73
         bounds_cx = 44
@@ -860,7 +860,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 1
+        taborder = 3
         bounds_x = 19
         bounds_y = 115
         bounds_cx = 44
@@ -876,7 +876,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 2
+        taborder = 5
         bounds_x = 20
         bounds_y = 159
         bounds_cx = 44
@@ -892,7 +892,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 3
+        taborder = 7
         bounds_x = 19
         bounds_y = 193
         bounds_cx = 44
@@ -917,7 +917,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 4
+        taborder = 6
         hint = 'Path to Java compiler'
         bounds_x = 68
         bounds_y = 179
@@ -945,7 +945,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 5
+        taborder = 4
         hint = 'Path to Java compiler'
         bounds_x = 68
         bounds_y = 138
@@ -973,7 +973,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 6
+        taborder = 2
         hint = 'Path to Java compiler'
         bounds_x = 68
         bounds_y = 99
@@ -1001,7 +1001,6 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 7
         hint = 'Path to Java compiler'
         bounds_x = 68
         bounds_y = 54
@@ -1023,7 +1022,7 @@ object confcompilerfo: tconfcompilerfo
     object tab_python: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 4
+      taborder = 5
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 364
@@ -1040,6 +1039,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
+        taborder = 5
         bounds_x = 20
         bounds_y = 140
         bounds_cx = 44
@@ -1055,7 +1055,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 1
+        taborder = 7
         bounds_x = 20
         bounds_y = 179
         bounds_cx = 44
@@ -1080,7 +1080,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 2
+        taborder = 6
         hint = 'Path to python compiler'
         bounds_x = 68
         bounds_y = 162
@@ -1108,7 +1108,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 3
+        taborder = 4
         hint = 'Path to python compiler'
         bounds_x = 68
         bounds_y = 122
@@ -1136,7 +1136,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 4
+        taborder = 2
         hint = 'Path to python compiler'
         bounds_x = 68
         bounds_y = 77
@@ -1155,7 +1155,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 5
+        taborder = 3
         bounds_x = 20
         bounds_y = 101
         bounds_cx = 44
@@ -1171,7 +1171,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 6
+        taborder = 1
         bounds_x = 20
         bounds_y = 56
         bounds_cx = 44
@@ -1196,7 +1196,6 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 7
         hint = 'Path to python compiler'
         bounds_x = 68
         bounds_y = 37
@@ -1218,7 +1217,7 @@ object confcompilerfo: tconfcompilerfo
     object tab_other: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 5
+      taborder = 6
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 364
@@ -1244,6 +1243,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
+        taborder = 4
         hint = 'Path to Other compiler'
         bounds_x = 68
         bounds_y = 121
@@ -1262,7 +1262,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 1
+        taborder = 3
         bounds_x = 19
         bounds_y = 93
         bounds_cx = 44
@@ -1278,7 +1278,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 2
+        taborder = 1
         bounds_x = 19
         bounds_y = 48
         bounds_cx = 44
@@ -1303,7 +1303,6 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 3
         hint = 'Path to Other compiler'
         bounds_x = 68
         bounds_y = 28
@@ -1331,7 +1330,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 4
+        taborder = 6
         hint = 'Path to Other compiler'
         bounds_x = 68
         bounds_y = 164
@@ -1350,7 +1349,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 5
+        taborder = 7
         bounds_x = 19
         bounds_y = 183
         bounds_cx = 44
@@ -1366,7 +1365,7 @@ object confcompilerfo: tconfcompilerfo
           31
           2
         )
-        taborder = 6
+        taborder = 5
         bounds_x = 20
         bounds_y = 139
         bounds_cx = 44
@@ -1391,7 +1390,7 @@ object confcompilerfo: tconfcompilerfo
           0
           0
         )
-        taborder = 7
+        taborder = 2
         hint = 'Path to Other compiler'
         bounds_x = 68
         bounds_y = 71
@@ -1402,7 +1401,6 @@ object confcompilerfo: tconfcompilerfo
       end
     end
     object but_ok: tbutton
-      taborder = 6
       bounds_x = 325
       bounds_y = 2
       bounds_cx = 33

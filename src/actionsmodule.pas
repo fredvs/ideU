@@ -972,19 +972,20 @@ end;
 
 procedure tactionsmo.bkptsononexecute(const sender: TObject);
 begin
-bkptsonact.checked := debuggerfo.break_point.value;
+// debuggerfo.break_point.value := bkptsonact.checked;
  breakpointsfo.bkptson.value:= bkptsonact.checked;
 end;
 
 procedure tactionsmo.watchesononexecute(const sender: TObject);
 begin
-watchesonact.checked := debuggerfo.watches.value;
- watchfo.watcheson.value:= watchesonact.checked;
+//debuggerfo.watches.value := watchesonact.checked;
+watchfo.watcheson.value:= watchesonact.checked;
 end;
 
 procedure tactionsmo.bluedotsononchange(const sender: TObject);
 begin
- mainfo.checkbluedots;
+// debuggerfo.hints.value := bluedotsonact.checked;
+mainfo.checkbluedots;
 end;
 
 procedure tactionsmo.printactonexecute(const sender: TObject);
