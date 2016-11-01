@@ -2075,6 +2075,18 @@ procedure tmainfo.mainmenuonupdate(const sender: tcustommenu);
 var
  bo1: boolean;
 begin
+ with debuggerfo do begin
+ project_start.enabled:= not gdb.running and not gdb.downloading;
+ project_next.enabled:= not gdb.running and not gdb.downloading and bo1;
+ project_next_instruction.enabled := project_next.enabled;
+ project_step.enabled:= project_next.enabled;
+ project_step_instruction.enabled := project_next.enabled;
+ project_interrupt.enabled := project_next.enabled;
+ project_finish.enabled:= not gdb.running and gdb.started and bo1;
+ project_reset.enabled:= (gdb.started or gdb.attached or gdb.downloading) or
+                    not bo1 and (frunningprocess <> invalidprochandle);
+end;
+
  with projectoptions,d.texp,actionsmo do begin
   detachtarget.enabled:= gdb.execloaded;
   download.enabled:= not gdb.started and not gdb.downloading and 
@@ -2123,6 +2135,7 @@ begin
    findbm8.enabled:= true;
    findbm9.enabled:= true;
    print.enabled:= true;
+    debuggerfo.save_file.enabled := modified;
    with sourcefo.activepage do begin
     actionsmo.save.enabled:= modified;
     undo.enabled:= edit.canundo;
@@ -2170,6 +2183,7 @@ begin
 
    print.enabled:= false;
    save.enabled:= false;
+   debuggerfo.save_file.enabled := false;
    undo.enabled:= false;
    redo.enabled:= false;
    copy.enabled:= false;
@@ -2189,6 +2203,7 @@ begin
   end;
   if (factivedesignmodule <> nil) then begin
    save.enabled:= factivedesignmodule^.modified;
+   debuggerfo.save_file.enabled := save.enabled;
    close.enabled:= true;
   end
   else begin
