@@ -7,17 +7,17 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 214
-  bounds_y = 122
-  bounds_cx = 965
-  bounds_cy = 56
+  bounds_x = 213
+  bounds_y = 120
+  bounds_cx = 967
+  bounds_cy = 61
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    955
-    56
+    957
+    61
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
@@ -85,9 +85,9 @@ object debuggerfo: tdebuggerfo
     taborder = 3
     onpaint = paintdock
     bounds_x = 0
-    bounds_y = 52
-    bounds_cx = 955
-    bounds_cy = 4
+    bounds_y = 55
+    bounds_cx = 957
+    bounds_cy = 9
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -100,7 +100,7 @@ object debuggerfo: tdebuggerfo
     taborder = 4
     bounds_x = 0
     bounds_y = 35
-    bounds_cx = 955
+    bounds_cx = 957
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250

@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.1.1';
+ versiontext = '1.2.0';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -3771,10 +3771,25 @@ dialogfilesfo.activate;
 end;
 
 procedure tmainfo.closeprojectactonexecute(const sender: TObject);
+var
+str1: ttextstream;
+str2 :msestring;
+
 begin
  if mainfo.openproject('') then begin
   caption:= idecaption;
   fprojectloaded:= false;
+  str2 := expandprmacros('${LAYOUTDIR}') + 'Menu_Only.prj';
+  if fileexists(str2) then begin
+ str1:= ttextstream.create(str2);
+ try
+ debuggerfo.close;
+  mainfo.loadwindowlayout(str1);
+  finally
+  str1.destroy();
+ end;
+ end;
+  
  end;
 end;
 
