@@ -2081,10 +2081,10 @@ begin
  project_next_instruction.enabled := project_next.enabled;
  project_step.enabled:= project_next.enabled;
  project_step_instruction.enabled := project_next.enabled;
- project_interrupt.enabled := project_next.enabled;
- project_finish.enabled:= not gdb.running and gdb.started and bo1;
- project_reset.enabled:= (gdb.started or gdb.attached or gdb.downloading) or
-                    not bo1 and (frunningprocess <> invalidprochandle);
+// project_interrupt.enabled := project_next.enabled;
+// project_finish.enabled:= not gdb.running and gdb.started and bo1;
+// project_reset.enabled:= (gdb.started or gdb.attached or gdb.downloading) or
+//                    not bo1 and (frunningprocess <> invalidprochandle);
 end;
 
  with projectoptions,d.texp,actionsmo do begin

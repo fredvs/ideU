@@ -118,7 +118,7 @@ replacedialog=17
  y=302
  cx=421
  cy=163
-options=108
+options=107
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
@@ -143,15 +143,15 @@ options=108
  width9=308
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=578
+ propcolwidthref=580
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=277
+ width3=278
  sortdescend3=0
- width4=291
+ width4=292
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -182,21 +182,17 @@ options=108
  xprop=1
  yprop=0.39691714836224
  [projectoptionsfo.macrogrid]
- propcolwidthref=509
+ propcolwidthref=561
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
  sortdescend4=0
  sortdescend5=0
+ width6=146
  sortdescend6=0
+ width7=549
  sortdescend7=0
- sortdescend8=0
- sortdescend9=0
- width10=146
- sortdescend10=0
- width11=493
- sortdescend11=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
  index=2
@@ -218,9 +214,12 @@ options=108
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=1
+ [projectoptionsfo.ttabwidget3]
+ firsttab=0
+ index=0
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=1
+ index=0
  [projectoptionsfo]
  stackedunder=
  x=204
@@ -262,7 +261,18 @@ programparameters=18
  y=191
  cx=328
  cy=348
-settings=8
+settings=19
+ [settingsfo.macrogrid]
+ propcolwidthref=331
+ width0=166
+ sortdescend0=0
+ width1=158
+ sortdescend1=0
+ [settingsfo.tsplitter2]
+ x=208
+ y=16
+ xprop=0.57879656160458
+ yprop=1
  [settingsfo]
  x=455
  y=24
@@ -632,11 +642,11 @@ makeoptionson=5
  62
  63
 compilerusedon=29
- 4035
- 4
- 8
- 16
- 32
+ 69631
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -662,14 +672,14 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4095
+ 69631
  0
  0
  0
  0
  0
 exeusedon=14
- 4095
+ 69631
  0
  0
  0
@@ -695,11 +705,7 @@ macroon=0
 macronames=0
 macrovalues=0
 macrogroup=0
-groupcomments=10
- 
- 
- 
- 
+groupcomments=6
  
  
  
@@ -1203,8 +1209,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=watchesononexecute
+finddtext=next_i
 findhistory=20
+ next_i
  watchesononexecute
  mainmenuonupdate
  dialogf
@@ -1224,11 +1231,10 @@ findhistory=20
  tfiledialogfo
  new
  tfiledialog
- tdialogform
 findoptions=1
 editpos=4
  0,-1073741823
- 0,2078
+ 0,2086
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1284,12 +1290,12 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=668
- ncy=0
+ ncx=631
+ ncy=75
  x=0
  y=0
  cx=954
- cy=585
+ cy=666
  rcx=0
  rcy=0
  [mainfo]
@@ -1301,14 +1307,14 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=240
- y=61
+ x=314
+ y=86
  cx=964
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,954,585
+  basedock,0,0,954,666
  focusedchild=0
  wsize=0
  active=1
@@ -1424,7 +1430,7 @@ windowlayout=564
  x=0
  y=0
  cx=159
- cy=426
+ cy=486
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -1434,7 +1440,7 @@ windowlayout=564
  width1=12
  sortdescend1=0
  sorted=0
- col=1
+ col=-1073741823
  row=-1073741823
  rowheight=17
  [stackfo]
@@ -1629,9 +1635,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=488
+ y=556
  cx=954
- cy=97
+ cy=110
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1731,7 +1737,7 @@ windowlayout=564
  x=0
  y=0
  cx=954
- cy=56
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1742,12 +1748,12 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=52
- ncx=956
- ncy=6
+ ncx=955
+ ncy=125
  x=0
  y=52
  cx=954
- cy=3
+ cy=12
  rcx=0
  rcy=0
  [sourcefo]
@@ -1763,7 +1769,7 @@ windowlayout=564
  x=162
  y=0
  cx=792
- cy=426
+ cy=486
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1797,9 +1803,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=59
+ y=67
  cx=954
- cy=426
+ cy=486
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
