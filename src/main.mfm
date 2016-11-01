@@ -11,7 +11,7 @@ object mainfo: tmainfo
   bounds_x = 449
   bounds_y = 239
   bounds_cx = 641
-  bounds_cy = 21
+  bounds_cy = 30
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -26,7 +26,7 @@ object mainfo: tmainfo
     0
     17
     631
-    4
+    13
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -325,13 +325,9 @@ object mainfo: tmainfo
             state = [as_localcaption]
           end        
           item
+            action = actionsmo.copyword
             caption = ' Copy &Word at Cursor '
-            state = [as_localcaption, as_localshortcut, as_localonexecute]
-            onexecute = copywordatcur
-            sc = (
-              1
-              24663
-            )
+            state = [as_localcaption]
           end        
           item
             action = actionsmo.copylatexact
@@ -403,7 +399,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 27
+        submenu.count = 28
         submenu.items = <        
           item
             submenu.count = 2
@@ -463,6 +459,13 @@ object mainfo: tmainfo
             imagelist = vievmenuicons
             imagenr = 5
             onexecute = viewsourceonexecute
+          end        
+          item
+            action = actionsmo.projecttreeact
+            caption = ' &TreeList '
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
+            imagelist = vievmenuicons
+            imagenr = 17
           end        
           item
             caption = ' &Messages '
