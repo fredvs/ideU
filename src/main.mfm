@@ -8,10 +8,10 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints, go_showsplitcaption, go_showfloatcaption]
   visible = False
-  bounds_x = 449
-  bounds_y = 237
-  bounds_cx = 640
-  bounds_cy = 22
+  bounds_x = 427
+  bounds_y = 191
+  bounds_cx = 697
+  bounds_cy = 21
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -25,8 +25,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     17
-    630
-    5
+    687
+    4
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -73,8 +73,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 615
-    bounds_cy = 75
+    bounds_cx = 672
+    bounds_cy = 211
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -90,8 +90,8 @@ object mainfo: tmainfo
     startupbkpton = False
     onevent = gdbonevent
     overloadsleepus = 10000
-    left = 106
-    top = 12
+    left = 160
+    top = 48
   end
   object mainstatfile: tstatfile
     filename = 'ideu.sta'
@@ -99,106 +99,114 @@ object mainfo: tmainfo
     options = [sfo_createpath, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
     onstatupdate = mainstatfileonupdatestat
     onstatbeforewrite = mainstatbeforewriteexe
+    left = 40
+    top = 148
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
     onupdate = mainmenuonupdate
-    menu.submenu.count = 14
+    menu.submenu.count = 15
     menu.submenu.items = <    
       item
-        submenu.count = 16
+        submenu.count = 14
         submenu.items = <        
           item
-            submenu.count = 1
+            submenu.count = 3
             submenu.items = <            
               item
-                submenu.count = 9
+                submenu.count = 1
                 submenu.items = <                
                   item
-                    caption = ' &Main Form '
+                    submenu.count = 9
+                    submenu.items = <                    
+                      item
+                        caption = ' &Main Form '
+                        state = [as_localcaption, as_localonexecute]
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' &Simple Form '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 1
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' &Docking Form '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 2
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' D&ata Module '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 3
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' S&ub Form '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 4
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' &Report '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 5
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        caption = ' S&cript Form '
+                        name = 'pascform'
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 6
+                        onexecute = newformonexecute
+                      end                    
+                      item
+                        state = [as_localonexecute]
+                        options = [mao_separator, mao_shortcutcaption]
+                      end                    
+                      item
+                        caption = ' &Inherited '
+                        state = [as_localcaption, as_localtag, as_localonexecute]
+                        tag = 7
+                        onexecute = newformonexecute
+                      end>
+                    caption = ' &Forms '
+                    name = 'form'
                     state = [as_localcaption, as_localonexecute]
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' &Simple Form '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    options = [mao_shortcutcaption, mao_asyncexecute]
-                    tag = 1
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' &Docking Form '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    options = [mao_shortcutcaption, mao_asyncexecute]
-                    tag = 2
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' D&ata Module '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    options = [mao_shortcutcaption, mao_asyncexecute]
-                    tag = 3
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' S&ub Form '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    tag = 4
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' &Report '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    tag = 5
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    caption = ' S&cript Form '
-                    name = 'pascform'
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    tag = 6
-                    onexecute = newformonexecute
-                  end                
-                  item
-                    options = [mao_separator, mao_shortcutcaption]
-                  end                
-                  item
-                    caption = ' &Inherited '
-                    state = [as_localcaption, as_localtag, as_localonexecute]
-                    tag = 7
-                    onexecute = newformonexecute
                   end>
-                caption = ' MSE &Form '
-                name = 'form'
+                caption = ' MSEgui '
+                name = 'msegui'
+                state = [as_localcaption, as_localimagelist, as_localimagenr]
+                imagelist = vievmenuicons
+                imagenr = 0
+              end            
+              item
+                submenu.count = 1
+                submenu.items = <                
+                  item
+                    caption = ' TODO (you may use fpGUI designer)'
+                    state = [as_localcaption]
+                  end>
+                caption = ' fpGUI '
+                state = [as_localcaption, as_localimagelist, as_localimagenr]
+                imagelist = vievmenuicons
+                imagenr = 21
+              end            
+              item
+                submenu.count = 1
+                submenu.items = <                
+                  item
+                    caption = ' TODO '
+                    state = [as_localcaption]
+                  end>
+                caption = ' Other '
                 state = [as_localcaption]
               end>
-            caption = ' &New MSE'
+            caption = ' &New '
             name = 'new'
             state = [as_localcaption, as_localimagelist, as_localimagenr]
-            imagelist = vievmenuicons
             imagenr = 0
-          end        
-          item
-            submenu.count = 1
-            submenu.items = <            
-              item
-                caption = ' TODO (use fpGUI designer for that) '
-                state = [as_localcaption]
-              end>
-            caption = ' New fp&GUI '
-            state = [as_localcaption, as_localimagelist, as_localimagenr]
-            imagelist = vievmenuicons
-            imagenr = 21
-          end        
-          item
-            submenu.count = 1
-            submenu.items = <            
-              item
-                caption = ' TODO '
-                state = [as_localcaption]
-              end>
-            caption = ' New other '
-            state = [as_localcaption]
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
@@ -601,6 +609,28 @@ object mainfo: tmainfo
           end>
         caption = ' &View '
         name = 'view'
+        state = [as_localcaption]
+      end    
+      item
+        submenu.count = 1
+        submenu.items = <        
+          item
+            submenu.count = 1
+            submenu.items = <            
+              item
+                caption = ' '
+                name = 'formmenuitemstart'
+                state = [as_localcaption]
+                options = [mao_separator, mao_shortcutcaption]
+              end>
+            caption = ' MSE modules '
+            name = 'msemod'
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
+            imagelist = vievmenuicons
+            imagenr = 0
+          end>
+        caption = ' For&ms '
+        name = 'forms'
         state = [as_localcaption]
       end    
       item
@@ -1162,8 +1192,7 @@ object mainfo: tmainfo
     menu.state = [as_localonexecute]
     menu.coloractive = 15592941
     menu.onexecute = syntaxdefload
-    left = 87
-    top = 4
+    left = 180
   end
   object openfile: tfiledialog
     statfile = mainstatfile
@@ -1171,15 +1200,15 @@ object mainfo: tmainfo
     controller.captionopen = ' Open file '
     controller.captionsave = ' Save file as '
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_saveoptions, oe1_checkvalueafterstatread, oe1_thumbtrack]
-    left = 22
-    top = 3
+    left = 146
+    top = 140
   end
   object projectstatfile: tstatfile
     filename = 'status.sta'
     onstatbeforeread = statbefread
     onstatafterread = statafterread
-    left = 24
-    top = 1
+    left = 35
+    top = 52
   end
   object vievmenuicons: timagelist
     width = 18
@@ -1187,7 +1216,7 @@ object mainfo: tmainfo
     options = [bmo_masked, bmo_colormask]
     count = 22
     left = 307
-    top = 5
+    top = 30
     image = {
       00000000060000005A0000005A00000084450000000000000000000000000000
       0000000000000000000000000000000000000000FFFFFF06CB582601C5440B01
@@ -1939,16 +1968,18 @@ object mainfo: tmainfo
     }
   end
   object viewmenu: tframecomp
-    left = 194
-    top = 2
+    left = 67
+    top = 22
   end
   object runprocmon: tprocessmonitor
     onchilddied = runprocdied
-    left = 193
+    left = 333
+    top = 66
   end
   object statoptions: trttistat
     ongetobjects = getstatobjs
-    left = 25
+    left = 53
+    top = 101
   end
   object projectfiledia: tfiledialog
     statfile = mainstatfile
@@ -1965,13 +1996,13 @@ object mainfo: tmainfo
     controller.defaultext = 'prj'
     controller.captionopen = ' Open Project '
     controller.captionsave = ' Save Project '
-    left = 269
-    top = 3
+    left = 442
+    top = 60
   end
   object targetpipe: tpipereadercomp
     oninputavailable = targetpipeinput
-    left = 322
-    top = 1
+    left = 430
+    top = 126
   end
   object c: tstringcontainer
     strings.data = (
@@ -2030,8 +2061,8 @@ object mainfo: tmainfo
       ' '
       'Nothing loaded...'
     )
-    left = 270
-    top = 3
+    left = 259
+    top = 44
   end
   object openform: tfiledialog
     statfile = mainstatfile
@@ -2044,8 +2075,8 @@ object mainfo: tmainfo
     controller.defaultext = 'mfm'
     controller.options = [fdo_checkexist]
     controller.captionopen = ' Open Form File '
-    left = 143
-    top = 4
+    left = 193
+    top = 99
   end
   object formbg: tbitmapcomp
     bitmap.origformat = 'png'
@@ -2058,7 +2089,7 @@ object mainfo: tmainfo
       C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808
       C7C7C708B8B8B808C7C7C708B8B8B808
     }
-    left = 286
-    top = 6
+    left = 293
+    top = 131
   end
 end

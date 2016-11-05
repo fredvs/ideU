@@ -1,8 +1,8 @@
 object settingsfo: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 443
-  bounds_y = 30
+  bounds_x = 444
+  bounds_y = 29
   bounds_cx = 378
   bounds_cy = 703
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -613,7 +613,7 @@ object settingsfo: tsettingsfo
     object targetosdir: tstringedit
       Tag = 11
       frame.colorclient = 16773360
-      frame.caption = '${TARGETOSDIR} Target OS of MSEgui source'
+      frame.caption = '${TARGETOSDIR} Default Target OS of MSEgui source'
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.outerframe = (

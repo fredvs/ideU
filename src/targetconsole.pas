@@ -21,7 +21,8 @@ unit targetconsole;
 interface
 uses
  msegui,mseclasses,mseforms,mseterminal,msewidgetgrid,msestrings,msedatalist,
- classes,mclasses,msemenus,msestat,msetypes;
+ classes,mclasses,msemenus,msestat,msetypes,msegraphics,msegraphutils,
+ mseguiglob,msesimplewidgets,msewidgets;
 
 type
  ttargetconsolefo = class(tdockform)

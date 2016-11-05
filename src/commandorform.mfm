@@ -1,4 +1,5 @@
 object debuggerfo: tdebuggerfo
+  optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_hinton]
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
@@ -11,6 +12,7 @@ object debuggerfo: tdebuggerfo
   bounds_y = 120
   bounds_cx = 967
   bounds_cy = 61
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
@@ -21,6 +23,7 @@ object debuggerfo: tdebuggerfo
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
+  options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Commandor'
   icon.options = [bmo_masked, bmo_graymask]
@@ -85,9 +88,9 @@ object debuggerfo: tdebuggerfo
     taborder = 3
     onpaint = paintdock
     bounds_x = 0
-    bounds_y = 55
+    bounds_y = 53
     bounds_cx = 957
-    bounds_cy = 9
+    bounds_cy = 11
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1

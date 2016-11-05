@@ -493,7 +493,7 @@ begin
  initprojectoptions;
  sourceupdate.init(designer);
 {$ifndef mse_with_pascalscript}
- mainmenu1.menu.deleteitembynames(['file','new','form','pascform']);
+ mainmenu1.menu.deleteitembynames(['file','newmse','form','pascform']);
 {$endif}
 
  loadconfigform(sender)
@@ -515,7 +515,7 @@ begin
 if assigned(sourcefo.activepage) then begin
 dialogfilesfo.tag := 0 ;
 
-dialogfilesfo.list_files.cellwidth := 264 ;
+dialogfilesfo.list_files.cellwidth := 437 ;
 
 thesdef := projectoptions.e.t.syntaxdeffiles[0];
 
@@ -1185,7 +1185,8 @@ procedure tmainfo.updatemodifiedforms;
 var
  int1: integer;
 begin
- with mainmenu1.menu.itembyname('view') do begin
+// with mainmenu1.menu.itembyname('view') do begin
+with mainmenu1.menu.itembynames(['forms','msemod']) do begin
   for int1:= itembyname('formmenuitemstart').index+1 to count - 1 do begin
    with items[int1] do begin
     with pmoduleinfoty(tagpointer)^ do begin
@@ -2218,8 +2219,10 @@ end;
 
 function tmainfo.formmenuitemstart: integer;
 begin
- result:= mainmenu1.menu.itembyname('view').itembyname(
-               'formmenuitemstart').index + 1;
+ // result:= mainmenu1.menu.itembyname('view').itembyname('formmenuitemstart').index + 1;
+result:= mainmenu1.menu.itembynames(['forms','msemod']).itembyname('formmenuitemstart').index + 1;
+
+
 end;
 
 procedure tmainfo.createmodulemenuitem(const amodule: pmoduleinfoty);
@@ -2227,7 +2230,10 @@ var
  int1: integer;
  item1: tmenuitem;
 begin
- with mainmenu1.menu.itembyname('view') do begin
+//with mainmenu1.menu.itembyname('view') do begin
+ 
+ with mainmenu1.menu.itembynames(['forms','msemod']) do begin
+
   for int1:= formmenuitemstart to submenu.count-1 do begin
    if submenu[int1].tagpointer = amodule then begin
     exit;
@@ -2719,7 +2725,9 @@ procedure tmainfo.removemodulemenuitem(const amodule: pmoduleinfoty);
 var
  int1: integer;
 begin
- with mainmenu1.menu.itembyname('view') do begin
+// with mainmenu1.menu.itembyname('view') do begin
+    with mainmenu1.menu.itembynames(['forms','msemod']) do begin
+
   for int1:= itembyname('formmenuitemstart').index+1 to count - 1 do begin
    if items[int1].tagpointer = amodule then begin
     submenu.delete(int1);
@@ -3759,7 +3767,7 @@ dialogfilesfo.tag := 1 ;
 
 dialogfilesfo.caption := 'Load a Layout File';
 
-dialogfilesfo.list_files.cellwidth := 524 ;
+dialogfilesfo.list_files.cellwidth := 437 ;
 dialogfilesfo.list_files.mask := '*.prj';
 dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
 

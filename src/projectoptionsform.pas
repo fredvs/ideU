@@ -1431,7 +1431,8 @@ begin
     asarraya:= e.texp.filemasknames;
     asarrayb:= e.texp.filemasks;
    end;
-   item1:= mainfo.mainmenu1.menu.itembynames(['file','new']);
+   item1:= mainfo.mainmenu1.menu.itembynames(['file','new','msegui']);
+ //  item1:= mainfo.mainmenu1.menu.itembynames(['file','new']);
    item1.submenu.count:= 1;
    item1.submenu.count:= length(newfinames)+1;
    for int1:= 0 to high(newfinames) do begin
@@ -1442,7 +1443,7 @@ begin
     end;
    end;
 
-   item1:= mainfo.mainmenu1.menu.itembynames(['file','new','form']);
+   item1:= mainfo.mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
    item1.submenu.count:= 0;
    item1.submenu.count:= length(newfonames)+1;
    int2:= 0;
@@ -1959,7 +1960,7 @@ begin
   if iswriter then begin
 //  e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
    projectdir:= getcurrentdirmse;
-   with mainfo,mainmenu1.menu.itembyname('view') do begin
+   with mainfo,mainmenu1.menu.itembynames(['forms','msemod']) do begin
     int3:= formmenuitemstart;
     int2:= count - int3;
     setlength(modulenames1,int2);

@@ -18,7 +18,7 @@ order15=0
 order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/layout
-projectfilename=/home/fred/ideu/src/layout/Menu_Dock_Source_Message.prj
+projectfilename=/home/fred/ideu/src/layout/Menu_Dock_Editor_Message.prj
 mainfile=${PROJECTDIR}/${PROJECTNAME}.pas
 targetfile=${PROJECTDIR}/${PROJECTNAME}${EXEEXT}
 messageoutputfile=
@@ -556,7 +556,7 @@ index=-1
 windowlayout=520
  [mainfo.basedock]
  splitdir=2
- useroptions=15491
+ useroptions=11395
  parent=mainfo.container
  visible=1
  mdistate=0
@@ -586,6 +586,7 @@ windowlayout=520
  rcx=0
  rcy=0
  children=1
+  basedock,0,0,668,0
  focusedchild=0
  wsize=0
  active=0
@@ -691,7 +692,7 @@ windowlayout=520
  [projecttreefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -705,7 +706,7 @@ windowlayout=520
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
  [projecttreefo.project_tree]
  propcolwidthref=152
@@ -714,7 +715,7 @@ windowlayout=520
  width1=146
  sortdescend1=0
  sorted=0
- col=0
+ col=1
  row=1
  rowheight=17
  [stackfo]
@@ -796,7 +797,7 @@ windowlayout=520
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -984,7 +985,7 @@ windowlayout=520
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1005,7 +1006,7 @@ windowlayout=520
  [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=projecttreefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1019,7 +1020,7 @@ windowlayout=520
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
  [debuggerfo.basedock]
  splitdir=2
@@ -1057,7 +1058,7 @@ windowlayout=520
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=stackfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
