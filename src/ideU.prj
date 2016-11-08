@@ -1273,7 +1273,7 @@ editpos=9
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
@@ -1295,7 +1295,7 @@ sourcefiles=9
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/templateeditor.pas
+ /home/fred/ideu/src/templateeditor.pas
 relpaths=9
  main.pas
  commandorform.pas
@@ -1395,7 +1395,7 @@ windowlayout=602
   basedock,0,0,954,585
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1436,7 +1436,7 @@ windowlayout=602
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1482,7 +1482,7 @@ windowlayout=602
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_templateeditorfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1889,7 +1889,7 @@ windowlayout=602
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_confcompilerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1927,7 +1927,7 @@ windowlayout=602
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=findinfilefo
+ stackedunder=_mse_templateeditorfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1946,7 +1946,7 @@ windowlayout=602
  [_mse_templateeditorfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1960,7 +1960,7 @@ windowlayout=602
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
 [targetconsole]
 finddtext=
