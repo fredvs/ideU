@@ -17,7 +17,8 @@ uses
  msebitmap,msecolordialog,msedrawtext,msewidgets,msepointer,mseguiglob,
  msepipestream,msemenus,sysutils,mseglob,mseedit,msedialog,msescrollbar,
  msememodialog,msecodetemplates,mseifiglob,msestream,msestringcontainer,
- mserttistat,mseificomp,mseificompglob,msedragglob,mserichstring;
+ mserttistat,mseificomp,mseificompglob,msedragglob,mserichstring,mseact,
+ msecalendardatetimeedit;
 
 const
  defaultsourceprintfont = 'Courier';
@@ -75,7 +76,11 @@ type
    
    // fred exe ext
    fexeused: msestringarty;
-      
+   
+   // fred comment make
+   fmakecomment: msestringarty;
+   
+    
    fmakeoptions: msestringarty;
    ftoolmenus: msestringarty;
    ftoolfiles: msestringarty;
@@ -96,7 +101,7 @@ type
   public
    fcodetemplatedirs: msestringarty;
   published
-   property mainfile: filenamety read fmainfile write fmainfile;
+  property mainfile: filenamety read fmainfile write fmainfile;
    property targetfile: filenamety read ftargetfile write ftargetfile;
    property messageoutputfile: filenamety read fmessageoutputfile
                                                write fmessageoutputfile;
@@ -113,6 +118,10 @@ type
    property aftcommand: msestringarty read faftcommand write faftcommand;
    property makeoptions: msestringarty read fmakeoptions write fmakeoptions;
    
+   // fred make comment
+    property makecomment: msestringarty read fmakecomment write fmakecomment;
+  
+     
    // fred compiler
    property compilerused: msestringarty read fcompilerused write fcompilerused;
    
@@ -429,6 +438,32 @@ type
    // fred debuggerexe ext
    fexeusedon: integerarty;
    
+   // fred make comment
+ //  fmakecommenton: integerarty;
+ 
+    // fred comment options
+   fcomment_M: msestring;
+   fcomment_B: msestring;
+   fcomment_1: msestring;
+   fcomment_2: msestring;
+   fcomment_3: msestring;
+   fcomment_4: msestring;
+   fcomment_5: msestring;
+   fcomment_6: msestring;
+   fcomment_7: msestring;
+   fcomment_8: msestring;
+   fcomment_9: msestring;
+   fcomment_0: msestring;
+   
+     // fred infos project
+   fproject_name: msestring;
+   fproject_creator: msestring;
+   fproject_copyright: msestring;
+   fproject_license: msestring;
+   fproject_time: msestring;
+   fproject_date: msestring;
+   fproject_comment: msestring;
+ 
    fbefcommandon: integerarty;
    fmakeoptionson: integerarty;
    faftcommandon: integerarty;
@@ -505,6 +540,9 @@ type
    property befcommandon: integerarty read fbefcommandon write fbefcommandon;
    property makeoptionson: integerarty read fmakeoptionson write fmakeoptionson;
    
+    // fred comment make
+ //  property makecommenton: integerarty read fmakecommenton write fmakecommenton;
+   
    // fred compiler
    property compilerusedon: integerarty read fcompilerusedon  write fcompilerusedon;
    
@@ -514,6 +552,29 @@ type
    // fred exe ext
    property exeusedon: integerarty read fexeusedon  write fexeusedon;
    
+    // fred comment options
+   property comment_M : msestring read fcomment_M write fcomment_M;
+   property comment_B : msestring read fcomment_B write fcomment_B;
+   property comment_1 : msestring read fcomment_1 write fcomment_1;
+   property comment_2 : msestring read fcomment_2 write fcomment_2;
+   property comment_3 : msestring read fcomment_3 write fcomment_3;
+   property comment_4 : msestring read fcomment_4 write fcomment_4;
+   property comment_5 : msestring read fcomment_5 write fcomment_5;
+   property comment_6 : msestring read fcomment_6 write fcomment_6;
+   property comment_7 : msestring read fcomment_7 write fcomment_7;
+   property comment_8 : msestring read fcomment_8 write fcomment_8;
+   property comment_9 : msestring read fcomment_9 write fcomment_9;
+   property comment_0 : msestring read fcomment_0 write fcomment_0;
+   
+    // fred info project
+   property project_name : msestring read fproject_name write fproject_name;
+   property project_creator : msestring read fproject_creator write fproject_creator;
+   property project_copyright : msestring read fproject_copyright write fproject_copyright;
+   property project_license : msestring read fproject_license write fproject_license;
+   property project_time : msestring read fproject_time write fproject_time;
+   property project_date : msestring read fproject_date write fproject_date;
+   property project_comment : msestring read fproject_comment write fproject_comment;
+  
    property aftcommandon: integerarty read faftcommandon write faftcommandon;
    property unitdirson: integerarty read funitdirson write funitdirson;
 
@@ -640,6 +701,10 @@ type
    make9on: tbooleanedit;
    make0on: tbooleanedit;
    makeoptions: tmemodialogedit;
+   /// fred
+   makecomment: tmemodialogedit;
+   
+   
    ttabpage11: ttabpage;
    unitdirgrid: twidgetgrid;
    dmakeon: tbooleanedit;
@@ -802,6 +867,7 @@ type
    compmake0on: tbooleanedit;
    compcommand: tmemodialogedit;
    
+    
    // fred debugger
    ttabpage77: ttabpage;
    debuggerusedgrid: twidgetgrid;
@@ -922,6 +988,30 @@ type
    tgroupbox2: tgroupbox;
    fpgdesignerenabled: tbooleanedit;
   
+   ttabpage22: ttabpage;
+   comment_M: tmemodialogedit;
+   comment_B: tmemodialogedit;
+   comment_1: tmemodialogedit;
+   comment_2: tmemodialogedit;
+   comment_3: tmemodialogedit;
+   comment_4: tmemodialogedit;
+   comment_5: tmemodialogedit;
+   comment_6: tmemodialogedit;
+   comment_7: tmemodialogedit;
+   comment_8: tmemodialogedit;
+   comment_0: tmemodialogedit;
+   comment_9: tmemodialogedit;
+   
+   ///////////////
+     
+   ttabpage23: ttabpage;
+   project_comment: tmemoedit;
+   project_time: tdatetimeedit;
+   project_date: tcalendardatetimeedit;
+   project_creator: tstringedit;
+   project_copyright: tstringedit;
+   project_license: tstringedit;
+   project_name: tstringedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1005,7 +1095,7 @@ var
 
 implementation
 uses
- projectoptionsform_mfm,breakpointsform,sourceform,mseact,msereal,
+ projectoptionsform_mfm,breakpointsform,sourceform,msereal,
  objectinspector,msebits,msefileutils,msedesignintf,guitemplates,
  watchform,stackform,main,projecttreeform,findinfileform,
  selecteditpageform,programparametersform,sourceupdate,mseimagelisteditor,
@@ -1681,6 +1771,7 @@ begin
   additem(fmakeoptions,'-l -Mobjfpc -Sh -Fcutf8');
   additem(fmakeoptions,'-gl -O-');
   additem(fmakeoptions,'-B');
+  additem(fmakeoptions,'-FUunits');
   additem(fmakeoptions,'-O2 -XX -CX -Xs');
   setlength(fmakeoptionson,length(fmakeoptions));
   for int1:= 0 to high(fmakeoptionson) do begin
@@ -2171,6 +2262,34 @@ begin
   end;
  end;
  
+  /// fred options comment
+fo.comment_M.value := o.comment_M;
+fo.comment_B.value := o.comment_B;
+fo.comment_1.value := o.comment_1;
+fo.comment_2.value := o.comment_2;
+fo.comment_3.value := o.comment_3;
+fo.comment_4.value := o.comment_4;
+fo.comment_5.value := o.comment_5;
+fo.comment_6.value := o.comment_6;
+fo.comment_7.value := o.comment_7;
+fo.comment_8.value := o.comment_8;
+fo.comment_9.value := o.comment_9;
+fo.comment_0.value := o.comment_0;
+
+  /// fred info project
+fo.project_name.value := o.project_name;
+fo.project_creator.value := o.project_creator;
+fo.project_copyright.value := o.project_copyright;
+fo.project_license.value := o.project_license;
+//{
+if trim(o.project_time) <> '' then
+fo.project_time.value := strtotime(o.project_time) else
+fo.project_time.value := now;
+if trim(o.project_date) <> '' then
+fo.project_date.value := strtodate(o.project_date) else
+fo.project_date.value := now;
+//}
+fo.project_comment.value := o.project_comment;
  
  /// fred exe ext
  
@@ -2420,7 +2539,29 @@ begin
        ;
   end;
  
- ///
+ /// fred options comment
+ o.comment_M := fo.comment_M.value ;
+ o.comment_B := fo.comment_B.value ;
+ o.comment_1 := fo.comment_1.value ;
+ o.comment_2 := fo.comment_2.value ;
+ o.comment_3 := fo.comment_3.value ;
+ o.comment_4 := fo.comment_4.value ;
+ o.comment_5 := fo.comment_5.value ;
+ o.comment_6 := fo.comment_6.value ;
+ o.comment_7 := fo.comment_7.value ;
+ o.comment_8 := fo.comment_8.value ;
+ o.comment_9 := fo.comment_9.value ;
+ o.comment_0 := fo.comment_0.value ;
+  
+   /// fred info project
+ o.project_name := fo.project_name.value;
+ o.project_creator := fo.project_creator.value;
+ o.project_copyright := fo.project_copyright.value ;
+ o.project_license := fo.project_license.value;
+ o.project_time := timetostr(fo.project_time.value);
+ o.project_date := datetostr(fo.project_date.value);
+ o.project_comment := fo.project_comment.value;
+ //
 
   setlength(o.fbefcommandon,fo.befcommandgrid.rowcount);
   for int1:= 0 to high(o.fbefcommandon) do begin
