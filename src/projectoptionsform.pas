@@ -78,7 +78,7 @@ type
    fexeused: msestringarty;
    
    // fred comment make
-   fmakecomment: msestringarty;
+   fmakeoptpurpose: msestringarty;
    
     
    fmakeoptions: msestringarty;
@@ -119,7 +119,7 @@ type
    property makeoptions: msestringarty read fmakeoptions write fmakeoptions;
    
    // fred make comment
-    property makecomment: msestringarty read fmakecomment write fmakecomment;
+    property makeoptpurpose: msestringarty read fmakeoptpurpose write fmakeoptpurpose;
   
      
    // fred compiler
@@ -702,7 +702,7 @@ type
    make0on: tbooleanedit;
    makeoptions: tmemodialogedit;
    /// fred
-   makecomment: tmemodialogedit;
+   makeoptpurpose: tmemodialogedit;
    
    
    ttabpage11: ttabpage;

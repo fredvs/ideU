@@ -4129,10 +4129,10 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'makeoptions'
                   dataclass = tgridmsestringdatalist
                 end              
-                item[makecomment]
+                item[makeoptpurpose]
                   width = 145
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-                  widgetname = 'makecomment'
+                  widgetname = 'makeoptpurpose'
                   dataclass = tgridmsestringdatalist
                   datalist.facultative = True
                 end>
@@ -4308,7 +4308,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 reffontheight = 15
               end
-              object makecomment: tmemodialogedit
+              object makeoptpurpose: tmemodialogedit
                 optionswidget1 = [ow1_fontglyphheight]
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets, ow_hinton]
                 optionsskin = [osk_framebuttononly]
