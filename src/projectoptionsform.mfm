@@ -3991,6 +3991,10 @@ object projectoptionsfo: tprojectoptionsfo
                   captions.count = 14
                   captions.items = <                  
                     item
+                      caption = 'Purpose'
+                      hint = 'Purpose of the option'
+                    end                  
+                    item
                       caption = 'M'
                       hint = 'Use in Make'
                     end                  
@@ -4041,15 +4045,18 @@ object projectoptionsfo: tprojectoptionsfo
                     item
                       caption = 'Command line options'
                       hint = 'Options for compiler'
-                    end                  
-                    item
-                      caption = 'Purpose'
-                      hint = 'Purpose of the option'
                     end>
                 end>
               datacols.count = 14
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
+                item[makeoptpurpose]
+                  width = 145
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'makeoptpurpose'
+                  dataclass = tgridmsestringdatalist
+                  datalist.facultative = True
+                end              
                 item[makeon]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
@@ -4128,21 +4135,40 @@ object projectoptionsfo: tprojectoptionsfo
                   onshowhint = colonshowhint
                   widgetname = 'makeoptions'
                   dataclass = tgridmsestringdatalist
-                end              
-                item[makeoptpurpose]
-                  width = 145
-                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-                  widgetname = 'makeoptpurpose'
-                  dataclass = tgridmsestringdatalist
-                  datalist.facultative = True
                 end>
               datarowheight = 17
               reffontheight = 15
+              object makeoptpurpose: tmemodialogedit
+                optionswidget1 = [ow1_fontglyphheight]
+                optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets, ow_hinton]
+                optionsskin = [osk_framebuttononly]
+                frame.levelo = 0
+                frame.colorclient = -2147483645
+                frame.localprops = [frl_levelo, frl_leveli, frl_colorclient]
+                frame.localprops1 = []
+                frame.buttons.count = 1
+                frame.buttons.items = <                
+                  item
+                    color = -1879048187
+                    imagenr = 17
+                  end>
+                frame.button.color = -1879048187
+                frame.button.imagenr = 17
+                taborder = 1
+                visible = False
+                bounds_x = 0
+                bounds_y = 0
+                bounds_cx = 145
+                bounds_cy = 17
+                optionsedit1 = [oe1_savevalue]
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+                reffontheight = 15
+              end
               object makeon: tbooleanedit
                 Tag = 1
                 optionsskin = [osk_framebuttononly]
-                taborder = 1
-                bounds_x = 0
+                taborder = 2
+                bounds_x = 146
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4153,8 +4179,8 @@ object projectoptionsfo: tprojectoptionsfo
               object buildon: tbooleanedit
                 Tag = 2
                 optionsskin = [osk_framebuttononly]
-                taborder = 2
-                bounds_x = 14
+                taborder = 3
+                bounds_x = 160
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4165,8 +4191,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make1on: tbooleanedit
                 Tag = 4
                 optionsskin = [osk_framebuttononly]
-                taborder = 3
-                bounds_x = 28
+                taborder = 4
+                bounds_x = 174
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4177,8 +4203,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make2on: tbooleanedit
                 Tag = 8
                 optionsskin = [osk_framebuttononly]
-                taborder = 4
-                bounds_x = 42
+                taborder = 5
+                bounds_x = 188
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4189,8 +4215,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make3on: tbooleanedit
                 Tag = 16
                 optionsskin = [osk_framebuttononly]
-                taborder = 5
-                bounds_x = 56
+                taborder = 6
+                bounds_x = 202
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4201,8 +4227,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make4on: tbooleanedit
                 Tag = 32
                 optionsskin = [osk_framebuttononly]
-                taborder = 6
-                bounds_x = 70
+                taborder = 7
+                bounds_x = 216
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4213,8 +4239,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make5on: tbooleanedit
                 Tag = 64
                 optionsskin = [osk_framebuttononly]
-                taborder = 7
-                bounds_x = 84
+                taborder = 8
+                bounds_x = 230
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4225,8 +4251,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make6on: tbooleanedit
                 Tag = 128
                 optionsskin = [osk_framebuttononly]
-                taborder = 8
-                bounds_x = 98
+                taborder = 9
+                bounds_x = 244
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4237,8 +4263,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make7on: tbooleanedit
                 Tag = 256
                 optionsskin = [osk_framebuttononly]
-                taborder = 9
-                bounds_x = 112
+                taborder = 10
+                bounds_x = 258
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4249,8 +4275,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make8on: tbooleanedit
                 Tag = 512
                 optionsskin = [osk_framebuttononly]
-                taborder = 10
-                bounds_x = 126
+                taborder = 11
+                bounds_x = 272
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4261,8 +4287,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make9on: tbooleanedit
                 Tag = 1024
                 optionsskin = [osk_framebuttononly]
-                taborder = 11
-                bounds_x = 140
+                taborder = 12
+                bounds_x = 286
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4273,8 +4299,8 @@ object projectoptionsfo: tprojectoptionsfo
               object make0on: tbooleanedit
                 Tag = 2048
                 optionsskin = [osk_framebuttononly]
-                taborder = 12
-                bounds_x = 154
+                taborder = 13
+                bounds_x = 300
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4297,41 +4323,15 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 13
+                taborder = 14
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 168
+                bounds_x = 314
                 bounds_y = 0
                 bounds_cx = 466
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                reffontheight = 15
-              end
-              object makeoptpurpose: tmemodialogedit
-                optionswidget1 = [ow1_fontglyphheight]
-                optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets, ow_hinton]
-                optionsskin = [osk_framebuttononly]
-                frame.levelo = 0
-                frame.colorclient = -2147483645
-                frame.localprops = [frl_levelo, frl_leveli, frl_colorclient]
-                frame.localprops1 = []
-                frame.buttons.count = 1
-                frame.buttons.items = <                
-                  item
-                    color = -1879048187
-                    imagenr = 17
-                  end>
-                frame.button.color = -1879048187
-                frame.button.imagenr = 17
-                taborder = 14
-                visible = False
-                bounds_x = 635
-                bounds_y = 0
-                bounds_cx = 145
-                bounds_cy = 17
-                optionsedit1 = [oe1_savevalue]
-                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
                 reffontheight = 15
               end
             end
