@@ -1360,78 +1360,91 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmakeon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debbuildon]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debbuildon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake1on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake1on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake2on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake2on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake3on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake3on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake4on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake4on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake5on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debmake0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debmake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[debcommand]
                   width = 612
                   options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debcommand'
                   dataclass = tgridmsestringdatalist
+                  datalist.facultative = True
                 end>
               datarowheight = 17
               reffontheight = 15
@@ -3381,78 +3394,91 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmakeon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compbuildon]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compbuildon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake1on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake1on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake2on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake2on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake3on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake3on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake4on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake4on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake5on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compmake0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compmake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[compcommand]
                   width = 612
                   options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compcommand'
                   dataclass = tgridmsestringdatalist
+                  datalist.facultative = True
                 end>
               datarowheight = 17
               reffontheight = 15
@@ -3744,36 +3770,42 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befmake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befmake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befmake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befmake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befmake0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befmake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[befcommand]
                   width = 612
@@ -4098,36 +4130,42 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[make6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[make7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[make8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[make9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[make0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'make0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[makeoptions]
                   width = 466
@@ -4489,30 +4527,35 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[dmake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[dmake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[dmake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[dmake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[dmake0on]
                   linewidth = 6
@@ -4521,6 +4564,7 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'dmake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[duniton]
                   width = 17
@@ -5000,36 +5044,42 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftmake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftmake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftmake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftmake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftmake0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftmake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[aftcommand]
                   width = 612
@@ -5301,78 +5351,91 @@ object projectoptionsfo: tprojectoptionsfo
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemakeon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exebuildon]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exebuildon'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake1on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake1on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake2on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake2on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake3on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake3on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake4on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake4on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake5on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake5on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake6on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake6on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake7on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake7on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake8on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake8on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake9on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake9on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exemake0on]
                   width = 13
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exemake0on'
                   dataclass = tgridintegerdatalist
+                  datalist.facultative = True
                 end              
                 item[exeused]
                   width = 612
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'exeused'
                   dataclass = tgridmsestringdatalist
+                  datalist.facultative = True
                 end>
               datarowheight = 17
               reffontheight = 15
@@ -8598,6 +8661,7 @@ object projectoptionsfo: tprojectoptionsfo
         caption = ' Infos '
         coloractivetab = 16776396
         object project_comment: tmemoedit
+          frame.colorclient = 16773078
           frame.caption = 'Comment'
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
@@ -8609,16 +8673,17 @@ object projectoptionsfo: tprojectoptionsfo
             0
             0
           )
-          bounds_x = 174
+          bounds_x = 150
           bounds_y = 289
-          bounds_cx = 467
+          bounds_cx = 480
           bounds_cy = 193
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
         end
         object project_time: tdatetimeedit
+          frame.colorclient = 16773078
           frame.caption = 'Time of Creation'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
             0
@@ -8627,8 +8692,8 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 1
-          bounds_x = 216
-          bounds_y = 224
+          bounds_x = 281
+          bounds_y = 230
           bounds_cx = 107
           bounds_cy = 39
           value = -Inf
@@ -8639,8 +8704,9 @@ object projectoptionsfo: tprojectoptionsfo
           reffontheight = 15
         end
         object project_date: tcalendardatetimeedit
+          frame.colorclient = 16773078
           frame.caption = 'Date of Creation'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.buttons.count = 1
           frame.buttons.items = <          
@@ -8653,8 +8719,8 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 2
-          bounds_x = 336
-          bounds_y = 224
+          bounds_x = 401
+          bounds_y = 230
           bounds_cy = 39
           value = -Inf
           min = -Inf
@@ -8662,8 +8728,9 @@ object projectoptionsfo: tprojectoptionsfo
           reffontheight = 15
         end
         object project_creator: tstringedit
+          frame.colorclient = 16773078
           frame.caption = 'Name of Creator'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
             0
@@ -8672,16 +8739,17 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 3
-          bounds_x = 174
+          bounds_x = 150
           bounds_y = 86
-          bounds_cx = 467
+          bounds_cx = 480
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
         end
         object project_copyright: tstringedit
+          frame.colorclient = 16773078
           frame.caption = 'Copyright'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
             0
@@ -8690,16 +8758,17 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 4
-          bounds_x = 174
+          bounds_x = 150
           bounds_y = 130
-          bounds_cx = 467
+          bounds_cx = 480
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
         end
         object project_license: tstringedit
+          frame.colorclient = 16773078
           frame.caption = 'License'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
             0
@@ -8708,16 +8777,17 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 5
-          bounds_x = 174
+          bounds_x = 150
           bounds_y = 174
-          bounds_cx = 467
+          bounds_cx = 480
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
         end
         object project_name: tstringedit
+          frame.colorclient = 16773078
           frame.caption = 'Full Name of Project'
-          frame.localprops = []
+          frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
             0
@@ -8726,9 +8796,9 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 6
-          bounds_x = 174
+          bounds_x = 150
           bounds_y = 36
-          bounds_cx = 467
+          bounds_cx = 480
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15

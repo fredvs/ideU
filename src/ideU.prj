@@ -450,11 +450,11 @@ makeoptions=6
  -ghl
  -FUunits
 makeoptpurpose=6
- Assign object pascal
+ Object Pascal defined
  Debug infos
- Built all
- Optimization
- Memory leak
+ Re-build all
+ Optimizations
+ Memory leak finder
  Output to /units
 compilerused=29
  ${COMPILER} (Default)
@@ -665,17 +665,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=1
+ PROJECTOPTIONSFO
+moduletypes=1
+ TPROJECTOPTIONSFO
+modulefiles=1
+ /home/fred/ideu/src/projectoptionsform.mfm
 befcommandon=0
 makeoptionson=6
- 63
+ 4095
  0
- 62
- 62
  2
- 63
+ 4094
+ 2
+ 4095
 compilerusedon=29
  4095
  0
@@ -744,7 +747,7 @@ project_name=
 project_creator=
 project_copyright=
 project_license=
-project_time=00:56:17
+project_time=01:50:52
 project_date=11/11/2016
 project_comment=
 aftcommandon=0
@@ -1267,11 +1270,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=purpose
+finddtext=dataclass
 findhistory=20
- purpose
  dataclass
  facul
+ purpose
  makecomment
  acultative
  project_ti
@@ -1290,37 +1293,46 @@ findhistory=20
  compilepro
  compileprof
 findoptions=1
-editpos=1
+editpos=2
  0,0
+ 0,-1073741823
 bookmarks0=0
-sourcefiles=1
+bookmarks1=0
+sourcefiles=2
  ${PROJECTDIR}/ideU.pas
-relpaths=1
+ ${PROJECTDIR}/projectoptionsform.pas
+relpaths=2
  ideU.pas
-ismoduletexts=1
+ projectoptionsform.pas
+ismoduletexts=2
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/projectoptionsform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  0
  0
  0
-nomenumodules=3
+ -1
+nomenumodules=4
  -1
  -1
  -1
+ 0
 [sourcefo.files_tab]
 tabsize=60
 firsttab=0
 index=0
 [layout]
-windowlayout=545
+windowlayout=564
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1479,8 +1491,8 @@ windowlayout=545
  width1=12
  sortdescend1=0
  sorted=0
- col=0
- row=5
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1745,7 +1757,7 @@ windowlayout=545
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1815,7 +1827,7 @@ windowlayout=545
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1826,25 +1838,6 @@ windowlayout=545
  y=113
  cx=352
  cy=277
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_actionsmo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=246
- y=216
- cx=966
- cy=472
  rcx=0
  rcy=0
  wsize=0
@@ -1866,6 +1859,44 @@ windowlayout=545
  cy=426
  rcx=0
  rcy=0
+ [_mse_actionsmo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_projectoptionsfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=246
+ y=216
+ cx=966
+ cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=195
+ y=170
+ cx=797
+ cy=570
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

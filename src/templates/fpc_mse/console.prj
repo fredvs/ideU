@@ -19,95 +19,110 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/templates/fpc_mse
 projectfilename=/home/fred/ideu/src/templates/fpc_mse/console.prj
-options=99
+options=114
+ [projectoptionsfo.toolshortcuts]
+ dropdowncolwidths=3
+  70
+  70
+  70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=596
- width0=13
- sortdescent0=0
- width1=13
- sortdescent1=0
- width2=13
- sortdescent2=0
- width3=104
- sortdescent3=0
- width4=204
- sortdescent4=0
- width5=238
- sortdescent5=0
+ propcolwidthref=738
+ sortdescend0=0
+ sortdescend1=0
+ sortdescend2=0
+ sortdescend3=0
+ width4=253
+ sortdescend4=0
+ width5=295
+ sortdescend5=0
+ width6=51
+ sortdescend6=0
+ width7=51
+ sortdescend7=0
+ width8=1
+ sortdescend8=0
+ width9=301
+ sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=407
+ propcolwidthref=562
  width0=96
- sortdescent0=0
- width1=13
- sortdescent1=0
+ sortdescend0=0
+ sortdescend1=0
  width2=73
- sortdescent2=0
- width3=195
- sortdescent3=0
- width4=202
- sortdescent4=0
- sortcol=-1
+ sortdescend2=0
+ width3=269
+ sortdescend3=0
+ width4=283
+ sortdescend4=0
+ sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=336
- values0=0
+ propcolwidthref=421
  width0=98
- sortdescent0=0
- values1=0
- width1=326
- sortdescent1=0
- values2=0
+ sortdescend0=0
+ width1=410
+ sortdescend1=0
  width2=30
- sortdescent2=0
- values3=0
+ sortdescend2=0
  width3=50
- sortdescent3=0
- values4=0
+ sortdescend3=0
  width4=50
- sortdescent4=0
- values5=0
+ sortdescend4=0
  width5=50
- sortdescent5=0
+ sortdescend5=0
+ width6=70
+ sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=131
- xprop=0
+ y=127
+ xprop=1
  yprop=0.2504816955684
  [projectoptionsfo.macrogrid]
- propcolwidthref=390
- width0=13
- sortdescent0=0
- width1=13
- sortdescent1=0
- width2=13
- sortdescent2=0
- width3=13
- sortdescent3=0
- width4=13
- sortdescent4=0
- width5=13
- sortdescent5=0
- width6=146
- sortdescent6=0
- width7=378
- sortdescent7=0
+ propcolwidthref=493
+ sortdescend0=0
+ sortdescend1=0
+ sortdescend2=0
+ sortdescend3=0
+ sortdescend4=0
+ sortdescend5=0
+ sortdescend6=0
+ sortdescend7=0
+ sortdescend8=0
+ sortdescend9=0
+ width10=146
+ sortdescend10=0
+ width11=477
+ sortdescend11=0
+ [projectoptionsfo.comment_1]
+ value=
+ [projectoptionsfo.comment_B]
+ value=
+ [projectoptionsfo.comment_M]
+ value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=1
+ index=3
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=567
+ propcolwidthref=722
  width0=47
- sortdescent0=0
- values1=1
-  EconvertError
- width1=561
- sortdescent1=0
+ sortdescend0=0
+ width1=716
+ sortdescend1=0
  [projectoptionsfo.ttabwidget1]
+ firsttab=0
+ index=0
+ [projectoptionsfo.filefiltergrid]
+ propcolwidthref=630
+ width0=112
+ sortdescend0=0
+ width1=623
+ sortdescend1=0
+ [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.tabwidget]
@@ -117,7 +132,7 @@ options=99
  stackedunder=
  x=151
  y=68
- cx=616
+ cx=771
  cy=572
 settings=9
  [settingsfo]
@@ -150,6 +165,11 @@ makeoptions=4
  -gl -O-
  -B
  -O2 -XX -Xs -CX
+makeoptpurpose=4
+ Define Object Pascal
+ Debug infos
+ Re-build all
+ Optimizations
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -350,12 +370,12 @@ moduletypes=0
 modulefiles=0
 befcommandon=0
 makeoptionson=4
- 63
+ 4095
  31
  34
- 32
+ 4064
 compilerusedon=29
- 69631
+ 4095
  0
  0
  0
@@ -385,14 +405,14 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 69631
+ 4095
  0
  0
  0
  0
  0
 exeusedon=14
- 69631
+ 4095
  0
  0
  0
@@ -406,16 +426,39 @@ exeusedon=14
  0
  0
  0
+comment_M=
+comment_B=
+comment_1=
+comment_2=
+comment_3=
+comment_4=
+comment_5=
+comment_6=
+comment_7=
+comment_8=
+comment_9=
+comment_0=
+project_name=
+project_creator=
+project_copyright=
+project_license=
+project_time=02:11:48
+project_date=11/11/2016
+project_comment=
 aftcommandon=0
 unitdirson=3
- 196671
- 65599
- 65599
+ 200703
+ 69631
+ 69631
 macroon=0
 macronames=0
 macrovalues=0
 macrogroup=0
-groupcomments=6
+groupcomments=10
+ 
+ 
+ 
+ 
  
  
  
@@ -706,7 +749,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=stackfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -752,7 +795,7 @@ windowlayout=530
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1058,7 +1101,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=findinfilefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1128,7 +1171,7 @@ windowlayout=530
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
