@@ -19,6 +19,121 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/templates/fpc_console
 projectfilename=/home/fred/ideu/src/templates/fpc_console/console.prj
+options=114
+ [projectoptionsfo.toolshortcuts]
+ dropdowncolwidths=3
+  70
+  70
+  70
+ [projectoptionsfo.twidgetgrid3]
+ propcolwidthref=754
+ sortdescend0=0
+ sortdescend1=0
+ sortdescend2=0
+ sortdescend3=0
+ width4=102
+ sortdescend4=0
+ width5=81
+ sortdescend5=0
+ width6=52
+ sortdescend6=0
+ width7=52
+ sortdescend7=0
+ width8=105
+ sortdescend8=0
+ width9=308
+ sortdescend9=0
+ [projectoptionsfo.twidgetgrid4]
+ propcolwidthref=578
+ width0=96
+ sortdescend0=0
+ sortdescend1=0
+ width2=73
+ sortdescend2=0
+ width3=277
+ sortdescend3=0
+ width4=291
+ sortdescend4=0
+ sorted=0
+ col=-1073741823
+ row=-1073741823
+ rowheight=17
+ [projectoptionsfo.newfile]
+ firsttab=0
+ index=0
+ [projectoptionsfo.fontaliasgrid]
+ propcolwidthref=417
+ width0=98
+ sortdescend0=0
+ width1=406
+ sortdescend1=0
+ width2=50
+ sortdescend2=0
+ width3=50
+ sortdescend3=0
+ width4=50
+ sortdescend4=0
+ width5=50
+ sortdescend5=0
+ width6=70
+ sortdescend6=0
+ [projectoptionsfo.macrosplitter]
+ x=0
+ y=201
+ xprop=1
+ yprop=0.39458413926499
+ [projectoptionsfo.macrogrid]
+ propcolwidthref=509
+ sortdescend0=0
+ sortdescend1=0
+ sortdescend2=0
+ sortdescend3=0
+ sortdescend4=0
+ sortdescend5=0
+ sortdescend6=0
+ sortdescend7=0
+ sortdescend8=0
+ sortdescend9=0
+ width10=146
+ sortdescend10=0
+ width11=493
+ sortdescend11=0
+ [projectoptionsfo.comment_1]
+ value=
+ [projectoptionsfo.comment_B]
+ value=
+ [projectoptionsfo.comment_M]
+ value=
+ [projectoptionsfo.makegroupbox]
+ firsttab=0
+ index=2
+ [projectoptionsfo.exceptionsgrid]
+ propcolwidthref=738
+ width0=47
+ sortdescend0=0
+ width1=732
+ sortdescend1=0
+ [projectoptionsfo.ttabwidget1]
+ firsttab=0
+ index=0
+ [projectoptionsfo.filefiltergrid]
+ propcolwidthref=646
+ width0=112
+ sortdescend0=0
+ width1=639
+ sortdescend1=0
+ [projectoptionsfo.ttabwidget2]
+ firsttab=0
+ index=0
+ [projectoptionsfo.tabwidget]
+ firsttab=0
+ index=2
+ [projectoptionsfo]
+ stackedunder=
+ x=195
+ y=170
+ cx=787
+ cy=570
 mainfile=${PROJECTDIR}/${PROJECTNAME}.pas
 targetfile=${PROJECTDIR}/${PROJECTNAME}${EXEEXT}
 messageoutputfile=
@@ -32,14 +147,20 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=7
- -fPIC
+makeoptions=6
  -l -Mobjfpc -Schi
  -FE.
  -FUunits/${TARGET}/
  -B
  -O2 -XX -Xs -CX
  -vewnhibq
+makeoptpurpose=6
+ Define Object Pascal
+ Executable in /.
+ Output to /units
+ Re-Build all
+ Optimizations
+ Verbosity
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -103,22 +224,16 @@ toolparams=1
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
-newprojectfiles=7
+newprojectfiles=4
  ${TEMPLATEDIR}fpc_console/files/project.pas
  ${TEMPLATEDIR}fpc_console/files/dummy
  ${TEMPLATEDIR}fpc_console/files/dummy
  ${TEMPLATEDIR}fpc_console/files/dummy
- ${TEMPLATEDIR}fpc_console/files/dummy
- ${TEMPLATEDIR}fpc_console/files/dummy
- ${TEMPLATEDIR}fpc_console/files/dummy
-newprojectfilesdest=7
+newprojectfilesdest=4
  ${%PROJECTNAME%}.pas
  ${%PROJECTDIR%}/units/i386-linux/dummy
  ${%PROJECTDIR%}/units/i386-freebsd/dummy
  ${%PROJECTDIR%}/units/i386-win32/dummy
- ${%PROJECTDIR%}/units/x86_64-linux/dummy
- ${%PROJECTDIR%}/units/x86_64-freebsd/dummy
- ${%PROJECTDIR%}/units/x86_64-win64/dummy
 newfinames=1
  Program
 newfifilters=1
@@ -218,14 +333,13 @@ modulenames=0
 moduletypes=0
 modulefiles=0
 befcommandon=0
-makeoptionson=7
- 0
- 63
- 63
- 63
+makeoptionson=6
+ 4095
+ 4095
+ 4095
  2
- 48
- 63
+ 4092
+ 4095
 compilerusedon=29
  4095
  0
@@ -278,15 +392,27 @@ exeusedon=14
  0
  0
  0
+comment_M=
+comment_B=
+comment_1=
+comment_2=
+comment_3=
+comment_4=
+comment_5=
+comment_6=
+comment_7=
+comment_8=
+comment_9=
+comment_0=
+project_name=
+project_creator=
+project_copyright=
+project_license=
+project_time=14:04:30
+project_date=11/11/2016
+project_comment=
 aftcommandon=0
-unitdirson=7
- 196671
- 196671
- 0
- 196671
- 196671
- 196671
- 196671
+unitdirson=0
 macroon=5
  1
  3
@@ -634,7 +760,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=stackfo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -680,7 +806,7 @@ windowlayout=530
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -986,7 +1112,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=findinfilefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1056,7 +1182,7 @@ windowlayout=530
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0

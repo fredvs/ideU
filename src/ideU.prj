@@ -205,7 +205,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -450,12 +450,12 @@ makeoptions=6
  -ghl
  -FUunits
 makeoptpurpose=6
- Object Pascal defined
- Debug infos
- Re-build all
- Optimizations
- Memory leak finder
- Output to /units
+ 
+ 
+ 
+ 
+ 
+ 
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -665,26 +665,23 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
- PROJECTOPTIONSFO
-moduletypes=1
- TPROJECTOPTIONSFO
-modulefiles=1
- /home/fred/ideu/src/projectoptionsform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=6
  4095
  0
- 2
+ 62
  4094
  2
  4095
 compilerusedon=29
- 4095
- 0
- 0
- 0
- 0
+ 4035
+ 4
+ 8
+ 16
+ 32
  0
  0
  0
@@ -717,9 +714,9 @@ debuggerusedon=6
  0
  0
 exeusedon=14
- 4095
+ 4047
  0
- 0
+ 48
  0
  0
  0
@@ -743,11 +740,11 @@ comment_7=
 comment_8=
 comment_9=
 comment_0=
-project_name=
-project_creator=
-project_copyright=
-project_license=
-project_time=01:50:52
+project_name=ideu the universal ide.
+project_creator=Fred van Stappen / fiens@hotmail.com
+project_copyright=Fred van Stappen
+project_license=LGPL
+project_time=14:03:02
 project_date=11/11/2016
 project_comment=
 aftcommandon=0
@@ -1293,46 +1290,47 @@ findhistory=20
  compilepro
  compileprof
 findoptions=1
-editpos=2
- 0,0
+editpos=3
  0,-1073741823
+ 0,-1073741823
+ 0,6
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=2
+ ${PROJECTDIR}/projectoptionsform.mfm
+relpaths=3
  ideU.pas
  projectoptionsform.pas
-ismoduletexts=2
+ projectoptionsform.mfm
+ismoduletexts=3
  0
  0
-modules=4
+ -1
+modules=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=4
+moduleoptions=3
  0
  0
  0
- 0
-visiblemodules=4
- 0
+visiblemodules=3
  0
  0
- -1
-nomenumodules=4
+ 0
+nomenumodules=3
  -1
  -1
  -1
- 0
 [sourcefo.files_tab]
 tabsize=60
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=564
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1409,7 +1407,7 @@ windowlayout=564
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1757,7 +1755,7 @@ windowlayout=564
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1827,7 +1825,7 @@ windowlayout=564
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1862,7 +1860,7 @@ windowlayout=564
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1878,25 +1876,6 @@ windowlayout=564
  wsize=0
  active=0
  visible=0
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=195
- y=170
- cx=797
- cy=570
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

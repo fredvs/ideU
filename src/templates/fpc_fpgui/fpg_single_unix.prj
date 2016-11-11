@@ -154,16 +154,14 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=7
- -fPIC
+makeoptions=6
  -l -Mobjfpc -Schi
  -FE.
  -FUunits/${TARGET}/
  -B
  -O2 -XX -Xs -CX
  -vewnhibq
-makeoptpurpose=7
- Add PIC instructions
+makeoptpurpose=6
  Define Object Pascal
  Exe path to /.
  Output to /units
@@ -342,8 +340,7 @@ modulenames=0
 moduletypes=0
 modulefiles=0
 befcommandon=0
-makeoptionson=7
- 0
+makeoptionson=6
  4095
  4095
  4095
@@ -772,7 +769,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1124,7 +1121,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1194,7 +1191,7 @@ windowlayout=530
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
