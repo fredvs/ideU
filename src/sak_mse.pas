@@ -664,7 +664,7 @@ begin
 //if itementer = false then begin
   thetimer.Enabled := False;
   if trim(WhatChar(TheSender, TheKeyinfo)) <> '' then begin
-  SakCancel;
+//  SakCancel;
   espeak_Key(WhatChar(TheSender, TheKeyinfo));
    end;
 end;
@@ -674,15 +674,9 @@ var
   WhatCh ,tmpstr: msestring;
   oldlang : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
+  isnotchar : boolean = false;
 begin
-//if WhatName(Sender) <> '' then
-  //begin
-   thetimer.Enabled := False;
-    WhatCh := WhatChar(Sender, info);
-    TheKeyInfo := info;
-    thetimer.ontimer := @ontimerkey;
-  
-  oldlang := voice_language;
+   oldlang := voice_language;
       if voice_gender = '' then
     oldgender := -1 else
      if voice_gender = 'm3' then
@@ -691,8 +685,31 @@ begin
   oldspeed := voice_speed;
   oldpitch := voice_pitch;
   oldvolume := voice_volume;
-  
-        if (info.eventkind = ek_keypress) and ( (WhatCh = '.') or(info.key = key_down) or 
+    
+ if (itementer = true) then
+  begin
+   TheExtraChar := '';
+      case info.key of
+   key_down: TheExtraChar := 'down, ';
+   key_up: TheExtraChar := 'up, ';
+   key_left: TheExtraChar := 'left, ';
+   key_right: TheExtraChar := 'right, ';
+   end;
+ if TheExtraChar <> '' then begin
+  SAKSetVoice(2,'',150,-1,-1);
+ SakCancel;
+ espeak_Key(TheExtraChar) ;
+ SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
+ end;
+ 
+ end else
+  begin
+   thetimer.Enabled := False;
+    WhatCh := WhatChar(Sender, info);
+    TheKeyInfo := info;
+    thetimer.ontimer := @ontimerkey;
+    
+        if (info.eventkind = ek_keypress) and ( (WhatCh = '.') or
         (info.key = key_left) or (info.key = key_right) or (info.key = key_delete) or 
         (info.key = key_return) or (info.key = key_PageUp) or (info.key = key_PageDown) or 
         (info.key = key_Shift) or (info.key = key_Control) or (info.key = key_Alt)  or 
@@ -702,13 +719,13 @@ begin
          (info.key = key_minus) or (info.key = key_up) or (info.key = key_Backspace) or 
         (info.key = key_NumLock) or (info.key = key_Semicolon) or (info.key = key_Less) or 
         (info.key = key_Equal) or (info.key = key_Greater) or (info.key = key_Question) or
-        (info.key = key_space) or
+        (info.key = key_space) or (info.key = key_down) or
          (info.key = key_f1) or (info.key = key_f2)  or  (info.key = key_f3) or 
          (info.key = key_f4) or (info.key = key_f5) or (info.key = key_f6) or 
         (info.key = key_f7) or (info.key = key_f8) or (info.key = key_f9) or 
         (info.key = key_f10) or (info.key = key_f11) or (info.key = key_f12))
-         then itementer := true;   
-
+         then   isnotchar := true;   
+    
   tmpstr := TheExtraChar;
    TheExtraChar := '';
    
@@ -757,16 +774,21 @@ begin
    key_plus: TheExtraChar := 'plus, ';
    key_minus: TheExtraChar := 'minus, ';
  end;
-   
- if (itementer = true) then
- begin
-  SAKSetVoice(2,'',150,-1,-1);
-  SakCancel;
- espeak_Key(TheExtraChar) ;
-  SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
- end;
  
-   if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)  then  
+   if (isnotchar = true) then
+  begin
+  if TheExtraChar <> '' then begin
+  SAKSetVoice(2,'',150,-1,-1);
+ SakCancel;
+ espeak_Key(TheExtraChar) ;
+ SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
+ end; 
+ 
+ end else
+ 
+ begin    
+    
+ if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)  then  
   begin 
    
   if info.key = key_Space then
@@ -812,7 +834,8 @@ begin
      thetimer.Enabled := True;
      end;
    end;
- // end;
+  end;
+ end;
   end;
 
 procedure TSAK.ontimermouse(const Sender: TObject);
@@ -964,12 +987,11 @@ end;
 
 procedure TSAK.ontimercell(const Sender: TObject);
 var
- oldlang : msestring;
+ oldlang, formatcell : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
 begin
 if itementer = false then begin
-  thetimer.Enabled := False;
-  
+  thetimer.Enabled := False;  
    
 if TheTypCell = 1 then begin
 SakCancel;
@@ -986,7 +1008,39 @@ oldlang := voice_language;
   SAKSetVoice(2,'',150,-1,-1);
   espeak_Key(TheCell);
    SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
- end else espeak_Key(TheCell);
+   
+ end else
+ begin
+ formatcell := TheCell;
+    
+  while pos(',',formatcell)  > 0 do
+   if pos(',',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(',',formatcell)-1) + ' comma ' +
+   copy(formatcell,pos(',',formatcell)+1, length(formatcell) - pos(',',formatcell)+1  );
+   
+     while pos(';',formatcell)  > 0 do
+   if pos(';',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(';',formatcell)-1) + ' , Semi colon , ' +
+   copy(formatcell,pos(';',formatcell)+1, length(formatcell) - pos(';',formatcell)+1  );
+   
+       while pos('(',formatcell)  > 0 do
+   if pos('(',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('(',formatcell)-1) + '  , opened bar , ' +
+   copy(formatcell,pos('(',formatcell)+1, length(formatcell) - pos('(',formatcell)+1  );
+   
+        while pos(')',formatcell)  > 0 do
+   if pos(')',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(')',formatcell)-1) + ' , closed bar , ' +
+   copy(formatcell,pos(')',formatcell)+1, length(formatcell) - pos(')',formatcell)+1  );
+
+   while pos(':',formatcell)  > 0 do
+   if pos(':',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(':',formatcell)-1) + ' , dubble dot , ' +
+   copy(formatcell,pos(':',formatcell)+1, length(formatcell) - pos(':',formatcell)+1  );
+
+ while pos('.',formatcell)  > 0 do
+   if pos('.',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('.',formatcell)-1) + ' , dot , ' +
+   copy(formatcell,pos('.',formatcell)+1, length(formatcell) - pos('.',formatcell)+1  );
+
+    espeak_Key(formatcell);
+  
+  
+  end;
     end;
   itementer := false;
 end;
