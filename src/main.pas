@@ -370,6 +370,7 @@ var
   
   // fred
   thetimer : TTimer;
+  vaparam : boolean  = false;
  
  procedure doassistive;   
  
@@ -441,6 +442,8 @@ end;
     copy(confideufo.tesakitdir.text,11,length(confideufo.tesakitdir.text)-10)        
          else thedir :=  confideufo.tesakitdir.text ;
  
+ if vaparam = false then begin
+ 
    if SakIsEnabled() = false then 
    begin
   if sakloadlib(thedir) = 0 then
@@ -451,7 +454,13 @@ end;
     sakunloadlib;
     debuggerfo.assistive.imagenr := 18;
     end; 
- 
+      end else
+       begin
+  if sakloadlib(thedir) = 0 then
+   debuggerfo.assistive.imagenr := 19 else
+   debuggerfo.assistive.imagenr := 18;
+   end ; 
+  
    end;
 
 
@@ -733,9 +742,7 @@ sourcefo.hidesourcehint;
   
   conffpguifo.enablefpguidesigner.value := gINI.Readbool('Integration', 'designer_fpGUI', true); 
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
-  
-  confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
-  
+   
   confideufo.nozorderenable.value := gINI.Readbool('nozorder', 'general', true); 
   
   if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
@@ -753,7 +760,16 @@ sourcefo.hidesourcehint;
        {$endif}
          {$endif}
          
- if  confideufo.tbassistive.value = true then doassistive;
+  confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
+         
+ if trim(ParamStr(1)) = '-va' then
+  begin
+ vaparam := true;
+ confideufo.tbassistive.value := true ;
+ debuggerfo.assistive.imagenr := 19; 
+  end;
+         
+ if confideufo.tbassistive.value = true then doassistive;
  
   case gINI.ReadInteger('General', 'WarnChange', 2) of
  0 : begin

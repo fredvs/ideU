@@ -201,6 +201,7 @@ makeoptions=4
  -gl
  -B
  -O2 -XX -CX -Xs
+makeoptpurpose=0
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -416,6 +417,25 @@ exeusedon=5
  0
  0
  0
+comment_M=
+comment_B=
+comment_1=
+comment_2=
+comment_3=
+comment_4=
+comment_5=
+comment_6=
+comment_7=
+comment_8=
+comment_9=
+comment_0=
+project_name=
+project_creator=
+project_copyright=
+project_license=
+project_time=
+project_date=
+project_comment=
 aftcommandon=0
 unitdirson=2
  65539
@@ -652,7 +672,7 @@ editpos=1
  0,0
 bookmarks0=0
 sourcefiles=1
- /home/fred/ideu/src/templates/init/readme.txt
+ ${PROJECTDIR}/readme.txt
 relpaths=1
  readme.txt
 ismoduletexts=1
@@ -666,7 +686,7 @@ tabsize=60
 firsttab=0
 index=0
 [layout]
-windowlayout=539
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -686,6 +706,7 @@ windowlayout=539
  [mainfo]
  splitdir=0
  useroptions=838860925
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -703,7 +724,7 @@ windowlayout=539
  focusedchild=0
  wsize=0
  active=1
- visible=1
+ visible=0
  [targetconsolefo]
  splitdir=0
  useroptions=805322857
@@ -805,7 +826,7 @@ windowlayout=539
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=memoryfo
+ stackedunder=debuggerfo
  parent=
  mdistate=3
  nx=0
@@ -889,7 +910,7 @@ windowlayout=539
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=projecttreefo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -910,7 +931,7 @@ windowlayout=539
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=breakpointsfo
  parent=
  mdistate=0
  nx=0
@@ -1101,7 +1122,7 @@ windowlayout=539
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=projecttreefo
  parent=
  mdistate=0
  nx=0
@@ -1122,7 +1143,7 @@ windowlayout=539
  [debuggerfo]
  splitdir=0
  useroptions=122987
- stackedunder=breakpointsfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1174,7 +1195,7 @@ windowlayout=539
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
