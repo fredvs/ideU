@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.3.0';
+ versiontext = '1.3.1';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -760,7 +760,7 @@ sourcefo.hidesourcehint;
        {$endif}
          {$endif}
          
-  confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
+ confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
          
  if trim(ParamStr(1)) = '-va' then
   begin

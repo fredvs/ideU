@@ -110,6 +110,8 @@ type
   TheTypCell : integer;
 
   isentered: boolean;
+  isgridsource : boolean;
+  isfilelist : boolean;
   
     procedure doenter(const Sender: iassistiveclient);
     procedure clientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
@@ -136,7 +138,7 @@ type
     function WhatName(iaSender: iassistiveclient): msestring;
     function WhatChar(iaSender: iassistiveclient; const info: keyeventinfoty): msestring;
     function WhatChange(iaSender: iassistiveclient) : msestring;
-  
+    function formatcode(acell : string) : string;
   public
     constructor Create();
       destructor Destroy(); override;
@@ -226,8 +228,11 @@ Sender := iaSender.getinstance;
     Result := 'edit, ' + TStringEdit(Sender).name + ' , ' + TStringEdit(Sender).value
   else
  if (Sender is tfilelistview) then
+ begin
+ if assigned(tfilelistview(Sender).selectednames) then
     Result := 'filelist, ' + tfilelistview(Sender).name + ' , ' + tfilelistview(Sender).selectednames[0]
-  else
+ else Result := 'filelist, ' + tfilelistview(Sender).name ;
+  end else
   if (Sender is thistoryedit) then
     Result := 'edit, ' + thistoryedit(Sender).name + ' , ' + thistoryedit(Sender).value
   else
@@ -1039,13 +1044,14 @@ begin
 end;
 
 // for code editor
-function formatcode(thecell : string) : string;
+function TSAK.formatcode(acell : string) : string;
 var
 formatcell : msestring;
 begin
 
- formatcell := TheCell;
+ formatcell := aCell;
  
+ if isgridsource = true then
  while pos(' ',formatcell)  > 0 do
    if pos(' ',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(' ',formatcell)-1) + 'ºspaceº' +
    copy(formatcell,pos(' ',formatcell)+1, length(formatcell) - pos(' ',formatcell)+1  );
@@ -1105,7 +1111,31 @@ while pos('<',formatcell)  > 0 do
 while pos('>',formatcell)  > 0 do
    if pos('>',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('>',formatcell)-1) + ' , greater , ' +
    copy(formatcell,pos('>',formatcell)+1, length(formatcell) - pos('>',formatcell)+1  );
+
+while pos('''',formatcell) > 0 do
+   if pos('''',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('''',formatcell)-1) + ' , apostrophe , ' +
+   copy(formatcell,pos('''',formatcell)+1, length(formatcell) - pos('''',formatcell)+1  );
    
+while pos('"',formatcell)  > 0 do
+   if pos('"',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('"',formatcell)-1) + ' , two apostrophes , ' +
+   copy(formatcell,pos('"',formatcell)+1, length(formatcell) - pos('"',formatcell)+1  );
+
+while pos('-',formatcell)  > 0 do
+   if pos('-',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('-',formatcell)-1) + ' , minus , ' +
+   copy(formatcell,pos('-',formatcell)+1, length(formatcell) - pos('-',formatcell)+1  );
+
+while pos('+',formatcell)  > 0 do
+   if pos('+',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('+',formatcell)-1) + ' , plus , ' +
+   copy(formatcell,pos('+',formatcell)+1, length(formatcell) - pos('+',formatcell)+1  );
+
+while pos('$',formatcell)  > 0 do
+   if pos('$',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('$',formatcell)-1) + ' , dollar , ' +
+   copy(formatcell,pos('$',formatcell)+1, length(formatcell) - pos('$',formatcell)+1  );
+   
+   while pos('_',formatcell)  > 0 do
+   if pos('_',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('_',formatcell)-1) + ' , bottom line , ' +
+   copy(formatcell,pos('_',formatcell)+1, length(formatcell) - pos('_',formatcell)+1  );
+ 
 result := formatcell ;
 end;
 
@@ -1116,9 +1146,11 @@ var
 begin
 if itementer = false then begin
   thetimer.Enabled := False;  
+
+SakCancel;
    
 if TheTypCell = 1 then begin
-//SakCancel;
+
 oldlang := voice_language;
       if voice_gender = '' then
     oldgender := -1 else
@@ -1135,8 +1167,14 @@ oldlang := voice_language;
    
  end else
  begin
-    espeak_Key(thecell);
-   end;
+ 	if 	isfilelist = true then
+	begin
+ if assigned(tfilelistview(TheSender.getinstance).selectednames) then
+ TheCell := tfilelistview(TheSender.getinstance).selectednames[0];
+ // else TheCell := tfilelistview(TheSender.getinstance).directory;
+ end;
+     espeak_Key(thecell);
+  end;
     end;
   itementer := false;
 end;
@@ -1146,35 +1184,41 @@ procedure TSAK.docellevent(const sender: iassistiveclientgrid;
 var
  mstr1, mstr2, mstr3: msestring;
 begin
- if (Sender.getinstance is Twidgetgrid)  then begin
+ 
+// if (Sender.getinstance is tfilelistview) then
+//  else
+//  begin
+ if (Sender.getinstance is Twidgetgrid)  then isgridsource := true else
+ isgridsource := false;
+ 
+ 	isfilelist := false;
    thetimer.enabled := false;
   thetimer.ontimer := @ontimercell;
   thetimer.interval := 600000;
- // TheExtraChar := '';
-	if info.eventkind = cek_keyup then begin  
-
+   TheCell := '';
+ 	
+ 	if info.eventkind = cek_keyup then begin  
+ 	
+ 	 if  (Sender.getinstance is tfilelistview) then
+ 	begin
+ 	TheSender := sender;
+ 	isfilelist := true;
+ 	thetimer.enabled := true;
+ 	end
+ else
+ begin	
 	mstr1:= sender.getassistivecelltext(info.cell);
-	//mstr1:= ' colum '+ inttostrmse(sender.getassistivecaretindex())+ ' row '+inttostrmse(info.cell.row);
-		if TheLastCell.row > info.cell.row then
+
+		if (TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row) then
 			begin
-			//sakCancel;
-			//Theword := '';
-			//espeak_Key('up') ;
+ //		    if (Sender.getinstance is tfilelistview) then
+ //         TheCell := tfilelistview(Sender).selectednames[0] 
+ //         else
 			TheCell := ' row , '+ inttostrmse(info.cell.row+1) + ' , ' + formatcode(mstr1);
 			TheExtraChar := '' ;
 			TheTypCell := 0 ;
     		thetimer.enabled := true;
-			end else
-		if TheLastCell.row < info.cell.row then
-			begin
-			// sakCancel;
-			//espeak_Key('down') ;
- 			//Theword := '';
-			TheCell :=  ' row , '+ inttostrmse(info.cell.row+1)  + ' , ' + formatcode(mstr1);
-			TheExtraChar := '' ;
-			TheTypCell := 0 ;
-    		thetimer.enabled := true;
-			end else
+			end  else
 		if length(mstr1) > 0 then
 			begin 
 			mstr2 := mstr1[sender.getassistivecaretindex()] ;
@@ -1189,7 +1233,7 @@ begin
    				begin 
    				// sakCancel;
    			//	espeak_Key(mstr3 + mstr2) ;
-    		TheCell := Theword;
+    		TheCell := Theword + formatcode(mstr2);
     		TheExtraChar := '' ;
     		TheTypCell := 1 ;
     		thetimer.enabled := true;
@@ -1197,8 +1241,8 @@ begin
     			end else
  			if mstr2 = ';'  then
    				begin
-   			    //sakCancel;
-    		//	espeak_Key( mstr3 +mstr2) ;
+ 			    //sakCancel;
+   			   	//	espeak_Key( mstr3 +mstr2) ;
     			TheExtraChar := '' ;
     			TheTypCell := 1 ;
     			TheCell := formatcode(mstr1);
@@ -1208,13 +1252,14 @@ begin
     			Theword := Theword + mstr2;
     			TheTypCell := 0 ;
     			//SakCancel;
-     			TheCell := mstr3 + mstr2 ;
+    			 thetimer.interval := 300000;
+     			TheCell :=  formatcode(mstr2);
      			thetimer.enabled := true;
    			end;
  		end;
 	TheLastCell.col := sender.getassistivecaretindex() ; 
 	TheLastCell.row := info.cell.row;
- end else
+  end; end else
  if info.eventkind = cek_mousemove then
   begin
   if itementer = false then begin
@@ -1230,13 +1275,12 @@ begin
 	TheCell :=  mstr1;
 //	TheExtraChar := '' ;
 	 thetimer.interval := 300000;
-	 SakCancel;
+	// SakCancel;
     thetimer.enabled := true;
     end;
    itementer := false; 
  end;
- end else itementer := false ;
- 
+//end; 
 end;
 
 constructor TSAK.Create();
