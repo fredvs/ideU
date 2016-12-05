@@ -17,9 +17,7 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu/src/templates/fpc_fpgui
-projectfilename=/home/fred/ideu/src/templates/fpc_fpgui/fpg_single_unix.prj
-options=114
+ options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
@@ -231,16 +229,22 @@ toolparams=1
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
-newprojectfiles=4
+newprojectfiles=7
  ${TEMPLATEDIR}/fpc_fpgui/files/fpg_single.pas
  ${TEMPLATEDIR}/fpc_fpgui/files/dummy
  ${TEMPLATEDIR}/fpc_fpgui/files/dummy
  ${TEMPLATEDIR}/fpc_fpgui/files/dummy
-newprojectfilesdest=4
+ ${TEMPLATEDIR}/fpc_fpgui/files/dummy
+ ${TEMPLATEDIR}/fpc_fpgui/files/dummy
+ ${TEMPLATEDIR}/fpc_fpgui/files/dummy
+newprojectfilesdest=7
  ${%PROJECTNAME%}.pas
  ${%PROJECTDIR%}/units/i386-linux/dummy
+ ${%PROJECTDIR%}/units/x86_64-linux/dummy
  ${%PROJECTDIR%}/units/i386-freebsd/dummy
+ ${%PROJECTDIR%}/units/x86_64-freebsd/dummy
  ${%PROJECTDIR%}/units/i386-win32/dummy
+ ${%PROJECTDIR%}/units/x86_64-win64/dummy
 newfinames=1
  Program
 newfifilters=1

@@ -788,7 +788,7 @@ begin
       
         //// fred
         
-   if confideufo.tbfilereload0.value = true then
+   if confideufo.tbfilereload.value = true then
   begin
   mainfo.setstattext(filepath + ' was changed by external program and reloaded at '+ timetostr(now) ,mtk_warning);
   filechanged:= false;
@@ -796,7 +796,7 @@ begin
   mainfo.sourcechanged(items[int1]);
   end 
   else
-  if confideufo.tbfilereload1.value = true then
+  if confideufo.tbfilenoload.value = true then
   begin
   mainfo.setstattext(filepath + ' was changed by external program and not reloaded at '+ timetostr(now) ,mtk_warning); 
   end else

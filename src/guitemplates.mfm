@@ -108,8 +108,8 @@ object guitemplatesmo: tguitemplatesmo
     top = 16
   end
   object sysenv: tsysenvmanager
-    helpheader = 'ideU by Fred van Stappen. Based on MSEide by Martin Schreiber. Copyright 1999-2016.'#10'Usage: ideU [OPTION]... [PROJECTFILE]'#10
-    helpfooter = #10'Environment variables'#10'IDEUDIR, FPCDIR, FPCLIBDIR, MSEDIR, MSELIBDIR, FPGUIDIR,'#10'SYNTAXDEFDIR, TEMPLATEDIR, COMPSTOREDIR'#10'COMPILER, DEBUGGER, EXEEXT,TARGET,TARGETOSDIR'#10'can be used to override the settings macros.'
+    helpheader = 'ideU by Fred van Stappen. Based on MSEide by Martin Schreiber. Copyright 1999-2016'#10'Usage: mseide [OPTION]... [PROJECTFILE]'#10#10'Options:'
+    helpfooter = #10'Environment variables'#10'FPCDIR, FPCLIBDIR, MSEDIR, MSELIBDIR'#10'SYNTAXDEFDIR, TEMPLATEDIR, COMPSTOREDIR'#10'COMPILER, DEBUGGER, EXEEXT,TARGET,TARGETOSDIR'#10'can be used to override the settings macros.'#10
     left = 24
     top = 96
     defs = (
@@ -165,17 +165,6 @@ object guitemplatesmo: tguitemplatesmo
         ''
         ''
         'Do not load a project.'
-        ''
-        ''
-      )
-      (
-        ak_par
-        'va'
-        (        )
-        []
-        ''
-        ''
-        'Load ideU with voice assist.'
         ''
         ''
       )
@@ -352,6 +341,17 @@ object guitemplatesmo: tguitemplatesmo
         ''
         ''
         'Do not touch Z-order of the windows.'
+        ''
+        ''
+      )
+      (
+        ak_par
+        'va'
+        (        )
+        []
+        ''
+        ''
+        'Load ideU voice assisted.'
         ''
         ''
       )

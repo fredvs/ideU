@@ -438,13 +438,12 @@ end;
   begin
   
    if (copy(confideufo.tesakitdir.text,1,10) = '${IDEUDIR}') then
-    thedir :=  ExtractFilePath(ParamStr(0)) + 
-    copy(confideufo.tesakitdir.text,11,length(confideufo.tesakitdir.text)-10)        
+    thedir := ExtractFilePath(ParamStr(0)) + 
+     copy(confideufo.tesakitdir.text,11,length(confideufo.tesakitdir.text)-10)        
          else thedir :=  confideufo.tesakitdir.text ;
  
  if vaparam = false then begin
- 
-   if SakIsEnabled() = false then 
+    if SakIsEnabled() = false then 
    begin
   if sakloadlib(thedir) = 0 then
    debuggerfo.assistive.imagenr := 19 else
@@ -535,7 +534,7 @@ dialogfilesfo.list_files.mask := '*.sdef';
 dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition of ' +
 dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
-dialogfilesfo.activate;
+dialogfilesfo.show(true);
 end;
 end;
 
@@ -547,6 +546,7 @@ thetimer.enabled := false;
 if gINI.ReadBool('General', 'FirstLoad', true)
 then
 begin
+isfirstload := true;
 if thetimer.tag = 0 then
 begin
 thetimer.tag := 1;
@@ -773,19 +773,19 @@ sourcefo.hidesourcehint;
  
   case gINI.ReadInteger('General', 'WarnChange', 2) of
  0 : begin
- confideufo.tbfilereload0.value := true;
- confideufo.tbfilereload1.value := false;
- confideufo.tbfilereload2.value := false;
+ confideufo.tbfilereload.value := true;
+ confideufo.tbfilenoload.value := false;
+ confideufo.tbfileaskload.value := false;
  end;
  1 : begin
- confideufo.tbfilereload1.value := true;
- confideufo.tbfilereload0.value := false;
- confideufo.tbfilereload2.value := false;
+ confideufo.tbfilenoload.value := true;
+ confideufo.tbfilereload.value := false;
+ confideufo.tbfileaskload.value := false;
  end;
  2 : begin
- confideufo.tbfilereload2.value := true;
- confideufo.tbfilereload0.value := false;
- confideufo.tbfilereload1.value := false;
+ confideufo.tbfileaskload.value := true;
+ confideufo.tbfilereload.value := false;
+ confideufo.tbfilenoload.value := false;
  end;
  end;
   
@@ -902,9 +902,9 @@ begin
    gINI.writeString('debug', 'debugger3', confdebuggerfo.debugger3.value);
     gINI.writeString('debug', 'debugger4', confdebuggerfo.debugger4.value);
  
-   if confideufo.tbfilereload0.value = true then
+   if confideufo.tbfilereload.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
-  if confideufo.tbfilereload1.value = true then
+  if confideufo.tbfilenoload.value = true then
   gINI.WriteInteger('General', 'WarnChange', 1) else
   gINI.WriteInteger('General', 'WarnChange', 2) ;
   
@@ -3498,27 +3498,32 @@ end;
 //fred
 procedure tmainfo.viewconfmseguiexecute(const sender: TObject);
 begin
- confmseguifo.activate;
+// confmseguifo.activate;
+  confmseguifo.show(true);
 end;
 
 procedure tmainfo.viewconfcompilersexecute(const sender: TObject);
 begin
- confcompilerfo.activate;
+// confcompilerfo.activate;
+ confcompilerfo.show(true);
 end;
 
 procedure tmainfo.viewconfdebuggersexecute(const sender: TObject);
 begin
- confdebuggerfo.activate;
+ //confdebuggerfo.activate;
+ confdebuggerfo.show(true);
 end;
 
 procedure tmainfo.viewconfideuexecute(const sender: TObject);
 begin
- confideufo.activate;
+//confideufo.activate;
+  confideufo.show(true);
 end;
 
 procedure tmainfo.viewconffpguiexecute(const sender: TObject);
 begin
- conffpguifo.activate;
+// conffpguifo.activate;
+ conffpguifo.show(true);
 end;
 
 procedure tmainfo.viewsymbolsonexecute(const sender: TObject);
@@ -3790,7 +3795,8 @@ dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
 dialogfilesfo.selected_file.frame.caption := 'Selected Layout File from ' +
 dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
-dialogfilesfo.activate;
+//dialogfilesfo.activate;
+dialogfilesfo.show(true);
 
 end;
 

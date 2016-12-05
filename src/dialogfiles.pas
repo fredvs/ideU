@@ -57,7 +57,10 @@ if assigned(list_files.selectednames) and (tag = 1) then
   str1.destroy();
  end;
 end;
-end;
+//hide;
+//sleep(200);
+//show(true);
+		end;
 
 
 procedure tdialogfilesfo.butok(const sender: TObject);

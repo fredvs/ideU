@@ -1,11 +1,9 @@
 object settingsfo: tsettingsfo
-  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 444
   bounds_y = 29
   bounds_cx = 378
   bounds_cy = 703
-  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -121,8 +119,8 @@ object settingsfo: tsettingsfo
   end
   object tlayouter1: tlayouter
     optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
-    bounds_x = 1
-    bounds_y = 27
+    bounds_x = 3
+    bounds_y = 30
     bounds_cx = 376
     bounds_cy = 586
     anchors = [an_left, an_top, an_right]
@@ -286,7 +284,10 @@ object settingsfo: tsettingsfo
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
+      value = '${MSEDIR}/apps/ide/compstore'
       onsetvalue = setvalue
+      controller.filename = '${MSEDIR}/apps/ide/compstore/'
+      controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/apps/ide/compstore/'
       controller.filterlist.data = (
         (
           'Project files'
@@ -294,7 +295,7 @@ object settingsfo: tsettingsfo
         )
       )
       controller.options = [fdo_directory]
-      controller.captionopen = 'Directory for component stores'
+      controller.captionopen = 'Directory for MSEgui component stores'
       controller.ongetfilename = epandfilenamemacro
       reffontheight = 15
     end
@@ -323,10 +324,10 @@ object settingsfo: tsettingsfo
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
-      value = '/usr/local/share/ideu/templates'
+      value = '${IDEUDIR}/templates'
       onsetvalue = setvalue
-      controller.filename = '/usr/local/share/ideu/templates/'
-      controller.lastdir = '/usr/local/share/ideu/templates/'
+      controller.filename = '${IDEUDIR}/templates/'
+      controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/templates/'
       controller.filterlist.data = (
         (
           'Project files'
@@ -363,10 +364,10 @@ object settingsfo: tsettingsfo
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
-      value = '/usr/local/share/ideu/syntaxdefs'
+      value = '${IDEUDIR}/syntaxdefs'
       onsetvalue = setvalue
-      controller.filename = '/usr/local/share/ideu/syntaxdefs/'
-      controller.lastdir = '/usr/local/share/ideu/syntaxdefs/'
+      controller.filename = '${IDEUDIR}/syntaxdefs/'
+      controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/syntaxdefs/'
       controller.filterlist.data = (
         (
           'Syntax definitions'
@@ -403,7 +404,10 @@ object settingsfo: tsettingsfo
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
+      value = '${MSEDIR}/lib/common'
       onsetvalue = setvalue
+      controller.filename = '${MSEDIR}/lib/common/'
+      controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/lib/common/'
       controller.options = [fdo_directory]
       controller.captionopen = 'MSEgui library directory'
       controller.ongetfilename = epandfilenamemacro
@@ -595,10 +599,10 @@ object settingsfo: tsettingsfo
       bounds_cx = 358
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
-      value = '/usr/local/share/ideu/layout'
+      value = '${IDEUDIR}/layout'
       onsetvalue = setvalue
-      controller.filename = '/usr/local/share/ideu/layout/'
-      controller.lastdir = '/usr/local/share/ideu/layout/'
+      controller.filename = '${IDEUDIR}/layout/'
+      controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/layout/'
       controller.filterlist.data = (
         (
           'Syntax definitions'
@@ -629,6 +633,7 @@ object settingsfo: tsettingsfo
       bounds_cx = 357
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
+      value = 'linux'
       onsetvalue = setvalue
       reffontheight = 15
     end
@@ -645,7 +650,7 @@ object settingsfo: tsettingsfo
     )
     taborder = 1
     bounds_x = 6
-    bounds_y = 613
+    bounds_y = 616
     bounds_cx = 359
     bounds_cy = 80
     bounds_cymin = 80

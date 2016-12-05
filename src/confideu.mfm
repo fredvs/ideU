@@ -1,21 +1,18 @@
 object confideufo: tconfideufo
-  optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 453
-  bounds_y = 310
-  bounds_cx = 326
-  bounds_cy = 234
-  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  bounds_x = 518
+  bounds_y = 197
+  bounds_cx = 332
+  bounds_cy = 257
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    326
-    234
+    332
+    257
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
-  statfile = tstatfile1
   caption = 'Extra Settings of ideU'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -73,126 +70,22 @@ object confideufo: tconfideufo
     00000000
   }
   moduleclassname = 'tmseform'
-  object tbfilereload0: tbooleaneditradio
-    frame.caption = '  No dialog box => reload the new one.'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      241
-      2
-    )
-    taborder = 1
-    bounds_x = 30
-    bounds_y = 30
-    bounds_cx = 254
-    bounds_cy = 17
-    value = True
-  end
-  object tbfilereload1: tbooleaneditradio
-    frame.caption = '  No dialog box => keep the old one.'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      226
-      2
-    )
-    taborder = 2
-    bounds_x = 30
-    bounds_y = 52
-    bounds_cx = 239
-    bounds_cy = 17
-  end
-  object tbfilereload2: tbooleaneditradio
-    frame.caption = '  A dialog box ask what to do...'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      190
-      2
-    )
-    taborder = 3
-    bounds_x = 30
-    bounds_y = 74
-    bounds_cx = 203
-    bounds_cy = 17
-  end
-  object tlabel1: tlabel
-    taborder = 7
-    bounds_x = 47
-    bounds_y = 7
-    bounds_cx = 241
-    bounds_cy = 15
-    caption = 'When a file has changed from outside...'
-    reffontheight = 15
-  end
   object ok: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
-    bounds_x = 129
-    bounds_y = 206
-    bounds_cx = 64
+    taborder = 3
+    bounds_x = 130
+    bounds_y = 229
+    bounds_cx = 63
     bounds_cy = 21
-    anchors = [an_left, an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
     reffontheight = 15
   end
-  object tbassistive: tbooleanedit
-    frame.caption = 'Enable sak assistive at loading'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      186
-      2
-    )
-    taborder = 5
-    bounds_x = 43
-    bounds_y = 137
-    bounds_cx = 199
-    bounds_cy = 17
-  end
-  object tesakitdir: tfilenameedit
-    frame.colorclient = 15790335
-    frame.caption = 'Parent-directory of /sakit'
-    frame.localprops = [frl_colorframe, frl_colorclient]
-    frame.localprops1 = []
-    frame.buttons.count = 1
-    frame.buttons.items = <    
-      item
-        imagenr = 17
-      end>
-    frame.button.imagenr = 17
-    frame.outerframe = (
-      0
-      18
-      0
-      0
-    )
-    taborder = 6
-    hint = 'Paren directory of sakit ( speaker assistve kit )'
-    bounds_x = 3
-    bounds_y = 158
-    bounds_cx = 316
-    bounds_cy = 39
-    anchors = [an_left, an_top, an_right]
-    value = '/usr/local/share'
-    controller.filename = '/usr/local/share/'
-    controller.lastdir = '/usr/local/share/'
-    controller.options = [fdo_directory]
-    controller.captionopen = 'Parent-directory of /sakit'
-    reffontheight = 15
-  end
   object nozorderenable: tbooleanedit
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
     frame.caption = 'No Z order handling'
     frame.localprops = []
     frame.localprops1 = []
@@ -202,19 +95,147 @@ object confideufo: tconfideufo
       124
       2
     )
-    taborder = 4
+    taborder = 2
     hint = 'No focus on menu-item when mouse-move on it.'
-    bounds_x = 74
-    bounds_y = 103
+    bounds_x = 94
+    bounds_y = 203
     bounds_cx = 137
     bounds_cy = 17
     onchange = zorderhandle
     value = True
   end
-  object tstatfile1: tstatfile
-    filedir = 'confideu.sta'
-    options = [sfo_memory]
-    left = 16
-    top = 32
+  object group_file_chaned: tgroupbox
+    frame.caption = 'When a file has changed from outside...'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      8
+      0
+      0
+    )
+    bounds_x = 8
+    bounds_y = 6
+    bounds_cx = 317
+    bounds_cy = 89
+    object tbfileaskload: tbooleaneditradio
+      frame.caption = '  A dialog box ask what to do...'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        190
+        2
+      )
+      taborder = 2
+      bounds_x = 20
+      bounds_y = 59
+      bounds_cx = 203
+      bounds_cy = 17
+    end
+    object tbfilenoload: tbooleaneditradio
+      frame.caption = '  No dialog box => keep the old one.'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        226
+        2
+      )
+      taborder = 1
+      bounds_x = 20
+      bounds_y = 39
+      bounds_cx = 239
+      bounds_cy = 17
+    end
+    object tbfilereload: tbooleaneditradio
+      frame.caption = '  No dialog box => reload the new one.'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        241
+        2
+      )
+      bounds_x = 20
+      bounds_y = 19
+      bounds_cx = 254
+      bounds_cy = 17
+      value = True
+    end
+  end
+  object group_assistive: tgroupbox
+    frame.caption = 'sak voice assistive config'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      8
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 8
+    bounds_y = 105
+    bounds_cx = 320
+    bounds_cy = 88
+    object tbassistive: tbooleanedit
+      frame.caption = 'Enable sak assistive at loading'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        186
+        2
+      )
+      bounds_x = 55
+      bounds_y = 65
+      bounds_cx = 199
+      bounds_cy = 17
+    end
+    object tesakitdir: tfilenameedit
+      Tag = 4
+      frame.colorclient = 16777169
+      frame.caption = 'Parent directory of sakit'
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 1
+      hint = 'Directory for syntax definition files.'
+      bounds_x = 13
+      bounds_y = 20
+      bounds_cx = 302
+      bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
+      value = '${IDEUDIR}/plugin'
+      onsetvalue = setvalue
+      controller.filename = '${IDEUDIR}/plugin/'
+      controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/plugin/'
+      controller.basedir = '${IDEUDIR}/plugin/'
+      controller.filterlist.data = (
+        (
+          'Syntax definitions'
+          '*.sdef'
+        )
+      )
+      controller.options = [fdo_directory]
+      controller.captionopen = 'Parent Directory of sakit'
+      reffontheight = 15
+    end
   end
 end

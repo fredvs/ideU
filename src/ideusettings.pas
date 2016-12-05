@@ -144,6 +144,7 @@ type
 
 var
  settings: settingsty;
+ settingsfo: tsettingsfo;
   TheProjectDirectory : filenamety;
 
 procedure updatesettings(const filer: tstatfiler);
@@ -223,8 +224,8 @@ end;
 
 function editsettings(const acaption: msestring = '';
                   const shortcuts: tshortcutcontroller = nil): boolean;
-var
- settingsfo: tsettingsfo;
+// var
+// settingsfo: tsettingsfo;
 begin
  result:= false;
  settingsfo:= tsettingsfo.create(nil);

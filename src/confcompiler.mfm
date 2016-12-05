@@ -1,5 +1,5 @@
 object confcompilerfo: tconfcompilerfo
-  optionswidget = [ow_top, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 345
   bounds_y = 139
@@ -14,7 +14,6 @@ object confcompilerfo: tconfcompilerfo
     372
     399
   )
-  optionswindow = [wo_taskbar]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Configuration of Compilers'
   icon.options = [bmo_masked, bmo_graymask]

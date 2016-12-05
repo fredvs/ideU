@@ -110,8 +110,9 @@ type
   TheTypCell : integer;
 
   isentered: boolean;
-  isgridsource : boolean;
   isfilelist : boolean;
+  isgridsource : boolean;
+  lrkeyused : boolean;
   
     procedure doenter(const Sender: iassistiveclient);
     procedure clientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
@@ -155,7 +156,8 @@ const
   
   var
    sak: TSAK;
-  
+   isfirstload : boolean = false;
+     
 /// Load with custom sakit dir
 function SAKLoadLib(const SakitDir: filenamety = ''): integer;
                             //'' = default
@@ -371,7 +373,7 @@ if (Sender is tbooleaneditradio) then
   if (Sender is tbooleanedit) then
   begin
    if tbooleanedit(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
-       Result := ' changed to ' + stringtemp ;
+      Result := ' changed to ' + stringtemp ;
   end
    else
   if (sender is thistoryedit) then 
@@ -420,8 +422,11 @@ begin
   Result := info.chars;
     
    if (checkkey = key_Up) or (checkkey = key_down) or (checkkey = key_left) or (checkkey = key_right) or
-      (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) then
-       if (iaSender.getinstance is Tstringgrid) or (iaSender.getinstance is Tcustomstringgrid) then checkgrid()  ;
+      (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) and 
+      ((iaSender.getinstance is Tstringgrid) or (iaSender.getinstance is Tcustomstringgrid)) then
+       lrkeyused := true
+       // checkgrid()  ;
+       else lrkeyused := false;
      	      
     case CheckKey of
     
@@ -690,12 +695,12 @@ procedure TSAK.ontimerkey(const Sender: TObject);
 begin
 //if itementer = false then begin
   thetimer.Enabled := False;
- if TheExtraChar <> '' then espeak_Key(TheExtraChar)
- else  
-  if trim(WhatChar(TheSender, TheKeyinfo)) <> '' then begin
-//  SakCancel;
-  espeak_Key(WhatChar(TheSender, TheKeyinfo));
-   end;
+// if TheExtraChar <> '' then espeak_Key(TheExtraChar)
+// else  
+//  if trim(WhatChar(TheSender, TheKeyinfo)) <> '' then begin
+  SakCancel;
+  espeak_Key(Thecell);
+ 
 end;
 
 procedure TSAK.dokeydown(const Sender: iassistiveclient; const info: keyeventinfoty);
@@ -828,6 +833,18 @@ begin
     TheExtraChar := ', close braket , ' ;
     isnotchar := true;
     end else
+    
+     if (WhatCh = '[') then
+      begin
+       TheExtraChar := ', open square braket , ' ;
+    isnotchar := true;
+    end else
+    
+     if (WhatCh = ']') then
+      begin
+       TheExtraChar := ', close square braket , ' ;
+    isnotchar := true;
+    end else
       if (WhatCh = '\') then
       begin TheExtraChar := ', back slash , ' ;
     isnotchar := true;
@@ -843,18 +860,33 @@ begin
  SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
  end; 
  
- end else
+ end ;
  
- begin    
+ //else
+ 
+// begin    
     
  if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)
   or (Sender.getinstance is tdirdropdownedit) or (Sender.getinstance is thistoryedit) then  
   begin 
+  if info.key = key_f12 then
+  begin
+  thetimer.ontimer := @ontimercell;
+   thetimer.Interval := 900000 ;
    
+   if (Sender.getinstance is Tmemoedit) then
+   TheCell := Tmemoedit(Sender.getinstance).text;
+   
+    if (Sender.getinstance is Tstringedit) then
+   TheCell := Tstringedit(Sender.getinstance).text;
+   TheTypCell := 1 ;
+   thetimer.enabled := true;
+  end else
+  
   if info.key = key_Space then
    begin
    thetimer.ontimer := @ontimercell;
-   thetimer.Interval := 600000 ;
+   thetimer.Interval := 900000 ;
    TheCell := Theword;
    TheTypCell := 1 ;
    thetimer.enabled := true;
@@ -874,28 +906,39 @@ begin
    end
    else
    begin
+   if isnotchar = false then
+   begin
+   TheCell := info.chars;
     thetimer.Interval := 250000 ;
    Theword := Theword + info.chars;
      thetimer.Enabled := True;
    end;
+   end;
    end else
    begin
-   if (Sender.getinstance is Tcustomstringgrid) then
+   if (Sender.getinstance is Tcustomstringgrid) or (Sender.getinstance is Tstringgrid)  then
    begin
       //SakCancel;
-      //espeak_Key(TheExtraChar) ; 
-      TheExtraChar := '';
-      itementer := false;  
-   thetimer.interval := 600000;
-   thetimer.Enabled := True;
+      //espeak_Key(TheExtraChar) ;
+      TheCell := info.chars; 
+     // TheExtraChar := '';
+      itementer := false;
+      if TheExtraChar <> TheCell
+      then begin 
+       SakCancel;
+ espeak_Key(info.chars) ;
+ end;
+       
+  // thetimer.interval :=  250000;
+  // thetimer.Enabled := True;
     end else
     begin
+     TheCell := info.chars; 
      thetimer.interval := 400000 ; 
-     thetimer.Enabled := True;
+   //  thetimer.Enabled := True;
      end;
    end;
   end;
- end;
  end;
 
 procedure TSAK.ontimermouse(const Sender: TObject);
@@ -1051,7 +1094,7 @@ begin
 
  formatcell := aCell;
  
- if isgridsource = true then
+ if (isgridsource = true) and (isfirstload = false) then
  while pos(' ',formatcell)  > 0 do
    if pos(' ',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(' ',formatcell)-1) + 'ºspaceº' +
    copy(formatcell,pos(' ',formatcell)+1, length(formatcell) - pos(' ',formatcell)+1  );
@@ -1084,6 +1127,7 @@ begin
    if pos(':',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(':',formatcell)-1) + ' , two point , ' +
    copy(formatcell,pos(':',formatcell)+1, length(formatcell) - pos(':',formatcell)+1  );
 
+if (isfirstload = false) then
  while pos('.',formatcell)  > 0 do
    if pos('.',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('.',formatcell)-1) + ' , point , ' +
    copy(formatcell,pos('.',formatcell)+1, length(formatcell) - pos('.',formatcell)+1  );
@@ -1115,7 +1159,7 @@ while pos('>',formatcell)  > 0 do
 while pos('''',formatcell) > 0 do
    if pos('''',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('''',formatcell)-1) + ' , apostrophe , ' +
    copy(formatcell,pos('''',formatcell)+1, length(formatcell) - pos('''',formatcell)+1  );
-   
+  
 while pos('"',formatcell)  > 0 do
    if pos('"',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('"',formatcell)-1) + ' , two apostrophes , ' +
    copy(formatcell,pos('"',formatcell)+1, length(formatcell) - pos('"',formatcell)+1  );
@@ -1135,7 +1179,15 @@ while pos('$',formatcell)  > 0 do
    while pos('_',formatcell)  > 0 do
    if pos('_',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('_',formatcell)-1) + ' , bottom line , ' +
    copy(formatcell,pos('_',formatcell)+1, length(formatcell) - pos('_',formatcell)+1  );
- 
+
+   while pos('[',formatcell)  > 0 do
+   if pos('[',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('[',formatcell)-1) + ' , open square braket , ' +
+   copy(formatcell,pos('[',formatcell)+1, length(formatcell) - pos('[',formatcell)+1  );
+
+while pos(']',formatcell)  > 0 do
+   if pos(']',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(']',formatcell)-1) + ' , close square braket , ' +
+   copy(formatcell,pos(']',formatcell)+1, length(formatcell) - pos(']',formatcell)+1  );
+
 result := formatcell ;
 end;
 
@@ -1167,11 +1219,13 @@ oldlang := voice_language;
    
  end else
  begin
- 	if 	isfilelist = true then
+ 	if 	(isfilelist = true) and (assigned(Thesender)) then
 	begin
  if assigned(tfilelistview(TheSender.getinstance).selectednames) then
- TheCell := tfilelistview(TheSender.getinstance).selectednames[0];
- // else TheCell := tfilelistview(TheSender.getinstance).directory;
+ TheCell := tfilelistview(TheSender.getinstance).selectednames[0]
+ else
+ if trim(tfilelistview(TheSender.getinstance).focuseditem.caption) <> '' then
+   TheCell := 'directory , ' +  tfilelistview(TheSender.getinstance).focuseditem.caption;
  end;
      espeak_Key(thecell);
   end;
@@ -1184,21 +1238,17 @@ procedure TSAK.docellevent(const sender: iassistiveclientgrid;
 var
  mstr1, mstr2, mstr3: msestring;
 begin
- 
-// if (Sender.getinstance is tfilelistview) then
-//  else
-//  begin
- if (Sender.getinstance is Twidgetgrid)  then isgridsource := true else
+ if (Sender.getinstance is Twidgetgrid) then isgridsource := true else
  isgridsource := false;
- 
- 	isfilelist := false;
+ isfilelist := false;
    thetimer.enabled := false;
   thetimer.ontimer := @ontimercell;
   thetimer.interval := 600000;
    TheCell := '';
- 	
- 	if info.eventkind = cek_keyup then begin  
- 	
+   TheSender := nil ; 	
+ 
+ if info.eventkind = cek_keyup then 
+ begin
  	 if  (Sender.getinstance is tfilelistview) then
  	begin
  	TheSender := sender;
@@ -1207,65 +1257,65 @@ begin
  	end
  else
  begin	
-	mstr1:= sender.getassistivecelltext(info.cell);
-
-		if (TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row) then
+ if (sender.getassistivecaretindex() > -1) and (info.cell.row > -1) then
+ begin
+  	mstr1:= sender.getassistivecelltext(info.cell);
+	if ((lrkeyused = true) and not (Sender.getinstance is Twidgetgrid)) or (TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row) 
+	 then
 			begin
- //		    if (Sender.getinstance is tfilelistview) then
- //         TheCell := tfilelistview(Sender).selectednames[0] 
- //         else
-			TheCell := ' row , '+ inttostrmse(info.cell.row+1) + ' , ' + formatcode(mstr1);
-			TheExtraChar := '' ;
+			if (Sender.getinstance is Tstringgrid) or 
+			(Sender.getinstance is Tcustomstringgrid) then
+			TheCell := ' Colon , '+ inttostrmse(info.cell.col) + ' , row , '
+    		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else			
+    		TheCell := ' row , '+ inttostrmse(info.cell.row+1) + ' , ' + formatcode(mstr1);
+    		
 			TheTypCell := 0 ;
     		thetimer.enabled := true;
 			end  else
-		if length(mstr1) > 0 then
+	if length(mstr1) > 0 then
 			begin 
 			mstr2 := mstr1[sender.getassistivecaretindex()] ;
-			
+						
 			if sender.getassistivecaretindex() < TheLastCell.col then
 			mstr3 := ' Colon , '+ inttostrmse(sender.getassistivecaretindex()) + ' , ' else
 			mstr3 := '';
   					
-        	if (mstr2 = ' ') or  (mstr2 = '.') or  (mstr2 = ',')  or  (mstr2 = '"') or 
-  			 (mstr2 = '[') or  (mstr2 = ']') or  (mstr2 = '{') or  (mstr2 = '}')
-  			  or  (mstr2 = '(') or  (mstr2 = ')')  then
+        	if (mstr2 = ' ') or (mstr2 = '.') or (mstr2 = ',') or (mstr2 = '"') or
+        	(mstr2 = '[') or (mstr2 = ']') or (mstr2 = '{') or (mstr2 = '}')
+        	or (mstr2 = '(') or (mstr2 = ')') or (mstr2 = '[') or (mstr2 = ']') then
    				begin 
-   				// sakCancel;
-   			//	espeak_Key(mstr3 + mstr2) ;
-    		TheCell := Theword + formatcode(mstr2);
-    		TheExtraChar := '' ;
+   			TheCell := Theword + formatcode(mstr2);
     		TheTypCell := 1 ;
     		thetimer.enabled := true;
    			Theword := '';
     			end else
  			if mstr2 = ';'  then
    				begin
- 			    //sakCancel;
-   			   	//	espeak_Key( mstr3 +mstr2) ;
-    			TheExtraChar := '' ;
-    			TheTypCell := 1 ;
+ 			    TheTypCell := 1 ;
     			TheCell := formatcode(mstr1);
     			thetimer.enabled := true;
       			end  else
             begin
     			Theword := Theword + mstr2;
     			TheTypCell := 0 ;
-    			//SakCancel;
-    			 thetimer.interval := 300000;
+    			if TheExtraChar <> '' then
+    			thetimer.interval := 400000 else
+    			thetimer.interval := 100000;
+    			
      			TheCell :=  formatcode(mstr2);
      			thetimer.enabled := true;
    			end;
  		end;
-	TheLastCell.col := sender.getassistivecaretindex() ; 
+ 	TheLastCell.col := sender.getassistivecaretindex() ; 
 	TheLastCell.row := info.cell.row;
-  end; end else
+ 		end;
+ 		 end; end else
  if info.eventkind = cek_mousemove then
   begin
-  if itementer = false then begin
+  if itementer = false then 
+  begin
      mstr2:= ' Colon , '+ inttostrmse(sender.getassistivecaretindex())+
       ' , row , '+inttostrmse(info.cell.row+1) + ' , ';
-//	mstr1 := mstr2 + sender.getassistivecelltext(info.cell);
 	mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell));
 	
  	Theword := '';
@@ -1273,15 +1323,14 @@ begin
 	TheLastCell.row := info.cell.row;
 	TheTypCell := 0 ;
 	TheCell :=  mstr1;
-//	TheExtraChar := '' ;
 	 thetimer.interval := 300000;
-	// SakCancel;
-    thetimer.enabled := true;
+     thetimer.enabled := true;
     end;
    itementer := false; 
  end;
-//end; 
-end;
+end; 
+
+
 
 constructor TSAK.Create();
 begin
@@ -1413,6 +1462,7 @@ end  else
   TheWord := '' ;
   TheSentence := '' ;
   TheLastSentence := '' ;
+  lrkeyused := false;
 
   voice_gender := '' ;
   voice_language := '' ;
