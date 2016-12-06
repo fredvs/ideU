@@ -8,47 +8,45 @@ uses
  msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
- msestream,msestrings,sysutils,mseimage,msedispwidgets,mserichstring;
+ msestream,msestrings,sysutils,mseimage,msedispwidgets,mserichstring,mseact;
 
 type
  tdebuggerfo = class(tdockform)
-   editpanel: tdockpanel;
+   mainpanel: tdockpanel;
+   find_in_directory: tbutton;
+   toggle_form_unit: tbutton;
+   project_option: tbutton;
+   properties_list: tbutton;
+   find_in_edit: tbutton;
+   line_number: tbutton;
+   basedock: tdockpanel;
+   statdisp: tstringdisp;
+   assistive: tbutton;
+   project_interrupt: tbutton;
+   project_reset: tbutton;
+   project_step_instruction: tbutton;
+   project_next_instruction: tbutton;
+   project_finish: tbutton;
+   project_step: tbutton;
+   project_next: tbutton;
+   project_start: tbutton;
+   hints: tbooleanedit;
+   timage1: timage;
+   watches: tbooleanedit;
+   break_point: tbooleanedit;
+   project_abort_compil: tbutton;
+   project_make: tbutton;
+   project_options: tdropdownlistedit;
+   save_project: tbutton;
+   open_project: tbutton;
    edited_run: tbutton;
    edited_abort: tbutton;
    edited_make: tbutton;
-   projectpanel: tdockpanel;
-   project_start: tbutton;
-   project_next: tbutton;
-   project_step: tbutton;
-   project_finish: tbutton;
-   project_reset: tbutton;
-   project_interrupt: tbutton;
-   project_next_instruction: tbutton;
-   project_step_instruction: tbutton;
-   break_point: tbooleanedit;
-   watches: tbooleanedit;
-   hints: tbooleanedit;
-   project_abort_compil: tbutton;
-   project_make: tbutton;
-   mainpanel: tdockpanel;
-   find_in_directory: tbutton;
-   assistive: tbutton;
-   toggle_form_unit: tbutton;
-   project_option: tbutton;
-   edit_options: tenumedit;
-   project_options: tenumedit;
-   edit_compiler: tenumedit;
+   edit_options: tdropdownlistedit;
    edit_compilernum: tenumedit;
-   properties_list: tbutton;
-   find_in_edit: tbutton;
-   open_file: tbutton;
-   open_project: tbutton;
+   edit_compiler: tdropdownlistedit;
    save_file: tbutton;
-   save_project: tbutton;
-   line_number: tbutton;
-   timage1: timage;
-   basedock: tdockpanel;
-   statdisp: tstringdisp;
+   open_file: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -58,6 +56,7 @@ type
    procedure shownum(const sender: TObject);
 
    procedure paintdock(const sender: twidget; const acanvas: tcanvas);
+   procedure assistiveactonexecute(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
@@ -156,5 +155,10 @@ procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
 begin
 // paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
 end;
+
+procedure tdebuggerfo.assistiveactonexecute(const sender: TObject);
+begin
+  actionsmo.assistiveactonexecute(sender); 
+ end;
 
 end.

@@ -31,7 +31,6 @@ uses
 procedure tdialogfilesfo.loaddef(const sender: tcustomlistview);
 var
  str1: ttextstream;
-  
 begin
 
 if assigned(list_files.selectednames) and (tag = 0) then
@@ -57,10 +56,7 @@ if assigned(list_files.selectednames) and (tag = 1) then
   str1.destroy();
  end;
 end;
-//hide;
-//sleep(200);
-//show(true);
-		end;
+ end;
 
 
 procedure tdialogfilesfo.butok(const sender: TObject);
@@ -87,7 +83,6 @@ han := sourcefo.syntaxpainter.readdeffile(thesdef);
 sourcefo.activepage.edit.setsyntaxdef(han);
 sourcefo.activepage.updatestatvalues;
 theactivepage := '';
-
 end;
 end;
 close ;

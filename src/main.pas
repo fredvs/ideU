@@ -1951,18 +1951,18 @@ begin
 str3 := '' ;
 
 case debuggerfo.project_options.value of
-  0 : thetag := 1;
-  1 : thetag := 2;
-  2 : thetag := 4;
-  3 : thetag := 8;
-  4 : thetag := 16;
-  5 : thetag := 32;
-  6 : thetag := 64;
-  7 : thetag := 128;
-  8 : thetag := 256;
-  9 : thetag := 512;
-  10 : thetag := 1024;
-  11 : thetag := 2048;
+  'M' : thetag := 1;
+  'B' : thetag := 2;
+  '1' : thetag := 4;
+  '2' : thetag := 8;
+  '3' : thetag := 16;
+  '4' : thetag := 32;
+  '5' : thetag := 64;
+  '6' : thetag := 128;
+  '7' : thetag := 256;
+  '8' : thetag := 512;
+  '9' : thetag := 1024;
+  '0' : thetag := 2048;
   end;
 
 with projectoptions,o,texp do begin  
@@ -3366,18 +3366,18 @@ begin
 str3 := '' ;
 
 case debuggerfo.project_options.value of
-  0 : thetag := 1;
-  1 : thetag := 2;
-  2 : thetag := 4;
-  3 : thetag := 8;
-  4 : thetag := 16;
-  5 : thetag := 32;
-  6 : thetag := 64;
-  7 : thetag := 128;
-  8 : thetag := 256;
-  9 : thetag := 512;
-  10 : thetag := 1024;
-  11 : thetag := 2048;
+  'M' : thetag := 1;
+  'B' : thetag := 2;
+  '1' : thetag := 4;
+  '2' : thetag := 8;
+  '3' : thetag := 16;
+  '4' : thetag := 32;
+  '5' : thetag := 64;
+  '6' : thetag := 128;
+  '7' : thetag := 256;
+  '8' : thetag := 512;
+  '9' : thetag := 1024;
+  '0' : thetag := 2048;
   end;
 
 with projectoptions,o,texp do begin  

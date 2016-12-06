@@ -564,51 +564,51 @@ debuggerfo.project_make.enabled := false;
 debuggerfo.project_abort_compil.enabled := true;
 
 case debuggerfo.project_options.value of
-  0 : begin 
+  'M' : begin 
   domake(1) ;
    mainfo.thetag := 1;
   end;
-   1 : begin 
+   'B' : begin 
   domake(2) ;
    mainfo.thetag := 2;
   end;
-   2 : begin 
+   '1' : begin 
   domake(4) ;
    mainfo.thetag := 4;
   end;
-    3 : begin 
+    '2' : begin 
   domake(8) ;
    mainfo.thetag := 8;
   end;
-     4 : begin 
+     '3' : begin 
   domake(16) ;
    mainfo.thetag := 16;
   end;
-   5 : begin 
+   '4' : begin 
   domake(32) ;
    mainfo.thetag := 32;
   end;
-   6 : begin 
+   '5' : begin 
   domake(64) ;
    mainfo.thetag := 64;
   end;
-    7 : begin 
+    '6' : begin 
   domake(128) ;
    mainfo.thetag := 128;
   end;
-    8 : begin 
+    '7' : begin 
   domake(256) ;
    mainfo.thetag := 256;
   end;
-     9 : begin 
+     '8' : begin 
   domake(512) ;
    mainfo.thetag := 512;
   end;
-   10 : begin 
+   '9' : begin 
   domake(1024) ;
    mainfo.thetag := 1024;
   end; 
-   11 : begin 
+   '0' : begin 
   domake(2048) ;
    mainfo.thetag := 2048;
   end;
@@ -629,23 +629,29 @@ begin
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
   
-  mainfo.settypecompiler := debuggerfo.edit_compiler.value + 1;
+    case debuggerfo.edit_compiler.value of
+  'Pascal' : mainfo.settypecompiler := 1 ;
+  'Java'   : mainfo.settypecompiler := 2 ;
+  'C'      : mainfo.settypecompiler := 3 ;
+  'Python' : mainfo.settypecompiler := 4 ;
+  'Other'  : mainfo.settypecompiler := 5 ;
+    end;
   
   mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
   
    case debuggerfo.edit_options.value of
-  0 : mainfo.customoption := 1 ;
-   1 : mainfo.customoption := 2 ;
-   2 : mainfo.customoption := 4 ;
-    3 : mainfo.customoption := 8 ;
-     4 : mainfo.customoption := 16 ;
-   5 : mainfo.customoption := 32 ;  
-    6 : mainfo.customoption := 64 ;
-   7 : mainfo.customoption := 128 ;
-    8 : mainfo.customoption := 256 ;
-     9 : mainfo.customoption := 512 ;
-   10 : mainfo.customoption := 1024 ; 
-    11 : mainfo.customoption := 2048 ;   
+  'M' : mainfo.customoption := 1 ;
+   'B' : mainfo.customoption := 2 ;
+   '1' : mainfo.customoption := 4 ;
+    '2' : mainfo.customoption := 8 ;
+     '3' : mainfo.customoption := 16 ;
+   '4' : mainfo.customoption := 32 ;  
+    '5' : mainfo.customoption := 64 ;
+   '6' : mainfo.customoption := 128 ;
+    '7' : mainfo.customoption := 256 ;
+    '8' : mainfo.customoption := 512 ;
+   '9' : mainfo.customoption := 1024 ; 
+    '0' : mainfo.customoption := 2048 ;   
   end;
     
 end;
@@ -663,7 +669,13 @@ begin
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
   
-  mainfo.settypecompiler := debuggerfo.edit_compiler.value + 1;
+     case debuggerfo.edit_compiler.value of
+  'Pascal' : mainfo.settypecompiler := 1 ;
+  'Java'   : mainfo.settypecompiler := 2 ;
+  'C'      : mainfo.settypecompiler := 3 ;
+  'Python' : mainfo.settypecompiler := 4 ;
+  'Other'  : mainfo.settypecompiler := 5 ;
+    end;
   
   mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
   
@@ -877,18 +889,18 @@ begin
 str3 := '' ;
 
 case debuggerfo.project_options.value of
-  0 : mainfo.thetag := 1;
-  1 : mainfo.thetag := 2;
-  2 : mainfo.thetag := 4;
-  3 : mainfo.thetag := 8;
-  4 : mainfo.thetag := 16;
-  5 : mainfo.thetag := 32;
-  6 : mainfo.thetag := 64;
-  7 : mainfo.thetag := 128;
-  8 : mainfo.thetag := 256;
-  9 : mainfo.thetag := 512;
-  10 : mainfo.thetag := 1024;
-  11 : mainfo.thetag := 2048;
+  'M' : mainfo.thetag := 1;
+  'B' : mainfo.thetag := 2;
+  '1' : mainfo.thetag := 4;
+  '2' : mainfo.thetag := 8;
+  '3' : mainfo.thetag := 16;
+  '4' : mainfo.thetag := 32;
+  '5' : mainfo.thetag := 64;
+  '6' : mainfo.thetag := 128;
+  '7' : mainfo.thetag := 256;
+  '8' : mainfo.thetag := 512;
+  '9' : mainfo.thetag := 1024;
+  '0' : mainfo.thetag := 2048;
   end;
 
 with projectoptions,o,texp do begin  

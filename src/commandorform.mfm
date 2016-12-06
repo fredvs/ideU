@@ -10,16 +10,16 @@ object debuggerfo: tdebuggerfo
   visible = False
   bounds_x = 213
   bounds_y = 120
-  bounds_cx = 967
-  bounds_cy = 61
+  bounds_cx = 948
+  bounds_cy = 55
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    957
-    61
+    938
+    55
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
@@ -85,12 +85,12 @@ object debuggerfo: tdebuggerfo
   object basedock: tdockpanel
     optionswidget1 = [ow1_autoscale, ow1_noparentheightextend]
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
-    taborder = 3
+    taborder = 1
     onpaint = paintdock
     bounds_x = 0
     bounds_y = 53
-    bounds_cx = 957
-    bounds_cy = 11
+    bounds_cx = 938
+    bounds_cy = 6
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -100,10 +100,10 @@ object debuggerfo: tdebuggerfo
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
-    taborder = 4
+    taborder = 2
     bounds_x = 0
     bounds_y = 35
-    bounds_cx = 957
+    bounds_cx = 938
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250
@@ -125,10 +125,9 @@ object debuggerfo: tdebuggerfo
     frame.grip_options = []
     bounds_x = 1
     bounds_y = 1
-    bounds_cx = 200
+    bounds_cx = 934
     bounds_cy = 34
     object find_in_directory: tbutton
-      optionswidget = [ow_destroywidgets]
       color = 13684944
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
@@ -144,25 +143,7 @@ object debuggerfo: tdebuggerfo
       imagelist = actionsmo.buttonicons
       imagenr = 15
     end
-    object assistive: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat, fso_noinnerrect]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      hint = ' Assitive on/off '
-      bounds_x = 4
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint]
-      action = actionsmo.assistive
-      imagelist = actionsmo.buttonicons
-      imagenr = 18
-      options = [bo_executeonclick, bo_coloractive]
-      focusrectdist = 0
-    end
     object toggle_form_unit: tbutton
-      optionswidget = [ow_destroywidgets]
       color = 13684944
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
@@ -180,7 +161,6 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
     end
     object project_option: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
@@ -197,7 +177,6 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
     end
     object properties_list: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
@@ -215,7 +194,6 @@ object debuggerfo: tdebuggerfo
       onexecute = listonexecute
     end
     object find_in_edit: tbutton
-      optionswidget = [ow_destroywidgets]
       color = 13684944
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
@@ -232,7 +210,6 @@ object debuggerfo: tdebuggerfo
       onexecute = findinpage
     end
     object line_number: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
@@ -249,27 +226,175 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
       onexecute = shownum
     end
-  end
-  object projectpanel: tdockpanel
-    color = -1610612731
-    frame.framewidth = 1
-    frame.colorframe = -1610612733
-    frame.localprops = [frl_framewidth, frl_colorframe]
-    frame.localprops1 = []
-    frame.grip_size = 6
-    frame.grip_options = []
-    taborder = 1
-    hint = ' Project commandor '
-    bounds_x = 202
-    bounds_y = 1
-    bounds_cx = 455
-    bounds_cy = 34
+    object assistive: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 7
+      hint = ' Assitive on/off '
+      bounds_x = 3
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      action = actionsmo.assistive
+      imagelist = actionsmo.buttonicons
+      imagenr = 18
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = assistiveactonexecute
+    end
+    object project_interrupt: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 8
+      hint = ' Project stop '
+      bounds_x = 613
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.interrupt
+      imagelist = actionsmo.buttonicons
+      imagenr = 1
+      focusrectdist = 0
+    end
+    object project_reset: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 9
+      hint = ' Project Reset '
+      bounds_x = 586
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.reset
+      imagelist = actionsmo.buttonicons
+      imagenr = 2
+      focusrectdist = 0
+    end
+    object project_step_instruction: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 10
+      hint = ' Project Step instruction '
+      bounds_x = 559
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.stepi
+      imagelist = actionsmo.buttonicons
+      imagenr = 32
+      focusrectdist = 0
+    end
+    object project_next_instruction: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 11
+      hint = ' Project Next Instruction '
+      bounds_x = 532
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.nexti
+      imagelist = actionsmo.buttonicons
+      imagenr = 30
+      focusrectdist = 0
+    end
+    object project_finish: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 12
+      hint = ' Project Finish '
+      bounds_x = 505
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.finish
+      imagelist = actionsmo.buttonicons
+      imagenr = 29
+    end
+    object project_step: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 13
+      hint = ' Project step '
+      bounds_x = 478
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.step
+      imagelist = actionsmo.buttonicons
+      imagenr = 31
+    end
+    object project_next: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 14
+      hint = ' Project Next '
+      bounds_x = 451
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.next
+      imagelist = actionsmo.buttonicons
+      imagenr = 28
+    end
+    object project_start: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 15
+      hint = ' Project Start '
+      bounds_x = 424
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.continue
+      imagelist = actionsmo.buttonicons
+      imagenr = 27
+      focusrectdist = 0
+    end
+    object hints: tbooleanedit
+      frame.colorclient = 9211135
+      frame.caption = '  '
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        3
+        11
+        3
+      )
+      taborder = 16
+      hint = ' Executable lines hint on/off '
+      bounds_x = 401
+      bounds_y = 14
+      bounds_cx = 23
+      bounds_cy = 17
+      onchange = hintonexecute
+      value = True
+    end
     object timage1: timage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 16
+      taborder = 17
       hint = 'Debugger Watch/Hint Options'
-      bounds_x = 164
+      bounds_x = 357
       bounds_y = 6
       bounds_cx = 54
       bounds_cy = 14
@@ -341,28 +466,7 @@ object debuggerfo: tdebuggerfo
         C3C9D601C6CAD501CCCED601D0D1D501D4D4D401D7D5D501D0D0D006
       }
     end
-    object break_point: tbooleanedit
-      optionswidget = [ow_destroywidgets]
-      frame.colorclient = -1610612729
-      frame.caption = '  '
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        3
-        11
-        3
-      )
-      taborder = 5
-      hint = ' Set Break point on/off '
-      bounds_x = 162
-      bounds_y = 14
-      bounds_cx = 23
-      bounds_cy = 17
-      onchange = breakonexecute
-    end
     object watches: tbooleanedit
-      optionswidget = [ow_destroywidgets]
       frame.colorclient = 14090188
       frame.caption = '  '
       frame.localprops = [frl_colorclient]
@@ -373,17 +477,16 @@ object debuggerfo: tdebuggerfo
         11
         3
       )
-      taborder = 6
+      taborder = 18
       hint = ' Set Watches On/Off '
-      bounds_x = 184
+      bounds_x = 377
       bounds_y = 14
       bounds_cx = 23
       bounds_cy = 17
       onchange = watchonexecute
     end
-    object hints: tbooleanedit
-      optionswidget = [ow_destroywidgets]
-      frame.colorclient = 9211135
+    object break_point: tbooleanedit
+      frame.colorclient = -1610612729
       frame.caption = '  '
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
@@ -393,156 +496,21 @@ object debuggerfo: tdebuggerfo
         11
         3
       )
-      taborder = 7
-      hint = ' Executable lines hint on/off '
-      bounds_x = 208
+      taborder = 19
+      hint = ' Set Break point on/off '
+      bounds_x = 355
       bounds_y = 14
       bounds_cx = 23
       bounds_cy = 17
-      onchange = hintonexecute
-      value = True
-    end
-    object project_start: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 8
-      hint = ' Project Start '
-      bounds_x = 231
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.continue
-      imagelist = actionsmo.buttonicons
-      imagenr = 27
-      focusrectdist = 0
-    end
-    object project_next: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 9
-      hint = ' Project Next '
-      bounds_x = 258
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.next
-      imagelist = actionsmo.buttonicons
-      imagenr = 28
-    end
-    object project_step: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 10
-      hint = ' Project step '
-      bounds_x = 285
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.step
-      imagelist = actionsmo.buttonicons
-      imagenr = 31
-    end
-    object project_finish: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 11
-      hint = ' Project Finish '
-      bounds_x = 312
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.finish
-      imagelist = actionsmo.buttonicons
-      imagenr = 29
-    end
-    object project_reset: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 14
-      hint = ' Project Reset '
-      bounds_x = 393
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.reset
-      imagelist = actionsmo.buttonicons
-      imagenr = 2
-      focusrectdist = 0
-    end
-    object project_interrupt: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 15
-      hint = ' Project stop '
-      bounds_x = 420
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.interrupt
-      imagelist = actionsmo.buttonicons
-      imagenr = 1
-      focusrectdist = 0
-    end
-    object project_next_instruction: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 12
-      hint = ' Project Next Instruction '
-      bounds_x = 339
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.nexti
-      imagelist = actionsmo.buttonicons
-      imagenr = 30
-      focusrectdist = 0
-    end
-    object project_step_instruction: tbutton
-      optionswidget = [ow_destroywidgets]
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 13
-      hint = ' Project Step instruction '
-      bounds_x = 366
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.stepi
-      imagelist = actionsmo.buttonicons
-      imagenr = 32
-      focusrectdist = 0
+      onchange = breakonexecute
     end
     object project_abort_compil: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 4
+      taborder = 20
       hint = ' Project Abort Compilation '
-      bounds_x = 127
+      bounds_x = 320
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -554,13 +522,11 @@ object debuggerfo: tdebuggerfo
     end
     object project_make: tbutton
       Tag = 1
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 3
       hint = ' Project make with selected options '
-      bounds_x = 100
+      bounds_x = 293
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -569,7 +535,7 @@ object debuggerfo: tdebuggerfo
       imagelist = actionsmo.buttonicons
       imagenr = 17
     end
-    object project_options: tenumedit
+    object project_options: tdropdownlistedit
       frame.colorclient = 16770809
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
@@ -577,11 +543,14 @@ object debuggerfo: tdebuggerfo
       frame.buttons.items = <      
         item
         end>
-      taborder = 2
-      hint = ' Compiler options for project '
-      bounds_x = 61
-      bounds_y = 7
-      bounds_cx = 35
+      taborder = 21
+      bounds_x = 254
+      bounds_y = 6
+      bounds_cx = 34
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'M'
+      dropdown.dropdownrowcount = 12
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -600,36 +569,15 @@ object debuggerfo: tdebuggerfo
             '0'
           )
         end>
-      value = 0
-      min = 0
-      max = 100
       reffontheight = 15
     end
-    object open_project: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      hint = ' Open project '
-      bounds_x = 4
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.projectopenact
-      imagelist = mainfo.vievmenuicons
-      imagenr = 5
-      focusrectdist = 0
-    end
     object save_project: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 1
+      taborder = 22
       hint = ' Save project '
-      bounds_x = 31
+      bounds_x = 224
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -639,30 +587,30 @@ object debuggerfo: tdebuggerfo
       imagenr = 13
       focusrectdist = 0
     end
-  end
-  object editpanel: tdockpanel
-    color = -1610612731
-    frame.framewidth = 1
-    frame.colorframe = -1610612733
-    frame.localprops = [frl_framewidth, frl_colorframe]
-    frame.localprops1 = []
-    frame.grip_size = 6
-    frame.grip_options = []
-    taborder = 2
-    hint = ' Edited-file commandor '
-    bounds_x = 658
-    bounds_y = 1
-    bounds_cx = 293
-    bounds_cy = 34
-    dragdock.optionsdock = [od_savepos, od_savezorder, od_cansize]
-    object edited_run: tbutton
-      optionswidget = [ow_destroywidgets]
+    object open_project: tbutton
+      color = 13684944
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 7
+      taborder = 23
+      hint = ' Open project '
+      bounds_x = 197
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.projectopenact
+      imagelist = mainfo.vievmenuicons
+      imagenr = 5
+      focusrectdist = 0
+    end
+    object edited_run: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 24
       hint = ' Run compiled '
-      bounds_x = 260
+      bounds_x = 901
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -673,13 +621,12 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
     end
     object edited_abort: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 6
+      taborder = 25
       hint = ' Abort compile '
-      bounds_x = 233
+      bounds_x = 874
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -691,13 +638,12 @@ object debuggerfo: tdebuggerfo
     end
     object edited_make: tbutton
       Tag = 32
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 5
+      taborder = 26
       hint = ' Compile edited-file '
-      bounds_x = 206
+      bounds_x = 847
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -707,7 +653,7 @@ object debuggerfo: tdebuggerfo
       imagenr = 17
       focusrectdist = 0
     end
-    object edit_options: tenumedit
+    object edit_options: tdropdownlistedit
       frame.colorclient = 16770809
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
@@ -715,12 +661,14 @@ object debuggerfo: tdebuggerfo
       frame.buttons.items = <      
         item
         end>
-      taborder = 4
-      hint = ' Compiler options for edited file. '
-      bounds_x = 167
+      taborder = 27
+      bounds_x = 810
       bounds_y = 7
-      bounds_cx = 36
+      bounds_cx = 35
       bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'M'
+      dropdown.dropdownrowcount = 12
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -739,39 +687,6 @@ object debuggerfo: tdebuggerfo
             '0'
           )
         end>
-      value = 0
-      min = 0
-      max = 100
-      reffontheight = 15
-    end
-    object edit_compiler: tenumedit
-      frame.colorclient = 13221375
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-        end>
-      taborder = 2
-      hint = ' Type of Compilers '
-      bounds_x = 60
-      bounds_y = 7
-      bounds_cx = 65
-      bounds_cy = 21
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            'Pascal'
-            'Java'
-            'C'
-            'Python'
-            'Other'
-          )
-        end>
-      value = 0
-      min = 0
-      max = 100
       reffontheight = 15
     end
     object edit_compilernum: tenumedit
@@ -782,12 +697,13 @@ object debuggerfo: tdebuggerfo
       frame.buttons.items = <      
         item
         end>
-      taborder = 3
+      taborder = 28
       hint = ' Compiler number '
-      bounds_x = 128
+      bounds_x = 769
       bounds_y = 7
       bounds_cx = 36
       bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -807,31 +723,42 @@ object debuggerfo: tdebuggerfo
       max = 100
       reffontheight = 15
     end
-    object open_file: tbutton
-      optionswidget = [ow_destroywidgets]
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
+    object edit_compiler: tdropdownlistedit
+      frame.colorclient = 13154534
+      frame.localprops = [frl_colorclient]
       frame.localprops1 = []
-      hint = ' Open file '
-      bounds_x = 4
-      bounds_y = 4
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.opensource
-      imagelist = actionsmo.buttonicons
-      imagenr = 22
-      focusrectdist = 0
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      taborder = 29
+      bounds_x = 703
+      bounds_y = 7
+      bounds_cx = 63
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'Pascal'
+      dropdown.dropdownrowcount = 5
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'Pascal'
+            'Java'
+            'C'
+            'Python'
+            'Other'
+          )
+        end>
+      reffontheight = 15
     end
     object save_file: tbutton
-      optionswidget = [ow_destroywidgets]
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
-      taborder = 1
+      taborder = 30
       hint = ' Save edited file '
-      bounds_x = 31
+      bounds_x = 671
       bounds_y = 4
       bounds_cx = 26
       bounds_cy = 26
@@ -839,6 +766,23 @@ object debuggerfo: tdebuggerfo
       action = actionsmo.customsave
       imagelist = actionsmo.buttonicons
       imagenr = 13
+      focusrectdist = 0
+    end
+    object open_file: tbutton
+      color = 13684944
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 31
+      hint = ' Open file '
+      bounds_x = 645
+      bounds_y = 4
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.opensource
+      imagelist = actionsmo.buttonicons
+      imagenr = 22
       focusrectdist = 0
     end
   end
