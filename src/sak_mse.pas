@@ -404,7 +404,7 @@ if WhatName(sender) <> '' then
 function TSak.WhatKey(akey : keyty): msestring;
 var
 keyname : msestring = '' ;
-begin
+ begin
       case akey of
         key_none : keyname := 'none'; 
         key_Space : keyname := 'Space';               
@@ -543,7 +543,7 @@ begin
         key_Help : keyname := 'Help'; 
         key_unknown : keyname := 'unknown'; 
    end;
-result := keyname;
+ result := keyname;
 end;
 
 function TSak.WhatName(iaSender: iassistiveclient): msestring;
