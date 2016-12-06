@@ -508,28 +508,30 @@ Sender := iaSender.getinstance;
       Result := 'image, ' + Timage(Sender).Name;
   end
   else
-  if (Sender is tbooleaneditradio) then
+   if (Sender is tbooleaneditradio) then
   begin
-    if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
-      Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption
+  if assigned(Tbooleaneditradio(Sender).frame) then
+   if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption
+  else
+   if (Tbooleaneditradio(Sender).hint <> '') then
+    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
     else
-     if (Tbooleaneditradio(Sender).hint <> '') then
-      Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
-      else
-      Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
   end
   else if (Sender is tbooleanedit) then
   begin
+   if assigned(Tbooleanedit(Sender).frame) then
     if (trim(Tbooleanedit(Sender).frame.Caption) <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).frame.Caption
-    else
+     else
     if (Tbooleanedit(Sender).hint <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).hint
     else
       Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
-  end
+    end
    else
-   if (Sender is ttoolbar) then
+     if (Sender is ttoolbar) then
      Result := 'tool bar, ' + iaSender.getassistivehint()
   else
   if (Sender is tslider) then

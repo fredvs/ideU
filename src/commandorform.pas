@@ -12,16 +12,16 @@ uses
 
 type
  tdebuggerfo = class(tdockform)
-   mainpanel: tdockpanel;
-   find_in_directory: tbutton;
-   toggle_form_unit: tbutton;
-   project_option: tbutton;
-   properties_list: tbutton;
-   find_in_edit: tbutton;
-   line_number: tbutton;
    basedock: tdockpanel;
    statdisp: tstringdisp;
-   assistive: tbutton;
+   edited_run: tbutton;
+   edited_abort: tbutton;
+   edited_make: tbutton;
+   edit_options: tdropdownlistedit;
+   edit_compilernum: tenumedit;
+   edit_compiler: tdropdownlistedit;
+   save_file: tbutton;
+   open_file: tbutton;
    project_interrupt: tbutton;
    project_reset: tbutton;
    project_step_instruction: tbutton;
@@ -31,22 +31,21 @@ type
    project_next: tbutton;
    project_start: tbutton;
    hints: tbooleanedit;
-   timage1: timage;
    watches: tbooleanedit;
+   timage1: timage;
    break_point: tbooleanedit;
    project_abort_compil: tbutton;
    project_make: tbutton;
    project_options: tdropdownlistedit;
    save_project: tbutton;
    open_project: tbutton;
-   edited_run: tbutton;
-   edited_abort: tbutton;
-   edited_make: tbutton;
-   edit_options: tdropdownlistedit;
-   edit_compilernum: tenumedit;
-   edit_compiler: tdropdownlistedit;
-   save_file: tbutton;
-   open_file: tbutton;
+   project_option: tbutton;
+   toggle_form_unit: tbutton;
+   line_number: tbutton;
+   find_in_directory: tbutton;
+   find_in_edit: tbutton;
+   properties_list: tbutton;
+   assistive: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
