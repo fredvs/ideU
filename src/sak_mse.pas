@@ -134,9 +134,11 @@ type
     function LoadLib: integer;
     procedure espeak_key(Text: msestring);
     function WhatName(iaSender: iassistiveclient): msestring;
+    
+    function WhatKey(akey : keyty): msestring;
     function WhatChar(iaSender: iassistiveclient; const info: keyeventinfoty): msestring;
     function WhatChange(iaSender: iassistiveclient) : msestring;
-    function formatcode(acell : string) : string;
+    function FormatCode(acell : msestring) : msestring;
   public
     constructor Create();
       destructor Destroy(); override;
@@ -399,6 +401,151 @@ if WhatName(sender) <> '' then
   
 // Capture Assistive Procedures
 
+function TSak.WhatKey(akey : keyty): msestring;
+var
+keyname : msestring = '' ;
+begin
+      case akey of
+        key_none : keyname := 'none'; 
+        key_Space : keyname := 'Space';               
+        key_Exclam : keyname := 'Exclam'; 
+        key_QuoteDbl : keyname := 'Quote Dbl'; 
+        key_NumberSign : keyname := 'NumberSign'; 
+        key_Dollar : keyname := 'Dollar'; 
+        key_Percent : keyname := 'Percent'; 
+        key_Ampersand : keyname := 'Ampersand'; 
+        key_Apostrophe : keyname := 'Apostrophe'; 
+        key_ParenLeft : keyname := 'Parenthese Left'; 
+        key_ParenRight : keyname := 'Parenthese Right'; 
+        key_Asterisk : keyname := 'Asterisk'; 
+        key_Plus : keyname := 'Plus'; 
+        key_Comma : keyname := 'Comma'; 
+        key_Minus : keyname := 'Minus'; 
+        key_Period : keyname := 'Period'; 
+        key_Slash : keyname := 'Slash'; 
+        key_Colon : keyname := 'Colon'; 
+        key_Semicolon : keyname := 'Semicolon'; 
+        key_Less : keyname := 'Less'; 
+        key_Equal : keyname := 'Equal'; 
+        key_Greater : keyname := 'Greater'; 
+        key_Question : keyname := 'Question'; 
+        key_At : keyname := 'At'; 
+        key_BracketLeft : keyname := 'Bracket Left';
+        key_Backslash : keyname := 'Backslash'; 
+        key_BracketRight : keyname := 'Bracket Right';
+        key_AsciiCircum : keyname := 'Ascii Circum';
+        key_Underscore : keyname := 'Underscore'; 
+        key_QuoteLeft : keyname := 'Quote Left'; 
+        key_BraceLeft : keyname := 'Brace Left'; 
+        key_Bar : keyname := 'Bar';  
+        key_BraceRight : keyname := 'Brace Right'; 
+        key_AsciiTilde : keyname := 'Ascii Tilde'; 
+        key_nobreakspace : keyname := 'no breakspace';
+        key_exclamdown : keyname := 'exclam down'; 
+        key_cent : keyname := 'cent'; 
+        key_sterling : keyname := 'sterling'; 
+        key_currency : keyname := 'currency'; 
+        key_yen : keyname := 'yen';  
+        key_brokenbar : keyname := 'brokenbar'; 
+        key_section : keyname := 'section'; 
+        key_diaeresis : keyname := 'diaeresis'; 
+        key_copyright : keyname := 'copyright'; 
+        key_ordfeminine : keyname := 'ordfeminine';
+        key_guillemotleft : keyname := 'guillemot left';       
+        key_notsign : keyname := 'not sign'; 
+        key_hyphen : keyname := 'hyphen'; 
+        key_registered : keyname := 'registered'; 
+        key_macron : keyname := 'macron'; 
+        key_degree : keyname := 'degree'; 
+        key_plusminus : keyname := 'plus minus'; 
+        key_twosuperior : keyname := 'two superior';
+        key_threesuperior : keyname := 'three superior'; 
+        key_acute : keyname := 'acute'; 
+        key_mu : keyname := 'mu'; 
+        key_paragraph : keyname := 'paragraph'; 
+        key_periodcentered : keyname := 'period centered'; 
+        key_cedilla : keyname := 'cedilla'; 
+        key_onesuperior : keyname := 'one superior';
+        key_masculine : keyname := 'masculine'; 
+        key_guillemotright : keyname := 'guillemot right';    
+        key_onequarter : keyname := 'one quarter'; 
+        key_onehalf : keyname := 'one half'; 
+        key_threequarters : keyname := 'three quarters'; 
+        key_questiondown : keyname := 'question down';
+        key_Agrave : keyname := 'A grave'; 
+        key_Aacute : keyname := 'A acute'; 
+        key_Acircumflex : keyname := 'A circumflex';
+        key_Atilde : keyname := 'A tilde'; 
+        key_Adiaeresis : keyname := 'A diaeresis'; 
+        key_Aring : keyname := 'A ring'; 
+        key_AE : keyname := 'AE'; 
+        key_Ccedilla : keyname := 'C cedilla'; 
+        key_Egrave : keyname := 'E grave'; 
+        key_Eacute : keyname := 'E acute'; 
+        key_Ecircumflex : keyname := 'E circumflex';
+        key_Ediaeresis : keyname := 'E diaeresis'; 
+        key_Igrave : keyname := 'I grave'; 
+        key_Iacute : keyname := 'I acute'; 
+        key_Icircumflex : keyname := 'I circumflex';
+        key_Idiaeresis : keyname := 'I diaeresis'; 
+        key_ETH : keyname := 'ETH'; 
+        key_Escape : keyname := 'Escape';            
+        key_Tab : keyname := 'Tab'; 
+        key_Backtab : keyname := 'Backtab'; 
+        key_Backspace : keyname := 'Backspace'; 
+        key_Return : keyname := 'Return'; 
+        key_Insert : keyname := 'Insert'; 
+        key_Delete : keyname := 'Delete'; 
+        key_Pause : keyname := 'Pause'; 
+        key_Print : keyname := 'Print'; 
+        key_SysReq : keyname := 'SysReq'; 
+        key_Home : keyname := 'Home';               
+        key_End : keyname := 'End'; 
+        key_Left : keyname := 'Left'; 
+        key_Up : keyname := 'Up'; 
+        key_Right : keyname := 'Right'; 
+        key_Down : keyname := 'Down'; 
+        key_Prior : keyname := 'Prior'; 
+        key_Next : keyname := 'Next'; 
+        key_clear : keyname := 'clear'; 
+        key_decimal : keyname := 'decimal'; 
+        key_Shift : keyname := 'Shift';            
+        key_Control : keyname := 'Control'; 
+        key_Meta : keyname := 'Meta'; 
+        key_Alt : keyname := 'Alt'; 
+        key_CapsLock : keyname := 'Caps Lock'; 
+        key_NumLock : keyname := 'Num Lock'; 
+        key_ScrollLock : keyname := 'Scroll Lock'; 
+        key_AltGr : keyname := 'Alt Gr'; 
+        key_F1 : keyname := 'F1';              
+        key_F2 : keyname := 'F2'; 
+        key_F3 : keyname := 'F3'; 
+        key_F4 : keyname := 'F4'; 
+        key_F5 : keyname := 'F5'; 
+        key_F6 : keyname := 'F6'; 
+        key_F7 : keyname := 'F7'; 
+        key_F8 : keyname := 'F8'; 
+        key_F9 : keyname := 'F9'; 
+        key_F10 : keyname := 'F10'; 
+        key_F11 : keyname := 'F11'; 
+        key_F12 : keyname := 'F12'; 
+        key_F13 : keyname := 'F13'; 
+        key_F14 : keyname := 'F14'; 
+        key_F15 : keyname := 'F15'; 
+        key_F16 : keyname := 'F16'; 
+        key_F17 : keyname := 'F17'; 
+        key_F18 : keyname := 'F18'; 
+        key_F19 : keyname := 'F19'; 
+        key_F20 : keyname := 'F20'; 
+        key_Super : keyname := 'Super';          
+        key_Menu : keyname := 'Menu'; 
+        key_Hyper : keyname := 'Hyper'; 
+        key_Help : keyname := 'Help'; 
+        key_unknown : keyname := 'unknown'; 
+   end;
+result := keyname;
+end;
+
 function TSak.WhatName(iaSender: iassistiveclient): msestring;
 var
 Sender : Tobject;
@@ -511,6 +658,7 @@ Sender := iaSender.getinstance;
    if (Sender is tbooleaneditradio) then
   begin
   if assigned(Tbooleaneditradio(Sender).frame) then
+  begin
    if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
      Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption
   else
@@ -518,14 +666,24 @@ Sender := iaSender.getinstance;
     Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
     else
      Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
-  end
+   end else
+   if (Tbooleaneditradio(Sender).hint <> '') then
+    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
+    else
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
+    end
   else if (Sender is tbooleanedit) then
   begin
    if assigned(Tbooleanedit(Sender).frame) then
+   begin
     if (trim(Tbooleanedit(Sender).frame.Caption) <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).frame.Caption
      else
     if (Tbooleanedit(Sender).hint <> '') then
+      Result := 'checkbox, ' + Tbooleanedit(Sender).hint
+    else
+      Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
+   end else if (Tbooleanedit(Sender).hint <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).hint
     else
       Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
@@ -621,7 +779,7 @@ begin
   Result := info.chars;
     
    if (checkkey = key_Up) or (checkkey = key_down) or (checkkey = key_left) or (checkkey = key_right) or
-      (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) and 
+      (checkkey = key_escape) or (checkkey = key_tab) or (checkkey = key_PageUp) or (checkkey = key_PageDown) and 
       ((iaSender.getinstance is Tstringgrid) or (iaSender.getinstance is Tcustomstringgrid)) then
        lrkeyused := true
        else lrkeyused := false;
@@ -667,7 +825,7 @@ procedure TSAK.ontimerenter(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_Key(WhatName(TheSender) + ', enter');
+  espeak_Key(WhatName(TheSender) + ', selected');
 end;
 
 procedure TSAK.doenter(const Sender: iassistiveclient);
@@ -676,7 +834,7 @@ begin
   begin
     thetimer.Enabled := False;
     TheSender := Sender;
-    thetimer.interval := 800000;
+    thetimer.interval := 1000000;
     thetimer.ontimer := @ontimerenter;
     thetimer.Enabled := True;
   end;
@@ -736,12 +894,14 @@ begin
    key_up: TheExtraChar := 'up, ';
    key_left: TheExtraChar := 'left, ';
    key_right: TheExtraChar := 'right, ';
+   key_escape: TheExtraChar := 'escape, ';
    end;
  if TheExtraChar <> '' then begin
   SAKSetVoice(2,'',150,-1,-1);
  SakCancel;
  espeak_Key(TheExtraChar) ;
  SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
+ TheExtraChar := '';
  end;
  
  end else
@@ -750,125 +910,16 @@ begin
     WhatCh := WhatChar(Sender, info);
     TheKeyInfo := info;
     thetimer.ontimer := @ontimerkey;
-    
-        if (info.eventkind = ek_keypress) and ( (WhatCh = '.') or
-        (info.key = key_left) or (info.key = key_right) or (info.key = key_delete) or 
-        (info.key = key_return) or (info.key = key_PageUp) or (info.key = key_PageDown) or 
-        (info.key = key_Shift) or (info.key = key_Control) or (info.key = key_Alt)  or 
-        (info.key = key_AltGr) or (info.key = key_Backtab) or (info.key = key_Tab) or 
-        (info.key = key_Slash) or (info.key = key_Insert) or (info.key = key_Home) or
-         (info.key = key_End) or (info.key = key_comma)  or  (info.key = key_plus) or 
-         (info.key = key_minus) or (info.key = key_up) or (info.key = key_Backspace) or 
-        (info.key = key_NumLock) or (info.key = key_Semicolon) or (info.key = key_Less) or 
-        (info.key = key_Equal) or (info.key = key_Greater) or (info.key = key_Question) or
-        (info.key = key_space) or (info.key = key_down) or
-         (info.key = key_f1) or (info.key = key_f2)  or  (info.key = key_f3) or 
-         (info.key = key_f4) or (info.key = key_f5) or (info.key = key_f6) or 
-        (info.key = key_f7) or (info.key = key_f8) or (info.key = key_f9) or (info.key = key_Apostrophe) or
-         
-        (info.key = key_f10) or (info.key = key_f11) or (info.key = key_f12))
-         then   isnotchar := true;   
-    
-    TheExtraChar := '';
-   
-      case info.key of
-   key_f1: TheExtraChar := 'f1 , ';
-   key_f2: TheExtraChar := 'f2 , ';
-   key_f3: TheExtraChar := 'f3 , ';
-   key_f4: TheExtraChar := 'f4 , ';
-   key_f5: TheExtraChar := 'f5 , ';
-   key_f6: TheExtraChar := 'f6 , ';
-   key_f7: TheExtraChar := 'f7 , ';
-   key_f8: TheExtraChar := 'f8 , ';
-   key_f9: TheExtraChar := 'f9 , ';
-   key_f10: TheExtraChar := 'f10 , ';
-   key_f11: TheExtraChar := 'f11 , ';
-   key_f12: TheExtraChar := 'f12 , ';
-   key_comma: TheExtraChar := 'comma , ';
-   key_Backspace: TheExtraChar := 'Backspace, ';
-   key_NumLock: TheExtraChar := 'NumLock, ';
-   key_Semicolon: TheExtraChar := 'Semicolon, ';
-   key_Less: TheExtraChar := 'Less, ';
-   key_Equal: TheExtraChar := 'Equal, ';
-   key_Greater: TheExtraChar := 'Greater, ';
-   key_Space: TheExtraChar := 'Space, ';
-   key_Question: TheExtraChar := 'Question, ';
-   key_down: TheExtraChar := 'down, ';
-   key_up: TheExtraChar := 'up, ';
-   key_left: TheExtraChar := 'left, ';
-   key_right: TheExtraChar := 'right, ';
-   key_delete: TheExtraChar := 'delete, ';
-   key_return: TheExtraChar := 'return, ';
-   key_PageUp: TheExtraChar := 'Page Up, ';
-   key_PageDown: TheExtraChar := 'Page Down, ';
-   key_Shift: TheExtraChar := 'Shift, ';
-   key_Apostrophe: TheExtraChar := 'Apostrophe, ';
-   key_Control: TheExtraChar := 'Control, ';
-   key_Alt: TheExtraChar := 'Alt, ';
-   key_AltGR: TheExtraChar := 'Alt GR, ';
-   key_home: TheExtraChar := 'home, ';
-   key_Slash: TheExtraChar := 'Slash, ';
-   key_Insert: TheExtraChar := 'Insert, ';
-   key_tab: TheExtraChar := 'tab, ';
-   key_Backtab: TheExtraChar := 'Backtab, ';
-   key_Escape: TheExtraChar := 'Escape, ';
-   key_End: TheExtraChar := 'End, ';
-   key_plus: TheExtraChar := 'plus, ';
-   key_minus: TheExtraChar := 'minus, ';
- end;
- 
-  if (WhatCh = '.') then
-  begin
-   TheExtraChar := 'point , ';
-   isnotchar := true;
-    end else
-   if (WhatCh = '(') then
-   begin
-    TheExtraChar := ', open parenthesis , ';
-    isnotchar := true;
-    end else
-   if (WhatCh = ')') then
-    begin
-     TheExtraChar := ', close parenthesis , ';
-    isnotchar := true;
-    end else
-      if (WhatCh = '{') then
-      begin
-       TheExtraChar := ', open braket , ' ;
-    isnotchar := true;
-    end else
-    if (WhatCh = '}') then begin
-    TheExtraChar := ', close braket , ' ;
-    isnotchar := true;
-    end else
-    
-     if (WhatCh = '[') then
-      begin
-       TheExtraChar := ', open square braket , ' ;
-    isnotchar := true;
-    end else
-    
-     if (WhatCh = ']') then
-      begin
-       TheExtraChar := ', close square braket , ' ;
-    isnotchar := true;
-    end else
-      if (WhatCh = '\') then
-      begin TheExtraChar := ', back slash , ' ;
-    isnotchar := true;
-    end;
-  
- if (isnotchar = true) then
-  begin
-  if TheExtraChar <> '' then begin
+    TheExtraChar := WhatKey(info.key); 
+       
+  if (TheExtraChar <> '') or (WhatCh = '.') then begin
   SAKSetVoice(2,'',150,-1,-1);
  SakCancel;
+ if WhatCh = '.' then espeak_Key('point') else
  espeak_Key(TheExtraChar) ;
  SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
  end; 
- 
- end ;
-     
+      
  if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)
   or (Sender.getinstance is tdirdropdownedit) or (Sender.getinstance is thistoryedit) then  
   begin 
@@ -886,7 +937,7 @@ begin
    thetimer.enabled := true;
   end else
   
-  if info.key = key_Space then
+  if (info.key = key_Space) or (info.key = key_f4) then
    begin
    thetimer.ontimer := @ontimercell;
    thetimer.Interval := 700000 ;
@@ -898,7 +949,6 @@ begin
    end else
    if (WhatCh = '.') or (WhatCh = '?') or (WhatCh = '!') then
    begin
-   TheTypCell := 1 ;
    thetimer.ontimer := @ontimercell;
    thetimer.Interval := 800000 ;
    TheCell := Theword + ', ' + TheSentence + Theword;
@@ -907,10 +957,11 @@ begin
    TheLastSentence := TheSentence + ' ' + Theword ;
    TheSentence := '';
    Theword := '';
+   thetimer.enabled := true;
    end
    else
    begin
-   if isnotchar = false then
+   if (TheExtraChar = '') and (WhatCh <> '.') then
    begin
    TheTypCell := 0 ;
    TheCell := info.chars;
@@ -923,27 +974,27 @@ begin
    begin
    if (Sender.getinstance is Tcustomstringgrid) or (Sender.getinstance is Tstringgrid)  then
    begin
-      TheCell := info.chars; 
-      itementer := false;
-      if isnotchar = false then
+       itementer := false;
+      if TheExtraChar = '' then
         begin 
+       TheCell := info.chars;  
        TheTypCell := 0 ;
        thetimer.Interval := 100000 ;
        thetimer.Enabled := True;
         end;
-       end ;
-   {
+     end   
     else begin
-    if TheExtraChar <> TheCell
+    if (TheExtraChar = '') and (WhatCh <> '.') 
       then begin 
+     itementer := false; 
+     TheTypCell := 0 ;
      TheCell := info.chars; 
      thetimer.interval := 100000 ; 
      thetimer.Enabled := True;
     end;
-    }
-    
     end;
   end;
+ end;
  end;
 
 procedure TSAK.ontimermouse(const Sender: TObject);
@@ -1089,7 +1140,7 @@ begin
 end;
 
 // for code editor
-function TSAK.formatcode(acell : string) : string;
+function TSAK.formatcode(acell : msestring) : msestring;
 var
 formatcell : msestring;
 begin
@@ -1310,12 +1361,17 @@ begin
             begin
     			Theword := Theword + mstr2;
     			TheTypCell := 0 ;
-    			if TheExtraChar <> '' then
-    			thetimer.interval := 400000 else
-    			thetimer.interval := 100000;
-    			
-     			TheCell :=  formatcode(mstr2);
+    			if (TheExtraChar = 'Up') or (TheExtraChar = 'Down') or
+    			  (TheExtraChar = 'Prior') or (TheExtraChar = 'Next') or
+    			  (TheExtraChar = 'Backspace') or (TheExtraChar = 'Delete') or
+    			 (TheExtraChar = 'Right') or (TheExtraChar = 'Left') 
+               then
+    			begin
+    			TheTypCell := 0 ;
+    			thetimer.interval := 800000 ;
+    			TheCell :=  formatcode(mstr2);
      			thetimer.enabled := true;
+     			 end;
    			end;
  		end;
  	TheLastCell.col := sender.getassistivecaretindex() ; 
