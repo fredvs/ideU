@@ -27,7 +27,7 @@ uses
 type
  ttargetconsolefo = class(tdockform)
    terminal: tterminal;
-   grid: twidgetgrid;
+   grid_console: twidgetgrid;
    popupmen: tpopupmenu;
    procedure sendtext(const sender: tobject; var atext: msestring;
                                                  var donotsend: Boolean);
@@ -72,7 +72,7 @@ end;
 
 procedure ttargetconsolefo.clear;
 begin
- grid.clear;
+ grid_console.clear;
 end;
 
 procedure ttargetconsolefo.addtext(const atext: string);
@@ -113,7 +113,7 @@ end;
 
 procedure ttargetconsolefo.clearexe(const sender: TObject);
 begin
- grid.clear;
+ grid_console.clear;
 end;
 
 procedure ttargetconsolefo.dofind;

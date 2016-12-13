@@ -675,7 +675,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/ideu/src/templates/init/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -702,10 +702,10 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 0,10
+ 24,6
 bookmarks0=0
 sourcefiles=1
- ${PROJECTDIR}/templates/init/readme2.txt
+ ${PROJECTDIR}/readme2.txt
 relpaths=1
  readme2.txt
 ismoduletexts=1
@@ -858,7 +858,7 @@ windowlayout=539
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=memoryfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -942,7 +942,7 @@ windowlayout=539
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=projecttreefo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1154,7 +1154,7 @@ windowlayout=539
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1175,7 +1175,7 @@ windowlayout=539
  [debuggerfo]
  splitdir=0
  useroptions=122987
- stackedunder=breakpointsfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1227,7 +1227,7 @@ windowlayout=539
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=projecttreefo
  parent=
  mdistate=0
  nx=0

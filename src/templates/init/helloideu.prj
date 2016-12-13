@@ -642,7 +642,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/ideu/src/templates/init/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -672,7 +672,7 @@ editpos=1
  0,0
 bookmarks0=0
 sourcefiles=1
- ${PROJECTDIR}/readme.txt
+ ${PROJECTDIR}/templates/init/readme.txt
 relpaths=1
  readme.txt
 ismoduletexts=1
@@ -686,7 +686,7 @@ tabsize=60
 firsttab=0
 index=0
 [layout]
-windowlayout=540
+windowlayout=539
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -699,32 +699,31 @@ windowlayout=540
  ncy=0
  x=0
  y=0
- cx=761
+ cx=730
  cy=411
  rcx=0
  rcy=0
  [mainfo]
  splitdir=0
- useroptions=838860927
- stackedunder=
+ useroptions=838860925
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=255
- y=51
- cx=771
+ x=249
+ y=113
+ cx=740
  cy=447
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,761,411
+  basedock,0,0,730,411
  focusedchild=0
  wsize=0
  active=1
- visible=0
+ visible=1
  [targetconsolefo]
  splitdir=0
  useroptions=805322857
@@ -931,7 +930,7 @@ windowlayout=540
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=breakpointsfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1122,7 +1121,7 @@ windowlayout=540
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1143,7 +1142,7 @@ windowlayout=540
  [debuggerfo]
  splitdir=0
  useroptions=122987
- stackedunder=objectinspectorfo
+ stackedunder=breakpointsfo
  parent=
  mdistate=3
  nx=0
@@ -1187,7 +1186,7 @@ windowlayout=540
  ncy=0
  x=0
  y=0
- cx=761
+ cx=730
  cy=411
  rcx=0
  rcy=0
@@ -1195,7 +1194,7 @@ windowlayout=540
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1223,7 +1222,7 @@ windowlayout=540
  ncy=0
  x=0
  y=0
- cx=761
+ cx=730
  cy=411
  rcx=0
  rcy=0

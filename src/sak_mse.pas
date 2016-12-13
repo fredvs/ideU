@@ -60,10 +60,6 @@ uses
 {$define cpu86}
 *)
 
-const
-  male = 1;
-  female = 2;
-
 type
   TSAK = class(TObject, iassistiveserver)
   protected
@@ -122,7 +118,7 @@ type
                             const items: shapeinfoarty; const aindex: integer);
     procedure doitementer(const sender: iassistiveclient;
                          const items: menucellinfoarty; const aindex: integer);
-   procedure docellevent(const sender: iassistiveclientgrid; 
+    procedure docellevent(const sender: iassistiveclientgrid; 
                                     const info: celleventinfoty);
     procedure ontimercell(const Sender: TObject);                               
     procedure ontimerkey(const Sender: TObject);
@@ -138,40 +134,24 @@ type
     function WhatKey(akey : keyty): msestring;
     function WhatChange(iaSender: iassistiveclient) : msestring;
     function FormatCode(acell : msestring) : msestring;
+    
   public
     constructor Create();
-      destructor Destroy(); override;
+    destructor Destroy(); override;
   end;
 
-{$IFDEF FREEBSD}
-// These are missing for FreeBSD in FPC's RTL
-const
-  S_IRWXU = S_IRUSR or S_IWUSR or S_IXUSR;
-  S_IRWXG = S_IRGRP or S_IWGRP or S_IXGRP;
-  S_IRWXO = S_IROTH or S_IWOTH or S_IXOTH;
-
-{$ENDIF}
-  
-  var
-   sak: TSAK;
-   isfirstload : boolean = false;
+// The hello message
+procedure SakGreeting(gret: msestring);
      
 // Load with custom sakit dir
 function SAKLoadLib(const SakitDir: filenamety = ''): integer;
-                            //'' = default
+                          //'' = default
 
 // Load with custom espeak dir
 function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
                                       const eSpeakDataDir: filenamety): integer;
 // Unload sak 
 function SAKUnloadLib: integer;
-
- {$IF DEFINED(unix)}
-function ChangePermission(const thefile: filenamety = ''; raisemessage : boolean = true) : integer ;
- {$endif} 
-
- // to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib, 3 = epeak-data dir)
-function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
 
 //// to know if sak is loaded
 function SakIsEnabled: boolean;
@@ -192,14 +172,25 @@ function SAKSay(Text: msestring): integer;
 // Cancel current speak.
 function SakCancel: integer;
 
+const
+  male = 1;
+  female = 2;
+  {$IFDEF FREEBSD}
+// These are missing for FreeBSD in FPC's RTL
+  S_IRWXU = S_IRUSR or S_IWUSR or S_IXUSR;
+  S_IRWXG = S_IRGRP or S_IWGRP or S_IXGRP;
+  S_IRWXO = S_IROTH or S_IWOTH or S_IXOTH;
+{$ENDIF}
 
 implementation
 
 uses
   typinfo, mclasses, mseactions, mseformatstr, msegridsglob, mseimage;
   
-// Loading Procedure
-
+var
+  sak: TSAK;
+  greeting : string = 'sak is working...' ;
+  
 // Load with custom espeak dir
 function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
                                       const eSpeakDataDir: filenamety): integer;
@@ -225,6 +216,83 @@ begin
 end;
 
 function SAKLoadLib(const sakitdir: filenamety = ''): integer;
+
+function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
+// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib)
+var
+tf: textfile;
+ffinded : boolean ;
+dataf, whatfil : string;
+len : integer;
+scriptfile : string;
+begin
+ffinded := false;
+result := '';
+
+//writeln( 'sakini is ' + sakini);
+
+if findfile(sakini) then
+begin
+ scriptfile := tosysfilepath(sakini);
+  AssignFile(tf,pchar(scriptfile));
+   Reset(tF);
+
+   case what of
+    0: whatfil := 'BINESPEAK=';
+    1: whatfil := 'LIBPORTAUDIO=';
+    2: whatfil := 'LIBESPEAK=';
+    3: whatfil := 'DIRESPEAKDATA=';
+     end;
+
+  len := length(whatfil);
+  
+   while (eof(tf) = false) and (ffinded = false) do
+     begin
+       Readln(tF, dataf);
+    dataf := trim(dataf);
+
+    if  Pos(whatfil,dataf) > 0 then
+   begin
+    if  Pos('#',dataf) > 0 then  dataf := trim(copy(dataf,1, Pos('#',dataf)-1));
+     result := copy(dataf,Pos(whatfil,dataf)+ len , length(dataf)-len);
+  // writeln( 'Result is ' +  result);
+    ffinded := true;
+   end;
+     end;
+  CloseFile(tf);
+end;
+
+end;
+
+{$IF DEFINED(unix)}
+function ChangePermission(const thefile: filenamety = ''; raisemessage : boolean = true) : integer ;
+var
+info : stat;
+begin
+  result := 0;
+ if (FpStat(thefile,info{%H-})<>-1) and FPS_ISREG(info.st_mode) and
+             (BaseUnix.FpAccess(thefile,BaseUnix.X_OK)=0) then else
+ begin
+  if raisemessage = true then
+  begin
+  
+  if askok('Permission mode of file:' +lineend+ thefile
+   +lineend+ 'is not set as executable...'
+    +lineend+ 'Do you want to reset it?') then begin
+
+  fpchmod(thefile, S_IRWXU);
+// => get error at compil
+// sys_setfilerights(thefile,[s_irusr,s_iwusr,s_ixusr,s_irgrp,s_ixgrp, s_iroth,s_ixoth]);
+
+   end else result := -1;
+  
+ end
+ else result := -1;
+
+end; 
+end;
+
+{$endif}
 var
  tmp : string;
   ordir, sakini, espeakbin, espeaklib, portaudiolib, espeakdatadir : filenamety;
@@ -380,14 +448,8 @@ begin
  end;
 end;
 
-function checksakactive(const raiseexception: boolean = false): boolean;
-begin
- result:= sak <> nil;
-end;
-
 procedure TSAK.dochange(const sender: iassistiveclient);
 begin
- 
 if WhatName(sender) <> '' then
  begin
   thetimer.enabled := false;  
@@ -396,7 +458,7 @@ if WhatName(sender) <> '' then
   thetimer.ontimer := @ontimerchange;
   thetimer.enabled := true;
  end;
- end;  
+end;  
   
 // Capture Assistive Procedures
 
@@ -963,8 +1025,6 @@ if WhatName(TheSender)  <> lastname then
   end;
         espeak_Key('left  ' +inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x) + ' , top '+ 
          inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y) + ' ,  '+ 
-        //'X  ' +inttostr(TheMouseinfo.pos.x) + ' , Y '+ 
-        //inttostr(TheMouseinfo.pos.y) + ' , ' +
         WhatName(TheSender) + stringtemp + ' focused.');
       lastname := WhatName(TheSender);
     end;
@@ -982,8 +1042,6 @@ end;
 procedure TSAK.clientmouseevent(const sender: iassistiveclient;
                                            const info: mouseeventinfoty);
  begin
- if itementer = false then
- begin
   if WhatName(Sender) <> '' then
   begin
     TheSender := Sender;
@@ -995,7 +1053,6 @@ procedure TSAK.clientmouseevent(const sender: iassistiveclient;
     thetimer.ontimer := @ontimermouse;
     thetimer.Enabled := True;
   end;
-end;
  end;
 
 procedure TSAK.ontimerfocuschange(const Sender: TObject);
@@ -1120,7 +1177,6 @@ begin
    if pos(':',formatcell)  > 0 then formatcell := copy(formatcell,1,pos(':',formatcell)-1) + ' , two point , ' +
    copy(formatcell,pos(':',formatcell)+1, length(formatcell) - pos(':',formatcell)+1  );
 
-if (isfirstload = false) then
  while pos('.',formatcell)  > 0 do
    if pos('.',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('.',formatcell)-1) + ' , point , ' +
    copy(formatcell,pos('.',formatcell)+1, length(formatcell) - pos('.',formatcell)+1  );
@@ -1281,7 +1337,7 @@ begin
     		
 			end else 
     	TheCell := ' row , '
-    		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) ;
+    		+ inttostrmse(info.cell.row + 1) + ' , ' + formatcode(mstr1) ;
     		
     		TheTypCell := 0 ;
     		thetimer.enabled := true;
@@ -1391,85 +1447,13 @@ begin
  assistiveserver:= nil;
  end;
 
+// Hello message.
+procedure SakGreeting(gret: msestring);
+begin
+greeting := gret;
+end;
+
 // Loading sak
-
-function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
-// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib)
-var
-tf: textfile;
-ffinded : boolean ;
-dataf, whatfil : string;
-len : integer;
-scriptfile : string;
-begin
-ffinded := false;
-result := '';
-
-//writeln( 'sakini is ' + sakini);
-
-if findfile(sakini) then
-begin
- scriptfile := tosysfilepath(sakini);
-  AssignFile(tf,pchar(scriptfile));
-   Reset(tF);
-
-   case what of
-    0: whatfil := 'BINESPEAK=';
-    1: whatfil := 'LIBPORTAUDIO=';
-    2: whatfil := 'LIBESPEAK=';
-    3: whatfil := 'DIRESPEAKDATA=';
-     end;
-
-  len := length(whatfil);
-  
-   while (eof(tf) = false) and (ffinded = false) do
-     begin
-       Readln(tF, dataf);
-    dataf := trim(dataf);
-
-    if  Pos(whatfil,dataf) > 0 then
-   begin
-    if  Pos('#',dataf) > 0 then  dataf := trim(copy(dataf,1, Pos('#',dataf)-1));
-     result := copy(dataf,Pos(whatfil,dataf)+ len , length(dataf)-len);
-  // writeln( 'Result is ' +  result);
-    ffinded := true;
-   end;
-     end;
-  CloseFile(tf);
-end;
-
-end;
-
-{$IF DEFINED(unix)}
-function ChangePermission(const thefile: filenamety = ''; raisemessage : boolean = true) : integer ;
-var
-info : stat;
-begin
-  result := 0;
- if (FpStat(thefile,info{%H-})<>-1) and FPS_ISREG(info.st_mode) and
-             (BaseUnix.FpAccess(thefile,BaseUnix.X_OK)=0) then else
- begin
-  if raisemessage = true then
-  begin
-  
-  if askok('Permission mode of file:' +lineend+ thefile
-   +lineend+ 'is not set as executable...'
-    +lineend+ 'Do you want to reset it?') then begin
-
-  fpchmod(thefile, S_IRWXU);
-// => get error at compil
-// sys_setfilerights(thefile,[s_irusr,s_iwusr,s_ixusr,s_irgrp,s_ixgrp, s_iroth,s_ixoth]);
-
-   end else result := -1;
-  
- end
- else result := -1;
-
-end; 
-end;
-
-{$endif}
-
 function TSAK.LoadLib: integer;
 //var
 // str1: msestring = '' ;
@@ -1513,7 +1497,7 @@ end  else
   voice_pitch := -1 ;
   voice_volume := -1 ;
   
-  espeak_Key('sak is working...');
+  espeak_Key(greeting);
 
   assistiveserver:= iassistiveserver(self); //sak is now operable
 // end;

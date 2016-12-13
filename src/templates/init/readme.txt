@@ -3,13 +3,10 @@
 
 
 
-                       Welcome in ideU world...
-                          
-                          
-                       
-                           Before to begin...
-                                    
-                     You may check your settings...
-               
-             
-                                                                           
+                       Welcome in ideU world !
+
+
+                          Before to begin
+
+
+                   You may check your settings.                                                 

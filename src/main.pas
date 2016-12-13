@@ -445,6 +445,7 @@ end;
  if vaparam = false then begin
     if SakIsEnabled() = false then 
    begin
+   SakGreeting('Welcome with ideU !');
   if sakloadlib(thedir) = 0 then
    debuggerfo.assistive.imagenr := 19 else
    debuggerfo.assistive.imagenr := 18;
@@ -455,6 +456,7 @@ end;
     end; 
       end else
        begin
+   SakGreeting('Welcome with ideU !');
   if sakloadlib(thedir) = 0 then
    debuggerfo.assistive.imagenr := 19 else
    debuggerfo.assistive.imagenr := 18;
@@ -546,7 +548,6 @@ thetimer.enabled := false;
 if gINI.ReadBool('General', 'FirstLoad', true)
 then
 begin
-isfirstload := true;
 if thetimer.tag = 0 then
 begin
 thetimer.tag := 1;

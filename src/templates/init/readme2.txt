@@ -4,11 +4,6 @@
 
 
 
-                       Welcome in ideU world...
-                          
-                          
-                       
-                      Have a nice development...
-                      
-            
- 
+                        Welcome in ideU world !
+
+                       Have a nice development.

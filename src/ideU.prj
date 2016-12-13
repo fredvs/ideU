@@ -702,9 +702,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=1
+ MAINFO
+moduletypes=1
+ TMAINFO
+modulefiles=1
+ /home/fred/ideu/src/main.mfm
 befcommandon=0
 makeoptionson=7
  4095
@@ -971,7 +974,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=25
+on=23
  0
  0
  0
@@ -995,14 +998,10 @@ on=25
  0
  0
  0
- 0
- 0
-path=25
+path=23
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
- /home/fred/ideu/src/sak_mse.pas
- /home/fred/ideu/src/sak_mse.pas
  /home/fred/ideu/src/sak_mse.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
@@ -1023,39 +1022,35 @@ path=25
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/templates/fpc_mse/default.prj
  /home/fred/ideu/src/main.pas
-line=25
- 809
+line=23
+ 808
  2129
  969
- 1364
- 1462
- 1448
- 593
- 3521
+ 1420
+ 592
+ 3520
  644
  119
  1012
  2217
  2134
  2412
- 673
+ 672
  3200
  119
  525
- 592
- 574
+ 591
+ 573
  434
  46
- 3779
+ 3778
  684
  537
-address=25
+address=23
  4795942
  4826658
  4643185
  8214132
- 8216388
- 8216279
  4785153
  4855633
  7607632
@@ -1075,7 +1070,7 @@ address=25
  0
  0
  0
-addbkpt=25
+addbkpt=23
  0
  0
  0
@@ -1099,10 +1094,7 @@ addbkpt=25
  0
  0
  0
- 0
- 0
-ignore=25
- 0
+ignore=23
  0
  0
  0
@@ -1126,10 +1118,7 @@ ignore=25
  0
  0
  0
- 0
-condition=25
- 
- 
+condition=23
  
  
  
@@ -1298,8 +1287,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=mousemove
+finddtext=checksakactive
 findhistory=20
+ checksakactive
+ saknodot
+ saydot
+ whatfile
+ isfirstload
+ sak is working
+ itementer
  mousemove
  themouseinfo
  getassistivecelltext
@@ -1313,15 +1309,8 @@ findhistory=20
  Key_PageUp
  formatcode
  f12
- isentered
- edit_options
- project_options
- combobox
- lastname
- checkgrid
- show
 findoptions=1
-editpos=17
+editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1332,13 +1321,14 @@ editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,68
- 0,963
+ 0,-1073741823
+ 0,460
  0,-1073741823
  0,-1073741823
- 0,0
- 0,331
- 0,111
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,550
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1356,7 +1346,8 @@ bookmarks13=0
 bookmarks14=0
 bookmarks15=0
 bookmarks16=0
-sourcefiles=17
+bookmarks17=0
+sourcefiles=18
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1374,7 +1365,8 @@ sourcefiles=17
  /home/fred/msegui/lib/common/kernel/mseglob.pas
  /home/fred/msegui/lib/common/graphics/msegraphutils.pas
  /home/fred/msegui/lib/common/editwidgets/msegraphedits.pas
-relpaths=17
+ ${PROJECTDIR}/main.pas
+relpaths=18
  ideU.pas
  sak_mse.pas
  msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1385,14 +1377,15 @@ relpaths=17
  sourceform.mfm
  msegui/lib/common/dialogs/msefiledialog.pas
  msegui/lib/common/dialogs/msefiledialog.mfm
- ../msegui/lib/common/kernel/mseguiglob.pas
+ msegui/lib/common/kernel/mseguiglob.pas
  sak_mse.pas
  ideU.pas
  sourceform.pas
- ../msegui/lib/common/kernel/mseglob.pas
- ../msegui/lib/common/graphics/msegraphutils.pas
- ../msegui/lib/common/editwidgets/msegraphedits.pas
-ismoduletexts=17
+ msegui/lib/common/kernel/mseglob.pas
+ msegui/lib/common/graphics/msegraphutils.pas
+ msegui/lib/common/editwidgets/msegraphedits.pas
+ main.pas
+ismoduletexts=18
  0
  0
  0
@@ -1403,6 +1396,7 @@ ismoduletexts=17
  -1
  0
  -1
+ 0
  0
  0
  0
@@ -1421,13 +1415,13 @@ moduleoptions=3
 visiblemodules=3
  0
  0
- 0
+ -1
 nomenumodules=3
  -1
  -1
- -1
+ 0
 [sourcefo.files_tab]
-order=17
+order=18
  0
  1
  2
@@ -1442,6 +1436,7 @@ order=17
  15
  14
  11
+ 17
  16
  12
  13
@@ -1874,7 +1869,7 @@ windowlayout=545
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1944,7 +1939,7 @@ windowlayout=545
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1963,7 +1958,7 @@ windowlayout=545
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
