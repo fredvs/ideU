@@ -696,7 +696,7 @@ files=
  a=0,4132,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/ideu/src/demos/voiceassist/helloworld/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -723,7 +723,7 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 20,2
+ 24,2
 bookmarks0=0
 sourcefiles=1
  ${PROJECTDIR}/demos/voiceassist/helloworld/helloworld.pas
@@ -776,7 +776,7 @@ windowlayout=541
   basedock,0,0,728,-595
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1193,7 +1193,7 @@ windowlayout=541
  [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1207,7 +1207,7 @@ windowlayout=541
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
  [debuggerfo.basedock]
  splitdir=2
@@ -1266,7 +1266,7 @@ windowlayout=541
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

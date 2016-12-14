@@ -1045,7 +1045,7 @@ line=22
  772
  2129
  969
- 1429
+ 1435
  562
  3477
  644
@@ -1353,9 +1353,9 @@ editpos=31
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,4
- 0,543
- 0,1297
+ 0,-1073741823
+ 0,-1073741823
+ 0,419
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1556,7 +1556,7 @@ tabsize=60
 firsttab=12
 index=17
 [layout]
-windowlayout=643
+windowlayout=640
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1569,7 +1569,7 @@ windowlayout=643
  ncy=0
  x=0
  y=0
- cx=928
+ cx=929
  cy=585
  rcx=0
  rcy=0
@@ -1582,14 +1582,14 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=221
- y=37
- cx=938
+ x=240
+ y=61
+ cx=939
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,928,585
+  basedock,0,0,929,585
  focusedchild=0
  wsize=0
  active=1
@@ -1603,8 +1603,8 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=495
- y=172
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
@@ -1621,10 +1621,10 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=362
- y=177
- cx=355
- cy=107
+ x=444
+ y=431
+ cx=418
+ cy=126
  rcx=0
  rcy=0
  wsize=0
@@ -1633,7 +1633,7 @@ windowlayout=643
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -1695,31 +1695,28 @@ windowlayout=643
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=confmseguifo
- parent=
- mdistate=3
+ parent=mainfo.panel1.container
+ visible=1
+ mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=24
- y=95
- cx=181
- cy=449
+ x=0
+ y=0
+ cx=159
+ cy=433
  rcx=0
  rcy=0
- wsize=5
- active=0
- visible=0
  [projecttreefo.project_tree]
- propcolwidthref=30
- width0=141
+ propcolwidthref=49
+ width0=110
  sortdescend0=0
- width1=24
+ width1=43
  sortdescend1=0
  sorted=0
- col=1
- row=0
+ col=0
+ row=1
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1730,10 +1727,10 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=337
- y=280
- cx=427
- cy=144
+ x=423
+ y=321
+ cx=344
+ cy=155
  rcx=0
  rcy=0
  wsize=0
@@ -1881,8 +1878,8 @@ windowlayout=643
  y=0
  cx=247
  cy=44
- rcx=1129
- rcy=679
+ rcx=1262
+ rcy=583
  [watchfo.grid]
  propcolwidthref=121
  values0=0
@@ -1904,7 +1901,7 @@ windowlayout=643
  value=0
  [messagefo]
  splitdir=0
- useroptions=114795
+ useroptions=82027
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1913,9 +1910,9 @@ windowlayout=643
  ncx=0
  ncy=0
  x=0
- y=497
- cx=928
- cy=88
+ y=488
+ cx=929
+ cy=97
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1984,27 +1981,27 @@ windowlayout=643
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
- mdistate=0
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=428
- y=66
- cx=440
- cy=129
+ x=240
+ y=139
+ cx=956
+ cy=77
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=1
+ activetab=0
  [debuggerfo]
  splitdir=0
- useroptions=122987
+ useroptions=24683
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -2014,8 +2011,8 @@ windowlayout=643
  ncy=0
  x=0
  y=0
- cx=928
- cy=51
+ cx=929
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2026,11 +2023,11 @@ windowlayout=643
  mdistate=0
  nx=0
  ny=52
- ncx=928
- ncy=0
+ ncx=956
+ ncy=6
  x=0
  y=52
- cx=928
+ cx=929
  cy=0
  rcx=0
  rcy=0
@@ -2044,10 +2041,10 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=0
+ x=162
  y=0
- cx=928
- cy=440
+ cx=767
+ cy=433
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2070,22 +2067,6 @@ windowlayout=643
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=838893035
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=928
- cy=440
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2200,6 +2181,22 @@ windowlayout=643
  wsize=0
  active=0
  visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=52
+ cx=929
+ cy=433
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

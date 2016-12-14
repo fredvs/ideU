@@ -882,6 +882,8 @@ var
   oldlang : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
  begin
+ if (isinit = false) then
+  begin
  if info.key = key_f4 then isf4 := true else isf4 := false;
    oldlang := voice_language;
       if voice_gender = '' then
@@ -1004,6 +1006,7 @@ var
   end;
  end;
  end;
+ end;
 
 procedure TSAK.ontimermouse(const Sender: TObject);
 var
@@ -1012,7 +1015,7 @@ stringtemp : msestring = '' ;
 begin
   thetimer.Enabled := False;
 
- if (TheMouseinfo.eventkind = ek_mousemove) and  (isinit = false) then
+ if (TheMouseinfo.eventkind = ek_mousemove)  then
   begin
 
 if WhatName(TheSender)  <> lastname then
@@ -1040,7 +1043,7 @@ if WhatName(TheSender)  <> lastname then
     end;
   end
   else
-  if (TheMouseinfo.eventkind = ek_buttonpress) and  (isinit = false) then
+  if (TheMouseinfo.eventkind = ek_buttonpress) then
   begin
     SakCancel;
     espeak_Key(WhatName(TheSender) + ' clicked.');
@@ -1296,6 +1299,9 @@ var
  lrkeyused : boolean = false;
  gridcoo : gridcoordty;
 begin
+
+if (isinit = false) then
+  begin
  if (Sender.getinstance is Twidgetgrid) then isgridsource := true else
  isgridsource := false;
  
@@ -1441,6 +1447,7 @@ begin
    itementer := false; 
  end;
 end; 
+end;
 
 // Creating/destroying sak
 
@@ -1452,7 +1459,7 @@ begin
         thetimer.Enabled := False;
         
         thetimerInit := ttimer.Create(nil);
-        thetimerInit.interval := 1000000;
+        thetimerInit.interval := 2000000;
         thetimerInit.Enabled := False;
 end;
 
