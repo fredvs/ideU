@@ -88,6 +88,7 @@ type
     lastname: msestring;
 
   TheTimer: TTimer;
+  TheTimerInit: TTimer;
   TheSender: iassistiveclient;
   ThePosition: pointty;
   TheKeyInfo: keyeventinfoty;
@@ -107,6 +108,7 @@ type
   isfilelist : boolean;
   isgridsource : boolean;
   isf4 : boolean;
+  isinit : boolean;
     
     procedure doenter(const Sender: iassistiveclient);
     procedure clientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
@@ -451,7 +453,7 @@ end;
 
 procedure TSAK.dochange(const sender: iassistiveclient);
 begin
-if WhatName(sender) <> '' then
+if (WhatName(sender) <> '') and  (isinit = false) then
  begin
   thetimer.enabled := false;  
   TheSender := sender;  
@@ -815,9 +817,9 @@ end;
 
 procedure TSAK.ontimergreeting(const sender: TObject);
 begin
-thetimer.enabled := false;
- SakCancel;
- espeak_Key(greeting);
+thetimerinit.enabled := false;
+ isinit := false;
+thetimerinit.free();
 end;
 
 procedure TSAK.ontimerchange(const sender: TObject);
@@ -836,7 +838,7 @@ end;
 
 procedure TSAK.doenter(const Sender: iassistiveclient);
 begin
-  if WhatName(Sender) <> '' then
+  if (WhatName(Sender) <> '') and  (isinit = false) then
   begin
     thetimer.Enabled := False;
     TheSender := Sender;
@@ -1010,7 +1012,7 @@ stringtemp : msestring = '' ;
 begin
   thetimer.Enabled := False;
 
- if TheMouseinfo.eventkind = ek_mousemove then
+ if (TheMouseinfo.eventkind = ek_mousemove) and  (isinit = false) then
   begin
 
 if WhatName(TheSender)  <> lastname then
@@ -1038,7 +1040,7 @@ if WhatName(TheSender)  <> lastname then
     end;
   end
   else
-  if TheMouseinfo.eventkind = ek_buttonpress then
+  if (TheMouseinfo.eventkind = ek_buttonpress) and  (isinit = false) then
   begin
     SakCancel;
     espeak_Key(WhatName(TheSender) + ' clicked.');
@@ -1050,7 +1052,7 @@ end;
 procedure TSAK.clientmouseevent(const sender: iassistiveclient;
                                            const info: mouseeventinfoty);
  begin
-  if WhatName(Sender) <> '' then
+  if (WhatName(Sender) <> '') and  (isinit = false) then
   begin
     TheSender := Sender;
     TheMouseInfo := info;
@@ -1111,7 +1113,7 @@ begin
 procedure  TSAK.doitementer(const sender: iassistiveclient; //sender can be nil
                             const items: shapeinfoarty; const aindex: integer);
 begin
- if WhatName(Sender) <> '' then
+ if (WhatName(Sender) <> '') and  (isinit = false) then
   begin
     thetimer.Enabled := False; 
     TheSender := Sender;
@@ -1127,7 +1129,7 @@ end;
 procedure TSAK.doitementer(const sender: iassistiveclient;
                         const items: menucellinfoarty; const aindex: integer);
 begin
- if WhatName(Sender) <> '' then
+ if (WhatName(Sender) <> '') and  (isinit = false) then
   begin
     thetimer.Enabled := False; 
     TheSender := Sender;
@@ -1293,7 +1295,6 @@ var
  mstr1, mstr2: msestring;
  lrkeyused : boolean = false;
  gridcoo : gridcoordty;
-  col,row: integer;
 begin
  if (Sender.getinstance is Twidgetgrid) then isgridsource := true else
  isgridsource := false;
@@ -1449,6 +1450,10 @@ begin
         thetimer.interval := 500000;
         thetimer.tag := 0;
         thetimer.Enabled := False;
+        
+        thetimerInit := ttimer.Create(nil);
+        thetimerInit.interval := 1000000;
+        thetimerInit.Enabled := False;
 end;
 
 destructor TSAK.Destroy();
@@ -1507,27 +1512,13 @@ end  else
   voice_pitch := -1 ;
   voice_volume := -1 ;
   
+  thetimerinit.ontimer := @ontimergreeting;
+  thetimerinit.enabled := true; 
+  isinit := true;
+  
   espeak_Key(greeting);
   
   assistiveserver:= iassistiveserver(self); //sak is now operable
-  thetimer.enabled := false; 
-  sleep(300);
-  thetimer.enabled := false; 
-//  thetimer.interval := 800000 ;
-//  thetimer.ontimer := @ontimergreeting;
-//  thetimer.enabled := true; 
-  
- {
-  //thetimer.enabled := false;  
-//  SakCancel;
-  //sleep(500);
-  thetimer.enabled := false;  
-  SakCancel;
-  thetimer.interval := 800000 ;
-  thetimer.ontimer := @ontimergreeting;
-  thetimer.enabled := true;
-  }
- // end;
 end;
 
 // Voice Config Procedures

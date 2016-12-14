@@ -205,7 +205,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=715
  width0=47
@@ -214,7 +214,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=623
  width0=112
@@ -704,20 +704,26 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=7
+ ACTIONSMO
  DEBUGGERFO
+ CONFMSEGUIFO
  FINDINFILEPAGEFO
  SETTINGSFO
  MAINFO
  PROJECTOPTIONSFO
-moduletypes=5
+moduletypes=7
+ TACTIONSMO
  TDEBUGGERFO
+ TCONFMSEGUIFO
  TFINDINFILEPAGEFO
  TSETTINGSFO
  TMAINFO
  TPROJECTOPTIONSFO
-modulefiles=5
+modulefiles=7
+ /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confmsegui.mfm
  /home/fred/ideu/src/findinfilepage.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
@@ -763,12 +769,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4095
+ 4064
  0
  0
  0
  0
- 0
+ 31
 exeusedon=14
  4047
  0
@@ -808,7 +814,7 @@ unitdirson=6
  200703
  65584
  65536
- 69583
+ 69631
  200703
  69631
 macroon=0
@@ -989,7 +995,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=21
+on=22
  0
  0
  0
@@ -1011,7 +1017,8 @@ on=21
  0
  0
  0
-path=21
+ -1
+path=22
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -1033,29 +1040,31 @@ path=21
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/templates/fpc_mse/default.prj
  /home/fred/ideu/src/main.pas
-line=21
- 774
+ /home/fred/ideu/src/sak_mse.pas
+line=22
+ 772
  2129
  969
- 1428
- 564
- 3479
+ 1429
+ 562
+ 3477
  644
  119
  1012
  2216
  2133
  2408
- 638
+ 636
  3195
  119
  524
  434
  46
- 3737
+ 3735
  684
  536
-address=21
+ 824
+address=22
  4795942
  4826658
  4643185
@@ -1077,7 +1086,8 @@ address=21
  0
  0
  0
-addbkpt=21
+ 0
+addbkpt=22
  0
  0
  0
@@ -1099,7 +1109,8 @@ addbkpt=21
  0
  0
  0
-ignore=21
+ 0
+ignore=22
  0
  0
  0
@@ -1121,7 +1132,9 @@ ignore=21
  0
  0
  0
-condition=21
+ 0
+condition=22
+ 
  
  
  
@@ -1288,8 +1301,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=loadlib
+finddtext=thetimer.en
 findhistory=20
+ thetimer.en
+ ontimerg
  loadlib
  thetimer
  welcomeprj
@@ -1308,22 +1323,8 @@ findhistory=20
  themouseinfo
  getassistivecelltext
  datacols
- getassistivecelltex
- TheExtraChar
 findoptions=1
-editpos=27
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 2,1518
+editpos=31
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1339,6 +1340,22 @@ editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,4
+ 0,543
+ 0,1297
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1366,7 +1383,11 @@ bookmarks23=0
 bookmarks24=0
 bookmarks25=0
 bookmarks26=0
-sourcefiles=27
+bookmarks27=0
+bookmarks28=0
+bookmarks29=0
+bookmarks30=0
+sourcefiles=31
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1394,7 +1415,11 @@ sourcefiles=27
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/commandorform.pas
-relpaths=27
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/confmsegui.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sak_mse.pas
+relpaths=31
  ideU.pas
  sak_mse.pas
  msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1422,7 +1447,11 @@ relpaths=27
  ideU.pas
  ideusettings.pas
  commandorform.pas
-ismoduletexts=27
+ actionsmodule.pas
+ confmsegui.pas
+ main.pas
+ sak_mse.pas
+ismoduletexts=31
  0
  0
  0
@@ -1450,7 +1479,11 @@ ismoduletexts=27
  0
  0
  0
-modules=7
+ 0
+ 0
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
@@ -1458,7 +1491,8 @@ modules=7
  /home/fred/ideu/src/findinfilepage.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/commandorform.mfm
-moduleoptions=7
+ /home/fred/ideu/src/confmsegui.mfm
+moduleoptions=8
  0
  0
  0
@@ -1466,7 +1500,8 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+visiblemodules=8
  -1
  0
  -1
@@ -1474,16 +1509,18 @@ visiblemodules=7
  -1
  -1
  -1
-nomenumodules=7
  -1
+nomenumodules=8
+ 0
  -1
+ 0
  0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=27
+order=31
  0
  1
  2
@@ -1498,6 +1535,10 @@ order=27
  15
  14
  11
+ 27
+ 28
+ 29
+ 30
  17
  26
  25
@@ -1513,9 +1554,9 @@ order=27
  13
 tabsize=60
 firsttab=12
-index=13
+index=17
 [layout]
-windowlayout=624
+windowlayout=643
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1654,7 +1695,7 @@ windowlayout=624
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=mainfo
+ stackedunder=confmseguifo
  parent=
  mdistate=3
  nx=0
@@ -1667,9 +1708,9 @@ windowlayout=624
  cy=449
  rcx=0
  rcy=0
- wsize=0
+ wsize=5
  active=0
- visible=1
+ visible=0
  [projecttreefo.project_tree]
  propcolwidthref=30
  width0=141
@@ -2124,7 +2165,7 @@ windowlayout=624
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=projecttreefo
+ stackedunder=_mse_confmseguifo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2135,6 +2176,25 @@ windowlayout=624
  y=119
  cx=948
  cy=51
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confmseguifo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=394
+ y=276
+ cx=386
+ cy=117
  rcx=0
  rcy=0
  wsize=0

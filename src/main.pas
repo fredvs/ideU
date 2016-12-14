@@ -540,8 +540,6 @@ end;
 end;
 
 procedure tmainfo.onthetimer(const sender: TObject);
-var
-templatepath : msestring;
 begin
 thetimer.enabled := false;
 componentpalettefo.close;

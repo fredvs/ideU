@@ -19,6 +19,46 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/demos/voiceassist/helloworld
 projectfilename=/home/fred/ideu/src/demos/voiceassist/helloworld/helloworld.prj
+findinfiledialog=39
+ [findinfileadialogfo.subdirs]
+ value=0
+ [findinfileadialogfo.incurrentfile]
+ value=0
+ [findinfileadialogfo.inopenfiles]
+ value=0
+ [findinfileadialogfo.wholeword]
+ value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
+ [findinfileadialogfo.casesensitive]
+ value=0
+ [findinfileadialogfo.indirectories]
+ value=0
+ [findinfileadialogfo.mask]
+ value="*.pas" "*.pp" "*.inc"
+ history=1
+  "*.pas" "*.pp" "*.inc"
+ [findinfileadialogfo.dir]
+ filenames=1
+  /home/fred/ideu/src/demos/voiceassist/helloworld/
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ filehistory=0
+ filefilterindex=0
+ filefilter=
+ [findinfileadialogfo.findtext]
+ value=
+ history=1
+  
+ [findinfileadialogfo]
+ stackedunder=_showmessage
+ x=268
+ y=415
+ cx=339
+ cy=275
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -57,7 +97,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=15
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -79,9 +119,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=203
+ y=201
  xprop=1
- yprop=0.39539347408829
+ yprop=0.39458413926499
  [projectoptionsfo.macrogrid]
  propcolwidthref=509
  sortdescend0=0
@@ -124,7 +164,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
- index=0
+ index=1
  [projectoptionsfo.tabwidget]
  firsttab=0
  index=0
@@ -517,7 +557,7 @@ gridsizex=8
 gridsizey=8
 autoindent=1
 blockindent=2
-linenumberson=1
+linenumberson=0
 rightmarginon=1
 rightmarginchars=80
 scrollheight=0
@@ -656,7 +696,7 @@ files=
  a=0,4132,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/ideu/src/demos/voiceassist/helloworld/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -683,10 +723,10 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 5,5
+ 20,2
 bookmarks0=0
 sourcefiles=1
- ${PROJECTDIR}/helloworld.pas
+ ${PROJECTDIR}/demos/voiceassist/helloworld/helloworld.pas
 relpaths=1
  helloworld.pas
 ismoduletexts=1
@@ -713,8 +753,8 @@ windowlayout=541
  ncy=0
  x=0
  y=0
- cx=668
- cy=-601
+ cx=728
+ cy=-595
  rcx=0
  rcy=0
  [mainfo]
@@ -727,16 +767,16 @@ windowlayout=541
  ncx=0
  ncy=0
  x=341
- y=31
- cx=678
- cy=20
+ y=28
+ cx=738
+ cy=23
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,668,-601
+  basedock,0,0,728,-595
  focusedchild=0
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1050,7 +1090,7 @@ windowlayout=541
  [messagefo]
  splitdir=0
  useroptions=49259
- stackedunder=debuggerfo
+ stackedunder=sourcefo
  parent=
  mdistate=3
  nx=0
@@ -1153,7 +1193,7 @@ windowlayout=541
  [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=sourcefo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1167,7 +1207,7 @@ windowlayout=541
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
  [debuggerfo.basedock]
  splitdir=2
@@ -1226,7 +1266,7 @@ windowlayout=541
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
