@@ -29,11 +29,11 @@ findinfiledialog=71
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc"
  history=6
@@ -63,8 +63,9 @@ findinfiledialog=71
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value='/
+ value=en_modalresulttext
  history=20
+  en_modalresulttext
   '/
   project_date
   ideudir
@@ -84,7 +85,6 @@ findinfiledialog=71
   dialogfilesfo
   modal
   ern_invalidparameter
-  Invalid parameter
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1324,7 +1324,7 @@ findhistory=20
  getassistivecelltext
  datacols
 findoptions=1
-editpos=31
+editpos=33
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1355,7 +1355,9 @@ editpos=31
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,419
+ 0,-1073741823
+ 0,95
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1387,7 +1389,9 @@ bookmarks27=0
 bookmarks28=0
 bookmarks29=0
 bookmarks30=0
-sourcefiles=31
+bookmarks31=0
+bookmarks32=0
+sourcefiles=33
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1419,7 +1423,9 @@ sourcefiles=31
  ${PROJECTDIR}/confmsegui.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sak_mse.pas
-relpaths=31
+ ${PROJECTDIR}/mseconsts.pas
+ /home/fred/msegui/lib/common/kernel/mseconsts.pas
+relpaths=33
  ideU.pas
  sak_mse.pas
  msegui/lib/common/kernel/mseassistiveserver.pas
@@ -1451,7 +1457,9 @@ relpaths=31
  confmsegui.pas
  main.pas
  sak_mse.pas
-ismoduletexts=31
+ mseconsts.pas
+ msegui/lib/common/kernel/mseconsts.pas
+ismoduletexts=33
  0
  0
  0
@@ -1462,6 +1470,8 @@ ismoduletexts=31
  -1
  0
  -1
+ 0
+ 0
  0
  0
  0
@@ -1520,7 +1530,7 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=31
+order=33
  0
  1
  2
@@ -1539,6 +1549,8 @@ order=31
  28
  29
  30
+ 31
+ 32
  17
  26
  25
@@ -1553,8 +1565,8 @@ order=31
  12
  13
 tabsize=60
-firsttab=12
-index=17
+firsttab=13
+index=18
 [layout]
 windowlayout=640
  [mainfo.basedock]
@@ -1633,7 +1645,7 @@ windowlayout=640
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1981,7 +1993,7 @@ windowlayout=640
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2023,8 +2035,8 @@ windowlayout=640
  mdistate=0
  nx=0
  ny=52
- ncx=956
- ncy=6
+ ncx=929
+ ncy=0
  x=0
  y=52
  cx=929
@@ -2067,6 +2079,22 @@ windowlayout=640
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=52
+ cx=929
+ cy=433
+ rcx=0
+ rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2181,22 +2209,6 @@ windowlayout=640
  wsize=0
  active=0
  visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=52
- cx=929
- cy=433
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
