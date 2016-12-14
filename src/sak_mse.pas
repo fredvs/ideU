@@ -128,6 +128,7 @@ type
     procedure ontimeritementer2(const Sender: TObject);
     procedure ontimerchange(const Sender: TObject);
     procedure ontimerfocuschange(const Sender: TObject);
+    procedure ontimergreeting(const sender: TObject);
     function LoadLib: integer;
     procedure espeak_key(Text: msestring);
     function WhatName(iaSender: iassistiveclient): msestring;
@@ -812,6 +813,13 @@ if (Sender is tbooleaneditradio) then
     Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
 end;
 
+procedure TSAK.ontimergreeting(const sender: TObject);
+begin
+thetimer.enabled := false;
+ SakCancel;
+ espeak_Key(greeting);
+end;
+
 procedure TSAK.ontimerchange(const sender: TObject);
 begin
 thetimer.enabled := false;
@@ -1109,7 +1117,7 @@ begin
     TheSender := Sender;
     TheItemInfo := items;
     TheMenuIndex := aindex;
-    thetimer.interval := 300000;
+    thetimer.interval := 900000;
     thetimer.ontimer := @ontimeritementer2;
     thetimer.Enabled := True;
     itementer:= true;
@@ -1125,7 +1133,7 @@ begin
     TheSender := Sender;
     TheMenuInfo := items;
     TheMenuIndex := aindex;
-    thetimer.interval := 700000;
+    thetimer.interval := 900000;
     thetimer.ontimer := @ontimeritementer;
     thetimer.Enabled := True;
     itementer:= true;
@@ -1282,7 +1290,7 @@ oldlang := voice_language;
 procedure TSAK.docellevent(const sender: iassistiveclientgrid; 
                                      const info: celleventinfoty);
 var
- mstr1, mstr2, mstr3: msestring;
+ mstr1, mstr2: msestring;
  lrkeyused : boolean = false;
  gridcoo : gridcoordty;
   col,row: integer;
@@ -1345,10 +1353,12 @@ begin
 	if length(mstr1) > 0 then
 			begin 
 			mstr2 := mstr1[sender.getassistivecaretindex()] ;
-						
+			
+			{			
 			if sender.getassistivecaretindex() < TheLastCell.col then
 			mstr3 := ' Colon , '+ inttostrmse(sender.getassistivecaretindex()) + ' , ' else
 			mstr3 := '';
+			}
   			        	if (mstr2 = ' ') or (mstr2 = '.') or (mstr2 = ',') or (mstr2 = '"') or
         	(mstr2 = '[') or (mstr2 = ']') or (mstr2 = '{') or (mstr2 = '}')
         	or (mstr2 = '(') or (mstr2 = ')') or (mstr2 = '[') or (mstr2 = ']') then
@@ -1498,9 +1508,26 @@ end  else
   voice_volume := -1 ;
   
   espeak_Key(greeting);
-
+  
   assistiveserver:= iassistiveserver(self); //sak is now operable
-// end;
+  thetimer.enabled := false; 
+  sleep(300);
+  thetimer.enabled := false; 
+//  thetimer.interval := 800000 ;
+//  thetimer.ontimer := @ontimergreeting;
+//  thetimer.enabled := true; 
+  
+ {
+  //thetimer.enabled := false;  
+//  SakCancel;
+  //sleep(500);
+  thetimer.enabled := false;  
+  SakCancel;
+  thetimer.interval := 800000 ;
+  thetimer.ontimer := @ontimergreeting;
+  thetimer.enabled := true;
+  }
+ // end;
 end;
 
 // Voice Config Procedures

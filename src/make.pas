@@ -522,7 +522,6 @@ function customcommandline(const aname: filenamety; const acompiler, acompilerta
 var
  int1,int2, int3: integer;
  str1,str2,str3, str4: msestring;
- optionfilename, optionfilename2 : msestring;
  commandcompiler : msestring;
  winestr : msestring = '';
 

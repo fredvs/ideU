@@ -1006,12 +1006,11 @@ type
      
    ttabpage23: ttabpage;
    project_comment: tmemoedit;
-   project_time: tdatetimeedit;
-   project_date: tcalendardatetimeedit;
    project_creator: tstringedit;
    project_copyright: tstringedit;
    project_license: tstringedit;
    project_name: tstringedit;
+   project_date: tstringedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -2281,14 +2280,11 @@ fo.project_name.value := o.project_name;
 fo.project_creator.value := o.project_creator;
 fo.project_copyright.value := o.project_copyright;
 fo.project_license.value := o.project_license;
-//{
-if trim(o.project_time) <> '' then
-fo.project_time.value := strtotime(o.project_time) else
-fo.project_time.value := now;
+
 if trim(o.project_date) <> '' then
-fo.project_date.value := strtodate(o.project_date) else
-fo.project_date.value := now;
-//}
+fo.project_date.value := o.project_date else
+fo.project_date.value := timetostr(now) + ' ' + datetostr(now);
+
 fo.project_comment.value := o.project_comment;
  
  /// fred exe ext
@@ -2558,8 +2554,7 @@ begin
  o.project_creator := fo.project_creator.value;
  o.project_copyright := fo.project_copyright.value ;
  o.project_license := fo.project_license.value;
- o.project_time := timetostr(fo.project_time.value);
- o.project_date := datetostr(fo.project_date.value);
+ o.project_date :=  fo.project_date.value;
  o.project_comment := fo.project_comment.value;
  //
 

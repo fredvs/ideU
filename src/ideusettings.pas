@@ -26,13 +26,22 @@ const
                       'mselibdir','syntaxdefdir','templatedir','layoutdir','compstoredir','compiler','debugger',
                      'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir', 'fpgui');
  {$ifdef mswindows}
+ {$ifdef CPU64}
+ 
  defaultsettingmacros: array[settingsmacroty] of msestring = (
-                '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
-                '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/mse/compstore/',
-                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview/','','');
+                '','','','${MSEDIR}lib\common\','${IDEUDIR}syntaxdefs\',
+                '${IDEUDIR}templates\','${IDEUDIR}layout\','${MSEDIR}apps\mse\compstore\',
+                'ppcx64.exe','gdb.exe','.exe','x86_64-win64','windows','','','${IDEUDIR}docview\','','');
  {$else}
  
+ defaultsettingmacros: array[settingsmacroty] of msestring = (
+                '','','','${MSEDIR}lib\common\','${IDEUDIR}syntaxdefs\',
+                '${IDEUDIR}templates\','${IDEUDIR}layout\','${MSEDIR}apps\mse\compstore\',
+                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview\','','');
  
+ {$endif}
+  
+ {$else}
   {$ifdef CPU64}
   
   {$ifdef linux}

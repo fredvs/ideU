@@ -8653,6 +8653,7 @@ object projectoptionsfo: tprojectoptionsfo
         frame.localprops = []
         frame.localprops1 = []
         taborder = 12
+        hint = 'project_date'
         bounds_x = 1
         bounds_y = 21
         bounds_cx = 785
@@ -8680,53 +8681,6 @@ object projectoptionsfo: tprojectoptionsfo
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
         end
-        object project_time: tdatetimeedit
-          frame.colorclient = 16773078
-          frame.caption = 'Time of Creation'
-          frame.localprops = [frl_colorclient]
-          frame.localprops1 = []
-          frame.outerframe = (
-            0
-            18
-            0
-            0
-          )
-          taborder = 1
-          bounds_x = 281
-          bounds_y = 230
-          bounds_cx = 107
-          bounds_cy = 39
-          value = -Inf
-          valuedefault = -Inf
-          min = -Inf
-          max = 401768.99999
-          kind = dtk_time
-          reffontheight = 15
-        end
-        object project_date: tcalendardatetimeedit
-          frame.colorclient = 16773078
-          frame.caption = 'Date of Creation'
-          frame.localprops = [frl_colorclient]
-          frame.localprops1 = []
-          frame.buttons.count = 1
-          frame.buttons.items = <          
-            item
-            end>
-          frame.outerframe = (
-            0
-            18
-            0
-            0
-          )
-          taborder = 2
-          bounds_x = 401
-          bounds_y = 230
-          bounds_cy = 39
-          value = -Inf
-          min = -Inf
-          max = 401768.99999
-          reffontheight = 15
-        end
         object project_creator: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'Name of Creator'
@@ -8738,7 +8692,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
             0
           )
-          taborder = 3
+          taborder = 1
           bounds_x = 150
           bounds_y = 86
           bounds_cx = 480
@@ -8757,7 +8711,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
             0
           )
-          taborder = 4
+          taborder = 2
           bounds_x = 150
           bounds_y = 130
           bounds_cx = 480
@@ -8776,7 +8730,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
             0
           )
-          taborder = 5
+          taborder = 3
           bounds_x = 150
           bounds_y = 174
           bounds_cx = 480
@@ -8795,10 +8749,29 @@ object projectoptionsfo: tprojectoptionsfo
             0
             0
           )
-          taborder = 6
+          taborder = 4
           bounds_x = 150
           bounds_y = 36
           bounds_cx = 480
+          bounds_cy = 39
+          anchors = [an_left, an_top, an_right]
+          reffontheight = 15
+        end
+        object project_date: tstringedit
+          frame.colorclient = 16773078
+          frame.caption = 'Date of Creation'
+          frame.localprops = [frl_colorclient]
+          frame.localprops1 = []
+          frame.outerframe = (
+            0
+            18
+            0
+            0
+          )
+          taborder = 5
+          bounds_x = 150
+          bounds_y = 230
+          bounds_cx = 482
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15

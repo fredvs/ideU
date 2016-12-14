@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.3.1';
+ versiontext = '1.4.0';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -366,9 +366,8 @@ type
 var
   mainfo: tmainfo;
   toogletag : boolean = false ;
-  welcomeprj : boolean = false ;
-  
-  // fred
+ 
+   // fred
   thetimer : TTimer;
   vaparam : boolean  = false;
  
@@ -438,7 +437,7 @@ end;
   begin
   
    if (copy(confideufo.tesakitdir.text,1,10) = '${IDEUDIR}') then
-    thedir := ExtractFilePath(ParamStr(0)) + 
+    thedir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + 
      copy(confideufo.tesakitdir.text,11,length(confideufo.tesakitdir.text)-10)        
          else thedir :=  confideufo.tesakitdir.text ;
  
@@ -545,52 +544,27 @@ var
 templatepath : msestring;
 begin
 thetimer.enabled := false;
+componentpalettefo.close;
+objectinspectorfo.close;
 if gINI.ReadBool('General', 'FirstLoad', true)
 then
 begin
 if thetimer.tag = 0 then
 begin
 thetimer.tag := 1;
-componentpalettefo.visible := false;
-objectinspectorfo.visible := false;
-visible := false;
-options := [fo_main,fo_terminateonclose,fo_screencentered,fo_globalshortcuts,
-fo_savepos,fo_savezorder,fo_savestate];
-
- 
- {$ifdef polydev}
- templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
- mainfo.openproject(templatepath);
-  gINI.WriteBool('General', 'FirstLoad', false) ;
-  thetimer.free;
- {$else}
-templatepath :=  ExtractFilePath(ExpandFileName(ParamStr(0))) + 'templates/init/helloideu.prj' ;
- mainfo.openproject(templatepath);
- thetimer.interval := 3000000 ;
+thetimer.interval := 1000000 ;
  thetimer.enabled := true;
-  {$endif}
 activate;
 //visible := true; 
 end else
 begin
  thetimer.free;
  configureexecute(sender) ; 
- visible := false;
-templatepath :=  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj' ;
-
- mainfo.openproject(templatepath);
- 
  gINI.WriteBool('General', 'FirstLoad', false) ;
- //visible := true;
  activate;
 end; 
 end  else
 begin
-componentpalettefo.close;
-objectinspectorfo.close;
-//componentpalettefo.visible := false;
-//objectinspectorfo.visible := false;
-//visible := true;
 activate;
 end;
 
@@ -2904,10 +2878,6 @@ begin
  
  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
  
-if  (ExpandFileName(aname) =  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu2.prj')
-or (ExpandFileName(aname) =  ExtractFilePath(ParamStr(0)) + 'templates/init/helloideu.prj') then
-welcomeprj := true else welcomeprj := false;
- 
  projectfilebefore:= projectoptions.projectfilename;
  projectdirbefore:= projectoptions.projectdir;
  namebefore:= fprojectname;
@@ -2954,8 +2924,7 @@ begin
     expandprojectmacros;
    end;
   except
-  if  welcomeprj = false then application.handleexception(nil);
-  end;
+ end;
 
  end;
 end;
