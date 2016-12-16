@@ -574,7 +574,7 @@ tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=536
+windowlayout=539
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -587,8 +587,8 @@ windowlayout=536
  ncy=0
  x=0
  y=0
- cx=668
- cy=0
+ cx=718
+ cy=2
  rcx=0
  rcy=0
  [mainfo]
@@ -602,12 +602,12 @@ windowlayout=536
  ncy=0
  x=355
  y=24
- cx=678
+ cx=728
  cy=19
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,668,0
+  basedock,0,0,718,2
  focusedchild=0
  wsize=0
  active=0
@@ -651,7 +651,7 @@ windowlayout=536
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -723,7 +723,7 @@ windowlayout=536
  x=0
  y=0
  cx=198
- cy=493
+ cy=425
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -733,7 +733,7 @@ windowlayout=536
  width1=89
  sortdescend1=0
  sorted=0
- col=0
+ col=1
  row=1
  rowheight=17
  [stackfo]
@@ -931,8 +931,8 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=3
- y=496
+ x=265
+ y=633
  cx=930
  cy=101
  rcx=0
@@ -1006,7 +1006,7 @@ windowlayout=536
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1024,36 +1024,39 @@ windowlayout=536
  visible=0
  [componentpalettefo.componentpages]
  activetab=0
- [commandor]
+ [debuggerfo]
  splitdir=0
- useroptions=24683
- parent=mainfo.basedock
- visible=1
- mdistate=0
+ useroptions=33579115
+ stackedunder=messagefo
+ parent=
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=0
- y=0
- cx=668
- cy=0
+ x=162
+ y=79
+ cx=960
+ cy=51
  rcx=0
  rcy=0
- [commandor.basedock]
+ wsize=0
+ active=0
+ visible=1
+ [debuggerfo.basedock]
  splitdir=2
  useroptions=146563
- parent=commandor.container
+ parent=debuggerfo.container
  visible=1
  mdistate=0
  nx=0
  ny=47
- ncx=929
- ncy=1
+ ncx=928
+ ncy=2
  x=0
  y=47
- cx=928
- cy=0
+ cx=950
+ cy=2
  rcx=0
  rcy=0
  [sourcefo]
@@ -1069,14 +1072,14 @@ windowlayout=536
  x=201
  y=0
  cx=719
- cy=493
+ cy=425
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1102,10 +1105,10 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=246
- y=152
+ x=243
+ y=177
  cx=930
- cy=493
+ cy=425
  rcx=0
  rcy=0
  wsize=0

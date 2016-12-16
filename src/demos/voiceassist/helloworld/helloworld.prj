@@ -753,8 +753,8 @@ windowlayout=541
  ncy=0
  x=0
  y=0
- cx=668
- cy=-601
+ cx=715
+ cy=-596
  rcx=0
  rcy=0
  [mainfo]
@@ -766,17 +766,17 @@ windowlayout=541
  ny=0
  ncx=0
  ncy=0
- x=341
+ x=330
  y=24
- cx=678
- cy=20
+ cx=725
+ cy=22
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,668,-601
+  basedock,0,0,715,-596
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -817,7 +817,7 @@ windowlayout=541
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1090,7 +1090,7 @@ windowlayout=541
  [messagefo]
  splitdir=0
  useroptions=49259
- stackedunder=commandor
+ stackedunder=sourcefo
  parent=
  mdistate=3
  nx=0
@@ -1190,39 +1190,39 @@ windowlayout=541
  visible=0
  [componentpalettefo.componentpages]
  activetab=0
- [commandor]
+ [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=216
- y=75
- cx=939
- cy=49
+ x=162
+ y=79
+ cx=960
+ cy=51
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=1
- [commandor.basedock]
+ [debuggerfo.basedock]
  splitdir=2
  useroptions=146563
- parent=commandor.container
+ parent=debuggerfo.container
  visible=1
  mdistate=0
  nx=0
- ny=52
- ncx=929
- ncy=0
+ ny=47
+ ncx=928
+ ncy=2
  x=0
- y=52
- cx=929
- cy=0
+ y=47
+ cx=950
+ cy=2
  rcx=0
  rcy=0
  [sourcefo]
@@ -1241,7 +1241,7 @@ windowlayout=541
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
  [cpuc86_64fo]
  irqoff=0
@@ -1266,7 +1266,7 @@ windowlayout=541
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=mainfo
+ stackedunder=messagefo
  parent=
  mdistate=3
  nx=0

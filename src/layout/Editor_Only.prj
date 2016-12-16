@@ -659,15 +659,15 @@ windowlayout=539
  rcy=0
  [mainfo]
  splitdir=0
- useroptions=838860925
+ useroptions=805306493
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=221
- y=37
+ x=219
+ y=84
  cx=970
  cy=621
  rcx=0
@@ -717,7 +717,7 @@ windowlayout=539
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -779,7 +779,7 @@ windowlayout=539
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=commandor
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -884,7 +884,7 @@ windowlayout=539
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -964,7 +964,7 @@ windowlayout=539
  rcx=1129
  rcy=679
  [watchfo.grid]
- propcolwidthref=121
+ propcolwidthref=111
  values0=2
   -1
   -1
@@ -1093,10 +1093,10 @@ windowlayout=539
  visible=0
  [componentpalettefo.componentpages]
  activetab=1
- [commandor]
+ [debuggerfo]
  splitdir=0
- useroptions=122987
- stackedunder=mainfo
+ useroptions=24683
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1104,28 +1104,28 @@ windowlayout=539
  ncx=0
  ncy=0
  x=221
- y=54
+ y=447
  cx=960
- cy=56
+ cy=192
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=0
- [commandor.basedock]
+ [debuggerfo.basedock]
  splitdir=2
  useroptions=146563
- parent=commandor.container
+ parent=debuggerfo.container
  visible=1
  mdistate=0
  nx=0
- ny=52
- ncx=955
- ncy=307
+ ny=47
+ ncx=928
+ ncy=2
  x=0
- y=52
- cx=953
- cy=3
+ y=47
+ cx=950
+ cy=143
  rcx=0
  rcy=0
  [sourcefo]
@@ -1140,7 +1140,7 @@ windowlayout=539
  ncy=0
  x=0
  y=0
- cx=960
+ cx=950
  cy=585
  rcx=0
  rcy=0
@@ -1148,7 +1148,7 @@ windowlayout=539
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0

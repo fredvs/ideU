@@ -742,6 +742,22 @@ Sender := iaSender.getinstance;
       Result := 'image, ' + Timage(Sender).Name;
   end
   else
+    if (Sender is tdockform) then
+  begin
+      if (trim(tdockform(Sender).caption) <> '') then
+      Result := 'form, ' + tdockform(Sender).caption 
+      else
+      Result := 'form, ' + tdockform(Sender).Name;
+  end
+  else
+    if (Sender is tmseform) then
+  begin
+      if (trim(tmseform(Sender).caption) <> '') then
+      Result := 'form, ' + tmseform(Sender).caption 
+      else
+      Result := 'form, ' + tmseform(Sender).Name;
+  end
+  else
    if (Sender is tbooleaneditradio) then
   begin
   
