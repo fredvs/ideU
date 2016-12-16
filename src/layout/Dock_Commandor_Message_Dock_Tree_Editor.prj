@@ -678,7 +678,7 @@ windowlayout=533
   basedock,0,0,933,305
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -719,7 +719,7 @@ windowlayout=533
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1071,7 +1071,7 @@ windowlayout=533
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1089,7 +1089,7 @@ windowlayout=533
  visible=0
  [componentpalettefo.componentpages]
  activetab=1
- [debuggerfo]
+ [commandor]
  splitdir=0
  useroptions=122987
  parent=mainfo.basedock
@@ -1105,20 +1105,20 @@ windowlayout=533
  cy=49
  rcx=0
  rcy=0
- [debuggerfo.basedock]
+ [commandor.basedock]
  splitdir=2
  useroptions=146563
- parent=debuggerfo.container
+ parent=commandor.container
  visible=1
  mdistate=0
  nx=0
  ny=31
- ncx=960
- ncy=3
+ ncx=933
+ ncy=0
  x=0
  y=31
  cx=933
- cy=-3
+ cy=0
  rcx=0
  rcy=0
  [sourcefo]
@@ -1141,7 +1141,7 @@ windowlayout=533
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo.panel1
  parent=
  mdistate=0
  nx=0
@@ -1160,7 +1160,7 @@ windowlayout=533
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1174,7 +1174,7 @@ windowlayout=533
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
 [targetconsole]
 finddtext=

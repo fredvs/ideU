@@ -14,7 +14,7 @@ object confcompilerfo: tconfcompilerfo
     372
     399
   )
-  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Configuration of Compilers'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -82,6 +82,7 @@ object confcompilerfo: tconfcompilerfo
     tab_frame.localprops = []
     tab_frame.localprops1 = []
     tab_size = 20
+    tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     object tab_pascal: ttabpage
       frame.localprops = []
       frame.localprops1 = []
@@ -91,7 +92,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cx = 364
       bounds_cy = 373
       anchors = [an_left, an_top, an_right, an_bottom]
-      caption = '  Pascal  '
+      caption = '  &Pascal  '
       object twinep3: tbooleanedit
         frame.caption = 'wine'
         frame.localprops = []
@@ -213,6 +214,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 296
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -241,6 +243,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 256
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -269,6 +272,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 216
         bounds_cx = 271
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -297,6 +301,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 176
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -325,6 +330,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 132
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -353,6 +359,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 92
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -381,6 +388,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 52
         bounds_cx = 271
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -448,6 +456,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 15
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -461,7 +470,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cx = 364
       bounds_cy = 373
       anchors = [an_left, an_top, an_right, an_bottom]
-      caption = '     C     '
+      caption = '     &C     '
       object ccompiler2: tfilenameedit
         Tag = 7
         frame.colorclient = 14606079
@@ -487,6 +496,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 52
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -515,6 +525,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 94
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -543,6 +554,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 135
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -571,6 +583,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 175
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -599,6 +612,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 216
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -627,6 +641,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 257
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -655,6 +670,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 298
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -819,6 +835,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 12
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -832,7 +849,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cx = 364
       bounds_cy = 373
       anchors = [an_left, an_top, an_right, an_bottom]
-      caption = '   Java   '
+      caption = '   &Java   '
       object twinej1: tbooleanedit
         frame.caption = 'wine'
         frame.localprops = []
@@ -922,6 +939,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 179
         bounds_cx = 280
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -950,6 +968,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 138
         bounds_cx = 280
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -978,6 +997,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 99
         bounds_cx = 280
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1005,6 +1025,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 54
         bounds_cx = 280
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1027,7 +1048,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cx = 364
       bounds_cy = 373
       anchors = [an_left, an_top, an_right, an_bottom]
-      caption = '  Python  '
+      caption = '  P&ython  '
       object twinepy3: tbooleanedit
         frame.caption = 'wine'
         frame.localprops = []
@@ -1085,6 +1106,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 162
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1113,6 +1135,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 122
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1141,6 +1164,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 77
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1200,6 +1224,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 37
         bounds_cx = 269
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1222,7 +1247,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cx = 364
       bounds_cy = 373
       anchors = [an_left, an_top, an_right, an_bottom]
-      caption = '   Other   '
+      caption = '   O&ther   '
       object othercompiler3: tfilenameedit
         Tag = 7
         frame.colorclient = 16773854
@@ -1248,6 +1273,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 121
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1307,6 +1333,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 28
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1335,6 +1362,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 164
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1395,6 +1423,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 71
         bounds_cx = 270
         bounds_cy = 39
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
@@ -1407,7 +1436,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cy = 16
       anchors = [an_top, an_right]
       state = [as_localcaption, as_localonexecute]
-      caption = 'OK'
+      caption = '&OK'
       onexecute = closeapp
     end
   end

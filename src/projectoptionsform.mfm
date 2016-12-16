@@ -76,7 +76,7 @@ object projectoptionsfo: tprojectoptionsfo
       place_maxdist = 5
       place_mode = wam_end
       place_options = [plo_propmargin, plo_syncmaxautosize]
-      linktop = tabwidget
+      linktop = setting_tab
       object cancel: tbutton
         optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
         optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -105,7 +105,7 @@ object projectoptionsfo: tprojectoptionsfo
         reffontheight = 15
       end
     end
-    object tabwidget: ttabwidget
+    object setting_tab: ttabwidget
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
       optionswidget1 = [ow1_fontglyphheight]
       bounds_x = 0
@@ -4828,7 +4828,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.options = [fdo_directory, fdo_file]
+                controller.options = [fdo_sysfilename, fdo_directory, fdo_file]
                 controller.historymaxcount = 0
                 controller.captionopen = 'Select unit directory'
                 controller.ongetfilename = expandfilename

@@ -723,10 +723,10 @@ findhistory=7
  uses
 findoptions=1
 editpos=1
- 24,2
+ 10,4
 bookmarks0=0
 sourcefiles=1
- ${PROJECTDIR}/demos/voiceassist/helloworld/helloworld.pas
+ /home/fred/ideu/src/demos/voiceassist/helloworld/helloworld.pas
 relpaths=1
  helloworld.pas
 ismoduletexts=1
@@ -753,8 +753,8 @@ windowlayout=541
  ncy=0
  x=0
  y=0
- cx=728
- cy=-595
+ cx=668
+ cy=-601
  rcx=0
  rcy=0
  [mainfo]
@@ -767,16 +767,16 @@ windowlayout=541
  ncx=0
  ncy=0
  x=341
- y=28
- cx=738
- cy=23
+ y=24
+ cx=678
+ cy=20
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,728,-595
+  basedock,0,0,668,-601
  focusedchild=0
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -787,8 +787,8 @@ windowlayout=541
  ny=0
  ncx=0
  ncy=0
- x=163
- y=217
+ x=73
+ y=227
  cx=497
  cy=314
  rcx=0
@@ -817,7 +817,7 @@ windowlayout=541
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -1090,7 +1090,7 @@ windowlayout=541
  [messagefo]
  splitdir=0
  useroptions=49259
- stackedunder=sourcefo
+ stackedunder=commandor
  parent=
  mdistate=3
  nx=0
@@ -1172,7 +1172,7 @@ windowlayout=541
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=mainfo.panel1
  parent=
  mdistate=3
  nx=0
@@ -1190,18 +1190,18 @@ windowlayout=541
  visible=0
  [componentpalettefo.componentpages]
  activetab=0
- [debuggerfo]
+ [commandor]
  splitdir=0
  useroptions=33579115
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=220
- y=93
+ x=216
+ y=75
  cx=939
  cy=49
  rcx=0
@@ -1209,10 +1209,10 @@ windowlayout=541
  wsize=0
  active=0
  visible=1
- [debuggerfo.basedock]
+ [commandor.basedock]
  splitdir=2
  useroptions=146563
- parent=debuggerfo.container
+ parent=commandor.container
  visible=1
  mdistate=0
  nx=0
@@ -1234,20 +1234,20 @@ windowlayout=541
  ny=0
  ncx=0
  ncy=0
- x=423
- y=180
+ x=412
+ y=168
  cx=745
  cy=416
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo.panel1
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1266,7 +1266,7 @@ windowlayout=541
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0

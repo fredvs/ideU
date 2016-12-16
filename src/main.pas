@@ -16,7 +16,7 @@ unit main;
 interface
 
 uses
- plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
+ aboutform,plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse, msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,
  msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
@@ -3522,39 +3522,53 @@ end;
 
 procedure tmainfo.aboutonexecute(const sender: TObject);
 begin
- showmessage('                   MSEgui version: '+mseguiversiontext+c_linefeed+ c_linefeed+
-             '                     Host: '+ platformtext+ c_linefeed+
-             c_linefeed+
-             '  by Martin Schreiber. Copyright 1999-2016. '+c_linefeed+
-             'http://sourceforge.net/projects/mseide-msegui/'
-             ,actionsmo.c[ord(ac_about)]+' MSEgui');
+aboutfo.caption := 'About MSEgui' ;
+aboutfo.about_text.frame.colorclient := $B2F4FF;
+
+aboutfo.about_text.value :=
+c_linefeed + c_linefeed +
+ 'MSEgui version: '+mseguiversiontext+c_linefeed+ c_linefeed+
+ c_linefeed +
+             'Host: '+ platformtext+ c_linefeed+
+             c_linefeed+ c_linefeed +
+             'by Martin Schreiber. Copyright 1999-2016'+c_linefeed+
+             'http://sourceforge.net/projects/mseide-msegui/';
+ aboutfo.show(true); 
 end;
 
 procedure tmainfo.aboutfpguionexecute(const sender: TObject);
 begin
- showmessage('      fpGUI version: 1.4' + c_linefeed+
-          '     Host: '+ platformtext+ c_linefeed+
-             c_linefeed+
-                 '  Copyright 1999-2016'+c_linefeed+
+aboutfo.caption := 'About fpGUI' ;
+aboutfo.about_text.frame.colorclient := $FFF5B2;
+aboutfo.about_text.value :=
+  c_linefeed + c_linefeed+
+ 'fpGUI version: 1.4' + c_linefeed+
+          'Host: '+ platformtext+ c_linefeed+
+             c_linefeed+  c_linefeed+
+                 'Copyright 1999-2016'+c_linefeed+ c_linefeed+
              ' by Graeme Geldenhuys' +c_linefeed+
-              ' <graemeg@gmail.com> '
-             ,actionsmo.c[ord(ac_about)]+' fpGUI');
+              '<graemeg@gmail.com>';
+aboutfo.show(true);        
 end;
 
 procedure tmainfo.aboutideuonexecute(const sender: TObject);
 begin
- showmessage('    ideU version: ' + versiontext + c_linefeed+
- 			 '   Host: '+ platformtext+ c_linefeed+
+aboutfo.caption := 'About ideU' ;
+aboutfo.about_text.frame.colorclient := $DFFFB2;
+aboutfo.about_text.value :=
+ c_linefeed+
+ 'ideU version: ' + versiontext + c_linefeed+
+ 			 'Host: '+ platformtext+ c_linefeed+
              c_linefeed+
                      
-            '   Based on MSEide'
+            'Based on MSEide'
             +c_linefeed+
-             ' by Martin Schreiber'
+             'by Martin Schreiber'
             +c_linefeed+ c_linefeed+
-             'Copyright 1999-2016'+c_linefeed+
+             'Copyright 1999-2016'+c_linefeed+  c_linefeed+
               'by Fred van Stappen' +c_linefeed+
-               '<fiens@hotmail.com>'
-             ,actionsmo.c[ord(ac_about)]+' ideU');
+               '<fiens@hotmail.com>';
+aboutfo.show(true);
 end;
 
 

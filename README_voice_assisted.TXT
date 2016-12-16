@@ -6,8 +6,8 @@ For Unix system: (The last character of ideU is a U majuscule)
 For Windows system:
 #  C:\directory\of\ideU\ideU.exe -va
 
-The first time you run ideU, a welcome project will be loaded and the setting form will appear.
-Using the arrow up/down keys, you may check the path of fpc compiler.
+The first time you run ideU the setting form will appear.
+Using the arrow up/down keys, you may check the path of fpc compiler and debugger.
 When all is ok, use Alt+O key to save and close the form and then Alt+F+X to close ideU.
 
 There is a voice assisted "Hello World" demo.
@@ -31,32 +31,21 @@ For this project there will be:
 To navigate inside a form, use the Left/Right/Up/Down/Tab keys.
 To navigate inside a combobox, use Alt+Down key, then Up/Down key.
 
-You may use also the mouse.
+You may also use the mouse.
 On each new focus, the position of the cursor will be said.
  
-To configure the directory of the compiler and other stuff, use Alt+I+G.
-It is the main setting form. (Alt+O key to save and close the form.)
+To configure the directory of the compiler and other stuff, use Alt+I+G key.
+It is the main setting form. Use the Tab key to navigate,
+Alt+O key to save and close, Alt+C to cancel and close.
 
-To compile-run the program use the F9 key.
+To read-edit the code use the source-code editor (Alt+V+U key).
+ 
+To compile the program use the F9 key.
 
-To listen to the comments of the compiler, use the message form and navigate with Up/Down keys.
+To listen to the comments of the compiler, use the message form (Alt+V+M key) and navigate with Up/Down keys.
 
-To listen to the result of the program, use the target console form and navigate with Up/Down keys.
+To run the program use the F9 key again.
 
-PS: For Windows users: to reset the config to default, delete the folders:
-
-C:\Users\You_User\AppData\Local\ideU
-and
-C:\Users\Fred\AppData\Roaming\.ideu
-
-Fre;D
+To listen to the result of the program, use the target console form (Alt+V+T key) and navigate with Up/Down keys.
 
 Fre;D
-
-
-
-
-
-
-
-

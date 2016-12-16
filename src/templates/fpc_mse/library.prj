@@ -134,6 +134,7 @@ makeoptions=4
  -gl -O-
  -B
  -O2 -XX -Xs -CX
+makeoptpurpose=0
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -402,6 +403,25 @@ exeusedon=14
  0
  0
  0
+comment_M=
+comment_B=
+comment_1=
+comment_2=
+comment_3=
+comment_4=
+comment_5=
+comment_6=
+comment_7=
+comment_8=
+comment_9=
+comment_0=
+project_name=
+project_creator=
+project_copyright=
+project_license=
+project_time=
+project_date=
+project_comment=
 aftcommandon=0
 unitdirson=3
  196671
@@ -705,7 +725,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=stackfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -751,7 +771,7 @@ windowlayout=530
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -777,7 +797,7 @@ windowlayout=530
  x=0
  y=0
  cx=139
- cy=434
+ cy=436
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -1057,7 +1077,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=cpuc86_64fo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1075,9 +1095,9 @@ windowlayout=530
  visible=0
  [componentpalettefo.componentpages]
  activetab=1
- [debuggerfo]
+ [commandor]
  splitdir=0
- useroptions=122987
+ useroptions=24683
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1088,19 +1108,19 @@ windowlayout=530
  x=0
  y=0
  cx=956
- cy=57
+ cy=55
  rcx=0
  rcy=0
- [debuggerfo.basedock]
+ [commandor.basedock]
  splitdir=2
  useroptions=146563
- parent=debuggerfo.container
+ parent=commandor.container
  visible=1
  mdistate=0
  nx=0
  ny=52
- ncx=955
- ncy=307
+ ncx=930
+ ncy=0
  x=0
  y=52
  cx=956
@@ -1120,30 +1140,14 @@ windowlayout=530
  x=142
  y=0
  cx=814
- cy=434
- rcx=0
- rcy=0
- [mainfo.panel1]
- splitdir=1
- useroptions=838893035
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=60
- cx=956
- cy=434
+ cy=436
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=findinfilefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1159,6 +1163,22 @@ windowlayout=530
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838893035
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=58
+ cx=956
+ cy=436
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

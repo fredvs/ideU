@@ -11,7 +11,8 @@ uses
  msebitmap,msedatanodes,mseedit,mseevent,msegraphutils,msegrids,mselistbrowser,
  msemenus,msesys,msetypes,msegraphics,msewidgets,mseactions,mseifiglob,
  msesplitter,mseificomp,mseificompglob,msememodialog,msewidgetgrid,
- mseapplication,msestream,sysutils;
+ mseapplication,msestream,sysutils,mseact,msedragglob,msescrollbar,msetabs,
+ msegraphedits;
 
 type
  settingsmacroty = (sma_fpcdir,sma_fpclibdir,sma_msedir,sma_mselibdir,
@@ -109,30 +110,29 @@ type
   
  tsettingsfo = class(tmseform)
    tstatfile1: tstatfile;
-   tlayouter1: tlayouter;
-   printcomm: tstringedit;
-   debugger: tfilenameedit;
-   compiler: tfilenameedit;
-   compstoredir: tfilenameedit;
-   templatedir: tfilenameedit;
+   setting_tab: ttabwidget;
+   path: ttabpage;
+   macros: ttabpage;
+   shortcut: ttabpage;
+   other: ttabpage;
+   but_ok: tbutton;
+   layoutdir: tfilenameedit;
    syntaxdefdir: tfilenameedit;
+   templatedir: tfilenameedit;
+   docviewdir: tfilenameedit;
+   fpguidir: tfilenameedit;
+   compstoredir: tfilenameedit;
    mselibdir: tfilenameedit;
    msedir: tfilenameedit;
-   fpclibdir: tfilenameedit;
-   fpcdir: tfilenameedit;
-   tspacer1: tspacer;
+   debugger: tfilenameedit;
+   compiler: tfilenameedit;
+   macrogrid: twidgetgrid;
+   macrovalue: tmemodialogedit;
+   macroname: tstringedit;
+   shortcutbu: tbutton;
+   printcomm: tstringedit;
    target: tstringedit;
    exeext: tstringedit;
-   tsplitter1: tsplitter;
-   tbutton2: tbutton;
-   tbutton1: tbutton;
-   shortcutbu: tbutton;
-   macrogrid: twidgetgrid;
-   macroname: tstringedit;
-   macrovalue: tmemodialogedit;
-   fpguidir: tfilenameedit;
-   docviewdir: tfilenameedit;
-   layoutdir: tfilenameedit;
    targetosdir: tstringedit;
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
@@ -142,6 +142,7 @@ type
    procedure setprintcomm(const sender: TObject; var avalue: msestring;
                              var accept: Boolean);
    procedure editshortcuts(const sender: TObject);
+   procedure setfocus(const sender: TObject);
   private
    fshortcutcontroller: tshortcutcontroller;
   protected
@@ -267,8 +268,8 @@ end;
 procedure tsettingsfo.formoncreate(const sender: TObject);
 begin
  with settings,macros do begin
-  fpcdir.value:= macros[sma_fpcdir];
-  fpclibdir.value:= macros[sma_fpclibdir];
+  // fpcdir.value:= macros[sma_fpcdir];
+  // fpclibdir.value:= macros[sma_fpclibdir];
   msedir.value:= macros[sma_msedir];
   docviewdir.value := macros[sma_docviewdir]; 
   mselibdir.value:= macros[sma_mselibdir];
@@ -319,8 +320,8 @@ begin
   macros[sma_fpguidir] := fpguidir.value;
   macros[sma_fpgui] := macros[sma_fpguidir];
   macros[sma_docviewdir] := docviewdir.value;
-  macros[sma_fpcdir]:= fpcdir.value;
-  macros[sma_fpclibdir]:= fpclibdir.value;
+  // macros[sma_fpcdir]:= fpcdir.value;
+  // macros[sma_fpclibdir]:= fpclibdir.value;
   macros[sma_msedir]:= msedir.value;
   macros[sma_mselibdir]:= mselibdir.value;
   macros[sma_syntaxdefdir]:= syntaxdefdir.value;
@@ -365,6 +366,20 @@ end;
 procedure tsettingsfo.editshortcuts(const sender: TObject);
 begin
  shortcutdialog(fshortcutcontroller);
+end;
+
+procedure tsettingsfo.setfocus(const sender: TObject);
+begin
+{
+case tab_setting.activepageindex of
+0 : compiler.setfocus;
+1 : macrogrid.setfocus;
+2 : shortcutbu.setfocus;
+3 : exeext.setfocus;
+end;
+}
+
+
 end;
 
 end.

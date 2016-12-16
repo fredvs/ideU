@@ -13,7 +13,7 @@ uses
 {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
 
   // fred
-  confmsegui, confideu, conffpgui, confcompiler, confdebugger, dialogfiles,
+  aboutform, confmsegui, confideu, conffpgui, confcompiler, confdebugger, dialogfiles,
   
   mseskindesign,
   msegui,msegraphics,actionsmodule,sourceform,commandorform,
@@ -71,6 +71,8 @@ confcompilerfo.close;
 confdebuggerfo.close;
 
  application.createform(tmainfo, mainfo);
+ application.createform(taboutfo, aboutfo);
+ 
  createcpufo; 
   
  mainfo.ideureadconfig ;

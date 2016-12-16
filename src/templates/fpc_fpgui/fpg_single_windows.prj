@@ -17,6 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_fpgui
+projectfilename=/home/fred/ideu/src/templates/fpc_fpgui/fpg_single_windows.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -773,7 +775,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -845,7 +847,7 @@ windowlayout=530
  x=0
  y=0
  cx=139
- cy=433
+ cy=439
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -1125,7 +1127,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1143,9 +1145,9 @@ windowlayout=530
  visible=0
  [componentpalettefo.componentpages]
  activetab=1
- [debuggerfo]
+ [commandor]
  splitdir=0
- useroptions=122987
+ useroptions=24683
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1156,23 +1158,23 @@ windowlayout=530
  x=0
  y=0
  cx=956
- cy=58
+ cy=52
  rcx=0
  rcy=0
- [debuggerfo.basedock]
+ [commandor.basedock]
  splitdir=2
  useroptions=146563
- parent=debuggerfo.container
+ parent=commandor.container
  visible=1
  mdistate=0
  nx=0
- ny=52
- ncx=955
- ncy=307
+ ny=47
+ ncx=929
+ ncy=1
  x=0
- y=52
+ y=47
  cx=956
- cy=6
+ cy=3
  rcx=0
  rcy=0
  [sourcefo]
@@ -1188,7 +1190,7 @@ windowlayout=530
  x=142
  y=0
  cx=814
- cy=433
+ cy=439
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1222,9 +1224,9 @@ windowlayout=530
  ncx=0
  ncy=0
  x=0
- y=61
+ y=55
  cx=956
- cy=433
+ cy=439
  rcx=0
  rcy=0
 [targetconsole]

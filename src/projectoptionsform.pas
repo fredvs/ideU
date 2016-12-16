@@ -633,7 +633,7 @@ type
    tlayouter8: tlayouter;
    cancel: tbutton;
    ok: tbutton;
-   tabwidget: ttabwidget;
+   setting_tab: ttabwidget;
    editorpage: ttabpage;
    debuggerpage: ttabpage;
    debugcommand: tfilenameedit;

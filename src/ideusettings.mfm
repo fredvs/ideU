@@ -1,19 +1,21 @@
-object settingsfo: tsettingsfo
+object settings_form: tsettingsfo
+  optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 458
-  bounds_y = 55
-  bounds_cx = 390
-  bounds_cy = 662
+  bounds_x = 424
+  bounds_y = 164
+  bounds_cx = 471
+  bounds_cy = 446
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    390
-    662
+    471
+    446
   )
-  options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configure ideU environment'
   icon.options = [bmo_masked, bmo_graymask]
@@ -73,70 +75,557 @@ object settingsfo: tsettingsfo
   }
   oncreate = formoncreate
   moduleclassname = 'tmseform'
-  object tsplitter1: tsplitter
-    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
-    color = -2147483645
-    taborder = 2
-    bounds_x = 2
-    bounds_y = 0
-    bounds_cx = 385
-    bounds_cy = 27
-    anchors = [an_left, an_top, an_right]
-    optionsscale = [osc_expandy, osc_shrinky]
-    linktop = macrogrid
-    grip = stb_none
-    object tbutton2: tbutton
-      taborder = 1
-      bounds_x = 326
-      bounds_y = 4
-      bounds_cx = 58
-      bounds_cy = 22
-      anchors = [an_top, an_right]
-      state = [as_localcaption]
-      caption = '&Cancel'
-      modalresult = mr_cancel
-    end
-    object tbutton1: tbutton
-      bounds_x = 262
-      bounds_y = 4
-      bounds_cx = 59
-      bounds_cy = 22
-      anchors = [an_top, an_right]
-      state = [as_default, as_localdefault, as_localcaption]
-      caption = '&OK'
-      modalresult = mr_ok
-    end
-    object shortcutbu: tbutton
+  object setting_tab: ttabwidget
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    optionswidget1 = [ow1_fontglyphheight]
+    bounds_x = 5
+    bounds_y = 6
+    bounds_cx = 460
+    bounds_cy = 436
+    activepageindex = 0
+    tab_frame.localprops = []
+    tab_frame.localprops1 = []
+    tab_size = 20
+    tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    reffontheight = 15
+    object path: ttabpage
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+      frame.localprops = []
+      frame.localprops1 = []
       taborder = 2
-      bounds_x = 10
-      bounds_y = 5
-      bounds_cx = 78
-      bounds_cy = 22
-      state = [as_localcaption, as_localonexecute]
-      caption = '&Shortcuts'
-      onexecute = editshortcuts
-    end
-  end
-  object tlayouter1: tlayouter
-    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
-    bounds_x = 2
-    bounds_y = 34
-    bounds_cx = 388
-    bounds_cy = 528
-    anchors = [an_left, an_top, an_right]
-    optionsscale = [osc_expandy, osc_shrinky]
-    optionslayout = [lao_placey]
-    linkbottom = macrogrid
-    object tspacer1: tspacer
-      optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
-      taborder = 14
-      visible = True
       bounds_x = 0
-      bounds_y = 455
-      bounds_cx = 383
-      bounds_cy = 38
-      anchors = [an_left, an_top, an_right]
-      optionsscale = [osc_expandy, osc_shrinky]
+      bounds_y = 20
+      bounds_cx = 460
+      bounds_cy = 416
+      anchors = [an_left, an_top, an_right, an_bottom]
+      caption = '  &Path  '
+      reffontheight = 15
+      object layoutdir: tfilenameedit
+        Tag = 4
+        frame.colorclient = 16777169
+        frame.caption = '${LAYOUTDIR} Directory of Layout samples'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 9
+        hint = 'Directory for layout files.'
+        bounds_x = 6
+        bounds_y = 366
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '${IDEUDIR}/layout'
+        onsetvalue = setvalue
+        controller.filename = '${IDEUDIR}/layout/'
+        controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/layout/'
+        controller.filterlist.data = (
+          (
+            'Syntax definitions'
+            '*.sdef'
+          )
+        )
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'Directory for syntax definition files'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object syntaxdefdir: tfilenameedit
+        Tag = 4
+        frame.colorclient = 16777169
+        frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 8
+        hint = 'Directory for syntax definition files.'
+        bounds_x = 6
+        bounds_y = 327
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '${IDEUDIR}/syntaxdefs'
+        onsetvalue = setvalue
+        controller.filename = '${IDEUDIR}/syntaxdefs/'
+        controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/syntaxdefs/'
+        controller.filterlist.data = (
+          (
+            'Syntax definitions'
+            '*.sdef'
+          )
+        )
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'Directory for syntax definition files'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object templatedir: tfilenameedit
+        Tag = 5
+        frame.colorclient = 16777169
+        frame.caption = '${TEMPLATEDIR} Directory of Templates'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 7
+        hint = 'Directory for project template files.'
+        bounds_x = 6
+        bounds_y = 288
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '${IDEUDIR}/templates'
+        onsetvalue = setvalue
+        controller.filename = '${IDEUDIR}/templates/'
+        controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/templates/'
+        controller.filterlist.data = (
+          (
+            'Project files'
+            '*.prj'
+          )
+        )
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'Project template directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object docviewdir: tfilenameedit
+        Tag = 3
+        frame.colorclient = 15138790
+        frame.caption = '${DOCVIEWDIR} Root directory of DocView'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 6
+        hint = 'Root directory of DocView'
+        bounds_x = 6
+        bounds_y = 249
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        onsetvalue = setvalue
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'DocView directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object fpguidir: tfilenameedit
+        Tag = 3
+        frame.colorclient = 15138790
+        frame.caption = '${FPGUIDIR} Root directory of fpGUI'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 5
+        hint = 'Root directory of fpGUI'
+        bounds_x = 6
+        bounds_y = 210
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '/usr/local/share/fpgui'
+        onsetvalue = setvalue
+        controller.filename = '/usr/local/share/fpgui/'
+        controller.lastdir = '/usr/local/share/fpgui/'
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'fpGUI library directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object compstoredir: tfilenameedit
+        Tag = 6
+        frame.colorclient = 16773360
+        frame.caption = '${COMPSTOREDIR} CompStore directory of MSEgui'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 4
+        hint = 'Directory for component store files.'
+        bounds_x = 6
+        bounds_y = 171
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '${MSEDIR}/apps/ide/compstore'
+        onsetvalue = setvalue
+        controller.filename = '${MSEDIR}/apps/ide/compstore/'
+        controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/apps/ide/compstore/'
+        controller.filterlist.data = (
+          (
+            'Project files'
+            '*.prj'
+          )
+        )
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'Directory for MSEgui component stores'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object mselibdir: tfilenameedit
+        Tag = 3
+        frame.colorclient = 16773360
+        frame.caption = '${MSELIBDIR} Library of MSEgui'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 3
+        hint = 'Root directory of msegui library.'
+        bounds_x = 6
+        bounds_y = 127
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '${MSEDIR}/lib/common'
+        onsetvalue = setvalue
+        controller.filename = '${MSEDIR}/lib/common/'
+        controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/lib/common/'
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'MSEgui library directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object msedir: tfilenameedit
+        Tag = 2
+        frame.colorclient = 16773360
+        frame.caption = '${MSEDIR} Root directory of MSEgui'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 2
+        hint = 'Root directory of msegui.'
+        bounds_x = 6
+        bounds_y = 88
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '/usr/local/share/msegui'
+        onsetvalue = setvalue
+        controller.filename = '/usr/local/share/msegui/'
+        controller.lastdir = '/usr/local/share/msegui/'
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'MSEgui root directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object debugger: tfilenameedit
+        Tag = 8
+        frame.colorclient = 16108799
+        frame.caption = '${DEBUGGER} Path of Default Debugger'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 1
+        hint = 'Path to debugger (gdb).'
+        bounds_x = 6
+        bounds_y = 49
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        onsetvalue = setvalue
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
+        controller.captionopen = 'Debugger path'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object compiler: tfilenameedit
+        Tag = 7
+        frame.colorclient = 16108799
+        frame.caption = '${COMPILER} Path of Default Compiler'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        hint = 'Path to compiler (ppc386).'
+        bounds_x = 6
+        bounds_y = 6
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '/usr/local/lib/fpc/3.0.0/ppcx64'
+        onsetvalue = setvalue
+        controller.filename = '/usr/local/lib/fpc/3.0.0/ppcx64'
+        controller.lastdir = '/usr/local/lib/fpc/3.0.0/'
+        controller.options = [fdo_sysfilename, fdo_savelastdir]
+        controller.captionopen = 'Compiler path'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+    end
+    object macros: ttabpage
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 3
+      bounds_x = 0
+      bounds_y = 20
+      bounds_cx = 460
+      bounds_cy = 416
+      anchors = [an_left, an_top, an_right, an_bottom]
+      caption = '  &Macros  '
+      reffontheight = 15
+      object macrogrid: twidgetgrid
+        optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+        frame.caption = 'Global Macros'
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        bounds_x = 8
+        bounds_y = 8
+        bounds_cx = 439
+        bounds_cy = 395
+        bounds_cymin = 80
+        optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+        fixcols.count = 1
+        fixcols.items = <        
+          item
+            width = 28
+            numstart = 1
+            numstep = 1
+          end>
+        fixrows.count = 1
+        fixrows.items = <        
+          item
+            height = 17
+            captions.count = 4
+            captions.items = <            
+              item
+                caption = 'Value'
+              end            
+              item
+                caption = 'Name'
+              end            
+              item
+              end            
+              item
+              end>
+          end>
+        datacols.count = 2
+        datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+        datacols.items = <        
+          item[macrovalue]
+            width = 199
+            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+            widgetname = 'macrovalue'
+            dataclass = tgridmsestringdatalist
+          end        
+          item[macroname]
+            width = 205
+            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+            widgetname = 'macroname'
+            dataclass = tgridmsestringdatalist
+          end>
+        datarowheight = 16
+        reffontheight = 15
+        object macrovalue: tmemodialogedit
+          optionswidget1 = [ow1_fontglyphheight]
+          optionsskin = [osk_framebuttononly]
+          frame.levelo = 0
+          frame.colorclient = -2147483645
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.buttons.count = 1
+          frame.buttons.items = <          
+            item
+              color = -1879048187
+              imagenr = 17
+            end>
+          frame.button.color = -1879048187
+          frame.button.imagenr = 17
+          taborder = 1
+          visible = False
+          bounds_x = 0
+          bounds_y = 0
+          bounds_cx = 199
+          bounds_cy = 16
+          anchors = [an_top]
+          optionsedit1 = [oe1_savevalue]
+          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+          reffontheight = 15
+        end
+        object macroname: tstringedit
+          optionswidget1 = [ow1_fontglyphheight]
+          optionsskin = [osk_framebuttononly]
+          taborder = 2
+          visible = False
+          bounds_x = 200
+          bounds_y = 0
+          bounds_cx = 205
+          bounds_cy = 16
+          optionsedit1 = [oe1_savevalue]
+          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+          reffontheight = 15
+        end
+      end
+    end
+    object shortcut: ttabpage
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 4
+      bounds_x = 0
+      bounds_y = 20
+      bounds_cx = 460
+      bounds_cy = 416
+      anchors = [an_left, an_top, an_right, an_bottom]
+      caption = '  &Shortcut  '
+      reffontheight = 15
+      object shortcutbu: tbutton
+        color = 16772044
+        bounds_x = 172
+        bounds_y = 164
+        bounds_cx = 106
+        bounds_cy = 39
+        state = [as_localcaption, as_localcolor, as_localonexecute]
+        caption = '&Shortcuts'
+        onexecute = editshortcuts
+      end
+    end
+    object other: ttabpage
+      optionswidget1 = [ow1_fontglyphheight]
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 5
+      bounds_x = 0
+      bounds_y = 20
+      bounds_cx = 460
+      bounds_cy = 416
+      anchors = [an_left, an_top, an_right, an_bottom]
+      caption = '   O&ther   '
+      reffontheight = 15
+      object printcomm: tstringedit
+        frame.caption = 'Print command'
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 2
+        bounds_x = 48
+        bounds_y = 160
+        bounds_cx = 360
+        bounds_cy = 39
+        onsetvalue = setprintcomm
+        reffontheight = 15
+      end
       object target: tstringedit
         Tag = 10
         frame.caption = '${TARGET} Default target OS'
@@ -144,602 +633,76 @@ object settingsfo: tsettingsfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          16
+          18
           0
           0
         )
         taborder = 1
         hint = 'Default Target'
-        bounds_x = 133
-        bounds_y = 3
-        bounds_cx = 229
-        bounds_cy = 35
+        bounds_x = 48
+        bounds_y = 108
+        bounds_cx = 360
+        bounds_cy = 39
         onsetvalue = setvalue
-        reffontheight = 13
+        reffontheight = 15
       end
       object exeext: tstringedit
         Tag = 9
-        frame.caption = '${EXEEXT}'
+        frame.caption = '${EXEEXT} Default ext'
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
           0
-          16
+          18
           0
           0
         )
         hint = 'Default Executable extension.'
-        bounds_x = 11
-        bounds_y = 2
-        bounds_cx = 116
-        bounds_cy = 35
+        bounds_x = 48
+        bounds_y = 60
+        bounds_cx = 360
+        bounds_cy = 39
         onsetvalue = setvalue
-        reffontheight = 13
+        reffontheight = 15
+      end
+      object targetosdir: tstringedit
+        Tag = 10
+        frame.colorclient = 16773360
+        frame.caption = '${TARGETMSE} Default target OS of MSEgui'
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 3
+        hint = 'Default Target OS directorynof MSEgui'
+        bounds_x = 48
+        bounds_y = 211
+        bounds_cx = 360
+        bounds_cy = 39
+        onsetvalue = setvalue
+        reffontheight = 15
       end
     end
-    object printcomm: tstringedit
-      frame.caption = 'Print command'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 13
-      bounds_x = 8
-      bounds_y = 493
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      onsetvalue = setprintcomm
-      reffontheight = 13
-    end
-    object debugger: tfilenameedit
-      Tag = 8
-      frame.colorclient = 16108799
-      frame.caption = '${DEBUGGER} Path of Default Debugger'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 12
-      hint = 'Path to debugger (gdb).'
-      bounds_x = 8
-      bounds_y = 420
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      onsetvalue = setvalue
-      controller.captionopen = 'Debugger path'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object compiler: tfilenameedit
-      Tag = 7
-      frame.colorclient = 16108799
-      frame.caption = '${COMPILER} Path of Default Compiler'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 11
-      hint = 'Path to compiler (ppc386).'
-      bounds_x = 8
-      bounds_y = 385
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '/usr/local/lib/fpc/3.0.0/ppcx64'
-      onsetvalue = setvalue
-      controller.filename = '/usr/local/lib/fpc/3.0.0/ppcx64'
-      controller.lastdir = '/usr/local/lib/fpc/3.0.0/'
-      controller.captionopen = 'Compiler path'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object compstoredir: tfilenameedit
-      Tag = 6
-      frame.colorclient = 16773360
-      frame.caption = '${COMPSTOREDIR} CompStore directory of MSEgui'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 5
-      hint = 'Directory for component store files.'
-      bounds_x = 8
-      bounds_y = 175
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '${MSEDIR}/apps/ide/compstore'
-      onsetvalue = setvalue
-      controller.filename = '${MSEDIR}/apps/ide/compstore/'
-      controller.lastdir = '/c:/ideu/src/${MSEDIR}/apps/ide/compstore/'
-      controller.filterlist.data = (
-        (
-          'Project files'
-          '*.prj'
-        )
-      )
-      controller.options = [fdo_directory]
-      controller.captionopen = 'Directory for MSEgui component stores'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object templatedir: tfilenameedit
-      Tag = 5
-      frame.colorclient = 16777169
-      frame.caption = '${TEMPLATEDIR} Directory of Templates'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 8
-      hint = 'Directory for project template files.'
-      bounds_x = 8
-      bounds_y = 280
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '${IDEUDIR}/templates'
-      onsetvalue = setvalue
-      controller.filename = '${IDEUDIR}/templates/'
-      controller.lastdir = '/c:/ideu/src/${IDEUDIR}/templates/'
-      controller.filterlist.data = (
-        (
-          'Project files'
-          '*.prj'
-        )
-      )
-      controller.options = [fdo_directory]
-      controller.captionopen = 'Project template directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object syntaxdefdir: tfilenameedit
-      Tag = 4
-      frame.colorclient = 16777169
-      frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 9
-      hint = 'Directory for syntax definition files.'
-      bounds_x = 8
-      bounds_y = 315
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '${IDEUDIR}/syntaxdefs'
-      onsetvalue = setvalue
-      controller.filename = '${IDEUDIR}/syntaxdefs/'
-      controller.lastdir = '/c:/ideu/src/${IDEUDIR}/syntaxdefs/'
-      controller.filterlist.data = (
-        (
-          'Syntax definitions'
-          '*.sdef'
-        )
-      )
-      controller.options = [fdo_directory]
-      controller.captionopen = 'Directory for syntax definition files'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object mselibdir: tfilenameedit
-      Tag = 3
-      frame.colorclient = 16773360
-      frame.caption = '${MSELIBDIR} Library of MSEgui'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 3
-      hint = 'Root directory of msegui library.'
-      bounds_x = 8
-      bounds_y = 105
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '${MSEDIR}/lib/common'
-      onsetvalue = setvalue
-      controller.filename = '${MSEDIR}/lib/common/'
-      controller.lastdir = '/c:/ideu/src/${MSEDIR}/lib/common/'
-      controller.options = [fdo_directory]
-      controller.captionopen = 'MSEgui library directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object msedir: tfilenameedit
-      Tag = 2
-      frame.colorclient = 16773360
-      frame.caption = '${MSEDIR} Root directory of MSEgui'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 2
-      hint = 'Root directory of msegui.'
-      bounds_x = 8
-      bounds_y = 70
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '/usr/local/share/msegui'
-      onsetvalue = setvalue
-      controller.filename = '/usr/local/share/msegui/'
-      controller.lastdir = '/usr/local/share/msegui/'
-      controller.options = [fdo_directory]
-      controller.captionopen = 'MSEgui root directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object fpclibdir: tfilenameedit
-      Tag = 1
-      frame.colorclient = 15790335
-      frame.caption = '${FPCLIBDIR} Library directory of Free Pascal'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
+    object but_ok: tbutton
       taborder = 1
-      hint = 'Root directory of FPC library (not used by the default project templates).'
-      bounds_x = 8
-      bounds_y = 35
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      controller.options = [fdo_directory]
-      controller.captionopen = 'FPC library directory'
-      reffontheight = 13
-    end
-    object fpcdir: tfilenameedit
-      frame.colorclient = 15790335
-      frame.caption = '${FPCDIR} Root directory of Free Pascal'
-      frame.localprops = [frl_colorframe, frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      hint = 'Root directory of Free Pascal system (not used by the default project templates).'
-      bounds_x = 8
-      bounds_y = 0
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '/usr/local/lib/fpc/3.0.0/'
-      valuedefault = '/usr/local/lib/fpc/3.0.0/'
-      onsetvalue = setvalue
-      controller.filename = '/usr/local/lib/fpc/3.0.0/'
-      controller.lastdir = '/usr/local/lib/fpc/3.0.0/'
-      controller.options = [fdo_directory]
-      controller.captionopen = 'FPC root directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object fpguidir: tfilenameedit
-      Tag = 3
-      frame.colorclient = 15138790
-      frame.caption = '${FPGUIDIR} Root directory of fpGUI'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 6
-      hint = 'Root directory of fpGUI'
-      bounds_x = 8
-      bounds_y = 210
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '/usr/local/share/fpgui'
-      onsetvalue = setvalue
-      controller.filename = '/usr/local/share/fpgui/'
-      controller.lastdir = '/usr/local/share/fpgui/'
-      controller.options = [fdo_directory]
-      controller.captionopen = 'fpGUI library directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object docviewdir: tfilenameedit
-      Tag = 3
-      frame.colorclient = 15138790
-      frame.caption = '${DOCVIEWDIR} Root directory of DocView'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 7
-      hint = 'Root directory of DocView'
-      bounds_x = 8
-      bounds_y = 245
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      onsetvalue = setvalue
-      controller.options = [fdo_directory]
-      controller.captionopen = 'DocView directory'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object layoutdir: tfilenameedit
-      Tag = 4
-      frame.colorclient = 16777169
-      frame.caption = '${LAYOUTDIR} Directory of Layout samples'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          imagenr = 17
-        end>
-      frame.button.imagenr = 17
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 10
-      hint = 'Directory for layout files.'
-      bounds_x = 8
-      bounds_y = 350
-      bounds_cx = 370
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = '${IDEUDIR}/layout'
-      onsetvalue = setvalue
-      controller.filename = '${IDEUDIR}/layout/'
-      controller.lastdir = '/c:/ideu/src/${IDEUDIR}/layout/'
-      controller.filterlist.data = (
-        (
-          'Syntax definitions'
-          '*.sdef'
-        )
-      )
-      controller.options = [fdo_directory]
-      controller.captionopen = 'Directory for syntax definition files'
-      controller.ongetfilename = epandfilenamemacro
-      reffontheight = 13
-    end
-    object targetosdir: tstringedit
-      Tag = 11
-      frame.colorclient = 16773360
-      frame.caption = '${TARGETOSDIR} Default Target OS of MSEgui source'
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        16
-        0
-        0
-      )
-      taborder = 4
-      hint = 'Default Target OS'
-      bounds_x = 8
-      bounds_y = 140
-      bounds_cx = 369
-      bounds_cy = 35
-      anchors = [an_left, an_top, an_right]
-      value = 'linux'
-      onsetvalue = setvalue
-      reffontheight = 13
-    end
-  end
-  object macrogrid: twidgetgrid
-    frame.caption = 'Global Macros'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      16
-      0
-      0
-    )
-    taborder = 1
-    bounds_x = 6
-    bounds_y = 562
-    bounds_cx = 371
-    bounds_cy = 80
-    bounds_cymin = 80
-    anchors = [an_left, an_top, an_right]
-    optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
-    fixcols.count = 1
-    fixcols.items = <    
-      item
-        width = 28
-        numstart = 1
-        numstep = 1
-      end>
-    fixrows.count = 1
-    fixrows.items = <    
-      item
-        height = 15
-        captions.count = 4
-        captions.items = <        
-          item
-            caption = 'Name'
-          end        
-          item
-            caption = 'Value'
-          end        
-          item
-          end        
-          item
-          end>
-      end>
-    datacols.count = 2
-    datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-    datacols.items = <    
-      item[macroname]
-        width = 171
-        options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-        widgetname = 'macroname'
-        dataclass = tgridmsestringdatalist
-      end    
-      item[macrovalue]
-        width = 165
-        options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-        widgetname = 'macrovalue'
-        dataclass = tgridmsestringdatalist
-      end>
-    datarowheight = 16
-    reffontheight = 13
-    object macroname: tstringedit
-      optionswidget1 = [ow1_fontglyphheight]
-      optionsskin = [osk_framebuttononly]
-      taborder = 1
-      visible = False
-      bounds_x = 0
-      bounds_y = 0
-      bounds_cx = 171
+      bounds_x = 421
+      bounds_y = 2
+      bounds_cx = 33
       bounds_cy = 16
-      optionsedit1 = [oe1_savevalue]
-      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-      reffontheight = 13
-    end
-    object macrovalue: tmemodialogedit
-      optionswidget1 = [ow1_fontglyphheight]
-      optionsskin = [osk_framebuttononly]
-      frame.levelo = 0
-      frame.colorclient = -2147483645
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          color = -1879048187
-          imagenr = 17
-        end>
-      frame.button.color = -1879048187
-      frame.button.imagenr = 17
-      taborder = 2
-      visible = False
-      bounds_x = 172
-      bounds_y = 0
-      bounds_cx = 165
-      bounds_cy = 16
-      optionsedit1 = [oe1_savevalue]
-      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-      reffontheight = 13
+      anchors = [an_top, an_right]
+      state = [as_localcaption, as_localonexecute]
+      caption = '&OK'
+      modalresult = mr_ok
     end
   end
   object tstatfile1: tstatfile
     filename = 'settingsfo.sta'
     options = [sfo_memory]
-    left = 16
-    top = 32
+    left = 321
+    top = 347
   end
 end

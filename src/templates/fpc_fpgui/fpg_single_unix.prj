@@ -17,121 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
- options=114
- [projectoptionsfo.toolshortcuts]
- dropdowncolwidths=3
-  70
-  70
-  70
- [projectoptionsfo.twidgetgrid3]
- propcolwidthref=754
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- width4=102
- sortdescend4=0
- width5=81
- sortdescend5=0
- width6=52
- sortdescend6=0
- width7=52
- sortdescend7=0
- width8=105
- sortdescend8=0
- width9=308
- sortdescend9=0
- [projectoptionsfo.twidgetgrid4]
- propcolwidthref=578
- width0=96
- sortdescend0=0
- sortdescend1=0
- width2=73
- sortdescend2=0
- width3=277
- sortdescend3=0
- width4=291
- sortdescend4=0
- sorted=0
- col=-1073741823
- row=-1073741823
- rowheight=17
- [projectoptionsfo.newfile]
- firsttab=0
- index=0
- [projectoptionsfo.fontaliasgrid]
- propcolwidthref=417
- width0=98
- sortdescend0=0
- width1=406
- sortdescend1=0
- width2=50
- sortdescend2=0
- width3=50
- sortdescend3=0
- width4=50
- sortdescend4=0
- width5=50
- sortdescend5=0
- width6=70
- sortdescend6=0
- [projectoptionsfo.macrosplitter]
- x=0
- y=201
- xprop=1
- yprop=0.39458413926499
- [projectoptionsfo.macrogrid]
- propcolwidthref=509
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- sortdescend4=0
- sortdescend5=0
- sortdescend6=0
- sortdescend7=0
- sortdescend8=0
- sortdescend9=0
- width10=146
- sortdescend10=0
- width11=493
- sortdescend11=0
- [projectoptionsfo.comment_1]
- value=
- [projectoptionsfo.comment_B]
- value=
- [projectoptionsfo.comment_M]
- value=
- [projectoptionsfo.makegroupbox]
- firsttab=0
- index=2
- [projectoptionsfo.exceptionsgrid]
- propcolwidthref=738
- width0=47
- sortdescend0=0
- width1=732
- sortdescend1=0
- [projectoptionsfo.ttabwidget1]
- firsttab=0
- index=0
- [projectoptionsfo.filefiltergrid]
- propcolwidthref=646
- width0=112
- sortdescend0=0
- width1=639
- sortdescend1=0
- [projectoptionsfo.ttabwidget2]
- firsttab=0
- index=0
- [projectoptionsfo.tabwidget]
- firsttab=0
- index=2
- [projectoptionsfo]
- stackedunder=
- x=195
- y=170
- cx=787
- cy=570
+projectdir=/home/fred/ideu/src/templates/fpc_fpgui
+projectfilename=/home/fred/ideu/src/templates/fpc_fpgui/fpg_single_unix.prj
 mainfile=${PROJECTDIR}/${PROJECTNAME}.pas
 targetfile=${PROJECTDIR}/${PROJECTNAME}${EXEEXT}
 messageoutputfile=
@@ -722,8 +609,8 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=154
- y=26
+ x=197
+ y=58
  cx=966
  cy=621
  rcx=0
@@ -773,7 +660,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -845,7 +732,7 @@ windowlayout=530
  x=0
  y=0
  cx=139
- cy=433
+ cy=440
  rcx=0
  rcy=0
  [projecttreefo.project_tree]
@@ -1125,7 +1012,7 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1143,9 +1030,9 @@ windowlayout=530
  visible=0
  [componentpalettefo.componentpages]
  activetab=1
- [debuggerfo]
+ [commandor]
  splitdir=0
- useroptions=122987
+ useroptions=24683
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1156,23 +1043,23 @@ windowlayout=530
  x=0
  y=0
  cx=956
- cy=58
+ cy=51
  rcx=0
  rcy=0
- [debuggerfo.basedock]
+ [commandor.basedock]
  splitdir=2
  useroptions=146563
- parent=debuggerfo.container
+ parent=commandor.container
  visible=1
  mdistate=0
  nx=0
- ny=52
- ncx=956
- ncy=6
+ ny=47
+ ncx=929
+ ncy=1
  x=0
- y=52
+ y=47
  cx=956
- cy=6
+ cy=2
  rcx=0
  rcy=0
  [sourcefo]
@@ -1188,7 +1075,7 @@ windowlayout=530
  x=142
  y=0
  cx=814
- cy=433
+ cy=440
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1222,9 +1109,9 @@ windowlayout=530
  ncx=0
  ncy=0
  x=0
- y=61
+ y=54
  cx=956
- cy=433
+ cy=440
  rcx=0
  rcy=0
 [targetconsole]

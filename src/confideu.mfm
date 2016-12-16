@@ -233,7 +233,7 @@ object confideufo: tconfideufo
           '*.sdef'
         )
       )
-      controller.options = [fdo_directory]
+      controller.options = [fdo_sysfilename, fdo_directory]
       controller.captionopen = 'Parent Directory of sakit'
       reffontheight = 15
     end

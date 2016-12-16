@@ -45,7 +45,7 @@ uses
   msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, msetimer, msetabs,
    mseassistiveserver,mseassistiveclient, msegrids, msestrings, msesimplewidgets, msefiledialog,
   msedataedits, mseedit, msekeyboard, msefileutils, msestringcontainer,msedispwidgets,
-  mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact,
+  mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact, msesplitter,
   msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes, mseprocess,
   Math, Classes, Process
   {$IF not DEFINED(Windows)}
@@ -107,8 +107,7 @@ type
 
   isfilelist : boolean;
   isgridsource : boolean;
-  isf4 : boolean;
-  isinit : boolean;
+  isblock : boolean;
     
     procedure doenter(const Sender: iassistiveclient);
     procedure clientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
@@ -133,7 +132,7 @@ type
     procedure ontimergreeting(const sender: TObject);
     function LoadLib: integer;
     procedure espeak_key(Text: msestring);
-    function WhatName(iaSender: iassistiveclient): msestring;
+    function WhatName(iaSender: iassistiveclient; novalue: boolean): msestring;
     function WhatKey(akey : keyty): msestring;
     function WhatChange(iaSender: iassistiveclient) : msestring;
     function FormatCode(acell : msestring) : msestring;
@@ -451,18 +450,7 @@ begin
  end;
 end;
 
-procedure TSAK.dochange(const sender: iassistiveclient);
-begin
-if (WhatName(sender) <> '') and  (isinit = false) then
- begin
-  thetimer.enabled := false;  
-  TheSender := sender;  
-  thetimer.interval := 600000 ;
-  thetimer.ontimer := @ontimerchange;
-  thetimer.enabled := true;
- end;
-end;  
-  
+ 
 // Capture Assistive Procedures
 
 function TSak.WhatKey(akey : keyty): msestring;
@@ -610,15 +598,21 @@ keyname : msestring = '' ;
  result := keyname;
 end;
 
-function TSak.WhatName(iaSender: iassistiveclient): msestring;
+function TSak.WhatName(iaSender: iassistiveclient; novalue: boolean): msestring;
+    
 var
 Sender : Tobject;
+tempstr : msestring;
 begin
+Result := '';
+
+ if assigned(iaSender) then 
+ begin
 
 Sender := iaSender.getinstance;
 
-  Result := '';
-
+   if (Sender is TSplitter) then
+     else
   if (Sender is TLabel) then
     Result := 'label, ' + TLabel(Sender).Caption
   else
@@ -634,35 +628,63 @@ Sender := iaSender.getinstance;
       Result := 'button, ' + TButton(Sender).hint;
   end
   else
- if (Sender is TStringEdit) then
-    Result := 'edit, ' + TStringEdit(Sender).name + ' , ' + TStringEdit(Sender).value
-  else
- if (Sender is tfilelistview) then
+  if (Sender is tfilelistview) then
  begin
  if assigned(tfilelistview(Sender).selectednames) then
     Result := 'file list, ' + tfilelistview(Sender).name + ' , ' + tfilelistview(Sender).selectednames[0]
  else Result := 'file list, ' + tfilelistview(Sender).name ;
   end else
   if (Sender is thistoryedit) then
-    Result := 'edit, ' + thistoryedit(Sender).name + ' , ' + thistoryedit(Sender).value
-  else
+  begin
+   if trim(thistoryedit(Sender).hint) = '' then 
+    Result := 'edit , ' + thistoryedit(Sender).name + ' , ' + formatcode(thistoryedit(Sender).value) else
+    Result := 'edit , ' + thistoryedit(Sender).name  +' , ' + thistoryedit(Sender).hint +  c_linefeed +
+    ' The value, is: ' +  c_linefeed + formatcode(thistoryedit(Sender).value)
+  end else
+  if (Sender is tfilenameedit) then
+  begin
+   if trim(tfilenameedit(Sender).hint) = '' then 
+    Result := 'filename edit, ' + tfilenameedit(Sender).name + ' , ' + formatcode(tfilenameedit(Sender).value) else
+    Result := 'filename edit, ' + tfilenameedit(Sender).name + 
+    ' , ' + tfilenameedit(Sender).hint +  c_linefeed+
+    ' The value, is: ' +  c_linefeed + formatcode(tfilenameedit(Sender).value)
+  end else
   if (Sender is tdirdropdownedit) then
-    Result := 'directory edit, ' + tdirdropdownedit(Sender).name + ' , ' + tdirdropdownedit(Sender).value
+  begin
+  if trim(tdirdropdownedit(Sender).hint) = '' then 
+    Result := 'directory edit, ' + tdirdropdownedit(Sender).name + ' , ' +
+     formatcode(tdirdropdownedit(Sender).value)
+  else  Result := 'directory edit, ' + tdirdropdownedit(Sender).name + ' , ' +
+   tdirdropdownedit(Sender).hint +  c_linefeed +
+    ' The value, is: ' +  c_linefeed + formatcode(tdirdropdownedit(Sender).value)
+ end
+ else
+ if (Sender is TStringEdit) then
+  begin
+  if trim(TStringEdit(Sender).hint) = '' then 
+   Result := ' ' + TStringEdit(Sender).name + ' , ' + TStringEdit(Sender).value 
+    else  Result := ' ' + TStringEdit(Sender).name + ' , ' +
+   TStringEdit(Sender).hint +  c_linefeed +
+    ' The value, is: ' +  c_linefeed + TStringEdit(Sender).text
+// Result := iaSender.getassistivename() + ' , ' +  iaSender.getassistivecaption() + 
+// ' , ' +  iaSender.getassistivetext() +  ' , ';
+ end
   else
   if (Sender is tdropdownlistedit) then
     Result := 'combobox, ' + tdropdownlistedit(Sender).name + ' , ' + tdropdownlistedit(Sender).value
   else
   if (Sender is tdatetimeedit) then
-    Result := 'date edit, ' + tdatetimeedit(Sender).Name
+    Result := 'date edit, ' + tdatetimeedit(Sender).Name + ' , ' + datetostr(tdatetimeedit(Sender).value)
+    + ' , ' + timetostr(tdatetimeedit(Sender).value)
   else
   if (Sender is trealedit) then
-    Result := 'real edit, ' + trealedit(Sender).Name
+    Result := 'real edit, ' + trealedit(Sender).Name + ' , ' + floattostr(trealedit(Sender).value) 
   else
   if (Sender is tintegeredit) then
-    Result := 'integer edit, ' + tintegeredit(Sender).Name
+    Result := 'integer edit, ' + tintegeredit(Sender).Name + ' , ' + inttostr(tintegeredit(Sender).value)
   else
   if (Sender is TMemoEdit) then
-    Result := 'memo, ' + TMemoEdit(Sender).Name
+    Result := 'memo, ' + TMemoEdit(Sender).Name + ' , ' + TMemoEdit(Sender).value
   else
   if (Sender is Twidgetgrid) then
     Result := 'page, ' + Twidgetgrid(Sender).Name
@@ -678,7 +700,8 @@ Sender := iaSender.getinstance;
     Result := 'tab, ' + ttab(Sender).caption
   else
    if (Sender is Ttabwidget) then  
-   Result := 'tabwidget, ' + Ttabwidget(Sender).Name
+   Result := 'tabwidget, ' + Ttabwidget(Sender).Name + ' , active index, ' + 
+   inttostr(Ttabwidget(Sender).activepageindex)
   else
     if (Sender is Ttabbar) then  
     Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
@@ -721,36 +744,59 @@ Sender := iaSender.getinstance;
   else
    if (Sender is tbooleaneditradio) then
   begin
+  
+  if novalue = false then
+  begin
+  if tbooleaneditradio(Sender).value = true then
+   tempstr := 'true' else tempstr := 'false' ;
+  end;
+  
   if assigned(Tbooleaneditradio(Sender).frame) then
   begin
    if (trim(Tbooleaneditradio(Sender).frame.Caption) <> '') then
-     Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).frame.Caption +
+      ' , ' + tempstr
   else
    if (Tbooleaneditradio(Sender).hint <> '') then
-    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
+    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint +
+      ' , ' + tempstr
     else
-     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name +
+      ' , ' + tempstr;
    end else
    if (Tbooleaneditradio(Sender).hint <> '') then
-    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint 
+    Result := 'radio button, ' + Tbooleaneditradio(Sender).hint +
+      ' , ' + tempstr 
     else
-     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name;
+     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name +
+      ' , ' + tempstr;
     end
   else if (Sender is tbooleanedit) then
   begin
+   if novalue = false then
+  begin
+  if Tbooleanedit(Sender).value = true then
+   tempstr := 'true' else tempstr := 'false' ;
+  end;
+  
    if assigned(Tbooleanedit(Sender).frame) then
    begin
     if (trim(Tbooleanedit(Sender).frame.Caption) <> '') then
-      Result := 'checkbox, ' + Tbooleanedit(Sender).frame.Caption
+      Result := 'checkbox, ' + Tbooleanedit(Sender).frame.Caption +
+      ' , ' + tempstr
      else
     if (Tbooleanedit(Sender).hint <> '') then
-      Result := 'checkbox, ' + Tbooleanedit(Sender).hint
+      Result := 'checkbox, ' + Tbooleanedit(Sender).hint +
+      ' , ' + tempstr
     else
-      Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
+      Result := 'checkbox, ' + Tbooleanedit(Sender).Name +
+      ' , ' + tempstr;
    end else if (Tbooleanedit(Sender).hint <> '') then
-      Result := 'checkbox, ' + Tbooleanedit(Sender).hint
+      Result := 'checkbox, ' + Tbooleanedit(Sender).hint +
+      ' , ' + tempstr
     else
-      Result := 'checkbox, ' + Tbooleanedit(Sender).Name;
+      Result := 'checkbox, ' + Tbooleanedit(Sender).Name +
+      ' , ' + tempstr;
     end
    else
      if (Sender is ttoolbar) then
@@ -771,9 +817,16 @@ Sender := iaSender.getinstance;
   end
   else 
   if (Sender is tmainmenu) or (Sender is tmainmenuwidget) or (Sender is tmenu) or  (Sender is tcustommenu) or   (Sender is tpopupmenu)  then
-     Result :=  'menu, ' ;
-//else  if (Sender is twidget) then Result := Sender.classname() + ', ' + Twidget(Sender).Name + ', ' ;
+     Result :=  'menu, '
+  
+     ;
+     
+ // else if (trim(iaSender.getassistivename()) <> '') then Result := iaSender.getassistivename() + ' , ' +  iaSender.getassistivecaption() + 
+ //' , ' +  iaSender.getassistivetext() +  ' , ';
+ 
+ //else  if (Sender is twidget) then Result := Sender.classname() + ', ' + Twidget(Sender).Name + ', ' ;
     
+end;
 end; 
 
 function TSak.WhatChange(iaSender: iassistiveclient) : msestring;
@@ -781,6 +834,10 @@ var
 Sender : Tobject;
 stringtemp : msestring;
 begin
+
+result := '';
+
+if assigned(iaSender) then begin
 
 sender := iaSender.getinstance;
 
@@ -813,32 +870,47 @@ if (Sender is tbooleaneditradio) then
   else
    if (Sender is tslider) then
     Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
-end;
-
-procedure TSAK.ontimergreeting(const sender: TObject);
-begin
-thetimerinit.enabled := false;
- isinit := false;
-thetimerinit.free();
+   end;
 end;
 
 procedure TSAK.ontimerchange(const sender: TObject);
 begin
 thetimer.enabled := false;
  SakCancel;
- espeak_Key(WhatName(TheSender) + WhatChange(TheSender));
+ espeak_Key(WhatName(TheSender,true) + WhatChange(TheSender));
+end;
+
+procedure TSAK.dochange(const sender: iassistiveclient);
+begin
+if assigned(Sender) then
+if (WhatName(sender, true) <> '') and  (isblock = false) then
+ begin
+  thetimer.enabled := false;  
+  TheSender := sender;  
+  thetimer.interval := 800000 ;
+  thetimer.ontimer := @ontimerchange;
+  thetimer.enabled := true;
+ end;
+end; 
+
+procedure TSAK.ontimergreeting(const sender: TObject);
+begin
+thetimerinit.enabled := false;
+ isblock := false;
+thetimerinit.free();
 end;
 
 procedure TSAK.ontimerenter(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_Key(WhatName(TheSender) + ', selected');
+  espeak_Key('selected, ' + WhatName(TheSender,false) );
 end;
 
 procedure TSAK.doenter(const Sender: iassistiveclient);
 begin
-  if (WhatName(Sender) <> '') and  (isinit = false) then
+if assigned(Sender) then
+  if (WhatName(Sender,false) <> '') and  (isblock = false) then
   begin
     thetimer.Enabled := False;
     TheSender := Sender;
@@ -882,9 +954,9 @@ var
   oldlang : msestring;
   oldspeed, oldgender ,oldpitch, oldvolume : integer;
  begin
- if (isinit = false) then
+ if (assigned(Sender)) and
+  (isblock = false) then
   begin
- if info.key = key_f4 then isf4 := true else isf4 := false;
    oldlang := voice_language;
       if voice_gender = '' then
     oldgender := -1 else
@@ -895,32 +967,22 @@ var
   oldpitch := voice_pitch;
   oldvolume := voice_volume;
   TheTypCell := 0 ;
+  WhatCh := info.chars;
+  TheExtraChar := WhatKey(info.key) ;
     
  if (itementer = true) then
   begin
-   TheExtraChar := '';
-      case info.key of
-   key_down: TheExtraChar := 'down, ';
-   key_up: TheExtraChar := 'up, ';
-   key_left: TheExtraChar := 'left, ';
-   key_right: TheExtraChar := 'right, ';
-   key_escape: TheExtraChar := 'escape, ';
-   end;
-   
- if TheExtraChar <> '' then begin
   SAKSetVoice(2,'',150,-1,-1);
- SakCancel;
- espeak_Key(TheExtraChar) ;
+  SakCancel;
+ if TheExtraChar <> '' then  espeak_Key(TheExtraChar)
+ else espeak_Key(WhatCh) ;
  SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
- end;
- 
+ itementer := false;
  end else
   begin
    thetimer.Enabled := False;
    thetimer.ontimer := @ontimerkey;
-    WhatCh := info.chars;
-    TheExtraChar := WhatKey(info.key); 
-       
+         
   if (TheExtraChar <> '') or (WhatCh = '.') then begin
   SakCancel;
   SAKSetVoice(2,'',150,-1,-1);
@@ -930,7 +992,8 @@ var
  end; 
       
  if (Sender.getinstance is Tstringedit) or (Sender.getinstance is Tmemoedit)
-  or (Sender.getinstance is tdirdropdownedit) or (Sender.getinstance is thistoryedit) then  
+  or (Sender.getinstance is tdirdropdownedit) or (Sender.getinstance is thistoryedit) 
+  or (Sender.getinstance is TStringEdit) or (Sender.getinstance is tfilenameedit) then  
   begin 
   if info.key = key_f12 then
   begin
@@ -1018,10 +1081,10 @@ begin
  if (TheMouseinfo.eventkind = ek_mousemove)  then
   begin
 
-if WhatName(TheSender)  <> lastname then
+if WhatName(TheSender, true)  <> lastname then
     begin
       SakCancel;
-      
+    
       if(TheSender.getinstance is tbooleaneditradio) then
   begin
   if tbooleaneditradio(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, ';
@@ -1031,23 +1094,24 @@ if WhatName(TheSender)  <> lastname then
   begin
   if tbooleanedit(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, '; 
   end;
-  
+ 
      if(TheSender.getinstance is tslider) then
   begin
   stringtemp := ' , ' + inttostr(round(tslider(TheSender.getinstance).value * 100)) + ' ,%, '
   end;
-        espeak_Key('left  ' +inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x) + ' , top '+ 
-         inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y) + ' ,  '+ 
-        WhatName(TheSender) + stringtemp + ' focused.');
-      lastname := WhatName(TheSender);
+  
+       espeak_Key('left  ' +inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x) + ' , top '+ 
+         inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y) + ' , focused ,  '+ 
+        WhatName(TheSender, true) + stringtemp );
+      lastname := WhatName(TheSender, true);
     end;
   end
   else
   if (TheMouseinfo.eventkind = ek_buttonpress) then
   begin
     SakCancel;
-    espeak_Key(WhatName(TheSender) + ' clicked.');
-    lastname := WhatName(TheSender);
+    espeak_Key( 'clicked  , ' + WhatName(TheSender, false) );
+    lastname := WhatName(TheSender, false);
   end;
 
 end;
@@ -1055,7 +1119,8 @@ end;
 procedure TSAK.clientmouseevent(const sender: iassistiveclient;
                                            const info: mouseeventinfoty);
  begin
-  if (WhatName(Sender) <> '') and  (isinit = false) then
+ if (assigned(Sender)) then
+  if (WhatName(Sender, false) <> '') and  (isblock = false) then
   begin
     TheSender := Sender;
     TheMouseInfo := info;
@@ -1070,38 +1135,49 @@ procedure TSAK.clientmouseevent(const sender: iassistiveclient;
 
 procedure TSAK.ontimerfocuschange(const Sender: TObject);
 begin
-{
+//{
  thetimer.Enabled := false;
  SakCancel;
- espeak_Key(WhatName(TheSender) + ' has focus');
-  lastname := WhatName(TheSender);
- } 
+ // espeak_Key('a tab has the new focus');
+  espeak_Key('selected, ' + WhatName(TheSender, false));
+ // lastname := WhatName(TheSender);
+  isblock := false;
+// }
 end;
 
 procedure TSAK.dofocuschanged(const oldwidget: iassistiveclient; const newwidget: iassistiveclient);
 begin
-{
-// if (WhatName(newwidget.getinstance) <> '') 
- //and (lastname <> WhatName(newwidget.getinstance))
- //and (newwidget.getinstance is Ttabwidget) 
+//{
+if (assigned(newwidget)) then
+if (WhatName(newwidget,false) <> '') 
+//  and (lastname <> WhatName(newwidget))
+ // and not (newwidget.getinstance is ttabwidget) 
+ //  (newwidget.getinstance is Ttab)
  then
  begin
     thetimer.Enabled := False; 
-    isentered := True;
-    TheSender := newwidget.getinstance;
-    thetimer.interval := 600000;
-    thetimer.ontimer := @ontimerfocuschange;
-    thetimer.Enabled := True;
+  // SakCancel;
+   
+   // espeak_Key(WhatName(newwidget) + ' has the newfocus');
+ //   lastname := WhatName(newwidget);
+ //isentered := True;
+   TheSender := newwidget;
+   thetimer.interval := 700000;
+   thetimer.ontimer := @ontimerfocuschange;
+   thetimer.Enabled := True;
+   isblock := true;
   //  itementer:= true;
  end;
-}
+//}
+
 end;
 
 procedure TSAK.ontimeritementer(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_key(WhatName(TheSender) + ', ' + TheMenuInfo[TheMenuIndex].buttoninfo.ca.caption.text + ' , focused');
+  espeak_key('focused, ' + WhatName(TheSender, false) + ', ' + 
+  TheMenuInfo[TheMenuIndex].buttoninfo.ca.caption.text );
   itementer:= false;
  end;
  
@@ -1109,14 +1185,16 @@ begin
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_key(WhatName(TheSender) + ', ' + TheItemInfo[TheMenuIndex].ca.caption.text + ' , focused');
+  espeak_key('focused, ' +  WhatName(TheSender, false) + ', ' + 
+  TheItemInfo[TheMenuIndex].ca.caption.text );
   itementer:= true;
  end;
 
 procedure  TSAK.doitementer(const sender: iassistiveclient; //sender can be nil
                             const items: shapeinfoarty; const aindex: integer);
 begin
- if (WhatName(Sender) <> '') and  (isinit = false) then
+if (assigned(Sender)) then
+ if (WhatName(Sender, false) <> '') and  (isblock = false) then
   begin
     thetimer.Enabled := False; 
     TheSender := Sender;
@@ -1132,7 +1210,8 @@ end;
 procedure TSAK.doitementer(const sender: iassistiveclient;
                         const items: menucellinfoarty; const aindex: integer);
 begin
- if (WhatName(Sender) <> '') and  (isinit = false) then
+if (assigned(Sender)) then
+ if (WhatName(Sender, false) <> '') and  (isblock = false) then
   begin
     thetimer.Enabled := False; 
     TheSender := Sender;
@@ -1202,12 +1281,12 @@ while pos('\',formatcell)  > 0 do
    if pos('\',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('\',formatcell)-1) + ' , back slash , ' +
    copy(formatcell,pos('\',formatcell)+1, length(formatcell) - pos('\',formatcell)+1  );
 
-while pos('{',formatcell)  > 0 do
-   if pos('{',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('{',formatcell)-1) + ' , opening braket , ' +
+while pos('{',formatcell)  > 0 do 
+   if pos('{',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('{',formatcell)-1) + ' , brace left , ' +
    copy(formatcell,pos('{',formatcell)+1, length(formatcell) - pos('{',formatcell)+1  );
 
 while pos('}',formatcell)  > 0 do
-   if pos('}',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('}',formatcell)-1) + ' , closing braket , ' +
+   if pos('}',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('}',formatcell)-1) + ' , brace right , ' +
    copy(formatcell,pos('}',formatcell)+1, length(formatcell) - pos('}',formatcell)+1  );
    
 while pos('<',formatcell)  > 0 do
@@ -1222,7 +1301,7 @@ while pos('''',formatcell) > 0 do
    if pos('''',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('''',formatcell)-1) + ' , apostrophe , ' +
    copy(formatcell,pos('''',formatcell)+1, length(formatcell) - pos('''',formatcell)+1  );
   
-while pos('"',formatcell)  > 0 do
+while pos('"',formatcell)  > 0 do 
    if pos('"',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('"',formatcell)-1) + ' , two apostrophes , ' +
    copy(formatcell,pos('"',formatcell)+1, length(formatcell) - pos('"',formatcell)+1  );
 
@@ -1239,7 +1318,7 @@ while pos('$',formatcell)  > 0 do
    copy(formatcell,pos('$',formatcell)+1, length(formatcell) - pos('$',formatcell)+1  );
    
    while pos('_',formatcell)  > 0 do
-   if pos('_',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('_',formatcell)-1) + ' , bottom line , ' +
+   if pos('_',formatcell)  > 0 then formatcell := copy(formatcell,1,pos('_',formatcell)-1) + ' , underscore , ' +
    copy(formatcell,pos('_',formatcell)+1, length(formatcell) - pos('_',formatcell)+1  );
 
    while pos('[',formatcell)  > 0 do
@@ -1299,8 +1378,8 @@ var
  lrkeyused : boolean = false;
  gridcoo : gridcoordty;
 begin
-
-if (isinit = false) then
+if (assigned(Sender)) and
+  (isblock = false) then
   begin
  if (Sender.getinstance is Twidgetgrid) then isgridsource := true else
  isgridsource := false;
@@ -1521,7 +1600,7 @@ end  else
   
   thetimerinit.ontimer := @ontimergreeting;
   thetimerinit.enabled := true; 
-  isinit := true;
+  isblock := true;
   
   espeak_Key(greeting);
   
