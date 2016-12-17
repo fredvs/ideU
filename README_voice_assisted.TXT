@@ -9,16 +9,21 @@ For Windows system:
 The first time you run ideU the setting form will appear focused on the path tab.
 Using the arrow up/down keys, you may check the path of fpc compiler and debugger.
 
-For navigating to other tab:
-- Alt + P : path tab.
-- Alt + M : macros tab.
-- Alt + S : shortcut tab.
-- Alt + T : other tab.
+For navigating to other setting tab:
+- Alt+P : Path tab.
+- Alt+M : Macros tab.
+- Alt+S : Shortcut tab.
+- Alt+T : Other tab.
+
 For beginning, check only the path tab.
 
-When all is ok, use Alt+O key to save and close the form and then Alt+F+X to close ideU.
+Later you may configure the shortcuts: Alt+S to select the shortcut tab then with the down key, select the shortcut button. Press Enter key.
+The shortcut window will be activated.
+Use the up/down key to select a action and then the right key to assign a shortcut to that action. Just after that, choose a combination of Alt or Ctrl + the wanted key. Go back to a other action with Up key. Use Alt+O to close the shortcut form.
 
-There is a voice assisted "Hello World" demo.
+When all is ok in configuration, use Alt+O key to save and close the setting form and then Alt+F+X to close ideU.
+
+There is a voice assisted "Hello World" demo. 
 
 To load it on Unix system:
 # /directory/of/ideU/ideU -va /directory/of/ideU/demos/voiceassist/helloworld/helloworld.prj
@@ -30,7 +35,7 @@ You may use Alt+Tab key to navigate between forms.
 
 For this project there will be:
 
-- The main menu form. Each menu-item is accessible by Alt + some key. (up/down keys allowed for sub-menu).
+- The main menu form. Each menu-item is accessible by Alt + some key. (Up/Down keys allowed for sub-menu).
 - The source-code editor. (accessible too with Alt+V+U key)
 - The messages from the compiler. (accessible too with Alt+V+M key)
 - The target console. (accessible too with Alt+V+T key)
