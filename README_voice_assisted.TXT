@@ -6,8 +6,16 @@ For Unix system: (The last character of ideU is a U majuscule)
 For Windows system:
 #  C:\directory\of\ideU\ideU.exe -va
 
-The first time you run ideU the setting form will appear.
+The first time you run ideU the setting form will appear focused on the path tab.
 Using the arrow up/down keys, you may check the path of fpc compiler and debugger.
+
+For navigating to other tab:
+- Alt + P : path tab.
+- Alt + M : macros tab.
+- Alt + S : shortcut tab.
+- Alt + T : other tab.
+For beginning, check only the path tab.
+
 When all is ok, use Alt+O key to save and close the form and then Alt+F+X to close ideU.
 
 There is a voice assisted "Hello World" demo.

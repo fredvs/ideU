@@ -1,16 +1,16 @@
 object confideufo: tconfideufo
   visible = False
-  bounds_x = 518
-  bounds_y = 197
-  bounds_cx = 332
-  bounds_cy = 257
+  bounds_x = 390
+  bounds_y = 209
+  bounds_cx = 321
+  bounds_cy = 290
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    332
-    257
+    321
+    290
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Extra Settings of ideU'
@@ -71,38 +71,19 @@ object confideufo: tconfideufo
   }
   moduleclassname = 'tmseform'
   object ok: tbutton
+    skingroup = 4
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
     taborder = 3
-    bounds_x = 130
-    bounds_y = 229
+    bounds_x = 126
+    bounds_y = 264
     bounds_cx = 63
     bounds_cy = 21
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
     reffontheight = 15
-  end
-  object nozorderenable: tbooleanedit
-    optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
-    frame.caption = 'No Z order handling'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      124
-      2
-    )
-    taborder = 2
-    hint = 'No focus on menu-item when mouse-move on it.'
-    bounds_x = 94
-    bounds_y = 203
-    bounds_cx = 137
-    bounds_cy = 17
-    onchange = zorderhandle
-    value = True
   end
   object group_file_chaned: tgroupbox
     frame.caption = 'When a file has changed from outside...'
@@ -114,9 +95,9 @@ object confideufo: tconfideufo
       0
       0
     )
-    bounds_x = 8
-    bounds_y = 6
-    bounds_cx = 317
+    bounds_x = 4
+    bounds_y = 2
+    bounds_cx = 312
     bounds_cy = 89
     object tbfileaskload: tbooleaneditradio
       frame.caption = '  A dialog box ask what to do...'
@@ -129,8 +110,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 2
-      bounds_x = 20
-      bounds_y = 59
+      bounds_x = 23
+      bounds_y = 61
       bounds_cx = 203
       bounds_cy = 17
     end
@@ -145,8 +126,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 1
-      bounds_x = 20
-      bounds_y = 39
+      bounds_x = 23
+      bounds_y = 41
       bounds_cx = 239
       bounds_cy = 17
     end
@@ -160,8 +141,8 @@ object confideufo: tconfideufo
         241
         2
       )
-      bounds_x = 20
-      bounds_y = 19
+      bounds_x = 23
+      bounds_y = 21
       bounds_cx = 254
       bounds_cy = 17
       value = True
@@ -178,9 +159,9 @@ object confideufo: tconfideufo
       0
     )
     taborder = 1
-    bounds_x = 8
-    bounds_y = 105
-    bounds_cx = 320
+    bounds_x = 4
+    bounds_y = 99
+    bounds_cx = 312
     bounds_cy = 88
     object tbassistive: tbooleanedit
       frame.caption = 'Enable sak assistive at loading'
@@ -192,14 +173,15 @@ object confideufo: tconfideufo
         186
         2
       )
-      bounds_x = 55
-      bounds_y = 65
+      taborder = 1
+      bounds_x = 42
+      bounds_y = 64
       bounds_cx = 199
       bounds_cy = 17
     end
     object tesakitdir: tfilenameedit
-      Tag = 4
-      frame.colorclient = 16777169
+      Tag = 3
+      frame.colorclient = 14876625
       frame.caption = 'Parent directory of sakit'
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
@@ -215,27 +197,72 @@ object confideufo: tconfideufo
         0
         0
       )
-      taborder = 1
-      hint = 'Directory for syntax definition files.'
-      bounds_x = 13
-      bounds_y = 20
-      bounds_cx = 302
+      hint = 'Parent directory of sakit'
+      bounds_x = 7
+      bounds_y = 16
+      bounds_cx = 299
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = '${IDEUDIR}/plugin'
-      onsetvalue = setvalue
       controller.filename = '${IDEUDIR}/plugin/'
       controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/plugin/'
-      controller.basedir = '${IDEUDIR}/plugin/'
-      controller.filterlist.data = (
-        (
-          'Syntax definitions'
-          '*.sdef'
-        )
-      )
       controller.options = [fdo_sysfilename, fdo_directory]
-      controller.captionopen = 'Parent Directory of sakit'
+      controller.captionopen = 'MSEgui library directory'
       reffontheight = 15
+    end
+  end
+  object group_system_layout: tgroupbox
+    frame.caption = 'System layout'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      8
+      0
+      0
+    )
+    taborder = 2
+    bounds_x = 4
+    bounds_y = 195
+    bounds_cx = 312
+    bounds_cy = 64
+    object universal_path: tbooleanedit
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
+      frame.caption = 'Universal directory layout'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        157
+        2
+      )
+      taborder = 1
+      hint = 'Use the mse universal directory layout'
+      bounds_x = 69
+      bounds_y = 40
+      bounds_cx = 170
+      bounds_cy = 17
+      onchange = dirlayout
+    end
+    object nozorderenable: tbooleanedit
+      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
+      frame.caption = 'No Z order handling'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        124
+        2
+      )
+      hint = 'No focus on menu-item when mouse-move on it.'
+      bounds_x = 69
+      bounds_y = 19
+      bounds_cx = 137
+      bounds_cy = 17
+      onchange = zorderhandle
+      value = True
     end
   end
 end

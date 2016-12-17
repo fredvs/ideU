@@ -143,6 +143,7 @@ type
                              var accept: Boolean);
    procedure editshortcuts(const sender: TObject);
    procedure setfocus(const sender: TObject);
+   procedure checkdirlayout(const sender: TObject);
   private
    fshortcutcontroller: tshortcutcontroller;
   protected
@@ -166,7 +167,7 @@ function editsettings(const acaption: msestring = '';
  
 implementation
 uses
- ideusettings_mfm,classes,mclasses,msesysintf,msefileutils,mseshortcutdialog;
+ideusettings_mfm,classes,confideu,mclasses,msesysintf,msefileutils,mseshortcutdialog;
  
 function getsettingsmacros1(var amacros: settingsmacrosty): macroinfoarty;
 var
@@ -380,6 +381,34 @@ end;
 }
 
 
+end;
+
+procedure tsettingsfo.checkdirlayout(const sender: TObject);
+begin
+if confideufo.universal_path.value = false then
+begin
+compiler.controller.options := [fdo_sysfilename,fdo_savelastdir] ;
+debugger.controller.options := [fdo_sysfilename,fdo_savelastdir] ;
+msedir.controller.options := [fdo_sysfilename,fdo_directory] ;
+compstoredir.controller.options := [fdo_sysfilename,fdo_directory] ;
+fpguidir.controller.options := [fdo_sysfilename,fdo_directory] ;
+docviewdir.controller.options := [fdo_sysfilename,fdo_directory] ;
+templatedir.controller.options := [fdo_sysfilename,fdo_directory] ;
+syntaxdefdir.controller.options := [fdo_sysfilename,fdo_directory] ;
+layoutdir.controller.options := [fdo_sysfilename,fdo_directory] ;
+end else
+begin
+compiler.controller.options := [fdo_savelastdir];
+debugger.controller.options := [fdo_savelastdir] ;
+msedir.controller.options := [fdo_directory] ;
+mselibdir.controller.options := [fdo_directory] ;
+compstoredir.controller.options := [fdo_directory] ;
+fpguidir.controller.options := [fdo_directory] ;
+docviewdir.controller.options := [fdo_directory] ;
+templatedir.controller.options := [fdo_directory] ;
+syntaxdefdir.controller.options := [fdo_directory] ;
+layoutdir.controller.options := [fdo_directory] ;
+end;
 end;
 
 end.

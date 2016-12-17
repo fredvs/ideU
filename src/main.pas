@@ -658,9 +658,8 @@ sourcefo.hidesourcehint;
    confcompilerfo.fpccompiler6.value  := gINI.ReadString('fpc', 'compiler6', '');
     confcompilerfo.fpccompiler7.value  := gINI.ReadString('fpc', 'compiler7', '');
    confcompilerfo.fpccompiler8.value  := gINI.ReadString('fpc', 'compiler8', '');
-  
-    
- confcompilerfo.twinej1.value := gINI.ReadBool('java', 'winej1', false);
+      
+  confcompilerfo.twinej1.value := gINI.ReadBool('java', 'winej1', false);
   confcompilerfo.twinej2.value := gINI.ReadBool('java', 'winej2', false);
   confcompilerfo.twinej3.value := gINI.ReadBool('java', 'winej3', false);
   confcompilerfo.twinej4.value := gINI.ReadBool('java', 'winej4', false);
@@ -717,6 +716,10 @@ sourcefo.hidesourcehint;
   conffpguifo.tbfpgonlyone.value := gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', true); 
    
   confideufo.nozorderenable.value := gINI.Readbool('nozorder', 'general', true); 
+
+  confideufo.universal_path.value := gINI.Readbool('universaldir', 'general', false); 
+  
+  confideufo.dirlayout(nil);
   
   if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
  nozorderhandling:= false;
@@ -796,8 +799,10 @@ begin
   gINI.writebool('Completion', 'proplist', true); 
  
   gINI.writebool('Assistive', 'sak', confideufo.tbassistive.value); 
-  gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.text);   
+  gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.text); 
   
+  gINI.writebool('universaldir', 'general', confideufo.universal_path.value); 
+ 
   gINI.writeBool('ifhide', 'designer_fpGUI', conffpguifo.ifhide.value);
   gINI.writeString('edhide', 'designer_fpGUI', conffpguifo.edhide.text);  
   

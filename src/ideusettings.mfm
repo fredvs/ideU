@@ -1,8 +1,8 @@
 object settings_form: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 424
-  bounds_y = 164
+  bounds_x = 159
+  bounds_y = 141
   bounds_cx = 471
   bounds_cy = 446
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
@@ -74,6 +74,7 @@ object settings_form: tsettingsfo
     00000000
   }
   oncreate = formoncreate
+  onshow = checkdirlayout
   moduleclassname = 'tmseform'
   object setting_tab: ttabwidget
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -443,7 +444,7 @@ object settings_form: tsettingsfo
           0
           0
         )
-        hint = 'Path to compiler (ppc386).'
+        hint = 'Path to compiler'
         bounds_x = 6
         bounds_y = 6
         bounds_cx = 449
