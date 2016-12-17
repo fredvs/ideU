@@ -85,7 +85,7 @@ object confideufo: tconfideufo
     modalresult = mr_ok
     reffontheight = 15
   end
-  object group_file_chaned: tgroupbox
+  object group_file_changed: tgroupbox
     frame.caption = 'When a file has changed from outside...'
     frame.localprops = []
     frame.localprops1 = []
@@ -227,7 +227,6 @@ object confideufo: tconfideufo
     bounds_cx = 312
     bounds_cy = 64
     object universal_path: tbooleanedit
-      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
       frame.caption = 'Universal directory layout'
       frame.localprops = []
       frame.localprops1 = []
@@ -246,7 +245,6 @@ object confideufo: tconfideufo
       onchange = dirlayout
     end
     object nozorderenable: tbooleanedit
-      optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_destroywidgets]
       frame.caption = 'No Z order handling'
       frame.localprops = []
       frame.localprops1 = []

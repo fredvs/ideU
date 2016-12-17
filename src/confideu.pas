@@ -11,7 +11,7 @@ uses
 type
  tconfideufo = class(tmseform)
    ok: tbutton;
-   group_file_chaned: tgroupbox;
+   group_file_changed: tgroupbox;
    group_assistive: tgroupbox;
    group_system_layout: tgroupbox;
    tbfileaskload: tbooleaneditradio;

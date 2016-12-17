@@ -634,7 +634,7 @@ Sender := iaSender.getinstance;
     Result := 'file list, ' + tfilelistview(Sender).name + ' , ' + tfilelistview(Sender).selectednames[0]
  else Result := 'file list, ' + tfilelistview(Sender).name ;
   end else
-  if (Sender is thistoryedit) then
+   if (Sender is thistoryedit) then
   begin
    if trim(thistoryedit(Sender).hint) = '' then 
     Result := 'edit , ' + thistoryedit(Sender).name + ' , ' + formatcode(thistoryedit(Sender).value) else
@@ -787,7 +787,21 @@ Sender := iaSender.getinstance;
      Result := 'radio button, ' + Tbooleaneditradio(Sender).Name +
       ' , ' + tempstr;
     end
-  else if (Sender is tbooleanedit) then
+    else if (Sender is tgroupbox) then
+    begin
+     if assigned(tgroupbox(Sender).frame) then
+   begin
+    if (trim(tgroupbox(Sender).frame.Caption) <> '') then
+      Result := 'groupbox, ' + tgroupbox(Sender).frame.Caption +
+      ' , ' + tempstr
+     else
+      Result := 'groupbox, ' + tgroupbox(Sender).Name +
+      ' , ' + tempstr;
+   end else
+      Result := 'checkbox, ' + tgroupbox(Sender).Name +
+      ' , ' + tempstr;
+    end
+   else if (Sender is tbooleanedit) then
   begin
    if novalue = false then
   begin

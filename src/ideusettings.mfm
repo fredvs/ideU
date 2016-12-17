@@ -474,7 +474,6 @@ object settings_form: tsettingsfo
       caption = '  &Macros  '
       reffontheight = 15
       object macrogrid: twidgetgrid
-        optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
         frame.caption = 'Global Macros'
         frame.localprops = []
         frame.localprops1 = []
