@@ -2,7 +2,7 @@ object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 345
-  bounds_y = 139
+  bounds_y = 140
   bounds_cx = 372
   bounds_cy = 399
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -1425,6 +1425,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
+        reffontheight = 15
+      end
+      object tlabel5: tlabel
+        taborder = 8
+        bounds_x = 7
+        bounds_y = 26
+        bounds_cx = 55
+        bounds_cy = 15
+        caption = 'Emulator'
         reffontheight = 15
       end
     end

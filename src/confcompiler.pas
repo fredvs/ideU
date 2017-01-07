@@ -77,6 +77,7 @@ uses
    tlabel3: tlabel;
    tlabel4: tlabel;
    but_ok: tbutton;
+   tlabel5: tlabel;
    procedure closeapp(const sender: TObject);
  end;
 var

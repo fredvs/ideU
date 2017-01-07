@@ -18,7 +18,7 @@ unit sak_mse;
 *  1 th release: 2013-06-15  (multi objects, multi forms)                      *
 *******************************************************************************}
     {
-    Copyright (C) 2013 - 2016  Fred van Stappen
+    Copyright (C) 2013 - 2017  Fred van Stappen
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -848,7 +848,12 @@ Sender := iaSender.getinstance;
   else 
   if (Sender is tmainmenu) or (Sender is tmainmenuwidget) or (Sender is tmenu) or  (Sender is tcustommenu) or   (Sender is tpopupmenu)  then
      Result :=  'menu, '
-  
+  else
+   if (Sender is tmessagewidget) then Result := 
+     'message, ' +
+   
+   iaSender.getassistivename() + ' , ' +  iaSender.getassistivecaption() + 
+ ' , ' +  iaSender.getassistivetext() +  ' , '
      ;
      
  // else if (trim(iaSender.getassistivename()) <> '') then Result := iaSender.getassistivename() + ' , ' +  iaSender.getassistivecaption() + 
@@ -934,7 +939,9 @@ procedure TSAK.ontimerenter(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_Key('selected, ' + WhatName(TheSender,false) );
+  if (TheSender.getinstance is tmessagewidget) then
+  espeak_Key(WhatName(TheSender,false) + ', press enter to quit.' )
+  else  espeak_Key('selected, ' + WhatName(TheSender,false) ) ;
 end;
 
 procedure TSAK.doenter(const Sender: iassistiveclient);
