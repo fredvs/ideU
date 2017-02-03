@@ -21,6 +21,7 @@ type
    tesakitdir: tfilenameedit;
    universal_path: tbooleanedit;
    nozorderenable: tbooleanedit;
+   doubleclic: tbooleanedit;
    procedure zorderhandle(const sender: TObject);
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);

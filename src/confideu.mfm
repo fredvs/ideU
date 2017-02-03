@@ -1,16 +1,16 @@
 object confideufo: tconfideufo
   visible = False
-  bounds_x = 390
-  bounds_y = 209
+  bounds_x = 398
+  bounds_y = 144
   bounds_cx = 321
-  bounds_cy = 290
+  bounds_cy = 317
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     321
-    290
+    317
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Extra Settings of ideU'
@@ -76,8 +76,8 @@ object confideufo: tconfideufo
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
     taborder = 3
-    bounds_x = 126
-    bounds_y = 264
+    bounds_x = 129
+    bounds_y = 288
     bounds_cx = 63
     bounds_cy = 21
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
@@ -225,7 +225,7 @@ object confideufo: tconfideufo
     bounds_x = 4
     bounds_y = 195
     bounds_cx = 312
-    bounds_cy = 64
+    bounds_cy = 87
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -261,6 +261,24 @@ object confideufo: tconfideufo
       bounds_cy = 17
       onchange = zorderhandle
       value = True
+    end
+    object doubleclic: tbooleanedit
+      frame.caption = 'Use shift key to select a word'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        180
+        2
+      )
+      taborder = 2
+      hint = 'Use shift + 2x click to select a word.'
+      bounds_x = 68
+      bounds_y = 62
+      bounds_cx = 193
+      bounds_cy = 17
+      onchange = dirlayout
     end
   end
 end

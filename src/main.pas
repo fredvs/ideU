@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.4.1';
+ versiontext = '1.4.2';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -721,6 +721,9 @@ sourcefo.hidesourcehint;
   
   confideufo.dirlayout(nil);
   
+  confideufo.doubleclic.value := gINI.ReadBool('2xclick', 'sourcepage', false);
+ 
+  
   if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
  nozorderhandling:= false;
      
@@ -790,6 +793,8 @@ begin
   
   gINI.writeBool('ifshow', 'designer_fpGUI', conffpguifo.ifshow.value);
   gINI.writeString('edshow', 'designer_fpGUI', conffpguifo.edshow.text); 
+  
+  gINI.writeBool('2xclick', 'sourcepage', confideufo.doubleclic.value);
   
   gINI.writebool('nozorder', 'general', confideufo.nozorderenable.value);  
   
