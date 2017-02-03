@@ -626,12 +626,24 @@ var
  cellpos1: cellpositionty;
  
 begin
+
+ if confideufo.doubleclic.value = true then // fred double click
+    begin
  if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate = [ss_double]) then begin
   include(info.mouseeventinfopo^.eventstate,es_processed);
   breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
- end;
+ end; end else
+ begin
+ if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
+           (dataicon[info.cell.row] and integer($80000000) <> 0)and 
+           (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left]) 
+  then begin
+  include(info.mouseeventinfopo^.eventstate,es_processed);
+  breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
+ end; end;
+  
  case info.eventkind of
   cek_exit: begin
    edit.removelink;

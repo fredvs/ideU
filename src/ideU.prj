@@ -218,7 +218,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=1
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=646
  width0=112
@@ -230,7 +230,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -485,7 +485,7 @@ makeoptions=8
  -Mobjfpc -Sh -Fcutf8
  -gl -O -Crtoi
  -B
- -O2 -Xs -CX -XX
+ -O4 -Xs -CX -XX
  -ghl
  -vi
  -WG
@@ -728,8 +728,8 @@ makeoptionson=8
  48
  4095
 compilerusedon=29
- 4091
- 4
+ 69631
+ 0
  0
  0
  0
@@ -758,14 +758,14 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4095
+ 69631
  0
  0
  0
  0
  0
 exeusedon=14
- 4095
+ 69631
  0
  0
  0
@@ -796,7 +796,7 @@ project_creator=
 project_copyright=
 project_license=
 project_time=
-project_date=00:46:04 08/01/2017
+project_date=
 project_comment=
 aftcommandon=0
 unitdirson=6
@@ -1276,8 +1276,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=readc
+finddtext=// fred double click
 findhistory=20
+ // fred double click
+ fred
+ etbreakpointstate
  readc
  isdblclicked
  ss_double
@@ -1295,16 +1298,14 @@ findhistory=20
  debuggerfo.
  debuggerfo
  commandor
- thetimer.en
- ontimerg
- loadlib
 findoptions=1
-editpos=7
- 0,-1073741823
- 21,29
+editpos=8
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,628
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1314,7 +1315,8 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1322,7 +1324,8 @@ sourcefiles=7
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/confideu.pas
-relpaths=7
+ /home/fred/msegui/lib/common/editwidgets/msegraphedits.pas
+relpaths=8
  ideU.pas
  main.pas
  confcompiler.pas
@@ -1330,11 +1333,13 @@ relpaths=7
  sak_mse.pas
  sourcepage.pas
  confideu.pas
-ismoduletexts=7
+ msegui/lib/common/editwidgets/msegraphedits.pas
+ismoduletexts=8
  0
  0
  0
  -1
+ 0
  0
  0
  0
@@ -1345,23 +1350,24 @@ moduleoptions=2
  0
  0
 visiblemodules=2
- -1
+ 0
  -1
 nomenumodules=2
  0
  0
 [sourcefo.files_tab]
-order=7
+order=8
  0
  1
- 5
- 6
  2
- 4
  3
+ 4
+ 5
+ 7
+ 6
 tabsize=60
 firsttab=0
-index=1
+index=5
 [layout]
 windowlayout=564
  [mainfo.basedock]
@@ -1389,8 +1395,8 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=165
- y=143
+ x=233
+ y=53
  cx=939
  cy=621
  rcx=0
@@ -1562,7 +1568,7 @@ windowlayout=564
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=332
+ propcolwidthref=352
  sortdescend0=0
  values1=1
   0
@@ -1571,7 +1577,7 @@ windowlayout=564
  sortdescend1=0
  values2=1
   pinteger(0x126c6b4)^
- width2=149
+ width2=158
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1582,7 +1588,7 @@ windowlayout=564
  sortdescend5=0
  values6=1
   
- width6=172
+ width6=184
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1615,8 +1621,8 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=733
- y=180
+ x=670
+ y=179
  cx=316
  cy=484
  rcx=0
@@ -1626,9 +1632,9 @@ windowlayout=564
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=126
+ width0=73
  sortdescend0=0
- width1=174
+ width1=227
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1858,7 +1864,7 @@ windowlayout=564
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1893,7 +1899,7 @@ windowlayout=564
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_confideufo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1908,7 +1914,7 @@ windowlayout=564
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
