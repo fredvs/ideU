@@ -4,7 +4,7 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses,mseforms,msegraphics,msegraphutils,mseguiglob,msemenus,
+ msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,msemenus,
  msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
@@ -53,7 +53,8 @@ type
    procedure listonexecute(const sender: TObject);
    procedure findinpage(const sender: TObject);
    procedure shownum(const sender: TObject);
-
+   procedure onscale(const sender: TObject);
+   constructor create(aowner: tcomponent); override;
    procedure paintdock(const sender: twidget; const acanvas: tcanvas);
    procedure assistiveactonexecute(const sender: TObject);
    end;
@@ -63,6 +64,19 @@ implementation
 uses
  commandorform_mfm, actionsmodule, breakpointsform, main, sourceform, projectoptionsform ;
 
+procedure tdebuggerfo.onscale(const sender: TObject);
+begin
+// fred
+//basedock.bounds_y:= statdisp.bottom + 1;
+basedock.bounds_y:= 0;
+basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+end;
+
+constructor tdebuggerfo.create(aowner: tcomponent);
+begin
+  inherited create(aowner);
+  onscale(nil);
+end;
 
 procedure tdebuggerfo.breakonexecute(const sender: TObject);
 begin
@@ -153,6 +167,7 @@ end;
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
 begin
 // paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
+onscale(nil);
 end;
 
 procedure tdebuggerfo.assistiveactonexecute(const sender: TObject);

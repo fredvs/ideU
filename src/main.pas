@@ -2036,9 +2036,10 @@ end;
 
 procedure tmainfo.onscale(const sender: TObject);
 begin
+// fred
 basedock.bounds_y:= 0;
 // basedock.bounds_y:= statdisp.bottom + 1;
-// basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
 end;
 
 procedure tmainfo.parametersonexecute(const sender: TObject);

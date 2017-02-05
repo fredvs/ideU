@@ -627,22 +627,17 @@ var
  
 begin
 
- if confideufo.doubleclic.value = true then // fred double click
-    begin
- if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
+ if  ((confideufo.doubleclic.value = true) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
-           (info.mouseeventinfopo^.shiftstate = [ss_double]) then begin
-  include(info.mouseeventinfopo^.eventstate,es_processed);
-  breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
- end; end else
- begin
- if iscellclick(info,[ccr_nokeyreturn,ccr_dblclick]) and 
-           (dataicon[info.cell.row] and integer($80000000) <> 0)and 
-           (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left]) 
+           (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left])))
+            or // fred double click
+  ((confideufo.doubleclic.value = false) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
+           (dataicon[info.cell.row] and integer($80000000) <> 0) and
+           (info.mouseeventinfopo^.shiftstate = [ss_double])))         
   then begin
   include(info.mouseeventinfopo^.eventstate,es_processed);
   breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
- end; end;
+  end; 
   
  case info.eventkind of
   cek_exit: begin
@@ -1235,10 +1230,10 @@ begin
      end;
     end
     else begin
-    if confideufo.doubleclic.value = true then // fred double click
-    begin
-     if edit.isdblclicked(info.mouseeventinfopo^) 
-     and (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left]) 
+       if ((confideufo.doubleclic.value = true) and (edit.isdblclicked(info.mouseeventinfopo^)) 
+     and (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left])) 
+     or // fred double click
+     ((confideufo.doubleclic.value = false) and (edit.isdblclicked(info.mouseeventinfopo^))) 
      then begin
       if ss_triple in info.mouseeventinfopo^.shiftstate then begin
        edit.setselection(makegridcoord(0,edit.row),
@@ -1250,22 +1245,7 @@ begin
       copytoclipboard(edit.selectedtext,cbb_primary);
       include(info.mouseeventinfopo^.eventstate,es_processed);
      end; 
-    end else
-    begin
-     if edit.isdblclicked(info.mouseeventinfopo^) 
-      then begin
-      if ss_triple in info.mouseeventinfopo^.shiftstate then begin
-       edit.setselection(makegridcoord(0,edit.row),
-                            makegridcoord(bigint,edit.row),true);
-      end
-      else begin
-       edit.selectword(info.pos,pascaldelims+'.[]');
-      end;
-      copytoclipboard(edit.selectedtext,cbb_primary);
-      include(info.mouseeventinfopo^.eventstate,es_processed);
-     end;
-     end; 
-    end
+    end; 
    end;
   end;
  end;
