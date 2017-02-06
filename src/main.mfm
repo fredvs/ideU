@@ -11,7 +11,7 @@ object mainfo: tmainfo
   bounds_x = 303
   bounds_y = 155
   bounds_cx = 697
-  bounds_cy = 21
+  bounds_cy = 48
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -26,7 +26,7 @@ object mainfo: tmainfo
     0
     17
     687
-    4
+    31
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -304,7 +304,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 14
+        submenu.count = 15
         submenu.items = <        
           item
             action = actionsmo.selecteditpage
@@ -355,6 +355,11 @@ object mainfo: tmainfo
           item
             action = actionsmo.delete
             caption = ' &Delete '
+            state = [as_localcaption]
+          end        
+          item
+            action = actionsmo.selectall
+            caption = ' Select &All '
             state = [as_localcaption]
           end        
           item
