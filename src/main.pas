@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.4.2';
+ versiontext = '1.4.3';
  idecaption = 'ideU';
  statname = 'ideu';
 

@@ -3,9 +3,6 @@ object projecttreefo: tprojecttreefo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
-  frame.grip_grip = stb_dens100
-  frame.grip_color = 12434877
-  frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
   visible = False
   bounds_x = 263
@@ -22,40 +19,16 @@ object projecttreefo: tprojecttreefo
     201
   )
   dragdock.splitter_size = 0
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Project Tree'
-  icon.origformat = 'bmp'
-  icon.image = {
-    0000000000000000100000001000000050020000000000000000000000000000
-    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
-    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
-    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
-    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
-    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
-    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
-    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
-    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
-    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
-    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
-    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
-    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
-    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
-    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
-    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
-    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
-    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
-    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
-    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
-    FFFFFF02
-  }
   oncreate = projecttreefooncreate
   oneventloopstart = projecttreefoonloaded
   ondestroy = projecttreefoondestroy
   onstatupdate = projecttreeonupdatestat
   moduleclassname = 'tdockform'
-  object project_tree: twidgetgrid
+  object grid: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     frame.localprops = []
     frame.localprops1 = []
@@ -92,10 +65,10 @@ object projecttreefo: tprojecttreefo
         widgetname = 'edit'
         dataclass = titemeditlist
       end>
-    datarowheight = 16
+    datarowheight = 15
     statfile = mainfo.projectstatfile
     oncellevent = gridcellevent
-    reffontheight = 15
+    reffontheight = 14
     object projectedit: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -110,7 +83,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 141
-      bounds_cy = 17
+      bounds_cy = 16
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_checkmrcancel, oe_exitoncursor, oe_hintclippedtext, oe_locate]
       onchange = projecteditonchange
@@ -146,7 +119,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 142
       bounds_y = 0
       bounds_cx = 129
-      bounds_cy = 16
+      bounds_cy = 15
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_clipo, tf_noselect, tf_ellipseleft]
@@ -155,7 +128,7 @@ object projecttreefo: tprojecttreefo
       dropdown.cols.items = <      
         item
         end>
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object unitpopup: tpopupmenu

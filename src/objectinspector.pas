@@ -78,7 +78,7 @@ type
    grid: twidgetgrid;
    props: ttreeitemedit;
    gridpopup: tpopupmenu;
-   values: tmbdropdownitemedit;
+   values: tdropdownitemedit;
    compedit: trichbutton;
    findbu: tstockglyphbutton;
    mainpopup: tpopupmenu;
@@ -128,7 +128,8 @@ type
    procedure asyncexe(const sender: TObject; var atag: Integer);
    procedure paintimageexe(const sender: twidget; const acanvas: tcanvas);
    procedure extendimageexe(const sender: twidget;
-                      const cellinfopo: pcellinfoty; var aextend: sizety);
+                      const cellinfopo: pcellinfoty; var info: extrainfoty);
+
    procedure propskeydownexe(const sender: twidget; var ainfo: keyeventinfoty);
    procedure enterexe(const sender: TObject);
   private
@@ -220,9 +221,9 @@ type
  tpropertyitem = class(ttreelistedititem)
   private
    function getexpanded: boolean;
-   procedure setexpanded(const Value: boolean);
   protected
    feditor: tpropertyeditor;
+   procedure setexpanded(const Value: boolean) override;
    procedure updatestate;
    procedure updatesubpropertypath;
    function finditembyname(const aname: msestring): tpropertyitem;
@@ -437,7 +438,8 @@ end;
 
 procedure tpropertyitem.setexpanded(const Value: boolean);
 begin
- inherited expanded:= value;
+ inherited;
+// inherited expanded:= value;
  if value <> getexpanded then begin
   feditor.expanded:= value;
   updatestate;
@@ -1088,6 +1090,8 @@ var
 
 begin
  designer.begincomponentmodify;
+ props.itemlist.beginupdate;
+ values.itemlist.beginupdate;
  try
   if ps_volatile in sender.state then begin
    refresh;
@@ -1139,6 +1143,8 @@ begin
   end;
   mainfo.sourcechanged(nil);
  finally
+  props.itemlist.endupdate;
+  values.itemlist.endupdate;
   designer.endcomponentmodify;
  end;
 end;
@@ -1903,11 +1909,11 @@ begin
 end;
 
 procedure tobjectinspectorfo.extendimageexe(const sender: twidget;
-               const cellinfopo: pcellinfoty; var aextend: sizety);
+               const cellinfopo: pcellinfoty;  var info: extrainfoty);
 begin
  wascolorprop:= iscolorprop(sender,cellinfopo,propcolor);
  if wascolorprop then begin
-  aextend.cx:= aextend.cx+sender.clientheight;
+  info.image.cx:= info.image.cx+sender.clientheight;
  end;
 end;
 

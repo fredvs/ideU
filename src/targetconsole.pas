@@ -21,13 +21,12 @@ unit targetconsole;
 interface
 uses
  msegui,mseclasses,mseforms,mseterminal,msewidgetgrid,msestrings,msedatalist,
- classes,mclasses,msemenus,msestat,msetypes,msegraphics,msegraphutils,
- mseguiglob,msesimplewidgets,msewidgets;
+ classes,mclasses,msemenus,msestat,msetypes;
 
 type
  ttargetconsolefo = class(tdockform)
    terminal: tterminal;
-   grid_console: twidgetgrid;
+   grid: twidgetgrid;
    popupmen: tpopupmenu;
    procedure sendtext(const sender: tobject; var atext: msestring;
                                                  var donotsend: Boolean);
@@ -72,7 +71,7 @@ end;
 
 procedure ttargetconsolefo.clear;
 begin
- grid_console.clear;
+ grid.clear;
 end;
 
 procedure ttargetconsolefo.addtext(const atext: string);
@@ -113,7 +112,7 @@ end;
 
 procedure ttargetconsolefo.clearexe(const sender: TObject);
 begin
- grid_console.clear;
+ grid.clear;
 end;
 
 procedure ttargetconsolefo.dofind;

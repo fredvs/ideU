@@ -103,7 +103,6 @@ object mainfo: tmainfo
     top = 148
   end
   object mainmenu1: tmainmenu
-    options = [mo_shortcutright, mo_activate, mo_updateonidle]
     onupdate = mainmenuonupdate
     menu.submenu.count = 15
     menu.submenu.items = <    
