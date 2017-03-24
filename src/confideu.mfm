@@ -1,16 +1,16 @@
 object confideufo: tconfideufo
   visible = False
-  bounds_x = 398
-  bounds_y = 144
-  bounds_cx = 321
-  bounds_cy = 317
+  bounds_x = 490
+  bounds_y = 175
+  bounds_cx = 318
+  bounds_cy = 360
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    321
-    317
+    318
+    360
   )
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Extra Settings of ideU'
@@ -76,9 +76,9 @@ object confideufo: tconfideufo
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
     taborder = 3
-    bounds_x = 129
-    bounds_y = 288
-    bounds_cx = 63
+    bounds_x = 105
+    bounds_y = 0
+    bounds_cx = 101
     bounds_cy = 21
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
@@ -95,9 +95,9 @@ object confideufo: tconfideufo
       0
       0
     )
-    bounds_x = 4
-    bounds_y = 2
-    bounds_cx = 312
+    bounds_x = 5
+    bounds_y = 30
+    bounds_cx = 309
     bounds_cy = 89
     object tbfileaskload: tbooleaneditradio
       frame.caption = '  A dialog box ask what to do...'
@@ -110,8 +110,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 2
-      bounds_x = 23
-      bounds_y = 61
+      bounds_x = 24
+      bounds_y = 63
       bounds_cx = 203
       bounds_cy = 17
     end
@@ -159,8 +159,8 @@ object confideufo: tconfideufo
       0
     )
     taborder = 1
-    bounds_x = 4
-    bounds_y = 99
+    bounds_x = 3
+    bounds_y = 134
     bounds_cx = 312
     bounds_cy = 88
     object tbassistive: tbooleanedit
@@ -222,10 +222,10 @@ object confideufo: tconfideufo
       0
     )
     taborder = 2
-    bounds_x = 4
-    bounds_y = 195
-    bounds_cx = 312
-    bounds_cy = 87
+    bounds_x = 3
+    bounds_y = 238
+    bounds_cx = 311
+    bounds_cy = 115
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -279,6 +279,24 @@ object confideufo: tconfideufo
       bounds_cx = 193
       bounds_cy = 17
       onchange = dirlayout
+    end
+    object autofocus_menu: tbooleanedit
+      frame.caption = 'Auto focus in main-memu'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        159
+        2
+      )
+      taborder = 3
+      hint = 'Set auto focus if mouse moves on main-menu'
+      bounds_x = 68
+      bounds_y = 84
+      bounds_cx = 172
+      bounds_cy = 17
+      onchange = autofocus
     end
   end
 end

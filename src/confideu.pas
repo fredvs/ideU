@@ -22,6 +22,7 @@ type
    universal_path: tbooleanedit;
    nozorderenable: tbooleanedit;
    doubleclic: tbooleanedit;
+   autofocus_menu: tbooleanedit;
    procedure zorderhandle(const sender: TObject);
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
@@ -30,12 +31,13 @@ type
            var accept: Boolean);
 
    procedure dirlayout(const sender: TObject);
+   procedure autofocus(const sender: TObject);
  end;
 var
  confideufo: tconfideufo;
 implementation
 uses
-confideu_mfm;
+confideu_mfm, main;
 procedure tconfideufo.zorderhandle(const sender: TObject);
 begin
 if nozorderenable.value = true then  nozorderhandling:= true else
@@ -167,5 +169,17 @@ confdebuggerfo.debugger4.controller.options := [fdo_savelastdir] ;
 
 end;
 end;
+
+procedure tconfideufo.autofocus(const sender: TObject);
+begin
+if autofocus_menu.value = false then 
+begin
+mainfo.mainmenu1.options := [mo_shortcutright,mo_updateonidle];
+end else
+begin
+mainfo.mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];
+end;
+end;
+
 
 end.
