@@ -196,7 +196,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -217,7 +217,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -727,11 +727,11 @@ makeoptionson=8
  48
  4095
 compilerusedon=29
- 4091
+ 4043
  4
- 0
- 0
- 0
+ 8
+ 16
+ 32
  0
  0
  0
@@ -764,9 +764,9 @@ debuggerusedon=6
  0
  0
 exeusedon=14
- 4095
+ 4047
  0
- 0
+ 48
  0
  0
  0
@@ -1305,7 +1305,7 @@ findhistory=20
  isdblclicked
  ss_double
 findoptions=1
-editpos=10
+editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1314,8 +1314,10 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,13
  0,-1073741823
- 10,8
+ 0,0
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1326,7 +1328,9 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
@@ -1337,7 +1341,9 @@ sourcefiles=10
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=10
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/define.inc
+relpaths=12
  ideU.pas
  main.pas
  confideu.pas
@@ -1348,7 +1354,11 @@ relpaths=10
  sourcepage.pas
  main.pas
  sourceform.pas
-ismoduletexts=10
+ ideU.pas
+ define.inc
+ismoduletexts=12
+ 0
+ 0
  0
  0
  0
@@ -1388,7 +1398,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=10
+order=12
  0
  1
  2
@@ -1397,11 +1407,13 @@ order=10
  5
  7
  8
+ 11
+ 10
  6
  9
 tabsize=60
 firsttab=4
-index=9
+index=8
 [layout]
 windowlayout=602
  [mainfo.basedock]
@@ -1430,7 +1442,7 @@ windowlayout=602
  ncx=0
  ncy=0
  x=231
- y=52
+ y=53
  cx=939
  cy=621
  rcx=0
@@ -1552,7 +1564,7 @@ windowlayout=602
  x=0
  y=0
  cx=159
- cy=524
+ cy=512
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1859,7 +1871,7 @@ windowlayout=602
  x=0
  y=0
  cx=1356
- cy=50
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1875,7 +1887,7 @@ windowlayout=602
  x=0
  y=0
  cx=1356
- cy=50
+ cy=62
  rcx=0
  rcy=0
  [sourcefo]
@@ -1891,7 +1903,7 @@ windowlayout=602
  x=162
  y=0
  cx=1194
- cy=524
+ cy=512
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1925,9 +1937,9 @@ windowlayout=602
  ncx=0
  ncy=0
  x=0
- y=53
+ y=65
  cx=1356
- cy=524
+ cy=512
  rcx=0
  rcy=0
  [_mse_confideufo_mse_]
