@@ -145,7 +145,7 @@ type
    property filepath: filenamety read getfilepath write setfilepath;
    property filetag: longword read ffiletag;
  end;
-
+ 
 function getpascalvarname(const edit: tsyntaxedit; pos: gridcoordty;
                       out startpos: gridcoordty): msestring; overload;
 function getpascalvarname(const edit: tsyntaxedit;
@@ -162,8 +162,6 @@ uses
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
  mselatex,msesystypes;
-
-
 
 const
  pascaldelims = msestring(' :;+-*/(){},=<>' + c_linefeed + c_return + c_tab);
@@ -1240,7 +1238,7 @@ begin
                             makegridcoord(bigint,edit.row),true);
       end
       else begin
-       edit.selectword(info.pos,pascaldelims+'.[]');
+       edit.selectword(info.pos,selectdelims);
       end;
       copytoclipboard(edit.selectedtext,cbb_primary);
       include(info.mouseeventinfopo^.eventstate,es_processed);

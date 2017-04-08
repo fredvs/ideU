@@ -33,10 +33,6 @@ findinfiledialog=37
  history=1
   "*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.dir]
- filenames=1
-  /home/graemeg/devel/
- filehistory=1
-  /home/graemeg/devel/
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  filecolwidth=174
@@ -55,6 +51,10 @@ findinfiledialog=37
  y=415
  cx=339
  cy=251
+ 
+ 
+ 
+ 
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -142,7 +142,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=6
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=710
  width0=47
@@ -179,45 +179,23 @@ settings=8
  wsize=0
  active=1
  visible=1
-mainfile=${PROJECTNAME}.lpr
-targetfile=${PROJECTNAME}${EXEEXT}
+mainfile=${PROJECTNAME}.java
+targetfile=
 messageoutputfile=
-makecommand=${COMPILER}
+makecommand=/usr/local/codetyphon/fpc/fpc64/bin/x86_64-linux/ppcx64
 makedir=
-unitdirs=9
- ${lazarus}*
- ${lazarus}/components/*
- ${lazarus}/*
- ${lazarus}/lcl/*
- ${lazarus}/interfaces/*
- ${lazarus}/interfaces/gtk2
- ${lazarus}/lcl/components/*
- ${lazarus}/lcl/include
- ${lazarus}/lcl
+unitdirs=1
+ 
 unitpref=-Fu
 incpref=-Fi
 libpref=-Fl
 objpref=-Fo
-targpref=-o
+targpref=
 befcommand=0
 aftcommand=0
-makeoptions=8
- -l -Mobjfpc -Sh
- -gl
- -ghl
- -B
- -O-
- -O3 -XX -CX -Xs
- -vi
- -FUunits/
-makeoptpurpose=8
+makeoptions=1
  
- 
- 
- 
- 
- 
- 
+makeoptpurpose=1
  
 compilerused=29
  ${COMPILER} (Default)
@@ -256,21 +234,8 @@ debuggerused=6
  Debugger 3
  Debugger 4
  None
-exeused=14
- ${EXEEXT} (Default)
- No Extension
- .exe
- .com
- .bin
- .prog
- .pyc
- .class
- .so
- .dll
- .lib
- .o
- .res
- .inf
+exeused=1
+ .java
 codetemplatedirs=1
  ${TEMPLATEDIR}
 toolmenus=0
@@ -428,34 +393,27 @@ modulenames=0
 moduletypes=0
 modulefiles=0
 befcommandon=0
-makeoptionson=8
- 63
- 2
+makeoptionson=1
  0
- 2
- 2
- 61
- 4095
- 63
 compilerusedon=29
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  4095
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
  0
  0
  0
@@ -474,21 +432,8 @@ debuggerusedon=6
  0
  0
  0
-exeusedon=14
+exeusedon=1
  4095
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
 comment_M=
 comment_B=
 comment_1=
@@ -506,19 +451,11 @@ project_creator=
 project_copyright=
 project_license=
 project_time=
-project_date=15:21:42 26/03/2017
+project_date=02:31:50 08/04/2017
 project_comment=
 aftcommandon=0
-unitdirson=9
- 987135
- 987135
- 987135
- 987135
- 987135
- 987135
- 987135
- 987135
- 987135
+unitdirson=1
+ 0
 macroon=0
 macronames=0
 macrovalues=0
@@ -752,8 +689,8 @@ windowlayout=520
  mdistate=0
  nx=0
  ny=0
- ncx=687
- ncy=211
+ ncx=668
+ ncy=0
  x=0
  y=0
  cx=929
@@ -769,8 +706,8 @@ windowlayout=520
  ny=0
  ncx=0
  ncy=0
- x=231
- y=53
+ x=219
+ y=96
  cx=939
  cy=621
  rcx=0
@@ -984,7 +921,7 @@ windowlayout=520
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1162,7 +1099,7 @@ windowlayout=520
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1204,7 +1141,7 @@ windowlayout=520
  mdistate=0
  nx=0
  ny=0
- ncx=928
+ ncx=929
  ncy=2
  x=0
  y=0
@@ -1232,7 +1169,7 @@ windowlayout=520
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0

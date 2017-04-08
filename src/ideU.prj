@@ -472,7 +472,7 @@ makeoptions=8
  -Mobjfpc -Sh -Fcutf8
  -gl -O -Crtoi
  -B
- -O4 -Xs -CX -XX
+ -O3 -Xs -CX -XX
  -ghl
  -vi
  -WG
@@ -695,22 +695,25 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=7
  ACTIONSMO
+ DEBUGGERFO
  CONFIDEUFO
  MAINFO
  SELECTEDITPAGEFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=6
+moduletypes=7
  TACTIONSMO
+ TDEBUGGERFO
  TCONFIDEUFO
  TMAINFO
  TSELECTEDITPAGEFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=6
+modulefiles=7
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
@@ -727,7 +730,7 @@ makeoptionson=8
  48
  4095
 compilerusedon=29
- 4043
+ 4035
  4
  8
  16
@@ -1282,15 +1285,20 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=menu.submenu.count
+finddtext=selectdelims
 findhistory=20
+ selectdelims
+ editontextmouseevent
+ selectdelims =
+ tcustommaker
+ customdomake
+ customcompile
  menu.submenu.count
  action = actionsmo.selecteditpage
  //editor
  paste.sh
  opyword
  formpopup
- selectdelims
  selectedlims
  onpaint
  onresize
@@ -1299,13 +1307,16 @@ findhistory=20
  ommandorfo.a
  statdisp
  // fred double click
- fred
- etbreakpointstate
- readc
- isdblclicked
- ss_double
 findoptions=1
-editpos=12
+editpos=18
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,148
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1314,9 +1325,7 @@ editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,13
  0,-1073741823
- 0,0
  0,0
 bookmarks0=0
 bookmarks1=0
@@ -1330,7 +1339,13 @@ bookmarks8=0
 bookmarks9=0
 bookmarks10=0
 bookmarks11=0
-sourcefiles=12
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+sourcefiles=18
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
@@ -1343,7 +1358,13 @@ sourcefiles=12
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/define.inc
-relpaths=12
+ ${PROJECTDIR}/define.inc
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/make.pas
+ /home/fred/msegui/apps/ide/sourcepage.pas
+ /home/fred/msegui/apps/ide/sourcepage.mfm
+relpaths=18
  ideU.pas
  main.pas
  confideu.pas
@@ -1356,7 +1377,13 @@ relpaths=12
  sourceform.pas
  ideU.pas
  define.inc
-ismoduletexts=12
+ define.inc
+ commandorform.pas
+ actionsmodule.pas
+ make.pas
+ msegui/apps/ide/sourcepage.pas
+ ../msegui/apps/ide/sourcepage.mfm
+ismoduletexts=18
  0
  0
  0
@@ -1369,28 +1396,38 @@ ismoduletexts=12
  0
  0
  0
-modules=6
+ 0
+ 0
+ 0
+ 0
+ 0
+ -1
+modules=7
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=6
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+visiblemodules=7
  -1
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
+ -1
+nomenumodules=7
+ 0
  0
  0
  0
@@ -1398,7 +1435,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=12
+order=18
  0
  1
  2
@@ -1406,16 +1443,22 @@ order=12
  4
  5
  7
+ 17
+ 16
  8
+ 15
+ 13
+ 14
+ 12
  11
  10
  6
  9
 tabsize=60
 firsttab=4
-index=8
+index=6
 [layout]
-windowlayout=602
+windowlayout=621
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1429,7 +1472,7 @@ windowlayout=602
  x=0
  y=0
  cx=1356
- cy=701
+ cy=702
  rcx=0
  rcy=0
  [mainfo]
@@ -1448,7 +1491,7 @@ windowlayout=602
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1356,701
+  basedock,0,0,1356,702
  focusedchild=0
  wsize=6
  active=1
@@ -1564,7 +1607,7 @@ windowlayout=602
  x=0
  y=0
  cx=159
- cy=512
+ cy=515
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1769,9 +1812,9 @@ windowlayout=602
  ncx=0
  ncy=0
  x=0
- y=580
+ y=582
  cx=1356
- cy=121
+ cy=120
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1871,7 +1914,7 @@ windowlayout=602
  x=0
  y=0
  cx=1356
- cy=62
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1887,7 +1930,7 @@ windowlayout=602
  x=0
  y=0
  cx=1356
- cy=62
+ cy=61
  rcx=0
  rcy=0
  [sourcefo]
@@ -1903,7 +1946,7 @@ windowlayout=602
  x=162
  y=0
  cx=1194
- cy=512
+ cy=515
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1937,9 +1980,9 @@ windowlayout=602
  ncx=0
  ncy=0
  x=0
- y=65
+ y=64
  cx=1356
- cy=512
+ cy=515
  rcx=0
  rcy=0
  [_mse_confideufo_mse_]
@@ -2013,6 +2056,25 @@ windowlayout=602
  y=155
  cx=707
  cy=48
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=213
+ y=118
+ cx=948
+ cy=51
  rcx=0
  rcy=0
  wsize=0
