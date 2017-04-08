@@ -1,22 +1,22 @@
 styles
  default ''
  words 'b'
+ type 'b' $4D006B
  comment 'i' cl_blue
  macros 'b' cl_red
- string '' cl_green
+ string '' cl_dkgreen
 
 keyworddefs java
-  '__asm' '_asm' 'asm' 'auto' 'break' 'case' 'catch' 'cdecl' 'char' 'class' 'const' words
-  'continue' '__cs' '_cs' 'default' 'delete' 'do' 'double' '__ds' '_ds' 'else' words
-  'enum' 'extern' '__far' '_far' 'far' '__fastcall' '_fastcall' 'fastcall' '__finally' words
-  'float' 'for' 'friend' 'goto' 'huge' '__huge' '_huge' 'if' '__import' 'inline' words
-  'int' 'interrupt' '__interrupt' '_interrupt' '__loaddds' '_loadds' 'long' 'near' words
-  '_near' '__near' 'new' 'operator' 'native' '__pascal' '_pascal' 'pascal' 'private' 'protected' words
-  'public' 'register' 'return' '__rtti' '__saveregs' '_saveregs' '__seg' '_seg' 'short' words
-  'signed' 'sizeof' '__ss' '_ss' 'static' '__stdcall' '_stdcall' 'struct' 'switch' words
-  'template' 'this' '__thread' 'throw' '__try' 'try' 'typedef' 'union' 'unsigned' words
-  'virtual' 'void' 'volatile' 'while' words
+  'abstract' 'assert' 'byte' 'break' 'case' 'catch' 'char' 'const' 
+  'continue' 'default' 'delete' 'do' 'double' 'else' 
+  'enum' 'extends' 'instanceof' 'fastcall' 'finally' 
+  'for' 'false' 'goto' 'if' 'import' 'inline' 'interface'
+  'implements' 'interrupt' 'long' 'near' 'new' 'null' 'protected' 
+  'strictfp' 'return' 'synchronized' 'this' 'throw' 'throws' 'try' 'transient' 'volatile' 'while'
 
+keyworddefs javaplus
+  'void' 'public' 'package' 'private' 'final' 'class' 'static' 'boolean' 'int' 'native' 'float'
+ 
 scope escapechar string
  endtokens
 # return on any char
@@ -41,6 +41,9 @@ scope comment2 comment
  endtokens
   ''
 
+scope method1 type
+ return
+
 scope macros macros
 
  jumptokens
@@ -52,6 +55,7 @@ scope macros macros
 scope block
  keywords
   java
+  javaplus type  
 
  calltokens
   '/*' comment1
@@ -69,16 +73,13 @@ scope main
  keywords words
   java
 
+  javaplus type
+
  calltokens
   '/*' comment1
   '//' comment2
   '#' macros
   '"' string
-  ';' string
   '''' string1
-  '{' string
-  '}' string 
-  '[' string
-  ']' string
-
+  
 

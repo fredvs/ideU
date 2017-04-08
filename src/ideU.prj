@@ -695,30 +695,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=7
- ACTIONSMO
- DEBUGGERFO
+modulenames=2
  CONFIDEUFO
- MAINFO
  SELECTEDITPAGEFO
- SOURCEFO
- SOURCEPAGE
-moduletypes=7
- TACTIONSMO
- TDEBUGGERFO
+moduletypes=2
  TCONFIDEUFO
- TMAINFO
  TSELECTEDITPAGEFO
- TSOURCEFO
- TSOURCEPAGE
-modulefiles=7
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
+modulefiles=2
  /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=8
  4095
@@ -1308,15 +1293,8 @@ findhistory=20
  statdisp
  // fred double click
 findoptions=1
-editpos=18
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,148
+editpos=11
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1338,59 +1316,31 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-sourcefiles=18
- ${PROJECTDIR}/ideU.pas
+sourcefiles=11
+ /home/fred/ideu/src/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/selecteditpageform.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/define.inc
  ${PROJECTDIR}/define.inc
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/make.pas
- /home/fred/msegui/apps/ide/sourcepage.pas
- /home/fred/msegui/apps/ide/sourcepage.mfm
-relpaths=18
+ /home/fred/ideu/src/main.mfm
+relpaths=11
  ideU.pas
  main.pas
  confideu.pas
  selecteditpageform.pas
  sourceform.pas
- actionsmodule.pas
- actionsmodule.pas
- sourcepage.pas
- main.pas
- sourceform.pas
  ideU.pas
- define.inc
  define.inc
  commandorform.pas
  actionsmodule.pas
  make.pas
- msegui/apps/ide/sourcepage.pas
- ../msegui/apps/ide/sourcepage.mfm
-ismoduletexts=18
- 0
- 0
- 0
- 0
- 0
- 0
- 0
+ main.mfm
+ismoduletexts=11
  0
  0
  0
@@ -1402,63 +1352,24 @@ ismoduletexts=18
  0
  0
  -1
-modules=7
+modules=2
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/commandorform.mfm
-moduleoptions=7
+moduleoptions=2
  0
  0
- 0
- 0
- 0
- 0
- 0
-visiblemodules=7
+visiblemodules=2
  -1
  -1
- -1
- -1
- -1
- -1
- -1
-nomenumodules=7
- 0
- 0
- 0
- 0
- 0
+nomenumodules=2
  0
  0
 [sourcefo.files_tab]
-order=18
- 0
- 1
- 2
- 3
- 4
- 5
- 7
- 17
- 16
- 8
- 15
- 13
- 14
- 12
- 11
- 10
- 6
- 9
 tabsize=60
 firsttab=4
-index=6
+index=10
 [layout]
-windowlayout=621
+windowlayout=564
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1703,7 +1614,7 @@ windowlayout=621
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1883,7 +1794,7 @@ windowlayout=621
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1953,7 +1864,7 @@ windowlayout=621
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_confideufo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2007,7 +1918,7 @@ windowlayout=621
  [_mse_selecteditpagefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -2018,63 +1929,6 @@ windowlayout=621
  y=122
  cx=714
  cy=473
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=143
- y=107
- cx=600
- cy=217
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=303
- y=155
- cx=707
- cy=48
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=213
- y=118
- cx=948
- cy=51
  rcx=0
  rcy=0
  wsize=0
