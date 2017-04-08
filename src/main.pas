@@ -1304,15 +1304,36 @@ var
   page1:= sourcefo.activepage;
   if (page1 <> nil) then 
   begin
-  setstattext('  Running ' + page1.filepath  ,mtk_flat); 
-  RunCustomCompiled(page1.filepath);
-   end;
+   RunCustomCompiled(page1.filepath, debuggerfo.edit_compiler.value);
+  end;
 end;   
 
 procedure tmainfo.runwithoutdebugger;
+var
+int1, int2: integer;
+
  begin
-   setstattext('  Running ' + gettargetfile  ,mtk_flat); 
-  RunWithoutDebug(gettargetfile, '' );
+ 
+   setstattext(''  ,mtk_flat); 
+  
+   with projectoptions,o,texp do begin
+ 
+for int2:= 0 to high(compilerused) do begin
+   if (compilerusedon[int2] <> 0)  then
+    begin
+ 
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+   
+   end;
+   end;
+   end;
+   
+  if (int1 = 1) or (int1 = 3)  then 
+  RunCustomCompiled(gettargetfile, '' ) else
+  RunCustomCompiled(gettargetfile, inttostr(int1) );
+   
   end; 
 
 procedure tmainfo.toggleformunit;
@@ -1929,7 +1950,7 @@ end;
 
 procedure tmainfo.startgdb(const killserver: boolean);
 var
- int3: integer;
+ int1, int2, int3: integer;
  str3: msestring;
 begin
  terminategdbserver(killserver);
@@ -1976,7 +1997,22 @@ for int3:= 0 to high(debuggerused) do begin
  end;
  end;
  
- if str3 <> '' then begin
+   with projectoptions,o,texp do begin
+ 
+for int2:= 0 to high(compilerused) do begin
+   if (compilerusedon[int2] <> 0)  then
+    begin
+ 
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+   
+   end;
+   end;
+   end;
+ 
+ 
+ if (str3 <> '') and ((int1 = 1) or (int1 = 3))  then begin
   terminategdbserver(killserver);
  with projectoptions,d.texp do begin
   gdb.remoteconnection:= remoteconnection;

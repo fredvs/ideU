@@ -31,7 +31,7 @@ procedure fpgd_mainproc();
 }
 
 
-procedure RunCustomCompiled(const AFilename: string);
+procedure RunCustomCompiled(const AFilename: string; acompiler : string);
 
 procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
@@ -117,10 +117,15 @@ function fpgd_loadfile(afilename : PChar) : integer ;
    end;
  }
  
- procedure RunCustomCompiled(const AFilename: string);
+ procedure RunCustomCompiled(const AFilename: string; acompiler : string);
  var
-  dataf, dataf2 : string ;
+  dataf, dataf2, conso : string ;
   len1 : integer;
+ begin
+ 
+ if (acompiler = '')   then
+ RunWithoutDebug(AFilename, acompiler) else
+ 
  begin
  
   if fileexists (AFilename) then
@@ -128,18 +133,54 @@ function fpgd_loadfile(afilename : PChar) : integer ;
 dataf2 := trim(AFilename);
 len1 := pos('.',dataf2) ;
 
+if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or (acompiler = '3')  then
+begin
  {$IFDEF Windows} 
   dataf := copy(dataf2,1,len1) + 'exe' ; 
     {$else}
    dataf := copy(dataf2,1,len1-1) ;
     {$endif}
-    
+   
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
   
+  if fileexists (dataf) then
+  
+   RunWithoutDebug(dataf, '') else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
  
-  RunWithoutDebug(dataf, '');
+ end;
+
+if (acompiler = 'Java') or (acompiler = '2') then
+begin
  
- end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
+   dataf := copy(dataf2,1,len1-1) ;
+   
+    
+  if fileexists (dataf+'.class') then
+  begin
+     
+  conso := ExtractFilePath(dataf);
+  
+ //  writeln(conso);
+  
+ // RunWithoutDebug(conso, 'cd');
+  
+  dataf := copy(dataf,length(conso)+1,length(dataf)-length(conso)) ;
+  
+ // writeln(dataf);
+   
+  dataf := 'java -Djava.library.path=. ' + dataf;
+  
+ // writeln(dataf);
+  
+  RunWithoutDebug(dataf, 'java');
+  
+  end else mainfo.setstattext(dataf+'.class' + ' does not exist...',mtk_notok);
+end;
+
+end; 
+
+end;
+ 
  end;
  
  procedure RunWithoutDebug(const AFilename: string; Aparam: string);
@@ -147,7 +188,32 @@ len1 := pos('.',dataf2) ;
   AProcess : TProcess ;
   thecommand : string;
   begin
- 
+  
+  if Aparam = 'cd' then
+  begin
+    AProcess := TProcess.Create(nil);
+      {$WARN SYMBOL_DEPRECATED OFF}
+      AProcess.CommandLine := Aparam + ' ' + AFilename ;
+     {$WARN SYMBOL_DEPRECATED ON}
+      AProcess.Options := [poNoConsole];
+      AProcess.Priority:=ppRealTime;
+      AProcess.Execute;
+      AProcess.Free;
+    end else
+    
+   if (Aparam = 'java') then
+  begin
+    AProcess := TProcess.Create(nil);
+      {$WARN SYMBOL_DEPRECATED OFF}
+      AProcess.CommandLine := AFilename ;
+     {$WARN SYMBOL_DEPRECATED ON}
+      AProcess.Options := [poNoConsole];
+      AProcess.Priority:=ppRealTime;
+      AProcess.Execute;
+      AProcess.Free;
+    end else  
+    
+    
   if fileexists (AFilename) then
  begin 
    if wineneeded = true then thecommand := 'wine ' + AFilename else

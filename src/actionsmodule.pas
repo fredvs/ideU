@@ -889,7 +889,7 @@ end;
 procedure tactionsmo.continueactonexecute(const sender: tobject);
 var
 str3 : string;
-int3 : integer;
+int1, int2, int3 : integer;
 begin
 
 /// fred debugger
@@ -935,8 +935,22 @@ for int3:= 0 to high(debuggerused) do begin
  end;
  end;
  
- if str3 <> '' then begin
- with mainfo do begin
+   with projectoptions,o,texp do begin
+ 
+for int2:= 0 to high(compilerused) do begin
+   if (compilerusedon[int2] <> 0)  then
+    begin
+ 
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+   
+   end;
+   end;
+   end;
+  
+ if (str3 <> '') and ((int1 = 1) or (int1 = 3))  then begin
+  with mainfo do begin
   if checkremake(sc_continue) then begin
    cpufo.beforecontinue;
    gdb.continue;
