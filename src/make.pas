@@ -210,12 +210,14 @@ function buildmakecommandline(const atag: integer): string;
  end;
  
 var
- int1,int2, int3: integer;
+ int1,int2, int3, int4: integer;
  str1,str2,str3, str4, winestr : msestring;
 // wstr1: filenamety;
 begin
 winestr := '';
 wineneeded:= false;
+
+int4 := 0;
 
  with projectoptions,o,texp do begin
  
@@ -358,6 +360,7 @@ for int3:= 0 to high(compilerused) do begin
      if (trim(compilerused[int3]) = 'Java Compiler 1') or 
     (trim(compilerused[int3]) = 'Java 1') then
      begin
+     int4 := 1;
      if  confcompilerfo.twinej1.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler.value));
@@ -366,6 +369,7 @@ for int3:= 0 to high(compilerused) do begin
     if (trim(compilerused[int3]) = 'Java Compiler 2') or 
     (trim(compilerused[int3]) = 'Java 2') then
     begin
+    int4 := 1;
      if  confcompilerfo.twinej2.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler2.value));
@@ -374,6 +378,7 @@ for int3:= 0 to high(compilerused) do begin
     if (trim(compilerused[int3]) = 'Java Compiler 3') or 
     (trim(compilerused[int3]) = 'Java 3') then
     begin
+    int4 := 1;
      if  confcompilerfo.twinej3.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler3.value));
@@ -382,6 +387,7 @@ for int3:= 0 to high(compilerused) do begin
      if (trim(compilerused[int3]) = 'Java Compiler 4') or 
     (trim(compilerused[int3]) = 'Java 4') then
     begin
+    int4 := 1;
      if  confcompilerfo.twinej4.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler4.value));
@@ -450,13 +456,14 @@ for int3:= 0 to high(compilerused) do begin
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.othercompiler4.value));
     end;
-    
-    
+      
    end;
   
   end;
   
-   for int3:= 0 to high(exeused) do begin
+ if  int4 = 1 then str4:= '.java' else
+ begin
+     for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
   
   if (pos('Default',exeused[int3]) > 0) or    
@@ -470,6 +477,7 @@ for int3:= 0 to high(compilerused) do begin
     (trim(exeused[int3]) = '')  then
     str4:= '' else str4:= trim(exeused[int3]) ;
    end;
+  end;
   end;
  
   str1:= str3;
@@ -520,7 +528,7 @@ function customcommandline(const aname: filenamety; const acompiler, acompilerta
  end;
  
 var
- int1,int2, int3: integer;
+ int1,int2, int3, int4: integer;
  str1,str2,str3, str4: msestring;
  commandcompiler : msestring;
  winestr : msestring = '';
@@ -528,6 +536,8 @@ var
 begin
 
 wineneeded:= false;
+
+int4 := 0;
 
  with projectoptions,o,texp do begin
  commandcompiler := '' ;
@@ -571,6 +581,7 @@ end;
 end;
 
 2: begin // java
+int4 := 1;
 case acompilertag of
 1 : begin
     if confcompilerfo.twinej1.value = true then winestr := 'wine ';
@@ -671,6 +682,8 @@ end;
 end;
 end;
 
+ if  int4 = 1 then str4:= '.java' else
+ begin
 for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
   
@@ -686,6 +699,7 @@ for int3:= 0 to high(exeused) do begin
  
    end; 
    
+  end;
   end;
 
 
