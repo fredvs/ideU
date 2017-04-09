@@ -1316,8 +1316,25 @@ end;
 function gettargetfile: filenamety;
 var
 str4 : msestring;
-int3 : integer;
+int1, int2, int3 : integer;
 begin
+
+ with projectoptions,o,texp do begin
+ 
+for int2:= 0 to high(compilerused) do begin
+   if (mainfo.thetag and compilerusedon[int2] <> 0)  then
+    begin
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+   
+   end;
+   end;
+   end;
+   
+  if (int1 = 2) then str4 := '.java' else
+  begin
+
  with projectoptions,o,texp do begin 
 for int3:= 0 to high(exeused) do begin
    if (mainfo.thetag and exeusedon[int3] <> 0) then begin
@@ -1332,6 +1349,7 @@ for int3:= 0 to high(exeused) do begin
     (trim(exeused[int3]) = '')  then
     str4:= '' else str4:= trim(exeused[int3]) ; 
   end;  
+end;
 end;
 end;
 
@@ -1756,6 +1774,7 @@ begin
   additem(fexeused,'.prog');
   additem(fexeused,'.pyc');
   additem(fexeused,'.class');
+  additem(fexeused,'.java');
   additem(fexeused,'.so');
   additem(fexeused,'.dll');
   additem(fexeused,'.lib');
