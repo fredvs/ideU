@@ -1319,6 +1319,8 @@ str4 : msestring;
 int1, int2, int3 : integer;
 begin
 
+int1 := 1;
+
  with projectoptions,o,texp do begin
  
 for int2:= 0 to high(compilerused) do begin

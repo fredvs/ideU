@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=66
+findinfiledialog=68
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -63,8 +63,10 @@ findinfiledialog=66
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=exeused
- history=15
+ value=compilerused
+ history=17
+  compilerused
+  -Djava.library.path=
   exeused
   gettargetfile
   buildmakecommandline
@@ -204,7 +206,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=5
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -480,7 +482,7 @@ makeoptions=8
  -Mobjfpc -Sh -Fcutf8
  -gl -O -Crtoi
  -B
- -O3 -Xs -CX -XX
+ -O4 -Xs -CX -XX
  -ghl
  -vi
  -WG
@@ -1050,23 +1052,23 @@ path=24
 line=24
  777
  2129
- 991
+ 992
  1462
  562
- 3523
+ 3525
  644
  119
  1026
- 2235
- 2152
- 2427
+ 2237
+ 2154
+ 2429
  636
- 3214
+ 3216
  119
  524
  438
  46
- 3782
+ 3784
  684
  536
  844
@@ -1319,7 +1321,7 @@ findhistory=20
  action = actionsmo.selecteditpage
  //editor
 findoptions=1
-editpos=27
+editpos=32
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1345,8 +1347,13 @@ editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1324
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1328
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1374,7 +1381,12 @@ bookmarks23=0
 bookmarks24=0
 bookmarks25=0
 bookmarks26=0
-sourcefiles=27
+bookmarks27=0
+bookmarks28=0
+bookmarks29=0
+bookmarks30=0
+bookmarks31=0
+sourcefiles=32
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
@@ -1400,9 +1412,14 @@ sourcefiles=27
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/make.pas
- /home/fred/ideu/src/projectoptionsform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/main.pas
-relpaths=27
+ ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/make.pas
+ /home/fred/ideu/src/projectoptionsform.pas
+relpaths=32
  ideU.pas
  main.pas
  confideu.pas
@@ -1430,7 +1447,12 @@ relpaths=27
  make.pas
  projectoptionsform.pas
  main.pas
-ismoduletexts=27
+ plugmanager.pas
+ actionsmodule.pas
+ main.pas
+ make.pas
+ projectoptionsform.pas
+ismoduletexts=32
  0
  0
  0
@@ -1442,6 +1464,11 @@ ismoduletexts=27
  0
  0
  -1
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1495,7 +1522,7 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=27
+order=32
  0
  1
  2
@@ -1513,10 +1540,15 @@ order=27
  13
  21
  20
+ 28
+ 29
+ 30
+ 31
  22
  23
  24
  25
+ 27
  26
  19
  14
@@ -1659,7 +1691,7 @@ windowlayout=621
  ncy=0
  x=240
  y=115
- cx=678
+ cx=947
  cy=414
  rcx=0
  rcy=0
@@ -1676,7 +1708,7 @@ windowlayout=621
  x=0
  y=0
  cx=159
- cy=518
+ cy=438
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1698,10 +1730,10 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=423
- y=321
- cx=344
- cy=155
+ x=0
+ y=0
+ cx=0
+ cy=0
  rcx=0
  rcy=0
  wsize=0
@@ -1849,8 +1881,8 @@ windowlayout=621
  y=0
  cx=247
  cy=44
- rcx=1262
- rcy=583
+ rcx=929
+ rcy=702
  [watchfo.grid]
  propcolwidthref=121
  values0=0
@@ -1881,9 +1913,9 @@ windowlayout=621
  ncx=0
  ncy=0
  x=0
- y=582
+ y=502
  cx=1356
- cy=120
+ cy=200
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2015,7 +2047,7 @@ windowlayout=621
  x=162
  y=0
  cx=1194
- cy=518
+ cy=438
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2051,7 +2083,7 @@ windowlayout=621
  x=0
  y=61
  cx=1356
- cy=518
+ cy=438
  rcx=0
  rcy=0
  [_mse_confideufo_mse_]
