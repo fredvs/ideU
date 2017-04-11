@@ -1326,6 +1326,7 @@ for int2:= 0 to high(compilerused) do begin
  if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
  if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
  if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+ if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;
    
    end;
    end;

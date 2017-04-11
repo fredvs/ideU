@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=68
+findinfiledialog=71
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -63,8 +63,14 @@ findinfiledialog=68
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=compilerused
- history=17
+ value=edit_compiler
+ history=20
+  edit_compiler
+  RunCustomCompiled
+  acompiler
+  javac 
+  javac
+  java 
   compilerused
   -Djava.library.path=
   exeused
@@ -72,7 +78,6 @@ findinfiledialog=68
   buildmakecommandline
   atag
   settypecompiler
-  RunCustomCompiled
   copyri
   copyrigth
   universal_path
@@ -80,8 +85,6 @@ findinfiledialog=68
   onscale
   statdisp
   onpaint
-  debbuggerfo
-  
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -206,7 +209,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=738
  width0=47
@@ -227,7 +230,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=10
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -478,7 +481,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=8
+makeoptions=9
  -Mobjfpc -Sh -Fcutf8
  -gl -O -Crtoi
  -B
@@ -486,8 +489,10 @@ makeoptions=8
  -ghl
  -vi
  -WG
+ -v
  -FUunits
-makeoptpurpose=8
+makeoptpurpose=9
+ 
  
  
  
@@ -733,7 +738,7 @@ modulefiles=8
  /home/fred/ideu/src/selecteditpageform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=8
+makeoptionson=9
  2047
  0
  62
@@ -741,9 +746,10 @@ makeoptionson=8
  2
  2047
  48
+ 0
  2047
 compilerusedon=29
- 4035
+ 1987
  4
  8
  16
@@ -764,7 +770,7 @@ compilerusedon=29
  0
  0
  0
- 0
+ 2048
  0
  0
  0
@@ -1055,10 +1061,10 @@ line=24
  992
  1462
  562
- 3525
+ 3526
  644
  119
- 1026
+ 1032
  2237
  2154
  2429
@@ -1068,7 +1074,7 @@ line=24
  524
  438
  46
- 3784
+ 3785
  684
  536
  844
@@ -1298,8 +1304,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=exeused
+finddtext=python
 findhistory=20
+ python
  exeused
  tcustommaker
  customdomake
@@ -1319,9 +1326,8 @@ findhistory=20
  selectdelims =
  menu.submenu.count
  action = actionsmo.selecteditpage
- //editor
 findoptions=1
-editpos=35
+editpos=42
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1352,11 +1358,18 @@ editpos=35
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,173
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,691
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 40,14
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1392,7 +1405,14 @@ bookmarks31=0
 bookmarks32=0
 bookmarks33=0
 bookmarks34=0
-sourcefiles=35
+bookmarks35=0
+bookmarks36=0
+bookmarks37=0
+bookmarks38=0
+bookmarks39=0
+bookmarks40=0
+bookmarks41=0
+sourcefiles=42
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
@@ -1428,7 +1448,14 @@ sourcefiles=35
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/plugmanager.pas
-relpaths=35
+ ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/confcompiler.mfm
+ ${PROJECTDIR}/make.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
+relpaths=42
  ideU.pas
  main.pas
  confideu.pas
@@ -1464,7 +1491,14 @@ relpaths=35
  actionsmodule.pas
  main.pas
  plugmanager.pas
-ismoduletexts=35
+ plugmanager.pas
+ confcompiler.mfm
+ make.pas
+ main.pas
+ commandorform.pas
+ actionsmodule.pas
+ ../fpGUIlibDemo_python/fpgui-test.pyw
+ismoduletexts=42
  0
  0
  0
@@ -1476,6 +1510,13 @@ ismoduletexts=35
  0
  0
  -1
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1537,7 +1578,7 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=35
+order=42
  0
  1
  2
@@ -1558,6 +1599,13 @@ order=35
  28
  29
  30
+ 35
+ 38
+ 39
+ 40
+ 37
+ 41
+ 36
  31
  32
  33
@@ -1575,7 +1623,7 @@ order=35
  10
 tabsize=60
 firsttab=19
-index=19
+index=25
 [layout]
 windowlayout=621
  [mainfo.basedock]
@@ -1590,8 +1638,8 @@ windowlayout=621
  ncy=0
  x=0
  y=0
- cx=929
- cy=604
+ cx=1356
+ cy=702
  rcx=0
  rcy=0
  [mainfo]
@@ -1610,9 +1658,9 @@ windowlayout=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,929,604
+  basedock,0,0,1356,702
  focusedchild=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1632,7 +1680,7 @@ windowlayout=621
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -1707,7 +1755,7 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=239
+ x=240
  y=115
  cx=678
  cy=414
@@ -1726,7 +1774,7 @@ windowlayout=621
  x=0
  y=0
  cx=159
- cy=442
+ cy=514
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1839,10 +1887,10 @@ windowlayout=621
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=73
+ propcolwidthref=291
+ width0=69
  sortdescend0=0
- width1=227
+ width1=216
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1931,9 +1979,9 @@ windowlayout=621
  ncx=0
  ncy=0
  x=0
- y=501
- cx=929
- cy=103
+ y=582
+ cx=1356
+ cy=120
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2032,8 +2080,8 @@ windowlayout=621
  ncy=0
  x=0
  y=0
- cx=929
- cy=53
+ cx=1356
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2048,8 +2096,8 @@ windowlayout=621
  ncy=2
  x=0
  y=0
- cx=929
- cy=53
+ cx=1356
+ cy=62
  rcx=0
  rcy=0
  [sourcefo]
@@ -2064,8 +2112,8 @@ windowlayout=621
  ncy=0
  x=162
  y=0
- cx=767
- cy=442
+ cx=1194
+ cy=514
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2099,9 +2147,9 @@ windowlayout=621
  ncx=0
  ncy=0
  x=0
- y=56
- cx=929
- cy=442
+ y=65
+ cx=1356
+ cy=514
  rcx=0
  rcy=0
  [_mse_confideufo_mse_]
@@ -2183,7 +2231,7 @@ windowlayout=621
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0

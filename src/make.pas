@@ -396,6 +396,7 @@ for int3:= 0 to high(compilerused) do begin
      if (trim(compilerused[int3]) = 'Python Compiler 1') or 
     (trim(compilerused[int3]) = 'Python 1') then
     begin
+    int4 := 2;
      if  confcompilerfo.twinepy1.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler.value));
@@ -404,6 +405,7 @@ for int3:= 0 to high(compilerused) do begin
     if (trim(compilerused[int3]) = 'Python Compiler 2') or 
     (trim(compilerused[int3]) = 'Python 2') then
     begin
+    int4 := 2;
      if  confcompilerfo.twinepy2.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler2.value));
@@ -412,6 +414,7 @@ for int3:= 0 to high(compilerused) do begin
     if (trim(compilerused[int3]) = 'Python Compiler 3') or 
     (trim(compilerused[int3]) = 'Python 3') then
    begin
+   int4 := 2;
      if  confcompilerfo.twinepy3.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler3.value));
@@ -420,6 +423,7 @@ for int3:= 0 to high(compilerused) do begin
      if (trim(compilerused[int3]) = 'Python Compiler 4') or 
     (trim(compilerused[int3]) = 'Python 4') then
     begin
+    int4 := 2;
      if  confcompilerfo.twinepy4.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler4.value));
@@ -462,6 +466,7 @@ for int3:= 0 to high(compilerused) do begin
   end;
   
  if  int4 = 1 then str4:= '.java' else
+ if  int4 = 2 then str4:= '.pyw' else
  begin
      for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
@@ -640,6 +645,7 @@ end;
 end;
 
 4: begin // python
+int4 := 2;
 case acompilertag of
 1 : begin
     if confcompilerfo.twinepy1.value = true then winestr := 'wine ';
@@ -683,6 +689,7 @@ end;
 end;
 
  if  int4 = 1 then str4:= '.java' else
+ if  int4 = 2 then str4:= '.pyw' else
  begin
 for int3:= 0 to high(exeused) do begin
    if (atag and exeusedon[int3] <> 0) then begin
@@ -701,17 +708,18 @@ for int3:= 0 to high(exeused) do begin
    
   end;
   end;
-
-
- 
+  
+    if  int4 = 2 then
+  str3:= quotefilename(tosysfilepath(commandcompiler)) + ' -v -m py_compile' else // python
   str3:= quotefilename(tosysfilepath(commandcompiler));
+ 
   str1:= str3;
  
   str3 := aname ;
   
   if winestr = 'wine ' then wineneeded := true ;
-
- str1:= winestr + str1 + ' '+ quotefilename(normalizename(str3));
+  
+str1:= winestr + str1 + ' '+ quotefilename(normalizename(str3));
 
   int2:= high(unitdirs);
   int1:= high(unitdirson);
@@ -748,8 +756,6 @@ for int3:= 0 to high(exeused) do begin
  end;
  result:= str1;
 end;
-
-
 
 procedure dodownload;
 begin

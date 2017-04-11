@@ -177,6 +177,37 @@ dataf := 'java -Djava.library.path=. ' + dataf;
   end else mainfo.setstattext(dataf+'.class' + ' does not exist...',mtk_notok);
 end;
 
+if (acompiler = 'Python') or (acompiler = '4') then
+begin
+ 
+   dataf := copy(dataf2,1,len1-1) ;
+   
+    
+  if fileexists (dataf+'.pywc') then
+  begin
+     
+  conso := ExtractFilePath(dataf);
+  
+ //  writeln(conso);
+  
+ // RunWithoutDebug(conso, 'cd');
+  
+  dataf := copy(dataf,length(conso)+1,length(dataf)-length(conso)) ;
+  
+ // writeln(dataf);
+{$ifdef windows}
+dataf := 'python.exe ' + dataf + '.pywc' ; 
+{$else}
+dataf := 'python ' + dataf + '.pywc';
+{$endif}
+  
+ // writeln(dataf);
+  
+  RunWithoutDebug(dataf, 'pywc');
+  
+  end else mainfo.setstattext(dataf+'.pywc' + ' does not exist...',mtk_notok);
+end;
+
 end; 
 
 end;
@@ -212,6 +243,18 @@ end;
       AProcess.Execute;
       AProcess.Free;
       end else  
+      
+   if (Aparam = 'pywc') then
+  begin
+    AProcess := TProcess.Create(nil);
+      {$WARN SYMBOL_DEPRECATED OFF}
+      AProcess.CommandLine := AFilename ;
+     {$WARN SYMBOL_DEPRECATED ON}
+      AProcess.Options := [poNoConsole];
+      AProcess.Priority:=ppRealTime;
+      AProcess.Execute;
+      AProcess.Free;
+      end else      
     
     
   if fileexists (AFilename) then
