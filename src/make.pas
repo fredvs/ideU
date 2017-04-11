@@ -124,7 +124,6 @@ type
   // fred
  custommaker: tcustommaker;
 
-
 function making: boolean;
 begin
  result:= (maker <> nil) and (maker.procid <> invalidprochandle);
