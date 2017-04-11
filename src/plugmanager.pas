@@ -1,11 +1,8 @@
-
-unit plugmanager ;
 {This for loading/managing plugin
 
  Fred van Stappen / fiens@hotmail.com
 }
-
-////////////////////////////////////////////////////////////////////////////////
+unit plugmanager ;
 
 interface
 
@@ -167,8 +164,11 @@ begin
   dataf := copy(dataf,length(conso)+1,length(dataf)-length(conso)) ;
   
  // writeln(dataf);
-   
-  dataf := 'java -Djava.library.path=. ' + dataf;
+{$ifdef windows}
+dataf := 'java.exe -Djava.library.path=. ' + dataf; 
+{$else}
+dataf := 'java -Djava.library.path=. ' + dataf;
+{$endif}
   
  // writeln(dataf);
   
@@ -211,14 +211,13 @@ end;
       AProcess.Priority:=ppRealTime;
       AProcess.Execute;
       AProcess.Free;
-    end else  
+      end else  
     
     
   if fileexists (AFilename) then
  begin 
    if wineneeded = true then thecommand := 'wine ' + AFilename else
    thecommand :=  AFilename;
-
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := thecommand + Aparam ;
@@ -252,10 +251,9 @@ procedure LoadfpgDesigner(const AfpgFilename: string);
   end;
  end;
 end;
-/////////
-
+ 
  //fpGUI designer
-
+ 
 procedure CleanfpgDesigner(); 
 {$ifdef unix}
  var
@@ -268,6 +266,4 @@ begin
    {$endif}
 end;
 
-/////////
- 
 end.
