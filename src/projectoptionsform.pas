@@ -211,6 +211,7 @@ type
    ffpgdesignerenabled: boolean;
    fbackupfilecount: integer;
    fencoding: integer;
+   feolstyle: integer;
    fnoformdesignerdocking: boolean;
    ftrimtrailingwhitespace: boolean;
    fpairmarkcolor: integer;
@@ -274,6 +275,9 @@ type
    property backupfilecount: integer read fbackupfilecount 
                                               write fbackupfilecount;
    property encoding: integer read fencoding write fencoding;
+
+   property eolstyle: integer read feolstyle write feolstyle;
+
    property trimtrailingwhitespace: boolean read ftrimtrailingwhitespace
                                                 write ftrimtrailingwhitespace;
    property codetemplatedirs: msestringarty read getcodetemplatedirs write
@@ -970,7 +974,6 @@ type
    syntaxdeffilemask: tmemodialogedit;
    editmarkpairwords: tbooleanedit;
    tlayouter15: tlayouter;
-   trimtrailingwhitespace: tbooleanedit;
    encoding: tenumedit;
    pairmarkcolor: tcoloredit;
    statementcolor: tcoloredit;
@@ -1011,6 +1014,9 @@ type
    project_license: tstringedit;
    project_name: tstringedit;
    project_date: tstringedit;
+   eolstyle: tenumtypeedit;
+   trimtrailingwhitespace: tbooleanedit;
+   
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1058,6 +1064,8 @@ type
    procedure toolsrowdatachanged(const sender: tcustomgrid;
                    const acell: gridcoordty);
    procedure bracketbkcolhint(const sender: TObject; var info: hintinfoty);
+   procedure initeolstyleexe(const sender: tenumtypeedit);
+ 
   private
    procedure activegroupchanged;
  end;
@@ -3351,6 +3359,11 @@ begin
  info.caption:= tcustomedit(sender).text + lineend + info.caption;
 end;
 
+procedure tprojectoptionsfo.initeolstyleexe(const sender: tenumtypeedit);
+begin
+ sender.typeinfopo:= typeinfo(eolstylety);
+end;
+
 { tprojectoptions }
 
 constructor tprojectoptions.create;
@@ -3406,6 +3419,7 @@ begin
  gridsizex:= defaultgridsizex;
  gridsizey:= defaultgridsizey;
  encoding:= 1; //utf8n
+ eolstyle:= 1; //eol_system
  autoindent:= true;
  blockindent:= 1;
  rightmarginon:= true;

@@ -63,8 +63,9 @@ findinfiledialog=71
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
  [findinfileadialogfo.findtext]
- value=edit_compiler
+ value=case e.encoding of
  history=20
+  case e.encoding of
   edit_compiler
   RunCustomCompiled
   acompiler
@@ -84,7 +85,6 @@ findinfiledialog=71
   omplete class
   onscale
   statdisp
-  onpaint
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -230,7 +230,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -710,7 +710,7 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=8
+modulenames=9
  ACTIONSMO
  COMMANDLINEFO
  DEBUGGERFO
@@ -719,7 +719,8 @@ modulenames=8
  PROJECTOPTIONSFO
  SELECTEDITPAGEFO
  SOURCEFO
-moduletypes=8
+ SOURCEPAGE
+moduletypes=9
  TACTIONSMO
  TCOMMANDLINEFO
  TDEBUGGERFO
@@ -728,7 +729,8 @@ moduletypes=8
  TPROJECTOPTIONSFO
  TSELECTEDITPAGEFO
  TSOURCEFO
-modulefiles=8
+ TSOURCEPAGE
+modulefiles=9
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandlineform.mfm
  /home/fred/ideu/src/commandorform.mfm
@@ -737,6 +739,7 @@ modulefiles=8
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=9
  2047
@@ -900,7 +903,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=0
+linenumberson=1
 rightmarginon=0
 rightmarginchars=80
 scrollheight=0
@@ -922,6 +925,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=1
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -1005,7 +1009,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=24
+on=25
  0
  0
  0
@@ -1030,7 +1034,8 @@ on=24
  0
  0
  0
-path=24
+ 0
+path=25
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -1055,7 +1060,8 @@ path=24
  /home/fred/ideu/src/sak_mse.pas
  /home/fred/ideu/src/sak_mse.pas
  /home/fred/ideu/src/commandorform.pas
-line=24
+ /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
+line=25
  777
  2129
  992
@@ -1065,11 +1071,11 @@ line=24
  644
  119
  1032
- 2237
- 2154
- 2429
+ 2245
+ 2162
+ 2437
  636
- 3216
+ 3224
  119
  524
  438
@@ -1080,7 +1086,8 @@ line=24
  844
  783
  66
-address=24
+ 15
+address=25
  4795942
  4826658
  4643185
@@ -1105,7 +1112,8 @@ address=24
  0
  0
  0
-addbkpt=24
+ 0
+addbkpt=25
  0
  0
  0
@@ -1130,7 +1138,8 @@ addbkpt=24
  0
  0
  0
-ignore=24
+ 0
+ignore=25
  0
  0
  0
@@ -1155,7 +1164,9 @@ ignore=24
  0
  0
  0
-condition=24
+ 0
+condition=25
+ 
  
  
  
@@ -1304,8 +1315,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=python
+finddtext=encoding:=
 findhistory=20
+ encoding:=
+ trimtr
+ encoding
+ fencoding
+ colhi
+ tproje
+ colorhint
  python
  exeused
  tcustommaker
@@ -1319,13 +1337,6 @@ findhistory=20
  compileproject
  settypecompiler
  customrun
- ideureadc
- RunCustomCompiled
- selectdelims
- editontextmouseevent
- selectdelims =
- menu.submenu.count
- action = actionsmo.selecteditpage
 findoptions=1
 editpos=42
  0,-1073741823
@@ -1361,15 +1372,15 @@ editpos=42
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 15,13
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,691
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 40,14
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1454,7 +1465,7 @@ sourcefiles=42
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
+ ${PROJECTDIR}/sourcepage.pas
 relpaths=42
  ideU.pas
  main.pas
@@ -1497,7 +1508,7 @@ relpaths=42
  main.pas
  commandorform.pas
  actionsmodule.pas
- ../fpGUIlibDemo_python/fpgui-test.pyw
+ sourcepage.pas
 ismoduletexts=42
  0
  0
@@ -1535,13 +1546,13 @@ ismoduletexts=42
  0
  0
  0
+ -1
  0
  0
  0
  0
  0
- 0
-modules=8
+modules=9
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/selecteditpageform.mfm
  /home/fred/ideu/src/commandorform.mfm
@@ -1550,7 +1561,8 @@ modules=8
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/commandlineform.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=8
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=9
  0
  0
  0
@@ -1559,7 +1571,8 @@ moduleoptions=8
  0
  0
  0
-visiblemodules=8
+ 0
+visiblemodules=9
  -1
  -1
  -1
@@ -1568,7 +1581,9 @@ visiblemodules=8
  -1
  -1
  -1
-nomenumodules=8
+ -1
+nomenumodules=9
+ 0
  0
  0
  0
@@ -1604,9 +1619,9 @@ order=42
  39
  40
  37
- 41
  36
  31
+ 41
  32
  33
  34
@@ -1622,10 +1637,10 @@ order=42
  9
  10
 tabsize=60
-firsttab=19
-index=25
+firsttab=24
+index=29
 [layout]
-windowlayout=621
+windowlayout=640
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1680,7 +1695,7 @@ windowlayout=621
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -1774,7 +1789,7 @@ windowlayout=621
  x=0
  y=0
  cx=159
- cy=514
+ cy=522
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1784,8 +1799,8 @@ windowlayout=621
  width1=12
  sortdescend1=0
  sorted=0
- col=-1073741823
- row=-1073741823
+ col=1
+ row=0
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1877,8 +1892,8 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=670
- y=179
+ x=996
+ y=192
  cx=316
  cy=484
  rcx=0
@@ -1887,10 +1902,10 @@ windowlayout=621
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=291
- width0=69
+ propcolwidthref=306
+ width0=109
  sortdescend0=0
- width1=216
+ width1=191
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2081,7 +2096,7 @@ windowlayout=621
  x=0
  y=0
  cx=1356
- cy=62
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2097,7 +2112,7 @@ windowlayout=621
  x=0
  y=0
  cx=1356
- cy=62
+ cy=54
  rcx=0
  rcy=0
  [sourcefo]
@@ -2113,7 +2128,7 @@ windowlayout=621
  x=162
  y=0
  cx=1194
- cy=514
+ cy=522
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2147,9 +2162,9 @@ windowlayout=621
  ncx=0
  ncy=0
  x=0
- y=65
+ y=57
  cx=1356
- cy=514
+ cy=522
  rcx=0
  rcy=0
  [_mse_confideufo_mse_]
@@ -2231,7 +2246,7 @@ windowlayout=621
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=0
  nx=0
@@ -2239,9 +2254,28 @@ windowlayout=621
  ncx=0
  ncy=0
  x=195
- y=170
+ y=169
  cx=797
  cy=570
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=143
+ y=107
+ cx=600
+ cy=217
  rcx=0
  rcy=0
  wsize=0

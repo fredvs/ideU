@@ -2,7 +2,7 @@ object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 195
-  bounds_y = 170
+  bounds_y = 169
   bounds_cx = 787
   bounds_cy = 570
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -70,12 +70,12 @@ object projectoptionsfo: tprojectoptionsfo
       bounds_cy = 31
       anchors = [an_bottom]
       optionsscale = [osc_expandy, osc_shrinky]
-      optionslayout = [lao_placex, lao_aligny]
+      optionslayout = [lao_placex, lao_aligny, lao_syncmaxautosize]
       align_glue = wam_center
       place_mindist = 5
       place_maxdist = 5
       place_mode = wam_end
-      place_options = [plo_propmargin, plo_syncmaxautosize]
+      place_options = [plo_propmargin]
       linktop = setting_tab
       object cancel: tbutton
         optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -415,7 +415,7 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 1
             bounds_x = 0
             bounds_y = 41
-            bounds_cx = 727
+            bounds_cx = 760
             bounds_cy = 74
             optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
             optionslayout = [lao_aligny]
@@ -503,27 +503,12 @@ object projectoptionsfo: tprojectoptionsfo
               optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               taborder = 1
               bounds_x = 143
-              bounds_y = 7
-              bounds_cx = 584
-              bounds_cy = 60
+              bounds_y = 4
+              bounds_cx = 617
+              bounds_cy = 67
               optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky, osc_expandshrinkx, osc_expandshrinky]
               optionslayout = [lao_aligny]
               align_glue = wam_start
-              object trimtrailingwhitespace: tbooleanedit
-                frame.caption = 'Trim trailing space'#10'on save'
-                frame.localprops = []
-                frame.localprops1 = []
-                frame.outerframe = (
-                  0
-                  9
-                  115
-                  10
-                )
-                bounds_x = 456
-                bounds_y = 28
-                bounds_cx = 128
-                bounds_cy = 32
-              end
               object encoding: tenumedit
                 frame.caption = 'Encoding'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -540,8 +525,7 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                 )
-                taborder = 1
-                bounds_x = 368
+                bounds_x = 322
                 bounds_y = 15
                 bounds_cx = 84
                 bounds_cy = 39
@@ -585,10 +569,10 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                 )
-                taborder = 2
+                taborder = 1
                 hint = 'Background color of marked brackets and word pairs.'#10'cl_none -> none.'
                 onshowhint = bracketbkcolhint
-                bounds_x = 264
+                bounds_x = 210
                 bounds_y = 0
                 bounds_cy = 54
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
@@ -622,8 +606,8 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                 )
-                taborder = 3
-                bounds_x = 160
+                taborder = 2
+                bounds_x = 103
                 bounds_y = 0
                 bounds_cy = 54
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
@@ -643,9 +627,9 @@ object projectoptionsfo: tprojectoptionsfo
                   6
                   0
                 )
-                taborder = 4
+                taborder = 3
                 hint = '0 -> accelerated,'#10'-1 -> paged'
-                bounds_x = 104
+                bounds_x = 60
                 bounds_y = 0
                 bounds_cx = 42
                 bounds_cy = 54
@@ -654,26 +638,71 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
               object rightmarginchars: tintegeredit
-                frame.caption = 'Characters'
+                frame.caption = 'Num'#10'Charac.'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
-                  18
-                  31
+                  33
+                  12
                   0
                 )
-                taborder = 5
+                taborder = 4
                 bounds_x = 8
-                bounds_y = 15
-                bounds_cx = 67
-                bounds_cy = 39
+                bounds_y = 0
+                bounds_cx = 48
+                bounds_cy = 54
                 optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 value = 80
                 min = 1
                 max = 100
                 reffontheight = 15
+              end
+              object eolstyle: tenumtypeedit
+                frame.caption = 'EOL Style'
+                frame.localprops = []
+                frame.localprops1 = []
+                frame.buttons.count = 1
+                frame.buttons.items = <                
+                  item
+                  end>
+                frame.outerframe = (
+                  0
+                  18
+                  0
+                  0
+                )
+                taborder = 5
+                hint = 'End of line style for writing. eol_default -> use original style.'
+                bounds_x = 419
+                bounds_y = 15
+                bounds_cy = 39
+                value = 1
+                min = 0
+                max = 3
+                dropdown.cols.count = 1
+                dropdown.cols.items = <                
+                  item
+                  end>
+                oninit = initeolstyleexe
+                reffontheight = 15
+              end
+              object trimtrailingwhitespace: tbooleanedit
+                frame.caption = 'Trim trailing'#10'whitespace'#10'on save'
+                frame.localprops = []
+                frame.localprops1 = []
+                frame.outerframe = (
+                  0
+                  17
+                  76
+                  17
+                )
+                taborder = 6
+                bounds_x = 528
+                bounds_y = 20
+                bounds_cx = 89
+                bounds_cy = 47
               end
             end
           end
