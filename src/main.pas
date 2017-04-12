@@ -1321,11 +1321,12 @@ int1, int2: integer;
    with projectoptions,o,texp do begin
  
 for int2:= 0 to high(compilerused) do begin
-   if (compilerusedon[int2] <> 0)  then
+   if (thetag and compilerusedon[int2] <> 0)  then
     begin
- if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
- if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
- if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
+ if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else   
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
  if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;
    
    end;
@@ -2004,16 +2005,16 @@ for int3:= 0 to high(debuggerused) do begin
    with projectoptions,o,texp do begin
  
 for int2:= 0 to high(compilerused) do begin
-   if (compilerusedon[int2] <> 0)  then
+   if (thetag and compilerusedon[int2] <> 0)  then
     begin
- if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1;
- if system.pos('Java',compilerused[int2]) > 0 then int1 := 2;
- if system.pos('C ',compilerused[int2]) > 0 then int1 := 3;
-   
+ if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else   
+ if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
+ if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
+ if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
+ if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;   
    end;
    end;
    end;
- 
  
  if (str3 <> '') and ((int1 = 1) or (int1 = 3))  then begin
   terminategdbserver(killserver);
