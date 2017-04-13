@@ -196,7 +196,7 @@ object debuggerfo: tdebuggerfo
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     taborder = 2
-    hint = ' Run compiled '
+    hint = ' Run compiled edited file'
     bounds_x = 900
     bounds_y = 2
     bounds_cx = 26
@@ -249,6 +249,7 @@ object debuggerfo: tdebuggerfo
       item
       end>
     taborder = 5
+    hint = ' Project Option for Edited file '
     bounds_x = 809
     bounds_y = 5
     bounds_cx = 35
@@ -285,7 +286,7 @@ object debuggerfo: tdebuggerfo
       item
       end>
     taborder = 6
-    hint = ' Compiler number '
+    hint = ' Compiler number for Edited file '
     bounds_x = 768
     bounds_y = 5
     bounds_cx = 36
@@ -319,6 +320,7 @@ object debuggerfo: tdebuggerfo
       item
       end>
     taborder = 7
+    hint = ' Compiler Type for Edited file '
     bounds_x = 702
     bounds_y = 5
     bounds_cx = 63
@@ -580,6 +582,7 @@ object debuggerfo: tdebuggerfo
       item
       end>
     taborder = 24
+    hint = ' Project Option Num '
     bounds_x = 253
     bounds_y = 5
     bounds_cx = 34
@@ -645,7 +648,7 @@ object debuggerfo: tdebuggerfo
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     taborder = 27
-    hint = ' Project options '
+    hint = ' Project options panel '
     bounds_x = 165
     bounds_y = 2
     bounds_cx = 26

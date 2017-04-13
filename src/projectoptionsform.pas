@@ -1932,6 +1932,10 @@ begin
   additem(fsyntaxdeffiles,'${SYNTAXDEFDIR}pascal.sdef');
   additem(fsourcefilemasks,'"*.c" "*.cc" "*.h"');
   additem(fsyntaxdeffiles,'${SYNTAXDEFDIR}cpp.sdef');
+  additem(fsourcefilemasks,'"*.java"');
+  additem(fsyntaxdeffiles,'${SYNTAXDEFDIR}java.sdef');
+  additem(fsourcefilemasks,'"*.pyw"');
+  additem(fsyntaxdeffiles,'${SYNTAXDEFDIR}python.sdef');
   additem(fsourcefilemasks,'"*.mfm"');
   additem(fsyntaxdeffiles,'${SYNTAXDEFDIR}objecttext.sdef');
 

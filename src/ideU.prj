@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=71
+findinfiledialog=72
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,14 +29,15 @@ findinfiledialog=71
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.mfm"
- history=6
+ value="*.pas" "*.pp" "*.inc" 
+ history=7
+  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm"
   "*.pas" "*.pp" "*.inc" "*.mfm"  "*.*"
   "*.pas" "*.pp" "*.inc"
@@ -45,7 +46,7 @@ findinfiledialog=71
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/msegui/apps/ide/
+  /home/fred/msegui/
  filecolwidth=174
  x=0
  y=0
@@ -61,10 +62,12 @@ findinfiledialog=71
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=int2:= 0 to high(compilerused)
+ value=markpairwords
  history=20
+  markpairwords
+  editmarkpairwords
   int2:= 0 to high(compilerused)
   runwithoutdebugger
   RunCustomCompiled
@@ -83,8 +86,6 @@ findinfiledialog=71
   settypecompiler
   copyri
   copyrigth
-  universal_path
-  omplete class
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1315,8 +1316,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=encoding:=
+finddtext=matchpairword
 findhistory=20
+ matchpairword
  encoding:=
  trimtr
  encoding
@@ -1336,9 +1338,28 @@ findhistory=20
  runwithoutdebugger
  compileproject
  settypecompiler
- customrun
 findoptions=1
-editpos=47
+editpos=51
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1370,22 +1391,6 @@ editpos=47
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,1374
- 71,5
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1433,7 +1438,11 @@ bookmarks43=0
 bookmarks44=0
 bookmarks45=0
 bookmarks46=0
-sourcefiles=47
+bookmarks47=0
+bookmarks48=0
+bookmarks49=0
+bookmarks50=0
+sourcefiles=51
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
@@ -1481,7 +1490,11 @@ sourcefiles=47
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/confideu.pas
-relpaths=47
+ ${PROJECTDIR}/sourcepage.pas
+ /home/fred/msegui/lib/common/designutils/msesyntaxedit.pas
+ ${PROJECTDIR}/syntaxdefs/pascal_ideu.sdef
+ ${PROJECTDIR}/commandorform.pas
+relpaths=51
  ideU.pas
  main.pas
  confideu.pas
@@ -1529,7 +1542,11 @@ relpaths=47
  actionsmodule.pas
  projectoptionsform.pas
  confideu.pas
-ismoduletexts=47
+ sourcepage.pas
+ msegui/lib/common/designutils/msesyntaxedit.pas
+ syntaxdefs/pascal_ideu.sdef
+ commandorform.pas
+ismoduletexts=51
  0
  0
  0
@@ -1567,6 +1584,10 @@ ismoduletexts=47
  0
  0
  -1
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1618,7 +1639,7 @@ nomenumodules=9
  0
  0
 [sourcefo.files_tab]
-order=47
+order=51
  0
  1
  2
@@ -1646,6 +1667,9 @@ order=47
  37
  36
  31
+ 47
+ 48
+ 49
  41
  32
  33
@@ -1654,6 +1678,7 @@ order=47
  44
  43
  42
+ 50
  34
  22
  23
@@ -1667,8 +1692,8 @@ order=47
  9
  10
 tabsize=60
-firsttab=25
-index=31
+firsttab=39
+index=46
 [layout]
 windowlayout=640
  [mainfo.basedock]
@@ -1800,8 +1825,8 @@ windowlayout=640
  ny=0
  ncx=0
  ncy=0
- x=240
- y=115
+ x=239
+ y=118
  cx=678
  cy=414
  rcx=0
@@ -1922,9 +1947,9 @@ windowlayout=640
  ny=0
  ncx=0
  ncy=0
- x=996
- y=192
- cx=316
+ x=755
+ y=172
+ cx=541
  cy=484
  rcx=0
  rcy=0
@@ -1932,10 +1957,10 @@ windowlayout=640
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=108
+ propcolwidthref=531
+ width0=187
  sortdescend0=0
- width1=192
+ width1=338
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2165,7 +2190,7 @@ windowlayout=640
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_selecteditpagefo_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2200,7 +2225,7 @@ windowlayout=640
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=
+ stackedunder=_mse_selecteditpagefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2302,8 +2327,8 @@ windowlayout=640
  ny=0
  ncx=0
  ncy=0
- x=143
- y=107
+ x=189
+ y=441
  cx=600
  cy=217
  rcx=0

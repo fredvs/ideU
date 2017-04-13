@@ -107,10 +107,10 @@ object sourcefo: tsourcefo
     fontempty.localprops = []
     tab_options = [tabo_dragsource, tabo_dragdest, tabo_tabsizing, tabo_dblclickedtabfirst, tabo_hintclippedtext]
     tab_frame.buttonsize = 16
-    tab_frame.buttonsinvisible = [sk_right, sk_up, sk_left, sk_down, sk_first, sk_last]
-    tab_frame.buttonsvisible = [sk_first, sk_last]
+    tab_frame.buttonsinvisible = [sk_up, sk_down, sk_first, sk_last]
+    tab_frame.buttonsvisible = [sk_right, sk_left, sk_first, sk_last]
     tab_frame.localprops = [frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
-    tab_frame.localprops1 = []
+    tab_frame.localprops1 = [frl1_captiondist]
     tab_textflags = [tf_ycentered]
     tab_captionframe_left = 4
     tab_captionframe_top = 2
@@ -120,15 +120,16 @@ object sourcefo: tsourcefo
     tab_coloractivetab = 16579836
     tab_sizemin = 60
     tab_size = 60
+    tab_optionswidget = [ow_destroywidgets, ow_hinton, ow_timedhint]
     object step_back: tstockglyphbutton
-      optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
+      optionswidget = [ow_destroywidgets, ow_timedhint]
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
-      bounds_x = 604
+      bounds_x = 588
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 20
+      bounds_cy = 22
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint, as_localonexecute]
       glyph = stg_arrowleft
@@ -137,14 +138,14 @@ object sourcefo: tsourcefo
       onexecute = navigback
     end
     object step_forward: tstockglyphbutton
-      optionswidget = [ow_destroywidgets, ow_disabledhint, ow_timedhint]
+      optionswidget = [ow_destroywidgets, ow_timedhint]
       taborder = 1
       hint = 'Step forward in code navigation.'
       onshowhint = stephintev
-      bounds_x = 620
+      bounds_x = 604
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 20
+      bounds_cy = 22
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint]
       glyph = stg_arrowright
