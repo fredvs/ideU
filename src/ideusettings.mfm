@@ -1,8 +1,8 @@
 object settings_form: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 159
-  bounds_y = 141
+  bounds_x = 212
+  bounds_y = 165
   bounds_cx = 471
   bounds_cy = 446
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
@@ -79,13 +79,24 @@ object settings_form: tsettingsfo
   object setting_tab: ttabwidget
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     optionswidget1 = [ow1_fontglyphheight]
-    bounds_x = 5
-    bounds_y = 6
+    bounds_x = 7
+    bounds_y = 3
     bounds_cx = 460
     bounds_cy = 436
     activepageindex = 0
+    tab_fontactivetab.style = [fs_bold]
+    tab_fontactivetab.name = 'stf_default'
+    tab_fontactivetab.localprops = [flp_style]
     tab_frame.localprops = []
     tab_frame.localprops1 = []
+    tab_coloractivetab = 16775390
+    tab_frametab.frameimage_list = sourcefo.timagelist2
+    tab_frametab.frameimage_left = -4
+    tab_frametab.frameimage_right = -4
+    tab_frametab.frameimage_top = -4
+    tab_frametab.frameimage_bottom = -4
+    tab_frametab.localprops = [frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
+    tab_frametab.localprops1 = []
     tab_size = 20
     tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     reffontheight = 15
@@ -549,7 +560,7 @@ object settings_form: tsettingsfo
           visible = False
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 199
+          bounds_cx = 406
           bounds_cy = 16
           anchors = [an_top]
           optionsedit1 = [oe1_savevalue]

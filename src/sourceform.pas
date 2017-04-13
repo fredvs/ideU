@@ -5,12 +5,12 @@ unit sourceform;
 interface
 
 uses
- confideu, ideusettings, sysutils, msetimer, 
- msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils,
- msebitmap,msetabs,sourcepage,mseglob,msetypes,msestrings,mseguiglob,
- msegui,msesyntaxpainter,msemenus,mseactions,msestat,
+ confideu, ideusettings, sysutils, msetimer,msetextedit,msewidgetgrid,mseforms,
+ classes,mclasses,msegdbutils,msebitmap,msetabs,sourcepage,mseglob,msetypes,
+ msestrings,mseguiglob,msegui,msesyntaxpainter,msemenus,mseactions,msestat,
  finddialogform,msestream,msefilechange,breakpointsform,mseparser,
- msesimplewidgets,msegrids,msegraphutils,msegridsglob,msestringcontainer;
+ msesimplewidgets,msegrids,msegraphutils,msegridsglob,msestringcontainer,
+ msedragglob,msegraphics,msescrollbar,msewidgets;
 
 type
  stringconsts = (
@@ -64,6 +64,7 @@ type
    step_back: tstockglyphbutton;
    step_forward: tstockglyphbutton;
    c: tstringcontainer;
+   timagelist2: timagelist;
    procedure formonidle(var again: boolean);
    procedure doselectpage(const sender: TObject);
 
@@ -186,7 +187,7 @@ function locateerrormessage(const text: msestring; var apage: tsourcepage;
 implementation
 uses
  sourceform_mfm,msefileutils,mseformatstr, dialogfiles, 
- projectoptionsform,main,mseeditglob,watchform,msesys,msewidgets,msedesigner,
+ projectoptionsform,main,mseeditglob,watchform,msesys,msedesigner,
  selecteditpageform,sourceupdate,mseclasses,msearrayutils,
  msebits,msesysutils,mseintegerenter,panelform;
 
