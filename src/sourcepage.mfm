@@ -26,7 +26,8 @@ object sourcepage: tsourcepage
     optionswidget1 = [ow1_autoscale]
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     optionsskin = [osk_framebuttononly]
-    frame.localprops = []
+    frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+    frame.localprops = [frl_hiddenedges]
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0

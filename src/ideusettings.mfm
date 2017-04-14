@@ -95,7 +95,8 @@ object settings_form: tsettingsfo
     tab_frametab.frameimage_right = -4
     tab_frametab.frameimage_top = -4
     tab_frametab.frameimage_bottom = -4
-    tab_frametab.localprops = [frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
+    tab_frametab.hiddenedges = [edg_top, edg_bottom]
+    tab_frametab.localprops = [frl_hiddenedges, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
     tab_frametab.localprops1 = []
     tab_size = 20
     tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]

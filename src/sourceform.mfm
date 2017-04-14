@@ -97,8 +97,6 @@ object sourcefo: tsourcefo
     bounds_cx = 652
     bounds_cy = 340
     color = 13750737
-    frame.localprops = []
-    frame.localprops1 = []
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
@@ -111,23 +109,21 @@ object sourcefo: tsourcefo
     tab_fontactivetab.localprops = [flp_style]
     tab_frame.colorframe = -2147483645
     tab_frame.optionsskin = [fso_flat]
-    tab_frame.buttonface.localprops = []
     tab_frame.buttonsize = 16
     tab_frame.buttonsinvisible = [sk_up, sk_down, sk_first, sk_last]
     tab_frame.buttonsvisible = [sk_right, sk_left, sk_first, sk_last]
-    tab_frame.localprops = [frl_colorframe, frl_hiddenedges, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
-    tab_frame.localprops1 = [frl1_captiondist]
+    tab_frame.localprops = [frl_colorframe, frl_frameimagelist, frl_frameimageleft, frl_frameimageright, frl_frameimagebottom, frl_optionsskin]
+    tab_frame.localprops1 = []
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
     tab_captionframe_left = 8
-    tab_captionframe_top = 2
+    tab_captionframe_top = 4
     tab_captionframe_right = 8
-    tab_captionframe_bottom = 3
+    tab_captionframe_bottom = 4
     tab_edge_colordkshadow = -2147483645
     tab_edge_colorshadow = -2147483645
     tab_edge_colorlight = -2147483645
     tab_edge_colorhighlight = 10855845
-    tab_colortab = 13421772
     tab_coloractivetab = 16579836
     tab_frametab.frameimage_list = timagelist2
     tab_frametab.frameimage_left = -4
@@ -140,7 +136,7 @@ object sourcefo: tsourcefo
     tab_frametab.localprops1 = []
     tab_facetab.localprops = []
     tab_faceactivetab.localprops = [fal_options, fal_framei_left, fal_framei_right, fal_framei_bottom, fal_fadirection, fal_faopacity]
-    tab_size = 20
+    tab_size = 24
     tab_optionswidget = [ow_destroywidgets, ow_hinton, ow_timedhint]
     object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
@@ -150,7 +146,7 @@ object sourcefo: tsourcefo
       bounds_x = 588
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 22
+      bounds_cy = 24
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint, as_localonexecute]
       glyph = stg_arrowleft
@@ -166,7 +162,7 @@ object sourcefo: tsourcefo
       bounds_x = 604
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 22
+      bounds_cy = 24
       anchors = [an_top, an_right]
       state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint]
       glyph = stg_arrowright
@@ -603,19 +599,19 @@ object sourcefo: tsourcefo
     left = 36
     top = 129
     image = {
-      00000000020000000C0000000C00000020010000000000000000000000000000
+      00000000020000000C0000000C00000030010000000000000000000000000000
       000000000000000000000000000000000000000000000002A5A5A50300000003
       A5A5A5010000000486868601DCDCDC01FFFFFF01A5A5A50100000003A5A5A501
       000000037C7C7C0100000003A5A5A50100000003A5A5A50100000003A5A5A501
       00000003A5A5A50100000003A5A5A5010000000AA5A5A50100000003A5A5A501
       00000006E8E8E801A5A5A50100000002E8E8E801A5A5A50100000006E5E5E501
       A5A5A50100000002E5E5E501A5A5A50100000005DCDCDC0100000001A5A5A501
-      00000001DCDCDC0100000001A5A5A503CCCCCC0100000001A5A5A504D8D8D804
-      FFFFFF01DCDCDC019494940100000004FFFFFF01D4B59E02D3B59D0200000001
-      FFFFFF01000000018C8C8C0100000004D8D8D802D7D7D70200000002DCDCDC01
-      A5A5A50100000004DAAE8401D7A67C01D5A177021C0100001E01000011010000
-      1101000080080000C00C0000C00C0000A00A0000F70F0000870F00000A0F0000
-      0C0F0000
+      00000001DCDCDC0100000001A5A5A503CCCCCC0100000001A5A5A504D6D6D601
+      8D8D8D01D6D6D602FFFFFF01DCDCDC019494940100000004FFFFFF01D6D6D601
+      8D8D8D01D6D6D60200000001FFFFFF01000000018C8C8C0100000004D6D6D601
+      8D8D8D01D6D6D60200000002DCDCDC01A5A5A50100000004D6D6D6018D8D8D01
+      D6D6D6021C0100001E010000110100001101000080080000C00C0000C00C0000
+      A00A0000F70F0000870F00000A0F00000C0F0000
     }
   end
 end
