@@ -1089,6 +1089,10 @@ begin
  page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
+  
+  if assigned(mainfo) then mainfo.openfile.controller.lastdir
+  := ExtractFilePath(activepage.pathdisp.value);
+  
  if assigned(debuggerfo) then
  begin
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';

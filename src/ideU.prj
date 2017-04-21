@@ -711,18 +711,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=5
  ACTIONSMO
+ DEBUGGERFO
  MAINFO
  SOURCEFO
-moduletypes=3
+ SOURCEPAGE
+moduletypes=5
  TACTIONSMO
+ TDEBUGGERFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+ TSOURCEPAGE
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=9
  2047
@@ -1298,9 +1304,16 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=updatecaption
+finddtext=gini
 findhistory=20
+ gini
+ loadc
+ init
+ tsourcepage
+ finitialfilepath
+ pathdisp
  updatecaption
+ opensource
  matchpairword
  encoding:=
  trimtr
@@ -1313,59 +1326,89 @@ findhistory=20
  exeused
  tcustommaker
  customdomake
- customcompile
- setupcustom
- runwithoutd
- pos(
- domake
- runwithoutdebugger
- compileproject
 findoptions=1
-editpos=4
+editpos=8
+ 0,1092
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,80
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- /home/fred/ideu/src/ideU.pas
-relpaths=4
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/fpg_iniutils_ideu.pas
+relpaths=8
  sourceform.pas
  actionsmodule.pas
  main.pas
  ideU.pas
-ismoduletexts=4
+ commandorform.pas
+ actionsmodule.pas
+ sourcepage.pas
+ fpg_iniutils_ideu.pas
+ismoduletexts=8
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+modules=5
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=5
  0
  0
  0
-visiblemodules=3
+ 0
+ 0
+visiblemodules=5
  -1
  -1
  -1
-nomenumodules=3
+ -1
+ -1
+nomenumodules=5
+ 0
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=8
+ 0
+ 6
+ 1
+ 2
+ 7
+ 3
+ 4
+ 5
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=545
+windowlayout=583
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1525,7 +1568,7 @@ windowlayout=545
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=13
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1906,6 +1949,44 @@ windowlayout=545
  y=213
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_sourcepage_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=212
+ y=117
+ cx=948
+ cy=51
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=189
+ y=441
+ cx=600
+ cy=217
  rcx=0
  rcy=0
  wsize=0

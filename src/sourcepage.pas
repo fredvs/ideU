@@ -81,7 +81,6 @@ type
    procedure showsourcehint(const apos: gridcoordty; const values: stringarty);
    procedure updatelinedisp;
   protected
-   finitialfilepath: filenamety;
    finitialeditpos: gridcoordty;
    finitialbookmarks: bookmarkarty;
    fbracket1,fbracket2: gridcoordty;
@@ -91,6 +90,7 @@ type
    procedure endupdate;
    function checkfilechanged: boolean;
   public
+   finitialfilepath: filenamety;
    filechanged: boolean;
    ismoduletext: boolean;
    constructor create(aowner: tcomponent); override;
