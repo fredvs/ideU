@@ -29,11 +29,11 @@ findinfiledialog=72
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
  history=7
@@ -64,8 +64,9 @@ findinfiledialog=72
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=markpairwords
+ value=updatecaption
  history=20
+  updatecaption
   markpairwords
   editmarkpairwords
   int2:= 0 to high(compilerused)
@@ -85,7 +86,6 @@ findinfiledialog=72
   atag
   settypecompiler
   copyri
-  copyrigth
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -711,22 +711,16 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
- ACTIONSMO
+modulenames=3
  DEBUGGERFO
- MAINFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=5
- TACTIONSMO
+moduletypes=3
  TDEBUGGERFO
- TMAINFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=5
- /home/fred/ideu/src/actionsmodule.mfm
+modulefiles=3
  /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
@@ -1304,15 +1298,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=gini
+finddtext=updatecaption
 findhistory=20
+ updatecaption
  gini
  loadc
  init
  tsourcepage
  finitialfilepath
  pathdisp
- updatecaption
  opensource
  matchpairword
  encoding:=
@@ -1327,38 +1321,18 @@ findhistory=20
  tcustommaker
  customdomake
 findoptions=1
-editpos=6
- 0,1092
- 0,0
- 0,0
- 0,13
- 0,0
- 9,4
+editpos=2
+ 0,1094
+ 0,7
 bookmarks0=0
 bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=2
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
-relpaths=6
+relpaths=2
  sourceform.pas
- actionsmodule.pas
- main.pas
- commandorform.pas
- actionsmodule.pas
  sourcepage.pas
-ismoduletexts=6
- 0
- 0
- 0
- 0
+ismoduletexts=2
  0
  0
 modules=5
@@ -1374,20 +1348,20 @@ moduleoptions=5
  0
  0
 visiblemodules=5
+ 0
  -1
- -1
- -1
+ 0
  -1
  -1
 nomenumodules=5
+ -1
  0
- 0
- 0
+ -1
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=5
+index=0
 [layout]
 windowlayout=583
  [mainfo.basedock]
@@ -1652,9 +1626,9 @@ windowlayout=583
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=439
- width0=316
+ width0=154
  sortdescend0=0
- width1=117
+ width1=279
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1884,7 +1858,7 @@ windowlayout=583
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1934,7 +1908,7 @@ windowlayout=583
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=805322875

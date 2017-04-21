@@ -1086,15 +1086,16 @@ var
  page: tsourcepage;
 
 begin
+
  page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
-  
-  if directoryexists(ExtractFilePath(activepage.pathdisp.value)) then
-  
-  if assigned(mainfo) then mainfo.openfile.controller.lastdir
+ 
+  if  assigned(activepage) then
+  if fileexists(activepage.pathdisp.value) then
+  if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
-  
+
  if assigned(debuggerfo) then
  begin
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
