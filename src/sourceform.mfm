@@ -10,8 +10,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 225
-  bounds_y = 251
+  bounds_x = 418
+  bounds_y = 263
   bounds_cx = 662
   bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -96,24 +96,24 @@ object sourcefo: tsourcefo
     bounds_y = 0
     bounds_cx = 652
     bounds_cy = 340
-    color = 13750737
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
     onpageremoved = tabwidgetpageremoved
     fontempty.name = 'stf_empty'
     fontempty.localprops = []
-    tab_options = [tabo_dragsource, tabo_dragdest, tabo_tabsizing, tabo_dblclickedtabfirst, tabo_hintclippedtext]
+    tab_options = [tabo_dragsource, tabo_dragdest, tabo_dblclickedtabfirst, tabo_hintclippedtext]
+    tab_fontactivetab.color = 0
     tab_fontactivetab.style = [fs_bold]
     tab_fontactivetab.name = 'stf_default'
-    tab_fontactivetab.localprops = [flp_style]
-    tab_frame.colorframe = -2147483645
+    tab_fontactivetab.localprops = [flp_color, flp_style]
     tab_frame.optionsskin = [fso_flat]
     tab_frame.buttonsize = 16
     tab_frame.buttonsinvisible = [sk_up, sk_down, sk_first, sk_last]
     tab_frame.buttonsvisible = [sk_right, sk_left, sk_first, sk_last]
-    tab_frame.localprops = [frl_colorframe, frl_frameimagelist, frl_frameimageleft, frl_frameimageright, frl_frameimagebottom, frl_optionsskin]
+    tab_frame.localprops = [frl_frameimageleft, frl_frameimagebottom, frl_optionsskin]
     tab_frame.localprops1 = []
+    tab_face.localprops = []
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
     tab_captionframe_left = 8
@@ -123,7 +123,7 @@ object sourcefo: tsourcefo
     tab_edge_colordkshadow = -2147483645
     tab_edge_colorshadow = -2147483645
     tab_edge_colorlight = -2147483645
-    tab_edge_colorhighlight = 10855845
+    tab_edge_colorhighlight = 7237230
     tab_coloractivetab = 16579836
     tab_frametab.frameimage_list = timagelist2
     tab_frametab.frameimage_left = -4
@@ -134,12 +134,36 @@ object sourcefo: tsourcefo
     tab_frametab.hiddenedges = [edg_top, edg_bottom]
     tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_hiddenedges, frl_fitop, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin]
     tab_frametab.localprops1 = []
-    tab_facetab.localprops = []
+    tab_facetab.fade_pos.count = 2
+    tab_facetab.fade_pos.items = (
+      0
+      1
+    )
+    tab_facetab.fade_color.count = 2
+    tab_facetab.fade_color.items = (
+      9079434
+      14408667
+    )
+    tab_facetab.fade_direction = gd_down
+    tab_facetab.localprops = [fal_fadirection]
+    tab_faceactivetab.fade_pos.count = 2
+    tab_faceactivetab.fade_pos.items = (
+      0
+      1
+    )
+    tab_faceactivetab.fade_color.count = 2
+    tab_faceactivetab.fade_color.items = (
+      15790320
+      16777215
+    )
+    tab_faceactivetab.fade_direction = gd_down
     tab_faceactivetab.localprops = [fal_options, fal_framei_left, fal_framei_right, fal_framei_bottom, fal_fadirection, fal_faopacity]
-    tab_size = 24
+    tab_size = 25
     tab_optionswidget = [ow_destroywidgets, ow_hinton, ow_timedhint]
+    tab_optionswidget1 = []
     object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
+      color = 13750737
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
@@ -148,7 +172,7 @@ object sourcefo: tsourcefo
       bounds_cx = 16
       bounds_cy = 24
       anchors = [an_top, an_right]
-      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint, as_localonexecute]
+      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       glyph = stg_arrowleft
       action = navigbackact
       colorglyph = 46592
@@ -156,6 +180,7 @@ object sourcefo: tsourcefo
     end
     object step_forward: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
+      color = 13750737
       taborder = 1
       hint = 'Step forward in code navigation.'
       onshowhint = stephintev
@@ -164,7 +189,7 @@ object sourcefo: tsourcefo
       bounds_cx = 16
       bounds_cy = 24
       anchors = [an_top, an_right]
-      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localhint]
+      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localcolor, as_localhint]
       glyph = stg_arrowright
       action = navigforwardact
       colorglyph = 38144
@@ -596,22 +621,39 @@ object sourcefo: tsourcefo
     height = 4
     count = 8
     cornermask = #2#1
-    left = 36
-    top = 129
+    left = 182
+    top = 272
     image = {
-      00000000020000000C0000000C00000030010000000000000000000000000000
+      00000000020000000C0000000C00000000010000000000000000000000000000
       000000000000000000000000000000000000000000000002A5A5A50300000003
       A5A5A5010000000486868601DCDCDC01FFFFFF01A5A5A50100000003A5A5A501
       000000037C7C7C0100000003A5A5A50100000003A5A5A50100000003A5A5A501
       00000003A5A5A50100000003A5A5A5010000000AA5A5A50100000003A5A5A501
       00000006E8E8E801A5A5A50100000002E8E8E801A5A5A50100000006E5E5E501
       A5A5A50100000002E5E5E501A5A5A50100000005DCDCDC0100000001A5A5A501
-      00000001DCDCDC0100000001A5A5A503CCCCCC0100000001A5A5A504D6D6D601
-      8D8D8D01D6D6D602FFFFFF01DCDCDC019494940100000004FFFFFF01D6D6D601
-      8D8D8D01D6D6D60200000001FFFFFF01000000018C8C8C0100000004D6D6D601
-      8D8D8D01D6D6D60200000002DCDCDC01A5A5A50100000004D6D6D6018D8D8D01
-      D6D6D6021C0100001E010000110100001101000080080000C00C0000C00C0000
-      A00A0000F70F0000870F00000A0F00000C0F0000
+      00000001DCDCDC0100000001A5A5A503CCCCCC0100000001A5A5A50400000004
+      FFFFFF01DCDCDC019494940100000004FFFFFF0100000005FFFFFF0100000001
+      8C8C8C010000000ADCDCDC01A5A5A501000000081C0100001E01000011010000
+      1101000080080000C00C0000C00C0000A00A0000F7000000870000000A000000
+      0C000000
+    }
+  end
+  object timagelist3: timagelist
+    width = 4
+    height = 4
+    count = 8
+    cornermask = #2#1
+    left = 308
+    top = 210
+    image = {
+      00000000020000000C0000000C0000009C000000000000000000000000000000
+      000000000000000000000000000000000000000000000002A5A5A50200000009
+      86868601DCDCDC01FFFFFF01000000087C7C7C010000000BA5A5A5010000003B
+      A5A5A502CCCCCC0100000001A5A5A50400000003A5A5A501FFFFFF01DCDCDC01
+      9494940100000004FFFFFF0100000002E8E8E801A5A5A50100000001FFFFFF01
+      000000018C8C8C0100000006E5E5E501A5A5A50100000002DCDCDC01A5A5A501
+      00000005DCDCDC0100000001A5A5A5010C0000000E0000000100000001000000
+      00000000000000000000000000000000F7080000870C00000A0C00000C0A0000
     }
   end
 end

@@ -5,12 +5,12 @@ unit sourceform;
 interface
 
 uses
- confideu, ideusettings, sysutils, msetimer,msetextedit,msewidgetgrid,mseforms,
- classes,mclasses,msegdbutils,msebitmap,msetabs,sourcepage,mseglob,msetypes,
- msestrings,mseguiglob,msegui,msesyntaxpainter,msemenus,mseactions,msestat,
- finddialogform,msestream,msefilechange,breakpointsform,mseparser,
- msesimplewidgets,msegrids,msegraphutils,msegridsglob,msestringcontainer,
- msedragglob,msegraphics,msescrollbar,msewidgets;
+ confideu, ideusettings, commandorform, sysutils, msetimer,msetextedit,
+ msewidgetgrid,mseforms,classes,mclasses,msegdbutils,msebitmap,msetabs,
+ sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
+ msemenus,mseactions,msestat,finddialogform,msestream,msefilechange,
+ breakpointsform,mseparser,msesimplewidgets,msegrids,msegraphutils,msegridsglob,
+ msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets;
 
 type
  stringconsts = (
@@ -65,6 +65,7 @@ type
    step_forward: tstockglyphbutton;
    c: tstringcontainer;
    timagelist2: timagelist;
+   timagelist3: timagelist;
    procedure formonidle(var again: boolean);
    procedure doselectpage(const sender: TObject);
 
@@ -1088,9 +1089,20 @@ begin
  page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
+ if assigned(debuggerfo) then
+ begin
+  debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
+  debuggerfo.edited_run.hint :=  ' Run ' + caption;
+  debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
+  debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
+  debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
+  debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
+  debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + ' ';
+  end;
  end
  else begin
   caption:= c[ord(none)];
+  
  end;
 end;
 

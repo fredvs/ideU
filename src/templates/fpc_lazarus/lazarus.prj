@@ -17,6 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_lazarus
+projectfilename=/home/fred/ideu/src/templates/fpc_lazarus/lazarus.prj
 findinfiledialog=37
  [findinfileadialogfo.subdirs]
  value=1
@@ -115,9 +117,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=121
+ y=120
  xprop=1
- yprop=0.24077669902913
+ yprop=0.24070450097847
  [projectoptionsfo.macrogrid]
  propcolwidthref=481
  sortdescend0=0
@@ -153,10 +155,10 @@ options=114
  firsttab=0
  index=5
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=618
+ propcolwidthref=621
  width0=112
  sortdescend0=0
- width1=611
+ width1=614
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
@@ -184,13 +186,15 @@ targetfile=${PROJECTNAME}${EXEEXT}
 messageoutputfile=
 makecommand=${COMPILER}
 makedir=
-unitdirs=9
+unitdirs=11
  ${lazarus}*
  ${lazarus}/components/*
  ${lazarus}/*
  ${lazarus}/lcl/*
  ${lazarus}/interfaces/*
- ${lazarus}/interfaces/gtk2
+ ${lazarus}/lcl/interfaces/gtk2
+ ${lazarus}/lcl/interfaces/qt
+ ${lazarus}/lcl/interfaces/win32
  ${lazarus}/lcl/components/*
  ${lazarus}/lcl/include
  ${lazarus}/lcl
@@ -509,13 +513,15 @@ project_time=
 project_date=15:21:42 26/03/2017
 project_comment=
 aftcommandon=0
-unitdirson=9
+unitdirson=11
  987135
  987135
  987135
  987135
  987135
  987135
+ 0
+ 0
  987135
  987135
  987135
@@ -607,6 +613,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=1
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -739,7 +746,7 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
+tabsize=24
 firsttab=0
 index=-1
 [layout]
@@ -984,7 +991,7 @@ windowlayout=520
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1162,7 +1169,7 @@ windowlayout=520
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1232,7 +1239,7 @@ windowlayout=520
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
