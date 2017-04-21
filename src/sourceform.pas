@@ -1090,6 +1090,8 @@ begin
  if page <> nil then begin
   caption:= page.caption;
   
+  if directoryexists(ExtractFilePath(activepage.pathdisp.value)) then
+  
   if assigned(mainfo) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
   
