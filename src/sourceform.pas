@@ -1099,7 +1099,7 @@ begin
  if assigned(debuggerfo) then
  begin
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
-  debuggerfo.edited_run.hint :=  ' Run ' + caption;
+  debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
   debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
