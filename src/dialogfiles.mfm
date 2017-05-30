@@ -80,6 +80,7 @@ object dialogfilesfo: tdialogfilesfo
     reffontheight = 15
   end
   object selected_file: tedit
+    optionswidget1 = [ow1_fontglyphheight]
     frame.caption = 'Selected Syntax Definition File'
     frame.localprops = []
     frame.localprops1 = []

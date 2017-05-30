@@ -4,8 +4,8 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,msemenus,
- msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
+ msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
+ msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
  msestream,msestrings,sysutils,mseimage,msedispwidgets,mserichstring,mseact;
@@ -14,6 +14,14 @@ type
  tdebuggerfo = class(tdockform)
    basedock: tdockpanel;
    statdisp: tstringdisp;
+   project_option: tbutton;
+   toggle_form_unit: tbutton;
+   line_number: tbutton;
+   find_in_directory: tbutton;
+   find_in_edit: tbutton;
+   properties_list: tbutton;
+   assistive: tbutton;
+   paneledited: tdockpanel;
    edited_run: tbutton;
    edited_abort: tbutton;
    edited_make: tbutton;
@@ -22,6 +30,7 @@ type
    edit_compiler: tdropdownlistedit;
    save_file: tbutton;
    open_file: tbutton;
+   panelproject: tdockpanel;
    project_interrupt: tbutton;
    project_reset: tbutton;
    project_step_instruction: tbutton;
@@ -30,22 +39,16 @@ type
    project_step: tbutton;
    project_next: tbutton;
    project_start: tbutton;
-   hints: tbooleanedit;
-   watches: tbooleanedit;
-   timage1: timage;
-   break_point: tbooleanedit;
    project_abort_compil: tbutton;
    project_make: tbutton;
    project_options: tdropdownlistedit;
    save_project: tbutton;
    open_project: tbutton;
-   project_option: tbutton;
-   toggle_form_unit: tbutton;
-   line_number: tbutton;
-   find_in_directory: tbutton;
-   find_in_edit: tbutton;
-   properties_list: tbutton;
-   assistive: tbutton;
+   panelwatch: tdockpanel;
+   hints: tbooleanedit;
+   watches: tbooleanedit;
+   break_point: tbooleanedit;
+   timage1: timage;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);

@@ -470,7 +470,7 @@ constructor tmainfo.create(aowner: tcomponent);
 begin
  frunningprocess:= invalidprochandle;
  fgdbserverprocid:= invalidprochandle;
- customoption := 4 ;
+ customoption := 0 ;
  setcompiler := 1 ;
  settypecompiler := 1 ;
  
@@ -532,8 +532,8 @@ dialogfilesfo.caption := 'Load a Syntax Definition File'  ;
 
 dialogfilesfo.list_files.path := expandprmacros('${SYNTAXDEFDIR}') ;
 dialogfilesfo.list_files.mask := '*.sdef';
-dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition of ' +
-dialogfilesfo.list_files.directory ;
+dialogfilesfo.selected_file.frame.caption := 'Selected Syntax Definition File';
+// + dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
 dialogfilesfo.show(true);
 end;
@@ -3830,8 +3830,8 @@ dialogfilesfo.list_files.cellwidth := 437 ;
 dialogfilesfo.list_files.mask := '*.prj';
 dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
 
-dialogfilesfo.selected_file.frame.caption := 'Selected Layout File from ' +
-dialogfilesfo.list_files.directory ;
+dialogfilesfo.selected_file.frame.caption := 'Selected Layout File';
+// from ' + dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;
 //dialogfilesfo.activate;
 dialogfilesfo.show(true);

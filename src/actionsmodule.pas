@@ -659,7 +659,8 @@ begin
     '7' : mainfo.customoption := 256 ;
     '8' : mainfo.customoption := 512 ;
    '9' : mainfo.customoption := 1024 ; 
-    '0' : mainfo.customoption := 2048 ;   
+    '0' : mainfo.customoption := 2048 ;  
+    'X' : mainfo.customoption := 0 ;   
   end;
     
 end;
@@ -699,7 +700,8 @@ begin
     8 : mainfo.customoption := 256 ;
      9 : mainfo.customoption := 512 ;
    10 : mainfo.customoption := 1024 ; 
-   11 : mainfo.customoption := 2048 ;    
+   11 : mainfo.customoption := 2048 ;
+   12 : mainfo.customoption := 0 ;   
   end;
     
 end;

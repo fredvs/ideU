@@ -1101,10 +1101,8 @@ begin
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
   debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
-  debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
   debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
-  debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
-  debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + ' ';
+  debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + '. X --> No parameters.';
   end;
  end
  else begin

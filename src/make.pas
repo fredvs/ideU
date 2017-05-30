@@ -725,6 +725,10 @@ str1:= winestr + str1 + ' '+ quotefilename(normalizename(str3));
   if int1 < int2 then begin
    int2:= int1;
   end;
+  
+  if atag <> 0 then
+  begin
+  
   for int1:= 0 to int2 do begin
    if (atag and unitdirson[int1] <> 0) and
          (unitdirs[int1] <> '') then begin
@@ -750,6 +754,7 @@ str1:= winestr + str1 + ' '+ quotefilename(normalizename(str3));
     str1:= str1 + ' ' + makeoptions[int1];
  
    end;
+  end;
   end;
   str1:= str1 + ' ' + quotefilename(normalizename(removefileext(aname)+str4));
  end;
