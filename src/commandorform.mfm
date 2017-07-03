@@ -8,8 +8,8 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 314
-  bounds_y = 59
+  bounds_x = 300
+  bounds_y = 223
   bounds_cx = 915
   bounds_cy = 50
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
@@ -622,7 +622,7 @@ object debuggerfo: tdebuggerfo
         end>
       reffontheight = 15
     end
-    object save_project: tbutton
+    object project_save: tbutton
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
@@ -638,7 +638,7 @@ object debuggerfo: tdebuggerfo
       imagenr = 13
       focusrectdist = 0
     end
-    object open_project: tbutton
+    object project_open: tbutton
       color = 13684944
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]

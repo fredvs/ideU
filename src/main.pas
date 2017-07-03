@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.6.0';
+ versiontext = '1.6.1';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -2930,6 +2930,23 @@ begin
  result:= false;
  
  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
+ 
+  if assigned(debuggerfo) then
+ begin
+  debuggerfo.project_make.hint :=  ' Compile project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_start.hint :=  ' Start project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_save .hint :=  ' Save project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_abort_compil.hint :=  ' Abort compile project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_next.hint :=  ' Next in project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_step.hint :=  ' Step in project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_finish.hint :=  ' Finish project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_next_instruction.hint :=  ' Next instruction in project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_step_instruction.hint :=  ' Step instruction in project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_reset.hint :=  ' Reset project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_interrupt.hint :=  ' Interrupt project ' + ExtractFilename(aname) + ' ';
+  debuggerfo.project_options.hint :=  ' Option Number for project ' + ExtractFilename(aname)  +   ' ';
+  debuggerfo.project_option.hint :=  ' Options for project ' + ExtractFilename(aname)  +   ' ';
+  end;
  
  projectfilebefore:= projectoptions.projectfilename;
  projectdirbefore:= projectoptions.projectdir;

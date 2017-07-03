@@ -1103,6 +1103,7 @@ begin
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
   debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
   debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + '. X --> No parameters.';
+  debuggerfo.toggle_form_unit.hint := '  Toggle form/unit for ' + caption  + ' '; 
   end;
  end
  else begin

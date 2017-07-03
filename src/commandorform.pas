@@ -42,8 +42,8 @@ type
    project_abort_compil: tbutton;
    project_make: tbutton;
    project_options: tdropdownlistedit;
-   save_project: tbutton;
-   open_project: tbutton;
+   project_save: tbutton;
+   project_open: tbutton;
    panelwatch: tdockpanel;
    hints: tbooleanedit;
    watches: tbooleanedit;
