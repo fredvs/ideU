@@ -1,0 +1,315 @@
+object filedialogfo: Tfiledialogfo
+  optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 269
+  bounds_y = 303
+  bounds_cx = 554
+  bounds_cy = 316
+  bounds_cxmin = 360
+  bounds_cymin = 150
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.onlayout = layoutev
+  container.bounds = (
+    0
+    0
+    554
+    316
+  )
+  options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
+  caption = 'Select a file'
+  onloaded = formoncreate
+  onkeydown = listviewonkeydown
+  onlayout = layoutev
+  left = 239
+  top = 138
+  moduleclassname = 'tmseform'
+  object listview: tfilelistview
+    optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 1
+    bounds_x = 0
+    bounds_y = 43
+    bounds_cx = 554
+    bounds_cy = 231
+    anchors = [an_top]
+    onkeydown = listviewonkeydown
+    datarowlinecolor = -1610612731
+    datacollinecolor = -1610612731
+    cellwidth = 174
+    cellheight = 15
+    optionsgrid = [og_colsizing, og_focuscellonenter, og_mousescrollcol]
+    options = [lvo_readonly, lvo_drawfocus, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate, lvo_hintclippedtext]
+    itemlist.imagelist = filedialogres.images
+    itemlist.imagewidth = 16
+    itemlist.imageheight = 16
+    cellwidthmin = 50
+    onselectionchanged = listviewselectionchanged
+    onitemevent = listviewitemevent
+    filelist.options = [flo_sortname, flo_sorttype]
+    onlistread = listviewonlistread
+    reffontheight = 15
+  end
+  object tlayouter2: tlayouter
+    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
+    bounds_x = 1
+    bounds_y = 276
+    bounds_cx = 551
+    bounds_cy = 40
+    anchors = [an_left, an_right, an_bottom]
+    optionsscale = [osc_expandy, osc_shrinky, osc_expandshrinkx, osc_expandshrinky]
+    linktop = listview
+    dist_top = 2
+    options = [spao_gluebottom]
+    object filename: thistoryedit
+      frame.caption = '&Name (history of files in drop list)'
+      frame.captionpos = cp_top
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      hint = ' Click button on right corner to show the history of files. '
+      bounds_x = 1
+      bounds_y = 0
+      bounds_cx = 293
+      bounds_cy = 38
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      oncopytoclipboard = copytoclip
+      onpastefromclipboard = pastefromclip
+      onsetvalue = filenamesetvalue
+      dropdown.options = [deo_keydropdown, deo_cliphint]
+      dropdown.dropdownrowcount = 10
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+        end>
+      reffontheight = 15
+    end
+    object filter: tdropdownlistedit
+      frame.caption = '&Filter'
+      frame.captionpos = cp_top
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 1
+      bounds_x = 298
+      bounds_y = -1
+      bounds_cx = 146
+      bounds_cy = 38
+      anchors = [an_left, an_top, an_right]
+      ondataentered = filepathentered
+      onsetvalue = filteronsetvalue
+      dropdown.options = [deo_keydropdown, deo_cliphint]
+      dropdown.cols.count = 2
+      dropdown.cols.items = <      
+        item
+        end      
+        item
+          options = [co_readonly, co_invisible, co_focusselect, co_fill]
+        end>
+      dropdown.valuecol = 1
+      onafterclosedropdown = filteronafterclosedropdown
+      reffontheight = 15
+    end
+    object cancel: tbutton
+      optionswidget1 = [ow1_autowidth, ow1_autoheight]
+      optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      color = 15132390
+      taborder = 2
+      bounds_x = 452
+      bounds_y = 19
+      bounds_cx = 50
+      bounds_cy = 21
+      bounds_cxmin = 35
+      anchors = [an_top, an_right]
+      state = [as_localcaption, as_localcolor]
+      caption = '&Cancel'
+      modalresult = mr_cancel
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
+    end
+    object ok: tbutton
+      optionswidget1 = [ow1_autowidth, ow1_autoheight]
+      optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+      color = 15132390
+      taborder = 3
+      bounds_x = 506
+      bounds_y = 18
+      bounds_cx = 35
+      bounds_cy = 21
+      bounds_cxmin = 35
+      anchors = [an_top, an_right]
+      state = [as_default, as_localdefault, as_localcaption, as_localcolor, as_localonexecute]
+      caption = '&Ok'
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
+      onexecute = okonexecute
+    end
+    object showhidden: tbooleanedit
+      frame.caption = '&Show hidden'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        82
+        2
+      )
+      taborder = 4
+      hint = ' Show hidden files '
+      bounds_x = 449
+      bounds_y = 1
+      bounds_cx = 95
+      bounds_cy = 17
+      anchors = [an_top, an_right]
+      onsetvalue = showhiddenonsetvalue
+    end
+  end
+  object dir: tdirdropdownedit
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    frame.caption = '&Directory'
+    frame.captionpos = cp_top
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 2
+    onshowhint = dirshowhint
+    bounds_x = 1
+    bounds_y = 0
+    bounds_cx = 384
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+    dropdown.options = [deo_selectonly, deo_keydropdown]
+    onsetvalue = dironsetvalue
+    reffontheight = 15
+  end
+  object home: tbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    color = 15132390
+    taborder = 3
+    hint = ' Home directory '
+    bounds_x = 504
+    bounds_y = 13
+    bounds_cx = 45
+    bounds_cy = 24
+    bounds_cxmin = 35
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
+    caption = '&Home'
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
+    onexecute = homeaction
+    reffontheight = 15
+  end
+  object createdir: tbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    color = 15132390
+    taborder = 4
+    hint = ' Create directory '
+    bounds_x = 446
+    bounds_y = 13
+    bounds_cx = 56
+    bounds_cy = 24
+    bounds_cxmin = 35
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
+    caption = '&New dir'
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
+    onexecute = createdironexecute
+    reffontheight = 15
+  end
+  object up: tstockglyphbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    color = 15132390
+    taborder = 5
+    hint = ' Parent directory '
+    onshowhint = buttonshowhint
+    bounds_x = 427
+    bounds_y = 13
+    bounds_cx = 17
+    bounds_cy = 24
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localimagelist, as_localimagenr, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
+    glyph = stg_arrowup
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
+    onexecute = upaction
+    reffontheight = 15
+    sc = (
+      1
+      16662
+    )
+  end
+  object back: tstockglyphbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
+    color = 15132390
+    taborder = 6
+    onshowhint = buttonshowhint
+    bounds_x = 408
+    bounds_y = 13
+    bounds_cx = 17
+    bounds_cy = 24
+    anchors = [an_top, an_right]
+    state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
+    glyph = stg_arrowleft
+    autosize_cx = -10
+    onexecute = backexe
+    reffontheight = 15
+    sc = (
+      1
+      16474
+    )
+  end
+  object forward: tstockglyphbutton
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
+    color = 15132390
+    taborder = 7
+    onshowhint = buttonshowhint
+    bounds_x = 389
+    bounds_y = 13
+    bounds_cx = 17
+    bounds_cy = 24
+    anchors = [an_top, an_right]
+    state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
+    glyph = stg_arrowright
+    autosize_cx = -10
+    onexecute = forwardexe
+    reffontheight = 15
+    sc = (
+      1
+      24666
+    )
+  end
+end

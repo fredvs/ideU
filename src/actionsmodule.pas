@@ -419,6 +419,7 @@ end;
 procedure tactionsmo.opensourceactonexecute(const sender: tobject);
 begin
  with mainfo do begin
+  debuggerfo.project_history.tag := 1;
   opensource(fk_source,false);
  end;
 end;
@@ -1097,6 +1098,7 @@ var
  fna1: filenamety;
 begin
  if projectfiledialog(fna1,false) = mr_ok then begin
+  debuggerfo.project_history.tag := 0;
   mainfo.openproject(fna1);
  end;
 end;

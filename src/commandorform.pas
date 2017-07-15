@@ -4,7 +4,7 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
+ msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,mseevent,
  msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
  mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
  msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
@@ -49,6 +49,8 @@ type
    watches: tbooleanedit;
    break_point: tbooleanedit;
    timage1: timage;
+   project_history: thistoryedit;
+   file_history: thistoryedit;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -60,12 +62,17 @@ type
    constructor create(aowner: tcomponent); override;
    procedure paintdock(const sender: twidget; const acanvas: tcanvas);
    procedure assistiveactonexecute(const sender: TObject);
+   procedure onsetvaluehis(const sender: TObject);
+   procedure onsetvaluefilehis(const sender: TObject);
+   procedure onbeforefilehis(const sender: TObject);
+  
+   procedure onbefdroppro(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, actionsmodule, breakpointsform, main, sourceform, projectoptionsform ;
+ commandorform_mfm, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
 begin
@@ -177,5 +184,37 @@ procedure tdebuggerfo.assistiveactonexecute(const sender: TObject);
 begin
   actionsmo.assistiveactonexecute(sender); 
  end;
+
+procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
+begin
+project_history.width := 84;
+if (fileexists(project_history.value)) and (file_history.tag = 0) and 
+(projectoptions.projectfilename <> project_history.value) then
+mainfo.openproject(project_history.value);
+end;
+
+procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
+var
+ page: tsourcepage;
+begin
+file_history.width := 84;
+if (fileexists(file_history.value)) and (file_history.tag = 0) then
+begin
+page:= sourcefo.openfile(file_history.value);
+ if page <> nil then  page.activate(true,true);
+ end;
+end;
+
+procedure tdebuggerfo.onbeforefilehis(const sender: TObject);
+begin
+file_history.width := 298;
+end;
+
+procedure tdebuggerfo.onbefdroppro(const sender: TObject);
+begin
+project_history.width := 298;
+end;
+
+
 
 end.

@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.6.1';
+ versiontext = '1.7';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -569,6 +569,8 @@ end;
 {$ifdef polydev}
 top := 56 ;
  {$endif}
+ 
+ debuggerfo.file_history.tag := 0;
 
 end;
 
@@ -742,7 +744,8 @@ sourcefo.hidesourcehint;
          {$endif}
          
  confideufo.tbassistive.value := gINI.Readbool('Assistive', 'sak', false); 
-         
+ 
+     
  if trim(ParamStr(1)) = '-va' then
   begin
  vaparam := true;
@@ -2930,6 +2933,8 @@ begin
  result:= false;
  
  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
+ 
+ debuggerfo.project_history.value := ExpandFileName(aname);
  
   if assigned(debuggerfo) then
  begin
