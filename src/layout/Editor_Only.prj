@@ -503,6 +503,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=0
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=0
 debugcommand=
@@ -636,7 +637,6 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
@@ -778,8 +778,8 @@ windowlayout=539
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268484715
- stackedunder=mainfo
+ useroptions=805355627
+ stackedunder=debuggerfo
  parent=
  mdistate=3
  nx=0
@@ -795,16 +795,16 @@ windowlayout=539
  wsize=0
  active=0
  visible=0
- [projecttreefo.project_tree]
+ [projecttreefo.grid]
  propcolwidthref=30
  width0=141
  sortdescend0=0
  width1=24
  sortdescend1=0
  sorted=0
- col=1
- row=0
- rowheight=17
+ col=0
+ row=-1073741823
+ rowheight=18
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -992,7 +992,7 @@ windowlayout=539
  value=1
  [messagefo]
  splitdir=0
- useroptions=114795
+ useroptions=805421163
  stackedunder=
  parent=
  mdistate=3
@@ -1096,7 +1096,7 @@ windowlayout=539
  [debuggerfo]
  splitdir=0
  useroptions=24683
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1120,11 +1120,11 @@ windowlayout=539
  mdistate=0
  nx=0
  ny=47
- ncx=928
- ncy=2
+ ncx=1082
+ ncy=143
  x=0
  y=47
- cx=950
+ cx=1082
  cy=143
  rcx=0
  rcy=0

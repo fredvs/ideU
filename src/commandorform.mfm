@@ -231,220 +231,6 @@ object debuggerfo: tdebuggerfo
     focusrectdist = 0
     onexecute = assistiveactonexecute
   end
-  object paneledited: tdockpanel
-    color = 16775618
-    taborder = 9
-    bounds_x = 719
-    bounds_y = 1
-    bounds_cx = 361
-    bounds_cy = 28
-    object edited_run: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      hint = ' Run compiled edited file'
-      bounds_x = 333
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customrun
-      imagelist = actionsmo.buttonicons
-      imagenr = 27
-      focusrectdist = 0
-    end
-    object edited_abort: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 1
-      hint = ' Abort compile '
-      bounds_x = 306
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.abortmakeact
-      imagelist = actionsmo.buttonicons
-      imagenr = 2
-      focusrectdist = 0
-    end
-    object edited_make: tbutton
-      Tag = 32
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 2
-      hint = ' Compile edited-file '
-      bounds_x = 279
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customcompil
-      imagelist = actionsmo.buttonicons
-      imagenr = 17
-      focusrectdist = 0
-    end
-    object edit_options: tdropdownlistedit
-      frame.colorclient = 16770809
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-        end>
-      taborder = 3
-      hint = ' Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
-      bounds_x = 243
-      bounds_y = 4
-      bounds_cx = 35
-      bounds_cy = 21
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      value = 'X'
-      dropdown.dropdownrowcount = 13
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            'M'
-            'B'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '0'
-            'X'
-          )
-        end>
-      reffontheight = 15
-    end
-    object edit_compilernum: tenumedit
-      frame.colorclient = 15138793
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-        end>
-      taborder = 4
-      hint = ' Compiler number for Edited file '
-      bounds_x = 208
-      bounds_y = 4
-      bounds_cx = 36
-      bounds_cy = 21
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-          )
-        end>
-      value = 0
-      min = 0
-      max = 100
-      reffontheight = 15
-    end
-    object edit_compiler: tdropdownlistedit
-      frame.colorclient = 13154534
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-        end>
-      taborder = 5
-      hint = ' Compiler Type for Edited file '
-      bounds_x = 146
-      bounds_y = 4
-      bounds_cx = 63
-      bounds_cy = 21
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      value = 'Pascal'
-      dropdown.dropdownrowcount = 5
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            'Pascal'
-            'Java'
-            'C'
-            'Python'
-            'Other'
-          )
-        end>
-      reffontheight = 15
-    end
-    object save_file: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 6
-      hint = ' Save edited file '
-      bounds_x = 118
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customsave
-      imagelist = actionsmo.buttonicons
-      imagenr = 13
-      focusrectdist = 0
-    end
-    object open_file: tbutton
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      taborder = 7
-      hint = ' Open file '
-      bounds_x = 90
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.opensource
-      imagelist = actionsmo.buttonicons
-      imagenr = 22
-      focusrectdist = 0
-    end
-    object file_history: thistoryedit
-      Tag = 1
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-        end>
-      taborder = 8
-      hint = ' History of files. '
-      bounds_x = 3
-      bounds_y = 4
-      bounds_cx = 84
-      bounds_cy = 21
-      statfile = mainfo.mainstatfile
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-        end>
-      onbeforedropdown = onbeforefilehis
-      onafterclosedropdown = onsetvaluefilehis
-      reffontheight = 15
-    end
-  end
   object panelproject: tdockpanel
     color = 13930182
     taborder = 10
@@ -837,12 +623,228 @@ object debuggerfo: tdebuggerfo
       bounds_cx = 84
       bounds_cy = 21
       statfile = mainfo.mainstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
         end>
       onbeforedropdown = onbefdroppro
       onafterclosedropdown = onsetvaluehis
+      reffontheight = 15
+    end
+  end
+  object paneledited: tdockpanel
+    color = 16775618
+    taborder = 9
+    bounds_x = 719
+    bounds_y = 1
+    bounds_cx = 361
+    bounds_cy = 28
+    object edited_run: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      hint = ' Run compiled edited file'
+      bounds_x = 333
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customrun
+      imagelist = actionsmo.buttonicons
+      imagenr = 27
+      focusrectdist = 0
+    end
+    object edited_abort: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 1
+      hint = ' Abort compile '
+      bounds_x = 306
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.abortmakeact
+      imagelist = actionsmo.buttonicons
+      imagenr = 2
+      focusrectdist = 0
+    end
+    object edited_make: tbutton
+      Tag = 32
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 2
+      hint = ' Compile edited-file '
+      bounds_x = 279
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 17
+      focusrectdist = 0
+    end
+    object edit_options: tdropdownlistedit
+      frame.colorclient = 16770809
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      taborder = 3
+      hint = ' Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
+      bounds_x = 243
+      bounds_y = 4
+      bounds_cx = 35
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'X'
+      dropdown.dropdownrowcount = 13
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'M'
+            'B'
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+            '6'
+            '7'
+            '8'
+            '9'
+            '0'
+            'X'
+          )
+        end>
+      reffontheight = 15
+    end
+    object edit_compilernum: tenumedit
+      frame.colorclient = 15138793
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      taborder = 4
+      hint = ' Compiler number for Edited file '
+      bounds_x = 208
+      bounds_y = 4
+      bounds_cx = 36
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+            '6'
+            '7'
+            '8'
+          )
+        end>
+      value = 0
+      min = 0
+      max = 100
+      reffontheight = 15
+    end
+    object edit_compiler: tdropdownlistedit
+      frame.colorclient = 13154534
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      taborder = 5
+      hint = ' Compiler Type for Edited file '
+      bounds_x = 146
+      bounds_y = 4
+      bounds_cx = 63
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'Pascal'
+      dropdown.dropdownrowcount = 5
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'Pascal'
+            'Java'
+            'C'
+            'Python'
+            'Other'
+          )
+        end>
+      reffontheight = 15
+    end
+    object save_file: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 6
+      hint = ' Save edited file '
+      bounds_x = 118
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customsave
+      imagelist = actionsmo.buttonicons
+      imagenr = 13
+      focusrectdist = 0
+    end
+    object open_file: tbutton
+      color = 13684944
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      taborder = 7
+      hint = ' Open file '
+      bounds_x = 90
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.opensource
+      imagelist = actionsmo.buttonicons
+      imagenr = 22
+      focusrectdist = 0
+    end
+    object file_history: thistoryedit
+      Tag = 1
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+        end>
+      taborder = 8
+      hint = ' History of files. '
+      bounds_x = 3
+      bounds_y = 4
+      bounds_cx = 84
+      bounds_cy = 21
+      statfile = mainfo.mainstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      onbeforedropdown = onbeforefilehis
+      onafterclosedropdown = onsetvaluefilehis
       reffontheight = 15
     end
   end

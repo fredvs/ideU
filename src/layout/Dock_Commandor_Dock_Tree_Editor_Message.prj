@@ -503,6 +503,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=0
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=0
 debugcommand=
@@ -638,7 +639,6 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
@@ -655,8 +655,8 @@ windowlayout=536
  ncy=0
  x=0
  y=0
- cx=931
- cy=188
+ cx=1083
+ cy=189
  rcx=0
  rcy=0
  [mainfo]
@@ -670,15 +670,15 @@ windowlayout=536
  ncy=0
  x=183
  y=26
- cx=941
- cy=62
+ cx=1093
+ cy=63
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,931,188
+  basedock,0,0,1083,189
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -780,7 +780,7 @@ windowlayout=536
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268484715
+ useroptions=805355627
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -794,16 +794,16 @@ windowlayout=536
  cy=447
  rcx=0
  rcy=0
- [projecttreefo.project_tree]
+ [projecttreefo.grid]
  propcolwidthref=1
  width0=141
  sortdescend0=0
  width1=1
  sortdescend1=0
  sorted=0
- col=1
+ col=0
  row=-1073741823
- rowheight=17
+ rowheight=18
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -991,8 +991,8 @@ windowlayout=536
  value=1
  [messagefo]
  splitdir=0
- useroptions=114795
- stackedunder=mainfo.panel1
+ useroptions=805421163
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1074,7 +1074,7 @@ windowlayout=536
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=mainfo.panel1
  parent=
  mdistate=0
  nx=0
@@ -1104,8 +1104,8 @@ windowlayout=536
  ncy=0
  x=0
  y=0
- cx=931
- cy=188
+ cx=1083
+ cy=189
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1116,12 +1116,12 @@ windowlayout=536
  mdistate=0
  nx=0
  ny=47
- ncx=928
- ncy=2
+ ncx=1082
+ ncy=139
  x=0
  y=47
- cx=931
- cy=139
+ cx=1083
+ cy=155
  rcx=0
  rcy=0
  [sourcefo]
@@ -1163,7 +1163,7 @@ windowlayout=536
  [mainfo.panel1]
  splitdir=1
  useroptions=838893035
- stackedunder=
+ stackedunder=messagefo
  parent=
  mdistate=3
  nx=0
@@ -1177,7 +1177,7 @@ windowlayout=536
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
 [targetconsole]
 finddtext=

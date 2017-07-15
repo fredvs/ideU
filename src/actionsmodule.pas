@@ -1097,8 +1097,8 @@ procedure tactionsmo.projectopenexe(const sender: TObject);
 var
  fna1: filenamety;
 begin
+ debuggerfo.project_history.tag := 0;
  if projectfiledialog(fna1,false) = mr_ok then begin
-  debuggerfo.project_history.tag := 0;
   mainfo.openproject(fna1);
  end;
 end;

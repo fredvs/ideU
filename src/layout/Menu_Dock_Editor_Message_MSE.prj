@@ -429,6 +429,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=0
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -569,7 +570,6 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
@@ -711,7 +711,7 @@ windowlayout=525
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268451947
+ useroptions=805322859
  stackedunder=messagefo
  parent=
  mdistate=3
@@ -728,16 +728,16 @@ windowlayout=525
  wsize=0
  active=0
  visible=1
- [projecttreefo.project_tree]
- propcolwidthref=152
- width0=103
+ [projecttreefo.grid]
+ propcolwidthref=114
+ width0=141
  sortdescend0=0
- width1=146
+ width1=108
  sortdescend1=0
  sorted=0
  col=1
- row=1
- rowheight=17
+ row=0
+ rowheight=18
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -817,7 +817,7 @@ windowlayout=525
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -925,8 +925,8 @@ windowlayout=525
  value=1
  [messagefo]
  splitdir=0
- useroptions=49259
- stackedunder=componentpalettefo
+ useroptions=805355627
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1008,7 +1008,7 @@ windowlayout=525
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=debuggerfo
+ stackedunder=sourcefo
  parent=
  mdistate=0
  nx=0
@@ -1029,7 +1029,7 @@ windowlayout=525
  [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=sourcefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1038,7 +1038,7 @@ windowlayout=525
  ncy=0
  x=249
  y=79
- cx=960
+ cx=1093
  cy=51
  rcx=0
  rcy=0
@@ -1052,13 +1052,13 @@ windowlayout=525
  visible=1
  mdistate=0
  nx=0
- ny=47
- ncx=928
- ncy=2
+ ny=0
+ ncx=1082
+ ncy=53
  x=0
- y=47
- cx=950
- cy=2
+ y=0
+ cx=1083
+ cy=51
  rcx=0
  rcy=0
  [sourcefo]
@@ -1083,7 +1083,7 @@ windowlayout=525
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0

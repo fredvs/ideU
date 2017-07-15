@@ -1489,9 +1489,7 @@ debuggerfo.project_history.value := dir.value + filename.value;
 end else
 begin
 debuggerfo.file_history.dropdown.valuelist.asarray:= filename.dropdown.valuelist.asarray;
-
 debuggerfo.file_history.value := dir.value + filename.value;
-
 end;
   
   if (filename.value <> '') or (fdo_acceptempty in dialogoptions) then begin

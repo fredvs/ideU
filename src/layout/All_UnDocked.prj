@@ -438,6 +438,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=0
 encoding=0
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -579,7 +580,6 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
@@ -721,7 +721,7 @@ windowlayout=541
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268451947
+ useroptions=805322859
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -735,16 +735,16 @@ windowlayout=541
  cy=327
  rcx=0
  rcy=0
- [projecttreefo.project_tree]
- propcolwidthref=128
- width0=103
+ [projecttreefo.grid]
+ propcolwidthref=90
+ width0=141
  sortdescend0=0
- width1=122
+ width1=84
  sortdescend1=0
  sorted=0
- col=1
- row=1
- rowheight=17
+ col=0
+ row=-1073741823
+ rowheight=18
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -824,7 +824,7 @@ windowlayout=541
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -932,8 +932,8 @@ windowlayout=541
  value=1
  [messagefo]
  splitdir=0
- useroptions=49259
- stackedunder=mainfo.panel1
+ useroptions=805355627
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1015,7 +1015,7 @@ windowlayout=541
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=debuggerfo
+ stackedunder=sourcefo
  parent=
  mdistate=0
  nx=0
@@ -1045,8 +1045,8 @@ windowlayout=541
  ncy=0
  x=162
  y=80
- cx=944
- cy=50
+ cx=1095
+ cy=51
  rcx=0
  rcy=0
  wsize=0
@@ -1059,13 +1059,13 @@ windowlayout=541
  visible=1
  mdistate=0
  nx=0
- ny=47
- ncx=928
- ncy=2
+ ny=0
+ ncx=1085
+ ncy=1
  x=0
- y=47
- cx=934
- cy=1
+ y=0
+ cx=1085
+ cy=51
  rcx=0
  rcy=0
  [sourcefo]
@@ -1090,7 +1090,7 @@ windowlayout=541
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -1109,7 +1109,7 @@ windowlayout=541
  [mainfo.panel1]
  splitdir=1
  useroptions=805338603
- stackedunder=sourcefo
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
