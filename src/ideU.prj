@@ -66,8 +66,9 @@ findinfiledialog=74
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=.s.
+ value=project_history.tag
  history=20
+  project_history.tag
   .s.
   .s
   pprocidty
@@ -87,7 +88,6 @@ findinfiledialog=74
   editmarkpairwords
   int2:= 0 to high(compilerused)
   runwithoutdebugger
-  RunCustomCompiled
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -715,17 +715,26 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=6
  ACTIONSMO
  DEBUGGERFO
+ MAINFO
+ FILEDIALOGFO
+ FILEDIALOGRES
  SOURCEFO
-moduletypes=3
+moduletypes=6
  TACTIONSMO
  TDEBUGGERFO
+ TMAINFO
+ TFILEDIALOGFO
+ TFILEDIALOGRES
  TSOURCEFO
-modulefiles=3
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialog.mfm
+ /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=10
@@ -1296,8 +1305,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=projectfiledialog
+finddtext=debugg
 findhistory=20
+ debugg
+ select a
+ cancel.caption:=
+ select
  projectfiledialog
  openproj
  onsetfi
@@ -1314,55 +1327,87 @@ findhistory=20
  project_options.h
  edit_op
  atag
- customdomake
- custommake
- customoption
- updatecaption
 findoptions=1
-editpos=3
- 10,2
+editpos=7
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,19
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=3
+ ${PROJECTDIR}/msefiledialog.pas
+ ${PROJECTDIR}/msefiledialogres.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=7
  commandorform.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=3
+ msefiledialog.pas
+ msefiledialogres.pas
+ main.pas
+ actionsmodule.pas
+ismoduletexts=7
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/commandorform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/msefiledialog.mfm
+ /home/fred/ideu/src/msefiledialogres.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
  0
+ 0
+visiblemodules=6
  -1
  -1
  -1
-nomenumodules=4
  -1
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=7
+ 0
+ 3
+ 4
+ 5
+ 6
+ 1
+ 2
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=564
+windowlayout=583
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1388,8 +1433,8 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=70
- y=37
+ x=171
+ y=61
  cx=1093
  cy=630
  rcx=0
@@ -1522,7 +1567,7 @@ windowlayout=564
  sortdescend1=0
  sorted=0
  col=0
- row=3
+ row=6
  rowheight=18
  [stackfo]
  splitdir=0
@@ -1607,7 +1652,7 @@ windowlayout=564
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1787,7 +1832,7 @@ windowlayout=564
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1892,7 +1937,7 @@ windowlayout=564
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=objectinspectorfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1907,11 +1952,11 @@ windowlayout=564
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1922,6 +1967,25 @@ windowlayout=564
  y=229
  cx=1103
  cy=51
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_filedialogres_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=434
+ y=192
+ cx=564
+ cy=316
  rcx=0
  rcy=0
  wsize=0

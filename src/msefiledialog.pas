@@ -665,8 +665,8 @@ begin
    listview.options:= listview.options - [lvo_multiselect];
   end;
   defaultext:= adefaultext;
- // caption:= acaption;
-  caption := 'Select a file';
+   caption:= acaption;
+  //caption := 'Select a file';
   listview.includeattrib:= includeattrib;
   listview.excludeattrib:= excludeattrib;
   listview.itemlist.imagelist:= imagelist;
@@ -1480,17 +1480,20 @@ var
  str1: filenamety;
 begin
 
-if debuggerfo.project_history.tag = 0 then
+if (debuggerfo.project_history.tag = 1) and (caption = 'Open Project') then
 begin
 debuggerfo.project_history.dropdown.valuelist.asarray:= filename.dropdown.valuelist.asarray;
 
 debuggerfo.project_history.value := dir.value + filename.value;
 
 end else
+if (debuggerfo.project_history.tag = 2) and (caption = 'Open file') then
 begin
 debuggerfo.file_history.dropdown.valuelist.asarray:= filename.dropdown.valuelist.asarray;
 debuggerfo.file_history.value := dir.value + filename.value;
 end;
+
+debuggerfo.project_history.tag := 0 ;
   
   if (filename.value <> '') or (fdo_acceptempty in dialogoptions) then begin
    if fdo_directory in dialogoptions then begin
@@ -1592,7 +1595,7 @@ begin
 //  showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
   ok.caption:= modalresulttext[mr_ok];
   cancel.caption:= modalresulttext[mr_cancel];
-  caption := 'Select a file';
+ // caption := 'Select a file';
  end;
  back.tag:= ord(sc_back);
  forward.tag:= ord(sc_forward);
