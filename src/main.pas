@@ -1336,9 +1336,18 @@ for int2:= 0 to high(compilerused) do begin
    end;
    end;
    
+    if projectoptions.d.showconsole then
+  begin
+   targetconsolefo.activate;
+   mainfo.startconsole();
+   frunningprocess:= targetconsolefo.terminal.execprog(gettargetfile);
+   runprocmon.listentoprocess(frunningprocess);
+   end else
+   begin
   if (int1 = 1) or (int1 = 3)  then 
   RunCustomCompiled(gettargetfile, '' ) else
   RunCustomCompiled(gettargetfile, inttostr(int1) );
+   end;
    
   end; 
 

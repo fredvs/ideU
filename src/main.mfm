@@ -911,7 +911,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 20
+        submenu.count = 21
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -983,6 +983,13 @@ object mainfo: tmainfo
             caption = ' Make 0 '
             state = [as_localcaption, as_localtag]
             tag = 11
+          end        
+          item
+            action = actionsmo.custmakemenu
+            caption = ' Make X '
+            hint = ' Compile without parameters '
+            state = [as_localcaption, as_localhint, as_localtag]
+            tag = 12
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
@@ -1194,7 +1201,7 @@ object mainfo: tmainfo
         caption = ' &About '
         state = [as_localcaption, as_localonexecute]
       end>
-    menu.state = [as_localonexecute]
+    menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
     menu.onexecute = syntaxdefload
     left = 180

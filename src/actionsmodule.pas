@@ -961,7 +961,10 @@ for int2:= 0 to high(compilerused) do begin
    gdb.continue;
    end;
  end;
- end else mainfo.runwithoutdebugger ;
+ end else 
+ begin
+ mainfo.runwithoutdebugger ;
+ end;
 end;
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);
