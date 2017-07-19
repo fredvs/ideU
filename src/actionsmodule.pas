@@ -1102,7 +1102,8 @@ var
 begin
  debuggerfo.project_history.tag := 1;
  if projectfiledialog(fna1,false) = mr_ok then begin
-  mainfo.openproject(fna1);
+    mainfo.openproject(fna1);
+    mainfo.activate;
  end;
 end;
 

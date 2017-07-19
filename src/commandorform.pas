@@ -190,7 +190,10 @@ begin
 project_history.width := 84;
 if (fileexists(project_history.value)) and (file_history.tag = 0) and 
 (projectoptions.projectfilename <> project_history.value) then
+begin
 mainfo.openproject(project_history.value);
+mainfo.activate;
+end;
 end;
 
 procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
