@@ -27,7 +27,7 @@ uses
  msewidgets;
 
 const
- versiontext = '1.7.1';
+ versiontext = '1.7.2';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -207,6 +207,7 @@ type
    procedure onthetimer(const sender: TObject);
    procedure syntaxdefload(const sender: TObject);
    procedure copywordatcur(const sender: TObject);
+   procedure onresizemain(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -2073,11 +2074,21 @@ end;
 procedure tmainfo.viewbreakpointsonexecute(const sender: tobject);
 begin
  breakpointsfo.activate;
+ if breakpointsfo.width < 50 then
+ begin
+   breakpointsfo.height := 180;
+    breakpointsfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewwatchesonexecute(const sender: tobject);
 begin
  watchfo.activate;
+ if watchfo.width < 50 then
+ begin
+   watchfo.height := 180;
+    watchfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewstackonexecute(const sender: tobject);
@@ -2093,9 +2104,11 @@ end;
 procedure tmainfo.onscale(const sender: TObject);
 begin
 // fred
+
+if height > 700 then height := 700 ;
 basedock.bounds_y:= 0;
 // basedock.bounds_y:= statdisp.bottom + 1;
-basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+basedock.bounds_cy:= container.paintrect.cy;
 end;
 
 procedure tmainfo.parametersonexecute(const sender: TObject);
@@ -2106,26 +2119,51 @@ end;
 procedure tmainfo.viewassembleronexecute(const sender: TObject);
 begin
  disassfo.activate;
+  if breakpointsfo.width < 50 then
+ begin
+   breakpointsfo.height := 180;
+    breakpointsfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewmemoryonexecute(const sender: TObject);
 begin
  memoryfo.activate;
+  if memoryfo.width < 50 then
+ begin
+   memoryfo.height := 180;
+    memoryfo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewcpuonexecute(const sender: TObject);
 begin
  cpufo.activate;
+  if cpufo.width < 50 then
+ begin
+   cpufo.height := 180;
+    cpufo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewmessagesonexecute(const sender: TObject);
 begin
  messagefo.activate;
+  if messagefo.width < 50 then
+ begin
+   messagefo.height := 180;
+    messagefo.width := 250;
+   end;
 end;
 
 procedure tmainfo.viewsourceonexecute(const sender: tobject);
 begin
  sourcefo.activate;
+  if sourcefo.width < 50 then
+ begin
+   sourcefo.height := 180;
+    sourcefo.width := 250;
+   end;
 end;
 
 procedure tmainfo.mainmenuonupdate(const sender: tcustommenu);
@@ -3911,6 +3949,17 @@ end;
 procedure tmainfo.copywordatcur(const sender: TObject);
 begin
  sourcefo.activepage.copywordatcursor();
+end;
+
+procedure tmainfo.onresizemain(const sender: TObject);
+var
+screen : rectty;
+begin
+
+screen := application.workarea();
+if height > screen.y + screen.cy then height := screen.y + screen.cy - 30;
+
+if width > screen.x + screen.cx then width := screen.x + screen.cx;
 end;
 
 

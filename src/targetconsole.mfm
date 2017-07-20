@@ -71,19 +71,19 @@ object targetconsolefo: ttargetconsolefo
         dataclass = tgridrichstringdatalist
       end>
     datarowlinewidth = 0
-    datarowheight = 14
-    reffontheight = 14
+    datarowheight = 15
+    reffontheight = 15
     object terminal: tterminal
       taborder = 1
       visible = False
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 3000
-      bounds_cy = 14
+      bounds_cy = 15
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
       maxchars = 120
       onsendtext = sendtext
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object popupmen: tpopupmenu

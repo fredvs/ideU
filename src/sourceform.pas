@@ -1098,6 +1098,7 @@ begin
 
  if assigned(debuggerfo) then
  begin
+  debuggerfo.file_history.value :=  activepage.pathdisp.value;
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
   debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';

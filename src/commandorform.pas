@@ -4,18 +4,17 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,mseevent,
- msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,msegraphedits,
- mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,mseapplication,
- msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,msestat,msestatfile,
- msestream,msestrings,sysutils,mseimage,msedispwidgets,mserichstring,mseact;
+ msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
+ mseevent,msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,
+ msegraphedits,mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,
+ mseapplication,msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,
+ msestat,msestatfile,msestream,msestrings,sysutils,mseimage,msedispwidgets,
+ mserichstring,mseact;
 
 type
  tdebuggerfo = class(tdockform)
    basedock: tdockpanel;
    statdisp: tstringdisp;
-   project_option: tbutton;
-   toggle_form_unit: tbutton;
    line_number: tbutton;
    find_in_directory: tbutton;
    find_in_edit: tbutton;
@@ -51,6 +50,8 @@ type
    timage1: timage;
    project_history: thistoryedit;
    file_history: thistoryedit;
+   toggle_form_unit: tbutton;
+   project_option: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -78,8 +79,8 @@ procedure tdebuggerfo.onscale(const sender: TObject);
 begin
 // fred
 //basedock.bounds_y:= statdisp.bottom + 1;
-basedock.bounds_y:= 0;
-basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+// basedock.bounds_y:= 0;
+// basedock.bounds_cy:= container.paintrect.cy - statdisp.bottom + 1;
 end;
 
 constructor tdebuggerfo.create(aowner: tcomponent);

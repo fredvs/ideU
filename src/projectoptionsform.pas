@@ -676,7 +676,6 @@ type
    tsplitter8: tsplitter;
    tlayouter1: tlayouter;
    externalconsole: tbooleanedit;
-   showconsole: tbooleanedit;
    stoponexception: tbooleanedit;
    activateonbreak: tbooleanedit;
    makepage: ttabpage;
@@ -1017,6 +1016,7 @@ type
    eolstyle: tenumtypeedit;
    trimtrailingwhitespace: tbooleanedit;
    
+   showconsole: tbooleanedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
