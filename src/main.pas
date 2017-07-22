@@ -18,13 +18,12 @@ interface
 uses
  aboutform,plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions, sak_mse, msefileutils,
- msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,
- msegrids,msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner, 
- classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,sysutils,msesysenv,
- msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob, msestream,
- mseprocmonitorcomp,msesystypes,mserttistat, msedatalist,
- mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
- msewidgets;
+ msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
+ msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner,classes,mclasses,
+ mseclasses,msegraphutils,typinfo,msedock,sysutils,msesysenv,msemacros,
+ msestrings,msepostscriptprinter,msegraphics,mseglob, msestream,
+ mseprocmonitorcomp,msesystypes,mserttistat, msedatalist,mselistbrowser,
+ projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
  versiontext = '1.7.2';
@@ -122,6 +121,7 @@ type
    c: tstringcontainer;
    openform: tfiledialog;
    formbg: tbitmapcomp;
+   tfacecomp1: tfacecomp;
    procedure newfileonexecute(const sender: tobject);
    procedure newformonexecute(const sender: TObject);
 
@@ -1473,14 +1473,39 @@ begin
  with debuggerfo.statdisp do begin
   value:= removelinebreaks(atext);
   case akind of
-   mtk_warning : color:= $BEDEBE; 
-   mtk_finished: color:= $8DE08D;
-   mtk_error: color:=   $F0F097;
-   mtk_signal: color:= cl_ltred;
-   mtk_making: color:= $E2B4FE ;
-   mtk_notok: color:= $FFB1B4 ;
-   else color:= cl_parent;
+   mtk_warning : begin
+   face.fade_color.items[0]:= $DBFFDB;
+   face.fade_color.items[1]:= $BEDEBE; 
+   end;
+   mtk_finished: begin
+   face.fade_color.items[1]:= $B1CFAE;
+   face.fade_color.items[0]:= $96B094;
+ //  face.fade_color.items[0]:= $CFCFCF;
+ //  face.fade_color.items[1]:= $9E9E9E;
+   end;
+   mtk_error: begin
+   face.fade_color.items[0]:=   $FFFFD4;
+   face.fade_color.items[1]:=   $F0F097;
+   end;
+   mtk_signal: begin
+   face.fade_color.items[0]:= cl_ltred;
+   face.fade_color.items[1]:= cl_red;
+   end;
+   mtk_making: begin
+   face.fade_color.items[0]:= $DEA8FF ;
+   face.fade_color.items[1]:= $C466FF ;
+   end;
+   mtk_notok: begin 
+   face.fade_color.items[0]:= $FFB1B4 ;
+   face.fade_color.items[1]:= $FF6E72 ;
+   end
+   else begin
+   face.fade_color.items[0]:= $CFCFCF;
+   face.fade_color.items[1]:= $9E9E9E;
   end;
+  end;
+  
+  
   case akind of
    mtk_making: font.color:= cl_red;
   else font.color:= cl_black;
@@ -2104,8 +2129,6 @@ end;
 procedure tmainfo.onscale(const sender: TObject);
 begin
 // fred
-
-if height > 700 then height := 700 ;
 basedock.bounds_y:= 0;
 // basedock.bounds_y:= statdisp.bottom + 1;
 basedock.bounds_cy:= container.paintrect.cy;

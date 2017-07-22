@@ -10,8 +10,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 424
-  bounds_y = 393
+  bounds_x = 406
+  bounds_y = 259
   bounds_cx = 662
   bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -94,8 +94,10 @@ object sourcefo: tsourcefo
   object files_tab: ttabwidget
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 652
-    bounds_cy = 340
+    bounds_cx = 661
+    bounds_cy = 325
+    face.localprops = []
+    face.template = mainfo.tfacecomp1
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
@@ -108,18 +110,24 @@ object sourcefo: tsourcefo
     tab_fontactivetab.name = 'stf_default'
     tab_fontactivetab.localprops = [flp_color, flp_style]
     tab_frame.optionsskin = [fso_flat]
+    tab_frame.buttonface.localprops = []
+    tab_frame.buttonface.template = mainfo.tfacecomp1
+    tab_frame.buttonframe.optionsskin = [fso_flat]
+    tab_frame.buttonframe.localprops = [frl_optionsskin]
+    tab_frame.buttonframe.localprops1 = []
     tab_frame.buttonsize = 16
     tab_frame.buttonsinvisible = [sk_up, sk_down, sk_first, sk_last]
     tab_frame.buttonsvisible = [sk_right, sk_left, sk_first, sk_last]
     tab_frame.localprops = [frl_frameimageleft, frl_frameimagebottom, frl_optionsskin]
     tab_frame.localprops1 = []
     tab_face.localprops = []
+    tab_face.template = tfacecomp1
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
     tab_captionframe_left = 8
-    tab_captionframe_top = 4
+    tab_captionframe_top = 6
     tab_captionframe_right = 8
-    tab_captionframe_bottom = 4
+    tab_captionframe_bottom = 6
     tab_edge_colordkshadow = -2147483645
     tab_edge_colorshadow = -2147483645
     tab_edge_colorlight = -2147483645
@@ -131,43 +139,31 @@ object sourcefo: tsourcefo
     tab_frametab.frameimage_top = -4
     tab_frametab.frameimage_bottom = -4
     tab_frametab.optionsskin = [fso_flat, fso_noanim, fso_noclickanim, fso_nofocusanim, fso_nofocusrect, fso_nodefaultrect, fso_noinnerrect]
-    tab_frametab.hiddenedges = [edg_top, edg_bottom]
+    tab_frametab.hiddenedges = [edg_right, edg_bottom]
     tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_hiddenedges, frl_fitop, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin]
     tab_frametab.localprops1 = []
-    tab_facetab.fade_pos.count = 2
-    tab_facetab.fade_pos.items = (
-      0
-      1
-    )
-    tab_facetab.fade_color.count = 2
-    tab_facetab.fade_color.items = (
-      9079434
-      14408667
-    )
     tab_facetab.fade_direction = gd_down
     tab_facetab.localprops = [fal_fadirection]
-    tab_faceactivetab.fade_pos.count = 2
-    tab_faceactivetab.fade_pos.items = (
-      0
-      1
-    )
-    tab_faceactivetab.fade_color.count = 2
-    tab_faceactivetab.fade_color.items = (
-      15790320
-      16777215
-    )
+    tab_facetab.template = tfacecomp1
     tab_faceactivetab.fade_direction = gd_down
     tab_faceactivetab.localprops = [fal_options, fal_framei_left, fal_framei_right, fal_framei_bottom, fal_fadirection, fal_faopacity]
-    tab_size = 25
+    tab_faceactivetab.template = tfacecomp2
+    tab_sizemin = 24
+    tab_size = 24
     tab_optionswidget = [ow_destroywidgets, ow_hinton, ow_timedhint]
     tab_optionswidget1 = []
     object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
       color = 13750737
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
-      bounds_x = 588
+      bounds_x = 597
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
@@ -181,10 +177,15 @@ object sourcefo: tsourcefo
     object step_forward: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
       color = 13750737
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
       taborder = 1
       hint = 'Step forward in code navigation.'
       onshowhint = stephintev
-      bounds_x = 604
+      bounds_x = 613
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
@@ -661,5 +662,35 @@ object sourcefo: tsourcefo
       00000005DCDCDC0100000001A5A5A5010C0000000E0000000100000001000000
       00000000000000000000000000000000F7080000870C00000A0C00000C0A0000
     }
+  end
+  object tfacecomp1: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15263976
+      10921638
+    )
+    template.fade_direction = gd_down
+    left = 544
+    top = 193
+  end
+  object tfacecomp2: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15263976
+      -1610612730
+    )
+    template.fade_direction = gd_down
+    left = 554
+    top = 139
   end
 end

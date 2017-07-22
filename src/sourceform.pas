@@ -66,6 +66,8 @@ type
    c: tstringcontainer;
    timagelist2: timagelist;
    timagelist3: timagelist;
+   tfacecomp1: tfacecomp;
+   tfacecomp2: tfacecomp;
    procedure formonidle(var again: boolean);
    procedure doselectpage(const sender: TObject);
 
@@ -1092,6 +1094,7 @@ begin
   caption:= page.caption;
  
   if  assigned(activepage) then
+  begin
   if fileexists(activepage.pathdisp.value) then
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
@@ -1106,6 +1109,7 @@ begin
   debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + '. X --> No parameters.';
   debuggerfo.toggle_form_unit.hint := '  Toggle form/unit for ' + caption  + ' '; 
   end;
+ end;
  end
  else begin
   caption:= c[ord(none)];

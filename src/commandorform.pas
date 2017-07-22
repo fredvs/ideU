@@ -15,11 +15,6 @@ type
  tdebuggerfo = class(tdockform)
    basedock: tdockpanel;
    statdisp: tstringdisp;
-   line_number: tbutton;
-   find_in_directory: tbutton;
-   find_in_edit: tbutton;
-   properties_list: tbutton;
-   assistive: tbutton;
    paneledited: tdockpanel;
    edited_run: tbutton;
    edited_abort: tbutton;
@@ -47,11 +42,20 @@ type
    hints: tbooleanedit;
    watches: tbooleanedit;
    break_point: tbooleanedit;
-   timage1: timage;
+   eyesimage: timage;
    project_history: thistoryedit;
    file_history: thistoryedit;
    toggle_form_unit: tbutton;
    project_option: tbutton;
+   templproject: tfacecomp;
+   templfile: tfacecomp;
+   panelmain: tdockpanel;
+   line_number: tbutton;
+   find_in_directory: tbutton;
+   find_in_edit: tbutton;
+   properties_list: tbutton;
+   assistive: tbutton;
+   tdockpanel2: tdockpanel;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);

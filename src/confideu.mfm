@@ -75,6 +75,12 @@ object confideufo: tconfideufo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
+    frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_hiddenedges, frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 3
     bounds_x = 105
     bounds_y = 0

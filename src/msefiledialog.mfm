@@ -1,5 +1,7 @@
 object filedialogfo: Tfiledialogfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  face.localprops = []
+  face.template = sourcefo.tfacecomp2
   visible = False
   bounds_x = 434
   bounds_y = 192
@@ -19,6 +21,30 @@ object filedialogfo: Tfiledialogfo
   )
   options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
   caption = 'Select a file'
+  icon.origformat = 'bmp'
+  icon.image = {
+    0000000000000000100000001000000050020000000000000000000000000000
+    0000000000000000000000000000000000000000FFFFFF04D6FFFF01C6FFFF01
+    CEFFFF01D6FFFF01E7FFFF04FFFFFF0873FFFF0131FFFF014AFFFF016BFFFF01
+    A5FFFF01B5FFFF01A5FFFF01B5FFFF01FFFFFF07EFFFEF016BFFF70131FFFF01
+    52FFFF017BFFFF01B5FFFF01C6FFFF01A5FFFF02EFFFEF01FFFFFF05A5FFA501
+    08EF080118FFAD0139FFFF015AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF01
+    5AFFB50129FF2901ADFFAD01FFFFFF0431EF310108EF080118FFAD0142FFFF01
+    6BFFFF01A5FFFF01E7FFFF01DEFFFF01A5FFFF0152FFB50129FF290142FF4201
+    FFFFFF0431EF310108EF080118FF5A0142FFF7017BFFFF01C6FFFF01FFFFFF01
+    EFFFFF01A5FFFF014AFF840129FF290139F73901FFFFFF0431EF310108EF0801
+    18FF21014AFFCE0194FFFF01DEFFFF01FFFFFF01EFFFFF019CFFE70142FF4A01
+    21FF210139F73901FFFFFF0431EF310108EF080118FF180152FF6B01DEFFFF01
+    F7FFFF01FFFFFF01F7FFFF0194FFA50142FF420121FF210139F73901FFFFFF04
+    31EF310108E7080110F7100139F73901DEF7DE01FFFFFF02DEF7DE015AFF5A01
+    21FF210110F7100131EF3101FFFFFF0431EF310100E7000208E7080173EF7301
+    FFFFFF0273EF730110E7100100E7000231EF3101FFFFFF0431EF310100E70003
+    10E7100129DE290210E7100100E7000331EF3101FFFFFF0431EF310100E70002
+    00DE000500E7000331EF3101FFFFFF0431EF310100E7000A31EF3101FFFFFF04
+    31EF310100E7000A31EF3101FFFFFF0484F7840100E7000900DE000184F78401
+    FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
+    FFFFFF02
+  }
   onloaded = formoncreate
   onkeydown = listviewonkeydown
   onlayout = layoutev
@@ -29,17 +55,31 @@ object filedialogfo: Tfiledialogfo
     optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     frame.localprops = []
     frame.localprops1 = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      12763842
+      -1610612730
+    )
+    face.fade_direction = gd_up
+    face.localprops = [fal_fadirection]
     taborder = 1
     bounds_x = 0
     bounds_y = 43
     bounds_cx = 554
-    bounds_cy = 231
+    bounds_cy = 233
     anchors = [an_top]
     onkeydown = listviewonkeydown
     datarowlinecolor = -1610612731
     datacollinecolor = -1610612731
     cellwidth = 174
     cellheight = 15
+    cellframe.localprops = []
+    cellframe.localprops1 = []
     optionsgrid = [og_colsizing, og_focuscellonenter, og_mousescrollcol]
     options = [lvo_readonly, lvo_drawfocus, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate, lvo_hintclippedtext]
     itemlist.imagelist = filedialogres.images
@@ -55,9 +95,9 @@ object filedialogfo: Tfiledialogfo
   object tlayouter2: tlayouter
     optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
     bounds_x = 1
-    bounds_y = 276
+    bounds_y = 278
     bounds_cx = 551
-    bounds_cy = 40
+    bounds_cy = 38
     anchors = [an_left, an_right, an_bottom]
     optionsscale = [osc_expandy, osc_shrinky, osc_expandshrinkx, osc_expandshrinky]
     linktop = listview
@@ -68,9 +108,13 @@ object filedialogfo: Tfiledialogfo
       frame.captionpos = cp_top
       frame.localprops = []
       frame.localprops1 = []
+      frame.button.face.localprops = []
+      frame.button.face.template = sourcefo.tfacecomp1
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          face.localprops = []
+          face.template = sourcefo.tfacecomp1
         end>
       frame.outerframe = (
         0
@@ -78,6 +122,7 @@ object filedialogfo: Tfiledialogfo
         0
         0
       )
+      face.localprops = []
       hint = ' Click button on right corner to show the history of files. '
       bounds_x = 1
       bounds_y = 0
@@ -102,9 +147,13 @@ object filedialogfo: Tfiledialogfo
       frame.captionpos = cp_top
       frame.localprops = []
       frame.localprops1 = []
+      frame.button.face.localprops = []
+      frame.button.face.template = sourcefo.tfacecomp1
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          face.localprops = []
+          face.template = sourcefo.tfacecomp1
         end>
       frame.outerframe = (
         0
@@ -112,6 +161,7 @@ object filedialogfo: Tfiledialogfo
         0
         0
       )
+      face.localprops = []
       taborder = 1
       bounds_x = 298
       bounds_y = -1
@@ -136,11 +186,16 @@ object filedialogfo: Tfiledialogfo
       optionswidget1 = [ow1_autowidth, ow1_autoheight]
       optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
       color = 15132390
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = sourcefo.tfacecomp1
       taborder = 2
-      bounds_x = 452
+      bounds_x = 454
       bounds_y = 19
-      bounds_cx = 50
-      bounds_cy = 21
+      bounds_cx = 48
+      bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
       state = [as_localcaption, as_localcolor]
@@ -152,11 +207,16 @@ object filedialogfo: Tfiledialogfo
       optionswidget1 = [ow1_autowidth, ow1_autoheight]
       optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
       color = 15132390
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = sourcefo.tfacecomp1
       taborder = 3
       bounds_x = 506
       bounds_y = 18
       bounds_cx = 35
-      bounds_cy = 21
+      bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
       state = [as_default, as_localdefault, as_localcaption, as_localcolor, as_localonexecute]
@@ -190,9 +250,13 @@ object filedialogfo: Tfiledialogfo
     frame.captionpos = cp_top
     frame.localprops = []
     frame.localprops1 = []
+    frame.button.face.localprops = []
+    frame.button.face.template = sourcefo.tfacecomp1
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        face.localprops = []
+        face.template = sourcefo.tfacecomp1
       end>
     frame.outerframe = (
       0
@@ -200,6 +264,7 @@ object filedialogfo: Tfiledialogfo
       0
       0
     )
+    face.localprops = []
     taborder = 2
     onshowhint = dirshowhint
     bounds_x = 1
@@ -216,11 +281,16 @@ object filedialogfo: Tfiledialogfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = 15132390
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 3
     hint = ' Home directory '
-    bounds_x = 504
+    bounds_x = 506
     bounds_y = 13
-    bounds_cx = 45
+    bounds_cx = 43
     bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
@@ -234,11 +304,16 @@ object filedialogfo: Tfiledialogfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = 15132390
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 4
     hint = ' Create directory '
-    bounds_x = 446
+    bounds_x = 448
     bounds_y = 13
-    bounds_cx = 56
+    bounds_cx = 54
     bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
@@ -252,6 +327,11 @@ object filedialogfo: Tfiledialogfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = 15132390
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 5
     hint = ' Parent directory '
     onshowhint = buttonshowhint
@@ -274,6 +354,11 @@ object filedialogfo: Tfiledialogfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
     color = 15132390
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 6
     onshowhint = buttonshowhint
     bounds_x = 408
@@ -295,6 +380,11 @@ object filedialogfo: Tfiledialogfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_disabledhint]
     color = 15132390
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 7
     onshowhint = buttonshowhint
     bounds_x = 389

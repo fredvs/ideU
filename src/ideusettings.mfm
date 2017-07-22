@@ -598,6 +598,8 @@ object settings_form: tsettingsfo
       reffontheight = 15
       object shortcutbu: tbutton
         color = 16772044
+        face.localprops = []
+        face.template = sourcefo.tfacecomp1
         bounds_x = 172
         bounds_y = 164
         bounds_cx = 106
@@ -700,6 +702,11 @@ object settings_form: tsettingsfo
       end
     end
     object but_ok: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = sourcefo.tfacecomp1
       taborder = 1
       bounds_x = 421
       bounds_y = 2

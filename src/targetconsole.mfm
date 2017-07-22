@@ -2,20 +2,34 @@ object targetconsolefo: ttargetconsolefo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
+  frame.grip_grip = stb_dens100
+  frame.grip_color = 9737364
+  frame.grip_coloractive = 11250603
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
+  frame.grip_face.fade_pos.count = 2
+  frame.grip_face.fade_pos.items = (
+    0
+    1
+  )
+  frame.grip_face.fade_color.count = 2
+  frame.grip_face.fade_color.items = (
+    15592941
+    8224125
+  )
+  frame.grip_face.localprops = []
   popupmenu = popupmen
   visible = False
-  bounds_x = 209
-  bounds_y = 385
-  bounds_cx = 368
-  bounds_cy = 137
+  bounds_x = 286
+  bounds_y = 170
+  bounds_cx = 561
+  bounds_cy = 336
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    358
-    137
+    551
+    336
   )
   dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
   options = [fo_savepos, fo_savestate]
@@ -49,16 +63,22 @@ object targetconsolefo: ttargetconsolefo
   onidle = targetconsoleonidle
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
-    frame.localprops = []
+    frame.colorclient = 2171169
+    frame.font.color = 16777215
+    frame.font.name = 'stf_default'
+    frame.font.localprops = [flp_color]
+    frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 358
-    bounds_cy = 137
+    bounds_cx = 551
+    bounds_cy = 336
     anchors = []
+    font.color = -1610612730
+    font.colorbackground = 2171169
     font.name = 'stf_fixed'
     font.xscale = 1
-    font.localprops = [flp_xscale]
+    font.localprops = [flp_color, flp_colorbackground, flp_colorselect, flp_xscale]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_colchangeontabkey, og_wrapcol, og_autopopup]
     rowcountmax = 5000
     datacols.count = 1
