@@ -10,9 +10,9 @@ object debuggerfo: tdebuggerfo
   face.localprops = []
   face.template = templfile
   visible = False
-  bounds_x = 34
-  bounds_y = 332
-  bounds_cx = 1095
+  bounds_x = 101
+  bounds_y = 202
+  bounds_cx = 1124
   bounds_cy = 51
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
@@ -21,7 +21,7 @@ object debuggerfo: tdebuggerfo
   container.bounds = (
     0
     0
-    1085
+    1114
     51
   )
   dragdock.caption = 'Commandor'
@@ -91,7 +91,7 @@ object debuggerfo: tdebuggerfo
     onpaint = paintdock
     bounds_x = 0
     bounds_y = 47
-    bounds_cx = 1085
+    bounds_cx = 1114
     bounds_cy = 2
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
@@ -117,7 +117,7 @@ object debuggerfo: tdebuggerfo
     taborder = 1
     bounds_x = 0
     bounds_y = 30
-    bounds_cx = 1085
+    bounds_cx = 1114
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250
@@ -129,14 +129,162 @@ object debuggerfo: tdebuggerfo
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
+  object tdockpanel2: tdockpanel
+    frame.framewidth = 1
+    frame.colorframe = 6710886
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
+    frame.grip_size = 0
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = mainfo.tfacecomp1
+    taborder = 5
+    bounds_x = 1082
+    bounds_y = 1
+    bounds_cx = 30
+    bounds_cy = 28
+    anchors = [an_left, an_top, an_right]
+  end
+  object panelmain: tdockpanel
+    frame.framewidth = 1
+    frame.colorframe = 6710886
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
+    frame.grip_size = 0
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = mainfo.tfacecomp1
+    taborder = 4
+    bounds_x = 0
+    bounds_y = 1
+    bounds_cx = 166
+    bounds_cy = 28
+    object line_number: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      hint = ' Show line number '
+      bounds_x = 111
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 25
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = shownum
+    end
+    object find_in_directory: tbutton
+      color = 13684944
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 1
+      hint = ' Find in directory '
+      bounds_x = 84
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.findinfile
+      imagelist = actionsmo.buttonicons
+      imagenr = 15
+    end
+    object find_in_edit: tbutton
+      color = 13684944
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 2
+      hint = ' Find in edited source '
+      bounds_x = 57
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 24
+      onexecute = findinpage
+    end
+    object properties_list: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 3
+      hint = ' List of properties on/off '
+      bounds_x = 30
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 20
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = listonexecute
+    end
+    object assistive: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat, fso_faceoverlay]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 4
+      hint = '  Enable/disable voice assist. '
+      bounds_x = 3
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
+      action = actionsmo.assistive
+      imagelist = actionsmo.buttonicons
+      imagenr = 18
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = assistiveactonexecute
+    end
+    object terminal_run: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 5
+      hint = ' Show target terminal when running '
+      bounds_x = 138
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 33
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = onterminalon
+    end
+  end
   object panelproject: tdockpanel
-    color = 13930182
+    frame.framewidth = 1
+    frame.colorframe = 6710886
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
+    frame.grip_size = 0
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     face.template = templproject
     taborder = 3
     hint = ' Panel of project. '
-    bounds_x = 138
+    bounds_x = 167
     bounds_y = 1
     bounds_cx = 552
     bounds_cy = 28
@@ -148,7 +296,7 @@ object debuggerfo: tdebuggerfo
       face.localprops = []
       face.template = templproject
       hint = ' Project stop '
-      bounds_x = 524
+      bounds_x = 525
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -167,7 +315,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 1
       hint = ' Project Reset '
-      bounds_x = 497
+      bounds_x = 498
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -186,7 +334,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 2
       hint = ' Project Step instruction '
-      bounds_x = 470
+      bounds_x = 471
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -205,7 +353,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 3
       hint = ' Project Next Instruction '
-      bounds_x = 443
+      bounds_x = 444
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -224,7 +372,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 4
       hint = ' Project Finish '
-      bounds_x = 416
+      bounds_x = 417
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -242,7 +390,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 5
       hint = ' Project step '
-      bounds_x = 389
+      bounds_x = 390
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -260,7 +408,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 6
       hint = ' Project Next '
-      bounds_x = 362
+      bounds_x = 363
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -278,7 +426,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 7
       hint = ' Project Start '
-      bounds_x = 335
+      bounds_x = 336
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -297,7 +445,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 8
       hint = ' Project Abort Compilation '
-      bounds_x = 238
+      bounds_x = 239
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -317,7 +465,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 9
       hint = ' Project make with selected options '
-      bounds_x = 211
+      bounds_x = 212
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -327,8 +475,9 @@ object debuggerfo: tdebuggerfo
       imagenr = 17
     end
     object project_options: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.colorclient = 16770809
-      frame.localprops = [frl_colorhighlight, frl_colorclient]
+      frame.localprops = [frl_colorhighlight, frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
@@ -342,7 +491,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 10
       hint = ' Project Option Num '
-      bounds_x = 174
+      bounds_x = 176
       bounds_y = 3
       bounds_cx = 34
       bounds_cy = 21
@@ -378,7 +527,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 11
       hint = ' Save project '
-      bounds_x = 146
+      bounds_x = 147
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -397,7 +546,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 12
       hint = ' Open project '
-      bounds_x = 118
+      bounds_x = 119
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -407,36 +556,6 @@ object debuggerfo: tdebuggerfo
       imagenr = 5
       focusrectdist = 0
     end
-    object project_history: thistoryedit
-      frame.colorclient = 16056304
-      frame.localprops = [frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templproject
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templproject
-        end>
-      taborder = 14
-      hint = ' History of projects. '
-      bounds_x = 30
-      bounds_y = 3
-      bounds_cx = 86
-      bounds_cy = 21
-      statfile = mainfo.mainstatfile
-      textflags = [tf_right, tf_ycentered, tf_noselect]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-        end>
-      onbeforedropdown = onbefdroppro
-      onafterclosedropdown = onsetvaluehis
-      reffontheight = 15
-    end
     object project_option: tbutton
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
@@ -445,7 +564,7 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 15
       hint = ' Project options panel '
-      bounds_x = 2
+      bounds_x = 3
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -460,8 +579,8 @@ object debuggerfo: tdebuggerfo
       face.localprops = []
       face.template = templproject
       taborder = 13
-      bounds_x = 265
-      bounds_y = 1
+      bounds_x = 266
+      bounds_y = 2
       bounds_cx = 69
       bounds_cy = 26
       object eyesimage: timage
@@ -471,7 +590,7 @@ object debuggerfo: tdebuggerfo
         taborder = 3
         hint = 'Debugger Watch/Hint Options'
         bounds_x = 7
-        bounds_y = 2
+        bounds_y = 1
         bounds_cx = 55
         bounds_cy = 10
         bitmap.transparentcolor = 13684944
@@ -547,9 +666,10 @@ object debuggerfo: tdebuggerfo
       end
       object hints: tbooleanedit
         color = -2147483645
+        frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
         frame.colorclient = 9211135
         frame.caption = '  '
-        frame.localprops = [frl_colorclient]
+        frame.localprops = [frl_hiddenedges, frl_colorclient]
         frame.localprops1 = []
         frame.outerframe = (
           0
@@ -558,8 +678,8 @@ object debuggerfo: tdebuggerfo
           3
         )
         hint = ' Executable lines hint on/off '
-        bounds_x = 46
-        bounds_y = 10
+        bounds_x = 45
+        bounds_y = 9
         bounds_cx = 24
         bounds_cy = 17
         onchange = hintonexecute
@@ -567,9 +687,10 @@ object debuggerfo: tdebuggerfo
       end
       object watches: tbooleanedit
         color = -2147483645
+        frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
         frame.colorclient = 14090188
         frame.caption = '  '
-        frame.localprops = [frl_colorclient]
+        frame.localprops = [frl_hiddenedges, frl_colorclient]
         frame.localprops1 = []
         frame.outerframe = (
           0
@@ -579,17 +700,18 @@ object debuggerfo: tdebuggerfo
         )
         taborder = 1
         hint = ' Set Watches On/Off '
-        bounds_x = 23
-        bounds_y = 10
+        bounds_x = 24
+        bounds_y = 9
         bounds_cx = 23
         bounds_cy = 17
         onchange = watchonexecute
       end
       object break_point: tbooleanedit
         color = -2147483645
+        frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
         frame.colorclient = -1610612729
         frame.caption = '  '
-        frame.localprops = [frl_colorclient]
+        frame.localprops = [frl_hiddenedges, frl_colorclient]
         frame.localprops1 = []
         frame.outerframe = (
           0
@@ -600,139 +722,60 @@ object debuggerfo: tdebuggerfo
         taborder = 2
         hint = ' Set Break point on/off '
         bounds_x = 3
-        bounds_y = 10
+        bounds_y = 9
         bounds_cx = 23
         bounds_cy = 17
         onchange = breakonexecute
       end
     end
-  end
-  object panelmain: tdockpanel
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = mainfo.tfacecomp1
-    taborder = 4
-    bounds_x = 0
-    bounds_y = 1
-    bounds_cx = 138
-    bounds_cy = 28
-    object line_number: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
+    object project_history: thistoryedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 16056304
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      hint = ' Show line number '
-      bounds_x = 110
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 25
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
-      focusrectdist = 0
-      onexecute = shownum
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templproject
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templproject
+        end>
+      taborder = 14
+      hint = ' History of projects. '
+      bounds_x = 31
+      bounds_y = 3
+      bounds_cx = 86
+      bounds_cy = 21
+      statfile = mainfo.mainstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      onbeforedropdown = onbefdroppro
+      onafterclosedropdown = onsetvaluehis
+      reffontheight = 15
     end
-    object find_in_directory: tbutton
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 1
-      hint = ' Find in directory '
-      bounds_x = 83
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.findinfile
-      imagelist = actionsmo.buttonicons
-      imagenr = 15
-    end
-    object find_in_edit: tbutton
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 2
-      hint = ' Find in edited source '
-      bounds_x = 56
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 24
-      onexecute = findinpage
-    end
-    object properties_list: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 3
-      hint = ' List of properties on/off '
-      bounds_x = 29
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 20
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
-      focusrectdist = 0
-      onexecute = listonexecute
-    end
-    object assistive: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat, fso_faceoverlay]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 4
-      hint = '  Enable/disable voice assist. '
-      bounds_x = 2
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
-      action = actionsmo.assistive
-      imagelist = actionsmo.buttonicons
-      imagenr = 18
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
-      focusrectdist = 0
-      onexecute = assistiveactonexecute
-    end
-  end
-  object tdockpanel2: tdockpanel
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = mainfo.tfacecomp1
-    taborder = 5
-    bounds_x = 1079
-    bounds_y = 1
-    bounds_cx = 4
-    bounds_cy = 28
-    anchors = [an_left, an_top, an_right]
   end
   object paneledited: tdockpanel
     helpcontext = ' '
     color = 16775618
+    frame.framewidth = 1
+    frame.colorframe = 6710886
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
+    frame.grip_size = 0
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     face.template = templfile
     taborder = 2
     hint = ' Panel of Edited file '
-    bounds_x = 691
+    bounds_x = 720
     bounds_y = 1
-    bounds_cx = 387
+    bounds_cx = 389
     bounds_cy = 28
     object edited_run: tbutton
       color = -2147483645
@@ -742,7 +785,7 @@ object debuggerfo: tdebuggerfo
       face.localprops = []
       face.template = templfile
       hint = ' Run compiled edited file'
-      bounds_x = 360
+      bounds_x = 361
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -761,7 +804,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 1
       hint = ' Abort compile '
-      bounds_x = 333
+      bounds_x = 334
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -781,7 +824,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 2
       hint = ' Compile edited-file '
-      bounds_x = 306
+      bounds_x = 307
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -792,8 +835,9 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
     end
     object edit_options: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.colorclient = 16770809
-      frame.localprops = [frl_colorclient]
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
@@ -807,9 +851,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 3
       hint = ' Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
-      bounds_x = 270
-      bounds_y = 4
-      bounds_cx = 35
+      bounds_x = 272
+      bounds_y = 3
+      bounds_cx = 33
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'X'
@@ -836,8 +880,9 @@ object debuggerfo: tdebuggerfo
       reffontheight = 15
     end
     object edit_compilernum: tenumedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.colorclient = 15138793
-      frame.localprops = [frl_colorclient]
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
@@ -851,9 +896,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 4
       hint = ' Compiler number for Edited file '
-      bounds_x = 235
-      bounds_y = 4
-      bounds_cx = 36
+      bounds_x = 238
+      bounds_y = 3
+      bounds_cx = 33
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       dropdown.cols.count = 1
@@ -876,8 +921,9 @@ object debuggerfo: tdebuggerfo
       reffontheight = 15
     end
     object edit_compiler: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.colorclient = 13154534
-      frame.localprops = [frl_colorclient]
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
@@ -891,8 +937,8 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 5
       hint = ' Compiler Type for Edited file '
-      bounds_x = 173
-      bounds_y = 4
+      bounds_x = 174
+      bounds_y = 3
       bounds_cx = 63
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -920,7 +966,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 6
       hint = ' Save edited file '
-      bounds_x = 145
+      bounds_x = 146
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -939,7 +985,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 7
       hint = ' Open file '
-      bounds_x = 117
+      bounds_x = 119
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -949,9 +995,29 @@ object debuggerfo: tdebuggerfo
       imagenr = 22
       focusrectdist = 0
     end
+    object toggle_form_unit: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 9
+      hint = ' Toggle form/unit '
+      bounds_x = 3
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
+      action = actionsmo.toggleformunit
+      imagelist = actionsmo.buttonicons
+      imagenr = 12
+      focusrectdist = 0
+    end
     object file_history: thistoryedit
       Tag = 1
-      frame.localprops = [frl_colorhighlight]
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.localprops = [frl_colorhighlight, frl_hiddenedges]
       frame.localprops1 = []
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
@@ -965,8 +1031,8 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 8
       hint = ' History of files. '
-      bounds_x = 30
-      bounds_y = 4
+      bounds_x = 31
+      bounds_y = 3
       bounds_cx = 86
       bounds_cy = 21
       statfile = mainfo.mainstatfile
@@ -978,25 +1044,6 @@ object debuggerfo: tdebuggerfo
       onbeforedropdown = onbeforefilehis
       onafterclosedropdown = onsetvaluefilehis
       reffontheight = 15
-    end
-    object toggle_form_unit: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 9
-      hint = ' Toggle form/unit '
-      bounds_x = 2
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
-      action = actionsmo.toggleformunit
-      imagelist = actionsmo.buttonicons
-      imagenr = 12
-      focusrectdist = 0
     end
   end
   object templproject: tfacecomp
@@ -1011,8 +1058,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 964
-    top = 18
+    left = 496
+    top = 8
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -1026,7 +1073,7 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 984
-    top = 18
+    left = 566
+    top = 10
   end
 end

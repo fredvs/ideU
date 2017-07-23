@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.7.2';
+ versiontext = '1.8.0';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -122,6 +122,7 @@ type
    openform: tfiledialog;
    formbg: tbitmapcomp;
    tfacecomp1: tfacecomp;
+   tfacecomp2: tfacecomp;
    procedure newfileonexecute(const sender: tobject);
    procedure newformonexecute(const sender: TObject);
 
@@ -3055,6 +3056,20 @@ begin
   end;
   result:= true;
   fprojectloaded:= true;
+  
+  if projectoptions.d.showconsole = true then
+begin
+ debuggerfo.terminal_run.tag := 1 ;
+ debuggerfo.terminal_run.imagenr := 34 ;
+ end 
+ else
+ begin
+ debuggerfo.terminal_run.tag := 0;
+ debuggerfo.terminal_run.imagenr := 33 ;
+ end;
+  
+  
+  
  end;
 end;
 
@@ -3714,7 +3729,7 @@ aboutfo.about_text.value :=
              'by Martin Schreiber'
             +c_linefeed+ c_linefeed+
              'Copyright 1999-2017'+c_linefeed+  c_linefeed+
-              'by Fred van Stappen' +c_linefeed+
+              'Fred van Stappen' +c_linefeed+
                '<fiens@hotmail.com>';
 aboutfo.show(true);
 end;

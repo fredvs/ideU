@@ -56,6 +56,7 @@ type
    properties_list: tbutton;
    assistive: tbutton;
    tdockpanel2: tdockpanel;
+   terminal_run: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -72,6 +73,7 @@ type
    procedure onbeforefilehis(const sender: TObject);
   
    procedure onbefdroppro(const sender: TObject);
+   procedure onterminalon(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
@@ -221,6 +223,23 @@ end;
 procedure tdebuggerfo.onbefdroppro(const sender: TObject);
 begin
 project_history.width := 298;
+end;
+
+procedure tdebuggerfo.onterminalon(const sender: TObject);
+begin
+if terminal_run.tag = 0 then
+begin
+projectoptions.d.showconsole := true;
+terminal_run.tag := 1 ;
+terminal_run.imagenr := 34 ;
+ end 
+ else
+ begin
+  projectoptions.d.showconsole := false;
+  terminal_run.tag := 0;
+  terminal_run.imagenr := 33 ;
+ end;
+ 
 end;
 
 

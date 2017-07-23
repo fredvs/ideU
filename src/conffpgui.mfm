@@ -318,6 +318,11 @@ object conffpguifo: tconffpguifo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 6
     bounds_x = 274
     bounds_y = 255

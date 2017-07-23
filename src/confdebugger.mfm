@@ -2,16 +2,16 @@ object confdebuggerfo: tconfdebuggerfo
   optionswidget = [ow_top, ow_ultratop, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 475
-  bounds_y = 322
+  bounds_y = 324
   bounds_cx = 344
-  bounds_cy = 203
+  bounds_cy = 200
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     344
-    203
+    200
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Debuggers Configuration'
@@ -158,6 +158,11 @@ object confdebuggerfo: tconfdebuggerfo
     reffontheight = 15
   end
   object tnClose: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcepage.tfacecomp1
     bounds_x = 292
     bounds_y = 9
     bounds_cx = 39

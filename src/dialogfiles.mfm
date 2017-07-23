@@ -1,5 +1,6 @@
 object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  face.localprops = []
   visible = False
   bounds_x = 260
   bounds_y = 139
@@ -42,6 +43,12 @@ object dialogfilesfo: tdialogfilesfo
   }
   moduleclassname = 'tmseform'
   object tbutton1: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = sourcefo.tfacecomp1
     taborder = 2
     bounds_x = 334
     bounds_y = 22
@@ -53,6 +60,12 @@ object dialogfilesfo: tdialogfilesfo
     onexecute = butok
   end
   object tbutton2: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = sourcefo.tfacecomp1
     taborder = 3
     bounds_x = 388
     bounds_y = 22

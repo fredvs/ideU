@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=74
+findinfiledialog=75
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,31 +29,32 @@ findinfiledialog=74
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
+ value="*.pas" "*.pp" "*.inc"
  history=8
+  "*.pas" "*.pp" "*.inc"
   "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" "*.mfm"
   "*.pas" "*.pp" "*.inc" "*.mfm"  "*.*"
-  "*.pas" "*.pp" "*.inc"
   "*.pas" "*.pp" "*.inc" "*.mfm"  "*.prj"
   "*.pas" "*.pp" "*.inc" "*.mfm
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/msegui/
+  /home/fred/fpgui/
  filecolwidth=174
- x=0
- y=0
- cx=0
- cy=0
- filehistory=9
+ x=560
+ y=211
+ cx=554
+ cy=316
+ filehistory=10
+  /home/fred/fpgui/
   /home/fred/msegui/
   /usr/share/fpcsrc/3.0.2/
   /home/fred/msegui_new/
@@ -66,8 +67,11 @@ findinfiledialog=74
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=statdisp
+ value=thread
  history=20
+  thread
+  tthread
+  showconsole
   statdisp
   statdisp.
   statdisp.c
@@ -76,7 +80,6 @@ findinfiledialog=74
   statdisp.t
   statdisp.h
   compiler type for
-  showconsole
   targetconsolefo
   project_history.tag
   .s.
@@ -86,8 +89,6 @@ findinfiledialog=74
   .filter
   filterlist
   about_text.v
-  edit_compiler.hint
-  openproject
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -185,9 +186,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=199
+ y=200
  xprop=1
- yprop=0.39376218323587
+ yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
  propcolwidthref=559
  sortdescend0=0
@@ -233,7 +234,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -300,19 +301,25 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=39
+imagelisteditor=45
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/ideu/src/
+  /home/fred/Images/terminal2.jpeg
  filecolwidth=174
  x=691
  y=148
  cx=588
  cy=307
- lastdir=/home/fred/ideu/src/
- filehistory=13
+ lastdir=/home/fred/Images/
+ filehistory=19
+  /home/fred/Images/terminal2.jpeg
+  /home/fred/Images/terminal.jpeg
+  /home/fred/Images/terminal.bmp
+  /home/fred/Images/terminal.png
+  /home/fred/terminal2.png
+  /home/fred/terminal.png
   /home/fred/ideu/src/fpgui2.jpg
   /home/fred/ideu/src/fpgui.jpg
   /home/fred/ideu/src/ideu.bmp
@@ -719,26 +726,44 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=12
  ACTIONSMO
+ CONFCOMPILERFO
+ CONFDEBUGGERFO
+ CONFFPGUIFO
+ CONFMSEGUIFO
+ MAINFO
  MESSAGEFO
  PANELFO
  PROJECTTREEFO
  SOURCEFO
+ SOURCEPAGE
  TARGETCONSOLEFO
-moduletypes=6
+moduletypes=12
  TACTIONSMO
+ TCONFCOMPILERFO
+ TCONFDEBUGGERFO
+ TCONFFPGUIFO
+ TCONFMSEGUIFO
+ TMAINFO
  TMESSAGEFO
  TPANELFO
  TPROJECTTREEFO
  TSOURCEFO
+ TSOURCEPAGE
  TTARGETCONSOLEFO
-modulefiles=6
+modulefiles=12
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/confdebugger.mfm
+ /home/fred/ideu/src/conffpgui.mfm
+ /home/fred/ideu/src/confmsegui.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/messageform.mfm
  /home/fred/ideu/src/panelform.mfm
  /home/fred/ideu/src/projecttreeform.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/targetconsole.mfm
 befcommandon=0
 makeoptionson=10
@@ -961,7 +986,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=1
+showconsole=0
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1061,29 +1086,29 @@ path=24
  /home/fred/ideu/src/commandorform.pas
  /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
 line=24
- 780
+ 781
  2129
  999
  1462
- 562
- 3627
+ 563
+ 3642
  644
  119
  1037
  2247
  2164
  2439
- 638
+ 639
  3226
  119
- 524
+ 525
  439
  46
- 3886
+ 3901
  684
  844
  783
- 81
+ 83
  15
 address=24
  4795942
@@ -1309,13 +1334,14 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=updatecaption
+finddtext=aboutfo
 findhistory=20
+ aboutfo
+ openproject
  updatecaption
  face
  withoutd
  resize
- openproject
  runwithoutdebugger
  frunningprocess
  startconsole
@@ -1330,17 +1356,28 @@ findhistory=20
  readconf
  readcon
  opensource
- read
 findoptions=1
-editpos=8
+editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,9
- 0,0
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 62,5
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1349,25 +1386,61 @@ bookmarks4=0
 bookmarks5=0
 bookmarks6=0
 bookmarks7=0
-sourcefiles=8
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+sourcefiles=20
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/messageform.pas
  ${PROJECTDIR}/projecttreeform.pas
  ${PROJECTDIR}/panelform.pas
  ${PROJECTDIR}/targetconsole.pas
  ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/messageform.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=8
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/confcompiler.pas
+ ${PROJECTDIR}/confdebugger.pas
+ ${PROJECTDIR}/conffpgui.pas
+ ${PROJECTDIR}/confmsegui.pas
+ ${PROJECTDIR}/confdebugger.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/sourceform.pas
+relpaths=20
  sourceform.pas
  messageform.pas
  projecttreeform.pas
  panelform.pas
  targetconsole.pas
  main.pas
+ main.pas
+ sourcepage.pas
+ sourceform.pas
+ messageform.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=8
+ sourcepage.pas
+ confcompiler.pas
+ confdebugger.pas
+ conffpgui.pas
+ confmsegui.pas
+ confdebugger.pas
+ sourcepage.pas
+ sourceform.pas
+ismoduletexts=20
  0
  0
  0
@@ -1376,15 +1449,32 @@ ismoduletexts=8
  0
  0
  0
-modules=7
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=12
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/targetconsole.mfm
+ /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/messageform.mfm
  /home/fred/ideu/src/projecttreeform.mfm
  /home/fred/ideu/src/panelform.mfm
-moduleoptions=7
+ /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/confdebugger.mfm
+ /home/fred/ideu/src/conffpgui.mfm
+ /home/fred/ideu/src/confmsegui.mfm
+moduleoptions=12
  0
  0
  0
@@ -1392,16 +1482,31 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+ 0
+ 0
+ 0
+ 0
+visiblemodules=12
+ -1
+ 0
+ -1
+ 0
+ -1
+ 0
+ 0
  0
  -1
  -1
  -1
  -1
- -1
- -1
-nomenumodules=7
- -1
+nomenumodules=12
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1409,10 +1514,31 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-firsttab=3
-index=5
+order=20
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+firsttab=6
+index=9
 [layout]
-windowlayout=621
+windowlayout=697
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1425,7 +1551,7 @@ windowlayout=621
  ncy=0
  x=0
  y=0
- cx=1084
+ cx=1113
  cy=604
  rcx=0
  rcy=0
@@ -1438,17 +1564,17 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=133
- y=80
- cx=1094
+ x=163
+ y=55
+ cx=1123
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1084,604
+  basedock,0,0,1113,604
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1467,7 +1593,7 @@ windowlayout=621
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -1572,7 +1698,7 @@ windowlayout=621
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=3
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1664,8 +1790,8 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=809
- y=95
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -1675,9 +1801,9 @@ windowlayout=621
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=130
+ width0=136
  sortdescend0=0
- width1=170
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1767,7 +1893,7 @@ windowlayout=621
  ncy=0
  x=0
  y=512
- cx=1084
+ cx=1113
  cy=92
  rcx=0
  rcy=0
@@ -1867,7 +1993,7 @@ windowlayout=621
  ncy=0
  x=0
  y=0
- cx=1084
+ cx=1113
  cy=51
  rcx=0
  rcy=0
@@ -1879,12 +2005,12 @@ windowlayout=621
  mdistate=0
  nx=0
  ny=0
- ncx=1084
- ncy=51
+ ncx=1113
+ ncy=53
  x=0
  y=0
- cx=1084
- cy=51
+ cx=1113
+ cy=53
  rcx=0
  rcy=0
  [sourcefo]
@@ -1899,7 +2025,7 @@ windowlayout=621
  ncy=0
  x=208
  y=0
- cx=876
+ cx=905
  cy=455
  rcx=0
  rcy=0
@@ -1907,7 +2033,7 @@ windowlayout=621
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1935,29 +2061,29 @@ windowlayout=621
  ncy=0
  x=0
  y=54
- cx=1084
+ cx=1113
  cy=455
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=493
- y=184
+ x=427
+ y=220
  cx=697
- cy=20
+ cy=19
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_targetconsolefo_mse_]
  splitdir=0
  useroptions=805322875
@@ -1968,19 +2094,19 @@ windowlayout=621
  ny=0
  ncx=0
  ncy=0
- x=286
- y=170
- cx=571
- cy=336
+ x=701
+ y=157
+ cx=601
+ cy=384
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_messagefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_panelfo_mse_
+ stackedunder=_mse_projecttreefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1995,11 +2121,11 @@ windowlayout=621
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_projecttreefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2013,12 +2139,12 @@ windowlayout=621
  rcx=0
  rcy=0
  wsize=0
- active=1
- visible=1
+ active=0
+ visible=0
  [_mse_panelfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2029,6 +2155,82 @@ windowlayout=621
  y=493
  cx=333
  cy=195
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_confcompilerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_confdebuggerfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=345
+ y=140
+ cx=382
+ cy=399
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confdebuggerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_conffpguifo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=475
+ y=324
+ cx=354
+ cy=200
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conffpguifo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_confmseguifo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=578
+ y=213
+ cx=338
+ cy=289
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confmseguifo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=393
+ y=276
+ cx=386
+ cy=117
  rcx=0
  rcy=0
  wsize=0

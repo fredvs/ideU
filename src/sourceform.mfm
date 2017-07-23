@@ -10,8 +10,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 406
-  bounds_y = 259
+  bounds_x = 655
+  bounds_y = 262
   bounds_cx = 662
   bounds_cy = 340
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -96,8 +96,6 @@ object sourcefo: tsourcefo
     bounds_y = 0
     bounds_cx = 661
     bounds_cy = 325
-    face.localprops = []
-    face.template = mainfo.tfacecomp1
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
@@ -120,28 +118,53 @@ object sourcefo: tsourcefo
     tab_frame.buttonsvisible = [sk_right, sk_left, sk_first, sk_last]
     tab_frame.localprops = [frl_frameimageleft, frl_frameimagebottom, frl_optionsskin]
     tab_frame.localprops1 = []
-    tab_face.localprops = []
-    tab_face.template = tfacecomp1
+    tab_face.fade_pos.count = 2
+    tab_face.fade_pos.items = (
+      0
+      1
+    )
+    tab_face.fade_color.count = 2
+    tab_face.fade_color.items = (
+      15263976
+      10921638
+    )
+    tab_face.fade_direction = gd_up
+    tab_face.localprops = [fal_fadirection]
+    tab_color = -2147483642
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
     tab_captionframe_left = 8
     tab_captionframe_top = 6
     tab_captionframe_right = 8
     tab_captionframe_bottom = 6
-    tab_edge_colordkshadow = -2147483645
-    tab_edge_colorshadow = -2147483645
-    tab_edge_colorlight = -2147483645
-    tab_edge_colorhighlight = 7237230
-    tab_coloractivetab = 16579836
+    tab_edge_colordkshadow = -2147483642
+    tab_edge_colorshadow = -2147483642
+    tab_edge_colorlight = -2147483642
+    tab_edge_colorhighlight = -2147483642
+    tab_edge_colordkwidth = 0
+    tab_edge_colorhlwidth = 0
+    tab_colortab = -2147483642
+    tab_coloractivetab = -2147483642
+    tab_frametab.colorframe = -2147483642
+    tab_frametab.colorframeactive = -2147483642
+    tab_frametab.colorframeclicked = -2147483642
+    tab_frametab.colorframedefault = -2147483642
     tab_frametab.frameimage_list = timagelist2
     tab_frametab.frameimage_left = -4
     tab_frametab.frameimage_right = -4
     tab_frametab.frameimage_top = -4
     tab_frametab.frameimage_bottom = -4
-    tab_frametab.optionsskin = [fso_flat, fso_noanim, fso_noclickanim, fso_nofocusanim, fso_nofocusrect, fso_nodefaultrect, fso_noinnerrect]
+    tab_frametab.optionsskin = [fso_nodefaultrect, fso_noinnerrect]
+    tab_frametab.colorclient = -2147483642
+    tab_frametab.colordkshadow = -2147483642
+    tab_frametab.colorshadow = -2147483642
+    tab_frametab.colorlight = -2147483642
+    tab_frametab.colorhighlight = -2147483642
+    tab_frametab.colordkwidth = 0
+    tab_frametab.colorhlwidth = 0
     tab_frametab.hiddenedges = [edg_right, edg_bottom]
-    tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_hiddenedges, frl_fitop, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin]
-    tab_frametab.localprops1 = []
+    tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_colorframeactive, frl_colordkshadow, frl_colorshadow, frl_colorlight, frl_colorhighlight, frl_colordkwidth, frl_colorhlwidth, frl_hiddenedges, frl_fitop, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin, frl_colorclient]
+    tab_frametab.localprops1 = [frl1_colorframeclicked, frl1_colorframedefault]
     tab_facetab.fade_direction = gd_down
     tab_facetab.localprops = [fal_fadirection]
     tab_facetab.template = tfacecomp1

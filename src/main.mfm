@@ -8,10 +8,10 @@ object mainfo: tmainfo
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints, go_showsplitcaption, go_showfloatcaption]
   visible = False
-  bounds_x = 493
-  bounds_y = 184
+  bounds_x = 427
+  bounds_y = 220
   bounds_cx = 687
-  bounds_cy = 20
+  bounds_cy = 19
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -26,7 +26,7 @@ object mainfo: tmainfo
     0
     17
     677
-    3
+    2
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -104,6 +104,8 @@ object mainfo: tmainfo
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
+    popupfacetemplate = tfacecomp2
+    popupitemfacetemplateactive = tfacecomp2
     onupdate = mainmenuonupdate
     facetemplate = tfacecomp1
     menu.submenu.count = 15
@@ -2113,11 +2115,26 @@ object mainfo: tmainfo
     )
     template.fade_color.count = 2
     template.fade_color.items = (
-      14606046
+      14145495
       12434877
     )
     template.fade_direction = gd_down
     left = 343
     top = 5
+  end
+  object tfacecomp2: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15132390
+      12434877
+    )
+    template.fade_direction = gd_down
+    left = 507
+    top = 24
   end
 end

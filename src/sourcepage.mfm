@@ -2,10 +2,12 @@ object sourcepage: tsourcepage
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   optionsskin = [osk_framebuttononly]
   color = -1879048187
+  frame.localprops = []
+  frame.localprops1 = []
   bounds_x = 286
   bounds_y = 248
   bounds_cx = 590
-  bounds_cy = 217
+  bounds_cy = 241
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -13,7 +15,7 @@ object sourcepage: tsourcepage
     0
     0
     590
-    217
+    241
   )
   icon.transparentcolor = -2147483648
   oncreate = sourcefooncreate
@@ -27,32 +29,59 @@ object sourcepage: tsourcepage
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     optionsskin = [osk_framebuttononly]
     frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-    frame.sbvert.face.localprops = []
-    frame.sbvert.face.template = mainfo.tfacecomp1
-    frame.sbvert.face1.localprops = []
-    frame.sbvert.face1.template = mainfo.tfacecomp1
-    frame.sbvert.face2.localprops = []
-    frame.sbvert.face2.template = mainfo.tfacecomp1
-    frame.sbvert.facebutton.localprops = []
-    frame.sbvert.facebutton.template = mainfo.tfacecomp1
-    frame.sbvert.faceendbutton.localprops = []
-    frame.sbvert.faceendbutton.template = mainfo.tfacecomp1
+    frame.sbvert.face.fade_direction = gd_left
+    frame.sbvert.face.localprops = [fal_fadirection]
+    frame.sbvert.face.template = tfacecomp2
+    frame.sbvert.face1.fade_direction = gd_left
+    frame.sbvert.face1.localprops = [fal_fadirection]
+    frame.sbvert.face1.template = tfacecomp2
+    frame.sbvert.face2.fade_direction = gd_left
+    frame.sbvert.face2.localprops = [fal_fadirection]
+    frame.sbvert.face2.template = tfacecomp2
+    frame.sbvert.facebutton.fade_pos.count = 2
+    frame.sbvert.facebutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.facebutton.fade_color.count = 2
+    frame.sbvert.facebutton.fade_color.items = (
+      14079702
+      10921638
+    )
+    frame.sbvert.facebutton.fade_direction = gd_left
+    frame.sbvert.facebutton.localprops = [fal_fadirection]
+    frame.sbvert.faceendbutton.fade_pos.count = 2
+    frame.sbvert.faceendbutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.faceendbutton.fade_color.count = 2
+    frame.sbvert.faceendbutton.fade_color.items = (
+      13092807
+      9539985
+    )
+    frame.sbvert.faceendbutton.fade_direction = gd_left
+    frame.sbvert.faceendbutton.localprops = [fal_fadirection]
+    frame.sbvert.frame.localprops = [frl_optionsskin]
+    frame.sbvert.frame.localprops1 = []
+    frame.sbvert.framebutton.localprops = [frl_optionsskin]
+    frame.sbvert.framebutton.localprops1 = []
     frame.sbhorz.face.localprops = []
-    frame.sbhorz.face.template = mainfo.tfacecomp1
+    frame.sbhorz.face.template = tfacecomp1
     frame.sbhorz.face1.localprops = []
-    frame.sbhorz.face1.template = mainfo.tfacecomp1
+    frame.sbhorz.face1.template = tfacecomp1
     frame.sbhorz.face2.localprops = []
-    frame.sbhorz.face2.template = mainfo.tfacecomp1
+    frame.sbhorz.face2.template = tfacecomp1
     frame.sbhorz.facebutton.localprops = []
-    frame.sbhorz.facebutton.template = mainfo.tfacecomp1
+    frame.sbhorz.facebutton.template = sourcefo.tfacecomp1
     frame.sbhorz.faceendbutton.localprops = []
     frame.sbhorz.faceendbutton.template = mainfo.tfacecomp1
     frame.localprops = [frl_hiddenedges]
     frame.localprops1 = []
     bounds_x = 0
-    bounds_y = 0
+    bounds_y = -2
     bounds_cx = 590
-    bounds_cy = 195
+    bounds_cy = 219
     anchors = [an_top, an_bottom]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_wrapcol, og_visiblerowpagestep]
     fixcols.count = 1
@@ -103,7 +132,7 @@ object sourcepage: tsourcepage
       optionsskin = [osk_framebuttononly]
       taborder = 1
       visible = False
-      bounds_x = -524
+      bounds_x = -922
       bounds_y = 0
       bounds_cx = 1940
       bounds_cy = 19
@@ -176,7 +205,7 @@ object sourcepage: tsourcepage
     face.localprops = [fal_fadirection]
     taborder = 1
     bounds_x = 67
-    bounds_y = 197
+    bounds_y = 221
     bounds_cx = 523
     bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
@@ -205,11 +234,41 @@ object sourcepage: tsourcepage
     face.localprops = [fal_fadirection]
     taborder = 2
     bounds_x = 2
-    bounds_y = 197
+    bounds_y = 221
     bounds_cx = 61
     bounds_cy = 19
     anchors = [an_left, an_bottom]
     caption = '00.00'
     textflags = [tf_xcentered, tf_ycentered]
+  end
+  object tfacecomp1: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15921906
+      12895428
+    )
+    template.fade_direction = gd_down
+    left = 293
+    top = 194
+  end
+  object tfacecomp2: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      12434877
+      16250871
+    )
+    template.fade_direction = gd_left
+    left = 138
+    top = 171
   end
 end

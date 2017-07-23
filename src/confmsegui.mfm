@@ -1,7 +1,7 @@
 object confmseguifo: tconfmseguifo
   optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 394
+  bounds_x = 393
   bounds_y = 276
   bounds_cx = 376
   bounds_cy = 117
@@ -83,6 +83,11 @@ object confmseguifo: tconfmseguifo
     reffontheight = 15
   end
   object tbutton1: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
     taborder = 2
     bounds_x = 333
     bounds_y = 4

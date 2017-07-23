@@ -1438,6 +1438,11 @@ object confcompilerfo: tconfcompilerfo
       end
     end
     object but_ok: tbutton
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = sourcefo.tfacecomp1
       taborder = 1
       bounds_x = 325
       bounds_y = 2

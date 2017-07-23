@@ -29,6 +29,8 @@ type
    pathdisp: tstringedit;
    linedisp: tlabel;
    
+   tfacecomp1: tfacecomp;
+   tfacecomp2: tfacecomp;
    procedure ontimerhide(const Sender: TObject);
    procedure ontimerhint(const Sender: TObject);
   

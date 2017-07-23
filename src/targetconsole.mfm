@@ -19,17 +19,17 @@ object targetconsolefo: ttargetconsolefo
   frame.grip_face.localprops = []
   popupmenu = popupmen
   visible = False
-  bounds_x = 286
-  bounds_y = 170
-  bounds_cx = 561
-  bounds_cy = 336
+  bounds_x = 701
+  bounds_y = 157
+  bounds_cx = 591
+  bounds_cy = 384
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    551
-    336
+    581
+    384
   )
   dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
   options = [fo_savepos, fo_savestate]
@@ -64,6 +64,22 @@ object targetconsolefo: ttargetconsolefo
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
     frame.colorclient = 2171169
+    frame.sbvert.face.localprops = []
+    frame.sbvert.face.template = sourcepage.tfacecomp2
+    frame.sbvert.face1.localprops = []
+    frame.sbvert.face1.template = sourcepage.tfacecomp2
+    frame.sbvert.face2.localprops = []
+    frame.sbvert.face2.template = sourcepage.tfacecomp2
+    frame.sbvert.facebutton.localprops = []
+    frame.sbvert.facebutton.template = sourcefo.tfacecomp1
+    frame.sbhorz.face.localprops = []
+    frame.sbhorz.face.template = sourcepage.tfacecomp1
+    frame.sbhorz.face1.localprops = []
+    frame.sbhorz.face1.template = sourcepage.tfacecomp1
+    frame.sbhorz.face2.localprops = []
+    frame.sbhorz.face2.template = sourcepage.tfacecomp1
+    frame.sbhorz.facebutton.localprops = []
+    frame.sbhorz.facebutton.template = sourcefo.tfacecomp1
     frame.font.color = 16777215
     frame.font.name = 'stf_default'
     frame.font.localprops = [flp_color]
@@ -71,8 +87,8 @@ object targetconsolefo: ttargetconsolefo
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 551
-    bounds_cy = 336
+    bounds_cx = 581
+    bounds_cy = 384
     anchors = []
     font.color = -1610612730
     font.colorbackground = 2171169
