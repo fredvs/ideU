@@ -66,8 +66,9 @@ findinfiledialog=74
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=statdisp
+ value=showconsole
  history=20
+  showconsole
   statdisp
   statdisp.
   statdisp.c
@@ -76,7 +77,6 @@ findinfiledialog=74
   statdisp.t
   statdisp.h
   compiler type for
-  showconsole
   targetconsolefo
   project_history.tag
   .s.
@@ -185,9 +185,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=199
+ y=200
  xprop=1
- yprop=0.39376218323587
+ yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
  propcolwidthref=559
  sortdescend0=0
@@ -233,7 +233,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -300,19 +300,25 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=39
+imagelisteditor=45
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/ideu/src/
+  /home/fred/Images/terminal2.jpeg
  filecolwidth=174
  x=691
  y=148
  cx=588
  cy=307
- lastdir=/home/fred/ideu/src/
- filehistory=13
+ lastdir=/home/fred/Images/
+ filehistory=19
+  /home/fred/Images/terminal2.jpeg
+  /home/fred/Images/terminal.jpeg
+  /home/fred/Images/terminal.bmp
+  /home/fred/Images/terminal.png
+  /home/fred/terminal2.png
+  /home/fred/terminal.png
   /home/fred/ideu/src/fpgui2.jpg
   /home/fred/ideu/src/fpgui.jpg
   /home/fred/ideu/src/ideu.bmp
@@ -390,17 +396,17 @@ compnamedialog=5
 bmpfiledialog=20
  [filedialog]
  filenames=1
-  /home/fred/Images/eyes2.jpg
+  /home/fred/ideu/src/ideu.bmp
  filecolwidth=174
  x=0
  y=0
  cx=0
  cy=0
- lastdir=/home/fred/Images/
+ lastdir=/home/fred/ideu/src/
  filehistory=8
+  /home/fred/ideu/src/ideu.bmp
   /home/fred/Images/eyes2.jpg
   /home/fred/Documents/eyesfade.png
-  /home/fred/ideu/src/ideu.bmp
   /home/fred/ideu/src/eyes.jpg
   /home/fred/ideu/src/eyes.bmp
   /home/fred/test/image/logoideu2.png
@@ -719,36 +725,42 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=10
+modulenames=12
  ACTIONSMO
  DEBUGGERFO
+ CONFIDEUFO
+ SETTINGS_FORM
  MAINFO
  MESSAGEFO
- FILEDIALOGFO
- FILEDIALOGRES
+ PANELFO
  PROJECTOPTIONSFO
+ PROJECTTREEFO
  SOURCEFO
  SOURCEPAGE
  TARGETCONSOLEFO
-moduletypes=10
+moduletypes=12
  TACTIONSMO
  TDEBUGGERFO
+ TCONFIDEUFO
+ TSETTINGSFO
  TMAINFO
  TMESSAGEFO
- TFILEDIALOGFO
- TFILEDIALOGRES
+ TPANELFO
  TPROJECTOPTIONSFO
+ TPROJECTTREEFO
  TSOURCEFO
  TSOURCEPAGE
  TTARGETCONSOLEFO
-modulefiles=10
+modulefiles=12
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/messageform.mfm
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/ideu/src/msefiledialogres.mfm
+ /home/fred/ideu/src/panelform.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/projecttreeform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/targetconsole.mfm
@@ -916,7 +928,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=1
+linenumberson=0
 rightmarginon=0
 rightmarginchars=80
 scrollheight=0
@@ -973,7 +985,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=1
+showconsole=0
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1078,7 +1090,7 @@ line=24
  999
  1462
  562
- 3602
+ 3641
  644
  119
  1037
@@ -1091,11 +1103,11 @@ line=24
  524
  439
  46
- 3861
+ 3900
  684
  844
  783
- 81
+ 83
  15
 address=24
  4795942
@@ -1321,12 +1333,13 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=face
+finddtext=openproject
 findhistory=20
+ openproject
+ updatecaption
  face
  withoutd
  resize
- openproject
  runwithoutdebugger
  frunningprocess
  startconsole
@@ -1342,28 +1355,14 @@ findhistory=20
  readcon
  opensource
  read
- uses
 findoptions=1
-editpos=27
+editpos=14
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,2105
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 7,3046
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1386,76 +1385,37 @@ bookmarks10=0
 bookmarks11=0
 bookmarks12=0
 bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-bookmarks20=0
-bookmarks21=0
-bookmarks22=0
-bookmarks23=0
-bookmarks24=0
-bookmarks25=0
-bookmarks26=0
-sourcefiles=27
- ${PROJECTDIR}/commandorform.pas
+sourcefiles=14
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/msefiledialog.pas
- ${PROJECTDIR}/msefiledialogres.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/targetconsole.pas
- /home/fred/ideu/src/main.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/sourcepage.pas
- /home/fred/msegui/lib/common/kernel/msegui.pas
- /home/fred/msegui/lib/common/graphics/msegraphutils.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/messageform.pas
+ ${PROJECTDIR}/projecttreeform.pas
+ ${PROJECTDIR}/panelform.pas
+ ${PROJECTDIR}/targetconsole.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=27
- commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=14
  sourceform.pas
- actionsmodule.pas
- msefiledialog.pas
- msefiledialogres.pas
- main.pas
- actionsmodule.pas
- actionsmodule.pas
+ messageform.pas
+ projecttreeform.pas
+ panelform.pas
  targetconsole.pas
  ../../ideu/src/main.pas
- projectoptionsform.pas
- commandorform.pas
+ sourceform.pas
  actionsmodule.pas
+ confideu.pas
+ ideusettings.pas
  projectoptionsform.pas
- sourceform.pas
  sourcepage.pas
  commandorform.pas
- sourcepage.pas
- msegui/lib/common/kernel/msegui.pas
- msegui/lib/common/graphics/msegraphutils.pas
  commandorform.pas
- main.pas
- sourceform.pas
- sourcepage.pas
- sourcepage.pas
- messageform.pas
- sourceform.pas
-ismoduletexts=27
+ismoduletexts=14
  0
  0
  0
@@ -1470,31 +1430,20 @@ ismoduletexts=27
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=10
+modules=12
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/targetconsole.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/messageform.mfm
-moduleoptions=10
+ /home/fred/ideu/src/projecttreeform.mfm
+ /home/fred/ideu/src/panelform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/ideusettings.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=12
  0
  0
  0
@@ -1505,18 +1454,24 @@ moduleoptions=10
  0
  0
  0
-visiblemodules=10
+ 0
+ 0
+visiblemodules=12
+ 0
  -1
  0
- -1
- -1
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
  0
  -1
- -1
-nomenumodules=10
+nomenumodules=12
+ 0
+ 0
  0
  0
  0
@@ -1528,38 +1483,25 @@ nomenumodules=10
  0
  0
 [sourcefo.files_tab]
-order=27
+order=14
  0
+ 1
+ 2
  3
  4
  5
- 7
+ 13
  8
  9
- 24
- 26
- 20
- 25
- 22
- 23
- 21
- 17
- 18
- 19
- 16
- 12
- 11
- 14
- 15
- 13
  10
+ 11
+ 12
  6
- 1
- 2
+ 7
 firsttab=4
-index=6
+index=5
 [layout]
-windowlayout=659
+windowlayout=697
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1572,7 +1514,7 @@ windowlayout=659
  ncy=0
  x=0
  y=0
- cx=1084
+ cx=1113
  cy=604
  rcx=0
  rcy=0
@@ -1585,14 +1527,14 @@ windowlayout=659
  ny=0
  ncx=0
  ncy=0
- x=231
- y=53
- cx=1094
+ x=125
+ y=46
+ cx=1123
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1084,604
+  basedock,0,0,1113,604
  focusedchild=0
  wsize=0
  active=1
@@ -1614,7 +1556,7 @@ windowlayout=659
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -1636,7 +1578,7 @@ windowlayout=659
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1718,8 +1660,8 @@ windowlayout=659
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=0
+ col=0
+ row=3
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1811,8 +1753,8 @@ windowlayout=659
  ny=0
  ncx=0
  ncy=0
- x=670
- y=179
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -1822,9 +1764,9 @@ windowlayout=659
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=73
+ width0=136
  sortdescend0=0
- width1=227
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1914,7 +1856,7 @@ windowlayout=659
  ncy=0
  x=0
  y=512
- cx=1084
+ cx=1113
  cy=92
  rcx=0
  rcy=0
@@ -2014,7 +1956,7 @@ windowlayout=659
  ncy=0
  x=0
  y=0
- cx=1084
+ cx=1113
  cy=51
  rcx=0
  rcy=0
@@ -2026,12 +1968,12 @@ windowlayout=659
  mdistate=0
  nx=0
  ny=0
- ncx=1084
- ncy=53
+ ncx=1111
+ ncy=52
  x=0
  y=0
- cx=1084
- cy=51
+ cx=1113
+ cy=53
  rcx=0
  rcy=0
  [sourcefo]
@@ -2046,7 +1988,7 @@ windowlayout=659
  ncy=0
  x=208
  y=0
- cx=876
+ cx=905
  cy=455
  rcx=0
  rcy=0
@@ -2054,7 +1996,7 @@ windowlayout=659
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2070,26 +2012,23 @@ windowlayout=659
  wsize=0
  active=0
  visible=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_sourcefo_mse_
- parent=
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=493
- y=184
- cx=707
- cy=39
+ x=0
+ y=54
+ cx=1113
+ cy=455
  rcx=0
  rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
+ [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
  stackedunder=_mse_sourcepage_mse_
@@ -2099,73 +2038,16 @@ windowlayout=659
  ny=0
  ncx=0
  ncy=0
- x=34
- y=332
- cx=1105
- cy=51
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_targetconsolefo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=434
- y=192
- cx=564
- cy=316
+ x=493
+ y=184
+ cx=697
+ cy=20
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=0
  [_mse_targetconsolefo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_projectoptionsfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=209
- y=385
- cx=378
- cy=137
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=119
- y=24
- cx=873
- cy=709
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=805322875
  stackedunder=_mse_messagefo_mse_
@@ -2175,19 +2057,19 @@ windowlayout=659
  ny=0
  ncx=0
  ncy=0
- x=286
- y=248
- cx=600
- cy=217
+ x=701
+ y=157
+ cx=601
+ cy=384
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_messagefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=_mse_projecttreefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2202,23 +2084,121 @@ windowlayout=659
  rcy=0
  wsize=0
  active=0
- visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
- visible=1
+ visible=0
+ [_mse_projecttreefo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_confideufo_mse_
+ parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=0
- y=54
- cx=1084
- cy=455
+ x=546
+ y=378
+ cx=296
+ cy=201
  rcx=0
  rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_panelfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=157
+ y=493
+ cx=333
+ cy=195
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_settings_form_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=489
+ y=174
+ cx=328
+ cy=360
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_projectoptionsfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=212
+ y=165
+ cx=481
+ cy=446
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_actionsmo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=150
+ y=24
+ cx=873
+ cy=709
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=101
+ y=202
+ cx=1134
+ cy=51
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

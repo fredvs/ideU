@@ -3,15 +3,20 @@ object mainfo: tmainfo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
-  frame.grip_grip = stb_dens100
+  frame.grip_grip = stb_dens0
   frame.grip_color = 12434877
   frame.grip_coloractive = 13421772
   frame.grip_options = [go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints, go_showsplitcaption, go_showfloatcaption]
+  frame.grip_face.localprops = []
+  frame.grip_face.template = tfacecomp3
+  frame.grip_faceactive.fade_direction = gd_down
+  frame.grip_faceactive.localprops = [fal_fadirection]
+  frame.grip_faceactive.template = tfacecomp3
   visible = False
   bounds_x = 427
   bounds_y = 220
   bounds_cx = 687
-  bounds_cy = 19
+  bounds_cy = 166
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -26,7 +31,7 @@ object mainfo: tmainfo
     0
     17
     677
-    2
+    149
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -79,6 +84,7 @@ object mainfo: tmainfo
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
+    dragdock.caption = ' Use this panel to Drag Dock  window '
     dragdock.optionsdock = [od_savepos, od_savezorder, od_acceptsdock, od_splitvert, od_splithorz, od_proportional, od_background]
     statfile = projectstatfile
   end
@@ -2136,5 +2142,20 @@ object mainfo: tmainfo
     template.fade_direction = gd_down
     left = 507
     top = 24
+  end
+  object tfacecomp3: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15132390
+      8882055
+    )
+    template.fade_direction = gd_down
+    left = 526
+    top = 78
   end
 end
