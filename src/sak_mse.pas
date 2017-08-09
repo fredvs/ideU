@@ -314,6 +314,9 @@ sakininame = 'sak.ini';
 {$if defined(linux) and defined(cpu86) }
  espeaklibdir = 'liblinux32';
 {$endif}
+{$if defined(linux) and defined(cpuarm) }
+ espeaklibdir = 'libarm';
+{$endif}
 {$if defined(freebsd) and  defined(cpu64)}
  espeaklibdir = 'libfreebsd64';
 {$endif}

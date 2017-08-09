@@ -234,7 +234,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=3
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -772,8 +772,8 @@ befcommandon=0
 makeoptionson=10
  2047
  0
- 58
- 2047
+ 62
+ 2045
  2
  2047
  48
@@ -1386,7 +1386,7 @@ editpos=26
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2
+ 0,4
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1658,7 +1658,7 @@ windowlayout=716
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -2006,7 +2006,7 @@ windowlayout=716
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2048,8 +2048,8 @@ windowlayout=716
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1113
+ ncy=53
  x=0
  y=0
  cx=1113
@@ -2092,6 +2092,22 @@ windowlayout=716
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1113
+ cy=455
+ rcx=0
+ rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2152,7 +2168,7 @@ windowlayout=716
  [_mse_projecttreefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2282,22 +2298,6 @@ windowlayout=716
  wsize=0
  active=0
  visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1113
- cy=455
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

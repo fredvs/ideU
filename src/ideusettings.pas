@@ -70,14 +70,14 @@ const
    {$endif}
     
   {$else}
-   {$ifdef CPUARM}
+   {$if defined(linux) and defined(cpuarm)}  
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
                  'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '');
    {$endif}
    
-   {$ifdef linux}
+    {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}  
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
