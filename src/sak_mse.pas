@@ -47,7 +47,7 @@ uses
   msedataedits, mseedit, msekeyboard, msefileutils, msestringcontainer,msedispwidgets,
   mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact, msesplitter,
   msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes, mseprocess,
-  Math, Classes, Process
+  Math, Classes, Process, dynlibs
   {$IF not DEFINED(Windows)}
   , baseunix
        {$endif}  ;
@@ -68,6 +68,7 @@ type
     ES_DataDirectory: filenamety;
     ES_LibFileName: filenamety;
     PA_LibFileName: filenamety;
+    SO_LibFileName: filenamety;
     
     old8087cw: word;
     mouseclicked: boolean;
@@ -151,7 +152,7 @@ function SAKLoadLib(const SakitDir: filenamety = ''): integer;
 
 // Load with custom espeak dir
 function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
-                                      const eSpeakDataDir: filenamety): integer;
+                                      const eSpeakDataDir: filenamety ; const sonicLib: filenamety): integer;
 // Unload sak 
 function SAKUnloadLib: integer;
 
@@ -192,10 +193,13 @@ uses
 var
   sak: TSAK;
   greeting : string = 'sak is working...' ;
+  es_Handle:TLibHandle=dynlibs.NilHandle;
+  pa_Handle:TLibHandle=dynlibs.NilHandle; 
+  so_Handle:TLibHandle=dynlibs.NilHandle; 
   
 // Load with custom espeak dir
 function SAKLoadLib(const eSpeakBin: filenamety; const eSpeaklib: filenamety; const PortaudioLib: filenamety;
-                                      const eSpeakDataDir: filenamety): integer;
+                                      const eSpeakDataDir: filenamety ; const sonicLib: filenamety): integer;
 begin
  Result := -1;
 
@@ -210,6 +214,7 @@ begin
  sak.ES_ExeFileName:= tosysfilepath(eSpeakBin);
  sak.PA_LibFileName:= tosysfilepath(PortaudioLib);
  sak.ES_LibFileName:= tosysfilepath(eSpeaklib);
+ sak.SO_LibFileName:= tosysfilepath(soniclib);
 
  Result:= sak.loadlib;
  end;
@@ -220,7 +225,7 @@ end;
 function SAKLoadLib(const sakitdir: filenamety = ''): integer;
 
 function WhatFile(const sakini : filenamety = ''; what : integer = 0) : string;
-// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib)
+// to find the file in sak.ini (what => 0 = espeak bin, 1 = portaudio lib, 2 = espeak lib, 4 = soniclib)
 var
 tf: textfile;
 ffinded : boolean ;
@@ -244,6 +249,7 @@ begin
     1: whatfil := 'LIBPORTAUDIO=';
     2: whatfil := 'LIBESPEAK=';
     3: whatfil := 'DIRESPEAKDATA=';
+    4: whatfil := 'LIBSONIC=';
      end;
 
   len := length(whatfil);
@@ -297,7 +303,7 @@ end;
 {$endif}
 var
  tmp : string;
-  ordir, sakini, espeakbin, espeaklib, portaudiolib, espeakdatadir : filenamety;
+  ordir, sakini, espeakbin, espeaklib, portaudiolib, soniclib, espeakdatadir : filenamety;
 const
 sakininame = 'sak.ini';
 
@@ -315,7 +321,7 @@ sakininame = 'sak.ini';
  espeaklibdir = 'liblinux32';
 {$endif}
 {$if defined(linux) and defined(cpuarm) }
- espeaklibdir = 'libarm';
+ espeaklibdir = 'libarmrpi';
 {$endif}
 {$if defined(freebsd) and  defined(cpu64)}
  espeaklibdir = 'libfreebsd64';
@@ -357,9 +363,13 @@ if tmp = '../' then
  espeakdatadir:= ExtractFilePath(ordir)
 else 
  espeakdatadir:= tmp ;
+ 
+ tmp := WhatFile(sakini,3);
+ if tmp <> '' then
+ soniclib:= ordir + tmp else  soniclib:= '';
 
    if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
- and ((findfile(espeaklib)) or (espeaklib = ''))
+ and ((findfile(espeaklib)) or (espeaklib = '')) and ((findfile(soniclib)) or (soniclib = ''))
  then
   begin
    Result:= 0;
@@ -393,9 +403,14 @@ if tmp = '../' then
  espeakdatadir:= ordir + directoryseparator + 'sakit' + directoryseparator
 else 
  espeakdatadir:= tmp ;
+ 
+ tmp := WhatFile(sakini,4);
+ if tmp <> '' then
+ soniclib:= ordir + directoryseparator + 'sakit' + directoryseparator +
+  espeaklibdir+ directoryseparator + tmp else  soniclib:= '';
 
    if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
-   and ((findfile(espeaklib)) or (espeaklib = ''))   then
+   and ((findfile(espeaklib)) or (espeaklib = '')) and ((findfile(soniclib)) or (soniclib = ''))  then
  begin
     Result:= 0;
         {$ifdef unix}
@@ -437,7 +452,7 @@ end;
  end;
  
  if result = 0 then begin
-  result:= sakloadlib(espeakbin,espeaklib,portaudiolib,espeakdatadir);
+  result:= sakloadlib(espeakbin,espeaklib,portaudiolib,espeakdatadir,soniclib);
  end;
 end;
 
@@ -450,6 +465,13 @@ begin
   freeandnil(sak.thetimer);
   freeandnil(sak.AProcess);
   freeandnil(sak);
+  DynLibs.UnloadLibrary(es_Handle);
+    es_Handle:=DynLibs.NilHandle;
+    DynLibs.UnloadLibrary(pa_Handle);
+    pa_Handle:=DynLibs.NilHandle;
+    DynLibs.UnloadLibrary(so_Handle);
+    so_Handle:=DynLibs.NilHandle; 
+
  end;
 end;
 
@@ -1622,8 +1644,15 @@ if trim(PA_LibFileName) <> '' then
    AProcess.Environment.Text := AProcess.Environment.Text + ':' + tosysfilepath(ExtractFilePath(PA_LibFileName))
 
 end  else
+begin
   if trim(PA_LibFileName) <> '' then
    AProcess.Environment.Text := 'LD_PRELOAD=' + tosysfilepath(PA_LibFileName) ;
+end;
+
+if trim(PA_LibFileName) <> '' then pa_Handle:= DynLibs.SafeLoadLibrary(tosysfilepath(PA_LibFileName));
+if trim(SO_LibFileName) <> '' then so_Handle:= DynLibs.SafeLoadLibrary(tosysfilepath(SO_LibFileName));
+if trim(ES_LibFileName) <> '' then es_Handle:= DynLibs.SafeLoadLibrary(tosysfilepath(ES_LibFileName));
+   
 {$endif}
 
  AProcess.Executable :=  tosysfilepath(ES_ExeFileName);
