@@ -364,7 +364,7 @@ if tmp = '../' then
 else 
  espeakdatadir:= tmp ;
  
- tmp := WhatFile(sakini,3);
+ tmp := WhatFile(sakini,4);
  if tmp <> '' then
  soniclib:= ordir + tmp else  soniclib:= '';
 

@@ -726,51 +726,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=14
- ACTIONSMO
- DEBUGGERFO
- CONFCOMPILERFO
- CONFDEBUGGERFO
- CONFFPGUIFO
- CONFIDEUFO
- CONFMSEGUIFO
- MAINFO
- MESSAGEFO
- PANELFO
- PROJECTTREEFO
- SOURCEFO
- SOURCEPAGE
- TARGETCONSOLEFO
-moduletypes=14
- TACTIONSMO
- TDEBUGGERFO
- TCONFCOMPILERFO
- TCONFDEBUGGERFO
- TCONFFPGUIFO
- TCONFIDEUFO
- TCONFMSEGUIFO
- TMAINFO
- TMESSAGEFO
- TPANELFO
- TPROJECTTREEFO
- TSOURCEFO
- TSOURCEPAGE
- TTARGETCONSOLEFO
-modulefiles=14
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/confcompiler.mfm
- /home/fred/ideu/src/confdebugger.mfm
- /home/fred/ideu/src/conffpgui.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/confmsegui.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/messageform.mfm
- /home/fred/ideu/src/panelform.mfm
- /home/fred/ideu/src/projecttreeform.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/targetconsole.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=10
  2047
@@ -1340,8 +1298,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=aboutfo
+finddtext=whatfile(sak
 findhistory=20
+ whatfile(sak
  aboutfo
  openproject
  updatecaption
@@ -1361,246 +1320,37 @@ findhistory=20
  onsetfi
  readconf
  readcon
- opensource
 findoptions=1
-editpos=28
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 39,9
- 0,-1073741823
+editpos=1
+ 1,452
 bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-bookmarks20=0
-bookmarks21=0
-bookmarks22=0
-bookmarks23=0
-bookmarks24=0
-bookmarks25=0
-bookmarks26=0
-bookmarks27=0
-sourcefiles=28
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/messageform.pas
- ${PROJECTDIR}/projecttreeform.pas
- ${PROJECTDIR}/panelform.pas
- ${PROJECTDIR}/targetconsole.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/messageform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/confcompiler.pas
- ${PROJECTDIR}/confdebugger.pas
- ${PROJECTDIR}/conffpgui.pas
- ${PROJECTDIR}/confmsegui.pas
- ${PROJECTDIR}/confdebugger.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/panelform.pas
- ${PROJECTDIR}/messageform.pas
- ${PROJECTDIR}/targetconsole.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/main.pas
-relpaths=28
- sourceform.pas
- messageform.pas
- projecttreeform.pas
- panelform.pas
- targetconsole.pas
- main.pas
- main.pas
- sourcepage.pas
- sourceform.pas
- messageform.pas
- sourceform.pas
- actionsmodule.pas
- sourcepage.pas
- confcompiler.pas
- confdebugger.pas
- conffpgui.pas
- confmsegui.pas
- confdebugger.pas
- sourcepage.pas
- sourceform.pas
- commandorform.pas
- sourcepage.pas
- sourceform.pas
- panelform.pas
- messageform.pas
- targetconsole.pas
- confideu.pas
- main.pas
-ismoduletexts=28
+sourcefiles=1
+ ${PROJECTDIR}/sak_mse.pas
+relpaths=1
+ sak_mse.pas
+ismoduletexts=1
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=14
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/targetconsole.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/messageform.mfm
- /home/fred/ideu/src/projecttreeform.mfm
- /home/fred/ideu/src/panelform.mfm
- /home/fred/ideu/src/confcompiler.mfm
- /home/fred/ideu/src/confdebugger.mfm
- /home/fred/ideu/src/conffpgui.mfm
- /home/fred/ideu/src/confmsegui.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/confideu.mfm
-moduleoptions=14
+moduleoptions=3
  0
  0
  0
+visiblemodules=3
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-visiblemodules=14
- -1
- 0
+nomenumodules=3
  -1
  -1
  -1
- -1
- 0
- -1
- -1
- -1
- -1
- -1
- -1
- -1
-nomenumodules=14
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
 [sourcefo.files_tab]
-order=28
- 0
- 1
- 2
- 3
- 4
- 5
- 6
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 20
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 7
- 8
- 9
- 10
- 11
- 12
-firsttab=7
-index=12
+firsttab=0
+index=0
 [layout]
-windowlayout=735
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1760,7 +1510,7 @@ windowlayout=735
  sortdescend1=0
  sorted=0
  col=0
- row=3
+ row=9
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2145,197 +1895,7 @@ windowlayout=735
  rcy=0
  wsize=0
  active=0
- visible=1
- [_mse_targetconsolefo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=701
- y=157
- cx=601
- cy=384
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_messagefo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_panelfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=100
- y=100
- cx=501
- cy=317
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projecttreefo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=546
- y=378
- cx=296
- cy=201
- rcx=0
- rcy=0
- wsize=0
- active=0
  visible=0
- [_mse_panelfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_confcompilerfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=95
- y=455
- cx=333
- cy=195
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confcompilerfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_confdebuggerfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=345
- y=140
- cx=382
- cy=399
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confdebuggerfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_conffpguifo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=475
- y=324
- cx=354
- cy=200
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conffpguifo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_confmseguifo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=578
- y=213
- cx=338
- cy=289
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confmseguifo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_debuggerfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=393
- y=276
- cx=386
- cy=117
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_confideufo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=101
- y=202
- cx=1134
- cy=51
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=489
- y=174
- cx=328
- cy=360
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
