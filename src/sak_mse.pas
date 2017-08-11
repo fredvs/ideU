@@ -465,13 +465,25 @@ begin
   freeandnil(sak.thetimer);
   freeandnil(sak.AProcess);
   freeandnil(sak);
+  
+  if pa_Handle <> dynlibs.NilHandle then
+  begin
+  DynLibs.UnloadLibrary(pa_Handle);
+    pa_Handle:=DynLibs.NilHandle;
+  end; 
+  
+   if es_Handle <> dynlibs.NilHandle then
+  begin
   DynLibs.UnloadLibrary(es_Handle);
     es_Handle:=DynLibs.NilHandle;
-    DynLibs.UnloadLibrary(pa_Handle);
-    pa_Handle:=DynLibs.NilHandle;
-    DynLibs.UnloadLibrary(so_Handle);
-    so_Handle:=DynLibs.NilHandle; 
-
+  end; 
+  
+   if so_Handle <> dynlibs.NilHandle then
+  begin
+  DynLibs.UnloadLibrary(so_Handle);
+    so_Handle:=DynLibs.NilHandle;
+  end;  
+    
  end;
 end;
 
