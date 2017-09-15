@@ -1,18 +1,18 @@
 MSEide+MSEgui Pascal Cross Platform GUI Development System.
 
-2016-11-13 Version 4.0
-Copyright (c) 1999-2016 by Martin Schreiber
+2017-04-08 Version 4.4.2
+Copyright (c) 1999-2017 by Martin Schreiber
 
-- Compiles with FPC 2.6.4 or FPC 3.0.0
-- Tested on i386-linux SuSE 13.1, x86_64-linux SuSE 13.1, x86_64-freebsd,
-  Raspberry Pi, i386-win32 2000, XP and Vista.
+- Compiles with FPC 2.6.4, 3.0.0 or 3.0.2
+- For FreeBSD-x86_64, Linux-i386, Linux-x86_64, Linux-arm(Raspberry Pi),
+  Windows-i386, Windows-x86_64.
 - Links to xlib and gdi32, no external widget library needed.
 - Internal character encoding is utf-16.
 - Uses anti aliased fonts on Linux (Xft).
 - All screen drawing is double buffered.
 - Has docking forms and MDI.
 - Has embedded forms (similar to TFrame).
-- Has database access components and data edit widgets.
+- Has sophisticated database access components and data edit widgets.
 - Internationalization functionality with resource modules.
 - Report generator.
 
@@ -34,11 +34,11 @@ Package maintainers may delete the files "apps/ide/COPYING.GPL",
 
 Installation:
 *************
-1. Download and install FPC 3.0.0, you can get it from 
+1. Download and install FPC 3.0.2, you can get it from 
    http://www.freepascal.org/download.var
-2. Download mseide_msegui_src_4_0.zip and the mseide_* archive
+2. Download mseide_msegui_src_4_4_2.zip and the mseide_* archive
    for your system.
-   http://sourceforge.net/projects/mseide-msegui/files/mseide-msegui/4.0/
+   http://sourceforge.net/projects/mseide-msegui/files/mseide-msegui/4.4.2/
 3. Extract them to a directory of your choice ('yourdirectory') .
 4. Run 'yourdirectory/bin/mseide' on linux and freebsed or 
    'yourdirectory\bin\mseide.exe' on windows.
@@ -54,8 +54,12 @@ If you wish to to compile the IDE:
 Compiling MSEide from commandline on Linux and FreeBSD:
 fpc -Fulib/common/* -Fulib/common/kernel/linux apps/ide/mseide.pas
 On Windows:
-ppc386.exe -Fulib\common\* -Fulib\common\kernel\windows apps\ide\mseide.pas
+fpc -Fulib\common\* -Fulib\common\kernel\windows apps\ide\mseide.pas
 
+If FPC crashes while compiling try on Linux and FreeBSD:
+fpc -B -Fulib/common/* -Fulib/common/kernel/linux apps/ide/mseide.pas
+On Windows:
+fpc -B -Fulib\common\* -Fulib\common\kernel\windows apps\ide\mseide.pas
 
 Creating a new GUI project
 **************************
@@ -71,6 +75,11 @@ MSEgui command line parameters
                               [,<ancestor>]]]]
  Change the used fonts. Example for a 16 pixel height default font:
  --FONTALIAS=stf_default,,16
+
+--NOZEROLINES
+ Use 1-width lines instead of 0-width lines. X11 only. Workaround for buggy HW-accelerated
+ X-servers which don't draw lineends exactly. Can degrade performance, see
+ https://bugzilla.opensuse.org/show_bug.cgi?id=1021803
 
 --NOZORDERHANDLING
  Do not touch Z-order of the windows.
@@ -163,6 +172,11 @@ STR_TRIMLEFT
  Trim whitespace from the beginning of text.
 STR_TRIMRIGHT
  Trim whitespace from the end of text.
+
+STR_COALESCE
+ Return first not empty value. Format is
+ ${STR_COALESCE(text[,text...])} or
+ ${STR_COALESCE("text"[,"text"...])}
 
 MSEide file macros
 ******************
@@ -330,7 +344,7 @@ For Raspberry Pi:
 
 - On the i386-linux host install the scp program
 - download and extract 
-  http://sourceforge.net/projects/mseide-msegui/files/fpcrossarm/crossfpc-i386_linux-eabihf_3_0_1.tar.gz
+  http://sourceforge.net/projects/mseide-msegui/files/fpcrossarm/crossfpc-i386_linux-eabihf_3_0_1a.tar.gz
   to <your crossfpc directory>.
 
 - Start MSEide, in 'Settings'-'Configure MSEide'-'Global Macros' add:
@@ -356,7 +370,8 @@ REMOTEUSER      pi
   <your crossfpc directory>/eabihf/lib
 
 Press F9 and hope the best. ;-)
-
+If there is a debugger timout at startup enlarge the 
+'Project'-'Options'-'Target'-'Wait before connect' value.
 
 Have a lot of fun!
 

@@ -163,6 +163,8 @@ object sourcefo: tsourcefo
     tab_frametab.colorframeactive = -2147483642
     tab_frametab.colorframeclicked = -2147483642
     tab_frametab.colorframedefault = -2147483642
+    tab_frametab.framei_left = 1
+    tab_frametab.framei_right = 1
     tab_frametab.frameimage_list = timagelist2
     tab_frametab.frameimage_left = -4
     tab_frametab.frameimage_right = -4
@@ -176,8 +178,8 @@ object sourcefo: tsourcefo
     tab_frametab.colorhighlight = -2147483642
     tab_frametab.colordkwidth = 0
     tab_frametab.colorhlwidth = 0
-    tab_frametab.hiddenedges = [edg_right, edg_bottom]
-    tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_colorframeactive, frl_colordkshadow, frl_colorshadow, frl_colorlight, frl_colorhighlight, frl_colordkwidth, frl_colorhlwidth, frl_hiddenedges, frl_fitop, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin, frl_colorclient]
+    tab_frametab.hiddenedges = [edg_bottom]
+    tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_colorframeactive, frl_colordkshadow, frl_colorshadow, frl_colorlight, frl_colorhighlight, frl_colordkwidth, frl_colorhlwidth, frl_hiddenedges, frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin, frl_colorclient]
     tab_frametab.localprops1 = [frl1_colorframeclicked, frl1_colorframedefault]
     tab_facetab.fade_direction = gd_down
     tab_facetab.localprops = [fal_fadirection]
@@ -665,18 +667,17 @@ object sourcefo: tsourcefo
     left = 182
     top = 272
     image = {
-      00000000020000000C0000000C00000000010000000000000000000000000000
-      000000000000000000000000000000000000000000000002A5A5A50300000003
-      A5A5A5010000000486868601DCDCDC01FFFFFF01A5A5A50100000003A5A5A501
-      000000037C7C7C0100000003A5A5A50100000003A5A5A50100000003A5A5A501
-      00000003A5A5A50100000003A5A5A5010000000AA5A5A50100000003A5A5A501
-      00000006E8E8E801A5A5A50100000002E8E8E801A5A5A50100000006E5E5E501
-      A5A5A50100000002E5E5E501A5A5A50100000005DCDCDC0100000001A5A5A501
-      00000001DCDCDC0100000001A5A5A503CCCCCC0100000001A5A5A50400000004
-      FFFFFF01DCDCDC019494940100000004FFFFFF0100000005FFFFFF0100000001
-      8C8C8C010000000ADCDCDC01A5A5A501000000081C0100001E01000011010000
-      1101000080080000C00C0000C00C0000A00A0000F7000000870000000A000000
-      0C000000
+      00000000020000000C0000000C000000F8000000000000000000000000000000
+      0000000000000000000000000000000000000000FFFFFF028B8B8B02A5A5A501
+      00000003A5A5A50100000003FFFFFF018B8B8B01FFFFFF02A5A5A50100000003
+      A5A5A501000000038B8B8B01FFFFFF03A5A5A50100000003A5A5A50100000003
+      8B8B8B01FFFFFF03A5A5A50100000003A5A5A50100000007FFFFFF038B8B8B01
+      FFFFFF038B8B8B0100000004FFFFFF038B8B8B01FFFFFF038B8B8B0100000004
+      FFFFFF038B8B8B01FFFFFF038B8B8B0100000004FFFFFF02D6D6D6018B8B8B01
+      FFFFFF02D6D6D6018B8B8B03FFFFFF028B8B8B0400000004FFFFFF028B8B8B01
+      FFFFFF04D6D6D60100000004FFFFFF038B8B8B01FFFFFF0400000004FFFFFF03
+      8B8B8B01FFFFFF04000000041C01000012010000110100001101000080080000
+      800800008008000080080000F3000000040000000800000008000000
     }
   end
   object timagelist3: timagelist
