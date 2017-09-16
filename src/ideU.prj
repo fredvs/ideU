@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=75
+findinfiledialog=76
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -47,13 +47,14 @@ findinfiledialog=75
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/msegui/
+  /usr/share/fpcsrc/3.0.3/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=10
+ filehistory=11
+  /usr/share/fpcsrc/3.0.3/
   /home/fred/msegui/
   /home/fred/fpgui/
   /usr/share/fpcsrc/3.0.2/
@@ -67,8 +68,10 @@ findinfiledialog=75
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=.so'
+ value=libpthread.so
  history=20
+  libpthread.so
+  libpthread.s
   .so'
   MSEgui directory
   thread
@@ -87,8 +90,6 @@ findinfiledialog=75
   .s.
   .s
   pprocidty
-  filenamety
-  .filter
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -730,18 +731,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
  SOURCEFO
-moduletypes=3
+ SOURCEPAGE
+moduletypes=4
  TACTIONSMO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+ TSOURCEPAGE
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=10
  2047
@@ -1334,17 +1338,19 @@ findhistory=20
  onsetfi
  readconf
 findoptions=1
-editpos=10
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
+editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,23
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1355,7 +1361,9 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/actionsmodule.mfm
  ${PROJECTDIR}/main.mfm
@@ -1366,18 +1374,22 @@ sourcefiles=10
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=10
+ ${PROJECTDIR}/sourcepage.pas
+ /home/fred/Bureau/lib_namesh.inc
+relpaths=12
  sak_mse.pas
  actionsmodule.mfm
  main.mfm
  sourceform.mfm
- ../msegui/lib/common/kernel/mselibc.pas
+ msegui/lib/common/kernel/mselibc.pas
  sourceform.pas
  actionsmodule.pas
  main.pas
  main.pas
  sourceform.pas
-ismoduletexts=10
+ sourcepage.pas
+ ../Bureau/lib_namesh.inc
+ismoduletexts=12
  0
  -1
  -1
@@ -1388,30 +1400,38 @@ ismoduletexts=10
  0
  0
  0
-modules=3
+ 0
+ 0
+modules=4
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
-moduleoptions=3
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  0
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-order=10
+order=12
  0
  2
  1
  3
  8
  9
+ 11
+ 10
  4
  5
  6
@@ -1419,7 +1439,7 @@ order=10
 firsttab=0
 index=6
 [layout]
-windowlayout=545
+windowlayout=564
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1445,8 +1465,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=112
- y=45
+ x=180
+ y=27
  cx=1123
  cy=621
  rcx=0
@@ -1671,8 +1691,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=410
- y=115
+ x=349
+ y=249
  cx=641
  cy=484
  rcx=0
@@ -1851,8 +1871,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=240
- y=139
+ x=238
+ y=24
  cx=956
  cy=77
  rcx=0
@@ -1960,6 +1980,25 @@ windowlayout=545
  y=142
  cx=672
  cy=340
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=282
+ y=149
+ cx=600
+ cy=241
  rcx=0
  rcy=0
  wsize=0

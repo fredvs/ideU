@@ -147,10 +147,6 @@ object sourcefo: tsourcefo
     tab_color = -2147483642
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
-    tab_captionframe_left = 8
-    tab_captionframe_top = 6
-    tab_captionframe_right = 8
-    tab_captionframe_bottom = 6
     tab_edge_colordkshadow = -2147483642
     tab_edge_colorshadow = -2147483642
     tab_edge_colorlight = -2147483642
@@ -166,7 +162,7 @@ object sourcefo: tsourcefo
     tab_frametab.framei_left = 8
     tab_frametab.framei_top = 3
     tab_frametab.framei_right = 8
-    tab_frametab.framei_bottom = 3
+    tab_frametab.framei_bottom = 4
     tab_frametab.frameimage_list = timagelist2
     tab_frametab.frameimage_left = -4
     tab_frametab.frameimage_right = -4
@@ -182,7 +178,7 @@ object sourcefo: tsourcefo
     tab_frametab.colorhlwidth = 0
     tab_frametab.hiddenedges = [edg_bottom]
     tab_frametab.localprops = [frl_leveli, frl_framewidth, frl_colorframe, frl_colorframeactive, frl_colordkshadow, frl_colorshadow, frl_colorlight, frl_colorhighlight, frl_colordkwidth, frl_colorhlwidth, frl_hiddenedges, frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_optionsskin, frl_colorclient]
-    tab_frametab.localprops1 = [frl1_colorframeclicked, frl1_colorframedefault]
+    tab_frametab.localprops1 = [frl1_foleft, frl1_foright, frl1_colorframeclicked, frl1_colorframedefault]
     tab_facetab.fade_direction = gd_down
     tab_facetab.localprops = [fal_fadirection]
     tab_facetab.template = tfacecomp1
@@ -682,27 +678,6 @@ object sourcefo: tsourcefo
       800800008008000080080000F3000000040000000800000008000000
     }
   end
-  object timagelist3: timagelist
-    width = 4
-    height = 4
-    count = 8
-    cornermask_topleft = #2#1
-    cornermask_bottomleft = #2#1
-    cornermask_bottomright = #2#1
-    cornermask_topright = #2#1
-    left = 308
-    top = 210
-    image = {
-      00000000020000000C0000000C0000009C000000000000000000000000000000
-      000000000000000000000000000000000000000000000002A5A5A50200000009
-      86868601DCDCDC01FFFFFF01000000087C7C7C010000000BA5A5A5010000003B
-      A5A5A502CCCCCC0100000001A5A5A50400000003A5A5A501FFFFFF01DCDCDC01
-      9494940100000004FFFFFF0100000002E8E8E801A5A5A50100000001FFFFFF01
-      000000018C8C8C0100000006E5E5E501A5A5A50100000002DCDCDC01A5A5A501
-      00000005DCDCDC0100000001A5A5A5010C0000000E0000000100000001000000
-      00000000000000000000000000000000F7080000870C00000A0C00000C0A0000
-    }
-  end
   object tfacecomp1: tfacecomp
     template.fade_pos.count = 2
     template.fade_pos.items = (
@@ -732,5 +707,37 @@ object sourcefo: tsourcefo
     template.fade_direction = gd_down
     left = 554
     top = 139
+  end
+  object timagelist3: timagelist
+    width = 8
+    height = 8
+    count = 8
+    cornermask_topleft = #2#1
+    cornermask_bottomleft = #2#1
+    cornermask_bottomright = #2#1
+    cornermask_topright = #2#1
+    left = 316
+    top = 164
+    image = {
+      00000000020000001800000018000000B8010000000000000000000000000000
+      00000000000000000000000000000000000000005D5D5D09FFFFFF075D5D5D01
+      FFFFFF0A5D5D5D01FFFFFF045D5D5D01FFFFFF075D5D5D01FFFFFF095D5D5D01
+      FFFFFF055D5D5D01FFFFFF075D5D5D01FFFFFF085D5D5D01FFFFFF065D5D5D01
+      FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01
+      FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01
+      FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01FFFFFF075D5D5D01
+      FFFFFF075D5D5D01FFFFFF075D5D5D08FFFFFF075D5D5D01FFFFFF075D5D5D01
+      FFFFFF0F5D5D5D01FFFFFF075D5D5D01FFFFFF0F5D5D5D01FFFFFF075D5D5D01
+      FFFFFF0F5D5D5D01FFFFFF075D5D5D01FFFFFF0F5D5D5D01FFFFFF075D5D5D01
+      FFFFFF0F5D5D5D01FFFFFF075D5D5D01FFFFFF0F5D5D5D01FFFFFF075D5D5D01
+      FFFFFF0F5D5D5D01FFFFFF075D5D5D11ACC7C908FFFFFF045D5D5D01FFFFFF0B
+      AAC6C808FFFFFF055D5D5D01FFFFFF0AA8C5C608FFFFFF065D5D5D01FFFFFF09
+      A7C4C508FFFFFF075D5D5D01FFFFFF08A5C2C408FFFFFF075D5D5D01FFFFFF08
+      A3C1C208FFFFFF075D5D5D01FFFFFF08A3C1C202A1C0C106FFFFFF075D5D5D01
+      FFFFFF08A1C0C104A0BFC004F001010008010100040101000201010001010100
+      0101010001010100010101000080800000808000008080000080800000808000
+      0080800000808000008080000FFFFF001000FF002000FF004000FF008000FF00
+      8000FF008000FF008000FF00
+    }
   end
 end
