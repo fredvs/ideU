@@ -495,6 +495,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 34
       bounds_cy = 21
+      statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'M'
       dropdown.dropdownrowcount = 12
@@ -755,6 +756,7 @@ object debuggerfo: tdebuggerfo
       dropdown.cols.items = <      
         item
         end>
+      dropdown.historymaxcount = 200
       onbeforedropdown = onbefdroppro
       onafterclosedropdown = onsetvaluehis
       reffontheight = 15
@@ -855,6 +857,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 33
       bounds_cy = 21
+      statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'X'
       dropdown.dropdownrowcount = 13
@@ -900,6 +903,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 33
       bounds_cy = 21
+      statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -941,6 +945,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 63
       bounds_cy = 21
+      statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'Pascal'
       dropdown.dropdownrowcount = 5
@@ -1035,7 +1040,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 86
       bounds_cy = 21
-      statfile = mainfo.mainstatfile
+      statfile = mainfo.projectstatfile
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
