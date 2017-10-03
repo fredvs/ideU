@@ -90,6 +90,7 @@ object dialogfilesfo: tdialogfilesfo
     cellheight = 19
     optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
     onselectionchanged = loaddef
+    filelist.options = [flo_sortname, flo_sorttype]
     reffontheight = 15
   end
   object selected_file: tedit
