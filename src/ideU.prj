@@ -47,15 +47,15 @@ findinfiledialog=76
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /usr/share/fpcsrc/3.0.3/
+  /home/fred/msegui/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
  filehistory=11
-  /usr/share/fpcsrc/3.0.3/
   /home/fred/msegui/
+  /usr/share/fpcsrc/3.0.3/
   /home/fred/fpgui/
   /usr/share/fpcsrc/3.0.2/
   /home/fred/msegui_new/
@@ -68,8 +68,9 @@ findinfiledialog=76
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=libpthread.so
+ value=getwidgetnamelist
  history=20
+  getwidgetnamelist
   libpthread.so
   libpthread.s
   .so'
@@ -89,7 +90,6 @@ findinfiledialog=76
   project_history.tag
   .s.
   .s
-  pprocidty
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -735,7 +735,7 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=8
+modulenames=9
  ACTIONSMO
  DEBUGGERFO
  DIALOGFILESFO
@@ -743,8 +743,9 @@ modulenames=8
  MAINFO
  FILEDIALOGFO
  FILEDIALOGRES
+ MSETABORDEROVERRIDEEDITORFO
  SOURCEPAGE
-moduletypes=8
+moduletypes=9
  TACTIONSMO
  TDEBUGGERFO
  TDIALOGFILESFO
@@ -752,8 +753,9 @@ moduletypes=8
  TMAINFO
  TFILEDIALOGFO
  TFILEDIALOGRES
+ TMSETABORDEROVERRIDEEDITORFO
  TSOURCEPAGE
-modulefiles=8
+modulefiles=9
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
@@ -761,6 +763,7 @@ modulefiles=8
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
+ /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=10
@@ -1354,9 +1357,7 @@ findhistory=20
  onsetfi
  readconf
 findoptions=1
-editpos=10
- 0,-1073741823
- 0,0
+editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1364,7 +1365,11 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 58,222
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,53
+ 0,5158
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1375,7 +1380,9 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1386,7 +1393,9 @@ sourcefiles=10
  ${PROJECTDIR}/plugmanager.pas
  /home/fred/msegui/lib/common/kernel/msefileutils.pas
  ${PROJECTDIR}/commandorform.pas
-relpaths=10
+ /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.pas
+ ${PROJECTDIR}/msedesigner.pas
+relpaths=12
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1397,7 +1406,9 @@ relpaths=10
  plugmanager.pas
  msegui/lib/common/kernel/msefileutils.pas
  commandorform.pas
-ismoduletexts=10
+ ../msegui/lib/common/designutils/msetaborderoverrideeditor.pas
+ msedesigner.pas
+ismoduletexts=12
  0
  0
  0
@@ -1408,7 +1419,9 @@ ismoduletexts=10
  0
  0
  0
-modules=9
+ 0
+ 0
+modules=10
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1418,7 +1431,8 @@ modules=9
  /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/commandorform.mfm
-moduleoptions=9
+ /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.mfm
+moduleoptions=10
  0
  0
  0
@@ -1428,7 +1442,8 @@ moduleoptions=9
  0
  0
  0
-visiblemodules=9
+ 0
+visiblemodules=10
  0
  -1
  -1
@@ -1438,8 +1453,10 @@ visiblemodules=9
  -1
  -1
  -1
-nomenumodules=9
  -1
+nomenumodules=10
+ -1
+ 0
  0
  0
  0
@@ -1449,10 +1466,12 @@ nomenumodules=9
  0
  0
 [sourcefo.files_tab]
-order=10
+order=12
  0
  1
  9
+ 10
+ 11
  2
  6
  7
@@ -1461,9 +1480,9 @@ order=10
  4
  5
 firsttab=0
-index=2
+index=4
 [layout]
-windowlayout=632
+windowlayout=651
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1586,7 +1605,7 @@ windowlayout=632
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1634,10 +1653,10 @@ windowlayout=632
  ny=0
  ncx=0
  ncy=0
- x=423
- y=321
- cx=344
- cy=155
+ x=0
+ y=0
+ cx=0
+ cy=0
  rcx=0
  rcy=0
  wsize=0
@@ -1708,7 +1727,7 @@ windowlayout=632
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=confideufo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1721,7 +1740,7 @@ windowlayout=632
  cy=484
  rcx=0
  rcy=0
- wsize=5
+ wsize=0
  active=0
  visible=0
  [objectinspectorfo.grid]
@@ -1888,7 +1907,7 @@ windowlayout=632
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1930,8 +1949,8 @@ windowlayout=632
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1113
+ ncy=53
  x=0
  y=0
  cx=1113
@@ -1947,7 +1966,7 @@ windowlayout=632
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
+ value=/home/fred/ideu/src/msedesigner.pas
  history=0
  [sourcefo]
  splitdir=0
@@ -2004,7 +2023,7 @@ windowlayout=632
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2080,7 +2099,7 @@ windowlayout=632
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_msetaborderoverrideeditorfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2091,6 +2110,25 @@ windowlayout=632
  y=202
  cx=1134
  cy=51
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_msetaborderoverrideeditorfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=findinfilefo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=337
+ y=266
+ cx=342
+ cy=245
  rcx=0
  rcy=0
  wsize=0

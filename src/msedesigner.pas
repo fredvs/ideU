@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2015 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2017 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -546,12 +546,20 @@ type
                                  const includeinherited: boolean;
                                  const aowner: tcomponent = nil;
            const filter: compfilterfuncty = nil): msestringarty; overload;
+   function getcomponentnamelist(const acomponentclass: tcomponentclass;
+                                 const arootcomp: tcomponent;
+                 const filter: compfilterfuncty = nil): msestringarty; overload;
    function getcomponentnametree(const acomponentclass: tcomponentclass;
                                  const includeinherited: boolean;
                                  const findmode: boolean;
                                  const aowner: tcomponent = nil;
                           const filter: compfilterfuncty = nil;
                           const amodule: tcomponent = nil): tcompnameitem;
+   function getwidgetnamelist(const awidgetclass: widgetclassty;
+                          const arootwidget: twidget;
+                           const filter: compfilterfuncty = nil): msestringarty;
+   function getwidgetnametree(const rootwidget: twidget): tcompnameitem;
+   
    function getancestorclassinfo(const ainstance: tcomponent;
                  const interfaceonly: boolean): classinfopoarty;
                                                   overload;
@@ -5613,6 +5621,72 @@ begin
  sortcompnamelist(result);
 end;
 
+function tdesigner.getcomponentnamelist(const acomponentclass: tcomponentclass;
+               const arootcomp: tcomponent;
+               const filter: compfilterfuncty = nil): msestringarty;
+var
+ acount: integer;
+
+ procedure check(const acomp: tcomponent; prefix: msestring);
+ var
+  i1: int32;
+  comp1: tcomponent;
+ begin
+  if (prefix <> '') then begin
+   if (acomp is acomponentclass) and filter(acomp) then begin
+    additem(result,prefix,acount);
+   end;
+   prefix:= prefix+'.';
+  end;
+  for i1:= 0 to acomp.componentcount-1 do begin
+   comp1:= acomp.components[i1];
+   check(comp1,prefix+msestring(comp1.name));
+  end;
+ end;
+ 
+begin
+ result:= nil;
+ acount:= 0;
+ check(arootcomp,'');
+ setlength(result,acount);
+ sortarray(result);
+end;
+
+function tdesigner.getwidgetnamelist(const awidgetclass: widgetclassty;
+               const arootwidget: twidget;
+                          const filter: compfilterfuncty = nil): msestringarty;
+var
+ acount: integer;
+
+ procedure check(const awidget: twidget; prefix: msestring);
+ var
+  i1: int32;
+ begin
+  if prefix = '!' then begin //first
+   prefix:= '';
+  end
+  else begin
+   if ((awidgetclass = nil) or (awidget is awidgetclass)) and 
+                                              filter(awidget) then begin
+    additem(result,prefix+msestring(awidget.name),acount);
+   end;
+   if csinline in awidget.componentstate then begin
+    prefix:= prefix + msestring(awidget.name)+'.';
+   end;
+  end;
+  for i1:= 0 to awidget.widgetcount-1 do begin
+   check(awidget.widgets[i1],prefix);
+  end;
+ end;
+ 
+begin
+ result:= nil;
+ acount:= 0;
+ check(arootwidget,'!');
+ setlength(result,acount);
+ sortarray(result);
+end;
+
 function tdesigner.getcomponentnamelist(const acomponents: componentarty;
                             const amodule: tmsecomponent): msestringarty;
 var
@@ -5754,6 +5828,38 @@ begin
    end;
   end;
  end;
+ result.sort(false,true);
+end;
+
+function tdesigner.getwidgetnametree(const rootwidget: twidget): tcompnameitem;
+
+ procedure check(const aitem: tcompnameitem; awidget: twidget);
+ var
+  node1: tdesigncompnameitem;
+  i1: int32;
+ begin
+  if (awidget <> nil) and (ws_iswidget in awidget.widgetstate) then begin
+   node1:= tdesigncompnameitem.create(awidget,true);
+   node1.imagenr:= 4;
+   node1.state:= node1.state + [ns_imagenrfix];
+   aitem.add(node1);
+   for i1:= 0 to high(twidget1(awidget).fwidgets) do begin
+    check(node1,twidget1(awidget).fwidgets[i1]);
+   end;
+  end
+  else begin
+   if awidget = nil then begin
+    awidget:= rootwidget;
+   end;
+   for i1:= 0 to high(twidget1(awidget).fwidgets) do begin
+    check(aitem,twidget1(awidget).fwidgets[i1]);
+   end;
+  end;
+ end;
+ 
+begin
+ result:= tdesigncompnameitem.create(nil,false);
+ check(result,nil);
  result.sort(false,true);
 end;
 
