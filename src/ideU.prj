@@ -735,23 +735,29 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=8
  ACTIONSMO
+ DEBUGGERFO
  DIALOGFILESFO
+ SETTINGS_FORM
  MAINFO
  FILEDIALOGFO
  FILEDIALOGRES
  SOURCEPAGE
-moduletypes=6
+moduletypes=8
  TACTIONSMO
+ TDEBUGGERFO
  TDIALOGFILESFO
+ TSETTINGSFO
  TMAINFO
  TFILEDIALOGFO
  TFILEDIALOGRES
  TSOURCEPAGE
-modulefiles=6
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
@@ -1348,41 +1354,61 @@ findhistory=20
  onsetfi
  readconf
 findoptions=1
-editpos=6
+editpos=10
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
- 0,4
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 58,222
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+sourcefiles=10
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
- /home/fred/ideu/src/msefiledialogres.pas
+ ${PROJECTDIR}/msefiledialogres.pas
  ${PROJECTDIR}/dialogfiles.pas
- /home/fred/ideu/src/actionsmodule.pas
- /home/fred/ideu/src/sourcepage.pas
-relpaths=6
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/plugmanager.pas
+ /home/fred/msegui/lib/common/kernel/msefileutils.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=10
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
  dialogfiles.pas
  actionsmodule.pas
  sourcepage.pas
-ismoduletexts=6
+ ideusettings.pas
+ plugmanager.pas
+ msegui/lib/common/kernel/msefileutils.pas
+ commandorform.pas
+ismoduletexts=10
  0
  0
  0
  0
  0
  0
-modules=7
+ 0
+ 0
+ 0
+ 0
+modules=9
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1390,7 +1416,9 @@ modules=7
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/dialogfiles.mfm
-moduleoptions=7
+ /home/fred/ideu/src/ideusettings.mfm
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=9
  0
  0
  0
@@ -1398,7 +1426,9 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+ 0
+visiblemodules=9
  0
  -1
  -1
@@ -1406,8 +1436,12 @@ visiblemodules=7
  -1
  -1
  -1
-nomenumodules=7
  -1
+ -1
+nomenumodules=9
+ -1
+ 0
+ 0
  0
  0
  0
@@ -1415,10 +1449,21 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
+order=10
+ 0
+ 1
+ 9
+ 2
+ 6
+ 7
+ 8
+ 3
+ 4
+ 5
 firsttab=0
 index=2
 [layout]
-windowlayout=594
+windowlayout=632
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1431,8 +1476,8 @@ windowlayout=594
  ncy=0
  x=0
  y=0
- cx=1356
- cy=694
+ cx=1113
+ cy=604
  rcx=0
  rcy=0
  [mainfo]
@@ -1444,16 +1489,16 @@ windowlayout=594
  ny=0
  ncx=0
  ncy=0
- x=135
- y=72
+ x=125
+ y=46
  cx=1123
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1356,694
+  basedock,0,0,1113,604
  focusedchild=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1495,7 +1540,7 @@ windowlayout=594
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1550,7 +1595,7 @@ windowlayout=594
  ncy=0
  x=239
  y=115
- cx=958
+ cx=678
  cy=414
  rcx=0
  rcy=0
@@ -1567,7 +1612,7 @@ windowlayout=594
  x=0
  y=0
  cx=205
- cy=532
+ cy=455
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1578,7 +1623,7 @@ windowlayout=594
  sortdescend1=0
  sorted=0
  col=0
- row=6
+ row=3
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1663,27 +1708,27 @@ windowlayout=594
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=_mse_dialogfilesfo_mse_
+ stackedunder=confideufo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=733
- y=111
- cx=442
+ x=316
+ y=249
+ cx=316
  cy=484
  rcx=0
  rcy=0
- wsize=0
+ wsize=5
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
- propcolwidthref=432
- width0=192
+ propcolwidthref=291
+ width0=129
  sortdescend0=0
- width1=234
+ width1=156
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1772,9 +1817,9 @@ windowlayout=594
  ncx=0
  ncy=0
  x=0
- y=588
- cx=1356
- cy=106
+ y=512
+ cx=1113
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1843,15 +1888,15 @@ windowlayout=594
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=238
- y=24
+ x=240
+ y=139
  cx=956
  cy=77
  rcx=0
@@ -1873,8 +1918,8 @@ windowlayout=594
  ncy=0
  x=0
  y=0
- cx=1356
- cy=50
+ cx=1113
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1885,12 +1930,12 @@ windowlayout=594
  mdistate=0
  nx=0
  ny=0
- ncx=1356
- ncy=61
+ ncx=1111
+ ncy=52
  x=0
  y=0
- cx=1356
- cy=52
+ cx=1113
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.project_options]
@@ -1902,7 +1947,7 @@ windowlayout=594
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialogres.pas
+ value=/home/fred/ideu/src/commandorform.pas
  history=0
  [sourcefo]
  splitdir=0
@@ -1916,8 +1961,8 @@ windowlayout=594
  ncy=0
  x=208
  y=0
- cx=1148
- cy=532
+ cx=905
+ cy=455
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -1951,15 +1996,15 @@ windowlayout=594
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1356
- cy=532
+ y=54
+ cx=1113
+ cy=455
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=componentpalettefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1978,7 +2023,7 @@ windowlayout=594
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=0
  nx=0
@@ -1997,7 +2042,7 @@ windowlayout=594
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_settings_form_mse_
  parent=
  mdistate=0
  nx=0
@@ -2008,6 +2053,44 @@ windowlayout=594
  y=139
  cx=463
  cy=367
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=_mse_debuggerfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=212
+ y=165
+ cx=481
+ cy=446
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=101
+ y=202
+ cx=1134
+ cy=51
  rcx=0
  rcy=0
  wsize=0
