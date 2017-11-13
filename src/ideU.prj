@@ -508,7 +508,7 @@ makeoptions=10
  -Mobjfpc -Sh -Fcutf8
  -gl -O -Crtoi
  -B
- -O4 -Xs -CX -XX
+ -O2 -Xs -CX -XX
  -ghl
  -vi
  -WG
@@ -735,36 +735,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=9
- ACTIONSMO
- DEBUGGERFO
- DIALOGFILESFO
- SETTINGS_FORM
- MAINFO
- FILEDIALOGFO
- FILEDIALOGRES
- MSETABORDEROVERRIDEEDITORFO
- SOURCEPAGE
-moduletypes=9
- TACTIONSMO
- TDEBUGGERFO
- TDIALOGFILESFO
- TSETTINGSFO
- TMAINFO
- TFILEDIALOGFO
- TFILEDIALOGRES
- TMSETABORDEROVERRIDEEDITORFO
- TSOURCEPAGE
-modulefiles=9
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/ideu/src/ideusettings.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/ideu/src/msefiledialogres.mfm
- /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.mfm
- /home/fred/ideu/src/sourcepage.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=10
  2047
@@ -1357,7 +1330,7 @@ findhistory=20
  onsetfi
  readconf
 findoptions=1
-editpos=12
+editpos=13
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1368,8 +1341,9 @@ editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,53
- 0,5158
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1382,7 +1356,8 @@ bookmarks8=0
 bookmarks9=0
 bookmarks10=0
 bookmarks11=0
-sourcefiles=12
+bookmarks12=0
+sourcefiles=13
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1395,7 +1370,8 @@ sourcefiles=12
  ${PROJECTDIR}/commandorform.pas
  /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.pas
  ${PROJECTDIR}/msedesigner.pas
-relpaths=12
+ ${PROJECTDIR}/sourceform.mfm
+relpaths=13
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1406,9 +1382,10 @@ relpaths=12
  plugmanager.pas
  msegui/lib/common/kernel/msefileutils.pas
  commandorform.pas
- ../msegui/lib/common/designutils/msetaborderoverrideeditor.pas
+ msegui/lib/common/designutils/msetaborderoverrideeditor.pas
  msedesigner.pas
-ismoduletexts=12
+ sourceform.mfm
+ismoduletexts=13
  0
  0
  0
@@ -1420,69 +1397,17 @@ ismoduletexts=12
  0
  0
  0
- 0
-modules=10
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/msefiledialogres.mfm
- /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/ideu/src/ideusettings.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.mfm
-moduleoptions=10
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-visiblemodules=10
  0
  -1
- -1
- -1
- -1
- -1
- -1
- -1
- -1
- -1
-nomenumodules=10
- -1
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-order=12
- 0
- 1
- 9
- 10
- 11
- 2
- 6
- 7
- 8
- 3
- 4
- 5
-firsttab=0
-index=4
+firsttab=7
+index=12
 [layout]
-windowlayout=651
+windowlayout=537
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1605,7 +1530,7 @@ windowlayout=651
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1727,7 +1652,7 @@ windowlayout=651
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1907,7 +1832,7 @@ windowlayout=651
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1958,7 +1883,7 @@ windowlayout=651
  rcx=0
  rcy=0
  [debuggerfo.project_options]
- value=1
+ value=M
  [debuggerfo.edit_options]
  value=X
  [debuggerfo.edit_compilernum]
@@ -1966,7 +1891,7 @@ windowlayout=651
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msedesigner.pas
+ value=/home/fred/ideu/src/sourceform.mfm
  history=0
  [sourcefo]
  splitdir=0
@@ -1988,7 +1913,7 @@ windowlayout=651
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2020,120 +1945,6 @@ windowlayout=651
  cy=455
  rcx=0
  rcy=0
- [_mse_sourcefo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=objectinspectorfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=411
- y=300
- cx=672
- cy=340
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=434
- y=194
- cx=564
- cy=316
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_dialogfilesfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_settings_form_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=260
- y=139
- cx=463
- cy=367
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_settings_form_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_debuggerfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=212
- y=165
- cx=481
- cy=446
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=_mse_msetaborderoverrideeditorfo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=101
- y=202
- cx=1134
- cy=51
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_msetaborderoverrideeditorfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=findinfilefo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=337
- y=266
- cx=342
- cy=245
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
