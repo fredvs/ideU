@@ -14,6 +14,7 @@ object conffpguifo: tconffpguifo
     328
     289
   )
+  optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of fpGUI'

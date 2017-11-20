@@ -5,7 +5,7 @@ object sourcepage: tsourcepage
   frame.localprops = []
   frame.localprops1 = []
   bounds_x = 282
-  bounds_y = 149
+  bounds_y = 150
   bounds_cx = 590
   bounds_cy = 241
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -163,8 +163,8 @@ object sourcepage: tsourcepage
       options = [bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey]
       visible = False
       valuedefault = -2147483648
-      min = -1
-      max = 2
+      valuemin = -1
+      valuemax = 2
       imagenums.count = 14
       imagenums.items = (
         0

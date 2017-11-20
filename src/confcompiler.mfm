@@ -14,6 +14,7 @@ object confcompilerfo: tconfcompilerfo
     372
     399
   )
+  optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Configuration of Compilers'
   icon.options = [bmo_masked, bmo_graymask]

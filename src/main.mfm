@@ -13,10 +13,10 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 427
-  bounds_y = 220
+  bounds_x = 342
+  bounds_y = 104
   bounds_cx = 687
-  bounds_cy = 166
+  bounds_cy = 59
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -31,7 +31,7 @@ object mainfo: tmainfo
     0
     17
     677
-    149
+    42
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savechildren, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint, od_childicons]
@@ -78,8 +78,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 662
-    bounds_cy = 211
+    bounds_cx = 677
+    bounds_cy = 76
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -96,8 +96,8 @@ object mainfo: tmainfo
     startupbkpton = False
     onevent = gdbonevent
     overloadsleepus = 10000
-    left = 160
-    top = 48
+    left = 147
+    top = 6
   end
   object mainstatfile: tstatfile
     filename = 'ideu.sta'
@@ -105,8 +105,7 @@ object mainfo: tmainfo
     options = [sfo_createpath, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
     onstatupdate = mainstatfileonupdatestat
     onstatbeforewrite = mainstatbeforewriteexe
-    left = 40
-    top = 148
+    left = 37
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
@@ -1221,23 +1220,21 @@ object mainfo: tmainfo
     controller.captionopen = ' Open file '
     controller.captionsave = ' Save file as '
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_saveoptions, oe1_checkvalueafterstatread, oe1_thumbtrack]
-    left = 146
-    top = 140
+    left = 65
   end
   object projectstatfile: tstatfile
     filename = 'status.sta'
     onstatbeforeread = statbefread
     onstatafterread = statafterread
-    left = 35
-    top = 52
+    left = 33
   end
   object vievmenuicons: timagelist
     width = 18
     height = 18
     options = [bmo_masked, bmo_colormask]
     count = 22
-    left = 307
-    top = 30
+    left = 279
+    top = 6
     image = {
       00000000060000005A0000005A00000084450000000000000000000000000000
       0000000000000000000000000000000000000000FFFFFF06CB582601C5440B01
@@ -1989,18 +1986,17 @@ object mainfo: tmainfo
     }
   end
   object viewmenu: tframecomp
-    left = 67
-    top = 22
+    left = 64
+    top = 8
   end
   object runprocmon: tprocessmonitor
     onchilddied = runprocdied
-    left = 333
-    top = 66
+    left = 286
+    top = 7
   end
   object statoptions: trttistat
     ongetobjects = getstatobjs
-    left = 53
-    top = 101
+    left = 42
   end
   object projectfiledia: tfiledialog
     statfile = mainstatfile
@@ -2017,13 +2013,13 @@ object mainfo: tmainfo
     controller.defaultext = 'prj'
     controller.captionopen = ' Open Project '
     controller.captionsave = ' Save Project '
-    left = 442
-    top = 60
+    left = 391
+    top = 7
   end
   object targetpipe: tpipereadercomp
     oninputavailable = targetpipeinput
-    left = 430
-    top = 126
+    left = 408
+    top = 5
   end
   object c: tstringcontainer
     strings.data = (
@@ -2082,8 +2078,8 @@ object mainfo: tmainfo
       ' '
       'Nothing loaded...'
     )
-    left = 259
-    top = 44
+    left = 233
+    top = 5
   end
   object openform: tfiledialog
     statfile = mainstatfile
@@ -2096,8 +2092,7 @@ object mainfo: tmainfo
     controller.defaultext = 'mfm'
     controller.options = [fdo_checkexist]
     controller.captionopen = ' Open Form File '
-    left = 193
-    top = 99
+    left = 162
   end
   object formbg: tbitmapcomp
     bitmap.origformat = 'png'
@@ -2110,8 +2105,7 @@ object mainfo: tmainfo
       C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808
       C7C7C708B8B8B808C7C7C708B8B8B808
     }
-    left = 293
-    top = 131
+    left = 237
   end
   object tfacecomp1: tfacecomp
     template.fade_pos.count = 2
@@ -2140,8 +2134,8 @@ object mainfo: tmainfo
       12434877
     )
     template.fade_direction = gd_down
-    left = 507
-    top = 24
+    left = 286
+    top = 4
   end
   object tfacecomp3: tfacecomp
     template.fade_pos.count = 2
@@ -2155,7 +2149,7 @@ object mainfo: tmainfo
       8882055
     )
     template.fade_direction = gd_down
-    left = 526
-    top = 78
+    left = 279
+    top = 9
   end
 end
