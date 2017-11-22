@@ -68,8 +68,9 @@ findinfiledialog=76
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=getwidgetnamelist
+ value=mef_forward
  history=20
+  mef_forward
   getwidgetnamelist
   libpthread.so
   libpthread.s
@@ -89,7 +90,6 @@ findinfiledialog=76
   targetconsolefo
   project_history.tag
   .s.
-  .s
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1360,7 +1360,7 @@ findhistory=20
  onsetfi
  readconf
 findoptions=1
-editpos=23
+editpos=25
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1384,6 +1384,8 @@ editpos=23
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,1219
+ 0,107
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1407,7 +1409,9 @@ bookmarks19=0
 bookmarks20=0
 bookmarks21=0
 bookmarks22=0
-sourcefiles=23
+bookmarks23=0
+bookmarks24=0
+sourcefiles=25
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1431,7 +1435,9 @@ sourcefiles=23
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/aboutform.pas
-relpaths=23
+ ${PROJECTDIR}/pascaldesignparser.pas
+ /home/fred/msegui/apps/ide/msedesignparser.pas
+relpaths=25
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1455,7 +1461,11 @@ relpaths=23
  actionsmodule.pas
  sourcepage.pas
  aboutform.pas
-ismoduletexts=23
+ pascaldesignparser.pas
+ ../msegui/apps/ide/msedesignparser.pas
+ismoduletexts=25
+ 0
+ 0
  0
  0
  0
@@ -1524,7 +1534,7 @@ nomenumodules=10
  0
  0
 [sourcefo.files_tab]
-order=23
+order=25
  0
  1
  2
@@ -1539,6 +1549,8 @@ order=23
  11
  12
  13
+ 23
+ 24
  22
  14
  15
@@ -1549,7 +1561,7 @@ order=23
  20
  21
 firsttab=12
-index=13
+index=15
 [layout]
 windowlayout=651
  [mainfo.basedock]
@@ -1587,7 +1599,7 @@ windowlayout=651
   basedock,0,0,1113,604
  focusedchild=0
  wsize=0
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -1674,7 +1686,7 @@ windowlayout=651
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=confideufo
  parent=
  mdistate=0
  nx=0
@@ -2035,7 +2047,7 @@ windowlayout=651
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/msegui/apps/ide/msedesignparser.pas
  history=0
  [sourcefo]
  splitdir=0
@@ -2092,7 +2104,7 @@ windowlayout=651
  [_mse_about_form_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
