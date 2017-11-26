@@ -652,6 +652,7 @@ begin
      po1:= @paramlist;
      for int1:= 0 to paramcount - 1 do begin
       with params[int1] do begin
+ // fred
        flags:= tparamflags(byteset(pbyte(po1)^));
        inc(po1,1);
 //       inc(po1,sizeof(paramrecty));

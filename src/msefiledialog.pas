@@ -1481,14 +1481,14 @@ var
  str1: filenamety;
 begin
 
-if (debuggerfo.project_history.tag = 1) and (caption = 'Open Project') then
+if (debuggerfo.project_history.tag = 1)  then
 begin
 debuggerfo.project_history.dropdown.valuelist.asarray:= filename.dropdown.valuelist.asarray;
 
 debuggerfo.project_history.value := dir.value + filename.value;
 
 end else
-if (debuggerfo.project_history.tag = 2) and (caption = 'Open file') then
+if (debuggerfo.project_history.tag = 2)  then
 begin
 debuggerfo.file_history.dropdown.valuelist.asarray:= filename.dropdown.valuelist.asarray;
 debuggerfo.file_history.value := dir.value + filename.value;
