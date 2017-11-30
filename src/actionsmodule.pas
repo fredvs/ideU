@@ -895,6 +895,12 @@ str3 : string;
 int1, int2, int3 : integer;
 begin
 
+//terminategdbserver(killserver);
+
+if debuggerfo.debug_on.tag = 0 then str3:= '' else
+
+begin
+
 /// fred debugger
 
 str3 := '' ;
@@ -934,8 +940,12 @@ for int3:= 0 to high(debuggerused) do begin
      if (trim(debuggerused[int3]) = 'Debugger 4') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
     str3:= '' ;
+    
+    if str3 = '' then str3:= 'Default Debugger';
  end;
  end;
+ end;
+// str3:= 'Default Debugger'
  end;
  
  int1 := 1;

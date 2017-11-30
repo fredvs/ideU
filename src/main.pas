@@ -1997,8 +1997,8 @@ var
  str3: msestring;
 begin
  terminategdbserver(killserver);
- 
-// fred debugger
+
+ // fred debugger
 str3 := '' ;
 
 case debuggerfo.project_options.value of
@@ -2036,10 +2036,12 @@ for int3:= 0 to high(debuggerused) do begin
      if (trim(debuggerused[int3]) = 'Debugger 4') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
     str3:= '' ;
+  
  end;
  end;
  end;
- 
+  
+  
  int1 := 1;
  
    with projectoptions,o,texp do begin

@@ -10,9 +10,9 @@ object debuggerfo: tdebuggerfo
   face.localprops = []
   face.template = templfile
   visible = False
-  bounds_x = 101
-  bounds_y = 202
-  bounds_cx = 1124
+  bounds_x = 58
+  bounds_y = 78
+  bounds_cx = 1151
   bounds_cy = 51
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
@@ -21,7 +21,7 @@ object debuggerfo: tdebuggerfo
   container.bounds = (
     0
     0
-    1114
+    1141
     51
   )
   dragdock.caption = 'Commandor'
@@ -91,7 +91,7 @@ object debuggerfo: tdebuggerfo
     onpaint = paintdock
     bounds_x = 0
     bounds_y = 47
-    bounds_cx = 1114
+    bounds_cx = 1141
     bounds_cy = 2
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
@@ -117,7 +117,7 @@ object debuggerfo: tdebuggerfo
     taborder = 1
     bounds_x = 0
     bounds_y = 30
-    bounds_cx = 1114
+    bounds_cx = 1141
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_color = 16448250
@@ -141,9 +141,298 @@ object debuggerfo: tdebuggerfo
     taborder = 5
     bounds_x = 1082
     bounds_y = 1
-    bounds_cx = 30
+    bounds_cx = 57
     bounds_cy = 28
     anchors = [an_left, an_top, an_right]
+  end
+  object paneledited: tdockpanel
+    helpcontext = ' '
+    color = 16775618
+    frame.framewidth = 1
+    frame.colorframe = 6710886
+    frame.localprops = [frl_framewidth, frl_colorframe]
+    frame.localprops1 = []
+    frame.grip_size = 0
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = templfile
+    taborder = 2
+    hint = ' Panel of Edited file '
+    bounds_x = 749
+    bounds_y = 1
+    bounds_cx = 389
+    bounds_cy = 28
+    object edited_run: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      hint = ' Run compiled edited file'
+      bounds_x = 361
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customrun
+      imagelist = actionsmo.buttonicons
+      imagenr = 27
+      focusrectdist = 0
+    end
+    object edited_abort: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 1
+      hint = ' Abort compile '
+      bounds_x = 334
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.abortmakeact
+      imagelist = actionsmo.buttonicons
+      imagenr = 2
+      focusrectdist = 0
+    end
+    object edited_make: tbutton
+      Tag = 32
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 2
+      hint = ' Compile edited-file '
+      bounds_x = 307
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customcompil
+      imagelist = actionsmo.buttonicons
+      imagenr = 17
+      focusrectdist = 0
+    end
+    object edit_options: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 16770809
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templfile
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templfile
+        end>
+      taborder = 3
+      hint = ' Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
+      bounds_x = 272
+      bounds_y = 3
+      bounds_cx = 33
+      bounds_cy = 21
+      statfile = mainfo.projectstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'X'
+      dropdown.dropdownrowcount = 13
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'M'
+            'B'
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+            '6'
+            '7'
+            '8'
+            '9'
+            '0'
+            'X'
+          )
+        end>
+      reffontheight = 15
+    end
+    object edit_compilernum: tenumedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 15138793
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templfile
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templfile
+        end>
+      taborder = 4
+      hint = ' Compiler number for Edited file '
+      bounds_x = 238
+      bounds_y = 3
+      bounds_cx = 33
+      bounds_cy = 21
+      statfile = mainfo.projectstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            '1'
+            '2'
+            '3'
+            '4'
+            '5'
+            '6'
+            '7'
+            '8'
+          )
+        end>
+      value = 0
+      valuemin = 0
+      valuemax = 100
+      reffontheight = 15
+    end
+    object edit_compiler: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 13154534
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templfile
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templfile
+        end>
+      taborder = 5
+      hint = ' Compiler Type for Edited file '
+      bounds_x = 174
+      bounds_y = 3
+      bounds_cx = 63
+      bounds_cy = 21
+      statfile = mainfo.projectstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'Pascal'
+      dropdown.dropdownrowcount = 5
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'Pascal'
+            'Java'
+            'C'
+            'Python'
+            'Other'
+          )
+        end>
+      reffontheight = 15
+    end
+    object save_file: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 6
+      hint = ' Save edited file '
+      bounds_x = 146
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.customsave
+      imagelist = actionsmo.buttonicons
+      imagenr = 13
+      focusrectdist = 0
+    end
+    object open_file: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 7
+      hint = ' Open file '
+      bounds_x = 119
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      action = actionsmo.opensource
+      imagelist = actionsmo.buttonicons
+      imagenr = 22
+      focusrectdist = 0
+    end
+    object toggle_form_unit: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 9
+      hint = ' Toggle form/unit '
+      bounds_x = 3
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
+      action = actionsmo.toggleformunit
+      imagelist = actionsmo.buttonicons
+      imagenr = 12
+      focusrectdist = 0
+    end
+    object file_history: thistoryedit
+      Tag = 1
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.localprops = [frl_colorhighlight, frl_hiddenedges]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templfile
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templfile
+        end>
+      taborder = 8
+      hint = ' History of files. '
+      bounds_x = 31
+      bounds_y = 3
+      bounds_cx = 86
+      bounds_cy = 21
+      statfile = mainfo.projectstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      onbeforedropdown = onbeforefilehis
+      onafterclosedropdown = onsetvaluefilehis
+      reffontheight = 15
+    end
   end
   object panelmain: tdockpanel
     frame.framewidth = 1
@@ -157,7 +446,7 @@ object debuggerfo: tdebuggerfo
     taborder = 4
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 166
+    bounds_cx = 194
     bounds_cy = 28
     object line_number: tbutton
       frame.optionsskin = [fso_flat]
@@ -272,6 +561,26 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
       onexecute = onterminalon
     end
+    object debug_on: tbutton
+      Tag = 1
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = mainfo.tfacecomp1
+      taborder = 6
+      hint = ' Set Debugger On/Off '
+      bounds_x = 165
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 35
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      focusrectdist = 0
+      onexecute = onsetdebug
+    end
   end
   object panelproject: tdockpanel
     frame.framewidth = 1
@@ -284,9 +593,9 @@ object debuggerfo: tdebuggerfo
     face.template = templproject
     taborder = 3
     hint = ' Panel of project. '
-    bounds_x = 167
+    bounds_x = 195
     bounds_y = 1
-    bounds_cx = 552
+    bounds_cx = 553
     bounds_cy = 28
     object project_interrupt: tbutton
       color = -2147483645
@@ -497,6 +806,7 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      onchange = onchangeproject
       value = 'M'
       dropdown.dropdownrowcount = 12
       dropdown.cols.count = 1
@@ -574,6 +884,38 @@ object debuggerfo: tdebuggerfo
       imagelist = actionsmo.buttonicons
       imagenr = 23
       focusrectdist = 0
+    end
+    object project_history: thistoryedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 16056304
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templproject
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templproject
+        end>
+      taborder = 14
+      hint = ' History of projects. '
+      bounds_x = 31
+      bounds_y = 3
+      bounds_cx = 86
+      bounds_cy = 21
+      statfile = mainfo.mainstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      dropdown.historymaxcount = 200
+      onbeforedropdown = onbefdroppro
+      onafterclosedropdown = onsetvaluehis
+      reffontheight = 15
     end
     object panelwatch: tdockpanel
       color = 12475601
@@ -729,327 +1071,6 @@ object debuggerfo: tdebuggerfo
         onchange = breakonexecute
       end
     end
-    object project_history: thistoryedit
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.colorclient = 16056304
-      frame.localprops = [frl_hiddenedges, frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templproject
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templproject
-        end>
-      taborder = 14
-      hint = ' History of projects. '
-      bounds_x = 31
-      bounds_y = 3
-      bounds_cx = 86
-      bounds_cy = 21
-      statfile = mainfo.mainstatfile
-      textflags = [tf_right, tf_ycentered, tf_noselect]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-        end>
-      dropdown.historymaxcount = 200
-      onbeforedropdown = onbefdroppro
-      onafterclosedropdown = onsetvaluehis
-      reffontheight = 15
-    end
-  end
-  object paneledited: tdockpanel
-    helpcontext = ' '
-    color = 16775618
-    frame.framewidth = 1
-    frame.colorframe = 6710886
-    frame.localprops = [frl_framewidth, frl_colorframe]
-    frame.localprops1 = []
-    frame.grip_size = 0
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = templfile
-    taborder = 2
-    hint = ' Panel of Edited file '
-    bounds_x = 720
-    bounds_y = 1
-    bounds_cx = 389
-    bounds_cy = 28
-    object edited_run: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      hint = ' Run compiled edited file'
-      bounds_x = 361
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customrun
-      imagelist = actionsmo.buttonicons
-      imagenr = 27
-      focusrectdist = 0
-    end
-    object edited_abort: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 1
-      hint = ' Abort compile '
-      bounds_x = 334
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.abortmakeact
-      imagelist = actionsmo.buttonicons
-      imagenr = 2
-      focusrectdist = 0
-    end
-    object edited_make: tbutton
-      Tag = 32
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 2
-      hint = ' Compile edited-file '
-      bounds_x = 307
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customcompil
-      imagelist = actionsmo.buttonicons
-      imagenr = 17
-      focusrectdist = 0
-    end
-    object edit_options: tdropdownlistedit
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.colorclient = 16770809
-      frame.localprops = [frl_hiddenedges, frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templfile
-        end>
-      taborder = 3
-      hint = ' Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
-      bounds_x = 272
-      bounds_y = 3
-      bounds_cx = 33
-      bounds_cy = 21
-      statfile = mainfo.projectstatfile
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      value = 'X'
-      dropdown.dropdownrowcount = 13
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            'M'
-            'B'
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-            '9'
-            '0'
-            'X'
-          )
-        end>
-      reffontheight = 15
-    end
-    object edit_compilernum: tenumedit
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.colorclient = 15138793
-      frame.localprops = [frl_hiddenedges, frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templfile
-        end>
-      taborder = 4
-      hint = ' Compiler number for Edited file '
-      bounds_x = 238
-      bounds_y = 3
-      bounds_cx = 33
-      bounds_cy = 21
-      statfile = mainfo.projectstatfile
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            '1'
-            '2'
-            '3'
-            '4'
-            '5'
-            '6'
-            '7'
-            '8'
-          )
-        end>
-      value = 0
-      min = 0
-      max = 100
-      reffontheight = 15
-    end
-    object edit_compiler: tdropdownlistedit
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.colorclient = 13154534
-      frame.localprops = [frl_hiddenedges, frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templfile
-        end>
-      taborder = 5
-      hint = ' Compiler Type for Edited file '
-      bounds_x = 174
-      bounds_y = 3
-      bounds_cx = 63
-      bounds_cy = 21
-      statfile = mainfo.projectstatfile
-      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      value = 'Pascal'
-      dropdown.dropdownrowcount = 5
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-          data = (
-            'Pascal'
-            'Java'
-            'C'
-            'Python'
-            'Other'
-          )
-        end>
-      reffontheight = 15
-    end
-    object save_file: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 6
-      hint = ' Save edited file '
-      bounds_x = 146
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customsave
-      imagelist = actionsmo.buttonicons
-      imagenr = 13
-      focusrectdist = 0
-    end
-    object open_file: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 7
-      hint = ' Open file '
-      bounds_x = 119
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.opensource
-      imagelist = actionsmo.buttonicons
-      imagenr = 22
-      focusrectdist = 0
-    end
-    object toggle_form_unit: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 9
-      hint = ' Toggle form/unit '
-      bounds_x = 3
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
-      action = actionsmo.toggleformunit
-      imagelist = actionsmo.buttonicons
-      imagenr = 12
-      focusrectdist = 0
-    end
-    object file_history: thistoryedit
-      Tag = 1
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.localprops = [frl_colorhighlight, frl_hiddenedges]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templfile
-        end>
-      taborder = 8
-      hint = ' History of files. '
-      bounds_x = 31
-      bounds_y = 3
-      bounds_cx = 86
-      bounds_cy = 21
-      statfile = mainfo.projectstatfile
-      textflags = [tf_right, tf_ycentered, tf_noselect]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-        end>
-      onbeforedropdown = onbeforefilehis
-      onafterclosedropdown = onsetvaluefilehis
-      reffontheight = 15
-    end
   end
   object templproject: tfacecomp
     template.fade_pos.count = 2
@@ -1063,8 +1084,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 496
-    top = 8
+    left = 622
+    top = 9
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2

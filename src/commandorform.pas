@@ -4,7 +4,7 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
+ msegui,mseclasses, msefileutils, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
  mseevent,msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,
  msegraphedits,mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,
  mseapplication,msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,
@@ -57,6 +57,7 @@ type
    assistive: tbutton;
    tdockpanel2: tdockpanel;
    terminal_run: tbutton;
+   debug_on: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -74,12 +75,14 @@ type
   
    procedure onbefdroppro(const sender: TObject);
    procedure onterminalon(const sender: TObject);
+   procedure onsetdebug(const sender: TObject);
+   procedure onchangeproject(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
+ commandorform_mfm, confdebugger, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
 begin
@@ -242,6 +245,80 @@ terminal_run.imagenr := 34 ;
  
 end;
 
+procedure tdebuggerfo.onsetdebug(const sender: TObject);
+begin
+if debug_on.tag = 0 then
+begin
+//projectoptions.d.showconsole := true;
+debug_on.tag := 1 ;
+debug_on.imagenr := 35 ;
+ end 
+ else
+ begin
+  // projectoptions.d.showconsole := false;
+  debug_on.tag := 0;
+  debug_on.imagenr := 36 ;
+ end;
+end;
+
+procedure tdebuggerfo.onchangeproject(const sender: TObject);
+var
+str3 : string;
+int3, thetag : integer;
+begin
+ 
+str3 := '' ;
+
+case debuggerfo.project_options.value of
+  'M' : thetag := 1;
+  'B' : thetag := 2;
+  '1' : thetag := 4;
+  '2' : thetag := 8;
+  '3' : thetag := 16;
+  '4' : thetag := 32;
+  '5' : thetag := 64;
+  '6' : thetag := 128;
+  '7' : thetag := 256;
+  '8' : thetag := 512;
+  '9' : thetag := 1024;
+  '0' : thetag := 2048;
+  end;
+
+with projectoptions,o,texp do begin  
+for int3:= 0 to high(debuggerused) do begin
+   if (thetag and debuggerusedon[int3] <> 0) and
+         (debuggerused[int3] <> '') then begin
+      
+if system.pos('Default',debuggerused[int3]) > 0 then
+   str3:= 'Default Debugger' else
+        
+    if (trim(debuggerused[int3]) = 'Debugger 1')  then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 2') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
+    
+    if (trim(debuggerused[int3]) = 'Debugger 3') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
+    
+     if (trim(debuggerused[int3]) = 'Debugger 4') then
+    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= '' ;
+ end;
+ end;
+ end;
+ 
+ if str3 <> '' then 
+ begin
+ debug_on.tag := 1 ;
+ debug_on.imagenr := 35 ;
+ end else
+ begin
+ debug_on.tag := 0 ;
+ debug_on.imagenr := 36 
+ end;
+
+  end;
 
 
 end.

@@ -67,8 +67,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu_bin/ideu_1.7.2_linux64/layout
-projectfilename=/home/fred/ideu_bin/ideu_1.7.2_linux64/layout/Menu_Dock_Editor_Message.prj
+projectdir=/home/fred/ideu_bin/ideu_1.8.2_linux64/layout
+projectfilename=/home/fred/ideu_bin/ideu_1.8.2_linux64/layout/Menu_Dock_Editor_Message.prj
 findinfiledialog=55
  [findinfileadialogfo.subdirs]
  value=1
@@ -977,15 +977,15 @@ panels=1
  panel1
 units=
  (
- a=0,4132,6,Pascal Units
+ a=0,8228,6,Pascal Units
  )
 cmodules=
  (
- a=0,4132,6,C Modules
+ a=0,8228,6,C Modules
  )
 files=
  (
- a=0,4132,6,Text Files
+ a=0,8228,6,Text Files
  )
 [componentstore]
 storedir=/home/fred/msegui/apps/ide/compstore/
@@ -1027,20 +1027,10 @@ findhistory=20
  destructor Tuos_Player.Destroy
  thethread.terminate();
 findoptions=1
-editpos=2
- 0,-1073741823
- 0,3
-bookmarks0=0
-bookmarks1=0
-sourcefiles=2
- ${PROJECTDIR}/strumpract.pas
- /home/fred/strumpract/src/main.pas
-relpaths=2
- strumpract.pas
- ../../strumpract/src/main.pas
-ismoduletexts=2
- 0
- 0
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
 modules=2
  /home/fred/uos/examples/mainmse_sp.mfm
  /home/fred/strumpract/src/main.mfm
@@ -1055,9 +1045,9 @@ nomenumodules=2
  0
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=-1
 [layout]
-windowlayout=564
+windowlayout=575
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1070,7 +1060,7 @@ windowlayout=564
  ncy=0
  x=0
  y=0
- cx=1113
+ cx=1147
  cy=604
  rcx=0
  rcy=0
@@ -1085,12 +1075,12 @@ windowlayout=564
  ncy=0
  x=125
  y=46
- cx=1123
+ cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1113,604
+  basedock,0,0,1147,604
  focusedchild=0
  wsize=0
  active=1
@@ -1217,7 +1207,7 @@ windowlayout=564
  sortdescend1=0
  sorted=0
  col=1
- row=0
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1412,7 +1402,7 @@ windowlayout=564
  ncy=0
  x=0
  y=512
- cx=1113
+ cx=1147
  cy=92
  rcx=0
  rcy=0
@@ -1512,7 +1502,7 @@ windowlayout=564
  ncy=0
  x=0
  y=0
- cx=1113
+ cx=1147
  cy=51
  rcx=0
  rcy=0
@@ -1524,14 +1514,25 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1147
+ ncy=54
  x=0
  y=0
- cx=1113
- cy=53
+ cx=1147
+ cy=54
  rcx=0
  rcy=0
+ [debuggerfo.edit_options]
+ value=X
+ [debuggerfo.edit_compilernum]
+ value=0
+ [debuggerfo.edit_compiler]
+ value=Pascal
+ [debuggerfo.file_history]
+ value=${PROJECTDIR}/main.pas
+ history=0
+ [debuggerfo.project_options]
+ value=1
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -1544,7 +1545,7 @@ windowlayout=564
  ncy=0
  x=208
  y=0
- cx=905
+ cx=939
  cy=455
  rcx=0
  rcy=0
@@ -1571,7 +1572,7 @@ windowlayout=564
  [_mse_simple_player_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1597,10 +1598,10 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=595
- y=168
- cx=464
- cy=434
+ x=341
+ y=97
+ cx=468
+ cy=68
  rcx=0
  rcy=0
  wsize=0
@@ -1618,7 +1619,7 @@ windowlayout=564
  ncy=0
  x=0
  y=54
- cx=1113
+ cx=1147
  cy=455
  rcx=0
  rcy=0
