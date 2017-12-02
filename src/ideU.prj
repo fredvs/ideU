@@ -236,7 +236,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -303,19 +303,20 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=55
+imagelisteditor=56
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Images/bugoff.png
+  /home/fred/Images/bugoff2.png
  filecolwidth=174
  x=691
  y=148
  cx=588
  cy=307
  lastdir=/home/fred/Images/
- filehistory=29
+ filehistory=30
+  /home/fred/Images/bugoff2.png
   /home/fred/Images/bugoff.png
   /home/fred/Images/bugon.png
   /home/fred/Documents/pause24.png
@@ -826,12 +827,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4080
+ 4032
  0
  0
  0
  0
- 15
+ 63
 exeusedon=14
  4047
  0
@@ -1385,6 +1386,7 @@ editpos=36
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,1
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1411,7 +1413,6 @@ editpos=36
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 65,931
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1658,7 +1659,7 @@ order=36
  24
  25
 firsttab=10
-index=15
+index=10
 [layout]
 windowlayout=708
  [mainfo.basedock]
@@ -1686,8 +1687,8 @@ windowlayout=708
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
+ x=90
+ y=75
  cx=1157
  cy=621
  rcx=0
@@ -1737,7 +1738,7 @@ windowlayout=708
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -2085,7 +2086,7 @@ windowlayout=708
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2127,8 +2128,8 @@ windowlayout=708
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1147
+ ncy=54
  x=0
  y=0
  cx=1147
@@ -2142,7 +2143,7 @@ windowlayout=708
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/commandorform.pas
  history=0
  [debuggerfo.project_options]
  value=1
@@ -2166,7 +2167,7 @@ windowlayout=708
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2182,6 +2183,22 @@ windowlayout=708
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1147
+ cy=455
+ rcx=0
+ rcy=0
  [_mse_about_form_mse_]
  splitdir=0
  useroptions=805322875
@@ -2353,22 +2370,6 @@ windowlayout=708
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1147
- cy=455
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
