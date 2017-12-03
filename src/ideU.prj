@@ -1386,7 +1386,7 @@ editpos=36
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1
+ 0,9
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1459,7 +1459,7 @@ sourcefiles=36
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/plugmanager.pas
  /home/fred/msegui/lib/common/kernel/msefileutils.pas
- ${PROJECTDIR}/commandorform.pas
+ /home/fred/ideu/src/commandorform.pas
  /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/aboutform.pas
@@ -1661,7 +1661,7 @@ order=36
 firsttab=10
 index=10
 [layout]
-windowlayout=708
+windowlayout=710
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -2147,6 +2147,8 @@ windowlayout=708
  history=0
  [debuggerfo.project_options]
  value=1
+ [debuggerfo.hints]
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -2354,7 +2356,7 @@ windowlayout=708
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
