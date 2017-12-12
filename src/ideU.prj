@@ -236,7 +236,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -1353,8 +1353,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=quotefilename
+finddtext=3.0
 findhistory=20
+ 3.0
+ 3.
  quotefilename
  thetag
  flags
@@ -1373,8 +1375,6 @@ findhistory=20
  debugg
  select a
  cancel.caption:=
- select
- projectfiledialog
 findoptions=1
 editpos=36
  0,-1073741823
@@ -1386,11 +1386,11 @@ editpos=36
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,9
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,638
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1459,7 +1459,7 @@ sourcefiles=36
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/plugmanager.pas
  /home/fred/msegui/lib/common/kernel/msefileutils.pas
- /home/fred/ideu/src/commandorform.pas
+ ${PROJECTDIR}/commandorform.pas
  /home/fred/msegui/lib/common/designutils/msetaborderoverrideeditor.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/aboutform.pas
@@ -1659,7 +1659,7 @@ order=36
  24
  25
 firsttab=10
-index=10
+index=14
 [layout]
 windowlayout=710
  [mainfo.basedock]
@@ -1688,7 +1688,7 @@ windowlayout=710
  ncx=0
  ncy=0
  x=90
- y=75
+ y=76
  cx=1157
  cy=621
  rcx=0
@@ -2143,10 +2143,10 @@ windowlayout=710
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
+ value=/home/fred/ideu/src/main.pas
  history=0
  [debuggerfo.project_options]
- value=1
+ value=4
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2356,7 +2356,7 @@ windowlayout=710
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
