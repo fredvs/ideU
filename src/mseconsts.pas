@@ -93,7 +93,7 @@ const
   '&OK',      //mr_ok
   '&Yes',     //mr_yes
   '&No',      //mr_no
-  'Yes &all',     //mr_all
+  'Yes &All',     //mr_all
   'No all',   //mr_noall
   '&Ignore',  //mr_ignore
   '&Skip',    //mr_skip
@@ -114,12 +114,12 @@ const
   'OK',      //mr_ok
   'Yes',     //mr_yes
   'No',      //mr_no
-  'Yes all',     //mr_all
+  'Yes All',     //mr_all
   'No all',  //mr_noall
   'Ignore',  //mr_ignore
   'Skip',    //mr_skip
   'Skip all', //mr_skipall
-  'Co&ntinue'  //mr_continue
+  'Continue'  //mr_continue
   );
 
  en_stockcaption: stockcaptionaty = (
@@ -132,12 +132,12 @@ const
   'Max',                //sc_Max
   'Range error',        //sc_Range_error  
 
-  '&Undo',              //sc_Undohk  ///              ///
-  '&Redo',              //sc_Redohk   //               //
-  '&Copy',              //sc_Copyhk   // hotkeys       //
-  'Cu&t',               //sc_Cuthk    //               //
-  '&Paste',             //sc_Pastehk ///               // hotkeys
-  'Select &all',        //sc_Select_allhk ///        
+  '&Undo',              //sc_Undohk       ///         ///
+  '&Redo',              //sc_Redohk        //          //
+  '&Copy',              //sc_Copyhk        // hotkeys  //
+  'Cu&t',               //sc_Cuthk         //          //
+  '&Paste',             //sc_Pastehk       //          // hotkeys
+  'Select &all',        //sc_Select_allhk ///          //
   '&Insert Row',        //sc_insert_rowhk ///          //
   '&Append Row',        //sc_append_rowhk  // hotkeys  //
   '&Delete Row',        //sc_delete_rowhk ///         ///
@@ -230,8 +230,25 @@ const
   'Stay on top',         //sc_stay_on_top
   'Stay in background',  //sc_stay_in_background
   'Lock children',       //sc_lock_children
-  'No lock'              //sc_no_lock
-                       );
+  'No lock',             //sc_no_lock
+  'Input',               //sc_input
+  'Button',              //sc_button
+  'On',                  //sc_on
+  'Off',                 //sc_off
+  'Left border',         //sc_leftborder
+  'Top border',          //sc_topborder
+  'Right border',        //sc_rightborder
+  'Bottom border',       //sc_bottomborder
+  'Begin of text',       //sc_beginoftext
+  'End of text',         //sc_endoftext
+  'Inputmode',           //sc_inputmode
+  'Overwrite',           //sc_overwrite
+  'Deleted',             //sc_deleted
+  'Copied',              //sc_copied
+  'Inserted',            //sc_inserted
+  'Pasted',              //sc_pasted
+  'Withdrawn'            //sc_withdrawn
+ );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

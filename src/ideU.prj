@@ -1108,7 +1108,7 @@ line=24
  782
  2129
  1009
- 1474
+ 1525
  564
  3645
  644
@@ -1125,8 +1125,8 @@ line=24
  46
  3904
  684
- 856
- 795
+ 873
+ 812
  86
  15
 address=24
@@ -1353,8 +1353,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=3.0
+finddtext=dodataentered(cons
 findhistory=20
+ dodataentered(cons
  3.0
  3.
  quotefilename
@@ -1374,23 +1375,8 @@ findhistory=20
  setupcustommenu
  debugg
  select a
- cancel.caption:=
 findoptions=1
-editpos=36
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,638
+editpos=39
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1411,6 +1397,23 @@ editpos=36
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 12,1001
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1449,7 +1452,10 @@ bookmarks32=0
 bookmarks33=0
 bookmarks34=0
 bookmarks35=0
-sourcefiles=36
+bookmarks36=0
+bookmarks37=0
+bookmarks38=0
+sourcefiles=39
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1486,7 +1492,10 @@ sourcefiles=36
  /home/fred/msegui/lib/common/kernel/linux/msesysintf1.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=36
+ ${PROJECTDIR}/sak_mse.pas
+ ${PROJECTDIR}/mseconsts.pas
+ /home/fred/msegui/lib/common/kernel/mseassistiveserver.pas
+relpaths=39
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1523,7 +1532,13 @@ relpaths=36
  msegui/lib/common/kernel/linux/msesysintf1.pas
  commandorform.pas
  actionsmodule.pas
-ismoduletexts=36
+ sak_mse.pas
+ mseconsts.pas
+ msegui/lib/common/kernel/mseassistiveserver.pas
+ismoduletexts=39
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1621,7 +1636,7 @@ nomenumodules=14
  0
  0
 [sourcefo.files_tab]
-order=36
+order=39
  31
  0
  1
@@ -1638,6 +1653,9 @@ order=36
  12
  13
  35
+ 36
+ 38
+ 37
  14
  15
  26
@@ -1658,8 +1676,8 @@ order=36
  23
  24
  25
-firsttab=10
-index=14
+firsttab=11
+index=16
 [layout]
 windowlayout=710
  [mainfo.basedock]
@@ -1688,7 +1706,7 @@ windowlayout=710
  ncx=0
  ncy=0
  x=90
- y=76
+ y=79
  cx=1157
  cy=621
  rcx=0
@@ -2143,10 +2161,10 @@ windowlayout=710
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/sak_mse.pas
  history=0
  [debuggerfo.project_options]
- value=4
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]

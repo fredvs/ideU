@@ -111,7 +111,7 @@ type
   isblock : boolean;
     
     procedure doenter(const Sender: iassistiveclient);
-    procedure clientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
+    procedure doclientmouseevent(const sender: iassistiveclient; const info: mouseeventinfoty);
     procedure dochange(const sender: iassistiveclient);   
     procedure dofocuschanged(const oldwidget, newwidget: iassistiveclient);
     procedure dokeydown(const Sender: iassistiveclient; const info: keyeventinfoty);
@@ -122,6 +122,23 @@ type
                          const items: menucellinfoarty; const aindex: integer);
     procedure docellevent(const sender: iassistiveclientgrid; 
                                     const info: celleventinfoty);
+                                    
+    procedure dodataentered(const sender: iassistiveclientdata);
+                                   
+  procedure doeditcharenter(const sender: iassistiveclientedit;
+                                                const achar: msestring);
+  procedure doeditchardelete(const sender: iassistiveclientedit;
+                                                const achar: msestring);
+  procedure doeditwithdrawn(const sender: iassistiveclientedit);
+  procedure doeditindexmoved(const sender: iassistiveclientedit;
+                                                const aindex: int32);
+  procedure doeditinputmodeset(const sender: iassistiveclientedit;
+                                                const amode: editinputmodety);
+  procedure doedittextblock(const sender: iassistiveclientedit;
+                    const amode: edittextblockmodety; const atext: msestring);
+  procedure navigbordertouched(const sender: iassistiveclient;
+                                       const adirection: graphicdirectionty);                                
+                                    
     procedure ontimercell(const Sender: TObject);                               
     procedure ontimerkey(const Sender: TObject);
     procedure ontimermouse(const Sender: TObject);
@@ -965,6 +982,40 @@ if (WhatName(sender, true) <> '') and  (isblock = false) then
  end;
 end; 
 
+// not yet used
+
+procedure TSAK.dodataentered(const sender: iassistiveclientdata);
+  begin
+  end;
+                                   
+  procedure TSAK.doeditcharenter(const sender: iassistiveclientedit;
+                                                const achar: msestring);
+  begin
+  end;                                              
+  procedure TSAK.doeditchardelete(const sender: iassistiveclientedit;
+                                                const achar: msestring);
+  begin
+  end;
+  procedure TSAK.doeditwithdrawn(const sender: iassistiveclientedit);
+  begin
+  end;
+  procedure TSAK.doeditindexmoved(const sender: iassistiveclientedit;
+                                                const aindex: int32);
+  begin
+  end;
+  procedure TSAK.doeditinputmodeset(const sender: iassistiveclientedit;
+                                                const amode: editinputmodety);
+  begin
+  end;
+  procedure TSAK.doedittextblock(const sender: iassistiveclientedit;
+                    const amode: edittextblockmodety; const atext: msestring);
+  begin
+  end;
+  procedure TSAK.navigbordertouched(const sender: iassistiveclient;
+                                       const adirection: graphicdirectionty);
+  begin
+  end;
+
 procedure TSAK.ontimergreeting(const sender: TObject);
 begin
 thetimerinit.enabled := false;
@@ -1190,7 +1241,7 @@ if WhatName(TheSender, true)  <> lastname then
 
 end;
 
-procedure TSAK.clientmouseevent(const sender: iassistiveclient;
+procedure TSAK.doclientmouseevent(const sender: iassistiveclient;
                                            const info: mouseeventinfoty);
  begin
  if (assigned(Sender)) then
