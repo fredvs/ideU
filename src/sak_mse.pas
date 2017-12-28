@@ -139,6 +139,28 @@ type
   procedure navigbordertouched(const sender: iassistiveclient;
                                        const adirection: graphicdirectionty);                                
                                     
+  procedure doapplicationactivated();
+  procedure doapplicationdeactivated();
+ 
+  procedure dowindowactivated(const sender: iassistiveclient);
+  procedure dowindowdeactivated(const sender: iassistiveclient);
+  procedure dowindowclosed(const sender: iassistiveclient);
+  procedure doactivate(const sender: iassistiveclient);
+ 
+ procedure dofocuschanged(const sender: iassistiveclient;
+                               const oldwidget,newwidget: iassistiveclient);
+                               
+ procedure donavigbordertouched(const sender: iassistiveclient;
+                                      const adirection: graphicdirectionty);
+                                      
+ procedure doactionexecute(const sender: iassistiveclient;//sender can be nil
+                           const senderobj: tobject; const info: actioninfoty);                               
+
+ procedure domenuactivated(const sender: iassistiveclientmenu);
+  
+ procedure doitementer(const sender: iassistiveclientmenu;//sender can be nil
+                        const items: menucellinfoarty; const aindex: integer);
+                         
     procedure ontimercell(const Sender: TObject);                               
     procedure ontimerkey(const Sender: TObject);
     procedure ontimermouse(const Sender: TObject);
@@ -1015,7 +1037,56 @@ procedure TSAK.dodataentered(const sender: iassistiveclientdata);
                                        const adirection: graphicdirectionty);
   begin
   end;
-
+  
+   procedure TSAK.doapplicationactivated();
+  begin
+  end;
+  
+  procedure TSAK.doapplicationdeactivated();
+  begin
+  end;
+  
+  procedure TSAK.dowindowactivated(const sender: iassistiveclient);
+  begin
+  end;
+  
+  procedure TSAK.dowindowdeactivated(const sender: iassistiveclient);
+  begin
+  end;
+  
+  procedure TSAK.dowindowclosed(const sender: iassistiveclient);
+  begin
+  end;
+  
+  procedure TSAK.doactivate(const sender: iassistiveclient);
+  begin
+  end;
+  
+   procedure TSAK.dofocuschanged(const sender: iassistiveclient;
+                               const oldwidget,newwidget: iassistiveclient);
+   begin
+  end;
+                              
+ procedure TSAK.donavigbordertouched(const sender: iassistiveclient;
+                                      const adirection: graphicdirectionty);
+   begin
+  end;
+                                     
+ procedure TSAK.doactionexecute(const sender: iassistiveclient;//sender can be nil
+                           const senderobj: tobject; const info: actioninfoty);                               
+   begin
+  end;
+  
+ procedure TSAK.domenuactivated(const sender: iassistiveclientmenu);
+  begin
+  end;
+  
+ procedure TSAK.doitementer(const sender: iassistiveclientmenu;//sender can be nil
+                        const items: menucellinfoarty; const aindex: integer);
+  
+ begin
+  end;
+   
 procedure TSAK.ontimergreeting(const sender: TObject);
 begin
 thetimerinit.enabled := false;
