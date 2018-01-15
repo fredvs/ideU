@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2011 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -93,7 +93,7 @@ const
   '&OK',      //mr_ok
   '&Yes',     //mr_yes
   '&No',      //mr_no
-  'Yes &All',     //mr_all
+  'Y&es all',     //mr_all
   'No all',   //mr_noall
   '&Ignore',  //mr_ignore
   '&Skip',    //mr_skip
@@ -114,7 +114,7 @@ const
   'OK',      //mr_ok
   'Yes',     //mr_yes
   'No',      //mr_no
-  'Yes All',     //mr_all
+  'Yes all',     //mr_all
   'No all',  //mr_noall
   'Ignore',  //mr_ignore
   'Skip',    //mr_skip
@@ -249,8 +249,19 @@ const
   'Pasted',              //sc_pasted
   'Withdrawn',           //sc_withdrawn
   'Window activated',    //sc_windowactivated
-  'Menu'                 //sc_menu
- );
+  'Menu',                //sc_menu
+  'Beginning of file',   //sc_bof
+  'End of file',         //sc_eof
+  'Voice output',        //sc_voiceoutput
+  'Speak again',         //sc_speakagain
+  'First column',        //sc_firstcol
+  'First row',           //sc_firstrow
+  'Last column',         //sc_lastcol
+  'Last row',            //sc_lastrow
+  'Selection',           //sc_selection
+  'Speak path',          //sc_speakpath
+  'Disabled button'      //sc_disabledbutton
+);
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

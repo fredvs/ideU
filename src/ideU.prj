@@ -1108,7 +1108,7 @@ line=24
  782
  2129
  1009
- 1596
+ 1624
  564
  3645
  644
@@ -1125,8 +1125,8 @@ line=24
  46
  3904
  684
- 895
- 834
+ 904
+ 843
  86
  15
 address=24
@@ -1353,8 +1353,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=dodataentered(cons
+finddtext=odatasetevent
 findhistory=20
+ odatasetevent
+ dogridbordertouched
+ dodbvaluechanged
+ dodeactivate
  dodataentered(cons
  3.0
  3.
@@ -1371,12 +1375,10 @@ findhistory=20
  resize
  runwithoutdebugger
  frunningprocess
- startconsole
- setupcustommenu
- debugg
- select a
 findoptions=1
-editpos=39
+editpos=41
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1411,11 +1413,11 @@ editpos=39
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 6,1071
- 0,-1073741823
- 0,-1073741823
+ 0,1108
+ 0,252
+ 0,79
+ 0,284
+ 0,197
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1455,7 +1457,9 @@ bookmarks35=0
 bookmarks36=0
 bookmarks37=0
 bookmarks38=0
-sourcefiles=39
+bookmarks39=0
+bookmarks40=0
+sourcefiles=41
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1495,7 +1499,9 @@ sourcefiles=39
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/mseconsts.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveserver.pas
-relpaths=39
+ /home/fred/mseconsts.pas
+ ${PROJECTDIR}/mseconsts.pas
+relpaths=41
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1534,8 +1540,12 @@ relpaths=39
  actionsmodule.pas
  sak_mse.pas
  mseconsts.pas
- msegui/lib/common/kernel/mseassistiveserver.pas
-ismoduletexts=39
+ ../msegui/lib/common/kernel/mseassistiveserver.pas
+ ../mseconsts.pas
+ mseconsts.pas
+ismoduletexts=41
+ 0
+ 0
  0
  0
  0
@@ -1636,10 +1646,12 @@ nomenumodules=14
  0
  0
 [sourcefo.files_tab]
-order=39
+order=41
+ 37
  31
  0
  1
+ 40
  2
  3
  4
@@ -1654,8 +1666,8 @@ order=39
  13
  35
  36
+ 39
  38
- 37
  14
  15
  26
@@ -1676,10 +1688,10 @@ order=39
  23
  24
  25
-firsttab=11
-index=16
+firsttab=14
+index=18
 [layout]
-windowlayout=710
+windowlayout=760
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -2162,7 +2174,57 @@ windowlayout=710
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/sak_mse.pas
- history=0
+ history=50
+  /home/fred/uos/examples/multiplayer_fpGUI.pas
+  /home/fred/uos/examples/uos_dsp_utils.pas
+  /home/fred/uos/src/uos_flat.pas
+  /home/fred/uos/src/uos_mpg123.pas
+  /home/fred/uos/src/uos.pas
+  /home/fred/uos/src/uos_aac.pas
+  /home/fred/strumpract/src/define.inc
+  /home/fred/strumpract/src/strumpract.pas
+  /home/fred/strumpract/src/config.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/uos/examples/SimplePlayer_MSE.pas
+  /home/fred/uos/examples/consolebpmdetect.pas
+  /home/fred/strumpract/src/songplayer2.pas
+  /home/fred/strumpract/src/drums.pas
+  /home/fred/strumpract/src/infos.pas
+  /home/fred/uos/src/uos_soundtouch.pas
+  /home/fred/uos/examples/uos_soundtouch.pas
+  /home/fred/strumpract/src/uos.pas
+  /home/fred/uos/examples/consoleplaymemorybuffer.pas
+  /home/fred/uos/examples/simpleplayer_fpGUI.pas
+  /home/fred/strumpract/src/main.pas
+  /home/fred/strumpract/src/filelistform.pas
+  /home/fred/strumpract/src/songplayer.pas
+  /home/fred/strumpract/src/commander.pas
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/ideu/src/confmsegui.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/ideu/src/confdebugger.pas
+  /home/fred/ideu/src/confcompiler.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/ideu_15_7_17/src/msedesigner.pas
+  /home/fred/Téléchargements/ideU-296c231f492dc77aa758c3f555e5d3e0a62c7a19/src/msedesigner.pas
+  /home/fred/ideu/src/msedesigner.pas
+  /home/fred/strumpract/src/recorder.pas
+  /home/fred/strumpract/src/uos_soundtouch.pas
+  /home/fred/strumpract/src/uos_portaudio.pas
+  /home/fred/strumpract/src/msefiledialog.pas
+  /home/fred/uos/examples/simplerecorder_fpGUI.pas
+  /home/fred/uos/examples/mainmse_sp.pas
+  /home/fred/uos/examples/main_sd.pas
+  /home/fred/uos/examples/consoleplaymemorystream.pas
+  /home/fred/uos/examples/consoleplay.pas
+  /home/fred/uos/examples/filterplayer_fpGUI.pas
+  /home/fred/strumpract/src/dialogfiles.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/uos/examples/deviceinfos_fpGUI.pas
+  /home/fred/uos/examples/main_sp.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/test_mse_muti/grid/main.mfm
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2374,7 +2436,7 @@ windowlayout=710
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0

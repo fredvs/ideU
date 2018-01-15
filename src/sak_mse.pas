@@ -146,6 +146,15 @@ type
   procedure dowindowdeactivated(const sender: iassistiveclient);
   procedure dowindowclosed(const sender: iassistiveclient);
   procedure doactivate(const sender: iassistiveclient);
+  
+  procedure dodeactivate(const sender: iassistiveclient);
+  procedure dodbvaluechanged(const sender: iassistiveclientdata);
+  procedure dogridbordertouched(const sender: iassistiveclientgrid;
+                                       const adirection: graphicdirectionty);
+  
+   procedure dodatasetevent(const sender: iassistiveclient; 
+                const akind: assistivedbeventkindty;
+                                  const adataset: pointer); //tdataset
  
  procedure dofocuschanged(const sender: iassistiveclient;
                                const oldwidget,newwidget: iassistiveclient);
@@ -1086,7 +1095,26 @@ procedure TSAK.dodataentered(const sender: iassistiveclientdata);
   
  begin
   end;
-   
+  
+procedure TSAK.dodeactivate(const sender: iassistiveclient);
+begin
+  end;
+  
+   procedure TSAK.dodbvaluechanged(const sender: iassistiveclientdata);
+  begin
+  end;
+  
+  procedure TSAK.dogridbordertouched(const sender: iassistiveclientgrid;
+                                       const adirection: graphicdirectionty);  
+  begin
+  end;
+  
+   procedure TSAK.dodatasetevent(const sender: iassistiveclient; 
+                const akind: assistivedbeventkindty;
+                                  const adataset: pointer); //tdataset
+   begin
+  end;
+  
 procedure TSAK.ontimergreeting(const sender: TObject);
 begin
 thetimerinit.enabled := false;
