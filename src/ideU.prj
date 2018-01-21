@@ -69,8 +69,9 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=fpguidir
+ value=lazarus
  history=20
+  lazarus
   fpguidir
   project_options
   project_history
@@ -90,7 +91,6 @@ findinfiledialog=77
   statdisp.
   statdisp.c
   screen
-  onscale
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1402,7 +1402,7 @@ editpos=44
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 25,9
+ 9,2
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1426,7 +1426,7 @@ editpos=44
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,5163
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1846,7 +1846,7 @@ windowlayout=798
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -2335,7 +2335,7 @@ windowlayout=798
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=_mse_confmseguifo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2411,7 +2411,7 @@ windowlayout=798
  [_mse_confmseguifo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2506,7 +2506,7 @@ windowlayout=798
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_confmseguifo_mse_
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0

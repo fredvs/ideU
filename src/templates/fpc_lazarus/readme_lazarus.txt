@@ -1,12 +1,7 @@
-Here how to compile a Lazarus project:
+Here how to transform a Lazarus lpi project into a ideU prj:
 
-1) Create a new Global Marcros (Settings>Configure ideU)
-
-Value                      Macros
-/usr/share/lazarus/1.6.4   lazarus
-
-2) Copy lazarus.prj and paste it in same directory of your lpi project.
+1) Copy lazarus.prj and paste it in same directory of your lpi project.
 (example myproject.lpi).
-4) Rename it with the same name as the name of lpi.
+2) Rename it with the same name as the name of lpi.
    Example: myproject.prj for myproject.lpi
-5) Load it with MSEide, compile it, run it.
+3) Load it with ideU, compile it, run it.

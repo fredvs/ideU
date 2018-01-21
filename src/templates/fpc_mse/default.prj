@@ -17,6 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_mse
+projectfilename=/home/fred/ideu/src/templates/fpc_mse/default.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -558,6 +560,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=2
 encoding=1
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -652,15 +655,15 @@ panels=1
  panel1
 units=
  (
- a=0,4132,6,Pascal Units
+ a=0,8228,6,Pascal Units
  )
 cmodules=
  (
- a=0,4132,6,C Modules
+ a=0,8228,6,C Modules
  )
 files=
  (
- a=0,4132,6,Text Files
+ a=0,8228,6,Text Files
  )
 [componentstore]
 storedir=/home/fred/msegui/apps/ide/compstore/
@@ -691,11 +694,10 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=523
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -833,7 +835,7 @@ windowlayout=523
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268484715
+ useroptions=805355627
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -847,15 +849,15 @@ windowlayout=523
  cy=377
  rcx=0
  rcy=0
- [projecttreefo.project_tree]
- propcolwidthref=50
- width0=109
+ [projecttreefo.grid]
+ propcolwidthref=42
+ width0=117
  sortdescend0=0
- width1=44
+ width1=36
  sortdescend1=0
  sorted=0
- col=0
- row=0
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -940,7 +942,7 @@ windowlayout=523
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1040,7 +1042,7 @@ windowlayout=523
  value=1
  [messagefo]
  splitdir=0
- useroptions=82027
+ useroptions=805388395
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1153,20 +1155,33 @@ windowlayout=523
  rcy=585
  [debuggerfo.basedock]
  splitdir=2
- useroptions=146563
+ useroptions=805452931
  parent=debuggerfo.container
  visible=1
  mdistate=0
  nx=0
  ny=47
- ncx=928
- ncy=2
+ ncx=1140
+ ncy=232
  x=0
  y=47
- cx=958
+ cx=1140
  cy=232
  rcx=0
  rcy=0
+ [debuggerfo.edit_options]
+ value=X
+ [debuggerfo.edit_compilernum]
+ value=0
+ [debuggerfo.edit_compiler]
+ value=Pascal
+ [debuggerfo.file_history]
+ value=/home/fred/ideu/src/confmsegui.pas
+ history=0
+ [debuggerfo.project_options]
+ value=1
+ [debuggerfo.hints]
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -1187,7 +1202,7 @@ windowlayout=523
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
