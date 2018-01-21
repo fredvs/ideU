@@ -141,6 +141,10 @@ type
                                     
   procedure doapplicationactivated();
   procedure doapplicationdeactivated();
+  
+  procedure dotabordertouched(const sender: iassistiveclient;
+                                                        const adown: boolean);
+
  
   procedure dowindowactivated(const sender: iassistiveclient);
   procedure dowindowdeactivated(const sender: iassistiveclient);
@@ -1113,6 +1117,11 @@ begin
                 const akind: assistivedbeventkindty;
                                   const adataset: pointer); //tdataset
    begin
+  end;
+  
+   procedure TSAK.dotabordertouched(const sender: iassistiveclient;
+                                                        const adown: boolean);
+  begin
   end;
   
 procedure TSAK.ontimergreeting(const sender: TObject);

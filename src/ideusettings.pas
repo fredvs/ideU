@@ -12,20 +12,20 @@ uses
  msemenus,msesys,msetypes,msegraphics,msewidgets,mseactions,mseifiglob,
  msesplitter,mseificomp,mseificompglob,msememodialog,msewidgetgrid,
  mseapplication,msestream,sysutils,mseact,msedragglob,msescrollbar,msetabs,
- msegraphedits;
+ msegraphedits,msedropdownlist;
 
 type
  settingsmacroty = (sma_fpcdir,sma_fpclibdir,sma_msedir,sma_mselibdir,
                    sma_syntaxdefdir,sma_templatedir, sma_layoutdir,sma_compstoredir,
                    sma_compiler,sma_debugger,
                    sma_exeext,sma_target,sma_targetosdir, sma_fpguidir,
-                    sma_ideudir, sma_docviewdir, sma_projectdir, sma_fpgui);
+                    sma_ideudir, sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir);
 const
 
  statdirname = '^/.ideu';
  settingsmacronames: array[settingsmacroty] of msestring = ('fpcdir','fpclibdir','msedir',
                       'mselibdir','syntaxdefdir','templatedir','layoutdir','compstoredir','compiler','debugger',
-                     'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir', 'fpgui');
+                     'exeext','target','targetosdir','fpguidir', 'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir');
  {$ifdef mswindows}
  {$ifdef CPU64}
  
@@ -49,7 +49,7 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '');
+                 'ppcx64','gdb','','x86_64-linux','linux','','','${IDEUDIR}docview/','', '', '');
   {$endif}
  
   {$ifdef freebsd}
@@ -59,12 +59,12 @@ const
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
                 '/usr/local/share/ideu/templates/','/usr/local/share/ideu/layout/','${MSEDIR}apps/ide/compstore/',
                'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','linux',
-               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '');
+               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '', '');
    {$else}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-freebsd','linux','','','${IDEUDIR}docview/','', '');
+                 'ppcx64','gdb','','x86_64-freebsd','linux','','','${IDEUDIR}docview/','', '', '');
    {$endif}
   
    {$endif}
@@ -74,21 +74,21 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '');
+                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '', '');
    {$endif}
    
     {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}  
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','', '');
+                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','', '', '');
    {$endif}
    
     {$ifdef freebsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                   'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '');
+                   'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '', '');
   
     {$endif}
   
@@ -134,6 +134,7 @@ type
    target: tstringedit;
    exeext: tstringedit;
    targetosdir: tstringedit;
+   lcldir: tfilenameedit;
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
    procedure formoncreate(const sender: TObject);
@@ -285,7 +286,7 @@ begin
   {$else}
    fpguidir.value:= macros[sma_fpguidir];  
   {$endif}
- 
+  lcldir.value:= macros[sma_lcldir];  
   compstoredir.value:= macros[sma_compstoredir]; 
   debugger.value:= macros[sma_debugger];
   exeext.value:= macros[sma_exeext];
@@ -318,7 +319,9 @@ begin
  with result do begin
   macros[sma_projectdir]:= TheProjectDirectory;     
   macros[sma_ideudir]:= IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) ;
+  macros[sma_lcldir] := lcldir.value;  
   macros[sma_fpguidir] := fpguidir.value;
+  macros[sma_lcldir] := lcldir.value;
   macros[sma_fpgui] := macros[sma_fpguidir];
   macros[sma_docviewdir] := docviewdir.value;
   // macros[sma_fpcdir]:= fpcdir.value;
@@ -392,6 +395,7 @@ debugger.controller.options := [fdo_sysfilename,fdo_savelastdir] ;
 msedir.controller.options := [fdo_sysfilename,fdo_directory] ;
 compstoredir.controller.options := [fdo_sysfilename,fdo_directory] ;
 fpguidir.controller.options := [fdo_sysfilename,fdo_directory] ;
+lcldir.controller.options := [fdo_sysfilename,fdo_directory] ;
 docviewdir.controller.options := [fdo_sysfilename,fdo_directory] ;
 templatedir.controller.options := [fdo_sysfilename,fdo_directory] ;
 syntaxdefdir.controller.options := [fdo_sysfilename,fdo_directory] ;
@@ -404,6 +408,7 @@ msedir.controller.options := [fdo_directory] ;
 mselibdir.controller.options := [fdo_directory] ;
 compstoredir.controller.options := [fdo_directory] ;
 fpguidir.controller.options := [fdo_directory] ;
+lcldir.controller.options := [fdo_directory] ;
 docviewdir.controller.options := [fdo_directory] ;
 templatedir.controller.options := [fdo_directory] ;
 syntaxdefdir.controller.options := [fdo_directory] ;
