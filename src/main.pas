@@ -3696,7 +3696,7 @@ c_linefeed + c_linefeed +
  c_linefeed +
              'Host: '+ platformtext+ c_linefeed+
              c_linefeed+ c_linefeed +
-             'by Martin Schreiber. Copyright 1999-2017'+c_linefeed+
+             'by Martin Schreiber. Copyright 1999-2018'+c_linefeed+
              'http://sourceforge.net/projects/mseide-msegui/';
  aboutfo.show(true); 
  
@@ -3711,7 +3711,7 @@ aboutfo.about_text.value :=
  'fpGUI version: 1.4' + c_linefeed+
           'Host: '+ platformtext+ c_linefeed+
              c_linefeed+  c_linefeed+
-                 'Copyright 1999-2017'+c_linefeed+ c_linefeed+
+                 'Copyright 1999-2018'+c_linefeed+ c_linefeed+
              ' by Graeme Geldenhuys' +c_linefeed+
               '<graemeg@gmail.com>';
 aboutfo.show(true);        
@@ -3731,7 +3731,7 @@ aboutfo.about_text.value :=
             +c_linefeed+
              'by Martin Schreiber'
             +c_linefeed+ c_linefeed+
-             'Copyright 1999-2017'+c_linefeed+  c_linefeed+
+             'Copyright 1999-2018'+c_linefeed+  c_linefeed+
               'Fred van Stappen' +c_linefeed+
                '<fiens@hotmail.com>';
 aboutfo.show(true);

@@ -18,7 +18,7 @@ unit sak_mse;
 *  1 th release: 2013-06-15  (multi objects, multi forms)                      *
 *******************************************************************************}
     {
-    Copyright (C) 2013 - 2017  Fred van Stappen
+    Copyright (C) 2013 - 2018  Fred van Stappen
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -1610,6 +1610,8 @@ var
  mstr1, mstr2: msestring;
  lrkeyused : boolean = false;
  gridcoo : gridcoordty;
+ aflags: assistiveflagsty;
+ 
 begin
 if (assigned(Sender)) and
   (isblock = false) then
@@ -1642,7 +1644,7 @@ if (assigned(Sender)) and
  begin	
  if (sender.getassistivecaretindex() > -1) and (info.cell.row > -1) then
  begin
-  	mstr1:= sender.getassistivecelltext(info.cell);
+  	mstr1:= sender.getassistivecelltext(info.cell,aflags);
 	if ((lrkeyused = true) and not (Sender.getinstance is Twidgetgrid)) or 
 	(TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row) 
 	 then
@@ -1714,7 +1716,7 @@ if (assigned(Sender)) and
                 do
 				begin
 				mstr1 := mstr1 + ' , row , ' + inttostr(gridcoo.row + 1) + ' , ' +
-				formatcode(sender.getassistivecelltext(gridcoo));
+				formatcode(sender.getassistivecelltext(gridcoo,aflags));
 				inc(gridcoo.row);
 				end;
 				
@@ -1746,7 +1748,7 @@ if (assigned(Sender)) and
   begin
      mstr2:= ' Colon , '+ inttostrmse(sender.getassistivecaretindex())+
       ' , row , '+inttostrmse(info.cell.row+1) + ' , ';
-	mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell));
+	mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell,aflags));
 	
  	Theword := '';
  	TheLastCell.col := sender.getassistivecaretindex() ; 
