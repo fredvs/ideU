@@ -215,7 +215,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=788
  width0=47
@@ -1433,9 +1433,9 @@ editpos=50
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,8
+ 0,11
  0,-1073741823
- 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1534,7 +1534,7 @@ sourcefiles=50
  ${PROJECTDIR}/msewidgets.pas
  ${PROJECTDIR}/formdesigner.pas
  ${PROJECTDIR}/main.pas
- /home/fred/ideu/src/sak_mse.pas
+ ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/mseconsts.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveclient.pas
 relpaths=50
@@ -1587,7 +1587,7 @@ relpaths=50
  main.pas
  sak_mse.pas
  mseconsts.pas
- msegui/lib/common/kernel/mseassistiveclient.pas
+ ../msegui/lib/common/kernel/mseassistiveclient.pas
 ismoduletexts=50
  0
  0
@@ -1764,7 +1764,7 @@ order=50
  41
  42
 firsttab=16
-index=21
+index=22
 [layout]
 windowlayout=817
  [mainfo.basedock]
@@ -1792,8 +1792,8 @@ windowlayout=817
  ny=0
  ncx=0
  ncy=0
- x=54
- y=112
+ x=32
+ y=24
  cx=1157
  cy=621
  rcx=0
@@ -2011,7 +2011,7 @@ windowlayout=817
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -2026,7 +2026,7 @@ windowlayout=817
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [objectinspectorfo.grid]
  propcolwidthref=306
  width0=136
@@ -2248,7 +2248,7 @@ windowlayout=817
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sak_mse.pas
+ value=/home/fred/ideu/src/mseconsts.pas
  history=50
   /home/fred/ideu/src/confideu.pas
   /home/fred/uoslib/src/uoslib.pas
@@ -2511,7 +2511,7 @@ windowlayout=817
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_mainfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2568,7 +2568,7 @@ windowlayout=817
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
