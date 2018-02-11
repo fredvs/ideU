@@ -1074,7 +1074,7 @@ begin
      if prompt then begin
       rect1:= edit.textpostomouserect(ffindpos);
       res1:= showmessage(sourcefo.c[ord(replaceoccu)],'',
-       [mr_yes,mr_all,mr_no,mr_cancel],rect1,source_editor,cp_bottomleft,res1);
+       [mr_yes,mr_yesall,mr_no,mr_cancel],rect1,source_editor,cp_bottomleft,res1);
      end
      else begin
       res1:= mr_yes;
@@ -1083,11 +1083,11 @@ begin
       mr_no: begin
        inc(ffindpos.col,length(text));
       end;
-      mr_yes,mr_all: begin
+      mr_yes,mr_yesall: begin
        edit.deleteselection;
        edit.inserttext(ffindpos,replacetext);
        inc(ffindpos.col,length(replacetext));
-       if (res1 = mr_all) or (all and not prompt) then begin
+       if (res1 = mr_yesall) or (all and not prompt) then begin
         if not updatedisabled then begin
          application.processmessages; //remove message window
          updatedisabled:= true;
@@ -1145,9 +1145,9 @@ begin
  ainfo:= projectoptions.findreplaceinfo;
 // ainfo.find.text:= edit.selectedtext;
  res1:= replacedialogexecute(ainfo);
- if res1 in [mr_ok,mr_all] then begin
+ if res1 in [mr_ok,mr_yesall] then begin
   projectoptions.findreplaceinfo:= ainfo;
-  replace(res1 = mr_all);
+  replace(res1 = mr_yesall);
  end;
 end;
 

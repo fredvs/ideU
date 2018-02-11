@@ -1138,7 +1138,7 @@ end;
 {
 procedure tmainfo.sourceformactivated;
 begin
- factivedesignmodule:= nil;
+ factivedesignmodule:= nil; 
 end;
 }
 function tmainfo.checksave: modalresultty;
@@ -1147,7 +1147,7 @@ var
 begin
  result:= sourcefo.saveall(false);
  if result <> mr_cancel then begin
-  result:= designer.saveall(result = mr_all,true);
+  result:= designer.saveall(result = mr_yesall,true);
   if result <> mr_cancel then begin
    result:= componentstorefo.saveall(false);
    if result <> mr_cancel then begin

@@ -69,8 +69,10 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=2017
+ value=mr_all
  history=20
+  mr_all
+  mr_yes
   2017
   yesall
   okall
@@ -89,8 +91,6 @@ findinfiledialog=77
   MSEgui directory
   thread
   tthread
-  showconsole
-  statdisp
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -739,7 +739,7 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=17
+modulenames=18
  ABOUT_FORM
  ACTIONSMO
  DEBUGGERFO
@@ -755,9 +755,10 @@ modulenames=17
  MAINFO
  FILEDIALOGFO
  FILEDIALOGRES
+ REPLACEDIALOGFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=17
+moduletypes=18
  TABOUTFO
  TACTIONSMO
  TDEBUGGERFO
@@ -773,9 +774,10 @@ moduletypes=17
  TMAINFO
  TFILEDIALOGFO
  TFILEDIALOGRES
+ TREPLACEDIALOGFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=17
+modulefiles=18
  /home/fred/ideu/src/aboutform.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
@@ -791,6 +793,7 @@ modulefiles=17
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
+ /home/fred/ideu/src/replacedialogform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
@@ -1362,8 +1365,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=assistiveflagsty
+finddtext=mr_all
 findhistory=20
+ mr_all
+ all
  assistiveflagsty
  dotabordertouche
  odatasetevent
@@ -1382,10 +1387,8 @@ findhistory=20
  openproject
  updatecaption
  face
- withoutd
- resize
 findoptions=1
-editpos=50
+editpos=56
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1433,9 +1436,15 @@ editpos=50
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,11
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 28,1140
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1161
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1486,7 +1495,13 @@ bookmarks46=0
 bookmarks47=0
 bookmarks48=0
 bookmarks49=0
-sourcefiles=50
+bookmarks50=0
+bookmarks51=0
+bookmarks52=0
+bookmarks53=0
+bookmarks54=0
+bookmarks55=0
+sourcefiles=56
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1537,7 +1552,13 @@ sourcefiles=50
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/mseconsts.pas
  /home/fred/msegui/lib/common/kernel/mseassistiveclient.pas
-relpaths=50
+ ${PROJECTDIR}/msewidgets.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/msedesigner.pas
+ ${PROJECTDIR}/replacedialogform.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
+relpaths=56
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1587,8 +1608,14 @@ relpaths=50
  main.pas
  sak_mse.pas
  mseconsts.pas
- ../msegui/lib/common/kernel/mseassistiveclient.pas
-ismoduletexts=50
+ msegui/lib/common/kernel/mseassistiveclient.pas
+ msewidgets.pas
+ main.pas
+ msedesigner.pas
+ replacedialogform.pas
+ sourceform.pas
+ sourcepage.pas
+ismoduletexts=56
  0
  0
  0
@@ -1639,7 +1666,13 @@ ismoduletexts=50
  0
  0
  0
-modules=17
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=18
  /home/fred/ideu/src/aboutform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
@@ -1657,7 +1690,8 @@ modules=17
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/guitemplatesnew.mfm
  /home/fred/ideu/src/formdesigner.mfm
-moduleoptions=17
+ /home/fred/ideu/src/replacedialogform.mfm
+moduleoptions=18
  0
  0
  0
@@ -1675,25 +1709,28 @@ moduleoptions=17
  0
  0
  0
-visiblemodules=17
+ 0
+visiblemodules=18
+ 0
+ -1
+ -1
+ -1
+ -1
+ 0
+ 0
+ -1
+ 0
+ -1
+ -1
+ 0
  0
  0
  -1
  -1
  -1
- 0
- 0
- 0
- 0
  -1
- -1
+nomenumodules=18
  0
- 0
- 0
- -1
- -1
- -1
-nomenumodules=17
  0
  0
  0
@@ -1712,7 +1749,7 @@ nomenumodules=17
  0
  0
 [sourcefo.files_tab]
-order=50
+order=56
  0
  1
  2
@@ -1736,6 +1773,12 @@ order=50
  46
  47
  49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
  48
  43
  19
@@ -1763,10 +1806,10 @@ order=50
  40
  41
  42
-firsttab=16
-index=22
+firsttab=22
+index=24
 [layout]
-windowlayout=817
+windowlayout=836
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -2011,7 +2054,7 @@ windowlayout=817
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2026,7 +2069,7 @@ windowlayout=817
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
  width0=136
@@ -2248,8 +2291,23 @@ windowlayout=817
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts.pas
+ value=/home/fred/ideu/src/main.pas
  history=50
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/main.pas
+  /home/fred/strumpract/src/config.pas
+  /home/fred/uos/examples/uoslib.pas
+  /home/fred/uos/examples/uos_libsndfile.pas
+  /home/fred/uos/examples/consoleplay.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/uoslib/src/uos_mpg123.pas
+  /home/fred/uoslib/src/uos_libsndfile.pas
+  /home/fred/uoslib/src/uos_portaudio.pas
+  /home/fred/uoslib/examples/demos/java/ReadMe.txt
+  /home/fred/lib_namesh.inc
+  /home/fred/ideu/src/msewidgets.pas
+  /home/fred/msewidgets.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/uoslib/src/uoslib.pas
   /home/fred/strumpract/src/define.inc
@@ -2264,8 +2322,6 @@ windowlayout=817
   /home/fred/uos/src/uos.pas
   /home/fred/uos/src/uos_aac.pas
   /home/fred/strumpract/src/strumpract.pas
-  /home/fred/strumpract/src/config.pas
-  /home/fred/uos/examples/uos.pas
   /home/fred/uos/examples/SimplePlayer_MSE.pas
   /home/fred/uos/examples/consolebpmdetect.pas
   /home/fred/strumpract/src/songplayer2.pas
@@ -2275,7 +2331,6 @@ windowlayout=817
   /home/fred/uos/examples/uos_soundtouch.pas
   /home/fred/uos/examples/consoleplaymemorybuffer.pas
   /home/fred/uos/examples/simpleplayer_fpGUI.pas
-  /home/fred/strumpract/src/main.pas
   /home/fred/strumpract/src/filelistform.pas
   /home/fred/strumpract/src/songplayer.pas
   /home/fred/strumpract/src/commander.pas
@@ -2288,18 +2343,6 @@ windowlayout=817
   /home/fred/ideu_15_7_17/src/msedesigner.pas
   /home/fred/Téléchargements/ideU-296c231f492dc77aa758c3f555e5d3e0a62c7a19/src/msedesigner.pas
   /home/fred/ideu/src/msedesigner.pas
-  /home/fred/strumpract/src/recorder.pas
-  /home/fred/strumpract/src/uos_soundtouch.pas
-  /home/fred/strumpract/src/uos_portaudio.pas
-  /home/fred/strumpract/src/msefiledialog.pas
-  /home/fred/uos/examples/simplerecorder_fpGUI.pas
-  /home/fred/uos/examples/mainmse_sp.pas
-  /home/fred/uos/examples/main_sd.pas
-  /home/fred/uos/examples/consoleplaymemorystream.pas
-  /home/fred/uos/examples/consoleplay.pas
-  /home/fred/uos/examples/filterplayer_fpGUI.pas
-  /home/fred/strumpract/src/dialogfiles.pas
-  /home/fred/strumpract/src/aboutform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2324,7 +2367,7 @@ windowlayout=817
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_about_form_mse_
  parent=
  mdistate=0
  nx=0
@@ -2378,7 +2421,7 @@ windowlayout=817
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_confmseguifo_mse_
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=0
  nx=0
@@ -2397,7 +2440,7 @@ windowlayout=817
  [_mse_confcompilerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=_mse_confdebuggerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2511,7 +2554,7 @@ windowlayout=817
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2568,7 +2611,7 @@ windowlayout=817
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_replacedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2579,6 +2622,25 @@ windowlayout=817
  y=277
  cx=297
  cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_replacedialogfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=142
+ y=302
+ cx=437
+ cy=163
  rcx=0
  rcy=0
  wsize=0

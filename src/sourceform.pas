@@ -1038,7 +1038,7 @@ begin
    mr_noall: begin
     break;
    end;
-   mr_all: begin
+   mr_yesall: begin
     for int2:= int1 to files_tab.count - 1 do begin
      tsourcepage(files_tab[int2]).checksave(true,true);
     end;
