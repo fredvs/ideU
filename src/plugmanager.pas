@@ -116,21 +116,24 @@ function fpgd_loadfile(afilename : PChar) : integer ;
  
  procedure RunCustomCompiled(const AFilename: string; acompiler : string);
  var
-  dataf, dataf2, conso : string ;
+  dataf, dataf2, dataf3, conso : string ;
   len1 : integer;
  begin
  
- if (acompiler = '')   then
- RunWithoutDebug(AFilename, acompiler) else
- 
+ if (acompiler = '') or (acompiler = '1w') or (acompiler = '3w') then
  begin
- 
-  if fileexists (AFilename) then
+ if (acompiler = '') then RunWithoutDebug(AFilename, acompiler)
+ else RunWithoutDebug(AFilename, 'wine');
+ end 
+ else
+ begin
+   if fileexists (AFilename) then
  begin 
 dataf2 := trim(AFilename);
 len1 := pos('.',dataf2) ;
-
-if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or (acompiler = '3')  then
+ 
+if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or (acompiler = '3')
+then
 begin
  {$IFDEF Windows} 
   dataf := copy(dataf2,1,len1) + 'exe' ; 
@@ -139,13 +142,13 @@ begin
     {$endif}
    
   dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
-  
+     
   if fileexists (dataf) then
-  
-   RunWithoutDebug(dataf, '') else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
- 
+  begin
+     RunWithoutDebug(dataf, '') 
+ end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
  end;
-
+ 
 if (acompiler = 'Java') or (acompiler = '2') then
 begin
  
@@ -259,7 +262,13 @@ end;
     
   if fileexists (AFilename) then
  begin 
-   if wineneeded = true then thecommand := 'wine ' + AFilename else
+ if Aparam = 'wine' then
+ begin
+ Aparam := '';
+ wineneeded := true;
+ end;
+ 
+   if (wineneeded = true) then thecommand := 'wine ' + AFilename else
    thecommand :=  AFilename;
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}

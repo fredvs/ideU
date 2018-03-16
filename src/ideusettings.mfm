@@ -119,6 +119,7 @@ object settings_form: tsettingsfo
         Tag = 4
         frame.colorclient = 16777169
         frame.caption = '${LAYOUTDIR} Directory of Layout samples'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -159,6 +160,7 @@ object settings_form: tsettingsfo
         Tag = 4
         frame.colorclient = 16777169
         frame.caption = '${SYNTAXDEFDIR} Directory of Syntax definition'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -199,6 +201,7 @@ object settings_form: tsettingsfo
         Tag = 5
         frame.colorclient = 16777169
         frame.caption = '${TEMPLATEDIR} Directory of Templates'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -239,6 +242,7 @@ object settings_form: tsettingsfo
         Tag = 3
         frame.colorclient = 15138790
         frame.caption = '${DOCVIEWDIR} Root directory of DocView'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -270,6 +274,7 @@ object settings_form: tsettingsfo
         Tag = 3
         frame.colorclient = 15138790
         frame.caption = '${FPGUIDIR} Root directory of fpGUI'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -304,6 +309,7 @@ object settings_form: tsettingsfo
         Tag = 6
         frame.colorclient = 16773360
         frame.caption = '${COMPSTOREDIR} CompStore directory of MSEgui'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -344,6 +350,7 @@ object settings_form: tsettingsfo
         Tag = 3
         frame.colorclient = 16773360
         frame.caption = '${MSELIBDIR} Library of MSEgui'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -378,6 +385,7 @@ object settings_form: tsettingsfo
         Tag = 2
         frame.colorclient = 16773360
         frame.caption = '${MSEDIR} Root directory of MSEgui'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -412,6 +420,7 @@ object settings_form: tsettingsfo
         Tag = 8
         frame.colorclient = 16108799
         frame.caption = '${DEBUGGER} Path of Default Debugger'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -443,6 +452,7 @@ object settings_form: tsettingsfo
         Tag = 7
         frame.colorclient = 16108799
         frame.caption = '${COMPILER} Path of Default Compiler'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -475,7 +485,8 @@ object settings_form: tsettingsfo
       object lcldir: tfilenameedit
         Tag = 3
         frame.colorclient = 15133439
-        frame.caption = '${LCLDIR} Root directory of Lazarus/CodeTyphon'
+        frame.caption = '${LCLDIR} Root directory of Lazarus/Typhon'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.buttons.count = 1
@@ -491,7 +502,7 @@ object settings_form: tsettingsfo
           0
         )
         taborder = 10
-        hint = 'Root directory of Lazarus or CodeTyphon'
+        hint = 'Root directory of Lazarus or Typhon'
         bounds_x = 6
         bounds_y = 287
         bounds_cx = 449
@@ -520,6 +531,7 @@ object settings_form: tsettingsfo
       reffontheight = 15
       object macrogrid: twidgetgrid
         frame.caption = 'Global Macros'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
@@ -657,6 +669,7 @@ object settings_form: tsettingsfo
       reffontheight = 15
       object printcomm: tstringedit
         frame.caption = 'Print command'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
@@ -676,6 +689,7 @@ object settings_form: tsettingsfo
       object target: tstringedit
         Tag = 10
         frame.caption = '${TARGET} Default target OS'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
@@ -696,6 +710,7 @@ object settings_form: tsettingsfo
       object exeext: tstringedit
         Tag = 9
         frame.caption = '${EXEEXT} Default ext'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = []
         frame.localprops1 = []
         frame.outerframe = (
@@ -716,6 +731,7 @@ object settings_form: tsettingsfo
         Tag = 10
         frame.colorclient = 16773360
         frame.caption = '${TARGETMSE} Default target OS of MSEgui'
+        frame.captiontextflags = [tf_bottom]
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
         frame.outerframe = (

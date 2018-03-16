@@ -69,8 +69,12 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=mr_all
+ value=wineneeded
  history=20
+  wineneeded
+  linux
+  wine
+  autofocus_menu
   mr_all
   mr_yes
   2017
@@ -87,10 +91,6 @@ findinfiledialog=77
   getwidgetnamelist
   libpthread.so
   libpthread.s
-  .so'
-  MSEgui directory
-  thread
-  tthread
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -282,8 +282,8 @@ settings=8
  [settings_form]
  x=447
  y=148
- cx=471
- cy=446
+ cx=466
+ cy=497
  wsize=0
  active=1
  visible=1
@@ -1017,7 +1017,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=0
+showconsole=1
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1122,7 +1122,7 @@ line=24
  1009
  1635
  564
- 3645
+ 3665
  644
  119
  1037
@@ -1135,7 +1135,7 @@ line=24
  526
  439
  46
- 3904
+ 3924
  684
  908
  847
@@ -1365,8 +1365,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=mr_all
+finddtext=RunCustomCompiled
 findhistory=20
+ RunCustomCompiled
+ runwithoutdebugger
+ customrun
  mr_all
  all
  assistiveflagsty
@@ -1384,11 +1387,8 @@ findhistory=20
  unload
  whatfile(sak
  aboutfo
- openproject
- updatecaption
- face
 findoptions=1
-editpos=56
+editpos=67
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1440,11 +1440,22 @@ editpos=56
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 28,1140
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1161
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,28
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1501,7 +1512,18 @@ bookmarks52=0
 bookmarks53=0
 bookmarks54=0
 bookmarks55=0
-sourcefiles=56
+bookmarks56=0
+bookmarks57=0
+bookmarks58=0
+bookmarks59=0
+bookmarks60=0
+bookmarks61=0
+bookmarks62=0
+bookmarks63=0
+bookmarks64=0
+bookmarks65=0
+bookmarks66=0
+sourcefiles=67
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1558,7 +1580,18 @@ sourcefiles=56
  ${PROJECTDIR}/replacedialogform.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
-relpaths=56
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/make.pas
+ ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/plugmanager.pas
+relpaths=67
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1615,7 +1648,29 @@ relpaths=56
  replacedialogform.pas
  sourceform.pas
  sourcepage.pas
-ismoduletexts=56
+ ideusettings.pas
+ confideu.pas
+ main.pas
+ commandorform.pas
+ actionsmodule.pas
+ make.pas
+ plugmanager.pas
+ ideusettings.pas
+ actionsmodule.pas
+ main.pas
+ plugmanager.pas
+ismoduletexts=67
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1749,7 +1804,7 @@ nomenumodules=18
  0
  0
 [sourcefo.files_tab]
-order=56
+order=67
  0
  1
  2
@@ -1779,6 +1834,17 @@ order=56
  53
  54
  55
+ 56
+ 57
+ 58
+ 63
+ 62
+ 61
+ 59
+ 64
+ 65
+ 66
+ 60
  48
  43
  19
@@ -1806,10 +1872,10 @@ order=56
  40
  41
  42
-firsttab=22
-index=24
+firsttab=31
+index=37
 [layout]
-windowlayout=836
+windowlayout=840
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1835,7 +1901,7 @@ windowlayout=836
  ny=0
  ncx=0
  ncy=0
- x=32
+ x=142
  y=24
  cx=1157
  cy=621
@@ -1856,15 +1922,15 @@ windowlayout=836
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=41
+ y=340
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -1968,8 +2034,8 @@ windowlayout=836
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=3
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2097,7 +2163,11 @@ windowlayout=836
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -2293,6 +2363,8 @@ windowlayout=836
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
  history=50
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/msewidgets.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/main.pas
   /home/fred/strumpract/src/config.pas
@@ -2305,9 +2377,7 @@ windowlayout=836
   /home/fred/uoslib/src/uos_portaudio.pas
   /home/fred/uoslib/examples/demos/java/ReadMe.txt
   /home/fred/lib_namesh.inc
-  /home/fred/ideu/src/msewidgets.pas
   /home/fred/msewidgets.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/uoslib/src/uoslib.pas
   /home/fred/strumpract/src/define.inc
@@ -2369,7 +2439,7 @@ windowlayout=836
  useroptions=268451947
  stackedunder=_mse_about_form_mse_
  parent=
- mdistate=0
+ mdistate=3
  nx=0
  ny=0
  ncx=0
@@ -2515,7 +2585,7 @@ windowlayout=836
  visible=1
  [_mse_debuggerfo_mse_]
  splitdir=0
- useroptions=805322875
+ useroptions=805388411
  stackedunder=_mse_settings_form_mse_
  parent=
  mdistate=0
@@ -2630,7 +2700,7 @@ windowlayout=836
  [_mse_replacedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

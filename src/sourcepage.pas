@@ -1154,7 +1154,7 @@ end;
 procedure tsourcepage.repeatfind;
 begin
  findintextedit(edit,projectoptions.findreplaceinfo.find,ffindpos);
-// find;
+ // find;
 end;
 
 procedure tsourcepage.hidehint;

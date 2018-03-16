@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.9.0';
+ versiontext = '1.9.1';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -1317,6 +1317,7 @@ end;
 procedure tmainfo.runwithoutdebugger;
 var
 int1, int2: integer;
+strwine : string;
 
  begin
  
@@ -1339,20 +1340,39 @@ for int2:= 0 to high(compilerused) do begin
    end;
    end;
    
+    strwine := '';
+   {$ifdef linux}
+   if (system.pos('.exe',gettargetfile) > 0)
+   then strwine := 'wine ' ;
+   {$endif}
+   
     if projectoptions.d.showconsole then
   begin
    targetconsolefo.activate;
    mainfo.startconsole();
-   frunningprocess:= targetconsolefo.terminal.execprog(gettargetfile);
+   frunningprocess:= targetconsolefo.terminal.execprog(strwine + gettargetfile);
    runprocmon.listentoprocess(frunningprocess);
    end else
    begin
-  if (int1 = 1) or (int1 = 3)  then 
-  RunCustomCompiled(gettargetfile, '' ) else
-  RunCustomCompiled(gettargetfile, inttostr(int1) );
+   strwine := '';
+   {$ifdef linux}
+   if (system.pos('.exe',gettargetfile) > 0)
+   then strwine := inttostr(int1) +'w' else 
+   begin
+   if (int1 = 1) or (int1 = 3) then
+   strwine := '' else
+   strwine := inttostr(int1) ;
    end;
-   
-  end; 
+   {$else}
+   if (int1 = 1) or (int1 = 3) then
+   strwine := '' else
+   strwine := inttostr(int1) ;
+   {$endif}
+    
+    RunCustomCompiled(gettargetfile, strwine );
+    
+   end;
+   end; 
 
 procedure tmainfo.toggleformunit;
 var
