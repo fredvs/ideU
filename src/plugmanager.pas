@@ -217,6 +217,7 @@ end;
  
  end;
  
+  
  procedure RunWithoutDebug(const AFilename: string; Aparam: string);
  var
   AProcess : TProcess ;

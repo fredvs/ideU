@@ -10,8 +10,8 @@ object debuggerfo: tdebuggerfo
   face.localprops = []
   face.template = templfile
   visible = False
-  bounds_x = 58
-  bounds_y = 78
+  bounds_x = 57
+  bounds_y = 79
   bounds_cx = 1151
   bounds_cy = 51
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
@@ -459,10 +459,10 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
       imagenr = 25
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       focusrectdist = 0
       onexecute = shownum
     end
@@ -514,10 +514,10 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
       imagenr = 20
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       focusrectdist = 0
       onexecute = listonexecute
     end
@@ -534,11 +534,11 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
       action = actionsmo.assistive
       imagelist = actionsmo.buttonicons
       imagenr = 18
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       focusrectdist = 0
       onexecute = assistiveactonexecute
     end
@@ -554,10 +554,10 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
       imagenr = 33
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       focusrectdist = 0
       onexecute = onterminalon
     end
@@ -574,10 +574,10 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
       imagenr = 35
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       focusrectdist = 0
       onexecute = onsetdebug
     end

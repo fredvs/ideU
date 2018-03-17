@@ -69,8 +69,11 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=wineneeded
+ value=customrun
  history=20
+  customrun
+  RunCustomCompil
+  RunCustomCompiled
   wineneeded
   linux
   wine
@@ -88,9 +91,6 @@ findinfiledialog=77
   ordtype
   fpc_3_0
   mef_forward
-  getwidgetnamelist
-  libpthread.so
-  libpthread.s
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -215,7 +215,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=788
  width0=47
@@ -1066,7 +1066,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=24
+on=25
  0
  0
  0
@@ -1091,7 +1091,8 @@ on=24
  0
  0
  0
-path=24
+ 0
+path=25
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -1116,7 +1117,8 @@ path=24
  /home/fred/ideu/src/sak_mse.pas
  /home/fred/ideu/src/commandorform.pas
  /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
-line=24
+ /home/fred/ideu/src/make.pas
+line=25
  782
  2129
  1009
@@ -1125,7 +1127,7 @@ line=24
  3665
  644
  119
- 1037
+ 1074
  2247
  2164
  2439
@@ -1141,7 +1143,8 @@ line=24
  847
  86
  15
-address=24
+ 755
+address=25
  4795942
  4826658
  4643185
@@ -1166,7 +1169,8 @@ address=24
  0
  0
  0
-addbkpt=24
+ 0
+addbkpt=25
  0
  0
  0
@@ -1191,7 +1195,8 @@ addbkpt=24
  0
  0
  0
-ignore=24
+ 0
+ignore=25
  0
  0
  0
@@ -1216,7 +1221,9 @@ ignore=24
  0
  0
  0
-condition=24
+ 0
+condition=25
+ 
  
  
  
@@ -1365,8 +1372,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=RunCustomCompiled
+finddtext=commandcompiler
 findhistory=20
+ commandcompiler
+ getcommandline
+ customcommandline
+ custommaker
+ customdomake
+ customcompile
+ setupcustom
  RunCustomCompiled
  runwithoutdebugger
  customrun
@@ -1380,15 +1394,8 @@ findhistory=20
  dodeactivate
  dodataentered(cons
  3.0
- 3.
- quotefilename
- thetag
- flags
- unload
- whatfile(sak
- aboutfo
 findoptions=1
-editpos=67
+editpos=69
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1450,11 +1457,13 @@ editpos=67
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 42,547
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,28
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1523,7 +1532,9 @@ bookmarks63=0
 bookmarks64=0
 bookmarks65=0
 bookmarks66=0
-sourcefiles=67
+bookmarks67=0
+bookmarks68=0
+sourcefiles=69
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1585,13 +1596,15 @@ sourcefiles=67
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/make.pas
+ /home/fred/ideu/src/make.pas
  ${PROJECTDIR}/plugmanager.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/plugmanager.pas
-relpaths=67
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/make.pas
+relpaths=69
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1659,7 +1672,11 @@ relpaths=67
  actionsmodule.pas
  main.pas
  plugmanager.pas
-ismoduletexts=67
+ actionsmodule.pas
+ make.pas
+ismoduletexts=69
+ 0
+ 0
  0
  0
  0
@@ -1804,7 +1821,7 @@ nomenumodules=18
  0
  0
 [sourcefo.files_tab]
-order=67
+order=69
  0
  1
  2
@@ -1843,6 +1860,8 @@ order=67
  59
  64
  65
+ 68
+ 67
  66
  60
  48
@@ -1872,8 +1891,8 @@ order=67
  40
  41
  42
-firsttab=31
-index=37
+firsttab=32
+index=34
 [layout]
 windowlayout=840
  [mainfo.basedock]
@@ -1888,8 +1907,8 @@ windowlayout=840
  ncy=0
  x=0
  y=0
- cx=1147
- cy=604
+ cx=1356
+ cy=694
  rcx=0
  rcy=0
  [mainfo]
@@ -1901,16 +1920,16 @@ windowlayout=840
  ny=0
  ncx=0
  ncy=0
- x=142
- y=24
+ x=209
+ y=33
  cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1147,604
+  basedock,0,0,1356,694
  focusedchild=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -2024,7 +2043,7 @@ windowlayout=840
  x=0
  y=0
  cx=205
- cy=455
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2127,7 +2146,7 @@ windowlayout=840
  ny=0
  ncx=0
  ncy=0
- x=18
+ x=17
  y=166
  cx=316
  cy=484
@@ -2233,9 +2252,9 @@ windowlayout=840
  ncx=0
  ncy=0
  x=0
- y=512
- cx=1147
- cy=92
+ y=588
+ cx=1356
+ cy=106
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2334,8 +2353,8 @@ windowlayout=840
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1356
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2346,12 +2365,12 @@ windowlayout=840
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1356
+ ncy=62
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1356
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2361,7 +2380,7 @@ windowlayout=840
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/make.pas
  history=50
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/msewidgets.pas
@@ -2429,8 +2448,8 @@ windowlayout=840
  ncy=0
  x=208
  y=0
- cx=939
- cy=455
+ cx=1148
+ cy=523
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2464,9 +2483,9 @@ windowlayout=840
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=455
+ y=62
+ cx=1356
+ cy=523
  rcx=0
  rcy=0
  [_mse_about_form_mse_]
@@ -2593,8 +2612,8 @@ windowlayout=840
  ny=0
  ncx=0
  ncy=0
- x=58
- y=78
+ x=57
+ y=79
  cx=1161
  cy=51
  rcx=0
