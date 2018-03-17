@@ -692,6 +692,7 @@ type
    ttabpage12: ttabpage;
    makeoptionsgrid: twidgetgrid;
    makeon: tbooleanedit;
+   extraon: tbooleanedit;
    buildon: tbooleanedit;
    make1on: tbooleanedit;
    make2on: tbooleanedit;
@@ -1807,10 +1808,10 @@ begin
   for int1:= 0 to high(fmakeoptionson) do begin
    fmakeoptionson[int1]:= alloptionson;
   end;
-  fmakeoptionson[1]:= alloptionson and not bits[5]; 
+  fmakeoptionson[2]:= alloptionson and not bits[5]; 
                      //all but make 4
-  fmakeoptionson[2]:= bits[1] or bits[5]; //build + make 4
-  fmakeoptionson[3]:= bits[5]; //make 4
+  fmakeoptionson[3]:= bits[1] or bits[5]; //build + make 4
+  fmakeoptionson[4]:= bits[5]; //make 4
  // fmakeoptionson[4]:= bits[6]; //make 5
  // fmakeoptionson[5]:= bits[7]; //make 6
  // fmakeoptionson[6]:= bits[8]; //make 7
@@ -2356,6 +2357,7 @@ fo.project_comment.value := o.project_comment;
    if int1 > high(o.makeoptionson) then begin
     break;
    end;
+   fo.extraon.gridupdatetagvalue(int1,o.makeoptionson[int1]);
    fo.makeon.gridupdatetagvalue(int1,o.makeoptionson[int1]);
    fo.buildon.gridupdatetagvalue(int1,o.makeoptionson[int1]);
    fo.make1on.gridupdatetagvalue(int1,o.makeoptionson[int1]);
@@ -2519,7 +2521,7 @@ begin
   setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
   for int1:= 0 to high(o.fmakeoptionson) do begin
    o.fmakeoptionson[int1]:=
-      fo.makeon.gridvaluetag(int1,0) or fo.buildon.gridvaluetag(int1,0) or
+      fo.extraon.gridvaluetag(int1,0) or fo.makeon.gridvaluetag(int1,0) or fo.buildon.gridvaluetag(int1,0) or
       fo.make1on.gridvaluetag(int1,0) or fo.make2on.gridvaluetag(int1,0) or
       fo.make3on.gridvaluetag(int1,0) or fo.make4on.gridvaluetag(int1,0) or 
       fo.make5on.gridvaluetag(int1,0) or fo.make6on.gridvaluetag(int1,0) or

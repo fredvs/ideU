@@ -24,7 +24,7 @@ object finddialogfo: tfinddialogfo
     taborder = 2
     bounds_x = 8
     bounds_y = 45
-    bounds_cx = 294
+    bounds_cx = 283
     bounds_cy = 40
     optionsscale = [osc_expandx, osc_shrinkx, osc_expandshrinkx, osc_expandshrinky]
     optionslayout = [lao_placex]
@@ -36,14 +36,14 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
-        86
+        2
+        82
         2
       )
-      bounds_x = 195
-      bounds_y = 11
-      bounds_cx = 99
-      bounds_cy = 16
+      bounds_x = 188
+      bounds_y = 10
+      bounds_cx = 95
+      bounds_cy = 17
       statfile = statfile1
     end
     object wholeword: tbooleanedit
@@ -52,15 +52,15 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
-        73
+        2
+        72
         2
       )
       taborder = 1
-      bounds_x = 105
-      bounds_y = 11
-      bounds_cx = 86
-      bounds_cy = 16
+      bounds_x = 99
+      bounds_y = 10
+      bounds_cx = 85
+      bounds_cy = 17
     end
     object casesensitive: tbooleanedit
       frame.caption = 'case&sensitive'
@@ -68,31 +68,36 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
-        88
+        2
+        82
         2
       )
       taborder = 2
       bounds_x = 0
-      bounds_y = 11
-      bounds_cx = 101
-      bounds_cy = 16
+      bounds_y = 10
+      bounds_cx = 95
+      bounds_cy = 17
     end
   end
   object findtext: thistoryedit
     frame.caption = 'Text to &find'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     bounds_x = 8
-    bounds_y = 6
+    bounds_y = 5
     bounds_cx = 297
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -100,29 +105,28 @@ object finddialogfo: tfinddialogfo
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlayouter1: tlayouter
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 194
+    bounds_x = 198
     bounds_y = 88
-    bounds_cx = 109
-    bounds_cy = 20
+    bounds_cx = 105
+    bounds_cy = 21
     anchors = [an_top, an_right]
     optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
-    optionslayout = [lao_placex, lao_aligny]
+    optionslayout = [lao_placex, lao_aligny, lao_syncmaxautosize]
     align_glue = wam_start
     place_mindist = 5
     place_maxdist = 5
     place_mode = wam_end
-    place_options = [plo_syncmaxautosize]
     object cancel: tbutton
-      bounds_x = 57
+      bounds_x = 55
       bounds_y = 0
-      bounds_cx = 52
-      bounds_cy = 20
+      bounds_cx = 50
+      bounds_cy = 21
       anchors = [an_top, an_right]
       state = [as_localcaption]
       caption = '&Cancel'
@@ -132,8 +136,8 @@ object finddialogfo: tfinddialogfo
       taborder = 1
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 52
-      bounds_cy = 20
+      bounds_cx = 50
+      bounds_cy = 21
       anchors = [an_top, an_right]
       state = [as_default, as_localdefault, as_localcaption]
       caption = '&OK'

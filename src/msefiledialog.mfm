@@ -120,6 +120,7 @@ object filedialogfo: Tfiledialogfo
     options = [spao_gluebottom]
     object filename: thistoryedit
       frame.caption = '&Name (history of files in drop list)'
+      frame.captiontextflags = [tf_xcentered, tf_bottom]
       frame.captionpos = cp_top
       frame.localprops = []
       frame.localprops1 = []
@@ -159,6 +160,7 @@ object filedialogfo: Tfiledialogfo
     end
     object filter: tdropdownlistedit
       frame.caption = '&Filter'
+      frame.captiontextflags = [tf_xcentered, tf_bottom]
       frame.captionpos = cp_top
       frame.localprops = []
       frame.localprops1 = []
@@ -213,10 +215,10 @@ object filedialogfo: Tfiledialogfo
       bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
       state = [as_localcaption, as_localcolor]
       caption = '&Cancel'
       modalresult = mr_cancel
-      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     end
     object ok: tbutton
       optionswidget1 = [ow1_autowidth, ow1_autoheight]
@@ -234,9 +236,9 @@ object filedialogfo: Tfiledialogfo
       bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
+      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
       state = [as_default, as_localdefault, as_localcaption, as_localcolor, as_localonexecute]
       caption = '&Ok'
-      options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
       onexecute = okonexecute
     end
     object showhidden: tbooleanedit
@@ -262,6 +264,7 @@ object filedialogfo: Tfiledialogfo
   object dir: tdirdropdownedit
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     frame.caption = '&Directory'
+    frame.captiontextflags = [tf_xcentered, tf_bottom]
     frame.captionpos = cp_top
     frame.localprops = []
     frame.localprops1 = []
@@ -309,9 +312,9 @@ object filedialogfo: Tfiledialogfo
     bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
     caption = '&Home'
-    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     onexecute = homeaction
     reffontheight = 15
   end
@@ -332,9 +335,9 @@ object filedialogfo: Tfiledialogfo
     bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
     caption = '&New dir'
-    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     onexecute = createdironexecute
     reffontheight = 15
   end
@@ -355,9 +358,9 @@ object filedialogfo: Tfiledialogfo
     bounds_cx = 17
     bounds_cy = 24
     anchors = [an_top, an_right]
+    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localimagelist, as_localimagenr, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
     glyph = stg_arrowup
-    options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     onexecute = upaction
     reffontheight = 15
     sc = (

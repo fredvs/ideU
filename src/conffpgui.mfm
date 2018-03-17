@@ -77,6 +77,7 @@ object conffpguifo: tconffpguifo
   object fpguidesigner: tfilenameedit
     Tag = 7
     frame.caption = '${FPGUIDESIGNER} Path to fpGUI Designer'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -135,6 +136,7 @@ object conffpguifo: tconffpguifo
   end
   object tgroupbox1: tgroupbox
     frame.caption = 'Command line parameters'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (

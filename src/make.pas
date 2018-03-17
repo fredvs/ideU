@@ -4,7 +4,7 @@ unit make;
 
 interface
 uses
- msestrings, msetypes, msesystypes, msepipestream;
+ msestrings, msetypes, msesystypes, msegraphedits, msepipestream;
  
 procedure domake(atag: integer);
 procedure abortmake;
@@ -210,9 +210,10 @@ function buildmakecommandline(const atag: integer): string;
  
 var
  int1,int2, int3, int4, acompiler: integer;
- str1,str2,str3, str4, winestr : msestring;
+ str1,str2,str3, str4, winestr, extrastr : msestring;
 // wstr1: filenamety;
 begin
+extrastr := ' ';
 winestr := '';
 wineneeded:= false;
 
@@ -545,15 +546,19 @@ for int3:= 0 to high(compilerused) do begin
   for int1:= 0 to high(makeoptions) do begin
    if (atag and makeoptionson[int1] <> 0) and
          (makeoptions[int1] <> '') then begin
-    str1:= str1 + ' ' + makeoptions[int1];
+    
+ if makeoptionson[int1] and $10000 <> 0 then 
+ extrastr := extrastr  + ' ' + makeoptions[int1] else
+  str1:= str1 + ' ' + makeoptions[int1] ;
+    
    end;
   end;
-   if  acompiler <> 3 then
-  str1:= str1 + ' ' + quotefilename(normalizename(mainfile));
+  // if  acompiler <> 3 then
+  str1:= trim(str1) + ' ' + quotefilename(normalizename(mainfile));
  end;
  if winestr = 'wine ' then wineneeded := true ;
-   result:= str1;
-end;
+   result:= trim(str1 + extrastr) ;
+ end;
 
 /// fred
 function customcommandline(const aname: filenamety; const acompiler, acompilertag, atag: integer) : string;
@@ -568,6 +573,7 @@ var
  str1,str2,str3, str4: msestring;
  commandcompiler : msestring;
  winestr : msestring = '';
+ extrastr : msestring = ' ';
 
 begin
 
@@ -781,20 +787,24 @@ str1:= winestr + str1 + ' ';
     end;
    end;
   end;
+  
   for int1:= 0 to high(makeoptions) do begin
    if (atag and makeoptionson[int1] <> 0) and
          (makeoptions[int1] <> '') then begin
-  
-    str1:= str1 + ' ' + makeoptions[int1];
- 
+  if makeoptionson[int1] and $10000 <> 0 then 
+ extrastr := extrastr  + ' ' + makeoptions[int1] else
+  str1:= str1 + ' ' + makeoptions[int1] ; 
    end;
   end;
   end;
+ 
  // str1:= str1 + ' ' + quotefilename(normalizename(removefileext(aname)+str4));
   if acompiler <> 3 then
-  str1:= str1 + ' ' + quotefilename(normalizename(removefileext(aname)+str4));
-  // writeln(str1);
+  str1:= trim(str1) + ' ' + quotefilename(normalizename(removefileext(aname)+str4))
+  else str1:= trim(str1) + ' ' + normalizename(aname);
  end;
+ str1:= trim(str1 + extrastr);
+// writeln(str1);
  result:= str1 ;
 end;
 

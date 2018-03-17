@@ -29,11 +29,11 @@ findinfiledialog=77
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
  history=8
@@ -69,8 +69,17 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=customrun
+ value=tbooleanedit
  history=20
+  tbooleanedit
+  customoption
+  customdomake
+  customcommandline
+  makeoptionsgrid
+  makeoptionson
+  make2on
+  makeon
+  makeoptpurpose
   customrun
   RunCustomCompil
   RunCustomCompiled
@@ -82,15 +91,6 @@ findinfiledialog=77
   mr_yes
   2017
   yesall
-  okall
-  lazarus
-  fpguidir
-  project_options
-  project_history
-  tordtype
-  ordtype
-  fpc_3_0
-  mef_forward
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -215,7 +215,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=788
  width0=47
@@ -739,7 +739,7 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=18
+modulenames=19
  ABOUT_FORM
  ACTIONSMO
  DEBUGGERFO
@@ -755,10 +755,11 @@ modulenames=18
  MAINFO
  FILEDIALOGFO
  FILEDIALOGRES
+ PROJECTOPTIONSFO
  REPLACEDIALOGFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=18
+moduletypes=19
  TABOUTFO
  TACTIONSMO
  TDEBUGGERFO
@@ -774,10 +775,11 @@ moduletypes=18
  TMAINFO
  TFILEDIALOGFO
  TFILEDIALOGRES
+ TPROJECTOPTIONSFO
  TREPLACEDIALOGFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=18
+modulefiles=19
  /home/fred/ideu/src/aboutform.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
@@ -793,17 +795,18 @@ modulefiles=18
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/replacedialogform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=10
- 2047
+ 4095
  0
  56
- 2045
+ 4093
  0
- 2047
+ 4095
  48
  0
  0
@@ -1127,12 +1130,12 @@ line=25
  3665
  644
  119
- 1074
- 2247
- 2164
- 2439
+ 1084
+ 2248
+ 2165
+ 2441
  640
- 3226
+ 3228
  119
  526
  439
@@ -1143,7 +1146,7 @@ line=25
  847
  86
  15
- 755
+ 761
 address=25
  4795942
  4826658
@@ -1372,8 +1375,17 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=commandcompiler
+finddtext=nocust
 findhistory=20
+ nocust
+ $10000
+ tbooleanedi
+ customoption
+ custommaker.create
+ fmaketag
+ makeoptionsgrid
+ makeon
+ makeoptpurpose
  commandcompiler
  getcommandline
  customcommandline
@@ -1385,17 +1397,8 @@ findhistory=20
  runwithoutdebugger
  customrun
  mr_all
- all
- assistiveflagsty
- dotabordertouche
- odatasetevent
- dogridbordertouched
- dodbvaluechanged
- dodeactivate
- dodataentered(cons
- 3.0
 findoptions=1
-editpos=69
+editpos=76
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1457,10 +1460,17 @@ editpos=69
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 42,547
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,11
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1534,7 +1544,14 @@ bookmarks65=0
 bookmarks66=0
 bookmarks67=0
 bookmarks68=0
-sourcefiles=69
+bookmarks69=0
+bookmarks70=0
+bookmarks71=0
+bookmarks72=0
+bookmarks73=0
+bookmarks74=0
+bookmarks75=0
+sourcefiles=76
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1596,7 +1613,7 @@ sourcefiles=69
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- /home/fred/ideu/src/make.pas
+ ${PROJECTDIR}/make.pas
  ${PROJECTDIR}/plugmanager.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1604,7 +1621,14 @@ sourcefiles=69
  ${PROJECTDIR}/plugmanager.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/make.pas
-relpaths=69
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+ /home/fred/ideu/src/make.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sak_mse.pas
+ /home/fred/msegui/lib/common/editwidgets/msegraphedits.pas
+relpaths=76
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1674,7 +1698,14 @@ relpaths=69
  plugmanager.pas
  actionsmodule.pas
  make.pas
-ismoduletexts=69
+ projectoptionsform.pas
+ projectoptionsform.pas
+ make.pas
+ main.pas
+ actionsmodule.pas
+ sak_mse.pas
+ msegui/lib/common/editwidgets/msegraphedits.pas
+ismoduletexts=76
  0
  0
  0
@@ -1744,7 +1775,14 @@ ismoduletexts=69
  0
  0
  0
-modules=18
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=19
  /home/fred/ideu/src/aboutform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
@@ -1763,7 +1801,8 @@ modules=18
  /home/fred/ideu/src/guitemplatesnew.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/replacedialogform.mfm
-moduleoptions=18
+ /home/fred/ideu/src/projectoptionsform.mfm
+moduleoptions=19
  0
  0
  0
@@ -1782,26 +1821,29 @@ moduleoptions=18
  0
  0
  0
-visiblemodules=18
  0
- -1
- -1
- -1
- -1
- 0
- 0
- -1
- 0
- -1
- -1
- 0
- 0
+visiblemodules=19
  0
  -1
  -1
  -1
  -1
-nomenumodules=18
+ 0
+ 0
+ -1
+ 0
+ -1
+ -1
+ 0
+ 0
+ 0
+ -1
+ -1
+ -1
+ -1
+ -1
+nomenumodules=19
+ 0
  0
  0
  0
@@ -1821,7 +1863,7 @@ nomenumodules=18
  0
  0
 [sourcefo.files_tab]
-order=69
+order=76
  0
  1
  2
@@ -1857,8 +1899,15 @@ order=69
  63
  62
  61
+ 69
+ 75
+ 71
+ 74
+ 72
+ 73
  59
  64
+ 70
  65
  68
  67
@@ -1892,9 +1941,9 @@ order=69
  41
  42
 firsttab=32
-index=34
+index=37
 [layout]
-windowlayout=840
+windowlayout=859
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1941,8 +1990,8 @@ windowlayout=840
  ny=0
  ncx=0
  ncy=0
- x=41
- y=340
+ x=454
+ y=136
  cx=497
  cy=314
  rcx=0
@@ -2026,7 +2075,7 @@ windowlayout=840
  ncy=0
  x=240
  y=114
- cx=678
+ cx=874
  cy=414
  rcx=0
  rcy=0
@@ -2053,8 +2102,8 @@ windowlayout=840
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=3
+ col=1
+ row=15
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2146,8 +2195,8 @@ windowlayout=840
  ny=0
  ncx=0
  ncy=0
- x=17
- y=166
+ x=972
+ y=208
  cx=316
  cy=484
  rcx=0
@@ -2366,7 +2415,7 @@ windowlayout=840
  nx=0
  ny=0
  ncx=1356
- ncy=62
+ ncy=70
  x=0
  y=0
  cx=1356
@@ -2382,6 +2431,28 @@ windowlayout=840
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/make.pas
  history=50
+  /home/fred/alsatest/alsadrop2.c
+  /home/fred/alsatest/alsadrop1.c
+  /home/fred/pcaudiolib_pas/src/uos_demo/uos_pcaudio.pas
+  /home/fred/strumpract/src/songplayer.pas
+  /home/fred/uos/examples/SimplePlayer_MSE.pas
+  /home/fred/uos/examples/mainmse_sp.pas
+  /home/fred/uos/examples/consoleplay.pas
+  /home/fred/pcaudiolib_pas/src/pcaudiosynth.pas
+  /usr/local/codetyphon/typhon/components/pl_TitanSound/source/tsd_tag_id3v2.pas
+  /home/fred/pcaudiolib_pas/src/pcaudio.pas
+  /home/fred/pcaudio/main.pas
+  /home/fred/msepcaudio/main.pas
+  /home/fred/msepcaudio/msepcaudio.pas
+  /home/fred/pcaudiolib-master/src/xaudio2.cpp
+  /home/fred/pcaudiolib-master/src/audio_priv.h
+  /home/fred/uos/examples/uos_mpg123.pas
+  /home/fred/uos/examples/uos_portaudio.pas
+  /home/fred/uos/examples/main_sp.lfm
+  /home/fred/uos/examples/fpc_ct.cfg
+  /home/fred/uoslibCT/src/fpcct_android.cfg
+  /home/fred/uos/examples/main_wf.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/strumpract/src/aboutform.pas
@@ -2389,7 +2460,6 @@ windowlayout=840
   /home/fred/strumpract/src/config.pas
   /home/fred/uos/examples/uoslib.pas
   /home/fred/uos/examples/uos_libsndfile.pas
-  /home/fred/uos/examples/consoleplay.pas
   /home/fred/uos/examples/uos.pas
   /home/fred/uoslib/src/uos_mpg123.pas
   /home/fred/uoslib/src/uos_libsndfile.pas
@@ -2397,7 +2467,6 @@ windowlayout=840
   /home/fred/uoslib/examples/demos/java/ReadMe.txt
   /home/fred/lib_namesh.inc
   /home/fred/msewidgets.pas
-  /home/fred/ideu/src/confideu.pas
   /home/fred/uoslib/src/uoslib.pas
   /home/fred/strumpract/src/define.inc
   /home/fred/strumpract/src/uos.pas
@@ -2411,27 +2480,7 @@ windowlayout=840
   /home/fred/uos/src/uos.pas
   /home/fred/uos/src/uos_aac.pas
   /home/fred/strumpract/src/strumpract.pas
-  /home/fred/uos/examples/SimplePlayer_MSE.pas
   /home/fred/uos/examples/consolebpmdetect.pas
-  /home/fred/strumpract/src/songplayer2.pas
-  /home/fred/strumpract/src/drums.pas
-  /home/fred/strumpract/src/infos.pas
-  /home/fred/uos/src/uos_soundtouch.pas
-  /home/fred/uos/examples/uos_soundtouch.pas
-  /home/fred/uos/examples/consoleplaymemorybuffer.pas
-  /home/fred/uos/examples/simpleplayer_fpGUI.pas
-  /home/fred/strumpract/src/filelistform.pas
-  /home/fred/strumpract/src/songplayer.pas
-  /home/fred/strumpract/src/commander.pas
-  /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/confmsegui.pas
-  /home/fred/ideu/src/conffpgui.pas
-  /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/confcompiler.pas
-  /home/fred/ideu/src/aboutform.pas
-  /home/fred/ideu_15_7_17/src/msedesigner.pas
-  /home/fred/Téléchargements/ideU-296c231f492dc77aa758c3f555e5d3e0a62c7a19/src/msedesigner.pas
-  /home/fred/ideu/src/msedesigner.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2719,7 +2768,7 @@ windowlayout=840
  [_mse_replacedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=targetconsolefo
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2730,6 +2779,25 @@ windowlayout=840
  y=302
  cx=437
  cy=163
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=150
+ y=24
+ cx=873
+ cy=709
  rcx=0
  rcy=0
  wsize=0

@@ -48,7 +48,6 @@ object projectoptionsfo: tprojectoptionsfo
   oncreate = createexe
   moduleclassname = 'tmseform'
   object tlayouter9: tlayouter
-    optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 863
@@ -58,7 +57,6 @@ object projectoptionsfo: tprojectoptionsfo
     place_maxdist = 0
     place_options = [plo_endmargin]
     object tlayouter8: tlayouter
-      optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
       color = -2147483645
       frame.framei_top = 5
       frame.framei_bottom = 5
@@ -137,10 +135,10 @@ object projectoptionsfo: tprojectoptionsfo
       tab_frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       tab_frame.localprops = [frl_framewidth, frl_hiddenedges, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
       tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive, frl1_captiondist]
-      tab_captionframe_left = 3
-      tab_captionframe_top = 3
-      tab_captionframe_right = 3
-      tab_captionframe_bottom = 3
+      tab_frametab.framei_left = 3
+      tab_frametab.framei_top = 3
+      tab_frametab.framei_right = 3
+      tab_frametab.framei_bottom = 3
       tab_frametab.frameimage_list = sourcefo.timagelist2
       tab_frametab.frameimage_left = -4
       tab_frametab.frameimage_right = -4
@@ -172,7 +170,6 @@ object projectoptionsfo: tprojectoptionsfo
         coloractivetab = 16776396
         reffontheight = 15
         object tlayouter13: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = 15262906
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -193,6 +190,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
             color = 15262906
             frame.caption = 'Test'
+            frame.captiontextflags = [tf_bottom]
             frame.captionpos = cp_topright
             frame.font.xscale = 1
             frame.font.localprops = [flp_xscale]
@@ -256,7 +254,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter12: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = 15262906
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -271,6 +268,7 @@ object projectoptionsfo: tprojectoptionsfo
             object editfontextraspace: tintegeredit
               color = 15262906
               frame.caption = 'ExtSp'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -286,13 +284,14 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 38
               bounds_cy = 39
               ondataentered = fontondataentered
-              min = -1000
-              max = 1000
+              valuemin = -1000
+              valuemax = 1000
               reffontheight = 15
             end
             object editfontwidth: tintegeredit
               color = 15262906
               frame.caption = 'Width'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -312,6 +311,7 @@ object projectoptionsfo: tprojectoptionsfo
             object editfontheight: tintegeredit
               color = 15262906
               frame.caption = 'Height'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -332,6 +332,7 @@ object projectoptionsfo: tprojectoptionsfo
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_destroywidgets]
               color = 15262906
               frame.caption = 'Font'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -351,6 +352,7 @@ object projectoptionsfo: tprojectoptionsfo
             object editfontcolor: tcoloredit
               color = 15262906
               frame.caption = 'Color'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = []
               frame.localprops1 = []
               frame.button.color = -2147483646
@@ -389,6 +391,7 @@ object projectoptionsfo: tprojectoptionsfo
             object editbkcolor: tcoloredit
               color = 15262906
               frame.caption = 'Bk. Color'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = []
               frame.localprops1 = []
               frame.button.color = -2147483646
@@ -445,7 +448,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter11: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = 15262906
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -458,7 +460,6 @@ object projectoptionsfo: tprojectoptionsfo
             optionslayout = [lao_aligny]
             align_glue = wam_start
             object tlayouter14: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 15262906
               bounds_x = 7
               bounds_y = 0
@@ -542,7 +543,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object tlayouter15: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 15262906
               taborder = 1
               bounds_x = 143
@@ -555,6 +555,7 @@ object projectoptionsfo: tprojectoptionsfo
               object encoding: tenumedit
                 color = 15262906
                 frame.caption = 'Encoding'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.button.color = -2147483646
@@ -590,6 +591,7 @@ object projectoptionsfo: tprojectoptionsfo
               object pairmarkcolor: tcoloredit
                 color = 15262906
                 frame.caption = 'Mark'#10'Color'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
                 frame.button.color = -2147483646
@@ -628,6 +630,7 @@ object projectoptionsfo: tprojectoptionsfo
               object statementcolor: tcoloredit
                 color = 15262906
                 frame.caption = 'Statement'#10'Color'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
                 frame.button.color = -2147483646
@@ -666,6 +669,7 @@ object projectoptionsfo: tprojectoptionsfo
               object scrollheight: tintegeredit
                 color = 15262906
                 frame.caption = 'Scroll'#10'Height'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
@@ -680,13 +684,14 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_y = 0
                 bounds_cx = 42
                 bounds_cy = 54
-                min = -1
-                max = 1000
+                valuemin = -1
+                valuemax = 1000
                 reffontheight = 15
               end
               object rightmarginchars: tintegeredit
                 color = 15262906
                 frame.caption = 'Num'#10'Charac.'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
@@ -703,13 +708,14 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 value = 80
-                min = 1
-                max = 100
+                valuemin = 1
+                valuemax = 100
                 reffontheight = 15
               end
               object eolstyle: tenumtypeedit
                 color = 15262906
                 frame.caption = 'EOL Style'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
                 frame.buttons.count = 1
@@ -728,8 +734,8 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_y = 15
                 bounds_cy = 39
                 value = 1
-                min = 0
-                max = 3
+                valuemin = 0
+                valuemax = 3
                 dropdown.cols.count = 1
                 dropdown.cols.items = <                
                   item
@@ -757,7 +763,6 @@ object projectoptionsfo: tprojectoptionsfo
             end
           end
           object tlayouter10: tlayouter
-            optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
             color = 15262906
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -771,6 +776,7 @@ object projectoptionsfo: tprojectoptionsfo
             align_glue = wam_start
             object backupfilecount: tintegeredit
               frame.caption = 'Backup File Count'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -785,7 +791,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 111
               bounds_cy = 39
               value = 2
-              max = 10
+              valuemax = 10
               reffontheight = 15
             end
             object spacetabs: tbooleanedit
@@ -806,6 +812,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object blockindent: tintegeredit
               frame.caption = 'Block Indent'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -822,8 +829,8 @@ object projectoptionsfo: tprojectoptionsfo
               optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
               optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
               value = 1
-              min = 1
-              max = 100
+              valuemin = 1
+              valuemax = 100
               reffontheight = 15
             end
             object autoindent: tbooleanedit
@@ -860,6 +867,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object tabstops: tintegeredit
               frame.caption = 'Tabstops'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -874,8 +882,8 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 56
               bounds_cy = 39
               value = 4
-              min = 1
-              max = 50
+              valuemin = 1
+              valuemax = 50
               reffontheight = 15
             end
             object showtabs: tbooleanedit
@@ -1113,6 +1121,7 @@ object projectoptionsfo: tprojectoptionsfo
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
               frame.options = [cfo_fixtop, cfo_fixbottom]
               frame.caption = 'Code template directories, file extension = .mct'
+              frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -1278,6 +1287,7 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.options = [cfo_fixtop]
           frame.caption = '&Default Debugger'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -1311,6 +1321,7 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.options = [cfo_fixtop]
           frame.caption = 'Debug &options'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -1772,6 +1783,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object sourcebase: tfilenameedit
               frame.caption = 'Object &Base Directory (empty = Make Directory)'
+              frame.captiontextflags = [tf_ycentered]
               frame.captionpos = cp_right
               frame.localprops = []
               frame.localprops1 = []
@@ -2023,7 +2035,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 19
                 optionsedit1 = [oe1_savevalue]
                 onsetvalue = signumonsetvalue
-                max = 255
+                valuemax = 255
                 reffontheight = 15
               end
               object signumto: tintegeredit
@@ -2037,7 +2049,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 19
                 optionsedit1 = [oe1_savevalue]
                 onsetvalue = signumtoonsetvalue
-                max = 255
+                valuemax = 255
                 reffontheight = 15
               end
               object signame: tselector
@@ -2181,7 +2193,6 @@ object projectoptionsfo: tprojectoptionsfo
             coloractivetab = 16776396
             reffontheight = 15
             object tlayouter2: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 13164225
               frame.framei_right = 2
               frame.localprops = [frl_firight]
@@ -2202,6 +2213,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command attach target'
+                frame.captiontextflags = [tf_bottom]
                 frame.captionoffset = 3
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2266,6 +2278,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object remoteconnection: tstringedit
               frame.caption = 'Target connection'
+              frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2286,7 +2299,6 @@ object projectoptionsfo: tprojectoptionsfo
               reffontheight = 15
             end
             object tlayouter4: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 13164225
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2303,6 +2315,7 @@ object projectoptionsfo: tprojectoptionsfo
               dist_top = 3
               object beforeconnect: tfilenameedit
                 frame.caption = 'Before connect gdb script'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.buttons.count = 1
@@ -2348,6 +2361,7 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object beforeload: tfilenameedit
                 frame.caption = 'Before load gdb script'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.buttons.count = 1
@@ -2395,6 +2409,7 @@ object projectoptionsfo: tprojectoptionsfo
               object beforerun: tfilenameedit
                 color = 13164225
                 frame.caption = 'Before run gdb script'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.buttons.count = 1
@@ -2430,7 +2445,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object tlayouter5: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 13164225
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2446,6 +2460,7 @@ object projectoptionsfo: tprojectoptionsfo
               dist_top = 3
               object afterconnect: tfilenameedit
                 frame.caption = 'After connect gdb script'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.buttons.count = 1
@@ -2491,6 +2506,7 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object afterload: tfilenameedit
                 frame.caption = 'After load gdb script'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.buttons.count = 1
@@ -2536,7 +2552,6 @@ object projectoptionsfo: tprojectoptionsfo
               end
             end
             object serverla: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 13164225
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2555,6 +2570,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command run target'
+                frame.captiontextflags = [tf_bottom]
                 frame.captionoffset = 3
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2585,6 +2601,7 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object gdbserverwait: trealedit
                 frame.caption = 'Wait before connect'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
@@ -2605,8 +2622,8 @@ object projectoptionsfo: tprojectoptionsfo
                 formatdisp = '0.#sec'
                 valuerange = 1
                 valuestart = 0
-                min = 0
-                max = 10
+                valuemin = 0
+                valuemax = 10
                 reffontheight = 15
               end
               object gdbserverstartonce: tbooleanedit
@@ -2630,6 +2647,7 @@ object projectoptionsfo: tprojectoptionsfo
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
               frame.options = [cfo_fixtop]
               frame.caption = 'Download command'
+              frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.font.name = 'stf_default'
               frame.font.xscale = 1
@@ -2662,7 +2680,6 @@ object projectoptionsfo: tprojectoptionsfo
               reffontheight = 15
             end
             object tlayouter3: tlayouter
-              optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
               color = 13164225
               frame.framei_left = 1
               frame.localprops = [frl_fileft, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
@@ -2683,6 +2700,7 @@ object projectoptionsfo: tprojectoptionsfo
               object gdbprocessor: tdropdownlistedit
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Processor'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.button.color = -2147483646
@@ -2774,6 +2792,7 @@ object projectoptionsfo: tprojectoptionsfo
               object startupbkpt: tintegeredit
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Startup BKPT'
+                frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
@@ -2787,7 +2806,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_y = 0
                 bounds_cy = 39
                 base = nb_hex
-                max = -1
+                valuemax = -1
                 reffontheight = 15
               end
               object startupbkpton: tbooleanedit
@@ -2802,6 +2821,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object gdbloadtimeout: trealedit
               frame.caption = 'Load Timeout'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -2822,14 +2842,13 @@ object projectoptionsfo: tprojectoptionsfo
               formatdisp = '0.#sec'
               valuerange = 1
               valuestart = 0
-              min = -Inf
-              max = 200
+              valuemin = -Inf
+              valuemax = 200
               reffontheight = 15
             end
           end
         end
         object tlayouter1: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -2993,6 +3012,7 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = 'Debug &target (empty = make targetfile)'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3037,6 +3057,7 @@ object projectoptionsfo: tprojectoptionsfo
         object xtermcommand: tmemodialogedit
           color = -2147483645
           frame.caption = 'xterm command'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
           frame.buttons.count = 1
@@ -3078,6 +3099,7 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = '&Run command (empty = start debugger)'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3126,6 +3148,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Default make col'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3177,6 +3200,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = '&Mainfile'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3210,6 +3234,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = '&Targetfile (without extension)'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3245,6 +3270,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Default &Compiler'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3293,6 +3319,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Message &output file'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -3397,10 +3424,12 @@ object projectoptionsfo: tprojectoptionsfo
           tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           tab_face.localprops = [fal_frameimageoffset]
           tab_color = -2147483645
-          tab_captionframe_left = 3
-          tab_captionframe_top = 3
-          tab_captionframe_right = 3
-          tab_captionframe_bottom = 3
+          tab_frametab.framei_left = 3
+          tab_frametab.framei_top = 3
+          tab_frametab.framei_right = 3
+          tab_frametab.framei_bottom = 3
+          tab_frametab.localprops = []
+          tab_frametab.localprops1 = []
           tab_size = 24
           statfile = statfile1
           reffontheight = 15
@@ -4120,11 +4149,15 @@ object projectoptionsfo: tprojectoptionsfo
               fixrows.items = <              
                 item
                   height = 18
-                  captions.count = 14
+                  captions.count = 15
                   captions.items = <                  
                     item
                       caption = 'Purpose'
                       hint = 'Purpose of the option'
+                    end                  
+                    item
+                      caption = 'Extra'
+                      hint = 'Extra option at end'
                     end                  
                     item
                       caption = 'M'
@@ -4179,7 +4212,7 @@ object projectoptionsfo: tprojectoptionsfo
                       hint = 'Options for compiler'
                     end>
                 end>
-              datacols.count = 14
+              datacols.count = 15
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[makeoptpurpose]
@@ -4188,6 +4221,12 @@ object projectoptionsfo: tprojectoptionsfo
                   widgetname = 'makeoptpurpose'
                   dataclass = tgridmsestringdatalist
                   datalist.facultative = True
+                end              
+                item[extraon]
+                  width = 35
+                  options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+                  widgetname = 'extraon'
+                  dataclass = tgridintegerdatalist
                 end              
                 item[makeon]
                   width = 13
@@ -4268,7 +4307,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[makeoptions]
-                  width = 542
+                  width = 506
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'makeoptions'
@@ -4306,7 +4345,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 1
                 optionsskin = [osk_framebuttononly]
                 taborder = 2
-                bounds_x = 146
+                bounds_x = 182
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4318,7 +4357,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 2
                 optionsskin = [osk_framebuttononly]
                 taborder = 3
-                bounds_x = 160
+                bounds_x = 196
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4330,7 +4369,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 4
                 optionsskin = [osk_framebuttononly]
                 taborder = 4
-                bounds_x = 174
+                bounds_x = 210
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4342,7 +4381,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 8
                 optionsskin = [osk_framebuttononly]
                 taborder = 5
-                bounds_x = 188
+                bounds_x = 224
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4354,7 +4393,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 16
                 optionsskin = [osk_framebuttononly]
                 taborder = 6
-                bounds_x = 202
+                bounds_x = 238
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4366,7 +4405,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 32
                 optionsskin = [osk_framebuttononly]
                 taborder = 7
-                bounds_x = 216
+                bounds_x = 252
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4378,7 +4417,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 64
                 optionsskin = [osk_framebuttononly]
                 taborder = 8
-                bounds_x = 230
+                bounds_x = 266
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4390,7 +4429,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 128
                 optionsskin = [osk_framebuttononly]
                 taborder = 9
-                bounds_x = 244
+                bounds_x = 280
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4402,7 +4441,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 256
                 optionsskin = [osk_framebuttononly]
                 taborder = 10
-                bounds_x = 258
+                bounds_x = 294
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4414,7 +4453,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 512
                 optionsskin = [osk_framebuttononly]
                 taborder = 11
-                bounds_x = 272
+                bounds_x = 308
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4426,7 +4465,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 1024
                 optionsskin = [osk_framebuttononly]
                 taborder = 12
-                bounds_x = 286
+                bounds_x = 322
                 bounds_y = 0
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -4438,8 +4477,21 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 2048
                 optionsskin = [osk_framebuttononly]
                 taborder = 13
-                bounds_x = 300
+                bounds_x = 336
                 bounds_y = 0
+                bounds_cy = 17
+                optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
+                visible = False
+                valuedefault = True
+              end
+              object extraon: tbooleanedit
+                Tag = 65536
+                optionsskin = [osk_framebuttononly]
+                taborder = 14
+                bounds_x = 146
+                bounds_y = 0
+                bounds_cx = 35
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
@@ -4461,12 +4513,12 @@ object projectoptionsfo: tprojectoptionsfo
                   end>
                 frame.button.color = -1879048187
                 frame.button.imagenr = 17
-                taborder = 14
+                taborder = 15
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 314
+                bounds_x = 350
                 bounds_y = 0
-                bounds_cx = 542
+                bounds_cx = 506
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4492,6 +4544,7 @@ object projectoptionsfo: tprojectoptionsfo
             object unitdirgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
               frame.caption = '       Make Options              Unit, Include, Library, Object                             &Directories '
+              frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -4937,6 +4990,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object unitpref: tstringedit
               frame.caption = 'Unit pref.(-Fu)'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -4955,6 +5009,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object incpref: tstringedit
               frame.caption = 'Inc pref.(-Fi)'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -4973,6 +5028,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object libpref: tstringedit
               frame.caption = 'Lib pref.(-Fl)'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -4991,6 +5047,7 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object objpref: tstringedit
               frame.caption = 'Obj pref. (-Fo)'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -5718,6 +5775,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make M Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5753,6 +5811,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make B Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5789,6 +5848,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 1 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5825,6 +5885,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 2 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5860,6 +5921,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 3 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5895,6 +5957,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 4 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5930,6 +5993,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 5 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -5965,6 +6029,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 6 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -6000,6 +6065,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 7 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -6035,6 +6101,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 8 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -6070,6 +6137,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 0 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -6105,6 +6173,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.framewidth = 1
               frame.colorclient = -2147483645
               frame.caption = 'Make 9 Comment: '
+              frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
@@ -6137,6 +6206,7 @@ object projectoptionsfo: tprojectoptionsfo
         object targpref: tstringedit
           color = -2147483645
           frame.caption = 'Targ. pref. (-o)'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           frame.outerframe = (
@@ -6158,6 +6228,7 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Make &Directory'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -6216,6 +6287,7 @@ object projectoptionsfo: tprojectoptionsfo
         object colorerror: tcoloredit
           color = -2147483645
           frame.caption = 'Error Color'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
           frame.button.options = [fbo_inactiveinvisible]
@@ -6247,6 +6319,7 @@ object projectoptionsfo: tprojectoptionsfo
         object colorwarning: tcoloredit
           color = -2147483645
           frame.caption = 'Warning Color'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
           frame.button.options = [fbo_inactiveinvisible]
@@ -6278,6 +6351,7 @@ object projectoptionsfo: tprojectoptionsfo
         object colornote: tcoloredit
           color = -2147483645
           frame.caption = 'Note Color'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
           frame.button.options = [fbo_inactiveinvisible]
@@ -6834,6 +6908,7 @@ object projectoptionsfo: tprojectoptionsfo
         object selectactivegroupgrid: twidgetgrid
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
           frame.caption = 'Active group'
+          frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -7122,8 +7197,8 @@ object projectoptionsfo: tprojectoptionsfo
             valuedefault = -Inf
             valuerange = 1
             valuestart = 0
-            min = 0
-            max = 1E+038
+            valuemin = 0
+            valuemax = 1E+038
             reffontheight = 15
           end
           object fontancestors: tstringedit
@@ -7157,6 +7232,7 @@ object projectoptionsfo: tprojectoptionsfo
         object tgroupbox1: tgroupbox
           optionswidget = [ow_mousetransparent, ow_destroywidgets]
           frame.caption = 'MSE Form Designer'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           frame.outerframe = (
@@ -7205,6 +7281,7 @@ object projectoptionsfo: tprojectoptionsfo
           end
           object gridsizey: tintegeredit
             frame.caption = 'Grid size Y'
+            frame.captiontextflags = [tf_bottom]
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             frame.outerframe = (
@@ -7219,12 +7296,13 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 64
             bounds_cy = 39
             value = 8
-            min = 1
-            max = 1000
+            valuemin = 1
+            valuemax = 1000
             reffontheight = 15
           end
           object gridsizex: tintegeredit
             frame.caption = 'Grid size X'
+            frame.captiontextflags = [tf_bottom]
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             frame.outerframe = (
@@ -7239,11 +7317,12 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 65
             bounds_cy = 39
             value = 8
-            min = 1
-            max = 1000
+            valuemin = 1
+            valuemax = 1000
             reffontheight = 15
             object tintegeredit2: tintegeredit
               frame.caption = 'Grid size X'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
@@ -7315,6 +7394,7 @@ object projectoptionsfo: tprojectoptionsfo
         object tgroupbox2: tgroupbox
           optionswidget = [ow_mousetransparent, ow_destroywidgets]
           frame.caption = 'fpGUI Form Designer'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           frame.outerframe = (
@@ -7362,7 +7442,6 @@ object projectoptionsfo: tprojectoptionsfo
         caption = ' User &Colors '
         coloractivetab = 16776396
         object tlayouter7: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           color = -2147483645
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
@@ -7771,6 +7850,7 @@ object projectoptionsfo: tprojectoptionsfo
             object scriptbeforecopy: tfilenameedit
               optionsskin = [osk_framebuttononly]
               frame.caption = 'Script before copy'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_levelo, frl_colorclient]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.buttons.count = 1
@@ -7800,6 +7880,7 @@ object projectoptionsfo: tprojectoptionsfo
             object scriptaftercopy: tfilenameedit
               optionsskin = [osk_framebuttononly]
               frame.caption = 'Script after copy'
+              frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_levelo, frl_colorclient]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.buttons.count = 1
@@ -8444,8 +8525,8 @@ object projectoptionsfo: tprojectoptionsfo
             dropdown.cols.linewidth = 1
             dropdown.cols.items = <            
               item
-                width = 70
                 options = [co_readonly, co_mousemovefocus, co_focusselect, co_rowselect]
+                width = 70
                 linewidth = 1
                 caption = 'Item'
                 data = (
@@ -8462,8 +8543,8 @@ object projectoptionsfo: tprojectoptionsfo
                 )
               end            
               item
-                width = 70
                 options = [co_readonly, co_mousemovefocus, co_focusselect, co_rowselect]
+                width = 70
                 linewidth = 1
                 caption = 'Shortcut'
                 data = (
@@ -8480,8 +8561,8 @@ object projectoptionsfo: tprojectoptionsfo
                 )
               end            
               item
-                width = 70
                 options = [co_readonly, co_mousemovefocus, co_focusselect, co_rowselect]
+                width = 70
                 linewidth = 1
                 caption = 'Alternate'
                 data = (
@@ -8497,7 +8578,7 @@ object projectoptionsfo: tprojectoptionsfo
                   ''
                 )
               end>
-            max = 9
+            valuemax = 9
             onbeforedropdown = toolshortcutdropdown
             reffontheight = 15
           end
@@ -8635,7 +8716,6 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 17
         end
         object tlayouter6: tlayouter
-          optionswidget = [ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           frame.framei_left = 5
           frame.framei_top = 5
           frame.framei_right = 5
@@ -8682,6 +8762,7 @@ object projectoptionsfo: tprojectoptionsfo
           object settingsfile: tfilenameedit
             optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
             frame.caption = 'Settings File'
+            frame.captiontextflags = [tf_ycentered]
             frame.captionpos = cp_right
             frame.localprops = []
             frame.localprops1 = []
@@ -8788,6 +8869,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_comment: tmemoedit
           frame.colorclient = 16773078
           frame.caption = 'Comment'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.sbhorz.pagesize = 1
@@ -8808,6 +8890,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_creator: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'Name of Creator'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
@@ -8827,6 +8910,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_copyright: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'Copyright'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
@@ -8846,6 +8930,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_license: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'License'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
@@ -8865,6 +8950,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_name: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'Full Name of Project'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (
@@ -8884,6 +8970,7 @@ object projectoptionsfo: tprojectoptionsfo
         object project_date: tstringedit
           frame.colorclient = 16773078
           frame.caption = 'Date of Creation'
+          frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
           frame.outerframe = (

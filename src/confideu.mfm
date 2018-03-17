@@ -95,6 +95,7 @@ object confideufo: tconfideufo
   end
   object group_file_changed: tgroupbox
     frame.caption = 'When a file has changed from outside...'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
@@ -158,6 +159,7 @@ object confideufo: tconfideufo
   end
   object group_assistive: tgroupbox
     frame.caption = 'sak voice assistive config'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
@@ -191,6 +193,7 @@ object confideufo: tconfideufo
       Tag = 3
       frame.colorclient = 14876625
       frame.caption = 'Parent directory of sakit'
+      frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
       frame.buttons.count = 1
@@ -221,6 +224,7 @@ object confideufo: tconfideufo
   end
   object group_system_layout: tgroupbox
     frame.caption = 'System layout'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (

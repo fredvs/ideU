@@ -24,6 +24,7 @@ object confmseguifo: tconfmseguifo
   object msedir: tfilenameedit
     Tag = 2
     frame.caption = '${MSEDIR}'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -55,6 +56,7 @@ object confmseguifo: tconfmseguifo
   object mselibdir: tfilenameedit
     Tag = 3
     frame.caption = '${MSELIBDIR}'
+    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.buttons.count = 1
