@@ -1159,11 +1159,13 @@ begin
   repeatfind.enabled:= projectoptions.targetconsolefindinfo.text <> ''
  end
  else begin
-  find.enabled:= (sourcefo.activepage <> nil) and 
-        sourcefo.activepage.activeentered;
+  find.enabled:= (sourcefo.activepage <> nil) ;
+ // and sourcefo.activepage.activeentered;
   repeatfind.enabled:= find.enabled and 
            (projectoptions.findreplaceinfo.find.text <> '');
  end;
+// find.enabled:= true;
+ // repeatfind.enabled:=  (projectoptions.findreplaceinfo.find.text <> '');
 end;
 
 procedure tactionsmo.findcompexe(const sender: TObject);

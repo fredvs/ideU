@@ -2335,13 +2335,14 @@ end;
    delete.enabled:= false;
    indent.enabled:= false;
    unindent.enabled:= false;
-   line.enabled:= false;
+   line.enabled:= true;
    togglebkpt.enabled:= false;
    togglebkptenable.enabled:= false;
-    copyword.enabled:= false;
-//   find.enabled:= false;
+  
 //   actionsmo.repeatfind.enabled:= false;
-   replace.enabled:= false;
+  // replace.enabled:= false;
+    replace.enabled:= true;
+     copyword.enabled:= true;
   end;
   if (factivedesignmodule <> nil) then begin
    save.enabled:= factivedesignmodule^.modified;
