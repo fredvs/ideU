@@ -1468,16 +1468,16 @@ editpos=79
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,6
+ 0,-1073741823
+ 0,-1073741823
  26,2334
- 0,1164
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1635,7 +1635,7 @@ sourcefiles=79
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/editwidgets/msegraphedits.pas
  ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/main.pas
+ /home/fred/ideu/src/main.pas
  ${PROJECTDIR}/actionsmodule.pas
 relpaths=79
  main.pas
@@ -2084,7 +2084,7 @@ windowlayout=809
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2206,7 +2206,7 @@ windowlayout=809
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2221,7 +2221,7 @@ windowlayout=809
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=424
  width0=253
@@ -2603,7 +2603,7 @@ windowlayout=809
  [_mse_confmseguifo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_settings_form_mse_
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2622,7 +2622,7 @@ windowlayout=809
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=805388411
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_settings_form_mse_
  parent=
  mdistate=0
  nx=0
@@ -2755,7 +2755,7 @@ windowlayout=809
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
