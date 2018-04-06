@@ -418,6 +418,7 @@ type
    fcopymessages: boolean;
    fcheckmethods: boolean;
    fclosemessages: boolean;
+   fenablepurpose: boolean;
    fusercolors: colorarty;
    fusercolorcomment: msestringarty;
    fformatmacronames: msestringarty;
@@ -512,6 +513,8 @@ type
                                              write fstripmessageesc;
    property copymessages: boolean read fcopymessages write fcopymessages;
    property closemessages: boolean read fclosemessages write fclosemessages;
+   property enablepurpose: boolean read fenablepurpose write fenablepurpose;
+
    property checkmethods: boolean read fcheckmethods write fcheckmethods;
    property colorerror: colorty read fcolorerror write fcolorerror;
    property colorwarning: colorty read fcolorwarning write fcolorwarning;
@@ -1018,6 +1021,7 @@ type
    trimtrailingwhitespace: tbooleanedit;
    
    showconsole: tbooleanedit;
+   enablepurpose: tbooleanedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1067,6 +1071,9 @@ type
    procedure bracketbkcolhint(const sender: TObject; var info: hintinfoty);
    procedure initeolstyleexe(const sender: tenumtypeedit);
  
+   procedure onshowpurpose(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
+   procedure oncreatedexe(const sender: TObject);
   private
    procedure activegroupchanged;
  end;
@@ -2322,6 +2329,7 @@ fo.project_date.value := o.project_date else
 fo.project_date.value := timetostr(now) + ' ' + datetostr(now);
 
 fo.project_comment.value := o.project_comment;
+
  
  /// fred exe ext
  
@@ -2469,6 +2477,9 @@ fo.project_comment.value := o.project_comment;
   fo.settingsdataent(nil);
   
  end;
+   if fo.enablepurpose.value = true then fo.makeoptionsgrid.datacols[0].visible  := true else
+ 
+  fo.makeoptionsgrid.datacols[0].visible  := false ;
 end;
 
 procedure storemacros(fo: tprojectoptionsfo);
@@ -2642,6 +2653,8 @@ begin
   e.t.filemasks:= fo.filefiltergrid[1].datalist.asarray;
  end;
  expandprojectmacros;
+ 
+ 
 end;
 
 procedure projectoptionschanged;
@@ -3223,7 +3236,7 @@ begin
    stream1.free;
    expandprojectmacros;
   end;
- end;
+  end;
 end;
 
 procedure tprojectoptionsfo.loadexe(const sender: TObject);
@@ -3370,6 +3383,23 @@ end;
 procedure tprojectoptionsfo.initeolstyleexe(const sender: tenumtypeedit);
 begin
  sender.typeinfopo:= typeinfo(eolstylety);
+end;
+
+procedure tprojectoptionsfo.onshowpurpose(const sender: TObject;
+               var avalue: Boolean; var accept: Boolean);
+begin
+// if avalue then makeoptpurpose.visible := true else makeoptpurpose.visible := false;
+ 
+ if avalue then makeoptionsgrid.datacols[0].visible  := true else
+ 
+  makeoptionsgrid.datacols[0].visible  := false ;
+ 
+         //   datacols.items   item[makeoptpurpose]
+end;
+
+procedure tprojectoptionsfo.oncreatedexe(const sender: TObject);
+begin
+ 
 end;
 
 { tprojectoptions }

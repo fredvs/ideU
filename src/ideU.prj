@@ -69,8 +69,9 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=line.e
+ value=closemess
  history=20
+  closemess
   line.e
   replace.e
   tbooleanedit
@@ -90,7 +91,6 @@ findinfiledialog=77
   wine
   autofocus_menu
   mr_all
-  mr_yes
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1131,11 +1131,11 @@ line=25
  644
  119
  1084
- 2248
- 2165
- 2441
+ 2255
+ 2172
+ 2448
  640
- 3228
+ 3235
  119
  526
  439
@@ -1375,8 +1375,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=replace
+finddtext=purpose
 findhistory=20
+ purpose
  replace
  nocust
  $10000
@@ -1396,9 +1397,8 @@ findhistory=20
  setupcustom
  RunCustomCompiled
  runwithoutdebugger
- customrun
 findoptions=1
-editpos=79
+editpos=81
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1468,16 +1468,18 @@ editpos=79
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2655
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 26,2334
- 0,-1073741823
+ 0,6
+ 0,2334
+ 0,0
+ 0,3380
+ 0,9
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1557,7 +1559,9 @@ bookmarks75=0
 bookmarks76=0
 bookmarks77=0
 bookmarks78=0
-sourcefiles=79
+bookmarks79=0
+bookmarks80=0
+sourcefiles=81
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1635,9 +1639,11 @@ sourcefiles=79
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/editwidgets/msegraphedits.pas
  ${PROJECTDIR}/commandorform.pas
- /home/fred/ideu/src/main.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=79
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/aboutform.pas
+relpaths=81
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1717,7 +1723,11 @@ relpaths=79
  commandorform.pas
  main.pas
  actionsmodule.pas
-ismoduletexts=79
+ projectoptionsform.pas
+ aboutform.pas
+ismoduletexts=81
+ 0
+ 0
  0
  0
  0
@@ -1838,7 +1848,7 @@ moduleoptions=19
  0
  0
 visiblemodules=19
- 0
+ -1
  -1
  -1
  -1
@@ -1878,7 +1888,7 @@ nomenumodules=19
  0
  0
 [sourcefo.files_tab]
-order=79
+order=81
  0
  1
  2
@@ -1917,6 +1927,8 @@ order=79
  69
  76
  77
+ 79
+ 80
  78
  75
  71
@@ -1958,10 +1970,10 @@ order=79
  40
  41
  42
-firsttab=32
-index=37
+firsttab=34
+index=36
 [layout]
-windowlayout=809
+windowlayout=790
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1975,7 +1987,7 @@ windowlayout=809
  x=0
  y=0
  cx=1147
- cy=604
+ cy=605
  rcx=0
  rcy=0
  [mainfo]
@@ -1987,14 +1999,14 @@ windowlayout=809
  ny=0
  ncx=0
  ncy=0
- x=39
- y=24
+ x=67
+ y=112
  cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1147,604
+  basedock,0,0,1147,605
  focusedchild=0
  wsize=0
  active=1
@@ -2084,7 +2096,7 @@ windowlayout=809
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2110,7 +2122,7 @@ windowlayout=809
  x=0
  y=0
  cx=205
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2120,9 +2132,9 @@ windowlayout=809
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=6
- rowheight=17
+ col=1
+ row=7
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -2206,22 +2218,22 @@ windowlayout=809
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=342
- y=67
+ x=858
+ y=47
  cx=434
  cy=484
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [objectinspectorfo.grid]
  propcolwidthref=424
  width0=253
@@ -2319,7 +2331,7 @@ windowlayout=809
  ncx=0
  ncy=0
  x=0
- y=512
+ y=513
  cx=1147
  cy=92
  rcx=0
@@ -2447,7 +2459,7 @@ windowlayout=809
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/projectoptionsform.mfm
  history=0
  [debuggerfo.project_options]
  value=1
@@ -2466,14 +2478,14 @@ windowlayout=809
  x=208
  y=0
  cx=939
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_about_form_mse_
+ stackedunder=_mse_confcompilerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2502,13 +2514,13 @@ windowlayout=809
  x=0
  y=54
  cx=1147
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [_mse_about_form_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_confcompilerfo_mse_
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -2523,7 +2535,7 @@ windowlayout=809
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=805322875
@@ -2736,7 +2748,7 @@ windowlayout=809
  [_mse_replacedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=_mse_about_form_mse_
  parent=
  mdistate=3
  nx=0
@@ -2747,25 +2759,6 @@ windowlayout=809
  y=302
  cx=437
  cy=163
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=150
- y=24
- cx=873
- cy=709
  rcx=0
  rcy=0
  wsize=0
