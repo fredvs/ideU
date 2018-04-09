@@ -80,7 +80,7 @@ type
    procedure checkexcept(const sender: TObject);
    procedure irqoffset(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
-   procedure afterla(const sender: tlayouter);
+   procedure afterla(const sender: tcustomlayouter);
   private
    fgmbefore: boolean;
   protected
@@ -280,7 +280,7 @@ begin
  end;
 end;
 
-procedure tcpuavr32fo.afterla(const sender: tlayouter);
+procedure tcpuavr32fo.afterla(const sender: tcustomlayouter);
 begin
  aligny(wam_center,[exceptstack,irqoff]);
 end;

@@ -4152,8 +4152,8 @@ object projectoptionsfo: tprojectoptionsfo
                   captions.count = 15
                   captions.items = <                  
                     item
-                      caption = 'Purpose'
-                      hint = 'Purpose of the option'
+                      caption = 'Purpose/Comment'
+                      hint = 'Purpose or/and comment of the option'
                     end                  
                     item
                       caption = 'M'
@@ -6410,8 +6410,8 @@ object projectoptionsfo: tprojectoptionsfo
           )
           taborder = 18
           hint = ' Show console ouput on run '
-          bounds_x = 350
-          bounds_y = 157
+          bounds_x = 381
+          bounds_y = 136
           bounds_cx = 146
           bounds_cy = 16
         end
@@ -6427,9 +6427,9 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 19
-          hint = 'Show/hide Purpose field in Make options'
-          bounds_x = 350
-          bounds_y = 134
+          hint = 'Show/hide Purpose/Comment field in Make options'
+          bounds_x = 352
+          bounds_y = 159
           bounds_cx = 228
           bounds_cy = 16
           statfile = mainfo.projectstatfile

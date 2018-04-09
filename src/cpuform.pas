@@ -51,6 +51,7 @@ type
    procedure updatereadstatvalues; virtual;
    procedure updatewritestatvalues; virtual;
    procedure updatelayout(const dsender: twidget); override;
+   procedure updateregisternames() virtual;
   public
    constructor create(aowner: tcomponent); override;
    procedure refresh; virtual;
@@ -107,6 +108,7 @@ begin
    end;
   end;
  end;
+ cpufo.fregisternames:= nil;
 end;
 
 { tcpufo }
@@ -124,6 +126,7 @@ begin
   if mainfo.gdb.listregisternames(fregisternames) <> gdb_ok then begin
    exit;
   end;
+  updateregisternames();
   fedits:= nil;
   setlength(fedits,length(fregisternames));
   for int1:= 0 to high(fregisternames) do begin
@@ -297,7 +300,7 @@ begin
   if fflagswidget64 <> nil then begin
    ca1:= fflagswidget64.value;
    for int1:= 0 to 31 do begin
-    ed1:= on.tagitem(int1);
+    ed1:= flagedit(int1);
     if (ed1 <> nil) then begin
      bo1:= bits[int1] and ca1 <> 0;
      if ed1.value <> bo1 then begin
@@ -352,6 +355,11 @@ procedure tcpufo.updatelayout(const dsender: twidget);
 begin
  aligny(wam_center,[stoptime,on]);
  inherited;
+end;
+
+procedure tcpufo.updateregisternames();
+begin
+ //dummy
 end;
 
 procedure tcpufo.asynceventexe(const sender: TObject; var atag: Integer);

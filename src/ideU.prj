@@ -166,7 +166,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=16
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -188,7 +188,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=200
+ y=201
  xprop=1
  yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
@@ -664,6 +664,7 @@ forcezorder=0
 stripmessageesc=0
 copymessages=0
 closemessages=0
+enablepurpose=1
 checkmethods=1
 colorerror=-1610612717
 colorwarning=-1610612712
@@ -1460,6 +1461,7 @@ editpos=81
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 20,9
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1468,18 +1470,17 @@ editpos=81
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2655
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,6
- 0,2334
- 0,0
- 0,3380
- 0,9
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1971,9 +1972,9 @@ order=81
  41
  42
 firsttab=34
-index=36
+index=34
 [layout]
-windowlayout=790
+windowlayout=809
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1999,8 +2000,8 @@ windowlayout=790
  ny=0
  ncx=0
  ncy=0
- x=67
- y=112
+ x=61
+ y=44
  cx=1157
  cy=621
  rcx=0
@@ -2096,7 +2097,7 @@ windowlayout=790
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2225,15 +2226,15 @@ windowlayout=790
  ny=0
  ncx=0
  ncy=0
- x=858
- y=47
+ x=806
+ y=30
  cx=434
  cy=484
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=424
  width0=253
@@ -2459,7 +2460,7 @@ windowlayout=790
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.mfm
+ value=/home/fred/ideu/src/make.pas
  history=0
  [debuggerfo.project_options]
  value=1
@@ -2520,7 +2521,7 @@ windowlayout=790
  [_mse_about_form_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=findinfilefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2672,7 +2673,7 @@ windowlayout=790
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2748,7 +2749,7 @@ windowlayout=790
  [_mse_replacedialogfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_about_form_mse_
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2759,6 +2760,25 @@ windowlayout=790
  y=302
  cx=437
  cy=163
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=198
+ y=27
+ cx=873
+ cy=706
  rcx=0
  rcy=0
  wsize=0

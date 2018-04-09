@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.9.1';
+ versiontext = '1.9.2';
  idecaption = 'ideU';
  statname = 'ideu';
 
