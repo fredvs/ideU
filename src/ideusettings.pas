@@ -32,13 +32,13 @@ const
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                 '','','','${MSEDIR}lib\common\','${IDEUDIR}syntaxdefs\',
                 '${IDEUDIR}templates\','${IDEUDIR}layout\','${MSEDIR}apps\mse\compstore\',
-                'ppcx64.exe','gdb.exe','.exe','x86_64-win64','windows','','','${IDEUDIR}docview\','','');
+                'ppcx64.exe','gdb.exe','.exe','x86_64-win64','windows','','','${IDEUDIR}docview\','','', '');
  {$else}
  
  defaultsettingmacros: array[settingsmacroty] of msestring = (
                 '','','','${MSEDIR}lib\common\','${IDEUDIR}syntaxdefs\',
                 '${IDEUDIR}templates\','${IDEUDIR}layout\','${MSEDIR}apps\mse\compstore\',
-                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview\','','');
+                'ppc386.exe','gdb.exe','.exe','i386-win32','windows','','','${IDEUDIR}docview\','','', '');
  
  {$endif}
   
