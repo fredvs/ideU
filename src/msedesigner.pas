@@ -5169,7 +5169,7 @@ begin
    end;
    if modified and (result <> mr_noall) and 
      (noconfirm or 
-      (result = mr_yesall) or
+      (result = mr_all) or
       not fallsaved and confirmsavechangedfile(filename,result,true)) then begin
     if not saveformfile(po1,filename,createdatafile) then begin
      result:= mr_cancel;

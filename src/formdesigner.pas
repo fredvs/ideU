@@ -3924,7 +3924,7 @@ begin
   updatecursorshape(shiftstate1,fmovearea);
  end;
  if eventkind = ek_keypress then begin
-  with info do begin
+   with info do begin
    if shiftstate1 = [] then begin
     include(eventstate,es_processed);
     case key of
@@ -3934,7 +3934,7 @@ begin
       end;
      end;
      key_escape: begin
-      if not (actarea in [ar_none,ar_component]) then begin
+        if not (actarea in [ar_none,ar_component]) then begin
        hidexorpic(getcanvas(org_widget));
        fxorpicactive:= false;
        actarea:= ar_none;
@@ -3958,11 +3958,12 @@ begin
           actareabefore:= actarea;
           if (comp1 <> nil) and (comp1 <> self) then begin
            if fselections.count > 1 then begin
-            selectparentwidget(twidget(comp1));
+          selectparentwidget(twidget(comp1));
            end
            else begin
-            selectcomponent(comp1);
-           end;
+           selectcomponent(comp1);
+           activate; // fred added
+            end;
           end
           else begin
            selectcomponent(module);

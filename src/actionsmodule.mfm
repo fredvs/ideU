@@ -1,8 +1,8 @@
 object actionsmo: tactionsmo
   bounds_cx = 956
   bounds_cy = 472
-  left = 272
-  top = 261
+  left = 255
+  top = 143
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
@@ -3721,8 +3721,8 @@ object actionsmo: tactionsmo
   object copylatexact: taction
     caption = ' Copy &LaTeX '
     onexecute = copylatexactonexecute
-    left = 360
-    top = 56
+    left = 402
+    top = 387
     sc = (
       2
       16459
