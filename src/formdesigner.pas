@@ -3962,7 +3962,7 @@ begin
            end
            else begin
            selectcomponent(comp1);
-           activate; // fred added
+           //activate; // fred added
             end;
           end
           else begin

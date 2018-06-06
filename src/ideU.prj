@@ -1331,8 +1331,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=writeln
+finddtext=Tmainfo.SelectionChanged
 findhistory=20
+ Tmainfo.SelectionChanged
+ fred
  writeln
  issamefilename
  issamefilename(items[int1].filename,afilename
@@ -1351,8 +1353,6 @@ findhistory=20
  getcommandline
  customcommandline
  custommaker
- customdomake
- customcompile
 findoptions=1
 editpos=91
  0,-1073741823
@@ -1440,12 +1440,12 @@ editpos=91
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,3963
+ 0,3966
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
+ 0,1246
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1927,9 +1927,9 @@ order=91
  88
  90
 firsttab=81
-index=88
+index=90
 [layout]
-windowlayout=595
+windowlayout=582
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1965,7 +1965,7 @@ windowlayout=595
   basedock,0,0,1350,692
  focusedchild=0
  wsize=6
- active=0
+ active=1
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -2033,7 +2033,7 @@ windowlayout=595
  [disassfo]
  splitdir=0
  useroptions=805322859
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2052,7 +2052,7 @@ windowlayout=595
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2174,7 +2174,7 @@ windowlayout=595
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=mainfo
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2189,7 +2189,7 @@ windowlayout=595
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
  width0=136
@@ -2199,7 +2199,7 @@ windowlayout=595
  [symbolfo]
  splitdir=0
  useroptions=805322875
- stackedunder=disassfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2295,7 +2295,7 @@ windowlayout=595
  [componentstorefo]
  splitdir=0
  useroptions=805331067
- stackedunder=symbolfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2358,7 +2358,7 @@ windowlayout=595
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2415,8 +2415,8 @@ windowlayout=595
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/formdesigner.pas
- history=33
+ value=/home/fred/ideu/src/main.pas
+ history=20
   /home/fred/ideu/src/formdesigner.pas
   /home/fred/msegui/apps/ide/formdesigner.pas
   /home/fred/msegui/apps/ide/msedesignparser.pas
@@ -2437,19 +2437,6 @@ windowlayout=595
   /home/fred/strumpract/src/dockpanel1.pas
   /home/fred/strumpract/src/filelistform.pas
   /home/fred/strumpract/src/pannel1.pas
-  /home/fred/strumpract/src/panel1.pas
-  /home/fred/strumpract/src/main.pas
-  /home/fred/strumpract/src/spectrum1.pas
-  /home/fred/strumpract/src/config.pas
-  /home/fred/uos_filter/main_spectrum_mse.pas
-  /home/fred/uos/examples/consoleplay.pas
-  /home/fred/uos_filter/uos.pas
-  /home/fred/uos_filter/define.inc
-  /home/fred/uos_filter/formspectrum_unit.pas
-  /home/fred/uos_filter/formspectrum_mse.pas
-  /home/fred/strumpract/src/define.inc
-  /home/fred/uosok/examples/main_mi.pas
-  /home/fred/strumpract/src/recorder.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2474,7 +2461,7 @@ windowlayout=595
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentstorefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2509,7 +2496,7 @@ windowlayout=595
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=objectinspectorfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
