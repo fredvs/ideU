@@ -1331,8 +1331,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=Tmainfo.SelectionChanged
+finddtext=if issamefilename(items[int1].fil
 findhistory=20
+ if issamefilename(items[int1].fil
+ result:= dofind1(aunitname+'.pp');
+ if filedialog(aname,[fdo_checkexist],c[ord(selectprogramfile)],
+ if filedialog(str1,[fdo_save,fdo_checkexist],c[ord(newform)],
  Tmainfo.SelectionChanged
  fred
  writeln
@@ -1349,12 +1353,8 @@ findhistory=20
  makeoptionsgrid
  makeon
  makeoptpurpose
- commandcompiler
- getcommandline
- customcommandline
- custommaker
 findoptions=1
-editpos=91
+editpos=93
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1440,12 +1440,14 @@ editpos=91
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,3966
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1246
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,864
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1537,7 +1539,9 @@ bookmarks87=0
 bookmarks88=0
 bookmarks89=0
 bookmarks90=0
-sourcefiles=91
+bookmarks91=0
+bookmarks92=0
+sourcefiles=93
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1629,7 +1633,9 @@ sourcefiles=91
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/main.pas
-relpaths=91
+ ${PROJECTDIR}/sourceupdate.pas
+ /home/fred/ideu/src/sourceform.pas
+relpaths=93
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1721,7 +1727,9 @@ relpaths=91
  actionsmodule.pas
  msedesigner.pas
  main.pas
-ismoduletexts=91
+ sourceupdate.pas
+ sourceform.pas
+ismoduletexts=93
  0
  0
  0
@@ -1809,6 +1817,8 @@ ismoduletexts=91
  -1
  0
  -1
+ 0
+ 0
  0
  0
  0
@@ -1827,14 +1837,14 @@ visiblemodules=4
  -1
  -1
  -1
- 0
+ -1
 nomenumodules=4
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=91
+order=93
  0
  1
  2
@@ -1926,10 +1936,12 @@ order=91
  85
  88
  90
+ 91
+ 92
 firsttab=81
-index=90
+index=92
 [layout]
-windowlayout=582
+windowlayout=563
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1942,8 +1954,8 @@ windowlayout=582
  ncy=0
  x=0
  y=0
- cx=1350
- cy=692
+ cx=1147
+ cy=605
  rcx=0
  rcy=0
  [mainfo]
@@ -1955,16 +1967,16 @@ windowlayout=582
  ny=0
  ncx=0
  ncy=0
- x=102
- y=63
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1350,692
+  basedock,0,0,1147,605
  focusedchild=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1976,15 +1988,15 @@ windowlayout=582
  ny=0
  ncx=0
  ncy=0
- x=813
- y=154
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -2078,18 +2090,18 @@ windowlayout=582
  x=0
  y=0
  cx=205
- cy=523
+ cy=456
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=27
- width0=178
+ propcolwidthref=88
+ width0=117
  sortdescend0=0
- width1=21
+ width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=10
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2174,7 +2186,7 @@ windowlayout=582
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=_mse_formdesignerfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2287,9 +2299,9 @@ windowlayout=582
  ncx=0
  ncy=0
  x=0
- y=587
- cx=1350
- cy=105
+ y=513
+ cx=1147
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2388,8 +2400,8 @@ windowlayout=582
  ncy=0
  x=0
  y=0
- cx=1350
- cy=58
+ cx=1147
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2400,12 +2412,12 @@ windowlayout=582
  mdistate=0
  nx=0
  ny=0
- ncx=1350
- ncy=61
+ ncx=1147
+ ncy=54
  x=0
  y=0
- cx=1350
- cy=61
+ cx=1147
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2415,28 +2427,9 @@ windowlayout=582
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=20
-  /home/fred/ideu/src/formdesigner.pas
-  /home/fred/msegui/apps/ide/formdesigner.pas
-  /home/fred/msegui/apps/ide/msedesignparser.pas
-  /home/fred/msegui/apps/ide/msedesigner.pas
-  /home/fred/sak/sak/sak_mse/examples/main.pas
-  /home/fred/msemem/main2.pas
-  /home/fred/Téléchargements/msemem/msemem.pas
-  /home/fred/Téléchargements/msemem/main.pas
-  /home/fred/strumpract/src/msefiledialog.pas
-  /home/fred/strumpract/src/dialogfiles.pas
-  /home/fred/strumpract/src/songplayer.pas
-  /home/fred/strumpract/src/strumpract.pas
-  /home/fred/strumpract/src/songplayer2.pas
-  /home/fred/strumpract/src/commander.pas
-  /home/fred/msemem/msemem.pas
-  /home/fred/msemem/main.pas
-  /home/fred/msescrolltest/main.pas
-  /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/filelistform.pas
-  /home/fred/strumpract/src/pannel1.pas
+ value=/home/fred/ideu/src/sourceform.pas
+ history=1
+  /home/fred/ideu/src/sourceform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2453,15 +2446,15 @@ windowlayout=582
  ncy=0
  x=208
  y=0
- cx=1142
- cy=523
+ cx=939
+ cy=456
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2488,15 +2481,15 @@ windowlayout=582
  ncx=0
  ncy=0
  x=0
- y=61
- cx=1350
- cy=523
+ y=54
+ cx=1147
+ cy=456
  rcx=0
  rcy=0
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0

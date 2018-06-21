@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.9.2';
+ versiontext = '1.9.3';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -2819,7 +2819,7 @@ begin
  str1:= '';
  if filedialog(str1,[fdo_save,fdo_checkexist],c[ord(newform)],
                                              [c[ord(pascalfiles)]],
-                              ['"*.pas" "*.pp"'],'pas') = mr_ok then begin
+                              ['"*.pas" "*.pp" "*.mla"'],'pas') = mr_ok then begin
   with projectoptions.o.texp do begin
    str4:= newfonamebases[tmenuitem(sender).tag];
    str2:= newfosources[tmenuitem(sender).tag];
@@ -3145,7 +3145,7 @@ begin
    aname:= '';
    if filedialog(aname,[fdo_checkexist],c[ord(selectprogramfile)],
             [c[ord(pascalprogfiles)],c[ord(cfiles)],c[ord(str_allfiles)]],
-            ['"*.pas" "*.pp" "*.dpr" "*.lpr"','"*.c" "*.cc" "*.cpp"','*'],
+            ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"','"*.c" "*.cc" "*.cpp"','*'],
             'pas') = mr_ok then begin
     setcurrentdirmse(filedir(aname));
     with projectoptions do begin
