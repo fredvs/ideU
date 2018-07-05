@@ -69,8 +69,9 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=closemess
+ value=tagpointer
  history=20
+  tagpointer
   closemess
   line.e
   replace.e
@@ -90,7 +91,6 @@ findinfiledialog=77
   linux
   wine
   autofocus_menu
-  mr_all
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -740,20 +740,26 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
+ COMPONENTPALETTEFO
  FORMDESIGNERFO
  MAINFO
+ PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=4
+moduletypes=6
  TACTIONSMO
+ TCOMPONENTPALETTEFO
  TFORMDESIGNERFO
  TMAINFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=4
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/componentpaletteform.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=10
@@ -1354,7 +1360,7 @@ findhistory=20
  makeon
  makeoptpurpose
 findoptions=1
-editpos=93
+editpos=96
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1447,7 +1453,10 @@ editpos=93
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,864
+ 0,856
+ 0,128
+ 0,2873
+ 40,2107
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1541,7 +1550,10 @@ bookmarks89=0
 bookmarks90=0
 bookmarks91=0
 bookmarks92=0
-sourcefiles=93
+bookmarks93=0
+bookmarks94=0
+bookmarks95=0
+sourcefiles=96
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1634,8 +1646,11 @@ sourcefiles=93
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceupdate.pas
- /home/fred/ideu/src/sourceform.pas
-relpaths=93
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/componentpaletteform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+relpaths=96
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1729,7 +1744,10 @@ relpaths=93
  main.pas
  sourceupdate.pas
  sourceform.pas
-ismoduletexts=93
+ componentpaletteform.pas
+ main.pas
+ projectoptionsform.pas
+ismoduletexts=96
  0
  0
  0
@@ -1823,28 +1841,39 @@ ismoduletexts=93
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/componentpaletteform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=93
+order=96
  0
  1
  2
@@ -1938,10 +1967,13 @@ order=93
  90
  91
  92
+ 93
+ 94
+ 95
 firsttab=81
-index=92
+index=95
 [layout]
-windowlayout=563
+windowlayout=601
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -2064,7 +2096,7 @@ windowlayout=563
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2427,7 +2459,7 @@ windowlayout=563
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
  history=1
   /home/fred/ideu/src/sourceform.pas
  [debuggerfo.project_options]
@@ -2454,7 +2486,7 @@ windowlayout=563
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_formdesignerfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2489,7 +2521,7 @@ windowlayout=563
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2500,6 +2532,44 @@ windowlayout=563
  y=277
  cx=297
  cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_componentpalettefo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=findinfilefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=131
+ y=289
+ cx=748
+ cy=69
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=198
+ y=27
+ cx=873
+ cy=706
  rcx=0
  rcy=0
  wsize=0
