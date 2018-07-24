@@ -166,7 +166,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -188,7 +188,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=201
+ y=200
  xprop=1
  yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
@@ -740,27 +740,33 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=8
  ACTIONSMO
  COMPONENTPALETTEFO
+ DISASSFO
  FORMDESIGNERFO
  MAINFO
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=6
+ SOURCEPAGE
+moduletypes=8
  TACTIONSMO
  TCOMPONENTPALETTEFO
+ TDISASSFO
  TFORMDESIGNERFO
  TMAINFO
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=6
+ TSOURCEPAGE
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
+ /home/fred/ideu/src/disassform.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=10
  4095
@@ -1360,7 +1366,7 @@ findhistory=20
  makeon
  makeoptpurpose
 findoptions=1
-editpos=96
+editpos=99
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1448,15 +1454,18 @@ editpos=96
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,12
+ 0,2
  0,-1073741823
  0,-1073741823
- 0,856
- 0,128
- 0,2873
- 40,2107
+ 0,2078
+ 0,103
+ 0,15
+ 0,80
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1553,7 +1562,10 @@ bookmarks92=0
 bookmarks93=0
 bookmarks94=0
 bookmarks95=0
-sourcefiles=96
+bookmarks96=0
+bookmarks97=0
+bookmarks98=0
+sourcefiles=99
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/msefiledialogres.pas
@@ -1650,7 +1662,10 @@ sourcefiles=96
  ${PROJECTDIR}/componentpaletteform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=96
+ ${PROJECTDIR}/disassform.pas
+ ${PROJECTDIR}/sourcepage.pas
+ ${PROJECTDIR}/ideU.pas
+relpaths=99
  main.pas
  msefiledialog.pas
  msefiledialogres.pas
@@ -1747,7 +1762,10 @@ relpaths=96
  componentpaletteform.pas
  main.pas
  projectoptionsform.pas
-ismoduletexts=96
+ disassform.pas
+ sourcepage.pas
+ ideU.pas
+ismoduletexts=99
  0
  0
  0
@@ -1844,28 +1862,39 @@ ismoduletexts=96
  0
  0
  0
-modules=6
+ 0
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=6
+ /home/fred/ideu/src/disassform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=8
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+ 0
+visiblemodules=8
  -1
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
+ -1
+ -1
+nomenumodules=8
+ 0
+ 0
  0
  0
  0
@@ -1873,7 +1902,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=96
+order=99
  0
  1
  2
@@ -1967,13 +1996,16 @@ order=96
  90
  91
  92
+ 97
  93
  94
  95
-firsttab=81
-index=95
+ 96
+ 98
+firsttab=91
+index=97
 [layout]
-windowlayout=601
+windowlayout=642
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1986,8 +2018,8 @@ windowlayout=601
  ncy=0
  x=0
  y=0
- cx=1147
- cy=605
+ cx=1356
+ cy=695
  rcx=0
  rcy=0
  [mainfo]
@@ -2006,9 +2038,9 @@ windowlayout=601
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1147,605
+  basedock,0,0,1356,695
  focusedchild=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -2028,7 +2060,7 @@ windowlayout=601
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=805322857
@@ -2096,7 +2128,7 @@ windowlayout=601
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2122,7 +2154,7 @@ windowlayout=601
  x=0
  y=0
  cx=205
- cy=456
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2134,7 +2166,7 @@ windowlayout=601
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -2218,7 +2250,7 @@ windowlayout=601
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=_mse_disassfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2233,12 +2265,12 @@ windowlayout=601
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=136
+ propcolwidthref=291
+ width0=129
  sortdescend0=0
- width1=164
+ width1=156
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2331,9 +2363,9 @@ windowlayout=601
  ncx=0
  ncy=0
  x=0
- y=513
- cx=1147
- cy=92
+ y=589
+ cx=1356
+ cy=106
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2432,8 +2464,8 @@ windowlayout=601
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1356
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2448,8 +2480,8 @@ windowlayout=601
  ncy=54
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1356
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2459,9 +2491,12 @@ windowlayout=601
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
- history=1
-  /home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/disassform.pas
+ history=4
+  /home/fred/t_linux.pas
+  /lib/crti.o
+  /usr/local/codetyphon/fpcsrc/compiler/systems/i_linux.pas
+  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2478,15 +2513,15 @@ windowlayout=601
  ncy=0
  x=208
  y=0
- cx=939
- cy=456
+ cx=1148
+ cy=524
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=threadsfo
  parent=
  mdistate=0
  nx=0
@@ -2513,15 +2548,15 @@ windowlayout=601
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=456
+ y=62
+ cx=1356
+ cy=524
  rcx=0
  rcy=0
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2540,7 +2575,7 @@ windowlayout=601
  [_mse_componentpalettefo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=findinfilefo
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2559,7 +2594,7 @@ windowlayout=601
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=805322875
- stackedunder=mainfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2570,6 +2605,44 @@ windowlayout=601
  y=27
  cx=873
  cy=706
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_disassfo_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=162
+ y=502
+ cx=574
+ cy=210
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=805322875
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=282
+ y=150
+ cx=600
+ cy=241
  rcx=0
  rcy=0
  wsize=0

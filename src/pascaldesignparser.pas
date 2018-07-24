@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2017 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2018 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ type
     function parseinterfacetype: boolean;
     function parserecord: boolean;
     function parseobject: boolean;
-    function parseprocparams(const akind: tmethodkind;
+    function parseprocparams(const akind: methodkindty;
                 var aflags: methodflagsty; var params: paraminfoarty;
                                 const acceptnameonly: boolean): boolean;
     function parseclassprocedureheader(atoken: pascalidentty;
@@ -350,7 +350,7 @@ begin
  end;
 end;
 
-function tpascaldesignparser.parseprocparams(const akind: tmethodkind;
+function tpascaldesignparser.parseprocparams(const akind: methodkindty;
                             var aflags: methodflagsty;
                             var params: paraminfoarty;
                             const acceptnameonly: boolean): boolean;
@@ -389,7 +389,7 @@ begin
  params:= nil;
  result:= false;
  if checkoperator(';') then begin
-  if not (akind in [mkfunction,mkclassfunction]) or acceptnameonly then begin
+  if not (akind in [mk_function,mk_classfunction]) or acceptnameonly then begin
    result:= true;   //no params
   end;
  end
@@ -461,7 +461,7 @@ begin
    result:= true;
   end;
   if result then begin
-   if (akind in [mkfunction,mkclassfunction]) then begin
+   if (akind in [mk_function,mk_classfunction]) then begin
     if checkoperator(':') then begin
      setlength(params,length(params)+1);
      with params[high(params)] do begin
@@ -500,10 +500,11 @@ begin
   skipwhitespace;
   intstartpos:= sourcepos;
   case atoken of
-   pid_function: params.kind:= mkfunction;
-   pid_constructor: params.kind:= mkconstructor;
-   pid_destructor: params.kind:= mkdestructor;
-   else params.kind:= mkprocedure;
+   pid_function: params.kind:= mk_function;
+   pid_method: params.kind:= mk_method;
+   pid_constructor: params.kind:= mk_constructor;
+   pid_destructor: params.kind:= mk_destructor;
+   else params.kind:= mk_procedure;
   end;
   name:= getorigname;
   result:= not checkoperator('.'); //interface proc definition?
@@ -531,7 +532,8 @@ begin
  if bo1 then begin
   if getident(int1) then begin
    atoken:= pascalidentty(int1);
-   if  not ((atoken = pid_function) or (atoken = pid_procedure)) then begin
+   if  not ((atoken = pid_function) or (atoken = pid_procedure) or
+            (atoken = pid_method)) then begin
     lasttoken;
     exit;
    end;
@@ -585,11 +587,11 @@ var
  flags1: methodflagsty;
 begin
  case atoken of
-  pid_procedure: begin
-   result:= parseprocparams(mkprocedure,flags1,ar1,false);
+  pid_procedure,pid_method: begin
+   result:= parseprocparams(mk_procedure,flags1,ar1,false);
   end;
   pid_function: begin
-   result:= parseprocparams(mkfunction,flags1,ar1,false);
+   result:= parseprocparams(mk_function,flags1,ar1,false);
   end
   else begin
    result:= false;
@@ -632,7 +634,7 @@ begin
     pid_implementation: begin
      break;
     end;
-    pid_procedure,pid_function: begin
+    pid_procedure,pid_function,pid_method: begin
      skipprocedureheader(ident1);
     end;
     else begin
@@ -728,7 +730,8 @@ begin
          break;
         end;
        end;
-       pid_class,pid_procedure,pid_function,pid_constructor,pid_destructor: begin
+       pid_class,pid_procedure,pid_method,pid_function,
+                 pid_constructor,pid_destructor: begin
         if isemptysourcepos(privatefieldend) and 
                      not isemptysourcepos(privatestart) and 
                      isemptysourcepos(privateend) then begin
@@ -868,7 +871,7 @@ begin
     inc(blocklevel);
     nexttoken;
    end;
-   pid_procedure,pid_function: begin
+   pid_procedure,pid_method,pid_function: begin
     skipprocedureheader(ident1);
    end;
    else begin
@@ -886,7 +889,8 @@ begin
   skipwhitespace;
   ident1:= pascalidentty(getident);
   case ident1 of
-   pid_type,pid_const,pid_var,pid_implementation,pid_function,pid_procedure,
+   pid_type,pid_const,pid_var,pid_implementation,pid_function,
+               pid_procedure,pid_method,
                     pid_constructor,pid_destructor,pid_begin: begin
     lasttoken;
     break;
@@ -912,7 +916,8 @@ begin
   statementstart:= acttoken;
   ident1:= pascalidentty(getident);
   case ident1 of
-   pid_label,pid_const,pid_var,pid_implementation,pid_function,pid_procedure,
+   pid_label,pid_const,pid_var,pid_implementation,pid_function,
+               pid_procedure,pid_method,
                     pid_constructor,pid_destructor,pid_begin: begin
     lasttoken;
     break;
@@ -958,7 +963,7 @@ begin
        funitinfopo^.deflist.add(lstringtostring(lstr1),syk_typedef,
                   getsourcepos(statementstart),sourcepos);
       end;
-      pid_procedure,pid_function: begin
+      pid_procedure,pid_method,pid_function: begin
        if skipprocedureparams(ident1) then begin
         if checkident(ord(pid_of)) then begin
          checkident(ord(pid_object));
@@ -1142,7 +1147,7 @@ procedure tpascaldesignparser.parseimplementation;
 var
  procnestinglevel: integer;
  
- procedure parseprocedure(const akind: tmethodkind);
+ procedure parseprocedure(const akind: methodkindty);
  var
   classname,procname: lstringty;
   po1: pclassinfoty;
@@ -1274,11 +1279,11 @@ var
         pid_label: begin
          parselabel;
         end;
-        pid_procedure: begin
-         parseprocedure(mkprocedure);
+        pid_procedure,pid_method: begin
+         parseprocedure(mk_procedure);
         end;
         pid_function: begin
-         parseprocedure(mkfunction);
+         parseprocedure(mk_function);
         end;
         pid_begin: begin
          parseprocedurebody;
@@ -1331,17 +1336,17 @@ begin
  while not eof do begin
   if getident(aident) then begin;
    case pascalidentty(aident) of
-    pid_procedure: begin
-     parseprocedure(mkprocedure);
+    pid_procedure,pid_method: begin
+     parseprocedure(mk_procedure);
     end;
     pid_function: begin
-     parseprocedure(mkfunction);
+     parseprocedure(mk_function);
     end;
     pid_constructor: begin
-     parseprocedure(mkconstructor);
+     parseprocedure(mk_constructor);
     end;
     pid_destructor: begin
-     parseprocedure(mkdestructor);
+     parseprocedure(mk_destructor);
     end;
     pid_type: begin
      parsetype;
@@ -1429,7 +1434,7 @@ begin
      pid_var: begin
       parsevar;
      end;
-     pid_procedure,pid_function: begin
+     pid_procedure,pid_method,pid_function: begin
       po1:= p.procedurelist.newitem;
       if parseprocedureheader(pascalidentty(int1),po1) then begin
        deflist.add(pos1,sourcepos,po1);
