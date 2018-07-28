@@ -405,8 +405,12 @@ object sourcefo: tsourcefo
       item
         action = actionsmo.close
         caption = ' &Close File '
-        state = [as_localcaption]
+        state = [as_localcaption, as_localshortcut]
         options = [mao_shortcutcaption, mao_asyncexecute]
+        sc = (
+          1
+          16465
+        )
       end    
       item
         action = actionsmo.save
