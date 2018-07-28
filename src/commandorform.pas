@@ -82,7 +82,7 @@ var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, confdebugger, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
+ commandorform_mfm, targetconsole, confdebugger, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
 begin
@@ -232,12 +232,14 @@ procedure tdebuggerfo.onterminalon(const sender: TObject);
 begin
 if terminal_run.tag = 0 then
 begin
+targetconsolefo.activate;
 projectoptions.d.showconsole := true;
 terminal_run.tag := 1 ;
 terminal_run.imagenr := 34 ;
  end 
  else
  begin
+  targetconsolefo.visible := false;
   projectoptions.d.showconsole := false;
   terminal_run.tag := 0;
   terminal_run.imagenr := 33 ;

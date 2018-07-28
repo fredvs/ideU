@@ -3,9 +3,9 @@ object settings_form: tsettingsfo
   color = 14342874
   visible = False
   bounds_x = 422
-  bounds_y = 127
+  bounds_y = 61
   bounds_cx = 471
-  bounds_cy = 489
+  bounds_cy = 538
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -14,7 +14,7 @@ object settings_form: tsettingsfo
     0
     0
     471
-    489
+    538
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
@@ -74,6 +74,7 @@ object settings_form: tsettingsfo
     FDFBF6EBB3360000000000000000000000125BA2D0E7EDEDE6CE9F5710000000
     00000000
   }
+  windowopacity = -Inf
   oncreate = formoncreate
   onshow = checkdirlayout
   moduleclassname = 'tmseform'
@@ -83,7 +84,7 @@ object settings_form: tsettingsfo
     bounds_x = 4
     bounds_y = 6
     bounds_cx = 460
-    bounds_cy = 479
+    bounds_cy = 528
     activepageindex = 0
     tab_fontactivetab.style = [fs_bold]
     tab_fontactivetab.name = 'stf_default'
@@ -111,7 +112,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 460
-      bounds_cy = 459
+      bounds_cy = 508
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '  &Path  '
       reffontheight = 15
@@ -136,8 +137,8 @@ object settings_form: tsettingsfo
         )
         taborder = 9
         hint = 'Directory for layout files.'
-        bounds_x = 6
-        bounds_y = 410
+        bounds_x = 7
+        bounds_y = 458
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -177,8 +178,8 @@ object settings_form: tsettingsfo
         )
         taborder = 8
         hint = 'Directory for syntax definition files.'
-        bounds_x = 6
-        bounds_y = 328
+        bounds_x = 7
+        bounds_y = 376
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -218,8 +219,8 @@ object settings_form: tsettingsfo
         )
         taborder = 7
         hint = 'Directory for project template files.'
-        bounds_x = 6
-        bounds_y = 370
+        bounds_x = 7
+        bounds_y = 418
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -259,8 +260,8 @@ object settings_form: tsettingsfo
         )
         taborder = 6
         hint = 'Root directory of DocView'
-        bounds_x = 6
-        bounds_y = 249
+        bounds_x = 7
+        bounds_y = 297
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -291,8 +292,8 @@ object settings_form: tsettingsfo
         )
         taborder = 5
         hint = 'Root directory of fpGUI'
-        bounds_x = 6
-        bounds_y = 210
+        bounds_x = 7
+        bounds_y = 258
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -326,8 +327,8 @@ object settings_form: tsettingsfo
         )
         taborder = 4
         hint = 'Directory for component store files.'
-        bounds_x = 6
-        bounds_y = 167
+        bounds_x = 7
+        bounds_y = 215
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -367,8 +368,8 @@ object settings_form: tsettingsfo
         )
         taborder = 3
         hint = 'Root directory of msegui library.'
-        bounds_x = 6
-        bounds_y = 127
+        bounds_x = 7
+        bounds_y = 175
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -402,8 +403,8 @@ object settings_form: tsettingsfo
         )
         taborder = 2
         hint = 'Root directory of msegui.'
-        bounds_x = 6
-        bounds_y = 88
+        bounds_x = 7
+        bounds_y = 136
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -437,7 +438,7 @@ object settings_form: tsettingsfo
         )
         taborder = 1
         hint = 'Path to debugger (gdb).'
-        bounds_x = 6
+        bounds_x = 7
         bounds_y = 49
         bounds_cx = 449
         bounds_cy = 39
@@ -468,7 +469,7 @@ object settings_form: tsettingsfo
           0
         )
         hint = 'Path to compiler'
-        bounds_x = 6
+        bounds_x = 7
         bounds_y = 6
         bounds_cx = 449
         bounds_cy = 39
@@ -503,8 +504,8 @@ object settings_form: tsettingsfo
         )
         taborder = 10
         hint = 'Root directory of Lazarus or Typhon'
-        bounds_x = 6
-        bounds_y = 287
+        bounds_x = 7
+        bounds_y = 335
         bounds_cx = 449
         bounds_cy = 39
         anchors = [an_left, an_top, an_right]
@@ -512,6 +513,41 @@ object settings_form: tsettingsfo
         controller.lastdir = '/usr/local/share/fpgui/'
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'fpGUI library directory'
+        controller.ongetfilename = epandfilenamemacro
+        reffontheight = 15
+      end
+      object fpcsrcdir: tfilenameedit
+        Tag = 8
+        frame.colorclient = 13423871
+        frame.caption = '${FPCSRCDIR} Path of FPC source'
+        frame.captiontextflags = [tf_bottom]
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 11
+        hint = 'Path to fpc source code '
+        bounds_x = 7
+        bounds_y = 93
+        bounds_cx = 449
+        bounds_cy = 39
+        anchors = [an_left, an_top, an_right]
+        value = '/usr/share/fpcsrc/'
+        onsetvalue = setvalue
+        controller.filename = '/usr/share/fpcsrc/'
+        controller.lastdir = '/usr/share/fpcsrc/'
+        controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
+        controller.captionopen = 'FPC source path'
         controller.ongetfilename = epandfilenamemacro
         reffontheight = 15
       end
@@ -525,7 +561,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 460
-      bounds_cy = 459
+      bounds_cy = 508
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '  &Macros  '
       reffontheight = 15
@@ -637,7 +673,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 460
-      bounds_cy = 459
+      bounds_cy = 508
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '  &Shortcut  '
       reffontheight = 15
@@ -663,7 +699,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 460
-      bounds_cy = 459
+      bounds_cy = 508
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '   O&ther   '
       reffontheight = 15

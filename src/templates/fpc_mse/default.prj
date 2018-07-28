@@ -37,7 +37,7 @@ options=114
  sortdescend5=0
  width6=343
  sortdescend6=0
- width7=58
+ width7=59
  sortdescend7=0
  width8=1
  sortdescend8=0
@@ -57,7 +57,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
@@ -79,9 +79,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=175
+ y=174
  xprop=1
- yprop=0.34296724470135
+ yprop=0.34235976789168
  [projectoptionsfo.macrogrid]
  propcolwidthref=596
  sortdescend0=0
@@ -127,7 +127,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=251
@@ -581,7 +581,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=4
+sourcedirs=8
+ ${FPCSRCDIR}/
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/*/
+ ${FPCSRCDIR}/*/*/*/
  ${MSEDIR}lib/addon/*/
  ${MSEDIR}lib/common/kernel/$TARGETOSDIR/
  ${MSEDIR}lib/common/*/
@@ -698,7 +702,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=543
+windowlayout=544
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -859,7 +863,7 @@ windowlayout=543
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -1185,7 +1189,8 @@ windowlayout=543
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=1
+  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]

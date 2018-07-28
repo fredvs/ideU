@@ -17,6 +17,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_mse
+projectfilename=/home/fred/ideu/src/templates/fpc_mse/console.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -77,9 +79,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=127
+ y=126
  xprop=1
- yprop=0.2504816955684
+ yprop=0.2495164410058
  [projectoptionsfo.macrogrid]
  propcolwidthref=493
  sortdescend0=0
@@ -104,7 +106,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=722
  width0=47
@@ -113,7 +115,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=1
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=630
  width0=112
@@ -123,9 +125,9 @@ options=114
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
- [projectoptionsfo.tabwidget]
+ [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=151
@@ -288,6 +290,7 @@ forcezorder=0
 stripmessageesc=0
 copymessages=0
 closemessages=1
+enablepurpose=0
 checkmethods=1
 colorerror=-1610612717
 colorwarning=-1610612712
@@ -533,6 +536,7 @@ editmarkpairwords=1
 fpgdesigner=1
 backupfilecount=2
 encoding=1
+eolstyle=1
 trimtrailingwhitespace=0
 codetemplatedirs=1
  ${TEMPLATEDIR}
@@ -552,7 +556,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=4
+sourcedirs=8
+ ${FPCSRCDIR}/
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/*/
+ ${FPCSRCDIR}/*/*/*/
  ${MSEDIR}lib/addon/*/
  ${MSEDIR}lib/common/kernel/$TARGETOSDIR/
  ${MSEDIR}lib/common/*/
@@ -627,15 +635,15 @@ panels=1
  panel1
 units=
  (
- a=0,4133,6,Pascal Units
+ a=0,8229,6,Pascal Units
  )
 cmodules=
  (
- a=0,4132,6,C Modules
+ a=0,8228,6,C Modules
  )
 files=
  (
- a=0,4132,6,Text Files
+ a=0,8228,6,Text Files
  )
 [componentstore]
 storedir=/home/fred/msegui/apps/ide/compstore/
@@ -666,11 +674,10 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-tabsize=60
 firsttab=0
 index=-1
 [layout]
-windowlayout=530
+windowlayout=547
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -683,8 +690,8 @@ windowlayout=530
  ncy=0
  x=0
  y=0
- cx=930
- cy=585
+ cx=1147
+ cy=604
  rcx=0
  rcy=0
  [mainfo]
@@ -696,14 +703,14 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=240
- y=61
- cx=940
+ x=125
+ y=46
+ cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,930,585
+  basedock,0,0,1147,604
  focusedchild=0
  wsize=0
  active=1
@@ -735,10 +742,10 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=360
- y=278
- cx=357
- cy=108
+ x=444
+ y=431
+ cx=418
+ cy=126
  rcx=0
  rcy=0
  wsize=0
@@ -747,7 +754,7 @@ windowlayout=530
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=cpuc86_64fo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -808,32 +815,29 @@ windowlayout=530
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=268484715
- stackedunder=mainfo
- parent=
- mdistate=3
+ useroptions=805355627
+ parent=mainfo.panel1.container
+ visible=1
+ mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=39
- y=191
- cx=190
- cy=366
+ x=0
+ y=0
+ cx=205
+ cy=455
  rcx=0
  rcy=0
- wsize=0
- active=0
- visible=1
- [projecttreefo.project_tree]
- propcolwidthref=39
- width0=141
+ [projecttreefo.grid]
+ propcolwidthref=88
+ width0=117
  sortdescend0=0
- width1=33
+ width1=82
  sortdescend1=0
  sorted=0
  col=1
- row=0
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -844,10 +848,10 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=306
- y=285
- cx=399
- cy=129
+ x=423
+ y=321
+ cx=344
+ cy=155
  rcx=0
  rcy=0
  wsize=0
@@ -921,8 +925,8 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=670
- y=179
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -932,9 +936,9 @@ windowlayout=530
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=73
+ width0=136
  sortdescend0=0
- width1=227
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -957,7 +961,11 @@ windowlayout=530
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -994,7 +1002,7 @@ windowlayout=530
  rcx=1262
  rcy=583
  [watchfo.grid]
- propcolwidthref=121
+ propcolwidthref=111
  values0=2
   -1
   -1
@@ -1022,7 +1030,7 @@ windowlayout=530
  value=1
  [messagefo]
  splitdir=0
- useroptions=82027
+ useroptions=805388395
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1031,9 +1039,9 @@ windowlayout=530
  ncx=0
  ncy=0
  x=0
- y=487
- cx=930
- cy=98
+ y=512
+ cx=1147
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1102,22 +1110,25 @@ windowlayout=530
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- parent=mainfo.basedock
- visible=1
- mdistate=0
+ stackedunder=mainfo
+ parent=
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=0
- y=53
- cx=930
- cy=58
+ x=240
+ y=139
+ cx=956
+ cy=77
  rcx=0
  rcy=0
+ wsize=0
+ active=0
+ visible=0
  [componentpalettefo.componentpages]
  activetab=0
- [commandor]
+ [debuggerfo]
  splitdir=0
  useroptions=24683
  parent=mainfo.basedock
@@ -1129,26 +1140,39 @@ windowlayout=530
  ncy=0
  x=0
  y=0
- cx=930
- cy=50
+ cx=1147
+ cy=51
  rcx=0
  rcy=0
- [commandor.basedock]
+ [debuggerfo.basedock]
  splitdir=2
- useroptions=146563
- parent=commandor.container
+ useroptions=805452931
+ parent=debuggerfo.container
  visible=1
  mdistate=0
  nx=0
- ny=52
- ncx=930
- ncy=0
+ ny=0
+ ncx=1111
+ ncy=52
  x=0
- y=52
- cx=930
- cy=0
+ y=0
+ cx=1147
+ cy=54
  rcx=0
  rcy=0
+ [debuggerfo.edit_options]
+ value=X
+ [debuggerfo.edit_compilernum]
+ value=0
+ [debuggerfo.edit_compiler]
+ value=Pascal
+ [debuggerfo.file_history]
+ value=/home/fred/ideu/src/confmsegui.pas
+ history=0
+ [debuggerfo.project_options]
+ value=1
+ [debuggerfo.hints]
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -1159,17 +1183,17 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=0
+ x=208
  y=0
- cx=930
- cy=370
+ cx=939
+ cy=455
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1187,7 +1211,7 @@ windowlayout=530
  visible=0
  [mainfo.panel1]
  splitdir=1
- useroptions=805404139
+ useroptions=838958571
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1196,9 +1220,9 @@ windowlayout=530
  ncx=0
  ncy=0
  x=0
- y=114
- cx=930
- cy=370
+ y=54
+ cx=1147
+ cy=455
  rcx=0
  rcy=0
 [targetconsole]
