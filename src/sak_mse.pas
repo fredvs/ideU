@@ -97,6 +97,7 @@ type
   TheMenuInfo: menucellinfoarty;
   TheMenuIndex : integer;
   TheItemInfo: shapeinfoarty;
+  TheMenuItemInfo : menucellinfoarty;
 
   TheWord: msestring;  // use F11 key in memo
   TheSentence: msestring;   // use F10 key in memo
@@ -180,6 +181,7 @@ type
     procedure ontimerenter(const Sender: TObject);
     procedure ontimeritementer(const Sender: TObject);
     procedure ontimeritementer2(const Sender: TObject);
+    procedure ontimeritemmenuenter(const Sender: TObject);
     procedure ontimerchange(const Sender: TObject);
     procedure ontimerfocuschange(const Sender: TObject);
     procedure ontimergreeting(const sender: TObject);
@@ -1096,8 +1098,19 @@ procedure TSAK.dodataentered(const sender: iassistiveclientdata);
   
  procedure TSAK.doitementer(const sender: iassistiveclientmenu;//sender can be nil
                         const items: menucellinfoarty; const aindex: integer);
-  
  begin
+   if (assigned(Sender)) then
+ if (WhatName(Sender, false) <> '') and  (isblock = false) then
+  begin
+    thetimer.Enabled := False; 
+    TheSender := Sender;
+    TheMenuItemInfo := items;
+    TheMenuIndex := aindex;
+    thetimer.interval := 900000;
+    thetimer.ontimer := @ontimeritemmenuenter;
+    thetimer.Enabled := True;
+    itementer:= true; if (assigned(Sender)) then
+end;
   end;
   
 procedure TSAK.dodeactivate(const sender: iassistiveclient);
@@ -1117,7 +1130,7 @@ begin
                 const akind: assistivedbeventkindty;
                                   const adataset: pointer); //tdataset
    begin
-  end;
+   end;
   
    procedure TSAK.dotabordertouched(const sender: iassistiveclient;
                                                         const adown: boolean);
@@ -1420,6 +1433,17 @@ begin
   SakCancel;
   espeak_key('focused, ' +  WhatName(TheSender, false) + ', ' + 
   TheItemInfo[TheMenuIndex].ca.caption.text );
+ // TheMenuItemInfo[TheMenuIndex].buttoninfo.ca.caption.text );
+  itementer:= true;
+ end;
+ 
+  procedure TSAK.ontimeritemmenuenter(const Sender: TObject);
+begin
+  thetimer.Enabled := False;
+  SakCancel;
+  espeak_key('focused, ' +  WhatName(TheSender, false) + ', ' + 
+ // TheItemInfo[TheMenuIndex].ca.caption.text );
+  TheMenuItemInfo[TheMenuIndex].buttoninfo.ca.caption.text );
   itementer:= true;
  end;
 

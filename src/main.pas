@@ -164,6 +164,8 @@ type
    procedure aboutideuonexecute(const sender: TObject);
    procedure configureexecute(const sender: TObject);
    
+   function  closeallmodule(): boolean;
+   
      //debugger
    procedure restartgdbonexecute(const sender: tobject);
    procedure runexec(const sender: tobject);
@@ -210,6 +212,7 @@ type
    procedure syntaxdefload(const sender: TObject);
    procedure copywordatcur(const sender: TObject);
    procedure onresizemain(const sender: TObject);
+   procedure closeallmod(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -383,7 +386,7 @@ procedure handleerror(const e: exception; const text: string);
 implementation
 uses
   // fred
- confmsegui, conffpgui, confcompiler, confideu,
+ confmsegui, conffpgui, confcompiler, confideu, projectoptionsform,
  
   regwidgets,regeditwidgets,regdialogs,regkernel,regprinter,
  toolhandlermodule,
@@ -412,7 +415,7 @@ uses
 
  mseparser,msesysintf,memoryform,msedrawtext,
  main_mfm,sourceform,watchform,breakpointsform,stackform,
- guitemplates,projectoptionsform,make,msepropertyeditors,
+ guitemplates,make,msepropertyeditors,
  skeletons,msedatamodules,mseact,
  mseformdatatools,mseshapes,mseeditglob,
  findinfileform,formdesigner,sourceupdate,actionsmodule,programparametersform,
@@ -567,6 +570,7 @@ end;
 end  else
 begin
 activate;
+closeallmodule();
 end;
 
 {$ifdef polydev}
@@ -2879,6 +2883,15 @@ begin
  end;
 end;
 
+function tmainfo.closeallmodule(): boolean;
+var
+int1 : integer;
+begin
+  while designer.modules.count > 0 do begin
+    closemodule(designer.modules.itempo[designer.modules.count-1],false,true);
+   end;
+end;
+
 function tmainfo.closemodule(const amodule: pmoduleinfoty; 
                             const achecksave: boolean; 
                             nocheckclose: boolean = false): boolean;
@@ -4022,6 +4035,11 @@ screen := application.workarea();
 if height > screen.y + screen.cy then height := screen.y + screen.cy - 30;
 
 if width > screen.x + screen.cx then width := screen.x + screen.cx;
+end;
+
+procedure tmainfo.closeallmod(const sender: TObject);
+begin
+closeallmodule();
 end;
 
 

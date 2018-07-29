@@ -220,12 +220,12 @@ end;
 
 procedure tdebuggerfo.onbeforefilehis(const sender: TObject);
 begin
-file_history.width := 298;
+file_history.width := 350;
 end;
 
 procedure tdebuggerfo.onbefdroppro(const sender: TObject);
 begin
-project_history.width := 298;
+project_history.width := 400;
 end;
 
 procedure tdebuggerfo.onterminalon(const sender: TObject);

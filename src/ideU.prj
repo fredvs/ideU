@@ -29,11 +29,11 @@ findinfiledialog=77
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" "*.mfm"
  history=8
@@ -69,8 +69,14 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=at cursor
+ value=shapeinfoty
  history=20
+  shapeinfoty
+  menucellinfoarty
+  iassistiveclientmenu
+  o.
+  closemodule
+  mainmenu1
   at cursor
   closeactonexecute
   tactionsmo.closeactonexecute
@@ -85,12 +91,6 @@ findinfiledialog=77
   customoption
   customdomake
   customcommandline
-  makeoptionsgrid
-  makeoptionson
-  make2on
-  makeon
-  makeoptpurpose
-  customrun
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -102,8 +102,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=637
- y=203
+ x=783
+ y=248
  cx=358
  cy=122
 replacedialog=21
@@ -281,9 +281,9 @@ programparameters=18
 settings=8
  [settings_form]
  x=447
- y=148
- cx=466
- cy=497
+ y=106
+ cx=471
+ cy=539
  wsize=0
  active=1
  visible=1
@@ -742,12 +742,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
- MAINFO
-moduletypes=1
- TMAINFO
-modulefiles=1
- /home/fred/ideu/src/main.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=11
  4095
@@ -1071,24 +1068,24 @@ path=22
  /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
  /home/fred/ideu/src/make.pas
 line=22
- 782
+ 786
  2129
  1009
- 564
- 3666
+ 567
+ 3679
  644
  119
  1084
  2255
  2172
  2448
- 640
+ 644
  3235
  119
- 526
+ 529
  439
  46
- 3925
+ 3938
  684
  86
  15
@@ -1205,7 +1202,7 @@ units=
   (
   file=commandorform.pas
   kind=1
-  a=0,8212,2,commandorform.pas
+  a=0,8213,2,commandorform.pas
   c=1
    (
    file=commandorform.mfm
@@ -1309,8 +1306,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=console
+finddtext=ontimeritementer2
 findhistory=20
+ ontimeritementer2
+ TheItemInfo
+ tmenu
+ thetimer
+ modulenames
+ ontimer
+ mainmenu1
  console
  fpguidir
  if issamefilename(items[int1].fil
@@ -1324,49 +1328,110 @@ findhistory=20
  issamefilename(items[int1].filename,afilename
  purpose
  replace
- nocust
- $10000
- tbooleanedi
- customoption
- custommaker.create
- fmaketag
- makeoptionsgrid
 findoptions=1
-editpos=2
- 0,0
- 18,7
+editpos=18
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1102
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
- ${PROJECTDIR}/main.pas
+bookmarks2=0
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+sourcefiles=18
  ${PROJECTDIR}/ideU.pas
-relpaths=2
- main.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sak_mse.pas
+ /home/fred/msegui/lib/common/assistive/mseassistivehandler.pas
+ /home/fred/msegui/lib/common/widgets/msemenuwidgets.pas
+ /home/fred/msegui/lib/common/kernel/mseshapes.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.mfm
+ ${PROJECTDIR}/sak_mse.pas
+relpaths=18
  ideU.pas
-ismoduletexts=2
+ sourceform.pas
+ actionsmodule.pas
+ commandorform.pas
+ main.pas
+ projectoptionsform.pas
+ commandorform.pas
+ sourceform.pas
+ actionsmodule.pas
+ main.pas
+ sak_mse.pas
+ msegui/lib/common/assistive/mseassistivehandler.pas
+ msegui/lib/common/widgets/msemenuwidgets.pas
+ msegui/lib/common/kernel/mseshapes.pas
+ sourceform.pas
+ actionsmodule.pas
+ main.mfm
+ sak_mse.pas
+ismoduletexts=18
  0
  0
-modules=3
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
  0
  0
  0
-visiblemodules=3
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  -1
  0
- 0
-nomenumodules=3
- 0
- -1
- -1
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-firsttab=0
-index=1
+firsttab=12
+index=17
 [layout]
-windowlayout=579
+windowlayout=561
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1375,8 +1440,8 @@ windowlayout=579
  mdistate=0
  nx=0
  ny=0
- ncx=668
- ncy=0
+ ncx=688
+ ncy=604
  x=0
  y=0
  cx=1147
@@ -1392,8 +1457,8 @@ windowlayout=579
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
+ x=116
+ y=57
  cx=1157
  cy=621
  rcx=0
@@ -1443,7 +1508,7 @@ windowlayout=579
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1525,8 +1590,8 @@ windowlayout=579
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=5
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1611,15 +1676,15 @@ windowlayout=579
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=369
- y=134
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -1628,10 +1693,10 @@ windowlayout=579
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=291
- width0=129
+ propcolwidthref=306
+ width0=136
  sortdescend0=0
- width1=156
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1795,7 +1860,7 @@ windowlayout=579
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1852,11 +1917,12 @@ windowlayout=579
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideusettings.pas
- history=17
+ value=/home/fred/ideu/src/sak_mse.pas
+ history=18
+  /home/fred/ideu/src/sak_mse.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/strumpract/src/strumpract.pas
   /home/fred/strumpract/src/commander.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/t_bsd.pas
   /usr/local/codetyphon/fpcsrc/compiler/systems/t_bsd.pas
@@ -1895,7 +1961,7 @@ windowlayout=579
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1927,25 +1993,6 @@ windowlayout=579
  cy=455
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=342
- y=104
- cx=697
- cy=59
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

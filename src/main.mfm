@@ -629,7 +629,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 1
+        submenu.count = 2
         submenu.items = <        
           item
             submenu.count = 1
@@ -645,6 +645,12 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localimagelist, as_localimagenr]
             imagelist = vievmenuicons
             imagenr = 0
+          end        
+          item
+            caption = ' Close all MSE modules '
+            hint = ' Close all module-forms in designer '
+            state = [as_localcaption, as_localhint, as_localonexecute]
+            onexecute = closeallmod
           end>
         caption = ' For&ms '
         name = 'forms'

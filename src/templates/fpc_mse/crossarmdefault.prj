@@ -776,7 +776,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=537
+windowlayout=538
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1199,7 +1199,7 @@ windowlayout=537
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=cpuarmfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1257,7 +1257,8 @@ windowlayout=537
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=1
+  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1275,6 +1276,22 @@ windowlayout=537
  x=208
  y=0
  cx=939
+ cy=455
+ rcx=0
+ rcy=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=838958571
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1147
  cy=455
  rcx=0
  rcy=0
@@ -1298,22 +1315,6 @@ windowlayout=537
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1147
- cy=455
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
