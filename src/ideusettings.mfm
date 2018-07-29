@@ -2,10 +2,10 @@ object settings_form: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   color = 14342874
   visible = False
-  bounds_x = 422
-  bounds_y = 61
-  bounds_cx = 471
-  bounds_cy = 538
+  bounds_x = 504
+  bounds_y = 93
+  bounds_cx = 469
+  bounds_cy = 539
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -13,8 +13,8 @@ object settings_form: tsettingsfo
   container.bounds = (
     0
     0
-    471
-    538
+    469
+    539
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
@@ -579,7 +579,7 @@ object settings_form: tsettingsfo
         bounds_x = 8
         bounds_y = 8
         bounds_cx = 439
-        bounds_cy = 395
+        bounds_cy = 495
         bounds_cymin = 80
         optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
         fixcols.count = 1
