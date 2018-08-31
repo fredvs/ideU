@@ -1023,10 +1023,6 @@ sigsettings=27
 defaultmake=4
 [breakpoints]
 on=22
-<<<<<<< HEAD
- 0
-=======
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
  0
  0
  0
@@ -1048,10 +1044,7 @@ on=22
  0
  0
  0
-<<<<<<< HEAD
-=======
  0
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
 path=22
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
@@ -1122,13 +1115,6 @@ address=22
  0
  0
 addbkpt=22
-<<<<<<< HEAD
-=======
- 0
- 0
- 0
- 0
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
  0
  0
  0
@@ -1147,7 +1133,6 @@ addbkpt=22
  0
  0
  0
-ignore=22
  0
  0
  0
@@ -1171,13 +1156,10 @@ ignore=22
  0
  0
  0
-<<<<<<< HEAD
  0
  0
  0
  0
-=======
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
 condition=22
  
  
@@ -1349,10 +1331,6 @@ findhistory=20
  replace
 findoptions=1
 editpos=18
-<<<<<<< HEAD
- 0,-1073741823
-=======
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1365,15 +1343,12 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
-<<<<<<< HEAD
-=======
- 0,-1073741823
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
- 0,1102
+ 0,0
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1405,12 +1380,12 @@ sourcefiles=18
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sak_mse.pas
  /home/fred/msegui/lib/common/assistive/mseassistivehandler.pas
- /home/fred/msegui/lib/common/widgets/msemenuwidgets.pas
  /home/fred/msegui/lib/common/kernel/mseshapes.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.mfm
  ${PROJECTDIR}/sak_mse.pas
+ ${PROJECTDIR}/ideU.pas
 relpaths=18
  ideU.pas
  sourceform.pas
@@ -1424,14 +1399,13 @@ relpaths=18
  main.pas
  sak_mse.pas
  msegui/lib/common/assistive/mseassistivehandler.pas
- msegui/lib/common/widgets/msemenuwidgets.pas
- msegui/lib/common/kernel/mseshapes.pas
+ ../msegui/lib/common/kernel/mseshapes.pas
  sourceform.pas
  actionsmodule.pas
  main.mfm
  sak_mse.pas
+ ideU.pas
 ismoduletexts=18
- 0
  0
  0
  0
@@ -1449,15 +1423,16 @@ ismoduletexts=18
  0
  -1
  0
+ 0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
 firsttab=12
-index=17
+index=12
 [layout]
-windowlayout=561
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1466,12 +1441,12 @@ windowlayout=561
  mdistate=0
  nx=0
  ny=0
- ncx=688
- ncy=604
+ ncx=668
+ ncy=0
  x=0
  y=0
  cx=1147
- cy=604
+ cy=605
  rcx=0
  rcy=0
  [mainfo]
@@ -1483,14 +1458,14 @@ windowlayout=561
  ny=0
  ncx=0
  ncy=0
- x=116
- y=57
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1147,604
+  basedock,0,0,1147,605
  focusedchild=0
  wsize=0
  active=1
@@ -1606,7 +1581,7 @@ windowlayout=561
  x=0
  y=0
  cx=205
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1616,9 +1591,9 @@ windowlayout=561
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
- rowheight=17
+ col=0
+ row=6
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=805331049
@@ -1815,7 +1790,7 @@ windowlayout=561
  ncx=0
  ncy=0
  x=0
- y=512
+ y=513
  cx=1147
  cy=92
  rcx=0
@@ -1886,7 +1861,7 @@ windowlayout=561
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1928,8 +1903,8 @@ windowlayout=561
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1147
@@ -1943,26 +1918,8 @@ windowlayout=561
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sak_mse.pas
- history=18
-  /home/fred/ideu/src/sak_mse.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/strumpract/src/strumpract.pas
-  /home/fred/strumpract/src/commander.pas
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/t_bsd.pas
-  /usr/local/codetyphon/fpcsrc/compiler/systems/t_bsd.pas
-  /home/fred/msegui/lib/common/fpccompatibility/mclasses.pas
-  /home/fred/t_linux.pas
-  /home/fred/cfileutl.pas
-  /home/fred/uos/src/uos.pas
-  /home/fred/uos/examples/lib/Linux/32bit/LibPortaudio-32.so
-  /home/fred/uos/examples/deviceinfos_fpGUI.pas
-  /home/fred/strumpract/src/uos.pas
-  /home/fred/ideu/src/sourcepage.pas
-  /lib/crti.o
-  /usr/local/codetyphon/fpcsrc/compiler/systems/i_linux.pas
-  /home/fred/strumpract/src/config.pas
+ value=/home/fred/msegui/lib/common/widgets/msemenuwidgets.pas
+ history=0
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1980,18 +1937,14 @@ windowlayout=561
  x=208
  y=0
  cx=939
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
-<<<<<<< HEAD
  stackedunder=mainfo
-=======
- stackedunder=componentpalettefo
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
  parent=
  mdistate=0
  nx=0
@@ -2020,11 +1973,7 @@ windowlayout=561
  x=0
  y=54
  cx=1147
-<<<<<<< HEAD
  cy=456
-=======
- cy=455
->>>>>>> 7576e8b7202d7a39c069b9348dfe612789cd7932
  rcx=0
  rcy=0
 [targetconsole]
