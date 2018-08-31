@@ -164,6 +164,8 @@ type
    procedure aboutideuonexecute(const sender: TObject);
    procedure configureexecute(const sender: TObject);
    
+   function  closeallmodule(): boolean;
+   
      //debugger
    procedure restartgdbonexecute(const sender: tobject);
    procedure runexec(const sender: tobject);
@@ -210,6 +212,7 @@ type
    procedure syntaxdefload(const sender: TObject);
    procedure copywordatcur(const sender: TObject);
    procedure onresizemain(const sender: TObject);
+   procedure closeallmod(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -226,6 +229,7 @@ type
    frunningprocess: prochandlety;
    flayoutloading: boolean;
    fstopinfo: stopinfoty;
+   fgdbdownloaded: boolean;
    procedure dorun;
    function runtarget: boolean; //true if run possible
    procedure newproject(const fromprogram,empty: boolean);
@@ -287,7 +291,7 @@ type
    procedure uploadexe(const sender: tguiapplication; var again: boolean);
    procedure uploadcancel(const sender: tobject);
    procedure gdbserverexe(const sender: tguiapplication; var again: boolean);
-   procedure terminategdbserver(const force: boolean);
+   function terminategdbserver(const force: boolean): boolean;
    procedure gdbservercancel(const sender: tobject);
    procedure updatetargetenvironment;
    function needsdownload: boolean;
@@ -383,7 +387,7 @@ procedure handleerror(const e: exception; const text: string);
 implementation
 uses
   // fred
- confmsegui, conffpgui, confcompiler, confideu,
+ confmsegui, conffpgui, confcompiler, confideu, projectoptionsform,
  
   regwidgets,regeditwidgets,regdialogs,regkernel,regprinter,
  toolhandlermodule,
@@ -412,7 +416,7 @@ uses
 
  mseparser,msesysintf,memoryform,msedrawtext,
  main_mfm,sourceform,watchform,breakpointsform,stackform,
- guitemplates,projectoptionsform,make,msepropertyeditors,
+ guitemplates,make,msepropertyeditors,
  skeletons,msedatamodules,mseact,
  mseformdatatools,mseshapes,mseeditglob,
  findinfileform,formdesigner,sourceupdate,actionsmodule,programparametersform,
@@ -483,7 +487,7 @@ end;
 destructor tmainfo.destroy;
 begin
  if SakIsEnabled = true then sakunloadlib; 
- terminategdbserver(false);
+ terminategdbserver(true);
  inherited;
 end;
 
@@ -567,6 +571,7 @@ end;
 end  else
 begin
 activate;
+closeallmodule();
 end;
 
 {$ifdef polydev}
@@ -1719,15 +1724,19 @@ begin
  end;
 end;
 
-procedure tmainfo.terminategdbserver(const force: boolean);
+
+function tmainfo.terminategdbserver(const force: boolean): boolean;
 var
  int1: integer;
 begin
+ result:= false;
  if (fgdbserverprocid <> invalidprochandle) and 
         (not projectoptions.d.gdbserverstartonce or force) then begin
+  result:= true;
   try
-   if getprocessexitcode(fgdbserverprocid,int1) = pee_error then begin
+   if (getprocessexitcode(fgdbserverprocid,int1) <> pee_ok) then begin
     killprocesstree(fgdbserverprocid);
+
    end;
   except
   end;
@@ -1758,7 +1767,10 @@ begin
    mstr1:= gdbservercommand;
   end;
   if mstr1 <> '' then begin
-   terminategdbserver(false);
+   if terminategdbserver(false) then begin
+//    sleep(1000);
+   end;
+
    if d.gdbserverstartonce and gdb.tryconnect then begin
     result:= true;
     exit;
@@ -1900,7 +1912,14 @@ end;
 procedure tmainfo.downloaded;
 begin
  ftargetfilemodified:= false;
+ if fgdbdownloaded then begin
+  fgdbdownloaded:= false;
+  if projectoptions.d.restartgdbbeforeload then begin
+   mainfo.startgdb(false);
+  end;
+ end;
 end;
+
 
 procedure tmainfo.updatetargetenvironment;
        //todo: implement for run without gdb
@@ -1940,11 +1959,14 @@ begin
  end
  else begin
   if not gdb.execloaded or forcedownload then begin
-   if not gdb.active then begin
-    startgdb(false);
-   end;
-   str1:= gettargetfile;
+  
    with projectoptions,d.texp do begin
+   
+    if d.restartgdbbeforeload or not gdb.active then begin
+     startgdb(false);
+    end;
+    str1:= gettargetfile;
+   
     if not d.gdbdownload and not d.gdbsimulator and (uploadcommand <> '') and 
                    (needsdownload or forcedownload) then begin
      dodownload;
@@ -1996,7 +2018,10 @@ debuggerfo.project_interrupt.enabled := true;
   end;
   if forcedownload and projectoptions.d.gdbdownload then begin
    if startgdbconnection(false) then begin
-    gdb.download(false);
+    if checkgdberror(gdb.download(false)) then begin
+     fgdbdownloaded:= true;
+    end;
+
    end;
   end;
  end;
@@ -2230,7 +2255,8 @@ begin
 end;
 
  with projectoptions,d.texp,actionsmo do begin
-  detachtarget.enabled:= gdb.execloaded;
+  detachtarget.enabled:= gdb.execloaded or gdb.attached;
+  
   download.enabled:= not gdb.started and not gdb.downloading and 
                ((uploadcommand <> '') or d.gdbdownload);
   attachprocess.enabled:= not (gdb.execloaded or gdb.attached);
@@ -2879,6 +2905,15 @@ begin
  end;
 end;
 
+function tmainfo.closeallmodule(): boolean;
+var
+int1 : integer;
+begin
+  while designer.modules.count > 0 do begin
+    closemodule(designer.modules.itempo[designer.modules.count-1],false,true);
+   end;
+end;
+
 function tmainfo.closemodule(const amodule: pmoduleinfoty; 
                             const achecksave: boolean; 
                             nocheckclose: boolean = false): boolean;
@@ -3024,7 +3059,7 @@ var
  
 begin
  gdb.abort;
- terminategdbserver(false);
+ terminategdbserver(true);
  result:= false;
  
  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
@@ -4022,6 +4057,11 @@ screen := application.workarea();
 if height > screen.y + screen.cy then height := screen.y + screen.cy - 30;
 
 if width > screen.x + screen.cx then width := screen.x + screen.cx;
+end;
+
+procedure tmainfo.closeallmod(const sender: TObject);
+begin
+closeallmodule();
 end;
 
 

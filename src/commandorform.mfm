@@ -885,38 +885,6 @@ object debuggerfo: tdebuggerfo
       imagenr = 23
       focusrectdist = 0
     end
-    object project_history: thistoryedit
-      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.colorclient = 16056304
-      frame.localprops = [frl_hiddenedges, frl_colorclient]
-      frame.localprops1 = []
-      frame.button.face.fade_direction = gd_down
-      frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templproject
-      frame.buttons.count = 1
-      frame.buttons.items = <      
-        item
-          face.fade_direction = gd_down
-          face.localprops = [fal_fadirection]
-          face.template = templproject
-        end>
-      taborder = 14
-      hint = ' History of projects. '
-      bounds_x = 31
-      bounds_y = 3
-      bounds_cx = 86
-      bounds_cy = 21
-      statfile = mainfo.mainstatfile
-      textflags = [tf_right, tf_ycentered, tf_noselect]
-      dropdown.cols.count = 1
-      dropdown.cols.items = <      
-        item
-        end>
-      dropdown.historymaxcount = 200
-      onbeforedropdown = onbefdroppro
-      onafterclosedropdown = onsetvaluehis
-      reffontheight = 15
-    end
     object panelwatch: tdockpanel
       color = 12475601
       face.localprops = []
@@ -1071,6 +1039,38 @@ object debuggerfo: tdebuggerfo
         bounds_cy = 17
         onchange = breakonexecute
       end
+    end
+    object project_history: thistoryedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.colorclient = 16056304
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.face.template = templproject
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          face.template = templproject
+        end>
+      taborder = 14
+      hint = ' History of projects. '
+      bounds_x = 31
+      bounds_y = 3
+      bounds_cx = 86
+      bounds_cy = 21
+      statfile = mainfo.mainstatfile
+      textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+        end>
+      dropdown.historymaxcount = 200
+      onbeforedropdown = onbefdroppro
+      onafterclosedropdown = onsetvaluehis
+      reffontheight = 15
     end
   end
   object templproject: tfacecomp

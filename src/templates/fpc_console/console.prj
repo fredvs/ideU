@@ -26,33 +26,33 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=754
+ propcolwidthref=817
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=102
+ width4=111
  sortdescend4=0
- width5=81
+ width5=88
  sortdescend5=0
- width6=52
+ width6=56
  sortdescend6=0
- width7=52
+ width7=56
  sortdescend7=0
- width8=105
+ width8=118
  sortdescend8=0
- width9=308
+ width9=334
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=578
+ propcolwidthref=641
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=277
+ width3=307
  sortdescend3=0
- width4=291
+ width4=324
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -62,10 +62,10 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=417
+ propcolwidthref=480
  width0=98
  sortdescend0=0
- width1=406
+ width1=469
  sortdescend1=0
  width2=50
  sortdescend2=0
@@ -79,11 +79,11 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=201
+ y=200
  xprop=1
- yprop=0.39458413926499
+ yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
- propcolwidthref=509
+ propcolwidthref=572
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -96,7 +96,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=493
+ width11=556
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -108,31 +108,31 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=738
+ propcolwidthref=801
  width0=47
  sortdescend0=0
- width1=732
+ width1=795
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=1
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=646
+ propcolwidthref=709
  width0=112
  sortdescend0=0
- width1=639
+ width1=702
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
- [projectoptionsfo.tabwidget]
+ [projectoptionsfo.setting_tab]
  firsttab=0
  index=2
  [projectoptionsfo]
  stackedunder=
  x=195
  y=170
- cx=787
+ cx=850
  cy=570
 mainfile=${PROJECTDIR}/${PROJECTNAME}.pas
 targetfile=${PROJECTDIR}/${PROJECTNAME}
@@ -224,22 +224,16 @@ toolparams=1
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
-newprojectfiles=7
+newprojectfiles=4
  ${TEMPLATEDIR}/fpc_console/files/project.pas
  ${TEMPLATEDIR}/fpc_console/files/dummy
  ${TEMPLATEDIR}/fpc_console/files/dummy
  ${TEMPLATEDIR}/fpc_console/files/dummy
- ${TEMPLATEDIR}/fpc_console/files/dummy
- ${TEMPLATEDIR}/fpc_console/files/dummy
- ${TEMPLATEDIR}/fpc_console/files/dummy
-newprojectfilesdest=7
+newprojectfilesdest=4
  ${%PROJECTNAME%}.pas
  ${%PROJECTDIR%}/units/i386-linux/dummy
  ${%PROJECTDIR%}/units/x86_64-linux/dummy
  ${%PROJECTDIR%}/units/i386-freebsd/dummy
- ${%PROJECTDIR%}/units/x86_64-freebsd/dummy
- ${%PROJECTDIR%}/units/i386-win32/dummy
- ${%PROJECTDIR%}/units/x86_64-win64/dummy
 newfinames=1
  Program
 newfifilters=1
@@ -260,6 +254,7 @@ forcezorder=-1
 stripmessageesc=0
 copymessages=0
 closemessages=0
+enablepurpose=1
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -553,7 +548,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=5
+sourcedirs=9
+ ${FPCSRCDIR}/
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/*/
+ ${FPCSRCDIR}/*/*/*/
  ${FPGUIDIR}/src/gui/
  ${FPGUIDIR}/src/corelib/gdi/X/
  ${FPGUIDIR}/src/corelib/x11/
@@ -689,7 +688,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=543
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -766,7 +765,7 @@ windowlayout=543
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -973,7 +972,11 @@ windowlayout=543
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -1118,7 +1121,7 @@ windowlayout=543
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1176,7 +1179,8 @@ windowlayout=543
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=1
+  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1201,7 +1205,7 @@ windowlayout=543
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0

@@ -12,8 +12,7 @@ uses
 // cmem, 
 {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
 
-  // fred
-  aboutform, confmsegui, confideu, conffpgui, confcompiler, confdebugger, dialogfiles,
+ aboutform, confmsegui, confideu, conffpgui, confcompiler, confdebugger, dialogfiles,
   
   mseskindesign,
   msegui,msegraphics,actionsmodule,sourceform,commandorform,

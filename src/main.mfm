@@ -248,7 +248,11 @@ object mainfo: tmainfo
           item
             action = actionsmo.close
             caption = ' &Close '
-            state = [as_localcaption]
+            state = [as_localcaption, as_localshortcut]
+            sc = (
+              1
+              16465
+            )
           end        
           item
             action = actionsmo.closeall
@@ -625,7 +629,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 1
+        submenu.count = 2
         submenu.items = <        
           item
             submenu.count = 1
@@ -641,6 +645,12 @@ object mainfo: tmainfo
             state = [as_localcaption, as_localimagelist, as_localimagenr]
             imagelist = vievmenuicons
             imagenr = 0
+          end        
+          item
+            caption = ' Close all MSE modules '
+            hint = ' Close all module-forms in designer '
+            state = [as_localcaption, as_localhint, as_localonexecute]
+            onexecute = closeallmod
           end>
         caption = ' For&ms '
         name = 'forms'
@@ -2078,7 +2088,7 @@ object mainfo: tmainfo
       ' '
       'Nothing loaded...'
     )
-    left = 233
+    left = 261
     top = 5
   end
   object openform: tfiledialog
@@ -2092,7 +2102,7 @@ object mainfo: tmainfo
     controller.defaultext = 'mfm'
     controller.options = [fdo_checkexist]
     controller.captionopen = ' Open Form File '
-    left = 162
+    left = 112
   end
   object formbg: tbitmapcomp
     bitmap.origformat = 'png'
@@ -2105,7 +2115,7 @@ object mainfo: tmainfo
       C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808
       C7C7C708B8B8B808C7C7C708B8B8B808
     }
-    left = 237
+    left = 298
   end
   object tfacecomp1: tfacecomp
     template.fade_pos.count = 2

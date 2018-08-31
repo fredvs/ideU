@@ -64,33 +64,33 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=726
+ propcolwidthref=815
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=128
+ width4=144
  sortdescend4=0
- width5=251
+ width5=282
  sortdescend5=0
- width6=296
+ width6=332
  sortdescend6=0
- width7=50
+ width7=56
  sortdescend7=0
  width8=1
  sortdescend8=0
- width9=297
+ width9=333
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=550
+ propcolwidthref=639
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=263
+ width3=306
  sortdescend3=0
- width4=277
+ width4=323
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -100,10 +100,10 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=389
+ propcolwidthref=478
  width0=98
  sortdescend0=0
- width1=378
+ width1=467
  sortdescend1=0
  width2=50
  sortdescend2=0
@@ -119,9 +119,9 @@ options=114
  x=0
  y=120
  xprop=1
- yprop=0.24070450097847
+ yprop=0.23976608187135
  [projectoptionsfo.macrogrid]
- propcolwidthref=481
+ propcolwidthref=570
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -134,7 +134,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=465
+ width11=554
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -144,21 +144,21 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=710
+ propcolwidthref=799
  width0=47
  sortdescend0=0
- width1=704
+ width1=793
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=5
+ index=1
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=621
+ propcolwidthref=707
  width0=112
  sortdescend0=0
- width1=614
+ width1=700
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
@@ -170,7 +170,7 @@ options=114
  stackedunder=
  x=278
  y=87
- cx=759
+ cx=848
  cy=568
 settings=8
  [settings_form]
@@ -353,6 +353,7 @@ forcezorder=0
 stripmessageesc=0
 copymessages=0
 closemessages=0
+enablepurpose=1
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -633,7 +634,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=3
+sourcedirs=7
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/*/
+ ${FPCSRCDIR}/*/*/*/
  ${MSELIBDIR}kernel/$TARGETOSDIR/
  ${MSELIBDIR}*/
  ./
@@ -749,7 +754,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=533
+windowlayout=538
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1033,7 +1038,11 @@ windowlayout=533
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -1168,7 +1177,7 @@ windowlayout=533
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1226,7 +1235,8 @@ windowlayout=533
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=1
+  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1251,7 +1261,7 @@ windowlayout=533
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0

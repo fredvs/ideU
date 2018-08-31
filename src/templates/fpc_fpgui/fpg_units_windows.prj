@@ -79,9 +79,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=201
+ y=200
  xprop=1
- yprop=0.39611650485437
+ yprop=0.39571150097466
  [projectoptionsfo.macrogrid]
  propcolwidthref=498
  sortdescend0=0
@@ -115,7 +115,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=1
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=635
  width0=112
@@ -125,9 +125,9 @@ options=114
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
- [projectoptionsfo.tabwidget]
+ [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=219
@@ -231,24 +231,16 @@ toolparams=1
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
-newprojectfiles=8
+newprojectfiles=4
  ${TEMPLATEDIR}/fpc_fpgui/files/fpg_program.pas
  ${TEMPLATEDIR}/fpc_fpgui/files/frm_main.pas
  ${TEMPLATEDIR}/fpc_fpgui/files/dummy
  ${TEMPLATEDIR}/fpc_fpgui/files/dummy
- ${TEMPLATEDIR}/fpc_fpgui/files/dummy
- ${TEMPLATEDIR}/fpc_fpgui/files/dummy
- ${TEMPLATEDIR}/fpc_fpgui/files/dummy
- ${TEMPLATEDIR}/fpc_fpgui/files/dummy
-newprojectfilesdest=8
+newprojectfilesdest=4
  ${%PROJECTNAME%}.pas
  frm_main.pas
  ${%PROJECTDIR%}/units/i386-linux/dummy
  ${%PROJECTDIR%}/units/x86_64-linux/dummy
- ${%PROJECTDIR%}/units/i386-freebsd/dummy
- ${%PROJECTDIR%}/units/x86_64-freebsd/dummy
- ${%PROJECTDIR%}/units/i386-win32/dummy
- ${%PROJECTDIR%}/units/x86_64-win64/dummy
 newfinames=2
  Program
  Unit
@@ -273,6 +265,7 @@ forcezorder=-1
 stripmessageesc=0
 copymessages=0
 closemessages=0
+enablepurpose=0
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -573,7 +566,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=5
+sourcedirs=9
+ ${FPCSRCDIR}/
+ ${FPCSRCDIR}/*/
+ ${FPCSRCDIR}/*/*/
+ ${FPCSRCDIR}/*/*/*/
  ${FPGUIDIR}/src/gui/
  ${FPGUIDIR}/src/corelib/gdi/X/
  ${FPGUIDIR}/src/corelib/x11/
@@ -709,7 +706,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=543
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -993,7 +990,11 @@ windowlayout=543
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -1030,7 +1031,7 @@ windowlayout=543
  rcx=1262
  rcy=583
  [watchfo.grid]
- propcolwidthref=111
+ propcolwidthref=121
  values0=2
   -1
   -1
@@ -1138,7 +1139,7 @@ windowlayout=543
  [componentpalettefo]
  splitdir=0
  useroptions=805331051
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1196,7 +1197,8 @@ windowlayout=543
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=1
+  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1221,7 +1223,7 @@ windowlayout=543
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0

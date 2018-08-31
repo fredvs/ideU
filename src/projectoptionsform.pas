@@ -356,6 +356,7 @@ type
    fexternalconsole: boolean;
    fgdbdownload: boolean;
    fdownloadalways: boolean;
+   frestartgdbbeforeload: boolean;
    fstartupbkpt: integer;
    fstartupbkpton: boolean;
    fgdbsimulator: boolean;
@@ -388,6 +389,8 @@ type
    property settty: boolean read fsettty write fsettty;
    property gdbdownload: boolean read fgdbdownload write fgdbdownload;
    property downloadalways: boolean read fdownloadalways write fdownloadalways;
+   property restartgdbbeforeload: boolean read frestartgdbbeforeload 
+                                                write frestartgdbbeforeload;
    property startupbkpt: integer read fstartupbkpt write fstartupbkpt;
    property startupbkpton: boolean read fstartupbkpton write fstartupbkpton;
    property gdbsimulator: boolean read fgdbsimulator write fgdbsimulator;
