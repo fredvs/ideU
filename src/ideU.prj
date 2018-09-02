@@ -166,7 +166,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=16
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -188,7 +188,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=200
+ y=201
  xprop=1
  yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
@@ -215,7 +215,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=788
  width0=47
@@ -224,7 +224,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=696
  width0=112
@@ -236,7 +236,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=289
@@ -303,19 +303,20 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=56
+imagelisteditor=57
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Images/bugoff2.png
+  /home/fred/ideu/src/ideu.png
  filecolwidth=174
  x=691
  y=148
  cx=588
  cy=307
- lastdir=/home/fred/Images/
- filehistory=30
+ lastdir=/home/fred/ideu/src/
+ filehistory=31
+  /home/fred/ideu/src/ideu.png
   /home/fred/Images/bugoff2.png
   /home/fred/Images/bugoff.png
   /home/fred/Images/bugon.png
@@ -407,17 +408,18 @@ compnamedialog=5
  y=268
  cx=303
  cy=205
-bmpfiledialog=20
+bmpfiledialog=21
  [filedialog]
  filenames=1
-  /home/fred/ideu/src/ideu.bmp
+  /home/fred/ideu/src/ideu.png
  filecolwidth=174
  x=0
  y=0
  cx=0
  cy=0
  lastdir=/home/fred/ideu/src/
- filehistory=8
+ filehistory=9
+  /home/fred/ideu/src/ideu.png
   /home/fred/ideu/src/ideu.bmp
   /home/fred/Images/eyes2.jpg
   /home/fred/Documents/eyesfade.png
@@ -749,7 +751,7 @@ befcommandon=0
 makeoptionson=11
  4095
  0
- 48
+ 52
  4093
  0
  4095
@@ -1330,7 +1332,7 @@ findhistory=20
  purpose
  replace
 findoptions=1
-editpos=18
+editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1343,12 +1345,21 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 2,4
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1367,7 +1378,16 @@ bookmarks14=0
 bookmarks15=0
 bookmarks16=0
 bookmarks17=0
-sourcefiles=18
+bookmarks18=0
+bookmarks19=0
+bookmarks20=0
+bookmarks21=0
+bookmarks22=0
+bookmarks23=0
+bookmarks24=0
+bookmarks25=0
+bookmarks26=0
+sourcefiles=27
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1386,7 +1406,16 @@ sourcefiles=18
  ${PROJECTDIR}/main.mfm
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=18
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/aboutform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/define.inc
+relpaths=27
  ideU.pas
  sourceform.pas
  actionsmodule.pas
@@ -1399,13 +1428,22 @@ relpaths=18
  main.pas
  sak_mse.pas
  msegui/lib/common/assistive/mseassistivehandler.pas
- ../msegui/lib/common/kernel/mseshapes.pas
+ msegui/lib/common/kernel/mseshapes.pas
  sourceform.pas
  actionsmodule.pas
  main.mfm
  sak_mse.pas
  ideU.pas
-ismoduletexts=18
+ main.pas
+ sourceform.pas
+ actionsmodule.pas
+ aboutform.pas
+ actionsmodule.pas
+ sourceform.pas
+ actionsmodule.pas
+ main.pas
+ define.inc
+ismoduletexts=27
  0
  0
  0
@@ -1424,15 +1462,24 @@ ismoduletexts=18
  -1
  0
  0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-firsttab=12
-index=12
+firsttab=20
+index=20
 [layout]
-windowlayout=543
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1441,8 +1488,8 @@ windowlayout=543
  mdistate=0
  nx=0
  ny=0
- ncx=668
- ncy=0
+ ncx=1147
+ ncy=604
  x=0
  y=0
  cx=1147
@@ -1451,7 +1498,7 @@ windowlayout=543
  rcy=0
  [mainfo]
  splitdir=0
- useroptions=838860925
+ useroptions=838926461
  parent=
  mdistate=0
  nx=0
@@ -1509,7 +1556,7 @@ windowlayout=543
  [memoryfo]
  splitdir=0
  useroptions=805322875
- stackedunder=about_form
+ stackedunder=componentstorefo
  parent=
  mdistate=0
  nx=0
@@ -1536,7 +1583,7 @@ windowlayout=543
  [disassfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1555,7 +1602,7 @@ windowlayout=543
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -1591,8 +1638,8 @@ windowlayout=543
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=6
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1656,7 +1703,7 @@ windowlayout=543
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=0
  nx=0
@@ -1694,15 +1741,15 @@ windowlayout=543
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=136
+ propcolwidthref=291
+ width0=129
  sortdescend0=0
- width1=164
+ width1=156
  sortdescend1=0
  [symbolfo]
  splitdir=0
  useroptions=805322875
- stackedunder=
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -1798,7 +1845,7 @@ windowlayout=543
  [componentstorefo]
  splitdir=0
  useroptions=805331067
- stackedunder=
+ stackedunder=symbolfo
  parent=
  mdistate=0
  nx=0
@@ -1903,8 +1950,8 @@ windowlayout=543
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1147
+ ncy=54
  x=0
  y=0
  cx=1147
@@ -1918,8 +1965,10 @@ windowlayout=543
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/msegui/lib/common/widgets/msemenuwidgets.pas
- history=0
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=2
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1944,7 +1993,7 @@ windowlayout=543
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
