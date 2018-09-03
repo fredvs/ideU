@@ -744,21 +744,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
- ACTIONSMO
- SETTINGS_FORM
- MAINFO
- SOURCEFO
-moduletypes=4
- TACTIONSMO
- TSETTINGSFO
- TMAINFO
- TSOURCEFO
-modulefiles=4
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/ideusettings.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=11
  4095
@@ -1365,7 +1353,7 @@ editpos=30
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 2,4
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1498,26 +1486,10 @@ ismoduletexts=30
  0
  0
  0
-modules=4
- /home/fred/ideu/src/ideusettings.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
-moduleoptions=4
- 0
- 0
- 0
- 0
-visiblemodules=4
- -1
- -1
- -1
- 0
-nomenumodules=4
- 0
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 order=30
  0
@@ -1553,7 +1525,7 @@ order=30
 firsttab=20
 index=21
 [layout]
-windowlayout=564
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1562,17 +1534,17 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=604
+ ncx=668
+ ncy=0
  x=0
  y=0
- cx=1356
- cy=700
+ cx=1147
+ cy=604
  rcx=0
  rcy=0
  [mainfo]
  splitdir=0
- useroptions=838926461
+ useroptions=838860925
  parent=
  mdistate=0
  nx=0
@@ -1586,9 +1558,9 @@ windowlayout=564
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1356,700
+  basedock,0,0,1147,604
  focusedchild=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1657,7 +1629,7 @@ windowlayout=564
  [disassfo]
  splitdir=0
  useroptions=805322859
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1702,7 +1674,7 @@ windowlayout=564
  x=0
  y=0
  cx=205
- cy=528
+ cy=455
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1777,7 +1749,7 @@ windowlayout=564
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=cpuc86_64fo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1798,7 +1770,7 @@ windowlayout=564
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -1815,15 +1787,15 @@ windowlayout=564
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=291
- width0=129
+ propcolwidthref=306
+ width0=136
  sortdescend0=0
- width1=156
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
  useroptions=805322875
- stackedunder=findinfilefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -1911,9 +1883,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=593
- cx=1356
- cy=107
+ y=512
+ cx=1147
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2012,8 +1984,8 @@ windowlayout=564
  ncy=0
  x=0
  y=0
- cx=1356
- cy=59
+ cx=1147
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2024,12 +1996,12 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1111
+ ncy=52
  x=0
  y=0
- cx=1356
- cy=62
+ cx=1147
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2040,11 +2012,9 @@ windowlayout=564
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideusettings.pas
- history=2
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/main.pas
+ history=0
  [debuggerfo.project_options]
- value=2
+ value=4
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2059,15 +2029,15 @@ windowlayout=564
  ncy=0
  x=208
  y=0
- cx=1148
- cy=528
+ cx=939
+ cy=455
  rcx=0
  rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=breakpointsfo
  parent=
  mdistate=0
  nx=0
@@ -2094,30 +2064,11 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=62
- cx=1356
- cy=528
+ y=54
+ cx=1147
+ cy=455
  rcx=0
  rcy=0
- [_mse_settings_form_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=504
- y=93
- cx=479
- cy=539
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
