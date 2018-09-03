@@ -59,12 +59,12 @@ const
                  '/usr/local/share/msegui/','${MSEDIR}lib/common/','/usr/local/share/ideu/syntaxdefs/',
                 '/usr/local/share/ideu/templates/','/usr/local/share/ideu/layout/','${MSEDIR}apps/ide/compstore/',
                'ppcx64','/usr/local/bin/gdb','','x86_64-freebsd','linux',
-               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '', '', ''));
+               '/usr/local/share/fpgui/','/usr/local/share/ideu/','/usr/local/share/docview/','', '', '', '');
    {$else}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcx64','gdb','','x86_64-freebsd','linux','','','${IDEUDIR}docview/','', '', '', ''));
+                 'ppcx64','gdb','','x86_64-freebsd','linux','','','${IDEUDIR}docview/','', '', '', '');
    {$endif}
   
    {$endif}
@@ -74,21 +74,23 @@ const
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '', '', ''));
+                 'ppcarm','gdb','','arm-linux','linux','','','${IDEUDIR}docview/','', '', '', '');
    {$endif}
    
     {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}  
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/','', '', '', '/usr/share/fpcsrc'));
+                 'ppc386','gdb','','i386-linux','linux','','','${IDEUDIR}docview/',
+                 '', '', '', '/usr/share/fpcsrc/');
    {$endif}
+   
    
     {$ifdef freebsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
                  '','','','${MSEDIR}lib/common/','${IDEUDIR}syntaxdefs/',
                 '${IDEUDIR}templates/','${IDEUDIR}layout/','${MSEDIR}apps/ide/compstore/',
-                   'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '', '', ''));
+                   'ppc386','gdb','','i386-freebsd','linux','','','${IDEUDIR}docview/','', '', '', '');
   
     {$endif}
   
