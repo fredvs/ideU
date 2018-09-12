@@ -571,7 +571,16 @@ end;
 end  else
 begin
 activate;
-closeallmodule();
+// closeallmodule();
+
+{
+with settingsfo do 
+begin
+activate;
+but_ok.execute;
+end;
+}
+
 end;
 
 {$ifdef polydev}

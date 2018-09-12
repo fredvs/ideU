@@ -1071,24 +1071,24 @@ path=22
  /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
  /home/fred/ideu/src/make.pas
 line=22
- 786
+ 793
  2129
  1009
  567
- 3679
+ 3686
  644
  119
  1084
  2255
  2172
  2448
- 644
+ 651
  3235
  119
  529
  439
  46
- 3938
+ 3945
  684
  86
  15
@@ -1309,8 +1309,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=ontimeritementer2
+finddtext=widgetstomacros
 findhistory=20
+ widgetstomacros
+ ideudir
+ timer
  ontimeritementer2
  TheItemInfo
  tmenu
@@ -1328,11 +1331,8 @@ findhistory=20
  fred
  writeln
  issamefilename
- issamefilename(items[int1].filename,afilename
- purpose
- replace
 findoptions=1
-editpos=30
+editpos=32
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1360,7 +1360,9 @@ editpos=30
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,110
+ 0,-1073741823
+ 0,580
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1393,7 +1395,9 @@ bookmarks26=0
 bookmarks27=0
 bookmarks28=0
 bookmarks29=0
-sourcefiles=30
+bookmarks30=0
+bookmarks31=0
+sourcefiles=32
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1424,7 +1428,9 @@ sourcefiles=30
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=30
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=32
  ideU.pas
  sourceform.pas
  actionsmodule.pas
@@ -1455,7 +1461,9 @@ relpaths=30
  ideusettings.pas
  main.pas
  sourceform.pas
-ismoduletexts=30
+ sourceform.pas
+ actionsmodule.pas
+ismoduletexts=32
  0
  0
  0
@@ -1486,12 +1494,14 @@ ismoduletexts=30
  0
  0
  0
+ 0
+ 0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-order=30
+order=32
  0
  1
  2
@@ -1515,6 +1525,8 @@ order=30
  20
  27
  28
+ 30
+ 31
  29
  21
  22
@@ -1523,9 +1535,9 @@ order=30
  25
  26
 firsttab=20
-index=21
+index=22
 [layout]
-windowlayout=543
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1539,7 +1551,7 @@ windowlayout=543
  x=0
  y=0
  cx=1147
- cy=604
+ cy=605
  rcx=0
  rcy=0
  [mainfo]
@@ -1558,7 +1570,7 @@ windowlayout=543
  rcx=0
  rcy=0
  children=1
-  basedock,0,0,1147,604
+  basedock,0,0,1147,605
  focusedchild=0
  wsize=0
  active=1
@@ -1674,7 +1686,7 @@ windowlayout=543
  x=0
  y=0
  cx=205
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1770,15 +1782,15 @@ windowlayout=543
  [objectinspectorfo]
  splitdir=0
  useroptions=805322859
- stackedunder=findinfilefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=316
- y=249
+ x=304
+ y=62
  cx=316
  cy=484
  rcx=0
@@ -1795,7 +1807,7 @@ windowlayout=543
  [symbolfo]
  splitdir=0
  useroptions=805322875
- stackedunder=objectinspectorfo
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -1883,7 +1895,7 @@ windowlayout=543
  ncx=0
  ncy=0
  x=0
- y=512
+ y=513
  cx=1147
  cy=92
  rcx=0
@@ -1996,8 +2008,8 @@ windowlayout=543
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1147
+ ncy=54
  x=0
  y=0
  cx=1147
@@ -2011,10 +2023,12 @@ windowlayout=543
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideusettings.pas
- history=0
+ value=/home/fred/ideu/src/main.pas
+ history=2
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/ideusettings.pas
  [debuggerfo.project_options]
- value=4
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2030,7 +2044,7 @@ windowlayout=543
  x=208
  y=0
  cx=939
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2066,7 +2080,7 @@ windowlayout=543
  x=0
  y=54
  cx=1147
- cy=455
+ cy=456
  rcx=0
  rcy=0
 [targetconsole]
