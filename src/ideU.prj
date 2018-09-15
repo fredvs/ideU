@@ -29,16 +29,16 @@ findinfiledialog=77
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
+ value="*.pas" "*.pp" "*.inc" "*.mfm"
  history=8
-  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm"
+  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc"
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" "*.mfm"  "*.*"
@@ -69,8 +69,10 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=updown
+ value=ttabpage
  history=20
+  ttabpage
+  tabhint
   updown
   Tcustomgrid.ont
   ttimer
@@ -89,8 +91,6 @@ findinfiledialog=77
   setfilterlist
   All files (*)
   All files
-  savefiledia
-  tfiledialog
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -236,7 +236,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=425
@@ -744,9 +744,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=4
+ ACTIONSMO
+ MAINFO
+ SOURCEFO
+ SOURCEPAGE
+moduletypes=4
+ TACTIONSMO
+ TMAINFO
+ TSOURCEFO
+ TSOURCEPAGE
+modulefiles=4
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1027,7 +1039,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=22
+on=23
  0
  0
  0
@@ -1050,7 +1062,8 @@ on=22
  0
  0
  0
-path=22
+ 0
+path=23
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
@@ -1073,7 +1086,8 @@ path=22
  /home/fred/ideu/src/commandorform.pas
  /home/fred/fpGUIlibDemo_python/fpgui-test.pyw
  /home/fred/ideu/src/make.pas
-line=22
+ /home/fred/ideu/src/sourceform.pas
+line=23
  793
  2129
  1009
@@ -1096,7 +1110,8 @@ line=22
  86
  15
  761
-address=22
+ 892
+address=23
  4795942
  4826658
  4643185
@@ -1119,7 +1134,8 @@ address=22
  0
  0
  0
-addbkpt=22
+ 0
+addbkpt=23
  0
  0
  0
@@ -1142,7 +1158,8 @@ addbkpt=22
  0
  0
  0
-ignore=22
+ 0
+ignore=23
  0
  0
  0
@@ -1165,7 +1182,9 @@ ignore=22
  0
  0
  0
-condition=22
+ 0
+condition=23
+ 
  
  
  
@@ -1312,8 +1331,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=timerupdown
+finddtext=tabhin
 findhistory=20
+ tabhin
+ ftabs
+ .hint
  timerupdown
  rowdown
  updown
@@ -1331,43 +1353,97 @@ findhistory=20
  dokey
  onscrollrows
  twidgetgrid
- tsourcepage
- editonkeydown
- key_Down
 findoptions=1
-editpos=4
- 0,-1073741823
- 13,508
+editpos=10
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,2
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+sourcefiles=10
  ${PROJECTDIR}/ideU.pas
- /home/fred/ideu/src/msegrids.pas
+ ${PROJECTDIR}/msegrids.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/main.mfm
-relpaths=4
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ /home/fred/msegui/lib/common/widgets/msetabs.pas
+ ${PROJECTDIR}/sourcepage.pas
+ /home/fred/msegui/lib/common/widgets/mseforms.pas
+relpaths=10
  ideU.pas
  msegrids.pas
  main.pas
  main.mfm
-ismoduletexts=4
+ sourceform.pas
+ actionsmodule.pas
+ main.pas
+ msegui/lib/common/widgets/msetabs.pas
+ sourcepage.pas
+ ../msegui/lib/common/widgets/mseforms.pas
+ismoduletexts=10
  0
  0
  0
  -1
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=4
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourcepage.mfm
+moduleoptions=4
+ 0
+ 0
+ 0
+ 0
+visiblemodules=4
+ -1
+ -1
+ -1
+ -1
+nomenumodules=4
+ 0
+ 0
+ 0
+ 0
 [sourcefo.files_tab]
+order=10
+ 0
+ 1
+ 4
+ 8
+ 9
+ 7
+ 5
+ 6
+ 2
+ 3
 firsttab=0
-index=1
+index=6
 [layout]
-windowlayout=542
+windowlayout=583
  [mainfo.basedock]
  splitdir=2
  useroptions=11395
@@ -1419,7 +1495,7 @@ windowlayout=542
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1468,7 +1544,7 @@ windowlayout=542
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1487,7 +1563,7 @@ windowlayout=542
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=disassfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1524,7 +1600,7 @@ windowlayout=542
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1616,8 +1692,8 @@ windowlayout=542
  ny=0
  ncx=0
  ncy=0
- x=316
- y=249
+ x=884
+ y=230
  cx=316
  cy=484
  rcx=0
@@ -1850,8 +1926,11 @@ windowlayout=542
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msegrids.pas
- history=2
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=5
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/msegui/lib/common/widgets/msetabs.pas
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/msegrids.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -1910,6 +1989,44 @@ windowlayout=542
  cy=451
  rcx=0
  rcy=0
+ [_mse_sourcefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=291
+ y=252
+ cx=706
+ cy=352
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_sourcefo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=133
+ y=135
+ cx=652
+ cy=301
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

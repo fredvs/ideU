@@ -892,7 +892,8 @@ begin
   if afilename <> '' then begin
    filechangenotifyer.addnotification(result.filepath,result.filetag);
    designer.designfiles.add(afilename);
-    files_tab[files_tab.count - 1].hint := afilename;
+   result.tabhint := afilename;
+ 
   end;
  except
   result.Free;
@@ -1102,7 +1103,7 @@ begin
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
   
-  files_tab.activepage.hint := activepage.pathdisp.value;
+  activepage.tabhint := activepage.pathdisp.value;
 
  if assigned(debuggerfo) then
  begin
