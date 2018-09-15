@@ -708,7 +708,7 @@ begin
      end;
     end;
    end;
-  end;
+   end;
  end;
 end;
 
@@ -1579,96 +1579,7 @@ sourcefo.thetimer.interval :=  1000000 ;
   end;
  end;
 end;
-{
-procedure tsourcepage.clearbrackets;
-begin
- if (fbracket1.col >= 0) and (fbracketsetting = 0) then begin
-  inc(fbracketsetting);
-  try
-   with edit do begin
-    setfontstyle(fbracket1,makegridcoord(fbracket1.col+1,fbracket1.row),
-                                   fs_bold,false);
-    setfontstyle(fbracket2,makegridcoord(fbracket2.col+1,fbracket2.row),
-                                   fs_bold,false);
-    refreshsyntax(fbracket1.row,1);
-    refreshsyntax(fbracket2.row,1);
-    fbracket1:= invalidcell;
-    fbracket2:= invalidcell;
-    if syntaxpainterhandle >= 0 then begin
-     syntaxpainter.boldchars[syntaxpainterhandle]:= nil;
-    end;
-   end;
-  finally
-   dec(fbracketsetting);
-  end;
- end;  
-end;
 
-procedure tsourcepage.checkbrackets;
-var
- mch1: msechar;
- br1,br2: bracketkindty;
- open,open2: boolean;
- pt1,pt2: gridcoordty;
- ar1: gridcoordarty;
-begin
- clearbrackets;
- pt2:= invalidcell;
- with edit do begin
-  pt1:= editpos;
-  mch1:= charatpos(pt1);
-  br1:= checkbracketkind(mch1,open);
-  if (br1 <> bki_none) and (pt1.col > 0) then begin
-   dec(pt1.col);
-   br2:= checkbracketkind(charatpos(pt1),open2);
-   if (br2 = bki_none) or (open <> open2) then begin
-    inc(pt1.col);
-   end
-   else begin
-    br1:= br2;
-   end;
-   pt2:= matchbracket(pt1,br1,open);
-  end
-  else begin
-   dec(pt1.col);
-   if pt1.col >= 0 then begin
-    mch1:= charatpos(pt1);
-    br1:= checkbracketkind(mch1,open);
-    if br1 <> bki_none then begin
-     pt2:= matchbracket(pt1,br1,open);
-    end;
-   end;
-  end;
-  if pt2.col >= 0 then begin
-   fbracket1:= pt1;
-   fbracket2:= pt2;
-   inc(fbracketsetting);
-   try
-    setfontstyle(pt1,makegridcoord(pt1.col+1,pt1.row),fs_bold,true);
-    setfontstyle(pt2,makegridcoord(pt2.col+1,pt2.row),fs_bold,true);
-   finally
-    dec(fbracketsetting);
-   end;
-   if syntaxpainterhandle >= 0 then begin
-    setlength(ar1,2);
-    ar1[0]:= fbracket1;
-    ar1[1]:= fbracket2;
-    syntaxpainter.boldchars[syntaxpainterhandle]:= ar1;
-    refreshsyntax(fbracket1.row,1);
-    refreshsyntax(fbracket2.row,1);
-   end;
-  end;
- end;
-end;
-
-procedure tsourcepage.callcheckbrackets;
-begin
- if (fbracketchecking = 0) and (projectoptions.e.editmarkbrackets) then begin
-  inc(fbracketchecking);
-  asyncevent(ord(spat_checkbracket));
- end;
-end;
-}
 function tsourcepage.source: trichstringdatalist;
 begin
  result:= edit.datalist;

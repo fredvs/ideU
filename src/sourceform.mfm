@@ -24,10 +24,10 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 411
-  bounds_y = 300
-  bounds_cx = 662
-  bounds_cy = 340
+  bounds_x = 291
+  bounds_y = 252
+  bounds_cx = 696
+  bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
   container.frame.localprops1 = []
@@ -36,8 +36,8 @@ object sourcefo: tsourcefo
   container.bounds = (
     0
     0
-    652
-    340
+    686
+    352
   )
   dragdock.splitter_size = 0
   dragdock.caption = ' Source '
@@ -106,17 +106,18 @@ object sourcefo: tsourcefo
   onidle = formonidle
   moduleclassname = 'tdockform'
   object files_tab: ttabwidget
+    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 661
-    bounds_cy = 325
+    bounds_cx = 686
+    bounds_cy = 352
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
     onpageremoved = tabwidgetpageremoved
     fontempty.name = 'stf_empty'
     fontempty.localprops = []
-    tab_options = [tabo_dragsource, tabo_dragdest, tabo_dblclickedtabfirst, tabo_hintclippedtext]
+    tab_options = [tabo_dragsource, tabo_dragdest, tabo_dblclickedtabfirst]
     tab_fontactivetab.color = 0
     tab_fontactivetab.style = [fs_bold]
     tab_fontactivetab.name = 'stf_default'
@@ -187,7 +188,7 @@ object sourcefo: tsourcefo
     tab_faceactivetab.template = tfacecomp2
     tab_sizemin = 24
     tab_size = 24
-    tab_optionswidget = [ow_destroywidgets, ow_hinton, ow_timedhint]
+    tab_optionswidget = [ow_destroywidgets, ow_hinton]
     tab_optionswidget1 = []
     object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
@@ -200,7 +201,7 @@ object sourcefo: tsourcefo
       taborder = 2
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
-      bounds_x = 597
+      bounds_x = 622
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
@@ -222,7 +223,7 @@ object sourcefo: tsourcefo
       taborder = 1
       hint = 'Step forward in code navigation.'
       onshowhint = stephintev
-      bounds_x = 613
+      bounds_x = 638
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24

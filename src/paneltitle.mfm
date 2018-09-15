@@ -1,0 +1,79 @@
+object paneltitlefo: tpaneltitlefo
+  visible = False
+  bounds_x = 534
+  bounds_y = 264
+  bounds_cx = 299
+  bounds_cy = 78
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    299
+    78
+  )
+  caption = 'Title of panel'
+  icon.options = [bmo_masked]
+  icon.origformat = 'png'
+  icon.image = {
+    00000000020000001000000010000000F0010000000000000000000000000000
+    000000000000000000000000000000000000000000EF001531FFFF014AFFFF01
+    6BFFFF01A5FFFF01B5FFFF01A5FFFF0100EF00096BFFF70131FFFF0152FFFF01
+    7BFFFF01B5FFFF01C6FFFF01A5FFFF0200EF000708EF080118FFAD0139FFFF01
+    5AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF015AFFB50129FF290100EF0005
+    31EF310108EF080118FFAD0142FFFF016BFFFF01A5FFFF01E7FFFF01DEFFFF01
+    A5FFFF0152FFB50129FF290142FF420100EF000431EF310108EF080118FF5A01
+    42FFF7017BFFFF01C6FFFF03A5FFFF014AFF840129FF290139F7390100EF0004
+    31EF310108EF080118FF21014AFFCE0194FFFF01DEFFFF01C6FFFF029CFFE701
+    42FF4A0121FF210139F7390100EF000431EF310108EF080118FF180152FF6B01
+    DEFFFF01C6FFFF0394FFA50142FF420121FF210139F7390100EF000431EF3101
+    08E7080110F7100139F73901DEF7DE01C6FFFF02DEF7DE015AFF5A0121FF2101
+    10F7100131EF310100EF000431EF310100E7000208E7080173EF7301C6FFFF02
+    73EF730110E7100100E7000231EF310100EF000431EF310100E7000310E71001
+    29DE290210E7100100E7000331EF310100EF000431EF310100E7000200DE0005
+    00E7000331EF310100EF000431EF310100E7000A31EF310100EF000431EF3101
+    00E7000A31EF310100EF000573EF730100DE000100E7000500DE000273EF7301
+    00EF001300000000E0070000F00F0000F81F0000FC3F0000FC3F0000FC3F0000
+    FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000F81F0000
+    00000000
+  }
+  windowopacity = -Inf
+  moduleclassname = 'tmseform'
+  object tedit1: tedit
+    frame.caption = 'Custom title (leave empty for auto-title)'
+    frame.captiontextflags = [tf_bottom]
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      17
+      0
+      0
+    )
+    bounds_x = 9
+    bounds_y = 9
+    bounds_cx = 278
+    bounds_cy = 37
+    reffontheight = 14
+  end
+  object tbutton1: tbutton
+    taborder = 1
+    bounds_x = 85
+    bounds_y = 51
+    bounds_cx = 50
+    bounds_cy = 20
+    state = [as_localcaption, as_localonexecute]
+    caption = 'OK'
+    onexecute = onok
+  end
+  object tbutton2: tbutton
+    taborder = 2
+    bounds_x = 170
+    bounds_y = 51
+    bounds_cx = 53
+    bounds_cy = 20
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Cancel'
+    onexecute = nocan
+  end
+end

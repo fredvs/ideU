@@ -4669,6 +4669,7 @@ var
 begin
  if fscrolling = 0 then begin
   if event = sbe_setvalue{valuechanged} then begin
+  
    rect1:= fclientrect;
    scrollpostoclientpos(rect1);
    setclientpos(rect1.pos);
@@ -4686,9 +4687,10 @@ end;
 procedure tcustomscrollboxframe.dokeydown(var info: keyeventinfoty);
 begin
  with info do begin
+ 
   if (oscr_key in foptionsscroll) and not (es_processed in info.eventstate) and 
            (((shiftstate * shiftstatesmask) - [ss_ctrl]) = []) then begin
-   include(eventstate,es_processed); 
+  include(eventstate,es_processed); 
    case key of
     key_pageup: begin
      if ss_ctrl in shiftstate then begin

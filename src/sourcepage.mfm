@@ -4,20 +4,21 @@ object sourcepage: tsourcepage
   color = -1879048187
   frame.localprops = []
   frame.localprops1 = []
-  bounds_x = 282
-  bounds_y = 150
-  bounds_cx = 590
-  bounds_cy = 241
+  bounds_x = 133
+  bounds_y = 135
+  bounds_cx = 642
+  bounds_cy = 301
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    590
-    241
+    642
+    301
   )
   icon.transparentcolor = -2147483648
+  windowopacity = -Inf
   oncreate = sourcefooncreate
   oneventloopstart = sourcefoonloaded
   ondestroy = sourcefoondestroy
@@ -80,8 +81,8 @@ object sourcepage: tsourcepage
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 590
-    bounds_cy = 219
+    bounds_cx = 642
+    bounds_cy = 279
     anchors = [an_top, an_bottom]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_wrapcol, og_visiblerowpagestep]
     fixcols.count = 1
@@ -124,7 +125,7 @@ object sourcepage: tsourcepage
       end>
     datarowlinewidth = 0
     datarowlinecolor = -1610612732
-    datarowheight = 19
+    datarowheight = 18
     onrowsinserted = gridonrowsinserted
     onrowsdeleted = gridonrowsdeleted
     oncellevent = gridoncellevent
@@ -135,7 +136,7 @@ object sourcepage: tsourcepage
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 1940
-      bounds_cy = 19
+      bounds_cy = 18
       font.name = 'mseide_source'
       font.xscale = 1
       font.localprops = [flp_xscale]
@@ -150,14 +151,14 @@ object sourcepage: tsourcepage
       oneditnotifcation = editoneditnotification
       oncellevent = editoncellevent
       maxundocount = 10000
-      reffontheight = 19
+      reffontheight = 18
     end
     object dataicon: tdataicon
       optionsskin = [osk_framebuttononly]
       bounds_x = 50
       bounds_y = 0
       bounds_cx = 15
-      bounds_cy = 19
+      bounds_cy = 18
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       options = [bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey]
@@ -205,13 +206,13 @@ object sourcepage: tsourcepage
     face.localprops = [fal_fadirection]
     taborder = 1
     bounds_x = 67
-    bounds_y = 221
-    bounds_cx = 523
-    bounds_cy = 19
+    bounds_y = 282
+    bounds_cx = 575
+    bounds_cy = 18
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 15
+    reffontheight = 14
   end
   object linedisp: tlabel
     optionswidget1 = [ow1_autoscale]
@@ -234,7 +235,7 @@ object sourcepage: tsourcepage
     face.localprops = [fal_fadirection]
     taborder = 2
     bounds_x = 2
-    bounds_y = 221
+    bounds_y = 281
     bounds_cx = 61
     bounds_cy = 19
     anchors = [an_left, an_bottom]

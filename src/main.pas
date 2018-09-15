@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.9.3';
+ versiontext = '1.9.4';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -3686,6 +3686,7 @@ end;
 procedure tmainfo.newpanelonexecute(const sender: TObject);
 begin
  newpanel.activate;
+//paneltitlefo.show(true);
 end;
 
 procedure tmainfo.viewwatchpointsonexecute(const sender: TObject);

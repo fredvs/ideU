@@ -35,10 +35,10 @@ findinfiledialog=77
  [findinfileadialogfo.indirectories]
  value=1
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.mfm"
+ value="*.pas" "*.pp" "*.inc" 
  history=8
-  "*.pas" "*.pp" "*.inc" "*.mfm"
   "*.pas" "*.pp" "*.inc" 
+  "*.pas" "*.pp" "*.inc" "*.mfm"
   "*.pas" "*.pp" "*.inc"
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" "*.mfm"  "*.*"
@@ -69,28 +69,28 @@ findinfiledialog=77
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=shapeinfoty
+ value=updown
  history=20
-  shapeinfoty
-  menucellinfoarty
-  iassistiveclientmenu
-  o.
-  closemodule
-  mainmenu1
-  at cursor
-  closeactonexecute
-  tactionsmo.closeactonexecute
-  f4
-  ctrl+f4
-  fpguidir
-  tagpointer
-  closemess
-  line.e
-  replace.e
-  tbooleanedit
-  customoption
-  customdomake
-  customcommandline
+  updown
+  Tcustomgrid.ont
+  ttimer
+  Wave Player 2
+  Wave Player 1
+  .captions
+  fixcols.cols
+  tmsestringdatalist
+  name of sound
+  mask
+  maskar
+  .maskar
+  .mask
+  .prj
+  tdoublemsestringdatalist
+  setfilterlist
+  All files (*)
+  All files
+  savefiledia
+  tfiledialog
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -224,7 +224,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=696
  width0=112
@@ -236,11 +236,11 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
- x=289
- y=134
+ x=425
+ y=103
  cx=837
  cy=570
 settaborder=15
@@ -271,7 +271,7 @@ programparameters=18
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=16
  [programparametersfo]
  stackedunder=
  x=388
@@ -664,7 +664,7 @@ newfoforms=10
  ${TEMPLATEDIR}fpc_mse/default/report.mfm
  ${TEMPLATEDIR}fpc_mse/default/pascform.mfm
  ${TEMPLATEDIR}fpc_mse/default/inheritedform.mfm
-forcezorder=0
+forcezorder=-1
 stripmessageesc=0
 copymessages=0
 closemessages=0
@@ -751,7 +751,7 @@ befcommandon=0
 makeoptionson=11
  4095
  0
- 52
+ 48
  4093
  0
  4095
@@ -954,7 +954,7 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=9
+sourcedirs=12
  
  ${FPCSRCDIR}/
  ${FPCSRCDIR}/*/
@@ -963,6 +963,9 @@ sourcedirs=9
  ${MSEDIR}lib/addon/*/
  ${MSELIBDIR}kernel/$TARGETOSDIR/
  ${MSELIBDIR}/
+ ${MSELIBDIR}/*/
+ ${MSELIBDIR}/*/*/
+ ${MSELIBDIR}/*/*/*/
  ./
 defines=0
 progparameters=
@@ -974,7 +977,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=0
+showconsole=1
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1088,7 +1091,7 @@ line=22
  529
  439
  46
- 3945
+ 3946
  684
  86
  15
@@ -1309,281 +1312,60 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=dragdock.o
+finddtext=timerupdown
 findhistory=20
- dragdock.o
- dragdocko
- widgetstomacros
- ideudir
- timer
- ontimeritementer2
- TheItemInfo
- tmenu
+ timerupdown
+ rowdown
+ updown
+ ontimerupdown
  thetimer
- modulenames
- ontimer
- mainmenu1
- console
- fpguidir
- if issamefilename(items[int1].fil
- result:= dofind1(aunitname+'.pp');
- if filedialog(aname,[fdo_checkexist],c[ord(selectprogramfile)],
- if filedialog(str1,[fdo_save,fdo_checkexist],c[ord(newform)],
- Tmainfo.SelectionChanged
- fred
+ dopastecells
+ destroy
+ dopastecel
+ incupdown
+ onthetimer
+ tcustomgrid.cr
+ tcustomgrid
+ dokeyup
+ incdown
+ dokey
+ onscrollrows
+ twidgetgrid
+ tsourcepage
+ editonkeydown
+ key_Down
 findoptions=1
-editpos=40
+editpos=4
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 9,206
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 13,508
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-bookmarks20=0
-bookmarks21=0
-bookmarks22=0
-bookmarks23=0
-bookmarks24=0
-bookmarks25=0
-bookmarks26=0
-bookmarks27=0
-bookmarks28=0
-bookmarks29=0
-bookmarks30=0
-bookmarks31=0
-bookmarks32=0
-bookmarks33=0
-bookmarks34=0
-bookmarks35=0
-bookmarks36=0
-bookmarks37=0
-bookmarks38=0
-bookmarks39=0
-sourcefiles=40
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/commandorform.pas
+ /home/fred/ideu/src/msegrids.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sak_mse.pas
- /home/fred/msegui/lib/common/assistive/mseassistivehandler.pas
- /home/fred/msegui/lib/common/kernel/mseshapes.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sak_mse.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/aboutform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/define.inc
- ${PROJECTDIR}/ideusettings.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/disassform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/panelform.pas
-relpaths=40
+relpaths=4
  ideU.pas
- sourceform.pas
- actionsmodule.pas
- commandorform.pas
+ msegrids.pas
  main.pas
- projectoptionsform.pas
- commandorform.pas
- sourceform.pas
- actionsmodule.pas
- main.pas
- sak_mse.pas
- msegui/lib/common/assistive/mseassistivehandler.pas
- msegui/lib/common/kernel/mseshapes.pas
- sourceform.pas
- actionsmodule.pas
  main.mfm
- sak_mse.pas
- ideU.pas
- main.pas
- sourceform.pas
- actionsmodule.pas
- aboutform.pas
- actionsmodule.pas
- sourceform.pas
- actionsmodule.pas
- main.pas
- define.inc
- ideusettings.pas
- main.pas
- sourceform.pas
- sourceform.pas
- actionsmodule.pas
- disassform.pas
- sourceform.pas
- actionsmodule.pas
- sourcepage.pas
- main.mfm
- sourceform.pas
- actionsmodule.pas
- panelform.pas
-ismoduletexts=40
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
+ismoduletexts=4
  0
  0
  0
  -1
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- -1
- 0
- 0
- 0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-order=40
- 0
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 39
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
-firsttab=21
-index=23
+firsttab=0
+index=1
 [layout]
 windowlayout=542
  [mainfo.basedock]
@@ -1686,7 +1468,7 @@ windowlayout=542
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1731,7 +1513,7 @@ windowlayout=542
  x=0
  y=0
  cx=205
- cy=453
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1741,8 +1523,8 @@ windowlayout=542
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=0
+ col=0
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1827,7 +1609,7 @@ windowlayout=542
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1940,9 +1722,9 @@ windowlayout=542
  ncx=0
  ncy=0
  x=0
- y=510
+ y=509
  cx=1146
- cy=93
+ cy=94
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2011,7 +1793,7 @@ windowlayout=542
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2042,7 +1824,7 @@ windowlayout=542
  x=0
  y=0
  cx=1146
- cy=51
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2054,11 +1836,11 @@ windowlayout=542
  nx=0
  ny=0
  ncx=1146
- ncy=54
+ ncy=55
  x=0
  y=0
  cx=1146
- cy=54
+ cy=55
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2068,9 +1850,9 @@ windowlayout=542
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/msegrids.pas
  history=2
-  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/msegrids.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -2089,7 +1871,7 @@ windowlayout=542
  x=208
  y=0
  cx=938
- cy=453
+ cy=451
  rcx=0
  rcy=0
  [cpuc86_64fo]
@@ -2123,9 +1905,9 @@ windowlayout=542
  ncx=0
  ncy=0
  x=0
- y=54
+ y=55
  cx=1146
- cy=453
+ cy=451
  rcx=0
  rcy=0
 [targetconsole]

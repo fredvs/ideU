@@ -888,9 +888,11 @@ begin
   result.dataicon.imagelist:= imagelist;
   result.filepath:= afilename;
   files_tab.add(result,files_tab.activepageindex+1);
+  
   if afilename <> '' then begin
    filechangenotifyer.addnotification(result.filepath,result.filetag);
    designer.designfiles.add(afilename);
+    files_tab[files_tab.count - 1].hint := afilename;
   end;
  except
   result.Free;
@@ -1092,12 +1094,15 @@ begin
  page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
+  
  
   if  assigned(activepage) then
   begin
   if fileexists(activepage.pathdisp.value) then
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
+  
+  files_tab.activepage.hint := activepage.pathdisp.value;
 
  if assigned(debuggerfo) then
  begin
