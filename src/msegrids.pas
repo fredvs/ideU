@@ -16375,9 +16375,9 @@ end;
 procedure tcustomgrid.dotimerupdown(const sender: tobject);
 begin
 if ftimerupdown.tag = 0 then
- rowdown()
+ rowdown(fca_focusinforce,aso_gridnavig in assistiveoptions)
  else
- rowup();
+ rowup(fca_focusinforce,aso_gridnavig in assistiveoptions);
 end;
 
 function tcustomgrid.endanchor: gridcoordty;

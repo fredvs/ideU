@@ -24,8 +24,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 291
-  bounds_y = 252
+  bounds_x = 142
+  bounds_y = 201
   bounds_cx = 696
   bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -114,6 +114,7 @@ object sourcefo: tsourcefo
     anchors = []
     popupmenu = formpopup
     onactivepagechanged = tabwidgetonactivepagechanged
+    onpageadded = onpageadd
     onpageremoved = tabwidgetpageremoved
     fontempty.name = 'stf_empty'
     fontempty.localprops = []
@@ -190,6 +191,7 @@ object sourcefo: tsourcefo
     tab_size = 24
     tab_optionswidget = [ow_destroywidgets, ow_hinton]
     tab_optionswidget1 = []
+    statfile = mainfo.projectstatfile
     object step_back: tstockglyphbutton
       optionswidget = [ow_destroywidgets, ow_timedhint]
       color = 13750737

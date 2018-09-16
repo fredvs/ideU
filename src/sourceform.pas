@@ -91,6 +91,7 @@ type
    procedure convpasex(const sender: TObject);
    procedure insuidexec(const sender: TObject);
    procedure stephintev(const sender: TObject; var info: hintinfoty);
+   procedure onpageadd(const sender: TObject; const awidget: twidget);
   private
    fasking: boolean;
    fgdbpage: tsourcepage;
@@ -143,6 +144,7 @@ type
    function currentfilename: filenamety;
    function currentwordatcursor: msestring;
    procedure updatecaption;
+   procedure updatehinttab;
    function newpage: tsourcepage;
    function findsourcepage(afilename: filenamety; wholepath: boolean = true;
                               onlyifloaded: boolean = false): tsourcepage;
@@ -887,14 +889,14 @@ begin
   result.edit.syntaxpainter:= syntaxpainter;
   result.dataicon.imagelist:= imagelist;
   result.filepath:= afilename;
+   
   files_tab.add(result,files_tab.activepageindex+1);
   
   if afilename <> '' then begin
    filechangenotifyer.addnotification(result.filepath,result.filetag);
    designer.designfiles.add(afilename);
-   result.tabhint := afilename;
- 
-  end;
+     end;
+   result.tabhint := afilename;   
  except
   result.Free;
   result:= nil;
@@ -1086,6 +1088,15 @@ begin
 }
 end;
 
+
+procedure tsourcefo.updatehinttab;
+var
+x : integer;
+begin
+for x:= 0 to files_tab.count-1
+do tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value;
+end;
+
 procedure tsourcefo.updatecaption;
 var
  page: tsourcepage;
@@ -1095,15 +1106,14 @@ begin
  page:= tsourcepage(files_tab.activepage);
  if page <> nil then begin
   caption:= page.caption;
-  
- 
+   
   if  assigned(activepage) then
   begin
   if fileexists(activepage.pathdisp.value) then
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
   
-  activepage.tabhint := activepage.pathdisp.value;
+ // activepage.tabhint := activepage.pathdisp.value;
 
  if assigned(debuggerfo) then
  begin
@@ -1587,6 +1597,10 @@ procedure tsourcefo.stephintev(const sender: TObject; var info: hintinfoty);
 begin
  info.caption:= info.caption + '('+
       encodeshortcutname(tstockglyphbutton(sender).shortcut)+').';
+end;
+
+procedure tsourcefo.onpageadd(const sender: TObject; const awidget: twidget);
+begin
 end;
 
 end.

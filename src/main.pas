@@ -3139,6 +3139,7 @@ begin
   
   
  end;
+ sourcefo.updatehinttab;
 end;
 
 procedure tmainfo.saveproject(aname: filenamety;

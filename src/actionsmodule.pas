@@ -1114,6 +1114,7 @@ begin
  if projectfiledialog(fna1,false) = mr_ok then begin
     mainfo.openproject(fna1);
     mainfo.activate;
+    sourcefo.updatehinttab;
  end;
 end;
 
