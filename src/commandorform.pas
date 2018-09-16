@@ -4,12 +4,12 @@ unit commandorform;
 
 interface
 uses
- msegui,mseclasses, msefileutils, mclasses, mseforms,msegraphics,msegraphutils,mseguiglob,
- mseevent,msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,mseglob,
- msegraphedits,mseificomp,mseificompglob,mseifiglob,msescrollbar,msetypes,
- mseapplication,msedataedits,msedatanodes,mseedit,msegrids,mselistbrowser,
- msestat,msestatfile,msestream,msestrings,sysutils,mseimage,msedispwidgets,
- mserichstring,mseact;
+ msegui,mseclasses, msefileutils, mclasses, mseforms,msegraphics,msegraphutils,
+ mseguiglob,mseevent,msemenus,msesimplewidgets,msewidgets,msedock,msedragglob,
+ mseglob,msegraphedits,mseificomp,mseificompglob,mseifiglob,msescrollbar,
+ msetypes,mseapplication,msedataedits,msedatanodes,mseedit,msegrids,
+ mselistbrowser,msestat,msestatfile,msestream,msestrings,sysutils,mseimage,
+ msedispwidgets,mserichstring,mseact;
 
 type
  tdebuggerfo = class(tdockform)
@@ -22,7 +22,6 @@ type
    edit_options: tdropdownlistedit;
    edit_compilernum: tenumedit;
    edit_compiler: tdropdownlistedit;
-   save_file: tbutton;
    open_file: tbutton;
    panelproject: tdockpanel;
    project_interrupt: tbutton;
@@ -58,6 +57,8 @@ type
    tdockpanel2: tdockpanel;
    terminal_run: tbutton;
    debug_on: tbutton;
+   save_file: tbutton;
+   
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -77,6 +78,7 @@ type
    procedure onterminalon(const sender: TObject);
    procedure onsetdebug(const sender: TObject);
    procedure onchangeproject(const sender: TObject);
+   procedure onsavecust(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
@@ -182,7 +184,7 @@ end;
 procedure tdebuggerfo.findinpage(const sender: TObject);
 begin
  sourcefo.activepage.dofind;
-end;
+ end;
 
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
 begin
@@ -194,6 +196,7 @@ procedure tdebuggerfo.assistiveactonexecute(const sender: TObject);
 begin
   actionsmo.assistiveactonexecute(sender); 
  end;
+ 
 
 procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
 begin
@@ -310,6 +313,7 @@ if system.pos('Default',debuggerused[int3]) > 0 then
  end;
  end;
  
+ 
  if str3 <> '' then 
  begin
  debug_on.tag := 1 ;
@@ -321,6 +325,15 @@ if system.pos('Default',debuggerused[int3]) > 0 then
  end;
 
   end;
+
+procedure tdebuggerfo.onsavecust(const sender: TObject);
+begin
+//actionsmo.saveactonexecute(sender);
+
+writeln('onsavecust');
+sourcefo.saveall(true);
+sourcefo.updatehinttab;
+end;
 
 
 end.

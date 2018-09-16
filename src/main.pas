@@ -2292,10 +2292,12 @@ end;
    setbm0.enabled:= true;
    setbm1.enabled:= true;
    setbm2.enabled:= true;
-   setbm3.enabled:= true;
+   setbm3.enabled:= true;   
    setbm4.enabled:= true;
    setbm5.enabled:= true;
    setbm6.enabled:= true;
+   
+   
    setbm7.enabled:= true;
    setbm8.enabled:= true;
    setbm8.enabled:= true;
@@ -2312,9 +2314,11 @@ end;
    findbm8.enabled:= true;
    findbm9.enabled:= true;
    print.enabled:= true;
-    debuggerfo.save_file.enabled := modified;
+   //debuggerfo.save_file.enabled := modified;
+ 
    with sourcefo.activepage do begin
     actionsmo.save.enabled:= modified;
+    actionsmo.savecust.enabled:= modified;
     undo.enabled:= edit.canundo;
     redo.enabled:= edit.canredo;
     copy.enabled:= edit.hasselection;
@@ -2360,7 +2364,7 @@ end;
 
    print.enabled:= false;
    save.enabled:= false;
-   debuggerfo.save_file.enabled := false;
+   
    undo.enabled:= false;
    redo.enabled:= false;
    copy.enabled:= false;
@@ -2378,10 +2382,11 @@ end;
   // replace.enabled:= false;
     replace.enabled:= true;
      copyword.enabled:= true;
+  
   end;
   if (factivedesignmodule <> nil) then begin
    save.enabled:= factivedesignmodule^.modified;
-   debuggerfo.save_file.enabled := save.enabled;
+   //debuggerfo.save_file.enabled := save.enabled;
    close.enabled:= true;
   end
   else begin

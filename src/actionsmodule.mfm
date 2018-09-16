@@ -1,8 +1,8 @@
 object actionsmo: tactionsmo
   bounds_cx = 956
   bounds_cy = 472
-  left = 255
-  top = 143
+  left = 219
+  top = 211
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
@@ -3853,6 +3853,15 @@ object actionsmo: tactionsmo
     sc = (
       1
       24663
+    )
+  end
+  object savecust: taction
+    onexecute = savecustom
+    left = 590
+    top = 34
+    sc = (
+      1
+      16467
     )
   end
 end

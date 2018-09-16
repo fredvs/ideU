@@ -5,11 +5,11 @@ unit actionsmodule;
 								
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui, commandorform,
- dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,
- msegraphutils,mseguiglob,msemenus,msesys, msesysutils, msesimplewidgets,
- projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
- mseificompglob,mseifiglob;
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui,
+  commandorform,dialogfiles,msefileutils,msedatamodules,mseglob,msestat,
+ msegraphics,msegraphutils,mseguiglob,msemenus,msesys, msesysutils,
+  msesimplewidgets,projecttreeform,msestringcontainer,targetconsole,mclasses,
+ mseificomp,mseificompglob,mseifiglob;
  
 type
  stringconsts = (
@@ -221,6 +221,7 @@ type
    copyword: taction;
    selectall: taction;
    
+   savecust: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -441,6 +442,8 @@ begin
  (theactivepage = sourcefo.activepage.filepath + 
  sourcefo.activepage.filename)
   then sdefload(thesdef);
+ 
+    sourcefo.updatehinttab;
 end;
 
 procedure tactionsmo.savecustom(const sender: tobject);
@@ -453,7 +456,8 @@ saveactonexecute(sender);
    sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));
      LoadfpgDesigner(sysfilename);
  end;
-end;
+ sourcefo.activate;
+ end;
 
 procedure tactionsmo.saveasactonexecute(const sender: TObject);
 var

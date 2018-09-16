@@ -97,7 +97,7 @@ object debuggerfo: tdebuggerfo
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
-    dragdock.optionsdock = [od_savepos, od_savezorder, od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint, od_childicons]
+    dragdock.optionsdock = [od_savepos, od_savezorder, od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint]
     statfile = mainfo.projectstatfile
   end
   object statdisp: tstringdisp
@@ -118,7 +118,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 30
     bounds_cx = 1141
-    bounds_cy = 18
+    bounds_cy = 17
     anchors = [an_top]
     font.shadow_color = 16448250
     font.gloss_color = 16250871
@@ -127,7 +127,7 @@ object debuggerfo: tdebuggerfo
     font.options = [foo_antialiased]
     font.localprops = [flp_shadow_color]
     textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 15
+    reffontheight = 14
   end
   object tdockpanel2: tdockpanel
     frame.framewidth = 1
@@ -239,7 +239,6 @@ object debuggerfo: tdebuggerfo
       bounds_x = 272
       bounds_y = 3
       bounds_cx = 33
-      bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'X'
@@ -263,7 +262,7 @@ object debuggerfo: tdebuggerfo
             'X'
           )
         end>
-      reffontheight = 15
+      reffontheight = 14
     end
     object edit_compilernum: tenumedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
@@ -285,7 +284,6 @@ object debuggerfo: tdebuggerfo
       bounds_x = 238
       bounds_y = 3
       bounds_cx = 33
-      bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       dropdown.cols.count = 1
@@ -305,7 +303,7 @@ object debuggerfo: tdebuggerfo
       value = 0
       valuemin = 0
       valuemax = 100
-      reffontheight = 15
+      reffontheight = 14
     end
     object edit_compiler: tdropdownlistedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
@@ -324,10 +322,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 5
       hint = ' Compiler Type for Edited file '
-      bounds_x = 174
+      bounds_x = 170
       bounds_y = 3
-      bounds_cx = 63
-      bounds_cy = 21
+      bounds_cx = 66
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'Pascal'
@@ -343,26 +340,7 @@ object debuggerfo: tdebuggerfo
             'Other'
           )
         end>
-      reffontheight = 15
-    end
-    object save_file: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 6
-      hint = ' Save edited file '
-      bounds_x = 146
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
-      action = actionsmo.customsave
-      imagelist = actionsmo.buttonicons
-      imagenr = 13
-      focusrectdist = 0
+      reffontheight = 14
     end
     object open_file: tbutton
       color = -2147483645
@@ -371,9 +349,9 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.localprops = []
       face.template = templfile
-      taborder = 7
+      taborder = 6
       hint = ' Open file '
-      bounds_x = 119
+      bounds_x = 116
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -390,7 +368,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.localprops = []
       face.template = templfile
-      taborder = 9
+      taborder = 8
       hint = ' Toggle form/unit '
       bounds_x = 3
       bounds_y = 1
@@ -417,12 +395,11 @@ object debuggerfo: tdebuggerfo
           face.localprops = [fal_fadirection]
           face.template = templfile
         end>
-      taborder = 8
+      taborder = 7
       hint = ' History of files. '
       bounds_x = 31
       bounds_y = 3
-      bounds_cx = 86
-      bounds_cy = 21
+      bounds_cx = 84
       statfile = mainfo.projectstatfile
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
@@ -431,7 +408,26 @@ object debuggerfo: tdebuggerfo
         end>
       onbeforedropdown = onbeforefilehis
       onafterclosedropdown = onsetvaluefilehis
-      reffontheight = 15
+      reffontheight = 14
+    end
+    object save_file: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 9
+      hint = ' Save edited file '
+      bounds_x = 143
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
+      action = actionsmo.savecust
+      imagelist = actionsmo.buttonicons
+      imagenr = 13
+      focusrectdist = 0
     end
   end
   object panelmain: tdockpanel
@@ -803,7 +799,6 @@ object debuggerfo: tdebuggerfo
       bounds_x = 176
       bounds_y = 3
       bounds_cx = 34
-      bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       onchange = onchangeproject
@@ -827,7 +822,7 @@ object debuggerfo: tdebuggerfo
             '0'
           )
         end>
-      reffontheight = 15
+      reffontheight = 14
     end
     object project_save: tbutton
       color = -2147483645
@@ -984,15 +979,15 @@ object debuggerfo: tdebuggerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          3
+          2
           11
           3
         )
         hint = ' Executable lines hint on/off '
         bounds_x = 45
-        bounds_y = 9
+        bounds_y = 10
         bounds_cx = 24
-        bounds_cy = 17
+        bounds_cy = 16
         statfile = mainfo.projectstatfile
         onchange = hintonexecute
         value = True
@@ -1006,16 +1001,16 @@ object debuggerfo: tdebuggerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          3
+          2
           11
           3
         )
         taborder = 1
         hint = ' Set Watches On/Off '
         bounds_x = 24
-        bounds_y = 9
+        bounds_y = 10
         bounds_cx = 23
-        bounds_cy = 17
+        bounds_cy = 16
         onchange = watchonexecute
       end
       object break_point: tbooleanedit
@@ -1027,16 +1022,16 @@ object debuggerfo: tdebuggerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          3
+          2
           11
           3
         )
         taborder = 2
         hint = ' Set Break point on/off '
         bounds_x = 3
-        bounds_y = 9
+        bounds_y = 10
         bounds_cx = 23
-        bounds_cy = 17
+        bounds_cy = 16
         onchange = breakonexecute
       end
     end
@@ -1060,7 +1055,6 @@ object debuggerfo: tdebuggerfo
       bounds_x = 31
       bounds_y = 3
       bounds_cx = 86
-      bounds_cy = 21
       statfile = mainfo.mainstatfile
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
@@ -1070,7 +1064,7 @@ object debuggerfo: tdebuggerfo
       dropdown.historymaxcount = 200
       onbeforedropdown = onbefdroppro
       onafterclosedropdown = onsetvaluehis
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object templproject: tfacecomp

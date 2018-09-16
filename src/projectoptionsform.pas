@@ -1461,6 +1461,7 @@ begin
  end;
 end;
 
+
 procedure expandprmacros1(var atext: msestring);
 var
  li: tmacrolist;

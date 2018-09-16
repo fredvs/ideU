@@ -896,7 +896,7 @@ begin
    filechangenotifyer.addnotification(result.filepath,result.filetag);
    designer.designfiles.add(afilename);
      end;
-   result.tabhint := afilename;   
+  updatehinttab; 
  except
   result.Free;
   result:= nil;
@@ -1051,6 +1051,7 @@ begin
    end;
   end;
  end;
+  updatehinttab;
  fallsaved:= fallsaved or not noconfirm;
 end;
 
@@ -1092,9 +1093,21 @@ end;
 procedure tsourcefo.updatehinttab;
 var
 x : integer;
+ainfo: fileinfoty;
+
+//modtime: tdatetime;
+//accesstime: tdatetime;
+//ctime: tdatetime;
+
 begin
 for x:= 0 to files_tab.count-1
-do tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value;
+do 
+begin
+ getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.value), ainfo);
+tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + ' | Date: '
++ formatdatetime('YYYY-MM-DD HH:mm',ainfo.extinfo1.modtime) +
+' | Size: ' + IntToStr( ainfo.extinfo1.size div 1000) + ' Kb.'
+end;
 end;
 
 procedure tsourcefo.updatecaption;
@@ -1113,8 +1126,6 @@ begin
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
   
- // activepage.tabhint := activepage.pathdisp.value;
-
  if assigned(debuggerfo) then
  begin
   debuggerfo.file_history.value :=  activepage.pathdisp.value;
@@ -1147,8 +1158,10 @@ begin
   activepage.save(newname);
 //  if newname <> '' then begin
 //   filechangenotifyer.addnotification(activepage.filepath,activepage.filetag);
+ 
 //  end;
  end;
+ updatehinttab;
 end;
 
 function tsourcefo.closepage(const apage: tsourcepage;
