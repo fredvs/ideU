@@ -740,6 +740,8 @@ sourcefo.hidesourcehint;
   
   confideufo.autofocus_menu.value := gINI.Readbool('autofocusmenu', 'general', false); 
    
+  confideufo.key_accelerator.value := gINI.Readbool('keyaccelerator', 'general', true); 
+   
   confideufo.dirlayout(nil);
   
   confideufo.doubleclic.value := gINI.ReadBool('2xclick', 'sourcepage', false);
@@ -829,6 +831,8 @@ begin
   gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.text); 
   
   gINI.writebool('universaldir', 'general', confideufo.universal_path.value); 
+  
+  gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.value); 
   
   gINI.writebool('autofocusmenu', 'general', confideufo.autofocus_menu.value); 
   

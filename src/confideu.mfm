@@ -71,6 +71,7 @@ object confideufo: tconfideufo
     FDFBF6EBB3360000000000000000000000125BA2D0E7EDEDE6CE9F5710000000
     00000000
   }
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object ok: tbutton
     skingroup = 4
@@ -87,11 +88,11 @@ object confideufo: tconfideufo
     bounds_x = 105
     bounds_y = 0
     bounds_cx = 101
-    bounds_cy = 21
+    bounds_cy = 20
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
-    reffontheight = 15
+    reffontheight = 14
   end
   object group_file_changed: tgroupbox
     frame.caption = 'When a file has changed from outside...'
@@ -100,21 +101,21 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      8
+      7
       0
       0
     )
     bounds_x = 5
-    bounds_y = 30
+    bounds_y = 31
     bounds_cx = 309
-    bounds_cy = 89
+    bounds_cy = 88
     object tbfileaskload: tbooleaneditradio
       frame.caption = '  A dialog box ask what to do...'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         190
         2
       )
@@ -122,7 +123,7 @@ object confideufo: tconfideufo
       bounds_x = 24
       bounds_y = 63
       bounds_cx = 203
-      bounds_cy = 17
+      bounds_cy = 16
     end
     object tbfilenoload: tbooleaneditradio
       frame.caption = '  No dialog box => keep the old one.'
@@ -130,7 +131,7 @@ object confideufo: tconfideufo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         226
         2
       )
@@ -138,7 +139,7 @@ object confideufo: tconfideufo
       bounds_x = 23
       bounds_y = 41
       bounds_cx = 239
-      bounds_cy = 17
+      bounds_cy = 16
     end
     object tbfilereload: tbooleaneditradio
       frame.caption = '  No dialog box => reload the new one.'
@@ -146,14 +147,14 @@ object confideufo: tconfideufo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         241
         2
       )
       bounds_x = 23
       bounds_y = 21
       bounds_cx = 254
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
   end
@@ -164,22 +165,22 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      8
+      7
       0
       0
     )
     taborder = 1
     bounds_x = 3
-    bounds_y = 134
+    bounds_y = 135
     bounds_cx = 312
-    bounds_cy = 88
+    bounds_cy = 87
     object tbassistive: tbooleanedit
       frame.caption = 'Enable sak assistive at loading'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         186
         2
       )
@@ -187,7 +188,7 @@ object confideufo: tconfideufo
       bounds_x = 42
       bounds_y = 64
       bounds_cx = 199
-      bounds_cy = 17
+      bounds_cy = 16
     end
     object tesakitdir: tfilenameedit
       Tag = 3
@@ -204,7 +205,7 @@ object confideufo: tconfideufo
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        17
         0
         0
       )
@@ -212,14 +213,14 @@ object confideufo: tconfideufo
       bounds_x = 7
       bounds_y = 16
       bounds_cx = 299
-      bounds_cy = 39
+      bounds_cy = 37
       anchors = [an_left, an_top, an_right]
       value = '${IDEUDIR}/plugin'
       controller.filename = '${IDEUDIR}/plugin/'
       controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/plugin/'
       controller.options = [fdo_sysfilename, fdo_directory]
       controller.captionopen = 'Parent directory of sakit'
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object group_system_layout: tgroupbox
@@ -229,22 +230,22 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      8
+      7
       0
       0
     )
     taborder = 2
     bounds_x = 3
-    bounds_y = 238
+    bounds_y = 226
     bounds_cx = 311
-    bounds_cy = 115
+    bounds_cy = 126
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         157
         2
       )
@@ -253,7 +254,7 @@ object confideufo: tconfideufo
       bounds_x = 69
       bounds_y = 40
       bounds_cx = 170
-      bounds_cy = 17
+      bounds_cy = 16
       onchange = dirlayout
     end
     object nozorderenable: tbooleanedit
@@ -262,7 +263,7 @@ object confideufo: tconfideufo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         124
         2
       )
@@ -270,7 +271,7 @@ object confideufo: tconfideufo
       bounds_x = 69
       bounds_y = 19
       bounds_cx = 137
-      bounds_cy = 17
+      bounds_cy = 16
       onchange = zorderhandle
       value = True
     end
@@ -280,7 +281,7 @@ object confideufo: tconfideufo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         180
         2
       )
@@ -289,7 +290,7 @@ object confideufo: tconfideufo
       bounds_x = 68
       bounds_y = 62
       bounds_cx = 193
-      bounds_cy = 17
+      bounds_cy = 16
       onchange = dirlayout
     end
     object autofocus_menu: tbooleanedit
@@ -298,7 +299,7 @@ object confideufo: tconfideufo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         159
         2
       )
@@ -307,8 +308,28 @@ object confideufo: tconfideufo
       bounds_x = 68
       bounds_y = 84
       bounds_cx = 172
-      bounds_cy = 17
+      bounds_cy = 16
       onchange = autofocus
+    end
+    object key_accelerator: tbooleanedit
+      frame.caption = 'Accelerator for Up/Down keys.'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        1
+        185
+        2
+      )
+      taborder = 4
+      hint = ' Enable accelerator when Up/Down keys are used in source editor '
+      bounds_x = 68
+      bounds_y = 105
+      bounds_cx = 198
+      bounds_cy = 16
+      onchange = updownacc
+      value = True
+      valuedefault = True
     end
   end
 end

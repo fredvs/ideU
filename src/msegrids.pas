@@ -2837,6 +2837,9 @@ function wasrowexit(const info: celleventinfoty;
                                const noexitgrid: boolean = false): boolean;
 function cellkeypress(const info: celleventinfoty): keyty;
 
+var
+updownaccelerator: boolean = true;  
+
 implementation
 uses
  mseguiintf,msestockobjects,mseact,mseactions,rtlconsts,msegraphedits,
@@ -2847,7 +2850,7 @@ type
  twidget1 = class(twidget);
  tinplaceedit1 = class(tinplaceedit);
  tcustomscrollbar1 = class(tcustomscrollbar);
-
+ 
 const
  errorstrings: array[griderrorty] of string = (
   '', //ok
@@ -13430,9 +13433,9 @@ begin
        exit;
       end
       else begin
-       if fincupdown < 10 then
+       if ((fincupdown < 10) and (updownaccelerator = true)) or (updownaccelerator = false) then
        begin
-        inc(fincupdown) ;
+       if updownaccelerator = true then inc(fincupdown) ;
        rowup(action,aso_gridnavig in assistiveoptions);
        checkselection;
        gd1:= gd_up;
@@ -13460,9 +13463,9 @@ begin
        exit;
       end
       else begin
-       if fincupdown < 10 then
+       if ((fincupdown < 10) and (updownaccelerator = true)) or (updownaccelerator = false) then
        begin
-        inc(fincupdown) ;
+       if updownaccelerator = true then inc(fincupdown) ;
        rowdown(action,aso_gridnavig in assistiveoptions);
        checkselection;
        gd1:= gd_down;

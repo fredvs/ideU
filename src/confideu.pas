@@ -3,11 +3,11 @@ unit confideu;
 interface
 uses
  ideusettings,confcompiler,confdebugger, projectoptionsform, msetypes,mseglob,
- mseguiglob,mseguiintf,mseapplication,msegui,msegraphics,msegraphutils,
- mseclasses,mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,
- mseifiglob,msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,
- msestream,msestrings,sysutils,msewidgets,msebitmap,msedatanodes,msefiledialog,
- msegrids,mselistbrowser,msesys,mseact;
+  mseguiglob,mseguiintf,mseapplication,msegui,msegraphics,
+ msegraphutils,mseclasses,mseforms,msegraphedits,msesimplewidgets,mseificomp,
+ mseificompglob,mseifiglob,msemenus,msescrollbar,msedataedits,mseedit,msestat,
+ msestatfile,msestream,msestrings,sysutils,msewidgets,msebitmap,msedatanodes,
+ msefiledialog,msegrids,mselistbrowser,msesys,mseact;
 type
  tconfideufo = class(tmseform)
    ok: tbutton;
@@ -23,6 +23,7 @@ type
    nozorderenable: tbooleanedit;
    doubleclic: tbooleanedit;
    autofocus_menu: tbooleanedit;
+   key_accelerator: tbooleanedit;
    procedure zorderhandle(const sender: TObject);
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
@@ -32,6 +33,7 @@ type
 
    procedure dirlayout(const sender: TObject);
    procedure autofocus(const sender: TObject);
+   procedure updownacc(const sender: TObject);
  end;
 var
  confideufo: tconfideufo;
@@ -181,5 +183,9 @@ mainfo.mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];
 end;
 end;
 
+procedure tconfideufo.updownacc(const sender: TObject);
+begin
+updownaccelerator := key_accelerator.value;
+end;
 
 end.
