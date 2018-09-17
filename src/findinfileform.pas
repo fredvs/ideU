@@ -16,6 +16,7 @@
 }
 unit findinfileform;
 
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface

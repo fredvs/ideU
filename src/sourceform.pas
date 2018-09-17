@@ -1105,7 +1105,7 @@ do
 begin
  getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.value), ainfo);
 tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + ' | Last modif: '
-+ formatdatetime('YYYY-MM-DD HH:mm',ainfo.extinfo1.modtime) +
++ formatdatetime('YYYY-MM-DD HH:mm:ss',ainfo.extinfo1.modtime) +
 ' | Size: ' + IntToStr( ainfo.extinfo1.size div 1000) + ' Kb.'
 end;
 end;
