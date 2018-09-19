@@ -188,6 +188,7 @@ object actionsmo: tactionsmo
     top = 36
   end
   object find: taction
+    caption = '&Find'
     onexecute = findactonexecute
     onupdate = findupdateexe
     left = 152

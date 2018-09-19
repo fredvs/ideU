@@ -22,8 +22,8 @@ object targetconsolefo: ttargetconsolefo
   frame.grip_faceactive.localprops = []
   popupmenu = popupmen
   visible = False
-  bounds_x = 701
-  bounds_y = 157
+  bounds_x = 433
+  bounds_y = 169
   bounds_cx = 591
   bounds_cy = 384
   container.frame.localprops = []
@@ -34,7 +34,7 @@ object targetconsolefo: ttargetconsolefo
     581
     384
   )
-  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Target Console'
@@ -110,30 +110,37 @@ object targetconsolefo: ttargetconsolefo
         dataclass = tgridrichstringdatalist
       end>
     datarowlinewidth = 0
-    datarowheight = 15
-    reffontheight = 15
+    datarowheight = 14
+    reffontheight = 14
     object terminal: tterminal
       taborder = 1
       visible = False
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 3000
-      bounds_cy = 15
+      bounds_cy = 14
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
       maxchars = 120
       onsendtext = sendtext
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object popupmen: tpopupmenu
     onupdate = popupupdateexe
-    menu.submenu.count = 4
+    menu.submenu.count = 5
     menu.submenu.items = <    
       item
         action = actionsmo.find
+        caption = 'Find'
+        state = [as_localcaption]
       end    
       item
         action = actionsmo.repeatfind
+      end    
+      item
+        action = actionsmo.findback
+        caption = 'Find back'
+        state = [as_localcaption]
       end    
       item
         options = [mao_separator, mao_shortcutcaption]
