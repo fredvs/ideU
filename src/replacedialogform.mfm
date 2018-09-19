@@ -15,6 +15,31 @@ object replacedialogfo: treplacedialogfo
   options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find and Replace Text'
+  icon.options = [bmo_masked]
+  icon.origformat = 'png'
+  icon.image = {
+    00000000020000001000000010000000F0010000000000000000000000000000
+    000000000000000000000000000000000000000000EF001531FFFF014AFFFF01
+    6BFFFF01A5FFFF01B5FFFF01A5FFFF0100EF00096BFFF70131FFFF0152FFFF01
+    7BFFFF01B5FFFF01C6FFFF01A5FFFF0200EF000708EF080118FFAD0139FFFF01
+    5AFFFF018CFFFF01C6FFFF01D6FFFF01A5FFFF015AFFB50129FF290100EF0005
+    31EF310108EF080118FFAD0142FFFF016BFFFF01A5FFFF01E7FFFF01DEFFFF01
+    A5FFFF0152FFB50129FF290142FF420100EF000431EF310108EF080118FF5A01
+    42FFF7017BFFFF01C6FFFF03A5FFFF014AFF840129FF290139F7390100EF0004
+    31EF310108EF080118FF21014AFFCE0194FFFF01DEFFFF01C6FFFF029CFFE701
+    42FF4A0121FF210139F7390100EF000431EF310108EF080118FF180152FF6B01
+    DEFFFF01C6FFFF0394FFA50142FF420121FF210139F7390100EF000431EF3101
+    08E7080110F7100139F73901DEF7DE01C6FFFF02DEF7DE015AFF5A0121FF2101
+    10F7100131EF310100EF000431EF310100E7000208E7080173EF7301C6FFFF02
+    73EF730110E7100100E7000231EF310100EF000431EF310100E7000310E71001
+    29DE290210E7100100E7000331EF310100EF000431EF310100E7000200DE0005
+    00E7000331EF310100EF000431EF310100E7000A31EF310100EF000431EF3101
+    00E7000A31EF310100EF000573EF730100DE000100E7000500DE000273EF7301
+    00EF001300000000E0070000F00F0000F81F0000FC3F0000FC3F0000FC3F0000
+    FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000FC3F0000F81F0000
+    00000000
+  }
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object findtext: thistoryedit
     frame.caption = 'Text to &find'
@@ -29,20 +54,20 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     bounds_x = 8
-    bounds_y = 6
+    bounds_y = 7
     bounds_cx = 410
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 14
   end
   object replacetext: thistoryedit
     frame.caption = '&Replace with'
@@ -57,22 +82,22 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     taborder = 1
     bounds_x = 8
-    bounds_y = 46
+    bounds_y = 47
     bounds_cx = 410
-    bounds_cy = 39
+    bounds_cy = 37
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 14
   end
   object casesensitive: tbooleanedit
     frame.caption = '&casesensitive'
@@ -80,15 +105,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       82
       2
     )
     taborder = 2
     bounds_x = 8
-    bounds_y = 95
+    bounds_y = 96
     bounds_cx = 95
-    bounds_cy = 17
+    bounds_cy = 16
   end
   object wholeword: tbooleanedit
     frame.caption = '&whole word'
@@ -96,15 +121,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       72
       2
     )
     taborder = 3
     bounds_x = 112
-    bounds_y = 95
+    bounds_y = 96
     bounds_cx = 85
-    bounds_cy = 17
+    bounds_cy = 16
   end
   object tintegerbutton1: tbutton
     taborder = 6
@@ -132,15 +157,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       82
       2
     )
     taborder = 4
     bounds_x = 208
-    bounds_y = 95
+    bounds_y = 96
     bounds_cx = 95
-    bounds_cy = 17
+    bounds_cy = 16
     statfile = statfile1
   end
   object tintegerbutton3: tbutton
@@ -159,15 +184,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       95
       2
     )
     taborder = 5
     bounds_x = 312
-    bounds_y = 95
+    bounds_y = 96
     bounds_cx = 108
-    bounds_cy = 17
+    bounds_cy = 16
     statfile = statfile1
     value = True
   end

@@ -117,6 +117,7 @@ type
    procedure doline;
    procedure dofind;
    procedure repeatfind;
+    procedure findback;
    procedure doreplace;
    procedure reload;
    procedure doundo;
@@ -153,7 +154,8 @@ function getpascalvarname(const edit: tsyntaxedit; pos: gridcoordty;
 function getpascalvarname(const edit: tsyntaxedit;
                              const pos: pointty): msestring; overload;
 procedure findintextedit(const edit: tcustomtextedit; var info: findinfoty;
-                     var findpos: gridcoordty);
+              var findpos: gridcoordty; const backward: boolean = false);                     
+                     
 implementation
 
 uses
@@ -970,8 +972,9 @@ begin
            sourcefo.c[ord(str_notfound)]);
 end;
 
+
 procedure findintextedit(const edit: tcustomtextedit; var info: findinfoty;
-                     var findpos: gridcoordty);
+              var findpos: gridcoordty; const backward: boolean = false);                    
 var
  pt1: gridcoordty;
 begin
@@ -1155,6 +1158,11 @@ procedure tsourcepage.repeatfind;
 begin
  findintextedit(edit,projectoptions.findreplaceinfo.find,ffindpos);
  // find;
+end;
+
+procedure tsourcepage.findback;
+begin
+ findintextedit(edit,projectoptions.findreplaceinfo.find,ffindpos,true);
 end;
 
 procedure tsourcepage.hidehint;

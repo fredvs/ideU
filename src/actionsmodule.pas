@@ -5,11 +5,11 @@ unit actionsmodule;
 								
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui,
-  commandorform,dialogfiles,msefileutils,msedatamodules,mseglob,msestat,
- msegraphics,msegraphutils,mseguiglob,msemenus,msesys, msesysutils,
-  msesimplewidgets,projecttreeform,msestringcontainer,targetconsole,mclasses,
- mseificomp,mseificompglob,mseifiglob;
+ classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui,commandorform,
+ dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,
+ msegraphutils,mseguiglob,msemenus,msesys, msesysutils,msesimplewidgets,
+ projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
+ mseificompglob,mseifiglob;
  
 type
  stringconsts = (
@@ -222,6 +222,7 @@ type
    selectall: taction;
    
    savecust: taction;
+   findback: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -331,6 +332,7 @@ type
    procedure enablecomment(const sender: tcustomaction);
    procedure enableuncomment(const sender: tcustomaction);
    procedure selectwordactiononexecute(const sender: TObject);
+   procedure findbackonexecute(const sender: TObject);
    
   private
    function filterfindcomp(const acomponent: tcomponent): boolean;
@@ -401,6 +403,16 @@ begin
  findcompact.shortcut1:= find.shortcut1;
  findcompallact.shortcut:= find.shortcut;
  findcompallact.shortcut1:= find.shortcut1;
+end;
+
+procedure tactionsmo.findbackonexecute(const sender: TObject);
+begin
+ if targetconsolefo.activeentered then begin
+  targetconsolefo.findback;
+ end
+ else begin
+  sourcefo.activepage.findback;
+ end;
 end;
 
 //common
@@ -1169,6 +1181,8 @@ begin
   repeatfind.enabled:= find.enabled and 
            (projectoptions.findreplaceinfo.find.text <> '');
  end;
+  findback.enabled:= repeatfind.enabled;
+ findcompallact.enabled:= not find.enabled;
 // find.enabled:= true;
  // repeatfind.enabled:=  (projectoptions.findreplaceinfo.find.text <> '');
 end;

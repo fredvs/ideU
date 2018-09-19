@@ -3864,4 +3864,10 @@ object actionsmo: tactionsmo
       16467
     )
   end
+  object findback: taction
+    onexecute = findbackonexecute
+    onupdate = findupdateexe
+    left = 700
+    top = 306
+  end
 end

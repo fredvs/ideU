@@ -282,7 +282,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localcolor]
       end    
       item
-        submenu.count = 6
+        submenu.count = 7
         submenu.items = <        
           item
             action = actionsmo.line
@@ -298,6 +298,16 @@ object mainfo: tmainfo
             action = actionsmo.repeatfind
             caption = ' &Search again '
             state = [as_localcaption]
+          end        
+          item
+            action = actionsmo.findback
+            caption = ' Search back '
+            hint = ' Do a search backward '
+            state = [as_localcaption, as_localhint, as_localshortcut]
+            sc = (
+              1
+              8498
+            )
           end        
           item
             action = actionsmo.replace
