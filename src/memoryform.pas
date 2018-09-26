@@ -13,7 +13,7 @@ type
    memon: tbooleanedit;
    bitwidth: tenumedit;
    cnt: tintegeredit;
-   add: tint64edit;
+   add: tintegeredit;
    procedure adent(const sender: TObject);
    procedure drawfixcol(const sender: tcol; const canvas: tcanvas;
                                                var cellinfo: cellinfoty); 
@@ -22,9 +22,7 @@ type
    procedure cellsetvalue(const sender: TObject; var avalue: msestring;
                    var accept: Boolean);
   private
-   firstadd: card64;
-   fhexwidth: int32;
-   procedure updatecolwidth();
+   firstadd: ptrint;
   public
    procedure refresh;
  end;
@@ -51,18 +49,11 @@ var
  longwords: longwordarty;
  qwords: card64arty;
 begin
- add.bitcount:= mainfo.gdb.pointersize*8;
- updatecolwidth();
  if memon.value and isvisible then begin
-  firstadd:= add.value and $fffffffffffffff0;
+  firstadd:= add.value and $fffffff0;
   linecount:= ((add.value + cnt.value + $f)-firstadd) div $10;
-  if linecount < 0 then begin
-   linecount:= 0;
-   cnt.value:= 0;
-  end;
-  if (linecount > 1000) then begin
+  if linecount > 1000 then begin
    linecount:= 1000;
-   cnt.value:= linecount * $10;
   end;
   grid.rowcount:= linecount;
   if mainfo.gdb.cancommand then begin
@@ -143,23 +134,8 @@ end;
 procedure tmemoryfo.drawfixcol(const sender: tcol; const canvas: tcanvas;
                                                    var cellinfo: cellinfoty);
 begin
- drawtext(canvas,hextostrmse(card64(firstadd+cellinfo.cell.row*16),fhexwidth),
+ drawtext(canvas,hextostrmse(longword(firstadd+cellinfo.cell.row*16),8),
                                                       cellinfo.innerrect);
-end;
-
-procedure tmemoryfo.updatecolwidth();
-var
- mstr1: msestring;
-begin
- if mainfo.gdb.pointersize = 8 then begin
-  mstr1:= 'WWWWWWWWWWWWWWWW';
-  fhexwidth:= 16;
- end
- else begin
-  mstr1:= 'WWWWWWWW';
-  fhexwidth:= 8;
- end;
- grid.fixcols[-1].width:= getcanvas.getstringwidth(mstr1,grid.font)+4;
 end;
 
 procedure tmemoryfo.updatelayoutexe(const sender: TObject);
@@ -211,7 +187,7 @@ begin
  end;
  int1:= getcanvas.getstringwidth(mstr1,grid.font);
  grid.datacols.width:= int1+4;
- updatecolwidth();
+ grid.fixcols[-1].width:= getcanvas.getstringwidth('WWWWWWWW',grid.font)+4;
  refresh; 
 end;
 
@@ -223,25 +199,22 @@ end;
 procedure tmemoryfo.cellsetvalue(const sender: TObject; var avalue: msestring;
                var accept: Boolean);
 var
- val: card64;
+ val: longword;
  res: gdbresultty;
 begin
  if mainfo.gdb.cancommand then begin
   accept:= false;
-  val:= strtohex64(ansistring(avalue));
+  val:= strtohex(ansistring(avalue));
   res:= gdb_error;
   case bitwidthty(bitwidth.value) of
    bw_8: begin
-    res:= mainfo.gdb.writememory8(firstadd+grid.row*16+grid.col*8,val);
+    res:= mainfo.gdb.writememorybyte(firstadd+grid.row*16+grid.col,val);
    end;
    bw_16: begin
-    res:= mainfo.gdb.writememory16(firstadd+grid.row*16+grid.col*2,val);
+    res:= mainfo.gdb.writememoryword(firstadd+grid.row*16+grid.col*2,val);
    end;
    bw_32: begin
-    res:= mainfo.gdb.writememory32(firstadd+grid.row*16+grid.col*4,val);
-   end;
-   bw_64: begin
-    res:= mainfo.gdb.writememory64(firstadd+grid.row*16+grid.col*8,val);
+    res:= mainfo.gdb.writememorylongword(firstadd+grid.row*16+grid.col*4,val);
    end;
   end;
   if res <> gdb_ok then begin
