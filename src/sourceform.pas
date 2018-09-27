@@ -777,6 +777,7 @@ procedure tsourcefo.formonidle(var again: boolean);
 var
  int1: integer;
  wstr1: msestring;
+ 
 begin
  if (application.activewindow <> nil) and not fasking then begin
   fasking:= true;

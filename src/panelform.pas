@@ -151,7 +151,7 @@ begin
   int2:= strtoint(copy(aname,6,bigint))-1;
  end;
  result:= tpanelfo.create(mainfo);
-  int1:= int2 + 1;
+ int1:= int2 + 1;
  if aname = '' then begin
   aname:= 'panel'+inttostr(int1);
  end;
