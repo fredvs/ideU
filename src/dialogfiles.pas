@@ -51,7 +51,13 @@ if assigned(list_files.selectednames) and (tag = 1) then
  str1:= ttextstream.create(list_files.directory+ directoryseparator +selected_file.text);
  try
  debuggerfo.close;
-  mainfo.loadwindowlayout(str1);
+ 
+ mainfo.loadwindowlayout(str1);
+ 
+  if (sourcefo.files_tab.activepageindex < 0) and (sourcefo.files_tab.count > 0) then
+  
+    sourcefo.files_tab.activepageindex:= 0;
+ 
   finally
   str1.destroy();
  end;

@@ -185,6 +185,7 @@ type
    procedure statbefread(const sender: TObject);
    procedure viewsymbolsonexecute(const sender: TObject);
    procedure loadwindowlayoutexe(const sender: TObject);
+   procedure loadwindowlayout(const areader: tstatreader);
    procedure getstatobjs(const sender: TObject; var aobjects: objectinfoarty);
    procedure targetpipeinput(const sender: tpipereader);
    procedure mainstatbeforewriteexe(const sender: TObject);
@@ -3961,26 +3962,34 @@ begin
  end;
 end;
 
+procedure tmainfo.loadwindowlayout(const areader: tstatreader);
+begin
+ beginpanelplacement();
+ try
+  areader.setsection('breakpoints');
+  panelform.updatestat(areader);
+  areader.setsection('layout');
+  projectstatfile.options:= projectstatfile.options + 
+                                          [sfo_nodata,sfo_nooptions];
+  flayoutloading:= true;
+  projectstatfile.readstat('windowlayout',areader);
+ finally
+  flayoutloading:= false;
+  projectstatfile.options:= projectstatfile.options -
+                                          [sfo_nodata,sfo_nooptions];
+  endpanelplacement();
+ end;
+end;
+
 procedure tmainfo.loadwindowlayout(const astream: ttextstream);
 var
  statreader: tstatreader;
 begin
  statreader:= tstatreader.create(astream,ce_utf8);
  try
-  beginpanelplacement();
-  statreader.setsection('breakpoints');
-  panelform.updatestat(statreader);
-  statreader.setsection('layout');
-  projectstatfile.options:= projectstatfile.options + 
-                                          [sfo_nodata,sfo_nooptions];
-  flayoutloading:= true;
-  projectstatfile.readstat('windowlayout',statreader);
+  loadwindowlayout(statreader);
  finally
-  flayoutloading:= false;
-  projectstatfile.options:= projectstatfile.options -
-                                          [sfo_nodata,sfo_nooptions];
   statreader.free;
-  endpanelplacement();
  end;
 end;
 
@@ -3989,7 +3998,7 @@ procedure tmainfo.loadwindowlayoutexe(const sender: TObject);
 var
  str1: ttextstream;
 begin
-  if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(str_loadwindowlayout)],
+ if filedialog(windowlayoutfile,[fdo_checkexist],c[ord(str_loadwindowlayout)],
           [c[ord(projectfiles)],c[ord(str_allfiles)]],['*.prj','*'],'prj',
           nil,nil,nil,[fa_all],[fa_hidden],
                         @windowlayouthistory) = mr_ok then begin
