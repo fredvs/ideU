@@ -15044,7 +15044,7 @@ begin
  {$ifdef mse_with_ifi}
   if bo1 and (fifiserverintf <> nil) and not(ws_loadedproc in fwidgetstate) and
          not (gs_emptyrowremoved in fstate) and not isautoappend then begin
-   fifiserverintf.valuechanged(iifigridlink(self));
+   iifidataserver(fifiserverintf).valuechanged(iifigridlink(self));
   end;
  {$endif}
   if (gs1_showcellinvalid in fstate1) then begin
@@ -16558,7 +16558,7 @@ procedure tcustomgrid.ifirowchange;
 begin
  if (fupdating = 0) and (fifiserverintf <> nil) and 
                               not(ws_loadedproc in fwidgetstate) then begin
-    fifiserverintf.valuechanged(iifigridlink(self));
+  iifidataserver(fifiserverintf).valuechanged(iifigridlink(self));
  end;
 end;
 

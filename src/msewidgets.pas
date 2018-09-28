@@ -2375,7 +2375,7 @@ procedure tactionsimplebutton.dokeydown(var info: keyeventinfoty);
 begin
 // inherited;
  with info do begin
-  if not getdisabled() and (shiftstate * singlekeyshiftstatesmask = []) and 
+  if not getdisabled() and (shiftstate * shiftstatesrepeatmask = []) and 
                               (bo_executeonkey in foptions) then begin
    if (key = key_space) then begin
     include(info.eventstate,es_processed);
