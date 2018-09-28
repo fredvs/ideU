@@ -1,5 +1,6 @@
 unit sourceform;
 
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
@@ -1106,9 +1107,9 @@ for x:= 0 to files_tab.count-1
 do 
 begin
  getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.value), ainfo);
-tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + ' | Last modif: '
+tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + #10#10 + 'Last modif: '
 + formatdatetime('YYYY-MM-DD HH:mm:ss',ainfo.extinfo1.modtime) +
-' | Size: ' + IntToStr( ainfo.extinfo1.size div 1000) + ' Kb.'
+  ' | Size: ' + IntToStr( ainfo.extinfo1.size div 1000) + ' Kb.'
 end;
 end;
 

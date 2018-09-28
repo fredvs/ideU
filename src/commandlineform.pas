@@ -19,6 +19,7 @@ unit commandlineform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
 uses
  msegui,mseclasses,mseforms,msedataedits,msestringcontainer,msestrings;
  

@@ -1165,7 +1165,7 @@ var
 begin
  result:= sourcefo.saveall(false);
  if result <> mr_cancel then begin
-  result:= designer.saveall(result = mr_yesall,true);
+  result:= designer.saveall(result = mr_all,true);
   if result <> mr_cancel then begin
    result:= componentstorefo.saveall(false);
    if result <> mr_cancel then begin
@@ -1201,11 +1201,9 @@ begin
     end;
    end;
   end;
-  end;
+ end;
   
  checksavecancel(result);
- 
- 
 end;
 
 procedure tmainfo.updatemodifiedforms;
