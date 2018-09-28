@@ -749,9 +749,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=2
+ ACTIONSMO
+ SOURCEFO
+moduletypes=2
+ TACTIONSMO
+ TSOURCEFO
+modulefiles=2
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1324,8 +1330,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=tcustomgrid.ifirowchange
+finddtext=fred
 findhistory=20
+ fred
  tcustomgrid.ifirowchange
  hinttab
  tabhint
@@ -1345,16 +1352,25 @@ findhistory=20
  ./home
  ./Downloads/books-master/programmierspass/image/
  programmierspass
- mse
 findoptions=1
-editpos=1
- 0,6
+editpos=3
+ 0,7
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
-sourcefiles=1
+bookmarks1=0
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/ideU.pas
-relpaths=1
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=3
  ideU.pas
-ismoduletexts=1
+ sourceform.pas
+ actionsmodule.pas
+ismoduletexts=3
+ 0
+ 0
  0
 modules=3
  /home/fred/ideu/src/main.mfm
@@ -1365,13 +1381,13 @@ moduleoptions=3
  0
  0
 visiblemodules=3
- 0
- 0
- 0
+ -1
+ -1
+ -1
 nomenumodules=3
  -1
- -1
- -1
+ 0
+ 0
 [sourcefo.files_tab]
 firsttab=0
 index=0
@@ -1382,7 +1398,7 @@ windowlayout=551
  useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=838860923
+ useroptions=301990011
  stackedunder=
  parent=
  mdistate=0
@@ -1419,7 +1435,7 @@ windowlayout=551
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1437,8 +1453,8 @@ windowlayout=551
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=805322875
- stackedunder=about_form
+ useroptions=268451963
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1484,7 +1500,7 @@ windowlayout=551
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1499,7 +1515,7 @@ windowlayout=551
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -1525,7 +1541,7 @@ windowlayout=551
  rowheight=16
  [stackfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=
  mdistate=0
  nx=0
@@ -1543,7 +1559,7 @@ windowlayout=551
  visible=0
  [watchpointsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1605,7 +1621,7 @@ windowlayout=551
  value=0
  [objectinspectorfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -1630,7 +1646,7 @@ windowlayout=551
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=
  parent=
  mdistate=0
@@ -1675,7 +1691,7 @@ windowlayout=551
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=mainfo.basedock
  visible=0
  mdistate=0
@@ -1710,7 +1726,7 @@ windowlayout=551
  value=0
  [messagefo]
  splitdir=0
- useroptions=805388395
+ useroptions=268517483
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1726,7 +1742,7 @@ windowlayout=551
  rcy=0
  [componentstorefo]
  splitdir=0
- useroptions=805331067
+ useroptions=268460155
  stackedunder=
  parent=
  mdistate=0
@@ -1789,7 +1805,7 @@ windowlayout=551
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=805331051
+ useroptions=268460139
  stackedunder=
  parent=
  mdistate=3
@@ -1849,7 +1865,7 @@ windowlayout=551
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
  history=1
-  ${PROJECTDIR}/main.pas
+  /home/fred/ideu/src/ideU.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1877,7 +1893,7 @@ windowlayout=551
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1893,9 +1909,25 @@ windowlayout=551
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1147
+ cy=456
+ rcx=0
+ rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
@@ -1911,23 +1943,7 @@ windowlayout=551
  rcy=0
  wsize=0
  active=0
- visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=838958571
- parent=mainfo.basedock
  visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1147
- cy=456
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

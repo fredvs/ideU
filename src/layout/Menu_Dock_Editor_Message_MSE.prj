@@ -655,9 +655,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=2
+ MAINFO
+ SIMPLE_PLAYER
+moduletypes=2
+ TMAINFO
+ TMAINFO
+modulefiles=2
+ /home/fred/strumpract/src/main.mfm
+ /home/fred/uos/examples/mainmse_sp.mfm
 befcommandon=0
 makeoptionson=8
  4095
@@ -1026,21 +1032,29 @@ editpos=0
 sourcefiles=0
 relpaths=0
 ismoduletexts=0
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+modules=2
+ /home/fred/uos/examples/mainmse_sp.mfm
+ /home/fred/strumpract/src/main.mfm
+moduleoptions=2
+ 0
+ 2
+visiblemodules=2
+ 0
+ -1
+nomenumodules=2
+ 0
+ 0
 [sourcefo.files_tab]
 firsttab=0
 index=-1
 [layout]
-windowlayout=527
+windowlayout=565
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=838860923
+ useroptions=301990011
  stackedunder=
  parent=
  mdistate=0
@@ -1077,7 +1091,7 @@ windowlayout=527
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1095,7 +1109,7 @@ windowlayout=527
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=about_form
  parent=
  mdistate=0
@@ -1157,7 +1171,7 @@ windowlayout=527
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=messagefo
  parent=
  mdistate=3
@@ -1186,7 +1200,7 @@ windowlayout=527
  rowheight=16
  [stackfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=
  mdistate=0
  nx=0
@@ -1204,7 +1218,7 @@ windowlayout=527
  visible=0
  [watchpointsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1266,8 +1280,8 @@ windowlayout=527
  value=0
  [objectinspectorfo]
  splitdir=0
- useroptions=805322859
- stackedunder=projecttreefo
+ useroptions=268451947
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1291,7 +1305,7 @@ windowlayout=527
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=
  parent=
  mdistate=0
@@ -1336,7 +1350,7 @@ windowlayout=527
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=mainfo.basedock
  visible=0
  mdistate=0
@@ -1371,7 +1385,7 @@ windowlayout=527
  value=1
  [messagefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  stackedunder=debuggerfo
  parent=
  mdistate=0
@@ -1390,7 +1404,7 @@ windowlayout=527
  visible=1
  [componentstorefo]
  splitdir=0
- useroptions=805331067
+ useroptions=268460155
  stackedunder=
  parent=
  mdistate=0
@@ -1453,7 +1467,7 @@ windowlayout=527
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=805331051
+ useroptions=268460139
  stackedunder=mainfo
  parent=
  mdistate=0
@@ -1499,8 +1513,8 @@ windowlayout=527
  mdistate=0
  nx=0
  ny=0
- ncx=1143
- ncy=53
+ ncx=1140
+ ncy=52
  x=0
  y=0
  cx=1143
@@ -1546,7 +1560,7 @@ windowlayout=527
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=_mse_simple_player_mse_
  parent=
  mdistate=0
  nx=0
@@ -1562,6 +1576,44 @@ windowlayout=527
  wsize=0
  active=0
  visible=0
+ [_mse_simple_player_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_mainfo_mse_
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=398
+ y=128
+ cx=491
+ cy=404
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_mainfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=projecttreefo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=349
+ y=91
+ cx=464
+ cy=139
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
