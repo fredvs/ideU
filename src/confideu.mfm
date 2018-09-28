@@ -4,14 +4,14 @@ object confideufo: tconfideufo
   bounds_x = 489
   bounds_y = 174
   bounds_cx = 318
-  bounds_cy = 360
+  bounds_cy = 384
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     318
-    360
+    384
   )
   optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
@@ -238,7 +238,7 @@ object confideufo: tconfideufo
     bounds_x = 3
     bounds_y = 226
     bounds_cx = 311
-    bounds_cy = 126
+    bounds_cy = 152
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -251,7 +251,7 @@ object confideufo: tconfideufo
       )
       taborder = 1
       hint = 'Use the mse universal directory layout'
-      bounds_x = 69
+      bounds_x = 50
       bounds_y = 40
       bounds_cx = 170
       bounds_cy = 16
@@ -268,7 +268,7 @@ object confideufo: tconfideufo
         2
       )
       hint = 'No focus on menu-item when mouse-move on it.'
-      bounds_x = 69
+      bounds_x = 50
       bounds_y = 19
       bounds_cx = 137
       bounds_cy = 16
@@ -287,7 +287,7 @@ object confideufo: tconfideufo
       )
       taborder = 2
       hint = 'Use shift + 2x click to select a word.'
-      bounds_x = 68
+      bounds_x = 50
       bounds_y = 62
       bounds_cx = 193
       bounds_cy = 16
@@ -305,7 +305,7 @@ object confideufo: tconfideufo
       )
       taborder = 3
       hint = 'Set auto focus if mouse moves on main-menu'
-      bounds_x = 68
+      bounds_x = 50
       bounds_y = 84
       bounds_cx = 172
       bounds_cy = 16
@@ -323,11 +323,31 @@ object confideufo: tconfideufo
       )
       taborder = 4
       hint = ' Enable accelerator when Up/Down keys are used in source editor '
-      bounds_x = 68
+      bounds_x = 50
       bounds_y = 105
       bounds_cx = 198
       bounds_cy = 16
       onchange = updownacc
+      value = True
+      valuedefault = True
+    end
+    object fullpath: tbooleanedit
+      frame.caption = 'Full path of project in window title'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        1
+        209
+        2
+      )
+      taborder = 5
+      hint = ' Show the full path of proect in main window title. '
+      bounds_x = 50
+      bounds_y = 127
+      bounds_cx = 222
+      bounds_cy = 16
+      onchange = autofocus
       value = True
       valuedefault = True
     end

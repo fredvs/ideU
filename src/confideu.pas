@@ -3,11 +3,11 @@ unit confideu;
 interface
 uses
  ideusettings,confcompiler,confdebugger, projectoptionsform, msetypes,mseglob,
-  mseguiglob,mseguiintf,mseapplication,msegui,msegraphics,
- msegraphutils,mseclasses,mseforms,msegraphedits,msesimplewidgets,mseificomp,
- mseificompglob,mseifiglob,msemenus,msescrollbar,msedataedits,mseedit,msestat,
- msestatfile,msestream,msestrings,sysutils,msewidgets,msebitmap,msedatanodes,
- msefiledialog,msegrids,mselistbrowser,msesys,mseact;
+ mseguiglob,mseguiintf,mseapplication,msegui,msegraphics,msegraphutils,
+ mseclasses,mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,
+ mseifiglob,msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,
+ msestream,msestrings,sysutils,msewidgets,msebitmap,msedatanodes,msefiledialog,
+ msegrids,mselistbrowser,msesys,mseact;
 type
  tconfideufo = class(tmseform)
    ok: tbutton;
@@ -24,6 +24,7 @@ type
    doubleclic: tbooleanedit;
    autofocus_menu: tbooleanedit;
    key_accelerator: tbooleanedit;
+   fullpath: tbooleanedit;
    procedure zorderhandle(const sender: TObject);
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);

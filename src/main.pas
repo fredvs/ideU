@@ -742,7 +742,9 @@ sourcefo.hidesourcehint;
   confideufo.autofocus_menu.value := gINI.Readbool('autofocusmenu', 'general', false); 
    
   confideufo.key_accelerator.value := gINI.Readbool('keyaccelerator', 'general', true); 
-   
+  
+  confideufo.fullpath.value := gINI.Readbool('fullpath', 'general', true); 
+  
   confideufo.dirlayout(nil);
   
   confideufo.doubleclic.value := gINI.ReadBool('2xclick', 'sourcepage', false);
@@ -834,6 +836,8 @@ begin
   gINI.writebool('universaldir', 'general', confideufo.universal_path.value); 
   
   gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.value); 
+  
+   gINI.writebool('fullpath', 'general', confideufo.fullpath.value); 
   
   gINI.writebool('autofocusmenu', 'general', confideufo.autofocus_menu.value); 
   
@@ -3044,7 +3048,11 @@ begin
   caption:= idecaption+' (<'+c[ord(new2)]+'>)';
  end
  else begin
-  caption:= idecaption+' ('+filename(aname)+')';
+ 
+if confideufo.fullpath.value then
+   caption:= idecaption+' ('+(aname)+')'
+else  caption:= idecaption+' ('+filename(aname)+')';
+  
   setcurrentdirmse(filedir(aname));
   openfile.controller.filename:= '';
  end;
