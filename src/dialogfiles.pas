@@ -19,6 +19,7 @@ type
  end;
 var
  dialogfilesfo: tdialogfilesfo;
+ tabind : integer = -1;
   
  thesdef : msestring = '';
  theactivepage : msestring = '';
@@ -54,9 +55,11 @@ if assigned(list_files.selectednames) and (tag = 1) then
  
  mainfo.loadwindowlayout(str1);
  
-  if (sourcefo.files_tab.activepageindex < 0) and (sourcefo.files_tab.count > 0) then
-  
-    sourcefo.files_tab.activepageindex:= 0;
+  if (tabind < 0) and (sourcefo.files_tab.count > 0) then
+      sourcefo.files_tab.activepageindex:= 0;
+      
+if (tabind > -1) and (sourcefo.files_tab.count > 0) then
+      sourcefo.files_tab.activepageindex:= tabind;
  
   finally
   str1.destroy();

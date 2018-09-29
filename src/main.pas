@@ -4031,6 +4031,8 @@ dialogfilesfo.list_files.cellwidth := 437 ;
 dialogfilesfo.list_files.mask := '*.prj';
 dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}') ;
 
+tabind := sourcefo.files_tab.activepageindex;
+
 dialogfilesfo.selected_file.frame.caption := 'Selected Layout File';
 // from ' + dialogfilesfo.list_files.directory ;
 dialogfilesfo.selected_file.text := '' ;

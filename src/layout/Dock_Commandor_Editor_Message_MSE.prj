@@ -67,8 +67,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu_bin/ideu_1.9.3_linux64/layout
-projectfilename=/home/fred/ideu_bin/ideu_1.9.3_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
+projectdir=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout
+projectfilename=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
 findinfiledialog=55
  [findinfileadialogfo.subdirs]
  value=1
@@ -655,15 +655,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
- MAINFO
- SIMPLE_PLAYER
-moduletypes=2
- TMAINFO
- TMAINFO
-modulefiles=2
- /home/fred/strumpract/src/main.mfm
- /home/fred/uos/examples/mainmse_sp.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=8
  4095
@@ -1033,23 +1027,15 @@ editpos=0
 sourcefiles=0
 relpaths=0
 ismoduletexts=0
-modules=2
- /home/fred/uos/examples/mainmse_sp.mfm
- /home/fred/strumpract/src/main.mfm
-moduleoptions=2
- 0
- 2
-visiblemodules=2
- 0
- -1
-nomenumodules=2
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
 index=-1
 [layout]
-windowlayout=576
+windowlayout=538
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1384,7 +1370,7 @@ windowlayout=576
  [messagefo]
  splitdir=0
  useroptions=268550251
- stackedunder=_mse_mainfo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -1466,7 +1452,7 @@ windowlayout=576
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=mainfo
+ stackedunder=mainfo.panel1
  parent=
  mdistate=0
  nx=0
@@ -1509,7 +1495,7 @@ windowlayout=576
  nx=0
  ny=47
  ncx=1142
- ncy=185
+ ncy=47
  x=0
  y=47
  cx=1142
@@ -1553,7 +1539,7 @@ windowlayout=576
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_simple_player_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1572,7 +1558,7 @@ windowlayout=576
  [mainfo.panel1]
  splitdir=1
  useroptions=302022123
- stackedunder=componentpalettefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1583,44 +1569,6 @@ windowlayout=576
  y=245
  cx=974
  cy=447
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_simple_player_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=messagefo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=398
- y=128
- cx=491
- cy=404
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo.panel1
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=349
- y=91
- cx=464
- cy=139
  rcx=0
  rcy=0
  wsize=0

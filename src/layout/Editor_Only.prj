@@ -67,8 +67,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu_bin/ideu_1.8.2_linux64/layout
-projectfilename=/home/fred/ideu_bin/ideu_1.8.2_linux64/layout/Dock_Commandor_Tree_Editor_Message.prj
+projectdir=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout
+projectfilename=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout/Editor_Only.prj
 findinfiledialog=55
  [findinfileadialogfo.subdirs]
  value=1
@@ -579,6 +579,7 @@ forcezorder=0
 stripmessageesc=0
 copymessages=0
 closemessages=0
+enablepurpose=0
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -654,15 +655,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
- MAINFO
- SIMPLE_PLAYER
-moduletypes=2
- TMAINFO
- TMAINFO
-modulefiles=2
- /home/fred/strumpract/src/main.mfm
- /home/fred/uos/examples/mainmse_sp.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=8
  4095
@@ -887,6 +882,7 @@ externalconsole=0
 settty=0
 gdbdownload=0
 downloadalways=0
+restartgdbbeforeload=0
 startupbkpt=0
 startupbkpton=0
 gdbsimulator=0
@@ -1031,42 +1027,22 @@ editpos=0
 sourcefiles=0
 relpaths=0
 ismoduletexts=0
-modules=2
- /home/fred/uos/examples/mainmse_sp.mfm
- /home/fred/strumpract/src/main.mfm
-moduleoptions=2
- 0
- 2
-visiblemodules=2
- 0
- -1
-nomenumodules=2
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
 index=-1
 [layout]
-windowlayout=584
+windowlayout=541
  [mainfo.basedock]
  splitdir=2
- useroptions=11395
- parent=mainfo.container
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=668
- ncy=0
- x=0
- y=0
- cx=960
- cy=585
- rcx=0
- rcy=0
+ useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=805306493
+ useroptions=268435579
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1079,15 +1055,12 @@ windowlayout=584
  cy=621
  rcx=0
  rcy=0
- children=1
-  basedock,0,0,960,585
- focusedchild=0
  wsize=0
  active=1
  visible=1
  [targetconsolefo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1105,7 +1078,7 @@ windowlayout=584
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1123,7 +1096,7 @@ windowlayout=584
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=about_form
  parent=
  mdistate=0
@@ -1150,7 +1123,7 @@ windowlayout=584
  value=0
  [disassfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -1185,7 +1158,7 @@ windowlayout=584
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  stackedunder=debuggerfo
  parent=
  mdistate=3
@@ -1211,10 +1184,10 @@ windowlayout=584
  sorted=0
  col=0
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=
  mdistate=0
  nx=0
@@ -1232,7 +1205,7 @@ windowlayout=584
  visible=0
  [watchpointsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -1294,7 +1267,7 @@ windowlayout=584
  value=0
  [objectinspectorfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -1319,7 +1292,7 @@ windowlayout=584
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=
  parent=
  mdistate=0
@@ -1338,7 +1311,11 @@ windowlayout=584
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=14
+ values0=18
+  
+  
+  
+  
   
   
   
@@ -1360,7 +1337,7 @@ windowlayout=584
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=mainfo.basedock
  visible=0
  mdistate=0
@@ -1395,7 +1372,7 @@ windowlayout=584
  value=1
  [messagefo]
  splitdir=0
- useroptions=805421163
+ useroptions=268550251
  stackedunder=
  parent=
  mdistate=3
@@ -1414,7 +1391,7 @@ windowlayout=584
  visible=0
  [componentstorefo]
  splitdir=0
- useroptions=805331067
+ useroptions=268460155
  stackedunder=
  parent=
  mdistate=0
@@ -1477,7 +1454,7 @@ windowlayout=584
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=805331051
+ useroptions=268460139
  stackedunder=projecttreefo
  parent=
  mdistate=0
@@ -1499,7 +1476,7 @@ windowlayout=584
  [debuggerfo]
  splitdir=0
  useroptions=24683
- stackedunder=_mse_mainfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1517,7 +1494,7 @@ windowlayout=584
  visible=0
  [debuggerfo.basedock]
  splitdir=2
- useroptions=805452931
+ useroptions=268582019
  parent=debuggerfo.container
  visible=1
  mdistate=0
@@ -1539,9 +1516,12 @@ windowlayout=584
  value=Pascal
  [debuggerfo.file_history]
  value=${PROJECTDIR}/main.pas
- history=0
+ history=1
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
+ [debuggerfo.hints]
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -1555,14 +1535,17 @@ windowlayout=584
  x=0
  y=0
  cx=950
- cy=585
+ cy=605
  rcx=0
  rcy=0
+ [sourcefo.files_tab]
+ firsttab=0
+ index=-1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_simple_player_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1578,47 +1561,9 @@ windowlayout=584
  wsize=0
  active=0
  visible=0
- [_mse_simple_player_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=componentpalettefo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=434
- y=51
- cx=491
- cy=357
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=805322875
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=341
- y=97
- cx=468
- cy=68
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [mainfo.panel1]
  splitdir=1
- useroptions=838893035
+ useroptions=302022123
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1629,7 +1574,7 @@ windowlayout=584
  x=0
  y=0
  cx=960
- cy=585
+ cy=605
  rcx=0
  rcy=0
 [targetconsole]
