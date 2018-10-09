@@ -1357,8 +1357,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=customdomake
+finddtext=process
 findhistory=20
+ process
  customdomake
  customcompile
  toggleformunit
@@ -1378,13 +1379,8 @@ findhistory=20
  checksave
  doline
  tsourcefo.formonidle
- fifiserverintf
 findoptions=1
-editpos=25
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1400,6 +1396,12 @@ editpos=25
  0,-1073741823
  0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1431,7 +1433,9 @@ bookmarks21=0
 bookmarks22=0
 bookmarks23=0
 bookmarks24=0
-sourcefiles=25
+bookmarks25=0
+bookmarks26=0
+sourcefiles=27
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1446,7 +1450,7 @@ sourcefiles=25
  ${PROJECTDIR}/plugmanager.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/projectoptionsform.pas
+ /home/fred/ideu/src/projectoptionsform.pas
  ${PROJECTDIR}/make.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/confideu.pas
@@ -1457,7 +1461,9 @@ sourcefiles=25
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=25
+ ${PROJECTDIR}/conffpgui.pas
+ ${PROJECTDIR}/sak_mse.pas
+relpaths=27
  ideU.pas
  projectoptionsform.pas
  actionsmodule.pas
@@ -1483,7 +1489,11 @@ relpaths=25
  actionsmodule.pas
  commandorform.pas
  actionsmodule.pas
-ismoduletexts=25
+ conffpgui.pas
+ sak_mse.pas
+ismoduletexts=27
+ 0
+ 0
  0
  0
  0
@@ -1558,36 +1568,38 @@ nomenumodules=11
  0
  0
 [sourcefo.files_tab]
-order=25
+order=27
  0
  1
  2
  3
  4
- 9
+ 22
  6
- 24
- 15
- 7
+ 18
+ 5
+ 19
  10
  11
+ 14
  13
- 18
- 19
  16
- 12
+ 25
  8
+ 26
+ 12
+ 15
  17
  21
  20
- 5
- 22
  23
- 14
-firsttab=6
-index=13
+ 24
+ 7
+ 9
+firsttab=7
+index=12
 [layout]
-windowlayout=710
+windowlayout=712
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1732,7 +1744,7 @@ windowlayout=710
  sortdescend1=0
  sorted=0
  col=0
- row=3
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2058,13 +2070,15 @@ windowlayout=710
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/conffpgui.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
  history=20
+  /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/commandlineform.pas
+  /home/fred/ideu/src/make.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/sourcepage.pas
-  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/make.pas
   /home/fred/designer_ext/src/frm_colorpicker.pas
   /home/fred/designer_ext/src/runonce_postit.pas
   /home/fred/designer_ext/src/fpg_main.pas
@@ -2078,10 +2092,8 @@ windowlayout=710
   /home/fred/designer_ext/src/xdynload.pas
   /home/fred/designer_ext/src/xext.pas
   /home/fred/dynx/src/fpgui/develop_dynX11/fpg_x11.pas
-  /home/fred/fpGUI-develop/src/corelib/x11/fpg_x11.pas
-  /home/fred/designer_ext/src/frm_main_designer.pas
  [debuggerfo.project_options]
- value=3
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2101,34 +2113,36 @@ windowlayout=710
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=25
+ order=27
   0
   1
   2
   3
   4
-  9
+  22
   6
-  24
-  15
-  7
+  18
+  5
+  19
   10
   11
+  14
   13
-  18
-  19
   16
-  12
+  25
   8
+  26
+  12
+  15
   17
   21
   20
-  5
-  22
   23
-  14
- firsttab=6
- index=13
+  24
+  7
+  9
+ firsttab=7
+ index=12
  [cpuc86_64fo]
  irqoff=0
  splitdir=0

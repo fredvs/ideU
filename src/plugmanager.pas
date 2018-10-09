@@ -231,10 +231,12 @@ end;
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := Aparam + ' ' + tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
+    //  AProcess.Options := [poNoConsole];
+    //  AProcess.Priority:=ppRealTime;
+    AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
+  AProcess.FreeOnRelease;
       AProcess.Execute;
-      AProcess.Free;
+   //   AProcess.Free;
     end else
     
    if (Aparam = 'java') then
@@ -243,10 +245,12 @@ end;
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
+    //  AProcess.Options := [poNoConsole];
+    //  AProcess.Priority:=ppRealTime;
+    AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
+  AProcess.FreeOnRelease;
+  AProcess.Execute;
+  //    AProcess.Free;
       end else  
       
    if (Aparam = 'pywc') then
@@ -255,10 +259,13 @@ end;
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
+   //   AProcess.Options := [poNoConsole];
+   //   AProcess.Priority:=ppRealTime;
+   AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
+  AProcess.FreeOnRelease;
+
       AProcess.Execute;
-      AProcess.Free;
+  //    AProcess.Free;
       end else      
     
     
@@ -276,10 +283,13 @@ end;
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := thecommand + Aparam ;
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
+    //  AProcess.Options := [poNoConsole];
+    //  AProcess.Priority:=ppRealTime;
+    AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
+  AProcess.FreeOnRelease;
+
       AProcess.Execute;
-      AProcess.Free;
+     // AProcess.Free;
       mainfo.setstattext('' ,mtk_flat);  
          end else mainfo.setstattext(AFilename + ' does not exist...',mtk_notok); 
  end;
