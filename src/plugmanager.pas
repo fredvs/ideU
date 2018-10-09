@@ -123,14 +123,14 @@ function fpgd_loadfile(afilename : PChar) : integer ;
  
  if (acompiler = '') or (acompiler = '1w') or (acompiler = '3w') then
  begin
- if (acompiler = '') then RunWithoutDebug(AFilename, acompiler)
- else RunWithoutDebug(AFilename, 'wine');
+ if (acompiler = '') then RunWithoutDebug(tosysfilepath(filepath(AFilename,fk_file,true)), acompiler)
+ else RunWithoutDebug(tosysfilepath(filepath(AFilename,fk_file,true)), 'wine');
  end 
  else
  begin
-   if fileexists (AFilename) then
+   if fileexists (tosysfilepath(filepath(AFilename,fk_file,true))) then
  begin 
-dataf2 := trim(AFilename);
+dataf2 := trim(tosysfilepath(filepath(AFilename,fk_file,true)));
 len1 := pos('.',dataf2) ;
  
 if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or (acompiler = '3')
@@ -229,7 +229,7 @@ end;
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := Aparam + ' ' + AFilename ;
+      AProcess.CommandLine := Aparam + ' ' + tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;
@@ -241,7 +241,7 @@ end;
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := AFilename ;
+      AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;
@@ -253,7 +253,7 @@ end;
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := AFilename ;
+      AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Options := [poNoConsole];
       AProcess.Priority:=ppRealTime;
@@ -262,7 +262,7 @@ end;
       end else      
     
     
-  if fileexists (AFilename) then
+  if fileexists (tosysfilepath(filepath(AFilename,fk_file,true))) then
  begin 
  if Aparam = 'wine' then
  begin
@@ -270,8 +270,8 @@ end;
  wineneeded := true;
  end;
  
-   if (wineneeded = true) then thecommand := 'wine ' + AFilename else
-   thecommand :=  AFilename;
+   if (wineneeded = true) then thecommand := 'wine ' + tosysfilepath(filepath(AFilename,fk_file,true)) else
+   thecommand :=  tosysfilepath(filepath(AFilename,fk_file,true));
        AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
       AProcess.CommandLine := thecommand + Aparam ;
@@ -289,18 +289,19 @@ procedure LoadfpgDesigner(const AfpgFilename: string);
  var
   dataf : string ;
  begin
- if fileexists(conffpguifo.fpguidesigner.value) then
+ if fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.value),fk_file,true))) then
  begin
   if ((iffpgdconsumed = false) and (AfpgFilename = 'quit')) or
  ((iffpgdconsumed = false) and (AfpgFilename = 'closeall')) or
  ((iffpgdconsumed = false) and (AfpgFilename = 'hideit'))
   then
  else 
- if (fileexists(AfpgFilename)) or (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or (AfpgFilename = 'showit')  or (AfpgFilename = 'hideit') then
+ if (fileexists(tosysfilepath(filepath(AfpgFilename,fk_file,true)))) or (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or (AfpgFilename = 'showit')  or (AfpgFilename = 'hideit') then
   begin 
  iffpgdconsumed := true;
- dataf := conffpguifo.fpguidesigner.value ;
-  dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
+  dataf :=  tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.value),fk_file,true));
+if (fileexists(tosysfilepath(filepath(AfpgFilename,fk_file,true)))) then 
+  RunWithoutDebug(dataf, ' ' + tosysfilepath(filepath(AfpgFilename,fk_file,true))) else
   RunWithoutDebug(dataf, ' ' + AfpgFilename) ;
   end;
  end;

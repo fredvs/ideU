@@ -690,7 +690,6 @@ type
    targetfile: tfilenameedit;
    makecommand: tfilenameedit;
    showcommandline: tbutton;
-   messageoutputfile: tfilenameedit;
    copymessages: tbooleanedit;
    closemessages: tbooleanedit;
    checkmethods: tbooleanedit;
@@ -1025,6 +1024,7 @@ type
    
    showconsole: tbooleanedit;
    enablepurpose: tbooleanedit;
+   messageoutputfile: tfilenameedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -3044,6 +3044,12 @@ end;
 procedure tprojectoptionsfo.copymessagechanged(const sender: TObject);
 begin
  messageoutputfile.enabled:= copymessages.value;
+ {
+ if copymessages.value then
+  messageoutputfile.frame.captiontextflags := [tf_bottom]
+ else 
+  messageoutputfile.frame.captiontextflags := [tf_bottom,tf_grayed];
+  }
 end;
 
 procedure tprojectoptionsfo.updatedebugenabled(const sender: TObject);

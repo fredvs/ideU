@@ -26,7 +26,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
- versiontext = '1.9.4';
+ versiontext = '1.9.5';
  idecaption = 'ideU';
  statname = 'ideu';
 
@@ -3050,7 +3050,7 @@ begin
  else begin
  
 if confideufo.fullpath.value then
-   caption:= idecaption+' ('+(aname)+')'
+   caption:= idecaption+' ('+(tosysfilepath(filepath(aname,fk_file,true)))+')'
 else  caption:= idecaption+' ('+filename(aname)+')';
   
   setcurrentdirmse(filedir(aname));

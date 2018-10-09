@@ -73,6 +73,7 @@ object conffpguifo: tconffpguifo
     FDFBF6EBB3360000000000000000000000125BA2D0E7EDEDE6CE9F5710000000
     00000000
   }
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object fpguidesigner: tfilenameedit
     Tag = 7
@@ -88,18 +89,19 @@ object conffpguifo: tconffpguifo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      17
       0
       0
     )
     hint = 'Path of fpGUI Designer'
     bounds_x = 0
-    bounds_y = 8
+    bounds_y = 9
     bounds_cx = 328
-    bounds_cy = 41
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
+    controller.options = [fdo_sysfilename, fdo_savelastdir]
     controller.captionopen = 'fpGUI Designer path'
-    reffontheight = 15
+    reffontheight = 14
   end
   object enablefpguidesigner: tbooleanedit
     frame.caption = ' Enable designer integration'
@@ -107,15 +109,15 @@ object conffpguifo: tconffpguifo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       174
       2
     )
     taborder = 1
     bounds_x = 18
-    bounds_y = 58
+    bounds_y = 59
     bounds_cx = 187
-    bounds_cy = 17
+    bounds_cy = 16
   end
   object tbfpgonlyone: tbooleanedit
     frame.caption = ' Only One Instance (setup designer too)'
@@ -123,15 +125,15 @@ object conffpguifo: tconffpguifo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       245
       2
     )
     taborder = 2
     bounds_x = 18
-    bounds_y = 77
+    bounds_y = 78
     bounds_cx = 258
-    bounds_cy = 17
+    bounds_cy = 16
     value = True
   end
   object tgroupbox1: tgroupbox
@@ -141,68 +143,63 @@ object conffpguifo: tconffpguifo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      8
+      7
       0
       0
     )
     taborder = 3
     bounds_x = 49
-    bounds_y = 98
+    bounds_y = 99
     bounds_cx = 237
-    bounds_cy = 143
+    bounds_cy = 142
     object edfilename: tedit
       frame.localprops = []
       frame.localprops1 = []
       bounds_x = 126
-      bounds_y = 26
+      bounds_y = 25
       bounds_cx = 94
-      bounds_cy = 21
       text = '${FILENAME}'
-      reffontheight = 15
+      reffontheight = 14
     end
     object edclose: tedit
       frame.localprops = []
       frame.localprops1 = []
       taborder = 1
       bounds_x = 126
-      bounds_y = 48
+      bounds_y = 47
       bounds_cx = 94
-      bounds_cy = 21
       text = 'closeall'
-      reffontheight = 15
+      reffontheight = 14
     end
     object edhide: tedit
       frame.localprops = []
       frame.localprops1 = []
       taborder = 2
       bounds_x = 126
-      bounds_y = 92
+      bounds_y = 91
       bounds_cx = 94
-      bounds_cy = 21
       text = 'hideit'
-      reffontheight = 15
+      reffontheight = 14
     end
     object edshow: tedit
       frame.localprops = []
       frame.localprops1 = []
       taborder = 3
       bounds_x = 126
-      bounds_y = 70
+      bounds_y = 69
       bounds_cx = 94
-      bounds_cy = 21
       text = 'showit'
-      reffontheight = 15
+      reffontheight = 14
     end
     object edquit: tedit
       frame.localprops = []
       frame.localprops1 = []
       taborder = 4
       bounds_x = 126
-      bounds_y = 114
+      bounds_y = 113
       bounds_cx = 94
-      bounds_cy = 21
       text = 'quit'
-      reffontheight = 15
+      reffontheight = 14
     end
     object ifloadfile: tbooleanedit
       frame.caption = ' Load File =>'
@@ -210,7 +207,7 @@ object conffpguifo: tconffpguifo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         84
         2
       )
@@ -218,7 +215,7 @@ object conffpguifo: tconffpguifo
       bounds_x = 14
       bounds_y = 26
       bounds_cx = 97
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
     object ifclose: tbooleanedit
@@ -227,7 +224,7 @@ object conffpguifo: tconffpguifo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         86
         2
       )
@@ -235,7 +232,7 @@ object conffpguifo: tconffpguifo
       bounds_x = 14
       bounds_y = 48
       bounds_cx = 99
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
     object ifshow: tbooleanedit
@@ -244,7 +241,7 @@ object conffpguifo: tconffpguifo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         93
         2
       )
@@ -252,7 +249,7 @@ object conffpguifo: tconffpguifo
       bounds_x = 14
       bounds_y = 70
       bounds_cx = 106
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
     object ifhide: tbooleanedit
@@ -261,7 +258,7 @@ object conffpguifo: tconffpguifo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         87
         2
       )
@@ -269,7 +266,7 @@ object conffpguifo: tconffpguifo
       bounds_x = 14
       bounds_y = 92
       bounds_cx = 100
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
     object ifquit: tbooleanedit
@@ -278,7 +275,7 @@ object conffpguifo: tconffpguifo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
+        1
         85
         2
       )
@@ -286,7 +283,7 @@ object conffpguifo: tconffpguifo
       bounds_x = 14
       bounds_y = 114
       bounds_cx = 98
-      bounds_cy = 17
+      bounds_cy = 16
       value = True
     end
   end
@@ -297,9 +294,8 @@ object conffpguifo: tconffpguifo
     bounds_x = 69
     bounds_y = 254
     bounds_cx = 190
-    bounds_cy = 21
     text = '*.fpg , fpg_*.pas , fpgui_*.pas'
-    reffontheight = 15
+    reffontheight = 14
   end
   object iffilter: tbooleanedit
     frame.caption = ' Filter:'
@@ -307,15 +303,15 @@ object conffpguifo: tconffpguifo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      1
       41
       2
     )
     taborder = 5
     bounds_x = 13
-    bounds_y = 255
+    bounds_y = 256
     bounds_cx = 54
-    bounds_cy = 17
+    bounds_cy = 16
   end
   object ok: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -330,12 +326,12 @@ object conffpguifo: tconffpguifo
     bounds_x = 274
     bounds_y = 255
     bounds_cx = 45
-    bounds_cy = 21
+    bounds_cy = 20
     anchors = [an_left, an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'Ok'
     modalresult = mr_ok
-    reffontheight = 15
+    reffontheight = 14
   end
   object tstatfile1: tstatfile
     filename = 'conffpg.sta'

@@ -799,9 +799,9 @@ str1:= winestr + str1 + ' ';
   end;
  
  // str1:= str1 + ' ' + quotefilename(normalizename(removefileext(aname)+str4));
-  if acompiler <> 3 then
-  str1:= trim(str1) + ' ' + quotefilename(normalizename(removefileext(aname)+str4))
-  else str1:= trim(str1) + ' ' + normalizename(aname);
+ // if acompiler <> 3 then
+ // str1:= trim(str1) + ' ' + quotefilename(normalizename(removefileext(aname)+str4)) else
+  str1:= trim(str1) + ' ' + normalizename(aname);
  end;
  str1:= trim(str1 + extrastr);
 // writeln(str1);

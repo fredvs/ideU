@@ -13,7 +13,7 @@ object debuggerfo: tdebuggerfo
   bounds_x = 57
   bounds_y = 79
   bounds_cx = 1151
-  bounds_cy = 51
+  bounds_cy = 64
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -22,7 +22,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1141
-    51
+    64
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
@@ -92,7 +92,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 47
     bounds_cx = 1141
-    bounds_cy = 2
+    bounds_cy = 15
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
