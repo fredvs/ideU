@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=79
+findinfiledialog=80
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,11 +29,11 @@ findinfiledialog=79
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc"
  history=9
@@ -48,13 +48,14 @@ findinfiledialog=79
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/msegui/
+  /usr/local/codetyphon/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=13
+ filehistory=14
+  /usr/local/codetyphon/
   /home/fred/msegui/
   /home/fred/msedevpass/
   /usr/local/codetyphon/fpcsrc/
@@ -71,8 +72,10 @@ findinfiledialog=79
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=+(
+ value=sched_param
  history=20
+  sched_param
+  'quit
   +(
   + (
   .caption
@@ -91,8 +94,6 @@ findinfiledialog=79
   iifiserver
   bo1 and (fifiserverintf
   #13
-  saveall
-  mp3
  [findinfileadialogfo]
  stackedunder=
  x=165
@@ -1357,8 +1358,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=process
+finddtext=Aparam
 findhistory=20
+ Aparam
+ close
  process
  customdomake
  customcompile
@@ -1377,10 +1380,8 @@ findhistory=20
  tcustomgrid.ifirowchange
  tabhint
  checksave
- doline
- tsourcefo.formonidle
 findoptions=1
-editpos=27
+editpos=31
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1395,7 +1396,6 @@ editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1408,6 +1408,11 @@ editpos=27
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,9
+ 0,-1073741823
+ 0,-1073741823
+ 26,148
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1435,7 +1440,11 @@ bookmarks23=0
 bookmarks24=0
 bookmarks25=0
 bookmarks26=0
-sourcefiles=27
+bookmarks27=0
+bookmarks28=0
+bookmarks29=0
+bookmarks30=0
+sourcefiles=31
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1450,7 +1459,7 @@ sourcefiles=27
  ${PROJECTDIR}/plugmanager.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- /home/fred/ideu/src/projectoptionsform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/make.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/confideu.pas
@@ -1463,7 +1472,11 @@ sourcefiles=27
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/conffpgui.pas
  ${PROJECTDIR}/sak_mse.pas
-relpaths=27
+ ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/main.pas
+ /usr/local/codetyphon/fpcsrc/packages/pthreads/src/pthrbsd.inc
+relpaths=31
  ideU.pas
  projectoptionsform.pas
  actionsmodule.pas
@@ -1491,7 +1504,15 @@ relpaths=27
  actionsmodule.pas
  conffpgui.pas
  sak_mse.pas
-ismoduletexts=27
+ plugmanager.pas
+ main.pas
+ main.pas
+ ../../../usr/local/codetyphon/fpcsrc/packages/pthreads/src/pthrbsd.inc
+ismoduletexts=31
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1549,7 +1570,7 @@ visiblemodules=11
  -1
  -1
  -1
- -1
+ 0
  -1
  -1
  -1
@@ -1568,38 +1589,42 @@ nomenumodules=11
  0
  0
 [sourcefo.files_tab]
-order=27
+order=31
  0
  1
  2
  3
  4
- 22
+ 15
  6
- 18
- 5
- 19
+ 29
+ 9
+ 24
  10
  11
+ 22
+ 26
+ 28
  14
+ 27
+ 30
+ 18
+ 21
+ 5
+ 23
+ 17
  13
  16
- 25
  8
- 26
- 12
- 15
- 17
- 21
  20
- 23
- 24
+ 25
  7
- 9
-firsttab=7
-index=12
+ 19
+ 12
+firsttab=9
+index=17
 [layout]
-windowlayout=712
+windowlayout=716
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1707,7 +1732,7 @@ windowlayout=712
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_messagefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1744,7 +1769,7 @@ windowlayout=712
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2070,15 +2095,17 @@ windowlayout=712
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
+ value=/usr/local/codetyphon/fpcsrc/packages/pthreads/src/pthrbsd.inc
  history=20
-  /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/commandlineform.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/make.pas
   /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/sourcepage.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/designer_ext/src/frm_colorpicker.pas
   /home/fred/designer_ext/src/runonce_postit.pas
   /home/fred/designer_ext/src/fpg_main.pas
@@ -2090,10 +2117,8 @@ windowlayout=712
   /home/fred/fpGUI-maint/src/corelib/fpg_base.pas
   /home/fred/designer_ext/src/develop_dynX11/fpg_x11.pas
   /home/fred/designer_ext/src/xdynload.pas
-  /home/fred/designer_ext/src/xext.pas
-  /home/fred/dynx/src/fpgui/develop_dynX11/fpg_x11.pas
  [debuggerfo.project_options]
- value=1
+ value=4
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2113,36 +2138,40 @@ windowlayout=712
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=27
+ order=31
   0
   1
   2
   3
   4
-  22
+  15
   6
-  18
-  5
-  19
+  29
+  9
+  24
   10
   11
+  22
+  26
+  28
   14
+  27
+  30
+  18
+  21
+  5
+  23
+  17
   13
   16
-  25
   8
-  26
-  12
-  15
-  17
-  21
   20
-  23
-  24
+  25
   7
-  9
- firsttab=7
- index=12
+  19
+  12
+ firsttab=9
+ index=17
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -2201,7 +2230,7 @@ windowlayout=712
  [_mse_commandlinefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_messagefo_mse_
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=3
  nx=0
@@ -2220,7 +2249,7 @@ windowlayout=712
  [_mse_messagefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=confideufo
  parent=
  mdistate=3
  nx=0
@@ -2233,9 +2262,9 @@ windowlayout=712
  cy=317
  rcx=0
  rcy=0
- wsize=0
+ wsize=5
  active=0
- visible=1
+ visible=0
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
