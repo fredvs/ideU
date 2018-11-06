@@ -7,12 +7,17 @@ For Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi.
 ideU is based on MSEide by Martin Schreiber.
 http://sourceforge.net/projects/mseide-msegui/
 
-There are binaries-executable
-with plugin fpGUI uidesigner_ext_ideu and
-sak voice assisted included.
-For Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi.
+There are binaries-executable here:
 
 => https://github.com/fredvs/ideU/releases
+
+For Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi.
+
+Included in release binaries of:
+plugin fpGUI uidesigner_ext
+https://github.com/fredvs/uidesigner_ext
+and sak voice assisted kit.
+https://github.com/fredvs/sak
 
 Fred van Stappen
 fiens@hotmail.com
