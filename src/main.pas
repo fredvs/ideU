@@ -3152,7 +3152,7 @@ begin
  debuggerfo.terminal_run.imagenr := 33 ;
  end;
   
-  
+  if projectoptions.o.enablesource = true then actionsmo.projectsourceexe(nil);
   
  end;
  sourcefo.updatehinttab;

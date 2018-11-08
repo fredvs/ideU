@@ -422,6 +422,8 @@ type
    fcheckmethods: boolean;
    fclosemessages: boolean;
    fenablepurpose: boolean;
+   fenablesource: boolean;
+   
    fusercolors: colorarty;
    fusercolorcomment: msestringarty;
    fformatmacronames: msestringarty;
@@ -517,6 +519,7 @@ type
    property copymessages: boolean read fcopymessages write fcopymessages;
    property closemessages: boolean read fclosemessages write fclosemessages;
    property enablepurpose: boolean read fenablepurpose write fenablepurpose;
+   property enablesource: boolean read fenablesource write fenablesource;
 
    property checkmethods: boolean read fcheckmethods write fcheckmethods;
    property colorerror: colorty read fcolorerror write fcolorerror;
@@ -1025,6 +1028,7 @@ type
    showconsole: tbooleanedit;
    enablepurpose: tbooleanedit;
    messageoutputfile: tfilenameedit;
+   enablesource: tbooleanedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
                       var info: hintinfoty);
@@ -1076,6 +1080,10 @@ type
  
    procedure onshowpurpose(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
+                   
+    procedure onsource(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
+                                   
    procedure oncreatedexe(const sender: TObject);
   private
    procedure activegroupchanged;
@@ -2484,6 +2492,9 @@ fo.project_comment.value := o.project_comment;
    if fo.enablepurpose.value = true then fo.makeoptionsgrid.datacols[0].visible  := true else
  
   fo.makeoptionsgrid.datacols[0].visible  := false ;
+  
+ //   if fo.enablesource.value = true then  actionsmo.projectsourceexe(nil);
+  
 end;
 
 procedure storemacros(fo: tprojectoptionsfo);
@@ -3405,6 +3416,14 @@ begin
   makeoptionsgrid.datacols[0].visible  := false ;
  
          //   datacols.items   item[makeoptpurpose]
+end;
+
+procedure tprojectoptionsfo.onsource(const sender: TObject;
+               var avalue: Boolean; var accept: Boolean);
+begin
+
+ if avalue then actionsmo.projectsourceexe(nil);
+   
 end;
 
 procedure tprojectoptionsfo.oncreatedexe(const sender: TObject);
