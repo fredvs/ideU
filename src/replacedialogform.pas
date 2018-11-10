@@ -55,7 +55,7 @@ begin
  try
   fo.infotovalues(info);
   result:= fo.show(true,nil);
-  if result in [mr_ok,mr_yesall] then begin
+  if result in [mr_ok,mr_all] then begin
    fo.valuestoinfo(info);
   end;
  finally

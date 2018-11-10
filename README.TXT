@@ -2,8 +2,6 @@ ideU the ide. Universal.
 
 Multi OS, multi languages, multi compilers, voice assisted.
 
-For Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi.
-
 ideU is based on MSEide by Martin Schreiber.
 http://sourceforge.net/projects/mseide-msegui/
 
