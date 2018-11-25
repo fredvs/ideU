@@ -201,9 +201,11 @@ begin
 procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
 begin
 project_history.width := 84;
-if (fileexists(project_history.value)) and (file_history.tag = 0) and 
-(projectoptions.projectfilename <> project_history.value) then
+//if (fileexists(project_history.value)) and 
+if (file_history.tag = 0) and 
+ (projectoptions.projectfilename <> project_history.value) then
 begin
+sleep(50);
 mainfo.openproject(project_history.value);
 mainfo.activate;
 end;
@@ -214,8 +216,10 @@ var
  page: tsourcepage;
 begin
 file_history.width := 84;
-if (fileexists(file_history.value)) and (file_history.tag = 0) then
+//if (fileexists(file_history.value)) and 
+if (file_history.tag = 0) then
 begin
+sleep(50);
 page:= sourcefo.openfile(file_history.value);
  if page <> nil then  page.activate(true,true);
  end;

@@ -1056,7 +1056,10 @@ object debuggerfo: tdebuggerfo
       bounds_y = 3
       bounds_cx = 86
       statfile = mainfo.mainstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       textflags = [tf_right, tf_ycentered, tf_noselect]
+      dropdown.options = [deo_keydropdown, deo_cliphint]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item

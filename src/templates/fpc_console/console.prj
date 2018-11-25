@@ -17,8 +17,6 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu/src/templates/fpc_console
-projectfilename=/home/fred/ideu/src/templates/fpc_console/console.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -57,7 +55,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=16
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -79,7 +77,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=200
+ y=201
  xprop=1
  yprop=0.39417475728155
  [projectoptionsfo.macrogrid]
@@ -106,7 +104,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=6
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=801
  width0=47
@@ -127,7 +125,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -255,6 +253,7 @@ stripmessageesc=0
 copymessages=0
 closemessages=0
 enablepurpose=1
+enablesource=1
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -410,7 +409,7 @@ project_creator=
 project_copyright=
 project_license=
 project_time=14:04:30
-project_date=11/11/2016
+project_date=01:20:51 AM 11/11/2018
 project_comment=
 aftcommandon=0
 unitdirson=0
@@ -548,15 +547,11 @@ beforeload=
 afterload=
 beforerun=
 sourcebase=
-sourcedirs=9
+sourcedirs=5
  ${FPCSRCDIR}/
  ${FPCSRCDIR}/*/
  ${FPCSRCDIR}/*/*/
  ${FPCSRCDIR}/*/*/*/
- ${FPGUIDIR}/src/gui/
- ${FPGUIDIR}/src/corelib/gdi/X/
- ${FPGUIDIR}/src/corelib/x11/
- ${FPGUIDIR}/src/corelib/
  ./
 defines=0
 progparameters=
@@ -573,6 +568,7 @@ externalconsole=0
 settty=1
 gdbdownload=0
 downloadalways=0
+restartgdbbeforeload=0
 startupbkpt=0
 startupbkpton=0
 gdbsimulator=0
@@ -628,18 +624,7 @@ panels=1
  panel1
 units=
  (
- a=0,8245,6,Pascal Units
- c=2
-  (
-  file=${PROJECTDIR}/${PROJECTNAME}.pas
-  kind=1
-  a=0,8196,0,${PROJECTNAME}.pas
-  )
-  (
-  file=${PROJECTDIR}/frm_main.pas
-  kind=1
-  a=0,8196,0,frm_main.pas
-  )
+ a=0,8229,6,Pascal Units
  )
 cmodules=
  (
@@ -688,26 +673,14 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=548
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
- useroptions=11395
- parent=mainfo.container
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=668
- ncy=0
- x=0
- y=0
- cx=1147
- cy=604
- rcx=0
- rcy=0
+ useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=838860925
+ useroptions=301990011
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -720,15 +693,12 @@ windowlayout=548
  cy=621
  rcx=0
  rcy=0
- children=1
-  basedock,0,0,1147,604
- focusedchild=0
  wsize=0
  active=1
  visible=1
  [targetconsolefo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -746,7 +716,7 @@ windowlayout=548
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -764,8 +734,8 @@ windowlayout=548
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=805322875
- stackedunder=about_form
+ useroptions=268451963
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -791,7 +761,7 @@ windowlayout=548
  value=0
  [disassfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -826,7 +796,7 @@ windowlayout=548
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -837,7 +807,7 @@ windowlayout=548
  x=0
  y=0
  cx=205
- cy=455
+ cy=456
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -847,12 +817,12 @@ windowlayout=548
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
- rowheight=17
+ col=0
+ row=1
+ rowheight=16
  [stackfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=
  mdistate=0
  nx=0
@@ -870,7 +840,7 @@ windowlayout=548
  visible=0
  [watchpointsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -928,7 +898,7 @@ windowlayout=548
  value=0
  [objectinspectorfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -953,7 +923,7 @@ windowlayout=548
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=
  parent=
  mdistate=0
@@ -998,7 +968,7 @@ windowlayout=548
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=mainfo.basedock
  visible=0
  mdistate=0
@@ -1041,7 +1011,7 @@ windowlayout=548
  value=1
  [messagefo]
  splitdir=0
- useroptions=805388395
+ useroptions=268517483
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1050,14 +1020,14 @@ windowlayout=548
  ncx=0
  ncy=0
  x=0
- y=512
+ y=513
  cx=1147
  cy=92
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
- useroptions=805331067
+ useroptions=268460155
  stackedunder=
  parent=
  mdistate=0
@@ -1120,8 +1090,8 @@ windowlayout=548
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=805331051
- stackedunder=mainfo
+ useroptions=268460139
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1157,7 +1127,7 @@ windowlayout=548
  rcy=0
  [debuggerfo.basedock]
  splitdir=2
- useroptions=805452931
+ useroptions=268582019
  parent=debuggerfo.container
  visible=1
  mdistate=0
@@ -1198,14 +1168,17 @@ windowlayout=548
  x=208
  y=0
  cx=939
- cy=455
+ cy=456
  rcx=0
  rcy=0
+ [sourcefo.files_tab]
+ firsttab=0
+ index=-1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1223,7 +1196,7 @@ windowlayout=548
  visible=0
  [mainfo.panel1]
  splitdir=1
- useroptions=838958571
+ useroptions=302087659
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1234,7 +1207,7 @@ windowlayout=548
  x=0
  y=54
  cx=1147
- cy=455
+ cy=456
  rcx=0
  rcy=0
 [targetconsole]
