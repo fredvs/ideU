@@ -6,7 +6,7 @@ object sourcefo: tsourcefo
   frame.grip_grip = stb_dens0
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
-  frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_buttonhints]
+  frame.grip_options = [go_closebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_buttonhints]
   frame.grip_face.localprops = []
   frame.grip_face.template = tfacecomp1
   frame.grip_faceactive.fade_pos.count = 2
@@ -127,6 +127,7 @@ object sourcefo: tsourcefo
     tab_frame.buttonface.localprops = []
     tab_frame.buttonface.template = mainfo.tfacecomp1
     tab_frame.buttonframe.optionsskin = [fso_flat]
+    tab_frame.buttonframe.colorclient = -2147483645
     tab_frame.buttonframe.localprops = [frl_optionsskin]
     tab_frame.buttonframe.localprops1 = []
     tab_frame.buttonsize = 16

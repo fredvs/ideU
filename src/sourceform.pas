@@ -1,6 +1,5 @@
 unit sourceform;
 
-
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
