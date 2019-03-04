@@ -33,6 +33,7 @@ var
 begin
 
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+ 
  //Ukrainian, Belarusian, Bashkir
  if (MSEFallbackLang='uk') or (MSEFallbackLang='be') or (MSEFallbackLang='ba')
  //Bulgarian, Chechen, Church Slavic
@@ -42,8 +43,9 @@ begin
  //Moldavian, Tatar
  or (MSEFallbackLang='mo') or (MSEFallbackLang='tt')
                                                    then MSEFallbackLang:='ru';
- If loadlangunit('i18n_'+MSEFallbackLang,true) then
-                                                   setlangconsts(MSEFallbackLang);
+// If loadlangunit('i18n_'+MSEFallbackLang,true) then // does not work
+         setlangconsts(MSEFallbackLang);
+                                          
  
  registerfontalias('mseide_source',gui_getdefaultfontnames[stf_courier],
                     fam_fixnooverwrite,16);

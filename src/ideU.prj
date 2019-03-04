@@ -74,8 +74,10 @@ findinfiledialog=82
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=platformtext
+ value=i18ndemo_de
  history=20
+  i18ndemo_de
+  loadlangunit
   platformtext
   twinep6
   external
@@ -94,8 +96,6 @@ findinfiledialog=82
   'quit
   +(
   + (
-  .caption
-  gettargetfile
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -753,24 +753,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
- ACTIONSMO
- CONFCOMPILERFO
- FINDINFILEFO
- MAINFO
- SOURCEFO
-moduletypes=5
- TACTIONSMO
- TCONFCOMPILERFO
- TFINDINFILEFO
- TMAINFO
- TSOURCEFO
-modulefiles=5
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/confcompiler.mfm
- /home/fred/ideu/src/findinfileform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=11
  4095
@@ -1001,7 +986,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=0
+showconsole=1
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1379,10 +1364,8 @@ findhistory=20
  customcompile
  toggleformunit
 findoptions=1
-editpos=14
- 38,43
- 0,0
- 0,0
+editpos=17
+ 0,33
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1390,9 +1373,14 @@ editpos=14
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
- 0,0
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1408,7 +1396,10 @@ bookmarks10=0
 bookmarks11=0
 bookmarks12=0
 bookmarks13=0
-sourcefiles=14
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1423,7 +1414,10 @@ sourcefiles=14
  ${PROJECTDIR}/make.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=14
+ /home/fred/mseguinew/mseide-msegui/lib/common/i18n/msei18nutils.pas
+ ${PROJECTDIR}/mseconsts.pas
+ /home/fred/msegui/apps/i18ndemo/main.mfm
+relpaths=17
  ideU.pas
  main.pas
  actionsmodule.pas
@@ -1432,13 +1426,16 @@ relpaths=14
  ideU.pas
  msegui/lib/common/kernel/linux/msesysintf1.pas
  fpGUI/src/corelib/gdi/fpg_gdi.pas
- usr/local/codetyphon/fpcsrc/rtl/win64/windows.pp
+ ../../usr/local/codetyphon/fpcsrc/rtl/win64/windows.pp
  usr/local/codetyphon/fpcsrc/rtl/win/wininc/base.inc
  confcompiler.pas
  make.pas
  sourceform.pas
  ideU.pas
-ismoduletexts=14
+ mseguinew/mseide-msegui/lib/common/i18n/msei18nutils.pas
+ mseconsts.pas
+ msegui/apps/i18ndemo/main.mfm
+ismoduletexts=17
  0
  0
  0
@@ -1453,54 +1450,36 @@ ismoduletexts=14
  0
  0
  0
-modules=6
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/findinfileform.mfm
- /home/fred/ideu/src/confcompiler.mfm
-moduleoptions=6
  0
  0
  0
- 0
- 0
- 0
-visiblemodules=6
- -1
- -1
- -1
- 0
- -1
- -1
-nomenumodules=6
- 0
- 0
- 0
- -1
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-order=14
+order=17
  0
- 3
- 6
- 13
- 5
- 7
- 8
- 9
  11
  10
+ 5
  12
- 1
- 2
+ 14
+ 8
  4
+ 15
+ 9
+ 16
+ 13
+ 7
+ 1
+ 3
+ 6
+ 2
 firsttab=0
 index=0
 [layout]
-windowlayout=642
+windowlayout=569
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1540,7 +1519,7 @@ windowlayout=642
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1634,7 +1613,7 @@ windowlayout=642
  x=0
  y=0
  cx=205
- cy=521
+ cy=533
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1945,7 +1924,7 @@ windowlayout=642
  x=0
  y=0
  cx=1356
- cy=58
+ cy=46
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1960,8 +1939,8 @@ windowlayout=642
  ncy=61
  x=0
  y=0
- cx=1356
- cy=61
+ cx=1341
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1973,16 +1952,17 @@ windowlayout=642
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /usr/local/codetyphon/fpcsrc/rtl/win64/windows.pp
   /home/fred/ideu/src/make.pas
+  /usr/local/codetyphon/fpcsrc/rtl/win/wininc/base.inc
   /home/fred/fpGUI/src/corelib/gdi/fpg_gdi.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/confcompiler.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/msegui/lib/common/kernel/linux/msesysintf1.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/msegui/lib/common/graphics/msegdi32gdi.pas
-  /usr/local/codetyphon/fpcsrc/rtl/win/wininc/base.inc
   /home/fred/mselangmoi/rtl/system/rtl_strings.mla
   /home/fred/strumpract/src/drums.pas
   /home/fred/Downloads/mselang-master/mselang/rtl/system/rtl_sysconsts.mla
@@ -1992,7 +1972,6 @@ windowlayout=642
   /home/fred/mlctest/hellomlc.mla
   /home/fred/mselang/mselang.pas
   /home/fred/mselang/rtl/stringutils/rtl_format.mla
-  /home/fred/mselang/rtl/system/rtl_sysconsts.mla
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2010,32 +1989,35 @@ windowlayout=642
  x=208
  y=0
  cx=1148
- cy=521
+ cy=533
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=14
+ order=17
   0
-  3
-  6
-  13
-  5
-  7
-  8
-  9
   11
   10
+  5
   12
-  1
-  2
+  14
+  8
   4
+  15
+  9
+  16
+  13
+  7
+  1
+  3
+  6
+  2
  firsttab=0
  index=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2062,87 +2044,11 @@ windowlayout=642
  ncx=0
  ncy=0
  x=0
- y=61
+ y=49
  cx=1356
- cy=521
+ cy=533
  rcx=0
  rcy=0
- [_mse_sourcefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=142
- y=201
- cx=706
- cy=352
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=133
- y=135
- cx=652
- cy=301
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_findinfilefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_confcompilerfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=548
- y=115
- cx=379
- cy=198
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confcompilerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=345
- y=140
- cx=382
- cy=399
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
