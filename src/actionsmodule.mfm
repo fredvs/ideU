@@ -6,13 +6,13 @@ object actionsmo: tactionsmo
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
-    caption = ' &Make '
+    caption = '&Make'
     onexecute = makeactonexecute
     left = 8
     top = 294
   end
   object run: taction
-    caption = ' &Run '
+    caption = '&Run'
     imagenr = 0
     hint = 'Run'
     left = 80
@@ -21,7 +21,7 @@ object actionsmo: tactionsmo
   object step: taction
     imagelist = buttonicons
     imagenr = 1
-    hint = ' Step '
+    hint = 'Step'
     onexecute = stepactonexecute
     left = 8
     top = 222
@@ -33,7 +33,7 @@ object actionsmo: tactionsmo
   object next: taction
     imagelist = buttonicons
     imagenr = 2
-    hint = ' Next '
+    hint = 'Next'
     onexecute = nextactonexecute
     left = 8
     top = 206
@@ -45,7 +45,7 @@ object actionsmo: tactionsmo
   object continue: taction
     imagelist = buttonicons
     imagenr = 4
-    hint = ' Continue '
+    hint = 'Continue'
     onexecute = continueactonexecute
     left = 8
     top = 254
@@ -57,7 +57,7 @@ object actionsmo: tactionsmo
   object interrupt: taction
     imagelist = buttonicons
     imagenr = 5
-    hint = ' Interrupt '
+    hint = 'Interrupt'
     onexecute = interruptactonexecute
     left = 9
     top = 269
@@ -65,13 +65,13 @@ object actionsmo: tactionsmo
   object reset: taction
     imagelist = buttonicons
     imagenr = 6
-    hint = ' Reset '
+    hint = 'Reset'
     onexecute = resetactonexecute
     left = 7
     top = 191
   end
   object opensource: taction
-    caption = ' &Open '
+    caption = '&Open'
     onexecute = opensourceactonexecute
     left = 8
     top = 4
@@ -83,7 +83,7 @@ object actionsmo: tactionsmo
   object finish: taction
     imagelist = buttonicons
     imagenr = 3
-    hint = ' Finish '
+    hint = 'Finish'
     onexecute = finishactonexecute
     left = 8
     top = 238
@@ -102,7 +102,7 @@ object actionsmo: tactionsmo
     )
   end
   object close: taction
-    caption = ' &Close '
+    caption = '&Close'
     onexecute = closeactonexecute
     left = 8
     top = 68
@@ -112,13 +112,13 @@ object actionsmo: tactionsmo
     )
   end
   object abortmakeact: taction
-    caption = ' &Abort Make '
+    caption = '&Abort Make'
     onexecute = abortmakeactonexecute
     left = 8
     top = 402
   end
   object undo: taction
-    caption = ' &Undo '
+    caption = '&Undo'
     onexecute = undoactonexecute
     left = 280
     top = 4
@@ -128,7 +128,7 @@ object actionsmo: tactionsmo
     )
   end
   object redo: taction
-    caption = ' &Redo '
+    caption = '&Redo'
     onexecute = redoactonexecute
     left = 280
     top = 20
@@ -138,7 +138,7 @@ object actionsmo: tactionsmo
     )
   end
   object cut: taction
-    caption = ' Cu&t '
+    caption = 'Cu&t'
     onexecute = cutactonexecute
     left = 280
     top = 36
@@ -152,7 +152,7 @@ object actionsmo: tactionsmo
     )
   end
   object copy: taction
-    caption = ' &Copy '
+    caption = '&Copy'
     onexecute = copyactonexecute
     left = 280
     top = 52
@@ -162,7 +162,7 @@ object actionsmo: tactionsmo
     )
   end
   object paste: taction
-    caption = ' &Paste '
+    caption = '&Paste'
     onexecute = pasteactonexecute
     left = 280
     top = 68
@@ -176,13 +176,13 @@ object actionsmo: tactionsmo
     )
   end
   object delete: taction
-    caption = ' &Delete '
+    caption = '&Delete'
     onexecute = deleteactonexecute
     left = 280
     top = 84
   end
   object saveall: taction
-    caption = ' Sa&ve all '
+    caption = 'Sa&ve all'
     onexecute = saveallactonexecute
     left = 8
     top = 36
@@ -199,7 +199,7 @@ object actionsmo: tactionsmo
     )
   end
   object repeatfind: taction
-    caption = ' &Search again '
+    caption = '&Search again'
     onexecute = repeatfindactonexecute
     left = 152
     top = 44
@@ -209,7 +209,7 @@ object actionsmo: tactionsmo
     )
   end
   object findinfile: taction
-    caption = ' Find in F&iles '
+    caption = 'Find in F&iles'
     onexecute = findinfileonexecute
     left = 152
     top = 60
@@ -219,23 +219,23 @@ object actionsmo: tactionsmo
     )
   end
   object closeall: taction
-    caption = ' C&lose all '
+    caption = 'C&lose all'
     onexecute = closeallactonexecute
     left = 8
     top = 84
   end
   object saveas: taction
-    caption = ' Save &as '
+    caption = 'Save &as'
     onexecute = saveasactonexecute
     left = 8
     top = 52
   end
   object bkptsonact: taction
     imagelist = buttonicons
-    caption = ' &Breakpoints on '
+    caption = '&Breakpoints on'
     state = [as_checked]
     imagenr = 7
-    hint = ' Breakpoints on/off '
+    hint = 'Breakpoints on/off'
     onexecute = bkptsononexecute
     left = 152
     top = 220
@@ -246,10 +246,10 @@ object actionsmo: tactionsmo
   end
   object watchesonact: taction
     imagelist = buttonicons
-    caption = ' &Watches on '
+    caption = '&Watches on'
     state = [as_checked]
     imagenr = 9
-    hint = ' Watches on/off '
+    hint = 'Watches on/off'
     onexecute = watchesononexecute
     left = 152
     top = 236
@@ -259,7 +259,7 @@ object actionsmo: tactionsmo
     )
   end
   object line: taction
-    caption = ' &Line '
+    caption = '&Line'
     onexecute = lineactonexecute
     left = 152
     top = 12
@@ -269,7 +269,7 @@ object actionsmo: tactionsmo
     )
   end
   object togglebkpt: taction
-    caption = ' &Toggle Breakpoint '
+    caption = '&Toggle Breakpoint'
     onexecute = togglebreakpointexe
     left = 152
     top = 188
@@ -279,7 +279,7 @@ object actionsmo: tactionsmo
     )
   end
   object togglebkptenable: taction
-    caption = ' Toggle Bkpt. &enabled '
+    caption = 'Toggle Bkpt. &enabled'
     onexecute = togglebkptenableactonexecute
     left = 152
     top = 204
@@ -2530,7 +2530,7 @@ object actionsmo: tactionsmo
     }
   end
   object selecteditpage: taction
-    caption = ' Select &Edit Page '
+    caption = 'Select &Edit Page'
     options = [ao_globalshortcut]
     onexecute = selecteditpageonexecute
     left = 280
@@ -2541,7 +2541,7 @@ object actionsmo: tactionsmo
     )
   end
   object indent: taction
-    caption = ' &Indent '
+    caption = '&Indent'
     onexecute = indentonexecute
     left = 280
     top = 120
@@ -2551,7 +2551,7 @@ object actionsmo: tactionsmo
     )
   end
   object unindent: taction
-    caption = ' U&nindent '
+    caption = 'U&nindent'
     onexecute = unindentonexecute
     left = 280
     top = 136
@@ -2595,16 +2595,16 @@ object actionsmo: tactionsmo
   end
   object bluedotsonact: taction
     imagelist = buttonicons
-    caption = ' Exec Line Hint on '
+    caption = 'Exec Line Hint on'
     state = [as_checked]
     imagenr = 14
-    hint = ' Executable lines hint on/off '
+    hint = 'Executable lines hint on/off'
     onchange = bluedotsononchange
     left = 152
     top = 253
   end
   object replace: taction
-    caption = ' Find && &Replace '
+    caption = 'Find && &Replace'
     onexecute = replaceactonexecute
     left = 208
     top = 16
@@ -2614,32 +2614,32 @@ object actionsmo: tactionsmo
     )
   end
   object print: taction
-    caption = ' &Print '
+    caption = '&Print'
     onexecute = printactonexecute
     left = 8
     top = 100
   end
   object detachtarget: taction
-    caption = ' Detach '
+    caption = 'Detach'
     onexecute = ondetachtarget
     left = 8
     top = 136
   end
   object attachprocess: taction
-    caption = ' Attach Process '
+    caption = 'Attach Process'
     onexecute = onattachprocess
     left = 8
     top = 152
   end
   object lowercase: taction
-    caption = ' Lowercase '
+    caption = 'Lowercase'
     onexecute = lowercaseexecute
     onupdate = enableonselect
     left = 360
     top = 120
   end
   object uppercase: taction
-    caption = ' Uppercase '
+    caption = 'Uppercase'
     onexecute = uppercaseexecute
     onupdate = enableonselect
     left = 360
@@ -3293,7 +3293,7 @@ object actionsmo: tactionsmo
     top = 8
   end
   object toggleinspector: taction
-    caption = ' Toggle Form/Inspector '
+    caption = 'Toggle Form/Inspector '
     left = 152
     top = 96
     sc = (
@@ -3327,7 +3327,7 @@ object actionsmo: tactionsmo
     top = 384
   end
   object download: taction
-    caption = ' Download '
+    caption = 'Download'
     onexecute = downloadexe
     left = 8
     top = 168
@@ -3343,13 +3343,13 @@ object actionsmo: tactionsmo
     )
   end
   object attachtarget: taction
-    caption = ' Attach Target '
+    caption = 'Attach Target'
     onexecute = onattachtarget
     left = 8
     top = 120
   end
   object setbm0: taction
-    caption = ' Bookmark &0 '
+    caption = 'Bookmark &0'
     onexecute = setbmexec
     left = 280
     top = 168
@@ -3359,7 +3359,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm0: taction
-    caption = ' Bookmark &0 '
+    caption = 'Bookmark &0'
     onexecute = findbmexec
     left = 360
     top = 168
@@ -3369,7 +3369,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm1: taction
-    caption = ' Bookmark &1 '
+    caption = 'Bookmark &1'
     tagaction = 1
     onexecute = findbmexec
     left = 360
@@ -3380,7 +3380,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm1: taction
-    caption = ' Bookmark &1 '
+    caption = 'Bookmark &1'
     tagaction = 1
     onexecute = setbmexec
     left = 280
@@ -3391,7 +3391,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm2: taction
-    caption = ' Bookmark &2 '
+    caption = 'Bookmark &2'
     tagaction = 2
     onexecute = findbmexec
     left = 360
@@ -3402,7 +3402,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm2: taction
-    caption = ' Bookmark &2 '
+    caption = 'Bookmark &2'
     tagaction = 2
     onexecute = setbmexec
     left = 280
@@ -3413,7 +3413,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm3: taction
-    caption = ' Bookmark &3 '
+    caption = 'Bookmark &3'
     tagaction = 3
     onexecute = findbmexec
     left = 360
@@ -3424,7 +3424,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm3: taction
-    caption = ' Bookmark &3 '
+    caption = 'Bookmark &3'
     tagaction = 3
     onexecute = setbmexec
     left = 280
@@ -3435,7 +3435,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm4: taction
-    caption = ' Bookmark &4 '
+    caption = 'Bookmark &4'
     tagaction = 4
     onexecute = findbmexec
     left = 360
@@ -3446,7 +3446,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm4: taction
-    caption = ' Bookmark &4 '
+    caption = 'Bookmark &4'
     tagaction = 4
     onexecute = setbmexec
     left = 280
@@ -3457,7 +3457,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm5: taction
-    caption = ' Bookmark &5 '
+    caption = 'Bookmark &5'
     tagaction = 5
     onexecute = findbmexec
     left = 360
@@ -3468,7 +3468,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm5: taction
-    caption = ' Bookmark &5 '
+    caption = 'Bookmark &5'
     tagaction = 5
     onexecute = setbmexec
     left = 280
@@ -3479,7 +3479,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm6: taction
-    caption = ' Bookmark &6 '
+    caption = 'Bookmark &6'
     tagaction = 6
     onexecute = findbmexec
     left = 360
@@ -3491,7 +3491,7 @@ object actionsmo: tactionsmo
   end
   object setbm6: taction
     Tag = 6
-    caption = ' Bookmark &6 '
+    caption = 'Bookmark &6'
     tagaction = 6
     onexecute = setbmexec
     left = 280
@@ -3502,7 +3502,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm7: taction
-    caption = ' Bookmark &7 '
+    caption = 'Bookmark &7'
     tagaction = 7
     onexecute = findbmexec
     left = 360
@@ -3513,7 +3513,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm7: taction
-    caption = ' Bookmark &7 '
+    caption = 'Bookmark &7'
     tagaction = 7
     onexecute = setbmexec
     left = 280
@@ -3524,7 +3524,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm8: taction
-    caption = ' Bookmark &8 '
+    caption = 'Bookmark &8'
     tagaction = 8
     onexecute = findbmexec
     left = 360
@@ -3535,7 +3535,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm8: taction
-    caption = ' Bookmark &8 '
+    caption = 'Bookmark &8'
     tagaction = 8
     onexecute = setbmexec
     left = 280
@@ -3546,7 +3546,7 @@ object actionsmo: tactionsmo
     )
   end
   object findbm9: taction
-    caption = ' Bookmark &9 '
+    caption = 'Bookmark &9'
     tagaction = 9
     onexecute = findbmexec
     left = 360
@@ -3557,7 +3557,7 @@ object actionsmo: tactionsmo
     )
   end
   object setbm9: taction
-    caption = ' Bookmark &9 '
+    caption = 'Bookmark &9'
     tagaction = 9
     onexecute = setbmexec
     left = 280
@@ -3584,37 +3584,37 @@ object actionsmo: tactionsmo
     )
   end
   object projectopenact: taction
-    caption = ' O&pen '
+    caption = 'O&pen'
     onexecute = projectopenexe
     left = 112
     top = 296
   end
   object projectoptionsact: taction
-    caption = ' &Options '
+    caption = '&Options'
     onexecute = projectoptionsexe
     left = 112
     top = 312
   end
   object projecttreeact: taction
-    caption = ' &Tree '
+    caption = '&Tree'
     onexecute = projecttreeexe
     left = 112
     top = 328
   end
   object projectsourceact: taction
-    caption = ' So&urce '
+    caption = 'So&urce'
     onexecute = projectsourceexe
     left = 112
     top = 344
   end
   object projectsaveact: taction
-    caption = ' &Save '
+    caption = '&Save'
     onexecute = projectsaveexe
     left = 112
     top = 360
   end
   object projectcloseact: taction
-    caption = ' &Close '
+    caption = '&Close'
     onexecute = projectcloeseexe
     left = 112
     top = 376
@@ -3720,7 +3720,7 @@ object actionsmo: tactionsmo
     )
   end
   object copylatexact: taction
-    caption = ' Copy &LaTeX '
+    caption = 'Copy &LaTeX'
     onexecute = copylatexactonexecute
     left = 402
     top = 387
@@ -3740,13 +3740,13 @@ object actionsmo: tactionsmo
     )
   end
   object findcompallact: taction
-    caption = ' &Find Component '
+    caption = '&Find Component'
     onexecute = findcompallexe
     left = 152
     top = 144
   end
   object forcezorderact: taction
-    caption = ' Force &Z-Order '
+    caption = 'Force &Z-Order'
     onchange = forcezorderexe
     left = 136
     top = 400
@@ -3792,14 +3792,14 @@ object actionsmo: tactionsmo
     top = 152
   end
   object customrun: taction
-    caption = ' custom run '
+    caption = 'custom run'
     tagaction = 9
     onexecute = runcustom
     left = 483
     top = 205
   end
   object assistive: taction
-    caption = ' assistive '
+    caption = 'assistive'
     tagaction = 9
     onexecute = assistiveactonexecute
     left = 498

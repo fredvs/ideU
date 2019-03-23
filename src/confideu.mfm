@@ -110,50 +110,50 @@ object confideufo: tconfideufo
     bounds_cx = 309
     bounds_cy = 88
     object tbfileaskload: tbooleaneditradio
-      frame.caption = '  A dialog box ask what to do...'
+      frame.caption = 'A dialog box ask what to do...'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
         1
-        190
+        182
         2
       )
       taborder = 2
       bounds_x = 24
       bounds_y = 63
-      bounds_cx = 203
+      bounds_cx = 195
       bounds_cy = 16
     end
     object tbfilenoload: tbooleaneditradio
-      frame.caption = '  No dialog box => keep the old one.'
+      frame.caption = 'No dialog box => keep the old one.'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
         1
-        226
+        218
         2
       )
       taborder = 1
       bounds_x = 23
       bounds_y = 41
-      bounds_cx = 239
+      bounds_cx = 231
       bounds_cy = 16
     end
     object tbfilereload: tbooleaneditradio
-      frame.caption = '  No dialog box => reload the new one.'
+      frame.caption = 'No dialog box => reload the new one.'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
         1
-        241
+        233
         2
       )
       bounds_x = 23
       bounds_y = 21
-      bounds_cx = 254
+      bounds_cx = 246
       bounds_cy = 16
       value = True
     end
@@ -322,7 +322,7 @@ object confideufo: tconfideufo
         2
       )
       taborder = 4
-      hint = ' Enable accelerator when Up/Down keys are used in source editor '
+      hint = 'Enable accelerator when Up/Down keys are used in source editor'
       bounds_x = 50
       bounds_y = 105
       bounds_cx = 198
@@ -342,7 +342,7 @@ object confideufo: tconfideufo
         2
       )
       taborder = 5
-      hint = ' Show the full path of proect in main window title. '
+      hint = 'Show the full path of proect in main window title.'
       bounds_x = 50
       bounds_y = 127
       bounds_cx = 222
