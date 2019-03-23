@@ -1,0 +1,339 @@
+[projectfo.projectstat]
+colcount=6
+[projectfo.impexpfiledialog]
+filenames=1
+ /home/fred/mseide-msegui/apps/ide/lang_en/mseide_i18n.csv
+filecolwidth=174
+x=0
+y=0
+cx=0
+cy=0
+lastdir=/home/fred/mseide-msegui/apps/ide/lang_en/
+filefilterindex=0
+filefilter=*.csv
+[projectfo.aftermake]
+value=chmod 777 ./*.so; rm -f ../*.so; cp -f ./*.so ../;
+[projectfo.beforemake]
+value=rm -f ./*.so
+[projectfo.destname]
+value=
+[projectfo.makeon]
+value=1
+[projectfo.makecommand]
+value=${COMPILER} -Fu${MSELIBDIR}i18n ${LIBFILE} -fPIC -k-gc-sections
+[projectfo.grid2]
+propcolwidthref=789
+values0=1
+ ru
+width0=94
+sortdescend0=0
+values1=1
+ /home/fred/mseide-msegui/apps/ide/lang_ru/
+[projectfo.datafilename]
+filenames=1
+ /home/fred/mseide-msegui/apps/ide/lang_ru/i18n.trd
+filecolwidth=174
+x=0
+y=0
+cx=0
+cy=0
+lastdir=/home/fred/mseide-msegui/apps/ide/lang_ru/
+filefilterindex=-1
+filefilter=*.trd
+[projectfo.grid]
+propcolwidthref=541
+values0=86
+ watchpointsfo
+ watchfo
+ toolhandlermo
+ threadsfo
+ templateeditorfo
+ targetconsolefo
+ symbolfo
+ storedcomponentinfodialogfo
+ stackfo
+ sourcepage
+ sourcehintfo
+ sourcefo
+ settaborderfo
+ setcreateorderfo
+ selectsubmoduledialogfo
+ selecteditpagefo
+ reportdesignerfo
+ replacedialogfo
+ projecttreefo
+ projectoptionsfo
+ programparametersfo
+ printfo
+ panelfo
+ objectinspectorfo
+ msetemplateselectfo
+ mseparamentryfo
+ compnametreefo
+ messagefo
+ memoryfo
+ mainfo
+ guitemplatesmo
+ formdesignerfo
+ findinfilepagefo
+ findinfilefo
+ findinfileadialogfo
+ finddialogfo
+ disassfo
+ debuggerfo
+ cpuc86_64fo
+ cpurl78fo
+ cpui386fo
+ cpufo
+ cpucpu32fo
+ cpuavr32fo
+ cpuarmm3fo
+ cpuarmfo
+ componentstorefo
+ componentpalettefo
+ commandlinefo
+ breakpointsfo
+ actionsmo
+ msetexteditorfo
+ msetaborderoverrideeditorfo
+ msesysenvmanagereditorfo
+ stringlisteditor
+ msestringintlisteditor
+ settingsfo
+ richstringeditorfo
+ reallisteditor
+ msepropertyeditorsmo
+ integerlisteditor
+ mseindexlookupeditorfo
+ imageselectorfo
+ imagelisteditorfo
+ iircoeffeditorfo
+ mseififieldeditorfo
+ mseificlienteditorfo
+ fircoeffeditorfo
+ fadeeditfo
+ faceselectorfo
+ doublestringlisteditor
+ doublereallisteditor
+ msedbfieldeditorfo
+ msecornermaskeditorfo
+ colordialogfo
+ dirtreefo
+ dirtreesubfo
+ filedialogfo
+ filedialogres
+ fontformatdialogfo
+ integerenterfo
+ msememodialogfo
+ msepopupcalendarfo
+ realenterfo
+ mseshortcutdialogfo
+ stringenterfo
+width0=201
+sortdescend0=0
+values1=86
+ /home/fred/mseide-msegui/apps/ide/watchpointsform.mfm
+ /home/fred/mseide-msegui/apps/ide/watchform.mfm
+ /home/fred/mseide-msegui/apps/ide/toolhandlermodule.mfm
+ /home/fred/mseide-msegui/apps/ide/threadsform.mfm
+ /home/fred/mseide-msegui/apps/ide/templateeditor.mfm
+ /home/fred/mseide-msegui/apps/ide/targetconsole.mfm
+ /home/fred/mseide-msegui/apps/ide/symbolform.mfm
+ /home/fred/mseide-msegui/apps/ide/storedcomponentinfodialog.mfm
+ /home/fred/mseide-msegui/apps/ide/stackform.mfm
+ /home/fred/mseide-msegui/apps/ide/sourcepage.mfm
+ /home/fred/mseide-msegui/apps/ide/sourcehintform.mfm
+ /home/fred/mseide-msegui/apps/ide/sourceform.mfm
+ /home/fred/mseide-msegui/apps/ide/settaborderform.mfm
+ /home/fred/mseide-msegui/apps/ide/setcreateorderform.mfm
+ /home/fred/mseide-msegui/apps/ide/selectsubmoduledialogform.mfm
+ /home/fred/mseide-msegui/apps/ide/selecteditpageform.mfm
+ /home/fred/mseide-msegui/apps/ide/reportdesigner.mfm
+ /home/fred/mseide-msegui/apps/ide/replacedialogform.mfm
+ /home/fred/mseide-msegui/apps/ide/projecttreeform.mfm
+ /home/fred/mseide-msegui/apps/ide/projectoptionsform.mfm
+ /home/fred/mseide-msegui/apps/ide/programparametersform.mfm
+ /home/fred/mseide-msegui/apps/ide/printform.mfm
+ /home/fred/mseide-msegui/apps/ide/panelform.mfm
+ /home/fred/mseide-msegui/apps/ide/objectinspector.mfm
+ /home/fred/mseide-msegui/apps/ide/msetemplateselectform.mfm
+ /home/fred/mseide-msegui/apps/ide/mseparamentryform.mfm
+ /home/fred/mseide-msegui/apps/ide/msecomptree.mfm
+ /home/fred/mseide-msegui/apps/ide/messageform.mfm
+ /home/fred/mseide-msegui/apps/ide/memoryform.mfm
+ /home/fred/mseide-msegui/apps/ide/main.mfm
+ /home/fred/mseide-msegui/apps/ide/guitemplates.mfm
+ /home/fred/mseide-msegui/apps/ide/formdesigner.mfm
+ /home/fred/mseide-msegui/apps/ide/findinfilepage.mfm
+ /home/fred/mseide-msegui/apps/ide/findinfileform.mfm
+ /home/fred/mseide-msegui/apps/ide/findinfiledialogform.mfm
+ /home/fred/mseide-msegui/apps/ide/finddialogform.mfm
+ /home/fred/mseide-msegui/apps/ide/disassform.mfm
+ /home/fred/mseide-msegui/apps/ide/debuggerform.mfm
+ /home/fred/mseide-msegui/apps/ide/cpux86_64form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpurl78form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpui386form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpuform.mfm
+ /home/fred/mseide-msegui/apps/ide/cpucpu32form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpuavr32form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpuarmm3form.mfm
+ /home/fred/mseide-msegui/apps/ide/cpuarmform.mfm
+ /home/fred/mseide-msegui/apps/ide/componentstore.mfm
+ /home/fred/mseide-msegui/apps/ide/componentpaletteform.mfm
+ /home/fred/mseide-msegui/apps/ide/commandlineform.mfm
+ /home/fred/mseide-msegui/apps/ide/breakpointsform.mfm
+ /home/fred/mseide-msegui/apps/ide/actionsmodule.mfm 
+ /home/fred/mseide-msegui/lib/common/designutils/msetexteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msetaborderoverrideeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msesysenvmanagereditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msestringlisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msestringintlisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msesettings.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mserichstringeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msereallisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditorsmodule.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseintegerlisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseindexlookupeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseimageselectorform.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseimagelisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseiircoeffeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseififieldeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/mseificlienteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msefircoeffeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msefadeedit.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msefaceselectorform.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msedoublestringlisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msedoublereallisteditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msedbfieldeditor.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msecornermaskeditor.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msecolordialog.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msedirtree.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msedirtreesub.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/mseintegerenter.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msememodialog.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msepopupcalendar.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/mserealenter.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/mseshortcutdialog.mfm
+ /home/fred/mseide-msegui/lib/common/dialogs/msestringenter.mfm
+values2=86
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+values2_ci=-1
+width2=126
+sortdescend2=0
+[projectfo.impexpencoding]
+value=1
+[projectfo]
+x=235
+y=106
+cx=883
+cy=471
+wsize=0
+active=0
+visible=0
+[mainfo]
+stackedunder=
+x=3
+y=29
+cx=1360
+cy=706
+wsize=0
+active=1
+visible=1
+[mainfo.flat]
+value=1
+[mainfo.stringonly]
+value=1
+[mainfo.nont]
+value=1
+[mainfo.ntonly]
+value=0
+[mainfo.coloron]
+value=1

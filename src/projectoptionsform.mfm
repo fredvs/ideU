@@ -168,7 +168,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_top]
-        caption = ' &Editor '
+        caption = '&Editor'
         coloractivetab = 16776396
         reffontheight = 14
         object tlayouter13: tlayouter
@@ -955,7 +955,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 287
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' File filter '
+            caption = 'File filter'
             coloractivetab = 16776396
             reffontheight = 14
             object filefiltergrid: tstringgrid
@@ -1021,7 +1021,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 287
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Syntax definition files '
+            caption = 'Syntax definition files'
             coloractivetab = 16776396
             reffontheight = 14
             object twidgetgrid6: twidgetgrid
@@ -1135,7 +1135,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 287
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Code Templates '
+            caption = 'Code Templates'
             coloractivetab = 16776396
             object twidgetgrid5: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -1299,7 +1299,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' &Debugger '
+        caption = '&Debugger'
         coloractivetab = 14809817
         onlayout = debuggerlayoutexe
         object debugcommand: tfilenameedit
@@ -1397,7 +1397,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Project Debugger '
+            caption = 'Project Debugger'
             coloractivetab = 16776396
             object debuggerusedgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -1735,13 +1735,13 @@ object projectoptionsfo: tprojectoptionsfo
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
             taborder = 5
-            hint = ' Search path to get infos about code '
+            hint = 'Search path to get infos about code'
             bounds_x = 0
             bounds_y = 19
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Search &Directories '
+            caption = 'Search &Directories'
             coloractivetab = 16776396
             reffontheight = 14
             object sourcedirgrid: twidgetgrid
@@ -1750,7 +1750,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-              hint = 'Search directories for code editor to get  info from soiurce '
+              hint = 'Search directories for code editor to get  info from soiurce'
               bounds_x = 0
               bounds_y = 24
               bounds_cx = 837
@@ -1856,7 +1856,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Defi&nes '
+            caption = 'Defi&nes'
             coloractivetab = 16776396
             reffontheight = 14
             object twidgetgrid2: twidgetgrid
@@ -1948,7 +1948,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' &Signals '
+            caption = '&Signals'
             coloractivetab = 16776396
             reffontheight = 14
             object signalgrid: twidgetgrid
@@ -2121,7 +2121,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' &Exceptions '
+            caption = '&Exceptions'
             coloractivetab = 16776396
             reffontheight = 14
             object exceptionsgrid: twidgetgrid
@@ -2210,7 +2210,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 345
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' &Target '
+            caption = '&Target'
             coloractivetab = 16776396
             reffontheight = 14
             object tlayouter2: tlayouter
@@ -3162,7 +3162,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_top, an_bottom]
-        caption = ' &Make '
+        caption = '&Make'
         coloractivetab = 15655930
         onlayout = makepageonchildscaled
         object defaultmake: tenumedit
@@ -3430,7 +3430,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Project Compiler '
+            caption = 'Project Compiler'
             coloractivetab = 16776396
             object compilerusedgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -3770,7 +3770,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Command before '
+            caption = 'Command before'
             coloractivetab = 16776396
             object befcommandgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -4117,7 +4117,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Make options '
+            caption = 'Make options'
             coloractivetab = 16776396
             reffontheight = 14
             object makeoptionsgrid: twidgetgrid
@@ -4525,12 +4525,12 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Directories '
+            caption = 'Directories'
             coloractivetab = 16776396
             reffontheight = 14
             object unitdirgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
-              frame.caption = '       Make Options              Unit, Include, Library, Object                             &Directories '
+              frame.caption = '      Make Options              Unit, Include, Library, Object                             &Directories '
               frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -5071,7 +5071,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Command after '
+            caption = 'Command after'
             coloractivetab = 16776396
             object aftcommandgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -5414,7 +5414,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Exe Extension '
+            caption = 'Exe Extension'
             coloractivetab = 16776396
             object exeextgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -5752,7 +5752,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 379
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' Comments '
+            caption = 'Comments'
             coloractivetab = 16776396
             object comment_M: tmemodialogedit
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -5761,7 +5761,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make M Comment: '
+              frame.caption = 'Make M Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5775,14 +5775,14 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                119
+                115
                 0
                 0
                 0
               )
-              bounds_x = 19
+              bounds_x = 23
               bounds_y = 9
-              bounds_cx = 799
+              bounds_cx = 795
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -5797,7 +5797,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make B Comment: '
+              frame.caption = 'Make B Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5811,15 +5811,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 1
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 33
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -5834,7 +5834,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 1 Comment: '
+              frame.caption = 'Make 1 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5848,15 +5848,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 2
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 57
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -5871,7 +5871,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 2 Comment: '
+              frame.caption = 'Make 2 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5885,15 +5885,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 3
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 80
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -5907,7 +5907,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 3 Comment: '
+              frame.caption = 'Make 3 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5921,15 +5921,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 4
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 104
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -5943,7 +5943,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 4 Comment: '
+              frame.caption = 'Make 4 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5957,15 +5957,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 5
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 128
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -5979,7 +5979,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 5 Comment: '
+              frame.caption = 'Make 5 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -5993,15 +5993,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 6
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 152
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6015,7 +6015,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 6 Comment: '
+              frame.caption = 'Make 6 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -6029,15 +6029,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 7
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 176
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6051,7 +6051,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 7 Comment: '
+              frame.caption = 'Make 7 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -6065,15 +6065,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 8
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 199
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6087,7 +6087,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 8 Comment: '
+              frame.caption = 'Make 8 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -6101,15 +6101,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 9
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 223
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6123,7 +6123,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 0 Comment: '
+              frame.caption = 'Make 0 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -6137,15 +6137,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 10
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 270
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6159,7 +6159,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.levelo = 0
               frame.framewidth = 1
               frame.colorclient = -2147483645
-              frame.caption = 'Make 9 Comment: '
+              frame.caption = 'Make 9 Comment:'
               frame.captiontextflags = [tf_right, tf_ycentered]
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
@@ -6173,15 +6173,15 @@ object projectoptionsfo: tprojectoptionsfo
               frame.button.color = -1879048187
               frame.button.imagenr = 17
               frame.outerframe = (
-                117
+                113
                 0
                 0
                 0
               )
               taborder = 11
-              bounds_x = 21
+              bounds_x = 25
               bounds_y = 246
-              bounds_cx = 797
+              bounds_cx = 793
               bounds_cy = 16
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6397,7 +6397,7 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 17
-          hint = ' Show console ouput on run '
+          hint = 'Show console ouput on run'
           bounds_x = 354
           bounds_y = 134
           bounds_cx = 146
@@ -6472,7 +6472,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' M&acros '
+        caption = 'M&acros'
         coloractivetab = 16776396
         onlayout = macronchildscaled
         object macrogrid: twidgetgrid
@@ -7074,7 +7074,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' &Font Alias '
+        caption = '&Font Alias'
         coloractivetab = 16776396
         object fontaliasgrid: twidgetgrid
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_destroywidgets]
@@ -7272,7 +7272,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' Designers '
+        caption = 'Designers '
         coloractivetab = 16776396
         object tgroupbox1: tgroupbox
           optionswidget = [ow_mousetransparent, ow_destroywidgets]
@@ -7484,7 +7484,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' User &Colors '
+        caption = 'User &Colors'
         coloractivetab = 16776396
         object tlayouter7: tlayouter
           color = -2147483645
@@ -7643,7 +7643,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' F&ormat Macros '
+        caption = 'F&ormat Macros'
         tabhint = 'Used by formatfloatmse() and formatdatetimemse()'
         coloractivetab = 16776396
         object formatmacrogrid: twidgetgrid
@@ -7720,7 +7720,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' &Templates '
+        caption = '&Templates'
         coloractivetab = 16776396
         object newfile: ttabwidget
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
@@ -7749,7 +7749,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 562
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' New Project '
+            caption = 'New Project'
             coloractivetab = 16776396
             onlayout = newprojectchildscaled
             reffontheight = 14
@@ -7965,7 +7965,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 562
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' New File '
+            caption = 'New File'
             coloractivetab = 16776396
             reffontheight = 14
             object twidgetgrid1: twidgetgrid
@@ -8118,7 +8118,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 837
             bounds_cy = 562
             anchors = [an_left, an_top, an_right, an_bottom]
-            caption = ' New Form '
+            caption = 'New Form'
             coloractivetab = 16776396
             onlayout = formtemplateonchildscaled
             reffontheight = 14
@@ -8327,7 +8327,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' Tools '
+        caption = 'Tools'
         coloractivetab = 16776396
         reffontheight = 14
         object twidgetgrid3: twidgetgrid
@@ -8709,7 +8709,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' Storage '
+        caption = 'Storage '
         coloractivetab = 16776396
         object settingseditor: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -8909,7 +8909,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 837
         bounds_cy = 581
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = ' Infos '
+        caption = 'Infos'
         coloractivetab = 16776396
         object project_comment: tmemoedit
           frame.colorclient = 16773078
