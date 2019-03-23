@@ -140,7 +140,7 @@ object filedialogfo: Tfiledialogfo
         0
       )
       face.localprops = []
-      hint = ' Click button on right corner to show the history of files. '
+      hint = 'Click button on right corner to show the history of files.'
       bounds_x = 1
       bounds_y = 1
       bounds_cx = 293
@@ -253,7 +253,7 @@ object filedialogfo: Tfiledialogfo
         2
       )
       taborder = 4
-      hint = ' Show hidden files '
+      hint = 'Show hidden files'
       bounds_x = 449
       bounds_y = 2
       bounds_cx = 95
@@ -306,7 +306,7 @@ object filedialogfo: Tfiledialogfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 3
-    hint = ' Home directory '
+    hint = 'Home directory'
     bounds_x = 447
     bounds_y = 13
     bounds_cx = 43
@@ -329,7 +329,7 @@ object filedialogfo: Tfiledialogfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 4
-    hint = ' Create directory '
+    hint = 'Create directory'
     bounds_x = 497
     bounds_y = 13
     bounds_cx = 54
@@ -352,7 +352,7 @@ object filedialogfo: Tfiledialogfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 5
-    hint = ' Parent directory '
+    hint = 'Parent directory'
     onshowhint = buttonshowhint
     bounds_x = 427
     bounds_y = 13

@@ -34,20 +34,10 @@ begin
 
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
  // MSEFallbackLang:='ru';
- //Ukrainian, Belarusian, Bashkir
- if (MSEFallbackLang='uk') or (MSEFallbackLang='be') or (MSEFallbackLang='ba')
- //Bulgarian, Chechen, Church Slavic
- or (MSEFallbackLang='bg') or (MSEFallbackLang='ce') or (MSEFallbackLang='cu')
- //Chuvash, Kazakh, Komi
- or (MSEFallbackLang='cv') or (MSEFallbackLang='kk') or (MSEFallbackLang='kv')
- //Moldavian, Tatar
- or (MSEFallbackLang='mo') or (MSEFallbackLang='tt')
-                                                   then MSEFallbackLang:='ru';
 
 if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
   'ideu_i18n_'+ MSEFallbackLang,true) then setlangconsts(MSEFallbackLang);
                                       
- 
  registerfontalias('mseide_source',gui_getdefaultfontnames[stf_courier],
                     fam_fixnooverwrite,16);
  application.createdatamodule(tguitemplatesmo,guitemplatesmo);

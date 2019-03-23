@@ -4530,7 +4530,7 @@ object projectoptionsfo: tprojectoptionsfo
             reffontheight = 14
             object unitdirgrid: twidgetgrid
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
-              frame.caption = '      Make Options              Unit, Include, Library, Object                             &Directories '
+              frame.caption = '[Make Options]               [Unit] [Include] [Library] [Object]                          [Directories]'
               frame.captiontextflags = [tf_bottom]
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
