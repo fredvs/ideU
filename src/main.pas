@@ -29,6 +29,12 @@ const
  versiontext = '1.9.6';
  idecaption = 'ideU';
  statname = 'ideu';
+ 
+type
+   TDummyThread = Class(TThread)
+   protected
+   procedure execute; override;
+   end; 
 
 type
  stringconsts = (
@@ -215,6 +221,7 @@ type
    procedure copywordatcur(const sender: TObject);
    procedure onresizemain(const sender: TObject);
    procedure closeallmod(const sender: TObject);
+   procedure manfocreated(const sender: TObject);
   private
    fstartcommand: startcommandty;
    fnoremakecheck: boolean;
@@ -429,6 +436,12 @@ uses
  {$ifdef unix},mselibc {$endif}, //SIGRT*
  mseprocutils
  {$ifdef mse_dumpunitgroups},dumpunitgroups{$endif};
+ 
+procedure TDummyThread.Execute;
+begin
+   FreeOnTerminate:=True;
+   Terminate;
+end; 
  
 procedure handleerror(const e: exception; const text: string);
 begin
@@ -3797,7 +3810,7 @@ aboutfo.about_text.value :=
              c_linefeed+  c_linefeed+
                  'Copyright 1999-2018'+c_linefeed+ c_linefeed+
              ' by Graeme Geldenhuys' +c_linefeed+
-              '<graemeg@gmail.com>';
+              'graemeg@gmail.com';
 aboutfo.show(true);        
 end;
 
@@ -3817,10 +3830,9 @@ aboutfo.about_text.value :=
             +c_linefeed+ c_linefeed+
              'Copyright 1999-2018'+c_linefeed+  c_linefeed+
               'Fred van Stappen' +c_linefeed+
-               '<fiens@hotmail.com>';
+               'fiens@hotmail.com';
 aboutfo.show(true);
 end;
-
 
 
 procedure tmainfo.configureexecute(const sender: TObject);
@@ -4100,6 +4112,11 @@ end;
 procedure tmainfo.closeallmod(const sender: TObject);
 begin
 closeallmodule();
+end;
+
+procedure tmainfo.manfocreated(const sender: TObject);
+begin
+TDummyThread.Create(false);
 end;
 
 

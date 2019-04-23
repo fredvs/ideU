@@ -65,6 +65,7 @@ object mainfo: tmainfo
     00000000
   }
   oncreate = mainfooncreate
+  oncreated = manfocreated
   oneventloopstart = mainonloaded
   ondestroy = mainfoondestroy
   onterminatequery = mainfoonterminate
@@ -616,7 +617,7 @@ object mainfo: tmainfo
           item
             action = actionsmo.toggleformunit
             caption = 'Toggle Form/Unit'
-            hint = 'Switch Source<>Form'
+            hint = 'Switch Source/Form'
             state = [as_localinvisible, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = actionsmo.buttonicons

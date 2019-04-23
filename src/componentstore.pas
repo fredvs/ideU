@@ -934,7 +934,7 @@ begin
   mstr1:= '';
  end;
  if fgroupfilename = '' then begin
-  mstr2:= '<new>';
+  mstr2:= '[new]';
  end
  else begin
   mstr2:= filename(fgroupfilename);
