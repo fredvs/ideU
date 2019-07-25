@@ -19,6 +19,14 @@ unit sourceupdate;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+{$endif}
 uses
  msedesigner,mseclasses,msedesignintf,classes,mclasses,typinfo,
  msetypes,msestrings,pascaldesignparser,cdesignparser,mseglob,
@@ -238,6 +246,14 @@ implementation
 uses
  sysutils,msesys,msefileutils,sourceform,sourcepage,projectoptionsform,
  msegui,msearrayutils,projecttreeform;
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+{$endif}
 
 function findprogramlanguage(const afilename: filenamety): proglangty;
 var
@@ -1179,8 +1195,14 @@ function tsourceupdater.composeproceduretext(const name: string;
 
 var
  int1,int2: integer;
-begin
+ {$if FPC_FULLVERSION > 030200} 
+ namemeth : string;
+ {$endif}
+ begin
  result:= name;
+ {$if FPC_FULLVERSION > 030200} 
+ namemeth := result;
+ {$endif}
  with info do begin
   int2:= high(params);
   if kind in [mk_function,mk_procedurefunc,mk_methodfunc] then begin
@@ -1222,7 +1244,10 @@ begin
        result:= result + ' = '+defaultvalue;
       end;
      end;
-     result:= result + '; ';
+      {$if FPC_FULLVERSION > 030200} 
+      if name = '$self' then result := namemeth + '(' else
+      {$endif}
+      result:= result + '; ';
     end;
    end;
    setlength(result,length(result)-1); //remove last space

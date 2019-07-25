@@ -1,4 +1,4 @@
-{ MSEide Copyright (c) 1999-2016 by Martin Schreiber
+{ MSEide Copyright (c) 1999-2018 by Martin Schreiber
    
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,7 +16,17 @@
 }
 unit msedesignparser;
 {$ifdef FPC}{$mode objfpc}{$h+}{$interfaces corba}{$endif}
+{$if FPC_FULLVERSION >= 030100} {$define mse_fpc_3_2} {$endif}
+
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+{$endif}
 uses
  mseglob,msedatalist,mselist,mseparser,msetypes,typinfo,msestrings,
  msearrayutils;
@@ -530,6 +540,14 @@ implementation
 uses
  {sourceupdate,}sysutils,cdesignparser;   
        //todo: remove cdesignparser, extract c+pascaldesignparser code
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+{$endif}
 {$ifdef FPC}{$goto on}{$endif}
 type
  tparser1 = class(tparser);
@@ -655,7 +673,7 @@ begin
  with info do begin
   kind:= methodkindty(-1);
   params:= nil;
-  if atype^.Kind = tkmethod then begin
+  if (atype^.Kind = tkmethod) then begin
    with gettypedata(atype)^ do begin
     kind:= tmethodkindtomethodkind[methodkind];
     int1:= paramcount;
@@ -668,8 +686,9 @@ begin
      po1:= @paramlist;
      for int1:= 0 to paramcount - 1 do begin
       with params[int1] do begin
-       flags:= tparamflags(byteset(pbyte(po1)^));
-       inc(po1,1);
+       flags:= tparamflags(
+         {$ifdef mse_fpc_3_2}wordset{$else}byteset{$endif}(pbyte(po1)^));
+       inc(po1,{$ifdef mse_fpc_3_2}2{$else}1{$endif});
 //       inc(po1,sizeof(paramrecty));
 //       inc(po1,sizeof(tparamflags));
 //       inc(po1,sizeof(byteset));
@@ -702,8 +721,18 @@ end;
 function parametersmatch(const a: ptypeinfo; const b: methodparaminfoty): boolean;
 var
  a1: methodparaminfoty;
+ {$if FPC_FULLVERSION > 030200}
+ params1: paraminfoarty;
+ x : integer;
+ {$endif}
 begin
- getmethodparaminfo(a,a1);
+ getmethodparaminfo(a,a1); 
+ {$if FPC_FULLVERSION > 030200}
+ setlength(params1,length(a1.params)-1);
+ for x:=0 to length(params1) -1 do
+ params1[x] := a1.params[x+1];
+ a1.params := params1;
+ {$endif}
  result:= parametersmatch1(a1,b);
 end;
 

@@ -404,6 +404,10 @@ begin
     while not eof do begin
      defaultstr:= '';
      int1:= getident;
+ 
+   //  if pascalidentty(int1) = pfSelf
+   //  then paraflags:= [] else
+     
      case pascalidentty(int1) of
       pid_const: paraflags:= [pfconst];
       pid_var: paraflags:= [pfvar];

@@ -3165,9 +3165,13 @@ begin
  debuggerfo.terminal_run.tag := 0;
  debuggerfo.terminal_run.imagenr := 33 ;
  end;
+  application.processmessages;
   
-  if projectoptions.o.enablesource = true then actionsmo.projectsourceexe(nil);
-  
+ if projectoptions.o.enablesource = true then 
+  actionsmo.projectsourceexe(nil) else
+  if sourcefo.files_tab.count = 0 then
+  actionsmo.projectsourceexe(nil)
+ 
  end;
  sourcefo.updatehinttab;
 end;
@@ -3808,7 +3812,7 @@ aboutfo.about_text.value :=
  'fpGUI version: 1.4' + c_linefeed+
           'Host: '+ platformtext+ c_linefeed+
              c_linefeed+  c_linefeed+
-                 'Copyright 1999-2018'+c_linefeed+ c_linefeed+
+                 'Copyright 1999-2019'+c_linefeed+ c_linefeed+
              ' by Graeme Geldenhuys' +c_linefeed+
               'graemeg@gmail.com';
 aboutfo.show(true);        
@@ -3828,7 +3832,7 @@ aboutfo.about_text.value :=
             +c_linefeed+
              'by Martin Schreiber'
             +c_linefeed+ c_linefeed+
-             'Copyright 1999-2018'+c_linefeed+  c_linefeed+
+             'Copyright 1999-2019'+c_linefeed+  c_linefeed+
               'Fred van Stappen' +c_linefeed+
                'fiens@hotmail.com';
 aboutfo.show(true);

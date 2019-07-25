@@ -905,20 +905,20 @@ object projectoptionsfo: tprojectoptionsfo
             end
             object enablesource: tbooleanedit
               color = -2147483645
-              frame.caption = 'Source Editor at loading'
+              frame.caption = 'Dont load Source Editor if no tab'
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               frame.outerframe = (
                 0
                 1
-                149
+                201
                 2
               )
               taborder = 7
-              hint = 'Load main source in editor at loading of project'
-              bounds_x = 604
+              hint = 'Do not load main source in editor at loading of project tabs are empty'
+              bounds_x = 589
               bounds_y = 20
-              bounds_cx = 162
+              bounds_cx = 214
               bounds_cy = 16
               statfile = mainfo.projectstatfile
             end

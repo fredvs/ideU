@@ -629,11 +629,11 @@ var
  
 begin
 
- if  ((confideufo.doubleclic.value = true) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
+ if  ((confideufo.doubleclic.value = false) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left])))
             or // fred double click
-  ((confideufo.doubleclic.value = false) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
+  ((confideufo.doubleclic.value = true) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate = [ss_double])))         
   then begin
