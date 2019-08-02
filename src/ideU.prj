@@ -1351,8 +1351,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=paramlist
+finddtext=2019
 findhistory=20
+ 2019
  paramlist
  @paramlist
  pfVar
@@ -1372,19 +1373,18 @@ findhistory=20
      '
       '
   ' 
- menu
 findoptions=1
 editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,685
+ 0,-1073741823
  0,-1073741823
  0,1431
  0,-1073741823
- 0,3834
- 0,16
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1400,21 +1400,21 @@ sourcefiles=10
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/msedesignparser.pas
- /home/fred/mseide-msegui/apps/ide/msedesignparser.pas
- /home/fred/mseide-msegui/apps/ide/pascaldesignparser.pas
- /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
+ ${PROJECTDIR}/msedesignparser.pas
+ ${PROJECTDIR}/pascaldesignparser.pas
+ ${PROJECTDIR}/projectoptionsform.pas
  /usr/local/codetyphon/fpcsrc/compiler/symconst.pas
- /home/fred/ideu/src/main.pas
- /home/fred/ideu/src/sak_mse.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sak_mse.pas
 relpaths=10
  main.pas
  actionsmodule.pas
  msedesigner.pas
  msedesignparser.pas
- ../mseide-msegui/apps/ide/msedesignparser.pas
+ mseide-msegui/apps/ide/msedesignparser.pas
  mseide-msegui/apps/ide/pascaldesignparser.pas
  ../mseide-msegui/apps/ide/projectoptionsform.pas
- ../usr/local/codetyphon/fpcsrc/compiler/symconst.pas
+ usr/local/codetyphon/fpcsrc/compiler/symconst.pas
  main.pas
  sak_mse.pas
 ismoduletexts=10
@@ -1449,21 +1449,10 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=10
- 0
- 1
- 2
- 3
- 4
- 8
- 9
- 7
- 5
- 6
 firsttab=0
 index=6
 [layout]
-windowlayout=600
+windowlayout=589
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1934,8 +1923,9 @@ windowlayout=600
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sak_mse.pas
+ value=/home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
  history=20
+  /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
   /home/fred/mseide-msegui/apps/ide/msedesignparser.pas
   /home/fred/mseide-msegui/apps/ide/pascaldesignparser.pas
   /home/fred/ideu/src/msedesigner.pas
@@ -1951,7 +1941,6 @@ windowlayout=600
   /home/fred/mseide-msegui/apps/ide/sourceform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/ideusettings.pas
-  /home/fred/mseide-msegui/apps/ide/projectoptionsform.pas
   /home/fred/mseide-msegui/tools/i18n/headerform.pas
   /home/fred/mseide-msegui/tools/i18n/mseresourceparser.pas
   /home/fred/mseide-msegui/tools/i18n/main.pas
@@ -1977,17 +1966,6 @@ windowlayout=600
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=10
-  0
-  1
-  2
-  3
-  4
-  8
-  9
-  7
-  5
-  6
  firsttab=0
  index=6
  [cpuc86_64fo]
