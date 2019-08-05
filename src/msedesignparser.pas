@@ -28,7 +28,7 @@ interface
  {$endif}
 {$endif}
 uses
- mseglob,msedatalist,mselist,mseparser,msetypes,typinfo,msestrings,
+ mseglob,mselist,mseparser,msetypes,typinfo,msestrings,
  msearrayutils;
  
 type
@@ -673,6 +673,7 @@ var
  params1: paraminfoarty;
  x : integer;
  {$endif}
+ 
 begin 
  with info do begin 
   kind:= methodkindty(-1); 
@@ -691,7 +692,9 @@ begin
      for int1:= 0 to paramcount - 1 do begin 
      with params[int1] do begin 
     
-     {$if FPC_FULLVERSION >= 030300}po1 := AlignTParamFlags(po1);{$endif}
+     {$if FPC_FULLVERSION >= 030100} 
+     {$if declared(AlignTParamFlags)}po1 := AlignTParamFlags(po1);{$endif}
+     {$endif}
      
      flags:= tparamflags( 
          {$if FPC_FULLVERSION >= 030100} 

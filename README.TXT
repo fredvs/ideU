@@ -3,7 +3,7 @@ ideU the ide. Universal.
 Multi OS, multi languages, multi compilers, voice assisted.
 
 ideU is based on MSEide by Martin Schreiber.
-http://sourceforge.net/projects/mseide-msegui/
+https://github.com/mse-org/mseide-msegui
 
 There are binaries-executable here:
 
