@@ -469,6 +469,7 @@ saveactonexecute(sender);
      LoadfpgDesigner(sysfilename);
  end;
  sourcefo.activate;
+ sourcefo.updatehinttab;
  end;
 
 procedure tactionsmo.saveasactonexecute(const sender: TObject);

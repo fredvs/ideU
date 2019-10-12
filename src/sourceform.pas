@@ -8,7 +8,7 @@ uses
  confideu, ideusettings, commandorform, sysutils, msetimer,msetextedit,
  msewidgetgrid,mseforms,classes,mclasses,msegdbutils,msebitmap,msetabs,
  sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
- msemenus,mseactions,msestat,finddialogform,msestream,msefilechange,
+ msemenus,mseactions,msestat,finddialogform,msestream,msefilechange, dateutils,
  breakpointsform,mseparser,msesimplewidgets,msegrids,msegraphutils,msegridsglob,
  msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets;
 
@@ -1105,9 +1105,10 @@ begin
 for x:= 0 to files_tab.count-1
 do 
 begin
- getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.value), ainfo);
-tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + lineend + 'Last modif: '
-+ formatdatetime('YYYY-MM-DD HH:mm:ss',ainfo.extinfo1.modtime) +
+
+  getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.value), ainfo);
+tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.value + lineend + 'Last modification: '
++ formatdatetime('YYYY-MM-DD HH:mm:ss', UniversalTimeToLocal(ainfo.extinfo1.modtime)) +
   ' | Size: ' + IntToStr( ainfo.extinfo1.size div 1000) + ' Kb.'
 end;
 end;
