@@ -7,9 +7,7 @@ Multi OS, multi languages, multi compilers, voice assisted.
 ideU is based on MSEide by Martin Schreiber.
 https://github.com/mse-org/mseide-msegui
 
-There are binaries-executable for:
-Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi.
-
+Binaries-executable for Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi are here:
 https://github.com/fredvs/ideU/releases
 
 
