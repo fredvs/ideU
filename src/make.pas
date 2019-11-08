@@ -278,7 +278,7 @@ for int3:= 0 to high(compilerused) do begin
     (trim(compilerused[int3]) = 'Pascal 6') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep5.value = true then
+     if  confcompilerfo.twinep6.value = true then
      winestr := 'wine ';
     str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler6.value));
     end  else

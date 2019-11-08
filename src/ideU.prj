@@ -78,8 +78,10 @@ findinfiledialog=86
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=last modif
+ value=wine
  history=20
+  wine
+  pascal6
   last modif
   dateutils
   AlignTParamFlags
@@ -98,8 +100,6 @@ findinfiledialog=86
   paramlist
   methodflagty
   pfAddress
-  doubleclic
-  trimtrailingwhitespace
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -787,9 +787,9 @@ compilerusedon=29
  1991
  0
  0
- 16
+ 24
  32
- 8
+ 0
  0
  0
  0
@@ -1339,7 +1339,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/mseide-msegui/apps/ide/compstore/
+storedir=/home/fred/msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -1382,8 +1382,8 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1409,7 +1409,7 @@ sourcefiles=10
  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/commandorform.pas
- /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
+ ${PROJECTDIR}/make.pas
 relpaths=10
  main.pas
  actionsmodule.pas
@@ -1420,7 +1420,7 @@ relpaths=10
  mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
  sourceform.pas
  commandorform.pas
- mseide-msegui/lib/common/kernel/msetypes.pas
+ make.pas
 ismoduletexts=10
  0
  0
@@ -1453,21 +1453,10 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=10
- 0
- 1
- 5
- 3
- 7
- 6
- 2
- 8
- 4
- 9
 firsttab=0
-index=3
+index=4
 [layout]
-windowlayout=585
+windowlayout=574
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1582,10 +1571,10 @@ windowlayout=585
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=678
- cy=414
+ x=0
+ y=29
+ cx=1368
+ cy=710
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1601,7 +1590,7 @@ windowlayout=585
  x=0
  y=0
  cx=205
- cy=786
+ cy=545
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1810,9 +1799,9 @@ windowlayout=585
  ncx=0
  ncy=0
  x=0
- y=834
- cx=1910
- cy=151
+ y=580
+ cx=1358
+ cy=105
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1911,8 +1900,8 @@ windowlayout=585
  ncy=0
  x=0
  y=0
- cx=1910
- cy=42
+ cx=1358
+ cy=29
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1922,12 +1911,12 @@ windowlayout=585
  visible=1
  mdistate=0
  nx=0
- ny=0
- ncx=1910
- ncy=86
+ ny=-1
+ ncx=1343
+ ncy=53
  x=0
- y=0
- cx=1895
+ y=-1
+ cx=1343
  cy=53
  rcx=0
  rcy=0
@@ -1938,15 +1927,15 @@ windowlayout=585
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msedesignparser.pas
+ value=/home/fred/ideu/src/main.pas
  history=5
-  /home/fred/ideu/src/msedesignparser.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/msedesignparser.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
- value=1
+ value=2
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -1961,24 +1950,13 @@ windowlayout=585
  ncy=0
  x=208
  y=0
- cx=1702
- cy=786
+ cx=1150
+ cy=545
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=10
-  0
-  1
-  5
-  3
-  7
-  6
-  2
-  8
-  4
-  9
  firsttab=0
- index=3
+ index=4
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -2010,9 +1988,9 @@ windowlayout=585
  ncx=0
  ncy=0
  x=0
- y=45
- cx=1910
- cy=786
+ y=32
+ cx=1358
+ cy=545
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
