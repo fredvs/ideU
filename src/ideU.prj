@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=86
+findinfiledialog=89
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,14 +29,16 @@ findinfiledialog=86
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc"
- history=10
+ value="*.pas" "*.pp" "*.inc" "*.*" 
+ history=12
+  "*.pas" "*.pp" "*.inc" "*.*" 
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc"
   "*.mfm"
   "*.pas" "*.pp" "*.inc" "*.mfm"
@@ -49,18 +51,19 @@ findinfiledialog=86
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/fpctrunk/
+  /home/fred/msegui/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=19
+ filehistory=20
+  /home/fred/msegui/
+  /home/fred/svnfpc32/fixes_3_2/
   /home/fred/fpctrunk/
   /usr/local/codetyphon/fpcsrc/
   /home/fred/mseide-msegui/apps/ide/
   /home/fred/mseide-msegui/
-  /home/fred/msegui/
   /home/fred/fpGUI/
   /home/fred/fpGUI/src/corelib/gdi/
   /usr/local/codetyphon/
@@ -76,30 +79,30 @@ findinfiledialog=86
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=wine
+ value=getpropa
  history=20
-  wine
-  pascal6
-  last modif
+  getpropa
+  attributetable
+  attributedata
+  attributeproc
+  attribute
+  getpropatt
+  getprop
+  getpropdata
+  varutils
+  polestr
+  activex
   dateutils
-  AlignTParamFlags
-  1.9.6
-  2018
-  pfSelf
-  tparamflags
-  mse_fpc_3_2
-  wordset
-  tparam
-  files_tab
-  enablesource
-  pid_const
-  pfConst
-  tparamflags(
-  paramlist
-  methodflagty
-  pfAddress
+  by Martin
+  1.8
+  novoice
+  1.ogg
+  one.ogg
+  writeln
+  paintslider
+  mouseeventinfopo
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -775,7 +778,7 @@ befcommandon=0
 makeoptionson=10
  4095
  0
- 36
+ 52
  4093
  0
  48
@@ -784,15 +787,15 @@ makeoptionson=10
  2047
  4095
 compilerusedon=29
- 1991
+ 1987
  0
  0
- 24
+ 4
+ 8
+ 0
+ 0
+ 16
  32
- 0
- 0
- 0
- 0
  0
  0
  0
@@ -1355,8 +1358,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=last mod
+finddtext=ideuwriteconfig
 findhistory=20
+ ideuwriteconfig
+ readconf
+ gni
+ ideureadconfig
  last mod
  save
  303
@@ -1373,17 +1380,20 @@ findhistory=20
  caption
  system
   '
- [ 
- [
- ' 
-    '
 findoptions=1
-editpos=10
+editpos=17
+ 21,912
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1399,29 +1409,57 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/msedesignparser.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/main.pas
- /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
+ /home/fred/msegui/lib/common/kernel/windows/msesysintf1.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/make.pas
-relpaths=10
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/ideU.pas
+ /home/fred/msetest/test.pas
+ ${PROJECTDIR}/sourceform.pas
+relpaths=17
  main.pas
  actionsmodule.pas
  msedesigner.pas
  msedesignparser.pas
  main.pas
  main.pas
- mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
+ msegui/lib/common/kernel/windows/msesysintf1.pas
  sourceform.pas
  commandorform.pas
  make.pas
-ismoduletexts=10
+ sourceform.pas
+ main.pas
+ commandorform.pas
+ main.pas
+ ideU.pas
+ msetest/test.pas
+ sourceform.pas
+ismoduletexts=17
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1453,10 +1491,28 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
+order=17
+ 0
+ 1
+ 2
+ 15
+ 16
+ 3
+ 8
+ 9
+ 4
+ 5
+ 6
+ 7
+ 10
+ 11
+ 12
+ 13
+ 14
 firsttab=0
-index=4
+index=0
 [layout]
-windowlayout=574
+windowlayout=589
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1470,13 +1526,13 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=102
- y=137
+ x=88
+ y=70
  cx=1157
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1518,7 +1574,7 @@ windowlayout=574
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=cpuc86_64fo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1571,10 +1627,10 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=0
- y=29
- cx=1368
- cy=710
+ x=239
+ y=115
+ cx=678
+ cy=414
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1590,7 +1646,7 @@ windowlayout=574
  x=0
  y=0
  cx=205
- cy=545
+ cy=449
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1601,7 +1657,7 @@ windowlayout=574
  sortdescend1=0
  sorted=0
  col=0
- row=3
+ row=11
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1693,8 +1749,8 @@ windowlayout=574
  ny=0
  ncx=0
  ncy=0
- x=316
- y=249
+ x=798
+ y=281
  cx=316
  cy=484
  rcx=0
@@ -1704,9 +1760,9 @@ windowlayout=574
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=136
+ width0=188
  sortdescend0=0
- width1=164
+ width1=112
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1799,9 +1855,9 @@ windowlayout=574
  ncx=0
  ncy=0
  x=0
- y=580
- cx=1358
- cy=105
+ y=505
+ cx=1147
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1900,8 +1956,8 @@ windowlayout=574
  ncy=0
  x=0
  y=0
- cx=1358
- cy=29
+ cx=1147
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1911,12 +1967,12 @@ windowlayout=574
  visible=1
  mdistate=0
  nx=0
- ny=-1
- ncx=1343
+ ny=0
+ ncx=1147
  ncy=53
  x=0
- y=-1
- cx=1343
+ y=0
+ cx=1147
  cy=53
  rcx=0
  rcy=0
@@ -1928,14 +1984,11 @@ windowlayout=574
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
- history=5
+ history=2
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/msedesignparser.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
- value=2
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -1950,20 +2003,38 @@ windowlayout=574
  ncy=0
  x=208
  y=0
- cx=1150
- cy=545
+ cx=939
+ cy=449
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=17
+  0
+  1
+  2
+  15
+  16
+  3
+  8
+  9
+  4
+  5
+  6
+  7
+  10
+  11
+  12
+  13
+  14
  firsttab=0
- index=4
+ index=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
  stackedunder=_mse_sourcefo_mse_
  parent=
- mdistate=3
+ mdistate=0
  nx=0
  ny=0
  ncx=0
@@ -1988,9 +2059,9 @@ windowlayout=574
  ncx=0
  ncy=0
  x=0
- y=32
- cx=1358
- cy=545
+ y=53
+ cx=1147
+ cy=449
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]

@@ -922,15 +922,15 @@ begin
   gINI.writeBool('other', 'wineo3', confcompilerfo.twineo3.value);
   gINI.writeBool('other', 'wineo4', confcompilerfo.twineo4.value);
      
-     gINI.writeString('other', 'compiler1', confcompilerfo.othercompiler.value);
+   gINI.writeString('other', 'compiler1', confcompilerfo.othercompiler.value);
    gINI.writeString('other', 'compiler2', confcompilerfo.othercompiler2.value);
    gINI.writeString('other', 'compiler3', confcompilerfo.othercompiler3.value);
-    gINI.writeString('other', 'compiler4', confcompilerfo.othercompiler4.value);
+   gINI.writeString('other', 'compiler4', confcompilerfo.othercompiler4.value);
     
-     gINI.writeString('debug', 'debugger1', confdebuggerfo.debugger1.value);
+   gINI.writeString('debug', 'debugger1', confdebuggerfo.debugger1.value);
    gINI.writeString('debug', 'debugger2', confdebuggerfo.debugger2.value);
    gINI.writeString('debug', 'debugger3', confdebuggerfo.debugger3.value);
-    gINI.writeString('debug', 'debugger4', confdebuggerfo.debugger4.value);
+   gINI.writeString('debug', 'debugger4', confdebuggerfo.debugger4.value);
  
    if confideufo.tbfilereload.value = true then
  gINI.WriteInteger('General', 'WarnChange', 0) else
@@ -3798,7 +3798,7 @@ c_linefeed + c_linefeed +
              'Host: '+ platformtext+ c_linefeed+
              c_linefeed+ c_linefeed +
              'by Martin Schreiber. Copyright 1999-2018'+c_linefeed+
-             'http://sourceforge.net/projects/mseide-msegui/';
+             'https://github.com/mse-org/mseide-msegui';
  aboutfo.show(true); 
  
 end;

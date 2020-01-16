@@ -13,9 +13,9 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 245
-  bounds_y = 308
-  bounds_cx = 688
+  bounds_x = 377
+  bounds_y = 290
+  bounds_cx = 725
   bounds_cy = 62
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
@@ -29,9 +29,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    24
-    678
-    38
+    25
+    715
+    37
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -79,7 +79,7 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 678
+    bounds_cx = 700
     bounds_cy = 72
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
@@ -117,10 +117,10 @@ object mainfo: tmainfo
     itemframetemplate = menuitemframe
     itemfacetemplate = sourcefo.tfacecomp1
     itemframetemplateactive = menuitemframe
-    menu.submenu.count = 15
+    menu.submenu.count = 16
     menu.submenu.items = <    
       item
-        submenu.count = 14
+        submenu.count = 13
         submenu.items = <        
           item
             submenu.count = 3
@@ -251,11 +251,11 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.close
-            caption = '&Close'
+            caption = 'Close'
             state = [as_localcaption, as_localshortcut]
             sc = (
               1
-              16465
+              16471
             )
           end        
           item
@@ -273,12 +273,6 @@ object mainfo: tmainfo
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
-          end        
-          item
-            caption = 'E&xit'
-            state = [as_localcaption, as_localonexecute]
-            options = [mao_shortcutcaption, mao_asyncexecute]
-            onexecute = exitonexecute
           end>
         caption = '&File'
         name = 'file'
@@ -1231,6 +1225,18 @@ object mainfo: tmainfo
           end>
         caption = '&About'
         state = [as_localcaption, as_localonexecute]
+      end    
+      item
+        caption = '&Quit'
+        hint = 'Close ideU'
+        name = 'exit'
+        state = [as_localcaption, as_localhint, as_localshortcut, as_localonexecute]
+        options = []
+        onexecute = exitonexecute
+        sc = (
+          1
+          16465
+        )
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
