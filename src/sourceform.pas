@@ -68,6 +68,7 @@ type
    timagelist2: timagelist;
    tfacecomp1: tfacecomp;
    tfacecomp2: tfacecomp;
+   imagelistcopy: timagelist;
    timagelist3: timagelist;
    procedure formonidle(var again: boolean);
    procedure doselectpage(const sender: TObject);

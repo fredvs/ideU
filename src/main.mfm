@@ -1230,7 +1230,7 @@ object mainfo: tmainfo
         caption = '&Quit'
         hint = 'Close ideU'
         name = 'exit'
-        state = [as_localcaption, as_localhint, as_localshortcut, as_localonexecute]
+        state = [as_localinvisible, as_localcaption, as_localhint, as_localshortcut, as_localonexecute]
         options = []
         onexecute = exitonexecute
         sc = (
