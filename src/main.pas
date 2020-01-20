@@ -131,6 +131,12 @@ type
    tfacecomp2: tfacecomp;
    tfacecomp3: tfacecomp;
    menuitemframe: tframecomp;
+   mainmenuframe: tframecomp;
+   convex: tfacecomp;
+   concave: tfacecomp;
+   tframecomp2: tframecomp;
+   timagelist3: timagelist;
+   tframecomp3: tframecomp;
    procedure newfileonexecute(const sender: tobject);
    procedure newformonexecute(const sender: TObject);
 

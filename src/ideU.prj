@@ -231,7 +231,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -252,7 +252,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=497
@@ -795,7 +795,7 @@ befcommandon=0
 makeoptionson=10
  4095
  0
- 52
+ 48
  4093
  0
  48
@@ -1095,7 +1095,7 @@ on=25
  0
  0
  0
- -1
+ 0
 path=25
  /home/fred/ideu/src/main.pas
  /usr/home/fred/ideu_prog/src/main.pas
@@ -1123,24 +1123,24 @@ path=25
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/ideu/src/sourceform.pas
 line=25
- 812
+ 818
  2129
  1028
- 582
- 3721
+ 588
+ 3727
  644
  119
  1084
  2269
  2186
  2462
- 666
+ 672
  3252
  119
- 544
+ 550
  452
  47
- 3980
+ 3986
  684
  87
  15
@@ -1405,7 +1405,8 @@ findhistory=20
  caption
  system
 findoptions=1
-editpos=22
+editpos=24
+ 0,3
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1421,21 +1422,22 @@ editpos=22
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 4,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
-bookmarks0=0
+ 0,-1073741823
+bookmarks0=1
+ 41,2
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-bookmarks6=1
- 34,1
+bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
@@ -1452,8 +1454,11 @@ bookmarks18=1
 bookmarks19=0
 bookmarks20=0
 bookmarks21=0
-sourcefiles=22
- ${PROJECTDIR}/main.pas
+bookmarks22=1
+ 13,1
+bookmarks23=0
+sourcefiles=24
+ /home/fred/ideu/src/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msedesigner.pas
  ${PROJECTDIR}/msedesignparser.pas
@@ -1469,13 +1474,15 @@ sourcefiles=22
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
  /home/fred/msetest/test.pas
- ${PROJECTDIR}/sourceform.pas
+ /home/fred/ideu/src/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=22
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
+relpaths=24
  main.pas
  actionsmodule.pas
  msedesigner.pas
@@ -1498,7 +1505,11 @@ relpaths=22
  actionsmodule.pas
  sourceform.pas
  sourceform.pas
-ismoduletexts=22
+ sourceform.pas
+ sourcepage.pas
+ismoduletexts=24
+ 0
+ 0
  0
  0
  0
@@ -1546,33 +1557,35 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=22
+order=24
  0
- 1
- 2
- 21
- 4
- 18
- 6
- 3
- 5
- 11
- 8
- 7
- 10
  16
+ 11
+ 4
+ 21
+ 5
  9
- 19
- 14
- 20
+ 10
+ 18
  13
- 12
+ 3
+ 7
+ 2
+ 6
+ 14
  15
+ 8
  17
+ 23
+ 19
+ 12
+ 1
+ 20
+ 22
 firsttab=0
-index=5
+index=0
 [layout]
-windowlayout=616
+windowlayout=617
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1586,8 +1599,8 @@ windowlayout=616
  ny=0
  ncx=0
  ncy=0
- x=79
- y=83
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
@@ -1717,7 +1730,7 @@ windowlayout=616
  sortdescend1=0
  sorted=0
  col=0
- row=12
+ row=11
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1747,7 +1760,7 @@ windowlayout=616
  ncx=0
  ncy=0
  x=537
- y=29
+ y=26
  cx=483
  cy=210
  rcx=0
@@ -1756,7 +1769,7 @@ windowlayout=616
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=332
+ propcolwidthref=352
  sortdescend0=0
  values1=1
   0
@@ -1765,7 +1778,7 @@ windowlayout=616
  sortdescend1=0
  values2=1
   pinteger(0x126c6b4)^
- width2=149
+ width2=158
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1776,7 +1789,7 @@ windowlayout=616
  sortdescend5=0
  values6=1
   
- width6=172
+ width6=184
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1802,16 +1815,16 @@ windowlayout=616
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=442
- y=166
- cx=386
+ x=53
+ y=210
+ cx=316
  cy=484
  rcx=0
  rcy=0
@@ -1819,10 +1832,10 @@ windowlayout=616
  active=0
  visible=1
  [objectinspectorfo.grid]
- propcolwidthref=361
- width0=222
+ propcolwidthref=306
+ width0=192
  sortdescend0=0
- width1=133
+ width1=108
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2043,12 +2056,11 @@ windowlayout=616
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
- history=5
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/msegui/lib/common/kernel/windows/msesysintf1.pas
-  /home/fred/ideu/src/msedesignparser.pas
+ value=/home/fred/ideu/src/main.pas
+ history=4
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/make.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -2071,36 +2083,38 @@ windowlayout=616
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=22
+ order=24
   0
-  1
-  2
-  21
-  4
-  18
-  6
-  3
-  5
-  11
-  8
-  7
-  10
   16
+  11
+  4
+  21
+  5
   9
-  19
-  14
-  20
+  10
+  18
   13
-  12
+  3
+  7
+  2
+  6
+  14
   15
+  8
   17
+  23
+  19
+  12
+  1
+  20
+  22
  firsttab=0
- index=5
+ index=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2135,7 +2149,7 @@ windowlayout=616
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2173,7 +2187,7 @@ windowlayout=616
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0

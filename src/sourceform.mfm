@@ -428,6 +428,10 @@ object sourcefo: tsourcefo
   end
   object formpopup: tpopupmenu
     onupdate = popupmonupdate
+    frametemplate = mainfo.tframecomp2
+    facetemplate = mainfo.convex
+    itemfacetemplate = mainfo.concave
+    itemfacetemplateactive = mainfo.convex
     menu.submenu.count = 38
     menu.submenu.items = <    
       item
@@ -603,6 +607,12 @@ object sourcefo: tsourcefo
           end        
           item
             action = actionsmo.setbmnone
+            caption = 'None'
+            state = [as_localcaption, as_localshortcut]
+            sc = (
+              1
+              24654
+            )
           end>
         caption = 'Set Bookmark'
         name = 'setbm'

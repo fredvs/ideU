@@ -15,8 +15,8 @@ object mainfo: tmainfo
   visible = False
   bounds_x = 377
   bounds_y = 290
-  bounds_cx = 725
-  bounds_cy = 62
+  bounds_cx = 700
+  bounds_cy = 68
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -30,8 +30,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     25
-    715
-    37
+    690
+    43
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -78,9 +78,9 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = 1
-    bounds_cx = 700
-    bounds_cy = 72
+    bounds_y = -3
+    bounds_cx = 675
+    bounds_cy = 79
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -110,17 +110,21 @@ object mainfo: tmainfo
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
-    popupfacetemplate = tfacecomp2
-    popupitemfacetemplateactive = tfacecomp2
+    popupframetemplate = tframecomp2
+    popupfacetemplate = convex
+    popupitemfacetemplate = concave
+    popupitemfacetemplateactive = convex
     onupdate = mainmenuonupdate
     frametemplate = menuitemframe
-    itemframetemplate = menuitemframe
-    itemfacetemplate = sourcefo.tfacecomp1
-    itemframetemplateactive = menuitemframe
-    menu.submenu.count = 16
+    facetemplate = convex
+    itemframetemplate = tframecomp3
+    itemfacetemplate = convex
+    itemframetemplateactive = tframecomp2
+    itemfacetemplateactive = concave
+    menu.submenu.count = 15
     menu.submenu.items = <    
       item
-        submenu.count = 13
+        submenu.count = 14
         submenu.items = <        
           item
             submenu.count = 3
@@ -273,6 +277,15 @@ object mainfo: tmainfo
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = '&Quit'
+            state = [as_localcaption, as_localshortcut, as_localonexecute]
+            onexecute = exitonexecute
+            sc = (
+              1
+              16465
+            )
           end>
         caption = '&File'
         name = 'file'
@@ -1225,18 +1238,6 @@ object mainfo: tmainfo
           end>
         caption = '&About'
         state = [as_localcaption, as_localonexecute]
-      end    
-      item
-        caption = '&Quit'
-        hint = 'Close ideU'
-        name = 'exit'
-        state = [as_localinvisible, as_localcaption, as_localhint, as_localshortcut, as_localonexecute]
-        options = []
-        onexecute = exitonexecute
-        sc = (
-          1
-          16465
-        )
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
@@ -2184,7 +2185,94 @@ object mainfo: tmainfo
     template.extraspace = 4
     template.colorhlwidth = 0
     template.optionsskin = [fso_flat]
-    left = 513
+    left = 512
+    top = 8
+  end
+  object mainmenuframe: tframecomp
+    template.extraspace = 4
+    template.colorhlwidth = 0
+    template.optionsskin = [fso_flat]
+    left = 530
     top = 2
+  end
+  object convex: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612732
+      -1610612731
+    )
+    template.fade_direction = gd_up
+    left = 570
+    top = 3
+  end
+  object concave: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612732
+      -1610612731
+    )
+    left = 450
+    top = 16
+  end
+  object tframecomp2: tframecomp
+    template.framei_left = 4
+    template.framei_top = 2
+    template.framei_right = 4
+    template.framei_bottom = 2
+    template.frameimage_list = timagelist3
+    template.frameimage_left = -4
+    template.frameimage_top = -4
+    template.frameimage_right = -4
+    template.frameimage_bottom = -4
+    template.optionsskin = [fso_flat]
+    left = 539
+    top = 7
+  end
+  object timagelist3: timagelist
+    width = 4
+    height = 4
+    count = 8
+    cornermask_topleft = #2#1
+    cornermask_bottomleft = #2#1
+    cornermask_bottomright = #2#1
+    cornermask_topright = #2#1
+    left = 435
+    top = 3
+    image = {
+      00000000020000000C0000000C000000E8000000000000000000000000000000
+      0000000000000000000000000000000000000000FFFFFF028B8B8B02A5A5A501
+      000000038B8B8B01FFFFFF048B8B8B01FFFFFF02A5A5A501000000038B8B8B01
+      FFFFFF038B8B8B01FFFFFF03A5A5A50100000003FFFFFF018B8B8B01FFFFFF02
+      8B8B8B01FFFFFF03A5A5A50100000003FFFFFF028B8B8B03FFFFFF068B8B8B01
+      FFFFFF038B8B8B02FFFFFF068B8B8B01FFFFFF038B8B8B01FFFFFF018B8B8B01
+      FFFFFF048B8B8B01FFFFFF048B8B8B07FFFFFF04D6D6D6018B8B8B03FFFFFF02
+      8B8B8B0400000004FFFFFF028B8B8B01FFFFFF04D6D6D60100000004FFFFFF03
+      8B8B8B01FFFFFF0400000004FFFFFF038B8B8B01FFFFFF04000000041C010000
+      1201000011020000110C00008008000080080000400800003F080000F3000000
+      040000000800000008000000
+    }
+  end
+  object tframecomp3: tframecomp
+    template.framei_left = 4
+    template.framei_top = 2
+    template.framei_right = 4
+    template.framei_bottom = 2
+    template.frameimage_left = -4
+    template.frameimage_top = -4
+    template.frameimage_right = -4
+    template.frameimage_bottom = -4
+    template.optionsskin = [fso_flat]
+    left = 539
+    top = 7
   end
 end

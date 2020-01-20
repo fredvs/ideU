@@ -67,8 +67,8 @@ order14=0
 order15=0
 order16=0
 [projectoptions]
-projectdir=/home/fred/ideu/src/layout
-projectfilename=/home/fred/ideu/src/layout/Menu_Only.prj
+projectdir=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout
+projectfilename=/home/fred/ideu_bin/ideu_1.9.4_linux64/layout/Menu_Only.prj
 findinfiledialog=55
  [findinfileadialogfo.subdirs]
  value=1
@@ -580,7 +580,6 @@ stripmessageesc=0
 copymessages=0
 closemessages=0
 enablepurpose=0
-enablesource=0
 checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
@@ -794,7 +793,7 @@ newinheritedforms=11
  0
  0
  0
- 255
+ -1
 uid=0
 sourcefilemasks=3
  "*.pas" "*.dpr" "*.lpr" "*.pp" "*.inc"
@@ -1052,8 +1051,8 @@ windowlayout=543
  ncy=0
  x=334
  y=29
- cx=726
- cy=24
+ cx=694
+ cy=19
  rcx=0
  rcy=0
  wsize=0
@@ -1098,7 +1097,7 @@ windowlayout=543
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1182,7 +1181,7 @@ windowlayout=543
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1453,7 +1452,7 @@ windowlayout=543
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=targetconsolefo
+ stackedunder=mainfo.panel1
  parent=
  mdistate=3
  nx=0
@@ -1545,7 +1544,7 @@ windowlayout=543
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo.panel1
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1564,7 +1563,7 @@ windowlayout=543
  [mainfo.panel1]
  splitdir=1
  useroptions=302022123
- stackedunder=componentpalettefo
+ stackedunder=debuggerfo
  parent=
  mdistate=3
  nx=0
