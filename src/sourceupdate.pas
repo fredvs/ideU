@@ -245,7 +245,7 @@ function getimplementationtext(const amodule: tmsecomponent; out aunit: punitinf
 implementation
 uses
  sysutils,msesys,msefileutils,sourceform,sourcepage,projectoptionsform,
- msegui,msearrayutils,projecttreeform;
+ msegui,msearrayutils,projecttreeform, confideu;
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}
@@ -318,7 +318,11 @@ end;
 procedure init(const adesigner: tdesigner);
 begin
  sourceupdater:= tsourceupdater.Create(adesigner);
- sourceupdater.maxlinelength:= projectoptions.e.rightmarginchars;
+ 
+  if confideufo.usedefaulteditoroptions.value then
+  sourceupdater.maxlinelength:= confideufo.rightmarginchars.value
+ else
+  sourceupdater.maxlinelength:= projectoptions.e.rightmarginchars;
 end;
 
 procedure deinit(const adesigner: tdesigner);
@@ -1952,7 +1956,11 @@ var
  ar1: msestringarty;
  ar2: stringarty;
  first: boolean;
+ strcoma: string;
 begin
+if confideufo.addwhiteaftercomma.value then
+strcoma := ', ' else strcoma := ',';
+
  try
   po1:= updatemodule(amodule);
  except
@@ -1992,7 +2000,7 @@ begin
      for int1:= 0 to high(ar2) do begin
       if (find(ar2[int1]) = nil) then begin
        if not first then begin
-        str2:= str2 + ',';
+        str2:= str2 + strcoma; // fred
        end
        else begin
         first:= false;

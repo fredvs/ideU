@@ -44,7 +44,7 @@ implementation
 uses
  printform_mfm,main,sourceform,msestream,msesys,msegraphutils,msedrawtext,
  msesettings,msereal,msewidgets,sysutils,projectoptionsform,mserichstring,
- mseguiglob,mseformatstr;
+ mseguiglob,mseformatstr, confideu;
 type
  stringconsts = (
   page,           //0 Page
@@ -91,7 +91,13 @@ begin
        drawtext(inttostrmse(linenumber+1),
              makerect(0,liney,round(3*fontsize.value),0),[tf_right],font1);
       end;
-      writeln(expandtabs(richlines[rowindex],projectoptions.e.tabstops));
+       if confideufo.usedefaulteditoroptions.value then
+ 
+      writeln(expandtabs(richlines[rowindex],confideufo.tabstops.value))
+      else
+        writeln(expandtabs(richlines[rowindex],projectoptions.e.tabstops));
+    
+     
       inc(rowindex);
       again:= true;
      end;

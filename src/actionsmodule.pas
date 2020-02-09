@@ -351,7 +351,7 @@ implementation
 uses
 plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
  projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
- disassform,printform,msegdbutils,mseintegerenter,ideusettings,
+ disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu,
  componentstore,cpuform,sysutils,msecomptree;
  
 procedure configureide;
@@ -763,13 +763,20 @@ end;
 
 procedure tactionsmo.indentonexecute(const sender: TObject);
 begin
+if confideufo.usedefaulteditoroptions.value then
+ sourcefo.activepage.edit.indent(confideufo.blockindent.value,
+                                           confideufo.tabindent.value)
+else
  sourcefo.activepage.edit.indent(projectoptions.e.blockindent,
                                             projectoptions.e.tabindent);
 end;
 
 procedure tactionsmo.unindentonexecute(const sender: TObject);
 begin
- sourcefo.activepage.edit.unindent(projectoptions.e.blockindent);
+ if confideufo.usedefaulteditoroptions.value then
+ sourcefo.activepage.edit.unindent(confideufo.blockindent.value)
+else
+  sourcefo.activepage.edit.unindent(projectoptions.e.blockindent);
 end;
 
 procedure tactionsmo.lowercaseexecute(const sender: TObject);

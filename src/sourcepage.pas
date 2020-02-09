@@ -909,6 +909,7 @@ var
  info: fileinfoty;
  po1: prichstringty;
  i1: int32;
+ defaulted : boolean;
 begin
  if newname = '' then begin
   if (edit.filename = '') then begin
@@ -920,8 +921,13 @@ begin
    newname:= edit.filename;
   end;
  end;
- createbackupfile(newname,edit.filename,fbackupcreated,
+  if confideufo.usedefaulteditoroptions.value then
+  createbackupfile(newname,edit.filename,fbackupcreated,
+                            confideufo.backupfilecount.value)
+  else
+   createbackupfile(newname,edit.filename,fbackupcreated,
                             projectoptions.e.backupfilecount);
+                         
  if newname <> '' then begin
   sourcefo.filechangenotifyer.removenotification(filepath);
  end;
@@ -931,7 +937,11 @@ begin
  except
   application.handleexception(nil);
  end;
- if projectoptions.e.trimtrailingwhitespace then begin
+  if confideufo.usedefaulteditoroptions.value then
+  defaulted := confideufo.trimtrailingwhitespace.value
+  else defaulted := projectoptions.e.trimtrailingwhitespace;
+ 
+ if defaulted then begin
   edit.datalist.beginupdate();
   try
    po1:= edit.datalist.datapo;

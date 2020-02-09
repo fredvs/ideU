@@ -649,7 +649,7 @@ uses
  msefiledialog,projectoptionsform,sourceupdate,sourceform,sourcepage,
  pascaldesignparser,msearrayprops,rtlconsts,msedatamodules,
  msesimplewidgets,msesysutils,mseobjecttext,msestreaming,msedatanodes,main,
- actionsmodule,mseeditglob;
+ actionsmodule,mseeditglob,confideu;
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}
@@ -4717,8 +4717,11 @@ var
  comp1: tcomponent;
  deletefixups: boolean;
  exp1: exception;
-
-begin //loadformfile
+  strcoma: string;
+begin
+if confideufo.addwhiteaftercomma.value then // fred
+strcoma := ', ' else strcoma := ',';
+ //loadformfile
  filename:= filepath(filename);
  result:= fmodules.findmodule(filename);
  if result = nil then begin
@@ -4875,7 +4878,7 @@ begin //loadformfile
          if rootnames.Count > 0 then begin
           wstr1:= msestring(rootnames[0]);
           for int1:= 1 to rootnames.Count - 1 do begin
-           wstr1:= wstr1 + ','+msestring(rootnames[int1]);
+           wstr1:= wstr1 + strcoma +msestring(rootnames[int1]); // fred
           end;
           raise exception.Create(ansistring(
                                    actionsmo.c[ord(ac_unresolvedref)]+' '+
@@ -5118,8 +5121,14 @@ begin
  end;
  result:= true;
  with modulepo^ do begin
-  createbackupfile(afilename,filename,
-                          backupcreated,projectoptions.e.backupfilecount);
+ 
+  if confideufo.usedefaulteditoroptions.value then
+   createbackupfile(afilename,filename,
+                    backupcreated,confideufo.backupfilecount.value) else
+   createbackupfile(afilename,filename,
+                  backupcreated,projectoptions.e.backupfilecount);
+                          
+                          
   if createdatafile and (filetag <> 0) then begin
    sourcefo.filechangenotifyer.removenotification(filename,filetag);
   end;

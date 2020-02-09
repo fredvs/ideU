@@ -12,7 +12,8 @@ uses
  msemenus,msesys,msetypes,msegraphics,msewidgets,mseactions,mseifiglob,
  msesplitter,mseificomp,mseificompglob,msememodialog,msewidgetgrid,
  mseapplication,msestream,sysutils,mseact,msedragglob,msescrollbar,msetabs,
- msegraphedits,msedropdownlist;
+ msegraphedits,msedropdownlist,msegridsglob,mseeditglob,mserichstring,
+ msetextedit,msecolordialog, projectoptionsform;
 
 type
  settingsmacroty = (sma_fpcdir,sma_fpclibdir,sma_msedir,sma_mselibdir,
@@ -132,12 +133,12 @@ type
    macrovalue: tmemodialogedit;
    macroname: tstringedit;
    shortcutbu: tbutton;
-   printcomm: tstringedit;
-   target: tstringedit;
-   exeext: tstringedit;
-   targetosdir: tstringedit;
    lcldir: tfilenameedit;
    fpcsrcdir: tfilenameedit;
+   exeext: tstringedit;
+   target: tstringedit;
+   printcomm: tstringedit;
+   targetosdir: tstringedit;
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
    procedure formoncreate(const sender: TObject);
@@ -160,7 +161,7 @@ type
 var
  settings: settingsty;
  settingsfo: tsettingsfo;
-  TheProjectDirectory : filenamety;
+ TheProjectDirectory : filenamety;
 
 procedure updatesettings(const filer: tstatfiler);
 function getsettingsmacros: macroinfoarty;
@@ -244,6 +245,7 @@ function editsettings(const acaption: msestring = '';
 begin
  result:= false;
  settingsfo:= tsettingsfo.create(nil);
+ 
  with settingsfo do begin
   try
    fshortcutcontroller:= shortcuts;

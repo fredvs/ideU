@@ -61,7 +61,7 @@ implementation
 uses
  findinfilepage_mfm,sourcepage,sourceform,mseeditglob,sysutils,mserichstring,
  msegraphics,msestream,msefileutils,msesys,findinfiledialogform,msegraphutils,
- projectoptionsform,msesystypes,mseformatstr,main;
+ projectoptionsform,msesystypes,mseformatstr,main, confideu;
 
 type
  stringconsts = (
@@ -157,6 +157,18 @@ procedure tfindinfilepagefo.threadonexecute(const sender: tthreadcomp);
  var
   str1: string;
  begin
+ if confideufo.usedefaulteditoroptions.value then
+ begin
+  case confideufo.encoding.value of
+   1: begin
+    stream.encoding:= ce_utf8;
+   end;
+   2: begin
+    stream.encoding:= ce_iso8859_1;
+   end;   
+  end;
+  end else
+  begin
   case projectoptions.e.encoding of
    1: begin
     stream.encoding:= ce_utf8;
@@ -165,6 +177,8 @@ procedure tfindinfilepagefo.threadonexecute(const sender: tthreadcomp);
     stream.encoding:= ce_iso8859_1;
    end;   
   end;
+  end;
+     
   with sender,tfindinfilepagefo(datapo),finfo do begin
    stream.buflen:= 4096;
    with stream do begin

@@ -768,8 +768,27 @@ sourcefo.hidesourcehint;
   confideufo.dirlayout(nil);
   
   confideufo.doubleclic.value := gINI.ReadBool('2xclick', 'sourcepage', false);
- 
+    
+  confideufo.addwhiteaftercomma.value := gINI.Readbool('addwhiteaftercomma', 'editor', false); 
   
+  confideufo.usedefaulteditoroptions.value := gINI.Readbool('usedefaulteditoroptions', 'editor', false); 
+  
+  confideufo.blockindent.value := gINI.ReadInteger('blockindent', 'editor', 1);
+   
+  confideufo.tabindent.value := gINI.Readbool('tabindent', 'editor', false); 
+  
+  confideufo.tabstops.value := gINI.ReadInteger('tabstops', 'editor', 4);
+  
+  confideufo.spacetabs.value := gINI.Readbool('spacetabs', 'editor', false); 
+  
+  confideufo.trimtrailingwhitespace.value := gINI.Readbool('trimtrailingwhitespace', 'editor', false);
+     
+  confideufo.rightmarginchars.value := gINI.ReadInteger('rightmarginchars', 'editor', 80);
+  
+  confideufo.encoding.value := gINI.ReadInteger('encoding', 'editor', 0);
+  
+  confideufo.backupfilecount.value := gINI.ReadInteger('backupfilecount', 'editor', 0);
+      
   if confideufo.nozorderenable.value = true then  nozorderhandling:= true else
  nozorderhandling:= false;
      
@@ -843,6 +862,26 @@ begin
   
   gINI.writeBool('2xclick', 'sourcepage', confideufo.doubleclic.value);
   
+  gINI.writeBool('addwhiteaftercomma', 'editor', confideufo.addwhiteaftercomma.value); 
+  
+  gINI.writeBool('usedefaulteditoroptions', 'editor', confideufo.usedefaulteditoroptions.value); 
+  
+  gINI.WriteInteger('blockindent', 'editor', confideufo.blockindent.value);
+   
+  gINI.writeBool('tabindent', 'editor', confideufo.tabindent.value); 
+  
+  gINI.WriteInteger('tabstops', 'editor', confideufo.tabstops.value);
+  
+  gINI.writeBool('spacetabs', 'editor', confideufo.spacetabs.value); 
+  
+  gINI.writeBool('trimtrailingwhitespace', 'editor', confideufo.trimtrailingwhitespace.value);
+     
+  gINI.WriteInteger('rightmarginchars', 'editor', confideufo.rightmarginchars.value);
+  
+  gINI.WriteInteger('encoding', 'editor', confideufo.encoding.value);
+  
+  gINI.WriteInteger('backupfilecount', 'editor', confideufo.backupfilecount.value);
+  
   gINI.writebool('nozorder', 'general', confideufo.nozorderenable.value);  
   
    if debuggerfo.properties_list.tag = 0 then
@@ -856,6 +895,8 @@ begin
   gINI.writebool('universaldir', 'general', confideufo.universal_path.value); 
   
   gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.value); 
+  
+  gINI.writebool('addwhiteaftercomma', 'general', confideufo.addwhiteaftercomma.value); 
   
    gINI.writebool('fullpath', 'general', confideufo.fullpath.value); 
   

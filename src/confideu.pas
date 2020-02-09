@@ -7,24 +7,37 @@ uses
  mseclasses,mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,
  mseifiglob,msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,
  msestream,msestrings,sysutils,msewidgets,msebitmap,msedatanodes,msefiledialog,
- msegrids,mselistbrowser,msesys,mseact;
+ msegrids,mselistbrowser,msesys,mseact,msedragglob,msetabs,msedropdownlist,
+ msegridsglob,msewidgetgrid,msememodialog,msesplitter,msecolordialog,
+ mseeditglob,mserichstring,msetextedit;
 type
  tconfideufo = class(tmseform)
-   ok: tbutton;
+   but_ok: tbutton;
    group_file_changed: tgroupbox;
-   group_assistive: tgroupbox;
-   group_system_layout: tgroupbox;
    tbfileaskload: tbooleaneditradio;
    tbfilenoload: tbooleaneditradio;
    tbfilereload: tbooleaneditradio;
+   group_assistive: tgroupbox;
    tbassistive: tbooleanedit;
    tesakitdir: tfilenameedit;
+   group_system_layout: tgroupbox;
    universal_path: tbooleanedit;
    nozorderenable: tbooleanedit;
    doubleclic: tbooleanedit;
    autofocus_menu: tbooleanedit;
    key_accelerator: tbooleanedit;
    fullpath: tbooleanedit;
+   tgroupbox2: tgroupbox;
+   trimtrailingwhitespace: tbooleanedit;
+   rightmarginchars: tintegeredit;
+   encoding: tenumedit;
+   backupfilecount: tintegeredit;
+   tabstops: tintegeredit;
+   blockindent: tintegeredit;
+   usedefaulteditoroptions: tbooleanedit;
+   tabindent: tbooleanedit;
+   spacetabs: tbooleanedit;
+   addwhiteaftercomma: tbooleanedit;
    procedure zorderhandle(const sender: TObject);
    procedure epandfilenamemacro(const sender: TObject; var avalue: msestring;
                      var accept: Boolean);
