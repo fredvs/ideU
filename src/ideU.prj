@@ -1413,19 +1413,19 @@ findhistory=20
  1.9.6
 findoptions=1
 editpos=15
- 0,857
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
- 0,1
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,4
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1524,26 +1524,10 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=15
- 0
- 1
- 2
- 3
- 4
- 5
- 6
- 11
- 12
- 13
- 14
- 7
- 8
- 9
- 10
 firsttab=6
 index=11
 [layout]
-windowlayout=646
+windowlayout=631
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1773,7 +1757,7 @@ windowlayout=646
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2014,8 +1998,9 @@ windowlayout=646
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideusettings.pas
- history=2
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=3
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -2039,22 +2024,6 @@ windowlayout=646
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=15
-  0
-  1
-  2
-  3
-  4
-  5
-  6
-  11
-  12
-  13
-  14
-  7
-  8
-  9
-  10
  firsttab=6
  index=11
  [confideufo.usedefaulteditoroptions]
@@ -2063,7 +2032,7 @@ windowlayout=646
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2117,7 +2086,7 @@ windowlayout=646
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2155,7 +2124,7 @@ windowlayout=646
  [_mse_settings_form_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=3
  nx=0
