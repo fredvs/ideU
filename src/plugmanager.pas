@@ -2,17 +2,16 @@
 
  Fred van Stappen / fiens@hotmail.com
 }
-unit plugmanager ;
+unit plugmanager;
 
 interface
-
 
 uses
 {$IFDEF UNIX}
   cthreads, {$ENDIF}
   Process, conffpgui, msefileutils, make,
-  classes,
-  sysutils ;
+  Classes,
+  SysUtils;
 
 {  // for future libraries
 type
@@ -29,14 +28,14 @@ procedure fpgd_mainproc();
 }
 
 
-procedure RunCustomCompiled(const AFilename: string; acompiler : string);
+procedure RunCustomCompiled(const AFilename: string; acompiler: string);
 
 procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
 // for fpGUI
 procedure LoadfpgDesigner(const AfpgFilename: string);
 
-procedure CleanfpgDesigner(); 
+procedure CleanfpgDesigner();
 
 { for future libraries
 function fpgd_loadlib(const libfilename: string): boolean; 
@@ -53,12 +52,12 @@ fpgplug : TPlugin ;
 }
 
 var
-iffpgdconsumed : boolean = false ;
+  iffpgdconsumed: boolean = False;
 
 implementation
 
 uses
-main;
+  main;
 
 { // for libraries
  constructor TPlugin.Create(CreateSuspended: boolean;
@@ -114,210 +113,215 @@ function fpgd_loadfile(afilename : PChar) : integer ;
        fpgplug.execute();
    end;
  }
- 
- procedure RunCustomCompiled(const AFilename: string; acompiler : string);
- var
-  dataf, dataf2, dataf3, conso : string ;
-  len1 : integer;
- begin
- 
- if (acompiler = '') or (acompiler = '1w') or (acompiler = '3w') then
- begin
- if (acompiler = '') then RunWithoutDebug(tosysfilepath(filepath(AFilename,fk_file,true)), acompiler)
- else RunWithoutDebug(tosysfilepath(filepath(AFilename,fk_file,true)), 'wine');
- end 
- else
- begin
-   if fileexists (tosysfilepath(filepath(AFilename,fk_file,true))) then
- begin 
-dataf2 := trim(tosysfilepath(filepath(AFilename,fk_file,true)));
-len1 := pos('.',dataf2) ;
- 
-if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or (acompiler = '3')
-then
+
+procedure RunCustomCompiled(const AFilename: string; acompiler: string);
+var
+  dataf, dataf2, dataf3, conso: string;
+  len1: integer;
 begin
- {$IFDEF Windows} 
-  dataf := copy(dataf2,1,len1) + 'exe' ; 
+
+  if (acompiler = '') or (acompiler = '1w') or (acompiler = '3w') then
+  begin
+    if (acompiler = '') then
+      RunWithoutDebug(tosysfilepath(filepath(AFilename, fk_file, True)), acompiler)
+    else
+      RunWithoutDebug(tosysfilepath(filepath(AFilename, fk_file, True)), 'wine');
+  end
+  else
+  begin
+    if fileexists(tosysfilepath(filepath(AFilename, fk_file, True))) then
+    begin
+      dataf2 := trim(tosysfilepath(filepath(AFilename, fk_file, True)));
+      len1 := pos('.', dataf2);
+
+      if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or
+        (acompiler = '3') then
+      begin
+ {$IFDEF Windows}
+        dataf := copy(dataf2, 1, len1) + 'exe';
     {$else}
-   dataf := copy(dataf2,1,len1-1) ;
+        dataf := copy(dataf2, 1, len1 - 1);
     {$endif}
-   
-  dataf :=  tosysfilepath(filepath(trim(dataf),fk_file,true));
-     
-  if fileexists (dataf) then
-  begin
-     RunWithoutDebug(dataf, '') 
- end else mainfo.setstattext(dataf + ' is not executable...',mtk_notok);
- end;
- 
-if (acompiler = 'Java') or (acompiler = '2') then
-begin
- 
-   dataf := copy(dataf2,1,len1-1) ;
-   
-    
-  if fileexists (dataf+'.class') then
-  begin
-     
-  conso := ExtractFilePath(dataf);
-  
- //  writeln(conso);
-  
- // RunWithoutDebug(conso, 'cd');
-  
-  dataf := copy(dataf,length(conso)+1,length(dataf)-length(conso)) ;
-  
- // writeln(dataf);
+
+        dataf := tosysfilepath(filepath(trim(dataf), fk_file, True));
+
+        if fileexists(dataf) then
+        begin
+          RunWithoutDebug(dataf, '');
+        end
+        else
+          mainfo.setstattext(dataf + ' is not executable...', mtk_notok);
+      end;
+
+      if (acompiler = 'Java') or (acompiler = '2') then
+      begin
+
+        dataf := copy(dataf2, 1, len1 - 1);
+
+
+        if fileexists(dataf + '.class') then
+        begin
+
+          conso := ExtractFilePath(dataf);
+
+          dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
+
 {$ifdef windows}
-dataf := 'java.exe -Djava.library.path=. ' + dataf; 
+          dataf := 'java.exe -Djava.library.path=. ' + dataf;
 {$else}
-dataf := 'java -Djava.library.path=. ' + dataf;
+          dataf := 'java -Djava.library.path=. ' + dataf;
 {$endif}
-  
- // writeln(dataf);
-  
-  RunWithoutDebug(dataf, 'java');
-  
-  end else mainfo.setstattext(dataf+'.class' + ' does not exist...',mtk_notok);
-end;
 
-if (acompiler = 'Python') or (acompiler = '4') then
-begin
- 
-   dataf := copy(dataf2,1,len1-1) ;
-   
-    
-  if fileexists (dataf+'.pywc') then
-  begin
-     
-  conso := ExtractFilePath(dataf);
-  
- //  writeln(conso);
-  
- // RunWithoutDebug(conso, 'cd');
-  
-  dataf := copy(dataf,length(conso)+1,length(dataf)-length(conso)) ;
-  
- // writeln(dataf);
+         RunWithoutDebug(dataf, 'java');
+
+        end
+        else
+          mainfo.setstattext(dataf + '.class' + ' does not exist...', mtk_notok);
+      end;
+
+      if (acompiler = 'Python') or (acompiler = '4') then
+      begin
+
+        dataf := copy(dataf2, 1, len1 - 1);
+
+
+        if fileexists(dataf + '.pywc') then
+        begin
+
+          conso := ExtractFilePath(dataf);
+
+          dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
+
 {$ifdef windows}
-dataf := 'python.exe ' + dataf + '.pywc' ; 
+          dataf := 'python.exe ' + dataf + '.pywc';
 {$else}
-dataf := 'python ' + dataf + '.pywc';
+          dataf := 'python ' + dataf + '.pywc';
 {$endif}
-  
- // writeln(dataf);
-  
-  RunWithoutDebug(dataf, 'pywc');
-  
-  end else mainfo.setstattext(dataf+'.pywc' + ' does not exist...',mtk_notok);
+
+          RunWithoutDebug(dataf, 'pywc');
+
+        end
+        else
+          mainfo.setstattext(dataf + '.pywc' + ' does not exist...', mtk_notok);
+      end;
+
+    end;
+
+  end;
+
 end;
 
-end; 
 
-end;
- 
- end;
- 
-  
- procedure RunWithoutDebug(const AFilename: string; Aparam: string);
- var
-  AProcess : TProcess ;
-  thecommand : string;
-  begin
-  
+procedure RunWithoutDebug(const AFilename: string; Aparam: string);
+var
+  AProcess: TProcess;
+  thecommand: string;
+begin
+
   if Aparam = 'cd' then
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := Aparam + ' ' + tosysfilepath(filepath(AFilename,fk_file,true)) ;
+    AProcess.CommandLine := Aparam + ' ' + tosysfilepath(
+      filepath(AFilename, fk_file, True));
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
-    end else
-    
-   if (Aparam = 'java') then
+    AProcess.Priority := ppRealTime;
+    AProcess.Options := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else
+
+  if (Aparam = 'java') then
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
+    AProcess.CommandLine := tosysfilepath(filepath(AFilename, fk_file, True));
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
-      end else  
-      
-   if (Aparam = 'pywc') then
+    AProcess.Priority := ppRealTime;
+    AProcess.Options := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else
+
+  if (Aparam = 'pywc') then
   begin
     AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := tosysfilepath(filepath(AFilename,fk_file,true)) ;
+    AProcess.CommandLine := tosysfilepath(filepath(AFilename, fk_file, True));
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
-      end else      
-    
-    
-  if fileexists (tosysfilepath(filepath(AFilename,fk_file,true))) then
- begin 
- if Aparam = 'wine' then
- begin
- Aparam := '';
- wineneeded := true;
- end;
- 
-   if (wineneeded = true) then thecommand := 'wine ' + tosysfilepath(filepath(AFilename,fk_file,true)) else
-   thecommand :=  tosysfilepath(filepath(AFilename,fk_file,true));
-       AProcess := TProcess.Create(nil);
+    AProcess.Priority := ppRealTime;
+    AProcess.Options := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else
+
+  if fileexists(tosysfilepath(filepath(AFilename, fk_file, True))) then
+  begin
+    if Aparam = 'wine' then
+    begin
+      Aparam := '';
+      wineneeded := True;
+    end;
+
+    if (wineneeded = True) then
+      thecommand := 'wine ' + tosysfilepath(filepath(AFilename, fk_file, True))
+    else
+      thecommand := tosysfilepath(filepath(AFilename, fk_file, True));
+    AProcess := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := thecommand + Aparam ;
+    AProcess.CommandLine := thecommand + Aparam;
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Options := [poNoConsole];
-      AProcess.Priority:=ppRealTime;
-      AProcess.Execute;
-      AProcess.Free;
-      mainfo.setstattext('' ,mtk_flat);  
-         end else mainfo.setstattext(AFilename + ' does not exist...',mtk_notok); 
- end;
-     
-   //fpGUI designer
-procedure LoadfpgDesigner(const AfpgFilename: string); 
- var
-  dataf : string ;
- begin
- if fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.value),fk_file,true))) then
- begin
-  if ((iffpgdconsumed = false) and (AfpgFilename = 'quit')) or
- ((iffpgdconsumed = false) and (AfpgFilename = 'closeall')) or
- ((iffpgdconsumed = false) and (AfpgFilename = 'hideit'))
-  then
- else 
- if (fileexists(tosysfilepath(filepath(AfpgFilename,fk_file,true)))) or (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or (AfpgFilename = 'showit')  or (AfpgFilename = 'hideit') then
-  begin 
- iffpgdconsumed := true;
-  dataf :=  tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.value),fk_file,true));
-if (fileexists(tosysfilepath(filepath(AfpgFilename,fk_file,true)))) then 
-  RunWithoutDebug(dataf, ' ' + tosysfilepath(filepath(AfpgFilename,fk_file,true))) else
-  RunWithoutDebug(dataf, ' ' + AfpgFilename) ;
-  end;
- end;
+    AProcess.Priority := ppRealTime;
+    AProcess.Options := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+    mainfo.setstattext('', mtk_flat);
+  end
+  else
+    mainfo.setstattext(AFilename + ' does not exist...', mtk_notok);
 end;
- 
- //fpGUI designer
- 
-procedure CleanfpgDesigner(); 
+
+//fpGUI designer
+procedure LoadfpgDesigner(const AfpgFilename: string);
+var
+  dataf: string;
+begin
+  if fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
+    fk_file, True))) then
+  begin
+    if ((iffpgdconsumed = False) and (AfpgFilename = 'quit')) or
+      ((iffpgdconsumed = False) and (AfpgFilename = 'closeall')) or
+      ((iffpgdconsumed = False) and (AfpgFilename = 'hideit')) then
+    else
+    if (fileexists(tosysfilepath(filepath(AfpgFilename, fk_file, True)))) or
+      (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or
+      (AfpgFilename = 'showit') or (AfpgFilename = 'hideit') then
+    begin
+      iffpgdconsumed := True;
+      dataf := tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
+        fk_file, True));
+      if (fileexists(tosysfilepath(filepath(AfpgFilename, fk_file, True)))) then
+        RunWithoutDebug(dataf, ' ' +
+          tosysfilepath(filepath(AfpgFilename, fk_file, True)))
+      else
+        RunWithoutDebug(dataf, ' ' + AfpgFilename);
+    end;
+  end;
+end;
+
+//fpGUI designer
+procedure CleanfpgDesigner();
 {$ifdef unix}
- var
-   dataf : string ;
+var
+  dataf: string;
   {$endif}
 begin
  {$ifdef unix}
-  dataf := '/usr/bin/killall' ;
-  RunWithoutDebug(dataf,  ' designer_ext' ) ;
+  dataf := '/usr/bin/killall';
+  RunWithoutDebug(dataf, ' designer_ext');
    {$endif}
 end;
 

@@ -1412,7 +1412,7 @@ findhistory=20
  303
  1.9.6
 findoptions=1
-editpos=15
+editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1424,10 +1424,12 @@ editpos=15
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,310
+ 0,191
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1443,7 +1445,9 @@ bookmarks11=0
 bookmarks12=0
 bookmarks13=0
 bookmarks14=0
-sourcefiles=15
+bookmarks15=0
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
@@ -1459,7 +1463,9 @@ sourcefiles=15
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=15
+ ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/plugmanager_ok.pas
+relpaths=17
  main.pas
  actionsmodule.pas
  projectoptionsform.pas
@@ -1475,7 +1481,11 @@ relpaths=15
  confideu.pas
  ideusettings.pas
  sourceform.pas
-ismoduletexts=15
+ plugmanager.pas
+ plugmanager_ok.pas
+ismoduletexts=17
+ 0
+ 0
  0
  0
  0
@@ -1524,10 +1534,28 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
+order=17
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 15
+ 16
+ 12
+ 13
+ 14
 firsttab=6
-index=11
+index=12
 [layout]
-windowlayout=631
+windowlayout=664
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1998,11 +2026,26 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=3
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/main.pas
-  ${PROJECTDIR}/main.pas
+ value=/home/fred/ideu/src/plugmanager.pas
+ history=18
+  /home/fred/ideu/src/plugmanager_ok.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/movelistdemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/fendemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/pgnreaddemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/validatordemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/commandline.pas
+  /home/fred/eschecs_mse_argh/uci.pas
+  /home/fred/eschecs_mse_argh/utils.pas
+  /home/fred/eschecs/source/utils.pas
+  /home/fred/eschecs_mse/game.pas
+  /home/fred/eschecs_mse/movelist.pas
+  /home/fred/eschecs_mse/validator.pas
+  /home/fred/eschecs_mse/engines.pas
+  /home/fred/ideu/src/msearrayutils.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2024,8 +2067,26 @@ windowlayout=631
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=17
+  0
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  11
+  15
+  16
+  12
+  13
+  14
  firsttab=6
- index=11
+ index=12
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
