@@ -9,7 +9,7 @@ program ideU;
 {$ifdef mswindows}
  {$R ideu.res}
 {$endif}
-uses // cmem,
+uses  // cmem,
  {$ifdef FPC} {$ifdef unix}cthreads, {$endif} {$endif}
 
   aboutform,

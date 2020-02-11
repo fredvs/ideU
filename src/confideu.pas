@@ -210,7 +210,7 @@ end;
 
 procedure tconfideufo.updownacc(const Sender: TObject);
 begin
-  updownaccelerator := key_accelerator.Value;
+  //updownaccelerator := key_accelerator.Value;
 end;
 
 end.

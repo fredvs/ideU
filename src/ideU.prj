@@ -82,8 +82,9 @@ findinfiledialog=90
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=.e.
+ value=updownaccelerator
  history=20
+  updownaccelerator
   .e.
   teditoptions
   exeext
@@ -103,7 +104,6 @@ findinfiledialog=90
   setbookmark
   setbmexec
   getpropa
-  attributetable
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -1027,7 +1027,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=1
+showconsole=0
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1412,7 +1412,7 @@ findhistory=20
  303
  1.9.6
 findoptions=1
-editpos=17
+editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1428,8 +1428,11 @@ editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,310
- 0,191
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1447,7 +1450,10 @@ bookmarks13=0
 bookmarks14=0
 bookmarks15=0
 bookmarks16=0
-sourcefiles=17
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+sourcefiles=20
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
@@ -1463,9 +1469,12 @@ sourcefiles=17
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/plugmanager.pas
+ /home/fred/ideu/src/plugmanager.pas
  ${PROJECTDIR}/plugmanager_ok.pas
-relpaths=17
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/msegrids_old.pas
+relpaths=20
  main.pas
  actionsmodule.pas
  projectoptionsform.pas
@@ -1483,7 +1492,13 @@ relpaths=17
  sourceform.pas
  plugmanager.pas
  plugmanager_ok.pas
-ismoduletexts=17
+ ideU.pas
+ confideu.pas
+ msegrids_old.pas
+ismoduletexts=20
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1534,7 +1549,7 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=17
+order=20
  0
  1
  2
@@ -1544,18 +1559,21 @@ order=17
  6
  7
  8
- 9
- 10
- 11
  15
  16
+ 18
+ 19
+ 9
+ 14
+ 10
+ 11
+ 17
  12
  13
- 14
 firsttab=6
-index=12
+index=9
 [layout]
-windowlayout=664
+windowlayout=669
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1569,13 +1587,13 @@ windowlayout=664
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
- cx=1157
- cy=621
+ x=65
+ y=29
+ cx=1230
+ cy=639
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1595,7 +1613,7 @@ windowlayout=664
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1672,7 +1690,7 @@ windowlayout=664
  ncy=0
  x=239
  y=115
- cx=678
+ cx=951
  cy=414
  rcx=0
  rcy=0
@@ -1689,7 +1707,7 @@ windowlayout=664
  x=0
  y=0
  cx=205
- cy=516
+ cy=472
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1700,7 +1718,7 @@ windowlayout=664
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=6
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1898,9 +1916,9 @@ windowlayout=664
  ncx=0
  ncy=0
  x=0
- y=580
- cx=1358
- cy=105
+ y=522
+ cx=1220
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1999,8 +2017,8 @@ windowlayout=664
  ncy=0
  x=0
  y=0
- cx=1358
- cy=58
+ cx=1220
+ cy=44
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2011,12 +2029,12 @@ windowlayout=664
  mdistate=0
  nx=0
  ny=0
- ncx=1358
- ncy=61
+ ncx=1140
+ ncy=53
  x=0
  y=0
- cx=1358
- cy=61
+ cx=1205
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2027,12 +2045,14 @@ windowlayout=664
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/plugmanager.pas
- history=18
+ history=20
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/plugmanager_ok.pas
   /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/plugmanager.pas
   /home/fred/Downloads/eschecs-console-master/library/tutorial/movelistdemo.pas
   /home/fred/Downloads/eschecs-console-master/library/tutorial/fendemo.pas
   /home/fred/Downloads/eschecs-console-master/library/tutorial/pgnreaddemo.pas
@@ -2062,12 +2082,12 @@ windowlayout=664
  ncy=0
  x=208
  y=0
- cx=1150
- cy=516
+ cx=1012
+ cy=472
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=17
+ order=20
   0
   1
   2
@@ -2077,16 +2097,19 @@ windowlayout=664
   6
   7
   8
-  9
-  10
-  11
   15
   16
+  18
+  19
+  9
+  14
+  10
+  11
+  17
   12
   13
-  14
  firsttab=6
- index=12
+ index=9
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2120,9 +2143,9 @@ windowlayout=664
  ncx=0
  ncy=0
  x=0
- y=61
- cx=1358
- cy=516
+ y=47
+ cx=1220
+ cy=472
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2204,7 +2227,7 @@ windowlayout=664
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
