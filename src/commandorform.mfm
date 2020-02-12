@@ -10,8 +10,8 @@ object debuggerfo: tdebuggerfo
   face.localprops = []
   face.template = templfile
   visible = False
-  bounds_x = 57
-  bounds_y = 79
+  bounds_x = 34
+  bounds_y = 82
   bounds_cx = 1151
   bounds_cy = 64
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
@@ -236,9 +236,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 3
       hint = 'Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
-      bounds_x = 272
+      bounds_x = 274
       bounds_y = 3
-      bounds_cx = 33
+      bounds_cx = 32
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -282,9 +282,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 4
       hint = 'Compiler number for Edited file'
-      bounds_x = 238
+      bounds_x = 242
       bounds_y = 3
-      bounds_cx = 33
+      bounds_cx = 32
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -324,9 +324,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 5
       hint = 'Compiler Type for Edited file'
-      bounds_x = 170
+      bounds_x = 180
       bounds_y = 3
-      bounds_cx = 66
+      bounds_cx = 61
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -354,8 +354,8 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 6
       hint = 'Open file'
-      bounds_x = 116
-      bounds_y = 1
+      bounds_x = 126
+      bounds_y = 2
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
@@ -373,7 +373,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 8
       hint = 'Toggle form/unit'
-      bounds_x = 3
+      bounds_x = 1
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -382,6 +382,45 @@ object debuggerfo: tdebuggerfo
       imagelist = actionsmo.buttonicons
       imagenr = 12
       focusrectdist = 0
+    end
+    object save_file: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 9
+      hint = 'Save edited file'
+      bounds_x = 153
+      bounds_y = 2
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
+      action = actionsmo.savecust
+      imagelist = actionsmo.buttonicons
+      imagenr = 13
+      focusrectdist = 0
+    end
+    object code_beauty: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 10
+      hint = 'Pascal code beautifier.'
+      bounds_x = 28
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
+      action = actionsmo.toggleformunit
+      imagelist = actionsmo.buttonicons
+      imagenr = 37
+      focusrectdist = 0
+      onexecute = onbeauty
     end
     object file_history: thistoryedit
       Tag = 1
@@ -400,9 +439,9 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 7
       hint = 'History of files.'
-      bounds_x = 31
+      bounds_x = 55
       bounds_y = 3
-      bounds_cx = 84
+      bounds_cx = 70
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       textflags = [tf_right, tf_ycentered, tf_noselect]
@@ -413,25 +452,6 @@ object debuggerfo: tdebuggerfo
       onbeforedropdown = onbeforefilehis
       onafterclosedropdown = onsetvaluefilehis
       reffontheight = 15
-    end
-    object save_file: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 9
-      hint = 'Save edited file'
-      bounds_x = 143
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
-      action = actionsmo.savecust
-      imagelist = actionsmo.buttonicons
-      imagenr = 13
-      focusrectdist = 0
     end
   end
   object panelmain: tdockpanel
@@ -1059,7 +1079,7 @@ object debuggerfo: tdebuggerfo
       hint = 'History of projects.'
       bounds_x = 31
       bounds_y = 3
-      bounds_cx = 86
+      bounds_cx = 87
       bounds_cy = 21
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]

@@ -27,7 +27,7 @@ uses
   projecttreeform, msepipestream, msestringcontainer, msesys, msewidgets;
 
 const
-  versiontext = '1.9.7';
+  versiontext = '1.9.8';
   idecaption = 'ideU';
   statname = 'ideu';
 
@@ -230,6 +230,7 @@ type
     procedure onresizemain(const Sender: TObject);
     procedure closeallmod(const Sender: TObject);
     procedure manfocreated(const Sender: TObject);
+   procedure onbeauty(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: boolean;
@@ -388,7 +389,6 @@ type
     property stopinfo: stopinfoty read fstopinfo;
   end;
 
-
 var
   mainfo: tmainfo;
   toogletag: boolean = False;
@@ -408,7 +408,7 @@ implementation
 
 uses
   // fred
-  confmsegui, conffpgui, confcompiler, confideu, projectoptionsform,
+  confmsegui, beauty, conffpgui, confcompiler, confideu, projectoptionsform,
   regwidgets, regeditwidgets, regdialogs, regkernel, regprinter,
   toolhandlermodule,
 {$ifndef mse_no_math}
@@ -1049,6 +1049,8 @@ procedure tmainfo.mainfoondestroy(const Sender: TObject);
 begin
   if SakIsEnabled = True then
     sakunloadlib;
+    
+  beautyfo.close;  
 
   designnotifications.unRegisternotification(idesignnotification(self));
   abortmake;
@@ -4331,7 +4333,7 @@ begin
   aboutfo.about_text.Value :=
     c_linefeed + c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
-    c_linefeed + 'Copyright 1999-2019' + c_linefeed + c_linefeed +
+    c_linefeed + 'Copyright 1999-2020' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
   aboutfo.Show(True);
 end;
@@ -4345,7 +4347,7 @@ begin
     platformtext + c_linefeed + c_linefeed +
     'Based on MSEide' + c_linefeed +
     'by Martin Schreiber' + c_linefeed + c_linefeed +
-    'Copyright 1999-2019' + c_linefeed + c_linefeed +
+    'Copyright 1999-2020' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
   aboutfo.Show(True);
 end;
@@ -4658,6 +4660,13 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
+end;
+
+procedure tmainfo.onbeauty(const sender: TObject);
+begin
+beautyfo.filetoclean.value := debuggerfo.file_history.value;
+beautyfo.visible := true;
+beautyfo.bringtofront;
 end;
 
 

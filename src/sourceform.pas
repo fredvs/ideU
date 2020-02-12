@@ -196,7 +196,7 @@ uses
  sourceform_mfm,msefileutils,mseformatstr, dialogfiles, 
  projectoptionsform,main,mseeditglob,watchform,msesys,msedesigner,
  selecteditpageform,sourceupdate,mseclasses,msearrayutils,
- msebits,msesysutils,mseintegerenter,panelform;
+ msebits,msesysutils,mseintegerenter,panelform, beauty;
 
 type
  tsourcepage1 = class(tsourcepage);
@@ -1130,9 +1130,14 @@ begin
   if assigned(mainfo) then if assigned(mainfo.openfile) then mainfo.openfile.controller.lastdir
   := ExtractFilePath(activepage.pathdisp.value);
   
- if assigned(debuggerfo) then
+  if assigned(debuggerfo) then
  begin
-  debuggerfo.file_history.value :=  activepage.pathdisp.value;
+  debuggerfo.file_history.value := tosysfilepath(filepath(activepage.pathdisp.value, fk_file, True));
+   
+    if assigned(beautyfo) then
+ begin
+   beautyfo.filetoclean.value := debuggerfo.file_history.value;
+ end;
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
   debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';

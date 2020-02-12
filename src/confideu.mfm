@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 765
-  bounds_y = 29
+  bounds_x = 505
+  bounds_y = 177
   bounds_cx = 331
   bounds_cy = 531
   container.frame.localprops = []
@@ -218,7 +218,7 @@ object confideufo: tconfideufo
     bounds_x = 12
     bounds_y = 193
     bounds_cx = 309
-    bounds_cy = 180
+    bounds_cy = 133
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -299,10 +299,11 @@ object confideufo: tconfideufo
       )
       taborder = 4
       hint = 'Enable accelerator when Up/Down keys are used in source editor'
-      bounds_x = 50
-      bounds_y = 105
+      bounds_x = 241
+      bounds_y = 21
       bounds_cx = 198
       bounds_cy = 17
+      visible = False
       value = True
       valuedefault = True
     end
@@ -318,28 +319,9 @@ object confideufo: tconfideufo
       )
       taborder = 5
       hint = 'Show the full path of project in main window title.'
-      bounds_x = 49
-      bounds_y = 127
+      bounds_x = 50
+      bounds_y = 107
       bounds_cx = 222
-      bounds_cy = 17
-      value = True
-      valuedefault = True
-    end
-    object addwhiteaftercomma: tbooleanedit
-      frame.caption = 'Add space after comma when auto-parsing'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
-        0
-        2
-        264
-        2
-      )
-      taborder = 6
-      hint = 'Add space after comma when auto-parsing MSEgui code from designer'
-      bounds_x = 20
-      bounds_y = 152
-      bounds_cx = 277
       bounds_cy = 17
       value = True
       valuedefault = True
@@ -564,5 +546,24 @@ object confideufo: tconfideufo
     state = [as_localcaption, as_localonexecute]
     caption = '&OK'
     modalresult = mr_ok
+  end
+  object addwhiteaftercomma: tbooleanedit
+    frame.caption = 'Add space after comma when auto-parsing'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      264
+      2
+    )
+    taborder = 5
+    hint = 'Add space after comma when auto-parsing MSEgui code from designer'
+    bounds_x = 25
+    bounds_y = 345
+    bounds_cx = 277
+    bounds_cy = 17
+    value = True
+    valuedefault = True
   end
 end

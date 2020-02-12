@@ -59,6 +59,7 @@ type
    debug_on: tbutton;
    save_file: tbutton;
    
+   code_beauty: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -79,12 +80,14 @@ type
    procedure onsetdebug(const sender: TObject);
    procedure onchangeproject(const sender: TObject);
    procedure onsavecust(const sender: TObject);
+   procedure onbeauty(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, targetconsole, confdebugger, actionsmodule, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
+ commandorform_mfm, targetconsole, confdebugger, actionsmodule,
+ plugmanager, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
 begin
@@ -215,7 +218,7 @@ procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
 var
  page: tsourcepage;
 begin
-file_history.width := 84;
+file_history.width := 70;
 //if (fileexists(file_history.value)) and 
 if (file_history.tag = 0) then
 begin
@@ -337,6 +340,11 @@ begin
 writeln('onsavecust');
 sourcefo.saveall(true);
 sourcefo.updatehinttab;
+end;
+
+procedure tdebuggerfo.onbeauty(const sender: TObject);
+begin
+mainfo.onbeauty(sender);
 end;
 
 

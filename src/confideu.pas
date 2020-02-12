@@ -4,14 +4,15 @@ unit confideu;
 interface
 
 uses
-  ideusettings, confcompiler, confdebugger, projectoptionsform, msetypes, mseglob,
-  mseguiglob, mseguiintf, mseapplication, msegui, msegraphics, msegraphutils,
-  mseclasses, mseforms, msegraphedits, msesimplewidgets, mseificomp, mseificompglob,
-  mseifiglob, msemenus, msescrollbar, msedataedits, mseedit, msestat, msestatfile,
-  msestream, msestrings, SysUtils, msewidgets, msebitmap, msedatanodes, msefiledialog,
-  msegrids, mselistbrowser, msesys, mseact, msedragglob, msetabs, msedropdownlist,
-  msegridsglob, msewidgetgrid, msememodialog, msesplitter, msecolordialog,
-  mseeditglob, mserichstring, msetextedit;
+ ideusettings, confcompiler, confdebugger, projectoptionsform, msetypes,
+  mseglob,mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,
+  msegraphutils,mseclasses, mseforms, msegraphedits, msesimplewidgets,
+  mseificomp, mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,
+  mseedit, msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,
+  msebitmap, msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,
+  mseact, msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid,
+  msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
+  msetextedit;
 
 type
   tconfideufo = class(tmseform)
@@ -40,7 +41,7 @@ type
     usedefaulteditoroptions: tbooleanedit;
     tabindent: tbooleanedit;
     spacetabs: tbooleanedit;
-    addwhiteaftercomma: tbooleanedit;
+   addwhiteaftercomma: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);

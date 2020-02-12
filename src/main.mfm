@@ -949,7 +949,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 21
+        submenu.count = 23
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -1062,6 +1062,17 @@ object mainfo: tmainfo
             action = actionsmo.close
             caption = '&Close'
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = 'Beautifier'
+            hint = 'Beautifier of the edited code'
+            state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localshortcut, as_localonexecute]
+            imagelist = actionsmo.buttonicons
+            imagenr = 37
+            onexecute = onbeauty
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'

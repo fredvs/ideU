@@ -17,6 +17,7 @@ uses  // cmem,
   confideu,
   conffpgui,
   confcompiler,
+  beauty,
   confdebugger,
   dialogfiles,
   mseskindesign,
@@ -104,9 +105,10 @@ if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
   application.createform(tdialogfilesfo, dialogfilesfo);
-
+  application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;
+  beautyfo.Close;
 
   application.createform(tmainfo, mainfo);
   application.createform(taboutfo, aboutfo);
