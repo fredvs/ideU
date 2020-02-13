@@ -1,3 +1,4 @@
+
 program ideU;
 
 {$ifdef FPC}
@@ -9,8 +10,10 @@ program ideU;
 {$ifdef mswindows}
  {$R ideu.res}
 {$endif}
-uses  // cmem,
- {$ifdef FPC} {$ifdef unix}cthreads, {$endif} {$endif}
+
+uses // cmem,
+ {$ifdef FPC} {$ifdef unix}
+  cthreads, {$endif} {$endif}
 
   aboutform,
   confmsegui,
@@ -21,8 +24,13 @@ uses  // cmem,
   confdebugger,
   dialogfiles,
   mseskindesign,
-  //gettext,msei18nutils,mseconsts,mseconsts_ru,mseconsts_uzcyr,
-  //mseconsts_de,mseconsts_es,mseconsts_zh,mseconsts_id,mseconsts_fr,
+ {
+  gettext,
+  msei18nutils,
+  mseconsts,
+  mseconsts_ru,  
+  mseconsts_de,mseconsts_es,mseconsts_zh,mseconsts_id,mseconsts_fr,
+  }
   msegui,
   msegraphics,
   actionsmodule,
@@ -59,20 +67,21 @@ var
 }
 
 begin
+
 {
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
  // MSEFallbackLang:='ru';
-if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
-  'ideu_i18n_'+ MSEFallbackLang,true) then setlangconsts(MSEFallbackLang);
+//if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
+//  'ideu_i18n_'+ MSEFallbackLang,true) then setlangconsts(MSEFallbackLang);
 }
+
+  //setlangconsts(MSEFallbackLang);
+
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);
   application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
-  if application.terminated then
-  begin
-    exit;
-  end;
+  if application.terminated then exit;
 
   application.createform(tconfideufo, confideufo);
   application.createform(tconfmseguifo, confmseguifo);
