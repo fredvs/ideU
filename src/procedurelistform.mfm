@@ -1,0 +1,282 @@
+object procedurelistfo: tprocedurelistfo
+  bounds_x = 416
+  bounds_y = 208
+  bounds_cx = 577
+  bounds_cy = 326
+  bounds_cxmin = 577
+  bounds_cxmax = 577
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    577
+    326
+  )
+  optionswindow = [wo_dialog]
+  options = [fo_freeonclose, fo_cancelonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  caption = 'Procedure List'
+  icon.options = [bmo_masked, bmo_graymask]
+  icon.origformat = 'png'
+  icon.image = {
+    00000000120000001800000018000000EC010000000000000000000000000000
+    00000000000000000000000000000000000000000000007E93D0FF0C0000000B
+    93D0FF01E47DB20C93D0FF010000000A93D0FF01E47DB203D399CA01ADBFEE01
+    98CDFC019ACCFB01ACC1EF01CBA3D301E280B401E47DB20293D0FF010000000A
+    93D0FF01E47DB202CDA0D1019ACCFB01CAA2D301DF87BA01E281B501D990C201
+    AEBEED01CDA1D101E47DB20293D0FF010000000A93D0FF01E47DB201E280B401
+    9CCBFA01C6A8D801E47DB20893D0FF0100000005BBE0FF010000000493D0FF01
+    E47DB201D595C70193D0FF01DC8CBF01E47DB20893D0FF010000000550BAFF01
+    0000000493D0FF01E47DB201CF9DCE0193D0FF01E182B601E47DB20893D0FF01
+    0000000489CAFF01BBE1FF010000000493D0FF01E47DB201D595C70193D0FF01
+    DB8CBF01E47DB202D891C40193D0FF02B6B8E701E47DB20293D0FF0100000004
+    7FC5FF010000000593D0FF01E47DB201E280B4019CCBFA01C5AADA01E47DB204
+    BEB1E101B6B8E701E47DB20293D0FF010000000A93D0FF01E47DB202CCA0D101
+    99CDFC01C9A4D501DF87BA01E281B601D991C301AFBEED01B8B6E501E47DB202
+    93D0FF010000000A93D0FF01E47DB203D29ACB01ABBFEF0197CEFD0196CEFD01
+    A6C4F301C4AADA01E281B501E47DB20293D0FF010000000A93D0FF01E47DB20C
+    93D0FF010000000A93D0FF01E47DB20C93D0FF010000000B93D0FF0C0000007E
+    4002000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000FFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000FFFFFFFFFFFFFF
+    FFFFFFFFFFFFFF00000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF00
+    000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000
+    00FFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000001B00000000FFFFFFFFFFFFFF
+    FFFFFFFFFFFFFF00000000003300000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF00
+    0000002A1B00000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000003300000000
+    00FFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000FFFFFFFFFFFFFF
+    FFFFFFFFFFFFFF00000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF00
+    000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFF000000000000000000
+    00FFFFFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000FFFFFFFFFFFF
+    FFFFFFFFFFFF0000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00000000
+  }
+  windowopacity = -Inf
+  oncreated = formcreated
+  ondestroy = formdestroy
+  moduleclassname = 'tmseform'
+  object edtSearch: tedit
+    frame.caption = 'Search'
+    frame.captionpos = cp_left
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    frame.outerframe = (
+      45
+      0
+      0
+      0
+    )
+    bounds_x = 15
+    bounds_y = 8
+    bounds_cx = 289
+    bounds_cy = 21
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselectonfirstclick, oe_focusrectonreadonly]
+    ontextedited = FilterTextChanged
+    onkeydown = FilterTextKeyDown
+    reffontheight = 15
+  end
+  object grdProcedures: tstringgrid
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 2
+    bounds_x = 8
+    bounds_y = 37
+    bounds_cx = 561
+    bounds_cy = 284
+    anchors = [an_left, an_top, an_bottom]
+    onkeydown = ResultGridKeyDown
+    optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    datacols.count = 4
+    datacols.coloractive = 10027166
+    datacols.colorfocused = 13736447
+    datacols.fontactivenum = 0
+    datacols.options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
+    datacols.items = <    
+      item
+        coloractive = 10027166
+        colorfocused = 13736447
+        width = 30
+        fontactivenum = 0
+        options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
+        datalist.data = (
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+        )
+        valuefalse = '0'
+        valuetrue = '1'
+      end    
+      item
+        coloractive = 10027166
+        colorfocused = 13736447
+        width = 300
+        fontactivenum = 0
+        options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
+        datalist.data = (
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+        )
+        valuefalse = '0'
+        valuetrue = '1'
+      end    
+      item
+        coloractive = 10027166
+        colorfocused = 13736447
+        width = 130
+        fontactivenum = 0
+        options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
+        datalist.data = (
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+        )
+        valuefalse = '0'
+        valuetrue = '1'
+      end    
+      item
+        coloractive = 10027166
+        colorfocused = 13736447
+        width = 78
+        fontactivenum = 0
+        options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
+        datalist.data = (
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+          ''
+        )
+        valuefalse = '0'
+        valuetrue = '1'
+      end>
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+        captions.count = 4
+        captions.items = <        
+          item
+          end        
+          item
+            caption = 'Procedure'
+          end        
+          item
+            caption = 'Type'
+          end        
+          item
+            caption = 'Line'
+          end>
+      end>
+    rowcount = 20
+    rowfonts.count = 1
+    rowfonts.items = <    
+      item
+        color = -1610612730
+        name = 'stf_default'
+        localprops = [flp_color]
+      end>
+    datarowheight = 21
+    oncellevent = oncellev
+    reffontheight = 15
+  end
+  object cbObjects: tdropdownlistedit
+    frame.caption = 'Objects'
+    frame.captionpos = cp_left
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
+    frame.outerframe = (
+      48
+      0
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 324
+    bounds_y = 8
+    bounds_cx = 228
+    bounds_cy = 21
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+end

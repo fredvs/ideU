@@ -223,6 +223,7 @@ type
    
    savecust: taction;
    findback: taction;
+   procedurelist: taction;
    procedure findinfileonexecute(const sender: tobject);
    
     //file
@@ -292,6 +293,9 @@ type
    procedure compileproject(const sender: TObject);
    
    procedure savecustom(const sender: tobject);
+   
+   // Graeme procedurelist
+   procedure procedurelistonexecute(const sender: TObject);
     
    //debugger
    procedure resetactonexecute(const sender: tobject);
@@ -352,7 +356,7 @@ uses
 plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
  projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
  disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu,
- componentstore,cpuform,sysutils,msecomptree;
+ componentstore,cpuform,sysutils,msecomptree, procedurelistform;
  
 procedure configureide;
 begin
@@ -365,6 +369,11 @@ begin
 end;
 
 { tactionsmo }
+
+procedure tactionsmo.procedurelistonexecute(const sender: TObject);
+begin
+  doProcedureList;
+end;
 
 function tactionsmo.gettoolshortcutaction(const index: int32;
                                         out act: taction): boolean;

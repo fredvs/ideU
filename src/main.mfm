@@ -949,7 +949,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 23
+        submenu.count = 25
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -1073,6 +1073,14 @@ object mainfo: tmainfo
             imagelist = actionsmo.buttonicons
             imagenr = 37
             onexecute = onbeauty
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            action = actionsmo.procedurelist
+            caption = 'Methods list'
+            state = [as_localcaption]
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'

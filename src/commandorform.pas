@@ -60,6 +60,7 @@ type
    save_file: tbutton;
    
    code_beauty: tbutton;
+   tbutton2: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -81,6 +82,7 @@ type
    procedure onchangeproject(const sender: TObject);
    procedure onsavecust(const sender: TObject);
    procedure onbeauty(const sender: TObject);
+   procedure procedurelistonexecute(const sender: TObject);
    end;
 var
  debuggerfo: tdebuggerfo;
@@ -347,5 +349,9 @@ begin
 mainfo.onbeauty(sender);
 end;
 
+procedure tdebuggerfo.procedurelistonexecute(const sender: TObject);
+begin
+actionsmo.procedurelistonexecute(sender);
+end;
 
 end.

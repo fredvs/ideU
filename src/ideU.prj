@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=91
+findinfiledialog=93
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -51,13 +51,15 @@ findinfiledialog=91
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseide-msegui/
+  /home/fred/eschecs_mse/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=22
+ filehistory=24
+  /home/fred/eschecs_mse/
+  /home/fred/idegraeme/
   /home/fred/mseide-msegui/
   /home/fred/mseide-msegui-fred/
   /home/fred/svnfpctrunk/trunk/
@@ -83,8 +85,12 @@ findinfiledialog=91
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=effacer
+ value=cek_buttonrelease
  history=20
+  cek_buttonrelease
+  ss_double
+  mouseeventinfopo
+  mPasLex
   effacer
   extendedaty
   filetoclean
@@ -101,10 +107,6 @@ findinfiledialog=91
   ', '
   ','
   fred
-  fullpath
-  blockindent
-  aligntoptr
-  TAlignCheck
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -321,20 +323,22 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=72
+imagelisteditor=74
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/ideu/src/images/beauty.png
+  /home/fred/ideu/src/images/glist.png
  filecolwidth=174
  x=691
  y=148
  cx=588
  cy=307
  lastdir=/home/fred/ideu/src/images/
- filehistory=46
+ filehistory=48
+  /home/fred/ideu/src/images/glist.png
   /home/fred/ideu/src/images/beauty.png
+  /home/fred/ideu/src/images/fondbookmark.png
   /home/fred/ideu/src/images/bookmark9.png
   /home/fred/ideu/src/images/bookmark8.png
   /home/fred/ideu/src/images/bookmark7.png
@@ -383,7 +387,7 @@ imagelisteditor=72
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
  [imagelisteditorfo.transparentcolor]
- value=-1610612730
+ value=-2147483647
  [imagelisteditorfo.stretch]
  value=1
  [imagelisteditorfo]
@@ -437,21 +441,23 @@ colordialog=5
  cy=298
 compnamedialog=5
  [compnametreefo]
- x=574
- y=285
+ x=845
+ y=146
  cx=303
  cy=205
-bmpfiledialog=22
+bmpfiledialog=24
  [filedialog]
  filenames=1
-  /home/fred/ideu/src/images/beauty.png
+  /home/fred/ideu/src/images/glist.png
  filecolwidth=174
  x=0
  y=0
  cx=0
  cy=0
  lastdir=/home/fred/ideu/src/images/
- filehistory=10
+ filehistory=12
+  /home/fred/ideu/src/images/glist.png
+  /home/fred/ideu/src/images/fondbookmark.png
   /home/fred/ideu/src/images/beauty.png
   /home/fred/ideu/src/ideu.png
   /home/fred/ideu/src/ideu.bmp
@@ -777,17 +783,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
- BEAUTYFO
+ DEBUGGERFO
+ PROCEDURELISTFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
- TBEAUTYFO
+ TDEBUGGERFO
+ TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/beauty.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=10
@@ -1123,7 +1132,7 @@ path=25
 line=25
  833
  2129
- 1035
+ 1044
  588
  3764
  644
@@ -1136,11 +1145,11 @@ line=25
  3252
  119
  550
- 452
+ 461
  47
  4023
  684
- 89
+ 91
  15
  761
  898
@@ -1394,8 +1403,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=writeln
+finddtext=InitializeForm
 findhistory=20
+ InitializeForm
  writeln
  filetoclean
  paramstr
@@ -1415,52 +1425,69 @@ findhistory=20
  ideuwriteconfig
  readconf
  gni
- ideureadconfig
 findoptions=1
-editpos=3
- 0,54
+editpos=5
+ 37,528
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
- ${PROJECTDIR}/beauty.pas
+bookmarks3=0
+bookmarks4=0
+sourcefiles=5
+ ${PROJECTDIR}/procedurelistform.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=3
- beauty.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=5
+ procedurelistform.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=3
+ commandorform.pas
+ actionsmodule.pas
+ismoduletexts=5
  0
  0
  0
-modules=4
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/beauty.mfm
-moduleoptions=4
+ /home/fred/idegraeme/formdesigner.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
+ 0
  -1
- -1
- -1
- -1
-nomenumodules=4
  -1
  0
+ -1
+ -1
+nomenumodules=6
+ -1
+ 0
+ 0
+ -1
  0
  0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=591
+windowlayout=629
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1474,13 +1501,13 @@ windowlayout=591
  ny=0
  ncx=0
  ncy=0
- x=47
- y=71
+ x=51
+ y=126
  cx=1230
  cy=639
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1594,7 +1621,7 @@ windowlayout=591
  x=0
  y=0
  cx=205
- cy=527
+ cy=465
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1605,7 +1632,7 @@ windowlayout=591
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=1
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1697,8 +1724,8 @@ windowlayout=591
  ny=0
  ncx=0
  ncy=0
- x=789
- y=102
+ x=893
+ y=152
  cx=424
  cy=484
  rcx=0
@@ -1803,9 +1830,9 @@ windowlayout=591
  ncx=0
  ncy=0
  x=0
- y=582
- cx=1358
- cy=103
+ y=522
+ cx=1220
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1904,8 +1931,8 @@ windowlayout=591
  ncy=0
  x=0
  y=0
- cx=1358
- cy=49
+ cx=1220
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1915,13 +1942,13 @@ windowlayout=591
  visible=1
  mdistate=0
  nx=0
- ny=2
- ncx=1343
- ncy=53
+ ny=1
+ ncx=1220
+ ncy=54
  x=0
  y=1
- cx=1343
- cy=53
+ cx=1220
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1931,28 +1958,28 @@ windowlayout=591
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/beauty.pas
+ value=/home/fred/ideu/src/procedurelistform.pas
  history=20
-  /home/fred/ideu/src/beauty.pas
+  /home/fred/ideu/src/procedurelistform.pas
+  /home/fred/ideu/src/mPasLex.pas
+  /home/fred/ideu_bin/ideu_1.9.8_linux64/plugin/ptop/ptop.cfg
+  /home/fred/fptop/src/ptop.cfg
+  /home/fred/fptop/src/test.java
+  /home/fred/fptop/src/ptopu.pas
+  /home/fred/fptop/src/jtopu.pas
+  /home/fred/fptop/src/jtop.pas
+  /home/fred/fptop/src/ptop.pas
   /home/fred/fptop/ptopu.pas
   /home/fred/fptop/ptopu.pp
   /home/fred/svnfpctrunk/trunk/utils/ptopu.pp
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/plugin/ptop/ptop.cfg
   /home/fred/fptop/ptop.cfg
   /home/fred/ptoptest/uos.pas
   /home/fred/ptoptest/main.pas
   /home/fred/ptop_fred/ptopu.pp
   /home/fred/ideu/src/plugmanager.pas
   /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/beauty.pas
   /home/fred/eschecs_mse_argh/logform.pas
-  /home/fred/uos/examples/uos.pas
-  /home/fred/strumpract/src/uos.pas
-  /home/fred/strumpract/src/msearrayutils.pas
-  /home/fred/msegui-chessboard-master/chessboard.pas
-  /home/fred/ideu/src/plugmanager_ok.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/Downloads/eschecs-console-master/library/tutorial/movelistdemo.pas
-  /home/fred/Downloads/eschecs-console-master/library/tutorial/fendemo.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1969,8 +1996,8 @@ windowlayout=591
  ncy=0
  x=208
  y=0
- cx=1150
- cy=527
+ cx=1012
+ cy=465
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2009,15 +2036,15 @@ windowlayout=591
  ncx=0
  ncy=0
  x=0
- y=52
- cx=1358
- cy=527
+ y=54
+ cx=1220
+ cy=465
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2032,8 +2059,46 @@ windowlayout=591
  rcy=0
  wsize=0
  active=0
+ visible=0
+ [_mse_formdesignerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_actionsmo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=68
+ y=277
+ cx=297
+ cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_procedurelistfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_debuggerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=416
+ y=208
+ cx=587
+ cy=326
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
  visible=1
- [_mse_beautyfo_mse_]
+ [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
  stackedunder=targetconsolefo
@@ -2043,10 +2108,10 @@ windowlayout=591
  ny=0
  ncx=0
  ncy=0
- x=614
- y=52
- cx=210
- cy=124
+ x=34
+ y=82
+ cx=1161
+ cy=64
  rcx=0
  rcy=0
  wsize=0
