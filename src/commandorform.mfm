@@ -224,15 +224,24 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 16770809
       frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templfile
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templfile
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 3
       hint = 'Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
@@ -270,15 +279,24 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 15138793
       frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templfile
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templfile
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 4
       hint = 'Compiler number for Edited file'
@@ -312,19 +330,28 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 13154534
       frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templfile
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templfile
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 5
       hint = 'Compiler Type for Edited file'
-      bounds_x = 198
+      bounds_x = 199
       bounds_y = 3
       bounds_cx = 43
       bounds_cy = 21
@@ -427,15 +454,24 @@ object debuggerfo: tdebuggerfo
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.localprops = [frl_colorhighlight, frl_hiddenedges]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templfile
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templfile
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 7
       hint = 'History of files.'
@@ -828,15 +864,24 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 16770809
       frame.localprops = [frl_colorhighlight, frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templproject
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templproject
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 10
       hint = 'Project Option Num'
@@ -1085,15 +1130,24 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 16056304
       frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.face.template = templproject
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
           face.template = templproject
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       taborder = 14
       hint = 'History of projects.'
