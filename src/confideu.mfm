@@ -72,6 +72,7 @@ object confideufo: tconfideufo
     00000000
   }
   windowopacity = -Inf
+  onclose = oncloseev
   moduleclassname = 'tmseform'
   object group_file_changed: tgroupbox
     frame.caption = 'When a file has changed from outside...'
