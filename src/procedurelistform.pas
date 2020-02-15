@@ -791,7 +791,7 @@ var
   lGotoLine: integer;
   c,d: gridcoordty;
 begin
-  c.row := grdProcedures.Row-1;
+  c.row := grdProcedures.Row;
   c.col := 3;
   lGotoLine := StrToInt(grdProcedures.Items[c]);
   d.row := lGotoLine-1;
