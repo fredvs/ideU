@@ -20,8 +20,8 @@ unit messageform;
 
 interface
 uses
- msetypes,msegui,mseclasses,mseforms,msegrids,msemenus,msedataedits,
- msesimplewidgets,classes,mclasses,projectoptionsform;
+ msetypes,msegui,mseclasses, sysutils, mseforms,msegrids,msemenus,msedataedits,
+ msesimplewidgets,classes,mclasses;
 
 type
  tmessagefo = class(tdockform)
@@ -43,7 +43,8 @@ var
 
 implementation
 uses
- messageform_mfm,sourcepage,sourceform,msewidgets,msestrings,msedatalist;
+ messageform_mfm,sourcepage, confideu,projectoptionsform,
+ sourceform,msewidgets,msestrings,msedatalist;
 
 constructor tmessagefo.create(aowner: tcomponent);
 begin
@@ -132,12 +133,26 @@ end;
 
 procedure tmessagefo.updateprojectoptions;
 begin
+writeln('colorerror ' + inttostr(confideufo.colorerror.value));
+writeln('colorwarning '  + inttostr(confideufo.colorwarning.value));
+writeln('colornote ' +inttostr(confideufo.colornote.value));
+
+if confideufo.usedefaulteditoroptions.value then
+begin
+with messages,confideufo do begin
+rowcolors[0]:= colorerror.value;
+rowcolors[1]:= colorwarning.value;
+rowcolors[2]:= colornote.value;
+invalidate;
+end; end else
+begin
  with messages,projectoptions.o do begin
   rowcolors[0]:= colorerror;
   rowcolors[1]:= colorwarning;
   rowcolors[2]:= colornote;
   invalidate;
  end;
+end;
 end;
 
 end.

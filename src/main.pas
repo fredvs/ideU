@@ -797,7 +797,7 @@ begin
 
   confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
 
-  confideufo.key_accelerator.Value := gINI.Readbool('keyaccelerator', 'general', True);
+//  confideufo.key_accelerator.Value := gINI.Readbool('keyaccelerator', 'general', True);
 
   confideufo.fullpath.Value := gINI.Readbool('fullpath', 'general', True);
 
@@ -824,6 +824,17 @@ begin
 
   confideufo.rightmarginchars.Value :=
     gINI.ReadInteger('rightmarginchars', 'editor', 80);
+
+  confideufo.closemessages.Value := gINI.Readbool('closemessages', 'message', False);  
+    
+ confideufo.colorerror.Value :=
+    gINI.ReadInteger('colorerror', 'message', 2684354579);   
+    
+ confideufo.colorwarning.Value :=
+    gINI.ReadInteger('colorwarning', 'message', 2684354584);    
+    
+  confideufo.colornote.Value :=
+    gINI.ReadInteger('colornote', 'message', 2684354580);        
 
   confideufo.encoding.Value := gINI.ReadInteger('encoding', 'editor', 0);
 
@@ -929,7 +940,15 @@ begin
     confideufo.trimtrailingwhitespace.Value);
 
   gINI.WriteInteger('rightmarginchars', 'editor', confideufo.rightmarginchars.Value);
+  
+ gINI.writebool('closemessages', 'message', confideufo.closemessages.Value);  
 
+  gINI.WriteInteger('colorerror', 'message', confideufo.colorerror.Value);   
+    
+ gINI.WriteInteger('colorwarning', 'message', confideufo.colorwarning.Value);    
+    
+  gINI.WriteInteger('colornote', 'message', confideufo.colornote.Value);        
+  
   gINI.WriteInteger('encoding', 'editor', confideufo.encoding.Value);
 
   gINI.WriteInteger('backupfilecount', 'editor', confideufo.backupfilecount.Value);
@@ -946,7 +965,7 @@ begin
 
   gINI.writebool('universaldir', 'general', confideufo.universal_path.Value);
 
-  gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.Value);
+//  gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.Value);
 
   gINI.writebool('addwhiteaftercomma', 'general', confideufo.addwhiteaftercomma.Value);
 
@@ -2302,9 +2321,12 @@ begin
             begin
               setstattext(c[Ord(downloadfinished)], mtk_finished);
               downloaded;
-              if projectoptions.o.closemessages then
+              if confideufo.usedefaulteditoroptions.value then
               begin
-                messagefo.hide;
+              if confideufo.closemessages.value then messagefo.hide;
+              end else
+              begin
+              if projectoptions.o.closemessages then messagefo.hide;
               end;
             end;
           end

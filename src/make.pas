@@ -33,7 +33,7 @@ uses
  mseprocutils,main,projectoptionsform,sysutils,msegrids, confcompiler,
  sourceform,mseeditglob,msefileutils,msesys,
  msesysutils,msegraphics,messageform,msedesignintf,msedesigner,
- mseprocmonitor,mseevent,
+ mseprocmonitor,mseevent, confideu,
  classes,mclasses,mseclasses,mseapplication,msestream,
  msegui,actionsmodule;
  
@@ -162,9 +162,13 @@ begin
  designnotifications.beforemake(idesigner(designer),atag,bo1);
  if not bo1 then begin
   maker:= tmaker.Create(atag);
-  if projectoptions.o.closemessages then begin
-   messagefo.messages.show;
-  end;
+   if confideufo.usedefaulteditoroptions.value then
+              begin
+              if confideufo.closemessages.value then messagefo.hide;
+              end else
+              begin
+              if projectoptions.o.closemessages then messagefo.hide; 
+              end;
  end;
 end;
 
@@ -177,9 +181,13 @@ begin
  designnotifications.beforemake(idesigner(designer),atag,bo1);
  if not bo1 then begin
   custommaker:= tcustommaker.Create(aname, acompiler, acompilertag, atag);
-  if projectoptions.o.closemessages then begin
-   messagefo.messages.show;
-  end;
+  if confideufo.usedefaulteditoroptions.value then
+              begin
+              if confideufo.closemessages.value then messagefo.hide;
+              end else
+              begin
+              if projectoptions.o.closemessages then messagefo.hide;
+              end;
  end;
 end;
 

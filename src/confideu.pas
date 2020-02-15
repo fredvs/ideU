@@ -4,15 +4,15 @@ unit confideu;
 interface
 
 uses
- ideusettings, confcompiler, confdebugger, projectoptionsform, msetypes,
-  mseglob,mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,
-  msegraphutils,mseclasses, mseforms, msegraphedits, msesimplewidgets,
-  mseificomp, mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,
-  mseedit, msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,
-  msebitmap, msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,
-  mseact, msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid,
-  msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
-  msetextedit;
+ ideusettings, confcompiler, confdebugger, projectoptionsform, msetypes,mseglob,
+ mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,msegraphutils,
+ mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
+ mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
+ msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,msebitmap,
+ msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,mseact,
+ msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid,
+ msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
+ msetextedit;
 
 type
   tconfideufo = class(tmseform)
@@ -29,7 +29,6 @@ type
     nozorderenable: tbooleanedit;
     doubleclic: tbooleanedit;
     autofocus_menu: tbooleanedit;
-    key_accelerator: tbooleanedit;
     fullpath: tbooleanedit;
     tgroupbox2: tgroupbox;
     trimtrailingwhitespace: tbooleanedit;
@@ -41,6 +40,11 @@ type
     usedefaulteditoroptions: tbooleanedit;
     tabindent: tbooleanedit;
     spacetabs: tbooleanedit;
+   closemessages: tbooleanedit;
+   colorerror: tcoloredit;
+   colorwarning: tcoloredit;
+   colornote: tcoloredit;
+   stripmessageesc: tbooleanedit;
    addwhiteaftercomma: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
@@ -52,6 +56,7 @@ type
     procedure dirlayout(const Sender: TObject);
     procedure autofocus(const Sender: TObject);
     procedure updownacc(const Sender: TObject);
+   procedure oncloseev(const sender: TObject);
   end;
 
 var
@@ -60,7 +65,7 @@ var
 implementation
 
 uses
-  confideu_mfm, main;
+  confideu_mfm, main, messageform;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
 begin
@@ -212,6 +217,11 @@ end;
 procedure tconfideufo.updownacc(const Sender: TObject);
 begin
   //updownaccelerator := key_accelerator.Value;
+end;
+
+procedure tconfideufo.oncloseev(const sender: TObject);
+begin
+messagefo.updateprojectoptions;
 end;
 
 end.

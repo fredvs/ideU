@@ -799,6 +799,8 @@ begin
   int1 := sourcefo.activepage.source_editor.rowwindowpos;
   sourcefo.activepage.source_editor.row := lGotoLine-1;
   sourcefo.activepage.source_editor.selectcell(d, csm_select, False);
+  sourcefo.activepage.source_editor.focuscell(d);
+  
   sourcefo.activepage.source_editor.rowwindowpos := int1-1;
 end;
 
