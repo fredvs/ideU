@@ -28,7 +28,7 @@ type
   end;
 
 
-  TSourceLanguage = (ltPas, ltCpp);
+  TSourceLanguage = (ltPas, ltCpp, lfPyt, lfJav);
 
 
   TProcInfo = class(TObject)
@@ -87,8 +87,8 @@ type
     property  Language: TSourceLanguage read FLanguage write FLanguage default ltPas;
  end;
 
-var
-  procedurelistfo: tprocedurelistfo;
+//var
+//  procedurelistfo: tprocedurelistfo;
   
 procedure doProcedureList;
 
@@ -219,7 +219,7 @@ var
      c.row := r;
      c.col := 0;
      grdProcedures.Items[c] := IntToStr(i);
-     c.col := 1;
+      c.col := 1;
      grdProcedures.Items[c] := ProcInfo.DisplayName;
      c.col := 2;
      grdProcedures.Items[c] := ProcInfo.ProcedureType;
@@ -789,14 +789,17 @@ procedure tprocedurelistfo.JumpToSelectedLine;
 var
   int1: int32;
   lGotoLine: integer;
-  c: gridcoordty;
+  c,d: gridcoordty;
 begin
-  c.row := grdProcedures.Row;
+  c.row := grdProcedures.Row-1;
   c.col := 3;
   lGotoLine := StrToInt(grdProcedures.Items[c]);
+  d.row := lGotoLine-1;
+  d.col := 1;
   int1 := sourcefo.activepage.source_editor.rowwindowpos;
-  sourcefo.activepage.source_editor.row := lGotoLine;
-  sourcefo.activepage.source_editor.rowwindowpos := int1;
+  sourcefo.activepage.source_editor.row := lGotoLine-1;
+  sourcefo.activepage.source_editor.selectcell(d, csm_select, False);
+  sourcefo.activepage.source_editor.rowwindowpos := int1-1;
 end;
 
 procedure tprocedurelistfo.oncellev(const sender: TObject;

@@ -1135,9 +1135,8 @@ begin
   debuggerfo.file_history.value := tosysfilepath(filepath(activepage.pathdisp.value, fk_file, True));
    
     if assigned(beautyfo) then
- begin
    beautyfo.filetoclean.value := debuggerfo.file_history.value;
- end;
+
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
   debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
