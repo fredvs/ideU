@@ -4,21 +4,21 @@ unit beauty;
 
 interface
 
-uses 
-msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, msegui, 
-msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, 
-msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob, 
-msescrollbar, msedispwidgets, mserichstring;
+uses
+ msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus,
+ msegui,msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
+ msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob,
+ msescrollbar, msedispwidgets, mserichstring;
 
 type 
   tbeautyfo = class(tmseform)
     group_file_changed: tgroupbox;
     tbjedi: tbooleaneditradio;
     tbptop: tbooleaneditradio;
-    tbutton1: tbutton;
     createbackup: tbooleanedit;
     filetoclean: tstringdisp;
-    tbutton2: tbutton;
+   OK: tbutton;
+   tbutton2: tbutton;
     procedure dobeauti(const sender: TObject);
     procedure oncreate(const sender: TObject);
     procedure doclose(const sender: TObject);

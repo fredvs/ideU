@@ -1,7 +1,7 @@
 object beautyfo: tbeautyfo
   visible = False
-  bounds_x = 614
-  bounds_y = 52
+  bounds_x = 730
+  bounds_y = 50
   bounds_cx = 200
   bounds_cy = 124
   bounds_cxmin = 200
@@ -121,16 +121,6 @@ object beautyfo: tbeautyfo
       value = True
     end
   end
-  object tbutton1: tbutton
-    taborder = 1
-    bounds_x = 9
-    bounds_y = 95
-    bounds_cx = 100
-    bounds_cy = 24
-    state = [as_localcaption, as_localonexecute]
-    caption = 'Do beautifier'
-    onexecute = dobeauti
-  end
   object createbackup: tbooleanedit
     frame.caption = 'Create a backup file'
     frame.localprops = []
@@ -141,7 +131,7 @@ object beautyfo: tbeautyfo
       123
       2
     )
-    taborder = 2
+    taborder = 1
     hint = 'Create a .bak file of the original file'
     bounds_x = 32
     bounds_y = 77
@@ -153,7 +143,7 @@ object beautyfo: tbeautyfo
     frame.colorclient = 16767994
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
-    taborder = 3
+    taborder = 2
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 198
@@ -162,14 +152,36 @@ object beautyfo: tbeautyfo
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
-  object tbutton2: tbutton
-    taborder = 4
-    bounds_x = 123
-    bounds_y = 95
-    bounds_cx = 67
+  object OK: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    taborder = 3
+    bounds_x = 127
+    bounds_y = 96
+    bounds_cx = 61
     bounds_cy = 24
-    state = [as_localcaption, as_localonexecute]
+    state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = 'Close'
+    modalresult = mr_ok
     onexecute = doclose
+  end
+  object tbutton2: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    taborder = 4
+    bounds_x = 12
+    bounds_y = 96
+    bounds_cx = 105
+    bounds_cy = 24
+    state = [as_localinvisible, as_localcaption, as_localonexecute]
+    caption = 'Do beautifier'
+    modalresult = mr_ok
+    onexecute = dobeauti
   end
 end
