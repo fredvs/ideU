@@ -133,10 +133,6 @@ end;
 
 procedure tmessagefo.updateprojectoptions;
 begin
-writeln('colorerror ' + inttostr(confideufo.colorerror.value));
-writeln('colorwarning '  + inttostr(confideufo.colorwarning.value));
-writeln('colornote ' +inttostr(confideufo.colornote.value));
-
 if confideufo.usedefaulteditoroptions.value then
 begin
 with messages,confideufo do begin

@@ -338,8 +338,6 @@ if system.pos('Default',debuggerused[int3]) > 0 then
 procedure tdebuggerfo.onsavecust(const sender: TObject);
 begin
 //actionsmo.saveactonexecute(sender);
-
-writeln('onsavecust');
 sourcefo.saveall(true);
 sourcefo.updatehinttab;
 end;
