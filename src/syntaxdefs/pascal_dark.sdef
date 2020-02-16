@@ -7,7 +7,9 @@ caseinsensitive
 
 # COLORS [[[fontcolor [backgroundcolor [statementcolor]]]
 #                      cl_default for project options settings 
-COLORS cl_ltgray cl_black
+
+# COLORS font/paper/statement/pairmark/fontline/line/focusline/selected
+COLORS cl_ltgray cl_black $202424 cl_default cl_ltgray cl_black $5E0078 $5E0078
 
 styles
  default ''
@@ -20,6 +22,7 @@ styles
   # pale blue
  string '' $6897BB
  symbol '' cl_red
+ 
  beginend 'b' $4D006B
 
 keyworddefs pascal
