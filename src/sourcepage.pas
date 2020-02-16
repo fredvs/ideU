@@ -1458,9 +1458,13 @@ begin
      if backgroundline <> cl_default then begin
       source_editor.fixcols[-1].color := backgroundline;
      end;
+      if focusline <> cl_default then begin
+      source_editor.fixcols[-1].colorfocused := focusline;
+     end;
       if selected <> cl_default then begin
       source_editor.datacols[1].colorselect := selected;
      end;
+    
      
     end;
    end;
