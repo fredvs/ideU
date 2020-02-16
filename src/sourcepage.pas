@@ -174,7 +174,7 @@ const
  bmbitshift = 4;
  bmbitmask = integer($3ff0);
  findshowpos = cep_rowcentered;
-
+ 
 function getpascalvarname(const edit: tsyntaxedit; pos: gridcoordty;
                           out startpos: gridcoordty): msestring;
 var
@@ -248,7 +248,7 @@ begin
 }
   spat_showsource: begin
    sourcefo.naviglist.showsource(fshowsourcepos,true);
-  end;
+    end;
  end;
 end;
 
@@ -658,14 +658,17 @@ begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
+      
        case key of
         key_up,key_down: begin
+         
          if switchheaderimplementation(edit.filename,pos1,pos2,bo1) then begin
           cellpos1:= cep_none;
           if bo1 then begin
            cellpos1:= cep_top;
           end;
           page1:= sourcefo.showsourcepos(pos2,true,cellpos1);
+         
           if page1 <> nil then begin
            page1.source_editor.showcell(makegridcoord(1,pos1.pos.row));
           end;
@@ -1168,10 +1171,16 @@ begin
 end;
 
 procedure tsourcepage.doline;
+var
+ d: gridcoordty;
 begin
  if integerenter(fgotoline,1,source_editor.rowcount,
       sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) = mr_ok then begin
   source_editor.row:= fgotoline-1;
+  d.row := source_editor.row;
+  d.col := 1;
+   source_editor.selectcell(d, csm_select, False);
+   source_editor.focuscell(d);
  end;
 end;
 
@@ -1284,6 +1293,7 @@ begin
      if findlinkdest(edit,pos1,str1) then begin
       fshowsourcepos:= pos1;
       asyncevent(ord(spat_showsource));
+      //writeln(inttostr(pos1.pos.row));
 //      sourcefo.naviglist.showsource(pos1,true);
      end;
     end
@@ -1450,7 +1460,7 @@ begin
       source_editor.frame.colorclient:= background;
      end;
      if (statement <> cl_default) and (source_editor.rowcolors[0] <> cl_none) then begin
-      source_editor.rowcolors[0]:= statement;
+      source_editor.datacols[0].color:= statement;
      end;
       if fontline <> cl_default then begin
       source_editor.fixcols[-1].font.color := fontline;

@@ -785,18 +785,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
+ MAINFO
  PROCEDURELISTFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=4
+moduletypes=5
  TACTIONSMO
+ TMAINFO
  TPROCEDURELISTFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
@@ -944,7 +947,7 @@ sourcefilemasks=3
  "*.c" "*.cc" "*.h"
  "*.mfm"
 syntaxdeffiles=3
- /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
+ ${SYNTAXDEFDIR}pascal_ideu.sdef
  ${SYNTAXDEFDIR}cpp.sdef
  ${SYNTAXDEFDIR}objecttext.sdef
 filemasknames=3
@@ -1425,8 +1428,14 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=selected
+finddtext=fontline
 findhistory=20
+ fontline
+ focus
+ function
+ ctrl
+ spat_showsource
+ showprocheaders
  selected
  updatest
  statement
@@ -1441,22 +1450,23 @@ findhistory=20
  syntaxcolorinfoty
  jumpto
  integerenter
- doline
- 500
- 700
- onbeauty
- InitializeForm
- filetoclean
 findoptions=1
-editpos=9
- 0,1465
- 0,3
- 0,224
- 0,4
+editpos=16
  0,-1073741823
- 0,17
+ 0,-1073741823
+ 0,11
+ 0,1197
+ 0,-1073741823
  0,0
- 0,1425
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1462
+ 0,-1073741823
+ 0,0
+ 0,2
+ 0,10
+ 0,1415
  0,0
 bookmarks0=0
 bookmarks1=0
@@ -1467,27 +1477,55 @@ bookmarks5=0
 bookmarks6=0
 bookmarks7=0
 bookmarks8=0
-sourcefiles=9
- /home/fred/ideu/src/sourcepage.pas
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+sourcefiles=16
+ ${PROJECTDIR}/sourcepage.pas
  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
  /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
- /home/fred/ideu/src/sourceform.pas
+ ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
- /home/fred/ideu/src/procedurelistform.pas
+ ${PROJECTDIR}/procedurelistform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/mPasLex.pas
  ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/sourcepage.mfm
-relpaths=9
+ /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+ /home/fred/mseide-msegui/lib/common/designutils/mseparser.pas
+ /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
+ ${PROJECTDIR}/sourcepage.pas
+ /home/fred/mseide-msegui/apps/ide/sourcepage.pas
+ /home/fred/mseide-msegui/apps/ide/sourcepage.mfm
+relpaths=16
  sourcepage.pas
- ../ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
+ ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
  ../mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
  sourceform.pas
  actionsmodule.pas
  ../ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
  procedurelistform.pas
+ main.pas
+ mPasLex.pas
+ sourcepage.pas
+ mseide-msegui/lib/common/kernel/mseclasses.pas
+ ../mseide-msegui/lib/common/designutils/mseparser.pas
+ ../ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
+ sourcepage.pas
  ../mseide-msegui/apps/ide/sourcepage.pas
  ../mseide-msegui/apps/ide/sourcepage.mfm
-ismoduletexts=9
+ismoduletexts=16
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1510,32 +1548,39 @@ moduleoptions=5
  0
  0
 visiblemodules=5
- 0
+ -1
  -1
  -1
  -1
  -1
 nomenumodules=5
- -1
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=9
+order=16
  0
- 3
  1
  2
+ 3
+ 13
  4
  5
- 9
- 10
+ 12
  6
-firsttab=0
-index=5
+ 9
+ 14
+ 15
+ 11
+ 7
+ 10
+ 8
+firsttab=4
+index=11
 [layout]
-windowlayout=620
+windowlayout=657
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1567,10 +1612,10 @@ windowlayout=620
  ny=0
  ncx=0
  ncy=0
- x=391
- y=104
+ x=621
+ y=217
  cx=497
- cy=314
+ cy=311
  rcx=0
  rcy=0
  wsize=0
@@ -1765,7 +1810,7 @@ windowlayout=620
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1780,12 +1825,12 @@ windowlayout=620
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
- propcolwidthref=291
- width0=129
+ propcolwidthref=306
+ width0=136
  sortdescend0=0
- width1=156
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1991,8 +2036,8 @@ windowlayout=620
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=53
+ ncx=1358
+ ncy=61
  x=0
  y=0
  cx=1358
@@ -2007,17 +2052,17 @@ windowlayout=620
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/mseide-msegui/apps/ide/sourcepage.mfm
- history=20
+ history=50
+  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
+  /home/fred/mseide-msegui/apps/ide/procedurelistform.pas
   /home/fred/mseide-msegui/apps/ide/sourcepage.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
   /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
   /home/fred/ideu/src/procedurelistform.pas
+  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
   /home/fred/mseide-msegui/apps/ide/syntaxdefs/pascal_solarized_dark.sdef
   /home/fred/ideu/src/msesyntaxpainter.pas
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
   /home/fred/ideu/src/syntaxdefs/pascal.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_dark.sdef
   /home/fred/ptoptest/sourcepage.pas
   /home/fred/ideu/src/
@@ -2028,6 +2073,36 @@ windowlayout=620
   /home/fred/ideu/src/mPasLex.pas
   /home/fred/fptop/src/ptop.cfg
   /home/fred/fptop/src/test.java
+  /home/fred/fptop/src/ptopu.pas
+  /home/fred/fptop/src/jtopu.pas
+  /home/fred/fptop/src/jtop.pas
+  /home/fred/fptop/src/ptop.pas
+  /home/fred/fptop/ptopu.pas
+  /home/fred/fptop/ptopu.pp
+  /home/fred/svnfpctrunk/trunk/utils/ptopu.pp
+  /home/fred/fptop/ptop.cfg
+  /home/fred/ptoptest/uos.pas
+  /home/fred/ptop_fred/ptopu.pp
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/eschecs_mse_argh/logform.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/strumpract/src/uos.pas
+  /home/fred/strumpract/src/msearrayutils.pas
+  /home/fred/msegui-chessboard-master/chessboard.pas
+  /home/fred/ideu/src/plugmanager_ok.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/movelistdemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/fendemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/pgnreaddemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/tutorial/validatordemo.pas
+  /home/fred/Downloads/eschecs-console-master/library/commandline.pas
+  /home/fred/eschecs_mse_argh/uci.pas
+  /home/fred/eschecs_mse_argh/utils.pas
+  /home/fred/eschecs/source/utils.pas
+  /home/fred/eschecs_mse/game.pas
+  /home/fred/eschecs_mse/movelist.pas
+  /home/fred/eschecs_mse/validator.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2049,18 +2124,25 @@ windowlayout=620
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
+ order=16
   0
-  3
   1
   2
+  3
+  13
   4
   5
-  9
-  10
+  12
   6
- firsttab=0
- index=7
+  9
+  14
+  15
+  11
+  7
+  10
+  8
+ firsttab=4
+ index=11
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2117,11 +2199,11 @@ windowlayout=620
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_procedurelistfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2140,7 +2222,7 @@ windowlayout=620
  [_mse_procedurelistfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
