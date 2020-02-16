@@ -1,5 +1,6 @@
 caseinsensitive
-colors cl_default cl_default cl_default cl_default
+# COLORS font/paper/statement/pairmark/fontline/line/focusline/selected
+COLORS cl_default cl_default cl_default cl_ltyellow cl_dkgray cl_ltgray cl_white cl_ltblue
 pairwords
  'BEGIN' 'CASE' 'TRY' 'RECORD' 'CLASS' 'OBJECT' 'INTERFACE' 'END'
  'REPEAT' 'UNTIL'
@@ -14,7 +15,7 @@ styles
 
 keyworddefs pascal 
  'ABSOLUTE' 'ABSTRACT' 'AND' 'ARRAY' 'AS' 'ASM' 'ASSEMBLER' 'BEGIN'
- 'BREAK' 'CASE' 'CDECL' 'CLASS' 'CONST' 'CONSTRUCTOR'
+ 'BREAK' 'CASE' 'CDECL' 'CLASS' 'CONST' 'CONSTREF' 'CONSTRUCTOR'
  'CONTINUE' 'DEFAULT' 'DEPRECATED' 'DESTRUCTOR' 'DISPOSE' 'DIV' 'DO' 'DOWNTO'
  'ELSE' 'END' 'EXCEPT' 'EXIT' 'EXPORT' 'EXPORTS' 'EXTERNAL' 'FAIL'
  'FALSE' 'FAR' 'FILE' 'FINALIZATION' 'FINALLY' 'FOR' 'FORWARD' 'FUNCTION' 'GOTO'
@@ -27,11 +28,11 @@ keyworddefs pascal
  'PUBLIC' 'PUBLISHED' 'RAISE' 'RECORD' 'REINTRODUCE' 'REPEAT' 
  'RESOURCESTRING'
  'SELF' 'SET' 'SHL' 'SHR'
- 'STDCALL' 'STORED' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TRY' 'TYPE' 'UNIT' 'UNTIL'
+ 'STDCALL' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TRY' 'TYPE' 'UNIT' 'UNTIL'
  'USES' 'VAR' 'VIRTUAL' 'WHILE' 'WITH' 'XOR'
  
 keyworddefs property
- 'READ' 'WRITE' 'DEFAULT'
+ 'DEFAULT' 'READ' 'STORED' 'WRITE'
  
 scope option option
  endtokens
