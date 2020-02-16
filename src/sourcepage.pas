@@ -1383,16 +1383,10 @@ begin
    source_editor.rowcolors[0]:= e.statementcolor;
    source_editor.datarowheight:= edit.font.lineheight;
    int1:= edit.getcanvas.getstringwidth('oo') div 2;
-    with source_editor.fixcols[-1] do begin
+   with source_editor.fixcols[-1] do begin
     visible:= e.linenumberson;
-    width := 50 ;
-    // fred
-    color := $F8F8F8 ;
-   // color := cl_white ;
-    font.color:= $424242 ;
-  //  font.height:= edit.font.height;
-    font.height:= 14;
-   // font.name:= edit.font.name;
+    font.height:= edit.font.height;
+    font.name:= edit.font.name;
    end;
    if e.rightmarginon then begin
     edit.marginlinecolor:= cl_gray;
@@ -1418,7 +1412,6 @@ begin
    edit.autoindent:= e.autoindent;
    edit.markbrackets:= e.editmarkbrackets;
    edit.markpairwords:= e.editmarkpairwords;
-      
    case e.encoding of
     1: begin
      edit.encoding:= ce_utf8;
@@ -1448,6 +1441,7 @@ begin
    edit.pairmarkbkgcolor:= e.pairmarkcolor;
    if edit.syntaxpainterhandle >= 0 then begin
     colors:= edit.syntaxpainter.colors[edit.syntaxpainterhandle];
+   
     with colors do begin
      if font <> cl_default then begin
       edit.font.color:= font;
@@ -1455,9 +1449,19 @@ begin
      if background <> cl_default then begin
       source_editor.frame.colorclient:= background;
      end;
-     if statement <> cl_default then begin
+     if (statement <> cl_default) and (source_editor.rowcolors[0] <> cl_none) then begin
       source_editor.rowcolors[0]:= statement;
      end;
+      if fontline <> cl_default then begin
+      source_editor.fixcols[-1].font.color := fontline;
+     end;
+     if backgroundline <> cl_default then begin
+      source_editor.fixcols[-1].color := backgroundline;
+     end;
+      if selected <> cl_default then begin
+      source_editor.datacols[1].colorselect := selected;
+     end;
+     
     end;
    end;
   end;

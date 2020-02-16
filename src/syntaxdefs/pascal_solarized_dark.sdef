@@ -4,8 +4,11 @@ pairwords
  'BEGIN' 'CASE' 'TRY' 'RECORD' 'CLASS' 'OBJECT' 'INTERFACE' 'END'
  'REPEAT' 'UNTIL'
 
-# COLORS font/paper
-COLORS $93a1a1 $002b36
+# [fontcolor [backgroundcolor [statementcolor [pairmarkbackgroundcolor, 
+# [fontlinecolor [backgroundlinecolor [selectedcolor ]]]]]]]
+
+# COLORS font/paper/statement/pairmark/fontcolline/colline/selected
+COLORS $93a1a1 $002b36 cl_default cl_default $93a1a1 $002b36 $5E0078
 
 # base03    $002b36
 # base01    $586e75
@@ -30,11 +33,11 @@ styles
 
 keyworddefs pascal 
  'ABSOLUTE' 'ABSTRACT' 'AND' 'ARRAY' 'AS' 'ASM' 'ASSEMBLER' 'BEGIN'
- 'BREAK' 'CASE' 'CDECL' 'CLASS' 'CONST' 'CONSTRUCTOR'
+ 'BREAK' 'CASE' 'CDECL' 'CLASS' 'CONST' 'CONSTREF' 'CONSTRUCTOR'
  'CONTINUE' 'DEFAULT' 'DEPRECATED' 'DESTRUCTOR' 'DISPOSE' 'DIV' 'DO' 'DOWNTO'
  'ELSE' 'END' 'EXCEPT' 'EXIT' 'EXPORT' 'EXPORTS' 'EXTERNAL' 'FAIL'
  'FALSE' 'FAR' 'FILE' 'FINALIZATION' 'FINALLY' 'FOR' 'FORWARD' 'FUNCTION' 'GOTO'
- 'IF' 'IMPLEMENTATION' 'IMPLEMENTS' 'IN' 'INDEX' 'INHERITED'
+ 'IF' 'IMPLEMENTATION' 'IMPLEMENTS' 'IN' 'INHERITED'
  'INITIALIZATION' 'INLINE' 'INTERFACE' 'INTERRUPT' 'IS' 'LABEL' 'LIBRARY'
  'MOD' 'NEW' 'NIL' 'NODEFAULT' 'NOT' 'OBJECT'
  'OF' 'ON' 'OPERATOR' 'OR' 'OUT' 'OTHERWISE' 'OVERLOAD' 'OVERRIDE' 
@@ -43,11 +46,11 @@ keyworddefs pascal
  'PUBLIC' 'PUBLISHED' 'RAISE' 'RECORD' 'REINTRODUCE' 'REPEAT' 
  'RESOURCESTRING'
  'SELF' 'SET' 'SHL' 'SHR'
- 'STDCALL' 'STORED' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TRY' 'TYPE' 'UNIT' 'UNTIL'
+ 'STDCALL' 'THEN' 'THREADVAR' 'TO' 'TRUE' 'TRY' 'TYPE' 'UNIT' 'UNTIL'
  'USES' 'VAR' 'VIRTUAL' 'WHILE' 'WITH' 'XOR'
  
 keyworddefs property
- 'READ' 'WRITE' 'DEFAULT'
+ 'DEFAULT' 'INDEX' 'READ' 'STORED' 'WRITE'
  
 scope option option
  endtokens
