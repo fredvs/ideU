@@ -2,9 +2,9 @@ object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   face.localprops = []
   visible = False
-  bounds_x = 260
-  bounds_y = 139
-  bounds_cx = 453
+  bounds_x = 474
+  bounds_y = 181
+  bounds_cx = 336
   bounds_cy = 367
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -12,7 +12,7 @@ object dialogfilesfo: tdialogfilesfo
   container.bounds = (
     0
     0
-    453
+    336
     367
   )
   optionswindow = [wo_dialog]
@@ -42,58 +42,8 @@ object dialogfilesfo: tdialogfilesfo
     FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
     FFFFFF02
   }
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
-  object tbutton1: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = sourcefo.tfacecomp1
-    taborder = 2
-    bounds_x = 334
-    bounds_y = 22
-    bounds_cx = 46
-    bounds_cy = 21
-    anchors = [an_top, an_right]
-    state = [as_localcaption, as_localonexecute]
-    caption = '&OK'
-    onexecute = butok
-  end
-  object tbutton2: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = sourcefo.tfacecomp1
-    taborder = 3
-    bounds_x = 388
-    bounds_y = 22
-    bounds_cx = 55
-    bounds_cy = 21
-    anchors = [an_top, an_right]
-    state = [as_localcaption, as_localonexecute]
-    caption = '&Cancel'
-    onexecute = butcancel
-  end
-  object list_files: tfilelistview
-    frame.localprops = []
-    frame.localprops1 = []
-    bounds_x = 4
-    bounds_y = 49
-    bounds_cx = 442
-    bounds_cy = 309
-    anchors = [an_left, an_top, an_right, an_bottom]
-    colorselect = 16760476
-    colorglyph = 16449400
-    cellwidth = 262
-    cellheight = 19
-    optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
-    onselectionchanged = loaddef
-    filelist.options = [flo_sortname, flo_sorttype]
-    reffontheight = 15
-  end
   object selected_file: tedit
     optionswidget1 = [ow1_fontglyphheight]
     frame.caption = 'Selected Syntax Definition File'
@@ -107,11 +57,62 @@ object dialogfilesfo: tdialogfilesfo
     )
     taborder = 1
     bounds_x = 6
-    bounds_y = 2
-    bounds_cx = 320
+    bounds_y = 4
+    bounds_cx = 324
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
+    reffontheight = 15
+  end
+  object tbutton1: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = sourcefo.tfacecomp1
+    taborder = 2
+    bounds_x = 201
+    bounds_y = 1
+    bounds_cx = 50
+    bounds_cy = 18
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = butok
+  end
+  object tbutton2: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = sourcefo.tfacecomp1
+    taborder = 3
+    bounds_x = 261
+    bounds_y = 1
+    bounds_cx = 55
+    bounds_cy = 18
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localonexecute]
+    caption = '&Cancel'
+    onexecute = butcancel
+  end
+  object list_files: tfilelistview
+    frame.localprops = []
+    frame.localprops1 = []
+    bounds_x = 6
+    bounds_y = 48
+    bounds_cx = 324
+    bounds_cy = 314
+    anchors = [an_left, an_top, an_right, an_bottom]
+    colorselect = 16760476
+    colorglyph = 16449400
+    cellwidth = 262
+    cellheight = 19
+    optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
+    onselectionchanged = loaddef
+    filelist.options = [flo_sortname, flo_sorttype]
     reffontheight = 15
   end
 end

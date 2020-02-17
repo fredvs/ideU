@@ -1461,7 +1461,7 @@ begin
      end;
      if (statement <> cl_default) and (source_editor.rowcolors[0] <> cl_none) then begin
       source_editor.datacols[0].color:= statement;
-     end;
+     end else source_editor.datacols[0].color:= source_editor.frame.colorclient;
       if fontline <> cl_default then begin
       source_editor.fixcols[-1].font.color := fontline;
      end;
