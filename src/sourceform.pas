@@ -196,7 +196,7 @@ uses
  sourceform_mfm,msefileutils,mseformatstr, dialogfiles, 
  projectoptionsform,main,mseeditglob,watchform,msesys,msedesigner,
  selecteditpageform,sourceupdate,mseclasses,msearrayutils,
- msebits,msesysutils,mseintegerenter,panelform, beauty;
+ msebits,msesysutils,mseintegerenter,panelform, beauty, procedurelistform;
 
 type
  tsourcepage1 = class(tsourcepage);
@@ -1134,17 +1134,21 @@ begin
  begin
   debuggerfo.file_history.value := tosysfilepath(filepath(activepage.pathdisp.value, fk_file, True));
    
-    if assigned(beautyfo) then
-   beautyfo.filetoclean.value := debuggerfo.file_history.value;
-
   debuggerfo.edited_make.hint :=  ' Compile ' + caption + ' ';
   debuggerfo.edited_run.hint :=  ' Run ' + caption + ' ';
   debuggerfo.edit_compiler.hint :=  ' Compiler Type for ' + caption  + ' ';
   debuggerfo.edit_compilernum.hint :=  ' Compiler Number for ' + caption  + ' ';
   debuggerfo.edit_options.hint :=  ' Option Number for ' + caption  + '. X --> No parameters.';
   debuggerfo.toggle_form_unit.hint := '  Toggle form/unit for ' + caption  + ' '; 
+ 
   end;
- end;
+  
+    if beautyformcreated then 
+   beautyfo.filetoclean.value := debuggerfo.file_history.value;
+   
+     if plformcreated then
+      procedurelistfo.updatelist(debuggerfo.file_history.value);   
+  end;
  end
  else begin
   caption:= c[ord(none)];

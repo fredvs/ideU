@@ -85,10 +85,12 @@ type
     function  GetTickCount: LongWord;
  public
     property  Language: TSourceLanguage read FLanguage write FLanguage default ltPas;
+    procedure UpdateList(const filename: string);
  end;
 
-//var
-//  procedurelistfo: tprocedurelistfo;
+var
+  procedurelistfo: tprocedurelistfo;
+  plformcreated: boolean = false;
   
 procedure doProcedureList;
 
@@ -112,15 +114,15 @@ const
 
 
 procedure doProcedureList;
-var
-  fo: tprocedurelistfo;
 begin
 {$ifdef gTrace}
 writeln('>> doProcedureList');
 {$endif}
-  fo := tprocedurelistfo.create(nil);
+ // procedurelistfo := tprocedurelistfo.create(nil);
+  application.createform(tprocedurelistfo, procedurelistfo);
   try
-    fo.show(true);
+  //  fo.show(true);
+    procedurelistfo.show;
   finally
     {$ifdef gdebug}
     writeln('  before calling fo.free');
@@ -136,6 +138,12 @@ writeln('<< doProcedureList');
 {$endif}
 end;
 
+procedure tprocedurelistfo.UpdateList(const filename: string);
+begin
+FFilename := filename;
+if assigned(FObjectStrings) then FObjectStrings.free;
+InitializeForm;
+end;
 
 procedure tprocedurelistfo.formcreated(const sender: TObject);
 var
@@ -150,9 +158,10 @@ writeln('>> FormCreated');
     FFilename := sourcefo.activepage.filepath
   else
     Close;
-  LoadTime := GetTickCount;
+  //LoadTime := GetTickCount;
   InitializeForm;
-  LoadTime := GetTickCount - LoadTime;
+  plformcreated:= true;
+ // LoadTime := GetTickCount - LoadTime;
   // lblStatus.Text := Format(SParseStatistics, [LoadTime / 1000]);
  {$ifdef gTrace}
 writeln('<< FormCreated');
@@ -526,7 +535,7 @@ begin
         ltPas: Parser.Origin := MemStream.Memory;
 //        ltCpp: CParser.SetOrigin(MemStream.Memory, MemStream.Size);
       end;
-      Caption := Caption + ' - ' + ExtractFileName(FFileName);
+      Caption := 'Procedure List - ' + ExtractFileName(FFileName);
 
       ClearObjectStrings;
       try
@@ -725,6 +734,7 @@ writeln('>> FormDestroy');
 {$ifdef gTrace}
 writeln('<< FormDestroy');
 {$endif}
+plformcreated:= false;
 end;
 
 procedure tprocedurelistfo.FilterTextChanged(const sender: tcustomedit;
@@ -752,7 +762,7 @@ begin
         begin
           { Jump to the line of code for the procedure we selected. }
           JumpToSelectedLine;
-          Close;
+          // Close;
         end;
 {
    key_Escape:
@@ -776,7 +786,7 @@ begin
         begin
           { Jump to the line of code for the procedure we selected. }
           JumpToSelectedLine;
-          Close;
+          //Close;
         end;
      else
         begin
@@ -787,21 +797,25 @@ end;
 
 procedure tprocedurelistfo.JumpToSelectedLine;
 var
-  int1: int32;
+  // int1: int32;
   lGotoLine: integer;
   c,d: gridcoordty;
+  p: pointty;
 begin
   c.row := grdProcedures.Row;
   c.col := 3;
   lGotoLine := StrToInt(grdProcedures.Items[c]);
   d.row := lGotoLine-1;
   d.col := 1;
-  int1 := sourcefo.activepage.source_editor.rowwindowpos;
+  p.y := lGotoLine-1;
+  p.x := 1;
+ // int1 := sourcefo.activepage.source_editor.rowwindowpos;
   sourcefo.activepage.source_editor.row := lGotoLine-1;
   sourcefo.activepage.source_editor.selectcell(d, csm_select, False);
   sourcefo.activepage.source_editor.focuscell(d);
-  
-  sourcefo.activepage.source_editor.rowwindowpos := int1-1;
+//  sourcefo.activepage.source_editor.rowwindowpos := lGotoLine-1;
+  sourcefo.activepage.source_editor.scrollcaret(p);
+  sourcefo.activepage.source_editor.setfocus;  
 end;
 
 procedure tprocedurelistfo.oncellev(const sender: TObject;
@@ -812,7 +826,7 @@ begin
          begin
           { Jump to the line of code for the procedure we selected. }
           JumpToSelectedLine;
-          Close;
+          //Close;
           end;
  end;
 

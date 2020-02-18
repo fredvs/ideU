@@ -17,6 +17,7 @@ object beautyfo: tbeautyfo
     124
   )
   optionswindow = [wo_message]
+  options = [fo_freeonclose, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Code Beautifier'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -70,7 +71,7 @@ object beautyfo: tbeautyfo
     0000000000000000000000000000000000000000
   }
   windowopacity = -Inf
-  oncreated = oncreate
+  ondestroy = ondestroyev
   moduleclassname = 'tmseform'
   object group_file_changed: tgroupbox
     frame.caption = 'Code Beautifier Engine to use'

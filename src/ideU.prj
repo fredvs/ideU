@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=93
+findinfiledialog=94
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,11 +29,11 @@ findinfiledialog=93
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
  history=12
@@ -57,8 +57,9 @@ findinfiledialog=93
  y=211
  cx=554
  cy=316
- filehistory=24
+ filehistory=25
   /home/fred/mseide-msegui/
+  /home/fred/mseuniverse/
   /home/fred/eschecs_mse/
   /home/fred/idegraeme/
   /home/fred/mseide-msegui-fred/
@@ -85,8 +86,18 @@ findinfiledialog=93
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=msesyntaxpainter
+ value=filetoclean
  history=20
+  filetoclean
+  beautyfo
+  file_history
+  file_history.hint
+  scrollcaret
+  scroll
+  scrollbar
+  scrollpos
+  toprow
+  rowwindowpos
   msesyntaxpainter
   msessyntaxpainter
   select
@@ -97,16 +108,6 @@ findinfiledialog=93
   writeln
   rightmarginchars
   closemessages
-  colorerror
-  beautyfo
-  _mfm
-  cek_buttonrelease
-  ss_double
-  mouseeventinfopo
-  mPasLex
-  effacer
-  extendedaty
-  filetoclean
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -235,7 +236,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -785,28 +786,31 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
- DIALOGFILESFO
+ BEAUTYFO
+ DEBUGGERFO
+ MAINFO
  SOURCEFO
- SOURCEPAGE
-moduletypes=4
+moduletypes=5
  TACTIONSMO
- TDIALOGFILESFO
+ TBEAUTYFO
+ TDEBUGGERFO
+ TMAINFO
  TSOURCEFO
- TSOURCEPAGE
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/beauty.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/mseide-msegui/apps/ide/sourcepage.mfm
 befcommandon=0
 makeoptionson=10
  4095
  0
  56
  4093
- 0
+ 4
  48
  0
  0
@@ -1136,7 +1140,7 @@ line=25
  2129
  1044
  588
- 3779
+ 3774
  660
  119
  1088
@@ -1149,7 +1153,7 @@ line=25
  550
  461
  47
- 4038
+ 4033
  684
  91
  15
@@ -1425,8 +1429,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=fontline
+finddtext=procedurelist
 findhistory=20
+ procedurelist
+ caption
+ close
+ initial
  fontline
  focus
  function
@@ -1443,19 +1451,23 @@ findhistory=20
  color
  colors
  fclients
- getcolor
- syntaxcolorinfoty
- jumpto
- integerenter
 findoptions=1
-editpos=7
- 18,1461
- 10,1415
+editpos=15
+ 0,1796
+ 0,-1073741823
+ 0,0
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
- 0,12
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,3
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1463,23 +1475,55 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+sourcefiles=15
  ${PROJECTDIR}/sourcepage.pas
- /home/fred/mseide-msegui/apps/ide/sourcepage.pas
- /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
- ${PROJECTDIR}/dialogfiles.pas
- /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/python.sdef
+ ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=7
+ ${PROJECTDIR}/procedurelistform.pas
+ /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
+ ${PROJECTDIR}/procedurelistform.mfm
+ ${PROJECTDIR}/objectinspector.pas
+ ${PROJECTDIR}/guitemplates.pas
+ /home/fred/mseuniverse/sdl4msegui/lib/common/kernel/msegui.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/beauty.pas
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/plugmanager.pas
+relpaths=15
  sourcepage.pas
- ../mseide-msegui/apps/ide/sourcepage.pas
- ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
- dialogfiles.pas
- ../ideu_bin/ideu_1.9.8_linux64/syntaxdefs/python.sdef
+ mseide-msegui/apps/ide/sourcepage.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=7
+ procedurelistform.pas
+ mseide-msegui/lib/common/widgets/msegrids.pas
+ procedurelistform.mfm
+ objectinspector.pas
+ guitemplates.pas
+ mseuniverse/sdl4msegui/lib/common/kernel/msegui.pas
+ commandorform.pas
+ main.pas
+ beauty.pas
+ ideU.pas
+ plugmanager.pas
+ismoduletexts=15
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ -1
+ 0
  0
  0
  0
@@ -1488,11 +1532,11 @@ ismoduletexts=7
  0
  0
 modules=5
+ /home/fred/ideu/src/beauty.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/mseide-msegui/apps/ide/sourcepage.mfm
+ /home/fred/ideu/src/commandorform.mfm
 moduleoptions=5
  0
  0
@@ -1500,22 +1544,38 @@ moduleoptions=5
  0
  0
 visiblemodules=5
+ -1
+ 0
+ 0
  0
  -1
- -1
- -1
- -1
 nomenumodules=5
- -1
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-firsttab=0
-index=0
+order=15
+ 3
+ 8
+ 1
+ 0
+ 2
+ 6
+ 5
+ 14
+ 13
+ 9
+ 12
+ 11
+ 10
+ 4
+ 7
+firsttab=1
+index=3
 [layout]
-windowlayout=610
+windowlayout=607
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1630,10 +1690,10 @@ windowlayout=610
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=915
- cy=414
+ x=0
+ y=29
+ cx=1368
+ cy=710
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1649,7 +1709,7 @@ windowlayout=610
  x=0
  y=0
  cx=205
- cy=516
+ cy=513
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1660,7 +1720,7 @@ windowlayout=610
  sortdescend1=0
  sorted=0
  col=0
- row=17
+ row=9
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1745,15 +1805,15 @@ windowlayout=610
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=836
- y=157
+ x=990
+ y=189
  cx=316
  cy=484
  rcx=0
@@ -1763,9 +1823,9 @@ windowlayout=610
  visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
- width0=136
+ width0=159
  sortdescend0=0
- width1=164
+ width1=141
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1929,7 +1989,7 @@ windowlayout=610
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1960,7 +2020,7 @@ windowlayout=610
  x=0
  y=0
  cx=1358
- cy=58
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1972,11 +2032,11 @@ windowlayout=610
  nx=0
  ny=0
  ncx=1358
- ncy=61
+ ncy=64
  x=0
  y=0
  cx=1358
- cy=61
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1988,6 +2048,11 @@ windowlayout=610
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/sourcepage.pas
  history=20
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/sourcepage.pas
+  /home/fred/ideu/src/procedurelistform.pas
+  /home/fred/mseide-msegui/apps/ide/procedurelistform.pas
+  /home/fred/mseide-msegui/apps/ide/sourcepage.pas
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/python.sdef
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal2.sdef
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/mselang.sdef
@@ -1996,18 +2061,13 @@ windowlayout=610
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized.sdef
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
   /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/procedurelistform.pas
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
-  /home/fred/mseide-msegui/apps/ide/sourcepage.pas
-  /home/fred/mseide-msegui/apps/ide/procedurelistform.pas
   /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
   /home/fred/mseide-msegui/apps/ide/syntaxdefs/pascal_solarized_dark.sdef
   /home/fred/ideu/src/msesyntaxpainter.pas
   /home/fred/ideu/src/syntaxdefs/pascal.sdef
   /home/fred/ptoptest/sourcepage.pas
   /home/fred/ideu/src/
-  /home/fred/ideu/src/beauty.pas
-  /home/fred/ideu/src/aboutform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2025,19 +2085,35 @@ windowlayout=610
  x=208
  y=0
  cx=1150
- cy=516
+ cy=513
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=0
+ order=15
+  3
+  8
+  1
+  0
+  2
+  6
+  5
+  14
+  13
+  9
+  12
+  11
+  10
+  4
+  7
+ firsttab=1
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2064,50 +2140,31 @@ windowlayout=610
  ncx=0
  ncy=0
  x=0
- y=61
+ y=64
  cx=1358
- cy=516
+ cy=513
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
+ [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=377
- y=290
- cx=710
- cy=68
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_dialogfilesfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=474
- y=181
- cx=346
- cy=367
+ x=730
+ y=50
+ cx=210
+ cy=124
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=1
- [_mse_sourcepage_mse_]
+ [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
  stackedunder=targetconsolefo
@@ -2117,10 +2174,10 @@ windowlayout=610
  ny=0
  ncx=0
  ncy=0
- x=192
- y=245
- cx=321
- cy=228
+ x=34
+ y=82
+ cx=1161
+ cy=64
  rcx=0
  rcy=0
  wsize=0

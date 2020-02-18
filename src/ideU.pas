@@ -114,10 +114,10 @@ begin
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
   application.createform(tdialogfilesfo, dialogfilesfo);
-  application.createform(tbeautyfo, beautyfo);
+ // application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;
-  beautyfo.Close;
+ // beautyfo.Close;
 
   application.createform(tmainfo, mainfo);
   application.createform(taboutfo, aboutfo);

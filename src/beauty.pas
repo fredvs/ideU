@@ -20,19 +20,35 @@ type
    OK: tbutton;
    tbutton2: tbutton;
     procedure dobeauti(const sender: TObject);
-    procedure oncreate(const sender: TObject);
     procedure doclose(const sender: TObject);
+   procedure ondestroyev(const sender: TObject);
   end;
 
 var 
   beautyfo: tbeautyfo;
+  beautyformcreated: boolean = false;
+
+procedure doBeauty;  
 
 implementation
 
 uses 
 beauty_mfm, plugmanager, commandorform;
-procedure tbeautyfo.dobeauti(const sender: TObject);
 
+procedure doBeauty;
+begin
+try
+application.createform(tbeautyfo, beautyfo);
+beautyfo.filetoclean.value := debuggerfo.file_history.value;
+
+    beautyfo.show;
+    beautyfo.bringtofront;
+    beautyformcreated:= true;
+  finally  
+   end;
+end;
+
+procedure tbeautyfo.dobeauti(const sender: TObject);
 var 
   x : integer;
 begin
@@ -41,14 +57,14 @@ begin
   DoBeautifier(debuggerfo.file_history.value, x, createbackup.value);
 end;
 
-procedure tbeautyfo.oncreate(const sender: TObject);
-begin
-  visible := false;
-end;
-
 procedure tbeautyfo.doclose(const sender: TObject);
 begin
   close;
+end;
+
+procedure tbeautyfo.ondestroyev(const sender: TObject);
+begin
+beautyformcreated:= false;
 end;
 
 end.

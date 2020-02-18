@@ -1,18 +1,18 @@
 object procedurelistfo: tprocedurelistfo
-  bounds_x = 454
-  bounds_y = 185
-  bounds_cx = 500
-  bounds_cy = 326
+  bounds_x = 717
+  bounds_y = 69
+  bounds_cx = 376
+  bounds_cy = 192
   bounds_cxmax = 577
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    500
-    326
+    376
+    192
   )
-  optionswindow = [wo_dialog]
+  optionswindow = [wo_message]
   options = [fo_freeonclose, fo_cancelonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Procedure List'
   icon.options = [bmo_masked, bmo_graymask]
@@ -88,9 +88,9 @@ object procedurelistfo: tprocedurelistfo
       0
       0
     )
-    bounds_x = 15
-    bounds_y = 8
-    bounds_cx = 280
+    bounds_x = 5
+    bounds_y = 6
+    bounds_cx = 209
     bounds_cy = 21
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselectonfirstclick, oe_focusrectonreadonly]
     ontextedited = FilterTextChanged
@@ -101,11 +101,11 @@ object procedurelistfo: tprocedurelistfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 2
-    bounds_x = 8
-    bounds_y = 37
-    bounds_cx = 482
-    bounds_cy = 284
-    anchors = [an_left, an_top, an_bottom]
+    bounds_x = 2
+    bounds_y = 33
+    bounds_cx = 370
+    bounds_cy = 154
+    anchors = [an_left, an_top, an_right, an_bottom]
     onkeydown = ResultGridKeyDown
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     datacols.count = 4
@@ -117,7 +117,7 @@ object procedurelistfo: tprocedurelistfo
       item
         coloractive = 6815851
         colorfocused = 14265343
-        width = 30
+        width = 42
         fontactivenum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
@@ -148,7 +148,7 @@ object procedurelistfo: tprocedurelistfo
       item
         coloractive = 6815851
         colorfocused = 14265343
-        width = 300
+        width = 227
         fontactivenum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
@@ -179,7 +179,7 @@ object procedurelistfo: tprocedurelistfo
       item
         coloractive = 6815851
         colorfocused = 14265343
-        width = 130
+        width = 78
         fontactivenum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
@@ -287,9 +287,9 @@ object procedurelistfo: tprocedurelistfo
       0
     )
     taborder = 1
-    bounds_x = 307
-    bounds_y = 8
-    bounds_cx = 174
+    bounds_x = 220
+    bounds_y = 6
+    bounds_cx = 150
     bounds_cy = 21
     dropdown.cols.count = 1
     dropdown.cols.items = <    

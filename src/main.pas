@@ -1068,16 +1068,11 @@ procedure tmainfo.mainfoondestroy(const Sender: TObject);
 begin
   if SakIsEnabled = True then
     sakunloadlib;
-    
-  beautyfo.close;  
-
   designnotifications.unRegisternotification(idesignnotification(self));
   abortmake;
   abortdownload;
   sourceupdate.deinit(designer);
-
   ideuwriteconfig();
-
 end;
 
 procedure tmainfo.dofindmodulebyname(const amodule: pmoduleinfoty;
@@ -4686,9 +4681,10 @@ end;
 
 procedure tmainfo.onbeauty(const sender: TObject);
 begin
-beautyfo.filetoclean.value := debuggerfo.file_history.value;
-beautyfo.visible := true;
-beautyfo.bringtofront;
+if not beautyformcreated then doBeauty;
+//beautyfo.filetoclean.value := debuggerfo.file_history.value;
+//beautyfo.visible := true;
+//beautyfo.bringtofront;
 end;
 
 

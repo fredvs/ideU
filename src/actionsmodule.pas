@@ -372,7 +372,7 @@ end;
 
 procedure tactionsmo.procedurelistonexecute(const sender: TObject);
 begin
-  doProcedureList;
+if not plformcreated then doProcedureList;
 end;
 
 function tactionsmo.gettoolshortcutaction(const index: int32;
