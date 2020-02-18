@@ -123,7 +123,7 @@ function fpgd_loadfile(afilename : PChar) : integer ;
 Procedure RunCustomCompiled(Const AFilename: String; acompiler: String);
 
 Var 
-  dataf, dataf2, dataf3, conso: string;
+  dataf, dataf2, conso: string;
   len1: integer;
 Begin
 

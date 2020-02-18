@@ -1144,7 +1144,10 @@ begin
   end;
   
     if beautyformcreated then 
-   beautyfo.filetoclean.value := debuggerfo.file_history.value;
+    begin
+    beautyfo.filetoclean.value :=  ExtractFileName(debuggerfo.file_history.value);
+    beautyfo.filetoclean.hint := debuggerfo.file_history.value;
+    end;
    
      if plformcreated then
       procedurelistfo.updatelist(debuggerfo.file_history.value);   

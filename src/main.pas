@@ -3360,8 +3360,6 @@ begin
 end;
 
 function tmainfo.closeallmodule(): boolean;
-var
-  int1: integer;
 begin
   while designer.modules.Count > 0 do
   begin

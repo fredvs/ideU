@@ -153,32 +153,16 @@ object beautyfo: tbeautyfo
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
-  object OK: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    face.localprops = []
-    face.template = sourcefo.tfacecomp1
-    taborder = 3
-    bounds_x = 127
-    bounds_y = 96
-    bounds_cx = 61
-    bounds_cy = 24
-    state = [as_localinvisible, as_localcaption, as_localonexecute]
-    caption = 'Close'
-    modalresult = mr_ok
-    onexecute = doclose
-  end
   object tbutton2: tbutton
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.localprops = []
     face.template = sourcefo.tfacecomp1
-    taborder = 4
-    bounds_x = 12
+    taborder = 3
+    bounds_x = 36
     bounds_y = 96
-    bounds_cx = 105
+    bounds_cx = 134
     bounds_cy = 24
     state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = 'Do beautifier'

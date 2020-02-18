@@ -5,7 +5,7 @@ unit beauty;
 interface
 
 uses
- msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus,
+ msetypes, mseglob, mseguiglob, sysutils, mseguiintf, mseapplication, msestat, msemenus,
  msegui,msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
  msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob,
  msescrollbar, msedispwidgets, mserichstring;
@@ -17,7 +17,6 @@ type
     tbptop: tbooleaneditradio;
     createbackup: tbooleanedit;
     filetoclean: tstringdisp;
-   OK: tbutton;
    tbutton2: tbutton;
     procedure dobeauti(const sender: TObject);
     procedure doclose(const sender: TObject);
@@ -27,7 +26,7 @@ type
 var 
   beautyfo: tbeautyfo;
   beautyformcreated: boolean = false;
-
+  
 procedure doBeauty;  
 
 implementation
@@ -39,8 +38,8 @@ procedure doBeauty;
 begin
 try
 application.createform(tbeautyfo, beautyfo);
-beautyfo.filetoclean.value := debuggerfo.file_history.value;
-
+beautyfo.filetoclean.value :=  ExtractFileName(debuggerfo.file_history.value);
+beautyfo.filetoclean.hint := debuggerfo.file_history.value;
     beautyfo.show;
     beautyfo.bringtofront;
     beautyformcreated:= true;
