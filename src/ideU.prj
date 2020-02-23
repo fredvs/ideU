@@ -1432,8 +1432,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=caption
+finddtext=DoBeautifier
 findhistory=20
+ DoBeautifier
  caption
  procedurelist
  close
@@ -1453,16 +1454,17 @@ findhistory=20
  background
  color
  colors
- fclients
 findoptions=1
 editpos=20
  0,-1073741823
- 0,895
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,0
- 0,50
- 0,0
- 0,8
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1471,11 +1473,9 @@ editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1148
- 0,7
- 0,3362
- 0,143
- 0,22
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1505,7 +1505,7 @@ sourcefiles=20
  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
  ${PROJECTDIR}/procedurelistform.mfm
  ${PROJECTDIR}/objectinspector.pas
- ${PROJECTDIR}/guitemplates.pas
+ /home/fred/ideu/src/guitemplates.pas
  /home/fred/mseuniverse/sdl4msegui/lib/common/kernel/msegui.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/main.pas
@@ -1523,7 +1523,7 @@ relpaths=20
  sourceform.pas
  actionsmodule.pas
  procedurelistform.pas
- ../mseide-msegui/lib/common/widgets/msegrids.pas
+ mseide-msegui/lib/common/widgets/msegrids.pas
  procedurelistform.mfm
  objectinspector.pas
  guitemplates.pas
@@ -1590,27 +1590,27 @@ nomenumodules=6
 [sourcefo.files_tab]
 order=20
  0
- 13
- 8
- 3
- 5
  6
- 1
- 15
- 16
- 17
  18
- 19
- 7
+ 3
+ 13
  4
- 9
- 10
- 11
+ 5
  12
  2
  14
-firsttab=3
-index=11
+ 15
+ 16
+ 17
+ 1
+ 19
+ 7
+ 8
+ 9
+ 10
+ 11
+firsttab=9
+index=16
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1746,7 +1746,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=513
+ cy=522
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1842,7 +1842,7 @@ windowlayout=631
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1857,7 +1857,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
  width0=159
@@ -2057,7 +2057,7 @@ windowlayout=631
  x=0
  y=0
  cx=1358
- cy=61
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2069,11 +2069,11 @@ windowlayout=631
  nx=0
  ny=0
  ncx=1358
- ncy=64
+ ncy=55
  x=0
  y=0
  cx=1358
- cy=64
+ cy=55
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2083,10 +2083,14 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/guitemplates.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/guitemplates.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/mseuniverse/sdl4msegui/lib/common/kernel/msegui.pas
+  /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/procedurelistform.pas
   /home/fred/mseide-msegui/apps/ide/procedurelistform.pas
@@ -2101,10 +2105,6 @@ windowlayout=631
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
   /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
-  /home/fred/mseide-msegui/apps/ide/syntaxdefs/pascal_solarized_dark.sdef
-  /home/fred/ideu/src/msesyntaxpainter.pas
-  /home/fred/ideu/src/syntaxdefs/pascal.sdef
-  /home/fred/ptoptest/sourcepage.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2122,33 +2122,33 @@ windowlayout=631
  x=208
  y=0
  cx=1150
- cy=513
+ cy=522
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=20
   0
-  13
-  8
-  3
-  5
   6
-  1
-  15
-  16
-  17
   18
-  19
-  7
+  3
+  13
   4
-  9
-  10
-  11
+  5
   12
   2
   14
- firsttab=3
- index=11
+  15
+  16
+  17
+  1
+  19
+  7
+  8
+  9
+  10
+  11
+ firsttab=9
+ index=16
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2182,15 +2182,15 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=64
+ y=55
  cx=1358
- cy=513
+ cy=522
  rcx=0
  rcy=0
  [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2228,7 +2228,7 @@ windowlayout=631
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
