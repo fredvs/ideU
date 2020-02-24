@@ -355,7 +355,7 @@ implementation
 uses
 plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
  projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
- disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu,
+ disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu, finddialogform,
  componentstore,cpuform,sysutils,msecomptree, procedurelistform;
  
 procedure configureide;
@@ -833,8 +833,12 @@ begin
 end;
 
 procedure tactionsmo.lineactonexecute(const sender: TObject);
+
 begin
- sourcefo.activepage.doline;
+if lineformcreated then linefo.bringtofront else
+ integerenter(fgototheline,1, sourcefo.activepage.source_editor.rowcount,
+      sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) 
+// sourcefo.activepage.doline;
 end;
 
 procedure tactionsmo.findactonexecute(const sender: tobject);
@@ -843,7 +847,10 @@ begin
   targetconsolefo.dofind;
  end
  else begin
-  sourcefo.activepage.dofind;
+ 
+ if findformcreated then finddialogfo.bringtofront else
+ finddialogexecute(findinfos);
+  // sourcefo.activepage.dofind;
  end;
 end;
 

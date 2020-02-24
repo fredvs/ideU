@@ -22,7 +22,7 @@ interface
 uses
  mseforms,msesimplewidgets,msedataedits,msegraphedits,msetextedit,msestrings,
  msetypes,msestat,msestatfile,projectoptionsform,mseglob,mseevent,msegui,
- msemenus,msesplitter,msegraphics,msegraphutils,msewidgets;
+ msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseclasses,mseguiglob;
 
 type
 
@@ -31,12 +31,13 @@ type
    statfile1: tstatfile;
    ok: tbutton;
    tlayouter1: tlayouter;
-   cancel: tbutton;
-   tbutton2: tbutton;
    tlayouter2: tlayouter;
    selectedonly: tbooleanedit;
    wholeword: tbooleanedit;
    casesensitive: tbooleanedit;
+   tbutton2: tbutton;
+   procedure oncloseev(const sender: TObject);
+   procedure onok(const sender: TObject);
   private
    procedure valuestoinfo(out info: findinfoty);
    procedure infotovalues(const info: findinfoty);
@@ -46,9 +47,14 @@ procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
 function finddialogexecute(var info: findinfoty): boolean;
 
+var 
+  finddialogfo: tfinddialogfo;
+  findformcreated: boolean = false;
+  findinfos: findinfoty;
+
 implementation
 uses
- mseguiglob,finddialogform_mfm;
+ finddialogform_mfm, sourceform;
 
 procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
@@ -65,19 +71,26 @@ begin
 end;
 
 function finddialogexecute(var info: findinfoty): boolean;
-var
- fo: tfinddialogfo;
 begin
- fo:= tfinddialogfo.create(nil);
+
+ finddialogfo:= tfinddialogfo.create(nil);
  try
-  fo.infotovalues(info);
-  result:= fo.show(true,nil) = mr_ok;
-  if result then begin
-   fo.valuestoinfo(info);
-  end;
- finally
-  fo.Free;
+ 
+  info:= projectoptions.findreplaceinfo.find;
+ if not sourcefo.activepage.edit.hasselection then begin
+ info.selectedonly:= false;
  end;
+  info.text:=  sourcefo.activepage.edit.selectedtext;
+  finddialogfo.infotovalues(info);
+  //result:= fo.show(true,nil) = mr_ok;
+  finddialogfo.show;
+ // if result then begin
+ //  finddialogfo.valuestoinfo(info);
+//  end;
+ finally
+//  fo.Free;
+ end;
+
 end;
 
 { tfinddialogfo }
@@ -101,6 +114,17 @@ begin
   wholeword.value:= so_wholeword in options;
 //  self.selectedonly.value:= selectedonly;
  end;
+end;
+
+procedure tfinddialogfo.oncloseev(const sender: TObject);
+begin
+ findformcreated:= false;
+end;
+
+procedure tfinddialogfo.onok(const sender: TObject);
+begin
+  finddialogfo.valuestoinfo(findinfos);
+  sourcefo.activepage.dofind;  
 end;
 
 end.

@@ -13,8 +13,8 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 377
-  bounds_y = 290
+  bounds_x = 322
+  bounds_y = 102
   bounds_cx = 700
   bounds_cy = 68
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -1080,7 +1080,9 @@ object mainfo: tmainfo
           item
             action = actionsmo.procedurelist
             caption = 'Methods list'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localimagelist, as_localimagenr]
+            imagelist = actionsmo.buttonicons
+            imagenr = 38
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'
@@ -1260,7 +1262,6 @@ object mainfo: tmainfo
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
-    menu.onexecute = syntaxdefload
     left = 180
   end
   object openfile: tfiledialog

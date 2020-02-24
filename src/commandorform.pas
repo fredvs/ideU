@@ -188,7 +188,7 @@ end;
 
 procedure tdebuggerfo.findinpage(const sender: TObject);
 begin
- sourcefo.activepage.dofind;
+  actionsmo.findactonexecute(sender); 
  end;
 
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);

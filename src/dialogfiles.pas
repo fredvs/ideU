@@ -16,18 +16,35 @@ type
    procedure loaddef(const sender: tcustomlistview);
    procedure butok(const sender: TObject);
    procedure butcancel(const sender: TObject);
+   procedure oncloseev(const sender: TObject);
  end;
+
 var
  dialogfilesfo: tdialogfilesfo;
  tabind : integer = -1;
+ dialogfilesformcreated: boolean = false;
   
  thesdef : msestring = '';
  theactivepage : msestring = '';
  han : integer = -1;
  
+ procedure dodialogfiles; 
+ 
 implementation
 uses
  dialogfiles_mfm, main;
+ 
+procedure dodialogfiles;
+begin
+try
+application.createform(tdialogfilesfo, dialogfilesfo);
+  dialogfilesfo.show;
+    dialogfilesfo.bringtofront;
+    dialogfilesformcreated := true;
+  finally  
+   end;
+end; 
+ 
  
 procedure tdialogfilesfo.loaddef(const sender: tcustomlistview);
 var
@@ -78,7 +95,7 @@ thesdef := list_files.directory+ directoryseparator +selected_file.text ;
 end;
 
 end;
-close ;
+//close ;
 end;
 
 procedure tdialogfilesfo.butcancel(const sender: TObject);
@@ -94,7 +111,12 @@ sourcefo.activepage.updatestatvalues;
 theactivepage := '';
 end;
 end;
-close ;
+//close ;
+end;
+
+procedure tdialogfilesfo.oncloseev(const sender: TObject);
+begin
+dialogfilesformcreated:= false;
 end;
 
 end.

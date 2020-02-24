@@ -572,6 +572,9 @@ end;
 
 procedure tmainfo.syntaxdefload(const Sender: TObject);
 begin
+
+if not dialogfilesformcreated then dodialogfiles ;
+
   if assigned(sourcefo.ActivePage) then
   begin
     dialogfilesfo.tag := 0;
@@ -587,7 +590,7 @@ begin
     dialogfilesfo.selected_file.frame.Caption := 'Selected Syntax Definition File';
     // + dialogfilesfo.list_files.directory ;
     dialogfilesfo.selected_file.Text := '';
-    dialogfilesfo.Show(True);
+    dialogfilesfo.Show;
   end;
 end;
 
@@ -4590,6 +4593,8 @@ end;
 procedure tmainfo.menuwindowlayoutexe(const Sender: TObject);
 begin
 
+if not dialogfilesformcreated then dodialogfiles ;
+
   dialogfilesfo.tag := 1;
 
   dialogfilesfo.Caption := 'Load a Layout File';
@@ -4604,7 +4609,8 @@ begin
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text := '';
   //dialogfilesfo.activate;
-  dialogfilesfo.Show(True);
+  dialogfilesfo.Show;
+  dialogfilesfo.bringtofront;
 
 end;
 

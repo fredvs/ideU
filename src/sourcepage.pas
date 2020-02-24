@@ -10,7 +10,7 @@ uses
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
  msegraphutils,msegrids,breakpointsform,pascaldesignparser,msefilechange,
  msestrings,mserichstring,mseparser,msegridsglob,projectoptionsform,msegraphics,
- msemenus,msesimplewidgets,msewidgets;
+ msemenus,msesimplewidgets,msewidgets,mseintegerenter;
 
 type
  sourcepageasynctagty = (spat_showasform{,spat_checkbracket},spat_showsource);
@@ -161,7 +161,7 @@ implementation
 uses
  sourcepage_mfm,msefileutils,sourceform,main, commandorform,
  sysutils,finddialogform,replacedialogform,msekeyboard,
- sourceupdate,msefiledialog,mseintegerenter,msedesigner,mseformatstr,
+ sourceupdate,msefiledialog,msedesigner,mseformatstr,
  msesys,make,actionsmodule,sourcehintform,
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
@@ -1174,29 +1174,32 @@ procedure tsourcepage.doline;
 var
  d: gridcoordty;
 begin
- if integerenter(fgotoline,1,source_editor.rowcount,
-      sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) = mr_ok then begin
-  source_editor.row:= fgotoline-1;
+
+ //if integerenter(fgotoline,1,source_editor.rowcount,
+  //    sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) = mr_ok then begin
+      
+  source_editor.row:= fgototheline-1;
   d.row := source_editor.row;
   d.col := 1;
    source_editor.selectcell(d, csm_select, False);
    source_editor.focuscell(d);
- end;
+ 
 end;
 
 procedure tsourcepage.dofind;
-var
- ainfo: findinfoty;
+//var
+// ainfo: findinfoty;
 begin
- ainfo:= projectoptions.findreplaceinfo.find;
- if not edit.hasselection then begin
-  ainfo.selectedonly:= false;
- end;
+ //ainfo:= projectoptions.findreplaceinfo.find;
+// if not edit.hasselection then begin
+//  ainfo.selectedonly:= false;
+// end;
 // ainfo.text:= edit.selectedtext;
- if finddialogexecute(ainfo) then begin
-  projectoptions.findreplaceinfo.find:= ainfo;
+// if finddialogexecute(ainfo) then begin
+
+  projectoptions.findreplaceinfo.find:= findinfos;
   findintextedit(edit,projectoptions.findreplaceinfo.find,ffindpos);
- end;
+
 end;
 
 procedure tsourcepage.doreplace;

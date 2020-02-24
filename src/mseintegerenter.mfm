@@ -1,0 +1,83 @@
+object integerenterfo: tintegerenterfo
+  visible = False
+  bounds_x = 554
+  bounds_y = 262
+  bounds_cx = 162
+  bounds_cy = 60
+  bounds_cxmin = 162
+  bounds_cymin = 60
+  bounds_cxmax = 162
+  bounds_cymax = 60
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    162
+    60
+  )
+  optionswindow = [wo_message]
+  options = [fo_freeonclose, fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat]
+  icon.options = [bmo_masked]
+  icon.origformat = 'png'
+  icon.image = {
+    0000000002000000100000001000000074010000000000000000000000000000
+    00000000000000000000000000000000000000000000001793D0FF0700000008
+    93D0FF01136C140793D0FF010000000793D0FF01136C140793D0FF0100000007
+    93D0FF01136C140190A69001E8EBE801FBFBFB01E6EAE601839E8401136C1401
+    93D0FF010000000793D0FF01136C1401CDD5CD017695760139763A01B6C3B601
+    EDEFED01136C140193D0FF010000000793D0FF01136C140334743401B2BFB201
+    E1E5E101136C140193D0FF010000000793D0FF01136C1402E5E9E501FFFFFF01
+    F3F5F30170917001136C140193D0FF010000000793D0FF01136C14033F783F01
+    B6C3B601EEF0EE01206E200193D0FF010000000793D0FF01136C140430733101
+    FFFFFF015280520193D0FF010000000793D0FF016C8F6C01BDC8BD015B855B01
+    4A7C4A01BAC6BA01F0F2F001136C140193D0FF010000000793D0FF01206E2001
+    B4C1B401F2F4F201F8F9F801DEE3DE0174937401136C140193D0FF0100000007
+    93D0FF01136C140793D0FF010000000793D0FF01136C140793D0FF0100000008
+    93D0FF070000001200000000803F0000C07F0000C07F0000C07F0000C07F0000
+    C07F0000C07F0000C07F0000C07F0000C07F0000C07F0000C07F0000C07F0000
+    803F000000000000
+  }
+  windowopacity = -Inf
+  onclose = oncloseev
+  moduleclassname = 'tmseform'
+  object lab: tlabel
+    optionswidget1 = [ow1_autoheight]
+    taborder = 2
+    bounds_x = 12
+    bounds_y = 6
+    bounds_cx = 142
+    bounds_cy = 15
+    anchors = [an_left, an_top, an_bottom]
+    caption = 'lab'
+    textflags = [tf_xcentered, tf_ycentered, tf_wordbreak]
+  end
+  object ok: tbutton
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 1
+    bounds_x = 102
+    bounds_y = 32
+    bounds_cx = 50
+    bounds_cy = 20
+    anchors = [an_right, an_bottom]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = ondoline
+  end
+  object value: tintegeredit
+    frame.localprops = []
+    frame.localprops1 = []
+    bounds_x = 9
+    bounds_y = 29
+    bounds_cx = 77
+    bounds_cy = 23
+    anchors = [an_left, an_right, an_bottom]
+    optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    font.height = 14
+    font.name = 'stf_default'
+    font.localprops = [flp_height]
+    reffontheight = 17
+  end
+end

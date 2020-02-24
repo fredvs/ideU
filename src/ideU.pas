@@ -112,7 +112,7 @@ begin
   application.createform(tmemoryfo, memoryfo);
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
-  application.createform(tdialogfilesfo, dialogfilesfo);
+ // application.createform(tdialogfilesfo, dialogfilesfo);
  // application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;

@@ -1,20 +1,25 @@
 object finddialogfo: tfinddialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 319
-  bounds_y = 205
-  bounds_cx = 312
-  bounds_cy = 114
+  bounds_x = 440
+  bounds_y = 259
+  bounds_cx = 300
+  bounds_cy = 90
+  bounds_cxmin = 300
+  bounds_cymin = 90
+  bounds_cxmax = 300
+  bounds_cymax = 90
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    312
-    114
+    300
+    90
   )
-  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  optionswindow = [wo_message]
+  options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find Text'
   icon.options = [bmo_masked]
@@ -42,6 +47,7 @@ object finddialogfo: tfinddialogfo
     00000000
   }
   windowopacity = -Inf
+  onclose = oncloseev
   moduleclassname = 'tmseform'
   object tlayouter2: tlayouter
     frame.localprops = []
@@ -61,14 +67,14 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         82
         2
       )
       bounds_x = 188
-      bounds_y = 11
+      bounds_y = 10
       bounds_cx = 95
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
     end
     object wholeword: tbooleanedit
@@ -77,15 +83,15 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         72
         2
       )
       taborder = 1
       bounds_x = 99
-      bounds_y = 11
+      bounds_y = 10
       bounds_cx = 85
-      bounds_cy = 16
+      bounds_cy = 17
     end
     object casesensitive: tbooleanedit
       frame.caption = 'case&sensitive'
@@ -93,15 +99,15 @@ object finddialogfo: tfinddialogfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         82
         2
       )
       taborder = 2
       bounds_x = 0
-      bounds_y = 11
+      bounds_y = 10
       bounds_cx = 95
-      bounds_cy = 16
+      bounds_cy = 17
     end
   end
   object findtext: thistoryedit
@@ -115,14 +121,14 @@ object finddialogfo: tfinddialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
-    bounds_x = 8
-    bounds_y = 6
-    bounds_cx = 297
-    bounds_cy = 37
+    bounds_x = 9
+    bounds_y = 2
+    bounds_cx = 226
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
@@ -130,16 +136,16 @@ object finddialogfo: tfinddialogfo
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlayouter1: tlayouter
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 198
+    bounds_x = 264
     bounds_y = 88
-    bounds_cx = 105
-    bounds_cy = 20
+    bounds_cx = 27
+    bounds_cy = 0
     anchors = [an_top, an_right]
     optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
     optionslayout = [lao_placex, lao_aligny, lao_syncmaxautosize]
@@ -147,27 +153,17 @@ object finddialogfo: tfinddialogfo
     place_mindist = 5
     place_maxdist = 5
     place_mode = wam_end
-    object cancel: tbutton
-      bounds_x = 55
-      bounds_y = 0
-      bounds_cx = 50
-      bounds_cy = 20
-      anchors = [an_top, an_right]
-      state = [as_localcaption]
-      caption = '&Cancel'
-      modalresult = mr_cancel
-    end
-    object tbutton2: tbutton
-      taborder = 1
-      bounds_x = 0
-      bounds_y = 0
-      bounds_cx = 50
-      bounds_cy = 20
-      anchors = [an_top, an_right]
-      state = [as_default, as_localdefault, as_localcaption]
-      caption = '&OK'
-      modalresult = mr_ok
-    end
+  end
+  object tbutton2: tbutton
+    taborder = 3
+    bounds_x = 248
+    bounds_y = 15
+    bounds_cx = 42
+    bounds_cy = 21
+    anchors = [an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = onok
   end
   object statfile1: tstatfile
     filename = 'finddialogfo.sta'
