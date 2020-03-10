@@ -74,6 +74,7 @@ function finddialogexecute(var info: findinfoty): boolean;
 begin
 
  finddialogfo:= tfinddialogfo.create(nil);
+ findformcreated:= true;
  try
  
   info:= projectoptions.findreplaceinfo.find;
@@ -118,7 +119,7 @@ end;
 
 procedure tfinddialogfo.oncloseev(const sender: TObject);
 begin
- findformcreated:= false;
+ findformcreated := false;
 end;
 
 procedure tfinddialogfo.onok(const sender: TObject);

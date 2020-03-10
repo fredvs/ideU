@@ -68,7 +68,7 @@ type
    procedure JumpToSelectedLine;
    procedure oncellev(const sender: TObject; var info: celleventinfoty);
  private
-    FFilename: String;
+    FFilename: mseString;
     FLanguage: TSourceLanguage;
     FSortOnColumn: Integer;
     FSearchAll: Boolean;
@@ -181,6 +181,7 @@ writeln('>> InitializeForm');
   FSortOnColumn := 1;
 
   FProcList := TStringList.Create;
+ 
 
 //  LoadSettings;
   try
@@ -316,7 +317,7 @@ var
 
   function MoveToImplementation: Boolean;
   begin
-    if IsProgram((FFileName)) or (IsInc(FFileName)) then
+    if IsProgram(ansistring(FFileName)) or (IsInc(ansistring(FFileName))) then
     begin
       Result := True;
       Exit;
@@ -390,6 +391,7 @@ var
     {$ifdef gTrace}
     writeln('>> FindProcs');
     {$endif}
+    namelist := TStringList.Create;
     FProcList.Capacity := 200;
     FProcList.BeginUpdate;
     try
@@ -441,7 +443,7 @@ var
                     Break;
 
                   if not (Parser.TokenID in [tkCRLF, tkCRLFCo]) then
-                    ProcLine := ProcLine + Parser.Token;
+                    ProcLine := ProcLine + UTF8Decode(Parser.Token);
                   Parser.Next;
                 end; // while
                 if Parser.TokenID = tkSemicolon then
@@ -496,6 +498,7 @@ var
       end; //case Language
     finally
       FProcList.EndUpdate;
+      namelist.free;
     end;
     {$ifdef gTrace}
     writeln('<< FindProcs');
@@ -522,7 +525,7 @@ begin
     MemStream := TMemoryStream.Create;
     try
       // Read from file on disk and store in a memory stream
-      SFile := TFileStream.Create((FFilename), fmOpenRead or fmShareDenyWrite);
+      SFile := TFileStream.Create(ansistring(FFilename), fmOpenRead or fmShareDenyWrite);
       try
         SFile.Position := 0;
         MemStream.CopyFrom(SFile, SFile.Size);
@@ -565,13 +568,13 @@ var
   TempStr: msestring;
   i: Integer;
 begin
-  ProcedureInfo.Name := UTF8Decode(CompressWhiteSpace(ProcedureInfo.Name));
+  ProcedureInfo.Name := UTF8Decode(CompressWhiteSpace(ansistring(ProcedureInfo.Name)));
   case Language of
     ltPas:
       begin
         TempStr := ProcedureInfo.Name;
         // Remove the class reserved word
-        if StrBeginsWith('CLASS ', TempStr, False) then // Do not localize.
+        if StrBeginsWith('CLASS ', ansistring(TempStr), False) then // Do not localize.
           Delete(TempStr, 1, 6); // Do not localize.
         // Remove 'function' or 'procedure'
         i := System.Pos(' ', TempStr);
@@ -603,9 +606,9 @@ begin
         else
         begin
           ProcedureInfo.ProcClass := Copy(TempStr, 1, i - 1);
-          FObjectStrings.Add(UTF8Decode(ProcedureInfo.ProcClass));
+         FObjectStrings.Add(ansistring(ProcedureInfo.ProcClass));
         end;
-        FProcList.AddObject(#9 + TempStr + #9 + UTF8Decode(ProcedureInfo.ProcedureType) + #9 + (IntToStr(ProcedureInfo.LineNo)), ProcedureInfo);
+    FProcList.AddObject(ansistring(#9 + TempStr + #9 + (ProcedureInfo.ProcedureType) + #9 + UTF8Decode(IntToStr(ProcedureInfo.LineNo))), ProcedureInfo);
       end; //ltPas
 
     ltCpp:
