@@ -170,7 +170,6 @@ type
     procedure setprintcomm(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
     procedure editshortcuts(const Sender: TObject);
-    procedure SetFocus(const Sender: TObject);
     procedure checkdirlayout(const Sender: TObject);
   private
     fshortcutcontroller: tshortcutcontroller;
@@ -422,19 +421,6 @@ end;
 procedure tsettingsfo.editshortcuts(const Sender: TObject);
 begin
   shortcutdialog(fshortcutcontroller);
-end;
-
-procedure tsettingsfo.SetFocus(const Sender: TObject);
-begin
-{
-case tab_setting.activepageindex of
-0 : compiler.setfocus;
-1 : macrogrid.setfocus;
-2 : shortcutbu.setfocus;
-3 : exeext.setfocus;
-end;
-}
-
 end;
 
 procedure tsettingsfo.checkdirlayout(const Sender: TObject);

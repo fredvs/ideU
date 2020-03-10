@@ -16,7 +16,7 @@
 }
 unit pascaldesignparser;
 
-{$ifdef FPC}{$mode objfpc}{$h+}{$GOTO ON}{$endif}
+{$ifdef FPC}{$mode objfpc}{$h+}{$interfaces corba}{$GOTO ON}{$endif}
 
 interface
 uses

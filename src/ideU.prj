@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=94
+findinfiledialog=95
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,15 +29,16 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=1
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
+ value=1
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
- history=12
+ history=13
   "*.pas" "*.pp" "*.inc" 
+  "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc" "*.*" 
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc"
@@ -59,11 +60,11 @@ findinfiledialog=94
  cy=316
  filehistory=25
   /home/fred/mseide-msegui/
+  /home/fred/svnfpctrunk/trunk/
   /home/fred/mseuniverse/
   /home/fred/eschecs_mse/
   /home/fred/idegraeme/
   /home/fred/mseide-msegui-fred/
-  /home/fred/svnfpctrunk/trunk/
   /home/fred/msegui/
   /home/fred/svnfpc32/fixes_3_2/
   /home/fred/fpctrunk/
@@ -86,8 +87,15 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=dialogfilesfo
+ value=interfaces corba
  history=20
+  interfaces corba
+  interface
+  TBlobField
+  idbusservice
+  dbuscomp
+  idbus
+  memoryfo
   dialogfilesfo
   edit.
   find text
@@ -101,13 +109,6 @@ findinfiledialog=94
   scrollbar
   scrollpos
   toprow
-  rowwindowpos
-  msesyntaxpainter
-  msessyntaxpainter
-  select
-  selected
-  pairmarkbackgroundcolor
-  colorselected
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -121,8 +122,8 @@ finddialog=8
  stackedunder=
  x=618
  y=230
- cx=358
- cy=122
+ cx=300
+ cy=90
 replacedialog=25
  [replacedialogfo.promptonreplace]
  value=1
@@ -554,7 +555,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=10
+makeoptions=11
  -Mobjfpc -Sh -Fcutf8
  -gl
  -B
@@ -565,7 +566,9 @@ makeoptions=10
  -Xd
  -FUunits
  -vewinh
-makeoptpurpose=10
+ -vw
+makeoptpurpose=11
+ 
  
  
  
@@ -787,32 +790,44 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=7
+modulenames=11
  ACTIONSMO
  BEAUTYFO
  DEBUGGERFO
  DIALOGFILESFO
  FINDINFILEFO
+ SETTINGS_FORM
  MAINFO
+ MEMORYFO
+ PROCEDURELISTFO
+ SELECTEDITPAGEFO
  SOURCEFO
-moduletypes=7
+moduletypes=11
  TACTIONSMO
  TBEAUTYFO
  TDEBUGGERFO
  TDIALOGFILESFO
  TFINDINFILEFO
+ TSETTINGSFO
  TMAINFO
+ TMEMORYFO
+ TPROCEDURELISTFO
+ TSELECTEDITPAGEFO
  TSOURCEFO
-modulefiles=7
+modulefiles=11
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/beauty.mfm
  /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/findinfileform.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/memoryform.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
+ /home/fred/ideu/src/selecteditpageform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=10
+makeoptionson=11
  4095
  0
  56
@@ -822,13 +837,14 @@ makeoptionson=10
  0
  0
  2047
+ 4091
  4095
 compilerusedon=29
  1987
- 0
- 8
  4
  0
+ 0
+ 8
  0
  16
  0
@@ -1436,8 +1452,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=findinfileform
+finddtext=ffilename
 findhistory=20
+ ffilename
+ string
+ setfocus
+ mse_fpc_3_2
+ define mse_fpc_3_2
+ fred
+ interface
  findinfileform
  dofindinfile
  DoBeautifier
@@ -1451,24 +1474,36 @@ findhistory=20
  ctrl
  spat_showsource
  showprocheaders
- selected
- updatest
- statement
- writeln
- grid.
- syntaxpainter
- background
 findoptions=1
-editpos=9
+editpos=28
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,8
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
+ 0,0
+ 0,0
+ 0,172
+ 0,126
+ 0,70
+ 0,2789
+ 25,471
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1478,7 +1513,26 @@ bookmarks5=0
 bookmarks6=0
 bookmarks7=0
 bookmarks8=0
-sourcefiles=9
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+bookmarks20=0
+bookmarks21=0
+bookmarks22=0
+bookmarks23=0
+bookmarks24=0
+bookmarks25=0
+bookmarks26=0
+bookmarks27=0
+sourcefiles=28
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/findinfileform.pas
@@ -1488,7 +1542,26 @@ sourcefiles=9
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/mseintegerenter.mfm
  ${PROJECTDIR}/sourceform.pas
-relpaths=9
+ ${PROJECTDIR}/memoryform.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
+ ${PROJECTDIR}/main.pas
+ /home/fred/uos/examples/simplerecorder_fpGUI.pas
+ /home/fred/mseide-msegui/lib/common/sysutils/msedbusinterface.pas
+ /home/fred/svnfpctrunk/trunk/packages/dbus/src/dbuscomp.pp
+ ${PROJECTDIR}/ideU.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseactions.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
+ /home/fred/mseide-msegui/lib/common/db/msesqlquery.pas
+ /home/fred/mseide-msegui/lib/common/fpccompatibility/mdb.pas
+ ${PROJECTDIR}/pascaldesignparser.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msestat.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/selecteditpageform.pas
+ ${PROJECTDIR}/procedurelistform.pas
+ /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=28
  commandorform.pas
  actionsmodule.pas
  findinfileform.pas
@@ -1498,7 +1571,26 @@ relpaths=9
  main.pas
  mseintegerenter.mfm
  sourceform.pas
-ismoduletexts=9
+ memoryform.pas
+ mseide-msegui/lib/common/designutils/msegdbutils.pas
+ main.pas
+ uos/examples/simplerecorder_fpGUI.pas
+ mseide-msegui/lib/common/sysutils/msedbusinterface.pas
+ svnfpctrunk/trunk/packages/dbus/src/dbuscomp.pp
+ ideU.pas
+ mseide-msegui/lib/common/kernel/mseactions.pas
+ ../mseide-msegui/lib/common/kernel/msetypes.pas
+ mseide-msegui/lib/common/db/msesqlquery.pas
+ mseide-msegui/lib/common/fpccompatibility/mdb.pas
+ pascaldesignparser.pas
+ ../mseide-msegui/lib/common/kernel/msestat.pas
+ ../mseide-msegui/lib/common/kernel/mseclasses.pas
+ ideusettings.pas
+ selecteditpageform.pas
+ procedurelistform.pas
+ ../mseide-msegui/lib/common/widgets/msegrids.pas
+ actionsmodule.pas
+ismoduletexts=28
  0
  0
  0
@@ -1508,7 +1600,26 @@ ismoduletexts=9
  0
  0
  0
-modules=7
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=11
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1516,7 +1627,11 @@ modules=7
  /home/fred/ideu/src/findinfileform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/beauty.mfm
-moduleoptions=7
+ /home/fred/ideu/src/memoryform.mfm
+ /home/fred/ideu/src/ideusettings.mfm
+ /home/fred/ideu/src/selecteditpageform.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
+moduleoptions=11
  0
  0
  0
@@ -1524,7 +1639,11 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+ 0
+ 0
+ 0
+visiblemodules=11
  -1
  -1
  -1
@@ -1532,7 +1651,15 @@ visiblemodules=7
  -1
  -1
  -1
-nomenumodules=7
+ -1
+ -1
+ -1
+ -1
+nomenumodules=11
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1541,20 +1668,39 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=9
+order=28
  0
  1
  2
  3
  4
- 8
  5
  6
  7
-firsttab=0
-index=4
+ 8
+ 9
+ 10
+ 12
+ 15
+ 18
+ 13
+ 11
+ 21
+ 19
+ 14
+ 20
+ 23
+ 24
+ 25
+ 27
+ 26
+ 17
+ 22
+ 16
+firsttab=15
+index=23
 [layout]
-windowlayout=658
+windowlayout=733
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1669,8 +1815,8 @@ windowlayout=658
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
+ x=464
+ y=199
  cx=678
  cy=414
  rcx=0
@@ -1699,7 +1845,7 @@ windowlayout=658
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=10
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1784,7 +1930,7 @@ windowlayout=658
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_dialogfilesfo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1799,7 +1945,7 @@ windowlayout=658
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=418
  width0=262
@@ -2025,28 +2171,8 @@ windowlayout=658
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/dialogfiles.pas
- history=20
-  /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/beauty.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/mseintegerenter.mfm
-  /home/fred/xtop/src/ptop.pas
-  /home/fred/ideu/src/procedurelistform.pas
-  /home/fred/mseide-msegui/apps/ide/procedurelistform.pas
-  /home/fred/mseide-msegui/apps/ide/sourcepage.pas
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/python.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal2.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/mselang.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_dark.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_solarized_dark.sdef
-  /home/fred/ideu_bin/ideu_1.9.8_linux64/syntaxdefs/pascal_ideu.sdef
-  /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
-  /home/fred/mseide-msegui/apps/ide/syntaxdefs/pascal_solarized_dark.sdef
-  /home/fred/ideu/src/msesyntaxpainter.pas
-  /home/fred/ideu/src/syntaxdefs/pascal.sdef
-  /home/fred/ptoptest/sourcepage.pas
+ value=/home/fred/ideu/src/
+ history=0
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2068,25 +2194,44 @@ windowlayout=658
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
+ order=28
   0
   1
   2
   3
   4
-  8
   5
   6
   7
- firsttab=0
- index=4
+  8
+  9
+  10
+  12
+  15
+  18
+  13
+  11
+  21
+  19
+  14
+  20
+  23
+  24
+  25
+  27
+  26
+  17
+  22
+  16
+ firsttab=15
+ index=23
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2121,7 +2266,7 @@ windowlayout=658
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2159,7 +2304,7 @@ windowlayout=658
  [_mse_findinfilefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_beautyfo_mse_
+ stackedunder=_mse_dialogfilesfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2178,7 +2323,7 @@ windowlayout=658
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_beautyfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2197,7 +2342,7 @@ windowlayout=658
  [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_memoryfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2208,6 +2353,82 @@ windowlayout=658
  y=50
  cx=210
  cy=124
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_memoryfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_settings_form_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=100
+ y=100
+ cx=475
+ cy=354
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_selecteditpagefo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=618
+ y=92
+ cx=469
+ cy=529
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_selecteditpagefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_procedurelistfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=160
+ y=124
+ cx=714
+ cy=473
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_procedurelistfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=717
+ y=69
+ cx=386
+ cy=192
  rcx=0
  rcy=0
  wsize=0

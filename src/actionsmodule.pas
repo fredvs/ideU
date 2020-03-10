@@ -469,13 +469,13 @@ end;
 
 procedure tactionsmo.savecustom(const sender: tobject);
 var
- sysfilename : string;
+ sysfilename : msestring;
 begin
 saveactonexecute(sender);
    if (conffpguifo.enablefpguidesigner.value = true) then
  begin
    sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));
-     LoadfpgDesigner(sysfilename);
+     LoadfpgDesigner(AnsiString(sysfilename));
  end;
  sourcefo.activate;
  sourcefo.updatehinttab;
@@ -931,7 +931,7 @@ end;
 
 procedure tactionsmo.continueactonexecute(const sender: tobject);
 var
-str3 : string;
+str3 : msestring;
 int1, int2, int3 : integer;
 begin
 
@@ -978,7 +978,7 @@ for int3:= 0 to high(debuggerused) do begin
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
     
      if (trim(debuggerused[int3]) = 'Debugger 4') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) else
     str3:= '' ;
     
     if str3 = '' then str3:= 'Default Debugger';
@@ -1101,7 +1101,7 @@ begin
   int1:= 0;
   if integerenter(int1,minint,maxint,self.c[ord(ac_processid)],
                       self.c[ord(ac_attachtoprocess)]) = mr_ok then begin
-   setstattext(self.c[ord(ac_attachingprocess)]+' '+inttostr(int1),mtk_making);
+   setstattext(self.c[ord(ac_attachingprocess)]+' '+UTF8Decode(inttostr(int1)),mtk_making);
    application.processmessages;
    startgdb(false);
    gdb.attach(int1,info);
@@ -1235,12 +1235,12 @@ begin
  name1:= '';
  with designer do begin
   if selections.count > 0 then begin
-   name1:= ownernamepath(selections[0]);
+   name1:= UTF8Decode(ownernamepath(selections[0]));
   end;
   if compnamedialog(designer.getcomponentnametree(nil,true,true,nil,
                       @filterfindcomp,nil),name1,true) = mr_ok then begin
    replacechar1(name1,':','.');
-   comp1:= designer.getcomponent(name1,po1);
+   comp1:= designer.getcomponent(AnsiString(name1),po1);
    designer.showformdesigner(po1);
    designer.selectcomponent(comp1);
   end;

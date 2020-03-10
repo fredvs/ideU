@@ -124,6 +124,7 @@ procedure tselecteditpagefo.fooncreate(const sender: TObject);
 var
  int1,int2: integer;
 begin
+ int2 := 0;
  setlength(fpaths,sourcefo.count);
  setlength(frelpaths,sourcefo.count);
  setlength(fnames,sourcefo.count);

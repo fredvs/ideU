@@ -34,23 +34,23 @@ type
   TProcInfo = class(TObject)
   private
     FLineNo: Integer;
-    FName: string;
-    FDisplayName: string;
-    FProcedureType: string;
-    FProcArgs: string;
-    FProcClass: string;
-    FProcReturnType: string;
-    FProcName: string;
+    FName: msestring;
+    FDisplayName: msestring;
+    FProcedureType: msestring;
+    FProcArgs: msestring;
+    FProcClass: msestring;
+    FProcReturnType: msestring;
+    FProcName: msestring;
     FProcIndex: Integer;
   public
     property LineNo: Integer read FLineNo write FLineNo;
-    property Name: string read FName write FName;
-    property DisplayName: string read FDisplayName write FDisplayName;
-    property ProcedureType: string read FProcedureType write FProcedureType;
-    property ProcArgs: string read FProcArgs write FProcArgs;
-    property ProcName: string read FProcName write FProcName;
-    property ProcClass: string read FProcClass write FProcClass;
-    property ProcReturnType: string read FProcReturnType write FProcReturnType;
+    property Name: msestring read FName write FName;
+    property DisplayName: msestring read FDisplayName write FDisplayName;
+    property ProcedureType: msestring read FProcedureType write FProcedureType;
+    property ProcArgs: msestring read FProcArgs write FProcArgs;
+    property ProcName: msestring read FProcName write FProcName;
+    property ProcClass: msestring read FProcClass write FProcClass;
+    property ProcReturnType: msestring read FProcReturnType write FProcReturnType;
     property ProcIndex: Integer read FProcIndex write FProcIndex;
   end;
 
@@ -81,11 +81,11 @@ type
     procedure ClearObjectStrings;
     procedure QuickSort(L, R: Integer);
     procedure LoadObjectCombobox;
-    function  GetMethodName(const ProcName: string): string;
+    function  GetMethodName(const ProcName: msestring): msestring;
     function  GetTickCount: LongWord;
  public
     property  Language: TSourceLanguage read FLanguage write FLanguage default ltPas;
-    procedure UpdateList(const filename: string);
+    procedure UpdateList(const filename: msestring);
  end;
 
 var
@@ -138,7 +138,7 @@ writeln('<< doProcedureList');
 {$endif}
 end;
 
-procedure tprocedurelistfo.UpdateList(const filename: string);
+procedure tprocedurelistfo.UpdateList(const filename: msestring);
 begin
 FFilename := filename;
 if assigned(FObjectStrings) then FObjectStrings.free;
@@ -205,7 +205,7 @@ end;
 procedure tprocedurelistfo.FillGrid;
 var
   i: Integer;
-  ProcName: string;
+  ProcName: msestring;
   IsObject: Boolean;
   ProcInfo: TProcInfo;
 
@@ -227,13 +227,13 @@ var
 //    grdProcedures.Cells[3, r] := IntToStr(ProcInfo.LineNo);
      c.row := r;
      c.col := 0;
-     grdProcedures.Items[c] := IntToStr(i);
+     grdProcedures.Items[c] := UTF8Decode(IntToStr(i));
       c.col := 1;
-     grdProcedures.Items[c] := ProcInfo.DisplayName;
+     grdProcedures.Items[c] := (ProcInfo.DisplayName);
      c.col := 2;
-     grdProcedures.Items[c] := ProcInfo.ProcedureType;
+     grdProcedures.Items[c] := (ProcInfo.ProcedureType);
      c.col := 3;
-     grdProcedures.Items[c] := IntToStr(ProcInfo.LineNo);
+     grdProcedures.Items[c] := UTF8Decode(IntToStr(ProcInfo.LineNo));
   end;
 
   procedure FocusAndSelectFirstItem;
@@ -282,7 +282,7 @@ writeln('>> FillGrid');
             Continue;
           end;
         end // if/then
-        else if not SameText(cbObjects.Text, ProcInfo.ProcClass) then
+        else if not SameText(AnsiString(cbObjects.Text), AnsiString(ProcInfo.ProcClass)) then
           Continue;
       end;
 
@@ -293,9 +293,9 @@ writeln('>> FillGrid');
 
       if Length(edtSearch.Text) = 0 then
         AddListItem(ProcInfo)
-      else if not FSearchAll and SameText(edtSearch.Text, Copy(ProcName, 1, Length(edtSearch.Text))) then
+      else if not FSearchAll and SameText(AnsiString(edtSearch.Text), AnsiString(Copy(ProcName, 1, Length(edtSearch.Text)))) then
         AddListItem(ProcInfo)
-      else if FSearchAll and StrContains(edtSearch.Text, ProcName, False) then
+      else if FSearchAll and StrContains(AnsiString(edtSearch.Text), AnsiString(ProcName), False) then
         AddListItem(ProcInfo);
     end;
     FocusAndSelectFirstItem;
@@ -316,7 +316,7 @@ var
 
   function MoveToImplementation: Boolean;
   begin
-    if IsProgram(FFileName) or (IsInc(FFileName)) then
+    if IsProgram((FFileName)) or (IsInc(FFileName)) then
     begin
       Result := True;
       Exit;
@@ -334,7 +334,7 @@ var
 
   procedure FindProcs;
 
-    function GetProperProcName(ProcType: TTokenKind; IsClass: Boolean): string;
+    function GetProperProcName(ProcType: TTokenKind; IsClass: Boolean): msestring;
     begin
       Result := SUnknown;
       if IsClass then
@@ -357,7 +357,7 @@ var
     end;
 
   var
-    ProcLine: string;
+    ProcLine: msestring;
     ProcType: TTokenKind;
     Line: Integer;
     ClassLast: Boolean;
@@ -369,13 +369,13 @@ var
     BeginProcHeaderPosition: Longint;
     i, j: Integer;
     LineNo: Integer;
-    ProcName, ProcReturnType: string;
-    ProcedureType, ProcClass, ProcArgs: string;
+    ProcName, ProcReturnType: msestring;
+    ProcedureType, ProcClass, ProcArgs: msestring;
     ProcIndex: Integer;
     NameList: TStringList;
-    NewName, TmpName, ProcClassAdd, ClassName: string;
+    NewName, TmpName, ProcClassAdd, ClassName: msestring;
     BraceCountDelta: Integer;
-    TemplateArgs: string;
+    TemplateArgs: msestring;
 
     procedure EraseName(Index: Integer);
     var
@@ -522,7 +522,7 @@ begin
     MemStream := TMemoryStream.Create;
     try
       // Read from file on disk and store in a memory stream
-      SFile := TFileStream.Create(FFilename, fmOpenRead or fmShareDenyWrite);
+      SFile := TFileStream.Create((FFilename), fmOpenRead or fmShareDenyWrite);
       try
         SFile.Position := 0;
         MemStream.CopyFrom(SFile, SFile.Size);
@@ -562,10 +562,10 @@ end;
 
 procedure tprocedurelistfo.AddProcedure(ProcedureInfo: TProcInfo);
 var
-  TempStr: string;
+  TempStr: msestring;
   i: Integer;
 begin
-  ProcedureInfo.Name := CompressWhiteSpace(ProcedureInfo.Name);
+  ProcedureInfo.Name := UTF8Decode(CompressWhiteSpace(ProcedureInfo.Name));
   case Language of
     ltPas:
       begin
@@ -603,9 +603,9 @@ begin
         else
         begin
           ProcedureInfo.ProcClass := Copy(TempStr, 1, i - 1);
-          FObjectStrings.Add(ProcedureInfo.ProcClass);
+          FObjectStrings.Add(UTF8Decode(ProcedureInfo.ProcClass));
         end;
-        FProcList.AddObject(#9 + TempStr + #9 + ProcedureInfo.ProcedureType + #9 + IntToStr(ProcedureInfo.LineNo), ProcedureInfo);
+        FProcList.AddObject(#9 + TempStr + #9 + UTF8Decode(ProcedureInfo.ProcedureType) + #9 + (IntToStr(ProcedureInfo.LineNo)), ProcedureInfo);
       end; //ltPas
 
     ltCpp:
@@ -624,14 +624,14 @@ end;
 
 procedure tprocedurelistfo.QuickSort(L: Integer; R: Integer);
 
-  function GetValue(idx: Integer): string;
+  function GetValue(idx: Integer): msestring;
   var
     i: Integer;
     TabPos: Integer;
   begin
     if idx >= FProcList.Count then
       raise Exception.Create(SInvalidIndex);
-    Result := FProcList.Strings[idx];
+    Result := UTF8Decode(FProcList.Strings[idx]);
     for i := 0 to FSortOnColumn - 1 do
     begin
       TabPos := System.Pos(#9, Result);
@@ -649,7 +649,7 @@ procedure tprocedurelistfo.QuickSort(L: Integer; R: Integer);
 
 var
   I, J: Integer;
-  P: string;
+  P: msestring;
 begin
   if FProcList.Count = 0 then
     Exit;
@@ -658,9 +658,9 @@ begin
     J := R;
     P := GetValue((L + R) shr 1);
     repeat
-      while AnsiCompareText(GetValue(I), P) < 0 do
+      while AnsiCompareText(AnsiString(GetValue(I)), AnsiString(P)) < 0 do
         Inc(I);
-      while AnsiCompareText(GetValue(J), P) > 0 do
+      while AnsiCompareText(AnsiString(GetValue(J)), AnsiString(P)) > 0 do
         Dec(J);
       if I <= J then
       begin
@@ -681,12 +681,12 @@ var
 begin
   cbObjects.dropdown.cols.BeginUpdate;
   for i := 0 to FObjectStrings.Count-1 do
-    cbObjects.dropdown.cols.addrow([FObjectStrings[i]]);
+    cbObjects.dropdown.cols.addrow([UTF8Decode(FObjectStrings[i])]);
   cbObjects.dropdown.cols.EndUpdate;
   cbObjects.dropdown.ItemIndex := 0;
 end;
 
-function tprocedurelistfo.GetMethodName(const ProcName: string): string;
+function tprocedurelistfo.GetMethodName(const ProcName: msestring): msestring;
 var
   CharPos: Integer;
 begin
@@ -804,7 +804,7 @@ var
 begin
   c.row := grdProcedures.Row;
   c.col := 3;
-  lGotoLine := StrToInt(grdProcedures.Items[c]);
+  lGotoLine := StrToInt(AnsiString(grdProcedures.Items[c]));
   d.row := lGotoLine-1;
   d.col := 1;
   p.y := lGotoLine-1;
