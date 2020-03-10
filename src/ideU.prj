@@ -120,8 +120,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1021
- y=209
+ x=701
+ y=219
  cx=300
  cy=90
 replacedialog=25
@@ -1455,7 +1455,7 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=tmp
+finddtext=SAKLoadLib
 findhistory=20
  tmp
  thefile
@@ -1480,14 +1480,6 @@ findhistory=20
 findoptions=1
 editpos=34
  0,-1073741823
- 0,851
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,-1073741823
- 0,0
  0,-1073741823
  0,0
  0,-1073741823
@@ -1496,23 +1488,31 @@ editpos=34
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
- 0,0
- 0,0
- 0,0
  0,-1073741823
- 0,0
  0,-1073741823
- 0,500
- 0,599
- 0,0
- 0,190
- 0,121
- 0,361
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1593,27 +1593,27 @@ relpaths=34
  mseintegerenter.mfm
  sourceform.pas
  memoryform.pas
- ../mseide-msegui/lib/common/designutils/msegdbutils.pas
+ mseide-msegui/lib/common/designutils/msegdbutils.pas
  main.pas
  uos/examples/simplerecorder_fpGUI.pas
  mseide-msegui/lib/common/sysutils/msedbusinterface.pas
  svnfpctrunk/trunk/packages/dbus/src/dbuscomp.pp
  ideU.pas
  mseide-msegui/lib/common/kernel/mseactions.pas
- ../mseide-msegui/lib/common/kernel/msetypes.pas
+ mseide-msegui/lib/common/kernel/msetypes.pas
  mseide-msegui/lib/common/db/msesqlquery.pas
  mseide-msegui/lib/common/fpccompatibility/mdb.pas
  pascaldesignparser.pas
- ../mseide-msegui/lib/common/kernel/msestat.pas
- ../mseide-msegui/lib/common/kernel/mseclasses.pas
+ mseide-msegui/lib/common/kernel/msestat.pas
+ mseide-msegui/lib/common/kernel/mseclasses.pas
  ideusettings.pas
  selecteditpageform.pas
  procedurelistform.pas
- ../mseide-msegui/lib/common/widgets/msegrids.pas
+ mseide-msegui/lib/common/widgets/msegrids.pas
  actionsmodule.pas
  procedurelistform.pas
- ../mseide-msegui/apps/ide/procedurelistform.pas
- ../mseide-msegui/apps/ide/procedurelistform.mfm
+ mseide-msegui/apps/ide/procedurelistform.pas
+ mseide-msegui/apps/ide/procedurelistform.mfm
  commandorform.pas
  finddialogform.pas
  sak_mse.pas
@@ -1708,42 +1708,42 @@ nomenumodules=12
 order=34
  0
  1
- 32
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 15
- 11
- 14
- 18
- 12
- 20
- 26
- 13
- 22
- 25
- 23
- 21
- 17
  28
- 29
- 30
- 33
- 31
- 27
+ 25
+ 21
+ 23
+ 22
+ 20
+ 17
  24
- 16
+ 31
+ 29
+ 13
+ 26
+ 14
+ 11
  19
+ 5
+ 10
+ 18
+ 4
+ 32
+ 3
+ 2
+ 6
+ 16
+ 9
+ 27
+ 12
+ 8
+ 30
+ 7
+ 33
+ 15
 firsttab=21
-index=27
+index=23
 [layout]
-windowlayout=758
+windowlayout=761
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1973,7 +1973,7 @@ windowlayout=758
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_finddialogfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1988,7 +1988,7 @@ windowlayout=758
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
  propcolwidthref=418
  width0=262
@@ -2214,8 +2214,11 @@ windowlayout=758
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
- history=0
+ value=/home/fred/ideu/src/findinfileform.pas
+ history=3
+  /home/fred/ideu/src/findinfileform.pas
+  /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
+  /home/fred/ideu/src/actionsmodule.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2240,47 +2243,47 @@ windowlayout=758
  order=34
   0
   1
-  32
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  15
-  11
-  14
-  18
-  12
-  20
-  26
-  13
-  22
-  25
-  23
-  21
-  17
   28
-  29
-  30
-  33
-  31
-  27
+  25
+  21
+  23
+  22
+  20
+  17
   24
-  16
+  31
+  29
+  13
+  26
+  14
+  11
   19
+  5
+  10
+  18
+  4
+  32
+  3
+  2
+  6
+  16
+  9
+  27
+  12
+  8
+  30
+  7
+  33
+  15
  firsttab=21
- index=27
+ index=23
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2334,7 +2337,7 @@ windowlayout=758
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_findinfilefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2467,7 +2470,7 @@ windowlayout=758
  [_mse_procedurelistfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=_mse_finddialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2486,7 +2489,7 @@ windowlayout=758
  [_mse_finddialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
