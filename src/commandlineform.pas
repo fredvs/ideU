@@ -49,7 +49,7 @@ begin
    fo.disp.value:= fo.c[ord(makedisabled)];
   end
   else begin
-   fo.disp.value:= buildmakecommandline(projectoptions.defaultmake);
+   fo.disp.value:= UTF8Decode(buildmakecommandline(projectoptions.defaultmake));
   end;
   fo.show(true);
  finally

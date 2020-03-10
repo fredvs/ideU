@@ -472,7 +472,7 @@ var
 begin
 
   if (copy(confideufo.tesakitdir.Text, 1, 10) = '${IDEUDIR}') then
-    thedir := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    thedir := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)))) +
       copy(confideufo.tesakitdir.Text, 11, length(confideufo.tesakitdir.Text) - 10)
   else
     thedir := confideufo.tesakitdir.Text;
@@ -654,21 +654,21 @@ var
   libpath: msestring;
 begin
   {$IFDEF Windows}
-  libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
-    'plugin\designer_ext\designer_ext.exe';
+  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    'plugin\designer_ext\designer_ext.exe');
     {$endif}
 
      {$IFDEF linux}
-  libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
-    'plugin/designer_ext/designer_ext';
+  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    'plugin/designer_ext/designer_ext');
     {$endif}
 
     {$IFDEF freebsd}
      {$ifdef polydev}
-  libpath := '/usr/local/share/designer_ext/designer_ext';
+  libpath := utf8decode('/usr/local/share/designer_ext/designer_ext');
     {$else}
-  libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
-    'plugin/designer_ext/designer_ext';
+  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    'plugin/designer_ext/designer_ext');
     {$endif}
     {$endif}
 
@@ -686,20 +686,20 @@ begin
   end;
 
 
-  conffpguifo.fpguidesigner.Value := gINI.ReadString('Path', 'designer_fpGUI', libpath);
+  conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring(libpath)));
 
   conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
   conffpguifo.edfilename.Text :=
-    gINI.ReadString('edfilename', 'designer_fpGUI', '${FILENAME}');
+    utf8decode(gINI.ReadString('edfilename', 'designer_fpGUI', '${FILENAME}'));
 
   conffpguifo.ifclose.Value := gINI.ReadBool('ifclose', 'designer_fpGUI', True);
-  conffpguifo.edclose.Text := gINI.ReadString('edclose', 'designer_fpGUI', 'closeall');
+  conffpguifo.edclose.Text := utf8decode(gINI.ReadString('edclose', 'designer_fpGUI', 'closeall'));
   conffpguifo.ifshow.Value := gINI.ReadBool('ifshow', 'designer_fpGUI', True);
-  conffpguifo.edshow.Text := gINI.ReadString('edshow', 'designer_fpGUI', 'showit');
+  conffpguifo.edshow.Text := utf8decode(gINI.ReadString('edshow', 'designer_fpGUI', 'showit'));
   conffpguifo.ifhide.Value := gINI.ReadBool('ifhide', 'designer_fpGUI', True);
-  conffpguifo.edhide.Text := gINI.ReadString('edhide', 'designer_fpGUI', 'hideit');
+  conffpguifo.edhide.Text := utf8decode(gINI.ReadString('edhide', 'designer_fpGUI', 'hideit'));
   conffpguifo.ifquit.Value := gINI.ReadBool('ifquit', 'designer_fpGUI', True);
-  conffpguifo.edquit.Text := gINI.ReadString('edquit', 'designer_fpGUI', 'quit');
+  conffpguifo.edquit.Text := utf8decode(gINI.ReadString('edquit', 'designer_fpGUI', 'quit'));
 
   confcompilerfo.twinep1.Value := gINI.ReadBool('fpc', 'winep1', False);
   confcompilerfo.twinep2.Value := gINI.ReadBool('fpc', 'winep2', False);
@@ -712,39 +712,39 @@ begin
 
  {$ifdef polydev}
   confcompilerfo.fpccompiler.Value :=
-    gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/3.0.0/ppcx64');
+    utf8decode(gINI.ReadString('fpc', 'compiler1', '/usr/local/lib/fpc/3.0.0/ppcx64'));
   confcompilerfo.fpccompiler2.Value :=
-    gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.0.0/ppc386');
+    utf8decode(gINI.ReadString('fpc', 'compiler2', '/usr/local/lib/fpc/3.0.0/ppc386'));
   confcompilerfo.fpccompiler3.Value :=
-    gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_linux');
+    utf8decode(gINI.ReadString('fpc', 'compiler3', '/usr/local/lib/fpc/3.0.0/ppcx64_linux'));
   confcompilerfo.fpccompiler4.Value :=
-    gINI.ReadString('fpc', 'compiler4', '/usr/local/lib/fpc/3.0.0/ppc386.exe');
+    utf8decode(gINI.ReadString('fpc', 'compiler4', '/usr/local/lib/fpc/3.0.0/ppc386.exe'));
   confcompilerfo.twinep4.Value := gINI.ReadBool('fpc', 'winep4', True);
   confcompilerfo.fpccompiler5.Value :=
-    gINI.ReadString('fpc', 'compiler5', '/usr/local/lib/fpc/3.0.0/ppc386_linux');
+    utf8decode(gINI.ReadString('fpc', 'compiler5', '/usr/local/lib/fpc/3.0.0/ppc386_linux'));
 
   {$else}
-  confcompilerfo.fpccompiler.Value := gINI.ReadString('fpc', 'compiler1', 'fpc');
-  confcompilerfo.fpccompiler2.Value := gINI.ReadString('fpc', 'compiler2', '');
+  confcompilerfo.fpccompiler.Value := utf8decode(gINI.ReadString('fpc', 'compiler1', 'fpc'));
+  confcompilerfo.fpccompiler2.Value := utf8decode(gINI.ReadString('fpc', 'compiler2', ''));
   confcompilerfo.twinep4.Value := gINI.ReadBool('fpc', 'winep4', False);
-  confcompilerfo.fpccompiler3.Value := gINI.ReadString('fpc', 'compiler3', '');
-  confcompilerfo.fpccompiler4.Value := gINI.ReadString('fpc', 'compiler4', '');
+  confcompilerfo.fpccompiler3.Value := utf8decode(gINI.ReadString('fpc', 'compiler3', ''));
+  confcompilerfo.fpccompiler4.Value := utf8decode(gINI.ReadString('fpc', 'compiler4', ''));
   {$endif}
 
-  confcompilerfo.fpccompiler5.Value := gINI.ReadString('fpc', 'compiler5', '');
-  confcompilerfo.fpccompiler6.Value := gINI.ReadString('fpc', 'compiler6', '');
-  confcompilerfo.fpccompiler7.Value := gINI.ReadString('fpc', 'compiler7', '');
-  confcompilerfo.fpccompiler8.Value := gINI.ReadString('fpc', 'compiler8', '');
+  confcompilerfo.fpccompiler5.Value := utf8decode(gINI.ReadString('fpc', 'compiler5', ''));
+  confcompilerfo.fpccompiler6.Value := utf8decode(gINI.ReadString('fpc', 'compiler6', ''));
+  confcompilerfo.fpccompiler7.Value := utf8decode(gINI.ReadString('fpc', 'compiler7', ''));
+  confcompilerfo.fpccompiler8.Value := utf8decode(gINI.ReadString('fpc', 'compiler8', ''));
 
   confcompilerfo.twinej1.Value := gINI.ReadBool('java', 'winej1', False);
   confcompilerfo.twinej2.Value := gINI.ReadBool('java', 'winej2', False);
   confcompilerfo.twinej3.Value := gINI.ReadBool('java', 'winej3', False);
   confcompilerfo.twinej4.Value := gINI.ReadBool('java', 'winej4', False);
 
-  confcompilerfo.javacompiler.Value := gINI.ReadString('java', 'compiler1', 'javac');
-  confcompilerfo.javacompiler2.Value := gINI.ReadString('java', 'compiler2', '');
-  confcompilerfo.javacompiler3.Value := gINI.ReadString('java', 'compiler3', '');
-  confcompilerfo.javacompiler4.Value := gINI.ReadString('java', 'compiler4', '');
+  confcompilerfo.javacompiler.Value := utf8decode(gINI.ReadString('java', 'compiler1', 'javac'));
+  confcompilerfo.javacompiler2.Value := utf8decode(gINI.ReadString('java', 'compiler2', ''));
+  confcompilerfo.javacompiler3.Value := utf8decode(gINI.ReadString('java', 'compiler3', ''));
+  confcompilerfo.javacompiler4.Value := utf8decode(gINI.ReadString('java', 'compiler4', ''));
 
   confcompilerfo.twinec1.Value := gINI.ReadBool('C', 'winec1', False);
   confcompilerfo.twinec2.Value := gINI.ReadBool('C', 'winec2', False);
@@ -755,39 +755,39 @@ begin
   confcompilerfo.twinec7.Value := gINI.ReadBool('C', 'winec7', False);
   confcompilerfo.twinec8.Value := gINI.ReadBool('C', 'winec8', False);
 
-  confcompilerfo.ccompiler.Value := gINI.ReadString('C', 'compiler1', '');
-  confcompilerfo.ccompiler2.Value := gINI.ReadString('C', 'compiler2', '');
-  confcompilerfo.ccompiler3.Value := gINI.ReadString('C', 'compiler3', '');
-  confcompilerfo.ccompiler4.Value := gINI.ReadString('C', 'compiler4', '');
-  confcompilerfo.ccompiler5.Value := gINI.ReadString('C', 'compiler5', '');
-  confcompilerfo.ccompiler6.Value := gINI.ReadString('C', 'compiler6', '');
-  confcompilerfo.ccompiler7.Value := gINI.ReadString('C', 'compiler7', '');
-  confcompilerfo.ccompiler8.Value := gINI.ReadString('C', 'compiler8', '');
+  confcompilerfo.ccompiler.Value := utf8decode(gINI.ReadString('C', 'compiler1', ''));
+  confcompilerfo.ccompiler2.Value := utf8decode(gINI.ReadString('C', 'compiler2', ''));
+  confcompilerfo.ccompiler3.Value := utf8decode(gINI.ReadString('C', 'compiler3', ''));
+  confcompilerfo.ccompiler4.Value := utf8decode(gINI.ReadString('C', 'compiler4', ''));
+  confcompilerfo.ccompiler5.Value := utf8decode(gINI.ReadString('C', 'compiler5', ''));
+  confcompilerfo.ccompiler6.Value := utf8decode(gINI.ReadString('C', 'compiler6', ''));
+  confcompilerfo.ccompiler7.Value := utf8decode(gINI.ReadString('C', 'compiler7', ''));
+  confcompilerfo.ccompiler8.Value := utf8decode(gINI.ReadString('C', 'compiler8', ''));
 
   confcompilerfo.twinepy1.Value := gINI.ReadBool('python', 'winepy1', False);
   confcompilerfo.twinepy2.Value := gINI.ReadBool('python', 'winepy2', False);
   confcompilerfo.twinepy3.Value := gINI.ReadBool('python', 'winepy3', False);
   confcompilerfo.twinepy4.Value := gINI.ReadBool('python', 'winepy4', False);
 
-  confcompilerfo.pythoncompiler.Value := gINI.ReadString('python', 'compiler1', '');
-  confcompilerfo.pythoncompiler2.Value := gINI.ReadString('python', 'compiler2', '');
-  confcompilerfo.pythoncompiler3.Value := gINI.ReadString('python', 'compiler3', '');
-  confcompilerfo.pythoncompiler4.Value := gINI.ReadString('python', 'compiler4', '');
+  confcompilerfo.pythoncompiler.Value := utf8decode(gINI.ReadString('python', 'compiler1', ''));
+  confcompilerfo.pythoncompiler2.Value := utf8decode(gINI.ReadString('python', 'compiler2', ''));
+  confcompilerfo.pythoncompiler3.Value := utf8decode(gINI.ReadString('python', 'compiler3', ''));
+  confcompilerfo.pythoncompiler4.Value := utf8decode(gINI.ReadString('python', 'compiler4', ''));
 
   confcompilerfo.twineo1.Value := gINI.ReadBool('other', 'wineo1', False);
   confcompilerfo.twineo2.Value := gINI.ReadBool('other', 'wineo2', False);
   confcompilerfo.twineo3.Value := gINI.ReadBool('other', 'wineo3', False);
   confcompilerfo.twineo4.Value := gINI.ReadBool('other', 'wineo4', False);
 
-  confcompilerfo.othercompiler.Value := gINI.ReadString('other', 'compiler1', '');
-  confcompilerfo.othercompiler2.Value := gINI.ReadString('other', 'compiler2', '');
-  confcompilerfo.othercompiler3.Value := gINI.ReadString('other', 'compiler3', '');
-  confcompilerfo.othercompiler4.Value := gINI.ReadString('other', 'compiler4', '');
+  confcompilerfo.othercompiler.Value := utf8decode(gINI.ReadString('other', 'compiler1', ''));
+  confcompilerfo.othercompiler2.Value := utf8decode(gINI.ReadString('other', 'compiler2', ''));
+  confcompilerfo.othercompiler3.Value := utf8decode(gINI.ReadString('other', 'compiler3', ''));
+  confcompilerfo.othercompiler4.Value := utf8decode(gINI.ReadString('other', 'compiler4', ''));
 
-  confdebuggerfo.debugger1.Value := gINI.ReadString('debug', 'debugger1', '');
-  confdebuggerfo.debugger2.Value := gINI.ReadString('debug', 'debugger2', '');
-  confdebuggerfo.debugger3.Value := gINI.ReadString('debug', 'debugger3', '');
-  confdebuggerfo.debugger4.Value := gINI.ReadString('debug', 'debugger4', '');
+  confdebuggerfo.debugger1.Value := utf8decode(gINI.ReadString('debug', 'debugger1', ''));
+  confdebuggerfo.debugger2.Value := utf8decode(gINI.ReadString('debug', 'debugger2', ''));
+  confdebuggerfo.debugger3.Value := utf8decode(gINI.ReadString('debug', 'debugger3', ''));
+  confdebuggerfo.debugger4.Value := utf8decode(gINI.ReadString('debug', 'debugger4', ''));
 
   conffpguifo.enablefpguidesigner.Value :=
     gINI.Readbool('Integration', 'designer_fpGUI', True);
@@ -831,13 +831,13 @@ begin
   confideufo.closemessages.Value := gINI.Readbool('closemessages', 'message', False);  
     
  confideufo.colorerror.Value :=
-    gINI.ReadInteger('colorerror', 'message', 2684354579);   
+    gINI.ReadInt64('colorerror', 'message', 2684354579);   
     
  confideufo.colorwarning.Value :=
-    gINI.ReadInteger('colorwarning', 'message', 2684354584);    
+    gINI.ReadInt64('colorwarning', 'message', 2684354584);    
     
   confideufo.colornote.Value :=
-    gINI.ReadInteger('colornote', 'message', 2684354580);        
+    gINI.ReadInt64('colornote', 'message', 2684354580);        
 
   confideufo.encoding.Value := gINI.ReadInteger('encoding', 'editor', 0);
 
@@ -848,18 +848,17 @@ begin
   else
     nozorderhandling := False;
 
-  libpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
 
      {$ifdef windows}
   confideufo.tesakitdir.Text :=
-    gINI.ReadString('Assistive', 'sakitdir', libpath + 'plugin\');
+    utf8decode(gINI.ReadString('Assistive', 'sakitdir', libpath + 'plugin\'));
          {$else}
          {$ifdef polydev}
   confideufo.tesakitdir.Text :=
-    gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share/');
+    utf8decode(gINI.ReadString('Assistive', 'sakitdir', '/usr/local/share/'));
     {$else}
-  confideufo.tesakitdir.Text :=
-    gINI.ReadString('Assistive', 'sakitdir', libpath + 'plugin/');
+  confideufo.tesakitdir.Text :=  utf8decode(gINI.ReadString('Assistive', 'sakitdir', ansistring(libpath) + 'plugin/'));
        {$endif}
          {$endif}
 
@@ -910,148 +909,148 @@ end;
 procedure tmainfo.ideuwriteconfig();
 begin
   // fred
-  gINI.writeString('Path', 'designer_fpGUI', conffpguifo.fpguidesigner.Value);
+  gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
   gINI.writebool('Integration', 'designer_fpGUI',
-    conffpguifo.enablefpguidesigner.Value);
-  gINI.writebool('RunOnlyOnce', 'designer_fpGUI', conffpguifo.tbfpgonlyone.Value);
+    (conffpguifo.enablefpguidesigner.Value));
+  gINI.writebool('RunOnlyOnce', 'designer_fpGUI', (conffpguifo.tbfpgonlyone.Value));
 
-  gINI.writeBool('ifloadfile', 'designer_fpGUI', conffpguifo.ifloadfile.Value);
-  gINI.writeString('edfilename', 'designer_fpGUI', conffpguifo.edfilename.Text);
+  gINI.writeBool('ifloadfile', 'designer_fpGUI', (conffpguifo.ifloadfile.Value));
+  gINI.writeString('edfilename', 'designer_fpGUI', ansistring(conffpguifo.edfilename.Text));
 
-  gINI.writeBool('ifclose', 'designer_fpGUI', conffpguifo.ifclose.Value);
-  gINI.writeString('edclose', 'designer_fpGUI', conffpguifo.edclose.Text);
+  gINI.writeBool('ifclose', 'designer_fpGUI', (conffpguifo.ifclose.Value));
+  gINI.writeString('edclose', 'designer_fpGUI', ansistring(conffpguifo.edclose.Text));
 
-  gINI.writeBool('ifshow', 'designer_fpGUI', conffpguifo.ifshow.Value);
-  gINI.writeString('edshow', 'designer_fpGUI', conffpguifo.edshow.Text);
+  gINI.writeBool('ifshow', 'designer_fpGUI', (conffpguifo.ifshow.Value));
+  gINI.writeString('edshow', 'designer_fpGUI', ansistring(conffpguifo.edshow.Text));
 
-  gINI.writeBool('2xclick', 'sourcepage', confideufo.doubleclic.Value);
+  gINI.writeBool('2xclick', 'sourcepage', (confideufo.doubleclic.Value));
 
-  gINI.writeBool('addwhiteaftercomma', 'editor', confideufo.addwhiteaftercomma.Value);
+  gINI.writeBool('addwhiteaftercomma', 'editor', (confideufo.addwhiteaftercomma.Value));
 
   gINI.writeBool('usedefaulteditoroptions', 'editor',
-    confideufo.usedefaulteditoroptions.Value);
+    (confideufo.usedefaulteditoroptions.Value));
 
-  gINI.WriteInteger('blockindent', 'editor', confideufo.blockindent.Value);
+  gINI.WriteInteger('blockindent', 'editor', (confideufo.blockindent.Value));
 
-  gINI.writeBool('tabindent', 'editor', confideufo.tabindent.Value);
+  gINI.writeBool('tabindent', 'editor', (confideufo.tabindent.Value));
 
-  gINI.WriteInteger('tabstops', 'editor', confideufo.tabstops.Value);
+  gINI.WriteInteger('tabstops', 'editor', (confideufo.tabstops.Value));
 
-  gINI.writeBool('spacetabs', 'editor', confideufo.spacetabs.Value);
+  gINI.writeBool('spacetabs', 'editor', (confideufo.spacetabs.Value));
 
   gINI.writeBool('trimtrailingwhitespace', 'editor',
-    confideufo.trimtrailingwhitespace.Value);
+    (confideufo.trimtrailingwhitespace.Value));
 
-  gINI.WriteInteger('rightmarginchars', 'editor', confideufo.rightmarginchars.Value);
+  gINI.WriteInteger('rightmarginchars', 'editor', (confideufo.rightmarginchars.Value));
   
- gINI.writebool('closemessages', 'message', confideufo.closemessages.Value);  
+ gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));  
 
-  gINI.WriteInteger('colorerror', 'message', confideufo.colorerror.Value);   
+  gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));   
     
- gINI.WriteInteger('colorwarning', 'message', confideufo.colorwarning.Value);    
+ gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));    
     
-  gINI.WriteInteger('colornote', 'message', confideufo.colornote.Value);        
+  gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));        
   
-  gINI.WriteInteger('encoding', 'editor', confideufo.encoding.Value);
+  gINI.WriteInteger('encoding', 'editor', (confideufo.encoding.Value));
 
-  gINI.WriteInteger('backupfilecount', 'editor', confideufo.backupfilecount.Value);
+  gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
 
-  gINI.writebool('nozorder', 'general', confideufo.nozorderenable.Value);
+  gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
 
   if debuggerfo.properties_list.tag = 0 then
     gINI.writebool('Completion', 'proplist', False)
   else
     gINI.writebool('Completion', 'proplist', True);
 
-  gINI.writebool('Assistive', 'sak', confideufo.tbassistive.Value);
-  gINI.writeString('Assistive', 'sakitdir', confideufo.tesakitdir.Text);
+  gINI.writebool('Assistive', 'sak', (confideufo.tbassistive.Value));
+  gINI.writeString('Assistive', 'sakitdir', ansistring(confideufo.tesakitdir.Text));
 
-  gINI.writebool('universaldir', 'general', confideufo.universal_path.Value);
+  gINI.writebool('universaldir', 'general', (confideufo.universal_path.Value));
 
-//  gINI.writebool('keyaccelerator', 'general', confideufo.key_accelerator.Value);
+//  gINI.writebool('keyaccelerator', 'general', ansistring(confideufo.key_accelerator.Value));
 
-  gINI.writebool('addwhiteaftercomma', 'general', confideufo.addwhiteaftercomma.Value);
+  gINI.writebool('addwhiteaftercomma', 'general', (confideufo.addwhiteaftercomma.Value));
 
-  gINI.writebool('fullpath', 'general', confideufo.fullpath.Value);
+  gINI.writebool('fullpath', 'general', (confideufo.fullpath.Value));
 
-  gINI.writebool('autofocusmenu', 'general', confideufo.autofocus_menu.Value);
+  gINI.writebool('autofocusmenu', 'general', (confideufo.autofocus_menu.Value));
 
-  gINI.writeBool('ifhide', 'designer_fpGUI', conffpguifo.ifhide.Value);
-  gINI.writeString('edhide', 'designer_fpGUI', conffpguifo.edhide.Text);
+  gINI.writeBool('ifhide', 'designer_fpGUI', (conffpguifo.ifhide.Value));
+  gINI.writeString('edhide', 'designer_fpGUI', ansistring(conffpguifo.edhide.Text));
 
-  gINI.writeBool('ifquit', 'designer_fpGUI', conffpguifo.ifquit.Value);
-  gINI.writeString('edquit', 'designer_fpGUI', conffpguifo.edquit.Text);
+  gINI.writeBool('ifquit', 'designer_fpGUI', (conffpguifo.ifquit.Value));
+  gINI.writeString('edquit', 'designer_fpGUI', ansistring(conffpguifo.edquit.Text));
 
-  gINI.writeBool('fpc', 'winep1', confcompilerfo.twinep1.Value);
-  gINI.writeBool('fpc', 'winep2', confcompilerfo.twinep2.Value);
-  gINI.writeBool('fpc', 'winep3', confcompilerfo.twinep3.Value);
-  gINI.writeBool('fpc', 'winep4', confcompilerfo.twinep4.Value);
-  gINI.writeBool('fpc', 'winep5', confcompilerfo.twinep5.Value);
-  gINI.writeBool('fpc', 'winep6', confcompilerfo.twinep6.Value);
-  gINI.writeBool('fpc', 'winep7', confcompilerfo.twinep7.Value);
-  gINI.writeBool('fpc', 'winep8', confcompilerfo.twinep8.Value);
+  gINI.writeBool('fpc', 'winep1', (confcompilerfo.twinep1.Value));
+  gINI.writeBool('fpc', 'winep2', (confcompilerfo.twinep2.Value));
+  gINI.writeBool('fpc', 'winep3', (confcompilerfo.twinep3.Value));
+  gINI.writeBool('fpc', 'winep4', (confcompilerfo.twinep4.Value));
+  gINI.writeBool('fpc', 'winep5', (confcompilerfo.twinep5.Value));
+  gINI.writeBool('fpc', 'winep6', (confcompilerfo.twinep6.Value));
+  gINI.writeBool('fpc', 'winep7', (confcompilerfo.twinep7.Value));
+  gINI.writeBool('fpc', 'winep8', (confcompilerfo.twinep8.Value));
 
-  gINI.writeString('fpc', 'compiler1', confcompilerfo.fpccompiler.Value);
-  gINI.writeString('fpc', 'compiler2', confcompilerfo.fpccompiler2.Value);
-  gINI.writeString('fpc', 'compiler3', confcompilerfo.fpccompiler3.Value);
-  gINI.writeString('fpc', 'compiler4', confcompilerfo.fpccompiler4.Value);
-  gINI.writeString('fpc', 'compiler5', confcompilerfo.fpccompiler5.Value);
-  gINI.writeString('fpc', 'compiler6', confcompilerfo.fpccompiler6.Value);
-  gINI.writeString('fpc', 'compiler7', confcompilerfo.fpccompiler7.Value);
-  gINI.writeString('fpc', 'compiler8', confcompilerfo.fpccompiler8.Value);
+  gINI.writeString('fpc', 'compiler1', ansistring(confcompilerfo.fpccompiler.Value));
+  gINI.writeString('fpc', 'compiler2', ansistring(confcompilerfo.fpccompiler2.Value));
+  gINI.writeString('fpc', 'compiler3', ansistring(confcompilerfo.fpccompiler3.Value));
+  gINI.writeString('fpc', 'compiler4', ansistring(confcompilerfo.fpccompiler4.Value));
+  gINI.writeString('fpc', 'compiler5', ansistring(confcompilerfo.fpccompiler5.Value));
+  gINI.writeString('fpc', 'compiler6', ansistring(confcompilerfo.fpccompiler6.Value));
+  gINI.writeString('fpc', 'compiler7', ansistring(confcompilerfo.fpccompiler7.Value));
+  gINI.writeString('fpc', 'compiler8', ansistring(confcompilerfo.fpccompiler8.Value));
 
-  gINI.writeBool('java', 'winej1', confcompilerfo.twinej1.Value);
-  gINI.writeBool('java', 'winej2', confcompilerfo.twinej2.Value);
-  gINI.writeBool('java', 'winej3', confcompilerfo.twinej3.Value);
-  gINI.writeBool('java', 'winej4', confcompilerfo.twinej4.Value);
+  gINI.writeBool('java', 'winej1', (confcompilerfo.twinej1.Value));
+  gINI.writeBool('java', 'winej2', (confcompilerfo.twinej2.Value));
+  gINI.writeBool('java', 'winej3', (confcompilerfo.twinej3.Value));
+  gINI.writeBool('java', 'winej4', (confcompilerfo.twinej4.Value));
 
-  gINI.writeString('java', 'compiler1', confcompilerfo.javacompiler.Value);
-  gINI.writeString('java', 'compiler2', confcompilerfo.javacompiler2.Value);
-  gINI.writeString('java', 'compiler3', confcompilerfo.javacompiler3.Value);
-  gINI.writeString('java', 'compiler4', confcompilerfo.javacompiler4.Value);
+  gINI.writeString('java', 'compiler1', ansistring(confcompilerfo.javacompiler.Value));
+  gINI.writeString('java', 'compiler2', ansistring(confcompilerfo.javacompiler2.Value));
+  gINI.writeString('java', 'compiler3', ansistring(confcompilerfo.javacompiler3.Value));
+  gINI.writeString('java', 'compiler4', ansistring(confcompilerfo.javacompiler4.Value));
 
-  gINI.writeBool('C', 'winec1', confcompilerfo.twinec1.Value);
-  gINI.writeBool('C', 'winec2', confcompilerfo.twinec2.Value);
-  gINI.writeBool('C', 'winec3', confcompilerfo.twinec3.Value);
-  gINI.writeBool('C', 'winec4', confcompilerfo.twinec4.Value);
-  gINI.writeBool('C', 'winec5', confcompilerfo.twinec5.Value);
-  gINI.writeBool('C', 'winec6', confcompilerfo.twinec6.Value);
-  gINI.writeBool('C', 'winec7', confcompilerfo.twinec7.Value);
-  gINI.writeBool('C', 'winec8', confcompilerfo.twinec8.Value);
+  gINI.writeBool('C', 'winec1', (confcompilerfo.twinec1.Value));
+  gINI.writeBool('C', 'winec2', (confcompilerfo.twinec2.Value));
+  gINI.writeBool('C', 'winec3', (confcompilerfo.twinec3.Value));
+  gINI.writeBool('C', 'winec4', (confcompilerfo.twinec4.Value));
+  gINI.writeBool('C', 'winec5', (confcompilerfo.twinec5.Value));
+  gINI.writeBool('C', 'winec6', (confcompilerfo.twinec6.Value));
+  gINI.writeBool('C', 'winec7', (confcompilerfo.twinec7.Value));
+  gINI.writeBool('C', 'winec8', (confcompilerfo.twinec8.Value));
 
-  gINI.writeString('C', 'compiler1', confcompilerfo.ccompiler.Value);
-  gINI.writeString('C', 'compiler2', confcompilerfo.ccompiler2.Value);
-  gINI.writeString('C', 'compiler3', confcompilerfo.ccompiler3.Value);
-  gINI.writeString('C', 'compiler4', confcompilerfo.ccompiler4.Value);
-  gINI.writeString('C', 'compiler5', confcompilerfo.ccompiler5.Value);
-  gINI.writeString('C', 'compiler6', confcompilerfo.ccompiler6.Value);
-  gINI.writeString('C', 'compiler7', confcompilerfo.ccompiler7.Value);
-  gINI.writeString('C', 'compiler8', confcompilerfo.ccompiler8.Value);
+  gINI.writeString('C', 'compiler1', ansistring(confcompilerfo.ccompiler.Value));
+  gINI.writeString('C', 'compiler2', ansistring(confcompilerfo.ccompiler2.Value));
+  gINI.writeString('C', 'compiler3', ansistring(confcompilerfo.ccompiler3.Value));
+  gINI.writeString('C', 'compiler4', ansistring(confcompilerfo.ccompiler4.Value));
+  gINI.writeString('C', 'compiler5', ansistring(confcompilerfo.ccompiler5.Value));
+  gINI.writeString('C', 'compiler6', ansistring(confcompilerfo.ccompiler6.Value));
+  gINI.writeString('C', 'compiler7', ansistring(confcompilerfo.ccompiler7.Value));
+  gINI.writeString('C', 'compiler8', ansistring(confcompilerfo.ccompiler8.Value));
 
-  gINI.writeBool('python', 'winepy1', confcompilerfo.twinepy1.Value);
-  gINI.writeBool('python', 'winepy2', confcompilerfo.twinepy2.Value);
-  gINI.writeBool('python', 'winepy3', confcompilerfo.twinepy3.Value);
-  gINI.writeBool('python', 'winepy4', confcompilerfo.twinepy4.Value);
+  gINI.writeBool('python', 'winepy1', (confcompilerfo.twinepy1.Value));
+  gINI.writeBool('python', 'winepy2', (confcompilerfo.twinepy2.Value));
+  gINI.writeBool('python', 'winepy3', (confcompilerfo.twinepy3.Value));
+  gINI.writeBool('python', 'winepy4', (confcompilerfo.twinepy4.Value));
 
-  gINI.writeString('python', 'compiler1', confcompilerfo.pythoncompiler.Value);
-  gINI.writeString('python', 'compiler2', confcompilerfo.pythoncompiler2.Value);
-  gINI.writeString('python', 'compiler3', confcompilerfo.pythoncompiler3.Value);
-  gINI.writeString('python', 'compiler4', confcompilerfo.pythoncompiler4.Value);
+  gINI.writeString('python', 'compiler1', ansistring(confcompilerfo.pythoncompiler.Value));
+  gINI.writeString('python', 'compiler2', ansistring(confcompilerfo.pythoncompiler2.Value));
+  gINI.writeString('python', 'compiler3', ansistring(confcompilerfo.pythoncompiler3.Value));
+  gINI.writeString('python', 'compiler4', ansistring(confcompilerfo.pythoncompiler4.Value));
 
-  gINI.writeBool('other', 'wineo1', confcompilerfo.twineo1.Value);
-  gINI.writeBool('other', 'wineo2', confcompilerfo.twineo2.Value);
-  gINI.writeBool('other', 'wineo3', confcompilerfo.twineo3.Value);
-  gINI.writeBool('other', 'wineo4', confcompilerfo.twineo4.Value);
+  gINI.writeBool('other', 'wineo1', (confcompilerfo.twineo1.Value));
+  gINI.writeBool('other', 'wineo2', (confcompilerfo.twineo2.Value));
+  gINI.writeBool('other', 'wineo3', (confcompilerfo.twineo3.Value));
+  gINI.writeBool('other', 'wineo4', (confcompilerfo.twineo4.Value));
 
-  gINI.writeString('other', 'compiler1', confcompilerfo.othercompiler.Value);
-  gINI.writeString('other', 'compiler2', confcompilerfo.othercompiler2.Value);
-  gINI.writeString('other', 'compiler3', confcompilerfo.othercompiler3.Value);
-  gINI.writeString('other', 'compiler4', confcompilerfo.othercompiler4.Value);
+  gINI.writeString('other', 'compiler1', ansistring(confcompilerfo.othercompiler.Value));
+  gINI.writeString('other', 'compiler2', ansistring(confcompilerfo.othercompiler2.Value));
+  gINI.writeString('other', 'compiler3', ansistring(confcompilerfo.othercompiler3.Value));
+  gINI.writeString('other', 'compiler4', ansistring(confcompilerfo.othercompiler4.Value));
 
-  gINI.writeString('debug', 'debugger1', confdebuggerfo.debugger1.Value);
-  gINI.writeString('debug', 'debugger2', confdebuggerfo.debugger2.Value);
-  gINI.writeString('debug', 'debugger3', confdebuggerfo.debugger3.Value);
-  gINI.writeString('debug', 'debugger4', confdebuggerfo.debugger4.Value);
+  gINI.writeString('debug', 'debugger1', ansistring(confdebuggerfo.debugger1.Value));
+  gINI.writeString('debug', 'debugger2', ansistring(confdebuggerfo.debugger2.Value));
+  gINI.writeString('debug', 'debugger3', ansistring(confdebuggerfo.debugger3.Value));
+  gINI.writeString('debug', 'debugger4', ansistring(confdebuggerfo.debugger4.Value));
 
   if confideufo.tbfilereload.Value = True then
     gINI.WriteInteger('General', 'WarnChange', 0)
@@ -1063,7 +1062,7 @@ begin
 
   if (conffpguifo.enablefpguidesigner.Value = True) and
     (conffpguifo.ifquit.Value = True) then
-    LoadfpgDesigner(conffpguifo.edquit.Text);
+    LoadfpgDesigner(ansistring(conffpguifo.edquit.Text));
 
 end;
 
@@ -1103,7 +1102,7 @@ var
           begin
             try
               po1 := openformfile(wstr1, False, False, False, False, False);
-              Result := (po1 <> nil) and (struppercase(po1^.instancevarname) = wstr2);
+              Result := (po1 <> nil) and (utf8decode(struppercase(po1^.instancevarname)) = (wstr2));
             except
               application.handleexception;
               Result := False;
@@ -1121,7 +1120,7 @@ var
   mstr1: filenamety;
 
 begin
-  wstr2 := struppercase(aname);
+  wstr2 := utf8decode(struppercase(aname));
   int1 := findchar(wstr2, '.');
   if int1 > 0 then
   begin
@@ -1131,7 +1130,7 @@ begin
   begin
     bo1 := dofind(o.modulenames, o.modulefiles);
   end;
-  if not bo1 and projecttree.units.findformbyname(wstr2, mstr1) then
+  if not bo1 and projecttree.units.findformbyname(ansistring(wstr2), mstr1) then
   begin
     bo1 := dofind([wstr2], [mstr1]);
   end;
@@ -1141,8 +1140,8 @@ begin
   end
   else
   begin
-    action := ShowMessage(c[Ord(unresreferences)] + ' ' + amodule^.moduleclassname + ' ' +
-      c[Ord(str_to)] + ' ' + aname +
+    action := ShowMessage(c[Ord(unresreferences)] + ' ' + utf8decode(amodule^.moduleclassname) + ' ' +
+      c[Ord(str_to)] + ' ' + utf8decode(aname) +
       '.' + lineend + ' ' + c[Ord(wishsearch)], c[Ord(warning)],
       [mr_ok, mr_cancel], mr_ok);
     case action of
@@ -1152,7 +1151,7 @@ begin
         //    openform.controller.filename:= '';
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
         if openform.controller.Execute(wstr2, fdk_open,
-          c[Ord(formfile)] + ' ' + aname) then
+          c[Ord(formfile)] + ' ' + utf8decode(aname)) then
         begin
           //    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
           //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
@@ -1208,7 +1207,7 @@ begin
   // ar1:= nil; //compilerwarning
   if fcheckmodulelevel >= 16 then
   begin
-    ShowMessage(c[Ord(recursive)] + atypename + '"', c[Ord(error)]);
+    ShowMessage(c[Ord(recursive)] + utf8decode(atypename) + '"', c[Ord(error)]);
     SysUtils.abort;
   end;
   Inc(fcheckmodulelevel);
@@ -1216,7 +1215,7 @@ begin
     with projectoptions do
     begin
       po1 := nil;
-      wstr2 := struppercase(atypename);
+      wstr2 := utf8decode(struppercase(atypename));
       for int1 := 0 to high(o.moduletypes) do
       begin
         if o.moduletypes[int1] = wstr2 then
@@ -1231,7 +1230,7 @@ begin
     end;
     if po1 = nil then
     begin
-      if projecttree.units.findformbyclass(wstr2, mstr1) then
+      if projecttree.units.findformbyclass(ansistring(wstr2), mstr1) then
       begin
         checkmodule(mstr1);
       end;
@@ -1247,7 +1246,7 @@ begin
     end;
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
     begin
-      if ShowMessage(c[Ord(str_classtype)] + ' ' + atypename + ' ' + c[Ord(notfound)] + lineend +
+      if ShowMessage(c[Ord(str_classtype)] + ' ' + utf8decode(atypename) + ' ' + c[Ord(notfound)] + lineend +
         ' ' + c[Ord(wishsearch)], c[Ord(warning)],
         [mr_yes, mr_cancel]) = mr_yes then
       begin
@@ -1473,8 +1472,8 @@ procedure tmainfo.expronsetvalue(const Sender: TObject; var avalue: msestring;
 var
   expres: string;
 begin
-  gdb.evaluateexpression(avalue, expres);
-  exprdisp.Value := expres;
+  gdb.evaluateexpression(ansistring(avalue), expres);
+  exprdisp.Value := utf8decode(expres);
 end;
 
 procedure tmainfo.refreshframe;
@@ -1521,14 +1520,14 @@ begin
   page1 := sourcefo.ActivePage;
   if (page1 <> nil) then
   begin
-    RunCustomCompiled(page1.filepath, debuggerfo.edit_compiler.Value);
+    RunCustomCompiled(ansistring(page1.filepath), ansistring(debuggerfo.edit_compiler.Value));
   end;
 end;
 
 procedure tmainfo.runwithoutdebugger;
 var
   int1, int2: integer;
-  strwine: string;
+  strwine: msestring;
 
 begin
 
@@ -1580,22 +1579,22 @@ begin
     strwine := '';
    {$ifdef linux}
     if (system.pos('.exe', gettargetfile) > 0) then
-      strwine := IntToStr(int1) + 'w'
+      strwine := utf8decode(IntToStr(int1) + 'w')
     else
     begin
       if (int1 = 1) or (int1 = 3) then
         strwine := ''
       else
-        strwine := IntToStr(int1);
+        strwine := utf8decode(IntToStr(int1));
     end;
    {$else}
     if (int1 = 1) or (int1 = 3) then
       strwine := ''
     else
-      strwine := IntToStr(int1);
+      strwine := utf8decode(IntToStr(int1));
    {$endif}
 
-    RunCustomCompiled(gettargetfile, strwine);
+    RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
 
   end;
 end;
@@ -1660,7 +1659,7 @@ begin
                 setstattext('  Toggled to form...', mtk_flat);
                 toogletag := True;
 
-                sysfilename := tosysfilepath(filepath(str3, fk_file, True));
+                sysfilename := ansistring(tosysfilepath(filepath(str3, fk_file, True)));
 
                 LoadfpgDesigner(sysfilename);
                 //  fpgfilename := page1.filepath;
@@ -1672,7 +1671,7 @@ begin
                 setstattext('  Toggled to source...', mtk_flat);
                 toogletag := False;
                 if (conffpguifo.tbfpgonlyone.Value = True) and (conffpguifo.ifhide.Value = True) then
-                  LoadfpgDesigner(conffpguifo.edhide.Text);
+                  LoadfpgDesigner(ansistring(conffpguifo.edhide.Text));
               end;
             end;
 
@@ -1842,18 +1841,18 @@ begin
     case reason of
       sr_signal_received:
       begin
-        setstattext(messagetext, mtk_signal);
+        setstattext(utf8decode(messagetext), mtk_signal);
       end;
       sr_error:
       begin
-        setstattext(messagetext, mtk_error);
+        setstattext(utf8decode(messagetext), mtk_error);
       end;
       sr_exception:
       begin
       end;
       else
       begin
-        setstattext(messagetext, mtk_finished);
+        setstattext(utf8decode(messagetext), mtk_finished);
       end;
     end;
     watchfo.refresh;
@@ -1865,7 +1864,7 @@ begin
     disassfo.refresh(addr);
     if (reason = sr_exception) then
     begin
-      setstattext(messagetext + ' ' + stackfo.infotext(1), mtk_signal);
+      setstattext(utf8decode(messagetext) + ' ' + (stackfo.infotext(1)), mtk_signal);
       if not stackfo.showsource(1) then
       begin
         sourcefo.locate(stopinfo);
@@ -1928,7 +1927,7 @@ begin
             if reason = sr_detached then
             begin
               cleardebugdisp;
-              setstattext(stopinfo.messagetext, mtk_finished);
+              setstattext(utf8decode(stopinfo.messagetext), mtk_finished);
               programfinished;
               debuggerfo.project_reset.Enabled := False;
               debuggerfo.project_interrupt.Enabled := False;
@@ -1952,7 +1951,7 @@ begin
     end;
     gek_error, gek_writeerror, gek_gdbdied:
     begin
-      setstattext('GDB: ' + stopinfo.messagetext, mtk_error);
+      setstattext('GDB: ' + utf8decode(stopinfo.messagetext), mtk_error);
     end;
     gek_targetoutput:
     begin
@@ -1964,8 +1963,8 @@ begin
       begin
         if sectionsize > 0 then
         begin
-          setstattext(c[Ord(str_downloading)] + ' ' + section + ' ' +
-            IntToStr(round(sectionsent / sectionsize * 100)) + '%', mtk_making);
+          setstattext(c[Ord(str_downloading)] + ' ' + utf8decode(section) + ' ' +
+            utf8decode(IntToStr(round(sectionsent / sectionsize * 100))) + '%', mtk_making);
         end;
       end;
     end;
@@ -1974,8 +1973,8 @@ begin
       if Sender.downloaded then
       begin
         downloaded;
-        setstattext(c[Ord(str_downloaded)] + ' ' + formatfloat('0.00,',
-          stopinfo.totalsent / 1024) + 'kB', mtk_finished);
+        setstattext(c[Ord(str_downloaded)] + ' ' + utf8decode(formatfloat('0.00,',
+          stopinfo.totalsent / 1024)) + 'kB', mtk_finished);
         //    sender.abort;
       end;
     end;
@@ -2090,7 +2089,7 @@ begin
             (projectoptions.d.nogdbserverexit and
             (fgdbserverexitcode = -1)) then
           begin
-            setstattext(c[Ord(gdbserverstarterror)] + ' ' + IntToStr(fgdbserverexitcode) + '.',
+            setstattext(c[Ord(gdbserverstarterror)] + ' ' + utf8decode(IntToStr(fgdbserverexitcode)) + '.',
               mtk_error);
             exit;
           end;
@@ -2116,7 +2115,7 @@ begin
   Result := aresult = gdb_ok;
   if not Result then
   begin
-    setstattext('GDB: ' + gdb.geterrormessage(aresult), mtk_error);
+    setstattext('GDB: ' + utf8decode(gdb.geterrormessage(aresult)), mtk_error);
   end;
 end;
 
@@ -2246,7 +2245,7 @@ var
 begin
   with projectoptions, d.texp do
   begin
-    gdb.progparameters := progparameters;
+    gdb.progparameters := ansistring(progparameters);
     gdb.workingdirectory := progworkingdirectory;
     gdb.clearenvvars;
     for int1 := 0 to high(envvarons) do
@@ -2257,11 +2256,11 @@ begin
       end;
       if envvarons[int1] then
       begin
-        gdb.setenvvar(envvarnames[int1], envvarvalues[int1]);
+        gdb.setenvvar(ansistring(envvarnames[int1]), ansistring(envvarvalues[int1]));
       end
       else
       begin
-        gdb.unsetenvvar(envvarnames[int1]);
+        gdb.unsetenvvar(ansistring(envvarnames[int1]));
       end;
     end;
   end;
@@ -2312,7 +2311,7 @@ begin
             if downloadresult <> 0 then
             begin
               setstattext(c[Ord(downloaderror)] + ' ' +
-                IntToStr(downloadresult) + '.', mtk_error);
+                utf8decode(IntToStr(downloadresult)) + '.', mtk_error);
               exit;
             end
             else
@@ -2478,7 +2477,7 @@ begin
       gdb.remoteconnection := remoteconnection;
       gdb.gdbdownload := d.gdbdownload;
       gdb.simulator := d.gdbsimulator;
-      gdb.processorname := gdbprocessor;
+      gdb.processorname := ansistring(gdbprocessor);
       gdb.guiintf := not d.nodebugbeginend;
       gdb.beforeconnect := beforeconnect;
       gdb.afterconnect := afterconnect;
@@ -2514,8 +2513,8 @@ procedure tmainfo.symboltypeonsetvalue(const Sender: TObject;
 var
   expres: string;
 begin
-  gdb.symboltype(avalue, expres);
-  symboltypedisp.Value := expres;
+  gdb.symboltype(ansistring(avalue), expres);
+  symboltypedisp.Value := utf8decode(expres);
 end;
 
 procedure tmainfo.viewbreakpointsonexecute(const Sender: TObject);
@@ -2615,6 +2614,7 @@ procedure tmainfo.mainmenuonupdate(const Sender: tcustommenu);
 var
   bo1: boolean;
 begin
+  bo1:= false;
   with debuggerfo do
   begin
     project_start.Enabled := not gdb.running and not gdb.downloading;
@@ -2898,7 +2898,7 @@ procedure tmainfo.loadformbysource(const sourcefilename: filenamety);
 var
   str1: filenamety;
   activebefore: pmoduleinfoty;
-  sysfilename: string;
+  sysfilename: msestring;
 begin
   if fileext(sourcefilename) = pasfileext then
   begin
@@ -2906,7 +2906,7 @@ begin
     if (conffpguifo.enablefpguidesigner.Value = True) then
     begin
       sysfilename := tosysfilepath(filepath(trim(sourcefilename), fk_file, True));
-      LoadfpgDesigner(sysfilename);
+      LoadfpgDesigner(ansistring(sysfilename));
     end;
 
 
@@ -3036,7 +3036,7 @@ end;
 procedure tmainfo.viewfpguidesigneronexecute(const Sender: TObject);
 begin
 
-  LoadfpgDesigner(conffpguifo.edshow.Text);
+  LoadfpgDesigner(ansistring(conffpguifo.edshow.Text));
 
 end;
 
@@ -3047,7 +3047,7 @@ begin
   begin
     LoadfpgDesigner('hideit');
     sleep(1000);
-    LoadfpgDesigner(conffpguifo.edshow.Text);
+    LoadfpgDesigner(ansistring(conffpguifo.edshow.Text));
   end;
 
 
@@ -3113,15 +3113,15 @@ procedure tmainfo.createform(const aname: filenamety; const namebase: string;
   const ancestor: string);
 var
   stream1: ttextstream;
-  str1, str2, str3: string;
+  str1, str2, str3: msestring;
   po1: pmoduleinfoty;
 begin
   str2 := removefileext(filename(aname));
   str3 := str2;
-  str2 := getmodulename(str2, namebase);
+  str2 := utf8decode(getmodulename(ansistring(str2), namebase));
   stream1 := ttextstream.Create(aname, fm_create);
   try
-    formskeleton(stream1, filename(str3), str2, ancestor);
+    formskeleton(stream1, ansistring(filename(str3)), ansistring(str2), ancestor);
   finally
     stream1.Free;
   end;
@@ -3157,7 +3157,7 @@ var
 begin
   stream1 := ttextstream.Create(aname, fm_create);
   try
-    programskeleton(stream1, removefileext(filename(aname)));
+    programskeleton(stream1, ansistring(removefileext(filename(aname))));
   finally
     stream1.Free;
   end;
@@ -3201,7 +3201,7 @@ begin
         base := base + dir;
         int1 := 1;
         repeat
-          path2 := base + IntToStr(int1) + ext;
+          path2 := base + utf8decode(IntToStr(int1)) + ext;
           Inc(int1);
         until not findfile(path2);
       end;
@@ -3265,7 +3265,7 @@ var
   str1, str2, str3, str4, str5: filenamety;
   dir, base, ext: filenamety;
   po1: pmoduleinfoty;
-  ancestorclass, ancestorunit: string;
+  ancestorclass, ancestorunit: msestring;
 
 begin
   // if formkindty(tmenuitem(sender).tag) = fok_inherited then begin
@@ -3276,7 +3276,7 @@ begin
     begin
       exit;
     end;
-    ancestorclass := po1^.moduleclassname;
+    ancestorclass := utf8decode(po1^.moduleclassname);
     ancestorunit := filenamebase(po1^.filename);
   end
   else
@@ -3307,7 +3307,7 @@ begin
         str3 := filepath(str3); //formsource
       end;
       splitfilepath(str1, dir, base, ext);
-      str4 := getmodulename(base, str4);
+      str4 := UTF8Decode(getmodulename(ansistring(base), ansistring(str4)));
       str5 := replacefileext(str1, 'mfm');
       if str2 <> '' then
       begin
@@ -3364,6 +3364,7 @@ end;
 
 function tmainfo.closeallmodule(): boolean;
 begin
+result := true;
   while designer.modules.Count > 0 do
   begin
     closemodule(designer.modules.itempo[designer.modules.Count - 1], False, True);
@@ -4009,7 +4010,7 @@ begin
     frunningprocess := invalidprochandle;
     if execresult <> 0 then
     begin
-      setstattext(c[Ord(processterminated)] + ' ' + IntToStr(execresult) + '.',
+      setstattext(c[Ord(processterminated)] + ' ' + UTF8Decode(IntToStr(execresult)) + '.',
         mtk_error);
     end
     else
@@ -4100,14 +4101,14 @@ end;
 procedure tmainfo.aftermake(const adesigner: idesigner;
   const exitcode: integer);
 var
-  str3: string;
+  str3: msestring;
   int3: integer;
 begin
   actionsmo.finishcustom;
 
   if exitcode <> 0 then
   begin
-    setstattext(c[Ord(makeerror)] + ' ' + IntToStr(exitcode) + '.', mtk_error);
+    setstattext(c[Ord(makeerror)] + ' ' + UTF8Decode(IntToStr(exitcode)) + '.', mtk_error);
     showfirsterror;
   end
   else
@@ -4166,7 +4167,7 @@ begin
           else
 
           if (trim(debuggerused[int3]) = 'Debugger 4') then
-            str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value))
+            str3 := (quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value)))
           else
             str3 := '';
         end;
@@ -4391,7 +4392,7 @@ end;
 
 procedure tmainfo.runtool(const Sender: TObject);
 var
-  str1: ansistring;
+  str1: msestring;
   mstr1: msestring;
   macrolist: tmacrolist;
   // gridcoord1: gridcoordty;
@@ -4451,7 +4452,7 @@ begin
           begin
             with gettypedata(ar1[0].classinfo)^ do
             begin
-              curcomponentclass := uppercase(unitname + '.' + ar1[0].ClassName);
+              curcomponentclass := UTF8Decode(uppercase(unitname + '.' + ar1[0].ClassName));
             end;
             propit := tpropertyitem(objectinspectorfo.props.item);
             if propit <> nil then
@@ -4477,7 +4478,7 @@ begin
             curcomponentclass, curproperty], []);
           macrolist.expandmacros1(mstr1);
           macrolist.Free;
-          str1 := str1 + ' ' + mstr1;
+          str1 := ((str1) + ' ' + mstr1);
         end;
       end;
       opt1 := [exo_nostdhandle];
@@ -4487,11 +4488,11 @@ begin
       end;
       if (index <= high(toolmessages)) and toolmessages[index] then
       begin
-        ttoolhandlermo.Create(self, str1, opt1);
+        ttoolhandlermo.Create(self, (str1), opt1);
       end
       else
       begin
-        execmse(str1, opt1{not((index > high(toolhide)) or toolhide[index]),true});
+        execmse((str1), opt1{not((index > high(toolhide)) or toolhide[index]),true});
       end;
     end;
   end;

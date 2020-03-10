@@ -262,7 +262,7 @@ begin
           macros[ma1] := readmsestring(settingsmacronames[ma1], defaultsettingmacros[ma1]);
         end;
       end;
-      printcommand := sys_getprintcommand;
+      printcommand := ansistring(sys_getprintcommand);
     end;
     filer.updatevalue('printcommand', printcommand);
     filer.updatevalue('globmacronames', globmacronames);
@@ -299,7 +299,7 @@ begin
         begin
           macros := widgetstomacros;
           //     expandprojectmacros;
-          printcommand := printcomm.Value;
+          printcommand := ansistring(printcomm.Value);
         end;
       end;
     finally
@@ -337,7 +337,7 @@ begin
     debugger.Value := macros[sma_debugger];
     exeext.Value := macros[sma_exeext];
     target.Value := macros[sma_target];
-    printcomm.Value := printcommand;
+    printcomm.Value := UTF8Decode(printcommand);
     macroname.gridvalues := globmacronames;
     macrovalue.gridvalues := globmacrovalues;
   end;
@@ -366,7 +366,7 @@ begin
   with Result do
   begin
     macros[sma_projectdir] := TheProjectDirectory;
-    macros[sma_ideudir] := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
     macros[sma_lcldir] := lcldir.Value;
     macros[sma_fpguidir] := fpguidir.Value;
     macros[sma_fpcsrcdir] := fpcsrcdir.Value;

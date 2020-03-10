@@ -37,6 +37,7 @@ type
     constructor CreateExt(const AFileName: String = ''; AReadOnly: Boolean = False);
     function    ReadString(const ASection, AIdent, ADefault: string): string; override;
     function    ReadInteger(const ASection, AIdent: string; ADefault: longint): longint; override;
+    //function    ReadInt64(const Section, Ident: string; ADefault: Int64): Int64; override;
     function    ReadBool(const ASection, AIdent: string; ADefault: Boolean): Boolean; override;
     function    ReadDate(const ASection, AName: string; ADefault: TDateTime): TDateTime; override;
     function    ReadDateTime(const ASection, AName: string; ADefault: TDateTime): TDateTime; override;

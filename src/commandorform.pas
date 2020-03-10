@@ -307,16 +307,16 @@ if system.pos('Default',debuggerused[int3]) > 0 then
    str3:= 'Default Debugger' else
         
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
+    str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger1.value))) else
     
     if (trim(debuggerused[int3]) = 'Debugger 2') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
+    str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger2.value))) else
     
     if (trim(debuggerused[int3]) = 'Debugger 3') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
+    str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger3.value))) else
     
      if (trim(debuggerused[int3]) = 'Debugger 4') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)) else
+    str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) else
     str3:= '' ;
  end;
  end;

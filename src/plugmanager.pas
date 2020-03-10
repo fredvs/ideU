@@ -130,15 +130,15 @@ Begin
   If (acompiler = '') Or (acompiler = '1w') Or (acompiler = '3w') Then
     Begin
       If (acompiler = '') Then
-        RunWithoutDebug(tosysfilepath(filepath(AFilename, fk_file, True)), acompiler)
+        RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))), acompiler)
       Else
-        RunWithoutDebug(tosysfilepath(filepath(AFilename, fk_file, True)), 'wine');
+        RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))), 'wine');
     End
   Else
     Begin
-      If fileexists(tosysfilepath(filepath(AFilename, fk_file, True))) Then
+      If fileexists(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))) Then
         Begin
-          dataf2 := trim(tosysfilepath(filepath(AFilename, fk_file, True)));
+          dataf2 := ansistring(trim(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))));
           len1 := pos('.', dataf2);
 
           If (acompiler = 'Pascal') Or (acompiler = 'C') Or (acompiler = '1') Or
@@ -150,14 +150,14 @@ Begin
               dataf := copy(dataf2, 1, len1 - 1);
     {$endif}
 
-              dataf := tosysfilepath(filepath(trim(dataf), fk_file, True));
+              dataf := ansistring(tosysfilepath(filepath(UTF8Decode(trim(dataf)), fk_file, True)));
 
               If fileexists(dataf) Then
                 Begin
                   RunWithoutDebug(dataf, '');
                 End
               Else
-                mainfo.setstattext(dataf + ' is not executable...', mtk_notok);
+                mainfo.setstattext(UTF8Decode(dataf + ' is not executable...'), mtk_notok);
             End;
 
           If (acompiler = 'Java') Or (acompiler = '2') Then
@@ -183,7 +183,7 @@ Begin
 
                 End
               Else
-                mainfo.setstattext(dataf + '.class' + ' does not exist...', mtk_notok);
+                mainfo.setstattext(UTF8Decode(dataf + '.class' + ' does not exist...'), mtk_notok);
             End;
 
           If (acompiler = 'Python') Or (acompiler = '4') Then
@@ -209,7 +209,7 @@ Begin
 
                 End
               Else
-                mainfo.setstattext(dataf + '.pywc' + ' does not exist...', mtk_notok);
+                mainfo.setstattext(UTF8Decode(dataf + '.pywc' + ' does not exist...'), mtk_notok);
             End;
 
         End;
@@ -230,8 +230,8 @@ Begin
     Begin
       AProcess := TProcess.Create(Nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := Aparam + ' ' + tosysfilepath(
-                              filepath(AFilename, fk_file, True));
+      AProcess.CommandLine := Aparam + ' ' + ansistring(tosysfilepath(
+                              filepath(UTF8Decode(AFilename), fk_file, True)));
      {$WARN SYMBOL_DEPRECATED ON}
       AProcess.Priority := ppRealTime;
       AProcess.Options := [poNoConsole];
@@ -244,7 +244,7 @@ Begin
       Begin
         AProcess := TProcess.Create(Nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-        AProcess.CommandLine := tosysfilepath(filepath(AFilename, fk_file, True));
+        AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
      {$WARN SYMBOL_DEPRECATED ON}
         AProcess.Priority := ppRealTime;
         AProcess.Options := [poNoConsole];
@@ -257,7 +257,7 @@ Begin
       Begin
         AProcess := TProcess.Create(Nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-        AProcess.CommandLine := tosysfilepath(filepath(AFilename, fk_file, True));
+        AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
      {$WARN SYMBOL_DEPRECATED ON}
         AProcess.Priority := ppRealTime;
         AProcess.Options := [poNoConsole];
@@ -266,7 +266,7 @@ Begin
       End
   Else
 
-    If fileexists(tosysfilepath(filepath(AFilename, fk_file, True))) Then
+    If fileexists(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)))) Then
       Begin
         If Aparam = 'wine' Then
           Begin
@@ -275,9 +275,9 @@ Begin
           End;
 
         If (wineneeded = True) Then
-          thecommand := 'wine ' + tosysfilepath(filepath(AFilename, fk_file, True))
+          thecommand := 'wine ' + ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)))
         Else
-          thecommand := tosysfilepath(filepath(AFilename, fk_file, True));
+          thecommand := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
         AProcess := TProcess.Create(Nil);
       {$WARN SYMBOL_DEPRECATED OFF}
         AProcess.CommandLine := thecommand + Aparam;
@@ -289,7 +289,7 @@ Begin
         mainfo.setstattext('', mtk_flat);
       End
   Else
-    mainfo.setstattext(AFilename + ' does not exist...', mtk_notok);
+    mainfo.setstattext(UTF8Decode(AFilename) + ' does not exist...', mtk_notok);
 End;
 
 //Beautifier
@@ -304,19 +304,19 @@ Begin
   plugpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
               'plugin' + directoryseparator ;
 
-  tosysfilepath(filepath(plugpath, fk_file, True)) ;
+  tosysfilepath(filepath(UTF8Decode(plugpath), fk_file, True)) ;
 
   If backup Then
-    CopyFile(tosysfilepath(filepath(AFilename, fk_file, True)),
-    tosysfilepath(filepath(AFilename, fk_file, True)) + '.bak_' +
-     formatdatetime('YYYY_MM_DD_HH_mm_ss',now))  ;
+    CopyFile(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)),
+    tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)) + '.bak_' +
+     UTF8Decode(formatdatetime('YYYY_MM_DD_HH_mm_ss',now)))  ;
 
   If formatengine = 0 Then
     Begin
       exename := 'ptop';
       param := ' -c ' +
-               tosysfilepath(filepath(plugpath + exename +
-               directoryseparator + exename + '.cfg ', fk_file, True)) + ' ';
+               ansistring(tosysfilepath(filepath(UTF8Decode(plugpath + exename +
+               directoryseparator + exename + '.cfg '), fk_file, True))) + ' ';
                ;
      //writeln(param);          
     End
@@ -336,11 +336,11 @@ Begin
   plugpath := plugpath + '.exe';
 {$ENDIF}
 
-  plugpath := tosysfilepath(filepath(plugpath, fk_file, True));
+  plugpath := ansistring(tosysfilepath(filepath(UTF8Decode(plugpath), fk_file, True)));
   
  // writeln(plugpath);  
  
-  If fileexists(tosysfilepath(filepath(trim(AFilename),
+  If fileexists(tosysfilepath(filepath(UTF8Decode(trim(AFilename)),
      fk_file, True))) Then
     Begin
       result := true;
@@ -349,12 +349,12 @@ Begin
   // beautyfo.filetoclean.value := plugpath + param + AFilename ;
 
       If formatengine = 0 Then
-        RunWithoutDebug(plugpath, param + tosysfilepath(filepath(trim(AFilename),
-     fk_file, True)) + ' ' + tosysfilepath(filepath(trim(AFilename),
-     fk_file, True)))
+        RunWithoutDebug(plugpath, param + ansistring(tosysfilepath(filepath(UTF8Decode(trim(AFilename)),
+     fk_file, True))) + ' ' + ansistring(tosysfilepath(filepath(utf8decode(trim(AFilename)),
+     fk_file, True))))
       Else
-        RunWithoutDebug(plugpath, param + tosysfilepath(filepath(trim(AFilename),
-     fk_file, True)));
+        RunWithoutDebug(plugpath, param + ansistring(tosysfilepath((filepath(UTF8Decode(trim(AFilename)),
+     fk_file, True)))));
     End;
 End;
 
@@ -371,18 +371,18 @@ Begin
          ((iffpgdconsumed = False) And (AfpgFilename = 'closeall')) Or
          ((iffpgdconsumed = False) And (AfpgFilename = 'hideit')) Then
       Else
-        If (fileexists(tosysfilepath(filepath(AfpgFilename, fk_file, True)))) Or
+        If (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) Or
            (AfpgFilename = 'closeall') Or (AfpgFilename = 'quit') Or
            (AfpgFilename = 'showit') Or (AfpgFilename = 'hideit') Then
           Begin
             iffpgdconsumed := True;
-            dataf := tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
-                     fk_file, True));
-            If (fileexists(tosysfilepath(filepath(AfpgFilename, fk_file, True)))) Then
+            dataf := ansistring(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
+                     fk_file, True)));
+            If (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) Then
               RunWithoutDebug(dataf, ' ' +
-                              tosysfilepath(filepath(AfpgFilename, fk_file, True)))
+                              ansistring(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True))))
             Else
-              RunWithoutDebug(dataf, ' ' + AfpgFilename);
+              RunWithoutDebug(dataf, ' ' + ansistring(AfpgFilename));
           End;
     End;
 End;

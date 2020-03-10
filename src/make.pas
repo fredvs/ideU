@@ -565,7 +565,7 @@ for int3:= 0 to high(compilerused) do begin
   str1:= trim(str1) + ' ' + quotefilename(normalizename(mainfile));
  end;
  if winestr = 'wine ' then wineneeded := true ;
-   result:= trim(str1 + extrastr) ;
+   result:= ansistring(trim(str1 + extrastr)) ;
  end;
 
 /// fred
@@ -813,7 +813,7 @@ str1:= winestr + str1 + ' ';
  end;
  str1:= trim(str1 + extrastr);
 // writeln(str1);
- result:= str1 ;
+ result:= ansistring(str1) ;
 end;
 
 procedure dodownload;
@@ -890,7 +890,7 @@ begin
    wdbefore:= setcurrentdirmse(makedir);
   end;
   try
-   procid:= execmse2(acommandline,nil,messagepipe,messagepipe,-1,
+   procid:= execmse2(UTF8Decode(acommandline),nil,messagepipe,messagepipe,-1,
                                                    [exo_inactive,exo_tty]);
   except
    on e1: exception do begin
@@ -901,7 +901,7 @@ begin
 {$warnings on}
     end;
     application.handleexception(nil,actionsmo.c[ord(ac_runerrorwith)]+
-                                                          acommandline+'": ');
+                                                          UTF8Decode(acommandline)+'": ');
    end;
   end;
   if fsetmakedir and (makedir <> '') then begin
@@ -1009,7 +1009,7 @@ begin
    while fscriptnum <= high(befcommandon) do begin
     if (befcommandon[fscriptnum] and fmaketag <> 0) and 
                            (fscriptnum <= high(texp.befcommand)) then begin
-     result:= o.texp.befcommand[fscriptnum];
+     result:= ansistring(o.texp.befcommand[fscriptnum]);
      break;
     end;
     inc(fscriptnum);
@@ -1032,7 +1032,7 @@ begin
    while fscriptnum <= high(aftcommandon) do begin
     if (aftcommandon[fscriptnum] and fmaketag <> 0) and 
                            (fscriptnum <= high(o.texp.aftcommand)) then begin
-     result:= o.texp.aftcommand[fscriptnum];
+     result:= ansistring(o.texp.aftcommand[fscriptnum]);
      break;
     end;
     inc(fscriptnum);
@@ -1112,7 +1112,7 @@ begin
    while fscriptnum <= high(befcommandon) do begin
     if (befcommandon[fscriptnum] and fmaketag <> 0) and 
                            (fscriptnum <= high(texp.befcommand)) then begin
-     result:= o.texp.befcommand[fscriptnum];
+     result:= ansistring(o.texp.befcommand[fscriptnum]);
      break;
     end;
     inc(fscriptnum);
@@ -1135,7 +1135,7 @@ begin
    while fscriptnum <= high(aftcommandon) do begin
     if (aftcommandon[fscriptnum] and fmaketag <> 0) and 
                            (fscriptnum <= high(o.texp.aftcommand)) then begin
-     result:= o.texp.aftcommand[fscriptnum];
+     result:= ansistring(o.texp.aftcommand[fscriptnum]);
      break;
     end;
     inc(fscriptnum);
@@ -1195,7 +1195,7 @@ end;
 
 function tloader.getcommandline: ansistring;
 begin
- result:= projectoptions.d.texp.uploadcommand;
+ result:= ansistring(projectoptions.d.texp.uploadcommand);
 end;
 
 
@@ -1222,7 +1222,7 @@ end;
 
 function tscriptrunner.getcommandline: ansistring;
 begin
- result:= fscriptpath;
+ result:= ansistring(fscriptpath);
 end;
 
 procedure tscriptrunner.dofinished;

@@ -1,69 +1,94 @@
 
 unit beauty;
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
 
 uses
- msetypes, mseglob, mseguiglob, sysutils, mseguiintf, mseapplication, msestat, msemenus,
- msegui,msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
- msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob,
- msescrollbar, msedispwidgets, mserichstring;
+  msetypes,
+  mseglob,
+  mseguiglob,
+  SysUtils,
+  mseguiintf,
+  mseapplication,
+  msestat,
+  msemenus,
+  msegui,
+  msegraphics,
+  msegraphutils,
+  mseevent,
+  mseclasses,
+  msewidgets,
+  mseforms,
+  msesimplewidgets,
+  msegraphedits,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msescrollbar,
+  msedispwidgets,
+  mserichstring;
 
-type 
+type
   tbeautyfo = class(tmseform)
     group_file_changed: tgroupbox;
     tbjedi: tbooleaneditradio;
     tbptop: tbooleaneditradio;
     createbackup: tbooleanedit;
     filetoclean: tstringdisp;
-   tbutton2: tbutton;
-    procedure dobeauti(const sender: TObject);
-    procedure doclose(const sender: TObject);
-   procedure ondestroyev(const sender: TObject);
+    tbutton2: TButton;
+    procedure dobeauti(const Sender: TObject);
+    procedure doclose(const Sender: TObject);
+    procedure ondestroyev(const Sender: TObject);
   end;
 
-var 
+var
   beautyfo: tbeautyfo;
-  beautyformcreated: boolean = false;
-  
-procedure doBeauty;  
+  beautyformcreated: Boolean = False;
+
+procedure doBeauty;
 
 implementation
 
-uses 
-beauty_mfm, plugmanager, commandorform;
+uses
+  beauty_mfm,
+  plugmanager,
+  commandorform;
 
 procedure doBeauty;
 begin
-try
-application.createform(tbeautyfo, beautyfo);
-beautyfo.filetoclean.value :=  ExtractFileName(debuggerfo.file_history.value);
-beautyfo.filetoclean.hint := debuggerfo.file_history.value;
-    beautyfo.show;
+  try
+    application.createform(tbeautyfo, beautyfo);
+    beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
+    beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
+    beautyfo.Show;
     beautyfo.bringtofront;
-    beautyformcreated:= true;
-  finally  
-   end;
+    beautyformcreated          := True;
+  finally
+  end;
 end;
 
-procedure tbeautyfo.dobeauti(const sender: TObject);
-var 
-  x : integer;
+procedure tbeautyfo.dobeauti(const Sender: TObject);
+var
+  x: integer;
 begin
-  if tbptop.value then x := 0
-  else x := 1;
-  DoBeautifier(debuggerfo.file_history.value, x, createbackup.value);
+  if tbptop.Value then
+    x := 0
+  else
+    x := 1;
+  DoBeautifier(ansistring(debuggerfo.file_history.Value), x, createbackup.Value);
 end;
 
-procedure tbeautyfo.doclose(const sender: TObject);
+procedure tbeautyfo.doclose(const Sender: TObject);
 begin
-  close;
+  Close;
 end;
 
-procedure tbeautyfo.ondestroyev(const sender: TObject);
+procedure tbeautyfo.ondestroyev(const Sender: TObject);
 begin
-beautyformcreated:= false;
+  beautyformcreated := False;
 end;
 
 end.
+

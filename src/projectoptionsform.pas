@@ -2339,7 +2339,7 @@ fo.project_license.value := o.project_license;
 
 if trim(o.project_date) <> '' then
 fo.project_date.value := o.project_date else
-fo.project_date.value := timetostr(now) + ' ' + datetostr(now);
+fo.project_date.value := UTF8Decode(timetostr(now) + ' ' + datetostr(now));
 
 fo.project_comment.value := o.project_comment;
 

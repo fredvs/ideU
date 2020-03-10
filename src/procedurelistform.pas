@@ -146,8 +146,6 @@ InitializeForm;
 end;
 
 procedure tprocedurelistfo.formcreated(const sender: TObject);
-var
-  LoadTime: LongWord;
 begin
 {$ifdef gTrace}
 writeln('>> FormCreated');
@@ -312,8 +310,6 @@ procedure tprocedurelistfo.LoadProcs;
 var
   Parser: TmwPasLex;
 //  CParser: TBCBTokenList;
-  BeginBracePosition: Longint;
-  BraceCount, PreviousBraceCount: Integer;
 
   function MoveToImplementation: Boolean;
   begin
@@ -367,17 +363,8 @@ var
     FoundNonEmptyType: Boolean;
     IdentifierNeeded: Boolean;
     ProcedureInfo: TProcInfo;
-    BeginProcHeaderPosition: Longint;
-    i, j: Integer;
-    LineNo: Integer;
-    ProcName, ProcReturnType: msestring;
-    ProcedureType, ProcClass, ProcArgs: msestring;
-    ProcIndex: Integer;
     NameList: TStringList;
-    NewName, TmpName, ProcClassAdd, ClassName: msestring;
-    BraceCountDelta: Integer;
-    TemplateArgs: msestring;
-
+     
     procedure EraseName(Index: Integer);
     var
       NameIndex: Integer;

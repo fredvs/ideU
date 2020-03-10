@@ -4878,7 +4878,7 @@ strcoma := ', ' else strcoma := ',';
          if rootnames.Count > 0 then begin
           wstr1:= msestring(rootnames[0]);
           for int1:= 1 to rootnames.Count - 1 do begin
-           wstr1:= wstr1 + strcoma +msestring(rootnames[int1]); // fred
+           wstr1:= wstr1 + UTF8Decode(strcoma) +msestring(rootnames[int1]); // fred
           end;
           raise exception.Create(ansistring(
                                    actionsmo.c[ord(ac_unresolvedref)]+' '+

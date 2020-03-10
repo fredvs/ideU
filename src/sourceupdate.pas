@@ -2000,7 +2000,7 @@ strcoma := ', ' else strcoma := ',';
      for int1:= 0 to high(ar2) do begin
       if (find(ar2[int1]) = nil) then begin
        if not first then begin
-        str2:= str2 + strcoma; // fred
+        str2:= str2 + UTF8Decode(strcoma); // fred
        end
        else begin
         first:= false;

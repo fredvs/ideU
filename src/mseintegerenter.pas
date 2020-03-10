@@ -41,6 +41,7 @@ function integerenter(var avalue: integer; const amin,amax: integer; const text:
                                const acaption: msestring = ''): modalresultty;
 begin
  //application.lock;
+ result := mr_none;
  try
   linefo:= tintegerenterfo.create(nil);
   lineformcreated := true;

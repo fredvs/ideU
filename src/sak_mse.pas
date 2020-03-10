@@ -80,8 +80,8 @@ type
     CheckPoint: Tpoint;
     CheckShift: TShiftState;
 
-    voice_language: ansistring;
-    voice_gender: ansistring;
+    voice_language: msestring;
+    voice_gender: msestring;
     voice_speed: integer;  //-s
     voice_pitch: integer;  //-p
     voice_volume: integer;  //-a
@@ -246,7 +246,7 @@ uses
   
 var
   sak: TSAK;
-  greeting : string = 'sak is working...' ;
+  greeting : msestring = 'sak is working...' ;
   es_Handle:TLibHandle=dynlibs.NilHandle;
   pa_Handle:TLibHandle=dynlibs.NilHandle; 
   so_Handle:TLibHandle=dynlibs.NilHandle; 
@@ -294,7 +294,7 @@ result := '';
 
 if findfile(sakini) then
 begin
- scriptfile := tosysfilepath(sakini);
+ scriptfile := ansistring(tosysfilepath(sakini));
   AssignFile(tf,pchar(scriptfile));
    Reset(tF);
 
@@ -332,8 +332,8 @@ var
 info : stat;
 begin
   result := 0;
- if (FpStat(thefile,info{%H-})<>-1) and FPS_ISREG(info.st_mode) and
-             (BaseUnix.FpAccess(thefile,BaseUnix.X_OK)=0) then else
+ if (FpStat(rawbytestring(thefile),info{%H-})<>-1) and FPS_ISREG(info.st_mode) and
+             (BaseUnix.FpAccess(rawbytestring(thefile),BaseUnix.X_OK)=0) then else
  begin
   if raisemessage = true then
   begin
@@ -342,7 +342,7 @@ begin
    +lineend+ 'is not set as executable...'
     +lineend+ 'Do you want to reset it?') then begin
 
-  fpchmod(thefile, S_IRWXU);
+  fpchmod(rawbytestring(thefile), S_IRWXU);
 // => get error at compil
 // sys_setfilerights(thefile,[s_irusr,s_iwusr,s_ixusr,s_irgrp,s_ixgrp, s_iroth,s_ixoth]);
 
@@ -391,24 +391,24 @@ begin
  Result := -1;
  espeakdatadir:= '';
  if sakitdir = '' then begin
-  ordir:= IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+  ordir:= utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
  end
  else begin
   ordir:= sakitdir;
  end;
 
 sakini := ordir + sakininame;
- espeakbin:= ordir + WhatFile(sakini,0);
+ espeakbin:= ordir + utf8decode(WhatFile(sakini,0));
 
  tmp := WhatFile(sakini,1);
  if tmp <> '' then
- portaudiolib:= ordir + tmp else  portaudiolib:= '';
+ portaudiolib:= ordir + utf8decode(tmp) else  portaudiolib:= '';
 
- espeaklib:= ordir + WhatFile(sakini,2);
+ espeaklib:= ordir + utf8decode(WhatFile(sakini,2));
 
  tmp := WhatFile(sakini,2);
  if tmp <> '' then
- espeaklib:= ordir + tmp else  espeaklib:= '';
+ espeaklib:= ordir + utf8decode(tmp) else  espeaklib:= '';
 
 tmp := WhatFile(sakini,3);
  if (tmp = '/') or (tmp = './') then
@@ -416,11 +416,11 @@ tmp := WhatFile(sakini,3);
 if tmp = '../' then
  espeakdatadir:= ExtractFilePath(ordir)
 else 
- espeakdatadir:= tmp ;
+ espeakdatadir:= utf8decode(tmp) ;
  
  tmp := WhatFile(sakini,4);
  if tmp <> '' then
- soniclib:= ordir + tmp else  soniclib:= '';
+ soniclib:= ordir + utf8decode(tmp) else  soniclib:= '';
 
    if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
  and ((findfile(espeaklib)) or (espeaklib = '')) and ((findfile(soniclib)) or (soniclib = ''))
@@ -437,17 +437,17 @@ else
   espeaklibdir + directoryseparator + sakininame;
 
   espeakbin:= ordir + directoryseparator + 'sakit' + directoryseparator +
-  espeaklibdir+ directoryseparator + WhatFile(sakini, 0);
+  espeaklibdir+ directoryseparator + utf8decode(WhatFile(sakini, 0));
 
   tmp := WhatFile(sakini,1);
  if tmp <> '' then
   portaudiolib:= ordir + directoryseparator + 'sakit' + directoryseparator +
-  espeaklibdir+ directoryseparator + tmp else  portaudiolib:= '';
+  espeaklibdir+ directoryseparator + utf8decode(tmp) else  portaudiolib:= '';
 
  tmp := WhatFile(sakini,2);
  if tmp <> '' then
  espeaklib:= ordir + directoryseparator + 'sakit' + directoryseparator +
-  espeaklibdir+ directoryseparator + tmp else  espeaklib:= '';
+  espeaklibdir+ directoryseparator + utf8decode(tmp) else  espeaklib:= '';
 
  tmp := WhatFile(sakini,3);
  if (tmp = '/') or (tmp = './') then
@@ -456,12 +456,12 @@ else
 if tmp = '../' then
  espeakdatadir:= ordir + directoryseparator + 'sakit' + directoryseparator
 else 
- espeakdatadir:= tmp ;
+ espeakdatadir:= utf8decode(tmp) ;
  
  tmp := WhatFile(sakini,4);
  if tmp <> '' then
  soniclib:= ordir + directoryseparator + 'sakit' + directoryseparator +
-  espeaklibdir+ directoryseparator + tmp else  soniclib:= '';
+  espeaklibdir+ directoryseparator + utf8decode(tmp) else  soniclib:= '';
 
    if (finddir(espeakdatadir)) and (findfile(espeakbin)) and (findfile(sakini)) and ((findfile(portaudiolib)) or (portaudiolib = ''))
    and ((findfile(espeaklib)) or (espeaklib = '')) and ((findfile(soniclib)) or (soniclib = ''))  then
@@ -713,7 +713,7 @@ Sender := iaSender.getinstance;
       Result := 'button, ' + TButton(Sender).Caption
     else
     if (trim(TButton(Sender).Name) <> '') then
-      Result := 'button, ' + TButton(Sender).Name
+      Result := 'button, ' + utf8decode(TButton(Sender).Name)
     else
     if (trim(TButton(Sender).hint) <> '') then
       Result := 'button, ' + TButton(Sender).hint;
@@ -722,30 +722,30 @@ Sender := iaSender.getinstance;
   if (Sender is tfilelistview) then
  begin
  if assigned(tfilelistview(Sender).selectednames) then
-    Result := 'file list, ' + tfilelistview(Sender).name + ' , ' + tfilelistview(Sender).selectednames[0]
- else Result := 'file list, ' + tfilelistview(Sender).name ;
+    Result := 'file list, ' + utf8decode(tfilelistview(Sender).name) + ' , ' + tfilelistview(Sender).selectednames[0]
+ else Result := 'file list, ' + utf8decode(tfilelistview(Sender).name) ;
   end else
    if (Sender is thistoryedit) then
   begin
    if trim(thistoryedit(Sender).hint) = '' then 
-    Result := 'edit , ' + thistoryedit(Sender).name + ' , ' + formatcode(thistoryedit(Sender).value) else
-    Result := 'edit , ' + thistoryedit(Sender).name  +' , ' + thistoryedit(Sender).hint +  c_linefeed +
+    Result := 'edit , ' + utf8decode(thistoryedit(Sender).name) + ' , ' + formatcode(thistoryedit(Sender).value) else
+    Result := 'edit , ' + utf8decode(thistoryedit(Sender).name)  +' , ' + thistoryedit(Sender).hint +  c_linefeed +
     ' The value, is: ' +  c_linefeed + formatcode(thistoryedit(Sender).value)
   end else
   if (Sender is tfilenameedit) then
   begin
    if trim(tfilenameedit(Sender).hint) = '' then 
-    Result := 'filename edit, ' + tfilenameedit(Sender).name + ' , ' + formatcode(tfilenameedit(Sender).value) else
-    Result := 'filename edit, ' + tfilenameedit(Sender).name + 
+    Result := 'filename edit, ' + utf8decode(tfilenameedit(Sender).name) + ' , ' + formatcode(tfilenameedit(Sender).value) else
+    Result := 'filename edit, ' + utf8decode(tfilenameedit(Sender).name) + 
     ' , ' + tfilenameedit(Sender).hint +  c_linefeed+
     ' The value, is: ' +  c_linefeed + formatcode(tfilenameedit(Sender).value)
   end else
   if (Sender is tdirdropdownedit) then
   begin
   if trim(tdirdropdownedit(Sender).hint) = '' then 
-    Result := 'directory edit, ' + tdirdropdownedit(Sender).name + ' , ' +
+    Result := 'directory edit, ' + utf8decode(tdirdropdownedit(Sender).name) + ' , ' +
      formatcode(tdirdropdownedit(Sender).value)
-  else  Result := 'directory edit, ' + tdirdropdownedit(Sender).name + ' , ' +
+  else  Result := 'directory edit, ' + utf8decode(tdirdropdownedit(Sender).name) + ' , ' +
    tdirdropdownedit(Sender).hint +  c_linefeed +
     ' The value, is: ' +  c_linefeed + formatcode(tdirdropdownedit(Sender).value)
  end
@@ -753,8 +753,8 @@ Sender := iaSender.getinstance;
  if (Sender is TStringEdit) then
   begin
   if trim(TStringEdit(Sender).hint) = '' then 
-   Result := ' ' + TStringEdit(Sender).name + ' , ' + TStringEdit(Sender).value 
-    else  Result := ' ' + TStringEdit(Sender).name + ' , ' +
+   Result := ' ' + utf8decode(TStringEdit(Sender).name) + ' , ' + TStringEdit(Sender).value 
+    else  Result := ' ' + utf8decode(TStringEdit(Sender).name) + ' , ' +
    TStringEdit(Sender).hint +  c_linefeed +
     ' The value, is: ' +  c_linefeed + TStringEdit(Sender).text
 // Result := iaSender.getassistivename() + ' , ' +  iaSender.getassistivecaption() + 
@@ -762,26 +762,29 @@ Sender := iaSender.getinstance;
  end
   else
   if (Sender is tdropdownlistedit) then
-    Result := 'combobox, ' + tdropdownlistedit(Sender).name + ' , ' + tdropdownlistedit(Sender).value
+    Result := 'combobox, ' + utf8decode(tdropdownlistedit(Sender).name) + ' , ' + tdropdownlistedit(Sender).value
   else
   if (Sender is tdatetimeedit) then
-    Result := 'date edit, ' + tdatetimeedit(Sender).Name + ' , ' + datetostr(tdatetimeedit(Sender).value)
-    + ' , ' + timetostr(tdatetimeedit(Sender).value)
+    Result := 'date edit, ' + utf8decode(tdatetimeedit(Sender).Name) + ' , ' + 
+    utf8decode(datetostr(tdatetimeedit(Sender).value))
+    + ' , ' + utf8decode(timetostr(tdatetimeedit(Sender).value))
   else
   if (Sender is trealedit) then
-    Result := 'real edit, ' + trealedit(Sender).Name + ' , ' + floattostr(trealedit(Sender).value) 
+    Result := 'real edit, ' + utf8decode(trealedit(Sender).Name )+ ' , ' +
+     utf8decode(floattostr(trealedit(Sender).value))
   else
   if (Sender is tintegeredit) then
-    Result := 'integer edit, ' + tintegeredit(Sender).Name + ' , ' + inttostr(tintegeredit(Sender).value)
+    Result := 'integer edit, ' + utf8decode(tintegeredit(Sender).Name) + ' , '
+     + utf8decode(inttostr(tintegeredit(Sender).value))
   else
   if (Sender is TMemoEdit) then
-    Result := 'memo, ' + TMemoEdit(Sender).Name + ' , ' + TMemoEdit(Sender).value
+    Result := 'memo, ' + utf8decode(TMemoEdit(Sender).Name) + ' , ' + TMemoEdit(Sender).value
   else
   if (Sender is Twidgetgrid) then
-    Result := 'page, ' + Twidgetgrid(Sender).Name
+    Result := 'page, ' + utf8decode(Twidgetgrid(Sender).Name)
   else
    if (Sender is Tstringgrid) then
-    Result := 'grid, ' + Tstringgrid(Sender).Name
+    Result := 'grid, ' + utf8decode(Tstringgrid(Sender).Name)
   else
   
     if (Sender is ttabpage) then
@@ -791,11 +794,11 @@ Sender := iaSender.getinstance;
     Result := 'tab, ' + ttab(Sender).caption
   else
    if (Sender is Ttabwidget) then  
-   Result := 'tabwidget, ' + Ttabwidget(Sender).Name + ' , active index, ' + 
-   inttostr(Ttabwidget(Sender).activepageindex)
+   Result := 'tabwidget, ' + utf8decode(Ttabwidget(Sender).Name) + ' , active index, ' + 
+   utf8decode(inttostr(Ttabwidget(Sender).activepageindex))
   else
     if (Sender is Ttabbar) then  
-    Result := 'tabbar, ' + Ttabbar(Sender).name + ', ' + 
+    Result := 'tabbar, ' + utf8decode(Ttabbar(Sender).name) + ', ' + 
    Ttabbar(Sender).tabs[ttabbar(Sender).activetab].caption
     else
    if (Sender is tcustomtabbar) then  
@@ -808,29 +811,30 @@ Sender := iaSender.getinstance;
     Result := 'Info panel, ' + Tstringdisp(Sender).value 
    else
    if (Sender is Tdatetimedisp) then
-    Result := 'Date panel, ' + Tdatetimedisp(Sender).name
+    Result := 'Date panel, ' + utf8decode(Tdatetimedisp(Sender).name)
    else
    if (Sender is tbooleandisp) then
-    Result := 'Boolean panel, ' + tbooleandisp(Sender).name 
+    Result := 'Boolean panel, ' + utf8decode(tbooleandisp(Sender).name) 
    else
    if (Sender is trealdisp) then
-    Result := 'real panel, ' + trealdisp(Sender).name
+    Result := 'real panel, ' + utf8decode(trealdisp(Sender).name)
    else
    if (Sender is tintegerdisp) then
-    Result := 'Integer panel, ' + tintegerdisp(Sender).name 
+    Result := 'Integer panel, ' + utf8decode(tintegerdisp(Sender).name) 
    else
     if (Sender is tstockglyphbutton) then
-    Result := 'button, ' + tstockglyphbutton(Sender).name
+    Result := 'button, ' + utf8decode(tstockglyphbutton(Sender).name)
    else
     if (Sender is Tenumedit) then  
-   Result := 'combo box, ' + Tenumedit(Sender).Name + ' , ' + inttostr(Tenumedit(Sender).value)
+   Result := 'combo box, ' + utf8decode(Tenumedit(Sender).Name) + ' , ' + 
+   utf8decode(inttostr(Tenumedit(Sender).value))
    else
    if (Sender is timage) then
   begin
       if (trim(timage(Sender).hint) <> '') then
       Result := 'image, ' + timage(Sender).hint 
       else
-      Result := 'image, ' + Timage(Sender).Name;
+      Result := 'image, ' + utf8decode(Timage(Sender).Name);
   end
   else
     if (Sender is tdockform) then
@@ -838,7 +842,7 @@ Sender := iaSender.getinstance;
       if (trim(tdockform(Sender).caption) <> '') then
       Result := 'form, ' + tdockform(Sender).caption 
       else
-      Result := 'form, ' + tdockform(Sender).Name;
+      Result := 'form, ' + utf8decode(tdockform(Sender).Name);
   end
   else
     if (Sender is tmseform) then
@@ -846,7 +850,7 @@ Sender := iaSender.getinstance;
       if (trim(tmseform(Sender).caption) <> '') then
       Result := 'form, ' + tmseform(Sender).caption 
       else
-      Result := 'form, ' + tmseform(Sender).Name;
+      Result := 'form, ' + utf8decode(tmseform(Sender).Name);
   end
   else
    if (Sender is tbooleaneditradio) then
@@ -868,14 +872,14 @@ Sender := iaSender.getinstance;
     Result := 'radio button, ' + Tbooleaneditradio(Sender).hint +
       ' , ' + tempstr
     else
-     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name +
+     Result := 'radio button, ' + utf8decode(Tbooleaneditradio(Sender).Name) +
       ' , ' + tempstr;
    end else
    if (Tbooleaneditradio(Sender).hint <> '') then
     Result := 'radio button, ' + Tbooleaneditradio(Sender).hint +
       ' , ' + tempstr 
     else
-     Result := 'radio button, ' + Tbooleaneditradio(Sender).Name +
+     Result := 'radio button, ' + utf8decode(Tbooleaneditradio(Sender).Name) +
       ' , ' + tempstr;
     end
     else if (Sender is tgroupbox) then
@@ -886,10 +890,10 @@ Sender := iaSender.getinstance;
       Result := 'groupbox, ' + tgroupbox(Sender).frame.Caption +
       ' , ' + tempstr
      else
-      Result := 'groupbox, ' + tgroupbox(Sender).Name +
+      Result := 'groupbox, ' + utf8decode(tgroupbox(Sender).Name) +
       ' , ' + tempstr;
    end else
-      Result := 'checkbox, ' + tgroupbox(Sender).Name +
+      Result := 'checkbox, ' + utf8decode(tgroupbox(Sender).Name) +
       ' , ' + tempstr;
     end
    else if (Sender is tbooleanedit) then
@@ -910,13 +914,13 @@ Sender := iaSender.getinstance;
       Result := 'checkbox, ' + Tbooleanedit(Sender).hint +
       ' , ' + tempstr
     else
-      Result := 'checkbox, ' + Tbooleanedit(Sender).Name +
+      Result := 'checkbox, ' + utf8decode(Tbooleanedit(Sender).Name) +
       ' , ' + tempstr;
    end else if (Tbooleanedit(Sender).hint <> '') then
       Result := 'checkbox, ' + Tbooleanedit(Sender).hint +
       ' , ' + tempstr
     else
-      Result := 'checkbox, ' + Tbooleanedit(Sender).Name +
+      Result := 'checkbox, ' + utf8decode(Tbooleanedit(Sender).Name) +
       ' , ' + tempstr;
     end
    else
@@ -924,7 +928,7 @@ Sender := iaSender.getinstance;
      Result := 'tool bar, ' + iaSender.getassistivehint()
   else
   if (Sender is tslider) then
-    Result := 'slider, ' + Tslider(Sender).Name
+    Result := 'slider, ' + utf8decode(Tslider(Sender).Name)
   else 
   if (Sender is ttoolbutton) then
     Result := 'tool button, ' +  ttoolbutton(Sender).hint
@@ -934,7 +938,7 @@ Sender := iaSender.getinstance;
     if (tmenuitem(Sender).Caption <> '') then
       Result := 'menu item , ' + tmenuitem(Sender).Caption
     else
-      Result := 'menu item , ' + tmenuitem(Sender).Name;
+      Result := 'menu item , ' + utf8decode(tmenuitem(Sender).Name);
   end
   else 
   if (Sender is tmainmenu) or (Sender is tmainmenuwidget) or (Sender is tmenu) or  (Sender is tcustommenu) or   (Sender is tpopupmenu)  then
@@ -995,7 +999,7 @@ if (Sender is tbooleaneditradio) then
   end
   else
    if (Sender is tslider) then
-    Result := ' changed position to ' + inttostr(round(tslider(sender).value * 100)) + ' ,%' ;
+    Result := ' changed position to ' + utf8decode(inttostr(round(tslider(sender).value * 100))) + ' ,%' ;
    end;
 end;
 
@@ -1343,11 +1347,11 @@ if WhatName(TheSender, true)  <> lastname then
  
      if(TheSender.getinstance is tslider) then
   begin
-  stringtemp := ' , ' + inttostr(round(tslider(TheSender.getinstance).value * 100)) + ' ,%, '
+  stringtemp := ' , ' + utf8decode(inttostr(round(tslider(TheSender.getinstance).value * 100))) + ' ,%, '
   end;
   
-       espeak_Key('left  ' +inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x) + ' , top '+ 
-         inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y) + ' , focused ,  '+ 
+       espeak_Key('left  ' + utf8decode(inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x)) + ' , top '+ 
+         utf8decode(inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y)) + ' , focused ,  '+ 
         WhatName(TheSender, true) + stringtemp );
       lastname := WhatName(TheSender, true);
     end;
@@ -1726,7 +1730,7 @@ if (assigned(Sender)) and
                 
                 if gridcoo.row - 4 < 0 then 
                 begin
-                 mstr1 := 'Reading ' + inttostr(info.cell.row) + ' rows prior . ';
+                 mstr1 := 'Reading ' + utf8decode(inttostr(info.cell.row)) + ' rows prior . ';
                 gridcoo.row := 0 end
                 else begin
                 gridcoo.row := gridcoo.row - 4 ;
@@ -1739,7 +1743,7 @@ if (assigned(Sender)) and
                //  info.grid.rowcount -1
                 do
 				begin
-				mstr1 := mstr1 + ' , row , ' + inttostr(gridcoo.row + 1) + ' , ' +
+				mstr1 := mstr1 + ' , row , ' + utf8decode(inttostr(gridcoo.row + 1)) + ' , ' +
 				formatcode(sender.getassistivecelltext(gridcoo,aflags));
 				inc(gridcoo.row);
 				end;
@@ -1829,21 +1833,21 @@ if (getprocessoutput(ES_ExeFileName+' --version','',str1,5000000,
  
   AProcess := TProcess.Create(nil);
   AProcess.Executable :=
-  tosysfilepath(filepath(trim(ES_ExeFileName), fk_file, True));
+  ansistring(tosysfilepath(filepath(trim(ES_ExeFileName), fk_file, True)));
   AProcess.Options := AProcess.Options + [poNoConsole, poUsePipes];
   AProcess.FreeOnRelease;
 
    {$ifdef unix}
   if trim(ES_LibFileName) <> '' then
 begin
- AProcess.Environment.Text := 'LD_LIBRARY_PATH=' + tosysfilepath(ExtractFilePath(ES_LibFileName)) ;
+ AProcess.Environment.Text := 'LD_LIBRARY_PATH=' + ansistring(tosysfilepath(ExtractFilePath(ES_LibFileName))) ;
 if trim(PA_LibFileName) <> '' then
-   AProcess.Environment.Text := AProcess.Environment.Text + ':' + tosysfilepath(ExtractFilePath(PA_LibFileName))
+   AProcess.Environment.Text := AProcess.Environment.Text + ':' + ansistring(tosysfilepath(ExtractFilePath(PA_LibFileName)))
 
 end  else
 begin
   if trim(PA_LibFileName) <> '' then
-   AProcess.Environment.Text := 'LD_PRELOAD=' + tosysfilepath(PA_LibFileName) ;
+   AProcess.Environment.Text := 'LD_PRELOAD=' + ansistring(tosysfilepath(PA_LibFileName));
 end;
 
 if trim(PA_LibFileName) <> '' then pa_Handle:= DynLibs.SafeLoadLibrary(tosysfilepath(PA_LibFileName));
@@ -1852,7 +1856,7 @@ if trim(ES_LibFileName) <> '' then es_Handle:= DynLibs.SafeLoadLibrary(tosysfile
    
 {$endif}
 
- AProcess.Executable :=  tosysfilepath(ES_ExeFileName);
+ AProcess.Executable :=  ansistring(tosysfilepath(ES_ExeFileName));
 
   TheWord := '' ;
   TheSentence := '' ;
@@ -1915,21 +1919,21 @@ if (voice_gender <> '') or (voice_language <> '') then begin
   end
   else begin
    if voice_gender <> '' then begin
-    params:= params+voice_gender;
+    params:= params+ voice_gender;
    end;
   end;
  end;
 
-if  params <> '' then AProcess.Parameters.Add(params) ;
+if  params <> '' then AProcess.Parameters.Add(ansistring(params)) ;
 
 if voice_speed <> -1 then AProcess.Parameters.Add('-s' + inttostr(voice_speed)) ;
 if voice_pitch <> -1 then AProcess.Parameters.Add('-p' + inttostr(voice_pitch)) ;
 if voice_volume <> -1 then AProcess.Parameters.Add('-a' + inttostr(voice_volume)) ;
 
     if es_datadirectory <> ''  then
-    AProcess.Parameters.Add('--path=' + ES_DataDirectory);
+    AProcess.Parameters.Add('--path=' + ansistring(ES_DataDirectory));
    
-  AProcess.Parameters.Add('"' + Text + '"');
+  AProcess.Parameters.Add('"' + ansistring(Text) + '"');
   AProcess.Execute;
 end;
 

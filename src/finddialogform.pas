@@ -72,6 +72,7 @@ end;
 
 function finddialogexecute(var info: findinfoty): boolean;
 begin
+ result := true;
 
  finddialogfo:= tfinddialogfo.create(nil);
  findformcreated:= true;
