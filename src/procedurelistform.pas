@@ -91,7 +91,7 @@ type
 var
   procedurelistfo: tprocedurelistfo;
   plformcreated: boolean = false;
-  
+
 procedure doProcedureList;
 
 
@@ -179,7 +179,7 @@ writeln('>> InitializeForm');
   FSortOnColumn := 1;
 
   FProcList := TStringList.Create;
- 
+
 
 //  LoadSettings;
   try
@@ -363,22 +363,11 @@ var
     FoundNonEmptyType: Boolean;
     IdentifierNeeded: Boolean;
     ProcedureInfo: TProcInfo;
-    NameList: TStringList;
-     
-    procedure EraseName(Index: Integer);
-    var
-      NameIndex: Integer;
-    begin
-      NameIndex := NameList.IndexOfName(IntToStr(Index));
-      if NameIndex <> -1 then
-        NameList.Delete(NameIndex);
-    end;
 
   begin
     {$ifdef gTrace}
     writeln('>> FindProcs');
     {$endif}
-    namelist := TStringList.Create;
     FProcList.Capacity := 200;
     FProcList.BeginUpdate;
     try
@@ -485,7 +474,7 @@ var
       end; //case Language
     finally
       FProcList.EndUpdate;
-      namelist.free;
+
     end;
     {$ifdef gTrace}
     writeln('<< FindProcs');
@@ -805,7 +794,7 @@ begin
   sourcefo.activepage.source_editor.focuscell(d);
 //  sourcefo.activepage.source_editor.rowwindowpos := lGotoLine-1;
   sourcefo.activepage.source_editor.scrollcaret(p);
-  sourcefo.activepage.source_editor.setfocus;  
+  sourcefo.activepage.source_editor.setfocus;
 end;
 
 procedure tprocedurelistfo.oncellev(const sender: TObject;
