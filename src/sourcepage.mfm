@@ -4,8 +4,8 @@ object sourcepage: tsourcepage
   color = -1879048187
   frame.localprops = []
   frame.localprops1 = []
-  bounds_x = 323
-  bounds_y = 192
+  bounds_x = 224
+  bounds_y = 197
   bounds_cx = 642
   bounds_cy = 301
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -20,6 +20,7 @@ object sourcepage: tsourcepage
   icon.transparentcolor = -2147483648
   windowopacity = -Inf
   oncreate = sourcefooncreate
+  oncreated = oncreated
   oneventloopstart = sourcefoonloaded
   ondestroy = sourcefoondestroy
   onshow = sourcefoonshow
@@ -30,15 +31,42 @@ object sourcepage: tsourcepage
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     optionsskin = [osk_framebuttononly]
     frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+    frame.sbvert.face.fade_pos.count = 2
+    frame.sbvert.face.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.face.fade_color.count = 2
+    frame.sbvert.face.fade_color.items = (
+      12434877
+      16250871
+    )
     frame.sbvert.face.fade_direction = gd_left
     frame.sbvert.face.localprops = [fal_fadirection]
-    frame.sbvert.face.template = tfacecomp2
+    frame.sbvert.face1.fade_pos.count = 2
+    frame.sbvert.face1.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.face1.fade_color.count = 2
+    frame.sbvert.face1.fade_color.items = (
+      12434877
+      16250871
+    )
     frame.sbvert.face1.fade_direction = gd_left
     frame.sbvert.face1.localprops = [fal_fadirection]
-    frame.sbvert.face1.template = tfacecomp2
+    frame.sbvert.face2.fade_pos.count = 2
+    frame.sbvert.face2.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.face2.fade_color.count = 2
+    frame.sbvert.face2.fade_color.items = (
+      12434877
+      16250871
+    )
     frame.sbvert.face2.fade_direction = gd_left
     frame.sbvert.face2.localprops = [fal_fadirection]
-    frame.sbvert.face2.template = tfacecomp2
     frame.sbvert.facebutton.fade_pos.count = 2
     frame.sbvert.facebutton.fade_pos.items = (
       0
@@ -67,16 +95,66 @@ object sourcepage: tsourcepage
     frame.sbvert.frame.localprops1 = []
     frame.sbvert.framebutton.localprops = [frl_optionsskin]
     frame.sbvert.framebutton.localprops1 = []
+    frame.sbhorz.face.fade_pos.count = 2
+    frame.sbhorz.face.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face.fade_color.count = 2
+    frame.sbhorz.face.fade_color.items = (
+      15921906
+      12895428
+    )
+    frame.sbhorz.face.fade_direction = gd_down
     frame.sbhorz.face.localprops = []
-    frame.sbhorz.face.template = tfacecomp1
+    frame.sbhorz.face1.fade_pos.count = 2
+    frame.sbhorz.face1.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face1.fade_color.count = 2
+    frame.sbhorz.face1.fade_color.items = (
+      15921906
+      12895428
+    )
+    frame.sbhorz.face1.fade_direction = gd_down
     frame.sbhorz.face1.localprops = []
-    frame.sbhorz.face1.template = tfacecomp1
+    frame.sbhorz.face2.fade_pos.count = 2
+    frame.sbhorz.face2.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face2.fade_color.count = 2
+    frame.sbhorz.face2.fade_color.items = (
+      15921906
+      12895428
+    )
+    frame.sbhorz.face2.fade_direction = gd_down
     frame.sbhorz.face2.localprops = []
-    frame.sbhorz.face2.template = tfacecomp1
+    frame.sbhorz.facebutton.fade_pos.count = 2
+    frame.sbhorz.facebutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.facebutton.fade_color.count = 2
+    frame.sbhorz.facebutton.fade_color.items = (
+      15263976
+      10921638
+    )
+    frame.sbhorz.facebutton.fade_direction = gd_down
     frame.sbhorz.facebutton.localprops = []
-    frame.sbhorz.facebutton.template = sourcefo.tfacecomp1
+    frame.sbhorz.faceendbutton.fade_pos.count = 2
+    frame.sbhorz.faceendbutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.faceendbutton.fade_color.count = 2
+    frame.sbhorz.faceendbutton.fade_color.items = (
+      14145495
+      12434877
+    )
+    frame.sbhorz.faceendbutton.fade_direction = gd_down
     frame.sbhorz.faceendbutton.localprops = []
-    frame.sbhorz.faceendbutton.template = mainfo.tfacecomp1
     frame.localprops = [frl_hiddenedges]
     frame.localprops1 = []
     bounds_x = 0
@@ -207,10 +285,9 @@ object sourcepage: tsourcepage
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     taborder = 1
-    bounds_x = 67
+    bounds_x = 61
     bounds_y = 281
-    bounds_cx = 575
-    bounds_cy = 19
+    bounds_cx = 581
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]
     textflags = [tf_ycentered, tf_ellipseleft]
@@ -236,7 +313,7 @@ object sourcepage: tsourcepage
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     taborder = 2
-    bounds_x = 2
+    bounds_x = 0
     bounds_y = 281
     bounds_cx = 61
     bounds_cy = 19

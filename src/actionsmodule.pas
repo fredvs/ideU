@@ -2,7 +2,7 @@ unit actionsmodule;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 {$ifdef linux}{$define unix}{$endif}
-								
+
 interface
 uses
  classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui,commandorform,
@@ -10,7 +10,7 @@ uses
  msegraphutils,mseguiglob,msemenus,msesys, msesysutils,msesimplewidgets,
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
  mseificompglob,mseifiglob;
- 
+
 type
  stringconsts = (
   ac_configureide, //0 Configure ideU
@@ -188,7 +188,7 @@ type
    projectoptionsact: taction;
    projecttreeact: taction;
    projectsourceact: taction;
-   
+
    projectsaveact: taction;
    projectcloseact: taction;
    c: tstringcontainer;
@@ -207,7 +207,7 @@ type
    tool7: taction;
    tool8: taction;
    tool9: taction;
-   
+
 
    customrun: taction;
    assistive: taction;
@@ -220,12 +220,12 @@ type
    uncomment: taction;
    copyword: taction;
    selectall: taction;
-   
+
    savecust: taction;
    findback: taction;
    procedurelist: taction;
    procedure findinfileonexecute(const sender: tobject);
-   
+
     //file
    procedure opensourceactonexecute(const sender: tobject);
    procedure saveactonexecute(const sender: tobject);
@@ -262,41 +262,41 @@ type
    //make
    procedure makeactonexecute(const sender: tobject);
    procedure abortmakeactonexecute(const sender: tobject);
-   
+
    // fred
     // assistive
-   procedure assistiveactonexecute(const sender: tobject); 
-      
+   procedure assistiveactonexecute(const sender: tobject);
+
    procedure runcustom(const sender: TObject);
-   
+
    // Setup ready
    procedure setupcustom ;
-   
+
    // Setup ready from menu
-   procedure setupcustommenu(const sender: TObject); 
-   
+   procedure setupcustommenu(const sender: TObject);
+
    procedure initproject ;
-   
+
       // custom is finish
    procedure finishcustom;
-   
+
    // Project cust compile
    procedure custcompileproject(const sender: TObject);
-   
+
    // Custom compile
    procedure compilecustom(const sender: TObject);
-   
+
    // Custom compile
    procedure compilecustommenu(const sender: TObject);
-   
+
    // Project compile
    procedure compileproject(const sender: TObject);
-   
+
    procedure savecustom(const sender: tobject);
-   
+
    // Graeme procedurelist
    procedure procedurelistonexecute(const sender: TObject);
-    
+
    //debugger
    procedure resetactonexecute(const sender: tobject);
    procedure interruptactonexecute(const sender: tobject);
@@ -337,27 +337,27 @@ type
    procedure enableuncomment(const sender: tcustomaction);
    procedure selectwordactiononexecute(const sender: TObject);
    procedure findbackonexecute(const sender: TObject);
-   
+
   private
    function filterfindcomp(const acomponent: tcomponent): boolean;
  public
    function gettoolshortcutaction(const index: int32;
                                        out act: taction): boolean;
- 
+
 end;
 
 var
  actionsmo: tactionsmo;
-  
+
 procedure configureide;
 
 implementation
 uses
 plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
- projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform, 
+ projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform,
  disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu, finddialogform,
  componentstore,cpuform,sysutils,msecomptree, procedurelistform;
- 
+
 procedure configureide;
 begin
  disassfo.resetshortcuts();
@@ -431,11 +431,11 @@ begin
 end;
 
 // assistive
-  procedure tactionsmo.assistiveactonexecute(const sender: tobject); 
+  procedure tactionsmo.assistiveactonexecute(const sender: tobject);
   begin
   doassistive ;
   end;
-  
+
 //file
 
 procedure tactionsmo.opensourceactonexecute(const sender: tobject);
@@ -460,10 +460,10 @@ begin
  end;
  if (thesdef <> '') and
   (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) and
- (theactivepage = sourcefo.activepage.filepath + 
+ (theactivepage = sourcefo.activepage.filepath +
  sourcefo.activepage.filename)
   then sdefload(thesdef);
- 
+
     sourcefo.updatehinttab;
 end;
 
@@ -519,10 +519,10 @@ begin
   saveprojectoptions;
   updatemodifiedforms;
  end;
- if (thesdef <> '') and 
+ if (thesdef <> '') and
  (thesdef <> projectoptions.e.t.syntaxdeffiles[0])
   and
- (theactivepage = sourcefo.activepage.filepath + 
+ (theactivepage = sourcefo.activepage.filepath +
  sourcefo.activepage.filename)
   then sdefload(thesdef);
 end;
@@ -599,71 +599,71 @@ debuggerfo.project_make.enabled := false;
 debuggerfo.project_abort_compil.enabled := true;
 
 case debuggerfo.project_options.value of
-  'M' : begin 
+  'M' : begin
   domake(1) ;
    mainfo.thetag := 1;
   end;
-   'B' : begin 
+   'B' : begin
   domake(2) ;
    mainfo.thetag := 2;
   end;
-   '1' : begin 
+   '1' : begin
   domake(4) ;
    mainfo.thetag := 4;
   end;
-    '2' : begin 
+    '2' : begin
   domake(8) ;
    mainfo.thetag := 8;
   end;
-     '3' : begin 
+     '3' : begin
   domake(16) ;
    mainfo.thetag := 16;
   end;
-   '4' : begin 
+   '4' : begin
   domake(32) ;
    mainfo.thetag := 32;
   end;
-   '5' : begin 
+   '5' : begin
   domake(64) ;
    mainfo.thetag := 64;
   end;
-    '6' : begin 
+    '6' : begin
   domake(128) ;
    mainfo.thetag := 128;
   end;
-    '7' : begin 
+    '7' : begin
   domake(256) ;
    mainfo.thetag := 256;
   end;
-     '8' : begin 
+     '8' : begin
   domake(512) ;
    mainfo.thetag := 512;
   end;
-   '9' : begin 
+   '9' : begin
   domake(1024) ;
    mainfo.thetag := 1024;
-  end; 
-   '0' : begin 
+  end;
+   '0' : begin
   domake(2048) ;
    mainfo.thetag := 2048;
   end;
   end;
    mainfo.resetstartcommand;
  end;
- 
+
  // Project cust compile
    procedure tactionsmo.custcompileproject(const sender: TObject);
 begin
 saveallactonexecute(sender);
 compileproject(sender);
-end;  
+end;
 
 procedure tactionsmo.setupcustom ;
 begin
    debuggerfo.edited_make.enabled := false;
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
-  
+
     case debuggerfo.edit_compiler.value of
   'Pascal' : mainfo.settypecompiler := 1 ;
   'Java'   : mainfo.settypecompiler := 2 ;
@@ -671,25 +671,25 @@ begin
   'Python' : mainfo.settypecompiler := 4 ;
   'Other'  : mainfo.settypecompiler := 5 ;
     end;
-  
+
   mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
-  
+
    case debuggerfo.edit_options.value of
   'M' : mainfo.customoption := 1 ;
    'B' : mainfo.customoption := 2 ;
    '1' : mainfo.customoption := 4 ;
     '2' : mainfo.customoption := 8 ;
      '3' : mainfo.customoption := 16 ;
-   '4' : mainfo.customoption := 32 ;  
+   '4' : mainfo.customoption := 32 ;
     '5' : mainfo.customoption := 64 ;
    '6' : mainfo.customoption := 128 ;
     '7' : mainfo.customoption := 256 ;
     '8' : mainfo.customoption := 512 ;
-   '9' : mainfo.customoption := 1024 ; 
-    '0' : mainfo.customoption := 2048 ;  
-    'X' : mainfo.customoption := 0 ;   
+   '9' : mainfo.customoption := 1024 ;
+    '0' : mainfo.customoption := 2048 ;
+    'X' : mainfo.customoption := 0 ;
   end;
-    
+
 end;
 
 procedure tactionsmo.compilecustom(const sender: TObject);
@@ -704,7 +704,7 @@ begin
    debuggerfo.edited_make.enabled := false;
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
-  
+
      case debuggerfo.edit_compiler.value of
   'Pascal' : mainfo.settypecompiler := 1 ;
   'Java'   : mainfo.settypecompiler := 2 ;
@@ -712,25 +712,25 @@ begin
   'Python' : mainfo.settypecompiler := 4 ;
   'Other'  : mainfo.settypecompiler := 5 ;
     end;
-  
+
   mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
-  
+
    case tmenuitem(sender).tag of
   0 : mainfo.customoption := 1 ;
    1 : mainfo.customoption := 2 ;
    2 : mainfo.customoption := 4 ;
     3 : mainfo.customoption := 8 ;
      4 : mainfo.customoption := 16 ;
-   5 : mainfo.customoption := 32 ; 
+   5 : mainfo.customoption := 32 ;
     6 : mainfo.customoption := 64 ;
    7 : mainfo.customoption := 128 ;
     8 : mainfo.customoption := 256 ;
      9 : mainfo.customoption := 512 ;
-   10 : mainfo.customoption := 1024 ; 
+   10 : mainfo.customoption := 1024 ;
    11 : mainfo.customoption := 2048 ;
-   12 : mainfo.customoption := 0 ;   
+   12 : mainfo.customoption := 0 ;
   end;
-    
+
 end;
 
 procedure tactionsmo.compilecustommenu(const sender: TObject);
@@ -828,7 +828,7 @@ end;
 
 procedure tactionsmo.enableonselect(const sender: tcustomaction);
 begin
- sender.enabled:= (sourcefo.activepage <> nil) and 
+ sender.enabled:= (sourcefo.activepage <> nil) and
                                       sourcefo.activepage.edit.hasselection;
 end;
 
@@ -837,7 +837,7 @@ procedure tactionsmo.lineactonexecute(const sender: TObject);
 begin
 if lineformcreated then linefo.bringtofront else
  integerenter(fgototheline,1, sourcefo.activepage.source_editor.rowcount,
-      sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) 
+      sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)])
 // sourcefo.activepage.doline;
 end;
 
@@ -847,7 +847,7 @@ begin
   targetconsolefo.dofind;
  end
  else begin
- 
+
  if findformcreated then finddialogfo.bringtofront else
  finddialogexecute(findinfos);
   // sourcefo.activepage.dofind;
@@ -903,7 +903,7 @@ begin
   else
    begin
       domake(0);
-    thetag := 0; 
+    thetag := 0;
   end;
    resetstartcommand;
  end;
@@ -960,42 +960,42 @@ case debuggerfo.project_options.value of
   '0' : mainfo.thetag := 2048;
   end;
 
-with projectoptions,o,texp do begin  
+with projectoptions,o,texp do begin
 for int3:= 0 to high(debuggerused) do begin
    if (mainfo.thetag and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
-         
+
   if (pos('Default',debuggerused[int3]) > 0) then
     str3:= 'Default Debugger' else
-        
+
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
-    
+
     if (trim(debuggerused[int3]) = 'Debugger 2') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
-    
+
     if (trim(debuggerused[int3]) = 'Debugger 3') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
-    
+
      if (trim(debuggerused[int3]) = 'Debugger 4') then
     str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) else
     str3:= '' ;
-    
+
     if str3 = '' then str3:= 'Default Debugger';
  end;
  end;
  end;
 // str3:= 'Default Debugger'
  end;
- 
+
  int1 := 1;
- 
+
    with projectoptions,o,texp do begin
- 
+
 for int2:= 0 to high(compilerused) do begin
    if (mainfo.thetag and compilerusedon[int2] <> 0)  then
     begin
- if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else   
+ if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else
  if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
  if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
  if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
@@ -1003,7 +1003,7 @@ for int2:= 0 to high(compilerused) do begin
    end;
    end;
    end;
-  
+
  if (str3 <> '') and ((int1 = 1) or (int1 = 3))  then begin
   with mainfo do begin
   if checkremake(sc_continue) then begin
@@ -1011,7 +1011,7 @@ for int2:= 0 to high(compilerused) do begin
    gdb.continue;
    end;
  end;
- end else 
+ end else
  begin
  mainfo.runwithoutdebugger ;
  end;
@@ -1138,7 +1138,7 @@ end;
 
 procedure tactionsmo.setbmexec(const sender: TObject);
 begin
- sourcefo.setbmexec(sender); 
+ sourcefo.setbmexec(sender);
 end;
 
 procedure tactionsmo.findbmexec(const sender: TObject);
@@ -1202,7 +1202,7 @@ begin
  else begin
   find.enabled:= (sourcefo.activepage <> nil) ;
  // and sourcefo.activepage.activeentered;
-  repeatfind.enabled:= find.enabled and 
+  repeatfind.enabled:= find.enabled and
            (projectoptions.findreplaceinfo.find.text <> '');
  end;
   findback.enabled:= repeatfind.enabled;
@@ -1222,7 +1222,7 @@ function tactionsmo.filterfindcomp(
                                  const acomponent: tcomponent): boolean;
 begin
  result:= not (cssubcomponent in acomponent.componentstyle) and
-          (not (acomponent is twidget) or 
+          (not (acomponent is twidget) or
                 (ws_iswidget in twidget(acomponent).widgetstate));
 end;
 

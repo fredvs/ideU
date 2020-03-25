@@ -1,8 +1,8 @@
 object findinfilepagefo: tfindinfilepagefo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 382
-  bounds_y = 163
+  bounds_x = 52
+  bounds_y = 132
   bounds_cx = 573
   bounds_cy = 310
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -54,6 +54,8 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_cx = 571
     bounds_cy = 284
     anchors = [an_left, an_top, an_right, an_bottom]
+    font.name = 'stf_default'
+    font.localprops = []
     fixcols.count = 1
     fixcols.items = <    
       item
@@ -77,9 +79,9 @@ object findinfilepagefo: tfindinfilepagefo
           )
         )
       end>
-    datarowheight = 16
+    datarowheight = 17
     oncellevent = foundlistoncellevent
-    reffontheight = 14
+    reffontheight = 15
     object foundlist: ttextedit
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -89,11 +91,13 @@ object findinfilepagefo: tfindinfilepagefo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 1500
-      bounds_cy = 16
+      bounds_cy = 17
+      font.name = 'stf_default'
+      font.localprops = []
       optionsedit1 = [oe1_keyexecute, oe1_savestate]
       optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_exitoncursor]
       oncellevent = foundlistoncellevent
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object filename: tstringdisp
@@ -103,11 +107,13 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 1
     bounds_y = 0
     bounds_cx = 406
-    bounds_cy = 18
+    bounds_cy = 19
     bounds_cxmin = 140
     anchors = [an_left, an_top, an_right]
+    font.name = 'stf_default'
+    font.localprops = []
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 14
+    reffontheight = 15
   end
   object foundcount: tintegerdisp
     frame.localprops = []
@@ -116,9 +122,11 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 407
     bounds_y = 0
     bounds_cx = 44
-    bounds_cy = 18
+    bounds_cy = 19
     anchors = [an_top, an_right]
-    reffontheight = 14
+    font.name = 'stf_default'
+    font.localprops = []
+    reffontheight = 15
   end
   object cancel: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -128,12 +136,14 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 453
     bounds_y = 1
     bounds_cx = 50
-    bounds_cy = 20
+    bounds_cy = 21
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
     caption = '&Cancel'
+    font.name = 'stf_default'
+    font.localprops = []
     onexecute = cancelonexecute
-    reffontheight = 14
+    reffontheight = 15
   end
   object again: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -143,12 +153,14 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 503
     bounds_y = 1
     bounds_cx = 50
-    bounds_cy = 20
+    bounds_cy = 21
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = '&again'
+    font.name = 'stf_default'
+    font.localprops = []
     onexecute = againonexecute
-    reffontheight = 14
+    reffontheight = 15
   end
   object closepage: tstockglyphbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -157,12 +169,12 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 553
     bounds_y = 1
     bounds_cx = 18
-    bounds_cy = 20
+    bounds_cy = 21
     anchors = [an_top, an_right]
     state = [as_localimagelist, as_localimagenr, as_localonexecute]
     glyph = stg_checked
     onexecute = closebuonexecute
-    reffontheight = 14
+    reffontheight = 15
   end
   object thread: tthreadcomp
     onstart = threadonstart

@@ -2,8 +2,8 @@ object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   face.localprops = []
   visible = False
-  bounds_x = 711
-  bounds_y = 141
+  bounds_x = 712
+  bounds_y = 186
   bounds_cx = 336
   bounds_cy = 366
   bounds_cxmin = 336
@@ -52,6 +52,8 @@ object dialogfilesfo: tdialogfilesfo
   object selected_file: tedit
     optionswidget1 = [ow1_fontglyphheight]
     frame.caption = 'Selected Syntax Definition File'
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
@@ -67,10 +69,14 @@ object dialogfilesfo: tdialogfilesfo
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
+    font.name = 'stf_default'
+    font.localprops = []
     reffontheight = 15
   end
   object tbutton1: tbutton
     frame.optionsskin = [fso_flat]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.fade_direction = gd_down
@@ -88,6 +94,8 @@ object dialogfilesfo: tdialogfilesfo
   end
   object tbutton2: tbutton
     frame.optionsskin = [fso_flat]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.fade_direction = gd_down
@@ -111,6 +119,10 @@ object dialogfilesfo: tdialogfilesfo
     bounds_cx = 324
     bounds_cy = 313
     anchors = [an_left, an_top, an_right, an_bottom]
+    font.name = 'stf_default'
+    font.localprops = [flp_colorbackground]
+    fontempty.name = 'stf_empty'
+    fontempty.localprops = []
     colorselect = 16760476
     colorglyph = 16449400
     cellwidth = 262

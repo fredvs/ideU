@@ -3,13 +3,16 @@ object objectinspectorfo: tobjectinspectorfo
   frame.localprops = []
   frame.localprops1 = []
   frame.grip_size = 10
+  frame.grip_grip = stb_dens100
+  frame.grip_color = 11507135
+  frame.grip_coloractive = 12694473
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
   popupmenu = mainpopup
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 185
-  bounds_y = 360
+  bounds_x = 378
+  bounds_y = 306
   bounds_cx = 254
   bounds_cy = 248
   container.frame.localprops = []
@@ -23,7 +26,11 @@ object objectinspectorfo: tobjectinspectorfo
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Objectinspector'
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Object Inspector'
@@ -113,7 +120,7 @@ object objectinspectorfo: tobjectinspectorfo
     bounds_x = 0
     bounds_y = 1
     bounds_cx = 171
-    bounds_cy = 22
+    bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     onsetvalue = compselectoronsetvalue
     dropdown.options = [deo_selectonly, deo_autodropdown, deo_keydropdown]
@@ -122,7 +129,7 @@ object objectinspectorfo: tobjectinspectorfo
       item
       end>
     onbeforedropdown = compselectorbeforedropdown
-    reffontheight = 16
+    reffontheight = 15
   end
   object grid: twidgetgrid
     frame.localprops = [frl_levelo, frl_colorclient]
@@ -143,6 +150,7 @@ object objectinspectorfo: tobjectinspectorfo
     rowfonts.count = 6
     rowfonts.items = <    
       item
+        color = -1610612734
         name = 'stf_default'
         xscale = 1
         localprops = [flp_xscale]
@@ -166,12 +174,14 @@ object objectinspectorfo: tobjectinspectorfo
         localprops = [flp_color, flp_xscale]
       end    
       item
+        color = -1610612734
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1
         localprops = [flp_style, flp_xscale]
       end    
       item
+        color = -1610612734
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1
@@ -214,7 +224,7 @@ object objectinspectorfo: tobjectinspectorfo
     drag.onbeforedragbegin = gridondragbegin
     drag.onbeforedragover = gridondragover
     drag.onbeforedragdrop = gridondragdrop
-    reffontheight = 16
+    reffontheight = 15
     object props: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -229,7 +239,7 @@ object objectinspectorfo: tobjectinspectorfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 90
-      bounds_cy = 18
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext, oe_locate]
       onkeydown = propskeydownexe
@@ -284,7 +294,7 @@ object objectinspectorfo: tobjectinspectorfo
         item
         end>
       onbeforedropdown = valuesbeforedropdown
-      reffontheight = 16
+      reffontheight = 15
     end
   end
   object compedit: trichbutton
@@ -304,17 +314,36 @@ object objectinspectorfo: tobjectinspectorfo
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     hint = 'Show component editor.'
-    bounds_x = 217
+    bounds_x = 215
     bounds_y = 2
-    bounds_cx = 25
-    bounds_cy = 20
+    bounds_cx = 27
+    bounds_cy = 19
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localcaption, as_localhint, as_localonexecute]
     facedisabled.localprops = []
     facedisabled.template = guitemplatesmo.fadevertkonvex
     caption = '&ED'
     onexecute = compeditonexecute
-    reffontheight = 16
+    reffontheight = 15
+    richcaption = (
+      'ED'
+      (
+        (
+          0
+          [ni_underline]
+          0
+          0
+          [fs_underline]
+        )
+        (
+          1
+          [ni_underline]
+          0
+          0
+          []
+        )
+      )
+    )
   end
   object findbu: tstockglyphbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -322,12 +351,12 @@ object objectinspectorfo: tobjectinspectorfo
     bounds_x = 197
     bounds_y = 2
     bounds_cx = 18
-    bounds_cy = 20
+    bounds_cy = 19
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localimagelist, as_localimagenr]
     glyph = stg_ellipsesmall
     action = actionsmo.findcompallact
-    reffontheight = 16
+    reffontheight = 15
   end
   object gridpopup: tpopupmenu
     onupdate = popupupdate

@@ -14,6 +14,10 @@ object confdebuggerfo: tconfdebuggerfo
     200
   )
   optionswindow = [wo_dialog]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Debuggers Configuration'
   icon.origformat = 'bmp'
@@ -40,6 +44,7 @@ object confdebuggerfo: tconfdebuggerfo
     FFFFFF04F7FFFF0173EF730100DE000100E7000500DE000273EF7301F7FFFF01
     FFFFFF02
   }
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object tlabel6: tlabel
     taborder = 5

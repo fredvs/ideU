@@ -17,17 +17,18 @@ unit main;
 interface
 
 uses
-  aboutform, plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
-  mseforms, mseguiglob, msegui, msegdbutils, mseactions, sak_mse, msefileutils,
-  msedispwidgets, msedataedits, msestat, msestatfile, msemenus, msebitmap, msegrids,
-  msefiledialog, msetypes, sourcepage, msedesignintf, msedesigner, Classes, mclasses,
-  mseclasses, msegraphutils, typinfo, msedock, SysUtils, msesysenv, msemacros,
-  msestrings, msepostscriptprinter, msegraphics, mseglob, msestream,
-  mseprocmonitorcomp, msesystypes, mserttistat, msedatalist, mselistbrowser,
-  projecttreeform, msepipestream, msestringcontainer, msesys, msewidgets;
+ aboutform, plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
+ mseforms, mseguiglob, msegui, msegdbutils, mseactions, sak_mse, msefileutils,
+ msedispwidgets, msedataedits, msestat, msestatfile, msemenus, msebitmap,
+ msegrids,msefiledialog, msetypes, sourcepage, msedesignintf, msedesigner,
+ Classes, mclasses,mseclasses, msegraphutils, typinfo, msedock, SysUtils,
+ msesysenv, msemacros,msestrings, msepostscriptprinter, msegraphics, mseglob,
+ msestream,mseprocmonitorcomp, msesystypes, mserttistat, msedatalist,
+ mselistbrowser,projecttreeform, msepipestream, msestringcontainer, msesys,
+ msewidgets;
 
 const
-  versiontext = '1.9.9';
+  versiontext = '2.0.0';
   idecaption = 'ideU';
   statname = 'ideu';
 
@@ -139,6 +140,8 @@ type
     tframecomp2: tframecomp;
     timagelist3: timagelist;
     tframecomp3: tframecomp;
+   convexdark: tfacecomp;
+   concavedark: tfacecomp;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -209,6 +212,7 @@ type
 
 
     //fred
+    procedure dotheme(typetheme : integer);
     procedure picksdef(const Sender: TObject; var avalue: msestring; var accept: boolean);
     procedure menuwindowlayoutexe(const Sender: TObject);
     procedure viewconffpguiexecute(const Sender: TObject);
@@ -231,6 +235,9 @@ type
     procedure closeallmod(const Sender: TObject);
     procedure manfocreated(const Sender: TObject);
    procedure onbeauty(const sender: TObject);
+   procedure onclassic(const sender: TObject);
+   procedure ondark(const sender: TObject);
+   procedure ontoggleunitform(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: boolean;
@@ -318,6 +325,7 @@ type
   public
 
     // fred
+    themenr: integer;
     customoption: integer;
     setcompiler: integer;
     settypecompiler: integer;
@@ -530,16 +538,9 @@ end;
 
 procedure tmainfo.mainfooncreate(const Sender: TObject);
 begin
-  designer.ongetmodulenamefile :=
-{$ifdef FPC}
-    @
-{$endif}
-    dofindmodulebyname;
-  designer.ongetmoduletypefile :=
-{$ifdef FPC}
-    @
-{$endif}
-    dofindmodulebytype;
+designer.ongetmodulenamefile:= {$ifdef FPC}@{$endif}dofindmodulebyname;
+ designer.ongetmoduletypefile:= {$ifdef FPC}@{$endif}dofindmodulebytype;
+
   designer.objformat := of_fp;
   componentpalettefo.updatecomponentpalette(True);
   designnotifications.Registernotification(idesignnotification(self));
@@ -594,33 +595,32 @@ if not dialogfilesformcreated then dodialogfiles ;
   end;
 end;
 
-procedure tmainfo.onthetimer(const Sender: TObject);
+procedure tmainfo.onthetimer(const sender: TObject);
 begin
-  thetimer.Enabled := False;
-  componentpalettefo.Close;
-  objectinspectorfo.Close;
-  if gINI.ReadBool('General', 'FirstLoad', True) then
-  begin
-    if thetimer.tag = 0 then
-    begin
-      thetimer.tag := 1;
-      thetimer.interval := 1000000;
-      thetimer.Enabled := True;
-      activate;
-      //visible := true;
-    end
-    else
-    begin
-      thetimer.Free;
-      configureexecute(Sender);
-      gINI.WriteBool('General', 'FirstLoad', False);
-      activate;
-    end;
-  end
-  else
-  begin
-    activate;
-    // closeallmodule();
+thetimer.enabled := false;
+componentpalettefo.close;
+objectinspectorfo.close;
+if gINI.ReadBool('General', 'FirstLoad', true)
+then
+begin
+if thetimer.tag = 0 then
+begin
+thetimer.tag := 1;
+thetimer.interval := 1000000 ;
+ thetimer.enabled := true;
+activate;
+//visible := true;
+end else
+begin
+ thetimer.free;
+ configureexecute(sender) ;
+ gINI.WriteBool('General', 'FirstLoad', false) ;
+ activate;
+end;
+end  else
+begin
+activate;
+// closeallmodule();
 
 {
 with settingsfo do
@@ -630,13 +630,19 @@ but_ok.execute;
 end;
 }
 
-  end;
+end;
 
 {$ifdef polydev}
-  top := 56;
+top := 56 ;
  {$endif}
 
-  debuggerfo.file_history.tag := 0;
+ debuggerfo.file_history.tag := 0;
+
+ themenr := gINI.ReadInteger('theme', 'main', 0);
+ dotheme(themenr);
+
+ setstattext('Hello!', mtk_flat);
+
 
 end;
 
@@ -648,6 +654,7 @@ begin
   thetimer.tag := 0;
   thetimer.Enabled := True;
 end;
+
 
 procedure tmainfo.ideureadconfig();
 var
@@ -820,7 +827,7 @@ begin
 
   confideufo.tabstops.Value := gINI.ReadInteger('tabstops', 'editor', 4);
 
-  confideufo.spacetabs.Value := gINI.Readbool('spacetabs', 'editor', False);
+   confideufo.spacetabs.Value := gINI.Readbool('spacetabs', 'editor', False);
 
   confideufo.trimtrailingwhitespace.Value :=
     gINI.Readbool('trimtrailingwhitespace', 'editor', False);
@@ -828,16 +835,16 @@ begin
   confideufo.rightmarginchars.Value :=
     gINI.ReadInteger('rightmarginchars', 'editor', 80);
 
-  confideufo.closemessages.Value := gINI.Readbool('closemessages', 'message', False);  
-    
+  confideufo.closemessages.Value := gINI.Readbool('closemessages', 'message', False);
+
  confideufo.colorerror.Value :=
-    gINI.ReadInt64('colorerror', 'message', 2684354579);   
-    
+    gINI.ReadInt64('colorerror', 'message', 2684354579);
+
  confideufo.colorwarning.Value :=
-    gINI.ReadInt64('colorwarning', 'message', 2684354584);    
-    
+    gINI.ReadInt64('colorwarning', 'message', 2684354584);
+
   confideufo.colornote.Value :=
-    gINI.ReadInt64('colornote', 'message', 2684354580);        
+    gINI.ReadInt64('colornote', 'message', 2684354580);
 
   confideufo.encoding.Value := gINI.ReadInteger('encoding', 'editor', 0);
 
@@ -942,15 +949,15 @@ begin
     (confideufo.trimtrailingwhitespace.Value));
 
   gINI.WriteInteger('rightmarginchars', 'editor', (confideufo.rightmarginchars.Value));
-  
- gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));  
 
-  gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));   
-    
- gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));    
-    
-  gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));        
-  
+ gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));
+
+  gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));
+
+ gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
+
+  gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));
+
   gINI.WriteInteger('encoding', 'editor', (confideufo.encoding.Value));
 
   gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
@@ -1052,6 +1059,8 @@ begin
   gINI.writeString('debug', 'debugger3', ansistring(confdebuggerfo.debugger3.Value));
   gINI.writeString('debug', 'debugger4', ansistring(confdebuggerfo.debugger4.Value));
 
+  gINI.writeInteger('theme', 'main', themenr);
+
   if confideufo.tbfilereload.Value = True then
     gINI.WriteInteger('General', 'WarnChange', 0)
   else
@@ -1068,8 +1077,7 @@ end;
 
 procedure tmainfo.mainfoondestroy(const Sender: TObject);
 begin
-  if SakIsEnabled = True then
-    sakunloadlib;
+  if SakIsEnabled = True then sakunloadlib;
   designnotifications.unRegisternotification(idesignnotification(self));
   abortmake;
   abortdownload;
@@ -1734,7 +1742,28 @@ end;
 
 procedure tmainfo.setstattext(const atext: msestring;
   const akind: messagetextkindty = mtk_info);
+var
+color0, color1, color3, colorf0, colorf1 : integer;
+
 begin
+
+if themenr = 0 then
+begin
+color0 := $CFCFCF;
+color1 := $9E9E9E;
+color3 := cl_black;
+colorf0 :=  $96B094;
+colorf1 :=  $B1CFAE;
+end;
+
+if themenr = 1 then
+begin
+color0 := cl_dkgray;
+color1 := cl_black;
+color3 := cl_white;
+colorf1 :=  $3F6B3E;
+colorf0 :=  cl_black;
+end;
 
   with debuggerfo.statdisp do
   begin
@@ -1747,8 +1776,8 @@ begin
       end;
       mtk_finished:
       begin
-        face.fade_color.items[1] := $B1CFAE;
-        face.fade_color.items[0] := $96B094;
+        face.fade_color.items[0] := colorf0;
+        face.fade_color.items[1] := colorf1;
         //  face.fade_color.items[0]:= $CFCFCF;
         //  face.fade_color.items[1]:= $9E9E9E;
       end;
@@ -1774,8 +1803,8 @@ begin
       end
       else
       begin
-        face.fade_color.items[0] := $CFCFCF;
-        face.fade_color.items[1] := $9E9E9E;
+        face.fade_color.items[0] := color0;
+        face.fade_color.items[1] := color1;
       end;
     end;
 
@@ -1783,7 +1812,7 @@ begin
     case akind of
       mtk_making: font.color := cl_red;
       else
-        font.color := cl_black;
+        font.color := color3;
     end;
   end;
 
@@ -3611,12 +3640,12 @@ begin
     if projectoptions.d.showconsole = True then
     begin
       debuggerfo.terminal_run.tag := 1;
-      debuggerfo.terminal_run.imagenr := 34;
+      debuggerfo.terminal_run.imagenr := 43;
     end
     else
     begin
       debuggerfo.terminal_run.tag := 0;
-      debuggerfo.terminal_run.imagenr := 33;
+      debuggerfo.terminal_run.imagenr := 42;
     end;
     application.ProcessMessages;
 
@@ -4682,6 +4711,7 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
+//  setstattext('Light theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.onbeauty(const sender: TObject);
@@ -4692,5 +4722,350 @@ if not beautyformcreated then doBeauty;
 //beautyfo.bringtofront;
 end;
 
+procedure tmainfo.dotheme(typetheme : integer);
+var
+color0, color1, color2, color3 : integer;
+begin
+
+setstattext(c[Ord(makeok)], mtk_finished);
+
+if typetheme = 0 then
+begin
+color0 := cl_ltgray;
+color1 := cl_dkgray;
+color2 := cl_black;
+color3 := cl_white;
+basedock.color := cl_ltgray;
+color := cl_ltgray;
+basedock.dragdock.splitter_color := cl_ltgray;
+{
+dialogfilesfo.color := cl_ltgray;
+dialogfilesfo.font.color := cl_black;
+dialogfilesfo.list_files.font.color := cl_black;
+dialogfilesfo.list_files.color := cl_white;
+}
+mainmenu1.facetemplate := convex;
+mainmenu1.itemfacetemplate := convex;
+mainmenu1.itemfacetemplateactive := concave;
+mainmenu1.popupitemfacetemplate := concave;
+mainmenu1.popupitemfacetemplateactive := convex;
+debuggerfo.panelproject.face.template := debuggerfo.templproject;
+debuggerfo.panelwatch.face.template := debuggerfo.templproject;
+debuggerfo.project_open.face.template := debuggerfo.templproject;
+debuggerfo.project_option.face.template := debuggerfo.templproject;
+debuggerfo.project_save.face.template := debuggerfo.templproject;
+debuggerfo.project_make.face.template := debuggerfo.templproject;
+debuggerfo.project_abort_compil.face.template := debuggerfo.templproject;
+debuggerfo.project_start.face.template := debuggerfo.templproject;
+debuggerfo.project_next.face.template := debuggerfo.templproject;
+
+debuggerfo.project_step.imagenrdisabled := -2;
+debuggerfo.project_save.imagenrdisabled := -2;
+debuggerfo.project_make.imagenrdisabled := -2;
+debuggerfo.project_abort_compil.imagenrdisabled := -2;
+debuggerfo.project_next.imagenrdisabled := -2;
+debuggerfo.project_finish.imagenrdisabled := -2;
+debuggerfo.project_next_instruction.imagenrdisabled := -2;
+debuggerfo.project_reset.imagenrdisabled := -2;
+debuggerfo.project_interrupt.imagenrdisabled := -2;
+debuggerfo.project_step_instruction.imagenrdisabled := -2;
+
+debuggerfo.edited_abort.imagenrdisabled := -2;
+
+debuggerfo.panelmain.face.template := debuggerfo.templatemain;
+debuggerfo.assistive.face.template := debuggerfo.templatemain;
+debuggerfo.properties_list.face.template := debuggerfo.templatemain;
+debuggerfo.find_in_edit.face.template := debuggerfo.templatemain;
+debuggerfo.find_in_directory.face.template := debuggerfo.templatemain;
+debuggerfo.line_number.face.template := debuggerfo.templatemain;
+debuggerfo.terminal_run.face.template := debuggerfo.templatemain;
+debuggerfo.debug_on.face.template := debuggerfo.templatemain;
+
+debuggerfo.project_step.face.template := debuggerfo.templproject;
+debuggerfo.project_finish.face.template := debuggerfo.templproject;
+debuggerfo.project_next_instruction.face.template := debuggerfo.templproject;
+debuggerfo.project_step_instruction.face.template := debuggerfo.templproject;
+debuggerfo.project_reset.face.template := debuggerfo.templproject;
+debuggerfo.project_interrupt.face.template := debuggerfo.templproject;
+debuggerfo.tstringdisp2.face.template := debuggerfo.templatemain;
+debuggerfo.timagelist1.getimage(0, debuggerfo.eyesimage.bitmap, 0);
+
+debuggerfo.paneledited.face.template := debuggerfo.templfile;
+debuggerfo.toggle_form_unit.face.template := debuggerfo.templfile;
+debuggerfo.code_beauty.face.template := debuggerfo.templfile;
+debuggerfo.procedure_list.face.template := debuggerfo.templfile;
+debuggerfo.open_file.face.template := debuggerfo.templfile;
+debuggerfo.save_file.face.template := debuggerfo.templfile;
+debuggerfo.edited_make.face.template := debuggerfo.templfile;
+debuggerfo.edited_abort.face.template := debuggerfo.templfile;
+debuggerfo.edited_run.face.template := debuggerfo.templfile;
+
+if assigned(sourcefo.ActivePage) then begin
+sourcefo.ActivePage.pathdisp.face.template := debuggerfo.templatemain;
+sourcefo.ActivePage.pathdisp.font.color := cl_black;
+sourcefo.ActivePage.linedisp.face.template := debuggerfo.templatemain;
+sourcefo.ActivePage.linedisp.font.color := cl_black;
+sourcefo.ActivePage.color := cl_ltgray;
+sourcefo.ActivePage.container.color := cl_ltgray;
+end;
+
+sourcefo.files_tab.color := cl_ltgray;
+sourcefo.files_tab.tab_frame.buttonface.template := mainfo.convex;
+sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1;
+sourcefo.step_back.face.template := mainfo.convex;
+sourcefo.step_forward.face.template := mainfo.convex;
+
+
+sourcefo.step_forward.face.template := mainfo.convex;
+sourcefo.files_tab.tab_frame.colorglyph := cl_black;
+sourcefo.files_tab.tab_faceactivetab.template := sourcefo.tfacecomp2;
+sourcefo.files_tab.tab_face.template := sourcefo.tfacecomp1;
+sourcefo.files_tab.tab_font.color := cl_black;
+sourcefo.files_tab.tab_fontactivetab.color := cl_black;
+sourcefo.files_tab.tab_fonttab.color := cl_black;
+
+projecttreefo.projectedit.face.template := projecttreefo.templatemain;
+projecttreefo.projectedit.font.color := cl_black;
+projecttreefo.projectedit.itemlist.colorline := cl_black;
+projecttreefo.projectedit.itemlist.colorglyph := cl_black;
+projecttreefo.projectedit.itemlist.colorglyphactive := cl_black;
+projecttreefo.projectedit.itemlist.colorlineactive := cl_black;
+
+projecttreefo.edit.font.color := cl_black;
+projecttreefo.edit.face.template := projecttreefo.templatemain;
+projecttreefo.grid.face.template := projecttreefo.templatemain;
+
+end;
+
+if typetheme = 1 then
+begin
+color0 := cl_dkgray;
+color1 := cl_black;
+color2 := cl_white;
+color3 := cl_black;
+basedock.color := cl_black;
+color := cl_black;
+basedock.dragdock.splitter_color :=  cl_black;
+mainmenu1.facetemplate := convexdark;
+mainmenu1.itemfacetemplate := convexdark;
+mainmenu1.itemfacetemplateactive := concavedark;
+mainmenu1.popupitemfacetemplate := concavedark;
+mainmenu1.popupitemfacetemplateactive := convexdark;
+
+debuggerfo.panelmain.face.template := debuggerfo.templatemaindark;
+debuggerfo.assistive.face.template := debuggerfo.templatemaindark;
+debuggerfo.properties_list.face.template := debuggerfo.templatemaindark;
+debuggerfo.find_in_edit.face.template := debuggerfo.templatemaindark;
+debuggerfo.find_in_directory.face.template := debuggerfo.templatemaindark;
+debuggerfo.line_number.face.template := debuggerfo.templatemaindark;
+debuggerfo.terminal_run.face.template := debuggerfo.templatemaindark;
+debuggerfo.debug_on.face.template := debuggerfo.templatemaindark;
+
+if assigned(sourcefo.ActivePage) then begin
+sourcefo.ActivePage.pathdisp.face.template := debuggerfo.templatemaindark;
+sourcefo.ActivePage.pathdisp.font.color := cl_white;
+sourcefo.ActivePage.linedisp.face.template := debuggerfo.templatemaindark;
+sourcefo.ActivePage.linedisp.font.color := cl_white;
+sourcefo.ActivePage.color := cl_black;
+sourcefo.ActivePage.container.color := cl_black;
+end;
+
+sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1dark;
+sourcefo.files_tab.tab_font.color := cl_white;
+sourcefo.files_tab.tab_fontactivetab.color := cl_white;
+sourcefo.files_tab.tab_fonttab.color := cl_white;
+sourcefo.files_tab.tab_faceactivetab.template := sourcefo.tfacecomp2dark;
+sourcefo.files_tab.tab_face.template := sourcefo.tfacecomp1dark;
+sourcefo.files_tab.color := cl_black;
+sourcefo.files_tab.tab_frame.buttonface.template := mainfo.convexdark;
+sourcefo.files_tab.tab_frame.colorglyph := cl_white;
+sourcefo.step_back.face.template := mainfo.convexdark;
+sourcefo.step_forward.face.template := mainfo.convexdark;
+
+projecttreefo.projectedit.font.color := cl_white;
+projecttreefo.edit.font.color := cl_white;
+
+projecttreefo.projectedit.face.template := projecttreefo.templatemaindark;
+projecttreefo.projectedit.itemlist.colorline := cl_white;
+projecttreefo.grid.face.template := projecttreefo.templatemaindark;
+projecttreefo.edit.face.template := projecttreefo.templatemaindark;
+projecttreefo.projectedit.itemlist.colorglyph := cl_white;
+projecttreefo.projectedit.itemlist.colorglyphactive := cl_white;
+projecttreefo.projectedit.itemlist.colorlineactive := cl_white;
+
+
+debuggerfo.panelwatch.face.template := debuggerfo.templateprojectdark;
+debuggerfo.panelproject.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_open.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_option.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_save.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_make.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_abort_compil.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_start.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_next.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_step.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_finish.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_next_instruction.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_step_instruction.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_reset.face.template := debuggerfo.templateprojectdark;
+debuggerfo.project_interrupt.face.template := debuggerfo.templateprojectdark;
+debuggerfo.tstringdisp2.face.template := debuggerfo.templatemaindark;
+
+debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
+
+debuggerfo.project_next.imagenrdisabled := 37;
+debuggerfo.project_step.imagenrdisabled := 39;
+debuggerfo.project_save.imagenrdisabled := -2;
+debuggerfo.project_make.imagenrdisabled := -2	;
+debuggerfo.project_abort_compil.imagenrdisabled := 35;
+debuggerfo.project_finish.imagenrdisabled := 38;
+debuggerfo.project_next_instruction.imagenrdisabled := 37;
+debuggerfo.project_step_instruction.imagenrdisabled := 39;
+debuggerfo.project_reset.imagenrdisabled := 35;
+debuggerfo.project_interrupt.imagenrdisabled := 44;
+
+debuggerfo.edited_abort.imagenrdisabled := 35;
+
+debuggerfo.paneledited.face.template := debuggerfo.templfiledark;
+debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
+debuggerfo.code_beauty.face.template := debuggerfo.templfiledark;
+debuggerfo.procedure_list.face.template := debuggerfo.templfiledark;
+debuggerfo.open_file.face.template := debuggerfo.templfiledark;
+debuggerfo.save_file.face.template := debuggerfo.templfiledark;
+debuggerfo.edited_make.face.template := debuggerfo.templfiledark;
+debuggerfo.edited_abort.face.template := debuggerfo.templfiledark;
+debuggerfo.edited_run.face.template := debuggerfo.templfiledark;
+
+end;
+
+mainmenu1.menu.font.color := color2;
+
+mainfo.container.color := color0;
+mainfo.color := color0;
+
+debuggerfo.container.color := color0;
+
+debuggerfo.color := color0;
+//
+if assigned(projecttreefo) then begin
+
+projecttreefo.grid.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+projecttreefo.grid.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+projecttreefo.grid.frame.sbhorz.face.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbhorz.face.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbhorz.face1.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbhorz.face1.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbhorz.face2.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbhorz.face2.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbhorz.colorglyph := color2;
+
+projecttreefo.grid.frame.sbvert.facebutton.fade_color.items[1] := color0;
+projecttreefo.grid.frame.sbvert.facebutton.fade_color.items[0] := color1;
+projecttreefo.grid.frame.sbvert.face.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbvert.face.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbvert.face1.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbvert.face1.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbvert.face2.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbvert.face2.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+projecttreefo.grid.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+projecttreefo.grid.frame.sbvert.colorglyph := color2;
+end;
+
+messagefo.messages.datacols.color := color3;
+
+messagefo.messages.font.color := color2;
+messagefo.messages.font.colorbackground := cl_none;
+
+messagefo.messages.face.fade_color.items[0] := color0;
+messagefo.messages.face.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+messagefo.messages.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+messagefo.messages.frame.sbhorz.face.fade_color.items[0] := color0;
+messagefo.messages.frame.sbhorz.face.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.face1.fade_color.items[0] := color0;
+messagefo.messages.frame.sbhorz.face1.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.face2.fade_color.items[0] := color0;
+messagefo.messages.frame.sbhorz.face2.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.colorglyph := color2;
+
+messagefo.messages.frame.sbvert.facebutton.fade_color.items[1] := color0;
+messagefo.messages.frame.sbvert.facebutton.fade_color.items[0] := color1;
+messagefo.messages.frame.sbvert.face.fade_color.items[0] := color0;
+messagefo.messages.frame.sbvert.face.fade_color.items[1] := color1;
+messagefo.messages.frame.sbvert.face1.fade_color.items[0] := color0;
+messagefo.messages.frame.sbvert.face1.fade_color.items[1] := color1;
+messagefo.messages.frame.sbvert.face2.fade_color.items[0] := color0;
+messagefo.messages.frame.sbvert.face2.fade_color.items[1] := color1;
+messagefo.messages.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+messagefo.messages.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+messagefo.messages.frame.sbvert.colorglyph := color2;
+
+debuggerfo.statdisp.font.color := color2;
+
+if assigned(sourcefo.ActivePage) then begin
+if typetheme = 1 then
+begin
+color0 := cl_dkgray;
+color1 := cl_black;
+end;
+if typetheme = 0 then
+begin
+color0 := cl_ltgray;
+color1 := cl_dkgray;
+end;
+
+sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbhorz.colorglyph := color2;
+
+sourcefo.ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color0;
+sourcefo.ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color1;
+sourcefo.ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+sourcefo.ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+sourcefo.ActivePage.source_editor.frame.sbvert.colorglyph := color2;
+
+end;
+
+
+
+end;
+
+procedure tmainfo.onclassic(const sender: TObject);
+begin
+themenr := 0;
+dotheme(0);
+setstattext('Light theme is set.', mtk_flat);
+end;
+
+procedure tmainfo.ondark(const sender: TObject);
+begin
+themenr := 1;
+dotheme(1);
+setstattext('Dark theme is set.', mtk_flat);
+end;
+
+procedure tmainfo.ontoggleunitform(const sender: TObject);
+begin
+actionsmo.toggleformunitonexecute(sender);
+end;
 
 end.

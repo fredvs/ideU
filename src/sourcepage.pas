@@ -14,36 +14,36 @@ uses
 
 type
  sourcepageasynctagty = (spat_showasform{,spat_checkbracket},spat_showsource);
- 
+
  bookmarkty = record
   row: integer;
   bookmarknum: integer;
  end;
  bookmarkarty = array of bookmarkty;
- 
+
  tsourcepage = class(ttabform)
- 
+
    source_editor: twidgetgrid;
    edit: tsyntaxedit;
    dataicon: tdataicon;
    pathdisp: tstringedit;
    linedisp: tlabel;
-   
+
    tfacecomp1: tfacecomp;
    tfacecomp2: tfacecomp;
    procedure ontimerhide(const Sender: TObject);
    procedure ontimerhint(const Sender: TObject);
-  
+
    procedure icononcellevent(const sender: tobject; var info: celleventinfoty);
    procedure sourcefooncreate(const sender: tobject);
    procedure sourcefoondestroy(const sender: tobject);
    procedure editoncellevent(const sender: TObject; var info: celleventinfoty);
    procedure editonmodifiedchanged(const sender: tobject; const value: boolean);
-   procedure editontextmouseevent(const sender: tobject; 
+   procedure editontextmouseevent(const sender: tobject;
                                               var info: textmouseeventinfoty);
-   procedure editoneditnotification(const sender: tobject; 
+   procedure editoneditnotification(const sender: tobject;
                                               var info: editnotificationinfoty);
-   procedure gridonrowsdeleted(const sender: tcustomgrid; 
+   procedure gridonrowsdeleted(const sender: tcustomgrid;
                                               const index,count: integer);
    procedure gridonrowsinserted(const sender: tcustomgrid;
                                               const index,count: integer);
@@ -54,7 +54,8 @@ type
    procedure sourcefoondeactivate(const sender: TObject);
    procedure gridoncellevent(const sender: TObject; var info: celleventinfoty);
    procedure editonkeydown(const sender: twidget; var info: keyeventinfoty);
-   
+
+   procedure oncreated(const sender: TObject);
   private
    factiverow: integer;
    flasthint: gridcoordty;
@@ -140,7 +141,7 @@ type
                      //arow -1 -> current row, bookmarknum < 1 -> clear
    procedure clearbookmark(const bookmarknum: integer);
    function getbookmarks: bookmarkarty;
-   
+
    property activerow: integer read factiverow write setactiverow;
    property gdb: tgdbmi write setgdb;
    property filename: filenamety read getfilename;
@@ -148,14 +149,14 @@ type
    property filepath: filenamety read getfilepath write setfilepath;
    property filetag: longword read ffiletag;
  end;
- 
+
 function getpascalvarname(const edit: tsyntaxedit; pos: gridcoordty;
                       out startpos: gridcoordty): msestring; overload;
 function getpascalvarname(const edit: tsyntaxedit;
                              const pos: pointty): msestring; overload;
 procedure findintextedit(const edit: tcustomtextedit; var info: findinfoty;
-              var findpos: gridcoordty; const backward: boolean = false);                     
-                     
+              var findpos: gridcoordty; const backward: boolean = false);
+
 implementation
 
 uses
@@ -174,7 +175,7 @@ const
  bmbitshift = 4;
  bmbitmask = integer($3ff0);
  findshowpos = cep_rowcentered;
- 
+
 function getpascalvarname(const edit: tsyntaxedit; pos: gridcoordty;
                           out startpos: gridcoordty): msestring;
 var
@@ -184,7 +185,7 @@ begin
  if (result = '') and (pos.col > 0) then begin
   dec(pos.col);
   startpos:= edit.wordatpos(pos,result,pascaldelims,nodelimstrings);
- end; 
+ end;
  if result <> '' then begin
   for int1:= pos.col - startpos.col + 1 to length(result) do begin
    if (result[int1] = '.') or (result[int1] = '-') and (result[int1+1] = '>') then begin
@@ -384,7 +385,7 @@ begin
   edit.editpos:= finitialeditpos;
   for int1:= 0 to high(finitialbookmarks) do begin
    with finitialbookmarks[int1] do begin
-    if (row >= 0) and (bookmarknum >= 0) and (row < source_editor.rowcount) and 
+    if (row >= 0) and (bookmarknum >= 0) and (row < source_editor.rowcount) and
              (bookmarknum < 10) then begin
      setbookmark(row,bookmarknum);
     end;
@@ -565,10 +566,10 @@ var
  pos1: sourceposty;
 begin
  pos1.pos:= apos;
- 
+
  // fred
  // pos1.pos.col := pos1.pos.col-1;
- 
+
  ar1:= listprocheaders(edit.filename,pos1);
  setlength(ar2,length(ar1));
  for int1:= 0 to high(ar1) do begin
@@ -586,10 +587,10 @@ var
  int1: integer;
 begin
  pos1.pos:= apos;
- 
+
  // fred
  //pos1.pos.col := pos1.pos.col-1;
- 
+
  listsourceitems(edit.filename,pos1,scopes,defs,100);
  setlength(ar1,length(defs));
  for int1:= 0 to high(defs) do begin
@@ -602,7 +603,7 @@ begin
  showsourcehint(apos,ar1);
 end;
 
-procedure tsourcepage.editoncellevent(const sender: TObject; 
+procedure tsourcepage.editoncellevent(const sender: TObject;
                                                     var info: celleventinfoty);
 
  procedure checklink;
@@ -626,21 +627,21 @@ var
  shiftstate1: shiftstatesty;
  bo1: boolean;
  cellpos1: cellpositionty;
- 
+
 begin
 
- if  ((confideufo.doubleclic.value = false) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
+ if  ((confideufo.doubleclic.value = false) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
            (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left])))
             or // fred double click
-  ((confideufo.doubleclic.value = true) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and 
+  ((confideufo.doubleclic.value = true) and ((iscellclick(info,[ccr_nokeyreturn,ccr_dblclick])) and
            (dataicon[info.cell.row] and integer($80000000) <> 0) and
-           (info.mouseeventinfopo^.shiftstate = [ss_double])))         
+           (info.mouseeventinfopo^.shiftstate = [ss_double])))
   then begin
   include(info.mouseeventinfopo^.eventstate,es_processed);
   breakpointsfo.showbreakpoint(filepath,info.cell.row + 1,true);
-  end; 
-  
+  end;
+
  case info.eventkind of
   cek_exit: begin
    edit.removelink;
@@ -653,22 +654,22 @@ begin
    with info.keyeventinfopo^ do begin
     shiftstate1:= shiftstate * shiftstatesmask;
     if not (es_processed in eventstate) then begin
-     if ((shiftstate1 = [ss_shift,ss_ctrl]) or 
+     if ((shiftstate1 = [ss_shift,ss_ctrl]) or
                          (shiftstate1 = [ss_ctrl])) then begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
-      
+
        case key of
         key_up,key_down: begin
-         
+
          if switchheaderimplementation(edit.filename,pos1,pos2,bo1) then begin
           cellpos1:= cep_none;
           if bo1 then begin
            cellpos1:= cep_top;
           end;
           page1:= sourcefo.showsourcepos(pos2,true,cellpos1);
-         
+
           if page1 <> nil then begin
            page1.source_editor.showcell(makegridcoord(1,pos1.pos.row));
           end;
@@ -686,9 +687,9 @@ begin
        case key of
         key_space: begin
 // fred
-         debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';  
+         debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';
          showsourceitems(edit.editpos);
-         
+
         end
         else begin
          exclude(eventstate,es_processed);
@@ -776,11 +777,11 @@ begin
  if (arow >= 0) and (arow < source_editor.rowcount) then begin
   case astate of
    bkpts_none: dataicon[arow]:= dataicon[arow] and not integer($00000007);
-   bkpts_normal: dataicon[arow]:= dataicon[arow] and not integer($00000007) or 
+   bkpts_normal: dataicon[arow]:= dataicon[arow] and not integer($00000007) or
                                      integer($80000001);
-   bkpts_disabled: dataicon[arow]:= dataicon[arow] and not integer($00000007) or 
+   bkpts_disabled: dataicon[arow]:= dataicon[arow] and not integer($00000007) or
                                      integer($80000002);
-   bkpts_error: dataicon[arow]:= dataicon[arow] and not integer($00000007) or 
+   bkpts_error: dataicon[arow]:= dataicon[arow] and not integer($00000007) or
                                      integer($80000005);
   end;
  end;
@@ -807,7 +808,7 @@ begin
   end
   else begin
    breakpointsfo.deletebreakpoint(bpinfo);
-   setbreakpointstate(bkpts_none,source_editor.row); 
+   setbreakpointstate(bkpts_none,source_editor.row);
          //if breakpointinfo is not synchronized
   end;
  end;
@@ -861,7 +862,7 @@ procedure tsourcepage.ontimerhint(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
 if sourcefo.tabdeleted = false then
-begin 
+begin
   if (edit.editpos.col > -1) and (edit.editpos.row > -1) then
   begin
   showsourceitems(edit.editpos);
@@ -878,8 +879,8 @@ end;
 procedure tsourcepage.ontimerhide(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
-  debuggerfo.statdisp.value:= ''; 
- sourcefo.hidesourcehint; 
+  debuggerfo.statdisp.value:= '';
+ sourcefo.hidesourcehint;
 end;
 
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
@@ -900,7 +901,7 @@ function tsourcepage.checksave(noconfirm,multiple: boolean): modalresultty;
 begin
  result:= mr_none;
  if not sourcefo.allsaved then begin
-  if edit.modified and (noconfirm or 
+  if edit.modified and (noconfirm or
               confirmsavechangedfile(edit.filename,result,multiple)) then begin
    save('');
   end;
@@ -930,7 +931,7 @@ begin
   else
    createbackupfile(newname,edit.filename,fbackupcreated,
                             projectoptions.e.backupfilecount);
-                         
+
  if newname <> '' then begin
   sourcefo.filechangenotifyer.removenotification(filepath);
  end;
@@ -943,13 +944,13 @@ begin
   if confideufo.usedefaulteditoroptions.value then
   defaulted := confideufo.trimtrailingwhitespace.value
   else defaulted := projectoptions.e.trimtrailingwhitespace;
- 
+
  if defaulted then begin
   edit.datalist.beginupdate();
   try
    po1:= edit.datalist.datapo;
    for i1:= 0 to edit.datalist.count - 1 do begin
-    trimright1(po1^.text); 
+    trimright1(po1^.text);
     inc(po1);
    end;
   finally
@@ -1028,8 +1029,8 @@ begin
    end;
    if not edit.find(text,options,findpos,pt1,true,findshowpos) then begin
     if (edit.linecount = 0) or
-          isback and (findpos.row = edit.linecount-1) and 
-                  (findpos.col = length(edit.gridvalue[edit.linecount-1])) or 
+          isback and (findpos.row = edit.linecount-1) and
+                  (findpos.col = length(edit.gridvalue[edit.linecount-1])) or
              not isback and (findpos.row = 0) and (findpos.col = 0) then begin
      textnotfound(info);
     end
@@ -1097,13 +1098,13 @@ procedure tsourcepage.replace(all: boolean);
    beginupdate;
   end;
  end;
- 
+
 var
  pos1: gridcoordty;
  res1: modalresultty;
  rect1: rectty;
  updatedisabled: boolean;
- 
+
 begin
  with projectoptions.findreplaceinfo,find do begin
   updatedisabled:= false;
@@ -1157,7 +1158,7 @@ begin
        exit;
       end;
      end;
-    until not all or 
+    until not all or
               not edit.find(text,options,ffindpos,pos1,true,findshowpos) or
               updatedisabled and checkescape;
    end;
@@ -1177,13 +1178,13 @@ begin
 
  //if integerenter(fgotoline,1,source_editor.rowcount,
   //    sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]) = mr_ok then begin
-      
+
   source_editor.row:= fgototheline-1;
   d.row := source_editor.row;
   d.col := 1;
    source_editor.selectcell(d, csm_select, False);
    source_editor.focuscell(d);
- 
+
 end;
 
 procedure tsourcepage.dofind;
@@ -1301,10 +1302,10 @@ begin
      end;
     end
     else begin
-       if ((confideufo.doubleclic.value = true) and (edit.isdblclicked(info.mouseeventinfopo^)) 
-     and (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left])) 
+       if ((confideufo.doubleclic.value = true) and (edit.isdblclicked(info.mouseeventinfopo^))
+     and (info.mouseeventinfopo^.shiftstate*[ss_double,ss_shift,ss_left] =  [ss_double,ss_shift,ss_left]))
      or // fred double click
-     ((confideufo.doubleclic.value = false) and (edit.isdblclicked(info.mouseeventinfopo^))) 
+     ((confideufo.doubleclic.value = false) and (edit.isdblclicked(info.mouseeventinfopo^)))
      then begin
       if ss_triple in info.mouseeventinfopo^.shiftstate then begin
        edit.setselection(makegridcoord(0,edit.row),
@@ -1315,8 +1316,8 @@ begin
       end;
       copytoclipboard(edit.selectedtext,cbb_primary);
       include(info.mouseeventinfopo^.eventstate,es_processed);
-     end; 
-    end; 
+     end;
+    end;
    end;
   end;
  end;
@@ -1454,7 +1455,7 @@ begin
    edit.pairmarkbkgcolor:= e.pairmarkcolor;
    if edit.syntaxpainterhandle >= 0 then begin
     colors:= edit.syntaxpainter.colors[edit.syntaxpainterhandle];
-   
+
     with colors do begin
      if font <> cl_default then begin
       edit.font.color:= font;
@@ -1477,8 +1478,8 @@ begin
       if selected <> cl_default then begin
       source_editor.datacols[1].colorselect := selected;
      end;
-    
-     
+
+
     end;
    end;
   end;
@@ -1495,7 +1496,7 @@ begin
  sourcefo.hidesourcehint;
 end;
 
-procedure tsourcepage.gridoncellevent(const sender: TObject; 
+procedure tsourcepage.gridoncellevent(const sender: TObject;
              var info: celleventinfoty);
 //var
 // shiftstate1: shiftstatesty;
@@ -1504,26 +1505,26 @@ begin
  if (info.eventkind = cek_buttonpress) then
  begin
  sourcefo.thetimer.Enabled := false;
- sourcefo.hidesourcehint; 
- end; 
+ sourcefo.hidesourcehint;
+ end;
 
 {
  if (info.eventkind = cek_keydown) then begin
   with info.keyeventinfopo^ do begin
    shiftstate1:= shiftstate * shiftstatesmask;
-   if (shiftstate1 = [ss_ctrl]) and 
+   if (shiftstate1 = [ss_ctrl]) and
         (key >= key_0) and (key <= key_9) then begin
-    if sourcefo.findbookmark(ord(key) - ord(key_0)) then begin 
+    if sourcefo.findbookmark(ord(key) - ord(key_0)) then begin
      include(eventstate,es_processed);
-    end;    
+    end;
    end
    else begin
-    if (shiftstate1 = [ss_ctrl,ss_shift]) and 
+    if (shiftstate1 = [ss_ctrl,ss_shift]) and
          (keynomod >= key_0) and (keynomod <= key_9) then begin
      sourcefo.setbookmark(self,info.cell.row,ord(keynomod) - ord(key_0));
      include(eventstate,es_processed);
     end;
-   end;     
+   end;
   end;
  end;
 }
@@ -1572,7 +1573,7 @@ begin
    dataicon[arow]:= dataicon[arow] and not bmbitmask;
    removebookmark(bookmarknum);
   end
-  else begin   
+  else begin
    dataicon[arow]:= replacebits(longword(1 shl (bookmarknum + bmbitshift)),
                                 longword(dataicon[arow]),longword(bmbitmask));
    setlength(finitialbookmarks,high(finitialbookmarks)+2);
@@ -1630,27 +1631,27 @@ end;
 
 procedure tsourcepage.editonkeydown(const sender: twidget; var info: keyeventinfoty);
   begin
-  
+
 // fred
 if debuggerfo.properties_list.tag = 1 then
 begin
 sourcefo.thetimer.Enabled := false;
 sourcefo.thetimer.ontimer := @ontimerhint;
-sourcefo.hidesourcehint; 
+sourcefo.hidesourcehint;
 sourcefo.thetimer.interval :=  1000000 ;
  sourcefo.thetimer.Enabled := true;
- end 
+ end
  else
  begin
  if sourcefo.thetimer.Enabled = true then
  begin
  sourcefo.thetimer.Enabled := false;
- sourcefo.hidesourcehint; 
+ sourcefo.hidesourcehint;
  end;
-  end; 
-  
+  end;
+
  with info,tsyntaxedit(sender).editor,projectoptions do begin
-  if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and 
+  if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and
                                              (key = key_tab) then begin
    chars:= charstring(msechar(' '),
                         (curindex div e.tabstops + 1) * e.tabstops - curindex);
@@ -1736,7 +1737,7 @@ end;
 
 function tsourcepage.cancomment(): boolean;
 begin
- result:= edit.hasselection and (edit.selectstart.col = 0) and 
+ result:= edit.hasselection and (edit.selectstart.col = 0) and
                                                   (edit.selectend.col = 0);
 end;
 
@@ -1751,7 +1752,7 @@ begin
   po1:= edit.datalist.getitempo(start);
   pe:= po1 + stop - start;
   while po1 <= pe do begin
-   if (length(po1^.text) < 2) or (po1^.text[1] <> '/') or 
+   if (length(po1^.text) < 2) or (po1^.text[1] <> '/') or
                                             (po1^.text[2] <> '/') then begin
     result:= false;
     break;
@@ -1782,7 +1783,7 @@ begin
     if mstr1[i1] = #0 then begin
      break;
     end;
-    insert('//',mstr1,i1);    
+    insert('//',mstr1,i1);
    end;
    inc(i1);
   end;
@@ -1828,6 +1829,59 @@ begin
   edit.editor.endgroup();
   edit.refreshsyntax(start,stop-start);
  end;
+end;
+
+procedure tsourcepage.oncreated(const sender: TObject);
+var
+color0, color1, color2 : integer;
+begin
+if mainfo.themenr = 0 then begin
+pathdisp.face.template := debuggerfo.templatemain;
+pathdisp.font.color := cl_black;
+linedisp.face.template := debuggerfo.templatemain;
+linedisp.font.color := cl_black;
+color := cl_ltgray;
+container.color := cl_ltgray;
+color0 := cl_ltgray;
+color1 := cl_dkgray;
+color2 := cl_black;
+end;
+if mainfo.themenr = 1 then begin
+pathdisp.face.template := debuggerfo.templatemaindark;
+pathdisp.font.color := cl_white;
+linedisp.face.template := debuggerfo.templatemaindark;
+linedisp.font.color := cl_white;
+color := cl_black;
+container.color := cl_black;
+color0 := cl_dkgray;
+color1 := cl_black;
+color2 := cl_white;
+end;
+
+source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
+source_editor.frame.sbhorz.face.fade_color.items[1] := color1;
+source_editor.frame.sbhorz.face1.fade_color.items[0] := color0;
+source_editor.frame.sbhorz.face1.fade_color.items[1] := color1;
+source_editor.frame.sbhorz.face2.fade_color.items[0] := color0;
+source_editor.frame.sbhorz.face2.fade_color.items[1] := color1;
+source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+source_editor.frame.sbhorz.colorglyph := color2;
+
+source_editor.frame.sbvert.facebutton.fade_color.items[1] := color0;
+source_editor.frame.sbvert.facebutton.fade_color.items[0] := color1;
+source_editor.frame.sbvert.face.fade_color.items[0] := color0;
+source_editor.frame.sbvert.face.fade_color.items[1] := color1;
+source_editor.frame.sbvert.face1.fade_color.items[0] := color0;
+source_editor.frame.sbvert.face1.fade_color.items[1] := color1;
+source_editor.frame.sbvert.face2.fade_color.items[0] := color0;
+source_editor.frame.sbvert.face2.fade_color.items[1] := color1;
+source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+source_editor.frame.sbvert.colorglyph := color2;
+
 end;
 
 end.

@@ -4,17 +4,26 @@ object imageselectorfo: timageselectorfo
   bounds_y = 231
   bounds_cx = 320
   bounds_cy = 244
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
     320
     244
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = tstatfile1
   caption = 'Image Selector'
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object lv: tlistview
+    frame.localprops = []
+    frame.localprops1 = []
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 320
@@ -24,7 +33,7 @@ object imageselectorfo: timageselectorfo
     options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_leftbuttonfocusonly, lvo_focusselect, lvo_mouseselect]
     itemlist.captionpos = cp_bottom
     onitemevent = itemev
-    reffontheight = 14
+    reffontheight = 15
   end
   object tstatfile1: tstatfile
     filename = 'imageselector.sta'

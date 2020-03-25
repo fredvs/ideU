@@ -54,10 +54,12 @@ object findinfilefo: tfindinfilefo
     bounds_cx = 359
     bounds_cy = 198
     anchors = []
+    font.name = 'stf_default'
+    font.localprops = []
     tab_options = [tabo_dragsource, tabo_dragdest, tabo_opposite, tabo_dblclickedtabfirst, tabo_hintclippedtext]
     tab_frame.buttonslast = True
     tab_frame.localprops = []
     tab_frame.localprops1 = []
-    tab_size = 19
+    tab_size = 20
   end
 end

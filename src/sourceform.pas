@@ -5,44 +5,12 @@ unit sourceform;
 interface
 
 uses
-  confideu,
-  ideusettings,
-  commandorform,
-  SysUtils,
-  msetimer,
-  msetextedit,
-  msewidgetgrid,
-  mseforms,
-  Classes,
-  mclasses,
-  msegdbutils,
-  msebitmap,
-  msetabs,
-  sourcepage,
-  mseglob,
-  msetypes,
-  msestrings,
-  mseguiglob,
-  msegui,
-  msesyntaxpainter,
-  msemenus,
-  mseactions,
-  msestat,
-  finddialogform,
-  msestream,
-  msefilechange,
-  dateutils,
-  breakpointsform,
-  mseparser,
-  msesimplewidgets,
-  msegrids,
-  msegraphutils,
-  msegridsglob,
-  msestringcontainer,
-  msedragglob,
-  msegraphics,
-  msescrollbar,
-  msewidgets;
+ confideu,ideusettings,commandorform,SysUtils,msetimer,msetextedit,
+ msewidgetgrid,mseforms,Classes,mclasses,msegdbutils,msebitmap,msetabs,
+ sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
+ msemenus,mseactions,msestat,finddialogform,msestream,msefilechange,dateutils,
+ breakpointsform,mseparser,msesimplewidgets,msegrids,msegraphutils,msegridsglob,
+ msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets, mseclasses;
 
 type
   stringconsts = (
@@ -93,14 +61,17 @@ type
     filechangenotifyer: tfilechangenotifyer;
     navigforwardact: taction;
     navigbackact: taction;
-    step_back: tstockglyphbutton;
-    step_forward: tstockglyphbutton;
     c: tstringcontainer;
     timagelist2: timagelist;
     tfacecomp1: tfacecomp;
     tfacecomp2: tfacecomp;
     imagelistcopy: timagelist;
     timagelist3: timagelist;
+   tfacecomp1dark: tfacecomp;
+   tfacecomp2dark: tfacecomp;
+   step_back: tbutton;
+   buttonimage: timagelist;
+   step_forward: tbutton;
     procedure formonidle(var again: Boolean);
     procedure doselectpage(const Sender: TObject);
 
@@ -220,7 +191,6 @@ uses
   msedesigner,
   selecteditpageform,
   sourceupdate,
-  mseclasses,
   msearrayutils,
   msebits,
   msesysutils,
@@ -423,7 +393,7 @@ begin
      result:= true;
     end;
    end;
-  end; 
+  end;
  end;
 end;
 *)
@@ -487,7 +457,7 @@ constructor tsourcefo.Create(aowner: TComponent);
 begin
   fnaviglist        := tnaviglist.Create;
   fnaviglist.fsourcefo := self;
-  // fred  
+  // fred
   tabdeleted        := False;
   thetimer          := ttimer.Create(nil);
   thetimer.interval := 1500000;
@@ -538,7 +508,7 @@ begin
  end;
 end;
 
-function decodemoduledock(const atext: string; 
+function decodemoduledock(const atext: string;
                                     var ainfo: moduledockinfoty): boolean;
                                         //true if ok
 begin
@@ -1161,8 +1131,64 @@ begin
 end;
 
 procedure tsourcefo.tabwidgetonactivepagechanged(const Sender: TObject);
+var
+color0,color1, color2 : integer;
 begin
   updatecaption;
+
+   if ActivePage <> nil then begin
+ with ActivePage do begin
+   if mainfo.themenr = 0 then begin
+pathdisp.face.template := debuggerfo.templatemain;
+pathdisp.font.color := cl_black;
+linedisp.face.template := debuggerfo.templatemain;
+linedisp.font.color := cl_black;
+color := cl_ltgray;
+container.color := cl_ltgray;
+color0 := cl_ltgray;
+color1 := cl_dkgray;
+color2 := cl_black;
+end;
+if mainfo.themenr = 1 then begin
+pathdisp.face.template := debuggerfo.templatemaindark;
+pathdisp.font.color := cl_white;
+linedisp.face.template := debuggerfo.templatemaindark;
+linedisp.font.color := cl_white;
+color := cl_black;
+container.color := cl_black;
+color0 := cl_dkgray;
+color1 := cl_black;
+color2 := cl_white;
+end;
+end;
+
+
+ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbhorz.face.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbhorz.colorglyph := color2;
+
+ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color0;
+ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color1;
+ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.colorglyph := color2;
+
+end;
+
 end;
 
 procedure tsourcefo.saveactivepage(const newname: filenamety = '');
@@ -1404,7 +1430,7 @@ begin
     translateclientpoint(Sender.mouseinfopo^.pos,
     ActivePage, ActivePage.edit)) <> '');
 {
- sender.menu.itembyname('instempl').enabled:= (activepage <> nil) and 
+ sender.menu.itembyname('instempl').enabled:= (activepage <> nil) and
       codetemplates.hastemplate(
                 activepage.edit.wordatpos(activepage.edit.editpos,gc1,'',[],true));
 }

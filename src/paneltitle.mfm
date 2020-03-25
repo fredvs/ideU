@@ -12,6 +12,10 @@ object paneltitlefo: tpaneltitlefo
     299
     78
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   caption = 'Title of panel'
   icon.options = [bmo_masked]
   icon.origformat = 'png'
@@ -46,15 +50,15 @@ object paneltitlefo: tpaneltitlefo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     bounds_x = 9
-    bounds_y = 9
+    bounds_y = 8
     bounds_cx = 278
-    bounds_cy = 37
-    reffontheight = 14
+    bounds_cy = 39
+    reffontheight = 15
   end
   object tbutton1: tbutton
     taborder = 1

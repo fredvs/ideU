@@ -25,6 +25,10 @@ object about_form: taboutfo
     229
   )
   optionswindow = [wo_dialog]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_cancelonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   icon.options = [bmo_masked]
   icon.origformat = 'png'
@@ -76,10 +80,10 @@ object about_form: taboutfo
     bounds_x = 7
     bounds_y = 32
     bounds_cx = 357
-    bounds_cy = 188
+    bounds_cy = 189
     optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_resetselectonexit, oe_nofirstarrownavig, oe_focusrectonreadonly]
     textflags = [tf_xcentered, tf_wordbreak, tf_noselect]
     textflagsactive = [tf_xcentered, tf_wordbreak]
-    reffontheight = 14
+    reffontheight = 15
   end
 end

@@ -12,6 +12,10 @@ object programparametersfo: tprogramparametersfo
     328
     348
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Target Environment'
@@ -32,21 +36,21 @@ object programparametersfo: tprogramparametersfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 1
     onshowhint = hintexpandedmacros
     bounds_x = 2
-    bounds_y = 9
+    bounds_y = 8
     bounds_cx = 324
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     controller.options = [fdo_directory]
     controller.captionopen = 'Select program working directory'
     controller.ongetfilename = expandfilename
-    reffontheight = 14
+    reffontheight = 15
   end
   object ok: tbutton
     taborder = 4
@@ -88,23 +92,23 @@ object programparametersfo: tprogramparametersfo
     frame.buttondialog.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 2
     onshowhint = hintexpandedmacros
     bounds_x = 2
-    bounds_y = 57
+    bounds_y = 56
     bounds_cx = 324
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     dropdown.options = [deo_keydropdown, deo_autosavehistory, deo_cliphint]
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object grid: twidgetgrid
     frame.caption = 'Environment variables'
@@ -113,21 +117,21 @@ object programparametersfo: tprogramparametersfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 3
     bounds_x = 2
-    bounds_y = 111
+    bounds_y = 110
     bounds_cx = 324
-    bounds_cy = 195
+    bounds_cy = 196
     anchors = [an_left, an_top, an_right, an_bottom]
     optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup]
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 17
         captions.count = 3
         captions.items = <        
           item
@@ -161,9 +165,9 @@ object programparametersfo: tprogramparametersfo
         widgetname = 'envvarvalue'
         dataclass = tgridmsestringdatalist
       end>
-    datarowheight = 16
+    datarowheight = 17
     statfile = statfile1
-    reffontheight = 14
+    reffontheight = 15
     object envvaron: tbooleanedit
       optionswidget1 = []
       frame.levelo = 0
@@ -174,7 +178,7 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 20
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       visible = False
@@ -190,10 +194,10 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 21
       bounds_y = 0
       bounds_cx = 103
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
-      reffontheight = 14
+      reffontheight = 15
     end
     object envvarvalue: tmemodialogedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -215,10 +219,10 @@ object programparametersfo: tprogramparametersfo
       bounds_x = 125
       bounds_y = 0
       bounds_cx = 194
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object statfile1: tstatfile

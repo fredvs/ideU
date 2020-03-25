@@ -41,15 +41,15 @@ inherited cpuarmm3fo: tcpuarmm3fo
       frame.caption = 'ISR_NUMBER'
       frame.captionpos = cp_topright
       frame.outerframe = (
-        63
-        19
+        69
+        18
         0
         0
       )
-      bounds_x = 177
-      bounds_y = 6
-      bounds_cx = 74
-      bounds_cy = 30
+      bounds_x = 171
+      bounds_y = 7
+      bounds_cx = 80
+      bounds_cy = 29
     end
     inherited tbooleanedit17: tbooleanedit
       frame.caption = ''
@@ -118,12 +118,14 @@ inherited cpuarmm3fo: tcpuarmm3fo
       frame.captionpos = cp_topright
       frame.outerframe = (
         22
-        19
+        18
         0
         0
       )
       bounds_x = 115
+      bounds_y = 8
       bounds_cx = 33
+      bounds_cy = 28
     end
     inherited tbooleanedit13: tbooleanedit
       Tag = 12

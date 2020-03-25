@@ -19,7 +19,12 @@ object sourcehintfo: tsourcehintfo
     214
   )
   optionswindow = [wo_tooltip]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_freeonclose, fo_closeonesc, fo_closeonenter, fo_autoreadstat, fo_autowritestat, fo_savestate]
+  windowopacity = -Inf
   onclose = sourcehintfoonclose
   onresize = formonresize
   moduleclassname = 'tmseform'

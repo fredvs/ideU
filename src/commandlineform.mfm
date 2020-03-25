@@ -13,6 +13,10 @@ object commandlinefo: tcommandlinefo
     542
     100
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Command Line'
   icon.options = [bmo_masked]
@@ -57,7 +61,7 @@ object commandlinefo: tcommandlinefo
     anchors = []
     optionsedit1 = [oe1_multiline, oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-    reffontheight = 14
+    reffontheight = 15
   end
   object c: tstringcontainer
     strings.data = (

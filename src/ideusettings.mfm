@@ -16,6 +16,8 @@ object settings_form: tsettingsfo
     459
     529
   )
+  font.name = 'stf_default'
+  font.localprops = []
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configure ideU environment'

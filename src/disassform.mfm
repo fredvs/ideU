@@ -21,6 +21,10 @@ object disassfo: tdisassfo
   dragdock.splitter_size = 0
   dragdock.caption = 'Assembler'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Assembler'
@@ -105,10 +109,10 @@ object disassfo: tdisassfo
       14745599
       16777184
     )
-    datarowheight = 17
+    datarowheight = 18
     onscrollrows = scrollrows
     oncellevent = celleventexe
-    reffontheight = 14
+    reffontheight = 15
   end
   object popupmen: tpopupmenu
     onupdate = popupupdate

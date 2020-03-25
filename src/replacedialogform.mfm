@@ -12,6 +12,10 @@ object replacedialogfo: treplacedialogfo
     427
     163
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find and Replace Text'
@@ -54,20 +58,20 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     bounds_x = 8
-    bounds_y = 7
+    bounds_y = 6
     bounds_cx = 410
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object replacetext: thistoryedit
     frame.caption = '&Replace with'
@@ -82,22 +86,22 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 1
     bounds_x = 8
-    bounds_y = 47
+    bounds_y = 46
     bounds_cx = 410
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object casesensitive: tbooleanedit
     frame.caption = '&casesensitive'
@@ -105,15 +109,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       82
       2
     )
     taborder = 2
     bounds_x = 8
-    bounds_y = 96
+    bounds_y = 95
     bounds_cx = 95
-    bounds_cy = 16
+    bounds_cy = 17
   end
   object wholeword: tbooleanedit
     frame.caption = '&whole word'
@@ -121,15 +125,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       72
       2
     )
     taborder = 3
     bounds_x = 112
-    bounds_y = 96
+    bounds_y = 95
     bounds_cx = 85
-    bounds_cy = 16
+    bounds_cy = 17
   end
   object tintegerbutton1: tbutton
     taborder = 6
@@ -157,15 +161,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       82
       2
     )
     taborder = 4
     bounds_x = 208
-    bounds_y = 96
+    bounds_y = 95
     bounds_cx = 95
-    bounds_cy = 16
+    bounds_cy = 17
     statfile = statfile1
   end
   object tintegerbutton3: tbutton
@@ -184,15 +188,15 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
+      2
       95
       2
     )
     taborder = 5
     bounds_x = 312
-    bounds_y = 96
+    bounds_y = 95
     bounds_cx = 108
-    bounds_cy = 16
+    bounds_cy = 17
     statfile = statfile1
     value = True
   end

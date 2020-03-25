@@ -21,7 +21,11 @@ object watchfo: twatchfo
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Watches'
-  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Watches'
@@ -79,7 +83,7 @@ object watchfo: twatchfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 17
         captions.count = 6
         captions.items = <        
           item
@@ -147,15 +151,15 @@ object watchfo: twatchfo
         widgetname = 'sizecode'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 16
+    datarowheight = 17
     statfile = mainfo.projectstatfile
-    reffontheight = 14
+    reffontheight = 15
     object watchon: tbooleanedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       bounds_x = 0
       bounds_y = 0
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = mainfo.projectstatfile
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
@@ -172,12 +176,12 @@ object watchfo: twatchfo
       bounds_x = 14
       bounds_y = 0
       bounds_cx = 152
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       ondataentered = expressionondataentered
-      reffontheight = 14
+      reffontheight = 15
     end
     object expresult: tstringedit
       optionswidget1 = [ow1_autoscale]
@@ -188,7 +192,7 @@ object watchfo: twatchfo
       bounds_x = 167
       bounds_y = 0
       bounds_cx = 80
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_noselect, tf_ellipseright]
@@ -199,7 +203,7 @@ object watchfo: twatchfo
       bounds_x = 248
       bounds_y = 0
       bounds_cx = 12
-      bounds_cy = 16
+      bounds_cy = 17
       ondataentered = formatent
       state = [as_invisible, as_localimagelist]
       imagelist = timagelist1
@@ -214,8 +218,8 @@ object watchfo: twatchfo
       )
       value = 0
       valuedefault = 0
-      min = 0
-      max = 4
+      valuemin = 0
+      valuemax = 4
     end
     object sizecode: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -229,9 +233,9 @@ object watchfo: twatchfo
       bounds_x = 261
       bounds_y = 0
       bounds_cx = 13
-      bounds_cy = 16
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object watcheson: tbooleanedit
@@ -240,14 +244,14 @@ object watchfo: twatchfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
-      77
+      2
+      74
       2
     )
     bounds_x = 8
-    bounds_y = 4
-    bounds_cx = 90
-    bounds_cy = 16
+    bounds_y = 3
+    bounds_cx = 87
+    bounds_cy = 17
     statfile = mainfo.projectstatfile
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
     onchange = watchesononchange

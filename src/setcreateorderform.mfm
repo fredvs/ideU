@@ -11,8 +11,13 @@ object setcreateorderfo: tsetcreateorderfo
     381
     340
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = statfile1
+  windowopacity = -Inf
   onclosequery = formonclosequery
   moduleclassname = 'tmseform'
   object grid: tstringgrid
@@ -48,7 +53,7 @@ object setcreateorderfo: tsetcreateorderfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 17
         captions.count = 2
         captions.items = <        
           item
@@ -63,35 +68,35 @@ object setcreateorderfo: tsetcreateorderfo
             caption = 'Order'
           end>
       end>
-    datarowheight = 16
+    datarowheight = 17
     statfile = statfile1
-    reffontheight = 14
+    reffontheight = 15
   end
   object tbutton1: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     taborder = 1
     bounds_x = 254
-    bounds_y = 312
+    bounds_y = 311
     bounds_cx = 58
-    bounds_cy = 20
+    bounds_cy = 21
     anchors = [an_right, an_bottom]
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'
     modalresult = mr_ok
-    reffontheight = 14
+    reffontheight = 15
   end
   object tbutton2: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     taborder = 2
     bounds_x = 318
-    bounds_y = 312
+    bounds_y = 311
     bounds_cx = 58
-    bounds_cy = 20
+    bounds_cy = 21
     anchors = [an_right, an_bottom]
     state = [as_localdefault, as_localcaption]
     caption = '&Cancel'
     modalresult = mr_cancel
-    reffontheight = 14
+    reffontheight = 15
   end
   object statfile1: tstatfile
     filename = 'settaborderfo.sta'

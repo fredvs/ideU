@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2013 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -31,6 +31,7 @@ type
    procedure onclo(const sender: TObject);
    procedure panellayoutchanged(const sender: tdockcontroller);
    procedure paintexe(const sender: twidget; const acanvas: tcanvas);
+   procedure oncreated(const sender: TObject);
   private
    fmenuitem: tmenuitem;
    fnameindex: integer; //0 for unnumbered
@@ -58,6 +59,7 @@ uses
 
 var
  panellist: tpointerlist;
+ usedtheme : integer = 0;
 
 procedure updatestat(const filer: tstatfiler);
 var
@@ -234,7 +236,7 @@ function tpanelfo.canclose(const newfocus: twidget): boolean;
   end;
   result:= true;
  end;
- 
+
 begin
  result:= inherited canclose(newfocus);
  {
@@ -289,6 +291,22 @@ end;
 procedure tpanelfo.paintexe(const sender: twidget; const acanvas: tcanvas);
 begin
  paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
+ if usedtheme <> mainfo.themenr then oncreated(nil);
+end;
+
+procedure tpanelfo.oncreated(const sender: TObject);
+begin
+usedtheme := mainfo.themenr;
+ if mainfo.themenr = 0 then
+ begin
+ color := cl_ltgray;
+dragdock.splitter_color :=  cl_ltgray;
+end;
+ if mainfo.themenr = 1 then
+ begin
+ color := cl_black;
+dragdock.splitter_color :=  cl_black;
+end;
 end;
 
 initialization

@@ -14,6 +14,10 @@ object confideufo: tconfideufo
     525
   )
   optionswindow = [wo_dialog]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Extra Settings of ideU'
   icon.options = [bmo_masked, bmo_graymask]

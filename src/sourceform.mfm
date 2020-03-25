@@ -24,8 +24,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 528
-  bounds_y = 269
+  bounds_x = 594
+  bounds_y = 235
   bounds_cx = 696
   bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -117,13 +117,18 @@ object sourcefo: tsourcefo
     onactivepagechanged = tabwidgetonactivepagechanged
     onpageadded = onpageadd
     onpageremoved = tabwidgetpageremoved
+    font.name = 'stf_default'
+    font.localprops = []
     fontempty.name = 'stf_empty'
     fontempty.localprops = []
     tab_options = [tabo_dragsource, tabo_dragdest, tabo_dblclickedtabfirst]
-    tab_fontactivetab.color = 0
+    tab_font.name = 'stf_default'
+    tab_font.localprops = []
+    tab_fonttab.name = 'stf_default'
+    tab_fonttab.localprops = []
     tab_fontactivetab.style = [fs_bold]
     tab_fontactivetab.name = 'stf_default'
-    tab_fontactivetab.localprops = [flp_color, flp_style]
+    tab_fontactivetab.localprops = [flp_style]
     tab_frame.optionsskin = [fso_flat]
     tab_frame.buttonface.localprops = []
     tab_frame.buttonface.template = mainfo.tfacecomp1
@@ -136,18 +141,9 @@ object sourcefo: tsourcefo
     tab_frame.buttonsvisible = [sk_right, sk_up, sk_left, sk_down, sk_first, sk_last]
     tab_frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimageleft, frl_frameimagebottom, frl_optionsskin]
     tab_frame.localprops1 = []
-    tab_face.fade_pos.count = 2
-    tab_face.fade_pos.items = (
-      0
-      1
-    )
-    tab_face.fade_color.count = 2
-    tab_face.fade_color.items = (
-      15263976
-      10921638
-    )
     tab_face.fade_direction = gd_up
     tab_face.localprops = [fal_fadirection]
+    tab_face.template = tfacecomp1
     tab_color = -2147483642
     tab_imagepos = ip_left
     tab_textflags = [tf_ycentered]
@@ -194,48 +190,57 @@ object sourcefo: tsourcefo
     tab_optionswidget = [ow_destroywidgets, ow_hinton]
     tab_optionswidget1 = []
     statfile = mainfo.projectstatfile
-    object step_back: tstockglyphbutton
-      optionswidget = [ow_destroywidgets, ow_timedhint]
-      color = 13750737
+    object step_back: tbutton
+      color = -2147483645
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 2
+      face.template = mainfo.convex
+      taborder = 1
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
-      bounds_x = 622
+      bounds_x = 623
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
       anchors = [an_top, an_right]
-      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
-      glyph = stg_arrowleft
+      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
       action = navigbackact
-      colorglyph = 46592
+      imagelist = buttonimage
+      imagenr = 0
+      imagenrdisabled = 1
+      focusrectdist = 0
       onexecute = navigback
+      sc = (
+        1
+        16456
+      )
     end
-    object step_forward: tstockglyphbutton
-      optionswidget = [ow_destroywidgets, ow_timedhint]
-      color = 13750737
+    object step_forward: tbutton
+      color = -2147483645
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 1
+      face.template = mainfo.convex
+      taborder = 2
       hint = 'Step forward in code navigation.'
-      onshowhint = stephintev
       bounds_x = 638
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
       anchors = [an_top, an_right]
-      state = [as_disabled, as_localinvisible, as_localimagelist, as_localimagenr, as_localcolorglyph, as_localcolor, as_localhint]
-      glyph = stg_arrowright
+      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
       action = navigforwardact
-      colorglyph = 38144
+      imagelist = buttonimage
+      imagenr = 2
+      imagenrdisabled = 3
+      focusrectdist = 0
+      sc = (
+        1
+        24648
+      )
     end
   end
   object syntaxpainter: tsyntaxpainter
@@ -931,6 +936,65 @@ object sourcefo: tsourcefo
       0101010001010100010101000080800000808000008080000080800000808000
       0080800000808000008080000FFFFF001000FF002000FF004000FF008000FF00
       8000FF008000FF008000FF00
+    }
+  end
+  object tfacecomp1dark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      6052956
+      0
+    )
+    template.fade_direction = gd_down
+    left = 478
+    top = 56
+  end
+  object tfacecomp2dark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      12105912
+      0
+    )
+    template.fade_direction = gd_down
+    left = 442
+    top = 109
+  end
+  object buttonimage: timagelist
+    width = 9
+    height = 14
+    count = 4
+    left = 275
+    top = 69
+    image = {
+      0000000002000000120000001C000000D4010000000000000000000000000000
+      00000000000000000000000000000000000000000000001948A13A0100000008
+      808080010000000748A13A0200000007808080020000000648A13A0300000006
+      808080030000000548A13A0400000005808080040000000448A13A0500000004
+      808080050000000348A13A06000000038080800600000002D7D7D70248A13A05
+      00000002D7D7D7028080800500000003D7D7D70248A13A0400000003D7D7D702
+      8080800400000004D7D7D70248A13A0300000004D7D7D7028080800300000005
+      D7D7D70248A13A0200000005D7D7D7028080800200000006D7D7D70248A13A01
+      00000006D7D7D7028080800100000007D7D7D70100000008D7D7D70100000027
+      48A13A0100000008808080010000000848A13A02000000078080800200000007
+      48A13A0300000006808080030000000648A13A04000000058080800400000005
+      48A13A0500000004808080050000000448A13A06000000038080800600000003
+      48A13A05D7D7D7020000000280808005D7D7D7020000000248A13A04D7D7D702
+      0000000380808004D7D7D7020000000348A13A03D7D7D7020000000480808003
+      D7D7D7020000000448A13A02D7D7D7020000000580808002D7D7D70200000005
+      48A13A01D7D7D7020000000680808001D7D7D70200000007D7D7D70100000008
+      D7D7D701000000180000000080000100C0800100E0C00100F0E00100F8F00100
+      FCF80100FEFC0100FCF80100F8F00100F0E00100E0C001004080000000000000
+      0000000002040000060C00000E1C00001E3C00003E7C00007EFC0000FEFC0100
+      7EFC00003E7C00001E3C00000E1C00000408000000000000
     }
   end
 end

@@ -204,6 +204,7 @@ var
 begin
   with amacros do
   begin
+    result := nil;
     setlength(globmacrovalues, length(globmacronames));
     setlength(Result, Ord(high(settingsmacroty)) + 1 + length(globmacronames));
     for  ma1 := low(settingsmacroty) to high(settingsmacroty) do

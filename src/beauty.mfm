@@ -17,6 +17,10 @@ object beautyfo: tbeautyfo
     124
   )
   optionswindow = [wo_message]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_freeonclose, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Code Beautifier'
   icon.options = [bmo_masked, bmo_graymask]

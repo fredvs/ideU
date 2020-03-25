@@ -70,6 +70,8 @@ object filedialogfo: Tfiledialogfo
     frame.sbhorz.face2.template = sourcepage.tfacecomp1
     frame.sbhorz.facebutton.localprops = []
     frame.sbhorz.facebutton.template = sourcefo.tfacecomp1
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     face.fade_pos.count = 2
@@ -88,8 +90,10 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 0
     bounds_y = 43
     bounds_cx = 554
-    bounds_cy = 234
+    bounds_cy = 233
     anchors = [an_top]
+    font.name = 'stf_default'
+    font.localprops = []
     onkeydown = listviewonkeydown
     datarowlinecolor = -1610612731
     datacollinecolor = -1610612731
@@ -107,13 +111,13 @@ object filedialogfo: Tfiledialogfo
     onitemevent = listviewitemevent
     filelist.options = [flo_sortname, flo_sorttype]
     onlistread = listviewonlistread
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlayouter2: tlayouter
     bounds_x = 1
-    bounds_y = 279
+    bounds_y = 278
     bounds_cx = 551
-    bounds_cy = 37
+    bounds_cy = 38
     anchors = [an_left, an_right, an_bottom]
     optionsscale = [osc_expandy, osc_shrinky, osc_expandshrinkx, osc_expandshrinky]
     linktop = listview
@@ -123,6 +127,8 @@ object filedialogfo: Tfiledialogfo
       frame.caption = '&Name (history of files in drop list)'
       frame.captiontextflags = [tf_xcentered, tf_bottom]
       frame.captionpos = cp_top
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.button.face.localprops = []
@@ -135,18 +141,20 @@ object filedialogfo: Tfiledialogfo
         end>
       frame.outerframe = (
         0
-        17
+        18
         0
         0
       )
       face.localprops = []
       hint = 'Click button on right corner to show the history of files.'
       bounds_x = 1
-      bounds_y = 1
+      bounds_y = 0
       bounds_cx = 293
-      bounds_cy = 36
+      bounds_cy = 38
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      font.name = 'stf_default'
+      font.localprops = []
       oncopytoclipboard = copytoclip
       onpastefromclipboard = pastefromclip
       onsetvalue = filenamesetvalue
@@ -157,12 +165,14 @@ object filedialogfo: Tfiledialogfo
         item
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
         end>
-      reffontheight = 14
+      reffontheight = 15
     end
     object filter: tdropdownlistedit
       frame.caption = '&Filter'
       frame.captiontextflags = [tf_xcentered, tf_bottom]
       frame.captionpos = cp_top
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.button.face.localprops = []
@@ -175,17 +185,19 @@ object filedialogfo: Tfiledialogfo
         end>
       frame.outerframe = (
         0
-        17
+        18
         0
         0
       )
       face.localprops = []
       taborder = 1
       bounds_x = 298
-      bounds_y = 0
+      bounds_y = -1
       bounds_cx = 146
-      bounds_cy = 36
+      bounds_cy = 38
       anchors = [an_left, an_top, an_right]
+      font.name = 'stf_default'
+      font.localprops = []
       ondataentered = filepathentered
       onsetvalue = filteronsetvalue
       dropdown.options = [deo_keydropdown, deo_cliphint]
@@ -198,13 +210,15 @@ object filedialogfo: Tfiledialogfo
         end>
       dropdown.valuecol = 1
       onafterclosedropdown = filteronafterclosedropdown
-      reffontheight = 14
+      reffontheight = 15
     end
     object cancel: tbutton
       optionswidget1 = [ow1_autowidth, ow1_autoheight]
       optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
       color = 15132390
       frame.optionsskin = [fso_flat]
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
@@ -213,12 +227,14 @@ object filedialogfo: Tfiledialogfo
       bounds_x = 454
       bounds_y = 19
       bounds_cx = 48
-      bounds_cy = 18
+      bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
       state = [as_localcaption, as_localcolor]
       caption = '&Cancel'
+      font.name = 'stf_default'
+      font.localprops = []
       modalresult = mr_cancel
     end
     object ok: tbutton
@@ -226,6 +242,8 @@ object filedialogfo: Tfiledialogfo
       optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
       color = 15132390
       frame.optionsskin = [fso_flat]
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
@@ -234,30 +252,34 @@ object filedialogfo: Tfiledialogfo
       bounds_x = 506
       bounds_y = 18
       bounds_cx = 35
-      bounds_cy = 18
+      bounds_cy = 19
       bounds_cxmin = 35
       anchors = [an_top, an_right]
       options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
       state = [as_default, as_localdefault, as_localcaption, as_localcolor, as_localonexecute]
       caption = '&Ok'
+      font.name = 'stf_default'
+      font.localprops = []
       onexecute = okonexecute
     end
     object showhidden: tbooleanedit
       frame.caption = '&Show hidden'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         82
         2
       )
       taborder = 4
       hint = 'Show hidden files'
       bounds_x = 449
-      bounds_y = 2
+      bounds_y = 1
       bounds_cx = 95
-      bounds_cy = 16
+      bounds_cy = 17
       anchors = [an_top, an_right]
       onsetvalue = showhiddenonsetvalue
     end
@@ -267,6 +289,8 @@ object filedialogfo: Tfiledialogfo
     frame.caption = '&Directory'
     frame.captiontextflags = [tf_xcentered, tf_bottom]
     frame.captionpos = cp_top
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     frame.button.face.localprops = []
@@ -279,7 +303,7 @@ object filedialogfo: Tfiledialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
@@ -287,20 +311,24 @@ object filedialogfo: Tfiledialogfo
     taborder = 2
     onshowhint = dirshowhint
     bounds_x = 1
-    bounds_y = 1
+    bounds_y = 0
     bounds_cx = 384
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
+    font.name = 'stf_default'
+    font.localprops = []
     textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
     dropdown.options = [deo_selectonly, deo_keydropdown]
     onsetvalue = dironsetvalue
-    reffontheight = 14
+    reffontheight = 15
   end
   object home: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = 15132390
     frame.optionsskin = [fso_flat]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.localprops = []
@@ -310,20 +338,24 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 447
     bounds_y = 13
     bounds_cx = 43
-    bounds_cy = 23
+    bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
     options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
     caption = '&Home'
+    font.name = 'stf_default'
+    font.localprops = []
     onexecute = homeaction
-    reffontheight = 14
+    reffontheight = 15
   end
   object createdir: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = 15132390
     frame.optionsskin = [fso_flat]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.localprops = []
@@ -333,14 +365,16 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 497
     bounds_y = 13
     bounds_cx = 54
-    bounds_cy = 23
+    bounds_cy = 24
     bounds_cxmin = 35
     anchors = [an_top, an_right]
     options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
     caption = '&New dir'
+    font.name = 'stf_default'
+    font.localprops = []
     onexecute = createdironexecute
-    reffontheight = 14
+    reffontheight = 15
   end
   object up: tstockglyphbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -357,13 +391,13 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 427
     bounds_y = 13
     bounds_cx = 17
-    bounds_cy = 23
+    bounds_cy = 24
     anchors = [an_top, an_right]
     options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localimagelist, as_localimagenr, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
     glyph = stg_arrowup
     onexecute = upaction
-    reffontheight = 14
+    reffontheight = 15
     sc = (
       1
       16662
@@ -383,13 +417,13 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 408
     bounds_y = 13
     bounds_cx = 17
-    bounds_cy = 23
+    bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowleft
     autosize_cx = -10
     onexecute = backexe
-    reffontheight = 14
+    reffontheight = 15
     sc = (
       1
       16474
@@ -409,13 +443,13 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 389
     bounds_y = 13
     bounds_cx = 17
-    bounds_cy = 23
+    bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowright
     autosize_cx = -10
     onexecute = forwardexe
-    reffontheight = 14
+    reffontheight = 15
     sc = (
       1
       24666

@@ -13,10 +13,10 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 322
-  bounds_y = 102
-  bounds_cx = 700
-  bounds_cy = 68
+  bounds_x = 292
+  bounds_y = 167
+  bounds_cx = 745
+  bounds_cy = 76
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -29,14 +29,19 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    25
-    690
-    43
+    21
+    735
+    55
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
   optionswindow = [wo_taskbar]
   mainmenu = mainmenu1
+  font.color = -1610612734
+  font.name = 'stf_default'
+  font.localprops = [flp_color]
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_main, fo_terminateonclose, fo_globalshortcuts, fo_savepos, fo_savezorder, fo_savestate]
   statfile = projectstatfile
   caption = 'ideU'
@@ -78,13 +83,15 @@ object mainfo: tmainfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = basedockpaintexe
     bounds_x = 0
-    bounds_y = -3
-    bounds_cx = 675
-    bounds_cy = 79
+    bounds_y = 0
+    bounds_cx = 735
+    bounds_cy = 55
     anchors = [an_top, an_bottom]
+    font.color = -1610612734
     font.name = 'stf_default'
     font.xscale = 1
-    font.localprops = [flp_xscale]
+    font.localprops = [flp_color, flp_xscale]
+    dragdock.splitter_color = -1610612731
     dragdock.caption = 'Use this panel to Drag Dock the window'
     dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint]
     statfile = projectstatfile
@@ -110,12 +117,12 @@ object mainfo: tmainfo
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
-    popupframetemplate = tframecomp2
+    popupframetemplate = mainmenuframe
     popupfacetemplate = convex
     popupitemfacetemplate = concave
     popupitemfacetemplateactive = convex
     onupdate = mainmenuonupdate
-    frametemplate = menuitemframe
+    frametemplate = mainmenuframe
     facetemplate = convex
     itemframetemplate = tframecomp3
     itemfacetemplate = convex
@@ -630,7 +637,7 @@ object mainfo: tmainfo
             imagelist = actionsmo.buttonicons
             imagenr = 12
             imagenrdisabled = -1
-            onexecute = toggleobjectinspectoronexecute
+            onexecute = ontoggleunitform
           end        
           item
             action = actionsmo.toggleformunit
@@ -1071,7 +1078,7 @@ object mainfo: tmainfo
             hint = 'Beautifier of the edited code'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localshortcut, as_localonexecute]
             imagelist = actionsmo.buttonicons
-            imagenr = 37
+            imagenr = 33
             onexecute = onbeauty
           end        
           item
@@ -1082,7 +1089,7 @@ object mainfo: tmainfo
             caption = 'Methods list'
             state = [as_localcaption, as_localimagelist, as_localimagenr]
             imagelist = actionsmo.buttonicons
-            imagenr = 38
+            imagenr = 34
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'
@@ -1213,15 +1220,21 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint, as_localonexecute]
       end    
       item
-        submenu.count = 1
+        submenu.count = 2
         submenu.items = <        
           item
-            caption = '&DocView'
-            state = [as_localcaption]
+            caption = 'Silver'
+            state = [as_localcaption, as_localonexecute]
+            onexecute = onclassic
+          end        
+          item
+            caption = 'Carbon'
+            state = [as_localcaption, as_localonexecute]
+            onexecute = ondark
           end>
-        caption = '&DocView'
-        name = 'docview'
-        state = [as_invisible, as_localinvisible, as_localcaption, as_localshortcut]
+        caption = '&Theme'
+        name = 'theme'
+        state = [as_localcaption, as_localshortcut]
       end    
       item
         submenu.count = 1
@@ -1231,7 +1244,7 @@ object mainfo: tmainfo
             state = [as_localcaption]
           end>
         caption = '&Help'
-        state = [as_localcaption]
+        state = [as_invisible, as_localinvisible, as_localcaption]
       end    
       item
         submenu.count = 3
@@ -1262,7 +1275,9 @@ object mainfo: tmainfo
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
-    left = 180
+    menu.font.name = 'stf_menu'
+    menu.font.localprops = []
+    left = 187
   end
   object openfile: tfiledialog
     statfile = mainstatfile
@@ -2166,8 +2181,8 @@ object mainfo: tmainfo
       12434877
     )
     template.fade_direction = gd_down
-    left = 343
-    top = 5
+    left = 325
+    top = 1
   end
   object tfacecomp2: tfacecomp
     template.fade_pos.count = 2
@@ -2181,8 +2196,8 @@ object mainfo: tmainfo
       12434877
     )
     template.fade_direction = gd_down
-    left = 286
-    top = 4
+    left = 262
+    top = 13
   end
   object tfacecomp3: tfacecomp
     template.fade_pos.count = 2
@@ -2196,8 +2211,8 @@ object mainfo: tmainfo
       8882055
     )
     template.fade_direction = gd_down
-    left = 279
-    top = 9
+    left = 124
+    top = 2
   end
   object menuitemframe: tframecomp
     template.levelo = -1
@@ -2227,8 +2242,8 @@ object mainfo: tmainfo
       -1610612731
     )
     template.fade_direction = gd_up
-    left = 570
-    top = 3
+    left = 569
+    top = 14
   end
   object concave: tfacecomp
     template.fade_pos.count = 2
@@ -2255,8 +2270,7 @@ object mainfo: tmainfo
     template.frameimage_right = -4
     template.frameimage_bottom = -4
     template.optionsskin = [fso_flat]
-    left = 539
-    top = 7
+    left = 440
   end
   object timagelist3: timagelist
     width = 4
@@ -2292,7 +2306,36 @@ object mainfo: tmainfo
     template.frameimage_right = -4
     template.frameimage_bottom = -4
     template.optionsskin = [fso_flat]
-    left = 539
-    top = 7
+    left = 588
+    top = 1
+  end
+  object convexdark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612734
+      -1610612733
+    )
+    template.fade_direction = gd_up
+    left = 579
+    top = 3
+  end
+  object concavedark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612734
+      -1610612733
+    )
+    left = 351
+    top = 8
   end
 end

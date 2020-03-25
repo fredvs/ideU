@@ -1,19 +1,17 @@
 object debuggerfo: tdebuggerfo
-  optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_hinton]
-  frame.localprops = []
+  optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_hinton]
+  frame.localprops = [frl_colordkwidth, frl_colorhlwidth]
   frame.localprops1 = []
   frame.grip_size = 10
   frame.grip_grip = stb_default
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
-  face.localprops = []
-  face.template = templfile
   visible = False
-  bounds_x = 34
-  bounds_y = 82
-  bounds_cx = 1151
-  bounds_cy = 64
+  bounds_x = 128
+  bounds_y = 184
+  bounds_cx = 1154
+  bounds_cy = 50
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -21,11 +19,11 @@ object debuggerfo: tdebuggerfo
   container.bounds = (
     0
     0
-    1141
-    64
+    1144
+    50
   )
   dragdock.caption = 'Commandor'
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Commandor'
@@ -90,15 +88,38 @@ object debuggerfo: tdebuggerfo
     optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_destroywidgets]
     onpaint = paintdock
     bounds_x = 0
-    bounds_y = 47
-    bounds_cx = 1141
-    bounds_cy = 15
+    bounds_y = 49
+    bounds_cx = 1144
+    bounds_cy = 3
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
     font.localprops = [flp_xscale]
     dragdock.optionsdock = [od_savepos, od_savezorder, od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint]
     statfile = mainfo.projectstatfile
+  end
+  object tstringdisp2: tstringdisp
+    optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    face.fade_direction = gd_up
+    face.localprops = [fal_fadirection]
+    face.template = templatemain
+    taborder = 5
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 1144
+    bounds_cy = 48
+    anchors = [an_left, an_top, an_right, an_bottom]
+    font.shadow_shiftx = 0
+    font.shadow_shifty = 0
+    font.grayed_color = -2147483642
+    font.grayed_colorshadow = -2147483642
+    font.grayed_shiftx = 0
+    font.grayed_shifty = 0
+    font.height = 12
+    font.name = 'stf_default'
+    font.localprops = [flp_grayed_color, flp_grayed_colorshadow, flp_grayed_shiftx, flp_grayed_shifty]
+    textflags = [tf_xcentered, tf_ycentered]
+    reffontheight = 15
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -117,37 +138,24 @@ object debuggerfo: tdebuggerfo
     taborder = 1
     bounds_x = 0
     bounds_y = 30
-    bounds_cx = 1141
+    bounds_cx = 1144
     bounds_cy = 18
     anchors = [an_top]
-    font.shadow_color = 16448250
-    font.gloss_color = 16250871
+    font.shadow_shiftx = 0
+    font.shadow_shifty = 0
+    font.grayed_color = -2147483642
+    font.grayed_colorshadow = -2147483642
+    font.grayed_shiftx = 0
+    font.grayed_shifty = 0
     font.height = 12
+    font.style = [fs_italic]
     font.name = 'stf_default'
-    font.options = [foo_antialiased]
-    font.localprops = [flp_shadow_color]
+    font.localprops = [flp_grayed_color, flp_grayed_colorshadow, flp_grayed_shiftx, flp_grayed_shifty, flp_style]
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
-  object tdockpanel2: tdockpanel
-    frame.framewidth = 1
-    frame.colorframe = 6710886
-    frame.localprops = [frl_framewidth, frl_colorframe]
-    frame.localprops1 = []
-    frame.grip_size = 0
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = mainfo.tfacecomp1
-    taborder = 5
-    bounds_x = 1082
-    bounds_y = 1
-    bounds_cx = 57
-    bounds_cy = 28
-    anchors = [an_left, an_top, an_right]
-  end
   object paneledited: tdockpanel
     helpcontext = ' '
-    color = 16775618
     frame.framewidth = 1
     frame.colorframe = 6710886
     frame.localprops = [frl_framewidth, frl_colorframe]
@@ -170,7 +178,7 @@ object debuggerfo: tdebuggerfo
       face.localprops = []
       face.template = templfile
       hint = 'Run compiled edited file'
-      bounds_x = 361
+      bounds_x = 334
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -189,7 +197,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 1
       hint = 'Abort compile'
-      bounds_x = 334
+      bounds_x = 361
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -251,6 +259,8 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.name = 'stf_default'
+      font.localprops = []
       value = 'X'
       dropdown.dropdownrowcount = 13
       dropdown.cols.count = 1
@@ -306,6 +316,8 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.name = 'stf_default'
+      font.localprops = []
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -357,6 +369,8 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.name = 'stf_default'
+      font.localprops = []
       value = 'Pascal'
       dropdown.dropdownrowcount = 5
       dropdown.cols.count = 1
@@ -445,7 +459,7 @@ object debuggerfo: tdebuggerfo
       state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
       action = actionsmo.toggleformunit
       imagelist = actionsmo.buttonicons
-      imagenr = 37
+      imagenr = 33
       focusrectdist = 0
       onexecute = onbeauty
     end
@@ -480,6 +494,8 @@ object debuggerfo: tdebuggerfo
       bounds_cx = 66
       bounds_cy = 21
       statfile = mainfo.projectstatfile
+      font.name = 'stf_default'
+      font.localprops = []
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -489,7 +505,7 @@ object debuggerfo: tdebuggerfo
       onafterclosedropdown = onsetvaluefilehis
       reffontheight = 15
     end
-    object tbutton2: tbutton
+    object procedure_list: tbutton
       color = -2147483645
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
@@ -505,7 +521,7 @@ object debuggerfo: tdebuggerfo
       state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
       action = actionsmo.procedurelist
       imagelist = actionsmo.buttonicons
-      imagenr = 38
+      imagenr = 34
       focusrectdist = 0
       onexecute = procedurelistonexecute
     end
@@ -518,7 +534,7 @@ object debuggerfo: tdebuggerfo
     frame.grip_size = 0
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
-    face.template = mainfo.tfacecomp1
+    face.template = sourcefo.tfacecomp1
     taborder = 4
     bounds_x = 0
     bounds_y = 1
@@ -548,7 +564,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
-      face.template = mainfo.tfacecomp1
+      face.template = sourcefo.tfacecomp1
       taborder = 1
       hint = 'Find in directory'
       bounds_x = 84
@@ -623,7 +639,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
-      face.template = mainfo.tfacecomp1
+      face.template = mainfo.convex
       taborder = 5
       hint = 'Show target terminal when running'
       bounds_x = 138
@@ -633,7 +649,7 @@ object debuggerfo: tdebuggerfo
       options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
-      imagenr = 33
+      imagenr = 42
       focusrectdist = 0
       onexecute = onterminalon
     end
@@ -653,7 +669,7 @@ object debuggerfo: tdebuggerfo
       options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
       imagelist = actionsmo.buttonicons
-      imagenr = 35
+      imagenr = 40
       focusrectdist = 0
       onexecute = onsetdebug
     end
@@ -891,6 +907,8 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.name = 'stf_default'
+      font.localprops = []
       onchange = onchangeproject
       value = 'M'
       dropdown.dropdownrowcount = 12
@@ -971,7 +989,7 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
     end
     object panelwatch: tdockpanel
-      color = 12475601
+      color = -2147483642
       face.localprops = []
       face.template = templproject
       taborder = 13
@@ -990,7 +1008,7 @@ object debuggerfo: tdebuggerfo
         bounds_cx = 55
         bounds_cy = 10
         bitmap.transparentcolor = 13684944
-        bitmap.origformat = 'jpeg'
+        bitmap.origformat = 'png'
         bitmap.colorbackground = 13684944
         bitmap.image = {
           0000000000000000370000000A000000E0070000000000000000000000000000
@@ -1158,6 +1176,8 @@ object debuggerfo: tdebuggerfo
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      font.name = 'stf_default'
+      font.localprops = []
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.options = [deo_keydropdown, deo_cliphint]
       dropdown.cols.count = 1
@@ -1182,8 +1202,7 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 622
-    top = 9
+    left = 225
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -1197,7 +1216,261 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 566
-    top = 10
+    left = 247
+    top = 3
+  end
+  object templateprojectdark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      3950392
+      2568994
+    )
+    template.fade_direction = gd_down
+    left = 322
+    top = 19
+  end
+  object timagelist1: timagelist
+    width = 55
+    height = 10
+    count = 2
+    left = 449
+    top = 11
+    image = {
+      00000000020000006E0000001400000098150000000000000000000000000000
+      0000000000000000000000000000000000000000CBC3DA01C2C8CF01BBCBC401
+      C0CBC901CCC7D601D0C3DB01C7C6D601BDCACC01C7CACF01C4C7CC01C7CACF02
+      C3C6CB01C6C9CE01C8CAD201C2C4CC01C6C9D101C9CBD301C4C7CC01C5C8CC01
+      CECFD301C0C1C501C8C9CD01C9C7CD01CBCBD101C5C7CF01C2C5D301C6C7D501
+      C6C6D201C7C4D301C5C6D001C1C9C801CFCDCC01C7C9CA01C1C4CC01C0C3D101
+      C1C7D401C4C8D301C6C8D001C8C9CD01C3C5D001C6C8D201C6C9D101C2C6CB01
+      C5CACD01C6CACB01C2C7C601CDD0CE01CAC6CC01CCC9D202C7C6D001C5C6D001
+      C7C7D3024D595037B9CABF01BAD0BE01BED4C101C2D3C601C2C7C801BEC0C801
+      C0C4C901C1CCCA01BBBCD6019E9FB9018889A3017E7D97016F6E880169688201
+      71708A017A7791017F808A018586900183868E0191959A01B1B7BC01C0C8CF01
+      CFD6DF01C4CBD401B5D0AF01B6CBC301B4CEC001B5D5B201B8D3B101BBD1B801
+      BCD2BF01BBD3C701B9CCE701B3C6E101A5B6D00190A1BB017E8EA5016F7F9601
+      60718B01586983015C5F67017B7D87017B808901767D8601868F9801A2ACB301
+      BAC4CB01BEC7CB01C1D4C301BED1C001BBD1BF01BAD0BD01B7D0BC01B5CFB801
+      B4D0B9014C574F07B0B5B901BCC7C501BBBCD6019E9FB9018889A3017E7D9701
+      6F6E88016968820171708A017A7791017F808A018586900183868E0191959A01
+      B1B7BC01C0C8CF01CFD6DF01C4CBD4014C574F08B9CCE701B3C6E101A5B6D001
+      90A1BB017E8EA5016F7F960160718B01586983015C5F67017B7D87017B808901
+      767D8601868F9801A2ACB301BAC4CB014C574F07AFD7B401B2D1B601B7CAB901
+      B5C4BC01ADBBB90199A6A8017D868A01696C7401515D61013641450126313501
+      262F3201232B2B0122272801292E2F012E333201453F44014541460144454901
+      4C50550148505701424D5501717D890199A6B401B3C1D301B7D4BD01B3D4B901
+      B3CDBF01BAD5BB01B7D0B601A6B8B7019BABB8016C798F01616A780150535701
+      44443E0149463E014D4C48014344480130353E013637350131333301171C1F01
+      2931380138424C01313D4701505C6601616D770164777401849A9501A7BFB501
+      B4CDBF01B3CFBC01B4D1BA01B3D3BA014A564D0699A6A8017D868A01696C7401
+      515D61013641450126313501262F3201232B2B0122272801292E2F012E333201
+      453F440145414601444549014C50550148505701424D5501717D890199A6B401
+      B3C1D3014A564D069BABB8016C798F01616A78015053570144443E0149463E01
+      4D4C48014344480130353E013637350131333301171C1F012931380138424C01
+      313D4701505C6601616D770164777401849A95014A564D04A6CEB201B8CEC201
+      BDC3C801A1A4B2016D7B87013F505D01232D3F01181731010D170B01202A1D01
+      333D2D01343A2901333724014A4C360161604B0162624A0188786B016F615501
+      6E655C01A9A5A001DADCDD01D3D9E001B7BFCC01939DAE01857DB201A1A8B901
+      B4CAB201B8C7BF01BBB5D801AAA5C0019495A3018D88AF01B5BBC801D2D2D201
+      DFD5C401C2B0930195815E0179674A016E6250016C635A015F56420159524301
+      2F2D23013D3E3C0132373A01080E1501181F28011C252E012D2E48014D4F6701
+      787C8E019CA3AC01AFBBBB01B8C8C101B8C9BE0149544C03A2A8AB01A1A4B201
+      6D7B87013F505D01232D3F01181731010D170B01202A1D01333D2D01343A2901
+      333724014A4C360161604B0162624A0188786B016F6155016E655C01A9A5A001
+      DADCDD01D3D9E001B7BFCC01939DAE01857DB201A1A8B90149544C02BBB5D801
+      AAA5C0019495A3018D88AF01B5BBC801D2D2D201DFD5C401C2B0930195815E01
+      79674A016E6250016C635A015F564201595243012F2D23013D3E3C0132373A01
+      080E1501181F28011C252E012D2E48014D4F6701787C8E019CA3AC0149544C02
+      B2CBBD01ACB3B601918B9E015C5871011E273B01000F2201121E3601373B5801
+      68616E0199919C01BCB1B901B8AAAE01B2A3A101AD9A9501715C54011C060001
+      28100001715A4001B7A58E01E7DACA01FAF2EB01FCF9FB01EAEBF501C0C1CF01
+      A8ABBA01B7C4C201BAC9C101B5C4B601BBC2BB01BDB4D501BCB5D601C5D2BC01
+      DCEAFF01F3FCFF01FCFBF701DCD2C0019F927C015E5442012520170102000001
+      6F5B3801B6A48701BAAC9901BBB2A901ABA7A6018A898B017374780135363A01
+      24223F0114142C012629370163676C0197A19B01ABB9AD01B0C2B10148534A02
+      89909101918B9E015C5871011E273B01000F2201121E3601373B580168616E01
+      99919C01BCB1B901B8AAAE01B2A3A101AD9A9501715C54011C06000128100001
+      715A4001B7A58E01E7DACA01FAF2EB01FCF9FB01EAEBF501C0C1CF01A8ABBA01
+      48534A04BDB4D501BCB5D601B5C1AD01DCEAFF01F3FCFF01FCFBF701DCD2C001
+      9F927C015E54420125201701020000016F5B3801B6A48701BAAC9901BBB2A901
+      ABA7A6018A898B017374780135363A0124223F0114142C012629370163676C01
+      48534A02B9CABD01BDC7C101BFC0C401A4A4B001686D7C013A4658014C5A6D01
+      7A889B01B9B4C301DFD7E201EFE5EB01DDD1D101D8C8C101DAC7B8019F8A7501
+      442D1701674F330187725701A5937C01CBBFAD01E1DBCE01F4F1EC01E9EBEC01
+      C0C4C901B0D0A701B0C8C001ABC5B701ABCAA901B7CDBB01BBCBC401B2C8B501
+      ADC8AE01E3E9E801E4E4DE01DDD5C801CEBEAD01B3A08B018A79640157493601
+      2F251401AB957101D7C5A801DACBBB01E5DCD801F1EBF001E2DFE801C4C0CB01
+      898590014B566C01455163015A676F018A989701ACC0B401B1C9B701AECBB401
+      4651490362696501A4A4B001686D7C013A4658014C5A6D017A889B01B9B4C301
+      DFD7E201EFE5EB01DDD1D101D8C8C101DAC7B8019F8A7501442D1701674F3301
+      87725701A5937C01CBBFAD01E1DBCE01F4F1EC01E9EBEC01B0B4B80146514908
+      E3E9E801E4E4DE01DDD5C801CEBEAD01B3A08B018A796401574936012F251401
+      AB957101D7C5A801DACBBB01E5DCD801F1EBF001E2DFE801C4C0CB0189859001
+      4B566C01455163015A676F018A98970146514902AFC4B501ADC3B001B1C5B201
+      B3BFB901A4A5B30183829C016970890162708601929AAB01BFC5D201E7EBF001
+      E5E3E201C9C6B801B7B19A01A59A7E01877C5C01908178018B81770196908501
+      BFBFB301C1C8BB01B9C5B901B3C3B801A5B8AF01ABC7B301ACCEAF01AACAB701
+      A8C4BE01ABC8B101ABCBA801ACC9B201ABC9BC01C9C4AB01E0D7C301EBDECE01
+      D4C3B601A79283018A746201927D6201A79374019E917B01ADA49601C1BBBC01
+      DFDFED01E4E6FE01BABDD9018D90AC0172768F01606D83017D8B9D01A0AFB801
+      B2C2C101B3C8BF01B0C9BB01AAC7B701454F4805A4A5B30183829C0169708901
+      62708601929AAB01BFC5D201E7EBF001E5E3E201C9C6B801B7B19A01A59A7E01
+      877C5C01908178018B81770196908501979C9D01777F7601454F480BC9C4AB01
+      E0D7C301EBDECE01D4C3B601A79283018A746201927D6201A79374019E917B01
+      ADA49601C1BBBC01DFDFED01E4E6FE01BABDD9018D90AC0172768F01606D8301
+      7D8B9D01808D9201707C7901454F4802A9C3B501A9CCB201A7CDB101AFC5B901
+      C1BFD201C4B9E101AAA7CE018893B1015E67A0015B6294017379A4019D9EC001
+      AFACC201A9A3AE019C939601938787017975800186858E01979C9D01B7C2BF01
+      AEC2B601A8C1B301ACC9B901A4C4B101B4C4BD01ACC2B601AAC5B101ADC9B201
+      B0C6B401AFC5B201ADC5B301A9C1B901B0BDB501B4C0C201B9C2D001B1B7CE01
+      989CB401838492017C7E7F0185857F0192908801B0B2B301B8BDCC01939BB801
+      6C779D015E6A940167739D017F89B101ADB6C301B9C2CB01C0CACA01BAC5BD01
+      B0C0AF01AFC2AF01B0C7B101444E46054C574F01C4B9E101AAA7CE018893B101
+      5E67A0015B6294017379A4019D9EC001AFACC201A9A3AE019C93960193878701
+      7975800186858E01979C9D01444E460FB9C2D001B1B7CE01989CB40183849201
+      7C7E7F0185857F0192908801B0B2B301B8BDCC01939BB8016C779D015E6A9401
+      67739D017F89B10189919901B9C2CB01424C4502444E4602A8C2B008AABFB701
+      A9BCB901A5B3B9019BA4B2019096AD018B92AD018F97B501979EBF019CA9B101
+      A4B3B601ADBEBB01B0C3BA01AEC2B501ABC1AF01ACC2AF01ADC3B001A8C2B008
+      A8C4B101AAC2B801ADC2B301ACC1B801ABBFC001A5BAB2019FACAE019F9DC101
+      858CA5018A8FA8019495AF01A1A2B701ADB0BF01B2BAC101B1BFBE01ADBFB801
+      A8C2B007424C450B838F92019BA4B2019096AD018B92AD018F97B501979EBF01
+      9CA9B101828F9001424C45139FACAE029F9DC101858CA5018A8FA8019495AF01
+      A1A2B7017C8087016F777701424C4508A8C2B008A9C8A901ADC8AE01AFC7AF01
+      ACC2AF01A8BDAE01A8BCAF01A9C0B201ABC3B701A6BBB301A9BEB501ABC1B501
+      ABC2B301AAC2B003ACC3B401A8C2B008A7C3AF01A9C2B401A9C2AE01AAC1B201
+      ABC1BC01ABC2B401ADBDB601B3B3D101A8C2B001A9C0B101ABC0B101B0C1B301
+      B1C3B201AEC5AF01A9C4AA01A3C1A401A8C2B007414B43370000000464000001
+      16405901C0DB05016C0DB0016400000116405901C0DB05016C0DB00100000004
+      6400000116405901C0DB05016C0DB001000000086400000116405901C0DB0501
+      6C0DB0016400000116405901C0DB05016C0DB001000000086400000116405901
+      C0DB05016C0DB001000000046400000116405901C0DB05016C0DB00164000001
+      16405901C0DB05016C0DB001000000046400000116405901C0DB05016C0DB001
+      000000086400000116405901C0DB05016C0DB001000000046400000116405901
+      C0DB05016C0DB0016400000116405901C0DB05016C0DB0010000000864000001
+      16405901C0DB05016C0DB0016400000116405901C0DB05016C0DB00100000006
+      2240890102240801000000022240890102240801000000062240890102240801
+      0000000A22408901022408010000000222408901022408010000000A22408901
+      0224080100000006224089010224080100000002224089010224080100000006
+      22408901022408010000000A2240890102240801000000062240890102240801
+      0000000222408901022408010000000A22408901022408010000000222408901
+      02240801000000047E9E980124092F0112404901C0DB0401000000087E9E9801
+      24092F0112404901C0DB0401000000047E9E980124092F0112404901C0DB0401
+      7E9E980124092F0112404901C0DB0401000000087E9E980124092F0112404901
+      C0DB04017E9E980124092F0112404901C0DB0401000000047E9E980124092F01
+      12404901C0DB0401000000087E9E980124092F0112404901C0DB040100000004
+      7E9E980124092F0112404901C0DB04017E9E980124092F0112404901C0DB0401
+      000000047E9E980124092F0112404901C0DB0401000000087E9E980124092F01
+      12404901C0DB04017E9E980124092F0112404901C0DB0401000000087E9E9801
+      24092F016C0DB0011240490101240401000000096C0DB0011240490101240401
+      000000056C0DB0011240490101240401000000016C0DB0011240490101240401
+      000000096C0DB0011240490101240401000000016C0DB0011240490101240401
+      000000056C0DB0011240490101240401000000096C0DB0011240490101240401
+      000000056C0DB0011240490101240401000000016C0DB0011240490101240401
+      000000056C0DB0011240490101240401000000096C0DB0011240490101240401
+      000000016C0DB0011240490101240401000000096C0DB0011240490124000001
+      12404901C0DB04016C0DB001000000082400000112404901C0DB04016C0DB001
+      000000042400000112404901C0DB04016C0DB0012400000112404901C0DB0401
+      6C0DB001000000082400000112404901C0DB04016C0DB0012400000112404901
+      C0DB04016C0DB001000000042400000112404901C0DB04016C0DB00100000008
+      2400000112404901C0DB04016C0DB001000000042400000112404901C0DB0401
+      6C0DB0012400000112404901C0DB04016C0DB001000000042400000112404901
+      C0DB04016C0DB001000000082400000112404901C0DB04016C0DB00124000001
+      12404901C0DB04016C0DB001000000082400000112404902012404010000000A
+      1240490101240401000000061240490101240401000000021240490101240401
+      0000000A12404901012404010000000212404901012404010000000612404901
+      012404010000000A124049010124040100000006124049010124040100000002
+      12404901012404010000000612404901012404010000000A1240490101240401
+      0000000212404901012404010000000A1240490101240401000000040E3E3801
+      6D092F0116D05B01C11B05010E3E38016D092F0116D05B01C11B050100000004
+      0E3E38016D092F0116D05B01C11B0501000000080E3E38016D092F0116D05B01
+      C11B05010E3E38016D092F0116D05B01C11B0501000000080E3E38016D092F01
+      16D05B01C11B0501000000040E3E38016D092F0116D05B01C11B05010E3E3801
+      6D092F0116D05B01C11B0501000000040E3E38016D092F0116D05B01C11B0501
+      000000080E3E38016D092F0116D05B01C11B0501000000040E3E38016D092F01
+      16D05B01C11B05010E3E38016D092F0116D05B01C11B0501000000080E3E3801
+      6D092F0116D05B01C11B05010E3E38016D092F0116D05B01C11B050100000006
+      6C11B0012480920102480901000000016C11B001248092010248090100000005
+      6C11B0012480920102480901000000096C11B001248092010248090100000001
+      6C11B0012480920102480901000000096C11B001248092010248090100000005
+      6C11B0012480920102480901000000016C11B001248092010248090100000005
+      6C11B0012480920102480901000000096C11B001248092010248090100000005
+      6C11B0012480920102480901000000016C11B001248092010248090100000009
+      6C11B0012480920102480901000000016C11B001248092010248090100000007
+      6D00000116D05B01C11B05016C11B0016D00000116D05B01C11B05016C11B001
+      000000046D00000116D05B01C11B05016C11B001000000086D00000116D05B01
+      C11B05016C11B0016D00000116D05B01C11B05016C11B001000000086D000001
+      16D05B01C11B05016C11B001000000046D00000116D05B01C11B05016C11B001
+      6D00000116D05B01C11B05016C11B001000000046D00000116D05B01C11B0501
+      6C11B001000000086D00000116D05B01C11B05016C11B001000000046D000001
+      16D05B01C11B05016C11B0016D00000116D05B01C11B05016C11B00100000008
+      6D00000116D05B01C11B05016C11B0016D00000116D05B01C11B05016C11B001
+      0000000624809201024809010000000224809201024809010000000624809201
+      024809010000000A24809201024809010000000224809201024809010000000A
+      2480920102480901000000062480920102480901000000022480920102480901
+      0000000624809201024809010000000A24809201024809010000000624809201
+      024809010000000224809201024809010000000A248092010248090100000002
+      248092010248090100000004FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F000000FFFF00FFFF80FFFFFFFFFFFF3F000000FFFF00
+      FFFE80FFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000FFFFFFFFFFFFFFFFFFFFFFFFFF3F0000FFFFFFFF
+      FFFFFFFFFFFFFFFFFF3F0000
+    }
+  end
+  object templatemaindark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      6052956
+      3355443
+    )
+    template.fade_direction = gd_down
+    left = 537
+    top = 17
+  end
+  object templatemain: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14606046
+      12105912
+    )
+    template.fade_direction = gd_down
+    left = 607
+    top = 20
+  end
+  object templfiledark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      7235142
+      2829079
+    )
+    template.fade_direction = gd_down
+    left = 646
+    top = 18
   end
 end

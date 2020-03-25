@@ -15,11 +15,16 @@ object confmseguifo: tconfmseguifo
     117
   )
   optionswindow = [wo_dialog]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of MSEgui'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object msedir: tfilenameedit
     Tag = 2

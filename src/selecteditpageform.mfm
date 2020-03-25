@@ -1,7 +1,7 @@
 object selecteditpagefo: tselecteditpagefo
   visible = False
-  bounds_x = 160
-  bounds_y = 124
+  bounds_x = 169
+  bounds_y = 378
   bounds_cx = 704
   bounds_cy = 473
   container.frame.localprops = []
@@ -13,9 +13,14 @@ object selecteditpagefo: tselecteditpagefo
     704
     473
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Select edit page (Ctrl+E)'
   icon.transparentcolor = -2147483648
+  windowopacity = -Inf
   oneventloopstart = fooncreate
   onlayout = formonchildscaled
   moduleclassname = 'tmseform'
@@ -39,18 +44,19 @@ object selecteditpagefo: tselecteditpagefo
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup]
     options = [lvo_readonly, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
     onitemevent = doonitemevent
-    reffontheight = 16
+    reffontheight = 15
   end
   object pathdisp: tstringdisp
     frame.localprops = []
     frame.localprops1 = []
     taborder = 2
     bounds_x = 0
-    bounds_y = 452
+    bounds_y = 453
     bounds_cx = 650
+    bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 16
+    reffontheight = 15
   end
   object openfilebutton: tbutton
     taborder = 1

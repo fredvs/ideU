@@ -50,6 +50,8 @@ object integerenterfo: tintegerenterfo
     bounds_cy = 15
     anchors = [an_left, an_top, an_bottom]
     caption = 'lab'
+    font.name = 'stf_default'
+    font.localprops = []
     textflags = [tf_xcentered, tf_ycentered, tf_wordbreak]
   end
   object ok: tbutton
@@ -63,6 +65,8 @@ object integerenterfo: tintegerenterfo
     anchors = [an_right, an_bottom]
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
     caption = '&OK'
+    font.name = 'stf_default'
+    font.localprops = []
     onexecute = ondoline
   end
   object value: tintegeredit

@@ -6,22 +6,134 @@ object projecttreefo: tprojecttreefo
   frame.grip_grip = stb_dens100
   frame.grip_color = 11382189
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
+  frame.grip_face.localprops = []
+  frame.grip_faceactive.localprops = []
   visible = False
-  bounds_x = 546
-  bounds_y = 378
-  bounds_cx = 286
-  bounds_cy = 201
+  bounds_x = 530
+  bounds_y = 127
+  bounds_cx = 303
+  bounds_cy = 213
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
+  container.frame.sbhorz.face.fade_pos.count = 2
+  container.frame.sbhorz.face.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbhorz.face.fade_color.count = 2
+  container.frame.sbhorz.face.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbhorz.face.localprops = []
+  container.frame.sbhorz.face1.fade_pos.count = 2
+  container.frame.sbhorz.face1.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbhorz.face1.fade_color.count = 2
+  container.frame.sbhorz.face1.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbhorz.face1.localprops = []
+  container.frame.sbhorz.face2.fade_pos.count = 2
+  container.frame.sbhorz.face2.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbhorz.face2.fade_color.count = 2
+  container.frame.sbhorz.face2.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbhorz.face2.localprops = []
+  container.frame.sbhorz.facebutton.fade_pos.count = 2
+  container.frame.sbhorz.facebutton.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbhorz.facebutton.fade_color.count = 2
+  container.frame.sbhorz.facebutton.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbhorz.facebutton.localprops = []
+  container.frame.sbhorz.faceendbutton.fade_pos.count = 2
+  container.frame.sbhorz.faceendbutton.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbhorz.faceendbutton.fade_color.count = 2
+  container.frame.sbhorz.faceendbutton.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbhorz.faceendbutton.localprops = []
+  container.frame.sbvert.face.fade_pos.count = 2
+  container.frame.sbvert.face.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbvert.face.fade_color.count = 2
+  container.frame.sbvert.face.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbvert.face.localprops = []
+  container.frame.sbvert.face1.fade_pos.count = 2
+  container.frame.sbvert.face1.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbvert.face1.fade_color.count = 2
+  container.frame.sbvert.face1.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbvert.face1.localprops = []
+  container.frame.sbvert.face2.fade_pos.count = 2
+  container.frame.sbvert.face2.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbvert.face2.fade_color.count = 2
+  container.frame.sbvert.face2.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbvert.face2.localprops = []
+  container.frame.sbvert.facebutton.fade_pos.count = 2
+  container.frame.sbvert.facebutton.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbvert.facebutton.fade_color.count = 2
+  container.frame.sbvert.facebutton.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbvert.facebutton.localprops = []
+  container.frame.sbvert.faceendbutton.fade_pos.count = 2
+  container.frame.sbvert.faceendbutton.fade_pos.items = (
+    0
+    1
+  )
+  container.frame.sbvert.faceendbutton.fade_color.count = 2
+  container.frame.sbvert.faceendbutton.fade_color.items = (
+    -1610612731
+    -1610612731
+  )
+  container.frame.sbvert.faceendbutton.localprops = []
   container.bounds = (
     0
     0
-    276
-    201
+    293
+    213
   )
   dragdock.splitter_size = 0
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Project Tree'
@@ -32,24 +144,126 @@ object projecttreefo: tprojecttreefo
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
-    frame.localprops = []
-    frame.localprops1 = []
-    face.fade_pos.count = 2
-    face.fade_pos.items = (
+    frame.sbvert.face.fade_pos.count = 2
+    frame.sbvert.face.fade_pos.items = (
       0
       1
     )
-    face.fade_color.count = 2
-    face.fade_color.items = (
-      16777215
-      12566463
+    frame.sbvert.face.fade_color.count = 2
+    frame.sbvert.face.fade_color.items = (
+      -1610612731
+      -1610612731
     )
+    frame.sbvert.face.localprops = []
+    frame.sbvert.face1.fade_pos.count = 2
+    frame.sbvert.face1.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.face1.fade_color.count = 2
+    frame.sbvert.face1.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbvert.face1.localprops = []
+    frame.sbvert.face2.fade_pos.count = 2
+    frame.sbvert.face2.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.face2.fade_color.count = 2
+    frame.sbvert.face2.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbvert.face2.localprops = []
+    frame.sbvert.facebutton.fade_pos.count = 2
+    frame.sbvert.facebutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.facebutton.fade_color.count = 2
+    frame.sbvert.facebutton.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbvert.facebutton.localprops = []
+    frame.sbvert.faceendbutton.fade_pos.count = 2
+    frame.sbvert.faceendbutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbvert.faceendbutton.fade_color.count = 2
+    frame.sbvert.faceendbutton.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbvert.faceendbutton.localprops = []
+    frame.sbhorz.face.fade_pos.count = 2
+    frame.sbhorz.face.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face.fade_color.count = 2
+    frame.sbhorz.face.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbhorz.face.fade_direction = gd_right
+    frame.sbhorz.face.localprops = [fal_fadirection]
+    frame.sbhorz.face1.fade_pos.count = 2
+    frame.sbhorz.face1.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face1.fade_color.count = 2
+    frame.sbhorz.face1.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbhorz.face1.localprops = []
+    frame.sbhorz.face2.fade_pos.count = 2
+    frame.sbhorz.face2.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.face2.fade_color.count = 2
+    frame.sbhorz.face2.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbhorz.face2.localprops = []
+    frame.sbhorz.facebutton.fade_pos.count = 2
+    frame.sbhorz.facebutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.facebutton.fade_color.count = 2
+    frame.sbhorz.facebutton.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbhorz.facebutton.localprops = []
+    frame.sbhorz.faceendbutton.fade_pos.count = 2
+    frame.sbhorz.faceendbutton.fade_pos.items = (
+      0
+      1
+    )
+    frame.sbhorz.faceendbutton.fade_color.count = 2
+    frame.sbhorz.faceendbutton.fade_color.items = (
+      -1610612731
+      -1610612731
+    )
+    frame.sbhorz.faceendbutton.localprops = []
+    frame.localprops = []
+    frame.localprops1 = []
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
+    face.template = templatemain
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 276
-    bounds_cy = 201
+    bounds_cx = 293
+    bounds_cy = 213
     anchors = []
     optionsgrid = [og_colsizing, og_focuscellonenter, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup]
     datacols.count = 2
@@ -73,7 +287,7 @@ object projecttreefo: tprojecttreefo
       end    
       item[edit]
         linecolorfix = -1610612733
-        width = 129
+        width = 146
         options = [co_fill, co_savestate, co_mousescrollrow]
         onshowhint = colshowhintexe
         widgetname = 'edit'
@@ -91,6 +305,8 @@ object projecttreefo: tprojecttreefo
       frame.colorclient = -2147483646
       frame.localprops = [frl_levelo, frl_colorclient]
       frame.localprops1 = []
+      face.localprops = []
+      face.template = templatemain
       taborder = 1
       onpopup = projecteditonpopup
       visible = False
@@ -98,8 +314,13 @@ object projecttreefo: tprojecttreefo
       bounds_y = 0
       bounds_cx = 141
       bounds_cy = 17
+      empty_color = -2147483647
+      empty_textcolor = -2147483647
+      empty_textcolorbackground = -2147483647
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_checkmrcancel, oe_exitoncursor, oe_hintclippedtext, oe_locate]
+      font.name = 'stf_default'
+      font.localprops = [flp_colorbackground]
       onchange = projecteditonchange
       onsetvalue = captionset
       onupdaterowvalues = projecteditonupdaterowvalues
@@ -127,15 +348,18 @@ object projecttreefo: tprojecttreefo
           imagenr = 17
           onexecute = receditdialogexe
         end>
+      face.localprops = []
       taborder = 2
       onshowhint = edithintexe
       visible = False
       bounds_x = 142
       bounds_y = 0
-      bounds_cx = 129
+      bounds_cx = 146
       bounds_cy = 16
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
+      font.name = 'stf_default'
+      font.localprops = []
       textflags = [tf_ycentered, tf_clipo, tf_noselect, tf_ellipseleft]
       oncellevent = editoncellevent
       dropdown.cols.count = 1
@@ -168,13 +392,13 @@ object projecttreefo: tprojecttreefo
         action = editdiract
       end>
     left = 8
-    top = 8
+    top = 31
   end
   object addunitfileact: taction
     caption = '&Add Unit'
     onexecute = addunitfileonexecute
-    left = 112
-    top = 8
+    left = 109
+    top = 59
   end
   object filedialog: tfiledialog
     controller.options = [fdo_checkexist, fdo_savelastdir]
@@ -211,8 +435,8 @@ object projecttreefo: tprojecttreefo
         action = editdiract
       end>
     menu.state = [as_localhint]
-    left = 8
-    top = 40
+    left = 24
+    top = 55
   end
   object addfileact: taction
     caption = 'Add Text File'
@@ -416,5 +640,33 @@ object projecttreefo: tprojecttreefo
     )
     left = 208
     top = 168
+  end
+  object templatemaindark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      3026478
+      986895
+    )
+    left = 114
+    top = 159
+  end
+  object templatemain: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      16777215
+      15790320
+    )
+    left = 112
+    top = 181
   end
 end

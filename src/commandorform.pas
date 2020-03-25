@@ -9,7 +9,7 @@ uses
  mseglob,msegraphedits,mseificomp,mseificompglob,mseifiglob,msescrollbar,
  msetypes,mseapplication,msedataedits,msedatanodes,mseedit,msegrids,
  mselistbrowser,msestat,msestatfile,msestream,msestrings,sysutils,mseimage,
- msedispwidgets,mserichstring,mseact;
+ msedispwidgets,mserichstring,mseact, msebitmap;
 
 type
  tdebuggerfo = class(tdockform)
@@ -54,13 +54,18 @@ type
    find_in_edit: tbutton;
    properties_list: tbutton;
    assistive: tbutton;
-   tdockpanel2: tdockpanel;
    terminal_run: tbutton;
    debug_on: tbutton;
    save_file: tbutton;
-   
+
    code_beauty: tbutton;
-   tbutton2: tbutton;
+   procedure_list: tbutton;
+   templateprojectdark: tfacecomp;
+   tstringdisp2: tstringdisp;
+   timagelist1: timagelist;
+   templatemaindark: tfacecomp;
+   templatemain: tfacecomp;
+   templfiledark: tfacecomp;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -75,7 +80,7 @@ type
    procedure onsetvaluehis(const sender: TObject);
    procedure onsetvaluefilehis(const sender: TObject);
    procedure onbeforefilehis(const sender: TObject);
-  
+
    procedure onbefdroppro(const sender: TObject);
    procedure onterminalon(const sender: TObject);
    procedure onsetdebug(const sender: TObject);
@@ -140,7 +145,7 @@ end;
 procedure tdebuggerfo.watchonexecute(const sender: TObject);
 begin
 actionsmo.watchesonact.checked := debuggerfo.watches.value;
-//tchfo.watcheson.value:= actionsmo.watchesonact.checked; 
+//tchfo.watcheson.value:= actionsmo.watchesonact.checked;
 end;
 
 procedure tdebuggerfo.hintonexecute(const sender: TObject);
@@ -156,18 +161,18 @@ if debuggerfo.properties_list.tag = 0 then
 begin
 debuggerfo.properties_list.tag := 1 ;
 debuggerfo.properties_list.imagenr := 21 ;
- end 
+ end
  else
  begin
   sourcefo.thetimer.Enabled := false;
-  sourcefo.hidesourcehint; 
+  sourcefo.hidesourcehint;
   debuggerfo.properties_list.tag := 0 ;
   debuggerfo.properties_list.imagenr := 20 ;
  end;
  end;
- 
+
  procedure tdebuggerfo.shownum(const sender: TObject);
- var 
+ var
  int1 : integer;
 begin
 if debuggerfo.line_number.tag = 0 then
@@ -175,7 +180,7 @@ begin
 projectoptions.e.linenumberson := true;
 debuggerfo.line_number.tag := 1 ;
 debuggerfo.line_number.imagenr := 26 ;
- end 
+ end
  else
  begin
   projectoptions.e.linenumberson := false;
@@ -183,12 +188,12 @@ debuggerfo.line_number.tag := 0;
   debuggerfo.line_number.imagenr := 25 ;
  end;
  for int1:= 0 to sourcefo.count - 1 do
-    sourcefo.items[int1].updatestatvalues; 
+    sourcefo.items[int1].updatestatvalues;
 end;
 
 procedure tdebuggerfo.findinpage(const sender: TObject);
 begin
-  actionsmo.findactonexecute(sender); 
+  actionsmo.findactonexecute(sender);
  end;
 
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
@@ -199,15 +204,15 @@ end;
 
 procedure tdebuggerfo.assistiveactonexecute(const sender: TObject);
 begin
-  actionsmo.assistiveactonexecute(sender); 
+  actionsmo.assistiveactonexecute(sender);
  end;
- 
+
 
 procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
 begin
 project_history.width := 84;
-//if (fileexists(project_history.value)) and 
-if (file_history.tag = 0) and 
+//if (fileexists(project_history.value)) and
+if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
 begin
 sleep(50);
@@ -221,7 +226,7 @@ var
  page: tsourcepage;
 begin
 file_history.width := 70;
-//if (fileexists(file_history.value)) and 
+//if (fileexists(file_history.value)) and
 if (file_history.tag = 0) then
 begin
 sleep(50);
@@ -247,16 +252,16 @@ begin
 targetconsolefo.activate;
 projectoptions.d.showconsole := true;
 terminal_run.tag := 1 ;
-terminal_run.imagenr := 34 ;
- end 
+terminal_run.imagenr := 42 ;
+ end
  else
  begin
   targetconsolefo.visible := false;
   projectoptions.d.showconsole := false;
   terminal_run.tag := 0;
-  terminal_run.imagenr := 33 ;
+  terminal_run.imagenr := 43 ;
  end;
- 
+
 end;
 
 procedure tdebuggerfo.onsetdebug(const sender: TObject);
@@ -265,13 +270,13 @@ if debug_on.tag = 0 then
 begin
 //projectoptions.d.showconsole := true;
 debug_on.tag := 1 ;
-debug_on.imagenr := 35 ;
- end 
+debug_on.imagenr := 40 ;
+ end
  else
  begin
   // projectoptions.d.showconsole := false;
   debug_on.tag := 0;
-  debug_on.imagenr := 36 ;
+  debug_on.imagenr := 41 ;
  end;
 end;
 
@@ -280,7 +285,7 @@ var
 str3 : string;
 int3, thetag : integer;
 begin
- 
+
 str3 := '' ;
 
 case debuggerfo.project_options.value of
@@ -298,39 +303,39 @@ case debuggerfo.project_options.value of
   '0' : thetag := 2048;
   end;
 
-with projectoptions,o,texp do begin  
+with projectoptions,o,texp do begin
 for int3:= 0 to high(debuggerused) do begin
    if (thetag and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
-      
+
 if system.pos('Default',debuggerused[int3]) > 0 then
    str3:= 'Default Debugger' else
-        
+
     if (trim(debuggerused[int3]) = 'Debugger 1')  then
     str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger1.value))) else
-    
+
     if (trim(debuggerused[int3]) = 'Debugger 2') then
     str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger2.value))) else
-    
+
     if (trim(debuggerused[int3]) = 'Debugger 3') then
     str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger3.value))) else
-    
+
      if (trim(debuggerused[int3]) = 'Debugger 4') then
     str3:= ansistring(quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) else
     str3:= '' ;
  end;
  end;
  end;
- 
- 
- if str3 <> '' then 
+
+
+ if str3 <> '' then
  begin
  debug_on.tag := 1 ;
- debug_on.imagenr := 35 ;
+ debug_on.imagenr := 40 ;
  end else
  begin
  debug_on.tag := 0 ;
- debug_on.imagenr := 36 
+ debug_on.imagenr := 41
  end;
 
   end;

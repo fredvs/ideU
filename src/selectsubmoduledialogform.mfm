@@ -4,14 +4,21 @@ object selectsubmoduledialogfo: tselectsubmoduledialogfo
   bounds_y = 320
   bounds_cx = 241
   bounds_cy = 81
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
     241
     81
   )
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Select subform'
+  windowopacity = -Inf
   moduleclassname = 'tmseform'
   object ok: tbutton
     taborder = 1
@@ -36,9 +43,16 @@ object selectsubmoduledialogfo: tselectsubmoduledialogfo
     modalresult = mr_cancel
   end
   object submodule: tdropdownlistedit
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
     bounds_x = 8
     bounds_y = 8
     bounds_cx = 228
+    bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     dropdown.options = [deo_selectonly, deo_autodropdown, deo_keydropdown, deo_sorted]
     dropdown.cols.count = 1
@@ -46,6 +60,6 @@ object selectsubmoduledialogfo: tselectsubmoduledialogfo
       item
         textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
 end

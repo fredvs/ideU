@@ -18,7 +18,11 @@ object threadsfo: tthreadsfo
     276
   )
   dragdock.caption = 'Threads'
-  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Threads'
@@ -97,7 +101,7 @@ object threadsfo: tthreadsfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 17
         captions.count = 3
         captions.items = <        
           item
@@ -111,9 +115,9 @@ object threadsfo: tthreadsfo
             textflags = [tf_ycentered]
           end>
       end>
-    datarowheight = 16
+    datarowheight = 17
     oncellevent = gridoncellevent
-    reffontheight = 14
+    reffontheight = 15
   end
   object tpopupmenu1: tpopupmenu
     menu.submenu.count = 1

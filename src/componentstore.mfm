@@ -18,7 +18,9 @@ object componentstorefo: tcomponentstorefo
     354
   )
   dragdock.caption = 'Component Store'
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   icon.transparentcolor = -2147483642
@@ -102,7 +104,7 @@ object componentstorefo: tcomponentstorefo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 17
         captions.count = 4
         captions.items = <        
           item
@@ -159,7 +161,7 @@ object componentstorefo: tcomponentstorefo
     statfile = mainfo.projectstatfile
     oncellevent = docellevent
     drag.onbeforedragbegin = beforedrag
-    reffontheight = 14
+    reffontheight = 15
     object node: ttreeitemedit
       optionswidget1 = [ow1_fontglyphheight]
       frame.levelo = 0
@@ -180,7 +182,7 @@ object componentstorefo: tcomponentstorefo
       onsetvalue = compnamesetva
       onupdaterowvalues = doupdaterowvalues
       options = [teo_treecolnavig, teo_keyrowmoving]
-      reffontheight = 14
+      reffontheight = 15
     end
     object sel: tdatabutton
       taborder = 2
@@ -234,7 +236,7 @@ object componentstorefo: tcomponentstorefo
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       ondataentered = datent
       onsetvalue = compdescsetva
-      reffontheight = 14
+      reffontheight = 15
     end
     object filepath: tfilenameedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -272,7 +274,7 @@ object componentstorefo: tcomponentstorefo
         )
       )
       controller.defaultext = 'cmp'
-      reffontheight = 14
+      reffontheight = 15
     end
   end
   object copycompact: taction

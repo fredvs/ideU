@@ -47,6 +47,8 @@ object findinfileadialogfo: tfindinfiledialogfo
   object findtext: thistoryedit
     frame.caption = '&Text to find'
     frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     frame.button.color = -2147483646
@@ -57,25 +59,29 @@ object findinfileadialogfo: tfindinfiledialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     bounds_x = 8
-    bounds_y = 9
+    bounds_y = 8
     bounds_cx = 321
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
+    font.name = 'stf_default'
+    font.localprops = []
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object dir: tfilenameedit
     frame.caption = '&Directory'
     frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     frame.buttons.count = 1
@@ -88,28 +94,32 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 3
     onshowhint = dirshowhint
     bounds_x = 8
-    bounds_y = 137
+    bounds_y = 136
     bounds_cx = 321
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
+    font.name = 'stf_default'
+    font.localprops = []
     textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
     onsetvalue = dirsetvalue
     controller.options = [fdo_directory]
     controller.ongetfilename = dirgetfilenameexe
     controller.onbeforeexecute = dironbeforeexecute
-    reffontheight = 14
+    reffontheight = 15
   end
   object mask: thistoryedit
     frame.caption = '&File Mask'
     frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
     frame.localprops = []
     frame.localprops1 = []
     frame.button.color = -2147483646
@@ -120,23 +130,25 @@ object findinfileadialogfo: tfindinfiledialogfo
       end>
     frame.outerframe = (
       0
-      17
+      18
       0
       0
     )
     taborder = 4
     bounds_x = 8
-    bounds_y = 185
+    bounds_y = 184
     bounds_cx = 321
-    bounds_cy = 37
+    bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
+    font.name = 'stf_default'
+    font.localprops = []
     value = '"*.pas" "*.pp" "*.inc"'
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 14
+    reffontheight = 15
   end
   object tlayouter1: tlayouter
     taborder = 1
@@ -148,54 +160,60 @@ object findinfileadialogfo: tfindinfiledialogfo
     linkright = tlayouter2
     object indirectories: tbooleaneditradio
       frame.caption = 'Search in &directories'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         127
         2
       )
       taborder = 2
       bounds_x = 8
-      bounds_y = 64
+      bounds_y = 63
       bounds_cx = 140
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
       ondataentered = sourcechangeexe
       onsetvalue = dirsetval
     end
     object casesensitive: tbooleanedit
       frame.caption = 'C&asesensitive'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         83
         2
       )
       bounds_x = 8
-      bounds_y = 16
+      bounds_y = 15
       bounds_cx = 96
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
     end
     object inprojectdir: tbooleaneditradio
       frame.caption = 'Search in &project dir'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         126
         2
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 40
+      bounds_y = 39
       bounds_cx = 139
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
       ondataentered = sourcechangeexe
       onsetvalue = dirsetval
@@ -211,36 +229,40 @@ object findinfileadialogfo: tfindinfiledialogfo
     optionsscale = [osc_expandx, osc_shrinkx]
     object wholeword: tbooleanedit
       frame.caption = '&Whole word'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         74
         2
       )
       bounds_x = 8
-      bounds_y = 16
+      bounds_y = 15
       bounds_cx = 87
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
     end
     object inopenfiles: tbooleaneditradio
       Tag = 1
       frame.caption = 'Search in &open files'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         121
         2
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 40
+      bounds_y = 39
       bounds_cx = 134
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
       ondataentered = sourcechangeexe
       onsetvalue = opensetval
@@ -248,19 +270,21 @@ object findinfileadialogfo: tfindinfiledialogfo
     object incurrentfile: tbooleaneditradio
       Tag = 1
       frame.caption = 'Search in &current file'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         130
         2
       )
       taborder = 2
       bounds_x = 8
-      bounds_y = 64
+      bounds_y = 63
       bounds_cx = 143
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
       ondataentered = sourcechangeexe
       onsetvalue = currentsetval
@@ -271,7 +295,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     bounds_x = 0
     bounds_y = 232
     bounds_cx = 339
-    bounds_cy = 30
+    bounds_cy = 31
     anchors = [an_top]
     optionsscale = [osc_expandy, osc_shrinky]
     optionslayout = [lao_aligny]
@@ -284,7 +308,7 @@ object findinfileadialogfo: tfindinfiledialogfo
       bounds_x = 222
       bounds_y = 0
       bounds_cx = 115
-      bounds_cy = 30
+      bounds_cy = 31
       anchors = [an_top, an_right]
       optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
       optionslayout = [lao_placex, lao_aligny, lao_syncmaxautosize]
@@ -297,10 +321,12 @@ object findinfileadialogfo: tfindinfiledialogfo
         bounds_x = 5
         bounds_y = 5
         bounds_cx = 50
-        bounds_cy = 20
+        bounds_cy = 21
         anchors = [an_top, an_right]
         state = [as_default, as_localdefault, as_localcaption]
         caption = 'OK'
+        font.name = 'stf_default'
+        font.localprops = []
         modalresult = mr_ok
       end
       object cancel: tbutton
@@ -308,28 +334,32 @@ object findinfileadialogfo: tfindinfiledialogfo
         bounds_x = 60
         bounds_y = 5
         bounds_cx = 50
-        bounds_cy = 20
+        bounds_cy = 21
         anchors = [an_top, an_right]
         state = [as_localcaption]
         caption = 'Cancel'
+        font.name = 'stf_default'
+        font.localprops = []
         modalresult = mr_cancel
       end
     end
     object subdirs: tbooleanedit
       frame.caption = '&Include subdirectories'
+      frame.font.name = 'stf_default'
+      frame.font.localprops = []
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        1
+        2
         137
         2
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 8
+      bounds_y = 7
       bounds_cx = 150
-      bounds_cy = 16
+      bounds_cy = 17
       statfile = statfile1
     end
   end

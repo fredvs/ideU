@@ -16,7 +16,11 @@ object symbolfo: tsymbolfo
     496
     137
   )
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_propsize, od_captionhint, od_childicons]
+  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Symbols'
@@ -81,7 +85,7 @@ object symbolfo: tsymbolfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 15
+        height = 17
         captions.count = 3
         captions.items = <        
           item
@@ -138,10 +142,10 @@ object symbolfo: tsymbolfo
         widgetname = 'line'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 15
+    datarowheight = 17
     statfile = mainfo.projectstatfile
     oncellevent = cellev
-    reffontheight = 13
+    reffontheight = 15
     object symbol: tstringedit
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
       optionsskin = [osk_framebuttononly]
@@ -150,12 +154,14 @@ object symbolfo: tsymbolfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 111
-      bounds_cy = 15
+      bounds_cy = 17
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
+      font.name = 'stf_default'
+      font.localprops = []
       ondataentered = symboldataent
-      reffontheight = 13
+      reffontheight = 15
     end
     object symaddr: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -166,11 +172,11 @@ object symbolfo: tsymbolfo
       bounds_x = 112
       bounds_y = 0
       bounds_cx = 200
-      bounds_cy = 15
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-      reffontheight = 13
+      reffontheight = 15
     end
     object syminfo: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -181,10 +187,10 @@ object symbolfo: tsymbolfo
       bounds_x = 313
       bounds_y = 0
       bounds_cx = 131
-      bounds_cy = 15
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext]
-      reffontheight = 13
+      reffontheight = 15
     end
     object path: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -194,10 +200,10 @@ object symbolfo: tsymbolfo
       bounds_x = 445
       bounds_y = 0
       bounds_cx = 15
-      bounds_cy = 15
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 13
+      reffontheight = 15
     end
     object line: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -207,10 +213,10 @@ object symbolfo: tsymbolfo
       bounds_x = 461
       bounds_y = 0
       bounds_cx = 11
-      bounds_cy = 15
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 13
+      reffontheight = 15
     end
   end
   object tpopupmenu1: tpopupmenu

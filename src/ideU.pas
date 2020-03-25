@@ -1,4 +1,3 @@
-
 program ideU;
 
 {$ifdef FPC}
@@ -27,7 +26,7 @@ uses // cmem,
   gettext,
   msei18nutils,
   mseconsts,
-  mseconsts_ru,  
+  mseconsts_ru,
   mseconsts_de,mseconsts_es,mseconsts_zh,mseconsts_id,mseconsts_fr,
   }
   msegui,

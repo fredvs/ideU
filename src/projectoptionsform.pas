@@ -3,7 +3,7 @@ unit projectoptionsform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 {$ifndef mse_no_ifi}
-  {$define mse_with_ifi}        
+  {$define mse_with_ifi}
      //MSEide needs mse_with_ifi, switch for compiling test only
 {$endif}
 
@@ -27,24 +27,24 @@ const
  //maxdefaultmake = $40-1;
  maxdefaultmake = $1280-1;
  defaultxtermcommand = 'xterm -S${PTSN}/${PTSH}';
- 
+
 type
  settinggroupty = (sg_editor,sg_debugger);
  settinggroupsty = set of settinggroupty;
- 
+
  findinfoty = record
   text: msestring;
   options: searchoptionsty;
   selectedonly: boolean;
   history: msestringarty;
  end;
- 
+
  replaceinfoty = record
   find: findinfoty;
   replacetext: msestring;
   prompt: boolean;
- end; 
- 
+ end;
+
  sigsetinfoty = record
   num: integer;
   numto: integer;
@@ -67,20 +67,20 @@ type
    ftargpref: msestring;
    fbefcommand: msestringarty;
    faftcommand: msestringarty;
-   
+
    // fred compiler
    fcompilerused: msestringarty;
-   
+
    // fred debugger
    fdebuggerused: msestringarty;
-   
+
    // fred exe ext
    fexeused: msestringarty;
-   
+
    // fred comment make
    fmakeoptpurpose: msestringarty;
-   
-    
+
+
    fmakeoptions: msestringarty;
    ftoolmenus: msestringarty;
    ftoolfiles: msestringarty;
@@ -113,24 +113,24 @@ type
    property libpref: msestring read flibpref write flibpref;
    property objpref: msestring read fobjpref write fobjpref;
    property targpref: msestring read ftargpref write ftargpref;
-  
+
    property befcommand: msestringarty read fbefcommand write fbefcommand;
    property aftcommand: msestringarty read faftcommand write faftcommand;
    property makeoptions: msestringarty read fmakeoptions write fmakeoptions;
-   
+
    // fred make comment
     property makeoptpurpose: msestringarty read fmakeoptpurpose write fmakeoptpurpose;
-  
-     
+
+
    // fred compiler
    property compilerused: msestringarty read fcompilerused write fcompilerused;
-   
+
    // fred debugger
    property debuggerused: msestringarty read fdebuggerused write fdebuggerused;
-   
+
    // fred exe ext
    property exeused: msestringarty read fexeused write fexeused;
-   
+
 
    property codetemplatedirs: msestringarty read fcodetemplatedirs
                                                      write fcodetemplatedirs;
@@ -138,11 +138,11 @@ type
    property toolmenus: msestringarty read ftoolmenus write ftoolmenus;
    property toolfiles: msestringarty read ftoolfiles write ftoolfiles;
    property toolparams: msestringarty read ftoolparams write ftoolparams;
-    
+
    property fontnames: msestringarty read ffontnames write ffontnames;
    property scriptbeforecopy: msestring read fscriptbeforecopy
                                                write fscriptbeforecopy;
-   property scriptaftercopy: msestring read fscriptaftercopy 
+   property scriptaftercopy: msestring read fscriptaftercopy
                                            write fscriptaftercopy;
    property newprojectfiles: filenamearty read fnewprojectfiles
                                                write fnewprojectfiles;
@@ -153,11 +153,11 @@ type
                                               write fnewfifilters;
    property newfiexts: msestringarty read fnewfiexts write fnewfiexts;
    property newfisources: filenamearty read fnewfisources write fnewfisources;
-  
+
    property newfonames: msestringarty read fnewfonames write fnewfonames;
    property newfonamebases: msestringarty read fnewfonamebases
                                                    write fnewfonamebases;
-   property newfosources: msestringarty read fnewfosources 
+   property newfosources: msestringarty read fnewfosources
                                         write fnewfosources;
    property newfoforms: msestringarty read fnewfoforms write fnewfoforms;
  end;
@@ -169,11 +169,11 @@ type
    ffilemasknames: msestringarty;
    ffilemasks: msestringarty;
   published
-   property sourcefilemasks: msestringarty read fsourcefilemasks 
+   property sourcefilemasks: msestringarty read fsourcefilemasks
                                                 write fsourcefilemasks;
-   property syntaxdeffiles: msestringarty read fsyntaxdeffiles 
+   property syntaxdeffiles: msestringarty read fsyntaxdeffiles
                                                 write fsyntaxdeffiles;
-   property filemasknames: msestringarty read ffilemasknames 
+   property filemasknames: msestringarty read ffilemasknames
                                                   write ffilemasknames;
    property filemasks: msestringarty read ffilemasks write ffilemasks;
  end;
@@ -182,7 +182,7 @@ type
   private
    ft: ttexteditoptions;
    ftexp: ttexteditoptions;
-   
+
    fshowgrid: boolean;
    fsnaptogrid: boolean;
    fmoveonfirstclick: boolean;
@@ -232,7 +232,7 @@ type
 
    property showgrid: boolean read fshowgrid write fshowgrid;
    property snaptogrid: boolean read fsnaptogrid write fsnaptogrid;
-   property moveonfirstclick: boolean read fmoveonfirstclick 
+   property moveonfirstclick: boolean read fmoveonfirstclick
                                          write fmoveonfirstclick;
    property noformdesignerdocking: boolean read fnoformdesignerdocking
                                          write fnoformdesignerdocking;
@@ -244,7 +244,7 @@ type
    property blockindent: integer read fblockindent write fblockindent;
    property linenumberson: boolean read flinenumberson write flinenumberson;
    property rightmarginon: boolean read frightmarginon write frightmarginon;
-   property rightmarginchars: integer read frightmarginchars 
+   property rightmarginchars: integer read frightmarginchars
                                                     write frightmarginchars;
    property scrollheight: integer read fscrollheight write fscrollheight;
    property tabstops: integer read ftabstops write ftabstops;
@@ -254,25 +254,25 @@ type
    property editfontname: msestring read feditfontname write feditfontname;
    property editfontheight: integer read feditfontheight write feditfontheight;
    property editfontwidth: integer read feditfontwidth write feditfontwidth;
-   property editfontextraspace: integer read feditfontextraspace 
+   property editfontextraspace: integer read feditfontextraspace
                                                       write feditfontextraspace;
    property editfontcolor: integer read feditfontcolor write feditfontcolor;
    property editbkcolor: integer read feditbkcolor write feditbkcolor;
    property statementcolor: integer read fstatementcolor write fstatementcolor;
-   property pairmarkcolor: integer read fpairmarkcolor 
+   property pairmarkcolor: integer read fpairmarkcolor
                                              write fpairmarkcolor;
-   
-   property editfontantialiased: boolean read feditfontantialiased 
+
+   property editfontantialiased: boolean read feditfontantialiased
                                               write feditfontantialiased;
-   property editmarkbrackets: boolean read feditmarkbrackets 
+   property editmarkbrackets: boolean read feditmarkbrackets
                                               write feditmarkbrackets;
-   property editmarkpairwords: boolean read feditmarkpairwords 
+   property editmarkpairwords: boolean read feditmarkpairwords
                                               write feditmarkpairwords;
-                                              
+
    property fpgdesigner: boolean read ffpgdesignerenabled
                                               write ffpgdesignerenabled;
-                                            
-   property backupfilecount: integer read fbackupfilecount 
+
+   property backupfilecount: integer read fbackupfilecount
                                               write fbackupfilecount;
    property encoding: integer read fencoding write fencoding;
 
@@ -318,9 +318,9 @@ type
    property debugtarget: filenamety read fdebugtarget write fdebugtarget;
    property runcommand: filenamety read fruncommand write fruncommand;
    property xtermcommand: msestring read fxtermcommand write fxtermcommand;
-   property remoteconnection: msestring read fremoteconnection 
+   property remoteconnection: msestring read fremoteconnection
                                         write fremoteconnection;
-   property uploadcommand: filenamety read fuploadcommand 
+   property uploadcommand: filenamety read fuploadcommand
                                             write fuploadcommand;
    property gdbprocessor: msestring read fgdbprocessor write fgdbprocessor;
    property gdbservercommand: filenamety read fgdbservercommand
@@ -336,14 +336,14 @@ type
    property sourcedirs: msestringarty read fsourcedirs write fsourcedirs;
    property defines: msestringarty read fdefines write fdefines;
 
-   property progparameters: msestring read fprogparameters 
+   property progparameters: msestring read fprogparameters
                                    write fprogparameters;
-   property progworkingdirectory: filenamety read fprogworkingdirectory 
+   property progworkingdirectory: filenamety read fprogworkingdirectory
                                                write fprogworkingdirectory;
    property envvarnames: msestringarty read fenvvarnames write fenvvarnames;
    property envvarvalues: msestringarty read fenvvarvalues write fenvvarvalues;
  end;
- 
+
  tdebugoptions = class(toptions)
   private
    ft: ttextdebugoptions;
@@ -389,46 +389,46 @@ type
    property settty: boolean read fsettty write fsettty;
    property gdbdownload: boolean read fgdbdownload write fgdbdownload;
    property downloadalways: boolean read fdownloadalways write fdownloadalways;
-   property restartgdbbeforeload: boolean read frestartgdbbeforeload 
+   property restartgdbbeforeload: boolean read frestartgdbbeforeload
                                                 write frestartgdbbeforeload;
    property startupbkpt: integer read fstartupbkpt write fstartupbkpt;
    property startupbkpton: boolean read fstartupbkpton write fstartupbkpton;
    property gdbsimulator: boolean read fgdbsimulator write fgdbsimulator;
-   property gdbserverstartonce: boolean read fgdbserverstartonce 
+   property gdbserverstartonce: boolean read fgdbserverstartonce
                             write fgdbserverstartonce;
    property gdbloadtimeout: real read fgdbloadtimeout write fgdbloadtimeout;
    property gdbserverwait: real read fgdbserverwait write fgdbserverwait;
-   property nogdbserverexit: boolean read fnogdbserverexit 
+   property nogdbserverexit: boolean read fnogdbserverexit
                                                    write fnogdbserverexit;
-   property gdbservertty: boolean read fgdbservertty 
+   property gdbservertty: boolean read fgdbservertty
                                                    write fgdbservertty;
-   property exceptclassnames: msestringarty read fexceptclassnames 
+   property exceptclassnames: msestringarty read fexceptclassnames
                                                  write fexceptclassnames;
-   property exceptignore: booleanarty read fexceptignore 
+   property exceptignore: booleanarty read fexceptignore
                                                  write fexceptignore;
-   property nodebugbeginend: boolean read fnodebugbeginend 
+   property nodebugbeginend: boolean read fnodebugbeginend
                                           write fnodebugbeginend;
-   property fpcgdbworkaround: boolean read ffpcgdbworkaround 
+   property fpcgdbworkaround: boolean read ffpcgdbworkaround
                                                    write ffpcgdbworkaround;
  end;
-   
+
  tprojectoptions = class(toptions)
   private
    ft: ttextprojectoptions;
    ftexp: ttextprojectoptions;
-   
+
    fstripmessageesc: boolean;
    fcopymessages: boolean;
    fcheckmethods: boolean;
    fclosemessages: boolean;
    fenablepurpose: boolean;
    fenablesource: boolean;
-   
+
    fusercolors: colorarty;
    fusercolorcomment: msestringarty;
    fformatmacronames: msestringarty;
    fformatmacrovalues: msestringarty;
-   
+
    fsettingsfile: filenamety;
    fsettingseditor: boolean;
    fsettingsdebugger: boolean;
@@ -441,16 +441,16 @@ type
    fmodulefiles: filenamearty;
    // fred compiler
    fcompilerusedon: integerarty;
-   
+
    // fred debugger
    fdebuggerusedon: integerarty;
-   
+
    // fred debuggerexe ext
    fexeusedon: integerarty;
-   
+
    // fred make comment
  //  fmakecommenton: integerarty;
- 
+
     // fred comment options
    fcomment_M: msestring;
    fcomment_B: msestring;
@@ -464,7 +464,7 @@ type
    fcomment_8: msestring;
    fcomment_9: msestring;
    fcomment_0: msestring;
-   
+
      // fred infos project
    fproject_name: msestring;
    fproject_creator: msestring;
@@ -473,7 +473,7 @@ type
    fproject_time: msestring;
    fproject_date: msestring;
    fproject_comment: msestring;
- 
+
    fbefcommandon: integerarty;
    fmakeoptionson: integerarty;
    faftcommandon: integerarty;
@@ -483,7 +483,7 @@ type
    fmacrovalues: msestringarty;
    fmacrogroup: integer;
    fgroupcomments: msestringarty;
- 
+
    ftoolsave: longboolarty;
    ftoolhide: longboolarty;
    ftoolparse: longboolarty;
@@ -514,7 +514,7 @@ type
    property t: ttextprojectoptions read ft;
 
    property forcezorder: longbool read fforcezorder write setforcezorder;
-   property stripmessageesc: boolean read fstripmessageesc 
+   property stripmessageesc: boolean read fstripmessageesc
                                              write fstripmessageesc;
    property copymessages: boolean read fcopymessages write fcopymessages;
    property closemessages: boolean read fclosemessages write fclosemessages;
@@ -527,44 +527,44 @@ type
    property colornote: colorty read fcolornote write fcolornote;
 
    property usercolors: colorarty read fusercolors write fusercolors;
-   property usercolorcomment: msestringarty read fusercolorcomment 
+   property usercolorcomment: msestringarty read fusercolorcomment
                                                  write fusercolorcomment;
-   property formatmacronames: msestringarty read fformatmacronames 
+   property formatmacronames: msestringarty read fformatmacronames
                                                        write fformatmacronames;
    property formatmacrovalues: msestringarty read fformatmacrovalues
                                                    write fformatmacrovalues;
    property settingsfile: filenamety read fsettingsfile write fsettingsfile;
    property settingseditor: boolean read fsettingseditor write fsettingseditor;
-   property settingsdebugger: boolean read fsettingsdebugger 
+   property settingsdebugger: boolean read fsettingsdebugger
                                                write fsettingsdebugger;
-   property settingsstorage: boolean read fsettingsstorage 
+   property settingsstorage: boolean read fsettingsstorage
                                                write fsettingsstorage;
-   property settingsprojecttree: boolean read fsettingsprojecttree 
+   property settingsprojecttree: boolean read fsettingsprojecttree
                                                write fsettingsprojecttree;
    property settingsautoload: boolean read fsettingsautoload
                                           write fsettingsautoload;
    property settingsautosave: boolean read fsettingsautosave
                                           write fsettingsautosave;
-  
+
    property modulenames: msestringarty read fmodulenames write fmodulenames;
    property moduletypes: msestringarty read fmoduletypes write fmoduletypes;
    property modulefiles: filenamearty read fmodulefiles write fmodulefiles;
 
    property befcommandon: integerarty read fbefcommandon write fbefcommandon;
    property makeoptionson: integerarty read fmakeoptionson write fmakeoptionson;
-   
+
     // fred comment make
  //  property makecommenton: integerarty read fmakecommenton write fmakecommenton;
-   
+
    // fred compiler
    property compilerusedon: integerarty read fcompilerusedon  write fcompilerusedon;
-   
+
    // fred debugger
    property debuggerusedon: integerarty read fdebuggerusedon  write fdebuggerusedon;
-   
+
    // fred exe ext
    property exeusedon: integerarty read fexeusedon  write fexeusedon;
-   
+
     // fred comment options
    property comment_M : msestring read fcomment_M write fcomment_M;
    property comment_B : msestring read fcomment_B write fcomment_B;
@@ -578,7 +578,7 @@ type
    property comment_8 : msestring read fcomment_8 write fcomment_8;
    property comment_9 : msestring read fcomment_9 write fcomment_9;
    property comment_0 : msestring read fcomment_0 write fcomment_0;
-   
+
     // fred info project
    property project_name : msestring read fproject_name write fproject_name;
    property project_creator : msestring read fproject_creator write fproject_creator;
@@ -587,7 +587,7 @@ type
    property project_time : msestring read fproject_time write fproject_time;
    property project_date : msestring read fproject_date write fproject_date;
    property project_comment : msestring read fproject_comment write fproject_comment;
-  
+
    property aftcommandon: integerarty read faftcommandon write faftcommandon;
    property unitdirson: integerarty read funitdirson write funitdirson;
 
@@ -604,7 +604,7 @@ type
    property toolshortcuts: integerarty read ftoolshortcuts write ftoolshortcuts;
 
    property fontalias: msestringarty read ffontalias write ffontalias;
-   property fontancestors: msestringarty read ffontancestors 
+   property fontancestors: msestringarty read ffontancestors
                                          write ffontancestors;
    property fontheights: integerarty read ffontheights write ffontheights;
    property fontwidths: integerarty read ffontwidths write ffontwidths;
@@ -613,14 +613,14 @@ type
 
    property expandprojectfilemacros: longboolarty read fexpandprojectfilemacros
                                                write fexpandprojectfilemacros;
-   property loadprojectfile: longboolarty read floadprojectfile 
+   property loadprojectfile: longboolarty read floadprojectfile
                                                  write floadprojectfile;
    property newinheritedforms: longboolarty read fnewinheritedforms
                                               write fnewinheritedforms;
-   property uid: integer read fuid write fuid;   
+   property uid: integer read fuid write fuid;
  end;
 {$M-}
- 
+
  projectoptionsty = record
   disabled: settinggroupsty;
   o: tprojectoptions;
@@ -715,8 +715,8 @@ type
    makeoptions: tmemodialogedit;
    /// fred
    makeoptpurpose: tmemodialogedit;
-   
-   
+
+
    ttabpage11: ttabpage;
    unitdirgrid: twidgetgrid;
    dmakeon: tbooleanedit;
@@ -861,7 +861,7 @@ type
    befmake9on: tbooleanedit;
    befmake0on: tbooleanedit;
    befcommand: tmemodialogedit;
-   
+
    // fred compiler
    ttabpage66: ttabpage;
    compilerusedgrid: twidgetgrid;
@@ -878,8 +878,8 @@ type
    compmake9on: tbooleanedit;
    compmake0on: tbooleanedit;
    compcommand: tmemodialogedit;
-   
-    
+
+
    // fred debugger
    ttabpage77: ttabpage;
    debuggerusedgrid: twidgetgrid;
@@ -896,7 +896,7 @@ type
    debmake9on: tbooleanedit;
    debmake0on: tbooleanedit;
    debcommand: tmemodialogedit;
-   
+
     // fred exe extension
    ttabpage88: ttabpage;
    exeextgrid: twidgetgrid;
@@ -913,7 +913,7 @@ type
    exemake9on: tbooleanedit;
    exemake0on: tbooleanedit;
    exeused: tmemodialogedit;
-   
+
    aftcommandgrid: twidgetgrid;
    aftmakeon: tbooleanedit;
    aftbuildon: tbooleanedit;
@@ -998,7 +998,7 @@ type
    showgrid: tbooleanedit;
    tgroupbox2: tgroupbox;
    fpgdesignerenabled: tbooleanedit;
-  
+
    ttabpage22: ttabpage;
    comment_M: tmemodialogedit;
    comment_B: tmemodialogedit;
@@ -1012,9 +1012,9 @@ type
    comment_8: tmemodialogedit;
    comment_0: tmemodialogedit;
    comment_9: tmemodialogedit;
-   
+
    ///////////////
-     
+
    ttabpage23: ttabpage;
    project_comment: tmemoedit;
    project_creator: tstringedit;
@@ -1024,19 +1024,19 @@ type
    project_date: tstringedit;
    eolstyle: tenumtypeedit;
    trimtrailingwhitespace: tbooleanedit;
-   
+
    showconsole: tbooleanedit;
    enablepurpose: tbooleanedit;
    messageoutputfile: tfilenameedit;
    enablesource: tbooleanedit;
    procedure acttiveselectondataentered(const sender: TObject);
-   procedure colonshowhint(const sender: tdatacol; const arow: Integer; 
+   procedure colonshowhint(const sender: tdatacol; const arow: Integer;
                       var info: hintinfoty);
    procedure hintexpandedmacros(const sender: TObject; var info: hintinfoty);
-   procedure selectactiveonrowsmoved(const sender: tcustomgrid; 
+   procedure selectactiveonrowsmoved(const sender: tcustomgrid;
                 const fromindex: Integer; const toindex: Integer;
                 const acount: Integer);
-   procedure expandfilename(const sender: TObject; var avalue: mseString; 
+   procedure expandfilename(const sender: TObject; var avalue: mseString;
                 var accept: Boolean);
    procedure showcommandlineonexecute(const sender: TObject);
    procedure signameonsetvalue(const sender: TObject; var avalue: integer;
@@ -1077,14 +1077,14 @@ type
                    const acell: gridcoordty);
    procedure bracketbkcolhint(const sender: TObject; var info: hintinfoty);
    procedure initeolstyleexe(const sender: tenumtypeedit);
- 
+
    procedure onshowpurpose(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
-                   
+
     procedure onsource(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
-                   
-                                   
+
+
    procedure oncreatedexe(const sender: TObject);
   private
    procedure activegroupchanged;
@@ -1178,8 +1178,8 @@ type
 const
  firstsiginfocomment = c_sighup;
  lastsiginfocomment = c_sigpwr;
- 
-type 
+
+type
  signalinfoty = record
   num: integer;
   flags: sigflagsty;
@@ -1202,7 +1202,7 @@ const
  codetemplateselectstatname ='templselect.sta';
  codetemplateparamstatname = 'templparam.sta';
  codetemplateeditstatname =  'templedit.sta';
- 
+
  siginfocount = 30;
 var
  siginfos: array[0..siginfocount-1] of signalinfoty = (
@@ -1279,6 +1279,7 @@ function getprojectmacros: macroinfoarty;
 var
  int1,int2: integer;
 begin
+ result := nil;
  setlength(result,6);
  with projectoptions,o do begin
   with result[0] do begin
@@ -1350,37 +1351,37 @@ begin
 int1 := 1;
 
  with projectoptions,o,texp do begin
- 
+
 for int2:= 0 to high(compilerused) do begin
    if (mainfo.thetag and compilerusedon[int2] <> 0)  then
     begin
- if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else   
+ if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else
  if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
  if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
  if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
- if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;  
+ if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;
    end;
    end;
    end;
-   
+
   if (int1 = 2) then str4 := '.java' else
   if (int1 = 4) then str4 := '.pyw' else
   begin
 
- with projectoptions,o,texp do begin 
+ with projectoptions,o,texp do begin
 for int3:= 0 to high(exeused) do begin
    if (mainfo.thetag and exeusedon[int3] <> 0) then begin
- 
-  if (pos('Default',exeused[int3]) > 0) or            
+
+  if (pos('Default',exeused[int3]) > 0) or
    (trim(exeused[int3]) = '${EXEEXT}') then
     begin
     str4 := '${EXEEXT}';
     expandprmacros1(str4) end else
-        
+
    if (trim(exeused[int3]) = 'No Extension') or
     (trim(exeused[int3]) = '')  then
-    str4:= '' else str4:= trim(exeused[int3]) ; 
-  end;  
+    str4:= '' else str4:= trim(exeused[int3]) ;
+  end;
 end;
 end;
 end;
@@ -1447,7 +1448,7 @@ var
  ar1: macroinfoarty;
  int1,int2: integer;
  mask: integer;
- 
+
 begin
  with projectoptions.o do begin
   result:= tmacrolist.create([mao_caseinsensitive]);
@@ -1493,7 +1494,7 @@ end;
 
 var
  initfontaliascount: integer;
- 
+
 procedure expandprojectmacros;
 var
  li: tmacrolist;
@@ -1627,7 +1628,7 @@ begin
        int2:= insert(bigint,[toolmenus[int1]],
                   [[mao_asyncexecute,mao_shortcutcaption]],
                                [],[{$ifdef FPC}@{$endif}mainfo.runtool]);
-       if (int1 <= high(toolshortcuts)) and 
+       if (int1 <= high(toolshortcuts)) and
            actionsmo.gettoolshortcutaction(toolshortcuts[int1],act1) then begin
         with items[int2] do begin
          shortcuts:= act1.shortcuts;
@@ -1666,7 +1667,7 @@ begin
    end;
    formatmacros.add(o.formatmacronames[int1],o.formatmacrovalues[int1],[]);
   end;
-  
+
   codetemplates.scan(o.texp.codetemplatedirs);
  end;
  li.free;
@@ -1677,6 +1678,7 @@ function defaultsigsettings: sigsetinfoarty;
 var
  int1,int2: integer;
 begin
+ result := nil;
  setlength(result,siginfocount);
  int2:= 0;
  for int1:= 0 to siginfocount - 1 do begin
@@ -1693,7 +1695,7 @@ begin
 end;
 
 procedure initpr(const expand: boolean);
-const 
+const
  alloptionson = 1+2+4+8+16+32+64+128+256+512+1024+2048;
  unitson = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
  compileron = 1+2+4+8+16+32+64+128+256+512+1024+2048+$10000;
@@ -1746,7 +1748,7 @@ begin
   end;
   sigsettings:= defaultsigsettings;
   ignoreexceptionclasses:= nil;
-  
+
   // fred compiler
     with projectoptions,o,t do begin
   additem(fcompilerused,'${COMPILER} (Default)');
@@ -1780,8 +1782,8 @@ begin
   additem(fcompilerused,'Other 4');
   setlength(fcompilerusedon,length(fcompilerused));
  end;
-  fcompilerusedon[0]:= compileron; 
-     
+  fcompilerusedon[0]:= compileron;
+
  // fred debugger
     with projectoptions,o,t do begin
   additem(fdebuggerused,'${DEBUGGER} (Default)');
@@ -1790,12 +1792,12 @@ begin
   additem(fdebuggerused,'Debugger 3');
   additem(fdebuggerused,'Debugger 4');
   additem(fdebuggerused,'None');
-  
+
   setlength(fdebuggerusedon,length(fdebuggerused));
  end;
-  fdebuggerusedon[0]:= debuggeron; 
-  
-   
+  fdebuggerusedon[0]:= debuggeron;
+
+
    // fred exe ext
   //{
     with projectoptions,o,t do begin
@@ -1816,7 +1818,7 @@ begin
   additem(fexeused,'.inf');
   setlength(fexeusedon,length(fexeused));
  end;
-  fexeusedon[0]:= exeon; 
+  fexeusedon[0]:= exeon;
 //}
 
   additem(fmakeoptions,'-l -Mobjfpc -Sh -Fcutf8');
@@ -1828,7 +1830,7 @@ begin
   for int1:= 0 to high(fmakeoptionson) do begin
    fmakeoptionson[int1]:= alloptionson;
   end;
-  fmakeoptionson[2]:= alloptionson and not bits[5]; 
+  fmakeoptionson[2]:= alloptionson and not bits[5];
                      //all but make 4
   fmakeoptionson[3]:= bits[1] or bits[5]; //build + make 4
   fmakeoptionson[4]:= bits[5]; //make 4
@@ -1858,7 +1860,7 @@ begin
   setlength(fnewfifilters,3);
   setlength(fnewfiexts,3);
   setlength(fnewfisources,3);
-  
+
   newfinames[0]:= actionsmo.c[ord(ac_program)];
   newfifilters[0]:= '"*.pas" "*.pp"';
   newfiexts[0]:= 'pas';
@@ -1873,7 +1875,7 @@ begin
   newfifilters[2]:= '';
   newfiexts[2]:= '';
   newfisources[2]:= '';
-  
+
   setlength(fnewfonames,11);
   setlength(fnewfonamebases,11);
   setlength(fnewinheritedforms,11);
@@ -1885,25 +1887,25 @@ begin
   newinheritedforms[0]:= false;
   newfosources[0]:= '${TEMPLATEDIR}fpc_mse/default/mainform.pas';
   newfoforms[0]:= '${TEMPLATEDIR}fpc_mse/default/mainform.mfm';
- 
+
   newfonames[1]:= actionsmo.c[ord(ac_simpleform)];
   newfonamebases[1]:= 'form';
   newinheritedforms[1]:= false;
   newfosources[1]:= '${TEMPLATEDIR}fpc_mse/default/simpleform.pas';
   newfoforms[1]:= '${TEMPLATEDIR}fpc_mse/default/simpleform.mfm';
- 
+
   newfonames[2]:= actionsmo.c[ord(ac_dockingform)];
   newfonamebases[2]:= 'form';
   newinheritedforms[2]:= false;
   newfosources[2]:= '${TEMPLATEDIR}fpc_mse/default/dockingform.pas';
   newfoforms[2]:= '${TEMPLATEDIR}fpc_mse/default/dockingform.mfm';
- 
+
   newfonames[3]:= actionsmo.c[ord(ac_datamodule)];
   newfonamebases[3]:= 'module';
   newinheritedforms[3]:= false;
   newfosources[3]:= '${TEMPLATEDIR}fpc_mse/default/datamodule.pas';
   newfoforms[3]:= '${TEMPLATEDIR}fpc_mse/default/datamodule.mfm';
- 
+
   newfonames[4]:= actionsmo.c[ord(ac_subform)];
   newfonamebases[4]:= 'form';
   newinheritedforms[4]:= false;
@@ -1921,7 +1923,7 @@ begin
   newinheritedforms[6]:= false;
   newfosources[6]:= '${TEMPLATEDIR}fpc_mse/default/tabform.pas';
   newfoforms[6]:= '${TEMPLATEDIR}fpc_mse/default/tabform.mfm';
- 
+
   newfonames[7]:= actionsmo.c[ord(ac_dockpanel)];
   newfonamebases[7]:= 'form';
   newinheritedforms[7]:= false;
@@ -1933,7 +1935,7 @@ begin
   newinheritedforms[8]:= false;
   newfosources[8]:= '${TEMPLATEDIR}fpc_mse/default/report.pas';
   newfoforms[8]:= '${TEMPLATEDIR}fpc_mse/default/report.mfm';
- 
+
   newfonames[9]:= actionsmo.c[ord(ac_scriptform)];
   newfonamebases[9]:= 'script';
   newinheritedforms[9]:= false;
@@ -1945,7 +1947,7 @@ begin
   newinheritedforms[10]:= true;
   newfosources[10]:= '${TEMPLATEDIR}fpc_mse/default/inheritedform.pas';
   newfoforms[10]:= '${TEMPLATEDIR}fpc_mse/default/inheritedform.mfm';
- 
+
  end;
  with projectoptions,e,t do begin
 
@@ -1976,7 +1978,7 @@ begin
   additem(fsourcedirs,'${MSELIBDIR}kernel/$TARGETOSDIR/');
   sourcedirs:= reversearray(sourcedirs);
  end;
- if expand then begin 
+ if expand then begin
   expandprojectmacros;
  end;
 end;
@@ -2030,7 +2032,7 @@ var
  int1: integer;
 begin
  with statfiler,projectoptions,o,t do begin
-  
+
   if iswriter then begin
    mainfo.statoptions.writestat(tstatwriter(statfiler));
    with tstatwriter(statfiler) do begin
@@ -2047,9 +2049,9 @@ begin
    end;
   end;
  updatevalue('defaultmake',defaultmake,1,maxdefaultmake+1);
-  
+
   // updatevalue('defaultmake',defaultmake,1,maxdefaultmake+6);
- 
+
   if not iswriter then begin
    int1:= length(newfinames);
    if int1 > length(newfifilters) then begin
@@ -2066,7 +2068,7 @@ begin
    setlength(fnewfiexts,int1);
    setlength(fnewfisources,int1);
   end;
-    
+
   if not iswriter then begin
    int1:= length(newfonames);
    if int1 > length(newfonamebases) then begin
@@ -2114,7 +2116,7 @@ begin
     setlength(modulefiles1,int2);
 //    setlength(moduledock1,int2);
 
-  
+
     for int1:= 0 to high(modulenames1) do begin
      with pmoduleinfoty(submenu[int1+int3].tagpo)^ do begin
       modulenames1[int1]:= msestring(struppercase(instance.name));
@@ -2164,7 +2166,7 @@ begin
   updateprojectsettings(statfiler);
   breakpointsfo.updatestat(statfiler);
   panelform.updatestat(statfiler); //uses section breakpoints!
-  
+
   projecttree.updatestat(statfiler);
   componentstorefo.updatestat(statfiler);
 
@@ -2215,9 +2217,9 @@ var
  int1,int2: integer;
 begin
  with projectoptions do begin
- 
+
 //  fo.fpgdesignerenabled.value := e.fpgdesigner;
-  
+
   int1:= length(o.toolshortcuts);
   setlength(o.ftoolshortcuts,length(o.t.toolmenus));
   for int2:= int1 to high(o.toolshortcuts) do begin
@@ -2231,7 +2233,7 @@ begin
  fo.colgrid.fixcols[-1].captions.count:= usercolorcount;
  with fo,projectoptions do begin
   for int1:= 0 to colgrid.rowhigh do begin
-   colgrid.fixcols[-1].captions[int1]:= 
+   colgrid.fixcols[-1].captions[int1]:=
                    msestring(colortostring(cl_user+longword(int1)));
   end;
  end;
@@ -2268,11 +2270,11 @@ begin
   end;
   fo.fontondataentered(nil);
   fo.defaultmake.value:= lowestbit(defaultmake);
-  
+
   // fred compiler
 
  fo.compcommand.gridvalues:= o.t.compilerused;
-  
+
    with projectoptions,o,t do begin
   for int1:= 0 to fo.compilerusedgrid.rowhigh do begin
    if int1 > high(o.compilerusedon) then begin
@@ -2292,11 +2294,11 @@ begin
    fo.compmake0on.gridupdatetagvalue(int1,o.compilerusedon[int1]);
   end;
  end;
- 
+
  // fred debugger
 
  fo.debcommand.gridvalues:= o.t.debuggerused;
-  
+
    with projectoptions,o,t do begin
   for int1:= 0 to fo.debuggerusedgrid.rowhigh do begin
    if int1 > high(o.debuggerusedon) then begin
@@ -2316,7 +2318,7 @@ begin
    fo.debmake0on.gridupdatetagvalue(int1,o.debuggerusedon[int1]);
   end;
  end;
- 
+
   /// fred options comment
 fo.comment_M.value := o.comment_M;
 fo.comment_B.value := o.comment_B;
@@ -2343,21 +2345,21 @@ fo.project_date.value := UTF8Decode(timetostr(now) + ' ' + datetostr(now));
 
 fo.project_comment.value := o.project_comment;
 
- 
+
  /// fred exe ext
- 
+
    with projectoptions,o,t do begin
    setlength(fexeusedon,length(fexeused));
  end;
-  
+
   fo.exeused.gridvalues:= o.t.exeused;
-   
+
    with projectoptions,o,t do begin
   for int1:= 0 to fo.exeextgrid.rowhigh do begin
    if int1 > high(o.exeusedon) then begin
     break;
    end;
- 
+
    fo.exemakeon.gridupdatetagvalue(int1,o.exeusedon[int1]);
    fo.exebuildon.gridupdatetagvalue(int1,o.exeusedon[int1]);
    fo.exemake1on.gridupdatetagvalue(int1,o.exeusedon[int1]);
@@ -2370,10 +2372,10 @@ fo.project_comment.value := o.project_comment;
    fo.exemake8on.gridupdatetagvalue(int1,o.exeusedon[int1]);
    fo.exemake9on.gridupdatetagvalue(int1,o.exeusedon[int1]);
    fo.exemake0on.gridupdatetagvalue(int1,o.exeusedon[int1]);
- 
+
   end;
  end;
-     
+
   for int1:= 0 to fo.makeoptionsgrid.rowhigh do begin
    if int1 > high(o.makeoptionson) then begin
     break;
@@ -2428,7 +2430,7 @@ fo.project_comment.value := o.project_comment;
    fo.aftmake9on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
     fo.aftmake0on.gridupdatetagvalue(int1,o.aftcommandon[int1]);
   end;
-  
+
   fo.unitdirs.gridvalues:= reversearray(o.t.unitdirs);
   int2:= high(o.t.unitdirs);
   for int1:= 0 to int2 do begin
@@ -2453,12 +2455,12 @@ fo.project_comment.value := o.project_comment;
    fo.dobjon.gridupdatetagvalue(int2,o.unitdirson[int1]);
    dec(int2);
   end;
-  
+
  // for int1:= 0 to fo.unitdirgrid.rowhigh do begin
  //  fo.duniton.color:= cl_ltblue
 //   fo.unitdirgrid.datacols[int1].color:= cl_ltyellow;
 //   end;
-  
+
   fo.activemacroselect[o.macrogroup]:= true;
   fo.activegroupchanged;
   setlength(o.fgroupcomments,10); // ici !
@@ -2488,14 +2490,14 @@ fo.project_comment.value := o.project_comment;
   fo.filefiltergrid[0].datalist.asarray:= e.t.filemasknames;
   fo.filefiltergrid[1].datalist.asarray:= e.t.filemasks;
   fo.settingsdataent(nil);
-  
+
  end;
    if fo.enablepurpose.value = true then fo.makeoptionsgrid.datacols[0].visible  := true else
- 
+
   fo.makeoptionsgrid.datacols[0].visible  := false ;
-  
+
  //   if fo.enablesource.value = true then  actionsmo.projectsourceexe(nil);
-  
+
 end;
 
 procedure storemacros(fo: tprojectoptionsfo);
@@ -2537,11 +2539,11 @@ begin
                                 fo.sighandle[int1]);
    end;
   end;
-  
+
   for int1:= high(o.fontxscales) downto 0 do begin
    if o.fontxscales[int1] = emptyreal then begin
     o.fontxscales[int1]:= 1.0;
-   end;   
+   end;
   end;
 
   defaultmake:= 1 shl fo.defaultmake.value;
@@ -2550,55 +2552,55 @@ begin
    o.fmakeoptionson[int1]:=
       fo.extraon.gridvaluetag(int1,0) or fo.makeon.gridvaluetag(int1,0) or fo.buildon.gridvaluetag(int1,0) or
       fo.make1on.gridvaluetag(int1,0) or fo.make2on.gridvaluetag(int1,0) or
-      fo.make3on.gridvaluetag(int1,0) or fo.make4on.gridvaluetag(int1,0) or 
+      fo.make3on.gridvaluetag(int1,0) or fo.make4on.gridvaluetag(int1,0) or
       fo.make5on.gridvaluetag(int1,0) or fo.make6on.gridvaluetag(int1,0) or
     fo.make7on.gridvaluetag(int1,0) or fo.make8on.gridvaluetag(int1,0) or
      fo.make9on.gridvaluetag(int1,0) or fo.make0on.gridvaluetag(int1,0)
        ;
   end;
-  
+
   /// fred compiler
   // setlength(o.fmakeoptionson,fo.makeoptionsgrid.rowcount);
   for int1:= 0 to high(o.fcompilerusedon) do begin
    o.fcompilerusedon[int1]:=
       fo.compmakeon.gridvaluetag(int1,0) or fo.compbuildon.gridvaluetag(int1,0) or
       fo.compmake1on.gridvaluetag(int1,0) or fo.compmake2on.gridvaluetag(int1,0) or
-      fo.compmake3on.gridvaluetag(int1,0) or fo.compmake4on.gridvaluetag(int1,0) or 
+      fo.compmake3on.gridvaluetag(int1,0) or fo.compmake4on.gridvaluetag(int1,0) or
       fo.compmake5on.gridvaluetag(int1,0) or fo.compmake6on.gridvaluetag(int1,0) or
     fo.compmake7on.gridvaluetag(int1,0) or fo.compmake8on.gridvaluetag(int1,0) or
      fo.compmake9on.gridvaluetag(int1,0) or fo.compmake0on.gridvaluetag(int1,0)
        ;
   end;
  ///
- 
+
  // fred debugger
 
   for int1:= 0 to high(o.fdebuggerusedon) do begin
    o.fdebuggerusedon[int1]:=
       fo.debmakeon.gridvaluetag(int1,0) or fo.debbuildon.gridvaluetag(int1,0) or
       fo.debmake1on.gridvaluetag(int1,0) or fo.debmake2on.gridvaluetag(int1,0) or
-      fo.debmake3on.gridvaluetag(int1,0) or fo.debmake4on.gridvaluetag(int1,0) or 
+      fo.debmake3on.gridvaluetag(int1,0) or fo.debmake4on.gridvaluetag(int1,0) or
       fo.debmake5on.gridvaluetag(int1,0) or fo.debmake6on.gridvaluetag(int1,0) or
     fo.debmake7on.gridvaluetag(int1,0) or fo.debmake8on.gridvaluetag(int1,0) or
      fo.debmake9on.gridvaluetag(int1,0) or fo.debmake0on.gridvaluetag(int1,0)
        ;
   end;
- 
+
 
  // fred exe ext
-   
+
   setlength(o.fexeusedon,fo.exeextgrid.rowcount);
   for int1:= 0 to high(o.fexeusedon) do begin
    o.exeusedon[int1]:=
       fo.exemakeon.gridvaluetag(int1,0) or fo.exebuildon.gridvaluetag(int1,0) or
       fo.exemake1on.gridvaluetag(int1,0) or fo.exemake2on.gridvaluetag(int1,0) or
-      fo.exemake3on.gridvaluetag(int1,0) or fo.exemake4on.gridvaluetag(int1,0) or 
+      fo.exemake3on.gridvaluetag(int1,0) or fo.exemake4on.gridvaluetag(int1,0) or
       fo.exemake5on.gridvaluetag(int1,0) or fo.exemake6on.gridvaluetag(int1,0) or
     fo.exemake7on.gridvaluetag(int1,0) or fo.exemake8on.gridvaluetag(int1,0) or
     fo.exemake9on.gridvaluetag(int1,0) or fo.exemake0on.gridvaluetag(int1,0)
        ;
   end;
- 
+
  /// fred options comment
  o.comment_M := fo.comment_M.value ;
  o.comment_B := fo.comment_B.value ;
@@ -2612,7 +2614,7 @@ begin
  o.comment_8 := fo.comment_8.value ;
  o.comment_9 := fo.comment_9.value ;
  o.comment_0 := fo.comment_0.value ;
-  
+
    /// fred info project
  o.project_name := fo.project_name.value;
  o.project_creator := fo.project_creator.value;
@@ -2633,7 +2635,7 @@ begin
       fo.befmake9on.gridvaluetag(int1,0) or fo.befmake0on.gridvaluetag(int1,0)
       ;
   end;
- 
+
   setlength(o.faftcommandon,fo.aftcommandgrid.rowcount);
   for int1:= 0 to high(o.faftcommandon) do begin
    o.faftcommandon[int1]:=
@@ -2669,8 +2671,8 @@ begin
   e.t.filemasks:= fo.filefiltergrid[1].datalist.asarray;
  end;
  expandprojectmacros;
- 
- 
+
+
 end;
 
 procedure projectoptionschanged;
@@ -2788,7 +2790,7 @@ begin
  projectoptions.o.macrogroup:= selectactivegroupgrid.row;
 end;
 
-procedure tprojectoptionsfo.colonshowhint(const sender: tdatacol; 
+procedure tprojectoptionsfo.colonshowhint(const sender: tdatacol;
                 const arow: Integer; var info: hintinfoty);
 begin
  storemacros(self);
@@ -2815,7 +2817,7 @@ var
  ar1: array of longboolarty;
  int1: integer;
 begin
- 
+
  setlength(ar1,selectactivegroupgrid.rowcount);
  with macrogrid do begin
   beginupdate;
@@ -2896,7 +2898,7 @@ begin
   updatefontstyle1(format1,2*length(teststring),2*length(teststring),fs_italic,true);
   updatefontstyle1(format1,3*length(teststring),length(teststring),fs_bold,true);
   fontdisp.richformats[0]:= format1;
-  fontdisp[1]:= 
+  fontdisp[1]:=
     'Ascent: '+inttostrmse(ascent)+' Descent: '+inttostrmse(descent)+
     ' Linespacing: '+inttostrmse(lineheight);
  end;
@@ -2921,7 +2923,7 @@ begin
  with copymessages do begin
   pos:= makepoint(stripmessageesc.bounds_x,int1);
  end;
- 
+
  placexorder(defaultmake.bounds_x,[10-defaultmake.frame.outerframe.right,10],
              [defaultmake,showcommandline,checkmethods]);
  int1:= aligny(wam_center,[defaultmake,showcommandline]);
@@ -3059,7 +3061,7 @@ begin
  {
  if copymessages.value then
   messageoutputfile.frame.captiontextflags := [tf_bottom]
- else 
+ else
   messageoutputfile.frame.captiontextflags := [tf_bottom,tf_grayed];
   }
 end;
@@ -3107,15 +3109,15 @@ begin
  with buffer do begin
   projectfilename:= projectoptions.projectfilename;
   projectdir:= projectoptions.projectdir;
-   
+
    if fo <> nil then begin
    settingsfile:= fo.settingsfile.value;
    settingseditor:= fo.settingseditor.value;
    settingsdebugger:= fo.settingsdebugger.value;
    settingsstorage:= fo.settingsstorage.value;
    settingsprojecttree:= fo.settingsprojecttree.value;
-   settingsautoload:= fo.settingsautoload.value; 
-   settingsautosave:= fo.settingsautosave.value; 
+   settingsautoload:= fo.settingsautoload.value;
+   settingsautosave:= fo.settingsautosave.value;
   end
   else begin
    settingsfile:= projectoptions.o.settingsfile;
@@ -3123,8 +3125,8 @@ begin
    settingsdebugger:= projectoptions.o.settingsdebugger;
    settingsstorage:= projectoptions.o.settingsstorage;
    settingsprojecttree:= projectoptions.o.settingsprojecttree;
-   settingsautoload:= projectoptions.o.settingsautoload; 
-   settingsautosave:= projectoptions.o.settingsautosave; 
+   settingsautoload:= projectoptions.o.settingsautoload;
+   settingsautosave:= projectoptions.o.settingsautosave;
   end;
  end;
 end;
@@ -3137,12 +3139,12 @@ begin
   if fo <> nil then begin
    if not settingsstorage then begin
     fo.settingsfile.value:= settingsfile;
-    fo.settingseditor.value:= settingseditor; 
-    fo.settingsdebugger.value:= settingsdebugger; 
-    fo.settingsstorage.value:= settingsstorage; 
-    fo.settingsprojecttree.value:= settingsprojecttree; 
-    fo.settingsautoload.value:= settingsautoload; 
-    fo.settingsautosave.value:= settingsautosave; 
+    fo.settingseditor.value:= settingseditor;
+    fo.settingsdebugger.value:= settingsdebugger;
+    fo.settingsstorage.value:= settingsstorage;
+    fo.settingsprojecttree.value:= settingsprojecttree;
+    fo.settingsautoload.value:= settingsautoload;
+    fo.settingsautosave.value:= settingsautosave;
    end;
    fo.fontondataentered(nil);
    fo.settingsdataent(nil);
@@ -3150,12 +3152,12 @@ begin
   else begin
    if not settingsstorage then begin
     projectoptions.o.settingsfile:= settingsfile;
-    projectoptions.o.settingseditor:= settingseditor; 
-    projectoptions.o.settingsdebugger:= settingsdebugger; 
-    projectoptions.o.settingsstorage:= settingsstorage; 
-    projectoptions.o.settingsprojecttree:= settingsprojecttree; 
-    projectoptions.o.settingsautoload:= settingsautoload; 
-    projectoptions.o.settingsautosave:= settingsautosave; 
+    projectoptions.o.settingseditor:= settingseditor;
+    projectoptions.o.settingsdebugger:= settingsdebugger;
+    projectoptions.o.settingsstorage:= settingsstorage;
+    projectoptions.o.settingsprojecttree:= settingsprojecttree;
+    projectoptions.o.settingsautoload:= settingsautoload;
+    projectoptions.o.settingsautosave:= settingsautosave;
    end;
   end;
  end;
@@ -3294,7 +3296,7 @@ begin
     if sender <> nil then begin
      formtoprojectoptions(sender);
     end;
-    
+
   //    e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
     disabled:= getdisabledoptions;
     stat1.setsection('projectoptions');
@@ -3303,12 +3305,12 @@ begin
     end;
     if not o.settingsstorage then begin
      o.settingsfile:= '';
-     o.settingseditor:= false; 
-     o.settingsdebugger:= false; 
-     o.settingsstorage:= false; 
-     o.settingsprojecttree:= false; 
-     o.settingsautoload:= false; 
-     o.settingsautosave:= false; 
+     o.settingseditor:= false;
+     o.settingsdebugger:= false;
+     o.settingsstorage:= false;
+     o.settingsprojecttree:= false;
+     o.settingsautoload:= false;
+     o.settingsautosave:= false;
     end;
     updateprojectsettings(stat1);
    finally
@@ -3411,11 +3413,11 @@ procedure tprojectoptionsfo.onshowpurpose(const sender: TObject;
                var avalue: Boolean; var accept: Boolean);
 begin
 // if avalue then makeoptpurpose.visible := true else makeoptpurpose.visible := false;
- 
+
  if avalue then makeoptionsgrid.datacols[0].visible  := true else
- 
+
   makeoptionsgrid.datacols[0].visible  := false ;
- 
+
          //   datacols.items   item[makeoptpurpose]
 end;
 
@@ -3424,12 +3426,12 @@ procedure tprojectoptionsfo.onsource(const sender: TObject;
 begin
 
  if avalue then actionsmo.projectsourceexe(nil);
-   
+
 end;
 
 procedure tprojectoptionsfo.oncreatedexe(const sender: TObject);
 begin
- 
+
 end;
 
 { tprojectoptions }
@@ -3438,7 +3440,7 @@ constructor tprojectoptions.create;
 begin
  ft:= ttextprojectoptions.create;
  ftexp:= ttextprojectoptions.create;
- 
+
  closemessages:= true;
  checkmethods:= true;
  fcolorerror:= cl_ltred;

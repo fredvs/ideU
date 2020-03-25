@@ -20,6 +20,10 @@ object cpufo: tcpufo
   dragdock.splitter_size = 0
   dragdock.caption = 'CPU'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
+  fontempty.name = 'stf_empty'
+  fontempty.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'CPU'
@@ -71,14 +75,14 @@ object cpufo: tcpufo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      1
-      48
+      2
+      46
       2
     )
     bounds_x = 7
-    bounds_y = 9
-    bounds_cx = 61
-    bounds_cy = 16
+    bounds_y = 8
+    bounds_cx = 59
+    bounds_cy = 17
     onchange = ononchange
     value = True
   end
@@ -89,11 +93,11 @@ object cpufo: tcpufo
     bounds_x = 80
     bounds_y = 8
     bounds_cx = 124
-    bounds_cy = 18
+    bounds_cy = 19
     textflags = [tf_xcentered, tf_right, tf_ycentered]
     format = 'yy-mm-dd hh:mm:ss'
     kind = dtk_datetime
     value = -Inf
-    reffontheight = 14
+    reffontheight = 15
   end
 end
