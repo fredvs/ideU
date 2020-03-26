@@ -413,6 +413,8 @@ begin
     showsourcepos(self.items[findex]^, True, acellpos);
     navigforwardact.Enabled := findex < fcount - 1;
     navigbackact.Enabled    := findex > 0;
+    step_forward.Enabled := findex < fcount - 1;
+    step_back.Enabled    := findex > 0;
   end;
 end;
 

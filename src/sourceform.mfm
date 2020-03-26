@@ -200,7 +200,7 @@ object sourcefo: tsourcefo
       taborder = 1
       hint = 'Step back in code navigation (Ctrl+LeftClick).'
       onshowhint = stephintev
-      bounds_x = 623
+      bounds_x = 622
       bounds_y = 0
       bounds_cx = 16
       bounds_cy = 24
@@ -237,6 +237,7 @@ object sourcefo: tsourcefo
       imagenr = 2
       imagenrdisabled = 3
       focusrectdist = 0
+      onexecute = navigforward
       sc = (
         1
         24648
@@ -413,7 +414,8 @@ object sourcefo: tsourcefo
     top = 168
   end
   object navigforwardact: taction
-    state = [as_disabled]
+    imagenr = 2
+    imagenrdisabled = 3
     onexecute = navigforward
     left = 32
     top = 16
@@ -423,7 +425,9 @@ object sourcefo: tsourcefo
     )
   end
   object navigbackact: taction
-    state = [as_disabled]
+    imagelist = buttonimage
+    imagenr = 0
+    imagenrdisabled = 1
     onexecute = navigback
     left = 32
     top = 40
