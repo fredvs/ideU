@@ -225,7 +225,7 @@ procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
 var
  page: tsourcepage;
 begin
-file_history.width := 70;
+file_history.width := 66;
 //if (fileexists(file_history.value)) and
 if (file_history.tag = 0) then
 begin

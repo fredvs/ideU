@@ -72,6 +72,8 @@ type
    step_back: tbutton;
    buttonimage: timagelist;
    step_forward: tbutton;
+   tfacecomp2horz: tfacecomp;
+   tfacecomp2horzdark: tfacecomp;
     procedure formonidle(var again: Boolean);
     procedure doselectpage(const Sender: TObject);
 

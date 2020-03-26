@@ -24,8 +24,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 594
-  bounds_y = 235
+  bounds_x = 223
+  bounds_y = 90
   bounds_cx = 696
   bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -113,7 +113,7 @@ object sourcefo: tsourcefo
     bounds_cy = 352
     color = -1610612731
     anchors = []
-    popupmenu = formpopup
+    popupmenu = tpopupmenu1
     onactivepagechanged = tabwidgetonactivepagechanged
     onpageadded = onpageadd
     onpageremoved = tabwidgetpageremoved
@@ -436,7 +436,7 @@ object sourcefo: tsourcefo
       16456
     )
   end
-  object formpopup: tpopupmenu
+  object tpopupmenu1: tpopupmenu
     onupdate = popupmonupdate
     frametemplate = mainfo.tframecomp2
     facetemplate = mainfo.convex
@@ -700,6 +700,10 @@ object sourcefo: tsourcefo
         caption = 'Complete Class at Cursor'
         state = [as_localcaption]
       end>
+    menu.font.name = 'stf_menu'
+    menu.font.localprops = []
+    menu.fontactive.name = 'stf_menu'
+    menu.fontactive.localprops = []
     left = 187
     top = 27
   end
@@ -1000,5 +1004,35 @@ object sourcefo: tsourcefo
       0000000002040000060C00000E1C00001E3C00003E7C00007EFC0000FEFC0100
       7EFC00003E7C00001E3C00000E1C00000408000000000000
     }
+  end
+  object tfacecomp2horz: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      15592941
+      13224393
+    )
+    template.fade_direction = gd_left
+    left = 416
+    top = 261
+  end
+  object tfacecomp2horzdark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      -1610612733
+      0
+    )
+    template.fade_direction = gd_left
+    left = 421
+    top = 307
   end
 end

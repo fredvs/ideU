@@ -4855,12 +4855,17 @@ sourcefo.ActivePage.color := cl_ltgray;
 sourcefo.ActivePage.container.color := cl_ltgray;
 end;
 
+sourcefo.tpopupmenu1.menu.font.color := cl_black;
+sourcefo.tpopupmenu1.menu.fontactive.color := cl_black;
+sourcefo.tpopupmenu1.facetemplate := convex;
+sourcefo.tpopupmenu1.itemfacetemplate := sourcefo.tfacecomp2horz;
+sourcefo.tpopupmenu1.itemfacetemplateactive := sourcefo.tfacecomp1;
+
 sourcefo.files_tab.color := cl_ltgray;
 sourcefo.files_tab.tab_frame.buttonface.template := mainfo.convex;
 sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1;
 sourcefo.step_back.face.template := mainfo.convex;
 sourcefo.step_forward.face.template := mainfo.convex;
-
 
 sourcefo.step_forward.face.template := mainfo.convex;
 sourcefo.files_tab.tab_frame.colorglyph := cl_black;
@@ -4928,6 +4933,12 @@ sourcefo.ActivePage.linedisp.font.color := cl_white;
 sourcefo.ActivePage.color := cl_black;
 sourcefo.ActivePage.container.color := cl_black;
 end;
+
+sourcefo.tpopupmenu1.menu.font.color := cl_white;
+sourcefo.tpopupmenu1.menu.fontactive.color := $FFD6B0;
+sourcefo.tpopupmenu1.facetemplate := convexdark;
+sourcefo.tpopupmenu1.itemfacetemplate := sourcefo.tfacecomp2horzdark;
+sourcefo.tpopupmenu1.itemfacetemplateactive := sourcefo.tfacecomp1dark;;
 
 sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1dark;
 sourcefo.files_tab.tab_font.color := cl_white;

@@ -1,6 +1,5 @@
 object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
-  face.localprops = []
   visible = False
   bounds_x = 712
   bounds_y = 186
@@ -13,6 +12,15 @@ object dialogfilesfo: tdialogfilesfo
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
+  container.face.fade_pos.count = 1
+  container.face.fade_pos.items = (
+    0
+  )
+  container.face.fade_color.count = 1
+  container.face.fade_color.items = (
+    -1610612729
+  )
+  container.face.localprops = []
   container.bounds = (
     0
     0
