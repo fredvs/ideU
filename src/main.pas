@@ -4736,6 +4736,17 @@ color1 := cl_dkgray;
 color2 := cl_black;
 color3 := cl_white;
 
+frame.grip_colorglyph := cl_black;
+frame.grip_colorglyphactive := cl_black;
+sourcefo.frame.grip_colorglyph := cl_black;
+sourcefo.frame.grip_colorglyphactive := cl_black;
+debuggerfo.frame.grip_colorglyph := cl_black;
+debuggerfo.frame.grip_colorglyphactive := cl_black;
+projecttreefo.frame.grip_colorglyph := cl_black;
+projecttreefo.frame.grip_colorglyphactive := cl_black;
+messagefo.frame.grip_colorglyph := cl_black;
+messagefo.frame.grip_colorglyphactive := cl_black;
+
 messagefo.color := cl_ltgray;
 messagefo.messages.color := cl_ltgray;
 basedock.color := cl_ltgray;
@@ -4846,6 +4857,17 @@ color0 := cl_black;
 color1 := cl_dkgray;
 color2 := cl_white;
 color3 := cl_black;
+
+frame.grip_colorglyph := cl_white;
+frame.grip_colorglyphactive := cl_white;
+sourcefo.frame.grip_colorglyph := cl_white;
+sourcefo.frame.grip_colorglyphactive := cl_white;
+debuggerfo.frame.grip_colorglyph := cl_white;
+debuggerfo.frame.grip_colorglyphactive := cl_white;
+projecttreefo.frame.grip_colorglyph := cl_white;
+projecttreefo.frame.grip_colorglyphactive := cl_white;
+messagefo.frame.grip_colorglyph := cl_white;
+messagefo.frame.grip_colorglyphactive := cl_white;
 
 messagefo.messages.color := cl_black;
 messagefo.color := cl_black;
