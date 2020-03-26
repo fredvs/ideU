@@ -90,8 +90,12 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=navigforwardact
+ value=dialogfilesfo
  history=20
+  dialogfilesfo
+  dialogfilesfo.container.color
+  dialogfilesfo.color
+  sbvert.facebutton.fade_color.
   navigforwardact
   step_back
   themenr
@@ -108,10 +112,6 @@ findinfiledialog=98
   debuggerfo.color
   makeok
   Make ok
-  statdisp
-  statdisp.
-  statdisp.face
-  fade
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -261,7 +261,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=244
@@ -876,12 +876,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3972
+ 3968
  0
  0
  0
  0
- 123
+ 127
 exeusedon=14
  4047
  0
@@ -1163,8 +1163,8 @@ path=23
 line=23
  2129
  1046
- 592
- 3805
+ 594
+ 3807
  660
  119
  1088
@@ -1176,14 +1176,14 @@ line=23
  551
  461
  64
- 4064
+ 4066
  684
  96
  15
  765
  871
  2504
- 5035
+ 5066
 address=23
  4796414
  4626800
@@ -1444,8 +1444,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=step_back
+finddtext=dothemedialog
 findhistory=20
+ dotheme
  step_back
  onthetimer
  mainfooncreate
@@ -1465,12 +1466,11 @@ findhistory=20
  mtk_flat
  writeln
  pdynarraytypeinfo
- PTypeInfo
 findoptions=1
 editpos=3
  0,-1073741823
- 0,0
  0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1508,13 +1508,13 @@ nomenumodules=4
  -1
 [sourcefo.files_tab]
 order=3
- 1
  2
  0
+ 1
 firsttab=0
 index=0
 [layout]
-windowlayout=578
+windowlayout=580
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1528,8 +1528,8 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
+ x=102
+ y=85
  cx=1157
  cy=621
  rcx=0
@@ -1554,7 +1554,7 @@ windowlayout=578
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1629,10 +1629,10 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=678
- cy=414
+ x=0
+ y=29
+ cx=1368
+ cy=710
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1751,8 +1751,8 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=316
- y=249
+ x=458
+ y=225
  cx=316
  cy=484
  rcx=0
@@ -1985,9 +1985,11 @@ windowlayout=578
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=3
+ value=/home/fred/ideu/src/ideU.pas
+ history=5
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/sourcepage.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -2012,9 +2014,9 @@ windowlayout=578
  rcy=0
  [sourcefo.files_tab]
  order=3
-  1
   2
   0
+  1
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]

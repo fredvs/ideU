@@ -54,7 +54,7 @@ object dialogfilesfo: tdialogfilesfo
     frame.caption = 'Selected Syntax Definition File'
     frame.font.name = 'stf_default'
     frame.font.localprops = []
-    frame.localprops = []
+    frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     frame.outerframe = (
       0

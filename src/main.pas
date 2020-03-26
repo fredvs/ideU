@@ -210,8 +210,8 @@ type
     procedure statafterread(const Sender: TObject);
     procedure basedockpaintexe(const Sender: twidget; const acanvas: tcanvas);
 
-
     //fred
+    procedure dothemedialog();
     procedure dotheme(typetheme : integer);
     procedure picksdef(const Sender: TObject; var avalue: msestring; var accept: boolean);
     procedure menuwindowlayoutexe(const Sender: TObject);
@@ -575,6 +575,8 @@ procedure tmainfo.syntaxdefload(const Sender: TObject);
 begin
 
 if not dialogfilesformcreated then dodialogfiles ;
+
+ // dothemedialog();
 
   if assigned(sourcefo.ActivePage) then
   begin
@@ -4625,6 +4627,10 @@ begin
 
 if not dialogfilesformcreated then dodialogfiles ;
 
+ // dothemedialog();
+
+  dialogfilesfo.invalidate;
+
   dialogfilesfo.tag := 1;
 
   dialogfilesfo.Caption := 'Load a Layout File';
@@ -4722,6 +4728,37 @@ if not beautyformcreated then doBeauty;
 //beautyfo.bringtofront;
 end;
 
+procedure tmainfo.dothemedialog();
+begin
+
+if themenr = 0 then begin
+dialogfilesfo.color := cl_ltgray;
+dialogfilesfo.container.color := cl_ltgray;
+dialogfilesfo.font.color := cl_black;
+dialogfilesfo.selected_file.frame.font.color := cl_black;
+dialogfilesfo.selected_file.font.color := cl_black;
+dialogfilesfo.selected_file.frame.colorclient := cl_white;
+dialogfilesfo.list_files.font.color := cl_black;
+dialogfilesfo.list_files.color := cl_white;
+end;
+
+if themenr = 1 then begin
+dialogfilesfo.font.color := cl_black;
+dialogfilesfo.selected_file.frame.font.color := cl_white;
+dialogfilesfo.selected_file.font.color := cl_white;
+dialogfilesfo.selected_file.frame.colorclient := cl_black;
+dialogfilesfo.list_files.font.color := cl_black;
+dialogfilesfo.list_files.color := cl_white;
+dialogfilesfo.color := cl_black;
+dialogfilesfo.container.color := cl_black;
+
+end;
+
+end;
+
+
+
+
 procedure tmainfo.dotheme(typetheme : integer);
 var
 color0, color1, color2, color3 : integer;
@@ -4752,12 +4789,7 @@ messagefo.messages.color := cl_ltgray;
 basedock.color := cl_ltgray;
 color := cl_ltgray;
 basedock.dragdock.splitter_color := cl_ltgray;
-{
-dialogfilesfo.color := cl_ltgray;
-dialogfilesfo.font.color := cl_black;
-dialogfilesfo.list_files.font.color := cl_black;
-dialogfilesfo.list_files.color := cl_white;
-}
+
 mainmenu1.facetemplate := convex;
 mainmenu1.itemfacetemplate := convex;
 mainmenu1.itemfacetemplateactive := concave;
@@ -4868,7 +4900,6 @@ projecttreefo.frame.grip_colorglyph := cl_white;
 projecttreefo.frame.grip_colorglyphactive := cl_white;
 messagefo.frame.grip_colorglyph := cl_white;
 messagefo.frame.grip_colorglyphactive := cl_white;
-
 messagefo.messages.color := cl_black;
 messagefo.color := cl_black;
 basedock.color := cl_black;

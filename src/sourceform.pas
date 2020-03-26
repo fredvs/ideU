@@ -1147,10 +1147,11 @@ linedisp.face.template := debuggerfo.templatemain;
 linedisp.font.color := cl_black;
 color := cl_ltgray;
 container.color := cl_ltgray;
-color0 := cl_ltgray;
+color0 := cl_white;
 color1 := cl_dkgray;
 color2 := cl_black;
 end;
+
 if mainfo.themenr = 1 then begin
 pathdisp.face.template := debuggerfo.templatemaindark;
 pathdisp.font.color := cl_white;
@@ -1158,12 +1159,11 @@ linedisp.face.template := debuggerfo.templatemaindark;
 linedisp.font.color := cl_white;
 color := cl_black;
 container.color := cl_black;
-color0 := cl_dkgray;
-color1 := cl_black;
+color0 := cl_black;
+color1 := cl_dkgray;
 color2 := cl_white;
 end;
 end;
-
 
 ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
 ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
@@ -1177,14 +1177,14 @@ ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color
 ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
 ActivePage.source_editor.frame.sbhorz.colorglyph := color2;
 
-ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color0;
-ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color1;
-ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color0;
+ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color1;
+ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color0;
+ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color1;
+ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color0;
+ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color1;
+ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color0;
+ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color1;
 ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
 ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
 ActivePage.source_editor.frame.sbvert.colorglyph := color2;
