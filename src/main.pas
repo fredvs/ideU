@@ -4731,10 +4731,13 @@ setstattext(c[Ord(makeok)], mtk_finished);
 
 if typetheme = 0 then
 begin
-color0 := cl_ltgray;
+color0 := cl_white;
 color1 := cl_dkgray;
 color2 := cl_black;
 color3 := cl_white;
+
+messagefo.color := cl_ltgray;
+messagefo.messages.color := cl_ltgray;
 basedock.color := cl_ltgray;
 color := cl_ltgray;
 basedock.dragdock.splitter_color := cl_ltgray;
@@ -4839,10 +4842,13 @@ end;
 
 if typetheme = 1 then
 begin
-color0 := cl_dkgray;
-color1 := cl_black;
+color0 := cl_black;
+color1 := cl_dkgray;
 color2 := cl_white;
 color3 := cl_black;
+
+messagefo.messages.color := cl_black;
+messagefo.color := cl_black;
 basedock.color := cl_black;
 color := cl_black;
 basedock.dragdock.splitter_color :=  cl_black;
@@ -4989,18 +4995,18 @@ messagefo.messages.frame.sbhorz.face1.fade_color.items[0] := color0;
 messagefo.messages.frame.sbhorz.face1.fade_color.items[1] := color1;
 messagefo.messages.frame.sbhorz.face2.fade_color.items[0] := color0;
 messagefo.messages.frame.sbhorz.face2.fade_color.items[1] := color1;
-messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
-messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[1] := color0;
+messagefo.messages.frame.sbhorz.faceendbutton.fade_color.items[0] := color1;
 messagefo.messages.frame.sbhorz.colorglyph := color2;
 
 messagefo.messages.frame.sbvert.facebutton.fade_color.items[1] := color0;
 messagefo.messages.frame.sbvert.facebutton.fade_color.items[0] := color1;
-messagefo.messages.frame.sbvert.face.fade_color.items[0] := color0;
-messagefo.messages.frame.sbvert.face.fade_color.items[1] := color1;
-messagefo.messages.frame.sbvert.face1.fade_color.items[0] := color0;
-messagefo.messages.frame.sbvert.face1.fade_color.items[1] := color1;
-messagefo.messages.frame.sbvert.face2.fade_color.items[0] := color0;
-messagefo.messages.frame.sbvert.face2.fade_color.items[1] := color1;
+messagefo.messages.frame.sbvert.face.fade_color.items[1] := color0;
+messagefo.messages.frame.sbvert.face.fade_color.items[0] := color1;
+messagefo.messages.frame.sbvert.face1.fade_color.items[1] := color0;
+messagefo.messages.frame.sbvert.face1.fade_color.items[0] := color1;
+messagefo.messages.frame.sbvert.face2.fade_color.items[1] := color0;
+messagefo.messages.frame.sbvert.face2.fade_color.items[0] := color1;
 messagefo.messages.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
 messagefo.messages.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
 messagefo.messages.frame.sbvert.colorglyph := color2;
@@ -5008,16 +5014,6 @@ messagefo.messages.frame.sbvert.colorglyph := color2;
 debuggerfo.statdisp.font.color := color2;
 
 if assigned(sourcefo.ActivePage) then begin
-if typetheme = 1 then
-begin
-color1 := cl_dkgray;
-color0 := cl_black;
-end;
-if typetheme = 0 then
-begin
-color0 := cl_white;
-color1 := cl_dkgray;
-end;
 
 sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
 sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;

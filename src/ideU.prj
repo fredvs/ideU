@@ -239,7 +239,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -260,7 +260,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=244
@@ -1209,7 +1209,7 @@ line=23
  765
  869
  2504
- 5007
+ 5013
 address=23
  4796414
  4626800
@@ -1497,16 +1497,16 @@ editpos=13
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,4998
  0,-1073741823
- 0,9
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 5,5016
+ 0,10
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1613,20 +1613,20 @@ nomenumodules=11
 [sourcefo.files_tab]
 order=13
  0
+ 5
  7
- 9
  3
  4
+ 11
+ 1
  12
  2
  6
- 11
  8
- 5
+ 9
  10
- 1
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=719
  [mainfo.basedock]
@@ -1858,7 +1858,7 @@ windowlayout=719
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_messagefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1873,7 +1873,7 @@ windowlayout=719
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [objectinspectorfo.grid]
  propcolwidthref=371
  width0=164
@@ -2084,8 +2084,8 @@ windowlayout=719
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1358
+ ncy=62
  x=0
  y=0
  cx=1358
@@ -2101,8 +2101,10 @@ windowlayout=719
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/projecttreeform.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/projecttreeform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/messageform.pas
@@ -2111,7 +2113,6 @@ windowlayout=719
   /home/fred/ideu/src/imageselectorform.pas
   /home/fred/ideu/src/guitemplates.pas
   /home/fred/ideu/src/formdesigner.pas
-  /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/commandlineform.pas
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/symbolform.pas
@@ -2120,7 +2121,6 @@ windowlayout=719
   /home/fred/ideu/src/watchform.pas
   /home/fred/ideu/src/targetconsole.pas
   /home/fred/ideu/src/storedcomponentinfodialog.pas
-  /home/fred/ideu/src/stackform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2144,20 +2144,20 @@ windowlayout=719
  [sourcefo.files_tab]
  order=13
   0
+  5
   7
-  9
   3
   4
+  11
+  1
   12
   2
   6
-  11
   8
-  5
+  9
   10
-  1
  firsttab=0
- index=2
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=1
  [cpuc86_64fo]
@@ -2218,7 +2218,7 @@ windowlayout=719
  [_mse_projecttreefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_messagefo_mse_
+ stackedunder=_mse_panelfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2237,7 +2237,7 @@ windowlayout=719
  [_mse_messagefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_panelfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2247,7 +2247,7 @@ windowlayout=719
  x=415
  y=216
  cx=467
- cy=317
+ cy=281
  rcx=0
  rcy=0
  wsize=0
@@ -2332,7 +2332,7 @@ windowlayout=719
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0

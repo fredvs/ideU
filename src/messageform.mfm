@@ -24,7 +24,7 @@ object messagefo: tmessagefo
   bounds_x = 415
   bounds_y = 216
   bounds_cx = 457
-  bounds_cy = 317
+  bounds_cy = 281
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 4
   container.frame.framei_right = 4
@@ -56,7 +56,7 @@ object messagefo: tmessagefo
     0
     0
     447
-    317
+    281
   )
   dragdock.caption = 'Messages'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
@@ -148,8 +148,17 @@ object messagefo: tmessagefo
     )
     frame.sbvert.faceendbutton.fade_direction = gd_down
     frame.sbvert.faceendbutton.localprops = []
-    frame.sbvert.frame.localprops = []
-    frame.sbvert.frame.localprops1 = []
+    frame.sbvert.frame.colorframe = -2147483642
+    frame.sbvert.frame.colorframeactive = -2147483642
+    frame.sbvert.frame.colorframeclicked = -2147483642
+    frame.sbvert.frame.colorframedefault = -2147483642
+    frame.sbvert.frame.colorclient = -2147483642
+    frame.sbvert.frame.colordkshadow = -2147483642
+    frame.sbvert.frame.colorhighlight = -2147483642
+    frame.sbvert.frame.colordkwidth = 0
+    frame.sbvert.frame.colorhlwidth = 0
+    frame.sbvert.frame.localprops = [frl_colorframe, frl_colorframeactive, frl_colordkshadow, frl_colorhighlight, frl_colordkwidth, frl_colorhlwidth, frl_colorclient]
+    frame.sbvert.frame.localprops1 = [frl1_colorframeclicked, frl1_colorframedefault]
     frame.sbhorz.face.fade_pos.count = 2
     frame.sbhorz.face.fade_pos.items = (
       0
@@ -219,7 +228,7 @@ object messagefo: tmessagefo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 447
-    bounds_cy = 317
+    bounds_cy = 281
     anchors = []
     font.colorbackground = -2147483642
     font.name = 'stf_default'
