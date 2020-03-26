@@ -6,13 +6,15 @@ uses
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
  msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,mseificomp,
  mseificompglob,mseifiglob,mselistbrowser,msestatfile,msestream,msestrings,
- msesys,sysutils,msesimplewidgets, sourceform, commandorform;
+ msesys,sysutils,msesimplewidgets, sourceform, commandorform, msedispwidgets,
+  mserichstring;
 type
  tdialogfilesfo = class(tmseform)
    tbutton1: tbutton;
    tbutton2: tbutton;
    list_files: tfilelistview;
    selected_file: tedit;
+   tstringdisp1: tstringdisp;
    procedure loaddef(const sender: tcustomlistview);
    procedure butok(const sender: TObject);
    procedure butcancel(const sender: TObject);

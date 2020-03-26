@@ -576,7 +576,7 @@ begin
 
 if not dialogfilesformcreated then dodialogfiles ;
 
- // dothemedialog();
+ dothemedialog();
 
   if assigned(sourcefo.ActivePage) then
   begin
@@ -4627,9 +4627,7 @@ begin
 
 if not dialogfilesformcreated then dodialogfiles ;
 
- // dothemedialog();
-
-  dialogfilesfo.invalidate;
+  dothemedialog();
 
   dialogfilesfo.tag := 1;
 
@@ -4732,32 +4730,20 @@ procedure tmainfo.dothemedialog();
 begin
 
 if themenr = 0 then begin
-dialogfilesfo.color := cl_ltgray;
+dialogfilesfo.tstringdisp1.frame.colorclient := cl_ltgray;
 dialogfilesfo.container.color := cl_ltgray;
-dialogfilesfo.font.color := cl_black;
+dialogfilesfo.color := cl_ltgray;
 dialogfilesfo.selected_file.frame.font.color := cl_black;
-dialogfilesfo.selected_file.font.color := cl_black;
-dialogfilesfo.selected_file.frame.colorclient := cl_white;
-dialogfilesfo.list_files.font.color := cl_black;
-dialogfilesfo.list_files.color := cl_white;
 end;
 
 if themenr = 1 then begin
-dialogfilesfo.font.color := cl_black;
+dialogfilesfo.tstringdisp1.frame.colorclient := cl_dkgray;
 dialogfilesfo.selected_file.frame.font.color := cl_white;
-dialogfilesfo.selected_file.font.color := cl_white;
-dialogfilesfo.selected_file.frame.colorclient := cl_black;
-dialogfilesfo.list_files.font.color := cl_black;
-dialogfilesfo.list_files.color := cl_white;
-dialogfilesfo.color := cl_black;
-dialogfilesfo.container.color := cl_black;
-
+dialogfilesfo.color := cl_dkgray;
+dialogfilesfo.container.color := cl_dkgray;
 end;
 
 end;
-
-
-
 
 procedure tmainfo.dotheme(typetheme : integer);
 var
