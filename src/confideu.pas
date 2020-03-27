@@ -46,6 +46,7 @@ type
    colornote: tcoloredit;
    stripmessageesc: tbooleanedit;
    addwhiteaftercomma: tbooleanedit;
+   modaldial: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -222,6 +223,8 @@ end;
 procedure tconfideufo.oncloseev(const sender: TObject);
 begin
 messagefo.updateprojectoptions;
+mainfo.ismodal:= confideufo.modaldial.value;
 end;
+
 
 end.

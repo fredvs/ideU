@@ -373,6 +373,13 @@ end;
 procedure tactionsmo.procedurelistonexecute(const sender: TObject);
 begin
 if not plformcreated then doProcedureList;
+
+  if mainfo.ismodal then
+    procedurelistfo.Show(true) else
+    begin
+    procedurelistfo.Show;
+    procedurelistfo.bringtofront;
+    end;
 end;
 
 function tactionsmo.gettoolshortcutaction(const index: int32;

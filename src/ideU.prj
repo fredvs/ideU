@@ -90,8 +90,10 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=complete class
+ value=beauty
  history=20
+  beauty
+  dodialogfiles
   complete class
   dialogfilesfo
   dialogfilesfo.container.color
@@ -110,8 +112,6 @@ findinfiledialog=98
   pathdisp
   linedisp
   tdockpanel2
-  debuggerfo.color
-  makeok
  [findinfileadialogfo]
  stackedunder=
  x=495
@@ -823,30 +823,36 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=8
+modulenames=10
  ACTIONSMO
  BEAUTYFO
  DEBUGGERFO
+ CONFIDEUFO
  DIALOGFILESFO
  FINDDIALOGFO
+ SETTINGS_FORM
  MAINFO
  PROCEDURELISTFO
  SOURCEFO
-moduletypes=8
+moduletypes=10
  TACTIONSMO
  TBEAUTYFO
  TDEBUGGERFO
+ TCONFIDEUFO
  TDIALOGFILESFO
  TFINDDIALOGFO
+ TSETTINGSFO
  TMAINFO
  TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=8
+modulefiles=10
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/beauty.mfm
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/finddialogform.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -854,7 +860,7 @@ befcommandon=0
 makeoptionson=11
  4095
  0
- 60
+ 56
  4092
  0
  48
@@ -1180,9 +1186,9 @@ path=23
  /home/fred/ideu/src/main.pas
 line=23
  2129
- 1046
- 594
- 3807
+ 1053
+ 595
+ 3821
  660
  119
  1088
@@ -1191,17 +1197,17 @@ line=23
  2464
  3254
  119
- 551
- 461
+ 552
+ 468
  66
- 4066
+ 4080
  684
  96
  15
  765
  873
  2504
- 5063
+ 5086
 address=23
  4796414
  4626800
@@ -1462,8 +1468,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=procedurelist
+finddtext=onbeauty
 findhistory=20
+ onbeauty
+ writecon
+ readcon
  procedurelist
  dialogfilesfo.
  doBeautydialogfilesfo.
@@ -1479,22 +1488,22 @@ findhistory=20
  tmainfo.onthetimer
  aaskyesnocancel
  msefi
- writecon
  sourcefo.
  messagefo.messages.
- colorglyph
- pieceslist
 findoptions=1
-editpos=9
+editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,52
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,351
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1504,7 +1513,10 @@ bookmarks5=0
 bookmarks6=0
 bookmarks7=0
 bookmarks8=0
-sourcefiles=9
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
@@ -1514,7 +1526,10 @@ sourcefiles=9
  ${PROJECTDIR}/procedurelistform.pas
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/finddialogform.pas
-relpaths=9
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=12
  sourceform.pas
  actionsmodule.pas
  ideU.pas
@@ -1524,7 +1539,10 @@ relpaths=9
  procedurelistform.pas
  dialogfiles.pas
  finddialogform.pas
-ismoduletexts=9
+ ideusettings.pas
+ confideu.pas
+ commandorform.pas
+ismoduletexts=12
  0
  0
  0
@@ -1534,7 +1552,10 @@ ismoduletexts=9
  0
  0
  0
-modules=9
+ 0
+ 0
+ 0
+modules=11
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1544,7 +1565,9 @@ modules=9
  /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/finddialogform.mfm
-moduleoptions=9
+ /home/fred/ideu/src/ideusettings.mfm
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=11
  0
  0
  0
@@ -1554,7 +1577,9 @@ moduleoptions=9
  0
  0
  0
-visiblemodules=9
+ 0
+ 0
+visiblemodules=11
  -1
  -1
  -1
@@ -1564,31 +1589,38 @@ visiblemodules=9
  -1
  -1
  -1
-nomenumodules=9
+ -1
+ -1
+nomenumodules=11
  0
  0
  0
  -1
+ 0
+ 0
  0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=9
+order=12
  0
  1
  5
- 6
+ 9
  4
  7
  2
- 3
+ 10
  8
-firsttab=0
-index=4
+ 6
+ 3
+ 11
+firsttab=3
+index=11
 [layout]
-windowlayout=696
+windowlayout=737
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2059,9 +2091,12 @@ windowlayout=696
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/beauty.pas
+ value=/home/fred/ideu/src/commandorform.pas
  history=20
-  /home/fred/ideu/src/beauty.pas
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/finddialogform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/selecteditpageform.pas
   /home/fred/ideu/src/toolhandlermodule.pas
@@ -2078,11 +2113,8 @@ windowlayout=696
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/symbolform.pas
   /home/fred/ideu/src/threadsform.pas
-  /home/fred/ideu/src/watchpointsform.pas
-  /home/fred/ideu/src/watchform.pas
-  /home/fred/ideu/src/targetconsole.pas
  [debuggerfo.project_options]
- value=4
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2102,18 +2134,21 @@ windowlayout=696
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
+ order=12
   0
   1
   5
-  6
+  9
   4
   7
   2
-  3
+  10
   8
- firsttab=0
- index=4
+  6
+  3
+  11
+ firsttab=3
+ index=11
  [confideufo.usedefaulteditoroptions]
  value=1
  [cpuc86_64fo]
@@ -2269,7 +2304,7 @@ windowlayout=696
  [_mse_finddialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_settings_form_mse_
  parent=
  mdistate=3
  nx=0
@@ -2280,6 +2315,44 @@ windowlayout=696
  y=259
  cx=310
  cy=90
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_confideufo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=618
+ y=92
+ cx=469
+ cy=529
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=519
+ y=131
+ cx=419
+ cy=525
  rcx=0
  rcy=0
  wsize=0

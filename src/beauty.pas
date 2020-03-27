@@ -53,7 +53,7 @@ implementation
 
 uses
   beauty_mfm,
-  plugmanager,
+  plugmanager, main,
   commandorform;
 
 procedure doBeauty;
@@ -62,8 +62,7 @@ begin
     application.createform(tbeautyfo, beautyfo);
     beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
     beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
-    beautyfo.Show(true);
-   // beautyfo.bringtofront;
+
     beautyformcreated          := True;
   finally
   end;

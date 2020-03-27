@@ -54,7 +54,7 @@ var
 
 implementation
 uses
- finddialogform_mfm, sourceform;
+ finddialogform_mfm, sourceform, main;
 
 procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
@@ -84,12 +84,19 @@ begin
  end;
   info.text:=  sourcefo.activepage.edit.selectedtext;
   finddialogfo.infotovalues(info);
-  //result:= fo.show(true,nil) = mr_ok;
-  //finddialogfo.show;
-  result:= finddialogfo.show(true,nil) = mr_ok;
+
+   if mainfo.ismodal then
+    finddialogfo.Show(true) else
+    begin
+    finddialogfo.Show;
+    finddialogfo.bringtofront;
+    end;
+
+  result:= true;
+//  result:= finddialogfo.show(true,nil) = mr_ok;
  // if result then begin
  //  finddialogfo.valuestoinfo(info);
-//  end;
+ //  end;
  finally
 //  fo.Free;
  end;

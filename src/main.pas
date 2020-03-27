@@ -325,6 +325,7 @@ type
   public
 
     // fred
+    ismodal: boolean;
     themenr: integer;
     customoption: integer;
     setcompiler: integer;
@@ -593,7 +594,14 @@ if not dialogfilesformcreated then dodialogfiles ;
     dialogfilesfo.selected_file.frame.Caption := 'Selected Syntax Definition File';
     // + dialogfilesfo.list_files.directory ;
     dialogfilesfo.selected_file.Text := '';
-    dialogfilesfo.Show(true);
+
+ if ismodal then
+    dialogfilesfo.Show(true) else
+    begin
+    dialogfilesfo.Show;
+    dialogfilesfo.bringtofront;
+    end;
+
   end;
 end;
 
@@ -803,6 +811,10 @@ begin
   conffpguifo.tbfpgonlyone.Value :=
     gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', True);
 
+  confideufo.modaldial.Value := gINI.Readbool('modaldial', 'general', True);
+
+  ismodal:= confideufo.modaldial.value;
+
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
@@ -965,6 +977,8 @@ begin
   gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
 
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
+
+  gINI.writebool('modaldial', 'general', confideufo.modaldial.value);
 
   if debuggerfo.properties_list.tag = 0 then
     gINI.writebool('Completion', 'proplist', False)
@@ -4643,8 +4657,12 @@ if not dialogfilesformcreated then dodialogfiles ;
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text := '';
   //dialogfilesfo.activate;
-  dialogfilesfo.Show(true);
-// dialogfilesfo.bringtofront;
+   if ismodal then
+    dialogfilesfo.Show(true) else
+    begin
+    dialogfilesfo.Show;
+    dialogfilesfo.bringtofront;
+    end;
 
 end;
 
@@ -4721,9 +4739,14 @@ end;
 procedure tmainfo.onbeauty(const sender: TObject);
 begin
 if not beautyformcreated then doBeauty;
-//beautyfo.filetoclean.value := debuggerfo.file_history.value;
-//beautyfo.visible := true;
-//beautyfo.bringtofront;
+beautyfo.filetoclean.value := debuggerfo.file_history.value;
+
+if ismodal then
+    beautyfo.Show(true) else
+    begin
+    beautyfo.Show;
+    beautyfo.bringtofront;
+    end;
 end;
 
 procedure tmainfo.dothemedialog();
