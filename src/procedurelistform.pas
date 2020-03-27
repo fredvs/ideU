@@ -122,7 +122,7 @@ writeln('>> doProcedureList');
   application.createform(tprocedurelistfo, procedurelistfo);
   try
   //  fo.show(true);
-    procedurelistfo.show;
+    procedurelistfo.show(true);
   finally
     {$ifdef gdebug}
     writeln('  before calling fo.free');

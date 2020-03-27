@@ -62,8 +62,8 @@ begin
     application.createform(tbeautyfo, beautyfo);
     beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
     beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
-    beautyfo.Show;
-    beautyfo.bringtofront;
+    beautyfo.Show(true);
+   // beautyfo.bringtofront;
     beautyformcreated          := True;
   finally
   end;

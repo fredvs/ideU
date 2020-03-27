@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2013 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -47,7 +47,7 @@ procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
 function finddialogexecute(var info: findinfoty): boolean;
 
-var 
+var
   finddialogfo: tfinddialogfo;
   findformcreated: boolean = false;
   findinfos: findinfoty;
@@ -77,7 +77,7 @@ begin
  finddialogfo:= tfinddialogfo.create(nil);
  findformcreated:= true;
  try
- 
+
   info:= projectoptions.findreplaceinfo.find;
  if not sourcefo.activepage.edit.hasselection then begin
  info.selectedonly:= false;
@@ -85,7 +85,8 @@ begin
   info.text:=  sourcefo.activepage.edit.selectedtext;
   finddialogfo.infotovalues(info);
   //result:= fo.show(true,nil) = mr_ok;
-  finddialogfo.show;
+  //finddialogfo.show;
+  result:= finddialogfo.show(true,nil) = mr_ok;
  // if result then begin
  //  finddialogfo.valuestoinfo(info);
 //  end;
@@ -126,7 +127,7 @@ end;
 procedure tfinddialogfo.onok(const sender: TObject);
 begin
   finddialogfo.valuestoinfo(findinfos);
-  sourcefo.activepage.dofind;  
+  sourcefo.activepage.dofind;
 end;
 
 end.

@@ -123,8 +123,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=940
- y=55
+ x=786
+ y=137
  cx=300
  cy=90
 replacedialog=25
@@ -261,7 +261,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=244
@@ -823,21 +823,39 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=8
  ACTIONSMO
+ BEAUTYFO
+ DEBUGGERFO
+ DIALOGFILESFO
+ FINDDIALOGFO
+ MAINFO
+ PROCEDURELISTFO
  SOURCEFO
-moduletypes=2
+moduletypes=8
  TACTIONSMO
+ TBEAUTYFO
+ TDEBUGGERFO
+ TDIALOGFILESFO
+ TFINDDIALOGFO
+ TMAINFO
+ TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=2
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/beauty.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
  4095
  0
- 56
- 4093
+ 60
+ 4092
  0
  48
  0
@@ -852,8 +870,8 @@ compilerusedon=29
  4
  8
  0
- 16
  0
+ 16
  32
  0
  0
@@ -1444,8 +1462,14 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=dothemedialog
+finddtext=procedurelist
 findhistory=20
+ procedurelist
+ dialogfilesfo.
+ doBeautydialogfilesfo.
+ doBeauty
+ beautyfo
+ beautyfo.s
  dotheme
  step_back
  onthetimer
@@ -1460,61 +1484,111 @@ findhistory=20
  messagefo.messages.
  colorglyph
  pieceslist
- imagelist
- color
- mtk_finished
- mtk_flat
- writeln
- pdynarraytypeinfo
 findoptions=1
-editpos=3
+editpos=9
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,52
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=3
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/beauty.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/procedurelistform.pas
+ ${PROJECTDIR}/dialogfiles.pas
+ ${PROJECTDIR}/finddialogform.pas
+relpaths=9
  sourceform.pas
  actionsmodule.pas
  ideU.pas
-ismoduletexts=3
+ main.pas
+ beauty.pas
+ commandorform.pas
+ procedurelistform.pas
+ dialogfiles.pas
+ finddialogform.pas
+ismoduletexts=9
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=9
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/guitemplates.mfm
-moduleoptions=4
+ /home/fred/ideu/src/beauty.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
+ /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+moduleoptions=9
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+visiblemodules=9
+ -1
+ -1
+ -1
  0
  -1
  -1
+ -1
+ -1
+ -1
+nomenumodules=9
  0
-nomenumodules=4
+ 0
+ 0
  -1
  0
  0
- -1
+ 0
+ 0
+ 0
 [sourcefo.files_tab]
-order=3
- 1
- 2
+order=9
  0
+ 1
+ 5
+ 6
+ 4
+ 7
+ 2
+ 3
+ 8
 firsttab=0
-index=0
+index=4
 [layout]
-windowlayout=595
+windowlayout=696
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1528,13 +1602,13 @@ windowlayout=595
  ny=0
  ncx=0
  ncy=0
- x=100
- y=73
+ x=70
+ y=61
  cx=1157
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1648,7 +1722,7 @@ windowlayout=595
  x=0
  y=0
  cx=205
- cy=452
+ cy=519
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1659,7 +1733,7 @@ windowlayout=595
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=5
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1751,20 +1825,20 @@ windowlayout=595
  ny=0
  ncx=0
  ncy=0
- x=100
- y=203
- cx=599
- cy=416
+ x=316
+ y=249
+ cx=316
+ cy=484
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=0
  [objectinspectorfo.grid]
- propcolwidthref=589
- width0=270
+ propcolwidthref=306
+ width0=136
  sortdescend0=0
- width1=313
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1857,9 +1931,9 @@ windowlayout=595
  ncx=0
  ncy=0
  x=0
- y=509
- cx=1147
- cy=91
+ y=584
+ cx=1358
+ cy=105
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1958,8 +2032,8 @@ windowlayout=595
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1358
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1970,12 +2044,12 @@ windowlayout=595
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1358
+ ncy=62
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1358
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1985,13 +2059,13 @@ windowlayout=595
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/beauty.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/messageform.pas
-  /home/fred/ideu/src/toolhandlermodule.pas
+  /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/ideu/src/selecteditpageform.pas
+  /home/fred/ideu/src/toolhandlermodule.pas
+  /home/fred/ideu/src/messageform.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/projecttreeform.pas
@@ -2008,7 +2082,7 @@ windowlayout=595
   /home/fred/ideu/src/watchform.pas
   /home/fred/ideu/src/targetconsole.pas
  [debuggerfo.project_options]
- value=1
+ value=4
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2023,34 +2097,40 @@ windowlayout=595
  ncy=0
  x=208
  y=0
- cx=939
- cy=452
+ cx=1150
+ cy=519
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
-  1
-  2
+ order=9
   0
+  1
+  5
+  6
+  4
+  7
+  2
+  3
+  8
  firsttab=0
- index=0
+ index=4
  [confideufo.usedefaulteditoroptions]
  value=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
- mdistate=0
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
  x=183
  y=113
- cx=352
- cy=277
+ cx=369
+ cy=307
  rcx=0
  rcy=0
  wsize=0
@@ -2067,15 +2147,15 @@ windowlayout=595
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=452
+ y=62
+ cx=1358
+ cy=519
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2090,11 +2170,11 @@ windowlayout=595
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2110,6 +2190,101 @@ windowlayout=595
  wsize=0
  active=0
  visible=0
+ [_mse_beautyfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_debuggerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=730
+ y=50
+ cx=210
+ cy=124
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_procedurelistfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=128
+ y=184
+ cx=1164
+ cy=50
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_procedurelistfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_dialogfilesfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=717
+ y=69
+ cx=386
+ cy=192
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_dialogfilesfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_finddialogfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=712
+ y=186
+ cx=346
+ cy=366
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_finddialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=440
+ y=259
+ cx=310
+ cy=90
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1

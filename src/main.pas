@@ -593,7 +593,7 @@ if not dialogfilesformcreated then dodialogfiles ;
     dialogfilesfo.selected_file.frame.Caption := 'Selected Syntax Definition File';
     // + dialogfilesfo.list_files.directory ;
     dialogfilesfo.selected_file.Text := '';
-    dialogfilesfo.Show;
+    dialogfilesfo.Show(true);
   end;
 end;
 
@@ -4643,8 +4643,8 @@ if not dialogfilesformcreated then dodialogfiles ;
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text := '';
   //dialogfilesfo.activate;
-  dialogfilesfo.Show;
-  dialogfilesfo.bringtofront;
+  dialogfilesfo.Show(true);
+// dialogfilesfo.bringtofront;
 
 end;
 
