@@ -13,6 +13,18 @@ unit msefiledialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 
 uses
  mseglob,mseguiglob,mseforms,classes,mclasses,mseclasses,msewidgets,msegrids,
@@ -25,7 +37,7 @@ uses
 
 const
  defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly];
- 
+
 type
  tfilelistitem = class(tlistitem)
   private
@@ -42,7 +54,7 @@ type
 
  getfileiconeventty = procedure(const sender: tobject; const ainfo: fileinfoty;
               var imagelist: timagelist; var imagenr: integer) of object;
- 
+
  tfilelistview = class(tlistview)
   private
    ffilelist: tfiledatalist;
@@ -80,9 +92,9 @@ type
    procedure updir;
    function filecount: integer;
    property directory: filenamety read fdirectory write setdirectory;
-   property includeattrib: fileattributesty read fincludeattrib 
+   property includeattrib: fileattributesty read fincludeattrib
                   write fincludeattrib default [fa_all];
-   property excludeattrib: fileattributesty read fexcludeattrib 
+   property excludeattrib: fileattributesty read fexcludeattrib
                   write fexcludeattrib default [fa_hidden];
    property maskar: filenamearty read fmaskar write fmaskar; //nil -> all
    property mask: filenamety read getmask write setmask; //'' -> all
@@ -92,18 +104,18 @@ type
    property  checksubdir: boolean read getchecksubdir write setchecksubdir;
   published
    property options default defaultlistviewoptionsfile;
-   property optionsfile: filelistviewoptionsty read foptionsfile 
+   property optionsfile: filelistviewoptionsty read foptionsfile
                  write setoptionsfile default defaultfilelistviewoptions;
    property filelist: tfiledatalist read ffilelist write setfilelist;
    property onlistread: notifyeventty read fonlistread write fonlistread;
-   property ongetfileicon: getfileiconeventty read fongetfileicon 
+   property ongetfileicon: getfileiconeventty read fongetfileicon
                                               write fongetfileicon;
    property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
  end;
 
 const
  defaulthistorymaxcount = 50;
- 
+
 type
  filedialogoptionty = (fdo_filtercasesensitive,    //flvo_maskcasesensitive
                        fdo_filtercaseinsensitive,  //flvo_maskcaseinsensitive
@@ -172,7 +184,7 @@ type
    fdefaultext: filenamety;
    foptions: filedialogoptionsty;
   public
-   constructor create(const aowner: tmsecomponent = nil; 
+   constructor create(const aowner: tmsecomponent = nil;
                     const onchange: proceventty = nil); reintroduce;
    destructor destroy; override;
    procedure readstatvalue(const reader: tstatreader);
@@ -195,9 +207,9 @@ type
    function execute(var avalue: filenamety; const  dialogkind: filedialogkindty;
                   const acaption: msestring): boolean; overload;
    function execute(var avalue: filenamety; const  dialogkind: filedialogkindty;
-                           const acaption: msestring; 
+                           const acaption: msestring;
                             aoptions: filedialogoptionsty): boolean; overload;
-   function canoverwrite(): boolean; 
+   function canoverwrite(): boolean;
                          //true if current filename is allowed to write
    procedure clear;
    procedure componentevent(const event: tcomponentevent);
@@ -217,7 +229,7 @@ type
    property exclude: fileattributesty read fexclude write fexclude default [fa_hidden];
    property colwidth: integer read fcolwidth write fcolwidth default 0;
    property defaultext: filenamety read fdefaultext write setdefaultext;
-   property options: filedialogoptionsty read foptions write setoptions 
+   property options: filedialogoptionsty read foptions write setoptions
                                      default defaultfiledialogoptions;
    property historymaxcount: integer read fhistorymaxcount
                           write sethistorymaxcount default defaulthistorymaxcount;
@@ -227,7 +239,7 @@ type
    property group: integer read fgroup write fgroup default 0;
    property imagelist: timagelist read fimagelist write setimagelist;
    property ongetfilename: setstringeventty read fongetfilename write fongetfilename;
-   property ongetfileicon: getfileiconeventty read fongetfileicon 
+   property ongetfileicon: getfileiconeventty read fongetfileicon
                                               write fongetfileicon;
    property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
    property onbeforeexecute: filedialogbeforeexecuteeventty
@@ -239,8 +251,8 @@ type
 const
  defaultfiledialogoptionsedit1 = defaultoptionsedit1+
                                  [oe1_savevalue,oe1_savestate,oe1_saveoptions];
- 
-type 
+
+type
  tfiledialog = class(tdialog,istatfile)
   private
    fcontroller: tfiledialogcontroller;
@@ -254,7 +266,7 @@ type
    procedure setstatfile(const Value: tstatfile);
    procedure readoptionsedit(reader: treader);
   protected
-   procedure defineproperties(filer: tfiler); override; 
+   procedure defineproperties(filer: tfiler); override;
     //istatfile
    procedure dostatread(const reader: tstatreader);
    procedure dostatwrite(const writer: tstatwriter);
@@ -275,9 +287,9 @@ type
   published
    property statfile: tstatfile read fstatfile write setstatfile;
    property statvarname: msestring read getstatvarname write fstatvarname;
-   property statpriority: integer read fstatpriority 
+   property statpriority: integer read fstatpriority
                                        write fstatpriority default 0;
-   property controller: tfiledialogcontroller read fcontroller 
+   property controller: tfiledialogcontroller read fcontroller
                                                         write setcontroller;
    property dialogkind: filedialogkindty read fdialogkind write fdialogkind
                                                            default fdk_none;
@@ -292,7 +304,7 @@ type
   public
    constructor create(const aowner: tcustomfilenameedit1);
  end;
- 
+
  tcustomfilenameedit1 = class(tcustomdialogstringed)
   private
    fcontroller: tfiledialogcontroller;
@@ -318,7 +330,7 @@ type
    constructor create(aowner: tcomponent); override;
    destructor destroy; override;
    procedure componentevent(const event: tcomponentevent); override;
-   property controller: tfiledialogcontroller read fcontroller 
+   property controller: tfiledialogcontroller read fcontroller
                                                          write setcontroller;
    property sysvalue: filenamety read getsysvalue write setsysvalue;
    property sysvaluequoted: filenamety read getsysvaluequoted write setsysvalue;
@@ -342,7 +354,7 @@ type
   public
    property dialog: tfiledialog read fdialog write setfiledialog;
  end;
- 
+
  tfilenameedit = class(tcustomfilenameedit)
   published
    property frame;
@@ -351,7 +363,7 @@ type
    property value;
    property onsetvalue;
    property controller;
- end; 
+ end;
 
  tremotefilenameedit = class(tcustomremotefilenameedit)
   published
@@ -361,11 +373,11 @@ type
    property value;
    property onsetvalue;
    property dialog;
- end; 
+ end;
 
  dirdropdowneditoptionty = (ddeo_showhiddenfiles,ddeo_checksubdir);
  dirdropdowneditoptionsty = set of dirdropdowneditoptionty;
- 
+
  tdirdropdownedit = class(tdropdownwidgetedit)
   private
    foptions: dirdropdowneditoptionsty;
@@ -382,12 +394,12 @@ type
    procedure updatecopytoclipboard(var atext: msestring); override;
    procedure updatepastefromclipboard(var atext: msestring); override;
   public
-   property showhiddenfiles: boolean read getshowhiddenfiles 
+   property showhiddenfiles: boolean read getshowhiddenfiles
                                                write setshowhiddenfiles;
-   property checksubdir: boolean read getchecksubdir 
+   property checksubdir: boolean read getchecksubdir
                                                write setchecksubdir;
   published
-   property options: dirdropdowneditoptionsty read foptions 
+   property options: dirdropdowneditoptionsty read foptions
                                               write foptions default [];
  end;
 
@@ -445,34 +457,34 @@ type
    property root: filenamety read froot write setroot;
   published
    property font: twidgetfont read getfont write setfont stored isfontstored;
-   property options: dirtreeoptionsty read getoptions 
+   property options: dirtreeoptionsty read getoptions
                                               write setoptions default [];
-   property optionstree: treeitemeditoptionsty read getoptionstree 
+   property optionstree: treeitemeditoptionsty read getoptionstree
       write setoptionstree default [teo_treecolnavig,teo_enteronimageclick];
    property optionsedit: optionseditty read getoptionsedit write setoptionsedit
          default [oe_readonly,oe_undoonesc,oe_checkmrcancel,
                         oe_forcereturncheckvalue,oe_hintclippedtext,oe_locate];
-   property col_color: colorty read getcol_color 
+   property col_color: colorty read getcol_color
                                          write setcol_color default cl_default;
-   property col_coloractive: colorty read getcol_coloractive 
+   property col_coloractive: colorty read getcol_coloractive
                               write setcol_coloractive default cl_none;
    property col_colorfocused: colorty read getcol_colorfocused
                       write setcol_colorfocused default cl_active;
-   property col_options: coloptionsty read getcell_options 
+   property col_options: coloptionsty read getcell_options
           write setcell_options default [co_readonly,co_fill,co_savevalue];
 //   property col_frame: tcellframe read getcell_frame write setcell_frame;
 //   property col_face: tcellface read getcell_face write setcell_face;
-//   property col_datalist: ttreeitemeditlist read getcell_datalist 
+//   property col_datalist: ttreeitemeditlist read getcell_datalist
 //                                                   write setcell_datalist;
-   property onpathchanged: dirtreepatheventty read 
+   property onpathchanged: dirtreepatheventty read
                                fonpathchanged write fonpathchanged;
-   property onpathselected: dirtreepatheventty read 
+   property onpathselected: dirtreepatheventty read
                                fonpathselected write fonpathselected;
-   property onselectionchanged: listitemeventty read 
+   property onselectionchanged: listitemeventty read
               fonselectionchanged write fonselectionchanged; //for checkboxes
    property optionswidget default defaultoptionswidgetsubfocus;
  end;
- 
+
  tfiledialogfo = class(tmseform)
    listview: tfilelistview;
    tlayouter2: tlayouter;
@@ -503,7 +515,7 @@ type
    procedure filepathentered(const sender: tobject);
    procedure okonexecute(const sender: tobject);
    procedure layoutev(const sender: TObject);
-   procedure showhiddenonsetvalue(const sender: TObject; var avalue: Boolean; 
+   procedure showhiddenonsetvalue(const sender: TObject; var avalue: Boolean;
                   var accept: Boolean);
    procedure formoncreate(const sender: TObject);
    procedure dirshowhint(const sender: TObject; var info: hintinfoty);
@@ -513,7 +525,7 @@ type
    procedure backexe(const sender: TObject);
    procedure forwardexe(const sender: TObject);
    procedure buttonshowhint(const sender: TObject; var ainfo: hintinfoty);
-   
+
   private
    fselectednames: filenamearty;
    finit: boolean;
@@ -521,7 +533,7 @@ type
    fcourseid: int32;
    fcourselock: boolean;
    procedure updatefiltertext;
-   function tryreadlist(const adir: filenamety; 
+   function tryreadlist(const adir: filenamety;
                                      const errormessage: boolean): boolean;
                   //restores old dir on error
    function changedir(const adir: filenamety): boolean;
@@ -582,10 +594,23 @@ uses
  msestringenter,msefiledialogres,msekeyboard,
  msestockobjects,msesysintf,msearrayutils;
 
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
+
 type
  tdirtreefo1 = class(tdirtreefo);
  tcomponent1 = class(tcomponent);
- 
+
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist;
                       out imagenr: integer);
 begin
@@ -796,7 +821,7 @@ begin
             filterindex,filter,colwidth,
             includeattrib,excludeattrib,history,historymaxcount,str1,aoptions,
             adefaultext,imagelist,ongetfileicon,oncheckfile);
- 
+
   finally
    dialog.Free;
   end;
@@ -832,7 +857,7 @@ begin
            filter,colwidth,includeattrib,excludeattrib,history,historymaxcount,
            imagelist,ongetfileicon,oncheckfile);
  if result = mr_ok then begin
-  if (high(ar1) > 0) or (fdo_quotesingle in aoptions) then begin 
+  if (high(ar1) > 0) or (fdo_quotesingle in aoptions) then begin
    afilename:= quotefilename(ar1);
   end
   else begin
@@ -1164,7 +1189,7 @@ begin
                   setsinglebit({$ifdef FPC}longword{$else}byte{$endif}(avalue),
                                {$ifdef FPC}longword{$else}byte{$endif}(foptionsfile),
                                {$ifdef FPC}longword{$else}byte{$endif}(mask1)));
-  foptionsdir:= dirstreamoptionsty(foptionsfile) * 
+  foptionsdir:= dirstreamoptionsty(foptionsfile) *
                              [dso_casesensitive,dso_caseinsensitive];
   checkcasesensitive;
  end;
@@ -1333,7 +1358,7 @@ begin
    result:= false;
    if errormessage then begin
     with stockobjects do begin
-      showerror(captions[sc_can_not_read_directory]+ ' ' + 
+      showerror(captions[sc_can_not_read_directory]+ ' ' +
                        msestring(esys(ex).text),captions[sc_error]);
     end;
    end;
@@ -1354,7 +1379,7 @@ begin
  end;
 end;
 
-procedure Tfiledialogfo.filenamesetvalue(const sender: TObject; 
+procedure Tfiledialogfo.filenamesetvalue(const sender: TObject;
                                 var avalue: msestring;  var accept: Boolean);
 var
  str1,str2,str3: filenamety;
@@ -1370,7 +1395,7 @@ begin
    showmessage(captions[sc_single_item_only]+'.',captions[sc_error]);
   end;
   accept:= false;
-  exit;  
+  exit;
  end;
  bo1:= false;
  if high(fselectednames) > 0 then begin
@@ -1495,7 +1520,7 @@ debuggerfo.file_history.value := dir.value + filename.value;
 end;
 
 debuggerfo.project_history.tag := 0 ;
-  
+
   if (filename.value <> '') or (fdo_acceptempty in dialogoptions) then begin
    if fdo_directory in dialogoptions then begin
     str1:= quotefilename(listview.directory);
@@ -1511,7 +1536,7 @@ debuggerfo.project_history.tag := 0 ;
      end;
     end;
    end;
-   if (fdo_checkexist in dialogoptions) and 
+   if (fdo_checkexist in dialogoptions) and
        not ((filename.value = '') and (fdo_acceptempty in dialogoptions)) then begin
     if fdo_directory in dialogoptions then begin
      bo1:= finddir(filenames[0]);
@@ -1570,7 +1595,7 @@ begin
  listview.synctofontheight;
 end;
 
-procedure tfiledialogfo.showhiddenonsetvalue(const sender: TObject; 
+procedure tfiledialogfo.showhiddenonsetvalue(const sender: TObject;
          var avalue: Boolean; var accept: Boolean);
 begin
  dir.showhiddenfiles:= avalue;
@@ -1775,7 +1800,7 @@ end;
 
 procedure tfiledialogcontroller.componentevent(const event: tcomponentevent);
 begin
- if (fdo_link in foptions) and (event.sender <> self) and 
+ if (fdo_link in foptions) and (event.sender <> self) and
                 (event.sender is tfiledialogcontroller) then begin
   with tfiledialogcontroller(event.sender) do begin
    if fgroup = self.fgroup then begin
@@ -1901,7 +1926,7 @@ begin
   else begin
    dialogkind:= fdk_open;
   end;
- end; 
+ end;
  result:= execute(dialogkind,actcaption(dialogkind));
 end;
 
@@ -1915,12 +1940,12 @@ begin
   else begin
    dialogkind:= fdk_open;
   end;
- end; 
+ end;
  result:= execute(avalue,dialogkind,actcaption(dialogkind));
 end;
 
 function tfiledialogcontroller.execute(var avalue: filenamety;
-       const  dialogkind: filedialogkindty; const acaption: msestring; 
+       const  dialogkind: filedialogkindty; const acaption: msestring;
                             aoptions: filedialogoptionsty): boolean;
 var
  wstr1: filenamety;
@@ -1947,7 +1972,7 @@ end;
 function tfiledialogcontroller.canoverwrite(): boolean;
 begin
  with stockobjects do begin
-  result:= not findfile(filename) or 
+  result:= not findfile(filename) or
        askok(captions[sc_file]+' "'+filename+
             '" '+ captions[sc_exists_overwrite],
             captions[sc_warningupper]);
@@ -1964,7 +1989,7 @@ end;
 function tfiledialogcontroller.getfilename: filenamety;
 begin
  if (high(ffilenames) > 0) or (fdo_quotesingle in foptions) or
-  (fdo_params in foptions) and (high(ffilenames) = 0) and 
+  (fdo_params in foptions) and (high(ffilenames) = 0) and
     (findchar(pmsechar(ffilenames[0]),' ') > 0) then begin
   result:= quotefilename(ffilenames);
  end
@@ -1991,7 +2016,7 @@ end;
 
 const
  quotechar = msechar('"');
- 
+
 procedure tfiledialogcontroller.setfilename(const avalue: filenamety);
 var
  int1: integer;
@@ -2029,7 +2054,7 @@ begin
    akind:= fk_file;
   end;
  end;
- if [fdo_relative,fdo_lastdirrelative,fdo_basedirrelative] * 
+ if [fdo_relative,fdo_lastdirrelative,fdo_basedirrelative] *
                                                  foptions <> [] then begin
   if fdo_relative in foptions then begin
    flastdir:= getcurrentdirmse;

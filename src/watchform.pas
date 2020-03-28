@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2016 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -19,6 +19,18 @@ unit watchform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
 
 uses
  mseforms,msedataedits,msewidgetgrid,msegdbutils,msegraphedits,msedock,msegrids,
@@ -67,16 +79,29 @@ implementation
 uses
  watchform_mfm,main,msewidgets,projectoptionsform,actionsmodule,msegraphutils,
  mseguiglob,mseformatstr,msebits,sysutils,watchpointsform,memoryform;
+
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
+
 type
  stringconstants = (
   deleteall,        //0 Do you wish to delete all watches?
   confirmation,     //1 Confirmation
   disabled          //2 <disabled>
  );
- 
+
  numformatty = (nf_default,nf_bin,nf_decs,nf_decu,nf_hex);
  numsizety = (ns_default,ns_8,ns_16,ns_32,ns_64);
- 
+
 { twatchfo }
 
 procedure twatchfo.watchesononsetvalue(const sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -152,11 +177,11 @@ begin
      case fc of
       nf_bin: begin
        int2:= int2+1; //bitcount
-       case fs of 
-        ns_8: int2:= 8; 
-        ns_16: int2:= 16; 
-        ns_32: int2:= 32; 
-        ns_64: int2:= 64; 
+       case fs of
+        ns_8: int2:= 8;
+        ns_16: int2:= 16;
+        ns_32: int2:= 32;
+        ns_64: int2:= 64;
        end;
        mstr1:= '%'+msestring(bintostr(qword(int641),int2));
       end;
@@ -173,11 +198,11 @@ begin
       end;
       nf_hex: begin
        int2:= int2 div 4 + 1; //nibble count
-       case fs of 
-        ns_8: int2:= 2; 
-        ns_16: int2:= 4; 
-        ns_32: int2:= 8; 
-        ns_64: int2:= 16; 
+       case fs of
+        ns_8: int2:= 2;
+        ns_16: int2:= 4;
+        ns_32: int2:= 8;
+        ns_64: int2:= 16;
        end;
        mstr1:= '0x'+hextostrmse(qword(int641),int2);
       end;
@@ -217,7 +242,7 @@ begin
  memoryfo.refresh;
 end;
 
-procedure twatchfo.expresultonsetvalue(const sender: tobject; 
+procedure twatchfo.expresultonsetvalue(const sender: tobject;
                      var avalue: msestring; var accept: boolean);
 var
  str1: string;
@@ -277,7 +302,7 @@ procedure twatchfo.resetformats(const sender: TObject);
 begin
  formatcode.fillcol(0);
  sizecode.fillcol(0);
- refresh; 
+ refresh;
 end;
 
 

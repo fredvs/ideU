@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2013 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -19,6 +19,18 @@ unit cpuform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 
 uses
  classes,mclasses,msegui,mseclasses,mseforms,msegdbutils,msetypes,msedataedits,
@@ -70,11 +82,25 @@ uses
  cpui386form,cpux86_64form,cpuarmform,cpuarmm3form,
  cpucpu32form,cpuavr32form,cpurl78form,
  projectoptionsform;
+
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
+
 const
  refreshtag = 738952;
 var
  currentproc: processorty;
-  
+
 procedure createcpufo;
 begin
  mainfo.gdb.processorname:= ansistring(projectoptions.d.texp.gdbprocessor);

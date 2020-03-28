@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2014 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -17,6 +17,18 @@
 unit reportdesigner;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 uses
  classes,mclasses,msegui,mseclasses,mseforms,formdesigner,msesimplewidgets,
  msetabs,msesplitter,msegraphutils,msedesigner,msedesignintf,msereport,msetypes,
@@ -25,7 +37,7 @@ uses
 
 const
  updatetabtag = 83684;
- 
+
 type
  treportdesignerfo = class;
  {
@@ -38,7 +50,7 @@ type
  }
  reportdesignerstatety = (rds_tabupdating,rds_mouseinclient);
  reportdesignerstatesty = set of reportdesignerstatety;
- 
+
  treportdesignerfo = class(tformdesignerfo)
    dialh: tdial;
    dialv: tdial;
@@ -124,16 +136,29 @@ implementation
 
 uses
  reportdesigner_mfm,msearrayutils,msegraphics,msewidgets,msereal,sysutils;
+
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 type
  tcustomreport1 = class(tcustomreport);
  treppageform1 = class(treppageform);
  twidget1 = class(twidget);
- 
+
  stringconsts = (
   sc_wishdelete,     //0 Do you wish to delete
   sc_warning         //1 WARNING
  );
- 
+
 { treportcontainer }
 {
 constructor treportcontainer.create(aowner: tcomponent);
@@ -329,7 +354,7 @@ begin
        exit;
       end;
      end;
-    end;   
+    end;
    end;
   end;
  end;
@@ -417,7 +442,7 @@ begin
   if not fisreppage then begin
    pages:= tcustomreport1(report).freppages;
    bo1:= false;
-   with fselections do begin  
+   with fselections do begin
     for int1:= 0 to count - 1 do begin
      comp1:= items[int1];
      for int2:= 0 to high(pages) do begin
@@ -548,7 +573,7 @@ begin
     include(fstate,rds_mouseinclient);
    end;
    ek_buttonpress: begin
-    if (button = mb_left) and (ss_double in shiftstate) and 
+    if (button = mb_left) and (ss_double in shiftstate) and
              not reportcontainer.checkdescendent(sender) then begin
      designer.showobjectinspector;
      include(eventstate,es_processed);
@@ -569,7 +594,7 @@ procedure treportdesignerfo.updatedials;
    ticks[1].intervalcount:= range/5.0;
    ticks[2].intervalcount:= range/1.0;
   end;
- end; 
+ end;
 begin
  if dialh.bounds_cx > 0 then begin
   dialh.dial.range:= dialh.bounds_cx / ppmm; //mm
@@ -592,7 +617,7 @@ procedure treportdesignerfo.reportcontainerscrolled(const sender: twidget;
                const point: pointty);
 begin
  updatedials;
- formcontainerscrolled; 
+ formcontainerscrolled;
 end;
 
 procedure treportdesignerfo.repcomtainerchildscaled(const sender: TObject);

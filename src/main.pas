@@ -15,6 +15,18 @@ unit main;
 {$I define.inc}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 
 uses
  aboutform, plugmanager, fpg_iniutils_ideu, msetimer, mseformatstr, dialogfiles,
@@ -456,6 +468,19 @@ uses
  {$ifdef unix}, mselibc {$endif}, //SIGRT*
   mseprocutils
  {$ifdef mse_dumpunitgroups}, dumpunitgroups{$endif};
+
+ {$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 
 procedure TDummyThread.Execute;
 begin
@@ -1759,7 +1784,7 @@ end;
 procedure tmainfo.setstattext(const atext: msestring;
   const akind: messagetextkindty = mtk_info);
 var
-color0, color1, color3, colorf0, colorf1 : integer;
+color0, color1, color3, colorf0, colorf1 : longword;
 
 begin
 
@@ -4770,7 +4795,7 @@ end;
 
 procedure tmainfo.dotheme(typetheme : integer);
 var
-color0, color1, color2, color3 : integer;
+color0, color1, color2, color3 : longword;
 begin
 
 setstattext(c[Ord(makeok)], mtk_finished);

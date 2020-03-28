@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 2011 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -19,19 +19,31 @@ unit msecomptree;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
+
 uses
  mseforms,msewidgetgrid,mselistbrowser,msedatanodes,msetypes,msestrings,msegui,
  mseglob,mseclasses,msegrids,msesys,msegridsglob,msestat,msestatfile;
 
 const
  compnamedialogstatname = 'compnamedialog.sta';
- 
+
 type
  tcompnameitem = class(ttreelistedititem)
   public
    isvalue: boolean;
  end;
- 
+
  tcompnametreefo = class(tmseform)
    grid: twidgetgrid;
    treeitem: ttreeitemedit;
@@ -63,6 +75,19 @@ implementation
 uses
  msecomptree_mfm,msesysintf,mseeditglob,msefiledialog,msebitmap,mseevent,
  mseguiglob;
+
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
+
 
 function compnamedialog(const avalues: tcompnameitem; var avalue: msestring;
                          const selectparent: boolean): modalresultty;

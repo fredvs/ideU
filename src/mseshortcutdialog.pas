@@ -10,13 +10,24 @@
 unit mseshortcutdialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
 uses
  mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,msegraphics,
  msegraphutils,mseevent,mseclasses,mseforms,msedataedits,mseedit,msegrids,
  msestrings,msetypes,msewidgetgrid,msedatanodes,mselistbrowser,mseactions,
  msesimplewidgets,msewidgets,msegridsglob,msetimer,msesplitter,mseificomp,
  mseificompglob,mseifiglob,mseact,msestatfile,msestream,sysutils;
- 
+
 type
  tmseshortcutdialogfo = class(tmseform)
    shortcut_grid: twidgetgrid;
@@ -54,16 +65,28 @@ type
    procedure updateedits;
    procedure checkconflict;
  end;
- 
+
 function shortcutdialog(const acontroller: tshortcutcontroller): modalresultty;
 
 implementation
 uses
  mseshortcutdialog_mfm,msekeyboard,msedatalist,msearrayutils,msestockobjects;
 
+ {$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+  {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$endif}
+{$endif}
+
 const
  errorcolor = cl_ltred;
- 
+
 type
  tshortcutitem = class(ttreelistedititem)
   private
@@ -82,14 +105,14 @@ type
    property shortcut: shortcutarty read fshortcut write setshortcut;
    property shortcut1: shortcutarty read fshortcut1 write setshortcut1;
  end;
- 
+
  tsysshortcutitem = class(tshortcutitem)
   public
    constructor create(const acaption: msestring); overload;
    constructor create(const acontroller: tshortcutcontroller;
                       const aindex: sysshortcutty); overload;
  end;
-  
+
 function shortcutdialog(const acontroller: tshortcutcontroller): modalresultty;
 var
  fo1: tmseshortcutdialogfo;
@@ -166,7 +189,7 @@ begin
   end;
  finally
   fo1.free;
- end; 
+ end;
 end;
 
 { tshortcutitem }
@@ -232,12 +255,12 @@ begin
 end;
 
 { tmseshortcutdialogfo }
- 
+
 procedure tmseshortcutdialogfo.updaterowvalues(const sender: TObject;
                const aindex: Integer; const aitem: tlistitem);
 begin
  with tshortcutitem(aitem) do begin
-  if fisgroup then begin  
+  if fisgroup then begin
    scdi[aindex]:= '';
    sc1di[aindex]:= '';
   end
@@ -290,7 +313,7 @@ procedure tmseshortcutdialogfo.scdikey(const sender: twidget;
    result[high(result)]:= akey;
   end;
  end; //setkey
- 
+
 var
  mstr1: msestring;
  sc1: shortcutty;
@@ -316,19 +339,19 @@ begin
     if ss_shift in shiftstate then begin
      mstr1:= mstr1+'Shift+';
      sc1:= sc1 + ord(key_modshift);
-    end;   
+    end;
     if ss_ctrl in shiftstate then begin
      mstr1:= mstr1+'Ctrl+';
      sc1:= sc1 + ord(key_modctrl);
-    end;   
+    end;
     if ss_alt in shiftstate then begin
      mstr1:= mstr1+'Alt+';
      sc1:= sc1 + ord(key_modalt);
-    end;   
+    end;
     if ss_second in shiftstate then begin
      mstr1:= mstr1+'Pad+';
      sc1:= sc1 + ord(key_modpad);
-    end;   
+    end;
     if (keynomod = key_shift) or (keynomod = key_control) or
                                             (keynomod = key_alt) then begin
      sc1:= 0;
@@ -338,12 +361,12 @@ begin
      end
      else begin
       sc1:= sc1 or (ord(keynomod) and not modmask);
-      if (high(ar1) >= 0) or isvalidshortcut(sc1) or 
+      if (high(ar1) >= 0) or isvalidshortcut(sc1) or
                                         (keyty(sc1) = key_delete) then begin
        if (high(ar1) < 0) and (keyty(sc1) = key_delete) then begin
         sc1:= 0;
         tstringedit(sender).value:= '';
-       end; 
+       end;
        ar1:= setkey(sc1,ar1);
        if sender.tag = 0 then begin
         shortcut:= ar1;
@@ -390,7 +413,7 @@ begin
    shortcut_edit.enabled:= bo1;
    alternate_edit.enabled:= bo1;
    defaultbu.enabled:= bo1;
-   // if info.cell.row >= 0 then 
+   // if info.cell.row >= 0 then
    // if not tshortcutitem(sc.item).fisgroup then shortcut_edit.setfocus;
   end;
   cek_buttonrelease: begin
@@ -486,7 +509,7 @@ begin
          fconflict1:= true;
          conflict1:= true;
         end;
-       end;       
+       end;
        if (scut1 <> nil) then begin
         if checkshortcutconflict(fshortcut,scut1) then begin
          node1.fconflict1:= true;
@@ -501,12 +524,12 @@ begin
          rootnode1.fconflict1:= true;
          fconflict1:= true;
         end;
-       end;       
+       end;
       end;
-     end;     
+     end;
      for int4:= int1+1 to high(frootnodes) do begin
                //remaining nodes
-      rootnode2:= tshortcutitem(frootnodes[int4]);       
+      rootnode2:= tshortcutitem(frootnodes[int4]);
       for int3:= 0 to rootnode2.count - 1 do begin
        with tshortcutitem(rootnode2.fitems[int3]) do begin
         if (scut <> nil) then begin
@@ -525,7 +548,7 @@ begin
           conflict1:= true;
           rootnode2.fconflict1:= true;
          end;
-        end;       
+        end;
         if (scut1 <> nil) then begin
          if checkshortcutconflict(fshortcut,scut1) then begin
           node1.fconflict1:= true;
@@ -542,13 +565,13 @@ begin
           fconflict1:= true;
           rootnode2.fconflict1:= true;
          end;
-        end;       
+        end;
        end;
-      end;     
+      end;
      end;
     end;
    end;
-  end; 
+  end;
  end;
  with shortcut_grid.fixrows[-1] do begin
   if conflict then begin
@@ -592,7 +615,7 @@ begin
     if not issameshortcut(fshortcut,fshortcutdefault) then begin
      cellinfo.color:= cl_infobackground;
     end;
-   end; 
+   end;
   end;
  end;
 end;

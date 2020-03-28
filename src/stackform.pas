@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2012 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -19,6 +19,18 @@ unit stackform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
 uses
  mseforms,msegrids,msetypes,msegdbutils,msegui,msedispwidgets,msemenus,
  mseguiintf,msegridsglob,msestrings;
@@ -54,6 +66,19 @@ uses
  sysutils,stackform_mfm,sourceform,msefileutils,mseformatstr,main,mseguiglob,
  msegraphutils,projectoptionsform,msewidgets;
 
+{$ifndef mse_allwarnings}
+ {$if fpc_fullversion >= 030100}
+  {$warn 5089 off}
+  {$warn 5090 off}
+  {$warn 5093 off}
+  {$warn 6058 off}
+ {$endif}
+ {$if fpc_fullversion >= 030300}
+  {$warn 6060 off}
+  {$warn 6018 off}
+  {$endif}
+{$endif}
+
 { tstackfo }
 
 function tstackfo.showsource(const aframenr: integer): boolean;
@@ -88,7 +113,7 @@ begin
 //  grid.row:= 0;
 //  exit;
 // end;
- if grid.row >= 0 then begin 
+ if grid.row >= 0 then begin
   filedisp.value:= grid[2][grid.row]+':'+grid[3][grid.row];
   address.value:= grid[4][grid.row];
  end
@@ -152,7 +177,7 @@ begin
     str1:= msestring(func) + '(';
     if high(params) >= 0 then begin
      for int2:= 0 to high(params) do begin
-      str1:= str1 + msestring(params[int2].name) + '=' + 
+      str1:= str1 + msestring(params[int2].name) + '=' +
             removelinebreaks(msestring(params[int2].value)) + ', ';
      end;
      setlength(str1,length(str1)-2);
