@@ -90,8 +90,9 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=file_history
+ value=layoutbusy
  history=20
+  layoutbusy
   file_history
   tesakitdir
   expan
@@ -111,7 +112,6 @@ findinfiledialog=98
   sbvert.facebutton.fade_color.
   navigforwardact
   step_back
-  themenr
  [findinfileadialogfo]
  stackedunder=
  x=485
@@ -823,42 +823,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=11
- DEBUGGERFO
- CONFIDEUFO
- DIALOGFILESFO
+modulenames=2
+ ACTIONSMO
  MAINFO
- MESSAGEFO
- COLORDIALOGFO
- DIRTREEFO
- MSEPOPUPCALENDARFO
- PROJECTOPTIONSFO
- SOURCEFO
- SOURCEPAGE
-moduletypes=11
- TDEBUGGERFO
- TCONFIDEUFO
- TDIALOGFILESFO
+moduletypes=2
+ TACTIONSMO
  TMAINFO
- TMESSAGEFO
- TCOLORDIALOGFO
- TDIRTREEFO
- TPOPUPCALENDARFO
- TPROJECTOPTIONSFO
- TSOURCEFO
- TSOURCEPAGE
-modulefiles=11
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/dialogfiles.mfm
+modulefiles=2
+ /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/messageform.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msecolordialog.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msedirtree.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msepopupcalendar.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1190,9 +1163,9 @@ path=24
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
 line=24
  2129
- 1053
- 621
- 3915
+ 1057
+ 579
+ 3873
  660
  119
  1088
@@ -1201,17 +1174,17 @@ line=24
  2467
  3257
  119
- 578
+ 536
  468
  67
- 4174
+ 4132
  684
  96
  15
  765
  898
  2507
- 5184
+ 5143
  1882
 address=24
  4796414
@@ -1477,8 +1450,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=readcon
+finddtext=syntaxpainter
 findhistory=20
+ syntaxpainter
  readcon
  buzy
  str1 :=
@@ -1498,688 +1472,59 @@ findhistory=20
  beautyfo.s
  dotheme
  step_back
- onthetimer
 findoptions=1
-editpos=101
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,-1073741823
- 0,-1073741823
+editpos=3
  0,0
  0,-1073741823
  0,0
- 0,0
- 0,0
- 0,7
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,-1073741823
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,0
- 0,0
- 0,0
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,413
- 0,373
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,510
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,0
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,1374
- 0,878
- 0,31
- 0,161
- 0,82
- 0,322
- 0,1228
- 0,3421
- 0,225
- 0,335
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-bookmarks20=0
-bookmarks21=0
-bookmarks22=0
-bookmarks23=0
-bookmarks24=0
-bookmarks25=0
-bookmarks26=0
-bookmarks27=0
-bookmarks28=0
-bookmarks29=0
-bookmarks30=0
-bookmarks31=0
-bookmarks32=0
-bookmarks33=0
-bookmarks34=0
-bookmarks35=0
-bookmarks36=0
-bookmarks37=0
-bookmarks38=0
-bookmarks39=0
-bookmarks40=0
-bookmarks41=0
-bookmarks42=0
-bookmarks43=0
-bookmarks44=0
-bookmarks45=0
-bookmarks46=0
-bookmarks47=0
-bookmarks48=0
-bookmarks49=0
-bookmarks50=0
-bookmarks51=0
-bookmarks52=0
-bookmarks53=0
-bookmarks54=0
-bookmarks55=0
-bookmarks56=0
-bookmarks57=0
-bookmarks58=0
-bookmarks59=0
-bookmarks60=0
-bookmarks61=0
-bookmarks62=0
-bookmarks63=0
-bookmarks64=0
-bookmarks65=0
-bookmarks66=0
-bookmarks67=0
-bookmarks68=0
-bookmarks69=0
-bookmarks70=0
-bookmarks71=0
-bookmarks72=0
-bookmarks73=0
-bookmarks74=0
-bookmarks75=0
-bookmarks76=0
-bookmarks77=0
-bookmarks78=0
-bookmarks79=0
-bookmarks80=0
-bookmarks81=0
-bookmarks82=0
-bookmarks83=0
-bookmarks84=0
-bookmarks85=0
-bookmarks86=0
-bookmarks87=0
-bookmarks88=0
-bookmarks89=0
-bookmarks90=0
-bookmarks91=0
-bookmarks92=0
-bookmarks93=0
-bookmarks94=0
-bookmarks95=0
-bookmarks96=0
-bookmarks97=0
-bookmarks98=0
-bookmarks99=0
-bookmarks100=0
-sourcefiles=101
- ${PROJECTDIR}/sourceform.pas
+sourcefiles=3
  ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/actionsmodule.mfm
- /home/fred/mseide-msegui/lib/common/fpccompatibility/formatfunc.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseformatstr.pas
- /home/fred/mseide-msegui/lib/common/kernel/msefileutils.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseapplication.pas
- /home/fred/mseide-msegui/lib/common/kernel/msestatfile.pas
- /home/fred/mseide-msegui/lib/common/ifi/mseificomp.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseact.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
- /home/fred/mseide-msegui/lib/common/graphics/msegraphutils.pas
- /home/fred/mseide-msegui/lib/common/kernel/msearrayutils.pas
- /home/fred/mseide-msegui/lib/common/fpccompatibility/mclasses.pas
- /home/fred/mseide-msegui/lib/common/kernel/msescrollbar.pas
- /home/fred/mseide-msegui/lib/common/widgets/mseobjectpicker.pas
- /home/fred/mseide-msegui/lib/common/kernel/msedrag.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msedropdownlist.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msedataedits.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msewidgetgrid.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msegraphedits.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/mseedit.pas
- /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
- /home/fred/mseide-msegui/lib/common/widgets/mseinplaceedit.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseactions.pas
- /home/fred/mseide-msegui/lib/common/widgets/msemenuwidgets.pas
- /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
- /home/fred/mseide-msegui/lib/common/kernel/msemenus.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseshapes.pas
- /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
- /home/fred/mseide-msegui/lib/common/image/msegraphicstream.pas
- /home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
- /home/fred/mseide-msegui/lib/common/graphics/msex11gdi.pas
- /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
- /home/fred/mseide-msegui/lib/common/widgets/msesplitter.pas
- /home/fred/mseide-msegui/lib/common/widgets/msetabs.pas
- /home/fred/mseide-msegui/lib/common/widgets/msedock.pas
- /home/fred/mseide-msegui/lib/common/kernel/msepointer.pas
- /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseobjecttext.pas
- /home/fred/mseide-msegui/lib/common/ifi/mseifilink.pas
- /home/fred/mseide-msegui/lib/common/kernel/mserttistat.pas
- /home/fred/mseide-msegui/lib/common/ifi/mseifi.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msetextedit.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/mseterminal.pas
- /home/fred/mseide-msegui/lib/common/dialogs/msecolordialog.pas
- /home/fred/mseide-msegui/lib/common/dialogs/msepopupcalendar.pas
- /home/fred/mseide-msegui/lib/common/designutils/msesyntaxedit.pas
- /home/fred/mseide-msegui/lib/common/fpccompatibility/fpreadtiff.pas
- /home/fred/mseide-msegui/lib/common/printer/mseprinter.pas
- /home/fred/mseide-msegui/lib/common/fpccompatibility/mdb.pas
- /home/fred/mseide-msegui/lib/common/ifi/mseifigui.pas
- /home/fred/mseide-msegui/lib/common/db/msebufdataset.pas
- /home/fred/mseide-msegui/lib/common/db/msedb.pas
- /home/fred/mseide-msegui/lib/common/report/msereport.pas
- /home/fred/mseide-msegui/lib/common/widgets/msedial.pas
- /home/fred/mseide-msegui/lib/common/widgets/msechart.pas
- /home/fred/mseide-msegui/lib/common/sysutils/msedbusinterface.pas
- /home/fred/mseide-msegui/lib/common/widgets/msechartedit.pas
- /home/fred/mseide-msegui/lib/common/widgets/msebarcode.pas
- /home/fred/mseide-msegui/lib/common/dialogs/msedirtree.pas
- /home/fred/mseide-msegui/lib/common/assistive/mseassistivehandler.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseskin.pas
- /home/fred/mseide-msegui/lib/common/math/msesignoise.pas
- /home/fred/mseide-msegui/lib/common/audio/msemidi.pas
- /home/fred/mseide-msegui/lib/common/math/msesigmidi.pas
- /home/fred/mseide-msegui/lib/common/db/msesqlresult.pas
- /home/fred/mseide-msegui/lib/common/db/msesqlquery.pas
- /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
- /home/fred/mseide-msegui/lib/common/db/mibconnection.pas
- /home/fred/mseide-msegui/lib/common/db/msefbinterface.pas
- /home/fred/mseide-msegui/lib/common/db/msefb3connection.pas
- /home/fred/mseide-msegui/lib/common/db/mpqconnection.pas
- /home/fred/mseide-msegui/lib/common/db/modbcconn.pas
- /home/fred/mseide-msegui/lib/common/db/msesqlite3conn.pas
- /home/fred/mseide-msegui/lib/common/db/mmysqlconn.pas
- /home/fred/mseide-msegui/lib/common/regcomponents/regdb.pas
- /home/fred/mseide-msegui/lib/common/regcomponents/regreport.pas
- /home/fred/mseide-msegui/lib/common/db/mmysqlconn.inc
- /home/fred/mseide-msegui/lib/common/fpccompatibility/dbf_dbffile.pas
- /home/fred/mseide-msegui/lib/common/db/memds.pp
- /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
- /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
- /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
- /home/fred/mseide-msegui/lib/common/fpccompatibility/jddctmgr_del.pas
- /home/fred/mseide-msegui/lib/common/fpccompatibility/jquant1_del.pas
- /home/fred/mseide-msegui/lib/common/math/msesigaudio.pas
- ${PROJECTDIR}/msedesignparser.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/messageform.pas
- ${PROJECTDIR}/dialogfiles.pas
- ${PROJECTDIR}/sourceupdate.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/commandorform.pas
- /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
-relpaths=101
- sourceform.pas
+relpaths=3
  actionsmodule.pas
+ main.pas
  ideU.pas
- mseide-msegui/apps/ide/actionsmodule.pas
- mseide-msegui/apps/ide/actionsmodule.mfm
- mseide-msegui/lib/common/fpccompatibility/formatfunc.pas
- mseide-msegui/lib/common/kernel/mseformatstr.pas
- ../mseide-msegui/lib/common/kernel/msefileutils.pas
- ../mseide-msegui/lib/common/kernel/mseapplication.pas
- ../mseide-msegui/lib/common/kernel/msestatfile.pas
- ../mseide-msegui/lib/common/ifi/mseificomp.pas
- ../mseide-msegui/lib/common/kernel/mseact.pas
- ../mseide-msegui/lib/common/kernel/mseclasses.pas
- ../mseide-msegui/lib/common/graphics/msegraphutils.pas
- ../mseide-msegui/lib/common/kernel/msearrayutils.pas
- ../mseide-msegui/lib/common/fpccompatibility/mclasses.pas
- ../mseide-msegui/lib/common/kernel/msescrollbar.pas
- ../mseide-msegui/lib/common/widgets/mseobjectpicker.pas
- mseide-msegui/lib/common/kernel/msedrag.pas
- mseide-msegui/lib/common/editwidgets/msedropdownlist.pas
- ../mseide-msegui/lib/common/editwidgets/msedataedits.pas
- mseide-msegui/lib/common/editwidgets/msewidgetgrid.pas
- ../mseide-msegui/lib/common/editwidgets/msegraphedits.pas
- ../mseide-msegui/lib/common/editwidgets/mseedit.pas
- ../mseide-msegui/lib/common/widgets/msegrids.pas
- ../mseide-msegui/lib/common/widgets/mseinplaceedit.pas
- ../mseide-msegui/lib/common/kernel/mseactions.pas
- ../mseide-msegui/lib/common/widgets/msemenuwidgets.pas
- ../mseide-msegui/lib/common/widgets/msewidgets.pas
- ../mseide-msegui/lib/common/kernel/msemenus.pas
- ../mseide-msegui/lib/common/kernel/mseshapes.pas
- ../mseide-msegui/lib/common/kernel/msegui.pas
- mseide-msegui/lib/common/image/msegraphicstream.pas
- ../mseide-msegui/lib/common/graphics/msebitmap.pas
- mseide-msegui/lib/common/graphics/msex11gdi.pas
- mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
- ../mseide-msegui/lib/common/widgets/msesplitter.pas
- ../mseide-msegui/lib/common/widgets/msetabs.pas
- ../mseide-msegui/lib/common/widgets/msedock.pas
- ../mseide-msegui/lib/common/kernel/msepointer.pas
- ../mseide-msegui/lib/common/widgets/mseforms.pas
- mseide-msegui/lib/common/kernel/mseobjecttext.pas
- mseide-msegui/lib/common/ifi/mseifilink.pas
- ../mseide-msegui/lib/common/kernel/mserttistat.pas
- mseide-msegui/lib/common/ifi/mseifi.pas
- mseide-msegui/lib/common/editwidgets/msetextedit.pas
- mseide-msegui/lib/common/editwidgets/mseterminal.pas
- ../mseide-msegui/lib/common/dialogs/msecolordialog.pas
- ../mseide-msegui/lib/common/dialogs/msepopupcalendar.pas
- mseide-msegui/lib/common/designutils/msesyntaxedit.pas
- mseide-msegui/lib/common/fpccompatibility/fpreadtiff.pas
- mseide-msegui/lib/common/printer/mseprinter.pas
- mseide-msegui/lib/common/fpccompatibility/mdb.pas
- mseide-msegui/lib/common/ifi/mseifigui.pas
- mseide-msegui/lib/common/db/msebufdataset.pas
- mseide-msegui/lib/common/db/msedb.pas
- mseide-msegui/lib/common/report/msereport.pas
- mseide-msegui/lib/common/widgets/msedial.pas
- mseide-msegui/lib/common/widgets/msechart.pas
- mseide-msegui/lib/common/sysutils/msedbusinterface.pas
- mseide-msegui/lib/common/widgets/msechartedit.pas
- mseide-msegui/lib/common/widgets/msebarcode.pas
- ../mseide-msegui/lib/common/dialogs/msedirtree.pas
- mseide-msegui/lib/common/assistive/mseassistivehandler.pas
- mseide-msegui/lib/common/kernel/mseskin.pas
- mseide-msegui/lib/common/math/msesignoise.pas
- mseide-msegui/lib/common/audio/msemidi.pas
- mseide-msegui/lib/common/math/msesigmidi.pas
- mseide-msegui/lib/common/db/msesqlresult.pas
- mseide-msegui/lib/common/db/msesqlquery.pas
- mseide-msegui/lib/common/db/msedbedit.pas
- mseide-msegui/lib/common/db/mibconnection.pas
- mseide-msegui/lib/common/db/msefbinterface.pas
- mseide-msegui/lib/common/db/msefb3connection.pas
- mseide-msegui/lib/common/db/mpqconnection.pas
- mseide-msegui/lib/common/db/modbcconn.pas
- mseide-msegui/lib/common/db/msesqlite3conn.pas
- mseide-msegui/lib/common/db/mmysqlconn.pas
- ../mseide-msegui/lib/common/regcomponents/regdb.pas
- ../mseide-msegui/lib/common/regcomponents/regreport.pas
- mseide-msegui/lib/common/db/mmysqlconn.inc
- mseide-msegui/lib/common/fpccompatibility/dbf_dbffile.pas
- mseide-msegui/lib/common/db/memds.pp
- ../mseide-msegui/lib/common/designutils/msepropertyeditors.pas
- ../mseide-msegui/lib/common/designutils/msegdbutils.pas
- ../mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
- mseide-msegui/lib/common/fpccompatibility/jddctmgr_del.pas
- mseide-msegui/lib/common/fpccompatibility/jquant1_del.pas
- mseide-msegui/lib/common/math/msesigaudio.pas
- msedesignparser.pas
- main.pas
- projectoptionsform.pas
- sourcepage.pas
- confideu.pas
- messageform.pas
- dialogfiles.pas
- sourceupdate.pas
- sourceform.pas
- main.pas
- commandorform.pas
- ../mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
-ismoduletexts=101
+ismoduletexts=3
  0
  0
  0
- 0
- -1
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=15
+modules=6
+ /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/guitemplates.mfm
- /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/formdesigner.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msecolordialog.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msepopupcalendar.mfm
- /home/fred/mseide-msegui/lib/common/dialogs/msedirtree.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/messageform.mfm
- /home/fred/ideu/src/dialogfiles.mfm
- /home/fred/ideu/src/commandorform.mfm
-moduleoptions=15
+moduleoptions=6
  0
  0
  0
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-visiblemodules=15
- -1
- 0
- -1
- 0
- -1
- 0
- 0
- -1
- -1
- -1
- -1
- -1
- -1
- -1
- -1
-nomenumodules=15
- 0
- -1
- 0
- -1
+visiblemodules=6
  0
  -1
  -1
  0
  0
  0
+nomenumodules=6
+ -1
  0
  0
- 0
- 0
- 0
+ -1
+ -1
+ -1
 [sourcefo.files_tab]
-order=101
- 0
- 1
- 2
- 3
- 4
- 75
- 70
- 37
- 71
- 50
- 74
- 31
- 85
- 86
- 87
- 38
- 44
- 17
- 36
- 72
- 40
- 54
- 66
- 59
- 6
- 8
- 9
- 60
- 61
- 62
- 63
- 88
- 89
- 55
- 21
- 24
- 57
- 45
- 16
- 47
- 25
- 93
- 97
- 94
- 99
- 101
- 102
- 100
- 98
- 95
- 96
- 42
- 30
- 76
- 80
- 81
- 29
- 14
- 18
- 82
- 83
- 84
- 90
- 34
- 56
- 13
- 10
- 77
- 43
- 46
- 79
- 67
- 22
- 51
- 64
- 41
- 11
- 12
- 26
- 27
- 7
- 33
- 23
- 5
- 15
- 58
- 19
- 20
- 78
- 39
- 65
- 68
- 32
- 35
- 53
- 73
- 48
- 49
- 28
- 52
- 69
-firsttab=41
-index=47
+firsttab=0
+index=0
 [layout]
-windowlayout=932
+windowlayout=610
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2193,13 +1538,13 @@ windowlayout=932
  ny=0
  ncx=0
  ncy=0
- x=49
- y=144
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -2211,15 +1556,15 @@ windowlayout=932
  ny=0
  ncx=0
  ncy=0
- x=839
- y=516
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2287,17 +1632,17 @@ windowlayout=932
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_confideufo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=3
- y=168
- cx=1368
- cy=710
+ x=239
+ y=115
+ cx=678
+ cy=414
  rcx=0
  rcy=0
  [projecttreefo]
@@ -2313,7 +1658,7 @@ windowlayout=932
  x=0
  y=0
  cx=205
- cy=519
+ cy=452
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2323,8 +1668,8 @@ windowlayout=932
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=5
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2409,27 +1754,27 @@ windowlayout=932
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=190
- y=279
- cx=1000
- cy=351
+ x=316
+ y=249
+ cx=316
+ cy=484
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [objectinspectorfo.grid]
- propcolwidthref=990
- width0=440
+ propcolwidthref=306
+ width0=136
  sortdescend0=0
- width1=544
+ width1=164
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2522,9 +1867,9 @@ windowlayout=932
  ncx=0
  ncy=0
  x=0
- y=584
- cx=1358
- cy=105
+ y=509
+ cx=1147
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2623,8 +1968,8 @@ windowlayout=932
  ncy=0
  x=0
  y=0
- cx=1358
- cy=59
+ cx=1147
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2639,8 +1984,8 @@ windowlayout=932
  ncy=52
  x=0
  y=0
- cx=1358
- cy=62
+ cx=1147
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2650,58 +1995,9 @@ windowlayout=932
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=50
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/mseide-msegui/apps/ide/mseide.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/ideu/src/msecomptree.pas
-  /home/fred/ideu/src/finddialogform.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/selecteditpageform.pas
-  /home/fred/ideu/src/toolhandlermodule.pas
-  /home/fred/ideu/src/messageform.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/panelform.pas
-  /home/fred/ideu/src/projecttreeform.pas
-  /home/fred/ideu_ok/src/stackform.pas
-  /home/fred/ideu_ok/src/main.pas
-  /home/fred/ideu/src/imageselectorform.pas
-  /home/fred/ideu/src/guitemplates.pas
-  /home/fred/ideu/src/formdesigner.pas
-  /home/fred/ideu/src/commandlineform.pas
-  /home/fred/ideu/src/aboutform.pas
-  /home/fred/ideu/src/symbolform.pas
-  /home/fred/ideu/src/threadsform.pas
-  /home/fred/ideu/src/watchpointsform.pas
-  /home/fred/ideu/src/watchform.pas
-  /home/fred/ideu/src/targetconsole.pas
-  /home/fred/ideu/src/storedcomponentinfodialog.pas
-  /home/fred/ideu/src/stackform.pas
-  /home/fred/ideu/src/sourcehintform.pas
-  /home/fred/ideu/src/settaborderform.pas
-  /home/fred/ideu/src/setcreateorderform.pas
-  /home/fred/ideu/src/selectsubmoduledialogform.pas
-  /home/fred/ideu/src/selectsubformdialogform.pas
-  /home/fred/ideu/src/reportdesigner.pas
-  /home/fred/ideu/src/replacedialogform.pas
-  /home/fred/ideu/src/programparametersform.pas
-  /home/fred/ideu/src/printform.pas
-  /home/fred/ideu/src/paneltitle.pas
-  /home/fred/ideu/src/memoryform.pas
-  /home/fred/ideu/src/procedurelistform.pas
-  /home/fred/ideu/src/beauty.pas
-  /home/fred/ideu/src/disassform.pas
-  /home/fred/ideu/src/cpux86_64form.pas
-  /home/fred/ideu/src/cpurl78form.pas
-  /home/fred/ideu/src/cpui386form.pas
-  /home/fred/ideu/src/cpuform.pas
-  /home/fred/ideu/src/cpucpu32form.pas
-  /home/fred/ideu/src/cpuavr32form.pas
-  /home/fred/ideu/src/cpuarmm3form.pas
-  /home/fred/ideu/src/cpuarmform.pas
-  /home/fred/ideu/src/confmsegui.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=1
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2718,122 +2014,20 @@ windowlayout=932
  ncy=0
  x=208
  y=0
- cx=1150
- cy=519
+ cx=939
+ cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=101
-  0
-  1
-  2
-  3
-  4
-  75
-  70
-  37
-  71
-  50
-  74
-  31
-  85
-  86
-  87
-  38
-  44
-  17
-  36
-  72
-  40
-  54
-  66
-  59
-  6
-  8
-  9
-  60
-  61
-  62
-  63
-  88
-  89
-  55
-  21
-  24
-  57
-  45
-  16
-  47
-  25
-  93
-  97
-  94
-  99
-  101
-  102
-  100
-  98
-  95
-  96
-  42
-  30
-  76
-  80
-  81
-  29
-  14
-  18
-  82
-  83
-  84
-  90
-  34
-  56
-  13
-  10
-  77
-  43
-  46
-  79
-  67
-  22
-  51
-  64
-  41
-  11
-  12
-  26
-  27
-  7
-  33
-  23
-  5
-  15
-  58
-  19
-  20
-  78
-  39
-  65
-  68
-  32
-  35
-  53
-  73
-  48
-  49
-  28
-  52
-  69
- firsttab=41
- index=47
+ firsttab=0
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2849,25 +2043,25 @@ windowlayout=932
  wsize=0
  active=0
  visible=0
- [_mse_mainfo_mse_]
+ [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=292
- y=167
- cx=755
- cy=76
+ x=223
+ y=90
+ cx=706
+ cy=352
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2887,25 +2081,6 @@ windowlayout=932
  wsize=0
  active=0
  visible=0
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=224
- y=197
- cx=652
- cy=301
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
@@ -2928,7 +2103,7 @@ windowlayout=932
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2944,101 +2119,6 @@ windowlayout=932
  wsize=0
  active=0
  visible=0
- [_mse_colordialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_msepopupcalendarfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=140
- y=234
- cx=348
- cy=298
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_msepopupcalendarfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_dirtreefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=341
- y=304
- cx=243
- cy=179
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_dirtreefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=80
- y=374
- cx=310
- cy=203
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_messagefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=199
- y=195
- cx=849
- cy=634
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=619
- y=95
- cx=419
- cy=607
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [mainfo.panel1]
  splitdir=1
  useroptions=302087659
@@ -3050,68 +2130,11 @@ windowlayout=932
  ncx=0
  ncy=0
  x=0
- y=62
- cx=1358
- cy=519
+ y=54
+ cx=1147
+ cy=452
  rcx=0
  rcy=0
- [_mse_messagefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_dialogfilesfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=415
- y=216
- cx=467
- cy=281
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_dialogfilesfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=712
- y=186
- cx=346
- cy=366
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=findinfilefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=128
- y=184
- cx=1164
- cy=50
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1

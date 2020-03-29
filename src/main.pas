@@ -30,55 +30,14 @@ interface
 {$endif}
 
 uses
-  aboutform,
-  plugmanager,
-  fpg_iniutils_ideu,
-  msetimer,
-  mseformatstr,
-  dialogfiles,
-  mseforms,
-  mseguiglob,
-  msegui,
-  msegdbutils,
-  mseactions,
-  sak_mse,
-  msefileutils,
-  msedispwidgets,
-  msedataedits,
-  msestat,
-  msestatfile,
-  msemenus,
-  msebitmap,
-  msegrids,
-  msefiledialog,
-  msetypes,
-  sourcepage,
-  msedesignintf,
-  msedesigner,
-  Classes,
-  mclasses,
-  mseclasses,
-  msegraphutils,
-  typinfo,
-  msedock,
-  SysUtils,
-  msesysenv,
-  msemacros,
-  msestrings,
-  msepostscriptprinter,
-  msegraphics,
-  mseglob,
-  msestream,
-  mseprocmonitorcomp,
-  msesystypes,
-  mserttistat,
-  msedatalist,
-  mselistbrowser,
-  projecttreeform,
-  msepipestream,
-  msestringcontainer,
-  msesys,
-  msewidgets;
+ aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
+ mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
+ msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
+ msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
+ mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
+ msestrings,msepostscriptprinter,msegraphics,mseglob,msestream,
+ mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
+ projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
   versiontext = '2.0.0';
@@ -287,6 +246,7 @@ type
     procedure onclassic(const Sender: TObject);
     procedure ondark(const Sender: TObject);
     procedure ontoggleunitform(const Sender: TObject);
+
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -418,9 +378,7 @@ type
 var
   mainfo: tmainfo;
   toogletag: Boolean = False;
-  layoutbusy: Boolean = False;
-
-  // fred
+  layoutbusy: Boolean = true;
   thetimer: TTimer;
   vaparam: Boolean = False;
 
@@ -3421,6 +3379,8 @@ begin
       str1 := ttextstream.Create(thedir);
       debuggerfo.Close;
       loadwindowlayout(str1);
+
+
       if (tabind < 0) and (sourcefo.files_tab.Count > 0) then
         sourcefo.files_tab.activepageindex := 0;
 
@@ -3429,10 +3389,8 @@ begin
 
       str1.Destroy();
     end;
-    sourcefo.invalidate;
-    sourcefo.activepage.invalidate;
 
-    layoutbusy := False;
+   layoutbusy := false;
 
   end;
 
@@ -4788,6 +4746,7 @@ procedure tmainfo.ontoggleunitform(const Sender: TObject);
 begin
   actionsmo.toggleformunitonexecute(Sender);
 end;
+
 
 end.
 

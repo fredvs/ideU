@@ -537,6 +537,7 @@ end;
 procedure tactionsmo.closeactonexecute(const sender: tobject);
 begin
  with mainfo do begin
+ layoutbusy := True;
   if factivedesignmodule <> nil then begin
    if closemodule(factivedesignmodule,true) then begin
     factivedesignmodule:= nil;
@@ -545,13 +546,16 @@ begin
   else begin
    sourcefo.closeactivepage;
   end;
+  layoutbusy := false;
  end;
 end;
 
 procedure tactionsmo.closeallactonexecute(const sender: tobject);
 begin
  with mainfo do begin
+ layoutbusy := True;
   closeall(false);
+  layoutbusy := false;
  end;
 end;
 
