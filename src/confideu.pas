@@ -47,6 +47,8 @@ type
    stripmessageesc: tbooleanedit;
    addwhiteaftercomma: tbooleanedit;
    modaldial: tbooleanedit;
+   deflayout: tfilenameedit;
+   defsynt: tfilenameedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);

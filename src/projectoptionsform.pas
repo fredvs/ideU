@@ -1122,6 +1122,7 @@ var
 
 implementation
 uses
+ confideu, dialogfiles, commandorform,
  projectoptionsform_mfm,breakpointsform,sourceform,msereal,
  objectinspector,msebits,msefileutils,msedesignintf,guitemplates,
  watchform,stackform,main,projecttreeform,findinfileform,
@@ -2102,6 +2103,7 @@ var
  modulenames1: msestringarty;
  moduletypes1: msestringarty;
  modulefiles1: filenamearty;
+
 // moduledock1: msestringarty;
 begin
  with statfiler,projectoptions do begin
@@ -2209,6 +2211,7 @@ begin
    end;
   end;
  end;
+
 end;
 
 

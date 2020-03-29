@@ -52,6 +52,7 @@ procedure tdialogfilesfo.loaddef(const sender: tcustomlistview);
 var
  str1: ttextstream;
 begin
+layoutbusy := true;
 
 if assigned(list_files.selectednames) and (tag = 0) then
  begin
@@ -84,11 +85,13 @@ if (tabind > -1) and (sourcefo.files_tab.count > 0) then
   str1.destroy();
  end;
 end;
+layoutbusy := false;
  end;
 
 
 procedure tdialogfilesfo.butok(const sender: TObject);
 begin
+layoutbusy := true;
 if selected_file.text <> '' then
 begin
 if tag = 0 then
@@ -97,11 +100,12 @@ thesdef := list_files.directory+ directoryseparator +selected_file.text ;
 end;
 
 end;
-//close ;
+layoutbusy := false;
 end;
 
 procedure tdialogfilesfo.butcancel(const sender: TObject);
 begin
+layoutbusy := true;
 if tag = 0 then
  begin
 if fileexists(thesdef) and (list_files.directory+ directoryseparator +selected_file.text <> thesdef) then
@@ -113,7 +117,7 @@ sourcefo.activepage.updatestatvalues;
 theactivepage := '';
 end;
 end;
-//close ;
+layoutbusy := false;
 end;
 
 procedure tdialogfilesfo.oncloseev(const sender: TObject);

@@ -1162,6 +1162,9 @@ end;
 procedure tsourcefo.tabwidgetonactivepagechanged(const Sender: TObject);
 var
 color0,color1, color2 : longword;
+str1: ttextstream;
+thedir: msestring;
+
 begin
   updatecaption;
 
@@ -1217,6 +1220,21 @@ ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color
 ActivePage.source_editor.frame.sbvert.colorglyph := color2;
 
 end;
+
+ if (confideufo.usedefaulteditoroptions.value) and (layoutbusy = false) then
+begin
+if han <> -1 then sourcefo.syntaxpainter.freedeffile(han);
+
+   thedir := tosysfilepath(confideufo.defsynt.Text);
+
+    str1:= ttextstream.create(thedir);
+
+ han := syntaxpainter.readdeffile(str1);
+ activepage.edit.setsyntaxdef(han);
+ activepage.updatestatvalues;
+  str1.destroy();
+end;
+
 
 end;
 

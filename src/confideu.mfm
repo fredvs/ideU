@@ -1,17 +1,17 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 519
-  bounds_y = 131
+  bounds_x = 619
+  bounds_y = 95
   bounds_cx = 409
-  bounds_cy = 525
+  bounds_cy = 607
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     409
-    525
+    607
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
@@ -179,7 +179,7 @@ object confideufo: tconfideufo
         0
       )
       hint = 'Parent directory of sakit'
-      bounds_x = 7
+      bounds_x = 9
       bounds_y = 19
       bounds_cx = 387
       bounds_cy = 39
@@ -345,7 +345,7 @@ object confideufo: tconfideufo
     bounds_x = 5
     bounds_y = 311
     bounds_cx = 400
-    bounds_cy = 170
+    bounds_cy = 258
     object trimtrailingwhitespace: tbooleanedit
       frame.caption = 'Trim whitespace'
       frame.localprops = []
@@ -650,6 +650,68 @@ object confideufo: tconfideufo
       bounds_cx = 73
       bounds_cy = 17
     end
+    object deflayout: tfilenameedit
+      Tag = 3
+      frame.colorclient = 14876625
+      frame.caption = 'Default layout'
+      frame.captiontextflags = [tf_bottom]
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 13
+      hint = 'Default layout for all projects'
+      bounds_x = 8
+      bounds_y = 160
+      bounds_cx = 381
+      bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
+      controller.lastdir = '${IDEUDIR}/layout/'
+      controller.options = [fdo_sysfilename, fdo_file]
+      controller.captionopen = 'Parent directory of sakit'
+      reffontheight = 15
+    end
+    object defsynt: tfilenameedit
+      Tag = 3
+      frame.colorclient = 14876625
+      frame.caption = 'Default synthax theme'
+      frame.captiontextflags = [tf_bottom]
+      frame.localprops = [frl_colorclient]
+      frame.localprops1 = []
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          imagenr = 17
+        end>
+      frame.button.imagenr = 17
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 14
+      hint = 'Default layout for all projects'
+      bounds_x = 8
+      bounds_y = 206
+      bounds_cx = 381
+      bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
+      controller.lastdir = '${IDEUDIR}/syntaxdefs/'
+      controller.options = [fdo_sysfilename, fdo_file]
+      controller.captionopen = 'Parent directory of sakit'
+      reffontheight = 15
+    end
   end
   object but_ok: tbutton
     frame.optionsskin = [fso_flat]
@@ -696,8 +758,8 @@ object confideufo: tconfideufo
     )
     taborder = 6
     hint = 'Add space after comma when auto-parsing MSEgui code from designer'
-    bounds_x = 68
-    bounds_y = 491
+    bounds_x = 62
+    bounds_y = 576
     bounds_cx = 277
     bounds_cy = 17
     value = True

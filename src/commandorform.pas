@@ -93,7 +93,7 @@ var
  debuggerfo: tdebuggerfo;
 implementation
 uses
- commandorform_mfm, targetconsole, confdebugger, actionsmodule,
+ commandorform_mfm, targetconsole, confdebugger, actionsmodule, confideu,
  plugmanager, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
@@ -209,15 +209,20 @@ begin
 
 
 procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
+var
+ str1: ttextstream;
+ thedir : msestring;
 begin
 project_history.width := 84;
 //if (fileexists(project_history.value)) and
 if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
 begin
+layoutbusy := true;
 sleep(50);
 mainfo.openproject(project_history.value);
 mainfo.activate;
+layoutbusy := false;
 end;
 end;
 
