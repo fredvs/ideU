@@ -3359,6 +3359,7 @@ begin
   if (confideufo.usedefaulteditoroptions.Value) then
   begin
     layoutbusy := True;
+     if Assigned(sourcefo.ActivePage) then begin
     if han <> -1 then
       sourcefo.syntaxpainter.freedeffile(han);
 
@@ -3370,6 +3371,7 @@ begin
     sourcefo.ActivePage.edit.setsyntaxdef(han);
     sourcefo.ActivePage.updatestatvalues;
     str1.Destroy();
+   end;
 
       thedir := tosysfilepath(confideufo.deflayout.Text);
 
@@ -3377,8 +3379,8 @@ begin
     begin
       sleep(10);
       str1 := ttextstream.Create(thedir);
-      debuggerfo.Close;
-      loadwindowlayout(str1);
+     debuggerfo.Close;
+     loadwindowlayout(str1);
 
 
       if (tabind < 0) and (sourcefo.files_tab.Count > 0) then
@@ -3390,7 +3392,7 @@ begin
       str1.Destroy();
     end;
 
-   layoutbusy := false;
+  layoutbusy := false;
 
   end;
 

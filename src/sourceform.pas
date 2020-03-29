@@ -1221,7 +1221,6 @@ ActivePage.source_editor.frame.sbvert.colorglyph := color2;
 
 end;
 
-
  if (ActivePage <> nil) and (confideufo.usedefaulteditoroptions.value) and (layoutbusy = false) then
 begin
 if han <> -1 then sourcefo.syntaxpainter.freedeffile(han);
