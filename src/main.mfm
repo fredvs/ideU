@@ -131,7 +131,7 @@ object mainfo: tmainfo
     itemfacetemplate = convex
     itemframetemplateactive = tframecomp2
     itemfacetemplateactive = concave
-    menu.submenu.count = 15
+    menu.submenu.count = 14
     menu.submenu.items = <    
       item
         submenu.count = 14
@@ -1175,7 +1175,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 5
+        submenu.count = 6
         submenu.items = <        
           item
             caption = '&General Setting'
@@ -1216,28 +1216,27 @@ object mainfo: tmainfo
             caption = 'Configure Debuggers'
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfdebuggersexecute
+          end        
+          item
+            submenu.count = 2
+            submenu.items = <            
+              item
+                caption = 'Silver'
+                state = [as_localcaption, as_localonexecute]
+                onexecute = onclassic
+              end            
+              item
+                caption = 'Carbon'
+                state = [as_localcaption, as_localonexecute]
+                onexecute = ondark
+              end>
+            caption = 'Themes'
+            state = [as_localcaption]
           end>
         caption = 'Sett&ing'
         hint = 'General and extra setting.'
         name = 'settings'
         state = [as_localcaption, as_localhint, as_localonexecute]
-      end    
-      item
-        submenu.count = 2
-        submenu.items = <        
-          item
-            caption = 'Silver'
-            state = [as_localcaption, as_localonexecute]
-            onexecute = onclassic
-          end        
-          item
-            caption = 'Carbon'
-            state = [as_localcaption, as_localonexecute]
-            onexecute = ondark
-          end>
-        caption = '&Theme'
-        name = 'theme'
-        state = [as_localcaption, as_localshortcut]
       end    
       item
         submenu.count = 1
