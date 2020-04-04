@@ -22,7 +22,9 @@ interface
 uses
  mseforms,msesimplewidgets,msedataedits,msegraphedits,msetextedit,msestrings,
  msetypes,msestat,msestatfile,projectoptionsform,mseglob,mseevent,msegui,
- msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseclasses,mseguiglob;
+ msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseclasses,
+ mseguiglob, mseificomp, mseificompglob, mseifiglob, msescrollbar, mseact,
+ mseapplication, msedropdownlist, mseedit, msestream, sysutils;
 
 type
 
@@ -36,8 +38,17 @@ type
    wholeword: tbooleanedit;
    casesensitive: tbooleanedit;
    tbutton2: tbutton;
+   boolfind1: tbooleaneditradio;
+   findtext2: thistoryedit;
+   findtext3: thistoryedit;
+   findtext4: thistoryedit;
+   boolfind2: tbooleaneditradio;
+   boolfind3: tbooleaneditradio;
+   boolfind4: tbooleaneditradio;
+   tbutton3: tbutton;
    procedure oncloseev(const sender: TObject);
    procedure onok(const sender: TObject);
+   procedure onprior(const sender: TObject);
   private
    procedure valuestoinfo(out info: findinfoty);
    procedure infotovalues(const info: findinfoty);
@@ -106,10 +117,34 @@ end;
 { tfinddialogfo }
 
 procedure tfinddialogfo.valuestoinfo(out info: findinfoty);
+var 
+findtxt : msestring;
+histor : msestringarty;
 begin
+if boolfind1.value then
+begin
+findtxt := findtext.value;
+histor := findtext.dropdown.valuelist.asarray;
+end  else
+if boolfind2.value then
+begin
+findtxt := findtext2.value;
+histor := findtext2.dropdown.valuelist.asarray;
+end else
+if boolfind3.value then
+begin 
+findtxt := findtext3.value;
+histor := findtext3.dropdown.valuelist.asarray;
+end else
+if boolfind4.value then
+begin
+findtxt := findtext4.value;
+histor := findtext4.dropdown.valuelist.asarray;
+end;
+
  with info do begin
-  text:= findtext.value;
-  history:= findtext.dropdown.valuelist.asarray;
+  text:= findtxt;
+  history:= histor;
   options:= encodesearchoptions(not casesensitive.value,wholeword.value);
   selectedonly:= self.selectedonly.value;
  end;
@@ -118,8 +153,26 @@ end;
 procedure tfinddialogfo.infotovalues(const info: findinfoty);
 begin
  with info do begin
+  if boolfind1.value then
+  begin
   findtext.value:= text;
   findtext.dropdown.valuelist.asarray:= history;
+  end else
+  if boolfind2.value then
+  begin
+  findtext.value:= text;
+  findtext.dropdown.valuelist.asarray:= history;
+  end else
+  if boolfind3.value then
+  begin
+  findtext.value:= text;
+  findtext.dropdown.valuelist.asarray:= history;
+  end else
+  if boolfind4.value then
+  begin
+  findtext4.value:= text;
+  findtext4.dropdown.valuelist.asarray:= history;
+  end;
   casesensitive.value:= not (so_caseinsensitive in options);
   wholeword.value:= so_wholeword in options;
 //  self.selectedonly.value:= selectedonly;
@@ -135,6 +188,12 @@ procedure tfinddialogfo.onok(const sender: TObject);
 begin
   finddialogfo.valuestoinfo(findinfos);
   sourcefo.activepage.dofind;
+end;
+
+procedure tfinddialogfo.onprior(const sender: TObject);
+begin
+ finddialogfo.valuestoinfo(findinfos);
+  sourcefo.activepage.findback;
 end;
 
 end.

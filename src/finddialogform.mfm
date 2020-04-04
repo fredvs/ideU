@@ -1,14 +1,14 @@
 object finddialogfo: tfinddialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 440
-  bounds_y = 259
+  bounds_x = 518
+  bounds_y = 197
   bounds_cx = 300
-  bounds_cy = 90
+  bounds_cy = 220
   bounds_cxmin = 300
-  bounds_cymin = 90
+  bounds_cymin = 220
   bounds_cxmax = 300
-  bounds_cymax = 90
+  bounds_cymax = 220
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -16,7 +16,7 @@ object finddialogfo: tfinddialogfo
     0
     0
     300
-    90
+    220
   )
   optionswindow = [wo_message]
   options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
@@ -53,10 +53,10 @@ object finddialogfo: tfinddialogfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 2
-    bounds_x = 8
-    bounds_y = 45
+    bounds_x = 10
+    bounds_y = 180
     bounds_cx = 283
-    bounds_cy = 40
+    bounds_cy = 35
     optionsscale = [osc_expandx, osc_shrinkx, osc_expandshrinkx, osc_expandshrinky]
     optionslayout = [lao_placex]
     place_mindist = 4
@@ -117,7 +117,7 @@ object finddialogfo: tfinddialogfo
     end
   end
   object findtext: thistoryedit
-    frame.caption = 'Text to &find'
+    frame.caption = 'Text to &find 1'
     frame.captiontextflags = [tf_bottom]
     frame.font.name = 'stf_default'
     frame.font.localprops = []
@@ -133,9 +133,9 @@ object finddialogfo: tfinddialogfo
       0
       0
     )
-    bounds_x = 9
-    bounds_y = 2
-    bounds_cx = 226
+    bounds_x = 26
+    bounds_y = 14
+    bounds_cx = 270
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -166,20 +166,162 @@ object finddialogfo: tfinddialogfo
   end
   object tbutton2: tbutton
     taborder = 3
-    bounds_x = 248
-    bounds_y = 15
-    bounds_cx = 42
+    bounds_x = 122
+    bounds_y = 6
+    bounds_cx = 77
     bounds_cy = 21
     anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = '&OK'
+    caption = 'Find Next'
     font.name = 'stf_default'
     font.localprops = []
     onexecute = onok
   end
+  object boolfind1: tbooleaneditradio
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 4
+    bounds_x = 6
+    bounds_y = 34
+    value = True
+  end
+  object findtext2: thistoryedit
+    frame.caption = 'Text to &find 2'
+    frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 5
+    bounds_x = 26
+    bounds_y = 51
+    bounds_cx = 270
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+    font.name = 'stf_default'
+    font.localprops = []
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object findtext3: thistoryedit
+    frame.caption = 'Text to &find 3'
+    frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 6
+    bounds_x = 26
+    bounds_y = 94
+    bounds_cx = 270
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+    font.name = 'stf_default'
+    font.localprops = []
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object findtext4: thistoryedit
+    frame.caption = 'Text to &find 4'
+    frame.captiontextflags = [tf_bottom]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 7
+    bounds_x = 26
+    bounds_y = 135
+    bounds_cx = 270
+    bounds_cy = 39
+    anchors = [an_left, an_top, an_right]
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+    font.name = 'stf_default'
+    font.localprops = []
+    dropdown.cols.count = 1
+    dropdown.cols.items = <    
+      item
+      end>
+    reffontheight = 15
+  end
+  object boolfind2: tbooleaneditradio
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 8
+    bounds_x = 6
+    bounds_y = 73
+  end
+  object boolfind3: tbooleaneditradio
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 9
+    bounds_x = 6
+    bounds_y = 118
+  end
+  object boolfind4: tbooleaneditradio
+    frame.localprops = []
+    frame.localprops1 = []
+    taborder = 10
+    bounds_x = 6
+    bounds_y = 158
+  end
+  object tbutton3: tbutton
+    taborder = 11
+    bounds_x = 215
+    bounds_y = 6
+    bounds_cx = 74
+    bounds_cy = 21
+    anchors = [an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = 'Find Prior'
+    font.name = 'stf_default'
+    font.localprops = []
+    onexecute = onprior
+  end
   object statfile1: tstatfile
     filename = 'finddialogfo.sta'
     options = [sfo_memory]
-    left = 112
+    left = 185
+    top = 135
   end
 end
