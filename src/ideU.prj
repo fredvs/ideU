@@ -60,9 +60,9 @@ findinfiledialog=98
  cy=316
  filehistory=28
   /home/fred/mseide-msegui/
-  /home/fred/svnfpctrunk/trunk/
   /home/fred/ideu_ok/
   /home/fred/strumpract/
+  /home/fred/svnfpctrunk/trunk/
   /home/fred/uos/
   /home/fred/mseuniverse/
   /home/fred/eschecs_mse/
@@ -88,30 +88,30 @@ findinfiledialog=98
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=findtext
+ value=layoutbusy
  history=20
-  findtext
-  xlib
-  X11
-  libx11
-  x,
-  libX11
-  LinkLib X11
-  LinkLib
-  libX11.so
-  $LinkLib
-  sharedlibext
-  AddLibraryStatement
-  SLL
-  OpenSLL
-  external
   layoutbusy
   file_history
   tesakitdir
   expan
   usedefaulteditoroptions
+  updateprojectoptions
+  colornote
+  syntaxdeffile
+  case 
+  $warn 6060
+  fontline
+  beauty
+  dodialogfiles
+  complete class
+  dialogfilesfo
+  dialogfilesfo.container.color
+  dialogfilesfo.color
+  sbvert.facebutton.fade_color.
+  navigforwardact
+  step_back
  [findinfileadialogfo]
  stackedunder=
  x=485
@@ -123,8 +123,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1006
- y=146
+ x=801
+ y=188
  cx=300
  cy=90
 replacedialog=25
@@ -358,14 +358,15 @@ imagelisteditor=76
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/ideu/src/images/pausedisable.png
+  /home/fred/Pictures/imagesideu/bluepoint2.png
  filecolwidth=174
  x=711
  y=385
  cx=588
  cy=307
- lastdir=/home/fred/ideu/src/images/
+ lastdir=/home/fred/Pictures/imagesideu/
  filehistory=50
+  /home/fred/Pictures/imagesideu/bluepoint2.png
   /home/fred/ideu/src/images/pausedisable.png
   /home/fred/ideu/src/images/terminaloff.png
   /home/fred/ideu/src/images/terminalon.png
@@ -415,7 +416,6 @@ imagelisteditor=76
   /home/fred/Bureau/line7.png
   /home/fred/Images/terminal2.jpeg
   /home/fred/Images/terminal.jpeg
-  /home/fred/Images/terminal.bmp
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
  [imagelisteditorfo.transparentcolor]
@@ -588,7 +588,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=12
+makeoptions=11
  -Mobjfpc -Sh -Fcutf8
  -gl
  -B
@@ -596,13 +596,11 @@ makeoptions=12
  -ghl
  -WG
  -k--gc-sections
- -sh
  -Xd
  -FUunits
  -vewinhq
  -vwq
-makeoptpurpose=12
- 
+makeoptpurpose=11
  
  
  
@@ -825,35 +823,31 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=3
  ACTIONSMO
- FINDDIALOGFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=3
  TACTIONSMO
- TFINDDIALOGFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/finddialogform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=12
+makeoptionson=11
  4095
  0
- 60
+ 56
  4092
  0
  48
  0
  0
- 0
  2047
- 4095
  4091
+ 4095
 compilerusedon=29
  1987
  0
@@ -1172,7 +1166,7 @@ path=24
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
 line=24
  2129
- 1056
+ 1057
  579
  3875
  660
@@ -1184,7 +1178,7 @@ line=24
  3257
  119
  536
- 467
+ 468
  67
  4134
  684
@@ -1459,15 +1453,8 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=findtext
+finddtext=ActivePage
 findhistory=20
- findtext
- insert
- remove prefix
- xlib
- X11
- sharedclibext
- Delete(S,i,255);
  syntaxpainter
  readcon
  buzy
@@ -1481,61 +1468,76 @@ findhistory=20
  implementation
  onbeauty
  procedurelist
+ dialogfilesfo.
+ doBeautydialogfilesfo.
+ doBeauty
+ beautyfo
+ beautyfo.s
+ dotheme
+ step_back
 findoptions=1
-editpos=5
- 0,127
- 0,179
- 0,4
- 0,-1073741823
- 0,429
+editpos=4
+ 0,3
+ 0,0
+ 0,0
+ 0,10
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-sourcefiles=5
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/finddialogform.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
+sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=5
- ideU.pas
- finddialogform.pas
- main.pas
- sourceform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/sourceform.pas
+relpaths=4
  actionsmodule.pas
-ismoduletexts=5
+ main.pas
+ ideU.pas
+ sourceform.pas
+ismoduletexts=4
  0
  0
  0
  0
- 0
-modules=4
- /home/fred/ideu/src/finddialogform.mfm
+modules=6
+ /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/guitemplates.mfm
+ /home/fred/ideu/src/msefiledialogres.mfm
+ /home/fred/ideu/src/formdesigner.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
+ 0
+ 0
+ 0
+nomenumodules=6
+ 0
+ 0
+ 0
  -1
-nomenumodules=4
- 0
- 0
- 0
- 0
+ -1
+ -1
 [sourcefo.files_tab]
+order=4
+ 0
+ 1
+ 3
+ 2
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=572
+windowlayout=615
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1549,8 +1551,8 @@ windowlayout=572
  ny=0
  ncx=0
  ncy=0
- x=86
- y=86
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
@@ -1680,7 +1682,7 @@ windowlayout=572
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=14
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1765,15 +1767,15 @@ windowlayout=572
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_finddialogfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=856
- y=186
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -1949,7 +1951,7 @@ windowlayout=572
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1964,9 +1966,9 @@ windowlayout=572
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
- activetab=1
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -2006,9 +2008,9 @@ windowlayout=572
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=1
-  /home/fred/mseide-msegui/apps/ide/mseide.pas
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2030,15 +2032,20 @@ windowlayout=572
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  1
+  3
+  2
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
- value=0
+ value=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2049,6 +2056,82 @@ windowlayout=572
  y=113
  cx=352
  cy=277
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_sourcefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=223
+ y=90
+ cx=706
+ cy=352
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_guitemplatesmo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_filedialogres_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=432
+ y=250
+ cx=493
+ cy=132
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_filedialogres_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_formdesignerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=93
+ y=396
+ cx=245
+ cy=117
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_formdesignerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=68
+ y=277
+ cx=297
+ cy=300
  rcx=0
  rcy=0
  wsize=0
@@ -2070,44 +2153,6 @@ windowlayout=572
  cy=452
  rcx=0
  rcy=0
- [_mse_finddialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=518
- y=197
- cx=310
- cy=220
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=257
- y=556
- cx=755
- cy=76
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1
