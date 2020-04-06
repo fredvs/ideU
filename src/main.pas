@@ -2465,38 +2465,33 @@ var
   bo1: Boolean;
 begin
   bo1 := False;
-  with debuggerfo do
-  begin
-    project_start.Enabled := not gdb.running and not gdb.downloading;
-    project_next.Enabled  := not gdb.running and not gdb.downloading and bo1;
-    project_next_instruction.Enabled := project_next.Enabled;
-    project_step.Enabled  := project_next.Enabled;
-    project_step_instruction.Enabled := project_next.Enabled;
-    // project_interrupt.enabled := project_next.enabled;
-    // project_finish.enabled:= not gdb.running and gdb.started and bo1;
-    // project_reset.enabled:= (gdb.started or gdb.attached or gdb.downloading) or
-    //                    not bo1 and (frunningprocess <> invalidprochandle);
-  end;
 
   with projectoptions, d.texp, actionsmo do
   begin
     detachtarget.Enabled := gdb.execloaded or gdb.attached;
-
     download.Enabled := not gdb.started and not gdb.downloading and
       ((uploadcommand <> '') or d.gdbdownload);
     attachprocess.Enabled := not (gdb.execloaded or gdb.attached);
     attachtarget.Enabled := attachprocess.Enabled;
     run.Enabled   := not gdb.running and not gdb.downloading;
+    debuggerfo.project_start.Enabled := run.Enabled;
     bo1           := candebug;
     step.Enabled  := not gdb.running and not gdb.downloading and bo1;
+    debuggerfo.project_step.Enabled  := step.Enabled;
     stepi.Enabled := not gdb.running and not gdb.downloading and bo1;
+    debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
     Next.Enabled  := not gdb.running and not gdb.downloading and bo1;
+    debuggerfo.project_next.Enabled := Next.Enabled;
     nexti.Enabled := not gdb.running and not gdb.downloading and bo1;
+    debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
     finish.Enabled := not gdb.running and gdb.started and bo1;
+    debuggerfo.project_finish.enabled:= interrupt.Enabled;
     continue.Enabled := not gdb.running and not gdb.downloading and
       (bo1 or (frunningprocess = invalidprochandle));
     interrupt.Enabled := gdb.running and not gdb.downloading and bo1;
+    debuggerfo.project_interrupt.enabled :=  interrupt.Enabled;
     reset.Enabled := (gdb.started or gdb.attached or gdb.downloading) or not bo1 and (frunningprocess <> invalidprochandle);
+    debuggerfo.project_reset.enabled:=reset.Enabled;
     makeact.Enabled := not making;
     abortmakeact.Enabled := making;
     saveall.Enabled := sourcefo.modified or designer.modified or

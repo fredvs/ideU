@@ -8,8 +8,8 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 128
-  bounds_y = 184
+  bounds_x = 106
+  bounds_y = 154
   bounds_cx = 1154
   bounds_cy = 50
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
@@ -777,7 +777,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
-      state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
       action = actionsmo.finish
       imagelist = actionsmo.buttonicons
       imagenr = 29
@@ -1441,8 +1441,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 537
-    top = 17
+    left = 776
+    top = 12
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -1456,8 +1456,8 @@ object debuggerfo: tdebuggerfo
       12105912
     )
     template.fade_direction = gd_down
-    left = 607
-    top = 20
+    left = 359
+    top = 19
   end
   object templfiledark: tfacecomp
     template.fade_pos.count = 2
