@@ -1703,7 +1703,8 @@ end;
 
 procedure tmainfo.setstattext(const atext: msestring; const akind: messagetextkindty = mtk_info);
 var
-  color0, color1, color3, colorf0, colorf1: longword;
+  color0, color1, color3, colorf0, colore0, colore1,
+  colorf1, colornf0, colornf1: longword;
 begin
 
   if themenr = 0 then
@@ -1713,6 +1714,10 @@ begin
     color3  := cl_black;
     colorf0 := $96B094;
     colorf1 := $B1CFAE;
+    colornf0 := $FFB1B4;
+    colornf1 := $FF6E72;
+    colore1 := cl_white;
+    colore0 := cl_ltred;
   end;
 
   if themenr = 1 then
@@ -1722,6 +1727,10 @@ begin
     color3  := cl_white;
     colorf1 := $3F6B3E;
     colorf0 := cl_black;
+    colornf0 :=cl_yellow;
+    colornf1 :=cl_dkyellow;
+    colore0 := cl_dkred;
+    colore1 := cl_black;
   end;
 
   with debuggerfo.statdisp do
@@ -1742,8 +1751,8 @@ begin
       end;
       mtk_error:
       begin
-        face.fade_color.items[0] := $FFFFD4;
-        face.fade_color.items[1] := $F0F097;
+        face.fade_color.items[0] := colore0;
+        face.fade_color.items[1] := colore1;
       end;
       mtk_signal:
       begin
@@ -1757,8 +1766,8 @@ begin
       end;
       mtk_notok:
       begin
-        face.fade_color.items[0] := $FFB1B4;
-        face.fade_color.items[1] := $FF6E72;
+        face.fade_color.items[0] := colornf0;
+        face.fade_color.items[1] := colornf1;
       end
       else
       begin
@@ -1767,12 +1776,14 @@ begin
       end;
     end;
 
+       font.color           := color3;
 
-    case akind of
-      mtk_making: font.color := cl_red;
-      else
-        font.color           := color3;
-    end;
+//    case akind of
+//      mtk_making: font.color := cl_red;
+//      else
+//        font.color           := color3;
+//    end;
+
   end;
 
 {
