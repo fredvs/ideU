@@ -4,14 +4,14 @@ object confideufo: tconfideufo
   bounds_x = 619
   bounds_y = 95
   bounds_cx = 409
-  bounds_cy = 607
+  bounds_cy = 625
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     409
-    607
+    625
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
@@ -220,10 +220,10 @@ object confideufo: tconfideufo
       0
     )
     taborder = 3
-    bounds_x = 4
+    bounds_x = 5
     bounds_y = 173
     bounds_cx = 400
-    bounds_cy = 133
+    bounds_cy = 159
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -329,6 +329,84 @@ object confideufo: tconfideufo
       bounds_cy = 17
       value = True
     end
+    object fontsize: tintegeredit
+      frame.caption = 'Font size '
+      frame.captiontextflags = [tf_bottom]
+      frame.captionpos = cp_left
+      frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+      frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.outerframe = (
+        60
+        0
+        0
+        0
+      )
+      taborder = 6
+      bounds_x = 260
+      bounds_y = 132
+      bounds_cx = 96
+      bounds_cy = 21
+      optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+      optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+      value = 12
+      valuemin = 1
+      valuemax = 100
+      reffontheight = 15
+    end
+    object fontname: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.caption = 'Font name'
+      frame.captionpos = cp_left
+      frame.localprops = [frl_hiddenedges, frl_colorclient]
+      frame.localprops1 = []
+      frame.template = mainfo.tframecomp2
+      frame.button.width = 16
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          width = 16
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
+        end>
+      frame.outerframe = (
+        68
+        0
+        0
+        0
+      )
+      taborder = 7
+      hint = 'Compiler Type for Edited file'
+      bounds_x = 74
+      bounds_y = 132
+      bounds_cx = 175
+      bounds_cy = 21
+      statfile = mainfo.projectstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.name = 'stf_default'
+      font.localprops = []
+      value = 'stf_default'
+      dropdown.dropdownrowcount = 5
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'stf_default'
+            'stf_courier'
+            'stf_helvetica'
+            'stf_roman'
+            'stf_proportional'
+          )
+        end>
+      reffontheight = 15
+    end
   end
   object tgroupbox2: tgroupbox
     frame.caption = 'Source Editor'
@@ -343,7 +421,7 @@ object confideufo: tconfideufo
     )
     taborder = 4
     bounds_x = 5
-    bounds_y = 311
+    bounds_y = 338
     bounds_cx = 400
     bounds_cy = 258
     object trimtrailingwhitespace: tbooleanedit
@@ -719,13 +797,13 @@ object confideufo: tconfideufo
     frame.localprops1 = []
     face.localprops = []
     face.template = sourcefo.tfacecomp1
-    bounds_x = 380
-    bounds_y = 3
-    bounds_cx = 24
-    bounds_cy = 22
+    bounds_x = 318
+    bounds_y = 5
+    bounds_cx = 72
+    bounds_cy = 42
     state = [as_localcaption, as_localonexecute]
-    caption = '&OK'
-    modalresult = mr_ok
+    caption = '&Apply'
+    onexecute = onapply
   end
   object closemessages: tbooleanedit
     color = -2147483645
@@ -740,8 +818,8 @@ object confideufo: tconfideufo
     )
     taborder = 5
     hint = 'Close messages window after compile.'
-    bounds_x = 204
-    bounds_y = 388
+    bounds_x = 205
+    bounds_y = 412
     bounds_cx = 187
     bounds_cy = 17
     anchors = [an_top, an_right]
@@ -759,7 +837,7 @@ object confideufo: tconfideufo
     taborder = 6
     hint = 'Add space after comma when auto-parsing MSEgui code from designer'
     bounds_x = 62
-    bounds_y = 576
+    bounds_y = 602
     bounds_cx = 277
     bounds_cy = 17
     value = True

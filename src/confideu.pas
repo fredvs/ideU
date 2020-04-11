@@ -49,6 +49,8 @@ type
    modaldial: tbooleanedit;
    deflayout: tfilenameedit;
    defsynt: tfilenameedit;
+   fontsize: tintegeredit;
+   fontname: tdropdownlistedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -60,6 +62,8 @@ type
     procedure autofocus(const Sender: TObject);
     procedure updownacc(const Sender: TObject);
    procedure oncloseev(const sender: TObject);
+   procedure onchangefont;
+   procedure onapply(const sender: TObject);
   end;
 
 var
@@ -68,7 +72,8 @@ var
 implementation
 
 uses
-  confideu_mfm, main, messageform;
+  confideu_mfm, main, messageform, sourceform,
+  projecttreeform, commandorform;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
 begin
@@ -222,11 +227,58 @@ begin
   //updownaccelerator := key_accelerator.Value;
 end;
 
-procedure tconfideufo.oncloseev(const sender: TObject);
+procedure tconfideufo.onchangefont;
 begin
-messagefo.updateprojectoptions;
-mainfo.ismodal:= confideufo.modaldial.value;
+mainfo.mainmenu1.menu.font.height := fontsize.value;
+sourcefo.files_tab.font.height := fontsize.value;
+sourcefo.files_tab.tab_fontactivetab.height := fontsize.value;
+sourcefo.files_tab.tab_fonttab.height := fontsize.value;
+
+mainfo.mainmenu1.menu.font.name := fontname.value;
+sourcefo.files_tab.font.name := fontname.value;
+sourcefo.files_tab.tab_fontactivetab.name := fontname.value;
+sourcefo.files_tab.tab_fonttab.name := fontname.value;
+
+if Assigned(sourcefo.ActivePage) then
+    begin
+      sourcefo.ActivePage.pathdisp.font.height := fontsize.value;
+      sourcefo.ActivePage.linedisp.font.height := fontsize.value;
+      sourcefo.ActivePage.pathdisp.font.name := fontname.value;
+      sourcefo.ActivePage.linedisp.font.name := fontname.value;
+     end;
+
+sourcefo.tpopupmenu1.menu.font.height := fontsize.value;
+sourcefo.tpopupmenu1.menu.fontactive.height := fontsize.value;
+sourcefo.tpopupmenu1.menu.font.name := fontname.value;
+sourcefo.tpopupmenu1.menu.fontactive.name := fontname.value;
+
+if Assigned(projecttreefo) then
+    begin
+     projecttreefo.projectedit.font.height := fontsize.value;
+     projecttreefo.edit.font.height := fontsize.value;
+     projecttreefo.projectedit.font.name := fontname.value;
+     projecttreefo.edit.font.name := fontname.value;
+    end;
+messagefo.Messages.font.height := fontsize.value;  
+
+debuggerfo.statdisp.font.height := fontsize.value;
+
+messagefo.Messages.font.name := fontname.value;  
+
+debuggerfo.statdisp.font.name := fontname.value; 
+//dialogfilesfo.selected_file.frame.font.height := fontsize.value;
 end;
 
+procedure tconfideufo.oncloseev(const sender: TObject);
+begin
+mainfo.ismodal:= confideufo.modaldial.value;
+onapply(nil);
+end;
+
+procedure tconfideufo.onapply(const sender: TObject);
+begin
+messagefo.updateprojectoptions;
+onchangefont;
+end;
 
 end.

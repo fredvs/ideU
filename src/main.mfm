@@ -29,9 +29,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    21
+    20
     735
-    55
+    56
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -88,7 +88,7 @@ object mainfo: tmainfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 735
-    bounds_cy = 55
+    bounds_cy = 56
     anchors = [an_top, an_bottom]
     font.color = -1610612734
     font.name = 'stf_default'
@@ -1277,8 +1277,8 @@ object mainfo: tmainfo
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
-    menu.font.name = 'stf_menu'
-    menu.font.localprops = []
+    menu.font.name = 'stf_courier'
+    menu.font.localprops = [flp_height]
     left = 187
   end
   object openfile: tfiledialog

@@ -77,6 +77,10 @@ begin
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);
+    
+  registerfontalias('default', gui_getdefaultfontnames[stf_default],
+    fam_fixnooverwrite, 16);  
+    
   application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
   if application.terminated then exit;

@@ -736,7 +736,6 @@ begin
     debuggerfo.properties_list.imagenr := 21;
   end;
 
-
   conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring(libpath)));
 
    conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
@@ -759,7 +758,6 @@ begin
   confcompilerfo.twinep6.Value := gINI.ReadBool('fpc', 'winep6', False);
   confcompilerfo.twinep7.Value := gINI.ReadBool('fpc', 'winep7', False);
   confcompilerfo.twinep8.Value := gINI.ReadBool('fpc', 'winep8', False);
-
 
  {$ifdef polydev}
   confcompilerfo.fpccompiler.Value :=
@@ -876,7 +874,13 @@ begin
   confideufo.tabstops.Value := gINI.ReadInteger('tabstops', 'editor', 4);
 
   confideufo.spacetabs.Value := gINI.Readbool('spacetabs', 'editor', False);
-
+  
+  confideufo.fontsize.Value := gINI.ReadInteger('fontsize', 'system', 12);
+  
+   confideufo.fontname.Value := gINI.Readstring('fontname', 'system', 'stf_default');
+  
+   confideufo.onchangefont;
+ 
   confideufo.trimtrailingwhitespace.Value :=
     gINI.Readbool('trimtrailingwhitespace', 'editor', False);
 
@@ -1029,8 +1033,12 @@ begin
   gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));
 
   gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));
+  
+  gINI.WriteInteger('fontsize', 'system', (confideufo.fontsize.Value));
+ 
+   gINI.writeString('fontname', 'system', ansistring(confideufo.fontname.Value));
 
-  gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
+   gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
 
   gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));
 
@@ -1041,6 +1049,8 @@ begin
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
 
   gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
+  
+  
 
   if debuggerfo.properties_list.tag = 0 then
     gINI.writebool('Completion', 'proplist', False)
