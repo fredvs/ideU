@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=99
+findinfiledialog=98
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,11 +29,11 @@ findinfiledialog=99
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.inprojectdir]
- value=0
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
+ value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
  history=13
@@ -54,13 +54,12 @@ findinfiledialog=99
  filenames=1
   /home/fred/mseide-msegui/
  filecolwidth=174
- x=271
- y=195
+ x=560
+ y=211
  cx=554
  cy=316
- filehistory=29
+ filehistory=28
   /home/fred/mseide-msegui/
-  /home/fred/msefpc/freepascal/
   /home/fred/ideu_ok/
   /home/fred/strumpract/
   /home/fred/svnfpctrunk/trunk/
@@ -89,30 +88,30 @@ findinfiledialog=99
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=--FONTALIAS
+ value=layoutbusy
  history=20
-  --FONTALIAS
-  fontalias
-  initfontalias
-  FONTALIAS
-  exepath
-  getdir
-  heck_configfile(
-  TSearchPathList
-  unitsearchpath
-  -Fu
-  "Fu"
-  check_configfile
-  ppccfg
-  fpc.cfg
-  libc
-  libc.so
-  libm
-  libpthread.so
-  libpthread
-  librt
+  layoutbusy
+  file_history
+  tesakitdir
+  expan
+  usedefaulteditoroptions
+  updateprojectoptions
+  colornote
+  syntaxdeffile
+  case 
+  $warn 6060
+  fontline
+  beauty
+  dodialogfiles
+  complete class
+  dialogfilesfo
+  dialogfilesfo.container.color
+  dialogfilesfo.color
+  sbvert.facebutton.fade_color.
+  navigforwardact
+  step_back
  [findinfileadialogfo]
  stackedunder=
  x=485
@@ -124,10 +123,10 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=938
- y=153
+ x=801
+ y=188
  cx=300
- cy=220
+ cy=90
 replacedialog=25
  [replacedialogfo.promptonreplace]
  value=1
@@ -241,7 +240,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -265,8 +264,8 @@ options=114
  index=2
  [projectoptionsfo]
  stackedunder=
- x=318
- y=120
+ x=244
+ y=88
  cx=846
  cy=570
 settaborder=15
@@ -350,8 +349,8 @@ fadeeditor=24
  visible=1
 stringlisteditor=5
  [stringlisteditor]
- x=317
- y=211
+ x=177
+ y=203
  cx=275
  cy=237
 imagelisteditor=76
@@ -591,7 +590,7 @@ befcommand=0
 aftcommand=0
 makeoptions=11
  -Mobjfpc -Sh -Fcutf8
- -sh
+ -gl
  -B
  -Xs -CX -XX -O2
  -ghl
@@ -847,11 +846,11 @@ makeoptionson=11
  4091
  4095
 compilerusedon=29
- 1987
+ 2047
  0
  0
- 4
- 8
+ 0
+ 0
  0
  0
  16
@@ -877,12 +876,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3968
+ 4095
  0
  0
  0
  0
- 127
+ 0
 exeusedon=14
  4047
  0
@@ -1062,7 +1061,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=0
+showconsole=1
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1166,7 +1165,7 @@ line=24
  2129
  1057
  579
- 3896
+ 3875
  660
  119
  1088
@@ -1178,14 +1177,14 @@ line=24
  536
  468
  67
- 4155
+ 4134
  684
  96
  15
  765
  898
  2507
- 5166
+ 5145
  1882
 address=24
  4785304
@@ -1451,33 +1450,33 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=readcon
+finddtext=ActivePage
 findhistory=20
- readcon
- font
- writeconfig
- readconfig
- includesearchpath
- addpath
- addlibrarypath
- param
- GetDir
- separator
- delete
- copy(
- 'F'
- AddSharedLibrary
- i:=Pos(target_info
- inser
- insert
- dscheckfilter
  syntaxpainter
+ readcon
  buzy
+ str1 :=
+ writecon
+ hello
+ str1
+ uses
+ happy
+ case 
+ implementation
+ onbeauty
+ procedurelist
+ dialogfilesfo.
+ doBeautydialogfilesfo.
+ doBeauty
+ beautyfo
+ beautyfo.s
+ dotheme
+ step_back
 findoptions=1
 editpos=3
  0,0
  0,0
- 18,8
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1522,14 +1521,10 @@ nomenumodules=6
  -1
  -1
 [sourcefo.files_tab]
-order=3
- 0
- 2
- 1
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=619
+windowlayout=612
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1543,8 +1538,8 @@ windowlayout=619
  ny=0
  ncx=0
  ncy=0
- x=129
- y=78
+ x=125
+ y=46
  cx=1157
  cy=621
  rcx=0
@@ -1646,7 +1641,7 @@ windowlayout=619
  ncy=0
  x=239
  y=115
- cx=825
+ cx=678
  cy=414
  rcx=0
  rcy=0
@@ -1663,7 +1658,7 @@ windowlayout=619
  x=0
  y=0
  cx=205
- cy=452
+ cy=444
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1673,8 +1668,8 @@ windowlayout=619
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=9
+ col=1
+ row=-1073741823
  rowheight=17
  [stackfo]
  splitdir=0
@@ -1759,15 +1754,15 @@ windowlayout=619
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=914
- y=103
+ x=316
+ y=249
  cx=316
  cy=484
  rcx=0
@@ -1872,7 +1867,7 @@ windowlayout=619
  ncx=0
  ncy=0
  x=0
- y=509
+ y=507
  cx=1147
  cy=91
  rcx=0
@@ -1943,7 +1938,7 @@ windowlayout=619
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1960,7 +1955,7 @@ windowlayout=619
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=2
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1974,7 +1969,7 @@ windowlayout=619
  x=0
  y=0
  cx=1147
- cy=51
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1985,12 +1980,12 @@ windowlayout=619
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1147
- cy=54
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2000,11 +1995,8 @@ windowlayout=619
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=4
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/msefpc/freepascal/compiler/cfileutl.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=1
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -2023,20 +2015,16 @@ windowlayout=619
  x=208
  y=0
  cx=939
- cy=452
+ cy=444
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
-  0
-  2
-  1
  firsttab=0
- index=1
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
- value=0
+ value=1
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -2057,22 +2045,6 @@ windowlayout=619
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1147
- cy=452
- rcx=0
- rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2133,7 +2105,7 @@ windowlayout=619
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2149,6 +2121,22 @@ windowlayout=619
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=60
+ cx=1147
+ cy=444
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=dump
 findhistory=1
