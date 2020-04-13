@@ -15,14 +15,14 @@ object about_form: taboutfo
   bounds_x = 428
   bounds_y = 258
   bounds_cx = 372
-  bounds_cy = 229
+  bounds_cy = 346
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     372
-    229
+    346
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
@@ -56,21 +56,6 @@ object about_form: taboutfo
   }
   windowopacity = -Inf
   moduleclassname = 'tmseform'
-  object OK: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    face.localprops = []
-    face.template = sourcefo.tfacecomp1
-    taborder = 1
-    bounds_x = 160
-    bounds_y = 4
-    bounds_cx = 50
-    bounds_cy = 21
-    state = [as_localinvisible, as_localcaption]
-    caption = '&OK'
-    modalresult = mr_ok
-  end
   object about_text: tmemoedit
     frame.colorclient = 16774578
     frame.localprops = [frl_colorclient]
@@ -78,9 +63,9 @@ object about_form: taboutfo
     frame.sbhorz.pagesize = 1
     frame.sbvert.pagesize = 1
     bounds_x = 7
-    bounds_y = 32
+    bounds_y = 9
     bounds_cx = 357
-    bounds_cy = 189
+    bounds_cy = 331
     optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_resetselectonexit, oe_nofirstarrownavig, oe_focusrectonreadonly]
     textflags = [tf_xcentered, tf_wordbreak, tf_noselect]
     textflagsactive = [tf_xcentered, tf_wordbreak]

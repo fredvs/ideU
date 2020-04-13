@@ -1,10 +1,10 @@
 object findinfilepagefo: tfindinfilepagefo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 52
-  bounds_y = 132
-  bounds_cx = 573
-  bounds_cy = 310
+  bounds_x = 437
+  bounds_y = 207
+  bounds_cx = 512
+  bounds_cy = 229
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,9 +12,11 @@ object findinfilepagefo: tfindinfilepagefo
   container.bounds = (
     0
     0
-    573
-    310
+    512
+    229
   )
+  font.name = 'stf_default'
+  font.localprops = []
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   icon.image = {
@@ -48,14 +50,11 @@ object findinfilepagefo: tfindinfilepagefo
     color = -1879048187
     frame.localprops = []
     frame.localprops1 = []
-    taborder = 1
     bounds_x = 0
     bounds_y = 24
-    bounds_cx = 571
-    bounds_cy = 284
+    bounds_cx = 510
+    bounds_cy = 191
     anchors = [an_left, an_top, an_right, an_bottom]
-    font.name = 'stf_default'
-    font.localprops = []
     fixcols.count = 1
     fixcols.items = <    
       item
@@ -79,7 +78,7 @@ object findinfilepagefo: tfindinfilepagefo
           )
         )
       end>
-    datarowheight = 17
+    datarowheight = 18
     oncellevent = foundlistoncellevent
     reffontheight = 15
     object foundlist: ttextedit
@@ -88,12 +87,10 @@ object findinfilepagefo: tfindinfilepagefo
       color = -1879048185
       taborder = 1
       visible = False
-      bounds_x = 0
+      bounds_x = -746
       bounds_y = 0
       bounds_cx = 1500
-      bounds_cy = 17
-      font.name = 'stf_default'
-      font.localprops = []
+      bounds_cy = 18
       optionsedit1 = [oe1_keyexecute, oe1_savestate]
       optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_exitoncursor]
       oncellevent = foundlistoncellevent
@@ -103,45 +100,50 @@ object findinfilepagefo: tfindinfilepagefo
   object filename: tstringdisp
     frame.localprops = []
     frame.localprops1 = []
-    taborder = 3
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 2
     bounds_x = 1
     bounds_y = 0
-    bounds_cx = 406
-    bounds_cy = 19
+    bounds_cx = 254
+    bounds_cy = 24
     bounds_cxmin = 140
     anchors = [an_left, an_top, an_right]
-    font.name = 'stf_default'
-    font.localprops = []
     textflags = [tf_ycentered, tf_ellipseleft]
     reffontheight = 15
   end
   object foundcount: tintegerdisp
     frame.localprops = []
     frame.localprops1 = []
-    taborder = 2
-    bounds_x = 407
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 1
+    bounds_x = 256
     bounds_y = 0
-    bounds_cx = 44
-    bounds_cy = 19
+    bounds_cx = 69
+    bounds_cy = 24
     anchors = [an_top, an_right]
-    font.name = 'stf_default'
-    font.localprops = []
     reffontheight = 15
   end
   object cancel: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     color = -2147483645
-    taborder = 5
-    bounds_x = 453
-    bounds_y = 1
-    bounds_cx = 50
-    bounds_cy = 21
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 4
+    bounds_x = 429
+    bounds_y = 0
+    bounds_cx = 82
+    bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
     caption = '&Cancel'
-    font.name = 'stf_default'
-    font.localprops = []
     onexecute = cancelonexecute
     reffontheight = 15
   end
@@ -149,31 +151,20 @@ object findinfilepagefo: tfindinfilepagefo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     color = -2147483645
-    taborder = 4
-    bounds_x = 503
-    bounds_y = 1
-    bounds_cx = 50
-    bounds_cy = 21
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 3
+    bounds_x = 327
+    bounds_y = 0
+    bounds_cx = 100
+    bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
-    caption = '&again'
-    font.name = 'stf_default'
-    font.localprops = []
+    caption = '&Again'
     onexecute = againonexecute
-    reffontheight = 15
-  end
-  object closepage: tstockglyphbutton
-    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
-    optionswidget = [ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
-    color = -2147483645
-    bounds_x = 553
-    bounds_y = 1
-    bounds_cx = 18
-    bounds_cy = 21
-    anchors = [an_top, an_right]
-    state = [as_localimagelist, as_localimagenr, as_localonexecute]
-    glyph = stg_checked
-    onexecute = closebuonexecute
     reffontheight = 15
   end
   object thread: tthreadcomp

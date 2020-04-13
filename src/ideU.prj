@@ -52,16 +52,16 @@ findinfiledialog=98
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseide-msegui/
+  /home/fred/strumpract/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
  filehistory=28
+  /home/fred/strumpract/
   /home/fred/mseide-msegui/
   /home/fred/ideu_ok/
-  /home/fred/strumpract/
   /home/fred/svnfpctrunk/trunk/
   /home/fred/uos/
   /home/fred/mseuniverse/
@@ -88,10 +88,17 @@ findinfiledialog=98
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
+ filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=layoutbusy
+ value=findline
  history=20
+  findline
+  childscaled
+  dodialogfiles
+  settings_form
+  screen
+  screenwidth
+  group_file_changed
   layoutbusy
   file_history
   tesakitdir
@@ -104,18 +111,11 @@ findinfiledialog=98
   $warn 6060
   fontline
   beauty
-  dodialogfiles
   complete class
-  dialogfilesfo
-  dialogfilesfo.container.color
-  dialogfilesfo.color
-  sbvert.facebutton.fade_color.
-  navigforwardact
-  step_back
  [findinfileadialogfo]
- stackedunder=
- x=485
- y=167
+ stackedunder=finddialogfo
+ x=320
+ y=159
  cx=339
  cy=275
 finddialog=8
@@ -123,10 +123,10 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=801
- y=188
+ x=942
+ y=276
  cx=300
- cy=90
+ cy=269
 replacedialog=25
  [replacedialogfo.promptonreplace]
  value=1
@@ -151,8 +151,8 @@ replacedialog=25
  stackedunder=
  x=680
  y=236
- cx=463
- cy=163
+ cx=254
+ cy=200
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -307,7 +307,7 @@ settings=8
  [settings_form]
  x=447
  y=106
- cx=460
+ cx=822
  cy=539
  wsize=0
  active=1
@@ -473,8 +473,8 @@ colordialog=5
  cy=298
 compnamedialog=5
  [compnametreefo]
- x=845
- y=146
+ x=527
+ y=204
  cx=303
  cy=205
 bmpfiledialog=30
@@ -997,7 +997,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=1
+linenumberson=0
 rightmarginon=0
 rightmarginchars=80
 scrollheight=0
@@ -1163,7 +1163,7 @@ path=24
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
 line=24
  2129
- 1057
+ 1058
  579
  3875
  660
@@ -1177,14 +1177,14 @@ line=24
  536
  468
  67
- 4134
+ 4149
  684
  96
  15
  765
  898
  2507
- 5145
+ 5173
  1882
 address=24
  4785304
@@ -1450,8 +1450,21 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=ActivePage
+finddtext=grid
 findhistory=20
+ grid
+ findinfilepagefo
+ create
+ about_text
+ uses
+ onchangefont
+ onthetimer
+ ontimer
+ dialogfilesf
+ cellwidth
+ writeconf
+ unicode
+ dialogfilesfo
  syntaxpainter
  readcon
  buzy
@@ -1459,23 +1472,10 @@ findhistory=20
  writecon
  hello
  str1
- uses
- happy
- case 
- implementation
- onbeauty
- procedurelist
- dialogfilesfo.
- doBeautydialogfilesfo.
- doBeauty
- beautyfo
- beautyfo.s
- dotheme
- step_back
 findoptions=1
 editpos=3
- 0,0
- 0,0
+ 0,-1073741823
+ 0,-1073741823
  0,0
 bookmarks0=0
 bookmarks1=0
@@ -1497,8 +1497,8 @@ modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/guitemplates.mfm
- /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/formdesigner.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 moduleoptions=6
  0
  0
@@ -1521,10 +1521,14 @@ nomenumodules=6
  -1
  -1
 [sourcefo.files_tab]
+order=3
+ 2
+ 0
+ 1
 firsttab=0
 index=0
 [layout]
-windowlayout=612
+windowlayout=616
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1586,7 +1590,7 @@ windowlayout=612
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1658,7 +1662,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=444
+ cy=452
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1670,7 +1674,7 @@ windowlayout=612
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1754,7 +1758,7 @@ windowlayout=612
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1867,7 +1871,7 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=507
+ y=509
  cx=1147
  cy=91
  rcx=0
@@ -1938,7 +1942,7 @@ windowlayout=612
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1969,7 +1973,7 @@ windowlayout=612
  x=0
  y=0
  cx=1147
- cy=57
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1985,7 +1989,7 @@ windowlayout=612
  x=0
  y=0
  cx=1147
- cy=59
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1995,7 +1999,7 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=1
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -2015,10 +2019,14 @@ windowlayout=612
  x=208
  y=0
  cx=939
- cy=444
+ cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=3
+  2
+  0
+  1
  firsttab=0
  index=0
  [confideufo.fontname]
@@ -2029,7 +2037,7 @@ windowlayout=612
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=confcompilerfo
  parent=
  mdistate=0
  nx=0
@@ -2067,7 +2075,7 @@ windowlayout=612
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2083,29 +2091,10 @@ windowlayout=612
  wsize=0
  active=0
  visible=0
- [_mse_filedialogres_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_formdesignerfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=93
- y=396
- cx=245
- cy=117
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=3
  nx=0
@@ -2116,6 +2105,25 @@ windowlayout=612
  y=277
  cx=297
  cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=224
+ y=197
+ cx=652
+ cy=301
  rcx=0
  rcy=0
  wsize=0
@@ -2132,9 +2140,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=60
+ y=54
  cx=1147
- cy=444
+ cy=452
  rcx=0
  rcy=0
 [targetconsole]

@@ -8,7 +8,6 @@ uses
  mseificomp,mseificompglob,mseifiglob;
 type
  taboutfo = class(tmseform)
-   OK: tbutton;
    about_text: tmemoedit;
  end;
 var

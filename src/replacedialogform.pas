@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2006 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -34,25 +34,40 @@ type
    promptonreplace: tbooleanedit;
    tintegerbutton1: tbutton;
    tintegerbutton2: tbutton;
-   tintegerbutton3: tbutton;
    wholeword: tbooleanedit;
+
   private
    procedure valuestoinfo(out info: replaceinfoty);
    procedure infotovalues(const info: replaceinfoty);
  end;
- 
+
+ procedure replacedialogdotextsize;
 function replacedialogexecute(var info: replaceinfoty): modalresultty;
 
 implementation
 uses
- replacedialogform_mfm,msestrings;
+ replacedialogform_mfm,msestrings, main, confideu;
+
+ var
+ fo: treplacedialogfo;
+
+procedure replacedialogdotextsize;
+begin
+fo.font.height := confideufo.fontsize.value;
+fo.findtext.top :=  34;
+fo.replacetext.top :=  fo.findtext.top + fo.findtext.height + 2 ;
+fo.casesensitive.top := fo.replacetext.top + fo.replacetext.height + 2 ;
+fo.wholeword.top :=  fo.casesensitive.top + fo.casesensitive.height + 2 ;
+fo.selectedonly.top := fo.wholeword.top + fo.wholeword.height +2;
+fo.promptonreplace.top := fo.selectedonly.top + fo.selectedonly.height +2;
+fo.height := fo.promptonreplace.top + fo.promptonreplace.height + 10;
+end;
 
 function replacedialogexecute(var info: replaceinfoty): modalresultty;
-var
- fo: treplacedialogfo;
 begin
  fo:= treplacedialogfo.create(nil);
  try
+  replacedialogdotextsize;
   fo.infotovalues(info);
   result:= fo.show(true,nil);
   if result in [mr_ok,mr_all] then begin
@@ -64,7 +79,7 @@ begin
 end;
 
 { treplacedialogfo }
- 
+
 procedure treplacedialogfo.valuestoinfo(out info: replaceinfoty);
 begin
 {$warnings off}

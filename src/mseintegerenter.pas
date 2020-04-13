@@ -24,9 +24,9 @@ type
    procedure ondoline(const sender: TObject);
    procedure oncloseev(const sender: TObject);
  end;
- 
+
 var
- linefo: tintegerenterfo; 
+ linefo: tintegerenterfo;
  lineformcreated : boolean = false;
  fgototheline : integer;
 
@@ -35,7 +35,7 @@ function integerenter(var avalue: integer; const amin,amax: integer;
 //threadsave
 implementation
 uses
- mseintegerenter_mfm, sourceform;
+ mseintegerenter_mfm, sourceform, main;
 
 function integerenter(var avalue: integer; const amin,amax: integer; const text: msestring = '';
                                const acaption: msestring = ''): modalresultty;

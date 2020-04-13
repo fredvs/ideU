@@ -1,23 +1,21 @@
 object confdebuggerfo: tconfdebuggerfo
   optionswidget = [ow_top, ow_ultratop, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 475
-  bounds_y = 324
-  bounds_cx = 344
-  bounds_cy = 200
+  bounds_x = 456
+  bounds_y = 184
+  bounds_cx = 525
+  bounds_cy = 327
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    344
-    200
+    525
+    327
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
   font.localprops = []
-  fontempty.name = 'stf_empty'
-  fontempty.localprops = []
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Debuggers Configuration'
   icon.origformat = 'bmp'
@@ -48,8 +46,8 @@ object confdebuggerfo: tconfdebuggerfo
   moduleclassname = 'tmseform'
   object tlabel6: tlabel
     taborder = 5
-    bounds_x = 132
-    bounds_y = 5
+    bounds_x = 34
+    bounds_y = 15
     bounds_cx = 66
     bounds_cy = 15
     caption = 'Debuggers'
@@ -76,9 +74,9 @@ object confdebuggerfo: tconfdebuggerfo
     )
     taborder = 4
     hint = 'Path to debugger 4'
-    bounds_x = 11
-    bounds_y = 154
-    bounds_cx = 328
+    bounds_x = 10
+    bounds_y = 265
+    bounds_cx = 504
     bounds_cy = 39
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
@@ -105,8 +103,8 @@ object confdebuggerfo: tconfdebuggerfo
     taborder = 3
     hint = 'Path to debugger 3'
     bounds_x = 11
-    bounds_y = 112
-    bounds_cx = 328
+    bounds_y = 188
+    bounds_cx = 504
     bounds_cy = 39
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
@@ -133,8 +131,8 @@ object confdebuggerfo: tconfdebuggerfo
     taborder = 2
     hint = 'Path to debugger 2'
     bounds_x = 11
-    bounds_y = 69
-    bounds_cx = 328
+    bounds_y = 117
+    bounds_cx = 504
     bounds_cy = 39
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
@@ -161,8 +159,8 @@ object confdebuggerfo: tconfdebuggerfo
     taborder = 1
     hint = 'Path to debugger 1'
     bounds_x = 11
-    bounds_y = 26
-    bounds_cx = 328
+    bounds_y = 52
+    bounds_cx = 504
     bounds_cy = 39
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
@@ -173,10 +171,10 @@ object confdebuggerfo: tconfdebuggerfo
     frame.localprops1 = []
     face.localprops = []
     face.template = sourcepage.tfacecomp1
-    bounds_x = 292
-    bounds_y = 9
-    bounds_cx = 39
-    bounds_cy = 22
+    bounds_x = 427
+    bounds_y = 5
+    bounds_cx = 85
+    bounds_cy = 24
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'
     modalresult = mr_ok

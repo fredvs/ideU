@@ -1,22 +1,22 @@
 object integerenterfo: tintegerenterfo
   visible = False
-  bounds_x = 554
-  bounds_y = 262
-  bounds_cx = 162
-  bounds_cy = 60
+  bounds_x = 708
+  bounds_y = 241
+  bounds_cx = 220
+  bounds_cy = 80
   bounds_cxmin = 162
   bounds_cymin = 60
-  bounds_cxmax = 162
-  bounds_cymax = 60
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    162
-    60
+    220
+    80
   )
   optionswindow = [wo_message]
+  font.name = 'stf_default'
+  font.localprops = []
   options = [fo_freeonclose, fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat]
   icon.options = [bmo_masked]
   icon.origformat = 'png'
@@ -44,44 +44,39 @@ object integerenterfo: tintegerenterfo
   object lab: tlabel
     optionswidget1 = [ow1_autoheight]
     taborder = 2
-    bounds_x = 12
-    bounds_y = 6
-    bounds_cx = 142
+    bounds_x = 2
+    bounds_y = 5
+    bounds_cx = 214
     bounds_cy = 15
-    anchors = [an_left, an_top, an_bottom]
     caption = 'lab'
-    font.name = 'stf_default'
-    font.localprops = []
     textflags = [tf_xcentered, tf_ycentered, tf_wordbreak]
   end
   object ok: tbutton
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 1
-    bounds_x = 102
-    bounds_y = 32
-    bounds_cx = 50
-    bounds_cy = 20
-    anchors = [an_right, an_bottom]
+    bounds_x = 148
+    bounds_y = 30
+    bounds_cx = 67
+    bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
     caption = '&OK'
-    font.name = 'stf_default'
-    font.localprops = []
     onexecute = ondoline
   end
   object value: tintegeredit
     frame.localprops = []
     frame.localprops1 = []
-    bounds_x = 9
-    bounds_y = 29
-    bounds_cx = 77
-    bounds_cy = 23
-    anchors = [an_left, an_right, an_bottom]
+    frame.template = mainfo.tframecomp2
+    bounds_x = 3
+    bounds_y = 30
+    bounds_cx = 140
+    bounds_cy = 30
+    anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-    font.height = 14
-    font.name = 'stf_default'
-    font.localprops = [flp_height]
-    reffontheight = 17
+    reffontheight = 15
   end
 end

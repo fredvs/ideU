@@ -2736,7 +2736,7 @@ var
  fo: tprojectoptionsfo;
 begin
  fo:= tprojectoptionsfo.create(nil);
- projectoptionstoform(fo);
+  projectoptionstoform(fo);
  try
   projectoptionsfo:= fo;
   result:= fo.show(true,nil) = mr_ok;

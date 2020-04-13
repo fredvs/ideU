@@ -77,7 +77,7 @@ begin
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);
-    
+
    application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
   if application.terminated then exit;
@@ -112,7 +112,7 @@ begin
   application.createform(tmemoryfo, memoryfo);
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
- // application.createform(tdialogfilesfo, dialogfilesfo);
+  application.createform(tdialogfilesfo, dialogfilesfo);
  // application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;

@@ -24,7 +24,7 @@ type
 var
  dialogfilesfo: tdialogfilesfo;
  tabind : integer = -1;
- dialogfilesformcreated: boolean = false;
+ dialogfilesformcreated: boolean = true;
 
  thesdef : msestring = '';
  theactivepage : msestring = '';
@@ -122,7 +122,7 @@ end;
 
 procedure tdialogfilesfo.oncloseev(const sender: TObject);
 begin
-dialogfilesformcreated:= false;
+//dialogfilesformcreated:= false;
 end;
 
 end.

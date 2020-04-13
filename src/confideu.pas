@@ -17,10 +17,6 @@ uses
 type
   tconfideufo = class(tmseform)
     but_ok: TButton;
-    group_file_changed: tgroupbox;
-    tbfileaskload: tbooleaneditradio;
-    tbfilenoload: tbooleaneditradio;
-    tbfilereload: tbooleaneditradio;
     group_assistive: tgroupbox;
     tbassistive: tbooleanedit;
     tesakitdir: tfilenameedit;
@@ -30,7 +26,7 @@ type
     doubleclic: tbooleanedit;
     autofocus_menu: tbooleanedit;
     fullpath: tbooleanedit;
-    tgroupbox2: tgroupbox;
+    group_sourceeditor: tgroupbox;
     trimtrailingwhitespace: tbooleanedit;
     rightmarginchars: tintegeredit;
     encoding: tenumedit;
@@ -40,17 +36,21 @@ type
     usedefaulteditoroptions: tbooleanedit;
     tabindent: tbooleanedit;
     spacetabs: tbooleanedit;
-   closemessages: tbooleanedit;
    colorerror: tcoloredit;
    colorwarning: tcoloredit;
    colornote: tcoloredit;
    stripmessageesc: tbooleanedit;
-   addwhiteaftercomma: tbooleanedit;
    modaldial: tbooleanedit;
    deflayout: tfilenameedit;
    defsynt: tfilenameedit;
    fontsize: tintegeredit;
    fontname: tdropdownlistedit;
+   closemessages: tbooleanedit;
+   addwhiteaftercomma: tbooleanedit;
+   group_file_change: tgroupbox;
+   tbfilereload: tbooleaneditradio;
+   tbfilenoload: tbooleaneditradio;
+   tbfileaskload: tbooleaneditradio;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -72,8 +72,8 @@ var
 implementation
 
 uses
-  confideu_mfm, main, messageform, sourceform,
-  projecttreeform, commandorform;
+  confideu_mfm, main, messageform, sourceform, finddialogform,
+  projecttreeform, commandorform, dialogfiles;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
 begin
@@ -228,45 +228,113 @@ begin
 end;
 
 procedure tconfideufo.onchangefont;
+var
+ratio : double;
+rect1: rectty;
 begin
+
+mainfo.font.height := fontsize.value;
+
+ratio := fontsize.value / 12;
+
+if assigned(dialogfilesfo) then
+begin
+dialogfilesfo.selected_file.font.height := fontsize.value;
+dialogfilesfo.selected_file.font.height := fontsize.value;
+
+dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
+
+dialogfilesfo.selected_file.frame.font.height := fontsize.value;
+dialogfilesfo.list_files.cellheight := round((ratio) * 19);
+dialogfilesfo.list_files.font.height := fontsize.value;
+dialogfilesfo.height := round((ratio) * 366);
+dialogfilesfo.width  := round((ratio) * 336);
+dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
+
+end;
+
 mainfo.mainmenu1.menu.font.height := fontsize.value;
 sourcefo.files_tab.font.height := fontsize.value;
 sourcefo.files_tab.tab_fontactivetab.height := fontsize.value;
 sourcefo.files_tab.tab_fonttab.height := fontsize.value;
+sourcefo.files_tab.tab_size := round(24 * ratio);
+sourcefo.step_back.height := round(24 * ratio);
+sourcefo.step_forward.height := round(24 * ratio);
 
-mainfo.mainmenu1.menu.font.name := fontname.value;
-sourcefo.files_tab.font.name := fontname.value;
-sourcefo.files_tab.tab_fontactivetab.name := fontname.value;
-sourcefo.files_tab.tab_fonttab.name := fontname.value;
+mainfo.mainmenu1.menu.font.name := ansistring(fontname.value);
+sourcefo.files_tab.font.name := ansistring(fontname.value);
+sourcefo.files_tab.tab_fontactivetab.name := ansistring(fontname.value);
+sourcefo.files_tab.tab_fonttab.name := ansistring(fontname.value);
 
 if Assigned(sourcefo.ActivePage) then
     begin
       sourcefo.ActivePage.pathdisp.font.height := fontsize.value;
       sourcefo.ActivePage.linedisp.font.height := fontsize.value;
-      sourcefo.ActivePage.pathdisp.font.name := fontname.value;
-      sourcefo.ActivePage.linedisp.font.name := fontname.value;
+      sourcefo.ActivePage.pathdisp.font.name := ansistring(fontname.value);
+      sourcefo.ActivePage.linedisp.font.name := ansistring(fontname.value);
+
+      sourcefo.ActivePage.pathdisp.height := round(ratio * 20);
+      sourcefo.ActivePage.linedisp.height := round(ratio * 20);
+
+      sourcefo.ActivePage.source_editor.height := sourcefo.ActivePage.height -
+      sourcefo.ActivePage.pathdisp.height -2;
+
+       sourcefo.ActivePage.pathdisp.top := sourcefo.ActivePage.source_editor.height + 1;
+       sourcefo.ActivePage.linedisp.top := sourcefo.ActivePage.pathdisp.top;
+
      end;
 
 sourcefo.tpopupmenu1.menu.font.height := fontsize.value;
 sourcefo.tpopupmenu1.menu.fontactive.height := fontsize.value;
-sourcefo.tpopupmenu1.menu.font.name := fontname.value;
-sourcefo.tpopupmenu1.menu.fontactive.name := fontname.value;
+sourcefo.tpopupmenu1.menu.font.name := ansistring(fontname.value);
+sourcefo.tpopupmenu1.menu.fontactive.name := ansistring(fontname.value);
 
 if Assigned(projecttreefo) then
     begin
      projecttreefo.projectedit.font.height := fontsize.value;
      projecttreefo.edit.font.height := fontsize.value;
-     projecttreefo.projectedit.font.name := fontname.value;
-     projecttreefo.edit.font.name := fontname.value;
+     projecttreefo.projectedit.font.name := ansistring(fontname.value);
+     projecttreefo.edit.font.name := ansistring(fontname.value);
+     projecttreefo.grid.datarowheight := round(ratio * 16);
     end;
-messagefo.Messages.font.height := fontsize.value;  
+
+confcompilerfo.font.height :=  fontsize.value;
+confdebuggerfo.font.height :=  fontsize.value;
+
+// confideufo
+font.height := fontsize.value;
+group_file_change.width := round(ratio * 280);
+group_system_layout.width := round(ratio * 280);
+group_assistive.width := round(ratio * 280);
+group_sourceeditor.width := round(ratio * 314);
+group_sourceeditor.left := group_assistive.width + 20;
+
+if findformcreated then finddialogdotextsize;
+
+rect1 := application.screenrect(window);
+
+fontname.left := 10;
+fontsize.left := 10;
+
+//group_file_changed2.width := round(ratio * 280);
+
+width := group_sourceeditor.left + group_assistive.width + round(40 * ratio);
+
+messagefo.Messages.font.height := fontsize.value;
 
 debuggerfo.statdisp.font.height := fontsize.value;
 
-messagefo.Messages.font.name := fontname.value;  
+messagefo.Messages.font.name := ansistring(fontname.value);
 
-debuggerfo.statdisp.font.name := fontname.value; 
+debuggerfo.statdisp.font.name := ansistring(fontname.value);
 //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
+//group_file_change.width := group_sourceeditor.width;
+
+invalidate;
+
+left := (rect1.cx - width) div 2;
+
+
 end;
 
 procedure tconfideufo.oncloseev(const sender: TObject);

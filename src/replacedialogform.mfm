@@ -1,16 +1,17 @@
 object replacedialogfo: treplacedialogfo
   visible = False
-  bounds_x = 142
-  bounds_y = 302
-  bounds_cx = 427
-  bounds_cy = 163
+  bounds_x = 288
+  bounds_y = 84
+  bounds_cx = 254
+  bounds_cy = 229
+  bounds_cxmin = 254
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    427
-    163
+    254
+    229
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -62,9 +63,9 @@ object replacedialogfo: treplacedialogfo
       0
       0
     )
-    bounds_x = 8
-    bounds_y = 6
-    bounds_cx = 410
+    bounds_x = 4
+    bounds_y = 40
+    bounds_cx = 246
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
@@ -91,9 +92,9 @@ object replacedialogfo: treplacedialogfo
       0
     )
     taborder = 1
-    bounds_x = 8
-    bounds_y = 46
-    bounds_cx = 410
+    bounds_x = 4
+    bounds_y = 76
+    bounds_cx = 246
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
@@ -109,13 +110,13 @@ object replacedialogfo: treplacedialogfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
+      0
       82
-      2
+      1
     )
     taborder = 2
-    bounds_x = 8
-    bounds_y = 95
+    bounds_x = 4
+    bounds_y = 133
     bounds_cx = 95
     bounds_cy = 17
   end
@@ -130,27 +131,38 @@ object replacedialogfo: treplacedialogfo
       2
     )
     taborder = 3
-    bounds_x = 112
-    bounds_y = 95
+    bounds_x = 4
+    bounds_y = 154
     bounds_cx = 85
     bounds_cy = 17
   end
   object tintegerbutton1: tbutton
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 6
-    bounds_x = 8
-    bounds_y = 123
-    bounds_cx = 74
-    bounds_cy = 20
+    bounds_x = 4
+    bounds_y = 0
+    bounds_cx = 114
+    bounds_cy = 30
     state = [as_localcaption]
     caption = '&Replace'
     modalresult = mr_ok
   end
   object tintegerbutton2: tbutton
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 7
-    bounds_x = 88
-    bounds_y = 123
-    bounds_cx = 74
-    bounds_cy = 20
+    bounds_x = 120
+    bounds_y = 0
+    bounds_cx = 130
+    bounds_cy = 30
+    anchors = [an_top, an_right]
     state = [as_localcaption]
     caption = 'Replace &all'
     modalresult = mr_all
@@ -166,36 +178,26 @@ object replacedialogfo: treplacedialogfo
       2
     )
     taborder = 4
-    bounds_x = 208
-    bounds_y = 95
+    bounds_x = 4
+    bounds_y = 175
     bounds_cx = 95
     bounds_cy = 17
     statfile = statfile1
   end
-  object tintegerbutton3: tbutton
-    taborder = 8
-    bounds_x = 168
-    bounds_y = 123
-    bounds_cx = 74
-    bounds_cy = 20
-    state = [as_default, as_localdefault, as_localcaption]
-    caption = '&Cancel'
-    modalresult = mr_cancel
-  end
   object promptonreplace: tbooleanedit
-    frame.caption = '&prompt on rep.'
+    frame.caption = '&prompt on replace'
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
       0
       2
-      95
+      115
       2
     )
     taborder = 5
-    bounds_x = 312
-    bounds_y = 95
-    bounds_cx = 108
+    bounds_x = 4
+    bounds_y = 201
+    bounds_cx = 128
     bounds_cy = 17
     statfile = statfile1
     value = True
@@ -203,6 +205,7 @@ object replacedialogfo: treplacedialogfo
   object statfile1: tstatfile
     filename = 'replacedialogfo.sta'
     options = [sfo_memory]
-    left = 112
+    left = 144
+    top = 132
   end
 end

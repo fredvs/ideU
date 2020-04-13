@@ -35,6 +35,8 @@ object targetconsolefo: ttargetconsolefo
     384
   )
   dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.name = 'stf_default'
+  font.localprops = []
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Target Console'
@@ -93,11 +95,6 @@ object targetconsolefo: ttargetconsolefo
     bounds_cx = 581
     bounds_cy = 384
     anchors = []
-    font.color = -1610612730
-    font.colorbackground = 2171169
-    font.name = 'stf_fixed'
-    font.xscale = 1
-    font.localprops = [flp_color, flp_colorbackground, flp_colorselect, flp_xscale]
     fontempty.name = 'stf_empty'
     fontempty.localprops = []
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_colchangeontabkey, og_wrapcol, og_autopopup]

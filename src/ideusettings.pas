@@ -7,14 +7,14 @@ unit ideusettings;
 interface
 
 uses
-  fpg_iniutils_ideu, mseglob, mseguiglob, msegui, mseclasses, mseforms, msestat,
-  msestatfile, msesimplewidgets, msefiledialog, msestrings, msemacros, msedataedits,
-  msebitmap, msedatanodes, mseedit, mseevent, msegraphutils, msegrids, mselistbrowser,
-  msemenus, msesys, msetypes, msegraphics, msewidgets, mseactions, mseifiglob,
-  msesplitter, mseificomp, mseificompglob, msememodialog, msewidgetgrid,
-  mseapplication, msestream, SysUtils, mseact, msedragglob, msescrollbar, msetabs,
-  msegraphedits, msedropdownlist, msegridsglob, mseeditglob, mserichstring,
-  msetextedit, msecolordialog, projectoptionsform;
+ fpg_iniutils_ideu, mseglob, mseguiglob, msegui, mseclasses, mseforms, msestat,
+ msestatfile, msesimplewidgets, msefiledialog, msestrings, msemacros,
+ msedataedits,msebitmap, msedatanodes, mseedit, mseevent, msegraphutils,
+ msegrids, mselistbrowser,msemenus, msesys, msetypes, msegraphics, msewidgets,
+ mseactions, mseifiglob,msesplitter, mseificomp, mseificompglob, msememodialog,
+ msewidgetgrid,mseapplication, msestream, SysUtils, mseact, msedragglob,
+ msescrollbar, msetabs,msegraphedits, msedropdownlist, msegridsglob,mseeditglob,
+ mserichstring,msetextedit, msecolordialog, projectoptionsform;
 
 type
   settingsmacroty = (sma_fpcdir, sma_fpclibdir, sma_msedir, sma_mselibdir,
@@ -136,32 +136,31 @@ type
 
   tsettingsfo = class(tmseform)
     tstatfile1: tstatfile;
-    setting_tab: ttabwidget;
-    path: ttabpage;
-    macros: ttabpage;
-    shortcut: ttabpage;
-    other: ttabpage;
-    but_ok: TButton;
-    layoutdir: tfilenameedit;
-    syntaxdefdir: tfilenameedit;
-    templatedir: tfilenameedit;
-    docviewdir: tfilenameedit;
-    fpguidir: tfilenameedit;
-    compstoredir: tfilenameedit;
-    mselibdir: tfilenameedit;
-    msedir: tfilenameedit;
-    debugger: tfilenameedit;
-    compiler: tfilenameedit;
-    macrogrid: twidgetgrid;
-    macrovalue: tmemodialogedit;
-    macroname: tstringedit;
-    shortcutbu: TButton;
-    lcldir: tfilenameedit;
-    fpcsrcdir: tfilenameedit;
-    exeext: tstringedit;
-    target: tstringedit;
-    printcomm: tstringedit;
-    targetosdir: tstringedit;
+   setting_tab: ttabwidget;
+   path: ttabpage;
+   layoutdir: tfilenameedit;
+   syntaxdefdir: tfilenameedit;
+   templatedir: tfilenameedit;
+   docviewdir: tfilenameedit;
+   fpguidir: tfilenameedit;
+   compstoredir: tfilenameedit;
+   mselibdir: tfilenameedit;
+   msedir: tfilenameedit;
+   debugger: tfilenameedit;
+   compiler: tfilenameedit;
+   lcldir: tfilenameedit;
+   fpcsrcdir: tfilenameedit;
+   macros: ttabpage;
+   macrogrid: twidgetgrid;
+   macrovalue: tmemodialogedit;
+   macroname: tstringedit;
+   other: ttabpage;
+   printcomm: tstringedit;
+   exeext: tstringedit;
+   target: tstringedit;
+   targetosdir: tstringedit;
+   shortcutbu: tbutton;
+   but_ok: tbutton;
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
     procedure formoncreate(const Sender: TObject);
@@ -283,6 +282,10 @@ begin
   with settingsfo do
   begin
     try
+      font.height := confideufo.fontsize.value;
+      setting_tab.tab_size := confideufo.fontsize.value + 8;
+      but_ok.height := confideufo.fontsize.value + 8;
+
       fshortcutcontroller := shortcuts;
       if shortcuts = nil then
       begin

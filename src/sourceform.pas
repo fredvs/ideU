@@ -1164,9 +1164,11 @@ var
 color0,color1, color2 : longword;
 str1: ttextstream;
 thedir: msestring;
+ratio : double;
 
 begin
   updatecaption;
+  ratio := confideufo.fontsize.value / 12;
 
    if ActivePage <> nil then begin
  with ActivePage do begin
@@ -1180,6 +1182,18 @@ container.color := cl_ltgray;
 color0 := cl_white;
 color1 := cl_dkgray;
 color2 := cl_black;
+ pathdisp.height := round(ratio * 20);
+ linedisp.height := round(ratio * 20);
+
+ files_tab.tab_size := round(24 * ratio);
+ step_back.height := round(24 * ratio);
+ step_forward.height := round(24 * ratio);
+
+  source_editor.height := height -
+      pathdisp.height -2;
+
+ pathdisp.top := source_editor.height + 1;
+ linedisp.top := pathdisp.top;
 end;
 
 if mainfo.themenr = 1 then begin

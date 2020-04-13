@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2016 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -23,7 +23,7 @@ uses
  finddialogform,findinfileform,mseforms,msedataedits,msesimplewidgets,
  msegraphedits,msefiledialog,msetypes,mseglob,mseguiglob,msegui,msestat,
  msestatfile,mseevent,msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,
- msestrings,mseificomp,mseificompglob,mseifiglob,msescrollbar;
+ msestrings,mseificomp,mseificompglob,mseifiglob,msescrollbar, mseclasses;
 
 type
 
@@ -32,19 +32,15 @@ type
    statfile1: tstatfile;
    dir: tfilenameedit;
    mask: thistoryedit;
-   tlayouter1: tlayouter;
-   indirectories: tbooleaneditradio;
    casesensitive: tbooleanedit;
-   tlayouter2: tlayouter;
+   inprojectdir: tbooleaneditradio;
+   indirectories: tbooleaneditradio;
    wholeword: tbooleanedit;
    inopenfiles: tbooleaneditradio;
-   tlayouter4: tlayouter;
-   tlayouter3: tlayouter;
+   incurrentfile: tbooleaneditradio;
+   subdirs: tbooleanedit;
    ok: tbutton;
    cancel: tbutton;
-   subdirs: tbooleanedit;
-   inprojectdir: tbooleaneditradio;
-   incurrentfile: tbooleaneditradio;
    procedure dironbeforeexecute(const sender: tfiledialogcontroller;
                    var dialogkind: filedialogkindty; var aresult: modalresultty);
    procedure dirshowhint(const sender: TObject; var info: hintinfoty);
@@ -66,21 +62,43 @@ type
    procedure infotovalues(const info: findinfileinfoty);
  end;
 
+procedure findinfiledialogdotextsize;
+
 function findinfiledialogexecute(var info: findinfileinfoty;
                                         const useinfo: boolean): boolean;
 
 implementation
 uses
  msebits,findinfiledialogform_mfm,projectoptionsform,main,msefileutils,
- sourceform;
+ sourceform, confideu;
+
+var
+ fo: tfindinfiledialogfo;
+
+procedure findinfiledialogdotextsize;
+begin
+ fo.font.height := confideufo.fontsize.value;
+ fo.font.height := confideufo.fontsize.value;
+fo.findtext.top :=  34;
+fo.casesensitive.top :=  fo.findtext.top + fo.findtext.height + 2 ;
+fo.wholeword.top :=  fo.casesensitive.top + fo.casesensitive.height + 2 ;
+fo.incurrentfile.top :=  fo.wholeword.top + fo.wholeword.height + 6 ;
+fo.inopenfiles.top :=  fo.incurrentfile.top + fo.incurrentfile.height + 2 ;
+fo.inprojectdir.top :=  fo.inopenfiles.top + fo.inopenfiles.height + 6 ;
+fo.indirectories.top :=  fo.inprojectdir.top + fo.inprojectdir.height + 2 ;
+fo.dir.top :=  fo.indirectories.top + fo.indirectories.height + 2 ;
+fo.mask.top :=  fo.dir.top + fo.dir.height + 2 ;
+fo.subdirs.top :=  fo.mask.top + fo.mask.height + 6 ;
+
+fo.height := fo.subdirs.top + fo.subdirs.height + 8;
+end;
 
 function findinfiledialogexecute(var info: findinfileinfoty;
                                          const useinfo: boolean): boolean;
-var
- fo: tfindinfiledialogfo;
 begin
  fo:= tfindinfiledialogfo.create(nil);
  try
+ findinfiledialogdotextsize;
   if useinfo then begin
    fo.infotovalues(info);
   end;

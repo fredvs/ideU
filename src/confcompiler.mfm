@@ -1,18 +1,18 @@
 object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 345
-  bounds_y = 140
-  bounds_cx = 372
-  bounds_cy = 399
+  bounds_x = 468
+  bounds_y = 95
+  bounds_cx = 587
+  bounds_cy = 615
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    372
-    399
+    587
+    615
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
@@ -77,10 +77,10 @@ object confcompilerfo: tconfcompilerfo
   windowopacity = -Inf
   moduleclassname = 'tmseform'
   object tab_compilers: ttabwidget
-    bounds_x = 4
+    bounds_x = 5
     bounds_y = 4
-    bounds_cx = 364
-    bounds_cy = 393
+    bounds_cx = 579
+    bounds_cy = 609
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
     tab_frame.buttonframe.localprops = []
@@ -98,8 +98,8 @@ object confcompilerfo: tconfcompilerfo
       taborder = 2
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 364
-      bounds_cy = 373
+      bounds_cx = 579
+      bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Pascal'
       object twinep3: tbooleanedit
@@ -113,8 +113,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 5
-        bounds_x = 22
-        bounds_y = 113
+        bounds_x = 6
+        bounds_y = 194
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -129,8 +129,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 7
-        bounds_x = 22
-        bounds_y = 152
+        bounds_x = 6
+        bounds_y = 260
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -145,8 +145,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 9
-        bounds_x = 23
-        bounds_y = 193
+        bounds_x = 6
+        bounds_y = 336
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -161,8 +161,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 11
-        bounds_x = 23
-        bounds_y = 238
+        bounds_x = 6
+        bounds_y = 413
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -177,8 +177,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 13
-        bounds_x = 23
-        bounds_y = 277
+        bounds_x = 6
+        bounds_y = 486
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -193,8 +193,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 15
-        bounds_x = 23
-        bounds_y = 316
+        bounds_x = 6
+        bounds_y = 556
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -220,9 +220,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 14
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 296
-        bounds_cx = 270
+        bounds_x = 90
+        bounds_y = 537
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -250,9 +250,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 12
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 256
-        bounds_cx = 270
+        bounds_x = 90
+        bounds_y = 466
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -280,9 +280,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 10
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 216
-        bounds_cx = 271
+        bounds_x = 90
+        bounds_y = 393
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -310,9 +310,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 8
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 176
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 314
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -340,9 +340,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 6
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 132
-        bounds_cx = 270
+        bounds_x = 90
+        bounds_y = 241
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -370,9 +370,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 4
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 92
-        bounds_cx = 270
+        bounds_x = 90
+        bounds_y = 173
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -400,9 +400,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 2
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 52
-        bounds_cx = 271
+        bounds_x = 90
+        bounds_y = 100
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -419,8 +419,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 3
-        bounds_x = 22
-        bounds_y = 74
+        bounds_x = 6
+        bounds_y = 119
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -435,15 +435,15 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 1
-        bounds_x = 22
-        bounds_y = 29
+        bounds_x = 6
+        bounds_y = 48
         bounds_cx = 44
         bounds_cy = 17
       end
       object tlabel2: tlabel
         taborder = 16
         bounds_x = 9
-        bounds_y = 11
+        bounds_y = 18
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -469,9 +469,9 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to pascal compiler'
-        bounds_x = 71
-        bounds_y = 15
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 28
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -484,8 +484,8 @@ object confcompilerfo: tconfcompilerfo
       taborder = 3
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 364
-      bounds_cy = 373
+      bounds_cx = 579
+      bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&C'
       object ccompiler2: tfilenameedit
@@ -510,9 +510,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 2
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 52
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 103
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -540,9 +540,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 4
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 94
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 178
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -570,9 +570,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 6
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 135
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 250
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -600,9 +600,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 8
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 175
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 323
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -630,9 +630,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 10
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 216
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 401
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -660,9 +660,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 12
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 257
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 470
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -690,9 +690,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 14
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 298
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 540
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -709,8 +709,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 15
-        bounds_x = 24
-        bounds_y = 317
+        bounds_x = 6
+        bounds_y = 562
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -725,8 +725,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 13
-        bounds_x = 24
-        bounds_y = 278
+        bounds_x = 6
+        bounds_y = 491
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -741,8 +741,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 11
-        bounds_x = 24
-        bounds_y = 239
+        bounds_x = 6
+        bounds_y = 422
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -757,8 +757,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 9
-        bounds_x = 24
-        bounds_y = 194
+        bounds_x = 6
+        bounds_y = 343
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -773,8 +773,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 7
-        bounds_x = 24
-        bounds_y = 154
+        bounds_x = 6
+        bounds_y = 273
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -789,8 +789,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 5
-        bounds_x = 24
-        bounds_y = 115
+        bounds_x = 6
+        bounds_y = 200
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -805,8 +805,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 3
-        bounds_x = 24
-        bounds_y = 76
+        bounds_x = 6
+        bounds_y = 127
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -821,15 +821,15 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 1
-        bounds_x = 24
-        bounds_y = 31
+        bounds_x = 6
+        bounds_y = 53
         bounds_cx = 44
         bounds_cy = 17
       end
       object tlabel7: tlabel
         taborder = 16
-        bounds_x = 10
-        bounds_y = 13
+        bounds_x = 6
+        bounds_y = 17
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -856,9 +856,9 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to C compiler'
-        bounds_x = 71
-        bounds_y = 12
-        bounds_cx = 269
+        bounds_x = 90
+        bounds_y = 33
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -871,8 +871,8 @@ object confcompilerfo: tconfcompilerfo
       taborder = 4
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 364
-      bounds_cy = 373
+      bounds_cx = 579
+      bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Java'
       object twinej1: tbooleanedit
@@ -881,13 +881,13 @@ object confcompilerfo: tconfcompilerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
+          1
           31
-          2
+          1
         )
         taborder = 1
-        bounds_x = 19
-        bounds_y = 73
+        bounds_x = 6
+        bounds_y = 74
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -897,13 +897,13 @@ object confcompilerfo: tconfcompilerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
+          1
           31
-          2
+          1
         )
         taborder = 3
-        bounds_x = 19
-        bounds_y = 115
+        bounds_x = 6
+        bounds_y = 154
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -913,13 +913,13 @@ object confcompilerfo: tconfcompilerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
+          1
           31
-          2
+          1
         )
         taborder = 5
-        bounds_x = 20
-        bounds_y = 159
+        bounds_x = 6
+        bounds_y = 231
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -929,13 +929,13 @@ object confcompilerfo: tconfcompilerfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
+          1
           31
-          2
+          1
         )
         taborder = 7
-        bounds_x = 19
-        bounds_y = 193
+        bounds_x = 6
+        bounds_y = 308
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -961,9 +961,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 6
         hint = 'Path to Java compiler'
-        bounds_x = 68
-        bounds_y = 179
-        bounds_cx = 280
+        bounds_x = 80
+        bounds_y = 286
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -991,9 +991,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 4
         hint = 'Path to Java compiler'
-        bounds_x = 68
-        bounds_y = 138
-        bounds_cx = 280
+        bounds_x = 80
+        bounds_y = 210
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1021,9 +1021,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 2
         hint = 'Path to Java compiler'
-        bounds_x = 68
-        bounds_y = 99
-        bounds_cx = 280
+        bounds_x = 80
+        bounds_y = 134
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1050,9 +1050,9 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to Java compiler'
-        bounds_x = 68
+        bounds_x = 80
         bounds_y = 54
-        bounds_cx = 280
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1060,8 +1060,8 @@ object confcompilerfo: tconfcompilerfo
       end
       object tlabel3: tlabel
         taborder = 8
-        bounds_x = 10
-        bounds_y = 56
+        bounds_x = 9
+        bounds_y = 26
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -1074,8 +1074,8 @@ object confcompilerfo: tconfcompilerfo
       taborder = 5
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 364
-      bounds_cy = 373
+      bounds_cx = 579
+      bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'P&ython'
       object twinepy3: tbooleanedit
@@ -1089,8 +1089,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 5
-        bounds_x = 20
-        bounds_y = 140
+        bounds_x = 6
+        bounds_y = 211
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1105,8 +1105,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 7
-        bounds_x = 20
-        bounds_y = 179
+        bounds_x = 6
+        bounds_y = 298
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1132,9 +1132,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 6
         hint = 'Path to python compiler'
-        bounds_x = 68
-        bounds_y = 162
-        bounds_cx = 269
+        bounds_x = 80
+        bounds_y = 278
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1162,9 +1162,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 4
         hint = 'Path to python compiler'
-        bounds_x = 68
-        bounds_y = 122
-        bounds_cx = 269
+        bounds_x = 80
+        bounds_y = 190
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1192,9 +1192,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 2
         hint = 'Path to python compiler'
-        bounds_x = 68
-        bounds_y = 77
-        bounds_cx = 269
+        bounds_x = 80
+        bounds_y = 113
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1211,8 +1211,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 3
-        bounds_x = 20
-        bounds_y = 101
+        bounds_x = 6
+        bounds_y = 132
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1227,7 +1227,7 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 1
-        bounds_x = 20
+        bounds_x = 6
         bounds_y = 56
         bounds_cx = 44
         bounds_cy = 17
@@ -1253,9 +1253,9 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to python compiler'
-        bounds_x = 68
+        bounds_x = 80
         bounds_y = 37
-        bounds_cx = 269
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1263,8 +1263,8 @@ object confcompilerfo: tconfcompilerfo
       end
       object tlabel4: tlabel
         taborder = 8
-        bounds_x = 17
-        bounds_y = 35
+        bounds_x = 19
+        bounds_y = 25
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -1277,8 +1277,8 @@ object confcompilerfo: tconfcompilerfo
       taborder = 6
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 364
-      bounds_cy = 373
+      bounds_cx = 579
+      bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
       object othercompiler3: tfilenameedit
@@ -1303,9 +1303,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 4
         hint = 'Path to Other compiler'
-        bounds_x = 68
-        bounds_y = 121
-        bounds_cx = 270
+        bounds_x = 80
+        bounds_y = 185
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1322,8 +1322,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 3
-        bounds_x = 19
-        bounds_y = 93
+        bounds_x = 6
+        bounds_y = 124
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1338,7 +1338,7 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 1
-        bounds_x = 19
+        bounds_x = 6
         bounds_y = 48
         bounds_cx = 44
         bounds_cy = 17
@@ -1364,9 +1364,9 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to Other compiler'
-        bounds_x = 68
+        bounds_x = 80
         bounds_y = 28
-        bounds_cx = 270
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1394,9 +1394,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 6
         hint = 'Path to Other compiler'
-        bounds_x = 68
-        bounds_y = 164
-        bounds_cx = 270
+        bounds_x = 80
+        bounds_y = 266
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1413,8 +1413,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 7
-        bounds_x = 19
-        bounds_y = 183
+        bounds_x = 6
+        bounds_y = 286
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1429,8 +1429,8 @@ object confcompilerfo: tconfcompilerfo
           2
         )
         taborder = 5
-        bounds_x = 20
-        bounds_y = 139
+        bounds_x = 6
+        bounds_y = 206
         bounds_cx = 44
         bounds_cy = 17
       end
@@ -1456,9 +1456,9 @@ object confcompilerfo: tconfcompilerfo
         )
         taborder = 2
         hint = 'Path to Other compiler'
-        bounds_x = 68
-        bounds_y = 71
-        bounds_cx = 270
+        bounds_x = 80
+        bounds_y = 103
+        bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1467,7 +1467,7 @@ object confcompilerfo: tconfcompilerfo
       object tlabel5: tlabel
         taborder = 8
         bounds_x = 7
-        bounds_y = 26
+        bounds_y = 19
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -1481,12 +1481,12 @@ object confcompilerfo: tconfcompilerfo
       face.localprops = []
       face.template = sourcefo.tfacecomp1
       taborder = 1
-      bounds_x = 325
+      bounds_x = 494
       bounds_y = 2
-      bounds_cx = 33
+      bounds_cx = 79
       bounds_cy = 16
       anchors = [an_top, an_right]
-      state = [as_localcaption, as_localonexecute]
+      state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
       caption = '&OK'
       onexecute = closeapp
     end

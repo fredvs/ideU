@@ -33,10 +33,6 @@ type
    statfile1: tstatfile;
    ok: tbutton;
    tlayouter1: tlayouter;
-   tlayouter2: tlayouter;
-   selectedonly: tbooleanedit;
-   wholeword: tbooleanedit;
-   casesensitive: tbooleanedit;
    tbutton2: tbutton;
    boolfind1: tbooleaneditradio;
    findtext2: thistoryedit;
@@ -46,6 +42,9 @@ type
    boolfind3: tbooleaneditradio;
    boolfind4: tbooleaneditradio;
    tbutton3: tbutton;
+   casesensitive: tbooleanedit;
+   wholeword: tbooleanedit;
+   selectedonly: tbooleanedit;
    procedure oncloseev(const sender: TObject);
    procedure onok(const sender: TObject);
    procedure onprior(const sender: TObject);
@@ -54,6 +53,7 @@ type
    procedure infotovalues(const info: findinfoty);
  end;
 
+procedure finddialogdotextsize;
 procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
 function finddialogexecute(var info: findinfoty): boolean;
@@ -65,7 +65,7 @@ var
 
 implementation
 uses
- finddialogform_mfm, sourceform, main;
+ finddialogform_mfm, sourceform, main, confideu;
 
 procedure updatefindvalues(const astatfiler: tstatfiler;
                                           var aoptions: findinfoty);
@@ -81,6 +81,24 @@ begin
  end;
 end;
 
+procedure finddialogdotextsize;
+begin
+finddialogfo.font.height := confideufo.fontsize.value;
+finddialogfo.findtext.top :=  34;
+finddialogfo.findtext2.top :=  finddialogfo.findtext.top + finddialogfo.findtext.height + 2 ;
+finddialogfo.findtext3.top :=  finddialogfo.findtext2.top + finddialogfo.findtext.height + 2 ;
+finddialogfo.findtext4.top :=  finddialogfo.findtext3.top + finddialogfo.findtext.height + 2 ;
+finddialogfo.boolfind1.top := finddialogfo.findtext.top + (finddialogfo.findtext.height div 2);
+finddialogfo.boolfind2.top := finddialogfo.findtext2.top+ (finddialogfo.findtext.height div 2);
+finddialogfo.boolfind3.top := finddialogfo.findtext3.top+ (finddialogfo.findtext.height div 2);
+finddialogfo.boolfind4.top := finddialogfo.findtext4.top+ (finddialogfo.findtext.height div 2);
+
+finddialogfo.casesensitive.top :=  4 + finddialogfo.findtext4.top + finddialogfo.findtext.height + 2 ;
+finddialogfo.selectedonly.top :=  finddialogfo.casesensitive.top + finddialogfo.casesensitive.height + 2 ;
+finddialogfo.wholeword.top :=  finddialogfo.selectedonly.top + finddialogfo.selectedonly.height + 2 ;
+finddialogfo.height := finddialogfo.wholeword.top + finddialogfo.wholeword.height + 8;
+end;
+
 function finddialogexecute(var info: findinfoty): boolean;
 begin
  result := true;
@@ -88,7 +106,7 @@ begin
  finddialogfo:= tfinddialogfo.create(nil);
  findformcreated:= true;
  try
-
+ finddialogdotextsize;
   info:= projectoptions.findreplaceinfo.find;
  if not sourcefo.activepage.edit.hasselection then begin
  info.selectedonly:= false;
@@ -117,7 +135,7 @@ end;
 { tfinddialogfo }
 
 procedure tfinddialogfo.valuestoinfo(out info: findinfoty);
-var 
+var
 findtxt : msestring;
 histor : msestringarty;
 begin
@@ -132,7 +150,7 @@ findtxt := findtext2.value;
 histor := findtext2.dropdown.valuelist.asarray;
 end else
 if boolfind3.value then
-begin 
+begin
 findtxt := findtext3.value;
 histor := findtext3.dropdown.valuelist.asarray;
 end else

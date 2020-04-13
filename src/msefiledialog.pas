@@ -33,7 +33,8 @@ uses
  msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,msegraphedits,
  mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,msegraphutils,
  msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
- mseificompglob,mseifiglob,msestream,sysutils,msemenuwidgets,msescrollbar;
+ mseificompglob,mseifiglob,msestream,sysutils,msemenuwidgets,msescrollbar,
+ msedragglob;
 
 const
  defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly];
@@ -486,19 +487,19 @@ type
  end;
 
  tfiledialogfo = class(tmseform)
-   listview: tfilelistview;
    tlayouter2: tlayouter;
-   filename: thistoryedit;
-   filter: tdropdownlistedit;
-   cancel: tbutton;
-   ok: tbutton;
-   showhidden: tbooleanedit;
    dir: tdirdropdownedit;
-   home: tbutton;
-   createdir: tbutton;
    up: tstockglyphbutton;
    back: tstockglyphbutton;
    forward: tstockglyphbutton;
+   home: tbutton;
+   createdir: tbutton;
+   cancel: tbutton;
+   ok: tbutton;
+   filename: thistoryedit;
+   filter: tdropdownlistedit;
+   showhidden: tbooleanedit;
+   listview: tfilelistview;
    procedure createdironexecute(const sender: TObject);
    procedure listviewselectionchanged(const sender: tcustomlistview);
    procedure listviewitemevent(const sender: tcustomlistview;
@@ -590,7 +591,7 @@ procedure updatefileinfo(const item: tlistitem; const info: fileinfoty;
 
 implementation
 uses
- msefiledialog_mfm,msebits,mseactions, commandorform,
+ msefiledialog_mfm,msebits,mseactions, commandorform, confideu,
  msestringenter,msefiledialogres,msekeyboard,
  msestockobjects,msesysintf,msearrayutils;
 
@@ -1611,6 +1612,7 @@ end;
 procedure tfiledialogfo.formoncreate(const sender: TObject);
 begin
  fcourseid:= -1;
+  font.height := confideufo.fontsize.value;
  with stockobjects do begin
  // dir.frame.caption:= captions[sc_dirhk];
   home.caption:= captions[sc_homehk];
@@ -1621,6 +1623,7 @@ begin
 //  showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
   ok.caption:= modalresulttext[mr_ok];
   cancel.caption:= modalresulttext[mr_cancel];
+
  // caption := 'Select a file';
  end;
  back.tag:= ord(sc_back);

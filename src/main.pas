@@ -621,8 +621,6 @@ begin
   begin
     dialogfilesfo.tag := 0;
 
-    dialogfilesfo.list_files.cellwidth := 437;
-
     thesdef := projectoptions.e.t.syntaxdeffiles[0];
 
     dialogfilesfo.Caption := 'Load a Syntax Definition File';
@@ -687,6 +685,8 @@ top := 56 ;
   dotheme(themenr);
 
   setstattext('Hello!', mtk_flat);
+
+   confideufo.onchangefont;
 
 end;
 
@@ -874,13 +874,13 @@ begin
   confideufo.tabstops.Value := gINI.ReadInteger('tabstops', 'editor', 4);
 
   confideufo.spacetabs.Value := gINI.Readbool('spacetabs', 'editor', False);
-  
+
   confideufo.fontsize.Value := gINI.ReadInteger('fontsize', 'system', 12);
-  
-   confideufo.fontname.Value := gINI.Readstring('fontname', 'system', 'stf_default');
-  
-   confideufo.onchangefont;
- 
+
+   confideufo.fontname.Value := utf8decode(gINI.Readstring('fontname', 'system', 'stf_default'));
+
+   // confideufo.onchangefont;
+
   confideufo.trimtrailingwhitespace.Value :=
     gINI.Readbool('trimtrailingwhitespace', 'editor', False);
 
@@ -1033,9 +1033,9 @@ begin
   gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));
 
   gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));
-  
+
   gINI.WriteInteger('fontsize', 'system', (confideufo.fontsize.Value));
- 
+
    gINI.writeString('fontname', 'system', ansistring(confideufo.fontname.Value));
 
    gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
@@ -1049,8 +1049,8 @@ begin
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
 
   gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
-  
-  
+
+
 
   if debuggerfo.properties_list.tag = 0 then
     gINI.writebool('Completion', 'proplist', False)
@@ -4016,33 +4016,44 @@ end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
 begin
+  aboutfo.font.height := confideufo.fontsize.value;
   aboutfo.Caption := 'About MSEgui';
   aboutfo.about_text.frame.colorclient := $B2F4FF;
 
   aboutfo.about_text.Value :=
-    c_linefeed + c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
+     c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber. Copyright 1999-2018' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2018' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
+
+    aboutfo.about_text.height := 15 * confideufo.fontsize.value;
+    aboutfo.height := aboutfo.about_text.height + 16;
+
+
   aboutfo.Show(True);
 
 end;
 
 procedure tmainfo.aboutfpguionexecute(const Sender: TObject);
 begin
+  aboutfo.font.height := confideufo.fontsize.value;
   aboutfo.Caption          := 'About fpGUI';
   aboutfo.about_text.frame.colorclient := $FFF5B2;
   aboutfo.about_text.Value :=
-    c_linefeed + c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
+     c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
     c_linefeed + 'Copyright 1999-2020' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
+   aboutfo.about_text.height := 13 * confideufo.fontsize.value;
+   aboutfo.height := aboutfo.about_text.height + 16;
+
   aboutfo.Show(True);
 end;
 
 procedure tmainfo.aboutideuonexecute(const Sender: TObject);
 begin
+  aboutfo.font.height := confideufo.fontsize.value;
   aboutfo.Caption          := 'About ideU';
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
@@ -4052,6 +4063,10 @@ begin
     'by Martin Schreiber' + c_linefeed + c_linefeed +
     'Copyright 1999-2020' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
+
+   aboutfo.about_text.height := 15 * confideufo.fontsize.value;
+    aboutfo.height := aboutfo.about_text.height + 16;
+
   aboutfo.Show(True);
 end;
 
@@ -4265,7 +4280,7 @@ begin
 
   dialogfilesfo.Caption := 'Load a Layout File';
 
-  dialogfilesfo.list_files.cellwidth := 437;
+  // dialogfilesfo.list_files.cellwidth := 437;
   dialogfilesfo.list_files.mask      := '*.prj';
   dialogfilesfo.list_files.path      := expandprmacros('${LAYOUTDIR}');
 
@@ -4350,7 +4365,7 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-  //  setstattext('Light theme is set.', mtk_flat);
+   //  setstattext('Light theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -4368,8 +4383,21 @@ begin
   end;
 end;
 
-procedure tmainfo.dothemedialog();
+procedure tmainfo.dothemedialog();var
+ratio : double;
 begin
+
+ratio := confideufo.fontsize.value / 12;
+
+dialogfilesfo.selected_file.font.height := confideufo.fontsize.value;
+dialogfilesfo.selected_file.font.height := confideufo.fontsize.value;
+
+dialogfilesfo.selected_file.frame.font.height := confideufo.fontsize.value;
+dialogfilesfo.list_files.cellheight := round((ratio) * 19);
+dialogfilesfo.list_files.font.height := confideufo.fontsize.value;
+dialogfilesfo.height := round((ratio) * 366);
+dialogfilesfo.width  := round((ratio) * 336);
+dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
 
   if themenr = 0 then
   begin

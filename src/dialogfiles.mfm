@@ -1,14 +1,10 @@
 object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 712
-  bounds_y = 186
+  bounds_x = 595
+  bounds_y = 176
   bounds_cx = 336
   bounds_cy = 366
-  bounds_cxmin = 336
-  bounds_cymin = 366
-  bounds_cxmax = 336
-  bounds_cymax = 366
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -19,7 +15,7 @@ object dialogfilesfo: tdialogfilesfo
     366
   )
   optionswindow = [wo_message]
-  options = [fo_freeonclose, fo_screencentered, fo_closeonenter, fo_closeonf10, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  options = [fo_screencentered, fo_closeonenter, fo_closeonf10, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Load a Syntax Definition File'
   icon.origformat = 'bmp'
   icon.image = {
@@ -75,7 +71,7 @@ object dialogfilesfo: tdialogfilesfo
     )
     taborder = 1
     bounds_x = 6
-    bounds_y = 4
+    bounds_y = 18
     bounds_cx = 324
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
@@ -84,24 +80,29 @@ object dialogfilesfo: tdialogfilesfo
     font.localprops = []
     reffontheight = 15
   end
-  object tbutton1: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.font.name = 'stf_default'
-    frame.font.localprops = []
-    frame.localprops = [frl_optionsskin]
+  object list_files: tfilelistview
+    frame.localprops = []
     frame.localprops1 = []
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    face.template = sourcefo.tfacecomp1
-    taborder = 2
-    bounds_x = 276
-    bounds_y = 2
-    bounds_cx = 50
-    bounds_cy = 18
-    anchors = [an_top, an_right]
-    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
-    caption = '&OK'
-    onexecute = butok
+    face.localprops = []
+    bounds_x = 6
+    bounds_y = 61
+    bounds_cx = 324
+    bounds_cy = 300
+    anchors = [an_left, an_top, an_right, an_bottom]
+    font.name = 'stf_default'
+    font.localprops = [flp_colorbackground]
+    fontempty.name = 'stf_empty'
+    fontempty.localprops = []
+    colorselect = 16760476
+    colorglyph = 16449400
+    cellwidth = 262
+    cellheight = 19
+    cellframe.localprops = []
+    cellframe.localprops1 = []
+    optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
+    onselectionchanged = loaddef
+    filelist.options = [flo_sortname, flo_sorttype]
+    reffontheight = 15
   end
   object tbutton2: tbutton
     frame.optionsskin = [fso_flat]
@@ -122,28 +123,23 @@ object dialogfilesfo: tdialogfilesfo
     caption = '&Cancel'
     onexecute = butcancel
   end
-  object list_files: tfilelistview
-    frame.localprops = []
+  object tbutton1: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.font.name = 'stf_default'
+    frame.font.localprops = []
+    frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
-    face.localprops = []
-    bounds_x = 6
-    bounds_y = 48
-    bounds_cx = 324
-    bounds_cy = 313
-    anchors = [an_left, an_top, an_right, an_bottom]
-    font.name = 'stf_default'
-    font.localprops = [flp_colorbackground]
-    fontempty.name = 'stf_empty'
-    fontempty.localprops = []
-    colorselect = 16760476
-    colorglyph = 16449400
-    cellwidth = 262
-    cellheight = 19
-    cellframe.localprops = []
-    cellframe.localprops1 = []
-    optionsgrid = [og_focuscellonenter, og_sorted, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup, og_mousescrollcol]
-    onselectionchanged = loaddef
-    filelist.options = [flo_sortname, flo_sorttype]
-    reffontheight = 15
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    face.template = sourcefo.tfacecomp1
+    taborder = 2
+    bounds_x = 276
+    bounds_y = 2
+    bounds_cx = 50
+    bounds_cy = 18
+    anchors = [an_top, an_right]
+    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = butok
   end
 end
