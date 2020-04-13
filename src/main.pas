@@ -4366,6 +4366,7 @@ procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
    //  setstattext('Light theme is set.', mtk_flat);
+   writeln('Hello les amis');
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);

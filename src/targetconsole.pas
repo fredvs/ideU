@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2013 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -21,13 +21,17 @@ unit targetconsole;
 interface
 uses
  msegui,mseclasses,mseforms,mseterminal,msewidgetgrid,msestrings,msedatalist,
- classes,mclasses,msemenus,msestat,msetypes;
+ classes,mclasses,msemenus,msestat,msetypes, mseact, mseapplication,
+ msedataedits, msedragglob, msedropdownlist, mseedit, mseglob, msegraphics,
+ msegraphutils, msegrids, msegridsglob, mseguiglob, mseificomp, mseificompglob,
+ mseifiglob, msestatfile, msestream, sysutils, mseeditglob, mserichstring,
+  msetextedit;
 
 type
  ttargetconsolefo = class(tdockform)
-   terminal: tterminal;
-   grid: twidgetgrid;
    popupmen: tpopupmenu;
+   grid: twidgetgrid;
+   terminal: tterminal;
    procedure sendtext(const sender: tobject; var atext: msestring;
                                                  var donotsend: Boolean);
    procedure targetconsoleonidle(var again: Boolean);
@@ -45,12 +49,12 @@ type
    procedure repeatfind;
    procedure findback;
  end;
- 
+
 var
  targetconsolefo: ttargetconsolefo;
 
 procedure updatestat(const statfiler: tstatfiler);
- 
+
 implementation
 uses
  targetconsole_mfm,msegdbutils,main,finddialogform,projectoptionsform,

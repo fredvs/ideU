@@ -82,7 +82,7 @@ begin
 
   if application.terminated then exit;
 
-  application.createform(tconfideufo, confideufo);
+    application.createform(tconfideufo, confideufo);
   application.createform(tconfmseguifo, confmseguifo);
   application.createform(tconffpguifo, conffpguifo);
   application.createform(tconfcompilerfo, confcompilerfo);

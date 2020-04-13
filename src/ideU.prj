@@ -1061,7 +1061,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=1
+showconsole=0
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1184,7 +1184,7 @@ line=24
  765
  898
  2507
- 5173
+ 5174
  1882
 address=24
  4785304
@@ -1662,19 +1662,19 @@ windowlayout=616
  x=0
  y=0
  cx=205
- cy=452
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=88
+ propcolwidthref=73
  width0=117
  sortdescend0=0
- width1=82
+ width1=67
  sortdescend1=0
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=27
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1758,7 +1758,7 @@ windowlayout=616
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1871,9 +1871,9 @@ windowlayout=616
  ncx=0
  ncy=0
  x=0
- y=509
+ y=501
  cx=1147
- cy=91
+ cy=90
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1942,7 +1942,7 @@ windowlayout=616
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1973,7 +1973,7 @@ windowlayout=616
  x=0
  y=0
  cx=1147
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1988,7 +1988,7 @@ windowlayout=616
  ncy=52
  x=0
  y=0
- cx=1147
+ cx=1140
  cy=54
  rcx=0
  rcy=0
@@ -2019,7 +2019,7 @@ windowlayout=616
  x=208
  y=0
  cx=939
- cy=452
+ cy=445
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2037,7 +2037,7 @@ windowlayout=616
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confcompilerfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2113,7 +2113,7 @@ windowlayout=616
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=confcompilerfo
  parent=
  mdistate=3
  nx=0
@@ -2140,9 +2140,9 @@ windowlayout=616
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1147
- cy=452
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]

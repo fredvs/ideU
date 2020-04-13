@@ -35,8 +35,9 @@ object targetconsolefo: ttargetconsolefo
     384
   )
   dragdock.optionsdock = [od_savepos, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  font.color = -1610612730
   font.name = 'stf_default'
-  font.localprops = []
+  font.localprops = [flp_color]
   options = [fo_savepos, fo_savestate]
   statfile = mainfo.projectstatfile
   caption = 'Target Console'
@@ -95,8 +96,11 @@ object targetconsolefo: ttargetconsolefo
     bounds_cx = 581
     bounds_cy = 384
     anchors = []
-    fontempty.name = 'stf_empty'
-    fontempty.localprops = []
+    font.color = -1610612730
+    font.colorbackground = 2171169
+    font.name = 'stf_courier'
+    font.xscale = 1
+    font.localprops = [flp_color, flp_colorbackground, flp_colorselect, flp_xscale]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_colchangeontabkey, og_wrapcol, og_autopopup]
     rowcountmax = 5000
     datacols.count = 1
@@ -109,19 +113,19 @@ object targetconsolefo: ttargetconsolefo
         dataclass = tgridrichstringdatalist
       end>
     datarowlinewidth = 0
-    datarowheight = 15
-    reffontheight = 15
+    datarowheight = 14
+    reffontheight = 14
     object terminal: tterminal
       taborder = 1
       visible = False
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 3000
-      bounds_cy = 15
+      bounds_cy = 14
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
       maxchars = 120
       onsendtext = sendtext
-      reffontheight = 15
+      reffontheight = 14
     end
   end
   object popupmen: tpopupmenu

@@ -72,7 +72,7 @@ var
 implementation
 
 uses
-  confideu_mfm, main, messageform, sourceform, finddialogform,
+  confideu_mfm, main, messageform, sourceform, finddialogform, targetconsole,
   projecttreeform, commandorform, dialogfiles;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
@@ -234,6 +234,9 @@ rect1: rectty;
 begin
 
 mainfo.font.height := fontsize.value;
+
+targetconsolefo.grid.font.height := fontsize.value;
+
 
 ratio := fontsize.value / 12;
 
