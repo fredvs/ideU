@@ -51,6 +51,7 @@ type
    tbfilereload: tbooleaneditradio;
    tbfilenoload: tbooleaneditradio;
    tbfileaskload: tbooleaneditradio;
+   confirmdel: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -313,7 +314,7 @@ group_sourceeditor.width := round(ratio * 314);
 group_sourceeditor.left := group_assistive.width + 20;
 but_ok.width := round(ratio * 280);
 
- group_file_change.top := 50;
+ group_file_change.top := 40;
  tbfilereload.top := tbfilereload.height + 2;
  tbfilenoload.top :=  tbfilereload.top + tbfilereload.height + 2 ;
  tbfileaskload.top :=  tbfilenoload.top + tbfilenoload.height + 2 ;
@@ -328,7 +329,9 @@ but_ok.width := round(ratio * 280);
  modaldial.top :=  fullpath.top + fullpath.height + 2 ;
  autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
  nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
- fontname.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+ confirmdel.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+
+ fontname.top :=  confirmdel.top + confirmdel.height + 2 ;
  fontsize.top :=  fontname.top + fontname.height + 2 ;
 
  group_system_layout.height := fontsize.top + fontsize.height + 10;
@@ -405,6 +408,7 @@ procedure tconfideufo.onapply(const sender: TObject);
 begin
 messagefo.updateprojectoptions;
 onchangefont;
+noconfirmdelete := confirmdel.value;
 end;
 
 end.

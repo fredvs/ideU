@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 695
-  bounds_y = 44
+  bounds_x = 543
+  bounds_y = 53
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -155,10 +155,10 @@ object confideufo: tconfideufo
       0
     )
     taborder = 2
-    bounds_x = 10
-    bounds_y = 187
+    bounds_x = 13
+    bounds_y = 185
     bounds_cx = 281
-    bounds_cy = 330
+    bounds_cy = 349
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -188,10 +188,11 @@ object confideufo: tconfideufo
       )
       hint = 'No focus on window when mouse-move on it.'
       bounds_x = 10
-      bounds_y = 213
+      bounds_y = 203
       bounds_cx = 137
       bounds_cy = 17
       value = True
+      valuedefault = True
     end
     object doubleclic: tbooleanedit
       frame.caption = 'Use shift key to select a word'
@@ -348,6 +349,23 @@ object confideufo: tconfideufo
           )
         end>
       reffontheight = 15
+    end
+    object confirmdel: tbooleanedit
+      frame.caption = 'No confirmation to delete row'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.outerframe = (
+        0
+        2
+        182
+        2
+      )
+      taborder = 8
+      hint = 'No confirmation dialog when deleting a row'
+      bounds_x = 10
+      bounds_y = 226
+      bounds_cx = 195
+      bounds_cy = 17
     end
   end
   object group_sourceeditor: tgroupbox

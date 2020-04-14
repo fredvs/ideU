@@ -11,6 +11,8 @@ uses
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
  mseificompglob,mseifiglob;
 
+
+
 type
  stringconsts = (
   ac_configureide, //0 Configure ideU

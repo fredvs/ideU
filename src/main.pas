@@ -849,6 +849,8 @@ begin
 
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
+  noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
+
   confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
 
   confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
@@ -1046,11 +1048,11 @@ begin
 
   gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
 
+  gINI.writebool('noconfirmdel', 'general', (noconfirmdelete));
+
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
 
   gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
-
-
 
   if debuggerfo.properties_list.tag = 0 then
     gINI.writebool('Completion', 'proplist', False)
