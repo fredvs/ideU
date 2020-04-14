@@ -11,7 +11,7 @@ unit main;
  {$define mse_no_db}
 {$endif}
 
-/// for custom compil, edit define.inc
+// for custom compil, edit define.inc
 {$I define.inc}
 
 interface
@@ -4366,8 +4366,7 @@ procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
    //  setstattext('Light theme is set.', mtk_flat);
-   writeln('Hello les amis');
-end;
+ end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
 begin

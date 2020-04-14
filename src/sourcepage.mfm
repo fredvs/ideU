@@ -4,8 +4,8 @@ object sourcepage: tsourcepage
   color = -1879048187
   frame.localprops = []
   frame.localprops1 = []
-  bounds_x = 224
-  bounds_y = 197
+  bounds_x = 441
+  bounds_y = 217
   bounds_cx = 642
   bounds_cy = 301
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -285,9 +285,9 @@ object sourcepage: tsourcepage
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     taborder = 1
-    bounds_x = 61
+    bounds_x = 90
     bounds_y = 281
-    bounds_cx = 581
+    bounds_cx = 552
     anchors = [an_left, an_right, an_bottom]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_caretonreadonly, oe_focusrectonreadonly, oe_hintclippedtext]
     textflags = [tf_ycentered, tf_ellipseleft]
@@ -315,7 +315,7 @@ object sourcepage: tsourcepage
     taborder = 2
     bounds_x = 0
     bounds_y = 281
-    bounds_cx = 61
+    bounds_cx = 90
     bounds_cy = 19
     anchors = [an_left, an_bottom]
     caption = '00.00'

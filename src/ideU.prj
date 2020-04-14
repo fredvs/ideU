@@ -28,11 +28,11 @@ findinfiledialog=98
  value=0
  [findinfileadialogfo.wholeword]
  value=0
+ [findinfileadialogfo.indirectories]
+ value=0
  [findinfileadialogfo.inprojectdir]
  value=1
  [findinfileadialogfo.casesensitive]
- value=0
- [findinfileadialogfo.indirectories]
  value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" 
@@ -90,11 +90,11 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=findline
+ value=dodialogfiles
  history=20
+  dodialogfiles
   findline
   childscaled
-  dodialogfiles
   settings_form
   screen
   screenwidth
@@ -113,11 +113,11 @@ findinfiledialog=98
   beauty
   complete class
  [findinfileadialogfo]
- stackedunder=finddialogfo
- x=320
- y=159
- cx=339
- cy=275
+ stackedunder=
+ x=554
+ y=175
+ cx=234
+ cy=308
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
@@ -823,15 +823,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  ACTIONSMO
  MAINFO
-moduletypes=2
+ SOURCEPAGE
+moduletypes=3
  TACTIONSMO
  TMAINFO
-modulefiles=2
+ TSOURCEPAGE
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1184,7 +1187,7 @@ line=24
  765
  898
  2507
- 5174
+ 5173
  1882
 address=24
  4785304
@@ -1450,8 +1453,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=grid
+finddtext=writeln
 findhistory=20
+ writeln
  grid
  findinfilepagefo
  create
@@ -1471,24 +1475,28 @@ findhistory=20
  str1 :=
  writecon
  hello
- str1
 findoptions=1
-editpos=3
- 0,-1073741823
- 0,-1073741823
+editpos=4
  0,0
+ 13,2937
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=3
+ ${PROJECTDIR}/sourcepage.pas
+relpaths=4
  actionsmodule.pas
  main.pas
  ideU.pas
-ismoduletexts=3
+ sourcepage.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1512,23 +1520,19 @@ visiblemodules=6
  -1
  0
  0
- 0
+ -1
 nomenumodules=6
  -1
  0
  0
  -1
  -1
- -1
-[sourcefo.files_tab]
-order=3
- 2
  0
- 1
+[sourcefo.files_tab]
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=616
+windowlayout=612
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1662,19 +1666,19 @@ windowlayout=616
  x=0
  y=0
  cx=205
- cy=445
+ cy=452
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=73
+ propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=67
+ width1=82
  sortdescend1=0
  sorted=0
  col=1
  row=-1073741823
- rowheight=27
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1871,9 +1875,9 @@ windowlayout=616
  ncx=0
  ncy=0
  x=0
- y=501
+ y=509
  cx=1147
- cy=90
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1973,7 +1977,7 @@ windowlayout=616
  x=0
  y=0
  cx=1147
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1988,7 +1992,7 @@ windowlayout=616
  ncy=52
  x=0
  y=0
- cx=1140
+ cx=1147
  cy=54
  rcx=0
  rcy=0
@@ -1999,7 +2003,7 @@ windowlayout=616
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.pas
  history=1
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -2019,16 +2023,12 @@ windowlayout=616
  x=208
  y=0
  cx=939
- cy=445
+ cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
-  2
-  0
-  1
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2094,7 +2094,7 @@ windowlayout=616
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
+ stackedunder=confcompilerfo
  parent=
  mdistate=3
  nx=0
@@ -2113,22 +2113,22 @@ windowlayout=616
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=224
- y=197
+ x=441
+ y=217
  cx=652
  cy=301
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [mainfo.panel1]
  splitdir=1
  useroptions=302087659
@@ -2140,9 +2140,9 @@ windowlayout=616
  ncx=0
  ncy=0
  x=0
- y=53
+ y=54
  cx=1147
- cy=445
+ cy=452
  rcx=0
  rcy=0
 [targetconsole]
