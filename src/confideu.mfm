@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 348
-  bounds_y = 29
+  bounds_x = 695
+  bounds_y = 44
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -206,7 +206,7 @@ object confideufo: tconfideufo
       taborder = 2
       hint = 'Use shift + 2x click to select a word.'
       bounds_x = 10
-      bounds_y = 66
+      bounds_y = 67
       bounds_cx = 193
       bounds_cy = 17
     end
@@ -779,21 +779,6 @@ object confideufo: tconfideufo
       valuedefault = True
     end
   end
-  object but_ok: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    face.localprops = []
-    face.template = sourcefo.tfacecomp1
-    bounds_x = 487
-    bounds_y = 7
-    bounds_cx = 131
-    bounds_cy = 36
-    anchors = [an_top, an_right]
-    state = [as_localcaption, as_localonexecute]
-    caption = '&Apply'
-    onexecute = onapply
-  end
   object group_file_change: tgroupbox
     optionswidget1 = []
     frame.caption = 'When a file has changed'
@@ -859,5 +844,19 @@ object confideufo: tconfideufo
       bounds_cx = 195
       bounds_cy = 17
     end
+  end
+  object but_ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    bounds_x = 11
+    bounds_y = 6
+    bounds_cx = 274
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&Apply'
+    onexecute = onapply
   end
 end

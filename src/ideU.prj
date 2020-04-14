@@ -117,7 +117,7 @@ findinfiledialog=98
  x=554
  y=175
  cx=234
- cy=308
+ cy=360
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
@@ -823,18 +823,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  ACTIONSMO
  MAINFO
- SOURCEPAGE
-moduletypes=3
+moduletypes=2
  TACTIONSMO
  TMAINFO
- TSOURCEPAGE
-modulefiles=3
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1000,7 +997,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=0
+linenumberson=1
 rightmarginon=0
 rightmarginchars=80
 scrollheight=0
@@ -1187,7 +1184,7 @@ line=24
  765
  898
  2507
- 5173
+ 5184
  1882
 address=24
  4785304
@@ -1476,63 +1473,66 @@ findhistory=20
  writecon
  hello
 findoptions=1
-editpos=4
+editpos=3
+ 0,-1073741823
+ 0,-1073741823
  0,0
- 13,2937
- 0,-1073741823
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourcepage.pas
-relpaths=4
+relpaths=3
  actionsmodule.pas
  main.pas
  ideU.pas
- sourcepage.pas
-ismoduletexts=4
+ismoduletexts=3
  0
  0
  0
- 0
-modules=6
+modules=7
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/guitemplates.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=6
+ /home/fred/ideu/src/msefiledialogres.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
  0
- -1
- -1
- 0
- 0
- -1
-nomenumodules=6
- -1
- 0
+visiblemodules=7
  0
  -1
  -1
  0
+ 0
+ 0
+ 0
+nomenumodules=7
+ -1
+ 0
+ 0
+ -1
+ -1
+ -1
+ -1
 [sourcefo.files_tab]
+order=3
+ 2
+ 0
+ 1
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=612
+windowlayout=636
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1666,7 +1666,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=452
+ cy=444
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1678,7 +1678,7 @@ windowlayout=612
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1875,7 +1875,7 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=509
+ y=507
  cx=1147
  cy=91
  rcx=0
@@ -1977,7 +1977,7 @@ windowlayout=612
  x=0
  y=0
  cx=1147
- cy=51
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1988,12 +1988,12 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1147
+ ncy=59
  x=0
  y=0
  cx=1147
- cy=54
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2003,8 +2003,9 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=1
+ value=/home/fred/ideu/src/ideU.pas
+ history=2
+  /home/fred/ideu/src/ideU.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -2023,16 +2024,20 @@ windowlayout=612
  x=208
  y=0
  cx=939
- cy=452
+ cy=444
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=3
+  2
+  0
+  1
  firsttab=0
- index=1
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
- value=1
+ value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -2053,6 +2058,22 @@ windowlayout=612
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=60
+ cx=1147
+ cy=444
+ rcx=0
+ rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2094,7 +2115,7 @@ windowlayout=612
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=_mse_sourcepage_mse_
  parent=
  mdistate=3
  nx=0
@@ -2113,7 +2134,7 @@ windowlayout=612
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=3
  nx=0
@@ -2128,23 +2149,26 @@ windowlayout=612
  rcy=0
  wsize=0
  active=0
- visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
+ visible=0
+ [_mse_filedialogres_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=confcompilerfo
+ parent=
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=0
- y=54
- cx=1147
- cy=452
+ x=93
+ y=396
+ cx=245
+ cy=117
  rcx=0
  rcy=0
+ wsize=0
+ active=0
+ visible=0
 [targetconsole]
 finddtext=dump
 findhistory=1

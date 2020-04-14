@@ -4743,9 +4743,20 @@ begin
 
   debuggerfo.statdisp.font.color := color2;
 
+  if typetheme = 0 then
+  begin
+   debuggerfo.container.color := cl_ltgray;
+  end;
+
+  if typetheme = 1 then
+  begin
+   debuggerfo.container.color := cl_black;
+  end;
+
   if Assigned(sourcefo.ActivePage) then
   begin
-
+    if typetheme = 0 then sourcefo.ActivePage.container.color := cl_ltgray;
+    if typetheme = 1 then sourcefo.ActivePage.container.color := cl_black;
     sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
     sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
     sourcefo.ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;

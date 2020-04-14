@@ -268,10 +268,9 @@ object sourcepage: tsourcepage
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
     color = 15461355
-    frame.levelo = -1
-    frame.colorclient = -2147483645
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.fade_pos.count = 2
     face.fade_pos.items = (
       0
@@ -300,6 +299,7 @@ object sourcepage: tsourcepage
     frame.colorframe = -1610612733
     frame.localprops = [frl_framewidth, frl_colorframe]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.fade_pos.count = 2
     face.fade_pos.items = (
       0

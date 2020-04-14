@@ -1173,6 +1173,8 @@ begin
    if ActivePage <> nil then begin
  with ActivePage do begin
    if mainfo.themenr = 0 then begin
+ActivePage.color := cl_ltgray;
+ActivePage.container.color := cl_ltgray;
 pathdisp.face.template := debuggerfo.templatemain;
 pathdisp.font.color := cl_black;
 linedisp.face.template := debuggerfo.templatemain;
@@ -1197,6 +1199,8 @@ color2 := cl_black;
 end;
 
 if mainfo.themenr = 1 then begin
+ActivePage.color := cl_black;
+ActivePage.container.color := cl_black;
 pathdisp.face.template := debuggerfo.templatemaindark;
 pathdisp.font.color := cl_white;
 linedisp.face.template := debuggerfo.templatemaindark;

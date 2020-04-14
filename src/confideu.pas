@@ -311,6 +311,61 @@ group_system_layout.width := round(ratio * 280);
 group_assistive.width := round(ratio * 280);
 group_sourceeditor.width := round(ratio * 314);
 group_sourceeditor.left := group_assistive.width + 20;
+but_ok.width := round(ratio * 280);
+
+ group_file_change.top := 50;
+ tbfilereload.top := tbfilereload.height + 2;
+ tbfilenoload.top :=  tbfilereload.top + tbfilereload.height + 2 ;
+ tbfileaskload.top :=  tbfilenoload.top + tbfilenoload.height + 2 ;
+ group_file_change.height := tbfileaskload.top + tbfileaskload.height + 10;
+
+ group_system_layout.top := group_file_change.top +
+ group_file_change.height + 10;
+
+ universal_path.top := universal_path.height + 2;
+ doubleclic.top :=  universal_path.top + universal_path.height + 2 ;
+ fullpath.top :=  doubleclic.top + doubleclic.height + 2 ;
+ modaldial.top :=  fullpath.top + fullpath.height + 2 ;
+ autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
+ nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
+ fontname.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+ fontsize.top :=  fontname.top + fontname.height + 2 ;
+
+ group_system_layout.height := fontsize.top + fontsize.height + 10;
+
+ tbassistive.top := tbassistive.height + 2;
+ tesakitdir.top :=  tbassistive.top + tbassistive.height + 2 ;
+
+ group_assistive.height := tesakitdir.top + tesakitdir.height + 10;
+ group_assistive.top :=  group_system_layout.top + group_system_layout.height + 10;
+
+ group_sourceeditor.top := 10;
+
+ usedefaulteditoroptions.top := usedefaulteditoroptions.height + 2;
+ backupfilecount.top :=  usedefaulteditoroptions.top + usedefaulteditoroptions.height + 2 ;
+ stripmessageesc.top := backupfilecount.top;
+ closemessages.top :=  stripmessageesc.top + backupfilecount.height + 2 ;
+ trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
+ encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
+ tabstops.top := encoding.top ;
+ spacetabs.top := encoding.top ;
+
+ rightmarginchars.top :=  spacetabs.top + encoding.height + 2 ;
+
+ blockindent.top := rightmarginchars.top ;
+ tabindent.top := rightmarginchars.top ;
+
+ colornote.top :=  rightmarginchars.top + rightmarginchars.height + 2 ;
+ colorwarning.top :=  colornote.top + colornote.height + 2 ;
+ colorerror.top :=  colorwarning.top + colorwarning.height + 2 ;
+
+ deflayout.top :=  colorerror.top + colorerror.height + 2 ;
+ defsynt.top :=  deflayout.top + deflayout.height + 2 ;
+ addwhiteaftercomma.top :=  defsynt.top + defsynt.height + 2 ;
+
+ group_sourceeditor.height := addwhiteaftercomma.top + addwhiteaftercomma.height + 10;
+
+ height := group_sourceeditor.height + 20;
 
 if findformcreated then finddialogdotextsize;
 
