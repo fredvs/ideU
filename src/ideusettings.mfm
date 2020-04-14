@@ -2,8 +2,8 @@ object settings_form: tsettingsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousewheel, ow_destroywidgets, ow_hinton]
   color = 14342874
   visible = False
-  bounds_x = 222
-  bounds_y = 134
+  bounds_x = 270
+  bounds_y = 282
   bounds_cx = 884
   bounds_cy = 483
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
@@ -737,6 +737,7 @@ object settings_form: tsettingsfo
         bounds_cy = 39
         state = [as_localcaption, as_localcolor, as_localonexecute]
         caption = '&Shortcuts'
+        onexecute = editshortcuts
       end
     end
     object but_ok: tbutton
