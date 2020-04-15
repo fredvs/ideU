@@ -11,10 +11,10 @@ object objectinspectorfo: tobjectinspectorfo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 378
-  bounds_y = 306
+  bounds_x = 877
+  bounds_y = 125
   bounds_cx = 254
-  bounds_cy = 248
+  bounds_cy = 353
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = objectinspectoronchildscaled
@@ -22,7 +22,7 @@ object objectinspectorfo: tobjectinspectorfo
     0
     0
     244
-    248
+    353
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Objectinspector'
@@ -116,10 +116,10 @@ object objectinspectorfo: tobjectinspectorfo
       item
         color = -2147483646
       end>
-    taborder = 2
+    taborder = 1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 171
+    bounds_cx = 163
     bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     onsetvalue = compselectoronsetvalue
@@ -134,12 +134,11 @@ object objectinspectorfo: tobjectinspectorfo
   object grid: twidgetgrid
     frame.localprops = [frl_levelo, frl_colorclient]
     frame.localprops1 = []
-    taborder = 1
     popupmenu = gridpopup
     bounds_x = 0
-    bounds_y = 24
+    bounds_y = 30
     bounds_cx = 244
-    bounds_cy = 224
+    bounds_cy = 322
     anchors = [an_top, an_bottom]
     optionsgrid = [og_colsizing, og_colmoving, og_colchangeontabkey, og_wrapcol]
     optionsgrid1 = [og1_noresetselect]
@@ -151,30 +150,35 @@ object objectinspectorfo: tobjectinspectorfo
     rowfonts.items = <    
       item
         color = -1610612734
+        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_xscale]
       end    
       item
         color = 32768
+        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = 32768
+        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = -1610612723
+        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = -1610612734
+        height = 16
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1
@@ -182,6 +186,7 @@ object objectinspectorfo: tobjectinspectorfo
       end    
       item
         color = -1610612734
+        height = 16
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1
@@ -277,9 +282,6 @@ object objectinspectorfo: tobjectinspectorfo
       bounds_cy = 18
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_forcereturncheckvalue, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
-      font.name = 'stf_default'
-      font.xscale = 1
-      font.localprops = [flp_xscale]
       onkeydown = valueskeydown
       onclientmouseevent = valuesonmouseevent
       onsetvalue = valuessetvalue
@@ -297,66 +299,30 @@ object objectinspectorfo: tobjectinspectorfo
       reffontheight = 15
     end
   end
-  object compedit: trichbutton
-    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
-    optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets, ow_disabledhint, ow_timedhint]
-    optionsskin = [osk_noface]
-    face.fade_pos.count = 2
-    face.fade_pos.items = (
-      0
-      1
-    )
-    face.fade_color.count = 2
-    face.fade_color.items = (
-      16760767
-      15571610
-    )
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    hint = 'Show component editor.'
-    bounds_x = 215
-    bounds_y = 2
-    bounds_cx = 27
-    bounds_cy = 19
+  object compedit: tbutton
+    taborder = 2
+    hint = 'Edit component list'
+    bounds_x = 190
+    bounds_y = 1
+    bounds_cx = 51
+    bounds_cy = 28
     anchors = [an_top, an_right]
-    state = [as_disabled, as_localdisabled, as_localcaption, as_localhint, as_localonexecute]
-    facedisabled.localprops = []
-    facedisabled.template = guitemplatesmo.fadevertkonvex
-    caption = '&ED'
+    state = [as_disabled, as_localdisabled, as_localcaption, as_localcolor, as_localhint, as_localonexecute]
+    caption = 'ED'
     onexecute = compeditonexecute
-    reffontheight = 15
-    richcaption = (
-      'ED'
-      (
-        (
-          0
-          [ni_underline]
-          0
-          0
-          [fs_underline]
-        )
-        (
-          1
-          [ni_underline]
-          0
-          0
-          []
-        )
-      )
-    )
   end
-  object findbu: tstockglyphbutton
-    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+  object findbu: tbutton
     taborder = 3
-    bounds_x = 197
-    bounds_y = 2
-    bounds_cx = 18
-    bounds_cy = 19
+    bounds_x = 162
+    bounds_y = 1
+    bounds_cx = 28
+    bounds_cy = 28
     anchors = [an_top, an_right]
-    state = [as_localcaption, as_localimagelist, as_localimagenr]
-    glyph = stg_ellipsesmall
+    state = [as_localdisabled, as_localcaption, as_localcolor, as_localonexecute]
     action = actionsmo.findcompallact
-    reffontheight = 15
+    caption = '...'
+    captiondist = 0
+    onexecute = onexecfindbu
   end
   object gridpopup: tpopupmenu
     onupdate = popupupdate

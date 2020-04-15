@@ -90,8 +90,10 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=nozorderenable
+ value=compedit
  history=20
+  compedit
+  findbu
   nozorderenable
   sc_Delete_row_question
   sc_row_delete
@@ -110,8 +112,6 @@ findinfiledialog=98
   settings_form
   screen
   screenwidth
-  group_file_changed
-  layoutbusy
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -123,8 +123,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=747
- y=251
+ x=911
+ y=88
  cx=300
  cy=269
 replacedialog=25
@@ -1165,7 +1165,7 @@ line=24
  2129
  1060
  579
- 3877
+ 3890
  660
  119
  1088
@@ -1177,14 +1177,14 @@ line=24
  536
  470
  67
- 4151
+ 4164
  684
  96
  15
  765
  898
  2507
- 5186
+ 5199
  1882
 address=24
  4785304
@@ -1450,8 +1450,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=confirmdelete
+finddtext=findbu
 findhistory=20
+ findbu
+ grid.
+ objectinspector
+ tree
  confirmdelete
  impl
  var
@@ -1468,10 +1472,6 @@ findhistory=20
  onthetimer
  ontimer
  dialogfilesf
- cellwidth
- writeconf
- unicode
- dialogfilesfo
 findoptions=1
 editpos=3
  0,-1073741823

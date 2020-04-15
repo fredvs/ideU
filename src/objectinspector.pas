@@ -88,9 +88,9 @@ type
    props: ttreeitemedit;
    gridpopup: tpopupmenu;
    values: tdropdownitemedit;
-   compedit: trichbutton;
-   findbu: tstockglyphbutton;
    mainpopup: tpopupmenu;
+   compedit: tbutton;
+   findbu: tbutton;
    procedure propsoncheckrowmove(const curindex: Integer;
                   const newindex: Integer; var accept: Boolean);
    procedure createexe(const sender: TObject);
@@ -141,6 +141,7 @@ type
 
    procedure propskeydownexe(const sender: twidget; var ainfo: keyeventinfoty);
    procedure enterexe(const sender: TObject);
+   procedure onexecfindbu(const sender: TObject);
   private
    factmodule: tmsecomponent;
    factcomp: tcomponent;
@@ -257,7 +258,7 @@ var
 implementation
 uses
  objectinspector_mfm,sysutils,msearrayprops,actionsmodule,mseformatstr,
- msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist,
+ msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist, confideu,
  sourceupdate,sourceform,msekeyboard,main,msedatalist,msecolordialog;
 
 {$ifndef mse_allwarnings}
@@ -672,7 +673,9 @@ procedure tobjectinspectorfo.gridrowsdatachanged(const sender: tcustomgrid;
   const acell: gridcoordty; const count: integer);
 var
  int1: integer;
+ ratio : double;
 begin
+
  props.itemlist.beginupdate;
  values.itemlist.beginupdate;
  try
@@ -688,6 +691,10 @@ begin
   props.itemlist.endupdate;
   values.itemlist.endupdate;
  end;
+   ratio := confideufo.fontsize.value / 12;
+   font.height := confideufo.fontsize.value;
+   grid.datarowheight := round(ratio * 16);
+
 end;
 
 procedure tobjectinspectorfo.valuesenterexe(const sender: TObject);
@@ -1406,7 +1413,11 @@ begin
   designer.selectcomponent(factcomp);
  end;
  compedit.enabled:= designer.componentcanedit;
-end;
+ compedit.color := cl_ltred;
+
+ if compedit.enabled then compedit.color := cl_ltred else
+ compedit.color := cl_default;
+ end;
 
 procedure tobjectinspectorfo.saveproppath;
 var
@@ -1774,17 +1785,23 @@ begin
 end;
 
 procedure tobjectinspectorfo.objectinspectorfoonloaded(const sender: tobject);
+var
+ratio : double;
 begin
+ ratio := confideufo.fontsize.value / 12;
+   font.height := confideufo.fontsize.value;
+   grid.datarowheight := round(ratio * 16);
  grid.top:= compselector.bottom + 1;
  grid.height:= height-grid.top;
 // compedit.width:= compedit.height+6;
 // compedit.left:= compedit.right - compedit.height-;
- findbu.right:= compedit.left;
- compselector.right:= findbu.left - 1;
+// findbu.right:= compedit.left;
+// compselector.right:= findbu.left - 1;
 // with values.frame.buttons[0] do begin
 //  imagelist:= stockobjects.glyphs;
 //  imagenr:= ord(stg_ellipsesmall);
 // end;
+
 end;
 
 procedure tobjectinspectorfo.methodcreated(const adesigner: idesigner;
@@ -1840,7 +1857,7 @@ end;
 procedure tobjectinspectorfo.objectinspectoronchildscaled(const sender: TObject);
 begin
  placeyorder(0,[2],[compselector,grid]);
- aligny(wam_center,[compselector,findbu,compedit]);
+// aligny(wam_center,[compselector,findbu,compedit]);
 end;
 
 procedure tobjectinspectorfo.col0onshowhint(const sender: tdatacol;
@@ -2038,6 +2055,11 @@ end;
 procedure tobjectinspectorfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
+end;
+
+procedure tobjectinspectorfo.onexecfindbu(const sender: TObject);
+begin
+actionsmo.findcompallexe(sender);
 end;
 
 initialization

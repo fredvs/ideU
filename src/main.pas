@@ -1336,19 +1336,32 @@ begin
 end;
 
 procedure tmainfo.toggleobjectinspectoronexecute(const Sender: TObject);
+var
+ratio : double;
 begin
+
   if (flastform = objectinspectorfo) then
   begin
     if flastdesignform <> nil then
       flastdesignform.activate(True);
   end
   else
+  begin
+    ratio := confideufo.fontsize.value / 12;
     objectinspectorfo.activate(True);
+     objectinspectorfo.font.height := confideufo.fontsize.value;
+     objectinspectorfo.grid.datarowheight := round(ratio * 16);
+     end;
 end;
 
 procedure tmainfo.viewobjectinspectoronexecute(const Sender: TObject);
+var
+ratio : double;
 begin
+   ratio := confideufo.fontsize.value / 12;
   objectinspectorfo.activate(True);
+  objectinspectorfo.font.height := confideufo.fontsize.value;
+  objectinspectorfo.grid.datarowheight := round(ratio * 16);
 end;
 
 //idesignnotification

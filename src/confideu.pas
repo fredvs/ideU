@@ -4,7 +4,7 @@ unit confideu;
 interface
 
 uses
- ideusettings, confcompiler, confdebugger, projectoptionsform, msetypes,mseglob,
+ msetypes,mseglob,
  mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,msegraphutils,
  mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
  mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
@@ -74,6 +74,7 @@ implementation
 
 uses
   confideu_mfm, main, messageform, sourceform, finddialogform, targetconsole,
+  ideusettings, confcompiler, confdebugger, projectoptionsform, objectinspector,
   projecttreeform, commandorform, dialogfiles;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
@@ -236,10 +237,19 @@ begin
 
 mainfo.font.height := fontsize.value;
 
+ratio := fontsize.value / 12;
+
+if Assigned(objectinspectorfo) then
+    begin
+     objectinspectorfo.font.height := fontsize.value;
+     //objectinspectorfo.projectedit.font.height := fontsize.value;
+     //objectinspectorfo.edit.font.height := fontsize.value;
+    // objectinspectorfo.grid.font.name := ansistring(fontname.value);
+     objectinspectorfo.grid.datarowheight := round(ratio * 16);
+    end;
+
 targetconsolefo.grid.font.height := fontsize.value;
 
-
-ratio := fontsize.value / 12;
 
 if assigned(dialogfilesfo) then
 begin
