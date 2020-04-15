@@ -243,10 +243,18 @@ if Assigned(objectinspectorfo) then
     begin
      objectinspectorfo.font.height := fontsize.value;
      objectinspectorfo.fontempty.height := fontsize.value;
-    //objectinspectorfo.projectedit.font.height := fontsize.value;
-     //objectinspectorfo.edit.font.height := fontsize.value;
      objectinspectorfo.grid.font.name := ansistring(fontname.value);
      objectinspectorfo.grid.datarowheight := round(ratio * 16);
+     objectinspectorfo.grid.rowfonts.items[0].height := fontsize.value;
+     objectinspectorfo.grid.rowfonts.items[1].height := fontsize.value;
+     objectinspectorfo.grid.rowfonts.items[2].height := fontsize.value;
+     objectinspectorfo.grid.rowfonts.items[3].height := fontsize.value;
+     objectinspectorfo.grid.rowfonts.items[4].height := fontsize.value;
+     objectinspectorfo.grid.rowfonts.items[5].height := fontsize.value;
+     
+     objectinspectorfo.findbu.height := objectinspectorfo.compselector.height;
+     objectinspectorfo.compedit.height := objectinspectorfo.compselector.height;
+     
     end;
 
 targetconsolefo.grid.font.height := fontsize.value;

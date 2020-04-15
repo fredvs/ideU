@@ -90,8 +90,9 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=objectinspectorfo.font
+ value=rowfonts
  history=20
+  rowfonts
   objectinspectorfo.font
   compedit
   findbu
@@ -111,7 +112,6 @@ findinfiledialog=98
   findline
   childscaled
   settings_form
-  screen
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -240,7 +240,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=3
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -846,10 +846,10 @@ makeoptionson=11
  4091
  4095
 compilerusedon=29
- 2047
+ 1983
  0
  0
- 0
+ 64
  0
  0
  0
@@ -876,12 +876,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4095
+ 4031
  0
  0
  0
  0
- 0
+ 64
 exeusedon=14
  4047
  0
@@ -921,7 +921,7 @@ unitdirson=6
  198655
  65584
  65536
- 65551
+ 65615
  198655
  67583
 macroon=0
@@ -1522,11 +1522,11 @@ nomenumodules=6
  -1
 [sourcefo.files_tab]
 order=3
- 1
  2
  0
+ 1
 firsttab=0
-index=0
+index=2
 [layout]
 windowlayout=616
  [mainfo.basedock]
@@ -1983,7 +1983,6 @@ windowlayout=616
  value=/home/fred/ideu/src/main.pas
  history=20
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2002,6 +2001,7 @@ windowlayout=616
   /home/fred/ptop_fred/ptop.prj
   /home/fred/eschecs_mse_argh/eschecs.prj
   /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2024,11 +2024,11 @@ windowlayout=616
  rcy=0
  [sourcefo.files_tab]
  order=3
-  1
   2
   0
+  1
  firsttab=0
- index=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2129,7 +2129,7 @@ windowlayout=616
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=confcompilerfo
  parent=
  mdistate=3
  nx=0
