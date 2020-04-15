@@ -687,6 +687,8 @@ top := 56 ;
   setstattext('Hello!', mtk_flat);
 
    confideufo.onchangefont;
+   
+   objectinspectorfo.close;
 
 end;
 

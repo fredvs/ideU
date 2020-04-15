@@ -34,7 +34,8 @@ uses
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
- msedesigner,msetypes,msestrings,mselist,msegraphics;
+ msedesigner,msetypes,msestrings,mselist,msegraphics, msedispwidgets,
+ mserichstring;
 
 type
  tobjectinspectorfo = class;
@@ -89,8 +90,8 @@ type
    gridpopup: tpopupmenu;
    values: tdropdownitemedit;
    mainpopup: tpopupmenu;
-   compedit: tbutton;
    findbu: tbutton;
+   compedit: tbutton;
    procedure propsoncheckrowmove(const curindex: Integer;
                   const newindex: Integer; var accept: Boolean);
    procedure createexe(const sender: TObject);
@@ -667,6 +668,7 @@ begin
  props.itemlist.oncreateitem:= {$ifdef FPC}@{$endif}propscreatenode;
  props.itemlist.onitemnotification:= {$ifdef FPC}@{$endif}propnotification;
  values.itemlist.oncreateitem:= {$ifdef FPC}@{$endif}valuescreatenode;
+ visible := false;
 end;
 
 procedure tobjectinspectorfo.gridrowsdatachanged(const sender: tcustomgrid;

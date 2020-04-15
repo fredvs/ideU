@@ -252,6 +252,9 @@ if Assigned(objectinspectorfo) then
      objectinspectorfo.grid.rowfonts.items[4].height := fontsize.value;
      objectinspectorfo.grid.rowfonts.items[5].height := fontsize.value;
      
+     objectinspectorfo.findbu.font.height := fontsize.value;
+     objectinspectorfo.compedit.font.height := fontsize.value;
+     
      objectinspectorfo.findbu.height := objectinspectorfo.compselector.height;
      objectinspectorfo.compedit.height := objectinspectorfo.compselector.height;
      

@@ -11,8 +11,8 @@ object objectinspectorfo: tobjectinspectorfo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 877
-  bounds_y = 125
+  bounds_x = 651
+  bounds_y = 142
   bounds_cx = 254
   bounds_cy = 353
   container.frame.localprops = []
@@ -299,20 +299,8 @@ object objectinspectorfo: tobjectinspectorfo
       reffontheight = 15
     end
   end
-  object compedit: tbutton
-    taborder = 2
-    hint = 'Edit component list'
-    bounds_x = 190
-    bounds_y = 1
-    bounds_cx = 51
-    bounds_cy = 28
-    anchors = [an_top, an_right]
-    state = [as_disabled, as_localdisabled, as_localcaption, as_localcolor, as_localhint, as_localonexecute]
-    caption = 'ED'
-    onexecute = compeditonexecute
-  end
   object findbu: tbutton
-    taborder = 3
+    taborder = 2
     bounds_x = 162
     bounds_y = 1
     bounds_cx = 28
@@ -323,6 +311,21 @@ object objectinspectorfo: tobjectinspectorfo
     caption = '...'
     captiondist = 0
     onexecute = onexecfindbu
+  end
+  object compedit: tbutton
+    taborder = 3
+    hint = 'Edit component list'
+    bounds_x = 191
+    bounds_y = 1
+    bounds_cx = 51
+    bounds_cy = 28
+    anchors = [an_top, an_right]
+    state = [as_localdisabled, as_localcaption, as_localcolor, as_localhint, as_localonexecute]
+    caption = 'ED'
+    font.color = 494592
+    font.name = 'stf_default'
+    font.localprops = [flp_color]
+    onexecute = compeditonexecute
   end
   object gridpopup: tpopupmenu
     onupdate = popupupdate
