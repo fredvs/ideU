@@ -32,7 +32,7 @@ object objectinspectorfo: tobjectinspectorfo
   fontempty.name = 'stf_empty'
   fontempty.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
-  statfile = mainfo.projectstatfile
+  statfile = mainfo.mainstatfile
   caption = 'Object Inspector'
   icon.transparentcolor = -2147483642
   icon.image = {
@@ -150,35 +150,30 @@ object objectinspectorfo: tobjectinspectorfo
     rowfonts.items = <    
       item
         color = -1610612734
-        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_xscale]
       end    
       item
         color = 32768
-        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = 32768
-        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = -1610612723
-        height = 16
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
       end    
       item
         color = -1610612734
-        height = 16
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1
@@ -186,7 +181,6 @@ object objectinspectorfo: tobjectinspectorfo
       end    
       item
         color = -1610612734
-        height = 16
         style = [fs_bold]
         name = 'stf_default'
         xscale = 1

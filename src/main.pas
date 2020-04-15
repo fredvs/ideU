@@ -1349,8 +1349,8 @@ begin
   begin
     ratio := confideufo.fontsize.value / 12;
     objectinspectorfo.activate(True);
-     objectinspectorfo.font.height := confideufo.fontsize.value;
-     objectinspectorfo.grid.datarowheight := round(ratio * 16);
+    // objectinspectorfo.font.height := confideufo.fontsize.value;
+    // objectinspectorfo.grid.datarowheight := round(ratio * 16);
      end;
 end;
 
@@ -1360,8 +1360,8 @@ ratio : double;
 begin
    ratio := confideufo.fontsize.value / 12;
   objectinspectorfo.activate(True);
-  objectinspectorfo.font.height := confideufo.fontsize.value;
-  objectinspectorfo.grid.datarowheight := round(ratio * 16);
+//  objectinspectorfo.font.height := confideufo.fontsize.value;
+//  objectinspectorfo.grid.datarowheight := round(ratio * 16);
 end;
 
 //idesignnotification

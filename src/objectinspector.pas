@@ -692,8 +692,8 @@ begin
   values.itemlist.endupdate;
  end;
    ratio := confideufo.fontsize.value / 12;
-   font.height := confideufo.fontsize.value;
-   grid.datarowheight := round(ratio * 16);
+ //  font.height := confideufo.fontsize.value;
+ //  grid.datarowheight := round(ratio * 16);
 
 end;
 
@@ -1789,11 +1789,13 @@ var
 ratio : double;
 begin
  ratio := confideufo.fontsize.value / 12;
-   font.height := confideufo.fontsize.value;
-   grid.datarowheight := round(ratio * 16);
+ font.height := confideufo.fontsize.value;
+ fontempty.height := confideufo.fontsize.value;
+ grid.datarowheight := round(ratio * 16);
  grid.top:= compselector.bottom + 1;
  grid.height:= height-grid.top;
-// compedit.width:= compedit.height+6;
+ compedit.height:= compselector.height;
+ findbu.height:= compselector.height;
 // compedit.left:= compedit.right - compedit.height-;
 // findbu.right:= compedit.left;
 // compselector.right:= findbu.left - 1;
