@@ -35,11 +35,11 @@ findinfiledialog=98
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
+ value="*.pas" "*.pp" "*.inc" "*.mfm" 
  history=13
-  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*"
+  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc" "*.*" 
   "*.pas" "*.pp" "*.inc"
@@ -90,15 +90,17 @@ findinfiledialog=98
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=rowfonts
+ value=Clear Bookmark
  history=20
+  Clear Bookmark
+  sc_row_delete
+  row delete
   rowfonts
   objectinspectorfo.font
   compedit
   findbu
   nozorderenable
   sc_Delete_row_question
-  sc_row_delete
   getsysshortcutdispname
   Row delete
   dodeleterow
@@ -110,23 +112,21 @@ findinfiledialog=98
   InternalRead
   dodialogfiles
   findline
-  childscaled
-  settings_form
  [findinfileadialogfo]
  stackedunder=
  x=554
  y=175
  cx=234
- cy=308
+ cy=334
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
  [finddialogfo]
  stackedunder=
- x=911
- y=88
+ x=804
+ y=166
  cx=300
- cy=269
+ cy=291
 replacedialog=25
  [replacedialogfo.promptonreplace]
  value=1
@@ -160,46 +160,46 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=813
+ propcolwidthref=805
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=110
+ width4=109
  sortdescend4=0
- width5=87
+ width5=86
  sortdescend5=0
  width6=57
  sortdescend6=0
  width7=57
  sortdescend7=0
- width8=116
+ width8=83
  sortdescend8=0
- width9=332
+ width9=329
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=637
+ propcolwidthref=640
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=305
+ width3=307
  sortdescend3=0
- width4=322
+ width4=323
  sortdescend4=0
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=19
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=476
+ propcolwidthref=486
  width0=98
  sortdescend0=0
- width1=465
+ width1=475
  sortdescend1=0
  width2=50
  sortdescend2=0
@@ -213,11 +213,11 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=246
+ y=243
  xprop=1
- yprop=0.3946117274168
+ yprop=0.39486356340289
  [projectoptionsfo.macrogrid]
- propcolwidthref=568
+ propcolwidthref=578
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -230,7 +230,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=552
+ width11=562
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -242,19 +242,19 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=797
+ propcolwidthref=796
  width0=47
  sortdescend0=0
- width1=791
+ width1=790
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=5
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=705
+ propcolwidthref=734
  width0=112
  sortdescend0=0
- width1=698
+ width1=727
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
@@ -266,7 +266,7 @@ options=114
  stackedunder=
  x=238
  y=50
- cx=846
+ cx=856
  cy=686
 settaborder=15
  [setcreateorderfo.grid]
@@ -849,10 +849,10 @@ compilerusedon=29
  1855
  0
  0
+ 0
+ 0
  64
  128
- 0
- 0
  0
  0
  0
@@ -883,9 +883,9 @@ debuggerusedon=6
  0
  64
 exeusedon=14
- 4047
+ 3903
  0
- 48
+ 192
  0
  0
  0
@@ -919,9 +919,9 @@ project_comment=
 aftcommandon=0
 unitdirson=6
  198655
- 65584
+ 65728
  65536
- 65615
+ 65599
  198655
  67583
 macroon=0
@@ -1163,7 +1163,7 @@ path=24
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
 line=24
  2129
- 1060
+ 1069
  579
  3892
  660
@@ -1175,7 +1175,7 @@ line=24
  3261
  119
  536
- 470
+ 473
  67
  4166
  684
@@ -1450,8 +1450,12 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=debugcommand
+finddtext=word
 findhistory=20
+ word
+ copy
+ oncopy
+ fred
  debugcommand
  function editprojectoptions: boolean;
  onthetimer
@@ -1468,15 +1472,11 @@ findhistory=20
  uses
  og1_norowdeletequery
  deleterowconfirmation
- writeln
- grid
- findinfilepagefo
- create
 findoptions=1
 editpos=3
  0,-1073741823
+ 21,18
  0,-1073741823
- 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1521,10 +1521,14 @@ nomenumodules=6
  -1
  -1
 [sourcefo.files_tab]
+order=3
+ 1
+ 2
+ 0
 firsttab=0
-index=2
+index=0
 [layout]
-windowlayout=612
+windowlayout=616
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1544,7 +1548,7 @@ windowlayout=612
  cy=617
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1641,7 +1645,7 @@ windowlayout=612
  ncy=0
  x=239
  y=115
- cx=678
+ cx=862
  cy=414
  rcx=0
  rcy=0
@@ -1658,7 +1662,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=442
+ cy=519
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1669,8 +1673,8 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=11
- rowheight=16
+ row=9
+ rowheight=19
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1752,10 +1756,10 @@ windowlayout=612
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=289
- width0=147
+ propcolwidthref=628
+ width0=319
  sortdescend0=0
- width1=136
+ width1=303
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1848,9 +1852,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=505
- cx=1147
- cy=91
+ y=582
+ cx=1358
+ cy=105
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1949,7 +1953,7 @@ windowlayout=612
  ncy=0
  x=0
  y=0
- cx=1147
+ cx=1358
  cy=57
  rcx=0
  rcy=0
@@ -1961,11 +1965,11 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1147
+ ncx=1358
  ncy=58
  x=0
  y=0
- cx=1147
+ cx=1358
  cy=58
  rcx=0
  rcy=0
@@ -1976,12 +1980,13 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/msegrids.pas
@@ -1997,7 +2002,6 @@ windowlayout=612
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msefiledialogres.pas
-  /home/fred/ideu/src/confdebugger.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2014,13 +2018,17 @@ windowlayout=612
  ncy=0
  x=208
  y=0
- cx=939
- cy=442
+ cx=1150
+ cy=519
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=3
+  1
+  2
+  0
  firsttab=0
- index=2
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2057,8 +2065,8 @@ windowlayout=612
  ncy=0
  x=0
  y=60
- cx=1147
- cy=442
+ cx=1358
+ cy=519
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]

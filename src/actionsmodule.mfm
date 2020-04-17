@@ -2814,7 +2814,7 @@ object actionsmo: tactionsmo
     top = 136
   end
   object shortcuts: tshortcutcontroller
-    actions.count = 94
+    actions.count = 95
     actions.items = <    
       item
         dispname = 'File'
@@ -2947,6 +2947,15 @@ object actionsmo: tactionsmo
         dispname = 'Uppercase'
       end    
       item
+        action = deleteword
+        dispname = 'Delete word'
+        hint = 'Delete word at cursor'
+        sc = (
+          1
+          16468
+        )
+      end    
+      item
         action = sourcefo.completeclassact
         dispname = 'Complete Class'
         sc = (
@@ -2957,10 +2966,6 @@ object actionsmo: tactionsmo
       item
         action = instemplate
         dispname = 'Insert Template'
-        sc = (
-          1
-          16468
-        )
       end    
       item
         action = sourcefo.navigbackact
@@ -3457,8 +3462,8 @@ object actionsmo: tactionsmo
       (      )
     )
     onafterupdate = updateshortcuts
-    left = 352
-    top = 8
+    left = 771
+    top = 168
   end
   object toggleinspector: taction
     caption = 'Toggle Form/Inspector'
@@ -3746,10 +3751,6 @@ object actionsmo: tactionsmo
     onexecute = instemplateactonexecute
     left = 360
     top = 80
-    sc = (
-      1
-      16468
-    )
   end
   object projectopenact: taction
     caption = 'O&pen'
@@ -4047,6 +4048,18 @@ object actionsmo: tactionsmo
     sc = (
       1
       16455
+    )
+  end
+  object deleteword: taction
+    caption = 'Delete Word'
+    options = [ao_localshortcut, ao_globalshortcut]
+    onexecute = ondeleteword
+    onexecuteaction = deletewordatcursor
+    left = 737
+    top = 136
+    sc = (
+      1
+      16468
     )
   end
 end
