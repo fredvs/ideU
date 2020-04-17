@@ -24,8 +24,8 @@ object sourcefo: tsourcefo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 223
-  bounds_y = 90
+  bounds_x = 338
+  bounds_y = 215
   bounds_cx = 696
   bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -444,7 +444,7 @@ object sourcefo: tsourcefo
     facetemplate = mainfo.convex
     itemfacetemplate = mainfo.concave
     itemfacetemplateactive = mainfo.convex
-    menu.submenu.count = 38
+    menu.submenu.count = 39
     menu.submenu.items = <    
       item
         action = actionsmo.selecteditpage
@@ -496,6 +496,11 @@ object sourcefo: tsourcefo
       item
         action = actionsmo.copyword
         caption = 'Copy &Word at Cursor'
+        state = [as_localcaption]
+      end    
+      item
+        action = actionsmo.deleteword
+        caption = 'Delete word at cursor'
         state = [as_localcaption]
       end    
       item
