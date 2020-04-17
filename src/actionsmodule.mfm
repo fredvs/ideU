@@ -2814,7 +2814,7 @@ object actionsmo: tactionsmo
     top = 136
   end
   object shortcuts: tshortcutcontroller
-    actions.count = 95
+    actions.count = 96
     actions.items = <    
       item
         dispname = 'File'
@@ -2945,6 +2945,14 @@ object actionsmo: tactionsmo
       item
         action = uppercase
         dispname = 'Uppercase'
+      end    
+      item
+        action = copyword
+        dispname = 'Copy Word'
+        sc = (
+          1
+          24663
+        )
       end    
       item
         action = deleteword
@@ -4052,11 +4060,10 @@ object actionsmo: tactionsmo
   end
   object deleteword: taction
     caption = 'Delete Word'
-    options = [ao_localshortcut, ao_globalshortcut]
+    options = [ao_globalshortcut]
     onexecute = ondeleteword
-    onexecuteaction = deletewordatcursor
-    left = 737
-    top = 136
+    left = 630
+    top = 238
     sc = (
       1
       16468

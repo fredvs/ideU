@@ -249,7 +249,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=5
+ index=0
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=734
  width0=112
@@ -261,7 +261,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=238
@@ -846,10 +846,10 @@ makeoptionson=11
  4091
  4095
 compilerusedon=29
- 1855
+ 1599
  0
  0
- 0
+ 256
  0
  64
  128
@@ -876,12 +876,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4031
+ 3839
  0
  0
  0
  0
- 64
+ 256
 exeusedon=14
  3903
  0
@@ -921,7 +921,7 @@ unitdirson=6
  198655
  65728
  65536
- 65599
+ 65855
  198655
  67583
 macroon=0
@@ -1474,8 +1474,8 @@ findhistory=20
  deleterowconfirmation
 findoptions=1
 editpos=3
+ 0,0
  0,-1073741823
- 21,18
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1522,11 +1522,11 @@ nomenumodules=6
  -1
 [sourcefo.files_tab]
 order=3
- 1
  2
  0
+ 1
 firsttab=0
-index=0
+index=1
 [layout]
 windowlayout=616
  [mainfo.basedock]
@@ -1590,7 +1590,7 @@ windowlayout=616
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1662,7 +1662,7 @@ windowlayout=616
  x=0
  y=0
  cx=205
- cy=519
+ cy=509
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1954,7 +1954,7 @@ windowlayout=616
  x=0
  y=0
  cx=1358
- cy=57
+ cy=67
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1970,7 +1970,7 @@ windowlayout=616
  x=0
  y=0
  cx=1358
- cy=58
+ cy=68
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1980,14 +1980,14 @@ windowlayout=616
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
  history=20
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/mseconsts.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/msegrids.pas
   /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
@@ -2019,16 +2019,16 @@ windowlayout=616
  x=208
  y=0
  cx=1150
- cy=519
+ cy=509
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=3
-  1
   2
   0
+  1
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2064,9 +2064,9 @@ windowlayout=616
  ncx=0
  ncy=0
  x=0
- y=60
+ y=70
  cx=1358
- cy=519
+ cy=509
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
