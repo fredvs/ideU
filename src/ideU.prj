@@ -213,9 +213,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=200
+ y=246
  xprop=1
- yprop=0.39417475728155
+ yprop=0.3946117274168
  [projectoptionsfo.macrogrid]
  propcolwidthref=568
  sortdescend0=0
@@ -240,7 +240,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=797
  width0=47
@@ -249,7 +249,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=5
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=705
  width0=112
@@ -264,10 +264,10 @@ options=114
  index=2
  [projectoptionsfo]
  stackedunder=
- x=244
- y=88
+ x=238
+ y=50
  cx=846
- cy=570
+ cy=686
 settaborder=15
  [setcreateorderfo.grid]
  propcolwidthref=331
@@ -846,15 +846,15 @@ makeoptionson=11
  4091
  4095
 compilerusedon=29
- 1983
+ 1855
  0
  0
  64
+ 128
  0
  0
  0
- 16
- 32
+ 0
  0
  0
  0
@@ -1169,10 +1169,10 @@ line=24
  660
  119
  1088
- 2274
- 2190
- 2467
- 3257
+ 2273
+ 2189
+ 2466
+ 3261
  119
  536
  470
@@ -1183,7 +1183,7 @@ line=24
  15
  765
  898
- 2507
+ 2506
  5201
  1882
 address=24
@@ -1450,8 +1450,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=onthetimer
+finddtext=debugcommand
 findhistory=20
+ debugcommand
+ function editprojectoptions: boolean;
  onthetimer
  bold
  ratio
@@ -1470,8 +1472,6 @@ findhistory=20
  grid
  findinfilepagefo
  create
- about_text
- onchangefont
 findoptions=1
 editpos=3
  0,-1073741823
@@ -1507,7 +1507,7 @@ moduleoptions=6
  0
  0
 visiblemodules=6
- 0
+ -1
  -1
  -1
  0
@@ -1541,7 +1541,7 @@ windowlayout=612
  x=79
  y=66
  cx=1157
- cy=621
+ cy=617
  rcx=0
  rcy=0
  wsize=0
@@ -1658,7 +1658,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=445
+ cy=442
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1668,8 +1668,8 @@ windowlayout=612
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1708,7 +1708,7 @@ windowlayout=612
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=352
+ propcolwidthref=332
  sortdescend0=0
  values1=1
   0
@@ -1717,7 +1717,7 @@ windowlayout=612
  sortdescend1=0
  values2=1
   pinteger(0x126c6b4)^
- width2=158
+ width2=149
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1728,7 +1728,7 @@ windowlayout=612
  sortdescend5=0
  values6=1
   
- width6=184
+ width6=172
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1753,9 +1753,9 @@ windowlayout=612
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=289
- width0=172
+ width0=147
  sortdescend0=0
- width1=111
+ width1=136
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1819,7 +1819,7 @@ windowlayout=612
  rcx=1262
  rcy=583
  [watchfo.grid]
- propcolwidthref=111
+ propcolwidthref=121
  values0=0
  values0_ci=-1
  sortdescend0=0
@@ -1848,9 +1848,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=508
+ y=505
  cx=1147
- cy=92
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1962,11 +1962,11 @@ windowlayout=612
  nx=0
  ny=0
  ncx=1147
- ncy=57
+ ncy=58
  x=0
  y=0
  cx=1147
- cy=57
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1979,6 +1979,7 @@ windowlayout=612
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/actionsmodule.pas
@@ -1997,7 +1998,6 @@ windowlayout=612
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msefiledialogres.pas
   /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/confcompiler.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2015,7 +2015,7 @@ windowlayout=612
  x=208
  y=0
  cx=939
- cy=445
+ cy=442
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2029,7 +2029,7 @@ windowlayout=612
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2058,13 +2058,13 @@ windowlayout=612
  x=0
  y=60
  cx=1147
- cy=445
+ cy=442
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2079,7 +2079,7 @@ windowlayout=612
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963

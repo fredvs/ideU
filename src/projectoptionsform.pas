@@ -18,7 +18,7 @@ uses
  msepipestream,msemenus,sysutils,mseglob,mseedit,msedialog,msescrollbar,
  msememodialog,msecodetemplates,mseifiglob,msestream,msestringcontainer,
  mserttistat,mseificomp,mseificompglob,msedragglob,mserichstring,mseact,
- msecalendardatetimeedit;
+ msecalendardatetimeedit, msegridsglob;
 
 const
  defaultsourceprintfont = 'Courier';
@@ -649,8 +649,6 @@ type
    setting_tab: ttabwidget;
    editorpage: ttabpage;
    debuggerpage: ttabpage;
-   debugcommand: tfilenameedit;
-   debugoptions: tmemodialogedit;
    ttabwidget1: ttabwidget;
    ttabpage6: ttabpage;
    sourcedirgrid: twidgetgrid;
@@ -671,7 +669,6 @@ type
    exceptignore: tbooleanedit;
    exceptclassnames: tstringedit;
    ttabpage16: ttabpage;
-   remoteconnection: tstringedit;
    tlayouter3: tlayouter;
    gdbprocessor: tdropdownlistedit;
    gdbsimulator: tbooleanedit;
@@ -797,17 +794,8 @@ type
    dispgrid: twidgetgrid;
    fontdisp: ttextedit;
    tlayouter12: tlayouter;
-   editfontextraspace: tintegeredit;
-   editfontwidth: tintegeredit;
-   editfontheight: tintegeredit;
-   editfontname: tstringedit;
    tlayouter11: tlayouter;
    tlayouter10: tlayouter;
-   backupfilecount: tintegeredit;
-   spacetabs: tbooleanedit;
-   tabstops: tintegeredit;
-   blockindent: tintegeredit;
-   autoindent: tbooleanedit;
    ttabwidget2: ttabwidget;
    ttabpage13: ttabpage;
    filefiltergrid: tstringgrid;
@@ -821,7 +809,6 @@ type
    startupbkpton: tbooleanedit;
    valuehints: tbooleanedit;
    debugtarget: tfilenameedit;
-   debugtargetsplitter: tsplitter;
    fontwidth: tintegeredit;
    fontoptions: tstringedit;
    fontxscale: trealedit;
@@ -840,11 +827,7 @@ type
    newfisources: tfilenameedit;
    newfifilters: tstringedit;
    newfiexts: tstringedit;
-   tabindent: tbooleanedit;
    fontancestors: tstringedit;
-   editfontcolor: tcoloredit;
-   editbkcolor: tcoloredit;
-   editfontantialiased: tbooleanedit;
    ttabpage17: ttabpage;
    ttabpage18: ttabpage;
    befcommandgrid: twidgetgrid;
@@ -950,9 +933,7 @@ type
    tsplitter9: tsplitter;
    beforerun: tfilenameedit;
    afterload: tfilenameedit;
-   tsplitter10: tsplitter;
    gdbserverstartonce: tbooleanedit;
-   showtabs: tbooleanedit;
    ttabpage21: ttabpage;
    formatmacrogrid: twidgetgrid;
    formatmacronames: tstringedit;
@@ -962,7 +943,6 @@ type
    colornote: tcoloredit;
    c: tstringcontainer;
    xtermcommand: tmemodialogedit;
-   debugsplitter: tsplitter;
    tlayouter14: tlayouter;
    rightmarginon: tbooleanedit;
    linenumberson: tbooleanedit;
@@ -1023,12 +1003,29 @@ type
    project_name: tstringedit;
    project_date: tstringedit;
    eolstyle: tenumtypeedit;
-   trimtrailingwhitespace: tbooleanedit;
 
    showconsole: tbooleanedit;
    enablepurpose: tbooleanedit;
    messageoutputfile: tfilenameedit;
+   trimtrailingwhitespace: tbooleanedit;
+   autoindent: tbooleanedit;
    enablesource: tbooleanedit;
+   tabindent: tbooleanedit;
+   spacetabs: tbooleanedit;
+   showtabs: tbooleanedit;
+   editfontantialiased: tbooleanedit;
+   backupfilecount: tintegeredit;
+   tabstops: tintegeredit;
+   blockindent: tintegeredit;
+   editfontextraspace: tintegeredit;
+   editfontwidth: tintegeredit;
+   editfontheight: tintegeredit;
+   editfontname: tstringedit;
+   editbkcolor: tcoloredit;
+   editfontcolor: tcoloredit;
+   debugcommand: tfilenameedit;
+   debugoptions: tmemodialogedit;
+   remoteconnection: tstringedit;
    procedure acttiveselectondataentered(const sender: TObject);
    procedure colonshowhint(const sender: tdatacol; const arow: Integer;
                       var info: hintinfoty);
@@ -1139,6 +1136,8 @@ uses
 
 var
  projectoptionsfo: tprojectoptionsfo;
+ fo: tprojectoptionsfo;
+ 
 type
 
  stringconststy = (
@@ -2731,14 +2730,19 @@ begin
  end;
 end;
 
+procedure dofontsize;
+begin
+ fo.font.height := confideufo.fontsize.value;
+ fo.container.frame.font.height := confideufo.fontsize.value;
+end;
+
 function editprojectoptions: boolean;
-var
- fo: tprojectoptionsfo;
 begin
  fo:= tprojectoptionsfo.create(nil);
   projectoptionstoform(fo);
  try
   projectoptionsfo:= fo;
+  dofontsize;
   result:= fo.show(true,nil) = mr_ok;
   projectoptionsfo:= nil;
   if result then begin
@@ -2942,12 +2946,12 @@ end;
 procedure tprojectoptionsfo.debuggerlayoutexe(const sender: TObject);
 begin
 //{$ifdef mswindows}
- placeyorder(2,[0,0,10],[runcommand,debugcommand,debugtarget,tlayouter1]);
+ //placeyorder(2,[0,0,10],[runcommand,debugcommand,debugtarget,tlayouter1]);
 //{$else}
 // placeyorder(0,[0,0,2],[debugcommand,debugoptions,debugtarget,tlayouter1]);
 //{$endif}
- aligny(wam_center,[debugcommand,debugoptions]);
- aligny(wam_center,[debugtarget,xtermcommand]);
+ //aligny(wam_center,[debugcommand,debugoptions]);
+ //aligny(wam_center,[debugtarget,xtermcommand]);
 end;
 
 procedure tprojectoptionsfo.macronchildscaled(const sender: TObject);
