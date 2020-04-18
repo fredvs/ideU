@@ -83,8 +83,8 @@ object settings_form: tsettingsfo
   object setting_tab: ttabwidget
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     optionswidget1 = [ow1_fontglyphheight]
-    bounds_x = -1
-    bounds_y = -1
+    bounds_x = 0
+    bounds_y = 0
     bounds_cx = 882
     bounds_cy = 482
     anchors = [an_left, an_top, an_right, an_bottom]
@@ -110,7 +110,7 @@ object settings_form: tsettingsfo
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 2
+      taborder = 1
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 882
@@ -523,7 +523,7 @@ object settings_form: tsettingsfo
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 3
+      taborder = 2
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 882
@@ -636,7 +636,7 @@ object settings_form: tsettingsfo
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_parenttabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 4
+      taborder = 3
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 882
@@ -740,22 +740,22 @@ object settings_form: tsettingsfo
         onexecute = editshortcuts
       end
     end
-    object but_ok: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = sourcefo.tfacecomp1
-      taborder = 1
-      bounds_x = 777
-      bounds_y = 2
-      bounds_cx = 99
-      bounds_cy = 16
-      anchors = [an_top, an_right]
-      state = [as_localinvisible, as_localcaption, as_localonexecute]
-      caption = '&OK'
-      modalresult = mr_ok
-    end
+  end
+  object but_ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    taborder = 1
+    bounds_x = 774
+    bounds_y = 4
+    bounds_cx = 99
+    bounds_cy = 30
+    anchors = [an_top, an_right]
+    state = [as_localinvisible, as_localcaption, as_localonexecute]
+    caption = '&OK'
+    modalresult = mr_ok
   end
   object tstatfile1: tstatfile
     filename = 'settingsfo.sta'

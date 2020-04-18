@@ -4,9 +4,8 @@ unit confideu;
 interface
 
 uses
- msetypes,mseglob,
- mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,msegraphutils,
- mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
+ msetypes,mseglob,mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,
+ msegraphutils,mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
  mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
  msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,msebitmap,
  msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,mseact,
@@ -16,7 +15,7 @@ uses
 
 type
   tconfideufo = class(tmseform)
-    but_ok: TButton;
+    but_apply: TButton;
     group_assistive: tgroupbox;
     tbassistive: tbooleanedit;
     tesakitdir: tfilenameedit;
@@ -52,6 +51,7 @@ type
    tbfilenoload: tbooleaneditradio;
    tbfileaskload: tbooleaneditradio;
    confirmdel: tbooleanedit;
+   but_ok: tbutton;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -65,6 +65,7 @@ type
    procedure oncloseev(const sender: TObject);
    procedure onchangefont;
    procedure onapply(const sender: TObject);
+   procedure onok(const sender: TObject);
   end;
 
 var
@@ -75,7 +76,7 @@ implementation
 uses
   confideu_mfm, main, messageform, sourceform, finddialogform, targetconsole,
   ideusettings, confcompiler, confdebugger, projectoptionsform, objectinspector,
-  projecttreeform, commandorform, dialogfiles;
+  projecttreeform, commandorform, dialogfiles, conffpgui, confmsegui;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
 begin
@@ -327,6 +328,56 @@ if Assigned(projecttreefo) then
 confcompilerfo.font.height :=  fontsize.value;
 confdebuggerfo.font.height :=  fontsize.value;
 
+// confmsegui
+confmseguifo.font.height :=  fontsize.value;
+
+// conffpguifo
+
+conffpguifo.font.height := fontsize.value;
+conffpguifo.fpguidesigner.top := 40;
+conffpguifo.enablefpguidesigner.top :=  conffpguifo.fpguidesigner.top + conffpguifo.fpguidesigner.height + 2 ;
+conffpguifo.tbfpgonlyone.top :=  conffpguifo.enablefpguidesigner.top + conffpguifo.enablefpguidesigner.height + 2 ;
+
+conffpguifo.groupcommand.top := conffpguifo.tbfpgonlyone.top + conffpguifo.tbfpgonlyone.height + 6 ;
+
+conffpguifo.ifloadfile.top :=  conffpguifo.edfilename.height + 2 ;
+conffpguifo.edfilename.top :=  conffpguifo.ifloadfile.top ;
+conffpguifo.edfilename.left :=  conffpguifo.ifloadfile.right + 30 ; 
+
+conffpguifo.ifclose.top :=  conffpguifo.ifloadfile.top + conffpguifo.edclose.height + 2 ;
+conffpguifo.edclose.top :=  conffpguifo.ifclose.top ;
+conffpguifo.edclose.left :=  conffpguifo.edfilename.left; 
+
+conffpguifo.ifshow.top :=  conffpguifo.ifclose.top + conffpguifo.edclose.height + 2 ;
+conffpguifo.edshow.top :=  conffpguifo.ifshow.top ;
+conffpguifo.edshow.left :=  conffpguifo.edfilename.left; 
+
+conffpguifo.ifhide.top :=  conffpguifo.ifshow.top + conffpguifo.edclose.height + 2 ;
+conffpguifo.edhide.top :=  conffpguifo.ifhide.top ;
+conffpguifo.edhide.left :=  conffpguifo.edfilename.left ; 
+
+conffpguifo.ifquit.top :=  conffpguifo.ifhide.top + conffpguifo.edclose.height + 2 ;
+conffpguifo.edquit.top :=  conffpguifo.ifquit.top ;
+conffpguifo.edquit.left :=  conffpguifo.edfilename.left ; 
+
+conffpguifo.edquit.width := round(ratio * 96);
+
+conffpguifo.edfilename.width := conffpguifo.edquit.width;
+conffpguifo.edclose.width := conffpguifo.edquit.width;
+conffpguifo.edshow.width := conffpguifo.edquit.width;
+conffpguifo.edhide.width := conffpguifo.edquit.width;
+
+conffpguifo.groupcommand.height := conffpguifo.ifquit.top + conffpguifo.edclose.height + 10;
+conffpguifo.groupcommand.width := conffpguifo.edfilename.right + 14;
+
+//
+conffpguifo.iffilter.top := conffpguifo.groupcommand.top + conffpguifo.groupcommand.height + 10 ;
+conffpguifo.edfilter.top := conffpguifo.iffilter.top + conffpguifo.iffilter.height + 4 ;
+conffpguifo.height := conffpguifo.edfilter.top + conffpguifo.edfilter.height + 10;
+
+conffpguifo.width:= conffpguifo.groupcommand.width + 26; 
+conffpguifo.height:= conffpguifo.edfilter.bottom + 10; 
+ 
 // confideufo
 font.height := fontsize.value;
 group_file_change.width := round(ratio * 280);
@@ -334,7 +385,9 @@ group_system_layout.width := round(ratio * 280);
 group_assistive.width := round(ratio * 280);
 group_sourceeditor.width := round(ratio * 314);
 group_sourceeditor.left := group_assistive.width + 20;
-but_ok.width := round(ratio * 280);
+but_ok.width := round(ratio * 280) div 2;
+but_apply.width := but_ok.width - 1;
+but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  group_file_change.top := 40;
  tbfilereload.top := tbfilereload.height + 2;
@@ -431,6 +484,12 @@ begin
 messagefo.updateprojectoptions;
 onchangefont;
 noconfirmdelete := confirmdel.value;
+end;
+
+procedure tconfideufo.onok(const sender: TObject);
+begin
+onapply(sender);
+close;
 end;
 
 end.

@@ -1478,19 +1478,19 @@ findhistory=20
 findoptions=1
 editpos=3
  0,-1073741823
+ 0,0
  0,-1073741823
- 39,2
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 sourcefiles=3
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
 relpaths=3
+ actionsmodule.pas
  main.pas
  ideU.pas
- actionsmodule.pas
 ismoduletexts=3
  0
  0
@@ -1525,7 +1525,7 @@ nomenumodules=6
  -1
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=1
 [layout]
 windowlayout=612
  [mainfo.basedock]
@@ -1541,13 +1541,13 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=79
- y=66
+ x=125
+ y=57
  cx=1157
  cy=617
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1661,7 +1661,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=511
+ cy=441
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1672,7 +1672,7 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=2
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1851,9 +1851,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=584
- cx=1358
- cy=105
+ y=505
+ cx=1147
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1952,8 +1952,8 @@ windowlayout=612
  ncy=0
  x=0
  y=0
- cx=1358
- cy=67
+ cx=1147
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1964,12 +1964,12 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1358
- ncy=68
+ ncx=1147
+ ncy=59
  x=0
  y=0
- cx=1358
- cy=68
+ cx=1147
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1979,16 +1979,21 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/ideu/src/confmsegui.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
   /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
@@ -1996,11 +2001,6 @@ windowlayout=612
   /home/fred/mseide-msegui/lib/common/msefpimage/msetargacmn.pp
   /home/fred/ideu/src/findinfileform.pas
   /home/fred/msefpc/freepascal-ootb/compiler/version.pas
-  /home/fred/msefpc/freepascal-ootb/compiler/msgtxt.inc
-  /home/fred/ideu/src/mseshortcutdialog.pas
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/msegrids.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2017,13 +2017,13 @@ windowlayout=612
  ncy=0
  x=208
  y=0
- cx=1150
- cy=511
+ cx=939
+ cy=441
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2059,9 +2059,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=70
- cx=1358
- cy=511
+ y=61
+ cx=1147
+ cy=441
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]

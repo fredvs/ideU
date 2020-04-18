@@ -66,6 +66,7 @@ object about_form: taboutfo
     bounds_y = 9
     bounds_cx = 357
     bounds_cy = 331
+    anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_resetselectonexit, oe_nofirstarrownavig, oe_focusrectonreadonly]
     textflags = [tf_xcentered, tf_wordbreak, tf_noselect]
     textflagsactive = [tf_xcentered, tf_wordbreak]

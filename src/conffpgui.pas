@@ -11,7 +11,7 @@ type
    fpguidesigner: tfilenameedit;
    enablefpguidesigner: tbooleanedit;
    tbfpgonlyone: tbooleanedit;
-   tgroupbox1: tgroupbox;
+   groupcommand: tgroupbox;
    edfilename: tedit;
    edclose: tedit;
    edhide: tedit;
@@ -31,5 +31,5 @@ var
  conffpguifo: tconffpguifo;
 implementation
 uses
- conffpgui_mfm;
+ conffpgui_mfm, confideu;
 end.

@@ -863,7 +863,7 @@ object confideufo: tconfideufo
       bounds_cy = 17
     end
   end
-  object but_ok: tbutton
+  object but_apply: tbutton
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
@@ -871,10 +871,25 @@ object confideufo: tconfideufo
     face.template = sourcefo.tfacecomp1
     bounds_x = 11
     bounds_y = 6
-    bounds_cx = 274
+    bounds_cx = 137
     bounds_cy = 30
     state = [as_localcaption, as_localonexecute]
     caption = '&Apply'
     onexecute = onapply
+  end
+  object but_ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    taborder = 5
+    bounds_x = 151
+    bounds_y = 6
+    bounds_cx = 133
+    bounds_cy = 30
+    state = [as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = onok
   end
 end

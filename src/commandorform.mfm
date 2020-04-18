@@ -259,8 +259,9 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       value = 'X'
       dropdown.dropdownrowcount = 13
       dropdown.cols.count = 1
@@ -316,8 +317,9 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -369,8 +371,9 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       value = 'Pascal'
       dropdown.dropdownrowcount = 5
       dropdown.cols.count = 1
@@ -494,8 +497,9 @@ object debuggerfo: tdebuggerfo
       bounds_cx = 66
       bounds_cy = 21
       statfile = mainfo.projectstatfile
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -908,8 +912,9 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       onchange = onchangeproject
       value = 'M'
       dropdown.dropdownrowcount = 12
@@ -1177,8 +1182,9 @@ object debuggerfo: tdebuggerfo
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
+      font.height = 12
       font.name = 'stf_default'
-      font.localprops = []
+      font.localprops = [flp_height]
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.options = [deo_keydropdown, deo_cliphint]
       dropdown.cols.count = 1
@@ -1203,7 +1209,7 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 207
+    left = 59
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -1217,8 +1223,8 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 182
-    top = 7
+    left = 54
+    top = 3
   end
   object templateprojectdark: tfacecomp
     template.fade_pos.count = 2

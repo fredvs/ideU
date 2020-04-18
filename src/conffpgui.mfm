@@ -1,24 +1,20 @@
 object conffpguifo: tconffpguifo
   optionswidget = [ow_top, ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 578
-  bounds_y = 213
-  bounds_cx = 328
-  bounds_cy = 289
+  bounds_x = 415
+  bounds_y = 169
+  bounds_cx = 273
+  bounds_cy = 326
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    328
-    289
+    273
+    326
   )
   optionswindow = [wo_dialog]
-  font.name = 'stf_default'
-  font.localprops = []
-  fontempty.name = 'stf_empty'
-  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of fpGUI'
@@ -81,7 +77,7 @@ object conffpguifo: tconffpguifo
   moduleclassname = 'tmseform'
   object fpguidesigner: tfilenameedit
     Tag = 7
-    frame.caption = '${FPGUIDESIGNER} Path to fpGUI Designer'
+    frame.caption = '${FPGUIDESIGNER}'
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
@@ -98,9 +94,9 @@ object conffpguifo: tconffpguifo
       0
     )
     hint = 'Path of fpGUI Designer'
-    bounds_x = 0
-    bounds_y = 8
-    bounds_cx = 328
+    bounds_x = 2
+    bounds_y = 21
+    bounds_cx = 273
     bounds_cy = 41
     anchors = [an_left, an_top, an_right]
     controller.options = [fdo_sysfilename, fdo_savelastdir]
@@ -108,40 +104,42 @@ object conffpguifo: tconffpguifo
     reffontheight = 15
   end
   object enablefpguidesigner: tbooleanedit
-    frame.caption = 'Enable designer integration'
+    frame.caption = 'Designer integration'
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
       0
       2
-      170
+      126
       2
     )
     taborder = 1
+    hint = 'Enable designer integration'
     bounds_x = 18
-    bounds_y = 58
-    bounds_cx = 183
+    bounds_y = 65
+    bounds_cx = 139
     bounds_cy = 17
   end
   object tbfpgonlyone: tbooleanedit
-    frame.caption = 'Only One Instance (setup designer too)'
+    frame.caption = 'One Instance'
     frame.localprops = []
     frame.localprops1 = []
     frame.outerframe = (
       0
       2
-      241
+      83
       2
     )
     taborder = 2
+    hint = 'Only One Instance (setup designer too)'
     bounds_x = 18
-    bounds_y = 77
-    bounds_cx = 254
+    bounds_y = 83
+    bounds_cx = 96
     bounds_cy = 17
     value = True
   end
-  object tgroupbox1: tgroupbox
-    frame.caption = 'Command line parameters'
+  object groupcommand: tgroupbox
+    frame.caption = 'Command line param'
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
@@ -152,9 +150,9 @@ object conffpguifo: tconffpguifo
       0
     )
     taborder = 3
-    bounds_x = 49
-    bounds_y = 98
-    bounds_cx = 237
+    bounds_x = 12
+    bounds_y = 100
+    bounds_cx = 238
     bounds_cy = 143
     object edfilename: tedit
       frame.localprops = []
@@ -300,10 +298,11 @@ object conffpguifo: tconffpguifo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 4
-    bounds_x = 69
-    bounds_y = 254
-    bounds_cx = 190
+    bounds_x = 12
+    bounds_y = 279
+    bounds_cx = 250
     bounds_cy = 21
+    anchors = [an_left, an_top, an_right]
     text = '*.fpg , fpg_*.pas , fpgui_*.pas'
     reffontheight = 15
   end
@@ -318,8 +317,8 @@ object conffpguifo: tconffpguifo
       2
     )
     taborder = 5
-    bounds_x = 13
-    bounds_y = 255
+    bounds_x = 20
+    bounds_y = 253
     bounds_cx = 50
     bounds_cy = 17
   end
@@ -330,16 +329,17 @@ object conffpguifo: tconffpguifo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 6
-    bounds_x = 274
-    bounds_y = 255
-    bounds_cx = 45
-    bounds_cy = 21
-    anchors = [an_left, an_top, an_right]
+    bounds_x = 173
+    bounds_y = 2
+    bounds_cx = 92
+    bounds_cy = 30
+    anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
-    caption = 'Ok'
+    caption = 'OK'
     modalresult = mr_ok
     reffontheight = 15
   end

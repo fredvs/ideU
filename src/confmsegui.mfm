@@ -4,7 +4,7 @@ object confmseguifo: tconfmseguifo
   bounds_x = 393
   bounds_y = 276
   bounds_cx = 376
-  bounds_cy = 117
+  bounds_cy = 170
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,13 +12,9 @@ object confmseguifo: tconfmseguifo
     0
     0
     376
-    117
+    170
   )
   optionswindow = [wo_dialog]
-  font.name = 'stf_default'
-  font.localprops = []
-  fontempty.name = 'stf_empty'
-  fontempty.localprops = []
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = tstatfile1
   caption = 'Configuration of MSEgui'
@@ -46,7 +42,7 @@ object confmseguifo: tconfmseguifo
     )
     hint = 'Root directory of msegui.'
     bounds_x = 8
-    bounds_y = 14
+    bounds_y = 24
     bounds_cx = 360
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
@@ -79,7 +75,7 @@ object confmseguifo: tconfmseguifo
     taborder = 1
     hint = 'Root directory of msegui library.'
     bounds_x = 8
-    bounds_y = 61
+    bounds_y = 104
     bounds_cx = 359
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
@@ -94,13 +90,14 @@ object confmseguifo: tconfmseguifo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 2
-    bounds_x = 333
+    bounds_x = 298
     bounds_y = 4
-    bounds_cx = 34
-    bounds_cy = 22
+    bounds_cx = 69
+    bounds_cy = 30
     anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'

@@ -2,19 +2,21 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
   visible = False
   bounds_x = 405
   bounds_y = 217
-  bounds_cx = 597
-  bounds_cy = 340
+  bounds_cx = 598
+  bounds_cy = 349
+  bounds_cxmin = 598
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = layoutexe
   container.bounds = (
     0
     0
-    597
-    340
+    598
+    349
   )
   options = [fo_screencentered, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Shortcuts'
+  windowopacity = -Inf
   onlayout = layoutexe
   moduleclassname = 'tmseform'
   object shortcut_grid: twidgetgrid
@@ -24,8 +26,8 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
     popupmenu = tpopupmenu1
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 597
-    bounds_cy = 286
+    bounds_cx = 598
+    bounds_cy = 278
     anchors = [an_top, an_bottom]
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     fixrows.count = 1
@@ -57,21 +59,21 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
     datacols.options = [co_focusselect, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
     datacols.items = <    
       item[sc]
-        width = 340
+        width = 320
         onbeforedrawcell = beforedrawnode
         options = [co_readonly, co_drawfocus, co_focusselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'sc'
         dataclass = ttreeitemeditlist
       end    
       item[scdi]
-        width = 125
+        width = 141
         onbeforedrawcell = beforedraw
         options = [co_readonly, co_nofocus, co_focusselect, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'scdi'
         dataclass = tgridmsestringdatalist
       end    
       item[sc1di]
-        width = 125
+        width = 130
         onbeforedrawcell = beforedraw1
         options = [co_readonly, co_nofocus, co_focusselect, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'sc1di'
@@ -90,7 +92,7 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
       visible = False
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 340
+      bounds_cx = 320
       bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_locate]
@@ -107,9 +109,9 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
       frame.localprops1 = []
       taborder = 2
       visible = False
-      bounds_x = 341
+      bounds_x = 321
       bounds_y = 0
-      bounds_cx = 125
+      bounds_cx = 141
       bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -125,9 +127,9 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
       frame.localprops1 = []
       taborder = 3
       visible = False
-      bounds_x = 467
+      bounds_x = 463
       bounds_y = 0
-      bounds_cx = 125
+      bounds_cx = 130
       bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -136,12 +138,18 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
   end
   object okbu: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 4
-    bounds_x = 489
-    bounds_y = 313
+    bounds_x = 468
+    bounds_y = 311
     bounds_cx = 50
-    bounds_cy = 21
+    bounds_cy = 30
     bounds_cxmin = 50
+    bounds_cxmax = 50
     anchors = [an_right, an_bottom]
     state = [as_localcaption]
     caption = '&OK'
@@ -150,12 +158,18 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
   end
   object cancelbu: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 5
-    bounds_x = 545
-    bounds_y = 312
-    bounds_cx = 50
-    bounds_cy = 21
-    bounds_cxmin = 50
+    bounds_x = 525
+    bounds_y = 311
+    bounds_cx = 70
+    bounds_cy = 30
+    bounds_cxmin = 70
+    bounds_cxmax = 70
     anchors = [an_right, an_bottom]
     state = [as_localcaption]
     caption = '&Cancel'
@@ -165,12 +179,18 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
   object defaultbu: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
     color = -2147483645
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
     taborder = 3
-    bounds_x = 370
-    bounds_y = 312
-    bounds_cx = 53
-    bounds_cy = 21
-    bounds_cxmin = 50
+    bounds_x = 371
+    bounds_y = 311
+    bounds_cx = 70
+    bounds_cy = 30
+    bounds_cxmin = 70
+    bounds_cxmax = 70
     anchors = [an_left, an_bottom]
     state = [as_localcaption, as_localcolor, as_localonexecute]
     caption = '&Default'
@@ -199,10 +219,10 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
     onactivate = edactivate
     ondeactivate = eddeactivate
     bounds_x = 193
-    bounds_y = 296
-    bounds_cx = 170
+    bounds_y = 300
+    bounds_cx = 171
     bounds_cy = 39
-    anchors = [an_left, an_right, an_bottom]
+    anchors = [an_left, an_bottom]
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     onkeydown = scdikey
@@ -230,7 +250,7 @@ object mseshortcutdialogfo: tmseshortcutdialogfo
     onactivate = edactivate
     ondeactivate = eddeactivate
     bounds_x = 11
-    bounds_y = 295
+    bounds_y = 300
     bounds_cx = 170
     bounds_cy = 39
     anchors = [an_left, an_bottom]
