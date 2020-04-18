@@ -138,6 +138,7 @@ type
    procedure inserttemplate;
    procedure copylatex;
    procedure copywordatcursor();
+   procedure selectwordatcursor();
    function cancomment(): boolean;
    function canuncomment(): boolean;
    procedure commentselection();
@@ -1264,6 +1265,11 @@ procedure tsourcepage.copywordatcursor();
 begin
  edit.selectword(edit.editpos,selectdelims);
  edit.copyselection();
+end;
+
+procedure tsourcepage.selectwordatcursor();
+begin
+ edit.selectword(edit.editpos,selectdelims);
 end;
 
 procedure tsourcepage.showlink(const apos: gridcoordty);

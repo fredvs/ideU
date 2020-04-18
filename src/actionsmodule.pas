@@ -820,7 +820,6 @@ begin
  sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
 end;
 
-
 procedure tactionsmo.selectwordactiononexecute(const sender: TObject);
 begin
  sourcefo.activepage.copywordatcursor();
@@ -828,8 +827,8 @@ end;
 
 procedure tactionsmo.ondeleteword(const sender: TObject);
 begin
- sourcefo.activepage.copywordatcursor();
- sourcefo.activepage.edit.cutselection;
+ sourcefo.activepage.selectwordatcursor();
+ sourcefo.activepage.edit.deleteselection;
 end;
 
 procedure tactionsmo.enableuncomment(const sender: tcustomaction);

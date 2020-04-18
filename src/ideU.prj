@@ -1166,7 +1166,7 @@ path=24
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
 line=24
  2129
- 1069
+ 1068
  581
  3894
  660
@@ -1479,18 +1479,18 @@ findoptions=1
 editpos=3
  0,-1073741823
  0,-1073741823
- 0,0
+ 39,2
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 sourcefiles=3
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/actionsmodule.pas
 relpaths=3
- actionsmodule.pas
  main.pas
  ideU.pas
+ actionsmodule.pas
 ismoduletexts=3
  0
  0
@@ -1672,7 +1672,7 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=2
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1979,10 +1979,11 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
@@ -2000,7 +2001,6 @@ windowlayout=612
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/msegrids.pas
-  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
