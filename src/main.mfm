@@ -302,7 +302,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localcolor]
       end    
       item
-        submenu.count = 7
+        submenu.count = 9
         submenu.items = <        
           item
             action = actionsmo.line
@@ -341,6 +341,15 @@ object mainfo: tmainfo
             action = actionsmo.findinfile
             caption = 'Find in F&iles'
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            action = actionsmo.procedurelist
+            state = [as_localimagelist, as_localimagenr]
+            imagelist = actionsmo.buttonicons
+            imagenr = 34
           end>
         caption = '&Search'
         name = 'search'
@@ -959,7 +968,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 25
+        submenu.count = 24
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -1086,13 +1095,6 @@ object mainfo: tmainfo
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
-          end        
-          item
-            action = actionsmo.procedurelist
-            caption = 'Methods list'
-            state = [as_localcaption, as_localimagelist, as_localimagenr]
-            imagelist = actionsmo.buttonicons
-            imagenr = 34
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'
