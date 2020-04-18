@@ -2814,7 +2814,7 @@ object actionsmo: tactionsmo
     top = 136
   end
   object shortcuts: tshortcutcontroller
-    actions.count = 97
+    actions.count = 98
     actions.items = <    
       item
         dispname = 'File'
@@ -2970,6 +2970,15 @@ object actionsmo: tactionsmo
         sc = (
           1
           16468
+        )
+      end    
+      item
+        action = selectword
+        dispname = 'Select Word'
+        hint = 'Select all the word where is the cursor'
+        sc = (
+          1
+          24659
         )
       end    
       item
@@ -4072,11 +4081,22 @@ object actionsmo: tactionsmo
     caption = 'Delete Word at Cursor'
     options = [ao_globalshortcut]
     onexecute = ondeleteword
-    left = 630
-    top = 238
+    left = 624
+    top = 231
     sc = (
       1
       16468
+    )
+  end
+  object selectword: taction
+    caption = 'Select Word'
+    options = [ao_globalshortcut]
+    onexecute = onselectword
+    left = 631
+    top = 263
+    sc = (
+      1
+      24659
     )
   end
 end

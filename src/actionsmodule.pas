@@ -227,6 +227,7 @@ type
    findback: taction;
    procedurelist: taction;
    deleteword: taction;
+   selectword: taction;
    procedure findinfileonexecute(const sender: tobject);
 
     //file
@@ -341,8 +342,7 @@ type
    procedure selectwordactiononexecute(const sender: TObject);
    procedure findbackonexecute(const sender: TObject);
    procedure ondeleteword(const sender: TObject);
-
-   procedure deletewordatcursor(const sender: tcustomaction);
+   procedure onselectword(const sender: TObject);
   private
    function filterfindcomp(const acomponent: tcomponent): boolean;
  public
@@ -1277,12 +1277,9 @@ begin
  end;
 end;
 
-procedure tactionsmo.deletewordatcursor(const sender: tcustomaction);
+procedure tactionsmo.onselectword(const sender: TObject);
 begin
-sourcefo.activepage.copywordatcursor();
-sourcefo.activepage.edit.cutselection;
-
+sourcefo.activepage.selectwordatcursor();
 end;
-
 
 end.
