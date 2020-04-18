@@ -2956,7 +2956,7 @@ object actionsmo: tactionsmo
       end    
       item
         action = deleteword
-        dispname = 'Delete word'
+        dispname = 'Delete Word'
         hint = 'Delete word at cursor'
         sc = (
           1
@@ -3469,6 +3469,7 @@ object actionsmo: tactionsmo
       (      )
       (      )
     )
+    statfile = mainfo.mainstatfile
     onafterupdate = updateshortcuts
     left = 771
     top = 168
@@ -4059,7 +4060,7 @@ object actionsmo: tactionsmo
     )
   end
   object deleteword: taction
-    caption = 'Delete Word'
+    caption = 'Delete Word at Cursor'
     options = [ao_globalshortcut]
     onexecute = ondeleteword
     left = 630
