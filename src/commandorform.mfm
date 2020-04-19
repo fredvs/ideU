@@ -8,10 +8,10 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 106
-  bounds_y = 154
+  bounds_x = 93
+  bounds_y = 73
   bounds_cx = 1154
-  bounds_cy = 50
+  bounds_cy = 58
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -20,7 +20,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1144
-    50
+    58
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -90,7 +90,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 49
     bounds_cx = 1144
-    bounds_cy = 3
+    bounds_cy = 11
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -107,7 +107,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 1144
-    bounds_cy = 48
+    bounds_cy = 56
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -137,7 +137,7 @@ object debuggerfo: tdebuggerfo
     face.localprops = [fal_fadirection]
     taborder = 1
     bounds_x = 0
-    bounds_y = 30
+    bounds_y = 32
     bounds_cx = 1144
     bounds_cy = 18
     anchors = [an_top]
@@ -254,14 +254,11 @@ object debuggerfo: tdebuggerfo
       taborder = 3
       hint = 'Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
       bounds_x = 274
-      bounds_y = 3
-      bounds_cx = 32
+      bounds_y = 1
+      bounds_cx = 34
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       value = 'X'
       dropdown.dropdownrowcount = 13
       dropdown.cols.count = 1
@@ -312,14 +309,11 @@ object debuggerfo: tdebuggerfo
       taborder = 4
       hint = 'Compiler number for Edited file'
       bounds_x = 242
-      bounds_y = 3
-      bounds_cx = 32
+      bounds_y = 1
+      bounds_cx = 34
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -366,14 +360,11 @@ object debuggerfo: tdebuggerfo
       taborder = 5
       hint = 'Compiler Type for Edited file'
       bounds_x = 199
-      bounds_y = 3
+      bounds_y = 1
       bounds_cx = 43
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       value = 'Pascal'
       dropdown.dropdownrowcount = 5
       dropdown.cols.count = 1
@@ -417,7 +408,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 8
       hint = 'Toggle form/unit'
-      bounds_x = 1
+      bounds_x = 2
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -493,13 +484,10 @@ object debuggerfo: tdebuggerfo
       taborder = 7
       hint = 'History of files.'
       bounds_x = 80
-      bounds_y = 3
+      bounds_y = 1
       bounds_cx = 66
       bounds_cy = 21
       statfile = mainfo.projectstatfile
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -519,7 +507,7 @@ object debuggerfo: tdebuggerfo
       taborder = 11
       hint = 'Procedures list'
       bounds_x = 55
-      bounds_y = 2
+      bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
@@ -626,7 +614,7 @@ object debuggerfo: tdebuggerfo
       face.template = mainfo.tfacecomp1
       taborder = 4
       hint = 'Enable/disable voice assist.'
-      bounds_x = 3
+      bounds_x = 2
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -907,14 +895,11 @@ object debuggerfo: tdebuggerfo
       taborder = 10
       hint = 'Project Option Num'
       bounds_x = 176
-      bounds_y = 3
+      bounds_y = 1
       bounds_cx = 34
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       onchange = onchangeproject
       value = 'M'
       dropdown.dropdownrowcount = 12
@@ -1176,15 +1161,12 @@ object debuggerfo: tdebuggerfo
       taborder = 14
       hint = 'History of projects.'
       bounds_x = 31
-      bounds_y = 3
+      bounds_y = 1
       bounds_cx = 87
       bounds_cy = 21
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
-      font.height = 12
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
       textflags = [tf_right, tf_ycentered, tf_noselect]
       dropdown.options = [deo_keydropdown, deo_cliphint]
       dropdown.cols.count = 1
@@ -1209,7 +1191,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 59
+    left = 75
+    top = 22
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -1223,8 +1206,8 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 54
-    top = 3
+    left = 92
+    top = 26
   end
   object templateprojectdark: tfacecomp
     template.fade_pos.count = 2
@@ -1245,8 +1228,8 @@ object debuggerfo: tdebuggerfo
     width = 55
     height = 10
     count = 2
-    left = 449
-    top = 11
+    left = 452
+    top = 17
     image = {
       00000000020000006E0000001400000098150000000000000000000000000000
       0000000000000000000000000000000000000000CBC3DA01C2C8CF01BBCBC401

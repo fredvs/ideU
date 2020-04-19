@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=101
+findinfiledialog=102
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -52,13 +52,14 @@ findinfiledialog=101
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
+  /home/fred/jcf-cli-master/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=31
+ filehistory=32
+  /home/fred/jcf-cli-master/
   /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
   /home/fred/CodeTyphonIns700/
   /home/fred/msefpc/freepascal-ootb/
@@ -93,8 +94,9 @@ findinfiledialog=101
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=pkg install
+ value=mimewrapper
  history=20
+  mimewrapper
   pkg install
   unit bufstream
   unit base64
@@ -114,7 +116,6 @@ findinfiledialog=101
   sc_row_delete
   row delete
   rowfonts
-  objectinspectorfo.font
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -126,10 +127,10 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=804
- y=166
+ x=939
+ y=147
  cx=300
- cy=291
+ cy=269
 replacedialog=25
  [replacedialogfo.promptonreplace]
  value=1
@@ -1453,8 +1454,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=word
+finddtext=debuggerfo.statdisp
 findhistory=20
+ debuggerfo
+ debug
  word
  copy
  oncopy
@@ -1473,13 +1476,11 @@ findhistory=20
  var
  confideu
  uses
- og1_norowdeletequery
- deleterowconfirmation
 findoptions=1
 editpos=3
  0,-1073741823
- 0,0
  0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1525,7 +1526,7 @@ nomenumodules=6
  -1
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=2
 [layout]
 windowlayout=612
  [mainfo.basedock]
@@ -1541,8 +1542,8 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=125
- y=57
+ x=109
+ y=148
  cx=1157
  cy=617
  rcx=0
@@ -1672,7 +1673,7 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=5
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1979,16 +1980,20 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
  history=20
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/commandorform.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
+  /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
+  /home/fred/atest/classesh.inc
+  /home/fred/atest/classes.pp
+  /home/fred/atest/lmimestreams.pp
+  /home/fred/atest/lmimewrapper.pp
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/confmsegui.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/conffpgui.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
@@ -1997,10 +2002,6 @@ windowlayout=612
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
   /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
-  /home/fred/mseide-msegui/lib/common/msefpimage/msefpimgcmn.pp
-  /home/fred/mseide-msegui/lib/common/msefpimage/msetargacmn.pp
-  /home/fred/ideu/src/findinfileform.pas
-  /home/fred/msefpc/freepascal-ootb/compiler/version.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2023,7 +2024,7 @@ windowlayout=612
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
