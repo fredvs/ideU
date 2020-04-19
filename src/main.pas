@@ -687,7 +687,7 @@ top := 56 ;
   setstattext('Hello!', mtk_flat);
 
    confideufo.onchangefont;
-   
+
    objectinspectorfo.close;
 
 end;
@@ -3845,9 +3845,15 @@ begin
     fcurrent       := True;
     fnoremakecheck := False;
     messagefo.Messages.lastrow;
-    if projectoptions.o.closemessages then
-      messagefo.Close// messagefo.hide;
-    ;
+
+    if confideufo.usedefaulteditoroptions.Value then
+            begin
+              if confideufo.closemessages.Value then
+                messagefo.hide;
+            end
+            else if projectoptions.o.closemessages then
+              messagefo.hide;
+        ;
 
     /// fred debugger
 

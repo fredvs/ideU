@@ -599,14 +599,22 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  closemessages.top :=  stripmessageesc.top + backupfilecount.height + 2 ;
  trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
+ 
+ encoding.width := round(ratio*84);
  tabstops.top := encoding.top ;
- spacetabs.top := encoding.top ;
+ tabstops.left := encoding.right + 40 ;
+ spacetabs.top := tabstops.bottom - spacetabs.height ;
+ spacetabs.left := tabstops.right + 4 ;
 
- rightmarginchars.top :=  spacetabs.top + encoding.height + 2 ;
+ rightmarginchars.top :=  encoding.top + encoding.height + 2 ;
 
  blockindent.top := rightmarginchars.top ;
- tabindent.top := rightmarginchars.top ;
+ tabindent.top := blockindent.bottom - tabindent.height  ;
+ 
+ blockindent.left := encoding.right + 40 ;
+ tabindent.left := blockindent.right + 4 ;
 
+ 
  colornote.top :=  rightmarginchars.top + rightmarginchars.height + 2 ;
  colorwarning.top :=  colornote.top + colornote.height + 2 ;
  colorerror.top :=  colorwarning.top + colorwarning.height + 2 ;

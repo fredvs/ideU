@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 543
-  bounds_y = 53
+  bounds_x = 602
+  bounds_y = 57
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -446,7 +446,6 @@ object confideufo: tconfideufo
       bounds_y = 187
       bounds_cx = 84
       bounds_cy = 39
-      anchors = [an_left, an_top, an_right]
       dropdown.options = [deo_selectonly, deo_forceselect, deo_autodropdown, deo_keydropdown]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
@@ -480,19 +479,19 @@ object confideufo: tconfideufo
       reffontheight = 15
     end
     object tabstops: tintegeredit
-      frame.caption = 'Tabstops'
+      frame.caption = 'Tab Stop'
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       frame.outerframe = (
         0
         18
-        20
+        1
         0
       )
       taborder = 5
-      bounds_x = 149
-      bounds_y = 196
+      bounds_x = 140
+      bounds_y = 197
       bounds_cx = 56
       bounds_cy = 39
       anchors = [an_top, an_right]
@@ -510,7 +509,7 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         18
-        42
+        35
         0
       )
       taborder = 7
@@ -518,7 +517,6 @@ object confideufo: tconfideufo
       bounds_y = 253
       bounds_cx = 78
       bounds_cy = 39
-      anchors = [an_top, an_right]
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -561,7 +559,6 @@ object confideufo: tconfideufo
       bounds_y = 276
       bounds_cx = 38
       bounds_cy = 17
-      anchors = [an_top, an_right]
     end
     object spacetabs: tbooleanedit
       frame.caption = 'Space'
@@ -578,7 +575,6 @@ object confideufo: tconfideufo
       bounds_y = 219
       bounds_cx = 53
       bounds_cy = 17
-      anchors = [an_top, an_right]
     end
     object colorerror: tcoloredit
       color = -2147483645
