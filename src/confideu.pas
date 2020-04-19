@@ -287,11 +287,11 @@ debuggerfo.project_open.width := debuggerfo.assistive.height;
 debuggerfo.project_open.left :=  2;
 
 debuggerfo.project_history.height := debuggerfo.assistive.height;
-//debuggerfo.project_history.width := debuggerfo.assistive.height;
+debuggerfo.project_history.width := round(ratio * 88) ;
 debuggerfo.project_history.left := debuggerfo.project_open.right + 2;
 
 debuggerfo.project_option.height := debuggerfo.assistive.height;
-debuggerfo.project_option.width := debuggerfo.assistive.height;
+debuggerfo.project_option.width := debuggerfo.assistive.height; ;
 debuggerfo.project_option.left := debuggerfo.project_history.right + 2;
 
 debuggerfo.project_save.height := debuggerfo.assistive.height;
@@ -299,7 +299,7 @@ debuggerfo.project_save.width := debuggerfo.assistive.height;
 debuggerfo.project_save.left := debuggerfo.project_option.right + 2;
 
 debuggerfo.project_options.height := debuggerfo.assistive.height;
-//debuggerfo.project_options.width := debuggerfo.assistive.height;
+//debuggerfo.project_options.width := round(ratio * 34) ;;
 debuggerfo.project_options.left := debuggerfo.project_save.right + 2;
 
 debuggerfo.project_make.height := debuggerfo.assistive.height;
@@ -371,7 +371,7 @@ debuggerfo.procedure_list.width := debuggerfo.assistive.height;
 debuggerfo.procedure_list.left := debuggerfo.code_beauty.right + 2;
 
 debuggerfo.file_history.height := debuggerfo.assistive.height;
-//debuggerfo.file_history.width := debuggerfo.assistive.height;
+debuggerfo.file_history.width := round(ratio * 88) ;
 debuggerfo.file_history.left := debuggerfo.procedure_list.right + 2;
 
 debuggerfo.open_file.height := debuggerfo.assistive.height;
@@ -383,15 +383,15 @@ debuggerfo.save_file.width := debuggerfo.assistive.height;
 debuggerfo.save_file.left := debuggerfo.open_file.right + 2;
 //
 debuggerfo.edit_compiler.height := debuggerfo.assistive.height;
-//debuggerfo.edit_compiler.width := debuggerfo.assistive.height;
+debuggerfo.edit_compiler.width := round(ratio * 44) ;
 debuggerfo.edit_compiler.left := debuggerfo.save_file.right + 2;
 
 debuggerfo.edit_compilernum.height := debuggerfo.assistive.height;
-//debuggerfo.edit_compilernum.width := debuggerfo.assistive.height;
+//debuggerfo.edit_compilernum.width := round(ratio * 34) ;
 debuggerfo.edit_compilernum.left := debuggerfo.edit_compiler.right + 2;
 
 debuggerfo.edit_options.height := debuggerfo.assistive.height;
-//debuggerfo.edit_options.width := debuggerfo.assistive.height;
+//debuggerfo.edit_options.width := round(ratio * 34) ;
 debuggerfo.edit_options.left := debuggerfo.edit_compilernum.right + 2;
 
 debuggerfo.edited_make.height := debuggerfo.assistive.height;
@@ -426,13 +426,13 @@ if Assigned(objectinspectorfo) then
      objectinspectorfo.grid.rowfonts.items[3].height := fontsize.value;
      objectinspectorfo.grid.rowfonts.items[4].height := fontsize.value;
      objectinspectorfo.grid.rowfonts.items[5].height := fontsize.value;
-     
+
      objectinspectorfo.findbu.font.height := fontsize.value;
      objectinspectorfo.compedit.font.height := fontsize.value;
-     
+
      objectinspectorfo.findbu.height := objectinspectorfo.compselector.height;
      objectinspectorfo.compedit.height := objectinspectorfo.compselector.height;
-     
+
     end;
 
 targetconsolefo.grid.font.height := fontsize.value;
@@ -516,23 +516,23 @@ conffpguifo.groupcommand.top := conffpguifo.tbfpgonlyone.top + conffpguifo.tbfpg
 
 conffpguifo.ifloadfile.top :=  conffpguifo.edfilename.height + 2 ;
 conffpguifo.edfilename.top :=  conffpguifo.ifloadfile.top ;
-conffpguifo.edfilename.left :=  conffpguifo.ifloadfile.right + 30 ; 
+conffpguifo.edfilename.left :=  conffpguifo.ifloadfile.right + 30 ;
 
 conffpguifo.ifclose.top :=  conffpguifo.ifloadfile.top + conffpguifo.edclose.height + 2 ;
 conffpguifo.edclose.top :=  conffpguifo.ifclose.top ;
-conffpguifo.edclose.left :=  conffpguifo.edfilename.left; 
+conffpguifo.edclose.left :=  conffpguifo.edfilename.left;
 
 conffpguifo.ifshow.top :=  conffpguifo.ifclose.top + conffpguifo.edclose.height + 2 ;
 conffpguifo.edshow.top :=  conffpguifo.ifshow.top ;
-conffpguifo.edshow.left :=  conffpguifo.edfilename.left; 
+conffpguifo.edshow.left :=  conffpguifo.edfilename.left;
 
 conffpguifo.ifhide.top :=  conffpguifo.ifshow.top + conffpguifo.edclose.height + 2 ;
 conffpguifo.edhide.top :=  conffpguifo.ifhide.top ;
-conffpguifo.edhide.left :=  conffpguifo.edfilename.left ; 
+conffpguifo.edhide.left :=  conffpguifo.edfilename.left ;
 
 conffpguifo.ifquit.top :=  conffpguifo.ifhide.top + conffpguifo.edclose.height + 2 ;
 conffpguifo.edquit.top :=  conffpguifo.ifquit.top ;
-conffpguifo.edquit.left :=  conffpguifo.edfilename.left ; 
+conffpguifo.edquit.left :=  conffpguifo.edfilename.left ;
 
 conffpguifo.edquit.width := round(ratio * 96);
 
@@ -549,9 +549,9 @@ conffpguifo.iffilter.top := conffpguifo.groupcommand.top + conffpguifo.groupcomm
 conffpguifo.edfilter.top := conffpguifo.iffilter.top + conffpguifo.iffilter.height + 4 ;
 conffpguifo.height := conffpguifo.edfilter.top + conffpguifo.edfilter.height + 10;
 
-conffpguifo.width:= conffpguifo.groupcommand.width + 26; 
-conffpguifo.height:= conffpguifo.edfilter.bottom + 10; 
- 
+conffpguifo.width:= conffpguifo.groupcommand.width + 26;
+conffpguifo.height:= conffpguifo.edfilter.bottom + 10;
+
 // confideufo
 font.height := fontsize.value;
 group_file_change.width := round(ratio * 280);
@@ -599,7 +599,7 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  closemessages.top :=  stripmessageesc.top + backupfilecount.height + 2 ;
  trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
- 
+
  encoding.width := round(ratio*84);
  tabstops.top := encoding.top ;
  tabstops.left := encoding.right + 40 ;
@@ -610,11 +610,11 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  blockindent.top := rightmarginchars.top ;
  tabindent.top := blockindent.bottom - tabindent.height  ;
- 
+
  blockindent.left := encoding.right + 40 ;
  tabindent.left := blockindent.right + 4 ;
 
- 
+
  colornote.top :=  rightmarginchars.top + rightmarginchars.height + 2 ;
  colorwarning.top :=  colornote.top + colornote.height + 2 ;
  colorerror.top :=  colorwarning.top + colorwarning.height + 2 ;

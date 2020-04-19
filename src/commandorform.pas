@@ -209,8 +209,13 @@ begin
 
 
 procedure tdebuggerfo.onsetvaluehis(const sender: TObject);
+var
+ratio : double;
 begin
-project_history.width := 84;
+
+ratio := confideufo.fontsize.value / 12;
+
+project_history.width := round(ratio * 88);
 //if (fileexists(project_history.value)) and
 if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
@@ -224,8 +229,12 @@ end;
 procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
 var
  page: tsourcepage;
+ ratio : double;
 begin
-file_history.width := 66;
+
+ratio := confideufo.fontsize.value / 12;
+file_history.width := round(ratio * 88);
+
 //if (fileexists(file_history.value)) and
 if (file_history.tag = 0) then
 begin
@@ -237,12 +246,12 @@ end;
 
 procedure tdebuggerfo.onbeforefilehis(const sender: TObject);
 begin
-file_history.width := 350;
+file_history.width := 500;
 end;
 
 procedure tdebuggerfo.onbefdroppro(const sender: TObject);
 begin
-project_history.width := 400;
+project_history.width := 500;
 end;
 
 procedure tdebuggerfo.onterminalon(const sender: TObject);
