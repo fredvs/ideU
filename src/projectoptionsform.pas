@@ -1137,7 +1137,7 @@ uses
 var
  projectoptionsfo: tprojectoptionsfo;
  fo: tprojectoptionsfo;
- 
+
 type
 
  stringconststy = (
@@ -2733,6 +2733,8 @@ end;
 procedure dofontsize;
 begin
  fo.font.height := confideufo.fontsize.value;
+ fo.font.name := ansistring(confideufo.fontname.value);
+
  fo.container.frame.font.height := confideufo.fontsize.value;
 end;
 

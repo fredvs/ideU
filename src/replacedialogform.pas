@@ -54,6 +54,8 @@ uses
 procedure replacedialogdotextsize;
 begin
 fo.font.height := confideufo.fontsize.value;
+fo.font.name := ansistring(confideufo.fontname.value);
+
 fo.findtext.top :=  34;
 fo.replacetext.top :=  fo.findtext.top + fo.findtext.height + 2 ;
 fo.casesensitive.top := fo.replacetext.top + fo.replacetext.height + 2 ;

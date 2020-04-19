@@ -343,6 +343,7 @@ end;
 procedure tfindinfilepagefo.childscaled(const sender: TObject);
 begin
 font.height := confideufo.fontsize.value;
+font.name := ansistring(confideufo.fontname.value);
 grid.top := 32;
 // placeyorder(0,[1],[cancel,grid],0);
 // aligny(wam_center,[cancel,filename,foundcount,again,closepage]);

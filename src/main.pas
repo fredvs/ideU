@@ -4413,11 +4413,14 @@ begin
 ratio := confideufo.fontsize.value / 12;
 
 dialogfilesfo.selected_file.font.height := confideufo.fontsize.value;
-dialogfilesfo.selected_file.font.height := confideufo.fontsize.value;
-
+dialogfilesfo.selected_file.font.name := ansistring(confideufo.fontname.value);
 dialogfilesfo.selected_file.frame.font.height := confideufo.fontsize.value;
+dialogfilesfo.selected_file.frame.font.name := ansistring(confideufo.fontname.value);
+
 dialogfilesfo.list_files.cellheight := round((ratio) * 19);
 dialogfilesfo.list_files.font.height := confideufo.fontsize.value;
+dialogfilesfo.list_files.font.name := ansistring(confideufo.fontname.value);
+
 dialogfilesfo.height := round((ratio) * 366);
 dialogfilesfo.width  := round((ratio) * 336);
 dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;

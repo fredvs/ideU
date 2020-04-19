@@ -237,12 +237,15 @@ rect1: rectty;
 begin
 
 mainfo.font.height := fontsize.value;
+mainfo.font.name := ansistring(fontname.value);
 
 ratio := fontsize.value / 12;
 
 // commandor
 
 debuggerfo.font.height := fontsize.value;
+debuggerfo.font.name := ansistring(fontname.value);
+
 
 debuggerfo.assistive.height := round(ratio*26);
 debuggerfo.assistive.width := debuggerfo.assistive.height;
@@ -275,6 +278,8 @@ debuggerfo.panelmain.height := debuggerfo.assistive.height + 2;
 debuggerfo.panelmain.width := debuggerfo.debug_on.right + 4;
 
 debuggerfo.statdisp.font.height := fontsize.value;
+debuggerfo.statdisp.font.name := ansistring(fontname.value);
+
 debuggerfo.statdisp.top := debuggerfo.assistive.height + 4;
 
 ///
@@ -436,18 +441,25 @@ if Assigned(objectinspectorfo) then
     end;
 
 targetconsolefo.grid.font.height := fontsize.value;
+targetconsolefo.grid.font.name := ansistring(fontname.value);
+
 
 
 if assigned(dialogfilesfo) then
 begin
 dialogfilesfo.selected_file.font.height := fontsize.value;
-dialogfilesfo.selected_file.font.height := fontsize.value;
+dialogfilesfo.selected_file.font.name := ansistring(fontname.value);
 
 dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
 
 dialogfilesfo.selected_file.frame.font.height := fontsize.value;
+
+dialogfilesfo.selected_file.frame.font.name := ansistring(fontname.value);
+
 dialogfilesfo.list_files.cellheight := round((ratio) * 19);
 dialogfilesfo.list_files.font.height := fontsize.value;
+dialogfilesfo.list_files.font.name :=  ansistring(fontname.value);
+
 dialogfilesfo.height := round((ratio) * 366);
 dialogfilesfo.width  := round((ratio) * 336);
 dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
@@ -500,14 +512,21 @@ if Assigned(projecttreefo) then
     end;
 
 confcompilerfo.font.height :=  fontsize.value;
+confcompilerfo.font.name := ansistring(fontname.value);
+
 confdebuggerfo.font.height :=  fontsize.value;
+confdebuggerfo.font.name := ansistring(fontname.value);
+
 
 // confmsegui
 confmseguifo.font.height :=  fontsize.value;
+confmseguifo.font.name := ansistring(fontname.value);
 
 // conffpguifo
 
 conffpguifo.font.height := fontsize.value;
+conffpguifo.font.name := ansistring(fontname.value);
+
 conffpguifo.fpguidesigner.top := 40;
 conffpguifo.enablefpguidesigner.top :=  conffpguifo.fpguidesigner.top + conffpguifo.fpguidesigner.height + 2 ;
 conffpguifo.tbfpgonlyone.top :=  conffpguifo.enablefpguidesigner.top + conffpguifo.enablefpguidesigner.height + 2 ;
@@ -554,6 +573,8 @@ conffpguifo.height:= conffpguifo.edfilter.bottom + 10;
 
 // confideufo
 font.height := fontsize.value;
+font.name := ansistring(fontname.value);
+
 group_file_change.width := round(ratio * 280);
 group_system_layout.width := round(ratio * 280);
 group_assistive.width := round(ratio * 280);

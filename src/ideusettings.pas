@@ -283,6 +283,7 @@ begin
   begin
     try
       font.height := confideufo.fontsize.value;
+      font.name := ansistring(confideufo.fontname.value);
       setting_tab.tab_size := confideufo.fontsize.value + 8;
       but_ok.height := confideufo.fontsize.value + 8;
 

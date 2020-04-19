@@ -1613,6 +1613,8 @@ procedure tfiledialogfo.formoncreate(const sender: TObject);
 begin
  fcourseid:= -1;
   font.height := confideufo.fontsize.value;
+  font.name := ansistring(confideufo.fontname.value);
+
  with stockobjects do begin
  // dir.frame.caption:= captions[sc_dirhk];
   home.caption:= captions[sc_homehk];

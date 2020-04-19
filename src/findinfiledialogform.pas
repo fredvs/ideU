@@ -78,7 +78,7 @@ var
 procedure findinfiledialogdotextsize;
 begin
  fo.font.height := confideufo.fontsize.value;
- fo.font.height := confideufo.fontsize.value;
+fo.font.name := ansistring(confideufo.fontname.value);
 fo.findtext.top :=  34;
 fo.casesensitive.top :=  fo.findtext.top + fo.findtext.height + 2 ;
 fo.wholeword.top :=  fo.casesensitive.top + fo.casesensitive.height + 2 ;

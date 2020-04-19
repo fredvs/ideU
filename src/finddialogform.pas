@@ -84,6 +84,7 @@ end;
 procedure finddialogdotextsize;
 begin
 finddialogfo.font.height := confideufo.fontsize.value;
+finddialogfo.font.name := ansistring(confideufo.fontname.value);
 finddialogfo.findtext.top :=  34;
 finddialogfo.findtext2.top :=  finddialogfo.findtext.top + finddialogfo.findtext.height + 2 ;
 finddialogfo.findtext3.top :=  finddialogfo.findtext2.top + finddialogfo.findtext.height + 2 ;

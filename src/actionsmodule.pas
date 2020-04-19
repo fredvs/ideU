@@ -860,6 +860,7 @@ if lineformcreated then linefo.bringtofront else
  integerenter(fgototheline,1, sourcefo.activepage.source_editor.rowcount,
       sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]);
  linefo.font.height := confideufo.fontsize.value;
+ linefo.font.name := ansistring(confideufo.fontname.value);
 // sourcefo.activepage.doline;
 end;
 
