@@ -54,7 +54,6 @@ type
    properties_list: tbutton;
    assistive: tbutton;
    terminal_run: tbutton;
-   debug_on: tbutton;
    save_file: tbutton;
 
    code_beauty: tbutton;
@@ -66,6 +65,7 @@ type
    templatemain: tfacecomp;
    templfiledark: tfacecomp;
    find_in_edit: tbutton;
+   debug_on: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -277,13 +277,11 @@ procedure tdebuggerfo.onsetdebug(const sender: TObject);
 begin
 if debug_on.tag = 0 then
 begin
-//projectoptions.d.showconsole := true;
 debug_on.tag := 1 ;
 debug_on.imagenr := 40 ;
  end
  else
  begin
-  // projectoptions.d.showconsole := false;
   debug_on.tag := 0;
   debug_on.imagenr := 41 ;
  end;

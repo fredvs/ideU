@@ -2505,9 +2505,11 @@ end;
 
 procedure tmainfo.mainmenuonupdate(const Sender: tcustommenu);
 var
-  bo1: Boolean;
+  bo1, bo2: Boolean;
 begin
   bo1 := False;
+  
+  if debuggerfo.debug_on.tag = 1 then bo2 := true else bo2 := False;
 
   with projectoptions, d.texp, actionsmo do
   begin
@@ -2519,13 +2521,13 @@ begin
     run.Enabled   := not gdb.running and not gdb.downloading;
     debuggerfo.project_start.Enabled := run.Enabled;
     bo1           := candebug;
-    step.Enabled  := not gdb.running and not gdb.downloading and bo1;
+    step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_step.Enabled  := step.Enabled;
-    stepi.Enabled := not gdb.running and not gdb.downloading and bo1;
+    stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
-    Next.Enabled  := not gdb.running and not gdb.downloading and bo1;
+    Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_next.Enabled := Next.Enabled;
-    nexti.Enabled := not gdb.running and not gdb.downloading and bo1;
+    nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
     finish.Enabled := not gdb.running and gdb.started and bo1;
     debuggerfo.project_finish.enabled:= interrupt.Enabled;
@@ -3322,13 +3324,13 @@ begin
     debuggerfo.project_save.hint         := ' Save project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_abort_compil.hint :=
       ' Abort compile project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_next.hint         := ' Next in project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_step.hint         := ' Step in project ' + ExtractFilename(aname) + ' ';
+    debuggerfo.project_next.hint         := ' Next instruction in project ' + ExtractFilename(aname) + ' ';
+    debuggerfo.project_step.hint         := ' Step instruction in project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_finish.hint       := ' Finish project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_next_instruction.hint :=
-      ' Next instruction in project ' + ExtractFilename(aname) + ' ';
+      ' Next Assembler instruction in project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_step_instruction.hint :=
-      ' Step instruction in project ' + ExtractFilename(aname) + ' ';
+      ' Step Assembler instruction in project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_reset.hint        := ' Reset project ' + ExtractFilename(aname) + ' ';
     debuggerfo.project_interrupt.hint    :=
       ' Interrupt project ' + ExtractFilename(aname) + ' ';
@@ -4517,8 +4519,8 @@ begin
     debuggerfo.find_in_directory.face.template := debuggerfo.templatemain;
     debuggerfo.line_number.face.template       := debuggerfo.templatemain;
     debuggerfo.terminal_run.face.template      := debuggerfo.templatemain;
-    debuggerfo.debug_on.face.template          := debuggerfo.templatemain;
-
+    
+    debuggerfo.debug_on.face.template          := debuggerfo.templproject;
     debuggerfo.project_step.face.template      := debuggerfo.templproject;
     debuggerfo.project_finish.face.template    := debuggerfo.templproject;
     debuggerfo.project_next_instruction.face.template := debuggerfo.templproject;
@@ -4618,7 +4620,7 @@ begin
     debuggerfo.find_in_directory.face.template := debuggerfo.templatemaindark;
     debuggerfo.line_number.face.template       := debuggerfo.templatemaindark;
     debuggerfo.terminal_run.face.template      := debuggerfo.templatemaindark;
-    debuggerfo.debug_on.face.template          := debuggerfo.templatemaindark;
+    debuggerfo.debug_on.face.template          := debuggerfo.templateprojectdark;
 
     if Assigned(sourcefo.ActivePage) then
     begin

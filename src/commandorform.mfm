@@ -649,26 +649,6 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
       onexecute = onterminalon
     end
-    object debug_on: tbutton
-      Tag = 1
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 5
-      hint = 'Set Debugger On/Off'
-      bounds_x = 165
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 40
-      focusrectdist = 0
-      onexecute = onsetdebug
-    end
   end
   object panelproject: tdockpanel
     frame.framewidth = 1
@@ -681,7 +661,7 @@ object debuggerfo: tdebuggerfo
     face.template = templproject
     taborder = 3
     hint = 'Panel of project.'
-    bounds_x = 195
+    bounds_x = 193
     bounds_y = 1
     bounds_cx = 553
     bounds_cy = 28
@@ -809,7 +789,7 @@ object debuggerfo: tdebuggerfo
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
-      state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
+      state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
       action = actionsmo.next
       imagelist = actionsmo.buttonicons
       imagenr = 28
@@ -823,8 +803,8 @@ object debuggerfo: tdebuggerfo
       face.template = templproject
       taborder = 7
       hint = 'Project Start'
-      bounds_x = 336
-      bounds_y = 1
+      bounds_x = 342
+      bounds_y = 2
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint]
@@ -1181,6 +1161,26 @@ object debuggerfo: tdebuggerfo
       onbeforedropdown = onbefdroppro
       onafterclosedropdown = onsetvaluehis
       reffontheight = 15
+    end
+    object debug_on: tbutton
+      Tag = 1
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templproject
+      taborder = 16
+      hint = 'Set Debugger On/Off'
+      bounds_x = 320
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 40
+      focusrectdist = 0
+      onexecute = onsetdebug
     end
   end
   object templproject: tfacecomp

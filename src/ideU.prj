@@ -95,8 +95,12 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=find_in_edit
+ value=next instruction
  history=20
+  next instruction
+  Next.Enabled
+  project_next
+  debug_on
   find_in_edit
   debuggerusedon
   compilerusedon
@@ -113,10 +117,6 @@ findinfiledialog=103
   twidgetfont
   THintWindow
   drawtext
-  stf_hint
-  textrect
-  hintfo
-  onhint
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -245,7 +245,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=796
  width0=47
@@ -266,7 +266,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=192
@@ -828,17 +828,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  ACTIONSMO
- MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=2
  TACTIONSMO
- TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1119,7 +1116,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=25
+on=27
  0
  0
  0
@@ -1145,7 +1142,9 @@ on=25
  0
  0
  0
-path=25
+ 0
+ 0
+path=27
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1171,11 +1170,13 @@ path=25
  /home/fred/ideu/src/main.pas
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
  /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
-line=25
+ /home/fred/ideu/src/ideU.pas
+ /home/fred/ideu/src/ideU.pas
+line=27
  2129
  1094
  583
- 3905
+ 3907
  660
  119
  1100
@@ -1187,17 +1188,19 @@ line=25
  540
  473
  67
- 4179
+ 4181
  684
  96
  15
  771
  898
  2506
- 5217
+ 5219
  1882
  6130
-address=25
+ 128
+ 121
+address=27
  4785304
  4626800
  4747424
@@ -1223,7 +1226,9 @@ address=25
  0
  0
  0
-addbkpt=25
+ 0
+ 0
+addbkpt=27
  0
  0
  0
@@ -1249,7 +1254,9 @@ addbkpt=25
  0
  0
  0
-ignore=25
+ 0
+ 0
+ignore=27
  0
  0
  0
@@ -1275,7 +1282,11 @@ ignore=25
  0
  0
  0
-condition=25
+ 0
+ 0
+condition=27
+ 
+ 
  
  
  
@@ -1492,7 +1503,7 @@ editpos=4
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,121
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1529,7 +1540,7 @@ moduleoptions=7
  0
  0
 visiblemodules=7
- -1
+ 0
  -1
  -1
  0
@@ -1537,7 +1548,7 @@ visiblemodules=7
  0
  0
 nomenumodules=7
- 0
+ -1
  0
  0
  -1
@@ -1562,8 +1573,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=17
- y=89
+ x=44
+ y=60
  cx=1233
  cy=621
  rcx=0
@@ -1606,7 +1617,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [memoryfo]
  splitdir=0
  useroptions=268451963
@@ -1704,15 +1715,15 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=423
- y=321
+ x=582
+ y=55
  cx=344
  cy=155
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [watchpointsfo]
  splitdir=0
  useroptions=268451945
@@ -1986,11 +1997,11 @@ windowlayout=631
  nx=0
  ny=0
  ncx=1208
- ncy=41
+ ncy=43
  x=0
  y=0
  cx=1223
- cy=39
+ cy=41
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2003,6 +2014,8 @@ windowlayout=631
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/projectoptionsform.pas
@@ -2011,7 +2024,6 @@ windowlayout=631
   /home/fred/mseide-msegui/lib/common/graphics/msegraphics.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
-  /home/fred/ideu/src/confideu.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
@@ -2021,11 +2033,10 @@ windowlayout=631
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/confmsegui.pas
-  /home/fred/ideu/src/conffpgui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
- value=1
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -2053,7 +2064,7 @@ windowlayout=631
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2088,7 +2099,7 @@ windowlayout=631
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2103,7 +2114,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963

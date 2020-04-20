@@ -124,6 +124,8 @@ begin
   createcpufo;
 
   mainfo.ideureadconfig;
+  
+  
 
   application.run;
 end.
