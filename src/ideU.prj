@@ -1559,7 +1559,7 @@ nomenumodules=7
 firsttab=0
 index=3
 [layout]
-windowlayout=631
+windowlayout=661
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1573,13 +1573,13 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=31
- y=122
+ x=14
+ y=48
  cx=1233
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1693,7 +1693,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=417
+ cy=516
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1883,9 +1883,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=502
- cx=1223
- cy=98
+ y=603
+ cx=1270
+ cy=118
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1984,8 +1984,8 @@ windowlayout=631
  ncy=0
  x=0
  y=0
- cx=1223
- cy=79
+ cx=1270
+ cy=81
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2000,8 +2000,8 @@ windowlayout=631
  ncy=47
  x=0
  y=0
- cx=1223
- cy=47
+ cx=1270
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2012,8 +2012,7 @@ windowlayout=631
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideusettings.pas
- history=20
-  /home/fred/ideu/src/ideusettings.pas
+ history=50
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
@@ -2021,6 +2020,7 @@ windowlayout=631
   /home/fred/atest/classes.pp
   /home/fred/atest/lmimestreams.pp
   /home/fred/atest/lmimewrapper.pp
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/confmsegui.pas
@@ -2033,6 +2033,36 @@ windowlayout=631
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
   /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msefpimgcmn.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msetargacmn.pp
+  /home/fred/ideu/src/findinfileform.pas
+  /home/fred/msefpc/freepascal-ootb/compiler/version.pas
+  /home/fred/msefpc/freepascal-ootb/compiler/msgtxt.inc
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/ideu/src/msegrids.pas
+  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
+  /home/fred/ideu_ok/src/ideusettings.pas
+  /home/fred/ideu_ok/src/confideu.pas
+  /home/fred/ideu/src/finddialogform.pas
+  /home/fred/ideu/src/findinfilepage.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/targetconsole.pas
+  /home/fred/ideu/src/replacedialogform.pas
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/ideu/src/msefiledialogres.pas
+  /home/fred/ideu/src/confdebugger.pas
+  /home/fred/ideu/src/confcompiler.pas
+  /home/fred/atest/main.pas
+  /home/fred/msefpc/freepascal/compiler/globals.pas
+  /home/fred/msefpc/freepascaltest/compiler/globals.pas
+  /home/fred/msefpc/freepascaltest/compiler/cfileutl.pas
+  /home/fred/msefpc/freepascal/compiler/cfileutl.pas
+  /home/fred/msefpc/freepascal/cfileutl.pas
+  /home/fred/uos/examples/consoleplay.pas
+  /home/fred/svnfpc32/fixes_3_2/compiler/link.pas
+  /home/fred/msefpc/freepascaltest/compiler/link.pas
+  /home/fred/msefpc/test/compiler/link.pas
+  /home/fred/msefpc/freepascal/compiler/link.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2049,8 +2079,8 @@ windowlayout=631
  ncy=0
  x=208
  y=0
- cx=1015
- cy=417
+ cx=1062
+ cy=516
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2064,7 +2094,7 @@ windowlayout=631
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=confcompilerfo
  parent=
  mdistate=0
  nx=0
@@ -2091,9 +2121,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=82
- cx=1223
- cy=417
+ y=84
+ cx=1270
+ cy=516
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2175,7 +2205,7 @@ windowlayout=631
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0

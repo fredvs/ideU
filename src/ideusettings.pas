@@ -21,7 +21,7 @@ type
     sma_syntaxdefdir, sma_templatedir, sma_layoutdir, sma_compstoredir,
     sma_compiler, sma_debugger,
     sma_exeext, sma_target, sma_targetosdir, sma_fpguidir, sma_ideudir,
-    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_fpcsrcdir);
+    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_fpcsrcdir, sma_bgrabitmapdir);
 
 const
 
@@ -31,7 +31,7 @@ const
     'mselibdir', 'syntaxdefdir', 'templatedir', 'layoutdir',
     'compstoredir', 'compiler', 'debugger',
     'exeext', 'target', 'targetosdir', 'fpguidir',
-    'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir', 'fpcsrcdir');
+    'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir', 'fpcsrcdir', 'bgabitmapdir');
  {$ifdef mswindows}
  {$ifdef CPU64}
 
@@ -40,7 +40,7 @@ const
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
     'ppcx64.exe', 'gdb.exe', '.exe', 'x86_64-win64', 'windows',
-    '', '', '${IDEUDIR}docview\', '', '', '', '');
+    '', '', '${IDEUDIR}docview\', '', '', '', '', '');
  {$else}
 
   defaultsettingmacros: array[settingsmacroty] of msestring = (
@@ -48,7 +48,7 @@ const
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
     'ppc386.exe', 'gdb.exe', '.exe', 'i386-win32', 'windows',
-    '', '', '${IDEUDIR}docview\', '', '', '', '');
+    '', '', '${IDEUDIR}docview\', '', '', '', '', '');
 
  {$endif}
 
@@ -61,7 +61,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppcx64', 'gdb', '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
-    '', '', '/usr/share/fpcsrc/');
+    '', '', '/usr/share/fpcsrc/','');
   {$endif}
 
   {$ifdef freebsd}
@@ -74,14 +74,14 @@ const
     '${MSEDIR}apps/ide/compstore/',
     'ppcx64', '/usr/local/bin/gdb', '', 'x86_64-freebsd', 'linux',
     '/usr/local/share/fpgui/', '/usr/local/share/ideu/',
-    '/usr/local/share/docview/', '', '', '', '');
+    '/usr/local/share/docview/', '', '', '', '','');
    {$else}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppcx64', 'gdb', '', 'x86_64-freebsd', 'linux', '', '',
-    '${IDEUDIR}docview/', '', '', '', '');
+    '${IDEUDIR}docview/', '', '', '', '','');
    {$endif}
 
    {$endif}
@@ -93,7 +93,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppcarm', 'gdb', '', 'arm-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
-    '', '', '');
+    '', '', '','');
    {$endif}
 
     {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}
@@ -102,7 +102,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppc386', 'gdb', '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/',
-    '', '', '', '/usr/share/fpcsrc/');
+    '', '', '', '/usr/share/fpcsrc/','');
    {$endif}
 
 
@@ -112,7 +112,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppc386', 'gdb', '', 'i386-freebsd', 'linux', '', '',
-    '${IDEUDIR}docview/', '', '', '', '');
+    '${IDEUDIR}docview/', '', '', '', '','');
 
     {$endif}
 
@@ -161,6 +161,7 @@ type
    targetosdir: tstringedit;
    shortcutbu: tbutton;
    but_ok: tbutton;
+   bgrabitmapdir: tfilenameedit;
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
     procedure formoncreate(const Sender: TObject);
@@ -324,10 +325,12 @@ begin
   syntaxdefdir.top :=  templatedir.top + compiler.height + 2 ;
  syntaxdefdir.width := compiler.width;
 
+   bgrabitmapdir.top :=  syntaxdefdir.top + compiler.height + 2 ;
+ bgrabitmapdir.width := compiler.width;
  
  setting_tab.width := compiler.width + 12;
- setting_tab.height := syntaxdefdir.bottom + compiler.height ;
- 
+ setting_tab.height := bgrabitmapdir.bottom + compiler.height ;
+  
  width := setting_tab.width + 4;
  
   height := setting_tab.height + 4;
@@ -345,9 +348,7 @@ exeext.top := 60;
  targetosdir.width := compiler.width;
  
  shortcutbu.top :=  targetosdir.top + compiler.height + 60 ;
- shortcutbu.left := (setting_tab.width - shortcutbu.width) div 2;  
-  
-      
+ shortcutbu.left := (setting_tab.width - shortcutbu.width) div 2;     
 
       fshortcutcontroller := shortcuts;
       if shortcuts = nil then
@@ -397,7 +398,7 @@ begin
   {$else}
     fpguidir.Value := macros[sma_fpguidir];
   {$endif}
-
+    bgrabitmapdir.Value := macros[sma_bgrabitmapdir];
     fpcsrcdir.Value := macros[sma_fpcsrcdir];
     lcldir.Value := macros[sma_lcldir];
     compstoredir.Value := macros[sma_compstoredir];
@@ -436,6 +437,7 @@ begin
     macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
     macros[sma_lcldir] := lcldir.Value;
     macros[sma_fpguidir] := fpguidir.Value;
+    macros[sma_bgrabitmapdir] := bgrabitmapdir.Value;
     macros[sma_fpcsrcdir] := fpcsrcdir.Value;
     macros[sma_lcldir] := lcldir.Value;
     macros[sma_fpgui] := macros[sma_fpguidir];
@@ -500,6 +502,7 @@ begin
     compstoredir.controller.options := [fdo_sysfilename, fdo_directory];
     fpguidir.controller.options := [fdo_sysfilename, fdo_directory];
     fpcsrcdir.controller.options := [fdo_sysfilename, fdo_directory];
+     bgrabitmapdir.controller.options := [fdo_sysfilename, fdo_directory];
     lcldir.controller.options := [fdo_sysfilename, fdo_directory];
     docviewdir.controller.options := [fdo_sysfilename, fdo_directory];
     templatedir.controller.options := [fdo_sysfilename, fdo_directory];
@@ -508,6 +511,7 @@ begin
   end
   else
   begin
+    bgrabitmapdir.controller.options := [fdo_directory];  
     compiler.controller.options := [fdo_savelastdir];
     debugger.controller.options := [fdo_savelastdir];
     msedir.controller.options := [fdo_directory];

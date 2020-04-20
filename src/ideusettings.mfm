@@ -5,7 +5,7 @@ object settings_form: tsettingsfo
   bounds_x = 273
   bounds_y = 188
   bounds_cx = 464
-  bounds_cy = 483
+  bounds_cy = 520
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -14,7 +14,7 @@ object settings_form: tsettingsfo
     0
     0
     464
-    483
+    520
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -177,7 +177,7 @@ object settings_form: tsettingsfo
         taborder = 8
         hint = 'Directory for syntax definition files.'
         bounds_x = 6
-        bounds_y = 387
+        bounds_y = 352
         bounds_cx = 430
         bounds_cy = 39
         value = '${IDEUDIR}/syntaxdefs'
@@ -215,7 +215,7 @@ object settings_form: tsettingsfo
         taborder = 7
         hint = 'Directory for project template files.'
         bounds_x = 6
-        bounds_y = 410
+        bounds_y = 384
         bounds_cx = 430
         bounds_cy = 39
         value = '${IDEUDIR}/templates'
@@ -476,7 +476,7 @@ object settings_form: tsettingsfo
         taborder = 10
         hint = 'Root directory of Lazarus or Typhon'
         bounds_x = 6
-        bounds_y = 323
+        bounds_y = 278
         bounds_cx = 430
         bounds_cy = 39
         controller.lastdir = '/usr/local/share/fpgui/'
@@ -514,6 +514,42 @@ object settings_form: tsettingsfo
         controller.lastdir = '/usr/share/fpcsrc/'
         controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
         controller.captionopen = 'FPC source path'
+        reffontheight = 15
+      end
+      object bgrabitmapdir: tfilenameedit
+        Tag = 5
+        frame.colorclient = 16770503
+        frame.caption = '${BGRABITMAPDIR} Directory of BRABitmap'
+        frame.captiontextflags = [tf_bottom]
+        frame.localprops = [frl_colorclient]
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+            imagenr = 17
+          end>
+        frame.button.imagenr = 17
+        frame.outerframe = (
+          0
+          18
+          0
+          0
+        )
+        taborder = 12
+        hint = 'Directory for project template files.'
+        bounds_x = 6
+        bounds_y = 412
+        bounds_cx = 430
+        bounds_cy = 39
+        controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/templates/'
+        controller.filterlist.data = (
+          (
+            'Project files'
+            '*.prj'
+          )
+        )
+        controller.options = [fdo_sysfilename, fdo_directory]
+        controller.captionopen = 'Project template directory'
         reffontheight = 15
       end
     end
@@ -743,7 +779,7 @@ object settings_form: tsettingsfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 1
-    bounds_x = 331
+    bounds_x = 346
     bounds_y = 0
     bounds_cx = 99
     bounds_cy = 30
