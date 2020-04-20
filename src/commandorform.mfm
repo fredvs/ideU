@@ -459,6 +459,44 @@ object debuggerfo: tdebuggerfo
       focusrectdist = 0
       onexecute = onbeauty
     end
+    object procedure_list: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 11
+      hint = 'Procedures list'
+      bounds_x = 44
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
+      action = actionsmo.procedurelist
+      imagelist = actionsmo.buttonicons
+      imagenr = 34
+      focusrectdist = 0
+      onexecute = procedurelistonexecute
+    end
+    object find_in_edit: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 12
+      hint = 'Find in edited source'
+      bounds_x = 57
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 24
+      onexecute = findinpage
+    end
     object file_history: thistoryedit
       Tag = 1
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
@@ -498,44 +536,6 @@ object debuggerfo: tdebuggerfo
       onbeforedropdown = onbeforefilehis
       onafterclosedropdown = onsetvaluefilehis
       reffontheight = 15
-    end
-    object procedure_list: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 11
-      hint = 'Procedures list'
-      bounds_x = 44
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localdisabled, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
-      action = actionsmo.procedurelist
-      imagelist = actionsmo.buttonicons
-      imagenr = 34
-      focusrectdist = 0
-      onexecute = procedurelistonexecute
-    end
-    object find_in_edit: tbutton
-      color = -2147483645
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templfile
-      taborder = 12
-      hint = 'Find in edited source'
-      bounds_x = 57
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 24
-      onexecute = findinpage
     end
   end
   object panelmain: tdockpanel
@@ -1118,6 +1118,26 @@ object debuggerfo: tdebuggerfo
         onchange = breakonexecute
       end
     end
+    object debug_on: tbutton
+      Tag = 1
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templproject
+      taborder = 16
+      hint = 'Set Debugger On/Off'
+      bounds_x = 320
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 40
+      focusrectdist = 0
+      onexecute = onsetdebug
+    end
     object project_history: thistoryedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       frame.colorclient = 16056304
@@ -1161,26 +1181,6 @@ object debuggerfo: tdebuggerfo
       onbeforedropdown = onbefdroppro
       onafterclosedropdown = onsetvaluehis
       reffontheight = 15
-    end
-    object debug_on: tbutton
-      Tag = 1
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = templproject
-      taborder = 16
-      hint = 'Set Debugger On/Off'
-      bounds_x = 320
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      options = [bo_executeonclick, bo_executeonkey, bo_executedefaultonenterkey]
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolorglyph, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 40
-      focusrectdist = 0
-      onexecute = onsetdebug
     end
   end
   object templproject: tfacecomp
@@ -1449,8 +1449,8 @@ object debuggerfo: tdebuggerfo
       12105912
     )
     template.fade_direction = gd_down
-    left = 215
-    top = 6
+    left = 212
+    top = 16
   end
   object templfiledark: tfacecomp
     template.fade_pos.count = 2

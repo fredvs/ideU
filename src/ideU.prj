@@ -29,9 +29,9 @@ findinfiledialog=103
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -52,15 +52,15 @@ findinfiledialog=103
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseuniverse/
+  /home/fred/mseide-msegui/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
  filehistory=33
-  /home/fred/mseuniverse/
   /home/fred/mseide-msegui/
+  /home/fred/mseuniverse/
   /home/fred/freepascal-ootb/
   /home/fred/jcf-cli-master/
   /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
@@ -93,10 +93,11 @@ findinfiledialog=103
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
+ filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=next instruction
+ value=5.0.0
  history=20
+  5.0.0
   next instruction
   Next.Enabled
   project_next
@@ -116,7 +117,6 @@ findinfiledialog=103
   setfontheight
   twidgetfont
   THintWindow
-  drawtext
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -196,7 +196,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=24
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
@@ -218,9 +218,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=245
+ y=239
  xprop=1
- yprop=0.39553429027113
+ yprop=0.39477977161501
  [projectoptionsfo.macrogrid]
  propcolwidthref=578
  sortdescend0=0
@@ -1503,7 +1503,7 @@ editpos=4
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,121
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1573,8 +1573,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=44
- y=60
+ x=31
+ y=54
  cx=1233
  cy=621
  rcx=0
@@ -1617,7 +1617,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [memoryfo]
  splitdir=0
  useroptions=268451963
@@ -1693,7 +1693,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=446
+ cy=417
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1704,7 +1704,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=5
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1723,7 +1723,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [watchpointsfo]
  splitdir=0
  useroptions=268451945
@@ -1985,7 +1985,7 @@ windowlayout=631
  x=0
  y=0
  cx=1223
- cy=50
+ cy=79
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1996,12 +1996,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1208
- ncy=43
+ ncx=1223
+ ncy=57
  x=0
  y=0
  cx=1223
- cy=41
+ cy=47
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2014,6 +2014,7 @@ windowlayout=631
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
   /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/main.pas
@@ -2023,7 +2024,6 @@ windowlayout=631
   /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
   /home/fred/mseide-msegui/lib/common/graphics/msegraphics.pas
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
@@ -2050,7 +2050,7 @@ windowlayout=631
  x=208
  y=0
  cx=1015
- cy=446
+ cy=417
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2091,9 +2091,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=53
+ y=82
  cx=1223
- cy=446
+ cy=417
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
