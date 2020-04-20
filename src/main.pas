@@ -3679,7 +3679,8 @@ begin
   begin
     updatemodifiedforms;
     ftargetfilemodified := False;
-    make.domake(atag);
+    //make.domake(atag);
+    actionsmo.custcompileproject(nil);
   end;
 end;
 
@@ -3809,7 +3810,8 @@ begin
       begin
         Result := False;
         watchpointsfo.Clear;
-        domake(projectoptions.defaultmake);
+       // domake(projectoptions.defaultmake);
+        actionsmo.custcompileproject(nil);
       end;
       fnoremakecheck := True;
     end;

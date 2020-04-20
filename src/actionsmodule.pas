@@ -957,6 +957,11 @@ var
 str3 : msestring;
 int1, int2, int3 : integer;
 begin
+if not fileexists(ansistring(gettargetfile)) then
+ mainfo.setstattext(utf8decode(gettargetfile) +
+  ' does not exist.  Please compile it first.', mtk_error)
+
+else begin
 
 mainfo.terminategdbserver(true);
 
@@ -1038,42 +1043,67 @@ for int2:= 0 to high(compilerused) do begin
  begin
  mainfo.runwithoutdebugger ;
  end;
+ end;
 end;
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);
 begin
+if not fileexists(ansistring(gettargetfile)) then
+ mainfo.setstattext(utf8decode(gettargetfile) +
+  ' does not exist.  Please compile it first.', mtk_error)
+
+else begin
  with mainfo do begin
   if checkremake(sc_step) then begin
    gdb.step;
   end;
  end;
+ end;
 end;
 
 procedure tactionsmo.stepiactonexecute(const sender: TObject);
 begin
+if not fileexists(ansistring(gettargetfile)) then
+ mainfo.setstattext(utf8decode(gettargetfile) +
+  ' does not exist.  Please compile it first.', mtk_error)
+
+else begin
  with mainfo do begin
   if checkremake(sc_step) then begin
    gdb.stepi;
   end;
  end;
 end;
+end;
 
 procedure tactionsmo.nextactonexecute(const sender: tobject);
 begin
+if not fileexists(ansistring(gettargetfile)) then
+ mainfo.setstattext(utf8decode(gettargetfile) +
+  ' does not exist.  Please compile it first.', mtk_error)
+
+else begin
  with mainfo do begin
   if checkremake(sc_step) then begin
    gdb.next;
   end;
  end;
+ end;
 end;
 
 procedure tactionsmo.nextiactonexecute(const sender: TObject);
 begin
+if not fileexists(ansistring(gettargetfile)) then
+ mainfo.setstattext(utf8decode(gettargetfile) +
+  ' does not exist.  Please compile it first.', mtk_error)
+
+else begin
  with mainfo do begin
   if checkremake(sc_step) then begin
    gdb.nexti;
   end;
  end;
+end;
 end;
 
 procedure tactionsmo.finishactonexecute(const sender: tobject);
