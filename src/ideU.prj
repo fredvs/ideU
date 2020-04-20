@@ -95,8 +95,11 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=domake
+ value=debuggerusedon
  history=20
+  debuggerusedon
+  compilerusedon
+  mainfo.thetag
   domake
   checkremake
   makecommand
@@ -114,9 +117,6 @@ findinfiledialog=103
   hintfo
   onhint
   tooltip
-  fontsize.value
-  mimewrapper
-  pkg install
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -266,7 +266,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
  x=192
@@ -884,12 +884,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 4095
+ 3839
  0
  0
  0
  0
- 0
+ 256
 exeusedon=14
  3903
  0
@@ -1173,7 +1173,7 @@ path=25
  /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
 line=25
  2129
- 1093
+ 1094
  583
  3905
  660
@@ -1488,22 +1488,27 @@ findhistory=20
  showint
  fontsize.value
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
  0,-1073741823
- 12,3
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ ${PROJECTDIR}/ideU.pas
+relpaths=4
  sourceform.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=3
+ ideU.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1541,7 +1546,7 @@ nomenumodules=7
  -1
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1557,8 +1562,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=22
- y=74
+ x=3
+ y=98
  cx=1233
  cy=621
  rcx=0
@@ -1688,7 +1693,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=5
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1981,11 +1986,11 @@ windowlayout=631
  nx=0
  ny=0
  ncx=1270
- ncy=35
+ ncy=33
  x=0
  y=0
  cx=1270
- cy=35
+ cy=33
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1995,13 +2000,13 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
-  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
   /home/fred/mseide-msegui/lib/common/graphics/msegraphics.pas
   /home/fred/ideu/src/sourceform.pas
@@ -2039,7 +2044,7 @@ windowlayout=631
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

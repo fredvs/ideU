@@ -383,6 +383,7 @@ var
   layoutbusy: Boolean = true;
   thetimer: TTimer;
   vaparam: Boolean = False;
+  nodebugset: Boolean = False;
 
 procedure doassistive;
 
@@ -1557,8 +1558,9 @@ var
   int1, int2: integer;
   strwine: msestring;
 begin
-
-  setstattext('', mtk_flat);
+if nodebugset then
+   setstattext('No debugger set, please check Project-Option|Debugger|Project-debugger.  Running without debugging...', mtk_error)
+   else setstattext('', mtk_flat);
 
   int1 := 1;
 

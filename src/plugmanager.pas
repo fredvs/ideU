@@ -286,7 +286,7 @@ Begin
         AProcess.Options := [poNoConsole];
         AProcess.Execute;
         AProcess.Free;
-        mainfo.setstattext('', mtk_flat);
+       // mainfo.setstattext('', mtk_flat);
       End
   Else
     mainfo.setstattext(UTF8Decode(AFilename) + ' does not exist...', mtk_notok);

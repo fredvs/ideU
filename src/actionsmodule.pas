@@ -957,6 +957,7 @@ var
 str3 : msestring;
 int1, int2, int3 : integer;
 begin
+nodebugset := false;
 if not fileexists(ansistring(gettargetfile)) then
  mainfo.setstattext(utf8decode(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
@@ -990,32 +991,42 @@ case debuggerfo.project_options.value of
 
 with projectoptions,o,texp do begin
 for int3:= 0 to high(debuggerused) do begin
-   if (mainfo.thetag and debuggerusedon[int3] <> 0) and
+ 
+   if (mainfo.thetag  and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
+      str3 := str3 + debuggerused[int3] ;
+       end;
+  end;
+end;
 
-  if (pos('Default',debuggerused[int3]) > 0) then
+ if str3 = 'None' then
+ begin
+ str3 := '';
+ nodebugset := true;
+ end; 
+  
+      if (pos('Default',str3) > 0) then
     str3:= 'Default Debugger' else
 
-    if (trim(debuggerused[int3]) = 'Debugger 1')  then
+    if (str3 = 'Debugger 1')  then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
 
-    if (trim(debuggerused[int3]) = 'Debugger 2') then
+    if (str3 = 'Debugger 2') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
 
-    if (trim(debuggerused[int3]) = 'Debugger 3') then
+    if (str3 = 'Debugger 3') then
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
 
-     if (trim(debuggerused[int3]) = 'Debugger 4') then
-    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) else
-    str3:= '' ;
+     if (str3 = 'Debugger 4') then
+    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) 
+    else    str3:= '' ;
+    
+end;  
 
-    if str3 = '' then str3:= 'Default Debugger';
- end;
- end;
- end;
-// str3:= 'Default Debugger'
- end;
-
+// mainfo.setstattext(str + ' = ' +str3, mtk_flat);  
+// application.processmessages;
+// sleep(10000);
+ 
  int1 := 1;
 
    with projectoptions,o,texp do begin
@@ -1044,7 +1055,8 @@ for int2:= 0 to high(compilerused) do begin
  mainfo.runwithoutdebugger ;
  end;
  end;
-end;
+ end;
+
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);
 begin
