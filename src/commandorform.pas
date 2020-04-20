@@ -51,7 +51,6 @@ type
    panelmain: tdockpanel;
    line_number: tbutton;
    find_in_directory: tbutton;
-   find_in_edit: tbutton;
    properties_list: tbutton;
    assistive: tbutton;
    terminal_run: tbutton;
@@ -66,6 +65,7 @@ type
    templatemaindark: tfacecomp;
    templatemain: tfacecomp;
    templfiledark: tfacecomp;
+   find_in_edit: tbutton;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);

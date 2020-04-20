@@ -4514,7 +4514,6 @@ begin
     debuggerfo.panelmain.face.template         := debuggerfo.templatemain;
     debuggerfo.assistive.face.template         := debuggerfo.templatemain;
     debuggerfo.properties_list.face.template   := debuggerfo.templatemain;
-    debuggerfo.find_in_edit.face.template      := debuggerfo.templatemain;
     debuggerfo.find_in_directory.face.template := debuggerfo.templatemain;
     debuggerfo.line_number.face.template       := debuggerfo.templatemain;
     debuggerfo.terminal_run.face.template      := debuggerfo.templatemain;
@@ -4532,6 +4531,7 @@ begin
     debuggerfo.paneledited.face.template      := debuggerfo.templfile;
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfile;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfile;
+    debuggerfo.find_in_edit.face.template      := debuggerfo.templfile;
     debuggerfo.procedure_list.face.template   := debuggerfo.templfile;
     debuggerfo.open_file.face.template        := debuggerfo.templfile;
     debuggerfo.save_file.face.template        := debuggerfo.templfile;
@@ -4615,7 +4615,6 @@ begin
     debuggerfo.panelmain.face.template         := debuggerfo.templatemaindark;
     debuggerfo.assistive.face.template         := debuggerfo.templatemaindark;
     debuggerfo.properties_list.face.template   := debuggerfo.templatemaindark;
-    debuggerfo.find_in_edit.face.template      := debuggerfo.templatemaindark;
     debuggerfo.find_in_directory.face.template := debuggerfo.templatemaindark;
     debuggerfo.line_number.face.template       := debuggerfo.templatemaindark;
     debuggerfo.terminal_run.face.template      := debuggerfo.templatemaindark;
@@ -4698,6 +4697,7 @@ begin
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;
     debuggerfo.procedure_list.face.template   := debuggerfo.templfiledark;
+    debuggerfo.find_in_edit.face.template      := debuggerfo.templfiledark;  
     debuggerfo.open_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.save_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.edited_make.face.template      := debuggerfo.templfiledark;

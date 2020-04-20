@@ -89,8 +89,8 @@ object debuggerfo: tdebuggerfo
     onpaint = paintdock
     bounds_x = 0
     bounds_y = 49
-    bounds_cx = 1144
-    bounds_cy = 11
+    bounds_cx = 1140
+    bounds_cy = 16
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -106,8 +106,8 @@ object debuggerfo: tdebuggerfo
     taborder = 5
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 1144
-    bounds_cy = 56
+    bounds_cx = 1140
+    bounds_cy = 61
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -138,7 +138,7 @@ object debuggerfo: tdebuggerfo
     taborder = 1
     bounds_x = 0
     bounds_y = 32
-    bounds_cx = 1144
+    bounds_cx = 1140
     bounds_cy = 18
     anchors = [an_top]
     font.shadow_shiftx = 0
@@ -259,6 +259,7 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      textflags = [tf_left, tf_ycentered, tf_noselect]
       value = 'X'
       dropdown.dropdownrowcount = 13
       dropdown.cols.count = 1
@@ -314,6 +315,7 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      textflags = [tf_left, tf_ycentered, tf_noselect]
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -506,7 +508,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 11
       hint = 'Procedures list'
-      bounds_x = 55
+      bounds_x = 44
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -516,6 +518,24 @@ object debuggerfo: tdebuggerfo
       imagenr = 34
       focusrectdist = 0
       onexecute = procedurelistonexecute
+    end
+    object find_in_edit: tbutton
+      color = -2147483645
+      frame.optionsskin = [fso_flat]
+      frame.localprops = [frl_optionsskin]
+      frame.localprops1 = []
+      face.localprops = []
+      face.template = templfile
+      taborder = 12
+      hint = 'Find in edited source'
+      bounds_x = 57
+      bounds_y = 1
+      bounds_cx = 26
+      bounds_cy = 26
+      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
+      imagelist = actionsmo.buttonicons
+      imagenr = 24
+      onexecute = findinpage
     end
   end
   object panelmain: tdockpanel
@@ -533,6 +553,7 @@ object debuggerfo: tdebuggerfo
     bounds_cx = 194
     bounds_cy = 28
     object line_number: tbutton
+      color = -2147483645
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
@@ -568,31 +589,13 @@ object debuggerfo: tdebuggerfo
       imagelist = actionsmo.buttonicons
       imagenr = 15
     end
-    object find_in_edit: tbutton
-      color = 13684944
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = mainfo.tfacecomp1
-      taborder = 2
-      hint = 'Find in edited source'
-      bounds_x = 57
-      bounds_y = 1
-      bounds_cx = 26
-      bounds_cy = 26
-      state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
-      imagelist = actionsmo.buttonicons
-      imagenr = 24
-      onexecute = findinpage
-    end
     object properties_list: tbutton
       frame.optionsskin = [fso_flat]
       frame.localprops = [frl_optionsskin]
       frame.localprops1 = []
       face.localprops = []
       face.template = mainfo.tfacecomp1
-      taborder = 3
+      taborder = 2
       hint = 'List of properties on/off'
       bounds_x = 30
       bounds_y = 1
@@ -612,7 +615,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.localprops = []
       face.template = mainfo.tfacecomp1
-      taborder = 4
+      taborder = 3
       hint = 'Enable/disable voice assist.'
       bounds_x = 2
       bounds_y = 1
@@ -632,7 +635,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.localprops = []
       face.template = mainfo.convex
-      taborder = 5
+      taborder = 4
       hint = 'Show target terminal when running'
       bounds_x = 138
       bounds_y = 1
@@ -653,7 +656,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.localprops = []
       face.template = mainfo.tfacecomp1
-      taborder = 6
+      taborder = 5
       hint = 'Set Debugger On/Off'
       bounds_x = 165
       bounds_y = 1
@@ -900,6 +903,7 @@ object debuggerfo: tdebuggerfo
       bounds_cy = 21
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      textflags = [tf_left, tf_ycentered, tf_noselect]
       onchange = onchangeproject
       value = 'M'
       dropdown.dropdownrowcount = 12
@@ -1221,15 +1225,15 @@ object debuggerfo: tdebuggerfo
       2568994
     )
     template.fade_direction = gd_down
-    left = 322
-    top = 7
+    left = 212
+    top = 10
   end
   object timagelist1: timagelist
     width = 55
     height = 10
     count = 2
-    left = 313
-    top = 13
+    left = 333
+    top = 25
     image = {
       00000000020000006E0000001400000098150000000000000000000000000000
       0000000000000000000000000000000000000000CBC3DA01C2C8CF01BBCBC401
@@ -1430,8 +1434,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 776
-    top = 12
+    left = 756
+    top = 34
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -1445,8 +1449,8 @@ object debuggerfo: tdebuggerfo
       12105912
     )
     template.fade_direction = gd_down
-    left = 359
-    top = 19
+    left = 215
+    top = 6
   end
   object templfiledark: tfacecomp
     template.fade_pos.count = 2

@@ -246,7 +246,6 @@ ratio := fontsize.value / 12;
 debuggerfo.font.height := fontsize.value;
 debuggerfo.font.name := ansistring(fontname.value);
 
-
 debuggerfo.assistive.height := round(ratio*26);
 debuggerfo.assistive.width := debuggerfo.assistive.height;
 
@@ -254,13 +253,9 @@ debuggerfo.properties_list.height := debuggerfo.assistive.height;
 debuggerfo.properties_list.width := debuggerfo.assistive.height;
 debuggerfo.properties_list.left := debuggerfo.assistive.right + 2;
 
-debuggerfo.find_in_edit.height := debuggerfo.assistive.height;
-debuggerfo.find_in_edit.width := debuggerfo.assistive.height;
-debuggerfo.find_in_edit.left := debuggerfo.properties_list.right + 2;
-
 debuggerfo.find_in_directory.height := debuggerfo.assistive.height;
 debuggerfo.find_in_directory.width := debuggerfo.assistive.height;
-debuggerfo.find_in_directory.left := debuggerfo.find_in_edit.right + 2;
+debuggerfo.find_in_directory.left := debuggerfo.properties_list.right + 2;
 
 debuggerfo.line_number.height := debuggerfo.assistive.height;
 debuggerfo.line_number.width := debuggerfo.assistive.height;
@@ -304,7 +299,7 @@ debuggerfo.project_save.width := debuggerfo.assistive.height;
 debuggerfo.project_save.left := debuggerfo.project_option.right + 2;
 
 debuggerfo.project_options.height := debuggerfo.assistive.height;
-//debuggerfo.project_options.width := round(ratio * 34) ;;
+debuggerfo.project_options.width := 31 + round(ratio * 3) ;
 debuggerfo.project_options.left := debuggerfo.project_save.right + 2;
 
 debuggerfo.project_make.height := debuggerfo.assistive.height;
@@ -375,9 +370,13 @@ debuggerfo.procedure_list.height := debuggerfo.assistive.height;
 debuggerfo.procedure_list.width := debuggerfo.assistive.height;
 debuggerfo.procedure_list.left := debuggerfo.code_beauty.right + 2;
 
+debuggerfo.find_in_edit.height := debuggerfo.assistive.height;
+debuggerfo.find_in_edit.width := debuggerfo.assistive.height;
+debuggerfo.find_in_edit.left := debuggerfo.procedure_list.right + 2;
+
 debuggerfo.file_history.height := debuggerfo.assistive.height;
 debuggerfo.file_history.width := round(ratio * 88) ;
-debuggerfo.file_history.left := debuggerfo.procedure_list.right + 2;
+debuggerfo.file_history.left := debuggerfo.find_in_edit.right + 2;
 
 debuggerfo.open_file.height := debuggerfo.assistive.height;
 debuggerfo.open_file.width := debuggerfo.assistive.height;
@@ -392,11 +391,11 @@ debuggerfo.edit_compiler.width := round(ratio * 44) ;
 debuggerfo.edit_compiler.left := debuggerfo.save_file.right + 2;
 
 debuggerfo.edit_compilernum.height := debuggerfo.assistive.height;
-//debuggerfo.edit_compilernum.width := round(ratio * 34) ;
+debuggerfo.edit_compilernum.width := 31 + round(ratio * 3) ;
 debuggerfo.edit_compilernum.left := debuggerfo.edit_compiler.right + 2;
 
 debuggerfo.edit_options.height := debuggerfo.assistive.height;
-//debuggerfo.edit_options.width := round(ratio * 34) ;
+debuggerfo.edit_options.width := 31 + round(ratio * 3) ;
 debuggerfo.edit_options.left := debuggerfo.edit_compilernum.right + 2;
 
 debuggerfo.edited_make.height := debuggerfo.assistive.height;

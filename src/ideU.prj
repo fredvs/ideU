@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=debuggerusedon
+ value=find_in_edit
  history=20
+  find_in_edit
   debuggerusedon
   compilerusedon
   mainfo.thetag
@@ -116,7 +117,6 @@ findinfiledialog=103
   textrect
   hintfo
   onhint
-  tooltip
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -128,8 +128,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=833
- y=310
+ x=778
+ y=661
  cx=300
  cy=269
 replacedialog=25
@@ -472,7 +472,7 @@ sysenvmanagereditor=34
  visible=1
 colordialog=5
  [colordialogfo]
- x=964
+ x=942
  y=367
  cx=338
  cy=298
@@ -1465,8 +1465,10 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=setstattext
+finddtext=procedure_list
 findhistory=20
+ procedure_list
+ find_in_edit
  setstattext
  statdisp
  not fileexists
@@ -1485,8 +1487,6 @@ findhistory=20
  font
  tcustomhintwidget
  fhintforwidget
- showint
- fontsize.value
 findoptions=1
 editpos=4
  0,-1073741823
@@ -1562,13 +1562,13 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=3
- y=98
+ x=17
+ y=89
  cx=1233
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1682,7 +1682,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=537
+ cy=446
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1693,7 +1693,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1872,9 +1872,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=603
- cx=1270
- cy=118
+ y=502
+ cx=1223
+ cy=98
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1973,8 +1973,8 @@ windowlayout=631
  ncy=0
  x=0
  y=0
- cx=1270
- cy=60
+ cx=1223
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1985,12 +1985,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1270
- ncy=33
+ ncx=1208
+ ncy=41
  x=0
  y=0
- cx=1270
- cy=33
+ cx=1223
+ cy=39
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2003,8 +2003,8 @@ windowlayout=631
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
   /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
@@ -2038,8 +2038,8 @@ windowlayout=631
  ncy=0
  x=208
  y=0
- cx=1062
- cy=537
+ cx=1015
+ cy=446
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2080,9 +2080,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=63
- cx=1270
- cy=537
+ y=53
+ cx=1223
+ cy=446
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
