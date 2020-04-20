@@ -304,7 +304,7 @@ type
     procedure uploadexe(const Sender: tguiapplication; var again: Boolean);
     procedure uploadcancel(const Sender: TObject);
     procedure gdbserverexe(const Sender: tguiapplication; var again: Boolean);
-    function terminategdbserver(const force: Boolean): Boolean;
+  //  function terminategdbserver(const force: Boolean): Boolean;
     procedure gdbservercancel(const Sender: TObject);
     procedure updatetargetenvironment;
     function needsdownload: Boolean;
@@ -324,7 +324,9 @@ type
     errorformfilename: filenamety;
     constructor Create(aowner: TComponent); override;
     destructor Destroy; override;
-
+    
+    function terminategdbserver(const force: Boolean): Boolean;
+  
     procedure designformactivated(const Sender: tcustommseform);
     procedure startgdb(const killserver: Boolean);
     function checkgdberror(aresult: gdbresultty): Boolean;
@@ -2301,6 +2303,7 @@ var
   int1, int2, int3: integer;
   str3: msestring;
 begin
+
   terminategdbserver(killserver);
 
   // fred debugger

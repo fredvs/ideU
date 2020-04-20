@@ -441,9 +441,7 @@ if Assigned(objectinspectorfo) then
     end;
 
 targetconsolefo.grid.font.height := fontsize.value;
-targetconsolefo.grid.font.name := ansistring(fontname.value);
-
-
+//targetconsolefo.grid.font.name := ansistring(fontname.value);
 
 if assigned(dialogfilesfo) then
 begin

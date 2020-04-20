@@ -958,7 +958,7 @@ str3 : msestring;
 int1, int2, int3 : integer;
 begin
 
-//terminategdbserver(killserver);
+mainfo.terminategdbserver(true);
 
 if debuggerfo.debug_on.tag = 0 then str3:= '' else
 
