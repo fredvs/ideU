@@ -273,8 +273,7 @@ end;
 
 function editsettings(const acaption: msestring = '';
   const shortcuts: tshortcutcontroller = nil): boolean;
-  // var
-  // settingsfo: tsettingsfo;
+   var  ratio: double;
 begin
   Result := False;
   settingsfo := tsettingsfo.Create(nil);
@@ -286,6 +285,69 @@ begin
       font.name := ansistring(confideufo.fontname.value);
       setting_tab.tab_size := confideufo.fontsize.value + 8;
       but_ok.height := confideufo.fontsize.value + 8;
+      
+      ratio := confideufo.fontsize.value / 12;
+   
+ compiler.top := 4;
+ compiler.width := round(ratio* 430);
+ 
+ debugger.top :=  compiler.top + compiler.height + 2 ;
+ debugger.width := compiler.width;
+ 
+ fpcsrcdir.top :=  debugger.top + debugger.height + 2 ;
+ fpcsrcdir.width := compiler.width;
+ 
+ msedir.top :=  fpcsrcdir.top + compiler.height + 2 ;
+ msedir.width := compiler.width;
+ 
+ mselibdir.top :=  msedir.top + compiler.height + 2 ;
+ mselibdir.width := compiler.width;
+ 
+ compstoredir.top :=  mselibdir.top + compiler.height + 2 ;
+ compstoredir.width := compiler.width;
+ 
+ fpguidir.top :=  compstoredir.top + compiler.height + 2 ;
+ fpguidir.width := compiler.width;
+ 
+ docviewdir.top :=  fpguidir.top + compiler.height + 2 ;
+ docviewdir.width := compiler.width;
+ 
+ lcldir.top :=  docviewdir.top + compiler.height + 2 ;
+ lcldir.width := compiler.width;
+ 
+ layoutdir.top :=  lcldir.top + compiler.height + 2 ;
+ layoutdir.width := compiler.width;
+
+ templatedir.top :=  layoutdir.top + compiler.height + 2 ;
+ templatedir.width := compiler.width;
+ 
+  syntaxdefdir.top :=  templatedir.top + compiler.height + 2 ;
+ syntaxdefdir.width := compiler.width;
+
+ 
+ setting_tab.width := compiler.width + 12;
+ setting_tab.height := syntaxdefdir.bottom + compiler.height ;
+ 
+ width := setting_tab.width + 4;
+ 
+  height := setting_tab.height + 4;
+  
+exeext.top := 60;
+ exeext.width := compiler.width;
+ 
+ target.top :=  exeext.top + compiler.height + 30 ;
+ target.width := compiler.width;
+ 
+ printcomm.top :=  target.top + debugger.height + 30 ;
+ printcomm.width := compiler.width;
+ 
+ targetosdir.top :=  printcomm.top + compiler.height + 30 ;
+ targetosdir.width := compiler.width;
+ 
+ shortcutbu.top :=  targetosdir.top + compiler.height + 60 ;
+ shortcutbu.left := (setting_tab.width - shortcutbu.width) div 2;  
+  
+      
 
       fshortcutcontroller := shortcuts;
       if shortcuts = nil then

@@ -128,8 +128,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=778
- y=661
+ x=930
+ y=118
  cx=300
  cy=269
 replacedialog=25
@@ -312,8 +312,8 @@ settings=8
  [settings_form]
  x=292
  y=108
- cx=822
- cy=539
+ cx=442
+ cy=461
  wsize=0
  active=1
  visible=1
@@ -1476,8 +1476,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=procedure_list
+finddtext=create
 findhistory=20
+ create
  procedure_list
  find_in_edit
  setstattext
@@ -1497,7 +1498,6 @@ findhistory=20
  textout
  font
  tcustomhintwidget
- fhintforwidget
 findoptions=1
 editpos=4
  0,-1073741823
@@ -1574,7 +1574,7 @@ windowlayout=631
  ncx=0
  ncy=0
  x=31
- y=54
+ y=122
  cx=1233
  cy=621
  rcx=0
@@ -1704,7 +1704,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=5
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1997,7 +1997,7 @@ windowlayout=631
  nx=0
  ny=0
  ncx=1223
- ncy=57
+ ncy=47
  x=0
  y=0
  cx=1223
@@ -2011,28 +2011,28 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/ideusettings.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
-  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/sourcehintform.pas
   /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
-  /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
-  /home/fred/mseide-msegui/lib/common/graphics/msegraphics.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
   /home/fred/atest/lmimestreams.pp
   /home/fred/atest/lmimewrapper.pp
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/confmsegui.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
