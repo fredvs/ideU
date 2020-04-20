@@ -162,6 +162,7 @@ begin
  designnotifications.beforemake(idesigner(designer),atag,bo1);
  if not bo1 then begin
   maker:= tmaker.Create(atag);
+  messagefo.show;
   {
    if confideufo.usedefaulteditoroptions.value then
               begin
@@ -183,6 +184,7 @@ begin
  designnotifications.beforemake(idesigner(designer),atag,bo1);
  if not bo1 then begin
   custommaker:= tcustommaker.Create(aname, acompiler, acompilertag, atag);
+    messagefo.show;
   {
   if confideufo.usedefaulteditoroptions.value then
               begin
@@ -823,7 +825,7 @@ end;
 procedure dodownload;
 begin
  killload;
-
+ {
   if confideufo.usedefaulteditoroptions.value then
               begin
               if confideufo.closemessages.value then messagefo.hide;
@@ -831,7 +833,7 @@ begin
               begin
               if projectoptions.o.closemessages then messagefo.hide;
              end;
-
+}
  loader:= tloader.create(nil);
 end;
 

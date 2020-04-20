@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=102
+findinfiledialog=103
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -35,11 +35,11 @@ findinfiledialog=102
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.mfm" 
+ value="*.pas" "*.pp" "*.inc" 
  history=13
+  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*"
-  "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc" "*.*" 
   "*.pas" "*.pp" "*.inc"
@@ -52,23 +52,24 @@ findinfiledialog=102
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/jcf-cli-master/
+  /home/fred/mseuniverse/
  filecolwidth=174
  x=560
  y=211
  cx=554
  cy=316
- filehistory=32
+ filehistory=33
+  /home/fred/mseuniverse/
+  /home/fred/mseide-msegui/
+  /home/fred/freepascal-ootb/
   /home/fred/jcf-cli-master/
   /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
   /home/fred/CodeTyphonIns700/
   /home/fred/msefpc/freepascal-ootb/
-  /home/fred/mseide-msegui/
   /home/fred/svnfpctrunk/trunk/
   /home/fred/strumpract/
   /home/fred/ideu_ok/
   /home/fred/uos/
-  /home/fred/mseuniverse/
   /home/fred/eschecs_mse/
   /home/fred/idegraeme/
   /home/fred/mseide-msegui-fred/
@@ -94,10 +95,20 @@ findinfiledialog=102
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=fontsize.value
+ value=closemessages
  history=20
-  fontsize.value
   closemessages
+  hint
+  setfontheight
+  twidgetfont
+  THintWindow
+  drawtext
+  stf_hint
+  textrect
+  hintfo
+  onhint
+  tooltip
+  fontsize.value
   mimewrapper
   pkg install
   unit bufstream
@@ -106,18 +117,8 @@ findinfiledialog=102
   unit xmltextreader
   unit xmlread
   xmlread
-  zipper
-  pngcomn
-  fpimgcmn
-  fpimgcmn_del
-  targacmn
-  dbf_
-  jcmarker_del
-  FPimage
-  Clear Bookmark
-  sc_row_delete
  [findinfileadialogfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=554
  y=175
  cx=234
@@ -127,8 +128,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=841
- y=204
+ x=858
+ y=484
  cx=300
  cy=269
 replacedialog=25
@@ -827,18 +828,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=5
  ACTIONSMO
  MAINFO
+ STOCKDATA
  SOURCEFO
-moduletypes=3
+ SOURCEHINTFO
+moduletypes=5
  TACTIONSMO
  TMAINFO
+ TSTOCKDATA
  TSOURCEFO
-modulefiles=3
+ TSOURCEHINTFO
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcehintform.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1118,7 +1125,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=24
+on=25
  0
  0
  0
@@ -1143,7 +1150,8 @@ on=24
  0
  0
  0
-path=24
+ 0
+path=25
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1168,14 +1176,15 @@ path=24
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/ideu/src/main.pas
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
-line=24
+ /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
+line=25
  2129
  1069
  581
  3900
  660
  119
- 1098
+ 1100
  2273
  2189
  2466
@@ -1188,12 +1197,13 @@ line=24
  684
  96
  15
- 769
+ 771
  898
  2506
  5212
  1882
-address=24
+ 6130
+address=25
  4785304
  4626800
  4747424
@@ -1218,7 +1228,8 @@ address=24
  7437888
  0
  0
-addbkpt=24
+ 0
+addbkpt=25
  0
  0
  0
@@ -1243,7 +1254,8 @@ addbkpt=24
  0
  0
  0
-ignore=24
+ 0
+ignore=25
  0
  0
  0
@@ -1268,7 +1280,9 @@ ignore=24
  0
  0
  0
-condition=24
+ 0
+condition=25
+ 
  
  
  
@@ -1457,8 +1471,17 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=fontsize.value
+finddtext=setfontheight
 findhistory=20
+ setfontheight
+ fontchanged
+ hintwidget
+ defaultoptionshintwidget
+ textout
+ font
+ tcustomhintwidget
+ fhintforwidget
+ showint
  fontsize.value
  project_history.left
  spacetabs.top
@@ -1470,41 +1493,97 @@ findhistory=20
  fred
  debugcommand
  function editprojectoptions: boolean;
- onthetimer
- bold
- ratio
- objectinspector
- findbu
- grid.
- tree
- confirmdelete
- impl
 findoptions=1
-editpos=4
+editpos=17
+ 0,0
  0,0
  0,-1073741823
+ 0,0
  0,-1073741823
+ 0,10
+ 0,15137
+ 0,6159
+ 0,1569
+ 0,186
+ 0,110
  0,-1073741823
+ 0,1120
+ 0,-1073741823
+ 0,112
+ 0,-1073741823
+ 0,831
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ /home/fred/mseide-msegui/lib/common/sysutils/msestatusnotifieritem.pas
+ ${PROJECTDIR}/sourcehintform.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
+ /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
+ /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseguiglob.pas
+ /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
+ /home/fred/mseide-msegui/lib/common/graphics/msegraphics.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
+ /home/fred/mseide-msegui/lib/common/fpccompatibility/mclasses.pas
+ /home/fred/mseuniverse/testcase/window/clientwindowpos/clientwindowpostest.pas
+ ${PROJECTDIR}/make.pas
+relpaths=17
  main.pas
  actionsmodule.pas
  ideU.pas
  sourceform.pas
-ismoduletexts=4
+ mseide-msegui/lib/common/sysutils/msestatusnotifieritem.pas
+ sourcehintform.pas
+ ../mseide-msegui/lib/common/kernel/msegui.pas
+ ../mseide-msegui/lib/common/widgets/msewidgets.pas
+ ../mseide-msegui/lib/common/graphics/msedrawtext.pas
+ ../mseide-msegui/lib/common/kernel/msestockobjects.pas
+ ../mseide-msegui/lib/common/kernel/mseguiglob.pas
+ freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
+ ../mseide-msegui/lib/common/graphics/msegraphics.pas
+ mseide-msegui/lib/common/kernel/linux/msesysintf1.pas
+ ../mseide-msegui/lib/common/fpccompatibility/mclasses.pas
+ mseuniverse/testcase/window/clientwindowpos/clientwindowpostest.pas
+ make.pas
+ismoduletexts=17
  0
  0
  0
  0
-modules=7
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=9
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1512,7 +1591,9 @@ modules=7
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=7
+ /home/fred/ideu/src/sourcehintform.mfm
+ /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
+moduleoptions=9
  0
  0
  0
@@ -1520,7 +1601,9 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+ 0
+visiblemodules=9
  -1
  -1
  -1
@@ -1528,7 +1611,9 @@ visiblemodules=7
  0
  0
  0
-nomenumodules=7
+ -1
+ -1
+nomenumodules=9
  0
  0
  0
@@ -1536,11 +1621,31 @@ nomenumodules=7
  -1
  -1
  -1
+ 0
+ 0
 [sourcefo.files_tab]
-firsttab=0
-index=0
+order=17
+ 0
+ 5
+ 3
+ 6
+ 16
+ 4
+ 10
+ 9
+ 15
+ 7
+ 13
+ 2
+ 1
+ 8
+ 12
+ 14
+ 11
+firsttab=2
+index=4
 [layout]
-windowlayout=631
+windowlayout=687
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1554,13 +1659,13 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=47
- y=46
+ x=3
+ y=65
  cx=1233
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1648,17 +1753,17 @@ windowlayout=631
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=678
- cy=414
+ x=0
+ y=29
+ cx=1280
+ cy=742
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1674,7 +1779,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=448
+ cy=550
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1864,9 +1969,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1223
- cy=93
+ y=607
+ cx=1270
+ cy=114
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1965,8 +2070,8 @@ windowlayout=631
  ncy=0
  x=0
  y=0
- cx=1223
- cy=53
+ cx=1270
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1977,12 +2082,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=57
+ ncx=1270
+ ncy=60
  x=0
  y=0
- cx=1223
- cy=49
+ cx=1270
+ cy=47
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1992,30 +2097,30 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/make.pas
  history=20
-  /home/fred/ideu/src/main.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
+  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
+  /home/fred/freepascal-ootb/packages/fcl-image/src/fpcanvas.pp
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
+  /home/fred/atest/classesh.inc
+  /home/fred/atest/classes.pp
+  /home/fred/atest/lmimestreams.pp
+  /home/fred/atest/lmimewrapper.pp
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/ideu/src/confmsegui.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
  [debuggerfo.project_options]
- value=1
+ value=7
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2030,13 +2135,31 @@ windowlayout=631
  ncy=0
  x=208
  y=0
- cx=1015
- cy=448
+ cx=1062
+ cy=550
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=0
+ order=17
+  0
+  5
+  3
+  6
+  16
+  4
+  10
+  9
+  15
+  7
+  13
+  2
+  1
+  8
+  12
+  14
+  11
+ firsttab=2
+ index=4
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2045,7 +2168,7 @@ windowlayout=631
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=confcompilerfo
  parent=
  mdistate=0
  nx=0
@@ -2072,9 +2195,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=56
- cx=1223
- cy=448
+ y=54
+ cx=1270
+ cy=550
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2156,7 +2279,7 @@ windowlayout=631
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2172,6 +2295,44 @@ windowlayout=631
  wsize=0
  active=0
  visible=0
+ [_mse_sourcehintfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_stockdata_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=99
+ y=290
+ cx=324
+ cy=214
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_stockdata_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=findinfilefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=129
+ y=57
+ cx=198
+ cy=85
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1
