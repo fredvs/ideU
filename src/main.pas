@@ -2524,10 +2524,24 @@ begin
       ((uploadcommand <> '') or d.gdbdownload);
     attachprocess.Enabled := not (gdb.execloaded or gdb.attached);
     attachtarget.Enabled := attachprocess.Enabled;
-    run.Enabled   := not gdb.running and not gdb.downloading;
+    run.Enabled   := not gdb.running and not gdb.downloading and not iscompiling;
     debuggerfo.project_start.Enabled := run.Enabled;
+    debuggerfo.debug_on.Enabled := run.Enabled;
+    
+     if debuggerfo.debug_on.Enabled then 
+      debuggerfo.debug_on.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.debug_on.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+   
+    
+            
+     if debuggerfo.project_start.Enabled then 
+      debuggerfo.project_start.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_start.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+    
     bo1           := candebug;
-    step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
+    step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_step.Enabled  := step.Enabled;
     
     if debuggerfo.project_step.Enabled then 
@@ -2537,7 +2551,7 @@ begin
 
     
     
-    stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
+    stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
     
         if debuggerfo.project_step_instruction.Enabled then 
@@ -2545,7 +2559,7 @@ begin
    [al_stretchx,al_stretchy] else debuggerfo.project_step_instruction.face.image.alignment :=  
    [al_grayed,al_stretchx,al_stretchy];
 
-    Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
+    Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next.Enabled := Next.Enabled;
 
          if debuggerfo.project_next.Enabled then 
@@ -2553,7 +2567,7 @@ begin
    [al_stretchx,al_stretchy] else debuggerfo.project_next.face.image.alignment :=  
    [al_grayed,al_stretchx,al_stretchy];
 
-    nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
+    nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
 
       if debuggerfo.project_next_instruction.Enabled then 
@@ -2570,7 +2584,7 @@ begin
    [al_grayed,al_stretchx,al_stretchy];
     
     continue.Enabled := not gdb.running and not gdb.downloading and
-      (bo1 or (frunningprocess = invalidprochandle));
+      (bo1 or (frunningprocess = invalidprochandle)) and not iscompiling;
     interrupt.Enabled := gdb.running and not gdb.downloading and bo1;
     debuggerfo.project_interrupt.enabled :=  interrupt.Enabled;
    

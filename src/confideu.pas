@@ -403,18 +403,18 @@ debuggerfo.edited_make.height := debuggerfo.assistive.height;
 debuggerfo.edited_make.width := debuggerfo.assistive.height;
 debuggerfo.edited_make.left := debuggerfo.edit_options.right + 2;
 
-debuggerfo.edited_run.height := debuggerfo.assistive.height;
-debuggerfo.edited_run.width := debuggerfo.assistive.height;
-debuggerfo.edited_run.left := debuggerfo.edited_make.right + 2;
-
 debuggerfo.edited_abort.height := debuggerfo.assistive.height;
 debuggerfo.edited_abort.width := debuggerfo.assistive.height;
-debuggerfo.edited_abort.left := debuggerfo.edited_run.right + 2;
+debuggerfo.edited_abort.left := debuggerfo.edited_make.right + 2;
+
+debuggerfo.edited_run.height := debuggerfo.assistive.height;
+debuggerfo.edited_run.width := debuggerfo.assistive.height;
+debuggerfo.edited_run.left := debuggerfo.edited_abort.right + 2;
 
 debuggerfo.panelproject.height := debuggerfo.panelmain.height;
 debuggerfo.panelproject.left := debuggerfo.panelmain.right + 2;
 
-debuggerfo.paneledited.width := debuggerfo.edited_abort.right + 4;
+debuggerfo.paneledited.width := debuggerfo.edited_run.right + 4;
 //
 
 debuggerfo.height := debuggerfo.statdisp.bottom + 2 ;

@@ -353,6 +353,7 @@ end;
 
 var
  actionsmo: tactionsmo;
+ iscompiling : boolean = false;
 
 procedure configureide;
 
@@ -603,6 +604,8 @@ end;
 
 procedure tactionsmo.finishcustom ;
 begin
+  iscompiling := false;
+
   debuggerfo.project_abort_compil.enabled := false;
   debuggerfo.project_abort_compil.face.image.alignment :=  
    [al_grayed,al_stretchx,al_stretchy];
@@ -645,6 +648,8 @@ end;
 
 procedure tactionsmo.compileproject(const sender: TObject);
 begin
+
+iscompiling := true;
 debuggerfo.project_make.enabled := false;
 
  debuggerfo.project_make.face.image.alignment :=  
@@ -734,7 +739,7 @@ begin
  
   debuggerfo.edited_run.enabled := false;
   
-    debuggerfo.edited_make.face.image.alignment :=  
+    debuggerfo.edited_run.face.image.alignment :=  
   [al_grayed,al_stretchx,al_stretchy];
 
     case debuggerfo.edit_compiler.value of
@@ -776,7 +781,7 @@ procedure tactionsmo.setupcustommenu(const sender: TObject) ;
 begin
    debuggerfo.edited_make.enabled := false;
    
-    debuggerfo.edited_abort.face.image.alignment :=  
+    debuggerfo.edited_make.face.image.alignment :=  
   [al_grayed,al_stretchx,al_stretchy];
  
   debuggerfo.edited_abort.enabled := true;
