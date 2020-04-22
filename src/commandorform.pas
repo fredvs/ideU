@@ -161,6 +161,10 @@ begin
 if debuggerfo.properties_list.tag = 0 then
 begin
 debuggerfo.properties_list.tag := 1 ;
+
+ debuggerfo.properties_list.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+
 debuggerfo.properties_list.imagenr := 21 ;
  end
  else
@@ -168,7 +172,9 @@ debuggerfo.properties_list.imagenr := 21 ;
   sourcefo.thetimer.Enabled := false;
   sourcefo.hidesourcehint;
   debuggerfo.properties_list.tag := 0 ;
-  debuggerfo.properties_list.imagenr := 20 ;
+  debuggerfo.properties_list.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
  end;
  end;
 
@@ -180,13 +186,17 @@ if debuggerfo.line_number.tag = 0 then
 begin
 projectoptions.e.linenumberson := true;
 debuggerfo.line_number.tag := 1 ;
-debuggerfo.line_number.imagenr := 26 ;
+//debuggerfo.line_number.face.image.alignment :=  
+// [al_stretchx,al_stretchy];
+
  end
  else
  begin
   projectoptions.e.linenumberson := false;
 debuggerfo.line_number.tag := 0;
-  debuggerfo.line_number.imagenr := 25 ;
+//debuggerfo.line_number.face.image.alignment :=  
+//  [al_grayed,al_stretchx,al_stretchy];
+
  end;
  for int1:= 0 to sourcefo.count - 1 do
     sourcefo.items[int1].updatestatvalues;
@@ -257,21 +267,8 @@ end;
 
 procedure tdebuggerfo.onterminalon(const sender: TObject);
 begin
-if terminal_run.tag = 0 then
-begin
 targetconsolefo.activate;
 projectoptions.d.showconsole := true;
-terminal_run.tag := 1 ;
-terminal_run.imagenr := 42 ;
- end
- else
- begin
-  targetconsolefo.visible := false;
-  projectoptions.d.showconsole := false;
-  terminal_run.tag := 0;
-  terminal_run.imagenr := 43 ;
- end;
-
 end;
 
 procedure tdebuggerfo.onsetdebug(const sender: TObject);

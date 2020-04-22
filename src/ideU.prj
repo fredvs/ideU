@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=project_next
+ value=[al_stretchx
  history=20
+  [al_stretchx
   project_next
   project_abort_compil
   image
@@ -116,7 +117,6 @@ findinfiledialog=103
   makecommand
   acompiler
   ${COMPILER}
-  startgdb
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -363,7 +363,7 @@ imagelisteditor=76
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/imagesideu/pause_64bleudisable.png
+  /home/fred/Pictures/imagesideu/bugnew64no2.png
  filecolwidth=174
  x=484
  y=336
@@ -371,6 +371,7 @@ imagelisteditor=76
  cy=307
  lastdir=/home/fred/Pictures/imagesideu/
  filehistory=50
+  /home/fred/Pictures/imagesideu/bugnew64no2.png
   /home/fred/Pictures/imagesideu/pause_64bleudisable.png
   /home/fred/Pictures/imagesideu/pause_64bleu.png
   /home/fred/Pictures/imagesideu/trianglebleudown64_2.png
@@ -420,7 +421,6 @@ imagelisteditor=76
   /home/fred/ideu/src/images/bookmark1.png
   /home/fred/ideu/src/images/bookmark0.png
   /home/fred/ideu/src/images/bluepoint.png
-  /home/fred/ideu/src/images/exclam.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
  [imagelisteditorfo.transparentcolor]
@@ -482,29 +482,57 @@ compnamedialog=5
  y=204
  cx=303
  cy=205
-bmpfiledialog=48
+bmpfiledialog=62
  [filedialog]
  filenames=1
-  /home/fred/Pictures/imagesideu/stop_64.png
+  /home/fred/Pictures/imagesideu/linenum.png
  filecolwidth=216
- x=0
- y=0
- cx=0
- cy=0
+ x=243
+ y=291
+ cx=496
+ cy=327
  lastdir=/home/fred/Pictures/imagesideu/
- filehistory=36
+ filehistory=50
+  /home/fred/Pictures/imagesideu/linenum.png
+  /home/fred/Pictures/imagesideu/bulbin.png
+  /home/fred/Pictures/imagesideu/terminal.png
+  /home/fred/Pictures/imagesideu/searchindir.png
+  /home/fred/Pictures/imagesideu/save641proj.png
+  /home/fred/Pictures/imagesideu/switch.png
+  /home/fred/Pictures/imagesideu/searchinfile.png
+  /home/fred/Pictures/imagesideu/fileopen.png
+  /home/fred/Pictures/imagesideu/projectopen.png
+  /home/fred/Pictures/imagesideu/save641.png
+  /home/fred/Pictures/imagesideu/searchdir.png
+  /home/fred/Pictures/imagesideu/lips250.png
+  /home/fred/Pictures/imagesideu/lips150.png
+  /home/fred/Pictures/imagesideu/trianglevert64_3.png
+  /home/fred/Pictures/imagesideu/playnewnew1.png
+  /home/fred/Pictures/imagesideu/compile64_3.png
+  /home/fred/Pictures/imagesideu/compile48_8.png
+  /home/fred/Pictures/imagesideu/trianglevert64_4.png
+  /home/fred/Pictures/imagesideu/playwG.png
+  /home/fred/Pictures/imagesideu/glist4.png
+  /home/fred/Pictures/imagesideu/compile64_7.png
+  /home/fred/Pictures/imagesideu/glist2.png
+  /home/fred/Pictures/imagesideu/beauty.png
+  /home/fred/Pictures/imagesideu/compile64_4.png
+  /home/fred/Pictures/imagesideu/compile32_6.png
+  /home/fred/Pictures/imagesideu/compile64_5.png
+  /home/fred/Pictures/imagesideu/config3_64.png
+  /home/fred/Pictures/imagesideu/config2_64.png
+  /home/fred/Pictures/imagesideu/config_64.png
+  /home/fred/Pictures/imagesideu/playround2.png
+  /home/fred/Pictures/imagesideu/trianglebleudown64_2.png
+  /home/fred/Pictures/imagesideu/trianglebleudouble64_2.png
+  /home/fred/Pictures/imagesideu/trianglevertflip64_2.png
+  /home/fred/Pictures/imagesideu/trianglevertdown64_2.png
+  /home/fred/Pictures/imagesideu/trianglevertdouble64_2.png
   /home/fred/Pictures/imagesideu/stop_64.png
   /home/fred/Pictures/imagesideu/pause_64bleu.png
-  /home/fred/Pictures/imagesideu/trianglevert64_3.png
-  /home/fred/Pictures/imagesideu/compile64_3.png
   /home/fred/Pictures/imagesideu/pause_64bleudisable.png
   /home/fred/Pictures/imagesideu/stop_64disable.png
   /home/fred/Pictures/imagesideu/stopdisable.png
-  /home/fred/Pictures/imagesideu/trianglebleudown64_2.png
-  /home/fred/Pictures/imagesideu/trianglebleudouble64_2.png
-  /home/fred/Pictures/imagesideu/trianglevertdouble64_2.png
-  /home/fred/Pictures/imagesideu/trianglevertdown64_2.png
-  /home/fred/Pictures/imagesideu/trianglevertflip64_2.png
   /home/fred/Pictures/imagesideu/compile64_2.png
   /home/fred/Pictures/imagesideu/trianglevert64_2.png
   /home/fred/Pictures/imagesideu/trianglevert64.png
@@ -515,20 +543,6 @@ bmpfiledialog=48
   /home/fred/ideu/src/images/eyestrans.png
   /home/fred/ideu/src/images/eyes2.png
   /home/fred/ideu/src/images/eyes.png
-  /home/fred/ideu/src/images/bookmark3.png
-  /home/fred/ideu/src/images/glist2.png
-  /home/fred/ideu/src/images/glist.png
-  /home/fred/ideu/src/images/fondbookmark.png
-  /home/fred/ideu/src/images/beauty.png
-  /home/fred/ideu/src/ideu.png
-  /home/fred/ideu/src/ideu.bmp
-  /home/fred/Images/eyes2.jpg
-  /home/fred/Documents/eyesfade.png
-  /home/fred/ideu/src/eyes.jpg
-  /home/fred/ideu/src/eyes.bmp
-  /home/fred/test/image/logoideu2.png
-  /home/fred/ideu/src/image/logoideu2.png
-  /home/fred/ideu/src/image/view1.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 codetemplateselect=21
@@ -846,18 +860,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
- ACTIONSMO
+modulenames=1
  CONFIDEUFO
- SOURCEFO
-moduletypes=3
- TACTIONSMO
+moduletypes=1
  TCONFIDEUFO
- TSOURCEFO
-modulefiles=3
- /home/fred/ideu/src/actionsmodule.mfm
+modulefiles=1
  /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1087,7 +1095,7 @@ stoponexception=0
 valuehints=1
 activateonbreak=1
 raiseonbreak=1
-showconsole=0
+showconsole=1
 externalconsole=0
 settty=1
 gdbdownload=0
@@ -1520,25 +1528,10 @@ findhistory=20
  font
  tcustomhintwidget
 findoptions=1
-editpos=3
- 0,-1073741823
- 0,0
- 0,-1073741823
-bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-sourcefiles=3
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/ideU.pas
-relpaths=3
- sourceform.pas
- actionsmodule.pas
- ideU.pas
-ismoduletexts=3
- 0
- 0
- 0
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
 modules=8
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
@@ -1559,8 +1552,8 @@ moduleoptions=8
  0
 visiblemodules=8
  0
- -1
- -1
+ 0
+ 0
  0
  0
  0
@@ -1568,22 +1561,18 @@ visiblemodules=8
  -1
 nomenumodules=8
  -1
- 0
- 0
+ -1
+ -1
  -1
  -1
  -1
  -1
  0
 [sourcefo.files_tab]
-order=3
- 1
- 2
- 0
 firsttab=0
-index=0
+index=-1
 [layout]
-windowlayout=654
+windowlayout=650
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1597,10 +1586,10 @@ windowlayout=654
  ny=0
  ncx=0
  ncy=0
- x=21
- y=70
+ x=25
+ y=257
  cx=1233
- cy=621
+ cy=659
  rcx=0
  rcy=0
  wsize=0
@@ -1717,7 +1706,7 @@ windowlayout=654
  x=0
  y=0
  cx=205
- cy=437
+ cy=452
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1728,7 +1717,7 @@ windowlayout=654
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=5
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1907,9 +1896,9 @@ windowlayout=654
  ncx=0
  ncy=0
  x=0
- y=496
+ y=528
  cx=1223
- cy=104
+ cy=110
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2009,7 +1998,7 @@ windowlayout=654
  x=0
  y=0
  cx=1223
- cy=53
+ cy=70
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2019,13 +2008,13 @@ windowlayout=654
  visible=1
  mdistate=0
  nx=0
- ny=0
- ncx=1223
- ncy=1
+ ny=-2
+ ncx=1208
+ ncy=27
  x=0
- y=0
+ y=-2
  cx=1223
- cy=1
+ cy=45
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2035,15 +2024,15 @@ windowlayout=654
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/commandorform.pas
  history=20
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
   /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/eschecs_mse/board.pas
-  /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/sourcehintform.pas
@@ -2074,16 +2063,12 @@ windowlayout=654
  x=208
  y=0
  cx=1015
- cy=437
+ cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
-  1
-  2
-  0
  firsttab=0
- index=0
+ index=-1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2092,7 +2077,7 @@ windowlayout=654
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2119,15 +2104,15 @@ windowlayout=654
  ncx=0
  ncy=0
  x=0
- y=56
+ y=73
  cx=1223
- cy=437
+ cy=452
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2222,7 +2207,7 @@ windowlayout=654
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
