@@ -2523,20 +2523,64 @@ begin
     bo1           := candebug;
     step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_step.Enabled  := step.Enabled;
+    
+    if debuggerfo.project_step.Enabled then 
+      debuggerfo.project_step.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_step.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
+    
+    
     stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
+    
+        if debuggerfo.project_step_instruction.Enabled then 
+      debuggerfo.project_step_instruction.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_step_instruction.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
     Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_next.Enabled := Next.Enabled;
+
+         if debuggerfo.project_next.Enabled then 
+      debuggerfo.project_next.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_next.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
     nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2;
     debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
+
+      if debuggerfo.project_next_instruction.Enabled then 
+      debuggerfo.project_next_instruction.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_next_instruction.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
     finish.Enabled := not gdb.running and gdb.started and bo1;
     debuggerfo.project_finish.enabled:= interrupt.Enabled;
+    
+      if debuggerfo.project_finish.Enabled then 
+      debuggerfo.project_finish.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_finish.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+    
     continue.Enabled := not gdb.running and not gdb.downloading and
       (bo1 or (frunningprocess = invalidprochandle));
     interrupt.Enabled := gdb.running and not gdb.downloading and bo1;
     debuggerfo.project_interrupt.enabled :=  interrupt.Enabled;
+   
+      if debuggerfo.project_interrupt.Enabled then 
+      debuggerfo.project_interrupt.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_interrupt.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+   
     reset.Enabled := (gdb.started or gdb.attached or gdb.downloading) or not bo1 and (frunningprocess <> invalidprochandle);
     debuggerfo.project_reset.enabled:=reset.Enabled;
+  
+    if debuggerfo.project_reset.Enabled then 
+      debuggerfo.project_reset.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_reset.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+  
     makeact.Enabled := not making;
     abortmakeact.Enabled := making;
     saveall.Enabled := sourcefo.modified or designer.modified or

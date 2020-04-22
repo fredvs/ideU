@@ -66,6 +66,7 @@ type
    templfiledark: tfacecomp;
    find_in_edit: tbutton;
    debug_on: tbutton;
+   imagebut: timagelist;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -278,12 +279,12 @@ begin
 if debug_on.tag = 0 then
 begin
 debug_on.tag := 1 ;
-debug_on.imagenr := 40 ;
+imagebut.getimage(0, debug_on.face.image);
  end
  else
  begin
   debug_on.tag := 0;
-  debug_on.imagenr := 41 ;
+  imagebut.getimage(1, debug_on.face.image);
  end;
 end;
 

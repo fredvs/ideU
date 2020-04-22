@@ -601,7 +601,17 @@ end;
 procedure tactionsmo.finishcustom ;
 begin
   debuggerfo.project_abort_compil.enabled := false;
+  debuggerfo.project_abort_compil.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+  
+//  debuggerfo.imagebut.getimage(12, debuggerfo.project_abort_compil.face.image);
+
   debuggerfo.project_make.enabled := true;
+   debuggerfo.project_make.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+  
+//  debuggerfo.imagebut.getimage(0, debuggerfo.project_make.face.image);
+
   debuggerfo.project_reset.enabled := false;
   debuggerfo.edited_abort.enabled := false ;
   debuggerfo.project_interrupt.enabled := false;
@@ -612,8 +622,18 @@ end;
 procedure tactionsmo.compileproject(const sender: TObject);
 begin
 debuggerfo.project_make.enabled := false;
-debuggerfo.project_abort_compil.enabled := true;
 
+ debuggerfo.project_make.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+ 
+//debuggerfo.imagebut.getimage(1, debuggerfo.project_make.face.image);
+
+debuggerfo.project_abort_compil.enabled := true;
+//debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
+
+ debuggerfo.project_abort_compil.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+ 
 case debuggerfo.project_options.value of
   'M' : begin
   domake(1) ;
