@@ -3081,7 +3081,7 @@ object debuggerfo: tdebuggerfo
       frame.localprops1 = []
       face.image.options = [bmo_masked, bmo_graymask]
       face.image.origformat = 'png'
-      face.image.alignment = [al_stretchx, al_stretchy]
+      face.image.alignment = [al_grayed, al_stretchx, al_stretchy]
       face.image.image = {
         0000000012000000320000003200000068060000000000000000000000000000
         0000000000000000000000000000000000000000000000FF0000004BB2B2EB01

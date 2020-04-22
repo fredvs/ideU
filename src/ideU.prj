@@ -860,17 +860,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  CONFIDEUFO
+ MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TCONFIDEUFO
+ TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1210,8 +1213,8 @@ path=27
 line=27
  2129
  1114
- 583
- 3951
+ 589
+ 3957
  660
  119
  1100
@@ -1220,17 +1223,17 @@ line=27
  2466
  3263
  119
- 540
+ 545
  473
  67
- 4225
+ 4231
  684
  97
  15
  771
  898
  2506
- 5263
+ 5269
  1882
  6130
  128
@@ -1534,22 +1537,27 @@ findhistory=20
  font
  tcustomhintwidget
 findoptions=1
-editpos=3
+editpos=4
+ 0,-1073741823
  0,-1073741823
  0,0
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=3
+ ${PROJECTDIR}/main.pas
+relpaths=4
  sourceform.pas
  actionsmodule.pas
  ideU.pas
-ismoduletexts=3
+ main.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1572,7 +1580,7 @@ moduleoptions=8
  0
  0
 visiblemodules=8
- 0
+ -1
  -1
  -1
  0
@@ -1581,7 +1589,7 @@ visiblemodules=8
  0
  -1
 nomenumodules=8
- -1
+ 0
  0
  0
  -1
@@ -1590,14 +1598,10 @@ nomenumodules=8
  -1
  0
 [sourcefo.files_tab]
-order=3
- 1
- 2
- 0
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=654
+windowlayout=650
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1611,8 +1615,8 @@ windowlayout=654
  ny=0
  ncx=0
  ncy=0
- x=25
- y=138
+ x=20
+ y=94
  cx=1233
  cy=659
  rcx=0
@@ -1742,7 +1746,7 @@ windowlayout=654
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=5
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2049,16 +2053,16 @@ windowlayout=654
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
   /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/eschecs_mse/board.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
@@ -2092,12 +2096,8 @@ windowlayout=654
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
-  1
-  2
-  0
  firsttab=0
- index=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2106,7 +2106,7 @@ windowlayout=654
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2141,7 +2141,7 @@ windowlayout=654
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2156,7 +2156,7 @@ windowlayout=654
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963

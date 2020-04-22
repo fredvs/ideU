@@ -524,23 +524,29 @@ begin
     begin
       SakGreeting('Welcome with ideU !');
       if sakloadlib(thedir) = 0 then
-        debuggerfo.assistive.imagenr := 19
+        
+        debuggerfo.assistive.face.image.alignment :=  
+   [al_stretchx,al_stretchy]
+
       else
-        debuggerfo.assistive.imagenr := 18;
+          debuggerfo.assistive.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
     end
     else
     begin
       sakunloadlib;
-      debuggerfo.assistive.imagenr := 18;
+       debuggerfo.assistive.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
     end;
   end
   else
   begin
     SakGreeting('Welcome with ideU !');
     if sakloadlib(thedir) = 0 then
-      debuggerfo.assistive.imagenr := 19
-    else
-      debuggerfo.assistive.imagenr := 18;
+       debuggerfo.assistive.face.image.alignment :=  
+   [al_stretchx,al_stretchy]    else
+       debuggerfo.assistive.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
   end;
 
 end;
