@@ -596,6 +596,9 @@ end;
 procedure tactionsmo.initproject ;
 begin
 debuggerfo.project_abort_compil.enabled := true;
+ debuggerfo.project_abort_compil.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+ 
 end;
 
 procedure tactionsmo.finishcustom ;
@@ -613,10 +616,31 @@ begin
 //  debuggerfo.imagebut.getimage(0, debuggerfo.project_make.face.image);
 
   debuggerfo.project_reset.enabled := false;
+  
+   debuggerfo.project_reset.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
   debuggerfo.edited_abort.enabled := false ;
+  
+   
+   debuggerfo.edited_abort.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
   debuggerfo.project_interrupt.enabled := false;
+  
+   debuggerfo.project_interrupt.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
+  
   debuggerfo.edited_make.enabled := true;
+ 
+   debuggerfo.edited_make.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+
   debuggerfo.edited_run.enabled := true;
+  
+   debuggerfo.edited_run.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
 end;
 
 procedure tactionsmo.compileproject(const sender: TObject);
@@ -697,8 +721,21 @@ end;
 procedure tactionsmo.setupcustom ;
 begin
    debuggerfo.edited_make.enabled := false;
+   
+    debuggerfo.edited_make.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+ 
+   
+   
   debuggerfo.edited_abort.enabled := true;
+  
+   debuggerfo.edited_abort.face.image.alignment :=  
+  [al_stretchx,al_stretchy];
+ 
   debuggerfo.edited_run.enabled := false;
+  
+    debuggerfo.edited_make.face.image.alignment :=  
+  [al_grayed,al_stretchx,al_stretchy];
 
     case debuggerfo.edit_compiler.value of
   'Pascal' : mainfo.settypecompiler := 1 ;
@@ -738,8 +775,19 @@ end;
 procedure tactionsmo.setupcustommenu(const sender: TObject) ;
 begin
    debuggerfo.edited_make.enabled := false;
+   
+    debuggerfo.edited_abort.face.image.alignment :=  
+  [al_grayed,al_stretchx,al_stretchy];
+ 
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
+  
+     debuggerfo.edited_run.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+   
+    debuggerfo.edited_abort.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+ 
 
      case debuggerfo.edit_compiler.value of
   'Pascal' : mainfo.settypecompiler := 1 ;

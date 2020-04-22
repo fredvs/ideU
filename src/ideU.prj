@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=[al_stretchx
+ value=edited_abort
  history=20
+  edited_abort
   [al_stretchx
   project_next
   project_abort_compil
@@ -116,7 +117,6 @@ findinfiledialog=103
   checkremake
   makecommand
   acompiler
-  ${COMPILER}
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -860,20 +860,17 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=3
  ACTIONSMO
  CONFIDEUFO
- MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=3
  TACTIONSMO
  TCONFIDEUFO
- TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1040,7 +1037,7 @@ gridsizex=1
 gridsizey=1
 autoindent=1
 blockindent=1
-linenumberson=1
+linenumberson=0
 rightmarginon=0
 rightmarginchars=80
 scrollheight=0
@@ -1212,7 +1209,7 @@ path=27
  /home/fred/ideu/src/ideU.pas
 line=27
  2129
- 1114
+ 1162
  589
  3957
  660
@@ -1548,14 +1545,14 @@ bookmarks2=0
 bookmarks3=0
 sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
 relpaths=4
  sourceform.pas
- actionsmodule.pas
  ideU.pas
  main.pas
+ actionsmodule.pas
 ismoduletexts=4
  0
  0
@@ -1580,7 +1577,7 @@ moduleoptions=8
  0
  0
 visiblemodules=8
- -1
+ 0
  -1
  -1
  0
@@ -1589,7 +1586,7 @@ visiblemodules=8
  0
  -1
 nomenumodules=8
- 0
+ -1
  0
  0
  -1
@@ -1615,8 +1612,8 @@ windowlayout=650
  ny=0
  ncx=0
  ncy=0
- x=20
- y=94
+ x=19
+ y=73
  cx=1233
  cy=659
  rcx=0
@@ -1925,9 +1922,9 @@ windowlayout=650
  ncx=0
  ncy=0
  x=0
- y=524
+ y=522
  cx=1223
- cy=114
+ cy=116
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2027,7 +2024,7 @@ windowlayout=650
  x=0
  y=0
  cx=1223
- cy=52
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2038,12 +2035,12 @@ windowlayout=650
  mdistate=0
  nx=0
  ny=-2
- ncx=1223
- ncy=27
+ ncx=1208
+ ncy=0
  x=0
  y=-2
  cx=1223
- cy=27
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2053,8 +2050,9 @@ windowlayout=650
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/actionsmodule.pas
@@ -2074,7 +2072,6 @@ windowlayout=650
   /home/fred/ideu/src/aboutform.pas
   /home/fred/ideu/src/confmsegui.pas
   /home/fred/ideu/src/conffpgui.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2106,7 +2103,7 @@ windowlayout=650
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2133,7 +2130,7 @@ windowlayout=650
  ncx=0
  ncy=0
  x=0
- y=55
+ y=53
  cx=1223
  cy=466
  rcx=0
@@ -2141,7 +2138,7 @@ windowlayout=650
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2156,7 +2153,7 @@ windowlayout=650
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
