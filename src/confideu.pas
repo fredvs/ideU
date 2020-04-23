@@ -236,15 +236,18 @@ ratio : double;
 rect1: rectty;
 begin
 
+ratio := fontsize.value / 12;
+
+
 mainfo.font.height := fontsize.value;
 mainfo.font.name := ansistring(fontname.value);
-
-ratio := fontsize.value / 12;
+mainfo.frame.grip_size := round(12*ratio);
 
 // commandor
 
 debuggerfo.font.height := fontsize.value;
 debuggerfo.font.name := ansistring(fontname.value);
+debuggerfo.frame.grip_size := round(12*ratio);
 
 debuggerfo.assistive.height := round(ratio*26);
 debuggerfo.assistive.width := debuggerfo.assistive.height;
@@ -264,7 +267,6 @@ debuggerfo.line_number.left := debuggerfo.find_in_directory.right + 2;
 debuggerfo.terminal_run.height := debuggerfo.assistive.height;
 debuggerfo.terminal_run.width := debuggerfo.assistive.height;
 debuggerfo.terminal_run.left := debuggerfo.line_number.right + 2;
-
 
 debuggerfo.panelmain.height := debuggerfo.assistive.height + 2;
 debuggerfo.panelmain.width := debuggerfo.terminal_run.right + 4;
@@ -421,6 +423,7 @@ debuggerfo.height := debuggerfo.statdisp.bottom + 2 ;
 
 if Assigned(objectinspectorfo) then
     begin
+     objectinspectorfo.frame.grip_size := round(12*ratio);
      objectinspectorfo.font.height := fontsize.value;
      objectinspectorfo.fontempty.height := fontsize.value;
      objectinspectorfo.grid.font.name := ansistring(fontname.value);
@@ -466,6 +469,7 @@ end;
 
 mainfo.mainmenu1.menu.font.height := fontsize.value;
 sourcefo.files_tab.font.height := fontsize.value;
+sourcefo.frame.grip_size := round(12*ratio);
 sourcefo.files_tab.tab_fontactivetab.height := fontsize.value;
 sourcefo.files_tab.tab_fonttab.height := fontsize.value;
 sourcefo.files_tab.tab_size := round(24 * ratio);
@@ -502,6 +506,7 @@ sourcefo.tpopupmenu1.menu.fontactive.name := ansistring(fontname.value);
 
 if Assigned(projecttreefo) then
     begin
+     projecttreefo.frame.grip_size := round(12*ratio);
      projecttreefo.projectedit.font.height := fontsize.value;
      projecttreefo.edit.font.height := fontsize.value;
      projecttreefo.projectedit.font.name := ansistring(fontname.value);
@@ -658,10 +663,12 @@ fontsize.left := 10;
 width := group_sourceeditor.left + group_assistive.width + round(40 * ratio);
 
 messagefo.Messages.font.height := fontsize.value;
+messagefo.frame.grip_size := round(12*ratio);
 
 messagefo.Messages.font.name := ansistring(fontname.value);
 
 debuggerfo.statdisp.font.name := ansistring(fontname.value);
+
 //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
 //group_file_change.width := group_sourceeditor.width;
 

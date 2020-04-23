@@ -54,7 +54,7 @@ procedure endpanelplacement();
 implementation
 
 uses
- panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,
+ panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,confideu,
  msearrayutils,mseformatstr;
 
 var
@@ -172,9 +172,13 @@ end;
 { tpanelfo }
 
 constructor tpanelfo.create(aowner: tcomponent);
+var
+ratio : double;
 begin
  inherited create(aowner);
+ ratio := confideufo.fontsize.value / 12;
  panellist.add(self);
+ frame.grip_size := round(12*ratio);
 end;
 
 destructor tpanelfo.destroy;
