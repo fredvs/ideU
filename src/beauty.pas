@@ -37,7 +37,7 @@ type
     tbptop: tbooleaneditradio;
     createbackup: tbooleanedit;
     filetoclean: tstringdisp;
-    tbutton2: TButton;
+    butdobeauty: TButton;
     procedure dobeauti(const Sender: TObject);
     procedure doclose(const Sender: TObject);
     procedure ondestroyev(const Sender: TObject);

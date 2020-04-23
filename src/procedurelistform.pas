@@ -223,6 +223,8 @@ writeln('>> InitializeForm');
 {$ifdef gTrace}
 writeln('<< InitializeForm');
 {$endif}
+
+
 end;
 
 procedure tprocedurelistfo.FillGrid;

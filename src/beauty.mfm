@@ -1,20 +1,18 @@
 object beautyfo: tbeautyfo
   visible = False
-  bounds_x = 730
-  bounds_y = 50
+  bounds_x = 1045
+  bounds_y = 125
   bounds_cx = 200
-  bounds_cy = 124
+  bounds_cy = 164
   bounds_cxmin = 200
   bounds_cymin = 124
-  bounds_cxmax = 200
-  bounds_cymax = 124
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     200
-    124
+    164
   )
   optionswindow = [wo_message]
   font.name = 'stf_default'
@@ -78,21 +76,19 @@ object beautyfo: tbeautyfo
   ondestroy = ondestroyev
   moduleclassname = 'tmseform'
   object group_file_changed: tgroupbox
-    frame.caption = 'Code Beautifier Engine to use'
-    frame.captiontextflags = [tf_bottom]
+    frame.caption = 'Beautifier to use'
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      9
+      8
       0
       0
     )
-    bounds_x = 3
+    bounds_x = 4
     bounds_y = 24
     bounds_cx = 194
-    bounds_cy = 52
+    bounds_cy = 74
     object tbjedi: tbooleaneditradio
       frame.caption = 'Jedi Code Formatter'
       frame.localprops = []
@@ -104,8 +100,8 @@ object beautyfo: tbeautyfo
         2
       )
       taborder = 1
-      bounds_x = 10
-      bounds_y = 33
+      bounds_x = 6
+      bounds_y = 54
       bounds_cx = 136
       bounds_cy = 17
     end
@@ -119,8 +115,8 @@ object beautyfo: tbeautyfo
         165
         2
       )
-      bounds_x = 10
-      bounds_y = 16
+      bounds_x = 6
+      bounds_y = 24
       bounds_cx = 178
       bounds_cy = 17
       value = True
@@ -138,8 +134,8 @@ object beautyfo: tbeautyfo
     )
     taborder = 1
     hint = 'Create a .bak file of the original file'
-    bounds_x = 32
-    bounds_y = 77
+    bounds_x = 31
+    bounds_y = 100
     bounds_cx = 136
     bounds_cy = 17
     value = True
@@ -149,25 +145,25 @@ object beautyfo: tbeautyfo
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     taborder = 2
-    bounds_x = 0
+    bounds_x = 4
     bounds_y = 0
-    bounds_cx = 198
+    bounds_cx = 194
     bounds_cy = 19
     anchors = [an_left, an_top, an_right]
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 15
   end
-  object tbutton2: tbutton
+  object butdobeauty: tbutton
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 3
-    bounds_x = 36
-    bounds_y = 96
-    bounds_cx = 134
-    bounds_cy = 24
+    bounds_x = 4
+    bounds_y = 123
+    bounds_cx = 194
+    bounds_cy = 30
     state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = 'Do beautifier'
     onexecute = dobeauti

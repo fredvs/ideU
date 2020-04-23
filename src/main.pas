@@ -4467,10 +4467,34 @@ begin
  end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
+var
+ratio : double;
 begin
+ratio := confideufo.fontsize.value / 12 ;
+
   if not beautyformcreated then
     doBeauty;
-  beautyfo.filetoclean.Value := debuggerfo.file_history.Value;
+ 
+  beautyfo.font.height := confideufo.fontsize.value;
+  beautyfo.font.name := ansistring(confideufo.fontname.value);
+
+beautyfo.group_file_changed.top := beautyfo.filetoclean.bottom + 4;
+beautyfo.tbjedi.top := beautyfo.tbptop.bottom + 4;
+beautyfo.group_file_changed.height := beautyfo.tbjedi.bottom + 8;
+ 
+beautyfo.group_file_changed.width := round(ratio * 194);
+beautyfo.filetoclean.width := beautyfo.group_file_changed.width;
+
+beautyfo.createbackup.top := beautyfo.group_file_changed.bottom + 4;
+
+beautyfo.butdobeauty.top := beautyfo.createbackup.bottom + 4;
+beautyfo.butdobeauty.width := beautyfo.group_file_changed.width;
+
+beautyfo.width := beautyfo.group_file_changed.width + 8;
+
+beautyfo.height := beautyfo.butdobeauty.bottom + 4;
+
+beautyfo.filetoclean.Value := debuggerfo.file_history.Value;
 
   if ismodal then
     beautyfo.Show(True)

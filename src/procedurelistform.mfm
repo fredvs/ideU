@@ -1,22 +1,20 @@
 object procedurelistfo: tprocedurelistfo
-  bounds_x = 717
-  bounds_y = 69
-  bounds_cx = 376
-  bounds_cy = 192
+  bounds_x = 485
+  bounds_y = 181
+  bounds_cx = 472
+  bounds_cy = 354
   bounds_cxmax = 577
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    376
-    192
+    472
+    354
   )
   optionswindow = [wo_message]
   font.name = 'stf_default'
   font.localprops = []
-  fontempty.name = 'stf_empty'
-  fontempty.localprops = []
   options = [fo_freeonclose, fo_cancelonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Procedure List'
   icon.options = [bmo_masked, bmo_graymask]
@@ -82,20 +80,19 @@ object procedurelistfo: tprocedurelistfo
   moduleclassname = 'tmseform'
   object edtSearch: tedit
     frame.caption = 'Search'
-    frame.captionpos = cp_left
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
     frame.outerframe = (
-      45
       0
+      18
       0
       0
     )
-    bounds_x = 5
-    bounds_y = 6
-    bounds_cx = 209
-    bounds_cy = 21
+    bounds_x = 3
+    bounds_y = 12
+    bounds_cx = 173
+    bounds_cy = 39
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselectonfirstclick, oe_focusrectonreadonly]
     ontextedited = FilterTextChanged
     onkeydown = FilterTextKeyDown
@@ -106,23 +103,25 @@ object procedurelistfo: tprocedurelistfo
     frame.localprops1 = []
     taborder = 2
     bounds_x = 2
-    bounds_y = 33
-    bounds_cx = 370
-    bounds_cy = 154
+    bounds_y = 52
+    bounds_cx = 466
+    bounds_cy = 294
     anchors = [an_left, an_top, an_right, an_bottom]
     onkeydown = ResultGridKeyDown
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     datacols.count = 4
-    datacols.coloractive = 6815851
+    datacols.coloractive = 16763788
     datacols.colorfocused = 14265343
     datacols.fontactivenum = 0
+    datacols.fontfocusednum = 0
     datacols.options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
     datacols.items = <    
       item
-        coloractive = 6815851
+        coloractive = 16763788
         colorfocused = 14265343
         width = 42
         fontactivenum = 0
+        fontfocusednum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
           ''
@@ -150,10 +149,11 @@ object procedurelistfo: tprocedurelistfo
         valuetrue = '1'
       end    
       item
-        coloractive = 6815851
+        coloractive = 16763788
         colorfocused = 14265343
-        width = 227
+        width = 228
         fontactivenum = 0
+        fontfocusednum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
           ''
@@ -181,10 +181,11 @@ object procedurelistfo: tprocedurelistfo
         valuetrue = '1'
       end    
       item
-        coloractive = 6815851
+        coloractive = 16763788
         colorfocused = 14265343
-        width = 78
+        width = 172
         fontactivenum = 0
+        fontfocusednum = 0
         options = [co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
           ''
@@ -212,10 +213,11 @@ object procedurelistfo: tprocedurelistfo
         valuetrue = '1'
       end    
       item
-        coloractive = 6815851
+        coloractive = 16763788
         colorfocused = 14265343
         width = 1
         fontactivenum = 0
+        fontfocusednum = 0
         options = [co_nofocus, co_invisible, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.data = (
           ''
@@ -261,22 +263,14 @@ object procedurelistfo: tprocedurelistfo
           end>
       end>
     rowcount = 20
-    rowfonts.count = 1
-    rowfonts.items = <    
-      item
-        color = -1610612730
-        name = 'stf_default'
-        localprops = [flp_color]
-      end>
     zebra_color = 16511743
     zebra_height = 1
-    datarowheight = 21
+    datarowheight = 22
     oncellevent = oncellev
     reffontheight = 15
   end
   object cbObjects: tdropdownlistedit
     frame.caption = 'Objects'
-    frame.captionpos = cp_left
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -285,16 +279,16 @@ object procedurelistfo: tprocedurelistfo
       item
       end>
     frame.outerframe = (
-      48
       0
+      18
       0
       0
     )
     taborder = 1
-    bounds_x = 220
-    bounds_y = 6
-    bounds_cx = 150
-    bounds_cy = 21
+    bounds_x = 306
+    bounds_y = 12
+    bounds_cx = 160
+    bounds_cy = 39
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item

@@ -377,8 +377,20 @@ end;
 { tactionsmo }
 
 procedure tactionsmo.procedurelistonexecute(const sender: TObject);
+ 
 begin
 if not plformcreated then doProcedureList;
+  
+
+procedurelistfo.font.height := confideufo.fontsize.value;
+procedurelistfo.font.name := ansistring(confideufo.fontname.value);
+
+procedurelistfo.edtSearch.width := (procedurelistfo.width div 2) - 40;
+procedurelistfo.cbObjects.width := procedurelistfo.edtSearch.width;
+procedurelistfo.cbObjects.left := procedurelistfo.edtSearch.right + 20;
+procedurelistfo.grdProcedures.top := procedurelistfo.cbObjects.bottom + 10;
+procedurelistfo.grdProcedures.height := procedurelistfo.height -
+procedurelistfo.cbObjects.bottom - 14;
 
   if mainfo.ismodal then
     procedurelistfo.Show(true) else
@@ -1032,7 +1044,7 @@ int1, int2, int3 : integer;
 begin
 nodebugset := false;
 if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(utf8decode(gettargetfile) +
+ mainfo.setstattext(gettargetfile +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1134,7 +1146,7 @@ for int2:= 0 to high(compilerused) do begin
 procedure tactionsmo.stepactonexecute(const sender: tobject);
 begin
 if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(utf8decode(gettargetfile) +
+ mainfo.setstattext(gettargetfile +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1149,7 +1161,7 @@ end;
 procedure tactionsmo.stepiactonexecute(const sender: TObject);
 begin
 if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(utf8decode(gettargetfile) +
+ mainfo.setstattext(gettargetfile +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1164,7 +1176,7 @@ end;
 procedure tactionsmo.nextactonexecute(const sender: tobject);
 begin
 if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(utf8decode(gettargetfile) +
+ mainfo.setstattext(gettargetfile +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1179,7 +1191,7 @@ end;
 procedure tactionsmo.nextiactonexecute(const sender: TObject);
 begin
 if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(utf8decode(gettargetfile) +
+ mainfo.setstattext(gettargetfile +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
