@@ -95,6 +95,8 @@ type
    procedure setsyntaxdef(const value: filenamety);
    procedure showsourcehint(const apos: gridcoordty; const values: stringarty);
    procedure updatelinedisp;
+   procedure onmouseev(const sender: twidget;
+               var ainfo: mouseeventinfoty);
   protected
    finitialeditpos: gridcoordty;
    finitialbookmarks: bookmarkarty;
@@ -236,6 +238,23 @@ end;
 
 { tsourcepage }
 
+procedure tsourcepage.onmouseev(const sender: twidget;
+               var ainfo: mouseeventinfoty);
+
+var
+txtvalue: msestring;
+begin
+if ainfo.eventkind = ek_buttonrelease then
+    if ainfo.shiftstate = [ss_double] then
+    begin
+       pastefromclipboard(txtvalue);
+       copytoclipboard(tedit(sender).text);
+       debuggerfo.statdisp.value:=  tedit(sender).text;
+       edit.paste;
+       copytoclipboard(txtvalue);
+    end;
+end;
+  
 constructor tsourcepage.create(aowner: tcomponent);
 begin
  factiverow:= -1;
@@ -557,12 +576,14 @@ begin
      frame.framewidth:= 1;
      frame.colorframe:= cl_dkgray;
      optionsedit:= optionsedit + [oe_readonly];
-     textflags:= [tf_wordbreak,tf_noselect];
+   //  textflags:= [tf_wordbreak,tf_noselect];
+     textflags:= [tf_wordbreak];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
      // fred
       color := $DEFAC8 ;
      text:= msestring(values[high(values)-int1]);
+     onmouseevent := @onmouseev;
     end;
    end;
    for int1:= high(values) downto 0 do begin
@@ -713,7 +734,7 @@ begin
        case key of
         key_space: begin
 // fred
-         debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';
+       //  debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';
          showsourceitems(edit.editpos);
 
         end

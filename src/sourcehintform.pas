@@ -20,7 +20,7 @@ unit sourcehintform;
 
 interface
 uses
- msegui,mseclasses,mseforms,mseedit,msegraphutils;
+ msegui,mseclasses,mseglob,mseguiglob,mseforms,mseedit,msegraphutils;
 
 type
  stringeditarty = array of tedit;
@@ -33,7 +33,7 @@ type
 
 implementation
 uses
- sourceform,sourcehintform_mfm;
+ sourceform,sourcehintform_mfm, commandorform;
  
 procedure tsourcehintfo.sourcehintfoonclose(const sender: TObject);
 begin

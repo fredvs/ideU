@@ -11,7 +11,7 @@ object debuggerfo: tdebuggerfo
   bounds_x = 93
   bounds_y = 73
   bounds_cx = 1154
-  bounds_cy = 99
+  bounds_cy = 57
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -20,7 +20,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1144
-    99
+    57
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -90,7 +90,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 49
     bounds_cx = 1144
-    bounds_cy = 52
+    bounds_cy = 10
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -107,7 +107,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 1144
-    bounds_cy = 97
+    bounds_cy = 55
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -8315,8 +8315,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 72
-    top = 64
+    left = 55
+    top = 14
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -8330,8 +8330,8 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 92
-    top = 50
+    left = 89
+    top = 18
   end
   object templateprojectdark: tfacecomp
     template.fade_pos.count = 2
@@ -8554,8 +8554,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 756
-    top = 34
+    left = 49
+    top = 12
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -8584,16 +8584,16 @@ object debuggerfo: tdebuggerfo
       2829079
     )
     template.fade_direction = gd_down
-    left = 639
-    top = 55
+    left = 68
+    top = 14
   end
   object imagebut: timagelist
     width = 64
     height = 64
     options = [bmo_masked, bmo_graymask]
     count = 2
-    left = 519
-    top = 50
+    left = 385
+    top = 18
     image = {
       00000000120000008000000080000000D4330000000000000000000000000000
       0000000000000000000000000000000000000000000000FF00000024DEDEDE01

@@ -1347,10 +1347,7 @@ begin
 end;
 
 procedure tmainfo.toggleobjectinspectoronexecute(const Sender: TObject);
-var
-ratio : double;
 begin
-
   if (flastform = objectinspectorfo) then
   begin
     if flastdesignform <> nil then
@@ -1358,7 +1355,6 @@ begin
   end
   else
   begin
-    ratio := confideufo.fontsize.value / 12;
     objectinspectorfo.activate(True);
     // objectinspectorfo.font.height := confideufo.fontsize.value;
     // objectinspectorfo.grid.datarowheight := round(ratio * 16);
@@ -1366,11 +1362,9 @@ begin
 end;
 
 procedure tmainfo.viewobjectinspectoronexecute(const Sender: TObject);
-var
-ratio : double;
+
 begin
-   ratio := confideufo.fontsize.value / 12;
-  objectinspectorfo.activate(True);
+   objectinspectorfo.activate(True);
 //  objectinspectorfo.font.height := confideufo.fontsize.value;
 //  objectinspectorfo.grid.datarowheight := round(ratio * 16);
 end;
@@ -4115,6 +4109,7 @@ end;
 procedure tmainfo.viewfindresults(const Sender: TObject);
 begin
   findinfilefo.activate;
+  
 end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
@@ -4127,7 +4122,7 @@ begin
      c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2018' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2020' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
     aboutfo.about_text.height := 15 * confideufo.fontsize.value;
