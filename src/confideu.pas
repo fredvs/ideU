@@ -341,18 +341,18 @@ debuggerfo.project_step_instruction.height := debuggerfo.assistive.height;
 debuggerfo.project_step_instruction.width := debuggerfo.assistive.height;
 debuggerfo.project_step_instruction.left := debuggerfo.project_next_instruction.right + 2;
 
-debuggerfo.project_reset.height := debuggerfo.assistive.height;
-debuggerfo.project_reset.width := debuggerfo.assistive.height;
-debuggerfo.project_reset.left := debuggerfo.project_step_instruction.right + 2;
-
 debuggerfo.project_interrupt.height := debuggerfo.assistive.height;
 debuggerfo.project_interrupt.width := debuggerfo.assistive.height;
-debuggerfo.project_interrupt.left := debuggerfo.project_reset.right + 2;
+debuggerfo.project_interrupt.left := debuggerfo.project_step_instruction.right + 2;
+
+debuggerfo.project_reset.height := debuggerfo.assistive.height;
+debuggerfo.project_reset.width := debuggerfo.assistive.height;
+debuggerfo.project_reset.left := debuggerfo.project_interrupt.right + 2;
 
 debuggerfo.panelproject.height := debuggerfo.panelmain.height;
 debuggerfo.panelproject.left := debuggerfo.panelmain.right + 2;
 
-debuggerfo.panelproject.width := debuggerfo.project_interrupt.right + 4;
+debuggerfo.panelproject.width := debuggerfo.project_reset.right + 4;
 
 //
 

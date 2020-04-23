@@ -2533,8 +2533,7 @@ begin
    [al_stretchx,al_stretchy] else debuggerfo.debug_on.face.image.alignment :=  
    [al_grayed,al_stretchx,al_stretchy];
    
-    
-            
+             
      if debuggerfo.project_start.Enabled then 
       debuggerfo.project_start.face.image.alignment :=  
    [al_stretchx,al_stretchy] else debuggerfo.project_start.face.image.alignment :=  
@@ -2576,7 +2575,7 @@ begin
    [al_grayed,al_stretchx,al_stretchy];
 
     finish.Enabled := not gdb.running and gdb.started and bo1;
-    debuggerfo.project_finish.enabled:= interrupt.Enabled;
+    debuggerfo.project_finish.enabled:= finish.Enabled;
     
       if debuggerfo.project_finish.Enabled then 
       debuggerfo.project_finish.face.image.alignment :=  
@@ -2603,6 +2602,14 @@ begin
   
     makeact.Enabled := not making;
     abortmakeact.Enabled := making;
+    
+       debuggerfo.project_make.enabled:=makeact.Enabled;
+  
+    if debuggerfo.project_make.Enabled then 
+      debuggerfo.project_make.face.image.alignment :=  
+   [al_stretchx,al_stretchy] else debuggerfo.project_make.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+    
     saveall.Enabled := sourcefo.modified or designer.modified or
       projectoptions.modified;
     actionsmo.toggleformunit.Enabled := (flastform <> nil) or (designer.modules.Count > 0);

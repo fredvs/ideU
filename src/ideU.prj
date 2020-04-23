@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=project_start
+ value=project_finish
  history=20
+  project_finish
   project_start
   project_run
   edited_run
@@ -116,7 +117,6 @@ findinfiledialog=103
   debuggerusedon
   compilerusedon
   mainfo.thetag
-  domake
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -1208,7 +1208,7 @@ line=27
  2129
  1167
  589
- 3963
+ 3970
  660
  119
  1100
@@ -1220,14 +1220,14 @@ line=27
  545
  474
  67
- 4237
+ 4244
  684
  97
  15
  771
  898
  2506
- 5275
+ 5282
  1882
  6130
  128
@@ -1508,7 +1508,7 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=edited_run
+finddtext=project_reset
 findhistory=20
  create
  procedure_list
@@ -1533,9 +1533,9 @@ findhistory=20
 findoptions=1
 editpos=4
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,0
- 0,-1073741823
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1589,7 +1589,7 @@ nomenumodules=7
  -1
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=3
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1605,8 +1605,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=3
- y=68
+ x=44
+ y=92
  cx=1233
  cy=659
  rcx=0
@@ -1623,8 +1623,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=455
+ y=329
  cx=497
  cy=314
  rcx=0
@@ -1736,7 +1736,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=5
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2043,10 +2043,12 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/ideu/src/confideu.pas
@@ -2063,8 +2065,6 @@ windowlayout=631
   /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
   /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2087,7 +2087,7 @@ windowlayout=631
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
