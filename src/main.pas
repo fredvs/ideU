@@ -40,7 +40,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.0.0';
+  versiontext = '2.1.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
