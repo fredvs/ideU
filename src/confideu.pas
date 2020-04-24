@@ -243,6 +243,11 @@ mainfo.font.height := fontsize.value;
 mainfo.font.name := ansistring(fontname.value);
 mainfo.frame.grip_size := round(12*ratio);
 
+// message
+
+messagefontheight := fontsize.value; 
+messagefontname := fontsize.name; 
+
 // commandor
 
 debuggerfo.font.height := fontsize.value;
