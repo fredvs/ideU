@@ -128,8 +128,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=485
- y=273
+ x=787
+ y=135
  cx=300
  cy=269
 replacedialog=25
@@ -1514,8 +1514,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=stf_hint
+finddtext=tsourcepage.onmouseev
 findhistory=20
+ tsourcepage.onmouseev
+ ontimer
+ timerhint
  stf_hint
  _hint
  hint
@@ -1523,7 +1526,6 @@ findhistory=20
  messagefontheight
  var
  showhint
- tsourcepage.onmouseev
  showsourcehint
  showsourceit
  timer
@@ -1534,33 +1536,41 @@ findhistory=20
  = 12 
  := 20
  with widget.info do begin
- uses
- font.hei
 findoptions=1
-editpos=5
- 0,0
- 0,-1073741823
+editpos=7
  0,-1073741823
  0,0
+ 0,9
+ 0,0
+ 0,-1073741823
+ 0,259
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=5
+ ${PROJECTDIR}/sourcepage.pas
+ /home/fred/mseide-msegui/lib/common/editwidgets/msetextedit.pas
+relpaths=7
  ideU.pas
  sourcepage.pas
  sourceform.pas
  main.pas
  actionsmodule.pas
-ismoduletexts=5
+ sourcepage.pas
+ mseide-msegui/lib/common/editwidgets/msetextedit.pas
+ismoduletexts=7
+ 0
+ 0
  0
  0
  0
@@ -1599,10 +1609,18 @@ nomenumodules=7
  -1
  0
 [sourcefo.files_tab]
+order=7
+ 0
+ 3
+ 4
+ 5
+ 6
+ 1
+ 2
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=631
+windowlayout=639
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1634,8 +1652,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=501
- y=384
+ x=581
+ y=486
  cx=497
  cy=314
  rcx=0
@@ -1654,7 +1672,7 @@ windowlayout=631
  ncy=0
  x=444
  y=431
- cx=418
+ cx=658
  cy=126
  rcx=0
  rcy=0
@@ -1664,7 +1682,7 @@ windowlayout=631
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1736,7 +1754,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=550
+ cy=534
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1747,7 +1765,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=17
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2028,7 +2046,7 @@ windowlayout=631
  x=0
  y=0
  cx=1268
- cy=51
+ cy=67
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2039,7 +2057,7 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1253
+ ncx=1268
  ncy=0
  x=0
  y=0
@@ -2054,7 +2072,7 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/sourcepage.pas
  history=20
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
@@ -2093,12 +2111,20 @@ windowlayout=631
  x=208
  y=0
  cx=1060
- cy=550
+ cy=534
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=7
+  0
+  3
+  4
+  5
+  6
+  1
+  2
  firsttab=0
- index=0
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2134,9 +2160,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=54
+ y=70
  cx=1268
- cy=550
+ cy=534
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

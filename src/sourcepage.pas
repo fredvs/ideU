@@ -254,7 +254,11 @@ if ainfo.eventkind = ek_buttonrelease then
        edit.deleteselection;
        edit.paste;
        copytoclipboard(txtvalue);
-    end;
+       edit.clearselection;
+       sourcefo.thetimer.ontimer := @ontimerhide;
+       sourcefo.thetimer.interval :=  500000 ;
+       sourcefo.thetimer.Enabled := true;
+   end;
 end;
   
 constructor tsourcepage.create(aowner: tcomponent);
