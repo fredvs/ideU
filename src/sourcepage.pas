@@ -249,7 +249,9 @@ if ainfo.eventkind = ek_buttonrelease then
     begin
        pastefromclipboard(txtvalue);
        copytoclipboard(tedit(sender).text);
-       debuggerfo.statdisp.value:=  tedit(sender).text;
+       //debuggerfo.statdisp.value:=  tedit(sender).text;
+       selectwordatcursor();
+       edit.deleteselection;
        edit.paste;
        copytoclipboard(txtvalue);
     end;

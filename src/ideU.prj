@@ -1511,8 +1511,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=showsourcehint
+finddtext=tsourcepage.onmouseev
 findhistory=20
+ tsourcepage.onmouseev
  showsourcehint
  showsourceit
  timer
@@ -1532,28 +1533,32 @@ findhistory=20
  boom
  create
  cre
- paste
 findoptions=1
-editpos=4
+editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 6,52
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/ideU.pas
+relpaths=5
  actionsmodule.pas
  sourcepage.pas
  ideU.pas
  sourceform.pas
-ismoduletexts=4
+ ideU.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -1592,7 +1597,7 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=4
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1614,7 +1619,7 @@ windowlayout=631
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1728,7 +1733,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=451
+ cy=543
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1918,9 +1923,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=609
+ cx=1268
+ cy=112
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2019,8 +2024,8 @@ windowlayout=631
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1268
+ cy=60
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2031,12 +2036,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=0
+ ncx=1268
+ ncy=8
  x=0
  y=0
- cx=1212
- cy=-2
+ cx=1268
+ cy=8
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2046,11 +2051,12 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/sourcepage.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/messageform.pas
   /home/fred/ideu/src/projecttreeform.pas
@@ -2063,7 +2069,6 @@ windowlayout=631
   /home/fred/ideu/src/msewidgets2.pas
   /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/procedurelistform.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
@@ -2084,13 +2089,13 @@ windowlayout=631
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1060
+ cy=543
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=4
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2126,9 +2131,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1212
- cy=451
+ y=63
+ cx=1268
+ cy=543
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
