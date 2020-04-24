@@ -21,7 +21,7 @@ interface
  {$endif}
 {$endif}
 uses
- classes,mclasses,msegui,mseguiglob,msetypes,msestrings,msegraphutils,
+ classes,mclasses,msegui,mseguiglob,msetypes,msestrings,msegraphutils, msefont,
  msegraphics,msesystypes,mseassistiveclient,mselist,
  mseevent,msescrollbar,msemenus,mserichstring,msedrawtext,mseglob,mseact,
  mseshapes,mseclasses,msebitmap,msetimer;
@@ -6111,6 +6111,7 @@ constructor tcustomhintwidget.create(const aowner: tcomponent;
                  var info: hintinfoty; const sender: tobject);
 var
  rect1,rect2: rectty;
+ hintfont: tfont;
 begin
  inherited create(aowner,atransientfor);
  foptionswidget:= defaultoptionshintwidget;
@@ -6124,9 +6125,16 @@ begin
  fframe.framei_right:= 1;
  fframe.framei_bottom:= 1;
  color:= cl_infobackground;
- rect2:= deflaterect(application.workarea(atransientfor),fframe.innerframe);
- rect1:= textrect(getcanvas,info.caption,rect2,[tf_wordbreak],
-                                            stockobjects.fonts[stf_hint]);
+ 
+  rect2:= deflaterect(application.workarea(atransientfor),fframe.innerframe);
+ 
+  hintfont := tfont.create;
+  hintfont.height := messagefontheight;
+  hintfont.name := messagefontname;
+ 
+ rect1:= textrect(getcanvas,info.caption,rect2,[tf_wordbreak],hintfont);
+                                            
+ hintfont.free;                                        
  addsize1(rect1.size,fframe.innerframedim);
 // inc(rect1.cx,fframe.innerframedim.cx);
 // inc(rect1.cy,fframe.innerframedim.cy);
@@ -6145,10 +6153,21 @@ begin
 end;
 
 procedure thintwidget.dopaintforeground(const canvas: tcanvas);
+var
+ hintfont: tfont;
+
 begin
  inherited;
- drawtext(canvas,fcaption,innerclientrect,[tf_wordbreak],
-                                      stockobjects.fonts[stf_hint]);
+  hintfont := tfont.create;
+  hintfont.height := messagefontheight;
+  hintfont.name := messagefontname;
+
+// drawtext(canvas,fcaption,innerclientrect,[tf_wordbreak],
+//                                      stockobjects.fonts[stf_hint]);
+
+  drawtext(canvas,fcaption,innerclientrect,[tf_wordbreak],hintfont);
+  hintfont.free;
+
 end;
 
 { tmessagewidget }

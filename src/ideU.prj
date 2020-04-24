@@ -29,9 +29,9 @@ findinfiledialog=103
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -95,8 +95,15 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=key_
+ value=tfont.create
  history=20
+  tfont.create
+  stf_hint
+  fontondataentered
+  fontalias
+  registerfontalias
+  stockobjects.fonts
+  hint
   key_
   filetoclean
   unit msewidget
@@ -110,13 +117,6 @@ findinfiledialog=103
   clipboardbufferty
   cbb_clipboard
   copytoclipboard
-  dispar
-  statdisp
-  cek_buttonrelease
-  event
-  mouse
-  mouseeventinfoty
-  by Martin Schreiber
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -128,8 +128,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=812
- y=143
+ x=485
+ y=273
  cx=300
  cy=269
 replacedialog=25
@@ -860,16 +860,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ MAINFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TMAINFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
@@ -1511,8 +1514,15 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=tsourcepage.onmouseev
+finddtext=stf_hint
 findhistory=20
+ stf_hint
+ _hint
+ hint
+ drawtextinfoty
+ messagefontheight
+ var
+ showhint
  tsourcepage.onmouseev
  showsourcehint
  showsourceit
@@ -1526,37 +1536,30 @@ findhistory=20
  with widget.info do begin
  uses
  font.hei
- default
- acanvas.font:= stockobject
- fred
- font
- boom
- create
- cre
 findoptions=1
 editpos=5
+ 0,0
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
- 0,-1073741823
- 6,52
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 sourcefiles=5
- ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
 relpaths=5
- actionsmodule.pas
+ ideU.pas
  sourcepage.pas
- ideU.pas
  sourceform.pas
- ideU.pas
+ main.pas
+ actionsmodule.pas
 ismoduletexts=5
  0
  0
@@ -1580,7 +1583,7 @@ moduleoptions=7
  0
  0
 visiblemodules=7
- 0
+ -1
  -1
  -1
  0
@@ -1588,7 +1591,7 @@ visiblemodules=7
  0
  -1
 nomenumodules=7
- -1
+ 0
  0
  0
  -1
@@ -1597,7 +1600,7 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 firsttab=0
-index=4
+index=0
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1733,7 +1736,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=543
+ cy=550
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1744,7 +1747,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1923,9 +1926,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=609
+ y=607
  cx=1268
- cy=112
+ cy=114
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2025,7 +2028,7 @@ windowlayout=631
  x=0
  y=0
  cx=1268
- cy=60
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2036,12 +2039,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1268
- ncy=8
+ ncx=1253
+ ncy=0
  x=0
  y=0
  cx=1268
- cy=8
+ cy=-1
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2053,6 +2056,7 @@ windowlayout=631
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourceform.pas
@@ -2072,7 +2076,6 @@ windowlayout=631
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
-  /home/fred/atest/classes.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2090,12 +2093,12 @@ windowlayout=631
  x=208
  y=0
  cx=1060
- cy=543
+ cy=550
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=4
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2104,7 +2107,7 @@ windowlayout=631
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2131,15 +2134,15 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=63
+ y=54
  cx=1268
- cy=543
+ cy=550
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2154,7 +2157,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
