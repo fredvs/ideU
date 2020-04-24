@@ -4494,7 +4494,7 @@ beautyfo.width := beautyfo.group_file_changed.width + 8;
 
 beautyfo.height := beautyfo.butdobeauty.bottom + 4;
 
-beautyfo.filetoclean.Value := debuggerfo.file_history.Value;
+beautyfo.filetoclean.Value := extractfilename(debuggerfo.file_history.Value);
 
   if ismodal then
     beautyfo.Show(True)
