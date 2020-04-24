@@ -13,7 +13,6 @@ program ideU;
 uses // cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads, {$endif} {$endif}
-
   aboutform,
   confmsegui,
   confideu,

@@ -485,7 +485,7 @@ compnamedialog=5
 bmpfiledialog=62
  [filedialog]
  filenames=1
-  /home/fred/Pictures/imagesideu/linenum.png
+  /home/fred/Pictures/imagesideu/ideu64.png
  filecolwidth=216
  x=243
  y=291
@@ -493,6 +493,11 @@ bmpfiledialog=62
  cy=327
  lastdir=/home/fred/Pictures/imagesideu/
  filehistory=50
+  /home/fred/Pictures/imagesideu/ideu64.png
+  /home/fred/Pictures/imagesideu/config3_64.png
+  /home/fred/Pictures/imagesideu/fileopen.png
+  /home/fred/Pictures/imagesideu/bugnew64.png
+  /home/fred/ideu/src/ideu64.png
   /home/fred/Pictures/imagesideu/linenum.png
   /home/fred/Pictures/imagesideu/bulbin.png
   /home/fred/Pictures/imagesideu/terminal.png
@@ -500,7 +505,6 @@ bmpfiledialog=62
   /home/fred/Pictures/imagesideu/save641proj.png
   /home/fred/Pictures/imagesideu/switch.png
   /home/fred/Pictures/imagesideu/searchinfile.png
-  /home/fred/Pictures/imagesideu/fileopen.png
   /home/fred/Pictures/imagesideu/projectopen.png
   /home/fred/Pictures/imagesideu/save641.png
   /home/fred/Pictures/imagesideu/searchdir.png
@@ -519,7 +523,6 @@ bmpfiledialog=62
   /home/fred/Pictures/imagesideu/compile64_4.png
   /home/fred/Pictures/imagesideu/compile32_6.png
   /home/fred/Pictures/imagesideu/compile64_5.png
-  /home/fred/Pictures/imagesideu/config3_64.png
   /home/fred/Pictures/imagesideu/config2_64.png
   /home/fred/Pictures/imagesideu/config_64.png
   /home/fred/Pictures/imagesideu/playround2.png
@@ -538,11 +541,8 @@ bmpfiledialog=62
   /home/fred/Pictures/imagesideu/trianglevert64.png
   /home/fred/Pictures/imagesideu/compile64pink.png
   /home/fred/Pictures/imagesideu/playnew64.png
-  /home/fred/Pictures/imagesideu/bugnew64.png
   /home/fred/ideu/src/images/eyeslight.png
   /home/fred/ideu/src/images/eyestrans.png
-  /home/fred/ideu/src/images/eyes2.png
-  /home/fred/ideu/src/images/eyes.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 codetemplateselect=21
@@ -1225,13 +1225,13 @@ line=27
  97
  15
  771
- 898
+ 899
  2506
  5301
  1882
  6135
- 128
- 121
+ 127
+ 120
 address=27
  4785304
  4626800
@@ -2020,11 +2020,11 @@ windowlayout=612
  nx=0
  ny=0
  ncx=1197
- ncy=27
+ ncy=17
  x=0
  y=0
  cx=1212
- cy=25
+ cy=15
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2037,14 +2037,18 @@ windowlayout=612
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/msewidgets2.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/sourcepage.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/projecttreeform.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
+  /home/fred/ideu/src/mseshortcutdialog_mfm.pas
+  /home/fred/ideu/src/panelform.pas
+  /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/messageform.pas
+  /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msewidgets.pas
-  ${PROJECTDIR}/msewidgets2.pas
+  /home/fred/ideu/src/msewidgets2.pas
   /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/procedurelistform.pas
-  /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourcehintform.pas
@@ -2052,10 +2056,6 @@ windowlayout=612
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
   /home/fred/atest/lmimestreams.pp
-  /home/fred/atest/lmimewrapper.pp
-  /home/fred/ideu/src/mseshortcutdialog.pas
-  /home/fred/ideu/src/aboutform.pas
-  /home/fred/ideu/src/confmsegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]

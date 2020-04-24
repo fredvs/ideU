@@ -522,6 +522,7 @@ begin
   tabdeleted := True;
   if awidget = fgdbpage then
     fgdbpage := nil;
+    
 end;
 
 {
