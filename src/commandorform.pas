@@ -164,8 +164,6 @@ debuggerfo.properties_list.tag := 1 ;
 
  debuggerfo.properties_list.face.image.alignment :=  
    [al_stretchx,al_stretchy];
-
-debuggerfo.properties_list.imagenr := 21 ;
  end
  else
  begin
@@ -336,12 +334,17 @@ if system.pos('Default',debuggerused[int3]) > 0 then
  if str3 <> '' then
  begin
  debug_on.tag := 1 ;
- debug_on.imagenr := 40 ;
+ //debug_on.imagenr := 40 ;
+  debuggerfo.debug_on.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+
  end else
  begin
  debug_on.tag := 0 ;
- debug_on.imagenr := 41
- end;
+ //debug_on.imagenr := 41
+   debuggerfo.debug_on.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+end;
 
   end;
 

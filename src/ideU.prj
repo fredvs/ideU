@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=filetoclean
+ value=key_
  history=20
+  key_
   filetoclean
   unit msewidget
   showmessage
@@ -116,7 +117,6 @@ findinfiledialog=103
   mouse
   mouseeventinfoty
   by Martin Schreiber
-  2.0.0
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -1511,8 +1511,14 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=globfontheight
+finddtext=showsourcehint
 findhistory=20
+ showsourcehint
+ showsourceit
+ timer
+ if (shiftstate1 = [ss_shift,ss_ctrl]) then
+ key_
+ shiftstate1
  globfontheight
  = 12 
  := 20
@@ -1527,18 +1533,12 @@ findhistory=20
  create
  cre
  paste
- onmouseev
- schreiber
- procedure_list
- find_in_edit
- setstattext
- statdisp
 findoptions=1
 editpos=4
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1592,7 +1592,7 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -1608,8 +1608,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=31
- y=147
+ x=18
+ y=68
  cx=1224
  cy=621
  rcx=0
@@ -2046,8 +2046,10 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=20
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/messageform.pas
@@ -2056,7 +2058,6 @@ windowlayout=631
   /home/fred/ideu/src/mseshortcutdialog_mfm.pas
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/ideu/src/msewidgets2.pas
@@ -2067,7 +2068,6 @@ windowlayout=631
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
-  /home/fred/atest/lmimestreams.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2090,7 +2090,7 @@ windowlayout=631
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

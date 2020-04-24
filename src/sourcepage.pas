@@ -706,7 +706,7 @@ begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
-
+       sourcefo.thetimer.Enabled := false;
        case key of
         key_up,key_down: begin
 
@@ -733,10 +733,7 @@ begin
       else begin
        case key of
         key_space: begin
-// fred
-       //  debuggerfo.statdisp.value:= 'showsourceitems(edit.editpos)';
-         showsourceitems(edit.editpos);
-
+        showsourceitems(edit.editpos);
         end
         else begin
          exclude(eventstate,es_processed);
@@ -916,7 +913,7 @@ begin
  sourcefo.thetimer.ontimer := @ontimerhide;
  sourcefo.thetimer.interval :=  30000000 ;
  sourcefo.thetimer.Enabled := true;
- sleep(200);
+ //sleep(200);
   activate(false,true); //get focus back
   end;
 end else sourcefo.tabdeleted := false;
@@ -1681,35 +1678,47 @@ begin
  fbackupcreated:= true;
 end;
 
-procedure tsourcepage.editonkeydown(const sender: twidget; var info: keyeventinfoty);
-  begin
-
-// fred
-if debuggerfo.properties_list.tag = 1 then
+procedure tsourcepage.editonkeydown(Const sender: twidget; Var info: keyeventinfoty);
+var 
+  shiftstate1: shiftstatesty;
 begin
-sourcefo.thetimer.Enabled := false;
-sourcefo.thetimer.ontimer := @ontimerhint;
-sourcefo.hidesourcehint;
-sourcefo.thetimer.interval :=  1000000 ;
- sourcefo.thetimer.Enabled := true;
- end
- else
- begin
- if sourcefo.thetimer.Enabled = true then
- begin
- sourcefo.thetimer.Enabled := false;
- sourcefo.hidesourcehint;
- end;
-  end;
+  with info,tsyntaxedit(sender).editor,projectoptions do
+    begin
+      if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and
+         (key = key_tab) then
+        begin
+          chars := charstring(msechar(' '),
+                   (curindex Div e.tabstops + 1) * e.tabstops - curindex);
 
- with info,tsyntaxedit(sender).editor,projectoptions do begin
-  if e.spacetabs and (e.tabstops > 0) and (shiftstate = []) and
-                                             (key = key_tab) then begin
-   chars:= charstring(msechar(' '),
-                        (curindex div e.tabstops + 1) * e.tabstops - curindex);
-
-  end;
- end;
+        end;
+    end;
+    
+  with info do
+    begin
+      shiftstate1 := shiftstate * shiftstatesmask;
+    end;
+  if ((shiftstate1 = [ss_shift,ss_ctrl]) or
+     (shiftstate1 = [ss_ctrl])) then sourcefo.thetimer.Enabled := false
+     else
+    begin
+      if debuggerfo.properties_list.tag = 1 then
+        begin
+          sourcefo.thetimer.Enabled := false;
+          sourcefo.thetimer.ontimer := @ontimerhint;
+          sourcefo.hidesourcehint;
+          sourcefo.thetimer.interval :=  2000000 ;
+          sourcefo.thetimer.Enabled := true;
+        end
+      else
+        begin
+          if sourcefo.thetimer.Enabled = true then
+            begin
+              sourcefo.thetimer.Enabled := false;
+              sourcefo.hidesourcehint;
+            end;
+        end;
+    end; 
+    
 end;
 
 function tsourcepage.source: trichstringdatalist;

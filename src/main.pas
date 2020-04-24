@@ -737,14 +737,17 @@ begin
   if gINI.ReadBool('Completion', 'proplist', False) = False then
   begin
     debuggerfo.properties_list.tag     := 0;
-    debuggerfo.properties_list.imagenr := 20;
+   debuggerfo.properties_list.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
     sourcefo.thetimer.Enabled          := False;
     sourcefo.hidesourcehint;
   end
   else
   begin
-    debuggerfo.properties_list.tag     := 1;
-    debuggerfo.properties_list.imagenr := 21;
+     debuggerfo.properties_list.tag     := 1;
+     debuggerfo.properties_list.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+
   end;
 
   conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring(libpath)));
@@ -964,7 +967,9 @@ begin
   begin
     vaparam := True;
     confideufo.tbassistive.Value := True;
-    debuggerfo.assistive.imagenr := 19;
+    debuggerfo.assistive.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+
   end;
 
   if confideufo.tbassistive.Value = True then
@@ -3443,12 +3448,15 @@ begin
     if projectoptions.d.showconsole = True then
     begin
       debuggerfo.terminal_run.tag     := 1;
-      debuggerfo.terminal_run.imagenr := 43;
-    end
+      debuggerfo.terminal_run.face.image.alignment :=  
+   [al_stretchx,al_stretchy];
+        end
     else
     begin
       debuggerfo.terminal_run.tag     := 0;
-      debuggerfo.terminal_run.imagenr := 42;
+        debuggerfo.terminal_run.face.image.alignment :=  
+   [al_grayed,al_stretchx,al_stretchy];
+
     end;
     application.ProcessMessages;
 
@@ -4590,6 +4598,7 @@ begin
     debuggerfo.project_start.face.template := debuggerfo.templproject;
     debuggerfo.project_next.face.template := debuggerfo.templproject;
 
+    {
     debuggerfo.project_step.imagenrdisabled         := -2;
     debuggerfo.project_save.imagenrdisabled         := -2;
     debuggerfo.project_make.imagenrdisabled         := -2;
@@ -4602,6 +4611,7 @@ begin
     debuggerfo.project_step_instruction.imagenrdisabled := -2;
 
     debuggerfo.edited_abort.imagenrdisabled := -2;
+    }
 
     debuggerfo.panelmain.face.template         := debuggerfo.templatemain;
     debuggerfo.assistive.face.template         := debuggerfo.templatemain;
@@ -4771,7 +4781,7 @@ begin
     debuggerfo.tstringdisp2.face.template         := debuggerfo.templatemaindark;
 
     debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
-
+ {
     debuggerfo.project_next.imagenrdisabled         := 37;
     debuggerfo.project_step.imagenrdisabled         := 39;
     debuggerfo.project_save.imagenrdisabled         := -2;
@@ -4784,7 +4794,7 @@ begin
     debuggerfo.project_interrupt.imagenrdisabled    := 44;
 
     debuggerfo.edited_abort.imagenrdisabled := 35;
-
+}
     debuggerfo.paneledited.face.template      := debuggerfo.templfiledark;
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;
