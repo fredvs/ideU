@@ -29,9 +29,9 @@ findinfiledialog=103
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=tfont.create
+ value=confirmdel
  history=20
+  confirmdel
   tfont.create
   stf_hint
   fontondataentered
@@ -113,7 +114,6 @@ findinfiledialog=103
   boom
   stf_message
   internalshowmessage
-  confirmdel
   clipboardbufferty
   cbb_clipboard
   copytoclipboard
@@ -860,21 +860,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=2
  ACTIONSMO
- MAINFO
  SOURCEFO
- SOURCEPAGE
-moduletypes=4
+moduletypes=2
  TACTIONSMO
- TMAINFO
  TSOURCEFO
- TSOURCEPAGE
-modulefiles=4
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=11
  4095
@@ -1214,7 +1208,7 @@ line=27
  2129
  1179
  589
- 3964
+ 3966
  660
  119
  1100
@@ -1226,14 +1220,14 @@ line=27
  545
  486
  67
- 4239
+ 4241
  684
  97
  15
  771
  899
  2506
- 5301
+ 5303
  1882
  6135
  127
@@ -1537,90 +1531,62 @@ findhistory=20
  := 20
  with widget.info do begin
 findoptions=1
-editpos=7
+editpos=3
  0,-1073741823
  0,0
- 0,9
- 0,0
- 0,-1073741823
- 0,259
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-sourcefiles=7
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourcepage.pas
+sourcefiles=3
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourcepage.pas
- /home/fred/mseide-msegui/lib/common/editwidgets/msetextedit.pas
-relpaths=7
- ideU.pas
- sourcepage.pas
+ ${PROJECTDIR}/ideU.pas
+relpaths=3
  sourceform.pas
- main.pas
  actionsmodule.pas
- sourcepage.pas
- mseide-msegui/lib/common/editwidgets/msetextedit.pas
-ismoduletexts=7
+ ideU.pas
+ismoduletexts=3
  0
  0
  0
- 0
- 0
- 0
- 0
-modules=7
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/guitemplates.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
- /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=7
+moduleoptions=6
  0
  0
  0
  0
  0
  0
- 0
-visiblemodules=7
- -1
- -1
- -1
- 0
- 0
- 0
- -1
-nomenumodules=7
- 0
- 0
+visiblemodules=6
  0
  -1
  -1
+ 0
+ 0
+ 0
+nomenumodules=6
  -1
  0
+ 0
+ -1
+ -1
+ -1
 [sourcefo.files_tab]
-order=7
- 0
- 3
- 4
- 5
- 6
+order=3
  1
  2
+ 0
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=639
+windowlayout=616
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1635,12 +1601,12 @@ windowlayout=639
  ncx=0
  ncy=0
  x=18
- y=68
+ y=29
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1653,7 +1619,7 @@ windowlayout=639
  ncx=0
  ncy=0
  x=581
- y=486
+ y=483
  cx=497
  cy=314
  rcx=0
@@ -1682,7 +1648,7 @@ windowlayout=639
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1754,7 +1720,7 @@ windowlayout=639
  x=0
  y=0
  cx=205
- cy=534
+ cy=444
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1765,7 +1731,7 @@ windowlayout=639
  sortdescend1=0
  sorted=0
  col=0
- row=17
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1944,9 +1910,9 @@ windowlayout=639
  ncx=0
  ncy=0
  x=0
- y=607
- cx=1268
- cy=114
+ y=502
+ cx=1212
+ cy=98
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2045,8 +2011,8 @@ windowlayout=639
  ncy=0
  x=0
  y=0
- cx=1268
- cy=67
+ cx=1212
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2057,12 +2023,12 @@ windowlayout=639
  mdistate=0
  nx=0
  ny=0
- ncx=1268
+ ncx=1212
  ncy=0
  x=0
  y=0
- cx=1268
- cy=-1
+ cx=1212
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2072,13 +2038,14 @@ windowlayout=639
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourcepage.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
  history=20
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/messageform.pas
   /home/fred/ideu/src/projecttreeform.pas
@@ -2093,7 +2060,6 @@ windowlayout=639
   /home/fred/ideu/src/procedurelistform.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
-  /home/fred/atest/classesh.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2110,21 +2076,17 @@ windowlayout=639
  ncy=0
  x=208
  y=0
- cx=1060
- cy=534
+ cx=1004
+ cy=444
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=7
-  0
-  3
-  4
-  5
-  6
+ order=3
   1
   2
+  0
  firsttab=0
- index=3
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2133,7 +2095,7 @@ windowlayout=639
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_guitemplatesmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2160,15 +2122,15 @@ windowlayout=639
  ncx=0
  ncy=0
  x=0
- y=70
- cx=1268
- cy=534
+ y=55
+ cx=1212
+ cy=444
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_guitemplatesmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2183,7 +2145,7 @@ windowlayout=639
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_guitemplatesmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2241,25 +2203,6 @@ windowlayout=639
  wsize=0
  active=0
  visible=0
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=441
- y=217
- cx=652
- cy=301
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1

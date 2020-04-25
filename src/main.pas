@@ -864,6 +864,8 @@ begin
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
+  
+  confideufo.confirmdel.Value := noconfirmdelete;
 
   confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
 
