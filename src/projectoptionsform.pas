@@ -1354,7 +1354,7 @@ str4 := '';
 
 str := uppercase(projectoptions.o.texp.targetfile);
 
- if (system.pos('${EXEEXT}',uppercase(str)) = 0) and
+ if (system.pos('${EXEEXT}',str) = 0) and
   (system.pos('.',str) = 0) then 
   begin
 

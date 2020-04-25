@@ -509,7 +509,7 @@ for int3:= 0 to high(compilerused) do begin
   
  str := uppercase(targetfile);
 
- if (system.pos('${EXEEXT}',uppercase(str)) = 0) and
+ if (system.pos('${EXEEXT}',str) = 0) and
   (system.pos('.',str) = 0) then 
   begin 
   
