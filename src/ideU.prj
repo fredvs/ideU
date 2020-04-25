@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=cbObjects
+ value=${EXEEXT}
  history=20
+  ${EXEEXT}
   cbObjects
   confirmdel
   tfont.create
@@ -116,7 +117,6 @@ findinfiledialog=103
   stf_message
   internalshowmessage
   clipboardbufferty
-  cbb_clipboard
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -862,15 +862,15 @@ settingsautoload=0
 settingsautosave=0
 modulenames=3
  ACTIONSMO
- PROCEDURELISTFO
+ PROJECTOPTIONSFO
  SOURCEFO
 moduletypes=3
  TACTIONSMO
- TPROCEDURELISTFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
 modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/procedurelistform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1214,11 +1214,11 @@ line=27
  3966
  660
  119
- 1100
- 2273
- 2189
- 2466
- 3263
+ 1107
+ 2282
+ 2198
+ 2475
+ 3272
  119
  545
  486
@@ -1227,9 +1227,9 @@ line=27
  684
  97
  15
- 771
+ 778
  899
- 2506
+ 2515
  5303
  1882
  6135
@@ -1535,10 +1535,10 @@ findhistory=20
  with widget.info do begin
 findoptions=1
 editpos=4
- 0,4
  0,-1073741823
  0,-1073741823
- 0,-1073741823
+ 0,0
+ 0,3
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1547,12 +1547,12 @@ sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/procedurelistform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
 relpaths=4
  sourceform.pas
  actionsmodule.pas
  ideU.pas
- procedurelistform.pas
+ projectoptionsform.pas
 ismoduletexts=4
  0
  0
@@ -1565,7 +1565,7 @@ modules=7
  /home/fred/ideu/src/guitemplates.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
- /home/fred/ideu/src/procedurelistform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
 moduleoptions=7
  0
  0
@@ -1592,9 +1592,9 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 order=4
+ 2
  3
  0
- 2
  1
 firsttab=0
 index=1
@@ -1619,7 +1619,7 @@ windowlayout=636
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1733,7 +1733,7 @@ windowlayout=636
  x=0
  y=0
  cx=205
- cy=446
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1744,7 +1744,7 @@ windowlayout=636
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1827,10 +1827,10 @@ windowlayout=636
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=392
- width0=174
+ propcolwidthref=669
+ width0=297
  sortdescend0=0
- width1=212
+ width1=366
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1923,9 +1923,9 @@ windowlayout=636
  ncx=0
  ncy=0
  x=0
- y=502
- cx=1212
- cy=98
+ y=603
+ cx=1268
+ cy=118
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2024,8 +2024,8 @@ windowlayout=636
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1268
+ cy=72
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2036,12 +2036,12 @@ windowlayout=636
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=0
+ ncx=1268
+ ncy=20
  x=0
  y=0
- cx=1212
- cy=-2
+ cx=1268
+ cy=20
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2051,8 +2051,10 @@ windowlayout=636
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/procedurelistform.pas
   /home/fred/ideu/src/msegui.pas
@@ -2071,8 +2073,6 @@ windowlayout=636
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
   /home/fred/atest/classesh.inc
-  /home/fred/atest/classes.pp
-  /home/fred/atest/lmimestreams.pp
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2089,15 +2089,15 @@ windowlayout=636
  ncy=0
  x=208
  y=0
- cx=1004
- cy=446
+ cx=1060
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=4
+  2
   3
   0
-  2
   1
  firsttab=0
  index=1
@@ -2136,9 +2136,9 @@ windowlayout=636
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1212
- cy=446
+ y=75
+ cx=1268
+ cy=525
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2217,20 +2217,20 @@ windowlayout=636
  wsize=0
  active=0
  visible=0
- [_mse_procedurelistfo_mse_]
+ [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=485
- y=181
- cx=482
- cy=354
+ x=324
+ y=132
+ cx=734
+ cy=572
  rcx=0
  rcy=0
  wsize=0

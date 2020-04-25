@@ -224,7 +224,7 @@ function buildmakecommandline(const atag: integer): string;
 
 var
  int1,int2, int3, int4, acompiler: integer;
- str1,str2,str3, str4, winestr, extrastr : msestring;
+ str, str1,str2,str3, str4, winestr, extrastr : msestring;
 // wstr1: filenamety;
 begin
 extrastr := ' ';
@@ -506,7 +506,13 @@ for int3:= 0 to high(compilerused) do begin
    end;
 
   end;
+  
+ str := uppercase(targetfile);
 
+ if (system.pos('${EXEEXT}',uppercase(str)) = 0) and
+  (system.pos('.',str) = 0) then 
+  begin 
+  
  if  int4 = 1 then str4:= '.java' else
  if  int4 = 2 then str4:= '.pyw' else
  begin
@@ -524,6 +530,7 @@ for int3:= 0 to high(compilerused) do begin
     (trim(exeused[int3]) = '')  then
     str4:= '' else str4:= trim(exeused[int3]) ;
    end;
+  end;
   end;
   end;
 

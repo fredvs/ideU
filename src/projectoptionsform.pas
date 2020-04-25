@@ -1344,11 +1344,19 @@ end;
 
 function gettargetfile: filenamety;
 var
-str4 : msestring;
+str, str4 : msestring;
 int1, int2, int3 : integer;
 begin
 
 int1 := 1;
+
+str4 := '';
+
+str := uppercase(projectoptions.o.texp.targetfile);
+
+ if (system.pos('${EXEEXT}',uppercase(str)) = 0) and
+  (system.pos('.',str) = 0) then 
+  begin
 
  with projectoptions,o,texp do begin
 
@@ -1382,6 +1390,7 @@ for int3:= 0 to high(exeused) do begin
     (trim(exeused[int3]) = '')  then
     str4:= '' else str4:= trim(exeused[int3]) ;
   end;
+end;
 end;
 end;
 end;

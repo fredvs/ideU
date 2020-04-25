@@ -3366,7 +3366,7 @@ object projectoptionsfo: tprojectoptionsfo
         object targetfile: tfilenameedit
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
-          frame.caption = '&Targetfile (without extension)'
+          frame.caption = '&Targetfile name'
           frame.captiontextflags = [tf_bottom]
           frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -3386,6 +3386,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 1
+          hint = 'If you dont use extension, the selected from tab-exe extension will be used.'
           onshowhint = hintexpandedmacros
           bounds_x = 296
           bounds_y = 11
