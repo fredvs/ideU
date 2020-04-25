@@ -860,17 +860,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  ACTIONSMO
- PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=3
+moduletypes=2
  TACTIONSMO
- TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=3
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1534,72 +1531,58 @@ findhistory=20
  := 20
  with widget.info do begin
 findoptions=1
-editpos=4
+editpos=3
  0,-1073741823
  0,-1073741823
  0,0
- 0,3
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/projectoptionsform.pas
-relpaths=4
+relpaths=3
  sourceform.pas
  actionsmodule.pas
  ideU.pas
- projectoptionsform.pas
-ismoduletexts=4
+ismoduletexts=3
  0
  0
  0
- 0
-modules=7
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/guitemplates.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=7
+moduleoptions=6
  0
  0
  0
  0
  0
  0
- 0
-visiblemodules=7
+visiblemodules=6
  0
  -1
  -1
  0
  0
  0
- -1
-nomenumodules=7
- -1
- 0
- 0
- -1
- -1
+nomenumodules=6
  -1
  0
+ 0
+ -1
+ -1
+ -1
 [sourcefo.files_tab]
-order=4
- 2
- 3
- 0
- 1
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=636
+windowlayout=612
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2051,7 +2034,7 @@ windowlayout=636
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
@@ -2094,13 +2077,8 @@ windowlayout=636
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=4
-  2
-  3
-  0
-  1
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2217,25 +2195,6 @@ windowlayout=636
  wsize=0
  active=0
  visible=0
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=324
- y=132
- cx=734
- cy=572
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1
