@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=confirmdel
+ value=cbObjects
  history=20
+  cbObjects
   confirmdel
   tfont.create
   stf_hint
@@ -116,7 +117,6 @@ findinfiledialog=103
   internalshowmessage
   clipboardbufferty
   cbb_clipboard
-  copytoclipboard
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -245,7 +245,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=5
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=664
  width0=47
@@ -860,14 +860,17 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  ACTIONSMO
+ PROCEDURELISTFO
  SOURCEFO
-moduletypes=2
+moduletypes=3
  TACTIONSMO
+ TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=2
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=11
@@ -1531,62 +1534,72 @@ findhistory=20
  := 20
  with widget.info do begin
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
  0,0
  0,-1073741823
+ 0,850
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=3
+ ${PROJECTDIR}/procedurelistform.pas
+relpaths=4
  sourceform.pas
  actionsmodule.pas
  ideU.pas
-ismoduletexts=3
+ procedurelistform.pas
+ismoduletexts=4
  0
  0
  0
-modules=6
+ 0
+modules=7
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/guitemplates.mfm
  /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
-moduleoptions=6
+ /home/fred/ideu/src/procedurelistform.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
  0
- -1
- -1
- 0
- 0
- 0
-nomenumodules=6
- -1
- 0
+visiblemodules=7
  0
  -1
  -1
+ 0
+ 0
+ 0
  -1
+nomenumodules=7
+ -1
+ 0
+ 0
+ -1
+ -1
+ -1
+ 0
 [sourcefo.files_tab]
-order=3
+order=4
  1
+ 3
  2
  0
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=616
+windowlayout=666
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1694,7 +1707,7 @@ windowlayout=616
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_procedurelistfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2038,28 +2051,58 @@ windowlayout=616
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/sourcepage.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/confideu.pas
+ value=/home/fred/ideu/src/procedurelistform.pas
+ history=50
+  /home/fred/ideu/src/msegui.pas
+  /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/messageform.pas
   /home/fred/ideu/src/projecttreeform.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/ideu/src/mseshortcutdialog_mfm.pas
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/ideu/src/msewidgets2.pas
-  /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/procedurelistform.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/freepascal-ootb/rtl/objpas/classes/classesh.inc
+  /home/fred/atest/classesh.inc
+  /home/fred/atest/classes.pp
+  /home/fred/atest/lmimestreams.pp
+  /home/fred/atest/lmimewrapper.pp
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/ideu/src/confmsegui.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msefpimgcmn.pp
+  /home/fred/mseide-msegui/lib/common/msefpimage/msetargacmn.pp
+  /home/fred/ideu/src/findinfileform.pas
+  /home/fred/msefpc/freepascal-ootb/compiler/version.pas
+  /home/fred/msefpc/freepascal-ootb/compiler/msgtxt.inc
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/ideu/src/msegrids.pas
+  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
+  /home/fred/ideu_ok/src/ideusettings.pas
+  /home/fred/ideu_ok/src/confideu.pas
+  /home/fred/ideu/src/finddialogform.pas
+  /home/fred/ideu/src/findinfilepage.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/targetconsole.pas
+  /home/fred/ideu/src/replacedialogform.pas
+  /home/fred/ideu/src/msefiledialogres.pas
+  /home/fred/ideu/src/confdebugger.pas
+  /home/fred/ideu/src/confcompiler.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2081,12 +2124,13 @@ windowlayout=616
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=3
+ order=4
   1
+  3
   2
   0
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2203,6 +2247,25 @@ windowlayout=616
  wsize=0
  active=0
  visible=0
+ [_mse_procedurelistfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=485
+ y=181
+ cx=482
+ cy=354
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1
