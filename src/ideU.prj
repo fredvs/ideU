@@ -1535,10 +1535,10 @@ findhistory=20
  with widget.info do begin
 findoptions=1
 editpos=4
- 0,-1073741823
  0,0
  0,-1073741823
- 0,850
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1592,14 +1592,14 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 order=4
- 1
  3
- 2
  0
+ 2
+ 1
 firsttab=0
 index=1
 [layout]
-windowlayout=666
+windowlayout=636
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1707,7 +1707,7 @@ windowlayout=666
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_procedurelistfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2051,8 +2051,9 @@ windowlayout=666
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/procedurelistform.pas
- history=50
+ value=/home/fred/ideu/src/sourceform.pas
+ history=20
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/msegui.pas
   /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/messageform.pas
@@ -2061,7 +2062,6 @@ windowlayout=666
   /home/fred/ideu/src/mseshortcutdialog_mfm.pas
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/ideu/src/msewidgets2.pas
@@ -2073,36 +2073,6 @@ windowlayout=666
   /home/fred/atest/classesh.inc
   /home/fred/atest/classes.pp
   /home/fred/atest/lmimestreams.pp
-  /home/fred/atest/lmimewrapper.pp
-  /home/fred/ideu/src/aboutform.pas
-  /home/fred/ideu/src/confmsegui.pas
-  /home/fred/ideu/src/conffpgui.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/bufstream.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/base64.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlwrite.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmltextreader.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlreader.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/xmlread.pp
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/zipper.pp
-  /home/fred/mseide-msegui/lib/common/msefpimage/msepngcomn.pp
-  /home/fred/mseide-msegui/lib/common/msefpimage/msefpimgcmn.pp
-  /home/fred/mseide-msegui/lib/common/msefpimage/msetargacmn.pp
-  /home/fred/ideu/src/findinfileform.pas
-  /home/fred/msefpc/freepascal-ootb/compiler/version.pas
-  /home/fred/msefpc/freepascal-ootb/compiler/msgtxt.inc
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/msegrids.pas
-  /home/fred/mseide-msegui/lib/common/widgets/msegrids.pas
-  /home/fred/ideu_ok/src/ideusettings.pas
-  /home/fred/ideu_ok/src/confideu.pas
-  /home/fred/ideu/src/finddialogform.pas
-  /home/fred/ideu/src/findinfilepage.pas
-  /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/ideu/src/targetconsole.pas
-  /home/fred/ideu/src/replacedialogform.pas
-  /home/fred/ideu/src/msefiledialogres.pas
-  /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/confcompiler.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2125,10 +2095,10 @@ windowlayout=666
  rcy=0
  [sourcefo.files_tab]
  order=4
-  1
   3
-  2
   0
+  2
+  1
  firsttab=0
  index=1
  [confideufo.fontname]
@@ -2250,7 +2220,7 @@ windowlayout=666
  [_mse_procedurelistfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

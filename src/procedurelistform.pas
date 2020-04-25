@@ -79,7 +79,6 @@ type
                    var ainfo: keyeventinfoty);
    procedure JumpToSelectedLine;
    procedure oncellev(const sender: TObject; var info: celleventinfoty);
-   procedure onchan(const sender: TObject);
    procedure onchangeev(const sender: TObject);
  private
     FFilename: mseString;
@@ -837,15 +836,10 @@ begin
           end;
  end;
 
-procedure tprocedurelistfo.onchan(const sender: TObject);
-begin
-end;
-
 procedure tprocedurelistfo.onchangeev(const sender: TObject);
 begin
 FillGrid;
 end;
-
 
 { TSimpleEngine }
 
