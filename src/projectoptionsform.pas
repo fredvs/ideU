@@ -1081,8 +1081,7 @@ type
     procedure onsource(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
 
-
-   procedure oncreatedexe(const sender: TObject);
+   procedure oncellev(const sender: TObject; var info: celleventinfoty);
   private
    procedure activegroupchanged;
  end;
@@ -1116,6 +1115,7 @@ var
  windowlayoutfile: filenamety;
  windowlayouthistory: filenamearty;
  codetemplates: tcodetemplates;
+ isloaded : boolean = false;
 
 implementation
 uses
@@ -3447,10 +3447,20 @@ begin
 
 end;
 
-procedure tprojectoptionsfo.oncreatedexe(const sender: TObject);
+procedure tprojectoptionsfo.oncellev(const sender: TObject;
+               var info: celleventinfoty);
+var
+int1 : integer ;              
 begin
+ if (info.eventkind = cek_buttonrelease) then
+ begin
+  for int1:= 0 to fo.exeextgrid.rowhigh do 
+   tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := false;        
+  //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
+end;
 
 end;
+
 
 { tprojectoptions }
 
