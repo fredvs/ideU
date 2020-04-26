@@ -1966,7 +1966,7 @@ begin
     with widget.info do begin
      font:= stockobjects.fonts[stf_message];
      font.height := messagefontheight;
-     font.name := messagefontname;
+     font.name := ansistring(messagefontname);
      dest:= rect1;
      text.text:= atext;
     end;
@@ -6130,7 +6130,7 @@ begin
  
   hintfont := tfont.create;
   hintfont.height := messagefontheight;
-  hintfont.name := messagefontname;
+  hintfont.name := ansistring(messagefontname);
  
  rect1:= textrect(getcanvas,info.caption,rect2,[tf_wordbreak],hintfont);
                                             
@@ -6160,7 +6160,7 @@ begin
  inherited;
   hintfont := tfont.create;
   hintfont.height := messagefontheight;
-  hintfont.name := messagefontname;
+  hintfont.name := ansistring(messagefontname);
 
 // drawtext(canvas,fcaption,innerclientrect,[tf_wordbreak],
 //                                      stockobjects.fonts[stf_hint]);

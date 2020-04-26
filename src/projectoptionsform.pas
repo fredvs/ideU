@@ -1081,7 +1081,10 @@ type
     procedure onsource(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
 
-   procedure oncellev(const sender: TObject; var info: celleventinfoty);
+   procedure oncellevext(const sender: TObject; var info: celleventinfoty);
+   procedure oncellevcomp(const sender: TObject; var info: celleventinfoty);
+   procedure oncellevdeb(const sender: TObject; var info: celleventinfoty);
+    
   private
    procedure activegroupchanged;
  end;
@@ -3456,7 +3459,7 @@ begin
 
 end;
 
-procedure tprojectoptionsfo.oncellev(const sender: TObject;
+procedure tprojectoptionsfo.oncellevext(const sender: TObject;
                var info: celleventinfoty);
 var
 int1 : integer ;              
@@ -3465,6 +3468,32 @@ begin
  begin
   for int1:= 0 to fo.exeextgrid.rowhigh do 
    tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := false;        
+  //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
+end;
+end;
+
+procedure tprojectoptionsfo.oncellevcomp(const sender: TObject;
+               var info: celleventinfoty);
+var
+int1 : integer ;              
+begin
+ if (info.eventkind = cek_buttonrelease) then
+ begin
+  for int1:= 0 to fo.compilerusedgrid.rowhigh do 
+   tbooleanedit(compilerusedgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := false;        
+  //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
+end;
+end;
+
+procedure tprojectoptionsfo.oncellevdeb(const sender: TObject;
+               var info: celleventinfoty);
+var
+int1 : integer ;              
+begin
+ if (info.eventkind = cek_buttonrelease) then
+ begin
+  for int1:= 0 to fo.debuggerusedgrid.rowhigh do 
+   tbooleanedit(debuggerusedgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := false;        
   //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
 end;
 

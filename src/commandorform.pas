@@ -98,13 +98,7 @@ uses
  plugmanager, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);
-var
-asender : TObject;
 begin
-asender := sender;
-;
-
-
 // fred
 //basedock.bounds_y:= statdisp.bottom + 1;
 // basedock.bounds_y:= 0;

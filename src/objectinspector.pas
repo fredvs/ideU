@@ -675,7 +675,6 @@ procedure tobjectinspectorfo.gridrowsdatachanged(const sender: tcustomgrid;
   const acell: gridcoordty; const count: integer);
 var
  int1: integer;
- ratio : double;
 begin
 
  props.itemlist.beginupdate;
@@ -693,10 +692,7 @@ begin
   props.itemlist.endupdate;
   values.itemlist.endupdate;
  end;
-   ratio := confideufo.fontsize.value / 12;
- //  font.height := confideufo.fontsize.value;
- //  grid.datarowheight := round(ratio * 16);
-
+ 
 end;
 
 procedure tobjectinspectorfo.valuesenterexe(const sender: TObject);
