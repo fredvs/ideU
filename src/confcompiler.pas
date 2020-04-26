@@ -79,6 +79,7 @@ uses
    but_ok: tbutton;
    tlabel5: tlabel;
    procedure closeapp(const sender: TObject);
+   procedure oncreatedev(const sender: TObject);
  end;
 var
  confcompilerfo: tconfcompilerfo;
@@ -88,6 +89,44 @@ uses
 procedure tconfcompilerfo.closeapp(const sender: TObject);
 begin
 close;
+end;
+
+procedure tconfcompilerfo.oncreatedev(const sender: TObject);
+begin
+{$ifdef windows}
+twinep1.enabled := false;
+twinep2.enabled := false;
+twinep3.enabled := false;
+twinep4.enabled := false;
+twinep5.enabled := false;
+twinep6.enabled := false;
+twinep7.enabled := false;
+twinep8.enabled := false;
+
+twinec1.enabled := false;
+twinec2.enabled := false;
+twinec3.enabled := false;
+twinec4.enabled := false;
+twinec5.enabled := false;
+twinec6.enabled := false;
+twinec7.enabled := false;
+twinec8.enabled := false;
+
+twinej1.enabled := false;
+twinej2.enabled := false;
+twinej3.enabled := false;
+twinej4.enabled := false;
+
+twinepy1.enabled := false;
+twinepy2.enabled := false;
+twinepy3.enabled := false;
+twinepy4.enabled := false;
+
+twineo1.enabled := false;
+twineo2.enabled := false;
+twineo3.enabled := false;
+twineo4.enabled := false;
+{$endif}
 end;
 
 end.
