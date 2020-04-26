@@ -1366,10 +1366,22 @@ for int2:= 0 to high(compilerused) do begin
    end;
    end;
    
+  str4 := '${EXEEXT}'; 
+  expandprmacros1(str4);
+   
   str := (projectoptions.o.texp.targetfile);
    int5 := system.pos('${EXEEXT}',uppercase(str));
    if int5 > 0 then 
-   str := system.copy(str,0,int5);
+   str := system.copy(str,0,int5-1);
+   
+  if int5 = 0 then
+  int5 := system.pos(uppercase(str4),uppercase(str));
+   if int5 > 0 then 
+   str := system.copy(str,0,int5-1);    
+   
+  // writeln(projectoptions.o.texp.targetfile);
+  
+  str4 := '';
  
   if (int1 = 2) then str4 := '.java' else
   if (int1 = 4) then str4 := '.pyw' else

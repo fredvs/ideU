@@ -507,11 +507,20 @@ for int3:= 0 to high(compilerused) do begin
 
   end;
    
+  int5 := 0;  
+   str4 := '${EXEEXT}'; 
+   expandprmacros1(str4);
+   
   int5 := system.pos('${EXEEXT}',uppercase(targetfile));
    if int5 > 0 then 
-   targetfile := system.copy(targetfile,0,int5);
-  
-  
+   targetfile := system.copy(targetfile,0,int5-1);
+   
+   
+   if int5 = 0 then
+  int5 := system.pos(uppercase(str4),uppercase(targetfile));
+   if int5 > 0 then 
+   targetfile := system.copy(targetfile,0,int5-1);  
+   
  if  int4 = 1 then str4:= '.java' else
  if  int4 = 2 then str4:= '.pyw' else
  begin
@@ -534,6 +543,7 @@ for int3:= 0 to high(compilerused) do begin
   end;
 
   str1:= str3;
+  
   if (targetfile <> '') and (targpref <> '') then begin
 
  if  acompiler <> 3 then
