@@ -29,9 +29,9 @@ findinfiledialog=103
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -95,8 +95,9 @@ findinfiledialog=103
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=widgetgrid
+ value=${EXEEXT}
  history=20
+  ${EXEEXT}
   widgetgrid
   grid.datacols
   datacol
@@ -105,7 +106,6 @@ findinfiledialog=103
   datacols[
   tdatacol
   exemakeon
-  ${EXEEXT}
   cbObjects
   confirmdel
   tfont.create
@@ -245,7 +245,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=5
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=664
  width0=47
@@ -923,8 +923,8 @@ debuggerusedon=6
  0
  256
 exeusedon=14
- 3840
- 63
+ 3903
+ 0
  192
  0
  0
@@ -1214,11 +1214,11 @@ line=27
  3966
  660
  119
- 1107
- 2282
- 2198
- 2475
- 3272
+ 1108
+ 2285
+ 2201
+ 2478
+ 3275
  119
  545
  486
@@ -1227,9 +1227,9 @@ line=27
  684
  97
  15
- 778
+ 779
  899
- 2515
+ 2518
  5303
  1882
  6135
@@ -1587,10 +1587,15 @@ nomenumodules=6
  -1
  -1
 [sourcefo.files_tab]
+order=4
+ 0
+ 3
+ 1
+ 2
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=612
+windowlayout=617
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2046,6 +2051,7 @@ windowlayout=612
  history=20
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sak_mse.pas
   /home/fred/mseide-msegui/
   /home/fred/eschecs_mse/
@@ -2063,9 +2069,8 @@ windowlayout=612
   /home/fred/mseide-msegui-fred/
   /home/fred/msegui/
   /home/fred/svnfpc32/fixes_3_2/
-  /home/fred/fpctrunk/
  [debuggerfo.project_options]
- value=5
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2085,8 +2090,13 @@ windowlayout=612
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  3
+  1
+  2
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

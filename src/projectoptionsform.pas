@@ -1345,18 +1345,12 @@ end;
 function gettargetfile: filenamety;
 var
 str, str4 : msestring;
-int1, int2, int3 : integer;
+int1, int2, int3, int5 : integer;
 begin
 
 int1 := 1;
 
 str4 := '';
-
-str := uppercase(projectoptions.o.texp.targetfile);
-
- if (system.pos('${EXEEXT}',str) = 0) and
-  (system.pos('.',str) = 0) then 
-  begin
 
  with projectoptions,o,texp do begin
 
@@ -1371,7 +1365,12 @@ for int2:= 0 to high(compilerused) do begin
    end;
    end;
    end;
-
+   
+  str := (projectoptions.o.texp.targetfile);
+   int5 := system.pos('${EXEEXT}',uppercase(str));
+   if int5 > 0 then 
+   str := system.copy(str,0,int5);
+ 
   if (int1 = 2) then str4 := '.java' else
   if (int1 = 4) then str4 := '.pyw' else
   begin
@@ -1384,7 +1383,8 @@ for int3:= 0 to high(exeused) do begin
    (trim(exeused[int3]) = '${EXEEXT}') then
     begin
     str4 := '${EXEEXT}';
-    expandprmacros1(str4) end else
+    expandprmacros1(str4);
+    end else
 
    if (trim(exeused[int3]) = 'No Extension') or
     (trim(exeused[int3]) = '')  then
@@ -1393,14 +1393,15 @@ for int3:= 0 to high(exeused) do begin
 end;
 end;
 end;
-end;
+
 
  with projectoptions,d.texp do begin
   if trim(debugtarget) <> '' then begin
    result:= objpath(debugtarget);
   end
   else begin
-   result:= objpath(o.texp.targetfile+str4);
+   //o.texp.targetfile
+   result:= objpath(str+str4);
   end;
  end;
 end;

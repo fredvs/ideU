@@ -223,8 +223,8 @@ function buildmakecommandline(const atag: integer): string;
  end;
 
 var
- int1,int2, int3, int4, acompiler: integer;
- str, str1,str2,str3, str4, winestr, extrastr : msestring;
+ int1,int2, int3, int4, int5, acompiler: integer;
+ str1,str2,str3, str4, winestr, extrastr : msestring;
 // wstr1: filenamety;
 begin
 extrastr := ' ';
@@ -506,12 +506,11 @@ for int3:= 0 to high(compilerused) do begin
    end;
 
   end;
+   
+  int5 := system.pos('${EXEEXT}',uppercase(targetfile));
+   if int5 > 0 then 
+   targetfile := system.copy(targetfile,0,int5);
   
- str := uppercase(targetfile);
-
- if (system.pos('${EXEEXT}',str) = 0) and
-  (system.pos('.',str) = 0) then 
-  begin 
   
  if  int4 = 1 then str4:= '.java' else
  if  int4 = 2 then str4:= '.pyw' else
@@ -524,13 +523,13 @@ for int3:= 0 to high(compilerused) do begin
      then
     begin
     str4 := '${EXEEXT}';
-    expandprmacros1(str4) end else
+    expandprmacros1(str4);
+    end else
 
    if (trim(exeused[int3]) = 'No Extension') or
     (trim(exeused[int3]) = '')  then
     str4:= '' else str4:= trim(exeused[int3]) ;
    end;
-  end;
   end;
   end;
 
