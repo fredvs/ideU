@@ -94,6 +94,7 @@ end;
 procedure tconfcompilerfo.oncreatedev(const sender: TObject);
 begin
 {$ifdef windows}
+
 twinep1.enabled := false;
 twinep2.enabled := false;
 twinep3.enabled := false;

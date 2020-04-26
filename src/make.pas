@@ -247,7 +247,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 1') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep1.value = true then
+     if  (confcompilerfo.twinep1.value = true) and (confcompilerfo.twinep1.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value));
     end else
@@ -256,7 +256,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 2') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep2.value = true then
+     if   (confcompilerfo.twinep2.value = true) and (confcompilerfo.twinep2.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value));
     end else
@@ -265,7 +265,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 3') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep3.value = true then
+     if   (confcompilerfo.twinep3.value = true) and (confcompilerfo.twinep3.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value));
     end else
@@ -274,7 +274,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 4') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep4.value = true then
+     if (confcompilerfo.twinep4.value = true) and (confcompilerfo.twinep4.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value));
     end  else
@@ -283,7 +283,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 5') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep5.value = true then
+     if   (confcompilerfo.twinep5.value = true) and (confcompilerfo.twinep5.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler5.value));
     end  else
@@ -292,7 +292,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 6') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep6.value = true then
+     if   (confcompilerfo.twinep6.value = true) and (confcompilerfo.twinep6.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler6.value));
     end  else
@@ -301,7 +301,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 7') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep7.value = true then
+     if   (confcompilerfo.twinep7.value = true) and (confcompilerfo.twinep7.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler7.value));
     end  else
@@ -310,7 +310,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Pascal 8') then
     begin
     acompiler := 1;
-     if  confcompilerfo.twinep8.value = true then
+     if   (confcompilerfo.twinep8.value = true) and (confcompilerfo.twinep8.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler8.value));
     end  else
@@ -319,7 +319,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 1') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec1.value = true then
+     if (confcompilerfo.twinec1.value = true) and (confcompilerfo.twinec1.enabled = true)  then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler.value));
     end else
@@ -328,7 +328,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 2') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec2.value = true then
+     if (confcompilerfo.twinec2.value = true) and (confcompilerfo.twinec2.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler2.value));
     end else
@@ -337,7 +337,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 3') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec2.value = true then
+     if  (confcompilerfo.twinec3.value = true) and (confcompilerfo.twinec3.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler3.value));
     end else
@@ -346,7 +346,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 4') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec4.value = true then
+     if  (confcompilerfo.twinec4.value = true) and (confcompilerfo.twinec4.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler4.value));
     end else
@@ -355,7 +355,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 5') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec5.value = true then
+     if (confcompilerfo.twinec5.value = true) and (confcompilerfo.twinec5.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler5.value));
     end else
@@ -364,7 +364,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 6') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec6.value = true then
+     if (confcompilerfo.twinec6.value = true) and (confcompilerfo.twinec6.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler6.value));
     end else
@@ -373,7 +373,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 7') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec7.value = true then
+     if  (confcompilerfo.twinec7.value = true) and (confcompilerfo.twinec7.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler7.value));
     end else
@@ -382,7 +382,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'C 8') then
     begin
     acompiler := 3;
-     if  confcompilerfo.twinec8.value = true then
+     if (confcompilerfo.twinec8.value = true) and (confcompilerfo.twinec8.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler8.value));
     end else
@@ -392,7 +392,7 @@ for int1:= 0 to high(compilerused) do begin
      begin
      acompiler := 2;
      inttypecomp := 1;
-     if  confcompilerfo.twinej1.value = true then
+     if  (confcompilerfo.twinej1.value = true) and (confcompilerfo.twinej1.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler.value));
     end else
@@ -402,8 +402,8 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 2;
     inttypecomp := 1;
-     if  confcompilerfo.twinej2.value = true then
-     strwine := 'wine ';
+   if  (confcompilerfo.twinej2.value = true) and (confcompilerfo.twinej2.enabled = true) then
+       strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler2.value));
     end else
 
@@ -412,8 +412,8 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 2;
     inttypecomp := 1;
-     if  confcompilerfo.twinej3.value = true then
-     strwine := 'wine ';
+  if  (confcompilerfo.twinej3.value = true) and (confcompilerfo.twinej3.enabled = true) then
+      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler3.value));
     end else
 
@@ -422,7 +422,7 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 2;
     inttypecomp := 1;
-     if  confcompilerfo.twinej4.value = true then
+    if  (confcompilerfo.twinej4.value = true) and (confcompilerfo.twinej4.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler4.value));
     end else
@@ -432,8 +432,8 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 2;
     inttypecomp := 2;
-     if  confcompilerfo.twinepy1.value = true then
-     strwine := 'wine ';
+    if  (confcompilerfo.twinepy1.value = true) and (confcompilerfo.twinepy1.enabled = true) then
+      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler.value));
     end else
 
@@ -442,8 +442,8 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 4;
     inttypecomp := 2;
-     if  confcompilerfo.twinepy2.value = true then
-     strwine := 'wine ';
+    if  (confcompilerfo.twinepy2.value = true) and (confcompilerfo.twinepy2.enabled = true) then
+      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler2.value));
     end else
 
@@ -452,7 +452,7 @@ for int1:= 0 to high(compilerused) do begin
    begin
    acompiler := 4;
    inttypecomp := 2;
-     if  confcompilerfo.twinepy3.value = true then
+     if  (confcompilerfo.twinepy3.value = true) and (confcompilerfo.twinepy3.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler3.value));
     end else
@@ -462,7 +462,7 @@ for int1:= 0 to high(compilerused) do begin
     begin
     acompiler := 4;
     inttypecomp := 2;
-     if  confcompilerfo.twinepy4.value = true then
+    if  (confcompilerfo.twinepy4.value = true) and (confcompilerfo.twinepy4.enabled = true) then
      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler4.value));
     end else
@@ -471,8 +471,8 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Other 1') then
     begin
     acompiler := 5;
-     if  confcompilerfo.twineo1.value = true then
-     strwine := 'wine ';
+      if  (confcompilerfo.twineo1.value = true) and (confcompilerfo.twineo1.enabled = true) then
+        strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler.value));
     end else
 
@@ -480,8 +480,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Other 2') then
     begin
     acompiler := 5;
-     if  confcompilerfo.twineo2.value = true then
-     strwine := 'wine ';
+    if  (confcompilerfo.twineo2.value = true) and (confcompilerfo.twineo2.enabled = true) then       strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler2.value));
     end else
 
@@ -489,8 +488,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Other 3') then
     begin
     acompiler := 5;
-     if  confcompilerfo.twineo3.value = true then
-     strwine := 'wine ';
+     if  (confcompilerfo.twineo3.value = true) and (confcompilerfo.twineo3.enabled = true) then      strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler3.value));
     end else
 
@@ -498,8 +496,7 @@ for int1:= 0 to high(compilerused) do begin
     (trim(compilerused[int1]) = 'Other 4') then
     begin
     acompiler := 5;
-     if  confcompilerfo.twineo4.value = true then
-     strwine := 'wine ';
+      if  (confcompilerfo.twineo4.value = true) and (confcompilerfo.twineo4.enabled = true) then     strwine := 'wine ';
     strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler4.value));
     end;
 
