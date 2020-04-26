@@ -52,9 +52,16 @@ object finddialogfo: tfinddialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -109,6 +116,7 @@ object finddialogfo: tfinddialogfo
   object boolfind1: tbooleaneditradio
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     taborder = 3
     bounds_x = 4
     bounds_y = 77
@@ -119,9 +127,16 @@ object finddialogfo: tfinddialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -148,9 +163,16 @@ object finddialogfo: tfinddialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -177,9 +199,16 @@ object finddialogfo: tfinddialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -204,6 +233,7 @@ object finddialogfo: tfinddialogfo
   object boolfind2: tbooleaneditradio
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     taborder = 7
     bounds_x = 4
     bounds_y = 146
@@ -211,6 +241,7 @@ object finddialogfo: tfinddialogfo
   object boolfind3: tbooleaneditradio
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     taborder = 8
     bounds_x = 4
     bounds_y = 208
@@ -218,6 +249,7 @@ object finddialogfo: tfinddialogfo
   object boolfind4: tbooleaneditradio
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     taborder = 9
     bounds_x = 4
     bounds_y = 276
@@ -242,6 +274,7 @@ object finddialogfo: tfinddialogfo
     frame.caption = 'case&sensitive'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -258,6 +291,7 @@ object finddialogfo: tfinddialogfo
     frame.caption = '&whole word'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -274,6 +308,7 @@ object finddialogfo: tfinddialogfo
     frame.caption = 'select&ed only'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2

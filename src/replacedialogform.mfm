@@ -51,11 +51,18 @@ object replacedialogfo: treplacedialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.button.color = -2147483646
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         color = -2147483646
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -79,11 +86,18 @@ object replacedialogfo: treplacedialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.button.color = -2147483646
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         color = -2147483646
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -108,6 +122,7 @@ object replacedialogfo: treplacedialogfo
     frame.caption = '&casesensitive'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       0
@@ -124,6 +139,7 @@ object replacedialogfo: treplacedialogfo
     frame.caption = '&whole word'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -139,7 +155,7 @@ object replacedialogfo: treplacedialogfo
   object tintegerbutton1: tbutton
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
+    frame.template = mainfo.tframecomp3
     face.localprops = []
     face.template = mainfo.convex
     taborder = 6
@@ -154,7 +170,7 @@ object replacedialogfo: treplacedialogfo
   object tintegerbutton2: tbutton
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
+    frame.template = mainfo.tframecomp3
     face.localprops = []
     face.template = mainfo.convex
     taborder = 7
@@ -171,6 +187,7 @@ object replacedialogfo: treplacedialogfo
     frame.caption = 'select&ed only'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -188,6 +205,7 @@ object replacedialogfo: treplacedialogfo
     frame.caption = '&prompt on replace'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2

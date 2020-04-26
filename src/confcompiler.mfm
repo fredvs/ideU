@@ -2,8 +2,8 @@ object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
   bounds_x = 468
-  bounds_y = 95
-  bounds_cx = 587
+  bounds_y = 102
+  bounds_cx = 601
   bounds_cy = 615
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -11,7 +11,7 @@ object confcompilerfo: tconfcompilerfo
   container.bounds = (
     0
     0
-    587
+    601
     615
   )
   optionswindow = [wo_dialog]
@@ -78,9 +78,9 @@ object confcompilerfo: tconfcompilerfo
   oncreated = oncreatedev
   moduleclassname = 'tmseform'
   object tab_compilers: ttabwidget
-    bounds_x = 5
-    bounds_y = 4
-    bounds_cx = 579
+    bounds_x = 1
+    bounds_y = 1
+    bounds_cx = 593
     bounds_cy = 609
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
@@ -96,10 +96,10 @@ object confcompilerfo: tconfcompilerfo
     object tab_pascal: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 2
+      taborder = 1
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 579
+      bounds_cx = 593
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Pascal'
@@ -107,6 +107,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -123,6 +124,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -139,6 +141,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -155,6 +158,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -171,6 +175,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -187,6 +192,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -207,11 +213,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -237,11 +250,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -267,11 +287,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorframe, frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -297,11 +324,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -327,11 +361,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -357,11 +398,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -387,11 +435,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorframe, frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -413,6 +468,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -429,6 +485,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -444,7 +501,7 @@ object confcompilerfo: tconfcompilerfo
       object tlabel2: tlabel
         taborder = 16
         bounds_x = 9
-        bounds_y = 18
+        bounds_y = 11
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -457,11 +514,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -482,10 +546,11 @@ object confcompilerfo: tconfcompilerfo
     object tab_c: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 3
+      frame.template = mainfo.tframecomp3
+      taborder = 2
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 579
+      bounds_cx = 593
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&C'
@@ -497,11 +562,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -527,11 +599,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -557,11 +636,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -587,11 +673,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -617,11 +710,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -647,11 +747,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -677,11 +784,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -703,6 +817,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -719,6 +834,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -735,6 +851,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -751,6 +868,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -767,6 +885,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -783,6 +902,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -799,6 +919,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -815,6 +936,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -829,8 +951,8 @@ object confcompilerfo: tconfcompilerfo
       end
       object tlabel7: tlabel
         taborder = 16
-        bounds_x = 6
-        bounds_y = 17
+        bounds_x = 7
+        bounds_y = 16
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -844,11 +966,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -869,10 +998,10 @@ object confcompilerfo: tconfcompilerfo
     object tab_java: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 4
+      taborder = 3
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 579
+      bounds_cx = 593
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Java'
@@ -880,6 +1009,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           1
@@ -896,6 +1026,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           1
@@ -912,6 +1043,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           1
@@ -928,6 +1060,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           1
@@ -948,11 +1081,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -978,11 +1118,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1008,11 +1155,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1038,11 +1192,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1072,10 +1233,10 @@ object confcompilerfo: tconfcompilerfo
     object tab_python: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 5
+      taborder = 4
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 579
+      bounds_cx = 593
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'P&ython'
@@ -1083,6 +1244,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1099,6 +1261,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1119,11 +1282,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1149,11 +1319,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1179,11 +1356,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1205,6 +1389,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1221,6 +1406,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1241,11 +1427,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1264,8 +1457,8 @@ object confcompilerfo: tconfcompilerfo
       end
       object tlabel4: tlabel
         taborder = 8
-        bounds_x = 19
-        bounds_y = 25
+        bounds_x = 11
+        bounds_y = 17
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
@@ -1275,10 +1468,10 @@ object confcompilerfo: tconfcompilerfo
     object tab_other: ttabpage
       frame.localprops = []
       frame.localprops1 = []
-      taborder = 6
+      taborder = 5
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 579
+      bounds_cx = 593
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
@@ -1290,11 +1483,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1316,6 +1516,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1332,6 +1533,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1352,11 +1554,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1365,8 +1574,8 @@ object confcompilerfo: tconfcompilerfo
           0
         )
         hint = 'Path to Other compiler'
-        bounds_x = 80
-        bounds_y = 28
+        bounds_x = 82
+        bounds_y = 25
         bounds_cx = 480
         bounds_cy = 39
         controller.options = [fdo_sysfilename, fdo_savelastdir]
@@ -1381,11 +1590,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1407,6 +1623,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1423,6 +1640,7 @@ object confcompilerfo: tconfcompilerfo
         frame.caption = 'wine'
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
           2
@@ -1443,11 +1661,18 @@ object confcompilerfo: tconfcompilerfo
         frame.captionpos = cp_top
         frame.localprops = [frl_colorclient]
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp3
         frame.buttons.count = 1
         frame.buttons.items = <        
           item
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.mainmenuframe
             imagenr = 17
           end>
+        frame.button.frame.localprops = []
+        frame.button.frame.localprops1 = []
+        frame.button.frame.template = mainfo.mainmenuframe
         frame.button.imagenr = 17
         frame.outerframe = (
           0
@@ -1467,29 +1692,29 @@ object confcompilerfo: tconfcompilerfo
       end
       object tlabel5: tlabel
         taborder = 8
-        bounds_x = 7
-        bounds_y = 19
+        bounds_x = 10
+        bounds_y = 15
         bounds_cx = 55
         bounds_cy = 15
         caption = 'Emulator'
         reffontheight = 15
       end
     end
-    object but_ok: tbutton
-      frame.optionsskin = [fso_flat]
-      frame.localprops = [frl_optionsskin]
-      frame.localprops1 = []
-      face.localprops = []
-      face.template = sourcefo.tfacecomp1
-      taborder = 1
-      bounds_x = 494
-      bounds_y = 2
-      bounds_cx = 79
-      bounds_cy = 16
-      anchors = [an_top, an_right]
-      state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
-      caption = '&OK'
-      onexecute = closeapp
-    end
+  end
+  object but_ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
+    face.localprops = []
+    face.template = sourcefo.tfacecomp1
+    taborder = 1
+    bounds_x = 508
+    bounds_y = 4
+    bounds_cx = 79
+    bounds_cy = 30
+    anchors = [an_top, an_right]
+    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+    caption = '&OK'
+    onexecute = closeapp
   end
 end

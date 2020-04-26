@@ -81,11 +81,18 @@ object conffpguifo: tconffpguifo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.tframecomp2
         imagenr = 17
       end>
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.tframecomp2
     frame.button.imagenr = 17
     frame.outerframe = (
       0
@@ -96,7 +103,7 @@ object conffpguifo: tconffpguifo
     hint = 'Path of fpGUI Designer'
     bounds_x = 2
     bounds_y = 21
-    bounds_cx = 273
+    bounds_cx = 269
     bounds_cy = 41
     anchors = [an_left, an_top, an_right]
     controller.options = [fdo_sysfilename, fdo_savelastdir]
@@ -107,6 +114,7 @@ object conffpguifo: tconffpguifo
     frame.caption = 'Designer integration'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -124,6 +132,7 @@ object conffpguifo: tconffpguifo
     frame.caption = 'One Instance'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -143,22 +152,24 @@ object conffpguifo: tconffpguifo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     taborder = 3
     bounds_x = 12
-    bounds_y = 100
+    bounds_y = 105
     bounds_cx = 238
-    bounds_cy = 143
+    bounds_cy = 144
     object edfilename: tedit
       frame.localprops = []
       frame.localprops1 = []
-      bounds_x = 126
-      bounds_y = 26
+      frame.template = mainfo.tframecomp3
+      bounds_x = 124
+      bounds_y = 25
       bounds_cx = 94
       bounds_cy = 21
       text = '${FILENAME}'
@@ -167,9 +178,10 @@ object conffpguifo: tconffpguifo
     object edclose: tedit
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       taborder = 1
-      bounds_x = 126
-      bounds_y = 48
+      bounds_x = 124
+      bounds_y = 47
       bounds_cx = 94
       bounds_cy = 21
       text = 'closeall'
@@ -178,9 +190,10 @@ object conffpguifo: tconffpguifo
     object edhide: tedit
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       taborder = 2
-      bounds_x = 126
-      bounds_y = 92
+      bounds_x = 124
+      bounds_y = 91
       bounds_cx = 94
       bounds_cy = 21
       text = 'hideit'
@@ -189,9 +202,10 @@ object conffpguifo: tconffpguifo
     object edshow: tedit
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       taborder = 3
-      bounds_x = 126
-      bounds_y = 70
+      bounds_x = 124
+      bounds_y = 69
       bounds_cx = 94
       bounds_cy = 21
       text = 'showit'
@@ -200,9 +214,10 @@ object conffpguifo: tconffpguifo
     object edquit: tedit
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       taborder = 4
-      bounds_x = 126
-      bounds_y = 114
+      bounds_x = 124
+      bounds_y = 113
       bounds_cx = 94
       bounds_cy = 21
       text = 'quit'
@@ -212,6 +227,7 @@ object conffpguifo: tconffpguifo
       frame.caption = 'Load File =>'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -219,8 +235,8 @@ object conffpguifo: tconffpguifo
         2
       )
       taborder = 5
-      bounds_x = 14
-      bounds_y = 26
+      bounds_x = 12
+      bounds_y = 25
       bounds_cx = 93
       bounds_cy = 17
       value = True
@@ -229,6 +245,7 @@ object conffpguifo: tconffpguifo
       frame.caption = 'Close File =>'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -236,8 +253,8 @@ object conffpguifo: tconffpguifo
         2
       )
       taborder = 6
-      bounds_x = 14
-      bounds_y = 48
+      bounds_x = 12
+      bounds_y = 47
       bounds_cx = 95
       bounds_cy = 17
       value = True
@@ -246,6 +263,7 @@ object conffpguifo: tconffpguifo
       frame.caption = 'Show Desi =>'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -253,8 +271,8 @@ object conffpguifo: tconffpguifo
         2
       )
       taborder = 7
-      bounds_x = 14
-      bounds_y = 70
+      bounds_x = 12
+      bounds_y = 69
       bounds_cx = 102
       bounds_cy = 17
       value = True
@@ -263,6 +281,7 @@ object conffpguifo: tconffpguifo
       frame.caption = 'Hide Desi =>'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -270,8 +289,8 @@ object conffpguifo: tconffpguifo
         2
       )
       taborder = 8
-      bounds_x = 14
-      bounds_y = 92
+      bounds_x = 12
+      bounds_y = 91
       bounds_cx = 96
       bounds_cy = 17
       value = True
@@ -280,6 +299,7 @@ object conffpguifo: tconffpguifo
       frame.caption = 'Quit Desi =>'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -287,8 +307,8 @@ object conffpguifo: tconffpguifo
         2
       )
       taborder = 9
-      bounds_x = 14
-      bounds_y = 114
+      bounds_x = 12
+      bounds_y = 113
       bounds_cx = 94
       bounds_cy = 17
       value = True
@@ -297,6 +317,7 @@ object conffpguifo: tconffpguifo
   object edfilter: tedit
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     taborder = 4
     bounds_x = 12
     bounds_y = 279
@@ -310,6 +331,7 @@ object conffpguifo: tconffpguifo
     frame.caption = 'Filter:'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -318,7 +340,7 @@ object conffpguifo: tconffpguifo
     )
     taborder = 5
     bounds_x = 20
-    bounds_y = 253
+    bounds_y = 257
     bounds_cx = 50
     bounds_cy = 17
   end

@@ -1,10 +1,10 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 324
-  bounds_y = 132
-  bounds_cx = 724
-  bounds_cy = 572
+  bounds_x = 357
+  bounds_y = 43
+  bounds_cx = 732
+  bounds_cy = 620
   bounds_cxmin = 724
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.color = -2147483645
@@ -16,8 +16,8 @@ object projectoptionsfo: tprojectoptionsfo
   container.bounds = (
     0
     0
-    724
-    572
+    732
+    620
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -203,8 +203,8 @@ object projectoptionsfo: tprojectoptionsfo
   object tlayouter9: tlayouter
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 724
-    bounds_cy = 572
+    bounds_cx = 732
+    bounds_cy = 620
     anchors = []
     optionslayout = [lao_placey]
     place_maxdist = 0
@@ -216,8 +216,8 @@ object projectoptionsfo: tprojectoptionsfo
       frame.localprops = [frl_fitop, frl_fibottom]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       bounds_x = 0
-      bounds_y = 539
-      bounds_cx = 724
+      bounds_y = 587
+      bounds_cx = 732
       bounds_cy = 33
       anchors = [an_bottom]
       optionsscale = [osc_expandy, osc_shrinky]
@@ -235,10 +235,10 @@ object projectoptionsfo: tprojectoptionsfo
         frame.optionsskin = [fso_flat]
         frame.localprops = [frl_optionsskin]
         frame.localprops1 = []
-        frame.template = mainfo.tframecomp2
+        frame.template = mainfo.tframecomp3
         face.localprops = []
         face.template = sourcefo.tfacecomp1
-        bounds_x = 663
+        bounds_x = 671
         bounds_y = 4
         bounds_cx = 56
         bounds_cy = 23
@@ -254,11 +254,11 @@ object projectoptionsfo: tprojectoptionsfo
         frame.optionsskin = [fso_flat]
         frame.localprops = [frl_optionsskin]
         frame.localprops1 = []
-        frame.template = mainfo.tframecomp2
+        frame.template = mainfo.tframecomp3
         face.localprops = []
         face.template = sourcefo.tfacecomp1
         taborder = 1
-        bounds_x = 602
+        bounds_x = 610
         bounds_y = 4
         bounds_cx = 56
         bounds_cy = 23
@@ -273,8 +273,8 @@ object projectoptionsfo: tprojectoptionsfo
       optionswidget1 = [ow1_fontglyphheight]
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 724
-      bounds_cy = 539
+      bounds_cx = 732
+      bounds_cy = 587
       frame.levelo = -1
       frame.captionoffset = 3
       frame.localprops = [frl_levelo, frl_colorframeactive]
@@ -315,8 +315,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 5
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_top]
         caption = '&Editor'
         coloractivetab = 16776396
@@ -445,6 +445,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Right Margin Line'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -463,6 +464,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Line Numbers'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -480,6 +482,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Mark Brackets'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -498,6 +501,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Mark Pairwords'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -506,7 +510,7 @@ object projectoptionsfo: tprojectoptionsfo
                 )
                 taborder = 3
                 hint = 'Mark in syntax definition file defined word pairs.'
-                bounds_x = 2
+                bounds_x = 0
                 bounds_y = 133
                 bounds_cx = 107
                 bounds_cy = 17
@@ -517,6 +521,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Trim trailing'#10'whitespace'#10'on save'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   17
@@ -533,6 +538,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Auto Indent'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -551,6 +557,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'No Source Editor'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -569,6 +576,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Tab indent'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -585,6 +593,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Space tab'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -601,6 +610,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Show Tabs'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -608,7 +618,7 @@ object projectoptionsfo: tprojectoptionsfo
                   2
                 )
                 taborder = 9
-                bounds_x = -1
+                bounds_x = 0
                 bounds_y = 76
                 bounds_cx = 81
                 bounds_cy = 17
@@ -618,6 +628,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Anti aliased font'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.menuitemframe
                 frame.outerframe = (
                   0
                   2
@@ -648,6 +659,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
                 frame.buttons.count = 1
                 frame.buttons.items = <                
@@ -684,12 +696,19 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.tframecomp2
                 frame.button.options = [fbo_inactiveinvisible]
                 frame.buttons.count = 2
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.tframecomp2
                     options = [fbo_inactiveinvisible]
                   end                
                   item
@@ -724,12 +743,19 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.tframecomp2
                 frame.button.options = [fbo_inactiveinvisible]
                 frame.buttons.count = 2
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.tframecomp2
                     options = [fbo_inactiveinvisible]
                   end                
                   item
@@ -765,6 +791,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -787,6 +814,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -811,6 +839,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
@@ -842,6 +871,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -862,6 +892,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -883,6 +914,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -908,6 +940,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -931,6 +964,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -951,6 +985,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -972,6 +1007,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   18
@@ -993,12 +1029,19 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.tframecomp2
                 frame.button.options = [fbo_inactiveinvisible]
                 frame.buttons.count = 2
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.tframecomp2
                     options = [fbo_inactiveinvisible]
                   end                
                   item
@@ -1033,12 +1076,19 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.tframecomp2
                 frame.button.options = [fbo_inactiveinvisible]
                 frame.buttons.count = 2
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.tframecomp2
                     options = [fbo_inactiveinvisible]
                   end                
                   item
@@ -1088,7 +1138,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_x = 0
           bounds_y = 363
           bounds_cx = 873
-          bounds_cy = 216
+          bounds_cy = 264
           bounds_cymin = 84
           color = 15262906
           anchors = [an_top, an_bottom]
@@ -1111,7 +1161,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 20
             bounds_cx = 873
-            bounds_cy = 196
+            bounds_cy = 244
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'File filter'
             coloractivetab = 16776396
@@ -1124,7 +1174,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 873
-              bounds_cy = 196
+              bounds_cy = 244
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               datacols.count = 2
@@ -1177,7 +1227,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 20
             bounds_cx = 873
-            bounds_cy = 196
+            bounds_cy = 244
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Syntax definition files'
             coloractivetab = 16776396
@@ -1188,7 +1238,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 873
-              bounds_cy = 196
+              bounds_cy = 244
               anchors = []
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -1291,7 +1341,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_x = 0
             bounds_y = 20
             bounds_cx = 873
-            bounds_cy = 196
+            bounds_cy = 244
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Code Templates'
             coloractivetab = 16776396
@@ -1312,7 +1362,7 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_x = 0
               bounds_y = 0
               bounds_cx = 873
-              bounds_cy = 207
+              bounds_cy = 255
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1454,8 +1504,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 4
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = '&Debugger'
         coloractivetab = 14809817
@@ -1465,8 +1515,8 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget1 = [ow1_fontglyphheight]
           bounds_x = 7
           bounds_y = 221
-          bounds_cx = 711
-          bounds_cy = 274
+          bounds_cx = 719
+          bounds_cy = 322
           color = -2147483645
           anchors = [an_left, an_top, an_right, an_bottom]
           taborder = 4
@@ -1484,8 +1534,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 1
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Project Debugger'
             coloractivetab = 16776396
@@ -1497,8 +1547,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 711
-              bounds_cy = 254
+              bounds_cx = 719
+              bounds_cy = 302
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1648,7 +1698,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[debcommand]
-                  width = 488
+                  width = 496
                   options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'debcommand'
                   dataclass = tgridmsestringdatalist
@@ -1822,7 +1872,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 218
                 bounds_y = 0
-                bounds_cx = 488
+                bounds_cx = 496
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -1840,8 +1890,8 @@ object projectoptionsfo: tprojectoptionsfo
             hint = 'Search path to get infos about code'
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Search &Directories'
             coloractivetab = 16776396
@@ -1855,8 +1905,8 @@ object projectoptionsfo: tprojectoptionsfo
               hint = 'Search directories for code editor to get  info from soiurce'
               bounds_x = 0
               bounds_y = 25
-              bounds_cx = 711
-              bounds_cy = 240
+              bounds_cx = 719
+              bounds_cy = 288
               bounds_cymin = 40
               anchors = [an_top, an_bottom]
               optionsgrid = [og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -1865,7 +1915,7 @@ object projectoptionsfo: tprojectoptionsfo
               datacols.items = <              
                 item[sourcedirs]
                   linecolorfix = -1610612733
-                  width = 706
+                  width = 714
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'sourcedirs'
@@ -1893,7 +1943,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 0
                 bounds_y = 0
-                bounds_cx = 706
+                bounds_cx = 714
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -1911,6 +1961,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_right
               frame.localprops = []
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp2
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
@@ -1927,7 +1978,7 @@ object projectoptionsfo: tprojectoptionsfo
               onshowhint = sourcedirhint
               bounds_x = 1
               bounds_y = 2
-              bounds_cx = 701
+              bounds_cx = 709
               bounds_cy = 21
               anchors = [an_left, an_top, an_right]
               textflags = [tf_noselect, tf_ellipseleft]
@@ -1956,8 +2007,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 2
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Defi&nes'
             coloractivetab = 16776396
@@ -1968,8 +2019,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 711
-              bounds_cy = 254
+              bounds_cx = 719
+              bounds_cy = 302
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -1995,7 +2046,7 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridintegerdatalist
                 end              
                 item[defines]
-                  width = 672
+                  width = 680
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'defines'
@@ -2031,7 +2082,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 34
                 bounds_y = 0
-                bounds_cx = 672
+                bounds_cx = 680
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -2048,8 +2099,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 4
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = '&Signals'
             coloractivetab = 16776396
@@ -2062,8 +2113,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 711
-              bounds_cy = 254
+              bounds_cx = 719
+              bounds_cy = 302
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_colsizing, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_sorted, og_wrapcol, og_autopopup]
@@ -2118,7 +2169,7 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridintegerdatalist
                 end              
                 item[signame]
-                  width = 486
+                  width = 494
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_nosort, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'signame'
                   dataclass = tgridenumdatalist
@@ -2194,7 +2245,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 220
                 bounds_y = 0
-                bounds_cx = 486
+                bounds_cx = 494
                 bounds_cy = 19
                 optionsedit1 = [oe1_savevalue]
                 dropdownitems.count = 2
@@ -2222,8 +2273,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 3
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = '&Exceptions'
             coloractivetab = 16776396
@@ -2234,8 +2285,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 711
-              bounds_cy = 254
+              bounds_cx = 719
+              bounds_cy = 302
               anchors = []
               optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -2261,7 +2312,7 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridintegerdatalist
                 end              
                 item[exceptclassnames]
-                  width = 628
+                  width = 636
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste]
                   widgetname = 'exceptclassnames'
                   dataclass = tgridmsestringdatalist
@@ -2294,7 +2345,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 78
                 bounds_y = 0
-                bounds_cx = 628
+                bounds_cx = 636
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_trimright, oe_trimleft]
@@ -2310,8 +2361,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 6
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 711
-            bounds_cy = 254
+            bounds_cx = 719
+            bounds_cy = 302
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = '&Target'
             coloractivetab = 16776396
@@ -2334,16 +2385,22 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command attach target'
                 frame.captiontextflags = [tf_bottom]
-                frame.captionoffset = 3
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2366,6 +2423,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'No wait for exit'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2383,6 +2441,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'TTY'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2414,13 +2473,20 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2460,13 +2526,20 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2507,13 +2580,20 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2556,13 +2636,20 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2602,13 +2689,20 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2651,16 +2745,22 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command run target'
                 frame.captiontextflags = [tf_bottom]
-                frame.captionoffset = 3
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.buttons.count = 1
                 frame.buttons.items = <                
                   item
                     color = -2147483646
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
                     imagenr = 17
                   end>
                 frame.button.color = -2147483646
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
                 frame.button.imagenr = 17
                 frame.outerframe = (
                   0
@@ -2683,6 +2783,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.outerframe = (
                   0
                   18
@@ -2707,6 +2808,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Start once'
                 frame.localprops = []
                 frame.localprops1 = []
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2725,16 +2827,22 @@ object projectoptionsfo: tprojectoptionsfo
               frame.options = [cfo_fixtop]
               frame.caption = 'Download command'
               frame.captiontextflags = [tf_bottom]
-              frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -2147483646
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -2147483646
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 0
@@ -2774,6 +2882,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.button.color = -2147483646
                 frame.buttons.count = 1
                 frame.buttons.items = <                
@@ -2814,6 +2923,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Simulator'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2831,6 +2941,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'gdb download'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2850,6 +2961,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.outerframe = (
                   0
                   18
@@ -2869,6 +2981,7 @@ object projectoptionsfo: tprojectoptionsfo
                 color = -2147483645
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 taborder = 5
                 bounds_x = 682
                 bounds_y = 38
@@ -2877,9 +2990,9 @@ object projectoptionsfo: tprojectoptionsfo
               object remoteconnection: tstringedit
                 frame.caption = 'Target connection'
                 frame.captiontextflags = [tf_bottom]
-                frame.captionoffset = 3
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp3
                 frame.outerframe = (
                   0
                   18
@@ -2900,6 +3013,7 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.caption = 'Always download'
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+                frame.template = mainfo.tframecomp2
                 frame.outerframe = (
                   0
                   2
@@ -2919,6 +3033,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.outerframe = (
                 0
                 18
@@ -2963,6 +3078,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&Extern Console'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -2981,6 +3097,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&Stop on Exc'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -2999,6 +3116,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&Acti-Break'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -3018,6 +3136,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&Value'#10'Hints'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetdisabled, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               9
@@ -3034,16 +3153,17 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Call GUI_DEB'
             frame.localprops = []
             frame.localprops1 = []
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               0
               81
-              0
+              1
             )
             taborder = 3
             hint = 'Release mouse grab by target stop. gdb sometimes crashes with this option.'
             bounds_x = 133
-            bounds_y = 65
+            bounds_y = 66
             bounds_cx = 94
             bounds_cy = 17
             options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_reversed]
@@ -3053,6 +3173,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Set TT&Y'
             frame.localprops = []
             frame.localprops1 = []
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -3071,6 +3192,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&Raise-Break'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -3089,6 +3211,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = '&FPC bugs'
             frame.localprops = []
             frame.localprops1 = []
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -3108,16 +3231,22 @@ object projectoptionsfo: tprojectoptionsfo
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = 'Debug &target'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3143,11 +3272,18 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom, tf_grayed]
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3170,16 +3306,22 @@ object projectoptionsfo: tprojectoptionsfo
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = '&Run command'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3204,16 +3346,22 @@ object projectoptionsfo: tprojectoptionsfo
           frame.options = [cfo_fixtop]
           frame.caption = '&Default Debugger'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3237,14 +3385,20 @@ object projectoptionsfo: tprojectoptionsfo
           frame.options = [cfo_fixtop]
           frame.caption = 'Debug &options'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3270,8 +3424,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 6
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_top, an_bottom]
         caption = '&Make'
         coloractivetab = 15655930
@@ -3281,14 +3435,20 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = 'Default make col'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
             end>
           frame.outerframe = (
             0
@@ -3297,7 +3457,7 @@ object projectoptionsfo: tprojectoptionsfo
             0
           )
           taborder = 9
-          bounds_x = 208
+          bounds_x = 216
           bounds_y = 64
           bounds_cx = 111
           bounds_cy = 39
@@ -3333,16 +3493,22 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = '&Mainfile'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3367,16 +3533,22 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = '&Targetfile name'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3404,16 +3576,22 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = 'Default &Compiler'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -3425,7 +3603,7 @@ object projectoptionsfo: tprojectoptionsfo
           onshowhint = hintexpandedmacros
           bounds_x = 0
           bounds_y = 63
-          bounds_cx = 163
+          bounds_cx = 171
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
@@ -3439,6 +3617,9 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget1 = []
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           taborder = 10
           bounds_x = 8
           bounds_y = 175
@@ -3453,6 +3634,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Copy messages to &file'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -3472,6 +3654,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Close message'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             1
@@ -3490,6 +3673,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Check head'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -3508,9 +3692,9 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets]
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
           bounds_x = 0
-          bounds_y = 247
-          bounds_cx = 722
-          bounds_cy = 268
+          bounds_y = 248
+          bounds_cx = 730
+          bounds_cy = 316
           color = 14537704
           anchors = [an_top, an_bottom]
           taborder = 13
@@ -3534,8 +3718,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 5
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Project Compiler'
             coloractivetab = 16776396
@@ -3547,8 +3731,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 722
-              bounds_cy = 244
+              bounds_cx = 730
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -3698,7 +3882,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[compcommand]
-                  width = 485
+                  width = 493
                   options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'compcommand'
                   dataclass = tgridmsestringdatalist
@@ -3872,7 +4056,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 232
                 bounds_y = 0
-                bounds_cx = 485
+                bounds_cx = 493
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -3886,8 +4070,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 3
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Command before'
             coloractivetab = 16776396
@@ -3899,8 +4083,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 722
-              bounds_cy = 244
+              bounds_cx = 730
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -4044,7 +4228,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[befcommand]
-                  width = 485
+                  width = 493
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'befcommand'
                   dataclass = tgridmsestringdatalist
@@ -4228,7 +4412,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 232
                 bounds_y = 0
-                bounds_cx = 485
+                bounds_cx = 493
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4246,8 +4430,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 2
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Make options'
             coloractivetab = 16776396
@@ -4260,8 +4444,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 722
-              bounds_cy = 244
+              bounds_cx = 730
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -4421,7 +4605,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[makeoptions]
-                  width = 226
+                  width = 234
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fixwidth, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'makeoptions'
@@ -4637,7 +4821,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 431
                 bounds_y = 0
-                bounds_cx = 226
+                bounds_cx = 234
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -4647,7 +4831,7 @@ object projectoptionsfo: tprojectoptionsfo
                 Tag = 65536
                 optionsskin = [osk_framebuttononly]
                 taborder = 15
-                bounds_x = 658
+                bounds_x = 666
                 bounds_y = 0
                 bounds_cx = 59
                 bounds_cy = 17
@@ -4666,8 +4850,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 1
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Directories'
             coloractivetab = 16776396
@@ -4687,8 +4871,8 @@ object projectoptionsfo: tprojectoptionsfo
               )
               bounds_x = 0
               bounds_y = 54
-              bounds_cx = 722
-              bounds_cy = 231
+              bounds_cx = 730
+              bounds_cy = 279
               bounds_cymin = 40
               anchors = [an_left, an_top, an_right, an_bottom]
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -4876,7 +5060,7 @@ object projectoptionsfo: tprojectoptionsfo
                 end              
                 item[unitdirs]
                   linecolorfix = -1610612733
-                  width = 372
+                  width = 380
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'unitdirs'
@@ -5120,7 +5304,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 345
                 bounds_y = 0
-                bounds_cx = 372
+                bounds_cx = 380
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -5136,6 +5320,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.outerframe = (
                 0
                 18
@@ -5155,6 +5340,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.outerframe = (
                 0
                 18
@@ -5174,6 +5360,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.outerframe = (
                 0
                 18
@@ -5193,6 +5380,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.outerframe = (
                 0
                 18
@@ -5224,8 +5412,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 4
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Command after'
             coloractivetab = 16776396
@@ -5237,8 +5425,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 722
-              bounds_cy = 244
+              bounds_cx = 730
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -5382,7 +5570,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[aftcommand]
-                  width = 485
+                  width = 493
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'aftcommand'
                   dataclass = tgridmsestringdatalist
@@ -5565,7 +5753,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 232
                 bounds_y = 0
-                bounds_cx = 485
+                bounds_cx = 493
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -5579,8 +5767,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 6
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Exe Extension'
             coloractivetab = 16776396
@@ -5592,8 +5780,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 722
-              bounds_cy = 244
+              bounds_cx = 730
+              bounds_cy = 292
               bounds_cymin = 40
               anchors = []
               optionsgrid = [og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -5755,7 +5943,7 @@ object projectoptionsfo: tprojectoptionsfo
                   datalist.facultative = True
                 end              
                 item[exeused]
-                  width = 485
+                  width = 493
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   oncellevent = oncellev
                   widgetname = 'exeused'
@@ -5929,7 +6117,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 232
                 bounds_y = 0
-                bounds_cx = 485
+                bounds_cx = 493
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -5943,8 +6131,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 7
             bounds_x = 0
             bounds_y = 24
-            bounds_cx = 722
-            bounds_cy = 244
+            bounds_cx = 730
+            bounds_cy = 292
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'Comments'
             coloractivetab = 16776396
@@ -5960,13 +6148,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 52
@@ -5974,9 +6169,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
                 0
               )
-              bounds_x = 86
-              bounds_y = 9
-              bounds_cx = 602
+              bounds_x = 80
+              bounds_y = 4
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -5996,13 +6191,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6011,9 +6213,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 1
-              bounds_x = 88
-              bounds_y = 33
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 27
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -6033,13 +6235,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6048,9 +6257,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 2
-              bounds_x = 88
-              bounds_y = 57
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 51
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               statfile = statfile1
@@ -6070,13 +6279,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6085,9 +6301,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 3
-              bounds_x = 88
-              bounds_y = 80
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 74
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6106,13 +6322,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6121,9 +6344,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 4
-              bounds_x = 88
-              bounds_y = 104
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 98
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6142,13 +6365,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6157,9 +6387,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 5
-              bounds_x = 88
-              bounds_y = 128
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 122
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6178,13 +6408,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6193,9 +6430,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 6
-              bounds_x = 88
-              bounds_y = 152
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 146
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6214,13 +6451,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6229,9 +6473,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 7
-              bounds_x = 88
-              bounds_y = 176
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 170
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6250,13 +6494,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6265,9 +6516,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 8
-              bounds_x = 88
-              bounds_y = 199
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 193
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6286,13 +6537,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6301,9 +6559,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 9
-              bounds_x = 88
-              bounds_y = 223
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 217
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6322,13 +6580,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6337,9 +6602,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 10
-              bounds_x = 88
-              bounds_y = 270
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 264
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6358,13 +6623,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionpos = cp_left
               frame.localprops = [frl_levelo, frl_framewidth, frl_colorclient]
               frame.localprops1 = []
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -1879048187
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.mainmenuframe
                   imagenr = 17
                 end>
               frame.button.color = -1879048187
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.mainmenuframe
               frame.button.imagenr = 17
               frame.outerframe = (
                 50
@@ -6373,9 +6645,9 @@ object projectoptionsfo: tprojectoptionsfo
                 0
               )
               taborder = 11
-              bounds_x = 88
-              bounds_y = 246
-              bounds_cx = 600
+              bounds_x = 80
+              bounds_y = 240
+              bounds_cx = 608
               bounds_cy = 17
               anchors = [an_left, an_top, an_right]
               optionsedit1 = [oe1_savevalue]
@@ -6390,6 +6662,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -6400,7 +6673,7 @@ object projectoptionsfo: tprojectoptionsfo
           onshowhint = hintexpandedmacros
           bounds_x = 582
           bounds_y = 10
-          bounds_cx = 132
+          bounds_cx = 140
           bounds_cy = 39
           anchors = [an_top, an_right]
           reffontheight = 15
@@ -6410,16 +6683,22 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = 'Make &Directory'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -6429,7 +6708,7 @@ object projectoptionsfo: tprojectoptionsfo
           )
           taborder = 4
           onshowhint = hintexpandedmacros
-          bounds_x = 396
+          bounds_x = 404
           bounds_y = 65
           bounds_cx = 228
           bounds_cy = 39
@@ -6471,10 +6750,17 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.options = [fbo_inactiveinvisible]
           frame.buttons.count = 2
           frame.buttons.items = <          
             item
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               options = [fbo_inactiveinvisible]
             end          
             item
@@ -6503,10 +6789,17 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.options = [fbo_inactiveinvisible]
           frame.buttons.count = 2
           frame.buttons.items = <          
             item
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               options = [fbo_inactiveinvisible]
             end          
             item
@@ -6535,10 +6828,17 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.options = [fbo_inactiveinvisible]
           frame.buttons.count = 2
           frame.buttons.items = <          
             item
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               options = [fbo_inactiveinvisible]
             end          
             item
@@ -6566,6 +6866,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Strip ESC'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -6584,6 +6885,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Show &Console'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -6602,6 +6904,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = '&Purpose'
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -6623,16 +6926,22 @@ object projectoptionsfo: tprojectoptionsfo
           color = -2147483645
           frame.caption = 'Message &output file'
           frame.captiontextflags = [tf_bottom]
-          frame.captionoffset = 3
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp3
           frame.buttons.count = 1
           frame.buttons.items = <          
             item
               color = -2147483646
+              frame.localprops = []
+              frame.localprops1 = []
+              frame.template = mainfo.mainmenuframe
               imagenr = 17
             end>
           frame.button.color = -2147483646
+          frame.button.frame.localprops = []
+          frame.button.frame.localprops1 = []
+          frame.button.frame.template = mainfo.mainmenuframe
           frame.button.imagenr = 17
           frame.outerframe = (
             0
@@ -6662,8 +6971,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 3
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'M&acros'
         coloractivetab = 16776396
@@ -6676,8 +6985,8 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 1
           bounds_x = 0
           bounds_y = 204
-          bounds_cx = 722
-          bounds_cy = 310
+          bounds_cx = 730
+          bounds_cy = 358
           bounds_cymin = 40
           anchors = [an_top, an_bottom]
           optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_selectedrowsdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
@@ -6950,7 +7259,7 @@ object projectoptionsfo: tprojectoptionsfo
               )
             end          
             item[macrovalues]
-              width = 430
+              width = 438
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               onshowhint = colonshowhint
               widgetname = 'macrovalues'
@@ -7136,7 +7445,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 287
             bounds_y = 0
-            bounds_cx = 430
+            bounds_cx = 438
             bounds_cy = 17
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -7158,7 +7467,7 @@ object projectoptionsfo: tprojectoptionsfo
           )
           bounds_x = 0
           bounds_y = -1
-          bounds_cx = 722
+          bounds_cx = 730
           bounds_cy = 202
           bounds_cymin = 40
           anchors = [an_top]
@@ -7195,7 +7504,7 @@ object projectoptionsfo: tprojectoptionsfo
               )
             end          
             item[groupcomment]
-              width = 656
+              width = 664
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste]
               widgetname = 'groupcomment'
               dataclass = tgridmsestringdatalist
@@ -7236,7 +7545,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 30
             bounds_y = 0
-            bounds_cx = 656
+            bounds_cx = 664
             bounds_cy = 17
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -7248,7 +7557,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 2
           bounds_x = 0
           bounds_y = 201
-          bounds_cx = 722
+          bounds_cx = 730
           bounds_cy = 3
           anchors = [an_top]
           options = [spo_vmove, spo_vprop, spo_docktop, spo_dockbottom]
@@ -7264,8 +7573,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 2
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = '&Font Alias'
         coloractivetab = 16776396
@@ -7276,8 +7585,8 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 722
-          bounds_cy = 513
+          bounds_cx = 730
+          bounds_cy = 561
           anchors = []
           optionsgrid = [og_colsizing, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_wrapcol, og_autopopup]
           fixrows.count = 1
@@ -7318,7 +7627,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridmsestringdatalist
             end          
             item[fontname]
-              width = 213
+              width = 221
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste]
               widgetname = 'fontname'
               dataclass = tgridmsestringdatalist
@@ -7378,7 +7687,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 144
             bounds_y = 0
-            bounds_cx = 213
+            bounds_cx = 221
             bounds_cy = 17
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -7390,7 +7699,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 3
             visible = False
-            bounds_x = 358
+            bounds_x = 366
             bounds_y = 0
             bounds_cx = 66
             bounds_cy = 17
@@ -7403,7 +7712,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 4
             visible = False
-            bounds_x = 425
+            bounds_x = 433
             bounds_y = 0
             bounds_cx = 54
             bounds_cy = 17
@@ -7416,7 +7725,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 5
             visible = False
-            bounds_x = 480
+            bounds_x = 488
             bounds_y = 0
             bounds_cx = 62
             bounds_cy = 17
@@ -7429,7 +7738,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 6
             visible = False
-            bounds_x = 543
+            bounds_x = 551
             bounds_y = 0
             bounds_cx = 70
             bounds_cy = 17
@@ -7447,7 +7756,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 7
             visible = False
-            bounds_x = 614
+            bounds_x = 622
             bounds_y = 0
             bounds_cx = 103
             bounds_cy = 17
@@ -7465,8 +7774,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 7
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'Designers '
         coloractivetab = 16776396
@@ -7476,29 +7785,31 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp2
           frame.outerframe = (
             0
-            8
+            7
             0
             0
           )
           bounds_x = 2
-          bounds_y = 19
-          bounds_cx = 718
-          bounds_cy = 87
+          bounds_y = 20
+          bounds_cx = 726
+          bounds_cy = 86
           anchors = [an_left, an_top, an_right]
           object noformdesignerdocking: tbooleanedit
             frame.caption = 'Docking'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
               52
               3
             )
-            bounds_x = 516
-            bounds_y = 30
+            bounds_x = 518
+            bounds_y = 31
             bounds_cx = 65
             bounds_cy = 17
             options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_reversed]
@@ -7507,6 +7818,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Move on'#10'first Click'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               9
@@ -7514,8 +7826,8 @@ object projectoptionsfo: tprojectoptionsfo
               10
             )
             taborder = 1
-            bounds_x = 381
-            bounds_y = 32
+            bounds_x = 383
+            bounds_y = 33
             bounds_cx = 71
             bounds_cy = 32
             value = True
@@ -7525,6 +7837,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.captiontextflags = [tf_bottom]
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.tframecomp3
             frame.outerframe = (
               0
               18
@@ -7532,8 +7845,8 @@ object projectoptionsfo: tprojectoptionsfo
               0
             )
             taborder = 2
-            bounds_x = 275
-            bounds_y = 29
+            bounds_x = 277
+            bounds_y = 30
             bounds_cx = 64
             bounds_cy = 39
             value = 8
@@ -7546,6 +7859,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.captiontextflags = [tf_bottom]
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.tframecomp3
             frame.outerframe = (
               0
               18
@@ -7553,8 +7867,8 @@ object projectoptionsfo: tprojectoptionsfo
               0
             )
             taborder = 3
-            bounds_x = 164
-            bounds_y = 29
+            bounds_x = 166
+            bounds_y = 30
             bounds_cx = 65
             bounds_cy = 39
             value = 8
@@ -7572,8 +7886,8 @@ object projectoptionsfo: tprojectoptionsfo
                 29
                 0
               )
-              bounds_x = 136
-              bounds_y = 29
+              bounds_x = 134
+              bounds_y = 27
               bounds_cx = 65
               bounds_cy = 39
               reffontheight = 15
@@ -7584,6 +7898,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Snap to Grid'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -7592,8 +7907,8 @@ object projectoptionsfo: tprojectoptionsfo
             )
             taborder = 4
             hint = 'Hint:'#10'Use Ctrl + arrow keys to move selected components without grid snap,'#10'use Shift + arrow keys to resize selected components without grid snap.'
-            bounds_x = 11
-            bounds_y = 60
+            bounds_x = 13
+            bounds_y = 61
             bounds_cx = 92
             bounds_cy = 17
             value = True
@@ -7602,6 +7917,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Show Grid'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -7609,8 +7925,8 @@ object projectoptionsfo: tprojectoptionsfo
               2
             )
             taborder = 5
-            bounds_x = 13
-            bounds_y = 28
+            bounds_x = 15
+            bounds_y = 29
             bounds_cx = 78
             bounds_cy = 17
             value = True
@@ -7619,6 +7935,7 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Component hints'
             frame.localprops = []
             frame.localprops1 = []
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -7626,8 +7943,8 @@ object projectoptionsfo: tprojectoptionsfo
               2
             )
             taborder = 6
-            bounds_x = 516
-            bounds_y = 57
+            bounds_x = 518
+            bounds_y = 58
             bounds_cx = 120
             bounds_cy = 17
           end
@@ -7638,23 +7955,25 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+          frame.template = mainfo.tframecomp2
           frame.outerframe = (
             0
-            8
+            7
             0
             0
           )
           taborder = 1
           bounds_x = 2
-          bounds_y = 128
-          bounds_cx = 718
-          bounds_cy = 74
+          bounds_y = 129
+          bounds_cx = 726
+          bounds_cy = 73
           anchors = [an_left, an_top, an_right]
           object fpgdesignerenabled: tbooleanedit
             optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_destroywidgets, ow_hinton]
             frame.caption = 'Integration into ideU'
             frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
             frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+            frame.template = mainfo.menuitemframe
             frame.outerframe = (
               0
               2
@@ -7662,8 +7981,8 @@ object projectoptionsfo: tprojectoptionsfo
               2
             )
             hint = 'Make fpGUI designer integrated into ideU'
-            bounds_x = 60
-            bounds_y = 31
+            bounds_x = 62
+            bounds_y = 32
             bounds_cx = 141
             bounds_cy = 17
             value = True
@@ -7677,8 +7996,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 8
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'User &Colors'
         coloractivetab = 16776396
@@ -7688,8 +8007,8 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           taborder = 1
           bounds_x = 0
-          bounds_y = 996
-          bounds_cx = 722
+          bounds_y = 1044
+          bounds_cx = 730
           bounds_cy = 42
           anchors = [an_bottom]
           optionslayout = [lao_aligny]
@@ -7713,8 +8032,8 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 722
-          bounds_cy = 513
+          bounds_cx = 730
+          bounds_cy = 561
           anchors = []
           optionsgrid = [og_rowmoving, og_keyrowmoving, og_focuscellonenter, og_colchangeontabkey, og_autopopup, og_mousescrollcol]
           fixcols.count = 1
@@ -7760,7 +8079,7 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridenumdatalist
             end          
             item[usercolorcomment]
-              width = 307
+              width = 315
               options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               widthmin = 100
               widgetname = 'usercolorcomment'
@@ -7822,7 +8141,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 269
             bounds_y = 0
-            bounds_cx = 307
+            bounds_cx = 315
             bounds_cy = 17
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -7836,8 +8155,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 11
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'F&ormat Macros'
         tabhint = 'Used by formatfloatmse() and formatdatetimemse()'
@@ -7847,8 +8166,8 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = []
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 722
-          bounds_cy = 513
+          bounds_cx = 730
+          bounds_cy = 561
           anchors = []
           optionsgrid = [og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
           fixrows.count = 1
@@ -7868,13 +8187,13 @@ object projectoptionsfo: tprojectoptionsfo
           datacols.options = [co_savestate, co_mousescrollrow]
           datacols.items = <          
             item[formatmacronames]
-              width = 161
+              width = 163
               options = [co_proportional, co_savestate, co_mousescrollrow]
               widgetname = 'formatmacronames'
               dataclass = tgridmsestringdatalist
             end          
             item[formatmacrovalues]
-              width = 555
+              width = 561
               options = [co_fill, co_savestate, co_mousescrollrow]
               widgetname = 'formatmacrovalues'
               dataclass = tgridmsestringdatalist
@@ -7888,7 +8207,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 0
             bounds_y = 0
-            bounds_cx = 161
+            bounds_cx = 163
             bounds_cy = 24
             optionsedit1 = []
             reffontheight = 15
@@ -7898,9 +8217,9 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 2
             visible = False
-            bounds_x = 162
+            bounds_x = 164
             bounds_y = 0
-            bounds_cx = 555
+            bounds_cx = 561
             bounds_cy = 24
             optionsedit1 = []
             reffontheight = 15
@@ -7913,8 +8232,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 1
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = '&Templates'
         coloractivetab = 16776396
@@ -7923,8 +8242,8 @@ object projectoptionsfo: tprojectoptionsfo
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 722
-          bounds_cy = 513
+          bounds_cx = 730
+          bounds_cy = 561
           anchors = []
           activepageindex = 0
           tab_frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
@@ -7942,8 +8261,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 3
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 722
-            bounds_cy = 493
+            bounds_cx = 730
+            bounds_cy = 541
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'New Project'
             coloractivetab = 16776396
@@ -7956,8 +8275,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               bounds_x = 0
               bounds_y = 125
-              bounds_cx = 722
-              bounds_cy = 366
+              bounds_cx = 730
+              bounds_cy = 414
               anchors = [an_top, an_bottom]
               optionsgrid = [og_colsizing, og_keycolmoving, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup]
               fixrows.count = 1
@@ -7999,14 +8318,14 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridintegerdatalist
                 end              
                 item[newprojectfiles]
-                  width = 359
+                  width = 363
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste]
                   onshowhint = colonshowhint
                   widgetname = 'newprojectfiles'
                   dataclass = tgridmsestringdatalist
                 end              
                 item[newprojectfilesdest]
-                  width = 312
+                  width = 316
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste]
                   onshowhint = colonshowhint
                   widgetname = 'newprojectfilesdest'
@@ -8063,7 +8382,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 45
                 bounds_y = 0
-                bounds_cx = 359
+                bounds_cx = 363
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 controller.ongetfilename = expandfilename
@@ -8079,9 +8398,9 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 4
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 405
+                bounds_x = 409
                 bounds_y = 0
-                bounds_cx = 312
+                bounds_cx = 316
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_trimright, oe_trimleft]
@@ -8094,13 +8413,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_levelo, frl_colorclient]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -2147483646
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.tframecomp2
                   imagenr = 17
                 end>
               frame.button.color = -2147483646
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.tframecomp2
               frame.button.imagenr = 17
               frame.outerframe = (
                 0
@@ -8112,7 +8438,7 @@ object projectoptionsfo: tprojectoptionsfo
               onshowhint = hintexpandedmacros
               bounds_x = 0
               bounds_y = 19
-              bounds_cx = 722
+              bounds_cx = 730
               bounds_cy = 39
               anchors = [an_top]
               controller.ongetfilename = expandfilename
@@ -8124,13 +8450,20 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captiontextflags = [tf_bottom]
               frame.localprops = [frl_levelo, frl_colorclient]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+              frame.template = mainfo.tframecomp3
               frame.buttons.count = 1
               frame.buttons.items = <              
                 item
                   color = -2147483646
+                  frame.localprops = []
+                  frame.localprops1 = []
+                  frame.template = mainfo.tframecomp2
                   imagenr = 17
                 end>
               frame.button.color = -2147483646
+              frame.button.frame.localprops = []
+              frame.button.frame.localprops1 = []
+              frame.button.frame.template = mainfo.tframecomp2
               frame.button.imagenr = 17
               frame.outerframe = (
                 0
@@ -8142,7 +8475,7 @@ object projectoptionsfo: tprojectoptionsfo
               onshowhint = hintexpandedmacros
               bounds_x = 0
               bounds_y = 73
-              bounds_cx = 722
+              bounds_cx = 730
               bounds_cy = 39
               anchors = [an_top]
               controller.ongetfilename = expandfilename
@@ -8158,8 +8491,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 2
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 722
-            bounds_cy = 493
+            bounds_cx = 730
+            bounds_cy = 541
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'New File'
             coloractivetab = 16776396
@@ -8170,8 +8503,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = []
               bounds_x = 0
               bounds_y = 0
-              bounds_cx = 720
-              bounds_cy = 493
+              bounds_cx = 728
+              bounds_cy = 541
               anchors = [an_left, an_top, an_right, an_bottom]
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -8205,7 +8538,7 @@ object projectoptionsfo: tprojectoptionsfo
               datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[newfinames]
-                  width = 103
+                  width = 105
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'newfinames'
@@ -8225,7 +8558,7 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridmsestringdatalist
                 end              
                 item[newfisources]
-                  width = 421
+                  width = 427
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'newfisources'
@@ -8240,7 +8573,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 0
                 bounds_y = 0
-                bounds_cx = 103
+                bounds_cx = 105
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
@@ -8252,7 +8585,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 2
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 104
+                bounds_x = 106
                 bounds_y = 0
                 bounds_cx = 110
                 bounds_cy = 17
@@ -8266,7 +8599,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 3
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 215
+                bounds_x = 217
                 bounds_y = 0
                 bounds_cx = 50
                 bounds_cy = 17
@@ -8292,9 +8625,9 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 4
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 266
+                bounds_x = 268
                 bounds_y = 0
-                bounds_cx = 421
+                bounds_cx = 427
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
@@ -8311,8 +8644,8 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 1
             bounds_x = 0
             bounds_y = 20
-            bounds_cx = 722
-            bounds_cy = 493
+            bounds_cx = 730
+            bounds_cy = 541
             anchors = [an_left, an_top, an_right, an_bottom]
             caption = 'New Form'
             coloractivetab = 16776396
@@ -8324,8 +8657,8 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = []
               bounds_x = -1
               bounds_y = 0
-              bounds_cx = 720
-              bounds_cy = 492
+              bounds_cx = 728
+              bounds_cy = 540
               anchors = [an_left, an_top, an_right, an_bottom]
               optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_savestate, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
               fixcols.count = 1
@@ -8381,14 +8714,14 @@ object projectoptionsfo: tprojectoptionsfo
                   dataclass = tgridmsestringdatalist
                 end              
                 item[newfosources]
-                  width = 231
+                  width = 235
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'newfosources'
                   dataclass = tgridmsestringdatalist
                 end              
                 item[newfoforms]
-                  width = 240
+                  width = 244
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'newfoforms'
@@ -8454,7 +8787,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 bounds_x = 219
                 bounds_y = 0
-                bounds_cx = 231
+                bounds_cx = 235
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -8489,9 +8822,9 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 5
                 onshowhint = hintexpandedmacros
                 visible = False
-                bounds_x = 451
+                bounds_x = 455
                 bounds_y = 0
-                bounds_cx = 240
+                bounds_cx = 244
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -8520,8 +8853,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 9
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'Tools'
         coloractivetab = 16776396
@@ -8532,8 +8865,8 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 722
-          bounds_cy = 513
+          bounds_cx = 730
+          bounds_cy = 561
           anchors = []
           optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
           fixcols.count = 1
@@ -8619,14 +8952,14 @@ object projectoptionsfo: tprojectoptionsfo
               dataclass = tgridintegerdatalist
             end          
             item[toolmenus]
-              width = 91
+              width = 92
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               onshowhint = colonshowhint
               widgetname = 'toolmenus'
               dataclass = tgridmsestringdatalist
             end          
             item[toolshortcuts]
-              width = 81
+              width = 82
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow, co_rowdatachange]
               widgetname = 'toolshortcuts'
               dataclass = tgridenumdatalist
@@ -8634,27 +8967,27 @@ object projectoptionsfo: tprojectoptionsfo
             item[toolsc]
               color = -1879048185
               coloractive = -2147483647
-              width = 77
+              width = 78
               options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               widgetname = 'toolsc'
               dataclass = tgridmsestringdatalist
             end          
             item[toolscalt]
               color = -1879048185
-              width = 67
+              width = 68
               options = [co_readonly, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               widgetname = 'toolscalt'
               dataclass = tgridmsestringdatalist
             end          
             item[toolfiles]
-              width = 34
+              width = 35
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               onshowhint = colonshowhint
               widgetname = 'toolfiles'
               dataclass = tgridmsestringdatalist
             end          
             item[toolparams]
-              width = 251
+              width = 254
               options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               onshowhint = colonshowhint
               widgetname = 'toolparams'
@@ -8731,7 +9064,7 @@ object projectoptionsfo: tprojectoptionsfo
             visible = False
             bounds_x = 81
             bounds_y = 0
-            bounds_cx = 91
+            bounds_cx = 92
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
             reffontheight = 15
@@ -8751,9 +9084,9 @@ object projectoptionsfo: tprojectoptionsfo
               end>
             taborder = 6
             visible = False
-            bounds_x = 173
+            bounds_x = 174
             bounds_y = 0
-            bounds_cx = 81
+            bounds_cx = 82
             statfile = statfile1
             optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
@@ -8827,9 +9160,9 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 7
             visible = False
-            bounds_x = 255
+            bounds_x = 257
             bounds_y = 0
-            bounds_cx = 77
+            bounds_cx = 78
             optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
             optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
             reffontheight = 15
@@ -8839,9 +9172,9 @@ object projectoptionsfo: tprojectoptionsfo
             optionsskin = [osk_framebuttononly]
             taborder = 8
             visible = False
-            bounds_x = 333
+            bounds_x = 336
             bounds_y = 0
-            bounds_cx = 67
+            bounds_cx = 68
             optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
             optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
             reffontheight = 15
@@ -8864,9 +9197,9 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 9
             onshowhint = hintexpandedmacros
             visible = False
-            bounds_x = 401
+            bounds_x = 405
             bounds_y = 0
-            bounds_cx = 34
+            bounds_cx = 35
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
             controller.include = [fa_xusr, fa_xgrp, fa_xoth]
@@ -8882,9 +9215,9 @@ object projectoptionsfo: tprojectoptionsfo
             taborder = 10
             onshowhint = hintexpandedmacros
             visible = False
-            bounds_x = 436
+            bounds_x = 441
             bounds_y = 0
-            bounds_cx = 251
+            bounds_cx = 254
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
             reffontheight = 15
@@ -8897,8 +9230,8 @@ object projectoptionsfo: tprojectoptionsfo
         taborder = 10
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'Storage '
         coloractivetab = 16776396
@@ -8907,6 +9240,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Load/save editor settings'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -8923,6 +9257,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Auto load'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -8939,6 +9274,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Auto save'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -8960,7 +9296,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.localprops1 = []
           bounds_x = 0
           bounds_y = 13
-          bounds_cx = 722
+          bounds_cx = 730
           bounds_cy = 40
           anchors = [an_top]
           optionsscale = [osc_expandy, osc_shrinky]
@@ -8971,8 +9307,13 @@ object projectoptionsfo: tprojectoptionsfo
           place_options = [plo_endmargin]
           object savebu: tbutton
             optionswidget1 = [ow1_fontlineheight, ow1_autoscale]
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.tframecomp3
+            face.localprops = []
+            face.template = mainfo.convex
             taborder = 2
-            bounds_x = 668
+            bounds_x = 676
             bounds_y = 9
             bounds_cx = 49
             bounds_cy = 22
@@ -8984,8 +9325,13 @@ object projectoptionsfo: tprojectoptionsfo
           end
           object loadbu: tbutton
             optionswidget1 = [ow1_fontlineheight, ow1_autoscale]
+            frame.localprops = []
+            frame.localprops1 = []
+            frame.template = mainfo.tframecomp3
+            face.localprops = []
+            face.template = mainfo.convex
             taborder = 1
-            bounds_x = 614
+            bounds_x = 622
             bounds_y = 9
             bounds_cx = 49
             bounds_cy = 22
@@ -9002,13 +9348,20 @@ object projectoptionsfo: tprojectoptionsfo
             frame.captionpos = cp_right
             frame.localprops = []
             frame.localprops1 = []
+            frame.template = mainfo.tframecomp3
             frame.buttons.count = 1
             frame.buttons.items = <            
               item
                 color = -2147483646
+                frame.localprops = []
+                frame.localprops1 = []
+                frame.template = mainfo.mainmenuframe
                 imagenr = 17
               end>
             frame.button.color = -2147483646
+            frame.button.frame.localprops = []
+            frame.button.frame.localprops1 = []
+            frame.button.frame.template = mainfo.mainmenuframe
             frame.button.imagenr = 17
             frame.outerframe = (
               0
@@ -9019,7 +9372,7 @@ object projectoptionsfo: tprojectoptionsfo
             onshowhint = hintexpandedmacros
             bounds_x = 5
             bounds_y = 5
-            bounds_cx = 604
+            bounds_cx = 612
             bounds_cy = 30
             anchors = [an_left, an_top, an_right]
             ondataentered = settingsdataent
@@ -9044,6 +9397,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Load/save debugger settings'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -9061,6 +9415,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Load/save storage settings'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -9078,6 +9433,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.caption = 'Load/save project tree'
           frame.localprops = []
           frame.localprops1 = []
+          frame.template = mainfo.menuitemframe
           frame.outerframe = (
             0
             2
@@ -9094,12 +9450,13 @@ object projectoptionsfo: tprojectoptionsfo
       object ttabpage23: ttabpage
         frame.localprops = []
         frame.localprops1 = []
+        frame.template = mainfo.tframecomp2
         taborder = 12
         hint = 'project_date'
         bounds_x = 1
         bounds_y = 25
-        bounds_cx = 722
-        bounds_cy = 513
+        bounds_cx = 730
+        bounds_cy = 561
         anchors = [an_left, an_top, an_right, an_bottom]
         caption = 'Infos'
         coloractivetab = 16776396
@@ -9109,6 +9466,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.sbhorz.pagesize = 1
           frame.sbvert.pagesize = 1
           frame.outerframe = (
@@ -9119,7 +9477,7 @@ object projectoptionsfo: tprojectoptionsfo
           )
           bounds_x = 148
           bounds_y = 333
-          bounds_cx = 417
+          bounds_cx = 425
           bounds_cy = 125
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
@@ -9130,6 +9488,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -9139,7 +9498,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 1
           bounds_x = 148
           bounds_y = 90
-          bounds_cx = 417
+          bounds_cx = 425
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
@@ -9150,6 +9509,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -9159,7 +9519,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 2
           bounds_x = 148
           bounds_y = 147
-          bounds_cx = 417
+          bounds_cx = 425
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
@@ -9170,6 +9530,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -9179,7 +9540,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 3
           bounds_x = 148
           bounds_y = 205
-          bounds_cx = 417
+          bounds_cx = 425
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
@@ -9190,6 +9551,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -9199,7 +9561,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 4
           bounds_x = 148
           bounds_y = 34
-          bounds_cx = 417
+          bounds_cx = 425
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15
@@ -9210,6 +9572,7 @@ object projectoptionsfo: tprojectoptionsfo
           frame.captiontextflags = [tf_bottom]
           frame.localprops = [frl_colorclient]
           frame.localprops1 = []
+          frame.template = mainfo.tframecomp3
           frame.outerframe = (
             0
             18
@@ -9219,7 +9582,7 @@ object projectoptionsfo: tprojectoptionsfo
           taborder = 5
           bounds_x = 148
           bounds_y = 266
-          bounds_cx = 419
+          bounds_cx = 427
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           reffontheight = 15

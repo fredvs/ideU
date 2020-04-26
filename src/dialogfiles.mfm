@@ -210,6 +210,7 @@ object dialogfilesfo: tdialogfilesfo
     frame.font.localprops = [flp_colorbackground]
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.outerframe = (
       0
       18
@@ -257,6 +258,7 @@ object dialogfilesfo: tdialogfilesfo
     frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     face.template = sourcefo.tfacecomp1
@@ -276,6 +278,7 @@ object dialogfilesfo: tdialogfilesfo
     frame.font.localprops = []
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     face.template = sourcefo.tfacecomp1

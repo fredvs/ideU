@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 361
-  bounds_y = 113
+  bounds_x = 362
+  bounds_y = 49
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -198,17 +198,18 @@ object confideufo: tconfideufo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     taborder = 1
     bounds_x = 10
-    bounds_y = 540
+    bounds_y = 539
     bounds_cx = 277
-    bounds_cy = 121
+    bounds_cy = 122
     object tesakitdir: tfilenameedit
       Tag = 3
       frame.colorclient = 14876625
@@ -216,11 +217,18 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           imagenr = 17
         end>
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.button.imagenr = 17
       frame.outerframe = (
         0
@@ -229,9 +237,9 @@ object confideufo: tconfideufo
         0
       )
       hint = 'Parent directory of sakit'
-      bounds_x = 10
-      bounds_y = 65
-      bounds_cx = 259
+      bounds_x = 8
+      bounds_y = 64
+      bounds_cx = 263
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = '${IDEUDIR}/plugin'
@@ -245,6 +253,7 @@ object confideufo: tconfideufo
       frame.caption = 'Enable sak assistive at loading'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -252,8 +261,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 1
-      bounds_x = 10
-      bounds_y = 31
+      bounds_x = 8
+      bounds_y = 30
       bounds_cx = 199
       bounds_cy = 17
     end
@@ -264,21 +273,23 @@ object confideufo: tconfideufo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     taborder = 2
     bounds_x = 13
-    bounds_y = 185
+    bounds_y = 184
     bounds_cx = 281
-    bounds_cy = 349
+    bounds_cy = 350
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -287,8 +298,8 @@ object confideufo: tconfideufo
       )
       taborder = 1
       hint = 'Use the mse universal directory layout'
-      bounds_x = 10
-      bounds_y = 31
+      bounds_x = 8
+      bounds_y = 30
       bounds_cx = 170
       bounds_cy = 17
     end
@@ -296,6 +307,7 @@ object confideufo: tconfideufo
       frame.caption = 'No Z order handling'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -303,8 +315,8 @@ object confideufo: tconfideufo
         2
       )
       hint = 'No focus on window when mouse-move on it.'
-      bounds_x = 10
-      bounds_y = 203
+      bounds_x = 8
+      bounds_y = 202
       bounds_cx = 137
       bounds_cy = 17
       value = True
@@ -314,6 +326,7 @@ object confideufo: tconfideufo
       frame.caption = 'Use shift key to select a word'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -322,8 +335,8 @@ object confideufo: tconfideufo
       )
       taborder = 2
       hint = 'Use shift + 2x click to select a word.'
-      bounds_x = 10
-      bounds_y = 67
+      bounds_x = 8
+      bounds_y = 66
       bounds_cx = 193
       bounds_cy = 17
     end
@@ -331,6 +344,7 @@ object confideufo: tconfideufo
       frame.caption = 'Auto focus in main-memu'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -339,8 +353,8 @@ object confideufo: tconfideufo
       )
       taborder = 3
       hint = 'Set auto focus if mouse moves on main-menu'
-      bounds_x = 10
-      bounds_y = 179
+      bounds_x = 8
+      bounds_y = 178
       bounds_cx = 172
       bounds_cy = 17
     end
@@ -348,6 +362,7 @@ object confideufo: tconfideufo
       frame.caption = 'Full path of project in window title'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -356,8 +371,8 @@ object confideufo: tconfideufo
       )
       taborder = 4
       hint = 'Show the full path of project in main window title.'
-      bounds_x = 10
-      bounds_y = 106
+      bounds_x = 8
+      bounds_y = 105
       bounds_cx = 222
       bounds_cy = 17
       value = True
@@ -367,6 +382,7 @@ object confideufo: tconfideufo
       frame.caption = 'Set dialog-forms as modal vs as tool.'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -375,8 +391,8 @@ object confideufo: tconfideufo
       )
       taborder = 5
       hint = 'Set find-dialog-form, beautifier,... as modal, otherwise as tool.'
-      bounds_x = 10
-      bounds_y = 143
+      bounds_x = 8
+      bounds_y = 142
       bounds_cx = 236
       bounds_cy = 17
       value = True
@@ -387,6 +403,7 @@ object confideufo: tconfideufo
       frame.captionpos = cp_left
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.outerframe = (
         60
         0
@@ -394,8 +411,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 6
-      bounds_x = 10
-      bounds_y = 293
+      bounds_x = 8
+      bounds_y = 292
       bounds_cx = 96
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -406,27 +423,19 @@ object confideufo: tconfideufo
       reffontheight = 15
     end
     object fontname: tdropdownlistedit
-      frame.levelo = 0
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.framei_left = 4
-      frame.framei_top = 2
-      frame.framei_right = 4
-      frame.framei_bottom = 2
       frame.frameimage_list = mainfo.timagelist3
-      frame.frameimage_left = -4
-      frame.frameimage_top = -4
-      frame.frameimage_right = -4
-      frame.frameimage_bottom = -4
       frame.caption = 'Font name '
       frame.captionpos = cp_left
       frame.localprops = [frl_hiddenedges, frl_frameimagelist, frl_colorclient]
       frame.localprops1 = [frl1_captiondist]
+      frame.template = mainfo.tframecomp3
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
-      frame.button.frame.template = mainfo.tframecomp2
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
@@ -435,7 +444,7 @@ object confideufo: tconfideufo
           face.localprops = [fal_fadirection]
           frame.localprops = []
           frame.localprops1 = []
-          frame.template = mainfo.tframecomp2
+          frame.template = mainfo.mainmenuframe
         end>
       frame.outerframe = (
         72
@@ -445,8 +454,8 @@ object confideufo: tconfideufo
       )
       taborder = 7
       hint = 'Compiler Type for Edited file'
-      bounds_x = 10
-      bounds_y = 251
+      bounds_x = 8
+      bounds_y = 250
       bounds_cx = 263
       bounds_cy = 21
       statfile = mainfo.projectstatfile
@@ -470,6 +479,7 @@ object confideufo: tconfideufo
       frame.caption = 'No confirmation to delete row'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -478,8 +488,8 @@ object confideufo: tconfideufo
       )
       taborder = 8
       hint = 'No confirmation dialog when deleting a row'
-      bounds_x = 10
-      bounds_y = 226
+      bounds_x = 8
+      bounds_y = 225
       bounds_cx = 195
       bounds_cy = 17
     end
@@ -490,21 +500,23 @@ object confideufo: tconfideufo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     taborder = 3
     bounds_x = 306
-    bounds_y = 18
+    bounds_y = 17
     bounds_cx = 314
-    bounds_cy = 647
+    bounds_cy = 648
     object trimtrailingwhitespace: tbooleanedit
       frame.caption = 'Trim whitespace'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -512,8 +524,8 @@ object confideufo: tconfideufo
         2
       )
       hint = 'Trim trailing whitespace on save'
-      bounds_x = 10
-      bounds_y = 156
+      bounds_x = 8
+      bounds_y = 155
       bounds_cx = 115
       bounds_cy = 17
     end
@@ -522,6 +534,7 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
         18
@@ -529,8 +542,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 1
-      bounds_x = 10
-      bounds_y = 248
+      bounds_x = 8
+      bounds_y = 247
       bounds_cx = 81
       bounds_cy = 39
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -545,11 +558,18 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.button.color = -2147483646
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.tframecomp2
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
           color = -2147483646
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.tframecomp2
         end>
       frame.outerframe = (
         0
@@ -558,8 +578,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 2
-      bounds_x = 9
-      bounds_y = 187
+      bounds_x = 7
+      bounds_y = 186
       bounds_cx = 84
       bounds_cy = 39
       dropdown.options = [deo_selectonly, deo_forceselect, deo_autodropdown, deo_keydropdown]
@@ -580,6 +600,7 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
         18
@@ -587,8 +608,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 3
-      bounds_x = 10
-      bounds_y = 68
+      bounds_x = 8
+      bounds_y = 67
       bounds_cx = 86
       bounds_cy = 39
       valuemax = 10
@@ -599,6 +620,7 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
         18
@@ -606,8 +628,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 5
-      bounds_x = 140
-      bounds_y = 197
+      bounds_x = 142
+      bounds_y = 196
       bounds_cx = 56
       bounds_cy = 39
       anchors = [an_top, an_right]
@@ -622,15 +644,16 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
         18
         35
         0
       )
-      taborder = 7
-      bounds_x = 129
-      bounds_y = 253
+      taborder = 6
+      bounds_x = 127
+      bounds_y = 252
       bounds_cx = 78
       bounds_cy = 39
       statfile = mainfo.mainstatfile
@@ -646,51 +669,37 @@ object confideufo: tconfideufo
       frame.caption = 'Use those options instead of project options.'
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
+        0
         271
-        2
-      )
-      taborder = 8
-      hint = 'Use the options that follow instead of project options.'
-      bounds_x = 10
-      bounds_y = 34
-      bounds_cx = 284
-      bounds_cy = 17
-      statfile = mainfo.projectstatfile
-    end
-    object tabindent: tbooleanedit
-      frame.caption = 'Tab'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.outerframe = (
         0
-        2
-        25
-        2
       )
-      taborder = 6
-      bounds_x = 236
-      bounds_y = 276
-      bounds_cx = 38
-      bounds_cy = 17
+      taborder = 7
+      hint = 'Use the options that follow instead of project options.'
+      bounds_x = 7
+      bounds_y = 26
+      bounds_cx = 290
+      bounds_cy = 18
+      statfile = mainfo.projectstatfile
     end
     object spacetabs: tbooleanedit
       frame.caption = 'Space'
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
+        0
         40
-        2
+        0
       )
       taborder = 4
-      bounds_x = 222
-      bounds_y = 219
-      bounds_cx = 53
-      bounds_cy = 17
+      bounds_x = 220
+      bounds_y = 214
+      bounds_cx = 59
+      bounds_cy = 18
     end
     object colorerror: tcoloredit
       color = -2147483645
@@ -698,10 +707,57 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.button.options = [fbo_inactiveinvisible]
       frame.buttons.count = 2
       frame.buttons.items = <      
         item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
+          options = [fbo_inactiveinvisible]
+        end      
+        item
+          imagenr = 17
+          options = [fbo_inactiveinvisible]
+        end>
+      frame.buttonellipse.imagenr = 17
+      frame.buttonellipse.options = [fbo_inactiveinvisible]
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 8
+      bounds_x = 6
+      bounds_y = 426
+      bounds_cx = 296
+      bounds_cy = 39
+      anchors = [an_left, an_top, an_right]
+      value = -1610612717
+      reffontheight = 15
+    end
+    object colorwarning: tcoloredit
+      color = -2147483645
+      frame.caption = 'Warning Color'
+      frame.captiontextflags = [tf_bottom]
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
+      frame.button.options = [fbo_inactiveinvisible]
+      frame.buttons.count = 2
+      frame.buttons.items = <      
+        item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           options = [fbo_inactiveinvisible]
         end      
         item
@@ -717,24 +773,31 @@ object confideufo: tconfideufo
         0
       )
       taborder = 9
-      bounds_x = 8
-      bounds_y = 427
-      bounds_cx = 292
+      bounds_x = 7
+      bounds_y = 367
+      bounds_cx = 296
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
-      value = -1610612717
+      value = -1610612712
       reffontheight = 15
     end
-    object colorwarning: tcoloredit
+    object colornote: tcoloredit
       color = -2147483645
-      frame.caption = 'Warning Color'
+      frame.caption = 'Note Color'
       frame.captiontextflags = [tf_bottom]
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.button.options = [fbo_inactiveinvisible]
       frame.buttons.count = 2
       frame.buttons.items = <      
         item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           options = [fbo_inactiveinvisible]
         end      
         item
@@ -750,42 +813,9 @@ object confideufo: tconfideufo
         0
       )
       taborder = 10
-      bounds_x = 9
-      bounds_y = 368
-      bounds_cx = 292
-      bounds_cy = 39
-      anchors = [an_left, an_top, an_right]
-      value = -1610612712
-      reffontheight = 15
-    end
-    object colornote: tcoloredit
-      color = -2147483645
-      frame.caption = 'Note Color'
-      frame.captiontextflags = [tf_bottom]
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.button.options = [fbo_inactiveinvisible]
-      frame.buttons.count = 2
-      frame.buttons.items = <      
-        item
-          options = [fbo_inactiveinvisible]
-        end      
-        item
-          imagenr = 17
-          options = [fbo_inactiveinvisible]
-        end>
-      frame.buttonellipse.imagenr = 17
-      frame.buttonellipse.options = [fbo_inactiveinvisible]
-      frame.outerframe = (
-        0
-        18
-        0
-        0
-      )
-      taborder = 11
-      bounds_x = 9
-      bounds_y = 309
-      bounds_cx = 292
+      bounds_x = 7
+      bounds_y = 308
+      bounds_cx = 296
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = -1610612716
@@ -796,18 +826,19 @@ object confideufo: tconfideufo
       frame.caption = 'Strip ESC'
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
+        0
         60
-        2
+        0
       )
-      taborder = 12
+      taborder = 11
       hint = 'Strip ESC sequences in Messages and Terminal form'
-      bounds_x = 172
-      bounds_y = 90
-      bounds_cx = 73
-      bounds_cy = 17
+      bounds_x = 165
+      bounds_y = 87
+      bounds_cx = 78
+      bounds_cy = 18
     end
     object deflayout: tfilenameedit
       Tag = 3
@@ -816,11 +847,18 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           imagenr = 17
         end>
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.button.imagenr = 17
       frame.outerframe = (
         0
@@ -828,11 +866,11 @@ object confideufo: tconfideufo
         0
         0
       )
-      taborder = 13
+      taborder = 12
       hint = 'Default layout for all projects'
-      bounds_x = 10
-      bounds_y = 489
-      bounds_cx = 292
+      bounds_x = 8
+      bounds_y = 488
+      bounds_cx = 296
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/layout/'
@@ -847,11 +885,18 @@ object confideufo: tconfideufo
       frame.captiontextflags = [tf_bottom]
       frame.localprops = [frl_colorclient]
       frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
       frame.buttons.count = 1
       frame.buttons.items = <      
         item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
           imagenr = 17
         end>
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
       frame.button.imagenr = 17
       frame.outerframe = (
         0
@@ -859,11 +904,11 @@ object confideufo: tconfideufo
         0
         0
       )
-      taborder = 14
+      taborder = 13
       hint = 'Default layout for all projects'
-      bounds_x = 10
-      bounds_y = 556
-      bounds_cx = 292
+      bounds_x = 8
+      bounds_y = 555
+      bounds_cx = 296
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/syntaxdefs/'
@@ -876,16 +921,17 @@ object confideufo: tconfideufo
       frame.caption = 'Close message after compile'
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         1
         174
         2
       )
-      taborder = 15
+      taborder = 14
       hint = 'Close messages window after compile.'
-      bounds_x = 10
-      bounds_y = 126
+      bounds_x = 8
+      bounds_y = 125
       bounds_cx = 187
       bounds_cy = 17
     end
@@ -893,20 +939,38 @@ object confideufo: tconfideufo
       frame.caption = 'Add space after comma when auto-parsing'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
         264
         2
       )
-      taborder = 16
+      taborder = 15
       hint = 'Add space after comma when auto-parsing MSEgui code from designer'
-      bounds_x = 14
-      bounds_y = 622
+      bounds_x = 12
+      bounds_y = 621
       bounds_cx = 277
       bounds_cy = 17
       value = True
       valuedefault = True
+    end
+    object tabindent: tbooleanedit
+      frame.caption = 'Tab'
+      frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+      frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        0
+        25
+        0
+      )
+      taborder = 16
+      bounds_x = 224
+      bounds_y = 267
+      bounds_cx = 44
+      bounds_cy = 18
     end
   end
   object group_file_change: tgroupbox
@@ -915,29 +979,31 @@ object confideufo: tconfideufo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     taborder = 4
     bounds_x = 10
-    bounds_y = 20
+    bounds_y = 19
     bounds_cx = 277
-    bounds_cy = 143
+    bounds_cy = 144
     object tbfilereload: tbooleaneditradio
       frame.caption = 'No dialog box => reload the new one.'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
         233
         2
       )
-      bounds_x = 10
-      bounds_y = 29
+      bounds_x = 8
+      bounds_y = 28
       bounds_cx = 246
       bounds_cy = 17
       value = True
@@ -946,6 +1012,7 @@ object confideufo: tconfideufo
       frame.caption = 'No dialog box => keep the old one.'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -953,8 +1020,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 1
-      bounds_x = 10
-      bounds_y = 70
+      bounds_x = 8
+      bounds_y = 69
       bounds_cx = 231
       bounds_cy = 17
     end
@@ -962,6 +1029,7 @@ object confideufo: tconfideufo
       frame.caption = 'A dialog box ask what to do...'
       frame.localprops = []
       frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
         2
@@ -969,8 +1037,8 @@ object confideufo: tconfideufo
         2
       )
       taborder = 2
-      bounds_x = 10
-      bounds_y = 113
+      bounds_x = 8
+      bounds_y = 112
       bounds_cx = 195
       bounds_cy = 17
     end
@@ -979,6 +1047,7 @@ object confideufo: tconfideufo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.mainmenuframe
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     bounds_x = 11
@@ -993,6 +1062,7 @@ object confideufo: tconfideufo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
+    frame.template = mainfo.mainmenuframe
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 5

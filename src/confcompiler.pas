@@ -76,8 +76,8 @@ uses
    pythoncompiler: tfilenameedit;
    tlabel3: tlabel;
    tlabel4: tlabel;
-   but_ok: tbutton;
    tlabel5: tlabel;
+   but_ok: tbutton;
    procedure closeapp(const sender: TObject);
    procedure oncreatedev(const sender: TObject);
  end;

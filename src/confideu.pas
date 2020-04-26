@@ -33,7 +33,6 @@ type
     tabstops: tintegeredit;
     blockindent: tintegeredit;
     usedefaulteditoroptions: tbooleanedit;
-    tabindent: tbooleanedit;
     spacetabs: tbooleanedit;
    colorerror: tcoloredit;
    colorwarning: tcoloredit;
@@ -52,6 +51,7 @@ type
    tbfileaskload: tbooleaneditradio;
    confirmdel: tbooleanedit;
    but_ok: tbutton;
+   tabindent: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);

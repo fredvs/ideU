@@ -52,11 +52,18 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.button.color = -2147483646
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         color = -2147483646
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -81,13 +88,20 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         color = -2147483646
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
         imagenr = 17
       end>
     frame.button.color = -2147483646
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.button.imagenr = 17
     frame.outerframe = (
       0
@@ -115,11 +129,18 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.tframecomp3
     frame.button.color = -2147483646
+    frame.button.frame.localprops = []
+    frame.button.frame.localprops1 = []
+    frame.button.frame.template = mainfo.mainmenuframe
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
         color = -2147483646
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.template = mainfo.mainmenuframe
       end>
     frame.outerframe = (
       0
@@ -145,6 +166,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = 'C&asesensitive'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -162,6 +184,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = 'Search in &project dir'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -182,6 +205,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = 'Search in &directories'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -201,6 +225,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = '&Whole word'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -219,6 +244,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = 'Search in &open files'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -239,6 +265,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = 'Search in &current file'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
@@ -258,6 +285,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.caption = '&Include subdirectories'
     frame.localprops = []
     frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
       2
