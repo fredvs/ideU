@@ -246,7 +246,7 @@ mainfo.frame.grip_size := round(12*ratio);
 // message
 
 messagefontheight := fontsize.value; 
-messagefontname := fontsize.name; 
+messagefontname := UTF8Decode(fontsize.name); 
 
 // commandor
 

@@ -921,12 +921,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3839
+ 3834
+ 1
  0
  0
  0
- 0
- 256
+ 260
 exeusedon=14
  3903
  0
@@ -1516,8 +1516,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=oncellev
+finddtext='$'
 findhistory=20
+ '$'
  oncellev
  const
  str4
@@ -1537,13 +1538,12 @@ findhistory=20
  hint
  drawtextinfoty
  messagefontheight
- showhint
 findoptions=1
 editpos=4
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
  0,0
+ 0,0
+ 0,0
+ 0,844
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1592,10 +1592,15 @@ nomenumodules=6
  -1
  -1
 [sourcefo.files_tab]
+order=4
+ 0
+ 2
+ 3
+ 1
 firsttab=0
 index=3
 [layout]
-windowlayout=612
+windowlayout=617
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1609,13 +1614,13 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=0
+ x=3
  y=29
- cx=1280
+ cx=1274
  cy=742
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1703,7 +1708,7 @@ windowlayout=612
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1729,7 +1734,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=544
+ cy=521
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1740,7 +1745,7 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=15
+ row=17
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1919,9 +1924,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=621
- cx=1268
- cy=100
+ y=598
+ cx=1262
+ cy=123
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2020,7 +2025,7 @@ windowlayout=612
  ncy=0
  x=0
  y=0
- cx=1268
+ cx=1262
  cy=71
  rcx=0
  rcy=0
@@ -2032,11 +2037,11 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1268
+ ncx=1262
  ncy=19
  x=0
  y=0
- cx=1268
+ cx=1262
  cy=19
  rcx=0
  rcy=0
@@ -2047,7 +2052,7 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/projectoptionsform.pas
@@ -2085,11 +2090,16 @@ windowlayout=612
  ncy=0
  x=208
  y=0
- cx=1060
- cy=544
+ cx=1054
+ cy=521
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  2
+  3
+  1
  firsttab=0
  index=3
  [confideufo.fontname]
@@ -2128,8 +2138,8 @@ windowlayout=612
  ncy=0
  x=0
  y=74
- cx=1268
- cy=544
+ cx=1262
+ cy=521
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

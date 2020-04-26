@@ -172,6 +172,10 @@ function getpascalvarname(const edit: tsyntaxedit;
 procedure findintextedit(const edit: tcustomtextedit; var info: findinfoty;
               var findpos: gridcoordty; const backward: boolean = false);
 
+
+var
+autocomplet : integer = 0;
+
 implementation
 
 uses
@@ -242,13 +246,21 @@ procedure tsourcepage.onmouseev(const sender: twidget;
                var ainfo: mouseeventinfoty);
 
 var
-txtvalue: msestring;
+txtvalue, txtvalue2: msestring;
+int1 : Integer;
 begin
+if autocomplet = 0 then begin
 if ainfo.eventkind = ek_buttonrelease then
     if ainfo.shiftstate = [ss_double] then
     begin
        pastefromclipboard(txtvalue);
-       copytoclipboard(tedit(sender).text);
+       txtvalue2 := tedit(sender).text;
+          
+      int1 := system.pos('$',txtvalue2);
+       if int1 > 0 then   txtvalue2 :=
+          system.copy(txtvalue2,0,int1-1) + '(';
+ 
+       copytoclipboard(txtvalue2);
        //debuggerfo.statdisp.value:=  tedit(sender).text;
        selectwordatcursor();
        edit.deleteselection;
@@ -259,6 +271,7 @@ if ainfo.eventkind = ek_buttonrelease then
        sourcefo.thetimer.interval :=  500000 ;
        sourcefo.thetimer.Enabled := true;
    end;
+  end;
 end;
   
 constructor tsourcepage.create(aowner: tcomponent);
@@ -711,9 +724,9 @@ begin
                          (shiftstate1 = [ss_ctrl])) then begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
+        sourcefo.thetimer.Enabled := false;
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
-       sourcefo.thetimer.Enabled := false;
-       case key of
+          case key of
         key_up,key_down: begin
 
          if switchheaderimplementation(edit.filename,pos1,pos2,bo1) then begin
@@ -729,6 +742,7 @@ begin
          end;
         end;
         key_space: begin
+         autocomplet := 1 ;
          showprocheaders(edit.editpos);
         end;
         else begin
@@ -739,6 +753,7 @@ begin
       else begin
        case key of
         key_space: begin
+        autocomplet := 0 ;
         showsourceitems(edit.editpos);
         end
         else begin
@@ -915,9 +930,10 @@ if sourcefo.tabdeleted = false then
 begin
   if (edit.editpos.col > -1) and (edit.editpos.row > -1) then
   begin
+  autocomplet := 0 ;
   showsourceitems(edit.editpos);
  sourcefo.thetimer.ontimer := @ontimerhide;
- sourcefo.thetimer.interval :=  30000000 ;
+ sourcefo.thetimer.interval :=  40000000 ;
  sourcefo.thetimer.Enabled := true;
  //sleep(200);
   activate(false,true); //get focus back
@@ -1712,7 +1728,7 @@ begin
           sourcefo.thetimer.Enabled := false;
           sourcefo.thetimer.ontimer := @ontimerhint;
           sourcefo.hidesourcehint;
-          sourcefo.thetimer.interval :=  2000000 ;
+          sourcefo.thetimer.interval :=  1300000 ;
           sourcefo.thetimer.Enabled := true;
         end
       else

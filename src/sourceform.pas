@@ -322,6 +322,7 @@ begin
   begin
     apage  := sourcefo.showsourceline(objpath(fna1), row1, col1, True);
     Result := True;
+   
   end;
 end;
 
@@ -515,7 +516,7 @@ begin
   end
   else
     Result := False;
-end;
+ end;
 
 procedure tsourcefo.tabwidgetpageremoved(const Sender: TObject; const awidget: twidget);
 begin
