@@ -223,331 +223,332 @@ function buildmakecommandline(const atag: integer): string;
  end;
 
 var
- int1,int2, int3, int4, int5, acompiler: integer;
- str1,str2,str3, str4, winestr, extrastr : msestring;
-// wstr1: filenamety;
+ int1,int2, inttypecomp, acompiler: integer;
+ str1, str2, strcompiler, strexecext, strwine, strextra : msestring;
 begin
-extrastr := ' ';
-winestr := '';
+strextra := ' ';
+strwine := '';
 wineneeded:= false;
-
-int4 := 0;
+strexecext := '';
+strcompiler := '';
+inttypecomp := 0;
 
  with projectoptions,o,texp do begin
 
-for int3:= 0 to high(compilerused) do begin
-   if (atag and compilerusedon[int3] <> 0) and
-         (compilerused[int3] <> '') then begin
+for int1:= 0 to high(compilerused) do begin
+   if (atag and compilerusedon[int1] <> 0) and
+         (compilerused[int1] <> '') then begin
 
- if (pos('Default',compilerused[int3]) > 0) or
-  (trim(compilerused[int3]) = '${COMPILER}') then
-    str3:= quotefilename(tosysfilepath(makecommand)) else
+ if (pos('Default',compilerused[int1]) > 0) or
+  (trim(compilerused[int1]) = '${COMPILER}') then
+    strcompiler:= quotefilename(tosysfilepath(makecommand)) else
 
-    if (trim(compilerused[int3]) = 'Pascal Compiler 1') or
-    (trim(compilerused[int3]) = 'Pascal 1') then
+    if (trim(compilerused[int1]) = 'Pascal Compiler 1') or
+    (trim(compilerused[int1]) = 'Pascal 1') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep1.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Pascal Compiler 2') or
-    (trim(compilerused[int3]) = 'Pascal 2') then
+    if (trim(compilerused[int1]) = 'Pascal Compiler 2') or
+    (trim(compilerused[int1]) = 'Pascal 2') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler2.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Pascal Compiler 3') or
-    (trim(compilerused[int3]) = 'Pascal 3') then
+    if (trim(compilerused[int1]) = 'Pascal Compiler 3') or
+    (trim(compilerused[int1]) = 'Pascal 3') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep3.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler3.value));
     end else
 
-     if (trim(compilerused[int3]) = 'Pascal Compiler 4') or
-    (trim(compilerused[int3]) = 'Pascal 4') then
+     if (trim(compilerused[int1]) = 'Pascal Compiler 4') or
+    (trim(compilerused[int1]) = 'Pascal 4') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep4.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler4.value));
     end  else
 
-     if (trim(compilerused[int3]) = 'Pascal Compiler 5') or
-    (trim(compilerused[int3]) = 'Pascal 5') then
+     if (trim(compilerused[int1]) = 'Pascal Compiler 5') or
+    (trim(compilerused[int1]) = 'Pascal 5') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep5.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler5.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler5.value));
     end  else
 
-     if (trim(compilerused[int3]) = 'Pascal Compiler 6') or
-    (trim(compilerused[int3]) = 'Pascal 6') then
+     if (trim(compilerused[int1]) = 'Pascal Compiler 6') or
+    (trim(compilerused[int1]) = 'Pascal 6') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep6.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler6.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler6.value));
     end  else
 
-     if (trim(compilerused[int3]) = 'Pascal Compiler 7') or
-    (trim(compilerused[int3]) = 'Pascal 7') then
+     if (trim(compilerused[int1]) = 'Pascal Compiler 7') or
+    (trim(compilerused[int1]) = 'Pascal 7') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep7.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler7.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler7.value));
     end  else
 
-     if (trim(compilerused[int3]) = 'Pascal Compiler 8') or
-    (trim(compilerused[int3]) = 'Pascal 8') then
+     if (trim(compilerused[int1]) = 'Pascal Compiler 8') or
+    (trim(compilerused[int1]) = 'Pascal 8') then
     begin
     acompiler := 1;
      if  confcompilerfo.twinep8.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.fpccompiler8.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.fpccompiler8.value));
     end  else
 
-     if (trim(compilerused[int3]) = 'C Compiler 1') or
-    (trim(compilerused[int3]) = 'C 1') then
+     if (trim(compilerused[int1]) = 'C Compiler 1') or
+    (trim(compilerused[int1]) = 'C 1') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec1.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler.value));
     end else
 
-    if (trim(compilerused[int3]) = 'C Compiler 2') or
-    (trim(compilerused[int3]) = 'C 2') then
+    if (trim(compilerused[int1]) = 'C Compiler 2') or
+    (trim(compilerused[int1]) = 'C 2') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler2.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler2.value));
     end else
 
-    if (trim(compilerused[int3]) = 'C Compiler 3') or
-    (trim(compilerused[int3]) = 'C 3') then
+    if (trim(compilerused[int1]) = 'C Compiler 3') or
+    (trim(compilerused[int1]) = 'C 3') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler3.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler3.value));
     end else
 
-     if (trim(compilerused[int3]) = 'C Compiler 4') or
-    (trim(compilerused[int3]) = 'C 4') then
+     if (trim(compilerused[int1]) = 'C Compiler 4') or
+    (trim(compilerused[int1]) = 'C 4') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec4.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler4.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler4.value));
     end else
 
-     if (trim(compilerused[int3]) = 'C Compiler 5') or
-    (trim(compilerused[int3]) = 'C 5') then
+     if (trim(compilerused[int1]) = 'C Compiler 5') or
+    (trim(compilerused[int1]) = 'C 5') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec5.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler5.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler5.value));
     end else
 
-    if (trim(compilerused[int3]) = 'C Compiler 6') or
-    (trim(compilerused[int3]) = 'C 6') then
+    if (trim(compilerused[int1]) = 'C Compiler 6') or
+    (trim(compilerused[int1]) = 'C 6') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec6.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler6.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler6.value));
     end else
 
-    if (trim(compilerused[int3]) = 'C Compiler 7') or
-    (trim(compilerused[int3]) = 'C 7') then
+    if (trim(compilerused[int1]) = 'C Compiler 7') or
+    (trim(compilerused[int1]) = 'C 7') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec7.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler7.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler7.value));
     end else
 
-     if (trim(compilerused[int3]) = 'C Compiler 8') or
-    (trim(compilerused[int3]) = 'C 8') then
+     if (trim(compilerused[int1]) = 'C Compiler 8') or
+    (trim(compilerused[int1]) = 'C 8') then
     begin
     acompiler := 3;
      if  confcompilerfo.twinec8.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.ccompiler8.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.ccompiler8.value));
     end else
 
-     if (trim(compilerused[int3]) = 'Java Compiler 1') or
-    (trim(compilerused[int3]) = 'Java 1') then
+     if (trim(compilerused[int1]) = 'Java Compiler 1') or
+    (trim(compilerused[int1]) = 'Java 1') then
      begin
      acompiler := 2;
-     int4 := 1;
+     inttypecomp := 1;
      if  confcompilerfo.twinej1.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Java Compiler 2') or
-    (trim(compilerused[int3]) = 'Java 2') then
+    if (trim(compilerused[int1]) = 'Java Compiler 2') or
+    (trim(compilerused[int1]) = 'Java 2') then
     begin
     acompiler := 2;
-    int4 := 1;
+    inttypecomp := 1;
      if  confcompilerfo.twinej2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler2.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler2.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Java Compiler 3') or
-    (trim(compilerused[int3]) = 'Java 3') then
+    if (trim(compilerused[int1]) = 'Java Compiler 3') or
+    (trim(compilerused[int1]) = 'Java 3') then
     begin
     acompiler := 2;
-    int4 := 1;
+    inttypecomp := 1;
      if  confcompilerfo.twinej3.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler3.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler3.value));
     end else
 
-     if (trim(compilerused[int3]) = 'Java Compiler 4') or
-    (trim(compilerused[int3]) = 'Java 4') then
+     if (trim(compilerused[int1]) = 'Java Compiler 4') or
+    (trim(compilerused[int1]) = 'Java 4') then
     begin
     acompiler := 2;
-    int4 := 1;
+    inttypecomp := 1;
      if  confcompilerfo.twinej4.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.javacompiler4.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.javacompiler4.value));
     end else
 
-     if (trim(compilerused[int3]) = 'Python Compiler 1') or
-    (trim(compilerused[int3]) = 'Python 1') then
+     if (trim(compilerused[int1]) = 'Python Compiler 1') or
+    (trim(compilerused[int1]) = 'Python 1') then
     begin
     acompiler := 2;
-    int4 := 2;
+    inttypecomp := 2;
      if  confcompilerfo.twinepy1.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Python Compiler 2') or
-    (trim(compilerused[int3]) = 'Python 2') then
+    if (trim(compilerused[int1]) = 'Python Compiler 2') or
+    (trim(compilerused[int1]) = 'Python 2') then
     begin
     acompiler := 4;
-    int4 := 2;
+    inttypecomp := 2;
      if  confcompilerfo.twinepy2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler2.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler2.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Python Compiler 3') or
-    (trim(compilerused[int3]) = 'Python 3') then
+    if (trim(compilerused[int1]) = 'Python Compiler 3') or
+    (trim(compilerused[int1]) = 'Python 3') then
    begin
    acompiler := 4;
-   int4 := 2;
+   inttypecomp := 2;
      if  confcompilerfo.twinepy3.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler3.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler3.value));
     end else
 
-     if (trim(compilerused[int3]) = 'Python Compiler 4') or
-    (trim(compilerused[int3]) = 'Python 4') then
+     if (trim(compilerused[int1]) = 'Python Compiler 4') or
+    (trim(compilerused[int1]) = 'Python 4') then
     begin
     acompiler := 4;
-    int4 := 2;
+    inttypecomp := 2;
      if  confcompilerfo.twinepy4.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler4.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.pythoncompiler4.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Other Compiler 1') or
-    (trim(compilerused[int3]) = 'Other 1') then
+    if (trim(compilerused[int1]) = 'Other Compiler 1') or
+    (trim(compilerused[int1]) = 'Other 1') then
     begin
     acompiler := 5;
      if  confcompilerfo.twineo1.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.othercompiler.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Other Compiler 2') or
-    (trim(compilerused[int3]) = 'Other 2') then
+    if (trim(compilerused[int1]) = 'Other Compiler 2') or
+    (trim(compilerused[int1]) = 'Other 2') then
     begin
     acompiler := 5;
      if  confcompilerfo.twineo2.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.othercompiler2.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler2.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Other Compiler 3') or
-    (trim(compilerused[int3]) = 'Other 3') then
+    if (trim(compilerused[int1]) = 'Other Compiler 3') or
+    (trim(compilerused[int1]) = 'Other 3') then
     begin
     acompiler := 5;
      if  confcompilerfo.twineo3.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.othercompiler3.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler3.value));
     end else
 
-    if (trim(compilerused[int3]) = 'Other Compiler 4') or
-    (trim(compilerused[int3]) = 'Other 4') then
+    if (trim(compilerused[int1]) = 'Other Compiler 4') or
+    (trim(compilerused[int1]) = 'Other 4') then
     begin
     acompiler := 5;
      if  confcompilerfo.twineo4.value = true then
-     winestr := 'wine ';
-    str3:=  winestr + quotefilename(tosysfilepath(confcompilerfo.othercompiler4.value));
+     strwine := 'wine ';
+    strcompiler:=  strwine + quotefilename(tosysfilepath(confcompilerfo.othercompiler4.value));
     end;
 
    end;
 
   end;
    
-  int5 := 0;  
-   str4 := '${EXEEXT}'; 
-   expandprmacros1(str4);
+  int1 := 0;  
+   strexecext := '${EXEEXT}'; 
+   expandprmacros1(strexecext);
    
-  int5 := system.pos('${EXEEXT}',uppercase(targetfile));
-   if int5 > 0 then 
-   targetfile := system.copy(targetfile,0,int5-1);
+  int1 := system.pos('${EXEEXT}',uppercase(targetfile));
+   if int1 > 0 then 
+   targetfile := system.copy(targetfile,0,int1-1);
    
    
-   if int5 = 0 then
-  int5 := system.pos(uppercase(str4),uppercase(targetfile));
-   if int5 > 0 then 
-   targetfile := system.copy(targetfile,0,int5-1);  
+   if int1 = 0 then
+  int1 := system.pos(uppercase(strexecext),uppercase(targetfile));
+   if int1 > 0 then 
+   targetfile := system.copy(targetfile,0,int1-1);  
    
- if  int4 = 1 then str4:= '.java' else
- if  int4 = 2 then str4:= '.pyw' else
+ if  inttypecomp = 1 then strexecext:= '.java' else
+ if  inttypecomp = 2 then strexecext:= '.pyw' else
  begin
-     for int3:= 0 to high(exeused) do begin
-   if (atag and exeusedon[int3] <> 0) then begin
+     for int1:= 0 to high(exeused) do begin
+   if (atag and exeusedon[int1] <> 0) then begin
 
-  if (pos('Default',exeused[int3]) > 0) or
-  (trim(exeused[int3]) = '${EXEEXT}')
+  if (pos('Default',exeused[int1]) > 0) or
+  (trim(exeused[int1]) = '${EXEEXT}')
      then
     begin
-    str4 := '${EXEEXT}';
-    expandprmacros1(str4);
+    strexecext := '${EXEEXT}';
+    expandprmacros1(strexecext);
     end else
 
-   if (trim(exeused[int3]) = 'No Extension') or
-    (trim(exeused[int3]) = '')  then
-    str4:= '' else str4:= trim(exeused[int3]) ;
+   if (trim(exeused[int1]) = 'No Extension') or
+    (trim(exeused[int1]) = '')  then
+    strexecext:= '' else strexecext:= trim(exeused[int1]) ;
    end;
   end;
   end;
 
-  str1:= str3;
+  //str1:= strcompiler;
+  
   
   if (targetfile <> '') and (targpref <> '') then begin
 
  if  acompiler <> 3 then
-   str1:= str1 + ' ' + quotefilename(targpref+normalizename(targetfile+str4));
+   str1:= strcompiler + ' ' + quotefilename(targpref+normalizename(targetfile+strexecext));
 
   end;
   int2:= high(unitdirs);
@@ -578,7 +579,7 @@ for int3:= 0 to high(compilerused) do begin
          (makeoptions[int1] <> '') then begin
 
  if makeoptionson[int1] and $10000 <> 0 then
- extrastr := extrastr  + ' ' + makeoptions[int1] else
+ strextra := strextra  + ' ' + makeoptions[int1] else
   str1:= str1 + ' ' + makeoptions[int1] ;
 
    end;
@@ -586,8 +587,8 @@ for int3:= 0 to high(compilerused) do begin
   // if  acompiler <> 3 then
   str1:= trim(str1) + ' ' + quotefilename(normalizename(mainfile));
  end;
- if winestr = 'wine ' then wineneeded := true ;
-   result:= ansistring(trim(str1 + extrastr)) ;
+ if strwine = 'wine ' then wineneeded := true ;
+   result:= ansistring(trim(str1 + strextra)) ;
  end;
 
 /// fred

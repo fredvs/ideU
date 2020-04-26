@@ -1344,63 +1344,59 @@ end;
 
 function gettargetfile: filenamety;
 var
-str, str4 : msestring;
-int1, int2, int3, int5 : integer;
+strtarget, strexecext : msestring;
+int1, inttypecomp : integer;
 begin
-
-int1 := 1;
-
-str4 := '';
 
  with projectoptions,o,texp do begin
 
-for int2:= 0 to high(compilerused) do begin
-   if (mainfo.thetag and compilerusedon[int2] <> 0)  then
+for int1:= 0 to high(compilerused) do begin
+   if (mainfo.thetag and compilerusedon[int1] <> 0)  then
     begin
- if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else
- if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
- if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
- if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
- if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;
+ if system.pos('Default',compilerused[int1]) > 0 then inttypecomp := 1 else
+ if system.pos('Pascal',compilerused[int1]) > 0 then inttypecomp := 1 else
+ if system.pos('Java',compilerused[int1]) > 0 then inttypecomp := 2 else
+ if system.pos('C ',compilerused[int1]) > 0 then inttypecomp := 3 else
+ if system.pos('Python',compilerused[int1]) > 0 then inttypecomp := 4;
    end;
    end;
    end;
    
-  str4 := '${EXEEXT}'; 
-  expandprmacros1(str4);
+  strexecext := '${EXEEXT}'; 
+  expandprmacros1(strexecext);
    
-  str := (projectoptions.o.texp.targetfile);
-   int5 := system.pos('${EXEEXT}',uppercase(str));
-   if int5 > 0 then 
-   str := system.copy(str,0,int5-1);
+  strtarget := (projectoptions.o.texp.targetfile);
+   int1 := system.pos('${EXEEXT}',uppercase(strtarget));
+   if int1 > 0 then 
+   strtarget := system.copy(strtarget,0,int1-1);
    
-  if int5 = 0 then
-  int5 := system.pos(uppercase(str4),uppercase(str));
-   if int5 > 0 then 
-   str := system.copy(str,0,int5-1);    
+  if int1 = 0 then
+  int1 := system.pos(uppercase(strexecext),uppercase(strtarget));
+   if int1 > 0 then 
+   strtarget := system.copy(strtarget,0,int1-1);    
    
   // writeln(projectoptions.o.texp.targetfile);
   
-  str4 := '';
+  strexecext := '';
  
-  if (int1 = 2) then str4 := '.java' else
-  if (int1 = 4) then str4 := '.pyw' else
+  if (inttypecomp = 2) then strexecext := '.java' else
+  if (inttypecomp = 4) then strexecext := '.pyw' else
   begin
 
  with projectoptions,o,texp do begin
-for int3:= 0 to high(exeused) do begin
-   if (mainfo.thetag and exeusedon[int3] <> 0) then begin
+for int1:= 0 to high(exeused) do begin
+   if (mainfo.thetag and exeusedon[int1] <> 0) then begin
 
-  if (pos('Default',exeused[int3]) > 0) or
-   (trim(exeused[int3]) = '${EXEEXT}') then
+  if (pos('Default',exeused[int1]) > 0) or
+   (trim(exeused[int1]) = '${EXEEXT}') then
     begin
-    str4 := '${EXEEXT}';
-    expandprmacros1(str4);
+    strexecext := '${EXEEXT}';
+    expandprmacros1(strexecext);
     end else
 
-   if (trim(exeused[int3]) = 'No Extension') or
-    (trim(exeused[int3]) = '')  then
-    str4:= '' else str4:= trim(exeused[int3]) ;
+   if (trim(exeused[int1]) = 'No Extension') or
+    (trim(exeused[int1]) = '')  then
+    strexecext:= '' else strexecext:= trim(exeused[int1]) ;
   end;
 end;
 end;
@@ -1413,7 +1409,7 @@ end;
   end
   else begin
    //o.texp.targetfile
-   result:= objpath(str+str4);
+   result:= objpath(strtarget+strexecext);
   end;
  end;
 end;
