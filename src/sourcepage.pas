@@ -251,7 +251,7 @@ int1 : Integer;
 begin
 if autocomplet = 0 then begin
 if ainfo.eventkind = ek_buttonrelease then
-    if ainfo.shiftstate = [ss_double] then
+    if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
     begin
        pastefromclipboard(txtvalue);
        txtvalue2 := tedit(sender).text;
@@ -603,8 +603,10 @@ begin
       color := $DEFAC8 ;
      text:= msestring(values[high(values)-int1]);
      onmouseevent := @onmouseev;
-    end;
-   end;
+      end;
+     end;
+    //    dispar[0]:= tedit.create(sourcefo.sourcehintwidget);
+ 
    for int1:= high(values) downto 0 do begin
     dispar[int1].parentwidget:= sourcefo.sourcehintwidget.container;
    end;
@@ -614,9 +616,14 @@ begin
      // fred hint
   sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
   sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
-  sourcefo.fsourcehintwidget.height := 200; // to force resize ;
-   show(false,self.window);
-     end;
+  if high(dispar) < 20 then
+  sourcefo.fsourcehintwidget.height :=  (high(dispar) + 1) * dispar[0].height
+  else sourcefo.fsourcehintwidget.height :=  20 * dispar[0].height;
+  show(false,self.window);
+   dispar[0].setfocus;
+ 
+  end;
+ 
  end
  else begin
   sourcefo.hidesourcehint;

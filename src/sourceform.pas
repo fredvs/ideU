@@ -1149,7 +1149,7 @@ begin
 
       if beautyformcreated then
       begin
-        beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
+        beautyfo.filetoclean.value := ExtractFileName(debuggerfo.file_history.Value);
         beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
       end;
 
