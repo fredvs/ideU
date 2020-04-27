@@ -1934,12 +1934,14 @@ begin
                high(actions) >= 0,exttext,pshowmessageinfoty(adata));
    widget.name:= '_showmessage'; //debug purpose
    widget.parentwidget:= widget1; //do not create window handle of widget
+   
    try
     acanvas:= widget1.getcanvas;
+    acanvas.font.color := cl_black;
     buttonheight:= acanvas.font.glyphheight + 6;
     buttonwidth:= 50;
     for int1:= 0 to ord(high(buttons)) do begin
-     int2:= acanvas.getstringwidth(
+         int2:= acanvas.getstringwidth(
                  stockobjects.modalresulttextnoshortcut[buttons[int1]]) + 10;
      if int2 > buttonwidth then begin
       buttonwidth:= int2;
@@ -1947,6 +1949,7 @@ begin
     end;
     widget.caption:= caption;
     acanvas.font:= stockobjects.fonts[stf_message];
+    acanvas.font.color := cl_black;
     rect1:= textrect(acanvas,atext);
     if rect1.cx > maxtextwidth then begin
      rect1.cx:= maxtextwidth;
@@ -1967,10 +1970,12 @@ begin
      font:= stockobjects.fonts[stf_message];
      font.height := messagefontheight;
      font.name := ansistring(messagefontname);
+     font.color := cl_black;
      dest:= rect1;
      text.text:= atext;
     end;
     int1:= length(buttons);
+    
     if int1 > 0 then begin
      int2:= int1 * buttonwidth;
      int2:= int2 + buttondist * (int1 - 1);

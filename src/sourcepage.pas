@@ -182,7 +182,7 @@ uses
  sourcepage_mfm,msefileutils,sourceform,main, commandorform,
  sysutils,finddialogform,replacedialogform,msekeyboard,
  sourceupdate,msefiledialog,msedesigner,mseformatstr,
- msesys,make,actionsmodule,sourcehintform,
+ msesys,make,actionsmodule,sourcehintform, 
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
  mselatex,msesystypes;
@@ -249,10 +249,20 @@ var
 txtvalue, txtvalue2: msestring;
 int1 : Integer;
 begin
-if autocomplet = 0 then begin
-if ainfo.eventkind = ek_buttonrelease then
-    if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
+
+ if ainfo.eventkind = ek_buttonrelease then
+ begin
+     sourcefo.thetimer.Enabled := false;
+     
+     if (autocomplet = 0) or (autocomplet = 2) then begin  
+          if (autocomplet = 2) then begin  sourcefo.thetimer.ontimer := @ontimerhide;
+        sourcefo.thetimer.interval :=  15000000 ;
+        sourcefo.thetimer.Enabled := true;
+      end;
+ 
+      if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
     begin
+    //   showsourceitems(edit.editpos);
        pastefromclipboard(txtvalue);
        txtvalue2 := tedit(sender).text;
           
@@ -267,11 +277,13 @@ if ainfo.eventkind = ek_buttonrelease then
        edit.paste;
        copytoclipboard(txtvalue);
        edit.clearselection;
+       sourcefo.thetimer.Enabled := false;
        sourcefo.thetimer.ontimer := @ontimerhide;
        sourcefo.thetimer.interval :=  500000 ;
        sourcefo.thetimer.Enabled := true;
    end;
   end;
+end;
 end;
   
 constructor tsourcepage.create(aowner: tcomponent);
@@ -577,6 +589,7 @@ var
  rect1: rectty;
  int1: integer;
 begin
+
  if high(values) >= 0 then begin
   sourcefo.sourcehintwidget:= tsourcehintfo.create(nil);
   with tsourcehintfo(sourcefo.sourcehintwidget) do begin
@@ -594,13 +607,22 @@ begin
      frame.levelo:= 0;
      frame.framewidth:= 1;
      frame.colorframe:= cl_dkgray;
-     optionsedit:= optionsedit + [oe_readonly];
+      optionsedit:= optionsedit + [oe_readonly];
    //  textflags:= [tf_wordbreak,tf_noselect];
      textflags:= [tf_wordbreak];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
      // fred
-      color := $DEFAC8 ;
+    if mainfo.themenr = 0 then begin
+      frame.colorclient := $FEFFF0;
+       font.color := cl_black;
+      end;
+     
+    if mainfo.themenr = 1 then begin
+      frame.colorclient := cl_black;
+       font.color := cl_white;
+      end;  
+      
      text:= msestring(values[high(values)-int1]);
      onmouseevent := @onmouseev;
       end;
@@ -616,9 +638,9 @@ begin
      // fred hint
   sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
   sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
-  if high(dispar) < 20 then
+  if high(dispar) < 10 then
   sourcefo.fsourcehintwidget.height :=  (high(dispar) + 1) * dispar[0].height
-  else sourcefo.fsourcehintwidget.height :=  20 * dispar[0].height;
+  else sourcefo.fsourcehintwidget.height :=  10 * dispar[0].height;
   show(false,self.window);
    dispar[0].setfocus;
  
@@ -937,11 +959,11 @@ if sourcefo.tabdeleted = false then
 begin
   if (edit.editpos.col > -1) and (edit.editpos.row > -1) then
   begin
-  autocomplet := 0 ;
+  autocomplet := 2 ;
   showsourceitems(edit.editpos);
- sourcefo.thetimer.ontimer := @ontimerhide;
- sourcefo.thetimer.interval :=  40000000 ;
- sourcefo.thetimer.Enabled := true;
+  sourcefo.thetimer.ontimer := @ontimerhide;
+  sourcefo.thetimer.interval :=  15000000 ;
+  sourcefo.thetimer.Enabled := true;
  //sleep(200);
   activate(false,true); //get focus back
   end;
@@ -1735,7 +1757,7 @@ begin
           sourcefo.thetimer.Enabled := false;
           sourcefo.thetimer.ontimer := @ontimerhint;
           sourcefo.hidesourcehint;
-          sourcefo.thetimer.interval :=  1300000 ;
+          sourcefo.thetimer.interval :=  1600000 ;
           sourcefo.thetimer.Enabled := true;
         end
       else
