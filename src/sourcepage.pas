@@ -268,11 +268,8 @@ sourcefo.thetimer.Enabled := false;
         begin
        pastefromclipboard(txtvalue);
        txtvalue2 := tedit(sender).text;
-
-      int1 := system.pos('$',txtvalue2);
-       if int1 > 0 then   txtvalue2 :=
-          system.copy(txtvalue2,0,int1-1) + '(';
-
+       int1 := system.pos('|',txtvalue2);
+       txtvalue2 := trim(copy(txtvalue2,0,int1-1));
        copytoclipboard(txtvalue2);
        //debuggerfo.statdisp.value:=  tedit(sender).text;
        selectwordatcursor();
@@ -692,7 +689,9 @@ var
  defs: definfopoarty;
  pos1: sourceposty;
  ar1: stringarty;
- int1: integer;
+ int1, intpos: integer;
+ noparam : boolean;
+ strdefs, strscope, strname, strtmp, strtmp2 : msestring;
 begin
  pos1.pos:= apos;
 
@@ -702,7 +701,109 @@ begin
  listsourceitems(edit.filename,pos1,scopes,defs,100);
  setlength(ar1,length(defs));
  for int1:= 0 to high(defs) do begin
-  ar1[int1]:= defs[int1]^.name;
+ 
+  if defs[int1]^.kind = syk_classdef then  
+    strdefs := 'CLASS' else
+     if defs[int1]^.kind = syk_procdef then  
+    strdefs := 'PROC' else
+     if defs[int1]^.kind = syk_classprocimp then  
+    strdefs := 'CLASS PROC IMP' else
+     if defs[int1]^.kind = syk_procimp then  
+    strdefs := 'PROC IMP' else
+     if defs[int1]^.kind = syk_identuse then  
+    strdefs := 'IDENT USE' else
+     if defs[int1]^.kind = syk_vardef then  
+    strdefs := 'VAR' else
+     if defs[int1]^.kind = syk_pardef then  
+    strdefs := 'PAR' else
+     if defs[int1]^.kind = syk_constdef then  
+    strdefs := 'CONST' else
+     if defs[int1]^.kind = syk_typedef then  
+    strdefs := 'TYPE' else strdefs := ''; 
+          
+    if scopes[int1].kind = syk_classdef then  
+    strscope := 'CLASS' else
+     if scopes[int1].kind = syk_procdef then  
+    strscope := 'PROC' else
+     if scopes[int1].kind = syk_classprocimp then  
+    strscope := 'CLASS PROC IMP' else
+     if scopes[int1].kind = syk_procimp then  
+    strscope := 'PROC IMP' else
+     if scopes[int1].kind = syk_identuse then  
+    strscope := 'IDENT USE' else
+     if scopes[int1].kind = syk_vardef then  
+    strscope := 'VAR' else
+     if scopes[int1].kind = syk_pardef then  
+    strscope := 'PAR' else
+     if scopes[int1].kind = syk_constdef then  
+    strscope := 'CONST' else
+     if scopes[int1].kind = syk_typedef then  
+    strscope := 'TYPE' else
+     if scopes[int1].kind = syk_interfacedef then  
+    strscope := 'INTERFACE' else
+     if scopes[int1].kind = syk_root then  
+    strscope := 'ROOT' else strscope := '';
+        
+   
+   { 
+    (syk_none,syk_nopars,syk_substr,syk_deleted,syk_root,syk_classdef,
+                  syk_procdef,syk_procimp,syk_classprocimp,
+                  syk_vardef,syk_pardef,
+                  syk_constdef,syk_typedef,syk_interfacedef,syk_identuse);
+ }
+ 
+ strname := defs[int1]^.name;
+ 
+  if strdefs = 'PROC' then
+  begin
+  intpos := system.pos('$',strname);
+  if intpos > 1 then begin 
+  delete(strname,intpos,1);
+  Insert('(', strname, intpos);
+  noparam := false;
+  end else noparam := true;
+  
+   if copy(defs[int1]^.name,length(defs[int1]^.name),1) = '$' then
+   begin
+    strdefs := 'FUNC';
+     delete(strname,length(strname),1);
+     Insert(';', strname, length(strname)+1);
+     
+     strtmp := strname;
+     strtmp2 := strname;
+     
+     if system.pos('$', strtmp) > 0 then
+     begin
+     
+     while system.pos('$', strtmp) > 0 do
+     begin
+     strtmp2 := strtmp;
+     intpos := system.pos('$', strtmp);
+     delete(strtmp,intpos,1);
+     Insert('%', strtmp, intpos);
+      end;
+     
+    intpos := system.pos('$', strtmp2);
+     delete(strtmp2,intpos,1);
+     Insert('); ', strtmp2, intpos);  
+     
+    strname := StringReplace(strtmp2, '%', ',',  [rfReplaceAll, rfIgnoreCase]);
+    
+    end else strname := StringReplace(strtmp2, '(', '(); ',  [rfReplaceAll, rfIgnoreCase]);
+     
+   end else
+   begin
+   if noparam then  Insert(';', strname, length(strname)+1) else
+   Insert(');', strname, length(strname)+1);
+   strname := StringReplace(strname, '$', ',',  [rfReplaceAll, rfIgnoreCase]);
+   end;
+     
+  
+  end;
+  
+  
+ 
+  ar1[int1]:= strname + ' | '+ strdefs + ' '+ strscope ;
 
  end;
  if high(ar1) >= 99 then begin
@@ -797,6 +898,7 @@ begin
         key_space: begin
         autocomplet := 0 ;
         showsourceitems(edit.editpos);
+        
         end
         else begin
          exclude(eventstate,es_processed);
