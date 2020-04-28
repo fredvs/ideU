@@ -590,9 +590,7 @@ var
  int1: integer;
  widthtot : integer =0;
 begin
- 
-
- if high(values) >= 0 then begin
+  if high(values) >= 0 then begin
   sourcefo.sourcehintwidget:= tsourcehintfo.create(nil);
   with tsourcehintfo(sourcefo.sourcehintwidget) do begin
    if (sourcefo.hintsize.cx <= 0) or (sourcefo.hintsize.cy <= 0) then begin
@@ -651,8 +649,9 @@ begin
   sourcefo.fsourcehintwidget.width :=  round((widthtot * confideufo.fontsize.value) * 0.6)
   else sourcefo.fsourcehintwidget.width := 
   (sourcefo.left + sourcefo.width - sourcefo.fsourcehintwidget.left - 20);
-
-  show(false,self.window) ;
+    
+   show(false,self.window) ;
+  
    dispar[0].setfocus;
  end;
 
@@ -765,7 +764,7 @@ begin
   
    if copy(defs[int1]^.name,length(defs[int1]^.name),1) = '$' then
    begin
-    strdefs := 'FUNC';
+    strdefs := 'FUNCTION';
      delete(strname,length(strname),1);
      Insert(';', strname, length(strname)+1);
      
@@ -793,17 +792,14 @@ begin
      
    end else
    begin
+   strdefs := 'PROCEDURE';
    if noparam then  Insert(';', strname, length(strname)+1) else
    Insert(');', strname, length(strname)+1);
    strname := StringReplace(strname, '$', ',',  [rfReplaceAll, rfIgnoreCase]);
    end;
-     
-  
   end;
   
-  
- 
-  ar1[int1]:= strname + ' | '+ strdefs + ' '+ strscope ;
+  ar1[int1]:= strname + ' | '+ strdefs + ' of '+ strscope ;
 
  end;
  if high(ar1) >= 99 then begin
@@ -1080,7 +1076,7 @@ begin
   sourcefo.thetimer.interval :=  15000000 ;
   sourcefo.thetimer.Enabled := true;
  //sleep(200);
-  activate(false,true); //get focus back
+   activate(false,true); //get focus back
   end;
 end else sourcefo.tabdeleted := false;
 end;

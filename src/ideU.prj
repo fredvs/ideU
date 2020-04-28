@@ -1518,13 +1518,14 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=symbolflagty
+finddtext=sourcehint
 findhistory=20
  sourcehint
+ ontimer
+ timer
  $
  sbvert
  buttons
- timer
  onmouse
  restart
  fontname
@@ -1539,24 +1540,28 @@ findhistory=20
  int3
  writeln
  var
- grid
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
  0,-1073741823
- 0,4
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=3
+ ${PROJECTDIR}/ideU.pas
+relpaths=4
  main.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=3
+ ideU.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1590,7 +1595,7 @@ nomenumodules=6
  -1
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=612
  [mainfo.basedock]
@@ -1612,7 +1617,7 @@ windowlayout=612
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1726,7 +1731,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=451
+ cy=543
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1737,7 +1742,7 @@ windowlayout=612
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1916,9 +1921,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=609
+ cx=1268
+ cy=112
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2017,8 +2022,8 @@ windowlayout=612
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1268
+ cy=60
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2029,12 +2034,12 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=53
+ ncx=1268
+ ncy=57
  x=0
  y=0
- cx=1212
- cy=51
+ cx=1268
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2044,28 +2049,28 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/sourcepage.pas
-  /home/fred/ideu/src/msedesignparser.pas
-  /home/fred/ideu/src/sourceupdate.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/sourcehintform.pas
+  /home/fred/ideu/src/msewidgets.pas
+  /home/fred/ideu/src/replacedialogform.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/ideu/src/confcompiler.pas
+  /home/fred/ideu/src/findinfilepage.pas
+  /home/fred/ideu/src/findinfileform.pas
+  /home/fred/ideu/src/findinfiledialogform.pas
+  /home/fred/ideu/src/finddialogform.pas
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/ideu/src/projectoptionsform.pas
+  /home/fred/ideu/src/procedurelistform.pas
+  /home/fred/ideu/src/msegui.pas
+  /home/fred/ideu/src/beauty.pas
+  /home/fred/ideu/src/messageform.pas
+  /home/fred/ideu/src/projecttreeform.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2082,13 +2087,13 @@ windowlayout=612
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1060
+ cy=543
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2124,9 +2129,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1212
- cy=451
+ y=63
+ cx=1268
+ cy=543
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
