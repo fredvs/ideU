@@ -66,7 +66,8 @@ type
    procedure sourcefoondeactivate(const sender: TObject);
    procedure gridoncellevent(const sender: TObject; var info: celleventinfoty);
    procedure editonkeydown(const sender: twidget; var info: keyeventinfoty);
-
+   procedure listonkeydown(const sender: twidget; var info: keyeventinfoty);
+   
    procedure oncreated(const sender: TObject);
   private
    factiverow: integer;
@@ -250,16 +251,17 @@ txtvalue, txtvalue2: msestring;
 int1 : Integer;
 begin
 //
+       
   if ainfo.eventkind = ek_buttonrelease then
  begin
-   if (autocomplet = 2) then begin
+    if (autocomplet = 2) then begin
         sourcefo.thetimer.Enabled := false;
         sourcefo.thetimer.ontimer := @ontimerhide;
         sourcefo.thetimer.interval :=  15000000 ;
         sourcefo.thetimer.Enabled := true;
       end;
-
-     if (autocomplet = 0) or (autocomplet = 2) then
+ 
+       if (autocomplet = 0) or (autocomplet = 2) then
      begin
 
       if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
@@ -628,6 +630,7 @@ begin
      text:= msestring(values[high(values)-int1]);
      if widthtot < length(text) then widthtot := length(text);
      onmouseevent := @onmouseev;
+     onkeydown := @listonkeydown;
       end;
      end;
 
@@ -755,9 +758,9 @@ begin
                   syk_constdef,syk_typedef,syk_interfacedef,syk_identuse);
  }
  
- strname := defs[int1]^.name;
+ strname := UTF8Decode(defs[int1]^.name);
  
- strowner := defs[int1]^.owner.name;
+ strowner := strname;
  
   if strdefs = 'PROC' then
   begin
@@ -792,20 +795,20 @@ begin
      delete(strtmp2,intpos,1);
      Insert('); {result : ', strtmp2, intpos);  
      
-    strname := StringReplace(strtmp2, '%', ',',  [rfReplaceAll, rfIgnoreCase]);
+    strname := UTF8Decode(StringReplace(ansistring(strtmp2), '%', ',',  [rfReplaceAll, rfIgnoreCase]));
     
-    end else strname := StringReplace(strtmp2, '(', '(); {result : ',  [rfReplaceAll, rfIgnoreCase]);
+    end else strname := UTF8Decode(StringReplace(ansistring(strtmp2), '(', '(); {result : ',  [rfReplaceAll, rfIgnoreCase]));
      
    end else
    begin
    strdefs := 'PROCEDURE';
    if noparam then  Insert(';', strname, length(strname)+1) else
    Insert(');', strname, length(strname)+1);
-   strname := StringReplace(strname, '$', ',',  [rfReplaceAll, rfIgnoreCase]);
+   strname := UTF8Decode(StringReplace(ansistring(strname), '$', ',',  [rfReplaceAll, rfIgnoreCase]));
    end;
   end;
   
-  ar1[int1]:= strname + ' | '+ strdefs + ' of '+ strscope + ' ' + strowner ;
+  ar1[int1]:= ansistring(strname + ' | '+ strdefs + ' of '+ strscope + ' ' + strowner);
 
  end;
  if high(ar1) >= 99 then begin
@@ -1846,6 +1849,19 @@ procedure tsourcepage.setbackupcreated;
 begin
  fbackupcreated:= true;
 end;
+
+procedure tsourcepage.listonkeydown(const sender: twidget; var info: keyeventinfoty);
+begin
+
+ if (autocomplet = 2) then begin
+        sourcefo.thetimer.Enabled := false;
+        sourcefo.thetimer.ontimer := @ontimerhide;
+        sourcefo.thetimer.interval :=  15000000 ;
+        sourcefo.thetimer.Enabled := true;
+      end;
+     
+end;
+   
 
 procedure tsourcepage.editonkeydown(Const sender: twidget; Var info: keyeventinfoty);
 var

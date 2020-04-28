@@ -130,8 +130,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=811
- y=499
+ x=692
+ y=605
  cx=300
  cy=269
 replacedialog=30
@@ -1516,10 +1516,16 @@ progparamhistory=0
 workdirparamhistory=0
 envvarons=0
 [edit]
-hintwidth=314
+hintwidth=684
 hintheight=19
-finddtext=thetimer.Enabled := false
+finddtext=decode
 findhistory=20
+ decode
+ utf8
+ onmou
+ onkey
+ onlkey
+ onlist
  thetimer.Enabled := false
  ontimerhide
  'procedure'
@@ -1534,12 +1540,6 @@ findhistory=20
  fontname
  dispar
  '$'
- oncellev
- const
- str4
- extrastr
- winestr
- str3
 findoptions=1
 editpos=4
  0,-1073741823
@@ -1731,7 +1731,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=543
+ cy=460
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1921,9 +1921,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=609
+ y=543
  cx=1268
- cy=112
+ cy=178
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2023,7 +2023,7 @@ windowlayout=612
  x=0
  y=0
  cx=1268
- cy=60
+ cy=77
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2035,11 +2035,11 @@ windowlayout=612
  nx=0
  ny=0
  ncx=1268
- ncy=57
+ ncy=74
  x=0
  y=0
  cx=1268
- cy=57
+ cy=74
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2052,8 +2052,8 @@ windowlayout=612
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/ideu/src/replacedialogform.pas
@@ -2088,7 +2088,7 @@ windowlayout=612
  x=208
  y=0
  cx=1060
- cy=543
+ cy=460
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2129,9 +2129,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=63
+ y=80
  cx=1268
- cy=543
+ cy=460
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
