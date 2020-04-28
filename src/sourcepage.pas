@@ -690,7 +690,7 @@ var
  ar1: stringarty;
  int1, intpos: integer;
  noparam : boolean;
- strdefs, strscope, strname, strtmp, strtmp2 : msestring;
+ strdefs, strscope, strname, strtmp, strtmp2, strowner : msestring;
 begin
  pos1.pos:= apos;
 
@@ -742,6 +742,8 @@ begin
     strscope := 'INTERFACE' else
      if scopes[int1].kind = syk_root then  
     strscope := 'ROOT' else strscope := '???';
+    
+    
         
    
    { 
@@ -752,6 +754,8 @@ begin
  }
  
  strname := defs[int1]^.name;
+ 
+ strowner := defs[int1]^.owner.name;
  
   if strdefs = 'PROC' then
   begin
@@ -799,7 +803,7 @@ begin
    end;
   end;
   
-  ar1[int1]:= strname + ' | '+ strdefs + ' of '+ strscope ;
+  ar1[int1]:= strname + ' | '+ strdefs + ' of '+ strscope + ' ' + strowner ;
 
  end;
  if high(ar1) >= 99 then begin
