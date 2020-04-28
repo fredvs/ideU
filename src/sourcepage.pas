@@ -718,7 +718,7 @@ begin
      if defs[int1]^.kind = syk_constdef then  
     strdefs := 'CONST' else
      if defs[int1]^.kind = syk_typedef then  
-    strdefs := 'TYPE' else strdefs := ''; 
+    strdefs := 'TYPE' else strdefs := '???'; 
           
     if scopes[int1].kind = syk_classdef then  
     strscope := 'CLASS' else
@@ -741,7 +741,7 @@ begin
      if scopes[int1].kind = syk_interfacedef then  
     strscope := 'INTERFACE' else
      if scopes[int1].kind = syk_root then  
-    strscope := 'ROOT' else strscope := '';
+    strscope := 'ROOT' else strscope := '???';
         
    
    { 
