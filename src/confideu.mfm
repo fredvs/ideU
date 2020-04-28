@@ -281,7 +281,7 @@ object confideufo: tconfideufo
       0
     )
     taborder = 2
-    bounds_x = 13
+    bounds_x = 10
     bounds_y = 184
     bounds_cx = 281
     bounds_cy = 350
@@ -398,22 +398,22 @@ object confideufo: tconfideufo
       value = True
     end
     object fontsize: tintegeredit
-      frame.caption = 'Font size '
+      frame.caption = 'Font height '
       frame.captiontextflags = [tf_bottom]
       frame.captionpos = cp_left
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
-        60
+        77
         0
         0
         0
       )
       taborder = 6
       bounds_x = 8
-      bounds_y = 292
-      bounds_cx = 96
+      bounds_y = 289
+      bounds_cx = 113
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]

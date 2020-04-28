@@ -591,7 +591,9 @@ procedure tsourcepage.showsourcehint(const apos: gridcoordty;
 var
  rect1: rectty;
  int1: integer;
+ widthtot : integer =0;
 begin
+ 
 
  if high(values) >= 0 then begin
   sourcefo.sourcehintwidget:= tsourcehintfo.create(nil);
@@ -627,6 +629,7 @@ begin
       end;
 
      text:= msestring(values[high(values)-int1]);
+     if widthtot < length(text) then widthtot := length(text);
      onmouseevent := @onmouseev;
       end;
      end;
@@ -634,6 +637,7 @@ begin
    for int1:= high(values) downto 0 do begin
     dispar[int1].parentwidget:= sourcefo.sourcehintwidget.container;
    end;
+   
    size:= sourcefo.hintsize;
    formonresize(nil);
    widgetrect:= placepopuprect(self.window,rect1,cp_bottomleft,size);
@@ -644,7 +648,14 @@ begin
   if high(dispar) < 10 then
   sourcefo.fsourcehintwidget.height :=  (high(dispar) + 1) * dispar[0].height
   else sourcefo.fsourcehintwidget.height :=  10 * dispar[0].height;
-  show(false,self.window);
+  
+  if round((widthtot * confideufo.fontsize.value) * 0.6) <=
+  (sourcefo.left + sourcefo.width - sourcefo.fsourcehintwidget.left - 20) then
+  sourcefo.fsourcehintwidget.width :=  round((widthtot * confideufo.fontsize.value) * 0.6)
+  else sourcefo.fsourcehintwidget.width := 
+  (sourcefo.left + sourcefo.width - sourcefo.fsourcehintwidget.left - 20);
+
+  show(false,self.window) ;
    dispar[0].setfocus;
  end;
 
