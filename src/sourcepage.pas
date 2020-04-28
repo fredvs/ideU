@@ -249,17 +249,15 @@ var
 txtvalue, txtvalue2: msestring;
 int1 : Integer;
 begin
-
-sourcefo.thetimer.Enabled := false;
-
-  if (autocomplet = 2) then begin
+//
+  if ainfo.eventkind = ek_buttonrelease then
+ begin
+   if (autocomplet = 2) then begin
+        sourcefo.thetimer.Enabled := false;
         sourcefo.thetimer.ontimer := @ontimerhide;
         sourcefo.thetimer.interval :=  15000000 ;
         sourcefo.thetimer.Enabled := true;
       end;
-
- if ainfo.eventkind = ek_buttonrelease then
- begin
 
      if (autocomplet = 0) or (autocomplet = 2) then
      begin
@@ -270,13 +268,17 @@ sourcefo.thetimer.Enabled := false;
        txtvalue2 := tedit(sender).text;
        int1 := system.pos('|',txtvalue2);
        txtvalue2 := trim(copy(txtvalue2,0,int1-1));
-       copytoclipboard(txtvalue2);
+       int1 := system.pos('{',txtvalue2);
+       if int1 > 0 then txtvalue2 := trim(copy(txtvalue2,0,int1-1));
+       
+        copytoclipboard(txtvalue2);
        //debuggerfo.statdisp.value:=  tedit(sender).text;
        selectwordatcursor();
        edit.deleteselection;
        edit.paste;
        copytoclipboard(txtvalue);
        edit.clearselection;
+       application.processmessages;
        sourcefo.thetimer.Enabled := false;
        sourcefo.thetimer.ontimer := @ontimerhide;
        sourcefo.thetimer.interval :=  500000 ;
@@ -770,7 +772,7 @@ begin
    begin
     strdefs := 'FUNCTION';
      delete(strname,length(strname),1);
-     Insert(';', strname, length(strname)+1);
+     Insert('}', strname, length(strname)+1);
      
      strtmp := strname;
      strtmp2 := strname;
@@ -788,11 +790,11 @@ begin
      
     intpos := system.pos('$', strtmp2);
      delete(strtmp2,intpos,1);
-     Insert('); ', strtmp2, intpos);  
+     Insert('); {result : ', strtmp2, intpos);  
      
     strname := StringReplace(strtmp2, '%', ',',  [rfReplaceAll, rfIgnoreCase]);
     
-    end else strname := StringReplace(strtmp2, '(', '(); ',  [rfReplaceAll, rfIgnoreCase]);
+    end else strname := StringReplace(strtmp2, '(', '(); {result : ',  [rfReplaceAll, rfIgnoreCase]);
      
    end else
    begin
@@ -867,7 +869,7 @@ begin
                          (shiftstate1 = [ss_ctrl])) then begin
       include(eventstate,es_processed);
       pos1.pos:= edit.editpos;
-        sourcefo.thetimer.Enabled := false;
+        
       if (shiftstate1 = [ss_shift,ss_ctrl]) then begin
           case key of
         key_up,key_down: begin
@@ -886,6 +888,7 @@ begin
         end;
         key_space: begin
          autocomplet := 1 ;
+         sourcefo.thetimer.Enabled := false;
          showprocheaders(edit.editpos);
         end;
         else begin
@@ -898,7 +901,7 @@ begin
         key_space: begin
         autocomplet := 0 ;
         showsourceitems(edit.editpos);
-        
+        sourcefo.thetimer.Enabled := false;
         end
         else begin
          exclude(eventstate,es_processed);

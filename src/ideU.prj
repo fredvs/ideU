@@ -130,8 +130,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=856
- y=444
+ x=811
+ y=499
  cx=300
  cy=269
 replacedialog=30
@@ -1518,8 +1518,11 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=19
-finddtext=sourcehint
+finddtext=thetimer.Enabled := false
 findhistory=20
+ thetimer.Enabled := false
+ ontimerhide
+ 'procedure'
  sourcehint
  ontimer
  timer
@@ -1537,9 +1540,6 @@ findhistory=20
  extrastr
  winestr
  str3
- int3
- writeln
- var
 findoptions=1
 editpos=4
  0,-1073741823
@@ -2053,6 +2053,7 @@ windowlayout=612
  history=20
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/sourcepage.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sourcehintform.pas
   /home/fred/ideu/src/msewidgets.pas
   /home/fred/ideu/src/replacedialogform.pas
@@ -2070,7 +2071,6 @@ windowlayout=612
   /home/fred/ideu/src/msegui.pas
   /home/fred/ideu/src/beauty.pas
   /home/fred/ideu/src/messageform.pas
-  /home/fred/ideu/src/projecttreeform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
