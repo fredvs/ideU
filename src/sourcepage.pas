@@ -182,7 +182,7 @@ uses
  sourcepage_mfm,msefileutils,sourceform,main, commandorform,
  sysutils,finddialogform,replacedialogform,msekeyboard,
  sourceupdate,msefiledialog,msedesigner,mseformatstr,
- msesys,make,actionsmodule,sourcehintform, 
+ msesys,make,actionsmodule,sourcehintform,
  mseedit,msedrawtext,msebits,msearrayutils,msestream,msedesignintf,
  msesysutils,msedesignparser,msesyntaxpainter,msemacros,msecodetemplates,
  mselatex,msesystypes;
@@ -250,26 +250,29 @@ txtvalue, txtvalue2: msestring;
 int1 : Integer;
 begin
 
- if ainfo.eventkind = ek_buttonrelease then
- begin
-     sourcefo.thetimer.Enabled := false;
-     
-     if (autocomplet = 0) or (autocomplet = 2) then begin  
-          if (autocomplet = 2) then begin  sourcefo.thetimer.ontimer := @ontimerhide;
+sourcefo.thetimer.Enabled := false;
+
+  if (autocomplet = 2) then begin
+        sourcefo.thetimer.ontimer := @ontimerhide;
         sourcefo.thetimer.interval :=  15000000 ;
         sourcefo.thetimer.Enabled := true;
       end;
- 
+
+ if ainfo.eventkind = ek_buttonrelease then
+ begin
+
+     if (autocomplet = 0) or (autocomplet = 2) then
+     begin
+
       if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
-    begin
-    //   showsourceitems(edit.editpos);
+        begin
        pastefromclipboard(txtvalue);
        txtvalue2 := tedit(sender).text;
-          
+
       int1 := system.pos('$',txtvalue2);
        if int1 > 0 then   txtvalue2 :=
           system.copy(txtvalue2,0,int1-1) + '(';
- 
+
        copytoclipboard(txtvalue2);
        //debuggerfo.statdisp.value:=  tedit(sender).text;
        selectwordatcursor();
@@ -285,7 +288,7 @@ begin
   end;
 end;
 end;
-  
+
 constructor tsourcepage.create(aowner: tcomponent);
 begin
  factiverow:= -1;
@@ -612,23 +615,22 @@ begin
      textflags:= [tf_wordbreak];
      textflagsactive:= [tf_wordbreak];
      anchors:= [an_top];
-     // fred
+
     if mainfo.themenr = 0 then begin
       frame.colorclient := $FEFFF0;
        font.color := cl_black;
       end;
-     
+
     if mainfo.themenr = 1 then begin
       frame.colorclient := cl_black;
        font.color := cl_white;
-      end;  
-      
+      end;
+
      text:= msestring(values[high(values)-int1]);
      onmouseevent := @onmouseev;
       end;
      end;
-    //    dispar[0]:= tedit.create(sourcefo.sourcehintwidget);
- 
+
    for int1:= high(values) downto 0 do begin
     dispar[int1].parentwidget:= sourcefo.sourcehintwidget.container;
    end;
@@ -636,16 +638,16 @@ begin
    formonresize(nil);
    widgetrect:= placepopuprect(self.window,rect1,cp_bottomleft,size);
      // fred hint
-  sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - 30 ;
-  sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 32 ;
+  sourcefo.fsourcehintwidget.top := sourcefo.fsourcehintwidget.top - (dispar[0].height)+ 4;
+ // sourcefo.fsourcehintwidget.left := sourcefo.fsourcehintwidget.left + 30;
+
   if high(dispar) < 10 then
   sourcefo.fsourcehintwidget.height :=  (high(dispar) + 1) * dispar[0].height
   else sourcefo.fsourcehintwidget.height :=  10 * dispar[0].height;
   show(false,self.window);
    dispar[0].setfocus;
- 
-  end;
- 
+ end;
+
  end
  else begin
   sourcefo.hidesourcehint;
@@ -1730,7 +1732,7 @@ begin
 end;
 
 procedure tsourcepage.editonkeydown(Const sender: twidget; Var info: keyeventinfoty);
-var 
+var
   shiftstate1: shiftstatesty;
 begin
   with info,tsyntaxedit(sender).editor,projectoptions do
@@ -1743,7 +1745,7 @@ begin
 
         end;
     end;
-    
+
   with info do
     begin
       shiftstate1 := shiftstate * shiftstatesmask;
@@ -1768,8 +1770,8 @@ begin
               sourcefo.hidesourcehint;
             end;
         end;
-    end; 
-    
+    end;
+
 end;
 
 function tsourcepage.source: trichstringdatalist;

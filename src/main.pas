@@ -40,7 +40,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.2.0';
+  versiontext = '2.1.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -324,9 +324,9 @@ type
     errorformfilename: filenamety;
     constructor Create(aowner: TComponent); override;
     destructor Destroy; override;
-    
+
     function terminategdbserver(const force: Boolean): Boolean;
-  
+
     procedure designformactivated(const Sender: tcustommseform);
     procedure startgdb(const killserver: Boolean);
     function checkgdberror(aresult: gdbresultty): Boolean;
@@ -524,18 +524,18 @@ begin
     begin
       SakGreeting('Welcome with ideU !');
       if sakloadlib(thedir) = 0 then
-        
-        debuggerfo.assistive.face.image.alignment :=  
+
+        debuggerfo.assistive.face.image.alignment :=
    [al_stretchx,al_stretchy]
 
       else
-          debuggerfo.assistive.face.image.alignment :=  
+          debuggerfo.assistive.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
     end
     else
     begin
       sakunloadlib;
-       debuggerfo.assistive.face.image.alignment :=  
+       debuggerfo.assistive.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
     end;
   end
@@ -543,9 +543,9 @@ begin
   begin
     SakGreeting('Welcome with ideU !');
     if sakloadlib(thedir) = 0 then
-       debuggerfo.assistive.face.image.alignment :=  
+       debuggerfo.assistive.face.image.alignment :=
    [al_stretchx,al_stretchy]    else
-       debuggerfo.assistive.face.image.alignment :=  
+       debuggerfo.assistive.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
   end;
 
@@ -737,7 +737,7 @@ begin
   if gINI.ReadBool('Completion', 'proplist', False) = False then
   begin
     debuggerfo.properties_list.tag     := 0;
-   debuggerfo.properties_list.face.image.alignment :=  
+   debuggerfo.properties_list.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
     sourcefo.thetimer.Enabled          := False;
     sourcefo.hidesourcehint;
@@ -745,7 +745,7 @@ begin
   else
   begin
      debuggerfo.properties_list.tag     := 1;
-     debuggerfo.properties_list.face.image.alignment :=  
+     debuggerfo.properties_list.face.image.alignment :=
    [al_stretchx,al_stretchy];
 
   end;
@@ -864,7 +864,7 @@ begin
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
-  
+
   confideufo.confirmdel.Value := noconfirmdelete;
 
   confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
@@ -969,7 +969,7 @@ begin
   begin
     vaparam := True;
     confideufo.tbassistive.Value := True;
-    debuggerfo.assistive.face.image.alignment :=  
+    debuggerfo.assistive.face.image.alignment :=
    [al_stretchx,al_stretchy];
 
   end;
@@ -2515,7 +2515,7 @@ var
   bo1, bo2: Boolean;
 begin
   bo1 := False;
-  
+
   if debuggerfo.debug_on.tag = 1 then bo2 := true else bo2 := False;
 
   with projectoptions, d.texp, actionsmo do
@@ -2528,89 +2528,89 @@ begin
     run.Enabled   := not gdb.running and not gdb.downloading and not iscompiling;
     debuggerfo.project_start.Enabled := run.Enabled;
     debuggerfo.debug_on.Enabled := run.Enabled;
-    
-     if debuggerfo.debug_on.Enabled then 
-      debuggerfo.debug_on.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.debug_on.face.image.alignment :=  
+
+     if debuggerfo.debug_on.Enabled then
+      debuggerfo.debug_on.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.debug_on.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-   
-             
-     if debuggerfo.project_start.Enabled then 
-      debuggerfo.project_start.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_start.face.image.alignment :=  
+
+
+     if debuggerfo.project_start.Enabled then
+      debuggerfo.project_start.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_start.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-    
+
     bo1           := candebug;
     step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_step.Enabled  := step.Enabled;
-    
-    if debuggerfo.project_step.Enabled then 
-      debuggerfo.project_step.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_step.face.image.alignment :=  
+
+    if debuggerfo.project_step.Enabled then
+      debuggerfo.project_step.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_step.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
-    
-    
+
+
     stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
-    
-        if debuggerfo.project_step_instruction.Enabled then 
-      debuggerfo.project_step_instruction.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_step_instruction.face.image.alignment :=  
+
+        if debuggerfo.project_step_instruction.Enabled then
+      debuggerfo.project_step_instruction.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_step_instruction.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
     Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next.Enabled := Next.Enabled;
 
-         if debuggerfo.project_next.Enabled then 
-      debuggerfo.project_next.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_next.face.image.alignment :=  
+         if debuggerfo.project_next.Enabled then
+      debuggerfo.project_next.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_next.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
     nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
 
-      if debuggerfo.project_next_instruction.Enabled then 
-      debuggerfo.project_next_instruction.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_next_instruction.face.image.alignment :=  
+      if debuggerfo.project_next_instruction.Enabled then
+      debuggerfo.project_next_instruction.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_next_instruction.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
     finish.Enabled := not gdb.running and gdb.started and bo1;
     debuggerfo.project_finish.enabled:= finish.Enabled;
-    
-      if debuggerfo.project_finish.Enabled then 
-      debuggerfo.project_finish.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_finish.face.image.alignment :=  
+
+      if debuggerfo.project_finish.Enabled then
+      debuggerfo.project_finish.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_finish.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-    
+
     continue.Enabled := not gdb.running and not gdb.downloading and
       (bo1 or (frunningprocess = invalidprochandle)) and not iscompiling;
     interrupt.Enabled := gdb.running and not gdb.downloading and bo1;
     debuggerfo.project_interrupt.enabled :=  interrupt.Enabled;
-   
-      if debuggerfo.project_interrupt.Enabled then 
-      debuggerfo.project_interrupt.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_interrupt.face.image.alignment :=  
+
+      if debuggerfo.project_interrupt.Enabled then
+      debuggerfo.project_interrupt.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_interrupt.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-   
+
     reset.Enabled := (gdb.started or gdb.attached or gdb.downloading) or not bo1 and (frunningprocess <> invalidprochandle);
     debuggerfo.project_reset.enabled:=reset.Enabled;
-  
-    if debuggerfo.project_reset.Enabled then 
-      debuggerfo.project_reset.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_reset.face.image.alignment :=  
+
+    if debuggerfo.project_reset.Enabled then
+      debuggerfo.project_reset.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_reset.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-  
+
     makeact.Enabled := not making;
     abortmakeact.Enabled := making;
-    
+
        debuggerfo.project_make.enabled:=makeact.Enabled;
-  
-    if debuggerfo.project_make.Enabled then 
-      debuggerfo.project_make.face.image.alignment :=  
-   [al_stretchx,al_stretchy] else debuggerfo.project_make.face.image.alignment :=  
+
+    if debuggerfo.project_make.Enabled then
+      debuggerfo.project_make.face.image.alignment :=
+   [al_stretchx,al_stretchy] else debuggerfo.project_make.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-    
+
     saveall.Enabled := sourcefo.modified or designer.modified or
       projectoptions.modified;
     actionsmo.toggleformunit.Enabled := (flastform <> nil) or (designer.modules.Count > 0);
@@ -3450,13 +3450,13 @@ begin
     if projectoptions.d.showconsole = True then
     begin
       debuggerfo.terminal_run.tag     := 1;
-      debuggerfo.terminal_run.face.image.alignment :=  
+      debuggerfo.terminal_run.face.image.alignment :=
    [al_stretchx,al_stretchy];
         end
     else
     begin
       debuggerfo.terminal_run.tag     := 0;
-        debuggerfo.terminal_run.face.image.alignment :=  
+        debuggerfo.terminal_run.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
     end;
@@ -4119,7 +4119,7 @@ end;
 procedure tmainfo.viewfindresults(const Sender: TObject);
 begin
   findinfilefo.activate;
-  
+
 end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
@@ -4484,14 +4484,14 @@ ratio := confideufo.fontsize.value / 12 ;
 
   if not beautyformcreated then
     doBeauty;
- 
+
   beautyfo.font.height := confideufo.fontsize.value;
   beautyfo.font.name := ansistring(confideufo.fontname.value);
 
 beautyfo.group_file_changed.top := beautyfo.filetoclean.bottom + 4;
 beautyfo.tbjedi.top := beautyfo.tbptop.bottom + 4;
 beautyfo.group_file_changed.height := beautyfo.tbjedi.bottom + 8;
- 
+
 beautyfo.group_file_changed.width := round(ratio * 194);
 beautyfo.filetoclean.width := beautyfo.group_file_changed.width;
 
@@ -4621,7 +4621,7 @@ begin
     debuggerfo.find_in_directory.face.template := debuggerfo.templatemain;
     debuggerfo.line_number.face.template       := debuggerfo.templatemain;
     debuggerfo.terminal_run.face.template      := debuggerfo.templatemain;
-    
+
     debuggerfo.debug_on.face.template          := debuggerfo.templproject;
     debuggerfo.project_step.face.template      := debuggerfo.templproject;
     debuggerfo.project_finish.face.template    := debuggerfo.templproject;
@@ -4801,7 +4801,7 @@ begin
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;
     debuggerfo.procedure_list.face.template   := debuggerfo.templfiledark;
-    debuggerfo.find_in_edit.face.template      := debuggerfo.templfiledark;  
+    debuggerfo.find_in_edit.face.template      := debuggerfo.templfiledark;
     debuggerfo.open_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.save_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.edited_make.face.template      := debuggerfo.templfiledark;

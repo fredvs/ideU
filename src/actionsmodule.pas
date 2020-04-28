@@ -11,8 +11,6 @@ uses
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
  mseificompglob,mseifiglob;
 
-
-
 type
  stringconsts = (
   ac_configureide, //0 Configure ideU
@@ -377,10 +375,10 @@ end;
 { tactionsmo }
 
 procedure tactionsmo.procedurelistonexecute(const sender: TObject);
- 
+
 begin
 if not plformcreated then doProcedureList;
-  
+
 
 procedurelistfo.font.height := confideufo.fontsize.value;
 procedurelistfo.font.name := ansistring(confideufo.fontname.value);
@@ -609,9 +607,9 @@ end;
 procedure tactionsmo.initproject ;
 begin
 debuggerfo.project_abort_compil.enabled := true;
- debuggerfo.project_abort_compil.face.image.alignment :=  
+ debuggerfo.project_abort_compil.face.image.alignment :=
    [al_stretchx,al_stretchy];
- 
+
 end;
 
 procedure tactionsmo.finishcustom ;
@@ -619,42 +617,42 @@ begin
   iscompiling := false;
 
   debuggerfo.project_abort_compil.enabled := false;
-  debuggerfo.project_abort_compil.face.image.alignment :=  
+  debuggerfo.project_abort_compil.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-  
+
 //  debuggerfo.imagebut.getimage(12, debuggerfo.project_abort_compil.face.image);
 
   debuggerfo.project_make.enabled := true;
-   debuggerfo.project_make.face.image.alignment :=  
+   debuggerfo.project_make.face.image.alignment :=
    [al_stretchx,al_stretchy];
-  
+
 //  debuggerfo.imagebut.getimage(0, debuggerfo.project_make.face.image);
 
   debuggerfo.project_reset.enabled := false;
-  
-   debuggerfo.project_reset.face.image.alignment :=  
+
+   debuggerfo.project_reset.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
   debuggerfo.edited_abort.enabled := false ;
-  
-   
-   debuggerfo.edited_abort.face.image.alignment :=  
+
+
+   debuggerfo.edited_abort.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
   debuggerfo.project_interrupt.enabled := false;
-  
-   debuggerfo.project_interrupt.face.image.alignment :=  
+
+   debuggerfo.project_interrupt.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
 
-  
+
   debuggerfo.edited_make.enabled := true;
- 
-   debuggerfo.edited_make.face.image.alignment :=  
+
+   debuggerfo.edited_make.face.image.alignment :=
    [al_stretchx,al_stretchy];
 
   debuggerfo.edited_run.enabled := true;
-  
-   debuggerfo.edited_run.face.image.alignment :=  
+
+   debuggerfo.edited_run.face.image.alignment :=
    [al_stretchx,al_stretchy];
 end;
 
@@ -664,17 +662,17 @@ begin
 iscompiling := true;
 debuggerfo.project_make.enabled := false;
 
- debuggerfo.project_make.face.image.alignment :=  
+ debuggerfo.project_make.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
- 
+
 //debuggerfo.imagebut.getimage(1, debuggerfo.project_make.face.image);
 
 debuggerfo.project_abort_compil.enabled := true;
 //debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
 
- debuggerfo.project_abort_compil.face.image.alignment :=  
+ debuggerfo.project_abort_compil.face.image.alignment :=
    [al_stretchx,al_stretchy];
- 
+
 case debuggerfo.project_options.value of
   'M' : begin
   domake(1) ;
@@ -738,20 +736,20 @@ end;
 procedure tactionsmo.setupcustom ;
 begin
    debuggerfo.edited_make.enabled := false;
-   
-    debuggerfo.edited_make.face.image.alignment :=  
+
+    debuggerfo.edited_make.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
- 
-   
-   
+
+
+
   debuggerfo.edited_abort.enabled := true;
-  
-   debuggerfo.edited_abort.face.image.alignment :=  
+
+   debuggerfo.edited_abort.face.image.alignment :=
   [al_stretchx,al_stretchy];
- 
+
   debuggerfo.edited_run.enabled := false;
-  
-    debuggerfo.edited_run.face.image.alignment :=  
+
+    debuggerfo.edited_run.face.image.alignment :=
   [al_grayed,al_stretchx,al_stretchy];
 
     case debuggerfo.edit_compiler.value of
@@ -792,19 +790,19 @@ end;
 procedure tactionsmo.setupcustommenu(const sender: TObject) ;
 begin
    debuggerfo.edited_make.enabled := false;
-   
-    debuggerfo.edited_make.face.image.alignment :=  
+
+    debuggerfo.edited_make.face.image.alignment :=
   [al_grayed,al_stretchx,al_stretchy];
- 
+
   debuggerfo.edited_abort.enabled := true;
   debuggerfo.edited_run.enabled := false;
-  
-     debuggerfo.edited_run.face.image.alignment :=  
+
+     debuggerfo.edited_run.face.image.alignment :=
    [al_grayed,al_stretchx,al_stretchy];
-   
-    debuggerfo.edited_abort.face.image.alignment :=  
+
+    debuggerfo.edited_abort.face.image.alignment :=
    [al_stretchx,al_stretchy];
- 
+
 
      case debuggerfo.edit_compiler.value of
   'Pascal' : mainfo.settypecompiler := 1 ;
@@ -1076,7 +1074,7 @@ case debuggerfo.project_options.value of
 
 with projectoptions,o,texp do begin
 for int3:= 0 to high(debuggerused) do begin
- 
+
    if (mainfo.thetag  and debuggerusedon[int3] <> 0) and
          (debuggerused[int3] <> '') then begin
       str3 := str3 + debuggerused[int3] ;
@@ -1088,8 +1086,8 @@ end;
  begin
  str3 := '';
  nodebugset := true;
- end; 
-  
+ end;
+
       if (pos('Default',str3) > 0) then
     str3:= 'Default Debugger' else
 
@@ -1103,15 +1101,15 @@ end;
     str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
 
      if (str3 = 'Debugger 4') then
-    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value))) 
+    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)))
     else    str3:= '' ;
-    
-end;  
 
-// mainfo.setstattext(str + ' = ' +str3, mtk_flat);  
+end;
+
+// mainfo.setstattext(str + ' = ' +str3, mtk_flat);
 // application.processmessages;
 // sleep(10000);
- 
+
  int1 := 1;
 
    with projectoptions,o,texp do begin
