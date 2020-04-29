@@ -760,7 +760,7 @@ begin
  
  strname := UTF8Decode(defs[int1]^.name);
  
- strowner := strname;
+ strowner :=  UTF8Decode(defs[int1]^.owner.name);
  
   if strdefs = 'PROC' then
   begin
