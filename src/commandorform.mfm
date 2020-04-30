@@ -8,10 +8,10 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 93
-  bounds_y = 73
+  bounds_x = 85
+  bounds_y = 166
   bounds_cx = 1154
-  bounds_cy = 57
+  bounds_cy = 153
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -20,7 +20,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1144
-    57
+    153
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -372,7 +372,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 49
     bounds_cx = 1144
-    bounds_cy = 10
+    bounds_cy = 106
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -389,7 +389,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 1144
-    bounds_cy = 55
+    bounds_cy = 151
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -448,9 +448,9 @@ object debuggerfo: tdebuggerfo
     face.template = templfile
     taborder = 2
     hint = 'Panel of Edited file'
-    bounds_x = 749
+    bounds_x = 691
     bounds_y = 1
-    bounds_cx = 389
+    bounds_cx = 447
     bounds_cy = 28
     object edited_run: tbutton
       color = -2147483645
@@ -781,7 +781,7 @@ object debuggerfo: tdebuggerfo
       face.localprops = [fal_image]
       face.template = templfile
       hint = 'Run compiled edited file'
-      bounds_x = 334
+      bounds_x = 391
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -1236,7 +1236,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 1
       hint = 'Abort compile'
-      bounds_x = 361
+      bounds_x = 418
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -1616,7 +1616,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 2
       hint = 'Compile edited-file'
-      bounds_x = 307
+      bounds_x = 364
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -1651,7 +1651,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 3
       hint = 'Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
-      bounds_x = 274
+      bounds_x = 327
       bounds_y = 1
       bounds_cx = 34
       bounds_cy = 21
@@ -1707,7 +1707,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 4
       hint = 'Compiler number for Edited file'
-      bounds_x = 242
+      bounds_x = 288
       bounds_y = 1
       bounds_cx = 34
       bounds_cy = 21
@@ -1759,7 +1759,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 5
       hint = 'Compiler Type for Edited file'
-      bounds_x = 199
+      bounds_x = 241
       bounds_y = 1
       bounds_cx = 44
       bounds_cy = 21
@@ -1997,7 +1997,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 6
       hint = 'Open file'
-      bounds_x = 146
+      bounds_x = 3
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -2100,8 +2100,8 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 8
       hint = 'Toggle form/unit = (F12)'
-      bounds_x = 2
-      bounds_y = 1
+      bounds_x = 154
+      bounds_y = 2
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
@@ -2345,7 +2345,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 9
       hint = 'Save edited file'
-      bounds_x = 173
+      bounds_x = 30
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -2415,8 +2415,8 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 10
       hint = 'Code beautifier.'
-      bounds_x = 28
-      bounds_y = 1
+      bounds_x = 182
+      bounds_y = 3
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
@@ -2487,7 +2487,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 11
       hint = 'Procedures list'
-      bounds_x = 44
+      bounds_x = 210
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -2774,7 +2774,7 @@ object debuggerfo: tdebuggerfo
       face.template = templfile
       taborder = 12
       hint = 'Find in edited source'
-      bounds_x = 57
+      bounds_x = 126
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -2808,7 +2808,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 7
       hint = 'History of files.'
-      bounds_x = 80
+      bounds_x = 58
       bounds_y = 1
       bounds_cx = 66
       bounds_cy = 21
@@ -2835,7 +2835,7 @@ object debuggerfo: tdebuggerfo
     taborder = 4
     bounds_x = 0
     bounds_y = 1
-    bounds_cx = 194
+    bounds_cx = 138
     bounds_cy = 28
     object line_number: tbutton
       color = -2147483645
@@ -2888,7 +2888,7 @@ object debuggerfo: tdebuggerfo
       face.localprops = [fal_image]
       face.template = mainfo.tfacecomp1
       hint = 'Show line number'
-      bounds_x = 111
+      bounds_x = 83
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -3167,7 +3167,7 @@ object debuggerfo: tdebuggerfo
       face.template = sourcefo.tfacecomp1
       taborder = 1
       hint = 'Find in directory'
-      bounds_x = 84
+      bounds_x = 56
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -3346,7 +3346,7 @@ object debuggerfo: tdebuggerfo
       face.template = mainfo.tfacecomp1
       taborder = 2
       hint = 'List of properties on/off'
-      bounds_x = 30
+      bounds_x = 29
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -3756,7 +3756,7 @@ object debuggerfo: tdebuggerfo
       face.template = mainfo.convex
       taborder = 4
       hint = 'Show target terminal when running'
-      bounds_x = 138
+      bounds_x = 110
       bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
@@ -3779,7 +3779,7 @@ object debuggerfo: tdebuggerfo
     face.template = templproject
     taborder = 3
     hint = 'Panel of project.'
-    bounds_x = 193
+    bounds_x = 136
     bounds_y = 1
     bounds_cx = 553
     bounds_cy = 28
@@ -8566,7 +8566,7 @@ object debuggerfo: tdebuggerfo
         end>
       taborder = 14
       hint = 'History of projects.'
-      bounds_x = 31
+      bounds_x = 30
       bounds_y = 1
       bounds_cx = 88
       bounds_cy = 21
@@ -8597,8 +8597,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 55
-    top = 14
+    left = 63
+    top = 77
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -8613,7 +8613,7 @@ object debuggerfo: tdebuggerfo
     )
     template.fade_direction = gd_down
     left = 89
-    top = 18
+    top = 105
   end
   object templateprojectdark: tfacecomp
     template.fade_pos.count = 2
@@ -8836,8 +8836,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 49
-    top = 12
+    left = 57
+    top = 80
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -8866,8 +8866,8 @@ object debuggerfo: tdebuggerfo
       2829079
     )
     template.fade_direction = gd_down
-    left = 68
-    top = 14
+    left = 75
+    top = 75
   end
   object imagebut: timagelist
     width = 64

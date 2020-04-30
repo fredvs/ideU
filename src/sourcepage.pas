@@ -243,6 +243,7 @@ end;
 
 { tsourcepage }
 
+
 procedure tsourcepage.onmouseev(const sender: twidget;
                var ainfo: mouseeventinfoty);
 
@@ -264,8 +265,9 @@ begin
        if (autocomplet = 0) or (autocomplet = 2) then
      begin
 
-      if (ainfo.shiftstate = [ss_double]) and (tedit(sender).text <> '...') then
+      if ((ainfo.shiftstate = [ss_double])) and (tedit(sender).text <> '...') then
         begin
+        
        pastefromclipboard(txtvalue);
        txtvalue2 := tedit(sender).text;
        int1 := system.pos('|',txtvalue2);
@@ -273,6 +275,11 @@ begin
        int1 := system.pos('{',txtvalue2);
        if int1 > 0 then txtvalue2 := trim(copy(txtvalue2,0,int1-1));
        
+       if autocomplet <> 2 then begin       
+       int1 := system.pos('(',txtvalue2);
+       if int1 > 0 then txtvalue2 := trim(copy(txtvalue2,0,int1));
+       end;
+            
         copytoclipboard(txtvalue2);
        //debuggerfo.statdisp.value:=  tedit(sender).text;
        selectwordatcursor();
