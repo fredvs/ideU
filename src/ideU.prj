@@ -29,9 +29,9 @@ findinfiledialog=106
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -98,8 +98,10 @@ findinfiledialog=106
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.sh"
  [findinfileadialogfo.findtext]
- value=if (props[arow] <> nil) and props[arow].captionclipped
+ value=FLanguage: TSourceLanguage;
  history=20
+  FLanguage: TSourceLanguage;
+  procedure oncellev
   if (props[arow] <> nil) and props[arow].captionclipped
   2.1
   2.
@@ -118,8 +120,6 @@ findinfiledialog=106
   $define no_class_bridge}
   Tstream
   classes.
-  no_bridge
-  no_class_bridge
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -134,7 +134,7 @@ finddialog=8
  x=506
  y=487
  cx=300
- cy=291
+ cy=269
 replacedialog=30
  [replacedialogfo.promptonreplace]
  value=1
@@ -870,17 +870,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ PROCEDURELISTFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=12
@@ -1529,7 +1532,7 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=onkey
+finddtext=FillGrid
 findhistory=20
  onkey
  onlist
@@ -1563,32 +1566,36 @@ bookmarks2=0
 bookmarks3=0
 sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/sourceform.pas
 relpaths=4
  actionsmodule.pas
- sourceform.pas
  main.pas
  ideU.pas
+ sourceform.pas
 ismoduletexts=4
  0
  0
  0
  0
-modules=3
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
@@ -1596,7 +1603,7 @@ nomenumodules=3
 firsttab=0
 index=3
 [layout]
-windowlayout=555
+windowlayout=574
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1730,7 +1737,7 @@ windowlayout=555
  x=0
  y=0
  cx=205
- cy=531
+ cy=536
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1741,7 +1748,7 @@ windowlayout=555
  sortdescend1=0
  sorted=0
  col=0
- row=9
+ row=14
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1920,9 +1927,9 @@ windowlayout=555
  ncx=0
  ncy=0
  x=0
- y=593
+ y=592
  cx=1428
- cy=138
+ cy=139
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2022,7 +2029,7 @@ windowlayout=555
  x=0
  y=0
  cx=1428
- cy=56
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2033,12 +2040,12 @@ windowlayout=555
  mdistate=0
  nx=0
  ny=0
- ncx=1428
- ncy=8
+ ncx=1413
+ ncy=0
  x=0
  y=0
  cx=1428
- cy=8
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2048,28 +2055,28 @@ windowlayout=555
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
-  /home/fred/mseide-msegui/lib/common/image/msegraphicstream.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/mclasses.pas
-  /home/fred/mseide-msegui/lib/common/image/mseformatpnmread.pas
-  /home/fred/mseide-msegui/lib/common/image/mseformatpngwrite.pas
-  /home/fred/mseide-msegui/lib/common/image/mseformatpngread.pas
-  /home/fred/mseide-msegui-avantcircular/lib/common/fpccompatibility/mclasses.pas
-  /home/fred/ideu/src/sourcehintform.pas
-  /home/fred/ideu/src/msewidgets.pas
-  /home/fred/ideu/src/replacedialogform.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/ideu/src/conffpgui.pas
-  /home/fred/ideu/src/confcompiler.pas
-  /home/fred/ideu/src/findinfilepage.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/inheritedform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/pascform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/simpleform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/project.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/main.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/program.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/mainform.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/pascform.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/program.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/simpleform.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/project.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/main.pas
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/Downloads/test.mp3
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_getstrfromint.inc
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/getstrfromint.inc
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_formatfunc.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/formatfunc.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_dbf_str_ru.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2087,7 +2094,7 @@ windowlayout=555
  x=208
  y=0
  cx=1220
- cy=531
+ cy=536
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2128,9 +2135,9 @@ windowlayout=555
  ncx=0
  ncy=0
  x=0
- y=59
+ y=53
  cx=1428
- cy=531
+ cy=536
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2147,6 +2154,25 @@ windowlayout=555
  y=325
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_procedurelistfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=781
+ y=392
+ cx=584
+ cy=326
  rcx=0
  rcy=0
  wsize=0
