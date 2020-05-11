@@ -29,18 +29,18 @@ findinfiledialog=106
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.sh"
+ value="*.pas" "*.pp" "*.inc" "*.mfm" 
  history=14
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.sh"
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" 
-  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc" "*.*" 
   "*.pas" "*.pp" "*.inc"
@@ -98,8 +98,14 @@ findinfiledialog=106
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.sh"
  [findinfileadialogfo.findtext]
- value=FLanguage: TSourceLanguage;
+ value=bgrabitmapdir
  history=20
+  bgrabitmapdir
+  settingsmacroty
+  sma_fpguidir
+  msetypes
+  rowdelete
+  sho_rowdelete
   FLanguage: TSourceLanguage;
   procedure oncellev
   if (props[arow] <> nil) and props[arow].captionclipped
@@ -114,12 +120,6 @@ findinfiledialog=106
   fpimage
   ,fp
   formatjpgread
-  fpreadjpeg
-  tmsefpreaderjpeg
-  readfpgraphic
-  $define no_class_bridge}
-  Tstream
-  classes.
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -253,7 +253,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -870,25 +870,31 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=8
  ACTIONSMO
  CONFIDEUFO
  SETTINGS_FORM
  MAINFO
+ SETTINGSFO
+ MSESHORTCUTDIALOGFO
  PROCEDURELISTFO
  SOURCEFO
-moduletypes=6
+moduletypes=8
  TACTIONSMO
  TCONFIDEUFO
  TSETTINGSFO
  TMAINFO
+ TSETTINGSFO
+ TMSESHORTCUTDIALOGFO
  TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=6
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msesettings.mfm
+ /home/fred/ideu/src/mseshortcutdialog.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1538,8 +1544,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=utf
+finddtext=fpcsrcdir
 findhistory=20
+ fpcsrcdir
+ color
  utf
  onkey
  onlist
@@ -1558,17 +1566,21 @@ findhistory=20
  virtual
  inherited
  '%
- decode
- utf8
 findoptions=1
-editpos=7
+editpos=13
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,3
+ 0,232
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,113
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1576,7 +1588,13 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+sourcefiles=13
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
@@ -1584,7 +1602,13 @@ sourcefiles=7
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
-relpaths=7
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/mseshortcutdialog.pas
+ ${PROJECTDIR}/msegrids.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/ideusettings.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
+relpaths=13
  actionsmodule.pas
  main.pas
  ideU.pas
@@ -1592,7 +1616,13 @@ relpaths=7
  main.pas
  confideu.pas
  ideusettings.pas
-ismoduletexts=7
+ actionsmodule.pas
+ mseshortcutdialog.pas
+ msegrids.pas
+ confideu.pas
+ ideusettings.pas
+ ../mseide-msegui/lib/common/designutils/msesettings.pas
+ismoduletexts=13
  0
  0
  0
@@ -1600,28 +1630,42 @@ ismoduletexts=7
  0
  0
  0
-modules=6
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/ideusettings.mfm
-moduleoptions=6
+ /home/fred/ideu/src/mseshortcutdialog.mfm
+ /home/fred/mseide-msegui/lib/common/designutils/msesettings.mfm
+moduleoptions=8
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+ 0
+visiblemodules=8
  -1
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
+ -1
+ -1
+nomenumodules=8
+ 0
+ 0
  0
  0
  0
@@ -1629,10 +1673,10 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-firsttab=0
+firsttab=4
 index=6
 [layout]
-windowlayout=612
+windowlayout=650
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1747,9 +1791,9 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=0
+ x=3
  y=29
- cx=1440
+ cx=1434
  cy=752
  rcx=0
  rcy=0
@@ -1766,7 +1810,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=531
+ cy=532
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2058,7 +2102,7 @@ windowlayout=612
  x=0
  y=0
  cx=1428
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2074,7 +2118,7 @@ windowlayout=612
  x=0
  y=0
  cx=1428
- cy=-1
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2087,6 +2131,9 @@ windowlayout=612
  value=/home/fred/ideu/src/ideusettings.pas
  history=20
   /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/msegrids.pas
+  /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/mseide-msegui/apps/myide/mybutton.pas
   /home/fred/Downloads/test.mp3
   /home/fred/strumpract/src/randomnote.pas
@@ -2103,9 +2150,6 @@ windowlayout=612
   /home/fred/mseide-msegui/apps/ide/templates/default/simpleform.pas
   /home/fred/mseide-msegui/apps/ide/templates/default/project.pas
   /home/fred/mseide-msegui/apps/ide/templates/default/main.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_getstrfromint.inc
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/getstrfromint.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2123,11 +2167,11 @@ windowlayout=612
  x=208
  y=0
  cx=1220
- cy=531
+ cy=532
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
+ firsttab=4
  index=6
  [confideufo.fontname]
  value=stf_default
@@ -2164,9 +2208,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1428
- cy=531
+ cy=532
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2229,7 +2273,7 @@ windowlayout=612
  [_mse_settings_form_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_mseshortcutdialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2240,6 +2284,44 @@ windowlayout=612
  y=107
  cx=465
  cy=492
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_mseshortcutdialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_settingsfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=217
+ cx=608
+ cy=349
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settingsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=100
+ y=106
+ cx=358
+ cy=570
  rcx=0
  rcy=0
  wsize=0

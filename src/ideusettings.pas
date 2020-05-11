@@ -21,7 +21,7 @@ type
     sma_syntaxdefdir, sma_templatedir, sma_layoutdir, sma_compstoredir,
     sma_compiler, sma_debugger,
     sma_exeext, sma_target, sma_targetosdir, sma_fpguidir, sma_ideudir,
-    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_fpcsrcdir, sma_bgrabitmapdir);
+    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_bgrabitmapdir,sma_fpcsrcdir);
 
 const
 
@@ -31,7 +31,7 @@ const
     'mselibdir', 'syntaxdefdir', 'templatedir', 'layoutdir',
     'compstoredir', 'compiler', 'debugger',
     'exeext', 'target', 'targetosdir', 'fpguidir',
-    'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir', 'fpcsrcdir', 'bgabitmapdir');
+    'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir', 'bgrabitmapdir', 'fpcsrcdir');
  {$ifdef mswindows}
  {$ifdef CPU64}
 
@@ -61,7 +61,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppcx64', 'gdb', '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
-    '', '', '/usr/share/fpcsrc/','');
+    '', '', '', '/usr/share/fpcsrc/');
   {$endif}
 
   {$ifdef freebsd}
@@ -102,7 +102,7 @@ const
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
     'ppc386', 'gdb', '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/',
-    '', '', '', '/usr/share/fpcsrc/','');
+    '', '', '','', '/usr/share/fpcsrc/');
    {$endif}
 
 

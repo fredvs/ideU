@@ -633,15 +633,8 @@ object settings_form: tsettingsfo
         bounds_y = 412
         bounds_cx = 430
         bounds_cy = 39
-        controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/templates/'
-        controller.filterlist.data = (
-          (
-            'Project files'
-            '*.prj'
-          )
-        )
         controller.options = [fdo_sysfilename, fdo_directory]
-        controller.captionopen = 'Project template directory'
+        controller.captionopen = 'BGRABitmap directory'
         reffontheight = 15
       end
     end
@@ -717,6 +710,19 @@ object settings_form: tsettingsfo
           end>
         datarowheight = 16
         reffontheight = 15
+        object macroname: tstringedit
+          optionswidget1 = [ow1_fontglyphheight]
+          optionsskin = [osk_framebuttononly]
+          taborder = 1
+          visible = False
+          bounds_x = 0
+          bounds_y = 0
+          bounds_cx = 142
+          bounds_cy = 16
+          optionsedit1 = [oe1_savevalue]
+          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+          reffontheight = 15
+        end
         object macrovalue: tmemodialogedit
           optionswidget1 = [ow1_fontglyphheight]
           optionsskin = [osk_framebuttononly]
@@ -732,26 +738,13 @@ object settings_form: tsettingsfo
             end>
           frame.button.color = -1879048187
           frame.button.imagenr = 17
-          taborder = 1
+          taborder = 2
           visible = False
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 400
           bounds_cy = 16
           anchors = [an_top]
-          optionsedit1 = [oe1_savevalue]
-          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-          reffontheight = 15
-        end
-        object macroname: tstringedit
-          optionswidget1 = [ow1_fontglyphheight]
-          optionsskin = [osk_framebuttononly]
-          taborder = 2
-          visible = False
-          bounds_x = 0
-          bounds_y = 0
-          bounds_cx = 142
-          bounds_cy = 16
           optionsedit1 = [oe1_savevalue]
           optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
           reffontheight = 15
