@@ -4,8 +4,8 @@ object settings_form: tsettingsfo
   visible = False
   bounds_x = 473
   bounds_y = 107
-  bounds_cx = 447
-  bounds_cy = 520
+  bounds_cx = 455
+  bounds_cy = 492
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -13,8 +13,8 @@ object settings_form: tsettingsfo
   container.bounds = (
     0
     0
-    447
-    520
+    455
+    492
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -85,8 +85,9 @@ object settings_form: tsettingsfo
     optionswidget1 = [ow1_fontglyphheight]
     bounds_x = 2
     bounds_y = 0
-    bounds_cx = 441
+    bounds_cx = 447
     bounds_cy = 482
+    anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
     tab_frame.localprops = []
     tab_frame.localprops1 = []
@@ -112,9 +113,9 @@ object settings_form: tsettingsfo
       taborder = 1
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 441
+      bounds_cx = 447
       bounds_cy = 462
-      anchors = [an_left, an_top, an_right]
+      anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Path  '
       reffontheight = 15
       object layoutdir: tfilenameedit
@@ -652,7 +653,7 @@ object settings_form: tsettingsfo
       taborder = 2
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 441
+      bounds_cx = 447
       bounds_cy = 462
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Macros'
@@ -670,7 +671,7 @@ object settings_form: tsettingsfo
         )
         bounds_x = 7
         bounds_y = 14
-        bounds_cx = 427
+        bounds_cx = 433
         bounds_cy = 441
         bounds_cymin = 80
         anchors = [an_left, an_top, an_right, an_bottom]
@@ -689,10 +690,10 @@ object settings_form: tsettingsfo
             captions.count = 4
             captions.items = <            
               item
-                caption = 'Value'
+                caption = 'Name'
               end            
               item
-                caption = 'Name'
+                caption = 'Value'
               end            
               item
               end            
@@ -702,16 +703,16 @@ object settings_form: tsettingsfo
         datacols.count = 2
         datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
         datacols.items = <        
-          item[macrovalue]
-            width = 193
-            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-            widgetname = 'macrovalue'
-            dataclass = tgridmsestringdatalist
-          end        
           item[macroname]
-            width = 199
+            width = 142
             options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
             widgetname = 'macroname'
+            dataclass = tgridmsestringdatalist
+          end        
+          item[macrovalue]
+            width = 256
+            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+            widgetname = 'macrovalue'
             dataclass = tgridmsestringdatalist
           end>
         datarowheight = 16
@@ -735,7 +736,7 @@ object settings_form: tsettingsfo
           visible = False
           bounds_x = 0
           bounds_y = 0
-          bounds_cx = 394
+          bounds_cx = 400
           bounds_cy = 16
           anchors = [an_top]
           optionsedit1 = [oe1_savevalue]
@@ -747,9 +748,9 @@ object settings_form: tsettingsfo
           optionsskin = [osk_framebuttononly]
           taborder = 2
           visible = False
-          bounds_x = 194
+          bounds_x = 0
           bounds_y = 0
-          bounds_cx = 199
+          bounds_cx = 142
           bounds_cy = 16
           optionsedit1 = [oe1_savevalue]
           optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
@@ -765,7 +766,7 @@ object settings_form: tsettingsfo
       taborder = 3
       bounds_x = 0
       bounds_y = 20
-      bounds_cx = 441
+      bounds_cx = 447
       bounds_cy = 462
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
@@ -878,7 +879,7 @@ object settings_form: tsettingsfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 1
-    bounds_x = 329
+    bounds_x = 337
     bounds_y = 0
     bounds_cx = 99
     bounds_cy = 30
