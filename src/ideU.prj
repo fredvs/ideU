@@ -274,7 +274,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=1
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=329
@@ -892,7 +892,7 @@ befcommandon=0
 makeoptionson=12
  4095
  0
- 0
+ 4
  4092
  0
  192
@@ -1558,7 +1558,7 @@ findhistory=20
  inherited
  '%
 findoptions=1
-editpos=17
+editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1567,12 +1567,13 @@ editpos=17
  0,-1073741823
  0,-1073741823
  0,96
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1593,7 +1594,8 @@ bookmarks13=0
 bookmarks14=0
 bookmarks15=0
 bookmarks16=0
-sourcefiles=17
+bookmarks17=0
+sourcefiles=18
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
@@ -1602,16 +1604,17 @@ sourcefiles=17
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
  /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
- ${PROJECTDIR}/ideU.pas
+ /home/fred/ideu/src/ideU.pas
  ${PROJECTDIR}/plugmanager.pas
  /home/fred/svnfpc32/fixes_3_2/rtl/linux/system.pp
  /home/fred/svnfpc32/fixes_3_2/rtl/unix/oscdeclh.inc
  /home/fred/svnfpc32/fixes_3_2/rtl/unix/bunxovlh.inc
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
- /home/fred/lazpaint/lazpaint/lazpaint.lpr
+ ${PROJECTDIR}/lazpaint.lpr
  ${PROJECTDIR}/commandorform.pas
-relpaths=17
+ /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
+relpaths=18
  actionsmodule.pas
  main.pas
  ideU.pas
@@ -1629,7 +1632,9 @@ relpaths=17
  ideU.pas
  lazpaint/lazpaint/lazpaint.lpr
  commandorform.pas
-ismoduletexts=17
+ mseide-msegui/lib/common/graphics/msedrawtext.pas
+ismoduletexts=18
+ 0
  0
  0
  0
@@ -1676,7 +1681,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=17
+order=18
  0
  1
  2
@@ -1685,19 +1690,20 @@ order=17
  5
  6
  7
+ 17
+ 8
+ 10
+ 11
+ 12
  13
  14
  15
  16
- 8
  9
- 10
- 11
- 12
 firsttab=6
-index=8
+index=9
 [layout]
-windowlayout=630
+windowlayout=631
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1711,13 +1717,13 @@ windowlayout=630
  ny=0
  ncx=0
  ncy=0
- x=115
- y=55
+ x=125
+ y=100
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1831,7 +1837,7 @@ windowlayout=630
  x=0
  y=0
  cx=205
- cy=558
+ cy=418
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2021,9 +2027,9 @@ windowlayout=630
  ncx=0
  ncy=0
  x=0
- y=615
- cx=1428
- cy=116
+ y=505
+ cx=1212
+ cy=95
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2122,8 +2128,8 @@ windowlayout=630
  ncy=0
  x=0
  y=0
- cx=1428
- cy=51
+ cx=1212
+ cy=81
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2135,11 +2141,11 @@ windowlayout=630
  nx=0
  ny=0
  ncx=1413
- ncy=44
+ ncy=40
  x=0
  y=0
- cx=1428
- cy=43
+ cx=1212
+ cy=69
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2149,8 +2155,11 @@ windowlayout=630
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
+  /home/fred/ideu/src/plugmanager.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/lazpaint/lazpaint/lazpaint.lpr
   /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
@@ -2164,13 +2173,10 @@ windowlayout=630
   /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bezier.inc
   /home/fred/mseide-msegui-avantcircular/lib/common/widgets/msechart.pas
   /home/fred/mseide-msegui/apps/myide/regcomponents.inc
-  /home/fred/ideu/src/plugmanager.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/mseide-msegui/apps/myide/mybutton.pas
   /home/fred/Downloads/test.mp3
-  /home/fred/strumpract/src/randomnote.pas
-  /home/fred/ideu/src/templates/fpc_mse/default/dockingform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2187,12 +2193,12 @@ windowlayout=630
  ncy=0
  x=208
  y=0
- cx=1220
- cy=558
+ cx=1004
+ cy=418
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=17
+ order=18
   0
   1
   2
@@ -2201,17 +2207,18 @@ windowlayout=630
   5
   6
   7
+  17
+  8
+  10
+  11
+  12
   13
   14
   15
   16
-  8
   9
-  10
-  11
-  12
  firsttab=6
- index=8
+ index=9
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2247,9 +2254,9 @@ windowlayout=630
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1428
- cy=558
+ y=84
+ cx=1212
+ cy=418
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]

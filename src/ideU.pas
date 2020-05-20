@@ -7,7 +7,7 @@ program ideU;
  {$endif}
 {$endif}
 {$ifdef mswindows}
- {$R ideu.rc}
+ {$R ideu.res}
 {$endif}
 
 uses // cmem,
