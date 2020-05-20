@@ -329,22 +329,13 @@ if system.pos('Default',debuggerused[int3]) > 0 then
  end;
  end;
  end;
-
-
+ 
  if str3 <> '' then
- begin
+ debug_on.tag := 0 
+ else
  debug_on.tag := 1 ;
- //debug_on.imagenr := 40 ;
-  debuggerfo.debug_on.face.image.alignment :=  
-   [al_stretchx,al_stretchy];
 
- end else
- begin
- debug_on.tag := 0 ;
- //debug_on.imagenr := 41
-   debuggerfo.debug_on.face.image.alignment :=  
-   [al_grayed,al_stretchx,al_stretchy];
-end;
+onsetdebug(nil);
 
   end;
 

@@ -7,7 +7,7 @@ program ideU;
  {$endif}
 {$endif}
 {$ifdef mswindows}
- {$R ideu.res}
+ {$R ideu.rc}
 {$endif}
 
 uses // cmem,
@@ -62,7 +62,7 @@ uses // cmem,
 var
   MSELang,MSEFallbacklang:string;
 }
-
+  
 begin
 
 {
@@ -123,8 +123,6 @@ begin
   createcpufo;
 
   mainfo.ideureadconfig;
-  
-  
 
   application.run;
 end.
