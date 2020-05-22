@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 362
-  bounds_y = 49
+  bounds_x = 374
+  bounds_y = 164
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -411,6 +411,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 6
+      hint = 'Font height for all ideU text'
       bounds_x = 8
       bounds_y = 289
       bounds_cx = 113
@@ -453,7 +454,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 7
-      hint = 'Compiler Type for Edited file'
+      hint = 'Font name for all ideU text'
       bounds_x = 8
       bounds_y = 250
       bounds_cx = 263
@@ -905,7 +906,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 13
-      hint = 'Default layout for all projects'
+      hint = 'Default synthax file for all projects'
       bounds_x = 8
       bounds_y = 555
       bounds_cx = 296
@@ -987,6 +988,7 @@ object confideufo: tconfideufo
       0
     )
     taborder = 4
+    hint = 'What to do if a file is changed by a external application'
     bounds_x = 10
     bounds_y = 19
     bounds_cx = 277

@@ -29,9 +29,9 @@ findinfiledialog=106
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -53,15 +53,15 @@ findinfiledialog=106
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/svnfpc32/fixes_3_2/
+  /home/fred/mseide-msegui/
  filecolwidth=174
  x=409
  y=84
  cx=554
  cy=316
  filehistory=35
-  /home/fred/svnfpc32/fixes_3_2/
   /home/fred/mseide-msegui/
+  /home/fred/svnfpc32/fixes_3_2/
   /home/fred/mseide-msegui-avantcircular/
   /home/fred/mseuniverse/
   /home/fred/CodeTyphonIns700/CodeTyphonIns/
@@ -98,8 +98,10 @@ findinfiledialog=106
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=ideu.res
+ value=regexpr
  history=20
+  regexpr
+  windres
   ideu.res
   Fpreadlink
   SysInitExecPath
@@ -118,8 +120,6 @@ findinfiledialog=106
   2.
   5.
   2.0
-  5.2.0
-  .0
  [findinfileadialogfo]
  stackedunder=
  x=554
@@ -253,7 +253,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -870,20 +870,26 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=7
  DEBUGGERFO
+ CONFIDEUFO
+ SETTINGS_FORM
  MAINFO
  SETTINGSFO
  PROCEDURELISTFO
  SOURCEFO
-moduletypes=5
+moduletypes=7
  TDEBUGGERFO
+ TCONFIDEUFO
+ TSETTINGSFO
  TMAINFO
  TSETTINGSFO
  TPROCEDURELISTFO
  TSOURCEFO
-modulefiles=5
+modulefiles=7
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/mseide-msegui/lib/common/designutils/msesettings.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
@@ -1558,7 +1564,7 @@ findhistory=20
  inherited
  '%
 findoptions=1
-editpos=18
+editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1567,7 +1573,6 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,96
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1576,6 +1581,9 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,5
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1595,7 +1603,9 @@ bookmarks14=0
 bookmarks15=0
 bookmarks16=0
 bookmarks17=0
-sourcefiles=18
+bookmarks18=0
+bookmarks19=0
+sourcefiles=20
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
@@ -1604,7 +1614,7 @@ sourcefiles=18
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
  /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
- /home/fred/ideu/src/ideU.pas
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/plugmanager.pas
  /home/fred/svnfpc32/fixes_3_2/rtl/linux/system.pp
  /home/fred/svnfpc32/fixes_3_2/rtl/unix/oscdeclh.inc
@@ -1614,7 +1624,9 @@ sourcefiles=18
  ${PROJECTDIR}/lazpaint.lpr
  ${PROJECTDIR}/commandorform.pas
  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
-relpaths=18
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/ideusettings.pas
+relpaths=20
  actionsmodule.pas
  main.pas
  ideU.pas
@@ -1633,7 +1645,9 @@ relpaths=18
  lazpaint/lazpaint/lazpaint.lpr
  commandorform.pas
  mseide-msegui/lib/common/graphics/msedrawtext.pas
-ismoduletexts=18
+ confideu.pas
+ ideusettings.pas
+ismoduletexts=20
  0
  0
  0
@@ -1652,36 +1666,46 @@ ismoduletexts=18
  0
  0
  0
-modules=6
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/mseide-msegui/lib/common/designutils/msesettings.mfm
  /home/fred/ideu/src/commandorform.mfm
-moduleoptions=6
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/ideusettings.mfm
+moduleoptions=8
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+ 0
+visiblemodules=8
  0
  0
  0
  0
  0
  -1
-nomenumodules=6
  -1
+ -1
+nomenumodules=8
+ -1
+ 0
+ 0
  0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=18
+order=20
  0
  1
  2
@@ -1690,8 +1714,8 @@ order=18
  5
  6
  7
+ 9
  17
- 8
  10
  11
  12
@@ -1699,11 +1723,13 @@ order=18
  14
  15
  16
- 9
-firsttab=6
-index=9
+ 8
+ 18
+ 19
+firsttab=10
+index=18
 [layout]
-windowlayout=631
+windowlayout=671
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1717,8 +1743,8 @@ windowlayout=631
  ny=0
  ncx=0
  ncy=0
- x=125
- y=100
+ x=95
+ y=49
  cx=1224
  cy=621
  rcx=0
@@ -1837,7 +1863,7 @@ windowlayout=631
  x=0
  y=0
  cx=205
- cy=418
+ cy=443
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1848,7 +1874,7 @@ windowlayout=631
  sortdescend1=0
  sorted=0
  col=0
- row=5
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2027,9 +2053,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=505
+ y=499
  cx=1212
- cy=95
+ cy=101
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2129,7 +2155,7 @@ windowlayout=631
  x=0
  y=0
  cx=1212
- cy=81
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2140,12 +2166,12 @@ windowlayout=631
  mdistate=0
  nx=0
  ny=0
- ncx=1413
- ncy=40
+ ncx=1197
+ ncy=38
  x=0
  y=0
  cx=1212
- cy=69
+ cy=36
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2155,14 +2181,10 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/confideu.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
-  /home/fred/ideu/src/plugmanager.pas
-  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/lazpaint/lazpaint/lazpaint.lpr
-  /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
   /home/fred/uos/src/uos.pas
   /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
   /home/fred/bgracontrols/bccombobox.pas
@@ -2173,10 +2195,14 @@ windowlayout=631
   /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bezier.inc
   /home/fred/mseide-msegui-avantcircular/lib/common/widgets/msechart.pas
   /home/fred/mseide-msegui/apps/myide/regcomponents.inc
+  /home/fred/ideu/src/plugmanager.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/mseide-msegui/apps/myide/mybutton.pas
   /home/fred/Downloads/test.mp3
+  /home/fred/strumpract/src/randomnote.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/dockingform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/inheritedform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2194,11 +2220,11 @@ windowlayout=631
  x=208
  y=0
  cx=1004
- cy=418
+ cy=443
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=18
+ order=20
   0
   1
   2
@@ -2207,8 +2233,8 @@ windowlayout=631
   5
   6
   7
+  9
   17
-  8
   10
   11
   12
@@ -2216,9 +2242,11 @@ windowlayout=631
   14
   15
   16
-  9
- firsttab=6
- index=9
+  8
+  18
+  19
+ firsttab=10
+ index=18
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2254,9 +2282,9 @@ windowlayout=631
  ncx=0
  ncy=0
  x=0
- y=84
+ y=53
  cx=1212
- cy=418
+ cy=443
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2319,7 +2347,7 @@ windowlayout=631
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2330,6 +2358,44 @@ windowlayout=631
  y=166
  cx=1164
  cy=153
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_settings_form_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=374
+ y=164
+ cx=639
+ cy=672
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=473
+ y=107
+ cx=465
+ cy=492
  rcx=0
  rcy=0
  wsize=0
