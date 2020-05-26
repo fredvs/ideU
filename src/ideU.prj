@@ -1564,7 +1564,7 @@ findhistory=20
  inherited
  '%
 findoptions=1
-editpos=20
+editpos=21
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1583,7 +1583,8 @@ editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,5
+ 0,-1073741823
+ 15,3
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1605,7 +1606,8 @@ bookmarks16=0
 bookmarks17=0
 bookmarks18=0
 bookmarks19=0
-sourcefiles=20
+bookmarks20=0
+sourcefiles=21
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
@@ -1625,8 +1627,9 @@ sourcefiles=20
  ${PROJECTDIR}/commandorform.pas
  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
  ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/ideusettings.pas
-relpaths=20
+ /home/fred/ideu/src/ideusettings.pas
+ ${PROJECTDIR}/ideU.pas
+relpaths=21
  actionsmodule.pas
  main.pas
  ideU.pas
@@ -1647,7 +1650,9 @@ relpaths=20
  mseide-msegui/lib/common/graphics/msedrawtext.pas
  confideu.pas
  ideusettings.pas
-ismoduletexts=20
+ ideU.pas
+ismoduletexts=21
+ 0
  0
  0
  0
@@ -1705,7 +1710,7 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=20
+order=21
  0
  1
  2
@@ -1726,10 +1731,11 @@ order=20
  8
  18
  19
-firsttab=10
-index=18
+ 20
+firsttab=11
+index=19
 [layout]
-windowlayout=671
+windowlayout=672
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1874,7 +1880,7 @@ windowlayout=671
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2167,11 +2173,11 @@ windowlayout=671
  nx=0
  ny=0
  ncx=1197
- ncy=38
+ ncy=32
  x=0
  y=0
  cx=1212
- cy=36
+ cy=30
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2181,8 +2187,9 @@ windowlayout=671
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
+ value=/home/fred/ideu/src/ideusettings.pas
  history=20
+  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/lazpaint/lazpaint/lazpaint.lpr
   /home/fred/uos/src/uos.pas
@@ -2196,7 +2203,6 @@ windowlayout=671
   /home/fred/mseide-msegui-avantcircular/lib/common/widgets/msechart.pas
   /home/fred/mseide-msegui/apps/myide/regcomponents.inc
   /home/fred/ideu/src/plugmanager.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseshortcutdialog.pas
   /home/fred/mseide-msegui/apps/myide/mybutton.pas
   /home/fred/Downloads/test.mp3
@@ -2224,7 +2230,7 @@ windowlayout=671
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=20
+ order=21
   0
   1
   2
@@ -2245,8 +2251,9 @@ windowlayout=671
   8
   18
   19
- firsttab=10
- index=18
+  20
+ firsttab=11
+ index=19
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

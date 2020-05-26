@@ -16,7 +16,6 @@ order13=0
 order14=0
 order15=0
 order16=0
-order17=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU_BGRA.prj
@@ -779,7 +778,7 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=10
+editpos=12
  44,120
  0,-1073741823
  0,-1073741823
@@ -790,6 +789,8 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -800,8 +801,10 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
- /home/fred/ideu/src/ideU.pas
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/regcomponents.inc
  /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
@@ -811,7 +814,9 @@ sourcefiles=10
  /home/fred/freepascal_ootb_305/compiler/systems/t_bsd.pas
  /home/fred/freepascal_ootb_305/compiler/systems/t_win.pas
  /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
-relpaths=10
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/main.mfm
+relpaths=12
  ideU.pas
  regcomponents.inc
  Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
@@ -822,7 +827,9 @@ relpaths=10
  freepascal_ootb_305/compiler/systems/t_bsd.pas
  freepascal_ootb_305/compiler/systems/t_win.pas
  freepascal_ootb_305_test/compiler/msgtxt.inc
-ismoduletexts=10
+ main.pas
+ main.mfm
+ismoduletexts=12
  0
  0
  0
@@ -833,26 +840,30 @@ ismoduletexts=10
  0
  0
  0
+ 0
+ -1
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-order=10
+order=12
  0
- 6
- 7
- 8
- 9
- 2
+ 10
+ 11
  3
  4
  5
  1
+ 7
+ 8
+ 9
+ 2
+ 6
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=573
+windowlayout=575
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -986,7 +997,7 @@ windowlayout=573
  x=0
  y=0
  cx=205
- cy=445
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1172,9 +1183,9 @@ windowlayout=573
  ncx=0
  ncy=0
  x=0
- y=508
+ y=507
  cx=1212
- cy=92
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1274,7 +1285,7 @@ windowlayout=573
  x=0
  y=0
  cx=1212
- cy=57
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1290,7 +1301,7 @@ windowlayout=573
  x=0
  y=0
  cx=1212
- cy=64
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1300,7 +1311,7 @@ windowlayout=573
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.mfm
  history=50
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
@@ -1369,23 +1380,25 @@ windowlayout=573
  x=208
  y=0
  cx=1004
- cy=445
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=10
+ order=12
   0
-  6
-  7
-  8
-  9
-  2
+  10
+  11
   3
   4
   5
   1
+  7
+  8
+  9
+  2
+  6
  firsttab=0
- index=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1421,9 +1434,9 @@ windowlayout=573
  ncx=0
  ncy=0
  x=0
- y=60
+ y=54
  cx=1212
- cy=445
+ cy=450
  rcx=0
  rcy=0
 [targetconsole]
