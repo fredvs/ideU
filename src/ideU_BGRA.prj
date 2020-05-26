@@ -162,7 +162,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=642
  width0=77
@@ -468,13 +468,13 @@ makeoptionson=7
  4095
  4095
 compilerusedon=29
- 3895
- 8
+ 4095
  0
  0
  0
- 64
- 128
+ 0
+ 0
+ 0
  0
  0
  0
@@ -505,9 +505,9 @@ debuggerusedon=6
  0
  4
 exeusedon=15
- 3903
+ 4095
  0
- 192
+ 0
  0
  0
  0
@@ -547,8 +547,8 @@ unitdirson=11
  200703
  200703
  200703
- 983232
- 69631
+ 196656
+ 200703
  200703
  69631
  200703
@@ -778,7 +778,7 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=12
+editpos=11
  44,120
  0,-1073741823
  0,-1073741823
@@ -790,7 +790,6 @@ editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -802,35 +801,31 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-bookmarks11=0
-sourcefiles=12
+sourcefiles=11
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/regcomponents.inc
  /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgraflashprogressbar.pas
  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
- /home/fred/freepascal_ootb_305/compiler/systems/t_linux.pas
  /home/fred/freepascal_ootb_305/compiler/systems/t_bsd.pas
  /home/fred/freepascal_ootb_305/compiler/systems/t_win.pas
  /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/main.mfm
-relpaths=12
+relpaths=11
  ideU.pas
  regcomponents.inc
  Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
  Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
  Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgraflashprogressbar.pas
  Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
- freepascal_ootb_305/compiler/systems/t_linux.pas
  freepascal_ootb_305/compiler/systems/t_bsd.pas
  freepascal_ootb_305/compiler/systems/t_win.pas
  freepascal_ootb_305_test/compiler/msgtxt.inc
  main.pas
  main.mfm
-ismoduletexts=12
- 0
+ismoduletexts=11
  0
  0
  0
@@ -847,23 +842,10 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
-order=12
- 0
- 10
- 11
- 3
- 4
- 5
- 1
- 7
- 8
- 9
- 2
- 6
 firsttab=0
-index=2
+index=0
 [layout]
-windowlayout=575
+windowlayout=562
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -997,7 +979,7 @@ windowlayout=575
  x=0
  y=0
  cx=205
- cy=450
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1183,9 +1165,9 @@ windowlayout=575
  ncx=0
  ncy=0
  x=0
- y=507
+ y=508
  cx=1212
- cy=93
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1285,7 +1267,7 @@ windowlayout=575
  x=0
  y=0
  cx=1212
- cy=51
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1301,7 +1283,7 @@ windowlayout=575
  x=0
  y=0
  cx=1212
- cy=58
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1311,7 +1293,7 @@ windowlayout=575
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.mfm
+ value=/home/fred/ideu/src/ideU.pas
  history=50
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
@@ -1380,25 +1362,12 @@ windowlayout=575
  x=208
  y=0
  cx=1004
- cy=450
+ cy=445
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=12
-  0
-  10
-  11
-  3
-  4
-  5
-  1
-  7
-  8
-  9
-  2
-  6
  firsttab=0
- index=2
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1434,9 +1403,9 @@ windowlayout=575
  ncx=0
  ncy=0
  x=0
- y=54
+ y=60
  cx=1212
- cy=450
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]
