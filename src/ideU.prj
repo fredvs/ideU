@@ -253,7 +253,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -644,7 +644,7 @@ makeoptions=12
  -Xd
  -FUunits
  -vewinhq
- -dno_class_bridge
+ -dclass_bridge
  -vwq
 makeoptpurpose=12
  
@@ -906,7 +906,7 @@ makeoptionson=12
  0
  2047
  4091
- 4095
+ 0
  4095
 compilerusedon=29
  1591
@@ -1627,7 +1627,7 @@ sourcefiles=21
  ${PROJECTDIR}/commandorform.pas
  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
  ${PROJECTDIR}/confideu.pas
- /home/fred/ideu/src/ideusettings.pas
+ ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/ideU.pas
 relpaths=21
  actionsmodule.pas
@@ -1719,8 +1719,8 @@ order=21
  5
  6
  7
- 9
  17
+ 8
  10
  11
  12
@@ -1728,7 +1728,7 @@ order=21
  14
  15
  16
- 8
+ 9
  18
  19
  20
@@ -2130,7 +2130,7 @@ windowlayout=672
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2239,8 +2239,8 @@ windowlayout=672
   5
   6
   7
-  9
   17
+  8
   10
   11
   12
@@ -2248,7 +2248,7 @@ windowlayout=672
   14
   15
   16
-  8
+  9
   18
   19
   20
@@ -2262,7 +2262,7 @@ windowlayout=672
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2335,7 +2335,7 @@ windowlayout=672
  [_mse_settingsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -2392,7 +2392,7 @@ windowlayout=672
  [_mse_settings_form_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
