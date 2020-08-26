@@ -1699,9 +1699,9 @@ end;
 
 procedure tfiledialogfo.listviewonlistread(Const sender: tobject);
 var 
-  x, y : integer;
+  x, y, z : integer;
   info: fileinfoty;
-  thedir : string;
+  thedir, thestrnum : string;
 begin
   with listview do
     begin
@@ -1757,7 +1757,16 @@ begin
                   else y := 1;
                 end
               else y := 0;
-              list_log[2][x] := utf8decode(IntToStr(y) + ' Kb');
+              
+              thestrnum := IntToStr(y);
+              
+               z := Length(thestrnum) ; 
+               
+               if z < 6 then 
+                for y := 0 to 5 - z do
+                  thestrnum := ' ' + thestrnum;
+                           
+              list_log[2][x] := thestrnum + ' Kb';
             end;
 
           list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss',info.extinfo1.modtime);
