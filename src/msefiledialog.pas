@@ -1753,7 +1753,7 @@ begin
             begin
               if info.extinfo1.size > 0 then
                 begin
-                  if info.extinfo1.size div 1000 > 0 then y := info.extinfo1.size Div 1000
+                  if info.extinfo1.size div 1000 > 0 then y := info.extinfo1.size Div 1024
                   else y := 1;
                 end
               else y := 0;
@@ -1762,8 +1762,8 @@ begin
               
                z := Length(thestrnum) ; 
                
-               if z < 6 then 
-                for y := 0 to 5 - z do
+               if z < 7 then 
+                for y := 0 to 6 - z do
                   thestrnum := ' ' + thestrnum;
                            
               list_log[2][x] := thestrnum + ' Kb';
@@ -2109,9 +2109,13 @@ begin
                                                                                                    0
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'txt') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = 'inc') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = 'pas') then aicon := 2
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'inc') then aicon := 2
   else
+    if (lowercase(list_log[1][cellinfo.cell.row]) = 'pas') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'pp') then aicon := 8
+   else 
+   if (lowercase(list_log[1][cellinfo.cell.row]) = 'mfm') then aicon := 9
+   else     
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'wav') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'mp3') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'opus') or
