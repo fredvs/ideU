@@ -2109,14 +2109,20 @@ begin
                                                                                                    0
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'txt') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'pdf') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'inc') then aicon := 2
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'pas') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'lpi') or 
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'lpr') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'prj') or 
        (lowercase(list_log[1][cellinfo.cell.row]) = 'pp') then aicon := 8
    else 
-   if (lowercase(list_log[1][cellinfo.cell.row]) = 'mfm') then aicon := 9
+   if (lowercase(list_log[1][cellinfo.cell.row]) = 'lps') or 
+      (lowercase(list_log[1][cellinfo.cell.row]) = 'mfm')  then aicon := 9
    else     
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'wav') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'm4a') or 
        (lowercase(list_log[1][cellinfo.cell.row]) = 'mp3') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'opus') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'flac') or
@@ -2126,6 +2132,8 @@ begin
        (lowercase(list_log[1][cellinfo.cell.row]) = 'mp4') then aicon := 4
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'png') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'jpeg') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'webp') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'bmp') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'tiff') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'gif') or
@@ -2143,6 +2151,9 @@ begin
        (lowercase(list_log[1][cellinfo.cell.row]) = 'so') then aicon := 5
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'zip') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'iso') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'txz') or 
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'rpm') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'tar') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'gz') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'deb') then aicon := 6
