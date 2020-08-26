@@ -1731,14 +1731,23 @@ begin
       for x := 0 to listview.rowcount - 1 do
         begin
           list_log[4][x] := inttostr(x);
+         
+         if not listview.filelist.isdir(x) then
+            begin
           list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].caption));
           list_log[1][x] := utf8decode(fileext(listview.itemlist[x].caption));
 
           if list_log[1][x] <> '' then
             thedir :=  dir.value + directoryseparator + trim(list_log[0][x]) + '.' + list_log[1][x]
           else thedir :=  dir.value + directoryseparator + trim(list_log[0][x]);
+          end else
+          begin
+          list_log[0][x] := '     ' +utf8decode(listview.itemlist[x].caption);
+          list_log[1][x] := '';
+          thedir :=  dir.value + directoryseparator + trim(list_log[0][x]);
+          end;
 
-          getfileinfo(utf8decode(thedir) , info);
+          getfileinfo(utf8decode(trim(thedir)) , info);
 
           if not listview.filelist.isdir(x) then
             begin

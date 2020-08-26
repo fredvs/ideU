@@ -371,7 +371,7 @@ imagelisteditor=76
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/strumpract/src/images/image.png
+  /home/fred/strumpract/src/images/
  filecolwidth=588
  x=431
  y=182
@@ -927,7 +927,7 @@ makeoptionson=12
  0
  2047
  4095
- 4
+ 0
  4095
 compilerusedon=29
  1591
@@ -1616,14 +1616,14 @@ editpos=38
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 78,34
+ 38,1739
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2154
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1872,13 +1872,13 @@ order=38
  28
  29
  30
+ 36
  37
  31
  32
  33
  34
  35
- 36
 firsttab=26
 index=30
 [layout]
@@ -1990,7 +1990,7 @@ windowlayout=784
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2110,10 +2110,10 @@ windowlayout=784
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=695
- width0=308
+ propcolwidthref=710
+ width0=315
  sortdescend0=0
- width1=381
+ width1=389
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2409,13 +2409,13 @@ windowlayout=784
   28
   29
   30
+  36
   37
   31
   32
   33
   34
   35
-  36
  firsttab=26
  index=30
  [confideufo.fontname]
@@ -2575,7 +2575,7 @@ windowlayout=784
  [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2594,7 +2594,7 @@ windowlayout=784
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=3
  nx=0
@@ -2651,7 +2651,7 @@ windowlayout=784
  [_mse_objectinspectorfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
