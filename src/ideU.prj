@@ -131,8 +131,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=625
- y=496
+ x=855
+ y=225
  cx=234
  cy=269
 replacedialog=30
@@ -1562,8 +1562,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=defaultlistviewoptions
+finddtext=//foptions:= avalue;
 findhistory=20
+ //foptions:= avalue;
  foption
  lvo_horz,
  tfiledialogfo.cr
@@ -1583,9 +1584,8 @@ findhistory=20
  utf
  onkey
  onlist
- procedure'
 findoptions=1
-editpos=38
+editpos=39
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1616,7 +1616,7 @@ editpos=38
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2127
+ 3,2054
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1624,6 +1624,7 @@ editpos=38
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2162
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1662,7 +1663,8 @@ bookmarks34=0
 bookmarks35=0
 bookmarks36=0
 bookmarks37=0
-sourcefiles=38
+bookmarks38=0
+sourcefiles=39
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
@@ -1701,7 +1703,8 @@ sourcefiles=38
  ${PROJECTDIR}/objectinspector.pas
  ${PROJECTDIR}/msegrids.pas
  ${PROJECTDIR}/mselistbrowser.pas
-relpaths=38
+ ${PROJECTDIR}/mselistbrowser.pas
+relpaths=39
  actionsmodule.pas
  main.pas
  ideU.pas
@@ -1740,7 +1743,9 @@ relpaths=38
  objectinspector.pas
  msegrids.pas
  mselistbrowser.pas
-ismoduletexts=38
+ mselistbrowser.pas
+ismoduletexts=39
+ 0
  0
  0
  0
@@ -1840,7 +1845,7 @@ nomenumodules=14
  0
  0
 [sourcefo.files_tab]
-order=38
+order=39
  0
  1
  2
@@ -1872,17 +1877,18 @@ order=38
  28
  29
  30
- 34
- 35
+ 38
  36
  37
  31
  32
  33
-firsttab=26
-index=30
+ 34
+ 35
+firsttab=25
+index=31
 [layout]
-windowlayout=784
+windowlayout=815
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1896,13 +1902,13 @@ windowlayout=784
  ny=0
  ncx=0
  ncy=0
- x=73
- y=49
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1997,10 +2003,10 @@ windowlayout=784
  ny=0
  ncx=0
  ncy=0
- x=0
- y=29
- cx=1360
- cy=710
+ x=239
+ y=115
+ cx=678
+ cy=414
  rcx=0
  rcy=0
  [projecttreefo]
@@ -2016,7 +2022,7 @@ windowlayout=784
  x=0
  y=0
  cx=205
- cy=524
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2206,9 +2212,9 @@ windowlayout=784
  ncx=0
  ncy=0
  x=0
- y=581
- cx=1348
- cy=108
+ y=507
+ cx=1212
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2307,7 +2313,7 @@ windowlayout=784
  ncy=0
  x=0
  y=0
- cx=1348
+ cx=1212
  cy=51
  rcx=0
  rcy=0
@@ -2319,12 +2325,12 @@ windowlayout=784
  mdistate=0
  nx=0
  ny=0
- ncx=1333
- ncy=49
+ ncx=1197
+ ncy=57
  x=0
  y=0
- cx=1348
- cy=48
+ cx=1212
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2334,28 +2340,58 @@ windowlayout=784
  [debuggerfo.edit_compiler]
  value=Python
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialog.pas
- history=20
+ value=/home/fred/ideu/src/mselistbrowser.pas
+ history=50
+  /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/Documents/c.png
-  /home/fred/Documents/java.png
-  /home/fred/Documents/pas2.png
-  /home/fred/Documents/pas3.png
-  /home/fred/Documents/pas1.png
-  /home/fred/strumpract/src/images/image.png
-  /home/fred/strumpract/src/images/audio.png
-  /home/fred/strumpract/text.png
-  /home/fred/Pictures/imagesideu/bugnew64no2.png
-  /home/fred/Pictures/imagesideu/pause_64bleudisable.png
-  /home/fred/Pictures/imagesideu/pause_64bleu.png
-  /home/fred/Pictures/imagesideu/trianglebleudown64_2.png
-  /home/fred/Pictures/imagesideu/trianglebleudouble64_2.png
-  /home/fred/Pictures/imagesideu/compile64_3disable.png
-  /home/fred/Pictures/imagesideu/stop_64disable.png
-  /home/fred/Pictures/imagesideu/stop_64.png
-  /home/fred/Pictures/imagesideu/trianglevertflip64_2disable.png
-  /home/fred/Pictures/imagesideu/trianglevertdown64_2disable.png
-  /home/fred/Pictures/imagesideu/trianglevertdouble64_2disable.png
+  /home/fred/strumpract/src/msefiledialog.pas
+  /home/fred/strumpract/src/msegrids.pas
+  /home/fred/strumpract/src/filelistform.pas
+  /home/fred/testbgra/fractal_tree/main.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/testbgra/main.pas
+  /home/fred/testbgra/fractal_tree.pas
+  /home/fred/bgracontrols/bgravirtualscreen.pas
+  /home/fred/mclasses.pas
+  /home/fred/eschecs_mse/board.pas
+  /home/fred/strumpract/src/guitars.pas
+  /home/fred/strumpract/src/randomnote.pas
+  /home/fred/strumpract/src/define.inc
+  /home/fred/uos/examples/define.inc
+  /home/fred/uos/examples/consolesynth.pas
+  /home/fred/ideu/src/imageselectorform.pas
+  /home/fred/freepascal-ootb_305/compiler/systems/t_bsd.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/lazarus/2.0.6/ide/lazarus.pp
+  /home/fred/freepascal-ootb_320/packages/gtk2/src/buildgtk2.pp
+  /home/fred/freepascal-ootb_320/packages/gtk2/src/gtk2x11/gdk2x.pas
+  /home/fred/Downloads/lazpaint-upstream-master/lazpaint/ugeometricbrush.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/lazpaint/lazpaint/lazpaint.lpr
+  /home/fred/uos/src/uos.pas
+  /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
+  /home/fred/bgracontrols/bccombobox.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/oldbgbutton.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/mybgbutton.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bezier.inc
+  /home/fred/mseide-msegui-avantcircular/lib/common/widgets/msechart.pas
+  /home/fred/mseide-msegui/apps/myide/regcomponents.inc
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/mseshortcutdialog.pas
+  /home/fred/mseide-msegui/apps/myide/mybutton.pas
+  /home/fred/Downloads/test.mp3
+  /home/fred/ideu/src/templates/fpc_mse/default/dockingform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/inheritedform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/pascform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/simpleform.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/project.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/main.pas
+  /home/fred/ideu/src/templates/fpc_mse/default/program.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/mainform.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/pascform.pas
+  /home/fred/mseide-msegui/apps/ide/templates/default/program.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2372,12 +2408,12 @@ windowlayout=784
  ncy=0
  x=208
  y=0
- cx=1140
- cy=524
+ cx=1004
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=38
+ order=39
   0
   1
   2
@@ -2409,15 +2445,16 @@ windowlayout=784
   28
   29
   30
-  34
-  35
+  38
   36
   37
   31
   32
   33
- firsttab=26
- index=30
+  34
+  35
+ firsttab=25
+ index=31
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2454,8 +2491,8 @@ windowlayout=784
  ncy=0
  x=0
  y=54
- cx=1348
- cy=524
+ cx=1212
+ cy=450
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2575,7 +2612,7 @@ windowlayout=784
  [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2594,7 +2631,7 @@ windowlayout=784
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=3
  nx=0

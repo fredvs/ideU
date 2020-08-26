@@ -2158,11 +2158,8 @@ var
 begin
  if foptions <> avalue then begin
   optbefore:= foptions;
-  //foptions:= avalue;
-  foptions:=
-  [lvo_readonly,lvo_horz,lvo_drawfocus,lvo_mouseselect,lvo_keyselect,lvo_multiselect,lvo_locate,lvo_hintclippedtext]
-;
-  
+  foptions:= avalue;
+  foptions:= foptions + [lvo_horz];
   updatecoloptions;
   if (longword(foptions) xor longword(optbefore)) and
                                          longword(mask) <> 0 then begin
