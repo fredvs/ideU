@@ -16,7 +16,10 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_fpgui
+projectfilename=/home/fred/ideu/src/templates/fpc_fpgui/fpg_single_unix.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -24,38 +27,38 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=830
+ propcolwidthref=812
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=112
+ width4=110
  sortdescend4=0
- width5=89
+ width5=87
  sortdescend5=0
- width6=58
+ width6=57
  sortdescend6=0
- width7=58
+ width7=57
  sortdescend7=0
- width8=121
+ width8=86
  sortdescend8=0
- width9=338
+ width9=331
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=654
+ propcolwidthref=647
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=313
+ width3=310
  sortdescend3=0
- width4=331
+ width4=327
  sortdescend4=0
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -77,9 +80,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=202
+ y=200
  xprop=1
- yprop=0.31336405529954
+ yprop=0.31375579598145
  [projectoptionsfo.macrogrid]
  propcolwidthref=585
  sortdescend0=0
@@ -104,28 +107,28 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=4
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=814
+ propcolwidthref=803
  width0=47
  sortdescend0=0
- width1=808
+ width1=797
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=1
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=722
+ propcolwidthref=734
  width0=112
  sortdescend0=0
- width1=715
+ width1=727
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=3
  [projectoptionsfo]
  stackedunder=
  x=198
@@ -155,7 +158,7 @@ aftcommand=0
 makeoptions=6
  -l -Mobjfpc -Schi
  -FE.
- -FUunits/${TARGET}/
+ -FUunits
  -B
  -O2 -XX -Xs -CX
  -vewnhibq
@@ -255,15 +258,15 @@ newfosources=1
  ${TEMPLATEDIR}/fpc_fpgui/files/fpg_single.pas
 newfoforms=1
  
-forcezorder=-1
+forcezorder=1
 stripmessageesc=0
 copymessages=0
 closemessages=0
 enablepurpose=1
 enablesource=1
 checkmethods=1
-colorerror=-1610612712
-colorwarning=-1610612717
+colorerror=-1610612717
+colorwarning=-1610612712
 colornote=-1610612716
 usercolors=30
  0
@@ -475,9 +478,9 @@ fontoptions=0
 fontxscales=0
 expandprojectfilemacros=4
  1
- -1
- -1
- -1
+ 1
+ 1
+ 1
 loadprojectfile=4
  1
  0
@@ -653,7 +656,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -691,7 +694,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=536
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -705,9 +708,9 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
- cx=1157
+ x=34
+ y=53
+ cx=1224
  cy=621
  rcx=0
  rcy=0
@@ -753,7 +756,7 @@ windowlayout=536
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=confcompilerfo
  parent=
  mdistate=0
  nx=0
@@ -825,7 +828,7 @@ windowlayout=536
  x=0
  y=0
  cx=205
- cy=456
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -835,8 +838,8 @@ windowlayout=536
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=1
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -914,30 +917,11 @@ windowlayout=536
  visible=0
  [breakpointsfo.bkptson]
  value=0
- [objectinspectorfo]
- splitdir=0
- useroptions=268451947
- stackedunder=
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=316
- y=249
- cx=316
- cy=484
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=136
+ propcolwidthref=654
+ width0=290
  sortdescend0=0
- width1=164
+ width1=358
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1038,8 +1022,8 @@ windowlayout=536
  ncx=0
  ncy=0
  x=0
- y=513
- cx=1147
+ y=508
+ cx=1212
  cy=92
  rcx=0
  rcy=0
@@ -1139,8 +1123,8 @@ windowlayout=536
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1212
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1151,12 +1135,12 @@ windowlayout=536
  mdistate=0
  nx=0
  ny=0
- ncx=1147
- ncy=54
+ ncx=1111
+ ncy=52
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1212
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1167,8 +1151,27 @@ windowlayout=536
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=1
+ history=20
   /home/fred/ideu/src/confmsegui.pas
+  /home/fred/atest/test.prj
+  /home/fred/ideu/src/ideU.prj
+  /home/fred/mseide-msegui/apps/ide/mseide.prj
+  /home/fred/uos/examples/simpleplayer.prj
+  /home/fred/ideu_ok/src/ideU.prj
+  /home/fred/eschecs_mse/eschecs.prj
+  /home/fred/mselang-master/src/mselang.prj
+  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
+  /home/fred/strumpract/src/strumpract.prj
+  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
+  /home/fred/xtop/src/ptop.prj
+  /home/fred/xtop/src/jtop.prj
+  /home/fred/idegraeme/mseide.prj
+  /home/fred/fptop/src/jtop.prj
+  /home/fred/fptop/src/ptop.prj
+  /home/fred/ptop_fred/ptop.prj
+  /home/fred/eschecs_mse_argh/eschecs.prj
+  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1185,18 +1188,22 @@ windowlayout=536
  ncy=0
  x=208
  y=0
- cx=939
- cy=456
+ cx=1004
+ cy=445
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
  index=-1
+ [confideufo.fontname]
+ value=stf_default
+ [confideufo.usedefaulteditoroptions]
+ value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1223,9 +1230,9 @@ windowlayout=536
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=456
+ y=60
+ cx=1212
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]

@@ -18,6 +18,8 @@ order15=0
 order16=0
 order17=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_lazarus
+projectfilename=/home/fred/ideu/src/templates/fpc_lazarus/lazarus_bgrabitmap.prj
 findinfiledialog=50
  [findinfileadialogfo.subdirs]
  value=1
@@ -555,7 +557,7 @@ project_creator=
 project_copyright=
 project_license=
 project_time=
-project_date=
+project_date=04:11:57 09/08/2020
 project_comment=
 aftcommandon=0
 unitdirson=27
@@ -785,13 +787,7 @@ panels=1
  panel1
 units=
  (
- a=0,8245,6,Pascal Units
- c=1
-  (
-  file=lazpaint.lpr
-  kind=1
-  a=0,8196,0,lazpaint.lpr
-  )
+ a=0,8229,6,Pascal Units
  )
 cmodules=
  (
@@ -802,6 +798,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -820,27 +817,19 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=2
- 6,10
- 0,0
-bookmarks0=0
-bookmarks1=0
-sourcefiles=1
- ${PROJECTDIR}/lazpaint.lpr
-relpaths=1
- lazpaint.lpr
-ismoduletexts=2
- 0
- 0
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=-1
 [layout]
-windowlayout=511
+windowlayout=530
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -984,8 +973,8 @@ windowlayout=511
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=1
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1064,10 +1053,10 @@ windowlayout=511
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=480
- width0=213
+ propcolwidthref=654
+ width0=290
  sortdescend0=0
- width1=261
+ width1=358
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1272,11 +1261,11 @@ windowlayout=511
  nx=0
  ny=0
  ncx=1197
- ncy=36
+ ncy=34
  x=0
  y=0
  cx=1212
- cy=34
+ cy=32
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1286,6 +1275,28 @@ windowlayout=511
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
+ value=${PROJECTDIR}/lazpaint.lpr
+ history=20
+  ${PROJECTDIR}/lazpaint.lpr
+  /home/fred/atest/test.prj
+  /home/fred/ideu/src/ideU.prj
+  /home/fred/mseide-msegui/apps/ide/mseide.prj
+  /home/fred/uos/examples/simpleplayer.prj
+  /home/fred/ideu_ok/src/ideU.prj
+  /home/fred/eschecs_mse/eschecs.prj
+  /home/fred/mselang-master/src/mselang.prj
+  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
+  /home/fred/strumpract/src/strumpract.prj
+  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
+  /home/fred/xtop/src/ptop.prj
+  /home/fred/xtop/src/jtop.prj
+  /home/fred/idegraeme/mseide.prj
+  /home/fred/fptop/src/jtop.prj
+  /home/fred/fptop/src/ptop.prj
+  /home/fred/ptop_fred/ptop.prj
+  /home/fred/eschecs_mse_argh/eschecs.prj
+  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1308,7 +1319,7 @@ windowlayout=511
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=-1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

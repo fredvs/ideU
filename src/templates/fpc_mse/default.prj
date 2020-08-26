@@ -16,6 +16,7 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
 [projectoptions]
 projectdir=/home/fred/ideu/src/templates/fpc_mse
 projectfilename=/home/fred/ideu/src/templates/fpc_mse/default.prj
@@ -26,33 +27,33 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=841
+ propcolwidthref=823
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=307
+ width4=300
  sortdescend4=0
- width5=138
+ width5=135
  sortdescend5=0
- width6=343
+ width6=336
  sortdescend6=0
- width7=59
+ width7=58
  sortdescend7=0
  width8=1
  sortdescend8=0
- width9=344
+ width9=337
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=665
+ propcolwidthref=658
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=318
+ width3=315
  sortdescend3=0
- width4=337
+ width4=333
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -79,9 +80,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=174
+ y=173
  xprop=1
- yprop=0.34235976789168
+ yprop=0.34307992202729
  [projectoptionsfo.macrogrid]
  propcolwidthref=596
  sortdescend0=0
@@ -108,26 +109,26 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=825
+ propcolwidthref=814
  width0=47
  sortdescend0=0
- width1=819
+ width1=808
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=1
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=733
+ propcolwidthref=734
  width0=112
  sortdescend0=0
- width1=726
+ width1=727
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=11
  [projectoptionsfo]
  stackedunder=
  x=251
@@ -303,9 +304,10 @@ stripmessageesc=0
 copymessages=0
 closemessages=0
 enablepurpose=1
+enablesource=0
 checkmethods=1
-colorerror=-1610612712
-colorwarning=-1610612717
+colorerror=-1610612717
+colorwarning=-1610612712
 colornote=-1610612716
 usercolors=30
  0
@@ -512,7 +514,7 @@ newinheritedforms=11
  0
  0
  0
- -1
+ 1
 uid=0
 sourcefilemasks=3
  "*.pas" "*.dpr" "*.lpr" "*.pp" "*.inc"
@@ -605,6 +607,7 @@ externalconsole=0
 settty=1
 gdbdownload=0
 downloadalways=0
+restartgdbbeforeload=0
 startupbkpt=0
 startupbkpton=0
 gdbsimulator=0
@@ -671,7 +674,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -702,47 +705,32 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=543
+windowlayout=566
  [mainfo.basedock]
  splitdir=2
- useroptions=11395
- parent=mainfo.container
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=668
- ncy=0
- x=0
- y=0
- cx=1147
- cy=604
- rcx=0
- rcy=0
+ useroptions=268450944
  [mainfo]
  splitdir=0
- useroptions=838860925
+ useroptions=301990011
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
- cx=1157
+ x=34
+ y=53
+ cx=1224
  cy=621
  rcx=0
  rcy=0
- children=1
-  basedock,0,0,1147,604
- focusedchild=0
  wsize=0
  active=1
  visible=1
  [targetconsolefo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -760,7 +748,7 @@ windowlayout=543
  visible=0
  [threadsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -778,8 +766,8 @@ windowlayout=543
  visible=0
  [memoryfo]
  splitdir=0
- useroptions=805322875
- stackedunder=about_form
+ useroptions=268451963
+ stackedunder=confcompilerfo
  parent=
  mdistate=0
  nx=0
@@ -805,7 +793,7 @@ windowlayout=543
  value=0
  [disassfo]
  splitdir=0
- useroptions=805322859
+ useroptions=268451947
  stackedunder=
  parent=
  mdistate=0
@@ -840,7 +828,7 @@ windowlayout=543
  rcy=0
  [projecttreefo]
  splitdir=0
- useroptions=805355627
+ useroptions=268484715
  parent=mainfo.panel1.container
  visible=1
  mdistate=0
@@ -851,7 +839,7 @@ windowlayout=543
  x=0
  y=0
  cx=205
- cy=455
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -863,10 +851,10 @@ windowlayout=543
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=
  mdistate=0
  nx=0
@@ -884,7 +872,7 @@ windowlayout=543
  visible=0
  [watchpointsfo]
  splitdir=0
- useroptions=805322857
+ useroptions=268451945
  parent=
  mdistate=0
  nx=0
@@ -944,34 +932,15 @@ windowlayout=543
  visible=0
  [breakpointsfo.bkptson]
  value=1
- [objectinspectorfo]
- splitdir=0
- useroptions=805322859
- stackedunder=
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=316
- y=249
- cx=316
- cy=484
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=136
+ propcolwidthref=654
+ width0=290
  sortdescend0=0
- width1=164
+ width1=358
  sortdescend1=0
  [symbolfo]
  splitdir=0
- useroptions=805322875
+ useroptions=268451963
  stackedunder=
  parent=
  mdistate=0
@@ -1016,7 +985,7 @@ windowlayout=543
  [symbolfo.symbol]
  [watchfo]
  splitdir=0
- useroptions=805331049
+ useroptions=268460137
  parent=mainfo.basedock
  visible=0
  mdistate=0
@@ -1051,7 +1020,7 @@ windowlayout=543
  value=1
  [messagefo]
  splitdir=0
- useroptions=805388395
+ useroptions=268517483
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1060,14 +1029,14 @@ windowlayout=543
  ncx=0
  ncy=0
  x=0
- y=512
- cx=1147
+ y=508
+ cx=1212
  cy=92
  rcx=0
  rcy=0
  [componentstorefo]
  splitdir=0
- useroptions=805331067
+ useroptions=268460155
  stackedunder=
  parent=
  mdistate=0
@@ -1130,8 +1099,8 @@ windowlayout=543
  filefilter=
  [componentpalettefo]
  splitdir=0
- useroptions=805331051
- stackedunder=mainfo
+ useroptions=268460139
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1161,13 +1130,13 @@ windowlayout=543
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1212
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
  splitdir=2
- useroptions=805452931
+ useroptions=268582019
  parent=debuggerfo.container
  visible=1
  mdistate=0
@@ -1177,8 +1146,8 @@ windowlayout=543
  ncy=52
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1212
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1189,7 +1158,57 @@ windowlayout=543
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/confmsegui.pas
- history=0
+ history=50
+  /home/fred/atest/test.prj
+  /home/fred/ideu/src/ideU.prj
+  /home/fred/mseide-msegui/apps/ide/mseide.prj
+  /home/fred/uos/examples/simpleplayer.prj
+  /home/fred/ideu_ok/src/ideU.prj
+  /home/fred/eschecs_mse/eschecs.prj
+  /home/fred/mselang-master/src/mselang.prj
+  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
+  /home/fred/strumpract/src/strumpract.prj
+  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
+  /home/fred/xtop/src/ptop.prj
+  /home/fred/xtop/src/jtop.prj
+  /home/fred/idegraeme/mseide.prj
+  /home/fred/fptop/src/jtop.prj
+  /home/fred/fptop/src/ptop.prj
+  /home/fred/ptop_fred/ptop.prj
+  /home/fred/eschecs_mse_argh/eschecs.prj
+  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
+  /home/fred/msegui-chessboard-modern-master/chessboard.prj
+  /home/fred/msegui-chessboard-master/chessboard.prj
+  /home/fred/msegui/apps/ide/mseide.prj
+  /home/fred/Downloads/eschecs-console-master/eschecs-c.prj
+  /home/fred/eschecs-console-master/eschecs-c.prj
+  /home/fred/eschecs_mse (copie 1)/eschecs.prj
+  /home/fred/Downloads/mseuniverse-master/samples/widgets/widgetblendanim/widgetblendanim.prj
+  /home/fred/Downloads/mseuniverse-master/samples/widgets/imagedarkening/imagedarkening.prj
+  /home/fred/Downloads/mseuniverse-master/samples/widgets/imageblend/imageblend.prj
+  /home/fred/Downloads/mseuniverse-master/samples/animations/windowopacity/windowopacity.prj
+  /home/fred/eschecs_mse_dockmain/eschecs.prj
+  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
+  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Dock_Tree_Editor_Message.prj
+  /home/fred/mse_textedit/textedit.prj
+  /home/fred/mseuniverse-master/samples/widgets/grids/textedit/textedit.prj
+  /home/fred/mseuniverse-master/tools/virtualkeyboard/testvirtualkeyboard.prj
+  /home/fred/mseuniverse-master/tools/msetune/msetune.prj
+  /home/fred/mseuniverse-master/samples/widgets/grids/itemedit/itemedit.prj
+  /home/fred/eschecs_mse_nodock/eschecs.prj
+  /home/fred/eschecs_mse_copie/eschecs.prj
+  /home/fred/uos/examples/simpleplayer_fpGUI.prj
+  /home/fred/ideu/src/layout/Menu_Only.prj
+  /home/fred/eschecs_mse2/eschecs.prj
+  /home/fred/mse_chessboard/eschecs.prj
+  /home/fred/mse_chessboard/chessboard.prj
+  /home/fred/Downloads/mseuniverse-master/samples/widgets/grids/chessboard/chessboard.prj
+  /home/fred/msetest/test.prj
+  /home/fred/uoslib/src/uoslib.prj
+  /home/fred/uoslib/examples/demos/fpc/simpleplayer.prj
+  /home/fred/eschecs/source/eschecs.prj
+  /home/fred/mseuniverse-master/samples/db/gridselectedrow/gridselectedrow.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1206,15 +1225,22 @@ windowlayout=543
  ncy=0
  x=208
  y=0
- cx=939
- cy=455
+ cx=1004
+ cy=445
  rcx=0
  rcy=0
+ [sourcefo.files_tab]
+ firsttab=0
+ index=-1
+ [confideufo.fontname]
+ value=stf_default
+ [confideufo.usedefaulteditoroptions]
+ value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1232,7 +1258,7 @@ windowlayout=543
  visible=0
  [mainfo.panel1]
  splitdir=1
- useroptions=838958571
+ useroptions=302087659
  parent=mainfo.basedock
  visible=1
  mdistate=0
@@ -1241,9 +1267,9 @@ windowlayout=543
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=455
+ y=60
+ cx=1212
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]

@@ -1883,12 +1883,12 @@ begin
  end
  else begin
   internalupdatelayout;
-  if lvo_horz in foptions then begin
+if lvo_horz in foptions then begin
    result:= cell.row*fdatacols.count + cell.col;
-  end
-  else begin
-   result:= cell.col*frowcount + cell.row;
-  end;
+ end
+ else begin
+ result:= cell.col*frowcount + cell.row;
+ end;
   if result >= fitemlist.count then begin
    if limit then begin
     result:= fitemlist.count - 1;
@@ -1904,7 +1904,7 @@ function tcustomlistview.indextocell(const index: integer): gridcoordty;
 begin
  internalupdatelayout;
  if (frowcount > 0) and (fdatacols.count > 0) then begin
-  if lvo_horz in foptions then begin
+ if lvo_horz in foptions then begin
    result.row:= index div fdatacols.count;
    result.col:= index mod fdatacols.count;
   end
@@ -2025,7 +2025,7 @@ begin
   inherited;
   if lvo_horz in foptions then begin
    width1:= fdatarect.cx - datacollinewidth;
-  end
+ end
   else begin
    height1:= fdatarect.cy - datarowlinewidth;
   end;
@@ -2040,7 +2040,7 @@ begin
  repeat
   inherited;
   bo1:= false;
-  if lvo_horz in foptions then begin
+ if lvo_horz in foptions then begin
    int1:=  tlistcol.defaultstep(width1);
    if int1 = 0 then begin
     int1:= 1;
@@ -2059,6 +2059,7 @@ begin
     bo1:= true;
    end;
   end
+
   else begin
    int1:=  ystep;
    if int1 = 0 then begin
@@ -2078,6 +2079,7 @@ begin
     bo1:= true;
    end;
   end;
+ 
  until not bo1;
  if (indexbefore >= 0) then begin
   cell1:= indextocell(indexbefore);
@@ -2156,7 +2158,11 @@ var
 begin
  if foptions <> avalue then begin
   optbefore:= foptions;
-  foptions:= avalue;
+  //foptions:= avalue;
+  foptions:=
+  [lvo_readonly,lvo_horz,lvo_drawfocus,lvo_mouseselect,lvo_keyselect,lvo_multiselect,lvo_locate,lvo_hintclippedtext]
+;
+  
   updatecoloptions;
   if (longword(foptions) xor longword(optbefore)) and
                                          longword(mask) <> 0 then begin

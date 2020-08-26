@@ -16,6 +16,7 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU_BGRA.prj
@@ -162,7 +163,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=3
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=642
  width0=77
@@ -186,8 +187,8 @@ options=114
  index=2
  [projectoptionsfo]
  stackedunder=
- x=528
- y=93
+ x=345
+ y=55
  cx=732
  cy=620
 settings=8
@@ -208,7 +209,7 @@ unitdirs=11
  ${BGRAGUIDIR}/bgragui
  ${LCLDIR}/components/lazutils
  ${BGRAGUIDIR}/bgraguicontrols/msegui
- ${BGRAGUIDIR}
+ /home/fred/bgrabitmap-dev-bgrabitmap/bgrabitmap
  ${BGRABITMAPDIR}
  ${MSEDIR}lib/addon/*/
  ${MSELIBDIR}kernel/windows
@@ -223,7 +224,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=7
+makeoptions=8
  -Mobjfpc -Sh -Fcutf8
  -dmorecomponents
  -gl -O-
@@ -231,7 +232,9 @@ makeoptions=7
  -Xs -CX -XX -O2
  -FUunits
  -dBGRABITMAP_USE_MSEGUI 
-makeoptpurpose=7
+ -dclass_bridge
+makeoptpurpose=8
+ 
  
  
  
@@ -377,12 +380,12 @@ newfoforms=11
 forcezorder=0
 stripmessageesc=0
 copymessages=0
-closemessages=1
+closemessages=0
 enablepurpose=0
 enablesource=0
 checkmethods=0
-colorerror=-1610612712
-colorwarning=-1610612717
+colorerror=-1610612717
+colorwarning=-1610612712
 colornote=-1610612716
 usercolors=30
  0
@@ -455,16 +458,32 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=5
+ ACTIONSMO
+ IMAGESELECTORFO
+ MAINFO
+ OBJECTINSPECTORFO
+ SOURCEFO
+moduletypes=5
+ TACTIONSMO
+ TIMAGESELECTORFO
+ TMAINFO
+ TOBJECTINSPECTORFO
+ TSOURCEFO
+modulefiles=5
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/imageselectorform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/objectinspector.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=7
+makeoptionson=8
  4095
  4095
  3
  102
  124
+ 4095
  4095
  4095
 compilerusedon=29
@@ -542,13 +561,13 @@ project_comment=
 aftcommandon=0
 unitdirson=11
  200703
- 200703
+ 198656
  200703
  200703
  200703
  200703
  196656
- 200703
+ 200655
  200703
  69631
  200703
@@ -778,8 +797,17 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=11
- 44,120
+editpos=20
+ 0,3
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -801,8 +829,17 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-sourcefiles=11
- ${PROJECTDIR}/ideU.pas
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+sourcefiles=20
+ /home/fred/ideu/src/ideU.pas
  ${PROJECTDIR}/regcomponents.inc
  /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
@@ -812,8 +849,17 @@ sourcefiles=11
  /home/fred/freepascal_ootb_305/compiler/systems/t_win.pas
  /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/main.mfm
-relpaths=11
+ ${PROJECTDIR}/imageselectorform.pas
+ ${PROJECTDIR}/objectinspector.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/msedesigner.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msedesignintf.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseglob.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msecomponenteditors.pas
+ /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
+relpaths=20
  ideU.pas
  regcomponents.inc
  Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
@@ -824,8 +870,17 @@ relpaths=11
  freepascal_ootb_305/compiler/systems/t_win.pas
  freepascal_ootb_305_test/compiler/msgtxt.inc
  main.pas
- main.mfm
-ismoduletexts=11
+ imageselectorform.pas
+ objectinspector.pas
+ sourceform.pas
+ actionsmodule.pas
+ main.pas
+ msedesigner.pas
+ mseide-msegui/lib/common/designutils/msedesignintf.pas
+ mseide-msegui/lib/common/kernel/mseglob.pas
+ mseide-msegui/lib/common/designutils/msecomponenteditors.pas
+ Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
+ismoduletexts=20
  0
  0
  0
@@ -836,16 +891,45 @@ ismoduletexts=11
  0
  0
  0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=5
+ /home/fred/ideu/src/imageselectorform.mfm
+ /home/fred/ideu/src/objectinspector.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
+moduleoptions=5
+ 0
+ 0
+ 0
+ 0
+ 0
+visiblemodules=5
  -1
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ -1
+ -1
+ -1
+ -1
+nomenumodules=5
+ 0
+ 0
+ 0
+ 0
+ 0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=562
+windowlayout=570
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -865,7 +949,7 @@ windowlayout=562
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -979,7 +1063,7 @@ windowlayout=562
  x=0
  y=0
  cx=205
- cy=445
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1069,10 +1153,10 @@ windowlayout=562
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=480
- width0=213
+ propcolwidthref=654
+ width0=290
  sortdescend0=0
- width1=261
+ width1=358
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1165,9 +1249,9 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=508
- cx=1212
- cy=92
+ y=581
+ cx=1348
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1266,8 +1350,8 @@ windowlayout=562
  ncy=0
  x=0
  y=0
- cx=1212
- cy=57
+ cx=1348
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1278,12 +1362,12 @@ windowlayout=562
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1333
+ ncy=49
  x=0
  y=0
- cx=1212
- cy=64
+ cx=1348
+ cy=48
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1294,7 +1378,10 @@ windowlayout=562
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
- history=50
+ history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/regcomponents.inc
+  /home/fred/ideu/src/main.mfm
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -1312,39 +1399,6 @@ windowlayout=562
   /home/fred/fptop/src/ptop.prj
   /home/fred/ptop_fred/ptop.prj
   /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msegui-chessboard-modern-master/chessboard.prj
-  /home/fred/msegui-chessboard-master/chessboard.prj
-  /home/fred/msegui/apps/ide/mseide.prj
-  /home/fred/Downloads/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs_mse (copie 1)/eschecs.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/widgetblendanim/widgetblendanim.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imagedarkening/imagedarkening.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imageblend/imageblend.prj
-  /home/fred/Downloads/mseuniverse-master/samples/animations/windowopacity/windowopacity.prj
-  /home/fred/eschecs_mse_dockmain/eschecs.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Dock_Tree_Editor_Message.prj
-  /home/fred/mse_textedit/textedit.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/textedit/textedit.prj
-  /home/fred/mseuniverse-master/tools/virtualkeyboard/testvirtualkeyboard.prj
-  /home/fred/mseuniverse-master/tools/msetune/msetune.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/itemedit/itemedit.prj
-  /home/fred/eschecs_mse_nodock/eschecs.prj
-  /home/fred/eschecs_mse_copie/eschecs.prj
-  /home/fred/uos/examples/simpleplayer_fpGUI.prj
-  /home/fred/ideu/src/layout/Menu_Only.prj
-  /home/fred/eschecs_mse2/eschecs.prj
-  /home/fred/mse_chessboard/eschecs.prj
-  /home/fred/mse_chessboard/chessboard.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msetest/test.prj
-  /home/fred/uoslib/src/uoslib.prj
-  /home/fred/uoslib/examples/demos/fpc/simpleplayer.prj
-  /home/fred/eschecs/source/eschecs.prj
-  /home/fred/mseuniverse-master/samples/db/gridselectedrow/gridselectedrow.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1361,8 +1415,8 @@ windowlayout=562
  ncy=0
  x=208
  y=0
- cx=1004
- cy=445
+ cx=1140
+ cy=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1371,7 +1425,7 @@ windowlayout=562
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
- value=1
+ value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -1403,11 +1457,49 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=60
- cx=1212
- cy=445
+ y=54
+ cx=1348
+ cy=524
  rcx=0
  rcy=0
+ [_mse_imageselectorfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_objectinspectorfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=126
+ y=231
+ cx=330
+ cy=244
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_objectinspectorfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_mainfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=651
+ y=142
+ cx=264
+ cy=353
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
