@@ -2110,6 +2110,9 @@ begin
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'txt') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'pdf') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'ini') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'md') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'htlm') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'inc') then aicon := 2
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'pas') or
@@ -2120,7 +2123,17 @@ begin
    else 
    if (lowercase(list_log[1][cellinfo.cell.row]) = 'lps') or 
       (lowercase(list_log[1][cellinfo.cell.row]) = 'mfm')  then aicon := 9
-   else     
+    else
+    if (lowercase(list_log[1][cellinfo.cell.row]) = 'java') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'js') or 
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'class') then aicon := 10
+   else   
+       if (lowercase(list_log[1][cellinfo.cell.row]) = 'c') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'h') then aicon := 11
+   else   
+       if (lowercase(list_log[1][cellinfo.cell.row]) = 'py') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'pyc') then aicon := 12
+   else    
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'wav') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'm4a') or 
        (lowercase(list_log[1][cellinfo.cell.row]) = 'mp3') or
@@ -2133,6 +2146,7 @@ begin
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'png') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'jpeg') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'ico') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'webp') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'bmp') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'tiff') or
@@ -2152,6 +2166,9 @@ begin
   else
     if (lowercase(list_log[1][cellinfo.cell.row]) = 'zip') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'iso') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'cab') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = 'torrent') or
+       (lowercase(list_log[1][cellinfo.cell.row]) = '7z') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'txz') or 
        (lowercase(list_log[1][cellinfo.cell.row]) = 'rpm') or
        (lowercase(list_log[1][cellinfo.cell.row]) = 'tar') or

@@ -253,7 +253,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=5
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -371,7 +371,7 @@ imagelisteditor=76
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Documents/pas2.png
+  /home/fred/Documents/python.png
  filecolwidth=588
  x=431
  y=182
@@ -379,6 +379,9 @@ imagelisteditor=76
  cy=307
  lastdir=/home/fred/Documents/
  filehistory=50
+  /home/fred/Documents/python.png
+  /home/fred/Documents/c.png
+  /home/fred/Documents/java.png
   /home/fred/Documents/pas2.png
   /home/fred/Documents/pas3.png
   /home/fred/Documents/pas1.png
@@ -426,9 +429,6 @@ imagelisteditor=76
   /home/fred/ideu/src/images/fondbookmark.png
   /home/fred/ideu/src/images/bookmark9.png
   /home/fred/ideu/src/images/bookmark8.png
-  /home/fred/ideu/src/images/bookmark7.png
-  /home/fred/ideu/src/images/bookmark6.png
-  /home/fred/ideu/src/images/bookmark5.png
  filefilterindex=4
  filefilter=*.png
  [imagelisteditorfo.transparentcolor]
@@ -1616,7 +1616,7 @@ editpos=38
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 53,2154
+ 0,2127
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1872,13 +1872,13 @@ order=38
  28
  29
  30
+ 34
+ 35
  36
  37
  31
  32
  33
- 34
- 35
 firsttab=26
 index=30
 [layout]
@@ -2320,11 +2320,11 @@ windowlayout=784
  nx=0
  ny=0
  ncx=1333
- ncy=53
+ ncy=49
  x=0
  y=0
  cx=1348
- cy=52
+ cy=48
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2332,30 +2332,30 @@ windowlayout=784
  [debuggerfo.edit_compilernum]
  value=0
  [debuggerfo.edit_compiler]
- value=Pascal
+ value=Python
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
   /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/strumpract/src/msefiledialog.pas
-  /home/fred/strumpract/src/msegrids.pas
-  /home/fred/strumpract/src/filelistform.pas
-  /home/fred/testbgra/fractal_tree/main.pas
-  /home/fred/strumpract/src/imagedancer.pas
-  /home/fred/testbgra/main.pas
-  /home/fred/testbgra/fractal_tree.pas
-  /home/fred/bgracontrols/bgravirtualscreen.pas
-  /home/fred/mclasses.pas
-  /home/fred/eschecs_mse/board.pas
-  /home/fred/strumpract/src/guitars.pas
-  /home/fred/strumpract/src/randomnote.pas
-  /home/fred/strumpract/src/define.inc
-  /home/fred/uos/examples/define.inc
-  /home/fred/uos/examples/consolesynth.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/imageselectorform.pas
-  /home/fred/freepascal-ootb_305/compiler/systems/t_bsd.pas
-  /home/fred/uos/examples/uos.pas
+  /home/fred/Documents/c.png
+  /home/fred/Documents/java.png
+  /home/fred/Documents/pas2.png
+  /home/fred/Documents/pas3.png
+  /home/fred/Documents/pas1.png
+  /home/fred/strumpract/src/images/image.png
+  /home/fred/strumpract/src/images/audio.png
+  /home/fred/strumpract/text.png
+  /home/fred/Pictures/imagesideu/bugnew64no2.png
+  /home/fred/Pictures/imagesideu/pause_64bleudisable.png
+  /home/fred/Pictures/imagesideu/pause_64bleu.png
+  /home/fred/Pictures/imagesideu/trianglebleudown64_2.png
+  /home/fred/Pictures/imagesideu/trianglebleudouble64_2.png
+  /home/fred/Pictures/imagesideu/compile64_3disable.png
+  /home/fred/Pictures/imagesideu/stop_64disable.png
+  /home/fred/Pictures/imagesideu/stop_64.png
+  /home/fred/Pictures/imagesideu/trianglevertflip64_2disable.png
+  /home/fred/Pictures/imagesideu/trianglevertdown64_2disable.png
+  /home/fred/Pictures/imagesideu/trianglevertdouble64_2disable.png
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2409,13 +2409,13 @@ windowlayout=784
   28
   29
   30
+  34
+  35
   36
   37
   31
   32
   33
-  34
-  35
  firsttab=26
  index=30
  [confideufo.fontname]
@@ -2575,7 +2575,7 @@ windowlayout=784
  [_mse_beautyfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_filedialogres_mse_
  parent=
  mdistate=3
  nx=0
@@ -2594,7 +2594,7 @@ windowlayout=784
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogres_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
