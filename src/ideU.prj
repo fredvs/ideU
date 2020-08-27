@@ -870,21 +870,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=6
  ACTIONSMO
  MAINFO
+ FILEDIALOGFO
  PROCEDURELISTFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=5
+moduletypes=6
  TACTIONSMO
  TMAINFO
+ TFILEDIALOGFO
  TPROCEDURELISTFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=5
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
@@ -892,7 +895,7 @@ befcommandon=0
 makeoptionson=12
  4095
  3
- 4
+ 0
  4092
  0
  192
@@ -1558,73 +1561,96 @@ findhistory=20
  peristent
  formaterror
 findoptions=1
-editpos=6
+editpos=8
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,0
  0,-1073741823
- 0,4
  0,-1073741823
  0,-1073741823
- 0,-1073741823
+ 0,1753
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/actionsmodule.mfm
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
-relpaths=6
+ ${PROJECTDIR}/make.pas
+ ${PROJECTDIR}/msefiledialog.pas
+relpaths=8
  ideU.pas
  main.pas
  actionsmodule.pas
  actionsmodule.mfm
  sourceform.pas
  sourcepage.pas
-ismoduletexts=6
+ make.pas
+ msefiledialog.pas
+ismoduletexts=8
  0
  0
  0
  -1
  0
  0
-modules=6
+ 0
+ 0
+modules=7
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=6
+ /home/fred/ideu/src/msefiledialog.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+visiblemodules=7
  -1
  -1
  -1
  0
  0
  -1
-nomenumodules=6
+ -1
+nomenumodules=7
  0
  0
  0
  0
  -1
+ 0
  0
 [sourcefo.files_tab]
+order=8
+ 0
+ 7
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=612
+windowlayout=640
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1638,10 +1664,10 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
- cx=1224
- cy=621
+ x=0
+ y=29
+ cx=1360
+ cy=710
  rcx=0
  rcy=0
  wsize=6
@@ -1656,15 +1682,15 @@ windowlayout=612
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=625
+ y=69
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2060,13 +2086,13 @@ windowlayout=612
  visible=1
  mdistate=0
  nx=0
- ny=-1
- ncx=1333
- ncy=45
+ ny=-2
+ ncx=1197
+ ncy=39
  x=0
- y=-1
+ y=-3
  cx=1333
- cy=43
+ cy=38
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2076,18 +2102,17 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Python
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/actionsmodule.mfm
+  /home/fred/ideu/src/sourcepage.pas
+  /home/fred/ideu/src/make.pas
+  /home/fred/strumpract/src/msefiledialog.pas
+  /home/fred/strumpract/src/status.pas
   /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/breakpointsform.pas
   /home/fred/ideu/src/mselistbrowser.pas
   /home/fred/ideu/src/objectinspector.pas
-  /home/fred/strumpract/src/msefiledialog.pas
   /home/fred/strumpract/src/msegrids.pas
   /home/fred/strumpract/src/filelistform.pas
   /home/fred/testbgra/fractal_tree/main.pas
@@ -2098,6 +2123,7 @@ windowlayout=612
   /home/fred/mclasses.pas
   /home/fred/eschecs_mse/board.pas
   /home/fred/strumpract/src/guitars.pas
+  /home/fred/strumpract/src/randomnote.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2119,8 +2145,17 @@ windowlayout=612
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  7
+  1
+  2
+  3
+  4
+  5
+  6
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2221,7 +2256,7 @@ windowlayout=612
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2232,6 +2267,25 @@ windowlayout=612
  y=217
  cx=652
  cy=301
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=529
+ y=189
+ cx=506
+ cy=327
  rcx=0
  rcy=0
  wsize=0
