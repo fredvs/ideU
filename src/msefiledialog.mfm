@@ -487,23 +487,23 @@ object filedialogfo: Tfiledialogfo
           item
             caption = 'Name'
             face.localprops = []
-            options = [dco_colsort, dco_hintclippedtext]
+            options = [dco_colsort, dco_wholecellsortclick, dco_hintclippedtext]
           end        
           item
             caption = 'Ext'
             face.localprops = []
             hint = 'File extension '
-            options = [dco_colsort, dco_hintclippedtext]
+            options = [dco_colsort, dco_wholecellsortclick, dco_hintclippedtext]
           end        
           item
             caption = 'Size'
             face.localprops = []
             hint = ' Size in Kb of the file '
-            options = [dco_colsort, dco_hintclippedtext]
+            options = [dco_colsort, dco_wholecellsortclick, dco_hintclippedtext]
           end        
           item
             caption = 'Date'
-            options = [dco_colsort, dco_hintclippedtext]
+            options = [dco_colsort, dco_wholecellsortclick, dco_hintclippedtext]
           end>
       end>
     rowcolors.count = 3
