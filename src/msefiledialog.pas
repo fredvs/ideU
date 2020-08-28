@@ -14,6 +14,7 @@ unit msefiledialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}
@@ -27,475 +28,483 @@ interface
   {$endif}
 {$endif}
 
-uses 
-mseglob, mseguiglob, mseforms, classes, mclasses, mseclasses, msewidgets, msegrids, 
-mselistbrowser, mseedit, msesimplewidgets, msedataedits, msedialog, msetypes, 
-msestrings, msesystypes, msesys, msedispwidgets, msedatalist, msestat, msestatfile, 
-msebitmap, msedatanodes, msefileutils, msedropdownlist, mseevent, msegraphedits, 
-mseeditglob, msesplitter, msemenus, msegridsglob, msegraphics, msegraphutils, 
-msedirtree, msewidgetgrid, mseact, mseapplication, msegui, mseificomp, 
-mseificompglob, mseifiglob, msestream, sysutils, msemenuwidgets, msescrollbar, 
-msedragglob;
+uses
+  mseglob,
+  mseguiglob,
+  mseforms,
+  Classes,
+  mclasses,
+  mseclasses,
+  msewidgets,
+  msegrids,
+  Math,
+  mselistbrowser,
+  mseedit,
+  msesimplewidgets,
+  msedataedits,
+  msedialog,
+  msetypes,
+  msestrings,
+  msesystypes,
+  msesys,
+  msedispwidgets,
+  msedatalist,
+  msestat,
+  msestatfile,
+  msebitmap,
+  msedatanodes,
+  msefileutils,
+  msedropdownlist,
+  mseevent,
+  msegraphedits,
+  mseeditglob,
+  msesplitter,
+  msemenus,
+  msegridsglob,
+  msegraphics,
+  msegraphutils,
+  msedirtree,
+  msewidgetgrid,
+  mseact,
+  mseapplication,
+  msegui,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msestream,
+  SysUtils,
+  msemenuwidgets,
+  msescrollbar,
+  msedragglob;
 
-const 
+const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
 
-type 
+type
   tfilelistitem = class(tlistitem)
-    private 
-    protected 
-    public 
+  private
+  protected
+  public
 
-      constructor create(Const aowner: tcustomitemlist);
+    constructor Create(const aowner: tcustomitemlist);
       override;
   end;
+
   pfilelistitem = ^tfilelistitem;
 
   tfileitemlist = class(titemviewlist)
-    protected 
-      procedure createitem(out item: tlistitem);
+  protected
+    procedure createitem(out item: tlistitem);
       override;
   end;
 
-  getfileiconeventty = procedure (Const sender: tobject; Const ainfo: fileinfoty;
-                                  Var imagelist: timagelist; Var imagenr: integer) of object;
+  getfileiconeventty = procedure(const Sender: TObject; const ainfo: fileinfoty; var imagelist: timagelist; var imagenr: integer) of object;
 
   tfilelistview = class(tlistview)
-    private 
-      ffilelist: tfiledatalist;
-      foptionsfile: filelistviewoptionsty;
-      fmaskar: filenamearty;
-      fdirectory: filenamety;
-      ffilecount: integer;
-      fincludeattrib, fexcludeattrib: fileattributesty;
-      fonlistread: notifyeventty;
-      ffocusmoved: boolean;
-      fongetfileicon: getfileiconeventty;
-      foncheckfile: checkfileeventty;
-      procedure filelistchanged(Const sender: tobject);
-      procedure setfilelist(Const Value: tfiledatalist);
-      function getpath: msestring;
-      procedure setpath(Const Value: msestring);
-      procedure setdirectory(Const Value: msestring);
-      function getmask: filenamety;
-      procedure setmask(Const value: filenamety);
-      function getselectednames: filenamearty;
-      procedure setselectednames(Const avalue: filenamearty);
-      function getchecksubdir: boolean;
-      procedure setchecksubdir(Const avalue: boolean);
-      procedure setoptionsfile(Const avalue: filelistviewoptionsty);
-      procedure checkcasesensitive;
-    protected 
-      foptionsdir: dirstreamoptionsty;
-      fcaseinsensitive: boolean;
-      //   procedure setoptions(const Value: listviewoptionsty); override;
-      procedure docellevent(Var info: celleventinfoty);
+  private
+    ffilelist: tfiledatalist;
+    foptionsfile: filelistviewoptionsty;
+    fmaskar: filenamearty;
+    fdirectory: filenamety;
+    ffilecount: integer;
+    fincludeattrib, fexcludeattrib: fileattributesty;
+    fonlistread: notifyeventty;
+    ffocusmoved: Boolean;
+    fongetfileicon: getfileiconeventty;
+    foncheckfile: checkfileeventty;
+    procedure filelistchanged(const Sender: TObject);
+    procedure setfilelist(const Value: tfiledatalist);
+    function getpath: msestring;
+    procedure setpath(const Value: msestring);
+    procedure setdirectory(const Value: msestring);
+    function getmask: filenamety;
+    procedure setmask(const Value: filenamety);
+    function getselectednames: filenamearty;
+    procedure setselectednames(const avalue: filenamearty);
+    function getchecksubdir: Boolean;
+    procedure setchecksubdir(const avalue: Boolean);
+    procedure setoptionsfile(const avalue: filelistviewoptionsty);
+    procedure checkcasesensitive;
+  protected
+    foptionsdir: dirstreamoptionsty;
+    fcaseinsensitive: Boolean;
+    //   procedure setoptions(const Value: listviewoptionsty); override;
+    procedure docellevent(var info: celleventinfoty);
       override;
-    public 
+  public
 
-      constructor create(aowner: tcomponent);
+    constructor Create(aowner: TComponent);
       override;
 
-      destructor destroy;
+    destructor Destroy;
       override;
-      procedure readlist;
-      procedure updir;
-      function filecount: integer;
-      property directory: filenamety read fdirectory write setdirectory;
-      property includeattrib: fileattributesty read fincludeattrib
-                              write fincludeattrib default [fa_all];
-      property excludeattrib: fileattributesty read fexcludeattrib
-                              write fexcludeattrib default [fa_hidden];
-      property maskar: filenamearty read fmaskar write fmaskar;
-      //nil -> all
-      property mask: filenamety read getmask write setmask;
-      //'' -> all
-      property path: filenamety read getpath write setpath;
-      //calls readlist
-      property selectednames: filenamearty read getselectednames write setselectednames;
-      property  checksubdir: boolean read getchecksubdir write setchecksubdir;
-    published 
-      property options default defaultlistviewoptionsfile;
-      property optionsfile: filelistviewoptionsty read foptionsfile
-                            write setoptionsfile default defaultfilelistviewoptions;
-      property filelist: tfiledatalist read ffilelist write setfilelist;
-      property onlistread: notifyeventty read fonlistread write fonlistread;
-      property ongetfileicon: getfileiconeventty read fongetfileicon
-                              write fongetfileicon;
-      property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
+    procedure readlist;
+    procedure updir;
+    function filecount: integer;
+    property directory: filenamety read fdirectory write setdirectory;
+    property includeattrib: fileattributesty read fincludeattrib write fincludeattrib default [fa_all];
+    property excludeattrib: fileattributesty read fexcludeattrib write fexcludeattrib default [fa_hidden];
+    property maskar: filenamearty read fmaskar write fmaskar;
+    //nil -> all
+    property mask: filenamety read getmask write setmask;
+    //'' -> all
+    property path: filenamety read getpath write setpath;
+    //calls readlist
+    property selectednames: filenamearty read getselectednames write setselectednames;
+    property checksubdir: Boolean read getchecksubdir write setchecksubdir;
+  published
+    property options default defaultlistviewoptionsfile;
+    property optionsfile: filelistviewoptionsty read foptionsfile write setoptionsfile default defaultfilelistviewoptions;
+    property filelist: tfiledatalist read ffilelist write setfilelist;
+    property onlistread: notifyeventty read fonlistread write fonlistread;
+    property ongetfileicon: getfileiconeventty read fongetfileicon write fongetfileicon;
+    property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
   end;
 
-const 
+const
   defaulthistorymaxcount = 50;
 
-type 
-  filedialogoptionty = (fdo_filtercasesensitive,    //flvo_maskcasesensitive
-                        fdo_filtercaseinsensitive,  //flvo_maskcaseinsensitive
-                        fdo_save,
-                        fdo_dispname,fdo_dispnoext,fdo_sysfilename,fdo_params,
-                        fdo_directory,fdo_file,
-                        fdo_absolute,fdo_relative,fdo_lastdirrelative,
-                        fdo_basedirrelative,
-                        fdo_quotesingle,
-                        fdo_link, //links lastdir of controllers with same group
-                        fdo_checkexist,fdo_acceptempty,fdo_single,
-                        fdo_chdir,fdo_savelastdir,
-                        fdo_checksubdir);
+type
+  filedialogoptionty  = (fdo_filtercasesensitive,    //flvo_maskcasesensitive
+    fdo_filtercaseinsensitive,  //flvo_maskcaseinsensitive
+    fdo_save,
+    fdo_dispname, fdo_dispnoext, fdo_sysfilename, fdo_params,
+    fdo_directory, fdo_file,
+    fdo_absolute, fdo_relative, fdo_lastdirrelative,
+    fdo_basedirrelative,
+    fdo_quotesingle,
+    fdo_link, //links lastdir of controllers with same group
+    fdo_checkexist, fdo_acceptempty, fdo_single,
+    fdo_chdir, fdo_savelastdir,
+    fdo_checksubdir);
   filedialogoptionsty = set of filedialogoptionty;
-const 
+
+const
   defaultfiledialogoptions = [fdo_savelastdir];
 
-type 
-  filedialogkindty = (fdk_none,fdk_open,fdk_save,fdk_new);
+type
+  filedialogkindty = (fdk_none, fdk_open, fdk_save, fdk_new);
 
   tfiledialogcontroller = class;
 
-    filedialogbeforeexecuteeventty = procedure (Const sender: tfiledialogcontroller;
-                                                Var dialogkind: filedialogkindty; Var aresult:
-                                                modalresultty) of object;
-    filedialogafterexecuteeventty = procedure (Const sender: tfiledialogcontroller;
-                                               Var aresult: modalresultty) of object;
+  filedialogbeforeexecuteeventty = procedure(const Sender: tfiledialogcontroller; var dialogkind: filedialogkindty; var aresult: modalresultty) of object;
+  filedialogafterexecuteeventty  = procedure(const Sender: tfiledialogcontroller; var aresult: modalresultty) of object;
 
-    tfiledialogcontroller = class(tlinkedpersistent)
-      private 
-        fowner: tmsecomponent;
-        fgroup: integer;
-        fonchange: proceventty;
-        ffilenames: filenamearty;
-        ffilterlist: tdoublemsestringdatalist;
-        ffilter: filenamety;
-        ffilterindex: integer;
-        fcolwidth: integer;
-        fwindowrect: rectty;
-        fhistorymaxcount: integer;
-        fhistory: msestringarty;
-        fcaptionopen: msestring;
-        fcaptionsave: msestring;
-        fcaptionnew: msestring;
-        finclude: fileattributesty;
-        fexclude: fileattributesty;
-        fonbeforeexecute: filedialogbeforeexecuteeventty;
-        fonafterexecute: filedialogafterexecuteeventty;
-        fongetfilename: setstringeventty;
-        fongetfileicon: getfileiconeventty;
-        foncheckfile: checkfileeventty;
-        fimagelist: timagelist;
-        fparams: msestring;
-        procedure setfilterlist(Const Value: tdoublemsestringdatalist);
-        procedure sethistorymaxcount(Const Value: integer);
-        function getfilename: filenamety;
-        procedure setfilename(Const avalue: filenamety);
-        procedure dochange;
-        procedure setdefaultext(Const avalue: filenamety);
-        procedure setoptions(Value: filedialogoptionsty);
-        procedure checklink;
-        procedure setlastdir(Const avalue: filenamety);
-        procedure setimagelist(Const avalue: timagelist);
-        function getsysfilename: filenamety;
-      protected 
-        flastdir: filenamety;
-        fbasedir: filenamety;
-        fdefaultext: filenamety;
-        foptions: filedialogoptionsty;
-      public 
+  tfiledialogcontroller = class(tlinkedpersistent)
+  private
+    fowner: tmsecomponent;
+    fgroup: integer;
+    fonchange: proceventty;
+    ffilenames: filenamearty;
+    ffilterlist: tdoublemsestringdatalist;
+    ffilter: filenamety;
+    ffilterindex: integer;
+    fcolwidth: integer;
+    fwindowrect: rectty;
+    fhistorymaxcount: integer;
+    fhistory: msestringarty;
+    fcaptionopen: msestring;
+    fcaptionsave: msestring;
+    fcaptionnew: msestring;
+    finclude: fileattributesty;
+    fexclude: fileattributesty;
+    fonbeforeexecute: filedialogbeforeexecuteeventty;
+    fonafterexecute: filedialogafterexecuteeventty;
+    fongetfilename: setstringeventty;
+    fongetfileicon: getfileiconeventty;
+    foncheckfile: checkfileeventty;
+    fimagelist: timagelist;
+    fparams: msestring;
+    procedure setfilterlist(const Value: tdoublemsestringdatalist);
+    procedure sethistorymaxcount(const Value: integer);
+    function getfilename: filenamety;
+    procedure setfilename(const avalue: filenamety);
+    procedure dochange;
+    procedure setdefaultext(const avalue: filenamety);
+    procedure setoptions(Value: filedialogoptionsty);
+    procedure checklink;
+    procedure setlastdir(const avalue: filenamety);
+    procedure setimagelist(const avalue: timagelist);
+    function getsysfilename: filenamety;
+  protected
+    flastdir: filenamety;
+    fbasedir: filenamety;
+    fdefaultext: filenamety;
+    foptions: filedialogoptionsty;
+  public
 
-        constructor create(Const aowner: tmsecomponent = Nil;
-                           Const onchange: proceventty = Nil);
-        reintroduce;
+    constructor Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
+      reintroduce;
 
-        destructor destroy;
-        override;
-        procedure readstatvalue(Const reader: tstatreader);
-        procedure readstatstate(Const reader: tstatreader);
-        procedure readstatoptions(Const reader: tstatreader);
-        procedure writestatvalue(Const writer: tstatwriter);
-        procedure writestatstate(Const writer: tstatwriter);
-        procedure writestatoptions(Const writer: tstatwriter);
-        function actcaption(Const dialogkind: filedialogkindty): msestring;
-        function execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
-        overload;
-        //fdk_none -> use options fdo_save
-        function execute(dialogkind: filedialogkindty; Const acaption: msestring;
-                         aoptions: filedialogoptionsty): modalresultty;
-        overload;
-        function execute(Const dialogkind: filedialogkindty;
-                         Const acaption: msestring): modalresultty;
-        overload;
-        function execute(Const dialogkind: filedialogkindty;
-                         Const aoptions: filedialogoptionsty): modalresultty;
-        overload;
-        function execute(Var avalue: filenamety;
-                         dialogkind: filedialogkindty = fdk_none): boolean;
-        overload;
-        function execute(Var avalue: filenamety; Const  dialogkind: filedialogkindty;
-                         Const acaption: msestring): boolean;
-        overload;
-        function execute(Var avalue: filenamety; Const  dialogkind: filedialogkindty;
-                         Const acaption: msestring;
-                         aoptions: filedialogoptionsty): boolean;
-        overload;
-        function canoverwrite(): boolean;
-        //true if current filename is allowed to write
-        procedure clear;
-        procedure componentevent(Const event: tcomponentevent);
-        property history: msestringarty read fhistory write fhistory;
-        property filenames: filenamearty read ffilenames write ffilenames;
-        property syscommandline: filenamety read getsysfilename;
-        deprecated;
-        property sysfilename: filenamety read getsysfilename;
-        property params: msestring read fparams;
-      published 
-        property filename: filenamety read getfilename write setfilename;
-        property lastdir: filenamety read flastdir write setlastdir;
-        property basedir: filenamety read fbasedir write fbasedir;
-        property filter: filenamety read ffilter write ffilter;
-        property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
-        property filterindex: integer read ffilterindex write ffilterindex default 0;
-        property include: fileattributesty read finclude write finclude default [fa_all];
-        property exclude: fileattributesty read fexclude write fexclude default [fa_hidden];
-        property colwidth: integer read fcolwidth write fcolwidth default 0;
-        property defaultext: filenamety read fdefaultext write setdefaultext;
-        property options: filedialogoptionsty read foptions write setoptions
-                          default defaultfiledialogoptions;
-        property historymaxcount: integer read fhistorymaxcount
-                                  write sethistorymaxcount default defaulthistorymaxcount;
-        property captionopen: msestring read fcaptionopen write fcaptionopen;
-        property captionsave: msestring read fcaptionsave write fcaptionsave;
-        property captionnew: msestring read fcaptionnew write fcaptionnew;
-        property group: integer read fgroup write fgroup default 0;
-        property imagelist: timagelist read fimagelist write setimagelist;
-        property ongetfilename: setstringeventty read fongetfilename write fongetfilename;
-        property ongetfileicon: getfileiconeventty read fongetfileicon
-                                write fongetfileicon;
-        property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
-        property onbeforeexecute: filedialogbeforeexecuteeventty
-                                  read fonbeforeexecute write fonbeforeexecute;
-        property onafterexecute: filedialogafterexecuteeventty
-                                 read fonafterexecute write fonafterexecute;
-    end;
+    destructor Destroy;
+      override;
+    procedure readstatvalue(const reader: tstatreader);
+    procedure readstatstate(const reader: tstatreader);
+    procedure readstatoptions(const reader: tstatreader);
+    procedure writestatvalue(const writer: tstatwriter);
+    procedure writestatstate(const writer: tstatwriter);
+    procedure writestatoptions(const writer: tstatwriter);
+    function actcaption(const dialogkind: filedialogkindty): msestring;
+    function Execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
+      overload;
+    //fdk_none -> use options fdo_save
+    function Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): modalresultty;
+      overload;
+    function Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
+      overload;
+    function Execute(const dialogkind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
+      overload;
+    function Execute(var avalue: filenamety; dialogkind: filedialogkindty = fdk_none): Boolean;
+      overload;
+    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
+      overload;
+    function Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): Boolean;
+      overload;
+    function canoverwrite(): Boolean;
+    //true if current filename is allowed to write
+    procedure Clear;
+    procedure componentevent(const event: tcomponentevent);
+    property history: msestringarty read fhistory write fhistory;
+    property filenames: filenamearty read ffilenames write ffilenames;
+    property syscommandline: filenamety read getsysfilename; deprecated;
+    property sysfilename: filenamety read getsysfilename;
+    property params: msestring read fparams;
+  published
+    property filename: filenamety read getfilename write setfilename;
+    property lastdir: filenamety read flastdir write setlastdir;
+    property basedir: filenamety read fbasedir write fbasedir;
+    property filter: filenamety read ffilter write ffilter;
+    property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
+    property filterindex: integer read ffilterindex write ffilterindex default 0;
+    property include: fileattributesty read finclude write finclude default [fa_all];
+    property exclude: fileattributesty read fexclude write fexclude default [fa_hidden];
+    property colwidth: integer read fcolwidth write fcolwidth default 0;
+    property defaultext: filenamety read fdefaultext write setdefaultext;
+    property options: filedialogoptionsty read foptions write setoptions default defaultfiledialogoptions;
+    property historymaxcount: integer read fhistorymaxcount write sethistorymaxcount default defaulthistorymaxcount;
+    property captionopen: msestring read fcaptionopen write fcaptionopen;
+    property captionsave: msestring read fcaptionsave write fcaptionsave;
+    property captionnew: msestring read fcaptionnew write fcaptionnew;
+    property group: integer read fgroup write fgroup default 0;
+    property imagelist: timagelist read fimagelist write setimagelist;
+    property ongetfilename: setstringeventty read fongetfilename write fongetfilename;
+    property ongetfileicon: getfileiconeventty read fongetfileicon write fongetfileicon;
+    property oncheckfile: checkfileeventty read foncheckfile write foncheckfile;
+    property onbeforeexecute: filedialogbeforeexecuteeventty read fonbeforeexecute write fonbeforeexecute;
+    property onafterexecute: filedialogafterexecuteeventty read fonafterexecute write fonafterexecute;
+  end;
 
-    const 
-      defaultfiledialogoptionsedit1 = defaultoptionsedit1+
-                                      [oe1_savevalue, oe1_savestate, oe1_saveoptions];
+const
+  defaultfiledialogoptionsedit1 = defaultoptionsedit1 +
+    [oe1_savevalue, oe1_savestate, oe1_saveoptions];
 
-    type 
-      tfiledialog = class(tdialog,istatfile)
-        private 
-          fcontroller: tfiledialogcontroller;
-          fstatvarname: msestring;
-          fstatfile: tstatfile;
-          fdialogkind: filedialogkindty;
-          //   foptionsedit: optionseditty;
-          foptionsedit1: optionsedit1ty;
-          fstatpriority: integer;
-          procedure setcontroller(Const value: tfiledialogcontroller);
-          procedure setstatfile(Const Value: tstatfile);
-          procedure readoptionsedit(reader: treader);
-        protected 
-          procedure defineproperties(filer: tfiler);
-          override;
-          //istatfile
-          procedure dostatread(Const reader: tstatreader);
-          procedure dostatwrite(Const writer: tstatwriter);
-          procedure statreading;
-          procedure statread;
-          function getstatvarname: msestring;
-          function getstatpriority: integer;
-        public 
+type
+  tfiledialog = class(tdialog, istatfile)
+  private
+    fcontroller: tfiledialogcontroller;
+    fstatvarname: msestring;
+    fstatfile: tstatfile;
+    fdialogkind: filedialogkindty;
+    //   foptionsedit: optionseditty;
+    foptionsedit1: optionsedit1ty;
+    fstatpriority: integer;
+    procedure setcontroller(const Value: tfiledialogcontroller);
+    procedure setstatfile(const Value: tstatfile);
+    procedure readoptionsedit(reader: treader);
+  protected
+    procedure defineproperties(filer: tfiler);
+      override;
+    //istatfile
+    procedure dostatread(const reader: tstatreader);
+    procedure dostatwrite(const writer: tstatwriter);
+    procedure statreading;
+    procedure statread;
+    function getstatvarname: msestring;
+    function getstatpriority: integer;
+  public
 
-          constructor create(aowner: tcomponent);
-          override;
+    constructor Create(aowner: TComponent);
+      override;
 
-          destructor destroy;
-          override;
-          function execute: modalresultty;
-          overload;
-          override;
-          function execute(Const akind: filedialogkindty): modalresultty;
-          reintroduce;
-          overload;
-          function execute(Const akind: filedialogkindty;
-                           Const aoptions: filedialogoptionsty): modalresultty;
-          reintroduce;
-          overload;
-          procedure componentevent(Const event: tcomponentevent);
-          override;
-        published 
-          property statfile: tstatfile read fstatfile write setstatfile;
-          property statvarname: msestring read getstatvarname write fstatvarname;
-          property statpriority: integer read fstatpriority
-                                 write fstatpriority default 0;
-          property controller: tfiledialogcontroller read fcontroller
-                               write setcontroller;
-          property dialogkind: filedialogkindty read fdialogkind write fdialogkind
-                               default fdk_none;
-          property optionsedit1: optionsedit1ty read foptionsedit1 write foptionsedit1
-                                 default defaultfiledialogoptionsedit1;
-      end;
+    destructor Destroy;
+      override;
+    function Execute: modalresultty;
+      overload;
+      override;
+    function Execute(const akind: filedialogkindty): modalresultty;
+      reintroduce;
+      overload;
+    function Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
+      reintroduce;
+      overload;
+    procedure componentevent(const event: tcomponentevent);
+      override;
+  published
+    property statfile: tstatfile read fstatfile write setstatfile;
+    property statvarname: msestring read getstatvarname write fstatvarname;
+    property statpriority: integer read fstatpriority write fstatpriority default 0;
+    property controller: tfiledialogcontroller read fcontroller write setcontroller;
+    property dialogkind: filedialogkindty read fdialogkind write fdialogkind default fdk_none;
+    property optionsedit1: optionsedit1ty read foptionsedit1 write foptionsedit1 default defaultfiledialogoptionsedit1;
+  end;
 
-      tcustomfilenameedit1 = class;
-        tfilenameeditcontroller = class(tstringdialogcontroller)
-          protected 
-            function execute(Var avalue: msestring): boolean;
-            override;
-          public 
+  tcustomfilenameedit1 = class;
 
-            constructor create(Const aowner: tcustomfilenameedit1);
-        end;
+  tfilenameeditcontroller = class(tstringdialogcontroller)
+  protected
+    function Execute(var avalue: msestring): Boolean;
+      override;
+  public
 
-        tcustomfilenameedit1 = class(tcustomdialogstringed)
-          private 
-            fcontroller: tfiledialogcontroller;
-            procedure setcontroller(Const avalue: tfiledialogcontroller);
-            function getsysvalue: filenamety;
-            procedure setsysvalue(Const avalue: filenamety);
-            function getsysvaluequoted: filenamety;
-          protected 
-            function createdialogcontroller: tstringdialogcontroller;
-            override;
-            procedure texttovalue(Var accept: boolean; Const quiet: boolean);
-            override;
-            procedure updatedisptext(Var avalue: msestring);
-            override;
-            function getvaluetext: msestring;
-            override;
-            procedure readstatvalue(Const reader: tstatreader);
-            override;
-            procedure readstatstate(Const reader: tstatreader);
-            override;
-            procedure readstatoptions(Const reader: tstatreader);
-            override;
-            procedure writestatvalue(Const writer: tstatwriter);
-            override;
-            procedure writestatstate(Const writer: tstatwriter);
-            override;
-            procedure writestatoptions(Const writer: tstatwriter);
-            override;
-            procedure valuechanged;
-            override;
-            procedure updatecopytoclipboard(Var atext: msestring);
-            override;
-            procedure updatepastefromclipboard(Var atext: msestring);
-            override;
-          public 
+    constructor Create(const aowner: tcustomfilenameedit1);
+  end;
 
-            constructor create(aowner: tcomponent);
-            override;
+  tcustomfilenameedit1 = class(tcustomdialogstringed)
+  private
+    fcontroller: tfiledialogcontroller;
+    procedure setcontroller(const avalue: tfiledialogcontroller);
+    function getsysvalue: filenamety;
+    procedure setsysvalue(const avalue: filenamety);
+    function getsysvaluequoted: filenamety;
+  protected
+    function createdialogcontroller: tstringdialogcontroller;
+      override;
+    procedure texttovalue(var accept: Boolean; const quiet: Boolean);
+      override;
+    procedure updatedisptext(var avalue: msestring);
+      override;
+    function getvaluetext: msestring;
+      override;
+    procedure readstatvalue(const reader: tstatreader);
+      override;
+    procedure readstatstate(const reader: tstatreader);
+      override;
+    procedure readstatoptions(const reader: tstatreader);
+      override;
+    procedure writestatvalue(const writer: tstatwriter);
+      override;
+    procedure writestatstate(const writer: tstatwriter);
+      override;
+    procedure writestatoptions(const writer: tstatwriter);
+      override;
+    procedure valuechanged;
+      override;
+    procedure updatecopytoclipboard(var atext: msestring);
+      override;
+    procedure updatepastefromclipboard(var atext: msestring);
+      override;
+  public
 
-            destructor destroy;
-            override;
-            procedure componentevent(Const event: tcomponentevent);
-            override;
-            property controller: tfiledialogcontroller read fcontroller
-                                 write setcontroller;
-            property sysvalue: filenamety read getsysvalue write setsysvalue;
-            property sysvaluequoted: filenamety read getsysvaluequoted write setsysvalue;
-          published 
-            property optionsedit1 default defaultfiledialogoptionsedit1;
-        end;
+    constructor Create(aowner: TComponent);
+      override;
 
-        tcustomfilenameedit = class(tcustomfilenameedit1)
-          public 
+    destructor Destroy;
+      override;
+    procedure componentevent(const event: tcomponentevent);
+      override;
+    property controller: tfiledialogcontroller read fcontroller write setcontroller;
+    property sysvalue: filenamety read getsysvalue write setsysvalue;
+    property sysvaluequoted: filenamety read getsysvaluequoted write setsysvalue;
+  published
+    property optionsedit1 default defaultfiledialogoptionsedit1;
+  end;
 
-            constructor create(aowner: tcomponent);
-            override;
+  tcustomfilenameedit = class(tcustomfilenameedit1)
+  public
 
-            destructor destroy;
-            override;
-        end;
+    constructor Create(aowner: TComponent);
+      override;
 
-        tcustomremotefilenameedit = class(tcustomfilenameedit1)
-          private 
-            fdialog: tfiledialog;
-            procedure setfiledialog(Const avalue: tfiledialog);
-          protected 
-            procedure objectevent(Const sender: tobject;
-                                  Const event: objecteventty);
-            override;
-          public 
-            property dialog: tfiledialog read fdialog write setfiledialog;
-        end;
+    destructor Destroy;
+      override;
+  end;
 
-        tfilenameedit = class(tcustomfilenameedit)
-          published 
-            property frame;
-            property passwordchar;
-            property maxlength;
-            property value;
-            property onsetvalue;
-            property controller;
-        end;
+  tcustomremotefilenameedit = class(tcustomfilenameedit1)
+  private
+    fdialog: tfiledialog;
+    procedure setfiledialog(const avalue: tfiledialog);
+  protected
+    procedure objectevent(const Sender: TObject; const event: objecteventty);
+      override;
+  public
+    property dialog: tfiledialog read fdialog write setfiledialog;
+  end;
 
-        tremotefilenameedit = class(tcustomremotefilenameedit)
-          published 
-            property frame;
-            property passwordchar;
-            property maxlength;
-            property value;
-            property onsetvalue;
-            property dialog;
-        end;
+  tfilenameedit = class(tcustomfilenameedit)
+  published
+    property frame;
+    property passwordchar;
+    property maxlength;
+    property Value;
+    property onsetvalue;
+    property controller;
+  end;
 
-        dirdropdowneditoptionty = (ddeo_showhiddenfiles,ddeo_checksubdir);
-        dirdropdowneditoptionsty = set of dirdropdowneditoptionty;
+  tremotefilenameedit = class(tcustomremotefilenameedit)
+  published
+    property frame;
+    property passwordchar;
+    property maxlength;
+    property Value;
+    property onsetvalue;
+    property dialog;
+  end;
 
-        tdirdropdownedit = class(tdropdownwidgetedit)
-          private 
-            foptions: dirdropdowneditoptionsty;
-            function getshowhiddenfiles: boolean;
-            procedure setshowhiddenfiles(Const avalue: boolean);
-            function getchecksubdir: boolean;
-            procedure setchecksubdir(Const avalue: boolean);
-          protected 
-            procedure createdropdownwidget(Const atext: msestring;
-                                           out awidget: twidget);
-            override;
-            function getdropdowntext(Const awidget: twidget): msestring;
-            override;
-            procedure pathchanged(Const sender: tobject);
-            procedure doafterclosedropdown;
-            override;
-            procedure updatecopytoclipboard(Var atext: msestring);
-            override;
-            procedure updatepastefromclipboard(Var atext: msestring);
-            override;
-          public 
-            property showhiddenfiles: boolean read getshowhiddenfiles
-                                      write setshowhiddenfiles;
-            property checksubdir: boolean read getchecksubdir
-                                  write setchecksubdir;
-          published 
-            property options: dirdropdowneditoptionsty read foptions
-                              write foptions default [];
-        end;
+  dirdropdowneditoptionty  = (ddeo_showhiddenfiles, ddeo_checksubdir);
+  dirdropdowneditoptionsty = set of dirdropdowneditoptionty;
 
-        dirtreepatheventty = procedure (Const sender: tobject;
-                                        Const avalue: msestring) of object;
+  tdirdropdownedit = class(tdropdownwidgetedit)
+  private
+    foptions: dirdropdowneditoptionsty;
+    function getshowhiddenfiles: Boolean;
+    procedure setshowhiddenfiles(const avalue: Boolean);
+    function getchecksubdir: Boolean;
+    procedure setchecksubdir(const avalue: Boolean);
+  protected
+    procedure createdropdownwidget(const atext: msestring; out awidget: twidget);
+      override;
+    function getdropdowntext(const awidget: twidget): msestring;
+      override;
+    procedure pathchanged(const Sender: TObject);
+    procedure doafterclosedropdown;
+      override;
+    procedure updatecopytoclipboard(var atext: msestring);
+      override;
+    procedure updatepastefromclipboard(var atext: msestring);
+      override;
+  public
+    property showhiddenfiles: Boolean read getshowhiddenfiles write setshowhiddenfiles;
+    property checksubdir: Boolean read getchecksubdir write setchecksubdir;
+  published
+    property options: dirdropdowneditoptionsty read foptions write foptions default [];
+  end;
 
-        tdirtreeview = class(tpublishedwidget,icaptionframe)
-          private 
-            fonpathchanged: dirtreepatheventty;
-            fonpathselected: dirtreepatheventty;
-            fonselectionchanged: listitemeventty;
-            function getoptions: dirtreeoptionsty;
-            procedure setoptions(Const avalue: dirtreeoptionsty);
-            function getpath: filenamety;
-            procedure setpath(Const avalue: filenamety);
-            procedure setroot(Const avalue: filenamety);
-            function getgrid: twidgetgrid;
-            procedure setgrid(Const avalue: twidgetgrid);
-            function getoptionstree: treeitemeditoptionsty;
-            procedure setoptionstree(Const avalue: treeitemeditoptionsty);
-            function getoptionsedit: optionseditty;
-            procedure setoptionsedit(Const avalue: optionseditty);
-            function getcol_color: colorty;
-            procedure setcol_color(Const avalue: colorty);
-            function getcol_coloractive: colorty;
-            procedure setcol_coloractive(Const avalue: colorty);
-            function getcol_colorfocused: colorty;
-            procedure setcol_colorfocused(Const avalue: colorty);
-            function getcell_options: coloptionsty;
-            procedure setcell_options(Const avalue: coloptionsty);
+  dirtreepatheventty = procedure(const Sender: TObject; const avalue: msestring) of object;
+
+  tdirtreeview = class(tpublishedwidget, icaptionframe)
+  private
+    fonpathchanged: dirtreepatheventty;
+    fonpathselected: dirtreepatheventty;
+    fonselectionchanged: listitemeventty;
+    function getoptions: dirtreeoptionsty;
+    procedure setoptions(const avalue: dirtreeoptionsty);
+    function getpath: filenamety;
+    procedure setpath(const avalue: filenamety);
+    procedure setroot(const avalue: filenamety);
+    function getgrid: twidgetgrid;
+    procedure setgrid(const avalue: twidgetgrid);
+    function getoptionstree: treeitemeditoptionsty;
+    procedure setoptionstree(const avalue: treeitemeditoptionsty);
+    function getoptionsedit: optionseditty;
+    procedure setoptionsedit(const avalue: optionseditty);
+    function getcol_color: colorty;
+    procedure setcol_color(const avalue: colorty);
+    function getcol_coloractive: colorty;
+    procedure setcol_coloractive(const avalue: colorty);
+    function getcol_colorfocused: colorty;
+    procedure setcol_colorfocused(const avalue: colorty);
+    function getcell_options: coloptionsty;
+    procedure setcell_options(const avalue: coloptionsty);
 
 {
    function getcell_frame: tcellframe;
@@ -505,180 +514,144 @@ type
    function getcell_datalist: ttreeitemeditlist;
    procedure setcell_datalist(const avalue: ttreeitemeditlist);
   }
-          protected 
-            fdirview: tdirtreefo;
-            fpath: filenamety;
-            froot: filenamety;
-            procedure dopathchanged(Const sender: tobject);
-            procedure dopathselected(Const sender: tobject);
-            procedure doselectionchanged(Const sender: tobject; Const aitem: tlistitem);
-            procedure internalcreateframe;
-            override;
-            procedure loaded();
-            override;
-            class function classskininfo: skininfoty;
-              override;
-              public 
+  protected
+    fdirview: tdirtreefo;
+    fpath: filenamety;
+    froot: filenamety;
+    procedure dopathchanged(const Sender: TObject);
+    procedure dopathselected(const Sender: TObject);
+    procedure doselectionchanged(const Sender: TObject; const aitem: tlistitem);
+    procedure internalcreateframe;
+      override;
+    procedure loaded();
+      override;
+    class function classskininfo: skininfoty;
+      override;
+  public
 
-                constructor create(aowner: tcomponent);
-                override;
+    constructor Create(aowner: TComponent);
+      override;
 
-                destructor destroy();
-                override;
-                procedure refresh();
-                property dirview: tdirtreefo read fdirview;
-                property path: filenamety read getpath write setpath;
-                property root: filenamety read froot write setroot;
-              published 
-                property font: twidgetfont read getfont write setfont stored isfontstored;
-                property options: dirtreeoptionsty read getoptions
-                                  write setoptions default [];
-                property optionstree: treeitemeditoptionsty read getoptionstree
-                                      write setoptionstree default [teo_treecolnavig, 
-                                      teo_enteronimageclick];
-                property optionsedit: optionseditty read getoptionsedit write setoptionsedit
-                                      default [oe_readonly, oe_undoonesc, oe_checkmrcancel, 
-                                      oe_forcereturncheckvalue, oe_hintclippedtext, oe_locate];
-                property col_color: colorty read getcol_color
-                                    write setcol_color default cl_default;
-                property col_coloractive: colorty read getcol_coloractive
-                                          write setcol_coloractive default cl_none;
-                property col_colorfocused: colorty read getcol_colorfocused
-                                           write setcol_colorfocused default cl_active;
-                property col_options: coloptionsty read getcell_options
-                                      write setcell_options default [co_readonly, co_fill, 
-                                      co_savevalue];
-                //   property col_frame: tcellframe read getcell_frame write setcell_frame;
-                //   property col_face: tcellface read getcell_face write setcell_face;
-                //   property col_datalist: ttreeitemeditlist read getcell_datalist
-                //                                                   write setcell_datalist;
-                property onpathchanged: dirtreepatheventty read
-                                        fonpathchanged write fonpathchanged;
-                property onpathselected: dirtreepatheventty read
-                                         fonpathselected write fonpathselected;
-                property onselectionchanged: listitemeventty read
-                                             fonselectionchanged write fonselectionchanged;
-                //for checkboxes
-                property optionswidget default defaultoptionswidgetsubfocus;
-            end;
+    destructor Destroy();
+      override;
+    procedure refresh();
+    property dirview: tdirtreefo read fdirview;
+    property path: filenamety read getpath write setpath;
+    property root: filenamety read froot write setroot;
+  published
+    property font: twidgetfont read getfont write setfont stored isfontstored;
+    property options: dirtreeoptionsty read getoptions write setoptions default [];
+    property optionstree: treeitemeditoptionsty read getoptionstree write setoptionstree default [teo_treecolnavig, teo_enteronimageclick];
+    property optionsedit: optionseditty read getoptionsedit write setoptionsedit default [oe_readonly, oe_undoonesc, oe_checkmrcancel, oe_forcereturncheckvalue, oe_hintclippedtext, oe_locate];
+    property col_color: colorty read getcol_color write setcol_color default cl_default;
+    property col_coloractive: colorty read getcol_coloractive write setcol_coloractive default cl_none;
+    property col_colorfocused: colorty read getcol_colorfocused write setcol_colorfocused default cl_active;
+    property col_options: coloptionsty read getcell_options write setcell_options default [co_readonly, co_fill, co_savevalue];
+    //   property col_frame: tcellframe read getcell_frame write setcell_frame;
+    //   property col_face: tcellface read getcell_face write setcell_face;
+    //   property col_datalist: ttreeitemeditlist read getcell_datalist
+    //                                                   write setcell_datalist;
+    property onpathchanged: dirtreepatheventty read fonpathchanged write fonpathchanged;
+    property onpathselected: dirtreepatheventty read fonpathselected write fonpathselected;
+    property onselectionchanged: listitemeventty read fonselectionchanged write fonselectionchanged;
+    //for checkboxes
+    property optionswidget default defaultoptionswidgetsubfocus;
+  end;
 
-            tfiledialogfo = class(tmseform)
-              tlayouter2: tlayouter;
-              dir: tdirdropdownedit;
-              up: tstockglyphbutton;
-              back: tstockglyphbutton;
-              forward: tstockglyphbutton;
-              home: tbutton;
-              createdir: tbutton;
-              cancel: tbutton;
-              ok: tbutton;
-              filename: thistoryedit;
-              filter: tdropdownlistedit;
-              showhidden: tbooleanedit;
-              list_log: tstringgrid;
-              iconslist: timagelist;
-              listview: tfilelistview;
-              procedure createdironexecute(Const sender: TObject);
-              procedure listviewselectionchanged(Const sender: tcustomlistview);
-              procedure listviewitemevent(Const sender: tcustomlistview;
-                                          Const index: Integer; Var info: celleventinfoty);
-              procedure listviewonkeydown(Const sender: twidget; Var info: keyeventinfoty);
-              procedure upaction(Const sender: TObject);
-              procedure dironsetvalue(Const sender: TObject; Var avalue: mseString;
-                                      Var accept: Boolean);
-              procedure filenamesetvalue(Const sender: TObject; Var avalue: mseString;
-                                         Var accept: Boolean);
-              procedure listviewonlistread(Const sender: tobject);
-              procedure filteronafterclosedropdown(Const sender: tobject);
-              procedure filteronsetvalue(Const sender: tobject; Var avalue: msestring; Var accept:
-                                         boolean);
-              procedure filepathentered(Const sender: tobject);
-              procedure okonexecute(Const sender: tobject);
-              procedure layoutev(Const sender: TObject);
-              procedure showhiddenonsetvalue(Const sender: TObject; Var avalue: Boolean;
-                                             Var accept: Boolean);
-              procedure formoncreate(Const sender: TObject);
-              procedure dirshowhint(Const sender: TObject; Var info: hintinfoty);
-              procedure copytoclip(Const sender: TObject; Var avalue: msestring);
-              procedure pastefromclip(Const sender: TObject; Var avalue: msestring);
-              procedure homeaction(Const sender: TObject);
-              procedure backexe(Const sender: TObject);
-              procedure forwardexe(Const sender: TObject);
-              procedure buttonshowhint(Const sender: TObject; Var ainfo: hintinfoty);
+  tfiledialogfo = class(tmseform)
+    tlayouter2: tlayouter;
+    dir: tdirdropdownedit;
+    up: tstockglyphbutton;
+    back: tstockglyphbutton;
+    forward: tstockglyphbutton;
+    home: TButton;
+    createdir: TButton;
+    cancel: TButton;
+    ok: TButton;
+    filename: thistoryedit;
+    filter: tdropdownlistedit;
+    showhidden: tbooleanedit;
+    list_log: tstringgrid;
+    iconslist: timagelist;
+    listview: tfilelistview;
+    procedure createdironexecute(const Sender: TObject);
+    procedure listviewselectionchanged(const Sender: tcustomlistview);
+    procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
+    procedure listviewonkeydown(const Sender: twidget; var info: keyeventinfoty);
+    procedure upaction(const Sender: TObject);
+    procedure dironsetvalue(const Sender: TObject; var avalue: mseString; var accept: Boolean);
+    procedure filenamesetvalue(const Sender: TObject; var avalue: mseString; var accept: Boolean);
+    procedure listviewonlistread(const Sender: TObject);
+    procedure filteronafterclosedropdown(const Sender: TObject);
+    procedure filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
+    procedure filepathentered(const Sender: TObject);
+    procedure okonexecute(const Sender: TObject);
+    procedure layoutev(const Sender: TObject);
+    procedure showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+    procedure formoncreate(const Sender: TObject);
+    procedure dirshowhint(const Sender: TObject; var info: hintinfoty);
+    procedure copytoclip(const Sender: TObject; var avalue: msestring);
+    procedure pastefromclip(const Sender: TObject; var avalue: msestring);
+    procedure homeaction(const Sender: TObject);
+    procedure backexe(const Sender: TObject);
+    procedure forwardexe(const Sender: TObject);
+    procedure buttonshowhint(const Sender: TObject; var ainfo: hintinfoty);
 
-              procedure oncellev(Const sender: TObject; Var info: celleventinfoty);
-              procedure ondrawcell(Const sender: tcol; Const canvas: tcanvas;
-                                   Var cellinfo: cellinfoty);
-              private 
-                fselectednames: filenamearty;
-                finit: boolean;
-                fcourse: filenamearty;
-                fcourseid: int32;
-                fcourselock: boolean;
-                procedure updatefiltertext;
-                function tryreadlist(Const adir: filenamety;
-                                     Const errormessage: boolean): boolean;
-                //restores old dir on error
-                function changedir(Const adir: filenamety): boolean;
-                procedure checkcoursebuttons();
-                procedure course(Const adir: filenamety);
-                procedure doup();
-              public 
-                dialogoptions: filedialogoptionsty;
-                defaultext: filenamety;
-                filenames: filenamearty;
-            end;
+    procedure oncellev(const Sender: TObject; var info: celleventinfoty);
+    procedure ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+  private
+    fselectednames: filenamearty;
+    finit: Boolean;
+    fcourse: filenamearty;
+    fcourseid: int32;
+    fcourselock: Boolean;
+    procedure updatefiltertext;
+    function tryreadlist(const adir: filenamety; const errormessage: Boolean): Boolean;
+    //restores old dir on error
+    function changedir(const adir: filenamety): Boolean;
+    procedure checkcoursebuttons();
+    procedure course(const adir: filenamety);
+    procedure doup();
+  public
+    dialogoptions: filedialogoptionsty;
+    defaultext: filenamety;
+    filenames: filenamearty;
+  end;
 
-            function filedialog(Var afilenames: filenamearty;
-                                Const aoptions: filedialogoptionsty;
-                                Const acaption: msestring;    //'' -> 'Open' or 'Save'
-                                Const filterdesc: Array Of msestring;
-                                Const filtermask: Array Of msestring;
-                                Const adefaultext: filenamety = '';
-                                Const filterindex: pinteger = Nil;     //nil -> 0
-                                Const filter: pfilenamety = Nil;       //nil -> unused
-                                Const colwidth: pinteger = Nil;        //nil -> default
-                                Const includeattrib: fileattributesty = [fa_all];
-                                Const excludeattrib: fileattributesty = [fa_hidden];
-                                Const history: pmsestringarty = Nil;
-                                Const historymaxcount: integer = defaulthistorymaxcount;
-                                Const imagelist: timagelist = Nil;
-                                Const ongetfileicon: getfileiconeventty = Nil;
-                                Const oncheckfile: checkfileeventty = Nil
-            ): modalresultty;
-            overload;
-            //threadsafe
-            function filedialog(Var afilename: filenamety;
-                                Const aoptions: filedialogoptionsty;
-                                Const acaption: msestring;
-                                Const filterdesc: Array Of msestring;
-                                Const filtermask: Array Of msestring;
-                                Const adefaultext: filenamety = '';
-                                Const filterindex: pinteger = Nil;     //nil -> 0
-                                Const filter: pfilenamety = Nil;       //nil -> unused
-                                Const colwidth: pinteger = Nil;        //nil -> default
-                                Const includeattrib: fileattributesty = [fa_all];
-                                Const excludeattrib: fileattributesty = [fa_hidden];
-                                Const history: pmsestringarty = Nil;
-                                Const historymaxcount: integer = defaulthistorymaxcount;
-                                Const imagelist: timagelist = Nil;
-                                Const ongetfileicon: getfileiconeventty = Nil;
-                                Const oncheckfile: checkfileeventty = Nil
-            ): modalresultty;
-            overload;
-            //threadsafe
+function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
+  const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
+  const filter: pfilenamety = nil;       //nil -> unused
+  const colwidth: pinteger = nil;        //nil -> default
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+  overload;
+//threadsafe
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
+  const filter: pfilenamety = nil;       //nil -> unused
+  const colwidth: pinteger = nil;        //nil -> default
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+  overload;
+//threadsafe
 
-            procedure getfileicon(Const info: fileinfoty; Var imagelist: timagelist;
-                                  out imagenr: integer);
-            procedure updatefileinfo(Const item: tlistitem; Const info: fileinfoty;
-                                     Const withicon: boolean);
+procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
+procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
 
-            implementation
+implementation
 
-            uses 
-            msefiledialog_mfm, msebits, mseactions, commandorform, confideu, 
-            msestringenter, msefiledialogres, msekeyboard, 
-            msestockobjects, msesysintf, msearrayutils;
+uses
+  msefiledialog_mfm,
+  msebits,
+  mseactions,
+  commandorform,
+  confideu,
+  msestringenter,
+  msefiledialogres,
+  msekeyboard,
+  msestockobjects,
+  msesysintf,
+  msearrayutils;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -693,362 +666,243 @@ type
   {$endif}
 {$endif}
 
-            type 
-              tdirtreefo1 = class(tdirtreefo);
-                tcomponent1 = class(tcomponent);
+type
+  tdirtreefo1 = class(tdirtreefo);
+  tcomponent1 = class(TComponent);
 
-                  procedure getfileicon(Const info: fileinfoty; Var imagelist: timagelist;
-                                        out imagenr: integer);
-                  begin
-                    with info do
-                      begin
-                        //  imagelist:= nil;
-                        imagenr := -1;
-                        if fis_typevalid in state then
-                          begin
-                            case extinfo1.filetype of 
-                              ft_dir:
-                                      begin
-                                        if fis_diropen in state then
-                                          begin
-                                            filedialogres.getfileicon(fdi_diropen,imagelist,imagenr)
-                                            ;
-                                          end
-                                        else
-                                          begin
-                                            if fis_hasentry in state then
-                                              begin
-                                                filedialogres.getfileicon(fdi_direntry,imagelist,
-                                                                          imagenr);
-                                              end
-                                            else
-                                              begin
-                                                filedialogres.getfileicon(fdi_dir,imagelist,imagenr)
-                                                ;
-                                              end;
-                                          end;
-                                      end;
-                              ft_reg, ft_lnk:
-                                              begin
-                                                filedialogres.getfileicon(fdi_file,imagelist,imagenr
-                                                );
-                                              end;
-                            end;
-                          end;
-                      end;
-                  end;
+procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
+begin
+  with info do
+  begin
+    //  imagelist:= nil;
+    imagenr := -1;
+    if fis_typevalid in state then
+      case extinfo1.filetype of
+        ft_dir:
+          if fis_diropen in state then
+            filedialogres.getfileicon(fdi_diropen, imagelist, imagenr)
+          else if fis_hasentry in state then
+            filedialogres.getfileicon(fdi_direntry, imagelist,
+              imagenr)
+          else
+            filedialogres.getfileicon(fdi_dir, imagelist, imagenr);
+        ft_reg, ft_lnk:
+          filedialogres.getfileicon(fdi_file, imagelist, imagenr
+            );
+      end;
+  end;
+end;
 
-                  procedure updatefileinfo(Const item: tlistitem; Const info: fileinfoty;
-                                           Const withicon: boolean);
-                  var 
-                    aimagelist: timagelist;
-                    aimagenr: integer;
-                  begin
-                    aimagelist := item.imagelist;
-                    item.caption := info.name;
-                    if withicon then
-                      begin
-                        getfileicon(info,aimagelist,aimagenr);
-                        item.imagelist := aimagelist;
-                        if aimagelist <> nil then
-                          begin
-                            item.imagenr := aimagenr;
-                          end;
-                      end;
-                  end;
+procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
+var
+  aimagelist: timagelist;
+  aimagenr: integer;
+begin
+  aimagelist   := item.imagelist;
+  item.Caption := info.Name;
+  if withicon then
+  begin
+    getfileicon(info, aimagelist, aimagenr);
+    item.imagelist := aimagelist;
+    if aimagelist <> nil then
+      item.imagenr := aimagenr;
+  end;
+end;
 
-                  function filedialog1(dialog: tfiledialogfo; Var afilenames: filenamearty;
-                                       Const filterdesc: Array Of msestring;
-                                       Const filtermask: Array Of msestring;
-                                       Const filterindex: pinteger;
-                                       Const afilter: pfilenamety;      //nil -> unused
-                                       Const colwidth: pinteger;        //nil -> default
-                                       Const includeattrib: fileattributesty;
-                                       Const excludeattrib: fileattributesty;
-                                       Const history: pmsestringarty;
-                                       Const historymaxcount: integer;
-                                       Const acaption: msestring;
-                                       Const aoptions: filedialogoptionsty;
-                                       Const adefaultext: filenamety;
-                                       Const imagelist: timagelist;
-                                       Const ongetfileicon: getfileiconeventty;
-                                       Const oncheckfile: checkfileeventty
-                  ): modalresultty;
-                  var 
-                    int1: integer;
-                  begin
-                    with dialog do
-                      begin
-                        dir.checksubdir := fdo_checksubdir In aoptions;
-                        listview.checksubdir := fdo_checksubdir In aoptions;
-                        dialogoptions := aoptions;
-                        if fdo_filtercasesensitive in aoptions then
-                          begin
-                            listview.optionsfile := listview.optionsfile + [flvo_maskcasesensitive];
-                          end;
-                        if fdo_filtercaseinsensitive in aoptions then
-                          begin
-                            listview.optionsfile := listview.optionsfile + [flvo_maskcaseinsensitive
-                                                    ];
-                          end;
-                        if fdo_single in aoptions then
-                          begin
-                            listview.options := listview.options - [lvo_multiselect];
-                          end;
-                        defaultext := adefaultext;
-                        caption := acaption;
-                        //caption := 'Select a file';
-                        listview.includeattrib := includeattrib;
-                        listview.excludeattrib := excludeattrib;
-                        listview.itemlist.imagelist := imagelist;
-                        if imagelist <> nil then
-                          begin
-                            listview.itemlist.imagesize := imagelist.size;
-                          end;
-                        listview.ongetfileicon := ongetfileicon;
-                        listview.oncheckfile := oncheckfile;
-                        filter.dropdown.cols[0].count := high(filtermask) + 1;
-                        for int1:= 0 to high(filtermask) do
-                          begin
-                            if (int1 <= high(filterdesc)) and (filterdesc[int1] <> '') then
-                              begin
-                                filter.dropdown.cols[0][int1] := filterdesc[int1] + ' ('+
-                                                                 filtermask[int1] + ')';
-                              end
-                            else
-                              begin
-                                filter.dropdown.cols[0][int1] := filtermask[int1];
-                              end;
-                          end;
-                        filter.dropdown.cols[1].assignopenarray(filtermask);
-                        if filterindex <> nil then
-                          begin
-                            filter.dropdown.itemindex := filterindex^;
-                          end
-                        else
-                          begin
-                            filter.dropdown.itemindex := 0;
-                          end;
-                        if (afilter = nil) or (afilter^ = '') or
-                           (filter.dropdown.itemindex >= 0) and
-                           (afilter^ = filter.dropdown.cols[1][filter.dropdown.itemindex]) then
-                          begin
-                            updatefiltertext;
-                          end
-                        else
-                          begin
-                            filter.value := afilter^;
-                            listview.mask := afilter^;
-                          end;
-                        if history <> nil then
-                          begin
-                            filename.dropdown.valuelist.asarray := history^;
-                            filename.dropdown.historymaxcount := historymaxcount;
-                          end
-                        else
-                          begin
-                            filename.dropdown.options := [deo_disabled];
-                          end;
-                        if (high(afilenames) = 0) and (fdo_directory in aoptions) then
-                          begin
-                            filename.value := filepath(afilenames[0]);
-                          end
-                        else
-                          begin
-                            filename.value := quotefilename(afilenames);
-                          end;
-                        if (colwidth <> nil) and (colwidth^ <> 0) then
-                          begin
-                            listview.cellwidth := colwidth^;
-                          end;
-                        finit := true;
-                        try
-                          filename.checkvalue;
-                        finally
-                          finit := false;
-                      end;
-                    showhidden.value := Not (fa_hidden In excludeattrib);
-                    show(true);
-                    result := window.modalresult;
-                    if result <> mr_ok then
-                      begin
-                        result := mr_cancel;
-                      end;
-                    if (colwidth <> nil) then
-                      begin
-                        colwidth^ := listview.cellwidth;
-                      end;
-                    if result = mr_ok then
-                      begin
-                        afilenames := filenames;
-                        if filterindex <> nil then
-                          begin
-                            filterindex^ := filter.dropdown.itemindex;
-                          end;
-                        if afilter <> nil then
-                          begin
-                            afilter^ := listview.mask;
-                          end;
-                        if high(afilenames) = 0 then
-                          begin
-                            filename.dropdown.savehistoryvalue(afilenames[0]);
-                          end;
-                        if history <> nil then
-                          begin
-                            history^ := filename.dropdown.valuelist.asarray;
-                          end;
-                        if fdo_chdir in aoptions then
-                          begin
-                            setcurrentdirmse(listview.directory);
-                          end;
-                      end;
-                  end;
-                end;
+function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const filterdesc: array of msestring; const filtermask: array of msestring; const filterindex: pinteger; const afilter: pfilenamety;      //nil -> unused
+  const colwidth: pinteger;        //nil -> default
+  const includeattrib: fileattributesty; const excludeattrib: fileattributesty; const history: pmsestringarty; const historymaxcount: integer; const acaption: msestring; const aoptions: filedialogoptionsty;
+  const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty; const oncheckfile: checkfileeventty): modalresultty;
+var
+  int1: integer;
+begin
+  with dialog do
+  begin
+    dir.checksubdir      := fdo_checksubdir in aoptions;
+    listview.checksubdir := fdo_checksubdir in aoptions;
+    dialogoptions        := aoptions;
+    if fdo_filtercasesensitive in aoptions then
+      listview.optionsfile := listview.optionsfile + [flvo_maskcasesensitive];
+    if fdo_filtercaseinsensitive in aoptions then
+      listview.optionsfile := listview.optionsfile + [flvo_maskcaseinsensitive
+        ];
+    if fdo_single in aoptions then
+      listview.options     := listview.options - [lvo_multiselect];
+    defaultext := adefaultext;
+    Caption := acaption;
+    //caption := 'Select a file';
+    listview.includeattrib := includeattrib;
+    listview.excludeattrib      := excludeattrib;
+    listview.itemlist.imagelist := imagelist;
+    if imagelist <> nil then
+      listview.itemlist.imagesize := imagelist.size;
+    listview.ongetfileicon        := ongetfileicon;
+    listview.oncheckfile          := oncheckfile;
+    filter.dropdown.cols[0].Count := high(filtermask) + 1;
+    for int1 := 0 to high(filtermask) do
+      if (int1 <= high(filterdesc)) and (filterdesc[int1] <> '') then
+        filter.dropdown.cols[0][int1] := filterdesc[int1] + ' (' +
+          filtermask[int1] + ')'
+      else
+        filter.dropdown.cols[0][int1] := filtermask[int1];
+    filter.dropdown.cols[1].assignopenarray(filtermask);
+    if filterindex <> nil then
+      filter.dropdown.ItemIndex := filterindex^
+    else
+      filter.dropdown.ItemIndex := 0;
+    if (afilter = nil) or (afilter^ = '') or
+      (filter.dropdown.ItemIndex >= 0) and
+      (afilter^ = filter.dropdown.cols[1][filter.dropdown.ItemIndex]) then
+      updatefiltertext
+    else
+    begin
+      filter.Value  := afilter^;
+      listview.mask := afilter^;
+    end;
+    if history <> nil then
+    begin
+      filename.dropdown.valuelist.asarray := history^;
+      filename.dropdown.historymaxcount := historymaxcount;
+    end
+    else
+      filename.dropdown.options := [deo_disabled];
+    if (high(afilenames) = 0) and (fdo_directory in aoptions) then
+      filename.Value     := filepath(afilenames[0])
+    else
+      filename.Value     := quotefilename(afilenames);
+    if (colwidth <> nil) and (colwidth^ <> 0) then
+      listview.cellwidth := colwidth^;
+    finit := True;
+    try
+      filename.checkvalue;
+    finally
+      finit          := False;
+    end;
+    showhidden.Value := not (fa_hidden in excludeattrib);
+    Show(True);
+    Result           := window.modalresult;
+    if Result <> mr_ok then
+      Result := mr_cancel;
+    if (colwidth <> nil) then
+      colwidth^ := listview.cellwidth;
+    if Result = mr_ok then
+    begin
+      afilenames     := filenames;
+      if filterindex <> nil then
+        filterindex^ := filter.dropdown.ItemIndex;
+      if afilter <> nil then
+        afilter^     := listview.mask;
+      if high(afilenames) = 0 then
+        filename.dropdown.savehistoryvalue(afilenames[0]);
+      if history <> nil then
+        history^ := filename.dropdown.valuelist.asarray;
+      if fdo_chdir in aoptions then
+        setcurrentdirmse(listview.directory);
+    end;
+  end;
+end;
 
-                function filedialog(Var afilenames: filenamearty;
-                                    Const aoptions: filedialogoptionsty;
-                                    Const acaption: msestring;
-                                    Const filterdesc: Array Of msestring;
-                                    Const filtermask: Array Of msestring;
-                                    Const adefaultext: filenamety = '';
-                                    Const filterindex: pinteger = Nil;
-                                    Const filter: pfilenamety = Nil;       //nil -> unused
-                                    Const colwidth: pinteger = Nil;        //nil -> default
-                                    Const includeattrib: fileattributesty = [fa_all];
-                                    Const excludeattrib: fileattributesty = [fa_hidden];
-                                    Const history: pmsestringarty = Nil;
-                                    Const historymaxcount: integer = defaulthistorymaxcount;
-                                    Const imagelist: timagelist = Nil;
-                                    Const ongetfileicon: getfileiconeventty = Nil;
-                                    Const oncheckfile: checkfileeventty = Nil
-                ): modalresultty;
-                var 
-                  dialog: tfiledialogfo;
-                  str1: msestring;
-                begin
-                  application.lock;
-                  try
-                    dialog := tfiledialogfo.create(Nil);
-                    if acaption = '' then
-                      begin
-                        with stockobjects do
-                          begin
-                            if fdo_save in aoptions then
-                              begin
-                                str1 := captions[sc_save];
-                              end
-                            else
-                              begin
-                                str1 := captions[sc_open];
-                              end;
-                          end;
-                      end
-                    else
-                      begin
-                        str1 := acaption;
-                      end;
-                    try
-                      result := filedialog1(dialog,afilenames,filterdesc,filtermask,
-                                filterindex,filter,colwidth,
-                                includeattrib,excludeattrib,history,historymaxcount,str1,aoptions,
-                                adefaultext,imagelist,ongetfileicon,oncheckfile);
+function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
+  const colwidth: pinteger = nil;        //nil -> default
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+var
+  dialog: tfiledialogfo;
+  str1: msestring;
+begin
+  application.lock;
+  try
+    dialog := tfiledialogfo.Create(nil);
+    if acaption = '' then
+    begin
+      with stockobjects do
+        if fdo_save in aoptions then
+          str1 := captions[sc_save]
+        else
+          str1 := captions[sc_open];
+    end
+    else
+      str1 := acaption;
+    try
+      Result := filedialog1(dialog, afilenames, filterdesc, filtermask,
+        filterindex, filter, colwidth,
+        includeattrib, excludeattrib, history, historymaxcount, str1, aoptions,
+        adefaultext, imagelist, ongetfileicon, oncheckfile);
 
 
-//  dialog.listview.options := [lvo_readonly,lvo_horz,lvo_drawfocus,lvo_mouseselect,lvo_keyselect,lvo_multiselect,lvo_locate,lvo_hintclippedtext];
+      //  dialog.listview.options := [lvo_readonly,lvo_horz,lvo_drawfocus,lvo_mouseselect,lvo_keyselect,lvo_multiselect,lvo_locate,lvo_hintclippedtext];
 
-                    finally
-                      dialog.Free;
-                end;
-              finally
-                application.unlock;
-            end;
-        end;
+    finally
+      dialog.Free;
+    end;
+  finally
+    application.unlock;
+  end;
+end;
 
-        function filedialog(Var afilename: filenamety;
-                            Const aoptions: filedialogoptionsty;
-                            Const acaption: msestring;
-                            Const filterdesc: Array Of msestring;
-                            Const filtermask: Array Of msestring;
-                            Const adefaultext: filenamety = '';
-                            Const filterindex: pinteger = Nil;
-                            Const filter: pfilenamety = Nil;       //nil -> unused
-                            Const colwidth: pinteger = Nil;        //nil -> default
-                            Const includeattrib: fileattributesty = [fa_all];
-                            Const excludeattrib: fileattributesty = [fa_hidden];
-                            Const history: pmsestringarty = Nil;
-                            Const historymaxcount: integer = defaulthistorymaxcount;
-                            Const imagelist: timagelist = Nil;
-                            Const ongetfileicon: getfileiconeventty = Nil;
-                            Const oncheckfile: checkfileeventty = Nil
-        ): modalresultty;
-        var 
-          ar1: filenamearty;
-        begin
-          setlength(ar1,1);
-          ar1[0] := afilename;
-          result := filedialog(ar1,aoptions,acaption,filterdesc,filtermask,adefaultext,
-                    filterindex,
-                    filter,colwidth,includeattrib,excludeattrib,history,historymaxcount,
-                    imagelist,ongetfileicon,oncheckfile);
+function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+  const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
+  const colwidth: pinteger = nil;        //nil -> default
+  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+var
+  ar1: filenamearty;
+begin
+  setlength(ar1, 1);
+  ar1[0] := afilename;
+  Result := filedialog(ar1, aoptions, acaption, filterdesc, filtermask, adefaultext,
+    filterindex,
+    filter, colwidth, includeattrib, excludeattrib, history, historymaxcount,
+    imagelist, ongetfileicon, oncheckfile);
 
 
-          if result = mr_ok then
-            begin
-              if (high(ar1) > 0) or (fdo_quotesingle in aoptions) then
-                begin
-                  afilename := quotefilename(ar1);
-                end
-              else
-                begin
-                  if high(ar1) = 0 then
-                    begin
-                      afilename := ar1[0];
-                    end
-                  else
-                    begin
-                      afilename := '';
-                    end;
-                end;
-            end;
-        end;
+  if Result = mr_ok then
+    if (high(ar1) > 0) or (fdo_quotesingle in aoptions) then
+      afilename := quotefilename(ar1)
+    else if high(ar1) = 0 then
+      afilename := ar1[0]
+    else
+      afilename := '';
+end;
 
 { tfilelistview }
 
-        constructor tfilelistview.create(aowner: tcomponent);
-        begin
-          fcaseinsensitive := filesystemiscaseinsensitive;
-          fincludeattrib := [fa_all];
-          fexcludeattrib := [fa_hidden];
-          fitemlist := tfileitemlist.create(self);
-          foptionsfile := defaultfilelistviewoptions ;
+constructor tfilelistview.Create(aowner: TComponent);
+begin
+  fcaseinsensitive := filesystemiscaseinsensitive;
+  fincludeattrib   := [fa_all];
+  fexcludeattrib   := [fa_hidden];
+  fitemlist        := tfileitemlist.Create(self);
+  foptionsfile     := defaultfilelistviewoptions;
 
-          ffilelist := tfiledatalist.create;
-          ffilelist.onchange := {$ifdef FPC}@{$endif}filelistchanged;
+  ffilelist          := tfiledatalist.Create;
+  ffilelist.onchange :=
+{$ifdef FPC}
+    @
+{$endif}
+    filelistchanged;
 
-          inherited;
-          options := defaultlistviewoptionsfile;
-          checkcasesensitive;
-        end;
+  inherited;
+  options := defaultlistviewoptionsfile;
+  checkcasesensitive;
+end;
 
-        destructor tfilelistview.destroy;
-        begin
-          inherited;
-          ffilelist.Free;
-        end;
+destructor tfilelistview.Destroy;
+begin
+  inherited;
+  ffilelist.Free;
+end;
 
-        procedure tfilelistview.checkcasesensitive;
-        begin
-          fcaseinsensitive := filesystemiscaseinsensitive;
-          if flvo_maskcasesensitive in foptionsfile then
-            begin
-              fcaseinsensitive := false;
-            end;
-          if flvo_maskcaseinsensitive in foptionsfile then
-            begin
-              fcaseinsensitive := true;
-            end;
-          // options:= options; //set casesensitive
-        end;
+procedure tfilelistview.checkcasesensitive;
+begin
+  fcaseinsensitive   := filesystemiscaseinsensitive;
+  if flvo_maskcasesensitive in foptionsfile then
+    fcaseinsensitive := False;
+  if flvo_maskcaseinsensitive in foptionsfile then
+    fcaseinsensitive := True;
+  // options:= options; //set casesensitive
+end;
 
 {
 procedure tfilelistview.setoptions(const Value: listviewoptionsty);
@@ -1061,152 +915,128 @@ begin
  end;
 end;
 }
-        procedure tfilelistview.docellevent(Var info: celleventinfoty);
-        var 
-          index: integer;
-        begin
-          with info do
-            begin
-              if iscellclick(info,[ccr_buttonpress]) then
-                begin
-                  options := options + [lvo_focusselect];
-                end;
-              case eventkind of 
-                cek_enter:
-                           begin
-                             if ffocusmoved then
-                               begin
-                                 options := options + [lvo_focusselect];
-                               end
-                             else
-                               begin
-                                 ffocusmoved := true;
-                               end;
-                             inherited;
-                           end;
-                cek_select:
-                            begin
-                              index := celltoindex(cell,false);
-                              if index >= 0 then
-                                begin
-                                  if (flvo_nofileselect in foptionsfile) and
-                                     (ffilelist[index].extinfo1.filetype <> ft_dir) then
-                                    begin
-                                      accept := false;
-                                    end
-                                  else
-                                    begin
-                                      if (flvo_nodirselect in foptionsfile) and
-                                         (ffilelist[index].extinfo1.filetype = ft_dir) then
-                                        begin
-                                          accept := false;
-                                        end;
-                                    end;
-                                  inherited;
-                                end
-                              else
-                                begin
-                                  inherited;
-                                end;
-                            end;
-                else
-                  begin
-                    inherited;
-                  end;
-              end;
-            end;
-        end;
-
-        procedure tfilelistview.filelistchanged(Const sender: tobject);
-        var 
-          int1: integer;
-          po1: pfilelistitem;
-          po2: pfileinfoty;
-          imlist1: timagelist;
-          imnr1: integer;
-          bo1: boolean;
-        begin
-          options := options - [lvo_focusselect];
-          options := options + [lvo_horz] ;
-
-          ffocusmoved := false;
-          with ffilelist do
-            begin
-              self.beginupdate;
-              self.fitemlist.beginupdate;
-              try
-                self.fitemlist.clear;
-                self.fitemlist.count := count;
-                po1 := pfilelistitem(self.fitemlist.datapo);
-                po2 := pfileinfoty(datapo);
-                bo1 := checksubdir;
-                for int1:= 0 to count - 1 do
-                  begin
-                    if bo1 and (po2^.extinfo1.filetype = ft_dir) and
-                       dirhasentries(path+'/'+po2^.name,includeattrib,excludeattrib) then
-                      begin
-                        include(po2^.state,fis_hasentry);
-                      end;
-                    updatefileinfo(po1^,po2^,true);
-                    if assigned(fongetfileicon) then
-                      begin
-                        imlist1 := po1^.imagelist;
-                        imnr1 := po1^.imagenr;
-                        fongetfileicon(self,po2^,imlist1,imnr1);
-                        po1^.imagelist := imlist1;
-                        po1^.imagenr := imnr1;
-                      end;
-                    inc(po1);
-                    inc(po2);
-                  end;
-              finally
-                self.fitemlist.endupdate;
-                self.endupdate;
-            end;
-        end;
+procedure tfilelistview.docellevent(var info: celleventinfoty);
+var
+  index: integer;
+begin
+  with info do
+  begin
+    if iscellclick(info, [ccr_buttonpress]) then
+      options := options + [lvo_focusselect];
+    case eventkind of
+      cek_enter:
+      begin
+        if ffocusmoved then
+          options     := options + [lvo_focusselect]
+        else
+          ffocusmoved := True;
+        inherited;
       end;
-
-    function tfilelistview.getselectednames: msestringarty;
-    var 
-      int1, int2: integer;
-    begin
-      int2 := 0;
-      result := Nil;
-      for int1:= 0 to ffilelist.count - 1 do
+      cek_select:
+      begin
+        index := celltoindex(cell, False);
+        if index >= 0 then
         begin
-          if fitemlist[int1].selected then
-            begin
-              additem(result,ffilelist[int1].name,int2);
-            end;
-        end;
-      setlength(result,int2);
+          if (flvo_nofileselect in foptionsfile) and
+            (ffilelist[index].extinfo1.filetype <> ft_dir) then
+            accept := False
+          else
+          begin
+            if (flvo_nodirselect in foptionsfile) and
+              (ffilelist[index].extinfo1.filetype = ft_dir) then
+              accept := False;
+          end;
+          inherited;
+        end
+        else
+          inherited;
+      end;
+      else
+        inherited;
     end;
+  end;
+end;
 
-    procedure tfilelistview.setselectednames(Const avalue: filenamearty);
-    var 
-      int1: integer;
-      item1: tlistitem;
-      po1: plistitematy;
-      // cell1: gridcoordty;
-    begin
-      po1 := fitemlist.datapo;
-      fitemlist.beginupdate;
-      try
-        for int1:= 0 to fitemlist.count - 1 do
-          begin
-            po1^[int1].selected := false;
-          end;
-        for int1:= 0 to high(avalue) do
-          begin
-            item1 := finditembycaption(avalue[int1]);
-            if item1 <> nil then
-              begin
-                item1.selected := true;
-              end;
-          end;
-      finally
-        fitemlist.endupdate;
+procedure tfilelistview.filelistchanged(const Sender: TObject);
+var
+  int1: integer;
+  po1: pfilelistitem;
+  po2: pfileinfoty;
+  imlist1: timagelist;
+  imnr1: integer;
+  bo1: Boolean;
+begin
+  options := options - [lvo_focusselect];
+  options := options + [lvo_horz];
+
+  ffocusmoved := False;
+  with ffilelist do
+  begin
+    self.beginupdate;
+    self.fitemlist.beginupdate;
+    try
+      self.fitemlist.Clear;
+      self.fitemlist.Count := Count;
+      po1 := pfilelistitem(self.fitemlist.datapo);
+      po2 := pfileinfoty(datapo);
+      bo1 := checksubdir;
+      for int1 := 0 to Count - 1 do
+      begin
+        if bo1 and (po2^.extinfo1.filetype = ft_dir) and
+          dirhasentries(path + '/' + po2^.Name, includeattrib, excludeattrib) then
+          include(po2^.state, fis_hasentry);
+        updatefileinfo(po1^, po2^, True);
+        if Assigned(fongetfileicon) then
+        begin
+          imlist1        := po1^.imagelist;
+          imnr1          := po1^.imagenr;
+          fongetfileicon(self, po2^, imlist1, imnr1);
+          po1^.imagelist := imlist1;
+          po1^.imagenr   := imnr1;
+        end;
+        Inc(po1);
+        Inc(po2);
+      end;
+    finally
+      self.fitemlist.endupdate;
+      self.endupdate;
     end;
+  end;
+end;
+
+function tfilelistview.getselectednames: msestringarty;
+var
+  int1, int2: integer;
+begin
+  int2   := 0;
+  Result := nil;
+  for int1 := 0 to ffilelist.Count - 1 do
+    if fitemlist[int1].selected then
+      additem(Result, ffilelist[int1].Name, int2);
+  setlength(Result, int2);
+end;
+
+procedure tfilelistview.setselectednames(const avalue: filenamearty);
+var
+  int1: integer;
+  item1: tlistitem;
+  po1: plistitematy;
+  // cell1: gridcoordty;
+begin
+  po1 := fitemlist.datapo;
+  fitemlist.beginupdate;
+  try
+    for int1 := 0 to fitemlist.Count - 1 do
+      po1^[int1].selected := False;
+    for int1 := 0 to high(avalue) do
+    begin
+      item1  := finditembycaption(avalue[int1]);
+      if item1 <> nil then
+        item1.selected := True;
+    end;
+  finally
+    fitemlist.endupdate;
+  end;
 
 {
  for int1:= 0 to high(avalue) do begin
@@ -1215,19 +1045,17 @@ end;
   end;
  end;
  }
-    // focuscell(cell1);
-  end;
+  // focuscell(cell1);
+end;
 
-procedure tfilelistview.setfilelist(Const Value: tfiledatalist);
+procedure tfilelistview.setfilelist(const Value: tfiledatalist);
 begin
-  if ffilelist <> value then
-    begin
-      ffilelist.Assign(value);
-    end;
+  if ffilelist <> Value then
+    ffilelist.Assign(Value);
 end;
 
 procedure tfilelistview.readlist;
-var 
+var
   int1: integer;
   po1: pfileinfoty;
   level1: fileinfolevelty;
@@ -1236,158 +1064,147 @@ begin
   try
     defocuscell;
     fdatacols.clearselection;
-    ffilelist.clear;
+    ffilelist.Clear;
 
 
     ffilecount := 0;
-    level1 := fil_type;
-    if assigned(foncheckfile) then
-      begin
-        level1 := fil_ext2;
-      end;
+    level1     := fil_type;
+    if Assigned(foncheckfile) then
+      level1 := fil_ext2;
     if fmaskar = nil then
+    begin
+      ffilelist.adddirectory(fdirectory, level1, fmaskar,
+        fincludeattrib, fexcludeattrib, foptionsdir,
+        foncheckfile);
+      if ffilelist.Count > 0 then
       begin
-        ffilelist.adddirectory(fdirectory,level1,fmaskar,
-                               fincludeattrib,fexcludeattrib,foptionsdir,
-                               foncheckfile);
-        if ffilelist.count > 0 then
-          begin
-            po1 := ffilelist.itempo(0);
-            for int1:= 0 to ffilelist.count - 1 do
-              begin
-                if not (fa_dir in po1^.extinfo1.attributes) then
-                  begin
-                    inc(ffilecount);
-                  end;
-                inc(po1);
-              end;
-          end;
-      end
-    else
-      begin
-        if (fincludeattrib = [fa_all]) or not(fa_dir in fincludeattrib) then
-          begin
-            ffilelist.adddirectory(fdirectory,level1,Nil,[fa_dir],
-                                   fexcludeattrib*[fa_hidden],foptionsdir,foncheckfile);
-            int1 := ffilelist.count;
-            ffilelist.adddirectory(fdirectory,level1,fmaskar,fincludeattrib,
-                                   fexcludeattrib+[fa_dir],foptionsdir,foncheckfile);
-            ffilecount := ffilelist.count - int1;
-          end
-        else
-          begin
-            ffilelist.adddirectory(fdirectory,level1,fmaskar,
-                                   fincludeattrib,fexcludeattrib,foptionsdir,foncheckfile);
-            ffilecount := ffilelist.count;
-          end;
+        po1      := ffilelist.itempo(0);
+        for int1 := 0 to ffilelist.Count - 1 do
+        begin
+          if not (fa_dir in po1^.extinfo1.attributes) then
+            Inc(ffilecount);
+          Inc(po1);
+        end;
       end;
+    end
+    else if (fincludeattrib = [fa_all]) or not (fa_dir in fincludeattrib) then
+    begin
+      ffilelist.adddirectory(fdirectory, level1, nil, [fa_dir],
+        fexcludeattrib * [fa_hidden], foptionsdir, foncheckfile);
+      int1       := ffilelist.Count;
+      ffilelist.adddirectory(fdirectory, level1, fmaskar, fincludeattrib,
+        fexcludeattrib + [fa_dir], foptionsdir, foncheckfile);
+      ffilecount := ffilelist.Count - int1;
+    end
+    else
+    begin
+      ffilelist.adddirectory(fdirectory, level1, fmaskar,
+        fincludeattrib, fexcludeattrib, foptionsdir, foncheckfile);
+      ffilecount := ffilelist.Count;
+    end;
   finally
     endupdate;
-end;
-if assigned(fonlistread) then
-  begin
-    fonlistread(self);
   end;
+  if Assigned(fonlistread) then
+    fonlistread(self);
 end;
 
 procedure tfilelistview.updir;
-var 
+var
   str1: msestring;
   int1: integer;
 begin
-  str1 := removelastdir(fdirectory,fdirectory);
+  str1 := removelastdir(fdirectory, fdirectory);
   if str1 <> '' then
-    begin
-      readlist;
-      int1 := ffilelist.indexof(str1);
-      if int1 >= 0 then
-        begin
-          focuscell(indextocell(int1), fca_focusin);
-        end;
-    end;
+  begin
+    readlist;
+    int1 := ffilelist.indexof(str1);
+    if int1 >= 0 then
+      focuscell(indextocell(int1), fca_focusin);
+  end;
 end;
 
-procedure tfilelistview.setdirectory(Const Value: msestring);
+procedure tfilelistview.setdirectory(const Value: msestring);
 begin
-  fdirectory := filepath(value,fk_dir);
+  fdirectory := filepath(Value, fk_dir);
 end;
 
 function tfilelistview.getpath: msestring;
 begin
   if fmaskar = nil then
-    begin
-      result := filepath(fdirectory);
-    end
+    Result := filepath(fdirectory)
   else
-    begin
-      result := filepath(fdirectory,fmaskar[0]);
-    end;
+    Result := filepath(fdirectory, fmaskar[0]);
 end;
 
-procedure tfilelistview.setpath(Const Value: filenamety);
-var 
+procedure tfilelistview.setpath(const Value: filenamety);
+var
   str1: msestring;
 begin
-  splitfilepath(value,fdirectory,str1);
+  splitfilepath(Value, fdirectory, str1);
   mask := str1;
   readlist;
 end;
 
-procedure tfilelistview.setmask(Const value: filenamety);
+procedure tfilelistview.setmask(const Value: filenamety);
 begin
-  unquotefilename(value,fmaskar);
+  unquotefilename(Value, fmaskar);
 end;
 
 function tfilelistview.getmask: filenamety;
 begin
-  result := quotefilename(fmaskar);
+  Result := quotefilename(fmaskar);
 end;
 
 function tfilelistview.filecount: integer;
 begin
-  if ffilelist.count < ffilecount then
-    begin
-      ffilecount := 0;
-    end;
-  result := ffilecount;
+  if ffilelist.Count < ffilecount then
+    ffilecount := 0;
+  Result       := ffilecount;
 end;
 
-function tfilelistview.getchecksubdir: boolean;
+function tfilelistview.getchecksubdir: Boolean;
 begin
-  result := flvo_checksubdir In foptionsfile;
+  Result := flvo_checksubdir in foptionsfile;
 end;
 
-procedure tfilelistview.setchecksubdir(Const avalue: boolean);
+procedure tfilelistview.setchecksubdir(const avalue: Boolean);
 begin
   if avalue then
-    begin
-      include(foptionsfile,flvo_checksubdir);
-    end
+    include(foptionsfile, flvo_checksubdir)
   else
-    begin
-      exclude(foptionsfile,flvo_checksubdir);
-    end;
+    exclude(foptionsfile, flvo_checksubdir);
 end;
 
-procedure tfilelistview.setoptionsfile(Const avalue: filelistviewoptionsty);
-const 
+procedure tfilelistview.setoptionsfile(const avalue: filelistviewoptionsty);
+const
   mask1: filelistviewoptionsty = [flvo_maskcasesensitive, flvo_maskcaseinsensitive];
 begin
   if avalue <> foptionsfile then
-    begin
-      foptionsfile := filelistviewoptionsty(
-                      setsinglebit({$ifdef FPC}longword{$else}byte{$endif}(avalue),
-                               {$ifdef FPC}longword{$else}byte{$endif}(foptionsfile),
-                               {$ifdef FPC}longword{$else}byte{$endif}(mask1)));
-      foptionsdir := dirstreamoptionsty(foptionsfile) *
-                     [dso_casesensitive,dso_caseinsensitive];
-      checkcasesensitive;
-    end;
+  begin
+    foptionsfile := filelistviewoptionsty(
+      setsinglebit(
+{$ifdef FPC}
+      longword
+{$else}byte{$endif}
+      (avalue),
+                               {$ifdef FPC}
+      longword
+{$else}byte{$endif}
+      (foptionsfile),
+                               {$ifdef FPC}
+      longword
+{$else}byte{$endif}
+      (mask1)));
+    foptionsdir  := dirstreamoptionsty(foptionsfile) *
+      [dso_casesensitive, dso_caseinsensitive];
+    checkcasesensitive;
+  end;
 end;
 
 { tfilelistitem }
 
-constructor tfilelistitem.create(Const aowner: tcustomitemlist);
+constructor tfilelistitem.Create(const aowner: tcustomitemlist);
 begin
   inherited;
 end;
@@ -1396,101 +1213,81 @@ end;
 
 procedure tfileitemlist.createitem(out item: tlistitem);
 begin
-  item := tfilelistitem.create(self);
+  item := tfilelistitem.Create(self);
 end;
 
- { tfiledialogfo }
+{ tfiledialogfo }
 
-procedure Tfiledialogfo.createdironexecute(Const sender: TObject);
-var 
+procedure Tfiledialogfo.createdironexecute(const Sender: TObject);
+var
   mstr1: msestring;
 begin
   mstr1 := '';
   with stockobjects do
+    if stringenter(mstr1, captions[sc_name],
+      captions[sc_create_new_directory]) = mr_ok then
     begin
-      if stringenter(mstr1,captions[sc_name],
-         captions[sc_create_new_directory]) = mr_ok then
-        begin
-          mstr1 := filepath(listview.directory,mstr1,fk_file);
-          msefileutils.createdir(mstr1);
-          changedir(mstr1);
-          filename.setfocus;
-        end;
+      mstr1 := filepath(listview.directory, mstr1, fk_file);
+      msefileutils.createdir(mstr1);
+      changedir(mstr1);
+      filename.SetFocus;
     end;
 end;
 
-procedure tfiledialogfo.listviewselectionchanged(Const sender: tcustomlistview);
-var 
+procedure tfiledialogfo.listviewselectionchanged(const Sender: tcustomlistview);
+var
   ar1: msestringarty;
 begin
-  ar1 := Nil;
+  ar1 := nil;
   //compiler warning
   if not (fdo_directory in dialogoptions) then
+  begin
+    ar1 := listview.selectednames;
+    if length(ar1) > 0 then
     begin
-      ar1 := listview.selectednames;
-      if length(ar1) > 0 then
-        begin
-          if length(ar1) > 1 then
-            begin
-              filename.value := quotefilename(ar1);
-            end
-          else
-            begin
-              filename.value := ar1[0];
-            end;
-        end
+      if length(ar1) > 1 then
+        filename.Value := quotefilename(ar1)
       else
-        begin
-          //   filename.value:= ''; //dir chanaged
-        end;
-    end;
+      begin
+        filename.Value := ar1[0];
+      end;
+    end
+    else
+      //   filename.value:= ''; //dir chanaged
+    ;
+  end;
 end;
 
-function tfiledialogfo.changedir(Const adir: filenamety): boolean;
+function tfiledialogfo.changedir(const adir: filenamety): Boolean;
 begin
-  result := tryreadlist(filepath(adir),true);
-  if result then
-    begin
-      course(adir);
-    end;
+  Result := tryreadlist(filepath(adir), True);
+  if Result then
+    course(adir);
   with listview do
-    begin
-      if filelist.count > 0 then
-        begin
-          focuscell(makegridcoord(0,0));
-        end;
-    end;
+    if filelist.Count > 0 then
+      focuscell(makegridcoord(0, 0));
 end;
 
-procedure tfiledialogfo.listviewitemevent(Const sender: tcustomlistview;
-                                          Const index: Integer; Var info: celleventinfoty);
-var 
+procedure tfiledialogfo.listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
+var
   str1: filenamety;
 begin
-  with tfilelistview(sender) do
-    begin
-      if iscellclick(info) then
-        begin
-          if filelist.isdir(index) then
-            begin
-              str1 := filepath(directory+filelist[index].name);
-              changedir(str1);
-            end
-          else
-            begin
-              if info.eventkind = cek_keydown then
-                begin
-                  system.exclude(info.keyeventinfopo^.eventstate,es_processed);
-                  //do not eat key_return
-                end;
-              if iscellclick(info,[ccr_dblclick,ccr_nokeyreturn]) and
-                 (length(fdatacols.selectedcells) = 1) then
-                begin
-                  okonexecute(Nil);
-                end;
-            end;
-        end;
-    end;
+  with tfilelistview(Sender) do
+    if iscellclick(info) then
+      if filelist.isdir(index) then
+      begin
+        str1 := filepath(directory + filelist[index].Name);
+        changedir(str1);
+      end
+      else
+      begin
+        if info.eventkind = cek_keydown then
+          system.exclude(info.keyeventinfopo^.eventstate, es_processed)//do not eat key_return
+        ;
+        if iscellclick(info, [ccr_dblclick, ccr_nokeyreturn]) and
+          (length(fdatacols.selectedcells) = 1) then
+          okonexecute(nil);
+      end;
 end;
 
 procedure tfiledialogfo.doup();
@@ -1499,19 +1296,17 @@ begin
   course(listview.directory);
 end;
 
-procedure tfiledialogfo.listviewonkeydown(Const sender: twidget; Var info: keyeventinfoty);
+procedure tfiledialogfo.listviewonkeydown(const Sender: twidget; var info: keyeventinfoty);
 begin
   with info do
+    if (key = key_pageup) and (shiftstate = [ss_ctrl]) then
     begin
-      if (key = key_pageup) and (shiftstate = [ss_ctrl]) then
-        begin
-          doup();
-          include(info.eventstate,es_processed);
-        end;
+      doup();
+      include(info.eventstate, es_processed);
     end;
 end;
 
-procedure Tfiledialogfo.upaction(Const sender: TObject);
+procedure Tfiledialogfo.upaction(const Sender: TObject);
 begin
   doup();
 end;
@@ -1551,38 +1346,33 @@ begin
  end;
 end;
 }
-function tfiledialogfo.tryreadlist(Const adir: filenamety;
-                                   Const errormessage: boolean): boolean;
-//restores old dir on error
-var 
+function tfiledialogfo.tryreadlist(const adir: filenamety; const errormessage: Boolean): Boolean;
+  //restores old dir on error
+var
   dirbefore: filenamety;
 begin
   dirbefore := listview.directory;
   listview.directory := adir;
-  result := false;
+  Result := False;
   try
     listview.readlist;
-    result := true;
+    Result := True;
   except
     on ex: esys do
-           begin
-             result := false;
-             if errormessage then
-               begin
-                 with stockobjects do
-                   begin
-                     showerror(captions[sc_can_not_read_directory]+ ' ' +
-                               msestring(esys(ex).text), captions[sc_error]);
-                   end;
-               end;
-           end;
+    begin
+      Result := False;
+      if errormessage then
+        with stockobjects do
+          showerror(captions[sc_can_not_read_directory] + ' ' +
+            msestring(esys(ex).Text), captions[sc_error]);
+    end;
     else
-      begin
-        result := false;
-        application.handleexception(self);
-      end;
-end;
-if not result then
+    begin
+      Result := False;
+      application.handleexception(self);
+    end;
+  end;
+  if not Result then
   begin
     listview.directory := dirbefore;
     try
@@ -1590,468 +1380,406 @@ if not result then
     except
       listview.directory := '';
       listview.readlist;
+    end;
   end;
 end;
-end;
 
-procedure Tfiledialogfo.filenamesetvalue(Const sender: TObject;
-                                         Var avalue: msestring;  Var accept: Boolean);
-var 
+procedure Tfiledialogfo.filenamesetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
+var
   str1, str2, str3: filenamety;
   // ar1: msestringarty;
-  bo1: boolean;
+  bo1: Boolean;
   newdir: filenamety;
 begin
   newdir := '';
   avalue := trim(avalue);
-  unquotefilename(avalue,fselectednames);
+  unquotefilename(avalue, fselectednames);
   if (fdo_single in dialogoptions) and (high(fselectednames) > 0) then
-    begin
-      with stockobjects do
-        begin
-          showmessage(captions[sc_single_item_only]+'.',captions[sc_error]);
-        end;
-      accept := false;
-      exit;
-    end;
-  bo1 := false;
+  begin
+    with stockobjects do
+      ShowMessage(captions[sc_single_item_only] + '.', captions[sc_error]);
+    accept := False;
+    Exit;
+  end;
+  bo1 := False;
   if high(fselectednames) > 0 then
+  begin
+    str1 := extractrootpath(fselectednames);
+    if str1 <> '' then
     begin
-      str1 := extractrootpath(fselectednames);
-      if str1 <> '' then
-        begin
-          bo1 := true;
-          newdir := str1;
-          avalue := quotefilename(fselectednames);
-        end;
-    end
-  else
-    begin
-      str3 := filepath(listview.directory,avalue);
-      splitfilepath(str3,str1,str2);
+      bo1    := True;
       newdir := str1;
-      if hasmaskchars(str2) then
-        begin
-          filter.value := str2;
-          listview.mask := str2;
-          str2 := '';
-        end
-      else
-        begin
-          if searchfile(str3,true) <> '' then
-            begin
-              newdir := str3;
-              str2 := '';
-            end;
-        end;
-      avalue := str2;
-      if str2 = '' then
-        begin
-          fselectednames := Nil;
-        end
-      else
-        begin
-          setlength(fselectednames,1);
-          fselectednames[0] := str2;
-        end;
-      bo1 := true;
+      avalue := quotefilename(fselectednames);
     end;
-  if bo1 then
+  end
+  else
+  begin
+    str3   := filepath(listview.directory, avalue);
+    splitfilepath(str3, str1, str2);
+    newdir := str1;
+    if hasmaskchars(str2) then
     begin
-      if tryreadlist(newdir,not finit) then
-        begin
-          if  finit then
-            begin
-              setlength(fcourse,1);
-              fcourse[0] := newdir;
-              fcourseid := 0;
-            end
-          else
-            begin
-              course(newdir);
-            end;
-        end;
-      if fdo_directory in dialogoptions then
-        begin
-          avalue := listview.directory;
-        end;
+      filter.Value  := str2;
+      listview.mask := str2;
+      str2          := '';
+    end
+    else if searchfile(str3, True) <> '' then
+    begin
+      newdir := str3;
+      str2   := '';
     end;
+    avalue := str2;
+    if str2 = '' then
+      fselectednames    := nil
+    else
+    begin
+      setlength(fselectednames, 1);
+      fselectednames[0] := str2;
+    end;
+    bo1 := True;
+  end;
+  if bo1 then
+  begin
+    if tryreadlist(newdir, not finit) then
+      if finit then
+      begin
+        setlength(fcourse, 1);
+        fcourse[0] := newdir;
+        fcourseid  := 0;
+      end
+      else
+        course(newdir);
+    if fdo_directory in dialogoptions then
+      avalue := listview.directory;
+  end;
   listview.selectednames := fselectednames;
 end;
 
-procedure tfiledialogfo.filepathentered(Const sender: tobject);
+procedure tfiledialogfo.filepathentered(const Sender: TObject);
 begin
-  tryreadlist(listview.directory,true);
+  tryreadlist(listview.directory, True);
   // readlist;
 end;
 
-procedure tfiledialogfo.dironsetvalue(Const sender: TObject;
-                                      Var avalue: mseString; Var accept: Boolean);
+procedure tfiledialogfo.dironsetvalue(const Sender: TObject; var avalue: mseString; var accept: Boolean);
 begin
-  //
-  accept := tryreadlist(avalue,true);
+
+  accept := tryreadlist(avalue, True);
   if accept then
-    begin
-      course(avalue);
-    end;
+    course(avalue);
   // listview.directory:= avalue;
 end;
 
-procedure tfiledialogfo.listviewonlistread(Const sender: tobject);
-var 
-  x, y, z : integer;
+procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
+var
+  x, y, y2, z: integer;
   info: fileinfoty;
-  thedir, thestrnum, tmp : string;
+  thedir, thestrnum, thestrfract, tmp, tmp2: string;
 begin
   with listview do
-    begin
-      dir.value := directory;
-      //  if fa_dir in finclude then begin
-      if fdo_directory in self.dialogoptions then
-        begin
-          filename.value := directory;
-        end;
-    end;
+  begin
+    dir.Value        := directory;
+    if fdo_directory in self.dialogoptions then
+      filename.Value := directory;
+  end;
 
   list_log.rowcount := listview.rowcount;
 
   for x := 0 to listview.rowcount - 1 do
-    begin
-      list_log[0][x] := '';
-      list_log[1][x] := '';
-      list_log[2][x] := '';
-      list_log[3][x] := '';
-      list_log[4][x] := '';
-    end;
+  begin
+    list_log[0][x] := '';
+    list_log[1][x] := '';
+    list_log[2][x] := '';
+    list_log[3][x] := '';
+    list_log[4][x] := '';
+  end;
 
-  if  listview.rowcount > 0 then
+  if listview.rowcount > 0 then
+    for x := 0 to listview.rowcount - 1 do
     begin
-      // list_log.visible := true;
+      list_log[4][x] := IntToStr(x);
 
-      for x := 0 to listview.rowcount - 1 do
+      if not listview.filelist.isdir(x) then
+      begin
+        list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
+        tmp := fileext(listview.itemlist[x].Caption);
+        if tmp <> '' then
+          tmp := '.' + tmp;
+
+        list_log[1][x] := utf8decode(tmp);
+
+        thedir := dir.Value + trim(list_log[0][x] + tmp);
+
+      end
+      else
+      begin
+        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
+        list_log[1][x] := '';
+        thedir         := dir.Value + trim(list_log[0][x]);
+      end;
+
+      getfileinfo(utf8decode(trim(thedir)), info);
+
+      if not listview.filelist.isdir(x) then
+      begin
+        y := info.extinfo1.size div 1000;
+
+        if info.extinfo1.size > 0 then
         begin
-          list_log[4][x] := inttostr(x);
-         
-         if not listview.filelist.isdir(x) then
-            begin
-          list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].caption));
-          tmp := fileext(listview.itemlist[x].caption);
-          if tmp <> '' then tmp := '.' + tmp;
-          
-          list_log[1][x] := utf8decode(tmp);
-          
-          thedir :=  dir.value + trim(list_log[0][x]+ tmp) 
-          
-          end else
+          if info.extinfo1.size div 1000 > 0 then
+            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1))
+          else
           begin
-          list_log[0][x] := '     ' +utf8decode(listview.itemlist[x].caption);
-          list_log[1][x] := '';
-          thedir :=  dir.value + trim(list_log[0][x]);
+            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 3));
           end;
+        end
+        else
+          y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
 
-          getfileinfo(utf8decode(trim(thedir)) , info);
-          
-          if not listview.filelist.isdir(x) then
-            begin
-              if info.extinfo1.size > 0 then
-                begin
-                  if info.extinfo1.size div 1024 > 0 then y := info.extinfo1.size Div 1024
-                  else y := 1;
-                end
-              else y := 0;
-              
-              thestrnum := IntToStr(y);
-              
-               z := Length(thestrnum) ; 
-               
-               if z < 7 then 
-                for y := 0 to 6 - z do
-                  thestrnum := ' ' + thestrnum;
-                           
-              list_log[2][x] := thestrnum + ' Kb';
-            end;
 
-          list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss',info.extinfo1.modtime);
+        thestrnum := IntToStr(y);
 
-        end;
+        z := Length(thestrnum);
+
+        if z < 15 then
+          for y := 0 to 14 - z do
+            thestrnum := ' ' + thestrnum;
+
+        thestrfract := '.' + IntToStr(y2);
+
+
+        list_log[2][x] := thestrnum + thestrfract + ' KB';
+      end;
+
+      list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
+
     end;
 end;
 
 procedure tfiledialogfo.updatefiltertext;
 begin
-  with filter,dropdown do
+  with filter, dropdown do
+    if ItemIndex >= 0 then
     begin
-      if itemindex >= 0 then
-        begin
-          value := cols[0][itemindex];
-          listview.mask := cols[1][itemindex];
-        end;
+      Value         := cols[0][ItemIndex];
+      listview.mask := cols[1][ItemIndex];
     end;
 end;
 
-procedure tfiledialogfo.filteronafterclosedropdown(Const sender: tobject);
+procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
 end;
 
-procedure tfiledialogfo.filteronsetvalue(Const sender: tobject;
-                                         Var avalue: msestring; Var accept: boolean);
+procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
   listview.mask := avalue;
 end;
 
-procedure tfiledialogfo.okonexecute(Const sender: tobject);
-var 
-  bo1: boolean;
+procedure tfiledialogfo.okonexecute(const Sender: TObject);
+var
+  bo1: Boolean;
   int1: integer;
   str1: filenamety;
 begin
 
-  if (debuggerfo.project_history.tag = 1)  then
+  if (debuggerfo.project_history.tag = 1) then
+  begin
+    debuggerfo.project_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
+
+    debuggerfo.project_history.Value := dir.Value + filename.Value;
+
+  end
+  else if (debuggerfo.project_history.tag = 2) then
+  begin
+    debuggerfo.file_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
+    debuggerfo.file_history.Value := dir.Value + filename.Value;
+  end;
+
+  debuggerfo.project_history.tag := 0;
+
+  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) then
+  begin
+    if fdo_directory in dialogoptions then
+      str1 := quotefilename(listview.directory)
+    else
     begin
-      debuggerfo.project_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
-
-      debuggerfo.project_history.value := dir.value + filename.value;
-
-    end
-  else
-    if (debuggerfo.project_history.tag = 2)  then
-      begin
-        debuggerfo.file_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
-        debuggerfo.file_history.value := dir.value + filename.value;
-      end;
-
-  debuggerfo.project_history.tag := 0 ;
-
-  if (filename.value <> '') or (fdo_acceptempty in dialogoptions) then
+      str1 := quotefilename(listview.directory, filename.Value);
+    end;
+    unquotefilename(str1, filenames);
+    if (defaultext <> '') then
+      for int1 := 0 to high(filenames) do
+        if not hasfileext(filenames[int1]) then
+          filenames[int1] := filenames[int1] + '.' + defaultext;
+    if (fdo_checkexist in dialogoptions) and not ((filename.Value = '') and (fdo_acceptempty in dialogoptions)) then
     begin
       if fdo_directory in dialogoptions then
-        begin
-          str1 := quotefilename(listview.directory);
-        end
+        bo1 := finddir(filenames[0])
       else
-        begin
-          str1 := quotefilename(listview.directory,filename.value);
-        end;
-      unquotefilename(str1,filenames);
-      if (defaultext <> '') then
-        begin
-          for int1:= 0 to high(filenames) do
+        bo1 := findfile(filenames[0]);
+      if fdo_save in dialogoptions then
+      begin
+        if bo1 then
+          with stockobjects do
+            if not askok(captions[sc_file] + ' "' + filenames[0] +
+              '" ' + captions[sc_exists_overwrite],
+              captions[sc_warningupper]) then
             begin
-              if not hasfileext(filenames[int1]) then
-                begin
-                  filenames[int1] := filenames[int1] + '.'+defaultext;
-                end;
+              //      if not askok('File "'+filenames[0]+
+              //            '" exists, do you want to overwrite?','WARNING') then begin
+              filename.SetFocus;
+              Exit;
             end;
-        end;
-      if (fdo_checkexist in dialogoptions) and
-         not ((filename.value = '') and (fdo_acceptempty in dialogoptions)) then
-        begin
-          if fdo_directory in dialogoptions then
-            begin
-              bo1 := finddir(filenames[0]);
-            end
-          else
-            begin
-              bo1 := findfile(filenames[0]);
-            end;
-          if fdo_save in dialogoptions then
-            begin
-              if bo1 then
-                begin
-                  with stockobjects do
-                    begin
-                      if not askok(captions[sc_file]+' "'+filenames[0]+
-                         '" '+ captions[sc_exists_overwrite],
-                         captions[sc_warningupper]) then
-                        begin
-                          //      if not askok('File "'+filenames[0]+
-                          //            '" exists, do you want to overwrite?','WARNING') then begin
-                          filename.setfocus;
-                          exit;
-                        end;
-                    end;
-                end;
-            end
-          else
-            begin
-              if not bo1 then
-                begin
-                  with stockobjects do
-                    begin
-                      showerror(captions[sc_file]+' "'+filenames[0]+'" '+
-                                captions[sc_does_not_exist]+'.',
-                                captions[sc_errorupper]);
-                    end;
-                  //      showerror('File "'+filenames[0]+'" does not exist.');
-                  filename.setfocus;
-                  exit;
-                end;
-            end;
-        end;
-      window.modalresult := mr_ok;
-    end
-  else
-    begin
-      filename.setfocus;
+      end
+      else if not bo1 then
+      begin
+        with stockobjects do
+          showerror(captions[sc_file] + ' "' + filenames[0] + '" ' +
+            captions[sc_does_not_exist] + '.',
+            captions[sc_errorupper]);
+        //      showerror('File "'+filenames[0]+'" does not exist.');
+        filename.SetFocus;
+        Exit;
+      end;
     end;
+    window.modalresult := mr_ok;
+  end
+  else
+    filename.SetFocus;
   // end;
 end;
 
-procedure tfiledialogfo.layoutev(Const sender: TObject);
+procedure tfiledialogfo.layoutev(const Sender: TObject);
 begin
   // placeyorder(2,[2],[dir,listview],2);
   // aligny(wam_center,[dir,back,forward,home,up,createdir]);
   // aligny(wam_center,[filename,showhidden]);
-  if ok.height <= filter.height then
-    begin
-      //  aligny(wam_center,[filter,ok,cancel]);
-    end
+  if ok.Height <= filter.Height then
+  //  aligny(wam_center,[filter,ok,cancel]);
+
   else
-    begin
-      //  ok.top:= showhidden.bottom + 4;
-      // aligny(wam_center,[ok,cancel]);
-    end;
-  // syncpaintwidth([filename,filter],namecont.bounds_cx);
+    //  ok.top:= showhidden.bottom + 4;
+    // aligny(wam_center,[ok,cancel]);
+  ;
+    // syncpaintwidth([filename,filter],namecont.bounds_cx);
   listview.synctofontheight;
 end;
 
-procedure tfiledialogfo.showhiddenonsetvalue(Const sender: TObject;
-                                             Var avalue: Boolean; Var accept: Boolean);
+procedure tfiledialogfo.showhiddenonsetvalue(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
-  dir.showhiddenfiles := avalue;
+  dir.showhiddenfiles      := avalue;
   if avalue then
-    begin
-      listview.excludeattrib := listview.excludeattrib - [fa_hidden];
-    end
+    listview.excludeattrib := listview.excludeattrib - [fa_hidden]
   else
-    begin
-      listview.excludeattrib := listview.excludeattrib + [fa_hidden];
-    end;
+    listview.excludeattrib := listview.excludeattrib + [fa_hidden];
   listview.readlist;
 end;
 
-procedure tfiledialogfo.formoncreate(Const sender: TObject);
+procedure tfiledialogfo.formoncreate(const Sender: TObject);
 begin
-  fcourseid := -1;
-  font.height := confideufo.fontsize.value;
-  font.name := ansistring(confideufo.fontname.value);
+  fcourseid   := -1;
+  font.Height := confideufo.fontsize.Value;
+  font.Name   := ansistring(confideufo.fontname.Value);
 
   with stockobjects do
-    begin
-      // dir.frame.caption:= captions[sc_dirhk];
-      home.caption := captions[sc_homehk];
-      //  up.caption:= captions[sc_uphk];
-      createdir.caption := captions[sc_new_dirhk];
-      // filename.frame.caption:= captions[sc_namehk];
-      filter.frame.caption := captions[sc_filterhk];
-      //  showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
-      ok.caption := modalresulttext[mr_ok];
-      cancel.caption := modalresulttext[mr_cancel];
+  begin
+    // dir.frame.caption:= captions[sc_dirhk];
+    home.Caption         := captions[sc_homehk];
+    //  up.caption:= captions[sc_uphk];
+    createdir.Caption    := captions[sc_new_dirhk];
+    // filename.frame.caption:= captions[sc_namehk];
+    filter.frame.Caption := captions[sc_filterhk];
+    //  showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
+    ok.Caption           := modalresulttext[mr_ok];
+    cancel.Caption       := modalresulttext[mr_cancel];
 
-      // caption := 'Select a file';
-    end;
-  back.tag := ord(sc_back);
-  forward.tag := ord(sc_forward);
-  up.tag := ord(sc_up);
+    // caption := 'Select a file';
+  end;
+  back.tag    := Ord(sc_back);
+  forward.tag := Ord(sc_forward);
+  up.tag      := Ord(sc_up);
 end;
 
-procedure tfiledialogfo.dirshowhint(Const sender: TObject;
-                                    Var info: hintinfoty);
+procedure tfiledialogfo.dirshowhint(const Sender: TObject; var info: hintinfoty);
 begin
   if dir.editor.textclipped then
-    begin
-      info.caption := dir.value;
-    end;
+    info.Caption := dir.Value;
 end;
 
-procedure tfiledialogfo.copytoclip(Const sender: TObject; Var avalue: msestring);
+procedure tfiledialogfo.copytoclip(const Sender: TObject; var avalue: msestring);
 begin
   tosysfilepath1(avalue);
 end;
 
-procedure tfiledialogfo.pastefromclip(Const sender: TObject;
-                                      Var avalue: msestring);
+procedure tfiledialogfo.pastefromclip(const Sender: TObject; var avalue: msestring);
 begin
   tomsefilepath1(avalue);
 end;
 
-procedure tfiledialogfo.homeaction(Const sender: TObject);
+procedure tfiledialogfo.homeaction(const Sender: TObject);
 begin
-  if tryreadlist(sys_getuserhomedir,true) then
-    begin
-      dir.value := listview.directory;
-      course(listview.directory);
-    end;
+  if tryreadlist(sys_getuserhomedir, True) then
+  begin
+    dir.Value := listview.directory;
+    course(listview.directory);
+  end;
 end;
 
 procedure tfiledialogfo.checkcoursebuttons();
 begin
-  back.enabled := fcourseid > 0;
-  forward.enabled := fcourseid < high(fcourse);
+  back.Enabled    := fcourseid > 0;
+  forward.Enabled := fcourseid < high(fcourse);
 end;
 
-procedure tfiledialogfo.course(Const adir: filenamety);
+procedure tfiledialogfo.course(const adir: filenamety);
 begin
   if not fcourselock then
-    begin
-      inc(fcourseid);
-      setlength(fcourse,fcourseid+1);
-      fcourse[fcourseid] := adir;
-      checkcoursebuttons();
-    end;
+  begin
+    Inc(fcourseid);
+    setlength(fcourse, fcourseid + 1);
+    fcourse[fcourseid] := adir;
+    checkcoursebuttons();
+  end;
 end;
 
-procedure tfiledialogfo.backexe(Const sender: TObject);
+procedure tfiledialogfo.backexe(const Sender: TObject);
 begin
-  fcourselock := true;
+  fcourselock := True;
   try
-    dec(fcourseid);
+    Dec(fcourseid);
     if changedir(fcourse[fcourseid]) then
-      begin
-        checkcoursebuttons();
-      end
+      checkcoursebuttons()
     else
-      begin
-        inc(fcourseid);
-      end;
+      Inc(fcourseid);
   finally
-    fcourselock := false;
-end;
+    fcourselock := False;
+  end;
 end;
 
-procedure tfiledialogfo.forwardexe(Const sender: TObject);
+procedure tfiledialogfo.forwardexe(const Sender: TObject);
 begin
-  fcourselock := true;
+  fcourselock := True;
   try
-    inc(fcourseid);
+    Inc(fcourseid);
     if changedir(fcourse[fcourseid]) then
-      begin
-        checkcoursebuttons();
-      end
+      checkcoursebuttons()
     else
-      begin
-        dec(fcourseid);
-      end;
+      Dec(fcourseid);
   finally
-    fcourselock := false;
-end;
+    fcourselock := False;
+  end;
 end;
 
-procedure tfiledialogfo.buttonshowhint(Const sender: TObject;
-                                       Var ainfo: hintinfoty);
+procedure tfiledialogfo.buttonshowhint(const Sender: TObject; var ainfo: hintinfoty);
 begin
-  with tcustombutton(sender) do
-    begin
-      ainfo.caption := sc(stockcaptionty(tag))+' '+
-                       '('+encodeshortcutname(shortcut)+')';
-    end;
+  with tcustombutton(Sender) do
+    ainfo.Caption := sc(stockcaptionty(tag)) + ' ' +
+      '(' + encodeshortcutname(shortcut) + ')';
 end;
 
-procedure tfiledialogfo.oncellev(Const sender: TObject;
-                                 Var info: celleventinfoty);
-var 
+procedure tfiledialogfo.oncellev(const Sender: TObject; var info: celleventinfoty);
+var
   cellpos, cellpos2: gridcoordty;
   x, y: integer;
   str1: string;
@@ -2059,612 +1787,470 @@ begin
   cellpos := info.cell;
 
   if (info.eventkind = cek_buttonrelease) then
+    if (cellpos.row > -1) then
     begin
+      cellpos.col  := 0;
+      cellpos2.col := 0;
 
-      if  (cellpos.row > -1) then
-        begin
-          cellpos.col := 0;
-          cellpos2.col := 0;
+      y := StrToInt(list_log[4][cellpos.row]);
+      cellpos2.row := y;
 
-          y := strtoint(list_log[4][cellpos.row]);
-          cellpos2.row := y;
+      if listview.filelist.isdir(y) then
+      begin
+        listview.defocuscell;
+        listview.datacols.clearselection;
+        list_log.datacols.clearselection;
+        list_log.defocuscell;
+        //   str1 := filepath(dir.value+listview.filelist[cellpos.row].name);
+        str1 := filepath(dir.Value + listview.filelist[y].Name);
+        changedir(str1);
 
-          if listview.filelist.isdir(y) then
-            begin
-              listview.defocuscell;
-              listview.datacols.clearselection;
-              list_log.datacols.clearselection;
-              list_log.defocuscell;
-              //   str1 := filepath(dir.value+listview.filelist[cellpos.row].name);
-              str1 := filepath(dir.value+listview.filelist[y].name);
-              changedir(str1);
+      end
+      else
+      begin
 
-            end
-          else
-            begin
+        listview.defocuscell;
+        list_log.defocuscell;
+        listview.datacols.clearselection;
+        listview.selectcell(cellpos2, csm_select, False);
+        list_log.datacols.clearselection;
+        list_log.selectcell(cellpos, csm_select, False);
+        if (listview.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
+          .mouseeventinfopo^.shiftstate) then
+          okonexecute(Sender);
 
-              listview.defocuscell;
-              list_log.defocuscell;
-              listview.datacols.clearselection;
-              listview.selectcell(cellpos2, csm_select, False);
-              list_log.datacols.clearselection;
-              list_log.selectcell(cellpos, csm_select, False);
-              if (listview.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
-                 .mouseeventinfopo^.shiftstate) then
-                okonexecute(sender);
-
-            end;
-
-        end;
+      end;
 
     end;
 end;
 
-procedure tfiledialogfo.ondrawcell(Const sender: tcol; Const canvas: tcanvas;
-                                   Var cellinfo: cellinfoty);
-var 
+procedure tfiledialogfo.ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+var
   aicon: integer;
-
 begin
 
-  if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '')  then aicon := 
-                                                                                                   0
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.htlm') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then aicon := 2
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.lpi') or 
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.lpr') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.prj') or 
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.pp') then aicon := 8
-   else 
-   if (lowercase(list_log[1][cellinfo.cell.row]) = '.lps') or 
-      (lowercase(list_log[1][cellinfo.cell.row]) = '.mfm')  then aicon := 9
-    else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.java') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.js') or 
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.class') then aicon := 10
-   else   
-       if (lowercase(list_log[1][cellinfo.cell.row]) = '.c') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.cc') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.cpp') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.h') then aicon := 11
-   else   
-       if (lowercase(list_log[1][cellinfo.cell.row]) = '.py') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') then aicon := 12
-   else    
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.wav') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.m4a') or 
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.mp3') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.opus') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.flac') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.ogg') then aicon := 3
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.avi') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.mp4') then aicon := 4
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.png') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.jpeg') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.ico') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.webp') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.bmp') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.tiff') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.gif') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.svg') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.jpg') then aicon := 7
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.exe') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.com') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.bat') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.bin') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.dll') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.res') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.so') then aicon := 5
-  else
-    if (lowercase(list_log[1][cellinfo.cell.row]) = '.zip') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.iso') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.cab') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.torrent') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.7z') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.txz') or 
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.rpm') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.tar') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.gz') or
-       (lowercase(list_log[1][cellinfo.cell.row]) = '.deb') then aicon := 6
+  if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
+    aicon :=
+      0
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.htlm') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then
+    aicon := 2
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.lpi') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.lpr') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.prj') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.pp') then
+    aicon := 8
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.lps') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.mfm') then
+    aicon := 9
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.java') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.js') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.class') then
+    aicon := 10
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.c') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.cc') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.cpp') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.h') then
+    aicon := 11
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.py') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') then
+    aicon := 12
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.wav') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.m4a') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.mp3') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.opus') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.flac') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.ogg') then
+    aicon := 3
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.avi') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.mp4') then
+    aicon := 4
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.png') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.jpeg') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.ico') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.webp') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.bmp') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.tiff') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.gif') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.svg') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.jpg') then
+    aicon := 7
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.exe') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.com') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.bat') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.bin') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.dll') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.res') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.so') then
+    aicon := 5
+  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.zip') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.iso') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.cab') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.torrent') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.7z') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.txz') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.rpm') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.tar') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.gz') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.deb') then
+    aicon := 6
   else
     aicon := 1;
 
-  iconslist.paint(canvas, aicon, nullpoint, cl_default,
-                  cl_default, cl_default, 0);
+  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+    cl_default, cl_default, 0);
 
 end;
 
 
 { tfiledialogcontroller }
 
-constructor tfiledialogcontroller.create(Const aowner: tmsecomponent = Nil;
-                                         Const onchange: proceventty = Nil);
+constructor tfiledialogcontroller.Create(const aowner: tmsecomponent = nil; const onchange: proceventty = nil);
 begin
   foptions := defaultfiledialogoptions;
 
   fhistorymaxcount := defaulthistorymaxcount;
-  fowner := aowner;
-  ffilterlist := tdoublemsestringdatalist.create;
-  finclude := [fa_all];
-  fexclude := [fa_hidden];
-  fonchange := onchange;
-  inherited create;
+  fowner           := aowner;
+  ffilterlist      := tdoublemsestringdatalist.Create;
+  finclude         := [fa_all];
+  fexclude         := [fa_hidden];
+  fonchange        := onchange;
+  inherited Create;
 end;
 
-destructor tfiledialogcontroller.destroy;
+destructor tfiledialogcontroller.Destroy;
 begin
   inherited;
   ffilterlist.Free;
 end;
 
-procedure tfiledialogcontroller.readstatvalue(Const reader: tstatreader);
+procedure tfiledialogcontroller.readstatvalue(const reader: tstatreader);
 begin
-  ffilenames := reader.readarray('filenames',ffilenames);
+  ffilenames := reader.readarray('filenames', ffilenames);
   if fdo_params in foptions then
-    begin
-      fparams := reader.readmsestring('params',fparams);
-    end;
+    fparams  := reader.readmsestring('params', fparams);
 end;
 
-procedure tfiledialogcontroller.readstatstate(Const reader: tstatreader);
+procedure tfiledialogcontroller.readstatstate(const reader: tstatreader);
 begin
-  ffilterindex := reader.readinteger('filefilterindex',ffilterindex);
-  ffilter := reader.readmsestring('filefilter',ffilter);
-  fwindowrect.x := reader.readinteger('x',fwindowrect.x);
-  fwindowrect.y := reader.readinteger('y',fwindowrect.y);
-  fwindowrect.cx := reader.readinteger('cx',fwindowrect.cx);
-  fwindowrect.cy := reader.readinteger('cy',fwindowrect.cy);
-  fcolwidth := reader.readinteger('filecolwidth',fcolwidth);
+  ffilterindex   := reader.readinteger('filefilterindex', ffilterindex);
+  ffilter        := reader.readmsestring('filefilter', ffilter);
+  fwindowrect.x  := reader.readinteger('x', fwindowrect.x);
+  fwindowrect.y  := reader.readinteger('y', fwindowrect.y);
+  fwindowrect.cx := reader.readinteger('cx', fwindowrect.cx);
+  fwindowrect.cy := reader.readinteger('cy', fwindowrect.cy);
+  fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
   if fdo_chdir in foptions then
-    begin
-      //  try
-      trysetcurrentdirmse(flastdir);
-      //  except
-      //  end;
-    end;
+    trysetcurrentdirmse(flastdir)//  try
+  //  except
+  //  end;
+  ;
 end;
 
-procedure tfiledialogcontroller.readstatoptions(Const reader: tstatreader);
+procedure tfiledialogcontroller.readstatoptions(const reader: tstatreader);
 begin
   if fdo_savelastdir in foptions then
-    begin
-      flastdir := reader.readmsestring('lastdir',flastdir);
-    end;
+    flastdir := reader.readmsestring('lastdir', flastdir);
   if fhistorymaxcount > 0 then
-    begin
-      fhistory := reader.readarray('filehistory',fhistory);
-    end;
+    fhistory := reader.readarray('filehistory', fhistory);
 end;
 
-procedure tfiledialogcontroller.writestatvalue(Const writer: tstatwriter);
+procedure tfiledialogcontroller.writestatvalue(const writer: tstatwriter);
 begin
-  writer.writearray('filenames',ffilenames);
+  writer.writearray('filenames', ffilenames);
   if fdo_params in foptions then
-    begin
-      writer.writemsestring('params',fparams);
-    end;
+    writer.writemsestring('params', fparams);
 end;
 
-procedure tfiledialogcontroller.writestatstate(Const writer: tstatwriter);
+procedure tfiledialogcontroller.writestatstate(const writer: tstatwriter);
 begin
-  writer.writeinteger('filecolwidth',fcolwidth);
-  writer.writeinteger('x',fwindowrect.x);
-  writer.writeinteger('y',fwindowrect.y);
-  writer.writeinteger('cx',fwindowrect.cx);
-  writer.writeinteger('cy',fwindowrect.cy);
+  writer.writeinteger('filecolwidth', fcolwidth);
+  writer.writeinteger('x', fwindowrect.x);
+  writer.writeinteger('y', fwindowrect.y);
+  writer.writeinteger('cx', fwindowrect.cx);
+  writer.writeinteger('cy', fwindowrect.cy);
 end;
 
-procedure tfiledialogcontroller.writestatoptions(Const writer: tstatwriter);
+procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
 begin
   if fdo_savelastdir in foptions then
-    begin
-      writer.writemsestring('lastdir',flastdir);
-    end;
+    writer.writemsestring('lastdir', flastdir);
   if fhistorymaxcount > 0 then
-    begin
-      writer.writearray('filehistory',fhistory);
-    end;
-  writer.writeinteger('filefilterindex',ffilterindex);
-  writer.writemsestring('filefilter',ffilter);
+    writer.writearray('filehistory', fhistory);
+  writer.writeinteger('filefilterindex', ffilterindex);
+  writer.writemsestring('filefilter', ffilter);
 end;
 
-procedure tfiledialogcontroller.componentevent(Const event: tcomponentevent);
+procedure tfiledialogcontroller.componentevent(const event: tcomponentevent);
 begin
-  if (fdo_link in foptions) and (event.sender <> self) and
-     (event.sender is tfiledialogcontroller) then
-    begin
-      with tfiledialogcontroller(event.sender) do
-        begin
-          if fgroup = self.fgroup then
-            begin
-              self.flastdir := flastdir;
-            end;
-        end;
-    end;
+  if (fdo_link in foptions) and (event.Sender <> self) and
+    (event.Sender is tfiledialogcontroller) then
+    with tfiledialogcontroller(event.Sender) do
+      if fgroup = self.fgroup then
+        self.flastdir := flastdir;
 end;
 
 procedure tfiledialogcontroller.checklink;
 begin
   if (fdo_link in foptions) and (fowner <> nil) then
-    begin
-      fowner.sendrootcomponentevent(tcomponentevent.create(self), true);
-    end;
+    fowner.sendrootcomponentevent(tcomponentevent.Create(self), True);
 end;
 
-function tfiledialogcontroller.execute(dialogkind: filedialogkindty;
-                                       Const acaption: msestring;
-                                       aoptions: filedialogoptionsty): modalresultty;
-var 
+function tfiledialogcontroller.Execute(dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): modalresultty;
+var
   po1: pmsestringarty;
   fo: tfiledialogfo;
   ara, arb: msestringarty;
   rectbefore: rectty;
 begin
-  ara := Nil;
+  ara    := nil;
   //compiler warning
-  arb := Nil;
+  arb    := nil;
   //compiler warning
-  result := mr_ok;
-  if assigned(fonbeforeexecute) then
-    begin
-      fonbeforeexecute(self,dialogkind,result);
-      if result <> mr_ok then
-        begin
-          exit;
-        end;
-    end;
+  Result := mr_ok;
+  if Assigned(fonbeforeexecute) then
+  begin
+    fonbeforeexecute(self, dialogkind, Result);
+    if Result <> mr_ok then
+      Exit;
+  end;
   if fhistorymaxcount > 0 then
-    begin
-      po1 := @fhistory;
-    end
+    po1 := @fhistory
   else
-    begin
-      po1 := Nil;
-    end;
-  fo := tfiledialogfo.create(Nil);
+    po1 := nil;
+  fo := tfiledialogfo.Create(nil);
   try
  {$ifdef FPC} {$checkpointer off} {$endif}
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
     if dialogkind <> fdk_none then
-      begin
-        if dialogkind in [fdk_save,fdk_new] then
-          begin
-            system.include(aoptions,fdo_save);
-          end
-        else
-          begin
-            system.exclude(aoptions,fdo_save);
-          end;
-      end;
+      if dialogkind in [fdk_save, fdk_new] then
+        system.include(aoptions, fdo_save)
+      else
+        system.exclude(aoptions, fdo_save);
     if fdo_relative in foptions then
-      begin
-        fo.listview.directory := getcurrentdirmse;
-      end
+      fo.listview.directory := getcurrentdirmse
     else
-      begin
-        fo.listview.directory := flastdir;
-      end;
+      fo.listview.directory := flastdir;
     if (fwindowrect.cx > 0) and (fwindowrect.cy > 0) then
-      begin
-        fo.widgetrect := clipinrect(fwindowrect,application.screenrect(fo.window));
-      end;
+      fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
-    result := filedialog1(fo,ffilenames,ara,arb,
-              @ffilterindex,@ffilter,@fcolwidth,finclude,
-              fexclude,po1,fhistorymaxcount,acaption,aoptions,fdefaultext,
-              fimagelist,fongetfileicon,foncheckfile);
-    if not rectisequal(fo.widgetrect,rectbefore) then
-      begin
-        fwindowrect := fo.widgetrect;
-      end;
+    Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
+      fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
+      fimagelist, fongetfileicon, foncheckfile);
+    if not rectisequal(fo.widgetrect, rectbefore) then
+      fwindowrect := fo.widgetrect;
 
-    if assigned(fonafterexecute) then
-      begin
-        fonafterexecute(self,result);
-      end;
+    if Assigned(fonafterexecute) then
+      fonafterexecute(self, Result);
  {$ifdef FPC} {$checkpointer default} {$endif}
-    if result = mr_ok then
-      begin
-        if fdo_relative in foptions then
-          begin
-            flastdir := getcurrentdirmse;
-          end
-        else
-          begin
-            flastdir := fo.dir.value;
-          end;
-      end;
+    if Result = mr_ok then
+      if fdo_relative in foptions then
+        flastdir := getcurrentdirmse
+      else
+        flastdir := fo.dir.Value;
   finally
     fo.Free;
-end;
-end;
-
-function tfiledialogcontroller.execute(Const dialogkind: filedialogkindty;
-                                       Const acaption: msestring): modalresultty;
-begin
-  result := execute(dialogkind,acaption,foptions);
-end;
-
-function tfiledialogcontroller.actcaption(
-                                          Const dialogkind: filedialogkindty): msestring;
-begin
-  case dialogkind of 
-    fdk_save:
-              begin
-                result := fcaptionsave;
-              end;
-    fdk_new:
-             begin
-               result := fcaptionnew;
-             end;
-    else
-      begin
-        result := fcaptionopen;
-      end;
   end;
 end;
 
-function tfiledialogcontroller.execute(Const dialogkind: filedialogkindty;
-                                       Const aoptions: filedialogoptionsty): modalresultty;
+function tfiledialogcontroller.Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
 begin
-  result := execute(dialogkind,actcaption(dialogkind),aoptions);
+  Result := Execute(dialogkind, acaption, foptions);
 end;
 
-function tfiledialogcontroller.execute(
-                                       dialogkind: filedialogkindty = fdk_none): modalresultty;
+function tfiledialogcontroller.actcaption(const dialogkind: filedialogkindty): msestring;
 begin
-  if dialogkind = fdk_none then
-    begin
-      if fdo_save in foptions then
-        begin
-          dialogkind := fdk_save;
-        end
-      else
-        begin
-          dialogkind := fdk_open;
-        end;
-    end;
-  result := execute(dialogkind,actcaption(dialogkind));
+  case dialogkind of
+    fdk_save:
+      Result := fcaptionsave;
+    fdk_new:
+      Result := fcaptionnew;
+    else
+      Result := fcaptionopen;
+  end;
 end;
 
-function tfiledialogcontroller.execute(Var avalue: filenamety;
-                                       dialogkind: filedialogkindty = fdk_none): boolean;
+function tfiledialogcontroller.Execute(const dialogkind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
+begin
+  Result := Execute(dialogkind, actcaption(dialogkind), aoptions);
+end;
+
+function tfiledialogcontroller.Execute(dialogkind: filedialogkindty = fdk_none): modalresultty;
 begin
   if dialogkind = fdk_none then
-    begin
-      if fdo_save in foptions then
-        begin
-          dialogkind := fdk_save;
-        end
-      else
-        begin
-          dialogkind := fdk_open;
-        end;
-    end;
-  result := execute(avalue,dialogkind,actcaption(dialogkind));
+    if fdo_save in foptions then
+      dialogkind := fdk_save
+    else
+      dialogkind := fdk_open;
+  Result := Execute(dialogkind, actcaption(dialogkind));
 end;
 
-function tfiledialogcontroller.execute(Var avalue: filenamety;
-                                       Const  dialogkind: filedialogkindty; Const acaption:
-                                       msestring;
-                                       aoptions: filedialogoptionsty): boolean;
-var 
+function tfiledialogcontroller.Execute(var avalue: filenamety; dialogkind: filedialogkindty = fdk_none): Boolean;
+begin
+  if dialogkind = fdk_none then
+    if fdo_save in foptions then
+      dialogkind := fdk_save
+    else
+      dialogkind := fdk_open;
+  Result := Execute(avalue, dialogkind, actcaption(dialogkind));
+end;
+
+function tfiledialogcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring; aoptions: filedialogoptionsty): Boolean;
+var
   wstr1: filenamety;
 begin
   wstr1 := filename;
-  if assigned(fongetfilename) then
-    begin
-      result := true;
-      fongetfilename(self,avalue,result);
-      if not result then
-        begin
-          exit;
-        end;
-    end;
+  if Assigned(fongetfilename) then
+  begin
+    Result := True;
+    fongetfilename(self, avalue, Result);
+    if not Result then
+      Exit;
+  end;
   filename := avalue;
-  result := execute(dialogkind,acaption,aoptions) = mr_ok;
-  if result then
-    begin
-      avalue := filename;
-      checklink;
-    end
+  Result   := Execute(dialogkind, acaption, aoptions) = mr_ok;
+  if Result then
+  begin
+    avalue := filename;
+    checklink;
+  end
   else
-    begin
-      filename := wstr1;
-    end;
+    filename := wstr1;
 end;
 
-function tfiledialogcontroller.canoverwrite(): boolean;
+function tfiledialogcontroller.canoverwrite(): Boolean;
 begin
   with stockobjects do
-    begin
-      result := Not findfile(filename) Or
-                askok(captions[sc_file]+' "'+filename+
-                '" '+ captions[sc_exists_overwrite],
-                captions[sc_warningupper]);
-    end;
+    Result := not findfile(filename) or
+      askok(captions[sc_file] + ' "' + filename +
+      '" ' + captions[sc_exists_overwrite],
+      captions[sc_warningupper]);
 end;
 
-function tfiledialogcontroller.execute(Var avalue: filenamety;
-                                       Const dialogkind: filedialogkindty;
-                                       Const acaption: msestring): boolean;
+function tfiledialogcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
 begin
-  result := execute(avalue,dialogkind,acaption,foptions);
+  Result := Execute(avalue, dialogkind, acaption, foptions);
 end;
 
 function tfiledialogcontroller.getfilename: filenamety;
 begin
   if (high(ffilenames) > 0) or (fdo_quotesingle in foptions) or
-     (fdo_params in foptions) and (high(ffilenames) = 0) and
-     (findchar(pmsechar(ffilenames[0]),' ') > 0) then
-    begin
-      result := quotefilename(ffilenames);
-    end
+    (fdo_params in foptions) and (high(ffilenames) = 0) and
+    (findchar(pmsechar(ffilenames[0]), ' ') > 0) then
+    Result := quotefilename(ffilenames)
+  else if high(ffilenames) = 0 then
+    Result := ffilenames[0]
   else
-    begin
-      if high(ffilenames) = 0 then
-        begin
-          result := ffilenames[0];
-        end
-      else
-        begin
-          result := '';
-        end;
-    end;
+    Result := '';
   if (fdo_params in foptions) and (fparams <> '') then
-    begin
-      if fdo_sysfilename in foptions then
-        begin
-          tosysfilepath1(result);
-        end;
-      result := result + ' '+fparams;
-    end
-  else
-    begin
-      if fdo_sysfilename in foptions then
-        begin
-          tosysfilepath1(result);
-        end;
-    end;
+  begin
+    if fdo_sysfilename in foptions then
+      tosysfilepath1(Result);
+    Result := Result + ' ' + fparams;
+  end
+  else if fdo_sysfilename in foptions then
+    tosysfilepath1(Result);
 end;
 
-const 
+const
   quotechar = msechar('"');
 
-procedure tfiledialogcontroller.setfilename(Const avalue: filenamety);
-var 
+procedure tfiledialogcontroller.setfilename(const avalue: filenamety);
+var
   int1: integer;
   akind: filekindty;
 begin
-  unquotefilename(avalue,ffilenames);
+  unquotefilename(avalue, ffilenames);
   if fdo_params in foptions then
-    begin
-      fparams := '';
-      if high(ffilenames) >= 0 then
+  begin
+    fparams := '';
+    if high(ffilenames) >= 0 then
+      if avalue[1] = quotechar then
+      begin
+        fparams := copy(avalue, length(ffilenames[0]) + 3, bigint);
+        if (fparams <> '') and (fparams[1] = ' ') then
+          Delete(fparams, 1, 1);
+        setlength(ffilenames, 1);
+      end
+      else
+      begin
+        int1 := findchar(ffilenames[0], ' ');
+        if int1 > 0 then
         begin
-          if avalue[1] = quotechar then
-            begin
-              fparams := copy(avalue,length(ffilenames[0])+3,bigint);
-              if (fparams <> '') and (fparams[1] = ' ') then
-                begin
-                  delete(fparams,1,1);
-                end;
-              setlength(ffilenames,1);
-            end
-          else
-            begin
-              int1 := findchar(ffilenames[0],' ');
-              if int1 > 0 then
-                begin
-                  fparams := copy(ffilenames[0],int1+1,bigint);
-                  setlength(ffilenames[0],int1-1);
-                end;
-            end;
+          fparams := copy(ffilenames[0], int1 + 1, bigint);
+          setlength(ffilenames[0], int1 - 1);
         end;
-    end;
+      end;
+  end;
   akind := fk_default;
   if fdo_directory in foptions then
+  begin
+    akind   := fk_dir;
+    if fdo_file in foptions then
+      akind := fk_file;
+  end
+  else if fdo_file in foptions then
+    akind := fk_file;
+  if [fdo_relative, fdo_lastdirrelative, fdo_basedirrelative] *
+    foptions <> [] then
+  begin
+    if fdo_relative in foptions then
+      flastdir := getcurrentdirmse
+    else
     begin
-      akind := fk_dir;
-      if fdo_file in foptions then
-        begin
-          akind := fk_file;
-        end;
-    end
-  else
-    begin
-      if fdo_file in foptions then
-        begin
-          akind := fk_file;
-        end;
+      if fdo_basedirrelative in foptions then
+        flastdir := fbasedir;
     end;
-  if [fdo_relative,fdo_lastdirrelative,fdo_basedirrelative] *
-     foptions <> [] then
-    begin
-      if fdo_relative in foptions then
-        begin
-          flastdir := getcurrentdirmse;
-        end
+    for int1 := 0 to high(ffilenames) do
+      if isrootpath(filenames[int1]) then
+        ffilenames[int1] := relativepath(filenames[int1], flastdir, akind);
+  end
+  else
+  begin
+    if high(ffilenames) = 0 then
+      if fdo_directory in foptions{akind = fk_dir} then
+        flastdir := filepath(avalue, fk_dir)
       else
-        begin
-          if fdo_basedirrelative in foptions then
-            begin
-              flastdir := fbasedir;
-            end;
-        end;
-      for int1:= 0 to high(ffilenames) do
-        begin
-          if isrootpath(filenames[int1]) then
-            begin
-              ffilenames[int1] := relativepath(filenames[int1],flastdir,akind);
-            end;
-        end;
-    end
-  else
-    begin
-      if high(ffilenames) = 0 then
-        begin
-          if fdo_directory in foptions{akind = fk_dir} then
-            begin
-              flastdir := filepath(avalue,fk_dir);
-            end
-          else
-            begin
-              flastdir := filedir(avalue);
-            end;
-        end;
-      for int1:= 0 to high(ffilenames) do
-        begin
-          ffilenames[int1] := filepath(filenames[int1],akind,
-                              Not (fdo_absolute In foptions));
-        end;
-    end;
+        flastdir := filedir(avalue);
+    for int1 := 0 to high(ffilenames) do
+      ffilenames[int1] := filepath(filenames[int1], akind, not (fdo_absolute in foptions));
+  end;
 end;
 
-procedure tfiledialogcontroller.setfilterlist(
-                                              Const Value: tdoublemsestringdatalist);
+procedure tfiledialogcontroller.setfilterlist(const Value: tdoublemsestringdatalist);
 begin
-  ffilterlist.assign(Value);
+  ffilterlist.Assign(Value);
 end;
 
-procedure tfiledialogcontroller.sethistorymaxcount(Const Value: integer);
+procedure tfiledialogcontroller.sethistorymaxcount(const Value: integer);
 begin
   fhistorymaxcount := Value;
   if length(fhistory) > fhistorymaxcount then
-    begin
-      setlength(fhistory,fhistorymaxcount);
-    end;
+    setlength(fhistory, fhistorymaxcount);
 end;
 
 procedure tfiledialogcontroller.dochange;
 begin
-  if assigned(fonchange) then
-    begin
-      fonchange;
-    end;
+  if Assigned(fonchange) then
+    fonchange;
 end;
 
-procedure tfiledialogcontroller.setdefaultext(Const avalue: filenamety);
+procedure tfiledialogcontroller.setdefaultext(const avalue: filenamety);
 begin
   if fdefaultext <> avalue then
-    begin
-      fdefaultext := avalue;
-      dochange;
-    end;
+  begin
+    fdefaultext := avalue;
+    dochange;
+  end;
 end;
 
 procedure tfiledialogcontroller.setoptions(Value: filedialogoptionsty);
@@ -2676,10 +2262,10 @@ const
  mask3: filedialogoptionsty = [fdo_filtercasesensitive,fdo_filtercaseinsensitive];
 *)
 begin
-  value := filedialogoptionsty(setsinglebit(card32(value),card32(foptions),
-           [card32([fdo_absolute,fdo_relative,fdo_lastdirrelative,
-           fdo_basedirrelative]),
-           card32([fdo_filtercasesensitive,fdo_filtercaseinsensitive])]));
+  Value := filedialogoptionsty(setsinglebit(card32(Value), card32(foptions),
+    [card32([fdo_absolute, fdo_relative, fdo_lastdirrelative,
+    fdo_basedirrelative]),
+    card32([fdo_filtercasesensitive, fdo_filtercaseinsensitive])]));
 
 (*
  {$ifdef FPC}longword{$else}longword{$endif}(value):=
@@ -2695,125 +2281,108 @@ begin
       {$ifdef FPC}longword{$else}longword{$endif}(foptions),
       {$ifdef FPC}longword{$else}longword{$endif}(mask3));
  *)
-  if foptions <> value then
-    begin
-      foptions := Value;
-      if not (fdo_params in foptions) then
-        begin
-          fparams := '';
-        end;
-      dochange;
-    end;
+  if foptions <> Value then
+  begin
+    foptions  := Value;
+    if not (fdo_params in foptions) then
+      fparams := '';
+    dochange;
+  end;
 end;
 
-procedure tfiledialogcontroller.clear;
+procedure tfiledialogcontroller.Clear;
 begin
-  ffilenames := Nil;
-  flastdir := '';
-  fhistory := Nil;
+  ffilenames := nil;
+  flastdir   := '';
+  fhistory   := nil;
 end;
 
-procedure tfiledialogcontroller.setlastdir(Const avalue: filenamety);
+procedure tfiledialogcontroller.setlastdir(const avalue: filenamety);
 begin
   flastdir := avalue;
   checklink;
 end;
 
-procedure tfiledialogcontroller.setimagelist(Const avalue: timagelist);
+procedure tfiledialogcontroller.setimagelist(const avalue: timagelist);
 begin
-  setlinkedvar(avalue,tmsecomponent(fimagelist));
+  setlinkedvar(avalue, tmsecomponent(fimagelist));
 end;
 
 function tfiledialogcontroller.getsysfilename: filenamety;
-var 
-  bo1: boolean;
+var
+  bo1: Boolean;
 begin
-  bo1 := fdo_sysfilename In foptions;
-  system.include(foptions,fdo_sysfilename);
-  result := getfilename;
+  bo1    := fdo_sysfilename in foptions;
+  system.include(foptions, fdo_sysfilename);
+  Result := getfilename;
   if not bo1 then
-    begin
-      system.exclude(foptions,fdo_sysfilename);
-    end;
+    system.exclude(foptions, fdo_sysfilename);
 end;
 
 { tfiledialog }
 
-constructor tfiledialog.create(aowner: tcomponent);
+constructor tfiledialog.Create(aowner: TComponent);
 begin
   // foptionsedit:= defaultfiledialogoptionsedit;
   foptionsedit1 := defaultfiledialogoptionsedit1;
-  fcontroller := tfiledialogcontroller.create(Nil);
+  fcontroller   := tfiledialogcontroller.Create(nil);
   inherited;
 end;
 
-destructor tfiledialog.destroy;
+destructor tfiledialog.Destroy;
 begin
   inherited;
-  fcontroller.free;
+  fcontroller.Free;
 end;
 
-function tfiledialog.execute: modalresultty;
+function tfiledialog.Execute: modalresultty;
 begin
-  result := fcontroller.execute(fdialogkind);
+  Result := fcontroller.Execute(fdialogkind);
 end;
 
-function tfiledialog.execute(Const akind: filedialogkindty): modalresultty;
+function tfiledialog.Execute(const akind: filedialogkindty): modalresultty;
 begin
-  result := fcontroller.execute(akind);
+  Result := fcontroller.Execute(akind);
 end;
 
-function tfiledialog.execute(Const akind: filedialogkindty;
-                             Const aoptions: filedialogoptionsty): modalresultty;
+function tfiledialog.Execute(const akind: filedialogkindty; const aoptions: filedialogoptionsty): modalresultty;
 begin
-  result := fcontroller.execute(akind,aoptions);
+  Result := fcontroller.Execute(akind, aoptions);
 end;
 
-procedure tfiledialog.setcontroller(Const value: tfiledialogcontroller);
+procedure tfiledialog.setcontroller(const Value: tfiledialogcontroller);
 begin
-  fcontroller.assign(value);
+  fcontroller.Assign(Value);
 end;
 
-procedure tfiledialog.dostatread(Const reader: tstatreader);
+procedure tfiledialog.dostatread(const reader: tstatreader);
 begin
-  if canstatvalue(foptionsedit1,reader) then
-    begin
-      fcontroller.readstatvalue(reader);
-    end;
-  if canstatstate(foptionsedit1,reader) then
-    begin
-      fcontroller.readstatstate(reader);
-    end;
-  if canstatoptions(foptionsedit1,reader) then
-    begin
-      fcontroller.readstatoptions(reader);
-    end;
+  if canstatvalue(foptionsedit1, reader) then
+    fcontroller.readstatvalue(reader);
+  if canstatstate(foptionsedit1, reader) then
+    fcontroller.readstatstate(reader);
+  if canstatoptions(foptionsedit1, reader) then
+    fcontroller.readstatoptions(reader);
 end;
 
-procedure tfiledialog.dostatwrite(Const writer: tstatwriter);
+procedure tfiledialog.dostatwrite(const writer: tstatwriter);
 begin
-  if canstatvalue(foptionsedit1,writer) then
-    begin
-      fcontroller.writestatvalue(writer);
-    end;
-  if canstatstate(foptionsedit1,writer) then
-    begin
-      fcontroller.writestatstate(writer);
-    end;
-  if canstatoptions(foptionsedit1,writer) then
-    begin
-      fcontroller.writestatoptions(writer);
-    end;
+  if canstatvalue(foptionsedit1, writer) then
+    fcontroller.writestatvalue(writer);
+  if canstatstate(foptionsedit1, writer) then
+    fcontroller.writestatstate(writer);
+  if canstatoptions(foptionsedit1, writer) then
+    fcontroller.writestatoptions(writer);
 end;
 
 function tfiledialog.getstatvarname: msestring;
 begin
-  result := fstatvarname;
+  Result := fstatvarname;
 end;
 
-procedure tfiledialog.setstatfile(Const Value: tstatfile);
+procedure tfiledialog.setstatfile(const Value: tstatfile);
 begin
-  setstatfilevar(istatfile(self), value, fstatfile);
+  setstatfilevar(istatfile(self), Value, fstatfile);
 end;
 
 procedure tfiledialog.statreading;
@@ -2826,7 +2395,7 @@ begin
   //dummy
 end;
 
-procedure tfiledialog.componentevent(Const event: tcomponentevent);
+procedure tfiledialog.componentevent(const event: tcomponentevent);
 begin
   fcontroller.componentevent(event);
   inherited;
@@ -2834,59 +2403,53 @@ end;
 
 function tfiledialog.getstatpriority: integer;
 begin
-  result := fstatpriority;
+  Result := fstatpriority;
 end;
 
 procedure tfiledialog.readoptionsedit(reader: treader);
-var 
+var
   opt1: optionseditty;
 begin
   opt1 := optionseditty(reader.readset(typeinfo(optionseditty)));
-  updatebit(longword(foptionsedit1), ord(oe1_savevalue), oe_savevalue in opt1);
-  updatebit(longword(foptionsedit1), ord(oe1_savestate), oe_savestate in opt1);
-  updatebit(longword(foptionsedit1), ord(oe1_saveoptions), oe_saveoptions in opt1);
-  updatebit(longword(foptionsedit1), ord(oe1_checkvalueafterstatread), 
-  oe_checkvaluepaststatread in opt1);
+  updatebit(longword(foptionsedit1), Ord(oe1_savevalue), oe_savevalue in opt1);
+  updatebit(longword(foptionsedit1), Ord(oe1_savestate), oe_savestate in opt1);
+  updatebit(longword(foptionsedit1), Ord(oe1_saveoptions), oe_saveoptions in opt1);
+  updatebit(longword(foptionsedit1), Ord(oe1_checkvalueafterstatread),
+    oe_checkvaluepaststatread in opt1);
 end;
 
 procedure tfiledialog.defineproperties(filer: tfiler);
 begin
   inherited;
-  filer.defineproperty('optionsedit',@readoptionsedit,Nil,false);
+  filer.defineproperty('optionsedit', @readoptionsedit, nil, False);
 end;
 
 { tfilenameeditcontroller }
 
-constructor tfilenameeditcontroller.create(Const aowner: tcustomfilenameedit1);
+constructor tfilenameeditcontroller.Create(const aowner: tcustomfilenameedit1);
 begin
-  inherited create(aowner);
+  inherited Create(aowner);
 end;
 
-function tfilenameeditcontroller.execute(Var avalue: msestring): boolean;
+function tfilenameeditcontroller.Execute(var avalue: msestring): Boolean;
 begin
   with tcustomfilenameedit1(fowner) do
-    begin
-      if fcontroller <> nil then
-        begin
-          result := fcontroller.execute(avalue);
-        end
-      else
-        begin
-          result := false;
-        end;
-    end;
+    if fcontroller <> nil then
+      Result := fcontroller.Execute(avalue)
+    else
+      Result := False;
 end;
 
 { tcustomfilenameedit1 }
 
-constructor tcustomfilenameedit1.create(aowner: tcomponent);
+constructor tcustomfilenameedit1.Create(aowner: TComponent);
 begin
   // fcontroller:= tfiledialogcontroller.create(self,{$ifdef FPC}@{$endif}formatchanged);
   inherited;
   optionsedit1 := defaultfiledialogoptionsedit1;
 end;
 
-destructor tcustomfilenameedit1.destroy;
+destructor tcustomfilenameedit1.Destroy;
 begin
   inherited;
   // fcontroller.Free;
@@ -2898,163 +2461,120 @@ begin
  result:= fcontroller.execute(avalue);
 end;
 }
-procedure tcustomfilenameedit1.setcontroller(Const avalue: tfiledialogcontroller);
+procedure tcustomfilenameedit1.setcontroller(const avalue: tfiledialogcontroller);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.assign(avalue);
-    end;
+    fcontroller.Assign(avalue);
 end;
 
-procedure tcustomfilenameedit1.readstatvalue(Const reader: tstatreader);
+procedure tcustomfilenameedit1.readstatvalue(const reader: tstatreader);
 begin
   if fgridintf <> nil then
-    begin
-      inherited;
-    end
-  else
-    begin
-      if fcontroller <> nil then
-        begin
-          fcontroller.readstatvalue(reader);
-          value := fcontroller.filename;
-        end;
-    end;
+    inherited
+  else if fcontroller <> nil then
+  begin
+    fcontroller.readstatvalue(reader);
+    Value := fcontroller.filename;
+  end;
 end;
 
-procedure tcustomfilenameedit1.readstatstate(Const reader: tstatreader);
+procedure tcustomfilenameedit1.readstatstate(const reader: tstatreader);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.readstatstate(reader);
-    end;
+    fcontroller.readstatstate(reader);
 end;
 
-procedure tcustomfilenameedit1.readstatoptions(Const reader: tstatreader);
+procedure tcustomfilenameedit1.readstatoptions(const reader: tstatreader);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.readstatoptions(reader);
-    end;
+    fcontroller.readstatoptions(reader);
 end;
 
-procedure tcustomfilenameedit1.writestatvalue(Const writer: tstatwriter);
+procedure tcustomfilenameedit1.writestatvalue(const writer: tstatwriter);
 begin
   if fgridintf <> nil then
-    begin
-      inherited;
-    end
-  else
-    begin
-      if fcontroller <> nil then
-        begin
-          fcontroller.writestatvalue(writer);
-        end;
-    end;
+    inherited
+  else if fcontroller <> nil then
+    fcontroller.writestatvalue(writer);
 end;
 
-procedure tcustomfilenameedit1.writestatstate(Const writer: tstatwriter);
+procedure tcustomfilenameedit1.writestatstate(const writer: tstatwriter);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.writestatstate(writer);
-    end;
+    fcontroller.writestatstate(writer);
 end;
 
-procedure tcustomfilenameedit1.writestatoptions(Const writer: tstatwriter);
+procedure tcustomfilenameedit1.writestatoptions(const writer: tstatwriter);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.writestatoptions(writer);
-    end;
+    fcontroller.writestatoptions(writer);
 end;
 
 function tcustomfilenameedit1.getvaluetext: msestring;
 begin
   // result:= filepath(fcontroller.filename);
   if fcontroller <> nil then
-    begin
-      result := fcontroller.filename;
-    end
+    Result := fcontroller.filename
   else
-    begin
-      result := '';
-    end;
+    Result := '';
 end;
 
-procedure tcustomfilenameedit1.texttovalue(Var accept: boolean;
-                                           Const quiet: boolean);
-var 
+procedure tcustomfilenameedit1.texttovalue(var accept: Boolean; const quiet: Boolean);
+var
   ar1: filenamearty;
   mstr1: filenamety;
   int1: integer;
 begin
   if fcontroller <> nil then
+  begin
+    if (fcontroller.defaultext <> '') then
     begin
-      if (fcontroller.defaultext <> '') then
-        begin
-          unquotefilename(text,ar1);
-          for int1:= 0 to high(ar1) do
-            begin
-              if not hasfileext(ar1[int1]) then
-                begin
-                  ar1[int1] := ar1[int1] + '.'+controller.defaultext;
-                end;
-            end;
-          mstr1 := quotefilename(ar1);
-        end
-      else
-        begin
-          mstr1 := text;
-        end;
-      fcontroller.filename := mstr1;
-    end;
+      unquotefilename(Text, ar1);
+      for int1 := 0 to high(ar1) do
+        if not hasfileext(ar1[int1]) then
+          ar1[int1] := ar1[int1] + '.' + controller.defaultext;
+      mstr1         := quotefilename(ar1);
+    end
+    else
+      mstr1         := Text;
+    fcontroller.filename := mstr1;
+  end;
   inherited;
 end;
 
-procedure tcustomfilenameedit1.updatedisptext(Var avalue: msestring);
+procedure tcustomfilenameedit1.updatedisptext(var avalue: msestring);
 begin
   if fcontroller <> nil then
+    with fcontroller do
     begin
-      with fcontroller do
-        begin
-          if fdo_dispname in foptions then
-            begin
-              avalue := msefileutils.filename(avalue);
-            end;
-          if fdo_dispnoext in foptions then
-            begin
-              avalue := removefileext(avalue);
-            end;
-        end;
+      if fdo_dispname in foptions then
+        avalue := msefileutils.filename(avalue);
+      if fdo_dispnoext in foptions then
+        avalue := removefileext(avalue);
     end;
 end;
 
 procedure tcustomfilenameedit1.valuechanged;
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.filename := value;
-    end;
+    fcontroller.filename := Value;
   inherited;
 end;
 
-procedure tcustomfilenameedit1.componentevent(Const event: tcomponentevent);
+procedure tcustomfilenameedit1.componentevent(const event: tcomponentevent);
 begin
   if fcontroller <> nil then
-    begin
-      fcontroller.componentevent(event);
-    end;
+    fcontroller.componentevent(event);
   inherited;
 end;
 
-procedure tcustomfilenameedit1.updatecopytoclipboard(Var atext: msestring);
+procedure tcustomfilenameedit1.updatecopytoclipboard(var atext: msestring);
 begin
   tosysfilepath1(atext);
   inherited;
 end;
 
-procedure tcustomfilenameedit1.updatepastefromclipboard(Var atext: msestring);
+procedure tcustomfilenameedit1.updatepastefromclipboard(var atext: msestring);
 begin
   tomsefilepath1(atext);
   inherited;
@@ -3062,34 +2582,37 @@ end;
 
 function tcustomfilenameedit1.createdialogcontroller: tstringdialogcontroller;
 begin
-  result := tfilenameeditcontroller.create(self);
+  Result := tfilenameeditcontroller.Create(self);
 end;
 
 function tcustomfilenameedit1.getsysvalue: filenamety;
 begin
-  result := tosysfilepath(value);
+  Result := tosysfilepath(Value);
 end;
 
-procedure tcustomfilenameedit1.setsysvalue(Const avalue: filenamety);
+procedure tcustomfilenameedit1.setsysvalue(const avalue: filenamety);
 begin
-  value := tomsefilepath(avalue);
+  Value := tomsefilepath(avalue);
 end;
 
 function tcustomfilenameedit1.getsysvaluequoted: filenamety;
 begin
-  result := tosysfilepath(value,true);
+  Result := tosysfilepath(Value, True);
 end;
 
 { tcustomfilenameedit }
 
-constructor tcustomfilenameedit.create(aowner: tcomponent);
+constructor tcustomfilenameedit.Create(aowner: TComponent);
 begin
-  fcontroller := tfiledialogcontroller.create(self,
-                                {$ifdef FPC}@{$endif}formatchanged);
+  fcontroller := tfiledialogcontroller.Create(self,
+                                {$ifdef FPC}
+    @
+{$endif}
+    formatchanged);
   inherited;
 end;
 
-destructor tcustomfilenameedit.destroy;
+destructor tcustomfilenameedit.Destroy;
 begin
   inherited;
   fcontroller.Free;
@@ -3097,83 +2620,76 @@ end;
 
 { tdirdropdownedit }
 
-procedure tdirdropdownedit.createdropdownwidget(Const atext: msestring;
-                                                out awidget: twidget);
+procedure tdirdropdownedit.createdropdownwidget(const atext: msestring; out awidget: twidget);
 begin
-  awidget := tdirtreefo.create(Nil);
+  awidget := tdirtreefo.Create(nil);
   with tdirtreefo(awidget) do
-    begin
-      showhiddenfiles := ddeo_showhiddenfiles In foptions;
-      checksubdir := ddeo_checksubdir In foptions;
-      path := atext;
-      onpathchanged := {$ifdef FPC}@{$endif}pathchanged;
-      text := path;
-      if deo_colsizing in fdropdown.options then
-        begin
-          optionssizing := [osi_right];
-        end;
-    end;
+  begin
+    showhiddenfiles := ddeo_showhiddenfiles in foptions;
+    checksubdir   := ddeo_checksubdir in foptions;
+    path          := atext;
+    onpathchanged :=
+{$ifdef FPC}
+      @
+{$endif}
+      pathchanged;
+    Text          := path;
+    if deo_colsizing in fdropdown.options then
+      optionssizing := [osi_right];
+  end;
   feditor.sellength := 0;
 end;
 
 procedure tdirdropdownedit.doafterclosedropdown;
 begin
-  text := value;
+  Text := Value;
   feditor.selectall;
   inherited;
 end;
 
-function tdirdropdownedit.getdropdowntext(Const awidget: twidget): msestring;
+function tdirdropdownedit.getdropdowntext(const awidget: twidget): msestring;
 begin
-  result := tdirtreefo(awidget).path;
+  Result := tdirtreefo(awidget).path;
 end;
 
-procedure tdirdropdownedit.pathchanged(Const sender: tobject);
+procedure tdirdropdownedit.pathchanged(const Sender: TObject);
 begin
-  text := tdirtreefo(sender).path;
+  Text := tdirtreefo(Sender).path;
 end;
 
-function tdirdropdownedit.getshowhiddenfiles: boolean;
+function tdirdropdownedit.getshowhiddenfiles: Boolean;
 begin
-  result := ddeo_showhiddenfiles In foptions;
+  Result := ddeo_showhiddenfiles in foptions;
 end;
 
-procedure tdirdropdownedit.setshowhiddenfiles(Const avalue: boolean);
-begin
-  if avalue then
-    begin
-      include(foptions,ddeo_showhiddenfiles)
-    end
-  else
-    begin
-      exclude(foptions,ddeo_showhiddenfiles)
-    end;
-end;
-
-function tdirdropdownedit.getchecksubdir: boolean;
-begin
-  result := ddeo_checksubdir In foptions;
-end;
-
-procedure tdirdropdownedit.setchecksubdir(Const avalue: boolean);
+procedure tdirdropdownedit.setshowhiddenfiles(const avalue: Boolean);
 begin
   if avalue then
-    begin
-      include(foptions,ddeo_checksubdir)
-    end
+    include(foptions, ddeo_showhiddenfiles)
   else
-    begin
-      exclude(foptions,ddeo_checksubdir)
-    end;
+    exclude(foptions, ddeo_showhiddenfiles);
 end;
 
-procedure tdirdropdownedit.updatecopytoclipboard(Var atext: msestring);
+function tdirdropdownedit.getchecksubdir: Boolean;
+begin
+  Result := ddeo_checksubdir in foptions;
+end;
+
+procedure tdirdropdownedit.setchecksubdir(const avalue: Boolean);
+begin
+  if avalue then
+    include(foptions, ddeo_checksubdir)
+  else
+    exclude(foptions, ddeo_checksubdir);
+end;
+
+procedure tdirdropdownedit.updatecopytoclipboard(var atext: msestring);
 begin
   tosysfilepath1(atext);
   inherited;
 end;
 
-procedure tdirdropdownedit.updatepastefromclipboard(Var atext: msestring);
+procedure tdirdropdownedit.updatepastefromclipboard(var atext: msestring);
 begin
   tomsefilepath1(atext);
   inherited;
@@ -3181,37 +2697,30 @@ end;
 
 { tcustomremotefilenameedit }
 
-procedure tcustomremotefilenameedit.setfiledialog(Const avalue: tfiledialog);
+procedure tcustomremotefilenameedit.setfiledialog(const avalue: tfiledialog);
 begin
-  setlinkedvar(avalue,tmsecomponent(fdialog));
+  setlinkedvar(avalue, tmsecomponent(fdialog));
   if avalue = nil then
-    begin
-      fcontroller := Nil;
-    end
+    fcontroller := nil
   else
-    begin
-      fcontroller := avalue.fcontroller;
-    end;
+    fcontroller := avalue.fcontroller;
 end;
 
-procedure tcustomremotefilenameedit.objectevent(Const sender: tobject;
-                                                Const event: objecteventty);
+procedure tcustomremotefilenameedit.objectevent(const Sender: TObject; const event: objecteventty);
 begin
-  if (event = oe_destroyed) and (sender = fdialog) then
-    begin
-      fcontroller := Nil;
-    end;
+  if (event = oe_destroyed) and (Sender = fdialog) then
+    fcontroller := nil;
   inherited;
 end;
 
 { tdirtreeview }
 
-constructor tdirtreeview.create(aowner: tcomponent);
+constructor tdirtreeview.Create(aowner: TComponent);
 begin
   inherited;
   createframe();
-  foptionswidget := defaultoptionswidgetsubfocus;
-  fdirview := tdirtreefo.create(Nil,self,false);
+  foptionswidget   := defaultoptionswidgetsubfocus;
+  fdirview         := tdirtreefo.Create(nil, self, False);
   //owner must be nil because of streaming
   fdirview.onpathchanged := @dopathchanged;
   fdirview.onselectionchanged := @doselectionchanged;
@@ -3219,12 +2728,12 @@ begin
   fdirview.grid.frame.framewidth := 0;
   fdirview.bounds_cxmin := 0;
   fdirview.anchors := [];
-  fdirview.visible := true;
+  fdirview.Visible := True;
 end;
 
-destructor tdirtreeview.destroy();
+destructor tdirtreeview.Destroy();
 begin
-  fdirview.free();
+  fdirview.Free();
   inherited;
   //fdirview destroyed by destroy children
 end;
@@ -3236,10 +2745,10 @@ end;
 
 function tdirtreeview.getoptions: dirtreeoptionsty;
 begin
-  result := fdirview.optionsdir;
+  Result := fdirview.optionsdir;
 end;
 
-procedure tdirtreeview.setoptions(Const avalue: dirtreeoptionsty);
+procedure tdirtreeview.setoptions(const avalue: dirtreeoptionsty);
 begin
   fdirview.optionsdir := avalue;
 end;
@@ -3247,99 +2756,91 @@ end;
 function tdirtreeview.getpath: filenamety;
 begin
   if csdesigning in componentstate then
-    begin
-      result := fpath;
-    end
+    Result := fpath
   else
-    begin
-      result := fdirview.path;
-    end;
+    Result := fdirview.path;
 end;
 
-procedure tdirtreeview.setpath(Const avalue: filenamety);
+procedure tdirtreeview.setpath(const avalue: filenamety);
 begin
-  fpath := avalue;
-  if componentstate * [csdesigning,csloading] = [] then
-    begin
-      fdirview.path := avalue;
-    end;
+  fpath           := avalue;
+  if componentstate * [csdesigning, csloading] = [] then
+    fdirview.path := avalue;
 end;
 
-procedure tdirtreeview.setroot(Const avalue: filenamety);
+procedure tdirtreeview.setroot(const avalue: filenamety);
 begin
-  froot := avalue;
-  if componentstate * [csdesigning,csloading] = [] then
-    begin
-      fdirview.root := avalue;
-    end;
+  froot           := avalue;
+  if componentstate * [csdesigning, csloading] = [] then
+    fdirview.root := avalue;
 end;
 
 function tdirtreeview.getgrid: twidgetgrid;
 begin
-  result := fdirview.grid;
+  Result := fdirview.grid;
 end;
 
-procedure tdirtreeview.setgrid(Const avalue: twidgetgrid);
+procedure tdirtreeview.setgrid(const avalue: twidgetgrid);
 begin
   //dummy
 end;
 
 function tdirtreeview.getoptionstree: treeitemeditoptionsty;
 begin
-  result := fdirview.treeitem.options;
+  Result := fdirview.treeitem.options;
 end;
 
-procedure tdirtreeview.setoptionstree(Const avalue: treeitemeditoptionsty);
+procedure tdirtreeview.setoptionstree(const avalue: treeitemeditoptionsty);
 begin
   fdirview.treeitem.options := avalue;
 end;
 
 function tdirtreeview.getoptionsedit: optionseditty;
 begin
-  result := fdirview.treeitem.optionsedit;
+  Result := fdirview.treeitem.optionsedit;
 end;
 
-procedure tdirtreeview.setoptionsedit(Const avalue: optionseditty);
+procedure tdirtreeview.setoptionsedit(const avalue: optionseditty);
 begin
   fdirview.treeitem.optionsedit := avalue;
 end;
 
 function tdirtreeview.getcol_color: colorty;
 begin
-  result := fdirview.grid.datacols[0].color;
+  Result := fdirview.grid.datacols[0].color;
 end;
 
-procedure tdirtreeview.setcol_color(Const avalue: colorty);
+procedure tdirtreeview.setcol_color(const avalue: colorty);
 begin
   fdirview.grid.datacols[0].color := avalue;
 end;
 
 function tdirtreeview.getcol_coloractive: colorty;
 begin
-  result := fdirview.grid.datacols[0].coloractive;
+  Result := fdirview.grid.datacols[0].coloractive;
 end;
 
-procedure tdirtreeview.setcol_coloractive(Const avalue: colorty);
+procedure tdirtreeview.setcol_coloractive(const avalue: colorty);
 begin
   fdirview.grid.datacols[0].coloractive := avalue;
 end;
 
 function tdirtreeview.getcol_colorfocused: colorty;
 begin
-  result := fdirview.grid.datacols[0].colorfocused;
+  Result := fdirview.grid.datacols[0].colorfocused;
 end;
 
-procedure tdirtreeview.setcol_colorfocused(Const avalue: colorty);
+procedure tdirtreeview.setcol_colorfocused(const avalue: colorty);
 begin
   fdirview.grid.datacols[0].colorfocused := avalue;
 end;
 
 function tdirtreeview.getcell_options: coloptionsty;
 begin
-  result := fdirview.grid.datacols[0].options;
+  Result := fdirview.grid.datacols[0].options;
 end;
 
-procedure tdirtreeview.setcell_options(Const avalue: coloptionsty);
+procedure tdirtreeview.setcell_options(const avalue: coloptionsty);
 begin
   fdirview.grid.datacols[0].options := avalue;
 end;
@@ -3384,53 +2885,45 @@ begin
  fdirview.grid.datacols[0].datalist:= avalue;
 end;
 }
-procedure tdirtreeview.dopathchanged(Const sender: tobject);
+procedure tdirtreeview.dopathchanged(const Sender: TObject);
 begin
   if canevent(tmethod(fonpathchanged)) then
-    begin
-      fonpathchanged(self,fdirview.path);
-    end;
+    fonpathchanged(self, fdirview.path);
 end;
 
-procedure tdirtreeview.dopathselected(Const sender: tobject);
+procedure tdirtreeview.dopathselected(const Sender: TObject);
 begin
   if canevent(tmethod(fonpathselected)) then
-    begin
-      fonpathselected(self,fdirview.path);
-    end;
+    fonpathselected(self, fdirview.path);
 end;
 
-procedure tdirtreeview.doselectionchanged(Const sender: tobject;
-                                          Const aitem: tlistitem);
+procedure tdirtreeview.doselectionchanged(const Sender: TObject; const aitem: tlistitem);
 begin
   if canevent(tmethod(fonselectionchanged)) then
-    begin
-      fonselectionchanged(self,aitem);
-    end;
+    fonselectionchanged(self, aitem);
 end;
 
 procedure tdirtreeview.internalcreateframe;
 begin
-  timpressedcaptionframe.create(icaptionframe(self));
+  timpressedcaptionframe.Create(icaptionframe(self));
 end;
 
 procedure tdirtreeview.loaded();
 begin
   inherited;
   if not (csdesigning in componentstate) then
+    with tdirtreefo1(fdirview) do
     begin
-      with tdirtreefo1(fdirview) do
-        begin
-          froot := self.froot;
-          path := self.fpath;
-        end;
+      froot := self.froot;
+      path  := self.fpath;
     end;
 end;
 
 class function tdirtreeview.classskininfo: skininfoty;
-  begin
-    result := Inherited classskininfo;
-    result.objectkind := sok_dataedit;
-  end;
+begin
+  Result := inherited classskininfo;
+  Result.objectkind := sok_dataedit;
+end;
 
 end.
+
