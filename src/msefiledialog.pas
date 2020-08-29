@@ -778,8 +778,11 @@ begin
     finally
       finit := False;
     end;
-    if listview.Visible = False then
-      Height         := dir.bottom + 20;
+    if filename.Visible = False then
+    begin
+      Height         := 308;
+      list_log.height :=    height - list_log.top - 10;
+    end;  
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
     Result           := window.modalresult;
@@ -1601,9 +1604,9 @@ begin
 
   debuggerfo.project_history.tag := 0;
 
-  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (listview.Visible = False) then
+  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (filename.Visible = False) then
   begin
-    if (fdo_directory in dialogoptions) or (listview.Visible = False) then
+    if (fdo_directory in dialogoptions) or (filename.Visible = False) then
 
       str1 := quotefilename(listview.directory)
     else
@@ -2039,8 +2042,8 @@ begin
 
     if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
     begin
-      fo.list_log.Visible := False;
-      fo.listview.Visible := False;
+      //fo.list_log.Visible := False;
+      //fo.listview.Visible := False;
       fo.filter.Visible   := False;
       fo.filename.Visible := False;
       acaption2           := 'Choose a Directory';

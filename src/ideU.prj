@@ -57,8 +57,8 @@ findinfiledialog=106
  filecolwidth=174
  x=409
  y=84
- cx=554
- cy=105
+ cx=496
+ cy=308
  filehistory=35
   /home/fred/mseide-msegui/
   /home/fred/svnfpc32/fixes_3_2/
@@ -131,8 +131,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1059
- y=154
+ x=504
+ y=439
  cx=234
  cy=269
 replacedialog=30
@@ -1538,8 +1538,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=listview.Visible
+finddtext=filename.Visible
 findhistory=20
+ filename.Visible
  listview.Visible
  fdk_dir
  Visible := Fal
@@ -1559,15 +1560,14 @@ findhistory=20
  foption
  lvo_horz,
  tfiledialogfo.cr
- filedialog
 findoptions=1
 editpos=6
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
  0,0
- 0,1603
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,775
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1618,7 +1618,7 @@ visiblemodules=7
  0
  0
  -1
- -1
+ 0
 nomenumodules=7
  0
  0
@@ -1629,7 +1629,7 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 firsttab=0
-index=5
+index=0
 [layout]
 windowlayout=631
  [mainfo.basedock]
@@ -2067,13 +2067,13 @@ windowlayout=631
  visible=1
  mdistate=0
  nx=0
- ny=0
+ ny=-1
  ncx=1333
- ncy=44
+ ncy=29
  x=0
- y=0
+ y=-1
  cx=1333
- cy=42
+ cy=27
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2083,7 +2083,7 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Python
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialog.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/ideu/src/regcomponents.inc
@@ -2106,7 +2106,7 @@ windowlayout=631
   /home/fred/testbgra/main.pas
   /home/fred/testbgra/fractal_tree.pas
  [debuggerfo.project_options]
- value=1
+ value=6
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2127,7 +2127,7 @@ windowlayout=631
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=5
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2209,7 +2209,7 @@ windowlayout=631
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2228,7 +2228,7 @@ windowlayout=631
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2247,7 +2247,7 @@ windowlayout=631
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2262,7 +2262,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=dump
 findhistory=1
