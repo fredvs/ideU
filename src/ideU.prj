@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=106
+findinfiledialog=109
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -36,8 +36,9 @@ findinfiledialog=106
  value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc" "*.mfm" 
- history=14
+ history=15
   "*.pas" "*.pp" "*.inc" "*.mfm" 
+  
   "*.pas" "*.pp" "*.inc" "*.sh"
   "*.pas" "*.pp" "*.inc" "*.*"
   "*.pas" "*.pp" "*.inc" 
@@ -53,13 +54,15 @@ findinfiledialog=106
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseide-msegui/
+  /home/fred/biotray/
  filecolwidth=174
  x=409
  y=84
  cx=496
  cy=308
- filehistory=35
+ filehistory=37
+  /home/fred/biotray/
+  /home/fred/A Alphabetical listing of command line options_files/
   /home/fred/mseide-msegui/
   /home/fred/svnfpc32/fixes_3_2/
   /home/fred/mseide-msegui-avantcircular/
@@ -96,7 +99,7 @@ findinfiledialog=106
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
+ filefilter=
  [findinfileadialogfo.findtext]
  value=1024
  history=20
@@ -131,8 +134,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=504
- y=439
+ x=753
+ y=299
  cx=234
  cy=269
 replacedialog=30
@@ -1538,13 +1541,14 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=filename.Visible
+finddtext=filter.value
 findhistory=20
+ filter.value
+ visible = fal
  filename.Visible
  listview.Visible
  fdk_dir
  Visible := Fal
- visible = fal
  .vis
  acaption
  filedialogkindty
@@ -1559,15 +1563,14 @@ findhistory=20
  //foptions:= avalue;
  foption
  lvo_horz,
- tfiledialogfo.cr
 findoptions=1
 editpos=6
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,775
+ 0,-1073741823
+ 37,751
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1629,9 +1632,9 @@ nomenumodules=7
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=5
 [layout]
-windowlayout=631
+windowlayout=661
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1671,7 +1674,7 @@ windowlayout=631
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2069,11 +2072,11 @@ windowlayout=631
  nx=0
  ny=-1
  ncx=1333
- ncy=29
+ ncy=23
  x=0
  y=-1
  cx=1333
- cy=27
+ cy=21
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2083,9 +2086,11 @@ windowlayout=631
  [debuggerfo.edit_compiler]
  value=Python
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=20
+ value=/home/fred/ideu/src/selectsubmoduledialogform_mfm.pas
+ history=50
+  /home/fred/new_msefiledialog2/msefiledialog2_mfm.pas
   /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/new_msefiledialog2/msefiledialogres.mfm
   /home/fred/ideu/src/regcomponents.inc
   /home/fred/msefiledialog2new/msefiledialog2.pas
   /home/fred/msefiledialog2new/new_msefiledialog2.pas
@@ -2105,8 +2110,36 @@ windowlayout=631
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/testbgra/main.pas
   /home/fred/testbgra/fractal_tree.pas
+  /home/fred/bgracontrols/bgravirtualscreen.pas
+  /home/fred/mclasses.pas
+  /home/fred/eschecs_mse/board.pas
+  /home/fred/strumpract/src/guitars.pas
+  /home/fred/strumpract/src/randomnote.pas
+  /home/fred/strumpract/src/define.inc
+  /home/fred/uos/examples/define.inc
+  /home/fred/uos/examples/consolesynth.pas
+  /home/fred/ideu/src/imageselectorform.pas
+  /home/fred/freepascal-ootb_305/compiler/systems/t_bsd.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/lazarus/2.0.6/ide/lazarus.pp
+  /home/fred/freepascal-ootb_320/packages/gtk2/src/buildgtk2.pp
+  /home/fred/freepascal-ootb_320/packages/gtk2/src/gtk2x11/gdk2x.pas
+  /home/fred/Downloads/lazpaint-upstream-master/lazpaint/ugeometricbrush.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/lazpaint/lazpaint/lazpaint.lpr
+  /home/fred/uos/src/uos.pas
+  /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
+  /home/fred/bgracontrols/bccombobox.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/oldbgbutton.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/mybgbutton.pas
+  /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bezier.inc
+  /home/fred/mseide-msegui-avantcircular/lib/common/widgets/msechart.pas
+  /home/fred/mseide-msegui/apps/myide/regcomponents.inc
+  /home/fred/ideu/src/plugmanager.pas
  [debuggerfo.project_options]
- value=6
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2127,7 +2160,7 @@ windowlayout=631
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2228,7 +2261,7 @@ windowlayout=631
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0

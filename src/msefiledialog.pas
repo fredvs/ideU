@@ -753,9 +753,13 @@ begin
     if (afilter = nil) or (afilter^ = '') or
       (filter.dropdown.ItemIndex >= 0) and
       (afilter^ = filter.dropdown.cols[1][filter.dropdown.ItemIndex]) then
-      updatefiltertext
+      begin
+      if filename.Visible = False then filter.Value  := '' else
+      updatefiltertext;
+      end
     else
     begin
+      if filename.Visible = False then filter.Value  := '' else
       filter.Value  := afilter^;
       listview.mask := afilter^;
     end;
@@ -1800,6 +1804,7 @@ begin
 
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
+     // listview.selectcell(cellpos2, csm_select, False);
 
       if listview.filelist.isdir(y) then
       begin
@@ -1807,9 +1812,14 @@ begin
         listview.datacols.clearselection;
         list_log.datacols.clearselection;
         list_log.defocuscell;
-        //   str1 := filepath(dir.value+listview.filelist[cellpos.row].name);
         str1 := filepath(dir.Value + listview.filelist[y].Name);
-        changedir(str1);
+       
+          if  (ss_double in info
+          .mouseeventinfopo^.shiftstate) then
+          begin
+         // listview.selectcell(cellpos2, csm_select, False);  
+           okonexecute(Sender);
+          end else changedir(str1);
 
       end
       else
@@ -1821,9 +1831,13 @@ begin
         listview.selectcell(cellpos2, csm_select, False);
         list_log.datacols.clearselection;
         list_log.selectcell(cellpos, csm_select, False);
-        if (listview.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
+      
+        if (listview.rowcount > 0) and (list_log.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
           .mouseeventinfopo^.shiftstate) then
+          begin
+          //listview.selectcell(cellpos2, csm_select, False);
           okonexecute(Sender);
+          end;
 
       end;
 
