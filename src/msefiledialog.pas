@@ -183,7 +183,7 @@ const
   defaultfiledialogoptions = [fdo_savelastdir];
 
 type
-  filedialogkindty = (fdk_none, fdk_open, fdk_save, fdk_new);
+  filedialogkindty = (fdk_none, fdk_open, fdk_save, fdk_new, fdk_dir);
 
   tfiledialogcontroller = class;
 
@@ -776,8 +776,10 @@ begin
     try
       filename.checkvalue;
     finally
-      finit          := False;
+      finit := False;
     end;
+    if listview.Visible = False then
+      Height         := dir.bottom + 20;
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
     Result           := window.modalresult;
@@ -1599,9 +1601,10 @@ begin
 
   debuggerfo.project_history.tag := 0;
 
-  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) then
+  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (listview.Visible = False) then
   begin
-    if fdo_directory in dialogoptions then
+    if (fdo_directory in dialogoptions) or (listview.Visible = False) then
+
       str1 := quotefilename(listview.directory)
     else
     begin
@@ -2008,13 +2011,15 @@ var
   po1: pmsestringarty;
   fo: tfiledialogfo;
   ara, arb: msestringarty;
+  acaption2: msestring;
   rectbefore: rectty;
 begin
-  ara    := nil;
+  acaption2 := acaption;
+  ara       := nil;
   //compiler warning
-  arb    := nil;
+  arb       := nil;
   //compiler warning
-  Result := mr_ok;
+  Result    := mr_ok;
   if Assigned(fonbeforeexecute) then
   begin
     fonbeforeexecute(self, dialogkind, Result);
@@ -2031,6 +2036,16 @@ begin
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
+
+    if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
+    begin
+      fo.list_log.Visible := False;
+      fo.listview.Visible := False;
+      fo.filter.Visible   := False;
+      fo.filename.Visible := False;
+      acaption2           := 'Choose a Directory';
+    end;
+
     if dialogkind <> fdk_none then
       if dialogkind in [fdk_save, fdk_new] then
         system.include(aoptions, fdo_save)
@@ -2044,8 +2059,9 @@ begin
       fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
     Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
-      fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
+      fexclude, po1, fhistorymaxcount, acaption2, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
+
     if not rectisequal(fo.widgetrect, rectbefore) then
       fwindowrect := fo.widgetrect;
 
@@ -2057,10 +2073,13 @@ begin
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
+
+
   finally
     fo.Free;
   end;
 end;
+
 
 function tfiledialogcontroller.Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
 begin

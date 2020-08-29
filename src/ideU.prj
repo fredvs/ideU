@@ -29,9 +29,9 @@ findinfiledialog=106
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -58,7 +58,7 @@ findinfiledialog=106
  x=409
  y=84
  cx=554
- cy=316
+ cy=105
  filehistory=35
   /home/fred/mseide-msegui/
   /home/fred/svnfpc32/fixes_3_2/
@@ -96,7 +96,7 @@ findinfiledialog=106
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
  value=1024
  history=20
@@ -131,8 +131,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=990
- y=467
+ x=1059
+ y=154
  cx=234
  cy=269
 replacedialog=30
@@ -253,7 +253,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -870,21 +870,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=6
  ACTIONSMO
  MAINFO
+ FILEDIALOGFO
  PROCEDURELISTFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=5
+moduletypes=6
  TACTIONSMO
  TMAINFO
+ TFILEDIALOGFO
  TPROCEDURELISTFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=5
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
@@ -1535,8 +1538,16 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=power
+finddtext=listview.Visible
 findhistory=20
+ listview.Visible
+ fdk_dir
+ Visible := Fal
+ visible = fal
+ .vis
+ acaption
+ filedialogkindty
+ function tfiledialogcontroller.execute(dialogkind: filedialogkindty;
  power
  size
  1024
@@ -1549,77 +1560,78 @@ findhistory=20
  lvo_horz,
  tfiledialogfo.cr
  filedialog
- designer
- Assign
- procedure Assign
- tpersistentbridge.Assign(
- class_bridge
- persistent
- persis
- writeln
 findoptions=1
-editpos=5
+editpos=6
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
+ 0,1603
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=5
+ ${PROJECTDIR}/msefiledialog.pas
+relpaths=6
  ideU.pas
  main.pas
  sourceform.pas
  sourcepage.pas
  actionsmodule.pas
-ismoduletexts=5
+ msefiledialog.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=6
+ 0
+modules=7
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/mseide-msegui/apps/ide/procedurelistform.mfm
  /home/fred/ideu/src/msefiledialogres.mfm
  /home/fred/ideu/src/sourcepage.mfm
-moduleoptions=6
+ /home/fred/ideu/src/msefiledialog.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+visiblemodules=7
  -1
  -1
  -1
  0
  0
  -1
-nomenumodules=6
+ -1
+nomenumodules=7
  0
  0
  0
  0
  -1
+ 0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=4
+index=5
 [layout]
-windowlayout=612
+windowlayout=631
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1639,7 +1651,7 @@ windowlayout=612
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1659,7 +1671,7 @@ windowlayout=612
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1753,7 +1765,7 @@ windowlayout=612
  x=0
  y=0
  cx=205
- cy=450
+ cy=526
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1943,9 +1955,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=581
+ cx=1348
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2044,8 +2056,8 @@ windowlayout=612
  ncy=0
  x=0
  y=0
- cx=1212
- cy=51
+ cx=1348
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2056,12 +2068,12 @@ windowlayout=612
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=58
+ ncx=1333
+ ncy=44
  x=0
  y=0
- cx=1212
- cy=57
+ cx=1333
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2071,28 +2083,28 @@ windowlayout=612
  [debuggerfo.edit_compiler]
  value=Python
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/regcomponents.inc
+  /home/fred/msefiledialog2new/msefiledialog2.pas
+  /home/fred/msefiledialog2new/new_msefiledialog2.pas
+  /home/fred/msefiledialog2new/msefiledialog2_mfm.pas
+  /home/fred/msefiledialog2new/msefiledialog_mfm.pas
+  /home/fred/msefiledialog2new/msefiledialog2.mfm
+  /home/fred/msefiledialog2.pas
+  /home/fred/strumpract/src/msefiledialog.pas
+  /home/fred/ideu/src/make.pas
+  /home/fred/strumpract/src/status.pas
+  /home/fred/ideu/src/breakpointsform.pas
+  /home/fred/ideu/src/mselistbrowser.pas
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/strumpract/src/msegrids.pas
+  /home/fred/strumpract/src/filelistform.pas
+  /home/fred/testbgra/fractal_tree/main.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/testbgra/main.pas
+  /home/fred/testbgra/fractal_tree.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2109,13 +2121,13 @@ windowlayout=612
  ncy=0
  x=208
  y=0
- cx=1004
- cy=450
+ cx=1140
+ cy=526
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=4
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2126,15 +2138,15 @@ windowlayout=612
  useroptions=268451947
  stackedunder=_mse_procedurelistfo_mse_
  parent=
- mdistate=0
+ mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
  x=183
  y=113
- cx=352
- cy=277
+ cx=369
+ cy=307
  rcx=0
  rcy=0
  wsize=0
@@ -2151,9 +2163,9 @@ windowlayout=612
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1212
- cy=450
+ y=52
+ cx=1348
+ cy=526
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
@@ -2216,7 +2228,7 @@ windowlayout=612
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2227,6 +2239,25 @@ windowlayout=612
  y=217
  cx=652
  cy=301
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=361
+ y=188
+ cx=506
+ cy=308
  rcx=0
  rcy=0
  wsize=0

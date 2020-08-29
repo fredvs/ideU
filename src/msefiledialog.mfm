@@ -2,13 +2,14 @@ object filedialogfo: Tfiledialogfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   face.localprops = []
   face.template = sourcefo.tfacecomp2
+  onactivate = formoncreate
   visible = False
-  bounds_x = 529
-  bounds_y = 189
+  bounds_x = 361
+  bounds_y = 188
   bounds_cx = 496
-  bounds_cy = 327
+  bounds_cy = 308
   bounds_cxmin = 496
-  bounds_cymin = 150
+  bounds_cymin = 50
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -17,7 +18,7 @@ object filedialogfo: Tfiledialogfo
     0
     0
     496
-    327
+    308
   )
   options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos]
   caption = 'Select a file'
@@ -46,7 +47,6 @@ object filedialogfo: Tfiledialogfo
     FFFFFF02
   }
   windowopacity = -Inf
-  onloaded = formoncreate
   onkeydown = listviewonkeydown
   onlayout = layoutev
   left = 239
@@ -96,7 +96,7 @@ object filedialogfo: Tfiledialogfo
   end
   object tlayouter2: tlayouter
     bounds_x = 1
-    bounds_y = 327
+    bounds_y = 308
     bounds_cx = 493
     bounds_cy = 0
     anchors = [an_left, an_right, an_bottom]
@@ -310,7 +310,7 @@ object filedialogfo: Tfiledialogfo
     taborder = 9
     hint = 'Click button on right corner to show the history of files.'
     bounds_x = 159
-    bounds_y = 280
+    bounds_y = 261
     bounds_cx = 333
     bounds_cy = 38
     anchors = [an_left, an_right, an_bottom]
@@ -357,7 +357,7 @@ object filedialogfo: Tfiledialogfo
     face.localprops = []
     taborder = 10
     bounds_x = 8
-    bounds_y = 280
+    bounds_y = 261
     bounds_cx = 147
     bounds_cy = 38
     anchors = [an_left, an_bottom]
@@ -412,7 +412,7 @@ object filedialogfo: Tfiledialogfo
     bounds_x = 0
     bounds_y = 93
     bounds_cx = 496
-    bounds_cy = 174
+    bounds_cy = 155
     anchors = [an_top, an_bottom]
     optionsgrid = [og_colsizing, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     datacols.count = 5
