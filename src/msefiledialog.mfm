@@ -84,9 +84,6 @@ object filedialogfo: Tfiledialogfo
       end>
     optionsgrid = [og_focuscellonenter, og_autoappend, og_mousescrollcol]
     options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate, lvo_hintclippedtext]
-    itemlist.imagelist = filedialogres.images
-    itemlist.imagewidth = 16
-    itemlist.imageheight = 16
     cellwidthmin = 50
     onselectionchanged = listviewselectionchanged
     onitemevent = listviewitemevent

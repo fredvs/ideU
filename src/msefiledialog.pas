@@ -1483,7 +1483,7 @@ procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
   x, y, y2, z: integer;
   info: fileinfoty;
-  thedir, thestrnum, thestrfract, tmp, tmp2: string;
+  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
   with listview do
   begin
@@ -1531,19 +1531,35 @@ begin
 
       if not listview.filelist.isdir(x) then
       begin
-        y := info.extinfo1.size div 1000;
 
-        if info.extinfo1.size > 0 then
+        if info.extinfo1.size div 1000000000 > 0 then
         begin
-          if info.extinfo1.size div 1000 > 0 then
-            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1))
-          else
-          begin
-            y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 3));
-          end;
+          y2        := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000000000;
+          thestrx   := '~';
+          thestrext := ' GB';
+        end
+        else if info.extinfo1.size div 1000000 > 0 then
+        begin
+          y2        := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000000;
+          thestrx   := '_';
+          thestrext := ' MB';
+        end
+        else if info.extinfo1.size div 1000 > 0 then
+        begin
+          y2        := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
+          y         := info.extinfo1.size div 1000;
+          thestrx   := '^';
+          thestrext := ' KB';
         end
         else
-          y2 := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
+        begin
+          y2        := 0;
+          y         := info.extinfo1.size;
+          thestrx   := ' ';
+          thestrext := ' B';
+        end;
 
 
         thestrnum := IntToStr(y);
@@ -1554,10 +1570,13 @@ begin
           for y := 0 to 14 - z do
             thestrnum := ' ' + thestrnum;
 
-        thestrfract := '.' + IntToStr(y2);
+        if y2 > 0 then
+          thestrfract := '.' + IntToStr(y2)
+        else
+          thestrfract := '';
 
 
-        list_log[2][x] := thestrnum + thestrfract + ' KB';
+        list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
       end;
 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
@@ -1804,8 +1823,7 @@ begin
 
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
-     // listview.selectcell(cellpos2, csm_select, False);
-
+    
       if listview.filelist.isdir(y) then
       begin
         listview.defocuscell;
@@ -1856,7 +1874,7 @@ begin
     (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.htlm') or
+    (lowercase(list_log[1][cellinfo.cell.row]) = '.html') or
     (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then
     aicon := 2
   else if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
