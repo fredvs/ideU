@@ -29,9 +29,9 @@ findinfiledialog=109
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -55,11 +55,11 @@ findinfiledialog=109
  [findinfileadialogfo.dir]
  filenames=1
   /home/fred/biotray/
- filecolwidth=174
+ filecolwidth=150
  x=409
  y=84
- cx=496
- cy=308
+ cx=608
+ cy=346
  filehistory=37
   /home/fred/biotray/
   /home/fred/A Alphabetical listing of command line options_files/
@@ -99,7 +99,7 @@ findinfiledialog=109
   /home/fred/Téléchargements/mseide-msegui.git/
   /home/fred/ideu/
  filefilterindex=0
- filefilter=
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
  value=cellwidth
  history=20
@@ -137,7 +137,7 @@ finddialog=8
  x=963
  y=182
  cx=234
- cy=291
+ cy=269
 replacedialog=30
  [replacedialogfo.promptonreplace]
  value=1
@@ -1547,8 +1547,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=if filename.Visible = False then
+finddtext=list_log.h
 findhistory=20
+ list_log.h
  if filename.Visible = False then
  htlm
  image
@@ -1568,7 +1569,6 @@ findhistory=20
  1024
  info: celleventinfot
  drawc
- ondraw
 findoptions=1
 editpos=10
  0,-1073741823
@@ -1576,7 +1576,7 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 76,34
+ 8,754
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1682,8 +1682,8 @@ windowlayout=669
  ny=0
  ncx=0
  ncy=0
- x=3
- y=72
+ x=18
+ y=86
  cx=1310
  cy=621
  rcx=0
@@ -2105,12 +2105,12 @@ windowlayout=669
  mdistate=0
  nx=0
  ny=0
- ncx=1297
- ncy=59
+ ncx=1283
+ ncy=49
  x=0
  y=0
  cx=1298
- cy=55
+ cy=47
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2208,7 +2208,7 @@ windowlayout=669
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2246,7 +2246,7 @@ windowlayout=669
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2303,7 +2303,7 @@ windowlayout=669
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0

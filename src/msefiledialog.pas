@@ -758,6 +758,7 @@ begin
       Height         := 308;
       list_log.height :=    height - list_log.top - 10;
       listview.Height := list_log.Height;
+      places.Height := list_log.Height;
     end;  
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
