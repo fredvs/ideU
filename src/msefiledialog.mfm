@@ -60,31 +60,20 @@ object filedialogfo: Tfiledialogfo
     frame.localprops1 = []
     face.localprops = [fal_fadirection]
     taborder = 13
-    bounds_x = 28
-    bounds_y = 101
-    bounds_cx = 100
-    bounds_cy = 76
+    bounds_x = 0
+    bounds_y = 92
+    bounds_cx = 40
+    bounds_cy = 156
     onkeydown = listviewonkeydown
     datarowlinecolor = -1610612731
     datacollinecolor = -1610612731
     colorselect = 16763002
-    cellwidth = 490
+    cellwidth = 150
     cellheight = 20
-    fixrows.count = 1
-    fixrows.items = <    
-      item
-        height = 18
-        captions.count = 1
-        captions.items = <        
-          item
-            caption = '     Name'
-            textflags = [tf_left, tf_ycentered]
-            face.localprops = []
-          end>
-      end>
     optionsgrid = [og_focuscellonenter, og_autoappend, og_mousescrollcol]
     options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate, lvo_hintclippedtext]
     cellwidthmin = 50
+    cellwidthmax = 150
     onselectionchanged = listviewselectionchanged
     onitemevent = listviewitemevent
     filelist.options = [flo_sortname, flo_sorttype]
@@ -355,7 +344,7 @@ object filedialogfo: Tfiledialogfo
     taborder = 10
     bounds_x = 8
     bounds_y = 261
-    bounds_cx = 147
+    bounds_cx = 146
     bounds_cy = 38
     anchors = [an_left, an_bottom]
     ondataentered = filepathentered
@@ -369,6 +358,7 @@ object filedialogfo: Tfiledialogfo
         options = [co_readonly, co_invisible, co_focusselect, co_fill]
       end>
     dropdown.valuecol = 1
+    onbeforedropdown = onbefdrop
     onafterclosedropdown = filteronafterclosedropdown
     reffontheight = 15
   end
@@ -385,10 +375,11 @@ object filedialogfo: Tfiledialogfo
     )
     taborder = 11
     hint = 'Show hidden files'
-    bounds_x = 296
+    bounds_x = 358
     bounds_y = 40
     bounds_cx = 95
     bounds_cy = 17
+    anchors = [an_top, an_right]
     onsetvalue = showhiddenonsetvalue
   end
   object list_log: tstringgrid
@@ -407,9 +398,9 @@ object filedialogfo: Tfiledialogfo
     face.localprops = []
     taborder = 12
     bounds_x = 0
-    bounds_y = 93
+    bounds_y = 92
     bounds_cx = 496
-    bounds_cy = 155
+    bounds_cy = 156
     anchors = [an_top, an_bottom]
     optionsgrid = [og_colsizing, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     datacols.count = 5
@@ -514,6 +505,26 @@ object filedialogfo: Tfiledialogfo
     statpriority = 1
     oncellevent = oncellev
     reffontheight = 15
+  end
+  object bcompact: tbooleanedit
+    frame.levelo = 0
+    frame.caption = '&Compact'
+    frame.localprops = [frl_levelo]
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      57
+      2
+    )
+    taborder = 14
+    hint = 'Switch to compact layout'
+    bounds_x = 232
+    bounds_y = 40
+    bounds_cx = 70
+    bounds_cy = 17
+    anchors = [an_top, an_right]
+    onsetvalue = onsetcomp
   end
   object iconslist: timagelist
     width = 18

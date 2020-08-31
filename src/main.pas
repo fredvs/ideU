@@ -4532,7 +4532,7 @@ dialogfilesfo.list_files.font.name := ansistring(confideufo.fontname.value);
 
 dialogfilesfo.height := round((ratio) * 366);
 dialogfilesfo.width  := round((ratio) * 336);
-dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
+//dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
 
   if themenr = 0 then
   begin

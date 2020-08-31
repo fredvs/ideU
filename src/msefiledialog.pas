@@ -29,53 +29,14 @@ interface
 {$endif}
 
 uses
-  mseglob,
-  mseguiglob,
-  mseforms,
-  Classes,
-  mclasses,
-  mseclasses,
-  msewidgets,
-  msegrids,
-  Math,
-  mselistbrowser,
-  mseedit,
-  msesimplewidgets,
-  msedataedits,
-  msedialog,
-  msetypes,
-  msestrings,
-  msesystypes,
-  msesys,
-  msedispwidgets,
-  msedatalist,
-  msestat,
-  msestatfile,
-  msebitmap,
-  msedatanodes,
-  msefileutils,
-  msedropdownlist,
-  mseevent,
-  msegraphedits,
-  mseeditglob,
-  msesplitter,
-  msemenus,
-  msegridsglob,
-  msegraphics,
-  msegraphutils,
-  msedirtree,
-  msewidgetgrid,
-  mseact,
-  mseapplication,
-  msegui,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msestream,
-  SysUtils,
-  msemenuwidgets,
-  msescrollbar,
-  msedragglob;
+ mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,msegrids,
+ Math,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,msetypes,
+ msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,msestatfile,
+ msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,msegraphedits,
+ mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,msegraphutils,
+ msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
+ mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
+ msedragglob;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -574,6 +535,7 @@ type
     list_log: tstringgrid;
     iconslist: timagelist;
     listview: tfilelistview;
+   bcompact: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -599,6 +561,9 @@ type
 
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
     procedure ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+   procedure onsetcomp(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
+   procedure onbefdrop(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -786,6 +751,7 @@ begin
     begin
       Height         := 308;
       list_log.height :=    height - list_log.top - 10;
+      listview.Height := list_log.Height;
     end;  
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
@@ -1481,10 +1447,15 @@ end;
 
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
-  x, y, y2, z: integer;
+  x, x2, y, y2, z: integer;
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
+ 
+  listview.anchors := [an_top,an_left,an_bottom]; 
+  listview.width := 40;
+  listview.invalidate;
+ 
   with listview do
   begin
     dir.Value        := directory;
@@ -1503,12 +1474,23 @@ begin
     list_log[4][x] := '';
   end;
 
+   y := 0;
+   x2 := 0;
+
+ //  dir.frame.caption := 'Directory with 0 files';
+   
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
       list_log[4][x] := IntToStr(x);
 
-      if not listview.filelist.isdir(x) then
+      if listview.filelist.isdir(x) then
+      begin
+         inc(x2);
+        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
+        list_log[1][x] := '';
+        thedir         := dir.Value + trim(list_log[0][x]);
+      end else
       begin
         list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
@@ -1518,16 +1500,9 @@ begin
         list_log[1][x] := utf8decode(tmp);
 
         thedir := dir.Value + trim(list_log[0][x] + tmp);
-
-      end
-      else
-      begin
-        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
-        list_log[1][x] := '';
-        thedir         := dir.Value + trim(list_log[0][x]);
       end;
-
-      getfileinfo(utf8decode(trim(thedir)), info);
+      
+       getfileinfo(utf8decode(trim(thedir)), info);
 
       if not listview.filelist.isdir(x) then
       begin
@@ -1575,14 +1550,22 @@ begin
         else
           thestrfract := '';
 
-
         list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
       end;
 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
+    end; // else dir.frame.caption := 'Directory with 0 files';
+    
+    if bcompact.value then
+    begin
+    listview.anchors := [an_top,an_bottom]; 
+    listview.invalidate;
     end;
-end;
+    
+    dir.frame.caption := 'Directory with ' + inttostr(list_log.rowcount-x2) + ' files';
+
+ end;
 
 procedure tfiledialogfo.updatefiltertext;
 begin
@@ -1598,6 +1581,7 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
+  filter.width := 146;
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -1945,6 +1929,29 @@ begin
   iconslist.paint(Canvas, aicon, nullpoint, cl_default,
     cl_default, cl_default, 0);
 
+end;
+
+procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+begin
+  if avalue then
+  begin 
+    listview.height := list_log.height;
+    listview.anchors := [an_top,an_bottom]; 
+    listview.invalidate;
+    list_log.Visible := False;
+  end
+  else
+  begin
+    listview.anchors := [an_top,an_left,an_bottom]; 
+    listview.width := 40;
+    listview.invalidate;
+    list_log.Visible := True;
+  end;
+end;
+
+procedure tfiledialogfo.onbefdrop(const sender: TObject);
+begin
+filter.width := 300;
 end;
 
 
