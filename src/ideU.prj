@@ -137,7 +137,7 @@ finddialog=8
  x=963
  y=182
  cx=234
- cy=269
+ cy=291
 replacedialog=30
  [replacedialogfo.promptonreplace]
  value=1
@@ -1576,7 +1576,7 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 26,1
+ 76,34
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1597,7 +1597,7 @@ sourcefiles=10
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/actionsmodule.pas
- /home/fred/ideu/src/msefiledialog.pas
+ ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/main.pas
@@ -1682,13 +1682,13 @@ windowlayout=669
  ny=0
  ncx=0
  ncy=0
- x=47
- y=54
+ x=3
+ y=72
  cx=1310
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [targetconsolefo]
@@ -1708,7 +1708,7 @@ windowlayout=669
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1802,7 +1802,7 @@ windowlayout=669
  x=0
  y=0
  cx=205
- cy=518
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1814,7 +1814,7 @@ windowlayout=669
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1896,10 +1896,10 @@ windowlayout=669
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=546
- width0=243
+ propcolwidthref=547
+ width0=267
  sortdescend0=0
- width1=297
+ width1=274
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1992,9 +1992,9 @@ windowlayout=669
  ncx=0
  ncy=0
  x=0
- y=580
- cx=1347
- cy=107
+ y=507
+ cx=1298
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2093,8 +2093,8 @@ windowlayout=669
  ncy=0
  x=0
  y=0
- cx=1347
- cy=56
+ cx=1298
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2105,12 +2105,12 @@ windowlayout=669
  mdistate=0
  nx=0
  ny=0
- ncx=1347
- ncy=61
+ ncx=1297
+ ncy=59
  x=0
  y=0
- cx=1347
- cy=61
+ cx=1298
+ cy=55
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2158,8 +2158,8 @@ windowlayout=669
  ncy=0
  x=208
  y=0
- cx=1139
- cy=518
+ cx=1090
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2173,7 +2173,7 @@ windowlayout=669
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_procedurelistfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2200,15 +2200,15 @@ windowlayout=669
  ncx=0
  ncy=0
  x=0
- y=59
- cx=1347
- cy=518
+ y=53
+ cx=1298
+ cy=451
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2246,7 +2246,7 @@ windowlayout=669
  [_mse_filedialogres_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2303,7 +2303,7 @@ windowlayout=669
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2322,17 +2322,17 @@ windowlayout=669
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=361
- y=188
- cx=506
- cy=308
+ x=142
+ y=211
+ cx=618
+ cy=348
  rcx=0
  rcy=0
  wsize=0

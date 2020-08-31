@@ -533,9 +533,11 @@ type
     filter: tdropdownlistedit;
     showhidden: tbooleanedit;
     list_log: tstringgrid;
-    iconslist: timagelist;
     listview: tfilelistview;
    bcompact: tbooleanedit;
+   places: tstringgrid;
+   tsplitter1: tsplitter;
+   iconslist: timagelist;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -564,6 +566,10 @@ type
    procedure onsetcomp(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
    procedure onbefdrop(const sender: TObject);
+   procedure onlayout(const sender: tcustomgrid);
+   procedure oncellevplace(const sender: TObject; var info: celleventinfoty);
+   procedure ondrawcellplace(const sender: tcol; const canvas: tcanvas;
+                   var cellinfo: cellinfoty);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1451,11 +1457,10 @@ var
   info: fileinfoty;
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
 begin
- 
-  listview.anchors := [an_top,an_left,an_bottom]; 
-  listview.width := 40;
+
+  listview.Width := 40;
   listview.invalidate;
- 
+
   with listview do
   begin
     dir.Value        := directory;
@@ -1474,11 +1479,27 @@ begin
     list_log[4][x] := '';
   end;
 
-   y := 0;
-   x2 := 0;
+  places[0][0] := '      Home';
+  places[1][0] := sys_getuserhomedir;
+  places[0][1] := '      Desktop';
+  places[1][1] := sys_getuserhomedir + directoryseparator + 'Desktop';
+  places[0][2] := '      Music';
+  places[1][2] := sys_getuserhomedir + directoryseparator + 'Music';
+  places[0][3] := '      Pictures';
+  places[1][3] := sys_getuserhomedir + directoryseparator + 'Pictures';
+  places[0][4] := '      Videos';
+  places[1][4] := sys_getuserhomedir + directoryseparator + 'Videos';
+  places[0][5] := '      Documents';
+  places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
+  places[0][6] := '      Downloads';
+  places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
 
- //  dir.frame.caption := 'Directory with 0 files';
-   
+
+  y  := 0;
+  x2 := 0;
+
+  //  dir.frame.caption := 'Directory with 0 files';
+
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
@@ -1486,11 +1507,12 @@ begin
 
       if listview.filelist.isdir(x) then
       begin
-         inc(x2);
+        Inc(x2);
         list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
         list_log[1][x] := '';
         thedir         := dir.Value + trim(list_log[0][x]);
-      end else
+      end
+      else
       begin
         list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
@@ -1501,8 +1523,8 @@ begin
 
         thedir := dir.Value + trim(list_log[0][x] + tmp);
       end;
-      
-       getfileinfo(utf8decode(trim(thedir)), info);
+
+      getfileinfo(utf8decode(trim(thedir)), info);
 
       if not listview.filelist.isdir(x) then
       begin
@@ -1556,16 +1578,16 @@ begin
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
 
     end; // else dir.frame.caption := 'Directory with 0 files';
-    
-    if bcompact.value then
-    begin
-    listview.anchors := [an_top,an_bottom]; 
-    listview.invalidate;
-    end;
-    
-    dir.frame.caption := 'Directory with ' + inttostr(list_log.rowcount-x2) + ' files';
 
- end;
+  if bcompact.Value then
+  begin
+    listview.Width := list_log.Width;
+    listview.invalidate;
+  end;
+
+  dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
+
+end;
 
 procedure tfiledialogfo.updatefiltertext;
 begin
@@ -1934,16 +1956,14 @@ end;
 procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
   if avalue then
-  begin 
-    listview.height := list_log.height;
-    listview.anchors := [an_top,an_bottom]; 
+  begin
+    listview.Width   := list_log.Width;
     listview.invalidate;
     list_log.Visible := False;
   end
   else
   begin
-    listview.anchors := [an_top,an_left,an_bottom]; 
-    listview.width := 40;
+    listview.Width   := 40;
     listview.invalidate;
     list_log.Visible := True;
   end;
@@ -1952,6 +1972,61 @@ end;
 procedure tfiledialogfo.onbefdrop(const sender: TObject);
 begin
 filter.width := 300;
+end;
+
+procedure tfiledialogfo.onlayout(const sender: tcustomgrid);
+begin
+listview.left := list_log.left;
+tsplitter1.height := list_log.height;
+end;
+
+procedure tfiledialogfo.oncellevplace(const Sender: TObject; var info: celleventinfoty);
+var
+  cellpos, cellpos2: gridcoordty;
+  x, y: integer;
+  str1: string;
+begin
+
+  if (info.eventkind = cek_buttonrelease) then
+  begin
+    cellpos   := info.cell;
+    dir.Value := places[1][cellpos.row] + directoryseparator;
+
+    if tryreadlist(dir.Value, True) then
+    begin
+      dir.Value := listview.directory;
+      course(listview.directory);
+    end;
+
+    places.defocuscell;
+    places.datacols.clearselection;
+    places.selectcell(cellpos, csm_select, False);
+  end;
+end;
+
+procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+var
+  aicon: integer;
+begin
+
+  if cellinfo.cell.row = 0 then
+    aicon := 13
+  else if cellinfo.cell.row = 1 then
+    aicon := 14
+  else if cellinfo.cell.row = 2 then
+    aicon := 3
+  else if cellinfo.cell.row = 3 then
+    aicon := 7
+  else if cellinfo.cell.row = 4 then
+    aicon := 4
+  else if cellinfo.cell.row = 5 then
+    aicon := 2
+  else if cellinfo.cell.row = 6 then
+    aicon := 15;
+
+  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+    cl_default, cl_default, 0);
+
 end;
 
 
