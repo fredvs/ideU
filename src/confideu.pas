@@ -374,17 +374,17 @@ debuggerfo.save_file.height := debuggerfo.assistive.height;
 debuggerfo.save_file.width := debuggerfo.assistive.height;
 debuggerfo.save_file.left := debuggerfo.open_file.right + 2;
 
-debuggerfo.file_history.height := debuggerfo.assistive.height;
-debuggerfo.file_history.width := round(ratio * 88) ;
-debuggerfo.file_history.left := debuggerfo.save_file.right + 2;
-
 debuggerfo.find_in_edit.height := debuggerfo.assistive.height;
 debuggerfo.find_in_edit.width := debuggerfo.assistive.height;
-debuggerfo.find_in_edit.left := debuggerfo.file_history.right + 2;
+debuggerfo.find_in_edit.left := debuggerfo.save_file.right + 2;
+
+debuggerfo.file_history.height := debuggerfo.assistive.height;
+debuggerfo.file_history.width := round(ratio * 88) ;
+debuggerfo.file_history.left := debuggerfo.find_in_edit.right + 2;
 
 debuggerfo.toggle_form_unit.height := debuggerfo.assistive.height;
 debuggerfo.toggle_form_unit.width := debuggerfo.assistive.height;
-debuggerfo.toggle_form_unit.left :=  debuggerfo.find_in_edit.right + 2;
+debuggerfo.toggle_form_unit.left :=  debuggerfo.file_history.right + 2;
 
 debuggerfo.code_beauty.height := debuggerfo.assistive.height;
 debuggerfo.code_beauty.width := debuggerfo.assistive.height;
