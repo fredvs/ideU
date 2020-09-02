@@ -1820,52 +1820,68 @@ var
   x, y: integer;
   str1: string;
 begin
-  cellpos := info.cell;
 
-  if (info.eventkind = cek_buttonrelease) then
-    if (cellpos.row > -1) then
+  if (list_log.rowcount > 0) and ((info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup)) then
+    if (info.cell.row > -1) then
     begin
+
+      cellpos := info.cell;
+
       cellpos.col  := 0;
       cellpos2.col := 0;
 
+      places.defocuscell;
+      places.datacols.clearselection;
+
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
-    
+
+
       if listview.filelist.isdir(y) then
       begin
         listview.defocuscell;
         listview.datacols.clearselection;
-        list_log.datacols.clearselection;
-        list_log.defocuscell;
         str1 := filepath(dir.Value + listview.filelist[y].Name);
-       
-          if  (ss_double in info
-          .mouseeventinfopo^.shiftstate) then
+
+        if (info.eventkind = cek_buttonrelease) then
+        begin
+          if (ss_double in info
+            .mouseeventinfopo^.shiftstate) then
+            okonexecute(Sender)
+          else
           begin
-         // listview.selectcell(cellpos2, csm_select, False);  
-           okonexecute(Sender);
-          end else changedir(str1);
+            changedir(str1);
+            filename.value := '';
+          end;  
+        end
+        else if info.keyeventinfopo^.key = key_return then
+         begin
+            changedir(str1);
+            filename.value := '';
+          end;  
 
       end
       else
       begin
 
         listview.defocuscell;
-        list_log.defocuscell;
         listview.datacols.clearselection;
         listview.selectcell(cellpos2, csm_select, False);
-        list_log.datacols.clearselection;
-        list_log.selectcell(cellpos, csm_select, False);
-      
-        if (listview.rowcount > 0) and (list_log.rowcount > 0) and (not listview.filelist.isdir(y)) and (ss_double in info
-          .mouseeventinfopo^.shiftstate) then
-          begin
-          //listview.selectcell(cellpos2, csm_select, False);
+
+        if (info.eventkind = cek_buttonrelease) then
+        begin
+          if (listview.rowcount > 0) and (list_log.rowcount > 0) and
+            (not listview.filelist.isdir(y)) and
+            (ss_double in info.mouseeventinfopo^.shiftstate) then
+            okonexecute(Sender);
+        end
+        else
+        if (listview.rowcount > 0) and (list_log.rowcount > 0) and
+          (not listview.filelist.isdir(y)) and
+          (info.keyeventinfopo^.key = key_return) then
           okonexecute(Sender);
-          end;
 
       end;
-
     end;
 end;
 
@@ -1988,7 +2004,7 @@ var
   str1: string;
 begin
 
-  if (info.eventkind = cek_buttonrelease) then
+  if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
   begin
     cellpos   := info.cell;
     dir.Value := places[1][cellpos.row] + directoryseparator;
@@ -1998,11 +2014,9 @@ begin
       dir.Value := listview.directory;
       course(listview.directory);
     end;
-
-    places.defocuscell;
-    places.datacols.clearselection;
-    places.selectcell(cellpos, csm_select, False);
-  end;
+   filename.value := '';
+       
+ end;
 end;
 
 procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
