@@ -530,7 +530,6 @@ type
     cancel: TButton;
     ok: TButton;
     filename: thistoryedit;
-    filter: tdropdownlistedit;
     showhidden: tbooleanedit;
     list_log: tstringgrid;
     listview: tfilelistview;
@@ -539,6 +538,8 @@ type
    tsplitter1: tsplitter;
    iconslist: timagelist;
    blateral: tbooleanedit;
+   tsplitter2: tsplitter;
+   filter: tdropdownlistedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -1592,7 +1593,8 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
-  filter.width := 146;
+   tsplitter2.left := 430;
+   filter.frame.caption := '&Filter';
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -1997,7 +1999,8 @@ end;
 
 procedure tfiledialogfo.onbefdrop(const sender: TObject);
 begin
-filter.width := 300;
+  tsplitter2.left := 200;
+  filter.frame.caption := '';
 end;
 
 procedure tfiledialogfo.onlayout(const sender: tcustomgrid);
@@ -2231,7 +2234,7 @@ begin
     begin
       //fo.list_log.Visible := False;
       //fo.listview.Visible := False;
-      fo.filter.Visible   := False;
+      //fo.filter.Visible   := False;
       fo.filename.Visible := False;
       acaption2           := 'Choose a Directory';
     end;

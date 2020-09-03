@@ -134,8 +134,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=963
- y=182
+ x=1035
+ y=229
  cx=234
  cy=269
 replacedialog=30
@@ -1538,8 +1538,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=oncellev
+finddtext=filter.v
 findhistory=20
+ filter.v
  oncellev
  find_in_edit
  list_log.h
@@ -1559,18 +1560,17 @@ findhistory=20
  function tfiledialogcontroller.execute(dialogkind: filedialogkindty;
  power
  size
- 1024
 findoptions=1
 editpos=9
  0,-1073741823
  0,-1073741823
- 3,2096
+ 0,2240
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1437
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1599,7 +1599,7 @@ relpaths=9
  actionsmodule.pas
  commandorform.pas
  msefiledialog.pas
- ../mseide-msegui/lib/common/graphics/msedrawtext.pas
+ mseide-msegui/lib/common/graphics/msedrawtext.pas
 ismoduletexts=9
  0
  0
@@ -1639,12 +1639,12 @@ order=9
  0
  1
  2
+ 4
  7
+ 8
+ 5
  3
  6
- 8
- 4
- 5
 firsttab=0
 index=2
 [layout]
@@ -1655,7 +1655,7 @@ windowlayout=603
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=finddialogfo
  parent=
  mdistate=0
  nx=0
@@ -2085,8 +2085,8 @@ windowlayout=603
  mdistate=0
  nx=0
  ny=0
- ncx=1283
- ncy=33
+ ncx=1298
+ ncy=31
  x=0
  y=0
  cx=1298
@@ -2102,11 +2102,11 @@ windowlayout=603
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
+  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/strumpract/src/dockpanel1.pas
   /home/fred/strumpract/src/spectrum1.pas
@@ -2147,12 +2147,12 @@ windowlayout=603
   0
   1
   2
+  4
   7
+  8
+  5
   3
   6
-  8
-  4
-  5
  firsttab=0
  index=2
  [confideufo.fontname]
@@ -2217,7 +2217,7 @@ windowlayout=603
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2236,7 +2236,7 @@ windowlayout=603
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
