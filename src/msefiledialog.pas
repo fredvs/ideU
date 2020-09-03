@@ -538,6 +538,7 @@ type
    places: tstringgrid;
    tsplitter1: tsplitter;
    iconslist: timagelist;
+   blateral: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -570,6 +571,8 @@ type
    procedure oncellevplace(const sender: TObject; var info: celleventinfoty);
    procedure ondrawcellplace(const sender: tcol; const canvas: tcanvas;
                    var cellinfo: cellinfoty);
+   procedure onsetlat(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1480,22 +1483,6 @@ begin
     list_log[4][x] := '';
   end;
 
-  places[0][0] := '      Home';
-  places[1][0] := sys_getuserhomedir;
-  places[0][1] := '      Desktop';
-  places[1][1] := sys_getuserhomedir + directoryseparator + 'Desktop';
-  places[0][2] := '      Music';
-  places[1][2] := sys_getuserhomedir + directoryseparator + 'Music';
-  places[0][3] := '      Pictures';
-  places[1][3] := sys_getuserhomedir + directoryseparator + 'Pictures';
-  places[0][4] := '      Videos';
-  places[1][4] := sys_getuserhomedir + directoryseparator + 'Videos';
-  places[0][5] := '      Documents';
-  places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
-  places[0][6] := '      Downloads';
-  places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
-
-
   y  := 0;
   x2 := 0;
 
@@ -1509,21 +1496,22 @@ begin
       if listview.filelist.isdir(x) then
       begin
         Inc(x2);
-        list_log[0][x] := '     ' + utf8decode(listview.itemlist[x].Caption);
+        list_log[0][x] := '       ' + utf8decode(listview.itemlist[x].Caption);
         list_log[1][x] := '';
-        thedir         := dir.Value + trim(list_log[0][x]);
       end
       else
       begin
-        list_log[0][x] := '     ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
+        list_log[0][x] := '  .    ' + utf8decode(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
           tmp := '.' + tmp;
-
         list_log[1][x] := utf8decode(tmp);
-
-        thedir := dir.Value + trim(list_log[0][x] + tmp);
-      end;
+        list_log[0][x] := list_log[0][x] + list_log[1][x];
+     end;
+      
+    //  thedir := dir.Value + trim(list_log[0][x]);
+      
+      thedir := dir.Value + (listview.itemlist[x].Caption);
 
       getfileinfo(utf8decode(trim(thedir)), info);
 
@@ -1535,28 +1523,28 @@ begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
           y         := info.extinfo1.size div 1000000000;
           thestrx   := '~';
-          thestrext := ' GB';
+          thestrext := ' GB ';
         end
         else if info.extinfo1.size div 1000000 > 0 then
         begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
           y         := info.extinfo1.size div 1000000;
           thestrx   := '_';
-          thestrext := ' MB';
+          thestrext := ' MB ';
         end
         else if info.extinfo1.size div 1000 > 0 then
         begin
           y2        := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
           y         := info.extinfo1.size div 1000;
           thestrx   := '^';
-          thestrext := ' KB';
+          thestrext := ' KB ';
         end
         else
         begin
           y2        := 0;
           y         := info.extinfo1.size;
           thestrx   := ' ';
-          thestrext := ' B';
+          thestrext := ' B ';
         end;
 
 
@@ -1717,6 +1705,22 @@ begin
   fcourseid   := -1;
   font.Height := confideufo.fontsize.Value;
   font.Name   := ansistring(confideufo.fontname.Value);
+  
+  places[0][0] := '      Home';
+  places[1][0] := sys_getuserhomedir;
+  places[0][1] := '      Desktop';
+  places[1][1] := sys_getuserhomedir + directoryseparator + 'Desktop';
+  places[0][2] := '      Music';
+  places[1][2] := sys_getuserhomedir + directoryseparator + 'Music';
+  places[0][3] := '      Pictures';
+  places[1][3] := sys_getuserhomedir + directoryseparator + 'Pictures';
+  places[0][4] := '      Videos';
+  places[1][4] := sys_getuserhomedir + directoryseparator + 'Videos';
+  places[0][5] := '      Documents';
+  places[1][5] := sys_getuserhomedir + directoryseparator + 'Documents';
+  places[0][6] := '      Downloads';
+  places[1][6] := sys_getuserhomedir + directoryseparator + 'Downloads';
+
 
   with stockobjects do
   begin
@@ -1888,6 +1892,7 @@ end;
 procedure tfiledialogfo.ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
   aicon: integer;
+   apoint : pointty;
 begin
 
   if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
@@ -1965,8 +1970,12 @@ begin
   else
     aicon := 1;
 
-  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+ apoint.x := 2;
+    apoint.y := 1;
+
+  iconslist.paint(Canvas, aicon, apoint, cl_default,
     cl_default, cl_default, 0);
+
 
 end;
 
@@ -2022,6 +2031,7 @@ end;
 procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
   aicon: integer;
+  apoint : pointty;
 begin
 
   if cellinfo.cell.row = 0 then
@@ -2039,8 +2049,56 @@ begin
   else if cellinfo.cell.row = 6 then
     aicon := 15;
 
-  iconslist.paint(Canvas, aicon, nullpoint, cl_default,
+   apoint.x := 2;
+    apoint.y := 3;
+
+  iconslist.paint(Canvas, aicon, apoint, cl_default,
     cl_default, cl_default, 0);
+end;
+
+procedure tfiledialogfo.onsetlat(const sender: TObject; var avalue: Boolean;
+               var accept: Boolean);
+begin
+
+ if not avalue then
+  begin
+    places.Visible := true;
+    tsplitter1.left := 110;
+    tsplitter1.visible := true;
+    
+     list_log.left := tsplitter1.left+tsplitter1.width;
+ 
+      list_log.invalidate;
+     
+    listview.left   := list_log.left;
+    listview.invalidate;
+  
+    
+  end
+  else
+  begin
+  
+    places.Visible := false;
+    
+    tsplitter1.left := 0;
+    list_log.invalidate;
+    
+    list_log.Width := width;
+    
+    
+    tsplitter1.visible := false;
+   
+    list_log.left := 0;
+    
+    listview.Width   := list_log.Width;
+    listview.left   := list_log.left;
+    listview.invalidate;
+   end;
+   
+       list_log.datacols[0].width := list_log.width -
+     list_log.datacols[1].width - list_log.datacols[2].width - 
+     list_log.datacols[3].width - 20;
+ 
 
 end;
 
