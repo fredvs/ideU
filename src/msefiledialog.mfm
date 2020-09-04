@@ -125,7 +125,7 @@ object filedialogfo: Tfiledialogfo
     onkeydown = listviewonkeydown
     datarowlinecolor = -1610612731
     datacollinecolor = -1610612731
-    colorselect = 16763002
+    colorselect = 16769981
     cellwidth = 150
     cellheight = 20
     optionsgrid = [og_focuscellonenter, og_autoappend, og_mousescrollcol]
@@ -350,7 +350,18 @@ object filedialogfo: Tfiledialogfo
       0
       0
     )
-    face.localprops = []
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16773598
+      16769981
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
     taborder = 9
     hint = 'Click button on right corner to show the history of files.'
     bounds_x = 4
@@ -371,6 +382,7 @@ object filedialogfo: Tfiledialogfo
       item
         textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
       end>
+    onafterclosedropdown = afterclosedrop
     reffontheight = 15
   end
   object showhidden: tbooleanedit
@@ -417,18 +429,18 @@ object filedialogfo: Tfiledialogfo
     datacols.count = 5
     datacols.linecolor = -1610612731
     datacols.linecolorfix = -1610612733
-    datacols.colorselect = 16763002
-    datacols.coloractive = 16763002
-    datacols.colorfocused = 16763002
+    datacols.colorselect = 16769981
+    datacols.coloractive = 16769981
+    datacols.colorfocused = 16769981
     datacols.options = [co_readonly, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
     datacols.optionsedit1 = [oe1_noselectall, oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
     datacols.items = <    
       item
         linecolor = -1610612731
         linecolorfix = -1610612733
-        colorselect = 16763002
-        coloractive = 16763002
-        colorfocused = 16763002
+        colorselect = 16769981
+        coloractive = 16769981
+        colorfocused = 16769981
         width = 224
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         datalist.options = [sdo_naturalsort]
@@ -439,9 +451,9 @@ object filedialogfo: Tfiledialogfo
       item
         linecolor = -1610612731
         linecolorfix = -1610612733
-        colorselect = 16763002
-        coloractive = 16763002
-        colorfocused = 16763002
+        colorselect = 16769981
+        coloractive = 16769981
+        colorfocused = 16769981
         width = 45
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         textflags = [tf_xcentered, tf_ycentered, tf_noselect]
@@ -452,9 +464,9 @@ object filedialogfo: Tfiledialogfo
       item
         linecolor = -1610612731
         linecolorfix = -1610612733
-        colorselect = 16763002
-        coloractive = 16763002
-        colorfocused = 16763002
+        colorselect = 16769981
+        coloractive = 16769981
+        colorfocused = 16769981
         width = 81
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         textflags = [tf_right, tf_ycentered, tf_noselect]
@@ -465,9 +477,9 @@ object filedialogfo: Tfiledialogfo
       item
         linecolor = -1610612731
         linecolorfix = -1610612733
-        colorselect = 16763002
-        coloractive = 16763002
-        colorfocused = 16763002
+        colorselect = 16769981
+        coloractive = 16769981
+        colorfocused = 16769981
         width = 126
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         textflags = [tf_xcentered, tf_ycentered, tf_noselect]
@@ -478,9 +490,9 @@ object filedialogfo: Tfiledialogfo
       item
         linecolor = -1610612731
         linecolorfix = -1610612733
-        colorselect = 16763002
-        coloractive = 16763002
-        colorfocused = 16763002
+        colorselect = 16769981
+        coloractive = 16769981
+        colorfocused = 16769981
         width = 10
         options = [co_readonly, co_invisible, co_rowselect, co_savevalue, co_savestate, co_mousescrollrow]
         optionsedit1 = [oe1_noselectall, oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]

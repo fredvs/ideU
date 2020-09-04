@@ -574,6 +574,7 @@ type
                    var cellinfo: cellinfoty);
    procedure onsetlat(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
+   procedure afterclosedrop(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -729,12 +730,10 @@ begin
       (filter.dropdown.ItemIndex >= 0) and
       (afilter^ = filter.dropdown.cols[1][filter.dropdown.ItemIndex]) then
       begin
-      if filename.Visible = False then filter.Value  := '' else
       updatefiltertext;
       end
     else
     begin
-      if filename.Visible = False then filter.Value  := '' else
       filter.Value  := afilter^;
       listview.mask := afilter^;
     end;
@@ -757,13 +756,14 @@ begin
     finally
       finit := False;
     end;
-    if filename.Visible = False then
+    
+    if filename.tag = 1  then
     begin
-      Height         := 308;
-      list_log.height :=    height - list_log.top - 10;
-      listview.Height := list_log.Height;
-      places.Height := list_log.Height;
-    end;  
+    filename.frame.caption := 'Selected Directory';    
+    filename.value := ExtractFilePath(filename.value);
+    end else
+    filename.frame.caption := 'Selected File';
+    
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
     Result           := window.modalresult;
@@ -1242,6 +1242,7 @@ begin
       //   filename.value:= ''; //dir chanaged
     ;
   end;
+   if filename.tag = 1 then filename.value := dir.value;  
 end;
 
 function tfiledialogfo.changedir(const adir: filenamety): Boolean;
@@ -1445,15 +1446,19 @@ procedure tfiledialogfo.filepathentered(const Sender: TObject);
 begin
   tryreadlist(listview.directory, True);
   // readlist;
+  if filename.tag = 1 then filename.value := dir.value;
 end;
 
 procedure tfiledialogfo.dironsetvalue(const Sender: TObject; var avalue: mseString; var accept: Boolean);
 begin
-
+  places.defocuscell;
+  places.datacols.clearselection;
   accept := tryreadlist(avalue, True);
   if accept then
     course(avalue);
-  // listview.directory:= avalue;
+   listview.directory:= avalue;
+   if filename.tag = 1 then filename.value := dir.value else    
+    filename.Value := '';
 end;
 
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
@@ -1487,8 +1492,6 @@ begin
   y  := 0;
   x2 := 0;
 
-  //  dir.frame.caption := 'Directory with 0 files';
-
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
@@ -1508,10 +1511,8 @@ begin
           tmp := '.' + tmp;
         list_log[1][x] := utf8decode(tmp);
         list_log[0][x] := list_log[0][x] + list_log[1][x];
-     end;
-      
-    //  thedir := dir.Value + trim(list_log[0][x]);
-      
+      end;
+
       thedir := dir.Value + (listview.itemlist[x].Caption);
 
       getfileinfo(utf8decode(trim(thedir)), info);
@@ -1548,7 +1549,6 @@ begin
           thestrext := ' B ';
         end;
 
-
         thestrnum := IntToStr(y);
 
         z := Length(thestrnum);
@@ -1575,7 +1575,13 @@ begin
     listview.invalidate;
   end;
 
+  list_log.defocuscell;
+  list_log.datacols.clearselection;
+  
   dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
+  
+   if filename.tag = 1 then filename.value := dir.value else    
+    filename.Value := '';
 
 end;
 
@@ -1624,9 +1630,9 @@ begin
 
   debuggerfo.project_history.tag := 0;
 
-  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (filename.Visible = False) then
+  if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (filename.tag = 1) then
   begin
-    if (fdo_directory in dialogoptions) or (filename.Visible = False) then
+    if (fdo_directory in dialogoptions) or (filename.tag = 1) then
 
       str1 := quotefilename(listview.directory)
     else
@@ -1761,6 +1767,10 @@ end;
 
 procedure tfiledialogfo.homeaction(const Sender: TObject);
 begin
+
+  places.defocuscell;
+  places.datacols.clearselection;
+  
   if tryreadlist(sys_getuserhomedir, True) then
   begin
     dir.Value := listview.directory;
@@ -1842,7 +1852,6 @@ begin
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
 
-
       if listview.filelist.isdir(y) then
       begin
         listview.defocuscell;
@@ -1857,23 +1866,20 @@ begin
           else
           begin
             changedir(str1);
-            filename.value := '';
-          end;  
+            filename.Value := '';
+          end;
         end
         else if info.keyeventinfopo^.key = key_return then
-         begin
-            changedir(str1);
-            filename.value := '';
-          end;  
-
+        begin
+          changedir(str1);
+          filename.Value := '';
+        end;
       end
       else
       begin
-
         listview.defocuscell;
         listview.datacols.clearselection;
         listview.selectcell(cellpos2, csm_select, False);
-
         if (info.eventkind = cek_buttonrelease) then
         begin
           if (listview.rowcount > 0) and (list_log.rowcount > 0) and
@@ -1881,13 +1887,14 @@ begin
             (ss_double in info.mouseeventinfopo^.shiftstate) then
             okonexecute(Sender);
         end
-        else
-        if (listview.rowcount > 0) and (list_log.rowcount > 0) and
+        else if (listview.rowcount > 0) and (list_log.rowcount > 0) and
           (not listview.filelist.isdir(y)) and
           (info.keyeventinfopo^.key = key_return) then
           okonexecute(Sender);
-
       end;
+      
+      if filename.tag = 1 then filename.value := dir.value;
+      
     end;
 end;
 
@@ -2018,17 +2025,33 @@ begin
 
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
   begin
-    cellpos   := info.cell;
-    dir.Value := places[1][cellpos.row] + directoryseparator;
+    cellpos := info.cell;
 
-    if tryreadlist(dir.Value, True) then
+    if directoryexists(places[1][cellpos.row] + directoryseparator) then
     begin
-      dir.Value := listview.directory;
-      course(listview.directory);
-    end;
-   filename.value := '';
+
+      dir.Value := places[1][cellpos.row] + directoryseparator;
+
+      if tryreadlist(dir.Value, True) then
+      begin
+        dir.Value := listview.directory;
+        course(listview.directory);
+      end;
        
- end;
+         if filename.tag = 1 then filename.value := dir.value else    
+        filename.Value := '';
+
+      list_log.defocuscell;
+      list_log.datacols.clearselection;
+
+    end
+    else
+    begin
+      places.defocuscell;
+      places.datacols.clearselection;
+    end;
+
+  end;
 end;
 
 procedure tfiledialogfo.ondrawcellplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
@@ -2103,6 +2126,12 @@ begin
      list_log.datacols[3].width - 20;
  
 
+end;
+
+procedure tfiledialogfo.afterclosedrop(const sender: TObject);
+begin
+if filename.tag = 1 then
+filename.value := dir.value;
 end;
 
 
@@ -2232,10 +2261,8 @@ begin
 
     if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
     begin
-      //fo.list_log.Visible := False;
-      //fo.listview.Visible := False;
-      //fo.filter.Visible   := False;
-      fo.filename.Visible := False;
+      fo.filename.tag := 1;
+      fo.filename.value := fo.dir.value;
       acaption2           := 'Choose a Directory';
     end;
 
