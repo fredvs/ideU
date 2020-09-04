@@ -1538,8 +1538,11 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=oncellev
+finddtext=tag :=
 findhistory=20
+ tag :=
+ 'selec
+ 'open f
  oncellev
  .height :=
  homeact
@@ -1557,18 +1560,15 @@ findhistory=20
  filter.value
  visible = fal
  filename.Visible
- listview.Visible
- fdk_dir
- Visible := Fal
 findoptions=1
 editpos=7
  0,-1073741823
  0,-1073741823
- 0,2022
- 0,0
- 0,0
+ 26,2263
+ 0,-1073741823
  0,-1073741823
  0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1630,11 +1630,11 @@ order=7
  1
  2
  3
+ 5
  6
  4
- 5
 firsttab=0
-index=4
+index=2
 [layout]
 windowlayout=601
  [mainfo.basedock]
@@ -2088,13 +2088,13 @@ windowlayout=601
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/strumpract/src/dockpanel1.pas
   /home/fred/strumpract/src/spectrum1.pas
@@ -2136,11 +2136,11 @@ windowlayout=601
   1
   2
   3
+  5
   6
   4
-  5
  firsttab=0
- index=4
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2203,7 +2203,7 @@ windowlayout=601
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
