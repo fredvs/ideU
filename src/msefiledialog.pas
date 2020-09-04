@@ -758,7 +758,10 @@ begin
     end;
     
     if filename.tag = 1  then
+    begin
     filename.value := ExtractFilePath(filename.value);
+    caption := 'Open Directory';    
+    end;
     
     showhidden.Value := not (fa_hidden in excludeattrib);
     Show(True);
@@ -2259,7 +2262,7 @@ begin
     begin
     fo.filename.tag := 1;
     fo.filename.value := fo.dir.value;
-    fo.filename.frame.caption := 'Selected Directory';      
+    fo.filename.frame.caption := 'Selected Directory';  
     end else
     if (dialogkind in [fdk_save]) then
     fo.filename.frame.caption := 'Save File as' else

@@ -1538,8 +1538,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=tag :=
+finddtext=tag =
 findhistory=20
+ tag =
  tag :=
  'selec
  'open f
@@ -1559,15 +1560,14 @@ findhistory=20
  uses
  filter.value
  visible = fal
- filename.Visible
 findoptions=1
 editpos=7
  0,-1073741823
  0,-1073741823
- 26,2263
+ 7,753
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -2073,12 +2073,12 @@ windowlayout=601
  mdistate=0
  nx=0
  ny=0
- ncx=1298
+ ncx=1283
  ncy=31
  x=0
  y=0
  cx=1298
- cy=31
+ cy=29
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2090,8 +2090,8 @@ windowlayout=601
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
@@ -2222,7 +2222,7 @@ windowlayout=601
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
