@@ -2,7 +2,6 @@ object filedialogfo: Tfiledialogfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   face.localprops = []
   face.template = sourcefo.tfacecomp2
-  onactivate = formoncreate
   visible = False
   bounds_x = 142
   bounds_y = 211
@@ -47,6 +46,7 @@ object filedialogfo: Tfiledialogfo
     FFFFFF02
   }
   windowopacity = -Inf
+  oncreated = formoncreate
   onkeydown = listviewonkeydown
   onlayout = layoutev
   left = 239

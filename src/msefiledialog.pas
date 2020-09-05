@@ -164,6 +164,9 @@ type
     fshowhidden: boolean;
     ffilterindex: integer;
     fcolwidth: integer;
+    fcolsizewidth: integer;
+    fcolextwidth: integer;
+    fcoldatewidth: integer;
     fwindowrect: rectty;
     fhistorymaxcount: integer;
     fhistory: msestringarty;
@@ -771,7 +774,8 @@ begin
     end;
     
     abool := true;
-   
+    if blateral.value then onsetlat(nil,abool,abool);
+    if bcompact.value then onsetcomp(nil,abool,abool);
     if showhidden.value then showhiddenonsetvalue(nil,abool,abool);
   //    showhidden.Value := not (fa_hidden in excludeattrib);
   
@@ -1788,6 +1792,7 @@ begin
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
+  application.processmessages;    
 end;
 
 procedure tfiledialogfo.dirshowhint(const Sender: TObject; var info: hintinfoty);
@@ -2201,6 +2206,10 @@ begin
   fshowhidden        := reader.readboolean('showhidden', fshowhidden);
   fcompact        := reader.readboolean('compact', fcompact);
   fpanel        := reader.readboolean('panel', fpanel);
+  fcolsizewidth := reader.readinteger('colsizewidth', fcolsizewidth);
+  fcolextwidth := reader.readinteger('colextwidth', fcolextwidth);
+  fcoldatewidth := reader.readinteger('coldatewidth', fcoldatewidth);
+
   
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir)//  try
@@ -2234,6 +2243,9 @@ begin
   writer.writeboolean('panel', fpanel);
   writer.writeboolean('compact', fcompact);
   writer.writeboolean('showhidden', fshowhidden);
+  writer.writeinteger('colsizewidth', fcolsizewidth);
+  writer.writeinteger('colextwidth', fcolextwidth);
+  writer.writeinteger('coldatewidth', fcoldatewidth);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2296,6 +2308,13 @@ begin
     fo.blateral.value := fpanel;
     fo.bcompact.value := fcompact;
     fo.showhidden.value := fshowhidden;
+    
+    if fcolextwidth > 0 then 
+    fo.list_log.datacols[1].width  := fcolextwidth;
+    if fcolsizewidth > 0 then
+    fo.list_log.datacols[2].width  := fcolsizewidth;
+    if fcoldatewidth > 0 then
+    fo.list_log.datacols[3].width  := fcoldatewidth;
    
     if confideufo.fontsize.value > 0 then
       if confideufo.fontsize.value < 21 then
@@ -2352,7 +2371,9 @@ begin
       fpanel := fo.blateral.value;
       fcompact := fo.bcompact.value ;
       fshowhidden := fo.showhidden.value;
-  
+      fcolextwidth  := fo.list_log.datacols[1].width ;
+      fcolsizewidth := fo.list_log.datacols[2].width ;
+      fcoldatewidth := fo.list_log.datacols[3].width ;
      end;   
 
   finally
