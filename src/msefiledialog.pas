@@ -2084,47 +2084,32 @@ end;
 procedure tfiledialogfo.onsetlat(const sender: TObject; var avalue: Boolean;
                var accept: Boolean);
 begin
-
- if not avalue then
+  if not avalue then
   begin
-    places.Visible := true;
-    tsplitter1.left := 110;
-    tsplitter1.visible := true;
-    
-     list_log.left := tsplitter1.left+tsplitter1.width;
- 
-      list_log.invalidate;
-     
-    listview.left   := list_log.left;
-    listview.invalidate;
-  
-    
-  end
+    places.Visible     := True;
+    tsplitter1.left    := 110;
+    tsplitter1.Visible := True;
+    list_log.left := tsplitter1.left + tsplitter1.Width;
+   end
   else
   begin
-  
-    places.Visible := false;
-    
+    places.Visible := False;
     tsplitter1.left := 0;
-    list_log.invalidate;
-    
-    list_log.Width := width;
-    
-    
-    tsplitter1.visible := false;
-   
+    list_log.Width := Width;
+    tsplitter1.Visible := False;
     list_log.left := 0;
+  end;
     
-    listview.Width   := list_log.Width;
-    listview.left   := list_log.left;
-    listview.invalidate;
-   end;
+    listview.left := list_log.left;
+    
+    if not list_log.visible then listview.Width := list_log.Width;
+  
+  list_log.datacols[0].Width := list_log.Width -
+    list_log.datacols[1].Width - list_log.datacols[2].Width -
+    list_log.datacols[3].Width - 20;
    
-       list_log.datacols[0].width := list_log.width -
-     list_log.datacols[1].width - list_log.datacols[2].width - 
-     list_log.datacols[3].width - 20;
- 
-
+    listview.invalidate;
+    list_log.invalidate;
 end;
 
 procedure tfiledialogfo.afterclosedrop(const sender: TObject);
