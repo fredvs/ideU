@@ -159,6 +159,9 @@ type
     ffilenames: filenamearty;
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
+    fpanel: boolean;
+    fcompact: boolean;
+    fshowhidden: boolean;
     ffilterindex: integer;
     fcolwidth: integer;
     fwindowrect: rectty;
@@ -235,6 +238,9 @@ type
     property lastdir: filenamety read flastdir write setlastdir;
     property basedir: filenamety read fbasedir write fbasedir;
     property filter: filenamety read ffilter write ffilter;
+    property panel: boolean read fpanel write fpanel;
+    property compact: boolean read fcompact write fcompact;
+    property showhidden: boolean read fshowhidden write fshowhidden;
     property filterlist: tdoublemsestringdatalist read ffilterlist write setfilterlist;
     property filterindex: integer read ffilterindex write ffilterindex default 0;
     property include: fileattributesty read finclude write finclude default [fa_all];
@@ -691,6 +697,7 @@ function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const 
   const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty; const oncheckfile: checkfileeventty): modalresultty;
 var
   int1: integer;
+  abool: boolean;
 begin
   with dialog do
   begin
@@ -763,7 +770,11 @@ begin
     caption := 'Open Directory';    
     end;
     
-    showhidden.Value := not (fa_hidden in excludeattrib);
+    abool := true;
+   
+    if showhidden.value then showhiddenonsetvalue(nil,abool,abool);
+  //    showhidden.Value := not (fa_hidden in excludeattrib);
+  
     Show(True);
     Result           := window.modalresult;
     if Result <> mr_ok then
@@ -2187,6 +2198,10 @@ begin
   fwindowrect.cx := reader.readinteger('cx', fwindowrect.cx);
   fwindowrect.cy := reader.readinteger('cy', fwindowrect.cy);
   fcolwidth      := reader.readinteger('filecolwidth', fcolwidth);
+  fshowhidden        := reader.readboolean('showhidden', fshowhidden);
+  fcompact        := reader.readboolean('compact', fcompact);
+  fpanel        := reader.readboolean('panel', fpanel);
+  
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir)//  try
   //  except
@@ -2216,6 +2231,9 @@ begin
   writer.writeinteger('y', fwindowrect.y);
   writer.writeinteger('cx', fwindowrect.cx);
   writer.writeinteger('cy', fwindowrect.cy);
+  writer.writeboolean('panel', fpanel);
+  writer.writeboolean('compact', fcompact);
+  writer.writeboolean('showhidden', fshowhidden);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2248,15 +2266,15 @@ var
   po1: pmsestringarty;
   fo: tfiledialogfo;
   ara, arb: msestringarty;
-  acaption2: msestring;
+  //acaption2: msestring;
   rectbefore: rectty;
 begin
-  acaption2 := acaption;
-  ara       := nil;
+  //acaption2 := acaption;
+  ara    := nil;
   //compiler warning
-  arb       := nil;
+  arb    := nil;
   //compiler warning
-  Result    := mr_ok;
+  Result := mr_ok;
   if Assigned(fonbeforeexecute) then
   begin
     fonbeforeexecute(self, dialogkind, Result);
@@ -2268,24 +2286,40 @@ begin
   else
     po1 := nil;
   fo := tfiledialogfo.Create(nil);
+  
   try
  {$ifdef FPC} {$checkpointer off} {$endif}
     //todo!!!!! bug 3348
     ara := ffilterlist.asarraya;
     arb := ffilterlist.asarrayb;
 
+    fo.blateral.value := fpanel;
+    fo.bcompact.value := fcompact;
+    fo.showhidden.value := fshowhidden;
+   
+    if confideufo.fontsize.value > 0 then
+      if confideufo.fontsize.value < 21 then
+        fo.font.Height := confideufo.fontsize.value
+      else
+        fo.font.Height := 20;
+
+    fo.font.color := cl_black;
+
+     if confideufo.fontname.value <> '' then
+      fo.font.Name := ansistring(confideufo.fontname.value);
+
     if (dialogkind in [fdk_dir]) or (fdo_directory in aoptions) then
     begin
     fo.filename.tag := 1;
     fo.filename.value := fo.dir.value;
-    fo.filename.frame.caption := 'Selected Directory';  
+    fo.filename.frame.caption := 'Selected Directory';      
     end else
     if (dialogkind in [fdk_save]) then
     fo.filename.frame.caption := 'Save File as' else
     if (dialogkind in [fdk_new]) then
     fo.filename.frame.caption := 'New File Name' else
     fo.filename.frame.caption := 'Selected File';      
-
+   
     if dialogkind <> fdk_none then
       if dialogkind in [fdk_save, fdk_new] then
         system.include(aoptions, fdo_save)
@@ -2299,9 +2333,8 @@ begin
       fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
     Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
-      fexclude, po1, fhistorymaxcount, acaption2, aoptions, fdefaultext,
+      fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
-
     if not rectisequal(fo.widgetrect, rectbefore) then
       fwindowrect := fo.widgetrect;
 
@@ -2309,11 +2342,18 @@ begin
       fonafterexecute(self, Result);
  {$ifdef FPC} {$checkpointer default} {$endif}
     if Result = mr_ok then
+    begin
       if fdo_relative in foptions then
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
-
+      fpanel := fo.blateral.Value;
+      
+      fpanel := fo.blateral.value;
+      fcompact := fo.bcompact.value ;
+      fshowhidden := fo.showhidden.value;
+  
+     end;   
 
   finally
     fo.Free;

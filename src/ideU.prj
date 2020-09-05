@@ -101,8 +101,10 @@ findinfiledialog=109
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
- value=.statfile
+ value=fontsize
  history=20
+  fontsize
+  fontheight
   .statfile
   tstatfile
   tfiledia
@@ -121,8 +123,6 @@ findinfiledialog=109
   fk_source
   lvo_horz
   listview
-  tmaskedbitmap
-  tmsefpmemoryimage
  [findinfileadialogfo]
  stackedunder=
  x=291
@@ -873,25 +873,28 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=7
+modulenames=8
  ACTIONSMO
  DEBUGGERFO
+ CONFIDEUFO
  MAINFO
  FILEDIALOGFO
  PROJECTOPTIONSFO
  SOURCEFO
  TEMPLATEEDITORFO
-moduletypes=7
+moduletypes=8
  TACTIONSMO
  TDEBUGGERFO
+ TCONFIDEUFO
  TMAINFO
  TFILEDIALOGFO
  TPROJECTOPTIONSFO
  TSOURCEFO
  TTEMPLATEEDITORFO
-modulefiles=7
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
@@ -901,8 +904,8 @@ befcommandon=0
 makeoptionson=12
  4095
  3
- 4
- 4092
+ 0
+ 4088
  0
  192
  0
@@ -1544,8 +1547,11 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=stat
+finddtext=uses
 findhistory=20
+ uses
+ filedialog1
+ ffilter
  stat
  tag =
  tag :=
@@ -1563,22 +1569,20 @@ findhistory=20
  list_log.h
  if filename.Visible = False then
  htlm
- image
- uses
- filter.value
 findoptions=1
-editpos=11
+editpos=12
  0,-1073741823
  0,-1073741823
- 0,1710
+ 19,1609
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
- 0,1
- 0,1483
- 0,24
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1590,7 +1594,8 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-sourcefiles=11
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/msefiledialog.pas
@@ -1602,7 +1607,8 @@ sourcefiles=11
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/templateeditor.pas
-relpaths=11
+ ${PROJECTDIR}/confideu.pas
+relpaths=12
  actionsmodule.pas
  ideU.pas
  msefiledialog.pas
@@ -1614,7 +1620,8 @@ relpaths=11
  actionsmodule.pas
  projectoptionsform.pas
  templateeditor.pas
-ismoduletexts=11
+ confideu.pas
+ismoduletexts=12
  0
  0
  0
@@ -1626,7 +1633,8 @@ ismoduletexts=11
  0
  0
  0
-modules=7
+ 0
+modules=8
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1634,7 +1642,8 @@ modules=7
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/templateeditor.mfm
-moduleoptions=7
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=8
  0
  0
  0
@@ -1642,7 +1651,8 @@ moduleoptions=7
  0
  0
  0
-visiblemodules=7
+ 0
+visiblemodules=8
  -1
  -1
  -1
@@ -1650,7 +1660,9 @@ visiblemodules=7
  -1
  -1
  -1
-nomenumodules=7
+ -1
+nomenumodules=8
+ 0
  0
  0
  0
@@ -1659,22 +1671,23 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=11
+order=12
  0
  1
  2
+ 7
  4
  5
+ 11
  3
- 6
- 9
  8
+ 9
  10
- 7
+ 6
 firsttab=2
 index=2
 [layout]
-windowlayout=643
+windowlayout=663
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1688,7 +1701,7 @@ windowlayout=643
  ny=0
  ncx=0
  ncy=0
- x=3
+ x=47
  y=112
  cx=1310
  cy=624
@@ -1819,7 +1832,7 @@ windowlayout=643
  sortdescend1=0
  sorted=0
  col=0
- row=2
+ row=7
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2111,12 +2124,12 @@ windowlayout=643
  mdistate=0
  nx=0
  ny=0
- ncx=1298
+ ncx=1283
  ncy=27
  x=0
  y=0
  cx=1298
- cy=27
+ cy=25
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2169,18 +2182,19 @@ windowlayout=643
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=11
+ order=12
   0
   1
   2
+  7
   4
   5
+  11
   3
-  6
-  9
   8
+  9
   10
-  7
+  6
  firsttab=2
  index=2
  [confideufo.fontname]
@@ -2245,7 +2259,7 @@ windowlayout=643
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2264,7 +2278,7 @@ windowlayout=643
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2302,7 +2316,7 @@ windowlayout=643
  [_mse_templateeditorfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2313,6 +2327,25 @@ windowlayout=643
  y=120
  cx=483
  cy=399
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=374
+ y=164
+ cx=639
+ cy=672
  rcx=0
  rcy=0
  wsize=0
