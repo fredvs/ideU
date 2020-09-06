@@ -19,7 +19,7 @@ order16=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=109
+findinfiledialog=115
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -29,9 +29,9 @@ findinfiledialog=109
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -60,6 +60,12 @@ findinfiledialog=109
  y=84
  cx=608
  cy=346
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  filehistory=37
   /home/fred/biotray/
   /home/fred/A Alphabetical listing of command line options_files/
@@ -1573,7 +1579,7 @@ findoptions=1
 editpos=13
  0,-1073741823
  0,-1073741823
- 0,776
+ 0,2167
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1583,7 +1589,7 @@ editpos=13
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1437
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1624,7 +1630,7 @@ relpaths=13
  projectoptionsform.pas
  templateeditor.pas
  confideu.pas
- ../mseide-msegui/lib/common/graphics/msedrawtext.pas
+ mseide-msegui/lib/common/graphics/msedrawtext.pas
 ismoduletexts=13
  0
  0
@@ -1680,6 +1686,7 @@ order=13
  0
  1
  2
+ 11
  12
  3
  4
@@ -1689,11 +1696,10 @@ order=13
  8
  9
  10
- 11
 firsttab=2
 index=2
 [layout]
-windowlayout=673
+windowlayout=682
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1707,8 +1713,8 @@ windowlayout=673
  ny=0
  ncx=0
  ncy=0
- x=21
- y=74
+ x=-72
+ y=141
  cx=1310
  cy=624
  rcx=0
@@ -1733,7 +1739,7 @@ windowlayout=673
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2061,6 +2067,9 @@ windowlayout=673
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2076,6 +2085,9 @@ windowlayout=673
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2090,6 +2102,9 @@ windowlayout=673
  panel=0
  compact=0
  showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -2140,11 +2155,11 @@ windowlayout=673
  nx=0
  ny=0
  ncx=1283
- ncy=23
+ ncy=17
  x=0
  y=0
  cx=1298
- cy=21
+ cy=15
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2201,6 +2216,7 @@ windowlayout=673
   0
   1
   2
+  11
   12
   3
   4
@@ -2210,7 +2226,6 @@ windowlayout=673
   8
   9
   10
-  11
  firsttab=2
  index=2
  [confideufo.fontname]

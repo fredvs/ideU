@@ -48,6 +48,7 @@ object filedialogfo: Tfiledialogfo
   windowopacity = -Inf
   oncreated = formoncreate
   onkeydown = listviewonkeydown
+  onresize = onresize
   onlayout = layoutev
   left = 239
   top = 138
@@ -559,7 +560,6 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 38
     bounds_cx = 70
     bounds_cy = 17
-    anchors = [an_top, an_right]
     onsetvalue = onsetcomp
   end
   object places: tstringgrid
@@ -684,7 +684,6 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 38
     bounds_cx = 77
     bounds_cy = 17
-    anchors = [an_top, an_right]
     onsetvalue = onsetlat
   end
   object tsplitter2: tsplitter

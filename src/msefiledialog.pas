@@ -584,6 +584,7 @@ type
    procedure onsetlat(const sender: TObject; var avalue: Boolean;
                    var accept: Boolean);
    procedure afterclosedrop(const sender: TObject);
+   procedure onresize(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -1698,17 +1699,6 @@ end;
 
 procedure tfiledialogfo.layoutev(const Sender: TObject);
 begin
-  // placeyorder(2,[2],[dir,listview],2);
-  // aligny(wam_center,[dir,back,forward,home,up,createdir]);
-  // aligny(wam_center,[filename,showhidden]);
-  if ok.Height <= filter.Height then
-  //  aligny(wam_center,[filter,ok,cancel]);
-
-  else
-    //  ok.top:= showhidden.bottom + 4;
-    // aligny(wam_center,[ok,cancel]);
-  ;
-    // syncpaintwidth([filename,filter],namecont.bounds_cx);
   listview.synctofontheight;
 end;
 
@@ -1773,7 +1763,6 @@ begin
   end;
   
   places.rowcount := x + 1;
-
 
   with stockobjects do
   begin
@@ -2060,6 +2049,11 @@ procedure tfiledialogfo.onlayout(const sender: tcustomgrid);
 begin
 listview.left := list_log.left;
 tsplitter1.height := list_log.height;
+listview.left     := list_log.left;
+  tsplitter1.Height := list_log.Height;
+   list_log.datacols[0].Width := list_log.Width -
+    list_log.datacols[1].Width - list_log.datacols[2].Width -
+    list_log.datacols[3].Width - 20;
 end;
 
 procedure tfiledialogfo.oncellevplace(const Sender: TObject; var info: celleventinfoty);
@@ -2163,6 +2157,15 @@ procedure tfiledialogfo.afterclosedrop(const sender: TObject);
 begin
 if filename.tag = 1 then
 filename.value := dir.value;
+end;
+
+procedure tfiledialogfo.onresize(const sender: TObject);
+begin
+list_log.datacols[0].Width := list_log.Width -
+    list_log.datacols[1].Width - list_log.datacols[2].Width -
+    list_log.datacols[3].Width - 20;
+    
+   application.processmessages;
 end;
 
 
