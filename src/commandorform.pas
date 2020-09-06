@@ -226,8 +226,6 @@ ratio := confideufo.fontsize.value / 12;
 
 project_history.width := round(ratio * 88);
 
-project_history.value := tosysfilepath(project_history.value);
-
 //if (fileexists(project_history.value)) and
 if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
@@ -236,6 +234,8 @@ sleep(50);
 mainfo.openproject(project_history.value);
 mainfo.activate;
 end;
+
+project_history.value := tosysfilepath(project_history.value);
 end;
 
 procedure tdebuggerfo.onsetvaluefilehis(const sender: TObject);
