@@ -1041,8 +1041,10 @@ str3 : msestring;
 int1, int2, int3 : integer;
 begin
 nodebugset := false;
-if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(gettargetfile +
+str3 := gettargetfile;//to initialize
+str3 := '';
+if not fileexists(tosysfilepath(ansistring(gettargetfile))) then
+ mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1143,8 +1145,10 @@ for int2:= 0 to high(compilerused) do begin
 
 procedure tactionsmo.stepactonexecute(const sender: tobject);
 begin
-if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(gettargetfile +
+ gettargetfile;//to initialize
+ 
+if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1158,8 +1162,10 @@ end;
 
 procedure tactionsmo.stepiactonexecute(const sender: TObject);
 begin
-if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(gettargetfile +
+ gettargetfile;//to initializez
+
+if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1173,8 +1179,8 @@ end;
 
 procedure tactionsmo.nextactonexecute(const sender: tobject);
 begin
-if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(gettargetfile +
+if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin
@@ -1188,8 +1194,8 @@ end;
 
 procedure tactionsmo.nextiactonexecute(const sender: TObject);
 begin
-if not fileexists(ansistring(gettargetfile)) then
- mainfo.setstattext(gettargetfile +
+if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 
 else begin

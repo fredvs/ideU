@@ -26,7 +26,7 @@ uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msegui,
  msegraphics,msegraphutils,mseclasses,mseforms,msetoolbar,mseevent,
  msesimplewidgets,mseedit,msestrings,sysutils,msegridsglob,
- msedataedits,msegrids,pparser, pastree,
+ msedataedits,msefileutils,msegrids,pparser, pastree,
  Classes,msedispwidgets,mserichstring;
 
 type
@@ -165,7 +165,7 @@ end;
 
 procedure tprocedurelistfo.UpdateList(const filename: msestring);
 begin
-FFilename := filename;
+FFilename := tosysfilepath(filename);
 if assigned(FObjectStrings) then FObjectStrings.free;
 InitializeForm;
 end;
@@ -178,7 +178,7 @@ writeln('>> FormCreated');
   FLanguage := ltPas;
   FSearchAll := True; // search anywhere in a method name
   if Assigned(sourcefo.activepage) then
-    FFilename := sourcefo.activepage.filepath
+    FFilename := tosysfilepath(sourcefo.activepage.filepath)
   else
     Close;
   //LoadTime := GetTickCount;
@@ -340,7 +340,7 @@ var
 
   function MoveToImplementation: Boolean;
   begin
-    if IsProgram(ansistring(FFileName)) or (IsInc(ansistring(FFileName))) then
+    if IsProgram(ansistring(tosysfilepath(FFileName))) or (IsInc(ansistring(tosysfilepath(FFileName)))) then
     begin
       Result := True;
       Exit;
@@ -528,7 +528,7 @@ begin
     MemStream := TMemoryStream.Create;
     try
       // Read from file on disk and store in a memory stream
-      SFile := TFileStream.Create(ansistring(FFilename), fmOpenRead or fmShareDenyWrite);
+      SFile := TFileStream.Create(ansistring(tosysfilepath(FFilename)), fmOpenRead or fmShareDenyWrite);
       try
         SFile.Position := 0;
         MemStream.CopyFrom(SFile, SFile.Size);
@@ -541,7 +541,7 @@ begin
         ltPas: Parser.Origin := MemStream.Memory;
 //        ltCpp: CParser.SetOrigin(MemStream.Memory, MemStream.Size);
       end;
-      Caption := 'Procedure List - ' + ExtractFileName(FFileName);
+      Caption := 'Procedure List - ' + ExtractFileName(tosysfilepath(FFileName));
 
       ClearObjectStrings;
       try

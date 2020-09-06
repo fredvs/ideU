@@ -8,10 +8,10 @@ object debuggerfo: tdebuggerfo
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
   visible = False
-  bounds_x = 75
-  bounds_y = 93
+  bounds_x = 122
+  bounds_y = 102
   bounds_cx = 1154
-  bounds_cy = 153
+  bounds_cy = 54
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -20,7 +20,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1144
-    153
+    54
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -372,7 +372,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 49
     bounds_cx = 1144
-    bounds_cy = 106
+    bounds_cy = 7
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -389,7 +389,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 1144
-    bounds_cy = 151
+    bounds_cy = 52
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -8394,8 +8394,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 63
-    top = 77
+    left = 545
+    top = 10
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -8409,8 +8409,8 @@ object debuggerfo: tdebuggerfo
       12237465
     )
     template.fade_direction = gd_down
-    left = 89
-    top = 105
+    left = 504
+    top = 14
   end
   object templateprojectdark: tfacecomp
     template.fade_pos.count = 2
@@ -8424,15 +8424,15 @@ object debuggerfo: tdebuggerfo
       2568994
     )
     template.fade_direction = gd_down
-    left = 214
-    top = 78
+    left = 550
+    top = 8
   end
   object timagelist1: timagelist
     width = 55
     height = 10
     count = 2
-    left = 336
-    top = 54
+    left = 268
+    top = 2
     image = {
       00000000020000006E0000001400000098150000000000000000000000000000
       0000000000000000000000000000000000000000CBC3DA01C2C8CF01BBCBC401
@@ -8633,8 +8633,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 57
-    top = 80
+    left = 464
+    top = 15
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -8648,8 +8648,8 @@ object debuggerfo: tdebuggerfo
       12105912
     )
     template.fade_direction = gd_down
-    left = 213
-    top = 53
+    left = 572
+    top = 4
   end
   object templfiledark: tfacecomp
     template.fade_pos.count = 2
@@ -8663,16 +8663,16 @@ object debuggerfo: tdebuggerfo
       2829079
     )
     template.fade_direction = gd_down
-    left = 75
-    top = 75
+    left = 515
+    top = 4
   end
   object imagebut: timagelist
     width = 64
     height = 64
     options = [bmo_masked, bmo_graymask]
     count = 2
-    left = 385
-    top = 51
+    left = 387
+    top = 2
     image = {
       00000000120000008000000080000000D4330000000000000000000000000000
       0000000000000000000000000000000000000000000000FF00000024DEDEDE01

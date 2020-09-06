@@ -97,10 +97,10 @@ begin
  else begin
   if info.eventkind = cek_enter then begin
    if findfile(frelpaths[fsortlist[index]]) then begin
-    pathdisp.value:= filepath(frelpaths[fsortlist[index]]);
+    pathdisp.value:= tosysfilepath(filepath(frelpaths[fsortlist[index]]));
    end
    else begin
-    pathdisp.value:= fpaths[fsortlist[index]];
+    pathdisp.value:= tosysfilepath(fpaths[fsortlist[index]]);
    end;
   end;
  end;

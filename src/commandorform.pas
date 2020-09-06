@@ -225,6 +225,9 @@ begin
 ratio := confideufo.fontsize.value / 12;
 
 project_history.width := round(ratio * 88);
+
+project_history.value := tosysfilepath(project_history.value);
+
 //if (fileexists(project_history.value)) and
 if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
@@ -240,7 +243,7 @@ var
  page: tsourcepage;
  ratio : double;
 begin
-
+file_history.value := tosysfilepath(file_history.value);
 ratio := confideufo.fontsize.value / 12;
 file_history.width := round(ratio * 88);
 

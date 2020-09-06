@@ -359,7 +359,7 @@ begin
  if ffileloading > 0 then begin
   exit;
  end;
- pathdisp.value:= finitialfilepath;
+ pathdisp.value:= tosysfilepath(finitialfilepath);
  str1:= filename;
  if str1 = '' then begin
   str1:= sourcefo.c[ord(str_new)];
