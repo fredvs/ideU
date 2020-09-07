@@ -36,7 +36,7 @@ uses
  mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,msegraphutils,
  msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
  mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
- msedragglob;
+ msedragglob, mserichstring;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -157,6 +157,8 @@ type
     fgroup: integer;
     fonchange: proceventty;
     ffilenames: filenamearty;
+    ffilenamescust: filenamearty;
+    fsplitterplaces: integer;
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
     fpanel: boolean;
@@ -233,6 +235,7 @@ type
     procedure componentevent(const event: tcomponentevent);
     property history: msestringarty read fhistory write fhistory;
     property filenames: filenamearty read ffilenames write ffilenames;
+    property filenamescust: filenamearty read ffilenamescust write ffilenamescust;
     property syscommandline: filenamety read getsysfilename; deprecated;
     property sysfilename: filenamety read getsysfilename;
     property params: msestring read fparams;
@@ -543,12 +546,15 @@ type
     list_log: tstringgrid;
     listview: tfilelistview;
    bcompact: tbooleanedit;
-   places: tstringgrid;
    tsplitter1: tsplitter;
-   iconslist: timagelist;
    blateral: tbooleanedit;
    tsplitter2: tsplitter;
    filter: tdropdownlistedit;
+   placespan: tstringdisp;
+   places: tstringgrid;
+   tsplitter3: tsplitter;
+   placescust: tstringgrid;
+   iconslist: timagelist;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -585,6 +591,10 @@ type
                    var accept: Boolean);
    procedure afterclosedrop(const sender: TObject);
    procedure onresize(const sender: TObject);
+   procedure oncellevcustplace(const sender: TObject;
+                   var info: celleventinfoty);
+   procedure ondrawcellcustplace(const sender: tcol; const canvas: tcanvas;
+                   var cellinfo: cellinfoty);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -2139,14 +2149,14 @@ procedure tfiledialogfo.onsetlat(const sender: TObject; var avalue: Boolean;
 begin
   if not avalue then
   begin
-    places.Visible     := True;
+    placespan.Visible     := True;
     tsplitter1.left    := 110;
     tsplitter1.Visible := True;
     list_log.left := tsplitter1.left + tsplitter1.Width;
    end
   else
   begin
-    places.Visible := False;
+    placespan.Visible := False;
     tsplitter1.left := 0;
     list_log.Width := Width;
     tsplitter1.Visible := False;
@@ -2181,6 +2191,85 @@ list_log.datacols[0].Width := list_log.Width -
    application.processmessages;
 end;
 
+procedure tfiledialogfo.oncellevcustplace(const Sender: TObject; var info: celleventinfoty);
+var
+  theint: integer;
+  thestr: msestring;
+begin
+
+  if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
+    if (info.eventkind = cek_keyup) then
+    begin
+      if (info.keyeventinfopo^.key = key_delete) then
+        if (placescust.rowcount > 1) and (info.cell.row < placescust.rowcount - 1) then
+          placescust.deleterow(info.cell.row);
+    end
+    else if (info.eventkind = cek_buttonrelease) then
+      if (ss_double in info.mouseeventinfopo^.shiftstate) and
+        (info.cell.row = placescust.rowcount - 1) then
+      begin
+        thestr := copy(dir.Value, 1, length(dir.Value) - 1);
+        theint := lastdelimiter(directoryseparator, thestr);
+        placescust[0][placescust.rowcount - 1] := '       ' + copy(thestr, theint + 1, 14);
+        placescust[1][placescust.rowcount - 1] := dir.Value;
+        placescust.rowcount := placescust.rowcount + 1;
+        places.defocuscell;
+        places.datacols.clearselection;
+      end
+      else
+      if (info.cell.row < placescust.rowcount - 1) then
+        if directoryexists(tosysfilepath(placescust[1][info.cell.row] + directoryseparator)) then
+        begin
+
+          dir.Value := tosysfilepath(placescust[1][info.cell.row] + directoryseparator);
+
+          if tryreadlist(dir.Value, True) then
+          begin
+            dir.Value := tosysfilepath(listview.directory);
+            course(listview.directory);
+          end;
+
+          if filename.tag = 1 then
+            filename.Value := dir.Value
+          else
+            filename.Value := '';
+
+          filename.Value := tosysfilepath(filename.Value);
+
+          list_log.defocuscell;
+          list_log.datacols.clearselection;
+          
+          places.defocuscell;
+         places.datacols.clearselection;
+
+        end
+        else
+        begin
+          placescust.defocuscell;
+          placescust.datacols.clearselection;
+        end;
+
+end;
+
+procedure tfiledialogfo.ondrawcellcustplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+var
+  aicon: integer;
+  apoint: pointty;
+  astr: msestring;
+begin
+
+  if cellinfo.cell.row < placescust.rowcount - 1 then
+  begin
+    aicon := 16;
+
+    apoint.x := 2;
+    apoint.y := 3;
+
+    iconslist.paint(Canvas, aicon, apoint, cl_default,
+      cl_default, cl_default, 0);
+  end;
+end;
+
 
 { tfiledialogcontroller }
 
@@ -2206,6 +2295,7 @@ end;
 procedure tfiledialogcontroller.readstatvalue(const reader: tstatreader);
 begin
   ffilenames := reader.readarray('filenames', ffilenames);
+  ffilenamescust := reader.readarray('filenamescust', ffilenamescust);
   if fdo_params in foptions then
     fparams  := reader.readmsestring('params', fparams);
 end;
@@ -2225,7 +2315,7 @@ begin
   fcolsizewidth := reader.readinteger('colsizewidth', fcolsizewidth);
   fcolextwidth := reader.readinteger('colextwidth', fcolextwidth);
   fcoldatewidth := reader.readinteger('coldatewidth', fcoldatewidth);
-
+  fsplitterplaces := reader.readinteger('splitterplaces', fsplitterplaces);
   
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir)//  try
@@ -2244,6 +2334,7 @@ end;
 
 procedure tfiledialogcontroller.writestatvalue(const writer: tstatwriter);
 begin
+  writer.writearray('filenamescust', ffilenamescust);
   writer.writearray('filenames', ffilenames);
   if fdo_params in foptions then
     writer.writemsestring('params', fparams);
@@ -2262,6 +2353,7 @@ begin
   writer.writeinteger('colsizewidth', fcolsizewidth);
   writer.writeinteger('colextwidth', fcolextwidth);
   writer.writeinteger('coldatewidth', fcoldatewidth);
+  writer.writeinteger('splitterplaces', fsplitterplaces);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2296,6 +2388,9 @@ var
   ara, arb: msestringarty;
   //acaption2: msestring;
   rectbefore: rectty;
+  x : integer;
+  thestr : msestring;
+  theint : integer;
 begin
   //acaption2 := acaption;
   ara    := nil;
@@ -2324,6 +2419,18 @@ begin
     fo.blateral.value := fpanel;
     fo.bcompact.value := fcompact;
     fo.showhidden.value := fshowhidden;
+    
+    if length(ffilenamescust) > 0 then
+    begin
+    fo.placescust.rowcount := length(ffilenamescust) + 1;
+    for x:= 0 to length(ffilenamescust) - 1 do
+    begin
+    thestr := copy(ffilenamescust[x], 1, length(ffilenamescust[x]) - 1);
+    theint := lastdelimiter(directoryseparator, thestr);
+    fo.placescust[1][x] := ffilenamescust[x];
+    fo.placescust[0][x] :=  '       ' + copy(thestr, theint + 1, 14);
+    end;
+    end;
     
     if fcolextwidth > 0 then 
     fo.list_log.datacols[1].width  := fcolextwidth;
@@ -2367,7 +2474,11 @@ begin
     if (fwindowrect.cx > 0) and (fwindowrect.cy > 0) then
       fo.widgetrect         := clipinrect(fwindowrect, application.screenrect(fo.window));
     rectbefore := fo.widgetrect;
-    Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
+    
+        if fsplitterplaces > 2 then
+    fo.tsplitter3.top := fsplitterplaces;
+ 
+     Result := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
       fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
     if not rectisequal(fo.widgetrect, rectbefore) then
@@ -2382,15 +2493,24 @@ begin
         flastdir := getcurrentdirmse
       else
         flastdir := fo.dir.Value;
-      fpanel := fo.blateral.Value;
-      
-      fpanel := fo.blateral.value;
-      fcompact := fo.bcompact.value ;
-      fshowhidden := fo.showhidden.value;
-      fcolextwidth  := fo.list_log.datacols[1].width ;
-      fcolsizewidth := fo.list_log.datacols[2].width ;
-      fcoldatewidth := fo.list_log.datacols[3].width ;
-     end;   
+     end;  
+     
+       fpanel        := fo.blateral.Value;
+      fcompact      := fo.bcompact.Value;
+      fshowhidden   := fo.showhidden.Value;
+      fcolextwidth  := fo.list_log.datacols[1].Width;
+      fcolsizewidth := fo.list_log.datacols[2].Width;
+      fcoldatewidth := fo.list_log.datacols[3].Width;
+      fsplitterplaces := fo.tsplitter3.top;
+    
+      if fo.placescust.rowcount > 1 then
+    begin
+    setlength(ffilenamescust,fo.placescust.rowcount -1); 
+     for x:= 0 to length(ffilenamescust) - 1 do
+    begin
+    ffilenamescust[x] := fo.placescust[1][x] ;  
+    end;
+    end; 
 
   finally
     fo.Free;
@@ -2631,6 +2751,7 @@ begin
   ffilenames := nil;
   flastdir   := '';
   fhistory   := nil;
+  ffilenamescust := nil;
 end;
 
 procedure tfiledialogcontroller.setlastdir(const avalue: filenamety);
