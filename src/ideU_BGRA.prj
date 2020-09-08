@@ -94,9 +94,9 @@ options=114
  sortdescend5=0
  width6=78
  sortdescend6=0
- width7=68
+ width7=69
  sortdescend7=0
- width8=35
+ width8=34
  sortdescend8=0
  width9=254
  sortdescend9=0
@@ -136,9 +136,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=201
+ y=223
  xprop=1
- yprop=0.36363636363636
+ yprop=0.36334405144695
  [projectoptionsfo.macrogrid]
  propcolwidthref=454
  sortdescend0=0
@@ -163,7 +163,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=3
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=642
  width0=77
@@ -190,7 +190,7 @@ options=114
  x=345
  y=55
  cx=732
- cy=620
+ cy=681
 settings=8
  [settings_form]
  x=492
@@ -205,11 +205,12 @@ targetfile=ideU${EXEEXT}
 messageoutputfile=
 makecommand=${COMPILER}
 makedir=
-unitdirs=11
+unitdirs=12
  ${BGRAGUIDIR}/bgragui
  ${LCLDIR}/components/lazutils
  ${BGRAGUIDIR}/bgraguicontrols/msegui
  /home/fred/bgrabitmap-dev-bgrabitmap/bgrabitmap
+ /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui
  ${BGRABITMAPDIR}
  ${MSEDIR}lib/addon/*/
  ${MSELIBDIR}kernel/windows
@@ -458,24 +459,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
- ACTIONSMO
- IMAGESELECTORFO
- MAINFO
- OBJECTINSPECTORFO
- SOURCEFO
-moduletypes=5
- TACTIONSMO
- TIMAGESELECTORFO
- TMAINFO
- TOBJECTINSPECTORFO
- TSOURCEFO
-modulefiles=5
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/imageselectorform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/objectinspector.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=8
  4095
@@ -559,11 +545,12 @@ project_time=
 project_date=17:24:41 16/05/2020
 project_comment=
 aftcommandon=0
-unitdirson=11
+unitdirson=12
  200703
  198656
  200703
  200703
+ 987135
  200703
  200703
  196656
@@ -794,30 +781,18 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=
-findhistory=0
+finddtext=Tfiledialog
+findhistory=1
+ Tfiledialog
 findoptions=1
-editpos=20
- 0,3
+editpos=7
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
+ 0,0
+ 0,0
+ 0,0
+ 0,0
+ 0,79
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -825,111 +800,39 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-sourcefiles=20
- /home/fred/ideu/src/ideU.pas
+sourcefiles=7
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/regcomponents.inc
- /home/fred/Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
- /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
- /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgraflashprogressbar.pas
- /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
- /home/fred/freepascal_ootb_305/compiler/systems/t_bsd.pas
- /home/fred/freepascal_ootb_305/compiler/systems/t_win.pas
- /home/fred/freepascal_ootb_305_test/compiler/msgtxt.inc
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/imageselectorform.pas
- ${PROJECTDIR}/objectinspector.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/msedesigner.pas
- /home/fred/mseide-msegui/lib/common/designutils/msedesignintf.pas
- /home/fred/mseide-msegui/lib/common/kernel/mseglob.pas
- /home/fred/mseide-msegui/lib/common/designutils/msecomponenteditors.pas
+ ${PROJECTDIR}/msefiledialogx.pas
+ ${PROJECTDIR}/main.mfm
+ ${PROJECTDIR}/actionsmodule.mfm
+ ${PROJECTDIR}/regcomponents.inc
  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
-relpaths=20
+relpaths=7
  ideU.pas
  regcomponents.inc
- Downloads/bgragui-dev-bgragui/bgragui/bgbuttondrawer.pas
- Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/regbgraguicontrols.pas
- Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgraflashprogressbar.pas
- Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrapath.pas
- freepascal_ootb_305/compiler/systems/t_bsd.pas
- freepascal_ootb_305/compiler/systems/t_win.pas
- freepascal_ootb_305_test/compiler/msgtxt.inc
- main.pas
- imageselectorform.pas
- objectinspector.pas
- sourceform.pas
- actionsmodule.pas
- main.pas
- msedesigner.pas
- mseide-msegui/lib/common/designutils/msedesignintf.pas
- mseide-msegui/lib/common/kernel/mseglob.pas
- mseide-msegui/lib/common/designutils/msecomponenteditors.pas
- Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
-ismoduletexts=20
+ msefiledialogx.pas
+ main.mfm
+ actionsmodule.mfm
+ regcomponents.inc
+ ../Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
+ismoduletexts=7
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=5
- /home/fred/ideu/src/imageselectorform.mfm
- /home/fred/ideu/src/objectinspector.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
-moduleoptions=5
- 0
- 0
- 0
- 0
- 0
-visiblemodules=5
  -1
  -1
- -1
- -1
- -1
-nomenumodules=5
  0
  0
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-firsttab=0
-index=0
+firsttab=1
+index=6
 [layout]
-windowlayout=570
+windowlayout=556
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1063,7 +966,7 @@ windowlayout=570
  x=0
  y=0
  cx=205
- cy=524
+ cy=526
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1153,10 +1056,10 @@ windowlayout=570
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=654
- width0=290
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=358
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1283,6 +1186,7 @@ windowlayout=570
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
+ filenamescust=0
  filenames=1
   /home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
  filecolwidth=0
@@ -1290,11 +1194,19 @@ windowlayout=570
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
  lastdir=/home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
+ filenamescust=0
  filenames=1
   /home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
  filecolwidth=0
@@ -1302,17 +1214,32 @@ windowlayout=570
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
  lastdir=/home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.compfiledialog]
+ filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ panel=0
+ compact=0
+ showhidden=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -1337,7 +1264,7 @@ windowlayout=570
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=17
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1351,7 +1278,7 @@ windowlayout=570
  x=0
  y=0
  cx=1348
- cy=51
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1363,11 +1290,11 @@ windowlayout=570
  nx=0
  ny=0
  ncx=1333
- ncy=49
+ ncy=45
  x=0
  y=0
- cx=1348
- cy=48
+ cx=1333
+ cy=43
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1377,28 +1304,28 @@ windowlayout=570
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/regcomponents.inc
-  /home/fred/ideu/src/main.mfm
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
+  /home/fred/Downloads/bgragui-dev-bgragui/bgraguicontrols/msegui/bgbutton.pas
+  /home/fred/ideu/src/actionsmodule.mfm
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialog.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/strumpract/src/msestringenter.pas
+  /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/main2.pas
+  /home/fred/Downloads/skinblue_mfm.pas
+  /home/fred/strumpract/src/spectrum1.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
+  /home/fred/strumpract/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
+  /home/fred/msefiledialogx/src/msefiledialogres.pas
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1416,12 +1343,12 @@ windowlayout=570
  x=208
  y=0
  cx=1140
- cy=524
+ cy=526
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=0
+ firsttab=1
+ index=6
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1457,49 +1384,11 @@ windowlayout=570
  ncx=0
  ncy=0
  x=0
- y=54
+ y=52
  cx=1348
- cy=524
+ cy=526
  rcx=0
  rcy=0
- [_mse_imageselectorfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_objectinspectorfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=126
- y=231
- cx=330
- cy=244
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_objectinspectorfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=651
- y=142
- cx=264
- cy=353
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

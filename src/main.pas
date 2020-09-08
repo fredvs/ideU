@@ -405,6 +405,7 @@ uses
   regwidgets,
   regeditwidgets,
   regdialogs,
+  regfiledialogx,
   regkernel,
   regprinter,
   toolhandlermodule,
