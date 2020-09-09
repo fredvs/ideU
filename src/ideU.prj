@@ -1547,8 +1547,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=fo.font
-findhistory=7
+finddtext=ffilenamescu
+findhistory=9
+ ffilenamescu
+ ffilenamecu
  fo.font
  fo.fo
  fo.f
@@ -1558,12 +1560,12 @@ findhistory=7
  listviewonlistread
 findoptions=1
 editpos=19
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2598
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1597,12 +1599,12 @@ bookmarks16=0
 bookmarks17=0
 bookmarks18=0
 sourcefiles=19
- /home/fred/ideu/src/actionsmodule.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/msefiledialog.pas
+ /home/fred/ideu/src/msefiledialog.pas
  ${PROJECTDIR}/regcomponents.inc
  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
  /home/fred/mseide-msegui/lib/common/regcomponents/regwidgets.pas
@@ -1667,7 +1669,7 @@ moduleoptions=4
  0
  0
 visiblemodules=4
- -1
+ 0
  -1
  -1
  0
@@ -1679,26 +1681,26 @@ nomenumodules=4
 [sourcefo.files_tab]
 order=19
  0
- 17
+ 1
  2
  3
  4
- 8
- 10
- 7
  5
- 18
- 14
  9
- 15
- 6
- 11
+ 7
+ 8
  13
- 16
- 1
+ 18
+ 15
+ 10
+ 11
  12
+ 14
+ 16
+ 17
+ 6
 firsttab=0
-index=0
+index=5
 [layout]
 windowlayout=599
  [mainfo.basedock]
@@ -2176,17 +2178,16 @@ windowlayout=599
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
   /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
   /home/fred/ideu/src/regfiledialogx.pas
   /home/fred/ideu/src/regcomponents.inc
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialog.pas
-  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/msestringenter.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/main2.pas
@@ -2198,6 +2199,7 @@ windowlayout=599
   /home/fred/strumpract/src/config.pas
   /home/fred/strumpract/src/msefiledialogx.pas
   /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2221,26 +2223,26 @@ windowlayout=599
  [sourcefo.files_tab]
  order=19
   0
-  17
+  1
   2
   3
   4
-  8
-  10
-  7
   5
-  18
-  14
   9
-  15
-  6
-  11
+  7
+  8
   13
-  16
-  1
+  18
+  15
+  10
+  11
   12
+  14
+  16
+  17
+  6
  firsttab=0
- index=0
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2284,7 +2286,7 @@ windowlayout=599
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2299,7 +2301,7 @@ windowlayout=599
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=dump
 findhistory=1
