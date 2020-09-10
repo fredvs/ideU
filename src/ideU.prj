@@ -265,7 +265,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=675
  width0=47
@@ -333,7 +333,7 @@ settings=8
  x=292
  y=108
  cx=446
- cy=550
+ cy=578
  wsize=0
  active=1
  visible=1
@@ -884,26 +884,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=2
  ACTIONSMO
  MAINFO
- FILEDIALOGFO
- SOURCEFO
-moduletypes=4
+moduletypes=2
  TACTIONSMO
  TMAINFO
- TFILEDIALOGFO
- TSOURCEFO
-modulefiles=4
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
  4095
  3
- 0
+ 8
  2044
  0
  192
@@ -915,11 +909,11 @@ makeoptionson=13
  0
  4095
 compilerusedon=29
- 1599
+ 1591
  0
  0
  256
- 0
+ 8
  64
  128
  0
@@ -1560,150 +1554,46 @@ findhistory=10
  < 30
  listviewonlistread
 findoptions=1
-editpos=19
+editpos=3
  0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 8,2539
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-sourcefiles=19
+sourcefiles=3
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/msefiledialog.pas
- ${PROJECTDIR}/regcomponents.inc
- /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
- /home/fred/mseide-msegui/lib/common/regcomponents/regwidgets.pas
- /home/fred/mseide-msegui/lib/common/regcomponents/regdialogs.pas
- ${PROJECTDIR}/main.pas
- /home/fred/mseide-msegui/lib/common/widgets/mseforms.pas
- ${PROJECTDIR}/main.pas
- /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
- /home/fred/mseide-msegui/lib/common/widgets/msedock.pas
- /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
- /home/fred/mseide-msegui/lib/common/designutils/msepropertyeditors.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
-relpaths=19
+relpaths=3
+ ideU.pas
  actionsmodule.pas
  main.pas
- sourceform.pas
- commandorform.pas
- actionsmodule.pas
- msefiledialog.pas
- regcomponents.inc
- ../mseide-msegui/lib/common/dialogx/msefiledialogx.pas
- mseide-msegui/lib/common/regcomponents/regwidgets.pas
- mseide-msegui/lib/common/regcomponents/regdialogs.pas
- mseide-msegui/apps/ide/main.pas
- mseide-msegui/lib/common/widgets/mseforms.pas
- main.pas
- mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
- mseide-msegui/lib/common/widgets/msedock.pas
- mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
- mseide-msegui/lib/common/designutils/msepropertyeditors.pas
- main.pas
- sourceform.pas
-ismoduletexts=19
+ismoduletexts=3
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=4
- /home/fred/ideu/src/msefiledialog.mfm
+modules=3
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
-moduleoptions=4
+moduleoptions=3
  0
  0
  0
- 0
-visiblemodules=4
+visiblemodules=3
  0
  -1
  -1
- 0
-nomenumodules=4
- 0
- 0
+nomenumodules=3
+ -1
  0
  0
 [sourcefo.files_tab]
-order=19
- 0
- 1
- 2
- 3
- 4
- 5
- 18
- 7
- 8
- 6
- 12
- 13
- 14
- 9
- 15
- 11
- 16
- 17
- 10
-firsttab=1
-index=7
+firsttab=0
+index=0
 [layout]
-windowlayout=629
+windowlayout=579
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1765,7 +1655,7 @@ windowlayout=629
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1837,7 +1727,7 @@ windowlayout=629
  x=0
  y=0
  cx=205
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1847,8 +1737,8 @@ windowlayout=629
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=9
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2122,7 +2012,7 @@ windowlayout=629
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=dialogfilesfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2153,7 +2043,7 @@ windowlayout=629
  x=0
  y=0
  cx=1212
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2164,12 +2054,12 @@ windowlayout=629
  mdistate=0
  nx=0
  ny=0
- ncx=1111
+ ncx=1197
  ncy=52
  x=0
  y=0
  cx=1212
- cy=58
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2179,8 +2069,12 @@ windowlayout=629
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
- history=50
+ value=/home/fred/ideu/src/ideU.pas
+ history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/mseide-msegui/lib/common/regcomponents/regwidgets.pas
+  /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2197,42 +2091,8 @@ windowlayout=629
   /home/fred/fptop/src/jtop.prj
   /home/fred/fptop/src/ptop.prj
   /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msegui-chessboard-modern-master/chessboard.prj
-  /home/fred/msegui-chessboard-master/chessboard.prj
-  /home/fred/msegui/apps/ide/mseide.prj
-  /home/fred/Downloads/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs_mse (copie 1)/eschecs.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/widgetblendanim/widgetblendanim.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imagedarkening/imagedarkening.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imageblend/imageblend.prj
-  /home/fred/Downloads/mseuniverse-master/samples/animations/windowopacity/windowopacity.prj
-  /home/fred/eschecs_mse_dockmain/eschecs.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Dock_Tree_Editor_Message.prj
-  /home/fred/mse_textedit/textedit.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/textedit/textedit.prj
-  /home/fred/mseuniverse-master/tools/virtualkeyboard/testvirtualkeyboard.prj
-  /home/fred/mseuniverse-master/tools/msetune/msetune.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/itemedit/itemedit.prj
-  /home/fred/eschecs_mse_nodock/eschecs.prj
-  /home/fred/eschecs_mse_copie/eschecs.prj
-  /home/fred/uos/examples/simpleplayer_fpGUI.prj
-  /home/fred/ideu/src/layout/Menu_Only.prj
-  /home/fred/eschecs_mse2/eschecs.prj
-  /home/fred/mse_chessboard/eschecs.prj
-  /home/fred/mse_chessboard/chessboard.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msetest/test.prj
-  /home/fred/uoslib/src/uoslib.prj
-  /home/fred/uoslib/examples/demos/fpc/simpleplayer.prj
-  /home/fred/eschecs/source/eschecs.prj
-  /home/fred/mseuniverse-master/samples/db/gridselectedrow/gridselectedrow.prj
  [debuggerfo.project_options]
- value=1
+ value=2
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2248,32 +2108,12 @@ windowlayout=629
  x=208
  y=0
  cx=1004
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=19
-  0
-  1
-  2
-  3
-  4
-  5
-  18
-  7
-  8
-  6
-  12
-  13
-  14
-  9
-  15
-  11
-  16
-  17
-  10
- firsttab=1
- index=7
+ firsttab=0
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2282,36 +2122,17 @@ windowlayout=629
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=183
- y=113
- cx=352
- cy=277
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_filedialogfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=142
- y=188
- cx=618
- cy=393
+ x=183
+ y=113
+ cx=369
+ cy=307
  rcx=0
  rcy=0
  wsize=0
@@ -2328,11 +2149,30 @@ windowlayout=629
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1212
- cy=450
+ cy=451
  rcx=0
  rcy=0
+ [_mse_sourcefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=confdebuggerfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=255
+ y=174
+ cx=706
+ cy=352
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
 [targetconsole]
 finddtext=dump
 findhistory=1
