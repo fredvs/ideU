@@ -1968,9 +1968,15 @@ begin
 
       filename.Value := tosysfilepath(filename.Value);
 
-     end
+      end
       else
+      begin
+          listview.defocuscell;
+          listview.datacols.clearselection;
+          list_log.defocuscell;
+          list_log.datacols.clearselection; 
         fisfixedrow := False;
+      end;  
     end
     else
       fisfixedrow   := True;
@@ -2091,11 +2097,7 @@ procedure tfiledialogfo.onlayout(const Sender: tcustomgrid);
 begin
   listview.left     := list_log.left;
   tsplitter1.Height := list_log.Height;
-  listview.left     := list_log.left;
-  tsplitter1.Height := list_log.Height;
-  list_log.datacols[0].Width := list_log.Width -
-    list_log.datacols[1].Width - list_log.datacols[2].Width -
-    list_log.datacols[3].Width - 20;
+  tsplitter3.Width  := placespan.Width;
 end;
 
 procedure tfiledialogfo.oncellevplace(const Sender: TObject; var info: celleventinfoty);
@@ -2317,9 +2319,12 @@ end;
 
 procedure tfiledialogfo.onmovesplit(const sender: TObject);
 begin
-if tsplitter1.left > 0 then
-fsplitterpanpos := tsplitter1.left;
-  fisfixedrow     := False;
+  if tsplitter1.left > 0 then
+      fsplitterpanpos := tsplitter1.left;
+      if places.width > 126 then begin
+   places.datacols[0].width := places.width - 18;
+ placescust.datacols[0].width := places.width - 18;    
+   end;  
 end;
 
 
