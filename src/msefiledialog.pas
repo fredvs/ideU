@@ -2154,8 +2154,9 @@ begin
 
   astr := trim(places[0][cellinfo.cell.row]);
 
-
-  if astr = 'Home' then
+ if (astr = 'C:\') or (astr = 'D:\') or (astr = '/') or (astr = '/usr') then
+    aicon := 0
+  else if astr = 'Home' then
     aicon := 13
   else if astr = 'Desktop' then
     aicon := 14
@@ -2501,52 +2502,80 @@ begin
 
     tmp := fo.labtest.Caption;
 
-    x := 0;
-
-    if directoryexists(tosysfilepath(sys_getuserhomedir)) then
+    x := -1;
+        
+    {$ifdef windows}
+    if directoryexists('C:\') then
     begin
+      Inc(x);
+      fo.places[0][x] := tmp + 'C:\';
+      fo.places[1][x] := msestring('C:\');
+    end;  
+    if directoryexists('D:\') then
+    begin
+      Inc(x);
+      fo.places[0][x] := tmp + 'D:\';
+      fo.places[1][x] := msestring('D:\');  
+    end; 
+    {$else}
+     if directoryexists('/') then
+    begin
+      Inc(x);
+      fo.places[0][x] := tmp + '/';
+      fo.places[1][x] := msestring('/'); 
+    end;  
+    if directoryexists('/usr') then
+    begin
+      Inc(x);
+      fo.places[0][x] := tmp + '/usr';
+      fo.places[1][x] := msestring('/usr');  
+    end; 
+    {$endif}
+
+     if directoryexists(tosysfilepath(sys_getuserhomedir)) then
+    begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Home';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir));
-      Inc(x);
     end;
-    if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop')) then
+     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Desktop';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop'));
-      Inc(x);
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Music';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music'));
-      Inc(x);
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Pictures';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures'));
-      Inc(x);
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Videos';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos'));
-      Inc(x);
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Documents';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents'));
-      Inc(x);
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads')) then
     begin
+      Inc(x);
       fo.places[0][x] := tmp + 'Downloads';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads'));
     end;
 
     fo.places.rowcount := x + 1;
-
 
     if length(ffilenamescust) > 0 then
     begin
