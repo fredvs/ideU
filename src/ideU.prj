@@ -1544,8 +1544,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=fsplitter
-findhistory=13
+finddtext=finit
+findhistory=14
+ finit
  fsplitter
  filedialogfo
  ffiledialogfo
@@ -1562,9 +1563,9 @@ findhistory=13
 findoptions=1
 editpos=4
  0,-1073741823
- 0,0
  0,-1073741823
- 43,2612
+ 0,0
+ 0,2321
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1613,14 +1614,14 @@ order=4
 firsttab=0
 index=1
 [layout]
-windowlayout=603
+windowlayout=609
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=finddialogfo
  parent=
  mdistate=0
  nx=0
@@ -1982,10 +1983,12 @@ windowlayout=603
  panel=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2002,10 +2005,12 @@ windowlayout=603
  panel=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2021,10 +2026,12 @@ windowlayout=603
  panel=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -2075,11 +2082,11 @@ windowlayout=603
  nx=0
  ny=0
  ncx=1197
- ncy=44
+ ncy=40
  x=0
  y=0
  cx=1212
- cy=42
+ cy=38
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2091,8 +2098,9 @@ windowlayout=603
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/msefiledialog2.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
@@ -2102,7 +2110,6 @@ windowlayout=603
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
   /home/fred/msefiledialogx/src/msefiledialog.pas
-  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/strumpract/src/msestringenter.pas
   /home/fred/msefiledialogx/src/main.pas
   /home/fred/msefiledialogx/src/main2.pas
@@ -2201,7 +2208,7 @@ windowlayout=603
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0

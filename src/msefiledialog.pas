@@ -637,6 +637,7 @@ type
   private
     fselectednames: filenamearty;
     finit: Boolean;
+    fisfixedrow: Boolean;
     fcourse: filenamearty;
     fsplitterpanpos: integer;
     fcourseid: int32;
@@ -1909,15 +1910,13 @@ begin
   if (list_log.rowcount > 0) and ((info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup)) then
     if (info.cell.row > -1) then
     begin
-
+      if (fisfixedrow = False) then
+      begin
       cellpos := info.cell;
-
       cellpos.col  := 0;
       cellpos2.col := 0;
-
       places.defocuscell;
       places.datacols.clearselection;
-
       y := StrToInt(list_log[4][cellpos.row]);
       cellpos2.row := y;
 
@@ -1969,7 +1968,12 @@ begin
 
       filename.Value := tosysfilepath(filename.Value);
 
-    end;
+     end
+      else
+        fisfixedrow := False;
+    end
+    else
+      fisfixedrow   := True;
 end;
 
 procedure tfiledialogfo.ondrawcell(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
@@ -2315,6 +2319,7 @@ procedure tfiledialogfo.onmovesplit(const sender: TObject);
 begin
 if tsplitter1.left > 0 then
 fsplitterpanpos := tsplitter1.left;
+  fisfixedrow     := False;
 end;
 
 
