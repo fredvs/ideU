@@ -884,15 +884,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  ACTIONSMO
  MAINFO
-moduletypes=2
+ FILEDIALOGFO
+moduletypes=3
  TACTIONSMO
  TMAINFO
-modulefiles=2
+ TFILEDIALOGFO
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialog.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1541,8 +1544,11 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=music
-findhistory=10
+finddtext=fsplitter
+findhistory=13
+ fsplitter
+ filedialogfo
+ ffiledialogfo
  music
  ffilenamescu
  ffilenamecu
@@ -1554,46 +1560,60 @@ findhistory=10
  < 30
  listviewonlistread
 findoptions=1
-editpos=3
+editpos=4
+ 0,-1073741823
  0,0
  0,-1073741823
- 0,-1073741823
+ 43,2612
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ ${PROJECTDIR}/msefiledialog.pas
+relpaths=4
  ideU.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=3
+ msefiledialog.pas
+ismoduletexts=4
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
-moduleoptions=3
+ /home/fred/ideu/src/msefiledialog.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  0
  -1
  -1
-nomenumodules=3
  -1
+nomenumodules=4
+ -1
+ 0
  0
  0
 [sourcefo.files_tab]
+order=4
+ 0
+ 3
+ 1
+ 2
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=579
+windowlayout=603
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1633,7 +1653,7 @@ windowlayout=579
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2055,11 +2075,11 @@ windowlayout=579
  nx=0
  ny=0
  ncx=1197
- ncy=52
+ ncy=44
  x=0
  y=0
  cx=1212
- cy=50
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2069,30 +2089,30 @@ windowlayout=579
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/regcomponents/regwidgets.pas
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/msefiledialog2.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
   /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
+  /home/fred/ideu/src/regfiledialogx.pas
+  /home/fred/ideu/src/regcomponents.inc
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialog.pas
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/strumpract/src/msestringenter.pas
+  /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/main2.pas
+  /home/fred/Downloads/skinblue_mfm.pas
+  /home/fred/strumpract/src/spectrum1.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
- value=2
+ value=1
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -2112,8 +2132,13 @@ windowlayout=579
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  3
+  1
+  2
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2173,6 +2198,25 @@ windowlayout=579
  wsize=0
  active=0
  visible=0
+ [_mse_filedialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=142
+ y=188
+ cx=618
+ cy=393
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=dump
 findhistory=1

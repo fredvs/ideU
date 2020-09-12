@@ -199,6 +199,7 @@ type
     ffilenames: filenamearty;
     ffilenamescust: filenamearty;
     fsplitterplaces: integer;
+    fsplitterlateral: integer;
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
     fpanel: Boolean;
@@ -206,6 +207,7 @@ type
     fshowhidden: Boolean;
     ffilterindex: integer;
     fcolwidth: integer;
+    fcolnamewidth: integer;
     fcolsizewidth: integer;
     fcolextwidth: integer;
     fcoldatewidth: integer;
@@ -588,7 +590,6 @@ type
     bcompact: tbooleanedit;
     tsplitter1: tsplitter;
     blateral: tbooleanedit;
-    tsplitter2: tsplitter;
     filter: tdropdownlistedit;
     placespan: tstringdisp;
     places: tstringgrid;
@@ -631,10 +632,13 @@ type
     procedure onresize(const Sender: TObject);
     procedure oncellevcustplace(const Sender: TObject; var info: celleventinfoty);
     procedure ondrawcellcustplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
+   procedure oncreate(const sender: TObject);
+   procedure onmovesplit(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
     fcourse: filenamearty;
+    fsplitterpanpos: integer;
     fcourseid: int32;
     fcourselock: Boolean;
     procedure updatefiltertext;
@@ -1690,8 +1694,8 @@ procedure tfiledialogfo.filteronafterclosedropdown(const Sender: TObject);
 begin
   updatefiltertext;
   filter.initfocus;
-  tsplitter2.left      := 430;
-  filter.frame.Caption := '&Filter';
+  filter.left      := 432;
+  filter.width      := 172;
 end;
 
 procedure tfiledialogfo.filteronsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -2075,8 +2079,8 @@ end;
 
 procedure tfiledialogfo.onbefdrop(const Sender: TObject);
 begin
-  tsplitter2.left      := 200;
-  filter.frame.Caption := '';
+   filter.left      := 174;
+   filter.width      := 432; 
 end;
 
 procedure tfiledialogfo.onlayout(const Sender: tcustomgrid);
@@ -2173,7 +2177,7 @@ begin
   if not avalue then
   begin
     placespan.Visible  := True;
-    tsplitter1.left    := 110;
+    tsplitter1.left    := fsplitterpanpos;
     tsplitter1.Visible := True;
     list_log.left      := tsplitter1.left + tsplitter1.Width;
   end
@@ -2302,6 +2306,17 @@ begin
   end;
 end;
 
+procedure tfiledialogfo.oncreate(const sender: TObject);
+begin
+  fsplitterpanpos := tsplitter1.left;
+end;
+
+procedure tfiledialogfo.onmovesplit(const sender: TObject);
+begin
+if tsplitter1.left > 0 then
+fsplitterpanpos := tsplitter1.left;
+end;
+
 
 { tfiledialogcontroller }
 
@@ -2344,11 +2359,12 @@ begin
   fshowhidden     := reader.readboolean('showhidden', fshowhidden);
   fcompact        := reader.readboolean('compact', fcompact);
   fpanel          := reader.readboolean('panel', fpanel);
+  fcolnamewidth   := reader.readinteger('colnamewidth', fcolsizewidth);
   fcolsizewidth   := reader.readinteger('colsizewidth', fcolsizewidth);
   fcolextwidth    := reader.readinteger('colextwidth', fcolextwidth);
   fcoldatewidth   := reader.readinteger('coldatewidth', fcoldatewidth);
   fsplitterplaces := reader.readinteger('splitterplaces', fsplitterplaces);
-
+  fsplitterlateral := reader.readinteger('splitterlateral', fsplitterlateral);
   if fdo_chdir in foptions then
     trysetcurrentdirmse(flastdir)//  try
   //  except
@@ -2382,10 +2398,12 @@ begin
   writer.writeboolean('panel', fpanel);
   writer.writeboolean('compact', fcompact);
   writer.writeboolean('showhidden', fshowhidden);
+  writer.writeinteger('colnamewidth', fcolnamewidth);
   writer.writeinteger('colsizewidth', fcolsizewidth);
   writer.writeinteger('colextwidth', fcolextwidth);
   writer.writeinteger('coldatewidth', fcoldatewidth);
   writer.writeinteger('splitterplaces', fsplitterplaces);
+  writer.writeinteger('splitterlateral', fsplitterlateral);
 end;
 
 procedure tfiledialogcontroller.writestatoptions(const writer: tstatwriter);
@@ -2531,7 +2549,9 @@ begin
         fo.placescust[0][x] := tmp + copy(thestr, theint + 1, 14);
       end;
     end;
-
+   
+    if fcolnamewidth > 0 then
+      fo.list_log.datacols[0].Width := fcolnamewidth;
     if fcolextwidth > 0 then
       fo.list_log.datacols[1].Width := fcolextwidth;
     if fcolsizewidth > 0 then
@@ -2567,8 +2587,13 @@ begin
 
     if fsplitterplaces > 2 then
       fo.tsplitter3.top := fsplitterplaces;
-
-    Result        := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
+      
+      if fpanel = true then
+       fo.tsplitter1.left := 0 else if 
+      fsplitterlateral > 0 then
+      fo.tsplitter1.left := fsplitterlateral;  
+      
+     Result        := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
       fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
     if not rectisequal(fo.widgetrect, rectbefore) then
@@ -2586,12 +2611,16 @@ begin
     fpanel          := fo.blateral.Value;
     fcompact        := fo.bcompact.Value;
     fshowhidden     := fo.showhidden.Value;
+    fcolnamewidth   := fo.list_log.datacols[0].Width;
     fcolextwidth    := fo.list_log.datacols[1].Width;
     fcolsizewidth   := fo.list_log.datacols[2].Width;
     fcoldatewidth   := fo.list_log.datacols[3].Width;
     fsplitterplaces := fo.tsplitter3.top;
-
-    if fo.placescust.rowcount > 1 then
+    
+       if fo.tsplitter1.left > 0 then
+      fsplitterlateral := fo.tsplitter1.left;
+   
+      if fo.placescust.rowcount > 1 then
     begin
       setlength(ffilenamescust, fo.placescust.rowcount - 1);
       for x := 0 to length(ffilenamescust) - 1 do

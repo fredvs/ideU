@@ -46,6 +46,7 @@ object filedialogfo: Tfiledialogfo
     FFFFFF02
   }
   windowopacity = -Inf
+  oncreate = oncreate
   oncreated = formoncreate
   onkeydown = listviewonkeydown
   onresize = onresize
@@ -53,63 +54,6 @@ object filedialogfo: Tfiledialogfo
   left = 239
   top = 138
   moduleclassname = 'tmseform'
-  object filter: tdropdownlistedit
-    frame.levelo = 0
-    frame.caption = '&Filter'
-    frame.captiontextflags = [tf_xcentered, tf_bottom]
-    frame.localprops = [frl_levelo]
-    frame.localprops1 = []
-    frame.button.face.localprops = []
-    frame.button.frame.optionsskin = [fso_flat]
-    frame.button.frame.localprops = [frl_optionsskin]
-    frame.button.frame.localprops1 = []
-    frame.buttons.count = 1
-    frame.buttons.items = <    
-      item
-        face.localprops = []
-        frame.optionsskin = [fso_flat]
-        frame.localprops = [frl_optionsskin]
-        frame.localprops1 = []
-      end>
-    frame.outerframe = (
-      0
-      18
-      0
-      0
-    )
-    face.fade_pos.count = 2
-    face.fade_pos.items = (
-      0
-      1
-    )
-    face.fade_color.count = 2
-    face.fade_color.items = (
-      16777215
-      14408667
-    )
-    face.fade_direction = gd_down
-    face.localprops = [fal_fadirection]
-    taborder = 17
-    bounds_x = 432
-    bounds_y = 46
-    bounds_cx = 172
-    bounds_cy = 40
-    anchors = [an_top, an_right]
-    ondataentered = filepathentered
-    onsetvalue = filteronsetvalue
-    dropdown.options = [deo_keydropdown, deo_cliphint]
-    dropdown.cols.count = 2
-    dropdown.cols.items = <    
-      item
-      end    
-      item
-        options = [co_readonly, co_invisible, co_focusselect, co_fill]
-      end>
-    dropdown.valuecol = 1
-    onbeforedropdown = onbefdrop
-    onafterclosedropdown = filteronafterclosedropdown
-    reffontheight = 15
-  end
   object listview: tfilelistview
     optionswidget1 = [ow1_fontglyphheight]
     optionswidget = [ow_mousefocus, ow_arrowfocus, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
@@ -183,7 +127,6 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 46
     bounds_cx = 425
     bounds_cy = 40
-    anchors = [an_left, an_top, an_right]
     textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
     dropdown.options = [deo_selectonly, deo_keydropdown]
     onsetvalue = dironsetvalue
@@ -386,26 +329,6 @@ object filedialogfo: Tfiledialogfo
     onafterclosedropdown = afterclosedrop
     reffontheight = 15
   end
-  object showhidden: tbooleanedit
-    frame.caption = '&Show hidden'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.template = mainfo.menuitemframe
-    frame.outerframe = (
-      0
-      2
-      82
-      2
-    )
-    taborder = 10
-    hint = 'Show hidden files'
-    bounds_x = 482
-    bounds_y = 38
-    bounds_cx = 95
-    bounds_cy = 17
-    anchors = [an_top, an_right]
-    onsetvalue = showhiddenonsetvalue
-  end
   object list_log: tstringgrid
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_noclampinview]
     frame.levelo = -1
@@ -568,6 +491,7 @@ object filedialogfo: Tfiledialogfo
     bounds_y = 98
     bounds_cx = 2
     bounds_cy = 238
+    onmove = onmovesplit
     options = [spo_hmove, spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
     linkleft = placespan
     linkright = list_log
@@ -591,22 +515,12 @@ object filedialogfo: Tfiledialogfo
     bounds_cy = 17
     onsetvalue = onsetlat
   end
-  object tsplitter2: tsplitter
-    taborder = 16
-    bounds_x = 430
-    bounds_y = 62
-    bounds_cx = 2
-    bounds_cy = 24
-    options = [spo_hmove, spo_hprop, spo_dockleft, spo_docktop, spo_dockright, spo_dockbottom]
-    linkleft = dir
-    linkright = filter
-  end
   object placespan: tstringdisp
     frame.levelo = 0
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_levelo, frl_optionsskin]
     frame.localprops1 = []
-    taborder = 18
+    taborder = 17
     bounds_x = 0
     bounds_y = 98
     bounds_cx = 110
@@ -803,7 +717,7 @@ object filedialogfo: Tfiledialogfo
     end
   end
   object labtest: tlabel
-    taborder = 19
+    taborder = 18
     visible = False
     bounds_x = 98
     bounds_y = 35
@@ -811,6 +725,81 @@ object filedialogfo: Tfiledialogfo
     bounds_cy = 15
     caption = 'tlabel1'
     reffontheight = 15
+  end
+  object filter: tdropdownlistedit
+    frame.levelo = 0
+    frame.caption = '&Filter'
+    frame.captiontextflags = [tf_xcentered, tf_bottom]
+    frame.localprops = [frl_levelo]
+    frame.localprops1 = []
+    frame.button.face.localprops = []
+    frame.button.frame.optionsskin = [fso_flat]
+    frame.button.frame.localprops = [frl_optionsskin]
+    frame.button.frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        face.localprops = []
+        frame.optionsskin = [fso_flat]
+        frame.localprops = [frl_optionsskin]
+        frame.localprops1 = []
+      end>
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    face.fade_pos.count = 2
+    face.fade_pos.items = (
+      0
+      1
+    )
+    face.fade_color.count = 2
+    face.fade_color.items = (
+      16777215
+      14408667
+    )
+    face.fade_direction = gd_down
+    face.localprops = [fal_fadirection]
+    taborder = 16
+    bounds_x = 432
+    bounds_y = 46
+    bounds_cx = 174
+    bounds_cy = 40
+    ondataentered = filepathentered
+    onsetvalue = filteronsetvalue
+    dropdown.options = [deo_keydropdown, deo_cliphint]
+    dropdown.cols.count = 2
+    dropdown.cols.items = <    
+      item
+      end    
+      item
+        options = [co_readonly, co_invisible, co_focusselect, co_fill]
+      end>
+    dropdown.valuecol = 1
+    onbeforedropdown = onbefdrop
+    onafterclosedropdown = filteronafterclosedropdown
+    reffontheight = 15
+  end
+  object showhidden: tbooleanedit
+    frame.caption = '&Show hidden'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
+    frame.outerframe = (
+      0
+      2
+      82
+      2
+    )
+    taborder = 10
+    hint = 'Show hidden files'
+    bounds_x = 482
+    bounds_y = 38
+    bounds_cx = 95
+    bounds_cy = 17
+    onsetvalue = showhiddenonsetvalue
   end
   object iconslist: timagelist
     width = 18
