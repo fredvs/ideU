@@ -1544,8 +1544,9 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=desktop
-findhistory=15
+finddtext=datacols[0].Width
+findhistory=16
+ fcolnamewidth
  desktop
  finit
  fsplitter
@@ -1563,10 +1564,10 @@ findhistory=15
  listviewonlistread
 findoptions=1
 editpos=4
+ 0,0
  0,-1073741823
  0,-1073741823
- 12,3
- 0,-1073741823
+ 0,2316
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1607,15 +1608,10 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=4
- 0
- 2
- 3
- 1
 firsttab=0
-index=1
+index=3
 [layout]
-windowlayout=609
+windowlayout=604
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2083,11 +2079,11 @@ windowlayout=609
  nx=0
  ny=0
  ncx=1197
- ncy=40
+ ncy=34
  x=0
  y=0
  cx=1212
- cy=38
+ cy=32
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2097,11 +2093,12 @@ windowlayout=609
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/strumpract/src/imagedancer.pas
   /home/fred/msefiledialog2.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
@@ -2118,7 +2115,6 @@ windowlayout=609
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2140,13 +2136,8 @@ windowlayout=609
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=4
-  0
-  2
-  3
-  1
  firsttab=0
- index=1
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

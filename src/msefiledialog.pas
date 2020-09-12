@@ -2202,10 +2202,6 @@ begin
   if not list_log.Visible then
     listview.Width := list_log.Width;
 
-  list_log.datacols[0].Width := list_log.Width -
-    list_log.datacols[1].Width - list_log.datacols[2].Width -
-    list_log.datacols[3].Width - 20;
-
   listview.invalidate;
   list_log.invalidate;
 end;
@@ -2219,11 +2215,6 @@ end;
 
 procedure tfiledialogfo.onresize(const Sender: TObject);
 begin
-  list_log.datacols[0].Width := list_log.Width -
-    list_log.datacols[1].Width - list_log.datacols[2].Width -
-    list_log.datacols[3].Width - 20;
-
-  application.ProcessMessages;
 end;
 
 procedure tfiledialogfo.oncellevcustplace(const Sender: TObject; var info: celleventinfoty);
@@ -2370,7 +2361,7 @@ begin
   fshowhidden     := reader.readboolean('showhidden', fshowhidden);
   fcompact        := reader.readboolean('compact', fcompact);
   fpanel          := reader.readboolean('panel', fpanel);
-  fcolnamewidth   := reader.readinteger('colnamewidth', fcolsizewidth);
+  fcolnamewidth   := reader.readinteger('colnamewidth', fcolnamewidth);
   fcolsizewidth   := reader.readinteger('colsizewidth', fcolsizewidth);
   fcolextwidth    := reader.readinteger('colextwidth', fcolextwidth);
   fcoldatewidth   := reader.readinteger('coldatewidth', fcoldatewidth);
