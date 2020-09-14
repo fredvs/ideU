@@ -3531,7 +3531,7 @@ end;
 
 procedure tmainfo.newproject(const fromprogram, empty: Boolean);
 var
-  aname: filenamety;
+  aname, aname2: filenamety;
   mstr1, mstr2: msestring;
   int1: integer;
   curdir, Source, dest: filenamety;
@@ -3554,7 +3554,9 @@ begin
         if filedialog(aname, [fdo_checkexist], c[Ord(selecttemplate)],
           [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
           ['*.prj', '*'], 'prj') = mr_ok then
-          readprojectoptions(aname);
+          begin
+            readprojectoptions(aname);
+          end;
       end;
       aname := '';
     end
@@ -3578,6 +3580,10 @@ begin
           end;
           expandprojectmacros;
         end;
+        
+          if not directoryexists(filepath(aname) + directoryseparator + 'units')
+          then msefileutils.createdir(filepath(aname) + directoryseparator + 'units');
+      
         aname := aname + '.prj';
       end;
     end;
@@ -3586,6 +3592,10 @@ begin
       ['*.prj', '*'], 'prj') = mr_ok then
     begin
       curdir := filedir(aname);
+       
+       if not directoryexists(curdir + directoryseparator + 'units')
+         then msefileutils.createdir(curdir + directoryseparator + 'units');
+      
       setcurrentdirmse(curdir);
       if not fromprogram then
       begin
@@ -3661,6 +3671,9 @@ begin
       end
       else
       begin
+        if not directoryexists(filedir(aname) + directoryseparator + 'units')
+         then msefileutils.createdir(filedir(aname) + directoryseparator + 'units');
+     
         saveproject(aname);
         sourcefo.openfile(projectoptions.o.texp.mainfile, True);
       end;

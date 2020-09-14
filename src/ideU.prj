@@ -1239,7 +1239,7 @@ line=28
  2129
  1177
  590
- 3967
+ 3980
  660
  119
  1116
@@ -1251,14 +1251,14 @@ line=28
  546
  484
  67
- 4242
+ 4255
  684
  97
  15
  787
  901
  2529
- 5304
+ 5317
  1882
  6135
  127
@@ -1544,8 +1544,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=fo.font.Name
-findhistory=6
+finddtext=fileexist
+findhistory=8
+ fileexist
+ newproject(
  fo.font.Name
  fo.noi
  ondrawcellc
@@ -1553,26 +1555,31 @@ findhistory=6
  ondrawcell
  listviewonlistread
 findoptions=1
-editpos=4
+editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2272
+ 0,1252
+ 11,3672
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
-relpaths=4
+ ${PROJECTDIR}/main.pas
+relpaths=5
  ideU.pas
  actionsmodule.pas
  main.pas
  msefiledialog.pas
-ismoduletexts=4
+ main.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -1599,9 +1606,9 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=4
 [layout]
-windowlayout=604
+windowlayout=607
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1621,7 +1628,7 @@ windowlayout=604
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [targetconsolefo]
@@ -1641,7 +1648,7 @@ windowlayout=604
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1735,7 +1742,7 @@ windowlayout=604
  x=0
  y=0
  cx=205
- cy=450
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1745,8 +1752,8 @@ windowlayout=604
  width1=82
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1925,9 +1932,9 @@ windowlayout=604
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=581
+ cx=1348
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1968,6 +1975,7 @@ windowlayout=604
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
  colnamewidth=0
@@ -1990,6 +1998,7 @@ windowlayout=604
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
  colnamewidth=0
@@ -2011,6 +2020,7 @@ windowlayout=604
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
  colnamewidth=0
@@ -2026,7 +2036,7 @@ windowlayout=604
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2056,7 +2066,7 @@ windowlayout=604
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1348
  cy=51
  rcx=0
  rcy=0
@@ -2072,7 +2082,7 @@ windowlayout=604
  ncy=54
  x=0
  y=0
- cx=1212
+ cx=1348
  cy=53
  rcx=0
  rcy=0
@@ -2083,7 +2093,7 @@ windowlayout=604
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialog.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
   /home/fred/ideu/src/msefiledialog.pas
   /home/fred/Desktop/corona
@@ -2121,13 +2131,13 @@ windowlayout=604
  ncy=0
  x=208
  y=0
- cx=1004
- cy=450
+ cx=1140
+ cy=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=4
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2164,14 +2174,14 @@ windowlayout=604
  ncy=0
  x=0
  y=54
- cx=1212
- cy=450
+ cx=1348
+ cy=524
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
