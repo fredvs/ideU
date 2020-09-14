@@ -29,54 +29,14 @@ interface
 {$endif}
 
 uses
-  mseglob,
-  mseguiglob,
-  mseforms,
-  Classes,
-  mclasses,
-  mseclasses,
-  msewidgets,
-  msegrids,
-  Math,
-  mselistbrowser,
-  mseedit,
-  msesimplewidgets,
-  msedataedits,
-  msedialog,
-  msetypes,
-  msestrings,
-  msesystypes,
-  msesys,
-  msedispwidgets,
-  msedatalist,
-  msestat,
-  msestatfile,
-  msebitmap,
-  msedatanodes,
-  msefileutils,
-  msedropdownlist,
-  mseevent,
-  msegraphedits,
-  mseeditglob,
-  msesplitter,
-  msemenus,
-  msegridsglob,
-  msegraphics,
-  msegraphutils,
-  msedirtree,
-  msewidgetgrid,
-  mseact,
-  mseapplication,
-  msegui,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msestream,
-  SysUtils,
-  msemenuwidgets,
-  msescrollbar,
-  msedragglob,
-  mserichstring;
+ mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,msegrids,
+ Math,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,msetypes,
+ msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,msestatfile,
+ msebitmap,msedatanodes,msefileutils,msedropdownlist,mseevent,msegraphedits,
+ mseeditglob,msesplitter,msemenus,msegridsglob,msegraphics,msegraphutils,
+ msedirtree,msewidgetgrid,mseact,mseapplication,msegui,mseificomp,
+ mseificompglob,mseifiglob,msestream,SysUtils,msemenuwidgets,msescrollbar,
+ msedragglob,mserichstring;
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -595,8 +555,8 @@ type
     places: tstringgrid;
     tsplitter3: tsplitter;
     placescust: tstringgrid;
-    iconslist: timagelist;
     labtest: tlabel;
+   iconslist: timagelist;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -2198,27 +2158,32 @@ begin
 end;
 
 procedure tfiledialogfo.onsetlat(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
-begin
-  if not avalue then
+ begin
+ if not avalue then
   begin
     placespan.Visible  := True;
     tsplitter1.left    := fsplitterpanpos;
     tsplitter1.Visible := True;
     list_log.left      := tsplitter1.left + tsplitter1.Width;
+    list_log.Width     := Width - list_log.left -2;
   end
   else
   begin
     placespan.Visible  := False;
     tsplitter1.left    := 0;
-    list_log.Width     := Width;
+    list_log.Width     := Width - 2;
     tsplitter1.Visible := False;
-    list_log.left      := 0;
+    list_log.left      := tsplitter1.width;
   end;
 
   listview.left := list_log.left;
 
   if not list_log.Visible then
-    listview.Width := list_log.Width;
+    listview.Width := list_log.Width
+  else
+    listview.Width := 30;
+
+  tsplitter1.invalidate;
 
   listview.invalidate;
   list_log.invalidate;
@@ -2233,13 +2198,20 @@ end;
 
 procedure tfiledialogfo.onresize(const Sender: TObject);
 begin
+ filename.Width := Width - filename.left - 4;
+  list_log.Width := Width - list_log.left - 2;
+  if list_log.Visible = False then
+    listview.Width := list_log.Width;
 end;
 
 procedure tfiledialogfo.oncellevcustplace(const Sender: TObject; var info: celleventinfoty);
 var
-  theint: integer;
+  theint, theexist : integer;
   thestr, tmp: msestring;
+  doexist: Boolean = False;
+  sel : gridcoordty;
 begin
+
   if (info.eventkind = cek_buttonrelease) or (info.eventkind = cek_keyup) then
     if (info.eventkind = cek_keyup) then
     begin
@@ -2251,23 +2223,45 @@ begin
       if (ss_double in info.mouseeventinfopo^.shiftstate) and
         (info.cell.row = placescust.rowcount - 1) then
       begin
-        labtest.Caption := '';
 
-        while labtest.Width < 30 do
+        for theint := 0 to placescust.rowcount - 2 do
+          if placescust[1][theint] = dir.Value then
+          begin
+            doexist := True;
+            theexist := theint;
+          end;  
+
+        if doexist = False then
+         // begin if bnoicon.Value = False then
+          begin
+            labtest.Caption := '';
+
+            while labtest.Width < 30 do
+            begin
+              labtest.Caption := labtest.Caption + ' ';
+              labtest.invalidate;
+            end;
+
+            tmp := labtest.Caption;
+
+         // end else tmp := ' ';
+
+          thestr := copy(dir.Value, 1, length(dir.Value) - 1);
+          theint := lastdelimiter(directoryseparator, thestr);
+          placescust[0][placescust.rowcount - 1] := tmp + copy(thestr, theint + 1, 14);
+          placescust[1][placescust.rowcount - 1] := dir.Value;
+          placescust.rowcount := placescust.rowcount + 1;
+          places.defocuscell;
+          places.datacols.clearselection;
+        end 
+        else
         begin
-          labtest.Caption := labtest.Caption + ' ';
-          labtest.invalidate;
+          sel.col := 0;
+          sel.row := theexist;
+          placescust.defocuscell;
+          placescust.datacols.clearselection;
+          placescust.selectcell(sel,csm_select);
         end;
-
-        tmp := labtest.Caption;
-
-        thestr := copy(dir.Value, 1, length(dir.Value) - 1);
-        theint := lastdelimiter(directoryseparator, thestr);
-        placescust[0][placescust.rowcount - 1] := tmp + copy(thestr, theint + 1, 14);
-        placescust[1][placescust.rowcount - 1] := dir.Value;
-        placescust.rowcount := placescust.rowcount + 1;
-        places.defocuscell;
-        places.datacols.clearselection;
       end
       else if (info.cell.row < placescust.rowcount - 1) then
         if directoryexists(tosysfilepath(placescust[1][info.cell.row] + directoryseparator)) then
@@ -2300,8 +2294,8 @@ begin
           placescust.defocuscell;
           placescust.datacols.clearselection;
         end;
-
 end;
+
 
 procedure tfiledialogfo.ondrawcellcustplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
@@ -2312,7 +2306,7 @@ begin
 
   if cellinfo.cell.row < placescust.rowcount - 1 then
   begin
-    aicon := 16;
+    aicon := 19;
 
     apoint.x := 2;
     apoint.y := 3;
@@ -2331,9 +2325,9 @@ procedure tfiledialogfo.onmovesplit(const sender: TObject);
 begin
   if tsplitter1.left > 0 then
       fsplitterpanpos := tsplitter1.left;
-      if places.width > 126 then begin
-   places.datacols[0].width := places.width - 18;
- placescust.datacols[0].width := places.width - 18;    
+      if places.width > 10 then begin
+   places.datacols[0].width := places.width - 4;
+ placescust.datacols[0].width := places.width - 4;    
    end;  
 end;
 
@@ -2489,12 +2483,18 @@ begin
     fo.blateral.Value   := fpanel;
     fo.bcompact.Value   := fcompact;
     fo.showhidden.Value := fshowhidden;
+    
+        if confideufo.fontsize.Value = 0 then
+      fo.font.Height := 12;
 
     if confideufo.fontsize.Value > 0 then
       if confideufo.fontsize.Value < 21 then
         fo.font.Height := confideufo.fontsize.Value
       else
         fo.font.Height := 20;
+        
+       fo.list_log.datacols[2].widthmax := fo.font.Height * 7;
+
 
     fo.font.color := cl_black;
 
