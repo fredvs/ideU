@@ -288,7 +288,7 @@ options=114
  firsttab=1
  index=2
  [projectoptionsfo]
- stackedunder=
+ stackedunder=finddialogfo
  x=99
  y=61
  cx=735
@@ -900,7 +900,7 @@ befcommandon=0
 makeoptionson=13
  4095
  3
- 12
+ 8
  2044
  0
  192
@@ -1544,30 +1544,20 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=fo.f
-findhistory=16
- fo.f
- fcolnamewidth
- desktop
- finit
- fsplitter
- filedialogfo
- ffiledialogfo
- music
- ffilenamescu
- ffilenamecu
- fo.font
- fo.fo
- '  
- ' 
- < 30
+finddtext=fo.font.Name
+findhistory=6
+ fo.font.Name
+ fo.noi
+ ondrawcellc
+ ondrawcellp
+ ondrawcell
  listviewonlistread
 findoptions=1
 editpos=4
- 0,0
  0,-1073741823
- 0,0
- 0,2162
+ 0,-1073741823
+ 0,-1073741823
+ 0,2272
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1609,9 +1599,9 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=634
+windowlayout=604
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1673,7 +1663,7 @@ windowlayout=634
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -2078,12 +2068,12 @@ windowlayout=634
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1197
+ ncy=54
  x=0
  y=0
  cx=1212
- cy=58
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2093,58 +2083,28 @@ windowlayout=634
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=50
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msegui-chessboard-modern-master/chessboard.prj
-  /home/fred/msegui-chessboard-master/chessboard.prj
-  /home/fred/msegui/apps/ide/mseide.prj
-  /home/fred/Downloads/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs-console-master/eschecs-c.prj
-  /home/fred/eschecs_mse (copie 1)/eschecs.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/widgetblendanim/widgetblendanim.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imagedarkening/imagedarkening.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/imageblend/imageblend.prj
-  /home/fred/Downloads/mseuniverse-master/samples/animations/windowopacity/windowopacity.prj
-  /home/fred/eschecs_mse_dockmain/eschecs.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Editor_Message_MSE.prj
-  /home/fred/ideu_bin/ideu_1.9.7_linux64/layout/Dock_Commandor_Dock_Tree_Editor_Message.prj
-  /home/fred/mse_textedit/textedit.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/textedit/textedit.prj
-  /home/fred/mseuniverse-master/tools/virtualkeyboard/testvirtualkeyboard.prj
-  /home/fred/mseuniverse-master/tools/msetune/msetune.prj
-  /home/fred/mseuniverse-master/samples/widgets/grids/itemedit/itemedit.prj
-  /home/fred/eschecs_mse_nodock/eschecs.prj
-  /home/fred/eschecs_mse_copie/eschecs.prj
-  /home/fred/uos/examples/simpleplayer_fpGUI.prj
-  /home/fred/ideu/src/layout/Menu_Only.prj
-  /home/fred/eschecs_mse2/eschecs.prj
-  /home/fred/mse_chessboard/eschecs.prj
-  /home/fred/mse_chessboard/chessboard.prj
-  /home/fred/Downloads/mseuniverse-master/samples/widgets/grids/chessboard/chessboard.prj
-  /home/fred/msetest/test.prj
-  /home/fred/uoslib/src/uoslib.prj
-  /home/fred/uoslib/examples/demos/fpc/simpleplayer.prj
-  /home/fred/eschecs/source/eschecs.prj
-  /home/fred/mseuniverse-master/samples/db/gridselectedrow/gridselectedrow.prj
+ value=/home/fred/ideu/src/msefiledialog.pas
+ history=20
+  /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/Desktop/corona
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/msefiledialog2.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
+  /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
+  /home/fred/ideu/src/regfiledialogx.pas
+  /home/fred/ideu/src/regcomponents.inc
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialog.pas
+  /home/fred/strumpract/src/msestringenter.pas
+  /home/fred/msefiledialogx/src/main.pas
+  /home/fred/msefiledialogx/src/main2.pas
+  /home/fred/Downloads/skinblue_mfm.pas
+  /home/fred/strumpract/src/spectrum1.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2167,7 +2127,7 @@ windowlayout=634
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2192,6 +2152,22 @@ windowlayout=634
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1212
+ cy=450
+ rcx=0
+ rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2230,22 +2206,6 @@ windowlayout=634
  wsize=0
  active=0
  visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1212
- cy=450
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=dump
 findhistory=1

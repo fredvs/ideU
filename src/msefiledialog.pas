@@ -163,6 +163,7 @@ type
     ffilterlist: tdoublemsestringdatalist;
     ffilter: filenamety;
     fpanel: Boolean;
+    fnoicon: Boolean;
     fcompact: Boolean;
     fshowhidden: Boolean;
     ffilterindex: integer;
@@ -557,6 +558,7 @@ type
     placescust: tstringgrid;
     labtest: tlabel;
    iconslist: timagelist;
+   bnoicon: tbooleanedit;
     procedure createdironexecute(const Sender: TObject);
     procedure listviewselectionchanged(const Sender: tcustomlistview);
     procedure listviewitemevent(const Sender: tcustomlistview; const index: integer; var info: celleventinfoty);
@@ -594,6 +596,8 @@ type
     procedure ondrawcellcustplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
    procedure oncreate(const sender: TObject);
    procedure onmovesplit(const sender: TObject);
+   procedure onsetnoicon(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -635,6 +639,11 @@ function filedialog(var afilename: filenamety; const aoptions: filedialogoptions
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 procedure updatefileinfo(const item: tlistitem; const info: fileinfoty; const withicon: Boolean);
 
+var
+  theboolicon: Boolean = False;
+  theimagelist: timagelist;
+
+
 implementation
 
 uses
@@ -644,7 +653,7 @@ uses
   commandorform,
   confideu,
   msestringenter,
-  msefiledialogres,
+  //msefiledialogres,
   msekeyboard,
   msestockobjects,
   msesysintf,
@@ -669,6 +678,7 @@ type
 
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
+  imagelist := theimagelist;
   with info do
   begin
     //  imagelist:= nil;
@@ -676,16 +686,15 @@ begin
     if fis_typevalid in state then
       case extinfo1.filetype of
         ft_dir:
-          if fis_diropen in state then
-            filedialogres.getfileicon(fdi_diropen, imagelist, imagenr)
-          else if fis_hasentry in state then
-            filedialogres.getfileicon(fdi_direntry, imagelist,
-              imagenr)
+          if theboolicon = False then
+            imagenr := 0
           else
-            filedialogres.getfileicon(fdi_dir, imagelist, imagenr);
+            imagenr := 17;
         ft_reg, ft_lnk:
-          filedialogres.getfileicon(fdi_file, imagelist, imagenr
-            );
+          if theboolicon = False then
+            imagenr := 1
+          else
+            imagenr := 18;
       end;
   end;
 end;
@@ -1496,33 +1505,43 @@ procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
   x, x2, y, y2, z: integer;
   info: fileinfoty;
-  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2: string;
+  thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2, tmp3: string;
 begin
 
-  listview.Width := 40;
+  listview.Width := 30;
   listview.invalidate;
 
-  labtest.Caption := '';
-
-  while labtest.Width < 30 do
+  if bnoicon.Value = False then
   begin
-    labtest.Caption := labtest.Caption + ' ';
-    labtest.invalidate;
-  end;
+    x := 30;
+    labtest.Caption := '';
 
-  tmp := labtest.Caption;
+    while labtest.Width < x do
+    begin
+      labtest.Caption := labtest.Caption + ' ';
+      labtest.invalidate;
+    end;
 
+    tmp2 := labtest.Caption;
+    tmp3 := '';
 
-  labtest.Caption := ' .';
-
-  while labtest.Width < 30 do
-  begin
-    labtest.Caption := labtest.Caption + ' ';
-    labtest.invalidate;
-  end;
+  end
+  else
+    labtest.Caption := ' ';
 
   tmp2 := labtest.Caption;
 
+  {
+  labtest.Caption := ' .';
+
+  while labtest.Width < x do
+  begin
+    labtest.Caption := labtest.Caption + ' ';
+  end;
+
+   labtest.invalidate;
+  tmp2 := labtest.Caption;
+   }
 
   with listview do
   begin
@@ -1553,18 +1572,28 @@ begin
       if listview.filelist.isdir(x) then
       begin
         Inc(x2);
-        list_log[0][x] := tmp + msestring(listview.itemlist[x].Caption);
+        if bnoicon.Value = True then
+          tmp3 := 'D |'
+        else
+          tmp3 := '';
+        list_log[0][x] := tmp3 + tmp2 + msestring(listview.itemlist[x].Caption);
         list_log[1][x] := '';
       end
       else
       begin
-        list_log[0][x] := tmp2 + msestring(filenamebase(listview.itemlist[x].Caption));
+        if bnoicon.Value = True then
+          tmp3 := 'F |'
+        else
+          tmp3 := '';
+        list_log[0][x] := tmp3 + tmp2 + msestring(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
-          tmp := '.' + tmp;
-        list_log[1][x] := utf8decode(tmp);
+          tmp          := '.' + tmp;
+        list_log[1][x] := msestring(tmp);
         list_log[0][x] := list_log[0][x] + list_log[1][x];
       end;
+
+      dir.Value := tosysfilepath(dir.Value);
 
       thedir := tosysfilepath(dir.Value + (listview.itemlist[x].Caption));
 
@@ -1634,9 +1663,10 @@ begin
   dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
 
   if filename.tag = 1 then
-    filename.Value := dir.Value
+    filename.Value := (dir.Value)
   else
     filename.Value := '';
+
   filename.Value := tosysfilepath(filename.Value);
 
 end;
@@ -1965,87 +1995,90 @@ var
   aicon: integer;
   apoint: pointty;
 begin
+  if bnoicon.Value = False then
+  begin
+    if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
+      aicon := 0
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.html') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then
+      aicon := 2
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.lpi') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.lpr') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.prj') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.pp') then
+      aicon := 8
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.lps') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.mfm') then
+      aicon := 9
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.java') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.js') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.class') then
+      aicon := 10
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.c') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.cc') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.cpp') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.h') then
+      aicon := 11
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.py') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') then
+      aicon := 12
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.wav') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.m4a') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.mp3') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.opus') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.flac') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.ogg') then
+      aicon := 3
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.avi') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.mp4') then
+      aicon := 4
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.png') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.jpeg') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.ico') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.webp') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.bmp') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.tiff') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.gif') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.svg') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.jpg') then
+      aicon := 7
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.exe') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.dbg') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.com') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.bat') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.bin') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.dll') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.res') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.so') then
+      aicon := 5
+    else if (lowercase(list_log[1][cellinfo.cell.row]) = '.zip') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.iso') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.cab') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.torrent') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.7z') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.txz') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.rpm') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.tar') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.gz') or
+      (lowercase(list_log[1][cellinfo.cell.row]) = '.deb') then
+      aicon := 6
+    else
+      aicon := 1;
 
-  if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
-    aicon :=
-      0
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.ini') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.md') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.html') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.inc') then
-    aicon := 2
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.pas') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.lpi') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.lpr') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.prj') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.pp') then
-    aicon := 8
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.lps') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.mfm') then
-    aicon := 9
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.java') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.js') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.class') then
-    aicon := 10
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.c') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.cc') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.cpp') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.h') then
-    aicon := 11
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.py') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') then
-    aicon := 12
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.wav') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.m4a') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.mp3') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.opus') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.flac') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.ogg') then
-    aicon := 3
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.avi') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.mp4') then
-    aicon := 4
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.png') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.jpeg') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.ico') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.webp') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.bmp') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.tiff') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.gif') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.svg') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.jpg') then
-    aicon := 7
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.exe') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.com') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.bat') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.bin') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.dll') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.pyc') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.res') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.so') then
-    aicon := 5
-  else if (lowercase(list_log[1][cellinfo.cell.row]) = '.zip') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.iso') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.cab') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.torrent') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.7z') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.txz') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.rpm') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.tar') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.gz') or
-    (lowercase(list_log[1][cellinfo.cell.row]) = '.deb') then
-    aicon := 6
-  else
-    aicon := 1;
+    apoint.x := 2;
+    apoint.y := 1;
 
-  apoint.x := 2;
-  apoint.y := 1;
+    iconslist.paint(Canvas, aicon, apoint, cl_default,
+      cl_default, cl_default, 0);
 
-  iconslist.paint(Canvas, aicon, apoint, cl_default,
-    cl_default, cl_default, 0);
+  end;
 
 end;
 
@@ -2129,32 +2162,33 @@ var
   apoint: pointty;
   astr: msestring;
 begin
+  if bnoicon.Value = False then
+  begin
+    astr := trim(places[0][cellinfo.cell.row]);
 
-  astr := trim(places[0][cellinfo.cell.row]);
+    if (astr = 'C:\') or (astr = 'D:\') or (astr = '/') or (astr = '/usr') then
+      aicon := 0
+    else if astr = 'Home' then
+      aicon := 13
+    else if astr = 'Desktop' then
+      aicon := 14
+    else if astr = 'Music' then
+      aicon := 3
+    else if astr = 'Pictures' then
+      aicon := 7
+    else if astr = 'Videos' then
+      aicon := 4
+    else if astr = 'Documents' then
+      aicon := 2
+    else if astr = 'Downloads' then
+      aicon := 15;
 
- if (astr = 'C:\') or (astr = 'D:\') or (astr = '/') or (astr = '/usr') then
-    aicon := 0
-  else if astr = 'Home' then
-    aicon := 13
-  else if astr = 'Desktop' then
-    aicon := 14
-  else if astr = 'Music' then
-    aicon := 3
-  else if astr = 'Pictures' then
-    aicon := 7
-  else if astr = 'Videos' then
-    aicon := 4
-  else if astr = 'Documents' then
-    aicon := 2
-  else if astr = 'Downloads' then
-    aicon := 15;
+    apoint.x := 2;
+    apoint.y := 3;
 
-  apoint.x := 2;
-  apoint.y := 3;
-
-  iconslist.paint(Canvas, aicon, apoint, cl_default,
-    cl_default, cl_default, 0);
-
+    iconslist.paint(Canvas, aicon, apoint, cl_default,
+      cl_default, cl_default, 0);
+  end;
 end;
 
 procedure tfiledialogfo.onsetlat(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -2232,7 +2266,8 @@ begin
           end;  
 
         if doexist = False then
-         // begin if bnoicon.Value = False then
+        begin
+          if bnoicon.Value = False then
           begin
             labtest.Caption := '';
 
@@ -2244,7 +2279,9 @@ begin
 
             tmp := labtest.Caption;
 
-         // end else tmp := ' ';
+          end
+          else
+            tmp := ' ';
 
           thestr := copy(dir.Value, 1, length(dir.Value) - 1);
           theint := lastdelimiter(directoryseparator, thestr);
@@ -2296,29 +2333,29 @@ begin
         end;
 end;
 
-
 procedure tfiledialogfo.ondrawcellcustplace(const Sender: tcol; const Canvas: tcanvas; var cellinfo: cellinfoty);
 var
   aicon: integer;
   apoint: pointty;
   astr: msestring;
 begin
+  if bnoicon.Value = False then
+    if cellinfo.cell.row < placescust.rowcount - 1 then
+    begin
+      aicon := 19;
 
-  if cellinfo.cell.row < placescust.rowcount - 1 then
-  begin
-    aicon := 19;
+      apoint.x := 2;
+      apoint.y := 3;
 
-    apoint.x := 2;
-    apoint.y := 3;
-
-    iconslist.paint(Canvas, aicon, apoint, cl_default,
-      cl_default, cl_default, 0);
-  end;
+      iconslist.paint(Canvas, aicon, apoint, cl_default,
+        cl_default, cl_default, 0);
+    end;
 end;
 
 procedure tfiledialogfo.oncreate(const sender: TObject);
 begin
   fsplitterpanpos := tsplitter1.left;
+   theimagelist    := iconslist;
 end;
 
 procedure tfiledialogfo.onmovesplit(const sender: TObject);
@@ -2329,6 +2366,41 @@ begin
    places.datacols[0].width := places.width - 4;
  placescust.datacols[0].width := places.width - 4;    
    end;  
+end;
+
+procedure tfiledialogfo.onsetnoicon(const sender: TObject; var avalue: Boolean;
+               var accept: Boolean);
+
+var
+  tmp: msestring;
+  x: integer;
+begin
+  bnoicon.Value := avalue;
+  theboolicon   := avalue;
+
+  if avalue = False then
+  begin
+    labtest.Caption := '';
+
+    while labtest.Width < 30 do
+    begin
+      labtest.Caption := labtest.Caption + ' ';
+      labtest.invalidate;
+    end;
+
+    tmp := labtest.Caption;
+
+  end
+  else
+    tmp := ' ';
+
+  for x := 0 to places.rowcount - 1 do
+    places[0][x] := tmp + trim(places[0][x]);
+
+  for x := 0 to placescust.rowcount - 1 do
+    placescust[0][x] := tmp + trim(placescust[0][x]);
+
+  listview.readlist;
 end;
 
 
@@ -2344,6 +2416,10 @@ begin
   finclude         := [fa_all];
   fexclude         := [fa_hidden];
   fonchange        := onchange;
+  fpanel    := False;
+  fcompact    := False;
+  fshowhidden := False;
+  fnoicon     := False;
   inherited Create;
 end;
 
@@ -2373,6 +2449,7 @@ begin
   fshowhidden     := reader.readboolean('showhidden', fshowhidden);
   fcompact        := reader.readboolean('compact', fcompact);
   fpanel          := reader.readboolean('panel', fpanel);
+  fnoicon          := reader.readboolean('noicon', fnoicon);
   fcolnamewidth   := reader.readinteger('colnamewidth', fcolnamewidth);
   fcolsizewidth   := reader.readinteger('colsizewidth', fcolsizewidth);
   fcolextwidth    := reader.readinteger('colextwidth', fcolextwidth);
@@ -2410,6 +2487,7 @@ begin
   writer.writeinteger('cx', fwindowrect.cx);
   writer.writeinteger('cy', fwindowrect.cy);
   writer.writeboolean('panel', fpanel);
+  writer.writeboolean('noicon', fnoicon);
   writer.writeboolean('compact', fcompact);
   writer.writeboolean('showhidden', fshowhidden);
   writer.writeinteger('colnamewidth', fcolnamewidth);
@@ -2484,6 +2562,10 @@ begin
     fo.bcompact.Value   := fcompact;
     fo.showhidden.Value := fshowhidden;
     
+    fo.bnoicon.Value := fnoicon;
+
+    theboolicon := fnoicon;
+        
         if confideufo.fontsize.Value = 0 then
       fo.font.Height := 12;
 
@@ -2501,15 +2583,21 @@ begin
     if confideufo.fontname.Value <> '' then
       fo.font.Name := ansistring(confideufo.fontname.Value);
 
-    fo.labtest.Caption := '';
-
-    while fo.labtest.Width < 30 do
+   if fnoicon = False then
     begin
-      fo.labtest.Caption := fo.labtest.Caption + ' ';
-      fo.labtest.invalidate;
-    end;
+      fo.labtest.Caption := '';
 
-    tmp := fo.labtest.Caption;
+      while fo.labtest.Width < 30 do
+      begin
+        fo.labtest.Caption := fo.labtest.Caption + ' ';
+        fo.labtest.invalidate;
+      end;
+
+      tmp := fo.labtest.Caption;
+
+    end
+    else
+      tmp := ' ';
 
     x := -1;
         
@@ -2657,6 +2745,7 @@ begin
         flastdir := fo.dir.Value;
 
     fpanel          := fo.blateral.Value;
+    fnoicon         := fo.bnoicon.Value;
     fcompact        := fo.bcompact.Value;
     fshowhidden     := fo.showhidden.Value;
     fcolnamewidth   := fo.list_log.datacols[0].Width;
