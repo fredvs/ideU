@@ -1572,7 +1572,7 @@ editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1579
+ 0,8
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1583,7 +1583,7 @@ sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/msefiledialog.pas
+ /home/fred/ideu/src/msefiledialog.pas
  ${PROJECTDIR}/main.pas
 relpaths=5
  ideU.pas
@@ -1755,7 +1755,7 @@ windowlayout=607
  x=0
  y=0
  cx=205
- cy=524
+ cy=526
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1849,10 +1849,10 @@ windowlayout=607
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2080,7 +2080,7 @@ windowlayout=607
  x=0
  y=0
  cx=1348
- cy=51
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2092,11 +2092,11 @@ windowlayout=607
  nx=0
  ny=0
  ncx=1333
- ncy=51
+ ncy=46
  x=0
  y=0
- cx=1348
- cy=50
+ cx=1333
+ cy=44
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2109,6 +2109,7 @@ windowlayout=607
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
   /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/main.pas
   /home/fred/Desktop/corona
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
@@ -2127,7 +2128,6 @@ windowlayout=607
   /home/fred/Downloads/skinblue_mfm.pas
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
-  /home/fred/strumpract/src/dockpanel1.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2145,7 +2145,7 @@ windowlayout=607
  x=208
  y=0
  cx=1140
- cy=524
+ cy=526
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2186,15 +2186,15 @@ windowlayout=607
  ncx=0
  ncy=0
  x=0
- y=54
+ y=52
  cx=1348
- cy=524
+ cy=526
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2213,7 +2213,7 @@ windowlayout=607
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
