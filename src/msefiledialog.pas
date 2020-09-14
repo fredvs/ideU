@@ -1531,19 +1531,7 @@ begin
 
   tmp2 := labtest.Caption;
 
-  {
-  labtest.Caption := ' .';
-
-  while labtest.Width < x do
-  begin
-    labtest.Caption := labtest.Caption + ' ';
-  end;
-
-   labtest.invalidate;
-  tmp2 := labtest.Caption;
-   }
-
-  with listview do
+   with listview do
   begin
     dir.Value        := tosysfilepath(directory);
     if fdo_directory in self.dialogoptions then
@@ -1575,7 +1563,7 @@ begin
         if bnoicon.Value = True then
           tmp3 := 'D |'
         else
-          tmp3 := '';
+          tmp3 := '.';
         list_log[0][x] := tmp3 + tmp2 + msestring(listview.itemlist[x].Caption);
         list_log[1][x] := '';
       end
@@ -1584,7 +1572,7 @@ begin
         if bnoicon.Value = True then
           tmp3 := 'F |'
         else
-          tmp3 := '';
+          tmp3 := ':';
         list_log[0][x] := tmp3 + tmp2 + msestring(filenamebase(listview.itemlist[x].Caption));
         tmp := fileext(listview.itemlist[x].Caption);
         if tmp <> '' then
@@ -1627,7 +1615,7 @@ begin
         begin
           y2        := 0;
           y         := info.extinfo1.size;
-          thestrx   := ' ';
+          thestrx   := '!';
           thestrext := ' B ';
         end;
 
@@ -1645,11 +1633,16 @@ begin
           thestrfract := '';
 
         list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
-      end;
+    end
+      else
+        list_log[2][x] := ' ';
 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
+      
+            if listview.filelist.isdir(x) then
+        list_log[3][x] := ' ' + list_log[3][x];
 
-    end; // else dir.frame.caption := 'Directory with 0 files';
+    end; 
 
   if bcompact.Value then
   begin
@@ -1997,7 +1990,7 @@ var
 begin
   if bnoicon.Value = False then
   begin
-    if (list_log[1][cellinfo.cell.row] = '') and (list_log[2][cellinfo.cell.row] = '') then
+   if (trim(list_log[1][cellinfo.cell.row]) = '') and (trim(list_log[2][cellinfo.cell.row]) = '') then
       aicon := 0
     else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
       (lowercase(list_log[1][cellinfo.cell.row]) = '.pdf') or
@@ -2205,11 +2198,13 @@ procedure tfiledialogfo.onsetlat(const Sender: TObject; var avalue: Boolean; var
   begin
     placespan.Visible  := False;
     tsplitter1.left    := 0;
-    list_log.Width     := Width - 2;
+    list_log.Width     := Width - 4;
     tsplitter1.Visible := False;
     list_log.left      := tsplitter1.width;
   end;
 
+  list_log.invalidate;
+  
   listview.left := list_log.left;
 
   if not list_log.Visible then

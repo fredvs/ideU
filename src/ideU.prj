@@ -378,10 +378,11 @@ stringlisteditor=5
  y=203
  cx=275
  cy=237
-imagelisteditor=76
+imagelisteditor=87
  [imagelisteditorfo.statfile1]
  currentversion=0
  [imagelisteditorfo.filedialog]
+ filenamescust=0
  filenames=1
   /home/fred/Documents/python.png
  filecolwidth=588
@@ -389,6 +390,16 @@ imagelisteditor=76
  y=182
  cx=588
  cy=307
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  lastdir=/home/fred/Documents/
  filehistory=50
   /home/fred/Documents/python.png
@@ -1544,8 +1555,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=fileexist
-findhistory=8
+finddtext=tfiledialogfo.listviewonlistrea
+findhistory=10
+ tfiledialogfo.listviewonlistrea
+ ondrawce
  fileexist
  newproject(
  fo.font.Name
@@ -1559,8 +1572,8 @@ editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1252
- 11,3672
+ 0,1579
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1606,7 +1619,7 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=4
+index=3
 [layout]
 windowlayout=607
  [mainfo.basedock]
@@ -1836,10 +1849,10 @@ windowlayout=607
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=243
+ propcolwidthref=532
+ width0=236
  sortdescend0=0
- width1=298
+ width1=290
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2036,7 +2049,7 @@ windowlayout=607
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2078,12 +2091,12 @@ windowlayout=607
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=54
+ ncx=1333
+ ncy=51
  x=0
  y=0
  cx=1348
- cy=53
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2093,9 +2106,10 @@ windowlayout=607
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/msefiledialog.pas
  history=20
   /home/fred/ideu/src/msefiledialog.pas
+  /home/fred/ideu/src/main.pas
   /home/fred/Desktop/corona
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/strumpract/src/imagedancer.pas
@@ -2114,7 +2128,6 @@ windowlayout=607
   /home/fred/strumpract/src/spectrum1.pas
   /home/fred/strumpract/src/aboutform.pas
   /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2137,7 +2150,7 @@ windowlayout=607
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=4
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2181,7 +2194,7 @@ windowlayout=607
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2200,7 +2213,7 @@ windowlayout=607
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0

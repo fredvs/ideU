@@ -3646,6 +3646,7 @@ begin
                         application.handleexception(nil);
                       end;
                 end;
+                
                 runscript(scriptaftercopy, False, False);
               end;
             finally
