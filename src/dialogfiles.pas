@@ -101,6 +101,7 @@ end;
 
 end;
 layoutbusy := false;
+close;
 end;
 
 procedure tdialogfilesfo.butcancel(const sender: TObject);

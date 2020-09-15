@@ -232,9 +232,9 @@ object dialogfilesfo: tdialogfilesfo
     frame.localprops = []
     frame.localprops1 = []
     face.localprops = []
-    bounds_x = 6
+    bounds_x = 2
     bounds_y = 61
-    bounds_cx = 324
+    bounds_cx = 328
     bounds_cy = 300
     anchors = [an_left, an_top, an_right, an_bottom]
     font.name = 'stf_default'
@@ -243,7 +243,7 @@ object dialogfilesfo: tdialogfilesfo
     fontempty.localprops = []
     colorselect = 16760476
     colorglyph = 16449400
-    cellwidth = 150
+    cellwidth = 322
     cellheight = 19
     cellframe.localprops = []
     cellframe.localprops1 = []
@@ -288,7 +288,7 @@ object dialogfilesfo: tdialogfilesfo
     bounds_cx = 50
     bounds_cy = 18
     anchors = [an_top, an_right]
-    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+    state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = '&OK'
     onexecute = butok
   end
