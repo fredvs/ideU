@@ -1559,10 +1559,11 @@ progparamhistory=0
 workdirparamhistory=0
 envvarons=0
 [edit]
-hintwidth=684
-hintheight=19
-finddtext=top
-findhistory=15
+hintwidth=382
+hintheight=38
+finddtext=fixed
+findhistory=16
+ fixed
  top
  select project template
  newproject
@@ -1580,11 +1581,11 @@ findhistory=15
  listviewonlistread
 findoptions=1
 editpos=6
- 0,6
  0,-1073741823
  0,-1073741823
- 0,1510
- 0,1636
+ 0,-1073741823
+ 0,1504
+ 0,0
  0,60
 bookmarks0=0
 bookmarks1=0
@@ -1648,7 +1649,7 @@ windowlayout=626
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=sourcehintfo
  parent=
  mdistate=0
  nx=0
@@ -1703,7 +1704,7 @@ windowlayout=626
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=confcompilerfo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1749,7 +1750,7 @@ windowlayout=626
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_filedialogfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1869,10 +1870,10 @@ windowlayout=626
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=547
- width0=243
+ propcolwidthref=532
+ width0=236
  sortdescend0=0
- width1=298
+ width1=290
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2069,7 +2070,7 @@ windowlayout=626
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=dialogfilesfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2111,12 +2112,12 @@ windowlayout=626
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=64
+ ncx=1197
+ ncy=57
  x=0
  y=0
  cx=1212
- cy=58
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2128,6 +2129,7 @@ windowlayout=626
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialog.pas
  history=20
+  /home/fred/ideu/src/msefiledialog.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
@@ -2147,7 +2149,6 @@ windowlayout=626
   /home/fred/ptop_fred/ptop.prj
   /home/fred/eschecs_mse_argh/eschecs.prj
   /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2233,7 +2234,7 @@ windowlayout=626
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2252,7 +2253,7 @@ windowlayout=626
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=_mse_filedialogfo_mse_
  parent=
  mdistate=3
  nx=0

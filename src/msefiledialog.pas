@@ -1509,16 +1509,17 @@ begin
       begin
           sel.col := 0;
           sel.row := theexist;
+          fisfixedrow := true;
           list_log.defocuscell;
           list_log.datacols.clearselection;
           list_log.selectcell(sel,csm_select);
           list_log.frame.sbvert.value := theexist/ (list_log.rowcount-1);
-       end; 
+        end; 
          places.defocuscell;
          places.datacols.clearselection;
          placescust.defocuscell;
          placescust.datacols.clearselection;
-        
+                        
 end;
 
 procedure tfiledialogfo.filepathentered(const Sender: TObject);
