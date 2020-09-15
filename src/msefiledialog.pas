@@ -653,7 +653,7 @@ uses
   commandorform,
   confideu,
   msestringenter,
-  //msefiledialogres,
+  msefiledialogres,
   msekeyboard,
   msestockobjects,
   msesysintf,
@@ -678,7 +678,6 @@ type
 
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
-  imagelist := theimagelist;
   with info do
   begin
     //  imagelist:= nil;
@@ -686,16 +685,10 @@ begin
     if fis_typevalid in state then
       case extinfo1.filetype of
         ft_dir:
-          if theboolicon = False then
-            imagenr := 0
-          else
-            imagenr := 17;
+        filedialogres.getfileicon(fdi_diropen, imagelist, imagenr);
         ft_reg, ft_lnk:
-          if theboolicon = False then
-            imagenr := 1
-          else
-            imagenr := 18;
-      end;
+        filedialogres.getfileicon(fdi_file, imagelist, imagenr);
+       end;
   end;
 end;
 

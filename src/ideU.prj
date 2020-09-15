@@ -1555,8 +1555,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=tfiledialogfo.listviewonlistrea
-findhistory=10
+finddtext=procedure getfileicon(
+findhistory=12
+ procedure getfileicon(
+ msefiledialogres,
  tfiledialogfo.listviewonlistrea
  ondrawce
  fileexist
@@ -1572,7 +1574,7 @@ editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,8
+ 0,692
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1583,7 +1585,7 @@ sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- /home/fred/ideu/src/msefiledialog.pas
+ ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/main.pas
 relpaths=5
  ideU.pas
@@ -1621,7 +1623,7 @@ nomenumodules=4
 firsttab=0
 index=3
 [layout]
-windowlayout=607
+windowlayout=598
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1988,15 +1990,12 @@ windowlayout=607
  cx=0
  cy=0
  panel=0
- noicon=0
  compact=0
  showhidden=0
- colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
- splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2011,15 +2010,12 @@ windowlayout=607
  cx=0
  cy=0
  panel=0
- noicon=0
  compact=0
  showhidden=0
- colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
- splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2033,15 +2029,12 @@ windowlayout=607
  cx=0
  cy=0
  panel=0
- noicon=0
  compact=0
  showhidden=0
- colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
- splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -2092,11 +2085,11 @@ windowlayout=607
  nx=0
  ny=0
  ncx=1333
- ncy=46
+ ncy=44
  x=0
  y=0
  cx=1333
- cy=44
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
