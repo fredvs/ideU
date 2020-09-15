@@ -1250,7 +1250,7 @@ line=28
  2129
  1177
  590
- 3980
+ 3982
  660
  119
  1116
@@ -1262,14 +1262,14 @@ line=28
  546
  484
  67
- 4255
+ 4257
  684
  97
  15
  787
  901
  2529
- 5317
+ 5319
  1882
  6135
  127
@@ -1555,8 +1555,10 @@ envvarons=0
 [edit]
 hintwidth=684
 hintheight=19
-finddtext=procedure getfileicon(
-findhistory=12
+finddtext=select project template
+findhistory=14
+ select project template
+ newproject
  procedure getfileicon(
  msefiledialogres,
  tfiledialogfo.listviewonlistrea
@@ -1574,7 +1576,7 @@ editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,692
+ 32,808
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1623,7 +1625,7 @@ nomenumodules=4
 firsttab=0
 index=3
 [layout]
-windowlayout=598
+windowlayout=607
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1663,7 +1665,7 @@ windowlayout=598
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1757,7 +1759,7 @@ windowlayout=598
  x=0
  y=0
  cx=205
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1767,7 +1769,7 @@ windowlayout=598
  width1=82
  sortdescend1=0
  sorted=0
- col=0
+ col=1
  row=10
  rowheight=16
  [stackfo]
@@ -1990,12 +1992,15 @@ windowlayout=598
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2010,12 +2015,15 @@ windowlayout=598
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=/home/fred/msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
@@ -2029,12 +2037,15 @@ windowlayout=598
  cx=0
  cy=0
  panel=0
+ noicon=0
  compact=0
  showhidden=0
+ colnamewidth=0
  colsizewidth=0
  colextwidth=0
  coldatewidth=0
  splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -2042,7 +2053,7 @@ windowlayout=598
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2073,7 +2084,7 @@ windowlayout=598
  x=0
  y=0
  cx=1348
- cy=49
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2084,12 +2095,12 @@ windowlayout=598
  mdistate=0
  nx=0
  ny=0
- ncx=1333
- ncy=44
+ ncx=1348
+ ncy=41
  x=0
  y=0
- cx=1333
- cy=42
+ cx=1348
+ cy=41
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2138,7 +2149,7 @@ windowlayout=598
  x=208
  y=0
  cx=1140
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2179,9 +2190,9 @@ windowlayout=598
  ncx=0
  ncy=0
  x=0
- y=52
+ y=53
  cx=1348
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
@@ -2206,15 +2217,15 @@ windowlayout=598
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=311
- y=188
+ x=709
+ y=151
  cx=620
  cy=460
  rcx=0

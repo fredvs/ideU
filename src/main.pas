@@ -3587,7 +3587,9 @@ begin
         aname := aname + '.prj';
       end;
     end;
-    if filedialog(aname, [fdo_save, fdo_checkexist], c[Ord(str_newproject)],
+   // if filedialog(aname, [fdo_save, fdo_checkexist], c[Ord(str_newproject)],
+    
+    if filedialog(aname, [fdo_save, fdo_checkexist], 'New Project Name',
       [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
       ['*.prj', '*'], 'prj') = mr_ok then
     begin

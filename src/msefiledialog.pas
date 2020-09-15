@@ -708,13 +708,22 @@ begin
   end;
 end;
 
-function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty; const filterdesc: array of msestring; const filtermask: array of msestring; const filterindex: pinteger; const afilter: pfilenamety;      //nil -> unused
+function filedialog1(dialog: tfiledialogfo; var afilenames: filenamearty;
+  const filterdesc: array of msestring;
+  const filtermask: array of msestring;
+  const filterindex: pinteger; 
+  const afilter: pfilenamety;      //nil -> unused
   const colwidth: pinteger;        //nil -> default
-  const includeattrib: fileattributesty; const excludeattrib: fileattributesty; const history: pmsestringarty; const historymaxcount: integer; const acaption: msestring; const aoptions: filedialogoptionsty;
+  const includeattrib: fileattributesty;
+  const excludeattrib: fileattributesty;
+  const history: pmsestringarty; 
+  const historymaxcount: integer;
+  const acaption: msestring; 
+  const aoptions: filedialogoptionsty;
   const adefaultext: filenamety; const imagelist: timagelist; const ongetfileicon: getfileiconeventty; const oncheckfile: checkfileeventty): modalresultty;
 var
   int1: integer;
-  abool: Boolean;
+  abool: Boolean = true;
 begin
   with dialog do
   begin
@@ -724,8 +733,7 @@ begin
     if fdo_filtercasesensitive in aoptions then
       listview.optionsfile := listview.optionsfile + [flvo_maskcasesensitive];
     if fdo_filtercaseinsensitive in aoptions then
-      listview.optionsfile := listview.optionsfile + [flvo_maskcaseinsensitive
-        ];
+      listview.optionsfile := listview.optionsfile + [flvo_maskcaseinsensitive];
     if fdo_single in aoptions then
       listview.options     := listview.options - [lvo_multiselect];
     defaultext := adefaultext;
@@ -784,14 +792,31 @@ begin
       filename.Value := ExtractFilePath(filename.Value);
       Caption        := 'Open Directory';
     end;
-
-    abool := True;
+    
+     abool := True;
+    
+     if (acaption = 'New Project Name') or (acaption = 'Select project template')  then
+    begin
+    dialog.height := 320;
+    blateral.Value := true;
+    bcompact.Value := true;
+    dialog.onsetcomp(nil, abool, abool);
+    dialog.onsetlat(nil, abool, abool);
+    dialog.blateral.visible := false;
+    dialog.bcompact.visible := false;
+    dialog.bnoicon.visible := false;
+    dialog.showhidden.visible := false;
+    dialog.filename.value := '';
+    end else
+    begin
     if blateral.Value then
       onsetlat(nil, abool, abool);
     if bcompact.Value then
       onsetcomp(nil, abool, abool);
     if showhidden.Value then
       showhiddenonsetvalue(nil, abool, abool);
+    end;     
+      
     //    showhidden.Value := not (fa_hidden in excludeattrib);
 
     Show(True);

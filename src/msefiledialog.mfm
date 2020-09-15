@@ -3,8 +3,8 @@ object filedialogfo: Tfiledialogfo
   face.localprops = []
   face.template = sourcefo.tfacecomp2
   visible = False
-  bounds_x = 311
-  bounds_y = 188
+  bounds_x = 709
+  bounds_y = 151
   bounds_cx = 610
   bounds_cy = 460
   bounds_cxmin = 10
@@ -61,7 +61,7 @@ object filedialogfo: Tfiledialogfo
     frame.localprops = [frl_levelo]
     frame.localprops1 = []
     face.localprops = [fal_fadirection]
-    taborder = 12
+    taborder = 16
     bounds_x = 127
     bounds_y = 112
     bounds_cx = 475
@@ -84,6 +84,7 @@ object filedialogfo: Tfiledialogfo
     reffontheight = 15
   end
   object tlayouter2: tlayouter
+    taborder = 7
     bounds_x = 1
     bounds_y = 460
     bounds_cx = 607
@@ -142,7 +143,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 2
+    taborder = 8
     hint = 'Parent directory'
     onshowhint = buttonshowhint
     bounds_x = 96
@@ -168,7 +169,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 3
+    taborder = 9
     onshowhint = buttonshowhint
     bounds_x = 4
     bounds_y = 0
@@ -193,7 +194,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 4
+    taborder = 10
     onshowhint = buttonshowhint
     bounds_x = 50
     bounds_y = 0
@@ -214,7 +215,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 5
+    taborder = 11
     bounds_x = 142
     bounds_y = 1
     bounds_cx = 114
@@ -229,7 +230,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 6
+    taborder = 12
     hint = 'Create a new directory'
     bounds_x = 258
     bounds_y = 1
@@ -245,7 +246,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 7
+    taborder = 13
     bounds_x = 374
     bounds_y = 1
     bounds_cx = 114
@@ -260,7 +261,7 @@ object filedialogfo: Tfiledialogfo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
-    taborder = 8
+    taborder = 14
     bounds_x = 490
     bounds_y = 1
     bounds_cx = 114
@@ -307,7 +308,6 @@ object filedialogfo: Tfiledialogfo
     )
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
-    taborder = 9
     bounds_x = 4
     bounds_y = 417
     bounds_cx = 601
@@ -343,7 +343,7 @@ object filedialogfo: Tfiledialogfo
     frame.localprops = [frl_levelo, frl_fileft, frl_fitop, frl_firight, frl_fibottom]
     frame.localprops1 = []
     face.localprops = []
-    taborder = 11
+    taborder = 15
     bounds_x = 128
     bounds_y = 112
     bounds_cx = 476
@@ -477,7 +477,7 @@ object filedialogfo: Tfiledialogfo
       57
       2
     )
-    taborder = 13
+    taborder = 5
     hint = 'Switch to compact layout'
     bounds_x = 300
     bounds_y = 36
@@ -486,7 +486,7 @@ object filedialogfo: Tfiledialogfo
     onsetvalue = onsetcomp
   end
   object tsplitter1: tsplitter
-    taborder = 14
+    taborder = 17
     bounds_x = 126
     bounds_y = 112
     bounds_cx = 2
@@ -507,7 +507,7 @@ object filedialogfo: Tfiledialogfo
       64
       2
     )
-    taborder = 15
+    taborder = 4
     hint = 'Hide / Show Lateral panel '
     bounds_x = 159
     bounds_y = 36
@@ -520,7 +520,7 @@ object filedialogfo: Tfiledialogfo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_levelo, frl_optionsskin]
     frame.localprops1 = []
-    taborder = 17
+    taborder = 18
     bounds_x = 0
     bounds_y = 112
     bounds_cx = 126
@@ -721,7 +721,7 @@ object filedialogfo: Tfiledialogfo
     end
   end
   object labtest: tlabel
-    taborder = 18
+    taborder = 19
     visible = False
     bounds_x = 127
     bounds_y = 67
@@ -766,7 +766,7 @@ object filedialogfo: Tfiledialogfo
     )
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
-    taborder = 16
+    taborder = 2
     bounds_x = 432
     bounds_y = 62
     bounds_cx = 174
@@ -796,7 +796,7 @@ object filedialogfo: Tfiledialogfo
       82
       2
     )
-    taborder = 10
+    taborder = 6
     hint = 'Show hidden files'
     bounds_x = 442
     bounds_y = 36
@@ -815,7 +815,7 @@ object filedialogfo: Tfiledialogfo
       55
       3
     )
-    taborder = 19
+    taborder = 3
     hint = 'Hide / Show Icons'
     bounds_x = 20
     bounds_y = 36
