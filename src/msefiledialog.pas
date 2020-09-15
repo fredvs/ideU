@@ -1432,6 +1432,9 @@ var
   // ar1: msestringarty;
   bo1: Boolean;
   newdir: filenamety;
+  theint, theexist : integer;
+  sel : gridcoordty;
+  
 begin
   newdir := '';
   avalue := trim(avalue);
@@ -1495,6 +1498,27 @@ begin
       avalue := listview.directory;
   end;
   listview.selectednames := fselectednames;
+  
+  theexist := -1; 
+  
+  for theint := 0 to list_log.rowcount - 1 do
+         if trim(copy(list_log[0][theint], 2, length(list_log[0][theint])))  = str2 then
+                 theexist := theint;
+  
+    if theexist > 0 then
+      begin
+          sel.col := 0;
+          sel.row := theexist;
+          list_log.defocuscell;
+          list_log.datacols.clearselection;
+          list_log.selectcell(sel,csm_select);
+          list_log.frame.sbvert.value := theexist/ (list_log.rowcount-1);
+       end; 
+         places.defocuscell;
+         places.datacols.clearselection;
+         placescust.defocuscell;
+         placescust.datacols.clearselection;
+        
 end;
 
 procedure tfiledialogfo.filepathentered(const Sender: TObject);
