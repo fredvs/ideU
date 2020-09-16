@@ -653,7 +653,7 @@ uses
   commandorform,
   confideu,
   msestringenter,
-  msefiledialogres,
+  //msefiledialogres,
   msekeyboard,
   msestockobjects,
   msesysintf,
@@ -678,6 +678,9 @@ type
 
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
+  if assigned(theimagelist) then
+  begin
+  imagelist := theimagelist;
   with info do
   begin
     //  imagelist:= nil;
@@ -685,10 +688,21 @@ begin
     if fis_typevalid in state then
       case extinfo1.filetype of
         ft_dir:
-        filedialogres.getfileicon(fdi_diropen, imagelist, imagenr);
+          if theboolicon = False then
+            imagenr := 0
+          else
+            imagenr := 17;
         ft_reg, ft_lnk:
-        filedialogres.getfileicon(fdi_file, imagelist, imagenr);
-       end;
+          if theboolicon = False then
+            imagenr := 1
+          else
+            imagenr := 18;
+      end;
+  end;
+  end else
+  begin
+  imagenr := -1;
+  imagelist := nil;
   end;
 end;
 
@@ -2119,6 +2133,9 @@ begin
 end;
 
 procedure tfiledialogfo.onsetcomp(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+var
+ theint, theexist : integer;
+  sel : gridcoordty;
 begin
   if avalue then
   begin
@@ -2128,10 +2145,26 @@ begin
   end
   else
   begin
-    listview.Width   := 40;
+    listview.Width   := 30;
     listview.invalidate;
     list_log.Visible := True;
-  end;
+    theexist := -1; 
+  
+  for theint := 0 to list_log.rowcount - 1 do
+         if trim(copy(list_log[0][theint], 2,
+          length(list_log[0][theint]))) = filename.value then
+                 theexist := theint;
+  
+    if theexist > 0 then
+      begin
+          sel.col := 0;
+          sel.row := theexist;
+          list_log.defocuscell;
+          list_log.datacols.clearselection;
+          list_log.selectcell(sel,csm_select);
+          list_log.frame.sbvert.value := theexist/ (list_log.rowcount-1);
+      end; 
+   end;
 end;
 
 procedure tfiledialogfo.onbefdrop(const Sender: TObject);

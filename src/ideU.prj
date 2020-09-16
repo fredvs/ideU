@@ -898,26 +898,23 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=3
  ACTIONSMO
  MAINFO
  FILEDIALOGFO
- STOCKDATA
-moduletypes=4
+moduletypes=3
  TACTIONSMO
  TMAINFO
  TFILEDIALOGFO
- TSTOCKDATA
-modulefiles=4
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
 befcommandon=0
 makeoptionson=13
  4095
  3
- 8
+ 12
  2044
  0
  192
@@ -1561,13 +1558,16 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=fixed
-findhistory=16
+finddtext=procedure getfileicon(
+findhistory=19
+ procedure getfileicon(
+ msefiledialogres
+ uses
+ filelistv
  fixed
  top
  select project template
  newproject
- procedure getfileicon(
  msefiledialogres,
  tfiledialogfo.listviewonlistrea
  ondrawce
@@ -1580,61 +1580,47 @@ findhistory=16
  ondrawcell
  listviewonlistread
 findoptions=1
-editpos=6
+editpos=4
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1504
  0,0
- 0,60
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
- ${PROJECTDIR}/msegrids.pas
- /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
-relpaths=6
+relpaths=4
  ideU.pas
  actionsmodule.pas
  main.pas
  msefiledialog.pas
- msegrids.pas
- ../mseide-msegui/lib/common/kernel/msestockobjects.pas
-ismoduletexts=6
+ismoduletexts=4
  0
  0
  0
  0
- 0
- 0
-modules=5
+modules=4
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/msefiledialog.mfm
- /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
-moduleoptions=5
+moduleoptions=4
  0
  0
  0
  0
- 0
-visiblemodules=5
+visiblemodules=4
  -1
  -1
  -1
  -1
+nomenumodules=4
  -1
-nomenumodules=5
- -1
- 0
  0
  0
  0
@@ -1642,22 +1628,22 @@ nomenumodules=5
 firsttab=0
 index=3
 [layout]
-windowlayout=626
+windowlayout=637
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=sourcehintfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=50
- y=81
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1674,15 +1660,15 @@ windowlayout=626
  ny=0
  ncx=0
  ncy=0
- x=795
- y=29
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1870,10 +1856,10 @@ windowlayout=626
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=532
- width0=236
+ propcolwidthref=547
+ width0=243
  sortdescend0=0
- width1=290
+ width1=298
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2113,11 +2099,11 @@ windowlayout=626
  nx=0
  ny=0
  ncx=1197
- ncy=57
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=56
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2127,28 +2113,58 @@ windowlayout=626
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialog.pas
- history=20
+ value=/home/fred/ideu/src/dialogfiles.pas
+ history=50
+  /home/fred/ideu/src/aboutform_mfm.pas
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/regcomponents/regfiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/regcomponents/regifirem.pas
+  /home/fred/msefiledialogx/src/msefiledialogresx_mfm.pas
+  /home/fred/msefiledialogx/src/msefiledialogresx.pas
+  /home/fred/msefiledialogx/src/msefiledialogres.pas
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/ideu/src/finddialogform.pas
+  /home/fred/msefiledialogx/src/main.pas
+  /home/fred/mseuniverse/COPYING
+  /home/fred/Desktop/corona
   /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/msefiledialog2.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefontformatdialog.pas
+  /home/fred/ideu/src/regfiledialogx.pas
+  /home/fred/ideu/src/regcomponents.inc
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/apps/myide/regfiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialog.pas
+  /home/fred/strumpract/src/msestringenter.pas
+  /home/fred/msefiledialogx/src/main2.pas
+  /home/fred/Downloads/skinblue_mfm.pas
+  /home/fred/strumpract/src/spectrum1.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
+  /home/fred/strumpract/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/demo_msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx/msefiledialogx.pas
+  /home/fred/msefiledialogx/main.pas
+  /home/fred/msefiledialogx/demo_msefiledialogx.pas
+  /home/fred/ideu/src/selectsubmoduledialogform_mfm.pas
+  /home/fred/new_msefiledialog2/msefiledialog2_mfm.pas
+  /home/fred/new_msefiledialog2/msefiledialogres.mfm
+  /home/fred/msefiledialog2new/msefiledialog2.pas
+  /home/fred/msefiledialog2new/new_msefiledialog2.pas
+  /home/fred/msefiledialog2new/msefiledialog2_mfm.pas
+  /home/fred/msefiledialog2new/msefiledialog_mfm.pas
+  /home/fred/msefiledialog2new/msefiledialog2.mfm
+  /home/fred/strumpract/src/msefiledialog.pas
+  /home/fred/ideu/src/make.pas
+  /home/fred/strumpract/src/status.pas
+  /home/fred/ideu/src/breakpointsform.pas
+  /home/fred/ideu/src/mselistbrowser.pas
+  /home/fred/ideu/src/objectinspector.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2234,7 +2250,7 @@ windowlayout=626
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2245,25 +2261,6 @@ windowlayout=626
  y=151
  cx=620
  cy=460
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_stockdata_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_filedialogfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=129
- y=57
- cx=198
- cy=85
  rcx=0
  rcy=0
  wsize=0
