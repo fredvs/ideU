@@ -288,11 +288,20 @@ begin
       but_ok.height := confideufo.fontsize.value + 8;
       
       ratio := confideufo.fontsize.value / 12;
-   
+      
+ width := round(ratio* 430) + 16;
+ 
+ setting_tab.width := width - 4;
+  
+ path.width := width ;
+  
  compiler.top := 4;
  compiler.width := round(ratio* 430);
  
- debugger.top :=  compiler.top + compiler.height + 2 ;
+ compiler.invalidate;     
+      
+ 
+  debugger.top :=  compiler.top + compiler.height + 2 ;
  debugger.width := compiler.width;
  
  fpcsrcdir.top :=  debugger.top + debugger.height + 2 ;
@@ -328,12 +337,13 @@ begin
    bgrabitmapdir.top :=  syntaxdefdir.top + compiler.height + 2 ;
  bgrabitmapdir.width := compiler.width;
  
- setting_tab.width := compiler.width + 12;
+
  setting_tab.height := bgrabitmapdir.bottom + compiler.height ;
-  
- width := setting_tab.width + 4;
  
-  height := setting_tab.height + 4;
+ height := setting_tab.height + 4;
+ 
+ path.height := setting_tab.height ;       
+
   
 exeext.top := 60;
  exeext.width := compiler.width;
