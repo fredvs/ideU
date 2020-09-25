@@ -143,6 +143,7 @@ type
    procedure propskeydownexe(const sender: twidget; var ainfo: keyeventinfoty);
    procedure enterexe(const sender: TObject);
    procedure onexecfindbu(const sender: TObject);
+   procedure onpainttree(const sender: twidget; const acanvas: tcanvas);
   private
    factmodule: tmsecomponent;
    factcomp: tcomponent;
@@ -1549,6 +1550,7 @@ procedure tobjectinspectorfo.propupdaterowvalue(const sender: TObject;
                const aindex: Integer; const aitem: tlistitem);
 begin
  updatedefaultstate(aindex);
+ 
 end;
 
 procedure tobjectinspectorfo.valueupdaterowvalue(const sender: tobject;
@@ -1562,6 +1564,8 @@ begin
    else begin
     aitem.caption:= '';
    end;
+ //  writeln( aitem.caption);
+  // aitem.font.color := cl_purple;
   end;
  end;
 end;
@@ -1605,6 +1609,7 @@ begin
    else begin
     grid.rowcolorstate[aindex]:= -1;
    end;
+    grid.rowcolorstate[aindex]:= 1;
   end;
  end;
 end;
@@ -2069,6 +2074,11 @@ end;
 procedure tobjectinspectorfo.onexecfindbu(const sender: TObject);
 begin
 actionsmo.findcompallexe(sender);
+end;
+
+procedure tobjectinspectorfo.onpainttree(const sender: twidget;
+               const acanvas: tcanvas);
+begin
 end;
 
 initialization

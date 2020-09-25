@@ -898,24 +898,27 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=6
  ACTIONSMO
  CONFIDEUFO
  SETTINGS_FORM
  MAINFO
  FILEDIALOGFO
-moduletypes=5
+ OBJECTINSPECTORFO
+moduletypes=6
  TACTIONSMO
  TCONFIDEUFO
  TSETTINGSFO
  TMAINFO
  TFILEDIALOGFO
-modulefiles=5
+ TOBJECTINSPECTORFO
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialog.mfm
+ /home/fred/ideu/src/objectinspector.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1586,63 +1589,77 @@ findhistory=19
  ondrawcell
  listviewonlistread
 findoptions=1
-editpos=6
+editpos=8
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,330
+ 0,-1073741823
+ 0,-1073741823
+ 22,42
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/msefiledialog.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
-relpaths=6
+ ${PROJECTDIR}/objectinspector.pas
+ ${PROJECTDIR}/main.pas
+relpaths=8
  ideU.pas
  actionsmodule.pas
  main.pas
  msefiledialog.pas
  confideu.pas
  ideusettings.pas
-ismoduletexts=6
+ objectinspector.pas
+ main.pas
+ismoduletexts=8
  0
  0
  0
  0
  0
  0
-modules=6
+ 0
+ 0
+modules=7
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/ideusettings.mfm
-moduleoptions=6
+ /home/fred/ideu/src/objectinspector.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+visiblemodules=7
  -1
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
  -1
+nomenumodules=7
+ -1
+ 0
  0
  0
  0
@@ -1650,9 +1667,9 @@ nomenumodules=6
  0
 [sourcefo.files_tab]
 firsttab=0
-index=5
+index=7
 [layout]
-windowlayout=645
+windowlayout=664
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1666,8 +1683,8 @@ windowlayout=645
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=118
+ y=144
  cx=1224
  cy=621
  rcx=0
@@ -1797,7 +1814,7 @@ windowlayout=645
  sortdescend1=0
  sorted=0
  col=0
- row=7
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2123,11 +2140,11 @@ windowlayout=645
  nx=0
  ny=0
  ncx=1197
- ncy=56
+ ncy=38
  x=0
  y=0
  cx=1212
- cy=54
+ cy=36
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2137,8 +2154,11 @@ windowlayout=645
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideusettings.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/mseide-msegui/lib/common/opengl/mseopengl.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/strumpract/src/randomnote.pas
   /home/fred/mseuniverse/attic/msedocumenting/mse/trunk/help/tutorials/widgets/opengl/openglwidget/main.pas
@@ -2156,9 +2176,6 @@ windowlayout=645
   /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/confcompiler.pas
-  /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/aboutform_mfm.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2181,7 +2198,7 @@ windowlayout=645
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=5
+ index=7
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2282,7 +2299,7 @@ windowlayout=645
  [_mse_settings_form_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_objectinspectorfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2293,6 +2310,25 @@ windowlayout=645
  y=107
  cx=464
  cy=492
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_objectinspectorfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=651
+ y=142
+ cx=264
+ cy=353
  rcx=0
  rcy=0
  wsize=0
