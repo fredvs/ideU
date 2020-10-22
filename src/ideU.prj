@@ -659,7 +659,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=13
+makeoptions=11
  -Mobjfpc -Sh -Fcutf8
  -gl
  -B
@@ -668,25 +668,21 @@ makeoptions=13
  -WG
  -k--gc-sections
  -dmorecomponents
- -Xd
  -FUunits
  -vewinhq
  -dclass_bridge
- -vwq
-makeoptpurpose=13
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+makeoptpurpose=11
+ Define Object Pascal
+ Debug infos
+ Re-build all
+ Optimizations
+ Debug infos - memory leak
+ Windows application
+ Garbage collector
+ Add extended components
+ Output of units
+ Verbosity
+ Use Class Briddge
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -920,7 +916,7 @@ modulefiles=6
  /home/fred/ideu/src/msefiledialog.mfm
  /home/fred/ideu/src/objectinspector.mfm
 befcommandon=0
-makeoptionson=13
+makeoptionson=11
  4095
  3
  12
@@ -929,11 +925,9 @@ makeoptionson=13
  192
  0
  0
- 1
  2047
  4095
  0
- 4095
 compilerusedon=29
  1591
  0
@@ -1597,7 +1591,7 @@ editpos=8
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 22,42
+ 0,28
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -2140,11 +2134,11 @@ windowlayout=664
  nx=0
  ny=0
  ncx=1197
- ncy=38
+ ncy=36
  x=0
  y=0
  cx=1212
- cy=36
+ cy=34
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
