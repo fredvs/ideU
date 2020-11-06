@@ -18,8 +18,8 @@ order15=0
 order16=0
 order17=0
 [projectoptions]
-projectdir=/home/fred/ideu/src/templates/fpc_lazarus
-projectfilename=/home/fred/ideu/src/templates/fpc_lazarus/lazarus_bgrabitmap.prj
+projectdir=/home/fred/ideu_bin/ideU_lin64/templates/fpc_lazarus
+projectfilename=/home/fred/ideu_bin/ideU_lin64/templates/fpc_lazarus/lazarus_bgrabitmap.prj
 findinfiledialog=50
  [findinfileadialogfo.subdirs]
  value=1
@@ -209,7 +209,7 @@ targetfile=${PROJECTNAME}${EXEEXT}
 messageoutputfile=
 makecommand=${COMPILER}
 makedir=
-unitdirs=27
+unitdirs=28
  ./buttons
  ./image
  ./tools
@@ -218,6 +218,7 @@ unitdirs=27
  ./tablet
  ./dialog/color
  ./dialog/filter
+ ..
  ./*
  ../lazpaintcontrols
  ${BGRABITMAPDIR}
@@ -244,28 +245,26 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=10
+makeoptions=9
   -MObjFPC -Scgi -Cg -OoREGVAR -Xs -XX -l -vewnhibq
- -gl
  -ghl
  -B
  -O-
- -O3 -XX -CX -Xs
+ -O2 -XX -CX -Xs
  -vi
  -FUunits/
  -dLCL -dLCLgtk2
  -dLCL -dLCLwin32
-makeoptpurpose=10
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+makeoptpurpose=9
+ Define Object Pascal and all
+ Debug and memory leak
+ Re-Build all
+ No Optimization
+ Optimizations
+ Verbosity
+ Output to /units
+ Use GTK2
+ Use Win32
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -396,7 +395,7 @@ forcezorder=0
 stripmessageesc=0
 copymessages=0
 closemessages=0
-enablepurpose=0
+enablepurpose=1
 enablesource=1
 checkmethods=1
 colorerror=-1610612717
@@ -477,9 +476,8 @@ modulenames=0
 moduletypes=0
 modulefiles=0
 befcommandon=0
-makeoptionson=10
+makeoptionson=9
  63
- 2
  0
  6
  2
@@ -560,7 +558,8 @@ project_time=
 project_date=04:11:57 09/08/2020
 project_comment=
 aftcommandon=0
-unitdirson=27
+unitdirson=28
+ 987135
  987135
  987135
  987135
@@ -829,7 +828,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=530
+windowlayout=563
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -843,8 +842,8 @@ windowlayout=530
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=141
+ y=94
  cx=1224
  cy=621
  rcx=0
@@ -1183,34 +1182,67 @@ windowlayout=530
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
+ filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
+ filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.compfiledialog]
+ filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0

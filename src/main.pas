@@ -30,6 +30,7 @@ interface
 {$endif}
 
 uses
+  msearrayutils,
  aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
@@ -3529,164 +3530,164 @@ begin
     end;
 end;
 
-procedure tmainfo.newproject(const fromprogram, empty: Boolean);
+procedure tmainfo.newproject(const fromprogram,empty: boolean);
 var
-  aname, aname2: filenamety;
-  mstr1, mstr2: msestring;
-  int1: integer;
-  curdir, Source, dest: filenamety;
-  macrolist: tmacrolist;
-  copiedfiles: filenamearty;
-  bo1: Boolean;
+ aname: filenamety;
+ mstr1,mstr2: msestring;
+ i1: integer;
+ curdir,source,dest: filenamety;
+ macrolist: tmacrolist;
+ copiedfiles: filenamearty;
+ bo1: boolean;
+label
+ endlab;
 begin
-  mstr2 := projecttemplatedir; //use macros of current project
-  if openproject('') then
-  begin
-    gdb.closegdb;
-    cleardebugdisp;
-    sourcechanged(nil);
-    mstr1 := '';
-    if not fromprogram then
-    begin
-      if not empty then
-      begin
-        aname := mstr2 + 'default.prj';
-        if filedialog(aname, [fdo_checkexist], c[Ord(selecttemplate)],
-          [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
-          ['*.prj', '*'], 'prj') = mr_ok then
-          begin
-            readprojectoptions(aname);
-          end;
-      end;
-      aname := '';
-    end
-    else
-    begin
-      aname := '';
-      if filedialog(aname, [fdo_checkexist], c[Ord(selectprogramfile)],
-        [c[Ord(pascalprogfiles)], c[Ord(cfiles)], c[Ord(str_allfiles)]],
-        ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"', '"*.c" "*.cc" "*.cpp"', '*'],
-        'pas') = mr_ok then
-      begin
-        setcurrentdirmse(filedir(aname));
-        with projectoptions do
-        begin
-          with o.t do
-          begin
-            // orimainfile :=  mainfile ;
-            mainfile   := filename(aname);
-            aname      := removefileext(mainfile);
-            targetfile := aname;
-          end;
-          expandprojectmacros;
-        end;
-        
-          if not directoryexists(filepath(aname) + directoryseparator + 'units')
-          then msefileutils.createdir(filepath(aname) + directoryseparator + 'units');
-      
-        aname := aname + '.prj';
-      end;
-    end;
-   // if filedialog(aname, [fdo_save, fdo_checkexist], c[Ord(str_newproject)],
-    
-    if filedialog(aname, [fdo_save, fdo_checkexist], 'New Project Name',
-      [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
-      ['*.prj', '*'], 'prj') = mr_ok then
-    begin
-      curdir := filedir(aname);
-       
-       if not directoryexists(curdir + directoryseparator + 'units')
-         then msefileutils.createdir(curdir + directoryseparator + 'units');
-      
-      setcurrentdirmse(curdir);
-      if not fromprogram then
-      begin
-        mstr1 := removefileext(filename(aname));
-        with projectoptions, o do
-        begin
-          projectfilename := aname;
-          projectdir      := curdir;
-          expandprojectmacros;
-          with texp do
-          begin
-            setlength(copiedfiles, length(newprojectfiles));
-            macrolist := tmacrolist.Create([mao_curlybraceonly]);
-            try
-              macrolist.add(['%PROJECTNAME%', '%PROJECTDIR%'], [mstr1, curdir], []);
-              if runscript(scriptbeforecopy, True, False) then
-              begin
-                for int1 := 0 to high(newprojectfiles) do
-                begin
-                  Source := filepath(newprojectfiles[int1]);
-                  if int1 <= high(newprojectfilesdest) then
-                    dest := newprojectfilesdest[int1]
-                  else
-                    dest := '';
-                  if dest <> '' then
-                  begin
-                    macrolist.expandmacros1(dest);
-                    if Source = '' then
-                      createdirpath(dest)
-                    else
-                    begin
-                      createdirpath(filedir(dest));
-                    end;
-                  end
-                  else
-                    dest := filename(Source);
-                  copiedfiles[int1] := dest;
-                  if newprojectfiles[int1] <> '' then
-                    if (int1 <= high(expandprojectfilemacros)) and
-                      expandprojectfilemacros[int1] then
-                      copynewfile(Source, dest, False, False, ['%PROJECTNAME%', '%PROJECTDIR%'],
-                        [mstr1, curdir])
-                    else
-                      try
-                        if not copyfile(Source, dest, False) then
-                          showerror(c[Ord(str_file)] + dest + c[Ord(exists)]);
-                      except
-                        application.handleexception(nil);
-                      end;
-                end;
-                
-                runscript(scriptaftercopy, False, False);
-              end;
-            finally
-              macrolist.Free;
-            end;
-          end;
-          saveproject(aname);
-          bo1      := True;
-          for int1 := 0 to high(copiedfiles) do
-          begin
-            if int1 > high(loadprojectfile) then
-              break;
-            if loadprojectfile[int1] then
-              if checkfileext(copiedfiles[int1], [formfileext]) then
-                openformfile(copiedfiles[int1], True, False, False, True, False)
-              else
-              begin
-                sourcefo.openfile(copiedfiles[int1], bo1);
-                bo1 := False;
-              end;
-          end;
-        end;
-      end
-      else
-      begin
-        if not directoryexists(filedir(aname) + directoryseparator + 'units')
-         then msefileutils.createdir(filedir(aname) + directoryseparator + 'units');
-     
-        saveproject(aname);
-        sourcefo.openfile(projectoptions.o.texp.mainfile, True);
-      end;
-    end
-    else
-    begin
-      projectoptions.projectfilename := '';
-      projectoptions.modified        := True;
-    end;
+ mstr2:= projecttemplatedir; //use macros of current project
+ if fromprogram then begin
+  if (checksave() = mr_cancel) or not closeall(false) then begin
+   exit;
   end;
+  setprojectname('');
+ end;
+ if fromprogram or openproject('') then begin
+  gdb.closegdb;
+  cleardebugdisp;
+  sourcechanged(nil);
+  mstr1:= '';
+  if not fromprogram then begin
+   if not empty then begin
+    aname:= mstr2 + 'default.prj';
+    if filedialog(aname,[fdo_checkexist],c[ord(selecttemplate)],
+             [c[ord(projectfiles)],c[ord(str_allfiles)]],
+                            ['*.prj','*'],'prj') = mr_ok then begin
+     readprojectoptions(aname);
+    end;
+   end;
+   aname:= '';
+  end
+  else begin
+   aname:= '';
+   if filedialog(aname,[fdo_checkexist],c[ord(selectprogramfile)],
+            [c[ord(pascalprogfiles)],c[ord(cfiles)],c[ord(str_allfiles)]],
+            ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"','"*.c" "*.cc" "*.cpp"','*'],
+            'pas') = mr_ok then begin
+    setcurrentdirmse(filedir(aname));
+    with projectoptions do begin
+     with o.t do begin
+      mainfile:= filename(aname);
+      aname:= removefileext(mainfile);
+      targetfile:= aname+'${EXEEXT}'
+     end;
+     expandprojectmacros;
+    end;
+    aname:= aname + '.prj';
+   end
+   else begin
+    goto endlab;
+   end;
+  end;
+  if filedialog(aname,[fdo_save,fdo_checkexist],c[ord(str_newproject)],
+              [c[ord(projectfiles)],c[ord(str_allfiles)]],
+                                     ['*.prj','*'],'prj') = mr_ok then begin
+   curdir:= filedir(aname);
+   setcurrentdirmse(curdir);
+   insertitem(projecthistory,0,aname);
+   i1:= 1;
+   while i1 <= high(projecthistory) do begin
+    if projecthistory[i1] = aname then begin
+     deleteitem(projecthistory,i1);
+    end;
+    inc(i1);
+   end;
+   if high(projecthistory) >=
+             projectfiledia.controller.historymaxcount then begin
+    setlength(projecthistory,projectfiledia.controller.historymaxcount);
+   end;
+   if not fromprogram then begin
+    mstr1:= removefileext(filename(aname));
+    with projectoptions,o do begin
+     projectfilename:= aname;
+     projectdir:= curdir;
+     expandprojectmacros;
+     with o.texp do begin
+      setlength(copiedfiles,length(newprojectfiles));
+      macrolist:= tmacrolist.create([mao_curlybraceonly]);
+      try
+       macrolist.add(['%PROJECTNAME%','%PROJECTDIR%'],[mstr1,curdir],[]);
+       if runscript(scriptbeforecopy,true,false) then begin
+        for i1:= 0 to high(newprojectfiles) do begin
+         source:= filepath(newprojectfiles[i1]);
+         if i1 <= high(newprojectfilesdest) then begin
+          dest:= newprojectfilesdest[i1];
+         end
+         else begin
+          dest:= '';
+         end;
+         if dest <> '' then begin
+          macrolist.expandmacros1(dest);
+          if source = '' then begin
+           createdirpath(dest);
+          end
+          else begin
+           createdirpath(filedir(dest));
+          end;
+         end
+         else begin
+          dest:= filename(source);
+         end;
+         copiedfiles[i1]:= dest;
+         if newprojectfiles[i1] <> '' then begin
+          if (i1 <= high(o.expandprojectfilemacros)) and
+                             o.expandprojectfilemacros[i1] then begin
+           copynewfile(source,dest,false,false,['%PROJECTNAME%','%PROJECTDIR%'],
+                                       [mstr1,curdir]);
+          end
+          else begin
+           try
+            if not copyfile(source,dest,false) then begin
+             showerror(c[ord(str_file)]+dest+c[ord(exists)]);
+            end;
+           except
+            application.handleexception(nil);
+           end;
+          end;
+         end;
+        end;
+        runscript(scriptaftercopy,false,false);
+       end;
+      finally
+       macrolist.free;
+      end;
+     end;
+     saveproject(aname);
+     bo1:= true;
+     for i1:= 0 to high(copiedfiles) do begin
+      if i1 > high(o.loadprojectfile) then begin
+       break;
+      end;
+      if o.loadprojectfile[i1] then begin
+       if checkfileext(copiedfiles[i1],[formfileext])then begin
+        openformfile(copiedfiles[i1],true,false,false,true,false);
+       end
+       else begin
+        sourcefo.openfile(copiedfiles[i1],bo1);
+        bo1:= false;
+       end;
+      end;
+     end;
+    end;
+   end
+   else begin
+    saveproject(aname);
+    sourcefo.openfile(projectoptions.o.texp.mainfile,true);
+   end;
+  end
+  else begin
+endlab:
+   projectoptions.projectfilename:= '';
+   projectoptions.modified:= true;
+  end;
+ end;
 end;
 
 procedure tmainfo.newprojectonexecute(const Sender: TObject);
