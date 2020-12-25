@@ -29,6 +29,7 @@ interface
 {$endif}
 
 uses
+ {$ifdef unix}baseunix,{$endif}
  mseglob,mseguiglob,mseforms,Classes,mclasses,mseclasses,msewidgets,msegrids,
  Math,mselistbrowser,mseedit,msesimplewidgets,msedataedits,msedialog,msetypes,
  msestrings,msesystypes,msesys,msedispwidgets,msedatalist,msestat,msestatfile,
@@ -1561,7 +1562,12 @@ end;
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
 var
   x, x2, y, y2, z: integer;
+  fsize : longint;
+  {$ifdef unix}  
+  info: Stat;
+   {$else} 
   info: fileinfoty;
+  {$endif}
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2, tmp3: string;
 begin
 
@@ -1642,36 +1648,45 @@ begin
 
       thedir := tosysfilepath(dir.Value + (listview.itemlist[x].Caption));
 
-      getfileinfo(msestring(trim(thedir)), info);
-
-      if not listview.filelist.isdir(x) then
+        {$ifdef unix}
+         FpStat(thedir, info); 
+        {$else} 
+         getfileinfo(msestring(trim(thedir)), info);
+        {$endif}
+   
+   if not listview.filelist.isdir(x) then
       begin
+        {$ifdef unix}  
+        fsize := info.st_size;
+        {$else} 
+         fsize := info.extinfo1.size;
+        {$endif}
 
-        if info.extinfo1.size div 1000000000 > 0 then
-        begin
-          y2        := Trunc(Frac(info.extinfo1.size / 1000000000) * Power(10, 1));
-          y         := info.extinfo1.size div 1000000000;
+     if fsize div 1000000000 > 0 then
+         begin
+          y2        := Trunc(Frac(fsize / 1000000000) * Power(10, 1));
+          y         := fsize div 1000000000;
           thestrx   := '~';
           thestrext := ' GB ';
         end
-        else if info.extinfo1.size div 1000000 > 0 then
+        else if fsize div 1000000 > 0 then
         begin
-          y2        := Trunc(Frac(info.extinfo1.size / 1000000) * Power(10, 1));
-          y         := info.extinfo1.size div 1000000;
+          y2        := Trunc(Frac(fsize / 1000000) * Power(10, 1));
+          y         := fsize div 1000000;
           thestrx   := '_';
           thestrext := ' MB ';
         end
-        else if info.extinfo1.size div 1000 > 0 then
+        else if fsize div 1000 > 0 then
         begin
-          y2        := Trunc(Frac(info.extinfo1.size / 1000) * Power(10, 1));
-          y         := info.extinfo1.size div 1000;
+          y2        := Trunc(Frac(fsize / 1000) * Power(10, 1));
+          y         := fsize div 1000;
           thestrx   := '^';
           thestrext := ' KB ';
         end
         else
         begin
           y2        := 0;
-          y         := info.extinfo1.size;
+          y         := fsize;
           thestrx   := '!';
           thestrext := ' B ';
         end;
@@ -1690,16 +1705,20 @@ begin
           thestrfract := '';
 
         list_log[2][x] := thestrx + thestrnum + thestrfract + thestrext;
-    end
+      end
       else
         list_log[2][x] := ' ';
 
+      {$ifdef unix}  
+       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', FileDateToDateTime(info.st_mtime));
+      {$else} 
       list_log[3][x] := formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime);
-      
-            if listview.filelist.isdir(x) then
+      {$endif}
+   
+ if listview.filelist.isdir(x) then
         list_log[3][x] := ' ' + list_log[3][x];
-
-    end; 
+    end; // else dir.frame.caption := 'Directory with 0 files';
+ 
 
   if bcompact.Value then
   begin
@@ -1804,6 +1823,8 @@ begin
         bo1 := finddir(filenames[0])
       else
         bo1 := findfile(filenames[0]);
+        
+       bo1 :=  fileexists(filenames[0]);
       if fdo_save in dialogoptions then
       begin
         if bo1 then

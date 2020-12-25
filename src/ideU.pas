@@ -19,6 +19,7 @@ uses // cmem,
   conffpgui,
   confcompiler,
   confdebugger,
+  mselibc,
   dialogfiles,
   mseskindesign,
  {
