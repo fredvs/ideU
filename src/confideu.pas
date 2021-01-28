@@ -9,7 +9,7 @@ uses
  mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
  msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,msebitmap,
  msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,mseact,
- msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid,
+ msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid, msepointer,
  msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
  msetextedit;
 
@@ -52,6 +52,7 @@ type
    confirmdel: tbooleanedit;
    but_ok: tbutton;
    tabindent: tbooleanedit;
+   blinkcaret: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -626,7 +627,10 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  backupfilecount.top :=  usedefaulteditoroptions.top + usedefaulteditoroptions.height + 2 ;
  stripmessageesc.top := backupfilecount.top;
  closemessages.top :=  stripmessageesc.top + backupfilecount.height + 2 ;
- trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
+ 
+ blinkcaret.top :=  closemessages.top + closemessages.height + 2 ;
+ 
+ trimtrailingwhitespace.top :=  blinkcaret.top + blinkcaret.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
 
  encoding.width := round(ratio*84);
@@ -695,6 +699,8 @@ begin
 messagefo.updateprojectoptions;
 onchangefont;
 noconfirmdelete := confirmdel.value;
+blinkingcaret :=  blinkcaret.value;
+
 end;
 
 procedure tconfideufo.onok(const sender: TObject);

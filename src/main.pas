@@ -36,7 +36,7 @@ uses
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
  msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
  mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
- msestrings,msepostscriptprinter,msegraphics,mseglob,msestream,
+ msestrings,msepostscriptprinter,msegraphics,mseglob,msestream, msepointer,
  mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
@@ -866,10 +866,12 @@ begin
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
-
   confideufo.confirmdel.Value := noconfirmdelete;
-
-  confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
+  
+  blinkingcaret := gINI.Readbool('blinkingcaret', 'general', true);
+  confideufo.blinkcaret.Value := blinkingcaret;
+ 
+    confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
 
   confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
 
@@ -1069,7 +1071,9 @@ begin
   gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
 
   gINI.writebool('noconfirmdel', 'general', (noconfirmdelete));
-
+  
+  gINI.writebool('blinkingcaret', 'general', (blinkingcaret));
+  
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
 
   gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
@@ -2871,6 +2875,7 @@ var
   str1: filenamety;
   po1: pmoduleinfoty;
 begin //opensourceactonexecute
+ writeln('hello');
   Result := openfile.Execute = mr_ok;
   if Result then
   begin
