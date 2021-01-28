@@ -627,8 +627,9 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  usedefaulteditoroptions.top := usedefaulteditoroptions.height + 2;
  backupfilecount.top :=  usedefaulteditoroptions.top + usedefaulteditoroptions.height + 2 ;
- stripmessageesc.top := backupfilecount.top;
- closemessages.top :=  stripmessageesc.top + stripmessageesc.height + 2 ;
+
+ stripmessageesc.top := backupfilecount.top + 10 ;
+ closemessages.top :=  backupfilecount.top + backupfilecount.height + 6 ;
  
  trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
@@ -658,7 +659,7 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  group_sourceeditor.height := addwhiteaftercomma.top + addwhiteaftercomma.height + 10;
 
- height := group_sourceeditor.height + 20;
+ height := group_sourceeditor.height + 40;
 
 if findformcreated then finddialogdotextsize;
 
