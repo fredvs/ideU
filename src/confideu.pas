@@ -604,7 +604,9 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  universal_path.top := universal_path.height + 2;
  doubleclic.top :=  universal_path.top + universal_path.height + 2 ;
- fullpath.top :=  doubleclic.top + doubleclic.height + 2 ;
+ blinkcaret.top :=  doubleclic.top + doubleclic.height + 2 ;
+ 
+ fullpath.top :=  blinkcaret.top + blinkcaret.height + 2 ;
  modaldial.top :=  fullpath.top + fullpath.height + 2 ;
  autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
  nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
@@ -626,11 +628,9 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  usedefaulteditoroptions.top := usedefaulteditoroptions.height + 2;
  backupfilecount.top :=  usedefaulteditoroptions.top + usedefaulteditoroptions.height + 2 ;
  stripmessageesc.top := backupfilecount.top;
- closemessages.top :=  stripmessageesc.top + backupfilecount.height + 2 ;
+ closemessages.top :=  stripmessageesc.top + stripmessageesc.height + 2 ;
  
- blinkcaret.top :=  closemessages.top + closemessages.height + 2 ;
- 
- trimtrailingwhitespace.top :=  blinkcaret.top + blinkcaret.height + 2 ;
+ trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
 
  encoding.width := round(ratio*84);

@@ -1562,8 +1562,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=noconfirmdelete
+finddtext=blinkcaret
 findhistory=20
+ blinkcaret
+ doubleclic
  noconfirmdelete
  closemessages
  blink
@@ -1582,18 +1584,16 @@ findhistory=20
  textstream.cre
  getpix
  aar
- aarc
- arm
 findoptions=1
 editpos=8
  0,-1073741823
- 74,1058
+ 0,1058
+ 0,0
  0,-1073741823
+ 0,0
+ 0,0
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 60,630
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1661,14 +1661,14 @@ nomenumodules=6
 order=8
  0
  1
- 7
+ 5
+ 4
  6
+ 7
  3
  2
- 4
- 5
 firsttab=0
-index=1
+index=5
 [layout]
 windowlayout=654
  [mainfo.basedock]
@@ -1684,8 +1684,8 @@ windowlayout=654
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=121
+ y=206
  cx=1224
  cy=621
  rcx=0
@@ -1898,10 +1898,10 @@ windowlayout=654
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=538
- width0=239
+ propcolwidthref=523
+ width0=232
  sortdescend0=0
- width1=293
+ width1=285
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2141,11 +2141,11 @@ windowlayout=654
  nx=0
  ny=0
  ncx=1197
- ncy=58
+ ncy=57
  x=0
  y=0
  cx=1212
- cy=57
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2155,7 +2155,7 @@ windowlayout=654
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/confideu.pas
  history=20
   /home/fred/ideu/src/main.pas
   /home/fred/atest/test.prj
@@ -2201,14 +2201,14 @@ windowlayout=654
  order=8
   0
   1
-  7
+  5
+  4
   6
+  7
   3
   2
-  4
-  5
  firsttab=0
- index=1
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2290,7 +2290,7 @@ windowlayout=654
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_confideufo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2316,8 +2316,8 @@ windowlayout=654
  ny=0
  ncx=0
  ncy=0
- x=506
- y=93
+ x=482
+ y=64
  cx=639
  cy=672
  rcx=0

@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 506
-  bounds_y = 93
+  bounds_x = 482
+  bounds_y = 64
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -497,6 +497,27 @@ object confideufo: tconfideufo
       bounds_cx = 195
       bounds_cy = 17
     end
+    object blinkcaret: tbooleanedit
+      color = -2147483645
+      frame.caption = 'Blinking caret'
+      frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+      frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        1
+        86
+        2
+      )
+      taborder = 9
+      hint = 'Blinking caret on-off'
+      bounds_x = 7
+      bounds_y = 85
+      bounds_cx = 99
+      bounds_cy = 17
+      value = True
+      valuedefault = True
+    end
   end
   object group_sourceeditor: tgroupbox
     optionswidget1 = []
@@ -981,27 +1002,6 @@ object confideufo: tconfideufo
       bounds_y = 267
       bounds_cx = 44
       bounds_cy = 18
-    end
-    object blinkcaret: tbooleanedit
-      color = -2147483645
-      frame.caption = 'Blinking caret'
-      frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-      frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-      frame.template = mainfo.menuitemframe
-      frame.outerframe = (
-        0
-        1
-        86
-        2
-      )
-      taborder = 17
-      hint = 'Blinking caret on-off'
-      bounds_x = 10
-      bounds_y = 133
-      bounds_cx = 99
-      bounds_cy = 17
-      value = True
-      valuedefault = True
     end
   end
   object group_file_change: tgroupbox
