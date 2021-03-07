@@ -1,8 +1,8 @@
 object actionsmo: tactionsmo
   bounds_cx = 956
   bounds_cy = 472
-  left = 220
-  top = 255
+  left = 209
+  top = 161
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
@@ -2920,18 +2920,18 @@ object actionsmo: tactionsmo
     caption = 'Lowercase'
     onexecute = lowercaseexecute
     onupdate = enableonselect
-    left = 360
-    top = 120
+    left = 383
+    top = 100
   end
   object uppercase: taction
     caption = 'Uppercase'
     onexecute = uppercaseexecute
     onupdate = enableonselect
-    left = 360
-    top = 136
+    left = 388
+    top = 118
   end
   object shortcuts: tshortcutcontroller
-    actions.count = 98
+    actions.count = 100
     actions.items = <    
       item
         dispname = 'File'
@@ -3062,6 +3062,24 @@ object actionsmo: tactionsmo
         sc = (
           1
           16469
+        )
+      end    
+      item
+        action = comment
+        dispname = 'Comment Selection'
+        sc = (
+          2
+          16459
+          67
+        )
+      end    
+      item
+        action = uncomment
+        dispname = 'Uncomment Selection'
+        sc = (
+          2
+          16459
+          85
         )
       end    
       item
@@ -4147,16 +4165,28 @@ object actionsmo: tactionsmo
     top = 332
   end
   object comment: taction
+    caption = '&Comment'
     onexecute = commentonexecute
     onupdate = enablecomment
-    left = 659
-    top = 65
+    left = 607
+    top = 74
+    sc = (
+      2
+      16459
+      67
+    )
   end
   object uncomment: taction
+    caption = 'Unc&omment'
     onexecute = uncommentonexecute
     onupdate = enableuncomment
     left = 597
     top = 105
+    sc = (
+      2
+      16459
+      85
+    )
   end
   object copyword: taction
     caption = 'Copy &Word at Cursor'

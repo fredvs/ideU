@@ -208,7 +208,6 @@ type
    tool8: taction;
    tool9: taction;
 
-
    customrun: taction;
    assistive: taction;
    customcompil: taction;
@@ -899,8 +898,8 @@ end;
 
 procedure tactionsmo.enablecomment(const sender: tcustomaction);
 begin
- enableonselect(sender);
- sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
+// enableonselect(sender);
+// sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
 end;
 
 procedure tactionsmo.selectwordactiononexecute(const sender: TObject);

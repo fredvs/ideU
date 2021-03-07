@@ -30,7 +30,7 @@ interface
 {$endif}
 
 uses
-  msearrayutils,
+  msearrayutils, 
  aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
