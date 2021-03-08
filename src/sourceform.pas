@@ -139,6 +139,9 @@ type
     destructor Destroy; override;
 
     procedure updatestat(const statfiler: tstatfiler);
+    
+    procedure tabcloser(const sender: twidget;
+                                   var ainfo: mouseeventinfoty);
 
     function hidesourcehint: Boolean;    //false if no action;
     procedure updatebreakpointicon(const path: filenamety; const info: bkptlineinfoty);
@@ -482,6 +485,17 @@ begin
 end;
 
 { tsourcefo }
+
+ procedure tsourcefo.tabcloser(const sender: twidget;
+                                   var ainfo: mouseeventinfoty);
+   
+begin
+
+// tsourcepage(files_tab.ActivePage).close;
+ 
+ writeln('yep');
+
+end;
 
 constructor tsourcefo.Create(aowner: TComponent);
 begin
@@ -1114,7 +1128,14 @@ begin
     getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.Value), ainfo);
     tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.Value + lineend + 'Last modification: ' + UTF8Decode(formatdatetime('YYYY-MM-DD HH:mm:ss', UniversalTimeToLocal(ainfo.extinfo1.modtime))) +
       ' | Size: ' + UTF8Decode(IntToStr(ainfo.extinfo1.size div 1000)) + ' Kb.';
-  end;
+   
+    tsourcepage(files_tab[x]).caption := trim(tsourcepage(files_tab[x]).caption) + '   ';
+
+  //  files_tab.onclientmouseevent := @tabcloser;
+
+  
+   
+   end;
 end;
 
 procedure tsourcefo.updatecaption;
@@ -1159,6 +1180,12 @@ begin
   end
   else
     Caption := c[Ord(none)];
+      
+  tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
+ 
+ tsourcepage(files_tab.ActivePage).onclientmouseevent := @tabcloser;
+ 
+//   tsourcepage(files_tab.ActivePage).close;    
 end;
 
 procedure tsourcefo.tabwidgetonactivepagechanged(const Sender: TObject);
