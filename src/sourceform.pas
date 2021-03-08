@@ -140,9 +140,6 @@ type
 
     procedure updatestat(const statfiler: tstatfiler);
     
-    procedure tabcloser(const sender: twidget;
-                                   var ainfo: mouseeventinfoty);
-
     function hidesourcehint: Boolean;    //false if no action;
     procedure updatebreakpointicon(const path: filenamety; const info: bkptlineinfoty);
     procedure textmodified(const Sender: tsourcepage);
@@ -485,17 +482,6 @@ begin
 end;
 
 { tsourcefo }
-
- procedure tsourcefo.tabcloser(const sender: twidget;
-                                   var ainfo: mouseeventinfoty);
-   
-begin
-
-// tsourcepage(files_tab.ActivePage).close;
- 
- writeln('yep');
-
-end;
 
 constructor tsourcefo.Create(aowner: TComponent);
 begin
@@ -1130,10 +1116,6 @@ begin
       ' | Size: ' + UTF8Decode(IntToStr(ainfo.extinfo1.size div 1000)) + ' Kb.';
    
     tsourcepage(files_tab[x]).caption := trim(tsourcepage(files_tab[x]).caption) + '   ';
-
-  //  files_tab.onclientmouseevent := @tabcloser;
-
-  
    
    end;
 end;
@@ -1183,10 +1165,7 @@ begin
       
   tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
  
- tsourcepage(files_tab.ActivePage).onclientmouseevent := @tabcloser;
- 
-//   tsourcepage(files_tab.ActivePage).close;    
-end;
+ end;
 
 procedure tsourcefo.tabwidgetonactivepagechanged(const Sender: TObject);
 var

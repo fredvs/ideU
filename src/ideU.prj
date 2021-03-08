@@ -908,17 +908,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ SOURCEFO
  SOURCEPAGE
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TSOURCEFO
  TSOURCEPAGE
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=12
@@ -930,7 +933,7 @@ makeoptionson=12
  192
  0
  0
- 4095
+ 4091
  2047
  4095
  0
@@ -1279,7 +1282,7 @@ line=28
  97
  15
  787
- 915
+ 901
  2529
  5325
  1882
@@ -1567,15 +1570,15 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=writeln
+finddtext=tabcloser
 findhistory=20
+ tabcloser
  writeln
  flabel
  alabel
  .create
  checkbuttonhint
  onclientmouseevent
- tabcloser
  '   
  .caption
  if cancomment() then begin
@@ -1595,9 +1598,9 @@ editpos=7
  0,-1073741823
  0,-1073741823
  0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,4
+ 5,1161
+ 0,418
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1640,18 +1643,18 @@ moduleoptions=4
  0
  0
 visiblemodules=4
- 0
+ -1
  -1
  0
  -1
 nomenumodules=4
- -1
+ 0
  0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=5
 [layout]
 windowlayout=607
  [mainfo.basedock]
@@ -2138,7 +2141,7 @@ windowlayout=607
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/lib/common/kernel/msegui.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=20
   /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
   /home/fred/ideu/src/msetabs.pas
@@ -2182,7 +2185,7 @@ windowlayout=607
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2226,7 +2229,7 @@ windowlayout=607
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2241,11 +2244,11 @@ windowlayout=607
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
