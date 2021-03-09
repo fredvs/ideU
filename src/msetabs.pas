@@ -2882,7 +2882,7 @@ begin
                  found := true;
                 //   writeln('Yes close the tab' + inttostr(i));
                  sourcefo.closeactivepage ;
-                 sleep(100);
+                // sleep(100);
             end;
     
          w1 := w2 + 1;

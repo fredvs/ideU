@@ -1159,11 +1159,10 @@ begin
       if plformcreated then
         procedurelistfo.updatelist(debuggerfo.file_history.Value);
     end;
+      tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
   end
   else
     Caption := c[Ord(none)];
-      
-  tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
  
  end;
 
