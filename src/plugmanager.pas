@@ -5,6 +5,8 @@
 
 Unit plugmanager;
 
+{$ifdef FPC}{$mode objfpc}{$h+}{$endif}
+
 Interface
 
 Uses 
