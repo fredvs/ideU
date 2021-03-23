@@ -16,6 +16,7 @@ interface
   {$endif}
 {$endif}
 
+
 uses
  confideu,ideusettings,commandorform,SysUtils,msetimer,msetextedit,
  msewidgetgrid,mseforms,Classes,mclasses,msegdbutils,msebitmap,msetabs,

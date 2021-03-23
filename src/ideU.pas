@@ -10,7 +10,8 @@ program ideU;
  {$R ideu.res}
 {$endif}
 
-uses // cmem,
+uses
+  cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads, {$endif} {$endif}
   aboutform,
@@ -22,13 +23,13 @@ uses // cmem,
   mselibc,
   dialogfiles,
   mseskindesign,
- {
+  {
   gettext,
   msei18nutils,
   mseconsts,
   mseconsts_ru,
   mseconsts_de,mseconsts_es,mseconsts_zh,mseconsts_id,mseconsts_fr,
-  }
+ // }
   msegui,
   msegraphics,
   actionsmodule,
@@ -62,18 +63,18 @@ uses // cmem,
 {
 var
   MSELang,MSEFallbacklang:string;
-}
-  
+//}
+
 begin
 
 {
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
- // MSEFallbackLang:='ru';
+  MSEFallbackLang:='ru';
 //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
 //  'ideu_i18n_'+ MSEFallbackLang,true) then setlangconsts(MSEFallbackLang);
-}
+//}
 
-  //setlangconsts(MSEFallbackLang);
+ // setlangconsts(MSEFallbackLang);
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);

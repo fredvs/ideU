@@ -1553,10 +1553,12 @@ begin
   if accept then
     course(avalue);
   listview.directory := avalue;
+   if filename.tag <> 2 then begin // save file
   if filename.tag = 1 then
     filename.Value   := dir.Value
   else
     filename.Value   := '';
+    end;
 end;
 
 procedure tfiledialogfo.listviewonlistread(const Sender: TObject);
@@ -1731,10 +1733,12 @@ begin
 
   dir.frame.Caption := 'Directory with ' + IntToStr(list_log.rowcount - x2) + ' files';
 
+   if filename.tag <> 2 then begin // save file
   if filename.tag = 1 then
     filename.Value := (dir.Value)
   else
     filename.Value := '';
+    end;
 
   filename.Value := tosysfilepath(filename.Value);
 
@@ -2013,12 +2017,14 @@ begin
           else
           begin
             changedir(str1);
+            if filename.tag <> 2 then
             filename.Value := '';
           end;
         end
         else if info.keyeventinfopo^.key = key_return then
         begin
           changedir(str1);
+          if filename.tag <> 2 then
           filename.Value := '';
         end;
       end
@@ -2222,11 +2228,13 @@ begin
         dir.Value := tosysfilepath(listview.directory);
         course(listview.directory);
       end;
-
+      
+       if filename.tag <> 2 then begin // save file
       if filename.tag = 1 then
         filename.Value := dir.Value
       else
         filename.Value := '';
+        end;
 
       filename.Value := tosysfilepath(filename.Value);
 
@@ -2403,11 +2411,13 @@ begin
             dir.Value := tosysfilepath(listview.directory);
             course(listview.directory);
           end;
-
+           
+           if filename.tag <> 2 then begin // save file
           if filename.tag = 1 then
             filename.Value := dir.Value
           else
             filename.Value := '';
+            end;
 
           filename.Value := tosysfilepath(filename.Value);
 
@@ -2794,7 +2804,10 @@ begin
       fo.filename.frame.Caption := 'Selected Directory';
     end
     else if (dialogkind in [fdk_save]) then
-      fo.filename.frame.Caption := 'Save File as'
+    begin
+      fo.filename.tag           := 2;
+      fo.filename.frame.Caption := 'Save File as';
+    end 
     else if (dialogkind in [fdk_new]) then
       fo.filename.frame.Caption := 'New File Name'
     else

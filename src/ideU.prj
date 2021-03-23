@@ -30,9 +30,9 @@ findinfiledialog=121
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -56,7 +56,7 @@ findinfiledialog=121
  [findinfileadialogfo.dir]
  filenamescust=0
  filenames=1
-  /home/fred/mseuniverse/
+  /home/fred/mseide-msegui/
  filecolwidth=150
  x=409
  y=84
@@ -73,8 +73,8 @@ findinfiledialog=121
  splitterplaces=154
  splitterlateral=126
  filehistory=38
-  /home/fred/mseuniverse/
   /home/fred/mseide-msegui/
+  /home/fred/mseuniverse/
   /home/fred/freepascal-ootb_320test/
   /home/fred/biotray/
   /home/fred/A Alphabetical listing of command line options_files/
@@ -114,8 +114,10 @@ findinfiledialog=121
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=tbutton.crea
+ value=nozorderenable
  history=20
+  nozorderenable
+  flushgdi
   tbutton.crea
   oe_readonly
   last modif
@@ -134,8 +136,6 @@ findinfiledialog=121
   _STAT =
   _STAT
   _STAT_VER
-  xgetgeometry
-  flush
  [findinfileadialogfo]
  stackedunder=
  x=291
@@ -242,9 +242,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=188
+ y=214
  xprop=1
- yprop=0.39544513457557
+ yprop=0.39526411657559
  [projectoptionsfo.macrogrid]
  propcolwidthref=457
  sortdescend0=0
@@ -289,14 +289,14 @@ options=114
  firsttab=0
  index=1
  [projectoptionsfo.setting_tab]
- firsttab=1
+ firsttab=0
  index=2
  [projectoptionsfo]
  stackedunder=
  x=528
  y=40
  cx=735
- cy=542
+ cy=608
 settaborder=15
  [setcreateorderfo.grid]
  propcolwidthref=331
@@ -671,8 +671,9 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=12
+makeoptions=13
  -Mobjfpc -Sh -Fcutf8
+ -dmse_flushgdi
  -gl
  -B
  -Xs -CX -XX
@@ -684,8 +685,9 @@ makeoptions=12
  -FUunits
  -vewinhq
  -dclass_bridge
-makeoptpurpose=12
+makeoptpurpose=13
  Define Object Pascal
+ Flush gdi for Radeon drivers
  Debug infos
  Re-build all
  Optimizations
@@ -910,24 +912,25 @@ settingsautoload=0
 settingsautosave=0
 modulenames=4
  ACTIONSMO
+ CONFIDEUFO
  MAINFO
  SOURCEFO
- SOURCEPAGE
 moduletypes=4
  TACTIONSMO
+ TCONFIDEUFO
  TMAINFO
  TSOURCEFO
- TSOURCEPAGE
 modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
-makeoptionson=12
+makeoptionson=13
  4095
+ 0
  3
- 8
+ 12
  2044
  0
  192
@@ -1265,7 +1268,7 @@ line=28
  2129
  1176
  591
- 3988
+ 3995
  660
  119
  1116
@@ -1277,18 +1280,18 @@ line=28
  547
  483
  67
- 4263
+ 4270
  684
  97
  15
  787
  901
  2529
- 5325
+ 5332
  1882
  6135
- 128
- 121
+ 129
+ 122
  18
 address=28
  4803972
@@ -1559,8 +1562,13 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=oe_readonly
+finddtext=nozorderenable
 findhistory=20
+ nozorderenable
+ impleme
+ flushgdi
+ 1 = 1
+ flush
  oe_readonly
  '  
  .caption
@@ -1576,20 +1584,15 @@ findhistory=20
  if cancomment() then begin
  fhintwidget
  hinttimer
- hint
- sethint
- blinkcaret
- doubleclic
- noconfirmdelete
 findoptions=1
 editpos=7
+ 0,1067
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,11
- 0,2
  0,-1073741823
- 1,31
+ 9,22395
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1598,21 +1601,21 @@ bookmarks4=0
 bookmarks5=0
 bookmarks6=0
 sourcefiles=7
- ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/msetabs.pas
- ${PROJECTDIR}/plugmanager.pas
+ ${PROJECTDIR}/ideU.pas
+ /home/fred/mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
+ ${PROJECTDIR}/msegui.pas
+ ${PROJECTDIR}/confideu.pas
 relpaths=7
- ideU.pas
  main.pas
  actionsmodule.pas
- sourcepage.pas
  sourceform.pas
- msetabs.pas
- plugmanager.pas
+ ideU.pas
+ mseide-msegui/lib/common/designutils/msesyntaxpainter.pas
+ msegui.pas
+ confideu.pas
 ismoduletexts=7
  0
  0
@@ -1625,14 +1628,14 @@ modules=4
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourcepage.mfm
+ /home/fred/ideu/src/confideu.mfm
 moduleoptions=4
  0
  0
  0
  0
 visiblemodules=4
- -1
+ 0
  -1
  0
  -1
@@ -1644,16 +1647,16 @@ nomenumodules=4
 [sourcefo.files_tab]
 order=7
  0
- 1
  2
- 5
  3
  4
  6
+ 5
+ 1
 firsttab=0
-index=6
+index=5
 [layout]
-windowlayout=641
+windowlayout=611
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1787,18 +1790,18 @@ windowlayout=641
  x=0
  y=0
  cx=205
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=81
- width0=124
+ propcolwidthref=88
+ width0=117
  sortdescend0=0
- width1=75
+ width1=82
  sortdescend1=0
  sorted=0
  col=1
- row=14
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2108,7 +2111,7 @@ windowlayout=641
  x=0
  y=0
  cx=1212
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2119,12 +2122,12 @@ windowlayout=641
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=57
+ ncx=1197
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=56
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2134,58 +2137,28 @@ windowlayout=641
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/plugmanager.pas
- history=50
-  /home/fred/win_mixer/src/win_mixer_test.pas
-  /home/fred/win_mixer/src/win_mixer.pas
-  /home/fred/strumpract/src/win_mixer.pas
-  /home/fred/strumpract/src/win_mixer_test.pas
-  /home/fred/win_mixer/src/alsa_mixer.pas
-  /home/fred/sound_win/AudioEndpoint.pas
-  /home/fred/sound_win/win_mixer.pas
-  /home/fred/alsa_mixer/src/alsa_mixer.pas
-  /home/fred/strumpract/src/alsa_mixer.pas
-  /home/fred/strumpract/src/alsa_mixer_test.pas
-  /home/fred/strumpract/src/uos_portaudio.pas
-  /home/fred/alsa_sound/src/alsa_sound.pas
-  /home/fred/Downloads/fpalsa-1.0.27.2.fp0/src/mixer.inc
-  /home/fred/strumpract/src/msex11gdi.pas
-  /home/fred/WavvieW/src/msex11gdi.pas
-  /home/fred/WavvieW/src/mseguiintf.pas
-  /home/fred/alsa_mixer/src/volumecontrol.c
-  /home/fred/alsa_mixer/src/mixer.inc
-  /home/fred/msecustcombo/msedispwidgets.pas
-  /home/fred/msecustcombo/mselistbrowser.pas
-  /home/fred/ideu/src/msetabs.pas
-  /home/fred/strumpract/src/uos.pas
-  /home/fred/WavvieW_14 (copie 1)/src/uos_msesigaudio.pas
-  /home/fred/uos/examples/simpleplayer_fpGUI.pas
-  /home/fred/uos.pas
-  /home/fred/WavvieW/src/uos_libsndfile.pas
-  /home/fred/WavvieW/src/msesignoise.pas
-  /home/fred/uos/examples/uos.pas
-  /home/fred/uossawtooth2/examples/uos.pas
-  /home/fred/uos/src/uos.pas
-  /home/fred/uossawtooth/src/uos.pas
-  /home/fred/uossawtooth/src/uos_cdrom.pas
-  /home/fred/WavvieW/src/uos_portaudio.pas
-  /home/fred/WavvieW/src/msesigfftgui.pas
-  /home/fred/WavvieW/src/main.pas
-  /home/fred/WavvieW/src/about.pas
-  /home/fred/WavvieW/src/msefftw.pas
-  /home/fred/WavvieW/src/uos_msefftw.pas
-  /home/fred/WavvieW/src/wavview.pas
-  /home/fred/WavvieW_pr/src/wavview.pas
-  /home/fred/WavvieW/src/uos_msesigaudionew.pas
-  /home/fred/WavvieW/src/msesignal.pas
-  /home/fred/WavvieW/src/uos_msesignal.pas
-  /home/fred/NoiseGenerator/src/msesignal.pas
-  /home/fred/noisegenerator/src/noisegenerator.pas
-  /home/fred/noisegenerator/mseaudiouos.pas
-  /home/fred/uos/examples/consolesynth.pas
-  /home/fred/mseuniverse/samples/signal/noisegen/mseaudiouos.pas
-  /home/fred/mseuniverse/samples/signal/noisegen/msesigaudiouos.pas
-  /home/fred/mseuniverse/samples/signal/noisegen/uos_portaudio.pas
+ value=/home/fred/ideu/src/msegui.pas
+ history=20
+  /home/fred/ideu/src/main.pas
+  /home/fred/atest/test.prj
+  /home/fred/ideu/src/ideU.prj
+  /home/fred/mseide-msegui/apps/ide/mseide.prj
+  /home/fred/uos/examples/simpleplayer.prj
+  /home/fred/ideu_ok/src/ideU.prj
+  /home/fred/eschecs_mse/eschecs.prj
+  /home/fred/mselang-master/src/mselang.prj
+  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
+  /home/fred/strumpract/src/strumpract.prj
+  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
+  /home/fred/xtop/src/ptop.prj
+  /home/fred/xtop/src/jtop.prj
+  /home/fred/idegraeme/mseide.prj
+  /home/fred/fptop/src/jtop.prj
+  /home/fred/fptop/src/ptop.prj
+  /home/fred/ptop_fred/ptop.prj
+  /home/fred/eschecs_mse_argh/eschecs.prj
+  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2203,20 +2176,20 @@ windowlayout=641
  x=208
  y=0
  cx=1004
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=7
   0
-  1
   2
-  5
   3
   4
   6
+  5
+  1
  firsttab=0
- index=6
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2225,7 +2198,7 @@ windowlayout=641
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2252,15 +2225,15 @@ windowlayout=641
  ncx=0
  ncy=0
  x=0
- y=53
+ y=54
  cx=1212
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2275,21 +2248,21 @@ windowlayout=641
  rcy=0
  wsize=0
  active=0
- visible=1
- [_mse_sourcepage_mse_]
+ visible=0
+ [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=441
- y=217
- cx=652
- cy=301
+ x=236
+ y=48
+ cx=639
+ cy=672
  rcx=0
  rcy=0
  wsize=0

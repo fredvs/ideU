@@ -1,8 +1,8 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 482
-  bounds_y = 64
+  bounds_x = 236
+  bounds_y = 48
   bounds_cx = 629
   bounds_cy = 672
   container.frame.localprops = []
@@ -319,7 +319,7 @@ object confideufo: tconfideufo
       )
       hint = 'No focus on window when mouse-move on it.'
       bounds_x = 8
-      bounds_y = 202
+      bounds_y = 196
       bounds_cx = 137
       bounds_cy = 17
       value = True
@@ -516,6 +516,25 @@ object confideufo: tconfideufo
       bounds_cx = 99
       bounds_cy = 17
       value = True
+      valuedefault = True
+    end
+    object brepaintcanvas: tbooleanedit
+      frame.caption = 'Repaint canvas'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        2
+        95
+        2
+      )
+      taborder = 10
+      hint = 'Reapaint the canvas of selected component. Could be needed on some graphic cards.'
+      bounds_x = 8
+      bounds_y = 212
+      bounds_cx = 108
+      bounds_cy = 17
       valuedefault = True
     end
   end

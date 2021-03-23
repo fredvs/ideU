@@ -53,6 +53,7 @@ type
    but_ok: tbutton;
    tabindent: tbooleanedit;
    blinkcaret: tbooleanedit;
+   brepaintcanvas: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
@@ -246,8 +247,8 @@ mainfo.frame.grip_size := round(12*ratio);
 
 // message
 
-messagefontheight := fontsize.value; 
-messagefontname := UTF8Decode(fontsize.name); 
+messagefontheight := fontsize.value;
+messagefontname := UTF8Decode(fontsize.name);
 
 // commandor
 
@@ -605,12 +606,13 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  universal_path.top := universal_path.height + 2;
  doubleclic.top :=  universal_path.top + universal_path.height + 2 ;
  blinkcaret.top :=  doubleclic.top + doubleclic.height + 2 ;
- 
+
  fullpath.top :=  blinkcaret.top + blinkcaret.height + 2 ;
  modaldial.top :=  fullpath.top + fullpath.height + 2 ;
  autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
  nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
- confirmdel.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+ brepaintcanvas.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+ confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
 
  fontname.top :=  confirmdel.top + confirmdel.height + 2 ;
  fontsize.top :=  fontname.top + fontname.height + 2 ;
@@ -630,7 +632,7 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  stripmessageesc.top := backupfilecount.top + 10 ;
  closemessages.top :=  backupfilecount.top + backupfilecount.height + 6 ;
- 
+
  trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
  encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
 
@@ -653,13 +655,13 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  colorwarning.top :=  colornote.top + colornote.height + 2 ;
  colorerror.top :=  colorwarning.top + colorwarning.height + 2 ;
 
- deflayout.top :=  colorerror.top + colorerror.height + 2 ;
+ deflayout.top := colorerror.top + colorerror.height + 2 ;
  defsynt.top :=  deflayout.top + deflayout.height + 2 ;
  addwhiteaftercomma.top :=  defsynt.top + defsynt.height + 2 ;
 
  group_sourceeditor.height := addwhiteaftercomma.top + addwhiteaftercomma.height + 10;
 
- height := group_sourceeditor.height + 40;
+ height := group_sourceeditor.height + (universal_path.height * 3);
 
 if findformcreated then finddialogdotextsize;
 
@@ -701,7 +703,7 @@ messagefo.updateprojectoptions;
 onchangefont;
 noconfirmdelete := confirmdel.value;
 blinkingcaret :=  blinkcaret.value;
-
+repaintcanvas := brepaintcanvas.value;
 end;
 
 procedure tconfideufo.onok(const sender: TObject);

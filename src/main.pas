@@ -30,7 +30,7 @@ interface
 {$endif}
 
 uses
-  msearrayutils, 
+  msearrayutils,
  aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
@@ -865,12 +865,15 @@ begin
 
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
+  confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', false);
+  repaintcanvas := confideufo.brepaintcanvas.Value ;
+
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
   confideufo.confirmdel.Value := noconfirmdelete;
-  
+
   blinkingcaret := gINI.Readbool('blinkingcaret', 'general', true);
   confideufo.blinkcaret.Value := blinkingcaret;
- 
+
     confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
 
   confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
@@ -928,6 +931,8 @@ begin
     nozorderhandling := True
   else
     nozorderhandling := False;
+
+
 
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
 
@@ -1071,10 +1076,12 @@ begin
   gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
 
   gINI.writebool('noconfirmdel', 'general', (noconfirmdelete));
-  
+
   gINI.writebool('blinkingcaret', 'general', (blinkingcaret));
-  
+
   gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
+
+  gINI.writebool('repaintcanvas', 'general', (confideufo.brepaintcanvas.Value));
 
   gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
 
