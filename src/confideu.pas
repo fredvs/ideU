@@ -667,7 +667,11 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
 
  group_sourceeditor.height := addwhiteaftercomma.top + addwhiteaftercomma.height + 10;
 
- height := group_sourceeditor.height + (universal_path.height * 3);
+{$ifdef mswindows}
+  height := group_sourceeditor.height + (universal_path.height * 2);
+{$else}
+  height := group_sourceeditor.height + (universal_path.height * 3);
+{$endif}
 
 if findformcreated then finddialogdotextsize;
 
