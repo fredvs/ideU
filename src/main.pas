@@ -866,7 +866,7 @@ begin
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', false);
-  repaintcanvas := confideufo.brepaintcanvas.Value ;
+  mse_repaintcanvas := confideufo.brepaintcanvas.Value ;
 
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
   confideufo.confirmdel.Value := noconfirmdelete;

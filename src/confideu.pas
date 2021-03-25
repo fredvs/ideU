@@ -68,6 +68,7 @@ type
    procedure onchangefont;
    procedure onapply(const sender: TObject);
    procedure onok(const sender: TObject);
+   procedure oncreated(const sender: TObject);
   end;
 
 var
@@ -611,8 +612,13 @@ but_ok.left := but_apply.width + but_apply.left + 1 ;
  modaldial.top :=  fullpath.top + fullpath.height + 2 ;
  autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
  nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
+
+{$ifdef mswindows}
+ confirmdel.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+{$else}
  brepaintcanvas.top :=  nozorderenable.top + nozorderenable.height + 2 ;
  confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
+{$endif}
 
  fontname.top :=  confirmdel.top + confirmdel.height + 2 ;
  fontsize.top :=  fontname.top + fontname.height + 2 ;
@@ -703,13 +709,20 @@ messagefo.updateprojectoptions;
 onchangefont;
 noconfirmdelete := confirmdel.value;
 blinkingcaret :=  blinkcaret.value;
-repaintcanvas := brepaintcanvas.value;
+mse_repaintcanvas := brepaintcanvas.value;
 end;
 
 procedure tconfideufo.onok(const sender: TObject);
 begin
 onapply(sender);
 close;
+end;
+
+procedure tconfideufo.oncreated(const sender: TObject);
+begin
+{$ifdef mswindows}
+brepaintcanvas.visible := false;
+{$endif}
 end;
 
 end.
