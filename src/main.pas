@@ -4630,20 +4630,35 @@ begin
     debuggerfo.project_start.face.template := debuggerfo.templproject;
     debuggerfo.project_next.face.template := debuggerfo.templproject;
 
-    {
-    debuggerfo.project_step.imagenrdisabled         := -2;
-    debuggerfo.project_save.imagenrdisabled         := -2;
-    debuggerfo.project_make.imagenrdisabled         := -2;
-    debuggerfo.project_abort_compil.imagenrdisabled := -2;
-    debuggerfo.project_next.imagenrdisabled         := -2;
-    debuggerfo.project_finish.imagenrdisabled       := -2;
-    debuggerfo.project_next_instruction.imagenrdisabled := -2;
-    debuggerfo.project_reset.imagenrdisabled        := -2;
-    debuggerfo.project_interrupt.imagenrdisabled    := -2;
-    debuggerfo.project_step_instruction.imagenrdisabled := -2;
+   if Assigned(debuggerfo) then
+  begin
+   debuggerfo.container.color := color0;
+  debuggerfo.color := color0;
+  
+  debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.colorglyph := color2;
 
-    debuggerfo.edited_abort.imagenrdisabled := -2;
-    }
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.colorglyph := color2;
+  end;
 
     debuggerfo.panelmain.face.template         := debuggerfo.templatemain;
     debuggerfo.assistive.face.template         := debuggerfo.templatemain;
@@ -4769,7 +4784,7 @@ begin
     sourcefo.tpopupmenu1.facetemplate           := convexdark;
     sourcefo.tpopupmenu1.itemfacetemplate       := sourcefo.tfacecomp2horzdark;
     sourcefo.tpopupmenu1.itemfacetemplateactive := sourcefo.tfacecomp1dark;
-    ;
+   
 
     sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1dark;
     sourcefo.files_tab.tab_font.color := cl_white;
@@ -4813,20 +4828,39 @@ begin
     debuggerfo.tstringdisp2.face.template         := debuggerfo.templatemaindark;
 
     debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
- {
-    debuggerfo.project_next.imagenrdisabled         := 37;
-    debuggerfo.project_step.imagenrdisabled         := 39;
-    debuggerfo.project_save.imagenrdisabled         := -2;
-    debuggerfo.project_make.imagenrdisabled         := -2;
-    debuggerfo.project_abort_compil.imagenrdisabled := 35;
-    debuggerfo.project_finish.imagenrdisabled       := 38;
-    debuggerfo.project_next_instruction.imagenrdisabled := 37;
-    debuggerfo.project_step_instruction.imagenrdisabled := 39;
-    debuggerfo.project_reset.imagenrdisabled        := 35;
-    debuggerfo.project_interrupt.imagenrdisabled    := 44;
+//{   
+if Assigned(debuggerfo) then
+  begin
+   debuggerfo.container.color := color0;
+  debuggerfo.color := color0;
+  
+  debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.colorglyph := color2;
 
-    debuggerfo.edited_abort.imagenrdisabled := 35;
-}
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.colorglyph := color2;
+
+  
+  end;
+  //}
     debuggerfo.paneledited.face.template      := debuggerfo.templfiledark;
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;

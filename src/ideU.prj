@@ -242,9 +242,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=214
+ y=215
  xprop=1
- yprop=0.39526411657559
+ yprop=0.39708561020036
  [projectoptionsfo.macrogrid]
  propcolwidthref=457
  sortdescend0=0
@@ -351,14 +351,25 @@ imageselector=9
  wsize=0
  active=1
  visible=1
-fadeeditor=24
+fadeeditor=35
  [fadeeditfo.filedialog]
+ filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -910,18 +921,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
+ DEBUGGERFO
  CONFIDEUFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TACTIONSMO
+ TDEBUGGERFO
  TCONFIDEUFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1287,7 +1301,7 @@ line=28
  787
  901
  2529
- 5332
+ 5366
  1882
  6135
  129
@@ -1435,15 +1449,12 @@ units=
   (
   file=beauty.pas
   kind=1
-  a=0,8212,2,beauty.pas
+  a=0,8213,2,beauty.pas
   c=1
    (
    file=beauty.mfm
-   kind=2
-   a=0,10260,4,beauty
-   classtype=tbeautyfo
-   formname=beautyfo
-   instancevarname=beautyfo
+   kind=0
+   a=0,0,0,beauty
    )
   )
   (
@@ -1464,11 +1475,8 @@ units=
   c=1
    (
    file=confideu.mfm
-   kind=2
-   a=0,10260,4,confideu
-   classtype=tconfideufo
-   formname=confideufo
-   instancevarname=confideufo
+   kind=0
+   a=0,0,0,confideu
    )
   )
   (
@@ -1522,7 +1530,7 @@ units=
   (
   file=sourcepage.pas
   kind=1
-  a=0,8212,2,sourcepage.pas
+  a=0,8213,2,sourcepage.pas
   c=1
    (
    file=sourcepage.mfm
@@ -1562,8 +1570,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=repaintcanvas
+finddtext=projecttreefo.grid
 findhistory=20
+ projecttreefo.grid
+ projectteefo.grid
+ sbhorz
  repaintcanvas
  brepaintcanvas
  brepaintcanvas;
@@ -1581,18 +1592,18 @@ findhistory=20
  tabcloser
  flabel
  alabel
- .create
- checkbuttonhint
- onclientmouseevent
 findoptions=1
-editpos=8
- 0,0
+editpos=11
+ 0,4623
  0,-1073741823
  0,-1073741823
- 0,7
  0,-1073741823
  0,-1073741823
- 0,670
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1602,7 +1613,10 @@ bookmarks4=0
 bookmarks5=0
 bookmarks6=0
 bookmarks7=0
-sourcefiles=8
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+sourcefiles=11
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1611,7 +1625,10 @@ sourcefiles=8
  ${PROJECTDIR}/msegui.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/main.pas
-relpaths=8
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=11
  main.pas
  actionsmodule.pas
  sourceform.pas
@@ -1620,7 +1637,10 @@ relpaths=8
  msegui.pas
  confideu.pas
  main.pas
-ismoduletexts=8
+ sourceform.pas
+ commandorform.pas
+ commandorform.pas
+ismoduletexts=11
  0
  0
  0
@@ -1629,31 +1649,38 @@ ismoduletexts=8
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+modules=5
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
-moduleoptions=4
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
  0
+visiblemodules=5
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=5
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=6
+index=0
 [layout]
-windowlayout=633
+windowlayout=652
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1693,7 +1720,7 @@ windowlayout=633
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1877,10 +1904,10 @@ windowlayout=633
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=472
- width0=210
+ propcolwidthref=457
+ width0=203
  sortdescend0=0
- width1=256
+ width1=248
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2077,7 +2104,7 @@ windowlayout=633
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2119,8 +2146,8 @@ windowlayout=633
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=64
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
@@ -2134,7 +2161,7 @@ windowlayout=633
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
+ value=/home/fred/ideu/src/main.pas
  history=50
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
@@ -2208,7 +2235,7 @@ windowlayout=633
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=6
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2217,7 +2244,7 @@ windowlayout=633
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2236,7 +2263,7 @@ windowlayout=633
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2251,11 +2278,11 @@ windowlayout=633
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2266,6 +2293,25 @@ windowlayout=633
  y=48
  cx=639
  cy=672
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=122
+ y=102
+ cx=1164
+ cy=54
  rcx=0
  rcy=0
  wsize=0
