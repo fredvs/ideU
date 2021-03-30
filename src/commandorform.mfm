@@ -3,10 +3,13 @@ object debuggerfo: tdebuggerfo
   frame.localprops = [frl_colordkwidth, frl_colorhlwidth]
   frame.localprops1 = []
   frame.grip_size = 10
-  frame.grip_grip = stb_default
+  frame.grip_grip = stb_dens0
   frame.grip_color = 12434877
   frame.grip_coloractive = 10066329
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_lockbutton, go_buttonhints]
+  frame.grip_face.localprops = []
+  frame.grip_face.template = mainfo.tfacecomp3
+  frame.grip_faceactive.localprops = []
   visible = False
   bounds_x = 122
   bounds_y = 102

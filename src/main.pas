@@ -4597,6 +4597,13 @@ begin
     color3 := cl_white;
 
     basedock.face.template := convex;
+    
+    frame.grip_face.template := tfacecomp3;
+    frame.grip_faceactive.template := tfacecomp3;
+    sourcefo.frame.grip_face.template := tfacecomp3;
+    messagefo.frame.grip_face.template := tfacecomp3;
+    debuggerfo.frame.grip_face.template := tfacecomp3;
+    projecttreefo.frame.grip_face.template := tfacecomp3;
 
     frame.grip_colorglyph           := cl_black;
     frame.grip_colorglyphactive     := cl_black;
@@ -4739,6 +4746,13 @@ begin
     color3 := cl_black;
 
     basedock.face.template := convexdark;
+    
+    frame.grip_face.template := sourcefo.tfacecomp2dark;
+    frame.grip_faceactive.template := sourcefo.tfacecomp2dark;
+    sourcefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
+    messagefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
+    debuggerfo.frame.grip_face.template := sourcefo.tfacecomp2dark;
+    projecttreefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
 
     frame.grip_colorglyph := cl_white;
     frame.grip_colorglyphactive := cl_white;
