@@ -20,7 +20,7 @@ unit componentpaletteform;
 
 interface
 uses
- msegui,mseclasses,mseforms,msetabs,msetoolbar,msegraphutils,msestat,mseguiglob,
+ msegui,mseclasses,mseforms,msetabs,msetoolbar,msegraphutils,msestat,mseguiglob, msebitmap,
  msedragglob,msetypes{msestrings};
 
 type

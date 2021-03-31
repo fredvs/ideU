@@ -921,16 +921,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ COMPONENTPALETTEFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCOMPONENTPALETTEFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/componentpaletteform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1587,51 +1590,66 @@ findhistory=20
  .caption
  '   
 findoptions=1
-editpos=4
+editpos=5
  0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,22
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/componentpaletteform.pas
+relpaths=5
  main.pas
  ideU.pas
  actionsmodule.pas
  sourceform.pas
-ismoduletexts=4
+ componentpaletteform.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/componentpaletteform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 4
+ 1
+ 2
+ 3
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=584
+windowlayout=609
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2098,11 +2116,11 @@ windowlayout=584
  nx=0
  ny=0
  ncx=1243
- ncy=49
+ ncy=47
  x=0
  y=0
  cx=1258
- cy=47
+ cy=45
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2112,7 +2130,7 @@ windowlayout=584
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/componentpaletteform.pas
  history=20
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
@@ -2155,8 +2173,14 @@ windowlayout=584
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  4
+  1
+  2
+  3
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2211,6 +2235,25 @@ windowlayout=584
  y=451
  cx=755
  cy=76
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_componentpalettefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=131
+ y=289
+ cx=748
+ cy=69
  rcx=0
  rcy=0
  wsize=0
