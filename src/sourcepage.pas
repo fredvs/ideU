@@ -70,6 +70,7 @@ type
    
    procedure oncreated(const sender: TObject);
    procedure ondefocus(const sender: TObject);
+   procedure onfocus(const sender: TObject);
   private
    factiverow: integer;
    flasthint: gridcoordty;
@@ -1733,6 +1734,7 @@ begin
 // fred
  if (info.eventkind = cek_buttonpress) then
  begin
+ tabcloser := true;
  sourcefo.thetimer.Enabled := false;
  sourcefo.hidesourcehint;
  end;
@@ -2149,6 +2151,11 @@ end;
 procedure tsourcepage.ondefocus(const sender: TObject);
 begin
 tabcloser := false;
+end;
+
+procedure tsourcepage.onfocus(const sender: TObject);
+begin
+tabcloser := true;
 end;
 
 end.
