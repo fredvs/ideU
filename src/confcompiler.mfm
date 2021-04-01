@@ -1,5 +1,6 @@
 object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  onfocus = onfocus
   visible = False
   bounds_x = 468
   bounds_y = 102
@@ -84,6 +85,7 @@ object confcompilerfo: tconfcompilerfo
     bounds_cy = 609
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
+    onactivepagechanged = onfocus
     tab_frame.buttonframe.localprops = []
     tab_frame.buttonframe.localprops1 = [frl1_extraspace]
     tab_frame.localprops = []
@@ -97,6 +99,7 @@ object confcompilerfo: tconfcompilerfo
       frame.localprops = []
       frame.localprops1 = []
       taborder = 1
+      onfocus = onfocus
       bounds_x = 0
       bounds_y = 20
       bounds_cx = 593
@@ -238,6 +241,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 537
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -275,6 +281,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 466
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -312,6 +321,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 393
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -349,6 +361,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 314
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -386,6 +401,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 241
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -423,6 +441,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 173
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -460,6 +481,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 100
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -538,6 +562,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 28
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -587,6 +614,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 103
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -624,6 +654,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 178
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -661,6 +694,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 250
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -698,6 +734,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 323
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -735,6 +774,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 401
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -772,6 +814,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 470
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -809,6 +854,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 540
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -990,6 +1038,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 33
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1106,6 +1157,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 286
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1143,6 +1197,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 210
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1180,6 +1237,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 134
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1216,6 +1276,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 54
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1307,6 +1370,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 278
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1344,6 +1410,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 190
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1381,6 +1450,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 113
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1451,6 +1523,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 37
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1508,6 +1583,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 185
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1578,6 +1656,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 25
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1615,6 +1696,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 266
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
@@ -1686,6 +1770,9 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 103
         bounds_cx = 480
         bounds_cy = 39
+        controller.panel = False
+        controller.compact = False
+        controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15

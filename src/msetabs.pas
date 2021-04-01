@@ -1043,13 +1043,12 @@ type
    property statpriority;
  end;
 
-//var
-//alabel : tlabel;
-
+var
+ tabcloser: boolean = false;
 
 implementation
 uses
- sourceform, sysutils,msearrayutils,msekeyboard,msestockobjects,msebits;
+sourceform, sysutils,msearrayutils,msekeyboard,msestockobjects,msebits;
 
 type
  twidget1 = class(twidget);

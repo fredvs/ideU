@@ -22,6 +22,7 @@ object sourcefo: tsourcefo
   frame.grip_faceactive.fade_direction = gd_down
   frame.grip_faceactive.localprops = []
   onenter = enterexe
+  ondefocus = ondefocus
   onactivate = enterexe
   visible = False
   bounds_x = 255

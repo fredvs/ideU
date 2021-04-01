@@ -921,15 +921,33 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=8
  ACTIONSMO
+ DEBUGGERFO
+ COMPONENTPALETTEFO
+ CONFCOMPILERFO
+ MAINFO
+ PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=2
+ SOURCEPAGE
+moduletypes=8
  TACTIONSMO
+ TDEBUGGERFO
+ TCOMPONENTPALETTEFO
+ TCONFCOMPILERFO
+ TMAINFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=2
+ TSOURCEPAGE
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/componentpaletteform.mfm
+ /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1271,16 +1289,16 @@ path=28
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
 line=28
  2129
- 1176
+ 1177
  591
  3995
  660
  119
  1116
- 2296
- 2212
- 2489
- 3286
+ 2297
+ 2213
+ 2490
+ 3287
  119
  547
  483
@@ -1290,8 +1308,8 @@ line=28
  97
  15
  787
- 904
- 2529
+ 903
+ 2530
  5380
  1882
  6135
@@ -1561,10 +1579,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=sourcefo
+finddtext=uses
 findhistory=20
- sourcefo
  uses
+ sourcefo
  frame.grip_face
  dotheme
  theme
@@ -1584,46 +1602,106 @@ findhistory=20
  oe_readonly
  '  
 findoptions=1
-editpos=3
- 0,0
- 0,-1073741823
- 0,-1073741823
+editpos=9
+ 0,4
+ 0,8
+ 0,596
+ 0,22
+ 0,1046
+ 0,173
+ 0,124
+ 0,7
+ 0,3507
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=3
+ ${PROJECTDIR}/componentpaletteform.pas
+ ${PROJECTDIR}/msetabs.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/confcompiler.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
+relpaths=9
  main.pas
- sourceform.pas
+ sourcepage.pas
  actionsmodule.pas
-ismoduletexts=3
+ componentpaletteform.pas
+ msetabs.pas
+ sourceform.pas
+ confcompiler.pas
+ commandorform.pas
+ projectoptionsform.pas
+ismoduletexts=9
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/sourcepage.mfm
+ /home/fred/ideu/src/componentpaletteform.mfm
+ /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+moduleoptions=8
  0
  0
  0
-visiblemodules=3
  0
+ 0
+ 0
+ 0
+ 0
+visiblemodules=8
  -1
  -1
-nomenumodules=3
  -1
+ -1
+ -1
+ -1
+ -1
+ -1
+nomenumodules=8
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
 [sourcefo.files_tab]
+order=9
+ 2
+ 8
+ 0
+ 1
+ 3
+ 4
+ 6
+ 7
+ 5
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=584
+windowlayout=719
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1637,8 +1715,8 @@ windowlayout=584
  ny=0
  ncx=0
  ncy=0
- x=66
- y=144
+ x=82
+ y=29
  cx=1224
  cy=621
  rcx=0
@@ -1685,7 +1763,7 @@ windowlayout=584
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=about_form
  parent=
  mdistate=0
  nx=0
@@ -1768,7 +1846,7 @@ windowlayout=584
  sortdescend1=0
  sorted=0
  col=0
- row=15
+ row=12
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2090,11 +2168,11 @@ windowlayout=584
  nx=0
  ny=0
  ncx=1197
- ncy=53
+ ncy=51
  x=0
  y=0
  cx=1212
- cy=51
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2104,9 +2182,8 @@ windowlayout=584
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=20
-  /home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
+ history=50
   /home/fred/ideu/src/componentpaletteform.pas
   /home/fred/ideu/src/msetabs.pas
   /home/fred/mseide-msegui/apps/ide/main.pas
@@ -2126,6 +2203,37 @@ windowlayout=584
   /home/fred/ideu/src/sak_mse.pas
   /home/fred/ideu/src/plugmanager.pas
   /home/fred/aunique/project1.pas
+  /home/fred/strumpract/src/uos.pas
+  /home/fred/ideu/src/msegui.pas
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/Downloads/msegui-studies-master/imageviewer/msefiledialogx.pas
+  /home/fred/msefiledialogx/src/msefiledialogx.pas
+  /home/fred/msefiledialogx.pas
+  /home/fred/filedialogx/msefiledialogx.pas
+  /home/fred/strumpract/src/msegui.pas
+  /home/fred/strumpract/src/win_mixer.pas
+  /home/fred/ideu/src/msegraphics.pas
+  /home/fred/win_mixer/src/win_mixer_test.pas
+  /home/fred/win_mixer/src/win_mixer.pas
+  /home/fred/strumpract/src/win_mixer_test.pas
+  /home/fred/win_mixer/src/alsa_mixer.pas
+  /home/fred/sound_win/AudioEndpoint.pas
+  /home/fred/sound_win/win_mixer.pas
+  /home/fred/alsa_mixer/src/alsa_mixer.pas
+  /home/fred/strumpract/src/alsa_mixer.pas
+  /home/fred/strumpract/src/alsa_mixer_test.pas
+  /home/fred/strumpract/src/uos_portaudio.pas
+  /home/fred/alsa_sound/src/alsa_sound.pas
+  /home/fred/Downloads/fpalsa-1.0.27.2.fp0/src/mixer.inc
+  /home/fred/strumpract/src/msex11gdi.pas
+  /home/fred/WavvieW/src/msex11gdi.pas
+  /home/fred/WavvieW/src/mseguiintf.pas
+  /home/fred/alsa_mixer/src/volumecontrol.c
+  /home/fred/alsa_mixer/src/mixer.inc
+  /home/fred/msecustcombo/msedispwidgets.pas
+  /home/fred/msecustcombo/mselistbrowser.pas
+  /home/fred/WavvieW_14 (copie 1)/src/uos_msesigaudio.pas
+  /home/fred/uos/examples/simpleplayer_fpGUI.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2147,8 +2255,18 @@ windowlayout=584
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=9
+  2
+  8
+  0
+  1
+  3
+  4
+  6
+  7
+  5
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2157,7 +2275,7 @@ windowlayout=584
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2192,7 +2310,7 @@ windowlayout=584
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_componentpalettefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2207,7 +2325,102 @@ windowlayout=584
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
+ [_mse_sourcepage_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_projectoptionsfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=441
+ y=217
+ cx=652
+ cy=301
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_componentpalettefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_confcompilerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=131
+ y=289
+ cx=748
+ cy=69
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confcompilerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_debuggerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=468
+ y=102
+ cx=611
+ cy=615
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_sourcefo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=122
+ y=102
+ cx=1164
+ cy=54
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=302
+ y=59
+ cx=737
+ cy=620
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

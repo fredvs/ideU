@@ -1,5 +1,6 @@
 object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  onfocus = onfocus
   visible = False
   bounds_x = 302
   bounds_y = 59
@@ -284,6 +285,7 @@ object projectoptionsfo: tprojectoptionsfo
       anchors = [an_top, an_bottom]
       taborder = 1
       activepageindex = 2
+      onactivepagechanged = onfocus
       tab_frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
       tab_frame.localprops = [frl_framewidth, frl_hiddenedges, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive, frl_optionsskin]
       tab_frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive, frl1_captiondist]
@@ -1301,6 +1303,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 394
                 bounds_cy = 17
                 textflags = [tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'Syntaxdef files'
@@ -1485,6 +1490,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.options = [fdo_directory]
                 controller.historymaxcount = 0
                 controller.captionopen = 'Select unit directory'
@@ -1959,6 +1967,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.include = [fa_dir, fa_all]
                 controller.options = [fdo_directory]
                 controller.historymaxcount = 0
@@ -1994,6 +2005,9 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 21
               anchors = [an_left, an_top, an_right]
               textflags = [tf_noselect, tf_ellipseleft]
+              controller.panel = False
+              controller.compact = False
+              controller.showhidden = False
               controller.options = [fdo_directory]
               controller.captionopen = 'Select source base directory'
               controller.ongetfilename = expandfilename
@@ -2427,6 +2441,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 39
                 anchors = [an_left, an_top, an_right]
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.options = [fdo_params]
                 controller.historymaxcount = 0
                 reffontheight = 15
@@ -2512,6 +2529,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 210
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'gdb Scripts'
@@ -2566,6 +2586,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 221
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'gdb Scripts'
@@ -2621,6 +2644,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 39
                 anchors = [an_left, an_top, an_right]
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'gdb Scripts'
@@ -2675,6 +2701,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 211
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'gdb Scripts'
@@ -2729,6 +2758,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 221
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'gdb Scripts'
@@ -2786,6 +2818,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 311
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.options = [fdo_params]
                 controller.historymaxcount = 0
                 reffontheight = 15
@@ -2869,6 +2904,9 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_left, an_top, an_right]
               textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+              controller.panel = False
+              controller.compact = False
+              controller.showhidden = False
               controller.options = [fdo_params]
               controller.historymaxcount = 0
               reffontheight = 15
@@ -3273,6 +3311,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 71
           bounds_cx = 201
           bounds_cy = 39
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = []
           controller.historymaxcount = 0
           controller.ongetfilename = expandfilename
@@ -3347,6 +3388,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 207
           bounds_cy = 39
           onchange = updatedebugenabled
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_params]
           controller.historymaxcount = 0
           controller.ongetfilename = expandfilename
@@ -3387,6 +3431,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 15
           bounds_cx = 183
           bounds_cy = 39
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_quotesingle]
           controller.historymaxcount = 0
           controller.ongetfilename = expandfilename
@@ -3534,6 +3581,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 293
           bounds_cy = 39
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
           controller.captionopen = 'Select mainfile'
@@ -3577,6 +3627,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
           controller.captionopen = 'Select target file'
@@ -3619,6 +3672,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename]
           controller.historymaxcount = 0
           controller.captionopen = 'Select make command'
@@ -5332,6 +5388,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.options = [fdo_sysfilename, fdo_directory, fdo_file]
                 controller.historymaxcount = 0
                 controller.captionopen = 'Select unit directory'
@@ -6737,6 +6796,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_directory]
           controller.historymaxcount = 0
           controller.captionopen = 'Select make directory'
@@ -6980,6 +7042,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 172
           bounds_cy = 39
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
+          controller.panel = False
+          controller.compact = False
+          controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
           controller.captionopen = 'Select target file'
@@ -8408,6 +8473,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 360
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.ongetfilename = expandfilename
                 reffontheight = 15
               end
@@ -8464,6 +8532,9 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 725
               bounds_cy = 39
               anchors = [an_top]
+              controller.panel = False
+              controller.compact = False
+              controller.showhidden = False
               controller.ongetfilename = expandfilename
               reffontheight = 15
             end
@@ -8501,6 +8572,9 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 725
               bounds_cy = 39
               anchors = [an_top]
+              controller.panel = False
+              controller.compact = False
+              controller.showhidden = False
               controller.ongetfilename = expandfilename
               reffontheight = 15
             end
@@ -8654,6 +8728,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 reffontheight = 15
               end
             end
@@ -8814,6 +8891,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'Source'
@@ -8851,6 +8931,9 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+                controller.panel = False
+                controller.compact = False
+                controller.showhidden = False
                 controller.filterlist.data = (
                   (
                     'Form Files'
@@ -9225,6 +9308,9 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 35
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
+            controller.panel = False
+            controller.compact = False
+            controller.showhidden = False
             controller.include = [fa_xusr, fa_xgrp, fa_xoth]
             reffontheight = 15
           end
@@ -9399,6 +9485,9 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 30
             anchors = [an_left, an_top, an_right]
             ondataentered = settingsdataent
+            controller.panel = False
+            controller.compact = False
+            controller.showhidden = False
             controller.filterlist.data = (
               (
                 'Project Files'

@@ -80,6 +80,7 @@ uses
    but_ok: tbutton;
    procedure closeapp(const sender: TObject);
    procedure oncreatedev(const sender: TObject);
+   procedure onfocus(const sender: TObject);
  end;
 var
  confcompilerfo: tconfcompilerfo;
@@ -128,6 +129,11 @@ twineo2.enabled := false;
 twineo3.enabled := false;
 twineo4.enabled := false;
 {$endif}
+end;
+
+procedure tconfcompilerfo.onfocus(const sender: TObject);
+begin
+tabcloser:= false;
 end;
 
 end.

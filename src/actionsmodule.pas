@@ -5,7 +5,7 @@ unit actionsmodule;
 
 interface
 uses
- classes,mseclasses,mseact,mseactions,msebitmap,msestrings,msegui,commandorform,
+ classes,mseclasses,mseact,msetabs,mseactions,msebitmap,msestrings,msegui,commandorform,
  dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,
  msegraphutils,mseguiglob,msemenus,msesys, msesysutils,msesimplewidgets,
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
@@ -598,6 +598,7 @@ end;
 procedure tactionsmo.toggleformunitonexecute(const sender: TObject);
 begin
  mainfo.toggleformunit;
+ tabcloser:= false;
 end;
 
 

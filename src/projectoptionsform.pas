@@ -1085,6 +1085,7 @@ type
    procedure oncellevcomp(const sender: TObject; var info: celleventinfoty);
    procedure oncellevdeb(const sender: TObject; var info: celleventinfoty);
     
+   procedure onfocus(const sender: TObject);
   private
    procedure activegroupchanged;
  end;
@@ -3497,6 +3498,11 @@ begin
   //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
 end;
 
+end;
+
+procedure tprojectoptionsfo.onfocus(const sender: TObject);
+begin
+tabcloser:= false;
 end;
 
 
