@@ -102,8 +102,8 @@ begin
     for int1:= 0 to tabs.count - 1 do begin
      with tabs[int1] do begin
       tag:= int1 + 1;
-      caption:= ar1[int1].caption;
-      hint:= ar1[int1].hint;
+      caption:= ' ' + ar1[int1].caption + ' ';
+      hint:= ' ' + ar1[int1].hint  + ' ';
      end;
     end;
    finally
@@ -126,7 +126,7 @@ begin
        imagelist:= registeredcomponents.imagelist;
        imagelist.options := [bmo_masked, bmo_graymask];
        imagenr:= icon;
-       hint:= msestring(classtyp.classname);
+       hint:= ' ' + msestring(classtyp.classname)  + ' ';
        tagpo:= classtyp;
       end;
      end;

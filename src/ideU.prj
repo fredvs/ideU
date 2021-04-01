@@ -30,9 +30,9 @@ findinfiledialog=121
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -114,9 +114,12 @@ findinfiledialog=121
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=nozorderenable
+ value=nostaticgravity
  history=20
+  nostaticgravity
+  nozorderhandling
   nozorderenable
+  resiz
   flushgdi
   tbutton.crea
   oe_readonly
@@ -133,13 +136,10 @@ findinfiledialog=121
   stat(
   fstat(
   st_ctime_nsec
-  _STAT =
-  _STAT
-  _STAT_VER
  [findinfileadialogfo]
  stackedunder=
- x=291
- y=168
+ x=601
+ y=213
  cx=346
  cy=308
 finddialog=8
@@ -278,7 +278,7 @@ options=114
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=0
+ index=4
  [projectoptionsfo.filefiltergrid]
  propcolwidthref=734
  width0=112
@@ -290,11 +290,11 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=1
  [projectoptionsfo]
  stackedunder=
- x=528
- y=40
+ x=255
+ y=76
  cx=735
  cy=608
 settaborder=15
@@ -921,19 +921,25 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
  COMPONENTPALETTEFO
+ CONFIDEUFO
+ FORMDESIGNERFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=6
  TACTIONSMO
  TCOMPONENTPALETTEFO
+ TCONFIDEUFO
+ TFORMDESIGNERFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1590,66 +1596,93 @@ findhistory=20
  .caption
  '   
 findoptions=1
-editpos=5
- 0,0
+editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,22
+ 0,8
+ 0,156
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+sourcefiles=10
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/componentpaletteform.pas
-relpaths=5
+ ${PROJECTDIR}/formdesigner.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/msegui.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
+relpaths=10
  main.pas
  ideU.pas
  actionsmodule.pas
  sourceform.pas
  componentpaletteform.pas
-ismoduletexts=5
+ formdesigner.pas
+ main.pas
+ confideu.pas
+ msegui.pas
+ mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
+ismoduletexts=10
  0
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/formdesigner.mfm
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=5
- 0
- 4
- 1
- 2
- 3
 firsttab=0
-index=1
+index=4
 [layout]
-windowlayout=609
+windowlayout=641
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1663,9 +1696,9 @@ windowlayout=609
  ny=0
  ncx=0
  ncy=0
- x=36
- y=54
- cx=1270
+ x=76
+ y=80
+ cx=1224
  cy=621
  rcx=0
  rcy=0
@@ -1689,7 +1722,7 @@ windowlayout=609
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1783,7 +1816,7 @@ windowlayout=609
  x=0
  y=0
  cx=205
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1793,8 +1826,8 @@ windowlayout=609
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=10
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1970,7 +2003,7 @@ windowlayout=609
  ncy=0
  x=0
  y=507
- cx=1258
+ cx=1212
  cy=93
  rcx=0
  rcy=0
@@ -2103,8 +2136,8 @@ windowlayout=609
  ncy=0
  x=0
  y=0
- cx=1258
- cy=50
+ cx=1212
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2115,12 +2148,12 @@ windowlayout=609
  mdistate=0
  nx=0
  ny=0
- ncx=1243
- ncy=47
+ ncx=1197
+ ncy=56
  x=0
  y=0
- cx=1258
- cy=45
+ cx=1212
+ cy=55
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2132,26 +2165,26 @@ windowlayout=609
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/componentpaletteform.pas
  history=20
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/commandorform.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
-  /home/fred/ideu/src/msefiledialog.pas
-  /home/fred/ideu/src/confcompiler.mfm
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/confideu.mfm
-  /home/fred/mseide-msegui/apps/ide/componentpaletteform.pas
-  /home/fred/mseide-msegui/apps/ide/actionsmodule.pas
-  /home/fred/ideu/src/componentpaletteform.pas
-  /home/fred/componentpaletteform.pas
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/mseide-msegui/apps/ide/debuggerform.pas
-  /home/fred/ideu/src/messageform.pas
-  /home/fred/ideu/src/projecttreeform.pas
-  /home/fred/getgraphicdriver/ggd.pas
-  /home/fred/ideu/src/sak_mse.pas
-  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/formdesigner.pas
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/atest/test.prj
+  /home/fred/ideu/src/ideU.prj
+  /home/fred/mseide-msegui/apps/ide/mseide.prj
+  /home/fred/uos/examples/simpleplayer.prj
+  /home/fred/ideu_ok/src/ideU.prj
+  /home/fred/eschecs_mse/eschecs.prj
+  /home/fred/mselang-master/src/mselang.prj
+  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
+  /home/fred/strumpract/src/strumpract.prj
+  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
+  /home/fred/xtop/src/ptop.prj
+  /home/fred/xtop/src/jtop.prj
+  /home/fred/idegraeme/mseide.prj
+  /home/fred/fptop/src/jtop.prj
+  /home/fred/fptop/src/ptop.prj
+  /home/fred/ptop_fred/ptop.prj
+  /home/fred/eschecs_mse_argh/eschecs.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2168,19 +2201,13 @@ windowlayout=609
  ncy=0
  x=208
  y=0
- cx=1050
- cy=451
+ cx=1004
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  4
-  1
-  2
-  3
  firsttab=0
- index=1
+ index=4
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2216,9 +2243,9 @@ windowlayout=609
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1258
- cy=451
+ y=54
+ cx=1212
+ cy=450
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2243,7 +2270,7 @@ windowlayout=609
  [_mse_componentpalettefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2254,6 +2281,44 @@ windowlayout=609
  y=289
  cx=748
  cy=69
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_formdesignerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_confideufo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=68
+ y=277
+ cx=297
+ cy=300
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=236
+ y=48
+ cx=639
+ cy=672
  rcx=0
  rcy=0
  wsize=0

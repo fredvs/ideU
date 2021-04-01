@@ -932,7 +932,7 @@ begin
   else
     nozorderhandling := False;
 
-
+ // nostaticgravity:= true;
 
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
 
