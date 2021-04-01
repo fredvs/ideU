@@ -2858,7 +2858,7 @@ begin
                             (ws1_designactive in fwidgetstate1) then begin
   with flayoutinfo do begin
     
-    if (info.eventkind = ek_buttonrelease) and (tabs.count > 1) then
+    if (tabcloser) and  (info.eventkind = ek_buttonrelease) and (tabs.count > 1) then
       begin
     
        w1 := 0;

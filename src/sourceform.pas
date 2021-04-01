@@ -109,6 +109,8 @@ type
     procedure insuidexec(const Sender: TObject);
     procedure stephintev(const Sender: TObject; var info: hintinfoty);
     procedure onpageadd(const Sender: TObject; const awidget: twidget);
+   procedure ondefocus(const sender: TObject);
+   procedure onfocus(const sender: TObject);
   private
     fasking: Boolean;
     fgdbpage: tsourcepage;
@@ -186,6 +188,7 @@ type
 
 var
   sourcefo: tsourcefo;
+  tabcloser: boolean = false;
 
 function checkerrormessage(const Text: msestring; out alevel: errorlevelty; out afilename: filenamety; out col, row: integer): Boolean;
 function locateerrormessage(const Text: msestring; var apage: tsourcepage; minlevel: errorlevelty = el_all): Boolean;
@@ -1175,6 +1178,7 @@ thedir: msestring;
 ratio : double;
 
 begin
+tabcloser := true;
   updatecaption;
   ratio := confideufo.fontsize.value / 12;
 
@@ -1698,6 +1702,16 @@ end;
 
 procedure tsourcefo.onpageadd(const Sender: TObject; const awidget: twidget);
 begin
+end;
+
+procedure tsourcefo.ondefocus(const sender: TObject);
+begin
+tabcloser := false;
+end;
+
+procedure tsourcefo.onfocus(const sender: TObject);
+begin
+tabcloser := true;
 end;
 
 end.

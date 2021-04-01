@@ -34,6 +34,7 @@ type
    procedure componentpalettebuttonchanged(const sender: tobject;
                                              const button: tcustomtoolbutton);
    procedure foonreadstat(const sender: TObject; const reader: tstatreader);
+   procedure onfocus(const sender: TObject);
   public
    procedure updatecomponentpalette(init: boolean);
    procedure resetselected;
@@ -45,6 +46,7 @@ var
 implementation
 uses
  componentpaletteform_mfm,main,projectoptionsform,msedesignintf,mseshapes,
+ sourceform,
  mseactions,classes,mclasses,mseact,componentstore;
 
 procedure tcomponentpalettefo.componentpalettedragdrop(const sender: TObject;
@@ -151,6 +153,11 @@ end;
 procedure tcomponentpalettefo.resetselected;
 begin
  componentpalette.buttons.resetradioitems(0);
+end;
+
+procedure tcomponentpalettefo.onfocus(const sender: TObject);
+begin
+tabcloser := false;
 end;
 
 end.

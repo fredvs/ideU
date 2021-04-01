@@ -69,6 +69,7 @@ type
    procedure listonkeydown(const sender: twidget; var info: keyeventinfoty);
    
    procedure oncreated(const sender: TObject);
+   procedure ondefocus(const sender: TObject);
   private
    factiverow: integer;
    flasthint: gridcoordty;
@@ -2143,6 +2144,11 @@ source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
 source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
 source_editor.frame.sbvert.colorglyph := color2;
 
+end;
+
+procedure tsourcepage.ondefocus(const sender: TObject);
+begin
+tabcloser := false;
 end;
 
 end.
