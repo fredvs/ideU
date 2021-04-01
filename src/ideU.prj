@@ -921,18 +921,15 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
- COMPONENTPALETTEFO
+modulenames=2
+ ACTIONSMO
  SOURCEFO
- SOURCEPAGE
-moduletypes=3
- TCOMPONENTPALETTEFO
+moduletypes=2
+ TACTIONSMO
  TSOURCEFO
- TSOURCEPAGE
-modulefiles=3
- /home/fred/ideu/src/componentpaletteform.mfm
+modulefiles=2
+ /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1587,59 +1584,46 @@ findhistory=20
  oe_readonly
  '  
 findoptions=1
-editpos=4
+editpos=3
  0,0
- 0,1177
- 0,2141
- 30,149
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/componentpaletteform.pas
-relpaths=4
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=3
  main.pas
  sourceform.pas
- sourcepage.pas
- componentpaletteform.pas
-ismoduletexts=4
+ actionsmodule.pas
+ismoduletexts=3
  0
  0
  0
- 0
-modules=5
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/componentpaletteform.mfm
-moduleoptions=5
+moduleoptions=3
  0
  0
  0
- 0
- 0
-visiblemodules=5
- 0
+visiblemodules=3
  0
  -1
  -1
+nomenumodules=3
  -1
-nomenumodules=5
- -1
- -1
- 0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=652
+windowlayout=584
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1784,7 +1768,7 @@ windowlayout=652
  sortdescend1=0
  sorted=0
  col=0
- row=16
+ row=15
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2063,7 +2047,7 @@ windowlayout=652
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2078,9 +2062,9 @@ windowlayout=652
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [componentpalettefo.componentpages]
- activetab=8
+ activetab=6
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -2105,12 +2089,12 @@ windowlayout=652
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=54
+ ncx=1197
+ ncy=53
  x=0
  y=0
  cx=1212
- cy=53
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2120,8 +2104,9 @@ windowlayout=652
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/componentpaletteform.pas
- history=50
+ value=/home/fred/ideu/src/main.pas
+ history=20
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/componentpaletteform.pas
   /home/fred/ideu/src/msetabs.pas
   /home/fred/mseide-msegui/apps/ide/main.pas
@@ -2141,37 +2126,6 @@ windowlayout=652
   /home/fred/ideu/src/sak_mse.pas
   /home/fred/ideu/src/plugmanager.pas
   /home/fred/aunique/project1.pas
-  /home/fred/strumpract/src/uos.pas
-  /home/fred/ideu/src/msegui.pas
-  /home/fred/strumpract/src/imagedancer.pas
-  /home/fred/Downloads/msegui-studies-master/imageviewer/msefiledialogx.pas
-  /home/fred/msefiledialogx/src/msefiledialogx.pas
-  /home/fred/msefiledialogx.pas
-  /home/fred/filedialogx/msefiledialogx.pas
-  /home/fred/strumpract/src/msegui.pas
-  /home/fred/strumpract/src/win_mixer.pas
-  /home/fred/ideu/src/msegraphics.pas
-  /home/fred/win_mixer/src/win_mixer_test.pas
-  /home/fred/win_mixer/src/win_mixer.pas
-  /home/fred/strumpract/src/win_mixer_test.pas
-  /home/fred/win_mixer/src/alsa_mixer.pas
-  /home/fred/sound_win/AudioEndpoint.pas
-  /home/fred/sound_win/win_mixer.pas
-  /home/fred/alsa_mixer/src/alsa_mixer.pas
-  /home/fred/strumpract/src/alsa_mixer.pas
-  /home/fred/strumpract/src/alsa_mixer_test.pas
-  /home/fred/strumpract/src/uos_portaudio.pas
-  /home/fred/alsa_sound/src/alsa_sound.pas
-  /home/fred/Downloads/fpalsa-1.0.27.2.fp0/src/mixer.inc
-  /home/fred/strumpract/src/msex11gdi.pas
-  /home/fred/WavvieW/src/msex11gdi.pas
-  /home/fred/WavvieW/src/mseguiintf.pas
-  /home/fred/alsa_mixer/src/volumecontrol.c
-  /home/fred/alsa_mixer/src/mixer.inc
-  /home/fred/msecustcombo/msedispwidgets.pas
-  /home/fred/msecustcombo/mselistbrowser.pas
-  /home/fred/WavvieW_14 (copie 1)/src/uos_msesigaudio.pas
-  /home/fred/uos/examples/simpleplayer_fpGUI.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2194,7 +2148,7 @@ windowlayout=652
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2203,7 +2157,7 @@ windowlayout=652
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2238,7 +2192,7 @@ windowlayout=652
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2254,44 +2208,6 @@ windowlayout=652
  wsize=0
  active=0
  visible=0
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_componentpalettefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=441
- y=217
- cx=652
- cy=301
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_componentpalettefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=131
- y=289
- cx=748
- cy=69
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
