@@ -1085,6 +1085,9 @@ end;
 procedure tsourcepage.ontimerhint(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
+  
+if tabcloser then begin
+ 
 if sourcefo.tabdeleted = false then
 begin
   if (edit.editpos.col > -1) and (edit.editpos.row > -1) then
@@ -1099,13 +1102,16 @@ begin
   end;
 end else sourcefo.tabdeleted := false;
 end;
+end;
 
 // fred
 procedure tsourcepage.ontimerhide(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
+if tabcloser then begin
   debuggerfo.statdisp.value:= '';
  sourcefo.hidesourcehint;
+ end;
 end;
 
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
