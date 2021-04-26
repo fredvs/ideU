@@ -5365,6 +5365,7 @@ begin
   tpopupmenu.additems(amenu,self,mouseinfo,fpopupmenu);
   amenu.menu.caption:= fpopupmenu.menu.caption; //for tassistivehandler
  end;
+
 end;
 
 procedure tactionwidget.dopopup(var amenu: tpopupmenu;

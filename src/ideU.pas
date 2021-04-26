@@ -22,6 +22,7 @@ uses
   confdebugger,
   mselibc,
   dialogfiles,
+  findmessage,
   mseskindesign,
   {
   gettext,
@@ -114,6 +115,9 @@ begin
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
   application.createform(tdialogfilesfo, dialogfilesfo);
+  application.createform(tfindmessagefo, findmessagefo);
+  //findmessagefo.close;
+  
  // application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;

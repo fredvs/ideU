@@ -56,7 +56,7 @@ interface
 uses
   msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, msemenuwidgets, msegui,
   msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, msetimer, msetabs,
-   mseassistiveserver,mseassistiveclient, msegrids, msestrings, msesimplewidgets, msefiledialog,
+   mseassistiveserver,mseassistiveclient, msegrids, msestrings, msesimplewidgets, msefiledialog,msefiledialogx,
   msedataedits, mseedit, msekeyboard, msefileutils, msestringcontainer,msedispwidgets,
   mseificomp, mseificompglob, mseifiglob, msestatfile, msestream, SysUtils, mseact, msesplitter,
   msegraphedits, msescrollbar, msewidgetgrid, msetoolbar,msebitmap,mseshapes, mseprocess,
@@ -121,6 +121,7 @@ type
   TheTypCell : integer;
 
   isfilelist : boolean;
+  isfilelistx : boolean;
   isgridsource : boolean;
   isblock : boolean;
 
@@ -751,6 +752,12 @@ Sender := iaSender.getinstance;
     Result := 'file list, ' + utf8decode(tfilelistview(Sender).name) + ' , ' + tfilelistview(Sender).selectednames[0]
  else Result := 'file list, ' + utf8decode(tfilelistview(Sender).name) ;
   end else
+ if (Sender is tfilelistviewx) then
+ begin
+ if assigned(tfilelistviewx(Sender).selectednames) then
+    Result := 'file list, ' + utf8decode(tfilelistviewx(Sender).name) + ' , ' + tfilelistviewx(Sender).selectednames[0]
+ else Result := 'file list, ' + utf8decode(tfilelistviewx(Sender).name) ;
+  end else  
    if (Sender is thistoryedit) then
   begin
    if trim(thistoryedit(Sender).hint) = '' then
@@ -1654,8 +1661,20 @@ oldlang := voice_language;
  if trim(tfilelistview(TheSender.getinstance).focuseditem.caption) <> '' then
    TheCell := 'directory , ' +  tfilelistview(TheSender.getinstance).focuseditem.caption;
  end;
+ 
+ if 	(isfilelistx = true) and (assigned(Thesender)) then
+	begin
+ if assigned(tfilelistviewx(TheSender.getinstance).selectednames) then
+ TheCell := tfilelistviewx(TheSender.getinstance).selectednames[0]
+ else
+ if trim(tfilelistviewx(TheSender.getinstance).focuseditem.caption) <> '' then
+   TheCell := 'directory , ' +  tfilelistviewx(TheSender.getinstance).focuseditem.caption;
+ end;
+  
      espeak_Key(thecell);
+   
   end;
+  
  end;
 
 procedure TSAK.docellevent(const sender: iassistiveclientgrid;
@@ -1679,7 +1698,8 @@ if (assigned(Sender)) and
     			 (TheExtraChar = 'Right') or (TheExtraChar = 'Left') then
  lrkeyused := true;
 
- isfilelist := false;
+  isfilelist := false;
+  isfilelistx := false;
    thetimer.enabled := false;
   thetimer.ontimer := @ontimercell;
   thetimer.interval := 600000;
@@ -1692,6 +1712,13 @@ if (assigned(Sender)) and
  	begin
  	TheSender := sender;
  	isfilelist := true;
+ 	thetimer.enabled := true;
+ 	end
+ else
+  if  (Sender.getinstance is tfilelistviewx) then
+ 	begin
+ 	TheSender := sender;
+ 	isfilelistx := true;
  	thetimer.enabled := true;
  	end
  else

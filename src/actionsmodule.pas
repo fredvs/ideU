@@ -351,7 +351,7 @@ end;
 var
  actionsmo: tactionsmo;
  iscompiling : boolean = false;
-
+ 
 procedure configureide;
 
 implementation

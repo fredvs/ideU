@@ -233,8 +233,10 @@ object messagefo: tmessagefo
     00E0FFFFFFFF070000C0FFFFFFFF030000000000000000000000000000000000
     00000000000000000000000000000000
   }
+  oncreated = oncreated
   moduleclassname = 'tdockform'
   object messages: tstringgrid
+    color = -2147483645
     frame.sbvert.face.fade_pos.count = 2
     frame.sbvert.face.fade_pos.items = (
       0
@@ -382,18 +384,27 @@ object messagefo: tmessagefo
     font.options = [foo_antialiased]
     font.xscale = 1
     font.localprops = [flp_colorbackground, flp_xscale]
+    optionsgrid = [og_focuscellonenter, og_colchangeontabkey, og_wrapcol, og_mousescrollcol]
     datacols.count = 1
     datacols.linewidth = 0
+    datacols.color = 16776946
+    datacols.colorselect = 16768698
+    datacols.colorfocused = 16771747
+    datacols.optionsedit1 = [oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
     datacols.items = <    
       item
+        color = 16776946
         linecolorfix = -1610612733
+        colorselect = 16768698
+        colorfocused = 16771747
         width = 3000
         options = [co_readonly, co_drawfocus, co_leftbuttonfocusonly, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_cancopy, co_mousescrollrow]
+        optionsedit1 = [oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
         optionsedit = []
         valuefalse = '0'
         valuetrue = '1'
       end>
-    rowcountmax = 5000
+    rowcountmax = 10000
     rowcolors.count = 3
     rowcolors.items = (
       -1610612712
@@ -402,16 +413,45 @@ object messagefo: tmessagefo
     )
     datarowlinewidth = 0
     datarowheight = 17
+    onrowcountchanged = onrowcountchanged
     oncellevent = messagesoncellevent
     reffontheight = 15
   end
   object tpopupmenu1: tpopupmenu
-    menu.submenu.count = 1
+    frametemplate = mainfo.tframecomp2
+    menu.submenu.count = 5
     menu.submenu.items = <    
       item
-        caption = 'Copy to clipboard'
-        state = [as_localcaption, as_localonexecute]
+        caption = ' Copy All to clipboard '
+        state = [as_localcaption, as_localcolor, as_localonexecute]
+        color = 16776951
+        coloractive = 16771025
         onexecute = copyexe
+      end    
+      item
+        caption = ' Copy Selected to clipboard '
+        hint = 'Use Shift+Click to select'
+        state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
+        color = 16776951
+        coloractive = 16771025
+        onexecute = copyselected
+      end    
+      item
+        caption = ' Copy Line to clipboard '
+        state = [as_localcaption, as_localcolor, as_localonexecute]
+        color = 16776951
+        coloractive = 16771025
+        onexecute = copyline
+      end    
+      item
+        options = [mao_separator, mao_shortcutcaption]
+      end    
+      item
+        caption = ' Find in messages '
+        state = [as_localcaption, as_localcolor, as_localonexecute]
+        color = 16776951
+        coloractive = 16771025
+        onexecute = findmessage
       end>
     left = 88
     top = 72
