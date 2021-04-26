@@ -38,6 +38,7 @@ object findmessagefo: tfindmessagefo
     00000000
   }
   windowopacity = -Inf
+  onclose = onclosefind
   moduleclassname = 'tmseform'
   object tbutton3: tbutton
     Tag = 1
@@ -48,7 +49,7 @@ object findmessagefo: tfindmessagefo
     bounds_cx = 66
     bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = 'Close'
+    caption = 'E&xit'
     onexecute = onclose
   end
   object tbutton2: tbutton
@@ -60,7 +61,7 @@ object findmessagefo: tfindmessagefo
     bounds_cx = 94
     bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = 'Find Next'
+    caption = 'Find &Next'
     onexecute = onfindnext
   end
   object findtext: thistoryedit
@@ -112,8 +113,8 @@ object findmessagefo: tfindmessagefo
       2
     )
     taborder = 3
-    bounds_x = 124
-    bounds_y = 42
+    bounds_x = 55
+    bounds_y = 41
     bounds_cx = 102
     bounds_cy = 17
     statfile = mainfo.projectstatfile
@@ -128,7 +129,7 @@ object findmessagefo: tfindmessagefo
     bounds_cx = 68
     bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localhint, as_localonexecute]
-    caption = 'Reset'
+    caption = '&Reset'
     onexecute = onreset
   end
   object tbutton5: tbutton
@@ -141,7 +142,25 @@ object findmessagefo: tfindmessagefo
     bounds_cx = 94
     bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
-    caption = 'Find All'
+    caption = 'Find A&ll'
     onexecute = onfindall
+  end
+  object copytoclip: tbooleanedit
+    frame.caption = '&Copy to clipboard'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
+    frame.outerframe = (
+      0
+      2
+      109
+      2
+    )
+    taborder = 6
+    bounds_x = 188
+    bounds_y = 41
+    bounds_cx = 122
+    bounds_cy = 17
+    statfile = mainfo.projectstatfile
   end
 end

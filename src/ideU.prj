@@ -1616,10 +1616,10 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,78
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 54,205
+ 0,195
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1755,13 +1755,13 @@ order=18
  10
  11
  12
+ 14
  15
  13
- 14
  16
  17
 firsttab=10
-index=16
+index=15
 [layout]
 windowlayout=742
  [mainfo.basedock]
@@ -1993,10 +1993,10 @@ windowlayout=742
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=457
- width0=189
+ propcolwidthref=472
+ width0=195
  sortdescend0=0
- width1=262
+ width1=271
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2250,7 +2250,7 @@ windowlayout=742
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/messageform.pas
+ value=/home/fred/ideu/src/findmessage.pas
  history=20
   /home/fred/ideu/src/messageform.pas
   /home/fred/ideu/src/findmessage.pas
@@ -2307,13 +2307,13 @@ windowlayout=742
   10
   11
   12
+  14
   15
   13
-  14
   16
   17
  firsttab=10
- index=16
+ index=15
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2395,7 +2395,7 @@ windowlayout=742
  [_mse_targetconsolefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_findmessagefo_mse_
+ stackedunder=_mse_finddialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2414,7 +2414,7 @@ windowlayout=742
  [_mse_findmessagefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_finddialogfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2452,7 +2452,7 @@ windowlayout=742
  [_mse_filedialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_breakpointsfo_mse_
+ stackedunder=_mse_messagefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2471,7 +2471,7 @@ windowlayout=742
  [_mse_messagefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_breakpointsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2490,7 +2490,7 @@ windowlayout=742
  [_mse_breakpointsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_findmessagefo_mse_
  parent=
  mdistate=3
  nx=0
