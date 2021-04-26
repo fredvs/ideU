@@ -424,23 +424,23 @@ object messagefo: tmessagefo
       item
         caption = ' Copy All to clipboard '
         state = [as_localcaption, as_localcolor, as_localonexecute]
-        color = 16776951
-        coloractive = 16771025
+        color = 14606046
+        coloractive = 15263976
         onexecute = copyexe
       end    
       item
         caption = ' Copy Selected to clipboard '
         hint = 'Use Shift+Click to select'
         state = [as_localcaption, as_localcolor, as_localhint, as_localonexecute]
-        color = 16776951
-        coloractive = 16771025
+        color = 14606046
+        coloractive = 15263976
         onexecute = copyselected
       end    
       item
         caption = ' Copy Line to clipboard '
         state = [as_localcaption, as_localcolor, as_localonexecute]
-        color = 16776951
-        coloractive = 16771025
+        color = 14606046
+        coloractive = 15263976
         onexecute = copyline
       end    
       item
@@ -449,8 +449,8 @@ object messagefo: tmessagefo
       item
         caption = ' Find in messages '
         state = [as_localcaption, as_localcolor, as_localonexecute]
-        color = 16776951
-        coloractive = 16771025
+        color = 14606046
+        coloractive = 15263976
         onexecute = findmessage
       end>
     left = 88
