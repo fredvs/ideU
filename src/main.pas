@@ -41,7 +41,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.4.4';
+  versiontext = '2.4.6';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -4162,7 +4162,7 @@ begin
      c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2020' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2021' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
     aboutfo.about_text.height := 15 * confideufo.fontsize.value;
@@ -4181,7 +4181,7 @@ begin
   aboutfo.about_text.Value :=
      c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
-    c_linefeed + 'Copyright 1999-2020' + c_linefeed + c_linefeed +
+    c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
    aboutfo.about_text.height := 13 * confideufo.fontsize.value;
    aboutfo.height := aboutfo.about_text.height + 16;
@@ -4199,7 +4199,7 @@ begin
     platformtext + c_linefeed + c_linefeed +
     'Based on MSEide' + c_linefeed +
     'by Martin Schreiber' + c_linefeed + c_linefeed +
-    'Copyright 1999-2020' + c_linefeed + c_linefeed +
+    'Copyright 1999-2021' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
 
    aboutfo.about_text.height := 15 * confideufo.fontsize.value;
