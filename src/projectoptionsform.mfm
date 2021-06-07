@@ -1281,7 +1281,7 @@ object projectoptionsfo: tprojectoptionsfo
                 end>
               datarowheight = 17
               reffontheight = 15
-              object syntaxdeffile: tfilenameedit
+              object syntaxdeffile: tfilenameeditx
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
                 frame.colorclient = -2147483645
@@ -1303,8 +1303,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 394
                 bounds_cy = 17
                 textflags = [tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -1466,7 +1473,7 @@ object projectoptionsfo: tprojectoptionsfo
                 end>
               datarowheight = 17
               reffontheight = 15
-              object codetemplatedirs: tfilenameedit
+              object codetemplatedirs: tfilenameeditx
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -1490,8 +1497,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.options = [fdo_directory]
                 controller.historymaxcount = 0
@@ -1943,7 +1957,7 @@ object projectoptionsfo: tprojectoptionsfo
                 end>
               datarowheight = 17
               reffontheight = 15
-              object sourcedirs: tfilenameedit
+              object sourcedirs: tfilenameeditx
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -1967,8 +1981,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.include = [fa_dir, fa_all]
                 controller.options = [fdo_directory]
@@ -1978,7 +1999,7 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
             end
-            object sourcebase: tfilenameedit
+            object sourcebase: tfilenameeditx
               frame.caption = 'Object &Base Directory (empty = Make Directory)'
               frame.captiontextflags = [tf_ycentered]
               frame.captionpos = cp_right
@@ -2005,8 +2026,15 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 21
               anchors = [an_left, an_top, an_right]
               textflags = [tf_noselect, tf_ellipseleft]
-              controller.panel = False
+              controller.fontheight = 0
+              controller.fontname = 'stf_default'
+              controller.fontcolor = -1610612734
+              controller.backcolor = -2147483647
+              controller.nopanel = False
               controller.compact = False
+              controller.showoptions = False
+              controller.hidehistory = False
+              controller.hideicons = False
               controller.showhidden = False
               controller.options = [fdo_directory]
               controller.captionopen = 'Select source base directory'
@@ -2406,7 +2434,7 @@ object projectoptionsfo: tprojectoptionsfo
               place_mindist = 2
               place_maxdist = 2
               linktop = serverla
-              object gdbservercommandattach: tfilenameedit
+              object gdbservercommandattach: tfilenameeditx
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command attach target'
@@ -2441,8 +2469,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 39
                 anchors = [an_left, an_top, an_right]
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.options = [fdo_params]
                 controller.historymaxcount = 0
@@ -2497,7 +2532,7 @@ object projectoptionsfo: tprojectoptionsfo
               align_glue = wam_start
               linkbottom = tlayouter5
               dist_top = 3
-              object beforeconnect: tfilenameedit
+              object beforeconnect: tfilenameeditx
                 frame.caption = 'Before connect gdb script'
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2529,8 +2564,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 210
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -2553,7 +2595,7 @@ object projectoptionsfo: tprojectoptionsfo
                 linkleft = beforeconnect
                 linkright = beforeload
               end
-              object beforeload: tfilenameedit
+              object beforeload: tfilenameeditx
                 frame.caption = 'Before load gdb script'
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2586,8 +2628,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 221
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -2610,7 +2659,7 @@ object projectoptionsfo: tprojectoptionsfo
                 linkleft = beforeload
                 linkright = beforerun
               end
-              object beforerun: tfilenameedit
+              object beforerun: tfilenameeditx
                 frame.caption = 'Before run gdb script'
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2644,8 +2693,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 39
                 anchors = [an_left, an_top, an_right]
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -2669,7 +2725,7 @@ object projectoptionsfo: tprojectoptionsfo
               optionsscale = [osc_expandy, osc_shrinky]
               align_glue = wam_start
               dist_top = 3
-              object afterconnect: tfilenameedit
+              object afterconnect: tfilenameeditx
                 frame.caption = 'After connect gdb script'
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2701,8 +2757,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 211
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -2725,7 +2788,7 @@ object projectoptionsfo: tprojectoptionsfo
                 linkleft = afterconnect
                 linkright = afterload
               end
-              object afterload: tfilenameedit
+              object afterload: tfilenameeditx
                 frame.caption = 'After load gdb script'
                 frame.captiontextflags = [tf_bottom]
                 frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -2758,8 +2821,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 221
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -2784,7 +2854,7 @@ object projectoptionsfo: tprojectoptionsfo
               place_mindist = 2
               place_maxdist = 2
               linktop = uploadcommand
-              object gdbservercommand: tfilenameedit
+              object gdbservercommand: tfilenameeditx
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 frame.options = [cfo_fixtop]
                 frame.caption = 'Start gdb server command run target'
@@ -2818,8 +2888,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 311
                 bounds_cy = 39
                 textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.options = [fdo_params]
                 controller.historymaxcount = 0
@@ -2869,7 +2946,7 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
               end
             end
-            object uploadcommand: tfilenameedit
+            object uploadcommand: tfilenameeditx
               optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
               frame.options = [cfo_fixtop]
               frame.caption = 'Download command'
@@ -2904,8 +2981,15 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cy = 39
               anchors = [an_left, an_top, an_right]
               textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-              controller.panel = False
+              controller.fontheight = 0
+              controller.fontname = 'stf_default'
+              controller.fontcolor = -1610612734
+              controller.backcolor = -2147483647
+              controller.nopanel = False
               controller.compact = False
+              controller.showoptions = False
+              controller.hidehistory = False
+              controller.hideicons = False
               controller.showhidden = False
               controller.options = [fdo_params]
               controller.historymaxcount = 0
@@ -3276,7 +3360,7 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 17
           end
         end
-        object debugtarget: tfilenameedit
+        object debugtarget: tfilenameeditx
           color = -2147483645
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = 'Debug &target'
@@ -3311,8 +3395,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 71
           bounds_cx = 201
           bounds_cy = 39
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = []
           controller.historymaxcount = 0
@@ -3354,7 +3445,7 @@ object projectoptionsfo: tprojectoptionsfo
           onsetvalue = setxtermcommandexe
           reffontheight = 15
         end
-        object runcommand: tfilenameedit
+        object runcommand: tfilenameeditx
           color = -2147483645
           frame.options = [cfo_fixtop, cfo_autowidth]
           frame.caption = '&Run command'
@@ -3388,15 +3479,22 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 207
           bounds_cy = 39
           onchange = updatedebugenabled
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_params]
           controller.historymaxcount = 0
           controller.ongetfilename = expandfilename
           reffontheight = 15
         end
-        object debugcommand: tfilenameedit
+        object debugcommand: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.options = [cfo_fixtop]
@@ -3431,8 +3529,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 15
           bounds_cx = 183
           bounds_cy = 39
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_quotesingle]
           controller.historymaxcount = 0
@@ -3547,7 +3652,7 @@ object projectoptionsfo: tprojectoptionsfo
           value = 0
           reffontheight = 15
         end
-        object mainfile: tfilenameedit
+        object mainfile: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = '&Mainfile'
@@ -3581,8 +3686,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 293
           bounds_cy = 39
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
@@ -3590,7 +3702,7 @@ object projectoptionsfo: tprojectoptionsfo
           controller.ongetfilename = expandfilename
           reffontheight = 15
         end
-        object targetfile: tfilenameedit
+        object targetfile: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = '&Targetfile name'
@@ -3627,8 +3739,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
@@ -3636,7 +3755,7 @@ object projectoptionsfo: tprojectoptionsfo
           controller.ongetfilename = expandfilename
           reffontheight = 15
         end
-        object makecommand: tfilenameedit
+        object makecommand: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Default &Compiler'
@@ -3672,8 +3791,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_left, an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename]
           controller.historymaxcount = 0
@@ -5364,7 +5490,7 @@ object projectoptionsfo: tprojectoptionsfo
                 visible = False
                 valuedefault = True
               end
-              object unitdirs: tfilenameedit
+              object unitdirs: tfilenameeditx
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -5388,8 +5514,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.options = [fdo_sysfilename, fdo_directory, fdo_file]
                 controller.historymaxcount = 0
@@ -6760,7 +6893,7 @@ object projectoptionsfo: tprojectoptionsfo
           anchors = [an_top, an_right]
           reffontheight = 15
         end
-        object makedir: tfilenameedit
+        object makedir: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Make &Directory'
@@ -6796,8 +6929,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cy = 39
           anchors = [an_top, an_right]
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_directory]
           controller.historymaxcount = 0
@@ -7006,7 +7146,7 @@ object projectoptionsfo: tprojectoptionsfo
           onsetvalue = onshowpurpose
           value = True
         end
-        object messageoutputfile: tfilenameedit
+        object messageoutputfile: tfilenameeditx
           optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
           color = -2147483645
           frame.caption = 'Message &output file'
@@ -7042,8 +7182,15 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_cx = 172
           bounds_cy = 39
           textflags = [tf_ycentered, tf_noselect, tf_ellipseleft]
-          controller.panel = False
+          controller.fontheight = 0
+          controller.fontname = 'stf_default'
+          controller.fontcolor = -1610612734
+          controller.backcolor = -2147483647
+          controller.nopanel = False
           controller.compact = False
+          controller.showoptions = False
+          controller.hidehistory = False
+          controller.hideicons = False
           controller.showhidden = False
           controller.options = [fdo_sysfilename, fdo_link]
           controller.historymaxcount = 0
@@ -8451,7 +8598,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
                 visible = False
               end
-              object newprojectfiles: tfilenameedit
+              object newprojectfiles: tfilenameeditx
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
                 frame.colorclient = -2147483645
@@ -8473,8 +8620,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cx = 360
                 bounds_cy = 17
                 optionsedit1 = [oe1_savevalue]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.ongetfilename = expandfilename
                 reffontheight = 15
@@ -8498,7 +8652,7 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
             end
-            object scriptbeforecopy: tfilenameedit
+            object scriptbeforecopy: tfilenameeditx
               optionsskin = [osk_framebuttononly]
               frame.caption = 'Script before copy'
               frame.captiontextflags = [tf_bottom]
@@ -8532,13 +8686,20 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 725
               bounds_cy = 39
               anchors = [an_top]
-              controller.panel = False
+              controller.fontheight = 0
+              controller.fontname = 'stf_default'
+              controller.fontcolor = -1610612734
+              controller.backcolor = -2147483647
+              controller.nopanel = False
               controller.compact = False
+              controller.showoptions = False
+              controller.hidehistory = False
+              controller.hideicons = False
               controller.showhidden = False
               controller.ongetfilename = expandfilename
               reffontheight = 15
             end
-            object scriptaftercopy: tfilenameedit
+            object scriptaftercopy: tfilenameeditx
               optionsskin = [osk_framebuttononly]
               frame.caption = 'Script after copy'
               frame.captiontextflags = [tf_bottom]
@@ -8572,8 +8733,15 @@ object projectoptionsfo: tprojectoptionsfo
               bounds_cx = 725
               bounds_cy = 39
               anchors = [an_top]
-              controller.panel = False
+              controller.fontheight = 0
+              controller.fontname = 'stf_default'
+              controller.fontcolor = -1610612734
+              controller.backcolor = -2147483647
+              controller.nopanel = False
               controller.compact = False
+              controller.showoptions = False
+              controller.hidehistory = False
+              controller.hideicons = False
               controller.showhidden = False
               controller.ongetfilename = expandfilename
               reffontheight = 15
@@ -8704,7 +8872,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
                 reffontheight = 15
               end
-              object newfisources: tfilenameedit
+              object newfisources: tfilenameeditx
                 optionswidget1 = [ow1_fontglyphheight]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -8728,8 +8896,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 reffontheight = 15
               end
@@ -8867,7 +9042,7 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 reffontheight = 15
               end
-              object newfosources: tfilenameedit
+              object newfosources: tfilenameeditx
                 optionswidget1 = [ow1_fontglyphheight]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -8891,8 +9066,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -8907,7 +9089,7 @@ object projectoptionsfo: tprojectoptionsfo
                 controller.ongetfilename = expandfilename
                 reffontheight = 15
               end
-              object newfoforms: tfilenameedit
+              object newfoforms: tfilenameeditx
                 optionswidget1 = [ow1_fontglyphheight]
                 optionsskin = [osk_framebuttononly]
                 frame.levelo = 0
@@ -8931,8 +9113,15 @@ object projectoptionsfo: tprojectoptionsfo
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-                controller.panel = False
+                controller.fontheight = 0
+                controller.fontname = 'stf_default'
+                controller.fontcolor = -1610612734
+                controller.backcolor = -2147483647
+                controller.nopanel = False
                 controller.compact = False
+                controller.showoptions = False
+                controller.hidehistory = False
+                controller.hideicons = False
                 controller.showhidden = False
                 controller.filterlist.data = (
                   (
@@ -9285,7 +9474,7 @@ object projectoptionsfo: tprojectoptionsfo
             optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
             reffontheight = 15
           end
-          object toolfiles: tfilenameedit
+          object toolfiles: tfilenameeditx
             optionswidget1 = [ow1_fontglyphheight]
             optionsskin = [osk_framebuttononly]
             frame.levelo = 0
@@ -9308,8 +9497,15 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cx = 35
             optionsedit1 = []
             optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter]
-            controller.panel = False
+            controller.fontheight = 0
+            controller.fontname = 'stf_default'
+            controller.fontcolor = -1610612734
+            controller.backcolor = -2147483647
+            controller.nopanel = False
             controller.compact = False
+            controller.showoptions = False
+            controller.hidehistory = False
+            controller.hideicons = False
             controller.showhidden = False
             controller.include = [fa_xusr, fa_xgrp, fa_xoth]
             reffontheight = 15
@@ -9450,7 +9646,7 @@ object projectoptionsfo: tprojectoptionsfo
             onexecute = loadexe
             reffontheight = 15
           end
-          object settingsfile: tfilenameedit
+          object settingsfile: tfilenameeditx
             optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
             frame.caption = 'Settings File'
             frame.captiontextflags = [tf_ycentered]
@@ -9485,8 +9681,15 @@ object projectoptionsfo: tprojectoptionsfo
             bounds_cy = 30
             anchors = [an_left, an_top, an_right]
             ondataentered = settingsdataent
-            controller.panel = False
+            controller.fontheight = 0
+            controller.fontname = 'stf_default'
+            controller.fontcolor = -1610612734
+            controller.backcolor = -2147483647
+            controller.nopanel = False
             controller.compact = False
+            controller.showoptions = False
+            controller.hidehistory = False
+            controller.hideicons = False
             controller.showhidden = False
             controller.filterlist.data = (
               (

@@ -4,16 +4,16 @@ interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
- msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,
+ msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialogx,
  msegrids,mseificomp,mseificompglob,mseifiglob,mselistbrowser,msestatfile,
  msestream,msestrings,msesys,sysutils;
 type
  tconfdebuggerfo = class(tmseform)
    tlabel6: tlabel;
-   debugger4: tfilenameedit;
-   debugger3: tfilenameedit;
-   debugger2: tfilenameedit;
-   debugger1: tfilenameedit;
+   debugger4: tfilenameeditx;
+   debugger3: tfilenameeditx;
+   debugger2: tfilenameeditx;
+   debugger1: tfilenameeditx;
    tnClose: tbutton;
  end;
 var

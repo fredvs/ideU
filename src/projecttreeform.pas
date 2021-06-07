@@ -35,7 +35,7 @@ interface
 {$endif}
 uses
  mseforms,msewidgetgrid,mselistbrowser,msedatanodes,msetypes,msemenus,mseevent,
- mseactions,msefiledialog,msestat,msegrids,msedesigner,msedataedits,
+ mseactions,msefiledialogx,msestat,msegrids,msedesigner,msedataedits,
  msegraphutils,msegui,msestrings,mseact,mseguiglob,mseclasses,msebitmap,mseedit,
  mseglob,msegraphics,msescrollbar,msesys,msehash,mseifiglob,msestringcontainer,
  msevaluenodes;
@@ -53,14 +53,14 @@ type
    unitpopup: tpopupmenu;
    addunitfileact: taction;
    removeunitfileact: taction;
-   filedialog: tfiledialog;
+   filedialog: tfiledialogx;
    filepopup: tpopupmenu;
    addfileact: taction;
    removefileact: taction;
    cmodulepopup: tpopupmenu;
    removecmoduleact: taction;
    addcmoduleact: taction;
-   cmoduledialog: tfiledialog;
+   cmoduledialog: tfiledialogx;
    adddiract: taction;
    removediract: taction;
    nodeicons: timagelist;

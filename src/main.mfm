@@ -13,8 +13,8 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 325
-  bounds_y = 451
+  bounds_x = 314
+  bounds_y = 249
   bounds_cx = 745
   bounds_cy = 76
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -1430,10 +1430,17 @@ object mainfo: tmainfo
     menu.font.localprops = [flp_height]
     left = 187
   end
-  object openfile: tfiledialog
+  object openfile: tfiledialogx
     statfile = mainstatfile
-    controller.panel = False
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     controller.options = [fdo_checkexist]
     controller.captionopen = 'Open file'
@@ -2284,10 +2291,17 @@ object mainfo: tmainfo
     ongetobjects = getstatobjs
     left = 42
   end
-  object projectfiledia: tfiledialog
+  object projectfiledia: tfiledialogx
     statfile = mainstatfile
-    controller.panel = False
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     controller.filterlist.data = (
       (
@@ -2370,10 +2384,17 @@ object mainfo: tmainfo
     left = 261
     top = 5
   end
-  object openform: tfiledialog
+  object openform: tfiledialogx
     statfile = mainstatfile
-    controller.panel = False
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     controller.filterlist.data = (
       (

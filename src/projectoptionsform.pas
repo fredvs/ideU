@@ -9,7 +9,7 @@ unit projectoptionsform;
 
 interface
 uses
- mseforms,msefiledialog,mseapplication,msegui,msestat,msestatfile,msetabs,
+ mseforms,msefiledialogx,mseapplication,msegui,msestat,msestatfile,msetabs,
  msesimplewidgets,msetypes,msestrings,msedataedits,msetextedit,msegraphedits,
  msewidgetgrid,msegrids,msesplitter,msemacros,msegdbutils,msedispwidgets,msesys,
  mseclasses,msegraphutils,mseevent,msetabsglob,msearrayutils,msegraphics,
@@ -652,7 +652,7 @@ type
    ttabwidget1: ttabwidget;
    ttabpage6: ttabpage;
    sourcedirgrid: twidgetgrid;
-   sourcedirs: tfilenameedit;
+   sourcedirs: tfilenameeditx;
    ttabpage9: ttabpage;
    twidgetgrid2: twidgetgrid;
    defineson: tbooleanedit;
@@ -674,11 +674,11 @@ type
    gdbsimulator: tbooleanedit;
    gdbdownload: tbooleanedit;
    tlayouter4: tlayouter;
-   beforeconnect: tfilenameedit;
+   beforeconnect: tfilenameeditx;
    tsplitter7: tsplitter;
-   beforeload: tfilenameedit;
+   beforeload: tfilenameeditx;
    tlayouter5: tlayouter;
-   afterconnect: tfilenameedit;
+   afterconnect: tfilenameeditx;
    tsplitter8: tsplitter;
    tlayouter1: tlayouter;
    externalconsole: tbooleanedit;
@@ -686,9 +686,9 @@ type
    activateonbreak: tbooleanedit;
    makepage: ttabpage;
    defaultmake: tenumedit;
-   mainfile: tfilenameedit;
-   targetfile: tfilenameedit;
-   makecommand: tfilenameedit;
+   mainfile: tfilenameeditx;
+   targetfile: tfilenameeditx;
+   makecommand: tfilenameeditx;
    showcommandline: tbutton;
    copymessages: tbooleanedit;
    closemessages: tbooleanedit;
@@ -732,14 +732,14 @@ type
    dincludeon: tbooleanedit;
    dlibon: tbooleanedit;
    dobjon: tbooleanedit;
-   unitdirs: tfilenameedit;
+   unitdirs: tfilenameeditx;
    unitpref: tstringedit;
    incpref: tstringedit;
    libpref: tstringedit;
    objpref: tstringedit;
    tspacer1: tspacer;
    targpref: tstringedit;
-   makedir: tfilenameedit;
+   makedir: tfilenameeditx;
    tsplitter2: tsplitter;
    tsplitter4: tsplitter;
    ttabpage1: ttabpage;
@@ -778,7 +778,7 @@ type
    copygrid: twidgetgrid;
    loadprojectfile: tbooleanedit;
    expandprojectfilemacros: tbooleanedit;
-   newprojectfiles: tfilenameedit;
+   newprojectfiles: tfilenameeditx;
    newprojectfilesdest: tstringedit;
    ttabpage4: ttabpage;
    ttabpage5: ttabpage;
@@ -788,7 +788,7 @@ type
    toolparse: tbooleanedit;
    toolhide: tbooleanedit;
    toolmenus: tstringedit;
-   toolfiles: tfilenameedit;
+   toolfiles: tfilenameeditx;
    toolparams: tstringedit;
    tlayouter13: tlayouter;
    dispgrid: twidgetgrid;
@@ -801,30 +801,30 @@ type
    filefiltergrid: tstringgrid;
    ttabpage14: ttabpage;
    serverla: tlayouter;
-   uploadcommand: tfilenameedit;
-   gdbservercommand: tfilenameedit;
+   uploadcommand: tfilenameeditx;
+   gdbservercommand: tfilenameeditx;
    gdbserverwait: trealedit;
    downloadalways: tbooleanedit;
    startupbkpt: tintegeredit;
    startupbkpton: tbooleanedit;
    valuehints: tbooleanedit;
-   debugtarget: tfilenameedit;
+   debugtarget: tfilenameeditx;
    fontwidth: tintegeredit;
    fontoptions: tstringedit;
    fontxscale: trealedit;
    twidgetgrid4: twidgetgrid;
    newfonames: tstringedit;
-   newfosources: tfilenameedit;
-   newfoforms: tfilenameedit;
+   newfosources: tfilenameeditx;
+   newfoforms: tfilenameeditx;
    tlayouter2: tlayouter;
-   gdbservercommandattach: tfilenameedit;
-   scriptbeforecopy: tfilenameedit;
-   scriptaftercopy: tfilenameedit;
+   gdbservercommandattach: tfilenameeditx;
+   scriptbeforecopy: tfilenameeditx;
+   scriptaftercopy: tfilenameeditx;
    newinheritedforms: tbooleanedit;
    newformnamebases: tstringedit;
    twidgetgrid1: twidgetgrid;
    newfinames: tstringedit;
-   newfisources: tfilenameedit;
+   newfisources: tfilenameeditx;
    newfifilters: tstringedit;
    newfiexts: tstringedit;
    fontancestors: tstringedit;
@@ -913,7 +913,7 @@ type
    aftcommand: tmemodialogedit;
    ttabpage19: ttabpage;
    twidgetgrid5: twidgetgrid;
-   codetemplatedirs: tfilenameedit;
+   codetemplatedirs: tfilenameeditx;
    nogdbserverexit: tbooleanedit;
    ttabpage20: ttabpage;
    settingseditor: tbooleanedit;
@@ -922,7 +922,7 @@ type
    tlayouter6: tlayouter;
    savebu: tbutton;
    loadbu: tbutton;
-   settingsfile: tfilenameedit;
+   settingsfile: tfilenameeditx;
    settingsdebugger: tbooleanedit;
    settingsstorage: tbooleanedit;
    settingsprojecttree: tbooleanedit;
@@ -931,8 +931,8 @@ type
    settty: tbooleanedit;
    gdbservertty: tbooleanedit;
    tsplitter9: tsplitter;
-   beforerun: tfilenameedit;
-   afterload: tfilenameedit;
+   beforerun: tfilenameeditx;
+   afterload: tfilenameeditx;
    gdbserverstartonce: tbooleanedit;
    ttabpage21: ttabpage;
    formatmacrogrid: twidgetgrid;
@@ -948,8 +948,8 @@ type
    linenumberson: tbooleanedit;
    stripmessageesc: tbooleanedit;
    raiseonbreak: tbooleanedit;
-   runcommand: tfilenameedit;
-   sourcebase: tfilenameedit;
+   runcommand: tfilenameeditx;
+   sourcebase: tfilenameeditx;
    tspacer7: tspacer;
    gdbloadtimeout: trealedit;
    toolshortcuts: tenumedit;
@@ -958,7 +958,7 @@ type
    editmarkbrackets: tbooleanedit;
    fpcgdbworkaround: tbooleanedit;
    twidgetgrid6: twidgetgrid;
-   syntaxdeffile: tfilenameedit;
+   syntaxdeffile: tfilenameeditx;
    syntaxdeffilemask: tmemodialogedit;
    editmarkpairwords: tbooleanedit;
    tlayouter15: tlayouter;
@@ -1006,7 +1006,7 @@ type
 
    showconsole: tbooleanedit;
    enablepurpose: tbooleanedit;
-   messageoutputfile: tfilenameedit;
+   messageoutputfile: tfilenameeditx;
    trimtrailingwhitespace: tbooleanedit;
    autoindent: tbooleanedit;
    enablesource: tbooleanedit;
@@ -1023,7 +1023,7 @@ type
    editfontname: tstringedit;
    editbkcolor: tcoloredit;
    editfontcolor: tcoloredit;
-   debugcommand: tfilenameedit;
+   debugcommand: tfilenameeditx;
    debugoptions: tmemodialogedit;
    remoteconnection: tstringedit;
    procedure acttiveselectondataentered(const sender: TObject);

@@ -356,7 +356,8 @@ procedure configureide;
 
 implementation
 uses
-plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,sourcepage,msedesigner,msetypes,msefiledialog,
+plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,
+sourcepage,msedesigner,msetypes,msefiledialogx,
  projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform,
  disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu, finddialogform,
  componentstore,cpuform,sysutils,msecomptree, procedurelistform;

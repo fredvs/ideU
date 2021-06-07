@@ -571,9 +571,16 @@ object projecttreefo: tprojecttreefo
     left = 109
     top = 59
   end
-  object filedialog: tfiledialog
-    controller.panel = False
+  object filedialog: tfiledialogx
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     controller.options = [fdo_checkexist, fdo_savelastdir]
     controller.historymaxcount = 0
@@ -663,9 +670,16 @@ object projecttreefo: tprojecttreefo
     left = 112
     top = 88
   end
-  object cmoduledialog: tfiledialog
-    controller.panel = False
+  object cmoduledialog: tfiledialogx
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
     controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
     controller.showhidden = False
     controller.filterlist.data = (
       (

@@ -2,7 +2,7 @@ unit confcompiler;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialog,
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialogx,
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
  msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msegrids,
  mseificomp,mseificompglob,mseifiglob,mselistbrowser,msemenus,msestat,
@@ -24,30 +24,30 @@ uses
    twinep6: tbooleanedit;
    twinep7: tbooleanedit;
    twinep8: tbooleanedit;
-   fpccompiler8: tfilenameedit;
-   fpccompiler7: tfilenameedit;
-   fpccompiler6: tfilenameedit;
-   fpccompiler5: tfilenameedit;
-   fpccompiler4: tfilenameedit;
-   fpccompiler3: tfilenameedit;
-   fpccompiler2: tfilenameedit;
+   fpccompiler8: tfilenameeditx;
+   fpccompiler7: tfilenameeditx;
+   fpccompiler6: tfilenameeditx;
+   fpccompiler5: tfilenameeditx;
+   fpccompiler4: tfilenameeditx;
+   fpccompiler3: tfilenameeditx;
+   fpccompiler2: tfilenameeditx;
    tlabel2: tlabel;
-   fpccompiler: tfilenameedit;
-   othercompiler3: tfilenameedit;
+   fpccompiler: tfilenameeditx;
+   othercompiler3: tfilenameeditx;
    twineo2: tbooleanedit;
    twineo1: tbooleanedit;
-   othercompiler: tfilenameedit;
-   othercompiler4: tfilenameedit;
+   othercompiler: tfilenameeditx;
+   othercompiler4: tfilenameeditx;
    twineo4: tbooleanedit;
    twineo3: tbooleanedit;
-   othercompiler2: tfilenameedit;
-   ccompiler2: tfilenameedit;
-   ccompiler3: tfilenameedit;
-   ccompiler4: tfilenameedit;
-   ccompiler5: tfilenameedit;
-   ccompiler6: tfilenameedit;
-   ccompiler7: tfilenameedit;
-   ccompiler8: tfilenameedit;
+   othercompiler2: tfilenameeditx;
+   ccompiler2: tfilenameeditx;
+   ccompiler3: tfilenameeditx;
+   ccompiler4: tfilenameeditx;
+   ccompiler5: tfilenameeditx;
+   ccompiler6: tfilenameeditx;
+   ccompiler7: tfilenameeditx;
+   ccompiler8: tfilenameeditx;
    twinec8: tbooleanedit;
    twinec7: tbooleanedit;
    twinec6: tbooleanedit;
@@ -57,23 +57,23 @@ uses
    twinec2: tbooleanedit;
    twinec1: tbooleanedit;
    tlabel7: tlabel;
-   ccompiler: tfilenameedit;
+   ccompiler: tfilenameeditx;
    twinej1: tbooleanedit;
    twinej2: tbooleanedit;
    twinej3: tbooleanedit;
    twinej4: tbooleanedit;
-   javacompiler4: tfilenameedit;
-   javacompiler3: tfilenameedit;
-   javacompiler2: tfilenameedit;
-   javacompiler: tfilenameedit;
+   javacompiler4: tfilenameeditx;
+   javacompiler3: tfilenameeditx;
+   javacompiler2: tfilenameeditx;
+   javacompiler: tfilenameeditx;
    twinepy3: tbooleanedit;
    twinepy4: tbooleanedit;
-   pythoncompiler4: tfilenameedit;
-   pythoncompiler3: tfilenameedit;
-   pythoncompiler2: tfilenameedit;
+   pythoncompiler4: tfilenameeditx;
+   pythoncompiler3: tfilenameeditx;
+   pythoncompiler2: tfilenameeditx;
    twinepy2: tbooleanedit;
    twinepy1: tbooleanedit;
-   pythoncompiler: tfilenameedit;
+   pythoncompiler: tfilenameeditx;
    tlabel3: tlabel;
    tlabel4: tlabel;
    tlabel5: tlabel;

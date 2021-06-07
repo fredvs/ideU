@@ -53,7 +53,7 @@ object confdebuggerfo: tconfdebuggerfo
     caption = 'Debuggers'
     reffontheight = 15
   end
-  object debugger4: tfilenameedit
+  object debugger4: tfilenameeditx
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${DEBUGGER4}'
@@ -78,10 +78,20 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 265
     bounds_cx = 504
     bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
   end
-  object debugger3: tfilenameedit
+  object debugger3: tfilenameeditx
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${DEBUGGER3}'
@@ -106,10 +116,20 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 188
     bounds_cx = 504
     bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
   end
-  object debugger2: tfilenameedit
+  object debugger2: tfilenameeditx
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${DEBUGGER2}'
@@ -134,10 +154,20 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 117
     bounds_cx = 504
     bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
   end
-  object debugger1: tfilenameedit
+  object debugger1: tfilenameeditx
     Tag = 7
     frame.colorclient = 15138790
     frame.caption = '${DEBUGGER1}'
@@ -162,6 +192,16 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 52
     bounds_cx = 504
     bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
     controller.captionopen = 'Debugger Path'
     reffontheight = 15
   end

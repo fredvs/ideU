@@ -2,8 +2,8 @@ object confcompilerfo: tconfcompilerfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   onfocus = onfocus
   visible = False
-  bounds_x = 468
-  bounds_y = 102
+  bounds_x = 338
+  bounds_y = 49
   bounds_cx = 601
   bounds_cy = 615
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -208,7 +208,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object fpccompiler8: tfilenameedit
+      object fpccompiler8: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL8COMPILER}'
@@ -241,14 +241,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 537
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler7: tfilenameedit
+      object fpccompiler7: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL7COMPILER}'
@@ -281,14 +288,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 466
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler6: tfilenameedit
+      object fpccompiler6: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL6COMPILER}'
@@ -321,14 +335,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 393
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler5: tfilenameedit
+      object fpccompiler5: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL5COMPILER}'
@@ -361,14 +382,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 314
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler4: tfilenameedit
+      object fpccompiler4: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL4COMPILER}'
@@ -401,14 +429,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 241
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler3: tfilenameedit
+      object fpccompiler3: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL3COMPILER}'
@@ -441,14 +476,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 173
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object fpccompiler2: tfilenameedit
+      object fpccompiler2: tfilenameeditx
         Tag = 7
         frame.colorclient = 16769279
         frame.caption = '${PASCAL2COMPILER}'
@@ -481,8 +523,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 100
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -531,7 +580,7 @@ object confcompilerfo: tconfcompilerfo
         caption = 'Emulator'
         reffontheight = 15
       end
-      object fpccompiler: tfilenameedit
+      object fpccompiler: tfilenameeditx
         frame.colorclient = 16769279
         frame.caption = '${PASCALCOMPILER}'
         frame.captiontextflags = [tf_xcentered, tf_bottom]
@@ -562,8 +611,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 28
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -581,7 +637,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&C'
-      object ccompiler2: tfilenameedit
+      object ccompiler2: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C2COMPILER}'
@@ -614,14 +670,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 103
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler3: tfilenameedit
+      object ccompiler3: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C3COMPILER}'
@@ -654,14 +717,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 178
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler4: tfilenameedit
+      object ccompiler4: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C4COMPILER}'
@@ -694,14 +764,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 250
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler5: tfilenameedit
+      object ccompiler5: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C5COMPILER}'
@@ -734,14 +811,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 323
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler6: tfilenameedit
+      object ccompiler6: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C6COMPILER}'
@@ -774,14 +858,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 401
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler7: tfilenameedit
+      object ccompiler7: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C7COMPILER}'
@@ -814,14 +905,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 470
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object ccompiler8: tfilenameedit
+      object ccompiler8: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${C8COMPILER}'
@@ -854,8 +952,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 540
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1006,7 +1111,7 @@ object confcompilerfo: tconfcompilerfo
         caption = 'Emulator'
         reffontheight = 15
       end
-      object ccompiler: tfilenameedit
+      object ccompiler: tfilenameeditx
         Tag = 7
         frame.colorclient = 14606079
         frame.caption = '${CCOMPILER}'
@@ -1038,8 +1143,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 33
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1124,7 +1236,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object javacompiler4: tfilenameedit
+      object javacompiler4: tfilenameeditx
         Tag = 7
         frame.colorclient = 16777164
         frame.caption = '${JAVA4COMPILER}'
@@ -1157,14 +1269,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 286
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object javacompiler3: tfilenameedit
+      object javacompiler3: tfilenameeditx
         Tag = 7
         frame.colorclient = 16777164
         frame.caption = '${JAVA3COMPILER}'
@@ -1197,14 +1316,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 210
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object javacompiler2: tfilenameedit
+      object javacompiler2: tfilenameeditx
         Tag = 7
         frame.colorclient = 16777164
         frame.caption = '${JAVA2COMPILER}'
@@ -1237,14 +1363,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 134
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object javacompiler: tfilenameedit
+      object javacompiler: tfilenameeditx
         Tag = 7
         frame.colorclient = 16777164
         frame.caption = '${JAVACOMPILER}'
@@ -1276,8 +1409,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 54
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1337,7 +1477,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object pythoncompiler4: tfilenameedit
+      object pythoncompiler4: tfilenameeditx
         Tag = 7
         frame.colorclient = 15138790
         frame.caption = '${PYTHON4COMPILER}'
@@ -1370,14 +1510,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 278
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object pythoncompiler3: tfilenameedit
+      object pythoncompiler3: tfilenameeditx
         Tag = 7
         frame.colorclient = 15138790
         frame.caption = '${PYTHON3COMPILER}'
@@ -1410,14 +1557,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 190
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object pythoncompiler2: tfilenameedit
+      object pythoncompiler2: tfilenameeditx
         Tag = 7
         frame.colorclient = 15138790
         frame.caption = '${PYTHON2COMPILER}'
@@ -1450,8 +1604,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 113
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1491,7 +1652,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object pythoncompiler: tfilenameedit
+      object pythoncompiler: tfilenameeditx
         Tag = 7
         frame.colorclient = 15138790
         frame.caption = '${PYTHONCOMPILER}'
@@ -1523,8 +1684,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 37
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1550,7 +1718,7 @@ object confcompilerfo: tconfcompilerfo
       bounds_cy = 589
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
-      object othercompiler3: tfilenameedit
+      object othercompiler3: tfilenameeditx
         Tag = 7
         frame.colorclient = 16773854
         frame.caption = '${OTHER3COMPILER}'
@@ -1583,8 +1751,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 185
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1624,7 +1799,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object othercompiler: tfilenameedit
+      object othercompiler: tfilenameeditx
         Tag = 7
         frame.colorclient = 16773854
         frame.caption = '${OTHERCOMPILER}'
@@ -1656,14 +1831,21 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 25
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object othercompiler4: tfilenameedit
+      object othercompiler4: tfilenameeditx
         Tag = 7
         frame.colorclient = 16773854
         frame.caption = '${OTHER4COMPILER}'
@@ -1696,8 +1878,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 266
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
@@ -1737,7 +1926,7 @@ object confcompilerfo: tconfcompilerfo
         bounds_cx = 44
         bounds_cy = 17
       end
-      object othercompiler2: tfilenameedit
+      object othercompiler2: tfilenameeditx
         Tag = 7
         frame.colorclient = 16773854
         frame.caption = '${OTHER2COMPILER}'
@@ -1770,8 +1959,15 @@ object confcompilerfo: tconfcompilerfo
         bounds_y = 103
         bounds_cx = 480
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'

@@ -117,7 +117,7 @@ object settings_form: tsettingsfo
       bounds_cy = 462
       caption = '&Path  '
       reffontheight = 15
-      object layoutdir: tfilenameedit
+      object layoutdir: tfilenameeditx
         Tag = 4
         frame.colorclient = 16777169
         frame.caption = '${LAYOUTDIR} Directory of Layout'
@@ -152,8 +152,15 @@ object settings_form: tsettingsfo
         Value = '${IDEUDIR}/layout'
         controller.filename = '${IDEUDIR}/layout/'
         controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/layout/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.filterlist.data = (
           (
@@ -165,7 +172,7 @@ object settings_form: tsettingsfo
         controller.captionopen = 'Directory for syntax definition files'
         reffontheight = 15
       end
-      object syntaxdefdir: tfilenameedit
+      object syntaxdefdir: tfilenameeditx
         Tag = 4
         frame.colorclient = 16777169
         frame.caption = '${SYNTAXDEFDIR} Directory of Syntax'
@@ -200,8 +207,15 @@ object settings_form: tsettingsfo
         Value = '${IDEUDIR}/syntaxdefs'
         controller.filename = '${IDEUDIR}/syntaxdefs/'
         controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/syntaxdefs/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.filterlist.data = (
           (
@@ -213,7 +227,7 @@ object settings_form: tsettingsfo
         controller.captionopen = 'Directory for syntax definition files'
         reffontheight = 15
       end
-      object templatedir: tfilenameedit
+      object templatedir: tfilenameeditx
         Tag = 5
         frame.colorclient = 16777169
         frame.caption = '${TEMPLATEDIR} Directory of Templates'
@@ -248,8 +262,15 @@ object settings_form: tsettingsfo
         Value = '${IDEUDIR}/templates'
         controller.filename = '${IDEUDIR}/templates/'
         controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/templates/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.filterlist.data = (
           (
@@ -261,7 +282,7 @@ object settings_form: tsettingsfo
         controller.captionopen = 'Project template directory'
         reffontheight = 15
       end
-      object docviewdir: tfilenameedit
+      object docviewdir: tfilenameeditx
         Tag = 3
         frame.colorclient = 15138790
         frame.caption = '${DOCVIEWDIR} Directory of DocView'
@@ -293,14 +314,21 @@ object settings_form: tsettingsfo
         bounds_y = 298
         bounds_cx = 430
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'DocView directory'
         reffontheight = 15
       end
-      object fpguidir: tfilenameedit
+      object fpguidir: tfilenameeditx
         Tag = 3
         frame.colorclient = 15138790
         frame.caption = '${FPGUIDIR} Root directory of fpGUI'
@@ -335,14 +363,21 @@ object settings_form: tsettingsfo
         Value = '/usr/local/share/fpgui'
         controller.filename = '/usr/local/share/fpgui/'
         controller.lastdir = '/usr/local/share/fpgui/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'fpGUI library directory'
         reffontheight = 15
       end
-      object compstoredir: tfilenameedit
+      object compstoredir: tfilenameeditx
         Tag = 6
         frame.colorclient = 16773360
         frame.caption = '${COMPSTOREDIR} CompStore directory'
@@ -377,8 +412,15 @@ object settings_form: tsettingsfo
         Value = '${MSEDIR}/apps/ide/compstore'
         controller.filename = '${MSEDIR}/apps/ide/compstore/'
         controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/apps/ide/compstore/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.filterlist.data = (
           (
@@ -390,7 +432,7 @@ object settings_form: tsettingsfo
         controller.captionopen = 'Directory for MSEgui component stores'
         reffontheight = 15
       end
-      object mselibdir: tfilenameedit
+      object mselibdir: tfilenameeditx
         Tag = 3
         frame.colorclient = 16773360
         frame.caption = '${MSELIBDIR} Library of MSEgui'
@@ -425,14 +467,21 @@ object settings_form: tsettingsfo
         Value = '${MSEDIR}/lib/common'
         controller.filename = '${MSEDIR}/lib/common/'
         controller.lastdir = '/home/fred/ideu/src/${MSEDIR}/lib/common/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'MSEgui library directory'
         reffontheight = 15
       end
-      object msedir: tfilenameedit
+      object msedir: tfilenameeditx
         Tag = 2
         frame.colorclient = 16773360
         frame.caption = '${MSEDIR} Directory of MSEgui'
@@ -467,14 +516,21 @@ object settings_form: tsettingsfo
         Value = '/usr/local/share/msegui'
         controller.filename = '/usr/local/share/msegui/'
         controller.lastdir = '/usr/local/share/msegui/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'MSEgui root directory'
         reffontheight = 15
       end
-      object debugger: tfilenameedit
+      object debugger: tfilenameeditx
         Tag = 8
         frame.colorclient = 16108799
         frame.caption = '${DEBUGGER} Path of Debugger'
@@ -506,14 +562,21 @@ object settings_form: tsettingsfo
         bounds_y = 49
         bounds_cx = 430
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Debugger path'
         reffontheight = 15
       end
-      object compiler: tfilenameedit
+      object compiler: tfilenameeditx
         Tag = 7
         frame.colorclient = 16108799
         frame.caption = '${COMPILER} Path of Default Compiler'
@@ -547,14 +610,21 @@ object settings_form: tsettingsfo
         Value = '/usr/local/lib/fpc/3.0.0/ppcx64'
         controller.filename = '/usr/local/lib/fpc/3.0.0/ppcx64'
         controller.lastdir = '/usr/local/lib/fpc/3.0.0/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
         reffontheight = 15
       end
-      object lcldir: tfilenameedit
+      object lcldir: tfilenameeditx
         Tag = 3
         frame.colorclient = 15133439
         frame.caption = '${LCLDIR} Directory of LCL'
@@ -587,14 +657,21 @@ object settings_form: tsettingsfo
         bounds_cx = 430
         bounds_cy = 39
         controller.lastdir = '/usr/local/share/fpgui/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'fpGUI library directory'
         reffontheight = 15
       end
-      object fpcsrcdir: tfilenameedit
+      object fpcsrcdir: tfilenameeditx
         Tag = 8
         frame.colorclient = 13423871
         frame.caption = '${FPCSRCDIR} Path of FPC source'
@@ -629,14 +706,21 @@ object settings_form: tsettingsfo
         Value = '/usr/share/fpcsrc/'
         controller.filename = '/usr/share/fpcsrc/'
         controller.lastdir = '/usr/share/fpcsrc/'
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
         controller.captionopen = 'FPC source path'
         reffontheight = 15
       end
-      object bgrabitmapdir: tfilenameedit
+      object bgrabitmapdir: tfilenameeditx
         Tag = 5
         frame.colorclient = 16770503
         frame.caption = '${BGRABITMAPDIR} Directory of BGRABitmap'
@@ -668,8 +752,15 @@ object settings_form: tsettingsfo
         bounds_y = 412
         bounds_cx = 430
         bounds_cy = 39
-        controller.panel = False
+        controller.fontheight = 0
+        controller.fontname = 'stf_default'
+        controller.fontcolor = -1610612734
+        controller.backcolor = -2147483647
+        controller.nopanel = False
         controller.compact = False
+        controller.showoptions = False
+        controller.hidehistory = False
+        controller.hideicons = False
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'BGRABitmap directory'

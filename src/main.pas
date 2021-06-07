@@ -34,14 +34,14 @@ uses
  aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
  mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
  msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
- msefiledialog,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
+ msefiledialogx,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
  mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
  msestrings,msepostscriptprinter,msegraphics,mseglob,msestream, msepointer,
  mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.4.6';
+  versiontext = '2.4.4';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -131,17 +131,17 @@ type
     errordisp: tstringdisp;
     basedock: tdockpanel;
 
-    openfile: tfiledialog;
+    openfile: tfiledialogx;
 
     vievmenuicons: timagelist;
 
     viewmenu: tframecomp;
     runprocmon: tprocessmonitor;
     statoptions: trttistat;
-    projectfiledia: tfiledialog;
+    projectfiledia: tfiledialogx;
     targetpipe: tpipereadercomp;
     c: tstringcontainer;
-    openform: tfiledialog;
+    openform: tfiledialogx;
     formbg: tbitmapcomp;
     tfacecomp1: tfacecomp;
     tfacecomp2: tfacecomp;
@@ -2882,7 +2882,7 @@ var
   str1: filenamety;
   po1: pmoduleinfoty;
 begin //opensourceactonexecute
- writeln('hello');
+   //writeln('hello');
   Result := openfile.Execute = mr_ok;
   if Result then
   begin
@@ -4162,7 +4162,7 @@ begin
      c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2021' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2020' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
     aboutfo.about_text.height := 15 * confideufo.fontsize.value;
@@ -4181,7 +4181,7 @@ begin
   aboutfo.about_text.Value :=
      c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
-    c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
+    c_linefeed + 'Copyright 1999-2020' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
    aboutfo.about_text.height := 13 * confideufo.fontsize.value;
    aboutfo.height := aboutfo.about_text.height + 16;
@@ -4199,7 +4199,7 @@ begin
     platformtext + c_linefeed + c_linefeed +
     'Based on MSEide' + c_linefeed +
     'by Martin Schreiber' + c_linefeed + c_linefeed +
-    'Copyright 1999-2021' + c_linefeed + c_linefeed +
+    'Copyright 1999-2020' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
 
    aboutfo.about_text.height := 15 * confideufo.fontsize.value;

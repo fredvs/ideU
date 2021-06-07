@@ -8,7 +8,7 @@ interface
 
 uses
  fpg_iniutils_ideu, mseglob, mseguiglob, msegui, mseclasses, mseforms, msestat,
- msestatfile, msesimplewidgets, msefiledialog, msestrings, msemacros,
+ msestatfile, msesimplewidgets, msefiledialogx, msestrings, msemacros,
  msedataedits,msebitmap, msedatanodes, mseedit, mseevent, msegraphutils,
  msegrids, mselistbrowser,msemenus, msesys, msetypes, msegraphics, msewidgets,
  mseactions, mseifiglob,msesplitter, mseificomp, mseificompglob, msememodialog,
@@ -138,18 +138,18 @@ type
     tstatfile1: tstatfile;
    setting_tab: ttabwidget;
    path: ttabpage;
-   layoutdir: tfilenameedit;
-   syntaxdefdir: tfilenameedit;
-   templatedir: tfilenameedit;
-   docviewdir: tfilenameedit;
-   fpguidir: tfilenameedit;
-   compstoredir: tfilenameedit;
-   mselibdir: tfilenameedit;
-   msedir: tfilenameedit;
-   debugger: tfilenameedit;
-   compiler: tfilenameedit;
-   lcldir: tfilenameedit;
-   fpcsrcdir: tfilenameedit;
+   layoutdir: tfilenameeditx;
+   syntaxdefdir: tfilenameeditx;
+   templatedir: tfilenameeditx;
+   docviewdir: tfilenameeditx;
+   fpguidir: tfilenameeditx;
+   compstoredir: tfilenameeditx;
+   mselibdir: tfilenameeditx;
+   msedir: tfilenameeditx;
+   debugger: tfilenameeditx;
+   compiler: tfilenameeditx;
+   lcldir: tfilenameeditx;
+   fpcsrcdir: tfilenameeditx;
    macros: ttabpage;
    macrogrid: twidgetgrid;
    macrovalue: tmemodialogedit;
@@ -161,7 +161,7 @@ type
    targetosdir: tstringedit;
    shortcutbu: tbutton;
    but_ok: tbutton;
-   bgrabitmapdir: tfilenameedit;
+   bgrabitmapdir: tfilenameeditx;
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
       var accept: boolean);
     procedure formoncreate(const Sender: TObject);

@@ -8,17 +8,17 @@ uses
  msegraphutils,mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
  mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
  msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,msebitmap,
- msedatanodes, msefiledialog,msegrids, mselistbrowser, msesys,mseact,
+ msedatanodes, msegrids, mselistbrowser, msesys,mseact,
  msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid, msepointer,
  msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
- msetextedit;
+ msetextedit, msefiledialogx;
 
 type
   tconfideufo = class(tmseform)
     but_apply: TButton;
     group_assistive: tgroupbox;
     tbassistive: tbooleanedit;
-    tesakitdir: tfilenameedit;
+    tesakitdir: tfilenameeditx;
     group_system_layout: tgroupbox;
     universal_path: tbooleanedit;
     nozorderenable: tbooleanedit;
@@ -39,8 +39,8 @@ type
    colornote: tcoloredit;
    stripmessageesc: tbooleanedit;
    modaldial: tbooleanedit;
-   deflayout: tfilenameedit;
-   defsynt: tfilenameedit;
+   deflayout: tfilenameeditx;
+   defsynt: tfilenameeditx;
    fontsize: tintegeredit;
    fontname: tdropdownlistedit;
    closemessages: tbooleanedit;

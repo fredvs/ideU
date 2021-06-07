@@ -211,7 +211,7 @@ object confideufo: tconfideufo
     bounds_y = 539
     bounds_cx = 277
     bounds_cy = 122
-    object tesakitdir: tfilenameedit
+    object tesakitdir: tfilenameeditx
       Tag = 3
       frame.colorclient = 14876625
       frame.caption = 'Parent directory of sakit'
@@ -238,16 +238,23 @@ object confideufo: tconfideufo
         0
       )
       hint = 'Parent directory of sakit'
-      bounds_x = 8
-      bounds_y = 64
+      bounds_x = 6
+      bounds_y = 71
       bounds_cx = 263
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       Value = '${IDEUDIR}/plugin'
       controller.filename = '${IDEUDIR}/plugin/'
       controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/plugin/'
-      controller.panel = False
+      controller.fontheight = 0
+      controller.fontname = 'stf_default'
+      controller.fontcolor = -1610612734
+      controller.backcolor = -2147483647
+      controller.nopanel = False
       controller.compact = False
+      controller.showoptions = False
+      controller.hidehistory = False
+      controller.hideicons = False
       controller.showhidden = False
       controller.options = [fdo_sysfilename, fdo_directory]
       controller.captionopen = 'Parent directory of sakit'
@@ -885,7 +892,7 @@ object confideufo: tconfideufo
       bounds_cx = 78
       bounds_cy = 18
     end
-    object deflayout: tfilenameedit
+    object deflayout: tfilenameeditx
       Tag = 3
       frame.colorclient = 14876625
       frame.caption = 'Default layout'
@@ -919,14 +926,21 @@ object confideufo: tconfideufo
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/layout/'
-      controller.panel = False
+      controller.fontheight = 0
+      controller.fontname = 'stf_default'
+      controller.fontcolor = -1610612734
+      controller.backcolor = -2147483647
+      controller.nopanel = False
       controller.compact = False
+      controller.showoptions = False
+      controller.hidehistory = False
+      controller.hideicons = False
       controller.showhidden = False
       controller.options = [fdo_sysfilename, fdo_file]
       controller.captionopen = 'Parent directory of sakit'
       reffontheight = 15
     end
-    object defsynt: tfilenameedit
+    object defsynt: tfilenameeditx
       Tag = 3
       frame.colorclient = 14876625
       frame.caption = 'Default synthax theme'
@@ -960,8 +974,15 @@ object confideufo: tconfideufo
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/syntaxdefs/'
-      controller.panel = False
+      controller.fontheight = 0
+      controller.fontname = 'stf_default'
+      controller.fontcolor = -1610612734
+      controller.backcolor = -2147483647
+      controller.nopanel = False
       controller.compact = False
+      controller.showoptions = False
+      controller.hidehistory = False
+      controller.hideicons = False
       controller.showhidden = False
       controller.options = [fdo_sysfilename, fdo_file]
       controller.captionopen = 'Parent directory of sakit'
