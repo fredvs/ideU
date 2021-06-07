@@ -41,7 +41,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.4.4';
+  versiontext = '2.4.6';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -2884,6 +2884,7 @@ var
 begin //opensourceactonexecute
    //writeln('hello');
   Result := openfile.Execute = mr_ok;
+  openfile.controller.captionopen := 'Open File';
   if Result then
   begin
     page     := nil;
