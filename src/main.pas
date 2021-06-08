@@ -2885,6 +2885,16 @@ begin //opensourceactonexecute
    //writeln('hello');
   Result := openfile.Execute = mr_ok;
   openfile.controller.captionopen := 'Open File';
+  
+  openfile.controller.fontheight := font.height; // font height of dialogfile
+
+  openfile.controller.fontname := font.name;       // font name of dialogfile
+
+  openfile.controller.fontcolor := font.color;    // font color of dialogfile
+
+ // openfile.controller.backcolor := tbackcolor.Value;    // background color of dialogfile
+
+  
   if Result then
   begin
     page     := nil;

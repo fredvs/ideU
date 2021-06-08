@@ -1,0 +1,295 @@
+object imagelisteditorfo: timagelisteditorfo
+  optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
+  bounds_x = 220
+  bounds_y = 297
+  bounds_cx = 508
+  bounds_cy = 355
+  container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    508
+    355
+  )
+  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  statfile = statfile1
+  caption = 'Imagelist Editor'
+  windowopacity = -Inf
+  moduleclassname = 'tmseform'
+  object disp: tlistview
+    optionswidget1 = [ow1_fontglyphheight]
+    frame.localprops = []
+    frame.localprops1 = []
+    popupmenu = popup
+    bounds_x = 0
+    bounds_y = 0
+    bounds_cx = 508
+    bounds_cy = 290
+    anchors = [an_top, an_bottom]
+    cellheight = 62
+    optionsgrid = [og_colsizing, og_rowsizing, og_focuscellonenter, og_wraprow, og_wrapcol, og_autopopup]
+    options = [lvo_readonly, lvo_mousemoving, lvo_keymoving, lvo_horz, lvo_drawfocus, lvo_focusselect, lvo_mouseselect, lvo_keyselect, lvo_multiselect, lvo_locate]
+    itemlist.oncreateitem = createitemev
+    itemlist.captionpos = cp_bottom
+    itemlist.imagelist = imagelist
+    itemlist.imagewidth = 16
+    itemlist.imageheight = 16
+    onlayoutchanged = layoutchanged
+    onitemevent = disponitemevent
+    onitemsmoved = disponitemsmoved
+    reffontheight = 15
+  end
+  object tlayouter1: tlayouter
+    frame.framei_bottom = 5
+    frame.localprops = [frl_fibottom]
+    frame.localprops1 = []
+    taborder = 1
+    bounds_x = 0
+    bounds_y = 293
+    bounds_cx = 308
+    bounds_cy = 62
+    anchors = [an_left, an_bottom]
+    optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+    linktop = disp
+    dist_top = 3
+    options = [spao_gluebottom]
+    object la2: tlayouter
+      taborder = 1
+      bounds_x = 0
+      bounds_y = 35
+      bounds_cx = 295
+      bounds_cy = 22
+      optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+      optionslayout = [lao_aligny]
+      dist_top = 4
+      object tlayouter2: tlayouter
+        taborder = 1
+        bounds_x = 80
+        bounds_y = 0
+        bounds_cx = 215
+        bounds_cy = 22
+        optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+        optionslayout = [lao_placex]
+        place_mindist = 5
+        place_maxdist = 5
+        dist_top = 3
+        object ok: tbutton
+          optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+          taborder = 2
+          bounds_x = 110
+          bounds_y = 1
+          bounds_cx = 50
+          bounds_cy = 21
+          bounds_cxmin = 50
+          state = [as_default, as_localdefault, as_localcaption]
+          caption = '&OK'
+          modalresult = mr_ok
+          reffontheight = 15
+        end
+        object cancel: tbutton
+          optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+          taborder = 3
+          bounds_x = 165
+          bounds_y = 1
+          bounds_cx = 50
+          bounds_cy = 21
+          bounds_cxmin = 50
+          state = [as_localcaption]
+          caption = '&Cancel'
+          modalresult = mr_cancel
+          reffontheight = 15
+        end
+        object clear: tbutton
+          optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+          taborder = 1
+          bounds_x = 55
+          bounds_y = 1
+          bounds_cx = 50
+          bounds_cy = 21
+          bounds_cxmin = 50
+          state = [as_localcaption, as_localonexecute]
+          caption = 'C&lear'
+          onexecute = clearonexecute
+          reffontheight = 15
+        end
+        object add: tbutton
+          optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
+          bounds_x = 0
+          bounds_y = 1
+          bounds_cx = 50
+          bounds_cy = 21
+          bounds_cxmin = 50
+          state = [as_localcaption, as_localonexecute]
+          caption = '&Add'
+          onexecute = addonexecute
+          reffontheight = 15
+        end
+      end
+      object stretch: tbooleanedit
+        frame.caption = '&stretch'
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.outerframe = (
+          0
+          2
+          46
+          2
+        )
+        bounds_x = 6
+        bounds_y = 3
+        bounds_cx = 59
+        bounds_cy = 17
+        statfile = statfile1
+        value = True
+      end
+    end
+    object la1: tlayouter
+      bounds_x = 6
+      bounds_y = 0
+      bounds_cx = 302
+      bounds_cy = 32
+      optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
+      optionslayout = [lao_placex, lao_aligny]
+      align_glue = wam_start
+      place_mindist = 4
+      place_maxdist = 4
+      linkbottom = la2
+      dist_bottom = 3
+      object transparentcolor: tcoloredit
+        frame.caption = '&Transp.'#10'color'
+        frame.captionpos = cp_right
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.button.width = 13
+        frame.button.color = -2147483646
+        frame.buttons.count = 2
+        frame.buttons.items = <        
+          item
+            width = 13
+            color = -2147483646
+          end        
+          item
+            width = 13
+            color = -2147483646
+            imagenr = 17
+          end>
+        frame.buttonellipse.width = 13
+        frame.buttonellipse.color = -2147483646
+        frame.buttonellipse.imagenr = 17
+        frame.outerframe = (
+          0
+          5
+          48
+          6
+        )
+        taborder = 1
+        hint = 'Transparent color'
+        bounds_x = 67
+        bounds_y = 0
+        bounds_cx = 154
+        bounds_cy = 32
+        statfile = statfile1
+        value = -2147483647
+        reffontheight = 15
+      end
+      object masked: tbooleanedit
+        frame.caption = '&masked'
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.outerframe = (
+          0
+          2
+          50
+          2
+        )
+        bounds_x = 0
+        bounds_y = 7
+        bounds_cx = 63
+        bounds_cy = 17
+        value = True
+      end
+      object versionnum: tenumedit
+        frame.caption = 'Vers.'#10'Nr.'
+        frame.captionpos = cp_right
+        frame.localprops = []
+        frame.localprops1 = []
+        frame.buttons.count = 1
+        frame.buttons.items = <        
+          item
+          end>
+        frame.outerframe = (
+          0
+          5
+          33
+          6
+        )
+        taborder = 2
+        hint = 'Current imagelist version number'
+        bounds_x = 225
+        bounds_y = 0
+        bounds_cx = 77
+        bounds_cy = 32
+        optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
+        ondataentered = versiondatentev
+        dropdown.cols.count = 1
+        dropdown.cols.items = <        
+          item
+          end>
+        value = 0
+        valuedefault = 0
+        valuemin = 0
+        onsetvalue = versionsetev
+        reffontheight = 15
+      end
+    end
+  end
+  object imagelist: timagelist
+    transparentcolor = -2147483647
+    left = 24
+    top = 176
+  end
+  object filedialog: tfiledialogx
+    statfile = statfile1
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
+    controller.captionopen = 'Add a image'
+    dialogkind = fdk_open
+    left = 112
+    top = 176
+  end
+  object statfile1: tstatfile
+    filename = 'imagelisteditor.sta'
+    options = [sfo_memory]
+    onstatupdate = statupdateev
+    left = 200
+    top = 176
+  end
+  object popup: tpopupmenu
+    onupdate = updatemenuexe
+    menu.submenu.count = 2
+    menu.submenu.items = <    
+      item
+        caption = 'Copy Items'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = copyexe
+      end    
+      item
+        caption = 'Paste Items'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = pasteexe
+      end>
+    left = 48
+    top = 96
+  end
+end

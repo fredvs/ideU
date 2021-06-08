@@ -241,7 +241,6 @@ begin
 
 ratio := fontsize.value / 12;
 
-
 mainfo.font.height := fontsize.value;
 mainfo.font.name := ansistring(fontname.value);
 mainfo.frame.grip_size := round(12*ratio);
