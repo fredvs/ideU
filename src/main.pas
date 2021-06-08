@@ -41,7 +41,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.4.6';
+  versiontext = '2.4.8';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
