@@ -214,6 +214,7 @@ object settings_form: tsettingsfo
         )
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'Directory for syntax definition files'
+        controller.captiondir = 'Directory for syntax definition files'
         reffontheight = 15
       end
       object syntaxdefdir: tfilenameeditx
@@ -313,6 +314,7 @@ object settings_form: tsettingsfo
         )
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'Directory for syntax definition files'
+        controller.captiondir = 'Directory for syntax definition files'
         reffontheight = 15
       end
       object templatedir: tfilenameeditx
@@ -412,6 +414,7 @@ object settings_form: tsettingsfo
         )
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'Project template directory'
+        controller.captiondir = 'Project template directory'
         reffontheight = 15
       end
       object docviewdir: tfilenameeditx
@@ -502,6 +505,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'DocView directory'
+        controller.captiondir = 'DocView directory'
         reffontheight = 15
       end
       object fpguidir: tfilenameeditx
@@ -595,6 +599,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'fpGUI library directory'
+        controller.captiondir = 'fpGUI library directory'
         reffontheight = 15
       end
       object compstoredir: tfilenameeditx
@@ -694,6 +699,7 @@ object settings_form: tsettingsfo
         )
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'Directory for MSEgui component stores'
+        controller.captiondir = 'Directory for MSEgui component stores'
         reffontheight = 15
       end
       object mselibdir: tfilenameeditx
@@ -787,6 +793,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'MSEgui library directory'
+        controller.captiondir = 'MSEgui library directory'
         reffontheight = 15
       end
       object msedir: tfilenameeditx
@@ -880,6 +887,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'MSEgui root directory'
+        controller.captiondir = 'MSEgui root directory'
         reffontheight = 15
       end
       object debugger: tfilenameeditx
@@ -1153,6 +1161,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'fpGUI library directory'
+        controller.captiondir = 'fpGUI library directory'
         reffontheight = 15
       end
       object fpcsrcdir: tfilenameeditx
@@ -1246,6 +1255,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
         controller.captionopen = 'FPC source path'
+        controller.captiondir = 'FPC source path'
         reffontheight = 15
       end
       object bgrabitmapdir: tfilenameeditx
@@ -1336,6 +1346,7 @@ object settings_form: tsettingsfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_directory]
         controller.captionopen = 'BGRABitmap directory'
+        controller.captiondir = 'BGRABitmap directory'
         reffontheight = 15
       end
     end
