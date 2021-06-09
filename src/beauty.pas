@@ -41,6 +41,7 @@ type
     procedure dobeauti(const Sender: TObject);
     procedure doclose(const Sender: TObject);
     procedure ondestroyev(const Sender: TObject);
+   procedure oncreat(const sender: TObject);
   end;
 
 var
@@ -87,6 +88,11 @@ end;
 procedure tbeautyfo.ondestroyev(const Sender: TObject);
 begin
   beautyformcreated := False;
+end;
+
+procedure tbeautyfo.oncreat(const sender: TObject);
+begin
+//icon := mainfo.icon;
 end;
 
 end.

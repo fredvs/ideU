@@ -86,7 +86,7 @@ var
  confcompilerfo: tconfcompilerfo;
 implementation
 uses
- confcompiler_mfm;
+confcompiler_mfm;
 procedure tconfcompilerfo.closeapp(const sender: TObject);
 begin
 close;

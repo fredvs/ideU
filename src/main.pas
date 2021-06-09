@@ -2886,6 +2886,8 @@ begin //opensourceactonexecute
   Result := openfile.Execute = mr_ok;
   openfile.controller.captionopen := 'Open File';
   
+  openfile.controller.icon := icon;
+  
   openfile.controller.fontheight := font.height; // font height of dialogfile
 
   openfile.controller.fontname := font.name;       // font name of dialogfile
@@ -2901,6 +2903,7 @@ begin //opensourceactonexecute
     po1      := nil;
     unitnode := nil; //compilerwarning
     designer.beginskipall;
+    openfile.controller.icon := icon;
     try
       with openfile.controller do
         for int1 := 0 to high(filenames) do
@@ -4513,7 +4516,7 @@ end;
 
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
-  TDummyThread.Create(False);
+   TDummyThread.Create(False);
    //  setstattext('Light theme is set.', mtk_flat);
  end;
 

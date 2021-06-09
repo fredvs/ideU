@@ -48,6 +48,7 @@ type
    procedure oncloseev(const sender: TObject);
    procedure onok(const sender: TObject);
    procedure onprior(const sender: TObject);
+   procedure oncre(const sender: TObject);
   private
    procedure valuestoinfo(out info: findinfoty);
    procedure infotovalues(const info: findinfoty);
@@ -213,6 +214,11 @@ procedure tfinddialogfo.onprior(const sender: TObject);
 begin
  finddialogfo.valuestoinfo(findinfos);
   sourcefo.activepage.findback;
+end;
+
+procedure tfinddialogfo.oncre(const sender: TObject);
+begin
+icon := mainfo.icon;
 end;
 
 end.

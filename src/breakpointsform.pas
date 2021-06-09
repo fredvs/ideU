@@ -77,6 +77,7 @@ type
                    var cellinfo: cellinfoty; var processed: Boolean);
    procedure errhint(const sender: tdatacol; const arow: Integer;
                    var info: hintinfoty);
+   procedure oncreat(const sender: TObject);
   private
    fbreakpointsvalid: boolean;
    function infotolineinfo(const info: breakpointinfoty): bkptlineinfoty;
@@ -803,6 +804,11 @@ begin
  if conderr[arow] >= 0 then begin
   info.caption:= errormessage[arow];
  end;
+end;
+
+procedure tbreakpointsfo.oncreat(const sender: TObject);
+begin
+//icon := mainfo.icon;
 end;
 
 end.

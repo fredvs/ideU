@@ -129,6 +129,19 @@ begin
   createcpufo;
 
   mainfo.ideureadconfig;
+  
+  confideufo.icon := mainfo.icon;
+  confmseguifo.icon := mainfo.icon;
+  conffpguifo.icon := mainfo.icon;
+  confcompilerfo.icon := mainfo.icon;
+  confdebuggerfo.icon := mainfo.icon;
+  sourcefo.icon := mainfo.icon;
+  debuggerfo.icon := mainfo.icon;
+  findinfilefo.icon := mainfo.icon;
+  messagefo.icon := mainfo.icon;
+  dialogfilesfo.icon := mainfo.icon;
+  findmessagefo.icon := mainfo.icon;
+  aboutfo.icon := mainfo.icon;
 
   application.run;
 end.

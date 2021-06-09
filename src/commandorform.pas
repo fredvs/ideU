@@ -89,6 +89,7 @@ type
    procedure onsavecust(const sender: TObject);
    procedure onbeauty(const sender: TObject);
    procedure procedurelistonexecute(const sender: TObject);
+   procedure oncreat(const sender: TObject);
   end;
 var
  debuggerfo: tdebuggerfo;
@@ -357,6 +358,11 @@ end;
 procedure tdebuggerfo.procedurelistonexecute(const sender: TObject);
 begin
 actionsmo.procedurelistonexecute(sender);
+end;
+
+procedure tdebuggerfo.oncreat(const sender: TObject);
+begin
+//icon := mainfo.icon;
 end;
 
 end.

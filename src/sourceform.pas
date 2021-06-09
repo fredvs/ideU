@@ -110,6 +110,7 @@ type
     procedure onpageadd(const Sender: TObject; const awidget: twidget);
    procedure ondefocus(const sender: TObject);
    procedure onfocus(const sender: TObject);
+   procedure oncreat(const sender: TObject);
   private
     fasking: Boolean;
     fgdbpage: tsourcepage;
@@ -1137,8 +1138,10 @@ begin
       if fileexists(ActivePage.pathdisp.Value) then
         if Assigned(mainfo) then
           if Assigned(mainfo.openfile) then
+          begin
+            mainfo.openfile.controller.icon := mainfo.icon;
             mainfo.openfile.controller.lastdir := ExtractFilePath(ActivePage.pathdisp.Value);
-
+          end;  
       if Assigned(debuggerfo) then
       begin
         debuggerfo.file_history.Value := tosysfilepath(filepath(ActivePage.pathdisp.Value, fk_file, True));
@@ -1710,6 +1713,11 @@ end;
 procedure tsourcefo.onfocus(const sender: TObject);
 begin
 tabcloser := true;
+end;
+
+procedure tsourcefo.oncreat(const sender: TObject);
+begin
+//icon := mainfo.icon;
 end;
 
 end.

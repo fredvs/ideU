@@ -510,6 +510,7 @@ var
  po1: pmoduleinfoty;
 begin
  with mainfo do begin
+ openfile.controller.icon := icon;
   if factivedesignmodule <> nil then begin
    str1:= factivedesignmodule^.filename;
    if openfile.controller.execute(str1,fdk_save) then begin

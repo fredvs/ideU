@@ -2106,6 +2106,7 @@ procedure tsourcepage.oncreated(const sender: TObject);
 var
 color0, color1, color2 : longword;
 begin
+// icon := mainfo.icon;
 if mainfo.themenr = 0 then begin
 pathdisp.face.template := debuggerfo.templatemain;
 pathdisp.font.color := cl_black;

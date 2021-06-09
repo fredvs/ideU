@@ -1283,7 +1283,8 @@ begin
 end;
 
 procedure tprojecttreefo.addunitfileonexecute(const sender: tobject);
-begin
+begin 
+ mainfo.openfile.controller.icon := mainfo.icon;
  mainfo.openfile.controller.filename:= gettreedir;
  mainfo.opensource(fk_unit,true,false,tprojectnode(projectedit.item));
  activate; //windowmanager can activate new form window
@@ -1340,6 +1341,7 @@ var
  int1: integer;
 begin
  with mainfo.openfile.controller do begin
+  mainfo.openfile.controller.icon := mainfo.icon;
   filename:= gettreedir;
   if execute(fdk_open,c[ord(selectdirectory)],
                                 [fdo_directory]) = mr_ok then begin
@@ -1433,6 +1435,7 @@ begin
  no1:= tfilenode(projectedit.item);
  fn1:= no1.path;
  with mainfo.openfile.controller do begin
+  mainfo.openfile.controller.icon := mainfo.icon;
   if execute(fn1,fdk_open,c[ord(selectdirectory)],[fdo_directory]) then begin
    no1.filename:= relativepath(fn1,no1.parentpath);
   end;

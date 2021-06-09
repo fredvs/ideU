@@ -1452,6 +1452,7 @@ end;
 function projectfiledialog(var aname: filenamety; save: boolean): modalresultty;
 begin
  with mainfo.projectfiledia.controller do begin
+ mainfo.projectfiledia.controller.icon := mainfo.icon;
  fontheight := mainfo.font.height; // font height of dialogfile
  fontname := mainfo.font.name;       // font name of dialogfile
  fontcolor := mainfo.font.color;    // font color of dialogfile
@@ -1597,6 +1598,7 @@ begin
     asarraya:= e.texp.filemasknames;
     asarrayb:= e.texp.filemasks;
    end;
+   mainfo.openfile.controller.icon := mainfo.icon;
    item1:= mainfo.mainmenu1.menu.itembynames(['file','new','msegui']);
  //  item1:= mainfo.mainmenu1.menu.itembynames(['file','new']);
    item1.submenu.count:= 1;
@@ -3015,6 +3017,7 @@ procedure tprojectoptionsfo.createexe(const sender: TObject);
 var
  int1: integer;
 begin
+//icon := mainfo.icon;
  {$ifdef mswindows}
 // externalconsole.visible:= true;
  {$else}

@@ -15,10 +15,16 @@ type
    debugger2: tfilenameeditx;
    debugger1: tfilenameeditx;
    tnClose: tbutton;
+   procedure oncreat(const sender: TObject);
  end;
 var
  confdebuggerfo: tconfdebuggerfo;
 implementation
 uses
  confdebugger_mfm;
+procedure tconfdebuggerfo.oncreat(const sender: TObject);
+begin
+// icon := mainfo.icon;
+end;
+
 end.
