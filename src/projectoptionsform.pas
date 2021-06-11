@@ -3017,7 +3017,7 @@ procedure tprojectoptionsfo.createexe(const sender: TObject);
 var
  int1: integer;
 begin
-//icon := mainfo.icon;
+icon := mainfo.icon;
  {$ifdef mswindows}
 // externalconsole.visible:= true;
  {$else}
