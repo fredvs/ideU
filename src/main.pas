@@ -4425,8 +4425,12 @@ begin
 
   if not dialogfilesformcreated then
     dodialogfiles;
+    
+  //  writeln('ok dodialogfiles'); 
 
-  dothemedialog();
+   dothemedialog();
+   
+  //  writeln('ok dothemedialog'); 
 
   dialogfilesfo.tag := 1;
 
@@ -4435,13 +4439,20 @@ begin
   // dialogfilesfo.list_files.cellwidth := 437;
   dialogfilesfo.list_files.mask      := '*.prj';
   dialogfilesfo.list_files.path      := expandprmacros('${LAYOUTDIR}');
+  
+//    writeln('ok macros'); 
 
   tabind := sourcefo.files_tab.activepageindex;
+  
+//  writeln('ok tabind'); 
 
   dialogfilesfo.selected_file.frame.Caption := 'Selected Layout File';
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text          := '';
   //dialogfilesfo.activate;
+  
+//  writeln('ok selected_file'); 
+     
   if ismodal then
     dialogfilesfo.Show(True)
   else

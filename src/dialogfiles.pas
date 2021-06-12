@@ -4,17 +4,17 @@ interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
- msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,mseificomp,
+ msebitmap,msedataedits,msedatanodes,mseedit,msegrids,mseificomp,
  mseificompglob,mseifiglob,mselistbrowser,msestatfile,msestream,msestrings,
  msesys,sysutils,msesimplewidgets, sourceform, commandorform, msedispwidgets,
- mserichstring, msefiledialogx;
+ mserichstring, msefiledialog;
 type
  tdialogfilesfo = class(tmseform)
    tbutton1: tbutton;
    tbutton2: tbutton;
    selected_file: tedit;
    tstringdisp1: tstringdisp;
-   list_files: tfilelistviewx;
+   list_files: tfilelistview;
    procedure loaddef(const sender: tcustomlistview);
    procedure butok(const sender: TObject);
    procedure butcancel(const sender: TObject);
@@ -53,7 +53,6 @@ var
  str1: ttextstream;
 begin
 layoutbusy := true;
-
 if assigned(list_files.selectednames) and (tag = 0) then
  begin
  if han <> -1 then sourcefo.syntaxpainter.freedeffile(han);
@@ -85,6 +84,7 @@ if (tabind > -1) and (sourcefo.files_tab.count > 0) then
   str1.destroy();
  end;
 end;
+
 layoutbusy := false;
  end;
 

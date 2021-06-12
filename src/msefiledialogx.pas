@@ -2396,7 +2396,9 @@ begin
   begin
     astr := trim(places[0][cellinfo.cell.row]);
 
-    if (astr = 'C:\') or (astr = 'D:\') or (astr = '/') or (astr = '/usr') then
+    if (lowercase(astr) = 'c:\') or (lowercase(astr) = 'd:\') or 
+    (astr = '/') or (lowercase(astr) = '/usr') or
+     (lowercase(astr) = 'c:\users') then
       aicon := 0
     else if astr = 'Home' then
       aicon := 13
@@ -2902,6 +2904,12 @@ begin
       fo.places[0][x] := tmp + 'D:\';
       fo.places[1][x] := msestring('D:\');  
     end; 
+    if directoryexists('C:\users') then
+    begin
+      Inc(x);
+      fo.places[0][x] := tmp + 'C:\users';
+      fo.places[1][x] := msestring('C:\users');  
+    end; 
     {$else}
     if directoryexists('/') then
     begin
@@ -3079,7 +3087,7 @@ begin
     fo.Free;
   end;
 end;
-
+    
 function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
 begin
   Result := Execute(dialogkind, acaption, foptions);
