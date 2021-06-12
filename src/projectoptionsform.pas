@@ -1452,7 +1452,8 @@ end;
 function projectfiledialog(var aname: filenamety; save: boolean): modalresultty;
 begin
  with mainfo.projectfiledia.controller do begin
- mainfo.projectfiledia.controller.icon := mainfo.icon;
+ showoptions := true;
+ icon := mainfo.icon;
  fontheight := mainfo.font.height; // font height of dialogfile
  fontname := mainfo.font.name;       // font name of dialogfile
  fontcolor := mainfo.font.color;    // font color of dialogfile

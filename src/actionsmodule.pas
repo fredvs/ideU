@@ -511,6 +511,8 @@ var
 begin
  with mainfo do begin
  openfile.controller.icon := icon;
+   openfile.controller.showoptions := true;
+ 
   if factivedesignmodule <> nil then begin
    str1:= factivedesignmodule^.filename;
    if openfile.controller.execute(str1,fdk_save) then begin
@@ -520,6 +522,8 @@ begin
   else begin
    str1:= sourcefo.activepage.filepath;
    namebefore:= str1;
+     openfile.controller.showoptions := true;
+ 
    if openfile.controller.execute(str1,fdk_save) then begin
     sourcefo.saveactivepage(str1);
     po1:= designer.modules.findmodule(designer.sourcenametoformname(namebefore));

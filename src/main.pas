@@ -1263,6 +1263,7 @@ begin
         wstr2 := '';
         //    openform.controller.filename:= '';
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
+        openform.controller.showoptions := true;
         if openform.controller.Execute(wstr2, fdk_open,
           c[Ord(formfile)] + ' ' + utf8decode(aname)) then
           openformfile(wstr2, False, False, True, True, False)//    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
@@ -1347,6 +1348,8 @@ begin
         [mr_yes, mr_cancel]) = mr_yes then
       begin
         wstr2 := '';
+         openform.controller.showoptions := true;
+       
         if openform.controller.Execute(wstr2, fdk_open, c[Ord(formfile)] + ' ' +
           msestring(atypename), [fdo_checkexist]) then
           openformfile(wstr2, False, False, False, False, False);
@@ -2883,9 +2886,10 @@ var
   po1: pmoduleinfoty;
 begin //opensourceactonexecute
    //writeln('hello');
-  Result := openfile.Execute = mr_ok;
-  openfile.controller.captionopen := 'Open File';
+   openfile.controller.captionopen := 'Open File';
   
+   openfile.controller.showoptions := true;
+     
   openfile.controller.icon := icon;
   
   openfile.controller.fontheight := font.height; // font height of dialogfile
@@ -2896,7 +2900,8 @@ begin //opensourceactonexecute
 
  // openfile.controller.backcolor := tbackcolor.Value;    // background color of dialogfile
 
-  
+   Result := openfile.Execute = mr_ok;
+ 
   if Result then
   begin
     page     := nil;
@@ -2904,6 +2909,8 @@ begin //opensourceactonexecute
     unitnode := nil; //compilerwarning
     designer.beginskipall;
     openfile.controller.icon := icon;
+    openfile.controller.showoptions := true;
+ 
     try
       with openfile.controller do
         for int1 := 0 to high(filenames) do
@@ -4176,7 +4183,7 @@ begin
      c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2020' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2021' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
     aboutfo.about_text.height := 15 * confideufo.fontsize.value;
@@ -4195,7 +4202,7 @@ begin
   aboutfo.about_text.Value :=
      c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
-    c_linefeed + 'Copyright 1999-2020' + c_linefeed + c_linefeed +
+    c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
    aboutfo.about_text.height := 13 * confideufo.fontsize.value;
    aboutfo.height := aboutfo.about_text.height + 16;
@@ -4213,7 +4220,7 @@ begin
     platformtext + c_linefeed + c_linefeed +
     'Based on MSEide' + c_linefeed +
     'by Martin Schreiber' + c_linefeed + c_linefeed +
-    'Copyright 1999-2020' + c_linefeed + c_linefeed +
+    'Copyright 1999-2021' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
 
    aboutfo.about_text.height := 15 * confideufo.fontsize.value;
