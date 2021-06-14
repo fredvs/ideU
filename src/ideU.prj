@@ -892,7 +892,7 @@ makeoptionson=13
  4095
  0
  3
- 204
+ 200
  2044
  0
  192
@@ -1525,8 +1525,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=string
+finddtext=png
 findhistory=20
+ png
+ loadimage
  string
  LoadImage(
  .controller
@@ -1545,16 +1547,14 @@ findhistory=20
  uses
  tactionsmo
  projectfiled
- open project
- onchangefont
 findoptions=1
 editpos=6
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,236
  0,-1073741823
- 34,702
+ 0,-1073741823
+ 0,2260
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1607,17 +1607,10 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 1
- 2
- 3
- 5
- 4
 firsttab=0
-index=4
+index=5
 [layout]
-windowlayout=637
+windowlayout=600
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1762,14 +1755,14 @@ windowlayout=637
  x=0
  y=0
  cx=205
- cy=247
+ cy=419
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=73
+ propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=67
+ width1=82
  sortdescend1=0
  sorted=0
  col=0
@@ -1948,9 +1941,9 @@ windowlayout=637
  ncx=0
  ncy=0
  x=0
- y=303
+ y=475
  cx=1212
- cy=297
+ cy=125
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2062,11 +2055,11 @@ windowlayout=637
  nx=0
  ny=0
  ncx=1197
- ncy=26
+ ncy=20
  x=0
  y=0
  cx=1212
- cy=24
+ cy=18
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2077,12 +2070,13 @@ windowlayout=637
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialogx.pas
- history=50
+ history=20
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/image/mseformatgifread.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/msefpreadgif.pas
   /home/fred/Pictures/415x380.png
-  /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/confcompiler.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/dialogfiles.pas
@@ -2097,37 +2091,6 @@ windowlayout=637
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/commandlineform.pas
-  /home/fred/ideu/src/breakpointsform.pas
-  /home/fred/ideu/src/aboutform.pas
-  /home/fred/ideu/src/msepropertyeditors.pas
-  /home/fred/ideu/src/mseimageselectorform.pas
-  /home/fred/ideu/src/mseimagelisteditor.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/ideu/src/confideu.mfm
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx_mfm.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msedirtreesub_mfm.pas
-  /home/fred/mseide-msegui/apps/ide/debuggerform.pas
-  /home/fred/mseide-msegui/lib/common/designutils/msesettings.pas
-  /home/fred/mseide-msegui/lib/common/designutils/msedesignintf.pas
-  /home/fred/uos/uos_libsndfile.pas
-  /home/fred/uos/examples/uos_libsndfile.pas
-  /home/fred/uos/src/uos_libsndfile.pas
-  /home/fred/uos/src/uos.pas
-  /home/fred/uidesigner_ext/src/fpg_main.pas
-  /home/fred/uidesigner_ext/src/pthread.inc
-  /home/fred/uidesigner_ext/src/pthread_ori.inc
-  /home/fred/cthreads.pas
-  /home/fred/fpGUIlib/src/fpgui.pas
-  /home/fred/fpGUIlib/src/fpglib_class.pas
-  /home/fred/demo_mse/test__med/msebufdataset.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/mseide-msegui/lib/common/db/msedbf.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_dbf_prssupp.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/mse_dbf_common.pas
-  /home/fred/demo_mse/mse_fb3_new/main.pas
-  /home/fred/mseide-msegui/lib/common/db/msefirebird.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2145,19 +2108,12 @@ windowlayout=637
  x=208
  y=0
  cx=1004
- cy=247
+ cy=419
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  1
-  2
-  3
-  5
-  4
  firsttab=0
- index=4
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2195,7 +2151,7 @@ windowlayout=637
  x=0
  y=53
  cx=1212
- cy=247
+ cy=419
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

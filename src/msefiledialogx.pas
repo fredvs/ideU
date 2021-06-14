@@ -585,8 +585,6 @@ type
    bhidehistory: tbooleanedit;
    tbitmapcomp1: tbitmapcomp;
    imImage: timage;
-   tbitmapcomp2: tbitmapcomp;
-   timagelist2: timagelist;
    iconslist: timagelist;
     procedure LoadImage(const AFileName: msestring);
     procedure createdironexecute(const Sender: TObject);
@@ -1380,7 +1378,7 @@ begin
 
  if (lowercase(fileext(filename.Value)) = 'xpm') or
     (lowercase(fileext(filename.Value)) = 'jpeg') or
-     (lowercase(fileext(filename.Value)) = 'ico') or
+  //   (lowercase(fileext(filename.Value)) = 'ico') or
       (lowercase(fileext(filename.Value)) = 'bmp') or
       (lowercase(fileext(filename.Value)) ='png') or
       (lowercase(fileext(filename.Value)) = 'jpg') then
@@ -1717,8 +1715,6 @@ begin
   y  := 0;
   x2 := 0;
   
-  timagelist2.count := 0;
-
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
@@ -2267,18 +2263,14 @@ begin
     thefilename := dir.value + trim(copy(thefilename,2,length(thefilename)));
  
 //    writeln(thefilename);
-    tbitmapcomp2.bitmap.LoadFromFile(tosysfilepath(theFileName));
-   
-   //timagelist2.count := 1;
-   //timagelist2.addimage(tbitmapcomp2.bitmap);
+     tbitmapcomp1.bitmap.LoadFromFile(tosysfilepath(thefilename));
  
     recti.x := 0;
     recti.y := 0;
-     
-      recti.cx := list_log.datarowheight;
-     recti.cy := recti.cx;
+    recti.cx := list_log.datarowheight;
+    recti.cy := recti.cx;
     
-   tbitmapcomp2.bitmap.paint(Canvas, Recti);
+      tbitmapcomp1.bitmap.paint(Canvas, Recti);
    
     end;  
     
