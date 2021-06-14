@@ -1455,7 +1455,7 @@ begin
  showoptions := true;
  icon := mainfo.icon;
  fontheight := mainfo.font.height; // font height of dialogfile
- fontname := mainfo.font.name;       // font name of dialogfile
+ fontname := msestring(mainfo.font.name);       // font name of dialogfile
  fontcolor := mainfo.font.color;    // font color of dialogfile
   filename:= projectoptions.projectfilename;
   history:= projecthistory;

@@ -1049,7 +1049,7 @@ begin
 nodebugset := false;
 str3 := gettargetfile;//to initialize
 str3 := '';
-if not fileexists(tosysfilepath(ansistring(gettargetfile))) then
+if not fileexists(tosysfilepath(msestring(gettargetfile))) then
  mainfo.setstattext(tosysfilepath(gettargetfile) +
   ' does not exist.  Please compile it first.', mtk_error)
 

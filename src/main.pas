@@ -2894,7 +2894,7 @@ begin //opensourceactonexecute
   
   openfile.controller.fontheight := font.height; // font height of dialogfile
 
-  openfile.controller.fontname := font.name;       // font name of dialogfile
+  openfile.controller.fontname := msestring(font.name);       // font name of dialogfile
 
   openfile.controller.fontcolor := font.color;    // font color of dialogfile
 
@@ -2933,6 +2933,7 @@ begin //opensourceactonexecute
                 unitnode.setformfile(str1);
             end;
           end;
+         
     finally
       designer.endskipall;
     end;
