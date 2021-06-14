@@ -234,7 +234,6 @@ end;
 function getpascalvarname(const edit: tsyntaxedit; const pos: pointty): msestring;
 var
  po1,po2: gridcoordty;
- a : tdataicon;
 begin
  if edit.mousepostotextpos(pos,po1,true) then begin
   result:= getpascalvarname(edit,po1,po2);
