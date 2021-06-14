@@ -869,17 +869,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ SOURCEFO
  SOURCEPAGE
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TSOURCEFO
  TSOURCEPAGE
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=13
@@ -1542,26 +1545,31 @@ findhistory=20
  open project
  onchangefont
 findoptions=1
-editpos=4
+editpos=5
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,0
- 0,0
- 0,0
- 0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
-relpaths=4
+ ${PROJECTDIR}/sourceform.pas
+relpaths=5
  ideU.pas
  main.pas
  actionsmodule.pas
  sourcepage.pas
-ismoduletexts=4
+ sourceform.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -1579,12 +1587,12 @@ moduleoptions=4
 visiblemodules=4
  -1
  -1
- 0
+ -1
  -1
 nomenumodules=4
  0
  0
- -1
+ 0
  0
 [sourcefo.files_tab]
 firsttab=0
@@ -1992,7 +2000,7 @@ windowlayout=581
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2034,8 +2042,8 @@ windowlayout=581
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=28
+ ncx=1212
+ ncy=26
  x=0
  y=0
  cx=1212
@@ -2051,6 +2059,7 @@ windowlayout=581
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/sourcepage.pas
  history=20
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/main.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/image/mseformatgifread.pas
@@ -2070,7 +2079,6 @@ windowlayout=581
   /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/commandlineform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2156,7 +2164,7 @@ windowlayout=581
  [_mse_sourcepage_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
