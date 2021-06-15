@@ -580,8 +580,8 @@ object filedialogxfo: Tfiledialogxfo
     )
     taborder = 13
     hint = 'Switch to compact layout'
-    bounds_x = 312
-    bounds_y = 40
+    bounds_x = 310
+    bounds_y = 41
     bounds_cx = 70
     bounds_cy = 17
     onsetvalue = onsetcomp
@@ -941,7 +941,6 @@ object filedialogxfo: Tfiledialogxfo
     bounds_cx = 97
     bounds_cy = 17
     visible = False
-    onsetvalue = showhiddenonsetvalue
   end
   object tsplitter2: tsplitter
     taborder = 21

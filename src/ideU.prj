@@ -20,7 +20,7 @@ order17=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=92
+findinfiledialog=103
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -36,11 +36,11 @@ findinfiledialog=92
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
+ value="*.pas" "*.pp" "*.inc" "*.mfm" 
  history=15
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.*" 
-  "*.pas" "*.pp" "*.inc" "*.mfm" 
   
   "*.pas" "*.pp" "*.inc" "*.sh"
   "*.pas" "*.pp" "*.inc" "*.*"
@@ -54,6 +54,7 @@ findinfiledialog=92
   "*.pas" "*.pp" "*.inc" "*.mfm
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
+ filenamescust=0
  filenames=1
   /home/fred/ideu_github/
  filecolwidth=150
@@ -61,6 +62,16 @@ findinfiledialog=92
  y=211
  cx=608
  cy=346
+ panel=0
+ noicon=0
+ compact=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
  filehistory=20
   /home/fred/ideu_github/
   /home/fred/mseide-msegui/
@@ -85,8 +96,10 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=dodialogfiles
+ value=filedialog(
  history=20
+  filedialog(
+  from template
   dodialogfiles
   dialogfilesfo.cre
   dialogfilesfo.icon
@@ -105,8 +118,6 @@ findinfiledialog=92
   hello
   filedialogfo
   controller.panel = False
-  mysqldyn
-  dbf_
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -118,8 +129,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=929
- y=218
+ x=910
+ y=428
  cx=234
  cy=269
 replacedialog=32
@@ -869,20 +880,23 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=6
  ACTIONSMO
+ DISASSFO
  MAINFO
  FILEDIALOGXFO
  SOURCEFO
  SOURCEPAGE
-moduletypes=5
+moduletypes=6
  TACTIONSMO
+ TDISASSFO
  TMAINFO
  TFILEDIALOGXFO
  TSOURCEFO
  TSOURCEPAGE
-modulefiles=5
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/disassform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/msefiledialogx.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1232,7 +1246,7 @@ line=29
  2129
  1182
  591
- 4022
+ 4031
  660
  119
  1116
@@ -1244,14 +1258,14 @@ line=29
  547
  483
  66
- 4297
+ 4306
  684
  98
  15
  787
  903
  2536
- 5418
+ 5427
  1882
  6135
  146
@@ -1525,8 +1539,14 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=png
+finddtext=filedialog1(
 findhistory=20
+ filedialog1(
+ filedialog(
+ newproject(
+ readprojectoptions(aname);
+ tmainfo.newproject
+ help
  png
  loadimage
  string
@@ -1541,76 +1561,105 @@ findhistory=20
  2020
  dodialogfiles
  home
- debuggerfo
- gethistory
- filecount
- uses
- tactionsmo
- projectfiled
 findoptions=1
-editpos=6
+editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
+ 0,3045
  0,-1073741823
- 0,2260
+ 0,-1073741823
+ 0,-1073741823
+ 0,4419
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+sourcefiles=10
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/msefiledialogx.pas
-relpaths=6
+ ${PROJECTDIR}/disassform.pas
+ ${PROJECTDIR}/msegui.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/main.pas
+relpaths=10
  ideU.pas
  main.pas
  actionsmodule.pas
  sourcepage.pas
  sourceform.pas
  msefiledialogx.pas
-ismoduletexts=6
+ disassform.pas
+ msegui.pas
+ main.pas
+ main.pas
+ismoduletexts=10
  0
  0
  0
  0
  0
  0
-modules=5
+ 0
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/sourcepage.mfm
  /home/fred/ideu/src/msefiledialogx.mfm
-moduleoptions=5
+ /home/fred/ideu/src/disassform.mfm
+moduleoptions=6
  0
  0
  0
  0
  0
-visiblemodules=5
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
  -1
-nomenumodules=5
+ -1
+nomenumodules=6
+ 0
  0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=10
+ 0
+ 1
+ 2
+ 6
+ 5
+ 9
+ 8
+ 7
+ 3
+ 4
 firsttab=0
 index=5
 [layout]
-windowlayout=600
+windowlayout=630
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1624,8 +1673,8 @@ windowlayout=600
  ny=0
  ncx=0
  ncy=0
- x=63
- y=115
+ x=77
+ y=48
  cx=1224
  cy=621
  rcx=0
@@ -1683,7 +1732,7 @@ windowlayout=600
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1766,7 +1815,7 @@ windowlayout=600
  sortdescend1=0
  sorted=0
  col=0
- row=16
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2055,11 +2104,11 @@ windowlayout=600
  nx=0
  ny=0
  ncx=1197
- ncy=20
+ ncy=8
  x=0
  y=0
  cx=1212
- cy=18
+ cy=6
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2069,10 +2118,12 @@ windowlayout=600
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialogx.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/msegui.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/image/mseformatgifread.pas
   /home/fred/mseide-msegui/lib/common/fpccompatibility/msefpreadgif.pas
@@ -2089,8 +2140,6 @@ windowlayout=600
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/conffpgui.pas
   /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/commandlineform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2112,6 +2161,17 @@ windowlayout=600
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=10
+  0
+  1
+  2
+  6
+  5
+  9
+  8
+  7
+  3
+  4
  firsttab=0
  index=5
  [confideufo.fontname]
@@ -2195,7 +2255,7 @@ windowlayout=600
  [_mse_filedialogxfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_disassfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2206,6 +2266,25 @@ windowlayout=600
  y=61
  cx=618
  cy=484
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_disassfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=298
+ y=322
+ cx=574
+ cy=210
  rcx=0
  rcy=0
  wsize=0

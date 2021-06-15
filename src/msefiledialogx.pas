@@ -646,7 +646,7 @@ type
     filenames: filenamearty;
   end;
 
-function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
+function filedialogx(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring;    //'' -> 'Open' or 'Save'
   const filterdesc: array of msestring; const filtermask: array of msestring; const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
@@ -654,7 +654,7 @@ function filedialog(var afilenames: filenamearty; const aoptions: filedialogopti
   const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
   overload;
 //threadsafe
-function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+function filedialogx(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
   const adefaultext: filenamety = ''; const filterindex: pinteger = nil;     //nil -> 0
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
@@ -746,7 +746,7 @@ begin
   end;
 end;
 
-function filedialog1(dialog: tfiledialogxfo; var afilenames: filenamearty;
+function filedialogx1(dialog: tfiledialogxfo; var afilenames: filenamearty;
  const filterdesc: array of msestring;
   const filtermask: 
  array of msestring; const filterindex: pinteger; 
@@ -908,11 +908,22 @@ begin
   end;
 end;
 
-function filedialog(var afilenames: filenamearty; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
-  const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
+function filedialogx(var afilenames: filenamearty; 
+  const aoptions: filedialogoptionsty;
+  const acaption: msestring;
+  const filterdesc: array of msestring; 
+  const filtermask: array of msestring;
+  const adefaultext: filenamety = '';
+  const filterindex: pinteger = nil; 
+  const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
-  const imagelist: timagelist = nil; const ongetfileicon: getfileiconeventty = nil; const oncheckfile: checkfileeventty = nil): modalresultty;
+  const includeattrib: fileattributesty = [fa_all]; 
+  const excludeattrib: fileattributesty = [fa_hidden];
+  const history: pmsestringarty = nil; 
+  const historymaxcount: integer = defaulthistorymaxcount;
+  const imagelist: timagelist = nil; 
+  const ongetfileicon: getfileiconeventty = nil; 
+  const oncheckfile: checkfileeventty = nil): modalresultty;
 var
   dialog: tfiledialogxfo;
   str1: msestring;
@@ -920,6 +931,10 @@ begin
   application.lock;
   try
     dialog := tfiledialogxfo.Create(nil);
+    
+    dialog.blateral.value  := true;
+    dialog.bcompact.value  := true;
+      
     if acaption = '' then
     begin
       with stockobjects do
@@ -931,7 +946,7 @@ begin
     else
       str1 := acaption;
     try
-      Result := filedialog1(dialog, afilenames, filterdesc, filtermask,
+      Result := filedialogx1(dialog, afilenames, filterdesc, filtermask,
         filterindex, filter, colwidth,
         includeattrib, excludeattrib, history, historymaxcount, str1, aoptions,
         adefaultext, imagelist, ongetfileicon, oncheckfile);
@@ -943,7 +958,7 @@ begin
   end;
 end;
 
-function filedialog(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
+function filedialogx(var afilename: filenamety; const aoptions: filedialogoptionsty; const acaption: msestring; const filterdesc: array of msestring; const filtermask: array of msestring;
   const adefaultext: filenamety = ''; const filterindex: pinteger = nil; const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
   const includeattrib: fileattributesty = [fa_all]; const excludeattrib: fileattributesty = [fa_hidden]; const history: pmsestringarty = nil; const historymaxcount: integer = defaulthistorymaxcount;
@@ -953,7 +968,7 @@ var
 begin
   setlength(ar1, 1);
   ar1[0] := afilename;
-  Result := filedialog(ar1, aoptions, acaption, filterdesc, filtermask, adefaultext,
+  Result := filedialogx(ar1, aoptions, acaption, filterdesc, filtermask, adefaultext,
     filterindex,
     filter, colwidth, includeattrib, excludeattrib, history, historymaxcount,
     imagelist, ongetfileicon, oncheckfile);
@@ -3028,7 +3043,7 @@ begin
     else if fsplitterlateral > 0 then
       fo.tsplitter1.left := fsplitterlateral;
 
-    Result        := filedialog1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
+    Result        := filedialogx1(fo, ffilenames, ara, arb, @ffilterindex, @ffilter, @fcolwidth, finclude,
       fexclude, po1, fhistorymaxcount, acaption, aoptions, fdefaultext,
       fimagelist, fongetfileicon, foncheckfile);
     if not rectisequal(fo.widgetrect, rectbefore) then

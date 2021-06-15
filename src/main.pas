@@ -3166,7 +3166,7 @@ begin
   with projectoptions.o.texp do
     if newfisources[int1] = '' then
       sourcefo.newpage
-    else if filedialog(str1, [fdo_save, fdo_checkexist], c[Ord(str_new)] + ' ' +
+    else if filedialogx(str1, [fdo_save, fdo_checkexist], c[Ord(str_new)] + ' ' +
       newfinames[int1], [newfinames[int1]],
       [newfifilters[int1]], newfiexts[int1]) = mr_ok then
     begin
@@ -3200,7 +3200,7 @@ begin
     po1           := nil;
   end;
   str1 := '';
-  if filedialog(str1, [fdo_save, fdo_checkexist], c[Ord(newform)],
+  if filedialogx(str1, [fdo_save, fdo_checkexist], c[Ord(newform)],
     [c[Ord(pascalfiles)]],
     ['"*.pas" "*.pp" "*.mla"'], 'pas') = mr_ok then
   begin
@@ -3591,7 +3591,7 @@ begin
   if not fromprogram then begin
    if not empty then begin
     aname:= mstr2 + 'default.prj';
-    if filedialog(aname,[fdo_checkexist],c[ord(selecttemplate)],
+    if filedialogx(aname,[fdo_checkexist],c[ord(selecttemplate)],
              [c[ord(projectfiles)],c[ord(str_allfiles)]],
                             ['*.prj','*'],'prj') = mr_ok then begin
      readprojectoptions(aname);
@@ -3601,7 +3601,7 @@ begin
   end
   else begin
    aname:= '';
-   if filedialog(aname,[fdo_checkexist],c[ord(selectprogramfile)],
+   if filedialogx(aname,[fdo_checkexist],c[ord(selectprogramfile)],
             [c[ord(pascalprogfiles)],c[ord(cfiles)],c[ord(str_allfiles)]],
             ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"','"*.c" "*.cc" "*.cpp"','*'],
             'pas') = mr_ok then begin
@@ -3614,16 +3614,21 @@ begin
      end;
      expandprojectmacros;
     end;
-    aname:= aname + '.prj';
+              if not directoryexists(filepath(aname) + directoryseparator + 'units')
+          then msefileutils.createdir(filepath(aname) + directoryseparator + 'units');
+     aname:= aname + '.prj';
    end
    else begin
     goto endlab;
    end;
   end;
-  if filedialog(aname,[fdo_save,fdo_checkexist],c[ord(str_newproject)],
+  if filedialogx(aname,[fdo_save,fdo_checkexist],c[ord(str_newproject)],
               [c[ord(projectfiles)],c[ord(str_allfiles)]],
                                      ['*.prj','*'],'prj') = mr_ok then begin
    curdir:= filedir(aname);
+   if not directoryexists(curdir + directoryseparator + 'units')
+   then msefileutils.createdir(curdir + directoryseparator + 'units');
+
    setcurrentdirmse(curdir);
    insertitem(projecthistory,0,aname);
    i1:= 1;
@@ -3712,6 +3717,10 @@ begin
     end;
    end
    else begin
+           if not directoryexists(filedir(aname) + directoryseparator + 'units')
+         then msefileutils.createdir(filedir(aname) + directoryseparator + 'units');
+
+
     saveproject(aname);
     sourcefo.openfile(projectoptions.o.texp.mainfile,true);
    end;
@@ -4414,7 +4423,7 @@ procedure tmainfo.loadwindowlayoutexe(const Sender: TObject);
 var
   str1: ttextstream;
 begin
-  if filedialog(windowlayoutfile, [fdo_checkexist], c[Ord(str_loadwindowlayout)],
+  if filedialogx(windowlayoutfile, [fdo_checkexist], c[Ord(str_loadwindowlayout)],
     [c[Ord(projectfiles)], c[Ord(str_allfiles)]], ['*.prj', '*'], 'prj',
     nil, nil, nil, [fa_all], [fa_hidden], @windowlayouthistory) = mr_ok then
   begin
