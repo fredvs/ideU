@@ -712,7 +712,7 @@ messagefo.updateprojectoptions;
 onchangefont;
 noconfirmdelete := confirmdel.value;
 blinkingcaret :=  blinkcaret.value;
-mse_repaintcanvas := brepaintcanvas.value;
+//mse_repaintcanvas := brepaintcanvas.value;
 end;
 
 procedure tconfideufo.onok(const sender: TObject);

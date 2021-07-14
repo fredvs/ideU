@@ -41,7 +41,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
 
 const
-  versiontext = '2.4.8';
+  versiontext = '2.4.10';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -866,7 +866,7 @@ begin
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
   confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', false);
-  mse_repaintcanvas := confideufo.brepaintcanvas.Value ;
+  //mse_repaintcanvas := confideufo.brepaintcanvas.Value ;
 
   noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
   confideufo.confirmdel.Value := noconfirmdelete;
