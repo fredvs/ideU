@@ -1873,8 +1873,15 @@ begin
  end else
  begin
   if copy(props[arow].caption,1,2) = 'on' then  info.caption:= 
-  'Type in the name of the method you want and Press Enter.' ;
- end;
+  'Type in the name of the method you want and Press Enter.' else
+  
+  if system.pos('optionswindow',props[arow].caption) > 0 then
+     info.caption:= 
+  'For "wo_rounded" set the radius of rounded corner'  + lineend +
+  'with global variable "mse_radiuscorner".' + lineend +
+  'Default is mse_radiuscorner = 22.';
+  
+  end;
  
 end;
 
@@ -1886,7 +1893,12 @@ begin
  end else
  begin
   if copy(props[arow].caption,1,2) = 'on' then  info.caption:= 
-  'Type in the name of the method you want and Press Enter.' ;
+  'Type in the name of the method you want and Press Enter.' 
+  else
+  
+   if system.pos('wo_rounded',props[arow].caption) > 0 then  info.caption:= 
+  'Set the radius of rounded corner with global variable "mse_radiuscorner".' + lineend +
+  'Default is mse_radiuscorner = 22.';
  end;
 end;
 

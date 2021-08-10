@@ -30,15 +30,15 @@ interface
 {$endif}
 
 uses
-  msearrayutils,
- aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,dialogfiles,
- mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,msefileutils,
- msedispwidgets,msedataedits,msestat,msestatfile,msemenus,msebitmap,msegrids,
- msefiledialogx,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
- mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
- msestrings,msepostscriptprinter,msegraphics,mseglob,msestream, msepointer,
- mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
- projecttreeform,msepipestream,msestringcontainer,msesys,msewidgets;
+ msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,
+ dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
+ msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
+ msebitmap,msegrids,msefiledialogx,msetypes,sourcepage,msedesignintf,
+ msedesigner,Classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,SysUtils,
+ msesysenv,msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob,
+ msestream, msepointer,mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,
+ mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
+ msewidgets;
 
 const
   versiontext = '2.4.10';
@@ -155,6 +155,7 @@ type
     tframecomp3: tframecomp;
     convexdark: tfacecomp;
     concavedark: tfacecomp;
+   ttimer1: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -248,6 +249,7 @@ type
     procedure ondark(const Sender: TObject);
     procedure ontoggleunitform(const Sender: TObject);
 
+   procedure ontimersplash(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -397,6 +399,7 @@ implementation
 
 uses
   // fred
+  splash,
   confmsegui,
   beauty,
   conffpgui,
@@ -700,6 +703,8 @@ top := 56 ;
    confideufo.onchangefont;
 
    objectinspectorfo.close;
+   
+  // splashfo.close;
 
 end;
 
@@ -5059,6 +5064,17 @@ end;
 procedure tmainfo.ontoggleunitform(const Sender: TObject);
 begin
   actionsmo.toggleformunitonexecute(Sender);
+end;
+
+procedure tmainfo.ontimersplash(const sender: TObject);
+begin
+splashfo.windowopacity := splashfo.windowopacity - 0.1;
+if splashfo.windowopacity <= 0 then
+begin
+ttimer1.enabled := false;
+splashfo.close;
+end;
+ 
 end;
 
 

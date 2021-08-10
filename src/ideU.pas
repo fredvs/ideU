@@ -54,6 +54,7 @@ uses
   symbolform,
   targetconsole,
   main,
+  splash,
   mseguiintf,
   {msestockobjects,}regunitgroups,
   guitemplates,
@@ -83,6 +84,9 @@ begin
    application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
   if application.terminated then exit;
+  
+     application.createform(tsplashfo, splashfo);
+
 
     application.createform(tconfideufo, confideufo);
   application.createform(tconfmseguifo, confmseguifo);
@@ -130,6 +134,7 @@ begin
 
   mainfo.ideureadconfig;
   
+  splashfo.icon := mainfo.icon;
   confideufo.icon := mainfo.icon;
   confmseguifo.icon := mainfo.icon;
   conffpguifo.icon := mainfo.icon;

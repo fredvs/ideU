@@ -2474,4 +2474,11 @@ object mainfo: tmainfo
     left = 241
     top = 25
   end
+  object ttimer1: ttimer
+    interval = 200000
+    ontimer = ontimersplash
+    enabled = True
+    left = 624
+    top = 15
+  end
 end
