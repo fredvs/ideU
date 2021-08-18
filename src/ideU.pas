@@ -26,11 +26,14 @@ uses
   mseskindesign,
   {
   gettext,
-  msei18nutils,
+ // msei18nutils,
   mseconsts,
   mseconsts_ru,
-  mseconsts_de,mseconsts_es,mseconsts_zh,mseconsts_id,mseconsts_fr,
- // }
+  mseconsts_de,
+  mseconsts_es,
+  mseconsts_fr,
+ // mseconsts_zh,mseconsts_id,
+  }
   msegui,
   msegraphics,
   actionsmodule,
@@ -62,21 +65,19 @@ uses
   msefont,
   stringconsts;
 
-{
-var
-  MSELang,MSEFallbacklang:string;
-//}
-
+//var
+//  MSELang : string = '';
+//  MSEFallbacklang: string = '';
+  
 begin
 
-{
- Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
-  MSEFallbackLang:='ru';
+// Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+ 
+ //  MSEFallbackLang:='fr';
 //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
-//  'ideu_i18n_'+ MSEFallbackLang,true) then setlangconsts(MSEFallbackLang);
-//}
-
- // setlangconsts(MSEFallbackLang);
+//  'ideu_i18n_'+ MSEFallbackLang,true) then
+ 
+// setlangconsts(MSEFallbackLang);
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);

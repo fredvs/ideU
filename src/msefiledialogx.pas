@@ -2443,13 +2443,14 @@ begin
 
   with stockobjects do
   begin
-    // dir.frame.caption:= captions[sc_dirhk];
+    dir.frame.caption:= captions[sc_dirhk];
     home.Caption         := captions[sc_homehk];
     //  up.caption:= captions[sc_uphk];
     createdir.Caption    := captions[sc_new_dirhk];
-    // filename.frame.caption:= captions[sc_namehk];
+    createdir.hint    := captions[sc_create_new_directory];
+    filename.frame.caption:= captions[sc_namehk];
     filter.frame.Caption := captions[sc_filterhk];
-    //  showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
+    showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
     ok.Caption           := modalresulttext[mr_ok];
     cancel.Caption       := modalresulttext[mr_cancel];
 
@@ -3010,7 +3011,7 @@ begin
     begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
-      fo.filename.frame.Caption := 'Selected Directory';
+      fo.filename.frame.Caption := stockobjects.captions[sc_dirhk];
     end
     else if (dialogkind in [fdk_save]) then
     begin
@@ -3020,7 +3021,7 @@ begin
     else if (dialogkind in [fdk_new]) then
       fo.filename.frame.Caption := 'New File Name'
     else
-      fo.filename.frame.Caption := 'Selected File';
+      fo.filename.frame.Caption := stockobjects.captions[sc_namehk];
 
     if dialogkind <> fdk_none then
       if dialogkind in [fdk_save, fdk_new] then

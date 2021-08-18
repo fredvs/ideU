@@ -147,7 +147,7 @@ const
   '&Dir',               //sc_Dirhk               /// 
   '&Home',              //sc_homehk               //
   '&Up',                //sc_Uphk                 //
-  '&New dir',           //sc_New_dirhk            // hotkeys
+  '&New',           //sc_New_dirhk            // hotkeys
   '&Name',              //sc_Namehk               //
   '&Show hidden files', //sc_Show_hidden_fileshk  //
   '&Filter',            //sc_Filterhk            /// 
@@ -274,7 +274,43 @@ const
   'Area activated',      //sc_areaactivated
   'Volume down',         //sc_volumedown
   'Volume up',           //sc_volumeup
-  'Cancel speech'        //sc_cancelspeech
+  'Cancel speech',       //sc_cancelspeech
+  'Target',               //sc_target
+  'View',               //sc_view
+  'Forms',               //sc_forms
+  'Layout',               //sc_layout
+  'Syntax',               //sc_syntax
+  'Project',               //sc_project
+  'Edited',                //sc_edited
+  'Widgets',               //sc_widgets
+  'Settings',               //sc_settings
+  'About',               //sc_about
+  'New',               //sc_newfile
+  'Save as...',               //sc_saveas
+  'Save all',               //sc_saveall
+  'Close all',               //sc_closeall
+  'Print',                 //sc_print
+  'Quit',               //sc_quit
+  'Line',               //sc_line
+  'Search again',               //sc_search_again
+  'Search back',               //sc_search_back
+  'Find & replace',               //sc_find_replace
+  'Find in files',               //sc_find_infile
+  'Procedures list' ,              //sc_proclist
+   'Select edit page',               //sc_select_edit_Page
+   'Copy word at cursor',               //sc_Copy_word_cursor
+   'Copy LaTeX',               //sc_copy_latex
+   'Indent',               //sc_ident
+   'Unindent',               //sc_uident
+   'Environment',               //sc_environment
+   'Attach process',               //sc_attachprocess
+   'Attach target',               //sc_attachtarget
+   'Detach target',               //sc_detachtarget
+   'Download',               //sc_download
+   'Tools',              //sc_tools
+   'Make',                      // sc_make 
+   'Build'                      // sc_build 
+  
 );
 
 function delete_n_selected_rows(const params: array of const): msestring;

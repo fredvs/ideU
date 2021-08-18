@@ -30,9 +30,16 @@ interface
 {$endif}
 
 uses
- msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,
+  gettext,
+ // msei18nutils,
+  mseconsts_ru,
+  mseconsts_de,
+  mseconsts_es,
+  mseconsts_fr,
+ 
+ msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,mseconsts,
  dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
- msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
+ msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus, msestockobjects,
  msebitmap,msegrids,msefiledialogx,msetypes,sourcepage,msedesignintf,
  msedesigner,Classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,SysUtils,
  msesysenv,msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob,
@@ -197,6 +204,8 @@ type
     procedure configureexecute(const Sender: TObject);
 
     function closeallmodule(): Boolean;
+    
+    procedure setlang(thelang : string);
 
     //debugger
     procedure restartgdbonexecute(const Sender: TObject);
@@ -250,6 +259,8 @@ type
     procedure ontoggleunitform(const Sender: TObject);
 
    procedure ontimersplash(const sender: TObject);
+   procedure onlang(const sender: TObject);
+   procedure onactiv(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -721,6 +732,7 @@ end;
 procedure tmainfo.ideureadconfig();
 var
   libpath: msestring;
+ 
 begin
   {$IFDEF Windows}
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
@@ -756,7 +768,7 @@ begin
    [al_stretchx,al_stretchy];
 
   end;
-
+ 
   conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring(libpath)));
 
    conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
@@ -1023,9 +1035,32 @@ begin
 end;
 
 procedure tmainfo.ideuwriteconfig();
+
 begin
   // fred
-  gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
+  
+if as_checked in mainmenu1.menu.itembynames(['settings','lang','langdefault']).state 
+   then
+   begin
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langen']).state 
+     then gINI.writeString('language', 'default', 'en') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langru']).state 
+     then gINI.writeString('language', 'default', 'ru') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langfr']).state 
+     then gINI.writeString('language', 'default', 'fr') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langde']).state 
+     then gINI.writeString('language', 'default', 'de') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langes']).state 
+     then gINI.writeString('language', 'default', 'es'); 
+  
+   end else gINI.writeString('language', 'default', '');
+
+   
+    gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
 
    gINI.writeString('Layout', 'default',ansistring(confideufo.deflayout.text));
 
@@ -4533,7 +4568,6 @@ procedure tmainfo.onresizemain(const Sender: TObject);
 var
   screen: rectty;
 begin
-
   screen   := application.workarea();
   if Height > screen.y + screen.cy then
     Height := screen.y + screen.cy - 30;
@@ -4547,11 +4581,171 @@ begin
   closeallmodule();
 end;
 
+procedure tmainfo.setlang(thelang : string);
+var
+ item1: tmenuitem;
+ x : shortint;
+begin
+
+setlangconsts(thelang);
+ 
+ with stockobjects do
+  begin
+   //   mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
+   mainmenu1.menu.itembynames(['file']).Caption := '&' + captions[sc_file];
+   mainmenu1.menu.itembynames(['file','new']).Caption :=  captions[sc_newfile];
+   mainmenu1.menu.itembynames(['file','open']).Caption :=  captions[sc_open];
+   mainmenu1.menu.itembynames(['file','save']).Caption :=  captions[sc_save];
+   mainmenu1.menu.itembynames(['file','saveas']).Caption :=  captions[sc_saveas];
+   mainmenu1.menu.itembynames(['file','saveall']).Caption :=  captions[sc_saveall];
+   mainmenu1.menu.itembynames(['file','close']).Caption :=  captions[sc_close];
+   mainmenu1.menu.itembynames(['file','closeall']).Caption :=  captions[sc_closeall];
+   mainmenu1.menu.itembynames(['file','print']).Caption :=  captions[sc_print];
+   mainmenu1.menu.itembynames(['file','quit']).Caption :=  captions[sc_quit];
+ 
+   mainmenu1.menu.itembynames(['search']).Caption := '&' + captions[sc_search];
+   mainmenu1.menu.itembynames(['search','line']).Caption :=  captions[sc_line];
+   mainmenu1.menu.itembynames(['search','find']).Caption := captions[sc_search];   
+   mainmenu1.menu.itembynames(['search','searchagain']).Caption :=  captions[sc_search_again];  
+   mainmenu1.menu.itembynames(['search','searchback']).Caption :=  captions[sc_search_back];  
+   mainmenu1.menu.itembynames(['search','findreplace']).Caption :=  captions[sc_find_replace];  
+   mainmenu1.menu.itembynames(['search','findinfile']).Caption :=  captions[sc_find_infile];  
+   mainmenu1.menu.itembynames(['search','proclist']).Caption :=  captions[sc_proclist];  
+         
+   mainmenu1.menu.itembynames(['edit']).Caption := '&' + captions[sc_edit];
+   mainmenu1.menu.itembynames(['edit','undo']).Caption :=  captions[sc_Undohk];
+   mainmenu1.menu.itembynames(['edit','redo']).Caption :=  captions[sc_Redohk];   
+   mainmenu1.menu.itembynames(['edit','copy']).Caption :=  captions[sc_Copyhk];  
+   mainmenu1.menu.itembynames(['edit','cut']).Caption :=  captions[sc_Cuthk];  
+   mainmenu1.menu.itembynames(['edit','paste']).Caption := captions[sc_pastehk];  
+   mainmenu1.menu.itembynames(['edit','delete']).Caption :=  captions[sc_delete];  
+   mainmenu1.menu.itembynames(['edit','selectall']).Caption :=  captions[sc_Select_allhk];  
+   mainmenu1.menu.itembynames(['edit','selecteditpage']).Caption :=  captions[sc_select_edit_Page];  
+   mainmenu1.menu.itembynames(['edit','copyatcursor']).Caption :=  captions[sc_Copy_word_cursor];  
+   mainmenu1.menu.itembynames(['edit','copylatex']).Caption :=  captions[sc_copy_latex];  
+   mainmenu1.menu.itembynames(['edit','indent']).Caption :=  captions[sc_indent];  
+   mainmenu1.menu.itembynames(['edit','unindent']).Caption := captions[sc_unindent];  
+ 
+   mainmenu1.menu.itembynames(['target']).Caption :=  captions[sc_target];
+   mainmenu1.menu.itembynames(['target','environment']).Caption :=  captions[sc_environment];
+   mainmenu1.menu.itembynames(['target','attachprocess']).Caption :=  captions[sc_attachprocess];   
+   mainmenu1.menu.itembynames(['target','attachtarget']).Caption :=  captions[sc_attachtarget];  
+   mainmenu1.menu.itembynames(['target','detachtarget']).Caption :=  captions[sc_detachtarget];  
+   mainmenu1.menu.itembynames(['target','download']).Caption :=  captions[sc_download];  
+ 
+  item1 := mainmenu1.menu.itembynames(['tools']);
+  if item1 <> nil then
+   mainmenu1.menu.itembynames(['tools']).Caption :=  captions[sc_tools]; 
+   
+   mainmenu1.menu.itembynames(['view']).Caption :=  captions[sc_view];
+   mainmenu1.menu.itembynames(['forms']).Caption := captions[sc_forms];
+   mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
+
+   mainmenu1.menu.itembynames(['project']).Caption :=  captions[sc_project];
+   mainmenu1.menu.itembynames(['project','make']).Caption :=  captions[sc_make];
+   mainmenu1.menu.itembynames(['project','build']).Caption :=  captions[sc_build];
+   x:= 0;
+   
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                   captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+ 
+  mainmenu1.menu.itembynames(['project','make0']).Caption :=
+                                    captions[sc_make] + ' &0';
+
+
+mainmenu1.menu.itembynames(['project','new']).Caption := captions[sc_newfile];
+mainmenu1.menu.itembynames(['project','open']).Caption := captions[sc_open];
+mainmenu1.menu.itembynames(['project','save']).Caption := captions[sc_save];
+mainmenu1.menu.itembynames(['project','saveas']).Caption := captions[sc_saveas];
+mainmenu1.menu.itembynames(['project','close']).Caption := captions[sc_close];
+  
+   mainmenu1.menu.itembynames(['edited']).Caption :=  captions[sc_edited];
+   mainmenu1.menu.itembynames(['edited','make']).Caption :=  captions[sc_make];
+    mainmenu1.menu.itembynames(['edited','build']).Caption :=  captions[sc_build];
+ 
+   x:= 0;
+  
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                   captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+ 
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x); 
+ 
+  mainmenu1.menu.itembynames(['edited','make0']).Caption :=
+                                    captions[sc_make] + ' 0';
+
+  mainmenu1.menu.itembynames(['edited','makeX']).Caption :=
+                                    captions[sc_make] + ' X';
+                                    
+  mainmenu1.menu.itembynames(['edited','open']).Caption := captions[sc_open];
+  mainmenu1.menu.itembynames(['edited','save']).Caption := captions[sc_save];
+  mainmenu1.menu.itembynames(['edited','close']).Caption := captions[sc_close];
+
+  mainmenu1.menu.itembynames(['widgets']).Caption := captions[sc_widgets];
+  mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
+  mainmenu1.menu.itembynames(['about']).Caption := captions[sc_about];
+  
+ end; 
+ 
+end;
+
+
 procedure tmainfo.manfocreated(const Sender: TObject);
+
 begin
    TDummyThread.Create(False);
-   //  setstattext('Light theme is set.', mtk_flat);
- end;
+end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
 var
@@ -5075,6 +5269,49 @@ ttimer1.enabled := false;
 splashfo.close;
 end;
  
+end;
+
+procedure tmainfo.onlang(const sender: TObject);
+var
+alang : string = ''; 
+
+begin
+case Tmenuitem(sender).name of
+'langen': alang := 'en';
+'langru': alang := 'ru';
+'langfr': alang := 'fr';
+'langde': alang := 'de';
+'langes': alang := 'es';
+end;
+
+setlang(alang);
+
+end;
+
+procedure tmainfo.onactiv(const sender: TObject);
+var
+tmp : string = '';
+MSELang : string = '';
+MSEFallbacklang: string = '';
+  
+begin
+ tmp := gINI.ReadString('language', 'default', '');
+  
+ if tmp <> '' then
+ begin
+ setlang(tmp);
+ mainmenu1.menu.itembynames(['settings','lang','langdefault']).state := [as_checked]; 
+ mainmenu1.menu.itembynames(['settings','lang','lang'+tmp]).state := [as_checked];
+  end else
+ begin 
+  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+  if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr')
+     or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+ begin    
+   mainmenu1.menu.itembynames(['settings','lang','lang'+MSEFallbackLang]).state := [as_checked];
+   setlang(MSEFallbackLang);
+ end; 
+end;
 end;
 
 

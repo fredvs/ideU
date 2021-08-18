@@ -1361,14 +1361,12 @@ begin
  end
  else begin
   find.enabled:= (sourcefo.activepage <> nil) ;
- // and sourcefo.activepage.activeentered;
+  //and sourcefo.activepage.activeentered;
   repeatfind.enabled:= find.enabled and
            (projectoptions.findreplaceinfo.find.text <> '');
  end;
   findback.enabled:= repeatfind.enabled;
- findcompallact.enabled:= not find.enabled;
-// find.enabled:= true;
- // repeatfind.enabled:=  (projectoptions.findreplaceinfo.find.text <> '');
+  findcompallact.enabled:= find.enabled;
 end;
 
 procedure tactionsmo.findcompexe(const sender: TObject);
