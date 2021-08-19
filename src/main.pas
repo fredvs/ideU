@@ -4639,6 +4639,7 @@ setlangconsts(thelang);
    
    mainmenu1.menu.itembynames(['view']).Caption :=  captions[sc_view];
    mainmenu1.menu.itembynames(['forms']).Caption := captions[sc_forms];
+   mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
    mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
 
    mainmenu1.menu.itembynames(['project']).Caption :=  captions[sc_project];
