@@ -398,7 +398,6 @@ var
   thetimer: TTimer;
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
-  activated: Boolean = False;
 
 procedure doassistive;
 
@@ -4746,6 +4745,7 @@ procedure tmainfo.manfocreated(const Sender: TObject);
 
 begin
    TDummyThread.Create(False);
+   onactiv(sender);
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -5296,8 +5296,6 @@ MSELang : string = '';
 MSEFallbacklang: string = '';
   
 begin
-if activated = false then
-begin
  tmp := gINI.ReadString('language', 'default', '');
   
  if tmp <> '' then
@@ -5315,11 +5313,7 @@ begin
    setlang(MSEFallbackLang);
  end; 
 end;
- activated := true;
 end;
-end;
-
-
 
 end.
 
