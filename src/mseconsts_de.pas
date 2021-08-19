@@ -263,7 +263,7 @@ const
    'Symbole',                      // sc_symbols
    'Uhren',                      // sc_watches
    'Stapel',                      // sc_stack
-   'Themen',                      // sc_threads
+   'Fäden',                      // sc_threads
    'CPU',                      // sc_cpu
    'Assembler',                      // sc_assembler
    'Haltepunkte',                      // sc_breakpoints
