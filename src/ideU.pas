@@ -78,6 +78,7 @@ begin
 //  'ideu_i18n_'+ MSEFallbackLang,true) then
  
 // setlangconsts(MSEFallbackLang);
+nozorderhandling := true;
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);

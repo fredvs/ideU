@@ -248,7 +248,15 @@ const
    'Descargar',               //sc_download
    'Instrumentos',              //sc_tools
    'Hacer',                      // sc_make 
-   'Construir'                      // sc_build 
+   'Construir',                      // sc_build 
+   'Cancelar hacer',                      // sc_abortmake 
+   'Depurar/Ejecutar',                      // sc_debugrun 
+   'Opciones',                      // sc_options 
+   'Árbol',                      // sc_tree 
+   'Fuente',                      // sc_source 
+   'Abrir copia',                      // sc_opencopy 
+   'Guardar copia como ...',                      // sc_saveascopy 
+   'Embellecedor'                      // sc_beautifier             
   
 );
    

@@ -290,7 +290,15 @@ const
    'Скачать',               //sc_download
    'Инструменты',              //sc_tools
    'Делать',                      // sc_make 
-   'Строить'                      // sc_build 
+   'Строить',                      // sc_build 
+   'Прервать создание',                      // sc_abortmake 
+   'Отладка / Запуск',                      // sc_debugrun 
+   'Опции',                      // sc_options 
+   'Дерево',                      // sc_tree 
+   'Источник',                      // sc_source 
+   'Открыть копию',                      // sc_opencopy 
+   'Сохранить копию как ...',                      // sc_saveascopy 
+   'Украшение'                      // sc_beautifier             
   
 );
 

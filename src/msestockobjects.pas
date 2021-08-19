@@ -1,3 +1,4 @@
+
 { MSEgui Copyright (c) 1999-2018 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
@@ -161,8 +162,9 @@ type
                     sc_find_infile,sc_proclist,sc_select_edit_Page,
                     sc_Copy_word_cursor,sc_copy_latex,sc_indent,sc_unindent,
                     sc_environment,sc_attachprocess,sc_attachtarget,sc_detachtarget,
-                    sc_download,sc_tools,sc_make,sc_build
-                                        
+                    sc_download,sc_tools,sc_make,sc_build,sc_abortmake,sc_debugrun,sc_options,
+                    sc_tree,sc_source,sc_opencopy,sc_saveascopy,sc_beautifier
+                                                            
                     );
  textgeneratorfuncty = function(const params: array of const): msestring;
  textgeneratorty = (tg_delete_n_selected_rows);

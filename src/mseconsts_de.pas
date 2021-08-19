@@ -245,7 +245,15 @@ const
    'Herunterladen',               //sc_download
    'Werkzeuge',              //sc_tools
    'Machen',                      // sc_make 
-   'Bauen'                      // sc_build 
+   'Bauen',                      // sc_build 
+   'Abbrechen',                      // sc_abortmake 
+   'Debuggen/Ausführen',                      // sc_debugrun 
+   'Optionen',                      // sc_options 
+   'Baum',                      // sc_tree 
+   'Quelle',                      // sc_source 
+   'Kopie öffnen',                      // sc_opencopy 
+   'Kopie speichern unter...',                      // sc_saveascopy 
+   'Verschönerer'                      // sc_beautifier             
   
 );
 

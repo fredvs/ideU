@@ -309,7 +309,16 @@ const
    'Download',               //sc_download
    'Tools',              //sc_tools
    'Make',                      // sc_make 
-   'Build'                      // sc_build 
+   'Build',                      // sc_build 
+   'Abort make',                      // sc_abortmake 
+   'Debug-Run',                      // sc_debugrun 
+   'Options',                      // sc_options 
+   'Tree',                      // sc_tree 
+   'Source',                      // sc_source 
+   'Open copy',                      // sc_opencopy 
+   'Save copy as',                      // sc_saveascopy 
+   'Beautifier'                      // sc_beautifier 
+            
   
 );
 

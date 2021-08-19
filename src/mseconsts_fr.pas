@@ -255,7 +255,7 @@ const
   'Cible',               //sc_target
   'Voir',               //sc_view
   'Formes',               //sc_forms
-  'Layout',               //sc_layout
+  'Disposition',               //sc_layout
   'Syntaxe',               //sc_syntax
   'Projet',               //sc_project
   'Edité',                //sc_edited
@@ -286,7 +286,15 @@ const
    'Télécharger',               //sc_download
    'Outils',              //sc_tools
    'Fabriquer',                      // sc_make 
-   'Construire'                      // sc_build 
+   'Construire' ,                      // sc_build 
+   'Annuler fabriquer',                      // sc_abortmake 
+   'Déboguer/Exécuter',                      // sc_debugrun 
+   'Options',                      // sc_options 
+   'Arbre',                      // sc_tree 
+   'Source',                      // sc_source 
+   'Ouvrir une copie',                      // sc_opencopy 
+   'Sauver la copie sous ...',                      // sc_saveascopy 
+   'Embellisseur'                      // sc_beautifier             
   
 );
 

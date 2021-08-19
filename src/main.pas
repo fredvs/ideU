@@ -48,7 +48,7 @@ uses
  msewidgets;
 
 const
-  versiontext = '2.4.10';
+  versiontext = '2.5.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -593,6 +593,7 @@ end;
 
 procedure tmainfo.mainfooncreate(const Sender: TObject);
 begin
+nozorderhandling := true;
   designer.ongetmodulenamefile :=
 {$ifdef FPC}
     @
@@ -4677,7 +4678,15 @@ setlangconsts(thelang);
  
   mainmenu1.menu.itembynames(['project','make0']).Caption :=
                                     captions[sc_make] + ' &0';
-
+                                    
+                                    
+mainmenu1.menu.itembynames(['project','abortmake']).Caption := captions[sc_abortmake];
+mainmenu1.menu.itembynames(['project','debugrun']).Caption := captions[sc_debugrun];
+mainmenu1.menu.itembynames(['project','options']).Caption := captions[sc_options];
+mainmenu1.menu.itembynames(['project','tree']).Caption := captions[sc_tree];
+mainmenu1.menu.itembynames(['project','source']).Caption := captions[sc_source];
+mainmenu1.menu.itembynames(['project','opencopy']).Caption := captions[sc_opencopy];
+mainmenu1.menu.itembynames(['project','saveascopy']).Caption := captions[sc_saveascopy];
 
 mainmenu1.menu.itembynames(['project','new']).Caption := captions[sc_newfile];
 mainmenu1.menu.itembynames(['project','open']).Caption := captions[sc_open];
@@ -4688,7 +4697,11 @@ mainmenu1.menu.itembynames(['project','close']).Caption := captions[sc_close];
    mainmenu1.menu.itembynames(['edited']).Caption :=  captions[sc_edited];
    mainmenu1.menu.itembynames(['edited','make']).Caption :=  captions[sc_make];
     mainmenu1.menu.itembynames(['edited','build']).Caption :=  captions[sc_build];
+    mainmenu1.menu.itembynames(['edited','abortmake']).Caption := captions[sc_abortmake];
+    mainmenu1.menu.itembynames(['edited','run']).Caption := captions[sc_debugrun];
+     mainmenu1.menu.itembynames(['edited','beautifier']).Caption := captions[sc_beautifier];
  
+  
    x:= 0;
   
   inc(x);
@@ -4746,7 +4759,7 @@ procedure tmainfo.manfocreated(const Sender: TObject);
 
 begin
    TDummyThread.Create(False);
-   application.processmessages;
+  // application.processmessages;
    onactiv(sender);
 end;
 
@@ -5298,6 +5311,7 @@ MSELang : string = '';
 MSEFallbacklang: string = '';
   
 begin
+
  tmp := gINI.ReadString('language', 'default', '');
   
  if tmp <> '' then
@@ -5315,6 +5329,7 @@ begin
    setlang(MSEFallbackLang);
  end; 
 end;
+
 end;
 
 end.
