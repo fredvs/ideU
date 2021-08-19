@@ -4745,6 +4745,7 @@ procedure tmainfo.manfocreated(const Sender: TObject);
 
 begin
    TDummyThread.Create(False);
+   application.processmessages;
    onactiv(sender);
 end;
 

@@ -1307,7 +1307,7 @@ line=29
  787
  903
  2536
- 5681
+ 5682
  1882
  6135
  152
@@ -1614,7 +1614,7 @@ editpos=10
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,400
+ 0,4747
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1756,7 +1756,7 @@ windowlayout=581
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=componentstorefo
  parent=
  mdistate=0
  nx=0
@@ -1783,7 +1783,7 @@ windowlayout=581
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_stockdata_mse_
  parent=
  mdistate=0
  nx=0
@@ -1802,7 +1802,7 @@ windowlayout=581
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=disassfo
  parent=
  mdistate=0
  nx=0
@@ -1926,7 +1926,7 @@ windowlayout=581
  [symbolfo]
  splitdir=0
  useroptions=268451963
- stackedunder=
+ stackedunder=findinfilefo
  parent=
  mdistate=0
  nx=0
@@ -2022,7 +2022,7 @@ windowlayout=581
  [componentstorefo]
  splitdir=0
  useroptions=268460155
- stackedunder=
+ stackedunder=symbolfo
  parent=
  mdistate=0
  nx=0
@@ -2043,7 +2043,7 @@ windowlayout=581
  width0=111
  sortdescend0=0
  sortdescend1=0
- width2=160
+ width2=103
  sortdescend2=0
  width3=185
  sortdescend3=0
@@ -2128,7 +2128,7 @@ windowlayout=581
  nx=0
  ny=0
  ncx=1356
- ncy=65
+ ncy=64
  x=0
  y=0
  cx=1356
@@ -2191,26 +2191,6 @@ windowlayout=581
  value=stf_default
  [confideufo.usedefaulteditoroptions]
  value=0
- [cpuc86_64fo]
- irqoff=0
- splitdir=0
- useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=183
- y=113
- cx=352
- cy=277
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
  [mainfo.panel1]
  splitdir=1
  useroptions=302087659
@@ -2230,7 +2210,7 @@ windowlayout=581
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -2249,7 +2229,7 @@ windowlayout=581
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=about_form
  parent=
  mdistate=3
  nx=0
@@ -2260,6 +2240,26 @@ windowlayout=581
  y=57
  cx=198
  cy=85
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=0
+ [cpuc86_64fo]
+ irqoff=0
+ splitdir=0
+ useroptions=268451947
+ stackedunder=breakpointsfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=183
+ y=113
+ cx=352
+ cy=277
  rcx=0
  rcy=0
  wsize=0
