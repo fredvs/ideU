@@ -317,9 +317,24 @@ const
    'Source',                      // sc_source 
    'Open copy',                      // sc_opencopy 
    'Save copy as',                      // sc_saveascopy 
-   'Beautifier'                      // sc_beautifier 
-            
-  
+   'Beautifier',                      // sc_beautifier
+   'Panels',                      // sc_panels
+   'Force Z order',                      // sc_forcezorder
+   'Tree list',                      // sc_treelist
+   'Messages',                      // sc_messages
+   'Find result',                      // sc_findresult
+   'Commander',                      // sc_commander
+   'Symbols',                      // sc_symbols
+   'Watches',                      // sc_watches
+   'Stack',                      // sc_stack
+   'Threads',                      // sc_threads
+   'CPU',                      // sc_cpu
+   'Assembler',                      // sc_assembler
+   'Breakpoints',                      // sc_breakpoints
+   'Watchpoints',                      // sc_watchpoints 
+   'Memory',                      // sc_memory
+   'Target console',                      // targetconsole 
+   'Toggle form/unit'          // toggleformunit
 );
 
 function delete_n_selected_rows(const params: array of const): msestring;

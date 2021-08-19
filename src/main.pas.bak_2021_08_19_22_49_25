@@ -31,64 +31,21 @@ interface
 
 uses
   gettext,
-  // msei18nutils,
+ // msei18nutils,
   mseconsts_ru,
   mseconsts_de,
   mseconsts_es,
   mseconsts_fr,
-  msearrayutils,
-  aboutform,
-  plugmanager,
-  fpg_iniutils_ideu,
-  msetimer,
-  mseformatstr,
-  mseconsts,
-  dialogfiles,
-  mseforms,
-  mseguiglob,
-  msegui,
-  msegdbutils,
-  mseactions,
-  sak_mse,
-  msefileutils,
-  msedispwidgets,
-  msedataedits,
-  msestat,
-  msestatfile,
-  msemenus,
-  msestockobjects,
-  msebitmap,
-  msegrids,
-  msefiledialogx,
-  msetypes,
-  sourcepage,
-  msedesignintf,
-  msedesigner,
-  Classes,
-  mclasses,
-  mseclasses,
-  msegraphutils,
-  typinfo,
-  msedock,
-  SysUtils,
-  msesysenv,
-  msemacros,
-  msestrings,
-  msepostscriptprinter,
-  msegraphics,
-  mseglob,
-  msestream,
-  msepointer,
-  mseprocmonitorcomp,
-  msesystypes,
-  mserttistat,
-  msedatalist,
-  mselistbrowser,
-  projecttreeform,
-  msepipestream,
-  msestringcontainer,
-  msesys,
-  msewidgets;
+ 
+ msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,mseconsts,
+ dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
+ msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus, msestockobjects,
+ msebitmap,msegrids,msefiledialogx,msetypes,sourcepage,msedesignintf,
+ msedesigner,Classes,mclasses,mseclasses,msegraphutils,typinfo,msedock,SysUtils,
+ msesysenv,msemacros,msestrings,msepostscriptprinter,msegraphics,mseglob,
+ msestream, msepointer,mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,
+ mselistbrowser,projecttreeform,msepipestream,msestringcontainer,msesys,
+ msewidgets;
 
 const
   versiontext = '2.5.0';
@@ -205,7 +162,7 @@ type
     tframecomp3: tframecomp;
     convexdark: tfacecomp;
     concavedark: tfacecomp;
-    ttimer1: ttimer;
+   ttimer1: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -247,8 +204,8 @@ type
     procedure configureexecute(const Sender: TObject);
 
     function closeallmodule(): Boolean;
-
-    procedure setlang(thelang: string);
+    
+    procedure setlang(thelang : string);
 
     //debugger
     procedure restartgdbonexecute(const Sender: TObject);
@@ -301,9 +258,9 @@ type
     procedure ondark(const Sender: TObject);
     procedure ontoggleunitform(const Sender: TObject);
 
-    procedure ontimersplash(const Sender: TObject);
-    procedure onlang(const Sender: TObject);
-    procedure onactiv(const Sender: TObject);
+   procedure ontimersplash(const sender: TObject);
+   procedure onlang(const sender: TObject);
+   procedure onactiv(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -361,7 +318,7 @@ type
     procedure uploadexe(const Sender: tguiapplication; var again: Boolean);
     procedure uploadcancel(const Sender: TObject);
     procedure gdbserverexe(const Sender: tguiapplication; var again: Boolean);
-    //  function terminategdbserver(const force: Boolean): Boolean;
+  //  function terminategdbserver(const force: Boolean): Boolean;
     procedure gdbservercancel(const Sender: TObject);
     procedure updatetargetenvironment;
     function needsdownload: Boolean;
@@ -437,7 +394,7 @@ type
 var
   mainfo: tmainfo;
   toogletag: Boolean = False;
-  layoutbusy: Boolean = True;
+  layoutbusy: Boolean = true;
   thetimer: TTimer;
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
@@ -585,28 +542,27 @@ begin
       if sakloadlib(thedir) = 0 then
 
         debuggerfo.assistive.face.image.alignment :=
-          [al_stretchx, al_stretchy]
+   [al_stretchx,al_stretchy]
 
       else
-        debuggerfo.assistive.face.image.alignment :=
-          [al_grayed, al_stretchx, al_stretchy];
+          debuggerfo.assistive.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
     end
     else
     begin
       sakunloadlib;
-      debuggerfo.assistive.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+       debuggerfo.assistive.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
     end;
   end
   else
   begin
     SakGreeting('Welcome with ideU !');
     if sakloadlib(thedir) = 0 then
-      debuggerfo.assistive.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.assistive.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+       debuggerfo.assistive.face.image.alignment :=
+   [al_stretchx,al_stretchy]    else
+       debuggerfo.assistive.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
   end;
 
 end;
@@ -637,7 +593,7 @@ end;
 
 procedure tmainfo.mainfooncreate(const Sender: TObject);
 begin
-  nozorderhandling := True;
+nozorderhandling := true;
   designer.ongetmodulenamefile :=
 {$ifdef FPC}
     @
@@ -756,10 +712,10 @@ top := 56 ;
 
   setstattext('Hello!', mtk_flat);
 
-  confideufo.onchangefont;
+   confideufo.onchangefont;
 
-  objectinspectorfo.Close;
-
+   objectinspectorfo.close;
+   
   // splashfo.close;
 
 end;
@@ -777,6 +733,7 @@ end;
 procedure tmainfo.ideureadconfig();
 var
   libpath: msestring;
+ 
 begin
   {$IFDEF Windows}
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
@@ -799,23 +756,23 @@ begin
 
   if gINI.ReadBool('Completion', 'proplist', False) = False then
   begin
-    debuggerfo.properties_list.tag := 0;
-    debuggerfo.properties_list.face.image.alignment :=
-      [al_grayed, al_stretchx, al_stretchy];
-    sourcefo.thetimer.Enabled      := False;
+    debuggerfo.properties_list.tag     := 0;
+   debuggerfo.properties_list.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
+    sourcefo.thetimer.Enabled          := False;
     sourcefo.hidesourcehint;
   end
   else
   begin
-    debuggerfo.properties_list.tag := 1;
-    debuggerfo.properties_list.face.image.alignment :=
-      [al_stretchx, al_stretchy];
+     debuggerfo.properties_list.tag     := 1;
+     debuggerfo.properties_list.face.image.alignment :=
+   [al_stretchx,al_stretchy];
 
   end;
-
+ 
   conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring(libpath)));
 
-  conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
+   conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
   conffpguifo.edfilename.Text  :=
     utf8decode(gINI.ReadString('edfilename', 'designer_fpGUI', '${FILENAME}'));
 
@@ -926,16 +883,16 @@ begin
 
   confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
 
-  confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', False);
+  confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', false);
   //mse_repaintcanvas := confideufo.brepaintcanvas.Value ;
 
-  noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', False);
+  noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', false);
   confideufo.confirmdel.Value := noconfirmdelete;
 
-  blinkingcaret := gINI.Readbool('blinkingcaret', 'general', True);
+  blinkingcaret := gINI.Readbool('blinkingcaret', 'general', true);
   confideufo.blinkcaret.Value := blinkingcaret;
 
-  confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
+    confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
 
   confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
 
@@ -963,9 +920,9 @@ begin
 
   confideufo.fontsize.Value := gINI.ReadInteger('fontsize', 'system', 12);
 
-  confideufo.fontname.Value := utf8decode(gINI.Readstring('fontname', 'system', 'stf_default'));
+   confideufo.fontname.Value := utf8decode(gINI.Readstring('fontname', 'system', 'stf_default'));
 
-  // confideufo.onchangefont;
+   // confideufo.onchangefont;
 
   confideufo.trimtrailingwhitespace.Value :=
     gINI.Readbool('trimtrailingwhitespace', 'editor', False);
@@ -993,31 +950,31 @@ begin
   else
     nozorderhandling := False;
 
-  // nostaticgravity:= true;
+ // nostaticgravity:= true;
 
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
 
-  confideufo.deflayout.Text :=
+  confideufo.deflayout.text :=
     utf8decode(gINI.ReadString('Layout', 'default', ansistring(libpath) + directoryseparator +
     'layout' + directoryseparator + 'Dock_Commandor_Tree_Editor_Message.prj'));
 
-  if not fileexists(confideufo.deflayout.Text) then
-    confideufo.deflayout.Text := (libpath) + directoryseparator +
-      'layout' + directoryseparator + 'Dock_Commandor_Tree_Editor_Message.prj';
+  if not fileexists(confideufo.deflayout.text) then
+  confideufo.deflayout.text := (libpath) + directoryseparator +
+    'layout' + directoryseparator + 'Dock_Commandor_Tree_Editor_Message.prj';
 
-  confideufo.deflayout.Value        := confideufo.deflayout.Text;
-  confideufo.deflayout.valuedefault := confideufo.deflayout.Text;
+    confideufo.deflayout.value := confideufo.deflayout.text;
+    confideufo.deflayout.valuedefault := confideufo.deflayout.text;
 
-  confideufo.defsynt.Text :=
+    confideufo.defsynt.text :=
     utf8decode(gINI.ReadString('Syntax', 'default', ansistring(libpath) + directoryseparator +
     'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef'));
 
-  if not fileexists(confideufo.defsynt.Text) then
-    confideufo.defsynt.Text := (libpath) + directoryseparator +
-      'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef';
+  if not fileexists(confideufo.defsynt.text) then
+  confideufo.defsynt.text := (libpath) + directoryseparator +
+    'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef';
 
-  confideufo.defsynt.Value        := confideufo.defsynt.Text;
-  confideufo.defsynt.valuedefault := confideufo.defsynt.Text;
+   confideufo.defsynt.value := confideufo.defsynt.text;
+   confideufo.defsynt.valuedefault := confideufo.defsynt.text;
 
      {$ifdef windows}
   confideufo.tesakitdir.Text :=
@@ -1040,7 +997,7 @@ begin
     vaparam := True;
     confideufo.tbassistive.Value := True;
     debuggerfo.assistive.face.image.alignment :=
-      [al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy];
 
   end;
 
@@ -1079,32 +1036,36 @@ begin
 end;
 
 procedure tmainfo.ideuwriteconfig();
+
 begin
   // fred
+  
+if as_checked in mainmenu1.menu.itembynames(['settings','lang','langdefault']).state 
+   then
+   begin
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langen']).state 
+     then gINI.writeString('language', 'default', 'en') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langru']).state 
+     then gINI.writeString('language', 'default', 'ru') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langfr']).state 
+     then gINI.writeString('language', 'default', 'fr') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langde']).state 
+     then gINI.writeString('language', 'default', 'de') 
+     else
+     if as_checked in mainmenu1.menu.itembynames(['settings','lang','langes']).state 
+     then gINI.writeString('language', 'default', 'es'); 
+  
+   end else gINI.writeString('language', 'default', '');
 
-  if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state then
-  begin
-    if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langen']).state then
-      gINI.writeString('language', 'default', 'en')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langru']).state then
-      gINI.writeString('language', 'default', 'ru')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langfr']).state then
-      gINI.writeString('language', 'default', 'fr')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langde']).state then
-      gINI.writeString('language', 'default', 'de')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langes']).state then
-      gINI.writeString('language', 'default', 'es');
+   
+    gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
 
-  end
-  else
-    gINI.writeString('language', 'default', '');
+   gINI.writeString('Layout', 'default',ansistring(confideufo.deflayout.text));
 
-
-  gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
-
-  gINI.writeString('Layout', 'default', ansistring(confideufo.deflayout.Text));
-
-  gINI.writeString('Syntax', 'default', ansistring(confideufo.defsynt.Text));
+   gINI.writeString('Syntax', 'default',ansistring(confideufo.defsynt.text));
 
   gINI.writebool('Integration', 'designer_fpGUI',
     (conffpguifo.enablefpguidesigner.Value));
@@ -1145,9 +1106,9 @@ begin
 
   gINI.WriteInteger('fontsize', 'system', (confideufo.fontsize.Value));
 
-  gINI.writeString('fontname', 'system', ansistring(confideufo.fontname.Value));
+   gINI.writeString('fontname', 'system', ansistring(confideufo.fontname.Value));
 
-  gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
+   gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
 
   gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));
 
@@ -1343,14 +1304,14 @@ begin
         wstr2 := '';
         //    openform.controller.filename:= '';
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
-        openform.controller.showoptions := True;
+        openform.controller.showoptions := true;
         if openform.controller.Execute(wstr2, fdk_open,
           c[Ord(formfile)] + ' ' + utf8decode(aname)) then
           openformfile(wstr2, False, False, True, True, False)//    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
-        //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
-        //                 //defaultvalues don't work on kylix
-        //    if action = mr_ok then begin
-        //     openformfile(openform.controller.filename,false,false,true,true,false);
+          //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
+          //                 //defaultvalues don't work on kylix
+          //    if action = mr_ok then begin
+          //     openformfile(openform.controller.filename,false,false,true,true,false);
         ;
       end;
     end;
@@ -1428,8 +1389,8 @@ begin
         [mr_yes, mr_cancel]) = mr_yes then
       begin
         wstr2 := '';
-        openform.controller.showoptions := True;
-
+         openform.controller.showoptions := true;
+       
         if openform.controller.Execute(wstr2, fdk_open, c[Ord(formfile)] + ' ' +
           msestring(atypename), [fdo_checkexist]) then
           openformfile(wstr2, False, False, False, False, False);
@@ -1457,16 +1418,19 @@ begin
       flastdesignform.activate(True);
   end
   else
-    objectinspectorfo.activate(True)// objectinspectorfo.font.height := confideufo.fontsize.value;
+  begin
+    objectinspectorfo.activate(True);
+    // objectinspectorfo.font.height := confideufo.fontsize.value;
     // objectinspectorfo.grid.datarowheight := round(ratio * 16);
-  ;
+     end;
 end;
 
 procedure tmainfo.viewobjectinspectoronexecute(const Sender: TObject);
+
 begin
-  objectinspectorfo.activate(True);
-  //  objectinspectorfo.font.height := confideufo.fontsize.value;
-  //  objectinspectorfo.grid.datarowheight := round(ratio * 16);
+   objectinspectorfo.activate(True);
+//  objectinspectorfo.font.height := confideufo.fontsize.value;
+//  objectinspectorfo.grid.datarowheight := round(ratio * 16);
 end;
 
 //idesignnotification
@@ -1590,8 +1554,8 @@ begin
   if (aselection.Count > 0) and (factivedesignmodule <> nil) then
     if not objectinspectorfo.active then
       objectinspectorfo.window.stackunder(factivedesignmodule^.designform.window)//  objectinspectorfo.bringtofront;
-  // objectinspectorfo.show;
-  // objectinspectorfo.activate;
+    // objectinspectorfo.show;
+    // objectinspectorfo.activate;
   ;
 end;
 
@@ -1658,10 +1622,9 @@ var
   int1, int2: integer;
   strwine: msestring;
 begin
-  if nodebugset then
-    setstattext('No debugger set, please check Project-Option|Debugger|Project-debugger.  Running without debugging...', mtk_error)
-  else
-    setstattext('', mtk_flat);
+if nodebugset then
+   setstattext('No debugger set, please check Project-Option|Debugger|Project-debugger.  Running without debugging...', mtk_error)
+   else setstattext('', mtk_flat);
 
   int1 := 1;
 
@@ -1835,33 +1798,34 @@ end;
 
 procedure tmainfo.setstattext(const atext: msestring; const akind: messagetextkindty = mtk_info);
 var
-  color0, color1, color3, colorf0, colore0, colore1, colorf1, colornf0, colornf1: longword;
+  color0, color1, color3, colorf0, colore0, colore1,
+  colorf1, colornf0, colornf1: longword;
 begin
 
   if themenr = 0 then
   begin
-    color0   := $CFCFCF;
-    color1   := $9E9E9E;
-    color3   := cl_black;
-    colorf0  := $96B094;
-    colorf1  := $B1CFAE;
+    color0  := $CFCFCF;
+    color1  := $9E9E9E;
+    color3  := cl_black;
+    colorf0 := $96B094;
+    colorf1 := $B1CFAE;
     colornf0 := $FFB1B4;
     colornf1 := $FF6E72;
-    colore1  := cl_white;
-    colore0  := cl_ltred;
+    colore1 := cl_white;
+    colore0 := cl_ltred;
   end;
 
   if themenr = 1 then
   begin
-    color0   := cl_dkgray;
-    color1   := cl_black;
-    color3   := cl_white;
-    colorf1  := $3F6B3E;
-    colorf0  := cl_black;
-    colornf0 := cl_yellow;
-    colornf1 := cl_dkyellow;
-    colore0  := cl_dkred;
-    colore1  := cl_black;
+    color0  := cl_dkgray;
+    color1  := cl_black;
+    color3  := cl_white;
+    colorf1 := $3F6B3E;
+    colorf0 := cl_black;
+    colornf0 :=cl_yellow;
+    colornf1 :=cl_dkyellow;
+    colore0 := cl_dkred;
+    colore1 := cl_black;
   end;
 
   with debuggerfo.statdisp do
@@ -1907,13 +1871,13 @@ begin
       end;
     end;
 
-    font.color := color3;
+       font.color           := color3;
 
-    //    case akind of
-    //      mtk_making: font.color := cl_red;
-    //      else
-    //        font.color           := color3;
-    //    end;
+//    case akind of
+//      mtk_making: font.color := cl_red;
+//      else
+//        font.color           := color3;
+//    end;
 
   end;
 
@@ -2431,13 +2395,17 @@ begin
       if (thetag and debuggerusedon[int3] <> 0) and (debuggerused[int3] <> '') then
         if system.pos('Default', debuggerused[int3]) > 0 then
           str3 := 'Default Debugger'
-        else if (trim(debuggerused[int3]) = 'Debugger 1') then
+        else
+        if (trim(debuggerused[int3]) = 'Debugger 1') then
           str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger1.Value))
-        else if (trim(debuggerused[int3]) = 'Debugger 2') then
+        else
+        if (trim(debuggerused[int3]) = 'Debugger 2') then
           str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger2.Value))
-        else if (trim(debuggerused[int3]) = 'Debugger 3') then
+        else
+        if (trim(debuggerused[int3]) = 'Debugger 3') then
           str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger3.Value))
-        else if (trim(debuggerused[int3]) = 'Debugger 4') then
+        else
+        if (trim(debuggerused[int3]) = 'Debugger 4') then
           str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value))
         else
           str3 := '';
@@ -2605,122 +2573,100 @@ var
 begin
   bo1 := False;
 
-  if debuggerfo.debug_on.tag = 1 then
-    bo2 := True
-  else
-    bo2 := False;
+  if debuggerfo.debug_on.tag = 1 then bo2 := true else bo2 := False;
 
   with projectoptions, d.texp, actionsmo do
   begin
-    detachtarget.Enabled  := gdb.execloaded or gdb.attached;
-    download.Enabled      := not gdb.started and not gdb.downloading and
+    detachtarget.Enabled := gdb.execloaded or gdb.attached;
+    download.Enabled := not gdb.started and not gdb.downloading and
       ((uploadcommand <> '') or d.gdbdownload);
     attachprocess.Enabled := not (gdb.execloaded or gdb.attached);
-    attachtarget.Enabled  := attachprocess.Enabled;
-    run.Enabled           := not gdb.running and not gdb.downloading and not iscompiling;
+    attachtarget.Enabled := attachprocess.Enabled;
+    run.Enabled   := not gdb.running and not gdb.downloading and not iscompiling;
     debuggerfo.project_start.Enabled := run.Enabled;
     debuggerfo.debug_on.Enabled := run.Enabled;
 
-    if debuggerfo.debug_on.Enabled then
+     if debuggerfo.debug_on.Enabled then
       debuggerfo.debug_on.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.debug_on.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.debug_on.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
 
-    if debuggerfo.project_start.Enabled then
+     if debuggerfo.project_start.Enabled then
       debuggerfo.project_start.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_start.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_start.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
-    bo1          := candebug;
-    step.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
-    debuggerfo.project_step.Enabled := step.Enabled;
+    bo1           := candebug;
+    step.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
+    debuggerfo.project_step.Enabled  := step.Enabled;
 
     if debuggerfo.project_step.Enabled then
       debuggerfo.project_step.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_step.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_step.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
+
 
 
     stepi.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
-    debuggerfo.project_step_instruction.Enabled := stepi.Enabled;
+    debuggerfo.project_step_instruction.Enabled  := stepi.Enabled;
 
-    if debuggerfo.project_step_instruction.Enabled then
+        if debuggerfo.project_step_instruction.Enabled then
       debuggerfo.project_step_instruction.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_step_instruction.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_step_instruction.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
-    Next.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
+    Next.Enabled  := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next.Enabled := Next.Enabled;
 
-    if debuggerfo.project_next.Enabled then
+         if debuggerfo.project_next.Enabled then
       debuggerfo.project_next.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_next.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_next.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
     nexti.Enabled := not gdb.running and not gdb.downloading and bo1 and bo2 and not iscompiling;
     debuggerfo.project_next_instruction.Enabled := nexti.Enabled;
 
-    if debuggerfo.project_next_instruction.Enabled then
+      if debuggerfo.project_next_instruction.Enabled then
       debuggerfo.project_next_instruction.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_next_instruction.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_next_instruction.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
     finish.Enabled := not gdb.running and gdb.started and bo1;
-    debuggerfo.project_finish.Enabled := finish.Enabled;
+    debuggerfo.project_finish.enabled:= finish.Enabled;
 
-    if debuggerfo.project_finish.Enabled then
+      if debuggerfo.project_finish.Enabled then
       debuggerfo.project_finish.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_finish.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_finish.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
-    continue.Enabled  := not gdb.running and not gdb.downloading and
+    continue.Enabled := not gdb.running and not gdb.downloading and
       (bo1 or (frunningprocess = invalidprochandle)) and not iscompiling;
     interrupt.Enabled := gdb.running and not gdb.downloading and bo1;
-    debuggerfo.project_interrupt.Enabled := interrupt.Enabled;
+    debuggerfo.project_interrupt.enabled :=  interrupt.Enabled;
 
-    if debuggerfo.project_interrupt.Enabled then
+      if debuggerfo.project_interrupt.Enabled then
       debuggerfo.project_interrupt.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_interrupt.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_interrupt.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
     reset.Enabled := (gdb.started or gdb.attached or gdb.downloading) or not bo1 and (frunningprocess <> invalidprochandle);
-    debuggerfo.project_reset.Enabled := reset.Enabled;
+    debuggerfo.project_reset.enabled:=reset.Enabled;
 
     if debuggerfo.project_reset.Enabled then
       debuggerfo.project_reset.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_reset.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_reset.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
-    makeact.Enabled      := not making;
+    makeact.Enabled := not making;
     abortmakeact.Enabled := making;
 
-    debuggerfo.project_make.Enabled := makeact.Enabled;
+       debuggerfo.project_make.enabled:=makeact.Enabled;
 
     if debuggerfo.project_make.Enabled then
       debuggerfo.project_make.face.image.alignment :=
-        [al_stretchx, al_stretchy]
-    else
-      debuggerfo.project_make.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+   [al_stretchx,al_stretchy] else debuggerfo.project_make.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
     saveall.Enabled := sourcefo.modified or designer.modified or
       projectoptions.modified;
@@ -2980,23 +2926,23 @@ var
   str1: filenamety;
   po1: pmoduleinfoty;
 begin //opensourceactonexecute
-      //writeln('hello');
-  openfile.controller.captionopen := 'Open File';
-
-  openfile.controller.showoptions := True;
-
+   //writeln('hello');
+   openfile.controller.captionopen := 'Open File';
+  
+   openfile.controller.showoptions := true;
+     
   openfile.controller.icon := icon;
+  
+  openfile.controller.fontheight := font.height; // font height of dialogfile
 
-  openfile.controller.fontheight := font.Height; // font height of dialogfile
-
-  openfile.controller.fontname := msestring(font.Name);       // font name of dialogfile
+  openfile.controller.fontname := msestring(font.name);       // font name of dialogfile
 
   openfile.controller.fontcolor := font.color;    // font color of dialogfile
 
-  // openfile.controller.backcolor := tbackcolor.Value;    // background color of dialogfile
+ // openfile.controller.backcolor := tbackcolor.Value;    // background color of dialogfile
 
-  Result := openfile.Execute = mr_ok;
-
+   Result := openfile.Execute = mr_ok;
+ 
   if Result then
   begin
     page     := nil;
@@ -3004,8 +2950,8 @@ begin //opensourceactonexecute
     unitnode := nil; //compilerwarning
     designer.beginskipall;
     openfile.controller.icon := icon;
-    openfile.controller.showoptions := True;
-
+    openfile.controller.showoptions := true;
+ 
     try
       with openfile.controller do
         for int1 := 0 to high(filenames) do
@@ -3028,7 +2974,7 @@ begin //opensourceactonexecute
                 unitnode.setformfile(str1);
             end;
           end;
-
+         
     finally
       designer.endskipall;
     end;
@@ -3339,7 +3285,7 @@ begin
     end
     else
       createform(str1, 'form', 'tmseform')//   createform(str1,formkindty(tmenuitem(sender).tag));
-    //default
+      //default
     ;
   end;
 end;
@@ -3580,15 +3526,15 @@ begin
 
     if projectoptions.d.showconsole = True then
     begin
-      debuggerfo.terminal_run.tag := 1;
+      debuggerfo.terminal_run.tag     := 1;
       debuggerfo.terminal_run.face.image.alignment :=
-        [al_stretchx, al_stretchy];
-    end
+   [al_stretchx,al_stretchy];
+        end
     else
     begin
-      debuggerfo.terminal_run.tag := 0;
-      debuggerfo.terminal_run.face.image.alignment :=
-        [al_grayed, al_stretchx, al_stretchy];
+      debuggerfo.terminal_run.tag     := 0;
+        debuggerfo.terminal_run.face.image.alignment :=
+   [al_grayed,al_stretchx,al_stretchy];
 
     end;
     application.ProcessMessages;
@@ -3605,29 +3551,28 @@ begin
   if (confideufo.usedefaulteditoroptions.Value) then
   begin
     layoutbusy := True;
-    if Assigned(sourcefo.ActivePage) then
-    begin
-      if han <> -1 then
-        sourcefo.syntaxpainter.freedeffile(han);
+     if Assigned(sourcefo.ActivePage) then begin
+    if han <> -1 then
+      sourcefo.syntaxpainter.freedeffile(han);
 
       thedir := tosysfilepath(confideufo.defsynt.Text);
 
-      str1 := ttextstream.Create(thedir);
+     str1 := ttextstream.Create(thedir);
 
-      han := sourcefo.syntaxpainter.readdeffile(str1);
-      sourcefo.ActivePage.edit.setsyntaxdef(han);
-      sourcefo.ActivePage.updatestatvalues;
-      str1.Destroy();
-    end;
+    han := sourcefo.syntaxpainter.readdeffile(str1);
+    sourcefo.ActivePage.edit.setsyntaxdef(han);
+    sourcefo.ActivePage.updatestatvalues;
+    str1.Destroy();
+   end;
 
-    thedir := tosysfilepath(confideufo.deflayout.Text);
+      thedir := tosysfilepath(confideufo.deflayout.Text);
 
-    if fileexists(thedir) then
+     if fileexists(thedir) then
     begin
       sleep(10);
       str1 := ttextstream.Create(thedir);
-      debuggerfo.Close;
-      loadwindowlayout(str1);
+     debuggerfo.Close;
+     loadwindowlayout(str1);
 
 
       if (tabind < 0) and (sourcefo.files_tab.Count > 0) then
@@ -3639,7 +3584,7 @@ begin
       str1.Destroy();
     end;
 
-    layoutbusy := False;
+  layoutbusy := false;
 
   end;
 
@@ -3660,178 +3605,173 @@ begin
     end;
 end;
 
-procedure tmainfo.newproject(const fromprogram, empty: Boolean);
+procedure tmainfo.newproject(const fromprogram,empty: boolean);
 var
-  aname: filenamety;
-  mstr1, mstr2: msestring;
-  i1: integer;
-  curdir, Source, dest: filenamety;
-  macrolist: tmacrolist;
-  copiedfiles: filenamearty;
-  bo1: Boolean;
+ aname: filenamety;
+ mstr1,mstr2: msestring;
+ i1: integer;
+ curdir,source,dest: filenamety;
+ macrolist: tmacrolist;
+ copiedfiles: filenamearty;
+ bo1: boolean;
 label
-  endlab;
+ endlab;
 begin
-  mstr2 := projecttemplatedir; //use macros of current project
-  if fromprogram then
-  begin
-    if (checksave() = mr_cancel) or not closeall(False) then
-      Exit;
-    setprojectname('');
+ mstr2:= projecttemplatedir; //use macros of current project
+ if fromprogram then begin
+  if (checksave() = mr_cancel) or not closeall(false) then begin
+   exit;
   end;
-  if fromprogram or openproject('') then
-  begin
-    gdb.closegdb;
-    cleardebugdisp;
-    sourcechanged(nil);
-    mstr1 := '';
-    if not fromprogram then
-    begin
-      if not empty then
-      begin
-        aname := mstr2 + 'default.prj';
-        if filedialogx(aname, [fdo_checkexist], c[Ord(selecttemplate)],
-          [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
-          ['*.prj', '*'], 'prj') = mr_ok then
-          readprojectoptions(aname);
-      end;
-      aname := '';
-    end
-    else
-    begin
-      aname := '';
-      if filedialogx(aname, [fdo_checkexist], c[Ord(selectprogramfile)],
-        [c[Ord(pascalprogfiles)], c[Ord(cfiles)], c[Ord(str_allfiles)]],
-        ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"', '"*.c" "*.cc" "*.cpp"', '*'],
-        'pas') = mr_ok then
-      begin
-        setcurrentdirmse(filedir(aname));
-        with projectoptions do
-        begin
-          with o.t do
-          begin
-            mainfile   := filename(aname);
-            aname      := removefileext(mainfile);
-            targetfile := aname + '${EXEEXT}';
-          end;
-          expandprojectmacros;
-        end;
-        if not directoryexists(filepath(aname) + directoryseparator + 'units') then
-          msefileutils.createdir(filepath(aname) + directoryseparator + 'units');
-        aname := aname + '.prj';
-      end
-      else
-        goto endlab;
+  setprojectname('');
+ end;
+ if fromprogram or openproject('') then begin
+  gdb.closegdb;
+  cleardebugdisp;
+  sourcechanged(nil);
+  mstr1:= '';
+  if not fromprogram then begin
+   if not empty then begin
+    aname:= mstr2 + 'default.prj';
+    if filedialogx(aname,[fdo_checkexist],c[ord(selecttemplate)],
+             [c[ord(projectfiles)],c[ord(str_allfiles)]],
+                            ['*.prj','*'],'prj') = mr_ok then begin
+     readprojectoptions(aname);
     end;
-    if filedialogx(aname, [fdo_save, fdo_checkexist], c[Ord(str_newproject)],
-      [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
-      ['*.prj', '*'], 'prj') = mr_ok then
-    begin
-      curdir := filedir(aname);
-      if not directoryexists(curdir + directoryseparator + 'units') then
-        msefileutils.createdir(curdir + directoryseparator + 'units');
+   end;
+   aname:= '';
+  end
+  else begin
+   aname:= '';
+   if filedialogx(aname,[fdo_checkexist],c[ord(selectprogramfile)],
+            [c[ord(pascalprogfiles)],c[ord(cfiles)],c[ord(str_allfiles)]],
+            ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"','"*.c" "*.cc" "*.cpp"','*'],
+            'pas') = mr_ok then begin
+    setcurrentdirmse(filedir(aname));
+    with projectoptions do begin
+     with o.t do begin
+      mainfile:= filename(aname);
+      aname:= removefileext(mainfile);
+      targetfile:= aname+'${EXEEXT}'
+     end;
+     expandprojectmacros;
+    end;
+              if not directoryexists(filepath(aname) + directoryseparator + 'units')
+          then msefileutils.createdir(filepath(aname) + directoryseparator + 'units');
+     aname:= aname + '.prj';
+   end
+   else begin
+    goto endlab;
+   end;
+  end;
+  if filedialogx(aname,[fdo_save,fdo_checkexist],c[ord(str_newproject)],
+              [c[ord(projectfiles)],c[ord(str_allfiles)]],
+                                     ['*.prj','*'],'prj') = mr_ok then begin
+   curdir:= filedir(aname);
+   if not directoryexists(curdir + directoryseparator + 'units')
+   then msefileutils.createdir(curdir + directoryseparator + 'units');
 
-      setcurrentdirmse(curdir);
-      insertitem(projecthistory, 0, aname);
-      i1 := 1;
-      while i1 <= high(projecthistory) do
-      begin
-        if projecthistory[i1] = aname then
-          deleteitem(projecthistory, i1);
-        Inc(i1);
-      end;
-      if high(projecthistory) >=
-        projectfiledia.controller.historymaxcount then
-        setlength(projecthistory, projectfiledia.controller.historymaxcount);
-      if not fromprogram then
-      begin
-        mstr1 := removefileext(filename(aname));
-        with projectoptions, o do
-        begin
-          projectfilename := aname;
-          projectdir      := curdir;
-          expandprojectmacros;
-          with o.texp do
-          begin
-            setlength(copiedfiles, length(newprojectfiles));
-            macrolist := tmacrolist.Create([mao_curlybraceonly]);
-            try
-              macrolist.add(['%PROJECTNAME%', '%PROJECTDIR%'], [mstr1, curdir], []);
-              if runscript(scriptbeforecopy, True, False) then
-              begin
-                for i1 := 0 to high(newprojectfiles) do
-                begin
-                  Source := filepath(newprojectfiles[i1]);
-                  if i1 <= high(newprojectfilesdest) then
-                    dest := newprojectfilesdest[i1]
-                  else
-                    dest := '';
-                  if dest <> '' then
-                  begin
-                    macrolist.expandmacros1(dest);
-                    if Source = '' then
-                      createdirpath(dest)
-                    else
-                    begin
-                      createdirpath(filedir(dest));
-                    end;
-                  end
-                  else
-                    dest          := filename(Source);
-                  copiedfiles[i1] := dest;
-                  if newprojectfiles[i1] <> '' then
-                    if (i1 <= high(o.expandprojectfilemacros)) and
-                      o.expandprojectfilemacros[i1] then
-                      copynewfile(Source, dest, False, False, ['%PROJECTNAME%', '%PROJECTDIR%'],
-                        [mstr1, curdir])
-                    else
-                      try
-                        if not copyfile(Source, dest, False) then
-                          showerror(c[Ord(str_file)] + dest + c[Ord(exists)]);
-                      except
-                        application.handleexception(nil);
-                      end;
-                end;
-                runscript(scriptaftercopy, False, False);
-              end;
-            finally
-              macrolist.Free;
+   setcurrentdirmse(curdir);
+   insertitem(projecthistory,0,aname);
+   i1:= 1;
+   while i1 <= high(projecthistory) do begin
+    if projecthistory[i1] = aname then begin
+     deleteitem(projecthistory,i1);
+    end;
+    inc(i1);
+   end;
+   if high(projecthistory) >=
+             projectfiledia.controller.historymaxcount then begin
+    setlength(projecthistory,projectfiledia.controller.historymaxcount);
+   end;
+   if not fromprogram then begin
+    mstr1:= removefileext(filename(aname));
+    with projectoptions,o do begin
+     projectfilename:= aname;
+     projectdir:= curdir;
+     expandprojectmacros;
+     with o.texp do begin
+      setlength(copiedfiles,length(newprojectfiles));
+      macrolist:= tmacrolist.create([mao_curlybraceonly]);
+      try
+       macrolist.add(['%PROJECTNAME%','%PROJECTDIR%'],[mstr1,curdir],[]);
+       if runscript(scriptbeforecopy,true,false) then begin
+        for i1:= 0 to high(newprojectfiles) do begin
+         source:= filepath(newprojectfiles[i1]);
+         if i1 <= high(newprojectfilesdest) then begin
+          dest:= newprojectfilesdest[i1];
+         end
+         else begin
+          dest:= '';
+         end;
+         if dest <> '' then begin
+          macrolist.expandmacros1(dest);
+          if source = '' then begin
+           createdirpath(dest);
+          end
+          else begin
+           createdirpath(filedir(dest));
+          end;
+         end
+         else begin
+          dest:= filename(source);
+         end;
+         copiedfiles[i1]:= dest;
+         if newprojectfiles[i1] <> '' then begin
+          if (i1 <= high(o.expandprojectfilemacros)) and
+                             o.expandprojectfilemacros[i1] then begin
+           copynewfile(source,dest,false,false,['%PROJECTNAME%','%PROJECTDIR%'],
+                                       [mstr1,curdir]);
+          end
+          else begin
+           try
+            if not copyfile(source,dest,false) then begin
+             showerror(c[ord(str_file)]+dest+c[ord(exists)]);
             end;
+           except
+            application.handleexception(nil);
+           end;
           end;
-          saveproject(aname);
-          bo1    := True;
-          for i1 := 0 to high(copiedfiles) do
-          begin
-            if i1 > high(o.loadprojectfile) then
-              break;
-            if o.loadprojectfile[i1] then
-              if checkfileext(copiedfiles[i1], [formfileext]) then
-                openformfile(copiedfiles[i1], True, False, False, True, False)
-              else
-              begin
-                sourcefo.openfile(copiedfiles[i1], bo1);
-                bo1 := False;
-              end;
-          end;
+         end;
         end;
-      end
-      else
-      begin
-        if not directoryexists(filedir(aname) + directoryseparator + 'units') then
-          msefileutils.createdir(filedir(aname) + directoryseparator + 'units');
-
-
-        saveproject(aname);
-        sourcefo.openfile(projectoptions.o.texp.mainfile, True);
+        runscript(scriptaftercopy,false,false);
+       end;
+      finally
+       macrolist.free;
       end;
-    end
-    else
-    begin
-      endlab:
-        projectoptions.projectfilename := '';
-      projectoptions.modified          := True;
+     end;
+     saveproject(aname);
+     bo1:= true;
+     for i1:= 0 to high(copiedfiles) do begin
+      if i1 > high(o.loadprojectfile) then begin
+       break;
+      end;
+      if o.loadprojectfile[i1] then begin
+       if checkfileext(copiedfiles[i1],[formfileext])then begin
+        openformfile(copiedfiles[i1],true,false,false,true,false);
+       end
+       else begin
+        sourcefo.openfile(copiedfiles[i1],bo1);
+        bo1:= false;
+       end;
+      end;
+     end;
     end;
+   end
+   else begin
+           if not directoryexists(filedir(aname) + directoryseparator + 'units')
+         then msefileutils.createdir(filedir(aname) + directoryseparator + 'units');
+
+
+    saveproject(aname);
+    sourcefo.openfile(projectoptions.o.texp.mainfile,true);
+   end;
+  end
+  else begin
+endlab:
+   projectoptions.projectfilename:= '';
+   projectoptions.modified:= true;
   end;
+ end;
 end;
 
 procedure tmainfo.newprojectonexecute(const Sender: TObject);
@@ -4051,7 +3991,7 @@ begin
       begin
         Result := False;
         watchpointsfo.Clear;
-        // domake(projectoptions.defaultmake);
+       // domake(projectoptions.defaultmake);
         actionsmo.custcompileproject(nil);
       end;
       fnoremakecheck := True;
@@ -4093,13 +4033,13 @@ begin
     messagefo.Messages.lastrow;
 
     if confideufo.usedefaulteditoroptions.Value then
-    begin
-      if confideufo.closemessages.Value then
-        messagefo.hide;
-    end
-    else if projectoptions.o.closemessages then
-      messagefo.hide;
-    ;
+            begin
+              if confideufo.closemessages.Value then
+                messagefo.hide;
+            end
+            else if projectoptions.o.closemessages then
+              messagefo.hide;
+        ;
 
     /// fred debugger
 
@@ -4125,13 +4065,17 @@ begin
         if (thetag and debuggerusedon[int3] <> 0) and (debuggerused[int3] <> '') then
           if system.pos('Default', debuggerused[int3]) > 0 then
             str3 := 'Default Debugger'
-          else if (trim(debuggerused[int3]) = 'Debugger 1') then
+          else
+          if (trim(debuggerused[int3]) = 'Debugger 1') then
             str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger1.Value))
-          else if (trim(debuggerused[int3]) = 'Debugger 2') then
+          else
+          if (trim(debuggerused[int3]) = 'Debugger 2') then
             str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger2.Value))
-          else if (trim(debuggerused[int3]) = 'Debugger 3') then
+          else
+          if (trim(debuggerused[int3]) = 'Debugger 3') then
             str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger3.Value))
-          else if (trim(debuggerused[int3]) = 'Debugger 4') then
+          else
+          if (trim(debuggerused[int3]) = 'Debugger 4') then
             str3 := (quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value)))
           else
             str3 := '';
@@ -4282,19 +4226,19 @@ end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
 begin
-  aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption     := 'About MSEgui';
+  aboutfo.font.height := confideufo.fontsize.value;
+  aboutfo.Caption := 'About MSEgui';
   aboutfo.about_text.frame.colorclient := $B2F4FF;
 
   aboutfo.about_text.Value :=
-    c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
+     c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed + 'Copyright 1999-2021' + c_linefeed +
+    'by Martin Schreiber' + c_linefeed +  'Copyright 1999-2021' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
-  aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+    aboutfo.about_text.height := 15 * confideufo.fontsize.value;
+    aboutfo.height := aboutfo.about_text.height + 16;
 
 
   aboutfo.Show(True);
@@ -4303,23 +4247,23 @@ end;
 
 procedure tmainfo.aboutfpguionexecute(const Sender: TObject);
 begin
-  aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption := 'About fpGUI';
+  aboutfo.font.height := confideufo.fontsize.value;
+  aboutfo.Caption          := 'About fpGUI';
   aboutfo.about_text.frame.colorclient := $FFF5B2;
   aboutfo.about_text.Value :=
-    c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
+     c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
     'Host: ' + platformtext + c_linefeed + c_linefeed +
     c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
     ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
-  aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+   aboutfo.about_text.height := 13 * confideufo.fontsize.value;
+   aboutfo.height := aboutfo.about_text.height + 16;
 
   aboutfo.Show(True);
 end;
 
 procedure tmainfo.aboutideuonexecute(const Sender: TObject);
 begin
-  aboutfo.font.Height      := confideufo.fontsize.Value;
+  aboutfo.font.height := confideufo.fontsize.value;
   aboutfo.Caption          := 'About ideU';
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
@@ -4330,8 +4274,8 @@ begin
     'Copyright 1999-2021' + c_linefeed + c_linefeed +
     'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
 
-  aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+   aboutfo.about_text.height := 15 * confideufo.fontsize.value;
+    aboutfo.height := aboutfo.about_text.height + 16;
 
   aboutfo.Show(True);
 end;
@@ -4539,11 +4483,11 @@ begin
 
   if not dialogfilesformcreated then
     dodialogfiles;
-
+    
   //  writeln('ok dodialogfiles'); 
 
-  dothemedialog();
-
+   dothemedialog();
+   
   //  writeln('ok dothemedialog'); 
 
   dialogfilesfo.tag := 1;
@@ -4551,22 +4495,22 @@ begin
   dialogfilesfo.Caption := 'Load a Layout File';
 
   // dialogfilesfo.list_files.cellwidth := 437;
-  dialogfilesfo.list_files.mask := '*.prj';
-  dialogfilesfo.list_files.path := expandprmacros('${LAYOUTDIR}');
-
-  //    writeln('ok macros'); 
+  dialogfilesfo.list_files.mask      := '*.prj';
+  dialogfilesfo.list_files.path      := expandprmacros('${LAYOUTDIR}');
+  
+//    writeln('ok macros'); 
 
   tabind := sourcefo.files_tab.activepageindex;
-
-  //  writeln('ok tabind'); 
+  
+//  writeln('ok tabind'); 
 
   dialogfilesfo.selected_file.frame.Caption := 'Selected Layout File';
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text          := '';
   //dialogfilesfo.activate;
-
-  //  writeln('ok selected_file'); 
-
+  
+//  writeln('ok selected_file'); 
+     
   if ismodal then
     dialogfilesfo.Show(True)
   else
@@ -4638,235 +4582,216 @@ begin
   closeallmodule();
 end;
 
-procedure tmainfo.setlang(thelang: string);
+procedure tmainfo.setlang(thelang : string);
 var
-  item1: tmenuitem;
-  x: shortint;
+ item1: tmenuitem;
+ x : shortint;
 begin
 
-  setlangconsts(thelang);
-
-  with stockobjects do
+setlangconsts(thelang);
+ 
+ with stockobjects do
   begin
-    //   mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
-    mainmenu1.menu.itembynames(['file']).Caption          := '&' + captions[sc_file];
-    mainmenu1.menu.itembynames(['file', 'new']).Caption   := captions[sc_newfile];
-    mainmenu1.menu.itembynames(['file', 'open']).Caption  := captions[sc_open];
-    mainmenu1.menu.itembynames(['file', 'save']).Caption  := captions[sc_save];
-    mainmenu1.menu.itembynames(['file', 'saveas']).Caption := captions[sc_saveas];
-    mainmenu1.menu.itembynames(['file', 'saveall']).Caption := captions[sc_saveall];
-    mainmenu1.menu.itembynames(['file', 'close']).Caption := captions[sc_close];
-    mainmenu1.menu.itembynames(['file', 'closeall']).Caption := captions[sc_closeall];
-    mainmenu1.menu.itembynames(['file', 'print']).Caption := captions[sc_print];
-    mainmenu1.menu.itembynames(['file', 'quit']).Caption  := captions[sc_quit];
+   //   mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
+   mainmenu1.menu.itembynames(['file']).Caption := '&' + captions[sc_file];
+   mainmenu1.menu.itembynames(['file','new']).Caption :=  captions[sc_newfile];
+   mainmenu1.menu.itembynames(['file','open']).Caption :=  captions[sc_open];
+   mainmenu1.menu.itembynames(['file','save']).Caption :=  captions[sc_save];
+   mainmenu1.menu.itembynames(['file','saveas']).Caption :=  captions[sc_saveas];
+   mainmenu1.menu.itembynames(['file','saveall']).Caption :=  captions[sc_saveall];
+   mainmenu1.menu.itembynames(['file','close']).Caption :=  captions[sc_close];
+   mainmenu1.menu.itembynames(['file','closeall']).Caption :=  captions[sc_closeall];
+   mainmenu1.menu.itembynames(['file','print']).Caption :=  captions[sc_print];
+   mainmenu1.menu.itembynames(['file','quit']).Caption :=  captions[sc_quit];
+ 
+   mainmenu1.menu.itembynames(['search']).Caption := '&' + captions[sc_search];
+   mainmenu1.menu.itembynames(['search','line']).Caption :=  captions[sc_line];
+   mainmenu1.menu.itembynames(['search','find']).Caption := captions[sc_search];   
+   mainmenu1.menu.itembynames(['search','searchagain']).Caption :=  captions[sc_search_again];  
+   mainmenu1.menu.itembynames(['search','searchback']).Caption :=  captions[sc_search_back];  
+   mainmenu1.menu.itembynames(['search','findreplace']).Caption :=  captions[sc_find_replace];  
+   mainmenu1.menu.itembynames(['search','findinfile']).Caption :=  captions[sc_find_infile];  
+   mainmenu1.menu.itembynames(['search','proclist']).Caption :=  captions[sc_proclist];  
+         
+   mainmenu1.menu.itembynames(['edit']).Caption := '&' + captions[sc_edit];
+   mainmenu1.menu.itembynames(['edit','undo']).Caption :=  captions[sc_Undohk];
+   mainmenu1.menu.itembynames(['edit','redo']).Caption :=  captions[sc_Redohk];   
+   mainmenu1.menu.itembynames(['edit','copy']).Caption :=  captions[sc_Copyhk];  
+   mainmenu1.menu.itembynames(['edit','cut']).Caption :=  captions[sc_Cuthk];  
+   mainmenu1.menu.itembynames(['edit','paste']).Caption := captions[sc_pastehk];  
+   mainmenu1.menu.itembynames(['edit','delete']).Caption :=  captions[sc_delete];  
+   mainmenu1.menu.itembynames(['edit','selectall']).Caption :=  captions[sc_Select_allhk];  
+   mainmenu1.menu.itembynames(['edit','selecteditpage']).Caption :=  captions[sc_select_edit_Page];  
+   mainmenu1.menu.itembynames(['edit','copyatcursor']).Caption :=  captions[sc_Copy_word_cursor];  
+   mainmenu1.menu.itembynames(['edit','copylatex']).Caption :=  captions[sc_copy_latex];  
+   mainmenu1.menu.itembynames(['edit','indent']).Caption :=  captions[sc_indent];  
+   mainmenu1.menu.itembynames(['edit','unindent']).Caption := captions[sc_unindent];  
+ 
+   mainmenu1.menu.itembynames(['target']).Caption :=  captions[sc_target];
+   mainmenu1.menu.itembynames(['target','environment']).Caption :=  captions[sc_environment];
+   mainmenu1.menu.itembynames(['target','attachprocess']).Caption :=  captions[sc_attachprocess];   
+   mainmenu1.menu.itembynames(['target','attachtarget']).Caption :=  captions[sc_attachtarget];  
+   mainmenu1.menu.itembynames(['target','detachtarget']).Caption :=  captions[sc_detachtarget];  
+   mainmenu1.menu.itembynames(['target','download']).Caption :=  captions[sc_download];  
+ 
+  item1 := mainmenu1.menu.itembynames(['tools']);
+  if item1 <> nil then
+   mainmenu1.menu.itembynames(['tools']).Caption :=  captions[sc_tools]; 
+   
+   mainmenu1.menu.itembynames(['view']).Caption :=  captions[sc_view];
+   mainmenu1.menu.itembynames(['forms']).Caption := captions[sc_forms];
+   mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
+   mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
 
-    mainmenu1.menu.itembynames(['search']).Caption := '&' + captions[sc_search];
-    mainmenu1.menu.itembynames(['search', 'line']).Caption := captions[sc_line];
-    mainmenu1.menu.itembynames(['search', 'find']).Caption := captions[sc_search];
-    mainmenu1.menu.itembynames(['search', 'searchagain']).Caption := captions[sc_search_again];
-    mainmenu1.menu.itembynames(['search', 'searchback']).Caption := captions[sc_search_back];
-    mainmenu1.menu.itembynames(['search', 'findreplace']).Caption := captions[sc_find_replace];
-    mainmenu1.menu.itembynames(['search', 'findinfile']).Caption := captions[sc_find_infile];
-    mainmenu1.menu.itembynames(['search', 'proclist']).Caption := captions[sc_proclist];
+   mainmenu1.menu.itembynames(['project']).Caption :=  captions[sc_project];
+   mainmenu1.menu.itembynames(['project','make']).Caption :=  captions[sc_make];
+   mainmenu1.menu.itembynames(['project','build']).Caption :=  captions[sc_build];
+   x:= 0;
+   
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                   captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['project','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' &' + inttostr(x);
+ 
+  mainmenu1.menu.itembynames(['project','make0']).Caption :=
+                                    captions[sc_make] + ' &0';
+                                    
+                                    
+mainmenu1.menu.itembynames(['project','abortmake']).Caption := captions[sc_abortmake];
+mainmenu1.menu.itembynames(['project','debugrun']).Caption := captions[sc_debugrun];
+mainmenu1.menu.itembynames(['project','options']).Caption := captions[sc_options];
+mainmenu1.menu.itembynames(['project','tree']).Caption := captions[sc_tree];
+mainmenu1.menu.itembynames(['project','source']).Caption := captions[sc_source];
+mainmenu1.menu.itembynames(['project','opencopy']).Caption := captions[sc_opencopy];
+mainmenu1.menu.itembynames(['project','saveascopy']).Caption := captions[sc_saveascopy];
 
-    mainmenu1.menu.itembynames(['edit']).Caption          := '&' + captions[sc_edit];
-    mainmenu1.menu.itembynames(['edit', 'undo']).Caption  := captions[sc_Undohk];
-    mainmenu1.menu.itembynames(['edit', 'redo']).Caption  := captions[sc_Redohk];
-    mainmenu1.menu.itembynames(['edit', 'copy']).Caption  := captions[sc_Copyhk];
-    mainmenu1.menu.itembynames(['edit', 'cut']).Caption   := captions[sc_Cuthk];
-    mainmenu1.menu.itembynames(['edit', 'paste']).Caption := captions[sc_pastehk];
-    mainmenu1.menu.itembynames(['edit', 'delete']).Caption := captions[sc_delete];
-    mainmenu1.menu.itembynames(['edit', 'selectall']).Caption := captions[sc_Select_allhk];
-    mainmenu1.menu.itembynames(['edit', 'selecteditpage']).Caption := captions[sc_select_edit_Page];
-    mainmenu1.menu.itembynames(['edit', 'copyatcursor']).Caption := captions[sc_Copy_word_cursor];
-    mainmenu1.menu.itembynames(['edit', 'copylatex']).Caption := captions[sc_copy_latex];
-    mainmenu1.menu.itembynames(['edit', 'indent']).Caption := captions[sc_indent];
-    mainmenu1.menu.itembynames(['edit', 'unindent']).Caption := captions[sc_unindent];
+mainmenu1.menu.itembynames(['project','new']).Caption := captions[sc_newfile];
+mainmenu1.menu.itembynames(['project','open']).Caption := captions[sc_open];
+mainmenu1.menu.itembynames(['project','save']).Caption := captions[sc_save];
+mainmenu1.menu.itembynames(['project','saveas']).Caption := captions[sc_saveas];
+mainmenu1.menu.itembynames(['project','close']).Caption := captions[sc_close];
+  
+   mainmenu1.menu.itembynames(['edited']).Caption :=  captions[sc_edited];
+   mainmenu1.menu.itembynames(['edited','make']).Caption :=  captions[sc_make];
+    mainmenu1.menu.itembynames(['edited','build']).Caption :=  captions[sc_build];
+    mainmenu1.menu.itembynames(['edited','abortmake']).Caption := captions[sc_abortmake];
+    mainmenu1.menu.itembynames(['edited','run']).Caption := captions[sc_debugrun];
+     mainmenu1.menu.itembynames(['edited','beautifier']).Caption := captions[sc_beautifier];
+ 
+  
+   x:= 0;
+  
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                   captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+ 
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x);
+ 
+  inc(x);
+  mainmenu1.menu.itembynames(['edited','make' + inttostr(x)]).Caption :=
+                                    captions[sc_make] + ' ' + inttostr(x); 
+ 
+  mainmenu1.menu.itembynames(['edited','make0']).Caption :=
+                                    captions[sc_make] + ' 0';
 
-    mainmenu1.menu.itembynames(['target']).Caption := captions[sc_target];
-    mainmenu1.menu.itembynames(['target', 'environment']).Caption := captions[sc_environment];
-    mainmenu1.menu.itembynames(['target', 'attachprocess']).Caption := captions[sc_attachprocess];
-    mainmenu1.menu.itembynames(['target', 'attachtarget']).Caption := captions[sc_attachtarget];
-    mainmenu1.menu.itembynames(['target', 'detachtarget']).Caption := captions[sc_detachtarget];
-    mainmenu1.menu.itembynames(['target', 'download']).Caption := captions[sc_download];
+  mainmenu1.menu.itembynames(['edited','makeX']).Caption :=
+                                    captions[sc_make] + ' X';
+                                    
+  mainmenu1.menu.itembynames(['edited','open']).Caption := captions[sc_open];
+  mainmenu1.menu.itembynames(['edited','save']).Caption := captions[sc_save];
+  mainmenu1.menu.itembynames(['edited','close']).Caption := captions[sc_close];
 
-    item1 := mainmenu1.menu.itembynames(['tools']);
-    if item1 <> nil then
-      mainmenu1.menu.itembynames(['tools']).Caption := captions[sc_tools];
-    
-    mainmenu1.menu.itembynames(['view']).Caption   := captions[sc_view];
-
-    mainmenu1.menu.itembynames(['view', 'panels']).Caption := captions[sc_panels];
-    mainmenu1.menu.itembynames(['view', 'forcezorder']).Caption := captions[sc_forcezorder];
-    mainmenu1.menu.itembynames(['view', 'source']).Caption := captions[sc_source];
-    mainmenu1.menu.itembynames(['view', 'treelist']).Caption := captions[sc_treelist];
-    mainmenu1.menu.itembynames(['view', 'messages']).Caption := captions[sc_messages];
-    mainmenu1.menu.itembynames(['view', 'findresult']).Caption := captions[sc_findresult];
-    mainmenu1.menu.itembynames(['view', 'commander']).Caption := captions[sc_commander];
-    mainmenu1.menu.itembynames(['view', 'symbols']).Caption := captions[sc_symbols];
-    mainmenu1.menu.itembynames(['view', 'watches']).Caption := captions[sc_watches];
-    mainmenu1.menu.itembynames(['view', 'stack']).Caption := captions[sc_stack];
-    mainmenu1.menu.itembynames(['view', 'threads']).Caption := captions[sc_threads];
-    mainmenu1.menu.itembynames(['view', 'cpu']).Caption := captions[sc_cpu];
-    mainmenu1.menu.itembynames(['view', 'assembler']).Caption := captions[sc_assembler];
-    mainmenu1.menu.itembynames(['view', 'memory']).Caption := captions[sc_memory];
-    mainmenu1.menu.itembynames(['view', 'targetconsole']).Caption := captions[sc_targetconsole];
-    mainmenu1.menu.itembynames(['view', 'breakpoints']).Caption := captions[sc_breakpoints];
-    mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := captions[sc_watchpoints];
-    mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := captions[sc_toggleformunit];
-       
-    mainmenu1.menu.itembynames(['forms']).Caption  := captions[sc_forms];
-    mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
-    mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
-
-    mainmenu1.menu.itembynames(['project']).Caption := captions[sc_project];
-    mainmenu1.menu.itembynames(['project', 'make']).Caption := captions[sc_make];
-    mainmenu1.menu.itembynames(['project', 'build']).Caption := captions[sc_build];
-    x := 0;
-
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' &' + IntToStr(x);
-
-    mainmenu1.menu.itembynames(['project', 'make0']).Caption :=
-      captions[sc_make] + ' &0';
-
-
-    mainmenu1.menu.itembynames(['project', 'abortmake']).Caption := captions[sc_abortmake];
-    mainmenu1.menu.itembynames(['project', 'debugrun']).Caption  := captions[sc_debugrun];
-    mainmenu1.menu.itembynames(['project', 'options']).Caption   := captions[sc_options];
-    mainmenu1.menu.itembynames(['project', 'tree']).Caption      := captions[sc_tree];
-    mainmenu1.menu.itembynames(['project', 'source']).Caption    := captions[sc_source];
-    mainmenu1.menu.itembynames(['project', 'opencopy']).Caption  := captions[sc_opencopy];
-    mainmenu1.menu.itembynames(['project', 'saveascopy']).Caption := captions[sc_saveascopy];
-
-    mainmenu1.menu.itembynames(['project', 'new']).Caption := captions[sc_newfile];
-    mainmenu1.menu.itembynames(['project', 'open']).Caption := captions[sc_open];
-    mainmenu1.menu.itembynames(['project', 'save']).Caption := captions[sc_save];
-    mainmenu1.menu.itembynames(['project', 'saveas']).Caption := captions[sc_saveas];
-    mainmenu1.menu.itembynames(['project', 'close']).Caption := captions[sc_close];
-
-    mainmenu1.menu.itembynames(['edited']).Caption        := captions[sc_edited];
-    mainmenu1.menu.itembynames(['edited', 'make']).Caption := captions[sc_make];
-    mainmenu1.menu.itembynames(['edited', 'build']).Caption := captions[sc_build];
-    mainmenu1.menu.itembynames(['edited', 'abortmake']).Caption := captions[sc_abortmake];
-    mainmenu1.menu.itembynames(['edited', 'run']).Caption := captions[sc_debugrun];
-    mainmenu1.menu.itembynames(['edited', 'beautifier']).Caption := captions[sc_beautifier];
-
-
-    x := 0;
-
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-
-      captions[sc_make] + ' ' + IntToStr(x);
-
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-
-    Inc(x);
-    mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption :=
-      captions[sc_make] + ' ' + IntToStr(x);
-
-    mainmenu1.menu.itembynames(['edited', 'make0']).Caption :=
-      captions[sc_make] + ' 0';
-
-    mainmenu1.menu.itembynames(['edited', 'makeX']).Caption :=
-      captions[sc_make] + ' X';
-
-    mainmenu1.menu.itembynames(['edited', 'open']).Caption := captions[sc_open];
-    mainmenu1.menu.itembynames(['edited', 'save']).Caption := captions[sc_save];
-    mainmenu1.menu.itembynames(['edited', 'close']).Caption := captions[sc_close];
-
-    mainmenu1.menu.itembynames(['widgets']).Caption  := captions[sc_widgets];
-    mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
-    mainmenu1.menu.itembynames(['about']).Caption    := captions[sc_about];
-
-  end;
-
+  mainmenu1.menu.itembynames(['widgets']).Caption := captions[sc_widgets];
+  mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
+  mainmenu1.menu.itembynames(['about']).Caption := captions[sc_about];
+  
+ end; 
+ 
 end;
 
 
 procedure tmainfo.manfocreated(const Sender: TObject);
+
 begin
-  TDummyThread.Create(False);
+   TDummyThread.Create(False);
   // application.processmessages;
-  onactiv(Sender);
+   onactiv(sender);
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
 var
-  ratio: double;
+ratio : double;
 begin
-  ratio := confideufo.fontsize.Value / 12;
+ratio := confideufo.fontsize.value / 12 ;
 
   if not beautyformcreated then
     doBeauty;
 
-  beautyfo.font.Height := confideufo.fontsize.Value;
-  beautyfo.font.Name   := ansistring(confideufo.fontname.Value);
+  beautyfo.font.height := confideufo.fontsize.value;
+  beautyfo.font.name := ansistring(confideufo.fontname.value);
 
-  beautyfo.group_file_changed.top := beautyfo.filetoclean.bottom + 4;
-  beautyfo.tbjedi.top := beautyfo.tbptop.bottom + 4;
-  beautyfo.group_file_changed.Height := beautyfo.tbjedi.bottom + 8;
+beautyfo.group_file_changed.top := beautyfo.filetoclean.bottom + 4;
+beautyfo.tbjedi.top := beautyfo.tbptop.bottom + 4;
+beautyfo.group_file_changed.height := beautyfo.tbjedi.bottom + 8;
 
-  beautyfo.group_file_changed.Width := round(ratio * 194);
-  beautyfo.filetoclean.Width        := beautyfo.group_file_changed.Width;
+beautyfo.group_file_changed.width := round(ratio * 194);
+beautyfo.filetoclean.width := beautyfo.group_file_changed.width;
 
-  beautyfo.createbackup.top := beautyfo.group_file_changed.bottom + 4;
+beautyfo.createbackup.top := beautyfo.group_file_changed.bottom + 4;
 
-  beautyfo.butdobeauty.top   := beautyfo.createbackup.bottom + 4;
-  beautyfo.butdobeauty.Width := beautyfo.group_file_changed.Width;
+beautyfo.butdobeauty.top := beautyfo.createbackup.bottom + 4;
+beautyfo.butdobeauty.width := beautyfo.group_file_changed.width;
 
-  beautyfo.Width := beautyfo.group_file_changed.Width + 8;
+beautyfo.width := beautyfo.group_file_changed.width + 8;
 
-  beautyfo.Height := beautyfo.butdobeauty.bottom + 4;
+beautyfo.height := beautyfo.butdobeauty.bottom + 4;
 
-  beautyfo.filetoclean.Value := extractfilename(debuggerfo.file_history.Value);
+beautyfo.filetoclean.Value := extractfilename(debuggerfo.file_history.Value);
 
   if ismodal then
     beautyfo.Show(True)
@@ -4877,25 +4802,24 @@ begin
   end;
 end;
 
-procedure tmainfo.dothemedialog();
-var
-  ratio: double;
+procedure tmainfo.dothemedialog();var
+ratio : double;
 begin
 
-  ratio := confideufo.fontsize.Value / 12;
+ratio := confideufo.fontsize.value / 12;
 
-  dialogfilesfo.selected_file.font.Height       := confideufo.fontsize.Value;
-  dialogfilesfo.selected_file.font.Name         := ansistring(confideufo.fontname.Value);
-  dialogfilesfo.selected_file.frame.font.Height := confideufo.fontsize.Value;
-  dialogfilesfo.selected_file.frame.font.Name   := ansistring(confideufo.fontname.Value);
+dialogfilesfo.selected_file.font.height := confideufo.fontsize.value;
+dialogfilesfo.selected_file.font.name := ansistring(confideufo.fontname.value);
+dialogfilesfo.selected_file.frame.font.height := confideufo.fontsize.value;
+dialogfilesfo.selected_file.frame.font.name := ansistring(confideufo.fontname.value);
 
-  dialogfilesfo.list_files.cellheight  := round((ratio) * 19);
-  dialogfilesfo.list_files.font.Height := confideufo.fontsize.Value;
-  dialogfilesfo.list_files.font.Name   := ansistring(confideufo.fontname.Value);
+dialogfilesfo.list_files.cellheight := round((ratio) * 19);
+dialogfilesfo.list_files.font.height := confideufo.fontsize.value;
+dialogfilesfo.list_files.font.name := ansistring(confideufo.fontname.value);
 
-  dialogfilesfo.Height := round((ratio) * 366);
-  dialogfilesfo.Width  := round((ratio) * 336);
-  //dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
+dialogfilesfo.height := round((ratio) * 366);
+dialogfilesfo.width  := round((ratio) * 336);
+//dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
 
   if themenr = 0 then
   begin
@@ -4930,10 +4854,10 @@ begin
     color3 := cl_white;
 
     basedock.face.template := convex;
-
-    frame.grip_face.template           := tfacecomp3;
-    frame.grip_faceactive.template     := tfacecomp3;
-    sourcefo.frame.grip_face.template  := tfacecomp3;
+    
+    frame.grip_face.template := tfacecomp3;
+    frame.grip_faceactive.template := tfacecomp3;
+    sourcefo.frame.grip_face.template := tfacecomp3;
     messagefo.frame.grip_face.template := tfacecomp3;
     debuggerfo.frame.grip_face.template := tfacecomp3;
     projecttreefo.frame.grip_face.template := tfacecomp3;
@@ -4970,35 +4894,35 @@ begin
     debuggerfo.project_start.face.template := debuggerfo.templproject;
     debuggerfo.project_next.face.template := debuggerfo.templproject;
 
-    if Assigned(debuggerfo) then
-    begin
-      debuggerfo.container.color := color0;
-      debuggerfo.color           := color0;
+   if Assigned(debuggerfo) then
+  begin
+   debuggerfo.container.color := color0;
+  debuggerfo.color := color0;
+  
+  debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.colorglyph := color2;
 
-      debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
-      debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
-      debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.colorglyph := color2;
-
-      debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
-      debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
-      debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.colorglyph := color2;
-    end;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.colorglyph := color2;
+  end;
 
     debuggerfo.panelmain.face.template         := debuggerfo.templatemain;
     debuggerfo.assistive.face.template         := debuggerfo.templatemain;
@@ -5020,7 +4944,7 @@ begin
     debuggerfo.paneledited.face.template      := debuggerfo.templfile;
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfile;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfile;
-    debuggerfo.find_in_edit.face.template     := debuggerfo.templfile;
+    debuggerfo.find_in_edit.face.template      := debuggerfo.templfile;
     debuggerfo.procedure_list.face.template   := debuggerfo.templfile;
     debuggerfo.open_file.face.template        := debuggerfo.templfile;
     debuggerfo.save_file.face.template        := debuggerfo.templfile;
@@ -5079,10 +5003,10 @@ begin
     color3 := cl_black;
 
     basedock.face.template := convexdark;
-
-    frame.grip_face.template           := sourcefo.tfacecomp2dark;
-    frame.grip_faceactive.template     := sourcefo.tfacecomp2dark;
-    sourcefo.frame.grip_face.template  := sourcefo.tfacecomp2dark;
+    
+    frame.grip_face.template := sourcefo.tfacecomp2dark;
+    frame.grip_faceactive.template := sourcefo.tfacecomp2dark;
+    sourcefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
     messagefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
     debuggerfo.frame.grip_face.template := sourcefo.tfacecomp2dark;
     projecttreefo.frame.grip_face.template := sourcefo.tfacecomp2dark;
@@ -5131,7 +5055,7 @@ begin
     sourcefo.tpopupmenu1.facetemplate           := convexdark;
     sourcefo.tpopupmenu1.itemfacetemplate       := sourcefo.tfacecomp2horzdark;
     sourcefo.tpopupmenu1.itemfacetemplateactive := sourcefo.tfacecomp1dark;
-
+   
 
     sourcefo.files_tab.tab_facetab.template := sourcefo.tfacecomp1dark;
     sourcefo.files_tab.tab_font.color := cl_white;
@@ -5175,43 +5099,44 @@ begin
     debuggerfo.tstringdisp2.face.template         := debuggerfo.templatemaindark;
 
     debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
-    //{   
-    if Assigned(debuggerfo) then
-    begin
-      debuggerfo.container.color := color0;
-      debuggerfo.color           := color0;
+//{   
+if Assigned(debuggerfo) then
+  begin
+   debuggerfo.container.color := color0;
+  debuggerfo.color := color0;
+  
+  debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbhorz.colorglyph := color2;
 
-      debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
-      debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
-      debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.face1.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face1.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.face2.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.face2.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbhorz.colorglyph := color2;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
+    debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+    debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+    debuggerfo.container.frame.sbvert.colorglyph := color2;
 
-      debuggerfo.container.frame.sbvert.facebutton.fade_color.items[1] := color0;
-      debuggerfo.container.frame.sbvert.facebutton.fade_color.items[0] := color1;
-      debuggerfo.container.frame.sbvert.face.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.face1.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face1.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.face2.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.face2.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
-      debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
-      debuggerfo.container.frame.sbvert.colorglyph := color2;
-
-    end;
-    //}
+  
+  end;
+  //}
     debuggerfo.paneledited.face.template      := debuggerfo.templfiledark;
     debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
     debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;
     debuggerfo.procedure_list.face.template   := debuggerfo.templfiledark;
-    debuggerfo.find_in_edit.face.template     := debuggerfo.templfiledark;
+    debuggerfo.find_in_edit.face.template      := debuggerfo.templfiledark;
     debuggerfo.open_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.save_file.face.template        := debuggerfo.templfiledark;
     debuggerfo.edited_make.face.template      := debuggerfo.templfiledark;
@@ -5291,17 +5216,19 @@ begin
   debuggerfo.statdisp.font.color := color2;
 
   if typetheme = 0 then
-    debuggerfo.container.color := cl_ltgray;
+  begin
+   debuggerfo.container.color := cl_ltgray;
+  end;
 
   if typetheme = 1 then
-    debuggerfo.container.color := cl_black;
+  begin
+   debuggerfo.container.color := cl_black;
+  end;
 
   if Assigned(sourcefo.ActivePage) then
   begin
-    if typetheme = 0 then
-      sourcefo.ActivePage.container.color := cl_ltgray;
-    if typetheme = 1 then
-      sourcefo.ActivePage.container.color := cl_black;
+    if typetheme = 0 then sourcefo.ActivePage.container.color := cl_ltgray;
+    if typetheme = 1 then sourcefo.ActivePage.container.color := cl_black;
     sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
     sourcefo.ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
     sourcefo.ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
@@ -5349,57 +5276,59 @@ begin
   actionsmo.toggleformunitonexecute(Sender);
 end;
 
-procedure tmainfo.ontimersplash(const Sender: TObject);
+procedure tmainfo.ontimersplash(const sender: TObject);
 begin
-  splashfo.windowopacity := splashfo.windowopacity - 0.1;
-  if splashfo.windowopacity <= 0 then
-  begin
-    ttimer1.Enabled := False;
-    splashfo.Close;
-  end;
+splashfo.windowopacity := splashfo.windowopacity - 0.1;
+if splashfo.windowopacity <= 0 then
+begin
+ttimer1.enabled := false;
+splashfo.close;
+end;
+ 
+end;
+
+procedure tmainfo.onlang(const sender: TObject);
+var
+alang : string = ''; 
+
+begin
+case Tmenuitem(sender).name of
+'langen': alang := 'en';
+'langru': alang := 'ru';
+'langfr': alang := 'fr';
+'langde': alang := 'de';
+'langes': alang := 'es';
+end;
+
+setlang(alang);
 
 end;
 
-procedure tmainfo.onlang(const Sender: TObject);
+procedure tmainfo.onactiv(const sender: TObject);
 var
-  alang: string = '';
+tmp : string = '';
+MSELang : string = '';
+MSEFallbacklang: string = '';
+  
 begin
-  case Tmenuitem(Sender).Name of
-    'langen': alang := 'en';
-    'langru': alang := 'ru';
-    'langfr': alang := 'fr';
-    'langde': alang := 'de';
-    'langes': alang := 'es';
-  end;
 
-  setlang(alang);
-
+ tmp := gINI.ReadString('language', 'default', '');
+  
+ if tmp <> '' then
+ begin
+ setlang(tmp);
+ mainmenu1.menu.itembynames(['settings','lang','langdefault']).state := [as_checked]; 
+ mainmenu1.menu.itembynames(['settings','lang','lang'+tmp]).state := [as_checked];
+  end else
+ begin 
+  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+  if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr')
+     or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+ begin    
+   mainmenu1.menu.itembynames(['settings','lang','lang'+MSEFallbackLang]).state := [as_checked];
+   setlang(MSEFallbackLang);
+ end; 
 end;
-
-procedure tmainfo.onactiv(const Sender: TObject);
-var
-  tmp: string = '';
-  MSELang: string = '';
-  MSEFallbacklang: string = '';
-begin
-
-  tmp := gINI.ReadString('language', 'default', '');
-
-  if tmp <> '' then
-  begin
-    setlang(tmp);
-    mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state := [as_checked];
-    mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + tmp]).state  := [as_checked];
-  end
-  else
-  begin
-    Gettext.GetLanguageIDs(MSELang, MSEFallbackLang);
-    if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
-    begin
-      mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + MSEFallbackLang]).state := [as_checked];
-      setlang(MSEFallbackLang);
-    end;
-  end;
 
 end;
 

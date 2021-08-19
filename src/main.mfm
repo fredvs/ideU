@@ -538,6 +538,7 @@ object mainfo: tmainfo
           item
             action = actionsmo.forcezorderact
             caption = 'Force &Z-Order'
+            name = 'forcezorder'
             state = [as_localcaption, as_localimagelist]
             options = [mao_checkbox, mao_shortcutcaption]
           end        
@@ -572,6 +573,7 @@ object mainfo: tmainfo
           item
             caption = 'So&urce'
             hint = 'Show Source Editor'
+            name = 'source'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
@@ -581,6 +583,7 @@ object mainfo: tmainfo
           item
             action = actionsmo.projecttreeact
             caption = '&TreeList'
+            name = 'treelist'
             state = [as_localcaption, as_localimagelist, as_localimagenr]
             imagelist = vievmenuicons
             imagenr = 17
@@ -588,6 +591,7 @@ object mainfo: tmainfo
           item
             caption = '&Messages'
             hint = 'Show Message Panel'
+            name = 'messages'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
@@ -597,6 +601,7 @@ object mainfo: tmainfo
           item
             caption = '&Find Results'
             hint = 'Show Find Result Panel'
+            name = 'findresult'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 15
@@ -606,8 +611,9 @@ object mainfo: tmainfo
             options = [mao_separator, mao_shortcutcaption]
           end        
           item
-            caption = 'Comman&dor'
+            caption = 'Comman&der'
             hint = 'Show Commandor-Debugger'
+            name = 'commander'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 2
@@ -615,6 +621,7 @@ object mainfo: tmainfo
           end        
           item
             caption = 'Symbo&ls'
+            name = 'symbols'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 18
@@ -622,6 +629,7 @@ object mainfo: tmainfo
           end        
           item
             caption = '&Watches'
+            name = 'watches'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
@@ -630,6 +638,7 @@ object mainfo: tmainfo
           end        
           item
             caption = '&Stack'
+            name = 'stack'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
@@ -638,6 +647,7 @@ object mainfo: tmainfo
           end        
           item
             caption = 'T&hreads'
+            name = 'threads'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 10
@@ -645,6 +655,7 @@ object mainfo: tmainfo
           end        
           item
             caption = '&CPU'
+            name = 'cpu'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 11
@@ -652,6 +663,7 @@ object mainfo: tmainfo
           end        
           item
             caption = '&Assembler'
+            name = 'assembler'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 12
@@ -659,6 +671,7 @@ object mainfo: tmainfo
           end        
           item
             caption = 'Memor&y'
+            name = 'memory'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 17
@@ -667,6 +680,7 @@ object mainfo: tmainfo
           item
             caption = '&Target Console'
             hint = 'Show Console Panel'
+            name = 'targetconsole'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localhint, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 13
@@ -677,6 +691,7 @@ object mainfo: tmainfo
           end        
           item
             caption = '&Breakpoints'
+            name = 'breakpoints'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = vievmenuicons
@@ -685,6 +700,7 @@ object mainfo: tmainfo
           end        
           item
             caption = 'Watchp&oints'
+            name = 'watchpoints'
             state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
             imagelist = vievmenuicons
             imagenr = 7
@@ -697,6 +713,7 @@ object mainfo: tmainfo
             action = actionsmo.toggleformunit
             caption = 'Toggle Form/Unit'
             hint = 'Switch Source/Form'
+            name = 'toggleformunit'
             state = [as_localinvisible, as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localhint, as_localonexecute]
             options = [mao_shortcutcaption, mao_asyncexecute]
             imagelist = actionsmo.buttonicons

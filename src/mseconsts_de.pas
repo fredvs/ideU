@@ -253,8 +253,24 @@ const
    'Quelle',                      // sc_source 
    'Kopie öffnen',                      // sc_opencopy 
    'Kopie speichern unter...',                      // sc_saveascopy 
-   'Verschönerer'                      // sc_beautifier             
-  
+   'Verschönerer',                      // sc_beautifier
+   'Platten',                      // sc_panels
+   'Z-Reihenfolge erzwingen',                      // sc_forcezorder
+   'Baumstruktur',                      // sc_treelist
+   'Mitteilungen',                      // sc_messages
+   'Ergebnis der Suche',                      // sc_findresult
+   'Kommandant',                      // sc_commander
+   'Symbole',                      // sc_symbols
+   'Uhren',                      // sc_watches
+   'Stapel',                      // sc_stack
+   'Themen',                      // sc_threads
+   'CPU',                      // sc_cpu
+   'Assembler',                      // sc_assembler
+   'Haltepunkte',                      // sc_breakpoints
+   'Beobachtungspunkte',                      // sc_watchpoints 
+   'Speicher',                      // sc_memory
+   'Zielkonsole',                      // targetconsole 
+   'Form/Einheit umschalten'          // toggleformunit
 );
 
 function delete_n_selected_rows(const params: array of const): msestring;

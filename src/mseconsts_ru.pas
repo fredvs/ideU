@@ -298,10 +298,25 @@ const
    'Источник',                      // sc_source 
    'Открыть копию',                      // sc_opencopy 
    'Сохранить копию как ...',                      // sc_saveascopy 
-   'Украшение'                      // sc_beautifier             
-  
+   'Украшение',                      // sc_beautifier
+   'Панели',                      // sc_panels
+   'Принудительный Z-порядок',                      // sc_forcezorder
+   'Древовидный список',                      // sc_treelist
+   'Сообщения',                      // sc_messages
+   'Результат поиска',                      // sc_findresult
+   'Командир',                      // sc_commander
+   'Символы',                      // sc_symbols
+   'бдительность',                      // sc_watches
+   'Куча',                      // sc_stack
+   'Потоки',                      // sc_threads
+   'CPU',                      // sc_cpu
+   'Assembler',                      // sc_assembler
+   'Контрольные точки',                      // sc_breakpoints
+   'Точки наблюдения',                      // sc_watchpoints 
+   'объем памяти',                      // sc_memory
+   'Целевая консоль',                      // targetconsole 
+   'Переключить форму / блок'          // toggleformunit
 );
-
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
  with params[0] do begin

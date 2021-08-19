@@ -256,8 +256,24 @@ const
    'Fuente',                      // sc_source 
    'Abrir copia',                      // sc_opencopy 
    'Guardar copia como ...',                      // sc_saveascopy 
-   'Embellecedor'                      // sc_beautifier             
-  
+   'Embellecedor',                      // sc_beautifier
+   'Paneles',                      // sc_panels
+   'Forzar orden Z',                      // sc_forcezorder
+   'Lista de árboles',                      // sc_treelist
+   'Mensajes',                      // sc_messages
+   'Resultado de encontrar',                      // sc_findresult
+   'Comandante',                      // sc_commander
+   'Simbolos',                      // sc_symbols
+   'Vigilia',                      // sc_watches
+   'Apilar',                      // sc_stack
+   'Hilos',                      // sc_threads
+   'CPU',                      // sc_cpu
+   'Assembler',                      // sc_assembler
+   'Puntos de interrupción',                      // sc_breakpoints
+   'Puntos de observación',                      // sc_watchpoints 
+   'Memoria',                      // sc_memory
+   'Consola de destino',                      // targetconsole 
+   'Alternar forma/unidad'          // toggleformunit
 );
    
 function delete_n_selected_rows(const params: array of const): msestring;

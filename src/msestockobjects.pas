@@ -163,8 +163,11 @@ type
                     sc_Copy_word_cursor,sc_copy_latex,sc_indent,sc_unindent,
                     sc_environment,sc_attachprocess,sc_attachtarget,sc_detachtarget,
                     sc_download,sc_tools,sc_make,sc_build,sc_abortmake,sc_debugrun,sc_options,
-                    sc_tree,sc_source,sc_opencopy,sc_saveascopy,sc_beautifier
-                                                            
+                    sc_tree,sc_source,sc_opencopy,sc_saveascopy,sc_beautifier,
+                    sc_panels,sc_forcezorder,sc_treelist,sc_messages,
+                    sc_findresult,sc_commander,sc_symbols,sc_watches,sc_stack,
+                    sc_threads,sc_cpu,sc_assembler,sc_breakpoints,sc_watchpoints,
+                    sc_memory,sc_targetconsole,sc_toggleformunit                
                     );
  textgeneratorfuncty = function(const params: array of const): msestring;
  textgeneratorty = (tg_delete_n_selected_rows);
