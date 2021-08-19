@@ -307,11 +307,21 @@ const
    'Fils',                      // sc_threads
    'CPU',                      // sc_cpu
    'Assembler',                      // sc_assembler
-   'Points d arrêt',                      // sc_breakpoints
-   'Points d observation',                      // sc_watchpoints 
+   'Points d'#8217'arrêt',                      // sc_breakpoints
+   'Points d'#8217'observation',                      // sc_watchpoints 
    'Mémoire',                      // sc_memory
    'Console cible',                      // targetconsole 
-   'Basculer forme/unité'          // toggleformunit
+   'Basculer forme/unité',          // sc_toggleformunit
+   'Modules MSE',                      // sc_msemod 
+   'Fermer tous les modules MSE',          // sc_closeallmsemod
+   'Réglages généraux',          // sc_generalsettings
+   'Paramètres supplémentaires',          // sc_extrasettings
+   'Langues',          // sc_lang
+   'Configurer les widgets',          // sc_configwidgets
+   'Configurer les compilateurs',          // sc_configcompilers
+   'Configurer les débogueurs',          // sc_configdebuggers
+   'Thèmes'          // sc_themes
+   
 );
 
 function delete_n_selected_rows(const params: array of const): msestring;

@@ -167,7 +167,10 @@ type
                     sc_panels,sc_forcezorder,sc_treelist,sc_messages,
                     sc_findresult,sc_commander,sc_symbols,sc_watches,sc_stack,
                     sc_threads,sc_cpu,sc_assembler,sc_breakpoints,sc_watchpoints,
-                    sc_memory,sc_targetconsole,sc_toggleformunit                
+                    sc_memory,sc_targetconsole,sc_toggleformunit,sc_msemod,sc_closeallmsemod,
+                    sc_generalsettings,sc_extrasettings,sc_lang,sc_configwidgets,sc_configcompilers,
+                    sc_configdebuggers,sc_themes                    
+                                   
                     );
  textgeneratorfuncty = function(const params: array of const): msestring;
  textgeneratorty = (tg_delete_n_selected_rows);

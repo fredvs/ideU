@@ -272,8 +272,18 @@ const
    'Puntos de interrupción',                      // sc_breakpoints
    'Puntos de observación',                      // sc_watchpoints 
    'Memoria',                      // sc_memory
-   'Consola de destino',                      // targetconsole 
-   'Alternar forma/unidad'          // toggleformunit
+   'Consola de destino',                      // sc_targetconsole 
+   'Alternar forma/unidad',          // sc_toggleformunit
+   'Módulos MSE',                      // sc_msemod 
+   'Cerrar todos los módulos MSE',          // sc_closeallmsemod
+   'Configuración general',          // sc_generalsettings
+   'Configuraciones extra',          // sc_extrasettings
+   'Idiomas',          // sc_lang
+   'Configurar widgets',          // sc_configwidgets
+   'Configurar compiladores',          // sc_configcompilers
+   'Configurar depuradores',          // sc_configdebuggers
+   'Temas'          // sc_themes
+   
 );
    
 function delete_n_selected_rows(const params: array of const): msestring;

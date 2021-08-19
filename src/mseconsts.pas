@@ -333,8 +333,18 @@ const
    'Breakpoints',                      // sc_breakpoints
    'Watchpoints',                      // sc_watchpoints 
    'Memory',                      // sc_memory
-   'Target console',                      // targetconsole 
-   'Toggle form/unit'          // toggleformunit
+   'Target console',                      // sc_targetconsole 
+   'Toggle form/unit',          // sc_toggleformunit
+   'MSE modules',                      // sc_msemod 
+   'Close all MSE modules',          // sc_closeallmsemod
+   'General settings',          // sc_generalsettings
+   'Extra settings',          // sc_extrasettings
+   'Languages',          // sc_lang
+   'Configure widgets',          // sc_configwidgets
+   'Configure compilers',          // sc_configcompilers
+   'Configure debuggers',          // sc_configdebuggers
+   'Themes'          // sc_themes
+   
 );
 
 function delete_n_selected_rows(const params: array of const): msestring;

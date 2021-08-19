@@ -758,6 +758,7 @@ object mainfo: tmainfo
           item
             caption = 'Close all MSE modules'
             hint = 'Close all module-forms in designer'
+            name = 'closeallmsemod'
             state = [as_localcaption, as_localhint, as_localonexecute]
             onexecute = closeallmod
           end>
@@ -1296,11 +1297,13 @@ object mainfo: tmainfo
         submenu.items = <        
           item
             caption = '&General Setting'
+            name = 'generalsettings'
             state = [as_localcaption, as_localonexecute]
             onexecute = configureexecute
           end        
           item
             caption = '&Extra Setting'
+            name = 'extrasettings'
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfideuexecute
           end        
@@ -1377,15 +1380,18 @@ object mainfo: tmainfo
                 onexecute = viewconffpguiexecute
               end>
             caption = 'Configure &Widgets'
+            name = 'configwidgets'
             state = [as_localcaption, as_localonexecute]
           end        
           item
             caption = 'Configure Compilers'
+            name = 'configcompilers'
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfcompilersexecute
           end        
           item
             caption = 'Configure Debuggers'
+            name = 'configdebuggers'
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfdebuggersexecute
           end        
@@ -1403,6 +1409,7 @@ object mainfo: tmainfo
                 onexecute = ondark
               end>
             caption = 'Themes'
+            name = 'themes'
             state = [as_localcaption]
           end>
         caption = 'Settings'

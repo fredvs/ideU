@@ -314,9 +314,20 @@ const
    'Контрольные точки',                      // sc_breakpoints
    'Точки наблюдения',                      // sc_watchpoints 
    'объем памяти',                      // sc_memory
-   'Целевая консоль',                      // targetconsole 
-   'Переключить форму / блок'          // toggleformunit
+   'Целевая консоль',                      // sc_targetconsole 
+   'Переключить форму / блок',          // sc_toggleformunit
+   'Модули MSE',                      // sc_msemod 
+   'Закройте все модули MSE',          // sc_closeallmsemod
+   'Общие настройки',          // sc_generalsettings
+   'Дополнительные настройки',          // sc_extrasettings
+   'Языки',          // sc_lang
+   'Настроить виджеты',          // sc_configwidgets
+   'Настроить компиляторы',          // sc_configcompilers
+   'Настроить отладчики',          // sc_configdebuggers
+   'Темы'          // sc_themes
+   
 );
+
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
  with params[0] do begin

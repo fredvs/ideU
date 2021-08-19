@@ -4716,6 +4716,9 @@ begin
     mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := captions[sc_toggleformunit];
        
     mainmenu1.menu.itembynames(['forms']).Caption  := captions[sc_forms];
+    mainmenu1.menu.itembynames(['forms', 'msemod']).Caption := captions[sc_msemod];
+    mainmenu1.menu.itembynames(['forms', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
+      
     mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
     mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
 
@@ -4823,7 +4826,16 @@ begin
     mainmenu1.menu.itembynames(['edited', 'close']).Caption := captions[sc_close];
 
     mainmenu1.menu.itembynames(['widgets']).Caption  := captions[sc_widgets];
+  
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
+    mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
+    mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := captions[sc_extrasettings];
+    mainmenu1.menu.itembynames(['settings', 'lang']).Caption := captions[sc_lang];
+    mainmenu1.menu.itembynames(['settings', 'configwidgets']).Caption := captions[sc_configwidgets];
+    mainmenu1.menu.itembynames(['settings', 'configcompilers']).Caption := captions[sc_configcompilers];
+    mainmenu1.menu.itembynames(['settings', 'configdebuggers']).Caption := captions[sc_configdebuggers];
+    mainmenu1.menu.itembynames(['settings', 'themes']).Caption := captions[sc_themes];
+     
     mainmenu1.menu.itembynames(['about']).Caption    := captions[sc_about];
 
   end;

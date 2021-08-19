@@ -937,7 +937,7 @@ makeoptionson=13
  4095
  4095
  1
- 200
+ 206
  2046
  4095
  192
@@ -1296,7 +1296,7 @@ line=29
  787
  903
  2536
- 5733
+ 5745
  1882
  6135
  153
@@ -1595,15 +1595,15 @@ findhistory=20
  sc_target
 findoptions=1
 editpos=11
- 0,317
- 0,275
- 0,336
- 0,169
- 0,313
- 0,272
- 0,4712
  0,-1073741823
- 0,1459
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 12,275
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1671,7 +1671,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=4
+index=5
 [layout]
 windowlayout=562
  [mainfo.basedock]
@@ -1746,7 +1746,7 @@ windowlayout=562
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1818,7 +1818,7 @@ windowlayout=562
  x=0
  y=0
  cx=205
- cy=526
+ cy=527
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2106,7 +2106,7 @@ windowlayout=562
  x=0
  y=0
  cx=1356
- cy=50
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2118,11 +2118,11 @@ windowlayout=562
  nx=0
  ny=0
  ncx=1341
- ncy=43
+ ncy=40
  x=0
  y=0
  cx=1341
- cy=44
+ cy=38
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2132,9 +2132,10 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_fr.pas
+ value=/home/fred/ideu/src/mseconsts_de.pas
  history=20
   /home/fred/ideu/src/mseconsts_de.pas
+  /home/fred/ideu/src/mseconsts_fr.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/sourceform.pas
@@ -2149,7 +2150,6 @@ windowlayout=562
   /home/fred/ideu/src/mseconsts_uzcyr.pas
   /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
   /home/fred/ideu/src/msefiledialogx.pas
-  /home/fred/ideu/src/mseconsts_fr.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/demo_mse/po2const2po/mseguiintf.pas
   /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
@@ -2171,12 +2171,12 @@ windowlayout=562
  x=208
  y=0
  cx=1148
- cy=526
+ cy=527
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=4
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2185,7 +2185,7 @@ windowlayout=562
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2212,15 +2212,15 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=53
+ y=52
  cx=1356
- cy=526
+ cy=527
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
