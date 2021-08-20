@@ -11,12 +11,12 @@
 
 }
 
-unit mseconsts_ru;
+unit mseconsts_ide_ru;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 implementation
 uses
- mseconsts,msetypes{msestrings},sysutils,mseformatstr;
+ mseconsts_ide,msetypes{msestrings},sysutils,mseformatstr;
 
 const
  ru_modalresulttext: defaultmodalresulttextty = (

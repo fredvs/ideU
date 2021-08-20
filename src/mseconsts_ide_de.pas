@@ -7,11 +7,11 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 }
-unit mseconsts_de;
+unit mseconsts_ide_de;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseconsts;
+ mseconsts_ide;
 
 implementation
 uses

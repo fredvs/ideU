@@ -10,11 +10,11 @@
     Spanish translation by Julio Jimenez Borreguero.
 
 }
-unit mseconsts_es;
+unit mseconsts_ide_es;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseconsts;
+ mseconsts_ide;
 
 implementation
 uses

@@ -31,18 +31,18 @@ interface
 
 uses
   gettext,
-  // msei18nutils,
-  mseconsts_ru,
-  mseconsts_de,
-  mseconsts_es,
-  mseconsts_fr,
+ // msei18nutils,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
   msearrayutils,
   aboutform,
   plugmanager,
   fpg_iniutils_ideu,
   msetimer,
   mseformatstr,
-  mseconsts,
+  mseconsts_ide,
   dialogfiles,
   mseforms,
   mseguiglob,
@@ -441,6 +441,7 @@ var
   thetimer: TTimer;
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
+  isactivated : Boolean = False;
 
 procedure doassistive;
 
@@ -4845,8 +4846,7 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-  // application.processmessages;
-  onactiv(Sender);
+  
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -5393,7 +5393,9 @@ var
   MSELang: string = '';
   MSEFallbacklang: string = '';
 begin
-
+if isactivated = false then
+begin
+ isactivated := true;
   tmp := gINI.ReadString('language', 'default', '');
 
   if tmp <> '' then
@@ -5411,7 +5413,7 @@ begin
       setlang(MSEFallbackLang);
     end;
   end;
-
+end;
 end;
 
 end.

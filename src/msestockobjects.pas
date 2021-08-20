@@ -228,7 +228,7 @@ procedure deinit;
 implementation
 
 uses
- sysutils,msestockobjects_mfm,msesysintf1,mseguiintf,typinfo,mseconsts,msefont;
+ sysutils,msestockobjects_mfm,msesysintf1,mseguiintf,typinfo,mseconsts_ide,msefont;
 //const
 // defaultfontheight = 14;
 // defaultfontheight = 26;
@@ -522,13 +522,13 @@ end;
 
 function tstockobjects.getmodalresulttext(index: modalresultty): msestring;
 begin
- result:= mseconsts.modalresulttext(index);
+ result:= mseconsts_ide.modalresulttext(index);
 // result:= fmodalresulttext[index];
 end;
 
 function tstockobjects.getmodalresulttextnoshortcut(index: modalresultty): msestring;
 begin
- result:= mseconsts.modalresulttextnoshortcut(index);
+ result:= mseconsts_ide.modalresulttextnoshortcut(index);
 // result:= fmodalresulttextnoshortcut[index];
 end;
 

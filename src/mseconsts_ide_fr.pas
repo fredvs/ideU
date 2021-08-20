@@ -48,11 +48,11 @@
 
     &#8217; apostrophe
 }
-unit mseconsts_fr;
+unit mseconsts_ide_fr;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseconsts;
+ mseconsts_ide;
 
 implementation
 uses
