@@ -1299,7 +1299,7 @@ line=29
  787
  903
  2536
- 5745
+ 5744
  1882
  6135
  153
@@ -1597,7 +1597,7 @@ findhistory=20
  recherc
  sc_target
 findoptions=1
-editpos=12
+editpos=13
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1610,6 +1610,7 @@ editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2139
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1622,7 +1623,8 @@ bookmarks8=0
 bookmarks9=0
 bookmarks10=0
 bookmarks11=0
-sourcefiles=12
+bookmarks12=0
+sourcefiles=13
  ${PROJECTDIR}/mseconsts_ru.pas
  ${PROJECTDIR}/mseconsts_es.pas
  ${PROJECTDIR}/mseconsts.pas
@@ -1635,7 +1637,8 @@ sourcefiles=12
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=12
+ ${PROJECTDIR}/projectoptionsform.pas
+relpaths=13
  mseconsts_ru.pas
  mseconsts_es.pas
  mseconsts.pas
@@ -1648,7 +1651,9 @@ relpaths=12
  sourceform.pas
  actionsmodule.pas
  projectoptionsform.pas
-ismoduletexts=12
+ projectoptionsform.pas
+ismoduletexts=13
+ 0
  0
  0
  0
@@ -1682,7 +1687,7 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=12
+order=13
  0
  1
  2
@@ -1692,13 +1697,14 @@ order=12
  6
  7
  8
- 10
+ 12
  11
  9
-firsttab=1
-index=8
+ 10
+firsttab=2
+index=9
 [layout]
-windowlayout=594
+windowlayout=595
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1817,7 +1823,7 @@ windowlayout=594
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1934,9 +1940,9 @@ windowlayout=594
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=449
- width0=199
+ width0=200
  sortdescend0=0
- width1=244
+ width1=243
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2143,11 +2149,11 @@ windowlayout=594
  nx=0
  ny=0
  ncx=1341
- ncy=32
+ ncy=30
  x=0
  y=0
  cx=1341
- cy=30
+ cy=28
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2157,7 +2163,7 @@ windowlayout=594
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
  history=20
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/mseconsts_ru.pas
@@ -2200,7 +2206,7 @@ windowlayout=594
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=12
+ order=13
   0
   1
   2
@@ -2210,11 +2216,12 @@ windowlayout=594
   6
   7
   8
-  10
+  12
   11
   9
- firsttab=1
- index=8
+  10
+ firsttab=2
+ index=9
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2258,7 +2265,7 @@ windowlayout=594
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2277,7 +2284,7 @@ windowlayout=594
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0

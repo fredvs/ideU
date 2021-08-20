@@ -1191,10 +1191,10 @@ object mainfo: tmainfo
         submenu.count = 2
         submenu.items = <        
           item
-            submenu.count = 9
+            submenu.count = 10
             submenu.items = <            
               item
-                submenu.count = 2
+                submenu.count = 1
                 submenu.items = <                
                   item
                     submenu.count = 1
@@ -1203,21 +1203,22 @@ object mainfo: tmainfo
                         name = 'formmenuitemstart'
                         options = [mao_separator, mao_shortcutcaption]
                       end>
-                    caption = 'MSE modules'
-                    name = 'msemod'
+                    name = 'formmenuitemstart'
                     state = [as_localcaption, as_localimagelist, as_localimagenr]
-                    imagelist = vievmenuicons
+                    options = [mao_separator, mao_shortcutcaption]
                     imagenr = 0
-                  end                
-                  item
-                    caption = 'Close all MSE modules'
-                    name = 'closeallmsemod'
-                    state = [as_localcaption, as_localonexecute]
-                    onexecute = closeallmod
                   end>
-                caption = 'Forms'
-                name = 'forms'
-                state = [as_localcaption]
+                caption = 'MSE Modules'
+                name = 'msemod'
+                state = [as_localcaption, as_localimagelist, as_localimagenr]
+                imagelist = vievmenuicons
+                imagenr = 0
+              end            
+              item
+                caption = 'Close all MSE modules'
+                name = 'closeallmsemod'
+                state = [as_localcaption, as_localonexecute]
+                onexecute = closeallmod
               end            
               item
                 options = [mao_separator, mao_shortcutcaption]
