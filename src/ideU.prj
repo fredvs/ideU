@@ -87,10 +87,10 @@ findinfiledialog=92
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.mfm" 
+ value="*.pas" "*.pp" "*.inc" 
  history=15
-  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" 
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*" 
   
   "*.pas" "*.pp" "*.inc" "*.sh"
@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=application.processmessages
+ value=msemod
  history=20
+  msemod
   application.processmessages
   nozorderenable
   .state
@@ -157,7 +158,6 @@ findinfiledialog=92
   projectfiledia.controller
   openfile.controller
   imagelist
-  buttonicons
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -920,17 +920,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
@@ -1594,15 +1597,16 @@ findhistory=20
  recherc
  sc_target
 findoptions=1
-editpos=11
- 0,317
- 0,263
+editpos=12
  0,-1073741823
  0,-1073741823
- 0,307
- 0,265
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,4826
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1617,7 +1621,8 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-sourcefiles=11
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/mseconsts_ru.pas
  ${PROJECTDIR}/mseconsts_es.pas
  ${PROJECTDIR}/mseconsts.pas
@@ -1629,7 +1634,8 @@ sourcefiles=11
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=11
+ ${PROJECTDIR}/projectoptionsform.pas
+relpaths=12
  mseconsts_ru.pas
  mseconsts_es.pas
  mseconsts.pas
@@ -1641,7 +1647,8 @@ relpaths=11
  main.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=11
+ projectoptionsform.pas
+ismoduletexts=12
  0
  0
  0
@@ -1653,27 +1660,45 @@ ismoduletexts=11
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/projectoptionsform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-firsttab=0
-index=0
+order=12
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 10
+ 11
+ 9
+firsttab=1
+index=8
 [layout]
-windowlayout=562
+windowlayout=594
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1746,7 +1771,7 @@ windowlayout=562
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -2118,11 +2143,11 @@ windowlayout=562
  nx=0
  ny=0
  ncx=1341
- ncy=38
+ ncy=32
  x=0
  y=0
  cx=1341
- cy=36
+ cy=30
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2132,17 +2157,17 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ru.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts_ru.pas
   /home/fred/ideu/src/mseconsts_de.pas
   /home/fred/ideu/src/mseconsts_fr.pas
   /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/main.mfm
   /home/fred/ideu/src/mseconsts.pas
-  /home/fred/ideu/src/mseconsts_ru.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/mseconsts_es.pas
   /home/fred/ideu/src/mseconsts_id.pas
@@ -2175,8 +2200,21 @@ windowlayout=562
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=0
+ order=12
+  0
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  10
+  11
+  9
+ firsttab=1
+ index=8
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2231,6 +2269,25 @@ windowlayout=562
  y=391
  cx=755
  cy=76
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=302
+ y=59
+ cx=737
+ cy=620
  rcx=0
  rcy=0
  wsize=0

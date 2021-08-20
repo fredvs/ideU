@@ -2137,7 +2137,7 @@ begin
   if iswriter then begin
 //  e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
    projectdir:= getcurrentdirmse;
-   with mainfo,mainmenu1.menu.itembynames(['forms','msemod']) do begin
+   with mainfo,mainmenu1.menu.itembynames(['widgets', 'msegui','forms','msemod']) do begin
     int3:= formmenuitemstart;
     int2:= count - int3;
     setlength(modulenames1,int2);

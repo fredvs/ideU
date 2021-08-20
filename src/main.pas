@@ -1551,7 +1551,7 @@ var
   int1: integer;
 begin
   // with mainmenu1.menu.itembyname('view') do begin
-  with mainmenu1.menu.itembynames(['forms', 'msemod']) do
+  with mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms', 'msemod']) do
     for int1 := itembyname('formmenuitemstart').index + 1 to Count - 1 do
       with items[int1] do
         with pmoduleinfoty(tagpo)^ do
@@ -2843,7 +2843,7 @@ end;
 function tmainfo.formmenuitemstart: integer;
 begin
   // result:= mainmenu1.menu.itembyname('view').itembyname('formmenuitemstart').index + 1;
-  Result := mainmenu1.menu.itembynames(['forms', 'msemod']).itembyname(
+  Result := mainmenu1.menu.itembynames(['widgets', 'msegui','forms', 'msemod']).itembyname(
     'formmenuitemstart').index + 1;
 
 end;
@@ -2855,7 +2855,7 @@ var
 begin
   //with mainmenu1.menu.itembyname('view') do begin
 
-  with mainmenu1.menu.itembynames(['forms', 'msemod']) do
+  with mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms', 'msemod']) do
   begin
 
     for int1 := formmenuitemstart to submenu.Count - 1 do
@@ -3349,7 +3349,7 @@ var
   int1: integer;
 begin
   // with mainmenu1.menu.itembyname('view') do begin
-  with mainmenu1.menu.itembynames(['forms', 'msemod']) do
+  with mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms', 'msemod']) do
     for int1 := itembyname('formmenuitemstart').index + 1 to Count - 1 do
       if items[int1].tagpo = amodule then
       begin
@@ -4715,10 +4715,6 @@ begin
     mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := captions[sc_watchpoints];
     mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := captions[sc_toggleformunit];
        
-    mainmenu1.menu.itembynames(['forms']).Caption  := captions[sc_forms];
-    mainmenu1.menu.itembynames(['forms', 'msemod']).Caption := captions[sc_msemod];
-    mainmenu1.menu.itembynames(['forms', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
-      
     mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
     mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
 
@@ -4826,6 +4822,10 @@ begin
     mainmenu1.menu.itembynames(['edited', 'close']).Caption := captions[sc_close];
 
     mainmenu1.menu.itembynames(['widgets']).Caption  := captions[sc_widgets];
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms']).Caption  := captions[sc_forms];
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms', 'msemod']).Caption := captions[sc_msemod];
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'forms', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
+ 
   
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
