@@ -15,6 +15,9 @@ uses
  msestockobjects,mseglob,msestrings,mseapplication,msetypes;
  
 type
+ projectoptionsaty = array[projectoptionsty] of msestring; 
+ pprojectoptionsaty = ^projectoptionsaty;
+  
  stockcaptionaty = array[stockcaptionty] of msestring;
  pstockcaptionaty = ^stockcaptionaty;
  defaultmodalresulttextty = array[modalresultty] of msestring;
@@ -29,7 +32,7 @@ const
  langnames: array[langty] of string = (
             '','en','de','ru','es','uz_cyr','id','zh',
             'fr');
-
+ function projectoptionstext(const index: projectoptionsty): msestring;
  function modalresulttext(const index: modalresultty): msestring;
  function modalresulttextnoshortcut(const index: modalresultty): msestring;
  function stockcaptions(const index: stockcaptionty): msestring;
@@ -39,6 +42,7 @@ const
  procedure registeruserlangconsts(name: string;
                                       const caption: array of msestring);
  procedure registerlangconsts(const name: string;
+               const projectoptionspo: pprojectoptionsaty;
                const stockcaptionpo: pstockcaptionaty;
             const modalresulttextpo: pdefaultmodalresulttextty;
             const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
@@ -62,6 +66,7 @@ type
  langinfoty = record
   name: string;
   stockcaption: pstockcaptionaty;
+  projectoptionstext: pprojectoptionsaty;
   modalresulttext: pdefaultmodalresulttextty;
   modalresulttextnoshortcut: pdefaultmodalresulttextty;
   textgenerator: pdefaultgeneratortextty;
@@ -123,7 +128,48 @@ const
   'Skip all', //mr_skipall
   'Continue'  //mr_continue
   );
-
+  
+ en_projectoptionstext: projectoptionsaty =  (
+ 'Project options', // po_projectoptions
+ 'Editor', // po_editor
+ 'Right margin line', // po_rightmarginline
+ 'Mark Brackets', //  po_markbrackets
+ 'Line Numbers', //  po_linenumbers
+ 'Mark Pairwords', //  po_markpairwords
+ 'Trim trailing'#10'whitespace'#10'on save', //  po_trimtrailing
+ 'Auto Indent', //  po_autoindent
+ 'No Source Editor', //  po_nosource
+ 'Tab indent', //  po_tabindent
+ 'Space tab', //  po_spacetab
+ 'Show tabs', //  po_showtabs
+ 'Anti aliased font', //  po_antialiasedfont
+ 'Encoding', //  po_encoding
+ 'Mark Color', //  po_markcolor
+ 
+ 'Stat Color', // po_statcolor
+ 'Scr Y', // po_scrollbary
+ 'Nb char', // po_nbchar
+ 'EOL Style', //  po_eolstyle
+ 'Backup', //  po_backup
+ 'Tabstops', //  po_tabstops
+ 'Indent', //  po_indent
+ 'ExtS', //  po_extraspace
+ 'Extra space between lines', //  po_extraspacehint
+ 'Width', //  po_width
+ 'Height', //  po_height
+ 'Font', //  po_font
+ 'Font Bk. color', //  po_fontbkcolor
+ 'Font color', //  po_fontcolor
+ 'File filter', //  po_filefilter
+ 
+ 'Name', //  po_name
+ 'File mask', //  po_filemask
+ 'Syntax definition file', //  po_syntaxdeffile
+ 'Code Templates', //  po_codetemplate
+ 'Code template directories, file extension = .mct' //  po_fontcodetemplatedir
+ 
+  );
+  
  en_stockcaption: stockcaptionaty = (
   '',                   //sc_none
   'is invalid',         //sc_is_invalid
@@ -366,12 +412,14 @@ const
 
 procedure setitem(var item: langinfoty;
            const name: string;
+           const projectoptionspo: pprojectoptionsaty;
            const stockcaptionpo: pstockcaptionaty;
            const modalresulttextpo: pdefaultmodalresulttextty;
            const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
            const textgeneratorpo: pdefaultgeneratortextty);
 begin
  item.name:= name;
+ item.projectoptionstext:= projectoptionspo;
  item.stockcaption:= stockcaptionpo;
  item.modalresulttext:= modalresulttextpo;
  item.modalresulttextnoshortcut:= modalresulttextnoshortcutpo;
@@ -379,6 +427,7 @@ begin
 end;
 
 procedure registerlangconsts(const name: string;
+            const projectoptionspo: pprojectoptionsaty;           
             const stockcaptionpo: pstockcaptionaty;
             const modalresulttextpo: pdefaultmodalresulttextty;
             const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
@@ -390,13 +439,13 @@ var
 begin
  for int1:= 0 to high(langs) do begin
   if langs[int1].name = name then begin
-   setitem(langs[int1],name,stockcaptionpo,modalresulttextpo,
+   setitem(langs[int1],name,projectoptionspo,stockcaptionpo,modalresulttextpo,
                                modalresulttextnoshortcutpo,textgeneratorpo);
    exit;
   end;
  end;
  setlength(langs,high(langs)+2);
- setitem(langs[high(langs)],name,stockcaptionpo,modalresulttextpo,
+ setitem(langs[high(langs)],name,projectoptionspo,stockcaptionpo,modalresulttextpo,
                                modalresulttextnoshortcutpo,textgeneratorpo);
 end;
 
@@ -481,7 +530,7 @@ begin
   end;
   if bo1 then begin
    if lang.name = '' then begin
-    setitem(lang,langnames[la_en],@en_stockcaption,@en_modalresulttext,
+    setitem(lang,langnames[la_en],@en_projectoptionstext,@en_stockcaption,@en_modalresulttext,
                @en_modalresulttextnoshortcut,@en_textgenerator);
 {
     with lang do begin
@@ -521,6 +570,12 @@ begin
  result:= userlang.caption[index];
 end;
 
+function projectoptionstext(const index: projectoptionsty): msestring;
+begin
+ checklang;
+ result:= lang.projectoptionstext^[index];
+end;
+
 function modalresulttext(const index: modalresultty): msestring;
 begin
  checklang;
@@ -556,7 +611,7 @@ begin
 end;
 
 initialization
- registerlangconsts(langnames[la_en],@en_stockcaption,@en_modalresulttext,
+ registerlangconsts(langnames[la_en],@en_projectoptionstext,@en_stockcaption,@en_modalresulttext,
                                @en_modalresulttextnoshortcut,@en_textgenerator);
  langbefore:= langnames[la_en];
 end.

@@ -96,7 +96,19 @@ const
  lasttracesymbol = stg_triatopbig;
 
 type
- stockcaptionty = (sc_none,sc_is_invalid,sc_Format_error,sc_Value_is_required,
+   projectoptionsty = (po_projectoptions,po_editor,po_rightmarginline,
+                       po_markbrackets,po_linenumbers,po_markpairwords,po_trimtrailing,
+                       po_autoindent,po_nosource,po_tabindent,po_spacetab,po_showtabs,
+                       po_antialiasedfont,po_encoding,po_markcolor,po_statcolor,po_scrollbary,
+                       po_nbchar,po_eolstyle,po_backup,po_tabstops,po_indent,po_extraspace,
+                       po_extraspacehint,po_width,po_height,po_font,po_fontbkcolor,
+                       po_fontcolor,po_filefilter,po_name,po_filemask,po_syntaxdeffile,
+                       po_codetemplate,po_fontcodetemplatedir
+
+                      );
+  
+type
+   stockcaptionty = (sc_none,sc_is_invalid,sc_Format_error,sc_Value_is_required,
                     sc_Error,sc_Min,sc_Max,sc_Range_error,
                     sc_Undohk,sc_Redohk,sc_copyhk,sc_cuthk,sc_pastehk,
                     sc_select_allhk,
@@ -172,6 +184,7 @@ type
                     sc_configdebuggers,sc_themes                    
                                    
                     );
+
  textgeneratorfuncty = function(const params: array of const): msestring;
  textgeneratorty = (tg_delete_n_selected_rows);
 

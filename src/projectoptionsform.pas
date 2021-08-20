@@ -9,6 +9,12 @@ unit projectoptionsform;
 
 interface
 uses
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  mseforms,msefiledialogx,mseapplication,msegui,msestat,msestatfile,msetabs,
  msesimplewidgets,msetypes,msestrings,msedataedits,msetextedit,msegraphedits,
  msewidgetgrid,msegrids,msesplitter,msemacros,msegdbutils,msedispwidgets,msesys,
@@ -1086,6 +1092,9 @@ type
    procedure oncellevdeb(const sender: TObject; var info: celleventinfoty);
     
    procedure onfocus(const sender: TObject);
+   procedure oncreated(const sender: TObject);
+   procedure setlangprojectoptions(thelang: string);
+
   private
    procedure activegroupchanged;
  end;
@@ -3665,6 +3674,73 @@ constructor ttextdebugoptions.create;
 begin
  fxtermcommand:= defaultxtermcommand;
 end;
+
+
+procedure tprojectoptionsfo.setlangprojectoptions(thelang: string);
+begin
+
+  setlangconsts(thelang);
+  
+    with stockobjects do
+  begin
+ 
+   caption := projectoptionstext(po_projectoptions); // 'Project Options';
+   
+   
+   ok.Caption           := modalresulttext[mr_ok];
+   cancel.Caption       := modalresulttext[mr_cancel];
+  
+  editorpage.caption :=  projectoptionstext(po_editor); // '&Editor';
+rightmarginon.frame.caption :=  projectoptionstext(po_rightmarginline); // 'Right Margin Line';
+editmarkbrackets.frame.caption :=  projectoptionstext(po_markbrackets);
+linenumberson.frame.caption :=  projectoptionstext(po_linenumbers);
+editmarkpairwords.frame.caption :=  projectoptionstext(po_markpairwords);
+trimtrailingwhitespace.frame.caption :=  projectoptionstext(po_trimtrailing);
+autoindent.frame.caption :=  projectoptionstext(po_autoindent);
+enablesource.frame.caption :=  projectoptionstext(po_nosource);
+tabindent.frame.caption :=  projectoptionstext(po_tabindent);
+spacetabs.frame.caption :=  projectoptionstext(po_spacetab);
+showtabs.frame.caption :=  projectoptionstext(po_showtabs);
+editfontantialiased.frame.caption :=  projectoptionstext(po_antialiasedfont);
+encoding.frame.caption :=  projectoptionstext(po_encoding);
+pairmarkcolor.frame.caption :=  projectoptionstext(po_markcolor);
+
+statementcolor.frame.caption :=  projectoptionstext(po_statcolor);
+scrollheight.frame.caption :=  projectoptionstext(po_scrollbary);
+rightmarginchars.frame.caption :=  projectoptionstext(po_nbchar);
+eolstyle.frame.caption := projectoptionstext(po_eolstyle);
+backupfilecount.frame.caption :=  projectoptionstext(po_backup);
+tabstops.frame.caption :=  projectoptionstext(po_tabstops);
+blockindent.frame.caption :=  projectoptionstext(po_indent);
+editfontextraspace.frame.caption :=  projectoptionstext(po_extraspace);
+editfontextraspace.hint :=  projectoptionstext(po_extraspacehint);
+editfontwidth.frame.caption :=  projectoptionstext(po_width);
+editfontheight.frame.caption :=  projectoptionstext(po_height);
+editfontname.frame.caption :=  projectoptionstext(po_font);
+editbkcolor.frame.caption :=  projectoptionstext(po_fontbkcolor);
+editfontcolor.frame.caption :=  projectoptionstext(po_fontcolor);
+
+ttabpage13.caption :=  projectoptionstext(po_filefilter);
+filefiltergrid.fixrows[-1].captions.count:= 2;
+filefiltergrid.fixrows[-1].captions[0].caption :=   projectoptionstext(po_name);
+filefiltergrid.fixrows[-1].captions[1].caption :=  projectoptionstext(po_filemask);
+
+ttabpage14.caption :=  projectoptionstext(po_syntaxdeffile);
+twidgetgrid6.fixrows[-1].captions.count:= 2;
+twidgetgrid6.fixrows[-1].captions[0].caption:=  projectoptionstext(po_name);
+twidgetgrid6.fixrows[-1].captions[1].caption :=  projectoptionstext(po_filemask);
+
+ttabpage19.caption :=  projectoptionstext(po_codetemplate);
+twidgetgrid5.frame.caption :=  projectoptionstext(po_fontcodetemplatedir);
+end;
+end;
+
+procedure tprojectoptionsfo.oncreated(const sender: TObject);
+begin
+   setlangprojectoptions(MSEFallbackLang);
+end;
+
+
 
 initialization
  codetemplates:= tcodetemplates.create;

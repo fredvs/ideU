@@ -24,16 +24,7 @@ uses
   dialogfiles,
   findmessage,
   mseskindesign,
-  {
   gettext,
- // msei18nutils,
-  mseconsts,
-  mseconsts_ru,
-  mseconsts_de,
-  mseconsts_es,
-  mseconsts_fr,
- // mseconsts_zh,mseconsts_id,
-  }
   msegui,
   msegraphics,
   actionsmodule,
@@ -63,22 +54,38 @@ uses
   guitemplates,
   msegraphutils,
   msefont,
+  fpg_iniutils_ideu,
+  mseconsts_ide,
   stringconsts;
 
-//var
-//  MSELang : string = '';
-//  MSEFallbacklang: string = '';
+var
+  MSELang : string = '';
+  tmp : string = ''; 
   
 begin
 
-// Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+ Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
  
- //  MSEFallbackLang:='fr';
-//if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
+  tmp := gINI.ReadString('language', 'default', '');
+
+  if tmp <> '' then
+  begin
+    setlangconsts(tmp);
+    MSEFallbacklang := tmp;
+  end
+  else
+  begin
+   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+    begin
+      setlangconsts(MSEFallbackLang);
+    end;
+  end;
+ 
+ //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
 //  'ideu_i18n_'+ MSEFallbackLang,true) then
  
 // setlangconsts(MSEFallbackLang);
-nozorderhandling := true;
+   nozorderhandling := true;
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);

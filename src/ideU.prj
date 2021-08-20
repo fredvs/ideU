@@ -87,10 +87,10 @@ findinfiledialog=92
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" "*.mfm" 
+ value="*.pas" "*.pp" "*.inc" 
  history=15
-  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" 
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*" 
   
   "*.pas" "*.pp" "*.inc" "*.sh"
@@ -136,8 +136,13 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
- value=msestockobjects
+ value=mr_cancel
  history=20
+  mr_cancel
+  stockcaptionty
+  fixcols[
+  fixrows[
+  fixcols.
   msestockobjects
   mseconst
   GETMSEICON
@@ -153,13 +158,8 @@ findinfiledialog=92
   sc_dirhk
   system.pos
   {$IFDEF MSEgui}
-  Zeos.inc
-  filedialog(
-  from template
-  dodialogfiles
-  dialogfilesfo.cre
  [findinfileadialogfo]
- stackedunder=
+ stackedunder=finddialogfo
  x=601
  y=213
  cx=346
@@ -169,7 +169,7 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=883
+ x=848
  y=496
  cx=234
  cy=269
@@ -179,8 +179,9 @@ replacedialog=32
  [replacedialogfo.selectedonly]
  value=0
  [replacedialogfo.replacetext]
- value=tfiledialogx
+ value=
  history=19
+  
   tfiledialogx
   tfilenameeditx
   strexecext
@@ -199,7 +200,6 @@ replacedialog=32
   commandor
   source_editor
   docview
-  
  [replacedialogfo]
  stackedunder=
  x=640
@@ -317,8 +317,8 @@ options=114
  index=9
  [projectoptionsfo]
  stackedunder=
- x=255
- y=76
+ x=122
+ y=29
  cx=740
  cy=608
 settaborder=15
@@ -763,9 +763,12 @@ exeused=14
  .inf
 codetemplatedirs=1
  ${TEMPLATEDIR}
-toolmenus=0
-toolfiles=0
-toolparams=0
+toolmenus=1
+ test
+toolfiles=1
+ 
+toolparams=1
+ 
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
@@ -920,27 +923,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=2
  ACTIONSMO
- MAINFO
- STOCKDATA
  SOURCEFO
-moduletypes=4
+moduletypes=2
  TACTIONSMO
- TMAINFO
- TSTOCKDATA
  TSOURCEFO
-modulefiles=4
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
  4095
  4095
  1
- 206
+ 202
  2046
  4095
  192
@@ -1044,11 +1041,16 @@ groupcomments=10
  
  
  
-toolsave=0
-toolhide=0
-toolparse=0
-toolmessages=0
-toolshortcuts=0
+toolsave=1
+ 0
+toolhide=1
+ 0
+toolparse=1
+ 0
+toolmessages=1
+ 0
+toolshortcuts=1
+ -1
 fontalias=0
 fontancestors=0
 fontheights=0
@@ -1216,7 +1218,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=29
+on=30
  0
  0
  0
@@ -1246,7 +1248,8 @@ on=29
  0
  0
  0
-path=29
+ 0
+path=30
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1276,37 +1279,39 @@ path=29
  /home/fred/ideu/src/ideU.pas
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
  /home/fred/mseide-msegui/lib/common/db/firebird.pas
-line=29
+ /home/fred/ideu/src/ideU.pas
+line=30
  2129
  1182
- 607
- 4073
+ 608
+ 4074
  660
  119
  1116
- 2303
- 2219
- 2496
- 3294
+ 2312
+ 2228
+ 2505
+ 3303
  119
- 562
+ 563
  483
  66
- 4348
+ 4349
  684
  98
  15
  787
  903
- 2536
- 5746
+ 2545
+ 5743
  1882
  6135
- 153
- 132
+ 160
+ 139
  18
  8
-address=29
+ 86
+address=30
  4890326
  4692969
  4849323
@@ -1336,7 +1341,8 @@ address=29
  4220819
  8193079
  0
-addbkpt=29
+ 0
+addbkpt=30
  0
  0
  0
@@ -1366,7 +1372,8 @@ addbkpt=29
  0
  0
  0
-ignore=29
+ 0
+ignore=30
  0
  0
  0
@@ -1396,7 +1403,9 @@ ignore=29
  0
  0
  0
-condition=29
+ 0
+condition=30
+ 
  
  
  
@@ -1573,89 +1582,145 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=tstockdata
+finddtext=setlangconst
 findhistory=20
+ setlangconst
+ '&' +
+ stockobjects
+ setitem
+ registerlangconsts
+ en_projectoptions
+ stockcaptionaty
+ modalresulttext(
+ modalresulttext
+ setlang
+ projectoptionsfo
+ projectoptionfo
+ caption
  tstockdata
  mseconst
  uses
  msecons
  mscons
  stockcaptions
- setlang
  layout
- onactiv
- findcompallact.enabled
- new
- writestring
- gini
- writeini
- indent
- sc_New_dir
- setlan
- setlang
-+
- save
- save as
 findoptions=1
-editpos=6
- 0,-1073741823
+editpos=15
  0,-1073741823
  0,0
  0,-1073741823
+ 0,0
+ 0,0
+ 0,9
+ 0,68
+ 0,100
+ 0,102
+ 0,135
  0,-1073741823
+ 0,0
+ 0,5406
  0,-1073741823
+ 0,57
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+sourcefiles=15
  ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/msestockobjects.pas
- ${PROJECTDIR}/msestockobjects.mfm
+ ${PROJECTDIR}/mseconsts_ide.pas
+ ${PROJECTDIR}/mseconsts_ide_ru.pas
+ ${PROJECTDIR}/mseconsts_ide_de.pas
+ ${PROJECTDIR}/mseconsts_ide_es.pas
+ ${PROJECTDIR}/mseconsts_ide_fr.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=6
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/ideU.pas
+relpaths=15
  ideU.pas
+ sourceform.pas
+ main.pas
+ projectoptionsform.pas
  msestockobjects.pas
- msestockobjects.mfm
+ mseconsts_ide.pas
+ mseconsts_ide_ru.pas
+ mseconsts_ide_de.pas
+ mseconsts_ide_es.pas
+ mseconsts_ide_fr.pas
  sourceform.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=6
+ actionsmodule.pas
+ ideU.pas
+ismoduletexts=15
  0
  0
- -1
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.mfm
-moduleoptions=4
+moduleoptions=3
  0
  0
  0
+visiblemodules=3
  0
-visiblemodules=4
  -1
  -1
+nomenumodules=3
  -1
- -1
-nomenumodules=4
- 0
- 0
  0
  0
 [sourcefo.files_tab]
-firsttab=0
-index=2
+order=15
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 14
+ 10
+ 11
+ 12
+ 13
+firsttab=6
+index=13
 [layout]
-windowlayout=581
+windowlayout=578
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1669,10 +1734,10 @@ windowlayout=581
  ny=0
  ncx=0
  ncy=0
- x=68
- y=47
+ x=128
+ y=69
  cx=1224
- cy=621
+ cy=696
  rcx=0
  rcy=0
  wsize=6
@@ -1800,7 +1865,7 @@ windowlayout=581
  x=0
  y=0
  cx=205
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2088,7 +2153,7 @@ windowlayout=581
  x=0
  y=0
  cx=1356
- cy=49
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2100,11 +2165,11 @@ windowlayout=581
  nx=0
  ny=0
  ncx=1341
- ncy=5
+ ncy=0
  x=0
  y=0
  cx=1341
- cy=3
+ cy=1
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2114,20 +2179,20 @@ windowlayout=581
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msestockobjects.mfm
+ value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/msestockobjects.mfm
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
+  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/msestockobjects_ide.pas
   /home/fred/ideu/src/msestockobjects_ide_mfm.pas
   /home/fred/ideu/src/msestockobjects_ide.mfm
   /home/fred/ideu/src/splash.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_de.pas
-  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
   /home/fred/demo_mse/po2const2po/headerform_mfm.pas
   /home/fred/demo_mse/po2const2po/po2const2po.prj
@@ -2153,12 +2218,28 @@ windowlayout=581
  x=208
  y=0
  cx=1148
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=2
+ order=15
+  0
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  14
+  10
+  11
+  12
+  13
+ firsttab=6
+ index=13
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2194,15 +2275,15 @@ windowlayout=581
  ncx=0
  ncy=0
  x=0
- y=52
+ y=53
  cx=1356
- cy=526
+ cy=525
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -2217,26 +2298,7 @@ windowlayout=581
  rcy=0
  wsize=0
  active=0
- visible=1
- [_mse_stockdata_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=129
- y=57
- cx=198
- cy=85
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=
 findhistory=0

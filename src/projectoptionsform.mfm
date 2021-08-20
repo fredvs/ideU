@@ -2,8 +2,8 @@ object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   onfocus = onfocus
   visible = False
-  bounds_x = 302
-  bounds_y = 59
+  bounds_x = 420
+  bounds_y = 197
   bounds_cx = 727
   bounds_cy = 620
   bounds_cxmin = 724
@@ -31,6 +31,7 @@ object projectoptionsfo: tprojectoptionsfo
   icon.origformat = 'png'
   windowopacity = -Inf
   oncreate = createexe
+  oncreated = oncreated
   moduleclassname = 'tmseform'
   object tlayouter9: tlayouter
     bounds_x = 0

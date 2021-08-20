@@ -30,7 +30,7 @@ interface
 {$endif}
 
 uses
-  gettext,
+  //gettext,
  // msei18nutils,
   mseconsts_ide_ru,
   mseconsts_ide_de,
@@ -442,6 +442,7 @@ var
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
   isactivated : Boolean = False;
+  MSEFallbacklang: string = '';
 
 procedure doassistive;
 
@@ -5372,27 +5373,23 @@ begin
 end;
 
 procedure tmainfo.onlang(const Sender: TObject);
-var
-  alang: string = '';
 begin
+MSEFallbackLang := '';
   case Tmenuitem(Sender).Name of
-    'langen': alang := 'en';
-    'langru': alang := 'ru';
-    'langfr': alang := 'fr';
-    'langde': alang := 'de';
-    'langes': alang := 'es';
+    'langen': MSEFallbackLang := 'en';
+    'langru': MSEFallbackLang := 'ru';
+    'langfr': MSEFallbackLang := 'fr';
+    'langde': MSEFallbackLang := 'de';
+    'langes': MSEFallbackLang := 'es';
   end;
-
-  setlang(alang);
-
+  setlang(MSEFallbackLang);
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
 var
   tmp: string = '';
-  MSELang: string = '';
-  MSEFallbacklang: string = '';
-begin
+ begin
+
 if isactivated = false then
 begin
  isactivated := true;
@@ -5403,11 +5400,11 @@ begin
     setlang(tmp);
     mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state := [as_checked];
     mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + tmp]).state  := [as_checked];
+    MSEFallbacklang := tmp;
   end
   else
   begin
-    Gettext.GetLanguageIDs(MSELang, MSEFallbackLang);
-    if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
     begin
       mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + MSEFallbackLang]).state := [as_checked];
       setlang(MSEFallbackLang);
