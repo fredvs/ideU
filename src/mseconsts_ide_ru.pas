@@ -159,9 +159,43 @@ const
 '&Запустите команду', // po_runcommand
 '&Отладчик по умолчанию', // po_debugcommand
 'Варианты отладки', // po_debugoptions
-'&Делать' // po_makepage
+'&Делать', // po_makepage
+
+'Марка умолчанию', // po_defaultmake
+'Главный файл', // po_mainfile
+'Выбрать основной файл', // po_selectmainfile
+'Имя цели', // po_targetfile
+'Выбрать цель', // po_selecttargetfile
+'Компилятор умолчанию', // po_makecommand
+'Выбрать команда сделать', // po_selectmakecommand
+'Показать командную строку', // po_showcommandline
+'Копировать сообщения файл', // po_copymessages
+'Закрыть сообщения', // po_closemessages
+'Заголовки проверки', // po_checkmethods
+'Заголовки методов проверки', // po_checkmethodshint
+'Компилятор проекта', // po_projectcompiler
+'Команда до', // po_commandbefore
+'Сделать варианты', // po_makeoptions
+'Справочники', // po_directories
+'Выбрать каталог', // po_unitdirs
+'Команда после', // po_commandafter
+'Расширение Exe', // po_exeextension
+'Комментарии', // po_comments
+'Каталог производителей', // po_makedir
+'Каталог производителей', // po_selectmakedir
+'Цвет ошибки', // po_colorerror
+'Цвет предупреждения', // po_colorwarning
+'Цвет примечания', // po_colornote
+'Полоска ESC', // po_stripmessageesc
+'Убрать последовательности ESC в сообщениях и терминале', // po_stripmessageeschint
+'Показать консоль', // po_showconsole
+'Цель', //po_enablepurpose
+'Выходной файл сообщений', // po_messageoutputfile
+'Выходной файл сообщений', // po_selectmessageoutputfile
+'Макросы' // po_macros
 
   );
+  
   ru_stockcaption: stockcaptionaty = (
     '',                                             //sc_none
     '- '#1085#1077#1074#1077#1088#1085#1086,       //sc_is_invalid => - neverno

@@ -116,9 +116,26 @@ type
                        po_valuehints,po_nodebugbeginend,po_nodebugbeginendhint,po_settty,
                        po_raiseonbreak,po_raiseonbreakhint,po_fpcgdbworkaround,po_fpcgdbworkaroundhint,
                        po_debugtarget,po_xtermcommand,po_runcommand,po_debugcommand,
-                       po_debugoptions,po_makepage
+                       po_debugoptions,po_makepage,po_defaultmake,po_mainfile,po_selectmainfile,
+                       po_targetfile,po_selecttargetfile,po_makecommand,po_selectmakecommand,
+                       po_showcommandline,po_copymessages,po_closemessages,po_checkmethods,
+                       po_checkmethodshint,po_projectcompiler,po_commandbefore,po_makeoptions,
+                       po_directories,po_unitdirs,po_commandafter,po_exeextension,
+                       po_comments,po_makedir,po_selectmakedir,po_colorerror,po_colorwarning,
+                       po_colornote,po_stripmessageesc,po_stripmessageeschint,
+                       po_showconsole,po_enablepurpose,po_messageoutputfile,po_selectmessageoutputfile,
+                       po_macros
                       
                       );
+                      
+{
+type
+ dbnavigbuttonty = (dbnb_first,dbnb_prior,dbnb_next,dbnb_last,dbnb_insert,
+           dbnb_delete,dbnb_edit,
+           dbnb_post,dbnb_cancel,dbnb_refresh,
+           dbnb_filter,dbnb_filtermin,dbnb_filtermax,dbnb_filteronoff,dbnb_find,
+           dbnb_autoedit,dbnb_copyrecord,dbnb_dialog);
+}                      
   
 type
    stockcaptionty = (sc_none,sc_is_invalid,sc_Format_error,sc_Value_is_required,
@@ -143,13 +160,6 @@ type
                     sc_Confirmation,sc_Delete_record_question,
                     sc_Copy_record_question,
                     sc_close_page,
-{
- dbnavigbuttonty = (dbnb_first,dbnb_prior,dbnb_next,dbnb_last,dbnb_insert,
-           dbnb_delete,dbnb_edit,
-           dbnb_post,dbnb_cancel,dbnb_refresh,
-           dbnb_filter,dbnb_filtermin,dbnb_filtermax,dbnb_filteronoff,dbnb_find,
-           dbnb_autoedit,dbnb_copyrecord,dbnb_dialog);
-}
                     sc_first,sc_prior,sc_next,sc_last,
                     sc_append,sc_delete,sc_edit,sc_post,sc_cancel,sc_refresh,
                     sc_edit_filter,sc_edit_filter_min,sc_edit_filter_max,
@@ -159,7 +169,6 @@ type
                     sc_insert,sc_copy,sc_paste,
                     sc_row_insert,sc_row_append,sc_row_delete,
                     sc_undo,sc_redo,sc_cut,sc_select_all,
-
                     sc_filter_off,
                     sc_portrait,sc_landscape,
                     sc_Delete_row_question,sc_selected_rows,

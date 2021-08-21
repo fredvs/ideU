@@ -152,9 +152,44 @@ const
 '&Führen Befehl', // po_runcommand
 '&Standard-Debugger', // po_debugcommand
 'Debug-Optionen', // po_debugoptions
-'&Machen' // po_makepage
+'&Machen', // po_makepage
+
+'Standard machen', // po_defaultmake
+'Hauptdatei', // po_mainfile
+'Hauptdatei auswählen', // po_selectmainfile
+'Name Zieldatei', // po_targetfile
+'Zieldatei auswählen', // po_selecttargetfile
+'Standard-Compiler', // po_makecommand
+'Wählen Befehl für Machen', // po_selectmakecommand
+'Befehlszeile anzeigen', // po_showcommandline
+'Nachrichten in Datei kopieren', // po_copymessages
+'Nachrichten schließen', // po_closemessages
+'Überprüfen Header', // po_checkmethods
+'Überprüfen Sie die Methodenheader', // po_checkmethodshint
+'Projekt-Compiler', // po_projectcompiler
+'Befehl vorher', // po_commandbefore
+'Optionen machen', // po_makeoptions
+'Verzeichnisse', // po_directories
+'Verzeichnis auswählen', // po_unitdirs
+'Befehl nach', // po_commandafter
+'Exe-Erweiterung', // po_exeextension
+'Kommentare', // po_comments
+'Verzeichnis Machen', // po_makedir
+'Verzeichnis Machen', // po_selectmakedir
+'Fehlerfarbe', // po_colorerror
+'Warnungfarbe', // po_colorwarning
+'Notizfarbe', // po_colornote
+'Strip ESC', // po_stripmessageesc
+'ESC-Sequenzen in Nachrichten und Terminal entfernen', // po_stripmessageeschint
+'Konsole zeigen', // po_showconsole
+'Zweck', //po_enablepurpose
+'Ausgabedatei Nachrichten', // po_messageoutputfile
+'Ausgabedatei Nachrichten', // po_selectmessageoutputfile
+'Makros' // po_macros
 
   );
+  
+  
   de_stockcaption: stockcaptionaty = (
     '',                        //sc_none
     'ist ung'#0252'ltig',       //sc_is_invalid

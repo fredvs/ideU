@@ -489,11 +489,15 @@ object projectoptionsfo: tprojectoptionsfo
               align_glue = wam_start
               object encoding: tenumedit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Encoding'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
                 frame.button.color = -2147483646
                 frame.buttons.count = 1
                 frame.buttons.items = <                
@@ -562,9 +566,9 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 1
                 hint = 'Background color of marked brackets and word pairs.'#10'cl_none -> none.'
                 onshowhint = bracketbkcolhint
-                bounds_x = 337
+                bounds_x = 343
                 bounds_y = 12
-                bounds_cx = 136
+                bounds_cx = 102
                 bounds_cy = 39
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
@@ -608,9 +612,8 @@ object projectoptionsfo: tprojectoptionsfo
                 )
                 taborder = 2
                 hint = 'Statment color'
-                bounds_x = 190
-                bounds_y = 12
-                bounds_cx = 117
+                bounds_x = 199
+                bounds_y = 11
                 bounds_cy = 39
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
@@ -621,11 +624,15 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object scrollheight: tintegeredit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Scr Y'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -634,9 +641,9 @@ object projectoptionsfo: tprojectoptionsfo
                 )
                 taborder = 3
                 hint = '0 -> accelerated,'#10'-1 -> paged'
-                bounds_x = 100
-                bounds_y = 12
-                bounds_cx = 58
+                bounds_x = 107
+                bounds_y = 13
+                bounds_cx = 52
                 bounds_cy = 39
                 valuemin = -1
                 valuemax = 1000
@@ -644,11 +651,15 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object rightmarginchars: tintegeredit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Nb char'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -658,7 +669,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 4
                 bounds_x = 4
                 bounds_y = 12
-                bounds_cx = 66
+                bounds_cx = 61
                 bounds_cy = 39
                 optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -688,7 +699,7 @@ object projectoptionsfo: tprojectoptionsfo
                 hint = 'End of line style for writing. eol_default -> use original style.'
                 bounds_x = 357
                 bounds_y = 63
-                bounds_cx = 107
+                bounds_cx = 88
                 bounds_cy = 39
                 value = 1
                 valuemin = 0
@@ -701,11 +712,15 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
               object backupfilecount: tintegeredit
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Backup'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -722,11 +737,15 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
               object tabstops: tintegeredit
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Tabstops'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -734,7 +753,7 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                 )
                 taborder = 7
-                bounds_x = 135
+                bounds_x = 129
                 bounds_y = 63
                 bounds_cx = 75
                 bounds_cy = 39
@@ -744,11 +763,15 @@ object projectoptionsfo: tprojectoptionsfo
                 reffontheight = 15
               end
               object blockindent: tintegeredit
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Indent'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -770,11 +793,15 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object editfontextraspace: tintegeredit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'ExtSp'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -794,11 +821,15 @@ object projectoptionsfo: tprojectoptionsfo
               end
               object editfontwidth: tintegeredit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Width'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -808,18 +839,22 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 10
                 bounds_x = 273
                 bounds_y = 117
-                bounds_cx = 69
+                bounds_cx = 57
                 bounds_cy = 39
                 ondataentered = fontondataentered
                 reffontheight = 15
               end
               object editfontheight: tintegeredit
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Height'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -827,9 +862,9 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                 )
                 taborder = 11
-                bounds_x = 191
-                bounds_y = 117
-                bounds_cx = 60
+                bounds_x = 169
+                bounds_y = 116
+                bounds_cx = 57
                 bounds_cy = 39
                 ondataentered = fontondataentered
                 reffontheight = 15
@@ -837,11 +872,15 @@ object projectoptionsfo: tprojectoptionsfo
               object editfontname: tstringedit
                 optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_destroywidgets]
                 color = 15262906
+                frame.levelo = 0
+                frame.framei_left = 0
+                frame.framei_top = 0
+                frame.framei_right = 0
+                frame.framei_bottom = 0
                 frame.caption = 'Font'
                 frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.template = mainfo.tframecomp2
+                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 frame.outerframe = (
                   0
                   18
@@ -851,7 +890,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 12
                 bounds_x = 5
                 bounds_y = 117
-                bounds_cx = 162
+                bounds_cx = 109
                 bounds_cy = 39
                 ondataentered = fontondataentered
                 value = 'mseide_source'
@@ -895,7 +934,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 13
                 bounds_x = 189
                 bounds_y = 178
-                bounds_cx = 150
+                bounds_cx = 118
                 bounds_cy = 39
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
@@ -942,7 +981,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 14
                 bounds_x = 4
                 bounds_y = 179
-                bounds_cx = 152
+                bounds_cx = 126
                 bounds_cy = 39
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
@@ -3668,7 +3707,6 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 8
-          hint = 'Enable messages to file'
           bounds_x = 512
           bounds_y = 224
           bounds_cx = 146
@@ -3688,7 +3726,6 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 12
-          hint = 'Close messages window after compile.'
           bounds_x = 145
           bounds_y = 224
           bounds_cx = 105
@@ -6994,7 +7031,6 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 17
-          hint = 'Show console ouput on run'
           bounds_x = 331
           bounds_y = 224
           bounds_cx = 99
@@ -7013,7 +7049,6 @@ object projectoptionsfo: tprojectoptionsfo
             2
           )
           taborder = 18
-          hint = 'Show/hide Purpose/Comment field in Make options'
           bounds_x = 245
           bounds_y = 182
           bounds_cx = 64

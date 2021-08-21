@@ -3784,6 +3784,51 @@ debugcommand.frame.caption :=  projectoptionstext(po_debugcommand);
 debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
 makepage.caption :=  projectoptionstext(po_makepage);
 
+defaultmake.frame.caption :=  projectoptionstext(po_defaultmake);
+mainfile.frame.caption :=  projectoptionstext(po_mainfile);
+mainfile.controller.captionopen :=  projectoptionstext(po_selectmainfile);
+targetfile.frame.caption :=  projectoptionstext(po_targetfile);
+targetfile.controller.captionopen :=  projectoptionstext(po_selecttargetfile);
+makecommand.frame.caption :=  projectoptionstext(po_makecommand);
+makecommand.controller.captionopen :=  projectoptionstext(po_selectmakecommand);
+
+showcommandline.caption :=  projectoptionstext(po_showcommandline);
+copymessages.frame.caption :=  projectoptionstext(po_copymessages);
+
+closemessages.frame.caption :=  projectoptionstext(po_closemessages);
+checkmethods.frame.caption :=  projectoptionstext(po_checkmethods);
+checkmethods.hint :=  projectoptionstext(po_checkmethodshint);
+ttabpage66.caption :=  projectoptionstext(po_projectcompiler);
+ttabpage17.caption :=  projectoptionstext(po_commandbefore);
+ttabpage12.caption :=  projectoptionstext(po_makeoptions);
+ttabpage11.caption :=  projectoptionstext(po_directories);
+unitdirs.controller.captionopen :=  projectoptionstext(po_unitdirs);
+ttabpage18.caption :=  projectoptionstext(po_commandafter);
+ttabpage88.caption :=  projectoptionstext(po_exeextension);
+
+
+ttabpage22.caption :=  projectoptionstext(po_comments);
+makedir.frame.caption :=  projectoptionstext(po_makedir);
+makedir.controller.captionopen :=  projectoptionstext(po_selectmakedir);
+colorerror.frame.caption :=  projectoptionstext(po_colorerror);
+colorwarning.frame.caption :=  projectoptionstext(po_colorwarning);
+colornote.frame.caption :=  projectoptionstext(po_colornote);
+stripmessageesc.frame.caption :=  projectoptionstext(po_stripmessageesc);
+stripmessageesc.hint :=  projectoptionstext(po_stripmessageeschint);
+showconsole.frame.caption :=  projectoptionstext(po_showconsole);
+enablepurpose.frame.caption :=  projectoptionstext(po_enablepurpose);
+messageoutputfile.frame.caption :=  projectoptionstext(po_messageoutputfile);
+messageoutputfile.controller.captionopen :=  projectoptionstext(po_selectmessageoutputfile);
+ttabpage1.caption :=  projectoptionstext(po_macros);
+debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
+debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
+debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
+
+
+
+
+
+
 end;
 end;
 

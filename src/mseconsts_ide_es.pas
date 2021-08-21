@@ -155,7 +155,40 @@ const
 '&Ejecutar comando', // po_runcommand
 '&Depurador predeterminado', // po_debugcommand
 'Opciones depuración', // po_debugoptions
-'&Hacer' // po_makepage
+'&Hacer', // po_makepage
+
+'Hacer predeterminado', // po_defaultmake
+'Archivo principal', // po_mainfile
+'Seleccionar archivo principal', // po_selectmainfile
+'Nombre de destino', // po_targetfile
+'Seleccionar destino', // po_selecttargetfile
+'Compilador predeterminado', // po_makecommand
+'Seleccionar comando Hacer', // po_selectmakecommand
+'Mostrar línea comando', // po_showcommandline
+'Copiar mensajes al archivo', // po_copymessages
+'Cerrar mensajes', // po_closemessages
+'Comprobar encabezados', // po_checkmethods
+'Comprobar los encabezados de los métodos', // po_checkmethodshint
+'Compilador proyecto', // po_projectcompiler
+'Comando antes', // po_commandbefore
+'Hacer opciones', // po_makeoptions
+'Directorios', // po_directories
+'Seleccionar directorio', // po_unitdirs
+'Comando después', // po_commandafter
+'Extensión Exe', // po_exeextension
+'Comentarios', // po_comments
+'Directorio Hacer', // po_makedir
+'Directorio Hacer', // po_selectmakedir
+'Color error', // po_colorerror
+'Color advertencia', // po_colorwarning
+'Color nota', // po_colornote
+'Eliminar ESC', // po_stripmessageesc
+'Eliminar secuencias ESC en Mensajes y Terminal', // po_stripmessageeschint
+'Muestra Consola', // po_showconsole
+'Objetivo', //po_enablepurpose
+'Archivo mensajes', // po_messageoutputfile
+'Archivo mensajes', // po_selectmessageoutputfile
+'Macros' // po_macros
 
   );
 

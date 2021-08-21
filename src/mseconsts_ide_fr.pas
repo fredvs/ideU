@@ -114,10 +114,10 @@ const
     'Marge à droite', // po_rightmarginline
     'Marquer les crochets', //  po_markbrackets
     'Numéros de ligne', //  po_linenumbers
-    'Marquer les mots paires', //  po_markpairwords
+    'Marquer mots paires', //  po_markpairwords
     'Couper les espaces'#10'de fin lors de'#10'l'#08217'enregistrement', //  po_trimtrailing
     'Retrait automatique', //  po_autoindent
-    'Pas d'#08217'éditeur de source', //  po_nosource
+    'Pas d'#08217'éditeur-source', //  po_nosource
     'Retrait de tabulation', //  po_tabindent
     'Onglet Espace', //  po_spacetab
     'Afficher les onglets', //  po_showtabs
@@ -132,7 +132,7 @@ const
     'Taquets', //  po_tabstops
     'Retrait', //  po_indent
     'Esp.X', //  po_extraspace
-    'Espace supplémentaire entre les lignes', //  po_extraspacehint
+    'Espace supplémentaire entre lignes', //  po_extraspacehint
     'Largeur', //  po_width
     'Hauteur', //  po_height
     'Police', //  po_font
@@ -193,7 +193,40 @@ const
 '&Exécuter commande', // po_runcommand
 '&Débogueur par défaut', // po_debugcommand
 'Options débogage', // po_debugoptions
-'&Créer' // po_makepage
+'&Créer', // po_makepage
+
+'Créer-défaut', // po_defaultmake
+'Fichier principal', // po_mainfile
+'Sélection du fichier principal', // po_selectmainfile
+'Nom cible', // po_targetfile
+'Selectionner cible', // po_selecttargetfile
+'Compilateur-défaut', // po_makecommand
+'Selectionner compilateur', // po_selectmakecommand
+'Voir ligne de commande', // po_showcommandline
+'Copier Messages vers fichier', // po_copymessages
+'Fermer Message', // po_closemessages
+'Check en-têtes', // po_checkmethods
+'Vérifier les en-têtes de méthode', // po_checkmethodshint
+'Compilateur projet', // po_projectcompiler
+'Commande avant', // po_commandbefore
+'Options Créer', // po_makeoptions
+'Répertoires', // po_directories
+'Selectionner répertoires', // po_unitdirs
+'Commande après', // po_commandafter
+'Extension exe', // po_exeextension
+'Commentaires', // po_comments
+'Répertoire-Créer', // po_makedir
+'Choisir Répertoire-Créer', // po_selectmakedir
+'Couleur Erreur', // po_colorerror
+'Couleur Alerte', // po_colorwarning
+'Couleur Note', // po_colornote
+'Supprimer ESC', // po_stripmessageesc
+'Supprimer les séquences ESC dans Messages et Terminal', // po_stripmessageeschint
+'Voir Console', // po_showconsole
+'Usage', //po_enablepurpose
+'Fichier sortie Messages', // po_messageoutputfile
+'Choisir fichier cible', // po_selectmessageoutputfile
+'Macros' // po_macros
 
   );
 
