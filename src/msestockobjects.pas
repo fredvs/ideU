@@ -124,9 +124,12 @@ type
                        po_comments,po_makedir,po_selectmakedir,po_colorerror,po_colorwarning,
                        po_colornote,po_stripmessageesc,po_stripmessageeschint,
                        po_showconsole,po_enablepurpose,po_messageoutputfile,po_selectmessageoutputfile,
-                       po_macros
+                       po_macros,po_selectactivegroupgrid,po_fontaliaspage,po_designers,
+                       po_usercolors,po_copycolor,po_formatmacro,po_formatmacrohint,
+                       po_templates,po_newproject,po_scriptbeforecopy,po_scriptaftercopy,
+                       po_newfile,po_newform,po_tools,po_storage,po_infos
                       
-                      );
+                     );
                       
 {
 type

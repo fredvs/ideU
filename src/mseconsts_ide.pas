@@ -248,7 +248,23 @@ const
 'Purpose', //po_enablepurpose
 'Message output file', // po_messageoutputfile
 'Select target file', // po_selectmessageoutputfile
-'M&acros' // po_macros
+'Macros', // po_macros
+'Active group', // po_selectactivegroupgrid
+'&Font Alias', // po_fontaliaspage
+'Designers', // po_designers
+'User &Colors', // po_usercolors
+'Copy "setcolormapvalue" code to clipboard', // po_copycolor
+'F&ormat Macros', // po_formatmacro
+'Used by formatfloatmse() and formatdatetimemse()', // po_formatmacrohint
+'Templates', // po_templates
+'New project', // po_newproject
+'Script before copy', // po_scriptbeforecopy
+'Script after copy', // po_scriptaftercopy
+'New File', // po_newfile
+'New Form', // po_newform
+'Tools', // po_tools
+'Storage', // po_storage
+'Infos' // po_infos
 
   );
   

@@ -1002,6 +1002,7 @@ type
    ///////////////
 
    ttabpage23: ttabpage;
+   tabdesigners: ttabpage;
    project_comment: tmemoedit;
    project_creator: tstringedit;
    project_copyright: tstringedit;
@@ -3820,14 +3821,22 @@ enablepurpose.frame.caption :=  projectoptionstext(po_enablepurpose);
 messageoutputfile.frame.caption :=  projectoptionstext(po_messageoutputfile);
 messageoutputfile.controller.captionopen :=  projectoptionstext(po_selectmessageoutputfile);
 ttabpage1.caption :=  projectoptionstext(po_macros);
-debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
-debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
-debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
-
-
-
-
-
+selectactivegroupgrid.frame.caption :=  projectoptionstext(po_selectactivegroupgrid);
+fontaliaspage.caption :=  projectoptionstext(po_fontaliaspage);
+tabdesigners.caption :=  projectoptionstext(po_designers);
+ttabpage10.caption :=  projectoptionstext(po_usercolors);
+tbutton1.caption :=  projectoptionstext(po_copycolor);
+ttabpage21.caption :=  projectoptionstext(po_formatmacro);
+ttabpage21.tabhint :=  projectoptionstext(po_formatmacrohint);
+ttabpage2.caption :=  projectoptionstext(po_templates);
+ttabpage3.caption :=  projectoptionstext(po_newproject);
+scriptbeforecopy.frame.caption :=  projectoptionstext(po_scriptbeforecopy);
+scriptaftercopy.frame.caption :=  projectoptionstext(po_scriptaftercopy);
+ttabpage4.caption :=  projectoptionstext(po_newfile);
+ttabpage5.caption :=  projectoptionstext(po_newform);
+ttabpage15.caption :=  projectoptionstext(po_tools);
+ttabpage20.caption :=  projectoptionstext(po_storage);
+ttabpage23.caption :=  projectoptionstext(po_infos);
 
 end;
 end;

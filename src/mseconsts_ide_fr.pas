@@ -226,7 +226,23 @@ const
 'Usage', //po_enablepurpose
 'Fichier sortie Messages', // po_messageoutputfile
 'Choisir fichier cible', // po_selectmessageoutputfile
-'Macros' // po_macros
+'Macros', // po_macros
+'Groupe actif', // po_selectactivegroupgrid
+'Alias-police', // po_fontaliaspage
+'Designers', // po_designers
+'Couleurs utilisateur', // po_usercolors
+'Copiez le code "setcolormapvalue" dans le presse-papiers', // po_copycolor
+'Formatter Macros', // po_formatmacro
+'Utilisé par formatfloatmse() et formatdatetimemse()', // po_formatmacrohint
+'Modèles', // po_templates
+'Nouveau projet', // po_newproject
+'Script avant copie', // po_scriptbeforecopy
+'Script après copie', // po_scriptaftercopy
+'Nouveau Fichier', // po_newfile
+'Nouvelle Forme', // po_newform
+'Outils', // po_tools
+'Rangement', // po_storage
+'Infos' // po_infos
 
   );
 

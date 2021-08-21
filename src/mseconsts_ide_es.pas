@@ -188,7 +188,23 @@ const
 'Objetivo', //po_enablepurpose
 'Archivo mensajes', // po_messageoutputfile
 'Archivo mensajes', // po_selectmessageoutputfile
-'Macros' // po_macros
+'Macros', // po_macros
+'Grupo activo', // po_selectactivegroupgrid
+'&Alias fuente', // po_fontaliaspage
+'Diseñadores', // po_designers
+'Colores usuario', // po_usercolors
+'Copiar el código "setcolormapvalue" al portapapeles', // po_copycolor
+'F&ormat Macros', // po_formatmacro
+'Usado por formatfloatmse() y formatdatetimemse()', // po_formatmacrohint
+'Plantillas', // po_templates
+'Nuevo proyecto', // po_newproject
+'Guión antes copiar', // po_scriptbeforecopy
+'Guión tras copiar', // po_scriptaftercopy
+'Archivo nuevo', // po_newfile
+'Nueva forma', // po_newform
+'Instrumentos', // po_tools
+'Almacen', // po_storage
+'Infos' // po_infos
 
   );
 

@@ -185,7 +185,23 @@ const
 'Zweck', //po_enablepurpose
 'Ausgabedatei Nachrichten', // po_messageoutputfile
 'Ausgabedatei Nachrichten', // po_selectmessageoutputfile
-'Makros' // po_macros
+'Makros', // po_macros
+'Aktive Gruppe', // po_selectactivegroupgrid
+'Schriftart-Alias', // po_fontaliaspage
+'Designer', // po_designers
+'Benutzerfarben', // po_usercolors
+'Kopieren Code "setcolormapvalue" in Zwischenablage', // po_copycolor
+'Makros formatieren', // po_formatmacro
+'Used by formatfloatmse() and formatdatetimemse()', // po_formatmacrohint
+'Vorlagen', // po_templates
+'Neues Projekt', // po_newproject
+'Skript vor Kopieren', // po_scriptbeforecopy
+'Skript nach Kopieren', // po_scriptaftercopy
+'Neue Datei', // po_newfile
+'Neue Form', // po_newform
+'Werkzeuge', // po_tools
+'Lagerung', // po_storage
+'Infos' // po_infos
 
   );
   

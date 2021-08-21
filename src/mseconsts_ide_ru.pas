@@ -192,7 +192,23 @@ const
 'Цель', //po_enablepurpose
 'Выходной файл сообщений', // po_messageoutputfile
 'Выходной файл сообщений', // po_selectmessageoutputfile
-'Макросы' // po_macros
+'Макросы', // po_macros
+'Активная группа', // po_selectactivegroupgrid
+'Псевдоним шрифта', // po_fontaliaspage
+'Дизайнеров', // po_designers
+'Пользовательские цвета', // po_usercolors
+'Скопируйте код setcolormapvalue в буфер обмена', // po_copycolor
+'Форматировать макросы', // po_formatmacro
+'Используется formatfloatmse() и formatdatetimemse()', // po_formatmacrohint
+'Шаблоны', // po_templates
+'Новый проект', // po_newproject
+'Скрипт перед копии', // po_scriptbeforecopy
+'Скрипт после копии', // po_scriptaftercopy
+'Новый файл', // po_newfile
+'Новая форма', // po_newform
+'Инструменты', // po_tools
+'Хранилище', // po_storage
+'Информация' // po_infos
 
   );
   
