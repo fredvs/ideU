@@ -2,8 +2,8 @@ object projectoptionsfo: tprojectoptionsfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   onfocus = onfocus
   visible = False
-  bounds_x = 420
-  bounds_y = 197
+  bounds_x = 404
+  bounds_y = 62
   bounds_cx = 727
   bounds_cy = 620
   bounds_cxmin = 724
@@ -1768,7 +1768,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.captionoffset = 3
               frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-              hint = 'Search directories for code editor to get  info from soiurce'
+              hint = 'Search directories for code editor to get info from source'
               bounds_x = 0
               bounds_y = 25
               bounds_cx = 714
@@ -3090,7 +3090,7 @@ object projectoptionsfo: tprojectoptionsfo
               2
             )
             taborder = 1
-            hint = '&Activate on Break'
+            hint = 'Activate on Break'
             bounds_x = 1
             bounds_y = 23
             bounds_cx = 77

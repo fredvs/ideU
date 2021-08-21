@@ -3732,6 +3732,58 @@ twidgetgrid6.fixrows[-1].captions[1].caption :=  projectoptionstext(po_filemask)
 
 ttabpage19.caption :=  projectoptionstext(po_codetemplate);
 twidgetgrid5.frame.caption :=  projectoptionstext(po_fontcodetemplatedir);
+
+codetemplatedirs.controller.captionopen := projectoptionstext(po_selectunitdir); 
+debuggerpage.caption :=  projectoptionstext(po_debuggerpage);
+ttabpage77.caption :=  projectoptionstext(po_projectdebugger);
+ttabpage6.caption :=  projectoptionstext(po_searchdirectories);
+ttabpage6.hint :=  projectoptionstext(po_searchdirectorieshint);
+sourcedirs.controller.captionopen := projectoptionstext(po_selectsourcedir); 
+sourcebase.frame.caption :=  projectoptionstext(po_objectbasedir);
+sourcebase.controller.captionopen := projectoptionstext(po_selectsourcebasedir); 
+ttabpage9.caption :=  projectoptionstext(po_defines);
+ttabpage7.caption :=  projectoptionstext(po_signals);
+ttabpage8.caption :=  projectoptionstext(po_exception);
+ttabpage16.caption :=  projectoptionstext(po_target);
+gdbservercommandattach.frame.caption :=  projectoptionstext(po_startgdbattachtarget);
+nogdbserverexit.frame.caption :=  projectoptionstext(po_nogdbserverexit);
+beforeconnect.frame.caption :=  projectoptionstext(po_beforeconnect);
+beforeload.frame.caption :=  projectoptionstext(po_beforeload);
+afterconnect.frame.caption :=  projectoptionstext(po_afterconnect);
+afterload.frame.caption :=  projectoptionstext(po_afterload);
+gdbservercommand.frame.caption :=  projectoptionstext(po_gdbservercommand);
+gdbserverwait.frame.caption :=  projectoptionstext(po_gdbserverwait);
+gdbserverstartonce.frame.caption :=  projectoptionstext(po_gdbserverstartonce);
+uploadcommand.frame.caption :=  projectoptionstext(po_uploadcommand);
+gdbprocessor.frame.caption :=  projectoptionstext(po_gdbprocessor);
+gdbsimulator.frame.caption :=  projectoptionstext(po_gdbsimulator);
+gdbdownload.frame.caption :=  projectoptionstext(po_gdbdownload);
+startupbkpt.frame.caption :=  projectoptionstext(po_startupbkpt);
+remoteconnection.frame.caption :=  projectoptionstext(po_remoteconnection);
+downloadalways.frame.caption :=  projectoptionstext(po_downloadalways);
+downloadalways.hint :=  projectoptionstext(po_downloadalwayshint);
+gdbloadtimeout.frame.caption :=  projectoptionstext(po_gdbloadtimeout);
+externalconsole.frame.caption :=  projectoptionstext(po_externalconsole);
+stoponexception.frame.caption :=  projectoptionstext(po_stoponexception);
+stoponexception.hint :=  projectoptionstext(po_stoponexceptionhint);
+activateonbreak.frame.caption :=  projectoptionstext(po_activateonbreak);
+activateonbreak.hint :=  projectoptionstext(po_activateonbreakhint);
+valuehints.frame.caption :=  projectoptionstext(po_valuehints);
+nodebugbeginend.frame.caption :=  projectoptionstext(po_nodebugbeginend);
+nodebugbeginend.hint :=  projectoptionstext(po_nodebugbeginendhint);
+settty.frame.caption :=  projectoptionstext(po_settty);
+raiseonbreak.frame.caption :=  projectoptionstext(po_raiseonbreak);
+raiseonbreak.hint :=  projectoptionstext(po_raiseonbreakhint);
+fpcgdbworkaround.frame.caption :=  projectoptionstext(po_fpcgdbworkaround);
+fpcgdbworkaround.hint :=  projectoptionstext(po_fpcgdbworkaroundhint);
+
+debugtarget.frame.caption :=  projectoptionstext(po_debugtarget);
+xtermcommand.frame.caption :=  projectoptionstext(po_xtermcommand);
+runcommand.frame.caption :=  projectoptionstext(po_runcommand);
+debugcommand.frame.caption :=  projectoptionstext(po_debugcommand);
+debugoptions.frame.caption :=  projectoptionstext(po_debugoptions);
+makepage.caption :=  projectoptionstext(po_makepage);
+
 end;
 end;
 

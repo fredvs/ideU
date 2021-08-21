@@ -102,10 +102,59 @@ const
     'Dateimaske',   //  po_filemask
     'Syntaxdefinitionsdatei', //  po_syntaxdeffile
     'Codevorlagen', //  po_codetemplate
-    'Codevorlagenverzeichnisse, Dateierweiterung = .mct' //  po_fontcodetemplatedir
+    'Codevorlagenverzeichnisse, Dateierweiterung = .mct', //  po_fontcodetemplatedir
+ 'Geräteverzeichnis auswählen', // po_selectunitdir
+ '&Debugger', // po_debuggerpage
+ 'Projekt-Debugger', // po_projectdebugger
+ '&Verzeichnisse suchen', // po_searchdirectories
+ 'Suchpfad um Infos zum Code zu erhalten', // po_searchdirectorieshint
+ 'Quellverzeichnis auswählen', // po_selectsourcedir
+ 'Objektbasisverzeichnis (leer = Verzeichnis erstellen)', // po_objectbasedir
+ 'Quellbasisverzeichnis auswählen', // po_selectsourcebasedir
+ 'Def&iniert', // po_defines
+ '&Signale', // po_signals
+ '&Ausnahme', // po_exception
+ '&Ziel', // po_target
+ 'Starten Sie den gdb-Serverbefehl zum Anhängen des Ziels', // po_startgdbattachtarget
+ 'Kein Warten auf den Ausgang', // po_nogdbserverexit
+ 'gdb-Skript von vor der Verbindung', // po_beforeconnect
+ 'gdb-Skript von vor dem Laden', // po_beforeload
+ 'gdb-Skript von vor der Ausführung', // po_beforerun
+ 'gdb-Skript von after connect', // po_afterconnect
+ 'gdb-Skript von nach dem Laden', // po_afterload
+ 'Starten gdb-Serverbefehl Ziels ausführen', // gdbservercommand
+ 'Warten bevor Verbindung', // po_gdbserverwait
+ 'Einmal anfangen', // po_gdbserverstartonce
+ 'Befehl zum Herunterladen', // po_uploadcommand
+ 'Prozessor', // po_gdbprocessor
+ 'Simulator', // po_gdbsimulator
+ 'gdb herunterladen', // po_gdbdownload
+ 'Startup BKPT', // po_startupbkpt
+ 'Zielverbindung', // po_remoteconnection
+ 'Immer herunterladen', // po_downloadalways
+'Immer vor dem Ausführen herunterladen', // po_downloadalwayshint
+'Zeitüberschreitung beim Laden', // po_gdbloadtimeout
+'&Externe Konsole', // po_externalconsole
+'&Aus.halt.', // po_stoponexception
+'Bei Ausnahme anhalten', // po_stoponexceptionhint
+'&Paus.akti.', // po_activateonbreak
+'Bei Pause aktivieren', // po_activateonbreakhint
+'&Wert'#10'Hinweise', // po_valuehints
+'Rufen GUI_DEB', // po_nodebugbeginend
+'Lassen Sie den Mausgriff am Zielstopp los. gdb stürzt manchmal mit dieser Option ab.', // po_nodebugbeginendhint
+'TT&Y einstellen', // po_settty
+'&Paus/anhe', // po_raiseonbreak
+'In der Pause anheben', // po_raiseonbreakhint
+'&FPC-Fehler', // po_fpcgdbworkaround
+'Verwenden Sie Problemumgehungen für FPC/gdb-Fehler', // po_fpcgdbworkaroundhint
+'Debug-Ziel', // po_debugtarget
+'xterm-Befehl', // po_xtermcommand
+'&Führen Befehl', // po_runcommand
+'&Standard-Debugger', // po_debugcommand
+'Debug-Optionen', // po_debugoptions
+'&Machen' // po_makepage
 
-    );
-
+  );
   de_stockcaption: stockcaptionaty = (
     '',                        //sc_none
     'ist ung'#0252'ltig',       //sc_is_invalid

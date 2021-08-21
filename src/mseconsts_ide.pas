@@ -161,13 +161,62 @@ const
  'Font Bk. color', //  po_fontbkcolor
  'Font color', //  po_fontcolor
  'File filter', //  po_filefilter
- 
  'Name', //  po_name
  'File mask', //  po_filemask
  'Syntax definition file', //  po_syntaxdeffile
  'Code Templates', //  po_codetemplate
- 'Code template directories, file extension = .mct' //  po_fontcodetemplatedir
- 
+ 'Code template directories, file extension = .mct', //  po_fontcodetemplatedir
+ 'Select unit directory', // po_selectunitdir
+ '&Debugger', // po_debuggerpage
+ 'Project Debugger', // po_projectdebugger
+ 'Search &Directories', // po_searchdirectories
+ 'Search path to get infos about code', // po_searchdirectorieshint
+ 'Select source directory', // po_selectsourcedir
+ 'Object &Base Directory (empty = Make Directory)', // po_objectbasedir
+ 'Select source base directory', // po_selectsourcebasedir
+ 'Defi&nes', // po_defines
+ '&Signals', // po_signals
+ '&Exception', // po_exception
+ '&Target', // po_target
+ 'Start gdb server command attach target', // po_startgdbattachtarget
+ 'No wait for exit', // po_nogdbserverexit
+ 'Before connect gdb script', // po_beforeconnect
+ 'Before load gdb script', // po_beforeload
+ 'Before run gdb script', // po_beforerun
+ 'After connect gdb script', // po_afterconnect
+ 'After load gdb script', // po_afterload
+ 'Start gdb server command run target', // gdbservercommand
+ 'Wait before connect', // po_gdbserverwait
+ 'Start once', // po_gdbserverstartonce
+ 'Download command', // po_uploadcommand
+ 'Processor', // po_gdbprocessor
+ 'Simulator', // po_gdbsimulator
+ 'gdb download', // po_gdbdownload
+ 'Startup BKPT', // po_startupbkpt
+ 'Target connection', // po_remoteconnection
+ 'Always download', // po_downloadalways
+'Always download before run', // po_downloadalwayshint
+'Load Timeout', // po_gdbloadtimeout
+'&Extern Console', // po_externalconsole
+'&Stop on Exc', // po_stoponexception
+'Stop on exceptions', // po_stoponexceptionhint
+'&Acti-Break', // po_activateonbreak
+'Activate on Break', // po_activateonbreakhint
+'&Value'#10'Hints', // po_valuehints
+'Call GUI_DEB', // po_nodebugbeginend
+'Release mouse grab by target stop. gdb sometimes crashes with this option.', // po_nodebugbeginendhint
+'Set TT&Y', // po_settty
+'&Raise-Break', // po_raiseonbreak
+'Raise on break', // po_raiseonbreakhint
+'&FPC bugs', // po_fpcgdbworkaround
+'Use workarounds for FPC/gdb bugs', // po_fpcgdbworkaroundhint
+'Debug &target', // po_debugtarget
+'xterm command', // po_xtermcommand
+'&Run command', // po_runcommand
+'&Default Debugger', // po_debugcommand
+'Debug &options', // po_debugoptions
+'&Make' // po_makepage
+
   );
   
  en_stockcaption: stockcaptionaty = (

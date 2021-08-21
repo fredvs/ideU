@@ -105,9 +105,59 @@ const
     'Máscara archivo', //  po_filemask
     'Archivo definición sintaxis', //  po_syntaxdeffile
     'Plantillas de código', //  po_codetemplate
-    'Directorios plantillas de código, extensión de archivo = .mct'
+    'Directorios plantillas de código, extensión de archivo = .mct', //  po_fontcodetemplatedir
+ 'Seleccionar directorio', // po_selectunitdir
+ '&Depurador', // po_debuggerpage
+ 'Project Debugger', // po_projectdebugger
+ '&Directorios de búsqueda', // po_searchdirectories
+ 'Ruta de búsqueda para obtener información sobre el código', // po_searchdirectorieshint
+ 'Seleccionar directorio de origen', // po_selectsourcedir
+ 'Directorio base de objetos (vacío = Crear directorio)', // po_objectbasedir
+ 'Seleccionar directorio de origen', // po_selectsourcebasedir
+ 'Defi&ne', // po_defines
+ '&Señales', // po_signals
+ '&Excepción', // po_exception
+ '&Objetivo', // po_target
+ 'Iniciar comando del servidor gdb adjuntar destino', // po_startgdbattachtarget
+ 'No espere a salir', // po_nogdbserverexit
+ 'Script gdb de antes de conectar', // po_beforeconnect
+ 'Script gdb de antes de la carga', // po_beforeload
+ 'Script gdb de antes de ejecutar', // po_beforerun
+ 'Script gdb de después de conectar', // po_afterconnect
+ 'Script gdb de después de la carga', // po_afterload
+ 'Inicie comando servidor gdb destino ejecución', // gdbservercommand
+ 'Espere antes conectarse', // po_gdbserverwait
+ 'Empezar una vez', // po_gdbserverstartonce
+ 'Comando de descarga', // po_uploadcommand
+ 'Procesador', // po_gdbprocessor
+ 'Simulador', // po_gdbsimulator
+ 'gdb-descargar', // po_gdbdownload
+ 'Inicio BKPT', // po_startupbkpt
+ 'Conexión de destino', // po_remoteconnection
+ 'Descargar siempre', // po_downloadalways
+'Descargar siempre antes de ejecutar', // po_downloadalwayshint
+'Tiempo espera de carga', // po_gdbloadtimeout
+'&Consola externa', // po_externalconsole
+'&Det.exc.', // po_stoponexception
+'Deténgase en caso de excepción', // po_stoponexceptionhint
+'&Act.desc.', // po_activateonbreak
+'Activar en descanso', // po_activateonbreakhint
+'&Valor'#10'pistas',  // po_valuehints
+'Llame GUI_DEB', // po_nodebugbeginend
+'Suelte el agarre del mouse al detener el objetivo. gdb a veces falla con esta opción.', // po_nodebugbeginendhint
+'Establecer TT&Y', // po_settty
+'&Leva/desc', // po_raiseonbreak
+'Levantar en descanso', // po_raiseonbreakhint
+'&Errores FPC', // po_fpcgdbworkaround
+'Utilice soluciones alternativas para errores de FPC / gdb', // po_fpcgdbworkaroundhint
+'Objetivo &depuración', // po_debugtarget
+'Comando xterm', // po_xtermcommand
+'&Ejecutar comando', // po_runcommand
+'&Depurador predeterminado', // po_debugcommand
+'Opciones depuración', // po_debugoptions
+'&Hacer' // po_makepage
 
-    );
+  );
 
   es_stockcaption: stockcaptionaty = (
     '',                           //sc_none

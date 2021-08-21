@@ -14,8 +14,8 @@ object mainfo: tmainfo
   frame.grip_faceactive.template = tfacecomp3
   onactivate = onactiv
   visible = False
-  bounds_x = 396
-  bounds_y = 391
+  bounds_x = 427
+  bounds_y = 247
   bounds_cx = 745
   bounds_cy = 76
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -119,6 +119,14 @@ object mainfo: tmainfo
     dragdock.caption = 'Use this panel to Drag Dock the window'
     dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint]
     statfile = projectstatfile
+    object tedit1: tedit
+      frame.localprops = []
+      frame.localprops1 = []
+      bounds_x = 34
+      bounds_y = 30
+      bounds_cy = 21
+      reffontheight = 15
+    end
   end
   object gdb: tgdbmi
     guiintf = True

@@ -109,10 +109,59 @@ const
     'Маска файла', //  po_filemask
     'Файл определения синтаксиса', //  po_syntaxdeffile
     'Шаблоны кода', //  po_codetemplate
-    'Каталоги шаблонов кода, расширение файла = .mct' //  po_fontcodetemplatedir
+    'Каталоги шаблонов кода, расширение файла = .mct', //  po_fontcodetemplatedir
+ 'Выберите каталог объекта', // po_selectunitdir
+ '&Отладчик', // po_debuggerpage
+ 'Отладчик проекта', // po_projectdebugger
+ 'Каталоги поиска', // po_searchdirectories
+ 'Путь поиска для получения информации о коде', // po_searchdirectorieshint
+ 'Выберите исходный каталог', // po_selectsourcedir
+ 'Каталог базы объектов (пусто = Создать каталог)', // po_objectbasedir
+ 'Выберите исходный базовый каталог', // po_selectsourcebasedir
+ 'Определяет', // po_defines
+ '&Сигналы', // po_signals
+ '&Исключение', // po_exception
+ '&Цель', // po_target
+ 'Запустить цель подключения команды сервера gdb', // po_startgdbattachtarget
+ 'Не ждать выхода', // po_nogdbserverexit
+ 'gdb скрипт перед подключением', // po_beforeconnect
+ 'gdb скрипт перед загрузкой', // po_beforeload
+ 'gdb скрипт перед запуском', // po_beforerun
+ 'gdb скрипт после подключения', // po_afterconnect
+ 'gdb скрипт после загрузки', // po_afterload
+ 'Запустить команду сервера gdb запустить цель', // gdbservercommand
+ 'Подождите перед подключением', // po_gdbserverwait
+ 'Начать один раз', // po_gdbserverstartonce
+ 'Команда загрузки', // po_uploadcommand
+ 'Процессор', // po_gdbprocessor
+ 'Симулятор', // po_gdbsimulator
+ 'gdb скачать', // po_gdbdownload
+ 'Запуск БКПТ', // po_startupbkpt
+ 'Целевое соединение', // po_remoteconnection
+ 'Всегда скачивать', // po_downloadalways
+'Всегда загружайте перед запуском', // po_downloadalwayshint
+'Время ожидания загрузки', // po_gdbloadtimeout
+'&Внешняя консоль', // po_externalconsole
+'&Оста. искл.', // po_stoponexception
+'Остановить при исключении', // po_stoponexceptionhint
+'&Акт.пере;', // po_activateonbreak
+'Активировать в перерыве', // po_activateonbreakhint
+'&Ценность'#10'подсказок', // po_valuehints '#10'
+'Вызов GUI_DEB', // po_nodebugbeginend
+'Освободите захват мыши с помощью целевой остановки. gdb иногда дает сбой с этой опцией.', // po_nodebugbeginendhint
+'Установить TT&Y', // po_settty
+'&Под/пере', // po_raiseonbreak
+'Поднимать в перерыве', // po_raiseonbreakhint
+'&Ошибки FPC', // po_fpcgdbworkaround
+'Используйте обходные пути для ошибок FPC / gdb', // po_fpcgdbworkaroundhint
+'Цель отладки', // po_debugtarget
+'команда xterm', // po_xtermcommand
+'&Запустите команду', // po_runcommand
+'&Отладчик по умолчанию', // po_debugcommand
+'Варианты отладки', // po_debugoptions
+'&Делать' // po_makepage
 
-    );
-
+  );
   ru_stockcaption: stockcaptionaty = (
     '',                                             //sc_none
     '- '#1085#1077#1074#1077#1088#1085#1086,       //sc_is_invalid => - neverno

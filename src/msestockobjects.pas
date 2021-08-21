@@ -103,8 +103,21 @@ type
                        po_nbchar,po_eolstyle,po_backup,po_tabstops,po_indent,po_extraspace,
                        po_extraspacehint,po_width,po_height,po_font,po_fontbkcolor,
                        po_fontcolor,po_filefilter,po_name,po_filemask,po_syntaxdeffile,
-                       po_codetemplate,po_fontcodetemplatedir
-
+                       po_codetemplate,po_fontcodetemplatedir,po_selectunitdir,
+                       po_debuggerpage,po_projectdebugger,po_searchdirectories,
+                       po_searchdirectorieshint,po_selectsourcedir,po_objectbasedir,
+                       po_selectsourcebasedir,po_defines,po_signals,po_exception,po_target,
+                       po_startgdbattachtarget,po_nogdbserverexit,po_beforeconnect,
+                       po_beforeload,po_beforerun,po_afterconnect,po_afterload,po_gdbservercommand,
+                       po_gdbserverwait,po_gdbserverstartonce,po_uploadcommand,po_gdbprocessor,
+                       po_gdbsimulator,po_gdbdownload,po_startupbkpt,po_remoteconnection,
+                       po_downloadalways,po_downloadalwayshint,po_gdbloadtimeout,po_externalconsole,
+                       po_stoponexception,po_stoponexceptionhint,po_activateonbreak,po_activateonbreakhint,
+                       po_valuehints,po_nodebugbeginend,po_nodebugbeginendhint,po_settty,
+                       po_raiseonbreak,po_raiseonbreakhint,po_fpcgdbworkaround,po_fpcgdbworkaroundhint,
+                       po_debugtarget,po_xtermcommand,po_runcommand,po_debugcommand,
+                       po_debugoptions,po_makepage
+                      
                       );
   
 type
