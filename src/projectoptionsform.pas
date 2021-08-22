@@ -1465,7 +1465,10 @@ begin
  showoptions := true;
  icon := mainfo.icon;
   with stockobjects do
+  begin
     captionopen := captions[sc_openproject];
+    captionsave := captions[sc_saveas];
+  end;  
    
  fontheight := mainfo.font.height; // font height of dialogfile
  fontname := msestring(mainfo.font.name);       // font name of dialogfile
@@ -1473,6 +1476,7 @@ begin
   filename:= projectoptions.projectfilename;
   history:= projecthistory;
   if save then begin
+  
    result:= execute(fdk_save,[fdo_save,fdo_checkexist]);
   end
   else begin

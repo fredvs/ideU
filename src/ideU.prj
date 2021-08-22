@@ -317,7 +317,7 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=106
  y=92
  cx=832
@@ -1298,10 +1298,10 @@ line=30
  660
  119
  1116
- 2316
- 2232
- 2509
- 3307
+ 2320
+ 2236
+ 2513
+ 3311
  119
  564
  483
@@ -1312,7 +1312,7 @@ line=30
  15
  787
  903
- 2549
+ 2553
  5749
  1882
  6135
@@ -1592,8 +1592,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=new
+finddtext=sc_openproject
 findhistory=20
+ sc_openproject
+ save
+ saveproject
  new
  saveas
  save file
@@ -1611,9 +1614,6 @@ findhistory=20
  po_showcommandline
  po_
  enablepurpose
- caption
- makepage
- uses
 findoptions=1
 editpos=18
  0,-1073741823
@@ -1624,16 +1624,16 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,408
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,516
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 8,3024
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,11
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1738,25 +1738,25 @@ order=18
  0
  1
  2
- 4
- 5
- 16
- 10
- 7
- 6
- 3
- 14
- 11
- 15
- 13
  9
+ 3
+ 4
  8
+ 7
+ 15
+ 14
+ 6
+ 11
+ 16
+ 13
+ 10
  12
+ 5
  17
 firsttab=10
 index=17
 [layout]
-windowlayout=649
+windowlayout=619
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1901,7 +1901,7 @@ windowlayout=649
  x=0
  y=0
  cx=205
- cy=518
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2087,9 +2087,9 @@ windowlayout=649
  ncx=0
  ncy=0
  x=0
- y=581
+ y=580
  cx=1356
- cy=108
+ cy=109
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2189,7 +2189,7 @@ windowlayout=649
  x=0
  y=0
  cx=1356
- cy=57
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2200,12 +2200,12 @@ windowlayout=649
  mdistate=0
  nx=0
  ny=0
- ncx=1356
- ncy=5
+ ncx=1341
+ ncy=0
  x=0
  y=0
  cx=1356
- cy=5
+ cy=-1
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2216,16 +2216,17 @@ windowlayout=649
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialogx.pas
- history=50
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
+ history=20
   /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts_ide_ru.pas
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/splash.pas
   /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/msestockobjects_ide.pas
   /home/fred/ideu/src/msestockobjects_ide_mfm.pas
   /home/fred/ideu/src/msestockobjects_ide.mfm
-  /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_de.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
@@ -2236,37 +2237,6 @@ windowlayout=649
   /home/fred/ideu/src/mseconsts.pas
   /home/fred/ideu/src/mseconsts_id.pas
   /home/fred/ideu/src/mseconsts_zh.pas
-  /home/fred/ideu/src/mseconsts_uzcyr.pas
-  /home/fred/ideu/src/mseconsts_de.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
-  /home/fred/ideu/src/mseconsts_fr.pas
-  /home/fred/ideu/src/objectinspector.pas
-  /home/fred/demo_mse/po2const2po/mseguiintf.pas
-  /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts2.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
-  /home/fred/strumpract/src/dialogfiles.pas
-  /home/fred/strumpract/src/status.pas
-  /home/fred/uos/src/uos_portaudio.pas
-  /home/fred/uos/uos.jpg
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
-  /home/fred/demo_mse/ovaleform/xshape_example.c
-  /home/fred/mseide-msegui/lib/common/kernel/linux/cwstring.pas
-  /home/fred/mseide-msegui/lib/common/fpccompatibility/msezstream.pas
-  /home/fred/mseide-msegui/lib/common/image/mseformatjpgwrite.pas
-  /home/fred/demo_mse/ovaleform/main.pas
-  /home/fred/freepascal-ootb_320/packages/x11/src/xcms.pp
-  /home/fred/freepascal-ootb_320/packages/x11/src/xutil.pp
-  /home/fred/cafecentral/cc_back.bat
-  /home/fred/strumpract/src/define.inc
-  /home/fred/strumpract/src/findmessage.pas
-  /home/fred/strumpract/src/aboutform.pas
-  /home/fred/strumpract/src/dockpanel1.pas
-  /home/fred/strumpract/src/config.pas
-  /home/fred/strumpract/src/uos_flat.pas
-  /home/fred/strumpract/src/uos.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2284,7 +2254,7 @@ windowlayout=649
  x=208
  y=0
  cx=1148
- cy=518
+ cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2292,20 +2262,20 @@ windowlayout=649
   0
   1
   2
-  4
-  5
-  16
-  10
-  7
-  6
-  3
-  14
-  11
-  15
-  13
   9
+  3
+  4
   8
+  7
+  15
+  14
+  6
+  11
+  16
+  13
+  10
   12
+  5
   17
  firsttab=10
  index=17
@@ -2344,9 +2314,9 @@ windowlayout=649
  ncx=0
  ncy=0
  x=0
- y=60
+ y=54
  cx=1356
- cy=518
+ cy=523
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2390,7 +2360,7 @@ windowlayout=649
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
