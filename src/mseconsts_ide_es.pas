@@ -106,107 +106,107 @@ const
     'Archivo definición sintaxis', //  po_syntaxdeffile
     'Plantillas de código', //  po_codetemplate
     'Directorios plantillas de código, extensión de archivo = .mct', //  po_fontcodetemplatedir
- 'Seleccionar directorio', // po_selectunitdir
- '&Depurador', // po_debuggerpage
- 'Project Debugger', // po_projectdebugger
- '&Directorios de búsqueda', // po_searchdirectories
- 'Ruta de búsqueda para obtener información sobre el código', // po_searchdirectorieshint
- 'Seleccionar directorio de origen', // po_selectsourcedir
- 'Directorio base de objetos (vacío = Crear directorio)', // po_objectbasedir
- 'Seleccionar directorio de origen', // po_selectsourcebasedir
- 'Defi&ne', // po_defines
- '&Señales', // po_signals
- '&Excepción', // po_exception
- '&Objetivo', // po_target
- 'Iniciar comando del servidor gdb adjuntar destino', // po_startgdbattachtarget
- 'No espere a salir', // po_nogdbserverexit
- 'Script gdb de antes de conectar', // po_beforeconnect
- 'Script gdb de antes de la carga', // po_beforeload
- 'Script gdb de antes de ejecutar', // po_beforerun
- 'Script gdb de después de conectar', // po_afterconnect
- 'Script gdb de después de la carga', // po_afterload
- 'Inicie comando servidor gdb destino ejecución', // gdbservercommand
- 'Espere antes conectarse', // po_gdbserverwait
- 'Empezar una vez', // po_gdbserverstartonce
- 'Comando de descarga', // po_uploadcommand
- 'Procesador', // po_gdbprocessor
- 'Simulador', // po_gdbsimulator
- 'gdb-descargar', // po_gdbdownload
- 'Inicio BKPT', // po_startupbkpt
- 'Conexión de destino', // po_remoteconnection
- 'Descargar siempre', // po_downloadalways
-'Descargar siempre antes de ejecutar', // po_downloadalwayshint
-'Tiempo espera de carga', // po_gdbloadtimeout
-'&Consola externa', // po_externalconsole
-'&Det.exc.', // po_stoponexception
-'Deténgase en caso de excepción', // po_stoponexceptionhint
-'&Act.desc.', // po_activateonbreak
-'Activar en descanso', // po_activateonbreakhint
-'&Valor'#10'pistas',  // po_valuehints
-'Llame GUI_DEB', // po_nodebugbeginend
-'Suelte el agarre del mouse al detener el objetivo. gdb a veces falla con esta opción.', // po_nodebugbeginendhint
-'Establecer TT&Y', // po_settty
-'&Leva/desc', // po_raiseonbreak
-'Levantar en descanso', // po_raiseonbreakhint
-'&Errores FPC', // po_fpcgdbworkaround
-'Utilice soluciones alternativas para errores de FPC / gdb', // po_fpcgdbworkaroundhint
-'Objetivo &depuración', // po_debugtarget
-'Comando xterm', // po_xtermcommand
-'&Ejecutar comando', // po_runcommand
-'&Depurador predeterminado', // po_debugcommand
-'Opciones depuración', // po_debugoptions
-'&Hacer', // po_makepage
+    'Seleccionar directorio', // po_selectunitdir
+    '&Depurador', // po_debuggerpage
+    'Project Debugger', // po_projectdebugger
+    '&Directorios de búsqueda', // po_searchdirectories
+    'Ruta de búsqueda para obtener información sobre el código', // po_searchdirectorieshint
+    'Seleccionar directorio de origen', // po_selectsourcedir
+    'Directorio base de objetos (vacío = Crear directorio)', // po_objectbasedir
+    'Seleccionar directorio de origen', // po_selectsourcebasedir
+    'Defi&ne', // po_defines
+    '&Señales', // po_signals
+    '&Excepción', // po_exception
+    '&Objetivo', // po_target
+    'Iniciar comando del servidor gdb adjuntar destino', // po_startgdbattachtarget
+    'No espere a salir', // po_nogdbserverexit
+    'Script gdb de antes de conectar', // po_beforeconnect
+    'Script gdb de antes de la carga', // po_beforeload
+    'Script gdb de antes de ejecutar', // po_beforerun
+    'Script gdb de después de conectar', // po_afterconnect
+    'Script gdb de después de la carga', // po_afterload
+    'Inicie comando servidor gdb destino ejecución', // gdbservercommand
+    'Espere antes conectarse', // po_gdbserverwait
+    'Empezar una vez', // po_gdbserverstartonce
+    'Comando de descarga', // po_uploadcommand
+    'Procesador', // po_gdbprocessor
+    'Simulador', // po_gdbsimulator
+    'gdb-descargar', // po_gdbdownload
+    'Inicio BKPT', // po_startupbkpt
+    'Conexión de destino', // po_remoteconnection
+    'Descargar siempre', // po_downloadalways
+    'Descargar siempre antes de ejecutar', // po_downloadalwayshint
+    'Tiempo espera de carga', // po_gdbloadtimeout
+    '&Consola externa', // po_externalconsole
+    '&Det.exc.', // po_stoponexception
+    'Deténgase en caso de excepción', // po_stoponexceptionhint
+    '&Act.desc.', // po_activateonbreak
+    'Activar en descanso', // po_activateonbreakhint
+    '&Valor'#10'pistas',  // po_valuehints
+    'Llame GUI_DEB', // po_nodebugbeginend
+    'Suelte el agarre del mouse al detener el objetivo. gdb a veces falla con esta opción.', // po_nodebugbeginendhint
+    'Establecer TT&Y', // po_settty
+    '&Leva/desc', // po_raiseonbreak
+    'Levantar en descanso', // po_raiseonbreakhint
+    '&Errores FPC', // po_fpcgdbworkaround
+    'Utilice soluciones alternativas para errores de FPC / gdb', // po_fpcgdbworkaroundhint
+    'Objetivo &depuración', // po_debugtarget
+    'Comando xterm', // po_xtermcommand
+    '&Ejecutar comando', // po_runcommand
+    '&Depurador predeterminado', // po_debugcommand
+    'Opciones depuración', // po_debugoptions
+    '&Hacer', // po_makepage
 
-'Hacer predeterminado', // po_defaultmake
-'Archivo principal', // po_mainfile
-'Seleccionar archivo principal', // po_selectmainfile
-'Nombre de destino', // po_targetfile
-'Seleccionar destino', // po_selecttargetfile
-'Compilador predeterminado', // po_makecommand
-'Seleccionar comando Hacer', // po_selectmakecommand
-'Mostrar línea comando', // po_showcommandline
-'Copiar mensajes al archivo', // po_copymessages
-'Cerrar mensajes', // po_closemessages
-'Comprobar encabezados', // po_checkmethods
-'Comprobar los encabezados de los métodos', // po_checkmethodshint
-'Compilador proyecto', // po_projectcompiler
-'Comando antes', // po_commandbefore
-'Hacer opciones', // po_makeoptions
-'Directorios', // po_directories
-'Seleccionar directorio', // po_unitdirs
-'Comando después', // po_commandafter
-'Extensión Exe', // po_exeextension
-'Comentarios', // po_comments
-'Directorio Hacer', // po_makedir
-'Directorio Hacer', // po_selectmakedir
-'Color error', // po_colorerror
-'Color advertencia', // po_colorwarning
-'Color nota', // po_colornote
-'Eliminar ESC', // po_stripmessageesc
-'Eliminar secuencias ESC en Mensajes y Terminal', // po_stripmessageeschint
-'Muestra Consola', // po_showconsole
-'Objetivo', //po_enablepurpose
-'Archivo mensajes', // po_messageoutputfile
-'Archivo mensajes', // po_selectmessageoutputfile
-'Macros', // po_macros
-'Grupo activo', // po_selectactivegroupgrid
-'&Alias fuente', // po_fontaliaspage
-'Diseñadores', // po_designers
-'Colores usuario', // po_usercolors
-'Copiar el código "setcolormapvalue" al portapapeles', // po_copycolor
-'F&ormat Macros', // po_formatmacro
-'Usado por formatfloatmse() y formatdatetimemse()', // po_formatmacrohint
-'Plantillas', // po_templates
-'Nuevo proyecto', // po_newproject
-'Guión antes copiar', // po_scriptbeforecopy
-'Guión tras copiar', // po_scriptaftercopy
-'Archivo nuevo', // po_newfile
-'Nueva forma', // po_newform
-'Instrumentos', // po_tools
-'Almacen', // po_storage
-'Infos' // po_infos
+    'Hacer predeterminado', // po_defaultmake
+    'Archivo principal', // po_mainfile
+    'Seleccionar archivo principal', // po_selectmainfile
+    'Nombre de destino', // po_targetfile
+    'Seleccionar destino', // po_selecttargetfile
+    'Compilador predeterminado', // po_makecommand
+    'Seleccionar comando Hacer', // po_selectmakecommand
+    'Mostrar línea comando', // po_showcommandline
+    'Copiar mensajes al archivo', // po_copymessages
+    'Cerrar mensajes', // po_closemessages
+    'Comprobar encabezados', // po_checkmethods
+    'Comprobar los encabezados de los métodos', // po_checkmethodshint
+    'Compilador proyecto', // po_projectcompiler
+    'Comando antes', // po_commandbefore
+    'Hacer opciones', // po_makeoptions
+    'Directorios', // po_directories
+    'Seleccionar directorio', // po_unitdirs
+    'Comando después', // po_commandafter
+    'Extensión Exe', // po_exeextension
+    'Comentarios', // po_comments
+    'Directorio Hacer', // po_makedir
+    'Directorio Hacer', // po_selectmakedir
+    'Color error', // po_colorerror
+    'Color advertencia', // po_colorwarning
+    'Color nota', // po_colornote
+    'Eliminar ESC', // po_stripmessageesc
+    'Eliminar secuencias ESC en Mensajes y Terminal', // po_stripmessageeschint
+    'Muestra Consola', // po_showconsole
+    'Objetivo', //po_enablepurpose
+    'Archivo mensajes', // po_messageoutputfile
+    'Archivo mensajes', // po_selectmessageoutputfile
+    'Macros', // po_macros
+    'Grupo activo', // po_selectactivegroupgrid
+    '&Alias fuente', // po_fontaliaspage
+    'Diseñadores', // po_designers
+    'Colores usuario', // po_usercolors
+    'Copiar el código "setcolormapvalue" al portapapeles', // po_copycolor
+    'F&ormat Macros', // po_formatmacro
+    'Usado por formatfloatmse() y formatdatetimemse()', // po_formatmacrohint
+    'Plantillas', // po_templates
+    'Nuevo proyecto', // po_newproject
+    'Guión antes copiar', // po_scriptbeforecopy
+    'Guión tras copiar', // po_scriptaftercopy
+    'Archivo nuevo', // po_newfile
+    'Nueva forma', // po_newform
+    'Instrumentos', // po_tools
+    'Almacen', // po_storage
+    'Infos' // po_infos
 
-  );
+    );
 
   es_stockcaption: stockcaptionaty = (
     '',                           //sc_none
@@ -306,12 +306,12 @@ const
     'un elemento solamente',             //sc_Single_item_only
     'Copiar Celdas',                     //sc_Copy_Cells
     'Pegar Celdas',                      //sc_Paste_Cells
-    'Cerrar',               //sc_close
-    'Maximizar',            //sc_maximize
-    'Restaurar',            //sc_normalize
-    'Minimizar',            //sc_minimize
+    'Cerrar',                //sc_close
+    'Maximizar',             //sc_maximize
+    'Restaurar',             //sc_normalize
+    'Minimizar',             //sc_minimize
     'Ajustar tama'#0241'o',  //sc_fix_size
-    'Flotar',               //sc_float
+    'Flotar',                //sc_float
     'Permanecer en el primer plano',     //sc_stay_on_top
     'Permanecer en el fondo',            //sc_stay_in_background
     'Bloquear hijas',                    //sc_lock_children
@@ -359,8 +359,8 @@ const
     'Subir volumen',               //sc_volumeup
     'Cancelar habla',               //sc_cancelspeech
     'Objetivo',                        //sc_target
-    'Mirar',               //sc_view
-    'Formas',               //sc_forms
+    'Mirar',                 //sc_view
+    'Formas',                //sc_forms
     'Diseño',               //sc_layout
     'Sintaxis',               //sc_syntax
     'Proyecto',               //sc_project
@@ -368,13 +368,13 @@ const
     'Widgets',               //sc_widgets
     'Ajustes',               //sc_settings
     'Acerca de',               //sc_about
-    'Nuevo',               //sc_newfile
+    'Nuevo',                 //sc_newfile
     'Guardar como ...',               //sc_saveas
     'Salvar a todos',               //sc_saveall
     'Cierra todo',               //sc_closeall
     'Imprimir',                 //sc_print
-    'Dejar',               //sc_quit 
-    'Línea',               //sc_line
+    'Dejar',                 //sc_quit 
+    'Línea',                //sc_line
     'Busca de nuevo',               //sc_search_again
     'Buscar atrás',               //sc_search_back
     'Buscar y reemplazar',               //sc_find_replace
@@ -422,19 +422,19 @@ const
     'Cerrar todos los módulos MSE',          // sc_closeallmsemod
     'Configuración general',          // sc_generalsettings
     'Configuraciones extra',          // sc_extrasettings
-    'Idiomas',          // sc_lang
+    'Idiomas',               // sc_lang
     'Configurar widgets',          // sc_configwidgets
     'Configurar compiladores',          // sc_configcompilers
     'Configurar depuradores',          // sc_configdebuggers
-    'Temas',          // sc_themes
-   'Directorio',          // sc_directory
-   'Sin iconos',          // sc_noicons
-   'Sin lateral',          // sc_themes
-   'Compacto',          // sc_compact 
-   'Abre el proyecto',          // sc_openproject
-   'Abre el archivo'        // sc_openfile
-   
-   );
+    'Temas',                 // sc_themes
+    'Directorio',            // sc_directory
+    'Sin iconos',            // sc_noicons
+    'Sin lateral',           // sc_themes
+    'Compacto',              // sc_compact 
+    'Abre el proyecto',          // sc_openproject
+    'Abre el archivo'        // sc_openfile
+
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

@@ -924,24 +924,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
- ACTIONSMO
- DEBUGGERFO
- MAINFO
- FILEDIALOGXFO
- SOURCEFO
-moduletypes=5
- TACTIONSMO
- TDEBUGGERFO
- TMAINFO
- TFILEDIALOGXFO
- TSOURCEFO
-modulefiles=5
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msefiledialogx.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=13
  4095
@@ -1615,7 +1600,10 @@ findhistory=20
  po_
  enablepurpose
 findoptions=1
-editpos=18
+editpos=11
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1623,17 +1611,7 @@ editpos=18
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,11
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1645,17 +1623,9 @@ bookmarks7=0
 bookmarks8=0
 bookmarks9=0
 bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-sourcefiles=18
+sourcefiles=11
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/msestockobjects.pas
  /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
  ${PROJECTDIR}/mseconsts_ide_ru.pas
@@ -1665,16 +1635,9 @@ sourcefiles=18
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/mseconsts_ide.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/msewidgets.pas
- ${PROJECTDIR}/msefiledialogx.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/msefiledialogx.pas
-relpaths=18
+relpaths=11
  sourceform.pas
  actionsmodule.pas
- projectoptionsform.pas
  msestockobjects.pas
  mseide-msegui/lib/common/graphics/msedrawtext.pas
  mseconsts_ide_ru.pas
@@ -1684,13 +1647,7 @@ relpaths=18
  main.pas
  commandorform.pas
  mseconsts_ide.pas
- actionsmodule.pas
- msewidgets.pas
- msefiledialogx.pas
- main.pas
- actionsmodule.pas
- msefiledialogx.pas
-ismoduletexts=18
+ismoduletexts=11
  0
  0
  0
@@ -1702,61 +1659,15 @@ ismoduletexts=18
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=5
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/msefiledialogx.mfm
- /home/fred/ideu/src/commandorform.mfm
-moduleoptions=5
- 0
- 0
- 0
- 0
- 0
-visiblemodules=5
- -1
- -1
- -1
- -1
- -1
-nomenumodules=5
- 0
- 0
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-order=18
- 0
- 1
- 2
- 9
- 3
- 4
- 8
- 7
- 15
- 14
- 6
- 11
- 16
- 13
- 10
- 12
- 5
- 17
-firsttab=10
-index=17
+firsttab=0
+index=2
 [layout]
-windowlayout=619
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1807,7 +1718,7 @@ windowlayout=619
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1901,7 +1812,7 @@ windowlayout=619
  x=0
  y=0
  cx=205
- cy=523
+ cy=524
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2189,7 +2100,7 @@ windowlayout=619
  x=0
  y=0
  cx=1356
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2205,7 +2116,7 @@ windowlayout=619
  x=0
  y=0
  cx=1356
- cy=-1
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2215,8 +2126,10 @@ windowlayout=619
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialogx.pas
+ value=/home/fred/ideu/src/projectoptionsform.pas
  history=20
+  /home/fred/ideu/src/main.mfm
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
@@ -2235,8 +2148,6 @@ windowlayout=619
   /home/fred/ideu/src/mseconsts_es.pas
   /home/fred/ideu/src/mseconsts_ru.pas
   /home/fred/ideu/src/mseconsts.pas
-  /home/fred/ideu/src/mseconsts_id.pas
-  /home/fred/ideu/src/mseconsts_zh.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2254,31 +2165,12 @@ windowlayout=619
  x=208
  y=0
  cx=1148
- cy=523
+ cy=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=18
-  0
-  1
-  2
-  9
-  3
-  4
-  8
-  7
-  15
-  14
-  6
-  11
-  16
-  13
-  10
-  12
-  5
-  17
- firsttab=10
- index=17
+ firsttab=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2314,68 +2206,11 @@ windowlayout=619
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1356
- cy=523
+ cy=524
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=427
- y=247
- cx=755
- cy=76
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_filedialogxfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_debuggerfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=656
- y=61
- cx=618
- cy=484
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=122
- y=102
- cx=1164
- cy=54
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
