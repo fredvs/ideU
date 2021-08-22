@@ -46,6 +46,7 @@ type
   private
   public
    procedure newsearch(const info: findinfileinfoty);
+   
  end;
 
 procedure dofindinfile;

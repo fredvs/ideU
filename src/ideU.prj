@@ -159,7 +159,7 @@ findinfiledialog=92
   mseconst
   GETMSEICON
  [findinfileadialogfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=601
  y=213
  cx=346
@@ -924,21 +924,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
- ACTIONSMO
+modulenames=5
  CONFIDEUFO
+ FINDDIALOGFO
+ FINDINFILEADIALOGFO
+ FINDINFILEFO
  MAINFO
- SOURCEFO
-moduletypes=4
- TACTIONSMO
+moduletypes=5
  TCONFIDEUFO
+ TFINDDIALOGFO
+ TFINDINFILEDIALOGFO
+ TFINDINFILEFO
  TMAINFO
- TSOURCEFO
-modulefiles=4
- /home/fred/ideu/src/actionsmodule.mfm
+modulefiles=5
  /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+ /home/fred/ideu/src/findinfiledialogform.mfm
+ /home/fred/ideu/src/findinfileform.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1589,8 +1592,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=apply
+finddtext=search
 findhistory=20
+ search
+ find
+ dofindinfile
  apply
  setlang
  shortcut
@@ -1608,26 +1614,21 @@ findhistory=20
  debug
  Directory
  tbutton
- path
- projectoptionstext
- sc_openproject
 findoptions=1
-editpos=15
+editpos=13
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,98
+ 0,1520
  0,72
  0,88
- 0,73
- 0,110
+ 0,458
  0,0
- 0,-1073741823
- 0,137
- 0,-1073741823
  0,588
- 0,785
- 0,-1073741823
+ 0,11
+ 0,78
+ 0,290
+ 0,230
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1641,41 +1642,35 @@ bookmarks9=0
 bookmarks10=0
 bookmarks11=0
 bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-sourcefiles=15
+sourcefiles=13
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msestockobjects.pas
  ${PROJECTDIR}/ideusettings.mfm
  ${PROJECTDIR}/mseconsts_ide_ru.pas
  ${PROJECTDIR}/mseconsts_ide_de.pas
- ${PROJECTDIR}/mseconsts_ide_es.pas
- ${PROJECTDIR}/mseconsts_ide_fr.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/mseconsts_ide.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/confideu.pas
- /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
-relpaths=15
+ ${PROJECTDIR}/findinfileform.pas
+ ${PROJECTDIR}/findinfiledialogform.pas
+ ${PROJECTDIR}/finddialogform.pas
+relpaths=13
  sourceform.pas
  actionsmodule.pas
  msestockobjects.pas
  ideusettings.mfm
  mseconsts_ide_ru.pas
  mseconsts_ide_de.pas
- mseconsts_ide_es.pas
- mseconsts_ide_fr.pas
- sourceform.pas
- actionsmodule.pas
  mseconsts_ide.pas
  main.pas
  ideusettings.pas
  confideu.pas
- mseide-msegui/lib/common/graphics/msedrawtext.pas
-ismoduletexts=15
+ findinfileform.pas
+ findinfiledialogform.pas
+ finddialogform.pas
+ismoduletexts=13
  0
  0
  0
@@ -1689,49 +1684,57 @@ ismoduletexts=15
  0
  0
  0
- 0
- 0
-modules=4
+modules=7
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/confideu.mfm
-moduleoptions=4
+ /home/fred/ideu/src/findinfileform.mfm
+ /home/fred/ideu/src/findinfiledialogform.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+moduleoptions=7
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+ 0
+visiblemodules=7
+ -1
+ 0
+ 0
  -1
  -1
  -1
  -1
-nomenumodules=4
+nomenumodules=7
+ 0
+ -1
+ -1
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=15
+order=13
  0
  1
  2
  11
- 14
- 8
- 9
  3
  12
- 13
  10
+ 19
+ 17
+ 18
+ 13
  4
- 6
  5
- 7
-firsttab=8
-index=10
+firsttab=7
+index=12
 [layout]
-windowlayout=597
+windowlayout=652
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1887,7 +1890,7 @@ windowlayout=597
  sortdescend1=0
  sorted=0
  col=0
- row=8
+ row=6
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2190,7 +2193,7 @@ windowlayout=597
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide.pas
+ value=/home/fred/ideu/src/mseconsts_ide_fr.pas
  history=20
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
@@ -2233,24 +2236,22 @@ windowlayout=597
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=15
+ order=13
   0
   1
   2
   11
-  14
-  8
-  9
   3
   12
-  13
   10
+  19
+  17
+  18
+  13
   4
-  6
   5
-  7
- firsttab=8
- index=10
+ firsttab=7
+ index=12
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2294,7 +2295,7 @@ windowlayout=597
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2313,7 +2314,7 @@ windowlayout=597
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_findinfileadialogfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2324,6 +2325,63 @@ windowlayout=597
  y=48
  cx=639
  cy=672
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_findinfilefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_finddialogfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=548
+ y=115
+ cx=379
+ cy=198
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_findinfileadialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=707
+ y=43
+ cx=244
+ cy=309
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_finddialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=944
+ y=114
+ cx=244
+ cy=430
  rcx=0
  rcy=0
  wsize=0

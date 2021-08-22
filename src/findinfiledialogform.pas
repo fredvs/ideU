@@ -19,244 +19,276 @@ unit findinfiledialogform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
 uses
- finddialogform,findinfileform,mseforms,msedataedits,msesimplewidgets,
- msegraphedits,msefiledialog,msetypes,mseglob,mseguiglob,msegui,msestat,
- msestatfile,mseevent,msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,
- msestrings,mseificomp,mseificompglob,mseifiglob,msescrollbar, mseclasses;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  finddialogform,
+  findinfileform,
+  mseforms,
+  msedataedits,
+  msesimplewidgets,
+  msegraphedits,
+  msefiledialog,
+  msetypes,
+  mseglob,
+  mseguiglob,
+  msegui,
+  msestat,
+  msestatfile,
+  mseevent,
+  msemenus,
+  msesplitter,
+  msegraphics,
+  msegraphutils,
+  msewidgets,
+  msestrings,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msescrollbar,
+  mseclasses;
 
 type
 
- tfindinfiledialogfo = class(tmseform)
-   findtext: thistoryedit;
-   statfile1: tstatfile;
-   dir: tfilenameedit;
-   mask: thistoryedit;
-   casesensitive: tbooleanedit;
-   inprojectdir: tbooleaneditradio;
-   indirectories: tbooleaneditradio;
-   wholeword: tbooleanedit;
-   inopenfiles: tbooleaneditradio;
-   incurrentfile: tbooleaneditradio;
-   subdirs: tbooleanedit;
-   ok: tbutton;
-   cancel: tbutton;
-   procedure dironbeforeexecute(const sender: tfiledialogcontroller;
-                   var dialogkind: filedialogkindty; var aresult: modalresultty);
-   procedure dirshowhint(const sender: TObject; var info: hintinfoty);
-   procedure sourcechangeexe(const sender: TObject);
-//   procedure chainopenfiles(const sender: TObject);
-   procedure dirgetfilenameexe(const sender: TObject; var avalue: msestring;
-                   var accept: Boolean);
-   procedure dirsetval(const sender: TObject; var avalue: Boolean;
-                   var accept: Boolean);
-   procedure opensetval(const sender: TObject; var avalue: Boolean;
-                   var accept: Boolean);
-   procedure dirsetvalue(const sender: TObject; var avalue: msestring;
-                   var accept: Boolean);
-   procedure cereateev(const sender: TObject);
-   procedure currentsetval(const sender: TObject; var avalue: Boolean;
-                   var accept: Boolean);
+  tfindinfiledialogfo = class(tmseform)
+    findtext: thistoryedit;
+    statfile1: tstatfile;
+    dir: tfilenameedit;
+    mask: thistoryedit;
+    casesensitive: tbooleanedit;
+    inprojectdir: tbooleaneditradio;
+    indirectories: tbooleaneditradio;
+    wholeword: tbooleanedit;
+    inopenfiles: tbooleaneditradio;
+    incurrentfile: tbooleaneditradio;
+    subdirs: tbooleanedit;
+    ok: TButton;
+    cancel: TButton;
+    procedure dironbeforeexecute(const Sender: tfiledialogcontroller; var dialogkind: filedialogkindty; var aresult: modalresultty);
+    procedure dirshowhint(const Sender: TObject; var info: hintinfoty);
+    procedure sourcechangeexe(const Sender: TObject);
+    //   procedure chainopenfiles(const sender: TObject);
+    procedure dirgetfilenameexe(const Sender: TObject; var avalue: msestring; var accept: Boolean);
+    procedure dirsetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+    procedure opensetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+    procedure dirsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
+    procedure cereateev(const Sender: TObject);
+    procedure currentsetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+    procedure setlangfindinfile();
+
   private
-   procedure valuestoinfo(out info: findinfileinfoty);
-   procedure infotovalues(const info: findinfileinfoty);
- end;
+    procedure valuestoinfo(out info: findinfileinfoty);
+    procedure infotovalues(const info: findinfileinfoty);
+  end;
 
 procedure findinfiledialogdotextsize;
 
-function findinfiledialogexecute(var info: findinfileinfoty;
-                                        const useinfo: boolean): boolean;
+function findinfiledialogexecute(var info: findinfileinfoty; const useinfo: Boolean): Boolean;
 
 implementation
+
 uses
- msebits,findinfiledialogform_mfm,projectoptionsform,main,msefileutils,
- sourceform, confideu;
+  msebits,
+  findinfiledialogform_mfm,
+  projectoptionsform,
+  main,
+  msefileutils,
+  sourceform,
+  confideu;
 
 var
- fo: tfindinfiledialogfo;
+  fo: tfindinfiledialogfo;
+
 
 procedure findinfiledialogdotextsize;
 begin
- fo.font.height := confideufo.fontsize.value;
-fo.font.name := ansistring(confideufo.fontname.value);
-fo.findtext.top :=  34;
-fo.casesensitive.top :=  fo.findtext.top + fo.findtext.height + 2 ;
-fo.wholeword.top :=  fo.casesensitive.top + fo.casesensitive.height + 2 ;
-fo.incurrentfile.top :=  fo.wholeword.top + fo.wholeword.height + 6 ;
-fo.inopenfiles.top :=  fo.incurrentfile.top + fo.incurrentfile.height + 2 ;
-fo.inprojectdir.top :=  fo.inopenfiles.top + fo.inopenfiles.height + 6 ;
-fo.indirectories.top :=  fo.inprojectdir.top + fo.inprojectdir.height + 2 ;
-fo.dir.top :=  fo.indirectories.top + fo.indirectories.height + 2 ;
-fo.mask.top :=  fo.dir.top + fo.dir.height + 2 ;
-fo.subdirs.top :=  fo.mask.top + fo.mask.height + 6 ;
+  fo.font.Height       := confideufo.fontsize.Value;
+  fo.font.Name         := ansistring(confideufo.fontname.Value);
+  fo.findtext.top      := 34;
+  fo.casesensitive.top := fo.findtext.top + fo.findtext.Height + 2;
+  fo.wholeword.top     := fo.casesensitive.top + fo.casesensitive.Height + 2;
+  fo.incurrentfile.top := fo.wholeword.top + fo.wholeword.Height + 6;
+  fo.inopenfiles.top   := fo.incurrentfile.top + fo.incurrentfile.Height + 2;
+  fo.inprojectdir.top  := fo.inopenfiles.top + fo.inopenfiles.Height + 6;
+  fo.indirectories.top := fo.inprojectdir.top + fo.inprojectdir.Height + 2;
+  fo.dir.top           := fo.indirectories.top + fo.indirectories.Height + 2;
+  fo.mask.top          := fo.dir.top + fo.dir.Height + 2;
+  fo.subdirs.top       := fo.mask.top + fo.mask.Height + 6;
 
-fo.height := fo.subdirs.top + fo.subdirs.height + 8;
+  fo.Height := fo.subdirs.top + fo.subdirs.Height + 8;
 end;
 
-function findinfiledialogexecute(var info: findinfileinfoty;
-                                         const useinfo: boolean): boolean;
+function findinfiledialogexecute(var info: findinfileinfoty; const useinfo: Boolean): Boolean;
 begin
- fo:= tfindinfiledialogfo.create(nil);
- try
- findinfiledialogdotextsize;
-  if useinfo then begin
-   fo.infotovalues(info);
+  fo := tfindinfiledialogfo.Create(nil);
+  try
+    findinfiledialogdotextsize;
+    if useinfo then
+      fo.infotovalues(info);
+    Result := fo.Show(True, nil) = mr_ok;
+    if Result then
+      fo.valuestoinfo(info);
+  finally
+    fo.Free;
   end;
-  result:= fo.show(true,nil) = mr_ok;
-  if result then begin
-   fo.valuestoinfo(info);
-  end;
- finally
-  fo.Free;
- end;
 end;
 
 { tfindinfiledialogfo }
 
-procedure tfindinfiledialogfo.dironbeforeexecute(
-  const sender: tfiledialogcontroller; var dialogkind: filedialogkindty;
-  var aresult: modalresultty);
+procedure tfindinfiledialogfo.dironbeforeexecute(const Sender: tfiledialogcontroller; var dialogkind: filedialogkindty; var aresult: modalresultty);
 begin
- sender.filterlist.asarrayb:= mask.dropdown.valuelist.asarray;
- sender.filter:= mask.value;
+  Sender.filterlist.asarrayb := Mask.dropdown.valuelist.asarray;
+  Sender.filter := Mask.Value;
 end;
 
 procedure tfindinfiledialogfo.valuestoinfo(out info: findinfileinfoty);
 begin
 {$warnings off}
- with info.findinfo do begin
-  text:= findtext.value;
-  history:= findtext.dropdown.valuelist.asarray;
-  options:= encodesearchoptions(not casesensitive.value,wholeword.value);
- end;
- with info do begin
-  directory:= dir.value;
-  filemask:= mask.value;
-  updatebit({$ifdef FPC}longword{$else}byte{$endif}(options),ord(fifo_subdirs),subdirs.value);
-  if inopenfiles.value then begin
-   source:= fs_inopenfiles;
-  end
-  else begin
-   if indirectories.value then begin
-    source:= fs_indirectories;
-   end
-   else begin
-    if incurrentfile.value then begin
-     source:= fs_incurrentfile;
-    end
-    else begin
-     source:= fs_inprojectdir;
-    end;
-   end;
+  with info.findinfo do
+  begin
+    Text    := findtext.Value;
+    history := findtext.dropdown.valuelist.asarray;
+    options := encodesearchoptions(not casesensitive.Value, wholeword.Value);
   end;
- end;
+  with info do
+  begin
+    directory := dir.Value;
+    filemask  := Mask.Value;
+    updatebit(
+{$ifdef FPC}
+      longword
+{$else}byte{$endif}
+      (options), Ord(fifo_subdirs), subdirs.Value);
+    if inopenfiles.Value then
+      Source := fs_inopenfiles
+    else if indirectories.Value then
+      Source := fs_indirectories
+    else if incurrentfile.Value then
+      Source := fs_incurrentfile
+    else
+      Source := fs_inprojectdir;
+  end;
 end;
+
 {$warnings on}
 procedure tfindinfiledialogfo.infotovalues(const info: findinfileinfoty);
 begin
- with info.findinfo do begin
-  findtext.value:= text;
-  findtext.dropdown.valuelist.asarray:= history;
-  casesensitive.value:= not (so_caseinsensitive in options);
-  wholeword.value:= so_wholeword in options;
- end;
- with info do begin
-  dir.value:= directory;
-  mask.value:= filemask;
-  subdirs.value:= fifo_subdirs in options;
-  case source of
-   fs_inopenfiles: begin
-    inopenfiles.value:= true;
-   end;
-   fs_indirectories: begin
-    indirectories.value:= true;
-   end;
-   fs_inprojectdir: begin
-    inprojectdir.value:= true;
-   end;
-   fs_incurrentfile: begin
-    incurrentfile.value:= true;
-   end;
+  with info.findinfo do
+  begin
+    findtext.Value      := Text;
+    findtext.dropdown.valuelist.asarray := history;
+    casesensitive.Value := not (so_caseinsensitive in options);
+    wholeword.Value     := so_wholeword in options;
   end;
- end;
+  with info do
+  begin
+    dir.Value     := directory;
+    Mask.Value    := filemask;
+    subdirs.Value := fifo_subdirs in options;
+    case Source of
+      fs_inopenfiles: inopenfiles.Value := True;
+      fs_indirectories: indirectories.Value := True;
+      fs_inprojectdir: inprojectdir.Value   := True;
+      fs_incurrentfile: incurrentfile.Value := True;
+    end;
+  end;
 end;
 
-procedure tfindinfiledialogfo.dirshowhint(const sender: TObject;
-               var info: hintinfoty);
+procedure tfindinfiledialogfo.dirshowhint(const Sender: TObject; var info: hintinfoty);
 begin
- hintmacros(tcustomstringedit(sender),info);
- info.caption:= info.caption+lineend+'Empty -> project directory';
+  hintmacros(tcustomstringedit(Sender), info);
+  info.Caption := info.Caption + lineend + 'Empty -> project directory';
 end;
 
-procedure tfindinfiledialogfo.dirgetfilenameexe(const sender: TObject;
-               var avalue: msestring; var accept: Boolean);
+procedure tfindinfiledialogfo.dirgetfilenameexe(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
- expandprmacros1(avalue);
+  expandprmacros1(avalue);
 end;
 
-procedure tfindinfiledialogfo.sourcechangeexe(const sender: TObject);
+procedure tfindinfiledialogfo.sourcechangeexe(const Sender: TObject);
 begin
- if indirectories.value then begin
-//  inopenfiles.value:= false;
-  dir.enabled:= true;
-  mask.enabled:= true;
-  subdirs.enabled:= true;
- end
- else begin
-  if inopenfiles.value or incurrentfile.value then begin
-   dir.enabled:= false;
-   mask.enabled:= false;
-   subdirs.enabled:= false;
+  if indirectories.Value then
+  begin
+    //  inopenfiles.value:= false;
+    dir.Enabled     := True;
+    Mask.Enabled    := True;
+    subdirs.Enabled := True;
   end
-  else begin //
-   dir.enabled:= false;
-   mask.enabled:= true;
-   subdirs.enabled:= true;
+  else if inopenfiles.Value or incurrentfile.Value then
+  begin
+    dir.Enabled     := False;
+    Mask.Enabled    := False;
+    subdirs.Enabled := False;
+  end
+  else
+  begin
+    dir.Enabled     := False;
+    Mask.Enabled    := True;
+    subdirs.Enabled := True;
   end;
- end;
 end;
 
-procedure tfindinfiledialogfo.dirsetval(const sender: TObject;
-               var avalue: Boolean; var accept: Boolean);
+procedure tfindinfiledialogfo.dirsetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
- if avalue then begin
-  inopenfiles.value:= false;
-  incurrentfile.value:= false;
- end;
+  if avalue then
+  begin
+    inopenfiles.Value   := False;
+    incurrentfile.Value := False;
+  end;
 end;
 
-procedure tfindinfiledialogfo.opensetval(const sender: TObject;
-               var avalue: Boolean; var accept: Boolean);
+procedure tfindinfiledialogfo.opensetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
- if avalue then begin
-  inprojectdir.value:= false;
-  indirectories.value:= false;
- end;
+  if avalue then
+  begin
+    inprojectdir.Value  := False;
+    indirectories.Value := False;
+  end;
 end;
 
-procedure tfindinfiledialogfo.currentsetval(const sender: TObject;
-               var avalue: Boolean; var accept: Boolean);
+procedure tfindinfiledialogfo.currentsetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
- if avalue then begin
-  inprojectdir.value:= false;
-  indirectories.value:= false;
- end;
+  if avalue then
+  begin
+    inprojectdir.Value  := False;
+    indirectories.Value := False;
+  end;
 end;
 
 
-procedure tfindinfiledialogfo.dirsetvalue(const sender: TObject;
-               var avalue: msestring; var accept: Boolean);
+procedure tfindinfiledialogfo.dirsetvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
- if avalue = '' then begin
-  avalue:= filedir(mainfo.projectname);
- end;
+  if avalue = '' then
+    avalue := filedir(mainfo.projectname);
 end;
 
-procedure tfindinfiledialogfo.cereateev(const sender: TObject);
+procedure tfindinfiledialogfo.cereateev(const Sender: TObject);
 begin
- if sourcefo.activepage = nil then begin
-  incurrentfile.enabled:= false;
- end;
+  if sourcefo.ActivePage = nil then
+    incurrentfile.Enabled := False;
+  setlangfindinfile();
+end;
+
+procedure tfindinfiledialogfo.setlangfindinfile();
+begin
+
+  Caption        := stockobjects.captions[sc_find_infile];
+  ok.Caption     := stockobjects.modalresulttext[mr_cancel];
+  cancel.Caption := stockobjects.modalresulttext[mr_ok];
+
+{  
+  path.caption :=  stockobjects.captions[sc_path]; 
+  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  
+  layoutdir.frame.caption := '${LAYOUTDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
+}
 end;
 
 end.
+
