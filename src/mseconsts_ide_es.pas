@@ -442,9 +442,18 @@ const
     'Otro',                                          // sc_other
     'Comando de impresión',                         // sc_printcommand
     'Atajo',                                         // sc_shortcut
-    'Valor'                                          // sc_value    
-
-    );
+    'Valor',                              // sc_value
+    'Case sensitive',                     // sc_casesensitive
+    'Solo seleccionado',                     // sc_selectedonly
+    'Toda palabra',                        // sc_wholeword
+    'Texto para buscar',                        // sc_texttofind
+    'Buscar en archivo actual',            // sc_searchincurrentfile
+    'Buscar en archivos abiertos',            // sc_searchinopenfiles 
+    'Buscar en directorio proyecto',            // sc_searchinprojectdir
+    'Buscar en directorios',            // sc_searchindirectories
+    'Incluir subdirectorios'            // sc_includesubdir
+    
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

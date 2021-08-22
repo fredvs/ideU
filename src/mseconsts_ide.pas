@@ -517,8 +517,17 @@ const
     'Other',                              // sc_other
     'Print command',                      // sc_printcommand
     'Shortcut',                           // sc_shortcut
-    'Value'                              // sc_value    
-   
+    'Value',                              // sc_value
+    'Case sensitive',                     // sc_casesensitive
+    'Selected only',                     // sc_selectedonly
+    'Whole word',                        // sc_wholeword
+    'Text to find',                        // sc_texttofind
+    'Search in current file',            // sc_searchincurrentfile
+    'Search in open files',            // sc_searchininopenfiles
+    'Search in project directory',     // sc_searchinprojectdir
+    'Search in directories',            // sc_searchindirectories
+    'Include subdirectories'            // sc_includesubdir
+    
    );
 
 function delete_n_selected_rows(const params: array of const): msestring;

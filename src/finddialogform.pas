@@ -275,13 +275,15 @@ begin
   tbutton2.Caption := stockobjects.captions[sc_next];
   tbutton3.Caption := stockobjects.captions[sc_prior];
 
-{  
-  path.caption :=  stockobjects.captions[sc_path]; 
-  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
-  
-  layoutdir.frame.caption := '${LAYOUTDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
-}
+  findtext.frame.Caption  := stockobjects.captions[sc_texttofind] + ' 1';
+  findtext2.frame.Caption := stockobjects.captions[sc_texttofind] + ' 2';
+  findtext3.frame.Caption := stockobjects.captions[sc_texttofind] + ' 3';
+  findtext4.frame.Caption := stockobjects.captions[sc_texttofind] + ' 4';
+
+  casesensitive.frame.Caption := stockobjects.captions[sc_casesensitive];
+  selectedonly.frame.Caption  := stockobjects.captions[sc_selectedonly];
+  wholeword.frame.Caption     := stockobjects.captions[sc_wholeword];
+
 end;
 
 end.

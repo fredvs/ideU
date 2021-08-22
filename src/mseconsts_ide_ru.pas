@@ -441,8 +441,17 @@ const
     'Другой',                              // sc_other
     'Команда печати',                      // sc_printcommand
     'Ярлык',                           // sc_shortcut
-    'Ценить'                              // sc_value    
-   
+    'Ценить',                              // sc_value
+    'Деликатный случай',                     // sc_casesensitive
+    'Только выбрано',                     // sc_selectedonly
+    'Целое слово',                        // sc_wholeword
+    'Текст для поиска',                        // sc_texttofind
+    'Искать в текущем файле',            // sc_searchincurrentfile
+    'Искать в открытых файлах',            // sc_searchinopenfiles 
+    'Искать в каталоге проекта',            // sc_searchinprojectdir
+    'Искать в каталогах',            // sc_searchindirectories
+    'Включить подкаталоги'            // sc_includesubdir
+    
    );
 
 function delete_n_selected_rows(const params: array of const): msestring;

@@ -480,9 +480,18 @@ const
     'Autres',                              // sc_other
     'Commande d'#8217'impression',                      // sc_printcommand
     'Raccourcis',                           // sc_shortcut
-    'Valeur'                              // sc_value    
-
-    );
+    'Valeur',                              // sc_value
+    'Sensible à la casse',                     // sc_casesensitive
+    'Sélectionné uniquement',                     // sc_selectedonly
+    'Mot entier',                        // sc_wholeword
+    'Texte à trouver',                        // sc_texttofind
+    'Chercher dans le fichier courant',            // sc_searchincurrentfile
+    'Chercher dans les fichiers ouverts',            // sc_searchininopenfiles 
+    'Chercher dans le répertoire du projet',            // sc_searchinprojectdir
+    'Chercher dans les répertoires',            // sc_searchindirectories
+    'Inclure les sous-répertoires'            // sc_includesubdir
+    
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

@@ -440,8 +440,17 @@ const
     'Sonstiges',                              // sc_other
     'Druckbefehl',                      // sc_printcommand
     'Abkürzung',                           // sc_shortcut
-    'Wert'                              // sc_value    
-   
+    'Wert',                              // sc_value
+    'Case sensitive',                     // sc_casesensitive
+    'Nur ausgewählt',                     // sc_selectedonly
+    'Ganze Welt',                        // sc_wholeword
+    'Text zu finden',                        // sc_texttofind
+    'In aktuellen Datei suchen',            // sc_searchincurrentfile
+    'In geöffneten Dateien suchen',            // sc_searchinopenfiles 
+    'Suche im Projektverzeichnis',            // sc_searchinprojectdir
+    'Suche in Verzeichnissen',            // sc_searchindirectories
+    'Unterverzeichnisse einschließen'            // sc_includesubdir
+    
    );
 
 function delete_n_selected_rows(const params: array of const): msestring;

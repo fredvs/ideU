@@ -212,8 +212,11 @@ type
                     sc_memory,sc_targetconsole,sc_toggleformunit,sc_msemod,sc_closeallmsemod,
                     sc_generalsettings,sc_extrasettings,sc_lang,sc_configwidgets,sc_configcompilers,
                     sc_configdebuggers,sc_themes,sc_directory,sc_noicons,sc_nolateral,sc_compact,
-                    sc_openproject,sc_openfile,sc_path,sc_other,sc_printcommand,sc_shortcut,sc_value                   
-                  
+                    sc_openproject,sc_openfile,sc_path,sc_other,sc_printcommand,sc_shortcut,sc_value,
+                    sc_casesensitive,sc_selectedonly,sc_wholeword,sc_texttofind,sc_searchincurrentfile,
+                    sc_searchinopenfiles,sc_searchinprojectdir,sc_searchindirectories,
+                    sc_includesubdir
+                
                     );
 
  textgeneratorfuncty = function(const params: array of const): msestring;
