@@ -3017,11 +3017,11 @@ begin
     end
     else if (dialogkind in [fdk_save]) then
     begin
-      fo.filename.frame.Caption := 'Save File as';
+      fo.filename.frame.Caption :=  stockobjects.captions[sc_namehk];
       fo.filename.tag           := 2;
     end  
     else if (dialogkind in [fdk_new]) then
-      fo.filename.frame.Caption := 'New File Name'
+      fo.filename.frame.Caption := stockobjects.captions[sc_newfile]
     else
       fo.filename.frame.Caption := stockobjects.captions[sc_namehk];
 
