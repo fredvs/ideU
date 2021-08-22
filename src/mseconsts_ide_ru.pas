@@ -468,8 +468,15 @@ const
     'Настроить виджеты',          // sc_configwidgets
     'Настроить компиляторы',          // sc_configcompilers
     'Настроить отладчики',          // sc_configdebuggers
-    'Темы'          // sc_themes
-    );
+    'Темы',          // sc_themes
+   'Каталог',          // sc_directory
+   'Без иконок',          // sc_noicons
+   'Без бокового',          // sc_themes
+   'Компакт',          // sc_compact 
+   'Открыть проект',          // sc_openproject
+   'Открыть файл'        // sc_openfile
+   
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

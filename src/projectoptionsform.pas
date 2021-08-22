@@ -1464,6 +1464,9 @@ begin
  with mainfo.projectfiledia.controller do begin
  showoptions := true;
  icon := mainfo.icon;
+  with stockobjects do
+    captionopen := captions[sc_openproject];
+   
  fontheight := mainfo.font.height; // font height of dialogfile
  fontname := msestring(mainfo.font.name);       // font name of dialogfile
  fontcolor := mainfo.font.color;    // font color of dialogfile

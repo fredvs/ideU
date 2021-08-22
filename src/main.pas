@@ -450,7 +450,6 @@ procedure doassistive;
 
 procedure sdefload(sdeffile: msestring);
 
-
 procedure handleerror(const e: Exception; const Text: string);
 
 implementation
@@ -1517,9 +1516,13 @@ begin
         with projectoptions, o, texp do
           if modified and not savechecked then
           begin
-            Result := ShowMessage(c[Ord(project)] + ' ' + fprojectname + ' ' +
-              c[Ord(ismodified)], c[Ord(confirmation)],
+            with stockobjects do
+         begin
+            Result := ShowMessage(captions[sc_project] + ' ' + fprojectname + ' ' +
+              captions[sc_is_modified_save],captions[sc_Confirmation],
               [mr_yes, mr_no, mr_cancel], mr_yes);
+          end;    
+              
             if Result = mr_yes then
             begin
               if projectfilename = '' then
@@ -2985,7 +2988,8 @@ var
   po1: pmoduleinfoty;
 begin //opensourceactonexecute
       //writeln('hello');
-  openfile.controller.captionopen := 'Open File';
+  with stockobjects do
+   openfile.controller.captionopen := captions[sc_openfile];;
 
   openfile.controller.showoptions := True;
 

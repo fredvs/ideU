@@ -206,7 +206,8 @@ type
                     sc_threads,sc_cpu,sc_assembler,sc_breakpoints,sc_watchpoints,
                     sc_memory,sc_targetconsole,sc_toggleformunit,sc_msemod,sc_closeallmsemod,
                     sc_generalsettings,sc_extrasettings,sc_lang,sc_configwidgets,sc_configcompilers,
-                    sc_configdebuggers,sc_themes                    
+                    sc_configdebuggers,sc_themes,sc_directory,sc_noicons,sc_nolateral,sc_compact,
+                    sc_openproject,sc_openfile                    
                                    
                     );
 

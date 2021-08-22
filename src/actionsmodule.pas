@@ -6,7 +6,7 @@ unit actionsmodule;
 interface
 uses
  classes,mseclasses,mseact,msetabs,mseactions,msebitmap,msestrings,msegui,commandorform,
- dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,
+ dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,msestockobjects,
  msegraphutils,mseguiglob,msemenus,msesys, msesysutils,msesimplewidgets,
  projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
  mseificompglob,mseifiglob;
@@ -512,6 +512,9 @@ begin
  with mainfo do begin
  openfile.controller.icon := icon;
    openfile.controller.showoptions := true;
+   
+    with stockobjects do
+   openfile.controller.captionsave := captions[sc_saveas];;
  
   if factivedesignmodule <> nil then begin
    str1:= factivedesignmodule^.filename;

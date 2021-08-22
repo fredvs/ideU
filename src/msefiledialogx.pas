@@ -1857,7 +1857,7 @@ begin
   list_log.defocuscell;
   list_log.datacols.clearselection;
 
-  dir.frame.Caption := 'Directory with ' + msestring(IntToStr(list_log.rowcount - x2)) + ' files';
+ // dir.frame.Caption := 'Directory with ' + msestring(IntToStr(list_log.rowcount - x2)) + ' files';
 
  if filename.tag <> 2 then begin // save file
   if filename.tag = 1 then
@@ -2443,7 +2443,7 @@ begin
 
   with stockobjects do
   begin
-    dir.frame.caption:= captions[sc_dirhk];
+    dir.frame.caption:= captions[sc_directory];
     home.Caption         := captions[sc_homehk];
     //  up.caption:= captions[sc_uphk];
     createdir.Caption    := captions[sc_new_dirhk];
@@ -2453,8 +2453,10 @@ begin
     showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
     ok.Caption           := modalresulttext[mr_ok];
     cancel.Caption       := modalresulttext[mr_cancel];
-
-    // caption := 'Select a file';
+    bnoicon.frame.caption:= captions[sc_noicons];
+    blateral.frame.caption:= captions[sc_nolateral];
+    bcompact.frame.caption:= captions[sc_compact];
+       // caption := 'Select a file';
   end;
 
   back.tag    := Ord(sc_back);

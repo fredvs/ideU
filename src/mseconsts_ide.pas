@@ -487,9 +487,15 @@ const
    'Configure widgets',          // sc_configwidgets
    'Configure compilers',          // sc_configcompilers
    'Configure debuggers',          // sc_configdebuggers
-   'Themes'          // sc_themes
+   'Themes',          // sc_themes
+   'Directory',          // sc_directory
+   'No icons',          // sc_noicons
+   'No lateral',          // sc_themes
+   'Compact',          // sc_compact 
+   'Open project',          // sc_openproject
+   'Open file'        // sc_openfile
    
-);
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
