@@ -66,6 +66,11 @@ const
     'Alles '#0252'berspringen',  //mr_skipall
     'Fortfahren'                 //mr_continue
     );
+    
+   de_settingstext: isettingsaty = (
+   'General settings', //se_title
+    'Path' //se_path
+    );
 
   de_projectoptionstext: projectoptionsaty = (
     'Projektoptionen', //po_projectoptions
@@ -430,9 +435,14 @@ const
     'Ohne seitliche',          // sc_themes
     'Kompakt',                 // sc_compact 
     'Öffnen das Projekt',          // sc_openproject
-    'Öffne die Datei'         // sc_openfile
-
-    );
+    'Öffne die Datei',                           // sc_openfile
+    'Pfad',                               // sc_path
+    'Sonstiges',                              // sc_other
+    'Druckbefehl',                      // sc_printcommand
+    'Abkürzung',                           // sc_shortcut
+    'Wert'                              // sc_value    
+   
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -450,6 +460,6 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_de], @de_projectoptionstext, @de_stockcaption, @de_modalresulttext, @de_modalresulttextnoshortcut, @de_textgenerator);
+  registerlangconsts(langnames[la_de], @de_settingstext, @de_projectoptionstext, @de_stockcaption, @de_modalresulttext, @de_modalresulttextnoshortcut, @de_textgenerator);
 end.
 

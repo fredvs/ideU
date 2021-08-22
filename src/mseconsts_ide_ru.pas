@@ -70,6 +70,11 @@ const
     'Пропустить все',
     'Продолжить'
     );
+    
+  ru_settingstext: isettingsaty = (
+    'General settings', //se_title
+    'Path' //se_path
+    ); 
 
   ru_projectoptionstext: projectoptionsaty = (
     'Варианты проекта', // po_projectoptions
@@ -431,9 +436,14 @@ const
     'Без бокового',          // sc_themes
     'Компакт',             // sc_compact 
     'Открыть проект',          // sc_openproject
-    'Открыть файл'        // sc_openfile
-
-    );
+    'Открыть файл',                           // sc_openfile
+    'Путь',                               // sc_path
+    'Другой',                              // sc_other
+    'Команда печати',                      // sc_printcommand
+    'Ярлык',                           // sc_shortcut
+    'Ценить'                              // sc_value    
+   
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -450,6 +460,6 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_ru], @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext, @ru_modalresulttextnoshortcut, @ru_textgenerator);
+  registerlangconsts(langnames[la_ru], @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext, @ru_modalresulttextnoshortcut, @ru_textgenerator);
 end.
 

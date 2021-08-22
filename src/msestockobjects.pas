@@ -94,7 +94,12 @@ type
 const
  firsttracesymbol = stg_circlesmall;
  lasttracesymbol = stg_triatopbig;
-
+ 
+type
+   isettingsty = ( se_apply,se_path
+   
+   );   
+ 
 type
    projectoptionsty = (po_projectoptions,po_editor,po_rightmarginline,
                        po_markbrackets,po_linenumbers,po_markpairwords,po_trimtrailing,
@@ -207,8 +212,8 @@ type
                     sc_memory,sc_targetconsole,sc_toggleformunit,sc_msemod,sc_closeallmsemod,
                     sc_generalsettings,sc_extrasettings,sc_lang,sc_configwidgets,sc_configcompilers,
                     sc_configdebuggers,sc_themes,sc_directory,sc_noicons,sc_nolateral,sc_compact,
-                    sc_openproject,sc_openfile                    
-                                   
+                    sc_openproject,sc_openfile,sc_path,sc_other,sc_printcommand,sc_shortcut,sc_value                   
+                  
                     );
 
  textgeneratorfuncty = function(const params: array of const): msestring;

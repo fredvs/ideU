@@ -18,10 +18,13 @@ uses
   msestrings,
   mseapplication,
   msetypes;
-
+  
 type
   projectoptionsaty  = array[projectoptionsty] of msestring;
   pprojectoptionsaty = ^projectoptionsaty;
+  
+  isettingsaty  = array[isettingsty] of msestring;
+  pisettingsaty = ^isettingsaty;
 
   stockcaptionaty           = array[stockcaptionty] of msestring;
   pstockcaptionaty          = ^stockcaptionaty;
@@ -38,6 +41,7 @@ const
     '', 'en', 'de', 'ru', 'es', 'uz_cyr', 'id', 'zh',
     'fr');
 
+function settingstext(const index: isettingsty): msestring;
 function projectoptionstext(const index: projectoptionsty): msestring;
 function modalresulttext(const index: modalresultty): msestring;
 function modalresulttextnoshortcut(const index: modalresultty): msestring;
@@ -46,8 +50,10 @@ function stocktextgenerators(const index: textgeneratorty): textgeneratorfuncty;
 function uc(const index: integer): msestring; //get user caption
 
 procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
-procedure registerlangconsts(const Name: string; const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
-  const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
+procedure registerlangconsts(const Name: string; const settingspo: pisettingsaty;
+        const projectoptionspo: pprojectoptionsaty; 
+        const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
+        const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 function setlangconsts(const Name: string): Boolean;
  //true if ok, no change otherwise
 function getcurrentlangconstsname: string;
@@ -71,6 +77,7 @@ type
   langinfoty = record
     Name: string;
     stockcaption: pstockcaptionaty;
+    settingstext: pisettingsaty;
     projectoptionstext: pprojectoptionsaty;
     modalresulttext: pdefaultmodalresulttextty;
     modalresulttextnoshortcut: pdefaultmodalresulttextty;
@@ -134,6 +141,12 @@ const
     'Skip all',     //mr_skipall
     'Continue'      //mr_continue
     );
+    
+    en_settingstext: isettingsaty = (
+    'Apply', //se_apply
+    'Path' //se_path
+    );
+  
 
   en_projectoptionstext: projectoptionsaty = (
     'Project options',          // po_projectoptions
@@ -219,7 +232,7 @@ const
     'Debug &target',            // po_debugtarget
     'xterm command',            // po_xtermcommand
     '&Run command',             // po_runcommand
-    '&Default Debugger',        // po_debugcommand
+    'Default Debugger',        // po_debugcommand
     'Debug &options',           // po_debugoptions
     '&Make',                    // po_makepage
 
@@ -228,7 +241,7 @@ const
     'Select mainfile',          // po_selectmainfile
     'Targetfile name',          // po_targetfile
     'Select target file',       // po_selecttargetfile
-    'Default &Compiler',        // po_makecommand
+    'Default Compiler',         // po_makecommand
     'Select make command',      // po_selectmakecommand
     'Show Command Line',        // po_showcommandline
     'Copy messages to file',    // po_copymessages
@@ -499,9 +512,14 @@ const
     'No lateral',                         // sc_themes
     'Compact',                            // sc_compact 
     'Open project',                       // sc_openproject
-    'Open file'                           // sc_openfile
-
-    );
+    'Open file',                           // sc_openfile
+    'Path',                               // sc_path
+    'Other',                              // sc_other
+    'Print command',                      // sc_printcommand
+    'Shortcut',                           // sc_shortcut
+    'Value'                              // sc_value    
+   
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -517,10 +535,12 @@ const
               {$ifdef FPC} @{$endif}delete_n_selected_rows //tg_delete_n_selected_rows
     );
 
-procedure setitem(var item: langinfoty; const Name: string; const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
+procedure setitem(var item: langinfoty; const Name: string;  const settingspo: pisettingsaty;
+  const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
   const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 begin
   item.Name          := Name;
+  item.settingstext := settingspo;
   item.projectoptionstext := projectoptionspo;
   item.stockcaption  := stockcaptionpo;
   item.modalresulttext := modalresulttextpo;
@@ -528,7 +548,7 @@ begin
   item.textgenerator := textgeneratorpo;
 end;
 
-procedure registerlangconsts(const Name: string; const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
+procedure registerlangconsts(const Name: string; const settingspo: pisettingsaty; const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty;
   const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 var
   int1: integer;
@@ -536,12 +556,12 @@ begin
   for int1 := 0 to high(langs) do
     if langs[int1].Name = Name then
     begin
-      setitem(langs[int1], Name, projectoptionspo, stockcaptionpo, modalresulttextpo,
+      setitem(langs[int1], Name, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
         modalresulttextnoshortcutpo, textgeneratorpo);
       Exit;
     end;
   setlength(langs, high(langs) + 2);
-  setitem(langs[high(langs)], Name, projectoptionspo, stockcaptionpo, modalresulttextpo,
+  setitem(langs[high(langs)], Name, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
     modalresulttextnoshortcutpo, textgeneratorpo);
 end;
 
@@ -622,7 +642,7 @@ begin
       end;
     if bo1 then
       if lang.Name = '' then
-        setitem(lang, langnames[la_en], @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator){
+        setitem(lang, langnames[la_en], @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator){
     with lang do begin
      name:= langnames[la_en];
      stockcaption:= @en_stockcaption;
@@ -653,6 +673,12 @@ begin
   if (index < 0) or (index > high(userlang.Caption)) then
     raise Exception.Create('Invalid user caption index: ' + IntToStr(index) + '.');
   Result := userlang.Caption[index];
+end;
+
+function settingstext(const index: isettingsty): msestring;
+begin
+  checklang;
+  Result := lang.settingstext^[index];
 end;
 
 function projectoptionstext(const index: projectoptionsty): msestring;
@@ -700,7 +726,7 @@ begin
 end;
 
 initialization
-  registerlangconsts(langnames[la_en], @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
+  registerlangconsts(langnames[la_en], @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
   langbefore := langnames[la_en];
 end.
 

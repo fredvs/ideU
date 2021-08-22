@@ -107,6 +107,11 @@ const
     'Passer tout',   //mr_skipall
     'Continuer'      //mr_continue
     );
+    
+  fr_settingstext: isettingsaty = (
+  'Appliquer', //se_apply
+  'Chemin' //se_path
+    ); 
 
   fr_projectoptionstext: projectoptionsaty = (
     'Options du project',      // po_projectoptions
@@ -470,8 +475,14 @@ const
     'Sans lateral',                        // sc_themes
     'Compact',                             // sc_compact 
     'Ouvrir le projet',                    // sc_openproject
-    'Ouvrir le fichier'                    // sc_openfile
-    );
+    'Ouvrir le fichier',                           // sc_openfile
+    'Chemin',                               // sc_path
+    'Autres',                              // sc_other
+    'Commande d'#8217'impression',                      // sc_printcommand
+    'Raccourcis',                           // sc_shortcut
+    'Valeur'                              // sc_value    
+   
+   );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -489,6 +500,6 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_fr], @fr_projectoptionstext, @fr_stockcaption, @fr_modalresulttext, @fr_modalresulttextnoshortcut, @fr_textgenerator);
+  registerlangconsts(langnames[la_fr], @fr_settingstext, @fr_projectoptionstext, @fr_stockcaption, @fr_modalresulttext, @fr_modalresulttextnoshortcut, @fr_textgenerator);
 end.
 

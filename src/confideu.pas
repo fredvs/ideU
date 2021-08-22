@@ -4,14 +4,56 @@ unit confideu;
 interface
 
 uses
- msetypes,mseglob,mseguiglob, mseguiintf, mseapplication, msegui, msegraphics,
- msegraphutils,mseclasses, mseforms, msegraphedits, msesimplewidgets,mseificomp,
- mseificompglob,mseifiglob, msemenus, msescrollbar, msedataedits,mseedit,
- msestat, msestatfile,msestream, msestrings, SysUtils, msewidgets,msebitmap,
- msedatanodes, msegrids, mselistbrowser, msesys,mseact,
- msedragglob, msetabs, msedropdownlist,msegridsglob, msewidgetgrid, msepointer,
- msememodialog, msesplitter, msecolordialog,mseeditglob, mserichstring,
- msetextedit, msefiledialogx;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  msetypes,
+  mseglob,
+  mseguiglob,
+  mseguiintf,
+  mseapplication,
+  msegui,
+  msegraphics,
+  msegraphutils,
+  mseclasses,
+  mseforms,
+  msegraphedits,
+  msesimplewidgets,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msemenus,
+  msescrollbar,
+  msedataedits,
+  mseedit,
+  msestat,
+  msestatfile,
+  msestream,
+  msestrings,
+  SysUtils,
+  msewidgets,
+  msebitmap,
+  msedatanodes,
+  msegrids,
+  mselistbrowser,
+  msesys,
+  mseact,
+  msedragglob,
+  msetabs,
+  msedropdownlist,
+  msegridsglob,
+  msewidgetgrid,
+  msepointer,
+  msememodialog,
+  msesplitter,
+  msecolordialog,
+  mseeditglob,
+  mserichstring,
+  msetextedit,
+  msefiledialogx;
 
 type
   tconfideufo = class(tmseform)
@@ -34,41 +76,40 @@ type
     blockindent: tintegeredit;
     usedefaulteditoroptions: tbooleanedit;
     spacetabs: tbooleanedit;
-   colorerror: tcoloredit;
-   colorwarning: tcoloredit;
-   colornote: tcoloredit;
-   stripmessageesc: tbooleanedit;
-   modaldial: tbooleanedit;
-   deflayout: tfilenameeditx;
-   defsynt: tfilenameeditx;
-   fontsize: tintegeredit;
-   fontname: tdropdownlistedit;
-   closemessages: tbooleanedit;
-   addwhiteaftercomma: tbooleanedit;
-   group_file_change: tgroupbox;
-   tbfilereload: tbooleaneditradio;
-   tbfilenoload: tbooleaneditradio;
-   tbfileaskload: tbooleaneditradio;
-   confirmdel: tbooleanedit;
-   but_ok: tbutton;
-   tabindent: tbooleanedit;
-   blinkcaret: tbooleanedit;
-   brepaintcanvas: tbooleanedit;
+    colorerror: tcoloredit;
+    colorwarning: tcoloredit;
+    colornote: tcoloredit;
+    stripmessageesc: tbooleanedit;
+    modaldial: tbooleanedit;
+    deflayout: tfilenameeditx;
+    defsynt: tfilenameeditx;
+    fontsize: tintegeredit;
+    fontname: tdropdownlistedit;
+    closemessages: tbooleanedit;
+    addwhiteaftercomma: tbooleanedit;
+    group_file_change: tgroupbox;
+    tbfilereload: tbooleaneditradio;
+    tbfilenoload: tbooleaneditradio;
+    tbfileaskload: tbooleaneditradio;
+    confirmdel: tbooleanedit;
+    but_ok: TButton;
+    tabindent: tbooleanedit;
+    blinkcaret: tbooleanedit;
+    brepaintcanvas: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
-    procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
-      var accept: boolean);
+    procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
-    procedure setvalue(const Sender: TObject; var avalue: msestring;
-      var accept: boolean);
+    procedure setvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
     procedure dirlayout(const Sender: TObject);
     procedure autofocus(const Sender: TObject);
     procedure updownacc(const Sender: TObject);
-   procedure oncloseev(const sender: TObject);
-   procedure onchangefont;
-   procedure onapply(const sender: TObject);
-   procedure onok(const sender: TObject);
-   procedure oncreated(const sender: TObject);
+    procedure oncloseev(const Sender: TObject);
+    procedure onchangefont;
+    procedure onapply(const Sender: TObject);
+    procedure onok(const Sender: TObject);
+    procedure oncreated(const Sender: TObject);
+    procedure setlangextrasettings();
   end;
 
 var
@@ -77,9 +118,22 @@ var
 implementation
 
 uses
-  confideu_mfm, main, messageform, sourceform, finddialogform, targetconsole,
-  ideusettings, confcompiler, confdebugger, projectoptionsform, objectinspector,
-  projecttreeform, commandorform, dialogfiles, conffpgui, confmsegui;
+  confideu_mfm,
+  main,
+  messageform,
+  sourceform,
+  finddialogform,
+  targetconsole,
+  ideusettings,
+  confcompiler,
+  confdebugger,
+  projectoptionsform,
+  objectinspector,
+  projecttreeform,
+  commandorform,
+  dialogfiles,
+  conffpgui,
+  confmsegui;
 
 procedure tconfideufo.zorderhandle(const Sender: TObject);
 begin
@@ -89,15 +143,12 @@ begin
     nozorderhandling := False;
 end;
 
-procedure tconfideufo.epandfilenamemacro(const Sender: TObject;
-  var avalue: msestring; var accept: boolean);
-
+procedure tconfideufo.epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
   settingsfo.epandfilenamemacro(Sender, avalue, accept);
 end;
 
-procedure tconfideufo.setvalue(const Sender: TObject; var avalue: msestring;
-  var accept: boolean);
+procedure tconfideufo.setvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
   settingsfo.setvalue(Sender, avalue, accept);
 end;
@@ -119,7 +170,7 @@ settingsfo.layoutdir.controller.options := [fdo_sysfilename,fdo_directory] ;
 }
     tesakitdir.controller.options := [fdo_sysfilename, fdo_directory];
 
-    confcompilerfo.fpccompiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
+    confcompilerfo.fpccompiler.controller.options  := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.fpccompiler2.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.fpccompiler3.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.fpccompiler4.controller.options := [fdo_sysfilename, fdo_savelastdir];
@@ -128,7 +179,7 @@ settingsfo.layoutdir.controller.options := [fdo_sysfilename,fdo_directory] ;
     confcompilerfo.fpccompiler7.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.fpccompiler8.controller.options := [fdo_sysfilename, fdo_savelastdir];
 
-    confcompilerfo.ccompiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
+    confcompilerfo.ccompiler.controller.options  := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.ccompiler2.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.ccompiler3.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.ccompiler4.controller.options := [fdo_sysfilename, fdo_savelastdir];
@@ -137,17 +188,17 @@ settingsfo.layoutdir.controller.options := [fdo_sysfilename,fdo_directory] ;
     confcompilerfo.ccompiler7.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.ccompiler8.controller.options := [fdo_sysfilename, fdo_savelastdir];
 
-    confcompilerfo.javacompiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
+    confcompilerfo.javacompiler.controller.options  := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.javacompiler2.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.javacompiler3.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.javacompiler4.controller.options := [fdo_sysfilename, fdo_savelastdir];
 
-    confcompilerfo.pythoncompiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
+    confcompilerfo.pythoncompiler.controller.options  := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.pythoncompiler2.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.pythoncompiler3.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.pythoncompiler4.controller.options := [fdo_sysfilename, fdo_savelastdir];
 
-    confcompilerfo.othercompiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
+    confcompilerfo.othercompiler.controller.options  := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.othercompiler2.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.othercompiler3.controller.options := [fdo_sysfilename, fdo_savelastdir];
     confcompilerfo.othercompiler4.controller.options := [fdo_sysfilename, fdo_savelastdir];
@@ -175,7 +226,7 @@ settingsfo.layoutdir.controller.options := [fdo_directory] ;
 
     tesakitdir.controller.options := [fdo_directory];
 
-    confcompilerfo.fpccompiler.controller.options := [fdo_savelastdir];
+    confcompilerfo.fpccompiler.controller.options  := [fdo_savelastdir];
     confcompilerfo.fpccompiler2.controller.options := [fdo_savelastdir];
     confcompilerfo.fpccompiler3.controller.options := [fdo_savelastdir];
     confcompilerfo.fpccompiler4.controller.options := [fdo_savelastdir];
@@ -184,7 +235,7 @@ settingsfo.layoutdir.controller.options := [fdo_directory] ;
     confcompilerfo.fpccompiler7.controller.options := [fdo_savelastdir];
     confcompilerfo.fpccompiler8.controller.options := [fdo_savelastdir];
 
-    confcompilerfo.ccompiler.controller.options := [fdo_savelastdir];
+    confcompilerfo.ccompiler.controller.options  := [fdo_savelastdir];
     confcompilerfo.ccompiler2.controller.options := [fdo_savelastdir];
     confcompilerfo.ccompiler3.controller.options := [fdo_savelastdir];
     confcompilerfo.ccompiler4.controller.options := [fdo_savelastdir];
@@ -193,17 +244,17 @@ settingsfo.layoutdir.controller.options := [fdo_directory] ;
     confcompilerfo.ccompiler7.controller.options := [fdo_savelastdir];
     confcompilerfo.ccompiler8.controller.options := [fdo_savelastdir];
 
-    confcompilerfo.javacompiler.controller.options := [fdo_savelastdir];
+    confcompilerfo.javacompiler.controller.options  := [fdo_savelastdir];
     confcompilerfo.javacompiler2.controller.options := [fdo_savelastdir];
     confcompilerfo.javacompiler3.controller.options := [fdo_savelastdir];
     confcompilerfo.javacompiler4.controller.options := [fdo_savelastdir];
 
-    confcompilerfo.pythoncompiler.controller.options := [fdo_savelastdir];
+    confcompilerfo.pythoncompiler.controller.options  := [fdo_savelastdir];
     confcompilerfo.pythoncompiler2.controller.options := [fdo_savelastdir];
     confcompilerfo.pythoncompiler3.controller.options := [fdo_savelastdir];
     confcompilerfo.pythoncompiler4.controller.options := [fdo_savelastdir];
 
-    confcompilerfo.othercompiler.controller.options := [fdo_savelastdir];
+    confcompilerfo.othercompiler.controller.options  := [fdo_savelastdir];
     confcompilerfo.othercompiler2.controller.options := [fdo_savelastdir];
     confcompilerfo.othercompiler3.controller.options := [fdo_savelastdir];
     confcompilerfo.othercompiler4.controller.options := [fdo_savelastdir];
@@ -219,13 +270,9 @@ end;
 procedure tconfideufo.autofocus(const Sender: TObject);
 begin
   if autofocus_menu.Value = False then
-  begin
-    mainfo.mainmenu1.options := [mo_shortcutright, mo_updateonidle];
-  end
+    mainfo.mainmenu1.options := [mo_shortcutright, mo_updateonidle]
   else
-  begin
     mainfo.mainmenu1.options := [mo_shortcutright, mo_activate, mo_updateonidle];
-  end;
 end;
 
 procedure tconfideufo.updownacc(const Sender: TObject);
@@ -235,497 +282,518 @@ end;
 
 procedure tconfideufo.onchangefont;
 var
-ratio : double;
-rect1: rectty;
+  ratio: double;
+  rect1: rectty;
 begin
 
-ratio := fontsize.value / 12;
+  ratio := fontsize.Value / 12;
 
-mainfo.font.height := fontsize.value;
-mainfo.font.name := ansistring(fontname.value);
-mainfo.frame.grip_size := round(12*ratio);
+  mainfo.font.Height     := fontsize.Value;
+  mainfo.font.Name       := ansistring(fontname.Value);
+  mainfo.frame.grip_size := round(12 * ratio);
 
-// message
+  // message
 
-messagefontheight := fontsize.value;
-messagefontname := UTF8Decode(fontsize.name);
+  messagefontheight := fontsize.Value;
+  messagefontname   := UTF8Decode(fontsize.Name);
 
-// commandor
+  // commandor
 
-debuggerfo.font.height := fontsize.value;
-debuggerfo.font.name := ansistring(fontname.value);
-debuggerfo.frame.grip_size := round(12*ratio);
+  debuggerfo.font.Height     := fontsize.Value;
+  debuggerfo.font.Name       := ansistring(fontname.Value);
+  debuggerfo.frame.grip_size := round(12 * ratio);
 
-debuggerfo.assistive.height := round(ratio*26);
-debuggerfo.assistive.width := debuggerfo.assistive.height;
+  debuggerfo.assistive.Height := round(ratio * 26);
+  debuggerfo.assistive.Width  := debuggerfo.assistive.Height;
 
-debuggerfo.properties_list.height := debuggerfo.assistive.height;
-debuggerfo.properties_list.width := debuggerfo.assistive.height;
-debuggerfo.properties_list.left := debuggerfo.assistive.right + 2;
+  debuggerfo.properties_list.Height := debuggerfo.assistive.Height;
+  debuggerfo.properties_list.Width  := debuggerfo.assistive.Height;
+  debuggerfo.properties_list.left   := debuggerfo.assistive.right + 2;
 
-debuggerfo.find_in_directory.height := debuggerfo.assistive.height;
-debuggerfo.find_in_directory.width := debuggerfo.assistive.height;
-debuggerfo.find_in_directory.left := debuggerfo.properties_list.right + 2;
+  debuggerfo.find_in_directory.Height := debuggerfo.assistive.Height;
+  debuggerfo.find_in_directory.Width  := debuggerfo.assistive.Height;
+  debuggerfo.find_in_directory.left   := debuggerfo.properties_list.right + 2;
 
-debuggerfo.line_number.height := debuggerfo.assistive.height;
-debuggerfo.line_number.width := debuggerfo.assistive.height;
-debuggerfo.line_number.left := debuggerfo.find_in_directory.right + 2;
+  debuggerfo.line_number.Height := debuggerfo.assistive.Height;
+  debuggerfo.line_number.Width  := debuggerfo.assistive.Height;
+  debuggerfo.line_number.left   := debuggerfo.find_in_directory.right + 2;
 
-debuggerfo.terminal_run.height := debuggerfo.assistive.height;
-debuggerfo.terminal_run.width := debuggerfo.assistive.height;
-debuggerfo.terminal_run.left := debuggerfo.line_number.right + 2;
+  debuggerfo.terminal_run.Height := debuggerfo.assistive.Height;
+  debuggerfo.terminal_run.Width  := debuggerfo.assistive.Height;
+  debuggerfo.terminal_run.left   := debuggerfo.line_number.right + 2;
 
-debuggerfo.panelmain.height := debuggerfo.assistive.height + 2;
-debuggerfo.panelmain.width := debuggerfo.terminal_run.right + 4;
+  debuggerfo.panelmain.Height := debuggerfo.assistive.Height + 2;
+  debuggerfo.panelmain.Width  := debuggerfo.terminal_run.right + 4;
 
-debuggerfo.statdisp.font.height := fontsize.value;
-debuggerfo.statdisp.font.name := ansistring(fontname.value);
+  debuggerfo.statdisp.font.Height := fontsize.Value;
+  debuggerfo.statdisp.font.Name   := ansistring(fontname.Value);
 
-debuggerfo.statdisp.top := debuggerfo.assistive.height + 4;
+  debuggerfo.statdisp.top := debuggerfo.assistive.Height + 4;
 
-///
+  ///
 
-debuggerfo.panelproject.height := debuggerfo.panelmain.height;
-debuggerfo.panelproject.left := debuggerfo.panelmain.right + 2;
+  debuggerfo.panelproject.Height := debuggerfo.panelmain.Height;
+  debuggerfo.panelproject.left   := debuggerfo.panelmain.right + 2;
 
-debuggerfo.project_open.height := debuggerfo.assistive.height;
-debuggerfo.project_open.width := debuggerfo.assistive.height;
-debuggerfo.project_open.left :=  2;
+  debuggerfo.project_open.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_open.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_open.left   := 2;
 
-debuggerfo.project_save.height := debuggerfo.assistive.height;
-debuggerfo.project_save.width := debuggerfo.assistive.height;
-debuggerfo.project_save.left := debuggerfo.project_open.right + 2;
+  debuggerfo.project_save.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_save.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_save.left   := debuggerfo.project_open.right + 2;
 
-debuggerfo.project_history.height := debuggerfo.assistive.height;
-debuggerfo.project_history.width := round(ratio * 88) ;
-debuggerfo.project_history.left := debuggerfo.project_save.right + 2;
+  debuggerfo.project_history.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_history.Width  := round(ratio * 88);
+  debuggerfo.project_history.left   := debuggerfo.project_save.right + 2;
 
-debuggerfo.project_option.height := debuggerfo.assistive.height;
-debuggerfo.project_option.width := debuggerfo.assistive.height; ;
-debuggerfo.project_option.left := debuggerfo.project_history.right + 2;
+  debuggerfo.project_option.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_option.Width  := debuggerfo.assistive.Height;
+  ;
+  debuggerfo.project_option.left   := debuggerfo.project_history.right + 2;
 
-debuggerfo.project_options.height := debuggerfo.assistive.height;
-debuggerfo.project_options.width := 31 + round(ratio * 3) ;
-debuggerfo.project_options.left := debuggerfo.project_option.right + 2;
+  debuggerfo.project_options.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_options.Width  := 31 + round(ratio * 3);
+  debuggerfo.project_options.left   := debuggerfo.project_option.right + 2;
 
-//debuggerfo.panelwatch.height := debuggerfo.assistive.height;
-debuggerfo.panelwatch.top := (debuggerfo.project_option.height -
-                             debuggerfo.panelwatch.height) div 2;
-//debuggerfo.panelwatch.width := debuggerfo.assistive.height;
-debuggerfo.panelwatch.left := debuggerfo.project_options.right + 2;
+  //debuggerfo.panelwatch.height := debuggerfo.assistive.height;
+  debuggerfo.panelwatch.top  := (debuggerfo.project_option.Height -
+    debuggerfo.panelwatch.Height) div 2;
+  //debuggerfo.panelwatch.width := debuggerfo.assistive.height;
+  debuggerfo.panelwatch.left := debuggerfo.project_options.right + 2;
 
-debuggerfo.project_make.height := debuggerfo.assistive.height;
-debuggerfo.project_make.width := debuggerfo.assistive.height;
-debuggerfo.project_make.left := debuggerfo.panelwatch.right + 2;
-//
-debuggerfo.project_abort_compil.height := debuggerfo.assistive.height;
-debuggerfo.project_abort_compil.width := debuggerfo.assistive.height;
-debuggerfo.project_abort_compil.left := debuggerfo.project_make.right + 2;
+  debuggerfo.project_make.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_make.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_make.left   := debuggerfo.panelwatch.right + 2;
 
-debuggerfo.debug_on.height := debuggerfo.assistive.height;
-debuggerfo.debug_on.width := debuggerfo.assistive.height;
-debuggerfo.debug_on.left := debuggerfo.project_abort_compil.right + 2;
+  debuggerfo.project_abort_compil.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_abort_compil.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_abort_compil.left   := debuggerfo.project_make.right + 2;
 
-debuggerfo.project_start.height := debuggerfo.assistive.height;
-debuggerfo.project_start.width := debuggerfo.assistive.height;
-debuggerfo.project_start.left := debuggerfo.debug_on.right + 2;
+  debuggerfo.debug_on.Height := debuggerfo.assistive.Height;
+  debuggerfo.debug_on.Width  := debuggerfo.assistive.Height;
+  debuggerfo.debug_on.left   := debuggerfo.project_abort_compil.right + 2;
 
-debuggerfo.project_next.height := debuggerfo.assistive.height;
-debuggerfo.project_next.width := debuggerfo.assistive.height;
-debuggerfo.project_next.left := debuggerfo.project_start.right + 2;
+  debuggerfo.project_start.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_start.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_start.left   := debuggerfo.debug_on.right + 2;
 
-debuggerfo.project_step.height := debuggerfo.assistive.height;
-debuggerfo.project_step.width := debuggerfo.assistive.height;
-debuggerfo.project_step.left := debuggerfo.project_next.right + 2;
+  debuggerfo.project_next.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_next.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_next.left   := debuggerfo.project_start.right + 2;
 
-debuggerfo.project_finish.height := debuggerfo.assistive.height;
-debuggerfo.project_finish.width := debuggerfo.assistive.height;
-debuggerfo.project_finish.left := debuggerfo.project_step.right + 2;
-//
-debuggerfo.project_next_instruction.height := debuggerfo.assistive.height;
-debuggerfo.project_next_instruction.width := debuggerfo.assistive.height;
-debuggerfo.project_next_instruction.left := debuggerfo.project_finish.right + 2;
-
-debuggerfo.project_step_instruction.height := debuggerfo.assistive.height;
-debuggerfo.project_step_instruction.width := debuggerfo.assistive.height;
-debuggerfo.project_step_instruction.left := debuggerfo.project_next_instruction.right + 2;
-
-debuggerfo.project_interrupt.height := debuggerfo.assistive.height;
-debuggerfo.project_interrupt.width := debuggerfo.assistive.height;
-debuggerfo.project_interrupt.left := debuggerfo.project_step_instruction.right + 2;
+  debuggerfo.project_step.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_step.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_step.left   := debuggerfo.project_next.right + 2;
 
-debuggerfo.project_reset.height := debuggerfo.assistive.height;
-debuggerfo.project_reset.width := debuggerfo.assistive.height;
-debuggerfo.project_reset.left := debuggerfo.project_interrupt.right + 2;
-
-debuggerfo.panelproject.height := debuggerfo.panelmain.height;
-debuggerfo.panelproject.left := debuggerfo.panelmain.right + 2;
+  debuggerfo.project_finish.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_finish.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_finish.left   := debuggerfo.project_step.right + 2;
 
-debuggerfo.panelproject.width := debuggerfo.project_reset.right + 4;
+  debuggerfo.project_next_instruction.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_next_instruction.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_next_instruction.left   := debuggerfo.project_finish.right + 2;
 
-//
+  debuggerfo.project_step_instruction.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_step_instruction.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_step_instruction.left   := debuggerfo.project_next_instruction.right + 2;
 
-debuggerfo.paneledited.height := debuggerfo.panelmain.height;
-debuggerfo.paneledited.left := debuggerfo.panelproject.right + 2;
+  debuggerfo.project_interrupt.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_interrupt.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_interrupt.left   := debuggerfo.project_step_instruction.right + 2;
 
-debuggerfo.open_file.height := debuggerfo.assistive.height;
-debuggerfo.open_file.width := debuggerfo.assistive.height;
-debuggerfo.open_file.left :=  2;
+  debuggerfo.project_reset.Height := debuggerfo.assistive.Height;
+  debuggerfo.project_reset.Width  := debuggerfo.assistive.Height;
+  debuggerfo.project_reset.left   := debuggerfo.project_interrupt.right + 2;
 
-debuggerfo.save_file.height := debuggerfo.assistive.height;
-debuggerfo.save_file.width := debuggerfo.assistive.height;
-debuggerfo.save_file.left := debuggerfo.open_file.right + 2;
+  debuggerfo.panelproject.Height := debuggerfo.panelmain.Height;
+  debuggerfo.panelproject.left   := debuggerfo.panelmain.right + 2;
 
-debuggerfo.find_in_edit.height := debuggerfo.assistive.height;
-debuggerfo.find_in_edit.width := debuggerfo.assistive.height;
-debuggerfo.find_in_edit.left := debuggerfo.save_file.right + 2;
+  debuggerfo.panelproject.Width := debuggerfo.project_reset.right + 4;
 
-debuggerfo.file_history.height := debuggerfo.assistive.height;
-debuggerfo.file_history.width := round(ratio * 88) ;
-debuggerfo.file_history.left := debuggerfo.find_in_edit.right + 2;
 
-debuggerfo.toggle_form_unit.height := debuggerfo.assistive.height;
-debuggerfo.toggle_form_unit.width := debuggerfo.assistive.height;
-debuggerfo.toggle_form_unit.left :=  debuggerfo.file_history.right + 2;
+  debuggerfo.paneledited.Height := debuggerfo.panelmain.Height;
+  debuggerfo.paneledited.left   := debuggerfo.panelproject.right + 2;
 
-debuggerfo.code_beauty.height := debuggerfo.assistive.height;
-debuggerfo.code_beauty.width := debuggerfo.assistive.height;
-debuggerfo.code_beauty.left := debuggerfo.toggle_form_unit.right + 2;
+  debuggerfo.open_file.Height := debuggerfo.assistive.Height;
+  debuggerfo.open_file.Width  := debuggerfo.assistive.Height;
+  debuggerfo.open_file.left   := 2;
 
-debuggerfo.procedure_list.height := debuggerfo.assistive.height;
-debuggerfo.procedure_list.width := debuggerfo.assistive.height;
-debuggerfo.procedure_list.left := debuggerfo.code_beauty.right + 2;
+  debuggerfo.save_file.Height := debuggerfo.assistive.Height;
+  debuggerfo.save_file.Width  := debuggerfo.assistive.Height;
+  debuggerfo.save_file.left   := debuggerfo.open_file.right + 2;
 
-debuggerfo.edit_compiler.height := debuggerfo.assistive.height;
-debuggerfo.edit_compiler.width := round(ratio * 44) ;
-debuggerfo.edit_compiler.left := debuggerfo.procedure_list.right + 2;
+  debuggerfo.find_in_edit.Height := debuggerfo.assistive.Height;
+  debuggerfo.find_in_edit.Width  := debuggerfo.assistive.Height;
+  debuggerfo.find_in_edit.left   := debuggerfo.save_file.right + 2;
 
-debuggerfo.edit_compilernum.height := debuggerfo.assistive.height;
-debuggerfo.edit_compilernum.width := 31 + round(ratio * 3) ;
-debuggerfo.edit_compilernum.left := debuggerfo.edit_compiler.right + 2;
+  debuggerfo.file_history.Height := debuggerfo.assistive.Height;
+  debuggerfo.file_history.Width  := round(ratio * 88);
+  debuggerfo.file_history.left   := debuggerfo.find_in_edit.right + 2;
 
-debuggerfo.edit_options.height := debuggerfo.assistive.height;
-debuggerfo.edit_options.width := 31 + round(ratio * 3) ;
-debuggerfo.edit_options.left := debuggerfo.edit_compilernum.right + 2;
+  debuggerfo.toggle_form_unit.Height := debuggerfo.assistive.Height;
+  debuggerfo.toggle_form_unit.Width  := debuggerfo.assistive.Height;
+  debuggerfo.toggle_form_unit.left   := debuggerfo.file_history.right + 2;
 
-debuggerfo.edited_make.height := debuggerfo.assistive.height;
-debuggerfo.edited_make.width := debuggerfo.assistive.height;
-debuggerfo.edited_make.left := debuggerfo.edit_options.right + 2;
+  debuggerfo.code_beauty.Height := debuggerfo.assistive.Height;
+  debuggerfo.code_beauty.Width  := debuggerfo.assistive.Height;
+  debuggerfo.code_beauty.left   := debuggerfo.toggle_form_unit.right + 2;
 
-debuggerfo.edited_abort.height := debuggerfo.assistive.height;
-debuggerfo.edited_abort.width := debuggerfo.assistive.height;
-debuggerfo.edited_abort.left := debuggerfo.edited_make.right + 2;
+  debuggerfo.procedure_list.Height := debuggerfo.assistive.Height;
+  debuggerfo.procedure_list.Width  := debuggerfo.assistive.Height;
+  debuggerfo.procedure_list.left   := debuggerfo.code_beauty.right + 2;
 
-debuggerfo.edited_run.height := debuggerfo.assistive.height;
-debuggerfo.edited_run.width := debuggerfo.assistive.height;
-debuggerfo.edited_run.left := debuggerfo.edited_abort.right + 2;
-
-debuggerfo.panelproject.height := debuggerfo.panelmain.height;
-debuggerfo.panelproject.left := debuggerfo.panelmain.right + 2;
-
-debuggerfo.paneledited.width := debuggerfo.edited_run.right + 4;
-//
-
-debuggerfo.height := debuggerfo.statdisp.bottom + 2 ;
+  debuggerfo.edit_compiler.Height := debuggerfo.assistive.Height;
+  debuggerfo.edit_compiler.Width  := round(ratio * 44);
+  debuggerfo.edit_compiler.left   := debuggerfo.procedure_list.right + 2;
 
-if Assigned(objectinspectorfo) then
-    begin
-     objectinspectorfo.frame.grip_size := round(12*ratio);
-     objectinspectorfo.font.height := fontsize.value;
-     objectinspectorfo.fontempty.height := fontsize.value;
-     objectinspectorfo.grid.font.name := ansistring(fontname.value);
-     objectinspectorfo.grid.datarowheight := round(ratio * 16);
-     objectinspectorfo.grid.rowfonts.items[0].height := fontsize.value;
-     objectinspectorfo.grid.rowfonts.items[1].height := fontsize.value;
-     objectinspectorfo.grid.rowfonts.items[2].height := fontsize.value;
-     objectinspectorfo.grid.rowfonts.items[3].height := fontsize.value;
-     objectinspectorfo.grid.rowfonts.items[4].height := fontsize.value;
-     objectinspectorfo.grid.rowfonts.items[5].height := fontsize.value;
+  debuggerfo.edit_compilernum.Height := debuggerfo.assistive.Height;
+  debuggerfo.edit_compilernum.Width  := 31 + round(ratio * 3);
+  debuggerfo.edit_compilernum.left   := debuggerfo.edit_compiler.right + 2;
 
-     objectinspectorfo.findbu.font.height := fontsize.value;
-     objectinspectorfo.compedit.font.height := fontsize.value;
+  debuggerfo.edit_options.Height := debuggerfo.assistive.Height;
+  debuggerfo.edit_options.Width  := 31 + round(ratio * 3);
+  debuggerfo.edit_options.left   := debuggerfo.edit_compilernum.right + 2;
 
-     objectinspectorfo.findbu.height := objectinspectorfo.compselector.height;
-     objectinspectorfo.compedit.height := objectinspectorfo.compselector.height;
+  debuggerfo.edited_make.Height := debuggerfo.assistive.Height;
+  debuggerfo.edited_make.Width  := debuggerfo.assistive.Height;
+  debuggerfo.edited_make.left   := debuggerfo.edit_options.right + 2;
 
-    end;
+  debuggerfo.edited_abort.Height := debuggerfo.assistive.Height;
+  debuggerfo.edited_abort.Width  := debuggerfo.assistive.Height;
+  debuggerfo.edited_abort.left   := debuggerfo.edited_make.right + 2;
 
-targetconsolefo.grid.font.height := fontsize.value;
-//targetconsolefo.grid.font.name := ansistring(fontname.value);
+  debuggerfo.edited_run.Height := debuggerfo.assistive.Height;
+  debuggerfo.edited_run.Width  := debuggerfo.assistive.Height;
+  debuggerfo.edited_run.left   := debuggerfo.edited_abort.right + 2;
 
-if assigned(dialogfilesfo) then
-begin
-dialogfilesfo.selected_file.font.height := fontsize.value;
-dialogfilesfo.selected_file.font.name := ansistring(fontname.value);
+  debuggerfo.panelproject.Height := debuggerfo.panelmain.Height;
+  debuggerfo.panelproject.left   := debuggerfo.panelmain.right + 2;
 
-dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
+  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4;
 
-dialogfilesfo.selected_file.frame.font.height := fontsize.value;
 
-dialogfilesfo.selected_file.frame.font.name := ansistring(fontname.value);
+  debuggerfo.Height := debuggerfo.statdisp.bottom + 2;
 
-dialogfilesfo.list_files.cellheight := round((ratio) * 19);
-dialogfilesfo.list_files.font.height := fontsize.value;
-dialogfilesfo.list_files.font.name :=  ansistring(fontname.value);
+  if Assigned(objectinspectorfo) then
+  begin
+    objectinspectorfo.frame.grip_size    := round(12 * ratio);
+    objectinspectorfo.font.Height        := fontsize.Value;
+    objectinspectorfo.fontempty.Height   := fontsize.Value;
+    objectinspectorfo.grid.font.Name     := ansistring(fontname.Value);
+    objectinspectorfo.grid.datarowheight := round(ratio * 16);
+    objectinspectorfo.grid.rowfonts.items[0].Height := fontsize.Value;
+    objectinspectorfo.grid.rowfonts.items[1].Height := fontsize.Value;
+    objectinspectorfo.grid.rowfonts.items[2].Height := fontsize.Value;
+    objectinspectorfo.grid.rowfonts.items[3].Height := fontsize.Value;
+    objectinspectorfo.grid.rowfonts.items[4].Height := fontsize.Value;
+    objectinspectorfo.grid.rowfonts.items[5].Height := fontsize.Value;
 
-dialogfilesfo.height := round((ratio) * 366);
-dialogfilesfo.width  := round((ratio) * 336);
-dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
+    objectinspectorfo.findbu.font.Height   := fontsize.Value;
+    objectinspectorfo.compedit.font.Height := fontsize.Value;
 
-end;
+    objectinspectorfo.findbu.Height   := objectinspectorfo.compselector.Height;
+    objectinspectorfo.compedit.Height := objectinspectorfo.compselector.Height;
 
-mainfo.mainmenu1.menu.font.height := fontsize.value;
-sourcefo.files_tab.font.height := fontsize.value;
-sourcefo.frame.grip_size := round(12*ratio);
-sourcefo.files_tab.tab_fontactivetab.height := fontsize.value;
-sourcefo.files_tab.tab_fonttab.height := fontsize.value;
-sourcefo.files_tab.tab_size := round(24 * ratio);
-sourcefo.step_back.height := round(24 * ratio);
-sourcefo.step_forward.height := round(24 * ratio);
+  end;
 
-mainfo.mainmenu1.menu.font.name := ansistring(fontname.value);
-sourcefo.files_tab.font.name := ansistring(fontname.value);
-sourcefo.files_tab.tab_fontactivetab.name := ansistring(fontname.value);
-sourcefo.files_tab.tab_fonttab.name := ansistring(fontname.value);
+  targetconsolefo.grid.font.Height := fontsize.Value;
+  //targetconsolefo.grid.font.name := ansistring(fontname.value);
 
-if Assigned(sourcefo.ActivePage) then
-    begin
-      sourcefo.ActivePage.pathdisp.font.height := fontsize.value;
-      sourcefo.ActivePage.linedisp.font.height := fontsize.value;
-      sourcefo.ActivePage.pathdisp.font.name := ansistring(fontname.value);
-      sourcefo.ActivePage.linedisp.font.name := ansistring(fontname.value);
+  if Assigned(dialogfilesfo) then
+  begin
+    dialogfilesfo.selected_file.font.Height := fontsize.Value;
+    dialogfilesfo.selected_file.font.Name   := ansistring(fontname.Value);
 
-      sourcefo.ActivePage.pathdisp.height := round(ratio * 20);
-      sourcefo.ActivePage.linedisp.height := round(ratio * 20);
+    dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
 
-      sourcefo.ActivePage.source_editor.height := sourcefo.ActivePage.height -
-      sourcefo.ActivePage.pathdisp.height -2;
+    dialogfilesfo.selected_file.frame.font.Height := fontsize.Value;
 
-       sourcefo.ActivePage.pathdisp.top := sourcefo.ActivePage.source_editor.height + 1;
-       sourcefo.ActivePage.linedisp.top := sourcefo.ActivePage.pathdisp.top;
+    dialogfilesfo.selected_file.frame.font.Name := ansistring(fontname.Value);
 
-     end;
+    dialogfilesfo.list_files.cellheight  := round((ratio) * 19);
+    dialogfilesfo.list_files.font.Height := fontsize.Value;
+    dialogfilesfo.list_files.font.Name   := ansistring(fontname.Value);
 
-sourcefo.tpopupmenu1.menu.font.height := fontsize.value;
-sourcefo.tpopupmenu1.menu.fontactive.height := fontsize.value;
-sourcefo.tpopupmenu1.menu.font.name := ansistring(fontname.value);
-sourcefo.tpopupmenu1.menu.fontactive.name := ansistring(fontname.value);
+    dialogfilesfo.Height := round((ratio) * 366);
+    dialogfilesfo.Width  := round((ratio) * 336);
+    dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.Width - 6;
 
-if Assigned(projecttreefo) then
-    begin
-     projecttreefo.frame.grip_size := round(12*ratio);
-     projecttreefo.projectedit.font.height := fontsize.value;
-     projecttreefo.edit.font.height := fontsize.value;
-     projecttreefo.projectedit.font.name := ansistring(fontname.value);
-     projecttreefo.edit.font.name := ansistring(fontname.value);
-     projecttreefo.grid.datarowheight := round(ratio * 16);
-    end;
+  end;
 
-confcompilerfo.font.height :=  fontsize.value;
-confcompilerfo.font.name := ansistring(fontname.value);
+  mainfo.mainmenu1.menu.font.Height := fontsize.Value;
+  sourcefo.files_tab.font.Height    := fontsize.Value;
+  sourcefo.frame.grip_size          := round(12 * ratio);
+  sourcefo.files_tab.tab_fontactivetab.Height := fontsize.Value;
+  sourcefo.files_tab.tab_fonttab.Height := fontsize.Value;
+  sourcefo.files_tab.tab_size       := round(24 * ratio);
+  sourcefo.step_back.Height         := round(24 * ratio);
+  sourcefo.step_forward.Height      := round(24 * ratio);
 
-confdebuggerfo.font.height :=  fontsize.value;
-confdebuggerfo.font.name := ansistring(fontname.value);
+  mainfo.mainmenu1.menu.font.Name     := ansistring(fontname.Value);
+  sourcefo.files_tab.font.Name        := ansistring(fontname.Value);
+  sourcefo.files_tab.tab_fontactivetab.Name := ansistring(fontname.Value);
+  sourcefo.files_tab.tab_fonttab.Name := ansistring(fontname.Value);
 
+  if Assigned(sourcefo.ActivePage) then
+  begin
+    sourcefo.ActivePage.pathdisp.font.Height := fontsize.Value;
+    sourcefo.ActivePage.linedisp.font.Height := fontsize.Value;
+    sourcefo.ActivePage.pathdisp.font.Name   := ansistring(fontname.Value);
+    sourcefo.ActivePage.linedisp.font.Name   := ansistring(fontname.Value);
 
-// confmsegui
-confmseguifo.font.height :=  fontsize.value;
-confmseguifo.font.name := ansistring(fontname.value);
+    sourcefo.ActivePage.pathdisp.Height := round(ratio * 20);
+    sourcefo.ActivePage.linedisp.Height := round(ratio * 20);
 
-// conffpguifo
+    sourcefo.ActivePage.source_editor.Height := sourcefo.ActivePage.Height -
+      sourcefo.ActivePage.pathdisp.Height - 2;
 
-conffpguifo.font.height := fontsize.value;
-conffpguifo.font.name := ansistring(fontname.value);
+    sourcefo.ActivePage.pathdisp.top := sourcefo.ActivePage.source_editor.Height + 1;
+    sourcefo.ActivePage.linedisp.top := sourcefo.ActivePage.pathdisp.top;
 
-conffpguifo.fpguidesigner.top := 40;
-conffpguifo.enablefpguidesigner.top :=  conffpguifo.fpguidesigner.top + conffpguifo.fpguidesigner.height + 2 ;
-conffpguifo.tbfpgonlyone.top :=  conffpguifo.enablefpguidesigner.top + conffpguifo.enablefpguidesigner.height + 2 ;
+  end;
 
-conffpguifo.groupcommand.top := conffpguifo.tbfpgonlyone.top + conffpguifo.tbfpgonlyone.height + 6 ;
+  sourcefo.tpopupmenu1.menu.font.Height       := fontsize.Value;
+  sourcefo.tpopupmenu1.menu.fontactive.Height := fontsize.Value;
+  sourcefo.tpopupmenu1.menu.font.Name         := ansistring(fontname.Value);
+  sourcefo.tpopupmenu1.menu.fontactive.Name   := ansistring(fontname.Value);
 
-conffpguifo.ifloadfile.top :=  conffpguifo.edfilename.height + 2 ;
-conffpguifo.edfilename.top :=  conffpguifo.ifloadfile.top ;
-conffpguifo.edfilename.left :=  conffpguifo.ifloadfile.right + 30 ;
+  if Assigned(projecttreefo) then
+  begin
+    projecttreefo.frame.grip_size         := round(12 * ratio);
+    projecttreefo.projectedit.font.Height := fontsize.Value;
+    projecttreefo.edit.font.Height        := fontsize.Value;
+    projecttreefo.projectedit.font.Name   := ansistring(fontname.Value);
+    projecttreefo.edit.font.Name          := ansistring(fontname.Value);
+    projecttreefo.grid.datarowheight      := round(ratio * 16);
+  end;
 
-conffpguifo.ifclose.top :=  conffpguifo.ifloadfile.top + conffpguifo.edclose.height + 2 ;
-conffpguifo.edclose.top :=  conffpguifo.ifclose.top ;
-conffpguifo.edclose.left :=  conffpguifo.edfilename.left;
+  confcompilerfo.font.Height := fontsize.Value;
+  confcompilerfo.font.Name   := ansistring(fontname.Value);
 
-conffpguifo.ifshow.top :=  conffpguifo.ifclose.top + conffpguifo.edclose.height + 2 ;
-conffpguifo.edshow.top :=  conffpguifo.ifshow.top ;
-conffpguifo.edshow.left :=  conffpguifo.edfilename.left;
+  confdebuggerfo.font.Height := fontsize.Value;
+  confdebuggerfo.font.Name   := ansistring(fontname.Value);
 
-conffpguifo.ifhide.top :=  conffpguifo.ifshow.top + conffpguifo.edclose.height + 2 ;
-conffpguifo.edhide.top :=  conffpguifo.ifhide.top ;
-conffpguifo.edhide.left :=  conffpguifo.edfilename.left ;
 
-conffpguifo.ifquit.top :=  conffpguifo.ifhide.top + conffpguifo.edclose.height + 2 ;
-conffpguifo.edquit.top :=  conffpguifo.ifquit.top ;
-conffpguifo.edquit.left :=  conffpguifo.edfilename.left ;
+  // confmsegui
+  confmseguifo.font.Height := fontsize.Value;
+  confmseguifo.font.Name   := ansistring(fontname.Value);
 
-conffpguifo.edquit.width := round(ratio * 96);
+  // conffpguifo
 
-conffpguifo.edfilename.width := conffpguifo.edquit.width;
-conffpguifo.edclose.width := conffpguifo.edquit.width;
-conffpguifo.edshow.width := conffpguifo.edquit.width;
-conffpguifo.edhide.width := conffpguifo.edquit.width;
+  conffpguifo.font.Height := fontsize.Value;
+  conffpguifo.font.Name   := ansistring(fontname.Value);
 
-conffpguifo.groupcommand.height := conffpguifo.ifquit.top + conffpguifo.edclose.height + 10;
-conffpguifo.groupcommand.width := conffpguifo.edfilename.right + 14;
+  conffpguifo.fpguidesigner.top       := 40;
+  conffpguifo.enablefpguidesigner.top := conffpguifo.fpguidesigner.top + conffpguifo.fpguidesigner.Height + 2;
+  conffpguifo.tbfpgonlyone.top        := conffpguifo.enablefpguidesigner.top + conffpguifo.enablefpguidesigner.Height + 2;
 
-//
-conffpguifo.iffilter.top := conffpguifo.groupcommand.top + conffpguifo.groupcommand.height + 10 ;
-conffpguifo.edfilter.top := conffpguifo.iffilter.top + conffpguifo.iffilter.height + 4 ;
-conffpguifo.height := conffpguifo.edfilter.top + conffpguifo.edfilter.height + 10;
+  conffpguifo.groupcommand.top := conffpguifo.tbfpgonlyone.top + conffpguifo.tbfpgonlyone.Height + 6;
 
-conffpguifo.width:= conffpguifo.groupcommand.width + 26;
-conffpguifo.height:= conffpguifo.edfilter.bottom + 10;
+  conffpguifo.ifloadfile.top  := conffpguifo.edfilename.Height + 2;
+  conffpguifo.edfilename.top  := conffpguifo.ifloadfile.top;
+  conffpguifo.edfilename.left := conffpguifo.ifloadfile.right + 30;
 
-// confideufo
-font.height := fontsize.value;
-font.name := ansistring(fontname.value);
+  conffpguifo.ifclose.top  := conffpguifo.ifloadfile.top + conffpguifo.edclose.Height + 2;
+  conffpguifo.edclose.top  := conffpguifo.ifclose.top;
+  conffpguifo.edclose.left := conffpguifo.edfilename.left;
 
-group_file_change.width := round(ratio * 280);
-group_system_layout.width := round(ratio * 280);
-group_assistive.width := round(ratio * 280);
-group_sourceeditor.width := round(ratio * 314);
-group_sourceeditor.left := group_assistive.width + 20;
-but_ok.width := round(ratio * 280) div 2;
-but_apply.width := but_ok.width - 1;
-but_ok.left := but_apply.width + but_apply.left + 1 ;
+  conffpguifo.ifshow.top  := conffpguifo.ifclose.top + conffpguifo.edclose.Height + 2;
+  conffpguifo.edshow.top  := conffpguifo.ifshow.top;
+  conffpguifo.edshow.left := conffpguifo.edfilename.left;
 
- group_file_change.top := 40;
- tbfilereload.top := tbfilereload.height + 2;
- tbfilenoload.top :=  tbfilereload.top + tbfilereload.height + 2 ;
- tbfileaskload.top :=  tbfilenoload.top + tbfilenoload.height + 2 ;
- group_file_change.height := tbfileaskload.top + tbfileaskload.height + 10;
+  conffpguifo.ifhide.top  := conffpguifo.ifshow.top + conffpguifo.edclose.Height + 2;
+  conffpguifo.edhide.top  := conffpguifo.ifhide.top;
+  conffpguifo.edhide.left := conffpguifo.edfilename.left;
 
- group_system_layout.top := group_file_change.top +
- group_file_change.height + 10;
+  conffpguifo.ifquit.top  := conffpguifo.ifhide.top + conffpguifo.edclose.Height + 2;
+  conffpguifo.edquit.top  := conffpguifo.ifquit.top;
+  conffpguifo.edquit.left := conffpguifo.edfilename.left;
 
- universal_path.top := universal_path.height + 2;
- doubleclic.top :=  universal_path.top + universal_path.height + 2 ;
- blinkcaret.top :=  doubleclic.top + doubleclic.height + 2 ;
+  conffpguifo.edquit.Width := round(ratio * 96);
 
- fullpath.top :=  blinkcaret.top + blinkcaret.height + 2 ;
- modaldial.top :=  fullpath.top + fullpath.height + 2 ;
- autofocus_menu.top :=  modaldial.top + modaldial.height + 2 ;
- nozorderenable.top :=  autofocus_menu.top + autofocus_menu.height + 2 ;
+  conffpguifo.edfilename.Width := conffpguifo.edquit.Width;
+  conffpguifo.edclose.Width    := conffpguifo.edquit.Width;
+  conffpguifo.edshow.Width     := conffpguifo.edquit.Width;
+  conffpguifo.edhide.Width     := conffpguifo.edquit.Width;
+
+  conffpguifo.groupcommand.Height := conffpguifo.ifquit.top + conffpguifo.edclose.Height + 10;
+  conffpguifo.groupcommand.Width  := conffpguifo.edfilename.right + 14;
+
+
+  conffpguifo.iffilter.top := conffpguifo.groupcommand.top + conffpguifo.groupcommand.Height + 10;
+  conffpguifo.edfilter.top := conffpguifo.iffilter.top + conffpguifo.iffilter.Height + 4;
+  conffpguifo.Height       := conffpguifo.edfilter.top + conffpguifo.edfilter.Height + 10;
+
+  conffpguifo.Width  := conffpguifo.groupcommand.Width + 26;
+  conffpguifo.Height := conffpguifo.edfilter.bottom + 10;
+
+  // confideufo
+  font.Height := fontsize.Value;
+  font.Name   := ansistring(fontname.Value);
+
+  group_file_change.Width := round(ratio * 280);
+  group_system_layout.Width := round(ratio * 280);
+  group_assistive.Width := round(ratio * 280);
+  group_sourceeditor.Width := round(ratio * 314);
+  group_sourceeditor.left := group_assistive.Width + 20;
+  but_ok.Width    := round(ratio * 280) div 2;
+  but_apply.Width := but_ok.Width - 1;
+  but_ok.left     := but_apply.Width + but_apply.left + 1;
+
+  group_file_change.top    := 40;
+  tbfilereload.top         := tbfilereload.Height + 2;
+  tbfilenoload.top         := tbfilereload.top + tbfilereload.Height + 2;
+  tbfileaskload.top        := tbfilenoload.top + tbfilenoload.Height + 2;
+  group_file_change.Height := tbfileaskload.top + tbfileaskload.Height + 10;
+
+  group_system_layout.top := group_file_change.top +
+    group_file_change.Height + 10;
+
+  universal_path.top := universal_path.Height + 2;
+  doubleclic.top     := universal_path.top + universal_path.Height + 2;
+  blinkcaret.top     := doubleclic.top + doubleclic.Height + 2;
+
+  fullpath.top       := blinkcaret.top + blinkcaret.Height + 2;
+  modaldial.top      := fullpath.top + fullpath.Height + 2;
+  autofocus_menu.top := modaldial.top + modaldial.Height + 2;
+  nozorderenable.top := autofocus_menu.top + autofocus_menu.Height + 2;
 
 {$ifdef mswindows}
- confirmdel.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+  confirmdel.top := nozorderenable.top + nozorderenable.Height + 2;
 {$else}
  brepaintcanvas.top :=  nozorderenable.top + nozorderenable.height + 2 ;
  confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
 {$endif}
 
- fontname.top :=  confirmdel.top + confirmdel.height + 2 ;
- fontsize.top :=  fontname.top + fontname.height + 2 ;
+  fontname.top := confirmdel.top + confirmdel.Height + 2;
+  fontsize.top := fontname.top + fontname.Height + 2;
 
- group_system_layout.height := fontsize.top + fontsize.height + 10;
+  group_system_layout.Height := fontsize.top + fontsize.Height + 10;
 
- tbassistive.top := tbassistive.height + 2;
- tesakitdir.top :=  tbassistive.top + tbassistive.height + 2 ;
+  tbassistive.top := tbassistive.Height + 2;
+  tesakitdir.top  := tbassistive.top + tbassistive.Height + 2;
 
- group_assistive.height := tesakitdir.top + tesakitdir.height + 10;
- group_assistive.top :=  group_system_layout.top + group_system_layout.height + 10;
+  group_assistive.Height := tesakitdir.top + tesakitdir.Height + 10;
+  group_assistive.top    := group_system_layout.top + group_system_layout.Height + 10;
 
- group_sourceeditor.top := 10;
+  group_sourceeditor.top := 10;
 
- usedefaulteditoroptions.top := usedefaulteditoroptions.height + 2;
- backupfilecount.top :=  usedefaulteditoroptions.top + usedefaulteditoroptions.height + 2 ;
+  usedefaulteditoroptions.top := usedefaulteditoroptions.Height + 2;
+  backupfilecount.top         := usedefaulteditoroptions.top + usedefaulteditoroptions.Height + 2;
 
- stripmessageesc.top := backupfilecount.top + 10 ;
- closemessages.top :=  backupfilecount.top + backupfilecount.height + 6 ;
+  stripmessageesc.top := backupfilecount.top + 10;
+  closemessages.top   := backupfilecount.top + backupfilecount.Height + 6;
 
- trimtrailingwhitespace.top :=  closemessages.top + closemessages.height + 2 ;
- encoding.top :=  trimtrailingwhitespace.top + trimtrailingwhitespace.height + 2 ;
+  trimtrailingwhitespace.top := closemessages.top + closemessages.Height + 2;
+  encoding.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
 
- encoding.width := round(ratio*84);
- tabstops.top := encoding.top ;
- tabstops.left := encoding.right + 40 ;
- spacetabs.top := tabstops.bottom - spacetabs.height ;
- spacetabs.left := tabstops.right + 4 ;
+  encoding.Width := round(ratio * 84);
+  tabstops.top   := encoding.top;
+  tabstops.left  := encoding.right + 40;
+  spacetabs.top  := tabstops.bottom - spacetabs.Height;
+  spacetabs.left := tabstops.right + 4;
 
- rightmarginchars.top :=  encoding.top + encoding.height + 2 ;
+  rightmarginchars.top := encoding.top + encoding.Height + 2;
 
- blockindent.top := rightmarginchars.top ;
- tabindent.top := blockindent.bottom - tabindent.height  ;
+  blockindent.top := rightmarginchars.top;
+  tabindent.top   := blockindent.bottom - tabindent.Height;
 
- blockindent.left := encoding.right + 40 ;
- tabindent.left := blockindent.right + 4 ;
+  blockindent.left := encoding.right + 40;
+  tabindent.left   := blockindent.right + 4;
 
 
- colornote.top :=  rightmarginchars.top + rightmarginchars.height + 2 ;
- colorwarning.top :=  colornote.top + colornote.height + 2 ;
- colorerror.top :=  colorwarning.top + colorwarning.height + 2 ;
+  colornote.top    := rightmarginchars.top + rightmarginchars.Height + 2;
+  colorwarning.top := colornote.top + colornote.Height + 2;
+  colorerror.top   := colorwarning.top + colorwarning.Height + 2;
 
- deflayout.top := colorerror.top + colorerror.height + 2 ;
- defsynt.top :=  deflayout.top + deflayout.height + 2 ;
- addwhiteaftercomma.top :=  defsynt.top + defsynt.height + 2 ;
+  deflayout.top := colorerror.top + colorerror.Height + 2;
+  defsynt.top   := deflayout.top + deflayout.Height + 2;
+  addwhiteaftercomma.top := defsynt.top + defsynt.Height + 2;
 
- group_sourceeditor.height := addwhiteaftercomma.top + addwhiteaftercomma.height + 10;
+  group_sourceeditor.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
 
 {$ifdef mswindows}
-  height := group_sourceeditor.height + (universal_path.height * 2);
+  Height := group_sourceeditor.Height + (universal_path.Height * 2);
 {$else}
   height := group_sourceeditor.height + (universal_path.height * 3);
 {$endif}
 
-if findformcreated then finddialogdotextsize;
+  if findformcreated then
+    finddialogdotextsize;
 
-rect1 := application.screenrect(window);
+  rect1 := application.screenrect(window);
 
-fontname.left := 10;
-fontsize.left := 10;
+  fontname.left := 10;
+  fontsize.left := 10;
 
-//group_file_changed2.width := round(ratio * 280);
+  //group_file_changed2.width := round(ratio * 280);
 
-width := group_sourceeditor.left + group_assistive.width + round(40 * ratio);
+  Width := group_sourceeditor.left + group_assistive.Width + round(40 * ratio);
 
-messagefo.Messages.font.height := fontsize.value;
-messagefo.frame.grip_size := round(12*ratio);
+  messagefo.Messages.font.Height := fontsize.Value;
+  messagefo.frame.grip_size      := round(12 * ratio);
 
-messagefo.Messages.font.name := ansistring(fontname.value);
+  messagefo.Messages.font.Name := ansistring(fontname.Value);
 
-debuggerfo.statdisp.font.name := ansistring(fontname.value);
+  debuggerfo.statdisp.font.Name := ansistring(fontname.Value);
 
-//dialogfilesfo.selected_file.frame.font.height := fontsize.value;
-//group_file_change.width := group_sourceeditor.width;
+  //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
+  //group_file_change.width := group_sourceeditor.width;
 
-invalidate;
+  invalidate;
 
-left := (rect1.cx - width) div 2;
-
+  left := (rect1.cx - Width) div 2;
 
 end;
 
-procedure tconfideufo.oncloseev(const sender: TObject);
+procedure tconfideufo.oncloseev(const Sender: TObject);
 begin
-mainfo.ismodal:= confideufo.modaldial.value;
-onapply(nil);
+  mainfo.ismodal := confideufo.modaldial.Value;
+  onapply(nil);
 end;
 
-procedure tconfideufo.onapply(const sender: TObject);
+procedure tconfideufo.onapply(const Sender: TObject);
 begin
-messagefo.updateprojectoptions;
-onchangefont;
-noconfirmdelete := confirmdel.value;
-blinkingcaret :=  blinkcaret.value;
-//mse_repaintcanvas := brepaintcanvas.value;
+  messagefo.updateprojectoptions;
+  onchangefont;
+  noconfirmdelete := confirmdel.Value;
+  blinkingcaret   := blinkcaret.Value;
+  //mse_repaintcanvas := brepaintcanvas.value;
 end;
 
-procedure tconfideufo.onok(const sender: TObject);
+procedure tconfideufo.onok(const Sender: TObject);
 begin
-onapply(sender);
-close;
+  onapply(Sender);
+  Close;
 end;
 
-procedure tconfideufo.oncreated(const sender: TObject);
+procedure tconfideufo.oncreated(const Sender: TObject);
 begin
 {$ifdef mswindows}
-brepaintcanvas.visible := false;
+  brepaintcanvas.Visible := False;
 {$endif}
+setlangextrasettings();
+
+end;
+
+procedure tconfideufo.setlangextrasettings();
+begin
+
+  Caption := stockobjects.captions[sc_extrasettings];
+  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  but_apply.Caption  := stockobjects.modalresulttext[mr_ok];
+  but_apply.Caption  := settingstext(se_apply);
+   
+
+{  
+  path.caption :=  stockobjects.captions[sc_path]; 
+  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  
+  layoutdir.frame.caption := '${LAYOUTDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
+}
 end;
 
 end.
+

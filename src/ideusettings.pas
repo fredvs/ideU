@@ -7,21 +7,66 @@ unit ideusettings;
 interface
 
 uses
- fpg_iniutils_ideu, mseglob, mseguiglob, msegui, mseclasses, mseforms, msestat,
- msestatfile, msesimplewidgets, msefiledialogx, msestrings, msemacros,
- msedataedits,msebitmap, msedatanodes, mseedit, mseevent, msegraphutils,
- msegrids, mselistbrowser,msemenus, msesys, msetypes, msegraphics, msewidgets,
- mseactions, mseifiglob,msesplitter, mseificomp, mseificompglob, msememodialog,
- msewidgetgrid,mseapplication, msestream, SysUtils, mseact, msedragglob,
- msescrollbar, msetabs,msegraphedits, msedropdownlist, msegridsglob,mseeditglob,
- mserichstring,msetextedit, msecolordialog, projectoptionsform;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  fpg_iniutils_ideu,
+  mseglob,
+  mseguiglob,
+  msegui,
+  mseclasses,
+  mseforms,
+  msestat,
+  msestatfile,
+  msesimplewidgets,
+  msefiledialogx,
+  msestrings,
+  msemacros,
+  msedataedits,
+  msebitmap,
+  msedatanodes,
+  mseedit,
+  mseevent,
+  msegraphutils,
+  msegrids,
+  mselistbrowser,
+  msemenus,
+  msesys,
+  msetypes,
+  msegraphics,
+  msewidgets,
+  mseactions,
+  mseifiglob,
+  msesplitter,
+  mseificomp,
+  mseificompglob,
+  msememodialog,
+  msewidgetgrid,
+  mseapplication,
+  msestream,
+  SysUtils,
+  mseact,
+  msedragglob,
+  msescrollbar,
+  msetabs,
+  msegraphedits,
+  msedropdownlist,
+  msegridsglob,
+  mseeditglob,
+  mserichstring,
+  msetextedit,
+  msecolordialog,
+  projectoptionsform;
 
 type
   settingsmacroty = (sma_fpcdir, sma_fpclibdir, sma_msedir, sma_mselibdir,
     sma_syntaxdefdir, sma_templatedir, sma_layoutdir, sma_compstoredir,
     sma_compiler, sma_debugger,
     sma_exeext, sma_target, sma_targetosdir, sma_fpguidir, sma_ideudir,
-    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_bgrabitmapdir,sma_fpcsrcdir);
+    sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_bgrabitmapdir, sma_fpcsrcdir);
 
 const
 
@@ -136,42 +181,40 @@ type
 
   tsettingsfo = class(tmseform)
     tstatfile1: tstatfile;
-   setting_tab: ttabwidget;
-   path: ttabpage;
-   layoutdir: tfilenameeditx;
-   syntaxdefdir: tfilenameeditx;
-   templatedir: tfilenameeditx;
-   docviewdir: tfilenameeditx;
-   fpguidir: tfilenameeditx;
-   compstoredir: tfilenameeditx;
-   mselibdir: tfilenameeditx;
-   msedir: tfilenameeditx;
-   debugger: tfilenameeditx;
-   compiler: tfilenameeditx;
-   lcldir: tfilenameeditx;
-   fpcsrcdir: tfilenameeditx;
-   macros: ttabpage;
-   macrogrid: twidgetgrid;
-   macrovalue: tmemodialogedit;
-   macroname: tstringedit;
-   other: ttabpage;
-   printcomm: tstringedit;
-   exeext: tstringedit;
-   target: tstringedit;
-   targetosdir: tstringedit;
-   shortcutbu: tbutton;
-   but_ok: tbutton;
-   bgrabitmapdir: tfilenameeditx;
-    procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring;
-      var accept: boolean);
+    setting_tab: ttabwidget;
+    path: ttabpage;
+    layoutdir: tfilenameeditx;
+    syntaxdefdir: tfilenameeditx;
+    templatedir: tfilenameeditx;
+    docviewdir: tfilenameeditx;
+    fpguidir: tfilenameeditx;
+    compstoredir: tfilenameeditx;
+    mselibdir: tfilenameeditx;
+    msedir: tfilenameeditx;
+    debugger: tfilenameeditx;
+    compiler: tfilenameeditx;
+    lcldir: tfilenameeditx;
+    fpcsrcdir: tfilenameeditx;
+    macros: ttabpage;
+    macrogrid: twidgetgrid;
+    macrovalue: tmemodialogedit;
+    macroname: tstringedit;
+    other: ttabpage;
+    printcomm: tstringedit;
+    exeext: tstringedit;
+    target: tstringedit;
+    targetosdir: tstringedit;
+    shortcutbu: TButton;
+    but_ok: TButton;
+    bgrabitmapdir: tfilenameeditx;
+    procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
     procedure formoncreate(const Sender: TObject);
-    procedure setvalue(const Sender: TObject; var avalue: msestring;
-      var accept: boolean);
-    procedure setprintcomm(const Sender: TObject; var avalue: msestring;
-      var accept: boolean);
+    procedure setvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
+    procedure setprintcomm(const Sender: TObject; var avalue: msestring; var accept: Boolean);
     procedure editshortcuts(const Sender: TObject);
     procedure checkdirlayout(const Sender: TObject);
-  private
+    procedure setlangsettings();
+ private
     fshortcutcontroller: tshortcutcontroller;
   protected
     function widgetstomacros: settingsmacrosty;
@@ -189,13 +232,18 @@ procedure updatesettings(const filer: tstatfiler);
 function getsettingsmacros: macroinfoarty;
 function getsyssettingsmacros: macroinfoarty;
 function getprintcommand: string;
-function editsettings(const acaption: msestring = '';
-  const shortcuts: tshortcutcontroller = nil): boolean;
+function editsettings(const acaption: msestring = ''; const shortcuts: tshortcutcontroller = nil): Boolean;
 
 implementation
 
 uses
-  ideusettings_mfm, Classes, confideu, mclasses, msesysintf, msefileutils, mseshortcutdialog;
+  ideusettings_mfm,
+  Classes,
+  confideu,
+  mclasses,
+  msesysintf,
+  msefileutils,
+  mseshortcutdialog;
 
 function getsettingsmacros1(var amacros: settingsmacrosty): macroinfoarty;
 var
@@ -204,17 +252,17 @@ var
 begin
   with amacros do
   begin
-    result := nil;
+    Result := nil;
     setlength(globmacrovalues, length(globmacronames));
     setlength(Result, Ord(high(settingsmacroty)) + 1 + length(globmacronames));
     for  ma1 := low(settingsmacroty) to high(settingsmacroty) do
     begin
-      Result[Ord(ma1)].Name := settingsmacronames[ma1];
+      Result[Ord(ma1)].Name  := settingsmacronames[ma1];
       Result[Ord(ma1)].Value := macros[ma1];
     end;
     for int1 := 0 to high(globmacronames) do
     begin
-      Result[Ord(high(settingsmacroty)) + 1 + int1].Name := globmacronames[int1];
+      Result[Ord(high(settingsmacroty)) + 1 + int1].Name  := globmacronames[int1];
       Result[Ord(high(settingsmacroty)) + 1 + int1].Value := globmacrovalues[int1];
     end;
   end;
@@ -229,11 +277,9 @@ function getsyssettingsmacros: macroinfoarty;
 var
   int1: integer;
 begin
-  Result := getsettingsmacros1(settings.macros);
+  Result   := getsettingsmacros1(settings.macros);
   for int1 := 0 to Ord(sma_debugger) do
-  begin
     Result[int1].Value := tosysfilepath(Result[int1].Value);
-  end;
 end;
 
 function getprintcommand: string;
@@ -248,22 +294,14 @@ begin
   with settings, macros do
   begin
     if filer.iswriter then
-    begin
       for ma1 := low(settingsmacroty) to high(settingsmacroty) do
-      begin
-        filer.updatevalue(settingsmacronames[ma1], macros[ma1]);
-      end;
-    end
+        filer.updatevalue(settingsmacronames[ma1], macros[ma1])
     else
     begin
       with tstatreader(filer) do
-      begin
         for ma1 := low(settingsmacroty) to high(settingsmacroty) do
-        begin
           macros[ma1] := readmsestring(settingsmacronames[ma1], defaultsettingmacros[ma1]);
-        end;
-      end;
-      printcommand := ansistring(sys_getprintcommand);
+      printcommand    := ansistring(sys_getprintcommand);
     end;
     filer.updatevalue('printcommand', printcommand);
     filer.updatevalue('globmacronames', globmacronames);
@@ -272,110 +310,106 @@ begin
 
 end;
 
-function editsettings(const acaption: msestring = '';
-  const shortcuts: tshortcutcontroller = nil): boolean;
-   var  ratio: double;
+function editsettings(const acaption: msestring = ''; const shortcuts: tshortcutcontroller = nil): Boolean;
+var
+  ratio: double;
 begin
-  Result := False;
+  Result     := False;
   settingsfo := tsettingsfo.Create(nil);
 
   with settingsfo do
-  begin
     try
-      font.height := confideufo.fontsize.value;
-      font.name := ansistring(confideufo.fontname.value);
-      setting_tab.tab_size := confideufo.fontsize.value + 8;
-      but_ok.height := confideufo.fontsize.value + 8;
-      
-      ratio := confideufo.fontsize.value / 12;
-      
- width := round(ratio* 430) + 16;
- 
- setting_tab.width := width - 4;
-  
- path.width := width ;
-  
- compiler.top := 4;
- compiler.width := round(ratio* 430);
- 
- compiler.invalidate;     
-      
- 
-  debugger.top :=  compiler.top + compiler.height + 2 ;
- debugger.width := compiler.width;
- 
- fpcsrcdir.top :=  debugger.top + debugger.height + 2 ;
- fpcsrcdir.width := compiler.width;
- 
- msedir.top :=  fpcsrcdir.top + compiler.height + 2 ;
- msedir.width := compiler.width;
- 
- mselibdir.top :=  msedir.top + compiler.height + 2 ;
- mselibdir.width := compiler.width;
- 
- compstoredir.top :=  mselibdir.top + compiler.height + 2 ;
- compstoredir.width := compiler.width;
- 
- fpguidir.top :=  compstoredir.top + compiler.height + 2 ;
- fpguidir.width := compiler.width;
- 
- docviewdir.top :=  fpguidir.top + compiler.height + 2 ;
- docviewdir.width := compiler.width;
- 
- lcldir.top :=  docviewdir.top + compiler.height + 2 ;
- lcldir.width := compiler.width;
- 
- layoutdir.top :=  lcldir.top + compiler.height + 2 ;
- layoutdir.width := compiler.width;
+      font.Height   := confideufo.fontsize.Value;
+      font.Name     := ansistring(confideufo.fontname.Value);
+      setting_tab.tab_size := confideufo.fontsize.Value + 8;
+      but_ok.Height := confideufo.fontsize.Value + 8;
 
- templatedir.top :=  layoutdir.top + compiler.height + 2 ;
- templatedir.width := compiler.width;
- 
-  syntaxdefdir.top :=  templatedir.top + compiler.height + 2 ;
- syntaxdefdir.width := compiler.width;
+      ratio := confideufo.fontsize.Value / 12;
 
-   bgrabitmapdir.top :=  syntaxdefdir.top + compiler.height + 2 ;
- bgrabitmapdir.width := compiler.width;
- 
+      Width := round(ratio * 430) + 16;
 
- setting_tab.height := bgrabitmapdir.bottom + compiler.height ;
- 
- height := setting_tab.height + 4;
- 
- path.height := setting_tab.height ;       
+      setting_tab.Width := Width - 4;
 
-  
-exeext.top := 60;
- exeext.width := compiler.width;
- 
- target.top :=  exeext.top + compiler.height + 30 ;
- target.width := compiler.width;
- 
- printcomm.top :=  target.top + debugger.height + 30 ;
- printcomm.width := compiler.width;
- 
- targetosdir.top :=  printcomm.top + compiler.height + 30 ;
- targetosdir.width := compiler.width;
- 
- shortcutbu.top :=  targetosdir.top + compiler.height + 60 ;
- shortcutbu.left := (setting_tab.width - shortcutbu.width) div 2;     
+      path.Width := Width;
 
-      fshortcutcontroller := shortcuts;
+      compiler.top   := 4;
+      compiler.Width := round(ratio * 430);
+
+      compiler.invalidate;
+
+
+      debugger.top   := compiler.top + compiler.Height + 2;
+      debugger.Width := compiler.Width;
+
+      fpcsrcdir.top   := debugger.top + debugger.Height + 2;
+      fpcsrcdir.Width := compiler.Width;
+
+      msedir.top   := fpcsrcdir.top + compiler.Height + 2;
+      msedir.Width := compiler.Width;
+
+      mselibdir.top   := msedir.top + compiler.Height + 2;
+      mselibdir.Width := compiler.Width;
+
+      compstoredir.top   := mselibdir.top + compiler.Height + 2;
+      compstoredir.Width := compiler.Width;
+
+      fpguidir.top   := compstoredir.top + compiler.Height + 2;
+      fpguidir.Width := compiler.Width;
+
+      docviewdir.top   := fpguidir.top + compiler.Height + 2;
+      docviewdir.Width := compiler.Width;
+
+      lcldir.top   := docviewdir.top + compiler.Height + 2;
+      lcldir.Width := compiler.Width;
+
+      layoutdir.top   := lcldir.top + compiler.Height + 2;
+      layoutdir.Width := compiler.Width;
+
+      templatedir.top   := layoutdir.top + compiler.Height + 2;
+      templatedir.Width := compiler.Width;
+
+      syntaxdefdir.top   := templatedir.top + compiler.Height + 2;
+      syntaxdefdir.Width := compiler.Width;
+
+      bgrabitmapdir.top   := syntaxdefdir.top + compiler.Height + 2;
+      bgrabitmapdir.Width := compiler.Width;
+
+
+      setting_tab.Height := bgrabitmapdir.bottom + compiler.Height;
+
+      Height := setting_tab.Height + 4;
+
+      path.Height := setting_tab.Height;
+
+
+      exeext.top   := 60;
+      exeext.Width := compiler.Width;
+
+      target.top   := exeext.top + compiler.Height + 30;
+      target.Width := compiler.Width;
+
+      printcomm.top   := target.top + debugger.Height + 30;
+      printcomm.Width := compiler.Width;
+
+      targetosdir.top   := printcomm.top + compiler.Height + 30;
+      targetosdir.Width := compiler.Width;
+
+      shortcutbu.top  := targetosdir.top + compiler.Height + 60;
+      shortcutbu.left := (setting_tab.Width - shortcutbu.Width) div 2;
+
+      fshortcutcontroller  := shortcuts;
       if shortcuts = nil then
-      begin
         shortcutbu.Visible := False;
-      end;
-      if acaption <> '' then
-      begin
-        settingsfo.Caption := acaption;
-      end;
-      settingsfo.Caption := 'Global Settings of ideU';
+
+      setlangsettings();
+      //  settingsfo.Caption := 'Global Settings of ideU';
+
       if Show(True) = mr_ok then
       begin
         Result := True;
         with settings do
         begin
-          macros := widgetstomacros;
+          macros       := widgetstomacros;
           //     expandprojectmacros;
           printcommand := ansistring(printcomm.Value);
         end;
@@ -383,7 +417,6 @@ exeext.top := 60;
     finally
       Free;
     end;
-  end;
 end;
 
 { tsettingsfo }
@@ -394,29 +427,29 @@ begin
   begin
     // fpcdir.value:= macros[sma_fpcdir];
     // fpclibdir.value:= macros[sma_fpclibdir];
-    msedir.Value := macros[sma_msedir];
-    docviewdir.Value := macros[sma_docviewdir];
-    mselibdir.Value := macros[sma_mselibdir];
+    msedir.Value       := macros[sma_msedir];
+    docviewdir.Value   := macros[sma_docviewdir];
+    mselibdir.Value    := macros[sma_mselibdir];
     syntaxdefdir.Value := macros[sma_syntaxdefdir];
-    layoutdir.Value := macros[sma_layoutdir];
-    templatedir.Value := macros[sma_templatedir];
-    targetosdir.Value := macros[sma_targetosdir];
-    compiler.Value := macros[sma_compiler];
+    layoutdir.Value    := macros[sma_layoutdir];
+    templatedir.Value  := macros[sma_templatedir];
+    targetosdir.Value  := macros[sma_targetosdir];
+    compiler.Value     := macros[sma_compiler];
 
    {$ifdef polydev}
     fpguidir.Value := gINI.ReadString('Path', 'fpgui_dir', '/usr/local/share/fpgui/');
   {$else}
-    fpguidir.Value := macros[sma_fpguidir];
+    fpguidir.Value        := macros[sma_fpguidir];
   {$endif}
-    bgrabitmapdir.Value := macros[sma_bgrabitmapdir];
-    fpcsrcdir.Value := macros[sma_fpcsrcdir];
-    lcldir.Value := macros[sma_lcldir];
-    compstoredir.Value := macros[sma_compstoredir];
-    debugger.Value := macros[sma_debugger];
-    exeext.Value := macros[sma_exeext];
-    target.Value := macros[sma_target];
-    printcomm.Value := UTF8Decode(printcommand);
-    macroname.gridvalues := globmacronames;
+    bgrabitmapdir.Value   := macros[sma_bgrabitmapdir];
+    fpcsrcdir.Value       := macros[sma_fpcsrcdir];
+    lcldir.Value          := macros[sma_lcldir];
+    compstoredir.Value    := macros[sma_compstoredir];
+    debugger.Value        := macros[sma_debugger];
+    exeext.Value          := macros[sma_exeext];
+    target.Value          := macros[sma_target];
+    printcomm.Value       := UTF8Decode(printcommand);
+    macroname.gridvalues  := globmacronames;
     macrovalue.gridvalues := globmacrovalues;
   end;
 end;
@@ -465,36 +498,29 @@ begin
     macros[sma_exeext] := exeext.Value;
     macros[sma_target] := target.Value;
     macros[sma_targetosdir] := targetosdir.Value;
-    globmacronames := macroname.gridvalues;
+    globmacronames  := macroname.gridvalues;
     globmacrovalues := macrovalue.gridvalues;
   end;
 end;
 
-procedure tsettingsfo.epandfilenamemacro(const Sender: TObject;
-  var avalue: msestring; var accept: boolean);
+procedure tsettingsfo.epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 var
   mac1: settingsmacrosty;
 begin
-  mac1 := widgetstomacros;
+  mac1   := widgetstomacros;
   avalue := expandmacros(avalue, getsettingsmacros1(mac1));
 end;
 
-procedure tsettingsfo.setvalue(const Sender: TObject; var avalue: msestring;
-  var accept: boolean);
+procedure tsettingsfo.setvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
   if avalue = '' then
-  begin
     avalue := defaultsettingmacros[settingsmacroty(TComponent(Sender).tag)];
-  end;
 end;
 
-procedure tsettingsfo.setprintcomm(const Sender: TObject; var avalue: msestring;
-  var accept: boolean);
+procedure tsettingsfo.setprintcomm(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 begin
   if avalue = '' then
-  begin
     avalue := sys_getprintcommand;
-  end;
 end;
 
 procedure tsettingsfo.editshortcuts(const Sender: TObject);
@@ -502,39 +528,149 @@ begin
   shortcutdialog(fshortcutcontroller);
 end;
 
+procedure tsettingsfo.setlangsettings();
+begin
+
+  Caption := stockobjects.captions[sc_generalsettings];
+  
+  path.caption :=  stockobjects.captions[sc_path]; 
+  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  
+  layoutdir.frame.caption := '${LAYOUTDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
+   
+  layoutdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / ' + stockobjects.captions[sc_layout];
+  
+  syntaxdefdir.frame.caption := '${SYNTAXDEFDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_syntax];
+   
+  syntaxdefdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / ' + stockobjects.captions[sc_syntax];
+  
+  templatedir.frame.caption := '${TEMPLATEDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  projectoptionstext(po_templates);
+   
+  templatedir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / ' + projectoptionstext(po_templates);
+
+  docviewdir.frame.caption := '${DOCVIEWDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'DocView';
+   
+  docviewdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / ' + 'DocView';
+  
+  fpguidir.frame.caption := '${FPGUIDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'fpGUI';
+   
+  fpguidir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'fpGUI';
+
+  compstoredir.frame.caption := '${COMPSTOREDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'CompStore';
+   
+  compstoredir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'CompStore';
+  
+  mselibdir.frame.caption := '${MSELIBDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'MSEgui/lib';
+   
+  mselibdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'MSEgui/lib';
+  
+  msedir.frame.caption := '${MSEDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'MSEgui';
+   
+  msedir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'MSEgui';
+ 
+   debugger.frame.caption := '${DEBUGGER} ' + 
+  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_debugcommand);
+   
+  debugger.controller.captiondir := stockobjects.captions[sc_file] + 
+  ' / '  + projectoptionstext(po_debugcommand);
+  
+     debugger.frame.caption := '${DEBUGGER} ' + 
+  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_debugcommand);
+   
+  debugger.controller.captionopen := stockobjects.captions[sc_file] + 
+  ' / '  + projectoptionstext(po_debugcommand);
+
+  compiler.frame.caption := '${COMPILER} ' + 
+  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_makecommand);
+   
+  compiler.controller.captionopen := stockobjects.captions[sc_file] + 
+  ' / '  + projectoptionstext(po_makecommand);
+  
+  lcldir.frame.caption := '${LCLDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'LCL (Lazarus)';
+   
+  lcldir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'LCL (Lazarus)';
+
+    fpcsrcdir.frame.caption := '${FPCSRCDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'fpcsrc';
+   
+  fpcsrcdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'fpcsrc';
+  
+   bgrabitmapdir.frame.caption := '${BGRABITMAPDIR} ' + 
+  stockobjects.captions[sc_directory] + ' / ' +  'BGRABitmap';
+   
+  bgrabitmapdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  ' / '  +  'BGRABitmap';
+    
+  macros.caption := projectoptionstext(po_macros);
+  macrogrid.frame.caption := projectoptionstext(po_macros); 
+  
+ // macrogrid.fixrows[-1].captions.Count := 2;
+  macrogrid.fixrows[-1].captions[0].Caption := projectoptionstext(po_name);
+  macrogrid.fixrows[-1].captions[1].Caption := stockobjects.captions[sc_value];
+ 
+  other.caption := stockobjects.captions[sc_other];
+  printcomm.frame.caption := stockobjects.captions[sc_printcommand];
+  exeext.frame.caption := '${EXEEXT} ' + projectoptionstext(po_exeextension); 
+  target.frame.caption := '${TARGET} OS ' + stockobjects.captions[sc_target];
+  targetosdir.frame.caption := '${TARGETMSE} OS-MSEgui ' + stockobjects.captions[sc_target];
+  shortcutbu.caption := stockobjects.captions[sc_shortcut];
+   
+end;
+
 procedure tsettingsfo.checkdirlayout(const Sender: TObject);
 begin
   if confideufo.universal_path.Value = False then
   begin
-    compiler.controller.options := [fdo_sysfilename, fdo_savelastdir];
-    debugger.controller.options := [fdo_sysfilename, fdo_savelastdir];
-    msedir.controller.options := [fdo_sysfilename, fdo_directory];
-    compstoredir.controller.options := [fdo_sysfilename, fdo_directory];
-    fpguidir.controller.options := [fdo_sysfilename, fdo_directory];
-    fpcsrcdir.controller.options := [fdo_sysfilename, fdo_directory];
-     bgrabitmapdir.controller.options := [fdo_sysfilename, fdo_directory];
-    lcldir.controller.options := [fdo_sysfilename, fdo_directory];
-    docviewdir.controller.options := [fdo_sysfilename, fdo_directory];
-    templatedir.controller.options := [fdo_sysfilename, fdo_directory];
-    syntaxdefdir.controller.options := [fdo_sysfilename, fdo_directory];
-    layoutdir.controller.options := [fdo_sysfilename, fdo_directory];
+    compiler.controller.options      := [fdo_sysfilename, fdo_savelastdir];
+    debugger.controller.options      := [fdo_sysfilename, fdo_savelastdir];
+    msedir.controller.options        := [fdo_sysfilename, fdo_directory];
+    compstoredir.controller.options  := [fdo_sysfilename, fdo_directory];
+    fpguidir.controller.options      := [fdo_sysfilename, fdo_directory];
+    fpcsrcdir.controller.options     := [fdo_sysfilename, fdo_directory];
+    bgrabitmapdir.controller.options := [fdo_sysfilename, fdo_directory];
+    lcldir.controller.options        := [fdo_sysfilename, fdo_directory];
+    docviewdir.controller.options    := [fdo_sysfilename, fdo_directory];
+    templatedir.controller.options   := [fdo_sysfilename, fdo_directory];
+    syntaxdefdir.controller.options  := [fdo_sysfilename, fdo_directory];
+    layoutdir.controller.options     := [fdo_sysfilename, fdo_directory];
   end
   else
   begin
-    bgrabitmapdir.controller.options := [fdo_directory];  
-    compiler.controller.options := [fdo_savelastdir];
-    debugger.controller.options := [fdo_savelastdir];
-    msedir.controller.options := [fdo_directory];
-    mselibdir.controller.options := [fdo_directory];
-    compstoredir.controller.options := [fdo_directory];
-    fpguidir.controller.options := [fdo_directory];
-    fpcsrcdir.controller.options := [fdo_directory];
-    lcldir.controller.options := [fdo_directory];
-    docviewdir.controller.options := [fdo_directory];
-    templatedir.controller.options := [fdo_directory];
-    syntaxdefdir.controller.options := [fdo_directory];
-    layoutdir.controller.options := [fdo_directory];
+    bgrabitmapdir.controller.options := [fdo_directory];
+    compiler.controller.options      := [fdo_savelastdir];
+    debugger.controller.options      := [fdo_savelastdir];
+    msedir.controller.options        := [fdo_directory];
+    mselibdir.controller.options     := [fdo_directory];
+    compstoredir.controller.options  := [fdo_directory];
+    fpguidir.controller.options      := [fdo_directory];
+    fpcsrcdir.controller.options     := [fdo_directory];
+    lcldir.controller.options        := [fdo_directory];
+    docviewdir.controller.options    := [fdo_directory];
+    templatedir.controller.options   := [fdo_directory];
+    syntaxdefdir.controller.options  := [fdo_directory];
+    layoutdir.controller.options     := [fdo_directory];
   end;
 end;
 
+
 end.
+
