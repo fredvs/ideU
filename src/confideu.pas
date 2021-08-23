@@ -826,27 +826,7 @@ begin
 
   tbfilenoload.frame.caption := settingstext(se_filenoload);
   tbfileaskload.frame.caption := settingstext(se_fileaskload);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-
-
-  
-
-{  
-  path.caption :=  stockobjects.captions[sc_path]; 
-  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
-  
-  layoutdir.frame.caption := '${LAYOUTDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
-}
+ 
 end;
 
 end.
