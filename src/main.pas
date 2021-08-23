@@ -207,7 +207,6 @@ type
     convexdark: tfacecomp;
     concavedark: tfacecomp;
     ttimer1: ttimer;
-    langdef: tedit;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
