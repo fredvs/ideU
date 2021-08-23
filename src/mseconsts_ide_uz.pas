@@ -12,7 +12,7 @@
 }
 
 
-unit mseconsts_ide_uzcyr;
+unit mseconsts_ide_uz;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses

@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
- value=po_trimtrailing
+ value=uzcyr
  history=20
+  uzcyr
   po_trimtrailing
   sc_directory
   global setting
@@ -157,7 +158,6 @@ findinfiledialog=92
   fixrows[
   fixcols.
   msestockobjects
-  mseconst
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1609,19 +1609,21 @@ findhistory=20
  source
  zorder
 findoptions=1
-editpos=12
+editpos=14
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,35
+ 22,14
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1634,7 +1636,9 @@ bookmarks8=0
 bookmarks9=0
 bookmarks10=0
 bookmarks11=0
-sourcefiles=12
+bookmarks12=0
+bookmarks13=0
+sourcefiles=14
  ${PROJECTDIR}/confideu.mfm
  ${PROJECTDIR}/msestockobjects.pas
  ${PROJECTDIR}/mseconsts_ide_ru.pas
@@ -1647,7 +1651,9 @@ sourcefiles=12
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/mseconsts_ide_en.pas
-relpaths=12
+ ${PROJECTDIR}/mseconsts_ide.pas
+ ${PROJECTDIR}/mseconsts_ide_uzcyr.pas
+relpaths=14
  confideu.mfm
  msestockobjects.pas
  mseconsts_ide_ru.pas
@@ -1660,8 +1666,12 @@ relpaths=12
  actionsmodule.pas
  confideu.pas
  mseconsts_ide_en.pas
-ismoduletexts=12
+ mseconsts_ide.pas
+ mseconsts_ide_uzcyr.pas
+ismoduletexts=14
  -1
+ 0
+ 0
  0
  0
  0
@@ -1694,23 +1704,25 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=12
+order=14
  0
  1
  2
  3
- 10
- 7
- 9
- 5
- 11
- 6
  4
+ 5
+ 6
+ 7
  8
-firsttab=5
-index=10
+ 9
+ 10
+ 12
+ 13
+ 11
+firsttab=6
+index=12
 [layout]
-windowlayout=594
+windowlayout=626
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1829,7 +1841,7 @@ windowlayout=594
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -2169,16 +2181,15 @@ windowlayout=594
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide.pas
- history=20
-  /home/fred/ideu/src/mseconsts_ide.pas
-  /home/fred/ideu/src/confideu.pas
+ value=/home/fred/ideu/src/mseconsts_ide_uzcyr.pas
+ history=50
   /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/splash.pas
+  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/msestockobjects_ide.pas
   /home/fred/ideu/src/msestockobjects_ide_mfm.pas
@@ -2191,6 +2202,37 @@ windowlayout=594
   /home/fred/ideu/src/mseconsts_es.pas
   /home/fred/ideu/src/mseconsts_ru.pas
   /home/fred/ideu/src/mseconsts.pas
+  /home/fred/ideu/src/mseconsts_id.pas
+  /home/fred/ideu/src/mseconsts_zh.pas
+  /home/fred/ideu/src/mseconsts_uzcyr.pas
+  /home/fred/ideu/src/mseconsts_de.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
+  /home/fred/ideu/src/mseconsts_fr.pas
+  /home/fred/ideu/src/objectinspector.pas
+  /home/fred/demo_mse/po2const2po/mseguiintf.pas
+  /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
+  /home/fred/demo_mse/po2const2po/mseconsts.pas
+  /home/fred/demo_mse/po2const2po/mseconsts2.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
+  /home/fred/strumpract/src/dialogfiles.pas
+  /home/fred/strumpract/src/status.pas
+  /home/fred/uos/src/uos_portaudio.pas
+  /home/fred/uos/uos.jpg
+  /home/fred/mseide-msegui/apps/ide/main.pas
+  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
+  /home/fred/demo_mse/ovaleform/xshape_example.c
+  /home/fred/mseide-msegui/lib/common/kernel/linux/cwstring.pas
+  /home/fred/mseide-msegui/lib/common/fpccompatibility/msezstream.pas
+  /home/fred/mseide-msegui/lib/common/image/mseformatjpgwrite.pas
+  /home/fred/demo_mse/ovaleform/main.pas
+  /home/fred/freepascal-ootb_320/packages/x11/src/xcms.pp
+  /home/fred/freepascal-ootb_320/packages/x11/src/xutil.pp
+  /home/fred/cafecentral/cc_back.bat
+  /home/fred/strumpract/src/define.inc
+  /home/fred/strumpract/src/findmessage.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/dockpanel1.pas
+  /home/fred/strumpract/src/config.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2212,21 +2254,23 @@ windowlayout=594
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=12
+ order=14
   0
   1
   2
   3
-  10
-  7
-  9
-  5
-  11
-  6
   4
+  5
+  6
+  7
   8
- firsttab=5
- index=10
+  9
+  10
+  12
+  13
+  11
+ firsttab=6
+ index=12
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

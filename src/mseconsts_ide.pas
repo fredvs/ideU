@@ -33,12 +33,12 @@ type
   defaultgeneratortextty    = array[textgeneratorty] of textgeneratorfuncty;
   pdefaultgeneratortextty   = ^defaultgeneratortextty;
 
-  langty = (la_none, la_en, la_de, la_ru, la_es, la_uzcyr, la_id, la_zh,
+  langty = (la_none, la_en, la_de, la_ru, la_es, la_uz, la_id, la_zh,
     la_fr);
 
 const
   langnames: array[langty] of string = (
-    '', 'en', 'de', 'ru', 'es', 'uz_cyr', 'id', 'zh',
+    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh',
     'fr');
 
 function settingstext(const index: isettingsty): msestring;
