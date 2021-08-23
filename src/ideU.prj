@@ -924,14 +924,17 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  ACTIONSMO
+ CONFIDEUFO
  SOURCEFO
-moduletypes=2
+moduletypes=3
  TACTIONSMO
+ TCONFIDEUFO
  TSOURCEFO
-modulefiles=2
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
@@ -1583,8 +1586,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=barre
+finddtext=setlang
 findhistory=20
+ setlang
  barre
  indent
  blokin
@@ -1604,15 +1608,16 @@ findhistory=20
  whitespace
  source
  zorder
- nozorder
 findoptions=1
-editpos=10
+editpos=12
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
- 0,132
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1627,7 +1632,9 @@ bookmarks6=0
 bookmarks7=0
 bookmarks8=0
 bookmarks9=0
-sourcefiles=10
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/confideu.mfm
  ${PROJECTDIR}/msestockobjects.pas
  ${PROJECTDIR}/mseconsts_ide_ru.pas
@@ -1638,7 +1645,9 @@ sourcefiles=10
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=10
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/mseconsts_ide_en.pas
+relpaths=12
  confideu.mfm
  msestockobjects.pas
  mseconsts_ide_ru.pas
@@ -1649,7 +1658,9 @@ relpaths=10
  confideu.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=10
+ confideu.pas
+ mseconsts_ide_en.pas
+ismoduletexts=12
  -1
  0
  0
@@ -1660,27 +1671,46 @@ ismoduletexts=10
  0
  0
  0
-modules=3
+ 0
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  0
  -1
  -1
-nomenumodules=3
  -1
+nomenumodules=4
+ -1
+ 0
  0
  0
 [sourcefo.files_tab]
-firsttab=0
-index=5
+order=12
+ 0
+ 1
+ 2
+ 3
+ 10
+ 7
+ 9
+ 5
+ 11
+ 6
+ 4
+ 8
+firsttab=5
+index=10
 [layout]
-windowlayout=562
+windowlayout=594
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1836,7 +1866,7 @@ windowlayout=562
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2139,21 +2169,21 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide_fr.pas
+ value=/home/fred/ideu/src/mseconsts_ide.pas
  history=20
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
-  /home/fred/ideu/src/mseconsts_ide_ru.pas
-  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/splash.pas
-  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/msestockobjects_ide.pas
   /home/fred/ideu/src/msestockobjects_ide_mfm.pas
   /home/fred/ideu/src/msestockobjects_ide.mfm
+  /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_de.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
   /home/fred/demo_mse/po2const2po/headerform_mfm.pas
@@ -2182,8 +2212,21 @@ windowlayout=562
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=0
- index=5
+ order=12
+  0
+  1
+  2
+  3
+  10
+  7
+  9
+  5
+  11
+  6
+  4
+  8
+ firsttab=5
+ index=10
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2243,6 +2286,25 @@ windowlayout=562
  wsize=0
  active=0
  visible=0
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=236
+ y=48
+ cx=639
+ cy=672
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
