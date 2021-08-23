@@ -22,15 +22,6 @@ object confdebuggerfo: tconfdebuggerfo
   windowopacity = -Inf
   oncreated = oncreat
   moduleclassname = 'tmseform'
-  object tlabel6: tlabel
-    taborder = 5
-    bounds_x = 34
-    bounds_y = 15
-    bounds_cx = 66
-    bounds_cy = 15
-    caption = 'Debuggers'
-    reffontheight = 15
-  end
   object debugger4: tfilenameeditx
     Tag = 7
     frame.colorclient = 15138790
@@ -189,9 +180,9 @@ object confdebuggerfo: tconfdebuggerfo
     frame.localprops1 = []
     face.localprops = []
     face.template = sourcepage.tfacecomp1
-    bounds_x = 427
+    bounds_x = 401
     bounds_y = 5
-    bounds_cx = 85
+    bounds_cx = 111
     bounds_cy = 24
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'

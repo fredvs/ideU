@@ -3170,12 +3170,12 @@ object confcompilerfo: tconfcompilerfo
     face.localprops = []
     face.template = sourcefo.tfacecomp1
     taborder = 1
-    bounds_x = 508
+    bounds_x = 471
     bounds_y = 4
-    bounds_cx = 79
+    bounds_cx = 116
     bounds_cy = 30
     anchors = [an_top, an_right]
-    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+    state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = '&OK'
     onexecute = closeapp
   end

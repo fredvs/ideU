@@ -315,7 +315,7 @@ options=114
  index=2
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=9
  [projectoptionsfo]
  stackedunder=
  x=106
@@ -764,12 +764,9 @@ exeused=14
  .inf
 codetemplatedirs=1
  ${TEMPLATEDIR}
-toolmenus=1
- test
-toolfiles=1
- 
-toolparams=1
- 
+toolmenus=0
+toolfiles=0
+toolparams=0
 fontnames=0
 scriptbeforecopy=
 scriptaftercopy=
@@ -1045,16 +1042,11 @@ groupcomments=10
  
  
  
-toolsave=1
- 0
-toolhide=1
- 0
-toolparse=1
- 0
-toolmessages=1
- 0
-toolshortcuts=1
- -1
+toolsave=0
+toolhide=0
+toolparse=0
+toolmessages=0
+toolshortcuts=0
 fontalias=0
 fontancestors=0
 fontheights=0
@@ -1610,7 +1602,7 @@ findhistory=20
  source
 findoptions=1
 editpos=4
- 0,0
+ 67,5
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -2115,9 +2107,11 @@ windowlayout=562
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/mseconsts_ide_en.pas
-  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/confcompiler.pas
   /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/ideu/src/confdebugger.pas
+  /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/ideusettings.pas
@@ -2132,8 +2126,6 @@ windowlayout=562
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
   /home/fred/demo_mse/po2const2po/headerform_mfm.pas
   /home/fred/demo_mse/po2const2po/po2const2po.prj
-  /home/fred/ideu/src/mseconsts_es.pas
-  /home/fred/ideu/src/mseconsts_ru.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]

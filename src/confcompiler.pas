@@ -1,99 +1,145 @@
 unit confcompiler;
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
+
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialogx,
- msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
- msesimplewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msegrids,
- mseificomp,mseificompglob,mseifiglob,mselistbrowser,msemenus,msestat,
- msestatfile,msestream,msestrings,msesys,sysutils,msegraphedits,msescrollbar,
- msedragglob,msetabs,mseact;
- type
- tconfcompilerfo = class(tmseform)
-   tab_compilers: ttabwidget;
-   tab_pascal: ttabpage;
-   tab_c: ttabpage;
-   tab_java: ttabpage;
-   tab_python: ttabpage;
-   tab_other: ttabpage;
-   twinep1: tbooleanedit;
-   twinep2: tbooleanedit;
-   twinep3: tbooleanedit;
-   twinep4: tbooleanedit;
-   twinep5: tbooleanedit;
-   twinep6: tbooleanedit;
-   twinep7: tbooleanedit;
-   twinep8: tbooleanedit;
-   fpccompiler8: tfilenameeditx;
-   fpccompiler7: tfilenameeditx;
-   fpccompiler6: tfilenameeditx;
-   fpccompiler5: tfilenameeditx;
-   fpccompiler4: tfilenameeditx;
-   fpccompiler3: tfilenameeditx;
-   fpccompiler2: tfilenameeditx;
-   tlabel2: tlabel;
-   fpccompiler: tfilenameeditx;
-   othercompiler3: tfilenameeditx;
-   twineo2: tbooleanedit;
-   twineo1: tbooleanedit;
-   othercompiler: tfilenameeditx;
-   othercompiler4: tfilenameeditx;
-   twineo4: tbooleanedit;
-   twineo3: tbooleanedit;
-   othercompiler2: tfilenameeditx;
-   ccompiler2: tfilenameeditx;
-   ccompiler3: tfilenameeditx;
-   ccompiler4: tfilenameeditx;
-   ccompiler5: tfilenameeditx;
-   ccompiler6: tfilenameeditx;
-   ccompiler7: tfilenameeditx;
-   ccompiler8: tfilenameeditx;
-   twinec8: tbooleanedit;
-   twinec7: tbooleanedit;
-   twinec6: tbooleanedit;
-   twinec5: tbooleanedit;
-   twinec4: tbooleanedit;
-   twinec3: tbooleanedit;
-   twinec2: tbooleanedit;
-   twinec1: tbooleanedit;
-   tlabel7: tlabel;
-   ccompiler: tfilenameeditx;
-   twinej1: tbooleanedit;
-   twinej2: tbooleanedit;
-   twinej3: tbooleanedit;
-   twinej4: tbooleanedit;
-   javacompiler4: tfilenameeditx;
-   javacompiler3: tfilenameeditx;
-   javacompiler2: tfilenameeditx;
-   javacompiler: tfilenameeditx;
-   twinepy3: tbooleanedit;
-   twinepy4: tbooleanedit;
-   pythoncompiler4: tfilenameeditx;
-   pythoncompiler3: tfilenameeditx;
-   pythoncompiler2: tfilenameeditx;
-   twinepy2: tbooleanedit;
-   twinepy1: tbooleanedit;
-   pythoncompiler: tfilenameeditx;
-   tlabel3: tlabel;
-   tlabel4: tlabel;
-   tlabel5: tlabel;
-   but_ok: tbutton;
-   procedure closeapp(const sender: TObject);
-   procedure oncreatedev(const sender: TObject);
-   procedure onfocus(const sender: TObject);
- end;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  msetypes,
+  mseglob,
+  mseguiglob,
+  mseguiintf,
+  mseapplication,
+  msegui,
+  msefiledialogx,
+  msegraphics,
+  msegraphutils,
+  mseevent,
+  mseclasses,
+  msewidgets,
+  mseforms,
+  msesimplewidgets,
+  msebitmap,
+  msedataedits,
+  msedatanodes,
+  mseedit,
+  msegrids,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  mselistbrowser,
+  msemenus,
+  msestat,
+  msestatfile,
+  msestream,
+  msestrings,
+  msesys,
+  SysUtils,
+  msegraphedits,
+  msescrollbar,
+  msedragglob,
+  msetabs,
+  mseact;
+
+type
+  tconfcompilerfo = class(tmseform)
+    tab_compilers: ttabwidget;
+    tab_pascal: ttabpage;
+    tab_c: ttabpage;
+    tab_java: ttabpage;
+    tab_python: ttabpage;
+    tab_other: ttabpage;
+    twinep1: tbooleanedit;
+    twinep2: tbooleanedit;
+    twinep3: tbooleanedit;
+    twinep4: tbooleanedit;
+    twinep5: tbooleanedit;
+    twinep6: tbooleanedit;
+    twinep7: tbooleanedit;
+    twinep8: tbooleanedit;
+    fpccompiler8: tfilenameeditx;
+    fpccompiler7: tfilenameeditx;
+    fpccompiler6: tfilenameeditx;
+    fpccompiler5: tfilenameeditx;
+    fpccompiler4: tfilenameeditx;
+    fpccompiler3: tfilenameeditx;
+    fpccompiler2: tfilenameeditx;
+    tlabel2: tlabel;
+    fpccompiler: tfilenameeditx;
+    othercompiler3: tfilenameeditx;
+    twineo2: tbooleanedit;
+    twineo1: tbooleanedit;
+    othercompiler: tfilenameeditx;
+    othercompiler4: tfilenameeditx;
+    twineo4: tbooleanedit;
+    twineo3: tbooleanedit;
+    othercompiler2: tfilenameeditx;
+    ccompiler2: tfilenameeditx;
+    ccompiler3: tfilenameeditx;
+    ccompiler4: tfilenameeditx;
+    ccompiler5: tfilenameeditx;
+    ccompiler6: tfilenameeditx;
+    ccompiler7: tfilenameeditx;
+    ccompiler8: tfilenameeditx;
+    twinec8: tbooleanedit;
+    twinec7: tbooleanedit;
+    twinec6: tbooleanedit;
+    twinec5: tbooleanedit;
+    twinec4: tbooleanedit;
+    twinec3: tbooleanedit;
+    twinec2: tbooleanedit;
+    twinec1: tbooleanedit;
+    tlabel7: tlabel;
+    ccompiler: tfilenameeditx;
+    twinej1: tbooleanedit;
+    twinej2: tbooleanedit;
+    twinej3: tbooleanedit;
+    twinej4: tbooleanedit;
+    javacompiler4: tfilenameeditx;
+    javacompiler3: tfilenameeditx;
+    javacompiler2: tfilenameeditx;
+    javacompiler: tfilenameeditx;
+    twinepy3: tbooleanedit;
+    twinepy4: tbooleanedit;
+    pythoncompiler4: tfilenameeditx;
+    pythoncompiler3: tfilenameeditx;
+    pythoncompiler2: tfilenameeditx;
+    twinepy2: tbooleanedit;
+    twinepy1: tbooleanedit;
+    pythoncompiler: tfilenameeditx;
+    tlabel3: tlabel;
+    tlabel4: tlabel;
+    tlabel5: tlabel;
+    but_ok: TButton;
+    procedure closeapp(const Sender: TObject);
+    procedure oncreatedev(const Sender: TObject);
+    procedure onfocus(const Sender: TObject);
+    procedure setlangcompilers();
+
+  end;
+
 var
- confcompilerfo: tconfcompilerfo;
+  confcompilerfo: tconfcompilerfo;
+
 implementation
+
 uses
-confcompiler_mfm;
-procedure tconfcompilerfo.closeapp(const sender: TObject);
+  confcompiler_mfm;
+
+procedure tconfcompilerfo.closeapp(const Sender: TObject);
 begin
-close;
+  Close;
 end;
 
-procedure tconfcompilerfo.oncreatedev(const sender: TObject);
+procedure tconfcompilerfo.oncreatedev(const Sender: TObject);
 begin
+  setlangcompilers();
+
 {$ifdef windows}
 
 twinep1.enabled := false;
@@ -131,9 +177,18 @@ twineo4.enabled := false;
 {$endif}
 end;
 
-procedure tconfcompilerfo.onfocus(const sender: TObject);
+procedure tconfcompilerfo.onfocus(const Sender: TObject);
 begin
-tabcloser:= false;
+  tabcloser := False;
 end;
 
+procedure tconfcompilerfo.setlangcompilers();
+begin
+  Caption        := stockobjects.captions[sc_configcompilers];
+  but_ok.Caption := stockobjects.modalresulttext[mr_ok];
+
+end;
+
+
 end.
+

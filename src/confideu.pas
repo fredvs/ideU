@@ -782,7 +782,6 @@ begin
 
   Caption := stockobjects.captions[sc_extrasettings];
   but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
-  but_apply.Caption  := stockobjects.modalresulttext[mr_ok];
   but_apply.Caption  := settingstext(se_apply);
   group_assistive.frame.caption := settingstext(se_groupassistive);
   tesakitdir.frame.caption := settingstext(se_sakitdir);

@@ -30,8 +30,6 @@ interface
 {$endif}
 
 uses
-  //gettext,
- // msei18nutils,
   mseconsts_ide_ru,
   mseconsts_ide_de,
   mseconsts_ide_es,
@@ -5389,6 +5387,8 @@ MSEFallbackLang := '';
   end;
   setlang(MSEFallbackLang);
   confideufo.setlangextrasettings();
+  confcompilerfo.setlangcompilers();
+  confdebuggerfo.setlangdebuggers();
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
