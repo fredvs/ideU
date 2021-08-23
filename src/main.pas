@@ -5389,6 +5389,7 @@ MSEFallbackLang := '';
     'langes': MSEFallbackLang := 'es';
   end;
   setlang(MSEFallbackLang);
+  confideufo.setlangextrasettings();
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);

@@ -96,9 +96,13 @@ const
  lasttracesymbol = stg_triatopbig;
  
 type
-   isettingsty = ( se_apply,se_path
+   isettingsty = ( se_apply,se_groupassistive,se_sakitdir,se_enableassistive,se_groupsystemlayout,
+                   se_universalpath,se_nozorder,se_doubleclic,se_autofocusmenu,se_fullpath,se_modaldial,
+                   se_fontsize,se_fontname,se_confirmdel,se_blinkcaret,se_repaintcanvas,
+                   se_groupsourceeditor,se_usedefaulteditoroptions,se_addwhiteaftercomma,
+                   se_groupfilechange,se_filereload,se_filenoload,se_fileaskload
    
-   );   
+                  );   
  
 type
    projectoptionsty = (po_projectoptions,po_editor,po_rightmarginline,

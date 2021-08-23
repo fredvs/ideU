@@ -72,9 +72,30 @@ const
     );
     
   ru_settingstext: isettingsaty = (
-    'General settings', //se_title
-    'Path' //se_path
-    ); 
+    'Применять', //se_apply
+    'sak голосовой помощник', //se_groupassistive
+    'Родительский справочник sakit', //se_sakitdir
+    'Включить sak при загрузке', //se_enableassistive
+    'Схема системы', //se_groupsystemlayout
+    'Универсальные каталоги', //se_universalpath
+    'Нет обработки Z-заказа', //se_nozorder
+    'Клавиша Shift для выбора слова', //se_doubleclic
+    'Автофокус в главном меню', //se_autofocusmenu
+    'Полный путь к проекту в заголовке', //se_fullpath
+    'Установить диалог как модальный', //se_modaldial
+    'Высота шрифта', //se_fontsize
+    'Название шрифта', //se_fontname
+    'Нет подтверждения на удаление строки', //se_confirmdel
+    'Мигающая вставка', //se_blinkcaret
+    'Перекрасить холст', //se_repaintcanvas
+    'Редактор исходного кода', //se_groupsourceeditor
+    'Используйте эти параметры', //se_usedefaulteditoroptions
+    'Пробел после запятой при автоанализе', //se_addwhiteaftercomma
+    'Когда файл был изменен:', //se_groupfilechange
+    'Нет диалога => перезагрузить новый', //se_filereload
+    'Нет диалога => сохранить старое', //se_filenoload
+    'Диалог спрашивает, что делать ...' //se_fileaskload
+     );
 
   ru_projectoptionstext: projectoptionsaty = (
     'Варианты проекта', // po_projectoptions

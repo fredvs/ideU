@@ -144,8 +144,29 @@ const
     
     en_settingstext: isettingsaty = (
     'Apply', //se_apply
-    'Path' //se_path
-    );
+    'sak voice assistive config', //se_groupassistive
+    'Parent directory of sakit', //se_sakitdir
+    'Enable sak assistive at loading', //se_enableassistive
+    'System layout', //se_groupsystemlayout
+    'Universelles Verzeichnislayout', //se_universalpath
+    'No Z order handling', //se_nozorder
+    'Use shift key to select a word', //se_doubleclic
+    'Auto focus in main-menu', //se_autofocusmenu
+    'Full path of project in window title', //se_fullpath
+    'Set dialog-forms as modal vs as tool', //se_modaldial
+    'Font height', //se_fontsize
+    'Font name', //se_fontname
+    'No confirmation to delete row', //se_confirmdel
+    'Blinking caret', //se_blinkcaret
+    'Repaint canvas', //se_repaintcanvas
+    'Source Editor', //se_groupsourceeditor
+    'Use those options instead of project options', //se_usedefaulteditoroptions
+    'Add space after comma when auto-parsing', //se_addwhiteaftercomma
+    'When a file has changed', //se_groupfilechange
+    'No dialog box => reload the new one', //se_filereload
+    'No dialog box => keep the old one', //se_filenoload
+    'A dialog box ask what to do...' //se_fileaskload
+     );
   
 
   en_projectoptionstext: projectoptionsaty = (

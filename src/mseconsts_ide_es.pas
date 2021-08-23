@@ -71,9 +71,30 @@ const
     );
 
   es_settingstext: isettingsaty = (
-    'General settings', //se_title
-    'Path' //se_path
-    );
+    'Aplicar', //se_apply
+    'Configuración asistencia-voz sak', //se_groupassistive
+    'Directorio principal de sakit', //se_sakitdir
+    'Habilitar sak al cargar', //se_enableassistive
+    'Disposición del sistema', //se_groupsystemlayout
+    'Directorios universales', //se_universalpath
+    'Sin manejo de pedidos Z', //se_nozorder
+    'Mayús para seleccionar palabra', //se_doubleclic
+    'Enfoque automático en menú', //se_autofocusmenu
+    'Ruta completa en título-proyecto', //se_fullpath
+    'Establecer diálogos como modales', //se_modaldial
+    'Altura fuente', //se_fontsize
+    'Nombre fuente', //se_fontname
+    'No confirmación para eliminar fila', //se_confirmdel
+    'Intercalación intermitente', //se_blinkcaret
+    'Repintar canvas', //se_repaintcanvas
+    'Editor de fuente', //se_groupsourceeditor
+    'Usa esas opciones', //se_usedefaulteditoroptions
+    'Espacio tras coma al auto-parsing', //se_addwhiteaftercomma
+    'Cuando un archivo ha cambiado:', //se_groupfilechange
+    'Sin diálogo => cargar el nuevo', //se_filereload
+    'Sin diálogo => mantener el viejo', //se_filenoload
+    'Un diálogo pregunta qué hacer ...' //se_fileaskload
+     );
 
   es_projectoptionstext: projectoptionsaty = (
     'Opciones de proyecto', // project options

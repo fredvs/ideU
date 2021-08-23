@@ -110,8 +110,29 @@ const
 
   fr_settingstext: isettingsaty = (
     'Appliquer', //se_apply
-    'Chemin'     //se_path
-    );
+    'Configuration assistance-vocale sak', //se_groupassistive
+    'Répertoire parent de sakit', //se_sakitdir
+    'Activer sak au chargement', //se_enableassistive
+    'Disposition du système', //se_groupsystemlayout
+    'Répertoires universels', //se_universalpath
+    'Pas de traitement ordres Z', //se_nozorder
+    'Shift sélectionne le mot', //se_doubleclic
+    'Autofocus dans menu principal', //se_autofocusmenu
+    'Chemin complet dans titre-projet', //se_fullpath
+    'Définir forme-dialogue comme modal', //se_modaldial
+    'Hauteur police', //se_fontsize
+    'Nom police', //se_fontname
+    'Sans confirmation suppression ligne', //se_confirmdel
+    'Caret clignotant', //se_blinkcaret
+    'Repeindre canvas', //se_repaintcanvas
+    'Éditeur de source', //se_groupsourceeditor
+    'Utilisez ces options', //se_usedefaulteditoroptions
+    'Espace après virgule -> auto-parsing', //se_addwhiteaftercomma
+    'Quand un fichier a changé :', //se_groupfilechange
+    'Sans dialogue => recharger le nouveau', //se_filereload
+    'Sans dialogue => garder l'#08217'ancien', //se_filenoload
+    'Un dialogue demande quoi faire...' //se_fileaskload
+     );
 
   fr_projectoptionstext: projectoptionsaty = (
     'Options du project',                     // po_projectoptions
@@ -130,7 +151,7 @@ const
     'Codage',                                 //  po_encoding
     'Couleur de marque',                      //  po_markcolor 
     'Couleur de stat',                        // po_statcolor
-    'Barre déf. Y',                          // po_scrollbary
+    'Déf. Y',                               // po_scrollbary
     'Nb char',                                // po_nbchar
     'Style EOL',                              //  po_eolstyle
     'Sauver',                                 //  po_backup

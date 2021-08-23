@@ -784,7 +784,61 @@ begin
   but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
   but_apply.Caption  := stockobjects.modalresulttext[mr_ok];
   but_apply.Caption  := settingstext(se_apply);
-   
+  group_assistive.frame.caption := settingstext(se_groupassistive);
+  tesakitdir.frame.caption := settingstext(se_sakitdir);
+  tesakitdir.controller.captiondir := settingstext(se_sakitdir);
+    
+  tbassistive.frame.caption := settingstext(se_enableassistive);
+  group_system_layout.frame.caption := settingstext(se_groupsystemlayout);
+  universal_path.frame.caption := settingstext(se_universalpath);
+  nozorderenable.frame.caption := settingstext(se_nozorder);
+  doubleclic.frame.caption := settingstext(se_doubleclic);
+  autofocus_menu.frame.caption := settingstext(se_autofocusmenu);
+  modaldial.frame.caption := settingstext(se_modaldial);
+  fontsize.frame.caption := settingstext(se_fontsize);
+  fontname.frame.caption := settingstext(se_fontname);
+  confirmdel.frame.caption := settingstext(se_confirmdel);
+  blinkcaret.frame.caption := settingstext(se_blinkcaret);
+  brepaintcanvas.frame.caption := settingstext(se_repaintcanvas);
+
+  group_sourceeditor.frame.caption := settingstext(se_groupsourceeditor);
+  trimtrailingwhitespace.frame.caption := projectoptionstext(po_trimtrailing);
+  rightmarginchars.frame.caption := projectoptionstext(po_rightmarginline);
+  encoding.frame.caption := projectoptionstext(po_encoding);
+  backupfilecount.frame.caption := projectoptionstext(po_backup);
+  tabstops.frame.caption := projectoptionstext(po_tabstops);
+  blockindent.frame.caption := projectoptionstext(po_indent);
+  usedefaulteditoroptions.frame.caption := settingstext(se_usedefaulteditoroptions);
+  spacetabs.frame.caption := projectoptionstext(po_spacetab);
+  colornote.frame.caption := projectoptionstext(po_colornote);
+  colorerror.frame.caption := projectoptionstext(po_colorerror);
+  colorwarning.frame.caption := projectoptionstext(po_colorwarning);
+  stripmessageesc.frame.caption := projectoptionstext(po_stripmessageesc);
+  stripmessageesc.hint := projectoptionstext(po_stripmessageeschint);
+  
+  deflayout.frame.caption := stockobjects.captions[sc_layout];
+  defsynt.frame.caption := stockobjects.captions[sc_syntax];
+  closemessages.frame.caption := projectoptionstext(po_closemessages);
+  addwhiteaftercomma.frame.caption := settingstext(se_addwhiteaftercomma);
+  
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  tbfilereload.frame.caption := settingstext(se_filereload);
+
+  tbfilenoload.frame.caption := settingstext(se_filenoload);
+  tbfileaskload.frame.caption := settingstext(se_fileaskload);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+  group_file_change.frame.caption := settingstext(se_groupfilechange);
+
+
+  
 
 {  
   path.caption :=  stockobjects.captions[sc_path]; 

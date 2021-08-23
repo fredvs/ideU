@@ -68,9 +68,30 @@ const
     );
     
    de_settingstext: isettingsaty = (
-   'General settings', //se_title
-    'Path' //se_path
-    );
+    'Anwenden', //se_apply
+    'sak Sprachassistenz-Konfiguration', //se_groupassistive
+    'Übergeordnetes Verzeichnis von sakit', //se_sakitdir
+    'Sak-Assistent beim Laden aktivieren', //se_enableassistive
+    'Disposition du système', //se_groupsystemlayout
+    'Disposición universal de directorios', //se_universalpath
+    'Keine Z-Auftragsabwicklung', //se_nozorder
+    'Umschalttaste, um Wort auszuwählen', //se_doubleclic
+    'Autofokus im Hauptmenü', //se_autofocusmenu
+    'Vollständiger Projektpfad im Titel', //se_fullpath
+    'Dialog als modal festlegen', //se_modaldial
+    'Schrifthöhe', //se_fontsize
+    'Schriftname', //se_fontname
+    'Keine Bestätigung zum Löschen Zeile', //se_confirmdel
+    'Blinkendes Caret-Symbol', //se_blinkcaret
+    'Canvas neu lackieren', //se_repaintcanvas
+    'Quelleneditor', //se_groupsourceeditor
+    'Verwenden Sie diese Optionen', //se_usedefaulteditoroptions
+    'Leerzeichen nach Komma beim Auto-Parsing', //se_addwhiteaftercomma
+    'Wenn sich eine Datei geändert hat:', //se_groupfilechange
+    'Kein Dialog => Neu laden', //se_filereload
+    'Kein Dialog => das Alte behalten', //se_filenoload
+    'Ein Dialog fragt, was zu tun ist...' //se_fileaskload
+     );
 
   de_projectoptionstext: projectoptionsaty = (
     'Projektoptionen', //po_projectoptions
