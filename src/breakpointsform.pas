@@ -20,6 +20,12 @@ unit breakpointsform;
 
 interface
 uses
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
  msegui,msegraphics,mseguiglob,msestringcontainer;
@@ -94,6 +100,8 @@ type
    procedure changed;
    procedure insertbkpt(index: integer;
                                withcondition,witherrormessage: boolean);
+   procedure setlangbreakpoints();
+                             
   public
    gdb: tgdbmi;
 
@@ -808,7 +816,13 @@ end;
 
 procedure tbreakpointsfo.oncreat(const sender: TObject);
 begin
-//icon := mainfo.icon;
+setlangbreakpoints();
+end;
+
+procedure tbreakpointsfo.setlangbreakpoints();
+begin
+  Caption        := stockobjects.captions[sc_breakpoints];
+
 end;
 
 end.

@@ -13,6 +13,13 @@ unit mseintegerenter;
 
 interface
 uses
+ msestockobjects,
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
  msedialog,msestrings;
 
@@ -23,6 +30,7 @@ type
    value: tintegeredit;
    procedure ondoline(const sender: TObject);
    procedure oncloseev(const sender: TObject);
+   procedure setlangsearchline();
  end;
 
 var
@@ -78,6 +86,13 @@ end;
 procedure tintegerenterfo.oncloseev(const sender: TObject);
 begin
  lineformcreated:= false;
+end;
+
+procedure tintegerenterfo.setlangsearchline();
+begin
+  Caption        := stockobjects.captions[sc_line];
+  ok.Caption := stockobjects.modalresulttext[mr_ok];
+
 end;
 
 end.

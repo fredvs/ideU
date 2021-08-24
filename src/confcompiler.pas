@@ -4,12 +4,13 @@ unit confcompiler;
 interface
 
 uses
-  mseconsts_ide,
+  msestockobjects,
+   mseconsts_ide,
   mseconsts_ide_ru,
   mseconsts_ide_de,
   mseconsts_ide_es,
   mseconsts_ide_fr,
-  msestockobjects,
+
   msetypes,
   mseglob,
   mseguiglob,
@@ -186,7 +187,6 @@ procedure tconfcompilerfo.setlangcompilers();
 begin
   Caption        := stockobjects.captions[sc_configcompilers];
   but_ok.Caption := stockobjects.modalresulttext[mr_ok];
-
 end;
 
 

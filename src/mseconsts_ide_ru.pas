@@ -70,9 +70,9 @@ const
     'Пропустить все',
     'Продолжить'
     );
-    
-  ru_settingstext: isettingsaty = (
-    'Применять', //se_apply
+
+  ru_settingstext: isettingsaty          = (
+    'Применять',        //se_apply
     'sak голосовой помощник', //se_groupassistive
     'Родительский справочник sakit', //se_sakitdir
     'Включить sak при загрузке', //se_enableassistive
@@ -95,14 +95,137 @@ const
     'Нет диалога => перезагрузить новый', //se_filereload
     'Нет диалога => сохранить старое', //se_filenoload
     'Диалог спрашивает, что делать ...' //se_fileaskload
-     );
+    );
+
+  ru_actionsmoduletext: actionsmoduleaty = (
+    'Configure MSEide',
+    'Process ID',
+    'Attach to process',
+    'Unknown moduleclass for "',
+    'Inherited component "',
+    '" can not be deleted.',
+    'ERROR',
+    'Make aborted.',
+    'Download aborted.',
+    'Runerror with "',
+    'Error: Timeout.',
+    'Making.',
+    'Make not running.',
+    'Downloading.',
+    'Download not running.',
+    '" running.',
+    'Script',
+    'Recursive form inheritance of "',
+    'Component "',
+    '" exists.',
+    'Ancestor for "',
+    '" not found.',
+    'Module "',
+    'Invalid name "',
+    'Invalid methodname',
+    'Module not found',
+    'Method not found',
+    'Published (managed) method',
+    'does not exist.',
+    'Do you wish to delete the event?',
+    'WARNING',
+    'Method',
+    'has different parameters.',
+    'A module "',
+    '" is already open.',
+    'Unresolved reference(s) to',
+    'Module(s):',
+    'Can not read formfile "',
+    'Invalid component name.',
+    'Invalid exception',
+    'T&ools',
+    'Forms',
+    'Source',
+    'All Files',
+    'MSE Program',
+    'MSE Unit',
+    'MSE Textfile',
+    'Mainform',
+    'Simple Form',
+    'Docking Form',
+    'Datamodule',
+    'Subform',
+    'Scrollboxform',
+    'Tabform',
+    'Dockpanel',
+    'Report',
+    'Scriptform',
+    'Inherited Form',
+    'Do you want to replace the settings by',
+    'File "',
+    'Do you want to overwrite?',
+    'Unknown',
+    'Error',
+    'Startup',
+    'Exception',
+    'GDB died',
+    'Breakpoint hit',
+    'Watchpoint triggered',
+    'Read Watchpoint triggered',
+    'Access Watchpoint triggered',
+    'End stepping range',
+    'Function finished',
+    'Exited normally',
+    'Exited',
+    'Detached',
+    'Signal received',
+    'Stop error',
+    'Can not read project',
+    'About',
+    'Object Inspector',
+    'Store Component',
+    'Attaching Process',
+    'Loading'
+    );
+
+  ru_projectoptionscontext: projectoptionsconaty = (
+    'Wrong encoding can damage your source files.',
+    'Do you wish to set encoding to',
+    '*** WARNING ***',
+    'Hangup',
+    'Interrupt',
+    'Quit',
+    'Illegal instruction',
+    'Trace trap',
+    'Abort',
+    'BUS error',
+    'Floating-point exception',
+    'Kill',
+    'User-defined signal 1',
+    'Segmentation violation',
+    'User-defined signal 2',
+    'Broken pipe',
+    'Alarm clock',
+    'Termination',
+    'Stack fault',
+    'Child status has changed',
+    'Continue',
+    'Stop, unblockable',
+    'Keyboard stop',
+    'Background read from tty',
+    'Background write to tty',
+    'Urgent condition on socket',
+    'CPU limit exceeded',
+    'File size limit exceeded',
+    'Virtual alarm clock',
+    'Profiling alarm clock',
+    'Window size change',
+    'I/O now possible',
+    'Power failure restart'
+    );
+
 
   ru_projectoptionstext: projectoptionsaty = (
     'Варианты проекта', // po_projectoptions
-    'редактор',   // po_editor
-    'Правое поле', // po_rightmarginline
+    'редактор',             // po_editor
+    'Правое поле',        // po_rightmarginline
     'Отметить скобки', //  po_markbrackets
-    'Номера строк', //  po_linenumbers
+    'Номера строк',      //  po_linenumbers
     'Отметить парные слова', //  po_markpairwords
     'Обрезать конечные'#10'пробелы при'#10'сохранении', //  po_trimtrailing
     'Автоматический отступ', //  po_autoindent
@@ -111,40 +234,40 @@ const
     'Вкладка "Пробел"', //  po_spacetab
     'Показать вкладки', //  po_showtabs
     'Шрифт со сглаживанием', //  po_antialiasedfont
-    'кодировка', //  po_encoding
-    'Цвет марки', //  po_markcolor 
+    'кодировка',           //  po_encoding
+    'Цвет марки',          //  po_markcolor 
     'Цвет статистики', // po_statcolor
-    'Поло. Y',        // po_scrollbary
-    'Кол. сим.',    // po_nbchar
-    'EOL Стиль',     //  po_eolstyle
-    'Рез. коп.',    //  po_backup
-    'Табуляторы', //  po_tabstops
-    'Отступ',       //  po_indent
-    'Доп. прос.',  //  po_extraspace
+    'Поло. Y',                  // po_scrollbary
+    'Кол. сим.',              // po_nbchar
+    'EOL Стиль',               //  po_eolstyle
+    'Рез. коп.',              //  po_backup
+    'Табуляторы',         //  po_tabstops
+    'Отступ',                 //  po_indent
+    'Доп. прос.',            //  po_extraspace
     'Дополнительное пространство между строками', //  po_extraspacehint
-    'Ширина',       //  po_width
-    'Рост',           //  po_height
-    'Шрифт',         //  po_font
+    'Ширина',                 //  po_width
+    'Рост',                     //  po_height
+    'Шрифт',                   //  po_font
     'Цвет шрифта фона', //  po_fontbkcolor
-    'Цвет шрифта', //  po_fontcolor
+    'Цвет шрифта',        //  po_fontcolor
     'Файловый фильтр', //  po_filefilter
-    'Имя',             //  po_name
-    'Маска файла', //  po_filemask
+    'Имя',                       //  po_name
+    'Маска файла',        //  po_filemask
     'Файл определения синтаксиса', //  po_syntaxdeffile
-    'Шаблоны кода', //  po_codetemplate
+    'Шаблоны кода',      //  po_codetemplate
     'Каталоги шаблонов кода, расширение файла = .mct', //  po_fontcodetemplatedir
     'Выберите каталог объекта', // po_selectunitdir
-    '&Отладчик',  // po_debuggerpage
+    '&Отладчик',            // po_debuggerpage
     'Отладчик проекта', // po_projectdebugger
     'Каталоги поиска', // po_searchdirectories
     'Путь поиска для получения информации о коде', // po_searchdirectorieshint
     'Выберите исходный каталог', // po_selectsourcedir
     'Каталог базы объектов (пусто = Создать каталог)', // po_objectbasedir
     'Выберите исходный базовый каталог', // po_selectsourcebasedir
-    'Определяет', // po_defines
-    '&Сигналы',    // po_signals
-    '&Исключение', // po_exception
-    '&Цель',          // po_target
+    'Определяет',         // po_defines
+    '&Сигналы',              // po_signals
+    '&Исключение',        // po_exception
+    '&Цель',                    // po_target
     'Запустить цель подключения команды сервера gdb', // po_startgdbattachtarget
     'Не ждать выхода', // po_nogdbserverexit
     'gdb скрипт перед подключением', // po_beforeconnect
@@ -156,39 +279,39 @@ const
     'Подождите перед подключением', // po_gdbserverwait
     'Начать один раз', // po_gdbserverstartonce
     'Команда загрузки', // po_uploadcommand
-    'Процессор', // po_gdbprocessor
-    'Симулятор', // po_gdbsimulator
-    'gdb скачать', // po_gdbdownload
-    'Запуск БКПТ', // po_startupbkpt
+    'Процессор',           // po_gdbprocessor
+    'Симулятор',           // po_gdbsimulator
+    'gdb скачать',           // po_gdbdownload
+    'Запуск БКПТ',        // po_startupbkpt
     'Целевое соединение', // po_remoteconnection
     'Всегда скачивать', // po_downloadalways
     'Всегда загружайте перед запуском', // po_downloadalwayshint
     'Время ожидания загрузки', // po_gdbloadtimeout
     '&Внешняя консоль', // po_externalconsole
-    '&Оста. искл.', // po_stoponexception
+    '&Оста. искл.',         // po_stoponexception
     'Остановить при исключении', // po_stoponexceptionhint
-    '&Акт.пере;',  // po_activateonbreak
+    '&Акт.пере;',            // po_activateonbreak
     'Активировать в перерыве', // po_activateonbreakhint
     '&Ценность'#10'подсказок', // po_valuehints '#10'
-    'Вызов GUI_DEB', // po_nodebugbeginend
+    'Вызов GUI_DEB',           // po_nodebugbeginend
     'Освободите захват мыши с помощью целевой остановки. gdb иногда дает сбой с этой опцией.', // po_nodebugbeginendhint
-    'Установить TT&Y', // po_settty
-    '&Под/пере',   // po_raiseonbreak
+    'Установить TT&Y',    // po_settty
+    '&Под/пере',             // po_raiseonbreak
     'Поднимать в перерыве', // po_raiseonbreakhint
-    '&Ошибки FPC',  // po_fpcgdbworkaround
+    '&Ошибки FPC',            // po_fpcgdbworkaround
     'Используйте обходные пути для ошибок FPC / gdb', // po_fpcgdbworkaroundhint
-    'Цель отладки', // po_debugtarget
-    'команда xterm', // po_xtermcommand
+    'Цель отладки',      // po_debugtarget
+    'команда xterm',         // po_xtermcommand
     '&Запустите команду', // po_runcommand
     '&Отладчик по умолчанию', // po_debugcommand
     'Варианты отладки', // po_debugoptions
-    '&Делать',      // po_makepage
+    '&Делать',                // po_makepage
 
     'Марка умолчанию', // po_defaultmake
-    'Главный файл', // po_mainfile
+    'Главный файл',      // po_mainfile
     'Выбрать основной файл', // po_selectmainfile
-    'Имя цели',    // po_targetfile
-    'Выбрать цель', // po_selecttargetfile
+    'Имя цели',              // po_targetfile
+    'Выбрать цель',      // po_selecttargetfile
     'Компилятор умолчанию', // po_makecommand
     'Выбрать команда сделать', // po_selectmakecommand
     'Показать командную строку', // po_showcommandline
@@ -197,41 +320,41 @@ const
     'Заголовки проверки', // po_checkmethods
     'Заголовки методов проверки', // po_checkmethodshint
     'Компилятор проекта', // po_projectcompiler
-    'Команда до', // po_commandbefore
+    'Команда до',          // po_commandbefore
     'Сделать варианты', // po_makeoptions
-    'Справочники', // po_directories
+    'Справочники',       // po_directories
     'Выбрать каталог', // po_unitdirs
-    'Команда после', // po_commandafter
-    'Расширение Exe', // po_exeextension
-    'Комментарии', // po_comments
+    'Команда после',    // po_commandafter
+    'Расширение Exe',     // po_exeextension
+    'Комментарии',       // po_comments
     'Каталог производителей', // po_makedir
     'Каталог производителей', // po_selectmakedir
-    'Цвет ошибки', // po_colorerror
+    'Цвет ошибки',        // po_colorerror
     'Цвет предупреждения', // po_colorwarning
     'Цвет примечания', // po_colornote
-    'Полоска ESC', // po_stripmessageesc
+    'Полоска ESC',           // po_stripmessageesc
     'Убрать последовательности ESC в сообщениях и терминале', // po_stripmessageeschint
     'Показать консоль', // po_showconsole
-    'Цель',           //po_enablepurpose
+    'Цель',                     //po_enablepurpose
     'Выходной файл сообщений', // po_messageoutputfile
     'Выходной файл сообщений', // po_selectmessageoutputfile
-    'Макросы',     // po_macros
+    'Макросы',               // po_macros
     'Активная группа', // po_selectactivegroupgrid
     'Псевдоним шрифта', // po_fontaliaspage
-    'Дизайнеров', // po_designers
+    'Дизайнеров',         // po_designers
     'Пользовательские цвета', // po_usercolors
     'Скопируйте код setcolormapvalue в буфер обмена', // po_copycolor
     'Форматировать макросы', // po_formatmacro
     'Используется formatfloatmse() и formatdatetimemse()', // po_formatmacrohint
-    'Шаблоны',     // po_templates
-    'Новый проект', // po_newproject
+    'Шаблоны',               // po_templates
+    'Новый проект',      // po_newproject
     'Скрипт перед копии', // po_scriptbeforecopy
     'Скрипт после копии', // po_scriptaftercopy
-    'Новый файл', // po_newfile
-    'Новая форма', // po_newform
-    'Инструменты', // po_tools
-    'Хранилище', // po_storage
-    'Информация' // po_infos
+    'Новый файл',          // po_newfile
+    'Новая форма',        // po_newform
+    'Инструменты',       // po_tools
+    'Хранилище',           // po_storage
+    'Информация'          // po_infos
 
     );
 
@@ -383,23 +506,23 @@ const
     'Снизить громкость',
     'Повысить громкость',
     'Отменить речь',
-    'Цель',                   //sc_target
-    'Вид',                     //sc_view
-    'Формы',                 //sc_forms
-    'Макет',                 //sc_layout
-    'Синтаксис',               //sc_syntax
-    'Проект ',               //sc_project
+    'Цель',                             //sc_target
+    'Вид',                               //sc_view
+    'Формы',                           //sc_forms
+    'Макет',                           //sc_layout
+    'Синтаксис',                   //sc_syntax
+    'Проект ',                        //sc_project
     'Отредактировано',                //sc_edited
-    'Виджеты',               //sc_widgets
-    'Настройки',               //sc_settings
-    ' О ',                       //sc_about
-    'Новый',                 //sc_newfile
+    'Виджеты',                       //sc_widgets
+    'Настройки',                   //sc_settings
+    ' О ',                                 //sc_about
+    'Новый',                           //sc_newfile
     'Сохранить как ...',               //sc_saveas
     'Сохранить все',               //sc_saveall
-    'Закрыть все',               //sc_closeall
+    'Закрыть все',                //sc_closeall
     'Распечатать',                 //sc_print
-    'Пкидать',               //sc_quit  
-    'Линия',                 //sc_line
+    'Пкидать',                       //sc_quit  
+    'Линия',                           //sc_line
     'Искать снова',               //sc_search_again
     'Искать назад',               //sc_search_back
     'Найти и заменить',               //sc_find_replace
@@ -408,36 +531,36 @@ const
     'Выберите страницу редактирования',               //sc_select_edit_Page
     'Скопировать слово под курсором',               //sc_Copy_word_cursor
     'Копировать LaTeX',               //sc_copy_latex
-    'Отступ',               //sc_indent
+    'Отступ',                         //sc_indent
     'Непроверенный',               //sc_unindent
     'окружающая обстановка',               //sc_environment
     'Присоединить процесс',               //sc_attachprocess
     'Прикрепите цель',               //sc_attachtarget
     'Отсоединить цель',               //sc_detachtarget
-    'Скачать',               //sc_download
-    'Инструменты',              //sc_tools
-    'Делать',                      // sc_make 
-    'Строить',                      // sc_build 
+    'Скачать',                       //sc_download
+    'Инструменты',               //sc_tools
+    'Делать',                         // sc_make 
+    'Строить',                       // sc_build 
     'Прервать создание',                      // sc_abortmake 
     'Отладка / Запуск',                      // sc_debugrun 
-    'Опции',                      // sc_options 
-    'Дерево',                      // sc_tree 
+    'Опции',                           // sc_options 
+    'Дерево',                         // sc_tree 
     'Источник',                      // sc_source 
     'Открыть копию',                      // sc_opencopy 
     'Сохранить копию как ...',                      // sc_saveascopy 
     'Украшение',                      // sc_beautifier
-    'Панели',                      // sc_panels
+    'Панели',                         // sc_panels
     'Принудительный Z-порядок',                      // sc_forcezorder
     'Древовидный список',                      // sc_treelist
     'Сообщения',                      // sc_messages
     'Результат поиска',                      // sc_findresult
     'Командир',                      // sc_commander
-    'Символы',                      // sc_symbols
+    'Символы',                       // sc_symbols
     'бдительность',                      // sc_watches
-    'Куча',                      // sc_stack
-    'Потоки',                      // sc_threads
-    'CPU',                        // sc_cpu
-    'Assembler',                      // sc_assembler
+    'Куча',                             // sc_stack
+    'Потоки',                         // sc_threads
+    'CPU',                                  // sc_cpu
+    'Assembler',                            // sc_assembler
     'Контрольные точки',                      // sc_breakpoints
     'Точки наблюдения',                      // sc_watchpoints 
     'объем памяти',                      // sc_memory
@@ -447,15 +570,15 @@ const
     'Закройте все модули MSE',          // sc_closeallmsemod
     'Общие настройки',          // sc_generalsettings
     'Дополнительные настройки',          // sc_extrasettings
-    'Языки',                 // sc_lang
+    'Языки',                           // sc_lang
     'Настроить виджеты',          // sc_configwidgets
     'Настроить компиляторы',          // sc_configcompilers
     'Настроить отладчики',          // sc_configdebuggers
-    'Темы',                   // sc_themes
-    'Каталог',             // sc_directory
-    'Без иконок',          // sc_noicons
-    'Без бокового',          // sc_themes
-    'Компакт',             // sc_compact 
+    'Темы',                             // sc_themes
+    'Каталог',                       // sc_directory
+    'Без иконок',                  // sc_noicons
+    'Без бокового',              // sc_themes
+    'Компакт',                       // sc_compact 
     'Открыть проект',          // sc_openproject
     'Открыть файл',                           // sc_openfile
     'Путь',                               // sc_path
@@ -472,8 +595,8 @@ const
     'Искать в каталоге проекта',            // sc_searchinprojectdir
     'Искать в каталогах',            // sc_searchindirectories
     'Включить подкаталоги'            // sc_includesubdir
-    
-   );
+
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -490,6 +613,8 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_ru], @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext, @ru_modalresulttextnoshortcut, @ru_textgenerator);
+  registerlangconsts(langnames[la_ru], @ru_projectoptionscontext, @ru_actionsmoduletext,
+   @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext,
+    @ru_modalresulttextnoshortcut, @ru_textgenerator);
 end.
 

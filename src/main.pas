@@ -440,7 +440,7 @@ var
   thetimer: TTimer;
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
-  isactivated : Boolean = False;
+  isactivated: Boolean = False;
   MSEFallbacklang: string = '';
 
 procedure doassistive;
@@ -1458,7 +1458,7 @@ begin
   end
   else
     objectinspectorfo.activate(True)// objectinspectorfo.font.height := confideufo.fontsize.value;
-    // objectinspectorfo.grid.datarowheight := round(ratio * 16);
+  // objectinspectorfo.grid.datarowheight := round(ratio * 16);
   ;
 end;
 
@@ -1514,12 +1514,10 @@ begin
           if modified and not savechecked then
           begin
             with stockobjects do
-         begin
-            Result := ShowMessage(captions[sc_project] + ' ' + fprojectname + ' ' +
-              captions[sc_is_modified_save],captions[sc_Confirmation],
-              [mr_yes, mr_no, mr_cancel], mr_yes);
-          end;    
-              
+              Result := ShowMessage(captions[sc_project] + ' ' + fprojectname + ' ' +
+                captions[sc_is_modified_save], captions[sc_Confirmation],
+                [mr_yes, mr_no, mr_cancel], mr_yes);
+
             if Result = mr_yes then
             begin
               if projectfilename = '' then
@@ -2365,7 +2363,7 @@ begin
         end;
       end;
     end;
-    mainfo.setstattext(actionsmo.c[Ord(ac_loading)] + '.', mtk_error);
+    mainfo.setstattext(actionsmoduletext(ac_loading) + '.', mtk_error);
 
     debuggerfo.project_reset.Enabled     := True;
     debuggerfo.project_interrupt.Enabled := True;
@@ -2859,7 +2857,7 @@ var
 begin
   //with mainmenu1.menu.itembyname('view') do begin
 
-  with mainmenu1.menu.itembynames(['widgets', 'msegui',  'msemod']) do
+  with mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']) do
   begin
 
     for int1 := formmenuitemstart to submenu.Count - 1 do
@@ -2986,7 +2984,8 @@ var
 begin //opensourceactonexecute
       //writeln('hello');
   with stockobjects do
-   openfile.controller.captionopen := captions[sc_openfile];;
+    openfile.controller.captionopen := captions[sc_openfile];
+  ;
 
   openfile.controller.showoptions := True;
 
@@ -3354,7 +3353,7 @@ var
   int1: integer;
 begin
   // with mainmenu1.menu.itembyname('view') do begin
-  with mainmenu1.menu.itembynames(['widgets', 'msegui',  'msemod']) do
+  with mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']) do
     for int1 := itembyname('formmenuitemstart').index + 1 to Count - 1 do
       if items[int1].tagpo = amodule then
       begin
@@ -4653,6 +4652,9 @@ begin
 
   with stockobjects do
   begin
+    mainmenu1.menu.itembynames(['file', 'quit']).Caption := actionsmoduletext(ac_configureideu);
+    //mainmenu1.menu.itembynames(['file', 'quit']).Caption := projectoptionstext(po_editor);
+
     //   mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
     mainmenu1.menu.itembynames(['file']).Caption          := '&' + captions[sc_file];
     mainmenu1.menu.itembynames(['file', 'new']).Caption   := captions[sc_newfile];
@@ -4698,8 +4700,8 @@ begin
     item1 := mainmenu1.menu.itembynames(['tools']);
     if item1 <> nil then
       mainmenu1.menu.itembynames(['tools']).Caption := captions[sc_tools];
-    
-    mainmenu1.menu.itembynames(['view']).Caption   := captions[sc_view];
+
+    mainmenu1.menu.itembynames(['view']).Caption := captions[sc_view];
 
     mainmenu1.menu.itembynames(['view', 'panels']).Caption := captions[sc_panels];
     mainmenu1.menu.itembynames(['view', 'forcezorder']).Caption := captions[sc_forcezorder];
@@ -4710,16 +4712,16 @@ begin
     mainmenu1.menu.itembynames(['view', 'commander']).Caption := captions[sc_commander];
     mainmenu1.menu.itembynames(['view', 'symbols']).Caption := captions[sc_symbols];
     mainmenu1.menu.itembynames(['view', 'watches']).Caption := captions[sc_watches];
-    mainmenu1.menu.itembynames(['view', 'stack']).Caption := captions[sc_stack];
+    mainmenu1.menu.itembynames(['view', 'stack']).Caption  := captions[sc_stack];
     mainmenu1.menu.itembynames(['view', 'threads']).Caption := captions[sc_threads];
-    mainmenu1.menu.itembynames(['view', 'cpu']).Caption := captions[sc_cpu];
+    mainmenu1.menu.itembynames(['view', 'cpu']).Caption    := captions[sc_cpu];
     mainmenu1.menu.itembynames(['view', 'assembler']).Caption := captions[sc_assembler];
     mainmenu1.menu.itembynames(['view', 'memory']).Caption := captions[sc_memory];
     mainmenu1.menu.itembynames(['view', 'targetconsole']).Caption := captions[sc_targetconsole];
     mainmenu1.menu.itembynames(['view', 'breakpoints']).Caption := captions[sc_breakpoints];
     mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := captions[sc_watchpoints];
     mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := captions[sc_toggleformunit];
-       
+
     mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
     mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
 
@@ -4826,11 +4828,11 @@ begin
     mainmenu1.menu.itembynames(['edited', 'save']).Caption := captions[sc_save];
     mainmenu1.menu.itembynames(['edited', 'close']).Caption := captions[sc_close];
 
-    mainmenu1.menu.itembynames(['widgets']).Caption  := captions[sc_widgets];
+    mainmenu1.menu.itembynames(['widgets']).Caption := captions[sc_widgets];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := captions[sc_msemod];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
- 
-  
+
+
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
     mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := captions[sc_extrasettings];
@@ -4839,8 +4841,8 @@ begin
     mainmenu1.menu.itembynames(['settings', 'configcompilers']).Caption := captions[sc_configcompilers];
     mainmenu1.menu.itembynames(['settings', 'configdebuggers']).Caption := captions[sc_configdebuggers];
     mainmenu1.menu.itembynames(['settings', 'themes']).Caption := captions[sc_themes];
-     
-    mainmenu1.menu.itembynames(['about']).Caption    := captions[sc_about];
+
+    mainmenu1.menu.itembynames(['about']).Caption := captions[sc_about];
 
   end;
 
@@ -4850,7 +4852,7 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-  
+
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -5377,7 +5379,7 @@ end;
 
 procedure tmainfo.onlang(const Sender: TObject);
 begin
-MSEFallbackLang := '';
+  MSEFallbackLang := '';
   case Tmenuitem(Sender).Name of
     'langen': MSEFallbackLang := 'en';
     'langru': MSEFallbackLang := 'ru';
@@ -5394,29 +5396,26 @@ end;
 procedure tmainfo.onactiv(const Sender: TObject);
 var
   tmp: string = '';
- begin
-
-if isactivated = false then
 begin
- isactivated := true;
-  tmp := gINI.ReadString('language', 'default', '');
 
-  if tmp <> '' then
+  if isactivated = False then
   begin
-    setlang(tmp);
-    mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state := [as_checked];
-    mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + tmp]).state  := [as_checked];
-    MSEFallbacklang := tmp;
-  end
-  else
-  begin
-   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+    isactivated := True;
+    tmp         := gINI.ReadString('language', 'default', '');
+
+    if tmp <> '' then
+    begin
+      setlang(tmp);
+      mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state := [as_checked];
+      mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + tmp]).state := [as_checked];
+      MSEFallbacklang := tmp;
+    end
+    else if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
     begin
       mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + MSEFallbackLang]).state := [as_checked];
       setlang(MSEFallbackLang);
     end;
   end;
-end;
 end;
 
 end.

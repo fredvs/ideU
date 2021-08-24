@@ -9822,43 +9822,4 @@ object projectoptionsfo: tprojectoptionsfo
     left = 144
     top = 536
   end
-  object c: tstringcontainer
-    strings.data = (
-      'Wrong encoding can damage your source files.'
-      'Do you wish to set encoding to'
-      '*** WARNING ***'
-      'Hangup'
-      'Interrupt'
-      'Quit'
-      'Illegal instruction'
-      'Trace trap'
-      'Abort'
-      'BUS error'
-      'Floating-point exception'
-      'Kill'
-      'User-defined signal 1'
-      'Segmentation violation'
-      'User-defined signal 2'
-      'Broken pipe'
-      'Alarm clock'
-      'Termination'
-      'Stack fault'
-      'Child status has changed'
-      'Continue'
-      'Stop, unblockable'
-      'Keyboard stop'
-      'Background read from tty'
-      'Background write to tty'
-      'Urgent condition on socket'
-      'CPU limit exceeded'
-      'File size limit exceeded'
-      'Virtual alarm clock'
-      'Profiling alarm clock'
-      'Window size change'
-      'I/O now possible'
-      'Power failure restart'
-    )
-    left = 216
-    top = 536
-  end
 end

@@ -70,8 +70,8 @@ const
     'Continuar'          //mr_continue
     );
 
-  es_settingstext: isettingsaty = (
-    'Aplicar', //se_apply
+  es_settingstext: isettingsaty          = (
+    'Aplicar',           //se_apply
     'Configuración asistencia-voz sak', //se_groupassistive
     'Directorio principal de sakit', //se_sakitdir
     'Habilitar sak al cargar', //se_enableassistive
@@ -82,19 +82,141 @@ const
     'Enfoque automático en menú', //se_autofocusmenu
     'Ruta completa en título-proyecto', //se_fullpath
     'Establecer diálogos como modales', //se_modaldial
-    'Altura fuente', //se_fontsize
-    'Nombre fuente', //se_fontname
+    'Altura fuente',     //se_fontsize
+    'Nombre fuente',     //se_fontname
     'No confirmación para eliminar fila', //se_confirmdel
     'Intercalación intermitente', //se_blinkcaret
-    'Repintar canvas', //se_repaintcanvas
-    'Editor de fuente', //se_groupsourceeditor
+    'Repintar canvas',   //se_repaintcanvas
+    'Editor de fuente',  //se_groupsourceeditor
     'Usa esas opciones', //se_usedefaulteditoroptions
     'Espacio tras coma al auto-parsing', //se_addwhiteaftercomma
     'Cuando un archivo ha cambiado:', //se_groupfilechange
     'Sin diálogo => cargar el nuevo', //se_filereload
     'Sin diálogo => mantener el viejo', //se_filenoload
     'Un diálogo pregunta qué hacer ...' //se_fileaskload
-     );
+    );
+
+  es_actionsmoduletext: actionsmoduleaty = (
+    'Configure MSEide',
+    'Process ID',
+    'Attach to process',
+    'Unknown moduleclass for "',
+    'Inherited component "',
+    '" can not be deleted.',
+    'ERROR',
+    'Make aborted.',
+    'Download aborted.',
+    'Runerror with "',
+    'Error: Timeout.',
+    'Making.',
+    'Make not running.',
+    'Downloading.',
+    'Download not running.',
+    '" running.',
+    'Script',
+    'Recursive form inheritance of "',
+    'Component "',
+    '" exists.',
+    'Ancestor for "',
+    '" not found.',
+    'Module "',
+    'Invalid name "',
+    'Invalid methodname',
+    'Module not found',
+    'Method not found',
+    'Published (managed) method',
+    'does not exist.',
+    'Do you wish to delete the event?',
+    'WARNING',
+    'Method',
+    'has different parameters.',
+    'A module "',
+    '" is already open.',
+    'Unresolved reference(s) to',
+    'Module(s):',
+    'Can not read formfile "',
+    'Invalid component name.',
+    'Invalid exception',
+    'T&ools',
+    'Forms',
+    'Source',
+    'All Files',
+    'MSE Program',
+    'MSE Unit',
+    'MSE Textfile',
+    'Mainform',
+    'Simple Form',
+    'Docking Form',
+    'Datamodule',
+    'Subform',
+    'Scrollboxform',
+    'Tabform',
+    'Dockpanel',
+    'Report',
+    'Scriptform',
+    'Inherited Form',
+    'Do you want to replace the settings by',
+    'File "',
+    'Do you want to overwrite?',
+    'Unknown',
+    'Error',
+    'Startup',
+    'Exception',
+    'GDB died',
+    'Breakpoint hit',
+    'Watchpoint triggered',
+    'Read Watchpoint triggered',
+    'Access Watchpoint triggered',
+    'End stepping range',
+    'Function finished',
+    'Exited normally',
+    'Exited',
+    'Detached',
+    'Signal received',
+    'Stop error',
+    'Can not read project',
+    'About',
+    'Object Inspector',
+    'Store Component',
+    'Attaching Process',
+    'Loading'
+    );
+
+  es_projectoptionscontext: projectoptionsconaty = (
+    'Wrong encoding can damage your source files.',
+    'Do you wish to set encoding to',
+    '*** WARNING ***',
+    'Hangup',
+    'Interrupt',
+    'Quit',
+    'Illegal instruction',
+    'Trace trap',
+    'Abort',
+    'BUS error',
+    'Floating-point exception',
+    'Kill',
+    'User-defined signal 1',
+    'Segmentation violation',
+    'User-defined signal 2',
+    'Broken pipe',
+    'Alarm clock',
+    'Termination',
+    'Stack fault',
+    'Child status has changed',
+    'Continue',
+    'Stop, unblockable',
+    'Keyboard stop',
+    'Background read from tty',
+    'Background write to tty',
+    'Urgent condition on socket',
+    'CPU limit exceeded',
+    'File size limit exceeded',
+    'Virtual alarm clock',
+    'Profiling alarm clock',
+    'Window size change',
+    'I/O now possible',
+    'Power failure restart'
+    );
 
   es_projectoptionstext: projectoptionsaty = (
     'Opciones de proyecto', // project options
@@ -463,18 +585,18 @@ const
     'Otro',                                          // sc_other
     'Comando de impresión',                         // sc_printcommand
     'Atajo',                                         // sc_shortcut
-    'Valor',                              // sc_value
-    'Case sensitive',                     // sc_casesensitive
-    'Solo seleccionado',                     // sc_selectedonly
-    'Toda palabra',                        // sc_wholeword
+    'Valor',                                    // sc_value
+    'Case sensitive',                           // sc_casesensitive
+    'Solo seleccionado',                        // sc_selectedonly
+    'Toda palabra',                             // sc_wholeword
     'Texto para buscar',                        // sc_texttofind
-    'Buscar en archivo actual',            // sc_searchincurrentfile
-    'Buscar en archivos abiertos',            // sc_searchinopenfiles 
+    'Buscar en archivo actual',                 // sc_searchincurrentfile
+    'Buscar en archivos abiertos',              // sc_searchinopenfiles 
     'Buscar en directorio proyecto',            // sc_searchinprojectdir
-    'Buscar en directorios',            // sc_searchindirectories
-    'Incluir subdirectorios'            // sc_includesubdir
-    
-   );
+    'Buscar en directorios',                    // sc_searchindirectories
+    'Incluir subdirectorios'                    // sc_includesubdir
+
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -491,6 +613,8 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_es], @es_settingstext, @es_projectoptionstext, @es_stockcaption, @es_modalresulttext, @es_modalresulttextnoshortcut, @es_textgenerator);
+  registerlangconsts(langnames[la_es], @es_projectoptionscontext, @es_actionsmoduletext,
+   @es_settingstext, @es_projectoptionstext, @es_stockcaption, @es_modalresulttext,
+    @es_modalresulttextnoshortcut, @es_textgenerator);
 end.
 

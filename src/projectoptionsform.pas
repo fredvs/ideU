@@ -944,7 +944,6 @@ type
     colorerror: tcoloredit;
     colorwarning: tcoloredit;
     colornote: tcoloredit;
-    c: tstringcontainer;
     xtermcommand: tmemodialogedit;
     tlayouter14: tlayouter;
     rightmarginon: tbooleanedit;
@@ -1174,44 +1173,6 @@ var
   projectoptionsfo: tprojectoptionsfo;
   fo: tprojectoptionsfo;
 
-type
-
-  stringconststy = (
-    wrongencoding,    //0 Wrong encoding can damage your source files.
-    wishsetencoding,  //1 Do you wish to set encoding to
-    warning,          //2 *** WARNING ***
-    c_SIGHUP,         //3 Hangup
-    c_SIGINT,         //4 Interrupt
-    c_SIGQUIT,        //5 Quit
-    c_SIGILL,         //6 Illegal instruction
-    c_SIGTRAP,        //7 Trace trap
-    c_SIGABRT,        //8 Abort
-    c_SIGBUS,         //9 BUS error
-    c_SIGFPE,         //10 Floating-point exception
-    c_SIGKILL,        //11 Kill
-    c_SIGUSR1,        //12 User-defined signal 1
-    c_SIGSEGV,        //13 Segmentation violation
-    c_SIGUSR2,        //14 User-defined signal 2
-    c_SIGPIPE,        //15 Broken pipe
-    c_SIGALRM,        //16 Alarm clock
-    c_SIGTERM,        //17 Termination
-    c_SIGSTKFLT,      //18 Stack fault
-    c_SIGCHLD,        //19 Child status has changed
-    c_SIGCONT,        //20 Continue
-    c_SIGSTOP,        //21 Stop, unblockable
-    c_SIGTSTP,        //22 Keyboard stop
-    c_SIGTTIN,        //23 Background read from tty
-    c_SIGTTOU,        //24 Background write to tty
-    c_SIGURG,         //25 Urgent condition on socket
-    c_SIGXCPU,        //26 CPU limit exceeded
-    c_SIGXFSZ,        //27 File size limit exceeded
-    c_SIGTALRM,       //28 Virtual alarm clock
-    c_SIGPROF,        //29 Profiling alarm clock
-    c_SIGWINCH,       //30 Window size change
-    c_SIGIO,          //31 I/O now possible
-    c_SIGPWR          //32 Power failure restart
-    );
-
 const
   firstsiginfocomment = c_sighup;
   lastsiginfocomment  = c_sigpwr;
@@ -1405,8 +1366,7 @@ begin
             strexecext := '${EXEEXT}';
             expandprmacros1(strexecext);
           end
-          else
-          if (trim(exeused[int1]) = 'No Extension') or
+          else if (trim(exeused[int1]) = 'No Extension') or
             (trim(exeused[int1]) = '') then
             strexecext := ''
           else
@@ -1443,11 +1403,11 @@ begin
   if exceptobject is Exception then
   begin
     if ShowMessage(msestring(Exception(exceptobject).Message),
-      actionsmo.c[Ord(ac_error)], [mr_skip, mr_cancel]) <> mr_skip then
+      actionsmoduletext(ac_error), [mr_skip, mr_cancel]) <> mr_skip then
       Result := True;
   end
   else
-    raise Exception.Create(ansistring(actionsmo.c[Ord(ac_invalidexception)]));
+    raise Exception.Create(ansistring(actionsmoduletext(ac_invalidexception)));
 end;
 
 function projectfiledialog(var aname: filenamety; save: Boolean): modalresultty;
@@ -1660,7 +1620,7 @@ begin
           begin
             item1         := tmenuitem.Create;
             item1.Name    := 'tools';
-            item1.Caption := actionsmo.c[Ord(ac_tools)];
+            item1.Caption := actionsmoduletext(ac_tools);
             insert(itemindexbyname('settings'), item1);
           end;
           with item1.submenu do
@@ -1908,17 +1868,17 @@ begin
     setlength(fnewfiexts, 3);
     setlength(fnewfisources, 3);
 
-    newfinames[0]   := actionsmo.c[Ord(ac_program)];
+    newfinames[0]   := actionsmoduletext(ac_program);
     newfifilters[0] := '"*.pas" "*.pp"';
     newfiexts[0]    := 'pas';
     newfisources[0] := '${TEMPLATEDIR}/fpc_mse/default/program.pas';
 
-    newfinames[1]   := actionsmo.c[Ord(ac_unit)];
+    newfinames[1]   := actionsmoduletext(ac_unit);
     newfifilters[1] := '"*.pas" "*.pp"';
     newfiexts[1]    := 'pas';
     newfisources[1] := '${TEMPLATEDIR}/fpc_mse/default/unit.pas';
 
-    newfinames[2]   := actionsmo.c[Ord(ac_textfile)];
+    newfinames[2]   := actionsmoduletext(ac_textfile);
     newfifilters[2] := '';
     newfiexts[2]    := '';
     newfisources[2] := '';
@@ -1929,67 +1889,67 @@ begin
     setlength(fnewfosources, 11);
     setlength(fnewfoforms, 11);
 
-    newfonames[0]        := actionsmo.c[Ord(ac_mainform)];
+    newfonames[0]        := actionsmoduletext(ac_mainform);
     newfonamebases[0]    := 'form';
     newinheritedforms[0] := False;
     newfosources[0]      := '${TEMPLATEDIR}fpc_mse/default/mainform.pas';
     newfoforms[0]        := '${TEMPLATEDIR}fpc_mse/default/mainform.mfm';
 
-    newfonames[1]        := actionsmo.c[Ord(ac_simpleform)];
+    newfonames[1]        := actionsmoduletext(ac_simpleform);
     newfonamebases[1]    := 'form';
     newinheritedforms[1] := False;
     newfosources[1]      := '${TEMPLATEDIR}fpc_mse/default/simpleform.pas';
     newfoforms[1]        := '${TEMPLATEDIR}fpc_mse/default/simpleform.mfm';
 
-    newfonames[2]        := actionsmo.c[Ord(ac_dockingform)];
+    newfonames[2]        := actionsmoduletext(ac_dockingform);
     newfonamebases[2]    := 'form';
     newinheritedforms[2] := False;
     newfosources[2]      := '${TEMPLATEDIR}fpc_mse/default/dockingform.pas';
     newfoforms[2]        := '${TEMPLATEDIR}fpc_mse/default/dockingform.mfm';
 
-    newfonames[3]        := actionsmo.c[Ord(ac_datamodule)];
+    newfonames[3]        := actionsmoduletext(ac_datamodule);
     newfonamebases[3]    := 'module';
     newinheritedforms[3] := False;
     newfosources[3]      := '${TEMPLATEDIR}fpc_mse/default/datamodule.pas';
     newfoforms[3]        := '${TEMPLATEDIR}fpc_mse/default/datamodule.mfm';
 
-    newfonames[4]        := actionsmo.c[Ord(ac_subform)];
+    newfonames[4]        := actionsmoduletext(ac_subform);
     newfonamebases[4]    := 'form';
     newinheritedforms[4] := False;
     newfosources[4]      := '${TEMPLATEDIR}fpc_mse/default/subform.pas';
     newfoforms[4]        := '${TEMPLATEDIR}fpc_mse/default/subform.mfm';
 
-    newfonames[5]        := actionsmo.c[Ord(ac_scrollboxform)];
+    newfonames[5]        := actionsmoduletext(ac_scrollboxform);
     newfonamebases[5]    := 'form';
     newinheritedforms[5] := False;
     newfosources[5]      := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.pas';
     newfoforms[5]        := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.mfm';
 
-    newfonames[6]        := actionsmo.c[Ord(ac_tabform)];
+    newfonames[6]        := actionsmoduletext(ac_tabform);
     newfonamebases[6]    := 'form';
     newinheritedforms[6] := False;
     newfosources[6]      := '${TEMPLATEDIR}fpc_mse/default/tabform.pas';
     newfoforms[6]        := '${TEMPLATEDIR}fpc_mse/default/tabform.mfm';
 
-    newfonames[7]        := actionsmo.c[Ord(ac_dockpanel)];
+    newfonames[7]        := actionsmoduletext(ac_dockpanel);
     newfonamebases[7]    := 'form';
     newinheritedforms[7] := False;
     newfosources[7]      := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.pas';
     newfoforms[7]        := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.mfm';
 
-    newfonames[8]        := actionsmo.c[Ord(ac_report)];
+    newfonames[8]        := actionsmoduletext(ac_report);
     newfonamebases[8]    := 'report';
     newinheritedforms[8] := False;
     newfosources[8]      := '${TEMPLATEDIR}fpc_mse/default/report.pas';
     newfoforms[8]        := '${TEMPLATEDIR}fpc_mse/default/report.mfm';
 
-    newfonames[9]        := actionsmo.c[Ord(ac_scriptform)];
+    newfonames[9]        := actionsmoduletext(ac_scriptform);
     newfonamebases[9]    := 'script';
     newinheritedforms[9] := False;
     newfosources[9]      := '${TEMPLATEDIR}fpc_mse/default/pascform.pas';
     newfoforms[9]        := '${TEMPLATEDIR}fpc_mse/default/pascform.mfm';
 
-    newfonames[10]        := actionsmo.c[Ord(ac_inheritedform)];
+    newfonames[10]        := actionsmoduletext(ac_inheritedform);
     newfonamebases[10]    := 'form';
     newinheritedforms[10] := True;
     newfosources[10]      := '${TEMPLATEDIR}fpc_mse/default/inheritedform.pas';
@@ -2010,11 +1970,11 @@ begin
     additem(fsourcefilemasks, '"*.mfm"');
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
-    additem(ffilemasknames, actionsmo.c[Ord(ac_source)]);
+    additem(ffilemasknames, actionsmoduletext(ac_source));
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
-    additem(ffilemasknames, actionsmo.c[Ord(ac_forms)]);
+    additem(ffilemasknames, actionsmoduletext(ac_forms));
     additem(ffilemasks, '*.mfm');
-    additem(ffilemasknames, actionsmo.c[Ord(ac_allfiles)]);
+    additem(ffilemasknames, actionsmoduletext(ac_allfiles));
     additem(ffilemasks, '*');
 
   end;
@@ -2757,8 +2717,8 @@ begin
   except
     on e: Exception do
     begin
-      showerror(actionsmo.c[Ord(ac_cannotreadproject)] + ' "' + filename + '".' +
-        lineend + msestring(e.message), actionsmo.c[Ord(ac_error)]);
+      showerror(actionsmoduletext(ac_cannotreadproject) + ' "' + filename + '".' +
+        lineend + msestring(e.message), actionsmoduletext(ac_error));
     end;
   end;
 end;
@@ -3015,13 +2975,14 @@ var
   mstr1: msestring;
 begin
   mstr1  := encoding.dropdown.valuelist[avalue];
-  accept := askyesno(c[Ord(wrongencoding)] + lineend +
-    c[Ord(wishsetencoding)] + ' ' + mstr1 + '?', c[Ord(warning)]);
+  accept := askyesno(projectoptionscontext(c_wrongencoding) + lineend +
+    projectoptionscontext(c_wishsetencoding) + ' ' + mstr1 + '?', projectoptionscontext(c_warning));
 end;
 
 procedure tprojectoptionsfo.createexe(const Sender: TObject);
 var
   int1: integer;
+  sigstring: string = '';
 begin
   icon     := mainfo.icon;
  {$ifdef mswindows}
@@ -3030,8 +2991,44 @@ begin
  settty.visible:= true;
 // xtermoptions.visible:= true;
  {$endif}
+  // sigstring := projectoptionscontext(c_SIGHUP);
   for int1 := Ord(firstsiginfocomment) to Ord(lastsiginfocomment) do
-    siginfos[int1 - Ord(firstsiginfocomment)].comment := ansistring(c[int1]);
+  begin
+    case int1 of
+      3: sigstring  := projectoptionscontext(c_SIGHUP);
+      5: sigstring  := projectoptionscontext(c_SIGQUIT);
+      6: sigstring  := projectoptionscontext(c_SIGILL);
+      7: sigstring  := projectoptionscontext(c_SIGABRT);
+      8: sigstring  := projectoptionscontext(c_SIGBUS);
+      9: sigstring  := projectoptionscontext(c_SIGFPE);
+      10: sigstring := projectoptionscontext(c_SIGILL);
+      11: sigstring := projectoptionscontext(c_SIGKILL);
+      12: sigstring := projectoptionscontext(c_SIGUSR1);
+      13: sigstring := projectoptionscontext(c_SIGSEGV);
+      14: sigstring := projectoptionscontext(c_SIGUSR2);
+      15: sigstring := projectoptionscontext(c_SIGPIPE);
+      16: sigstring := projectoptionscontext(c_SIGALRM);
+      17: sigstring := projectoptionscontext(c_SIGTERM);
+      18: sigstring := projectoptionscontext(c_SIGSTKFLT);
+      19: sigstring := projectoptionscontext(c_SIGCHLD);
+      20: sigstring := projectoptionscontext(c_SIGCONT);
+      21: sigstring := projectoptionscontext(c_SIGSTOP);
+      22: sigstring := projectoptionscontext(c_SIGTSTP);
+      23: sigstring := projectoptionscontext(c_SIGTTIN);
+      24: sigstring := projectoptionscontext(c_SIGTTOU);
+      25: sigstring := projectoptionscontext(c_SIGURG);
+      26: sigstring := projectoptionscontext(c_SIGXCPU);
+      27: sigstring := projectoptionscontext(c_SIGXFSZ);
+      28: sigstring := projectoptionscontext(c_SIGTALRM);
+      29: sigstring := projectoptionscontext(c_SIGPROF);
+      30: sigstring := projectoptionscontext(c_SIGWINCH);
+      31: sigstring := projectoptionscontext(c_SIGIO);
+      32: sigstring := projectoptionscontext(c_SIGPWR);
+    end;
+
+    siginfos[int1 - Ord(firstsiginfocomment)].comment := ansistring(sigstring);
+
+  end;
 end;
 
 procedure tprojectoptionsfo.drawcol(const Sender: tpointeredit; const acanvas: tcanvas; const avalue: Pointer; const arow: integer);
@@ -3258,9 +3255,9 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if not askyesno(actionsmo.c[Ord(ac_replacesettings)] + lineend +
+    if not askyesno(actionsmoduletext(ac_replacesettings) + lineend +
       '"' + fname1 + '"?',
-      actionsmo.c[Ord(ac_warning)]) then
+      actionsmoduletext(ac_warning)) then
       Exit;
   end
   else
@@ -3321,9 +3318,9 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if findfile(fname1) and not askyesno(actionsmo.c[Ord(ac_file)] + fname1 +
-      actionsmo.c[Ord(ac_exists)] + lineend +
-      actionsmo.c[Ord(ac_wantoverwrite)], actionsmo.c[Ord(ac_warning)]) then
+    if findfile(fname1) and not askyesno(actionsmoduletext(ac_file) + fname1 +
+      actionsmoduletext(ac_exists) + lineend +
+      actionsmoduletext(ac_wantoverwrite), actionsmoduletext(ac_warning)) then
       Exit;
   end
   else

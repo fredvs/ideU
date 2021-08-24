@@ -4,6 +4,12 @@ unit make;
 
 interface
 uses
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  msestrings, msetypes, msesystypes, msegraphedits, msepipestream;
 
 procedure domake(atag: integer);
@@ -203,7 +209,7 @@ begin
  if (maker <> nil) or (custommaker <> nil) then begin
   actionsmo.finishcustom;
      killmake;
-  mainfo.setstattext(actionsmo.c[ord(ac_makeaborted)],mtk_error);
+  mainfo.setstattext(actionsmoduletext(ac_makeaborted),mtk_error);
  end;
 end;
 
@@ -211,7 +217,7 @@ procedure abortdownload;
 begin
  if loader <> nil then begin
   killload;
-  mainfo.setstattext(actionsmo.c[ord(ac_downloadaborted)],mtk_error);
+  mainfo.setstattext(actionsmoduletext(ac_downloadaborted),mtk_error);
  end;
 end;
 
@@ -926,7 +932,7 @@ begin
      fexitcode:= eoserror(e).error;
 {$warnings on}
     end;
-    application.handleexception(nil,actionsmo.c[ord(ac_runerrorwith)]+
+    application.handleexception(nil,actionsmoduletext(ac_runerrorwith)+
                                                           UTF8Decode(acommandline)+'": ');
    end;
   end;
@@ -939,7 +945,7 @@ end;
 procedure tprogrunner.doasyncevent(var atag: integer);
 begin
  if getprocessexitcode(procid,fexitcode,5000000) <> pee_ok then begin
-  messagefo.messages.appendrow([actionsmo.c[ord(ac_errortimeout)]]);
+  messagefo.messages.appendrow([actionsmoduletext(ac_errortimeout)]);
   messagefo.messages.appendrow(['']);
   killprocess(procid);
  end;
@@ -1011,7 +1017,7 @@ begin
                                                       [foo_nonantialiased];
  end
  else begin
-   mainfo.setstattext(actionsmo.c[ord(ac_makenotrunning)],mtk_error);
+   mainfo.setstattext(actionsmoduletext(ac_makenotrunning),mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
   actionsmo.finishcustom ;
  end;
@@ -1117,7 +1123,7 @@ begin
                                                       [foo_nonantialiased];
  end
  else begin
-  mainfo.setstattext(actionsmo.c[ord(ac_makenotrunning)],mtk_error);
+  mainfo.setstattext(actionsmoduletext(ac_makenotrunning),mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
  end;
 end;
@@ -1207,10 +1213,10 @@ constructor tloader.create(aowner: tcomponent);
 begin
  inherited create(aowner,false,true);
  if procid <> invalidprochandle then begin
-  mainfo.setstattext(actionsmo.c[ord(ac_downloading)],mtk_making);
+  mainfo.setstattext(actionsmoduletext(ac_downloading),mtk_making);
  end
  else begin
-  mainfo.setstattext(actionsmo.c[ord(ac_downloadnotrunning)],mtk_error);
+  mainfo.setstattext(actionsmoduletext(ac_downloadnotrunning),mtk_error);
  end;
 end;
 
@@ -1241,8 +1247,8 @@ begin
  inherited create(aowner,false,setmakedir);
  if not fcanceled then begin
   fcanceled:= not application.waitdialog(nil,'"'+ascriptpath+
-               actionsmo.c[ord(ac_running)],
-     actionsmo.c[ord(ac_script)],nil,nil,nil);
+               actionsmoduletext(ac_running),
+     actionsmoduletext(ac_script),nil,nil,nil);
  end;
 end;
 

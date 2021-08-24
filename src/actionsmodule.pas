@@ -4,1421 +4,1389 @@ unit actionsmodule;
 {$ifdef linux}{$define unix}{$endif}
 
 interface
+
 uses
- classes,mseclasses,mseact,msetabs,mseactions,msebitmap,msestrings,msegui,commandorform,
- dialogfiles,msefileutils,msedatamodules,mseglob,msestat,msegraphics,msestockobjects,
- msegraphutils,mseguiglob,msemenus,msesys, msesysutils,msesimplewidgets,
- projecttreeform,msestringcontainer,targetconsole,mclasses,mseificomp,
- mseificompglob,mseifiglob;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  Classes,
+  mseclasses,
+  mseact,
+  msetabs,
+  mseactions,
+  msebitmap,
+  msestrings,
+  msegui,
+  commandorform,
+  dialogfiles,
+  msefileutils,
+  msedatamodules,
+  mseglob,
+  msestat,
+  msegraphics,
+  msegraphutils,
+  mseguiglob,
+  msemenus,
+  msesys,
+  msesysutils,
+  msesimplewidgets,
+  projecttreeform,
+  msestringcontainer,
+  targetconsole,
+  mclasses,
+  mseificomp,
+  mseificompglob,
+  mseifiglob;
 
 type
- stringconsts = (
-  ac_configureide, //0 Configure ideU
-  ac_processid,       //1 Process ID
-  ac_attachtoprocess, //2 Attach to process
-  ac_unknownmodclass, //3 Unknown moduleclass for "
-  ac_inheritedcomp,   //4 Inherited component "
-  ac_cannotdel,       //5 " can not be deleted.
-  ac_error,           //6 ERROR
-  ac_makeaborted,     //7 Make aborted.
-  ac_downloadaborted, //8 Download aborted.
-  ac_runerrorwith,    //9 Runerror with "
-  ac_errortimeout,    //10 Error: Timeout.
-  ac_making,          //11 Making.
-  ac_makenotrunning,  //12 Make not running.
-  ac_downloading,     //13 Downloading.
-  ac_downloadnotrunning, //14 Download not running.
-  ac_running,         //15 " running.
-  ac_script,         //16 Script
-  ac_recursiveforminheritance, //17 Recursive form inheritance of "
-  ac_component,      //18 Component "
-  ac_exists,         //19 " exists.
-  ac_ancestorfor,    //20 Ancestor for "
-  ac_notfound,       //21 " not found.
-  ac_module,         //22 Module "
-  ac_invalidname,    //23 Invalid name "
-  ac_invalidmethodname, //24 Invalid methodname
-  ac_modulenotfound, //25 Module not found
-  ac_methodnotfound, //26 Method not found
-  ac_publishedmeth,  //27 Published (managed) method
-  ac_doesnotexist,   //28 does not exist.
-  ac_wishdelete,     //29 Do you wish to delete the event?
-  ac_warning,        //30 WARNING
-  ac_method,         //31 Method
-  ac_differentparams,   //32 has different parameters.
-  ac_amodule,        //33 A module "
-  ac_isopen,         //34 " is already open.
-  ac_unresolvedref,   //35 Unresolved reference(s) to
-  ac_modules,        //36 Module(s):
-  ac_cannotreadform, //37 Can not read formfile "
-  ac_invalidcompname,//38 Invalid component name.
-  ac_invalidexception, //39 Invalid exception
-  ac_tools,           //40 T&ools
-  ac_forms,           //41 Forms
-  ac_source,          //42 Source
-  ac_allfiles,        //43 All Files
-  ac_program,         //44 Program
-  ac_unit,            //45 Unit
-  ac_textfile,        //46 Textfile
-  ac_mainform,        //47 Mainform
-  ac_simpleform,      //48 Simple Form
-  ac_dockingform,     //49 Docking Form
-  ac_datamodule,      //50 Datamodule
-  ac_subform,         //51 Subform
-  ac_scrollboxform,   //52 Scrollboxform
-  ac_tabform,         //53 Tabform
-  ac_dockpanel,       //54 Dockpanel
-  ac_report,          //55 Report
-  ac_scriptform,      //56 Scriptform
-  ac_inheritedform,   //57 Inherited Form
-  ac_replacesettings, //58 Do you want to replace the settings by
-  ac_file,            //59 File "
-  ac_wantoverwrite,   //60 Do you want to overwrite?
-  ac_sr_unknown,      //61 Unknown
-  ac_sr_error,        //62 Error
-  ac_sr_startup,      //63 Startup
-  ac_sr_exception,    //64 Exception
-  ac_sr_gdbdied,      //65 GDB died
-  ac_sr_breakpoint_hit,           //66 Breakpoint hit
-  ac_sr_watchpointtrigger,        //67 Watchpoint triggered
-  ac_sr_readwatchpointtrigger,    //68 Read Watchpoint triggered
-  ac_sr_accesswatchpointtrigger,  //69 Access Watchpoint triggered
-  ac_sr_end_stepping_range,       //70 End stepping range
-  ac_sr_function_finished,        //71 Function finished
-  ac_sr_exited_normally,          //72 Exited normally
-  ac_sr_exited,                   //73 Exited
-  ac_sr_detached,                 //74 Detached
-  ac_sr_signal_received,          //75 Signal received
-  ac_stoperror,                   //76 Stop error
-  ac_cannotreadproject,           //77 Can not read project
-  ac_about,                       //78 About
-  ac_objectinspector,             //79 Object Inspector
-  ac_storecomponent,              //80 Store Component
-  ac_attachingprocess,            //81 Attaching Process
-  ac_loading                      //82 Loading
- );
+  tactionsmo = class(tmsedatamodule)
+    buttonicons: timagelist;
 
-type
- tactionsmo = class(tmsedatamodule)
-   buttonicons: timagelist;
+    opensource: taction;
+    saveall: taction;
+    saveas: taction;
+    save: taction;
+    Close: taction;
+    closeall: taction;
 
-   opensource: taction;
-   saveall: taction;
-   saveas: taction;
-   save: taction;
-   close: taction;
-   closeall: taction;
+    reset: taction;
+    interrupt: taction;
+    Next: taction;
+    step: taction;
+    finish: taction;
+    continue: taction;
+    //   run: taction;
 
-   reset: taction;
-   interrupt: taction;
-   next: taction;
-   step: taction;
-   finish: taction;
-   continue: taction;
-//   run: taction;
+    line: taction;
+    find: taction;
+    repeatfind: taction;
+    findinfile: taction;
 
-   line: taction;
-   find: taction;
-   repeatfind: taction;
-   findinfile: taction;
+    indent: taction;
+    nexti: taction;
+    stepi: taction;
+    bluedotsonact: taction;
+    replace: taction;
+    print: taction;
+    detachtarget: taction;
+    attachprocess: taction;
+    lowercase: taction;
+    uppercase: taction;
+    toggleformunit: taction;
+    unindent: taction;
+    undo: taction;
+    redo: taction;
+    cut: taction;
+    copy: taction;
+    paste: taction;
+    Delete: taction;
 
-   indent: taction;
-   nexti: taction;
-   stepi: taction;
-   bluedotsonact: taction;
-   replace: taction;
-   print: taction;
-   detachtarget: taction;
-   attachprocess: taction;
-   lowercase: taction;
-   uppercase: taction;
-   toggleformunit: taction;
-   unindent: taction;
-   undo: taction;
-   redo: taction;
-   cut: taction;
-   copy: taction;
-   paste: taction;
-   delete: taction;
+    togglebkpt: taction;
+    togglebkptenable: taction;
+    bkptsonact: taction;
+    watchesonact: taction;
 
-   togglebkpt: taction;
-   togglebkptenable: taction;
-   bkptsonact: taction;
-   watchesonact: taction;
+    abortmakeact: taction;
+    makeact: taction;
+    selecteditpage: taction;
 
-   abortmakeact: taction;
-   makeact: taction;
-   selecteditpage: taction;
+    run: taction;
+    //common
+    shortcuts: tshortcutcontroller;
+    toggleinspector: taction;
+    buildact: taction;
+    make1act: taction;
+    make2act: taction;
+    make3act: taction;
+    make4act: taction;
+    download: taction;
+    helpact: taction;
+    attachtarget: taction;
+    setbm0: taction;
+    findbm0: taction;
+    findbm1: taction;
+    setbm1: taction;
+    findbm2: taction;
+    setbm2: taction;
+    findbm3: taction;
+    setbm3: taction;
+    findbm4: taction;
+    setbm4: taction;
+    findbm5: taction;
+    setbm5: taction;
+    findbm6: taction;
+    setbm6: taction;
+    findbm7: taction;
+    setbm7: taction;
+    findbm8: taction;
+    setbm8: taction;
+    findbm9: taction;
+    setbm9: taction;
+    setbmnone: taction;
+    instemplate: taction;
+    projectopenact: taction;
+    projectoptionsact: taction;
+    projecttreeact: taction;
+    projectsourceact: taction;
 
-   run: taction;
-   //common
-   shortcuts: tshortcutcontroller;
-   toggleinspector: taction;
-   buildact: taction;
-   make1act: taction;
-   make2act: taction;
-   make3act: taction;
-   make4act: taction;
-   download: taction;
-   helpact: taction;
-   attachtarget: taction;
-   setbm0: taction;
-   findbm0: taction;
-   findbm1: taction;
-   setbm1: taction;
-   findbm2: taction;
-   setbm2: taction;
-   findbm3: taction;
-   setbm3: taction;
-   findbm4: taction;
-   setbm4: taction;
-   findbm5: taction;
-   setbm5: taction;
-   findbm6: taction;
-   setbm6: taction;
-   findbm7: taction;
-   setbm7: taction;
-   findbm8: taction;
-   setbm8: taction;
-   findbm9: taction;
-   setbm9: taction;
-   setbmnone: taction;
-   instemplate: taction;
-   projectopenact: taction;
-   projectoptionsact: taction;
-   projecttreeact: taction;
-   projectsourceact: taction;
+    projectsaveact: taction;
+    projectcloseact: taction;
+    copylatexact: taction;
+    findcompact: taction;
+    findcompallact: taction;
+    forcezorderact: taction;
 
-   projectsaveact: taction;
-   projectcloseact: taction;
-   c: tstringcontainer;
-   copylatexact: taction;
-   findcompact: taction;
-   findcompallact: taction;
-   forcezorderact: taction;
+    tool0: taction;
+    tool1: taction;
+    tool2: taction;
+    tool3: taction;
+    tool4: taction;
+    tool5: taction;
+    tool6: taction;
+    tool7: taction;
+    tool8: taction;
+    tool9: taction;
 
-   tool0: taction;
-   tool1: taction;
-   tool2: taction;
-   tool3: taction;
-   tool4: taction;
-   tool5: taction;
-   tool6: taction;
-   tool7: taction;
-   tool8: taction;
-   tool9: taction;
+    customrun: taction;
+    assistive: taction;
+    customcompil: taction;
+    projectcompile: taction;
+    projectcustomcompile: taction;
+    custmakemenu: taction;
+    customsave: taction;
+    comment: taction;
+    uncomment: taction;
+    copyword: taction;
+    selectall: taction;
 
-   customrun: taction;
-   assistive: taction;
-   customcompil: taction;
-   projectcompile: taction;
-   projectcustomcompile: taction;
-   custmakemenu: taction;
-   customsave: taction;
-   comment: taction;
-   uncomment: taction;
-   copyword: taction;
-   selectall: taction;
-
-   savecust: taction;
-   findback: taction;
-   procedurelist: taction;
-   deleteword: taction;
-   selectword: taction;
-   procedure findinfileonexecute(const sender: tobject);
+    savecust: taction;
+    findback: taction;
+    procedurelist: taction;
+    deleteword: taction;
+    selectword: taction;
+    procedure findinfileonexecute(const Sender: TObject);
 
     //file
-   procedure opensourceactonexecute(const sender: tobject);
-   procedure saveactonexecute(const sender: tobject);
-   procedure saveasactonexecute(const sender: TObject);
-   procedure saveallactonexecute(const sender: tobject);
-   procedure closeactonexecute(const sender: tobject);
-   procedure closeallactonexecute(const sender: tobject);
+    procedure opensourceactonexecute(const Sender: TObject);
+    procedure saveactonexecute(const Sender: TObject);
+    procedure saveasactonexecute(const Sender: TObject);
+    procedure saveallactonexecute(const Sender: TObject);
+    procedure closeactonexecute(const Sender: TObject);
+    procedure closeallactonexecute(const Sender: TObject);
 
-   //editor
-   procedure seleclallactonexecute(const sender: TObject);
-   procedure pasteactonexecute(const sender: tobject);
-   procedure deleteactonexecute(const sender: tobject);
-   procedure selecteditpageonexecute(const sender: TObject);
-   procedure undoactonexecute(const sender: tobject);
-   procedure redoactonexecute(const sender: tobject);
-   procedure copyactonexecute(const sender: tobject);
-   procedure cutactonexecute(const sender: tobject);
+    //editor
+    procedure seleclallactonexecute(const Sender: TObject);
+    procedure pasteactonexecute(const Sender: TObject);
+    procedure deleteactonexecute(const Sender: TObject);
+    procedure selecteditpageonexecute(const Sender: TObject);
+    procedure undoactonexecute(const Sender: TObject);
+    procedure redoactonexecute(const Sender: TObject);
+    procedure copyactonexecute(const Sender: TObject);
+    procedure cutactonexecute(const Sender: TObject);
 
-   procedure indentonexecute(const sender: TObject);
-   procedure unindentonexecute(const sender: TObject);
-   procedure lowercaseexecute(const sender: TObject);
-   procedure uppercaseexecute(const sender: TObject);
-   procedure enableonselect(const sender: tcustomaction);
+    procedure indentonexecute(const Sender: TObject);
+    procedure unindentonexecute(const Sender: TObject);
+    procedure lowercaseexecute(const Sender: TObject);
+    procedure uppercaseexecute(const Sender: TObject);
+    procedure enableonselect(const Sender: tcustomaction);
 
-   procedure lineactonexecute(const sender: TObject);
-   procedure findactonexecute(const sender: tobject);
-   procedure repeatfindactonexecute(const sender: tobject);
-   procedure replaceactonexecute(const sender: TObject);
+    procedure lineactonexecute(const Sender: TObject);
+    procedure findactonexecute(const Sender: TObject);
+    procedure repeatfindactonexecute(const Sender: TObject);
+    procedure replaceactonexecute(const Sender: TObject);
 
-   procedure togglebreakpointexe(const sender: TObject);
-   procedure togglebkptenableactonexecute(const sender: TObject);
-   procedure toggleformunitonexecute(const sender: TObject);
+    procedure togglebreakpointexe(const Sender: TObject);
+    procedure togglebkptenableactonexecute(const Sender: TObject);
+    procedure toggleformunitonexecute(const Sender: TObject);
 
-   //make
-   procedure makeactonexecute(const sender: tobject);
-   procedure abortmakeactonexecute(const sender: tobject);
+    //make
+    procedure makeactonexecute(const Sender: TObject);
+    procedure abortmakeactonexecute(const Sender: TObject);
 
-   // fred
+    // fred
     // assistive
-   procedure assistiveactonexecute(const sender: tobject);
+    procedure assistiveactonexecute(const Sender: TObject);
 
-   procedure runcustom(const sender: TObject);
+    procedure runcustom(const Sender: TObject);
 
-   // Setup ready
-   procedure setupcustom ;
+    // Setup ready
+    procedure setupcustom;
 
-   // Setup ready from menu
-   procedure setupcustommenu(const sender: TObject);
+    // Setup ready from menu
+    procedure setupcustommenu(const Sender: TObject);
 
-   procedure initproject ;
+    procedure initproject;
 
-      // custom is finish
-   procedure finishcustom;
+    // custom is finish
+    procedure finishcustom;
 
-   // Project cust compile
-   procedure custcompileproject(const sender: TObject);
+    // Project cust compile
+    procedure custcompileproject(const Sender: TObject);
 
-   // Custom compile
-   procedure compilecustom(const sender: TObject);
+    // Custom compile
+    procedure compilecustom(const Sender: TObject);
 
-   // Custom compile
-   procedure compilecustommenu(const sender: TObject);
+    // Custom compile
+    procedure compilecustommenu(const Sender: TObject);
 
-   // Project compile
-   procedure compileproject(const sender: TObject);
+    // Project compile
+    procedure compileproject(const Sender: TObject);
 
-   procedure savecustom(const sender: tobject);
+    procedure savecustom(const Sender: TObject);
 
-   // Graeme procedurelist
-   procedure procedurelistonexecute(const sender: TObject);
+    // Graeme procedurelist
+    procedure procedurelistonexecute(const Sender: TObject);
 
-   //debugger
-   procedure resetactonexecute(const sender: tobject);
-   procedure interruptactonexecute(const sender: tobject);
-   procedure continueactonexecute(const sender: tobject);
-   procedure nextactonexecute(const sender: tobject);
-   procedure finishactonexecute(const sender: tobject);
-   procedure stepactonexecute(const sender: tobject);
-   procedure stepiactonexecute(const sender: TObject);
-   procedure nextiactonexecute(const sender: TObject);
-   procedure bkptsononexecute(const sender: TObject);
-   procedure watchesononexecute(const sender: TObject);
-   procedure bluedotsononchange(const sender: TObject);
-   procedure printactonexecute(const sender: TObject);
-   procedure ondetachtarget(const sender: TObject);
-   procedure onattachprocess(const sender: TObject);
-   procedure updateshortcuts(const sender: tshortcutcontroller);
-   procedure downloadexe(const sender: TObject);
-   procedure helpex(const sender: TObject);
-   procedure onattachtarget(const sender: TObject);
-   procedure setbmexec(const sender: TObject);
-   procedure findbmexec(const sender: TObject);
-   procedure instemplateactonexecute(const sender: TObject);
-   procedure projectopenexe(const sender: TObject);
-   procedure projectoptionsexe(const sender: TObject);
-   procedure projecttreeexe(const sender: TObject);
-   procedure projectsourceexe(const sender: TObject);
-   procedure projectsaveexe(const sender: TObject);
-   procedure projectcloeseexe(const sender: TObject);
-   procedure creadstateexe(const sender: TObject);
-   procedure findupdateexe(const sender: tcustomaction);
-   procedure copylatexactonexecute(const sender: TObject);
-   procedure findcompexe(const sender: TObject);
-   procedure findcompallexe(const sender: TObject);
-   procedure forcezorderexe(const sender: TObject);
-   procedure commentonexecute(const sender: TObject);
-   procedure uncommentonexecute(const sender: TObject);
-   procedure enablecomment(const sender: tcustomaction);
-   procedure enableuncomment(const sender: tcustomaction);
-   procedure selectwordactiononexecute(const sender: TObject);
-   procedure findbackonexecute(const sender: TObject);
-   procedure ondeleteword(const sender: TObject);
-   procedure onselectword(const sender: TObject);
+    //debugger
+    procedure resetactonexecute(const Sender: TObject);
+    procedure interruptactonexecute(const Sender: TObject);
+    procedure continueactonexecute(const Sender: TObject);
+    procedure nextactonexecute(const Sender: TObject);
+    procedure finishactonexecute(const Sender: TObject);
+    procedure stepactonexecute(const Sender: TObject);
+    procedure stepiactonexecute(const Sender: TObject);
+    procedure nextiactonexecute(const Sender: TObject);
+    procedure bkptsononexecute(const Sender: TObject);
+    procedure watchesononexecute(const Sender: TObject);
+    procedure bluedotsononchange(const Sender: TObject);
+    procedure printactonexecute(const Sender: TObject);
+    procedure ondetachtarget(const Sender: TObject);
+    procedure onattachprocess(const Sender: TObject);
+    procedure updateshortcuts(const Sender: tshortcutcontroller);
+    procedure downloadexe(const Sender: TObject);
+    procedure helpex(const Sender: TObject);
+    procedure onattachtarget(const Sender: TObject);
+    procedure setbmexec(const Sender: TObject);
+    procedure findbmexec(const Sender: TObject);
+    procedure instemplateactonexecute(const Sender: TObject);
+    procedure projectopenexe(const Sender: TObject);
+    procedure projectoptionsexe(const Sender: TObject);
+    procedure projecttreeexe(const Sender: TObject);
+    procedure projectsourceexe(const Sender: TObject);
+    procedure projectsaveexe(const Sender: TObject);
+    procedure projectcloeseexe(const Sender: TObject);
+    procedure creadstateexe(const Sender: TObject);
+    procedure findupdateexe(const Sender: tcustomaction);
+    procedure copylatexactonexecute(const Sender: TObject);
+    procedure findcompexe(const Sender: TObject);
+    procedure findcompallexe(const Sender: TObject);
+    procedure forcezorderexe(const Sender: TObject);
+    procedure commentonexecute(const Sender: TObject);
+    procedure uncommentonexecute(const Sender: TObject);
+    procedure enablecomment(const Sender: tcustomaction);
+    procedure enableuncomment(const Sender: tcustomaction);
+    procedure selectwordactiononexecute(const Sender: TObject);
+    procedure findbackonexecute(const Sender: TObject);
+    procedure ondeleteword(const Sender: TObject);
+    procedure onselectword(const Sender: TObject);
   private
-   function filterfindcomp(const acomponent: tcomponent): boolean;
- public
-   function gettoolshortcutaction(const index: int32;
-                                       out act: taction): boolean;
+    function filterfindcomp(const acomponent: TComponent): Boolean;
+  public
+    function gettoolshortcutaction(const index: int32; out act: taction): Boolean;
 
-end;
+  end;
 
 var
- actionsmo: tactionsmo;
- iscompiling : boolean = false;
- 
+  actionsmo: tactionsmo;
+  iscompiling: Boolean = False;
+
 procedure configureide;
 
 implementation
+
 uses
-plugmanager, confdebugger, conffpgui, main,make,actionsmodule_mfm,sourceform,
-sourcepage,msedesigner,msetypes,msefiledialogx,
- projectoptionsform,findinfileform,breakpointsform,watchform,selecteditpageform,
- disassform,printform,msegdbutils,mseintegerenter,ideusettings, confideu, finddialogform,
- componentstore,cpuform,sysutils,msecomptree, procedurelistform;
+  plugmanager,
+  confdebugger,
+  conffpgui,
+  main,
+  make,
+  actionsmodule_mfm,
+  sourceform,
+  sourcepage,
+  msedesigner,
+  msetypes,
+  msefiledialogx,
+  projectoptionsform,
+  findinfileform,
+  breakpointsform,
+  watchform,
+  selecteditpageform,
+  disassform,
+  printform,
+  msegdbutils,
+  mseintegerenter,
+  ideusettings,
+  confideu,
+  finddialogform,
+  componentstore,
+  cpuform,
+  SysUtils,
+  msecomptree,
+  procedurelistform;
 
 procedure configureide;
 begin
- disassfo.resetshortcuts();
- if editsettings(actionsmo.c[ord(ac_configureide)],
-                                      actionsmo.shortcuts) then begin
-  mainfo.mainstatfile.writestat();
-  expandprojectmacros();
- end;
+  disassfo.resetshortcuts();
+  if editsettings(actionsmoduletext(ac_configureideu),
+    actionsmo.shortcuts) then
+  begin
+    mainfo.mainstatfile.writestat();
+    expandprojectmacros();
+  end;
 end;
 
 { tactionsmo }
 
-procedure tactionsmo.procedurelistonexecute(const sender: TObject);
-
+procedure tactionsmo.procedurelistonexecute(const Sender: TObject);
 begin
-if not plformcreated then doProcedureList;
+  if not plformcreated then
+    doProcedureList;
 
 
-procedurelistfo.font.height := confideufo.fontsize.value;
-procedurelistfo.font.name := ansistring(confideufo.fontname.value);
+  procedurelistfo.font.Height := confideufo.fontsize.Value;
+  procedurelistfo.font.Name   := ansistring(confideufo.fontname.Value);
 
-procedurelistfo.edtSearch.width := (procedurelistfo.width div 2) - 40;
-procedurelistfo.cbObjects.width := procedurelistfo.edtSearch.width;
-procedurelistfo.cbObjects.left := procedurelistfo.edtSearch.right + 20;
-procedurelistfo.grdProcedures.top := procedurelistfo.cbObjects.bottom + 10;
-procedurelistfo.grdProcedures.height := procedurelistfo.height -
-procedurelistfo.cbObjects.bottom - 14;
+  procedurelistfo.edtSearch.Width      := (procedurelistfo.Width div 2) - 40;
+  procedurelistfo.cbObjects.Width      := procedurelistfo.edtSearch.Width;
+  procedurelistfo.cbObjects.left       := procedurelistfo.edtSearch.right + 20;
+  procedurelistfo.grdProcedures.top    := procedurelistfo.cbObjects.bottom + 10;
+  procedurelistfo.grdProcedures.Height := procedurelistfo.Height -
+    procedurelistfo.cbObjects.bottom - 14;
 
   if mainfo.ismodal then
-    procedurelistfo.Show(true) else
-    begin
+    procedurelistfo.Show(True)
+  else
+  begin
     procedurelistfo.Show;
     procedurelistfo.bringtofront;
-    end;
+  end;
 end;
 
-function tactionsmo.gettoolshortcutaction(const index: int32;
-                                        out act: taction): boolean;
+function tactionsmo.gettoolshortcutaction(const index: int32; out act: taction): Boolean;
 begin
- case index of
-  0: act:= tool0;
-  1: act:= tool1;
-  2: act:= tool2;
-  3: act:= tool3;
-  4: act:= tool4;
-  5: act:= tool5;
-  6: act:= tool6;
-  7: act:= tool7;
-  8: act:= tool8;
-  9:act:= tool9;
-  else act:= nil;
- end;
- result:= act <> nil;
+  case index of
+    0: act   := tool0;
+    1: act   := tool1;
+    2: act   := tool2;
+    3: act   := tool3;
+    4: act   := tool4;
+    5: act   := tool5;
+    6: act   := tool6;
+    7: act   := tool7;
+    8: act   := tool8;
+    9: act   := tool9;
+    else act := nil;
+  end;
+  Result := act <> nil;
 end;
 
-procedure tactionsmo.updateshortcuts(const sender: tshortcutcontroller);
+procedure tactionsmo.updateshortcuts(const Sender: tshortcutcontroller);
 begin
- undo.shortcut:= sysshortcuts[sho_groupundo];
- undo.shortcut1:= sysshortcuts1[sho_groupundo];
- redo.shortcut:= sysshortcuts[sho_groupredo];
- redo.shortcut1:= sysshortcuts1[sho_groupredo];
- copy.shortcut:= sysshortcuts[sho_copy];
- copy.shortcut1:= sysshortcuts1[sho_copy];
- cut.shortcut:= sysshortcuts[sho_cut];
- cut.shortcut1:= sysshortcuts1[sho_cut];
- paste.shortcut:= sysshortcuts[sho_paste];
- paste.shortcut1:= sysshortcuts1[sho_paste];
- selectall.shortcut:= sysshortcuts[sho_selectall];
- selectall.shortcut1:= sysshortcuts1[sho_selectall];
- findcompact.shortcut:= find.shortcut;
- findcompact.shortcut1:= find.shortcut1;
- findcompallact.shortcut:= find.shortcut;
- findcompallact.shortcut1:= find.shortcut1;
+  undo.shortcut         := sysshortcuts[sho_groupundo];
+  undo.shortcut1        := sysshortcuts1[sho_groupundo];
+  redo.shortcut         := sysshortcuts[sho_groupredo];
+  redo.shortcut1        := sysshortcuts1[sho_groupredo];
+  copy.shortcut         := sysshortcuts[sho_copy];
+  copy.shortcut1        := sysshortcuts1[sho_copy];
+  cut.shortcut          := sysshortcuts[sho_cut];
+  cut.shortcut1         := sysshortcuts1[sho_cut];
+  paste.shortcut        := sysshortcuts[sho_paste];
+  paste.shortcut1       := sysshortcuts1[sho_paste];
+  selectall.shortcut    := sysshortcuts[sho_selectall];
+  selectall.shortcut1   := sysshortcuts1[sho_selectall];
+  findcompact.shortcut  := find.shortcut;
+  findcompact.shortcut1 := find.shortcut1;
+  findcompallact.shortcut := find.shortcut;
+  findcompallact.shortcut1 := find.shortcut1;
 end;
 
-procedure tactionsmo.findbackonexecute(const sender: TObject);
+procedure tactionsmo.findbackonexecute(const Sender: TObject);
 begin
- if targetconsolefo.activeentered then begin
-  targetconsolefo.findback;
- end
- else begin
-  sourcefo.activepage.findback;
- end;
+  if targetconsolefo.activeentered then
+    targetconsolefo.findback
+  else
+    sourcefo.ActivePage.findback;
 end;
 
 //common
-procedure tactionsmo.findinfileonexecute(const sender: tobject);
+procedure tactionsmo.findinfileonexecute(const Sender: TObject);
 begin
- dofindinfile;
+  dofindinfile;
 end;
 
 // assistive
-  procedure tactionsmo.assistiveactonexecute(const sender: tobject);
-  begin
-  doassistive ;
-  end;
+procedure tactionsmo.assistiveactonexecute(const Sender: TObject);
+begin
+  doassistive;
+end;
 
 //file
 
-procedure tactionsmo.opensourceactonexecute(const sender: tobject);
+procedure tactionsmo.opensourceactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  debuggerfo.project_history.tag := 2;
-  opensource(fk_source,false);
- end;
+  with mainfo do
+  begin
+    debuggerfo.project_history.tag := 2;
+    opensource(fk_source, False);
+  end;
 end;
 
 
-procedure tactionsmo.saveactonexecute(const sender: tobject);
+procedure tactionsmo.saveactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  if factivedesignmodule <> nil then begin
-   designer.saveformfile(factivedesignmodule,factivedesignmodule^.filename,true);
-   updatemodifiedforms;
+  with mainfo do
+    if factivedesignmodule <> nil then
+    begin
+      designer.saveformfile(factivedesignmodule, factivedesignmodule^.filename, True);
+      updatemodifiedforms;
     end
-  else begin
-   sourcefo.saveactivepage;
-  end;
- end;
- if (thesdef <> '') and
-  (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) and
- (theactivepage = sourcefo.activepage.filepath +
- sourcefo.activepage.filename)
-  then sdefload(thesdef);
+    else
+      sourcefo.saveactivepage;
+  if (thesdef <> '') and
+    (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) and
+    (theactivepage = sourcefo.ActivePage.filepath +
+    sourcefo.ActivePage.filename) then
+    sdefload(thesdef);
 
-    sourcefo.updatehinttab;
+  sourcefo.updatehinttab;
 end;
 
-procedure tactionsmo.savecustom(const sender: tobject);
+procedure tactionsmo.savecustom(const Sender: TObject);
 var
- sysfilename : msestring;
+  sysfilename: msestring;
 begin
-saveactonexecute(sender);
-   if (conffpguifo.enablefpguidesigner.value = true) then
- begin
-   sysfilename := tosysfilepath(filepath(sourcefo.activepage.filename,fk_file,true));
-     LoadfpgDesigner(AnsiString(sysfilename));
- end;
- sourcefo.activate;
- sourcefo.updatehinttab;
- end;
+  saveactonexecute(Sender);
+  if (conffpguifo.enablefpguidesigner.Value = True) then
+  begin
+    sysfilename := tosysfilepath(filepath(sourcefo.ActivePage.filename, fk_file, True));
+    LoadfpgDesigner(ansistring(sysfilename));
+  end;
+  sourcefo.activate;
+  sourcefo.updatehinttab;
+end;
 
-procedure tactionsmo.saveasactonexecute(const sender: TObject);
+procedure tactionsmo.saveasactonexecute(const Sender: TObject);
 var
- namebefore,str1: filenamety;
- po1: pmoduleinfoty;
+  namebefore, str1: filenamety;
+  po1: pmoduleinfoty;
 begin
- with mainfo do begin
- openfile.controller.icon := icon;
-   openfile.controller.showoptions := true;
-   
+  with mainfo do
+  begin
+    openfile.controller.icon        := icon;
+    openfile.controller.showoptions := True;
+
     with stockobjects do
-   openfile.controller.captionsave := captions[sc_saveas];;
- 
-  if factivedesignmodule <> nil then begin
-   str1:= factivedesignmodule^.filename;
-   if openfile.controller.execute(str1,fdk_save) then begin
-    designer.saveformfile(factivedesignmodule,str1,true);
-   end;
-  end
-  else begin
-   str1:= sourcefo.activepage.filepath;
-   namebefore:= str1;
-     openfile.controller.showoptions := true;
- 
-   if openfile.controller.execute(str1,fdk_save) then begin
-    sourcefo.saveactivepage(str1);
-    po1:= designer.modules.findmodule(designer.sourcenametoformname(namebefore));
-    if po1 <> nil then begin
-     str1:= designer.sourcenametoformname(str1);
-     designer.saveformfile(po1,str1,true);
-     po1^.filename:= str1;
-     updatemodifiedforms;
+      openfile.controller.captionsave := captions[sc_saveas];
+    ;
+
+    if factivedesignmodule <> nil then
+    begin
+      str1 := factivedesignmodule^.filename;
+      if openfile.controller.Execute(str1, fdk_save) then
+        designer.saveformfile(factivedesignmodule, str1, True);
+    end
+    else
+    begin
+      str1       := sourcefo.ActivePage.filepath;
+      namebefore := str1;
+      openfile.controller.showoptions := True;
+
+      if openfile.controller.Execute(str1, fdk_save) then
+      begin
+        sourcefo.saveactivepage(str1);
+        po1 := designer.modules.findmodule(designer.sourcenametoformname(namebefore));
+        if po1 <> nil then
+        begin
+          str1          := designer.sourcenametoformname(str1);
+          designer.saveformfile(po1, str1, True);
+          po1^.filename := str1;
+          updatemodifiedforms;
+        end;
+      end;
     end;
-   end;
   end;
- end;
 end;
 
-procedure tactionsmo.saveallactonexecute(const sender: tobject);
+procedure tactionsmo.saveallactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  sourcefo.saveall(true);
-  designer.saveall(true,true);
-  componentstorefo.saveall(true);
-  saveprojectoptions;
-  updatemodifiedforms;
- end;
- if (thesdef <> '') and
- (thesdef <> projectoptions.e.t.syntaxdeffiles[0])
-  and
- (theactivepage = sourcefo.activepage.filepath +
- sourcefo.activepage.filename)
-  then sdefload(thesdef);
-end;
-
-procedure tactionsmo.closeactonexecute(const sender: tobject);
-begin
- with mainfo do begin
- layoutbusy := True;
-  if factivedesignmodule <> nil then begin
-   if closemodule(factivedesignmodule,true) then begin
-    factivedesignmodule:= nil;
-   end;
-  end
-  else begin
-   sourcefo.closeactivepage;
+  with mainfo do
+  begin
+    sourcefo.saveall(True);
+    designer.saveall(True, True);
+    componentstorefo.saveall(True);
+    saveprojectoptions;
+    updatemodifiedforms;
   end;
-  layoutbusy := false;
- end;
+  if (thesdef <> '') and
+    (thesdef <> projectoptions.e.t.syntaxdeffiles[0]) and
+    (theactivepage = sourcefo.ActivePage.filepath +
+    sourcefo.ActivePage.filename) then
+    sdefload(thesdef);
 end;
 
-procedure tactionsmo.closeallactonexecute(const sender: tobject);
+procedure tactionsmo.closeactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
- layoutbusy := True;
-  closeall(false);
-  layoutbusy := false;
- end;
+  with mainfo do
+  begin
+    layoutbusy := True;
+    if factivedesignmodule <> nil then
+    begin
+      if closemodule(factivedesignmodule, True) then
+        factivedesignmodule := nil;
+    end
+    else
+      sourcefo.closeactivepage;
+    layoutbusy := False;
+  end;
+end;
+
+procedure tactionsmo.closeallactonexecute(const Sender: TObject);
+begin
+  with mainfo do
+  begin
+    layoutbusy := True;
+    closeall(False);
+    layoutbusy := False;
+  end;
 end;
 
 //editor
-procedure tactionsmo.seleclallactonexecute(const sender: TObject);
+procedure tactionsmo.seleclallactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.selectall();
+  sourcefo.ActivePage.edit.selectall();
 end;
 
-procedure tactionsmo.pasteactonexecute(const sender: tobject);
+procedure tactionsmo.pasteactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.paste;
+  sourcefo.ActivePage.edit.paste;
 end;
 
-procedure tactionsmo.deleteactonexecute(const sender: tobject);
+procedure tactionsmo.deleteactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.deleteselection;
+  sourcefo.ActivePage.edit.deleteselection;
 end;
 
-procedure tactionsmo.selecteditpageonexecute(const sender: TObject);
+procedure tactionsmo.selecteditpageonexecute(const Sender: TObject);
 begin
- selecteditpageform.selecteditpage;
+  selecteditpageform.selecteditpage;
 end;
 
-procedure tactionsmo.toggleformunitonexecute(const sender: TObject);
+procedure tactionsmo.toggleformunitonexecute(const Sender: TObject);
 begin
- mainfo.toggleformunit;
- tabcloser:= false;
+  mainfo.toggleformunit;
+  tabcloser := False;
 end;
 
 
 // fred
 
-procedure tactionsmo.initproject ;
+procedure tactionsmo.initproject;
 begin
-debuggerfo.project_abort_compil.enabled := true;
- debuggerfo.project_abort_compil.face.image.alignment :=
-   [al_stretchx,al_stretchy];
-
-end;
-
-procedure tactionsmo.finishcustom ;
-begin
-  iscompiling := false;
-
-  debuggerfo.project_abort_compil.enabled := false;
+  debuggerfo.project_abort_compil.Enabled := True;
   debuggerfo.project_abort_compil.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
+    [al_stretchx, al_stretchy];
 
-//  debuggerfo.imagebut.getimage(12, debuggerfo.project_abort_compil.face.image);
-
-  debuggerfo.project_make.enabled := true;
-   debuggerfo.project_make.face.image.alignment :=
-   [al_stretchx,al_stretchy];
-
-//  debuggerfo.imagebut.getimage(0, debuggerfo.project_make.face.image);
-
-  debuggerfo.project_reset.enabled := false;
-
-   debuggerfo.project_reset.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
-
-  debuggerfo.edited_abort.enabled := false ;
-
-
-   debuggerfo.edited_abort.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
-
-  debuggerfo.project_interrupt.enabled := false;
-
-   debuggerfo.project_interrupt.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
-
-
-  debuggerfo.edited_make.enabled := true;
-
-   debuggerfo.edited_make.face.image.alignment :=
-   [al_stretchx,al_stretchy];
-
-  debuggerfo.edited_run.enabled := true;
-
-   debuggerfo.edited_run.face.image.alignment :=
-   [al_stretchx,al_stretchy];
 end;
 
-procedure tactionsmo.compileproject(const sender: TObject);
+procedure tactionsmo.finishcustom;
 begin
+  iscompiling := False;
 
-iscompiling := true;
-debuggerfo.project_make.enabled := false;
+  debuggerfo.project_abort_compil.Enabled := False;
+  debuggerfo.project_abort_compil.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
 
- debuggerfo.project_make.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
+  //  debuggerfo.imagebut.getimage(12, debuggerfo.project_abort_compil.face.image);
 
-//debuggerfo.imagebut.getimage(1, debuggerfo.project_make.face.image);
+  debuggerfo.project_make.Enabled := True;
+  debuggerfo.project_make.face.image.alignment :=
+    [al_stretchx, al_stretchy];
 
-debuggerfo.project_abort_compil.enabled := true;
-//debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
+  //  debuggerfo.imagebut.getimage(0, debuggerfo.project_make.face.image);
 
- debuggerfo.project_abort_compil.face.image.alignment :=
-   [al_stretchx,al_stretchy];
+  debuggerfo.project_reset.Enabled := False;
 
-case debuggerfo.project_options.value of
-  'M' : begin
-  domake(1) ;
-   mainfo.thetag := 1;
-  end;
-   'B' : begin
-  domake(2) ;
-   mainfo.thetag := 2;
-  end;
-   '1' : begin
-  domake(4) ;
-   mainfo.thetag := 4;
-  end;
-    '2' : begin
-  domake(8) ;
-   mainfo.thetag := 8;
-  end;
-     '3' : begin
-  domake(16) ;
-   mainfo.thetag := 16;
-  end;
-   '4' : begin
-  domake(32) ;
-   mainfo.thetag := 32;
-  end;
-   '5' : begin
-  domake(64) ;
-   mainfo.thetag := 64;
-  end;
-    '6' : begin
-  domake(128) ;
-   mainfo.thetag := 128;
-  end;
-    '7' : begin
-  domake(256) ;
-   mainfo.thetag := 256;
-  end;
-     '8' : begin
-  domake(512) ;
-   mainfo.thetag := 512;
-  end;
-   '9' : begin
-  domake(1024) ;
-   mainfo.thetag := 1024;
-  end;
-   '0' : begin
-  domake(2048) ;
-   mainfo.thetag := 2048;
-  end;
-  end;
-   mainfo.resetstartcommand;
- end;
+  debuggerfo.project_reset.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
 
- // Project cust compile
-   procedure tactionsmo.custcompileproject(const sender: TObject);
-begin
-saveallactonexecute(sender);
-compileproject(sender);
+  debuggerfo.edited_abort.Enabled := False;
+
+
+  debuggerfo.edited_abort.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+  debuggerfo.project_interrupt.Enabled := False;
+
+  debuggerfo.project_interrupt.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+
+  debuggerfo.edited_make.Enabled := True;
+
+  debuggerfo.edited_make.face.image.alignment :=
+    [al_stretchx, al_stretchy];
+
+  debuggerfo.edited_run.Enabled := True;
+
+  debuggerfo.edited_run.face.image.alignment :=
+    [al_stretchx, al_stretchy];
 end;
 
-procedure tactionsmo.setupcustom ;
+procedure tactionsmo.compileproject(const Sender: TObject);
 begin
-   debuggerfo.edited_make.enabled := false;
 
-    debuggerfo.edited_make.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
+  iscompiling := True;
+  debuggerfo.project_make.Enabled := False;
 
+  debuggerfo.project_make.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
 
+  //debuggerfo.imagebut.getimage(1, debuggerfo.project_make.face.image);
 
-  debuggerfo.edited_abort.enabled := true;
+  debuggerfo.project_abort_compil.Enabled := True;
+  //debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
 
-   debuggerfo.edited_abort.face.image.alignment :=
-  [al_stretchx,al_stretchy];
+  debuggerfo.project_abort_compil.face.image.alignment :=
+    [al_stretchx, al_stretchy];
 
-  debuggerfo.edited_run.enabled := false;
-
-    debuggerfo.edited_run.face.image.alignment :=
-  [al_grayed,al_stretchx,al_stretchy];
-
-    case debuggerfo.edit_compiler.value of
-  'Pascal' : mainfo.settypecompiler := 1 ;
-  'Java'   : mainfo.settypecompiler := 2 ;
-  'C'      : mainfo.settypecompiler := 3 ;
-  'Python' : mainfo.settypecompiler := 4 ;
-  'Other'  : mainfo.settypecompiler := 5 ;
+  case debuggerfo.project_options.Value of
+    'M':
+    begin
+      domake(1);
+      mainfo.thetag := 1;
     end;
-
-  mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
-
-   case debuggerfo.edit_options.value of
-  'M' : mainfo.customoption := 1 ;
-   'B' : mainfo.customoption := 2 ;
-   '1' : mainfo.customoption := 4 ;
-    '2' : mainfo.customoption := 8 ;
-     '3' : mainfo.customoption := 16 ;
-   '4' : mainfo.customoption := 32 ;
-    '5' : mainfo.customoption := 64 ;
-   '6' : mainfo.customoption := 128 ;
-    '7' : mainfo.customoption := 256 ;
-    '8' : mainfo.customoption := 512 ;
-   '9' : mainfo.customoption := 1024 ;
-    '0' : mainfo.customoption := 2048 ;
-    'X' : mainfo.customoption := 0 ;
-  end;
-
-end;
-
-procedure tactionsmo.compilecustom(const sender: TObject);
-begin
-saveactonexecute(sender);
-setupcustom ;
-mainfo.customcompile(sender);
-end;
-
-procedure tactionsmo.setupcustommenu(const sender: TObject) ;
-begin
-   debuggerfo.edited_make.enabled := false;
-
-    debuggerfo.edited_make.face.image.alignment :=
-  [al_grayed,al_stretchx,al_stretchy];
-
-  debuggerfo.edited_abort.enabled := true;
-  debuggerfo.edited_run.enabled := false;
-
-     debuggerfo.edited_run.face.image.alignment :=
-   [al_grayed,al_stretchx,al_stretchy];
-
-    debuggerfo.edited_abort.face.image.alignment :=
-   [al_stretchx,al_stretchy];
-
-
-     case debuggerfo.edit_compiler.value of
-  'Pascal' : mainfo.settypecompiler := 1 ;
-  'Java'   : mainfo.settypecompiler := 2 ;
-  'C'      : mainfo.settypecompiler := 3 ;
-  'Python' : mainfo.settypecompiler := 4 ;
-  'Other'  : mainfo.settypecompiler := 5 ;
+    'B':
+    begin
+      domake(2);
+      mainfo.thetag := 2;
     end;
+    '1':
+    begin
+      domake(4);
+      mainfo.thetag := 4;
+    end;
+    '2':
+    begin
+      domake(8);
+      mainfo.thetag := 8;
+    end;
+    '3':
+    begin
+      domake(16);
+      mainfo.thetag := 16;
+    end;
+    '4':
+    begin
+      domake(32);
+      mainfo.thetag := 32;
+    end;
+    '5':
+    begin
+      domake(64);
+      mainfo.thetag := 64;
+    end;
+    '6':
+    begin
+      domake(128);
+      mainfo.thetag := 128;
+    end;
+    '7':
+    begin
+      domake(256);
+      mainfo.thetag := 256;
+    end;
+    '8':
+    begin
+      domake(512);
+      mainfo.thetag := 512;
+    end;
+    '9':
+    begin
+      domake(1024);
+      mainfo.thetag := 1024;
+    end;
+    '0':
+    begin
+      domake(2048);
+      mainfo.thetag := 2048;
+    end;
+  end;
+  mainfo.resetstartcommand;
+end;
 
-  mainfo.setcompiler := debuggerfo.edit_compilernum.value + 1;
+// Project cust compile
+procedure tactionsmo.custcompileproject(const Sender: TObject);
+begin
+  saveallactonexecute(Sender);
+  compileproject(Sender);
+end;
 
-   case tmenuitem(sender).tag of
-  0 : mainfo.customoption := 1 ;
-   1 : mainfo.customoption := 2 ;
-   2 : mainfo.customoption := 4 ;
-    3 : mainfo.customoption := 8 ;
-     4 : mainfo.customoption := 16 ;
-   5 : mainfo.customoption := 32 ;
-    6 : mainfo.customoption := 64 ;
-   7 : mainfo.customoption := 128 ;
-    8 : mainfo.customoption := 256 ;
-     9 : mainfo.customoption := 512 ;
-   10 : mainfo.customoption := 1024 ;
-   11 : mainfo.customoption := 2048 ;
-   12 : mainfo.customoption := 0 ;
+procedure tactionsmo.setupcustom;
+begin
+  debuggerfo.edited_make.Enabled := False;
+
+  debuggerfo.edited_make.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+
+  debuggerfo.edited_abort.Enabled := True;
+
+  debuggerfo.edited_abort.face.image.alignment :=
+    [al_stretchx, al_stretchy];
+
+  debuggerfo.edited_run.Enabled := False;
+
+  debuggerfo.edited_run.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+  case debuggerfo.edit_compiler.Value of
+    'Pascal': mainfo.settypecompiler := 1;
+    'Java': mainfo.settypecompiler   := 2;
+    'C': mainfo.settypecompiler      := 3;
+    'Python': mainfo.settypecompiler := 4;
+    'Other': mainfo.settypecompiler  := 5;
+  end;
+
+  mainfo.setcompiler := debuggerfo.edit_compilernum.Value + 1;
+
+  case debuggerfo.edit_options.Value of
+    'M': mainfo.customoption := 1;
+    'B': mainfo.customoption := 2;
+    '1': mainfo.customoption := 4;
+    '2': mainfo.customoption := 8;
+    '3': mainfo.customoption := 16;
+    '4': mainfo.customoption := 32;
+    '5': mainfo.customoption := 64;
+    '6': mainfo.customoption := 128;
+    '7': mainfo.customoption := 256;
+    '8': mainfo.customoption := 512;
+    '9': mainfo.customoption := 1024;
+    '0': mainfo.customoption := 2048;
+    'X': mainfo.customoption := 0;
   end;
 
 end;
 
-procedure tactionsmo.compilecustommenu(const sender: TObject);
+procedure tactionsmo.compilecustom(const Sender: TObject);
 begin
-saveactonexecute(sender);
-setupcustommenu(sender) ;
-mainfo.customcompile(sender);
+  saveactonexecute(Sender);
+  setupcustom;
+  mainfo.customcompile(Sender);
 end;
 
-procedure tactionsmo.runcustom(const sender: TObject);
+procedure tactionsmo.setupcustommenu(const Sender: TObject);
 begin
- mainfo.customrun(sender) ;
+  debuggerfo.edited_make.Enabled := False;
+
+  debuggerfo.edited_make.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+  debuggerfo.edited_abort.Enabled := True;
+  debuggerfo.edited_run.Enabled   := False;
+
+  debuggerfo.edited_run.face.image.alignment :=
+    [al_grayed, al_stretchx, al_stretchy];
+
+  debuggerfo.edited_abort.face.image.alignment :=
+    [al_stretchx, al_stretchy];
+
+
+  case debuggerfo.edit_compiler.Value of
+    'Pascal': mainfo.settypecompiler := 1;
+    'Java': mainfo.settypecompiler   := 2;
+    'C': mainfo.settypecompiler      := 3;
+    'Python': mainfo.settypecompiler := 4;
+    'Other': mainfo.settypecompiler  := 5;
+  end;
+
+  mainfo.setcompiler := debuggerfo.edit_compilernum.Value + 1;
+
+  case tmenuitem(Sender).tag of
+    0: mainfo.customoption  := 1;
+    1: mainfo.customoption  := 2;
+    2: mainfo.customoption  := 4;
+    3: mainfo.customoption  := 8;
+    4: mainfo.customoption  := 16;
+    5: mainfo.customoption  := 32;
+    6: mainfo.customoption  := 64;
+    7: mainfo.customoption  := 128;
+    8: mainfo.customoption  := 256;
+    9: mainfo.customoption  := 512;
+    10: mainfo.customoption := 1024;
+    11: mainfo.customoption := 2048;
+    12: mainfo.customoption := 0;
+  end;
+
 end;
 
-procedure tactionsmo.undoactonexecute(const sender: tobject);
+procedure tactionsmo.compilecustommenu(const Sender: TObject);
 begin
- sourcefo.activepage.doundo;
+  saveactonexecute(Sender);
+  setupcustommenu(Sender);
+  mainfo.customcompile(Sender);
 end;
 
-procedure tactionsmo.redoactonexecute(const sender: tobject);
+procedure tactionsmo.runcustom(const Sender: TObject);
 begin
- sourcefo.activepage.doredo;
+  mainfo.customrun(Sender);
 end;
 
-procedure tactionsmo.copyactonexecute(const sender: tobject);
+procedure tactionsmo.undoactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.copyselection;
+  sourcefo.ActivePage.doundo;
 end;
 
-procedure tactionsmo.copylatexactonexecute(const sender: TObject);
+procedure tactionsmo.redoactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.copylatex;
+  sourcefo.ActivePage.doredo;
 end;
 
-procedure tactionsmo.cutactonexecute(const sender: tobject);
+procedure tactionsmo.copyactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.cutselection;
+  sourcefo.ActivePage.edit.copyselection;
 end;
 
-procedure tactionsmo.indentonexecute(const sender: TObject);
+procedure tactionsmo.copylatexactonexecute(const Sender: TObject);
 begin
-if confideufo.usedefaulteditoroptions.value then
- sourcefo.activepage.edit.indent(confideufo.blockindent.value,
-                                           confideufo.tabindent.value)
-else
- sourcefo.activepage.edit.indent(projectoptions.e.blockindent,
-                                            projectoptions.e.tabindent);
+  sourcefo.ActivePage.copylatex;
 end;
 
-procedure tactionsmo.unindentonexecute(const sender: TObject);
+procedure tactionsmo.cutactonexecute(const Sender: TObject);
 begin
- if confideufo.usedefaulteditoroptions.value then
- sourcefo.activepage.edit.unindent(confideufo.blockindent.value)
-else
-  sourcefo.activepage.edit.unindent(projectoptions.e.blockindent);
+  sourcefo.ActivePage.edit.cutselection;
 end;
 
-procedure tactionsmo.lowercaseexecute(const sender: TObject);
+procedure tactionsmo.indentonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.lowercase;
+  if confideufo.usedefaulteditoroptions.Value then
+    sourcefo.ActivePage.edit.indent(confideufo.blockindent.Value,
+      confideufo.tabindent.Value)
+  else
+    sourcefo.ActivePage.edit.indent(projectoptions.e.blockindent,
+      projectoptions.e.tabindent);
 end;
 
-procedure tactionsmo.uppercaseexecute(const sender: TObject);
+procedure tactionsmo.unindentonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.edit.uppercase;
+  if confideufo.usedefaulteditoroptions.Value then
+    sourcefo.ActivePage.edit.unindent(confideufo.blockindent.Value)
+  else
+    sourcefo.ActivePage.edit.unindent(projectoptions.e.blockindent);
 end;
 
-procedure tactionsmo.enablecomment(const sender: tcustomaction);
+procedure tactionsmo.lowercaseexecute(const Sender: TObject);
 begin
-// enableonselect(sender);
-// sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
+  sourcefo.ActivePage.edit.lowercase;
 end;
 
-procedure tactionsmo.selectwordactiononexecute(const sender: TObject);
+procedure tactionsmo.uppercaseexecute(const Sender: TObject);
 begin
- sourcefo.activepage.copywordatcursor();
+  sourcefo.ActivePage.edit.uppercase;
 end;
 
-procedure tactionsmo.ondeleteword(const sender: TObject);
+procedure tactionsmo.enablecomment(const Sender: tcustomaction);
 begin
- sourcefo.activepage.selectwordatcursor();
- sourcefo.activepage.edit.deleteselection;
+  // enableonselect(sender);
+  // sender.enabled:= sender.enabled and  sourcefo.activepage.cancomment();
 end;
 
-procedure tactionsmo.enableuncomment(const sender: tcustomaction);
+procedure tactionsmo.selectwordactiononexecute(const Sender: TObject);
 begin
- enableonselect(sender);
- sender.enabled:= sender.enabled and  sourcefo.activepage.canuncomment();
+  sourcefo.ActivePage.copywordatcursor();
 end;
 
-procedure tactionsmo.commentonexecute(const sender: TObject);
+procedure tactionsmo.ondeleteword(const Sender: TObject);
 begin
- sourcefo.activepage.commentselection();
+  sourcefo.ActivePage.selectwordatcursor();
+  sourcefo.ActivePage.edit.deleteselection;
 end;
 
-procedure tactionsmo.uncommentonexecute(const sender: TObject);
+procedure tactionsmo.enableuncomment(const Sender: tcustomaction);
 begin
- sourcefo.activepage.uncommentselection();
+  enableonselect(Sender);
+  Sender.Enabled := Sender.Enabled and sourcefo.ActivePage.canuncomment();
 end;
 
-procedure tactionsmo.enableonselect(const sender: tcustomaction);
+procedure tactionsmo.commentonexecute(const Sender: TObject);
 begin
- sender.enabled:= (sourcefo.activepage <> nil) and
-                                      sourcefo.activepage.edit.hasselection;
+  sourcefo.ActivePage.commentselection();
 end;
 
-procedure tactionsmo.lineactonexecute(const sender: TObject);
-
+procedure tactionsmo.uncommentonexecute(const Sender: TObject);
 begin
-if lineformcreated then linefo.bringtofront else
- integerenter(fgototheline,1, sourcefo.activepage.source_editor.rowcount,
-      sourcefo.c[ord(gotoline)],sourcefo.c[ord(findline)]);
- linefo.font.height := confideufo.fontsize.value;
- linefo.font.name := ansistring(confideufo.fontname.value);
-// sourcefo.activepage.doline;
+  sourcefo.ActivePage.uncommentselection();
 end;
 
-procedure tactionsmo.findactonexecute(const sender: tobject);
+procedure tactionsmo.enableonselect(const Sender: tcustomaction);
 begin
- if targetconsolefo.activeentered then begin
-  targetconsolefo.dofind;
- end
- else begin
-
- if findformcreated then finddialogfo.bringtofront else
- finddialogexecute(findinfos);
-  // sourcefo.activepage.dofind;
- end;
+  Sender.Enabled := (sourcefo.ActivePage <> nil) and
+    sourcefo.ActivePage.edit.hasselection;
 end;
 
-procedure tactionsmo.repeatfindactonexecute(const sender: tobject);
+procedure tactionsmo.lineactonexecute(const Sender: TObject);
 begin
- if targetconsolefo.activeentered then begin
-  targetconsolefo.repeatfind;
- end
- else begin
-  sourcefo.activepage.repeatfind;
- end;
+  if lineformcreated then
+    linefo.bringtofront
+  else
+    integerenter(fgototheline, 1, sourcefo.ActivePage.source_editor.rowcount,
+      sourcefo.c[Ord(gotoline)], sourcefo.c[Ord(findline)]);
+  linefo.font.Height := confideufo.fontsize.Value;
+  linefo.font.Name   := ansistring(confideufo.fontname.Value);
+  // sourcefo.activepage.doline;
 end;
 
-procedure tactionsmo.replaceactonexecute(const sender: tobject);
+procedure tactionsmo.findactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.doreplace;
+  if targetconsolefo.activeentered then
+    targetconsolefo.dofind
+  else if findformcreated then
+    finddialogfo.bringtofront
+  else
+    finddialogexecute(findinfos)// sourcefo.activepage.dofind;
+  ;
 end;
 
-procedure tactionsmo.togglebreakpointexe(const sender: TObject);
+procedure tactionsmo.repeatfindactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.togglebreakpoint;
+  if targetconsolefo.activeentered then
+    targetconsolefo.repeatfind
+  else
+    sourcefo.ActivePage.repeatfind;
 end;
 
-procedure tactionsmo.togglebkptenableactonexecute(const sender: TObject);
+procedure tactionsmo.replaceactonexecute(const Sender: TObject);
 begin
- sourcefo.activepage.togglebreakpointenabled;
+  sourcefo.ActivePage.doreplace;
 end;
 
-procedure tactionsmo.instemplateactonexecute(const sender: TObject);
+procedure tactionsmo.togglebreakpointexe(const Sender: TObject);
 begin
- sourcefo.activepage.inserttemplate;
+  sourcefo.ActivePage.togglebreakpoint;
+end;
+
+procedure tactionsmo.togglebkptenableactonexecute(const Sender: TObject);
+begin
+  sourcefo.ActivePage.togglebreakpointenabled;
+end;
+
+procedure tactionsmo.instemplateactonexecute(const Sender: TObject);
+begin
+  sourcefo.ActivePage.inserttemplate;
 end;
 
 
 //make
 
-procedure tactionsmo.abortmakeactonexecute(const sender: tobject);
+procedure tactionsmo.abortmakeactonexecute(const Sender: TObject);
 begin
- make.abortmake;
+  make.abortmake;
 end;
 
-procedure tactionsmo.makeactonexecute(const sender: tobject);
+procedure tactionsmo.makeactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  if sender is tmenuitem then
-   begin
-   domake(tmenuitem(sender).tag);
-   thetag := tmenuitem(sender).tag;
- end
-  else
-   begin
+  with mainfo do
+  begin
+    if Sender is tmenuitem then
+    begin
+      domake(tmenuitem(Sender).tag);
+      thetag := tmenuitem(Sender).tag;
+    end
+    else
+    begin
       domake(0);
-    thetag := 0;
+      thetag := 0;
+    end;
+    resetstartcommand;
   end;
-   resetstartcommand;
- end;
 end;
 
 //debugger
 
-procedure tactionsmo.resetactonexecute(const sender: tobject);
+procedure tactionsmo.resetactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  gdb.abort;
-  killtarget; //if running
-  programfinished;
-  setstattext('');
-  startgdb(false);
- end;
+  with mainfo do
+  begin
+    gdb.abort;
+    killtarget; //if running
+    programfinished;
+    setstattext('');
+    startgdb(False);
+  end;
 end;
 
-procedure tactionsmo.interruptactonexecute(const sender: tobject);
+procedure tactionsmo.interruptactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  gdb.interrupt;
- end;
+  with mainfo do
+    gdb.interrupt;
 end;
 
-procedure tactionsmo.continueactonexecute(const sender: tobject);
+procedure tactionsmo.continueactonexecute(const Sender: TObject);
 var
-str3 : msestring;
-int1, int2, int3 : integer;
+  str3: msestring;
+  int1, int2, int3: integer;
 begin
-nodebugset := false;
-str3 := gettargetfile;//to initialize
-str3 := '';
-if not fileexists(tosysfilepath(msestring(gettargetfile))) then
- mainfo.setstattext(tosysfilepath(gettargetfile) +
-  ' does not exist.  Please compile it first.', mtk_error)
+  nodebugset := False;
+  str3       := gettargetfile;//to initialize
+  str3       := '';
+  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
+    mainfo.setstattext(tosysfilepath(gettargetfile) +
+      ' does not exist.  Please compile it first.', mtk_error)
 
-else begin
+  else
+  begin
 
-mainfo.terminategdbserver(true);
+    mainfo.terminategdbserver(True);
 
-if debuggerfo.debug_on.tag = 0 then str3:= '' else
-
-begin
-
-/// fred debugger
-
-str3 := '' ;
-
-case debuggerfo.project_options.value of
-  'M' : mainfo.thetag := 1;
-  'B' : mainfo.thetag := 2;
-  '1' : mainfo.thetag := 4;
-  '2' : mainfo.thetag := 8;
-  '3' : mainfo.thetag := 16;
-  '4' : mainfo.thetag := 32;
-  '5' : mainfo.thetag := 64;
-  '6' : mainfo.thetag := 128;
-  '7' : mainfo.thetag := 256;
-  '8' : mainfo.thetag := 512;
-  '9' : mainfo.thetag := 1024;
-  '0' : mainfo.thetag := 2048;
-  end;
-
-with projectoptions,o,texp do begin
-for int3:= 0 to high(debuggerused) do begin
-
-   if (mainfo.thetag  and debuggerusedon[int3] <> 0) and
-         (debuggerused[int3] <> '') then begin
-      str3 := str3 + debuggerused[int3] ;
-       end;
-  end;
-end;
-
- if str3 = 'None' then
- begin
- str3 := '';
- nodebugset := true;
- end;
-
-      if (pos('Default',str3) > 0) then
-    str3:= 'Default Debugger' else
-
-    if (str3 = 'Debugger 1')  then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger1.value)) else
-
-    if (str3 = 'Debugger 2') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger2.value)) else
-
-    if (str3 = 'Debugger 3') then
-    str3:= quotefilename(tosysfilepath(confdebuggerfo.debugger3.value)) else
-
-     if (str3 = 'Debugger 4') then
-    str3:= (quotefilename(tosysfilepath(confdebuggerfo.debugger4.value)))
-    else    str3:= '' ;
-
-end;
-
-// mainfo.setstattext(str + ' = ' +str3, mtk_flat);
-// application.processmessages;
-// sleep(10000);
-
- int1 := 1;
-
-   with projectoptions,o,texp do begin
-
-for int2:= 0 to high(compilerused) do begin
-   if (mainfo.thetag and compilerusedon[int2] <> 0)  then
+    if debuggerfo.debug_on.tag = 0 then
+      str3 := ''
+    else
     begin
- if system.pos('Default',compilerused[int2]) > 0 then int1 := 1 else
- if system.pos('Pascal',compilerused[int2]) > 0 then int1 := 1 else
- if system.pos('Java',compilerused[int2]) > 0 then int1 := 2 else
- if system.pos('C ',compilerused[int2]) > 0 then int1 := 3 else
- if system.pos('Python',compilerused[int2]) > 0 then int1 := 4;
-   end;
-   end;
-   end;
 
- if (str3 <> '') and ((int1 = 1) or (int1 = 3))  then begin
-  with mainfo do begin
-  if checkremake(sc_continue) then begin
-   cpufo.beforecontinue;
-   gdb.continue;
-   end;
- end;
- end else
- begin
- mainfo.runwithoutdebugger ;
- end;
- end;
- end;
+      /// fred debugger
 
+      str3 := '';
 
-procedure tactionsmo.stepactonexecute(const sender: tobject);
-begin
- gettargetfile;//to initialize
- 
-if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
- mainfo.setstattext(tosysfilepath(gettargetfile) +
-  ' does not exist.  Please compile it first.', mtk_error)
+      case debuggerfo.project_options.Value of
+        'M': mainfo.thetag := 1;
+        'B': mainfo.thetag := 2;
+        '1': mainfo.thetag := 4;
+        '2': mainfo.thetag := 8;
+        '3': mainfo.thetag := 16;
+        '4': mainfo.thetag := 32;
+        '5': mainfo.thetag := 64;
+        '6': mainfo.thetag := 128;
+        '7': mainfo.thetag := 256;
+        '8': mainfo.thetag := 512;
+        '9': mainfo.thetag := 1024;
+        '0': mainfo.thetag := 2048;
+      end;
 
-else begin
- with mainfo do begin
-  if checkremake(sc_step) then begin
-   gdb.step;
+      with projectoptions, o, texp do
+        for int3 := 0 to high(debuggerused) do
+          if (mainfo.thetag and debuggerusedon[int3] <> 0) and
+            (debuggerused[int3] <> '') then
+            str3 := str3 + debuggerused[int3];
+
+      if str3 = 'None' then
+      begin
+        str3       := '';
+        nodebugset := True;
+      end;
+
+      if (pos('Default', str3) > 0) then
+        str3 := 'Default Debugger'
+      else
+      if (str3 = 'Debugger 1') then
+        str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger1.Value))
+      else
+      if (str3 = 'Debugger 2') then
+        str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger2.Value))
+      else
+      if (str3 = 'Debugger 3') then
+        str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger3.Value))
+      else
+      if (str3 = 'Debugger 4') then
+        str3 := (quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value)))
+      else
+        str3 := '';
+
+    end;
+
+    // mainfo.setstattext(str + ' = ' +str3, mtk_flat);
+    // application.processmessages;
+    // sleep(10000);
+
+    int1 := 1;
+
+    with projectoptions, o, texp do
+      for int2 := 0 to high(compilerused) do
+        if (mainfo.thetag and compilerusedon[int2] <> 0) then
+          if system.pos('Default', compilerused[int2]) > 0 then
+            int1 := 1
+          else if system.pos('Pascal', compilerused[int2]) > 0 then
+            int1 := 1
+          else if system.pos('Java', compilerused[int2]) > 0 then
+            int1 := 2
+          else if system.pos('C ', compilerused[int2]) > 0 then
+            int1 := 3
+          else if system.pos('Python', compilerused[int2]) > 0 then
+            int1 := 4;
+
+    if (str3 <> '') and ((int1 = 1) or (int1 = 3)) then
+    begin
+      with mainfo do
+        if checkremake(sc_continue) then
+        begin
+          cpufo.beforecontinue;
+          gdb.continue;
+        end;
+    end
+    else
+      mainfo.runwithoutdebugger;
   end;
- end;
- end;
 end;
 
-procedure tactionsmo.stepiactonexecute(const sender: TObject);
+
+procedure tactionsmo.stepactonexecute(const Sender: TObject);
 begin
- gettargetfile;//to initializez
+  gettargetfile;//to initialize
 
-if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
- mainfo.setstattext(tosysfilepath(gettargetfile) +
-  ' does not exist.  Please compile it first.', mtk_error)
+  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+    mainfo.setstattext(tosysfilepath(gettargetfile) +
+      ' does not exist.  Please compile it first.', mtk_error)
 
-else begin
- with mainfo do begin
-  if checkremake(sc_step) then begin
-   gdb.stepi;
-  end;
- end;
-end;
+  else
+    with mainfo do
+      if checkremake(sc_step) then
+        gdb.step;
 end;
 
-procedure tactionsmo.nextactonexecute(const sender: tobject);
+procedure tactionsmo.stepiactonexecute(const Sender: TObject);
 begin
-if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
- mainfo.setstattext(tosysfilepath(gettargetfile) +
-  ' does not exist.  Please compile it first.', mtk_error)
+  gettargetfile;//to initializez
 
-else begin
- with mainfo do begin
-  if checkremake(sc_step) then begin
-   gdb.next;
-  end;
- end;
- end;
+  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+    mainfo.setstattext(tosysfilepath(gettargetfile) +
+      ' does not exist.  Please compile it first.', mtk_error)
+
+  else
+    with mainfo do
+      if checkremake(sc_step) then
+        gdb.stepi;
 end;
 
-procedure tactionsmo.nextiactonexecute(const sender: TObject);
+procedure tactionsmo.nextactonexecute(const Sender: TObject);
 begin
-if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
- mainfo.setstattext(tosysfilepath(gettargetfile) +
-  ' does not exist.  Please compile it first.', mtk_error)
+  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+    mainfo.setstattext(tosysfilepath(gettargetfile) +
+      ' does not exist.  Please compile it first.', mtk_error)
 
-else begin
- with mainfo do begin
-  if checkremake(sc_step) then begin
-   gdb.nexti;
-  end;
- end;
-end;
+  else
+    with mainfo do
+      if checkremake(sc_step) then
+        gdb.Next;
 end;
 
-procedure tactionsmo.finishactonexecute(const sender: tobject);
+procedure tactionsmo.nextiactonexecute(const Sender: TObject);
 begin
- with mainfo do begin
-  if checkremake(sc_continue) then begin
-   gdb.finish;
-  end;
- end;
+  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+    mainfo.setstattext(tosysfilepath(gettargetfile) +
+      ' does not exist.  Please compile it first.', mtk_error)
+
+  else
+    with mainfo do
+      if checkremake(sc_step) then
+        gdb.nexti;
 end;
 
-procedure tactionsmo.bkptsononexecute(const sender: TObject);
+procedure tactionsmo.finishactonexecute(const Sender: TObject);
 begin
-// debuggerfo.break_point.value := bkptsonact.checked;
- breakpointsfo.bkptson.value:= bkptsonact.checked;
+  with mainfo do
+    if checkremake(sc_continue) then
+      gdb.finish;
 end;
 
-procedure tactionsmo.watchesononexecute(const sender: TObject);
+procedure tactionsmo.bkptsononexecute(const Sender: TObject);
 begin
-//debuggerfo.watches.value := watchesonact.checked;
-watchfo.watcheson.value:= watchesonact.checked;
+  // debuggerfo.break_point.value := bkptsonact.checked;
+  breakpointsfo.bkptson.Value := bkptsonact.Checked;
 end;
 
-procedure tactionsmo.bluedotsononchange(const sender: TObject);
+procedure tactionsmo.watchesononexecute(const Sender: TObject);
 begin
-// debuggerfo.hints.value := bluedotsonact.checked;
-mainfo.checkbluedots;
+  //debuggerfo.watches.value := watchesonact.checked;
+  watchfo.watcheson.Value := watchesonact.Checked;
 end;
 
-procedure tactionsmo.printactonexecute(const sender: TObject);
+procedure tactionsmo.bluedotsononchange(const Sender: TObject);
 begin
- printform.print;
+  // debuggerfo.hints.value := bluedotsonact.checked;
+  mainfo.checkbluedots;
 end;
 
-procedure tactionsmo.ondetachtarget(const sender: TObject);
+procedure tactionsmo.printactonexecute(const Sender: TObject);
 begin
- if mainfo.checkgdberror(mainfo.gdb.detach) then begin
-  mainfo.startgdb(false);
- end;
+  printform.print;
 end;
 
-procedure tactionsmo.onattachprocess(const sender: TObject);
+procedure tactionsmo.ondetachtarget(const Sender: TObject);
+begin
+  if mainfo.checkgdberror(mainfo.gdb.detach) then
+    mainfo.startgdb(False);
+end;
+
+procedure tactionsmo.onattachprocess(const Sender: TObject);
 var
- int1: integer;
- info: stopinfoty;
+  int1: integer;
+  info: stopinfoty;
 begin
- with mainfo do begin
-  int1:= 0;
-  if integerenter(int1,minint,maxint,self.c[ord(ac_processid)],
-                      self.c[ord(ac_attachtoprocess)]) = mr_ok then begin
-   setstattext(self.c[ord(ac_attachingprocess)]+' '+UTF8Decode(inttostr(int1)),mtk_making);
-   application.processmessages;
-   startgdb(false);
-   gdb.attach(int1,info);
-   loadexec(true,false);
-   refreshstopinfo(info);
+  with mainfo do
+  begin
+    int1 := 0;
+    if integerenter(int1, minint, maxint, actionsmoduletext(ac_processid),
+      actionsmoduletext(ac_attachtoprocess)) = mr_ok then
+    begin
+      setstattext(actionsmoduletext(ac_attachingprocess) + ' ' + UTF8Decode(IntToStr(int1)), mtk_making);
+      application.ProcessMessages;
+      startgdb(False);
+      gdb.attach(int1, info);
+      loadexec(True, False);
+      refreshstopinfo(info);
+    end;
   end;
- end;
 end;
 
-procedure tactionsmo.onattachtarget(const sender: TObject);
+procedure tactionsmo.onattachtarget(const Sender: TObject);
 var
- info: stopinfoty;
+  info: stopinfoty;
 begin
- with mainfo do begin
-  startgdb(false);
-  if checkgdberror(gdb.filesymbol(gettargetfile)) and
-                                startgdbconnection(true) then begin
-   gdb.attachtarget(info);
-   loadexec(true,false);
-   refreshstopinfo(info);
+  with mainfo do
+  begin
+    startgdb(False);
+    if checkgdberror(gdb.filesymbol(gettargetfile)) and
+      startgdbconnection(True) then
+    begin
+      gdb.attachtarget(info);
+      loadexec(True, False);
+      refreshstopinfo(info);
+    end;
   end;
- end;
 end;
 
-procedure tactionsmo.downloadexe(const sender: TObject);
+procedure tactionsmo.downloadexe(const Sender: TObject);
 begin
- mainfo.loadexec(false,true);
+  mainfo.loadexec(False, True);
 end;
 
-procedure tactionsmo.helpex(const sender: TObject);
+procedure tactionsmo.helpex(const Sender: TObject);
 begin
- application.help(application.activewidget);
+  application.help(application.activewidget);
 end;
 
-procedure tactionsmo.setbmexec(const sender: TObject);
+procedure tactionsmo.setbmexec(const Sender: TObject);
 begin
- sourcefo.setbmexec(sender);
+  sourcefo.setbmexec(Sender);
 end;
 
-procedure tactionsmo.findbmexec(const sender: TObject);
+procedure tactionsmo.findbmexec(const Sender: TObject);
 begin
- sourcefo.findbmexec(sender);
+  sourcefo.findbmexec(Sender);
 end;
 
-procedure tactionsmo.projectopenexe(const sender: TObject);
+procedure tactionsmo.projectopenexe(const Sender: TObject);
 var
- fna1: filenamety;
+  fna1: filenamety;
 begin
- debuggerfo.project_history.tag := 1;
- if projectfiledialog(fna1,false) = mr_ok then begin
+  debuggerfo.project_history.tag := 1;
+  if projectfiledialog(fna1, False) = mr_ok then
+  begin
     mainfo.openproject(fna1);
     mainfo.activate;
     sourcefo.updatehinttab;
- end;
+  end;
 end;
 
-procedure tactionsmo.projectoptionsexe(const sender: TObject);
+procedure tactionsmo.projectoptionsexe(const Sender: TObject);
 begin
- editprojectoptions;
+  editprojectoptions;
 end;
 
-procedure tactionsmo.projecttreeexe(const sender: TObject);
+procedure tactionsmo.projecttreeexe(const Sender: TObject);
 begin
- projecttreefo.activate;
+  projecttreefo.activate;
 end;
 
-procedure tactionsmo.projectsourceexe(const sender: TObject);
+procedure tactionsmo.projectsourceexe(const Sender: TObject);
 begin
- sourcefo.openfile(projectoptions.o.texp.mainfile,true);
+  sourcefo.openfile(projectoptions.o.texp.mainfile, True);
 end;
 
-procedure tactionsmo.projectsaveexe(const sender: TObject);
+procedure tactionsmo.projectsaveexe(const Sender: TObject);
 begin
- if projectoptions.projectfilename = '' then begin
-  mainfo.saveprojectasonexecute(sender);
- end
- else begin
-  mainfo.saveproject(projectoptions.projectfilename);
- end;
+  if projectoptions.projectfilename = '' then
+    mainfo.saveprojectasonexecute(Sender)
+  else
+    mainfo.saveproject(projectoptions.projectfilename);
 end;
 
-procedure tactionsmo.projectcloeseexe(const sender: TObject);
+procedure tactionsmo.projectcloeseexe(const Sender: TObject);
 begin
- mainfo.closeprojectactonexecute (sender);
+  mainfo.closeprojectactonexecute(Sender);
 end;
 
-procedure tactionsmo.creadstateexe(const sender: TObject);
+procedure tactionsmo.creadstateexe(const Sender: TObject);
 begin
- msegdbutils.localizetext;
+  msegdbutils.localizetext;
 end;
 
-procedure tactionsmo.findupdateexe(const sender: tcustomaction);
+procedure tactionsmo.findupdateexe(const Sender: tcustomaction);
 begin
- if targetconsolefo.activeentered then begin
-  find.enabled:= true;
-  repeatfind.enabled:= projectoptions.targetconsolefindinfo.text <> ''
- end
- else begin
-  find.enabled:= (sourcefo.activepage <> nil) ;
-  //and sourcefo.activepage.activeentered;
-  repeatfind.enabled:= find.enabled and
-           (projectoptions.findreplaceinfo.find.text <> '');
- end;
-  findback.enabled:= repeatfind.enabled;
-  findcompallact.enabled:= find.enabled;
+  if targetconsolefo.activeentered then
+  begin
+    find.Enabled       := True;
+    repeatfind.Enabled := projectoptions.targetconsolefindinfo.Text <> '';
+  end
+  else
+  begin
+    find.Enabled       := (sourcefo.ActivePage <> nil);
+    //and sourcefo.activepage.activeentered;
+    repeatfind.Enabled := find.Enabled and
+      (projectoptions.findreplaceinfo.find.Text <> '');
+  end;
+  findback.Enabled := repeatfind.Enabled;
+  findcompallact.Enabled := find.Enabled;
 end;
 
-procedure tactionsmo.findcompexe(const sender: TObject);
+procedure tactionsmo.findcompexe(const Sender: TObject);
 begin
- if mainfo.factivedesignmodule <> nil then begin
-  mainfo.factivedesignmodule^.designformintf.findcompdialog();
- end;
+  if mainfo.factivedesignmodule <> nil then
+    mainfo.factivedesignmodule^.designformintf.findcompdialog();
 end;
 
-function tactionsmo.filterfindcomp(
-                                 const acomponent: tcomponent): boolean;
+function tactionsmo.filterfindcomp(const acomponent: TComponent): Boolean;
 begin
- result:= not (cssubcomponent in acomponent.componentstyle) and
-          (not (acomponent is twidget) or
-                (ws_iswidget in twidget(acomponent).widgetstate));
+  Result := not (cssubcomponent in acomponent.componentstyle) and
+    (not (acomponent is twidget) or
+    (ws_iswidget in twidget(acomponent).widgetstate));
 end;
 
-procedure tactionsmo.findcompallexe(const sender: TObject);
+procedure tactionsmo.findcompallexe(const Sender: TObject);
 var
- name1: msestring;
- comp1: tcomponent;
- po1: pmoduleinfoty;
+  name1: msestring;
+  comp1: TComponent;
+  po1: pmoduleinfoty;
 begin
- name1:= '';
- with designer do begin
-  if selections.count > 0 then begin
-   name1:= UTF8Decode(ownernamepath(selections[0]));
+  name1 := '';
+  with designer do
+  begin
+    if selections.Count > 0 then
+      name1 := UTF8Decode(ownernamepath(selections[0]));
+    if compnamedialog(designer.getcomponentnametree(nil, True, True, nil, @filterfindcomp, nil), name1, True) = mr_ok then
+    begin
+      replacechar1(name1, ':', '.');
+      comp1 := designer.getcomponent(ansistring(name1), po1);
+      designer.showformdesigner(po1);
+      designer.selectcomponent(comp1);
+    end;
   end;
-  if compnamedialog(designer.getcomponentnametree(nil,true,true,nil,
-                      @filterfindcomp,nil),name1,true) = mr_ok then begin
-   replacechar1(name1,':','.');
-   comp1:= designer.getcomponent(AnsiString(name1),po1);
-   designer.showformdesigner(po1);
-   designer.selectcomponent(comp1);
-  end;
- end;
 end;
 
-procedure tactionsmo.forcezorderexe(const sender: TObject);
+procedure tactionsmo.forcezorderexe(const Sender: TObject);
 begin
- if projectoptions.o <> nil then begin
-  projectoptions.o.forcezorder:= taction(sender).checked;
-  projectoptionsmodified();
- end;
+  if projectoptions.o <> nil then
+  begin
+    projectoptions.o.forcezorder := taction(Sender).Checked;
+    projectoptionsmodified();
+  end;
 end;
 
-procedure tactionsmo.onselectword(const sender: TObject);
+procedure tactionsmo.onselectword(const Sender: TObject);
 begin
-sourcefo.activepage.selectwordatcursor();
+  sourcefo.ActivePage.selectwordatcursor();
 end;
 
 end.
+

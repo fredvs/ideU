@@ -21,6 +21,12 @@ unit commandlineform;
 interface
 
 uses
+mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  msegui,mseclasses,mseforms,msedataedits,msestringcontainer,msestrings;
  
 type
@@ -31,6 +37,9 @@ type
  tcommandlinefo = class(tmseform)
    disp: tmemoedit;
    c: tstringcontainer;
+   procedure oncreated(const sender: TObject);
+   procedure setlangcomline();
+   
  end;
 
 procedure showcommandline;
@@ -55,6 +64,17 @@ begin
  finally
   fo.Free;
  end;
+end;
+
+procedure tcommandlinefo.setlangcomline();
+begin
+  Caption        := projectoptionstext(po_runcommand);
+end;
+
+
+procedure tcommandlinefo.oncreated(const sender: TObject);
+begin
+setlangcomline();
 end;
 
 end.                                                                    

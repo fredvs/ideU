@@ -18,6 +18,13 @@ unit storedcomponentinfodialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+ 
  mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,msegraphics,
  msegraphutils,mseevent,mseclasses,mseforms,componentstore,msesimplewidgets,
  msewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,
@@ -52,7 +59,7 @@ begin
  infopo:= @ainfo;
  inherited create(nil);
  with ainfo do begin
-  self.caption:= actionsmo.c[ord(ac_storecomponent)]+' '+
+  self.caption:= actionsmoduletext(ac_storecomponent)+' '+
              msestring(componentname)+': '+msestring(compclass);
   self.compname.value:= compname;
   self.compdesc.value:= compdesc;

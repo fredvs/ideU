@@ -30,6 +30,11 @@ interface
   {$endif}
 {$endif}
 uses
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
  mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
@@ -705,7 +710,7 @@ procedure tobjectinspectorfo.moduleactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
  factmodule:= amodule;
- caption:= actionsmo.c[ord(ac_objectinspector)] + ' (' +
+ caption:= actionsmoduletext(ac_objectinspector) + ' (' +
                                         msestring(amodule.Name)+')';
  updatecomponentname;
 // clear;
@@ -714,7 +719,7 @@ end;
 procedure tobjectinspectorfo.moduledeactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
- caption:= actionsmo.c[ord(ac_objectinspector)];
+ caption:= actionsmoduletext(ac_objectinspector);
 // clear;
  factmodule:= nil;
 end;

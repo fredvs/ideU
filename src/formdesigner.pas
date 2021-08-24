@@ -31,6 +31,12 @@ interface
   {$endif}
 {$endif}
 uses
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  msetypes,classes,mclasses,mseforms,mseguiglob,msegui,mseevent,msegraphutils,
  msegraphics,
  msedesignintf,mseclasses,msemenuwidgets,msemenus,msefiledialog,msedesigner,
@@ -439,7 +445,7 @@ function getdesignform(const acomp: tcomponent): tformdesignerfo;
 implementation
 uses
  formdesigner_mfm,mselist,msekeyboard,msebits,sysutils,
- msestockobjects,msedrawtext,selectsubmoduledialogform,mseshapes,settaborderform,
+ msedrawtext,selectsubmoduledialogform,mseshapes,settaborderform,
  msedatalist,objectinspector,projectoptionsform,main,msedatamodules,
  setcreateorderform,componentstore,msearrayutils,actionsmodule,msecomptree
  {$ifndef FPC},classes_del{$endif};
@@ -547,7 +553,7 @@ begin
    end;
   end;
  end;
- raise exception.Create(ansistring(actionsmo.c[ord(ac_unknownmodclass)]+
+ raise exception.Create(ansistring(actionsmoduletext(ac_unknownmodclass)+
         msestring(aclassname^) +'": "'+ msestring(designmoduleclassname)+'".'));
 end;
 
@@ -1641,8 +1647,8 @@ begin
    for int1:= 0 to count - 1 do begin
     with items[int1] do begin
      if componentstate * [csancestor,csinline] = [csancestor] then begin
-      showmessage(actionsmo.c[ord(ac_inheritedcomp)]+msestring(name)+
-                      actionsmo.c[ord(ac_cannotdel)],actionsmo.c[ord(ac_error)]);
+      showmessage(actionsmoduletext(ac_inheritedcomp)+msestring(name)+
+                      actionsmoduletext(ac_cannotdel),actionsmoduletext(ac_error));
       exit;
      end;
     end;
