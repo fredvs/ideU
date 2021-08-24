@@ -828,30 +828,6 @@ object sourcefo: tsourcefo
       24641
     )
   end
-  object c: tstringcontainer
-    strings.data = (
-      'File "'
-      '" has changed.'
-      'There are modifications in edit buffer also.'
-      'Do you wish to reload from disk?'
-      'Confirmation'
-      '<none>'
-      'Do you wish to replace:'
-      'with:'
-      '<new>'
-      'Syntaxdeffile:'
-      'Text'
-      'not found.'
-      'Restart from begin of file?'
-      'Cancel?'
-      'Do you wish to to replace this occurence?'
-      'Go to line number:'
-      'Find line'
-      'There are modifications in edit buffer also.'
-    )
-    left = 176
-    top = 104
-  end
   object timagelist2: timagelist
     width = 4
     height = 4

@@ -182,6 +182,27 @@ const
     'Attaching Process',
     'Loading'
     );
+    
+  ru_sourceformtext: sourceformaty = (
+      'File "',
+      '" has changed.',
+      'There are modifications in edit buffer also.',
+      'Do you wish to reload from disk?',
+      'Confirmation',
+      '<none>',
+      'Do you wish to replace:',
+      'with:',
+      '<new>',
+      'Syntaxdeffile:',
+      'Text',
+      'not found.',
+      'Restart from begin of file?',
+      'Cancel?',
+      'Do you wish to to replace this occurence?',
+      'Go to line number:',
+      'Find line',
+      'There are modifications in edit buffer also.'
+    );  
 
   ru_projectoptionscontext: projectoptionsconaty = (
     'Wrong encoding can damage your source files.',
@@ -613,7 +634,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_ru], @ru_projectoptionscontext, @ru_actionsmoduletext,
+  registerlangconsts(langnames[la_ru], @ru_sourceformtext, @ru_projectoptionscontext, @ru_actionsmoduletext,
    @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext,
     @ru_modalresulttextnoshortcut, @ru_textgenerator);
 end.

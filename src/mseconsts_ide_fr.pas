@@ -229,6 +229,27 @@ const
     'Attaching Process',
     'Loading'
     );
+    
+   fr_sourceformtext: sourceformaty = (
+      'File "',
+      '" has changed.',
+      'There are modifications in edit buffer also.',
+      'Do you wish to reload from disk?',
+      'Confirmation',
+      '<none>',
+      'Do you wish to replace:',
+      'with:',
+      '<new>',
+      'Syntaxdeffile:',
+      'Text',
+      'not found.',
+      'Restart from begin of file?',
+      'Cancel?',
+      'Do you wish to to replace this occurence?',
+      'Go to line number:',
+      'Find line',
+      'There are modifications in edit buffer also.'
+    );     
 
   fr_settingstext: isettingsaty          = (
     'Appliquer',          //se_apply
@@ -652,7 +673,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_fr], @fr_projectoptionscontext, @fr_actionsmoduletext,
+  registerlangconsts(langnames[la_fr], @fr_sourceformtext, @fr_projectoptionscontext, @fr_actionsmoduletext,
    @fr_settingstext, @fr_projectoptionstext, @fr_stockcaption, @fr_modalresulttext,
     @fr_modalresulttextnoshortcut, @fr_textgenerator);
 end.

@@ -17,6 +17,12 @@ interface
 {$endif}
 
 uses
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  confideu,ideusettings,commandorform,SysUtils,msetimer,msetextedit,
  msewidgetgrid,mseforms,Classes,mclasses,msegdbutils,msebitmap,msetabs,
  sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
@@ -73,7 +79,6 @@ type
     filechangenotifyer: tfilechangenotifyer;
     navigforwardact: taction;
     navigbackact: taction;
-    c: tstringcontainer;
     timagelist2: timagelist;
     tfacecomp1: tfacecomp;
     tfacecomp2: tfacecomp;
@@ -818,12 +823,12 @@ begin
           if filechanged then
           begin
             filechanged := False;
-            wstr1       := c[Ord(str_file)] + filepath + c[Ord(haschanged)];
+            wstr1       := sourceformtext(sf_str_file) + filepath + sourceformtext(sf_haschanged);
             if modified then
-              wstr1 := wstr1 + ' ' + c[Ord(modieditalso)];
+              wstr1 := wstr1 + ' ' + sourceformtext(sf_modieditalso);
 
 
-            wstr1 := wstr1 + ' ' + c[Ord(wishreload)];
+            wstr1 := wstr1 + ' ' + sourceformtext(sf_wishreload);
 
             //// fred
 
@@ -836,7 +841,7 @@ begin
             end
             else if confideufo.tbfilenoload.Value = True then
               mainfo.setstattext(filepath + ' was changed by external program and not reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning)
-            else if askok(wstr1, c[Ord(confirmation)]) then
+            else if askok(wstr1, sourceformtext(sf_confirmation)) then
             begin
               mainfo.setstattext(filepath + ' was changed by external program and reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning);
               filechanged := False;
@@ -1167,7 +1172,7 @@ begin
       tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
   end
   else
-    Caption := c[Ord(none)];
+    Caption := sourceformtext(sf_none);
  
  end;
 
@@ -1653,8 +1658,9 @@ begin
     ar1[high(ar1)] := UTF8Decode(stringtopascalstring(ar1[high(ar1)]));
     mstr2          := concatstrings(ar1, lineend);
     mstr4          := messagestr(mstr2);
-    if askyesno(c[Ord(wishreplace)] + lineend + mstr3 + lineend + c[Ord(str_with)] + lineend +
-      mstr4 + lineend + '?', c[Ord(confirmation)]) then
+    if askyesno(sourceformtext(sf_wishreplace) + lineend + mstr3 + lineend + sourceformtext(sf_str_with)
+     + lineend +
+      mstr4 + lineend + '?', sourceformtext(sf_confirmation)) then
     begin
       editor.begingroup;
       deleteselection;

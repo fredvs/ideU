@@ -31,6 +31,30 @@ const
   checkboxsize = 13;      //for listitem checkbox
 
 type
+ sourceformty = (
+    sf_str_file,           //0 File "
+    sf_haschanged,         //1 " has changed.
+    sf_therearemody,       //2 There are modifications in edit buffer also.
+    sf_wishreload,         //3 Do you wish to reload from disk?
+    sf_confirmation,       //4 Confirmation
+    sf_none,               //5 <none>
+    sf_wishreplace,        //6 Do you wish to replace:
+    sf_str_with,           //7 with:
+    sf_str_new,            //8 <new>
+    sf_syntaxdeffile,      //9 Syntaxdeffile:
+    sf_str_text,           //10 Text
+    sf_str_notfound,       //11 not found.
+    sf_restartbegin,       //12 Restart from begin of file?
+    sf_cancel,             //13 Cancel?
+    sf_replaceoccu,        //14 Do you wish to to replace this occurence?
+    sf_gotoline,           //15 Go to line number:
+    sf_findline,           //16 Find line
+    sf_modieditalso       //17 There are modifications in edit buffer also.
+  
+    );
+
+
+type
 
   stockbitmapty = (stb_default, stb_none,
     stb_dens0, stb_dens10, stb_dens25,

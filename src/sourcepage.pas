@@ -17,6 +17,12 @@ interface
 {$endif}
 
 uses
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, confideu,
  msegraphedits,mseevent,msehash,msebitmap,msetabs,msetypes,msedataedits,mseglob,
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
@@ -364,7 +370,7 @@ begin
  pathdisp.value:= tosysfilepath(finitialfilepath);
  str1:= filename;
  if str1 = '' then begin
-  str1:= sourcefo.c[ord(str_new)];
+  str1:= sourceformtext(sf_str_new);
  end;
  if modified then begin
   caption:= '*'+str1;
@@ -408,7 +414,7 @@ begin
   updatestatvalues;
  except
   on e: exception do begin
-   handleerror(e,ansistring(sourcefo.c[ord(syntaxdeffile)]));
+   handleerror(e,ansistring(sourceformtext(sf_syntaxdeffile)));
   end;
  end;
 end;
@@ -1212,9 +1218,9 @@ end;
 
 procedure textnotfound(const ainfo: findinfoty);
 begin
- showmessage(sourcefo.c[ord(str_text)]+' '''+
+ showmessage(sourceformtext(sf_str_text)+' '''+
            ainfo.text+''' '+
-           sourcefo.c[ord(str_notfound)]);
+           sourceformtext(sf_str_notfound));
 end;
 
 
@@ -1267,9 +1273,9 @@ begin
     end
     else begin
      if isback then begin
-      if askok(sourcefo.c[ord(str_text)]+' '''+text+
-               ''' '+sourcefo.c[ord(str_notfound)]+' '+
-               sourcefo.c[ord(restartend)]) then begin
+      if askok(sourceformtext(sf_str_text)+' '''+text+
+               ''' '+sourceformtext(sf_str_notfound)+' '+
+               sourceformtext(sf_restartbegin)) then begin
        findpos:= bigcoord;
        if not edit.find(text,options,findpos,edit.editpos,true,
                                                   findshowpos) then begin
@@ -1278,9 +1284,9 @@ begin
       end;
      end
      else begin
-      if askok(sourcefo.c[ord(str_text)]+' '''+text+
-               ''' '+sourcefo.c[ord(str_notfound)]+' '+
-               sourcefo.c[ord(restartbegin)]) then begin
+      if askok(sourceformtext(sf_str_text)+' '''+text+
+               ''' '+sourceformtext(sf_str_notfound)+' '+
+               sourceformtext(sf_restartbegin)) then begin
        findpos:= nullcoord;
        if not edit.find(text,options,findpos,edit.editpos,true,
                                                   findshowpos) then begin
@@ -1324,7 +1330,7 @@ procedure tsourcepage.replace(all: boolean);
   result:= application.waitescaped;
   if result then begin
    endupdate;
-   result:= askyesno(sourcefo.c[ord(cancel)]);
+   result:= askyesno(sourceformtext(sf_cancel));
    application.processmessages;
    beginupdate;
   end;
@@ -1361,7 +1367,7 @@ begin
     repeat
      if prompt then begin
       rect1:= edit.textpostomouserect(ffindpos);
-      res1:= showmessage(sourcefo.c[ord(replaceoccu)],'',
+      res1:= showmessage(sourceformtext(sf_replaceoccu),'',
        [mr_yes,mr_all,mr_no,mr_cancel],rect1,source_editor,cp_bottomleft,res1);
      end
      else begin

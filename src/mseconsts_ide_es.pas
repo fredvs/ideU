@@ -181,6 +181,27 @@ const
     'Attaching Process',
     'Loading'
     );
+    
+   es_sourceformtext: sourceformaty = (
+      'File "',
+      '" has changed.',
+      'There are modifications in edit buffer also.',
+      'Do you wish to reload from disk?',
+      'Confirmation',
+      '<none>',
+      'Do you wish to replace:',
+      'with:',
+      '<new>',
+      'Syntaxdeffile:',
+      'Text',
+      'not found.',
+      'Restart from begin of file?',
+      'Cancel?',
+      'Do you wish to to replace this occurence?',
+      'Go to line number:',
+      'Find line',
+      'There are modifications in edit buffer also.'
+    );     
 
   es_projectoptionscontext: projectoptionsconaty = (
     'Wrong encoding can damage your source files.',
@@ -613,7 +634,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_es], @es_projectoptionscontext, @es_actionsmoduletext,
+  registerlangconsts(langnames[la_es], @es_sourceformtext, @es_projectoptionscontext, @es_actionsmoduletext,
    @es_settingstext, @es_projectoptionstext, @es_stockcaption, @es_modalresulttext,
     @es_modalresulttextnoshortcut, @es_textgenerator);
 end.

@@ -20,6 +20,9 @@ uses
   msetypes;
 
 type
+  sourceformaty  = array[sourceformty] of msestring;
+  psourceformaty = ^sourceformaty;
+  
   actionsmoduleaty  = array[actionsmodulety] of msestring;
   pactionsmoduleaty = ^actionsmoduleaty;
 
@@ -47,6 +50,7 @@ const
     '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh',
     'fr');
 
+function sourceformtext(const index: sourceformty): msestring;
 function settingstext(const index: isettingsty): msestring;
 function actionsmoduletext(const index: actionsmodulety): msestring;
 function projectoptionscontext(const index: projectoptionsconty): msestring;
@@ -58,7 +62,10 @@ function stocktextgenerators(const index: textgeneratorty): textgeneratorfuncty;
 function uc(const index: integer): msestring; //get user caption
 
 procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
-procedure registerlangconsts(const Name: string; const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
+procedure registerlangconsts(const Name: string; 
+    const sourceformpo : psourceformaty;
+    const projectoptionsconpo: pprojectoptionsconaty;
+   const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
   const textgeneratorpo: pdefaultgeneratortextty);
 function setlangconsts(const Name: string): Boolean;
@@ -84,6 +91,7 @@ type
   langinfoty = record
     Name: string;
     stockcaption: pstockcaptionaty;
+    sourceformtext: psourceformaty;
     settingstext: pisettingsaty;
     projectoptionstext: pprojectoptionsaty;
     projectoptionscontext: pprojectoptionsconaty;
@@ -439,6 +447,28 @@ const
     'Infos'                             // po_infos
 
     );
+    
+   en_sourceformtext: sourceformaty = (
+      'File "',
+      '" has changed.',
+      'There are modifications in edit buffer also.',
+      'Do you wish to reload from disk?',
+      'Confirmation',
+      '<none>',
+      'Do you wish to replace:',
+      'with:',
+      '<new>',
+      'Syntaxdeffile:',
+      'Text',
+      'not found.',
+      'Restart from begin of file?',
+      'Cancel?',
+      'Do you wish to to replace this occurence?',
+      'Go to line number:',
+      'Find line',
+      'There are modifications in edit buffer also.'
+    );
+   
 
   en_stockcaption: stockcaptionaty = (
     '',                                    //sc_none
@@ -697,10 +727,13 @@ const
               {$ifdef FPC} @{$endif}delete_n_selected_rows //tg_delete_n_selected_rows
     );
 
-procedure setitem(var item: langinfoty; const Name: string; const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
+procedure setitem(var item: langinfoty; const Name: string; 
+const sourceformpo: psourceformaty;
+const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 begin
   item.Name          := Name;
+  item.sourceformtext := sourceformpo;
   item.projectoptionscontext := projectoptionsconpo;
   item.actionsmoduletext := actionsmodulepo;
   item.settingstext  := settingspo;
@@ -711,7 +744,9 @@ begin
   item.textgenerator := textgeneratorpo;
 end;
 
-procedure registerlangconsts(const Name: string; const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
+procedure registerlangconsts(const Name: string; 
+  const sourceformpo : psourceformaty;
+  const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
   const textgeneratorpo: pdefaultgeneratortextty);
 var
@@ -720,12 +755,16 @@ begin
   for int1 := 0 to high(langs) do
     if langs[int1].Name = Name then
     begin
-      setitem(langs[int1], Name, projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
+      setitem(langs[int1], Name,
+       sourceformpo,
+       projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
         modalresulttextnoshortcutpo, textgeneratorpo);
       Exit;
     end;
   setlength(langs, high(langs) + 2);
-  setitem(langs[high(langs)], Name, projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
+  setitem(langs[high(langs)], Name,
+   sourceformpo,
+   projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
     modalresulttextnoshortcutpo, textgeneratorpo);
 end;
 
@@ -806,7 +845,7 @@ begin
       end;
     if bo1 then
       if lang.Name = '' then
-        setitem(lang, langnames[la_en], @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
+        setitem(lang, langnames[la_en], @en_sourceformtext, @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
   end;
   if lowercase(str1) <> langbefore then
   begin
@@ -841,6 +880,12 @@ function actionsmoduletext(const index: actionsmodulety): msestring;
 begin
   checklang;
   Result := lang.actionsmoduletext^[index];
+end;
+
+function sourceformtext(const index: sourceformty): msestring;
+begin
+  checklang;
+  Result := lang.sourceformtext^[index];
 end;
 
 function projectoptionstext(const index: projectoptionsty): msestring;
@@ -894,7 +939,7 @@ begin
 end;
 
 initialization
-  registerlangconsts(langnames[la_en], @en_projectoptionscontext, @en_actionsmoduletext,
+  registerlangconsts(langnames[la_en], @en_sourceformtext, @en_projectoptionscontext, @en_actionsmoduletext,
    @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
     @en_modalresulttextnoshortcut, @en_textgenerator);
   langbefore := langnames[la_en];
