@@ -435,8 +435,10 @@ type
     sc_casesensitive, sc_selectedonly, sc_wholeword, sc_texttofind, sc_searchincurrentfile,
     sc_searchinopenfiles, sc_searchinprojectdir, sc_searchindirectories,
     sc_includesubdir,sc_replace,sc_replaceall,sc_replacewith,sc_promptonreplace,
-    sc_componentspalette,sc_findcomponent
- 
+    sc_componentspalette,sc_findcomponent,sc_reset,sc_cstep,sc_stepinstruction,
+    sc_nextinstruction,sc_restartdebugger,sc_togglebreakpoint,sc_tooglebreakpointenable,
+    sc_execlinehinton,sc_compileitfirst,sc_finish
+     
     );
 
   textgeneratorfuncty = function(const params: array of const): msestring;

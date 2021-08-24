@@ -857,48 +857,62 @@ object mainfo: tmainfo
               item
                 action = actionsmo.continue
                 caption = 'Continue'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Continue'
+                name = 'continue'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 27
               end            
               item
                 action = actionsmo.reset
                 caption = 'Reset'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Reset'
+                name = 'reset'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 2
               end            
               item
                 action = actionsmo.interrupt
                 caption = 'Interrupt'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Interrupt'
+                name = 'interrupt'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 1
               end            
               item
                 action = actionsmo.step
                 caption = '&Step'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Step'
+                name = 'step'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 28
               end            
               item
                 action = actionsmo.stepi
                 caption = 'Step Instruction'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Step instruction'
+                name = 'stepinstruction'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 30
               end            
               item
                 action = actionsmo.next
                 caption = 'Next'
+                name = 'next'
                 state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
                 imagenr = 31
               end            
               item
                 action = actionsmo.nexti
                 caption = 'Next Instruction'
-                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
+                hint = 'Next instruction'
+                name = 'nextinstruction'
+                state = [as_localcaption, as_localimagenr, as_localimagenrdisabled, as_localhint]
                 imagenr = 32
               end            
               item
                 action = actionsmo.finish
                 caption = 'Finish'
+                name = 'finish'
                 state = [as_localcaption, as_localimagenr, as_localimagenrdisabled]
                 imagenr = 29
               end            
@@ -907,7 +921,9 @@ object mainfo: tmainfo
               end            
               item
                 caption = 'Restart Debugger'
-                state = [as_localcaption, as_localimagelist, as_localonexecute]
+                hint = 'Restart debugger'
+                name = 'restartdebugger'
+                state = [as_localcaption, as_localimagelist, as_localhint, as_localonexecute]
                 onexecute = restartgdbonexecute
               end            
               item
@@ -915,30 +931,37 @@ object mainfo: tmainfo
               end            
               item
                 action = actionsmo.bkptsonact
+                name = 'breakpointson'
                 state = [as_checked, as_localimagenr]
                 options = [mao_checkbox, mao_shortcutcaption]
                 imagenr = 3
               end            
               item
                 action = actionsmo.togglebkpt
+                name = 'togglebreakpoint'
                 state = [as_localimagelist]
               end            
               item
                 action = actionsmo.togglebkptenable
-                state = [as_localimagelist]
+                hint = 'Enable toggle breakpoint'
+                name = 'tooglebreakpointenable'
+                state = [as_localimagelist, as_localhint]
               end            
               item
                 options = [mao_separator, mao_shortcutcaption]
               end            
               item
                 action = actionsmo.watchesonact
+                name = 'watcheson'
                 state = [as_checked, as_localimagenr]
                 options = [mao_checkbox, mao_shortcutcaption]
                 imagenr = 5
               end            
               item
                 action = actionsmo.bluedotsonact
-                state = [as_checked, as_localimagenr]
+                hint = 'Executed lines hint on/off'
+                name = 'execlinehinton'
+                state = [as_checked, as_localimagenr, as_localhint]
                 options = [mao_checkbox, mao_shortcutcaption]
                 imagenr = 8
               end>

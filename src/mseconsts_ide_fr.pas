@@ -117,7 +117,7 @@ const
      'Quitter',
      'Instruction illégale',
      'Trace piège',
-     'Avorter',
+     'Annuler',
      'Erreur BUS',
      'Exception à virgule flottante',
      'Tuer',
@@ -715,8 +715,17 @@ const
     'Remplacer par',                         // sc_replacewith
     'Invite à remplacer',                    // sc_promptonreplace
     'Palette de composants',                    // sc_componentspalette
-    'Chercher des composants'                       // sc_findcomponent
- 
+    'Chercher des composants',                       // sc_findcomponent
+     'Réinitialiser', // sc_reset
+     'Pas à pas', // sc_cstep
+     'Instruction pas à pas', // sc_stepinstruction
+     'Instruction suivante', // sc_nextinstruction
+     'Redémarrer le débogueur', // sc_restartdebugger
+     'Basculer le point d'#8217'arrêt', // sc_togglebreakpoint
+     'Basculer le point d'#8217'arrêt activé', // sc_tooglebreakpointenable
+     'Indicateur de lignes exécutées activé/désactivé', // sc_execlinehinton
+     'S'#8217'il vous plaît, compilez-le d'#8217'abord.',               // sc_compileitfirst
+     'Fin' // sc_finish   
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

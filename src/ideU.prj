@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
- value=mse compon
+ value=sc_step
  history=20
+  sc_step
   mse compon
   making
   statdisp
@@ -157,7 +158,6 @@ findinfiledialog=92
   uzcyr
   po_trimtrailing
   sc_directory
-  global setting
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -169,8 +169,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=988
- y=467
+ x=958
+ y=496
  cx=234
  cy=269
 replacedialog=33
@@ -953,7 +953,7 @@ makeoptionson=13
  4095
  4095
  1
- 202
+ 206
  2046
  4095
  192
@@ -1293,7 +1293,7 @@ path=30
  /home/fred/ideu/src/ideU.pas
 line=30
  2129
- 1104
+ 1105
  551
  4032
  660
@@ -1314,7 +1314,7 @@ line=30
  793
  908
  2515
- 5708
+ 5752
  1882
  6135
  165
@@ -1593,44 +1593,45 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=captions[
+finddtext=execlinehinton
 findhistory=20
- captions[
- objectinspectorfo.s
- objectinspectorfo.v
- objectinspectorfo.
- componentsp
- somponentp
- syntax
- file'
- layout
- file
- select
- Layout
- replace
- chercher la 
- disabled
- fabrica
- making
- compilation
- faire ok
- tstrin
+ execlinehinton
+ setlang
+ execline
+ avorter
+ sc_compileitfirst
+ Please compile it first
+ notexist
+ sc_step
+ notex
+ not exist
+ abort
+ stop
+ finish
+ next
+ interrupt
+ watches
+ 'on'
+ breakpo
+ debug
+ instruction
 findoptions=1
-editpos=14
+editpos=15
+ 75,4754
+ 0,-1073741823
+ 0,-1073741823
+ 0,790
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,11
+ 0,114
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,1036
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1645,7 +1646,8 @@ bookmarks10=0
 bookmarks11=0
 bookmarks12=0
 bookmarks13=0
-sourcefiles=14
+bookmarks14=0
+sourcefiles=15
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/dialogfiles.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1660,7 +1662,8 @@ sourcefiles=14
  ${PROJECTDIR}/objectinspector.pas
  ${PROJECTDIR}/componentpaletteform.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=14
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=15
  main.pas
  dialogfiles.pas
  confcompiler.pas
@@ -1675,7 +1678,9 @@ relpaths=14
  objectinspector.pas
  componentpaletteform.pas
  ideU.pas
-ismoduletexts=14
+ actionsmodule.pas
+ismoduletexts=15
+ 0
  0
  0
  0
@@ -1727,10 +1732,26 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
+order=15
+ 0
+ 3
+ 1
+ 2
+ 4
+ 11
+ 12
+ 13
+ 14
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
 firsttab=0
-index=4
+index=0
 [layout]
-windowlayout=657
+windowlayout=673
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1744,13 +1765,13 @@ windowlayout=657
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
- cx=1224
+ x=0
+ y=49
+ cx=1368
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1781,7 +1802,7 @@ windowlayout=657
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1875,7 +1896,7 @@ windowlayout=657
  x=0
  y=0
  cx=205
- cy=450
+ cy=517
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1965,10 +1986,10 @@ windowlayout=657
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=449
- width0=199
+ propcolwidthref=477
+ width0=211
  sortdescend0=0
- width1=244
+ width1=260
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2061,9 +2082,9 @@ windowlayout=657
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=582
+ cx=1356
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2162,8 +2183,8 @@ windowlayout=657
  ncy=0
  x=0
  y=0
- cx=1212
- cy=51
+ cx=1356
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2174,12 +2195,12 @@ windowlayout=657
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=58
+ ncx=1356
+ ncy=64
  x=0
  y=0
- cx=1212
- cy=57
+ cx=1356
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2189,8 +2210,10 @@ windowlayout=657
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msestockobjects.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/componentpaletteform.pas
+  /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
@@ -2209,8 +2232,6 @@ windowlayout=657
   /home/fred/fptop/src/ptop.prj
   /home/fred/ptop_fred/ptop.prj
   /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2227,13 +2248,29 @@ windowlayout=657
  ncy=0
  x=208
  y=0
- cx=1004
- cy=450
+ cx=1148
+ cy=517
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=15
+  0
+  3
+  1
+  2
+  4
+  11
+  12
+  13
+  14
+  5
+  6
+  7
+  8
+  9
+  10
  firsttab=0
- index=4
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2269,15 +2306,15 @@ windowlayout=657
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1212
- cy=450
+ y=62
+ cx=1356
+ cy=517
  rcx=0
  rcy=0
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2296,7 +2333,7 @@ windowlayout=657
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2372,7 +2409,7 @@ windowlayout=657
  [_mse_componentpalettefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0

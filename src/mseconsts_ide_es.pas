@@ -679,8 +679,17 @@ const
     'Reemplazar con',                         // sc_replacewith
     'Preguntar al reemplazar',                    // sc_promptonreplace
     'Paleta de componentes',                    // sc_componentspalette
-    'Encuentra componentes'                       // sc_findcomponent
- 
+    'Encuentra componentes',                       // sc_findcomponent
+     'Restablecer',                          // sc_reset
+     'Paso',                              // sc_cstep
+     'Instrucción de paso',                 // sc_stepinstruction
+     'Siguiente instrucción',                  // sc_nextinstruction
+     'Reiniciar depurador',                     // sc_restartdebugger
+     'Toggle breakpoint',                        // sc_togglebreakpoint
+     'Alternar punto de interrupción habilitado', // sc_tooglebreakpointenable
+     'Indicación de líneas ejecutadas activada / desactivada', // sc_execlinehinton
+     'Por favor, compílelo primero.',               // sc_compileitfirst
+     'Finalizar'                              // sc_finish 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

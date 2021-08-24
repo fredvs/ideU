@@ -4719,6 +4719,48 @@ begin
 
     mainmenu1.menu.itembynames(['project', 'abortmake']).Caption := captions[sc_abortmake];
     mainmenu1.menu.itembynames(['project', 'debugrun']).Caption  := captions[sc_debugrun];
+   
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'continue']).Caption  :=
+     modalresulttext[mr_continue];
+     
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption  :=
+     projectoptionscontext(c_SIGINT);
+     
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption  :=
+     captions[sc_next];
+     
+    
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'reset']).Caption := captions[sc_reset];
+ 
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'step']).Caption := captions[sc_cstep];
+   
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'stepinstruction']).Caption := captions[sc_stepinstruction];
+  
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'nextinstruction']).Caption := captions[sc_nextinstruction];
+    
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'restartdebugger']).Caption := captions[sc_restartdebugger];
+ 
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'togglebreakpoint']).Caption := 
+  captions[sc_togglebreakpoint] ;
+
+ mainmenu1.menu.itembynames(['project', 'debugrun', 'tooglebreakpointenable']).Caption :=
+ captions[sc_tooglebreakpointenable] ;
+
+  mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
+   captions[sc_finish] ;
+
+ mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption  :=
+     projectoptionscontext(c_SIGABRT); 
+
+mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption :=
+ captions[sc_breakpoints] + ' ' + captions[sc_on];
+
+mainmenu1.menu.itembynames(['project', 'debugrun', 'watcheson']).Caption :=
+ captions[sc_watches] + ' ' + captions[sc_on];
+
+mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
+ captions[sc_execlinehinton] ;
+    
     mainmenu1.menu.itembynames(['project', 'options']).Caption   := captions[sc_options];
     mainmenu1.menu.itembynames(['project', 'tree']).Caption      := captions[sc_tree];
     mainmenu1.menu.itembynames(['project', 'source']).Caption    := captions[sc_source];
@@ -4731,6 +4773,8 @@ begin
     mainmenu1.menu.itembynames(['project', 'saveas']).Caption := captions[sc_saveas];
     mainmenu1.menu.itembynames(['project', 'close']).Caption := captions[sc_close];
 
+   
+   
     mainmenu1.menu.itembynames(['edited']).Caption        := captions[sc_edited];
     mainmenu1.menu.itembynames(['edited', 'make']).Caption := captions[sc_make];
     mainmenu1.menu.itembynames(['edited', 'build']).Caption := captions[sc_build];

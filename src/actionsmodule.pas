@@ -1033,7 +1033,8 @@ begin
   str3       := '';
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-      ' does not exist.  Please compile it first.', mtk_error)
+        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
+      stockobjects.captions[sc_compileitfirst]  , mtk_error)
 
   else
   begin
@@ -1134,10 +1135,12 @@ procedure tactionsmo.stepactonexecute(const Sender: TObject);
 begin
   gettargetfile;//to initialize
 
-  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ 
+   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-      ' does not exist.  Please compile it first.', mtk_error)
-
+        ' ' + actionsmoduletext(ac_doesnotexist) + ' .  ' + 
+      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+  
   else
     with mainfo do
       if checkremake(sc_step) then
@@ -1148,9 +1151,10 @@ procedure tactionsmo.stepiactonexecute(const Sender: TObject);
 begin
   gettargetfile;//to initializez
 
-  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+ if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-      ' does not exist.  Please compile it first.', mtk_error)
+        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
+      stockobjects.captions[sc_compileitfirst]  , mtk_error)
 
   else
     with mainfo do
@@ -1160,9 +1164,10 @@ end;
 
 procedure tactionsmo.nextactonexecute(const Sender: TObject);
 begin
-  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-      ' does not exist.  Please compile it first.', mtk_error)
+        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
+      stockobjects.captions[sc_compileitfirst]  , mtk_error)
 
   else
     with mainfo do
@@ -1172,9 +1177,10 @@ end;
 
 procedure tactionsmo.nextiactonexecute(const Sender: TObject);
 begin
-  if not fileexists(ansistring(tosysfilepath(gettargetfile))) then
+  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-      ' does not exist.  Please compile it first.', mtk_error)
+        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
+      stockobjects.captions[sc_compileitfirst]  , mtk_error)
 
   else
     with mainfo do

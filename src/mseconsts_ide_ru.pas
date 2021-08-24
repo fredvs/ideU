@@ -678,9 +678,19 @@ const
     'Заменить',                         // sc_replacewith
     'Запрашивать замену',                    // sc_promptonreplace
     'Палитра компонентов',                    // sc_componentspalette
-    'Найти компоненты'                       // sc_findcomponent
- 
-    );
+    'Найти компоненты',                       // sc_findcomponent
+    'Сброс',                              // sc_reset
+     'Шаг',                            // sc_cstep
+     'Шаговая инструкция',               // sc_stepinstruction
+     'Следующая инструкция',             // sc_nextinstruction
+     'Перезапустить отладчик',           // sc_restartdebugger
+     'Переключить точку останова',           // sc_togglebreakpoint
+     'Включить точку останова',           // sc_tooglebreakpointenable
+     'Включение / выключение подсказки по выполненным строкам', // sc_execlinehinton
+     'Пожалуйста, сначала скомпилируйте это.',               // sc_compileitfirst
+     'Готово'                          // sc_finish
+     
+        );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
