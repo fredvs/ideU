@@ -20,6 +20,7 @@ object findinfilepagefo: tfindinfilepagefo
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf
+  oncreated = oncreated
   ondestroy = formdestroy
   onlayout = childscaled
   moduleclassname = 'tmseform'
@@ -84,7 +85,7 @@ object findinfilepagefo: tfindinfilepagefo
     taborder = 2
     bounds_x = 1
     bounds_y = 0
-    bounds_cx = 254
+    bounds_cx = 186
     bounds_cy = 24
     bounds_cxmin = 140
     anchors = [an_left, an_top, an_right]
@@ -98,9 +99,9 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 1
-    bounds_x = 256
+    bounds_x = 188
     bounds_y = 0
-    bounds_cx = 69
+    bounds_cx = 66
     bounds_cy = 24
     anchors = [an_top, an_right]
     reffontheight = 15
@@ -115,7 +116,7 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 4
-    bounds_x = 429
+    bounds_x = 425
     bounds_y = 0
     bounds_cx = 82
     bounds_cy = 24
@@ -135,9 +136,9 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 3
-    bounds_x = 327
+    bounds_x = 256
     bounds_y = 0
-    bounds_cx = 100
+    bounds_cx = 167
     bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
@@ -151,13 +152,5 @@ object findinfilepagefo: tfindinfilepagefo
     onterminate = threadonterminate
     left = 16
     top = 72
-  end
-  object c: tstringcontainer
-    strings.data = (
-      '*** CANCELED ***'
-      'FINISHED'
-    )
-    left = 136
-    top = 64
   end
 end

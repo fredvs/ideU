@@ -20,6 +20,13 @@ unit findinfilepage;
 
 interface
 uses
+  msestockobjects,
+   mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+
  msetypes,msegui,mseclasses,mseforms,msetabs,msetextedit,msewidgetgrid,msegrids,
  msethreadcomp,findinfileform,msesimplewidgets,msedispwidgets,msestrings,
  classes,mclasses,msestringcontainer;
@@ -34,7 +41,6 @@ type
    grid: twidgetgrid;
    again: tbutton;
    thread: tthreadcomp;
-   c: tstringcontainer;
    procedure foundlistoncellevent(const sender: tobject; var info: celleventinfoty);
    procedure threadonexecute(const sender: tthreadcomp);
    procedure threadonstart(const sender: tthreadcomp);
@@ -44,6 +50,9 @@ type
    procedure againonexecute(const sender: TObject);
    procedure childscaled(const sender: TObject);
    procedure formdestroy(const sender: TObject);
+   procedure oncreated(const sender: TObject);
+   procedure setlangfindpage();
+
   private
    finfo: findinfileinfoty;
    procedure dorun;
@@ -61,12 +70,6 @@ uses
  findinfilepage_mfm,sourcepage,sourceform,mseeditglob,sysutils,mserichstring,
  msegraphics,msestream,msefileutils,msesys,findinfiledialogform,msegraphutils,
  projectoptionsform,msesystypes,mseformatstr,main, confideu;
-
-type
- stringconsts = (
-  canceled,           //0 *** CANCELED ***
-  finished            //1 FINISHED
- );
 
 { tfindinfilepagefo}
 
@@ -99,7 +102,7 @@ procedure tfindinfilepagefo.cancelsearch;
 begin
  thread.terminate;
  thread.waitfor;
- filename.value:= c[ord(canceled)];
+ filename.value:= actionsmoduletext(ac_sr_exited);
 end;
 
 procedure tfindinfilepagefo.startfile(const afilename: filenamety);
@@ -336,7 +339,7 @@ begin
  if not application.terminated then begin
   cancel.enabled:= false;
   again.enabled:= true;
-  filename.value:= c[ord(finished)];
+  filename.value:= mainformtext(ma_processterminated);
  end;
 end;
 
@@ -380,5 +383,18 @@ begin
  thread.terminate;
  thread.waitfor;
 end;
+
+procedure tfindinfilepagefo.oncreated(const sender: TObject);
+begin
+setlangfindpage();
+end;
+
+procedure tfindinfilepagefo.setlangfindpage();
+begin
+   Caption        := stockobjects.captions[sc_findresult];
+  cancel.Caption := stockobjects.captions[sc_cancel];
+  again.Caption := stockobjects.captions[sc_search_again];
+end;
+
 
 end.

@@ -1,7 +1,7 @@
 object selecteditpagefo: tselecteditpagefo
   visible = False
-  bounds_x = 169
-  bounds_y = 378
+  bounds_x = 651
+  bounds_y = 215
   bounds_cx = 704
   bounds_cy = 473
   container.frame.localprops = []
@@ -42,7 +42,7 @@ object selecteditpagefo: tselecteditpagefo
     cellframe.localprops = [frl_leveli]
     cellframe.localprops1 = []
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup]
-    options = [lvo_readonly, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
+    options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
     onitemevent = doonitemevent
     reffontheight = 15
   end
@@ -52,7 +52,7 @@ object selecteditpagefo: tselecteditpagefo
     taborder = 2
     bounds_x = 0
     bounds_y = 453
-    bounds_cx = 650
+    bounds_cx = 627
     bounds_cy = 19
     anchors = [an_left, an_right, an_bottom]
     textflags = [tf_ycentered, tf_ellipseleft]
@@ -60,9 +60,9 @@ object selecteditpagefo: tselecteditpagefo
   end
   object openfilebutton: tbutton
     taborder = 1
-    bounds_x = 652
+    bounds_x = 628
     bounds_y = 452
-    bounds_cx = 50
+    bounds_cx = 74
     bounds_cy = 20
     anchors = [an_right, an_bottom]
     state = [as_localcaption, as_localonexecute]

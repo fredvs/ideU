@@ -260,11 +260,11 @@ const
       'Déposer "',
       '" pas trouvé.',
       '" existe.',
-      'Nouveau',
+      'Nouveau',  
       'Sélectionner l'#08217'ancêtre',
       'Nouvelle forme',
       'Pascal Fichiers',
-      'Nouveau',
+      'nouveau', 
       'Impossible de charger le projet "',
       'Sélectionner un modèle de projet',
       'Fichiers de projet',
@@ -460,7 +460,7 @@ const
     'Formatter Macros',                                // po_formatmacro
     'Utilisé par formatfloatmse() et formatdatetimemse()', // po_formatmacrohint
     'Modèles',                                        // po_templates
-    'Nouveau projet',                                  // po_newproject
+    'Nouveau projet',                                 // po_newproject
     'Script avant copie',                              // po_scriptbeforecopy
     'Script après copie',                             // po_scriptaftercopy
     'Nouveau Fichier',                                 // po_newfile
@@ -631,7 +631,7 @@ const
     'Widgets',                                     //sc_widgets
     'Réglages',                                   //sc_settings
     'A propos de',                                 //sc_about
-    'Nouveau',                                     //sc_newfile
+    'Nouveau',                                    //sc_newfile
     'Sauver sous ...',                             //sc_saveas
     'Sauver tout',                                 //sc_saveall
     'Fermer tout',                                 //sc_closeall

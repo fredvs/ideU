@@ -3429,7 +3429,8 @@ procedure tmainfo.setprojectname(aname: filenamety);
 begin
   fprojectname := aname;
   if aname = '' then
-    Caption    := idecaption + ' (<' + mainformtext(ma_new2) + '>)'
+    Caption    := idecaption + ' v' + versiontext
+    //+ ' (<' + mainformtext(ma_new2) + '>)'
   else
   begin
 

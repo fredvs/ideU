@@ -22,6 +22,11 @@ interface
 
 uses
   msestockobjects,
+   mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
   mseforms,
   mselistbrowser,
   msetypes,
@@ -158,6 +163,7 @@ begin
       list.focusedindex := int1;
       break;
     end;
+  setlangselectedit();  
 end;
 
 procedure tselecteditpagefo.openfileonexecute(const Sender: TObject);
@@ -176,9 +182,9 @@ end;
 
 procedure tselecteditpagefo.setlangselectedit();
 begin
-  Caption := stockobjects.captions[sc_select_edit_Page];
+  Caption := stockobjects.captions[sc_select_edit_Page] + '   (Ctrl+E)' ;
+  openfilebutton.caption := stockobjects.captions[sc_open];
 end;
-
 
 initialization
   colwidth := 100;

@@ -332,7 +332,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localcolor]
       end    
       item
-        submenu.count = 9
+        submenu.count = 10
         submenu.items = <        
           item
             action = actionsmo.line
@@ -362,6 +362,9 @@ object mainfo: tmainfo
               1
               8498
             )
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
           end        
           item
             action = actionsmo.replace

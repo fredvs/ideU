@@ -112,26 +112,56 @@ begin
   application.createdatamodule(tstringconstsmo, s);
   application.createdatamodule(tactionsmo, actionsmo);
   application.createform(tsourcefo, sourcefo);
+  sourcefo.caption := actionsmoduletext(ac_source);
+  
   application.createform(tdebuggerfo, debuggerfo);
+  debuggerfo.caption := stockobjects.captions[sc_commander];
+  
   application.createform(tcomponentpalettefo, componentpalettefo);
   componentpalettefo.Caption :=     stockobjects.captions[sc_componentspalette];
   application.createform(tcomponentstorefo, componentstorefo);
   componentstorefo.Caption := actionsmoduletext(ac_storecomponent);
+  
   application.createform(tmessagefo, messagefo);
+  messagefo.Caption := stockobjects.captions[sc_messages];
+    
   application.createform(twatchfo, watchfo);
+  watchfo.Caption := stockobjects.captions[sc_watches];
+    
   application.createform(tsymbolfo, symbolfo);
+   symbolfo.Caption := stockobjects.captions[sc_symbols];
+  
   application.createform(tobjectinspectorfo, objectinspectorfo);
   objectinspectorfo.Caption := actionsmoduletext(ac_objectinspector);
+
   application.createform(tbreakpointsfo, breakpointsfo);
+   breakpointsfo.Caption := stockobjects.captions[sc_breakpoints];
+    
   application.createform(twatchpointsfo, watchpointsfo);
+  watchpointsfo.Caption := stockobjects.captions[sc_watchpoints];
+   
   application.createform(tstackfo, stackfo);
+  stackfo.Caption := stockobjects.captions[sc_stack];
+    
   application.createform(tprojecttreefo, projecttreefo);
+  projecttreefo.Caption := stockobjects.captions[sc_tree];
+    
   application.createform(tfindinfilefo, findinfilefo);
+   findinfilefo.Caption := stockobjects.captions[sc_find_infile];
+   
   // application.createform(tcpufo, cpufo);
   application.createform(tdisassfo, disassfo);
+   disassfo.Caption := stockobjects.captions[sc_assembler];
+   
   application.createform(tmemoryfo, memoryfo);
+   memoryfo.Caption := stockobjects.captions[sc_memory];
+    
   application.createform(tthreadsfo, threadsfo);
+  threadsfo.Caption := stockobjects.captions[sc_threads];
+   
   application.createform(ttargetconsolefo, targetconsolefo);
+  targetconsolefo.Caption := stockobjects.captions[sc_targetconsole];
+  
   application.createform(tdialogfilesfo, dialogfilesfo);
   application.createform(tfindmessagefo, findmessagefo);
   //findmessagefo.close;
@@ -142,8 +172,10 @@ begin
  // beautyfo.Close;
 
   application.createform(tmainfo, mainfo);
+  
   application.createform(taboutfo, aboutfo);
-
+  aboutfo.Caption := stockobjects.captions[sc_about];
+ 
   createcpufo;
 
   mainfo.ideureadconfig;
