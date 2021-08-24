@@ -2,7 +2,6 @@ unit confcompiler;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
-
 uses
   msestockobjects,
    mseconsts_ide,

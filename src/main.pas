@@ -3479,26 +3479,50 @@ begin
 
   if Assigned(debuggerfo) then
   begin
-    debuggerfo.project_make.hint         := ' Compile project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_start.hint        := ' Start project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_save.hint         := ' Save project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_abort_compil.hint :=
-      ' Abort compile project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_next.hint         := ' Next instruction in project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_step.hint         := ' Step instruction in project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_finish.hint       := ' Finish project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_next_instruction.hint :=
-      ' Next Assembler instruction in project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_step_instruction.hint :=
-      ' Step Assembler instruction in project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_reset.hint        := ' Reset project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_interrupt.hint    :=
-      ' Interrupt project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_options.hint      :=
-      ' Option Number for project ' + ExtractFilename(aname) + ' ';
-    debuggerfo.project_option.hint       :=
-      ' Options for project ' + ExtractFilename(aname) + ' ';
-  end;
+    debuggerfo.project_make.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_make] +  ' ' + ExtractFilename(aname) + ' ';
+  
+     debuggerfo.project_start.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_debugrun] +  ' ' + ExtractFilename(aname) + ' ';
+  
+      debuggerfo.project_save.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_save] +  ' ' + ExtractFilename(aname) + ' ';
+    
+         debuggerfo.project_save.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_abortmake] +  ' ' + ExtractFilename(aname) + ' ';
+ 
+       debuggerfo.project_next.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_nextinstruction] +  ' ' + ExtractFilename(aname) + ' '; 
+   
+      debuggerfo.project_step.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_stepinstruction] +  ' ' + ExtractFilename(aname) + ' '; 
+   
+      debuggerfo.project_finish.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_finish] +  ' ' + ExtractFilename(aname) + ' '; 
+    
+       debuggerfo.project_next_instruction.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_nextinstruction] +  ' ' +  
+     stockobjects.captions[sc_assembler] +  ' ' +    
+     ExtractFilename(aname) + ' '; 
+     
+       debuggerfo.project_step_instruction.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_stepinstruction] +  ' ' +  
+     stockobjects.captions[sc_assembler] +  ' ' +    
+     ExtractFilename(aname) + ' '; 
+  
+     debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + stockobjects.captions[sc_reset] + ' ' +    
+     ExtractFilename(aname) + ' '; 
+     
+     debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + projectoptionscontext(c_SIGINT) + ' ' +    
+     ExtractFilename(aname) + ' '; 
+     
+      debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
+    ' : ' + projectoptionstext(po_makeoptions) + ' ' +    
+     ExtractFilename(aname) + ' '; 
+  
+    end;
 
   projectfilebefore := projectoptions.projectfilename;
   projectdirbefore  := projectoptions.projectdir;
