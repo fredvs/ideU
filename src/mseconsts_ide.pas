@@ -226,7 +226,7 @@ const
     
 
   en_actionsmoduletext: actionsmoduleaty = (
-    'Configure MSEide',
+    'Configure ideU',
     'Process ID',
     'Attach to process',
     'Unknown moduleclass for "',

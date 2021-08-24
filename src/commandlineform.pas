@@ -21,60 +21,67 @@ unit commandlineform;
 interface
 
 uses
-mseconsts_ide,
+  mseconsts_ide,
   mseconsts_ide_ru,
   mseconsts_ide_de,
   mseconsts_ide_es,
   mseconsts_ide_fr,
   msestockobjects,
- msegui,mseclasses,mseforms,msedataedits,msestringcontainer,msestrings;
- 
+  msegui,
+  mseclasses,
+  mseforms,
+  msedataedits,
+  msestringcontainer,
+  msestrings;
+
 type
- stringconsts = (
- makedisabled //0 Make disabled by Default make col!
- );
- 
- tcommandlinefo = class(tmseform)
-   disp: tmemoedit;
-   c: tstringcontainer;
-   procedure oncreated(const sender: TObject);
-   procedure setlangcomline();
-   
- end;
+  stringconsts = (
+    makedisabled //0 Make disabled by Default make col!
+    );
+
+  tcommandlinefo = class(tmseform)
+    disp: tmemoedit;
+    c: tstringcontainer;
+    procedure oncreated(const Sender: TObject);
+    procedure setlangcomline();
+
+  end;
 
 procedure showcommandline;
 
 implementation
+
 uses
- commandlineform_mfm,make,projectoptionsform;
+  commandlineform_mfm,
+  make,
+  projectoptionsform;
 
 procedure showcommandline;
 var
- fo: tcommandlinefo;
+  fo: tcommandlinefo;
 begin
- fo:= tcommandlinefo.create(nil);
- try
-  if projectoptions.defaultmake >= maxdefaultmake then begin
-   fo.disp.value:= fo.c[ord(makedisabled)];
-  end
-  else begin
-   fo.disp.value:= UTF8Decode(buildmakecommandline(projectoptions.defaultmake));
+  fo := tcommandlinefo.Create(nil);
+  try
+    if projectoptions.defaultmake >= maxdefaultmake then
+      fo.disp.Value := fo.c[Ord(makedisabled)]
+    else
+      fo.disp.Value := UTF8Decode(buildmakecommandline(projectoptions.defaultmake));
+    fo.Show(True);
+  finally
+    fo.Free;
   end;
-  fo.show(true);
- finally
-  fo.Free;
- end;
 end;
 
 procedure tcommandlinefo.setlangcomline();
 begin
-  Caption        := projectoptionstext(po_runcommand);
+  Caption := projectoptionstext(po_runcommand);
 end;
 
 
-procedure tcommandlinefo.oncreated(const sender: TObject);
+procedure tcommandlinefo.oncreated(const Sender: TObject);
 begin
-setlangcomline();
+  setlangcomline();
 end;
 
-end.                                                                    
+end.
+
