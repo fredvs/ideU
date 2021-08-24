@@ -278,9 +278,9 @@ const
       'fonctionnement.',
       'Processus terminé',
       'Le processus s'#08217'est terminé normalement.',
-      'Faire ***ERREUR***',
-      'Faire OK.',
-      'La source a changé, voulez-vous refaire le projet ?',
+      'Compilation ***ERREUR***',
+      'Compilation OK.',
+      'La source a changé, voulez-vous recréer le projet ?',
       'Charger la disposition de la fenêtre',
       'Zone d'#08217'amarrage'
     ); 

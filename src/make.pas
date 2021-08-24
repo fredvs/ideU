@@ -1011,7 +1011,7 @@ begin
  actionsmo.initproject ;
  //mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
 
-  mainfo.setstattext('Making ' + gettargetfile + '...' ,mtk_making);
+  mainfo.setstattext(actionsmoduletext(ac_making) + ' ' + gettargetfile + '...' ,mtk_making);
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
@@ -1117,7 +1117,7 @@ begin
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
  // mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
-  mainfo.setstattext('Compiling ' + aname + '...' ,mtk_making);
+  mainfo.setstattext( actionsmoduletext(ac_making) + ' ' + aname + '...' ,mtk_making);
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
