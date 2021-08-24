@@ -155,7 +155,7 @@ const
     'Téléchargement interrompu.',
     'Erreur d'#08217'exécution avec "',
     'Erreur : délai d'#08217'attente.',
-    'Fabrication.',
+    'Fabrication de ',
     'Ne pas courir.',
     'Téléchargement.',
     'Le téléchargement ne fonctionne pas.',
@@ -281,7 +281,7 @@ const
       'Compilation ***ERREUR***',
       'Compilation OK.',
       'La source a changé, voulez-vous recréer le projet ?',
-      'Charger la disposition de la fenêtre',
+      'Charger la disposition de fenêtres',
       'Zone d'#08217'amarrage'
     ); 
     
@@ -302,7 +302,7 @@ const
        'Annuler?',
        'Voulez-vous remplacer cette occurrence ?',
        'Aller au numéro de ligne :',
-       'Rechercher la ligne',
+       'Chercher la ligne',
        'Il y a aussi des modifications dans le tampon d'#08217'édition.' 
        
         );     
@@ -709,8 +709,14 @@ const
     'Chercher dans les fichiers ouverts',            // sc_searchininopenfiles 
     'Chercher dans le répertoire du projet',            // sc_searchinprojectdir
     'Chercher dans les répertoires',              // sc_searchindirectories
-    'Inclure les sous-répertoires'                // sc_includesubdir
-
+    'Inclure les sous-répertoires',                // sc_includesubdir
+    'Remplacer',                              // sc_replace
+    'Remplacer tout',                          // sc_replace all
+    'Remplacer par',                         // sc_replacewith
+    'Invite à remplacer',                    // sc_promptonreplace
+    'Palette de composants',                    // sc_componentspalette
+    'Chercher des composants'                       // sc_findcomponent
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

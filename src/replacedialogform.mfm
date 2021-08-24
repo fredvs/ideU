@@ -1,7 +1,7 @@
 object replacedialogfo: treplacedialogfo
   visible = False
-  bounds_x = 288
-  bounds_y = 84
+  bounds_x = 363
+  bounds_y = 364
   bounds_cx = 254
   bounds_cy = 229
   bounds_cxmin = 254
@@ -45,6 +45,7 @@ object replacedialogfo: treplacedialogfo
     00000000
   }
   windowopacity = -Inf
+  oncreated = oncreat
   moduleclassname = 'tmseform'
   object findtext: thistoryedit
     frame.caption = 'Text to &find'

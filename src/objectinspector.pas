@@ -264,6 +264,7 @@ var
 
 implementation
 uses
+ 
  objectinspector_mfm,sysutils,msearrayprops,actionsmodule,mseformatstr,
  msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist, confideu,
  sourceupdate,sourceform,msekeyboard,main,msedatalist,msecolordialog;

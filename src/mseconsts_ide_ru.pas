@@ -671,8 +671,15 @@ const
     'Искать в открытых файлах',            // sc_searchinopenfiles 
     'Искать в каталоге проекта',            // sc_searchinprojectdir
     'Искать в каталогах',            // sc_searchindirectories
-    'Включить подкаталоги'            // sc_includesubdir
-
+    'Включить подкаталоги',            // sc_includesubdir
+ 
+    'Заменять',                              // sc_replace
+    'Заменить все',                          // sc_replace all
+    'Заменить',                         // sc_replacewith
+    'Запрашивать замену',                    // sc_promptonreplace
+    'Палитра компонентов',                    // sc_componentspalette
+    'Найти компоненты'                       // sc_findcomponent
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

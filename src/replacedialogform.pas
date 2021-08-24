@@ -19,65 +19,85 @@ unit replacedialogform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
 uses
- mseguiglob,msegui,mseclasses,mseforms,msegraphedits,msedataedits,msesimplewidgets,
- msestat,msestatfile,mseglob,
- projectoptionsform;
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
+  mseguiglob,
+  msegui,
+  mseclasses,
+  mseforms,
+  msegraphedits,
+  msedataedits,
+  msesimplewidgets,
+  msestat,
+  msestatfile,
+  mseglob,
+  projectoptionsform;
 
 type
- treplacedialogfo = class(tmseform)
-   casesensitive: tbooleanedit;
-   findtext: thistoryedit;
-   replacetext: thistoryedit;
-   selectedonly: tbooleanedit;
-   statfile1: tstatfile;
-   promptonreplace: tbooleanedit;
-   tintegerbutton1: tbutton;
-   tintegerbutton2: tbutton;
-   wholeword: tbooleanedit;
+  treplacedialogfo = class(tmseform)
+    casesensitive: tbooleanedit;
+    findtext: thistoryedit;
+    replacetext: thistoryedit;
+    selectedonly: tbooleanedit;
+    statfile1: tstatfile;
+    promptonreplace: tbooleanedit;
+    tintegerbutton1: TButton;
+    tintegerbutton2: TButton;
+    wholeword: tbooleanedit;
 
+   procedure oncreat(const sender: TObject);
   private
-   procedure valuestoinfo(out info: replaceinfoty);
-   procedure infotovalues(const info: replaceinfoty);
- end;
+    procedure valuestoinfo(out info: replaceinfoty);
+    procedure infotovalues(const info: replaceinfoty);
+    procedure setlangfindreplace();
+  end;
 
- procedure replacedialogdotextsize;
+procedure replacedialogdotextsize;
 function replacedialogexecute(var info: replaceinfoty): modalresultty;
 
 implementation
-uses
- replacedialogform_mfm,msestrings, main, confideu;
 
- var
- fo: treplacedialogfo;
+uses
+  replacedialogform_mfm,
+  msestrings,
+  main,
+  confideu;
+
+var
+  fo: treplacedialogfo;
 
 procedure replacedialogdotextsize;
 begin
-fo.font.height := confideufo.fontsize.value;
-fo.font.name := ansistring(confideufo.fontname.value);
+  fo.font.Height := confideufo.fontsize.Value;
+  fo.font.Name   := ansistring(confideufo.fontname.Value);
 
-fo.findtext.top :=  34;
-fo.replacetext.top :=  fo.findtext.top + fo.findtext.height + 2 ;
-fo.casesensitive.top := fo.replacetext.top + fo.replacetext.height + 2 ;
-fo.wholeword.top :=  fo.casesensitive.top + fo.casesensitive.height + 2 ;
-fo.selectedonly.top := fo.wholeword.top + fo.wholeword.height +2;
-fo.promptonreplace.top := fo.selectedonly.top + fo.selectedonly.height +2;
-fo.height := fo.promptonreplace.top + fo.promptonreplace.height + 10;
+  fo.findtext.top := 34;
+  fo.replacetext.top := fo.findtext.top + fo.findtext.Height + 2;
+  fo.casesensitive.top := fo.replacetext.top + fo.replacetext.Height + 2;
+  fo.wholeword.top := fo.casesensitive.top + fo.casesensitive.Height + 2;
+  fo.selectedonly.top := fo.wholeword.top + fo.wholeword.Height + 2;
+  fo.promptonreplace.top := fo.selectedonly.top + fo.selectedonly.Height + 2;
+  fo.Height := fo.promptonreplace.top + fo.promptonreplace.Height + 10;
 end;
 
 function replacedialogexecute(var info: replaceinfoty): modalresultty;
 begin
- fo:= treplacedialogfo.create(nil);
- try
-  replacedialogdotextsize;
-  fo.infotovalues(info);
-  result:= fo.show(true,nil);
-  if result in [mr_ok,mr_all] then begin
-   fo.valuestoinfo(info);
+  fo := treplacedialogfo.Create(nil);
+  try
+    replacedialogdotextsize;
+    fo.infotovalues(info);
+    Result := fo.Show(True, nil);
+    if Result in [mr_ok, mr_all] then
+      fo.valuestoinfo(info);
+  finally
+    fo.Free;
   end;
- finally
-  fo.Free;
- end;
 end;
 
 { treplacedialogfo }
@@ -85,26 +105,52 @@ end;
 procedure treplacedialogfo.valuestoinfo(out info: replaceinfoty);
 begin
 {$warnings off}
- with info.find do begin
-  text:= findtext.value;
-  history:= findtext.dropdown.valuelist.asarray;
-  options:= encodesearchoptions(not casesensitive.value,wholeword.value);
-  selectedonly:= self.selectedonly.value;
- end;
- info.prompt:= promptonreplace.value;
- info.replacetext:= replacetext.value;
+  with info.find do
+  begin
+    Text         := findtext.Value;
+    history      := findtext.dropdown.valuelist.asarray;
+    options      := encodesearchoptions(not casesensitive.Value, wholeword.Value);
+    selectedonly := self.selectedonly.Value;
+  end;
+  info.prompt := promptonreplace.Value;
+  info.replacetext := replacetext.Value;
 end;
+
 {$warnings on}
+
+procedure treplacedialogfo.setlangfindreplace();
+begin
+
+  Caption := stockobjects.captions[sc_find_replace];
+  tintegerbutton1.Caption := stockobjects.captions[sc_replace];
+  tintegerbutton2.Caption := stockobjects.captions[sc_replaceall];
+
+  findtext.frame.Caption        := stockobjects.captions[sc_texttofind];
+  replacetext.frame.Caption     := stockobjects.captions[sc_replacewith];
+  promptonreplace.frame.Caption := stockobjects.captions[sc_promptonreplace];
+
+  casesensitive.frame.Caption := stockobjects.captions[sc_casesensitive];
+  selectedonly.frame.Caption  := stockobjects.captions[sc_selectedonly];
+  wholeword.frame.Caption     := stockobjects.captions[sc_wholeword];
+
+end;
 
 procedure treplacedialogfo.infotovalues(const info: replaceinfoty);
 begin
- with info.find do begin
-  findtext.value:= text;
-  findtext.dropdown.valuelist.asarray:= history;
-  casesensitive.value:= not (so_caseinsensitive in options);
-  wholeword.value:= so_wholeword in options;
-//  self.selectedonly.value:= selectedonly;
- end;
+  with info.find do
+  begin
+    findtext.Value      := Text;
+    findtext.dropdown.valuelist.asarray := history;
+    casesensitive.Value := not (so_caseinsensitive in options);
+    wholeword.Value     := so_wholeword in options;
+    //  self.selectedonly.value:= selectedonly;
+  end;
+end;
+
+procedure treplacedialogfo.oncreat(const sender: TObject);
+begin
+setlangfindreplace();
 end;
 
 end.
+

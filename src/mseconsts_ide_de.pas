@@ -669,8 +669,14 @@ const
     'In geöffneten Dateien suchen',              // sc_searchinopenfiles 
     'Suche im Projektverzeichnis',                // sc_searchinprojectdir
     'Suche in Verzeichnissen',                    // sc_searchindirectories
-    'Unterverzeichnisse einschließen'            // sc_includesubdir
-
+    'Unterverzeichnisse einschließen',            // sc_includesubdir
+    'Ersetzen',                              // sc_replace
+    'Alles ersetzen',                          // sc_replace all
+    'Ersetzen mit',                         // sc_replacewith
+    'Nach Ersetzen fragen',                    // sc_promptonreplace
+    'Komponentenpalette',                    // sc_componentspalette
+    'Komponenten finden'                       // sc_findcomponent
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

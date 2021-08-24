@@ -434,8 +434,9 @@ type
     sc_openproject, sc_openfile, sc_path, sc_other, sc_printcommand, sc_shortcut, sc_value,
     sc_casesensitive, sc_selectedonly, sc_wholeword, sc_texttofind, sc_searchincurrentfile,
     sc_searchinopenfiles, sc_searchinprojectdir, sc_searchindirectories,
-    sc_includesubdir
-
+    sc_includesubdir,sc_replace,sc_replaceall,sc_replacewith,sc_promptonreplace,
+    sc_componentspalette,sc_findcomponent
+ 
     );
 
   textgeneratorfuncty = function(const params: array of const): msestring;

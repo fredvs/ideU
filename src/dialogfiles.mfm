@@ -3,7 +3,7 @@ object dialogfilesfo: tdialogfilesfo
   visible = False
   bounds_x = 596
   bounds_y = 300
-  bounds_cx = 336
+  bounds_cx = 382
   bounds_cy = 366
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -11,7 +11,7 @@ object dialogfilesfo: tdialogfilesfo
   container.bounds = (
     0
     0
-    336
+    382
     366
   )
   optionswindow = [wo_message]
@@ -28,7 +28,7 @@ object dialogfilesfo: tdialogfilesfo
     taborder = 3
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 334
+    bounds_cx = 380
     bounds_cy = 364
     anchors = [an_left, an_top, an_right, an_bottom]
     reffontheight = 15
@@ -37,7 +37,7 @@ object dialogfilesfo: tdialogfilesfo
       frame.localprops1 = []
       bounds_x = 1
       bounds_y = 69
-      bounds_cx = 332
+      bounds_cx = 378
       bounds_cy = 290
       anchors = [an_top, an_bottom]
       colorselect = 16760476
@@ -66,9 +66,9 @@ object dialogfilesfo: tdialogfilesfo
       0
       0
     )
-    bounds_x = 6
-    bounds_y = 18
-    bounds_cx = 324
+    bounds_x = 5
+    bounds_y = 24
+    bounds_cx = 370
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
@@ -87,9 +87,9 @@ object dialogfilesfo: tdialogfilesfo
     face.localprops = [fal_fadirection]
     face.template = sourcefo.tfacecomp1
     taborder = 2
-    bounds_x = 199
-    bounds_y = 1
-    bounds_cx = 55
+    bounds_x = 152
+    bounds_y = 3
+    bounds_cx = 74
     bounds_cy = 18
     anchors = [an_top, an_right]
     state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
@@ -107,10 +107,10 @@ object dialogfilesfo: tdialogfilesfo
     face.localprops = [fal_fadirection]
     face.template = sourcefo.tfacecomp1
     taborder = 1
-    bounds_x = 276
-    bounds_y = 2
-    bounds_cx = 50
-    bounds_cy = 18
+    bounds_x = 288
+    bounds_y = 8
+    bounds_cx = 85
+    bounds_cy = 24
     anchors = [an_top, an_right]
     state = [as_localinvisible, as_localcaption, as_localonexecute]
     caption = '&OK'

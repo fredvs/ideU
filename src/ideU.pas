@@ -14,6 +14,12 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads, {$endif} {$endif}
+  msestockobjects,
+  mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
   aboutform,
   confmsegui,
   confideu,
@@ -55,7 +61,6 @@ uses
   msegraphutils,
   msefont,
   fpg_iniutils_ideu,
-  mseconsts_ide,
   stringconsts;
 
 var
@@ -109,14 +114,14 @@ begin
   application.createform(tsourcefo, sourcefo);
   application.createform(tdebuggerfo, debuggerfo);
   application.createform(tcomponentpalettefo, componentpalettefo);
-  componentpalettefo.Caption := 'MSE Component Palette';
+  componentpalettefo.Caption :=     stockobjects.captions[sc_componentspalette];
   application.createform(tcomponentstorefo, componentstorefo);
-  componentstorefo.Caption := 'MSE ' + componentstorefo.Caption;
+  componentstorefo.Caption := actionsmoduletext(ac_storecomponent);
   application.createform(tmessagefo, messagefo);
   application.createform(twatchfo, watchfo);
   application.createform(tsymbolfo, symbolfo);
   application.createform(tobjectinspectorfo, objectinspectorfo);
-  objectinspectorfo.Caption := 'MSE Objects Inspector';
+  objectinspectorfo.Caption := actionsmoduletext(ac_objectinspector);
   application.createform(tbreakpointsfo, breakpointsfo);
   application.createform(twatchpointsfo, watchpointsfo);
   application.createform(tstackfo, stackfo);

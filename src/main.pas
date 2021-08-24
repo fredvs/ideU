@@ -635,11 +635,18 @@ begin
 
     thesdef := projectoptions.e.t.syntaxdeffiles[0];
 
-    dialogfilesfo.Caption := 'Load a Syntax Definition File';
+    dialogfilesfo.Caption := projectoptionstext(po_syntaxdeffile);
+    
+    // 'Load a Syntax Definition File';
+    
+    dialogfilesfo.tbutton1.caption := stockobjects.modalresulttext[mr_ok];
+    dialogfilesfo.tbutton2.caption := stockobjects.modalresulttext[mr_cancel];
+
 
     dialogfilesfo.list_files.path    := expandprmacros('${SYNTAXDEFDIR}');
     dialogfilesfo.list_files.mask    := '*.sdef';
-    dialogfilesfo.selected_file.frame.Caption := 'Selected Syntax Definition File';
+    dialogfilesfo.selected_file.frame.Caption := projectoptionstext(po_syntaxdeffile);
+    //     'Selected Syntax Definition File';
     // + dialogfilesfo.list_files.directory ;
     dialogfilesfo.selected_file.Text := '';
 
@@ -1407,6 +1414,7 @@ end;
 
 procedure tmainfo.viewobjectinspectoronexecute(const Sender: TObject);
 begin
+ 
   objectinspectorfo.activate(True);
   //  objectinspectorfo.font.height := confideufo.fontsize.value;
   //  objectinspectorfo.grid.datarowheight := round(ratio * 16);
@@ -3007,7 +3015,7 @@ end;
 procedure tmainfo.viewcomponentpaletteonexecute(const Sender: TObject);
 begin
   componentpalettefo.window.bringtofront;
-  componentpalettefo.Caption := 'MSE Component Palette';
+  componentpalettefo.Caption := stockobjects.captions[sc_componentspalette];
   componentpalettefo.Show;
 end;
 
@@ -4496,7 +4504,8 @@ begin
 
   dialogfilesfo.tag := 1;
 
-  dialogfilesfo.Caption := 'Load a Layout File';
+  dialogfilesfo.Caption := mainformtext(ma_str_loadwindowlayout);
+  //'Load a Layout File';
 
   // dialogfilesfo.list_files.cellwidth := 437;
   dialogfilesfo.list_files.mask := '*.prj';
@@ -4508,7 +4517,9 @@ begin
 
   //  writeln('ok tabind'); 
 
-  dialogfilesfo.selected_file.frame.Caption := 'Selected Layout File';
+  dialogfilesfo.selected_file.frame.Caption := stockcaptions(sc_file);
+  
+     //'Selected Layout File';
   // from ' + dialogfilesfo.list_files.directory ;
   dialogfilesfo.selected_file.Text          := '';
   //dialogfilesfo.activate;
@@ -4775,8 +4786,22 @@ begin
     mainmenu1.menu.itembynames(['widgets']).Caption := captions[sc_widgets];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := captions[sc_msemod];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
-
-
+    
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentspalette']).Caption :=
+                     captions[sc_componentspalette];
+  
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentsstore']).Caption :=
+                     actionsmoduletext(ac_storecomponent);
+                     
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'objectinspector']).Caption :=
+                     actionsmoduletext(ac_objectinspector);
+                     
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'toggleformunit']).Caption :=
+                     captions[sc_toggleformunit];
+                     
+    mainmenu1.menu.itembynames(['widgets', 'msegui', 'findcomponent']).Caption :=
+                     actionsmoduletext(ac_objectinspector);
+  
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
     mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := captions[sc_extrasettings];

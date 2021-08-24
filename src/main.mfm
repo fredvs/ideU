@@ -1226,6 +1226,7 @@ object mainfo: tmainfo
               end            
               item
                 caption = 'Component &Palette'
+                name = 'componentspalette'
                 state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 1
@@ -1233,6 +1234,7 @@ object mainfo: tmainfo
               end            
               item
                 caption = 'Component Sto&re'
+                name = 'componentsstore'
                 state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 16
@@ -1240,6 +1242,7 @@ object mainfo: tmainfo
               end            
               item
                 caption = 'Object &Inspector'
+                name = 'objectinspector'
                 state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 14
@@ -1251,6 +1254,7 @@ object mainfo: tmainfo
               item
                 action = actionsmo.toggleinspector
                 caption = 'Toggle Form/Inspector'
+                name = 'toggleformunit'
                 state = [as_localcaption, as_localonexecute]
                 onexecute = toggleobjectinspectoronexecute
               end            
@@ -1260,6 +1264,7 @@ object mainfo: tmainfo
               item
                 action = actionsmo.findcompallact
                 caption = 'Find &Component'
+                name = 'findcomponent'
                 state = [as_localcaption, as_localshortcut, as_localshortcut1]
               end>
             caption = 'MSEgui'

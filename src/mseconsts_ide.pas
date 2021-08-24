@@ -773,8 +773,15 @@ const
     'Search in open files',                // sc_searchininopenfiles
     'Search in project directory',         // sc_searchinprojectdir
     'Search in directories',               // sc_searchindirectories
-    'Include subdirectories'               // sc_includesubdir
-
+    'Include subdirectories',               // sc_includesubdir
+   
+    'Replace',                              // sc_replace
+    'Replace all',                          // sc_replace all
+    'Replace with',                         // sc_replacewith
+    'Prompt on replace',                    // sc_promptonreplace
+    'Components palette',                    // sc_componentspalette
+    'Find components'                       // sc_findcomponent
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;
