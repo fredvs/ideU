@@ -239,6 +239,62 @@ const
     'I/O now possible',
     'Power failure restart'
     );
+     
+  ru_mainformtext: mainformaty = (
+      'Unresolved references in',
+      'to',
+      'Do you wish to search the formfile?',
+      'WARNING',
+      'Formfile for',
+      'Formfiles',
+      'Recursive form hierarchy for "',
+      'ERROR',
+      'Classtype',
+      'not found.',
+      'Project',
+      'is modified. Save?',
+      'Confirmation',
+      'Unable to open file "',
+      '*** Running ***',
+      'Downloading',
+      'Downloaded',
+      'Start gdb server command "',
+      '" running.',
+      'Start gdb Server',
+      'gdb server start error',
+      'gdb server start canceled.',
+      'Can not run start gdb command.',
+      'Uploadcommand "',
+      'Download ***ERROR***',
+      'Download finished.',
+      'Download canceled.',
+      'File "',
+      '" not found.',
+      '" exists.',
+      'New',
+      'Select ancestor',
+      'New form',
+      'Pascal Files',
+      'new',
+      'Can not load Project "',
+      'Select project template',
+      'Project files',
+      'All files',
+      'Select program file',
+      'Pascal program files',
+      'C program files',
+      'New Project',
+      'Can not start process',
+      'Process',
+      'running.',
+      'Process terminated',
+      'Process terminated normally.',
+      'Make ***ERROR***',
+      'Make OK.',
+      'Source has changed, do you wish to remake project?',
+      'Load Window Layout',
+      'Docking area'
+    ); 
 
 
   ru_projectoptionstext: projectoptionsaty = (
@@ -634,7 +690,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_ru], @ru_sourceformtext, @ru_projectoptionscontext, @ru_actionsmoduletext,
+  registerlangconsts(langnames[la_ru], @ru_mainformtext, @ru_sourceformtext, @ru_projectoptionscontext, @ru_actionsmoduletext,
    @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext,
     @ru_modalresulttextnoshortcut, @ru_textgenerator);
 end.

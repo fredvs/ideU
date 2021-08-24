@@ -100,63 +100,6 @@ type
     procedure Execute; override;
   end;
 
-type
-  stringconsts = (
-    unresreferences,        //0 Unresolved references in
-    str_to,                 //1 to
-    wishsearch,             //2 Do you wish to search the formfile?
-    warning,                //3 WARNING
-    formfile,               //4 Formfile for
-    formfiles,              //5 Formfiles
-    recursive,              //6 Recursive form hierarchy for "
-    error,                  //7 ERROR
-    str_classtype,          //8 Classtype
-    notfound,               //9 not found.
-    project,                //10 Project
-    ismodified,             //11 is modified. Save?
-    confirmation,           //12 Confirmation
-    unableopen,             //13 Unable to open file "
-    running,                //14 *** Running ***
-    str_downloading,        //15 Downloading
-    str_downloaded,         //16 Downloaded
-    startgdbservercommand,  //17 Start gdb server command "
-    running2,               //18 " running.
-    startgdbserver,         //19 Start gdb Server
-    gdbserverstarterror,    //20 gdb server start error
-    gdbservercanceled,      //21 gdb server start canceled.
-    cannotrunstartgdb,      //22 Can not run start gdb command.
-    str_uploadcommand,      //23 Uploadcommand "
-    downloaderror,          //24 Download ***ERROR***
-    downloadfinished,       //25 Download finished.
-    downloadcanceled,       //26 Download canceled.
-    str_file,               //27 File "
-    notfound2,              //28 " not found.
-    exists,                 //29 " exists.
-    str_new,                //30 New
-    selectancestor,         //31 Select ancestor
-    newform,                //32 New form
-    pascalfiles,            //33 Pascal Files
-    new2,                   //34 new
-    cannotloadproj,         //35 Can not load Project "
-    selecttemplate,         //36 Select project template
-    projectfiles,           //37 Project files
-    str_allfiles,           //38 All files
-    selectprogramfile,      //39 Select program file
-    pascalprogfiles,        //40 Pascal program files
-    cfiles,                 //41 C program files
-    str_newproject,         //42 New Project
-    cannotstartprocess,     //43 Can not start process
-    process,                //44 Process
-    running3,               //45 running.
-    processterminated,      //46 Process terminated.
-    proctermnormally,       //47 Process terminated normally.
-    makeerror,              //48 Make ***ERROR***
-    makeok,                 //49 Make OK.
-    str_sourcechanged,      //50 Source has changed, do you wish to remake project?
-    str_loadwindowlayout,   //51 Load Window Layout
-    dockingarea             //52 Docking Area
-    );
-
   filekindty        = (fk_none, fk_source, fk_unit);
   messagetextkindty = (mtk_warning, mtk_flat, mtk_info, mtk_making,
     mtk_finished, mtk_error, mtk_signal, mtk_notok);
@@ -189,7 +132,6 @@ type
     statoptions: trttistat;
     projectfiledia: tfiledialogx;
     targetpipe: tpipereadercomp;
-    c: tstringcontainer;
     openform: tfiledialogx;
     formbg: tbitmapcomp;
     tfacecomp1: tfacecomp;
@@ -1333,9 +1275,9 @@ begin
     action := mr_ok
   else
   begin
-    action := ShowMessage(c[Ord(unresreferences)] + ' ' + utf8decode(amodule^.moduleclassname) + ' ' +
-      c[Ord(str_to)] + ' ' + utf8decode(aname) +
-      '.' + lineend + ' ' + c[Ord(wishsearch)], c[Ord(warning)],
+    action := ShowMessage(mainformtext(ma_unresreferences) + ' ' + utf8decode(amodule^.moduleclassname) + ' ' +
+      mainformtext(ma_str_to) + ' ' + utf8decode(aname) +
+      '.' + lineend + ' ' + mainformtext(ma_wishsearch), mainformtext(ma_warning),
       [mr_ok, mr_cancel], mr_ok);
     case action of
       mr_ok:
@@ -1345,7 +1287,7 @@ begin
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
         openform.controller.showoptions := True;
         if openform.controller.Execute(wstr2, fdk_open,
-          c[Ord(formfile)] + ' ' + utf8decode(aname)) then
+          mainformtext(ma_formfile) + ' ' + utf8decode(aname)) then
           openformfile(wstr2, False, False, True, True, False)//    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
         //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
         //                 //defaultvalues don't work on kylix
@@ -1394,7 +1336,7 @@ begin
   // ar1:= nil; //compilerwarning
   if fcheckmodulelevel >= 16 then
   begin
-    ShowMessage(c[Ord(recursive)] + utf8decode(atypename) + '"', c[Ord(error)]);
+    ShowMessage(mainformtext(ma_recursive) + utf8decode(atypename) + '"', mainformtext(ma_error));
     SysUtils.abort;
   end;
   Inc(fcheckmodulelevel);
@@ -1423,14 +1365,15 @@ begin
    end;
    };
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
-      if ShowMessage(c[Ord(str_classtype)] + ' ' + utf8decode(atypename) + ' ' + c[Ord(notfound)] + lineend +
-        ' ' + c[Ord(wishsearch)], c[Ord(warning)],
+      if ShowMessage(mainformtext(ma_str_classtype) + ' ' + utf8decode(atypename) + ' ' +
+       mainformtext(ma_notfound) + lineend +
+        ' ' + mainformtext(ma_wishsearch), mainformtext(ma_warning),
         [mr_yes, mr_cancel]) = mr_yes then
       begin
         wstr2 := '';
         openform.controller.showoptions := True;
 
-        if openform.controller.Execute(wstr2, fdk_open, c[Ord(formfile)] + ' ' +
+        if openform.controller.Execute(wstr2, fdk_open, mainformtext(ma_formfile) + ' ' +
           msestring(atypename), [fdo_checkexist]) then
           openformfile(wstr2, False, False, False, False, False);
       end;
@@ -1828,7 +1771,7 @@ end;
     begin
       str1 := replacefileext(po1^.filename, pasfileext);
       if sourcefo.openfile(str1, True) = nil then
-        raise Exception.Create(ansistring(c[Ord(unableopen)] + str1 + '".'));
+        raise Exception.Create(ansistring(mainformtext(ma_unableopen) + str1 + '".'));
     end
     else if designer.modules.Count > 0 then
       designer.modules[0]^.designform.activate(True);
@@ -2042,7 +1985,7 @@ begin
     gek_running:
     begin
       resetdebugdisp;
-      setstattext(c[Ord(running)], mtk_warning);
+      setstattext(mainformtext(ma_running), mtk_warning);
       debuggerfo.project_reset.Enabled     := True;
       debuggerfo.project_interrupt.Enabled := True;
     end;
@@ -2053,13 +1996,13 @@ begin
     gek_download:
       with stopinfo do
         if sectionsize > 0 then
-          setstattext(c[Ord(str_downloading)] + ' ' + utf8decode(section) + ' ' +
+          setstattext(mainformtext(ma_str_downloading) + ' ' + utf8decode(section) + ' ' +
             utf8decode(IntToStr(round(sectionsent / sectionsize * 100))) + '%', mtk_making);
     gek_done:
       if Sender.downloaded then
       begin
         downloaded;
-        setstattext(c[Ord(str_downloaded)] + ' ' + utf8decode(formatfloat('0.00,',
+        setstattext(mainformtext(ma_str_downloaded) + ' ' + utf8decode(formatfloat('0.00,',
           stopinfo.totalsent / 1024)) + 'kB', mtk_finished);
         //    sender.abort;
       end;
@@ -2142,8 +2085,8 @@ begin
       if fgdbserverprocid <> invalidprochandle then
       begin
         fgdbservertimeout := timestep(round(1000000 * d.gdbserverwait));
-        if application.waitdialog(nil, c[Ord(startgdbservercommand)] +
-          mstr1 + c[Ord(running2)], c[Ord(startgdbserver)],
+        if application.waitdialog(nil, mainformtext(ma_startgdbservercommand) +
+          mstr1 + mainformtext(ma_running2), mainformtext(ma_startgdbserver),
               {$ifdef FPC}
           @
 {$endif}
@@ -2157,20 +2100,21 @@ begin
             (projectoptions.d.nogdbserverexit and
             (fgdbserverexitcode = -1)) then
           begin
-            setstattext(c[Ord(gdbserverstarterror)] + ' ' + utf8decode(IntToStr(fgdbserverexitcode)) + '.',
+            setstattext(mainformtext(ma_gdbserverstarterror) + ' ' + 
+            utf8decode(IntToStr(fgdbserverexitcode)) + '.',
               mtk_error);
             Exit;
           end;
         end
         else
         begin
-          setstattext(c[Ord(gdbservercanceled)], mtk_error);
+          setstattext(mainformtext(ma_gdbservercanceled), mtk_error);
           Exit;
         end;
       end
       else
       begin
-        setstattext(c[Ord(cannotrunstartgdb)], mtk_error);
+        setstattext(mainformtext(ma_cannotrunstartgdb), mtk_error);
         Exit;
       end;
     end;
@@ -2326,8 +2270,8 @@ begin
         (needsdownload or forcedownload) then
       begin
         dodownload;
-        if application.waitdialog(nil, c[Ord(str_uploadcommand)] + uploadcommand +
-          c[Ord(running2)], c[Ord(str_downloading)],
+        if application.waitdialog(nil, mainformtext(ma_str_uploadcommand) + uploadcommand +
+          mainformtext(ma_running2), mainformtext(ma_str_downloading),
 {$ifdef FPC}
           @
 {$endif}
@@ -2339,13 +2283,13 @@ begin
         begin
           if downloadresult <> 0 then
           begin
-            setstattext(c[Ord(downloaderror)] + ' ' +
+            setstattext(mainformtext(ma_downloaderror) + ' ' +
               utf8decode(IntToStr(downloadresult)) + '.', mtk_error);
             Exit;
           end
           else
           begin
-            setstattext(c[Ord(downloadfinished)], mtk_finished);
+            setstattext(mainformtext(ma_downloadfinished), mtk_finished);
             downloaded;
             if confideufo.usedefaulteditoroptions.Value then
             begin
@@ -2358,7 +2302,7 @@ begin
         end
         else
         begin
-          setstattext(c[Ord(downloadcanceled)], mtk_error);
+          setstattext(mainformtext(ma_downloadcanceled), mtk_error);
           Exit;
         end;
       end;
@@ -3209,14 +3153,14 @@ begin
   Result := False;
   path1  := searchfile(aname);
   if path1 = '' then
-    ShowMessage(c[Ord(str_file)] + aname + c[Ord(notfound2)], c[Ord(warning)])
+    ShowMessage(mainformtext(ma_str_file) + aname + mainformtext(ma_notfound2), mainformtext(ma_warning))
   else
   begin
     path2 := filepath(newname);
     if not canoverwrite and findfile(path2) then
       if not autoincrement then
       begin
-        showerror(c[Ord(str_file)] + newname + c[Ord(exists)]);
+        showerror(mainformtext(ma_str_file) + newname + mainformtext(ma_exists));
         Exit;
       end
       else
@@ -3265,7 +3209,7 @@ begin
   with projectoptions.o.texp do
     if newfisources[int1] = '' then
       sourcefo.newpage
-    else if filedialogx(str1, [fdo_save, fdo_checkexist], c[Ord(str_new)] + ' ' +
+    else if filedialogx(str1, [fdo_save, fdo_checkexist], mainformtext(ma_str_new) + ' ' +
       newfinames[int1], [newfinames[int1]],
       [newfifilters[int1]], newfiexts[int1]) = mr_ok then
     begin
@@ -3286,7 +3230,7 @@ begin
   // if formkindty(tmenuitem(sender).tag) = fok_inherited then begin
   if projectoptions.o.newinheritedforms[tmenuitem(Sender).tag] then
   begin
-    po1 := selectinheritedmodule(nil, c[Ord(selectancestor)]);
+    po1 := selectinheritedmodule(nil, mainformtext(ma_selectancestor));
     if po1 = nil then
       Exit;
     ancestorclass := utf8decode(po1^.moduleclassname);
@@ -3299,8 +3243,8 @@ begin
     po1           := nil;
   end;
   str1 := '';
-  if filedialogx(str1, [fdo_save, fdo_checkexist], c[Ord(newform)],
-    [c[Ord(pascalfiles)]],
+  if filedialogx(str1, [fdo_save, fdo_checkexist], mainformtext(ma_newform),
+    [mainformtext(ma_pascalfiles)],
     ['"*.pas" "*.pp" "*.mla"'], 'pas') = mr_ok then
   begin
     with projectoptions.o.texp do
@@ -3477,7 +3421,7 @@ procedure tmainfo.setprojectname(aname: filenamety);
 begin
   fprojectname := aname;
   if aname = '' then
-    Caption    := idecaption + ' (<' + c[Ord(new2)] + '>)'
+    Caption    := idecaption + ' (<' + mainformtext(ma_new2) + '>)'
   else
   begin
 
@@ -3558,7 +3502,7 @@ begin
       try
         setcurrentdirmse(removelastpathsection(aname));
       except
-        application.handleexception(nil, c[Ord(cannotloadproj)] + aname + '": ');
+        application.handleexception(nil, mainformtext(ma_cannotloadproj) + aname + '": ');
         Exit;
       end;
       if not readprojectoptions(aname) then
@@ -3694,8 +3638,8 @@ begin
       if not empty then
       begin
         aname := mstr2 + 'default.prj';
-        if filedialogx(aname, [fdo_checkexist], c[Ord(selecttemplate)],
-          [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
+        if filedialogx(aname, [fdo_checkexist], mainformtext(ma_selecttemplate),
+          [mainformtext(ma_projectfiles), mainformtext(ma_str_allfiles)],
           ['*.prj', '*'], 'prj') = mr_ok then
           readprojectoptions(aname);
       end;
@@ -3704,8 +3648,8 @@ begin
     else
     begin
       aname := '';
-      if filedialogx(aname, [fdo_checkexist], c[Ord(selectprogramfile)],
-        [c[Ord(pascalprogfiles)], c[Ord(cfiles)], c[Ord(str_allfiles)]],
+      if filedialogx(aname, [fdo_checkexist], mainformtext(ma_selectprogramfile),
+        [mainformtext(ma_pascalprogfiles), mainformtext(ma_cfiles), mainformtext(ma_str_allfiles)],
         ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"', '"*.c" "*.cc" "*.cpp"', '*'],
         'pas') = mr_ok then
       begin
@@ -3727,8 +3671,8 @@ begin
       else
         goto endlab;
     end;
-    if filedialogx(aname, [fdo_save, fdo_checkexist], c[Ord(str_newproject)],
-      [c[Ord(projectfiles)], c[Ord(str_allfiles)]],
+    if filedialogx(aname, [fdo_save, fdo_checkexist], mainformtext(ma_str_newproject),
+      [mainformtext(ma_projectfiles), mainformtext(ma_str_allfiles)],
       ['*.prj', '*'], 'prj') = mr_ok then
     begin
       curdir := filedir(aname);
@@ -3791,7 +3735,7 @@ begin
                     else
                       try
                         if not copyfile(Source, dest, False) then
-                          showerror(c[Ord(str_file)] + dest + c[Ord(exists)]);
+                          showerror(mainformtext(ma_str_file) + dest + mainformtext(ma_exists));
                       except
                         application.handleexception(nil);
                       end;
@@ -3980,7 +3924,7 @@ begin
         end;
         if frunningprocess = invalidprochandle then
         begin
-          setstattext(c[Ord(cannotstartprocess)], mtk_error);
+          setstattext(mainformtext(ma_cannotstartprocess), mtk_error);
           Exit;
         end;
         runprocmon.listentoprocess(frunningprocess);
@@ -3989,8 +3933,8 @@ begin
           setcurrentdirmse(pwdbefore);
       end;
     end;
-    setstattext('*** ' + c[Ord(process)] + ' ' + inttostrmse(frunningprocess) + ' ' +
-      c[Ord(running3)] + ' ***', mtk_making);
+    setstattext('*** ' + mainformtext(ma_process) + ' ' + inttostrmse(frunningprocess) + ' ' +
+      mainformtext(ma_running3) + ' ***', mtk_making);
     debuggerfo.project_reset.Enabled     := True;
     debuggerfo.project_interrupt.Enabled := True;
   end;
@@ -4003,10 +3947,10 @@ begin
   begin
     frunningprocess := invalidprochandle;
     if execresult <> 0 then
-      setstattext(c[Ord(processterminated)] + ' ' + UTF8Decode(IntToStr(execresult)) + '.',
+      setstattext(mainformtext(ma_processterminated) + ' ' + UTF8Decode(IntToStr(execresult)) + '.',
         mtk_error)
     else
-      setstattext(c[Ord(proctermnormally)], mtk_finished);
+      setstattext(mainformtext(ma_proctermnormally), mtk_finished);
   end;
 
   debuggerfo.project_reset.Enabled     := False;
@@ -4051,7 +3995,7 @@ begin
     if (not gdb.started or not fnoremakecheck) and not fcurrent then
     begin
       if (projectoptions.defaultmake <= maxdefaultmake) and
-        (not gdb.started or askconfirmation(c[Ord(str_sourcechanged)])) then
+        (not gdb.started or askconfirmation(mainformtext(ma_str_sourcechanged))) then
       begin
         Result := False;
         watchpointsfo.Clear;
@@ -4085,13 +4029,13 @@ begin
 
   if exitcode <> 0 then
   begin
-    setstattext(c[Ord(makeerror)] + ' ' + UTF8Decode(IntToStr(exitcode)) + '.', mtk_error);
+    setstattext(mainformtext(ma_makeerror) + ' ' + UTF8Decode(IntToStr(exitcode)) + '.', mtk_error);
     showfirsterror;
   end
   else
   begin
 
-    setstattext(c[Ord(makeok)], mtk_finished);
+    setstattext(mainformtext(ma_makeok), mtk_finished);
     fcurrent       := True;
     fnoremakecheck := False;
     messagefo.Messages.lastrow;
@@ -4524,8 +4468,8 @@ procedure tmainfo.loadwindowlayoutexe(const Sender: TObject);
 var
   str1: ttextstream;
 begin
-  if filedialogx(windowlayoutfile, [fdo_checkexist], c[Ord(str_loadwindowlayout)],
-    [c[Ord(projectfiles)], c[Ord(str_allfiles)]], ['*.prj', '*'], 'prj',
+  if filedialogx(windowlayoutfile, [fdo_checkexist], mainformtext(ma_str_loadwindowlayout),
+    [mainformtext(ma_projectfiles), mainformtext(ma_str_allfiles)], ['*.prj', '*'], 'prj',
     nil, nil, nil, [fa_all], [fa_hidden], @windowlayouthistory) = mr_ok then
   begin
     str1 := ttextstream.Create(windowlayoutfile);
@@ -4617,7 +4561,7 @@ end;
 
 procedure tmainfo.basedockpaintexe(const Sender: twidget; const acanvas: tcanvas);
 begin
-  paintdockingareacaption(acanvas, Sender, mainfo.c[Ord(dockingarea)]);
+  paintdockingareacaption(acanvas, Sender, mainformtext(ma_dockingarea));
 end;
 
 procedure tmainfo.copywordatcur(const Sender: TObject);
@@ -4937,7 +4881,7 @@ var
   color0, color1, color2, color3: longword;
 begin
 
-  setstattext(c[Ord(makeok)], mtk_finished);
+  setstattext(mainformtext(ma_makeok), mtk_finished);
 
   if typetheme = 0 then
   begin

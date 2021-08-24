@@ -29,6 +29,63 @@ uses
 const
   boxsize      = 11;      //for treelistitem expand box
   checkboxsize = 13;      //for listitem checkbox
+  
+type
+ mainformty = (
+    ma_unresreferences,        //0 Unresolved references in
+    ma_str_to,                 //1 to
+    ma_wishsearch,             //2 Do you wish to search the formfile?
+    ma_warning,                //3 WARNING
+    ma_formfile,               //4 Formfile for
+    ma_formfiles,              //5 Formfiles
+    ma_recursive,              //6 Recursive form hierarchy for "
+    ma_error,                  //7 ERROR
+    ma_str_classtype,          //8 Classtype
+    ma_notfound,               //9 not found.
+    ma_project,                //10 Project
+    ma_ismodified,             //11 is modified. Save?
+    ma_confirmation,           //12 Confirmation
+    ma_unableopen,             //13 Unable to open file "
+    ma_running,                //14 *** Running ***
+    ma_str_downloading,        //15 Downloading
+    ma_str_downloaded,         //16 Downloaded
+    ma_startgdbservercommand,  //17 Start gdb server command "
+    ma_running2,               //18 " running.
+    ma_startgdbserver,         //19 Start gdb Server
+    ma_gdbserverstarterror,    //20 gdb server start error
+    ma_gdbservercanceled,      //21 gdb server start canceled.
+    ma_cannotrunstartgdb,      //22 Can not run start gdb command.
+    ma_str_uploadcommand,      //23 Uploadcommand "
+    ma_downloaderror,          //24 Download ***ERROR***
+    ma_downloadfinished,       //25 Download finished.
+    ma_downloadcanceled,       //26 Download canceled.
+    ma_str_file,               //27 File "
+    ma_notfound2,              //28 " not found.
+    ma_exists,                 //29 " exists.
+    ma_str_new,                //30 New
+    ma_selectancestor,         //31 Select ancestor
+    ma_newform,                //32 New form
+    ma_pascalfiles,            //33 Pascal Files
+    ma_new2,                   //34 new
+    ma_cannotloadproj,         //35 Can not load Project "
+    ma_selecttemplate,         //36 Select project template
+    ma_projectfiles,           //37 Project files
+    ma_str_allfiles,           //38 All files
+    ma_selectprogramfile,      //39 Select program file
+    ma_pascalprogfiles,        //40 Pascal program files
+    ma_cfiles,                 //41 C program files
+    ma_str_newproject,         //42 New Project
+    ma_cannotstartprocess,     //43 Can not start process
+    ma_process,                //44 Process
+    ma_running3,               //45 running.
+    ma_processterminated,      //46 Process terminated.
+    ma_proctermnormally,       //47 Process terminated normally.
+    ma_makeerror,              //48 Make ***ERROR***
+    ma_makeok,                 //49 Make OK.
+    ma_str_sourcechanged,      //50 Source has changed, do you wish to remake project?
+    ma_str_loadwindowlayout,   //51 Load Window Layout
+    ma_dockingarea             //52 Docking Area
+    );  
 
 type
  sourceformty = (

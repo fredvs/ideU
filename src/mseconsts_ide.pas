@@ -20,6 +20,11 @@ uses
   msetypes;
 
 type
+
+  mainformaty  = array[mainformty] of msestring;
+  pmainformaty = ^mainformaty;
+
+  
   sourceformaty  = array[sourceformty] of msestring;
   psourceformaty = ^sourceformaty;
   
@@ -47,9 +52,9 @@ type
 
 const
   langnames: array[langty] of string = (
-    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh',
-    'fr');
+    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh', 'fr');
 
+function mainformtext(const index: mainformty): msestring;
 function sourceformtext(const index: sourceformty): msestring;
 function settingstext(const index: isettingsty): msestring;
 function actionsmoduletext(const index: actionsmodulety): msestring;
@@ -62,7 +67,8 @@ function stocktextgenerators(const index: textgeneratorty): textgeneratorfuncty;
 function uc(const index: integer): msestring; //get user caption
 
 procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
-procedure registerlangconsts(const Name: string; 
+procedure registerlangconsts(const Name: string;
+    const mainformpo : pmainformaty;
     const sourceformpo : psourceformaty;
     const projectoptionsconpo: pprojectoptionsconaty;
    const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
@@ -90,6 +96,7 @@ uses
 type
   langinfoty = record
     Name: string;
+    mainformtext : pmainformaty;
     stockcaption: pstockcaptionaty;
     sourceformtext: psourceformaty;
     settingstext: pisettingsaty;
@@ -160,6 +167,63 @@ const
     'Skip all',     //mr_skipall
     'Continue'      //mr_continue
     );
+    
+  en_mainformtext: mainformaty = (
+      'Unresolved references in',
+      'to',
+      'Do you wish to search the formfile?',
+      'WARNING',
+      'Formfile for',
+      'Formfiles',
+      'Recursive form hierarchy for "',
+      'ERROR',
+      'Classtype',
+      'not found.',
+      'Project',
+      'is modified. Save?',
+      'Confirmation',
+      'Unable to open file "',
+      '*** Running ***',
+      'Downloading',
+      'Downloaded',
+      'Start gdb server command "',
+      '" running.',
+      'Start gdb Server',
+      'gdb server start error',
+      'gdb server start canceled.',
+      'Can not run start gdb command.',
+      'Uploadcommand "',
+      'Download ***ERROR***',
+      'Download finished.',
+      'Download canceled.',
+      'File "',
+      '" not found.',
+      '" exists.',
+      'New',
+      'Select ancestor',
+      'New form',
+      'Pascal Files',
+      'new',
+      'Can not load Project "',
+      'Select project template',
+      'Project files',
+      'All files',
+      'Select program file',
+      'Pascal program files',
+      'C program files',
+      'New Project',
+      'Can not start process',
+      'Process',
+      'running.',
+      'Process terminated',
+      'Process terminated normally.',
+      'Make ***ERROR***',
+      'Make OK.',
+      'Source has changed, do you wish to remake project?',
+      'Load Window Layout',
+      'Docking area'
+    );   
+    
 
   en_actionsmoduletext: actionsmoduleaty = (
     'Configure MSEide',
@@ -728,11 +792,13 @@ const
     );
 
 procedure setitem(var item: langinfoty; const Name: string; 
+const mainformpo: pmainformaty;
 const sourceformpo: psourceformaty;
 const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 begin
   item.Name          := Name;
+  item.mainformtext := mainformpo;
   item.sourceformtext := sourceformpo;
   item.projectoptionscontext := projectoptionsconpo;
   item.actionsmoduletext := actionsmodulepo;
@@ -745,6 +811,7 @@ begin
 end;
 
 procedure registerlangconsts(const Name: string; 
+  const mainformpo : pmainformaty;
   const sourceformpo : psourceformaty;
   const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
@@ -756,6 +823,7 @@ begin
     if langs[int1].Name = Name then
     begin
       setitem(langs[int1], Name,
+       mainformpo,
        sourceformpo,
        projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
         modalresulttextnoshortcutpo, textgeneratorpo);
@@ -763,6 +831,7 @@ begin
     end;
   setlength(langs, high(langs) + 2);
   setitem(langs[high(langs)], Name,
+   mainformpo,
    sourceformpo,
    projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
     modalresulttextnoshortcutpo, textgeneratorpo);
@@ -845,7 +914,10 @@ begin
       end;
     if bo1 then
       if lang.Name = '' then
-        setitem(lang, langnames[la_en], @en_sourceformtext, @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
+        setitem(lang, langnames[la_en], @en_mainformtext, @en_sourceformtext, 
+        @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
+         @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
+          @en_modalresulttextnoshortcut, @en_textgenerator);
   end;
   if lowercase(str1) <> langbefore then
   begin
@@ -886,6 +958,12 @@ function sourceformtext(const index: sourceformty): msestring;
 begin
   checklang;
   Result := lang.sourceformtext^[index];
+end;
+
+function mainformtext(const index: mainformty): msestring;
+begin
+  checklang;
+  Result := lang.mainformtext^[index];
 end;
 
 function projectoptionstext(const index: projectoptionsty): msestring;
@@ -939,8 +1017,9 @@ begin
 end;
 
 initialization
-  registerlangconsts(langnames[la_en], @en_sourceformtext, @en_projectoptionscontext, @en_actionsmoduletext,
-   @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
+  registerlangconsts(langnames[la_en], @en_mainformtext, @en_sourceformtext,
+   @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
+   @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
     @en_modalresulttextnoshortcut, @en_textgenerator);
   langbefore := langnames[la_en];
 end.

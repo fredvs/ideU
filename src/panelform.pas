@@ -20,6 +20,12 @@ unit panelform;
 
 interface
 uses
+ mseconsts_ide,
+  mseconsts_ide_ru,
+  mseconsts_ide_de,
+  mseconsts_ide_es,
+  mseconsts_ide_fr,
+  msestockobjects,
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,
  msetypes{msestrings},
  msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,
@@ -294,7 +300,7 @@ end;
 
 procedure tpanelfo.paintexe(const sender: twidget; const acanvas: tcanvas);
 begin
- paintdockingareacaption(acanvas,sender,mainfo.c[ord(dockingarea)]);
+ paintdockingareacaption(acanvas,sender,mainformtext(ma_dockingarea));
  if usedtheme <> mainfo.themenr then oncreated(nil);
 end;
 
