@@ -694,8 +694,11 @@ const
      'Французский', // sc_french
      'Немецкий', // sc_german
      'Испанский',                                // sc_spanish
-     'Набор по умолчанию' // sc_setasdefault
-    );
+     'Набор по умолчанию',                          // sc_setasdefault
+     'Хост', // sc_host
+     'Авторское право' // sc_copyright
+  
+      );
 
 
 function delete_n_selected_rows(const params: array of const): msestring;

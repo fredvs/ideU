@@ -731,8 +731,9 @@ const
      'Français', // sc_french
      'Allemand', // sc_german
      'Espagnol',                                // sc_spanish
-     'Définir par défaut'                          // sc_setasdefault
- 
+     'Définir par défaut',                          // sc_setasdefault
+     'Hôte',                                   // sc_host
+     'Droits d'#8217'auteur'                          // sc_copyright
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

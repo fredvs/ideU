@@ -4278,10 +4278,14 @@ begin
   aboutfo.about_text.frame.colorclient := $B2F4FF;
 
   aboutfo.about_text.Value :=
-    c_linefeed + 'MSEgui v' + mseguiversiontext + c_linefeed +
-    c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
-    c_linefeed + c_linefeed +
-    ' Martin Schreiber' + c_linefeed + 'Copyright 1999-2021' + c_linefeed +
+    c_linefeed + 'MSEgui v' + mseguiversiontext +
+    c_linefeed + c_linefeed + c_linefeed +
+    stockobjects.captions[sc_host] +': ' + platformtext +
+    c_linefeed +  c_linefeed + c_linefeed +
+    ' Martin Schreiber' + 
+     c_linefeed + 
+     stockobjects.captions[sc_copyright] + ' 1999-2021' +
+      c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
@@ -4298,12 +4302,17 @@ begin
   aboutfo.Caption := stockobjects.captions[sc_about] + ' fpGUI';
   aboutfo.about_text.frame.colorclient := $FFF5B2;
   aboutfo.about_text.Value :=
-    c_linefeed + 'fpGUI v1.4' + c_linefeed +
+    c_linefeed + 'fpGUI v1.4' +
+    c_linefeed + c_linefeed + c_linefeed +
+    stockobjects.captions[sc_host] + ': ' + platformtext +
+    c_linefeed + c_linefeed + 
+    ' Graeme Geldenhuys' + 
+    c_linefeed + 
+    '<graemeg@gmail.com>' +
     c_linefeed +
-    'Host: ' + platformtext + c_linefeed +
-    c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
-    ' Graeme Geldenhuys' + c_linefeed + '<graemeg@gmail.com>';
-  aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
+    stockobjects.captions[sc_copyright] + ' 1999-2021';
+   
+   aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
 
   aboutfo.Show(True);
@@ -4315,12 +4324,14 @@ begin
   aboutfo.Caption          := stockobjects.captions[sc_about] + ' ideU';
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
-    c_linefeed + 'ideU v' + versiontext + c_linefeed + 'Host: ' +
-    platformtext + c_linefeed + c_linefeed +
-    'Based on MSEide' + c_linefeed +
-    'by Martin Schreiber' + c_linefeed + c_linefeed +
-    'Copyright 1999-2021' + c_linefeed + c_linefeed +
-    'Fred van Stappen' + c_linefeed + '<fiens@hotmail.com>';
+    c_linefeed + 'ideU v' + versiontext +
+    c_linefeed + c_linefeed + c_linefeed +
+    stockobjects.captions[sc_host] + ': ' +  platformtext +
+    c_linefeed +  c_linefeed + c_linefeed +
+    'Fred van Stappen' +
+    c_linefeed + 
+    '<fiens@hotmail.com>'  + c_linefeed +
+    stockobjects.captions[sc_copyright] + ' 1999-2021';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;

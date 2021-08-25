@@ -438,7 +438,7 @@ type
     sc_componentspalette,sc_findcomponent,sc_reset,sc_cstep,sc_stepinstruction,
     sc_nextinstruction,sc_restartdebugger,sc_togglebreakpoint,sc_tooglebreakpointenable,
     sc_execlinehinton,sc_compileitfirst,sc_finish,sc_English,sc_Russian,sc_french,
-    sc_german,sc_spanish,sc_setasdefault
+    sc_german,sc_spanish,sc_setasdefault,sc_host,sc_copyright
   
     );
 
