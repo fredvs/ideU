@@ -1306,8 +1306,8 @@ path=30
 line=30
  2129
  1105
- 551
- 4057
+ 552
+ 4058
  660
  119
  1122
@@ -1316,17 +1316,17 @@ line=30
  2475
  3310
  119
- 506
+ 507
  402
  66
- 4332
+ 4333
  684
  98
  15
  793
  908
  2515
- 5777
+ 5784
  1882
  6135
  197
@@ -1628,17 +1628,8 @@ findhistory=20
  again
  find in file
 findoptions=1
-editpos=30
- 0,-1073741823
- 0,-1073741823
- 0,186
- 0,723
- 0,194
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,4
+editpos=31
+ 9,5445
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1656,9 +1647,19 @@ editpos=30
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,5
  0,6
- 30,3479
- 0,8
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,579
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1689,7 +1690,8 @@ bookmarks26=0
 bookmarks27=0
 bookmarks28=0
 bookmarks29=0
-sourcefiles=30
+bookmarks30=0
+sourcefiles=31
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/confcompiler.pas
@@ -1715,12 +1717,13 @@ sourcefiles=30
  ${PROJECTDIR}/selecteditpageform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourceform.mfm
+ ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/objectinspector.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/commandorform.pas
-relpaths=30
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=31
  main.pas
  sourcepage.pas
  confcompiler.pas
@@ -1746,12 +1749,13 @@ relpaths=30
  selecteditpageform.pas
  ideU.pas
  ideU.pas
- sourceform.mfm
+ commandorform.pas
  sourceform.pas
  objectinspector.pas
  main.pas
  commandorform.pas
-ismoduletexts=30
+ actionsmodule.pas
+ismoduletexts=31
  0
  0
  0
@@ -1777,7 +1781,8 @@ ismoduletexts=30
  0
  0
  0
- -1
+ 0
+ 0
  0
  0
  0
@@ -1835,10 +1840,14 @@ nomenumodules=12
  0
  0
 [sourcefo.files_tab]
-order=30
+order=31
  0
+ 30
+ 25
  1
  2
+ 24
+ 26
  27
  28
  29
@@ -1863,13 +1872,10 @@ order=30
  21
  22
  23
- 24
- 25
- 26
 firsttab=0
-index=4
+index=0
 [layout]
-windowlayout=794
+windowlayout=765
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1988,7 +1994,7 @@ windowlayout=794
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_debuggerfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2314,11 +2320,11 @@ windowlayout=794
  nx=0
  ny=0
  ncx=1341
- ncy=56
+ ncy=54
  x=0
  y=0
  cx=1341
- cy=54
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2329,7 +2335,8 @@ windowlayout=794
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
- history=50
+ history=20
+  /home/fred/ideu/src/sourceform.mfm
   /home/fred/ideu/src/selecteditpageform.pas
   /home/fred/ideu/src/findinfilepage.mfm
   /home/fred/ideu/src/findinfileform.pas
@@ -2349,37 +2356,6 @@ windowlayout=794
   /home/fred/ideu/src/commandlineform.pas
   /home/fred/ideu/src/breakpointsform.pas
   /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/msefiledialogx.pas
-  /home/fred/ideu/src/splash.pas
-  /home/fred/ideu/src/msestockobjects.pas
-  /home/fred/ideu/src/msestockobjects_ide.pas
-  /home/fred/ideu/src/msestockobjects_ide_mfm.pas
-  /home/fred/ideu/src/msestockobjects_ide.mfm
-  /home/fred/ideu/src/mseconsts_ide_ru.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
-  /home/fred/demo_mse/po2const2po/headerform_mfm.pas
-  /home/fred/demo_mse/po2const2po/po2const2po.prj
-  /home/fred/ideu/src/mseconsts_es.pas
-  /home/fred/ideu/src/mseconsts_ru.pas
-  /home/fred/ideu/src/mseconsts.pas
-  /home/fred/ideu/src/mseconsts_id.pas
-  /home/fred/ideu/src/mseconsts_zh.pas
-  /home/fred/ideu/src/mseconsts_uzcyr.pas
-  /home/fred/ideu/src/mseconsts_de.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
-  /home/fred/ideu/src/mseconsts_fr.pas
-  /home/fred/demo_mse/po2const2po/mseguiintf.pas
-  /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts2.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
-  /home/fred/strumpract/src/dialogfiles.pas
-  /home/fred/strumpract/src/status.pas
-  /home/fred/uos/src/uos_portaudio.pas
-  /home/fred/uos/uos.jpg
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2401,10 +2377,14 @@ windowlayout=794
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=30
+ order=31
   0
+  30
+  25
   1
   2
+  24
+  26
   27
   28
   29
@@ -2429,11 +2409,8 @@ windowlayout=794
   21
   22
   23
-  24
-  25
-  26
  firsttab=0
- index=4
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2442,7 +2419,7 @@ windowlayout=794
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_confcompilerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2477,7 +2454,7 @@ windowlayout=794
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_objectinspectorfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2496,7 +2473,7 @@ windowlayout=794
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -2515,7 +2492,7 @@ windowlayout=794
  [_mse_confcompilerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2534,7 +2511,7 @@ windowlayout=794
  [_mse_objectinspectorfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_componentpalettefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2648,7 +2625,7 @@ windowlayout=794
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0

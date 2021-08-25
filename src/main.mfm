@@ -1278,11 +1278,15 @@ object mainfo: tmainfo
                 options = [mao_separator, mao_shortcutcaption]
               end            
               item
-                action = actionsmo.toggleinspector
-                caption = 'Toggle Form/Inspector'
+                action = actionsmo.toggleformunit
+                caption = 'Toggle Form/Unit'
                 name = 'toggleformunit'
-                state = [as_localcaption, as_localonexecute]
-                onexecute = toggleobjectinspectoronexecute
+                state = [as_localcaption, as_localshortcut, as_localonexecute]
+                onexecute = toggleformunitonexecute
+                sc = (
+                  1
+                  315
+                )
               end            
               item
                 options = [mao_separator, mao_shortcutcaption]

@@ -245,6 +245,7 @@ type
     procedure ontimersplash(const Sender: TObject);
     procedure onlang(const Sender: TObject);
     procedure onactiv(const Sender: TObject);
+   procedure toggleformunitonexecute(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -5454,6 +5455,12 @@ begin
       setlang(MSEFallbackLang);
     end;
   end;
+end;
+
+procedure tmainfo.toggleformunitonexecute(const sender: TObject);
+begin
+toggleformunit;
+
 end;
 
 end.
