@@ -1269,10 +1269,14 @@ object mainfo: tmainfo
               item
                 caption = 'Object &Inspector'
                 name = 'objectinspector'
-                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localshortcut, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 14
                 onexecute = viewobjectinspectoronexecute
+                sc = (
+                  1
+                  314
+                )
               end            
               item
                 options = [mao_separator, mao_shortcutcaption]
