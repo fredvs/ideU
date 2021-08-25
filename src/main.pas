@@ -245,8 +245,8 @@ type
     procedure ontimersplash(const Sender: TObject);
     procedure onlang(const Sender: TObject);
     procedure onactiv(const Sender: TObject);
- 
-   private
+
+  private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
     fcurrent: Boolean;
@@ -385,6 +385,7 @@ var
   nodebugset: Boolean = False;
   isactivated: Boolean = False;
   MSEFallbacklang: string = '';
+  theprojectname, thefilename: string;
 
 procedure doassistive;
 
@@ -525,20 +526,20 @@ begin
     if SakIsEnabled() = False then
     begin
       if (MSEFallbackLang = '') or (MSEFallbackLang = 'en') then
-       SakGreeting('Welcome to ide U !') else
-     
+        SakGreeting('Welcome to ide U !')
+      else
       if (MSEFallbackLang = 'fr') then
-         SakGreeting('Bienvenue chez ide U !') else
-    
+        SakGreeting('Bienvenue chez ide U !')
+      else
       if (MSEFallbackLang = 'es') then
-         SakGreeting('Bienvenido a ide U !') else
-         
-        if (MSEFallbackLang = 'de') then
-         SakGreeting('Willkommen bei ide U !') else
-    
+        SakGreeting('Bienvenido a ide U !')
+      else
+      if (MSEFallbackLang = 'de') then
+        SakGreeting('Willkommen bei ide U !')
+      else
       if (MSEFallbackLang = 'ru') then
-         SakGreeting('Добро пожаловать в ide U !') ;
-     
+        SakGreeting('Добро пожаловать в ide U !');
+
       if sakloadlib(thedir) = 0 then
 
         debuggerfo.assistive.face.image.alignment :=
@@ -651,11 +652,11 @@ begin
     thesdef := projectoptions.e.t.syntaxdeffiles[0];
 
     dialogfilesfo.Caption := projectoptionstext(po_syntaxdeffile);
-    
+
     // 'Load a Syntax Definition File';
-    
-    dialogfilesfo.tbutton1.caption := stockobjects.modalresulttext[mr_ok];
-    dialogfilesfo.tbutton2.caption := stockobjects.modalresulttext[mr_cancel];
+
+    dialogfilesfo.tbutton1.Caption := stockobjects.modalresulttext[mr_ok];
+    dialogfilesfo.tbutton2.Caption := stockobjects.modalresulttext[mr_cancel];
 
 
     dialogfilesfo.list_files.path    := expandprmacros('${SYNTAXDEFDIR}');
@@ -1388,7 +1389,7 @@ begin
    };
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
       if ShowMessage(mainformtext(ma_str_classtype) + ' ' + utf8decode(atypename) + ' ' +
-       mainformtext(ma_notfound) + lineend +
+        mainformtext(ma_notfound) + lineend +
         ' ' + mainformtext(ma_wishsearch), mainformtext(ma_warning),
         [mr_yes, mr_cancel]) = mr_yes then
       begin
@@ -1429,7 +1430,7 @@ end;
 
 procedure tmainfo.viewobjectinspectoronexecute(const Sender: TObject);
 begin
- 
+
   objectinspectorfo.activate(True);
   //  objectinspectorfo.font.height := confideufo.fontsize.value;
   //  objectinspectorfo.grid.datarowheight := round(ratio * 16);
@@ -2123,8 +2124,8 @@ begin
             (projectoptions.d.nogdbserverexit and
             (fgdbserverexitcode = -1)) then
           begin
-            setstattext(mainformtext(ma_gdbserverstarterror) + ' ' + 
-            utf8decode(IntToStr(fgdbserverexitcode)) + '.',
+            setstattext(mainformtext(ma_gdbserverstarterror) + ' ' +
+              utf8decode(IntToStr(fgdbserverexitcode)) + '.',
               mtk_error);
             Exit;
           end;
@@ -3445,7 +3446,7 @@ begin
   fprojectname := aname;
   if aname = '' then
     Caption    := idecaption + ' v' + versiontext
-    //+ ' (<' + mainformtext(ma_new2) + '>)'
+  //+ ' (<' + mainformtext(ma_new2) + '>)'
   else
   begin
 
@@ -3492,68 +3493,69 @@ begin
 
   debuggerfo.project_history.Value := ExpandFileName(aname);
 
+  theprojectname := aname;
+
   if Assigned(debuggerfo) then
   begin
-      debuggerfo.find_in_directory.hint   :=   stockobjects.captions[sc_searchindirectories] ;
- 
-      debuggerfo.line_number.hint    :=    projectoptionstext(po_linenumbers) ;
- 
-   debuggerfo.terminal_run.hint    :=    projectoptionstext(po_showconsole) ;
- 
-  debuggerfo.project_open.hint    :=    stockobjects.captions[sc_openproject] ;
-   debuggerfo.open_file.hint    :=    stockobjects.captions[sc_openfile] ;
-    debuggerfo.save_file.hint    :=    stockobjects.captions[sc_save] ;
+    debuggerfo.find_in_directory.hint := stockobjects.captions[sc_searchindirectories];
 
-   debuggerfo.code_beauty.hint    :=    stockobjects.captions[sc_beautifier] ;
+    debuggerfo.line_number.hint := projectoptionstext(po_linenumbers);
 
-  debuggerfo.procedure_list.hint    :=    stockobjects.captions[sc_proclist] ;
+    debuggerfo.terminal_run.hint := projectoptionstext(po_showconsole);
 
+    debuggerfo.project_open.hint := stockobjects.captions[sc_openproject];
+    debuggerfo.open_file.hint    := stockobjects.captions[sc_openfile];
+    debuggerfo.save_file.hint    := stockobjects.captions[sc_save];
 
- debuggerfo.find_in_edit.hint    :=    stockobjects.captions[sc_searchincurrentfile] ;
+    debuggerfo.code_beauty.hint := stockobjects.captions[sc_beautifier];
+
+    debuggerfo.procedure_list.hint := stockobjects.captions[sc_proclist];
 
 
- debuggerfo.project_save.hint    :=    stockobjects.captions[sc_save] ;
- 
- debuggerfo.project_option.hint    :=    projectoptionstext(po_projectoptions);
- 
-  
-    debuggerfo.project_make.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_make] +  ' ' + ExtractFilename(aname) + ' ';
-  
-     debuggerfo.project_start.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_debugrun] +  ' ' + ExtractFilename(aname) + ' ';
-  
-      debuggerfo.project_save.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_save] +  ' ' + ExtractFilename(aname) + ' ';
-    
-         debuggerfo.project_interrupt.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_abortmake] +  ' ' + ExtractFilename(aname) + ' ';
- 
-       debuggerfo.project_next.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_nextinstruction] +  ' ' + ExtractFilename(aname) + ' '; 
-   
-      debuggerfo.project_step.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_stepinstruction] +  ' ' + ExtractFilename(aname) + ' '; 
-   
-      debuggerfo.project_finish.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_finish] +  ' ' + ExtractFilename(aname) + ' '; 
-    
-       debuggerfo.project_next_instruction.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_nextinstruction] +  ' ' +  
-     stockobjects.captions[sc_assembler] +  ' ' +    
-     ExtractFilename(aname) + ' '; 
-     
-       debuggerfo.project_step_instruction.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_stepinstruction] +  ' ' +  
-     stockobjects.captions[sc_assembler] +  ' ' +    
-     ExtractFilename(aname) + ' '; 
-  
-     debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + stockobjects.captions[sc_reset] + ' ' +    
-     ExtractFilename(aname) + ' '; 
-     
-   
-    end;
+    debuggerfo.find_in_edit.hint := stockobjects.captions[sc_searchincurrentfile];
+
+
+    debuggerfo.project_save.hint := stockobjects.captions[sc_save];
+
+    debuggerfo.project_option.hint := projectoptionstext(po_projectoptions);
+
+
+    debuggerfo.project_make.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_make] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_start.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_debugrun] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_save.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_save] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_interrupt.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_abortmake] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_next.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_step.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_finish.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_finish] + ' ' + ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_next_instruction.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' +
+      stockobjects.captions[sc_assembler] + ' ' +
+      ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_step_instruction.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' +
+      stockobjects.captions[sc_assembler] + ' ' +
+      ExtractFilename(aname) + ' ';
+
+    debuggerfo.project_reset.hint := ' ' + mainformtext(ma_project) +
+      ' : ' + stockobjects.captions[sc_reset] + ' ' +
+      ExtractFilename(aname) + ' ';
+
+  end;
 
   projectfilebefore := projectoptions.projectfilename;
   projectdirbefore  := projectoptions.projectdir;
@@ -4574,10 +4576,10 @@ begin
   //  writeln('ok tabind'); 
 
   dialogfilesfo.selected_file.frame.Caption := stockcaptions(sc_file);
-  
-     //'Selected Layout File';
+
+  //'Selected Layout File';
   // from ' + dialogfilesfo.list_files.directory ;
-  dialogfilesfo.selected_file.Text          := '';
+  dialogfilesfo.selected_file.Text := '';
   //dialogfilesfo.activate;
 
   //  writeln('ok selected_file'); 
@@ -4664,9 +4666,6 @@ begin
   with stockobjects do
   begin
     mainmenu1.menu.itembynames(['file', 'quit']).Caption := actionsmoduletext(ac_configureideu);
-    //mainmenu1.menu.itembynames(['file', 'quit']).Caption := projectoptionstext(po_editor);
-
-    //   mainmenu1.menu.itembynames(['file','new', 'msegui','form']);
     mainmenu1.menu.itembynames(['file']).Caption          := '&' + captions[sc_file];
     mainmenu1.menu.itembynames(['file', 'new']).Caption   := captions[sc_newfile];
     mainmenu1.menu.itembynames(['file', 'open']).Caption  := captions[sc_open];
@@ -4677,7 +4676,6 @@ begin
     mainmenu1.menu.itembynames(['file', 'closeall']).Caption := captions[sc_closeall];
     mainmenu1.menu.itembynames(['file', 'print']).Caption := captions[sc_print];
     mainmenu1.menu.itembynames(['file', 'quit']).Caption  := captions[sc_quit];
-
     mainmenu1.menu.itembynames(['search']).Caption := '&' + captions[sc_search];
     mainmenu1.menu.itembynames(['search', 'line']).Caption := captions[sc_line];
     mainmenu1.menu.itembynames(['search', 'find']).Caption := captions[sc_search];
@@ -4686,7 +4684,6 @@ begin
     mainmenu1.menu.itembynames(['search', 'findreplace']).Caption := captions[sc_find_replace];
     mainmenu1.menu.itembynames(['search', 'findinfile']).Caption := captions[sc_find_infile];
     mainmenu1.menu.itembynames(['search', 'proclist']).Caption := captions[sc_proclist];
-
     mainmenu1.menu.itembynames(['edit']).Caption          := '&' + captions[sc_edit];
     mainmenu1.menu.itembynames(['edit', 'undo']).Caption  := captions[sc_Undohk];
     mainmenu1.menu.itembynames(['edit', 'redo']).Caption  := captions[sc_Redohk];
@@ -4700,7 +4697,6 @@ begin
     mainmenu1.menu.itembynames(['edit', 'copylatex']).Caption := captions[sc_copy_latex];
     mainmenu1.menu.itembynames(['edit', 'indent']).Caption := captions[sc_indent];
     mainmenu1.menu.itembynames(['edit', 'unindent']).Caption := captions[sc_unindent];
-
     mainmenu1.menu.itembynames(['target']).Caption := captions[sc_target];
     mainmenu1.menu.itembynames(['target', 'environment']).Caption := captions[sc_environment];
     mainmenu1.menu.itembynames(['target', 'attachprocess']).Caption := captions[sc_attachprocess];
@@ -4713,7 +4709,6 @@ begin
       mainmenu1.menu.itembynames(['tools']).Caption := captions[sc_tools];
 
     mainmenu1.menu.itembynames(['view']).Caption := captions[sc_view];
-
     mainmenu1.menu.itembynames(['view', 'panels']).Caption := captions[sc_panels];
     mainmenu1.menu.itembynames(['view', 'forcezorder']).Caption := captions[sc_forcezorder];
     mainmenu1.menu.itembynames(['view', 'source']).Caption := captions[sc_source];
@@ -4732,10 +4727,8 @@ begin
     mainmenu1.menu.itembynames(['view', 'breakpoints']).Caption := captions[sc_breakpoints];
     mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := captions[sc_watchpoints];
     mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := captions[sc_toggleformunit];
-
     mainmenu1.menu.itembynames(['layout']).Caption := captions[sc_layout];
     mainmenu1.menu.itembynames(['syntax']).Caption := captions[sc_syntax];
-
     mainmenu1.menu.itembynames(['project']).Caption := captions[sc_project];
     mainmenu1.menu.itembynames(['project', 'make']).Caption := captions[sc_make];
     mainmenu1.menu.itembynames(['project', 'build']).Caption := captions[sc_build];
@@ -4772,72 +4765,65 @@ begin
     mainmenu1.menu.itembynames(['project', 'make0']).Caption :=
       captions[sc_make] + ' &0';
 
-
     mainmenu1.menu.itembynames(['project', 'abortmake']).Caption := captions[sc_abortmake];
     mainmenu1.menu.itembynames(['project', 'debugrun']).Caption  := captions[sc_debugrun];
-   
-    mainmenu1.menu.itembynames(['project', 'debugrun', 'continue']).Caption  :=
-     modalresulttext[mr_continue];
-     
-    mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption  :=
-     projectoptionscontext(c_SIGINT);
-     
-    mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption  :=
-     captions[sc_next];
-     
-    
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'reset']).Caption := captions[sc_reset];
- 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'step']).Caption := captions[sc_cstep];
-   
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'stepinstruction']).Caption := captions[sc_stepinstruction];
-  
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'nextinstruction']).Caption := captions[sc_nextinstruction];
-    
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'restartdebugger']).Caption := captions[sc_restartdebugger];
- 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'togglebreakpoint']).Caption := 
-  captions[sc_togglebreakpoint] ;
 
- mainmenu1.menu.itembynames(['project', 'debugrun', 'tooglebreakpointenable']).Caption :=
- captions[sc_tooglebreakpointenable] ;
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'continue']).Caption :=
+      modalresulttext[mr_continue];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
-   captions[sc_finish] ;
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption :=
+      projectoptionscontext(c_SIGINT);
 
- mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption  :=
-     projectoptionscontext(c_SIGABRT); 
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption :=
+      captions[sc_next];
 
-mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption :=
- captions[sc_breakpoints] + ' ' + captions[sc_on];
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'reset']).Caption := captions[sc_reset];
 
-mainmenu1.menu.itembynames(['project', 'debugrun', 'watcheson']).Caption :=
- captions[sc_watches] + ' ' + captions[sc_on];
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'step']).Caption := captions[sc_cstep];
 
-mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
- captions[sc_execlinehinton] ;
-    
-    mainmenu1.menu.itembynames(['project', 'options']).Caption   := captions[sc_options];
-    mainmenu1.menu.itembynames(['project', 'tree']).Caption      := captions[sc_tree];
-    mainmenu1.menu.itembynames(['project', 'source']).Caption    := captions[sc_source];
-    mainmenu1.menu.itembynames(['project', 'opencopy']).Caption  := captions[sc_opencopy];
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'stepinstruction']).Caption := captions[sc_stepinstruction];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'nextinstruction']).Caption := captions[sc_nextinstruction];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'restartdebugger']).Caption := captions[sc_restartdebugger];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'togglebreakpoint']).Caption :=
+      captions[sc_togglebreakpoint];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'tooglebreakpointenable']).Caption :=
+      captions[sc_tooglebreakpointenable];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
+      captions[sc_finish];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
+      projectoptionscontext(c_SIGABRT);
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption :=
+      captions[sc_breakpoints] + ' ' + captions[sc_on];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'watcheson']).Caption :=
+      captions[sc_watches] + ' ' + captions[sc_on];
+
+    mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
+      captions[sc_execlinehinton];
+
+    mainmenu1.menu.itembynames(['project', 'options']).Caption := captions[sc_options];
+    mainmenu1.menu.itembynames(['project', 'tree']).Caption    := captions[sc_tree];
+    mainmenu1.menu.itembynames(['project', 'source']).Caption  := captions[sc_source];
+    mainmenu1.menu.itembynames(['project', 'opencopy']).Caption := captions[sc_opencopy];
     mainmenu1.menu.itembynames(['project', 'saveascopy']).Caption := captions[sc_saveascopy];
-
     mainmenu1.menu.itembynames(['project', 'new']).Caption := captions[sc_newfile];
     mainmenu1.menu.itembynames(['project', 'open']).Caption := captions[sc_open];
     mainmenu1.menu.itembynames(['project', 'save']).Caption := captions[sc_save];
     mainmenu1.menu.itembynames(['project', 'saveas']).Caption := captions[sc_saveas];
     mainmenu1.menu.itembynames(['project', 'close']).Caption := captions[sc_close];
-
-   
-   
     mainmenu1.menu.itembynames(['edited']).Caption        := captions[sc_edited];
     mainmenu1.menu.itembynames(['edited', 'make']).Caption := captions[sc_make];
     mainmenu1.menu.itembynames(['edited', 'build']).Caption := captions[sc_build];
     mainmenu1.menu.itembynames(['edited', 'abortmake']).Caption := captions[sc_abortmake];
     mainmenu1.menu.itembynames(['edited', 'run']).Caption := captions[sc_debugrun];
     mainmenu1.menu.itembynames(['edited', 'beautifier']).Caption := captions[sc_beautifier];
-
 
     x := 0;
 
@@ -4886,22 +4872,22 @@ mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
     mainmenu1.menu.itembynames(['widgets']).Caption := captions[sc_widgets];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := captions[sc_msemod];
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := captions[sc_closeallmsemod];
-    
+
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentspalette']).Caption :=
-                     captions[sc_componentspalette];
-  
+      captions[sc_componentspalette];
+
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentsstore']).Caption :=
-                     actionsmoduletext(ac_storecomponent);
-                     
+      actionsmoduletext(ac_storecomponent);
+
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'objectinspector']).Caption :=
-                     actionsmoduletext(ac_objectinspector);
-                     
+      actionsmoduletext(ac_objectinspector);
+
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'toggleformunit']).Caption :=
-                     captions[sc_toggleformunit];
-                     
+      captions[sc_toggleformunit];
+
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'findcomponent']).Caption :=
-                     captions[sc_findcomponent];
-  
+      captions[sc_findcomponent];
+
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
     mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := captions[sc_extrasettings];
@@ -4913,10 +4899,54 @@ mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
 
     mainmenu1.menu.itembynames(['about']).Caption := captions[sc_about];
 
+    if Assigned(debuggerfo) then
+    begin
+      debuggerfo.find_in_directory.hint := stockobjects.captions[sc_searchindirectories];
+      debuggerfo.line_number.hint := projectoptionstext(po_linenumbers);
+      debuggerfo.terminal_run.hint := projectoptionstext(po_showconsole);
+      debuggerfo.project_open.hint := stockobjects.captions[sc_openproject];
+      debuggerfo.open_file.hint    := stockobjects.captions[sc_openfile];
+      debuggerfo.save_file.hint    := stockobjects.captions[sc_save];
+      debuggerfo.code_beauty.hint := stockobjects.captions[sc_beautifier];
+      debuggerfo.procedure_list.hint := stockobjects.captions[sc_proclist];
+      debuggerfo.find_in_edit.hint := stockobjects.captions[sc_searchincurrentfile];
+      debuggerfo.project_save.hint := stockobjects.captions[sc_save];
+      debuggerfo.project_option.hint := projectoptionstext(po_projectoptions);
+      debuggerfo.project_make.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_make] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_start.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_debugrun] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_save.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_save] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_interrupt.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_abortmake] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_next.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_step.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_finish.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_finish] + ' ' + ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_next_instruction.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' +
+        stockobjects.captions[sc_assembler] + ' ' +
+        ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_step_instruction.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' +
+        stockobjects.captions[sc_assembler] + ' ' +
+        ExtractFilename(theprojectname) + ' ';
+      debuggerfo.project_reset.hint := ' ' + mainformtext(ma_project) +
+        ' : ' + stockobjects.captions[sc_reset] + ' ' +
+        ExtractFilename(theprojectname) + ' ';
+      debuggerfo.edited_make.hint := ' ' + stockobjects.captions[sc_edited] +
+        ' : ' + stockobjects.captions[sc_make] + ' ' + thefilename + ' ';
+      debuggerfo.edited_run.hint := ' ' + stockobjects.captions[sc_edited] +
+        ' : ' + stockobjects.captions[sc_debugrun] + ' ' + thefilename + ' ';
+      debuggerfo.toggle_form_unit.hint := ' ' + stockobjects.captions[sc_edited] +
+        ' : ' + stockobjects.captions[sc_toggleformunit] + ' ' + thefilename + ' ';
+
+    end;
   end;
-
 end;
-
 
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
@@ -5486,7 +5516,6 @@ begin
     end;
   end;
 end;
-
 
 
 end.

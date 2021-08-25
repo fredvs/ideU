@@ -1147,6 +1147,8 @@ begin
             mainfo.openfile.controller.icon := mainfo.icon;
             mainfo.openfile.controller.lastdir := ExtractFilePath(ActivePage.pathdisp.Value);
           end;  
+     thefilename := caption;     
+          
       if Assigned(debuggerfo) then
       begin
            debuggerfo.edited_make.hint         := ' ' +  stockobjects.captions[sc_edited] +

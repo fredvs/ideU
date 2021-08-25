@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm" 
  [findinfileadialogfo.findtext]
- value=welcome
+ value=.hint
  history=20
+  .hint
   welcome
   sak
   toggle
@@ -157,7 +158,6 @@ findinfiledialog=92
   '<
   ma_str_new
   sc_newfile
-  sf_str_new
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1282,8 +1282,8 @@ path=30
 line=30
  2129
  1105
- 566
- 4088
+ 567
+ 4091
  660
  119
  1122
@@ -1292,17 +1292,17 @@ line=30
  2475
  3310
  119
- 507
+ 508
  402
  66
- 4363
+ 4366
  684
  98
  15
  793
  908
  2515
- 5810
+ 5842
  1882
  6135
  197
@@ -1581,8 +1581,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=welc
+finddtext=setlang
 findhistory=20
+ setlang
  welc
  welcome
  focal
@@ -1602,9 +1603,8 @@ findhistory=20
  bea
  beauty
  be
- search
 findoptions=1
-editpos=16
+editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1617,10 +1617,11 @@ editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,14
+ 0,-1073741823
  0,-1073741823
  0,0
- 0,524
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1637,7 +1638,8 @@ bookmarks12=0
 bookmarks13=0
 bookmarks14=0
 bookmarks15=0
-sourcefiles=16
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1652,9 +1654,10 @@ sourcefiles=16
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/sak_mse.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/commandorform.pas
+ /home/fred/ideu/src/commandorform.pas
  ${PROJECTDIR}/main.pas
-relpaths=16
+ ${PROJECTDIR}/sourceform.pas
+relpaths=17
  actionsmodule.pas
  main.pas
  sourceform.pas
@@ -1671,7 +1674,9 @@ relpaths=16
  main.pas
  commandorform.pas
  main.pas
-ismoduletexts=16
+ sourceform.pas
+ismoduletexts=17
+ 0
  0
  0
  0
@@ -1709,7 +1714,7 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=16
+order=17
  0
  1
  2
@@ -1719,17 +1724,18 @@ order=16
  6
  7
  8
- 14
+ 16
  13
+ 14
+ 15
  10
- 9
  11
  12
- 15
+ 9
 firsttab=6
-index=15
+index=11
 [layout]
-windowlayout=586
+windowlayout=587
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1848,7 +1854,7 @@ windowlayout=586
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1857,14 +1863,14 @@ windowlayout=586
  ncy=0
  x=239
  y=115
- cx=678
+ cx=907
  cy=414
  rcx=0
  rcy=0
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=findinfilefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -2191,11 +2197,11 @@ windowlayout=586
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/commandorform.pas
  history=5
   /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/mseconsts_ide_id.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts_ide_id.pas
   /home/fred/ideu/src/sourceform.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -2219,7 +2225,7 @@ windowlayout=586
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=16
+ order=17
   0
   1
   2
@@ -2229,15 +2235,16 @@ windowlayout=586
   6
   7
   8
-  14
+  16
   13
+  14
+  15
   10
-  9
   11
   12
-  15
+  9
  firsttab=6
- index=15
+ index=11
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2300,7 +2307,7 @@ windowlayout=586
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=projecttreefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
