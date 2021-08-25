@@ -642,7 +642,7 @@ const
     'Chercher en amont',                           //sc_search_back
     'Chercher et remplacer',                       //sc_find_replace
     'Chercher dans les fichiers',                  //sc_find_infile
-    'Liste de procedures',                         //sc_proclist
+    'Liste de procédures',                         //sc_proclist
     'Sélectionnez la page à éditer',               //sc_select_edit_Page
     'Copier le mot au curseur',                    //sc_Copy_word_cursor
     'Copier LaTeX',                                //sc_copy_latex

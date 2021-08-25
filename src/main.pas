@@ -4297,14 +4297,15 @@ end;
 procedure tmainfo.aboutonexecute(const Sender: TObject);
 begin
   aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption     := 'About MSEgui';
-  aboutfo.about_text.frame.colorclient := $B2F4FF;
+  aboutfo.Caption     := stockobjects.captions[sc_about] + ' MSEgui' ;
+
+ aboutfo.about_text.frame.colorclient := $B2F4FF;
 
   aboutfo.about_text.Value :=
-    c_linefeed + 'MSEgui version: ' + mseguiversiontext + c_linefeed +
+    c_linefeed + 'MSEgui v' + mseguiversiontext + c_linefeed +
     c_linefeed + c_linefeed + 'Host: ' + platformtext + c_linefeed +
     c_linefeed + c_linefeed +
-    'by Martin Schreiber' + c_linefeed + 'Copyright 1999-2021' + c_linefeed +
+    ' Martin Schreiber' + c_linefeed + 'Copyright 1999-2021' + c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
@@ -4318,13 +4319,14 @@ end;
 procedure tmainfo.aboutfpguionexecute(const Sender: TObject);
 begin
   aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption := 'About fpGUI';
+  aboutfo.Caption     := stockobjects.captions[sc_about] + ' fpGUI' ;
   aboutfo.about_text.frame.colorclient := $FFF5B2;
   aboutfo.about_text.Value :=
-    c_linefeed + 'fpGUI version: 1.4' + c_linefeed +
-    'Host: ' + platformtext + c_linefeed + c_linefeed +
+    c_linefeed + 'fpGUI v1.4' + c_linefeed +
+     c_linefeed +
+    'Host: ' + platformtext + c_linefeed +
     c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
-    ' by Graeme Geldenhuys' + c_linefeed + 'graemeg@gmail.com';
+    ' Graeme Geldenhuys' + c_linefeed + '<graemeg@gmail.com>';
   aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
 
@@ -4334,15 +4336,15 @@ end;
 procedure tmainfo.aboutideuonexecute(const Sender: TObject);
 begin
   aboutfo.font.Height      := confideufo.fontsize.Value;
-  aboutfo.Caption          := 'About ideU';
+  aboutfo.Caption     := stockobjects.captions[sc_about] + ' ideU' ;
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
-    c_linefeed + 'ideU version: ' + versiontext + c_linefeed + 'Host: ' +
+    c_linefeed + 'ideU v' + versiontext + c_linefeed + 'Host: ' +
     platformtext + c_linefeed + c_linefeed +
     'Based on MSEide' + c_linefeed +
     'by Martin Schreiber' + c_linefeed + c_linefeed +
     'Copyright 1999-2021' + c_linefeed + c_linefeed +
-    'Fred van Stappen' + c_linefeed + 'fiens@hotmail.com';
+    'Fred van Stappen' + c_linefeed + '<fiens@hotmail.com>';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
