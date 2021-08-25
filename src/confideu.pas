@@ -822,7 +822,7 @@ begin
   
   group_file_change.frame.caption := settingstext(se_groupfilechange);
   tbfilereload.frame.caption := settingstext(se_filereload);
-
+  fullpath.frame.caption := settingstext(se_fullpath);
   tbfilenoload.frame.caption := settingstext(se_filenoload);
   tbfileaskload.frame.caption := settingstext(se_fileaskload);
  

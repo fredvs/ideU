@@ -340,7 +340,7 @@ const
     'Marquer les crochets',                            //  po_markbrackets
     'Numéros de ligne',                               //  po_linenumbers
     'Marquer mots paires',                             //  po_markpairwords
-    'Couper les espaces'#10'de fin lors de'#10'l'#08217'enregistrement', //  po_trimtrailing
+    'Enlever les espaces de fin'#10'lors de l'#08217'enregistrement', //  po_trimtrailing
     'Retrait automatique',                             //  po_autoindent
     'Pas d'#08217'éditeur-source',                    //  po_nosource
     'Retrait de tabulation',                           //  po_tabindent
@@ -353,7 +353,7 @@ const
     'Déf. Y',                                         // po_scrollbary
     'Nb char',                                         // po_nbchar
     'Style EOL',                                       //  po_eolstyle
-    'Sauver',                                          //  po_backup
+    'Sauver copie',                                    //  po_backup
     'Taquets',                                         //  po_tabstops
     'Retrait',                                         //  po_indent
     'Esp.X',                                           //  po_extraspace
