@@ -1605,8 +1605,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=togglef
+finddtext=component
 findhistory=20
+ component
+ setlang
  togglef
  toggle f
  run
@@ -1625,11 +1627,13 @@ findhistory=20
  open
  aborte
  canceled
- result
- setlang
 findoptions=1
 editpos=31
- 0,231
+ 0,214
+ 0,-1073741823
+ 0,-1073741823
+ 0,782
+ 0,307
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1653,11 +1657,7 @@ editpos=31
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,4872
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1842,38 +1842,38 @@ nomenumodules=12
 [sourcefo.files_tab]
 order=31
  0
- 6
- 25
- 13
- 2
- 14
  15
- 16
- 3
- 5
- 20
- 4
- 21
+ 18
  22
+ 25
  23
  10
  12
- 27
- 11
- 28
+ 13
+ 14
  29
+ 2
  30
  17
  19
- 7
- 18
- 8
+ 20
+ 21
  9
+ 4
  1
  24
  26
-firsttab=0
-index=0
+ 27
+ 28
+ 16
+ 11
+ 3
+ 5
+ 6
+ 7
+ 8
+firsttab=19
+index=23
 [layout]
 windowlayout=765
  [mainfo.basedock]
@@ -2320,11 +2320,11 @@ windowlayout=765
  nx=0
  ny=0
  ncx=1341
- ncy=46
+ ncy=44
  x=0
  y=0
  cx=1341
- cy=44
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2379,38 +2379,38 @@ windowlayout=765
  [sourcefo.files_tab]
  order=31
   0
-  6
-  25
-  13
-  2
-  14
   15
-  16
-  3
-  5
-  20
-  4
-  21
+  18
   22
+  25
   23
   10
   12
-  27
-  11
-  28
+  13
+  14
   29
+  2
   30
   17
   19
-  7
-  18
-  8
+  20
+  21
   9
+  4
   1
   24
   26
- firsttab=0
- index=0
+  27
+  28
+  16
+  11
+  3
+  5
+  6
+  7
+  8
+ firsttab=19
+ index=23
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2454,7 +2454,7 @@ windowlayout=765
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2473,7 +2473,7 @@ windowlayout=765
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2625,7 +2625,7 @@ windowlayout=765
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0

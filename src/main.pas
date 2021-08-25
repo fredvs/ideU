@@ -4870,7 +4870,7 @@ mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption :=
                      captions[sc_toggleformunit];
                      
     mainmenu1.menu.itembynames(['widgets', 'msegui', 'findcomponent']).Caption :=
-                     actionsmoduletext(ac_objectinspector);
+                     captions[sc_findcomponent];
   
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
