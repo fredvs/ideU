@@ -334,7 +334,7 @@ const
     );
 
   fr_projectoptionstext: projectoptionsaty = (
-    'Options du project',                              // po_projectoptions
+    'Options du projet',                              // po_projectoptions
     'Editeur',                                         // po_editor
     'Marge à droite',                                 // po_rightmarginline
     'Marquer les crochets',                            //  po_markbrackets

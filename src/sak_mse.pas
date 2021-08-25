@@ -253,10 +253,23 @@ const
   S_IRWXO = S_IROTH or S_IWOTH or S_IXOTH;
 {$ENDIF}
 
+
+var
+atrue,
+afalse,
+aleft,
+atop,
+afocused,
+aclicked,
+aselected,
+adirectory,
+acolumn,
+arow : msestring;
+
 implementation
 
 uses
-  typinfo, mclasses, mseactions, mseformatstr, msegridsglob, mseimage;
+  main, typinfo, mclasses, mseactions, mseformatstr, msegridsglob, mseimage;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -738,12 +751,12 @@ Sender := iaSender.getinstance;
   begin
     if (trim(TButton(Sender).Caption) <> '') then
       Result := 'button, ' + TButton(Sender).Caption
-    else
-    if (trim(TButton(Sender).Name) <> '') then
-      Result := 'button, ' + utf8decode(TButton(Sender).Name)
-    else
+    else  
     if (trim(TButton(Sender).hint) <> '') then
-      Result := 'button, ' + TButton(Sender).hint;
+      Result := 'button, ' + TButton(Sender).hint
+     else
+     if (trim(TButton(Sender).Name) <> '') then
+      Result := 'button, ' + utf8decode(TButton(Sender).Name);
   end
   else
   if (Sender is tfilelistview) then
@@ -892,7 +905,7 @@ Sender := iaSender.getinstance;
   if novalue = false then
   begin
   if tbooleaneditradio(Sender).value = true then
-   tempstr := 'true' else tempstr := 'false' ;
+   tempstr := atrue else tempstr := afalse ;
   end;
 
   if assigned(Tbooleaneditradio(Sender).frame) then
@@ -934,7 +947,7 @@ Sender := iaSender.getinstance;
    if novalue = false then
   begin
   if Tbooleanedit(Sender).value = true then
-   tempstr := 'true' else tempstr := 'false' ;
+   tempstr := atrue else tempstr := afalse ;
   end;
 
    if assigned(Tbooleanedit(Sender).frame) then
@@ -1006,13 +1019,13 @@ sender := iaSender.getinstance;
 
 if (Sender is tbooleaneditradio) then
   begin
-  if tbooleaneditradio(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
+  if tbooleaneditradio(sender).value = false then stringtemp := afalse else stringtemp := atrue;
        Result := ' changed to ' + stringtemp ;
    end
   else
   if (Sender is tbooleanedit) then
   begin
-   if tbooleanedit(sender).value = false then stringtemp := 'false' else stringtemp := 'true';
+   if tbooleanedit(sender).value = false then stringtemp := afalse else stringtemp := atrue;
       Result := ' changed to ' + stringtemp ;
   end
    else
@@ -1187,7 +1200,7 @@ begin
   SakCancel;
   if (TheSender.getinstance is tmessagewidget) then
   espeak_Key(WhatName(TheSender,false) + ', press enter to quit.' )
-  else  espeak_Key('selected, ' + WhatName(TheSender,false) ) ;
+  else  espeak_Key(aselected + ', ' + WhatName(TheSender,false) ) ;
 end;
 
 procedure TSAK.doenter(const Sender: iassistiveclient);
@@ -1213,7 +1226,7 @@ SakCancel;
 
 if TheTypCell = 1 then begin
 
-   oldlang := voice_language;
+   oldlang := MSEFallbackLang;
       if voice_gender = '' then
     oldgender := -1 else
      if voice_gender = 'm3' then
@@ -1240,7 +1253,7 @@ var
  if (assigned(Sender)) and
   (isblock = false) then
   begin
-   oldlang := voice_language;
+   oldlang := MSEFallbackLang;
       if voice_gender = '' then
     oldgender := -1 else
      if voice_gender = 'm3' then
@@ -1370,12 +1383,13 @@ if WhatName(TheSender, true)  <> lastname then
 
       if(TheSender.getinstance is tbooleaneditradio) then
   begin
-  if tbooleaneditradio(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, ';
+  if tbooleaneditradio(TheSender.getinstance).value = false then stringtemp := ' , ' + afalse + ', ' else stringtemp := ' , ' + atrue + ', ';
   end;
 
     if(TheSender.getinstance is tbooleanedit) then
   begin
-  if tbooleanedit(TheSender.getinstance).value = false then stringtemp := ' , false, ' else stringtemp := ' , true, ';
+  if tbooleanedit(TheSender.getinstance).value = false then stringtemp :=' , ' + afalse + ', ' else
+   stringtemp := ' , ' + atrue + ', ';
   end;
 
      if(TheSender.getinstance is tslider) then
@@ -1383,8 +1397,11 @@ if WhatName(TheSender, true)  <> lastname then
   stringtemp := ' , ' + utf8decode(inttostr(round(tslider(TheSender.getinstance).value * 100))) + ' ,%, '
   end;
 
-       espeak_Key('left  ' + utf8decode(inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x)) + ' , top '+
-         utf8decode(inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y)) + ' , focused ,  '+
+       espeak_Key(
+       //aleft + ' , ' + utf8decode(inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x)) + ' . ' + atop + ', ' +
+       //  utf8decode(inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y)) + ' . ' +
+         
+          afocused + ', ' +
         WhatName(TheSender, true) + stringtemp );
       lastname := WhatName(TheSender, true);
     end;
@@ -1393,7 +1410,7 @@ if WhatName(TheSender, true)  <> lastname then
   if (TheMouseinfo.eventkind = ek_buttonpress) then
   begin
     SakCancel;
-    espeak_Key( 'clicked  , ' + WhatName(TheSender, false) );
+    espeak_Key( aclicked + '  , ' + WhatName(TheSender, false) );
     lastname := WhatName(TheSender, false);
   end;
 
@@ -1422,7 +1439,7 @@ begin
  thetimer.Enabled := false;
  SakCancel;
  // espeak_Key('a tab has the new focus');
-  espeak_Key('selected, ' + WhatName(TheSender, false));
+  espeak_Key(aselected + '  , ' + WhatName(TheSender, false));
  // lastname := WhatName(TheSender);
   isblock := false;
 // }
@@ -1459,7 +1476,7 @@ procedure TSAK.ontimeritementer(const Sender: TObject);
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_key('focused, ' + WhatName(TheSender, false) + ', ' +
+  espeak_key( afocused + ', ' + WhatName(TheSender, false) + ', ' +
   TheMenuInfo[TheMenuIndex].buttoninfo.ca.caption.text );
   itementer:= false;
  end;
@@ -1468,7 +1485,7 @@ begin
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_key('focused, ' +  WhatName(TheSender, false) + ', ' +
+  espeak_key(afocused + ', ' +  WhatName(TheSender, false) + ', ' +
   TheItemInfo[TheMenuIndex].ca.caption.text );
  // TheMenuItemInfo[TheMenuIndex].buttoninfo.ca.caption.text );
   itementer:= true;
@@ -1478,7 +1495,7 @@ begin
 begin
   thetimer.Enabled := False;
   SakCancel;
-  espeak_key('focused, ' +  WhatName(TheSender, false) + ', ' +
+  espeak_key( afocused + ' , ' +  WhatName(TheSender, false) + ', ' +
  // TheItemInfo[TheMenuIndex].ca.caption.text );
   TheMenuItemInfo[TheMenuIndex].buttoninfo.ca.caption.text );
   itementer:= true;
@@ -1637,7 +1654,7 @@ SakCancel;
 
 if TheTypCell = 1 then begin
 
-oldlang := voice_language;
+oldlang := MSEFallbackLang;
       if voice_gender = '' then
     oldgender := -1 else
      if voice_gender = 'm3' then
@@ -1659,7 +1676,7 @@ oldlang := voice_language;
  TheCell := tfilelistview(TheSender.getinstance).selectednames[0]
  else
  if trim(tfilelistview(TheSender.getinstance).focuseditem.caption) <> '' then
-   TheCell := 'directory , ' +  tfilelistview(TheSender.getinstance).focuseditem.caption;
+   TheCell := adirectory + ' , ' +  tfilelistview(TheSender.getinstance).focuseditem.caption;
  end;
  
  if 	(isfilelistx = true) and (assigned(Thesender)) then
@@ -1668,7 +1685,7 @@ oldlang := voice_language;
  TheCell := tfilelistviewx(TheSender.getinstance).selectednames[0]
  else
  if trim(tfilelistviewx(TheSender.getinstance).focuseditem.caption) <> '' then
-   TheCell := 'directory , ' +  tfilelistviewx(TheSender.getinstance).focuseditem.caption;
+   TheCell := adirectory + ' , ' +  tfilelistviewx(TheSender.getinstance).focuseditem.caption;
  end;
   
      espeak_Key(thecell);
@@ -1735,18 +1752,18 @@ if (assigned(Sender)) and
 		begin
 		  if (Sender.getinstance is Tstringgrid) then if
 		  Tstringgrid(Sender.getinstance).datacols.count > 1 then
-			TheCell := ' Colon , '+ inttostrmse(info.cell.col) + ' , row , '
+			TheCell := acolumn + ' , '+ inttostrmse(info.cell.col) + ' , ' + arow + ' , '
     		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
-    		TheCell := ' row , '+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
+    		TheCell :=  arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
 
     	 if (Sender.getinstance is Tcustomstringgrid) then if
 		  Tcustomstringgrid(Sender.getinstance).datacols.count > 1 then
-			TheCell := ' Colon , '+ inttostrmse(info.cell.col) + ' , row , '
+			TheCell := acolumn + '  , '+ inttostrmse(info.cell.col) +  ' , ' + arow + ' , '
     		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
-    		TheCell := ' row , '+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
+    		TheCell := arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
 
 			end else
-    	TheCell := ' row , '
+    	TheCell := arow + ' , '
     		+ inttostrmse(info.cell.row + 1) + ' , ' + formatcode(mstr1) ;
 
     		TheTypCell := 0 ;
@@ -1796,7 +1813,7 @@ if (assigned(Sender)) and
                //  info.grid.rowcount -1
                 do
 				begin
-				mstr1 := mstr1 + ' , row , ' + utf8decode(inttostr(gridcoo.row + 1)) + ' , ' +
+				mstr1 := mstr1 + ' , ' +  arow + ' , ' + utf8decode(inttostr(gridcoo.row + 1)) + ' , ' +
 				formatcode(sender.getassistivecelltext(gridcoo,aflags));
 				inc(gridcoo.row);
 				end;
@@ -1827,8 +1844,8 @@ if (assigned(Sender)) and
   begin
   if itementer = false then
   begin
-     mstr2:= ' Colon , '+ inttostrmse(sender.getassistivecaretindex())+
-      ' , row , '+inttostrmse(info.cell.row+1) + ' , ';
+     mstr2:= acolumn + ' , '+ inttostrmse(sender.getassistivecaretindex())+
+       ' , ' + arow +  ' , ' +  inttostrmse(info.cell.row+1) + ' , ';
 	mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell,aflags));
 
  	Theword := '';
@@ -1916,7 +1933,7 @@ if trim(ES_LibFileName) <> '' then es_Handle:= DynLibs.SafeLoadLibrary(tosysfile
   TheLastSentence := '' ;
 
   voice_gender := '' ;
-  voice_language := '' ;
+  voice_language := MSEFallbacklang ;
   voice_speed := -1 ;
   voice_pitch := -1 ;
   voice_volume := -1 ;
@@ -1937,18 +1954,90 @@ function SAKSetVoice(gender: shortint; language: msestring ; speed: integer ; pi
 //  speed sets the speed in words-per-minute , Range 80 to 450. The default value is 175. => -1
 // pitch  range of 0 to 99. The default is 50.  => -1
 // volume range of 0 to 200. The default is 100. => -1
+
 begin
    result := -1;
   if assigned(sak) then
   begin
-   result := 0;
+ 
+  if (MSEFallbackLang = '') or (MSEFallbackLang = 'en') then
+  begin
+  atrue := 'true';
+  afalse := 'false';
+  atop := 'top';
+  aleft := 'left';
+  afocused := '';
+  aclicked := 'clicked';
+  aselected := 'selected';
+  adirectory := 'directory';
+  acolumn := 'column';
+  arow := 'row';
+  end else
+  
+  if (MSEFallbackLang = 'fr') then
+  begin
+  atrue := 'vrai';
+  afalse := 'faux';
+  atop := 'haut';
+  aleft := 'gauche';
+  afocused := '';
+  aclicked := 'cliqué';
+  aselected := 'sélectionné';
+  adirectory := 'répertoire';
+  acolumn := 'colonne';
+  arow := 'ligne';
+  end else
+  
+  if (MSEFallbackLang = 'es') then
+  begin
+  atrue := 'verdadero';
+  afalse := 'falso';
+  atop := 'arriba';
+  aleft := 'izquierda';
+  afocused := '';
+  aclicked := 'clicado';
+  aselected := 'seleccionado';
+  adirectory := 'directorio';
+  acolumn := 'columna';
+  arow := 'fila';
+  end else
+  
+  if (MSEFallbackLang = 'de') then
+  begin
+  atrue := 'wahr';
+  afalse := 'falsch';
+  aleft := 'links';
+  atop := 'oben';
+  afocused := '';
+  aclicked := 'angeklickt';
+  aselected := 'ausgewählt';
+  adirectory := 'Verzeichnis';
+  acolumn := 'Spalte';
+  arow := 'Zeile';
+  end else
+   
+  if (MSEFallbackLang = 'ru') then
+  begin
+  atrue := 'правда';
+  afalse := 'ложный';
+  aleft := 'слева';
+  atop := 'верхняя';
+  afocused := '';
+  aclicked := 'нажата';
+  aselected := 'выбранный';
+  adirectory := 'каталог';
+  acolumn := 'столбец';
+  arow := 'строка';
+  end;
+ 
+    result := 0;
     if gender = -1 then
     sak.voice_gender := ''  else
    if gender = 1 then
     sak.voice_gender := 'm3'
   else
     sak.voice_gender := 'f2';
-  sak.voice_language := language;
+  sak.voice_language := MSEFallbackLang;
   sak.voice_speed := speed;
   sak.voice_volume := volume;
   sak.voice_pitch := pitch;
@@ -1962,10 +2051,10 @@ var
 begin
    aprocess.Parameters.clear;
 
-if (voice_gender <> '') or (voice_language <> '') then begin
+if (voice_gender <> '') or (MSEFallbackLang <> '') then begin
   params:= params + '-v';
   if voice_language <> '' then begin
-   params:= params+voice_language;
+   params:= params+MSEFallbackLang;
    if voice_gender <> '' then begin
     params:= params+'+'+voice_gender;
    end;

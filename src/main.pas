@@ -524,7 +524,21 @@ begin
   begin
     if SakIsEnabled() = False then
     begin
-      SakGreeting('Welcome with ideU !');
+      if (MSEFallbackLang = '') or (MSEFallbackLang = 'en') then
+       SakGreeting('Welcome to ide U !') else
+     
+      if (MSEFallbackLang = 'fr') then
+         SakGreeting('Bienvenue chez ide U !') else
+    
+      if (MSEFallbackLang = 'es') then
+         SakGreeting('Bienvenido a ide U !') else
+         
+        if (MSEFallbackLang = 'de') then
+         SakGreeting('Willkommen bei ide U !') else
+    
+      if (MSEFallbackLang = 'ru') then
+         SakGreeting('Добро пожаловать в ide U !') ;
+     
       if sakloadlib(thedir) = 0 then
 
         debuggerfo.assistive.face.image.alignment :=
