@@ -921,16 +921,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1578,8 +1581,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=language
+finddtext=sc_lang
 findhistory=20
+ sc_lang
  language
  ok
  setlang
@@ -1599,53 +1603,67 @@ findhistory=20
  welcome
  focal
  atop
- 'left
 findoptions=1
-editpos=4
+editpos=5
  0,0
  0,-1073741823
+ 0,4871
  0,-1073741823
- 0,-1073741823
+ 0,2
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/conflang.pas
+relpaths=5
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=4
+ conflang.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 1
+ 2
+ 4
+ 3
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=562
+windowlayout=617
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1665,7 +1683,7 @@ windowlayout=562
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1790,7 +1808,7 @@ windowlayout=562
  x=0
  y=0
  cx=205
- cy=450
+ cy=517
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1861,7 +1879,7 @@ windowlayout=562
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1976,9 +1994,9 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=582
+ cx=1356
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2077,8 +2095,8 @@ windowlayout=562
  ncy=0
  x=0
  y=0
- cx=1212
- cy=51
+ cx=1356
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2090,11 +2108,11 @@ windowlayout=562
  nx=0
  ny=0
  ncx=1197
- ncy=55
+ ncy=54
  x=0
  y=0
- cx=1212
- cy=54
+ cx=1356
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2104,10 +2122,8 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/main.mfm
+ value=/home/fred/ideu/src/conflang.pas
+ history=50
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
@@ -2126,6 +2142,38 @@ windowlayout=562
   /home/fred/mseide-msegui-fred-lang/lib/common/mseconstslang/mseconsts_zh.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_uz.pas
+  /home/fred/ideu/src/commandlineform.pas
+  /home/fred/ideu/src/breakpointsform.pas
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/ideu/src/splash.pas
+  /home/fred/ideu/src/msestockobjects.pas
+  /home/fred/ideu/src/msestockobjects_ide.pas
+  /home/fred/ideu/src/msestockobjects_ide_mfm.pas
+  /home/fred/ideu/src/msestockobjects_ide.mfm
+  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
+  /home/fred/demo_mse/po2const2po/headerform_mfm.pas
+  /home/fred/demo_mse/po2const2po/po2const2po.prj
+  /home/fred/ideu/src/mseconsts_es.pas
+  /home/fred/ideu/src/mseconsts_ru.pas
+  /home/fred/ideu/src/mseconsts.pas
+  /home/fred/ideu/src/mseconsts_id.pas
+  /home/fred/ideu/src/mseconsts_zh.pas
+  /home/fred/ideu/src/mseconsts_uzcyr.pas
+  /home/fred/ideu/src/mseconsts_de.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
+  /home/fred/ideu/src/mseconsts_fr.pas
+  /home/fred/demo_mse/po2const2po/mseguiintf.pas
+  /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
+  /home/fred/demo_mse/po2const2po/mseconsts.pas
+  /home/fred/demo_mse/po2const2po/mseconsts2.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
+  /home/fred/strumpract/src/dialogfiles.pas
+  /home/fred/strumpract/src/status.pas
+  /home/fred/uos/src/uos_portaudio.pas
+  /home/fred/uos/uos.jpg
+  /home/fred/mseide-msegui/apps/ide/main.pas
+  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2142,13 +2190,19 @@ windowlayout=562
  ncy=0
  x=208
  y=0
- cx=1004
- cy=450
+ cx=1148
+ cy=517
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  1
+  2
+  4
+  3
  firsttab=0
- index=0
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2184,9 +2238,9 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1212
- cy=450
+ y=62
+ cx=1356
+ cy=517
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2203,6 +2257,25 @@ windowlayout=562
  y=363
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=514
+ y=143
+ cx=260
+ cy=181
  rcx=0
  rcy=0
  wsize=0

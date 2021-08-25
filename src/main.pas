@@ -4869,7 +4869,7 @@ begin
     mainmenu1.menu.itembynames(['settings']).Caption := captions[sc_settings];
     mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := captions[sc_generalsettings];
     mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := captions[sc_extrasettings];
-    mainmenu1.menu.itembynames(['settings', 'lang']).Caption := captions[sc_lang];
+    mainmenu1.menu.itembynames(['settings', 'lang']).Caption := captions[sc_lang] + '     (Lang)';
     mainmenu1.menu.itembynames(['settings', 'configwidgets']).Caption := captions[sc_configwidgets];
     mainmenu1.menu.itembynames(['settings', 'configcompilers']).Caption := captions[sc_configcompilers];
     mainmenu1.menu.itembynames(['settings', 'configdebuggers']).Caption := captions[sc_configdebuggers];
