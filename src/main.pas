@@ -245,8 +245,8 @@ type
     procedure ontimersplash(const Sender: TObject);
     procedure onlang(const Sender: TObject);
     procedure onactiv(const Sender: TObject);
-   procedure toggleformunitonexecute(const sender: TObject);
-  private
+ 
+   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
     fcurrent: Boolean;
@@ -5457,11 +5457,7 @@ begin
   end;
 end;
 
-procedure tmainfo.toggleformunitonexecute(const sender: TObject);
-begin
-toggleformunit;
 
-end;
 
 end.
 

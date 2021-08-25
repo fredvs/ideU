@@ -1281,8 +1281,10 @@ object mainfo: tmainfo
                 action = actionsmo.toggleformunit
                 caption = 'Toggle Form/Unit'
                 name = 'toggleformunit'
-                state = [as_localcaption, as_localshortcut, as_localonexecute]
-                onexecute = toggleformunitonexecute
+                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localshortcut, as_localonexecute]
+                imagelist = actionsmo.buttonicons
+                imagenr = 12
+                onexecute = ontoggleunitform
                 sc = (
                   1
                   315
