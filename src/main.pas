@@ -3480,6 +3480,29 @@ begin
 
   if Assigned(debuggerfo) then
   begin
+      debuggerfo.find_in_directory.hint   :=   stockobjects.captions[sc_searchindirectories] ;
+ 
+      debuggerfo.line_number.hint    :=    projectoptionstext(po_linenumbers) ;
+ 
+   debuggerfo.terminal_run.hint    :=    projectoptionstext(po_showconsole) ;
+ 
+  debuggerfo.project_open.hint    :=    stockobjects.captions[sc_openproject] ;
+   debuggerfo.open_file.hint    :=    stockobjects.captions[sc_openfile] ;
+    debuggerfo.save_file.hint    :=    stockobjects.captions[sc_save] ;
+
+   debuggerfo.code_beauty.hint    :=    stockobjects.captions[sc_beautifier] ;
+
+  debuggerfo.procedure_list.hint    :=    stockobjects.captions[sc_proclist] ;
+
+
+ debuggerfo.find_in_edit.hint    :=    stockobjects.captions[sc_searchincurrentfile] ;
+
+
+ debuggerfo.project_save.hint    :=    stockobjects.captions[sc_save] ;
+ 
+ debuggerfo.project_option.hint    :=    projectoptionstext(po_projectoptions);
+ 
+  
     debuggerfo.project_make.hint         := ' ' + mainformtext(ma_project) +
     ' : ' + stockobjects.captions[sc_make] +  ' ' + ExtractFilename(aname) + ' ';
   
@@ -3489,7 +3512,7 @@ begin
       debuggerfo.project_save.hint         := ' ' + mainformtext(ma_project) +
     ' : ' + stockobjects.captions[sc_save] +  ' ' + ExtractFilename(aname) + ' ';
     
-         debuggerfo.project_save.hint         := ' ' + mainformtext(ma_project) +
+         debuggerfo.project_interrupt.hint         := ' ' + mainformtext(ma_project) +
     ' : ' + stockobjects.captions[sc_abortmake] +  ' ' + ExtractFilename(aname) + ' ';
  
        debuggerfo.project_next.hint         := ' ' + mainformtext(ma_project) +
@@ -3515,14 +3538,7 @@ begin
     ' : ' + stockobjects.captions[sc_reset] + ' ' +    
      ExtractFilename(aname) + ' '; 
      
-     debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + projectoptionscontext(c_SIGINT) + ' ' +    
-     ExtractFilename(aname) + ' '; 
-     
-      debuggerfo.project_reset.hint         := ' ' + mainformtext(ma_project) +
-    ' : ' + projectoptionstext(po_makeoptions) + ' ' +    
-     ExtractFilename(aname) + ' '; 
-  
+   
     end;
 
   projectfilebefore := projectoptions.projectfilename;

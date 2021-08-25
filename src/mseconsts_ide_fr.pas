@@ -493,13 +493,13 @@ const
 
     'R'#0233'&p',                                  //sc_Dir               ///
     '&Racine',                                     //sc_home              //
-    '&Remonter',                                   //sc_Up                //
-    '&Nouveau rép.',                              //sc_New_dir           // hotkeys
+    'Remonter',                                   //sc_Up                //
+    'Nouveau rép.',                              //sc_New_dir           // hotkeys
     'Nom',                                         //sc_Name              //
-    '&Afficher fichiers cach'#0233's',             //sc_Show_hidden_files //
-    '&Filtre',                                     //sc_Filter            ///
-    '&Sauver',                                     //sc_save
-    '&Ouvrir',                                     //sc_open
+    'Afficher fichiers cach'#0233's',             //sc_Show_hidden_files //
+    'Filtre',                                     //sc_Filter            ///
+    'Sauver',                                     //sc_save
+    'Ouvrir',                                     //sc_open
     'Nom',                                         //sc_name1
     'Cr'#0233'er un nouveau r'#0233'pertoire',     //sc_create_new_directory
     'Arri'#0232're',                               //sc_back

@@ -1149,15 +1149,22 @@ begin
           end;  
       if Assigned(debuggerfo) then
       begin
+           debuggerfo.edited_make.hint         := ' ' +  stockobjects.captions[sc_edited] +
+    ' : ' + stockobjects.captions[sc_make] +  ' ' + caption + ' '; 
+
+               debuggerfo.edited_run.hint         := ' ' +  stockobjects.captions[sc_edited] +
+    ' : ' + stockobjects.captions[sc_debugrun] +  ' ' + caption + ' '; 
+
+                   debuggerfo.toggle_form_unit.hint         := ' ' +  stockobjects.captions[sc_edited] +
+    ' : ' + stockobjects.captions[sc_toggleformunit] +  ' ' + caption + ' '; 
+
+      
         debuggerfo.file_history.Value := tosysfilepath(filepath(ActivePage.pathdisp.Value, fk_file, True));
 
-        debuggerfo.edited_make.hint      := ' Compile ' + Caption + ' ';
-        debuggerfo.edited_run.hint       := ' Run ' + Caption + ' ';
-        debuggerfo.edit_compiler.hint    := ' Compiler Type for ' + Caption + ' ';
+          debuggerfo.edit_compiler.hint    := ' Compiler Type for ' + Caption + ' ';
         debuggerfo.edit_compilernum.hint := ' Compiler Number for ' + Caption + ' ';
         debuggerfo.edit_options.hint     := ' Option Number for ' + Caption + '. X --> No parameters.';
-        debuggerfo.toggle_form_unit.hint := '  Toggle form/unit for ' + Caption + ' ';
-
+   
       end;
 
       if beautyformcreated then
