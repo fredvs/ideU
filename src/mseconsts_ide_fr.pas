@@ -725,7 +725,14 @@ const
      'Basculer le point d'#8217'arrêt activé', // sc_tooglebreakpointenable
      'Indicateur de lignes exécutées activé/désactivé', // sc_execlinehinton
      'S'#8217'il vous plaît, compilez-le d'#8217'abord.',               // sc_compileitfirst
-     'Fin' // sc_finish   
+     'Fin',                                // sc_finish
+     'Anglais', // sc_english
+     'Russe', // sc_russian
+     'Français', // sc_french
+     'Allemand', // sc_german
+     'Espagnol',                                // sc_spanish
+     'Définir par défaut'                          // sc_setasdefault
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

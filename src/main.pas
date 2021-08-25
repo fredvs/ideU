@@ -396,7 +396,7 @@ procedure handleerror(const e: Exception; const Text: string);
 implementation
 
 uses
-  // fred
+  conflang,
   splash,
   confmsegui,
   beauty,
@@ -527,17 +527,13 @@ begin
     begin
       if (MSEFallbackLang = '') or (MSEFallbackLang = 'en') then
         SakGreeting('Welcome to ide U !')
-      else
-      if (MSEFallbackLang = 'fr') then
+      else if (MSEFallbackLang = 'fr') then
         SakGreeting('Bienvenue chez ide U !')
-      else
-      if (MSEFallbackLang = 'es') then
+      else if (MSEFallbackLang = 'es') then
         SakGreeting('Bienvenido a ide U !')
-      else
-      if (MSEFallbackLang = 'de') then
+      else if (MSEFallbackLang = 'de') then
         SakGreeting('Willkommen bei ide U !')
-      else
-      if (MSEFallbackLang = 'ru') then
+      else if (MSEFallbackLang = 'ru') then
         SakGreeting('Добро пожаловать в ide U !');
 
       if sakloadlib(thedir) = 0 then
@@ -1045,26 +1041,6 @@ end;
 
 procedure tmainfo.ideuwriteconfig();
 begin
-  // fred
-
-  if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state then
-  begin
-    if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langen']).state then
-      gINI.writeString('language', 'default', 'en')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langru']).state then
-      gINI.writeString('language', 'default', 'ru')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langfr']).state then
-      gINI.writeString('language', 'default', 'fr')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langde']).state then
-      gINI.writeString('language', 'default', 'de')
-    else if as_checked in mainmenu1.menu.itembynames(['settings', 'lang', 'langes']).state then
-      gINI.writeString('language', 'default', 'es');
-
-  end
-  else
-    gINI.writeString('language', 'default', '');
-
-
   gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
 
   gINI.writeString('Layout', 'default', ansistring(confideufo.deflayout.Text));
@@ -4297,9 +4273,9 @@ end;
 procedure tmainfo.aboutonexecute(const Sender: TObject);
 begin
   aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption     := stockobjects.captions[sc_about] + ' MSEgui' ;
+  aboutfo.Caption     := stockobjects.captions[sc_about] + ' MSEgui';
 
- aboutfo.about_text.frame.colorclient := $B2F4FF;
+  aboutfo.about_text.frame.colorclient := $B2F4FF;
 
   aboutfo.about_text.Value :=
     c_linefeed + 'MSEgui v' + mseguiversiontext + c_linefeed +
@@ -4319,11 +4295,11 @@ end;
 procedure tmainfo.aboutfpguionexecute(const Sender: TObject);
 begin
   aboutfo.font.Height := confideufo.fontsize.Value;
-  aboutfo.Caption     := stockobjects.captions[sc_about] + ' fpGUI' ;
+  aboutfo.Caption := stockobjects.captions[sc_about] + ' fpGUI';
   aboutfo.about_text.frame.colorclient := $FFF5B2;
   aboutfo.about_text.Value :=
     c_linefeed + 'fpGUI v1.4' + c_linefeed +
-     c_linefeed +
+    c_linefeed +
     'Host: ' + platformtext + c_linefeed +
     c_linefeed + 'Copyright 1999-2021' + c_linefeed + c_linefeed +
     ' Graeme Geldenhuys' + c_linefeed + '<graemeg@gmail.com>';
@@ -4336,7 +4312,7 @@ end;
 procedure tmainfo.aboutideuonexecute(const Sender: TObject);
 begin
   aboutfo.font.Height      := confideufo.fontsize.Value;
-  aboutfo.Caption     := stockobjects.captions[sc_about] + ' ideU' ;
+  aboutfo.Caption          := stockobjects.captions[sc_about] + ' ideU';
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
     c_linefeed + 'ideU v' + versiontext + c_linefeed + 'Host: ' +
@@ -4667,7 +4643,7 @@ begin
 
   with stockobjects do
   begin
-    mainmenu1.menu.itembynames(['file', 'quit']).Caption := actionsmoduletext(ac_configureideu);
+    mainmenu1.menu.itembynames(['file', 'quit']).Caption  := actionsmoduletext(ac_configureideu);
     mainmenu1.menu.itembynames(['file']).Caption          := '&' + captions[sc_file];
     mainmenu1.menu.itembynames(['file', 'new']).Caption   := captions[sc_newfile];
     mainmenu1.menu.itembynames(['file', 'open']).Caption  := captions[sc_open];
@@ -4678,7 +4654,7 @@ begin
     mainmenu1.menu.itembynames(['file', 'closeall']).Caption := captions[sc_closeall];
     mainmenu1.menu.itembynames(['file', 'print']).Caption := captions[sc_print];
     mainmenu1.menu.itembynames(['file', 'quit']).Caption  := captions[sc_quit];
-    mainmenu1.menu.itembynames(['search']).Caption := '&' + captions[sc_search];
+    mainmenu1.menu.itembynames(['search']).Caption        := '&' + captions[sc_search];
     mainmenu1.menu.itembynames(['search', 'line']).Caption := captions[sc_line];
     mainmenu1.menu.itembynames(['search', 'find']).Caption := captions[sc_search];
     mainmenu1.menu.itembynames(['search', 'searchagain']).Caption := captions[sc_search_again];
@@ -4699,7 +4675,7 @@ begin
     mainmenu1.menu.itembynames(['edit', 'copylatex']).Caption := captions[sc_copy_latex];
     mainmenu1.menu.itembynames(['edit', 'indent']).Caption := captions[sc_indent];
     mainmenu1.menu.itembynames(['edit', 'unindent']).Caption := captions[sc_unindent];
-    mainmenu1.menu.itembynames(['target']).Caption := captions[sc_target];
+    mainmenu1.menu.itembynames(['target']).Caption        := captions[sc_target];
     mainmenu1.menu.itembynames(['target', 'environment']).Caption := captions[sc_environment];
     mainmenu1.menu.itembynames(['target', 'attachprocess']).Caption := captions[sc_attachprocess];
     mainmenu1.menu.itembynames(['target', 'attachtarget']).Caption := captions[sc_attachtarget];
@@ -4720,9 +4696,9 @@ begin
     mainmenu1.menu.itembynames(['view', 'commander']).Caption := captions[sc_commander];
     mainmenu1.menu.itembynames(['view', 'symbols']).Caption := captions[sc_symbols];
     mainmenu1.menu.itembynames(['view', 'watches']).Caption := captions[sc_watches];
-    mainmenu1.menu.itembynames(['view', 'stack']).Caption  := captions[sc_stack];
+    mainmenu1.menu.itembynames(['view', 'stack']).Caption := captions[sc_stack];
     mainmenu1.menu.itembynames(['view', 'threads']).Caption := captions[sc_threads];
-    mainmenu1.menu.itembynames(['view', 'cpu']).Caption    := captions[sc_cpu];
+    mainmenu1.menu.itembynames(['view', 'cpu']).Caption := captions[sc_cpu];
     mainmenu1.menu.itembynames(['view', 'assembler']).Caption := captions[sc_assembler];
     mainmenu1.menu.itembynames(['view', 'memory']).Caption := captions[sc_memory];
     mainmenu1.menu.itembynames(['view', 'targetconsole']).Caption := captions[sc_targetconsole];
@@ -4811,8 +4787,8 @@ begin
       captions[sc_execlinehinton];
 
     mainmenu1.menu.itembynames(['project', 'options']).Caption := captions[sc_options];
-    mainmenu1.menu.itembynames(['project', 'tree']).Caption    := captions[sc_tree];
-    mainmenu1.menu.itembynames(['project', 'source']).Caption  := captions[sc_source];
+    mainmenu1.menu.itembynames(['project', 'tree']).Caption := captions[sc_tree];
+    mainmenu1.menu.itembynames(['project', 'source']).Caption := captions[sc_source];
     mainmenu1.menu.itembynames(['project', 'opencopy']).Caption := captions[sc_opencopy];
     mainmenu1.menu.itembynames(['project', 'saveascopy']).Caption := captions[sc_saveascopy];
     mainmenu1.menu.itembynames(['project', 'new']).Caption := captions[sc_newfile];
@@ -4904,29 +4880,29 @@ begin
     if Assigned(debuggerfo) then
     begin
       debuggerfo.find_in_directory.hint := stockobjects.captions[sc_searchindirectories];
-      debuggerfo.line_number.hint := projectoptionstext(po_linenumbers);
-      debuggerfo.terminal_run.hint := projectoptionstext(po_showconsole);
-      debuggerfo.project_open.hint := stockobjects.captions[sc_openproject];
-      debuggerfo.open_file.hint    := stockobjects.captions[sc_openfile];
-      debuggerfo.save_file.hint    := stockobjects.captions[sc_save];
-      debuggerfo.code_beauty.hint := stockobjects.captions[sc_beautifier];
-      debuggerfo.procedure_list.hint := stockobjects.captions[sc_proclist];
-      debuggerfo.find_in_edit.hint := stockobjects.captions[sc_searchincurrentfile];
-      debuggerfo.project_save.hint := stockobjects.captions[sc_save];
-      debuggerfo.project_option.hint := projectoptionstext(po_projectoptions);
-      debuggerfo.project_make.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.line_number.hint       := projectoptionstext(po_linenumbers);
+      debuggerfo.terminal_run.hint      := projectoptionstext(po_showconsole);
+      debuggerfo.project_open.hint      := stockobjects.captions[sc_openproject];
+      debuggerfo.open_file.hint         := stockobjects.captions[sc_openfile];
+      debuggerfo.save_file.hint         := stockobjects.captions[sc_save];
+      debuggerfo.code_beauty.hint       := stockobjects.captions[sc_beautifier];
+      debuggerfo.procedure_list.hint    := stockobjects.captions[sc_proclist];
+      debuggerfo.find_in_edit.hint      := stockobjects.captions[sc_searchincurrentfile];
+      debuggerfo.project_save.hint      := stockobjects.captions[sc_save];
+      debuggerfo.project_option.hint    := projectoptionstext(po_projectoptions);
+      debuggerfo.project_make.hint      := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_make] + ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_start.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_start.hint     := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_debugrun] + ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_save.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_save.hint      := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_save] + ' ' + ExtractFilename(theprojectname) + ' ';
       debuggerfo.project_interrupt.hint := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_abortmake] + ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_next.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_next.hint      := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_step.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_step.hint      := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_finish.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_finish.hint    := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_finish] + ' ' + ExtractFilename(theprojectname) + ' ';
       debuggerfo.project_next_instruction.hint := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_nextinstruction] + ' ' +
@@ -4936,17 +4912,28 @@ begin
         ' : ' + stockobjects.captions[sc_stepinstruction] + ' ' +
         stockobjects.captions[sc_assembler] + ' ' +
         ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_reset.hint := ' ' + mainformtext(ma_project) +
+      debuggerfo.project_reset.hint     := ' ' + mainformtext(ma_project) +
         ' : ' + stockobjects.captions[sc_reset] + ' ' +
         ExtractFilename(theprojectname) + ' ';
-      debuggerfo.edited_make.hint := ' ' + stockobjects.captions[sc_edited] +
+      debuggerfo.edited_make.hint       := ' ' + stockobjects.captions[sc_edited] +
         ' : ' + stockobjects.captions[sc_make] + ' ' + thefilename + ' ';
-      debuggerfo.edited_run.hint := ' ' + stockobjects.captions[sc_edited] +
+      debuggerfo.edited_run.hint        := ' ' + stockobjects.captions[sc_edited] +
         ' : ' + stockobjects.captions[sc_debugrun] + ' ' + thefilename + ' ';
-      debuggerfo.toggle_form_unit.hint := ' ' + stockobjects.captions[sc_edited] +
+      debuggerfo.toggle_form_unit.hint  := ' ' + stockobjects.captions[sc_edited] +
         ' : ' + stockobjects.captions[sc_toggleformunit] + ' ' + thefilename + ' ';
 
     end;
+    
+    conflangfo.english.frame.caption := stockobjects.captions[sc_english] + '    (en)';
+    conflangfo.russian.frame.caption := stockobjects.captions[sc_russian]+ '    (ru)';
+    conflangfo.french.frame.caption := stockobjects.captions[sc_french]+ '    (fr)';
+    conflangfo.german.frame.caption := stockobjects.captions[sc_german]+ '    (de)';
+    conflangfo.spanish.frame.caption := stockobjects.captions[sc_spanish]+ '    (es)';
+    conflangfo.setasdefault.frame.caption := stockobjects.captions[sc_setasdefault];
+     conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
+    conflangfo.grouplang.frame.caption := stockobjects.captions[sc_lang];    
+      conflangfo.caption := stockobjects.captions[sc_lang];    
+   
   end;
 end;
 
@@ -5480,18 +5467,22 @@ end;
 
 procedure tmainfo.onlang(const Sender: TObject);
 begin
-  MSEFallbackLang := '';
-  case Tmenuitem(Sender).Name of
-    'langen': MSEFallbackLang := 'en';
-    'langru': MSEFallbackLang := 'ru';
-    'langfr': MSEFallbackLang := 'fr';
-    'langde': MSEFallbackLang := 'de';
-    'langes': MSEFallbackLang := 'es';
-  end;
-  setlang(MSEFallbackLang);
-  confideufo.setlangextrasettings();
-  confcompilerfo.setlangcompilers();
-  confdebuggerfo.setlangdebuggers();
+
+  if MSEFallbackLang = 'en' then
+    conflangfo.english.Value := True
+  else if MSEFallbackLang = 'fr' then
+    conflangfo.french.Value  := True
+  else if MSEFallbackLang = 'de' then
+    conflangfo.german.Value  := True
+  else if MSEFallbackLang = 'ru' then
+    conflangfo.russian.Value := True
+  else if MSEFallbackLang = 'es' then
+    conflangfo.spanish.Value := True
+  else if MSEFallbackLang = 'en' then
+    conflangfo.english.Value := True;
+
+  conflangfo.Visible := True;
+  conflangloaded     := 1;
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
@@ -5502,20 +5493,25 @@ begin
   if isactivated = False then
   begin
     isactivated := True;
-    tmp         := gINI.ReadString('language', 'default', '');
+    //tmp         := gINI.ReadString('language', 'default', '');
 
-    if tmp <> '' then
+    if conflangfo.setasdefault.Value = True then
     begin
-      setlang(tmp);
-      mainmenu1.menu.itembynames(['settings', 'lang', 'langdefault']).state := [as_checked];
-      mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + tmp]).state := [as_checked];
-      MSEFallbacklang := tmp;
+      if conflangfo.english.Value = True then
+        MSEFallbackLang := 'en'
+      else if conflangfo.russian.Value = True then
+        MSEFallbackLang := 'ru'
+      else if conflangfo.french.Value = True then
+        MSEFallbackLang := 'fr'
+      else if conflangfo.german.Value = True then
+        MSEFallbackLang := 'de'
+      else if conflangfo.spanish.Value = True then
+        MSEFallbackLang := 'es';
+      setlang(MSEFallbacklang);
     end
     else if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
-    begin
-      mainmenu1.menu.itembynames(['settings', 'lang', 'lang' + MSEFallbackLang]).state := [as_checked];
       setlang(MSEFallbackLang);
-    end;
+
   end;
 end;
 

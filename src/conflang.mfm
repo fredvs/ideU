@@ -1,0 +1,161 @@
+object conflangfo: tconflangfo
+  visible = False
+  bounds_x = 514
+  bounds_y = 143
+  bounds_cx = 250
+  bounds_cy = 181
+  bounds_cxmin = 250
+  bounds_cymin = 181
+  bounds_cxmax = 322
+  bounds_cymax = 181
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    250
+    181
+  )
+  optionswindow = [wo_alwaysontop]
+  statfile = mainfo.mainstatfile
+  windowopacity = -Inf
+  moduleclassname = 'tmseform'
+  object grouplang: tgroupbox
+    frame.caption = 'Language'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      8
+      0
+      0
+    )
+    bounds_x = 16
+    bounds_y = 4
+    bounds_cx = 218
+    bounds_cy = 144
+    object english: tbooleaneditradio
+      frame.caption = 'English (en)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        79
+        2
+      )
+      bounds_x = 41
+      bounds_y = 27
+      bounds_cx = 92
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+      value = True
+    end
+    object russian: tbooleaneditradio
+      frame.caption = 'Russian (ru)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        79
+        2
+      )
+      taborder = 1
+      bounds_x = 41
+      bounds_y = 49
+      bounds_cx = 92
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+    end
+    object french: tbooleaneditradio
+      frame.caption = 'French (fr)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        71
+        2
+      )
+      taborder = 2
+      bounds_x = 41
+      bounds_y = 71
+      bounds_cx = 84
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+    end
+    object german: tbooleaneditradio
+      frame.caption = 'German (de)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        83
+        2
+      )
+      taborder = 3
+      bounds_x = 41
+      bounds_y = 94
+      bounds_cx = 96
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+    end
+    object spanish: tbooleaneditradio
+      frame.caption = 'Spanish (es)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        81
+        2
+      )
+      taborder = 4
+      bounds_x = 41
+      bounds_y = 116
+      bounds_cx = 94
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+    end
+  end
+  object ok: tbutton
+    taborder = 1
+    bounds_x = 180
+    bounds_y = 4
+    bounds_cx = 62
+    bounds_cy = 21
+    state = [as_localcaption, as_localonexecute]
+    caption = 'OK'
+    onexecute = oncok
+  end
+  object setasdefault: tbooleanedit
+    frame.caption = 'Set as default'
+    frame.captiondist = 4
+    frame.localprops = []
+    frame.localprops1 = [frl1_captiondist]
+    frame.outerframe = (
+      0
+      2
+      89
+      2
+    )
+    taborder = 2
+    bounds_x = 19
+    bounds_y = 154
+    bounds_cx = 102
+    bounds_cy = 17
+    statfile = mainfo.mainstatfile
+  end
+end

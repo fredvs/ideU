@@ -790,8 +790,14 @@ const
     'Toggle breakpoint enabled',            // sc_tooglebreakpointenable
     'Executed lines hint on/off',            // sc_execlinehinton
     'Please compile it first.',               // sc_compileitfirst
-    'Finish'                                // sc_finish
-  
+    'Finish',                                // sc_finish
+    'English',                                // sc_English
+    'Russian',                                // sc_Russian
+    'French',                                // sc_french
+    'German',                                // sc_german
+    'Spanish',                                // sc_spanish
+    'Set as default'                          // sc_setasdefault
+ 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

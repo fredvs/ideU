@@ -435,7 +435,7 @@ const
 
     );
 
-  ru_stockcaption: stockcaptionaty = (
+    ru_stockcaption: stockcaptionaty = (
     '',
     '- неверно',
     'Несоответствие формату',
@@ -688,9 +688,15 @@ const
      'Включить точку останова',           // sc_tooglebreakpointenable
      'Включение / выключение подсказки по выполненным строкам', // sc_execlinehinton
      'Пожалуйста, сначала скомпилируйте это.',               // sc_compileitfirst
-     'Готово'                          // sc_finish
-     
-        );
+     'Готово',                          // sc_finish
+     'Английский', // sc_English
+     'Русский', // sc_Russian
+     'Французский', // sc_french
+     'Немецкий', // sc_german
+     'Испанский',                                // sc_spanish
+     'Набор по умолчанию' // sc_setasdefault
+    );
+
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

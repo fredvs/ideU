@@ -559,9 +559,32 @@ const
     'Search in open files',            // sc_searchininopenfiles 
     'Search in project directory',      // sc_searchinprojectdir
     'Search in directories',            // sc_searchindirectories
-    'Include subdirectories'            // sc_includesubdir
-
+    'Include subdirectories',               // sc_includesubdir
+   
+    'Replace',                              // sc_replace
+    'Replace all',                          // sc_replace all
+    'Replace with',                         // sc_replacewith
+    'Prompt on replace',                    // sc_promptonreplace
+    'Components palette',                    // sc_componentspalette
+    'Find components',                       // sc_findcomponent
+    'Reset',                                 // sc_reset
+    'Step',                                 // sc_cstep
+    'Step instruction',                     // sc_stepinstruction
+    'Next instruction',                     // sc_nextinstruction
+    'Restart debugger',                     // sc_restartdebugger
+    'Toggle breakpoint',                    // sc_togglebreakpoint
+    'Toggle breakpoint enabled',            // sc_tooglebreakpointenable
+    'Executed lines hint on/off',            // sc_execlinehinton
+    'Please compile it first.',               // sc_compileitfirst
+    'Finish',                                // sc_finish
+    'English',                                // sc_English
+    'Russian',                                // sc_Russian
+    'French',                                // sc_french
+    'German',                                // sc_german
+    'Spanish'                                // sc_spanish
+   
     );
+
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

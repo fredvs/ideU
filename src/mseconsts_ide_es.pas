@@ -689,7 +689,13 @@ const
      'Alternar punto de interrupción habilitado', // sc_tooglebreakpointenable
      'Indicación de líneas ejecutadas activada / desactivada', // sc_execlinehinton
      'Por favor, compílelo primero.',               // sc_compileitfirst
-     'Finalizar'                              // sc_finish 
+     'Finalizar',                                // sc_finish
+     'Inglés', // sc_English
+     'Ruso', // sc_Russian
+     'Francés', // sc_french
+     'Alemán', // sc_german
+     'Español',                                // sc_spanish
+     'Establecido predeterminado' // sc_setasdefault 
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

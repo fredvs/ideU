@@ -685,8 +685,15 @@ const
      'Haltepunkt umschalten aktiviert',       // sc_tooglebreakpointenable
      'Ausgeführter Zeilenhinweis ein/aus',      // sc_execlinehinton
      'Bitte zuerst kompilieren.',               // sc_compileitfirst
-     'Finish'                              // sc_finish   
-      );
+     'Finish',                                // sc_finish
+     'Englisch', // sc_Englisch
+     'Russisch', // sc_Russisch
+     'Französisch', // sc_french
+     'Deutsch', // sc_german
+     'Spanisch',                                // sc_spanish
+     'Als Standard eingestellt'                          // sc_setasdefault
+ 
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin

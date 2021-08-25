@@ -20,6 +20,7 @@ uses
   mseconsts_ide_de,
   mseconsts_ide_es,
   mseconsts_ide_fr,
+  conflang,
   aboutform,
   confmsegui,
   confideu,
@@ -145,7 +146,10 @@ begin
     
   application.createform(tprojecttreefo, projecttreefo);
   projecttreefo.Caption := stockobjects.captions[sc_tree];
-    
+   
+   application.createform(tconflangfo, conflangfo);
+   conflangfo.Caption := stockobjects.captions[sc_lang];
+      
   application.createform(tfindinfilefo, findinfilefo);
    findinfilefo.Caption := stockobjects.captions[sc_find_infile];
    
@@ -193,6 +197,7 @@ begin
   dialogfilesfo.icon := mainfo.icon;
   findmessagefo.icon := mainfo.icon;
   aboutfo.icon := mainfo.icon;
-
+  conflangfo.icon := mainfo.icon;
+  
   application.run;
 end.

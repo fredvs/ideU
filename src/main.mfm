@@ -1354,59 +1354,10 @@ object mainfo: tmainfo
             onexecute = viewconfideuexecute
           end        
           item
-            submenu.count = 7
-            submenu.items = <            
-              item
-                caption = 'English'
-                name = 'langen'
-                state = [as_checked, as_localchecked, as_localcaption, as_localonexecute]
-                options = [mao_radiobutton, mao_shortcutcaption]
-                onexecute = onlang
-              end            
-              item
-                caption = 'Russian'
-                name = 'langru'
-                state = [as_localcaption, as_localtag, as_localonexecute]
-                options = [mao_radiobutton, mao_shortcutcaption]
-                tag = 1
-                onexecute = onlang
-              end            
-              item
-                caption = 'French'
-                name = 'langfr'
-                state = [as_localcaption, as_localtag, as_localonexecute]
-                options = [mao_radiobutton, mao_shortcutcaption]
-                tag = 2
-                onexecute = onlang
-              end            
-              item
-                caption = 'German'
-                name = 'langde'
-                state = [as_localcaption, as_localtag, as_localonexecute]
-                options = [mao_radiobutton, mao_shortcutcaption]
-                tag = 3
-                onexecute = onlang
-              end            
-              item
-                caption = 'Spanish'
-                name = 'langes'
-                state = [as_localcaption, as_localtag, as_localonexecute]
-                options = [mao_radiobutton, mao_shortcutcaption]
-                tag = 4
-                onexecute = onlang
-              end            
-              item
-                options = [mao_separator, mao_shortcutcaption]
-              end            
-              item
-                caption = 'Set as default'
-                name = 'langdefault'
-                state = [as_localchecked, as_localcaption]
-                options = [mao_checkbox, mao_shortcutcaption]
-              end>
             caption = 'Language'
             name = 'lang'
-            state = [as_localcaption]
+            state = [as_localcaption, as_localonexecute]
+            onexecute = onlang
           end        
           item
             submenu.count = 2
