@@ -180,8 +180,7 @@ const
     'Almacén de componentes',
     'Proceso de conexión',
     'Cargando'
-    );
-    
+    );    
    
   es_mainformtext: mainformaty = (
       'Referencias no resueltas en',
@@ -430,8 +429,11 @@ const
     'Nueva forma', // po_newform
     'Instrumentos', // po_tools
     'Almacen', // po_storage
-    'Infos' // po_infos
-
+    'Infos', // po_infos
+     'Nombre completo del proyecto', // po_projectfullname
+     'Creador', // po_creator
+     'Licencia', // po_license
+     'Fecha de creación' // po_projectdate
     );
 
   es_stockcaption: stockcaptionaty = (

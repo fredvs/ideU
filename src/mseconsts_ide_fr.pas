@@ -467,8 +467,12 @@ const
     'Nouvelle Forme',                                  // po_newform
     'Outils',                                          // po_tools
     'Rangement',                                       // po_storage
-    'Infos'                                            // po_infos
-
+    'Infos',                                            // po_infos
+     'Nom complet du projet', // po_projectfullname
+     'Créateur', // po_creator
+     'Licence', // po_license
+     'Date de création' // po_projectdate
+     
     );
 
   fr_stockcaption: stockcaptionaty = (

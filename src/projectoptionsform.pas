@@ -3803,6 +3803,14 @@ begin
   ttabpage15.Caption := projectoptionstext(po_tools);
   ttabpage20.Caption := projectoptionstext(po_storage);
   ttabpage23.Caption := projectoptionstext(po_infos);
+  
+  project_name.frame.Caption := projectoptionstext(po_projectfullname);
+  project_creator.frame.Caption := projectoptionstext(po_creator);
+  project_license.frame.Caption := projectoptionstext(po_license);
+  project_date.frame.Caption := projectoptionstext(po_projectdate);
+ 
+  project_copyright.frame.Caption := stockobjects.captions[sc_copyright] ;
+  project_comment.frame.Caption := projectoptionstext(po_comments);
 
 end;
 

@@ -5492,7 +5492,14 @@ begin
   else if MSEFallbackLang = 'en' then
     conflangfo.english.Value := True;
 
-  conflangfo.Visible := True;
+   if ismodal then
+      conflangfo.Show(True)
+    else
+    begin
+      conflangfo.Show;
+      conflangfo.bringtofront;
+    end;
+  
   conflangloaded     := 1;
 end;
 

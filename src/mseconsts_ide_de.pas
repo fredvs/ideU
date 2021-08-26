@@ -426,8 +426,12 @@ const
     'Neue Form', // po_newform
     'Werkzeuge', // po_tools
     'Lagerung', // po_storage
-    'Infos' // po_infos
-
+    'Infos', // po_infos
+     'Vollständiger Projektname', // po_projectfullname
+     'Schöpfer', // po_creator
+     'Lizenz', // po_license
+     'Erstellungsdatum' // po_projectdate
+     
     );
 
 

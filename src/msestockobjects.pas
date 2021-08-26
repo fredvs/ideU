@@ -351,7 +351,8 @@ type
     po_macros, po_selectactivegroupgrid, po_fontaliaspage, po_designers,
     po_usercolors, po_copycolor, po_formatmacro, po_formatmacrohint,
     po_templates, po_newproject, po_scriptbeforecopy, po_scriptaftercopy,
-    po_newfile, po_newform, po_tools, po_storage, po_infos
+    po_newfile, po_newform, po_tools, po_storage, po_infos,po_projectfullname,
+    po_creator,po_license,po_projectdate
 
     );
 

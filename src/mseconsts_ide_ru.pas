@@ -431,8 +431,11 @@ const
     'Новая форма',        // po_newform
     'Инструменты',       // po_tools
     'Хранилище',           // po_storage
-    'Информация'          // po_infos
-
+    'Информация',          // po_infos
+     'Полное название проекта', // po_projectfullname
+     'Создатель', // po_creator
+     'Лицензия', // po_license
+     'Дата создания' // po_projectdate
     );
 
     ru_stockcaption: stockcaptionaty = (

@@ -508,7 +508,11 @@ const
     'New Form',                         // po_newform
     'Tools',                            // po_tools
     'Storage',                          // po_storage
-    'Infos'                             // po_infos
+    'Infos',                             // po_infos
+    'Full name of project',             // po_projectfullname
+    'Creator',                           // po_creator
+    'License',                             // po_license
+    'Date of creation'                             // po_projectdate
 
     );
     
