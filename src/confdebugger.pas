@@ -6,6 +6,7 @@ interface
 uses
   mseconsts_ide,
   mseconsts_ide_ru,
+  mseconsts_ide_pt,
   mseconsts_ide_de,
   mseconsts_ide_es,
   mseconsts_ide_fr,

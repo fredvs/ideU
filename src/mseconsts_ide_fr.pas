@@ -735,6 +735,7 @@ const
      'Français', // sc_french
      'Allemand', // sc_german
      'Espagnol',                                // sc_spanish
+     'Portugais',                             //sc_portuguese
      'Définir par défaut',                          // sc_setasdefault
      'Hôte',                                   // sc_host
      'Droits d'#8217'auteur'                          // sc_copyright

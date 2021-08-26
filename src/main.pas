@@ -30,64 +30,16 @@ interface
 {$endif}
 
 uses
-  mseconsts_ide_ru,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
-  msearrayutils,
-  aboutform,
-  plugmanager,
-  fpg_iniutils_ideu,
-  msetimer,
-  mseformatstr,
-  mseconsts_ide,
-  dialogfiles,
-  mseforms,
-  mseguiglob,
-  msegui,
-  msegdbutils,
-  mseactions,
-  sak_mse,
-  msefileutils,
-  msedispwidgets,
-  msedataedits,
-  msestat,
-  msestatfile,
-  msemenus,
-  msestockobjects,
-  msebitmap,
-  msegrids,
-  msefiledialogx,
-  msetypes,
-  sourcepage,
-  msedesignintf,
-  msedesigner,
-  Classes,
-  mclasses,
-  mseclasses,
-  msegraphutils,
-  typinfo,
-  msedock,
-  SysUtils,
-  msesysenv,
-  msemacros,
-  msestrings,
-  msepostscriptprinter,
-  msegraphics,
-  mseglob,
-  msestream,
-  msepointer,
-  mseprocmonitorcomp,
-  msesystypes,
-  mserttistat,
-  msedatalist,
-  mselistbrowser,
-  projecttreeform,
-  msepipestream,
-  msestringcontainer,
-  msesys,
-  mseedit,
-  msewidgets;
+ mseconsts_ide_ru,mseconsts_ide_pt,mseconsts_ide_de,mseconsts_ide_es,
+ mseconsts_ide_fr,msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,
+ msetimer,mseformatstr,mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,
+ msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
+ msestat,msestatfile,msemenus,msestockobjects,msebitmap,msegrids,msefiledialogx,
+ msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,mseclasses,
+ msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,msestrings,
+ msepostscriptprinter,msegraphics,mseglob,msestream,msepointer,
+ mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
+ projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets;
 
 const
   versiontext = '2.5.0';
@@ -4940,10 +4892,12 @@ begin
     conflangfo.french.frame.caption := stockobjects.captions[sc_french]+ '    (fr)';
     conflangfo.german.frame.caption := stockobjects.captions[sc_german]+ '    (de)';
     conflangfo.spanish.frame.caption := stockobjects.captions[sc_spanish]+ '    (es)';
+    conflangfo.portuguese.frame.caption := stockobjects.captions[sc_portuguese]+ '    (pt)';
+  
     conflangfo.setasdefault.frame.caption := stockobjects.captions[sc_setasdefault];
      conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
     conflangfo.grouplang.frame.caption := stockobjects.captions[sc_lang];    
-      conflangfo.caption := stockobjects.captions[sc_lang];    
+    conflangfo.caption := stockobjects.captions[sc_lang];    
    
   end;
 end;
@@ -4951,7 +4905,10 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-
+  application.processmessages;
+  onactiv(sender);
+ // ttimer2.enabled := true;
+  
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -5472,6 +5429,7 @@ begin
   begin
     ttimer1.Enabled := False;
     splashfo.Close;
+    onactiv(sender);
   end;
 
 end;
@@ -5489,8 +5447,9 @@ begin
     conflangfo.russian.Value := True
   else if MSEFallbackLang = 'es' then
     conflangfo.spanish.Value := True
-  else if MSEFallbackLang = 'en' then
-    conflangfo.english.Value := True;
+  else if MSEFallbackLang = 'pt' then
+    conflangfo.portuguese.Value := True;
+    
 
    if ismodal then
       conflangfo.Show(True)
@@ -5504,17 +5463,18 @@ begin
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
-var
-  tmp: string = '';
+//var
+  //tmp: string = '';
 begin
 
   if isactivated = False then
   begin
     isactivated := True;
     //tmp         := gINI.ReadString('language', 'default', '');
+    conflangfo.visible:= false;
 
     if conflangfo.setasdefault.Value = True then
-    begin
+     begin
       if conflangfo.english.Value = True then
         MSEFallbackLang := 'en'
       else if conflangfo.russian.Value = True then
@@ -5524,10 +5484,13 @@ begin
       else if conflangfo.german.Value = True then
         MSEFallbackLang := 'de'
       else if conflangfo.spanish.Value = True then
-        MSEFallbackLang := 'es';
-      setlang(MSEFallbacklang);
+        MSEFallbackLang := 'es'
+      else if conflangfo.portuguese.Value = True then
+        MSEFallbackLang := 'pt';  
+      setlang(MSEFallbackLang);
     end
-    else if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+    else if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or
+     (MSEFallbackLang = 'pt') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
       setlang(MSEFallbackLang);
 
   end;

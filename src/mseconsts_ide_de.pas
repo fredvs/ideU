@@ -695,6 +695,7 @@ const
      'Französisch', // sc_french
      'Deutsch', // sc_german
      'Spanisch',                                // sc_spanish
+     'Portugiesisch',                             //sc_portuguese
      'Als Standard eingestellt',                          // sc_setasdefault
      'Host',                                   // sc_host
      'Urheberrecht'                          // sc_copyright

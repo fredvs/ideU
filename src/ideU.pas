@@ -17,6 +17,7 @@ uses
   msestockobjects,
   mseconsts_ide,
   mseconsts_ide_ru,
+  mseconsts_ide_pt,
   mseconsts_ide_de,
   mseconsts_ide_es,
   mseconsts_ide_fr,
@@ -66,31 +67,22 @@ uses
 
 var
   MSELang : string = '';
-  tmp : string = ''; 
   
 begin
 
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
- 
-  tmp := gINI.ReadString('language', 'default', '');
-
-  if tmp <> '' then
-  begin
-    setlangconsts(tmp);
-    MSEFallbacklang := tmp;
-  end
-  else
-  begin
-   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
+ {
+   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or
+      (MSEFallbackLang = 'pt') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
     begin
       setlangconsts(MSEFallbackLang);
     end;
-  end;
- 
+ }
  //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
 //  'ideu_i18n_'+ MSEFallbackLang,true) then
  
-// setlangconsts(MSEFallbackLang);
+  setlangconsts(MSEFallbackLang);
+   
    nozorderhandling := true;
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],

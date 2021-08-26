@@ -23,7 +23,6 @@ type
 
   mainformaty  = array[mainformty] of msestring;
   pmainformaty = ^mainformaty;
-
   
   sourceformaty  = array[sourceformty] of msestring;
   psourceformaty = ^sourceformaty;
@@ -48,11 +47,11 @@ type
   pdefaultgeneratortextty   = ^defaultgeneratortextty;
 
   langty = (la_none, la_en, la_de, la_ru, la_es, la_uz, la_id, la_zh,
-    la_fr);
+    la_fr, la_pt);
 
 const
   langnames: array[langty] of string = (
-    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh', 'fr');
+    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh', 'fr', 'pt');
 
 function mainformtext(const index: mainformty): msestring;
 function sourceformtext(const index: sourceformty): msestring;
@@ -223,7 +222,6 @@ const
       'Load Window Layout',
       'Docking area'
     );   
-    
 
   en_actionsmoduletext: actionsmoduleaty = (
     'Configure ideU',
@@ -800,6 +798,7 @@ const
     'French',                                // sc_french
     'German',                                // sc_german
     'Spanish',                                // sc_spanish
+    'Portuguese',                             //sc_portuguese
     'Set as default',                          // sc_setasdefault
     'Host',                                   // sc_host
     'Copyright'                          // sc_copyright

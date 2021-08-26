@@ -5,7 +5,7 @@ uses
  msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus,
  msegui,msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
  msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob,
- msescrollbar;
+ msescrollbar, msestatfile;
 type
  tconflangfo = class(tmseform)
    grouplang: tgroupbox;
@@ -16,10 +16,11 @@ type
    german: tbooleaneditradio;
    spanish: tbooleaneditradio;
    setasdefault: tbooleanedit;
+   portuguese: tbooleaneditradio;
+   
    procedure onchangelang(const sender: TObject);
-   procedure onsetval(const sender: TObject; var avalue: Boolean;
-                   var accept: Boolean);
    procedure oncok(const sender: TObject);
+   procedure oncreat(const sender: TObject);
  end;
 var
  conflangloaded : shortint = 0 ;
@@ -40,6 +41,8 @@ begin
   if french.value = true then MSEFallbackLang := 'fr' else
   if german.value = true then MSEFallbackLang := 'de' else
   if spanish.value = true then MSEFallbackLang := 'es';
+  if portuguese.value = true then MSEFallbackLang := 'pt';
+ 
  
   mainfo.setlang(MSEFallbackLang);
   confideufo.setlangextrasettings();
@@ -49,16 +52,15 @@ end;
 
 end;
 
-procedure tconflangfo.onsetval(const sender: TObject; var avalue: Boolean;
-               var accept: Boolean);
-begin
-onchangelang(Sender);
-end;
-
 procedure tconflangfo.oncok(const sender: TObject);
 begin
-onchangelang(Sender);
+//onchangelang(Sender);
 close;
+end;
+
+procedure tconflangfo.oncreat(const sender: TObject);
+begin
+visible := false;
 end;
 
 end.

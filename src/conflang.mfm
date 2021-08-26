@@ -1,24 +1,24 @@
 object conflangfo: tconflangfo
   visible = False
-  bounds_x = 514
-  bounds_y = 143
+  bounds_x = 509
+  bounds_y = 144
   bounds_cx = 300
-  bounds_cy = 181
+  bounds_cy = 204
   bounds_cxmin = 300
-  bounds_cymin = 181
+  bounds_cymin = 204
   bounds_cxmax = 300
-  bounds_cymax = 181
+  bounds_cymax = 204
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     300
-    181
+    204
   )
-  optionswindow = [wo_alwaysontop]
   statfile = mainfo.mainstatfile
   windowopacity = -Inf
+  oncreated = oncreat
   moduleclassname = 'tmseform'
   object grouplang: tgroupbox
     frame.caption = 'Language'
@@ -33,7 +33,7 @@ object conflangfo: tconflangfo
     bounds_x = 16
     bounds_y = 4
     bounds_cx = 269
-    bounds_cy = 144
+    bounds_cy = 165
     object english: tbooleaneditradio
       frame.caption = 'English (en)'
       frame.captiondist = 4
@@ -129,6 +129,25 @@ object conflangfo: tconflangfo
       statfile = mainfo.mainstatfile
       onchange = onchangelang
     end
+    object portuguese: tbooleaneditradio
+      frame.caption = 'Portuguese (pt)'
+      frame.captiondist = 4
+      frame.localprops = []
+      frame.localprops1 = [frl1_captiondist]
+      frame.outerframe = (
+        0
+        2
+        101
+        2
+      )
+      taborder = 5
+      bounds_x = 41
+      bounds_y = 137
+      bounds_cx = 114
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      onchange = onchangelang
+    end
   end
   object ok: tbutton
     taborder = 1
@@ -153,7 +172,7 @@ object conflangfo: tconflangfo
     )
     taborder = 2
     bounds_x = 19
-    bounds_y = 154
+    bounds_y = 178
     bounds_cx = 102
     bounds_cy = 17
     statfile = mainfo.mainstatfile

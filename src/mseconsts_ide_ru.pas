@@ -697,6 +697,7 @@ const
      'Французский', // sc_french
      'Немецкий', // sc_german
      'Испанский',                                // sc_spanish
+     'Португальский',                             //sc_portuguese
      'Набор по умолчанию',                          // sc_setasdefault
      'Хост', // sc_host
      'Авторское право' // sc_copyright

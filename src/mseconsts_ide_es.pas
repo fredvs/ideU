@@ -696,7 +696,8 @@ const
      'Ruso', // sc_Russian
      'Francés', // sc_french
      'Alemán', // sc_german
-     'Español',                                // sc_spanish
+     'Español',                                // sc_spanis
+     'Portugués',                             //sc_portuguese
      'Establecido predeterminado',            // sc_setasdefault
      'Anfitrión',                                   // sc_host
      'Derechos de autor'                          // sc_copyright
