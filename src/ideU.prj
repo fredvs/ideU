@@ -1598,18 +1598,23 @@ findhistory=20
  language
  ok
 findoptions=1
-editpos=2
+editpos=3
+ 0,-1073741823
  0,0
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=2
+ ${PROJECTDIR}/ideU.pas
+relpaths=3
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=2
+ ideU.pas
+ismoduletexts=3
+ 0
  0
  0
 modules=3
@@ -1630,7 +1635,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=1
 [layout]
 windowlayout=562
  [mainfo.basedock]
@@ -1788,7 +1793,7 @@ windowlayout=562
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2091,11 +2096,11 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
  history=20
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/conflang.pas
@@ -2135,7 +2140,7 @@ windowlayout=562
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

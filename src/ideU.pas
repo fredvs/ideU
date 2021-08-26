@@ -81,7 +81,7 @@ begin
  //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
 //  'ideu_i18n_'+ MSEFallbackLang,true) then
  
-  setlangconsts(MSEFallbackLang);
+ // setlangconsts(MSEFallbackLang);
    
    nozorderhandling := true;
 
