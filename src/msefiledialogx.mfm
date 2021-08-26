@@ -215,9 +215,9 @@ object filedialogxfo: Tfiledialogxfo
     taborder = 2
     hint = 'Parent directory'
     onshowhint = buttonshowhint
-    bounds_x = 160
+    bounds_x = 104
     bounds_y = 1
-    bounds_cx = 77
+    bounds_cx = 50
     bounds_cy = 30
     options = [bo_executeonclick, bo_executeonkey, bo_executeonshortcut, bo_executedefaultonenterkey, bo_candefocuswindow]
     state = [as_localcaption, as_localimagelist, as_localimagenr, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
@@ -251,7 +251,7 @@ object filedialogxfo: Tfiledialogxfo
     onshowhint = buttonshowhint
     bounds_x = 2
     bounds_y = 1
-    bounds_cx = 77
+    bounds_cx = 50
     bounds_cy = 30
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowleft
@@ -283,9 +283,9 @@ object filedialogxfo: Tfiledialogxfo
     face.localprops = [fal_fadirection]
     taborder = 4
     onshowhint = buttonshowhint
-    bounds_x = 81
+    bounds_x = 53
     bounds_y = 1
-    bounds_cx = 77
+    bounds_cx = 50
     bounds_cy = 30
     state = [as_disabled, as_localdisabled, as_localimagelist, as_localimagenr, as_localcolor, as_localshortcut, as_localonexecute]
     glyph = stg_arrowright
@@ -480,9 +480,9 @@ object filedialogxfo: Tfiledialogxfo
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
     taborder = 9
-    bounds_x = 239
+    bounds_x = 156
     bounds_y = 1
-    bounds_cx = 99
+    bounds_cx = 139
     bounds_cy = 30
     state = [as_localcaption, as_localonexecute]
     caption = '&Home'
@@ -507,9 +507,9 @@ object filedialogxfo: Tfiledialogxfo
     face.localprops = [fal_fadirection]
     taborder = 10
     hint = 'Create a new directory'
-    bounds_x = 340
+    bounds_x = 297
     bounds_y = 1
-    bounds_cx = 98
+    bounds_cx = 141
     bounds_cy = 30
     state = [as_localcaption, as_localhint, as_localonexecute]
     caption = '&New dir'

@@ -172,7 +172,7 @@ finddialog=8
  x=911
  y=215
  cx=234
- cy=269
+ cy=313
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
@@ -214,46 +214,46 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=781
+ propcolwidthref=994
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=106
+ width4=135
  sortdescend4=0
- width5=84
+ width5=107
  sortdescend5=0
- width6=55
+ width6=70
  sortdescend6=0
- width7=55
+ width7=70
  sortdescend7=0
- width8=82
+ width8=108
  sortdescend8=0
- width9=318
+ width9=405
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=616
+ propcolwidthref=829
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=295
+ width3=397
  sortdescend3=0
- width4=311
+ width4=422
  sortdescend4=0
  sorted=0
- col=-1073741823
- row=-1073741823
- rowheight=17
+ col=0
+ row=0
+ rowheight=21
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=462
+ propcolwidthref=675
  width0=98
  sortdescend0=0
- width1=451
+ width1=664
  sortdescend1=0
  width2=50
  sortdescend2=0
@@ -267,11 +267,11 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=215
+ y=212
  xprop=1
- yprop=0.39708561020036
+ yprop=0.39741219963031
  [projectoptionsfo.macrogrid]
- propcolwidthref=554
+ propcolwidthref=767
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -284,7 +284,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=538
+ width11=751
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -296,31 +296,31 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=772
+ propcolwidthref=985
  width0=47
  sortdescend0=0
- width1=766
+ width1=979
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
- index=3
+ index=5
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=734
+ propcolwidthref=904
  width0=112
  sortdescend0=0
- width1=727
+ width1=897
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=2
  [projectoptionsfo.setting_tab]
- firsttab=0
- index=2
+ firsttab=1
+ index=8
  [projectoptionsfo]
  stackedunder=
  x=106
  y=92
- cx=832
+ cx=1045
  cy=608
 settaborder=15
  [setcreateorderfo.grid]
@@ -921,25 +921,31 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=8
  ACTIONSMO
  CONFIDEUFO
  CONFLANGFO
+ DIALOGFILESFO
  MAINFO
+ FILEDIALOGXFO
  STOCKDATA
  SOURCEFO
-moduletypes=6
+moduletypes=8
  TACTIONSMO
  TCONFIDEUFO
  TCONFLANGFO
+ TDIALOGFILESFO
  TMAINFO
+ TFILEDIALOGXFO
  TSTOCKDATA
  TSOURCEFO
-modulefiles=6
+modulefiles=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/conflang.mfm
+ /home/fred/ideu/src/dialogfiles.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialogx.mfm
  /home/fred/ideu/src/msestockobjects.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1610,21 +1616,23 @@ findhistory=20
  welc
  welcome
 findoptions=1
-editpos=14
+editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,4
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,4
  0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,13
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1639,7 +1647,9 @@ bookmarks10=0
 bookmarks11=0
 bookmarks12=0
 bookmarks13=0
-sourcefiles=14
+bookmarks14=0
+bookmarks15=0
+sourcefiles=16
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
@@ -1654,7 +1664,9 @@ sourcefiles=14
  ${PROJECTDIR}/mseconsts_ide_de.pas
  ${PROJECTDIR}/mseconsts_ide_es.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=14
+ ${PROJECTDIR}/dialogfiles.pas
+ ${PROJECTDIR}/msefiledialogx.pas
+relpaths=16
  ideU.pas
  actionsmodule.pas
  main.pas
@@ -1669,7 +1681,9 @@ relpaths=14
  mseconsts_ide_de.pas
  mseconsts_ide_es.pas
  conflang.pas
-ismoduletexts=14
+ dialogfiles.pas
+ msefiledialogx.pas
+ismoduletexts=16
  0
  0
  0
@@ -1684,28 +1698,38 @@ ismoduletexts=14
  0
  0
  0
-modules=6
+ 0
+ 0
+modules=8
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/msestockobjects.mfm
-moduleoptions=6
+ /home/fred/ideu/src/dialogfiles.mfm
+ /home/fred/ideu/src/msefiledialogx.mfm
+moduleoptions=8
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+ 0
+visiblemodules=8
  -1
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
+ -1
+ -1
+nomenumodules=8
+ 0
+ 0
  0
  0
  0
@@ -1713,7 +1737,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=14
+order=16
  0
  1
  2
@@ -1721,17 +1745,19 @@ order=14
  4
  5
  6
- 13
  12
- 8
  7
  10
- 11
+ 8
  9
-firsttab=6
-index=7
+ 13
+ 14
+ 15
+ 11
+firsttab=8
+index=14
 [layout]
-windowlayout=664
+windowlayout=704
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1876,7 +1902,7 @@ windowlayout=664
  x=0
  y=0
  cx=205
- cy=525
+ cy=512
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1947,7 +1973,7 @@ windowlayout=664
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2164,7 +2190,7 @@ windowlayout=664
  x=0
  y=0
  cx=1356
- cy=50
+ cy=63
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2175,12 +2201,12 @@ windowlayout=664
  mdistate=0
  nx=0
  ny=0
- ncx=1341
- ncy=47
+ ncx=1352
+ ncy=56
  x=0
  y=0
  cx=1356
- cy=45
+ cy=46
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2190,11 +2216,12 @@ windowlayout=664
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/conflang.pas
+ value=/home/fred/ideu/src/msefiledialogx.pas
  history=50
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide.pas
-  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_id.pas
@@ -2241,7 +2268,6 @@ windowlayout=664
   /home/fred/strumpract/src/status.pas
   /home/fred/uos/src/uos_portaudio.pas
   /home/fred/uos/uos.jpg
-  /home/fred/mseide-msegui/apps/ide/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2259,11 +2285,11 @@ windowlayout=664
  x=208
  y=0
  cx=1148
- cy=525
+ cy=512
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=14
+ order=16
   0
   1
   2
@@ -2271,15 +2297,17 @@ windowlayout=664
   4
   5
   6
-  13
   12
-  8
   7
   10
-  11
+  8
   9
- firsttab=6
- index=7
+  13
+  14
+  15
+  11
+ firsttab=8
+ index=14
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2315,9 +2343,9 @@ windowlayout=664
  ncx=0
  ncy=0
  x=0
- y=53
+ y=66
  cx=1356
- cy=525
+ cy=512
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2342,7 +2370,7 @@ windowlayout=664
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_dialogfilesfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2351,7 +2379,7 @@ windowlayout=664
  ncy=0
  x=514
  y=143
- cx=260
+ cx=310
  cy=181
  rcx=0
  rcy=0
@@ -2380,7 +2408,7 @@ windowlayout=664
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_conflangfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2391,6 +2419,44 @@ windowlayout=664
  y=57
  cx=198
  cy=85
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_dialogfilesfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=596
+ y=300
+ cx=392
+ cy=366
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogxfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=656
+ y=61
+ cx=618
+ cy=484
  rcx=0
  rcy=0
  wsize=0
