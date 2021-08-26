@@ -169,10 +169,10 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=911
- y=215
+ x=883
+ y=496
  cx=234
- cy=313
+ cy=269
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
@@ -360,9 +360,9 @@ programparameters=18
 settings=8
  [settings_form]
  x=292
- y=108
- cx=446
- cy=578
+ y=29
+ cx=661
+ cy=736
  wsize=0
  active=1
  visible=1
@@ -1593,8 +1593,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=aboutfo
+finddtext='#10'
 findhistory=20
+ '#10'
+ autofocus
  aboutfo
  couper
  full
@@ -1613,8 +1615,6 @@ findhistory=20
  english
  about
  proced
- welc
- welcome
 findoptions=1
 editpos=16
  0,-1073741823
@@ -1622,17 +1622,17 @@ editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,382
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,297
+ 0,9
  0,-1073741823
  0,-1073741823
- 0,8
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,6
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1738,24 +1738,24 @@ nomenumodules=8
  0
 [sourcefo.files_tab]
 order=16
- 15
- 0
- 1
- 2
- 3
- 4
- 5
- 6
- 13
- 12
- 8
- 7
- 10
- 14
  11
+ 14
+ 13
+ 8
+ 10
+ 12
  9
+ 15
+ 3
+ 6
+ 4
+ 0
+ 5
+ 2
+ 1
+ 7
 firsttab=0
-index=0
+index=4
 [layout]
 windowlayout=674
  [mainfo.basedock]
@@ -1771,13 +1771,13 @@ windowlayout=674
  ny=0
  ncx=0
  ncy=0
- x=66
- y=50
+ x=40
+ y=56
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1808,7 +1808,7 @@ windowlayout=674
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1902,7 +1902,7 @@ windowlayout=674
  x=0
  y=0
  cx=205
- cy=512
+ cy=432
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1973,7 +1973,7 @@ windowlayout=674
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2088,9 +2088,9 @@ windowlayout=674
  ncx=0
  ncy=0
  x=0
- y=581
- cx=1356
- cy=108
+ y=488
+ cx=1212
+ cy=112
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2189,8 +2189,8 @@ windowlayout=674
  ncy=0
  x=0
  y=0
- cx=1356
- cy=63
+ cx=1212
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2202,11 +2202,11 @@ windowlayout=674
  nx=0
  ny=0
  ncx=1356
- ncy=46
+ ncy=40
  x=0
  y=0
- cx=1356
- cy=46
+ cx=1212
+ cy=33
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2216,15 +2216,16 @@ windowlayout=674
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialogx.pas
+ value=/home/fred/ideu/src/mseconsts_ide_ru.pas
  history=20
   /home/fred/ideu/src/mseconsts_ide_de.pas
+  /home/fred/ideu/src/mseconsts_ide_ru.pas
+  /home/fred/ideu/src/msestockobjects.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/confdebugger.pas
-  /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_id.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_en.pas
@@ -2237,7 +2238,6 @@ windowlayout=674
   /home/fred/ideu/src/finddialogform.pas
   /home/fred/mseide-msegui-fred-lang/lib/common/mseconstslang/mseconsts_zh.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
-  /home/fred/ideu/src/mseconsts_ide_uz.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2254,30 +2254,30 @@ windowlayout=674
  ncy=0
  x=208
  y=0
- cx=1148
- cy=512
+ cx=1004
+ cy=432
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=16
-  15
-  0
-  1
-  2
-  3
-  4
-  5
-  6
-  13
-  12
-  8
-  7
-  10
-  14
   11
+  14
+  13
+  8
+  10
+  12
   9
+  15
+  3
+  6
+  4
+  0
+  5
+  2
+  1
+  7
  firsttab=0
- index=0
+ index=4
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2313,9 +2313,9 @@ windowlayout=674
  ncx=0
  ncy=0
  x=0
- y=66
- cx=1356
- cy=512
+ y=53
+ cx=1212
+ cy=432
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]

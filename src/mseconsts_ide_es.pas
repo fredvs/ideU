@@ -303,11 +303,11 @@ const
     'Soportes de marca', //  po_markbrackets
     'Números de línea', //  po_linenumbers
     'Marcar pares de palabras', //  po_markpairwords
-    'Recorte los espacios'#10'en blanco finales'#10'al guardar', //  po_trimtrailing
+    'Recorte los espacios en blanco'#10'finales al guardar', //  po_trimtrailing
     'Sangría automática', //  po_autoindent
     'Sin editor de fuentes', //  po_nosource
     'Sangría de tabulación', //  po_tabindent
-    'Pestaña de espacio', //  po_spacetab
+    'Pestaña de'#10'espacio', //  po_spacetab
     'Mostrar pestañas', //  po_showtabs
     'Fuente anti aliased', //  po_antialiasedfont
     'Codificación',   //  po_encoding

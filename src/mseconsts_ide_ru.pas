@@ -85,7 +85,7 @@ const
     'Установить диалог как модальный', //se_modaldial
     'Высота шрифта', //se_fontsize
     'Название шрифта', //se_fontname
-    'Нет подтверждения на удаление строки', //se_confirmdel
+    'Нет подтверждения удаление строки', //se_confirmdel
     'Мигающая вставка', //se_blinkcaret
     'Перекрасить холст', //se_repaintcanvas
     'Редактор исходного кода', //se_groupsourceeditor
@@ -304,11 +304,11 @@ const
     'Отметить скобки', //  po_markbrackets
     'Номера строк',      //  po_linenumbers
     'Отметить парные слова', //  po_markpairwords
-    'Обрезать конечные'#10'пробелы при'#10'сохранении', //  po_trimtrailing
+    'Обрезать пробелы'#10'при сохранении', //  po_trimtrailing
     'Автоматический отступ', //  po_autoindent
     'Нет редактора исходного кода', //  po_nosource
     'Отступ табуляции', //  po_tabindent
-    'Вкладка "Пробел"', //  po_spacetab
+    'Вкладка'#10'"Пробел"', //  po_spacetab
     'Показать вкладки', //  po_showtabs
     'Шрифт со сглаживанием', //  po_antialiasedfont
     'кодировка',           //  po_encoding
@@ -321,7 +321,7 @@ const
     'Табуляторы',         //  po_tabstops
     'Отступ',                 //  po_indent
     'Доп. прос.',            //  po_extraspace
-    'Дополнительное пространство между строками', //  po_extraspacehint
+    'Дополнительное пространство'#10'между строками', //  po_extraspacehint
     'Ширина',                 //  po_width
     'Рост',                     //  po_height
     'Шрифт',                   //  po_font

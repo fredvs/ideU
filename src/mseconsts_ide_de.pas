@@ -299,11 +299,11 @@ const
     'Klammern markieren', //  po_markbrackets
     'Linien Nummern', //  po_linenumbers
     'Paarwörter markieren', //  po_markpairwords
-    'Nachgestellte'#10'Leerzeichen beim'#10'Speichern abschneiden', //  po_trimtrailing
+    'Nachgestellte Leerzeichen'#10'beim Speichern abschneiden', //  po_trimtrailing
     'Automatischer Einzug', //  po_autoindent
     'Kein Quelleneditor', //  po_nosource
     'Tab-Einzug',   //  po_tabindent
-    'Registerkarte „Raum“', //  po_spacetab
+    'Registerkarte'#10'„Raum“', //  po_spacetab
     'Registerkarten anzeigen', //  po_showtabs
     'Anti-Aliasing-Schriftart', //  po_antialiasedfont
     'Codierung',    //  po_encoding
