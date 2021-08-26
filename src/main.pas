@@ -99,6 +99,7 @@ type
     convexdark: tfacecomp;
     concavedark: tfacecomp;
     ttimer1: ttimer;
+   ttimer2: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -4905,9 +4906,9 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-  application.processmessages;
-  onactiv(sender);
- // ttimer2.enabled := true;
+// application.processmessages;
+ // onactiv(sender);
+  ttimer2.enabled := true;
   
 end;
 

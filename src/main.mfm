@@ -2576,4 +2576,11 @@ object mainfo: tmainfo
     left = 624
     top = 15
   end
+  object ttimer2: ttimer
+    interval = 500000
+    options = [to_single]
+    ontimer = onactiv
+    left = 96
+    top = 15
+  end
 end
