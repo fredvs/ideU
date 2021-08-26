@@ -21,19 +21,12 @@ object conflangfo: tconflangfo
   oncreated = oncreat
   moduleclassname = 'tmseform'
   object grouplang: tgroupbox
-    frame.caption = 'Language'
     frame.localprops = []
     frame.localprops1 = []
-    frame.outerframe = (
-      0
-      8
-      0
-      0
-    )
     bounds_x = 16
-    bounds_y = 4
+    bounds_y = 12
     bounds_cx = 269
-    bounds_cy = 165
+    bounds_cy = 157
     object english: tbooleaneditradio
       frame.caption = 'English (en)'
       frame.captiondist = 4
@@ -46,7 +39,7 @@ object conflangfo: tconflangfo
         2
       )
       bounds_x = 41
-      bounds_y = 27
+      bounds_y = 14
       bounds_cx = 92
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -66,7 +59,7 @@ object conflangfo: tconflangfo
       )
       taborder = 1
       bounds_x = 41
-      bounds_y = 49
+      bounds_y = 36
       bounds_cx = 92
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -85,7 +78,7 @@ object conflangfo: tconflangfo
       )
       taborder = 2
       bounds_x = 41
-      bounds_y = 71
+      bounds_y = 58
       bounds_cx = 84
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -104,7 +97,7 @@ object conflangfo: tconflangfo
       )
       taborder = 3
       bounds_x = 41
-      bounds_y = 94
+      bounds_y = 81
       bounds_cx = 96
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -123,7 +116,7 @@ object conflangfo: tconflangfo
       )
       taborder = 4
       bounds_x = 41
-      bounds_y = 116
+      bounds_y = 103
       bounds_cx = 94
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -142,7 +135,7 @@ object conflangfo: tconflangfo
       )
       taborder = 5
       bounds_x = 41
-      bounds_y = 137
+      bounds_y = 125
       bounds_cx = 114
       bounds_cy = 17
       statfile = mainfo.mainstatfile

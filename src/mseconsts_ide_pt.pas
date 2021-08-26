@@ -257,35 +257,35 @@ const
     'Diretório pai do sakit', // se_sakitdir
     'Habilitar sak assistive ao carregar', // se_enableassistive
     'Layout do sistema', // se_groupsystemlayout
-    'Universelles Verzeichnislayout', // se_universalpath
-    'Nenhum processamento de pedido Z', // se_nozorder
-    'Use a tecla shift para selecionar uma palavra', // se_doubleclic
+    'Diretórios universais', // se_universalpath
+    'Nenhum pedido Z', // se_nozorder
+    'Use "Shift" para selecionar palavra', // se_doubleclic
     'Foco automático no menu principal', // se_autofocusmenu
-    'Caminho completo do projeto no título da janela', // se_fullpath
-    'Definir formas de diálogo como modal vs como ferramenta', // se_modaldial
-    'Altura da fonte', // se_fontsize
-    'Nome da fonte', // se_fontname
+    'Caminho completo no título', // se_fullpath
+    'Definir diálogo como modal', // se_modaldial
+    'Altura fonte', // se_fontsize
+    'Nome fonte', // se_fontname
     'Sem confirmação para deletar linha', // se_confirmdel
     'Circuito piscando', // se_blinkcaret
     'Redesenhar tela', // se_repaintcanvas
     'Editor de código-fonte', // se_groupsourceeditor
-    'Use essas opções em vez das opções do projeto', // se_usedefaulteditoroptions
-    'Adicionar espaço após a vírgula ao analisar automaticamente', // se_addwhiteaftercomma
+    'Use essas opções', // se_usedefaulteditoroptions
+    'Adicionar espaço após "," ao auto-analisar', // se_addwhiteaftercomma
     'Quando um arquivo foi alterado', // se_groupfilechange
-    'Sem caixa de diálogo => recarregar o novo', // se_filereload
-    'Sem caixa de diálogo => manter o antigo', // se_filenoload
-    'Uma caixa de diálogo pergunta o que fazer ...' // se_fileaskload
+    'Sem diálogo => recarregar o novo', // se_filereload
+    'Sem diálogo => manter o antigo', // se_filenoload
+    'Diálogo pergunta o que fazer ...' // se_fileaskload
     );
 
   pt_projectoptionstext: projectoptionsaty = (
     'Opções de projeto', // po_projectoptions
     'Editor', // po_editor
-    'Linha da margem direita', // po_rightmarginline
+    'Linha margem', // po_rightmarginline
     'Mark Brackets', // po_markbrackets
     'Números de linha', // po_linenumbers
     'Mark Pairwords', // po_markpairwords
-    'Trim trailing'#10'whitespace '#10'on salvar', // po_trimtrailing
-    'Auto Indent', // po_autoindent
+    'Cortar espaço branco'#10'on salvar', // po_trimtrailing
+    'Recuo automático', // po_autoindent
     'Sem editor de código-fonte', // po_nosource
     'Tab indent', // po_tabindent
     'Guia de espaço', // po_spacetab

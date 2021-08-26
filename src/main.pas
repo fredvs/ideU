@@ -4896,7 +4896,7 @@ begin
   
     conflangfo.setasdefault.frame.caption := stockobjects.captions[sc_setasdefault];
      conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
-    conflangfo.grouplang.frame.caption := stockobjects.captions[sc_lang];    
+  //  conflangfo.grouplang.frame.caption := stockobjects.captions[sc_lang];    
     conflangfo.caption := stockobjects.captions[sc_lang];    
    
   end;
