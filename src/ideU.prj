@@ -214,33 +214,33 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=779
+ propcolwidthref=812
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=106
+ width4=110
  sortdescend4=0
- width5=84
+ width5=88
  sortdescend5=0
- width6=55
+ width6=57
  sortdescend6=0
- width7=55
+ width7=57
  sortdescend7=0
- width8=81
+ width8=86
  sortdescend8=0
- width9=317
+ width9=330
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=614
+ propcolwidthref=647
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=294
+ width3=310
  sortdescend3=0
- width4=310
+ width4=327
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -250,10 +250,10 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=460
+ propcolwidthref=493
  width0=98
  sortdescend0=0
- width1=449
+ width1=482
  sortdescend1=0
  width2=50
  sortdescend2=0
@@ -271,7 +271,7 @@ options=114
  xprop=1
  yprop=0.39786856127886
  [projectoptionsfo.macrogrid]
- propcolwidthref=552
+ propcolwidthref=585
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -284,7 +284,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=536
+ width11=569
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -294,12 +294,12 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=770
+ propcolwidthref=803
  width0=47
  sortdescend0=0
- width1=764
+ width1=797
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
@@ -314,13 +314,13 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.setting_tab]
- firsttab=1
- index=11
+ firsttab=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=106
  y=92
- cx=830
+ cx=863
  cy=622
 settaborder=15
  [setcreateorderfo.grid]
@@ -935,7 +935,7 @@ makeoptionson=13
  4095
  4095
  1
- 202
+ 206
  2046
  4095
  192
@@ -1296,7 +1296,7 @@ line=30
  794
  909
  2516
- 5805
+ 5806
  1882
  6135
  194
@@ -1575,8 +1575,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=onactiv
+finddtext=conflang
 findhistory=20
+ conflang
  onactiv
  linha 
  adicionar
@@ -1588,7 +1589,6 @@ findhistory=20
  & 
  comment
  conflangfo.v
- conflang
  '#10'
  autofocus
  aboutfo
@@ -1600,8 +1600,8 @@ findhistory=20
 findoptions=1
 editpos=3
  0,-1073741823
- 0,0
  0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1635,7 +1635,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=2
 [layout]
 windowlayout=562
  [mainfo.basedock]
@@ -1793,7 +1793,7 @@ windowlayout=562
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1853,7 +1853,7 @@ windowlayout=562
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2096,12 +2096,12 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/msefiledialogx.pas
@@ -2140,7 +2140,7 @@ windowlayout=562
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

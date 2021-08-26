@@ -42,7 +42,7 @@ uses
  projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets;
 
 const
-  versiontext = '2.5.0';
+  versiontext = '2.6.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -5452,7 +5452,8 @@ begin
     conflangfo.spanish.Value := True
   else if MSEFallbackLang = 'pt' then
     conflangfo.portuguese.Value := True;
-    
+ 
+  conflangloaded     := 1;   
 
    if ismodal then
       conflangfo.Show(True)
@@ -5462,7 +5463,7 @@ begin
       conflangfo.bringtofront;
     end;
   
-  conflangloaded     := 1;
+ 
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
