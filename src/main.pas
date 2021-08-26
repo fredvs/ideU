@@ -487,7 +487,9 @@ begin
       else if (MSEFallbackLang = 'de') then
         SakGreeting('Willkommen bei ide U !')
       else if (MSEFallbackLang = 'ru') then
-        SakGreeting('Добро пожаловать в ide U !');
+        SakGreeting('Добро пожаловать в ide U !')
+      else if (MSEFallbackLang = 'pt') then
+        SakGreeting('Bem-vindo ao ide U !');  
 
       if sakloadlib(thedir) = 0 then
 
