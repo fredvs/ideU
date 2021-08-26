@@ -1623,16 +1623,16 @@ editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,4
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,8
  0,-1073741823
- 0,4
- 0,0
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,6
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1738,6 +1738,7 @@ nomenumodules=8
  0
 [sourcefo.files_tab]
 order=16
+ 15
  0
  1
  2
@@ -1745,19 +1746,18 @@ order=16
  4
  5
  6
+ 13
  12
+ 8
  7
  10
- 8
- 9
- 13
  14
- 15
  11
-firsttab=8
-index=14
+ 9
+firsttab=0
+index=0
 [layout]
-windowlayout=704
+windowlayout=674
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1808,7 +1808,7 @@ windowlayout=704
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2201,8 +2201,8 @@ windowlayout=704
  mdistate=0
  nx=0
  ny=0
- ncx=1352
- ncy=56
+ ncx=1356
+ ncy=46
  x=0
  y=0
  cx=1356
@@ -2217,7 +2217,8 @@ windowlayout=704
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/msefiledialogx.pas
- history=50
+ history=20
+  /home/fred/ideu/src/mseconsts_ide_de.pas
   /home/fred/ideu/src/dialogfiles.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
@@ -2227,7 +2228,6 @@ windowlayout=704
   /home/fred/ideu/src/mseconsts_ide_id.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_en.pas
-  /home/fred/ideu/src/mseconsts_ide_de.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/selecteditpageform.pas
   /home/fred/ideu/src/findinfilepage.mfm
@@ -2238,36 +2238,6 @@ windowlayout=704
   /home/fred/mseide-msegui-fred-lang/lib/common/mseconstslang/mseconsts_zh.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_uz.pas
-  /home/fred/ideu/src/commandlineform.pas
-  /home/fred/ideu/src/breakpointsform.pas
-  /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/msefiledialogx.pas
-  /home/fred/ideu/src/splash.pas
-  /home/fred/ideu/src/msestockobjects.pas
-  /home/fred/ideu/src/msestockobjects_ide.pas
-  /home/fred/ideu/src/msestockobjects_ide_mfm.pas
-  /home/fred/ideu/src/msestockobjects_ide.mfm
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialogres.pas
-  /home/fred/demo_mse/po2const2po/headerform_mfm.pas
-  /home/fred/demo_mse/po2const2po/po2const2po.prj
-  /home/fred/ideu/src/mseconsts_es.pas
-  /home/fred/ideu/src/mseconsts_ru.pas
-  /home/fred/ideu/src/mseconsts.pas
-  /home/fred/ideu/src/mseconsts_id.pas
-  /home/fred/ideu/src/mseconsts_zh.pas
-  /home/fred/ideu/src/mseconsts_uzcyr.pas
-  /home/fred/ideu/src/mseconsts_de.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msestockobjects.pas
-  /home/fred/ideu/src/mseconsts_fr.pas
-  /home/fred/demo_mse/po2const2po/mseguiintf.pas
-  /home/fred/mseide-msegui/lib/common/kernel/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts.pas
-  /home/fred/demo_mse/po2const2po/mseconsts2.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
-  /home/fred/strumpract/src/dialogfiles.pas
-  /home/fred/strumpract/src/status.pas
-  /home/fred/uos/src/uos_portaudio.pas
-  /home/fred/uos/uos.jpg
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2290,6 +2260,7 @@ windowlayout=704
  rcy=0
  [sourcefo.files_tab]
  order=16
+  15
   0
   1
   2
@@ -2297,17 +2268,16 @@ windowlayout=704
   4
   5
   6
+  13
   12
+  8
   7
   10
-  8
-  9
-  13
   14
-  15
   11
- firsttab=8
- index=14
+  9
+ firsttab=0
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2370,7 +2340,7 @@ windowlayout=704
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_dialogfilesfo_mse_
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2408,7 +2378,7 @@ windowlayout=704
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_conflangfo_mse_
+ stackedunder=_mse_dialogfilesfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2427,7 +2397,7 @@ windowlayout=704
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_filedialogxfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2446,7 +2416,7 @@ windowlayout=704
  [_mse_filedialogxfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
