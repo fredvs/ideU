@@ -697,19 +697,19 @@ makeoptions=13
  -vewinhq
  -dclass_bridge
 makeoptpurpose=13
- Define Object Pascal
- Zeos components
- Debug infos
- Re-build all
- Optimizations
  
- Windows application
- Garbage collector
- Add extended components
- Cobra Interface
- Output of units
- Verbosity
- Use Class Briddge
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -747,7 +747,7 @@ debuggerused=6
  Debugger 3
  Debugger 4
  None
-exeused=14
+exeused=15
  ${EXEEXT} (Default)
  No Extension
  .exe
@@ -756,6 +756,7 @@ exeused=14
  .prog
  .pyc
  .class
+ .java
  .so
  .dll
  .lib
@@ -844,7 +845,7 @@ forcezorder=0
 stripmessageesc=1
 copymessages=0
 closemessages=0
-enablepurpose=1
+enablepurpose=0
 enablesource=0
 checkmethods=1
 colorerror=-1610612717
@@ -921,21 +922,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
+modulenames=3
  ACTIONSMO
+ MAINFO
  SOURCEFO
-moduletypes=2
+moduletypes=3
  TACTIONSMO
+ TMAINFO
  TSOURCEFO
-modulefiles=2
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=13
  4095
  4095
  1
- 206
+ 202
  2046
  4095
  192
@@ -946,13 +950,7 @@ makeoptionson=13
  4095
  0
 compilerusedon=29
- 1587
- 4
- 8
- 256
- 0
- 64
- 128
+ 4095
  0
  0
  0
@@ -967,7 +965,13 @@ compilerusedon=29
  0
  0
  0
- 2048
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -976,16 +980,17 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3586
- 1
+ 4095
  0
  0
  0
- 508
-exeusedon=14
- 3903
  0
- 192
+ 0
+exeusedon=15
+ 4095
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1014,7 +1019,7 @@ project_creator=
 project_copyright=
 project_license=
 project_time=
-project_date=20:25:05 03/02/2012
+project_date=21:54:28 27/08/2021
 project_comment=
 aftcommandon=0
 unitdirson=6
@@ -1575,8 +1580,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=conflang
+finddtext=sc_spanish
 findhistory=20
+ sc_spanish
+ po_spanish
+ po_infos
  conflang
  onactiv
  linha 
@@ -1594,26 +1602,53 @@ findhistory=20
  aboutfo
  couper
  full
- sc_lang
- language
- ok
 findoptions=1
-editpos=3
+editpos=9
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,32
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,759
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=3
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/mseconsts_ide_en.pas
+ ${PROJECTDIR}/mseconsts_ide.pas
+ ${PROJECTDIR}/mseconsts_ide_fr.pas
+relpaths=9
  sourceform.pas
  actionsmodule.pas
  ideU.pas
-ismoduletexts=3
+ sourceform.pas
+ main.pas
+ actionsmodule.pas
+ mseconsts_ide_en.pas
+ mseconsts_ide.pas
+ mseconsts_ide_fr.pas
+ismoduletexts=9
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1626,18 +1661,28 @@ moduleoptions=3
  0
  0
 visiblemodules=3
- 0
+ -1
  -1
  -1
 nomenumodules=3
- -1
+ 0
  0
  0
 [sourcefo.files_tab]
+order=9
+ 0
+ 1
+ 2
+ 6
+ 8
+ 3
+ 5
+ 4
+ 7
 firsttab=0
-index=2
+index=7
 [layout]
-windowlayout=562
+windowlayout=568
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1661,16 +1706,12 @@ windowlayout=562
  active=1
  visible=1
  [findmessagefo.findtext]
- value=warning
- history=4
-  warning
-  Conversion between
-  mysqldyn
-  linux
+ value=
+ history=0
  [findmessagefo.casesensitive]
  value=0
  [findmessagefo.copytoclip]
- value=1
+ value=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -1853,7 +1894,7 @@ windowlayout=562
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1872,10 +1913,10 @@ windowlayout=562
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=477
- width0=212
+ propcolwidthref=242
+ width0=108
  sortdescend0=0
- width1=259
+ width1=128
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2078,15 +2119,15 @@ windowlayout=562
  useroptions=268582019
  parent=debuggerfo.container
  visible=1
- mdistate=0
+ mdistate=3
  nx=0
  ny=0
- ncx=1341
+ ncx=0
  ncy=0
  x=0
- y=0
+ y=46
  cx=1341
- cy=-2
+ cy=2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2096,18 +2137,15 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
+  /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/ideu/src/mseconsts_zh.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/ideu/src/dialogfiles.pas
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
-  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_id.pas
@@ -2118,6 +2156,9 @@ windowlayout=562
   /home/fred/ideu/src/selecteditpageform.pas
   /home/fred/ideu/src/findinfilepage.mfm
   /home/fred/ideu/src/findinfileform.pas
+  /home/fred/ideu/src/componentpaletteform.pas
+  /home/fred/ideu/src/confcompiler.pas
+  /home/fred/ideu/src/finddialogform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2139,8 +2180,18 @@ windowlayout=562
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=9
+  0
+  1
+  2
+  6
+  8
+  3
+  5
+  4
+  7
  firsttab=0
- index=2
+ index=7
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2149,7 +2200,7 @@ windowlayout=562
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2184,7 +2235,7 @@ windowlayout=562
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2199,7 +2250,7 @@ windowlayout=562
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

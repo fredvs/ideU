@@ -316,8 +316,125 @@ const
     'New Form',                 // po_newform
     'Tools',                    // po_tools
     'Storage',                  // po_storage
-    'Infos'                     // po_infos
+    'Infos',                             // po_infos
+    'Full name of project',             // po_projectfullname
+    'Creator',                           // po_creator
+    'License',                             // po_license
+    'Date of creation'                             // po_projectdate
 
+    );
+    
+  en_mainformtext: mainformaty = (
+      'Unresolved references in',
+      'to',
+      'Do you wish to search the formfile?',
+      'WARNING',
+      'Formfile for',
+      'Formfiles',
+      'Recursive form hierarchy for "',
+      'ERROR',
+      'Classtype',
+      'not found.',
+      'Project',
+      'is modified. Save?',
+      'Confirmation',
+      'Unable to open file "',
+      '*** Running ***',
+      'Downloading',
+      'Downloaded',
+      'Start gdb server command "',
+      '" running.',
+      'Start gdb Server',
+      'gdb server start error',
+      'gdb server start canceled.',
+      'Can not run start gdb command.',
+      'Uploadcommand "',
+      'Download ***ERROR***',
+      'Download finished.',
+      'Download canceled.',
+      'File "',
+      '" not found.',
+      '" exists.',
+      'New',
+      'Select ancestor',
+      'New form',
+      'Pascal Files',
+      'new',
+      'Can not load Project "',
+      'Select project template',
+      'Project files',
+      'All files',
+      'Select program file',
+      'Pascal program files',
+      'C program files',
+      'New Project',
+      'Can not start process',
+      'Process',
+      'running.',
+      'Process terminated',
+      'Process terminated normally.',
+      'Make ***ERROR***',
+      'Make OK.',
+      'Source has changed, do you wish to remake project?',
+      'Load Window Layout',
+      'Docking area'
+    );   
+    
+      en_projectoptionscontext: projectoptionsconaty = (
+    'Wrong encoding can damage your source files.',
+    'Do you wish to set encoding to',
+    '*** WARNING ***',
+    'Hangup',
+    'Interrupt',
+    'Quit',
+    'Illegal instruction',
+    'Trace trap',
+    'Abort',
+    'BUS error',
+    'Floating-point exception',
+    'Kill',
+    'User-defined signal 1',
+    'Segmentation violation',
+    'User-defined signal 2',
+    'Broken pipe',
+    'Alarm clock',
+    'Termination',
+    'Stack fault',
+    'Child status has changed',
+    'Continue',
+    'Stop, unblockable',
+    'Keyboard stop',
+    'Background read from tty',
+    'Background write to tty',
+    'Urgent condition on socket',
+    'CPU limit exceeded',
+    'File size limit exceeded',
+    'Virtual alarm clock',
+    'Profiling alarm clock',
+    'Window size change',
+    'I/O now possible',
+    'Power failure restart'
+    );  
+    
+      en_sourceformtext: sourceformaty = (
+      'File "',
+      '" has changed.',
+      'There are modifications in edit buffer also.',
+      'Do you wish to reload from disk?',
+      'Confirmation',
+      '<none>',
+      'Do you wish to replace:',
+      'with:',
+      '<new>',
+      'Syntaxdeffile:',
+      'Text',
+      'not found.',
+      'Restart from begin of file?',
+      'Cancel?',
+      'Do you wish to to replace this occurence?',
+      'Go to line number:',
+      'Find line',
+      'There are modifications in edit buffer also.'
     );
 
   en_stockcaption: stockcaptionaty = (
@@ -581,8 +698,11 @@ const
     'Russian',                                // sc_Russian
     'French',                                // sc_french
     'German',                                // sc_german
-    'Spanish'                                // sc_spanish
-   
+    'Spanish',                                // sc_spanish
+    'Portuguese',                             //sc_portuguese
+    'Set as default',                          // sc_setasdefault
+    'Host',                                   // sc_host
+    'Copyright'                          // sc_copyright
     );
 
 
@@ -602,6 +722,8 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_en], @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
+  registerlangconsts(langnames[la_en],
+  @en_mainformtext, @en_sourceformtext, @en_projectoptionscontext,
+   @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
 end.
 
