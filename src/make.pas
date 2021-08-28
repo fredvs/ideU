@@ -4,10 +4,10 @@ unit make;
 
 interface
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
- msestrings, msetypes, msesystypes, msegraphedits, msepipestream;
+ msestrings, msetypes, msesystypes, msegraphedits, msepipestream,
+  {$I useslang.inc};
 
 procedure domake(atag: integer);
 procedure abortmake;

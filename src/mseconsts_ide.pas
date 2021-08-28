@@ -52,7 +52,10 @@ type
 const
   langnames: array[langty] of string = (
     '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh', 'fr', 'pt');
-
+    
+  langnamesreg: array[0..6] of string = (
+    '', 'en', 'de', 'ru', 'es', 'fr', 'pt');
+ 
 function mainformtext(const index: mainformty): msestring;
 function sourceformtext(const index: sourceformty): msestring;
 function settingstext(const index: isettingsty): msestring;

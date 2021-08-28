@@ -13,11 +13,11 @@ unit mseintegerenter;
 
 interface
 uses
- {$I useslang.inc}
  msestockobjects,
  mseconsts_ide,
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
- msedialog,msestrings;
+ msedialog,msestrings,
+  {$I useslang.inc};
 
 type
  tintegerenterfo = class(tdialogform)

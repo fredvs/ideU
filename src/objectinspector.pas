@@ -30,15 +30,15 @@ interface
   {$endif}
 {$endif}
 uses
- {$I useslang.inc}
  mseconsts_ide,
  mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
  msedesigner,msetypes,msestrings,mselist,msegraphics, msedispwidgets,
- mserichstring;
-
+ mserichstring,
+  {$I useslang.inc};
+ 
 type
  tobjectinspectorfo = class;
 

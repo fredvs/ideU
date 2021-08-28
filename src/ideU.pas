@@ -14,7 +14,6 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads, {$endif} {$endif}
-  {$I useslang.inc}
   msestockobjects,
   mseconsts_ide,
   conflang,
@@ -59,7 +58,8 @@ uses
   msegraphutils,
   msefont,
   fpg_iniutils_ideu,
-  stringconsts;
+  stringconsts,
+  {$I useslang.inc};
 
 var
   MSELang : string = '';
@@ -67,17 +67,6 @@ var
 begin
 
  Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
- {
-   if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or
-      (MSEFallbackLang = 'pt') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
-    begin
-      setlangconsts(MSEFallbackLang);
-    end;
- }
- //if loadlangunit('.' + directoryseparator + 'languages' + directoryseparator +
-//  'ideu_i18n_'+ MSEFallbackLang,true) then
- 
- // setlangconsts(MSEFallbackLang);
    
    nozorderhandling := true;
 

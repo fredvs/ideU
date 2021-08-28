@@ -30,7 +30,6 @@ interface
 {$endif}
 
 uses
- {$I useslang.inc} 
  msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,
  msetimer,mseformatstr,mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,
  msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
@@ -39,7 +38,8 @@ uses
  msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,msestrings,
  msepostscriptprinter,msegraphics,mseglob,msestream,msepointer,
  mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
- projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets;
+ projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets,
+  {$I useslang.inc};
 
 const
   versiontext = '2.6.0';
@@ -5467,14 +5467,14 @@ begin
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
-//var
-  //tmp: string = '';
+var
+  x : integer;
+  isinside : boolean = false;
 begin
 
   if isactivated = False then
   begin
     isactivated := True;
-    //tmp         := gINI.ReadString('language', 'default', '');
     conflangfo.visible:= false;
 
     if conflangfo.setasdefault.Value = True then
@@ -5493,10 +5493,12 @@ begin
         MSEFallbackLang := 'pt';  
       setlang(MSEFallbackLang);
     end
-    else if (MSEFallbackLang = 'en') or (MSEFallbackLang = 'ru') or (MSEFallbackLang = 'fr') or
-     (MSEFallbackLang = 'pt') or (MSEFallbackLang = 'de') or (MSEFallbackLang = 'es') then
-      setlang(MSEFallbackLang);
-
+    else 
+    begin
+      for x := 0 to length(langnamesreg)-1 do
+        if MSEFallbackLang = langnamesreg[x] then isinside := true;
+      if isinside then setlang(MSEFallbackLang);
+    end;    
   end;
 end;
 

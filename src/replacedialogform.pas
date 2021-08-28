@@ -21,7 +21,6 @@ unit replacedialogform;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   mseguiglob,
@@ -34,7 +33,8 @@ uses
   msestat,
   msestatfile,
   mseglob,
-  projectoptionsform;
+  projectoptionsform,
+  {$I useslang.inc};
 
 type
   treplacedialogfo = class(tmseform)

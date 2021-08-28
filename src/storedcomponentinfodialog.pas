@@ -18,13 +18,14 @@ unit storedcomponentinfodialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- {$I useslang.inc} 
  mseconsts_ide,
  msestockobjects,
  mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,msegraphics,
  msegraphutils,mseevent,mseclasses,mseforms,componentstore,msesimplewidgets,
  msewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,
- mselistbrowser,msestrings,msesys,msetypes;
+ mselistbrowser,msestrings,msesys,msetypes,
+  {$I useslang.inc};
+  
 type
  tstoredcomponentinfodialogfo = class(tmseform)
    tbutton1: tbutton;

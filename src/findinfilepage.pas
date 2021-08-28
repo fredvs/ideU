@@ -20,12 +20,12 @@ unit findinfilepage;
 
 interface
 uses
-  {$I useslang.inc}
   msestockobjects,
   mseconsts_ide,
   msetypes,msegui,mseclasses,mseforms,msetabs,msetextedit,msewidgetgrid,msegrids,
  msethreadcomp,findinfileform,msesimplewidgets,msedispwidgets,msestrings,
- classes,mclasses,msestringcontainer;
+ classes,mclasses,msestringcontainer,
+  {$I useslang.inc};
 
 type
 

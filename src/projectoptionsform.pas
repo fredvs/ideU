@@ -10,7 +10,6 @@ unit projectoptionsform;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   mseforms,
@@ -69,7 +68,8 @@ uses
   mserichstring,
   mseact,
   msecalendardatetimeedit,
-  msegridsglob;
+  msegridsglob,
+  {$I useslang.inc};
 
 const
   defaultsourceprintfont = 'Courier';

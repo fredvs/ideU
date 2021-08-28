@@ -20,13 +20,13 @@ unit panelform;
 
 interface
 uses
- {$I useslang.inc}
  mseconsts_ide,
  msestockobjects,
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,
  msetypes{msestrings},
  msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,
- msestringcontainer;
+ msestringcontainer,
+  {$I useslang.inc};
 
 type
 

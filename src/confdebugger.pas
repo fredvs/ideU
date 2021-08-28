@@ -4,7 +4,6 @@ unit confdebugger;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   msetypes,
@@ -36,7 +35,8 @@ uses
   msestream,
   msestrings,
   msesys,
-  SysUtils;
+  SysUtils,
+  {$I useslang.inc};
 
 type
   tconfdebuggerfo = class(tmseform)

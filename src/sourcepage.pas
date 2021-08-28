@@ -17,7 +17,6 @@ interface
 {$endif}
 
 uses
- {$I useslang.inc}
  mseconsts_ide,
  msestockobjects,
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, confideu,
@@ -25,7 +24,8 @@ uses
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
  msegraphutils,msegrids,breakpointsform,pascaldesignparser,msefilechange,
  msestrings,mserichstring,mseparser,msegridsglob,projectoptionsform,msegraphics,
- msemenus,msesimplewidgets,msewidgets,mseintegerenter;
+ msemenus,msesimplewidgets,msewidgets,mseintegerenter,
+  {$I useslang.inc};
 
 type
  sourcepageasynctagty = (spat_showasform{,spat_checkbracket},spat_showsource);

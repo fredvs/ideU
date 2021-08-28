@@ -6,7 +6,6 @@ unit actionsmodule;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   Classes,
@@ -36,7 +35,8 @@ uses
   mclasses,
   mseificomp,
   mseificompglob,
-  mseifiglob;
+  mseifiglob,
+  {$I useslang.inc};
 
 type
   tactionsmo = class(tmsedatamodule)

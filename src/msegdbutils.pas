@@ -22,12 +22,12 @@ interface
  {$endif}
 {$endif}
 uses
- {$I useslang.inc}
  mseconsts_ide,
  msestockobjects,
  msestream,mseclasses,classes,mclasses,msetypes,mseevent,msehash,msepipestream,
- msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess;
-
+ msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess,
+  {$I useslang.inc};
+ 
 //todo: byte endianess for remote debugging
 
 type

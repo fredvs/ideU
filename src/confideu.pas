@@ -4,7 +4,6 @@ unit confideu;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   msetypes,
@@ -50,7 +49,8 @@ uses
   mseeditglob,
   mserichstring,
   msetextedit,
-  msefiledialogx;
+  msefiledialogx,
+  {$I useslang.inc};
 
 type
   tconfideufo = class(tmseform)

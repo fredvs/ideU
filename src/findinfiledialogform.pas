@@ -21,7 +21,6 @@ unit findinfiledialogform;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   finddialogform,
@@ -48,7 +47,8 @@ uses
   mseificompglob,
   mseifiglob,
   msescrollbar,
-  mseclasses;
+  mseclasses,
+  {$I useslang.inc};
 
 type
 

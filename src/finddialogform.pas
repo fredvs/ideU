@@ -21,7 +21,6 @@ unit finddialogform;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   mseforms,
@@ -53,7 +52,8 @@ uses
   msedropdownlist,
   mseedit,
   msestream,
-  SysUtils;
+  SysUtils,
+  {$I useslang.inc};
 
 type
 

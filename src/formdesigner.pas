@@ -31,7 +31,6 @@ interface
   {$endif}
 {$endif}
 uses
- {$I useslang.inc}
  mseconsts_ide,
  msestockobjects,
  msetypes,classes,mclasses,mseforms,mseguiglob,msegui,mseevent,msegraphutils,
@@ -40,7 +39,8 @@ uses
  typinfo,componentpaletteform,msestrings,msewidgets,msepointer,
  mseglob{$ifndef mse_no_db}{$ifdef FPC},msereport{$endif}{$endif},msetimer,
  mseact,mseactions,mseifiglob,msestringcontainer,mseificomp,mseificompglob,
- msesimplewidgets,msestat,msedock;
+ msesimplewidgets,msestat,msedock,
+  {$I useslang.inc};
 
 type
  areaty = (ar_none,ar_component,ar_componentmove,ar_selectrect,ht_topleft,

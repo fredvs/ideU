@@ -7,7 +7,6 @@ unit ideusettings;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   fpg_iniutils_ideu,
@@ -56,7 +55,8 @@ uses
   mserichstring,
   msetextedit,
   msecolordialog,
-  projectoptionsform;
+  projectoptionsform,
+  {$I useslang.inc};
 
 type
   settingsmacroty = (sma_fpcdir, sma_fpclibdir, sma_msedir, sma_mselibdir,

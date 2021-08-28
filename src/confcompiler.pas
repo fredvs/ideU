@@ -3,7 +3,6 @@ unit confcompiler;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
-  {$I useslang.inc}
   msestockobjects,
   mseconsts_ide,
   msetypes,
@@ -40,7 +39,8 @@ uses
   msescrollbar,
   msedragglob,
   msetabs,
-  mseact;
+  mseact,
+  {$I useslang.inc};
 
 type
   tconfcompilerfo = class(tmseform)

@@ -17,7 +17,6 @@ interface
 {$endif}
 
 uses
- {$I useslang.inc}
  mseconsts_ide,
  msestockobjects,
  confideu,ideusettings,commandorform,SysUtils,msetimer,msetextedit,
@@ -25,7 +24,8 @@ uses
  sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
  msemenus,mseactions,msestat,finddialogform,msestream,msefilechange,dateutils,
  breakpointsform,mseparser,msesimplewidgets,msegrids,msegraphutils,msegridsglob,
- msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets, mseclasses;
+ msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets, mseclasses,
+  {$I useslang.inc};
 
 type
   stringconsts = (

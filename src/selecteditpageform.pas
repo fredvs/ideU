@@ -21,7 +21,6 @@ unit selecteditpageform;
 interface
 
 uses
-  {$I useslang.inc}
   msestockobjects,
   mseconsts_ide,
   mseforms,
@@ -34,7 +33,8 @@ uses
   msestat,
   msesimplewidgets,
   mseglob,
-  msegridsglob;
+  msegridsglob,
+  {$I useslang.inc};
 
 type
   tselecteditpagefo = class(tmseform)

@@ -20,12 +20,12 @@ unit breakpointsform;
 
 interface
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
- msegui,msegraphics,mseguiglob,msestringcontainer;
+ msegui,msegraphics,mseguiglob,msestringcontainer,
+  {$I useslang.inc};
 
 type
  bkptstatety = (bkpts_none,bkpts_normal,bkpts_disabled,bkpts_error);

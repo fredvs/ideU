@@ -21,7 +21,6 @@ unit commandlineform;
 interface
 
 uses
-  {$I useslang.inc}
   mseconsts_ide,
   msestockobjects,
   msegui,
@@ -29,7 +28,8 @@ uses
   mseforms,
   msedataedits,
   msestringcontainer,
-  msestrings;
+  msestrings,
+  {$I useslang.inc};
 
 type
   stringconsts = (
