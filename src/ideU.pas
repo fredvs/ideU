@@ -14,13 +14,9 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads, {$endif} {$endif}
+  {$I useslang.inc}
   msestockobjects,
   mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
   conflang,
   aboutform,
   confmsegui,

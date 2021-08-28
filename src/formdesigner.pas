@@ -31,13 +31,9 @@ interface
   {$endif}
 {$endif}
 uses
+ {$I useslang.inc}
  mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
-  msestockobjects,
+ msestockobjects,
  msetypes,classes,mclasses,mseforms,mseguiglob,msegui,mseevent,msegraphutils,
  msegraphics,
  msedesignintf,mseclasses,msemenuwidgets,msemenus,msefiledialog,msedesigner,

@@ -20,13 +20,9 @@ unit panelform;
 
 interface
 uses
+ {$I useslang.inc}
  mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
-  msestockobjects,
+ msestockobjects,
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,
  msetypes{msestrings},
  msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,

@@ -30,12 +30,8 @@ interface
   {$endif}
 {$endif}
 uses
+ {$I useslang.inc}
  mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
  mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,

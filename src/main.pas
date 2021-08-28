@@ -30,8 +30,8 @@ interface
 {$endif}
 
 uses
- mseconsts_ide_ru,mseconsts_ide_pt,mseconsts_ide_de,mseconsts_ide_es,
- mseconsts_ide_fr,msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,
+ {$I useslang.inc} 
+ msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,
  msetimer,mseformatstr,mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,
  msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
  msestat,msestatfile,msemenus,msestockobjects,msebitmap,msegrids,msefiledialogx,

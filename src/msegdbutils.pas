@@ -22,13 +22,9 @@ interface
  {$endif}
 {$endif}
 uses
+ {$I useslang.inc}
  mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
-  msestockobjects,
+ msestockobjects,
  msestream,mseclasses,classes,mclasses,msetypes,mseevent,msehash,msepipestream,
  msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess;
 

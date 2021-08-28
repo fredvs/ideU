@@ -17,13 +17,9 @@ interface
 {$endif}
 
 uses
-  mseconsts_ide,
-  mseconsts_ide_ru,
-  mseconsts_ide_pt,
-  mseconsts_ide_de,
-  mseconsts_ide_es,
-  mseconsts_ide_fr,
-  msestockobjects,
+ {$I useslang.inc}
+ mseconsts_ide,
+ msestockobjects,
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, confideu,
  msegraphedits,mseevent,msehash,msebitmap,msetabs,msetypes,msedataedits,mseglob,
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
