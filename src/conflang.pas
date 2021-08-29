@@ -5,22 +5,22 @@ uses
  msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus,
  msegui,msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms,
  msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob,
- msescrollbar, msestatfile;
+ msescrollbar, msestatfile, mseact, msedataedits, msedragglob, msedropdownlist,
+ mseedit, msegrids, msegridsglob, msestream, msewidgetgrid, sysutils,
+ msedispwidgets, mserichstring;
 type
  tconflangfo = class(tmseform)
-   grouplang: tgroupbox;
    ok: tbutton;
-   english: tbooleaneditradio;
-   russian: tbooleaneditradio;
-   french: tbooleaneditradio;
-   german: tbooleaneditradio;
-   spanish: tbooleaneditradio;
    setasdefault: tbooleanedit;
-   portuguese: tbooleaneditradio;
    
+   gridlang: twidgetgrid;
+   gridlangcaption: tstringedit;
+   gridlangbool: tbooleaneditradio;
+   gridlangcode: tstringedit;
    procedure onchangelang(const sender: TObject);
    procedure oncok(const sender: TObject);
    procedure oncreat(const sender: TObject);
+   procedure oncellev(const sender: TObject; var info: celleventinfoty);
  end;
 var
  conflangloaded : shortint = 0 ;
@@ -33,17 +33,6 @@ procedure tconflangfo.onchangelang(const sender: TObject);
 begin
 if conflangloaded > 0 then
 begin
-
-  MSEFallbackLang := '';
-  
-  if english.value = true then MSEFallbackLang := 'en' else
-  if russian.value = true then MSEFallbackLang := 'ru' else
-  if french.value = true then MSEFallbackLang := 'fr' else
-  if german.value = true then MSEFallbackLang := 'de' else
-  if spanish.value = true then MSEFallbackLang := 'es';
-  if portuguese.value = true then MSEFallbackLang := 'pt';
- 
- 
   mainfo.setlang(MSEFallbackLang);
   confideufo.setlangextrasettings();
   confcompilerfo.setlangcompilers();
@@ -61,6 +50,38 @@ end;
 procedure tconflangfo.oncreat(const sender: TObject);
 begin
 visible := false;
+end;
+
+procedure tconflangfo.oncellev(const sender: TObject;
+               var info: celleventinfoty);
+var
+x : integer;
+
+begin
+if conflangloaded > 0 then
+begin
+if info.eventkind = cek_buttonpress then
+begin
+ MSEFallbackLang := '';
+ for x := 0 to gridlang.rowcount - 1 do
+if x = info.cell.row then 
+begin
+gridlangbool[x] := true;
+
+MSEFallbackLang := gridlangcode[x] ;
+
+ mainfo.setlang(MSEFallbackLang);
+ 
+  confideufo.setlangextrasettings();
+  confcompilerfo.setlangcompilers();
+  confdebuggerfo.setlangdebuggers();
+ 
+
+end
+else gridlangbool[x] := false;
+end;
+
+end;
 end;
 
 end.

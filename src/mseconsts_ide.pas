@@ -20,7 +20,10 @@ uses
   msetypes;
 
 type
-
+  
+  langnamesaty = array of msestring;
+  plangnamesaty = ^langnamesaty;
+  
   mainformaty  = array[mainformty] of msestring;
   pmainformaty = ^mainformaty;
   
@@ -46,16 +49,16 @@ type
   defaultgeneratortextty    = array[textgeneratorty] of textgeneratorfuncty;
   pdefaultgeneratortextty   = ^defaultgeneratortextty;
 
-  langty = (la_none, la_en, la_de, la_ru, la_es, la_uz, la_id, la_zh,
-    la_fr, la_pt);
+  langty = (la_none, la_en, la_ru, la_fr, la_de, la_es, la_pt, la_uz, la_id, la_zh);
 
 const
   langnames: array[langty] of string = (
-    '', 'en', 'de', 'ru', 'es', 'uz', 'id', 'zh', 'fr', 'pt');
+    '', 'en', 'ru', 'fr', 'de', 'es', 'pt', 'uz', 'id', 'zh');
     
-  langnamesreg: array[0..6] of string = (
-    '', 'en', 'de', 'ru', 'es', 'fr', 'pt');
+  langnamesreg: array of string = (
+    '', 'en', 'ru', 'fr', 'de', 'es', 'pt');
  
+function langnamestext(const index: integer): msestring;
 function mainformtext(const index: mainformty): msestring;
 function sourceformtext(const index: sourceformty): msestring;
 function settingstext(const index: isettingsty): msestring;
@@ -70,6 +73,7 @@ function uc(const index: integer): msestring; //get user caption
 
 procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
 procedure registerlangconsts(const Name: string;
+    const langnamespo : plangnamesaty;
     const mainformpo : pmainformaty;
     const sourceformpo : psourceformaty;
     const projectoptionsconpo: pprojectoptionsconaty;
@@ -98,6 +102,7 @@ uses
 type
   langinfoty = record
     Name: string;
+    langnamestext : plangnamesaty;
     mainformtext : pmainformaty;
     stockcaption: pstockcaptionaty;
     sourceformtext: psourceformaty;
@@ -124,7 +129,8 @@ var
   userlangs: array of userlanginfoty;
   userlang: userlanginfoty;
   langchangeprocs: array of langchangeprocty;
-
+  
+  
 const
   en_modalresulttext: defaultmodalresulttextty =
     ('',             //mr_none
@@ -796,16 +802,21 @@ const
     'Executed lines hint on/off',            // sc_execlinehinton
     'Please compile it first.',               // sc_compileitfirst
     'Finish',                                // sc_finish
-    'English',                                // sc_English
-    'Russian',                                // sc_Russian
-    'French',                                // sc_french
-    'German',                                // sc_german
-    'Spanish',                                // sc_spanish
-    'Portuguese',                             //sc_portuguese
     'Set as default',                          // sc_setasdefault
     'Host',                                   // sc_host
     'Copyright'                          // sc_copyright
     );
+
+const
+ en_langnamestext: array of msestring = (
+     'English',                                // 0_English
+    'Russian',                                // 1_Russian
+    'French',                                // 2_french
+    'German',                                // 3_german
+    'Spanish',                                // 4_spanish
+    'Portuguese'                            //5_portuguese
+    );
+  
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -822,12 +833,14 @@ const
     );
 
 procedure setitem(var item: langinfoty; const Name: string; 
+const langnamespo : plangnamesaty;
 const mainformpo: pmainformaty;
 const sourceformpo: psourceformaty;
 const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
   const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
 begin
   item.Name          := Name;
+  item.langnamestext := langnamespo;
   item.mainformtext := mainformpo;
   item.sourceformtext := sourceformpo;
   item.projectoptionscontext := projectoptionsconpo;
@@ -841,6 +854,7 @@ begin
 end;
 
 procedure registerlangconsts(const Name: string; 
+  const langnamespo : plangnamesaty;
   const mainformpo : pmainformaty;
   const sourceformpo : psourceformaty;
   const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
@@ -853,6 +867,7 @@ begin
     if langs[int1].Name = Name then
     begin
       setitem(langs[int1], Name,
+      langnamespo,
        mainformpo,
        sourceformpo,
        projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
@@ -861,6 +876,7 @@ begin
     end;
   setlength(langs, high(langs) + 2);
   setitem(langs[high(langs)], Name,
+   langnamespo,
    mainformpo,
    sourceformpo,
    projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
@@ -944,7 +960,8 @@ begin
       end;
     if bo1 then
       if lang.Name = '' then
-        setitem(lang, langnames[la_en], @en_mainformtext, @en_sourceformtext, 
+        setitem(lang, langnames[la_en], @en_langnamestext, 
+        @en_mainformtext, @en_sourceformtext, 
         @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
          @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
           @en_modalresulttextnoshortcut, @en_textgenerator);
@@ -994,6 +1011,12 @@ function mainformtext(const index: mainformty): msestring;
 begin
   checklang;
   Result := lang.mainformtext^[index];
+end;
+
+function langnamestext(const index: integer): msestring;
+begin
+  checklang;
+  Result := lang.langnamestext^[index];
 end;
 
 function projectoptionstext(const index: projectoptionsty): msestring;
@@ -1047,7 +1070,7 @@ begin
 end;
 
 initialization
-  registerlangconsts(langnames[la_en], @en_mainformtext, @en_sourceformtext,
+  registerlangconsts(langnames[la_en], @en_langnamestext, @en_mainformtext, @en_sourceformtext,
    @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
    @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
     @en_modalresulttextnoshortcut, @en_textgenerator);

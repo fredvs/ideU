@@ -730,16 +730,20 @@ const
      'Indicateur de lignes exécutées activé/désactivé', // sc_execlinehinton
      'S'#8217'il vous plaît, compilez-le d'#8217'abord.',               // sc_compileitfirst
      'Fin',                                // sc_finish
-     'Anglais', // sc_english
-     'Russe', // sc_russian
-     'Français', // sc_french
-     'Allemand', // sc_german
-     'Espagnol',                                // sc_spanish
-     'Portugais',                             //sc_portuguese
      'Définir par défaut',                          // sc_setasdefault
      'Hôte',                                   // sc_host
      'Droits d'#8217'auteur'                          // sc_copyright
     );
+    
+  const
+   fr_langnamestext: array of msestring = (
+     'Anglais', // 0_english
+     'Russe', // 1_russian
+     'Français', // 2_french
+     'Allemand', // 3_german
+     'Espagnol',                                // 4_spanish
+     'Portugais'                             //5_portuguese
+     );  
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -757,7 +761,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_fr], @fr_mainformtext, @fr_sourceformtext, @fr_projectoptionscontext, @fr_actionsmoduletext,
+  registerlangconsts(langnames[la_fr], @fr_langnamestext, @fr_mainformtext, @fr_sourceformtext, @fr_projectoptionscontext, @fr_actionsmoduletext,
    @fr_settingstext, @fr_projectoptionstext, @fr_stockcaption, @fr_modalresulttext,
     @fr_modalresulttextnoshortcut, @fr_textgenerator);
 end.

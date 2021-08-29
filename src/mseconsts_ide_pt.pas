@@ -700,17 +700,22 @@ const
     'Ligado / desligado a dica de linhas executadas', // sc_execlinehinton
     'Por favor, compile primeiro.', // sc_compileitfirst
     'Concluir', // sc_finish
-    'Inglês', // sc_English
-    'Russo', // sc_Russian
-    'Francês', // sc_french
-    'Alemão', // sc_german
-    'Espanhol', // sc_spanish
-    'Português',     //sc_portuguese
     'Definir como padrão', // sc_setasdefault
     'Anfitrião', // sc_host
     'Copyright' // sc_copyright  
 
   );
+  
+ const
+ pt_langnamestext: array of msestring = (
+    'Inglês', // 0_English
+    'Russo', // 1_Russian
+    'Francês', // 2_french
+    'Alemão', // 3_german
+    'Espanhol', // 4_spanish
+    'Português'     //5_portuguese
+    
+   );   
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -727,7 +732,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_pt], @pt_mainformtext, @pt_sourceformtext, @pt_projectoptionscontext, @pt_actionsmoduletext,
+  registerlangconsts(langnames[la_pt], @pt_langnamestext, @pt_mainformtext, @pt_sourceformtext, @pt_projectoptionscontext, @pt_actionsmoduletext,
    @pt_settingstext, @pt_projectoptionstext, @pt_stockcaption, @pt_modalresulttext,
     @pt_modalresulttextnoshortcut, @pt_textgenerator);
 end.

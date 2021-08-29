@@ -2570,17 +2570,10 @@ object mainfo: tmainfo
     top = 25
   end
   object ttimer1: ttimer
-    interval = 230000
+    interval = 130000
     ontimer = ontimersplash
     enabled = True
     left = 624
-    top = 15
-  end
-  object ttimer2: ttimer
-    interval = 500000
-    options = [to_single]
-    ontimer = onactiv
-    left = 96
     top = 15
   end
 end

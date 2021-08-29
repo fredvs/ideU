@@ -692,17 +692,21 @@ const
      'Включение / выключение подсказки по выполненным строкам', // sc_execlinehinton
      'Пожалуйста, сначала скомпилируйте это.',               // sc_compileitfirst
      'Готово',                          // sc_finish
-     'Английский', // sc_English
-     'Русский', // sc_Russian
-     'Французский', // sc_french
-     'Немецкий', // sc_german
-     'Испанский',                                // sc_spanish
-     'Португальский',                             //sc_portuguese
-     'Набор по умолчанию',                          // sc_setasdefault
+     'Набор по умолчанию',                          // sc_setasdefau
      'Хост', // sc_host
      'Авторское право' // sc_copyright
   
       );
+      
+  const
+ ru_langnamestext: array of msestring = (
+    'Английский', // 0_English
+     'Русский', // 1_Russian
+     'Французский', // 2_french
+     'Немецкий', // 3_german
+     'Испанский',                                // 	4_spanish
+     'Португальский'                             //5_portuguese
+     );    
 
 
 function delete_n_selected_rows(const params: array of const): msestring;
@@ -720,7 +724,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_ru], @ru_mainformtext, @ru_sourceformtext, @ru_projectoptionscontext, @ru_actionsmoduletext,
+  registerlangconsts(langnames[la_ru], @ru_langnamestext, @ru_mainformtext, @ru_sourceformtext, @ru_projectoptionscontext, @ru_actionsmoduletext,
    @ru_settingstext, @ru_projectoptionstext, @ru_stockcaption, @ru_modalresulttext,
     @ru_modalresulttextnoshortcut, @ru_textgenerator);
 end.

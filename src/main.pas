@@ -99,7 +99,6 @@ type
     convexdark: tfacecomp;
     concavedark: tfacecomp;
     ttimer1: ttimer;
-   ttimer2: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -4603,6 +4602,7 @@ procedure tmainfo.setlang(thelang: string);
 var
   item1: tmenuitem;
   x: shortint;
+  stca : stockcaptionty;
 begin
 
   setlangconsts(thelang);
@@ -4890,16 +4890,18 @@ begin
 
     end;
     
-    conflangfo.english.frame.caption := stockobjects.captions[sc_english] + '    (en)';
-    conflangfo.russian.frame.caption := stockobjects.captions[sc_russian]+ '    (ru)';
-    conflangfo.french.frame.caption := stockobjects.captions[sc_french]+ '    (fr)';
-    conflangfo.german.frame.caption := stockobjects.captions[sc_german]+ '    (de)';
-    conflangfo.spanish.frame.caption := stockobjects.captions[sc_spanish]+ '    (es)';
-    conflangfo.portuguese.frame.caption := stockobjects.captions[sc_portuguese]+ '    (pt)';
-  
+    conflangfo.gridlang.rowcount := length(langnamesreg) -1 ;
+    
+     for x := 0 to length(langnamesreg) -2 do
+   begin
+    conflangfo.gridlangcaption[x] := langnamestext(x)+ 
+     '   (' + langnamesreg[x+1] + ')';
+    conflangfo.gridlangcode[x] := langnamesreg[x+1] ;
+    
+   end; 
+     
     conflangfo.setasdefault.frame.caption := stockobjects.captions[sc_setasdefault];
-     conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
-  //  conflangfo.grouplang.frame.caption := stockobjects.captions[sc_lang];    
+    conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
     conflangfo.caption := stockobjects.captions[sc_lang];    
    
   end;
@@ -4908,10 +4910,6 @@ end;
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
   TDummyThread.Create(False);
-// application.processmessages;
- // onactiv(sender);
-  ttimer2.enabled := true;
-  
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);
@@ -5438,22 +5436,16 @@ begin
 end;
 
 procedure tmainfo.onlang(const Sender: TObject);
+var
+x : integer;
 begin
-
-  if MSEFallbackLang = 'en' then
-    conflangfo.english.Value := True
-  else if MSEFallbackLang = 'fr' then
-    conflangfo.french.Value  := True
-  else if MSEFallbackLang = 'de' then
-    conflangfo.german.Value  := True
-  else if MSEFallbackLang = 'ru' then
-    conflangfo.russian.Value := True
-  else if MSEFallbackLang = 'es' then
-    conflangfo.spanish.Value := True
-  else if MSEFallbackLang = 'pt' then
-    conflangfo.portuguese.Value := True;
  
-  conflangloaded     := 1;   
+ for x := 0 to conflangfo.gridlang.rowcount - 1 do
+ if MSEFallbackLang = conflangfo.gridlangcode[x] then
+ conflangfo.gridlangbool[x] := true else
+ conflangfo.gridlangbool[x] := false;
+ 
+   conflangloaded     := 1;   
 
    if ismodal then
       conflangfo.Show(True)
@@ -5462,8 +5454,6 @@ begin
       conflangfo.Show;
       conflangfo.bringtofront;
     end;
-  
- 
 end;
 
 procedure tmainfo.onactiv(const Sender: TObject);
@@ -5479,19 +5469,12 @@ begin
 
     if conflangfo.setasdefault.Value = True then
      begin
-      if conflangfo.english.Value = True then
-        MSEFallbackLang := 'en'
-      else if conflangfo.russian.Value = True then
-        MSEFallbackLang := 'ru'
-      else if conflangfo.french.Value = True then
-        MSEFallbackLang := 'fr'
-      else if conflangfo.german.Value = True then
-        MSEFallbackLang := 'de'
-      else if conflangfo.spanish.Value = True then
-        MSEFallbackLang := 'es'
-      else if conflangfo.portuguese.Value = True then
-        MSEFallbackLang := 'pt';  
-      setlang(MSEFallbackLang);
+     
+     for x := 0 to conflangfo.gridlang.rowcount -1 do
+       if conflangfo.gridlangbool[x] = True then
+        MSEFallbackLang := conflangfo.gridlangcode[x];
+     
+        setlang(MSEFallbackLang);
     end
     else 
     begin

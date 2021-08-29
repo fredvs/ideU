@@ -71,24 +71,24 @@ const
     );
 
   es_settingstext: isettingsaty          = (
-    'Aplicar',           //se_apply
+    'Aplicar',                     //se_apply
     'Configuración asistencia-voz sak', //se_groupassistive
     'Directorio principal de sakit', //se_sakitdir
-    'Habilitar sak al cargar', //se_enableassistive
-    'Disposición del sistema', //se_groupsystemlayout
-    'Directorios universales', //se_universalpath
-    'Sin manejo de pedidos Z', //se_nozorder
+    'Habilitar sak al cargar',     //se_enableassistive
+    'Disposición del sistema',    //se_groupsystemlayout
+    'Directorios universales',     //se_universalpath
+    'Sin manejo de pedidos Z',     //se_nozorder
     'Mayús para seleccionar palabra', //se_doubleclic
     'Enfoque automático en menú', //se_autofocusmenu
     'Ruta completa en título-proyecto', //se_fullpath
     'Establecer diálogos como modales', //se_modaldial
-    'Altura fuente',     //se_fontsize
-    'Nombre fuente',     //se_fontname
+    'Altura fuente',               //se_fontsize
+    'Nombre fuente',               //se_fontname
     'No confirmación para eliminar fila', //se_confirmdel
     'Intercalación intermitente', //se_blinkcaret
-    'Repintar canvas',   //se_repaintcanvas
-    'Editor de fuente',  //se_groupsourceeditor
-    'Usa esas opciones', //se_usedefaulteditoroptions
+    'Repintar canvas',             //se_repaintcanvas
+    'Editor de fuente',            //se_groupsourceeditor
+    'Usa esas opciones',           //se_usedefaulteditoroptions
     'Espacio tras coma al auto-parsing', //se_addwhiteaftercomma
     'Cuando un archivo ha cambiado:', //se_groupfilechange
     'Sin diálogo => cargar el nuevo', //se_filereload
@@ -180,119 +180,119 @@ const
     'Almacén de componentes',
     'Proceso de conexión',
     'Cargando'
-    );    
-   
-  es_mainformtext: mainformaty = (
-      'Referencias no resueltas en',
-      'para',
-      '¿Desea buscar en el archivo de formulario?',
-      'ADVERTENCIA',
-      'Formfile para',
-      'Formfiles',
-      'Jerarquía de formas recursivas para "',
-      'ERROR',
-      'Tipo de clase',
-      'extraviado.',
-      'Proyecto',
-      'es modificado. ¿Ahorrar?',
-      'Confirmación',
-      'No es posible abrir el archivo "',
-      '*** Corriendo ***',
-      'Descargando',
-      'Descargado',
-      'Iniciar comando del servidor gdb "',
-      '" corriendo.',
-      'Iniciar el servidor gdb',
-      'error de inicio del servidor gdb',
-      'inicio del servidor gdb cancelado.',
-      'No se puede ejecutar el comando start gdb.',
-      'Uploadcommand "',
-      'Error de descarga***',
-      'Descarga finalizada.',
-      'Descarga cancelada.',
-      'Expediente "',
-      '" extraviado.',
-      '"existe.',
-      'Nuevo',
-      'Seleccionar antepasado',
-      'Nueva forma',
-      'Archivos Pascal',
-      'nuevo',
-      'No se puede cargar el proyecto "',
-      'Seleccionar plantilla de proyecto',
-      'Archivos de proyecto',
-      'Todos los archivos',
-      'Seleccionar archivo de programa',
-      'Archivos de programa Pascal',
-      'Archivos de programa C',
-      'Nuevo proyecto',
-      'No se puede iniciar el proceso',
-      'Proceso',
-      'corriendo.',
-      'Proceso terminado',
-      'El proceso terminó normalmente.',
-      'Hacer *** ERROR ***',
-      'Hacer OK.',
-      'La fuente ha cambiado, ¿deseas rehacer el proyecto?',
-      'Cargar diseño de ventana',
-      'Área de atraque' 
-         );  
-    
-   es_sourceformtext: sourceformaty = (
+    );
+
+  es_mainformtext: mainformaty           = (
+    'Referencias no resueltas en',
+    'para',
+    '¿Desea buscar en el archivo de formulario?',
+    'ADVERTENCIA',
+    'Formfile para',
+    'Formfiles',
+    'Jerarquía de formas recursivas para "',
+    'ERROR',
+    'Tipo de clase',
+    'extraviado.',
+    'Proyecto',
+    'es modificado. ¿Ahorrar?',
+    'Confirmación',
+    'No es posible abrir el archivo "',
+    '*** Corriendo ***',
+    'Descargando',
+    'Descargado',
+    'Iniciar comando del servidor gdb "',
+    '" corriendo.',
+    'Iniciar el servidor gdb',
+    'error de inicio del servidor gdb',
+    'inicio del servidor gdb cancelado.',
+    'No se puede ejecutar el comando start gdb.',
+    'Uploadcommand "',
+    'Error de descarga***',
+    'Descarga finalizada.',
+    'Descarga cancelada.',
+    'Expediente "',
+    '" extraviado.',
+    '"existe.',
+    'Nuevo',
+    'Seleccionar antepasado',
+    'Nueva forma',
+    'Archivos Pascal',
+    'nuevo',
+    'No se puede cargar el proyecto "',
+    'Seleccionar plantilla de proyecto',
+    'Archivos de proyecto',
+    'Todos los archivos',
+    'Seleccionar archivo de programa',
+    'Archivos de programa Pascal',
+    'Archivos de programa C',
+    'Nuevo proyecto',
+    'No se puede iniciar el proceso',
+    'Proceso',
+    'corriendo.',
+    'Proceso terminado',
+    'El proceso terminó normalmente.',
+    'Hacer *** ERROR ***',
+    'Hacer OK.',
+    'La fuente ha cambiado, ¿deseas rehacer el proyecto?',
+    'Cargar diseño de ventana',
+    'Área de atraque'
+    );
+
+  es_sourceformtext: sourceformaty       = (
     'El archivo "',
-       '" ha cambiado.',
-       'También hay modificaciones en el búfer de edición.',
-       '¿Desea recargar desde el disco?',
-       'Confirmación',
-       '<ninguno>',
-       '¿Desea reemplazar:',
-       'con:',
-       '<nuevo>',
-       'Syntaxdeffile:',
-       'Texto',
-       'extraviado.',
-       '¿Reiniciar desde el principio del archivo?',
-       '¿Cancelar?',
-       '¿Desea reemplazar esta ocurrencia?',
-       'Ir al número de línea:',
-       'Buscar línea',
-       'También hay modificaciones en el búfer de edición.'
-         );     
+    '" ha cambiado.',
+    'También hay modificaciones en el búfer de edición.',
+    '¿Desea recargar desde el disco?',
+    'Confirmación',
+    '<ninguno>',
+    '¿Desea reemplazar:',
+    'con:',
+    '<nuevo>',
+    'Syntaxdeffile:',
+    'Texto',
+    'extraviado.',
+    '¿Reiniciar desde el principio del archivo?',
+    '¿Cancelar?',
+    '¿Desea reemplazar esta ocurrencia?',
+    'Ir al número de línea:',
+    'Buscar línea',
+    'También hay modificaciones en el búfer de edición.'
+    );
 
   es_projectoptionscontext: projectoptionsconaty = (
     'La codificación incorrecta puede dañar sus archivos de origen.',
-     '¿Desea establecer la codificación en',
-     '*** ADVERTENCIA ***',
-     'Colgar',
-     'Interrumpir',
-     'Dejar',
-     'Instrucción ilegal',
-     'Traza trampa',
-     'Abortar',
-     'Error de BUS',
-     'Excepción de coma flotante',
-     'Matar',
-     'Señal 1 definida por el usuario',
-     'Violación de segmentación',
-     'Señal 2 definida por el usuario',
-     'Tuberia rota',
-     'Despertador',
-     'Terminación',
-     'Fallo de pila',
-     'El estado del niño ha cambiado',
-     'Continuar',
-     'Stop, imbloqueable',
-     'Parada del teclado',
-     'Lectura de fondo de tty',
-     'Escritura de fondo en tty',
-     'Condición urgente en el encaje',
-     'Límite de CPU excedido',
-     'Excede el límite de tamaño de archivo',
-     'Despertador virtual',
-     'Despertador de perfiles',
-     'Cambio de tamaño de ventana',
-     'E / S ahora es posible',
-     'Reinicio por falla de energía'
+    '¿Desea establecer la codificación en',
+    '*** ADVERTENCIA ***',
+    'Colgar',
+    'Interrumpir',
+    'Dejar',
+    'Instrucción ilegal',
+    'Traza trampa',
+    'Abortar',
+    'Error de BUS',
+    'Excepción de coma flotante',
+    'Matar',
+    'Señal 1 definida por el usuario',
+    'Violación de segmentación',
+    'Señal 2 definida por el usuario',
+    'Tuberia rota',
+    'Despertador',
+    'Terminación',
+    'Fallo de pila',
+    'El estado del niño ha cambiado',
+    'Continuar',
+    'Stop, imbloqueable',
+    'Parada del teclado',
+    'Lectura de fondo de tty',
+    'Escritura de fondo en tty',
+    'Condición urgente en el encaje',
+    'Límite de CPU excedido',
+    'Excede el límite de tamaño de archivo',
+    'Despertador virtual',
+    'Despertador de perfiles',
+    'Cambio de tamaño de ventana',
+    'E / S ahora es posible',
+    'Reinicio por falla de energía'
     );
 
   es_projectoptionstext: projectoptionsaty = (
@@ -339,7 +339,7 @@ const
     'Seleccionar directorio de origen', // po_selectsourcedir
     'Directorio base de objetos (vacío = Crear directorio)', // po_objectbasedir
     'Seleccionar directorio de origen', // po_selectsourcebasedir
-    'Defi&ne', // po_defines
+    'Defi&ne',  // po_defines
     '&Señales', // po_signals
     '&Excepción', // po_exception
     '&Objetivo', // po_target
@@ -380,7 +380,7 @@ const
     '&Ejecutar comando', // po_runcommand
     '&Depurador predeterminado', // po_debugcommand
     'Opciones depuración', // po_debugoptions
-    '&Hacer', // po_makepage
+    '&Hacer',   // po_makepage
 
     'Hacer predeterminado', // po_defaultmake
     'Archivo principal', // po_mainfile
@@ -413,7 +413,7 @@ const
     'Objetivo', //po_enablepurpose
     'Archivo mensajes', // po_messageoutputfile
     'Archivo mensajes', // po_selectmessageoutputfile
-    'Macros', // po_macros
+    'Macros',   // po_macros
     'Grupo activo', // po_selectactivegroupgrid
     '&Alias fuente', // po_fontaliaspage
     'Diseñadores', // po_designers
@@ -428,15 +428,15 @@ const
     'Archivo nuevo', // po_newfile
     'Nueva forma', // po_newform
     'Instrumentos', // po_tools
-    'Almacen', // po_storage
-    'Infos', // po_infos
-     'Nombre completo del proyecto', // po_projectfullname
-     'Creador', // po_creator
-     'Licencia', // po_license
-     'Fecha de creación' // po_projectdate
+    'Almacen',  // po_storage
+    'Infos',    // po_infos
+    'Nombre completo del proyecto', // po_projectfullname
+    'Creador',  // po_creator
+    'Licencia', // po_license
+    'Fecha de creación' // po_projectdate
     );
 
-  es_stockcaption: stockcaptionaty = (
+  es_stockcaption: stockcaptionaty       = (
     '',                                              //sc_none
     'es inv'#0225'lido',                             //sc_is_invalid
     'Error de formato',                              //sc_Format_error
@@ -665,43 +665,47 @@ const
     'Otro',                                          // sc_other
     'Comando de impresión',                         // sc_printcommand
     'Atajo',                                         // sc_shortcut
-    'Valor',                                    // sc_value
-    'Case sensitive',                           // sc_casesensitive
-    'Solo seleccionado',                        // sc_selectedonly
-    'Toda palabra',                             // sc_wholeword
-    'Texto para buscar',                        // sc_texttofind
-    'Buscar en archivo actual',                 // sc_searchincurrentfile
-    'Buscar en archivos abiertos',              // sc_searchinopenfiles 
-    'Buscar en directorio proyecto',            // sc_searchinprojectdir
-    'Buscar en directorios',                    // sc_searchindirectories
-    'Incluir subdirectorios',                    // sc_includesubdir
-   
-    'Reemplazar',                              // sc_replace
-    'Reemplaza todo',                          // sc_replace all
-    'Reemplazar con',                         // sc_replacewith
+    'Valor',                                      // sc_value
+    'Case sensitive',                             // sc_casesensitive
+    'Solo seleccionado',                          // sc_selectedonly
+    'Toda palabra',                               // sc_wholeword
+    'Texto para buscar',                          // sc_texttofind
+    'Buscar en archivo actual',                   // sc_searchincurrentfile
+    'Buscar en archivos abiertos',                // sc_searchinopenfiles 
+    'Buscar en directorio proyecto',              // sc_searchinprojectdir
+    'Buscar en directorios',                      // sc_searchindirectories
+    'Incluir subdirectorios',                     // sc_includesubdir
+
+    'Reemplazar',                                 // sc_replace
+    'Reemplaza todo',                             // sc_replace all
+    'Reemplazar con',                             // sc_replacewith
     'Preguntar al reemplazar',                    // sc_promptonreplace
-    'Paleta de componentes',                    // sc_componentspalette
+    'Paleta de componentes',                      // sc_componentspalette
     'Encuentra componentes',                       // sc_findcomponent
-     'Restablecer',                          // sc_reset
-     'Paso',                              // sc_cstep
-     'Instrucción de paso',                 // sc_stepinstruction
-     'Siguiente instrucción',                  // sc_nextinstruction
-     'Reiniciar depurador',                     // sc_restartdebugger
-     'Toggle breakpoint',                        // sc_togglebreakpoint
-     'Alternar punto de interrupción habilitado', // sc_tooglebreakpointenable
-     'Indicación de líneas ejecutadas activada / desactivada', // sc_execlinehinton
-     'Por favor, compílelo primero.',               // sc_compileitfirst
-     'Finalizar',                                // sc_finish
-     'Inglés', // sc_English
-     'Ruso', // sc_Russian
-     'Francés', // sc_french
-     'Alemán', // sc_german
-     'Español',                                // sc_spanis
-     'Portugués',                             //sc_portuguese
-     'Establecido predeterminado',            // sc_setasdefault
-     'Anfitrión',                                   // sc_host
-     'Derechos de autor'                          // sc_copyright
-      );
+    'Restablecer',                                // sc_reset
+    'Paso',                                       // sc_cstep
+    'Instrucción de paso',                       // sc_stepinstruction
+    'Siguiente instrucción',                     // sc_nextinstruction
+    'Reiniciar depurador',                        // sc_restartdebugger
+    'Toggle breakpoint',                          // sc_togglebreakpoint
+    'Alternar punto de interrupción habilitado', // sc_tooglebreakpointenable
+    'Indicación de líneas ejecutadas activada / desactivada', // sc_execlinehinton
+    'Por favor, compílelo primero.',               // sc_compileitfirst
+    'Finalizar',                                  // sc_finish
+    'Establecido predeterminado',                 // sc_setasdefault
+    'Anfitrión',                                   // sc_host
+    'Derechos de autor'                           // sc_copyright
+    );
+
+const
+  es_langnamestext: array of msestring = (
+    'English',                                // 0_English
+    'Russian',                                // 1_Russian
+    'French',                                 // 2_french
+    'German',                                 // 3_german
+    'Spanish',                                // 4_spanish
+    'Portuguese'                              //5_portuguese
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -718,8 +722,7 @@ const
     );
 
 initialization
-  registerlangconsts(langnames[la_es], @es_mainformtext, @es_sourceformtext, @es_projectoptionscontext, @es_actionsmoduletext,
-   @es_settingstext, @es_projectoptionstext, @es_stockcaption, @es_modalresulttext,
-    @es_modalresulttextnoshortcut, @es_textgenerator);
+  registerlangconsts(langnames[la_es], @es_langnamestext, @es_mainformtext, @es_sourceformtext, @es_projectoptionscontext, @es_actionsmoduletext, @es_settingstext, @es_projectoptionstext,
+    @es_stockcaption, @es_modalresulttext, @es_modalresulttextnoshortcut, @es_textgenerator);
 end.
 
