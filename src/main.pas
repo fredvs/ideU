@@ -5478,9 +5478,14 @@ begin
     end
     else 
     begin
-      for x := 0 to length(langnamesreg)-1 do
+    
+    if MSEFallbackLang = '' then setlang(MSEFallbackLang)
+       else
+       begin
+          for x := 0 to length(langnamesreg)-1 do
         if MSEFallbackLang = langnamesreg[x] then isinside := true;
       if isinside then setlang(MSEFallbackLang);
+      end;
     end;    
   end;
 end;

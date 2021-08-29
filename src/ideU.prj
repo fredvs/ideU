@@ -1305,7 +1305,7 @@ line=29
  790
  905
  2512
- 5791
+ 5796
  1882
  6135
  179
@@ -1603,7 +1603,9 @@ findhistory=20
  '#10'
 findoptions=1
 editpos=14
- 0,54
+ 0,-1073741823
+ 0,-1073741823
+ 0,5487
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1611,12 +1613,10 @@ editpos=14
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,9
  0,-1073741823
  0,-1073741823
+ 0,0
  0,-1073741823
- 0,-1073741823
- 0,4887
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1707,21 +1707,21 @@ nomenumodules=6
 [sourcefo.files_tab]
 order=14
  0
- 13
- 9
- 11
  12
- 1
+ 13
  2
- 3
+ 11
  4
- 5
+ 1
  6
+ 3
+ 8
+ 5
+ 9
  10
  7
- 8
 firsttab=0
-index=1
+index=3
 [layout]
 windowlayout=630
  [mainfo.basedock]
@@ -1838,7 +1838,7 @@ windowlayout=630
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2164,11 +2164,11 @@ windowlayout=630
  nx=0
  ny=0
  ncx=1341
- ncy=31
+ ncy=29
  x=0
  y=0
  cx=1356
- cy=30
+ cy=28
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2180,6 +2180,7 @@ windowlayout=630
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/mseconsts_ide_de.pas
@@ -2193,7 +2194,6 @@ windowlayout=630
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_id.pas
-  /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/objectinspector.pas
   /home/fred/ideu/src/selecteditpageform.pas
@@ -2223,21 +2223,21 @@ windowlayout=630
  [sourcefo.files_tab]
  order=14
   0
-  13
-  9
-  11
   12
-  1
+  13
   2
-  3
+  11
   4
-  5
+  1
   6
+  3
+  8
+  5
+  9
   10
   7
-  8
  firsttab=0
- index=1
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2338,7 +2338,7 @@ windowlayout=630
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
