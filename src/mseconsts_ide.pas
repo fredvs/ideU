@@ -56,7 +56,7 @@ const
     '', 'en', 'ru', 'fr', 'de', 'es', 'pt', 'uz', 'id', 'zh');
     
   langnamesreg: array of string = (
-    '', 'en', 'ru', 'fr', 'de', 'es', 'pt');
+    'en', 'ru', 'fr', 'de', 'es', 'pt');
  
 function langnamestext(const index: integer): msestring;
 function mainformtext(const index: mainformty): msestring;

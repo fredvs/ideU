@@ -4890,13 +4890,13 @@ begin
 
     end;
     
-    conflangfo.gridlang.rowcount := length(langnamesreg) -1 ;
+    conflangfo.gridlang.rowcount := length(langnamesreg) ;
     
-     for x := 0 to length(langnamesreg) -2 do
+     for x := 0 to length(langnamesreg) -1 do
    begin
     conflangfo.gridlangcaption[x] := langnamestext(x)+ 
-     '   (' + langnamesreg[x+1] + ')';
-    conflangfo.gridlangcode[x] := langnamesreg[x+1] ;
+     '   (' + langnamesreg[x] + ')';
+    conflangfo.gridlangcode[x] := langnamesreg[x] ;
     
    end; 
      
