@@ -809,7 +809,7 @@ const
 
 const
  en_langnamestext: array of msestring = (
-     'English',                                // 0_English
+    'English',                                // 0_English
     'Russian',                                // 1_Russian
     'French',                                // 2_french
     'German',                                // 3_german

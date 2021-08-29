@@ -694,17 +694,20 @@ const
     'Executed lines hint on/off',            // sc_execlinehinton
     'Please compile it first.',               // sc_compileitfirst
     'Finish',                                // sc_finish
-    'English',                                // sc_English
-    'Russian',                                // sc_Russian
-    'French',                                // sc_french
-    'German',                                // sc_german
-    'Spanish',                                // sc_spanish
-    'Portuguese',                             //sc_portuguese
     'Set as default',                          // sc_setasdefault
     'Host',                                   // sc_host
     'Copyright'                          // sc_copyright
     );
 
+const
+ en_langnamestext: array of msestring = (
+    'English',                                // 0_English
+    'Russian',                                // 1_Russian
+    'French',                                // 2_french
+    'German',                                // 3_german
+    'Spanish',                                // 4_spanish
+    'Portuguese'                            //5_portuguese
+    );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
@@ -723,7 +726,7 @@ const
 
 initialization
   registerlangconsts(langnames[la_en],
-  @en_mainformtext, @en_sourceformtext, @en_projectoptionscontext,
+  @en_mainformtext, @en_langnamestext, @en_sourceformtext, @en_projectoptionscontext,
    @en_actionsmoduletext, @en_settingstext, @en_projectoptionstext, @en_stockcaption, @en_modalresulttext, @en_modalresulttextnoshortcut, @en_textgenerator);
 end.
 
