@@ -13,8 +13,8 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 427
-  bounds_y = 247
+  bounds_x = 415
+  bounds_y = 258
   bounds_cx = 745
   bounds_cy = 76
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -107,8 +107,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 735
-    bounds_cy = 55
+    bounds_cx = 720
+    bounds_cy = 59
     anchors = [an_top, an_bottom]
     font.color = -1610612734
     font.name = 'stf_default'
@@ -149,7 +149,7 @@ object mainfo: tmainfo
     facetemplate = convex
     itemframetemplate = tframecomp3
     itemfacetemplate = convex
-    itemframetemplateactive = tframecomp2
+    itemframetemplateactive = tframecomp3
     itemfacetemplateactive = concave
     menu.submenu.count = 13
     menu.submenu.items = <    
@@ -2394,7 +2394,8 @@ object mainfo: tmainfo
       C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808C7C7C708B8B8B808
       C7C7C708B8B8B808C7C7C708B8B8B808
     }
-    left = 298
+    left = 206
+    top = 3
   end
   object tfacecomp1: tfacecomp
     template.fade_pos.count = 2
@@ -2487,17 +2488,19 @@ object mainfo: tmainfo
     top = 16
   end
   object tframecomp2: tframecomp
-    template.framei_left = 4
-    template.framei_top = 2
-    template.framei_right = 4
-    template.framei_bottom = 2
-    template.frameimage_list = timagelist3
+    template.framei_left = 8
+    template.framei_top = 3
+    template.framei_right = 8
+    template.framei_bottom = 4
+    template.frameimage_list = timagelist2
     template.frameimage_left = -4
     template.frameimage_top = -4
     template.frameimage_right = -4
     template.frameimage_bottom = -4
+    template.hiddenedges = [edg_bottom]
     template.optionsskin = [fso_flat]
-    left = 440
+    left = 467
+    top = 30
   end
   object timagelist3: timagelist
     width = 4
@@ -2508,8 +2511,8 @@ object mainfo: tmainfo
     cornermask_bottomleft = #2#1
     cornermask_bottomright = #2#1
     cornermask_topright = #2#1
-    left = 435
-    top = 3
+    left = 366
+    top = 28
     image = {
       00000000120000000C0000000C000000E8000000000000000000000000000000
       0000000000000000000000000000000000000000FFFFFF028B8B8B02A5A5A501
@@ -2575,5 +2578,33 @@ object mainfo: tmainfo
     enabled = True
     left = 624
     top = 15
+  end
+  object timagelist2: timagelist
+    width = 4
+    height = 4
+    options = [bmo_masked, bmo_graymask]
+    count = 8
+    cornermask_topleft = #2#1
+    cornermask_bottomleft = #2#1
+    cornermask_bottomright = #2#1
+    cornermask_topright = #2#1
+    left = 23
+    top = 27
+    image = {
+      00000000120000000C0000000C000000F8000000000000000000000000000000
+      0000000000000000000000000000000000000000FFFFFF028B8B8B02A5A5A501
+      00000003A5A5A50100000003FFFFFF018B8B8B01FFFFFF02A5A5A50100000003
+      A5A5A501000000038B8B8B01FFFFFF03A5A5A50100000003A5A5A50100000003
+      8B8B8B01FFFFFF03A5A5A50100000003A5A5A50100000007FFFFFF038B8B8B01
+      FFFFFF038B8B8B0100000004FFFFFF038B8B8B01FFFFFF038B8B8B0100000004
+      FFFFFF038B8B8B01FFFFFF038B8B8B0100000004FFFFFF02D6D6D6018B8B8B01
+      FFFFFF02D6D6D6018B8B8B03FFFFFF028B8B8B0400000004FFFFFF028B8B8B01
+      FFFFFF04D6D6D60100000004FFFFFF038B8B8B01FFFFFF0400000004FFFFFF03
+      8B8B8B01FFFFFF0400000004900000000000FFFFFF000000FF00000000FF0000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      00000000000000FF000000FF00000000000000FF000000FF00000000000000FF
+      000000FF00000000000000FF000000FFFFFF0000FFFFFFFF000000000000FF00
+      0000000000000000000000FF0000000000000000000000FF0000000000000000
+    }
   end
 end

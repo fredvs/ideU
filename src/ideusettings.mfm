@@ -61,13 +61,11 @@ object settings_form: tsettingsfo
     tab_frame.localprops = []
     tab_frame.localprops1 = []
     tab_coloractivetab = 16775390
-    tab_frametab.frameimage_list = sourcefo.timagelist2
     tab_frametab.frameimage_left = -4
     tab_frametab.frameimage_right = -4
     tab_frametab.frameimage_top = -4
     tab_frametab.frameimage_bottom = -4
-    tab_frametab.extraspace = 8
-    tab_frametab.hiddenedges = [edg_top, edg_bottom]
+    tab_frametab.extraspace = 2
     tab_frametab.localprops = [frl_hiddenedges, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
     tab_frametab.localprops1 = [frl1_extraspace]
     tab_size = 20

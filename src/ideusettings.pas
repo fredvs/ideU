@@ -530,7 +530,7 @@ begin
 
   Caption := stockobjects.captions[sc_generalsettings];
   
-  path.caption :=  stockobjects.captions[sc_path]; 
+  path.caption :=  '  ' + stockobjects.captions[sc_path] + '  ' ; 
   but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
   
   layoutdir.frame.caption := '${LAYOUTDIR} ' + 
@@ -617,14 +617,14 @@ begin
   bgrabitmapdir.controller.captiondir := stockobjects.captions[sc_directory] + 
   ' / '  +  'BGRABitmap';
     
-  macros.caption := projectoptionstext(po_macros);
+  macros.caption := '  ' + projectoptionstext(po_macros) + '  ' ;
   macrogrid.frame.caption := projectoptionstext(po_macros); 
   
  // macrogrid.fixrows[-1].captions.Count := 2;
   macrogrid.fixrows[-1].captions[0].Caption := projectoptionstext(po_name);
   macrogrid.fixrows[-1].captions[1].Caption := stockobjects.captions[sc_value];
  
-  other.caption := stockobjects.captions[sc_other];
+  other.caption := '  ' + stockobjects.captions[sc_other] + '  ' ;
   printcomm.frame.caption := stockobjects.captions[sc_printcommand];
   exeext.frame.caption := '${EXEEXT} ' + projectoptionstext(po_exeextension); 
   target.frame.caption := '${TARGET} OS ' + stockobjects.captions[sc_target];

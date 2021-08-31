@@ -30,16 +30,15 @@ interface
 {$endif}
 
 uses
- msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,
- msetimer,mseformatstr,mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,
- msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
- msestat,msestatfile,msemenus,msestockobjects,msebitmap,msegrids,msefiledialogx,
- msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,mseclasses,
- msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,msestrings,
- msepostscriptprinter,msegraphics,mseglob,msestream,msepointer,
- mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
- projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets,
-  {$I useslang.inc};
+ msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,
+ mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,
+ sak_mse,msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
+ msestockobjects,msebitmap,msegrids,msefiledialogx,msetypes,sourcepage,
+ msedesignintf,msedesigner,Classes,mclasses,mseclasses,msegraphutils,typinfo,
+ msedock,SysUtils,msesysenv,msemacros,msestrings,msepostscriptprinter,
+ msegraphics,mseglob,msestream,msepointer,mseprocmonitorcomp,msesystypes,
+ mserttistat,msedatalist,mselistbrowser,projecttreeform,msepipestream,
+ msestringcontainer,msesys,mseedit,msewidgets,{$I useslang.inc};
 
 const
   versiontext = '2.6.0';
@@ -99,6 +98,7 @@ type
     convexdark: tfacecomp;
     concavedark: tfacecomp;
     ttimer1: ttimer;
+   timagelist2: timagelist;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
