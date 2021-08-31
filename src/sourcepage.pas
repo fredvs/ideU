@@ -74,6 +74,7 @@ type
    procedure oncreated(const sender: TObject);
    procedure ondefocus(const sender: TObject);
    procedure onfocus(const sender: TObject);
+   procedure onselectchange(const sender: TObject);
   private
    factiverow: integer;
    flasthint: gridcoordty;
@@ -1549,6 +1550,7 @@ begin
       if ss_triple in info.mouseeventinfopo^.shiftstate then begin
        edit.setselection(makegridcoord(0,edit.row),
                             makegridcoord(bigint,edit.row),true);
+                            
       end
       else begin
        edit.selectword(info.pos,selectdelims);
@@ -2166,6 +2168,10 @@ end;
 procedure tsourcepage.onfocus(const sender: TObject);
 begin
 tabcloser := true;
+end;
+
+procedure tsourcepage.onselectchange(const sender: TObject);
+begin
 end;
 
 end.

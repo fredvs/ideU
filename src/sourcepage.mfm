@@ -213,6 +213,7 @@ object sourcepage: tsourcepage
     onrowsinserted = gridonrowsinserted
     onrowsdeleted = gridonrowsdeleted
     oncellevent = gridoncellevent
+    onselectionchanged = onselectchange
     object edit: tsyntaxedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
@@ -271,6 +272,7 @@ object sourcepage: tsourcepage
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
     color = 15461355
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -300,6 +302,7 @@ object sourcepage: tsourcepage
     color = 15790320
     frame.framewidth = 1
     frame.colorframe = -1610612733
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = [frl_framewidth, frl_colorframe]
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
