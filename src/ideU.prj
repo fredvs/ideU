@@ -922,42 +922,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=11
- ACTIONSMO
- CONFIDEUFO
- CONFLANGFO
- FINDMESSAGEFO
- SETTINGS_FORM
+modulenames=1
  MAINFO
- STOCKDATA
- PROCEDURELISTFO
- PROJECTOPTIONSFO
- SOURCEFO
- SOURCEPAGE
-moduletypes=11
- TACTIONSMO
- TCONFIDEUFO
- TCONFLANGFO
- TFINDMESSAGEFO
- TSETTINGSFO
+moduletypes=1
  TMAINFO
- TSTOCKDATA
- TPROCEDURELISTFO
- TPROJECTOPTIONSFO
- TSOURCEFO
- TSOURCEPAGE
-modulefiles=11
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/findmessage.mfm
- /home/fred/ideu/src/ideusettings.mfm
+modulefiles=1
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msestockobjects.mfm
- /home/fred/ideu/src/procedurelistform.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/sourcepage.mfm
 befcommandon=0
 makeoptionson=13
  4095
@@ -1304,7 +1274,7 @@ line=29
  2129
  1122
  521
- 4137
+ 4140
  660
  119
  1119
@@ -1316,14 +1286,14 @@ line=29
  462
  404
  66
- 4413
+ 4416
  684
  98
  15
  790
  905
  2512
- 5917
+ 5920
  1882
  6135
  179
@@ -1597,8 +1567,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext='edited
+finddtext=openproject
 findhistory=20
+ openproject
  'edited
  enabled
  selectcell
@@ -1611,7 +1582,6 @@ findhistory=20
  itembyn
  theprojectname
  projectsourceexe
- openproject
  itemby
  conflangfo
  MSEFallbackLang
@@ -1620,310 +1590,36 @@ findhistory=20
  'ru'
  sc_spanish
 findoptions=1
-editpos=41
- 0,-1073741823
- 0,-1073741823
- 0,4654
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
+editpos=1
+ 16,3684
 bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-bookmarks17=0
-bookmarks18=0
-bookmarks19=0
-bookmarks20=0
-bookmarks21=0
-bookmarks22=0
-bookmarks23=0
-bookmarks24=0
-bookmarks25=0
-bookmarks26=0
-bookmarks27=0
-bookmarks28=0
-bookmarks29=0
-bookmarks30=0
-bookmarks31=0
-bookmarks32=0
-bookmarks33=0
-bookmarks34=0
-bookmarks35=0
-bookmarks36=0
-bookmarks37=0
-bookmarks38=0
-bookmarks39=0
-bookmarks40=0
-sourcefiles=41
- ${PROJECTDIR}/mseconsts_ide.pas
- ${PROJECTDIR}/conflang.pas
+sourcefiles=1
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/useslang.inc
- ${PROJECTDIR}/msestockobjects.pas
- ${PROJECTDIR}/mseconsts_ide_ru.pas
- ${PROJECTDIR}/mseconsts_ide_pt.pas
- ${PROJECTDIR}/mseconsts_ide_es.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/mseconsts_ide_en.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/ideusettings.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/msegrids.pas
- ${PROJECTDIR}/msetextedit.pas
- ${PROJECTDIR}/procedurelistform.pas
- ${PROJECTDIR}/findmessage.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourcepage.pas
- ${PROJECTDIR}/msetabs.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
-relpaths=41
- mseconsts_ide.pas
- conflang.pas
+relpaths=1
  main.pas
- useslang.inc
- msestockobjects.pas
- mseconsts_ide_ru.pas
- mseconsts_ide_pt.pas
- mseconsts_ide_es.pas
- main.pas
- mseconsts_ide_en.pas
- main.pas
- sourceform.pas
- ideusettings.pas
- confideu.pas
- commandorform.pas
- actionsmodule.pas
- main.pas
- actionsmodule.pas
- commandorform.pas
- ideU.pas
- sourcepage.pas
- msegrids.pas
- msetextedit.pas
- procedurelistform.pas
- findmessage.pas
- ideU.pas
- ideU.pas
- ideU.pas
- ideU.pas
- actionsmodule.pas
- sourceform.pas
- actionsmodule.pas
- ideU.pas
- sourcepage.pas
- msetabs.pas
- projectoptionsform.pas
- ideU.pas
- ideU.pas
- ideU.pas
- ideU.pas
- ideU.pas
-ismoduletexts=41
+ismoduletexts=1
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=11
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/msestockobjects.mfm
- /home/fred/ideu/src/ideusettings.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/procedurelistform.mfm
- /home/fred/ideu/src/findmessage.mfm
- /home/fred/ideu/src/sourcepage.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=11
+moduleoptions=3
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-visiblemodules=11
+visiblemodules=3
  -1
- -1
- -1
+ 0
+ 0
+nomenumodules=3
  0
  -1
  -1
- -1
- -1
- -1
- -1
- -1
-nomenumodules=11
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
 [sourcefo.files_tab]
-order=41
- 0
- 1
- 2
- 40
- 36
- 39
- 3
- 4
- 5
- 34
- 35
- 6
- 37
- 38
- 7
- 8
- 9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
-firsttab=1
-index=3
+firsttab=0
+index=0
 [layout]
-windowlayout=755
+windowlayout=561
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1937,8 +1633,8 @@ windowlayout=755
  ny=0
  ncx=0
  ncy=0
- x=59
- y=79
+ x=125
+ y=115
  cx=1224
  cy=621
  rcx=0
@@ -1995,7 +1691,7 @@ windowlayout=755
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -2324,7 +2020,7 @@ windowlayout=755
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2367,11 +2063,11 @@ windowlayout=755
  nx=0
  ny=0
  ncx=1197
- ncy=6
+ ncy=0
  x=0
  y=0
  cx=1212
- cy=4
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2381,16 +2077,18 @@ windowlayout=755
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/findmessage.pas
   /home/fred/ideu/src/procedurelistform.pas
-  /home/fred/ideu/src/ideusettings.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/mseconsts_ide.pas
@@ -2401,8 +2099,6 @@ windowlayout=755
   /home/fred/ideu/src/confdebugger.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_id.pas
-  /home/fred/ideu/src/mseconsts_ide_es.pas
-  /home/fred/ideu/src/mseconsts_ide_de.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2424,50 +2120,8 @@ windowlayout=755
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=41
-  0
-  1
-  2
-  40
-  36
-  39
-  3
-  4
-  5
-  34
-  35
-  6
-  37
-  38
-  7
-  8
-  9
-  10
-  11
-  12
-  13
-  14
-  15
-  16
-  17
-  18
-  19
-  20
-  21
-  22
-  23
-  24
-  25
-  26
-  27
-  28
-  29
-  30
-  31
-  32
-  33
- firsttab=1
- index=3
+ firsttab=0
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2476,7 +2130,7 @@ windowlayout=755
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_conflangfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2485,8 +2139,8 @@ windowlayout=755
  ncy=0
  x=183
  y=113
- cx=352
- cy=277
+ cx=383
+ cy=334
  rcx=0
  rcy=0
  wsize=0
@@ -2511,7 +2165,7 @@ windowlayout=755
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2522,158 +2176,6 @@ windowlayout=755
  y=258
  cx=755
  cy=76
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=confdebuggerfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=410
- y=250
- cx=310
- cy=204
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_stockdata_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_settings_form_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=129
- y=57
- cx=198
- cy=85
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_settings_form_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_confideufo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=473
- y=107
- cx=464
- cy=492
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_procedurelistfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=236
- y=48
- cx=639
- cy=672
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_procedurelistfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_findmessagefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=497
- y=188
- cx=482
- cy=354
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_findmessagefo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcepage_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=459
- y=298
- cx=362
- cy=119
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_sourcepage_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=441
- y=217
- cx=652
- cy=301
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=404
- y=62
- cx=854
- cy=620
  rcx=0
  rcy=0
  wsize=0

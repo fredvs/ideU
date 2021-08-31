@@ -3658,7 +3658,7 @@ begin
   sourcefo.updatehinttab;
   //{
   
-   sourcefo.openfile(projectoptions.o.texp.mainfile, True);
+  sourcefo.openfile(projectoptions.o.texp.mainfile, True);
 
   if (confideufo.usedefaulteditoroptions.Value) then
   begin
@@ -3696,6 +3696,9 @@ begin
 
       str1.Destroy();
     end;
+    
+    sourcefo.files_tab.activepageindex := 0;
+    sourcefo.ActivePage.setfocus;
 
     layoutbusy := False;
 
