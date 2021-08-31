@@ -203,7 +203,10 @@ end;
 
 procedure tdebuggerfo.findinpage(const sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil) then
+begin
   actionsmo.findactonexecute(sender);
+end;
  end;
 
 procedure tdebuggerfo.paintdock(const sender: twidget; const acanvas: tcanvas);
@@ -352,6 +355,7 @@ end;
 
 procedure tdebuggerfo.onbeauty(const sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil)  then
 mainfo.onbeauty(sender);
 end;
 

@@ -339,6 +339,10 @@ end;
 
 procedure tactionsmo.procedurelistonexecute(const Sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil)
+then
+begin
+
   if not plformcreated then
     doProcedureList;
 
@@ -360,6 +364,7 @@ begin
     procedurelistfo.Show;
     procedurelistfo.bringtofront;
   end;
+ end; 
 end;
 
 function tactionsmo.gettoolshortcutaction(const index: int32; out act: taction): Boolean;
@@ -455,6 +460,8 @@ procedure tactionsmo.savecustom(const Sender: TObject);
 var
   sysfilename: msestring;
 begin
+if (sourcefo.ActivePage <> nil) then
+begin
   saveactonexecute(Sender);
   if (conffpguifo.enablefpguidesigner.Value = True) then
   begin
@@ -463,6 +470,7 @@ begin
   end;
   sourcefo.activate;
   sourcefo.updatehinttab;
+end;  
 end;
 
 procedure tactionsmo.saveasactonexecute(const Sender: TObject);
@@ -573,8 +581,11 @@ end;
 
 procedure tactionsmo.toggleformunitonexecute(const Sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil) then
+begin
   mainfo.toggleformunit;
   tabcloser := False;
+end;  
 end;
 
 
@@ -717,8 +728,11 @@ end;
 // Project cust compile
 procedure tactionsmo.custcompileproject(const Sender: TObject);
 begin
+  if theprojectname <> '' then
+begin
   saveallactonexecute(Sender);
   compileproject(Sender);
+end;  
 end;
 
 procedure tactionsmo.setupcustom;
@@ -769,9 +783,12 @@ end;
 
 procedure tactionsmo.compilecustom(const Sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil) then
+begin
   saveactonexecute(Sender);
   setupcustom;
   mainfo.customcompile(Sender);
+end;  
 end;
 
 procedure tactionsmo.setupcustommenu(const Sender: TObject);
@@ -828,7 +845,10 @@ end;
 
 procedure tactionsmo.runcustom(const Sender: TObject);
 begin
+if (sourcefo.ActivePage <> nil) then
+begin
   mainfo.customrun(Sender);
+end;  
 end;
 
 procedure tactionsmo.undoactonexecute(const Sender: TObject);
@@ -1294,7 +1314,10 @@ end;
 
 procedure tactionsmo.projectoptionsexe(const Sender: TObject);
 begin
+if theprojectname <> '' then
+begin
   editprojectoptions;
+end;  
 end;
 
 procedure tactionsmo.projecttreeexe(const Sender: TObject);
@@ -1309,10 +1332,15 @@ end;
 
 procedure tactionsmo.projectsaveexe(const Sender: TObject);
 begin
+if theprojectname <> '' then
+begin
+
   if projectoptions.projectfilename = '' then
     mainfo.saveprojectasonexecute(Sender)
   else
     mainfo.saveproject(projectoptions.projectfilename);
+    
+ end;   
 end;
 
 procedure tactionsmo.projectcloeseexe(const Sender: TObject);

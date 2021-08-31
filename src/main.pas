@@ -337,7 +337,9 @@ var
   nodebugset: Boolean = False;
   isactivated: Boolean = False;
   MSEFallbacklang: string = '';
-  theprojectname, thefilename: string;
+  theprojectname : string = '';
+  thefilename: string = '';
+
 
 procedure doassistive;
 
@@ -2625,7 +2627,56 @@ begin
     saveall.Enabled := sourcefo.modified or designer.modified or
       projectoptions.modified;
     actionsmo.toggleformunit.Enabled := (flastform <> nil) or (designer.modules.Count > 0);
-    if (sourcefo.ActivePage <> nil) and
+   
+        if theprojectname <> '' then
+      begin
+      mainmenu1.menu.itembynames(['project', 'make']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'build']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make0']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make1']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make2']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make3']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make4']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make5']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make6']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make7']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make8']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'make9']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'abortmake']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'debugrun']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'options']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'tree']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'source']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'save']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'saveas']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'saveascopy']).enabled := true;  
+      mainmenu1.menu.itembynames(['project', 'close']).enabled := true;  
+     end else
+     begin
+       mainmenu1.menu.itembynames(['project', 'make']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'build']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make0']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make1']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make2']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make3']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make4']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make5']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make6']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make7']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make8']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'make9']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'abortmake']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'debugrun']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'options']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'tree']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'source']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'save']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'saveas']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'saveascopy']).enabled := false;  
+      mainmenu1.menu.itembynames(['project', 'close']).enabled := false;  
+      end;
+   
+   if (sourcefo.ActivePage <> nil) and
       sourcefo.ActivePage.activeentered then
     begin
       setbm0.Enabled := True;
@@ -2654,7 +2705,34 @@ begin
       findbm9.Enabled   := True;
       print.Enabled     := True;
       //debuggerfo.save_file.enabled := modified;
-
+      
+       mainmenu1.menu.itembynames(['search', 'proclist']).enabled := true;
+        mainmenu1.menu.itembynames(['syntax']).enabled := true;   
+        mainmenu1.menu.itembynames(['layout']).enabled := true;  
+      mainmenu1.menu.itembynames(['edit']).enabled := true; 
+        
+       mainmenu1.menu.itembynames(['edited', 'make']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'build']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make0']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make1']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make2']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make3']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make4']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make5']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make6']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make7']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make8']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'make9']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'makeX']).enabled := true; 
+      
+      mainmenu1.menu.itembynames(['edited', 'abortmake']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'run']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'beautifier']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'save']).enabled := true;  
+      mainmenu1.menu.itembynames(['edited', 'close']).enabled := true;  
+       mainmenu1.menu.itembynames(['edited']).enabled := true;
+    
+           
       with sourcefo.ActivePage do
       begin
         actionsmo.save.Enabled := modified;
@@ -2663,6 +2741,8 @@ begin
         redo.Enabled         := edit.canredo;
         copy.Enabled         := edit.hasselection;
         copylatexact.Enabled := edit.hasselection;
+        copyword.Enabled   := True;
+   
         cut.Enabled          := edit.hasselection;
         paste.Enabled        := edit.canpaste;
         Delete.Enabled       := edit.hasselection;
@@ -2674,6 +2754,7 @@ begin
         //    find.enabled:= true;
         replace.Enabled      := True;
         copyword.Enabled     := True;
+        selectall.enabled := true;
         //    actionsmo.repeatfind.enabled:= find.enabled and
         //           (projectoptions.findreplaceinfo.find.text <> '');
       end;
@@ -2705,7 +2786,36 @@ begin
 
       print.Enabled := False;
       save.Enabled  := False;
-
+     line.Enabled         := false;
+   
+      copyword.Enabled   := false;
+      
+       mainmenu1.menu.itembynames(['search', 'proclist']).enabled := false;
+       mainmenu1.menu.itembynames(['syntax']).enabled := false;   
+       mainmenu1.menu.itembynames(['layout']).enabled := false;   
+      
+      mainmenu1.menu.itembynames(['edited']).enabled := false;
+      mainmenu1.menu.itembynames(['edit']).enabled := false; 
+         
+      mainmenu1.menu.itembynames(['edited', 'make']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'build']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make0']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make1']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make2']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make3']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make4']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make5']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make6']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make7']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make8']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'make9']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'makeX']).enabled := false; 
+      mainmenu1.menu.itembynames(['edited', 'abortmake']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'run']).enabled := false;  
+      mainmenu1.menu.itembynames(['edited', 'beautifier']).enabled := false; 
+      mainmenu1.menu.itembynames(['edited', 'save']).enabled := false;   
+      mainmenu1.menu.itembynames(['edited', 'close']).enabled := false; 
+     
       undo.Enabled         := False;
       redo.Enabled         := False;
       copy.Enabled         := False;
@@ -2715,14 +2825,14 @@ begin
       Delete.Enabled       := False;
       indent.Enabled       := False;
       unindent.Enabled     := False;
-      line.Enabled         := True;
       togglebkpt.Enabled   := False;
       togglebkptenable.Enabled := False;
 
-      //   actionsmo.repeatfind.enabled:= false;
+     //   actionsmo.repeatfind.enabled:= false;
       // replace.enabled:= false;
-      replace.Enabled  := True;
-      copyword.Enabled := True;
+      replace.Enabled  := false;
+      copyword.Enabled := false;
+      selectall.enabled := false;
 
     end;
     if (factivedesignmodule <> nil) then
@@ -3545,6 +3655,8 @@ begin
   end;
   sourcefo.updatehinttab;
   //{
+  
+   sourcefo.openfile(projectoptions.o.texp.mainfile, True);
 
   if (confideufo.usedefaulteditoroptions.Value) then
   begin
@@ -4557,8 +4669,10 @@ begin
         str1.Destroy();
       end;
     end;
-
+  
   end;
+  
+  theprojectname := '';
 end;
 
 procedure tmainfo.mainstatbeforewriteexe(const Sender: TObject);
