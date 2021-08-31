@@ -211,6 +211,7 @@ type
     procedure editshortcuts(const Sender: TObject);
     procedure checkdirlayout(const Sender: TObject);
     procedure setlangsettings();
+   procedure onchange(const sender: TObject);
  private
     fshortcutcontroller: tshortcutcontroller;
   protected
@@ -666,6 +667,11 @@ begin
     syntaxdefdir.controller.options  := [fdo_directory];
     layoutdir.controller.options     := [fdo_directory];
   end;
+end;
+
+procedure tsettingsfo.onchange(const sender: TObject);
+begin
+tabcloser := false;
 end;
 
 

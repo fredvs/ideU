@@ -58,6 +58,7 @@ object settings_form: tsettingsfo
     bounds_cy = 482
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
+    onactivepagechanged = onchange
     tab_frame.localprops = []
     tab_frame.localprops1 = []
     tab_coloractivetab = 16775390
@@ -69,7 +70,7 @@ object settings_form: tsettingsfo
     tab_frametab.localprops = [frl_hiddenedges, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
     tab_frametab.localprops1 = [frl1_extraspace]
     tab_size = 20
-    tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_destroywidgets]
     statfile = mainfo.mainstatfile
     reffontheight = 15
     object path: ttabpage
