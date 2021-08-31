@@ -592,13 +592,15 @@ end;
 procedure tmainfo.syntaxdefload(const Sender: TObject);
 begin
 
-  if not dialogfilesformcreated then
-    dodialogfiles;
-
-  dothemedialog();
-
   if Assigned(sourcefo.ActivePage) then
   begin
+   
+     if not dialogfilesformcreated then
+    dodialogfiles;
+
+    dothemedialog();
+
+  
     dialogfilesfo.tag := 0;
 
     thesdef := projectoptions.e.t.syntaxdeffiles[0];
@@ -2707,9 +2709,9 @@ begin
       //debuggerfo.save_file.enabled := modified;
       
        mainmenu1.menu.itembynames(['search', 'proclist']).enabled := true;
-        mainmenu1.menu.itembynames(['syntax']).enabled := true;   
-        mainmenu1.menu.itembynames(['layout']).enabled := true;  
-      mainmenu1.menu.itembynames(['edit']).enabled := true; 
+   //     mainmenu1.menu.itembynames(['syntax']).enabled := true;   
+   //     mainmenu1.menu.itembynames(['layout']).enabled := true;  
+  //    mainmenu1.menu.itembynames(['edit']).enabled := true; 
         
        mainmenu1.menu.itembynames(['edited', 'make']).enabled := true;  
       mainmenu1.menu.itembynames(['edited', 'build']).enabled := true;  
@@ -2730,7 +2732,7 @@ begin
       mainmenu1.menu.itembynames(['edited', 'beautifier']).enabled := true;  
       mainmenu1.menu.itembynames(['edited', 'save']).enabled := true;  
       mainmenu1.menu.itembynames(['edited', 'close']).enabled := true;  
-       mainmenu1.menu.itembynames(['edited']).enabled := true;
+    //   mainmenu1.menu.itembynames(['edited']).enabled := true;
     
            
       with sourcefo.ActivePage do
@@ -2791,11 +2793,11 @@ begin
       copyword.Enabled   := false;
       
        mainmenu1.menu.itembynames(['search', 'proclist']).enabled := false;
-       mainmenu1.menu.itembynames(['syntax']).enabled := false;   
-       mainmenu1.menu.itembynames(['layout']).enabled := false;   
+     //  mainmenu1.menu.itembynames(['syntax']).enabled := false;   
+     //  mainmenu1.menu.itembynames(['layout']).enabled := false;   
       
-      mainmenu1.menu.itembynames(['edited']).enabled := false;
-      mainmenu1.menu.itembynames(['edit']).enabled := false; 
+    //  mainmenu1.menu.itembynames(['edited']).enabled := false;
+     // mainmenu1.menu.itembynames(['edit']).enabled := false; 
          
       mainmenu1.menu.itembynames(['edited', 'make']).enabled := false;  
       mainmenu1.menu.itembynames(['edited', 'build']).enabled := false;  
@@ -4605,6 +4607,9 @@ end;
 // fred layout
 procedure tmainfo.menuwindowlayoutexe(const Sender: TObject);
 begin
+if Assigned(sourcefo.ActivePage) then
+  begin
+ 
 
   if not dialogfilesformcreated then
     dodialogfiles;
@@ -4646,6 +4651,8 @@ begin
     dialogfilesfo.Show;
     dialogfilesfo.bringtofront;
   end;
+  
+end;  
 
 end;
 
