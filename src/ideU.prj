@@ -315,7 +315,7 @@ options=114
  index=2
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo]
  stackedunder=
  x=106
@@ -846,7 +846,7 @@ stripmessageesc=1
 copymessages=0
 closemessages=0
 enablepurpose=1
-enablesource=0
+enablesource=1
 checkmethods=1
 colorerror=-1610612717
 colorwarning=-1610612712
@@ -1596,31 +1596,26 @@ findhistory=20
  'ru'
  sc_spanish
 findoptions=1
-editpos=5
+editpos=4
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-sourcefiles=5
+sourcefiles=4
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/ideU.pas
-relpaths=5
+relpaths=4
  main.pas
  sourceform.pas
  actionsmodule.pas
  ideU.pas
- ideU.pas
-ismoduletexts=5
- 0
+ismoduletexts=4
  0
  0
  0
@@ -1642,16 +1637,10 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=5
- 0
- 2
- 4
- 3
- 1
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=567
+windowlayout=561
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2111,14 +2100,14 @@ windowlayout=567
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
  history=20
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideusettings.pas
-  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/sourcepage.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
-  /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/findmessage.pas
   /home/fred/ideu/src/procedurelistform.pas
@@ -2152,14 +2141,8 @@ windowlayout=567
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  2
-  4
-  3
-  1
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
