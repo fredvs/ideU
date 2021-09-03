@@ -63,6 +63,9 @@ type
    function show(out aname: msestring): modalresultty; reintroduce;
  end;
 
+var
+templateeditorfo : ttemplateeditorfo;
+
 implementation
 uses
  templateeditor_mfm,msecodetemplates,projectoptionsform,sysutils,msefileutils,

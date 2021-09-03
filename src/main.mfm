@@ -520,7 +520,7 @@ object mainfo: tmainfo
         state = [as_localcaption]
       end    
       item
-        submenu.count = 28
+        submenu.count = 30
         submenu.items = <        
           item
             submenu.count = 2
@@ -546,6 +546,16 @@ object mainfo: tmainfo
             options = [mao_checkbox, mao_shortcutcaption]
           end        
           item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = ' Template Editor '
+            name = 'templateeditor'
+            state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+            onexecute = ontemplateeditor
+          end        
+          item
+            state = [as_invisible, as_localinvisible]
             options = [mao_separator, mao_shortcutcaption]
           end        
           item

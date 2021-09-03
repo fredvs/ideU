@@ -676,7 +676,7 @@ const
     'Commandant',                                  // sc_commander
     'Symboles',                                    // sc_symbols
     'Vigie',                                       // sc_watches
-    'Empiler',                                     // sc_stack
+    'Empilage',                                     // sc_stack
     'Fils',                                        // sc_threads
     'CPU',                                         // sc_cpu
     'Assembler',                                   // sc_assembler

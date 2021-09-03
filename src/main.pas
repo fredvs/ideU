@@ -30,6 +30,7 @@ interface
 {$endif}
 
 uses
+ templateeditor,
  msearrayutils,aboutform,plugmanager,fpg_iniutils_ideu,msetimer,mseformatstr,
  mseconsts_ide,dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,
  sak_mse,msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
@@ -41,7 +42,7 @@ uses
  msestringcontainer,msesys,mseedit,msewidgets,{$I useslang.inc};
 
 const
-  versiontext = '2.6.0';
+  versiontext = '2.6.2';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -198,6 +199,7 @@ type
     procedure onlang(const Sender: TObject);
     procedure onactiv(const Sender: TObject);
 
+   procedure ontemplateeditor(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -3649,17 +3651,14 @@ begin
     end;
     application.ProcessMessages;
 
-    if projectoptions.o.enablesource = True then
+    if projectoptions.o.enablesource = false then
       actionsmo.projectsourceexe(nil)
     else if sourcefo.files_tab.Count = 0 then
       actionsmo.projectsourceexe(nil);
 
   end;
   sourcefo.updatehinttab;
-  //{
-  
-  sourcefo.openfile(projectoptions.o.texp.mainfile, True);
-
+ 
   if (confideufo.usedefaulteditoroptions.Value) then
   begin
     layoutbusy := True;
@@ -5612,6 +5611,12 @@ begin
       end;
     end;    
   end;
+end;
+
+procedure tmainfo.ontemplateeditor(const sender: TObject);
+begin
+  application.createform(ttemplateeditorfo, templateeditorfo);
+  templateeditorfo.show;
 end;
 
 
