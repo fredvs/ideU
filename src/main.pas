@@ -549,6 +549,7 @@ end;
 
 procedure tmainfo.mainfooncreate(const Sender: TObject);
 begin
+   
   nozorderhandling := True;
   designer.ongetmodulenamefile :=
 {$ifdef FPC}
@@ -3119,7 +3120,22 @@ begin
   try
     wstr1 := filepath(statdirname);
     if not finddir(wstr1) then
+    begin
       createdir(wstr1);
+    {$ifdef unix}
+      {$ifdef CPU64}
+         CopyFile('ideuli64.sta',  wstr1 + '/ideuli.sta') ;
+         deletefile('ideuli64.sta') ;
+      {$endif}
+      {$ifdef CPU32}
+         CopyFile('ideuli32.sta',  wstr1 + '/ideuli.sta') ;
+         deletefile('ideuli32.sta') ;
+      {$endif}
+    {$endif}
+      
+    end;
+    
+      mainstatfile.filedir := wstr1;
   {$ifdef mswindows}
     mainstatfile.filename := statname + 'wi.sta';
   {$endif}
@@ -5032,7 +5048,7 @@ end;
 
 procedure tmainfo.manfocreated(const Sender: TObject);
 begin
-  TDummyThread.Create(False);
+   TDummyThread.Create(False);
 end;
 
 procedure tmainfo.onbeauty(const Sender: TObject);

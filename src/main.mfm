@@ -131,8 +131,7 @@ object mainfo: tmainfo
     top = 6
   end
   object mainstatfile: tstatfile
-    filename = 'ideu.sta'
-    filedir = '"^/.ideu"'
+    filedir = '^/.ideu'
     options = [sfo_createpath, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
     onstatupdate = mainstatfileonupdatestat
     onstatbeforewrite = mainstatbeforewriteexe
