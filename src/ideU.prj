@@ -921,18 +921,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  CONFIDEUFO
+ CONFLANGFO
  MAINFO
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TCONFIDEUFO
+ TCONFLANGFO
  TMAINFO
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1581,8 +1584,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=setlangextrasettings
+finddtext=ratio
 findhistory=20
+ ratio
  setlang
  setitem
  ac_
@@ -1602,72 +1606,74 @@ findhistory=20
  caption
  messages
  closemessages
- layout
 findoptions=1
-editpos=5
- 0,-1073741823
- 0,-1073741823
+editpos=6
  0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=5
+ ${PROJECTDIR}/conflang.pas
+relpaths=6
  main.pas
  sourceform.pas
  ideU.pas
  confideu.pas
  projectoptionsform.pas
-ismoduletexts=5
+ conflang.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=5
+ 0
+modules=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=5
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=6
  0
  0
  0
  0
  0
-visiblemodules=5
+ 0
+visiblemodules=6
  0
  -1
  -1
  -1
  -1
-nomenumodules=5
  -1
+nomenumodules=6
+ -1
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=5
- 0
- 3
- 2
- 4
- 1
 firsttab=0
 index=1
 [layout]
-windowlayout=606
+windowlayout=601
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2112,11 +2118,11 @@ windowlayout=606
  nx=0
  ny=0
  ncx=1197
- ncy=37
+ ncy=25
  x=0
  y=0
  cx=1212
- cy=35
+ cy=23
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2126,28 +2132,10 @@ windowlayout=606
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
- history=20
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/sourceform.pas
+ history=2
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
+  /home/fred/ideu/src/ideU.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2169,12 +2157,6 @@ windowlayout=606
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  3
-  2
-  4
-  1
  firsttab=0
  index=1
  [confideufo.fontname]
@@ -2258,7 +2240,7 @@ windowlayout=606
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_conflangfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2269,6 +2251,25 @@ windowlayout=606
  y=62
  cx=854
  cy=620
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=410
+ y=250
+ cx=310
+ cy=204
  rcx=0
  rcy=0
  wsize=0

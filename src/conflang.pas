@@ -43,6 +43,11 @@ end;
 
 procedure tconflangfo.oncok(const sender: TObject);
 begin
+ mainfo.setlang(MSEFallbackLang);
+ confideufo.setlangextrasettings();
+ confcompilerfo.setlangcompilers();
+ confdebuggerfo.setlangdebuggers();
+ 
 //onchangelang(Sender);
 close;
 end;

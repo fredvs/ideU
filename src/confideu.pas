@@ -69,6 +69,8 @@ type
     procedure onok(const Sender: TObject);
     procedure oncreated(const Sender: TObject);
     procedure setlangextrasettings();
+    procedure confideuresize ;
+   procedure onshow(const sender: TObject);
   end;
 
 var
@@ -238,6 +240,130 @@ procedure tconfideufo.updownacc(const Sender: TObject);
 begin
   //updownaccelerator := key_accelerator.Value;
 end;
+
+procedure tconfideufo.confideuresize ;
+var
+  ratio: double;
+  rect1: rectty;
+begin
+
+  ratio := fontsize.Value / 12;
+ // confideufo
+  font.Height := fontsize.Value;
+  font.Name   := ansistring(fontname.Value);
+
+  group_file_change.Width := round(ratio * 280);
+  group_system_layout.Width := round(ratio * 280);
+  group_assistive.Width := round(ratio * 280);
+  group_sourceeditor.Width := round(ratio * 314);
+  group_sourceeditor.left := group_assistive.Width + 20;
+  but_ok.Width    := round(ratio * 280) div 2;
+  but_apply.Width := but_ok.Width - 1;
+  but_ok.left     := but_apply.Width + but_apply.left + 1;
+
+  group_file_change.top    := 40;
+  tbfilereload.top         := tbfilereload.Height + 2;
+  tbfilenoload.top         := tbfilereload.top + tbfilereload.Height + 2;
+  tbfileaskload.top        := tbfilenoload.top + tbfilenoload.Height + 2;
+  group_file_change.Height := tbfileaskload.top + tbfileaskload.Height + 10;
+
+  group_system_layout.top := group_file_change.top +
+    group_file_change.Height + 10;
+
+  universal_path.top := universal_path.Height + 2;
+  doubleclic.top     := universal_path.top + universal_path.Height + 2;
+  blinkcaret.top     := doubleclic.top + doubleclic.Height + 2;
+
+  fullpath.top       := blinkcaret.top + blinkcaret.Height + 2;
+  modaldial.top      := fullpath.top + fullpath.Height + 2;
+  autofocus_menu.top := modaldial.top + modaldial.Height + 2;
+  nozorderenable.top := autofocus_menu.top + autofocus_menu.Height + 2;
+
+{$ifdef mswindows}
+  confirmdel.top := nozorderenable.top + nozorderenable.Height + 2;
+{$else}
+ brepaintcanvas.top :=  nozorderenable.top + nozorderenable.height + 2 ;
+ confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
+{$endif}
+
+  fontname.top := confirmdel.top + confirmdel.Height + 2;
+  fontsize.top := fontname.top + fontname.Height + 2;
+  
+  fontname.left := 8;
+   fontsize.left := 8;
+   
+    addwhiteaftercomma.left := 6;
+  
+  addwhiteaftercomma.top := fontsize.top + fontsize.Height + 2;
+
+  group_system_layout.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
+
+  
+  tbassistive.top := tbassistive.Height + 2;
+  tesakitdir.top  := tbassistive.top + tbassistive.Height + 2;
+
+  group_assistive.Height := tesakitdir.top + tesakitdir.Height + 10;
+  group_assistive.top    := group_system_layout.top + group_system_layout.Height + 10;
+
+  group_sourceeditor.top := 10;
+
+  usedefaulteditoroptions.top := usedefaulteditoroptions.Height + 2;
+  backupfilecount.top         := usedefaulteditoroptions.top + usedefaulteditoroptions.Height + 2;
+
+  stripmessageesc.top := backupfilecount.top + 10;
+  closemessages.top   := backupfilecount.top + backupfilecount.Height + 6;
+
+  trimtrailingwhitespace.top := closemessages.top + closemessages.Height + 2;
+  encoding.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
+
+  encoding.Width := round(ratio * 84);
+  tabstops.top   := encoding.top;
+  tabstops.left  := encoding.right + 40;
+  spacetabs.top  := tabstops.bottom - spacetabs.Height;
+  spacetabs.left := tabstops.right + 4;
+
+  rightmarginchars.top := encoding.top + encoding.Height + 2;
+
+  blockindent.top := rightmarginchars.top;
+  tabindent.top   := blockindent.bottom - tabindent.Height;
+
+  blockindent.left := encoding.right + 40;
+  tabindent.left   := blockindent.right + 4;
+
+
+  colornote.top    := rightmarginchars.top + rightmarginchars.Height + 2;
+  colorwarning.top := colornote.top + colornote.Height + 2;
+  colorerror.top   := colorwarning.top + colorwarning.Height + 2;
+
+  deflayout.top := colorerror.top + colorerror.Height + 2;
+  defsynt.top   := deflayout.top + deflayout.Height + 2;
+   group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
+  
+  rectanglearea.left := group_sourceeditor.left + 10;
+  
+  rectanglearea.top := group_sourceeditor.bottom + 4;
+
+  Height := group_assistive.bottom + 10;
+
+  if findformcreated then
+    finddialogdotextsize;
+
+  rect1 := application.screenrect(window);
+
+  fontname.left := 10;
+  fontsize.left := 10;
+
+  //group_file_changed2.width := round(ratio * 280);
+
+  Width := group_sourceeditor.left + group_assistive.Width + round(40 * ratio);
+
+   //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
+  //group_file_change.width := group_sourceeditor.width;
+
+  invalidate;
+
+  left := (rect1.cx - Width) div 2;
+  end;
 
 procedure tconfideufo.onchangefont;
 var
@@ -533,7 +659,6 @@ begin
   confdebuggerfo.font.Height := fontsize.Value;
   confdebuggerfo.font.Name   := ansistring(fontname.Value);
 
-
   // confmsegui
   confmseguifo.font.Height := fontsize.Value;
   confmseguifo.font.Name   := ansistring(fontname.Value);
@@ -586,133 +711,15 @@ begin
 
   conffpguifo.Width  := conffpguifo.groupcommand.Width + 26;
   conffpguifo.Height := conffpguifo.edfilter.bottom + 10;
-
-  // confideufo
-  font.Height := fontsize.Value;
-  font.Name   := ansistring(fontname.Value);
-
-  group_file_change.Width := round(ratio * 280);
-  group_system_layout.Width := round(ratio * 280);
-  group_assistive.Width := round(ratio * 280);
-  group_sourceeditor.Width := round(ratio * 314);
-  group_sourceeditor.left := group_assistive.Width + 20;
-  but_ok.Width    := round(ratio * 280) div 2;
-  but_apply.Width := but_ok.Width - 1;
-  but_ok.left     := but_apply.Width + but_apply.left + 1;
-
-  group_file_change.top    := 40;
-  tbfilereload.top         := tbfilereload.Height + 2;
-  tbfilenoload.top         := tbfilereload.top + tbfilereload.Height + 2;
-  tbfileaskload.top        := tbfilenoload.top + tbfilenoload.Height + 2;
-  group_file_change.Height := tbfileaskload.top + tbfileaskload.Height + 10;
-
-  group_system_layout.top := group_file_change.top +
-    group_file_change.Height + 10;
-
-  universal_path.top := universal_path.Height + 2;
-  doubleclic.top     := universal_path.top + universal_path.Height + 2;
-  blinkcaret.top     := doubleclic.top + doubleclic.Height + 2;
-
-  fullpath.top       := blinkcaret.top + blinkcaret.Height + 2;
-  modaldial.top      := fullpath.top + fullpath.Height + 2;
-  autofocus_menu.top := modaldial.top + modaldial.Height + 2;
-  nozorderenable.top := autofocus_menu.top + autofocus_menu.Height + 2;
-
-{$ifdef mswindows}
-  confirmdel.top := nozorderenable.top + nozorderenable.Height + 2;
-{$else}
- brepaintcanvas.top :=  nozorderenable.top + nozorderenable.height + 2 ;
- confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
-{$endif}
-
-  fontname.top := confirmdel.top + confirmdel.Height + 2;
-  fontsize.top := fontname.top + fontname.Height + 2;
   
-  fontname.left := 8;
-   fontsize.left := 8;
-   
-    addwhiteaftercomma.left := 6;
-  
-  addwhiteaftercomma.top := fontsize.top + fontsize.Height + 2;
-
-  group_system_layout.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
-
-  
-  tbassistive.top := tbassistive.Height + 2;
-  tesakitdir.top  := tbassistive.top + tbassistive.Height + 2;
-
-  group_assistive.Height := tesakitdir.top + tesakitdir.Height + 10;
-  group_assistive.top    := group_system_layout.top + group_system_layout.Height + 10;
-
-  group_sourceeditor.top := 10;
-
-  usedefaulteditoroptions.top := usedefaulteditoroptions.Height + 2;
-  backupfilecount.top         := usedefaulteditoroptions.top + usedefaulteditoroptions.Height + 2;
-
-  stripmessageesc.top := backupfilecount.top + 10;
-  closemessages.top   := backupfilecount.top + backupfilecount.Height + 6;
-
-  trimtrailingwhitespace.top := closemessages.top + closemessages.Height + 2;
-  encoding.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
-
-  encoding.Width := round(ratio * 84);
-  tabstops.top   := encoding.top;
-  tabstops.left  := encoding.right + 40;
-  spacetabs.top  := tabstops.bottom - spacetabs.Height;
-  spacetabs.left := tabstops.right + 4;
-
-  rightmarginchars.top := encoding.top + encoding.Height + 2;
-
-  blockindent.top := rightmarginchars.top;
-  tabindent.top   := blockindent.bottom - tabindent.Height;
-
-  blockindent.left := encoding.right + 40;
-  tabindent.left   := blockindent.right + 4;
-
-
-  colornote.top    := rightmarginchars.top + rightmarginchars.Height + 2;
-  colorwarning.top := colornote.top + colornote.Height + 2;
-  colorerror.top   := colorwarning.top + colorwarning.Height + 2;
-
-  deflayout.top := colorerror.top + colorerror.Height + 2;
-  defsynt.top   := deflayout.top + deflayout.Height + 2;
-   group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
-  
-  rectanglearea.left := group_sourceeditor.left + 10;
-  
-  rectanglearea.top := group_sourceeditor.bottom + 4;
-
-{$ifdef mswindows}
-  Height := group_sourceeditor.Height + (universal_path.Height * 2);
-{$else}
-  height := group_sourceeditor.height + (universal_path.height * 3);
-{$endif}
-
-  if findformcreated then
-    finddialogdotextsize;
-
-  rect1 := application.screenrect(window);
-
-  fontname.left := 10;
-  fontsize.left := 10;
-
-  //group_file_changed2.width := round(ratio * 280);
-
-  Width := group_sourceeditor.left + group_assistive.Width + round(40 * ratio);
-
-  messagefo.Messages.font.Height := fontsize.Value;
+   messagefo.Messages.font.Height := fontsize.Value;
   messagefo.frame.grip_size      := round(12 * ratio);
 
   messagefo.Messages.font.Name := ansistring(fontname.Value);
 
   debuggerfo.statdisp.font.Name := ansistring(fontname.Value);
 
-  //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
-  //group_file_change.width := group_sourceeditor.width;
-
-  invalidate;
-
-  left := (rect1.cx - Width) div 2;
+  confideuresize;
 
 end;
 
@@ -742,7 +749,10 @@ begin
 {$ifdef mswindows}
   brepaintcanvas.Visible := False;
 {$endif}
-setlangextrasettings();
+
+//mainfo.setlang(MSEFallbackLang); 
+
+//setlangextrasettings();
 
 end;
 
@@ -795,6 +805,12 @@ begin
   tbfilenoload.frame.caption := settingstext(se_filenoload);
   tbfileaskload.frame.caption := settingstext(se_fileaskload);
  
+end;
+
+procedure tconfideufo.onshow(const sender: TObject);
+begin
+setlangextrasettings();
+confideuresize;
 end;
 
 end.
