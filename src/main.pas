@@ -933,6 +933,8 @@ begin
   confideufo.defsynt.Text :=
     utf8decode(gINI.ReadString('Syntax', 'default', ansistring(libpath) + directoryseparator +
     'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef'));
+    
+    
 
   if not fileexists(confideufo.defsynt.Text) then
     confideufo.defsynt.Text := (libpath) + directoryseparator +
@@ -940,6 +942,9 @@ begin
 
   confideufo.defsynt.Value        := confideufo.defsynt.Text;
   confideufo.defsynt.valuedefault := confideufo.defsynt.Text;
+
+  confideufo.rectanglearea.Value := gINI.Readbool('rectanglearea', 'editor', False);
+
 
      {$ifdef windows}
   confideufo.tesakitdir.Text :=
@@ -1007,6 +1012,9 @@ begin
   gINI.writeString('Layout', 'default', ansistring(confideufo.deflayout.Text));
 
   gINI.writeString('Syntax', 'default', ansistring(confideufo.defsynt.Text));
+  
+  
+  gINI.writebool('rectanglearea', 'editor', (confideufo.rectanglearea.Value));
 
   gINI.writebool('Integration', 'designer_fpGUI',
     (conffpguifo.enablefpguidesigner.Value));
@@ -3122,19 +3130,13 @@ begin
     if not finddir(wstr1) then
     begin
       createdir(wstr1);
-    {$ifdef unix}
-      {$ifdef CPU64}
-         CopyFile('ideuli64.sta',  wstr1 + '/ideuli.sta') ;
-         deletefile('ideuli64.sta') ;
-      {$endif}
-      {$ifdef CPU32}
-         CopyFile('ideuli32.sta',  wstr1 + '/ideuli.sta') ;
-         deletefile('ideuli32.sta') ;
-      {$endif}
-    {$endif}
-      
     end;
     
+    {$ifdef unix}
+           if not fileexists(wstr1 + '/ideuli.sta') then
+           Filecreate(wstr1 + '/ideuli.sta') ;
+    {$endif}
+ 
       mainstatfile.filedir := wstr1;
   {$ifdef mswindows}
     mainstatfile.filename := statname + 'wi.sta';

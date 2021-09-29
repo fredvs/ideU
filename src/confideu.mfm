@@ -1,17 +1,17 @@
 object confideufo: tconfideufo
   color = 13229761
   visible = False
-  bounds_x = 236
-  bounds_y = 48
+  bounds_x = 242
+  bounds_y = 29
   bounds_cx = 629
-  bounds_cy = 672
+  bounds_cy = 699
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     629
-    672
+    699
   )
   optionswindow = [wo_dialog]
   font.name = 'stf_default'
@@ -26,17 +26,8 @@ object confideufo: tconfideufo
   moduleclassname = 'tmseform'
   object group_assistive: tgroupbox
     optionswidget1 = []
-    frame.caption = 'sak voice assistive config'
-    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
-    frame.outerframe = (
-      0
-      9
-      0
-      0
-    )
     taborder = 1
     bounds_x = 10
     bounds_y = 539
@@ -71,7 +62,7 @@ object confideufo: tconfideufo
       hint = 'Parent directory of sakit'
       bounds_x = 6
       bounds_y = 71
-      bounds_cx = 263
+      bounds_cx = 259
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       Value = '${IDEUDIR}/plugin'
@@ -156,20 +147,11 @@ object confideufo: tconfideufo
   end
   object group_system_layout: tgroupbox
     optionswidget1 = []
-    frame.caption = 'System layout'
-    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
-    frame.outerframe = (
-      0
-      9
-      0
-      0
-    )
     taborder = 2
-    bounds_x = 10
-    bounds_y = 184
+    bounds_x = 11
+    bounds_y = 180
     bounds_cx = 281
     bounds_cy = 350
     object universal_path: tbooleanedit
@@ -299,8 +281,8 @@ object confideufo: tconfideufo
       )
       taborder = 6
       hint = 'Font height for all ideU text'
-      bounds_x = 14
-      bounds_y = 289
+      bounds_x = 15
+      bounds_y = 290
       bounds_cx = 107
       bounds_cy = 21
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -421,20 +403,31 @@ object confideufo: tconfideufo
       bounds_cy = 17
       valuedefault = True
     end
+    object addwhiteaftercomma: tbooleanedit
+      frame.caption = 'Add space after comma in auto-parsing'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        2
+        242
+        2
+      )
+      taborder = 11
+      hint = 'Add space after comma when auto-parsing MSEgui code from designer'
+      bounds_x = 11
+      bounds_y = 322
+      bounds_cx = 255
+      bounds_cy = 17
+      value = True
+      valuedefault = True
+    end
   end
   object group_sourceeditor: tgroupbox
     optionswidget1 = []
-    frame.caption = 'Source Editor'
-    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
-    frame.outerframe = (
-      0
-      9
-      0
-      0
-    )
     taborder = 3
     bounds_x = 306
     bounds_y = 17
@@ -488,6 +481,7 @@ object confideufo: tconfideufo
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       frame.template = mainfo.tframecomp3
       frame.button.color = -2147483646
+      frame.button.frame.hiddenedges = [edg_bottom]
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.tframecomp2
@@ -495,6 +489,7 @@ object confideufo: tconfideufo
       frame.buttons.items = <      
         item
           color = -2147483646
+          frame.hiddenedges = [edg_bottom]
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.tframecomp2
@@ -556,7 +551,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 5
-      bounds_x = 142
+      bounds_x = 138
       bounds_y = 196
       bounds_cx = 56
       bounds_cy = 39
@@ -663,7 +658,7 @@ object confideufo: tconfideufo
       taborder = 8
       bounds_x = 6
       bounds_y = 426
-      bounds_cx = 296
+      bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = -1610612717
@@ -703,7 +698,7 @@ object confideufo: tconfideufo
       taborder = 9
       bounds_x = 7
       bounds_y = 367
-      bounds_cx = 296
+      bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = -1610612712
@@ -743,7 +738,7 @@ object confideufo: tconfideufo
       taborder = 10
       bounds_x = 7
       bounds_y = 308
-      bounds_cx = 296
+      bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       value = -1610612716
@@ -798,7 +793,7 @@ object confideufo: tconfideufo
       hint = 'Default layout for all projects'
       bounds_x = 8
       bounds_y = 488
-      bounds_cx = 296
+      bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/layout/'
@@ -890,7 +885,7 @@ object confideufo: tconfideufo
       hint = 'Default synthax file for all projects'
       bounds_x = 8
       bounds_y = 555
-      bounds_cx = 296
+      bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
       controller.lastdir = '${IDEUDIR}/syntaxdefs/'
@@ -971,26 +966,6 @@ object confideufo: tconfideufo
       bounds_cx = 187
       bounds_cy = 17
     end
-    object addwhiteaftercomma: tbooleanedit
-      frame.caption = 'Add space after comma when auto-parsing'
-      frame.localprops = []
-      frame.localprops1 = []
-      frame.template = mainfo.menuitemframe
-      frame.outerframe = (
-        0
-        2
-        264
-        2
-      )
-      taborder = 15
-      hint = 'Add space after comma when auto-parsing MSEgui code from designer'
-      bounds_x = 12
-      bounds_y = 621
-      bounds_cx = 277
-      bounds_cy = 17
-      value = True
-      valuedefault = True
-    end
     object tabindent: tbooleanedit
       frame.caption = 'Tab'
       frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
@@ -1002,7 +977,7 @@ object confideufo: tconfideufo
         25
         0
       )
-      taborder = 16
+      taborder = 15
       bounds_x = 224
       bounds_y = 267
       bounds_cx = 44
@@ -1011,17 +986,8 @@ object confideufo: tconfideufo
   end
   object group_file_change: tgroupbox
     optionswidget1 = []
-    frame.caption = 'When a file has changed'
-    frame.captiontextflags = [tf_bottom]
     frame.localprops = []
     frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
-    frame.outerframe = (
-      0
-      9
-      0
-      0
-    )
     taborder = 4
     hint = 'What to do if a file is changed by a external application'
     bounds_x = 10
@@ -1110,5 +1076,23 @@ object confideufo: tconfideufo
     state = [as_localcaption, as_localonexecute]
     caption = '&OK'
     onexecute = onok
+  end
+  object rectanglearea: tbooleanedit
+    frame.caption = 'Rectangle area for multi-select'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.menuitemframe
+    frame.outerframe = (
+      0
+      2
+      187
+      2
+    )
+    taborder = 6
+    hint = 'Add space after comma when auto-parsing MSEgui code from designer'
+    bounds_x = 313
+    bounds_y = 666
+    bounds_cx = 200
+    bounds_cy = 17
   end
 end

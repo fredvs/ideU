@@ -4,53 +4,14 @@ unit confideu;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseclasses,
-  mseforms,
-  msegraphedits,
-  msesimplewidgets,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msemenus,
-  msescrollbar,
-  msedataedits,
-  mseedit,
-  msestat,
-  msestatfile,
-  msestream,
-  msestrings,
-  SysUtils,
-  msewidgets,
-  msebitmap,
-  msedatanodes,
-  msegrids,
-  mselistbrowser,
-  msesys,
-  mseact,
-  msedragglob,
-  msetabs,
-  msedropdownlist,
-  msegridsglob,
-  msewidgetgrid,
-  msepointer,
-  msememodialog,
-  msesplitter,
-  msecolordialog,
-  mseeditglob,
-  mserichstring,
-  msetextedit,
-  msefiledialogx,
-  {$I useslang.inc};
+ mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
+ mseapplication,msegui,msegraphics,msegraphutils,mseclasses,mseforms,
+ msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,msemenus,
+ msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,msestrings,
+ SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,msesys,
+ mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
+ msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
+ msetextedit,msefiledialogx,{$I useslang.inc};
 
 type
   tconfideufo = class(tmseform)
@@ -83,7 +44,6 @@ type
     fontsize: tintegeredit;
     fontname: tdropdownlistedit;
     closemessages: tbooleanedit;
-    addwhiteaftercomma: tbooleanedit;
     group_file_change: tgroupbox;
     tbfilereload: tbooleaneditradio;
     tbfilenoload: tbooleaneditradio;
@@ -93,6 +53,8 @@ type
     tabindent: tbooleanedit;
     blinkcaret: tbooleanedit;
     brepaintcanvas: tbooleanedit;
+   rectanglearea: tbooleanedit;
+   addwhiteaftercomma: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -665,9 +627,17 @@ begin
 
   fontname.top := confirmdel.top + confirmdel.Height + 2;
   fontsize.top := fontname.top + fontname.Height + 2;
+  
+  fontname.left := 8;
+   fontsize.left := 8;
+   
+    addwhiteaftercomma.left := 6;
+  
+  addwhiteaftercomma.top := fontsize.top + fontsize.Height + 2;
 
-  group_system_layout.Height := fontsize.top + fontsize.Height + 10;
+  group_system_layout.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
 
+  
   tbassistive.top := tbassistive.Height + 2;
   tesakitdir.top  := tbassistive.top + tbassistive.Height + 2;
 
@@ -706,9 +676,11 @@ begin
 
   deflayout.top := colorerror.top + colorerror.Height + 2;
   defsynt.top   := deflayout.top + deflayout.Height + 2;
-  addwhiteaftercomma.top := defsynt.top + defsynt.Height + 2;
-
-  group_sourceeditor.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
+   group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
+  
+  rectanglearea.left := group_sourceeditor.left + 10;
+  
+  rectanglearea.top := group_sourceeditor.bottom + 4;
 
 {$ifdef mswindows}
   Height := group_sourceeditor.Height + (universal_path.Height * 2);

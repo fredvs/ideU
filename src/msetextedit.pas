@@ -443,7 +443,7 @@ function istextdblclick(const ainfo: textmouseeventinfoty): boolean;
 
 implementation
 uses
- sourceform, msetabs,
+ sourceform, msetabs,confideu,
  msefileutils,sysutils,msesysutils,msewidgets,msebits,
  msekeyboard,mseactions;
 
@@ -1491,7 +1491,7 @@ begin
   exit;
  end;
 
-if (tabcloser = true) and (sourcefo.ActivePage <> nil) then
+if (tabcloser = true) and (sourcefo.ActivePage <> nil) and (confideufo.rectanglearea.value = true) then
 begin
 if start.row <> stop.row 
 then
@@ -1499,6 +1499,7 @@ begin
  new2.col := 1;
  new2.row := start.row; 
  // sourcefo.ActivePage.source_editor.defocuscell;
+ // fred
  sourcefo.ActivePage.source_editor.datacols.clearselection;
  
  while new2.row <= stop.row do

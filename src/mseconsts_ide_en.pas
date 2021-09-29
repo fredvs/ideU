@@ -173,7 +173,7 @@ const
     'Repaint canvas', //se_repaintcanvas
     'Source Editor', //se_groupsourceeditor
     'Use those options instead of project options', //se_usedefaulteditoroptions
-    'Add space after comma when auto-parsing', //se_addwhiteaftercomma
+    'Add space after comma -> auto-parsing', //se_addwhiteaftercomma
     'When a file has changed', //se_groupfilechange
     'No dialog box => reload the new one', //se_filereload
     'No dialog box => keep the old one', //se_filenoload
