@@ -160,7 +160,7 @@ const
     'Parent directory of sakit', //se_sakitdir
     'Enable sak assistive at loading', //se_enableassistive
     'System layout', //se_groupsystemlayout
-    'Universelles Verzeichnislayout', //se_universalpath
+    'Universal path layout', //se_universalpath
     'No Z order handling', //se_nozorder
     'Use shift key to select a word', //se_doubleclic
     'Auto focus in main-menu', //se_autofocusmenu

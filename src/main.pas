@@ -3133,8 +3133,8 @@ begin
     end;
     
     {$ifdef linux}
-           if not fileexists(wstr1 + '/ideuli.sta') then
-           Filecreate(wstr1 + '/ideuli.sta') ;
+         if not fileexists(wstr1 + '/ideuli.sta') then
+          Filecreate(wstr1 + '/ideuli.sta') ;
     {$endif}
  
       mainstatfile.filedir := wstr1;

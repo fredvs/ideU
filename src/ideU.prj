@@ -921,22 +921,25 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=6
  CONFIDEUFO
  CONFLANGFO
  MAINFO
+ STOCKDATA
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=5
+moduletypes=6
  TCONFIDEUFO
  TCONFLANGFO
  TMAINFO
+ TSTOCKDATA
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=5
+modulefiles=6
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msestockobjects.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -944,7 +947,7 @@ makeoptionson=13
  4095
  4095
  1
- 202
+ 206
  2046
  4095
  192
@@ -1584,9 +1587,14 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=filecreate
+finddtext=univer
 findhistory=20
+ univer
+ universelles
  filecreate
+ ideuli
+ ideulin
+ open
  ratio
  setlang
  setitem
@@ -1601,14 +1609,15 @@ findhistory=20
  barre
  indent
  blokin
- blockin
- tabindent
- white
- caption
- messages
 findoptions=1
-editpos=6
- 10,3142
+editpos=12
+ 0,3146
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1620,60 +1629,101 @@ bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+sourcefiles=12
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=6
+ ${PROJECTDIR}/msestockobjects.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msesys.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/mseconsts_ide_en.pas
+ ${PROJECTDIR}/mseconsts_ide.pas
+relpaths=12
  main.pas
  sourceform.pas
  ideU.pas
  confideu.pas
  projectoptionsform.pas
  conflang.pas
-ismoduletexts=6
+ msestockobjects.pas
+ mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ mseide-msegui/lib/common/kernel/msesys.pas
+ confideu.pas
+ mseconsts_ide_en.pas
+ mseconsts_ide.pas
+ismoduletexts=12
  0
  0
  0
  0
  0
  0
-modules=6
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=7
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/conflang.mfm
-moduleoptions=6
+ /home/fred/ideu/src/msestockobjects.mfm
+moduleoptions=7
  0
  0
  0
  0
  0
  0
-visiblemodules=6
+ 0
+visiblemodules=7
  0
  -1
  -1
  -1
  -1
  -1
-nomenumodules=6
  -1
+nomenumodules=7
+ -1
+ 0
  0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=12
+ 0
+ 6
+ 1
+ 7
+ 4
+ 10
+ 2
+ 11
+ 8
+ 5
+ 9
+ 3
 firsttab=0
 index=0
 [layout]
-windowlayout=602
+windowlayout=633
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1687,8 +1737,8 @@ windowlayout=602
  ny=0
  ncx=0
  ncy=0
- x=62
- y=89
+ x=139
+ y=128
  cx=1224
  cy=621
  rcx=0
@@ -1716,15 +1766,15 @@ windowlayout=602
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=734
+ y=40
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1828,8 +1878,8 @@ windowlayout=602
  width1=82
  sortdescend1=0
  sorted=0
- col=0
- row=12
+ col=1
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2118,11 +2168,11 @@ windowlayout=602
  nx=0
  ny=0
  ncx=1197
- ncy=13
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=11
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2133,10 +2183,9 @@ windowlayout=602
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
- history=3
+ history=2
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/mseconsts_ide_en.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2158,6 +2207,19 @@ windowlayout=602
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=12
+  0
+  6
+  1
+  7
+  4
+  10
+  2
+  11
+  8
+  5
+  9
+  3
  firsttab=0
  index=0
  [confideufo.fontname]
@@ -2260,7 +2322,7 @@ windowlayout=602
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_stockdata_mse_
  parent=
  mdistate=3
  nx=0
@@ -2271,6 +2333,25 @@ windowlayout=602
  y=250
  cx=310
  cy=204
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_stockdata_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=129
+ y=57
+ cx=198
+ cy=85
  rcx=0
  rcy=0
  wsize=0
