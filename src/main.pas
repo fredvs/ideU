@@ -3132,7 +3132,7 @@ begin
       createdir(wstr1);
     end;
     
-    {$ifdef unix}
+    {$ifdef linux}
            if not fileexists(wstr1 + '/ideuli.sta') then
            Filecreate(wstr1 + '/ideuli.sta') ;
     {$endif}
