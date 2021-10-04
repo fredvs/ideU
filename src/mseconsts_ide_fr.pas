@@ -737,7 +737,7 @@ const
     );
     
   const
-   fr_langnamestext: array of msestring = (
+   fr_langnamestext: array[0..5] of msestring = (
      'Anglais', // 0_english
      'Russe', // 1_russian
      'Français', // 2_french

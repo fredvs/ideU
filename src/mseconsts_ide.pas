@@ -20,10 +20,7 @@ uses
   msetypes;
 
 type
-  
-  langnamesaty = array of msestring;
-  plangnamesaty = ^langnamesaty;
-  
+   
   mainformaty  = array[mainformty] of msestring;
   pmainformaty = ^mainformaty;
   
@@ -49,13 +46,16 @@ type
   defaultgeneratortextty    = array[textgeneratorty] of textgeneratorfuncty;
   pdefaultgeneratortextty   = ^defaultgeneratortextty;
 
+// Language things:
+
   langty = (la_none, la_en, la_ru, la_fr, la_de, la_es, la_pt, la_uz, la_id, la_zh);
+  langnamesaty = array[0..5] of msestring;
+  plangnamesaty = ^langnamesaty;
 
 const
   langnames: array[langty] of string = (
     '', 'en', 'ru', 'fr', 'de', 'es', 'pt', 'uz', 'id', 'zh');
-    
-  langnamesreg: array of string = (
+  langnamesreg: array[0..5] of string = (
     'en', 'ru', 'fr', 'de', 'es', 'pt');
  
 function langnamestext(const index: integer): msestring;
@@ -808,7 +808,7 @@ const
     );
 
 const
- en_langnamestext: array of msestring = (
+ en_langnamestext: array[0..5] of msestring = (
     'English',                                // 0_English
     'Russian',                                // 1_Russian
     'French',                                // 2_french

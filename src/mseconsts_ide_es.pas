@@ -699,13 +699,13 @@ const
     );
 
 const
-  es_langnamestext: array of msestring = (
-    'English',                                // 0_English
-    'Russian',                                // 1_Russian
-    'French',                                 // 2_french
-    'German',                                 // 3_german
-    'Spanish',                                // 4_spanish
-    'Portuguese'                              //5_portuguese
+  es_langnamestext: array[0..5] of msestring = (
+    'Inglés',                                // 0_English
+    'Ruso',                                // 1_Russian
+    'Francés',                                 // 2_french
+    'Alemán',                                 // 3_german
+    'Español',                                // 4_spanish
+    'Portugués'                              //5_portuguese
     );
 
 function delete_n_selected_rows(const params: array of const): msestring;

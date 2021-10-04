@@ -381,7 +381,9 @@ uses
   regpascalscript,
 {$endif}
 {$ifdef mse_with_zeoslib}
+  {$if fpc_fullversion >= 030100}
   regzeoslib,
+  {$endif}
 {$endif}
   regdesignutils,
   regsysutils,
@@ -5033,13 +5035,17 @@ begin
     
     conflangfo.gridlang.rowcount := length(langnamesreg) ;
     
+  //  {
      for x := 0 to length(langnamesreg) -1 do
    begin
-    conflangfo.gridlangcaption[x] := langnamestext(x)+ 
+ //  writeln(inttostr(x) + ' 1');
+   conflangfo.gridlangcaption[x] := langnamestext(x)+ 
      '   (' + langnamesreg[x] + ')';
+  //    writeln(inttostr(x) + ' 2');
     conflangfo.gridlangcode[x] := langnamesreg[x] ;
     
    end; 
+ //    }
      
     conflangfo.setasdefault.frame.caption := stockobjects.captions[sc_setasdefault];
     conflangfo.ok.caption := stockobjects.modalresulttext[mr_ok]; 
