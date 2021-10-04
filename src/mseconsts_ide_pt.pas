@@ -274,7 +274,8 @@ const
     'Quando um arquivo foi alterado', // se_groupfilechange
     'Sem diálogo => recarregar o novo', // se_filereload
     'Sem diálogo => manter o antigo', // se_filenoload
-    'Diálogo pergunta o que fazer ...' // se_fileaskload
+    'Diálogo pergunta o que fazer ...', //se_fileaskload
+    'Retângulo em torno da seleção' //se_rectanglearea
     );
 
   pt_projectoptionstext: projectoptionsaty = (

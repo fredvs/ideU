@@ -289,7 +289,8 @@ const
     'Wenn sich eine Datei geändert hat:', //se_groupfilechange
     'Kein Dialog => Neu laden', //se_filereload
     'Kein Dialog => das Alte behalten', //se_filenoload
-    'Ein Dialog fragt, was zu tun ist...' //se_fileaskload
+    'Ein Dialog fragt, was zu tun ist...', //se_fileaskload
+    'Rechteck um Mehrfachauswahl' //se_rectanglearea
     );
 
   de_projectoptionstext: projectoptionsaty = (

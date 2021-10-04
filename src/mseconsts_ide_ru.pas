@@ -94,7 +94,8 @@ const
     'Когда файл был изменен:', //se_groupfilechange
     'Нет диалога => перезагрузить новый', //se_filereload
     'Нет диалога => сохранить старое', //se_filenoload
-    'Диалог спрашивает, что делать ...' //se_fileaskload
+    'Диалог спрашивает, что делать ...', //se_fileaskload
+    'Прямоугольник вокруг выделения' //se_rectanglearea
     );
 
   ru_actionsmoduletext: actionsmoduleaty = (

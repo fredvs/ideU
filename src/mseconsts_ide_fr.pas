@@ -330,7 +330,8 @@ const
     'Quand un fichier a changé :', //se_groupfilechange
     'Sans dialogue => recharger le nouveau', //se_filereload
     'Sans dialogue => garder l'#08217'ancien', //se_filenoload
-    'Un dialogue demande quoi faire...' //se_fileaskload
+    'Un dialogue demande quoi faire...', //se_fileaskload
+    'Rectangle autour de sélection multiple' //se_rectanglearea
     );
 
   fr_projectoptionstext: projectoptionsaty = (

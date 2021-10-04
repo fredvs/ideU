@@ -315,7 +315,7 @@ type
     se_universalpath, se_nozorder, se_doubleclic, se_autofocusmenu, se_fullpath, se_modaldial,
     se_fontsize, se_fontname, se_confirmdel, se_blinkcaret, se_repaintcanvas,
     se_groupsourceeditor, se_usedefaulteditoroptions, se_addwhiteaftercomma,
-    se_groupfilechange, se_filereload, se_filenoload, se_fileaskload
+    se_groupfilechange, se_filereload, se_filenoload, se_fileaskload, se_rectanglearea
 
     );
 

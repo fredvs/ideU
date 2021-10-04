@@ -377,7 +377,8 @@ const
     'When a file has changed', //se_groupfilechange
     'No dialog box => reload the new one', //se_filereload
     'No dialog box => keep the old one', //se_filenoload
-    'A dialog box ask what to do...' //se_fileaskload
+    'A dialog box ask what to do...', //se_fileaskload
+    'Rectangle around multi-select' //se_rectanglearea
     );
 
   en_projectoptionstext: projectoptionsaty = (
@@ -635,7 +636,6 @@ const
     'Redo',                                //sc_redo
     'Cut',                                 //sc_cut
     'Select all',                          //sc_select_all
-
     'Filter off',                          //sc_filter_off
     'Portrait',                            //sc_portrait print orientation
     'Landscape',                           //sc_landscape print orientation
@@ -804,7 +804,7 @@ const
     'Finish',                                // sc_finish
     'Set as default',                          // sc_setasdefault
     'Host',                                   // sc_host
-    'Copyright'                          // sc_copyright
+    'Copyright'                         // sc_copyright
     );
 
 const

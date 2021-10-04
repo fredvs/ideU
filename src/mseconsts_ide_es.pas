@@ -93,7 +93,8 @@ const
     'Cuando un archivo ha cambiado:', //se_groupfilechange
     'Sin diálogo => cargar el nuevo', //se_filereload
     'Sin diálogo => mantener el viejo', //se_filenoload
-    'Un diálogo pregunta qué hacer ...' //se_fileaskload
+    'Un diálogo pregunta qué hacer ...', //se_fileaskload
+    'Rectángulo alrededor selección' //se_rectanglearea
     );
 
   es_actionsmoduletext: actionsmoduleaty = (

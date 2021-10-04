@@ -177,8 +177,9 @@ const
     'When a file has changed', //se_groupfilechange
     'No dialog box => reload the new one', //se_filereload
     'No dialog box => keep the old one', //se_filenoload
-    'A dialog box ask what to do...' //se_fileaskload
-     );
+    'A dialog box ask what to do...', //se_fileaskload
+    'Rectangle around multi-select' //se_rectanglearea
+    );
   
 
   en_projectoptionstext: projectoptionsaty = (
