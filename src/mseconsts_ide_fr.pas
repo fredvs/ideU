@@ -77,7 +77,7 @@ const
     '&Valider',        //mr_ok
     '&Oui',            //mr_yes
     '&Non',            //mr_no
-    '&Tout',           //mr_all
+    'Oui &tout',           //mr_all
     'Oui &tout',       //mr_yesall
     'A&ucun',          //mr_noall
     '&Ignorer',        //mr_ignore
@@ -99,7 +99,7 @@ const
     'Valider',       //mr_ok
     'Oui',           //mr_yes
     'Non',           //mr_no
-    'Tout',          //mr_all
+    'Oui tout',          //mr_all
     'Oui tout',      //mr_yesall
     'Aucun',         //mr_noall
     'Ignorer',       //mr_ignore

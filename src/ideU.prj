@@ -170,7 +170,7 @@ finddialog=8
  [finddialogfo]
  stackedunder=
  x=918
- y=616
+ y=494
  cx=234
  cy=269
 replacedialog=33
@@ -668,7 +668,9 @@ targetfile=ideU${EXEEXT}
 messageoutputfile=
 makecommand=${COMPILER}
 makedir=
-unitdirs=7
+unitdirs=9
+ /usr/lib/gcc/x86_64-linux-gnu/10/32
+ /usr/lib/gcc/x86_64-linux-gnu/10
  /home/fred/fpc-ootb_322ok/packages/mysql/src
  ${MSEDIR}lib/addon/*/
  ${MSELIBDIR}kernel/windows
@@ -936,7 +938,7 @@ makeoptionson=13
  4095
  4095
  17
- 202
+ 206
  2046
  4095
  192
@@ -1018,7 +1020,9 @@ project_time=
 project_date=20:25:05 03/02/2012
 project_comment=
 aftcommandon=0
-unitdirson=7
+unitdirson=9
+ 983048
+ 987127
  987135
  198655
  196800
@@ -1577,8 +1581,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=langnamestext
+finddtext=tout
 findhistory=20
+ tout
  langnamestext
  uc(
  setlang
@@ -1598,20 +1603,24 @@ findhistory=20
  select
  palette
  component
- command
 findoptions=1
-editpos=2
- 0,-1073741823
+editpos=3
  0,0
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=2
+ ${PROJECTDIR}/ideU.pas
+relpaths=3
  main.pas
  sourceform.pas
-ismoduletexts=2
+ ideU.pas
+ismoduletexts=3
+ 0
  0
  0
 modules=3
@@ -1631,10 +1640,14 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=3
+ 2
+ 0
+ 1
 firsttab=0
 index=1
 [layout]
-windowlayout=559
+windowlayout=561
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1648,8 +1661,8 @@ windowlayout=559
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=61
+ y=58
  cx=1224
  cy=621
  rcx=0
@@ -1789,7 +1802,7 @@ windowlayout=559
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=6
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1868,10 +1881,10 @@ windowlayout=559
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=456
+ width0=203
  sortdescend0=0
- width1=129
+ width1=247
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2052,7 +2065,7 @@ windowlayout=559
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=14
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -2078,11 +2091,11 @@ windowlayout=559
  nx=0
  ny=0
  ncx=1197
- ncy=29
+ ncy=5
  x=0
  y=0
  cx=1212
- cy=27
+ cy=3
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2092,25 +2105,23 @@ windowlayout=559
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
- history=18
-  /home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/main.pas
+ history=16
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/mseconsts_ide_en.pas
   /home/fred/ideu/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/mzeoslib/ZDbcInterbase6Utils.pas
-  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
-  /home/fred/ideu/src/mseconsts_ide_es.pas
+  /home/fred/strumpract/src/infos.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+  /home/fred/mseide-msegui/apps/ide/main.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_de.pas
+  /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/mseide-msegui/apps/ide/mseide.pas
   /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/mseide-msegui/apps/ide/sourcepage.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
   /home/fred/ideu/src/msefiledialogx.pas
  [debuggerfo.project_options]
  value=1
@@ -2133,6 +2144,10 @@ windowlayout=559
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=3
+  2
+  0
+  1
  firsttab=0
  index=1
  [confideufo.fontname]
