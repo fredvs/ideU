@@ -316,6 +316,7 @@ object projecttreefo: tprojecttreefo
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    frame.levelo = 0
     frame.sbvert.face.fade_pos.count = 2
     frame.sbvert.face.fade_pos.items = (
       0
@@ -426,7 +427,7 @@ object projecttreefo: tprojecttreefo
       -1610612731
     )
     frame.sbhorz.faceendbutton.localprops = []
-    frame.localprops = []
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     face.fade_direction = gd_down
     face.localprops = [fal_fadirection]
@@ -458,7 +459,7 @@ object projecttreefo: tprojecttreefo
       end    
       item[edit]
         linecolorfix = -1610612733
-        width = 146
+        width = 150
         options = [co_fill, co_savestate, co_mousescrollrow]
         onshowhint = colshowhintexe
         widgetname = 'edit'
@@ -525,7 +526,7 @@ object projecttreefo: tprojecttreefo
       visible = False
       bounds_x = 142
       bounds_y = 0
-      bounds_cx = 146
+      bounds_cx = 150
       bounds_cy = 16
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]

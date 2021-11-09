@@ -94,12 +94,10 @@ type
     convex: tfacecomp;
     concave: tfacecomp;
     tframecomp2: tframecomp;
-    timagelist3: timagelist;
     tframecomp3: tframecomp;
     convexdark: tfacecomp;
     concavedark: tfacecomp;
     ttimer1: ttimer;
-   timagelist2: timagelist;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -5151,6 +5149,13 @@ begin
     color3 := cl_white;
 
     basedock.face.template := convex;
+    basedock.dragdock.splitter_color := cl_ltgray; 
+    
+    debuggerfo.color := cl_gray ;  
+    debuggerfo.basedock.color := cl_gray ; 
+    
+    color := cl_gray ;
+    basedock.color := cl_gray ;   
 
     frame.grip_face.template           := tfacecomp3;
     frame.grip_faceactive.template     := tfacecomp3;
@@ -5300,6 +5305,14 @@ begin
     color3 := cl_black;
 
     basedock.face.template := convexdark;
+    
+    basedock.dragdock.splitter_color := cl_black;
+    
+    debuggerfo.color := cl_dkgray ;
+    debuggerfo.basedock.color := cl_dkgray ;  
+    
+    color := cl_dkgray ;
+    basedock.color := cl_dkgray ;  
 
     frame.grip_face.template           := sourcefo.tfacecomp2dark;
     frame.grip_faceactive.template     := sourcefo.tfacecomp2dark;

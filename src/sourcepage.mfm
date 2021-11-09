@@ -1,7 +1,6 @@
 object sourcepage: tsourcepage
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   optionsskin = [osk_framebuttononly]
-  color = -1879048187
   frame.localprops = []
   frame.localprops1 = []
   ondefocus = ondefocus
@@ -32,6 +31,7 @@ object sourcepage: tsourcepage
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_mousewheel, ow_destroywidgets]
     optionsskin = [osk_framebuttononly]
     frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+    frame.optionsskin = [fso_flat]
     frame.sbvert.face.fade_pos.count = 2
     frame.sbvert.face.fade_pos.items = (
       0
@@ -156,14 +156,14 @@ object sourcepage: tsourcepage
     )
     frame.sbhorz.faceendbutton.fade_direction = gd_down
     frame.sbhorz.faceendbutton.localprops = []
-    frame.localprops = [frl_hiddenedges]
+    frame.localprops = [frl_hiddenedges, frl_optionsskin]
     frame.localprops1 = []
     onfocus = onfocus
     ondefocus = ondefocus
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 642
-    bounds_cy = 279
+    bounds_cy = 281
     anchors = [an_top, an_bottom]
     optionsgrid = [og_focuscellonenter, og_autofirstrow, og_wrapcol, og_visiblerowpagestep]
     fixcols.count = 1
@@ -218,7 +218,7 @@ object sourcepage: tsourcepage
       optionsskin = [osk_framebuttononly]
       taborder = 1
       visible = False
-      bounds_x = 0
+      bounds_x = -576
       bounds_y = 0
       bounds_cx = 1940
       bounds_cy = 19
@@ -272,10 +272,6 @@ object sourcepage: tsourcepage
   object pathdisp: tstringedit
     optionsskin = [osk_framebuttononly]
     color = 15461355
-    frame.hiddenedges = [edg_bottom]
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
     face.fade_pos.count = 2
     face.fade_pos.items = (
       0
@@ -300,12 +296,6 @@ object sourcepage: tsourcepage
   object linedisp: tlabel
     optionswidget1 = [ow1_autoscale]
     color = 15790320
-    frame.framewidth = 1
-    frame.colorframe = -1610612733
-    frame.hiddenedges = [edg_bottom]
-    frame.localprops = [frl_framewidth, frl_colorframe]
-    frame.localprops1 = []
-    frame.template = mainfo.tframecomp2
     face.fade_pos.count = 2
     face.fade_pos.items = (
       0
@@ -322,7 +312,6 @@ object sourcepage: tsourcepage
     bounds_x = 0
     bounds_y = 281
     bounds_cx = 90
-    bounds_cy = 19
     anchors = [an_left, an_bottom]
     caption = '00.00'
     textflags = [tf_xcentered, tf_ycentered]

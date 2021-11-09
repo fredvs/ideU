@@ -79,8 +79,6 @@ type
     timagelist2: timagelist;
     tfacecomp1: tfacecomp;
     tfacecomp2: tfacecomp;
-    imagelistcopy: timagelist;
-    timagelist3: timagelist;
    tfacecomp1dark: tfacecomp;
    tfacecomp2dark: tfacecomp;
    step_back: tbutton;

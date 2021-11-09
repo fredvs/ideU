@@ -1,6 +1,7 @@
 object debuggerfo: tdebuggerfo
   optionswidget = [ow_background, ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_hinton]
-  frame.localprops = [frl_colordkwidth, frl_colorhlwidth]
+  frame.optionsskin = [fso_flat]
+  frame.localprops = [frl_colordkwidth, frl_colorhlwidth, frl_optionsskin]
   frame.localprops1 = []
   frame.grip_size = 10
   frame.grip_grip = stb_dens0
@@ -14,7 +15,7 @@ object debuggerfo: tdebuggerfo
   bounds_x = 100
   bounds_y = 41
   bounds_cx = 1154
-  bounds_cy = 54
+  bounds_cy = 52
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -138,7 +139,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1144
-    54
+    52
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -156,7 +157,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 49
     bounds_cx = 1144
-    bounds_cy = 7
+    bounds_cy = 5
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -173,7 +174,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 1144
-    bounds_cy = 52
+    bounds_cy = 50
     anchors = [an_left, an_top, an_right, an_bottom]
     font.shadow_shiftx = 0
     font.shadow_shifty = 0
@@ -1701,7 +1702,7 @@ object debuggerfo: tdebuggerfo
       taborder = 8
       hint = 'Toggle form/unit = (F12)'
       bounds_x = 154
-      bounds_y = 2
+      bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut]
@@ -2129,7 +2130,7 @@ object debuggerfo: tdebuggerfo
       taborder = 10
       hint = 'Code beautifier.'
       bounds_x = 182
-      bounds_y = 3
+      bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localdisabled, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
@@ -2488,7 +2489,7 @@ object debuggerfo: tdebuggerfo
       taborder = 12
       hint = 'Find in edited source'
       bounds_x = 57
-      bounds_y = 2
+      bounds_y = 1
       bounds_cx = 26
       bounds_cy = 26
       state = [as_localcaption, as_localimagelist, as_localimagenr, as_localimagenrdisabled, as_localcolor, as_localhint, as_localonexecute]
