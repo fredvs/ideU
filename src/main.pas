@@ -42,7 +42,7 @@ uses
  msestringcontainer,msesys,mseedit,msewidgets,{$I useslang.inc};
 
 const
-  versiontext = '2.6.4';
+  versiontext = '2.6.6';
   idecaption  = 'ideU';
   statname    = 'ideu';
 

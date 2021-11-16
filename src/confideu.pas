@@ -4,7 +4,7 @@ unit confideu;
 interface
 
 uses
- mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
+ mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf, msefileutils,
  mseapplication,msegui,msegraphics,msegraphutils,mseclasses,mseforms,
  msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,msemenus,
  msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,msestrings,
@@ -75,6 +75,7 @@ type
 
 var
   confideufo: tconfideufo;
+  hanconf : integer = -1;
 
 implementation
 
@@ -730,18 +731,42 @@ begin
 end;
 
 procedure tconfideufo.onapply(const Sender: TObject);
+var
+ str1: ttextstream;
+ thedir : string;
 begin
   messagefo.updateprojectoptions;
   onchangefont;
   noconfirmdelete := confirmdel.Value;
   blinkingcaret   := blinkcaret.Value;
-  //mse_repaintcanvas := brepaintcanvas.value;
+  
+  if usedefaulteditoroptions.value then
+  begin
+  if fileexists(defsynt.text) then begin
+  if hanconf <> -1 then sourcefo.syntaxpainter.freedeffile(hanconf);
+  thedir := tosysfilepath(defsynt.Text);
+  str1 := ttextstream.Create(thedir);
+  hanconf := sourcefo.syntaxpainter.readdeffile(str1);
+  sourcefo.activepage.edit.setsyntaxdef(hanconf);
+  sourcefo.activepage.updatestatvalues;
+  str1.Destroy();
+  end;
+  if fileexists(deflayout.text) then begin
+  thedir := tosysfilepath(deflayout.Text);
+  str1:= ttextstream.create(thedir);
+  debuggerfo.close;
+  mainfo.loadwindowlayout(str1);
+  str1.Destroy();
+  end; 
+  end;
+ 
 end;
 
 procedure tconfideufo.onok(const Sender: TObject);
 begin
   onapply(Sender);
   Close;
+  application.processmessages;
 end;
 
 procedure tconfideufo.oncreated(const Sender: TObject);

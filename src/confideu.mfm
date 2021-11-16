@@ -295,7 +295,6 @@ object confideufo: tconfideufo
     end
     object fontname: tdropdownlistedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
-      frame.frameimage_list = mainfo.timagelist3
       frame.caption = 'Font name '
       frame.captionpos = cp_left
       frame.localprops = [frl_hiddenedges, frl_frameimagelist, frl_colorclient]
@@ -516,7 +515,7 @@ object confideufo: tconfideufo
             'iso8859-1'
           )
         end>
-      value = 0
+      value = 1
       reffontheight = 15
     end
     object backupfilecount: tintegeredit
