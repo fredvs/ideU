@@ -4,12 +4,12 @@ unit confideu;
 interface
 
 uses
- mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf, msefileutils,
- mseapplication,msegui,msegraphics,msegraphutils,mseclasses,mseforms,
- msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,msemenus,
- msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,msestrings,
- SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,msesys,
- mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
+ mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
+  msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
+ mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
+ msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,
+ msestrings,SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,
+ msesys,mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
  msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
  msetextedit,msefiledialogx,{$I useslang.inc};
 
@@ -55,6 +55,7 @@ type
     brepaintcanvas: tbooleanedit;
    rectanglearea: tbooleanedit;
    addwhiteaftercomma: tbooleanedit;
+   colorhint: tcoloredit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -335,8 +336,10 @@ begin
   colornote.top    := rightmarginchars.top + rightmarginchars.Height + 2;
   colorwarning.top := colornote.top + colornote.Height + 2;
   colorerror.top   := colorwarning.top + colorwarning.Height + 2;
+  colorhint.top   := colorerror.top + colorerror.Height + 2;
 
-  deflayout.top := colorerror.top + colorerror.Height + 2;
+
+  deflayout.top := colorhint.top + colorhint.Height + 2;
   defsynt.top   := deflayout.top + deflayout.Height + 2;
    group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
   
@@ -344,7 +347,7 @@ begin
   
   rectanglearea.top := group_sourceeditor.bottom + 4;
 
-  Height := group_assistive.bottom + 10;
+  Height := rectanglearea.bottom + 10;
 
   if findformcreated then
     finddialogdotextsize;

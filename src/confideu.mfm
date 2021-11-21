@@ -656,8 +656,8 @@ object confideufo: tconfideufo
         0
       )
       taborder = 8
-      bounds_x = 6
-      bounds_y = 426
+      bounds_x = 8
+      bounds_y = 407
       bounds_cx = 292
       bounds_cy = 39
       anchors = [an_left, an_top, an_right]
@@ -696,7 +696,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 9
-      bounds_x = 7
+      bounds_x = 8
       bounds_y = 367
       bounds_cx = 292
       bounds_cy = 39
@@ -736,7 +736,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 10
-      bounds_x = 7
+      bounds_x = 8
       bounds_y = 308
       bounds_cx = 292
       bounds_cy = 39
@@ -982,6 +982,45 @@ object confideufo: tconfideufo
       bounds_y = 267
       bounds_cx = 44
       bounds_cy = 18
+    end
+    object colorhint: tcoloredit
+      color = -2147483645
+      frame.caption = 'Hint Color'
+      frame.captiontextflags = [tf_bottom]
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.tframecomp3
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
+      frame.button.options = [fbo_inactiveinvisible]
+      frame.buttons.count = 2
+      frame.buttons.items = <      
+        item
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
+          options = [fbo_inactiveinvisible]
+        end      
+        item
+          imagenr = 17
+          options = [fbo_inactiveinvisible]
+        end>
+      frame.buttonellipse.imagenr = 17
+      frame.buttonellipse.options = [fbo_inactiveinvisible]
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 16
+      bounds_x = 8
+      bounds_y = 442
+      bounds_cx = 292
+      bounds_cy = 39
+      value = 15134207
+      reffontheight = 15
     end
   end
   object group_file_change: tgroupbox

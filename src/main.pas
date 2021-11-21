@@ -905,7 +905,10 @@ begin
 
   confideufo.colornote.Value :=
     gINI.ReadInt64('colornote', 'message', 2684354580);
-
+    
+   confideufo.colorhint.Value :=
+    gINI.ReadInt64('colorhint', 'message', $E6EDFF);
+ 
   confideufo.encoding.Value := gINI.ReadInteger('encoding', 'editor', 0);
 
   confideufo.backupfilecount.Value := gINI.ReadInteger('backupfilecount', 'editor', 0);
@@ -1060,6 +1063,8 @@ begin
   gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
 
   gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));
+  
+   gINI.Writeint64('colorhint', 'message', (confideufo.colorhint.Value));
 
   gINI.WriteInteger('encoding', 'editor', (confideufo.encoding.Value));
 

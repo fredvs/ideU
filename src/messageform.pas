@@ -170,6 +170,9 @@ while system.pos('0m', atext2) > 0 do
       el_note: begin
        setrowcolor(2);
       end;
+      el_hint: begin
+       setrowcolor(3);
+      end;
      end;
     end;
    end;
@@ -186,6 +189,7 @@ with messages,confideufo do begin
 rowcolors[0]:= colorerror.value;
 rowcolors[1]:= colorwarning.value;
 rowcolors[2]:= colornote.value;
+rowcolors[3]:= colorhint.value;
 invalidate;
 end; end else
 begin
@@ -193,6 +197,7 @@ begin
   rowcolors[0]:= colorerror;
   rowcolors[1]:= colorwarning;
   rowcolors[2]:= colornote;
+  rowcolors[3]:= colorhint;
   invalidate;
  end;
 end;

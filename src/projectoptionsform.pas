@@ -10,66 +10,17 @@ unit projectoptionsform;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
-  mseforms,
-  msefiledialogx,
-  mseapplication,
-  msegui,
-  msestat,
-  msestatfile,
-  msetabs,
-  msesimplewidgets,
-  msetypes,
-  msestrings,
-  msedataedits,
-  msetextedit,
-  msegraphedits,
-  msewidgetgrid,
-  msegrids,
-  msesplitter,
-  msemacros,
-  msegdbutils,
-  msedispwidgets,
-  msesys,
-  mseclasses,
-  msegraphutils,
-  mseevent,
-  msetabsglob,
-  msearrayutils,
-  msegraphics,
-  msedropdownlist,
-  mseformatstr,
-  mseinplaceedit,
-  msedatanodes,
-  mselistbrowser,
-  msebitmap,
-  msecolordialog,
-  msedrawtext,
-  msewidgets,
-  msepointer,
-  mseguiglob,
-  msepipestream,
-  msemenus,
-  SysUtils,
-  mseglob,
-  mseedit,
-  msedialog,
-  msescrollbar,
-  msememodialog,
-  msecodetemplates,
-  mseifiglob,
-  msestream,
-  msestringcontainer,
-  mserttistat,
-  mseificomp,
-  mseificompglob,
-  msedragglob,
-  mserichstring,
-  mseact,
-  msecalendardatetimeedit,
-  msegridsglob,
-  {$I useslang.inc};
+ mseconsts_ide,msestockobjects,mseforms,msefiledialogx,mseapplication,msegui,
+ msestat,msestatfile,msetabs,msesimplewidgets,msetypes,msestrings,msedataedits,
+ msetextedit,msegraphedits,msewidgetgrid,msegrids,msesplitter,msemacros,
+ msegdbutils,msedispwidgets,msesys,mseclasses,msegraphutils,mseevent,
+ msetabsglob,msearrayutils,msegraphics,msedropdownlist,mseformatstr,
+ mseinplaceedit,msedatanodes,mselistbrowser,msebitmap,msecolordialog,
+ msedrawtext,msewidgets,msepointer,mseguiglob,msepipestream,msemenus,SysUtils,
+ mseglob,mseedit,msedialog,msescrollbar,msememodialog,msecodetemplates,
+ mseifiglob,msestream,msestringcontainer,mserttistat,mseificomp,mseificompglob,
+ msedragglob,mserichstring,mseact,msecalendardatetimeedit,msegridsglob,
+ {$I useslang.inc};
 
 const
   defaultsourceprintfont = 'Courier';
@@ -512,6 +463,7 @@ type
     fcolorerror: colorty;
     fcolorwarning: colorty;
     fcolornote: colorty;
+    fcolorhint: colorty;
     fuid: integer;
     fforcezorder: longbool;
     ftoolshortcuts: integerarty;
@@ -536,6 +488,7 @@ type
     property colorerror: colorty read fcolorerror write fcolorerror;
     property colorwarning: colorty read fcolorwarning write fcolorwarning;
     property colornote: colorty read fcolornote write fcolornote;
+    property colorhint: colorty read fcolorhint write fcolorhint;
 
     property usercolors: colorarty read fusercolors write fusercolors;
     property usercolorcomment: msestringarty read fusercolorcomment write fusercolorcomment;
@@ -1026,6 +979,7 @@ type
     debugcommand: tfilenameeditx;
     debugoptions: tmemodialogedit;
     remoteconnection: tstringedit;
+   colorhint: tcoloredit;
     procedure acttiveselectondataentered(const Sender: TObject);
     procedure colonshowhint(const Sender: tdatacol; const arow: integer; var info: hintinfoty);
     procedure hintexpandedmacros(const Sender: TObject; var info: hintinfoty);
@@ -3506,6 +3460,7 @@ begin
   fcolorerror   := cl_ltred;
   fcolorwarning := cl_ltyellow;
   fcolornote    := cl_ltgreen;
+  fcolorhint    := $E6EDFF;
   //showcommandline.color := $F7C6E4 ;
   inherited;
 end;
@@ -3769,7 +3724,6 @@ begin
   unitdirs.controller.captionopen := projectoptionstext(po_unitdirs);
   ttabpage18.Caption          := projectoptionstext(po_commandafter);
   ttabpage88.Caption          := projectoptionstext(po_exeextension);
-
 
   ttabpage22.Caption := projectoptionstext(po_comments);
   makedir.frame.Caption := projectoptionstext(po_makedir);

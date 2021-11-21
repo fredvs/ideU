@@ -21,8 +21,8 @@ object messagefo: tmessagefo
   frame.grip_faceactive.fade_direction = gd_down
   frame.grip_faceactive.localprops = []
   visible = False
-  bounds_x = 415
-  bounds_y = 216
+  bounds_x = 404
+  bounds_y = 523
   bounds_cx = 457
   bounds_cy = 281
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -406,11 +406,12 @@ object messagefo: tmessagefo
         valuetrue = '1'
       end>
     rowcountmax = 10000
-    rowcolors.count = 3
+    rowcolors.count = 4
     rowcolors.items = (
       -1610612712
       -1610612717
       -1610612716
+      14935039
     )
     datarowlinewidth = 0
     datarowheight = 17
