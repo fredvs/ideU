@@ -189,7 +189,9 @@ type
 var
   sourcefo: tsourcefo;
  
-function checkerrormessage(const Text: msestring; out alevel: errorlevelty; out afilename: filenamety; out col, row: integer): Boolean;
+function checkerrormessage(const Text: msestring;
+        out alevel: errorlevelty; out afilename: filenamety; 
+        out col, row: integer): Boolean;
 function locateerrormessage(const Text: msestring; var apage: tsourcepage; minlevel: errorlevelty = el_all): Boolean;
 //true if valid errormessage
 
@@ -236,12 +238,16 @@ function checkerrormessage(const Text: msestring; out alevel: errorlevelty; out 
 var
   ar1, ar2, ar3: msestringarty;
   int1: integer;
+  Text2: msestring;
 begin
   Result := False;
   col    := 0;
   row    := 0;
   alevel := el_none;
-  splitstring(Text, ar1, msechar('('));
+  
+  Text2 := text;
+  
+  splitstring(Text2, ar1, msechar('('));
   if length(ar1) > 1 then
   begin         //try FPC
     splitstring(ar1[1], ar2, msechar(')'));
@@ -250,11 +256,13 @@ begin
       splitstring(ar2[0], ar3, msechar(','));
       if (high(ar3) >= 0) then
       begin
-        if msestartsstr(' Error:', ar2[1]) or
+         if msestartsstr(' Error:', ar2[1]) or
           msestartsstr(' Fatal:', ar2[1]) then
           alevel := el_error
         else if msestartsstr(' Warning:', ar2[1]) then
           alevel := el_warning
+         else if system.pos('Warning:', ar2[1]) > 0 then
+          alevel := el_warning 
         else if msestartsstr(' Note:', ar2[1]) then
           alevel := el_note
         else if msestartsstr(' Hint:', ar2[1]) then

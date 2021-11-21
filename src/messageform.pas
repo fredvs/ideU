@@ -110,6 +110,7 @@ var
  fn1: filenamety;
  strcol1: tstringcol;
  rowhigh1: integer;
+ atext2: string;
 
  procedure setrowcolor(const arowcolor: rowstatenumty);
  var
@@ -130,12 +131,24 @@ var
  opt1: addcharoptionsty;
 
 begin
+
+atext2 := atext;
+
+while system.pos('35m', atext2) > 0 do
+        system.delete(atext2, system.pos('35m', atext2)-2, 5);
+        
+while system.pos('1m', atext2) > 0 do
+        system.delete(atext2, system.pos('1m', atext2)-2, 4);
+
+while system.pos('0m', atext2) > 0 do
+        system.delete(atext2, system.pos('0m', atext2)-2, 4);
+        
  with messages do begin
   opt1:= [aco_processeditchars];
   if projectoptions.o.stripmessageesc then begin
    include(opt1,aco_stripescsequence);
   end;
-  int1:= datacols[0].readpipe(atext,opt1,120);
+  int1:= datacols[0].readpipe(atext2,opt1,120);
   rowhigh1:= rowhigh;
   int2:= rowhigh1-int1;
   if int2 < 0 then begin
