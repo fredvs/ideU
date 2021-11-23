@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=Error:
+ value='35m'
  history=20
+  '35m'
   Error:
   colornote
   el_hint
@@ -157,7 +158,6 @@ findinfiledialog=92
   langnamestext
   langnamesreg
   actionsmoduletext
-  ac_error
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1617,16 +1617,18 @@ findhistory=20
  open
  ratio
 findoptions=1
-editpos=9
+editpos=11
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,6
  0,-1073741823
  0,-1073741823
- 8,263
+ 0,8
+ 0,-1073741823
+ 0,427
+ 62,140
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1636,7 +1638,9 @@ bookmarks5=0
 bookmarks6=0
 bookmarks7=0
 bookmarks8=0
-sourcefiles=9
+bookmarks9=0
+bookmarks10=0
+sourcefiles=11
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1646,7 +1650,9 @@ sourcefiles=9
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=9
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/messageform.pas
+relpaths=11
  ideU.pas
  main.pas
  sourceform.pas
@@ -1656,7 +1662,11 @@ relpaths=9
  confideu.pas
  main.pas
  sourceform.pas
-ismoduletexts=9
+ sourceform.pas
+ messageform.pas
+ismoduletexts=11
+ 0
+ 0
  0
  0
  0
@@ -1695,7 +1705,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=9
+order=11
  0
  1
  2
@@ -1703,12 +1713,14 @@ order=9
  6
  4
  5
- 8
  7
-firsttab=0
-index=7
+ 9
+ 10
+ 8
+firsttab=3
+index=9
 [layout]
-windowlayout=628
+windowlayout=630
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2152,11 +2164,11 @@ windowlayout=628
  nx=0
  ny=0
  ncx=1197
- ncy=52
+ ncy=50
  x=0
  y=0
  cx=1212
- cy=50
+ cy=48
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2166,8 +2178,9 @@ windowlayout=628
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/messageform.pas
  history=20
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
   /home/fred/atest/test.prj
@@ -2187,7 +2200,6 @@ windowlayout=628
   /home/fred/fptop/src/ptop.prj
   /home/fred/ptop_fred/ptop.prj
   /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2209,7 +2221,7 @@ windowlayout=628
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
+ order=11
   0
   1
   2
@@ -2217,10 +2229,12 @@ windowlayout=628
   6
   4
   5
-  8
   7
- firsttab=0
- index=7
+  9
+  10
+  8
+ firsttab=3
+ index=9
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
