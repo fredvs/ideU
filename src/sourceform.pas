@@ -256,17 +256,16 @@ begin
       splitstring(ar2[0], ar3, msechar(','));
       if (high(ar3) >= 0) then
       begin
-         if msestartsstr(' Error:', ar2[1]) or
-          msestartsstr(' Fatal:', ar2[1]) then
+         if (system.pos('Error:', ar2[1])  > 0) or
+          (system.pos('Fatal:', ar2[1])  > 0) then
           alevel := el_error
-        else if msestartsstr(' Warning:', ar2[1]) then
-          alevel := el_warning
-         else if system.pos('Warning:', ar2[1]) > 0 then
+        else if (system.pos('Warning:', ar2[1]) > 0) then
           alevel := el_warning 
-        else if msestartsstr(' Note:', ar2[1]) then
+        else if (system.pos('Note:', ar2[1]) > 0) then
           alevel := el_note
-        else if msestartsstr(' Hint:', ar2[1]) then
+        else if (system.pos('Hint:', ar2[1]) > 0) then
           alevel := el_hint;
+          
         if trystrtoint(ar3[0], row) then
         begin
           Dec(row);

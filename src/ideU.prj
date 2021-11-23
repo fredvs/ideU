@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=colornote
+ value=Error:
  history=20
+  Error:
   colornote
   el_hint
   checkerrormessage
@@ -157,7 +158,6 @@ findinfiledialog=92
   langnamesreg
   actionsmoduletext
   ac_error
-  tstringcontainer
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1313,7 +1313,7 @@ line=30
  98
  15
  787
- 909
+ 908
  2507
  5775
  1882
@@ -1617,15 +1617,16 @@ findhistory=20
  open
  ratio
 findoptions=1
-editpos=8
+editpos=9
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,6
  0,-1073741823
  0,-1073741823
+ 8,263
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1634,7 +1635,8 @@ bookmarks4=0
 bookmarks5=0
 bookmarks6=0
 bookmarks7=0
-sourcefiles=8
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1643,7 +1645,8 @@ sourcefiles=8
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/main.pas
-relpaths=8
+ ${PROJECTDIR}/sourceform.pas
+relpaths=9
  ideU.pas
  main.pas
  sourceform.pas
@@ -1652,7 +1655,9 @@ relpaths=8
  projectoptionsform.pas
  confideu.pas
  main.pas
-ismoduletexts=8
+ sourceform.pas
+ismoduletexts=9
+ 0
  0
  0
  0
@@ -1690,7 +1695,7 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=8
+order=9
  0
  1
  2
@@ -1698,11 +1703,12 @@ order=8
  6
  4
  5
+ 8
  7
 firsttab=0
-index=6
+index=7
 [layout]
-windowlayout=627
+windowlayout=628
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1820,7 +1826,7 @@ windowlayout=627
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2146,11 +2152,11 @@ windowlayout=627
  nx=0
  ny=0
  ncx=1197
- ncy=54
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=52
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2160,7 +2166,7 @@ windowlayout=627
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=20
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
@@ -2203,7 +2209,7 @@ windowlayout=627
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=8
+ order=9
   0
   1
   2
@@ -2211,9 +2217,10 @@ windowlayout=627
   6
   4
   5
+  8
   7
  firsttab=0
- index=6
+ index=7
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2222,7 +2229,7 @@ windowlayout=627
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2257,7 +2264,7 @@ windowlayout=627
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2314,7 +2321,7 @@ windowlayout=627
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=findinfilefo
  parent=
  mdistate=3
  nx=0
