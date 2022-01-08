@@ -1348,7 +1348,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 8
+        submenu.count = 7
         submenu.items = <        
           item
             caption = '&General Setting'
@@ -1367,10 +1367,6 @@ object mainfo: tmainfo
             name = 'lang'
             state = [as_localcaption, as_localonexecute]
             onexecute = onlang
-          end        
-          item
-            caption = 'Po <> Unit converter'
-            state = [as_localcaption]
           end        
           item
             submenu.count = 2
