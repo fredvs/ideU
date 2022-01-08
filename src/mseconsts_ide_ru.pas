@@ -703,14 +703,15 @@ ru_stockcaption: stockcaptionaty =
   'Авторское право'   {Copyright}
  );
 
-ru_langnamestext: array[0..5] of msestring =
+ru_langnamestext: array[0..6] of msestring =
 (
   'Английский',   {English}
   'Русский',   {Russian}
   'Французский',   {French}
   'Немецкий',   {German}
   'Испанский',   {Spanish}
-  'Португальский'   {Portuguese}
+  'Португальский',   {Portuguese}
+  'Chinese (not complete)'                 //6_chinese
  );
 
 ru_extendedtext: extendedaty =

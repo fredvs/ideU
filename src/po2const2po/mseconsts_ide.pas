@@ -57,8 +57,8 @@ type
 const
   langnames: array[langty] of string = (
     '', 'en', 'ru', 'fr', 'de', 'es', 'pt', 'uz', 'id', 'zh');
-  langnamesreg: array[0..5] of string = (
-    'en', 'ru', 'fr', 'de', 'es', 'pt');
+  langnamesreg: array[0..6] of string = (
+    'en', 'ru', 'fr', 'de', 'es', 'pt', 'zh');
 
 function langnamestext(const index: integer): msestring;
 function mainformtext(const index: mainformty): msestring;
@@ -800,13 +800,14 @@ const
     'Copyright'                         // sc_copyright
     );
 
- en_langnamestext: array[0..5] of msestring = (
+ en_langnamestext: array[0..6] of msestring = (
     'English',                                // 0_English
     'Russian',                                // 1_Russian
     'French',                                // 2_french
     'German',                                // 3_german
     'Spanish',                                // 4_spanish
-    'Portuguese'                            //5_portuguese
+    'Portuguese',                            //5_portuguese
+    'Chinese (not complete)'                 //6_chinese
     );
 
  en_extendedtext: extendedaty =

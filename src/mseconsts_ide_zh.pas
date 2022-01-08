@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2009 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -6,574 +6,738 @@
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+} 
 
-    Chinese translation by liuzg2.
-
-}
 unit mseconsts_ide_zh;
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
+
 uses
- mseconsts;
+  mseconsts_ide;
 
 implementation
+
 uses
- msetypes{msestrings},sysutils,mseformatstr;
+  msetypes{msestrings},
+  SysUtils,
+  msestockobjects,
+  mseformatstr;
+
 const
- zh_modalresulttext: defaultmodalresulttextty =
- (
-'',
-'',
-'',
-'',
-'',
-'',
-'',
-'离开',
-'取消',
-'确定',
-'是',
-'否',
-'所有',
-'Yes &all',
-'取消所有',
-'忽略',
-'&Skip',
-'Skip a&ll',
-'Co&ntinue'
-);
 
- zh_modalresulttextnoshortcut: defaultmodalresulttextty =
+zh_modalresulttext: defaultmodalresulttextty =
  (
-'',
-'',
-'',
-'',
-'',
-'',
-'',
-'离开',
-'取消',
-'确定',
-'是',
-'否',
-'所有',
-'Yes all',
-'取消所有',
-'忽略',
-'Skip',
-'Skip all',
-'继续'
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '离开',   {&Cancel}
+  '取消',   {&Abort}
+  '确定',   {&OK}
+  '是',   {&Yes}
+  '否',   {&No}
+  '所有',   {Yes &all}
+  '所有',   {Yes &all}
+  '取消所有',   {N&o all}
+  '忽略',   {&Ignore}
+  '&Skip',   {&Skip}
+  'Skip a&ll',   {Skip a&ll}
+  'Co&ntinue'   {Co&ntinue}
  );
- 
-   zh_actionsmoduletext: actionsmoduleaty = (
-      'Configure MSEide',
-      'Process ID',
-      'Attach to process',
-      'Unknown moduleclass for "',
-      'Inherited component "',
-      '" can not be deleted.',
-      'ERROR',
-      'Make aborted.',
-      'Download aborted.',
-      'Runerror with "',
-      'Error: Timeout.',
-      'Making.',
-      'Make not running.',
-      'Downloading.',
-      'Download not running.',
-      '" running.',
-      'Script',
-      'Recursive form inheritance of "',
-      'Component "',
-      '" exists.',
-      'Ancestor for "',
-      '" not found.',
-      'Module "',
-      'Invalid name "',
-      'Invalid methodname',
-      'Module not found',
-      'Method not found',
-      'Published (managed) method',
-      'does not exist.',
-      'Do you wish to delete the event?',
-      'WARNING',
-      'Method',
-      'has different parameters.',
-      'A module "',
-      '" is already open.',
-      'Unresolved reference(s) to',
-      'Module(s):',
-      'Can not read formfile "',
-      'Invalid component name.',
-      'Invalid exception',
-      'T&ools',
-      'Forms',
-      'Source',
-      'All Files',
-      'MSE Program',
-      'MSE Unit',
-      'MSE Textfile',
-      'Mainform',
-      'Simple Form',
-      'Docking Form',
-      'Datamodule',
-      'Subform',
-      'Scrollboxform',
-      'Tabform',
-      'Dockpanel',
-      'Report',
-      'Scriptform',
-      'Inherited Form',
-      'Do you want to replace the settings by',
-      'File "',
-      'Do you want to overwrite?',
-      'Unknown',
-      'Error',
-      'Startup',
-      'Exception',
-      'GDB died',
-      'Breakpoint hit',
-      'Watchpoint triggered',
-      'Read Watchpoint triggered',
-      'Access Watchpoint triggered',
-      'End stepping range',
-      'Function finished',
-      'Exited normally',
-      'Exited',
-      'Detached',
-      'Signal received',
-      'Stop error',
-      'Can not read project',
-      'About',
-      'Object Inspector',
-      'Store Component',
-      'Attaching Process',
-      'Loading'
-    );
 
-zh_settingstext: isettingsaty = (
-    'Apply', //se_apply
-    'sak voice assistive config', //se_groupassistive
-    'Parent directory of sakit', //se_sakitdir
-    'Enable sak assistive at loading', //se_enableassistive
-    'System layout', //se_groupsystemlayout
-    'Universelles Verzeichnislayout', //se_universalpath
-    'No Z order handling', //se_nozorder
-    'Use shift key to select a word', //se_doubleclic
-    'Auto focus in main-menu', //se_autofocusmenu
-    'Full path of project in window title', //se_fullpath
-    'Set dialog-forms as modal vs as tool', //se_modaldial
-    'Font height', //se_fontsize
-    'Font name', //se_fontname
-    'No confirmation to delete row', //se_confirmdel
-    'Blinking caret', //se_blinkcaret
-    'Repaint canvas', //se_repaintcanvas
-    'Source Editor', //se_groupsourceeditor
-    'Use those options instead of project options', //se_usedefaulteditoroptions
-    'Add space after comma when auto-parsing', //se_addwhiteaftercomma
-    'When a file has changed', //se_groupfilechange
-    'No dialog box => reload the new one', //se_filereload
-    'No dialog box => keep the old one', //se_filenoload
-    'A dialog box ask what to do...' //se_fileaskload
-     );
-  
-  zh_projectoptionstext: projectoptionsaty = (
-    'Project options',          // po_projectoptions
-    'Editor',                   // po_editor
-    'Right margin line',        // po_rightmarginline
-    'Mark Brackets',            //  po_markbrackets
-    'Line Numbers',             //  po_linenumbers
-    'Mark Pairwords',           //  po_markpairwords
-    'Trim trailing'#10'whitespace'#10'on save', //  po_trimtrailing
-    'Auto Indent',              //  po_autoindent
-    'No Source Editor',         //  po_nosource
-    'Tab indent',               //  po_tabindent
-    'Space tab',                //  po_spacetab
-    'Show tabs',                //  po_showtabs
-    'Anti aliased font',        //  po_antialiasedfont
-    'Encoding',                 //  po_encoding
-    'Mark Color',               //  po_markcolor
+zh_modalresulttextnoshortcut: defaultmodalresulttextty =
+ (
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '离开',   {Cancel}
+  '取消',   {Abort}
+  '确定',   {OK}
+  '是',   {Yes}
+  '否',   {No}
+  '所有',   {Yes all}
+  '所有',   {Yes all}
+  '取消所有',   {No all}
+  '忽略',   {Ignore}
+  'Skip',   {Skip}
+  'Skip all',   {Skip all}
+  '继续'   {Continue}
+ );
 
-    'Stat Color',               // po_statcolor
-    'Scr Y',                    // po_scrollbary
-    'Nb char',                  // po_nbchar
-    'EOL Style',                //  po_eolstyle
-    'Backup',                   //  po_backup
-    'Tabstops',                 //  po_tabstops
-    'Indent',                   //  po_indent
-    'ExtS',                     //  po_extraspace
-    'Extra space between lines', //  po_extraspacehint
-    'Width',                    //  po_width
-    'Height',                   //  po_height
-    'Font',                     //  po_font
-    'Font Bk. color',           //  po_fontbkcolor
-    'Font color',               //  po_fontcolor
-    'File filter',              //  po_filefilter
-    'Name',                     //  po_name
-    'File mask',                //  po_filemask
-    'Syntax definition file',   //  po_syntaxdeffile
-    'Code Templates',           //  po_codetemplate
-    'Code template directories, file extension = .mct', //  po_fontcodetemplatedir
-    'Select unit directory',    // po_selectunitdir
-    '&Debugger',                // po_debuggerpage
-    'Project Debugger',         // po_projectdebugger
-    'Search &Directories',      // po_searchdirectories
-    'Search path to get infos about code', // po_searchdirectorieshint
-    'Select source directory',  // po_selectsourcedir
-    'Object &Base Directory (empty = Make Directory)', // po_objectbasedir
-    'Select source base directory', // po_selectsourcebasedir
-    'Defi&nes',                 // po_defines
-    '&Signals',                 // po_signals
-    '&Exception',               // po_exception
-    '&Target',                  // po_target
-    'Start gdb server command attach target', // po_startgdbattachtarget
-    'No wait for exit',         // po_nogdbserverexit
-    'Before connect gdb script', // po_beforeconnect
-    'Before load gdb script',   // po_beforeload
-    'Before run gdb script',    // po_beforerun
-    'After connect gdb script', // po_afterconnect
-    'After load gdb script',    // po_afterload
-    'Start gdb server command run target', // gdbservercommand
-    'Wait before connect',      // po_gdbserverwait
-    'Start once',               // po_gdbserverstartonce
-    'Download command',         // po_uploadcommand
-    'Processor',                // po_gdbprocessor
-    'Simulator',                // po_gdbsimulator
-    'gdb download',             // po_gdbdownload
-    'Startup BKPT',             // po_startupbkpt
-    'Target connection',        // po_remoteconnection
-    'Always download',          // po_downloadalways
-    'Always download before run', // po_downloadalwayshint
-    'Load Timeout',             // po_gdbloadtimeout
-    '&Extern Console',          // po_externalconsole
-    '&Stop on Exc',             // po_stoponexception
-    'Stop on exceptions',       // po_stoponexceptionhint
-    '&Acti-Break',              // po_activateonbreak
-    'Activate on Break',        // po_activateonbreakhint
-    '&Value'#10'Hints',         // po_valuehints
-    'Call GUI_DEB',             // po_nodebugbeginend
-    'Release mouse grab by target stop. gdb sometimes crashes with this option.', // po_nodebugbeginendhint
-    'Set TT&Y',                 // po_settty
-    '&Raise-Break',             // po_raiseonbreak
-    'Raise on break',           // po_raiseonbreakhint
-    '&FPC bugs',                // po_fpcgdbworkaround
-    'Use workarounds for FPC/gdb bugs', // po_fpcgdbworkaroundhint
-    'Debug &target',            // po_debugtarget
-    'xterm command',            // po_xtermcommand
-    '&Run command',             // po_runcommand
-    'Default Debugger',        // po_debugcommand
-    'Debug &options',           // po_debugoptions
-    '&Make',                    // po_makepage
+zh_projectoptionscontext: projectoptionsconaty =
+ (
+  'Wrong encoding can damage your source files.',   {Wrong encoding can damage your source files.}
+  'Do you wish to set encoding to',   {Do you wish to set encoding to}
+  '*** WARNING ***',   {*** WARNING ***}
+  'Hangup',   {Hangup}
+  'Interrupt',   {Interrupt}
+  'Quit',   {Quit}
+  'Illegal instruction',   {Illegal instruction}
+  'Trace trap',   {Trace trap}
+  '取消',   {Abort}
+  'BUS error',   {BUS error}
+  'Floating-point exception',   {Floating-point exception}
+  'Kill',   {Kill}
+  'User-defined signal 1',   {User-defined signal 1}
+  'Segmentation violation',   {Segmentation violation}
+  'User-defined signal 2',   {User-defined signal 2}
+  'Broken pipe',   {Broken pipe}
+  'Alarm clock',   {Alarm clock}
+  'Termination',   {Termination}
+  'Stack fault',   {Stack fault}
+  'Child status has changed',   {Child status has changed}
+  '继续',   {Continue}
+  'Stop unblockable',   {Stop, unblockable}
+  'Keyboard stop',   {Keyboard stop}
+  'Background read from tty',   {Background read from tty}
+  'Background write to tty',   {Background write to tty}
+  'Urgent condition on socket',   {Urgent condition on socket}
+  'CPU limit exceeded',   {CPU limit exceeded}
+  'File size limit exceeded',   {File size limit exceeded}
+  'Virtual alarm clock',   {Virtual alarm clock}
+  'Profiling alarm clock',   {Profiling alarm clock}
+  'Window size change',   {Window size change}
+  'I/O now possible',   {I/O now possible}
+  'Power failure restart'   {Power failure restart}
+ );
 
-    'Default make col',         // po_defaultmake
-    'Mainfile',                 // po_mainfile
-    'Select mainfile',          // po_selectmainfile
-    'Targetfile name',          // po_targetfile
-    'Select target file',       // po_selecttargetfile
-    'Default Compiler',         // po_makecommand
-    'Select make command',      // po_selectmakecommand
-    'Show Command Line',        // po_showcommandline
-    'Copy messages to file',    // po_copymessages
-    'Close message',            // po_closemessages
-    'Check head',               // po_checkmethods
-    'Check method headers',     // po_checkmethodshint
-    'Project Compiler',         // po_projectcompiler
-    'Command before',           // po_commandbefore
-    'Make options',             // po_makeoptions
-    'Directories',              // po_directories
-    'Select unit directory',    // po_unitdirs
-    'Command after',            // po_commandafter
-    'Exe Extension',            // po_exeextension
-    'Comments',                 // po_comments
-    'Make Directory',           // po_makedir
-    'Select make directory',    // po_selectmakedir
-    'Error Color',              // po_colorerror
-    'Warning Color',            // po_colorwarning
-    'Note Color',               // po_colornote
-    'Strip ESC',                // po_stripmessageesc
-    'Strip ESC sequences in Messages and Terminal form', // po_stripmessageeschint
-    'Show Console',             // po_showconsole
-    'Purpose',                  //po_enablepurpose
-    'Message output file',      // po_messageoutputfile
-    'Select target file',       // po_selectmessageoutputfile
-    'Macros',                   // po_macros
-    'Active group',             // po_selectactivegroupgrid
-    '&Font Alias',              // po_fontaliaspage
-    'Designers',                // po_designers
-    'User &Colors',             // po_usercolors
-    'Copy "setcolormapvalue" code to clipboard', // po_copycolor
-    'F&ormat Macros',           // po_formatmacro
-    'Used by formatfloatmse() and formatdatetimemse()', // po_formatmacrohint
-    'Templates',                // po_templates
-    'New project',              // po_newproject
-    'Script before copy',       // po_scriptbeforecopy
-    'Script after copy',        // po_scriptaftercopy
-    'New File',                 // po_newfile
-    'New Form',                 // po_newform
-    'Tools',                    // po_tools
-    'Storage',                  // po_storage
-    'Infos'                     // po_infos
+zh_actionsmoduletext: actionsmoduleaty =
+ (
+  'Configure MSEide',   {Configure ideU}
+  'Process ID',   {Process ID}
+  'Attach to process',   {Attach to process}
+  'Unknown moduleclass for "',   {Unknown moduleclass for "}
+  'Inherited component "',   {Inherited component "}
+  '" can not be deleted.',   {" can not be deleted.}
+  'ERROR',   {ERROR}
+  'Make aborted.',   {Make aborted.}
+  'Download aborted.',   {Download aborted.}
+  'Runerror with "',   {Runerror with "}
+  'Error: Timeout.',   {Error: Timeout.}
+  'Making.',   {Making.}
+  'Make not running.',   {Make not running.}
+  'Downloading.',   {Downloading.}
+  'Download not running.',   {Download not running.}
+  '" running.',   {" running.}
+  'Script',   {Script}
+  'Recursive form inheritance of "',   {Recursive form inheritance of "}
+  'Component "',   {Component "}
+  '" exists.',   {" exists.}
+  'Ancestor for "',   {Ancestor for "}
+  '" not found.',   {" not found.}
+  'Module "',   {Module "}
+  'Invalid name "',   {Invalid name "}
+  'Invalid methodname',   {Invalid methodname}
+  'Module not found',   {Module not found}
+  'Method not found',   {Method not found}
+  'Published (managed) method',   {Published (managed) method}
+  'does not exist.',   {does not exist.}
+  'Do you wish to delete the event?',   {Do you wish to delete the event?}
+  'WARNING',   {WARNING}
+  'Method',   {Method}
+  'has different parameters.',   {has different parameters.}
+  'A module "',   {A module "}
+  '" is already open.',   {" is already open.}
+  'Unresolved reference(s) to',   {Unresolved reference(s) to}
+  'Module(s):',   {Module(s):}
+  'Can not read formfile "',   {Can not read formfile "}
+  'Invalid component name.',   {Invalid component name.}
+  'Invalid exception',   {Invalid exception}
+  'T&ools',   {T&ools}
+  'Forms',   {Forms}
+  'Source',   {Source}
+  'All Files',   {All Files}
+  'MSE Program',   {MSE Program}
+  'MSE Unit',   {MSE Unit}
+  'MSE Textfile',   {MSE Textfile}
+  'Mainform',   {Mainform}
+  'Simple Form',   {Simple Form}
+  'Docking Form',   {Docking Form}
+  'Datamodule',   {Datamodule}
+  'Subform',   {Subform}
+  'Scrollboxform',   {Scrollboxform}
+  'Tabform',   {Tabform}
+  'Dockpanel',   {Dockpanel}
+  'Report',   {Report}
+  'Scriptform',   {Scriptform}
+  'Inherited Form',   {Inherited Form}
+  'Do you want to replace the settings by',   {Do you want to replace the settings by}
+  'File "',   {File "}
+  'Do you want to overwrite?',   {Do you want to overwrite?}
+  'Unknown',   {Unknown}
+  'Error',   {Error}
+  'Startup',   {Startup}
+  'Exception',   {Exception}
+  'GDB died',   {GDB died}
+  'Breakpoint hit',   {Breakpoint hit}
+  'Watchpoint triggered',   {Watchpoint triggered}
+  'Read Watchpoint triggered',   {Read Watchpoint triggered}
+  'Access Watchpoint triggered',   {Access Watchpoint triggered}
+  'End stepping range',   {End stepping range}
+  'Function finished',   {Function finished}
+  'Exited normally',   {Exited normally}
+  'Exited',   {Exited}
+  'Detached',   {Detached}
+  'Signal received',   {Signal received}
+  'Stop error',   {Stop error}
+  'Can not read project',   {Can not read project}
+  'About',   {About}
+  'Object Inspector',   {Object Inspector}
+  'Store Component',   {Store Component}
+  'Attaching Process',   {Attaching Process}
+  'Loading'   {Loading}
+ );
 
-    );
+zh_mainformtext: mainformaty =
+ (
+  'Unresolved references in',   {Unresolved references in}
+  'to',   {to}
+  'Do you wish to search the formfile?',   {Do you wish to search the formfile?}
+  'WARNING',   {WARNING}
+  'Formfile for',   {Formfile for}
+  'Formfiles',   {Formfiles}
+  'Recursive form hierarchy for "',   {Recursive form hierarchy for "}
+  'ERROR',   {ERROR}
+  'Classtype',   {Classtype}
+  'not found.',   {not found.}
+  '继续',   {Project}
+  'is modified. Save?',   {is modified. Save?}
+  'Confirmation',   {Confirmation}
+  'Unable to open file "',   {Unable to open file "}
+  '*** Running ***',   {*** Running ***}
+  'Downloading',   {Downloading}
+  'Downloaded',   {Downloaded}
+  'Start gdb server command "',   {Start gdb server command "}
+  '" running.',   {" running.}
+  'Start gdb Server',   {Start gdb Server}
+  'gdb server start error',   {gdb server start error}
+  'gdb server start canceled.',   {gdb server start canceled.}
+  'Can not run start gdb command.',   {Can not run start gdb command.}
+  'Uploadcommand "',   {Uploadcommand "}
+  'Download ***ERROR***',   {Download ***ERROR***}
+  'Download finished.',   {Download finished.}
+  'Download canceled.',   {Download canceled.}
+  'File "',   {File "}
+  '" not found.',   {" not found.}
+  '" exists.',   {" exists.}
+  'New',   {New}
+  'Select ancestor',   {Select ancestor}
+  'New form',   {New form}
+  'Pascal Files',   {Pascal Files}
+  'new',   {new}
+  'Can not load Project "',   {Can not load Project "}
+  'Select project template',   {Select project template}
+  'Project files',   {Project files}
+  'All files',   {All files}
+  'Select program file',   {Select program file}
+  'Pascal program files',   {Pascal program files}
+  'C program files',   {C program files}
+  'New Project',   {New Project}
+  'Can not start process',   {Can not start process}
+  'Process',   {Process}
+  'running.',   {running.}
+  'Process terminated',   {Process terminated}
+  'Process terminated normally.',   {Process terminated normally.}
+  'Make ***ERROR***',   {Make ***ERROR***}
+  'Make OK.',   {Make OK.}
+  'Source has changed do you wish to remake project?',   {Source has changed, do you wish to remake project?}
+  'Load Window Layout',   {Load Window Layout}
+  '继续'   {Docking area}
+ );
 
- zh_stockcaption: stockcaptionaty = (
-'',
-'无效',
-'格式错误',
-'值不能为空',
-'错误',
-'最小',
-'最大',
-'溢出错误',
-'取消',
-'重做',
-'复制',
-'剪切',
-'粘贴',
-'Select &all',
-'插入一行',
-'增加一行',
-'删除所选行',
-'文件夹',
-'首页',
-'向上',
-'新文件夹',
-'文件名',
-'显示隐藏文件',
-'保存类型',
-'保存',
-'打开',
-'名称',
-'新建文件夹',
-'Back',
-'Forward',
-'向上',
-'文件',
-'文件已经存在，是否覆盖？',
-'is modified. Save?',
-'警告',
-'错误',
-'异常',
-'System',
-'不存在',
-'PASSWORD',
-'Enter password',
-'Invalid password!',
-'找不到文件夹',
-'图形格式不支持',
-'图形格式错误',
-'MS Bitmap',
-'MS Icon',
-'JPEG Image',
-'PNG Image',
-'XPM Image',
-'PNM Image',
-'TARGA Image',
-'TIFF Image',
-'所有',
-'证明',
-'删除记录？',
-'Copy record?',
-'关闭页',
-'第一条',
-'前一条',
-'下一条',
-'最后',
-'增加',
-'删除',
-'修改',
-'保存',
-'离开',
-'刷新',
-'编辑器过滤',
-'Edit filter minimum',
-'Edit filter maximum',
-'Reset filter',
-'过滤开启',
-'查找',
-'Auto edit',
-'Copy record',
-'Dialog',
-'插入',
-'复制',
-'粘贴',
-'Row insert',
-'Row append',
-'Row delete',
-'取消',
-'重做',
-'剪切',
-'Select all',
-'过滤关闭',
-'Portrait',
-'Landscape',
-'确定删除此条记录吗？',
-'确定删除所选记录吗？',
-'Single item only',
-'Copy Cells',
-'Paste Cells',
-'关闭',
-'Maximize',
-'Normalize',
-'Minimize',
-'Fix size',
-'Float',
-'Stay on top',
-'Stay in background',
-'Lock children',
-'No lock',
-'Input',
-'Button',
-'On',
-'Off',
-'Left border',
-'Top border',
-'Right border',
-'Bottom border',
-'Begin of text',
-'End of text',
-'Inputmode',
-'Overwrite',
-'Deleted',
-'Copied',
-'Inserted',
-'Pasted',
-'Withdrawn',
-'Window activated',
-'菜单',
-'Beginning of file',                      //sc_bof
-    'End of file',                        //sc_eof
-    'Voice output',                       //sc_voiceoutput
-    'Speak again',                        //sc_speakagain
-    'First column',                       //sc_firstcol
-    'First row',                          //sc_firstrow
-    'Last column',                        //sc_lastcol
-    'Last row',                           //sc_lastrow
-    'Selection',                          //sc_selection
-    'Speak path',                         //sc_speakpath
-    'Disabled button',                    //sc_disabledbutton
-    'First field',                        //sc_firstfield
-    'Last field',                         //sc_lastfield
-    'First element',                      //sc_firstelement
-    'Last element',                       //sc_lastelement
-    'Slower',                             //sc_slower
-    'Faster',                             //sc_faster
-    'Window',                             //sc_window
-    'Area',                               //sc_area
-    'Area activated',                     //sc_areaactivated
-    'Volume down',                        //sc_volumedown
-    'Volume up',                          //sc_volumeup
-    'Cancel speech',                      //sc_cancelspeech
-    'Target',                             //sc_target
-    'View',                               //sc_view
-    'Forms',                              //sc_forms
-    'Layout',                             //sc_layout
-    'Syntax',                             //sc_syntax
-    'Project',                            //sc_project
-    'Edited',                             //sc_edited
-    'Widgets',                            //sc_widgets
-    'Settings',                           //sc_settings
-    'About',                              //sc_about
-    'New',                                //sc_newfile
-    'Save as...',                         //sc_saveas
-    'Save all',                           //sc_saveall
-    'Close all',                          //sc_closeall
-    'Print',                              //sc_print
-    'Quit',                               //sc_quit
-    'Line',                               //sc_line
-    'Search again',                       //sc_search_again
-    'Search back',                        //sc_search_back
-    'Find & replace',                     //sc_find_replace
-    'Find in files',                      //sc_find_infile
-    'Procedures list',                    //sc_proclist
-    'Select edit page',                   //sc_select_edit_Page
-    'Copy word at cursor',                //sc_Copy_word_cursor
-    'Copy LaTeX',                         //sc_copy_latex
-    'Indent',                             //sc_ident
-    'Unindent',                           //sc_uident
-    'Environment',                        //sc_environment
-    'Attach process',                     //sc_attachprocess
-    'Attach target',                      //sc_attachtarget
-    'Detach target',                      //sc_detachtarget
-    'Download',                           //sc_download
-    'Tools',                              //sc_tools
-    'Make',                               // sc_make 
-    'Build',                              // sc_build 
-    'Abort make',                         // sc_abortmake 
-    'Debug-Run',                          // sc_debugrun 
-    'Options',                            // sc_options 
-    'Tree',                               // sc_tree 
-    'Source',                             // sc_source 
-    'Open copy',                          // sc_opencopy 
-    'Save copy as',                       // sc_saveascopy 
-    'Beautifier',                         // sc_beautifier
-    'Panels',                             // sc_panels
-    'Force Z order',                      // sc_forcezorder
-    'Tree list',                          // sc_treelist
-    'Messages',                           // sc_messages
-    'Find result',                        // sc_findresult
-    'Commander',                          // sc_commander
-    'Symbols',                            // sc_symbols
-    'Watches',                            // sc_watches
-    'Stack',                              // sc_stack
-    'Threads',                            // sc_threads
-    'CPU',                                // sc_cpu
-    'Assembler',                          // sc_assembler
-    'Breakpoints',                        // sc_breakpoints
-    'Watchpoints',                        // sc_watchpoints 
-    'Memory',                             // sc_memory
-    'Target console',                      // sc_targetconsole 
-    'Toggle form/unit',                   // sc_toggleformunit
-    'MSE modules',                        // sc_msemod 
-    'Close all MSE modules',              // sc_closeallmsemod
-    'General settings',                   // sc_generalsettings
-    'Extra settings',                     // sc_extrasettings
-    'Languages',                          // sc_lang
-    'Configure widgets',                  // sc_configwidgets
-    'Configure compilers',                // sc_configcompilers
-    'Configure debuggers',                // sc_configdebuggers
-    'Themes',                             // sc_themes
-    'Directory',                          // sc_directory
-    'No icons',                           // sc_noicons
-    'No lateral',                         // sc_themes
-    'Compact',                            // sc_compact 
-    'Open project',                       // sc_openproject
-    'Open file',                           // sc_openfile
-    'Path',                               // sc_path
-    'Other',                              // sc_other
-    'Print command',                      // sc_printcommand
-    'Shortcut',                           // sc_shortcut
-    'Value',                              // sc_value
-    'Case sensitive',                     // sc_casesensitive
-    'Selected only',                     // sc_selectedonly
-    'Whole word',                        // sc_wholeword
-    'Text to find',                        // sc_texttofind
-    'Search in current file',            // sc_searchincurrentfile
-    'Search in open files',            // sc_searchininopenfiles
-    'Search in project directory',     // sc_searchinprojectdir
-    'Search in directories',            // sc_searchindirectories
-    'Include subdirectories'            // sc_includesubdir
-    
-   );
+zh_sourceformtext: sourceformaty =
+ (
+  'File "',   {File "}
+  '" has changed.',   {" has changed.}
+  'There are modifications in edit buffer also.',   {There are modifications in edit buffer also.}
+  'Do you wish to reload from disk?',   {Do you wish to reload from disk?}
+  'Confirmation',   {Confirmation}
+  '<none>',   {<none>}
+  'Do you wish to replace:',   {Do you wish to replace:}
+  'with:',   {with:}
+  '<new>',   {<new>}
+  'Syntaxdeffile:',   {Syntaxdeffile:}
+  'Text',   {Text}
+  'not found.',   {not found.}
+  'Restart from begin of file?',   {Restart from begin of file?}
+  'Cancel?',   {Cancel?}
+  'Do you wish to to replace this occurence?',   {Do you wish to to replace this occurence?}
+  'Go to line number:',   {Go to line number:}
+  'Find line',   {Find line}
+  'There are modifications in edit buffer also.'   {There are modifications in edit buffer also.}
+ );
+
+zh_settingstext: isettingsaty =
+ (
+  'Apply',   {Apply}
+  'sak voice assistive config',   {sak voice assistive config}
+  'Parent directory of sakit',   {Parent directory of sakit}
+  'Enable sak assistive at loading',   {Enable sak assistive at loading}
+  'System layout',   {System layout}
+  'Universelles Verzeichnislayout',   {Universal path layout}
+  'No Z order handling',   {No Z order handling}
+  'Use shift key to select a word',   {Use shift key to select a word}
+  'Auto focus in main-menu',   {Auto focus in main-menu}
+  'Full path of project in window title',   {Full path of project in window title}
+  'Set dialog-forms as modal vs as tool',   {Set dialog-forms as modal vs as tool}
+  'Font height',   {Font height}
+  'Font name',   {Font name}
+  'No confirmation to delete row',   {No confirmation to delete row}
+  'Blinking caret',   {Blinking caret}
+  'Repaint canvas',   {Repaint canvas}
+  'Source Editor',   {Source Editor}
+  'Use those options instead of project options',   {Use those options instead of project options}
+  'Add space after comma when auto-parsing',   {Add space after comma -> auto-parsing}
+  'When a file has changed',   {When a file has changed}
+  'No dialog box => reload the new one',   {No dialog box => reload the new one}
+  'No dialog box => keep the old one',   {No dialog box => keep the old one}
+  'A dialog box ask what to do...',   {A dialog box ask what to do...}
+  'Rectangle around multi-select'   {Rectangle around multi-select}
+ );
+
+zh_projectoptionstext: projectoptionsaty =
+ (
+  'Project options',   {Project options}
+  'Editor',   {Editor}
+  'Right margin line',   {Right margin line}
+  'Mark Brackets',   {Mark Brackets}
+  'Line Numbers',   {Line Numbers}
+  'Mark Pairwords',   {Mark Pairwords}
+  'Trim trailing#10whitespace#10on save',   {Trim trailing whitespace on save}
+  'Auto Indent',   {Auto Indent}
+  'No Source Editor',   {No Source Editor}
+  'Tab indent',   {Tab indent}
+  'Space tab',   {Space tab}
+  'Show tabs',   {Show tabs}
+  'Anti aliased font',   {Anti aliased font}
+  'Encoding',   {Encoding}
+  'Mark Color',   {Mark Color}
+  'Stat Color',   {Stat Color}
+  'Scr Y',   {Scr Y}
+  'Nb char',   {Nb char}
+  'EOL Style',   {EOL Style}
+  'Backup',   {Backup}
+  'Tabstops',   {Tabstops}
+  'Indent',   {Indent}
+  'ExtS',   {ExtS}
+  'Extra space between lines',   {Extra space between lines}
+  'Width',   {Width}
+  'Height',   {Height}
+  'Font',   {Font}
+  'Font Bk. color',   {Font Bk. color}
+  'Font color',   {Font color}
+  'File filter',   {File filter}
+  'Name',   {Name}
+  'File mask',   {File mask}
+  'Syntax definition file',   {Syntax definition file}
+  'Code Templates',   {Code Templates}
+  'Code template directories file extension = .mct',   {Code template directories, file extension = .mct}
+  'Select unit directory',   {Select unit directory}
+  '&Debugger',   {&Debugger}
+  'Project Debugger',   {Project Debugger}
+  'Search &Directories',   {Search &Directories}
+  'Search path to get infos about code',   {Search path to get infos about code}
+  'Select source directory',   {Select source directory}
+  'Object &Base Directory (empty = Make Directory)',   {Object &Base Directory (empty = Make Directory)}
+  'Select source base directory',   {Select source base directory}
+  'Defi&nes',   {Defi&nes}
+  '&Signals',   {&Signals}
+  '&Exception',   {&Exception}
+  '&Target',   {&Target}
+  'Start gdb server command attach target',   {Start gdb server command attach target}
+  'No wait for exit',   {No wait for exit}
+  'Before connect gdb script',   {Before connect gdb script}
+  'Before load gdb script',   {Before load gdb script}
+  'Before run gdb script',   {Before run gdb script}
+  'After connect gdb script',   {After connect gdb script}
+  'After load gdb script',   {After load gdb script}
+  'Start gdb server command run target',   {Start gdb server command run target}
+  'Wait before connect',   {Wait before connect}
+  'Start once',   {Start once}
+  'Download command',   {Download command}
+  'Processor',   {Processor}
+  'Simulator',   {Simulator}
+  'gdb download',   {gdb download}
+  'Startup BKPT',   {Startup BKPT}
+  'Target connection',   {Target connection}
+  'Always download',   {Always download}
+  'Always download before run',   {Always download before run}
+  'Load Timeout',   {Load Timeout}
+  '&Extern Console',   {&Extern Console}
+  '&Stop on Exc',   {&Stop on Exc}
+  'Stop on exceptions',   {Stop on exceptions}
+  '&Acti-Break',   {&Acti-Break}
+  'Activate on Break',   {Activate on Break}
+  '&Value#10Hints',   {&Value Hints}
+  'Call GUI_DEB',   {Call GUI_DEB}
+  'Release mouse grab by target stop. gdb sometimes crashes with this option.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
+  'Set TT&Y',   {Set TT&Y}
+  '&Raise-Break',   {&Raise-Break}
+  'Raise on break',   {Raise on break}
+  '&FPC bugs',   {&FPC bugs}
+  'Use workarounds for FPC/gdb bugs',   {Use workarounds for FPC/gdb bugs}
+  'Debug &target',   {Debug &target}
+  'xterm command',   {xterm command}
+  '&Run command',   {Run command}
+  'Default Debugger',   {Default Debugger}
+  'Debug &options',   {Debug &options}
+  '&Make',   {&Make}
+  'Default make col',   {Default make col}
+  'Mainfile',   {Mainfile}
+  'Select mainfile',   {Select mainfile}
+  'Targetfile name',   {Targetfile name}
+  'Select target file',   {Select target file}
+  'Default Compiler',   {Default Compiler}
+  'Select make command',   {Select make command}
+  'Show Command Line',   {Show Command Line}
+  'Copy messages to file',   {Copy messages to file}
+  'Close message',   {Close message}
+  'Check head',   {Check head}
+  'Check method headers',   {Check method headers}
+  'Project Compiler',   {Project Compiler}
+  'Command before',   {Command before}
+  'Make options',   {Make options}
+  'Directories',   {Directories}
+  'Select unit directory',   {Select unit directory}
+  'Command after',   {Command after}
+  'Exe Extension',   {Exe Extension}
+  'Comments',   {Comments}
+  'Make Directory',   {Make Directory}
+  'Select make directory',   {Select make directory}
+  'Error Color',   {Error Color}
+  'Warning Color',   {Warning Color}
+  'Note Color',   {Note Color}
+  'Strip ESC',   {Strip ESC}
+  'Strip ESC sequences in Messages and Terminal form',   {Strip ESC sequences in Messages and Terminal form}
+  'Show Console',   {Show Console}
+  'Purpose',   {Purpose}
+  'Message output file',   {Message output file}
+  'Select target file',   {Select target file}
+  'Macros',   {Macros}
+  'Active group',   {Active group}
+  '&Font Alias',   {&Font Alias}
+  'Designers',   {Designers}
+  'User &Colors',   {User &Colors}
+  'Copy "setcolormapvalue" code to clipboard',   {Copy "setcolormapvalue" code to clipboard}
+  'F&ormat Macros',   {F&ormat Macros}
+  'Used by formatfloatmse() and formatdatetimemse()',   {Used by formatfloatmse() and formatdatetimemse()}
+  'Templates',   {Templates}
+  'New project',   {New project}
+  'Script before copy',   {Script before copy}
+  'Script after copy',   {Script after copy}
+  'New File',   {New File}
+  'New Form',   {New Form}
+  'Tools',   {Tools}
+  'Storage',   {Storage}
+  'Infos',   {Infos}
+  'Full name of project',   {Full name of project}
+  'Creator',   {Creator}
+  'Licence',   {License}
+  'Date of creation'   {Date of creation}
+ );
+
+zh_stockcaption: stockcaptionaty =
+(
+  '',   {}
+  '无效',   {is invalid}
+  '格式错误',   {Format error}
+  '值不能为空',   {Value is required}
+  'Error',   {Error}
+  '最小',   {Min}
+  '最大',   {Max}
+  '溢出错误',   {Range error}
+  '取消',   {&Undo}
+  '重做',   {&Redo}
+  '复制',   {&Copy}
+  '剪切',   {Cu&t}
+  '粘贴',   {&Paste}
+  'Select &all',   {Select &all}
+  '插入一行',   {&Insert Row}
+  '增加一行',   {&Append Row}
+  '删除所选行',   {&Delete Row}
+  '文件夹',   {&Dir}
+  '首页',   {&Home}
+  '向上',   {&Up}
+  '新文件夹',   {&New}
+  '文件名',   {&Name}
+  '显示隐藏文件',   {&Show hidden files}
+  '保存类型',   {&Filter}
+  '保存',   {Save}
+  '打开',   {Open}
+  'Name',   {Name}
+  '新建文件夹',   {Create new directory}
+  'Back',   {Back}
+  'Forward',   {Forward}
+  '向上',   {Up}
+  '文件',   {File}
+  '文件已经存在，是否覆盖？',   {exists, do you want to overwrite?}
+  'is modified. Save?',   {is modified. Save?}
+  'WARNING',   {WARNING}
+  'ERROR',   {ERROR}
+  'Exception',   {Exception}
+  'System',   {System}
+  '不存在',   {does not exist}
+  'PASSWORD',   {PASSWORD}
+  'Enter password',   {Enter password}
+  'Invalid password!',   {Invalid password!}
+  '找不到文件夹',   {Can not read directory}
+  '图形格式不支持',   {Graphic format not supported}
+  '图形格式错误',   {Graphic format error}
+  'MS Bitmap',   {MS Bitmap}
+  'MS Icon',   {MS Icon}
+  'JPEG Image',   {JPEG Image}
+  'PNG Image',   {PNG Image}
+  'XPM Image',   {XPM Image}
+  'PNM Image',   {PNM Image}
+  'TARGA Image',   {TARGA Image}
+  'TIFF Image',   {TIFF Image}
+  '所有',   {All}
+  'Confirmation',   {Confirmation}
+  '删除记录？',   {Delete record?}
+  'Copy record?',   {Copy record?}
+  '关闭页',   {Close page}
+  '第一条',   {First}
+  '前一条',   {Prior}
+  '下一条',   {Next}
+  '最后',   {Last}
+  '增加',   {Append}
+  '删除',   {Delete}
+  '修改',   {Edit}
+  '保存',   {Post}
+  '离开',   {Cancel}
+  '刷新',   {Refresh}
+  '编辑器过滤',   {Edit filter}
+  'Edit filter minimum',   {Edit filter minimum}
+  'Edit filter maximum',   {Edit filter maximum}
+  'Reset filter',   {Reset filter}
+  '过滤开启',   {Filter on}
+  '查找',   {Search}
+  'Auto edit',   {Auto edit}
+  'Copy record',   {Copy record}
+  'Dialog',   {Dialog}
+  '插入',   {Insert}
+  '复制',   {Copy}
+  '粘贴',   {Paste}
+  'Row insert',   {Row insert}
+  'Row append',   {Row append}
+  'Row delete',   {Row delete}
+  '取消',   {Undo}
+  '重做',   {Redo}
+  '剪切',   {Cut}
+  'Select all',   {Select all}
+  '过滤关闭',   {Filter off}
+  'Portrait',   {Portrait}
+  'Landscape',   {Landscape}
+  '确定删除此条记录吗？',   {Delete row?}
+  '确定删除所选记录吗？',   {selected rows?}
+  'Single item only',   {Single item only}
+  'Copy Cells',   {Copy Cells}
+  'Paste Cells',   {Paste Cells}
+  '关闭',   {Close}
+  'Maximize',   {Maximize}
+  'Normalize',   {Normalize}
+  'Minimize',   {Minimize}
+  'Fix size',   {Fix size}
+  'Float',   {Float}
+  'Stay on top',   {Stay on top}
+  'Stay in background',   {Stay in background}
+  'Lock children',   {Lock children}
+  'No lock',   {No lock}
+  'Input',   {Input}
+  'Button',   {Button}
+  'On',   {On}
+  'Off',   {Off}
+  'Left border',   {Left border}
+  'Top border',   {Top border}
+  'Right border',   {Right border}
+  'Bottom border',   {Bottom border}
+  'Begin of text',   {Begin of text}
+  'End of text',   {End of text}
+  'Inputmode',   {Inputmode}
+  'Overwrite',   {Overwrite}
+  'Deleted',   {Deleted}
+  'Copied',   {Copied}
+  'Inserted',   {Inserted}
+  'Pasted',   {Pasted}
+  'Withdrawn',   {Withdrawn}
+  'Window activated',   {Window activated}
+  '菜单',   {Menu}
+  'Beginning of file',   {Beginning of file}
+  'End of file',   {End of file}
+  'Voice output',   {Voice output}
+  'Speak again',   {Speak again}
+  'First column',   {First column}
+  'First row',   {First row}
+  'Last column',   {Last column}
+  'Last row',   {Last row}
+  'Selection',   {Selection}
+  'Speak path',   {Speak path}
+  'Disabled button',   {Disabled button}
+  'First field',   {First field}
+  'Last field',   {Last field}
+  'First element',   {First element}
+  'Last element',   {Last element}
+  'Slower',   {Slower}
+  'Faster',   {Faster}
+  'Window',   {Window}
+  'Area',   {Area}
+  'Area activated',   {Area activated}
+  'Volume down',   {Volume down}
+  'Volume up',   {Volume up}
+  'Cancel speech',   {Cancel speech}
+  'Target',   {Target}
+  'View',   {View}
+  'Forms',   {Forms}
+  'Layout',   {Layout}
+  'Syntax',   {Syntax}
+  'Project',   {Project}
+  'Edited',   {Edited}
+  'Widgets',   {Widgets}
+  'Settings',   {Settings}
+  'About',   {About}
+  'New',   {New}
+  'Save as...',   {Save as...}
+  'Save all',   {Save all}
+  'Close all',   {Close all}
+  'Print',   {Print}
+  'Quit',   {Quit}
+  'Line',   {Line}
+  'Search again',   {Search again}
+  'Search back',   {Search back}
+  'Find & replace',   {Find & replace}
+  'Find in files',   {Find in files}
+  'Procedures list',   {Procedures list}
+  'Select edit page',   {Select edit page}
+  'Copy word at cursor',   {Copy word at cursor}
+  'Copy LaTeX',   {Copy LaTeX}
+  'Indent',   {Indent}
+  'Unindent',   {Unindent}
+  'Environment',   {Environment}
+  'Attach process',   {Attach process}
+  'Attach target',   {Attach target}
+  'Detach target',   {Detach target}
+  'Download',   {Download}
+  'Tools',   {Tools}
+  'Make',   {Make}
+  'Build',   {Build}
+  'Abort make',   {Abort make}
+  'Debug-Run',   {Debug-Run}
+  'Options',   {Options}
+  'Tree',   {Tree}
+  'Source',   {Source}
+  'Open copy',   {Open copy}
+  'Save copy as',   {Save copy as}
+  'Beautifier',   {Beautifier}
+  'Panels',   {Panels}
+  'Force Z order',   {Force Z order}
+  'Tree list',   {Tree list}
+  'Messages',   {Messages}
+  'Find result',   {Find result}
+  'Commander',   {Commander}
+  'Symbols',   {Symbols}
+  'Watches',   {Watches}
+  'Stack',   {Stack}
+  'Threads',   {Threads}
+  'CPU',   {CPU}
+  'Assembler',   {Assembler}
+  'Breakpoints',   {Breakpoints}
+  'Watchpoints',   {Watchpoints}
+  'Memory',   {Memory}
+  'Target console',   {Target console}
+  'Toggle form/unit',   {Toggle form/unit}
+  'MSE modules',   {MSE modules}
+  'Close all MSE modules',   {Close all MSE modules}
+  'General settings',   {General settings}
+  'Extra settings',   {Extra settings}
+  'Languages',   {Languages}
+  'Configure widgets',   {Configure widgets}
+  'Configure compilers',   {Configure compilers}
+  'Configure debuggers',   {Configure debuggers}
+  'Themes',   {Themes}
+  'Directory',   {Directory}
+  'No icons',   {No icons}
+  'No lateral',   {No lateral}
+  'Compact',   {Compact}
+  'Open project',   {Open project}
+  'Open file',   {Open file}
+  'Path',   {Path}
+  'Other',   {Other}
+  'Print command',   {Print command}
+  'Shortcut',   {Shortcut}
+  'Value',   {Value}
+  'Case sensitive',   {Case sensitive}
+  'Selected only',   {Selected only}
+  'Whole word',   {Whole word}
+  'Text to find',   {Text to find}
+  'Search in current file',   {Search in current file}
+  'Search in open files',   {Search in open files}
+  'Search in project directory',   {Search in project directory}
+  'Search in directories',   {Search in directories}
+  'Include subdirectories',   {Include subdirectories}
+  'Replace',   {Replace}
+  'Replace all',   {Replace all}
+  'Replace with',   {Replace with}
+  'Prompt on replace',   {Prompt on replace}
+  'Components palette',   {Components palette}
+  'Find components',   {Find components}
+  'Reset',   {Reset}
+  'Step',   {Step}
+  'Step instruction',   {Step instruction}
+  'Next instruction',   {Next instruction}
+  'Restart debugger',   {Restart debugger}
+  'Toggle breakpoint',   {Toggle breakpoint}
+  'Toggle breakpoint enabled',   {Toggle breakpoint enabled}
+  'Executed lines hint on/off',   {Executed lines hint on/off}
+  'Please compile it first.',   {Please compile it first.}
+  'Finish',   {Finish}
+  'Set as default',   {Set as default}
+  'Host',   {Host}
+  'Copyright'   {Copyright}
+ );
+
+zh_langnamestext: array[0..6] of msestring =
+(
+  'English',   {English}
+  'Russian',   {Russian}
+  'French',   {French}
+  'German',   {German}
+  'Spanish',   {Spanish}
+  'Portuguese',   {Portuguese}
+  'Chinese (not complete)'  //6_chinese
+ );
+
+zh_extendedtext: extendedaty =
+(
+  '确定删除此条记录吗？',   {Delete selected row?}
+  '确定删除所选择的 %s 行记录吗？'   {Delete %s selected rows?}
+ );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
- with params[0] do begin
-  if vinteger = 1 then begin
-   result:= '确定删除此条记录吗？';
-  end
-  else begin
-   result:=  '确定删除所选择的 ' + inttostrmse(vinteger)+ ' 行记录吗？' ;
-  end;
- end;
+  with params[0] do
+    if vinteger = 1 then
+      Result := zh_extendedtext[ex_del_row_selected]
+    else
+      Result := StringReplace(zh_extendedtext[ex_del_rows_selected], #37#115, inttostrmse(vinteger), [rfReplaceAll]);
 end;
 
 const
- zh_textgenerator: defaultgeneratortextty = (
-              {$ifdef FPC}@{$endif}delete_n_selected_rows //tg_delete_n_selected_rows
-                                     );
+zh_textgenerator: defaultgeneratortextty = (
+ {$ifdef FPC} @{$endif}delete_n_selected_rows);
+
 initialization
- registerlangconsts(langnames[la_zh],@zh_actionsmodule, @zh_settingstext, @zh_projectoptionstext,@zh_stockcaption,@zh_modalresulttext,
-                               @zh_modalresulttextnoshortcut, @textgenerator);
+
+registerlangconsts(langnames[la_zh], @zh_langnamestext, @zh_extendedtext, @zh_mainformtext, @zh_sourceformtext,
+                   @zh_projectoptionscontext, @zh_actionsmoduletext, @zh_settingstext, @zh_projectoptionstext,
+                   @zh_stockcaption, @zh_modalresulttext, @zh_modalresulttextnoshortcut, @zh_textgenerator);
+
 end.
+

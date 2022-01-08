@@ -1,20 +1,20 @@
 object conflangfo: tconflangfo
   visible = False
   bounds_x = 410
-  bounds_y = 250
+  bounds_y = 270
   bounds_cx = 300
-  bounds_cy = 204
+  bounds_cy = 222
   bounds_cxmin = 300
-  bounds_cymin = 204
+  bounds_cymin = 222
   bounds_cxmax = 300
-  bounds_cymax = 204
+  bounds_cymax = 222
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     300
-    204
+    222
   )
   statfile = mainfo.mainstatfile
   windowopacity = -Inf
@@ -41,8 +41,8 @@ object conflangfo: tconflangfo
       2
     )
     taborder = 1
-    bounds_x = 18
-    bounds_y = 170
+    bounds_x = 38
+    bounds_y = 188
     bounds_cx = 102
     bounds_cy = 17
     statfile = mainfo.mainstatfile
@@ -51,12 +51,12 @@ object conflangfo: tconflangfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 2
-    bounds_x = 30
-    bounds_y = 37
+    bounds_x = 32
+    bounds_y = 41
     bounds_cx = 240
-    bounds_cy = 115
+    bounds_cy = 134
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
-    rowcount = 6
+    rowcount = 7
     datacols.count = 3
     datacols.items = <    
       item[gridlangcaption]
@@ -69,6 +69,7 @@ object conflangfo: tconflangfo
         dataclass = tgridmsestringdatalist
         data = (
           (
+            ''
             ''
             ''
             ''
@@ -92,6 +93,7 @@ object conflangfo: tconflangfo
             0
             0
             0
+            0
           )
         )
       end    
@@ -102,6 +104,7 @@ object conflangfo: tconflangfo
         dataclass = tgridmsestringdatalist
         data = (
           (
+            ''
             ''
             ''
             ''

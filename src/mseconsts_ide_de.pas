@@ -703,14 +703,15 @@ de_stockcaption: stockcaptionaty =
   'Urheberrecht'   {Copyright}
  );
 
-de_langnamestext: array[0..5] of msestring =
+de_langnamestext: array[0..6] of msestring =
 (
   'Englisch',   {English}
   'Russisch',   {Russian}
   'Französisch',   {French}
   'Deutsch',   {German}
   'Spanisch',   {Spanish}
-  'Portugiesisch'   {Portuguese}
+  'Portugiesisch',   {Portuguese}
+  'Chinese (not complete)' //6_chinese
  );
 
 de_extendedtext: extendedaty =

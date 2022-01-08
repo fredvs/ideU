@@ -700,17 +700,18 @@ fr_stockcaption: stockcaptionaty =
   'Fin',   {Finish}
   'Définir par défaut',   {Set as default}
   'Hôte',   {Host}
-  'Droits dauteur'   {Copyright}
+  'Droits d''auteur'   {Copyright}
  );
 
-fr_langnamestext: array[0..5] of msestring =
+fr_langnamestext: array[0..6] of msestring =
 (
   'Anglais',   {English}
   'Russe',   {Russian}
   'Français',   {French}
   'Allemand',   {German}
   'Espagnol',   {Spanish}
-  'Portugais'   {Portuguese}
+  'Portugais',   {Portuguese}
+  'Chinese (not complete)'                 //6_chinese
  );
 
 fr_extendedtext: extendedaty =

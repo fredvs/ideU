@@ -17,6 +17,7 @@ interface
 {$endif}
 
 uses
+ lazutf8,
  mseconsts_ide,
  msestockobjects,
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, confideu,

@@ -703,14 +703,15 @@ pt_stockcaption: stockcaptionaty =
   'Copyright'   {Copyright}
  );
 
-pt_langnamestext: array[0..5] of msestring =
+pt_langnamestext: array[0..6] of msestring =
 (
   'Inglês',   {English}
   'Russo',   {Russian}
   'Francês',   {French}
   'Alemão',   {German}
   'Espanhol',   {Spanish}
-  'Português'   {Portuguese}
+  'Português',   {Portuguese}
+  'Chinese (not complete)' //6_chinese
  );
 
 pt_extendedtext: extendedaty =
