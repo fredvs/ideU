@@ -72,7 +72,6 @@ ru_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Продолжить'   {Continue}
  );
 
-
 ru_projectoptionscontext: projectoptionsconaty =
  (
   'Неправильная кодировка может повредить ваши исходные файлы.',   {Wrong encoding can damage your source files.}

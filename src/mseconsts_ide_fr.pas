@@ -72,7 +72,6 @@ fr_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Continuer'   {Continue}
  );
 
-
 fr_projectoptionscontext: projectoptionsconaty =
  (
   'Un encodage incorrect peut endommager vos fichiers sources.',   {Wrong encoding can damage your source files.}

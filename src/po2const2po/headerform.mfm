@@ -3,14 +3,14 @@ object headerfo: theaderfo
   bounds_x = 493
   bounds_y = 200
   bounds_cx = 379
-  bounds_cy = 222
+  bounds_cy = 251
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     379
-    222
+    251
   )
   options = [fo_main, fo_terminateonclose, fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Po <> Pas translator'
@@ -157,35 +157,10 @@ object headerfo: theaderfo
     )
     taborder = 7
     bounds_x = 16
-    bounds_y = 142
+    bounds_y = 158
     bounds_cx = 130
     bounds_cy = 17
     statfile = tstatfile1
-  end
-  object paneldone: tgroupbox
-    frame.colorclient = 16765345
-    frame.localprops = [frl_colorclient]
-    frame.localprops1 = []
-    taborder = 8
-    visible = False
-    bounds_x = 176
-    bounds_y = 128
-    bounds_cx = 194
-    bounds_cy = 82
-    object labdone: tlabel
-      optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
-      color = -2147483645
-      bounds_x = 8
-      bounds_y = 24
-      bounds_cx = 177
-      bounds_cy = 24
-      caption = 'Done.'
-      font.height = 20
-      font.name = 'stf_default'
-      font.localprops = [flp_height]
-      textflags = [tf_xcentered, tf_ycentered]
-      reffontheight = 24
-    end
   end
   object outputdir: tfilenameeditx
     frame.caption = 'Output directory'
@@ -205,7 +180,7 @@ object headerfo: theaderfo
     )
     taborder = 9
     bounds_x = 8
-    bounds_y = 166
+    bounds_y = 182
     bounds_cx = 156
     bounds_cy = 39
     controller.fontheight = 0
@@ -220,6 +195,43 @@ object headerfo: theaderfo
     controller.showhidden = False
     controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
     reffontheight = 15
+  end
+  object tbutton4: tbutton
+    Tag = 2
+    taborder = 10
+    bounds_x = 181
+    bounds_y = 208
+    bounds_cx = 186
+    bounds_cy = 28
+    anchors = [an_top, an_right]
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Create new empty PO file'
+    onexecute = createnew
+  end
+  object paneldone: tgroupbox
+    frame.colorclient = 16765345
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    taborder = 8
+    visible = False
+    bounds_x = 176
+    bounds_y = 136
+    bounds_cx = 194
+    bounds_cy = 106
+    object labdone: tlabel
+      optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
+      color = -2147483645
+      bounds_x = 8
+      bounds_y = 40
+      bounds_cx = 177
+      bounds_cy = 24
+      caption = 'Done.'
+      font.height = 20
+      font.name = 'stf_default'
+      font.localprops = [flp_height]
+      textflags = [tf_xcentered, tf_ycentered]
+      reffontheight = 24
+    end
   end
   object tstatfile1: tstatfile
     filename = 'status.sta'

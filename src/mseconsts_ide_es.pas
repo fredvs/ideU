@@ -72,7 +72,6 @@ es_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Continuar'   {Continue}
  );
 
-
 es_projectoptionscontext: projectoptionsconaty =
  (
   'La codificación incorrecta puede dañar sus archivos de origen.',   {Wrong encoding can damage your source files.}

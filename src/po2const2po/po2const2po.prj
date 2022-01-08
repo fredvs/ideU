@@ -206,7 +206,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=251
@@ -784,7 +784,7 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=done
+finddtext=Info
 findhistory=20
  done
  sleep
@@ -809,7 +809,7 @@ findhistory=20
 findoptions=1
 editpos=4
  0,-1073741823
- 0,-1073741823
+ 0,1112
  0,4
  0,-1073741823
 bookmarks0=0
@@ -845,7 +845,7 @@ nomenumodules=2
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=1
 [layout]
 windowlayout=584
  [mainfo.basedock]
@@ -919,7 +919,7 @@ windowlayout=584
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1066,7 +1066,7 @@ windowlayout=584
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1085,10 +1085,10 @@ windowlayout=584
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=823
- width0=365
+ propcolwidthref=678
+ width0=301
  sortdescend0=0
- width1=452
+ width1=371
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1309,7 +1309,7 @@ windowlayout=584
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/po2const2po/mseconsts_ide.pas
+ value=/home/fred/ideu/src/po2const2po/headerform.pas
  history=20
   /home/fred/ideu/src/po2const2po/mseconsts_ide.pas
   /home/fred/ideu/src/po2const2po/headerform.pas
@@ -1353,7 +1353,7 @@ windowlayout=584
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1397,7 +1397,7 @@ windowlayout=584
  [_mse_headerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_stockdata_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -1407,7 +1407,7 @@ windowlayout=584
  x=493
  y=200
  cx=389
- cy=222
+ cy=251
  rcx=0
  rcy=0
  wsize=0
@@ -1416,7 +1416,7 @@ windowlayout=584
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=threadsfo
  parent=
  mdistate=3
  nx=0

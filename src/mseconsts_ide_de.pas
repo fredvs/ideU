@@ -72,7 +72,6 @@ de_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Fortfahren'   {Continue}
  );
 
-
 de_projectoptionscontext: projectoptionsconaty =
  (
   'Eine falsche Kodierung kann Ihre Quelldateien beschädigen.',   {Wrong encoding can damage your source files.}
