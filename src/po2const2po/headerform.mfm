@@ -1,0 +1,258 @@
+object headerfo: theaderfo
+  visible = False
+  bounds_x = 493
+  bounds_y = 200
+  bounds_cx = 379
+  bounds_cy = 222
+  container.frame.localprops = []
+  container.frame.localprops1 = []
+  container.bounds = (
+    0
+    0
+    379
+    222
+  )
+  options = [fo_main, fo_terminateonclose, fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  caption = 'Po <> Pas translator'
+  windowopacity = -Inf
+  oncreate = oncreateform
+  moduleclassname = 'tmseform'
+  object memopoheader: tmemodialogedit
+    frame.caption = 'Default PO header'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    bounds_x = 8
+    bounds_y = 41
+    bounds_cx = 364
+    bounds_cy = 36
+    anchors = [an_left, an_top, an_right]
+    statfile = tstatfile1
+    value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
+    reffontheight = 15
+  end
+  object memopotheader: tmemodialogedit
+    frame.caption = 'Default POT header'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 1
+    bounds_x = 8
+    bounds_y = 1
+    bounds_cx = 364
+    bounds_cy = 36
+    anchors = [an_left, an_top, an_right]
+    statfile = tstatfile1
+    value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
+    reffontheight = 15
+  end
+  object initunit: tmemoedit
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.sbhorz.pagesize = 1
+    frame.sbvert.pagesize = 0.30526315789474
+    taborder = 2
+    visible = False
+    bounds_x = 200
+    bounds_y = 0
+    bounds_cx = 156
+    bounds_cy = 93
+    value = '{$ifdef FPC}{$mode objfpc}{$h+}{$endif}'#10'interface'#10#10'uses'#10'  mseconsts_ide;'#10#10'implementation'#10#10'uses'#10'  msetypes{msestrings},'#10'  SysUtils,'#10'  msestockobjects,'#10'  mseformatstr;'#10#10'const'
+    reffontheight = 15
+  end
+  object endmemo: tmemoedit
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.sbhorz.pagesize = 1
+    frame.sbvert.pagesize = 0.17058823529412
+    taborder = 3
+    visible = False
+    bounds_x = 120
+    bounds_y = 96
+    bounds_cx = 156
+    bounds_cy = 93
+    value = 'function delete_n_selected_rows(const params: array of const): msestring;'#10'begin'#10' with params[0] do begin'#10'  if vinteger = 1 then begin'#10'   result:= extendedconst[ex_del_row_selected];'#10'  end'#10'  else begin'#10'   result := StringReplace(extendedconst[ex_del_rows_selected], #37#115, inttostrmse(vinteger), [rfReplaceAll]);'#10'  end;'#10' end;'#10'end;'#10#10'const'#10' textgenerator: defaultgeneratortextty = ('#10'              {$ifdef FPC}@{$endif}delete_n_selected_rows'#10'                                     );'#10
+    reffontheight = 15
+  end
+  object mseconstheader: tmemodialogedit
+    frame.caption = 'Default mseconst header'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 4
+    bounds_x = 8
+    bounds_y = 87
+    bounds_cx = 362
+    bounds_cy = 36
+    anchors = [an_left, an_top, an_right]
+    statfile = tstatfile1
+    value = '{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber'#10#10'    See the file COPYING.MSE, included in this distribution,'#10'    for details about the copyright.'#10#10'    This program is distributed in the hope that it will be useful,'#10'    but WITHOUT ANY WARRANTY; without even the implied warranty of'#10'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.'#10'} '
+    reffontheight = 15
+  end
+  object tbutton3: tbutton
+    Tag = 1
+    taborder = 5
+    bounds_x = 181
+    bounds_y = 176
+    bounds_cx = 186
+    bounds_cy = 28
+    anchors = [an_top, an_right]
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Create new PO from consts'
+    onexecute = createnew
+  end
+  object tbutton2: tbutton
+    taborder = 6
+    bounds_x = 181
+    bounds_y = 144
+    bounds_cx = 186
+    bounds_cy = 28
+    anchors = [an_top, an_right]
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Create new consts from PO'
+    onexecute = createnew
+  end
+  object alldir: tbooleanedit
+    frame.caption = 'All files of directory'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      117
+      2
+    )
+    taborder = 7
+    bounds_x = 16
+    bounds_y = 142
+    bounds_cx = 130
+    bounds_cy = 17
+    statfile = tstatfile1
+  end
+  object paneldone: tgroupbox
+    frame.colorclient = 16765345
+    frame.localprops = [frl_colorclient]
+    frame.localprops1 = []
+    taborder = 8
+    visible = False
+    bounds_x = 176
+    bounds_y = 128
+    bounds_cx = 194
+    bounds_cy = 82
+    object labdone: tlabel
+      optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
+      color = -2147483645
+      bounds_x = 8
+      bounds_y = 24
+      bounds_cx = 177
+      bounds_cy = 24
+      caption = 'Done.'
+      font.height = 20
+      font.name = 'stf_default'
+      font.localprops = [flp_height]
+      textflags = [tf_xcentered, tf_ycentered]
+      reffontheight = 24
+    end
+  end
+  object outputdir: tfilenameeditx
+    frame.caption = 'Output directory'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 9
+    bounds_x = 8
+    bounds_y = 166
+    bounds_cx = 156
+    bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
+    controller.options = [fdo_sysfilename, fdo_directory, fdo_savelastdir]
+    reffontheight = 15
+  end
+  object tstatfile1: tstatfile
+    filename = 'status.sta'
+    left = 136
+    top = 40
+  end
+  object ttimer1: ttimer
+    interval = 500000
+    options = [to_single]
+    ontimer = ontime
+    left = 80
+    top = 112
+  end
+  object sc: tstringcontainer
+    strings.data = (
+      'Working'
+      'Done'
+    )
+    left = 16
+    top = 120
+  end
+  object impexpfiledialog: tfiledialogx
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
+    left = 232
+    top = 120
+  end
+end

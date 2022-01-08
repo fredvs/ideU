@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2006 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -6,9 +6,7 @@
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-    Portuguese translation by Fred vS.
-}
+} 
 
 unit mseconsts_ide_pt;
 
@@ -23,718 +21,723 @@ implementation
 uses
   msetypes{msestrings},
   SysUtils,
+  msestockobjects,
   mseformatstr;
 
 const
-  pt_modalresulttext: defaultmodalresulttextty =
-    (
-     '', // mr_none
-     '', // mr_canclose
-     '', // mr_windowclosed
-     '', // mr_windowdestroyed
-     '', // mr_escape
-     '', // mr_f10
-     '', // mr_exception
-     '&Cancelar', // mr_cancel
-     '&Abortar', // mr_abort
-     '&OK', // mr_ok
-     '&Sim', // mr_yes
-     '&Não', // mr_no
-     'Sim e tudo', // mr_all
-     'Sim e tudo', // mr_yesall
-     'N&o e tudo', // mr_noall
-     '&Ignorar', // mr_ignore
-     'Saltar', // mr_skip
-     'Saltar tudo', // mr_skipall
-     'Co&ntinuar' // mr_continue
-    );
 
-  pt_modalresulttextnoshortcut: defaultmodalresulttextty =
-    (
-     '', // mr_none
-     '', // mr_canclose
-     '', // mr_windowclosed
-     '', // mr_windowdestroyed
-     '', // mr_escape
-     '', // mr_f10
-     '', // mr_exception
-     'Cancelar', // mr_cancel
-     'Abortar', // mr_abort
-     'OK', // mr_ok
-     'Sim', // mr_yes
-     'Não', // mr_no
-     'Sim e tudo', // mr_all
-     'Sim e tudo', // mr_yesall
-     'No e tudo', // mr_noall
-     'Ignorar', // mr_ignore
-     'Saltar', // mr_skip
-     'Saltar tudo', // mr_skipall
-     'Continuar' // mr_continue
-    );
-    
-  pt_mainformtext: mainformaty = (
-      'Referências não resolvidas em',
-      'para',
-      'Você deseja pesquisar o arquivo de formulário?',
-      'AVISO',
-      'Formfile para',
-      'Formfiles',
-      'Hierarquia de forma recursiva para "',
-      'ERRO',
-      'Tipo de classe',
-      'não encontrado.',
-      'Projeto',
-      'é modificado. Salve ?',
-      'Confirmação',
-      'Impossível abrir o ficheiro "',
-      '*** Correndo ***',
-      'Baixando',
-      'Baixado',
-      'Iniciar o comando do servidor gdb "',
-      '" correndo.',
-      'Iniciar servidor gdb',
-      'erro de inicialização do servidor gdb',
-      'gdb server start cancelled.',
-      'Não é possível executar o comando start gdb.',
-      'Uploadcommand "',
-      'Erro de download***',
-      'Download concluído.',
-      'Download cancelado.',
-      'Arquivo "',
-      '" não encontrado.',
-      '" existe.',
-      'Novo',
-      'Selecionar ancestral',
-      'Nova forma',
-      'Arquivos Pascal',
-      'novo',
-      'Não é possível carregar o projeto "',
-      'Selecionar modelo de projeto',
-      'Arquivos de projeto',
-      'Todos os arquivos',
-      'Selecionar arquivo de programa',
-      'Arquivos de programa Pascal',
-      'Arquivos de programa C',
-      'Novo projeto',
-      'Não é possível iniciar o processo',
-      'Processo',
-      'correndo.',
-      'Processo encerrado',
-      'Processo encerrado normalmente.',
-      'Faça *** ERROR ***',
-      'Faça OK.',
-      'A fonte mudou, você deseja refazer o projeto?',
-      'Carregar layout da janela',
-      'Área atracagem'
-   );   
-    
+pt_modalresulttext: defaultmodalresulttextty =
+ (
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '&Cancelar',   {&Cancel}
+  '&Abortar',   {&Abort}
+  '&OK',   {&OK}
+  '&Sim',   {&Yes}
+  '&Não',   {&No}
+  'Sim e tudo',   {Yes &all}
+  'Sim e tudo',   {Yes &all}
+  'N&o e tudo',   {N&o all}
+  '&Ignorar',   {&Ignore}
+  'Saltar',   {&Skip}
+  'Saltar tudo',   {Skip a&ll}
+  'Co&ntinuar'   {Co&ntinue}
+ );
 
-  pt_actionsmoduletext: actionsmoduleaty = (
-    'Configurar ideU',
-    'ID do processo',
-    'Anexar ao processo',
-    'Moduleclass desconhecido para "',
-    'Componente herdado "',
-    '"não pode ser excluído.',
-    'ERRO',
-    'Faça abortado.',
-    'Download abortado.',
-    'Runerror com "',
-    'Erro: Tempo limite.',
-    'Fazer.',
-    'Faça não correr.',
-    'Baixando.',
-    'O download não está funcionando.',
-    '" correndo.',
-    'Roteiro',
-    'Herança de forma recursiva de "',
-    'Componente "',
-    '" existe.',
-    'Ancestral para "',
-    '" não encontrado.',
-    'Módulo "',
-    'Nome inválido "',
-    'Nome do método inválido',
-    'Módulo não encontrado',
-    'Método não encontrado',
-    'Método publicado (gerenciado)',
-    'não existe.',
-    'Deseja deletar o evento?',
-    'AVISO',
-    'Método',
-    'tem parâmetros diferentes.',
-    'Um módulo "',
-    '"já está aberto.',
-    'Referência (s) não resolvida (s) para',
-    'Módulo (s):',
-    'Não é possível ler o formfile "',
-    'Nome de componente inválido.',
-    'Exceção inválida',
-    'Ferramentas',
-    'Formulários',
-    'Fonte',
-    'Todos os arquivos',
-    'Programa MSE',
-    'Unidade MSE',
-    'MSE Textfile',
-    'Mainform',
-    'Forma simples',
-    'Forma de encaixe',
-    'Datamodule',
-    'Subform',
-    'Scrollboxform',
-    'Tabform',
-    'Dockpanel',
-    'Relatório',
-    'Scriptform',
-    'Formulário herdado',
-    'Deseja substituir as configurações por',
-    'Arquivo "',
-    'Você deseja substituir?',
-    'Desconhecido',
-    'Erro',
-    'Comece',
-    'Exceção',
-    'GDB morreu',
-    'Ponto de interrupção atingido',
-    'Watchpoint acionado',
-    'Ler ponto de controle acionado',
-    'Access Watchpoint acionado',
-    'Fim do intervalo de passos',
-    'Função concluída',
-    'Saiu normalmente',
-    'Saiu',
-    'Separado',
-    'Sinal recebido',
-    'Erro de parada',
-    'Não é possível ler o projeto',
-    'Cerca de',
-    'Inspetor de objetos',
-    'Armazém Componentes',
-    'Processo de anexação',
-    'Carregando'
-    );
+pt_modalresulttextnoshortcut: defaultmodalresulttextty =
+ (
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  '',   {}
+  'Cancelar',   {Cancel}
+  'Abortar',   {Abort}
+  'OK',   {OK}
+  'Sim',   {Yes}
+  'Não',   {No}
+  'Sim e tudo',   {Yes all}
+  'Sim e tudo',   {Yes all}
+  'No e tudo',   {No all}
+  'Ignorar',   {Ignore}
+  'Saltar',   {Skip}
+  'Saltar tudo',   {Skip all}
+  'Continuar'   {Continue}
+ );
 
-  pt_projectoptionscontext: projectoptionsconaty = (
-     'A codificação errada pode danificar seus arquivos de origem.',
-     'Você deseja definir a codificação para',
-     '*** AVISO ***',
-     'Desligar',
-     'Interromper',
-     'Desistir',
-     'Instrução ilegal',
-     'Traço armadilha',
-     'Abortar',
-     'Erro de BUS',
-     'Exceção de ponto flutuante',
-     'Matar',
-     'Sinal definido pelo usuário 1',
-     'Violação de segmentação',
-     'Sinal definido pelo usuário 2',
-     'Cano quebrado',
-     'Despertador',
-     'Terminação',
-     'Falha de pilha',
-     'O status da criança mudou',
-     'Prosseguir',
-     'Pare, desbloqueável',
-     'Parada do teclado',
-     'Antecedentes lidos a partir de tty',
-     'Background write to tty',
-     'Condição urgente no soquete',
-     'Limite de CPU excedido',
-     'Limite de tamanho de arquivo excedido',
-     'Despertador virtual',
-     'Despertador de perfil',
-     'Mudança no tamanho da janela',
-     'I/O agora possível',
-     'Reinicialização por falha de energia'
-  );
 
-  pt_settingstext: isettingsaty = (
-    'Aplicar', // se_apply
-    'Configuração assistiva de voz sak', // se_groupassistive
-    'Diretório pai do sakit', // se_sakitdir
-    'Habilitar sak assistive ao carregar', // se_enableassistive
-    'Layout do sistema', // se_groupsystemlayout
-    'Diretórios universais', // se_universalpath
-    'Nenhum pedido Z', // se_nozorder
-    'Use "Shift" para selecionar palavra', // se_doubleclic
-    'Foco automático no menu principal', // se_autofocusmenu
-    'Caminho completo no título', // se_fullpath
-    'Definir diálogo como modal', // se_modaldial
-    'Altura fonte', // se_fontsize
-    'Nome fonte', // se_fontname
-    'Sem confirmação para deletar linha', // se_confirmdel
-    'Circuito piscando', // se_blinkcaret
-    'Redesenhar tela', // se_repaintcanvas
-    'Editor de código-fonte', // se_groupsourceeditor
-    'Use essas opções', // se_usedefaulteditoroptions
-    'Adicionar espaço após "," ao auto-analisar', // se_addwhiteaftercomma
-    'Quando um arquivo foi alterado', // se_groupfilechange
-    'Sem diálogo => recarregar o novo', // se_filereload
-    'Sem diálogo => manter o antigo', // se_filenoload
-    'Diálogo pergunta o que fazer ...', //se_fileaskload
-    'Retângulo em torno da seleção' //se_rectanglearea
-    );
+pt_projectoptionscontext: projectoptionsconaty =
+ (
+  'A codificação errada pode danificar seus arquivos de origem.',   {Wrong encoding can damage your source files.}
+  'Você deseja definir a codificação para',   {Do you wish to set encoding to}
+  '*** AVISO ***',   {*** WARNING ***}
+  'Desligar',   {Hangup}
+  'Interromper',   {Interrupt}
+  'Desistir',   {Quit}
+  'Instrução ilegal',   {Illegal instruction}
+  'Traço armadilha',   {Trace trap}
+  'Abortar',   {Abort}
+  'Erro de BUS',   {BUS error}
+  'Exceção de ponto flutuante',   {Floating-point exception}
+  'Matar',   {Kill}
+  'Sinal definido pelo usuário 1',   {User-defined signal 1}
+  'Violação de segmentação',   {Segmentation violation}
+  'Sinal definido pelo usuário 2',   {User-defined signal 2}
+  'Cano quebrado',   {Broken pipe}
+  'Despertador',   {Alarm clock}
+  'Terminação',   {Termination}
+  'Falha de pilha',   {Stack fault}
+  'O status da criança mudou',   {Child status has changed}
+  'Continuar',   {Continue}
+  'Pare desbloqueável',   {Stop, unblockable}
+  'Parada do teclado',   {Keyboard stop}
+  'Antecedentes lidos a partir de tty',   {Background read from tty}
+  'Background write to tty',   {Background write to tty}
+  'Condição urgente no soquete',   {Urgent condition on socket}
+  'Limite de CPU excedido',   {CPU limit exceeded}
+  'Limite de tamanho de arquivo excedido',   {File size limit exceeded}
+  'Despertador virtual',   {Virtual alarm clock}
+  'Despertador de perfil',   {Profiling alarm clock}
+  'Mudança no tamanho da janela',   {Window size change}
+  'I/O agora possível',   {I/O now possible}
+  'Reinicialização por falha de energia'   {Power failure restart}
+ );
 
-  pt_projectoptionstext: projectoptionsaty = (
-    'Opções de projeto', // po_projectoptions
-    'Editor', // po_editor
-    'Linha margem', // po_rightmarginline
-    'Mark Brackets', // po_markbrackets
-    'Números de linha', // po_linenumbers
-    'Mark Pairwords', // po_markpairwords
-    'Cortar espaço branco'#10'on salvar', // po_trimtrailing
-    'Recuo automático', // po_autoindent
-    'Sem editor de código-fonte', // po_nosource
-    'Tab indent', // po_tabindent
-    'Guia de espaço', // po_spacetab
-    'Mostrar guias', // po_showtabs
-    'Fonte com suavização de serrilhado', // po_antialisedfont
-    'Codificação', // po_encoding
-    'Marcar cor', // po_markcolor
+pt_actionsmoduletext: actionsmoduleaty =
+ (
+  'Configurar ideU',   {Configure ideU}
+  'ID do processo',   {Process ID}
+  'Anexar ao processo',   {Attach to process}
+  'Moduleclass desconhecido para "',   {Unknown moduleclass for "}
+  'Componente herdado "',   {Inherited component "}
+  '"não pode ser excluído.',   {" can not be deleted.}
+  'ERRO',   {ERROR}
+  'Faça abortado.',   {Make aborted.}
+  'Download abortado.',   {Download aborted.}
+  'Runerror com "',   {Runerror with "}
+  'Erro: Tempo limite.',   {Error: Timeout.}
+  'Fazer.',   {Making.}
+  'Faça não correr.',   {Make not running.}
+  'Baixando.',   {Downloading.}
+  'O download não está funcionando.',   {Download not running.}
+  '" correndo.',   {" running.}
+  'Roteiro',   {Script}
+  'Herança de forma recursiva de "',   {Recursive form inheritance of "}
+  'Componente "',   {Component "}
+  '" existe.',   {" exists.}
+  'Ancestral para "',   {Ancestor for "}
+  '" não encontrado.',   {" not found.}
+  'Módulo "',   {Module "}
+  'Nome inválido "',   {Invalid name "}
+  'Nome do método inválido',   {Invalid methodname}
+  'Módulo não encontrado',   {Module not found}
+  'Método não encontrado',   {Method not found}
+  'Método publicado (gerenciado)',   {Published (managed) method}
+  'não existe.',   {does not exist.}
+  'Deseja deletar o evento?',   {Do you wish to delete the event?}
+  'AVISO',   {WARNING}
+  'Método',   {Method}
+  'tem parâmetros diferentes.',   {has different parameters.}
+  'Um módulo "',   {A module "}
+  '"já está aberto.',   {" is already open.}
+  'Referência (s) não resolvida (s) para',   {Unresolved reference(s) to}
+  'Módulo (s):',   {Module(s):}
+  'Não é possível ler o formfile "',   {Can not read formfile "}
+  'Nome de componente inválido.',   {Invalid component name.}
+  'Exceção inválida',   {Invalid exception}
+  'Ferramentas',   {T&ools}
+  'Formulários',   {Forms}
+  'Fonte',   {Source}
+  'Todos os arquivos',   {All Files}
+  'Programa MSE',   {MSE Program}
+  'Unidade MSE',   {MSE Unit}
+  'MSE Textfile',   {MSE Textfile}
+  'Mainform',   {Mainform}
+  'Forma simples',   {Simple Form}
+  'Forma de encaixe',   {Docking Form}
+  'Datamodule',   {Datamodule}
+  'Subform',   {Subform}
+  'Scrollboxform',   {Scrollboxform}
+  'Tabform',   {Tabform}
+  'Dockpanel',   {Dockpanel}
+  'Relatório',   {Report}
+  'Scriptform',   {Scriptform}
+  'Formulário herdado',   {Inherited Form}
+  'Deseja substituir as configurações por',   {Do you want to replace the settings by}
+  'Arquivo "',   {File "}
+  'Você deseja substituir?',   {Do you want to overwrite?}
+  'Desconhecido',   {Unknown}
+  'Erro',   {Error}
+  'Comece',   {Startup}
+  'Exceção',   {Exception}
+  'GDB morreu',   {GDB died}
+  'Ponto de interrupção atingido',   {Breakpoint hit}
+  'Watchpoint acionado',   {Watchpoint triggered}
+  'Ler ponto de controle acionado',   {Read Watchpoint triggered}
+  'Access Watchpoint acionado',   {Access Watchpoint triggered}
+  'Fim do intervalo de passos',   {End stepping range}
+  'Função concluída',   {Function finished}
+  'Saiu normalmente',   {Exited normally}
+  'Saiu',   {Exited}
+  'Separado',   {Detached}
+  'Sinal recebido',   {Signal received}
+  'Erro de parada',   {Stop error}
+  'Não é possível ler o projeto',   {Can not read project}
+  'Cerca de',   {About}
+  'Inspetor de objetos',   {Object Inspector}
+  'Armazém Componentes',   {Store Component}
+  'Processo de anexação',   {Attaching Process}
+  'Carregando'   {Loading}
+ );
 
-    'Stat cor', // po_statcolor
-    'Scr Y', // po_scrollbary
-    'Nb char', // po_nbchar
-    'Estilo EOL', // po_eolstyle
-    'Backup', // po_backup
-    'Tabstops', // po_tabstops
-    'Indentação', // po_indent
-    'ExtS', // po_extraspace
-    'Espaço extra entre linhas', // po_extraspacehint
-    'Largura', // po_width
-    'Altura', // po_height
-    'Fonte', // po_font
-    'Font Bk. color ', // po_fontbkcolor
-    'Cor da fonte', // po_fontcolor
-    'Filtro de arquivo', // po_filefilter
-    'Nome', // po_name
-    'Máscara de arquivo', // po_filemask
-    'Arquivo de definição de sintaxe', // po_syntaxdeffile
-    'Modelos de código', // po_codetemplate
-    'Diretórios de modelo de código, extensão de arquivo = .mct', // po_fontcodetemplatedir
-    'Selecione o diretório da unidade', // po_selectunitdir
-    '&Depurador', // po_debuggerpage
-    'Depurador Projecto', // po_projectdebugger
-    'Pesquisa e diretórios', // po_searchdirectories
-    'Caminho de pesquisa para obter informações sobre o código', // po_searchdirectorieshint
-    'Selecione o diretório de origem', // po_selectsourcedir
-    'Object &Base Directory (empty = Make Directory)', // po_objectbasedir
-    'Selecionar diretório base de origem', // po_selectsourcebasedir
-    'Definições', // po_define
-    '&Sinais', // po_signals
-    '&Exceção', // po_exception
-    '&Alvo', // po_target
-    'Iniciar gdb server command attach target', // po_startgdbattachtarget
-    'Não espere pela saída', // po_nogdbserverexit
-    'Antes de conectar o script gdb', // po_beforeconnect
-    'Antes de carregar o script gdb', // po_beforeload
-    'Antes de executar o script gdb', // po_beforerun
-    'Depois de conectar o script gdb', // po_afterconnect
-    'Depois de carregar o script gdb', // po_afterload
-    'Iniciar gdb server command run target', // gdbservercommand
-    'Aguarde antes de conectar', // po_gdbserverwait
-    'Iniciar uma vez', // po_gdbserverstartonce
-    'Comando de download', // po_uploadcommand
-    'Processador', // po_gdbprocessor
-    'Simulator', // po_gdbsimulator
-    'gdb descarregar', // po_gdbdownload
+pt_mainformtext: mainformaty =
+ (
+  'Referências não resolvidas em',   {Unresolved references in}
+  'para',   {to}
+  'Você deseja pesquisar o arquivo de formulário?',   {Do you wish to search the formfile?}
+  'AVISO',   {WARNING}
+  'Formfile para',   {Formfile for}
+  'Formfiles',   {Formfiles}
+  'Hierarquia de forma recursiva para "',   {Recursive form hierarchy for "}
+  'ERRO',   {ERROR}
+  'Tipo de classe',   {Classtype}
+  'não encontrado.',   {not found.}
+  'Projeto',   {Project}
+  'é modificado. Salve ?',   {is modified. Save?}
+  'Confirmação',   {Confirmation}
+  'Impossível abrir o ficheiro "',   {Unable to open file "}
+  '*** Correndo ***',   {*** Running ***}
+  'Baixando',   {Downloading}
+  'Baixado',   {Downloaded}
+  'Iniciar o comando do servidor gdb "',   {Start gdb server command "}
+  '" correndo.',   {" running.}
+  'Iniciar servidor gdb',   {Start gdb Server}
+  'erro de inicialização do servidor gdb',   {gdb server start error}
+  'gdb server start cancelled.',   {gdb server start canceled.}
+  'Não é possível executar o comando start gdb.',   {Can not run start gdb command.}
+  'Uploadcommand "',   {Uploadcommand "}
+  'Erro de download***',   {Download ***ERROR***}
+  'Download concluído.',   {Download finished.}
+  'Download cancelado.',   {Download canceled.}
+  'Arquivo "',   {File "}
+  '" não encontrado.',   {" not found.}
+  '" existe.',   {" exists.}
+  'Novo',   {New}
+  'Selecionar ancestral',   {Select ancestor}
+  'Nova forma',   {New form}
+  'Arquivos Pascal',   {Pascal Files}
+  'novo',   {new}
+  'Não é possível carregar o projeto "',   {Can not load Project "}
+  'Selecionar modelo de projeto',   {Select project template}
+  'Arquivos de projeto',   {Project files}
+  'Todos os arquivos',   {All files}
+  'Selecionar arquivo de programa',   {Select program file}
+  'Arquivos de programa Pascal',   {Pascal program files}
+  'Arquivos de programa C',   {C program files}
+  'Novo projeto',   {New Project}
+  'Não é possível iniciar o processo',   {Can not start process}
+  'Processo',   {Process}
+  'correndo.',   {running.}
+  'Processo encerrado',   {Process terminated}
+  'Processo encerrado normalmente.',   {Process terminated normally.}
+  'Faça *** ERROR ***',   {Make ***ERROR***}
+  'Faça OK.',   {Make OK.}
+  'A fonte mudou você deseja refazer o projeto?',   {Source has changed, do you wish to remake project?}
+  'Carregar layout da janela',   {Load Window Layout}
+  'Área atracagem'   {Docking area}
+ );
 
-    'BKPT de inicialização', // po_startupbkpt
-    'Conexão de destino', // po_remoteconnection
-    'Sempre baixar', // po_downloadalways
-    'Sempre baixe antes de executar', // po_downloadalwayshint
-    'Tempo limite de carregamento', // po_gdbloadtimeout
-    'Consola &Externa', // po_externalconsole
-    '&Stop on Exc', // po_stoponexception
-    'Parar nas exceções', // po_stoponexceptionhint
-    '&Acti-Break', // po_activateonbreak
-    'Ativar no intervalo', // po_activateonbreakhint
-    '&Valor'#10'Dica', // po_valuehints
-    'Chamar GUI_DEB', // po_nodebugbeginend
-    'Solte a garra do mouse pela parada do alvo. gdb às vezes trava com esta opção. ', // po_nodebugbeginendhint
-    'Definir TT&Y', // po_settty
-    'Levantar/pausa', // po_raiseonbreak
-    'Levantar na pausa', // po_raiseonbreakhint
-    '&FPC bugs', // po_fpcgdbworkaround
-    'Use soluções alternativas para bugs FPC / gdb', // po_fpcgdbworkaroundhint
-    'Debug alvo', // po_debugtarget
-    'Comando xterm', // po_xtermcommand
-    'Executar comando', // po_runcommand
-    'Depurador padrão', // po_debugcommand
-    'Depurar e opções', // po_debugoptions
-    '&Make', // po_makepage
+pt_sourceformtext: sourceformaty =
+ (
+  'Arquivo "',   {File "}
+  '" mudou.',   {" has changed.}
+  'Existem modificações no buffer de edição também.',   {There are modifications in edit buffer also.}
+  'Deseja recarregar do disco?',   {Do you wish to reload from disk?}
+  'Confirmação',   {Confirmation}
+  '<nenhum>',   {<none>}
+  'Deseja substituir:',   {Do you wish to replace:}
+  'com:',   {with:}
+  '<novo>',   {<new>}
+  'Syntaxdeffile:',   {Syntaxdeffile:}
+  'Texto',   {Text}
+  'não encontrado.',   {not found.}
+  'Reiniciar do início do arquivo?',   {Restart from begin of file?}
+  'Cancelar?',   {Cancel?}
+  'Deseja substituir esta ocorrência?',   {Do you wish to to replace this occurence?}
+  'Vá para a linha número:',   {Go to line number:}
+  'Encontrar linha',   {Find line}
+  'Existem modificações no buffer de edição também.'   {There are modifications in edit buffer also.}
+ );
 
-    'Coluna make por defeito', // po_defaultmake
-    'Ficheiro principal', // po_mainfile
-    'Seleccionar ficheiro principal', // po_selectmainfile
-    'Nome ficheiro alvo', // po_targetfile
-    'Selecionar arquivo de destino', // po_selecttargetfile
-    'Compilador padrão', // po_makecommand
-    'Selecione o comando make', // po_selectmakecommand
-    'Mostrar linha de comando', // po_showcommandline
-    'Copiar mensagens para o arquivo', // po_copymessages
-    'Fechar mensagem', // po_closemessages
-    'Verificar cabeçalho', // po_checkmethods
-    'Verificar cabeçalhos de método', // po_checkmethodshint
-    'Project Compiler', // po_projectcompiler
-    'Comando antes', // po_commandbefore
-    'Opções de criação', // po_makeoptions
-    'Diretórios', // po_diretórios
-    'Selecione o diretório da unidade', // po_unitdirs
-    'Comando depois de', // po_commandafter
-    'Exe Extension', // po_exeextension
-    'Comentários', // po_comments
-    'Criar diretório', // po_makedir
-    'Selecione criar diretório', // po_selectmakedir
-    'Cor do erro', // po_colorerror
-    'Cor de Aviso', // po_colorwarning
-    'Nota Cor', // po_colornote
-    'Strip ESC', // po_stripmessageesc
-    'Retirar sequências ESC na forma de mensagens e terminal', // po_stripmessageeschint
-    'Mostrar console', // po_showconsole
-    'Objetivo', // po_enablepurpose
-    'Arquivo de saída de mensagem', // po_messageoutputfile
-    'Selecionar arquivo de destino', // po_selectmessageoutputfile
-    'Macros', // po_macros
-    'Grupo ativo', // po_selectactivegroupgrid
-    '&Alias da fonte', // po_fontaliaspage
-    'Designers', // po_designers
-    'Usuário e cores', // po_usercolors
-    'Copiar o código "setcolormapvalue" para a área de transferência', // po_copycolor
-    'F&ormat Macros', // po_formatmacro
-    'Usado por formatfloatmse () e formatdatetimemse ()', // po_formatmacrohint
-    'Modelos', // po_templates
-    'Novo projeto', // po_newproject
-    'Script antes da cópia', // po_scriptbeforecopy
-    'Script após cópia', // po_scriptaftercopy
-    'Novo arquivo', // po_newfile
-    'Novo formulário', // po_newform
-    'Ferramentas', // po_tools
-    'Armazenamento', // po_storage
-    'Infos', // po_infos
-    'Nome completo do projeto', // po_projectfullname
-    'Criador', // po_creator
-    'Licença', // po_license
-    'Data de criação' // po_projectdate
+pt_settingstext: isettingsaty =
+ (
+  'Aplicar',   {Apply}
+  'Configuração assistiva de voz sak',   {sak voice assistive config}
+  'Diretório pai do sakit',   {Parent directory of sakit}
+  'Habilitar sak assistive ao carregar',   {Enable sak assistive at loading}
+  'Layout do sistema',   {System layout}
+  'Diretórios universais',   {Universal path layout}
+  'Nenhum pedido Z',   {No Z order handling}
+  'Use "Shift" para selecionar palavra',   {Use shift key to select a word}
+  'Foco automático no menu principal',   {Auto focus in main-menu}
+  'Caminho completo no título',   {Full path of project in window title}
+  'Definir diálogo como modal',   {Set dialog-forms as modal vs as tool}
+  'Altura fonte',   {Font height}
+  'Nome fonte',   {Font name}
+  'Sem confirmação para deletar linha',   {No confirmation to delete row}
+  'Circuito piscando',   {Blinking caret}
+  'Redesenhar tela',   {Repaint canvas}
+  'Editor de código-fonte',   {Source Editor}
+  'Use essas opções',   {Use those options instead of project options}
+  'Adicionar espaço após "" ao auto-analisar',   {Add space after comma -> auto-parsing}
+  'Quando um arquivo foi alterado',   {When a file has changed}
+  'Sem diálogo => recarregar o novo',   {No dialog box => reload the new one}
+  'Sem diálogo => manter o antigo',   {No dialog box => keep the old one}
+  'Diálogo pergunta o que fazer ...',   {A dialog box ask what to do...}
+  'Retângulo em torno da seleção'   {Rectangle around multi-select}
+ );
 
-    );
-    
-   pt_sourceformtext: sourceformaty = (
-       'Arquivo "',
-       '" mudou.',
-       'Existem modificações no buffer de edição também.',
-       'Deseja recarregar do disco?',
-       'Confirmação',
-       '<nenhum>',
-       'Deseja substituir:',
-       'com:',
-       '<novo>',
-       'Syntaxdeffile:',
-       'Texto',
-       'não encontrado.',
-       'Reiniciar do início do arquivo?',
-       'Cancelar?',
-       'Deseja substituir esta ocorrência?',
-       'Vá para a linha número:',
-       'Encontrar linha',
-       'Existem modificações no buffer de edição também.'
-    );
-   
+pt_projectoptionstext: projectoptionsaty =
+ (
+  'Opções de projeto',   {Project options}
+  'Editor',   {Editor}
+  'Linha margem',   {Right margin line}
+  'Mark Brackets',   {Mark Brackets}
+  'Números de linha',   {Line Numbers}
+  'Mark Pairwords',   {Mark Pairwords}
+  'Cortar espaço branco#10on salvar',   {Trim trailing whitespace on save}
+  'Recuo automático',   {Auto Indent}
+  'Sem editor de código-fonte',   {No Source Editor}
+  'Tab indent',   {Tab indent}
+  'Guia de espaço',   {Space tab}
+  'Mostrar guias',   {Show tabs}
+  'Fonte com suavização de serrilhado',   {Anti aliased font}
+  'Codificação',   {Encoding}
+  'Marcar cor',   {Mark Color}
+  'Stat cor',   {Stat Color}
+  'Scr Y',   {Scr Y}
+  'Nb char',   {Nb char}
+  'Estilo EOL',   {EOL Style}
+  'Backup',   {Backup}
+  'Tabstops',   {Tabstops}
+  'Indentação',   {Indent}
+  'ExtS',   {ExtS}
+  'Espaço extra entre linhas',   {Extra space between lines}
+  'Largura',   {Width}
+  'Altura',   {Height}
+  'Fonte',   {Font}
+  'Font Bk. color',   {Font Bk. color}
+  'Cor da fonte',   {Font color}
+  'Filtro de arquivo',   {File filter}
+  'Nome',   {Name}
+  'Máscara de arquivo',   {File mask}
+  'Arquivo de definição de sintaxe',   {Syntax definition file}
+  'Modelos de código',   {Code Templates}
+  'Diretórios de modelo de código extensão de arquivo = .mct',   {Code template directories, file extension = .mct}
+  'Selecione o diretório da unidade',   {Select unit directory}
+  '&Depurador',   {&Debugger}
+  'Depurador Projecto',   {Project Debugger}
+  'Pesquisa e diretórios',   {Search &Directories}
+  'Caminho de pesquisa para obter informações sobre o código',   {Search path to get infos about code}
+  'Selecione o diretório de origem',   {Select source directory}
+  'Object &Base Directory (empty = Make Directory)',   {Object &Base Directory (empty = Make Directory)}
+  'Selecionar diretório base de origem',   {Select source base directory}
+  'Definições',   {Defi&nes}
+  '&Sinais',   {&Signals}
+  '&Exceção',   {&Exception}
+  '&Alvo',   {&Target}
+  'Iniciar gdb server command attach target',   {Start gdb server command attach target}
+  'Não espere pela saída',   {No wait for exit}
+  'Antes de conectar o script gdb',   {Before connect gdb script}
+  'Antes de carregar o script gdb',   {Before load gdb script}
+  'Antes de executar o script gdb',   {Before run gdb script}
+  'Depois de conectar o script gdb',   {After connect gdb script}
+  'Depois de carregar o script gdb',   {After load gdb script}
+  'Iniciar gdb server command run target',   {Start gdb server command run target}
+  'Aguarde antes de conectar',   {Wait before connect}
+  'Iniciar uma vez',   {Start once}
+  'Comando de download',   {Download command}
+  'Processador',   {Processor}
+  'Simulator',   {Simulator}
+  'gdb descarregar',   {gdb download}
+  'BKPT de inicialização',   {Startup BKPT}
+  'Conexão de destino',   {Target connection}
+  'Sempre baixar',   {Always download}
+  'Sempre baixe antes de executar',   {Always download before run}
+  'Tempo limite de carregamento',   {Load Timeout}
+  'Consola &Externa',   {&Extern Console}
+  '&Stop on Exc',   {&Stop on Exc}
+  'Parar nas exceções',   {Stop on exceptions}
+  '&Acti-Break',   {&Acti-Break}
+  'Ativar no intervalo',   {Activate on Break}
+  '&Valor#10Dica',   {&Value Hints}
+  'Chamar GUI_DEB',   {Call GUI_DEB}
+  'Solte a garra do mouse pela parada do alvo. gdb às vezes trava com esta opção.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
+  'Definir TT&Y',   {Set TT&Y}
+  'Levantar/pausa',   {&Raise-Break}
+  'Levantar na pausa',   {Raise on break}
+  '&FPC bugs',   {&FPC bugs}
+  'Use soluções alternativas para bugs FPC / gdb',   {Use workarounds for FPC/gdb bugs}
+  'Debug alvo',   {Debug &target}
+  'Comando xterm',   {xterm command}
+  'Executar comando',   {Run command}
+  'Depurador padrão',   {Default Debugger}
+  'Depurar e opções',   {Debug &options}
+  '&Make',   {&Make}
+  'Coluna make por defeito',   {Default make col}
+  'Ficheiro principal',   {Mainfile}
+  'Seleccionar ficheiro principal',   {Select mainfile}
+  'Nome ficheiro alvo',   {Targetfile name}
+  'Selecionar arquivo de destino',   {Select target file}
+  'Compilador padrão',   {Default Compiler}
+  'Selecione o comando make',   {Select make command}
+  'Mostrar linha de comando',   {Show Command Line}
+  'Copiar mensagens para o arquivo',   {Copy messages to file}
+  'Fechar mensagem',   {Close message}
+  'Verificar cabeçalho',   {Check head}
+  'Verificar cabeçalhos de método',   {Check method headers}
+  'Project Compiler',   {Project Compiler}
+  'Comando antes',   {Command before}
+  'Opções de criação',   {Make options}
+  'Diretórios',   {Directories}
+  'Selecione o diretório da unidade',   {Select unit directory}
+  'Comando depois de',   {Command after}
+  'Exe Extension',   {Exe Extension}
+  'Comentários',   {Comments}
+  'Criar diretório',   {Make Directory}
+  'Selecione criar diretório',   {Select make directory}
+  'Cor do erro',   {Error Color}
+  'Cor de Aviso',   {Warning Color}
+  'Nota Cor',   {Note Color}
+  'Strip ESC',   {Strip ESC}
+  'Retirar sequências ESC na forma de mensagens e terminal',   {Strip ESC sequences in Messages and Terminal form}
+  'Mostrar console',   {Show Console}
+  'Objetivo',   {Purpose}
+  'Arquivo de saída de mensagem',   {Message output file}
+  'Selecionar arquivo de destino',   {Select target file}
+  'Macros',   {Macros}
+  'Grupo ativo',   {Active group}
+  '&Alias da fonte',   {&Font Alias}
+  'Designers',   {Designers}
+  'Usuário e cores',   {User &Colors}
+  'Copiar o código "setcolormapvalue" para a área de transferência',   {Copy "setcolormapvalue" code to clipboard}
+  'F&ormat Macros',   {F&ormat Macros}
+  'Usado por formatfloatmse () e formatdatetimemse ()',   {Used by formatfloatmse() and formatdatetimemse()}
+  'Modelos',   {Templates}
+  'Novo projeto',   {New project}
+  'Script antes da cópia',   {Script before copy}
+  'Script após cópia',   {Script after copy}
+  'Novo arquivo',   {New File}
+  'Novo formulário',   {New Form}
+  'Ferramentas',   {Tools}
+  'Armazenamento',   {Storage}
+  'Infos',   {Infos}
+  'Nome completo do projeto',   {Full name of project}
+  'Criador',   {Creator}
+  'Licença',   {License}
+  'Data de criação'   {Date of creation}
+ );
 
-  pt_stockcaption: stockcaptionaty = (
-    '', // sc_none
-    'é inválido', // sc_is_invalid
-    'Erro de formato', // sc_Format_error
-    'O valor é obrigatório', // sc_Value_is_required
-    'Erro', // sc_Error
-    'Min', // sc_Min
-    'Max', // sc_Max
-    'Erro de intervalo', // sc_Range_error
+pt_stockcaption: stockcaptionaty =
+(
+  '',   {}
+  'é inválido',   {is invalid}
+  'Erro de formato',   {Format error}
+  'O valor é obrigatório',   {Value is required}
+  'Erro',   {Error}
+  'Min',   {Min}
+  'Max',   {Max}
+  'Erro de intervalo',   {Range error}
+  '&Desfazer',   {&Undo}
+  '&Refazer',   {&Redo}
+  '&Copiar',   {&Copy}
+  'Cu &t',   {Cu&t}
+  '&Paste',   {&Paste}
+  'Selecionar &tudo',   {Select &all}
+  '&Inserir linha',   {&Insert Row}
+  '&Append Row',   {&Append Row}
+  '&Excluir linha',   {&Delete Row}
+  '&Dir',   {&Dir}
+  '&Home',   {&Home}
+  '&Up',   {&Up}
+  '&Novo',   {&New}
+  '&Nome',   {&Name}
+  '&Mostrar arquivos ocultos',   {&Show hidden files}
+  '&Filtro',   {&Filter}
+  'Salvar',   {Save}
+  'Abrir',   {Open}
+  'Nome',   {Name}
+  'Criar novo diretório',   {Create new directory}
+  'Voltar',   {Back}
+  'Avançar',   {Forward}
+  'Up',   {Up}
+  'Arquivo',   {File}
+  'existe você deseja sobrescrever?',   {exists, do you want to overwrite?}
+  'é modificado. Salve ?',   {is modified. Save?}
+  'AVISO',   {WARNING}
+  'ERRO',   {ERROR}
+  'Exceção',   {Exception}
+  'Sistema',   {System}
+  'não existe',   {does not exist}
+  'PASSWORD',   {PASSWORD}
+  'Digite a senha',   {Enter password}
+  'Senha inválida!',   {Invalid password!}
+  'Não é possível ler o diretório',   {Can not read directory}
+  'Formato gráfico não suportado',   {Graphic format not supported}
+  'Erro de formato gráfico',   {Graphic format error}
+  'MS Bitmap',   {MS Bitmap}
+  'Ícone MS',   {MS Icon}
+  'Imagem JPEG',   {JPEG Image}
+  'Imagem PNG',   {PNG Image}
+  'Imagem XPM',   {XPM Image}
+  'Imagem PNM',   {PNM Image}
+  'Imagem TARGA',   {TARGA Image}
+  'Imagem TIFF',   {TIFF Image}
+  'Todos',   {All}
+  'Confirmação',   {Confirmation}
+  'Excluir registro?',   {Delete record?}
+  'Copiar registro?',   {Copy record?}
+  'Fechar página',   {Close page}
+  'Primeiro',   {First}
+  'Prior',   {Prior}
+  'Próximo',   {Next}
+  'Último',   {Last}
+  'Anexar',   {Append}
+  'Eliminar',   {Delete}
+  'Editar',   {Edit}
+  'Post',   {Post}
+  'Cancelar',   {Cancel}
+  'Atualizar',   {Refresh}
+  'Editar filtro',   {Edit filter}
+  'Editar filtro mínimo',   {Edit filter minimum}
+  'Editar filtro máximo',   {Edit filter maximum}
+  'Redefinir filtro',   {Reset filter}
+  'Filtrar',   {Filter on}
+  'Pesquisa',   {Search}
+  'Edição automática',   {Auto edit}
+  'Copiar registro',   {Copy record}
+  'Diálogo',   {Dialog}
+  'Inserir',   {Insert}
+  'Copiar',   {Copy}
+  'Colar',   {Paste}
+  'Inserir linha',   {Row insert}
+  'Apêndice fila',   {Row append}
+  'Eliminar fila',   {Row delete}
+  'Desfazer',   {Undo}
+  'Refazer',   {Redo}
+  'Cut',   {Cut}
+  'Selecionar tudo',   {Select all}
+  'Filtro desligado',   {Filter off}
+  'Retrato',   {Portrait}
+  'Paisagem',   {Landscape}
+  'Excluir linha?',   {Delete row?}
+  'linhas selecionadas?',   {selected rows?}
+  'Somente item único',   {Single item only}
+  'Copiar células',   {Copy Cells}
+  'Colar células',   {Paste Cells}
+  'Fechar',   {Close}
+  'Maximizar',   {Maximize}
+  'Normalizar',   {Normalize}
+  'Minimizar',   {Minimize}
+  'Tamanho fixo',   {Fix size}
+  'Flutuar',   {Float}
+  'Fique por dentro',   {Stay on top}
+  'Fique em segundo plano',   {Stay in background}
+  'Bloquear filhos',   {Lock children}
+  'Sem bloqueio',   {No lock}
+  'Input',   {Input}
+  'Botão',   {Button}
+  'Ligar',   {On}
+  'Desligar',   {Off}
+  'Borda esquerda',   {Left border}
+  'Borda superior',   {Top border}
+  'Borda direita',   {Right border}
+  'Borda inferior',   {Bottom border}
+  'Início do texto',   {Begin of text}
+  'Fim do texto',   {End of text}
+  'Inputmode',   {Inputmode}
+  'Overwrite',   {Overwrite}
+  'Excluído',   {Deleted}
+  'Copiado',   {Copied}
+  'Inserido',   {Inserted}
+  'Colado',   {Pasted}
+  'Retirado',   {Withdrawn}
+  'Janela ativada',   {Window activated}
+  'Menu',   {Menu}
+  'Início do arquivo',   {Beginning of file}
+  'Fim do arquivo',   {End of file}
+  'Saída de voz',   {Voice output}
+  'Fale de novo',   {Speak again}
+  'Primeira coluna',   {First column}
+  'Primeira linha',   {First row}
+  'Última coluna',   {Last column}
+  'Última linha',   {Last row}
+  'Seleção',   {Selection}
+  'Fale o caminho',   {Speak path}
+  'Botão desativado',   {Disabled button}
+  'Primeiro campo',   {First field}
+  'Último campo',   {Last field}
+  'Primeiro elemento',   {First element}
+  'Último elemento',   {Last element}
+  'Mais lento',   {Slower}
+  'Mais rápido',   {Faster}
+  'Janela',   {Window}
+  'Área',   {Area}
+  'Área ativada',   {Area activated}
+  'Diminuir o volume',   {Volume down}
+  'Aumentar o volume',   {Volume up}
+  'Cancelar discurso',   {Cancel speech}
+  'Alvo',   {Target}
+  'Ver',   {View}
+  'Formulários',   {Forms}
+  'Layout',   {Layout}
+  'Sintaxe',   {Syntax}
+  'Projeto',   {Project}
+  'Editado',   {Edited}
+  'Widgets',   {Widgets}
+  'Configurações',   {Settings}
+  'Cerca de',   {About}
+  'Novo',   {New}
+  'Salvar como ...',   {Save as...}
+  'Salvar tudo',   {Save all}
+  'Fechar tudo',   {Close all}
+  'Imprimir',   {Print}
+  'Desistir',   {Quit}
+  'Linha',   {Line}
+  'Pesquisar novamente',   {Search again}
+  'Pesquisar de volta',   {Search back}
+  'Localizar e substituir',   {Find & replace}
+  'Encontrar em arquivos',   {Find in files}
+  'Lista de procedimentos',   {Procedures list}
+  'Selecionar página de edição',   {Select edit page}
+  'Copiar palavra no cursor',   {Copy word at cursor}
+  'Copiar LaTeX',   {Copy LaTeX}
+  'Indentação',   {Indent}
+  'Desindentar',   {Unindent}
+  'Ambiente',   {Environment}
+  'Processo de anexação',   {Attach process}
+  'Anexe alvo',   {Attach target}
+  'Desprender alvo',   {Detach target}
+  'Descarregar',   {Download}
+  'Ferramentas',   {Tools}
+  'Make',   {Make}
+  'Build',   {Build}
+  'Abortar make',   {Abort make}
+  'Debug-Run',   {Debug-Run}
+  'Opções',   {Options}
+  'Árvore',   {Tree}
+  'Fonte',   {Source}
+  'Abrir cópia',   {Open copy}
+  'Salvar cópia como',   {Save copy as}
+  'Beautifier',   {Beautifier}
+  'Painéis',   {Panels}
+  'Forçar ordem Z',   {Force Z order}
+  'Lista de árvores',   {Tree list}
+  'Mensagens',   {Messages}
+  'Encontrar resultado',   {Find result}
+  'Comandante',   {Commander}
+  'Símbolos',   {Symbols}
+  'Relógios',   {Watches}
+  'Pilha',   {Stack}
+  'Fios',   {Threads}
+  'CPU',   {CPU}
+  'Assembler',   {Assembler}
+  'Pontos parada',   {Breakpoints}
+  'Pontos vigilância',   {Watchpoints}
+  'Memória',   {Memory}
+  'Console de destino',   {Target console}
+  'Alternar forma / unidade',   {Toggle form/unit}
+  'Módulos MSE',   {MSE modules}
+  'Fechar todos os módulos MSE',   {Close all MSE modules}
+  'Configurações gerais',   {General settings}
+  'Configurações extras',   {Extra settings}
+  'Idiomas',   {Languages}
+  'Configurar widgets',   {Configure widgets}
+  'Configurar compiladores',   {Configure compilers}
+  'Configurar depuradores',   {Configure debuggers}
+  'Temas',   {Themes}
+  'Directório',   {Directory}
+  'Sem ícones',   {No icons}
+  'Sem lateral',   {No lateral}
+  'Compacto',   {Compact}
+  'Abrir projeto',   {Open project}
+  'Abrir arquivo',   {Open file}
+  'Path',   {Path}
+  'Outro',   {Other}
+  'Comando de impressão',   {Print command}
+  'Atalho',   {Shortcut}
+  'Valor',   {Value}
+  'Sensível a maiúsculas e minúsculas',   {Case sensitive}
+  'Selecionado apenas',   {Selected only}
+  'Palavra inteira',   {Whole word}
+  'Texto para encontrar',   {Text to find}
+  'Pesquisar no arquivo atual',   {Search in current file}
+  'Pesquisar em arquivos abertos',   {Search in open files}
+  'Pesquisar no diretório do projeto',   {Search in project directory}
+  'Pesquisar nos diretórios',   {Search in directories}
+  'Incluir subdiretórios',   {Include subdirectories}
+  'Substituir',   {Replace}
+  'Substituir tudo',   {Replace all}
+  'Substituir por',   {Replace with}
+  'Solicitar ao substituir',   {Prompt on replace}
+  'Paleta de componentes',   {Components palette}
+  'Encontrar componentes',   {Find components}
+  'Reset',   {Reset}
+  'Step',   {Step}
+  'Instrução de etapa',   {Step instruction}
+  'Próxima instrução',   {Next instruction}
+  'Reiniciar o depurador',   {Restart debugger}
+  'Alternar ponto de interrupção',   {Toggle breakpoint}
+  'Alternar ponto de interrupção habilitado',   {Toggle breakpoint enabled}
+  'Ligado / desligado a dica de linhas executadas',   {Executed lines hint on/off}
+  'Por favor compile primeiro.',   {Please compile it first.}
+  'Concluir',   {Finish}
+  'Definir como padrão',   {Set as default}
+  'Anfitrião',   {Host}
+  'Copyright'   {Copyright}
+ );
 
-    '&Desfazer', // sc_Undohk /// ///
-    '&Refazer', // sc_Redohk // //
-    '&Copiar', // sc_Copyhk // teclas de atalho //
-    'Cu &t', // sc_Cuthk // //
-    '&Paste', // sc_Pastehk // // teclas de atalho
-    'Selecionar &tudo', // sc_Select_allhk /// //
-    '&Inserir linha', // sc_insert_rowhk /// //
-    '&Append Row', // sc_append_rowhk // hotkeys //
-    '&Excluir linha', // sc_delete_rowhk /// ///
+pt_langnamestext: array[0..5] of msestring =
+(
+  'Inglês',   {English}
+  'Russo',   {Russian}
+  'Francês',   {French}
+  'Alemão',   {German}
+  'Espanhol',   {Spanish}
+  'Português'   {Portuguese}
+ );
 
-    '&Dir', // sc_Dirhk ///
-    '&Home', // sc_homehk //
-    '&Up', // sc_Uphk //
-    '&Novo', // sc_New_dirhk // teclas de atalho
-    '&Nome', // sc_Namehk //
-    '&Mostrar arquivos ocultos', // sc_Show_hidden_fileshk //
-    '&Filtro', // sc_Filterhk ///
-    'Salvar', // sc_save
-    'Abrir', // sc_open
-    'Nome', // sc_name
-    'Criar novo diretório', // sc_create_new_directory
-    'Voltar', // sc_back
-    'Avançar', // sc_forward
-    'Up', // sc_up
-    'Arquivo', // sc_file
-    'existe, você deseja sobrescrever?', // sc_exists_overwrite
-    'é modificado. Salvar? ', // sc_is_modified_save
-    'AVISO', // sc_warningupper
-    'ERROR', // sc_errorupper
-    'Exceção', // sc_exception
-    'Sistema', // sc_system
-    'não existe', // sc_does_not_exist
-    'PASSWORD', // sc_passwordupper
-    'Digite a senha', // sc_enterpassword
-    'Senha inválida!', // sc_invalidpassword
-    'Não é possível ler o diretório', // sc_can_not_read_directory
-    'Formato gráfico não suportado', // sc_graphic_not_supported
-    'Erro de formato gráfico', // sc_graphic_format_error
-    'MS Bitmap', // sc_MS_Bitmap
-    'Ícone MS', // sc_MS_Icon
-    'Imagem JPEG', // sc_JPEG_Image
-    'Imagem PNG', // sc_PNG_Image
-    'Imagem XPM', // sc_XPM_Image
-    'Imagem PNM', // sc_PNM_Image
-    'Imagem TARGA', // sc_TARGA_image
-    'Imagem TIFF', // sc_TIFF_image
-    'Todos', // sc_All
-    'Confirmação', // sc_Confirmation
-    'Excluir registro?', // sc_Delete_record_question
-    'Copiar registro?', // sc_Copy_record_question
-    'Fechar página', // sc_close_page
-    'Primeiro', // sc_first
-    'Prior', // sc_prior
-    'Próximo', // sc_next
-    'Último', // sc_last
-    'Anexar', // sc_append
-    'Eliminar', // sc_delete
-    'Editar', // sc_edit
-    'Post', // sc_post
-    'Cancelar', // sc_cancel
-    'Atualizar', // sc_refresh
-    'Editar filtro', // sc_filter_filter
-    'Editar filtro mínimo', // sc_edit_filter_min
-    'Editar filtro máximo', // sc_filter_edit_max
-    'Redefinir filtro', // sc_reset_filter
-    'Filtrar', // sc_filter_on
-    'Pesquisa', // sc_search
-    'Edição automática', // sc_auto_edit
-    'Copiar registro', // sc_copy_record
-    'Diálogo', // sc_dialog
-    'Inserir', // sc_insert
-    'Copiar', // sc_copy
-    'Colar', // sc_paste
-
-    'Inserir linha', // sc_row_insert
-    'Apêndice fila', // sc_row_append
-    'Eliminar fila', // sc_row_delete
-    'Desfazer', // sc_undo
-    'Refazer', // sc_redo
-    'Cut', // sc_cut
-    'Selecionar tudo', // sc_select_all
-
-    'Filtro desligado', // sc_filter_off
-    'Retrato', // orientação de impressão do sc_portrait
-    'Paisagem', // orientação de impressão do sc_landscape
-    'Excluir linha?', // sc_Delete_row_question
-    'linhas selecionadas?', // sc_selected_rows
-    'Somente item único', // sc_Single_item_only
-    'Copiar células', // sc_Copy_Cells
-    'Colar células', // sc_Paste_Cells
-    'Fechar', // sc_close
-    'Maximizar', // sc_maximize
-    'Normalizar', // sc_normalize
-    'Minimizar', // sc_minimize
-    'Tamanho fixo', // sc_fix_size
-    'Flutuar', // sc_float
-    'Fique por dentro', // sc_stay_on_top
-    'Fique em segundo plano', // sc_stay_in_background
-    'Bloquear filhos', // sc_lock_children
-    'Sem bloqueio', // sc_no_lock
-    'Input', // sc_input
-    'Botão', // sc_button
-    'Ligar', // sc_on
-    'Desligar', // sc_off
-    'Borda esquerda', // sc_leftborder
-    'Borda superior', // sc_topborder
-    'Borda direita', // sc_rightborder
-    'Borda inferior', // sc_bottomborder
-    'Início do texto', // sc_beginoftext
-    'Fim do texto', // sc_endoftext
-    'Inputmode', // sc_inputmode
-    'Overwrite', // sc_overwrite
-    'Excluído', // sc_deleted
-    'Copiado', // sc_copied
-    'Inserido', // sc_inserted
-    'Colado', // sc_pasted
-    'Retirado', // sc_withdrawn
-    'Janela ativada', // sc_windowactivated
-    'Menu', // sc_menu
-    'Início do arquivo', // sc_bof
-    'Fim do arquivo', // sc_eof
-    'Saída de voz', // sc_voiceoutput
-    'Fale de novo', // sc_speak novamente
-    'Primeira coluna', // sc_firstcol
-    'Primeira linha', // sc_firstrow
-    'Última coluna', // sc_lastcol
-    'Última linha', // sc_lastrow
-    'Seleção', // sc_selection
-    'Fale o caminho', // sc_speakpath
-    'Botão desativado', // sc_disabledbutton
-    'Primeiro campo', // sc_firstfield
-    'Último campo', // sc_lastfield
-    'Primeiro elemento', // sc_firstelement
-    'Último elemento', // sc_lastelement
-    'Mais lento', // sc_slower
-    'Mais rápido', // sc_faster
-    'Janela', // sc_window
-    'Área', // sc_area
-    'Área ativada', // sc_areaactivated
-    'Diminuir o volume', // sc_volumedown
-    'Aumentar o volume', // sc_volumeup
-    'Cancelar discurso', // sc_cancelspeech
-    'Alvo', // sc_target
-    'Ver', // sc_view
-    'Formulários', // sc_forms
-    'Layout', // sc_layout
-    'Sintaxe', // sc_syntax
-    'Projeto', // sc_project
-    'Editado', // sc_edited
-    'Widgets', // sc_widgets
-    'Configurações', // sc_settings
-    'Sobre', // sc_about
-    'Novo', // sc_newfile
-    'Salvar como ...', // sc_saveas
-    'Salvar tudo', // sc_saveall
-    'Fechar tudo', // sc_closeall
-    'Imprimir', // sc_print
-    'Sair', // sc_quit
-    'Linha', // sc_line
-    'Pesquisar novamente', // sc_search_again
-    'Pesquisar de volta', // sc_search_back
-    'Localizar e substituir', // sc_find_replace
-    'Encontrar em arquivos', // sc_find_infile
-    'Lista de procedimentos', // sc_proclist
-    'Selecionar página de edição', // sc_select_edit_Page
-    'Copiar palavra no cursor', // sc_Copy_word_cursor
-    'Copiar LaTeX', // sc_copy_latex
-    'Indentar', // sc_ident
-    'Desindentar', // sc_uident
-    'Ambiente', // sc_environment
-    'Processo de anexação', // sc_attachprocess
-    'Anexe alvo', // sc_attachtarget
-    'Desprender alvo', // sc_detachtarget
-    'Descarregar', // sc_download
-    'Ferramentas', // sc_tools
-    'Make', // sc_make
-    'Build', // sc_build
-    'Abortar make', // sc_abortmake
-    'Debug-Run', // sc_debugrun
-    'Opções', // sc_options
-    'Árvore', // sc_tree
-    'Fonte', // sc_source
-    'Abrir cópia', // sc_opencopy
-    'Salvar cópia como', // sc_saveascopy
-    'Beautifier', // sc_beautifier
-    'Painéis', // sc_panels
-    'Forçar ordem Z', // sc_forcezorder
-    'Lista de árvores', // sc_treelist
-    'Mensagens', // sc_messages
-    'Encontrar resultado', // sc_findresult
-    'Comandante', // sc_commander
-    'Símbolos', // sc_symbols
-    'Relógios', // sc_watches
-    'Pilha', // sc_stack
-    'Fios', // sc_threads
-    'CPU', // sc_cpu
-    'Assembler', // sc_assembler
-    'Pontos parada', // sc_breakpoints
-    'Pontos vigilância', // sc_watchpoints
-    'Memória', // sc_memory
-    'Console de destino', // sc_targetconsole
-    'Alternar forma / unidade', // sc_toggleformunit
-    'Módulos MSE', // sc_msemod
-    'Fechar todos os módulos MSE', // sc_closeallmsemod
-    'Configurações gerais', // sc_generalsettings
-    'Configurações extras', // sc_extrasettings
-    'Idiomas', // sc_lang
-    'Configurar widgets', // sc_configwidgets
-    'Configurar compiladores', // sc_configcompilers
-    'Configurar depuradores', // sc_configdebuggers
-    'Temas', // sc_themes
-    'Directório', // sc_directory
-    'Sem ícones', // sc_noicons
-    'Sem lateral', // sc_themes
-    'Compacto', // sc_compact
-    'Abrir projeto', // sc_openproject
-    'Abrir arquivo', // sc_openfile
-    'Path', // sc_path
-    'Outro', // sc_other
-    'Comando de impressão', // sc_printcommand
-    'Atalho', // sc_shortcut
-    'Valor', // sc_value
-    'Sensível a maiúsculas e minúsculas', // sc_casesensitive
-    'Selecionado apenas', // sc_selectedonly
-    'Palavra inteira', // sc_wholeword
-    'Texto para encontrar', // sc_texttofind
-    'Pesquisar no arquivo atual', // sc_searchincurrentfile
-    'Pesquisar em arquivos abertos', // sc_searchininopenfiles
-    'Pesquisar no diretório do projeto', // sc_searchinprojectdir
-    'Pesquisar nos diretórios', // sc_searchindirectories
-    'Incluir subdiretórios', // sc_includesubdir
-    'Substituir', // sc_replace
-    'Substituir tudo', // sc_replace tudo
-    'Substituir por', // sc_replacewith
-    'Solicitar ao substituir', // sc_promptonreplace
-    'Paleta de componentes', // sc_componentspalette
-    'Encontrar componentes', // sc_findcomponent
-    'Reset', // sc_reset
-    'Step', // sc_cstep
-    'Instrução de etapa', // sc_stepinstruction
-    'Próxima instrução', // sc_nextinstruction
-    'Reiniciar o depurador', // sc_restartdebugger
-    'Alternar ponto de interrupção', // sc_togglebreakpoint
-    'Alternar ponto de interrupção habilitado', // sc_tooglebreakpointenable
-    'Ligado / desligado a dica de linhas executadas', // sc_execlinehinton
-    'Por favor, compile primeiro.', // sc_compileitfirst
-    'Concluir', // sc_finish
-    'Definir como padrão', // sc_setasdefault
-    'Anfitrião', // sc_host
-    'Copyright' // sc_copyright  
-
-  );
-  
- const
- pt_langnamestext: array[0..5] of msestring = (
-    'Inglês', // 0_English
-    'Russo', // 1_Russian
-    'Francês', // 2_french
-    'Alemão', // 3_german
-    'Espanhol', // 4_spanish
-    'Português'     //5_portuguese
-    
-   );   
+pt_extendedtext: extendedaty =
+(
+  'Excluir linha selecionada?',   {Delete selected row?}
+  'Excluir %s linhas selecionadas?'   {Delete %s selected rows?}
+ );
 
 function delete_n_selected_rows(const params: array of const): msestring;
 begin
   with params[0] do
     if vinteger = 1 then
-      Result := 'Excluir linha selecionada?'
+      Result := pt_extendedtext[ex_del_row_selected]
     else
-      Result := 'Excluir ' + inttostrmse(vinteger) + ' linhas selecionadas?';
+      Result := StringReplace(pt_extendedtext[ex_del_rows_selected], #37#115, inttostrmse(vinteger), [rfReplaceAll]);
 end;
 
 const
-  pt_textgenerator: defaultgeneratortextty = (
-              {$ifdef FPC} @{$endif}delete_n_selected_rows //tg_delete_n_selected_rows
-    );
+pt_textgenerator: defaultgeneratortextty = (
+ {$ifdef FPC} @{$endif}delete_n_selected_rows);
 
 initialization
-  registerlangconsts(langnames[la_pt], @pt_langnamestext, @pt_mainformtext, @pt_sourceformtext, @pt_projectoptionscontext, @pt_actionsmoduletext,
-   @pt_settingstext, @pt_projectoptionstext, @pt_stockcaption, @pt_modalresulttext,
-    @pt_modalresulttextnoshortcut, @pt_textgenerator);
+
+registerlangconsts(langnames[la_pt], @pt_langnamestext, @pt_extendedtext, @pt_mainformtext, @pt_sourceformtext,
+                   @pt_projectoptionscontext, @pt_actionsmoduletext, @pt_settingstext, @pt_projectoptionstext,
+                   @pt_stockcaption, @pt_modalresulttext, @pt_modalresulttextnoshortcut, @pt_textgenerator);
+
 end.
 
