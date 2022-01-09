@@ -691,7 +691,7 @@ makeoptions=14
  -gl
  -B
  -Xs -CX -XX
- -O2
+ -O1
  -WG
  -Cg -k-pie -k-znow
  -k--gc-sections
@@ -706,7 +706,7 @@ makeoptpurpose=14
  Debug infos
  Re-build all
  Optimizations
- Optimizations2
+ Optimizations
  Windows application
  Make a PIE executable
  Garbage collector
@@ -1620,7 +1620,7 @@ findhistory=20
  filecreate
  ideuli
 findoptions=1
-editpos=17
+editpos=15
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1629,15 +1629,13 @@ editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 4,10
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1653,33 +1651,28 @@ bookmarks11=0
 bookmarks12=0
 bookmarks13=0
 bookmarks14=0
-bookmarks15=0
-bookmarks16=0
-sourcefiles=17
+sourcefiles=15
  ${PROJECTDIR}/mseconsts_ide_de.pas
  ${PROJECTDIR}/mseconsts_ide_es.pas
  ${PROJECTDIR}/mseconsts_ide_fr.pas
  ${PROJECTDIR}/mseconsts_ide_ru.pas
  ${PROJECTDIR}/mseconsts_ide_pt.pas
- ${PROJECTDIR}/componentstore.mfm
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- /home/fred/ideu/src/actionsmodule.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/useslang.inc
  ${PROJECTDIR}/mseconsts_ide_zh.pas
  ${PROJECTDIR}/mseconsts_ide.pas
  ${PROJECTDIR}/msestockobjects.pas
- ${PROJECTDIR}/componentstore.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=17
+relpaths=15
  mseconsts_ide_de.pas
  mseconsts_ide_es.pas
  mseconsts_ide_fr.pas
  mseconsts_ide_ru.pas
  mseconsts_ide_pt.pas
- componentstore.mfm
  main.pas
  sourceform.pas
  actionsmodule.pas
@@ -1689,15 +1682,12 @@ relpaths=17
  mseconsts_ide_zh.pas
  mseconsts_ide.pas
  msestockobjects.pas
- componentstore.pas
  conflang.pas
-ismoduletexts=17
+ismoduletexts=15
  0
  0
  0
  0
- 0
- -1
  0
  0
  0
@@ -1738,28 +1728,10 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
-order=17
- 0
- 1
- 2
- 3
- 4
- 8
- 14
- 10
- 5
- 9
- 7
- 15
- 13
- 16
- 6
- 11
- 12
-firsttab=5
-index=5
+firsttab=0
+index=14
 [layout]
-windowlayout=636
+windowlayout=618
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2203,11 +2175,11 @@ windowlayout=636
  nx=0
  ny=0
  ncx=1341
- ncy=24
+ ncy=22
  x=0
  y=0
  cx=1356
- cy=22
+ cy=20
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2217,8 +2189,10 @@ windowlayout=636
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
+ value=/home/fred/ideu/src/conflang.pas
  history=20
+  /home/fred/ideu/src/conflang.pas
+  /home/fred/ideu/src/componentstore.mfm
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
@@ -2237,8 +2211,6 @@ windowlayout=636
   /home/fred/po2const2po/mseconsts_ide_fr.pas
   /home/fred/po2const2po/mseconsts_es.pas
   /home/fred/po2const2po/mseconsts_ide_en.pas
-  /home/fred/ideu/src/mseconsts_ide_en.pas
-  /home/fred/Downloads/eschecs-master/source/icon.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2260,26 +2232,8 @@ windowlayout=636
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=17
-  0
-  1
-  2
-  3
-  4
-  8
-  14
-  10
-  5
-  9
-  7
-  15
-  13
-  16
-  6
-  11
-  12
- firsttab=5
- index=5
+ firsttab=0
+ index=14
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

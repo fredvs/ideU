@@ -243,7 +243,7 @@ makeoptions=6
  -Xg -l -Mobjfpc -Sh -Fcutf8
  -gl -O-
  -B
- -O2 -XX -Xs -CX
+ -O1 -XX -Xs -CX
  -vewinh
  -FUunits
 makeoptpurpose=6
@@ -482,8 +482,8 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 34
- 32
+ 38
+ 36
  4095
  4095
 compilerusedon=29
@@ -808,26 +808,31 @@ findhistory=20
  implem
  imple
 findoptions=1
-editpos=4
+editpos=5
  0,-1073741823
- 0,1104
+ 0,33
  0,-1073741823
  0,-1073741823
+ 0,1437
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/po2const2po/output/mseconsts_ide_zh.pas
- ${PROJECTDIR}/headerform.pas
- /home/fred/ideu/src/lazutf8.pas
+ ${PROJECTDIR}/po2const2po/headerform.pas
+ ${PROJECTDIR}/lazutf8.pas
  ${PROJECTDIR}/msestockobjects.pas
-relpaths=4
+ /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
+relpaths=5
  output/mseconsts_ide_zh.pas
  headerform.pas
  lazutf8.pas
  msestockobjects.pas
-ismoduletexts=4
+ ../../mseide-msegui/lib/common/graphics/msedrawtext.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -839,16 +844,22 @@ moduleoptions=2
  0
  0
 visiblemodules=2
- 0
+ -1
  -1
 nomenumodules=2
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 1
+ 4
+ 2
+ 3
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=587
+windowlayout=593
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -982,7 +993,7 @@ windowlayout=587
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=objectinspectorfo
+ stackedunder=_mse_headerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -1007,7 +1018,7 @@ windowlayout=587
  sorted=0
  col=1
  row=0
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1070,7 +1081,7 @@ windowlayout=587
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1089,10 +1100,10 @@ windowlayout=587
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=693
- width0=165
+ propcolwidthref=678
+ width0=161
  sortdescend0=0
- width1=522
+ width1=511
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1299,11 +1310,11 @@ windowlayout=587
  nx=0
  ny=0
  ncx=1204
- ncy=58
+ ncy=56
  x=0
  y=0
  cx=1219
- cy=56
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1313,7 +1324,7 @@ windowlayout=587
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/po2const2po/headerform.pas
+ value=/home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
  history=20
   /home/fred/ideu/src/po2const2po/headerform.pas
   /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
@@ -1356,8 +1367,14 @@ windowlayout=587
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  1
+  4
+  2
+  3
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -1366,7 +1383,7 @@ windowlayout=587
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_headerfo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1401,7 +1418,7 @@ windowlayout=587
  [_mse_headerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1416,11 +1433,11 @@ windowlayout=587
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=projecttreefo
  parent=
  mdistate=3
  nx=0
