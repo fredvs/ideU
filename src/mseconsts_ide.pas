@@ -384,7 +384,7 @@ const
     'Mark Brackets',                    //  po_markbrackets
     'Line Numbers',                     //  po_linenumbers
     'Mark Pairwords',                   //  po_markpairwords
-    'Trim trailing whitespace on save', //  po_trimtrailing
+    'Trim trailing whitespace',         //  po_trimtrailing on save
     'Auto Indent',                      //  po_autoindent
     'No Source Editor',                 //  po_nosource
     'Tab indent',                       //  po_tabindent

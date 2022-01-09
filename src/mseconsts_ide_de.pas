@@ -44,8 +44,8 @@ de_modalresulttext: defaultmodalresulttextty =
   'A&lle',   {Yes &all}
   'N&ein alle',   {N&o all}
   '&Ignorieren',   {&Ignore}
-  '#0220bers&pringen',   {&Skip}
-  'Alles #0252&berspringen',   {Skip a&ll}
+  'Übers&pringen',   {&Skip}
+  'Alles ü&berspringen',   {Skip a&ll}
   '&Fortfahren'   {Co&ntinue}
  );
 
@@ -67,8 +67,8 @@ de_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Alle',   {Yes all}
   'Nein alle',   {No all}
   'Ignorieren',   {Ignore}
-  '#0220berspringen',   {Skip}
-  'Alles #0252berspringen',   {Skip all}
+  'Überspringen',   {Skip}
+  'Alles überspringen',   {Skip all}
   'Fortfahren'   {Continue}
  );
 
@@ -311,11 +311,11 @@ de_projectoptionstext: projectoptionsaty =
   'Klammern markieren',   {Mark Brackets}
   'Linien Nummern',   {Line Numbers}
   'Paarwörter markieren',   {Mark Pairwords}
-  'Nachgestellte Leerzeichen#10beim Speichern abschneiden',   {Trim trailing whitespace on save}
+  'Nachgestellte abschneiden',   {Trim trailing whitespace on save}
   'Automatischer Einzug',   {Auto Indent}
   'Kein Quelleneditor',   {No Source Editor}
   'Tab-Einzug',   {Tab indent}
-  'Registerkarte#10„Raum“',   {Space tab}
+  'Registerkarte Raum“',   {Space tab}
   'Registerkarten anzeigen',   {Show tabs}
   'Anti-Aliasing-Schriftart',   {Anti aliased font}
   'Codierung',   {Encoding}
@@ -376,7 +376,7 @@ de_projectoptionstext: projectoptionsaty =
   'Bei Ausnahme anhalten',   {Stop on exceptions}
   '&Paus.akti.',   {&Acti-Break}
   'Bei Pause aktivieren',   {Activate on Break}
-  '&Wert#10Hinweise',   {&Value Hints}
+  '&Wert Hinweise',   {&Value Hints}
   'Rufen GUI_DEB',   {Call GUI_DEB}
   'Lassen Sie den Mausgriff am Zielstopp los. gdb stürzt manchmal mit dieser Option ab.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
   'TT&Y einstellen',   {Set TT&Y}
@@ -447,22 +447,22 @@ de_projectoptionstext: projectoptionsaty =
 de_stockcaption: stockcaptionaty =
 (
   '',   {}
-  'ist ung#0252ltig',   {is invalid}
+  'ist ungültig',   {is invalid}
   'Format Fehler',   {Format error}
-  'Wert wird ben#0246tigt',   {Value is required}
+  'Wert wird benötigt',   {Value is required}
   'Fehler',   {Error}
   'Min',   {Min}
   'Max',   {Max}
   'Bereichs Fehler',   {Range error}
-  '&R#0252ckg#0228ngig',   {&Undo}
+  '&Rückgängig',   {&Undo}
   '&Redo',   {&Redo}
   '&Kopieren',   {&Copy}
   '&Ausschneiden',   {Cu&t}
-  '&Einf#0252gen',   {&Paste}
+  '&Einfügen',   {&Paste}
   'Alles &markieren',   {Select &all}
-  'Zeile e&inf#0252gen',   {&Insert Row}
-  'Zeile a&nf#0252gen',   {&Append Row}
-  'Zeile &l#0246schen',   {&Delete Row}
+  'Zeile e&infügen',   {&Insert Row}
+  'Zeile a&nfügen',   {&Append Row}
+  'Zeile &löschen',   {&Delete Row}
   '&Dir',   {&Dir}
   '&Home',   {&Home}
   '&Auf',   {&Up}
@@ -471,14 +471,14 @@ de_stockcaption: stockcaptionaty =
   '&Verst.Dat.anzeigen',   {&Show hidden files}
   '&Filter',   {&Filter}
   'Speichern',   {Save}
-  '#0214ffnen',   {Open}
+  'Öffnen',   {Open}
   'Name',   {Name}
   'Verzeichnis erstellen',   {Create new directory}
   'Zurück',   {Back}
-  'Forw#0228rts',   {Forward}
-  'Aufw#0228rts',   {Up}
+  'Forwärts',   {Forward}
+  'Aufwärts',   {Up}
   'Datei',   {File}
-  'existiert wollen Sie #0252berschreiben?',   {exists, do you want to overwrite?}
+  'existiert wollen Sie überschreiben?',   {exists, do you want to overwrite?}
   'wird modifiziert. Speichern?',   {is modified. Save?}
   'WARNUNG',   {WARNING}
   'ERROR',   {ERROR}
@@ -487,9 +487,9 @@ de_stockcaption: stockcaptionaty =
   'existiert nicht',   {does not exist}
   'PASSWORT',   {PASSWORD}
   'Ppassworteingabe',   {Enter password}
-  'Ung#0252ltiges Passwort!',   {Invalid password!}
+  'Ungültiges Passwort!',   {Invalid password!}
   'Verzeichnis kann nicht gelesen werden',   {Can not read directory}
-  'Grafik Format nicht unterst#0252tzt',   {Graphic format not supported}
+  'Grafik Format nicht unterstützt',   {Graphic format not supported}
   'Grafik Format Fehler',   {Graphic format error}
   'MS Bitmap',   {MS Bitmap}
   'MS Icon',   {MS Icon}
@@ -501,15 +501,15 @@ de_stockcaption: stockcaptionaty =
   'TIFF Bild',   {TIFF Image}
   'Alle',   {All}
   'Bestätigung',   {Confirmation}
-  'Datensatz l#0246schen?',   {Delete record?}
+  'Datensatz löschen?',   {Delete record?}
   'Datensatz kopieren?',   {Copy record?}
   'Seite schliessen',   {Close page}
   'Erster',   {First}
   'Vorheriger',   {Prior}
-  'N#0228chster',   {Next}
+  'Nächster',   {Next}
   'Letzter',   {Last}
-  'Anf#0252gen',   {Append}
-  'L#0246schen',   {Delete}
+  'Anfügen',   {Append}
+  'Löschen',   {Delete}
   'Bearbeiten',   {Edit}
   'Eintragen',   {Post}
   'Abbrechen',   {Cancel}
@@ -517,35 +517,35 @@ de_stockcaption: stockcaptionaty =
   'Filter bearbeiten',   {Edit filter}
   'Filter Minimum bearbeiten',   {Edit filter minimum}
   'Filter Maximum bearbeiten',   {Edit filter maximum}
-  'Filter r#0252ckstellen',   {Reset filter}
+  'Filter rückstellen',   {Reset filter}
   'Filter ein',   {Filter on}
   'Suchen',   {Search}
   'Automatisch bearbeiten',   {Auto edit}
   'Datensatz kopieren',   {Copy record}
   'Dialog',   {Dialog}
-  'Einf#0252gen',   {Insert}
+  'Einfügen',   {Insert}
   'Kopieren',   {Copy}
-  'Einf#0252gen',   {Paste}
-  'Zeile einf#0252gen',   {Row insert}
-  'Zeile anf#0252gen',   {Row append}
-  'Zeile l#0246schen',   {Row delete}
-  'R#0252ckg#0228ngig',   {Undo}
+  'Einfügen',   {Paste}
+  'Zeile einfügen',   {Row insert}
+  'Zeile anfügen',   {Row append}
+  'Zeile löschen',   {Row delete}
+  'Rückgängig',   {Undo}
   'Wiederherstellen',   {Redo}
   'Ausschneiden',   {Cut}
   'Alles markieren',   {Select all}
   'Filter aus',   {Filter off}
   'Hochformat',   {Portrait}
   'Querformat',   {Landscape}
-  'Zeile l#0246schen?',   {Delete row?}
-  'gew#0228hlte Zeilen',   {selected rows?}
+  'Zeile löschen?',   {Delete row?}
+  'gewählte Zeilen',   {selected rows?}
   'Nur Einzeleintrag erlaubt',   {Single item only}
   'Zellen kopieren',   {Copy Cells}
-  'Zellen einf#0252gen',   {Paste Cells}
+  'Zellen einfügen',   {Paste Cells}
   'Schliessen',   {Close}
   'Maximieren',   {Maximize}
   'Normalisieren',   {Normalize}
   'Minimieren',   {Minimize}
-  'Feste Gr#0246sse',   {Fix size}
+  'Feste Grösse',   {Fix size}
   'Lösen',   {Float}
   'Im Fordergrund',   {Stay on top}
   'Im Hintergrund',   {Stay in background}
@@ -562,14 +562,14 @@ de_stockcaption: stockcaptionaty =
   'Text start',   {Begin of text}
   'Text ende',   {End of text}
   'Eingabe Modus',   {Inputmode}
-  '#$00DCberschreiben',   {Overwrite}
-  'Gel#$00F6scht',   {Deleted}
+  'Überschreiben',   {Overwrite}
+  'Gelöscht',   {Deleted}
   'Kopiert',   {Copied}
-  'Eingef#$00FCgt',   {Inserted}
-  'Eingef#$00FCgt',   {Pasted}
-  'R#$00FCckg#$00E4ngig',   {Withdrawn}
+  'Eingefügt',   {Inserted}
+  'Eingefügt',   {Pasted}
+  'Zurückgezogen',   {Withdrawn}
   'Fenster aktiviert',   {Window activated}
-  'Men#$00FC',   {Menu}
+  'Menü',   {Menu}
   'Datei Beginn',   {Beginning of file}
   'Datei Ende',   {End of file}
   'Sprachausgabe',   {Voice output}
@@ -716,8 +716,8 @@ de_langnamestext: array[0..6] of msestring =
 
 de_extendedtext: extendedaty =
 (
-  'Gew#0228hlte Zeile l#0246schen?',   {Delete selected row?}
-  '%s gew#0228hlte Zeilen l#0246schen?'   {Delete %s selected rows?}
+  'Gewählte Zeile löschen?',   {Delete selected row?}
+  '%s gewählte Zeilen löschen?'   {Delete %s selected rows?}
  );
 
 function delete_n_selected_rows(const params: array of const): msestring;

@@ -54,7 +54,7 @@ targetconsole,
 main, 
 splash, 
 mseguiintf, 
-  {msestockobjects,}regunitgroups, 
+regunitgroups, 
 guitemplates, 
 msegraphutils, 
 msefont, 
@@ -86,7 +86,6 @@ begin
   application.createform(tconfcompilerfo, confcompilerfo);
   application.createform(tconfdebuggerfo, confdebuggerfo);
   conffpguifo.fpguidesigner.Value := '';
-
   application.createdatamodule(tstringconstsmo, s);
   application.createdatamodule(tactionsmo, actionsmo);
   application.createform(tsourcefo, sourcefo);
@@ -97,6 +96,7 @@ begin
 
   application.createform(tcomponentpalettefo, componentpalettefo);
   componentpalettefo.Caption :=     stockobjects.captions[sc_componentspalette];
+
   application.createform(tcomponentstorefo, componentstorefo);
   componentstorefo.Caption := actionsmoduletext(ac_storecomponent);
 
@@ -147,11 +147,9 @@ begin
   application.createform(tfindmessagefo, findmessagefo);
   //findmessagefo.close;
 
-  // application.createform(tbeautyfo, beautyfo);
   confcompilerfo.Close;
   confdebuggerfo.Close;
-  // beautyfo.Close;
-
+ 
   application.createform(tmainfo, mainfo);
 
   application.createform(taboutfo, aboutfo);

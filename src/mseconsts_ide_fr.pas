@@ -75,7 +75,7 @@ fr_modalresulttextnoshortcut: defaultmodalresulttextty =
 fr_projectoptionscontext: projectoptionsconaty =
  (
   'Un encodage incorrect peut endommager vos fichiers sources.',   {Wrong encoding can damage your source files.}
-  'Voulez-vous définir lencodage sur',   {Do you wish to set encoding to}
+  'Voulez-vous définir encodage sur',   {Do you wish to set encoding to}
   '*** ATTENTION ***',   {*** WARNING ***}
   'Raccrocher',   {Hangup}
   'Interrompre',   {Interrupt}
@@ -86,14 +86,14 @@ fr_projectoptionscontext: projectoptionsconaty =
   'Erreur BUS',   {BUS error}
   'Exception à virgule flottante',   {Floating-point exception}
   'Tuer',   {Kill}
-  'Signal défini par lutilisateur 1',   {User-defined signal 1}
+  'Signal défini par utilisateur 1',   {User-defined signal 1}
   'Violation de segmentation',   {Segmentation violation}
-  'Signal défini par lutilisateur 2',   {User-defined signal 2}
+  'Signal défini par utilisateur 2',   {User-defined signal 2}
   'Tuyau cassé',   {Broken pipe}
   'Réveil',   {Alarm clock}
   'Résiliation',   {Termination}
   'Faute de pile',   {Stack fault}
-  'Le statut de lenfant a changé',   {Child status has changed}
+  'Le statut de l enfant a changé',   {Child status has changed}
   'Continuer',   {Continue}
   'Stop imblocable',   {Stop, unblockable}
   'Arrêt du clavier',   {Keyboard stop}
@@ -140,7 +140,7 @@ fr_actionsmoduletext: actionsmoduleaty =
   'Méthode non trouvée',   {Method not found}
   'Méthode publiée (gérée)',   {Published (managed) method}
   'nexiste pas.',   {does not exist.}
-  'Voulez-vous supprimer lévénement ?',   {Do you wish to delete the event?}
+  'Voulez-vous supprimer l événement ?',   {Do you wish to delete the event?}
   'ATTENTION',   {WARNING}
   'Méthode',   {Method}
   'a des paramètres différents.',   {has different parameters.}
@@ -229,7 +229,7 @@ fr_mainformtext: mainformaty =
   '" pas trouvé.',   {" not found.}
   '" existe.',   {" exists.}
   'Nouveau',   {New}
-  'Sélectionner lancêtre',   {Select ancestor}
+  'Sélectionner l ancêtre',   {Select ancestor}
   'Nouvelle forme',   {New form}
   'Pascal Fichiers',   {Pascal Files}
   'nouveau',   {new}
@@ -298,7 +298,7 @@ fr_settingstext: isettingsaty =
   'Espace après virgule -> auto-parsing',   {Add space after comma -> auto-parsing}
   'Quand un fichier a changé :',   {When a file has changed}
   'Sans dialogue => recharger le nouveau',   {No dialog box => reload the new one}
-  'Sans dialogue => garder lancien',   {No dialog box => keep the old one}
+  'Sans dialogue => garder ancien',   {No dialog box => keep the old one}
   'Un dialogue demande quoi faire...',   {A dialog box ask what to do...}
   'Rectangle autour de sélection multiple'   {Rectangle around multi-select}
  );
@@ -311,7 +311,7 @@ fr_projectoptionstext: projectoptionsaty =
   'Marquer les crochets',   {Mark Brackets}
   'Numéros de ligne',   {Line Numbers}
   'Marquer mots paires',   {Mark Pairwords}
-  'Enlever les espaces de fin lors de lenregistrement',   {Trim trailing whitespace on save}
+  'Enlever espaces de fin',   {Trim trailing whitespace on save}
   'Retrait automatique',   {Auto Indent}
   'Pas déditeur-source',   {No Source Editor}
   'Retrait de tabulation',   {Tab indent}
@@ -501,8 +501,8 @@ fr_stockcaption: stockcaptionaty =
   'Image TIFF',   {TIFF Image}
   'Tous',   {All}
   'Confirmation',   {Confirmation}
-  'Effacer lenregistrement ?',   {Delete record?}
-  'Copier lenregistrement ?',   {Copy record?}
+  'Effacer l enregistrement ?',   {Delete record?}
+  'Copier l enregistrement ?',   {Copy record?}
   'Fermer page',   {Close page}
   'Premier',   {First}
   'Précédent',   {Prior}
@@ -521,7 +521,7 @@ fr_stockcaption: stockcaptionaty =
   'Filtre actif',   {Filter on}
   'Chercher',   {Search}
   'Edition automatique',   {Auto edit}
-  'Copier lenregistrement',   {Copy record}
+  'Copier l enregistrement',   {Copy record}
   'Dialogue',   {Dialog}
   'Insérer',   {Insert}
   'Copier',   {Copy}

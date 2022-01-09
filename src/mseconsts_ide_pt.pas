@@ -311,7 +311,7 @@ pt_projectoptionstext: projectoptionsaty =
   'Mark Brackets',   {Mark Brackets}
   'Números de linha',   {Line Numbers}
   'Mark Pairwords',   {Mark Pairwords}
-  'Cortar espaço branco#10on salvar',   {Trim trailing whitespace on save}
+  'Cortar espaço branco',   {Trim trailing whitespace on save}
   'Recuo automático',   {Auto Indent}
   'Sem editor de código-fonte',   {No Source Editor}
   'Tab indent',   {Tab indent}
@@ -376,7 +376,7 @@ pt_projectoptionstext: projectoptionsaty =
   'Parar nas exceções',   {Stop on exceptions}
   '&Acti-Break',   {&Acti-Break}
   'Ativar no intervalo',   {Activate on Break}
-  '&Valor#10Dica',   {&Value Hints}
+  '&Valor Dica',   {&Value Hints}
   'Chamar GUI_DEB',   {Call GUI_DEB}
   'Solte a garra do mouse pela parada do alvo. gdb às vezes trava com esta opção.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
   'Definir TT&Y',   {Set TT&Y}

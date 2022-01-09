@@ -38,7 +38,7 @@ es_modalresulttext: defaultmodalresulttextty =
   '&Cancelar',   {&Cancel}
   '&Abortar',   {&Abort}
   '&OK',   {&OK}
-  '&S#0237',   {&Yes}
+  '&Sí',   {&Yes}
   '&No',   {&No}
   '&Todo',   {Yes &all}
   '&Todo',   {Yes &all}
@@ -61,7 +61,7 @@ es_modalresulttextnoshortcut: defaultmodalresulttextty =
   'Cancelar',   {Cancel}
   'Abortar',   {Abort}
   'OK',   {OK}
-  'S#0237',   {Yes}
+  'Sí',   {Yes}
   'No',   {No}
   'Todo',   {Yes all}
   'Todo',   {Yes all}
@@ -311,11 +311,11 @@ es_projectoptionstext: projectoptionsaty =
   'Soportes de marca',   {Mark Brackets}
   'Números de línea',   {Line Numbers}
   'Marcar pares de palabras',   {Mark Pairwords}
-  'Recorte los espacios en blanco#10finales al guardar',   {Trim trailing whitespace on save}
+  'Recorte espacios en blanco',   {Trim trailing whitespace on save}
   'Sangría automática',   {Auto Indent}
   'Sin editor de fuentes',   {No Source Editor}
   'Sangría de tabulación',   {Tab indent}
-  'Pestaña de#10espacio',   {Space tab}
+  'Pestaña de espacio',   {Space tab}
   'Mostrar pestañas',   {Show tabs}
   'Fuente anti aliased',   {Anti aliased font}
   'Codificación',   {Encoding}
@@ -376,7 +376,7 @@ es_projectoptionstext: projectoptionsaty =
   'Deténgase en caso de excepción',   {Stop on exceptions}
   '&Act.desc.',   {&Acti-Break}
   'Activar en descanso',   {Activate on Break}
-  '&Valor#10pistas',   {&Value Hints}
+  '&Valor pistas',   {&Value Hints}
   'Llame GUI_DEB',   {Call GUI_DEB}
   'Suelte el agarre del mouse al detener el objetivo. gdb a veces falla con esta opción.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
   'Establecer TT&Y',   {Set TT&Y}
@@ -447,12 +447,12 @@ es_projectoptionstext: projectoptionsaty =
 es_stockcaption: stockcaptionaty =
 (
   '',   {}
-  'es inv#0225lido',   {is invalid}
+  'es inválido',   {is invalid}
   'Error de formato',   {Format error}
   'Debe introducir un valor',   {Value is required}
   'Error',   {Error}
-  'M#0237n.',   {Min}
-  'M#0225x.',   {Max}
+  'Mín.',   {Min}
+  'Máx.',   {Max}
   'Error de rango',   {Range error}
   '&Deshacer',   {&Undo}
   '&Rehacer',   {&Redo}
@@ -461,7 +461,7 @@ es_stockcaption: stockcaptionaty =
   '&Pegar',   {&Paste}
   '&Select all',   {Select &all}
   '&Insertar fila',   {&Insert Row}
-  '&A#0241adir fila',   {&Append Row}
+  '&Añadir fila',   {&Append Row}
   '&Borrar fila',   {&Delete Row}
   '&Carpetas',   {&Dir}
   '&Principal',   {&Home}
@@ -474,23 +474,23 @@ es_stockcaption: stockcaptionaty =
   'Abrir',   {Open}
   'Nombre',   {Name}
   'Crear una carpeta nueva',   {Create new directory}
-  'Atr#0225s',   {Back}
+  'Atrás',   {Back}
   'Adelante',   {Forward}
   'Arriba',   {Up}
   'Archivo',   {File}
-  'existe #0191quiere sobreescribirlo?',   {exists, do you want to overwrite?}
+  'existe ¿quiere sobreescribirlo?',   {exists, do you want to overwrite?}
   'es modificado. ¿Ahorrar?',   {is modified. Save?}
   'ADVERTENCIA',   {WARNING}
   'ERROR',   {ERROR}
   'Excepción',   {Exception}
   'Sistema',   {System}
   'no existe',   {does not exist}
-  'CONTRASE#0209A',   {PASSWORD}
-  'Introduzca contrase#0241a',   {Enter password}
-  '#0161contrase#0241a incorrecta!',   {Invalid password!}
+  'CONTRASEÑA',   {PASSWORD}
+  'Introduzca contraseña',   {Enter password}
+  '¡contraseña incorrecta!',   {Invalid password!}
   'No puedo leer la carpeta',   {Can not read directory}
-  'Formato gr#0225fico no soportado',   {Graphic format not supported}
-  'Error de formato gr#0225fico',   {Graphic format error}
+  'Formato gráfico no soportado',   {Graphic format not supported}
+  'Error de formato gráfico',   {Graphic format error}
   'Bitmap MS',   {MS Bitmap}
   'Icono MS',   {MS Icon}
   'Imagen JPEG',   {JPEG Image}
@@ -501,33 +501,33 @@ es_stockcaption: stockcaptionaty =
   'Imagen TIFF',   {TIFF Image}
   'Todo',   {All}
   'Confirmación',   {Confirmation}
-  '#0191Borrar el registro?',   {Delete record?}
-  '#0191Copiar el registro?',   {Copy record?}
-  'Cerrar p#0225gina',   {Close page}
+  '¿Borrar el registro?',   {Delete record?}
+  '¿Copiar el registro?',   {Copy record?}
+  'Cerrar página',   {Close page}
   'Primero',   {First}
   'Anterior',   {Prior}
   'Siguiente',   {Next}
-  '#0218ltimo',   {Last}
-  'A#0241adir',   {Append}
+  'Último',   {Last}
+  'Añadir',   {Append}
   'Borrar',   {Delete}
   'Editar',   {Edit}
   'Guardar',   {Post}
   'Cancelar',   {Cancel}
   'Refrescar',   {Refresh}
-  'Filtro edici#0243n',   {Edit filter}
-  'Filtro edici#0243n m#0237nimo',   {Edit filter minimum}
-  'Filtro edici#0243n m#0225ximo',   {Edit filter maximum}
+  'Filtro edición',   {Edit filter}
+  'Filtro edición mínimo',   {Edit filter minimum}
+  'Filtro edición máximo',   {Edit filter maximum}
   'Reiniciar filtro',   {Reset filter}
   'Filtro activo',   {Filter on}
   'Buscar',   {Search}
-  'Edici#0243n autom#0225tica',   {Auto edit}
+  'Edición automática',   {Auto edit}
   'Copiar registro',   {Copy record}
-  'Di#0225logo',   {Dialog}
+  'Diálogo',   {Dialog}
   'Insertar',   {Insert}
   'Copiar',   {Copy}
   'Pegar',   {Paste}
   'Insertar fila',   {Row insert}
-  'A#0241adir fila',   {Row append}
+  'Añadir fila',   {Row append}
   'Borrar fila',   {Row delete}
   'Deshacer',   {Undo}
   'Rehacer',   {Redo}
@@ -536,7 +536,7 @@ es_stockcaption: stockcaptionaty =
   'Filtro apagado',   {Filter off}
   'Vertical',   {Portrait}
   'Apaisado',   {Landscape}
-  '#0191Borrar fila?',   {Delete row?}
+  '¿Borrar fila?',   {Delete row?}
   'filas seleccionadas?',   {selected rows?}
   'un elemento solamente',   {Single item only}
   'Copiar Celdas',   {Copy Cells}
@@ -545,14 +545,14 @@ es_stockcaption: stockcaptionaty =
   'Maximizar',   {Maximize}
   'Restaurar',   {Normalize}
   'Minimizar',   {Minimize}
-  'Ajustar tama#0241o',   {Fix size}
+  'Ajustar tamaño',   {Fix size}
   'Flotar',   {Float}
   'Permanecer en el primer plano',   {Stay on top}
   'Permanecer en el fondo',   {Stay in background}
   'Bloquear hijas',   {Lock children}
   'Sin bloquear',   {No lock}
   'Entrada',   {Input}
-  'Bot#0243n',   {Button}
+  'Botón',   {Button}
   'Encendido',   {On}
   'Apagado',   {Off}
   'Borde izquierdo',   {Left border}
@@ -569,27 +569,27 @@ es_stockcaption: stockcaptionaty =
   'Pegado',   {Pasted}
   'Retirado',   {Withdrawn}
   'Ventana activada',   {Window activated}
-  'Men#0250',   {Menu}
+  'Menú',   {Menu}
   'Principio del archivo',   {Beginning of file}
   'Fin del archivo',   {End of file}
   'Salida de voz',   {Voice output}
   'Hablar de nuevo',   {Speak again}
   'Primera columna',   {First column}
   'Primera fila',   {First row}
-  '#0218ltima columna',   {Last column}
-  '#0218ltima fila',   {Last row}
-  'Selecci#0243n',   {Selection}
+  'Última columna',   {Last column}
+  'Última fila',   {Last row}
+  'Selección',   {Selection}
   'Ruta de hablar',   {Speak path}
-  'Deshabilitar bot#0243n',   {Disabled button}
+  'Deshabilitar botón',   {Disabled button}
   'Primer campo',   {First field}
-  '#$00DAltimo campo',   {Last field}
+  'Último campo',   {Last field}
   'Primer elemento',   {First element}
-  '#$00DAltimo elemento',   {Last element}
-  'M#$00E1s lento',   {Slower}
-  'M#$00E1s r#$00E1pido',   {Faster}
+  'Último elemento',   {Last element}
+  'Más lento',   {Slower}
+  'Más rápido',   {Faster}
   'Ventana',   {Window}
-  '#$00C1rea',   {Area}
-  '#$00C1rea activada',   {Area activated}
+  'Área',   {Area}
+  'Área activada',   {Area activated}
   'Bajar volumen',   {Volume down}
   'Subir volumen',   {Volume up}
   'Cancelar habla',   {Cancel speech}
@@ -716,8 +716,8 @@ es_langnamestext: array[0..6] of msestring =
 
 es_extendedtext: extendedaty =
 (
-  '#0191Borrar la fila seleccionada?',   {Delete selected row?}
-  '#0191Borrar %s filas seleccionadas?'   {Delete %s selected rows?}
+  '¿Borrar la fila seleccionada?',   {Delete selected row?}
+  '¿Borrar %s filas seleccionadas?'   {Delete %s selected rows?}
  );
 
 function delete_n_selected_rows(const params: array of const): msestring;

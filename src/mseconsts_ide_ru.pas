@@ -311,11 +311,11 @@ ru_projectoptionstext: projectoptionsaty =
   'Отметить скобки',   {Mark Brackets}
   'Номера строк',   {Line Numbers}
   'Отметить парные слова',   {Mark Pairwords}
-  'Обрезать пробелы#10при сохранении',   {Trim trailing whitespace on save}
+  'Обрезать пробелы',   {Trim trailing whitespace on save}
   'Автоматический отступ',   {Auto Indent}
   'Нет редактора исходного кода',   {No Source Editor}
   'Отступ табуляции',   {Tab indent}
-  'Вкладка#10"Пробел"',   {Space tab}
+  'Вкладка Пробел"',   {Space tab}
   'Показать вкладки',   {Show tabs}
   'Шрифт со сглаживанием',   {Anti aliased font}
   'кодировка',   {Encoding}
@@ -328,7 +328,7 @@ ru_projectoptionstext: projectoptionsaty =
   'Табуляторы',   {Tabstops}
   'Отступ',   {Indent}
   'Доп. прос.',   {ExtS}
-  'Дополнительное пространство#10между строками',   {Extra space between lines}
+  'Дополнительное пространство между строками',   {Extra space between lines}
   'Ширина',   {Width}
   'Рост',   {Height}
   'Шрифт',   {Font}
@@ -376,7 +376,7 @@ ru_projectoptionstext: projectoptionsaty =
   'Остановить при исключении',   {Stop on exceptions}
   '&Акт.пере;',   {&Acti-Break}
   'Активировать в перерыве',   {Activate on Break}
-  '&Ценность#10подсказок',   {&Value Hints}
+  '&Ценность подсказок',   {&Value Hints}
   'Вызов GUI_DEB',   {Call GUI_DEB}
   'Освободите захват мыши с помощью целевой остановки. gdb иногда дает сбой с этой опцией.',   {Release mouse grab by target stop. gdb sometimes crashes with this option.}
   'Установить TT&Y',   {Set TT&Y}

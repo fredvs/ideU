@@ -311,7 +311,7 @@ zh_projectoptionstext: projectoptionsaty =
   'Mark Brackets',   {Mark Brackets}
   'Line Numbers',   {Line Numbers}
   'Mark Pairwords',   {Mark Pairwords}
-  'Trim trailing#10whitespace#10on save',   {Trim trailing whitespace on save}
+  'Trim trailing whitespace',   {Trim trailing whitespace on save}
   'Auto Indent',   {Auto Indent}
   'No Source Editor',   {No Source Editor}
   'Tab indent',   {Tab indent}
