@@ -295,7 +295,7 @@ de_settingstext: isettingsaty =
   'Canvas neu lackieren',   {Repaint canvas}
   'Quelleneditor',   {Source Editor}
   'Verwenden Sie diese Optionen',   {Use those options instead of project options}
-  'Leerzeichen nach Komma beim Auto-Parsing',   {Add space after comma -> auto-parsing}
+  'Leerzeichen nach Komma > Auto-Parsing',   {Add space after comma -> auto-parsing}
   'Wenn sich eine Datei geändert hat:',   {When a file has changed}
   'Kein Dialog => Neu laden',   {No dialog box => reload the new one}
   'Kein Dialog => das Alte behalten',   {No dialog box => keep the old one}
