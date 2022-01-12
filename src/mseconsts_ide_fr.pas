@@ -700,7 +700,7 @@ fr_stockcaption: stockcaptionaty =
   'Fin',   {Finish}
   'Définir par défaut',   {Set as default}
   'Hôte',   {Host}
-  'Droits dauteur'   {Copyright}
+  'Droits d auteur'   {Copyright}
  );
 
 fr_langnamestext: array[0..6] of msestring =
