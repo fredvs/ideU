@@ -81,9 +81,9 @@ findinfiledialog=92
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -136,8 +136,13 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value= l
+ value=chinese
  history=20
+  chinese
+  chine
+  china
+  yin
+  pinyin
    l
   source_editor
   ex_del_row_selected
@@ -153,11 +158,6 @@ findinfiledialog=92
   usedefaulteditoroptions
   defsynt
   timagelist
-  buttonimage
-  imagelistcopy
-  cwstring
-  Dummy: DWord;
-  Dummy:
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1600,8 +1600,12 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=#
+finddtext=sourceformtext
 findhistory=20
+ sourceformtext
+ de_sourceformtext
+ disposi
+ lang
  #
  #0218
  #0191
@@ -1618,20 +1622,19 @@ findhistory=20
  @fr
  'sur'
  colorerror
- checkerrormessage
- Warning
- imagelist3
- dummy
 findoptions=1
-editpos=17
- 0,-1073741823
- 0,-1073741823
- 0,722
+editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1658,10 +1661,13 @@ bookmarks13=0
 bookmarks14=0
 bookmarks15=0
 bookmarks16=0
-sourcefiles=17
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+sourcefiles=20
  ${PROJECTDIR}/mseconsts_ide_de.pas
  ${PROJECTDIR}/mseconsts_ide_es.pas
- /home/fred/ideu/src/mseconsts_ide_fr.pas
+ ${PROJECTDIR}/mseconsts_ide_fr.pas
  ${PROJECTDIR}/mseconsts_ide_ru.pas
  ${PROJECTDIR}/mseconsts_ide_pt.pas
  ${PROJECTDIR}/main.pas
@@ -1669,14 +1675,17 @@ sourcefiles=17
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/useslang.inc
+ /home/fred/ideu/src/useslang.inc
  ${PROJECTDIR}/mseconsts_ide_zh.pas
  ${PROJECTDIR}/mseconsts_ide.pas
  ${PROJECTDIR}/msestockobjects.pas
  ${PROJECTDIR}/conflang.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/msestockobjects.pas
-relpaths=17
+ /home/fred/mseide-msegui/lib/common/kernel/windows/msesysintf.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/ice.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+relpaths=20
  mseconsts_ide_de.pas
  mseconsts_ide_es.pas
  mseconsts_ide_fr.pas
@@ -1694,7 +1703,13 @@ relpaths=17
  conflang.pas
  projectoptionsform.pas
  msestockobjects.pas
-ismoduletexts=17
+ mseide-msegui/lib/common/kernel/windows/msesysintf.pas
+ mseide-msegui/lib/common/kernel/linux/ice.pas
+ mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ismoduletexts=20
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1745,28 +1760,31 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=17
+order=20
  0
  1
  2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
- 10
- 11
- 15
  16
  12
  13
+ 18
+ 19
+ 15
+ 4
+ 5
+ 17
+ 7
+ 8
+ 3
+ 11
+ 6
  14
-firsttab=0
-index=2
+ 9
+ 10
+firsttab=12
+index=19
 [layout]
-windowlayout=655
+windowlayout=658
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2210,11 +2228,11 @@ windowlayout=655
  nx=0
  ny=0
  ncx=1341
- ncy=14
+ ncy=10
  x=0
  y=0
  cx=1356
- cy=12
+ cy=8
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2224,16 +2242,20 @@ windowlayout=655
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide_fr.pas
+ value=/home/fred/ideu/src/useslang.inc
  history=20
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
-  /home/fred/ideu/src/conflang.pas
+  /home/fred/ideu/src/useslang.inc
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/ice.pas
+  /home/fred/mseide-msegui_testokonly/lib/common/kernel/mseconsts_de.pas
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/po2const2po/headerform.pas
   /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_fr_new.pas
   /home/fred/demo_mse/po2const2po/mseconsts_es.pas
@@ -2242,10 +2264,6 @@ windowlayout=655
   /home/fred/po2const2po/mseconsts_ide.pas
   /home/fred/po2const2po/msestockobjects.pas
   /home/fred/po2const2po/mseconsts_ide_fr.pas
-  /home/fred/po2const2po/mseconsts_es.pas
-  /home/fred/po2const2po/mseconsts_ide_en.pas
-  /home/fred/ideu/src/mseconsts_ide_en.pas
-  /home/fred/Downloads/eschecs-master/source/icon.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2267,26 +2285,29 @@ windowlayout=655
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=17
+ order=20
   0
   1
   2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
-  10
-  11
-  15
   16
   12
   13
+  18
+  19
+  15
+  4
+  5
+  17
+  7
+  8
+  3
+  11
+  6
   14
- firsttab=0
- index=2
+  9
+  10
+ firsttab=12
+ index=19
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

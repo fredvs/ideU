@@ -250,7 +250,7 @@ zh_mainformtext: mainformaty =
   'Make OK.',   {Make OK.}
   'Source has changed do you wish to remake project?',   {Source has changed, do you wish to remake project?}
   'Load Window Layout',   {Load Window Layout}
-  '继续'   {Docking area}
+  'Docking area'   {Docking area}
  );
 
 zh_sourceformtext: sourceformaty =

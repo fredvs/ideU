@@ -256,23 +256,23 @@ de_mainformtext: mainformaty =
 de_sourceformtext: sourceformaty =
  (
   'Die Datei "',   {File "}
-  '" has changed.',   {" has changed.}
-  'There are modifications in edit buffer also.',   {There are modifications in edit buffer also.}
-  'Do you wish to reload from disk?',   {Do you wish to reload from disk?}
+  '" hat sich geändert.',   {" has changed.}
+  'Es gibt auch Änderungen im Bearbeitungspuffer.',   {There are modifications in edit buffer also.}
+  'Möchten Sie von Diskette neu laden?',   {Do you wish to reload from disk?}
   'Bestätigung',   {Confirmation}
-  '<none>',   {<none>}
-  'Do you wish to replace:',   {Do you wish to replace:}
-  'with:',   {with:}
-  '<new>',   {<new>}
+  '<keiner>',   {<none>}
+  'Möchten Sie ersetzen:',   {Do you wish to replace:}
+  'mit:',   {with:}
+  '<Neu>',   {<new>}
   'Syntaxdeffile:',   {Syntaxdeffile:}
   'Text',   {Text}
   'nicht gefunden.',   {not found.}
-  'Restart from begin of file?',   {Restart from begin of file?}
-  'Cancel?',   {Cancel?}
-  'Do you wish to to replace this occurence?',   {Do you wish to to replace this occurence?}
+  'Neustart vom Dateianfang?',   {Restart from begin of file?}
+  'Abbrechen?',   {Cancel?}
+  'Möchten Sie dieses Ereignis ersetzen?',   {Do you wish to to replace this occurence?}
   'Go to line number:',   {Go to line number:}
-  'Find line',   {Find line}
-  'There are modifications in edit buffer also.'   {There are modifications in edit buffer also.}
+  'Zeile suchen',   {Find line}
+  'Es gibt auch Änderungen im Bearbeitungspuffer.'   {There are modifications in edit buffer also.}
  );
 
 de_settingstext: isettingsaty =
@@ -281,8 +281,8 @@ de_settingstext: isettingsaty =
   'sak Sprachassistenz-Konfiguration',   {sak voice assistive config}
   'Übergeordnetes Verzeichnis von sakit',   {Parent directory of sakit}
   'Sak-Assistent beim Laden aktivieren',   {Enable sak assistive at loading}
-  'Disposition du système',   {System layout}
-  'Disposición universal de directorios',   {Universal path layout}
+  'Systemaufbau',   {System layout}
+  'Universelles Pfadlayout',   {Universal path layout}
   'Keine Z-Auftragsabwicklung',   {No Z order handling}
   'Umschalttaste um Wort auszuwählen',   {Use shift key to select a word}
   'Autofokus im Hauptmenü',   {Auto focus in main-menu}
