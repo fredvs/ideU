@@ -315,8 +315,8 @@ de_projectoptionstext: projectoptionsaty =
   'Automatischer Einzug',   {Auto Indent}
   'Kein Quelleneditor',   {No Source Editor}
   'Tab-Einzug',   {Tab indent}
-  'Registerkarte Raum“',   {Space tab}
-  'Registerkarten anzeigen',   {Show tabs}
+  'Tab Raum',   {Space tab}
+  'Tab Anzeigen',   {Show tabs}
   'Anti-Aliasing-Schriftart',   {Anti aliased font}
   'Codierung',   {Encoding}
   'Farbe der Marke',   {Mark Color}
