@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2022 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -19,7 +19,7 @@ uses
 implementation
 
 uses
-  msetypes{msestrings},
+  msetypes,
   SysUtils,
   msestockobjects,
   mseformatstr;
@@ -700,7 +700,7 @@ fr_stockcaption: stockcaptionaty =
   'Fin',   {Finish}
   'Définir par défaut',   {Set as default}
   'Hôte',   {Host}
-  'Droits d''auteur'   {Copyright}
+  'Droits dauteur'   {Copyright}
  );
 
 fr_langnamestext: array[0..6] of msestring =
@@ -711,7 +711,7 @@ fr_langnamestext: array[0..6] of msestring =
   'Allemand',   {German}
   'Espagnol',   {Spanish}
   'Portugais',   {Portuguese}
-  'Chinese (not complete)'                 //6_chinese
+  'Chinese (not complete)'   {Chinese (not complete)}
  );
 
 fr_extendedtext: extendedaty =

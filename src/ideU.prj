@@ -81,9 +81,9 @@ findinfiledialog=92
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=chinese
+ value={msestrings}
  history=20
+  {msestrings}
   chinese
   chine
   china
@@ -157,7 +158,6 @@ findinfiledialog=92
   setsyntaxdef
   usedefaulteditoroptions
   defsynt
-  timagelist
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -169,8 +169,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=896
- y=273
+ x=1076
+ y=252
  cx=234
  cy=269
 replacedialog=33
@@ -1600,8 +1600,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=sourceformtext
+finddtext=leerz
 findhistory=20
+ leerz
+ register
  sourceformtext
  de_sourceformtext
  disposi
@@ -1620,11 +1622,11 @@ findhistory=20
   l
  trim trai
  @fr
- 'sur'
- colorerror
 findoptions=1
 editpos=20
  0,-1073741823
+ 0,729
+ 0,743
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1633,8 +1635,6 @@ editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1675,7 +1675,7 @@ sourcefiles=20
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/ideU.pas
- /home/fred/ideu/src/useslang.inc
+ ${PROJECTDIR}/useslang.inc
  ${PROJECTDIR}/mseconsts_ide_zh.pas
  ${PROJECTDIR}/mseconsts_ide.pas
  ${PROJECTDIR}/msestockobjects.pas
@@ -1683,8 +1683,8 @@ sourcefiles=20
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/msestockobjects.pas
  /home/fred/mseide-msegui/lib/common/kernel/windows/msesysintf.pas
- /home/fred/mseide-msegui/lib/common/kernel/linux/ice.pas
  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ ${PROJECTDIR}/lang/mseconsts_ide_de.po
 relpaths=20
  mseconsts_ide_de.pas
  mseconsts_ide_es.pas
@@ -1704,8 +1704,8 @@ relpaths=20
  projectoptionsform.pas
  msestockobjects.pas
  mseide-msegui/lib/common/kernel/windows/msesysintf.pas
- mseide-msegui/lib/common/kernel/linux/ice.pas
  mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ lang/mseconsts_ide_de.po
 ismoduletexts=20
  0
  0
@@ -1760,31 +1760,10 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
-order=20
- 0
- 1
- 2
- 16
- 12
- 13
- 18
- 19
- 15
- 4
- 5
- 17
- 7
- 8
- 3
- 11
- 6
- 14
- 9
- 10
-firsttab=12
-index=19
+firsttab=0
+index=2
 [layout]
-windowlayout=658
+windowlayout=637
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2228,11 +2207,11 @@ windowlayout=658
  nx=0
  ny=0
  ncx=1341
- ncy=10
+ ncy=6
  x=0
  y=0
  cx=1356
- cy=8
+ cy=4
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2242,28 +2221,28 @@ windowlayout=658
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/useslang.inc
+ value=/home/fred/ideu/src/mseconsts_ide_fr.pas
  history=20
-  /home/fred/ideu/src/useslang.inc
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/ideu/src/mseconsts_ide_es.pas
+  /home/fred/ideu/src/lang/mseconsts_ide_de.po
+  /home/fred/demo_mse/china/chinamsegui/lazutf8.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
   /home/fred/mseide-msegui/lib/common/kernel/linux/ice.pas
   /home/fred/mseide-msegui_testokonly/lib/common/kernel/mseconsts_de.pas
   /home/fred/ideu/src/conflang.pas
+  /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/mseconsts_ide_zh.pas
   /home/fred/ideu/src/po2const2po/headerform.pas
   /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
-  /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/mseconsts_ide_fr_new.pas
   /home/fred/demo_mse/po2const2po/mseconsts_es.pas
   /home/fred/po2const2po/mseconsts.pas
   /home/fred/po2const2po/output/mseconsts_fr.pas
   /home/fred/po2const2po/mseconsts_ide.pas
   /home/fred/po2const2po/msestockobjects.pas
-  /home/fred/po2const2po/mseconsts_ide_fr.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2285,29 +2264,8 @@ windowlayout=658
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=20
-  0
-  1
-  2
-  16
-  12
-  13
-  18
-  19
-  15
-  4
-  5
-  17
-  7
-  8
-  3
-  11
-  6
-  14
-  9
-  10
- firsttab=12
- index=19
+ firsttab=0
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

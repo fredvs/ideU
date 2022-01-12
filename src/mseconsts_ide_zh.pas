@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2022 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -19,7 +19,7 @@ uses
 implementation
 
 uses
-  msetypes{msestrings},
+  msetypes,
   SysUtils,
   msestockobjects,
   mseformatstr;
@@ -250,7 +250,7 @@ zh_mainformtext: mainformaty =
   'Make OK.',   {Make OK.}
   'Source has changed do you wish to remake project?',   {Source has changed, do you wish to remake project?}
   'Load Window Layout',   {Load Window Layout}
-  'Docking area'   {Docking area}
+  '继续'   {Docking area}
  );
 
 zh_sourceformtext: sourceformaty =
@@ -598,7 +598,7 @@ zh_stockcaption: stockcaptionaty =
   'Forms',   {Forms}
   'Layout',   {Layout}
   'Syntax',   {Syntax}
-  'Project',   {Project}
+  '继续',   {Project}
   'Edited',   {Edited}
   'Widgets',   {Widgets}
   'Settings',   {Settings}
@@ -711,7 +711,7 @@ zh_langnamestext: array[0..6] of msestring =
   'German',   {German}
   'Spanish',   {Spanish}
   'Portuguese',   {Portuguese}
-  'Chinese (not complete)'  //6_chinese
+  'Chinese (not complete)'   {Chinese (not complete)}
  );
 
 zh_extendedtext: extendedaty =

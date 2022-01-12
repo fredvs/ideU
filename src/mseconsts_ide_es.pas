@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2022 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -19,7 +19,7 @@ uses
 implementation
 
 uses
-  msetypes{msestrings},
+  msetypes,
   SysUtils,
   msestockobjects,
   mseformatstr;
@@ -711,7 +711,7 @@ es_langnamestext: array[0..6] of msestring =
   'Alemán',   {German}
   'Español',   {Spanish}
   'Portugués',   {Portuguese}
-  'Chinese (not complete)' //6_chinese
+  'Chinese (not complete)'   {Chinese (not complete)}
  );
 
 es_extendedtext: extendedaty =

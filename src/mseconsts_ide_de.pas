@@ -1,4 +1,4 @@
-{ MSEgui Copyright (c) 1999-2018 by Martin Schreiber
+{ MSEgui Copyright (c) 1999-2022 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
     for details about the copyright.
@@ -19,7 +19,7 @@ uses
 implementation
 
 uses
-  msetypes{msestrings},
+  msetypes,
   SysUtils,
   msestockobjects,
   mseformatstr;
@@ -316,7 +316,7 @@ de_projectoptionstext: projectoptionsaty =
   'Kein Quelleneditor',   {No Source Editor}
   'Tab-Einzug',   {Tab indent}
   'Tab Raum',   {Space tab}
-  'Tab Anzeigen',   {Show tabs}
+  'Tabs Anzeigen',   {Show tabs}
   'Anti-Aliasing-Schriftart',   {Anti aliased font}
   'Codierung',   {Encoding}
   'Farbe der Marke',   {Mark Color}
@@ -711,7 +711,7 @@ de_langnamestext: array[0..6] of msestring =
   'Deutsch',   {German}
   'Spanisch',   {Spanish}
   'Portugiesisch',   {Portuguese}
-  'Chinese (not complete)' //6_chinese
+  'Chinese (not complete)'   {Chinese (not complete)}
  );
 
 de_extendedtext: extendedaty =
