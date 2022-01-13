@@ -78,8 +78,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=916
- y=475
+ x=855
+ y=618
  cx=234
  cy=269
 replacedialog=16
@@ -207,7 +207,7 @@ options=114
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=11
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=251
@@ -482,7 +482,7 @@ befcommandon=0
 makeoptionson=6
  4095
  31
- 38
+ 34
  36
  4095
  4095
@@ -785,8 +785,9 @@ envvarons=0
 [edit]
 hintwidth=0
 hintheight=0
-finddtext=Info
+finddtext=mainformty
 findhistory=20
+ mainformty
  done
  sleep
  '3
@@ -806,20 +807,24 @@ findhistory=20
  XSync(
  xsync
  implem
- imple
 findoptions=1
-editpos=2
- 0,232
+editpos=3
+ 38,641
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+sourcefiles=3
  ${PROJECTDIR}/po2const2po/headerform.pas
  ${PROJECTDIR}/msestockobjects.pas
-relpaths=2
+ ${PROJECTDIR}/mseconsts_ide.pas
+relpaths=3
  headerform.pas
  msestockobjects.pas
-ismoduletexts=2
+ mseconsts_ide.pas
+ismoduletexts=3
+ 0
  0
  0
 modules=2
@@ -888,7 +893,7 @@ windowlayout=587
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -972,7 +977,7 @@ windowlayout=587
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1289,11 +1294,11 @@ windowlayout=587
  nx=0
  ny=0
  ncx=1204
- ncy=44
+ ncy=40
  x=0
  y=0
  cx=1219
- cy=42
+ cy=38
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1306,9 +1311,16 @@ windowlayout=587
  value=/home/fred/ideu/src/po2const2po/headerform.pas
  history=20
   /home/fred/ideu/src/po2const2po/headerform.pas
-  /home/fred/ideu/src/po2const2po/msestockobjects.pas
-  /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
+  /home/fred/ideu/src/po2const2po/po2const2po.pas
+  /home/fred/ideu/src/lang/mseconsts_ide_de.po
+  /home/fred/demo_mse/china/chinamsegui/lazutf8.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/ice.pas
+  /home/fred/mseide-msegui_testokonly/lib/common/kernel/mseconsts_de.pas
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mseconsts_ide.pas
+  /home/fred/ideu/src/mseconsts_ide_zh.pas
+  /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
   /home/fred/ideu/src/mseconsts_ide_fr.pas
@@ -1318,13 +1330,6 @@ windowlayout=587
   /home/fred/po2const2po/mseconsts.pas
   /home/fred/po2const2po/output/mseconsts_fr.pas
   /home/fred/po2const2po/mseconsts_ide.pas
-  /home/fred/po2const2po/msestockobjects.pas
-  /home/fred/po2const2po/mseconsts_ide_fr.pas
-  /home/fred/po2const2po/mseconsts_es.pas
-  /home/fred/po2const2po/mseconsts_ide_en.pas
-  /home/fred/ideu/src/mseconsts_ide_en.pas
-  /home/fred/Downloads/eschecs-master/source/icon.inc
-  /home/fred/uos/src/uos_define.inc
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1410,7 +1415,7 @@ windowlayout=587
  [_mse_stockdata_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=projecttreefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

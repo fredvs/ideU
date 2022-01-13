@@ -25,6 +25,7 @@ uses
   mseedit,
   mseificomp,
   mseificompglob,
+  msestockobjects,
   mseifiglob,
   msememodialog,
   msestatfile,
@@ -111,7 +112,7 @@ begin
 
     if thearray[theindex] = astro then
       hasfound := True;
-      //  writeln('---astrt:' + astrt);
+    //  writeln('---astrt:' + astrt);
 
     Inc(y);
   end;
@@ -135,6 +136,16 @@ var
   isarray9: Boolean = False;
   isarray10: Boolean = False;
   isarray11: Boolean = False;
+  imodalresultty: modalresultty;
+  imainformty: mainformty;
+  iextendedty: extendedty;
+  isourceformty: sourceformty;
+  iactionsmodulety: actionsmodulety;
+  iprojectoptionsconty: projectoptionsconty;
+  iprojectoptionsty: projectoptionsty;
+  iisettingsty: isettingsty;
+  itextgeneratorty: textgeneratorty;
+  istockcaptionty: stockcaptionty;
   theend: Boolean = False;
 begin
 
@@ -347,8 +358,12 @@ begin
   end;
 
   setlength(default_modalresulttext, length(en_modalresulttext));
-  default_modalresulttext := en_modalresulttext;
+  for imodalresultty := Low(modalresultty) to High(modalresultty) do
+    default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
 
+  // default_modalresulttext := en_modalresulttext;
+  for imodalresultty := Low(modalresultty) to High(modalresultty) do
+    default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
   y := 0;
 
   setlength(defaultresult, length(default_modalresulttext) + y);
@@ -356,7 +371,11 @@ begin
     defaultresult[x + y] := default_modalresulttext[x];
 
   setlength(default_modalresulttextnoshortcut, length(en_modalresulttextnoshortcut));
-  default_modalresulttextnoshortcut := en_modalresulttextnoshortcut;
+
+  // default_modalresulttextnoshortcut := en_modalresulttextnoshortcut;
+  for imodalresultty := Low(modalresultty) to High(modalresultty) do
+    default_modalresulttextnoshortcut[Ord(imodalresultty)] :=
+      en_modalresulttextnoshortcut[(imodalresultty)];
 
   y := length(defaultresult);
 
@@ -365,7 +384,11 @@ begin
     defaultresult[x + y] := default_modalresulttextnoshortcut[x];
 
   setlength(default_projectoptionscontext, length(en_projectoptionscontext));
-  default_projectoptionscontext := en_projectoptionscontext;
+
+  //default_projectoptionscontext := en_projectoptionscontext;
+  for iprojectoptionsconty := Low(projectoptionsconty) to High(projectoptionsconty) do
+    default_projectoptionscontext[Ord(iprojectoptionsconty)] :=
+      en_projectoptionscontext[(iprojectoptionsconty)];
 
   y := length(defaultresult);
 
@@ -374,7 +397,11 @@ begin
     defaultresult[x + y] := default_projectoptionscontext[x];
 
   setlength(default_actionsmoduletext, length(en_actionsmoduletext));
-  default_actionsmoduletext := en_actionsmoduletext;
+
+  //default_actionsmoduletext := en_actionsmoduletext;
+  for iactionsmodulety := Low(actionsmodulety) to High(actionsmodulety) do
+    default_actionsmoduletext[Ord(iactionsmodulety)] :=
+      en_actionsmoduletext[(iactionsmodulety)];
 
   y := length(defaultresult);
 
@@ -383,7 +410,11 @@ begin
     defaultresult[x + y] := default_actionsmoduletext[x];
 
   setlength(default_mainformtext, length(en_mainformtext));
-  default_mainformtext := en_mainformtext;
+
+  //default_mainformtext := en_mainformtext;
+  for imainformty := Low(mainformty) to High(mainformty) do
+    default_mainformtext[Ord(imainformty)] :=
+      en_mainformtext[(imainformty)];
 
   y := length(defaultresult);
 
@@ -392,7 +423,11 @@ begin
     defaultresult[x + y] := default_mainformtext[x];
 
   setlength(default_sourceformtext, length(en_sourceformtext));
-  default_sourceformtext := en_sourceformtext;
+
+  //default_sourceformtext := en_sourceformtext;
+  for isourceformty := Low(sourceformty) to High(sourceformty) do
+    default_sourceformtext[Ord(isourceformty)] :=
+      en_sourceformtext[(isourceformty)];
 
   y := length(defaultresult);
 
@@ -401,7 +436,11 @@ begin
     defaultresult[x + y] := default_sourceformtext[x];
 
   setlength(default_settingstext, length(en_settingstext));
-  default_settingstext := en_settingstext;
+
+  //default_settingstext := en_settingstext;
+  for iisettingsty := Low(isettingsty) to High(isettingsty) do
+    default_settingstext[Ord(iisettingsty)] :=
+      en_settingstext[(iisettingsty)];
 
   y := length(defaultresult);
 
@@ -410,7 +449,11 @@ begin
     defaultresult[x + y] := default_settingstext[x];
 
   setlength(default_projectoptionstext, length(en_projectoptionstext));
-  default_projectoptionstext := en_projectoptionstext;
+
+  //default_projectoptionstext := en_projectoptionstext;
+  for iprojectoptionsty := Low(projectoptionsty) to High(projectoptionsty) do
+    default_projectoptionstext[Ord(iprojectoptionsty)] :=
+      en_projectoptionstext[(iprojectoptionsty)];
 
   y := length(defaultresult);
 
@@ -419,7 +462,11 @@ begin
     defaultresult[x + y] := default_projectoptionstext[x];
 
   setlength(default_stockcaption, length(en_stockcaption));
-  default_stockcaption := en_stockcaption;
+
+  // default_stockcaption := en_stockcaption;
+  for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
+    default_stockcaption[Ord(istockcaptionty)] :=
+      en_stockcaption[(istockcaptionty)];
 
   y := length(defaultresult);
 
@@ -428,7 +475,10 @@ begin
     defaultresult[x + y] := default_stockcaption[x];
 
   setlength(default_langnamestext, length(en_langnamestext));
-  default_langnamestext := en_langnamestext;
+
+  // default_langnamestext := en_langnamestext;
+  for x := 0 to length(en_langnamestext) - 1 do
+    default_langnamestext[x] := en_langnamestext[x];
 
   y := length(defaultresult);
 
@@ -437,7 +487,11 @@ begin
     defaultresult[x + y] := default_langnamestext[x];
 
   setlength(default_extendedtext, length(en_extendedtext));
-  default_extendedtext := en_extendedtext;
+
+  //default_extendedtext := en_extendedtext;
+  for iextendedty := Low(extendedty) to High(extendedty) do
+    default_extendedtext[Ord(iextendedty)] :=
+      en_extendedtext[(iextendedty)];
 
   y := length(defaultresult);
 
@@ -591,6 +645,16 @@ var
   isid: Boolean = False;
   iscontext: Boolean = False;
   ispocontext: Boolean = False;
+  imodalresultty: modalresultty;
+  imainformty: mainformty;
+  iextendedty: extendedty;
+  isourceformty: sourceformty;
+  iactionsmodulety: actionsmodulety;
+  iprojectoptionsconty: projectoptionsconty;
+  iprojectoptionsty: projectoptionsty;
+  iisettingsty: isettingsty;
+  itextgeneratorty: textgeneratorty;
+  istockcaptionty: stockcaptionty;
 begin
   str1    := fn;
   strlang := '';
@@ -710,37 +774,57 @@ begin
     file1.Free;
 
     setlength(default_modalresulttext, length(en_modalresulttext));
-    default_modalresulttext := en_modalresulttext;
+    for imodalresultty := Low(modalresultty) to High(modalresultty) do
+      default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
 
     setlength(default_modalresulttextnoshortcut, length(en_modalresulttextnoshortcut));
-    default_modalresulttextnoshortcut := en_modalresulttextnoshortcut;
+    for imodalresultty := Low(modalresultty) to High(modalresultty) do
+      default_modalresulttextnoshortcut[Ord(imodalresultty)] :=
+        en_modalresulttextnoshortcut[(imodalresultty)];
 
     setlength(default_mainformtext, length(en_mainformtext));
-    default_mainformtext := en_mainformtext;
+    for imainformty := Low(mainformty) to High(mainformty) do
+      default_mainformtext[Ord(imainformty)] :=
+        en_mainformtext[(imainformty)];
 
     setlength(default_actionsmoduletext, length(en_actionsmoduletext));
-    default_actionsmoduletext := en_actionsmoduletext;
+    for iactionsmodulety := Low(actionsmodulety) to High(actionsmodulety) do
+      default_actionsmoduletext[Ord(iactionsmodulety)] :=
+        en_actionsmoduletext[(iactionsmodulety)];
 
     setlength(default_projectoptionscontext, length(en_projectoptionscontext));
-    default_projectoptionscontext := en_projectoptionscontext;
+    for iprojectoptionsconty := Low(projectoptionsconty) to High(projectoptionsconty) do
+      default_projectoptionscontext[Ord(iprojectoptionsconty)] :=
+        en_projectoptionscontext[(iprojectoptionsconty)];
 
     setlength(default_settingstext, length(en_settingstext));
-    default_settingstext := en_settingstext;
+    for iisettingsty := Low(isettingsty) to High(isettingsty) do
+      default_settingstext[Ord(iisettingsty)] :=
+        en_settingstext[(iisettingsty)];
 
     setlength(default_projectoptionstext, length(en_projectoptionstext));
-    default_projectoptionstext := en_projectoptionstext;
+    for iprojectoptionsty := Low(projectoptionsty) to High(projectoptionsty) do
+      default_projectoptionstext[Ord(iprojectoptionsty)] :=
+        en_projectoptionstext[(iprojectoptionsty)];
 
     setlength(default_sourceformtext, length(en_sourceformtext));
-    default_sourceformtext := en_sourceformtext;
+    for isourceformty := Low(sourceformty) to High(sourceformty) do
+      default_sourceformtext[Ord(isourceformty)] :=
+        en_sourceformtext[(isourceformty)];
 
     setlength(default_stockcaption, length(en_stockcaption));
-    default_stockcaption := en_stockcaption;
+    for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
+      default_stockcaption[Ord(istockcaptionty)] :=
+        en_stockcaption[(istockcaptionty)];
 
     setlength(default_langnamestext, length(en_langnamestext));
-    default_langnamestext := en_langnamestext;
+    for x := 0 to length(en_langnamestext) - 1 do
+      default_langnamestext[x] := en_langnamestext[x];
 
     setlength(default_extendedtext, length(en_extendedtext));
-    default_extendedtext := en_extendedtext;
+    for iextendedty := Low(extendedty) to High(extendedty) do
+      default_extendedtext[Ord(iextendedty)] :=
+        en_extendedtext[(iextendedty)];
 
     file1          := ttextdatastream.Create(outputdir.Value + 'mseconsts_ide_' + strlang + '.pas', fm_create);
     file1.encoding := ce_utf8;

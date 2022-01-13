@@ -315,7 +315,7 @@ options=114
  index=2
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=106
@@ -956,7 +956,7 @@ makeoptionson=14
  4095
  4095
  17
- 202
+ 206
  2046
  4095
  192
@@ -968,8 +968,8 @@ makeoptionson=14
  4095
  0
 compilerusedon=29
- 1587
- 4
+ 1591
+ 0
  8
  256
  0
@@ -1623,12 +1623,10 @@ findhistory=20
  trim trai
  @fr
 findoptions=1
-editpos=20
- 0,-1073741823
- 0,729
- 0,743
+editpos=21
  0,-1073741823
  0,-1073741823
+ 4,729
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1644,6 +1642,9 @@ editpos=20
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,63
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1664,7 +1665,8 @@ bookmarks16=0
 bookmarks17=0
 bookmarks18=0
 bookmarks19=0
-sourcefiles=20
+bookmarks20=0
+sourcefiles=21
  ${PROJECTDIR}/mseconsts_ide_de.pas
  ${PROJECTDIR}/mseconsts_ide_es.pas
  ${PROJECTDIR}/mseconsts_ide_fr.pas
@@ -1685,7 +1687,8 @@ sourcefiles=20
  /home/fred/mseide-msegui/lib/common/kernel/windows/msesysintf.pas
  /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
  ${PROJECTDIR}/lang/mseconsts_ide_de.po
-relpaths=20
+ /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
+relpaths=21
  mseconsts_ide_de.pas
  mseconsts_ide_es.pas
  mseconsts_ide_fr.pas
@@ -1706,7 +1709,9 @@ relpaths=20
  mseide-msegui/lib/common/kernel/windows/msesysintf.pas
  mseide-msegui/lib/common/kernel/linux/msesysintf.pas
  lang/mseconsts_ide_de.po
-ismoduletexts=20
+ ../mseide-msegui/lib/common/graphics/msedrawtext.pas
+ismoduletexts=21
+ 0
  0
  0
  0
@@ -1760,10 +1765,32 @@ nomenumodules=7
  0
  0
 [sourcefo.files_tab]
+order=21
+ 0
+ 1
+ 2
+ 20
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=637
+windowlayout=659
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2207,11 +2234,11 @@ windowlayout=637
  nx=0
  ny=0
  ncx=1341
- ncy=6
+ ncy=2
  x=0
  y=0
  cx=1356
- cy=4
+ cy=0
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2221,8 +2248,9 @@ windowlayout=637
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide_fr.pas
+ value=/home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
  history=20
+  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide_es.pas
   /home/fred/ideu/src/lang/mseconsts_ide_de.po
   /home/fred/demo_mse/china/chinamsegui/lazutf8.pas
@@ -2236,7 +2264,6 @@ windowlayout=637
   /home/fred/ideu/src/po2const2po/output/mseconsts_ide_zh.pas
   /home/fred/ideu/src/mseconsts_ide_pt.pas
   /home/fred/ideu/src/mseconsts_ide_ru.pas
-  /home/fred/ideu/src/mseconsts_ide_fr.pas
   /home/fred/ideu/src/mseconsts_ide_fr_new.pas
   /home/fred/demo_mse/po2const2po/mseconsts_es.pas
   /home/fred/po2const2po/mseconsts.pas
@@ -2264,8 +2291,30 @@ windowlayout=637
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=21
+  0
+  1
+  2
+  20
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+  10
+  11
+  12
+  13
+  14
+  15
+  16
+  17
+  18
+  19
  firsttab=0
- index=2
+ index=3
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
