@@ -1,19 +1,19 @@
 object conflangfo: tconflangfo
   visible = False
-  bounds_x = 410
+  bounds_x = 451
   bounds_y = 270
-  bounds_cx = 300
+  bounds_cx = 331
   bounds_cy = 222
-  bounds_cxmin = 300
+  bounds_cxmin = 331
   bounds_cymin = 222
-  bounds_cxmax = 300
+  bounds_cxmax = 331
   bounds_cymax = 222
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    300
+    331
     222
   )
   statfile = mainfo.mainstatfile
@@ -21,10 +21,11 @@ object conflangfo: tconflangfo
   oncreated = oncreat
   moduleclassname = 'tmseform'
   object ok: tbutton
-    bounds_x = 213
-    bounds_y = 4
+    bounds_x = 236
+    bounds_y = 6
     bounds_cx = 78
     bounds_cy = 26
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'OK'
     onexecute = oncok
@@ -41,7 +42,7 @@ object conflangfo: tconflangfo
       2
     )
     taborder = 1
-    bounds_x = 38
+    bounds_x = 27
     bounds_y = 188
     bounds_cx = 102
     bounds_cy = 17
@@ -51,10 +52,10 @@ object conflangfo: tconflangfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 2
-    bounds_x = 32
-    bounds_y = 41
-    bounds_cx = 240
-    bounds_cy = 134
+    bounds_x = 20
+    bounds_y = 39
+    bounds_cx = 290
+    bounds_cy = 131
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     rowcount = 7
     datacols.count = 3
@@ -63,7 +64,7 @@ object conflangfo: tconflangfo
         colorselect = -1610612731
         coloractive = -1610612731
         colorfocused = -1610612731
-        width = 188
+        width = 224
         options = [co_readonly, co_disabled, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'gridlangcaption'
         dataclass = tgridmsestringdatalist
@@ -126,7 +127,7 @@ object conflangfo: tconflangfo
       visible = False
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 188
+      bounds_cx = 224
       bounds_cy = 17
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
@@ -138,7 +139,7 @@ object conflangfo: tconflangfo
       optionsskin = [osk_framebuttononly]
       color = -1610612731
       taborder = 2
-      bounds_x = 189
+      bounds_x = 225
       bounds_y = 0
       bounds_cx = 44
       bounds_cy = 17
@@ -151,7 +152,7 @@ object conflangfo: tconflangfo
       optionsskin = [osk_framebuttononly]
       taborder = 3
       visible = False
-      bounds_x = 234
+      bounds_x = 270
       bounds_y = 0
       bounds_cx = 1
       bounds_cy = 17

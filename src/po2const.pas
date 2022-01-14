@@ -22,10 +22,13 @@ uses
   mseguiglob;
 
 var
-  lang_stockcaption, lang_modalresult, lang_modalresultnoshortcut, lang_mainform, lang_settings, lang_actionsmodule, lang_projectoptionscon, lang_projectoptions, lang_sourceform, lang_extended, lang_langnames: array of msestring;
+  lang_stockcaption, lang_modalresult, lang_modalresultnoshortcut, lang_mainform, lang_settings,
+  lang_actionsmodule, lang_projectoptionscon, lang_projectoptions, lang_sourceform, lang_extended, 
+  lang_langnames: array of msestring;
 
 procedure createnewlang(alang: msestring);
 procedure dosearch(thearray: array of msestring; theindex: integer);
+procedure findpofiles();
 
 implementation
 
@@ -38,9 +41,50 @@ var
   astro, astrt, acomp: utf8String;
   hasfound: Boolean = False;
   empty: Boolean = False;
+  lang_langnamestmp: array of msestring;
 
 
 ///////////////
+
+procedure findpofiles();
+var
+  ListOfFiles   : array of string;
+  SearchResult  : TSearchRec;
+  Attribute     : Word;
+  i             : Integer=0;
+  str1          : string;
+
+begin
+  Attribute := faReadOnly or faArchive;
+   
+  SetLength(ListOfFiles, 0);
+ 
+ str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator;
+
+  // List the files
+  FindFirst(str1+ '*.po', Attribute, SearchResult);
+  while (i = 0) do
+   begin
+    SetLength(ListOfFiles, Length(ListOfFiles) + 1); // Increase the list
+    ListOfFiles[High(ListOfFiles)] := SearchResult.Name; // Add it at the end of the list
+    i := FindNext(SearchResult);
+  end;
+  FindClose(SearchResult);
+ 
+  setlength(lang_langnamestmp,1); 
+  lang_langnamestmp[0] := '[en]';
+   
+  for i := Low(ListOfFiles) to High(ListOfFiles) do
+    if system.pos('empty',ListOfFiles[i]) = 0 then
+    begin
+     setlength(lang_langnamestmp,length(lang_langnamestmp) + 1); 
+     str1 := ListOfFiles[i];
+     str1     := utf8StringReplace(str1, 'ideu_', '', [rfReplaceAll]);
+     str1     := utf8StringReplace(str1, '.po', '', [rfReplaceAll]);
+     lang_langnamestmp[length(lang_langnamestmp) - 1] := '[' + trim(str1) + ']';
+     //writeln(lang_langnamestmp[length(lang_langnamestmp) - 1]);
+    end;
+ end;
 
 procedure dosearch(thearray: array of msestring; theindex: integer);
 var
@@ -73,7 +117,7 @@ end;
 
 procedure createnewlang(alang: msestring);
 var
-  x: integer;
+  x, x2, x3: integer;
   file1: ttextdatastream;
   str1, strinit, strlang, filename1: msestring;
   str2, str3, str4, strtemp: utf8String;
@@ -97,16 +141,11 @@ var
 begin
   strlang := '';
 
-  str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'mseconsts_ide_' + alang + '.po';
+  str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'ideu_' + alang + '.po';
 
-  // writeln(str1); 
-
-  if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
+   if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
   begin
-
-    // writeln(' not exist' ); 
-
-    setlength(lang_modalresult, length(en_modalresulttext));
+   setlength(lang_modalresult, length(en_modalresulttext));
     for imodalresultty := Low(modalresultty) to High(modalresultty) do
       lang_modalresult[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
 
@@ -150,20 +189,38 @@ begin
       lang_stockcaption[Ord(istockcaptionty)] :=
         en_stockcaption[(istockcaptionty)];
 
-    setlength(lang_langnames, length(en_langnamestext));
-    for x := 0 to length(en_langnamestext) - 1 do
-      lang_langnames[x] := en_langnamestext[x];
-
     setlength(lang_extended, length(en_extendedtext));
     for iextendedty := Low(extendedty) to High(extendedty) do
       lang_extended[Ord(iextendedty)] :=
         en_extendedtext[(iextendedty)];
+        
+     findpofiles();
 
+    setlength(lang_langnames, length(lang_langnamestmp));
+    for x := 0 to length(en_langnamestext) - 1 do
+      lang_langnames[x] := en_langnamestext[x];
+      
+    if length(lang_langnames) > length(en_langnamestext) then
+    begin
+    for x := 0 to high(lang_langnames) do
+    begin
+     str2 := trim(copy(lang_langnames[x], system.pos('[',lang_langnames[x]), 10));
+     for x2 := 0 to high(lang_langnamestmp) do
+            if trim(lang_langnamestmp[x2]) = str2 then lang_langnamestmp[x2] := '';
+     end;
+     
+     x2 := length(en_langnamestext) ;
+     for x := 0 to high(lang_langnamestmp) do
+     if trim(lang_langnamestmp[x]) <> '' then
+     begin
+      lang_langnames[x2] := 'Language ' + trim(lang_langnamestmp[x]);
+      inc(x2);
+     end;
+     
+     end;
   end
   else if fileexists(str1) then
   begin
-
-    // writeln(str1 + ' exist' ); 
 
     file1 := ttextdatastream.Create(str1, fm_read);
 
@@ -176,8 +233,6 @@ begin
     str3 := '';
     str2 := '';
     str4 := '';
-
-    // writeln(' 1' ); 
 
     while not file1.EOF do
     begin
@@ -195,7 +250,6 @@ begin
           str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
           str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
           constvaluearray[length(constvaluearray) - 1] := str2;
-          // writeln(str2);
           str3      := '';
           str4      := '';
           str4      := (UTF8Copy(str1, 10, length(str1) - 10));
@@ -212,7 +266,6 @@ begin
             str2 := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
             str2 := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
             constvaluearray[length(constvaluearray) - 1] := str2;
-            // writeln(str2);
             str3 := '';
             str4 := '';
           end;
@@ -262,20 +315,15 @@ begin
           else
             str3    := str3 + strtemp;
         end;
-
     end;
-    // writeln(' 2' ); 
     setlength(constvaluearray, length(constvaluearray) + 1);
     str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
     str2 := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
     str2 := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
     constvaluearray[length(constvaluearray) - 1] := str2;
-    // writeln(str2);
-
+    
     file1.Free;
-
-    //   writeln(' 3' ); 
-
+   
     setlength(default_modalresulttext, length(en_modalresulttext));
     for imodalresultty := Low(modalresultty) to High(modalresultty) do
       default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
@@ -329,17 +377,12 @@ begin
       default_extendedtext[Ord(iextendedty)] :=
         en_extendedtext[(iextendedty)];
 
-    // writeln(' 4' ); 
-
     setlength(lang_modalresult, length(default_modalresulttext));
 
     for x := 0 to length(default_modalresulttext) - 1 do
     begin
-      // writeln('length(default_modalresulttext) ' +
-      // inttostr(length(default_modalresulttext))); 
-
+      
       dosearch(default_modalresulttext, x);
-      // writeln(' 4.2' ); 
       if hasfound then
       else
         astrt := default_modalresulttext[x];
@@ -348,16 +391,10 @@ begin
 
       astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
       astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
-
-      //   writeln('length(lang_modalresult) ' +
-      // inttostr(length(lang_modalresult))); 
-
-
+      
       lang_modalresult[x] := astrt;
 
     end;
-
-    //writeln(' 5' );
 
     setlength(lang_modalresultnoshortcut, length(default_modalresulttextnoshortcut));
 
@@ -375,7 +412,6 @@ begin
       astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_modalresultnoshortcut[x] := astrt;
-
     end;
 
     setlength(lang_projectoptionscon, length(default_projectoptionscontext));
@@ -394,11 +430,9 @@ begin
       astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_projectoptionscon[x] := astrt;
-
     end;
 
     setlength(lang_actionsmodule, length(default_actionsmoduletext));
-
 
     for x := 0 to length(default_actionsmoduletext) - 1 do
     begin
@@ -451,11 +485,9 @@ begin
       astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_sourceform[x] := astrt;
-
     end;
 
     setlength(lang_settings, length(default_settingstext));
-
 
     for x := 0 to length(default_settingstext) - 1 do
     begin
@@ -471,7 +503,6 @@ begin
       astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_settings[x] := astrt;
-
     end;
 
     setlength(lang_projectoptions, length(default_projectoptionstext));
@@ -532,7 +563,7 @@ begin
     end;
 
     setlength(lang_langnames, length(default_langnamestext));
-
+    
     for x := 0 to length(default_langnamestext) - 1 do
     begin
       dosearch(default_langnamestext, x);
@@ -549,10 +580,29 @@ begin
       lang_langnames[x] := astrt;
 
     end;
-
+       
+     findpofiles();
+     
+    if length(lang_langnamestmp) > length(lang_langnames) then
+       begin
+           x3 := length(lang_langnames) ;
+           setlength(lang_langnames, length(lang_langnamestmp));
+           for x := 0 to high(lang_langnames) do
+            begin
+               str2 := trim(copy(lang_langnames[x], system.pos('[',lang_langnames[x]), 10));
+               for x2 := 0 to high(lang_langnamestmp) do
+                 if trim(lang_langnamestmp[x2]) = str2 then lang_langnamestmp[x2] := '';
+             end;
+     
+     for x := 0 to high(lang_langnamestmp) do
+     if trim(lang_langnamestmp[x]) <> '' then
+     begin
+     lang_langnames[x3] := 'Language ' + trim(lang_langnamestmp[x]);
+     inc(x3);
+     end;
+          
+    end;
+   end;
   end;
-
-end;
-
 end.
 

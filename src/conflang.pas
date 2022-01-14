@@ -85,7 +85,7 @@ var
   x: integer;
 begin
   if conflangloaded > 0 then
-    if info.eventkind = cek_buttonpress then
+    if info.eventkind = cek_buttonrelease then
     begin
       MSEFallbackLang := '';
       for x           := 0 to gridlang.rowcount - 1 do

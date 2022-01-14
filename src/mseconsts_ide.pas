@@ -15,6 +15,7 @@ interface
 uses
   msestockobjects,
   mseglob,
+  po2const,
   msestrings,
   mseapplication,
   msetypes;
@@ -778,7 +779,6 @@ const
     'Search in project directory',         // sc_searchinprojectdir
     'Search in directories',               // sc_searchindirectories
     'Include subdirectories',               // sc_includesubdir
-
     'Replace',                              // sc_replace
     'Replace all',                          // sc_replace all
     'Replace with',                         // sc_replacewith
@@ -800,20 +800,20 @@ const
     'Copyright'                         // sc_copyright
     );
 
- en_langnamestext: array[0..6] of msestring = (
-    'English',                                // 0_English
-    'Russian',                                // 1_Russian
-    'French',                                // 2_french
-    'German',                                // 3_german
-    'Spanish',                                // 4_spanish
-    'Portuguese',                            //5_portuguese
-    'Chinese (not complete)'                 //6_chinese
-    );
-
  en_extendedtext: extendedaty =
  ('Delete selected row?',    // ex_del_row_selected
   'Delete %s selected rows?' // ex_del_rows_selected
   );
+  
+ en_langnamestext: array[0..6] of msestring = (
+    'English [en]',                                // 0_English
+    'Russian [ru]',                                // 1_Russian
+    'French [fr]',                                // 2_french
+    'German [de]',                                // 3_german
+    'Spanish [es]',                                // 4_spanish
+    'Portuguese [pt]',                            //5_portuguese
+    'Chinese (not complete) [zh]'                 //6_chinese
+    ); 
 
 implementation
 
@@ -827,10 +827,11 @@ function delete_n_selected_rows(const params: array of const): msestring;
 begin
  with params[0] do begin
   if vinteger = 1 then begin
-   result:= en_extendedtext[ex_del_row_selected];
+   result:= lang_extended[ord(ex_del_row_selected)];
   end
   else begin
-   result := StringReplace(en_extendedtext[ex_del_rows_selected], #37#115, inttostrmse(vinteger), [rfReplaceAll]);
+   result := StringReplace(lang_extended[ord(ex_del_rows_selected)], #37#115,
+    inttostrmse(vinteger), [rfReplaceAll]);
   end;
  end;
 end;

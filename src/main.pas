@@ -4910,6 +4910,7 @@ var
   item1: tmenuitem;
   x: shortint;
   stca: stockcaptionty;
+  str : string;
 begin
 
   //  setlangconsts(thelang);
@@ -5366,19 +5367,16 @@ begin
 
         end;
 
-      conflangfo.gridlang.rowcount := length(langnamesreg);
+      conflangfo.gridlang.rowcount := length(lang_langnames);
 
-      //  {
-      for x := 0 to length(langnamesreg) - 1 do
+      for x := 0 to length(lang_langnames) - 1 do
         begin
-          //  writeln(inttostr(x) + ' 1');
-          conflangfo.gridlangcaption[x] := lang_langnames[x] +
-                                           '   (' + langnamesreg[x] + ')';
-          //    writeln(inttostr(x) + ' 2');
-          conflangfo.gridlangcode[x]    := langnamesreg[x];
-
+          conflangfo.gridlangcaption[x] := lang_langnames[x] ;
+          str := trim(copy(lang_langnames[x], system.pos('[',lang_langnames[x]), 10));
+          str :=  StringReplace(str, '[', '', [rfReplaceAll]);
+          str :=  StringReplace(str, ']', '', [rfReplaceAll]);
+          conflangfo.gridlangcode[x]    := str;
         end;
-
 
       conflangfo.setasdefault.frame.Caption := lang_stockcaption[Ord(sc_setasdefault)];
       conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
