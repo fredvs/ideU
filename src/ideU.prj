@@ -136,8 +136,10 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=replace
+ value=setlang(
  history=20
+  setlang(
+  setlang
   replace
   with stockobjects
   stockobjects.captions
@@ -152,12 +154,10 @@ findinfiledialog=92
   en_modalresulttext
   fm_read
   langnamesreg
-  setlang
   sc_searchindirectories
   {msestrings}
   chinese
   chine
-  china
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -927,17 +927,23 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=5
  ACTIONSMO
+ CONFIDEUFO
  CONFLANGFO
+ MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=5
  TACTIONSMO
+ TCONFIDEUFO
  TCONFLANGFO
+ TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/conflang.mfm
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=14
@@ -1595,10 +1601,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=writeln
+finddtext=setlang
 findhistory=20
- writeln
  setlang
+ writeln
  setlang(
  ma_wishsearch
  captions[
@@ -1618,55 +1624,84 @@ findhistory=20
  dock
  docka
 findoptions=1
-editpos=4
+editpos=9
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,1100
+ 0,-1073741823
+ 0,-1073741823
+ 0,600
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/conflang.pas
  ${PROJECTDIR}/mseconsts_ide.pas
-relpaths=4
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/po2const.pas
+ ${PROJECTDIR}/msegdbutils.pas
+ ${PROJECTDIR}/conflang.pas
+ ${PROJECTDIR}/confideu.pas
+relpaths=9
  actionsmodule.pas
  sourceform.pas
  conflang.pas
  mseconsts_ide.pas
-ismoduletexts=4
+ main.pas
+ po2const.pas
+ msegdbutils.pas
+ conflang.pas
+ confideu.pas
+ismoduletexts=9
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=5
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/conflang.mfm
-moduleoptions=4
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  -1
  -1
  -1
  -1
-nomenumodules=4
  -1
+nomenumodules=5
+ 0
+ 0
  0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=5
 [layout]
-windowlayout=570
+windowlayout=590
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1821,7 +1856,7 @@ windowlayout=570
  sortdescend1=0
  sorted=0
  col=0
- row=15
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1881,7 +1916,7 @@ windowlayout=570
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2124,8 +2159,9 @@ windowlayout=570
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/mseconsts_ide.pas
- history=10
+ value=/home/fred/ideu/src/confideu.pas
+ history=11
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/mseconsts_ide.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/lang/mseconsts_ide_zh.po
@@ -2158,7 +2194,7 @@ windowlayout=570
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=5
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2221,7 +2257,7 @@ windowlayout=570
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2232,6 +2268,25 @@ windowlayout=570
  y=270
  cx=341
  cy=222
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=242
+ y=29
+ cx=639
+ cy=699
  rcx=0
  rcy=0
  wsize=0

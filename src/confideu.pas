@@ -777,11 +777,6 @@ begin
 {$ifdef mswindows}
   brepaintcanvas.Visible := False;
 {$endif}
-
-//mainfo.setlang(MSEFallbackLang); 
-
-//setlangextrasettings();
-
 end;
 
 procedure tconfideufo.setlangextrasettings();

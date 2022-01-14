@@ -66,12 +66,6 @@ uses
 
 procedure tconflangfo.oncok(const Sender: TObject);
 begin
-{
-  mainfo.setlang(MSEFallbackLang);
-  confideufo.setlangextrasettings();
-  confcompilerfo.setlangcompilers();
-  confdebuggerfo.setlangdebuggers();
- } 
    Close;
 end;
 
@@ -94,7 +88,7 @@ begin
           gridlangbool[x] := True;
           MSEFallbackLang := gridlangcode[x];
        
-          mainfo.setlang(MSEFallbackLang);
+          mainfo.setlangideu(MSEFallbackLang);
           confideufo.setlangextrasettings();
           confcompilerfo.setlangcompilers();
           confdebuggerfo.setlangdebuggers();

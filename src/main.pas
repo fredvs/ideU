@@ -188,7 +188,7 @@ type
 
     function closeallmodule(): Boolean;
 
-    procedure setlang(thelang: String);
+    procedure setlangideu(thelang: String);
 
     //debugger
     procedure restartgdbonexecute(Const Sender: TObject);
@@ -4905,7 +4905,7 @@ begin
   closeallmodule();
 end;
 
-procedure tmainfo.setlang(thelang: String);
+procedure tmainfo.setlangideu(thelang: String);
 var 
   item1: tmenuitem;
   x: shortint;
@@ -5954,9 +5954,7 @@ end;
 procedure tmainfo.onactiv(Const Sender: TObject);
 var 
   x: integer;
-  isinside: Boolean = False;
 begin
-
   if isactivated = False then
     begin
       isactivated        := True;
@@ -5964,24 +5962,12 @@ begin
 
       if conflangfo.setasdefault.Value = True then
         begin
-
           for x := 0 to conflangfo.gridlang.rowcount - 1 do
             if conflangfo.gridlangbool[x] = True then
               MSEFallbackLang := conflangfo.gridlangcode[x];
-
-          setlang(MSEFallbackLang);
-        end
-      else if MSEFallbackLang = '' then
-             setlang(MSEFallbackLang)
-      else
-        begin
-          for x := 0 to length(langnamesreg) - 1 do
-            if MSEFallbackLang = langnamesreg[x] then
-              isinside := True;
-          if isinside then
-            setlang(MSEFallbackLang);
         end;
-    end;
+      setlangideu(MSEFallbackLang);
+    end;       
 end;
 
 procedure tmainfo.ontemplateeditor(Const Sender: TObject);
