@@ -784,7 +784,7 @@ begin
 
   Caption := lang_stockcaption[ord(sc_extrasettings)];
   but_ok.Caption  := lang_modalresult[Ord(mr_ok)];
-  but_apply.Caption  := settingstext(se_apply);
+  but_apply.Caption  := lang_settings[Ord(se_apply)];
   group_assistive.frame.caption := lang_settings[Ord(se_groupassistive)];
   tesakitdir.frame.caption := lang_settings[Ord(se_sakitdir)];
   tesakitdir.controller.captiondir := lang_settings[Ord(se_sakitdir)];

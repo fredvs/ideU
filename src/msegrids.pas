@@ -16435,12 +16435,19 @@ procedure tcustomgrid.dodeleteselectedrows(const sender: tobject);
 var
  ar1: integerarty;
  int1: integer;
+ str: string;
 begin
  ar1:= fdatacols.getselectedrows;
  if high(ar1) >= 0 then begin
-  if askok(stockobjects.textgenerators[tg_delete_n_selected_rows](
-                                       [integer(length(ar1))]),
-                            lang_stockcaption[ord(sc_Confirmation)]) then begin
+ 
+ if high(ar1) = 0 then
+    str := lang_extended[ord(ex_del_row_selected)]
+  else str := StringReplace(lang_extended[ord(ex_del_rows_selected)], #37#115,
+    inttostrmse(length(ar1)), [rfReplaceAll]);
+  
+  if askok(str,lang_stockcaption[ord(sc_Confirmation)]) 
+                            
+ then begin
    beginupdate;
    try
     for int1:= high(ar1) downto 0 do begin

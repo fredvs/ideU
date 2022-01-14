@@ -857,12 +857,13 @@ begin
           if filechanged then
           begin
             filechanged := False;
-            wstr1       := sourceformtext(sf_str_file) + filepath + sourceformtext(sf_haschanged);
+            wstr1       := lang_sourceform[ord(sf_str_file)] + filepath +
+             lang_sourceform[ord(sf_haschanged)];
             if modified then
-              wstr1 := wstr1 + ' ' + sourceformtext(sf_modieditalso);
+              wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_modieditalso)];
 
 
-            wstr1 := wstr1 + ' ' + sourceformtext(sf_wishreload);
+            wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_wishreload)];
 
             //// fred
 
@@ -875,7 +876,7 @@ begin
             end
             else if confideufo.tbfilenoload.Value = True then
               mainfo.setstattext(filepath + ' was changed by external program and not reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning)
-            else if askok(wstr1, sourceformtext(sf_confirmation)) then
+            else if askok(wstr1, lang_sourceform[ord(sf_confirmation)]) then
             begin
               mainfo.setstattext(filepath + ' was changed by external program and reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning);
               filechanged := False;
@@ -1215,7 +1216,7 @@ begin
     tsourcepage(files_tab.ActivePage).Caption := trim(tsourcepage(files_tab.ActivePage).Caption) + '   ';
   end
   else
-    Caption := sourceformtext(sf_none);
+    Caption := lang_sourceform[ord(sf_none)];
 
 end;
 
@@ -1705,8 +1706,9 @@ begin
     ar1[high(ar1)] := UTF8Decode(stringtopascalstring(ar1[high(ar1)]));
     mstr2          := concatstrings(ar1, lineend);
     mstr4          := messagestr(mstr2);
-    if askyesno(sourceformtext(sf_wishreplace) + lineend + mstr3 + lineend + sourceformtext(sf_str_with) + lineend +
-      mstr4 + lineend + '?', sourceformtext(sf_confirmation)) then
+    if askyesno(lang_sourceform[ord(sf_wishreplace)] + lineend + mstr3 + lineend +
+     lang_sourceform[ord(sf_str_with)] + lineend +
+      mstr4 + lineend + '?', lang_sourceform[ord(sf_confirmation)]) then
     begin
       editor.begingroup;
       deleteselection;

@@ -46,7 +46,7 @@ var
  
 implementation
 uses
- storedcomponentinfodialog_mfm,msefileutils,actionsmodule;
+ storedcomponentinfodialog_mfm, po2const, msefileutils,actionsmodule;
  
 { tstoredcomponentinfodialogfo }
 
@@ -55,7 +55,7 @@ begin
  infopo:= @ainfo;
  inherited create(nil);
  with ainfo do begin
-  self.caption:= actionsmoduletext(ac_storecomponent)+' '+
+  self.caption:= lang_actionsmodule[ord(ac_storecomponent)]+' '+
              msestring(componentname)+': '+msestring(compclass);
   self.compname.value:= compname;
   self.compdesc.value:= compdesc;

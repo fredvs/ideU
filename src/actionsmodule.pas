@@ -947,7 +947,7 @@ begin
     linefo.bringtofront
   else
     integerenter(fgototheline, 1, sourcefo.ActivePage.source_editor.rowcount,
-      sourceformtext(sf_gotoline), sourceformtext(sf_findline));
+      lang_sourceform[ord(sf_gotoline)], lang_sourceform[ord(sf_findline)]);
   linefo.font.Height := confideufo.fontsize.Value;
   linefo.font.Name   := ansistring(confideufo.fontname.Value);
   // sourcefo.activepage.doline;

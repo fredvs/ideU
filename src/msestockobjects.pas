@@ -460,13 +460,9 @@ type
     ffontaliasregistered: Boolean;
     function getbitmaps(index: stockbitmapty): tbitmap;
     function getfonts(index: stockfontty): twidgetfont;
-    function getmodalresulttext(index: modalresultty): msestring;
-    function getmodalresulttextnoshortcut(index: modalresultty): msestring;
     function getglyphs: timagelist;
     procedure fontchanged(const Sender: TObject);
     function getmseicon: tmaskedbitmap;
-    function getcaptions(index: stockcaptionty): msestring;
-    function gettextgenerator(index: textgeneratorty): textgeneratorfuncty;
     procedure setmseicon(const avalue: tmaskedbitmap);
   public
     constructor Create;
@@ -474,10 +470,6 @@ type
     procedure paintglyph(const Canvas: tcanvas; const glyph: stockglyphty; const rect: rectty; const grayed: Boolean = False; const color: colorty = cl_glyph; aalignment: alignmentsty = [al_ycentered, al_xcentered]);
     property bitmaps[index: stockbitmapty]: tbitmap read getbitmaps;
     property fonts[index: stockfontty]: twidgetfont read getfonts;
-    property modalresulttext[index: modalresultty]: msestring read getmodalresulttext;
-    property modalresulttextnoshortcut[index: modalresultty]: msestring read getmodalresulttextnoshortcut;
-    property captions[index: stockcaptionty]: msestring read getcaptions;
-    property textgenerators[index: textgeneratorty]: textgeneratorfuncty read gettextgenerator;
     property glyphs: timagelist read getglyphs;
     property mseicon: tmaskedbitmap read getmseicon write setmseicon;
   end;
@@ -489,7 +481,6 @@ type
   end;
 
 function stockobjects: tstockobjects;
-function sc(const acaption: stockcaptionty): msestring;
 
 procedure init;
 procedure deinit;
@@ -615,10 +606,6 @@ begin
   Result := stockobjs;
 end;
 
-function sc(const acaption: stockcaptionty): msestring;
-begin
-  Result := stockobjects.captions[acaption];
-end;
 
 procedure init;
 begin
@@ -790,28 +777,6 @@ end;
 procedure tstockobjects.setmseicon(const avalue: tmaskedbitmap);
 begin
   stockdata.mseicon.bitmap.Assign(avalue);
-end;
-
-function tstockobjects.getmodalresulttext(index: modalresultty): msestring;
-begin
-  Result := mseconsts_ide.modalresulttext(index);
-  // result:= fmodalresulttext[index];
-end;
-
-function tstockobjects.getmodalresulttextnoshortcut(index: modalresultty): msestring;
-begin
-  Result := mseconsts_ide.modalresulttextnoshortcut(index);
-  // result:= fmodalresulttextnoshortcut[index];
-end;
-
-function tstockobjects.getcaptions(index: stockcaptionty): msestring;
-begin
-  Result := stockcaptions(index);
-end;
-
-function tstockobjects.gettextgenerator(index: textgeneratorty): textgeneratorfuncty;
-begin
-  Result := stocktextgenerators(index);
 end;
 
 procedure tstockobjects.paintglyph(const Canvas: tcanvas; const glyph: stockglyphty; const rect: rectty; const grayed: Boolean = False; const color: colorty = cl_glyph; aalignment: alignmentsty = [al_ycentered, al_xcentered]);

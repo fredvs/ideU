@@ -1353,11 +1353,11 @@ begin
   if exceptobject is Exception then
   begin
     if ShowMessage(msestring(Exception(exceptobject).Message),
-      actionsmoduletext(ac_error), [mr_skip, mr_cancel]) <> mr_skip then
+      lang_actionsmodule[ord(ac_error)], [mr_skip, mr_cancel]) <> mr_skip then
       Result := True;
   end
   else
-    raise Exception.Create(ansistring(actionsmoduletext(ac_invalidexception)));
+    raise Exception.Create(ansistring(lang_actionsmodule[ord(ac_invalidexception)]));
 end;
 
 function projectfiledialog(var aname: filenamety; save: Boolean): modalresultty;
@@ -1566,7 +1566,7 @@ begin
           begin
             item1         := tmenuitem.Create;
             item1.Name    := 'tools';
-            item1.Caption := actionsmoduletext(ac_tools);
+            item1.Caption := lang_actionsmodule[ord(ac_tools)];
             insert(itemindexbyname('settings'), item1);
           end;
           with item1.submenu do
@@ -1813,18 +1813,31 @@ begin
     setlength(fnewfifilters, 3);
     setlength(fnewfiexts, 3);
     setlength(fnewfisources, 3);
-
-    newfinames[0]   := actionsmoduletext(ac_program);
+    
+    
+    if length(lang_actionsmodule) > 0 then
+    newfinames[0]   := lang_actionsmodule[ord(ac_program)] 
+    else
+    newfinames[0]   := 'program';
+ 
     newfifilters[0] := '"*.pas" "*.pp"';
     newfiexts[0]    := 'pas';
     newfisources[0] := '${TEMPLATEDIR}/fpc_mse/default/program.pas';
-
-    newfinames[1]   := actionsmoduletext(ac_unit);
+    
+    if length(lang_actionsmodule) > 0 then
+    newfinames[1]   := lang_actionsmodule[ord(ac_unit)] 
+    else
+    newfinames[1]   := 'unit';
+ 
     newfifilters[1] := '"*.pas" "*.pp"';
     newfiexts[1]    := 'pas';
     newfisources[1] := '${TEMPLATEDIR}/fpc_mse/default/unit.pas';
-
-    newfinames[2]   := actionsmoduletext(ac_textfile);
+    
+    if length(lang_actionsmodule) > 0 then
+    newfinames[2]   := lang_actionsmodule[ord(ac_textfile)] 
+    else
+    newfinames[2]   := 'textfile';
+ 
     newfifilters[2] := '';
     newfiexts[2]    := '';
     newfisources[2] := '';
@@ -1834,68 +1847,76 @@ begin
     setlength(fnewinheritedforms, 11);
     setlength(fnewfosources, 11);
     setlength(fnewfoforms, 11);
-
-    newfonames[0]        := actionsmoduletext(ac_mainform);
+    
+    if length(lang_actionsmodule) > 0 then
+    newfonames[0]        := lang_actionsmodule[ord(ac_mainform)]
+    else
+    newfonames[0]   := 'mainform';
+   
     newfonamebases[0]    := 'form';
     newinheritedforms[0] := False;
     newfosources[0]      := '${TEMPLATEDIR}fpc_mse/default/mainform.pas';
     newfoforms[0]        := '${TEMPLATEDIR}fpc_mse/default/mainform.mfm';
 
-    newfonames[1]        := actionsmoduletext(ac_simpleform);
+    if length(lang_actionsmodule) > 0 then
+    newfonames[1]        := lang_actionsmodule[ord(ac_simpleform)]
+    else
+    newfonames[1]   := 'simpleform';
+   
     newfonamebases[1]    := 'form';
     newinheritedforms[1] := False;
     newfosources[1]      := '${TEMPLATEDIR}fpc_mse/default/simpleform.pas';
     newfoforms[1]        := '${TEMPLATEDIR}fpc_mse/default/simpleform.mfm';
 
-    newfonames[2]        := actionsmoduletext(ac_dockingform);
+   // newfonames[2]        := lang_actionsmodule[ord(ac_dockingform)];
     newfonamebases[2]    := 'form';
     newinheritedforms[2] := False;
     newfosources[2]      := '${TEMPLATEDIR}fpc_mse/default/dockingform.pas';
     newfoforms[2]        := '${TEMPLATEDIR}fpc_mse/default/dockingform.mfm';
 
-    newfonames[3]        := actionsmoduletext(ac_datamodule);
+   // newfonames[3]        := lang_actionsmodule[ord(ac_datamodule)];
     newfonamebases[3]    := 'module';
     newinheritedforms[3] := False;
     newfosources[3]      := '${TEMPLATEDIR}fpc_mse/default/datamodule.pas';
     newfoforms[3]        := '${TEMPLATEDIR}fpc_mse/default/datamodule.mfm';
 
-    newfonames[4]        := actionsmoduletext(ac_subform);
+   // newfonames[4]        := lang_actionsmodule[ord(ac_subform)];
     newfonamebases[4]    := 'form';
     newinheritedforms[4] := False;
     newfosources[4]      := '${TEMPLATEDIR}fpc_mse/default/subform.pas';
     newfoforms[4]        := '${TEMPLATEDIR}fpc_mse/default/subform.mfm';
 
-    newfonames[5]        := actionsmoduletext(ac_scrollboxform);
+   // newfonames[5]        := lang_actionsmodule[ord(ac_scrollboxform)];
     newfonamebases[5]    := 'form';
     newinheritedforms[5] := False;
     newfosources[5]      := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.pas';
     newfoforms[5]        := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.mfm';
 
-    newfonames[6]        := actionsmoduletext(ac_tabform);
+   // newfonames[6]        := lang_actionsmodule[ord(ac_tabform)];
     newfonamebases[6]    := 'form';
     newinheritedforms[6] := False;
     newfosources[6]      := '${TEMPLATEDIR}fpc_mse/default/tabform.pas';
     newfoforms[6]        := '${TEMPLATEDIR}fpc_mse/default/tabform.mfm';
 
-    newfonames[7]        := actionsmoduletext(ac_dockpanel);
+   // newfonames[7]        := lang_actionsmodule[ord(ac_dockpanel)];
     newfonamebases[7]    := 'form';
     newinheritedforms[7] := False;
     newfosources[7]      := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.pas';
     newfoforms[7]        := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.mfm';
 
-    newfonames[8]        := actionsmoduletext(ac_report);
+   // newfonames[8]        := lang_actionsmodule[ord(ac_report)];
     newfonamebases[8]    := 'report';
     newinheritedforms[8] := False;
     newfosources[8]      := '${TEMPLATEDIR}fpc_mse/default/report.pas';
     newfoforms[8]        := '${TEMPLATEDIR}fpc_mse/default/report.mfm';
 
-    newfonames[9]        := actionsmoduletext(ac_scriptform);
+   // newfonames[9]        := lang_actionsmodule[ord(ac_scriptform)];
     newfonamebases[9]    := 'script';
     newinheritedforms[9] := False;
     newfosources[9]      := '${TEMPLATEDIR}fpc_mse/default/pascform.pas';
     newfoforms[9]        := '${TEMPLATEDIR}fpc_mse/default/pascform.mfm';
 
-    newfonames[10]        := actionsmoduletext(ac_inheritedform);
+   // newfonames[10]        := lang_actionsmodule[ord(ac_inheritedform)];
     newfonamebases[10]    := 'form';
     newinheritedforms[10] := True;
     newfosources[10]      := '${TEMPLATEDIR}fpc_mse/default/inheritedform.pas';
@@ -1916,11 +1937,11 @@ begin
     additem(fsourcefilemasks, '"*.mfm"');
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
-    additem(ffilemasknames, actionsmoduletext(ac_source));
+   // additem(ffilemasknames, lang_actionsmodule[ord(ac_source)]);
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
-    additem(ffilemasknames, actionsmoduletext(ac_forms));
+   // additem(ffilemasknames, lang_actionsmodule[ord(ac_forms)]);
     additem(ffilemasks, '*.mfm');
-    additem(ffilemasknames, actionsmoduletext(ac_allfiles));
+   // additem(ffilemasknames, lang_actionsmodule[ord(ac_allfiles)]);
     additem(ffilemasks, '*');
 
   end;
@@ -2663,8 +2684,8 @@ begin
   except
     on e: Exception do
     begin
-      showerror(actionsmoduletext(ac_cannotreadproject) + ' "' + filename + '".' +
-        lineend + msestring(e.message), actionsmoduletext(ac_error));
+      showerror(lang_actionsmodule[ord(ac_cannotreadproject)] + ' "' + filename + '".' +
+        lineend + msestring(e.message), lang_actionsmodule[ord(ac_error)]);
     end;
   end;
 end;
@@ -2921,8 +2942,9 @@ var
   mstr1: msestring;
 begin
   mstr1  := encoding.dropdown.valuelist[avalue];
-  accept := askyesno(projectoptionscontext(c_wrongencoding) + lineend +
-    projectoptionscontext(c_wishsetencoding) + ' ' + mstr1 + '?', projectoptionscontext(c_warning));
+  accept := askyesno(lang_projectoptionscon[Ord(c_wrongencoding)] + lineend +
+    lang_projectoptionscon[Ord(c_wishsetencoding)] + ' ' + mstr1 + '?', 
+    lang_projectoptionscon[Ord(c_warning)]);
 end;
 
 procedure tprojectoptionsfo.createexe(const Sender: TObject);
@@ -2937,39 +2959,39 @@ begin
  settty.visible:= true;
 // xtermoptions.visible:= true;
  {$endif}
-  // sigstring := projectoptionscontext(c_SIGHUP);
+  // sigstring := lang_projectoptionscon[Ord(c_SIGHUP);
   for int1 := Ord(firstsiginfocomment) to Ord(lastsiginfocomment) do
   begin
     case int1 of
-      3: sigstring  := projectoptionscontext(c_SIGHUP);
-      5: sigstring  := projectoptionscontext(c_SIGQUIT);
-      6: sigstring  := projectoptionscontext(c_SIGILL);
-      7: sigstring  := projectoptionscontext(c_SIGABRT);
-      8: sigstring  := projectoptionscontext(c_SIGBUS);
-      9: sigstring  := projectoptionscontext(c_SIGFPE);
-      10: sigstring := projectoptionscontext(c_SIGILL);
-      11: sigstring := projectoptionscontext(c_SIGKILL);
-      12: sigstring := projectoptionscontext(c_SIGUSR1);
-      13: sigstring := projectoptionscontext(c_SIGSEGV);
-      14: sigstring := projectoptionscontext(c_SIGUSR2);
-      15: sigstring := projectoptionscontext(c_SIGPIPE);
-      16: sigstring := projectoptionscontext(c_SIGALRM);
-      17: sigstring := projectoptionscontext(c_SIGTERM);
-      18: sigstring := projectoptionscontext(c_SIGSTKFLT);
-      19: sigstring := projectoptionscontext(c_SIGCHLD);
-      20: sigstring := projectoptionscontext(c_SIGCONT);
-      21: sigstring := projectoptionscontext(c_SIGSTOP);
-      22: sigstring := projectoptionscontext(c_SIGTSTP);
-      23: sigstring := projectoptionscontext(c_SIGTTIN);
-      24: sigstring := projectoptionscontext(c_SIGTTOU);
-      25: sigstring := projectoptionscontext(c_SIGURG);
-      26: sigstring := projectoptionscontext(c_SIGXCPU);
-      27: sigstring := projectoptionscontext(c_SIGXFSZ);
-      28: sigstring := projectoptionscontext(c_SIGTALRM);
-      29: sigstring := projectoptionscontext(c_SIGPROF);
-      30: sigstring := projectoptionscontext(c_SIGWINCH);
-      31: sigstring := projectoptionscontext(c_SIGIO);
-      32: sigstring := projectoptionscontext(c_SIGPWR);
+      3: sigstring  := lang_projectoptionscon[Ord(c_SIGHUP)];
+      5: sigstring  := lang_projectoptionscon[Ord(c_SIGQUIT)];
+      6: sigstring  := lang_projectoptionscon[Ord(c_SIGILL)];
+      7: sigstring  := lang_projectoptionscon[Ord(c_SIGABRT)];
+      8: sigstring  := lang_projectoptionscon[Ord(c_SIGBUS)];
+      9: sigstring  := lang_projectoptionscon[Ord(c_SIGFPE)];
+      10: sigstring := lang_projectoptionscon[Ord(c_SIGILL)];
+      11: sigstring := lang_projectoptionscon[Ord(c_SIGKILL)];
+      12: sigstring := lang_projectoptionscon[Ord(c_SIGUSR1)];
+      13: sigstring := lang_projectoptionscon[Ord(c_SIGSEGV)];
+      14: sigstring := lang_projectoptionscon[Ord(c_SIGUSR2)];
+      15: sigstring := lang_projectoptionscon[Ord(c_SIGPIPE)];
+      16: sigstring := lang_projectoptionscon[Ord(c_SIGALRM)];
+      17: sigstring := lang_projectoptionscon[Ord(c_SIGTERM)];
+      18: sigstring := lang_projectoptionscon[Ord(c_SIGSTKFLT)];
+      19: sigstring := lang_projectoptionscon[Ord(c_SIGCHLD)];
+      20: sigstring := lang_projectoptionscon[Ord(c_SIGCONT)];
+      21: sigstring := lang_projectoptionscon[Ord(c_SIGSTOP)];
+      22: sigstring := lang_projectoptionscon[Ord(c_SIGTSTP)];
+      23: sigstring := lang_projectoptionscon[Ord(c_SIGTTIN)];
+      24: sigstring := lang_projectoptionscon[Ord(c_SIGTTOU)];
+      25: sigstring := lang_projectoptionscon[Ord(c_SIGURG)];
+      26: sigstring := lang_projectoptionscon[Ord(c_SIGXCPU)];
+      27: sigstring := lang_projectoptionscon[Ord(c_SIGXFSZ)];
+      28: sigstring := lang_projectoptionscon[Ord(c_SIGTALRM)];
+      29: sigstring := lang_projectoptionscon[Ord(c_SIGPROF)];
+      30: sigstring := lang_projectoptionscon[Ord(c_SIGWINCH)];
+      31: sigstring := lang_projectoptionscon[Ord(c_SIGIO)];
+      32: sigstring := lang_projectoptionscon[Ord(c_SIGPWR)];
     end;
 
     siginfos[int1 - Ord(firstsiginfocomment)].comment := ansistring(sigstring);
@@ -3201,9 +3223,9 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if not askyesno(actionsmoduletext(ac_replacesettings) + lineend +
+    if not askyesno(lang_actionsmodule[ord(ac_replacesettings)] + lineend +
       '"' + fname1 + '"?',
-      actionsmoduletext(ac_warning)) then
+      lang_actionsmodule[ord(ac_warning)]) then
       Exit;
   end
   else
@@ -3264,9 +3286,9 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if findfile(fname1) and not askyesno(actionsmoduletext(ac_file) + fname1 +
-      actionsmoduletext(ac_exists) + lineend +
-      actionsmoduletext(ac_wantoverwrite), actionsmoduletext(ac_warning)) then
+    if findfile(fname1) and not askyesno(lang_actionsmodule[ord(ac_file)] + fname1 +
+      lang_actionsmodule[ord(ac_exists)] + lineend +
+      lang_actionsmodule[ord(ac_wantoverwrite)], lang_actionsmodule[ord(ac_warning)]) then
       Exit;
   end
   else

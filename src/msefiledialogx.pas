@@ -2048,7 +2048,7 @@ end;
 procedure tfiledialogxfo.buttonshowhint(const Sender: TObject; var ainfo: hintinfoty);
 begin
   with tcustombutton(Sender) do
-    ainfo.Caption := sc(stockcaptionty(tag)) + ' ' +
+    ainfo.Caption := lang_stockcaption[ord(stockcaptionty(tag))] + ' ' +
       '(' + encodeshortcutname(shortcut) + ')';
 end;
 

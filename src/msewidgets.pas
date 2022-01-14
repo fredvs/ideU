@@ -21,6 +21,7 @@ interface
  {$endif}
 {$endif}
 uses
+ po2const,
  classes,mclasses,msegui,mseguiglob,msetypes,msestrings,msegraphutils, msefont,
  msegraphics,msesystypes,mseassistiveclient,mselist,
  mseevent,msescrollbar,msemenus,mserichstring,msedrawtext,mseglob,mseact,
@@ -1692,18 +1693,18 @@ end;
 function confirmsavechangedfile(const filename: filenamety;
          out modalresult: modalresultty; multiple: boolean = false): boolean;
 begin
- with stockobjects do begin
+ 
   if multiple then begin
-   modalresult:= showmessage(captions[sc_file]+' '+filename+' '+
-                  captions[sc_is_modified_save],captions[sc_confirmation],
+   modalresult:= showmessage(lang_stockcaption[ord(sc_file)]+' '+filename+' '+
+                  lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(sc_confirmation)],
                    [mr_yes,mr_all,mr_no,mr_noall,mr_cancel],mr_yes);
   end
   else begin
-   modalresult:= showmessage(captions[sc_file]+' '+filename+' '+
-                  captions[sc_is_modified_save],captions[sc_confirmation],
+   modalresult:= showmessage(lang_stockcaption[ord(sc_file)]+' '+filename+' '+
+                  lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(sc_confirmation)],
                    [mr_yes,mr_no,mr_cancel],mr_yes);
   end;
- end;
+
 {
  if multiple then begin
   modalresult:= showmessage('File '+filename+' is modified. Save?','Confirmation',
@@ -1942,7 +1943,7 @@ begin
     buttonwidth:= 50;
     for int1:= 0 to ord(high(buttons)) do begin
          int2:= acanvas.getstringwidth(
-                 stockobjects.modalresulttextnoshortcut[buttons[int1]]) + 10;
+                 lang_modalresultnoshortcut[Ord(buttons[int1])]) + 10;
      if int2 > buttonwidth then begin
       buttonwidth:= int2;
      end;
@@ -2022,15 +2023,15 @@ begin
       parentwidget:= widget;
       if buttons[int1] in noshortcut then begin
        caption:=
-                stockobjects.modalresulttextnoshortcut[buttons[int1]];
+                lang_modalresultnoshortcut[Ord(buttons[int1])];
 {
        captiontorichstring(
-                stockobjects.modalresulttextnoshortcut[buttons[int1]],
+                lang_modalresultnoshortcut[Ord(buttons[int1]],
                                                              finfo.ca.caption);
 }
       end
       else begin
-       caption:= stockobjects.modalresulttext[buttons[int1]];
+       caption:= lang_modalresult[Ord(buttons[int1])];
 {
        captiontorichstring(stockobjects.modalresulttext[buttons[int1]],
                                finfo.ca.caption);
@@ -2218,7 +2219,7 @@ procedure showerror(const atext: msestring; caption: msestring = 'ERROR';
                     const async: boolean = false);
 begin
  if caption = 'ERROR' then begin
-  caption:= sc(sc_errorupper);
+  caption:= lang_stockcaption[ord(sc_errorupper)];
  end;
  if async or not application.ismainthread then begin
   tshowerrormessageevent.create(atext,caption,minwidth,exttext);
@@ -2262,7 +2263,7 @@ function askconfirmation(const atext: msestring;
                     const minwidth: integer = 0): boolean;
                   //true if yes pressed
 begin
- result:= showmessage(atext,sc(sc_confirmation),[mr_yes,mr_no],defaultbutton,[],
+ result:= showmessage(atext,lang_stockcaption[ord(sc_confirmation)],[mr_yes,mr_no],defaultbutton,[],
                           minwidth) = mr_yes;
 end;
 
@@ -2270,7 +2271,7 @@ function askconfirmationcancel(const atext: msestring;
                      const defaultbutton: modalresultty = mr_yes;
                      const minwidth: integer = 0): modalresultty;
 begin
- result:= askyesnocancel(atext,sc(sc_confirmation),defaultbutton,minwidth);
+ result:= askyesnocancel(atext,lang_stockcaption[ord(sc_confirmation)],defaultbutton,minwidth);
 end;
 
 { tframefont}

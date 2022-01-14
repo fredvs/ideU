@@ -326,11 +326,12 @@ end;
 procedure init(const adesigner: tdesigner);
 begin
  sourceupdater:= tsourceupdater.Create(adesigner);
-
+{
   if confideufo.usedefaulteditoroptions.value then
   sourceupdater.maxlinelength:= confideufo.rightmarginchars.value
  else
   sourceupdater.maxlinelength:= projectoptions.e.rightmarginchars;
+ } 
 end;
 
 procedure deinit(const adesigner: tdesigner);

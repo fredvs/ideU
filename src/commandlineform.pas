@@ -49,7 +49,7 @@ implementation
 
 uses
   commandlineform_mfm,
-  make,
+  make, po2const,
   projectoptionsform;
 
 procedure showcommandline;
@@ -70,7 +70,7 @@ end;
 
 procedure tcommandlinefo.setlangcomline();
 begin
-  Caption := projectoptionstext(po_runcommand);
+  Caption := lang_projectoptions[Ord(po_runcommand)];
 end;
 
 

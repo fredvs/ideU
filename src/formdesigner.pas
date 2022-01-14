@@ -440,7 +440,7 @@ function getdesignform(const acomp: tcomponent): tformdesignerfo;
 
 implementation
 uses
- formdesigner_mfm,mselist,msekeyboard,msebits,sysutils,
+ formdesigner_mfm,mselist,msekeyboard,msebits,sysutils, po2const,
  msedrawtext,selectsubmoduledialogform,mseshapes,settaborderform,
  msedatalist,objectinspector,projectoptionsform,main,msedatamodules,
  setcreateorderform,componentstore,msearrayutils,actionsmodule,msecomptree
@@ -549,7 +549,7 @@ begin
    end;
   end;
  end;
- raise exception.Create(ansistring(actionsmoduletext(ac_unknownmodclass)+
+ raise exception.Create(ansistring(lang_actionsmodule[ord(ac_unknownmodclass)]+
         msestring(aclassname^) +'": "'+ msestring(designmoduleclassname)+'".'));
 end;
 
@@ -1643,8 +1643,8 @@ begin
    for int1:= 0 to count - 1 do begin
     with items[int1] do begin
      if componentstate * [csancestor,csinline] = [csancestor] then begin
-      showmessage(actionsmoduletext(ac_inheritedcomp)+msestring(name)+
-                      actionsmoduletext(ac_cannotdel),actionsmoduletext(ac_error));
+      showmessage(lang_actionsmodule[ord(ac_inheritedcomp)]+msestring(name)+
+                      lang_actionsmodule[ord(ac_cannotdel)],lang_actionsmodule[ord(ac_error)]);
       exit;
      end;
     end;

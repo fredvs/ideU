@@ -33,7 +33,7 @@ var
 implementation
 uses
  mseprocutils,main,projectoptionsform,sysutils,msegrids, confcompiler,
- sourceform,mseeditglob,msefileutils,msesys,
+ sourceform,mseeditglob,msefileutils,msesys, po2const,
  msesysutils,msegraphics,messageform,msedesignintf,msedesigner,
  mseprocmonitor,mseevent, confideu,
  classes,mclasses,mseclasses,mseapplication,msestream,
@@ -205,7 +205,7 @@ begin
  if (maker <> nil) or (custommaker <> nil) then begin
   actionsmo.finishcustom;
      killmake;
-  mainfo.setstattext(actionsmoduletext(ac_makeaborted),mtk_error);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_makeaborted)],mtk_error);
  end;
 end;
 
@@ -213,7 +213,7 @@ procedure abortdownload;
 begin
  if loader <> nil then begin
   killload;
-  mainfo.setstattext(actionsmoduletext(ac_downloadaborted),mtk_error);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_downloadaborted)],mtk_error);
  end;
 end;
 
@@ -928,7 +928,7 @@ begin
      fexitcode:= eoserror(e).error;
 {$warnings on}
     end;
-    application.handleexception(nil,actionsmoduletext(ac_runerrorwith)+
+    application.handleexception(nil,lang_actionsmodule[ord(ac_runerrorwith)]+
                                                           UTF8Decode(acommandline)+'": ');
    end;
   end;
@@ -941,7 +941,7 @@ end;
 procedure tprogrunner.doasyncevent(var atag: integer);
 begin
  if getprocessexitcode(procid,fexitcode,5000000) <> pee_ok then begin
-  messagefo.messages.appendrow([actionsmoduletext(ac_errortimeout)]);
+  messagefo.messages.appendrow([lang_actionsmodule[ord(ac_errortimeout)]]);
   messagefo.messages.appendrow(['']);
   killprocess(procid);
  end;
@@ -1007,13 +1007,13 @@ begin
  actionsmo.initproject ;
  //mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
 
-  mainfo.setstattext(actionsmoduletext(ac_making) + ' ' + gettargetfile + '...' ,mtk_making);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_making)] + ' ' + gettargetfile + '...' ,mtk_making);
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
  else begin
-   mainfo.setstattext(actionsmoduletext(ac_makenotrunning),mtk_error);
+   mainfo.setstattext(lang_actionsmodule[ord(ac_makenotrunning)],mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
   actionsmo.finishcustom ;
  end;
@@ -1113,13 +1113,13 @@ begin
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
  // mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
-  mainfo.setstattext( actionsmoduletext(ac_making) + ' ' + aname + '...' ,mtk_making);
+  mainfo.setstattext( lang_actionsmodule[ord(ac_making)] + ' ' + aname + '...' ,mtk_making);
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
  end
  else begin
-  mainfo.setstattext(actionsmoduletext(ac_makenotrunning),mtk_error);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_makenotrunning)],mtk_error);
   designnotifications.aftermake(idesigner(designer),fexitcode);
  end;
 end;
@@ -1209,10 +1209,10 @@ constructor tloader.create(aowner: tcomponent);
 begin
  inherited create(aowner,false,true);
  if procid <> invalidprochandle then begin
-  mainfo.setstattext(actionsmoduletext(ac_downloading),mtk_making);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_downloading)],mtk_making);
  end
  else begin
-  mainfo.setstattext(actionsmoduletext(ac_downloadnotrunning),mtk_error);
+  mainfo.setstattext(lang_actionsmodule[ord(ac_downloadnotrunning)],mtk_error);
  end;
 end;
 
@@ -1243,8 +1243,8 @@ begin
  inherited create(aowner,false,setmakedir);
  if not fcanceled then begin
   fcanceled:= not application.waitdialog(nil,'"'+ascriptpath+
-               actionsmoduletext(ac_running),
-     actionsmoduletext(ac_script),nil,nil,nil);
+               lang_actionsmodule[ord(ac_running)],
+     lang_actionsmodule[ord(ac_script)],nil,nil,nil);
  end;
 end;
 

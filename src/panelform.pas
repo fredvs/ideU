@@ -56,7 +56,7 @@ procedure endpanelplacement();
 implementation
 
 uses
- panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,confideu,
+ panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,confideu,po2const,
  msearrayutils,mseformatstr;
 
 var
@@ -296,7 +296,10 @@ end;
 
 procedure tpanelfo.paintexe(const sender: twidget; const acanvas: tcanvas);
 begin
- paintdockingareacaption(acanvas,sender,mainformtext(ma_dockingarea));
+if length(lang_mainform) > 0 then 
+ paintdockingareacaption(acanvas,sender,lang_mainform[ord(ma_dockingarea)])
+ else
+ paintdockingareacaption(acanvas,sender,'Docking Area') ;
  if usedtheme <> mainfo.themenr then oncreated(nil);
 end;
 

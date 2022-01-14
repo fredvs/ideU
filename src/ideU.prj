@@ -136,8 +136,17 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=setlang(
+ value=delete_n_selected_rows
  history=20
+  delete_n_selected_rows
+  stocktextgenerators
+  formatxpm
+  formatjpg
+  registerformat
+  SEFORMATBMPICOREAD
+  caption:= msestring(displaylabel);
+  textgeneratorty
+  tg_delete_n_selected_rows
   setlang(
   setlang
   replace
@@ -147,17 +156,8 @@ findinfiledialog=92
   modalresulttext[
   {$I useslang.inc}
   mainformty
-  delete_n_selected_rows
   modalresultty
   po2const
-  defaultmodalresult
-  en_modalresulttext
-  fm_read
-  langnamesreg
-  sc_searchindirectories
-  {msestrings}
-  chinese
-  chine
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -169,7 +169,7 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=833
+ x=555
  y=494
  cx=234
  cy=269
@@ -177,17 +177,20 @@ replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
  [replacedialogfo.selectedonly]
- value=1
+ value=0
  [replacedialogfo.replacetext]
  value=lang_stockcaption[ord(
  history=20
   lang_stockcaption[ord(
   lang_actionsmodule[ord(
-  lang_modalresult[Ord(
-  lang_projectoptions[Ord(
   )];
-  ];
   lang_projectoptionscon[Ord(
+  lang_projectoptions[Ord(
+  lang_sourceform[ord(
+  lang_mainform[ord(
+  lang_modalresultnoshortcut[Ord(
+  lang_modalresult[Ord(
+  ];
   lang_settings[Ord(
   @es
   @pt
@@ -198,13 +201,10 @@ replacedialog=33
   tfiledialogx
   tfilenameeditx
   strexecext
-  strextra
-  strwine
-  strcompiler
  [replacedialogfo]
  stackedunder=
- x=978
- y=284
+ x=958
+ y=348
  cx=254
  cy=200
 options=114
@@ -927,30 +927,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=2
  ACTIONSMO
- CONFIDEUFO
- CONFLANGFO
- MAINFO
  SOURCEFO
-moduletypes=5
+moduletypes=2
  TACTIONSMO
- TCONFIDEUFO
- TCONFLANGFO
- TMAINFO
  TSOURCEFO
-modulefiles=5
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=14
  4095
  4095
  17
- 206
+ 198
  2046
  4095
  192
@@ -992,12 +983,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3602
+ 3606
  1
  0
  0
  0
- 492
+ 488
 exeusedon=14
  3903
  0
@@ -1298,66 +1289,66 @@ line=31
  2129
  1184
  609
- 4063
+ 4064
  660
  119
  1115
- 2269
- 2185
- 2462
- 3260
+ 2290
+ 2206
+ 2483
+ 3282
  119
  564
  484
  66
- 4338
+ 4339
  684
  98
  15
  786
- 908
- 2502
- 5763
+ 909
+ 2523
+ 5765
  1882
  6135
- 161
- 140
+ 163
+ 142
  18
  8
- 87
- 3520
+ 89
+ 3521
 address=31
- 4884545
- 4696226
- 4847477
- 4928525
- 7499498
- 8558097
- 8977208
- 8063852
- 8061781
- 8069616
- 8087751
+ 4879232
+ 4690754
+ 4841781
+ 4923261
+ 7494906
+ 8550593
+ 8968509
+ 8058076
+ 8056005
+ 8063840
+ 8081456
  5887456
- 4846784
- 4683587
- 4417528
- 4934573
+ 4841088
+ 4678195
+ 4412152
+ 4929309
  0
- 4728285
+ 4722669
  0
- 8970004
- 4710173
- 8070761
- 4980847
- 4997612
- 6364531
- 4221767
- 4221302
- 8637549
- 10620813
- 4219775
- 4916930
+ 8961492
+ 4704669
+ 8064985
+ 4975711
+ 4992348
+ 6373763
+ 4220801
+ 4220544
+ 8629549
+ 10610941
+ 4219764
+ 4911666
 addbkpt=31
  0
  0
@@ -1601,107 +1592,64 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=setlang
+finddtext=dodeleteselectedrows
 findhistory=20
+ dodeleteselectedrows
+ lang_
+ initpr
  setlang
- writeln
- setlang(
- ma_wishsearch
- captions[
- with stockobjects do
- caption[
- stockobjects
- stockobjects.captions[
-  captions[
-  caption[
- stockobj
- lang_stockcaption
- if assigned(deb
- lang_actionsmodule
+ sc(
  actionsmoduletext(
- openproject
- paintdockingareacaption
- dock
- docka
+ lang_projectoptionscon
+ );
+ projectoptionscontext(
+ lang_actionsmodule
+ projectoptionstext(
+ lang_sourceform
+ sourceformtext(
+ stockcaptions(
+ mainformtext(
+ captions[
+ uses
+ lang_stockcaption
+ stockobjects.captions[
+ lang_ac
 findoptions=1
-editpos=9
+editpos=2
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,600
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-sourcefiles=9
+sourcefiles=2
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/mseconsts_ide.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/po2const.pas
- ${PROJECTDIR}/msegdbutils.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/confideu.pas
-relpaths=9
+relpaths=2
  actionsmodule.pas
  sourceform.pas
- conflang.pas
- mseconsts_ide.pas
- main.pas
- po2const.pas
- msegdbutils.pas
- conflang.pas
- confideu.pas
-ismoduletexts=9
+ismoduletexts=2
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=5
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/confideu.mfm
-moduleoptions=5
+moduleoptions=3
  0
  0
  0
+visiblemodules=3
  0
- 0
-visiblemodules=5
  -1
  -1
+nomenumodules=3
  -1
- -1
- -1
-nomenumodules=5
- 0
- 0
- 0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=5
+index=1
 [layout]
-windowlayout=590
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1715,8 +1663,8 @@ windowlayout=590
  ny=0
  ncx=0
  ncy=0
- x=56
- y=83
+ x=87
+ y=59
  cx=1224
  cy=621
  rcx=0
@@ -1743,8 +1691,8 @@ windowlayout=590
  ny=0
  ncx=0
  ncy=0
- x=87
- y=226
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
@@ -1763,13 +1711,13 @@ windowlayout=590
  ncy=0
  x=444
  y=431
- cx=805
+ cx=418
  cy=126
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [memoryfo]
  splitdir=0
  useroptions=268451963
@@ -1828,7 +1776,7 @@ windowlayout=590
  ncy=0
  x=239
  y=115
- cx=898
+ cx=678
  cy=414
  rcx=0
  rcy=0
@@ -1845,7 +1793,7 @@ windowlayout=590
  x=0
  y=0
  cx=205
- cy=519
+ cy=526
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1856,7 +1804,7 @@ windowlayout=590
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=15
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1867,9 +1815,9 @@ windowlayout=590
  ny=0
  ncx=0
  ncy=0
- x=285
- y=180
- cx=537
+ x=423
+ y=321
+ cx=344
  cy=155
  rcx=0
  rcy=0
@@ -1916,7 +1864,7 @@ windowlayout=590
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1936,9 +1884,9 @@ windowlayout=590
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=242
- width0=108
+ width0=107
  sortdescend0=0
- width1=128
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2133,7 +2081,7 @@ windowlayout=590
  x=0
  y=0
  cx=1356
- cy=58
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2144,12 +2092,12 @@ windowlayout=590
  mdistate=0
  nx=0
  ny=0
- ncx=1356
- ncy=41
+ ncx=1341
+ ncy=55
  x=0
  y=0
  cx=1356
- cy=41
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2159,19 +2107,10 @@ windowlayout=590
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
- history=11
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/mseconsts_ide.pas
-  /home/fred/ideu/src/conflang.pas
-  /home/fred/ideu/src/lang/mseconsts_ide_zh.po
-  /home/fred/ideu/src/lang/mseconsts_ide_ru.po
-  /home/fred/ideu/src/lang/mseconsts_ide_pt.po
-  /home/fred/ideu/src/lang/mseconsts_ide_fr.po
-  /home/fred/ideu/src/lang/mseconsts_ide_es.po
-  /home/fred/ideu/src/lang/mseconsts_ide_de.po
-  /home/fred/ideu_const_lang/src/conflang.pas
-  /home/fred/ideu_const_lang/src/main.pas
+ value=/home/fred/ideu/src/sourceform.pas
+ history=2
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/msegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2189,12 +2128,12 @@ windowlayout=590
  x=208
  y=0
  cx=1148
- cy=519
+ cy=526
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=5
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2203,7 +2142,7 @@ windowlayout=590
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2230,15 +2169,15 @@ windowlayout=590
  ncx=0
  ncy=0
  x=0
- y=61
+ y=54
  cx=1356
- cy=519
+ cy=526
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2253,45 +2192,7 @@ windowlayout=590
  rcy=0
  wsize=0
  active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_confideufo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=451
- y=270
- cx=341
- cy=222
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=242
- y=29
- cx=639
- cy=699
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=
 findhistory=0

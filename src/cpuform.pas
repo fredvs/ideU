@@ -47,6 +47,7 @@ type
    procedure aftread(const sender: TObject);
    procedure befwrite(const sender: TObject);
    procedure asynceventexe(const sender: TObject; var atag: Integer);
+   procedure onactiv(const sender: TObject);
   protected
    fflagswidget: tintegeredit;
    fflagswidget64: tint64edit;
@@ -393,6 +394,10 @@ begin
  if atag = refreshtag then begin
   refresh;
  end;
+end;
+
+procedure tcpufo.onactiv(const sender: TObject);
+begin
 end;
 
 end.

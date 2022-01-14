@@ -98,7 +98,7 @@ procedure tfindinfilepagefo.cancelsearch;
 begin
  thread.terminate;
  thread.waitfor;
- filename.value:= actionsmoduletext(ac_sr_exited);
+ filename.value:= lang_actionsmodule[ord(ac_sr_exited)];
 end;
 
 procedure tfindinfilepagefo.startfile(const afilename: filenamety);
@@ -335,7 +335,7 @@ begin
  if not application.terminated then begin
   cancel.enabled:= false;
   again.enabled:= true;
-  filename.value:= mainformtext(ma_processterminated);
+  filename.value:= lang_mainform[ord(ma_processterminated)];
  end;
 end;
 

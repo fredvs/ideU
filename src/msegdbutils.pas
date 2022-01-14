@@ -699,7 +699,7 @@ implementation
 uses
  sysutils,mseformatstr,mseprocutils,msesysutils,msefileutils,msemacros,
  msebits,msesysintf,msesysintf1,mseguiintf,msearrayutils,msesys,msedate,
- actionsmodule
+ actionsmodule, po2const
         {$ifdef UNIX},mselibc{$else},windows,msedynload{$endif};
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -1407,7 +1407,7 @@ begin
       end;
       bo1:= getstopinfo(values,flastconsoleoutput,stopinfo);
       if not bo1 then begin
-       stopinfo.messagetext:= ansistring(actionsmoduletext(ac_stoperror))+': ' +
+       stopinfo.messagetext:= ansistring(lang_actionsmodule[ord(ac_stoperror)])+': ' +
                                                       stopinfo.messagetext;
       end
       else begin
@@ -5028,7 +5028,7 @@ var
  sr1: stopreasonty;
 begin
  for sr1:= sr_unknown to high(stopreasonty) do begin
-  stopreasontext[sr1]:= ansistring(actionsmoduletext(ac_sr_unknown));
+  stopreasontext[sr1]:= ansistring(lang_actionsmodule[ord(ac_sr_unknown)]);
  end;
 end;
 

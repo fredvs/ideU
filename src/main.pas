@@ -89,7 +89,7 @@ mseedit,
 msewidgets;
 
 const 
-  versiontext = '2.6.7';
+  versiontext = '2.8.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -1350,9 +1350,10 @@ begin
                 ma_warning)],
                 [mr_ok, mr_cancel], mr_ok) else
                 
-                action := ShowMessage(mainformtext(ma_unresreferences) + ' ' + utf8decode(amodule^.moduleclassname) + ' ' +
-      mainformtext(ma_str_to) + ' ' + utf8decode(aname) +
-      '.' + lineend + ' ' + mainformtext(ma_wishsearch), mainformtext(ma_warning),
+                action := ShowMessage(lang_mainform[ord(ma_unresreferences)] + ' ' 
+                + utf8decode(amodule^.moduleclassname) + ' ' +
+      lang_mainform[ord(ma_str_to)] + ' ' + utf8decode(aname) +
+      '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_mainform[ord(ma_warning)],
       [mr_ok, mr_cancel], mr_ok);
                
       case action of 
@@ -4817,7 +4818,7 @@ begin
 
       //  writeln('ok tabind'); 
 
-      dialogfilesfo.selected_file.frame.Caption := stockcaptions(sc_file);
+      dialogfilesfo.selected_file.frame.Caption := lang_stockcaption[ord(sc_file)];
 
       //'Selected Layout File';
       // from ' + dialogfilesfo.list_files.directory ;
@@ -5078,8 +5079,7 @@ begin
 
       mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption := 
 
-                                                                               projectoptionscontext
-                                                                                  (c_SIGINT);
+                                                                      lang_projectoptionscon[Ord(c_SIGINT)];
 
       mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption := 
                                                                              lang_stockcaption[Ord(
@@ -5130,10 +5130,10 @@ begin
                                                                                lang_stockcaption[Ord
                                                                                (sc_finish)];
 
-      mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption := 
-                                                                               projectoptionscontext
-                                                                               (c_SIGABRT);
-
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
+                                                              lang_projectoptionscon[Ord(c_SIGABRT)];
+ 
+                  
       mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption := 
 
                                                                                    lang_stockcaption
@@ -5388,7 +5388,9 @@ begin
 
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
-  TDummyThread.Create(False);
+ onscale(Sender);
+ width := width + 1;
+ //application.processmessages;
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);

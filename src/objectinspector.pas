@@ -260,7 +260,7 @@ var
 
 implementation
 uses
- 
+ po2const,
  objectinspector_mfm,sysutils,msearrayprops,actionsmodule,mseformatstr,
  msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist, confideu,
  sourceupdate,sourceform,msekeyboard,main,msedatalist,msecolordialog;
@@ -707,7 +707,7 @@ procedure tobjectinspectorfo.moduleactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
  factmodule:= amodule;
- caption:= actionsmoduletext(ac_objectinspector) + ' (' +
+ caption:= lang_actionsmodule[ord(ac_objectinspector)] + ' (' +
                                         msestring(amodule.Name)+')';
  updatecomponentname;
 // clear;
@@ -716,7 +716,7 @@ end;
 procedure tobjectinspectorfo.moduledeactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
- caption:= actionsmoduletext(ac_objectinspector);
+ caption:= lang_actionsmodule[ord(ac_objectinspector)];
 // clear;
  factmodule:= nil;
 end;

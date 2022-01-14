@@ -515,6 +515,7 @@ function checkstdpagesize(const awidth,aheight: flo64): stdpagesizety;
 
 implementation
 uses
+ po2const,
  mseprocutils,msepipestream,msesysintf,msestockobjects,mseconsts_ide,msesys,
  mseformatstr;
 {$ifndef mse_allwarnings}
@@ -1799,8 +1800,8 @@ end;
 constructor tpageorientationselector.create(aowner: tcomponent);
 begin
  inherited;
- addrow([stockcaptions(sc_portrait)]);
- addrow([stockcaptions(sc_landscape)]);
+ addrow([lang_stockcaption[ord(sc_portrait)]]);
+ addrow([lang_stockcaption[ord(sc_landscape)]]);
 end;
 
 function tpageorientationselector.getvalue: pageorientationty;
@@ -1826,8 +1827,8 @@ procedure tpageorientationselector.getdropdowninfo(var aenums: integerarty;
                                                 const names: tdropdowndatacols);
 begin
  names.clear;
- names.addrow([stockcaptions(sc_portrait)]);
- names.addrow([stockcaptions(sc_landscape)]);
+ names.addrow([lang_stockcaption[ord(sc_portrait)]]);
+ names.addrow([lang_stockcaption[ord(sc_landscape)]]);
 end;
 
 procedure tpageorientationselector.dochange;

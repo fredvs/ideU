@@ -44,62 +44,15 @@ type
 
   stockcaptionaty           = array[stockcaptionty] of msestring;
   pstockcaptionaty          = ^stockcaptionaty;
+ 
   defaultmodalresulttextty  = array[modalresultty] of msestring;
   pdefaultmodalresulttextty = ^defaultmodalresulttextty;
-  defaultgeneratortextty    = array[textgeneratorty] of textgeneratorfuncty;
-  pdefaultgeneratortextty   = ^defaultgeneratortextty;
-
+ 
 // Language things:
-
-  langty = (la_none, la_en, la_ru, la_fr, la_de, la_es, la_pt, la_uz, la_id, la_zh);
-  langnamesaty = array[0..5] of msestring;
-  plangnamesaty = ^langnamesaty;
-
-const
-  langnames: array[langty] of string = (
-    '', 'en', 'ru', 'fr', 'de', 'es', 'pt', 'uz', 'id', 'zh');
-  langnamesreg: array[0..6] of string = (
-    'en', 'ru', 'fr', 'de', 'es', 'pt', 'zh');
-
-function langnamestext(const index: integer): msestring;
-function mainformtext(const index: mainformty): msestring;
-function extendedtext(const index: extendedty): msestring;
-function sourceformtext(const index: sourceformty): msestring;
-function settingstext(const index: isettingsty): msestring;
-function actionsmoduletext(const index: actionsmodulety): msestring;
-function projectoptionscontext(const index: projectoptionsconty): msestring;
-function projectoptionstext(const index: projectoptionsty): msestring;
-function modalresulttext(const index: modalresultty): msestring;
-function modalresulttextnoshortcut(const index: modalresultty): msestring;
-function stockcaptions(const index: stockcaptionty): msestring;
-function stocktextgenerators(const index: textgeneratorty): textgeneratorfuncty;
-function uc(const index: integer): msestring; //get user caption
-
-procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
-procedure registerlangconsts(const Name: string;
-    const langnamespo : plangnamesaty;
-    const extendedpo : pextendedaty;
-    const mainformpo : pmainformaty;
-    const sourceformpo : psourceformaty;
-    const projectoptionsconpo: pprojectoptionsconaty;
-   const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
-  const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
-  const textgeneratorpo: pdefaultgeneratortextty);
-function setlangconsts(const Name: string): Boolean;
- //true if ok, no change otherwise
-function getcurrentlangconstsname: string;
-procedure setuserlangconsts(const Name: string);
- //called by setlangconsts automatically
-type
-  langchangeprocty = procedure(const langname: ansistring);
-
-procedure registerlangchangeproc(const aproc: langchangeprocty);
-procedure unregisterlangchangeproc(const aproc: langchangeprocty);
 
 type
   langinfoty = record
     Name: string;
-    langnamestext : plangnamesaty;
     extendedtext: pextendedaty;
     mainformtext : pmainformaty;
     stockcaption: pstockcaptionaty;
@@ -107,26 +60,15 @@ type
     settingstext: pisettingsaty;
     projectoptionstext: pprojectoptionsaty;
     projectoptionscontext: pprojectoptionsconaty;
-
     actionsmoduletext: pactionsmoduleaty;
-
     modalresulttext: pdefaultmodalresulttextty;
     modalresulttextnoshortcut: pdefaultmodalresulttextty;
-    textgenerator: pdefaultgeneratortextty;
   end;
 
   userlanginfoty = record
     Name: string;
     Caption: msestringarty;
   end;
-
-var
-  langs: array of langinfoty;
-  lang: langinfoty;
-  langbefore: ansistring;
-  userlangs: array of userlanginfoty;
-  userlang: userlanginfoty;
-  langchangeprocs: array of langchangeprocty;
 
 const
   en_modalresulttext: defaultmodalresulttextty =
@@ -822,279 +764,8 @@ uses
   msesysintf,
   msearrayutils,
   mseformatstr;
-
-function delete_n_selected_rows(const params: array of const): msestring;
-begin
- with params[0] do begin
-  if vinteger = 1 then begin
-   result:= lang_extended[ord(ex_del_row_selected)];
-  end
-  else begin
-   result := StringReplace(lang_extended[ord(ex_del_rows_selected)], #37#115,
-    inttostrmse(vinteger), [rfReplaceAll]);
-  end;
- end;
-end;
-
-const
-  en_textgenerator: defaultgeneratortextty = (
-              {$ifdef FPC} @{$endif}delete_n_selected_rows //tg_delete_n_selected_rows
-    );
-
-procedure setitem(var item: langinfoty; const Name: string;
-const langnamespo : plangnamesaty;
-const extendedpo: pextendedaty;
-const mainformpo: pmainformaty;
-const sourceformpo: psourceformaty;
-const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
-  const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty; const textgeneratorpo: pdefaultgeneratortextty);
-begin
-  item.Name          := Name;
-  item.langnamestext := langnamespo;
-  item.extendedtext  := extendedpo;
-  item.mainformtext := mainformpo;
-  item.sourceformtext := sourceformpo;
-  item.projectoptionscontext := projectoptionsconpo;
-  item.actionsmoduletext := actionsmodulepo;
-  item.settingstext  := settingspo;
-  item.projectoptionstext := projectoptionspo;
-  item.stockcaption  := stockcaptionpo;
-  item.modalresulttext := modalresulttextpo;
-  item.modalresulttextnoshortcut := modalresulttextnoshortcutpo;
-  item.textgenerator := textgeneratorpo;
-end;
-
-procedure registerlangconsts(const Name: string;
-  const langnamespo : plangnamesaty;
-  const extendedpo : pextendedaty;
-  const mainformpo : pmainformaty;
-  const sourceformpo : psourceformaty;
-  const projectoptionsconpo: pprojectoptionsconaty; const actionsmodulepo: pactionsmoduleaty; const settingspo: pisettingsaty;
-  const projectoptionspo: pprojectoptionsaty; const stockcaptionpo: pstockcaptionaty; const modalresulttextpo: pdefaultmodalresulttextty; const modalresulttextnoshortcutpo: pdefaultmodalresulttextty;
-  const textgeneratorpo: pdefaultgeneratortextty);
-var
-  int1: integer;
-begin
-  for int1 := 0 to high(langs) do
-    if langs[int1].Name = Name then
-    begin
-      setitem(langs[int1], Name,
-      langnamespo,
-       extendedpo,
-       mainformpo,
-       sourceformpo,
-       projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
-        modalresulttextnoshortcutpo, textgeneratorpo);
-      Exit;
-    end;
-  setlength(langs, high(langs) + 2);
-  setitem(langs[high(langs)], Name,
-   langnamespo,
-   extendedpo,
-   mainformpo,
-   sourceformpo,
-   projectoptionsconpo, actionsmodulepo, settingspo, projectoptionspo, stockcaptionpo, modalresulttextpo,
-    modalresulttextnoshortcutpo, textgeneratorpo);
-end;
-
-procedure registeruserlangconsts(Name: string; const Caption: array of msestring);
-
-  procedure setitem(var item: userlanginfoty);
-  var
-    int1: integer;
-  begin
-    item.Name := Name;
-    setlength(item.Caption, length(Caption));
-    for int1  := 0 to high(Caption) do
-      item.Caption[int1] := Caption[int1];
-  end;
-
-var
-  int1: integer;
-begin
-  Name     := lowercase(Name);
-  for int1 := 0 to high(userlangs) do
-    if userlangs[int1].Name = Name then
-    begin
-      setitem(userlangs[int1]);
-      Exit;
-    end;
-  setlength(userlangs, high(userlangs) + 2);
-  setitem(userlangs[high(userlangs)]);
-end;
-
-procedure setuserlangconsts(const Name: string);
-var
-  int1: integer;
-begin
-  if Name = '' then
-  begin
-    if high(userlangs) >= 0 then
-      userlang := userlangs[0];
-  end
-  else if Name <> userlang.Name then
-    for int1 := 0 to high(userlangs) do
-      if userlangs[int1].Name = Name then
-      begin
-        userlang := userlangs[int1];
-        break;
-      end;
-end;
-
-function getcurrentlangconstsname: string;
-begin
-  Result := lang.Name;
-end;
-
-function setlangconsts(const Name: string): Boolean;
-var
-  int1: integer;
-  bo1: Boolean;
-  str1: string;
-begin
-  if Name = '' then
-  begin
-    str1   := lowercase(sys_getlangname);
-    if str1 = '' then
-      str1 := langnames[la_en];
-  end
-  else
-    str1 := lowercase(Name);
-  setuserlangconsts(str1);
-  Result := False;
-  bo1    := lang.Name = '';
-  if lang.Name <> str1 then
-  begin
-    for int1 := 0 to high(langs) do
-      if langs[int1].Name = str1 then
-      begin
-        lang   := langs[int1];
-        Result := True;
-        break;
-      end;
-    if bo1 then
-      if lang.Name = '' then
-        setitem(lang, langnames[la_en], @en_langnamestext, @en_extendedtext,
-        @en_mainformtext, @en_sourceformtext,
-        @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
-         @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
-          @en_modalresulttextnoshortcut, @en_textgenerator);
-  end;
-  if lowercase(str1) <> langbefore then
-  begin
-    for int1 := 0 to high(langchangeprocs) do
-      langchangeprocs[int1](str1);
-    application.langchanged;
-  end;
-end;
-
-procedure checklang;
-begin
-  if lang.Name = '' then
-    setlangconsts('');
-end;
-
-function uc(const index: integer): msestring;
-begin
-  if userlang.Name = '' then
-    setuserlangconsts('');
-  if (index < 0) or (index > high(userlang.Caption)) then
-    raise Exception.Create('Invalid user caption index: ' + IntToStr(index) + '.');
-  Result := userlang.Caption[index];
-end;
-
-function settingstext(const index: isettingsty): msestring;
-begin
-  checklang;
-  Result := lang.settingstext^[index];
-end;
-
-function actionsmoduletext(const index: actionsmodulety): msestring;
-begin
-  checklang;
-  Result := lang.actionsmoduletext^[index];
-end;
-
-function sourceformtext(const index: sourceformty): msestring;
-begin
-  checklang;
-  Result := lang.sourceformtext^[index];
-end;
-
-function mainformtext(const index: mainformty): msestring;
-begin
-  checklang;
-  Result := lang.mainformtext^[index];
-end;
-
-function extendedtext(const index: extendedty): msestring;
-begin
-  checklang;
-  Result := lang.extendedtext^[index];
-end;
-
-function langnamestext(const index: integer): msestring;
-begin
-  checklang;
-  Result := lang.langnamestext^[index];
-end;
-
-function projectoptionstext(const index: projectoptionsty): msestring;
-begin
-  checklang;
-  Result := lang.projectoptionstext^[index];
-end;
-
-function projectoptionscontext(const index: projectoptionsconty): msestring;
-begin
-  checklang;
-  Result := lang.projectoptionscontext^[index];
-end;
-
-function modalresulttext(const index: modalresultty): msestring;
-begin
-  checklang;
-  Result := lang.modalresulttext^[index];
-end;
-
-function modalresulttextnoshortcut(const index: modalresultty): msestring;
-begin
-  checklang;
-  Result := lang.modalresulttextnoshortcut^[index];
-end;
-
-function stocktextgenerators(const index: textgeneratorty): textgeneratorfuncty;
-begin
-  checklang;
-  Result := lang.textgenerator^[index];
-end;
-
-function stockcaptions(const index: stockcaptionty): msestring;
-begin
-  checklang;
-  Result := lang.stockcaption^[index];
-end;
-
-procedure registerlangchangeproc(const aproc: langchangeprocty);
-begin
-  additem(pointerarty(langchangeprocs),
-{$ifndef FPC}@{$endif}
-    aproc);
-end;
-
-procedure unregisterlangchangeproc(const aproc: langchangeprocty);
-begin
-  removeitem(pointerarty(langchangeprocs),
-{$ifndef FPC}@{$endif}
-    aproc);
-end;
-
+  
 initialization
-  registerlangconsts(langnames[la_en], @en_langnamestext, @en_extendedtext, @en_mainformtext,
-  @en_sourceformtext,
-   @en_projectoptionscontext, @en_actionsmoduletext, @en_settingstext,
-   @en_projectoptionstext, @en_stockcaption, @en_modalresulttext,
-    @en_modalresulttextnoshortcut, @en_textgenerator);
-  langbefore := langnames[la_en];
+ 
 end.
 
