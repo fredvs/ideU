@@ -14,10 +14,10 @@ unit mseintegerenter;
 interface
 uses
  msestockobjects,
+ po2const,
  mseconsts_ide,
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
- msedialog,msestrings,
-  {$I useslang.inc};
+ msedialog,msestrings;
 
 type
  tintegerenterfo = class(tdialogform)
@@ -86,8 +86,8 @@ end;
 
 procedure tintegerenterfo.setlangsearchline();
 begin
-  Caption        := stockobjects.captions[sc_line];
-  ok.Caption := stockobjects.modalresulttext[mr_ok];
+  Caption        := lang_stockcaption[ord(sc_line)];
+  ok.Caption := lang_modalresult[Ord(mr_ok)];
 
 end;
 

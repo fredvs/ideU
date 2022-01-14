@@ -7,6 +7,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   Classes,
   mseclasses,
@@ -35,8 +36,7 @@ uses
   mclasses,
   mseificomp,
   mseificompglob,
-  mseifiglob,
-  {$I useslang.inc};
+  mseifiglob;
 
 type
   tactionsmo = class(tmsedatamodule)
@@ -327,7 +327,7 @@ uses
 procedure configureide;
 begin
   disassfo.resetshortcuts();
-  if editsettings(actionsmoduletext(ac_configureideu),
+  if editsettings(lang_actionsmodule[ord(ac_configureideu)],
     actionsmo.shortcuts) then
   begin
     mainfo.mainstatfile.writestat();
@@ -483,11 +483,9 @@ begin
     openfile.controller.icon        := icon;
     openfile.controller.showoptions := True;
 
-    with stockobjects do
-      openfile.controller.captionsave := captions[sc_saveas];
-    ;
-
-    if factivedesignmodule <> nil then
+    openfile.controller.captionsave := lang_stockcaption[ord(sc_saveas)];
+   
+       if factivedesignmodule <> nil then
     begin
       str1 := factivedesignmodule^.filename;
       if openfile.controller.Execute(str1, fdk_save) then
@@ -1050,8 +1048,8 @@ begin
   str3       := '';
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
-      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
+      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
   begin
@@ -1155,8 +1153,8 @@ begin
  
    if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + actionsmoduletext(ac_doesnotexist) + ' .  ' + 
-      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + ' .  ' + 
+      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
   
   else
     with mainfo do
@@ -1170,8 +1168,8 @@ begin
 
  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
-      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
+      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do
@@ -1183,8 +1181,8 @@ procedure tactionsmo.nextactonexecute(const Sender: TObject);
 begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
-      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
+      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do
@@ -1196,8 +1194,8 @@ procedure tactionsmo.nextiactonexecute(const Sender: TObject);
 begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + actionsmoduletext(ac_doesnotexist) + '  ' + 
-      stockobjects.captions[sc_compileitfirst]  , mtk_error)
+        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
+      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do
@@ -1249,10 +1247,10 @@ begin
   with mainfo do
   begin
     int1 := 0;
-    if integerenter(int1, minint, maxint, actionsmoduletext(ac_processid),
-      actionsmoduletext(ac_attachtoprocess)) = mr_ok then
+    if integerenter(int1, minint, maxint, lang_actionsmodule[ord(ac_processid)],
+      lang_actionsmodule[ord(ac_attachtoprocess)]) = mr_ok then
     begin
-      setstattext(actionsmoduletext(ac_attachingprocess) + ' ' + UTF8Decode(IntToStr(int1)), mtk_making);
+      setstattext(lang_actionsmodule[ord(ac_attachingprocess)] + ' ' + UTF8Decode(IntToStr(int1)), mtk_making);
       application.ProcessMessages;
       startgdb(False);
       gdb.attach(int1, info);

@@ -26,7 +26,7 @@ interface
  {$endif}
 {$endif}
 uses
- classes,mclasses,sysutils,mseclasses,msegui,msedragglob,
+ classes,mclasses,sysutils,mseclasses,msegui,msedragglob, po2const,
  msegraphics,msetypes,msestrings,msegraphutils,msebitmap,mseassistiveclient,
  msescrollbar,msearrayprops,mseglob,mseguiglob,typinfo,msearrayutils,
  msedatalist,msedrawtext,msewidgets,mseevent,mseinplaceedit,mseeditglob,
@@ -10776,7 +10776,7 @@ begin
     state1:= [as_disabled];
    end;
    tpopupmenu.additems(amenu,self,mouseinfo,[
-         stockobjects.captions[sc_copy_cells]+sepchar+
+         lang_stockcaption[ord(sc_copy_cells)]+sepchar+
        '('+encodeshortcutname(sysshortcuts[sho_copycells])+')'],
                   [],[state1],[{$ifdef FPC}@{$endif}docopycells],not bo1);
    bo1:= true;
@@ -10789,7 +10789,7 @@ begin
     state1:= [];
    end;
    tpopupmenu.additems(amenu,self,mouseinfo,[
-        stockobjects.captions[sc_paste_cells]+sepchar+
+        lang_stockcaption[ord(sc_paste_cells)]+sepchar+
       '('+encodeshortcutname(sysshortcuts[sho_pastecells])+')'],
                  [],[state1],[{$ifdef FPC}@{$endif}dopastecells],not bo1);
    bo1:= true;
@@ -10797,13 +10797,13 @@ begin
 
   if og_rowinserting in foptionsgrid then begin
    tpopupmenu.additems(amenu,self,mouseinfo,[
-              stockobjects.captions[sc_insert_rowhk]+sepchar+
+              lang_stockcaption[ord(sc_insert_rowhk)]+sepchar+
          '('+encodeshortcutname(sysshortcuts[sho_rowinsert])+')'],[],
          menustates(caninsertrow),
         [{$ifdef FPC}@{$endif}doinsertrow],not bo1);
    bo1:= true;
    tpopupmenu.additems(amenu,self,mouseinfo,[
-              stockobjects.captions[sc_append_rowhk]+sepchar+
+              lang_stockcaption[ord(sc_append_rowhk)]+sepchar+
        '('+encodeshortcutname(sysshortcuts[sho_rowappend])+')'],[],
             menustates(canappendrow),[{$ifdef FPC}@{$endif}doappendrow],not bo1);
    bo1:= true;
@@ -10816,7 +10816,7 @@ begin
     state1:= [as_disabled];
    end;
    tpopupmenu.additems(amenu,self,mouseinfo,[
-         stockobjects.captions[sc_delete_rowhk]+sepchar+
+         lang_stockcaption[ord(sc_delete_rowhk)]+sepchar+
        '('+encodeshortcutname(sysshortcuts[sho_rowdelete])+')'],
                   [[mao_nocandefocus]],[state1],[{$ifdef FPC}@{$endif}dodeleterows],not bo1);
    bo1:= true;
@@ -16419,10 +16419,8 @@ begin
 if noconfirmdelete then result := true
 else
 begin
- with stockobjects do begin
  result:= (og1_norowdeletequery in foptionsgrid1) or
-    askok(captions[sc_Delete_row_question],captions[sc_Confirmation]);
- end;
+    askok(lang_stockcaption[ord(sc_Delete_row_question)],lang_stockcaption[ord(sc_Confirmation)]);
 end;
 end;
 
@@ -16442,7 +16440,7 @@ begin
  if high(ar1) >= 0 then begin
   if askok(stockobjects.textgenerators[tg_delete_n_selected_rows](
                                        [integer(length(ar1))]),
-                            stockobjects.captions[sc_Confirmation]) then begin
+                            lang_stockcaption[ord(sc_Confirmation)]) then begin
    beginupdate;
    try
     for int1:= high(ar1) downto 0 do begin

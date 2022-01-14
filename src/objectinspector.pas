@@ -36,8 +36,7 @@ uses
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
  msedesigner,msetypes,msestrings,mselist,msegraphics, msedispwidgets,
- mserichstring,
-  {$I useslang.inc};
+ mserichstring;
  
 type
  tobjectinspectorfo = class;

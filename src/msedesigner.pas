@@ -38,8 +38,7 @@ uses
  mseforms,mselist,msearrayutils,msebitmap,msetypes,sysutils,msehash,mseclasses,
  mseformdatatools,typinfo,msepropertyeditors,msecomponenteditors,msegraphics,
  mseapplication,msegui,msestrings,msedesignparser,msecomptree,mseevent,
- mseinterfaces,msedock,
-  {$I useslang.inc};
+ mseinterfaces,msedock;
  
 {$ifndef mse_methodswap}
  {$define mse_nomethodswap}

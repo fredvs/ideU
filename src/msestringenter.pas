@@ -13,6 +13,7 @@ unit msestringenter;
 
 interface
 uses
+ po2const,
  mseforms,msedataedits,msesimplewidgets,msetypes,msegui,mseglob,mseguiglob,
  msedialog,msestrings,msestringcontainer,msemenus,msesplitter,msegraphics,
  msegraphutils,msewidgets,mseapplication,mseedit,mseificomp,mseificompglob,
@@ -74,14 +75,14 @@ begin
   fo:= tstringenterfo.create(nil);
   try
    with fo do begin
-    caption:= stockobjects.captions[sc_passwordupper];
-    lab.caption:= stockobjects.captions[sc_enterpassword]+':';
+    caption:= lang_stockcaption[ord(sc_passwordupper)];
+    lab.caption:= lang_stockcaption[ord(sc_enterpassword)]+':';
     value.passwordchar:= '*';
     value.value:= '';
     modalresult:= fo.show(true,nil);
     result:= (modalresult = mr_ok) and (password = value.value);
     if not result and (modalresult = mr_ok) then begin
-     showerror(stockobjects.captions[sc_invalidpassword]);
+     showerror(lang_stockcaption[ord(sc_invalidpassword)]);
     end;
    end;
   finally

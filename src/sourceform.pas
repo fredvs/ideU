@@ -3,6 +3,7 @@ unit sourceform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
+
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}
@@ -17,15 +18,48 @@ interface
 {$endif}
 
 uses
- mseconsts_ide,
- msestockobjects,
- confideu,ideusettings,commandorform,SysUtils,msetimer,msetextedit,
- msewidgetgrid,mseforms,Classes,mclasses,msegdbutils,msebitmap,msetabs,
- sourcepage,mseglob,msetypes,msestrings,mseguiglob,msegui,msesyntaxpainter,
- msemenus,mseactions,msestat,finddialogform,msestream,msefilechange,dateutils,
- breakpointsform,mseparser,msesimplewidgets,msegrids,msegraphutils,msegridsglob,
- msestringcontainer,msedragglob,msegraphics,msescrollbar,msewidgets, mseclasses,
-  {$I useslang.inc};
+  mseconsts_ide,
+  po2const,
+  msestockobjects,
+  confideu,
+  ideusettings,
+  commandorform,
+  SysUtils,
+  msetimer,
+  msetextedit,
+  msewidgetgrid,
+  mseforms,
+  Classes,
+  mclasses,
+  msegdbutils,
+  msebitmap,
+  msetabs,
+  sourcepage,
+  mseglob,
+  msetypes,
+  msestrings,
+  mseguiglob,
+  msegui,
+  msesyntaxpainter,
+  msemenus,
+  mseactions,
+  msestat,
+  finddialogform,
+  msestream,
+  msefilechange,
+  dateutils,
+  breakpointsform,
+  mseparser,
+  msesimplewidgets,
+  msegrids,
+  msegraphutils,
+  msegridsglob,
+  msestringcontainer,
+  msedragglob,
+  msegraphics,
+  msescrollbar,
+  msewidgets,
+  mseclasses;
 
 type
   stringconsts = (
@@ -79,13 +113,13 @@ type
     timagelist2: timagelist;
     tfacecomp1: tfacecomp;
     tfacecomp2: tfacecomp;
-   tfacecomp1dark: tfacecomp;
-   tfacecomp2dark: tfacecomp;
-   step_back: tbutton;
-   buttonimage: timagelist;
-   step_forward: tbutton;
-   tfacecomp2horz: tfacecomp;
-   tfacecomp2horzdark: tfacecomp;
+    tfacecomp1dark: tfacecomp;
+    tfacecomp2dark: tfacecomp;
+    step_back: TButton;
+    buttonimage: timagelist;
+    step_forward: TButton;
+    tfacecomp2horz: tfacecomp;
+    tfacecomp2horzdark: tfacecomp;
     procedure formonidle(var again: Boolean);
     procedure doselectpage(const Sender: TObject);
 
@@ -108,9 +142,9 @@ type
     procedure insuidexec(const Sender: TObject);
     procedure stephintev(const Sender: TObject; var info: hintinfoty);
     procedure onpageadd(const Sender: TObject; const awidget: twidget);
-   procedure ondefocus(const sender: TObject);
-   procedure onfocus(const sender: TObject);
-   procedure oncreat(const sender: TObject);
+    procedure ondefocus(const Sender: TObject);
+    procedure onfocus(const Sender: TObject);
+    procedure oncreat(const Sender: TObject);
   private
     fasking: Boolean;
     fgdbpage: tsourcepage;
@@ -142,7 +176,7 @@ type
     destructor Destroy; override;
 
     procedure updatestat(const statfiler: tstatfiler);
-    
+
     function hidesourcehint: Boolean;    //false if no action;
     procedure updatebreakpointicon(const path: filenamety; const info: bkptlineinfoty);
     procedure textmodified(const Sender: tsourcepage);
@@ -188,10 +222,8 @@ type
 
 var
   sourcefo: tsourcefo;
- 
-function checkerrormessage(const Text: msestring;
-        out alevel: errorlevelty; out afilename: filenamety; 
-        out col, row: integer): Boolean;
+
+function checkerrormessage(const Text: msestring; out alevel: errorlevelty; out afilename: filenamety; out col, row: integer): Boolean;
 function locateerrormessage(const Text: msestring; var apage: tsourcepage; minlevel: errorlevelty = el_all): Boolean;
 //true if valid errormessage
 
@@ -244,9 +276,9 @@ begin
   col    := 0;
   row    := 0;
   alevel := el_none;
-  
-  Text2 := text;
-  
+
+  Text2 := Text;
+
   splitstring(Text2, ar1, msechar('('));
   if length(ar1) > 1 then
   begin         //try FPC
@@ -256,16 +288,16 @@ begin
       splitstring(ar2[0], ar3, msechar(','));
       if (high(ar3) >= 0) then
       begin
-         if (system.pos('Error:', ar2[1])  > 0) or
-          (system.pos('Fatal:', ar2[1])  > 0) then
+        if (system.pos('Error:', ar2[1]) > 0) or
+          (system.pos('Fatal:', ar2[1]) > 0) then
           alevel := el_error
         else if (system.pos('Warning:', ar2[1]) > 0) then
-          alevel := el_warning 
+          alevel := el_warning
         else if (system.pos('Note:', ar2[1]) > 0) then
           alevel := el_note
         else if (system.pos('Hint:', ar2[1]) > 0) then
           alevel := el_hint;
-          
+
         if trystrtoint(ar3[0], row) then
         begin
           Dec(row);
@@ -332,7 +364,7 @@ begin
   begin
     apage  := sourcefo.showsourceline(objpath(fna1), row1, col1, True);
     Result := True;
-   
+
   end;
 end;
 
@@ -451,8 +483,8 @@ begin
     showsourcepos(self.items[findex]^, True, acellpos);
     navigforwardact.Enabled := findex < fcount - 1;
     navigbackact.Enabled    := findex > 0;
-    step_forward.Enabled := findex < fcount - 1;
-    step_back.Enabled    := findex > 0;
+    step_forward.Enabled    := findex < fcount - 1;
+    step_back.Enabled       := findex > 0;
   end;
 end;
 
@@ -526,14 +558,14 @@ begin
   end
   else
     Result := False;
- end;
+end;
 
 procedure tsourcefo.tabwidgetpageremoved(const Sender: TObject; const awidget: twidget);
 begin
   tabdeleted := True;
   if awidget = fgdbpage then
     fgdbpage := nil;
-    
+
 end;
 
 {
@@ -766,9 +798,9 @@ begin
                   longword
 {$else}byte{$endif}
                   (moduleoptions[int1])) * [mo_hidewidgets, mo_hidecomp]//        if decodemoduledock(moduledock[int1],dockinfo) then begin
-                //         docktopanel(designformintf.getdockcontroller(),dockinfo.panelname,
-                //                                                     dockinfo.rect);
-                //        end;
+            //         docktopanel(designformintf.getdockcontroller(),dockinfo.panelname,
+            //                                                     dockinfo.rect);
+            //        end;
             ;
           except
             if checkprojectloadabort then
@@ -1124,10 +1156,10 @@ begin
     getfileinfo(expandprmacros(tsourcepage(files_tab[x]).pathdisp.Value), ainfo);
     tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.Value + lineend + 'Last modification: ' + UTF8Decode(formatdatetime('YYYY-MM-DD HH:mm:ss', UniversalTimeToLocal(ainfo.extinfo1.modtime))) +
       ' | Size: ' + UTF8Decode(IntToStr(ainfo.extinfo1.size div 1000)) + ' Kb.';
-   
-    tsourcepage(files_tab[x]).caption := trim(tsourcepage(files_tab[x]).caption) + '   ';
-   
-   end;
+
+    tsourcepage(files_tab[x]).Caption := trim(tsourcepage(files_tab[x]).Caption) + '   ';
+
+  end;
 end;
 
 procedure tsourcefo.updatecaption;
@@ -1146,141 +1178,145 @@ begin
         if Assigned(mainfo) then
           if Assigned(mainfo.openfile) then
           begin
-            mainfo.openfile.controller.icon := mainfo.icon;
+            mainfo.openfile.controller.icon    := mainfo.icon;
             mainfo.openfile.controller.lastdir := ExtractFilePath(ActivePage.pathdisp.Value);
-          end;  
-     thefilename := caption;     
-          
-      if Assigned(debuggerfo) then
+          end;
+      thefilename := Caption;
+
+      if Assigned(debuggerfo) and
+        (length(lang_stockcaption) > 0) then
       begin
-           debuggerfo.edited_make.hint         := ' ' +  stockobjects.captions[sc_edited] +
-    ' : ' + stockobjects.captions[sc_make] +  ' ' + caption + ' '; 
+        debuggerfo.edited_make.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
+          ' : ' + lang_stockcaption[Ord(sc_make)] + ' ' + Caption + ' ';
 
-               debuggerfo.edited_run.hint         := ' ' +  stockobjects.captions[sc_edited] +
-    ' : ' + stockobjects.captions[sc_debugrun] +  ' ' + caption + ' '; 
+        debuggerfo.edited_run.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
+          ' : ' + lang_stockcaption[Ord(sc_debugrun)] + ' ' + Caption + ' ';
 
-                   debuggerfo.toggle_form_unit.hint         := ' ' +  stockobjects.captions[sc_edited] +
-    ' : ' + stockobjects.captions[sc_toggleformunit] +  ' ' + caption + ' '; 
+        debuggerfo.toggle_form_unit.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
+          ' : ' + lang_stockcaption[Ord(sc_toggleformunit)] + ' ' + Caption + ' ';
 
-      
         debuggerfo.file_history.Value := tosysfilepath(filepath(ActivePage.pathdisp.Value, fk_file, True));
 
-          debuggerfo.edit_compiler.hint    := ' Compiler Type for ' + Caption + ' ';
+        debuggerfo.edit_compiler.hint    := ' Compiler Type for ' + Caption + ' ';
         debuggerfo.edit_compilernum.hint := ' Compiler Number for ' + Caption + ' ';
         debuggerfo.edit_options.hint     := ' Option Number for ' + Caption + '. X --> No parameters.';
-   
+
       end;
 
       if beautyformcreated then
       begin
-        beautyfo.filetoclean.value := ExtractFileName(debuggerfo.file_history.Value);
+        beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
         beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
       end;
 
       if plformcreated then
         procedurelistfo.updatelist(debuggerfo.file_history.Value);
     end;
-      tsourcepage(files_tab.ActivePage).caption := trim(tsourcepage(files_tab.ActivePage).caption) + '   ';
+    tsourcepage(files_tab.ActivePage).Caption := trim(tsourcepage(files_tab.ActivePage).Caption) + '   ';
   end
   else
     Caption := sourceformtext(sf_none);
- 
- end;
+
+end;
 
 procedure tsourcefo.tabwidgetonactivepagechanged(const Sender: TObject);
 var
-color0,color1, color2 : longword;
-str1: ttextstream;
-thedir: msestring;
-ratio : double;
-
+  color0, color1, color2: longword;
+  str1: ttextstream;
+  thedir: msestring;
+  ratio: double;
 begin
-tabcloser := true;
+  tabcloser := True;
   updatecaption;
-  ratio := confideufo.fontsize.value / 12;
+  ratio     := confideufo.fontsize.Value / 12;
 
-   if ActivePage <> nil then begin
- with ActivePage do begin
-   if mainfo.themenr = 0 then begin
-ActivePage.color := cl_ltgray;
-ActivePage.container.color := cl_ltgray;
-pathdisp.face.template := debuggerfo.templatemain;
-pathdisp.font.color := cl_black;
-linedisp.face.template := debuggerfo.templatemain;
-linedisp.font.color := cl_black;
-color := cl_ltgray;
-container.color := cl_ltgray;
-color0 := cl_white;
-color1 := cl_dkgray;
-color2 := cl_black;
- pathdisp.height := round(ratio * 20);
- linedisp.height := round(ratio * 20);
+  if ActivePage <> nil then
+  begin
+    with ActivePage do
+    begin
+      if mainfo.themenr = 0 then
+      begin
+        ActivePage.color := cl_ltgray;
+        ActivePage.container.color := cl_ltgray;
+        pathdisp.face.template := debuggerfo.templatemain;
+        pathdisp.font.color := cl_black;
+        linedisp.face.template := debuggerfo.templatemain;
+        linedisp.font.color := cl_black;
+        color           := cl_ltgray;
+        container.color := cl_ltgray;
+        color0          := cl_white;
+        color1          := cl_dkgray;
+        color2          := cl_black;
+        pathdisp.Height := round(ratio * 20);
+        linedisp.Height := round(ratio * 20);
 
- files_tab.tab_size := round(24 * ratio);
- step_back.height := round(24 * ratio);
- step_forward.height := round(24 * ratio);
+        files_tab.tab_size  := round(24 * ratio);
+        step_back.Height    := round(24 * ratio);
+        step_forward.Height := round(24 * ratio);
 
-  source_editor.height := height -
-      pathdisp.height -2;
+        source_editor.Height := Height -
+          pathdisp.Height - 2;
 
- pathdisp.top := source_editor.height + 1;
- linedisp.top := pathdisp.top;
-end;
+        pathdisp.top := source_editor.Height + 1;
+        linedisp.top := pathdisp.top;
+      end;
 
-if mainfo.themenr = 1 then begin
-ActivePage.color := cl_black;
-ActivePage.container.color := cl_black;
-pathdisp.face.template := debuggerfo.templatemaindark;
-pathdisp.font.color := cl_white;
-linedisp.face.template := debuggerfo.templatemaindark;
-linedisp.font.color := cl_white;
-color := cl_black;
-container.color := cl_black;
-color0 := cl_black;
-color1 := cl_dkgray;
-color2 := cl_white;
-end;
-end;
+      if mainfo.themenr = 1 then
+      begin
+        ActivePage.color := cl_black;
+        ActivePage.container.color := cl_black;
+        pathdisp.face.template := debuggerfo.templatemaindark;
+        pathdisp.font.color := cl_white;
+        linedisp.face.template := debuggerfo.templatemaindark;
+        linedisp.font.color := cl_white;
+        color           := cl_black;
+        container.color := cl_black;
+        color0          := cl_black;
+        color1          := cl_dkgray;
+        color2          := cl_white;
+      end;
+    end;
 
-ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
-ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
-ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbhorz.face.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbhorz.colorglyph := color2;
+    ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[1] := color0;
+    ActivePage.source_editor.frame.sbhorz.facebutton.fade_color.items[0] := color1;
+    ActivePage.source_editor.frame.sbhorz.face.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbhorz.face.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbhorz.face1.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbhorz.face2.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbhorz.faceendbutton.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbhorz.colorglyph := color2;
 
-ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color0;
-ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color1;
-ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color0;
-ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color1;
-ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color0;
-ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color1;
-ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
-ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
-ActivePage.source_editor.frame.sbvert.colorglyph := color2;
+    ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbvert.facebutton.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbvert.face.fade_color.items[1] := color0;
+    ActivePage.source_editor.frame.sbvert.face.fade_color.items[0] := color1;
+    ActivePage.source_editor.frame.sbvert.face1.fade_color.items[1] := color0;
+    ActivePage.source_editor.frame.sbvert.face1.fade_color.items[0] := color1;
+    ActivePage.source_editor.frame.sbvert.face2.fade_color.items[1] := color0;
+    ActivePage.source_editor.frame.sbvert.face2.fade_color.items[0] := color1;
+    ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
+    ActivePage.source_editor.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
+    ActivePage.source_editor.frame.sbvert.colorglyph := color2;
 
-end;
+  end;
 
- if (ActivePage <> nil) and (confideufo.usedefaulteditoroptions.value) and (layoutbusy = false) then
-begin
-if han <> -1 then sourcefo.syntaxpainter.freedeffile(han);
+  if (ActivePage <> nil) and (confideufo.usedefaulteditoroptions.Value) and (layoutbusy = False) then
+  begin
+    if han <> -1 then
+      sourcefo.syntaxpainter.freedeffile(han);
 
-   thedir := tosysfilepath(confideufo.defsynt.Text);
+    thedir := tosysfilepath(confideufo.defsynt.Text);
 
-    str1:= ttextstream.create(thedir);
+    str1 := ttextstream.Create(thedir);
 
- han := syntaxpainter.readdeffile(str1);
- activepage.edit.setsyntaxdef(han);
- activepage.updatestatvalues;
-  str1.destroy();
-end;
+    han := syntaxpainter.readdeffile(str1);
+    ActivePage.edit.setsyntaxdef(han);
+    ActivePage.updatestatvalues;
+    str1.Destroy();
+  end;
 
 end;
 
@@ -1288,11 +1324,11 @@ procedure tsourcefo.saveactivepage(const newname: filenamety = '');
 begin
   if ActivePage <> nil then
     ActivePage.save(newname)//  if newname <> '' then begin
-    //   filechangenotifyer.removenotification(activepage.filepath);
-    //  end;
-    //  if newname <> '' then begin
-    //   filechangenotifyer.addnotification(activepage.filepath,activepage.filetag);
-    //  end;
+  //   filechangenotifyer.removenotification(activepage.filepath);
+  //  end;
+  //  if newname <> '' then begin
+  //   filechangenotifyer.addnotification(activepage.filepath,activepage.filetag);
+  //  end;
   ;
   updatehinttab;
 end;
@@ -1669,8 +1705,7 @@ begin
     ar1[high(ar1)] := UTF8Decode(stringtopascalstring(ar1[high(ar1)]));
     mstr2          := concatstrings(ar1, lineend);
     mstr4          := messagestr(mstr2);
-    if askyesno(sourceformtext(sf_wishreplace) + lineend + mstr3 + lineend + sourceformtext(sf_str_with)
-     + lineend +
+    if askyesno(sourceformtext(sf_wishreplace) + lineend + mstr3 + lineend + sourceformtext(sf_str_with) + lineend +
       mstr4 + lineend + '?', sourceformtext(sf_confirmation)) then
     begin
       editor.begingroup;
@@ -1722,19 +1757,19 @@ procedure tsourcefo.onpageadd(const Sender: TObject; const awidget: twidget);
 begin
 end;
 
-procedure tsourcefo.ondefocus(const sender: TObject);
+procedure tsourcefo.ondefocus(const Sender: TObject);
 begin
-tabcloser := false;
+  tabcloser := False;
 end;
 
-procedure tsourcefo.onfocus(const sender: TObject);
+procedure tsourcefo.onfocus(const Sender: TObject);
 begin
-tabcloser := true;
+  tabcloser := True;
 end;
 
-procedure tsourcefo.oncreat(const sender: TObject);
+procedure tsourcefo.oncreat(const Sender: TObject);
 begin
-//icon := mainfo.icon;
+  //icon := mainfo.icon;
 end;
 
 end.

@@ -25,8 +25,7 @@ uses
  mseconsts_ide,
  msestockobjects,
  msestream,mseclasses,classes,mclasses,msetypes,mseevent,msehash,msepipestream,
- msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess,
-  {$I useslang.inc};
+ msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess;
  
 //todo: byte endianess for remote debugging
 

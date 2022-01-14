@@ -4,14 +4,14 @@ unit confideu;
 interface
 
 uses
- mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
+ mseconsts_ide,po2const,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
   msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
  mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
  msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,
  msestrings,SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,
  msesys,mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
  msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
- msetextedit,msefiledialogx,{$I useslang.inc};
+ msetextedit,msefiledialogx;
 
 type
   tconfideufo = class(tmseform)
@@ -787,52 +787,52 @@ end;
 procedure tconfideufo.setlangextrasettings();
 begin
 
-  Caption := stockobjects.captions[sc_extrasettings];
-  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  Caption := lang_stockcaption[ord(sc_extrasettings)];
+  but_ok.Caption  := lang_modalresult[Ord(mr_ok)];
   but_apply.Caption  := settingstext(se_apply);
-  group_assistive.frame.caption := settingstext(se_groupassistive);
-  tesakitdir.frame.caption := settingstext(se_sakitdir);
-  tesakitdir.controller.captiondir := settingstext(se_sakitdir);
+  group_assistive.frame.caption := lang_settings[Ord(se_groupassistive)];
+  tesakitdir.frame.caption := lang_settings[Ord(se_sakitdir)];
+  tesakitdir.controller.captiondir := lang_settings[Ord(se_sakitdir)];
     
-  tbassistive.frame.caption := settingstext(se_enableassistive);
-  group_system_layout.frame.caption := settingstext(se_groupsystemlayout);
-  universal_path.frame.caption := settingstext(se_universalpath);
-  nozorderenable.frame.caption := settingstext(se_nozorder);
-  doubleclic.frame.caption := settingstext(se_doubleclic);
-  autofocus_menu.frame.caption := settingstext(se_autofocusmenu);
-  modaldial.frame.caption := settingstext(se_modaldial);
-  fontsize.frame.caption := settingstext(se_fontsize);
-  fontname.frame.caption := settingstext(se_fontname);
-  confirmdel.frame.caption := settingstext(se_confirmdel);
-  blinkcaret.frame.caption := settingstext(se_blinkcaret);
-  brepaintcanvas.frame.caption := settingstext(se_repaintcanvas);
+  tbassistive.frame.caption := lang_settings[Ord(se_enableassistive)];
+  group_system_layout.frame.caption := lang_settings[Ord(se_groupsystemlayout)];
+  universal_path.frame.caption := lang_settings[Ord(se_universalpath)];
+  nozorderenable.frame.caption := lang_settings[Ord(se_nozorder)];
+  doubleclic.frame.caption := lang_settings[Ord(se_doubleclic)];
+  autofocus_menu.frame.caption := lang_settings[Ord(se_autofocusmenu)];
+  modaldial.frame.caption := lang_settings[Ord(se_modaldial)];
+  fontsize.frame.caption := lang_settings[Ord(se_fontsize)];
+  fontname.frame.caption := lang_settings[Ord(se_fontname)];
+  confirmdel.frame.caption := lang_settings[Ord(se_confirmdel)];
+  blinkcaret.frame.caption := lang_settings[Ord(se_blinkcaret)];
+  brepaintcanvas.frame.caption := lang_settings[Ord(se_repaintcanvas)];
 
-  group_sourceeditor.frame.caption := settingstext(se_groupsourceeditor);
-  trimtrailingwhitespace.frame.caption := projectoptionstext(po_trimtrailing);
-  rightmarginchars.frame.caption := projectoptionstext(po_rightmarginline);
-  encoding.frame.caption := projectoptionstext(po_encoding);
-  backupfilecount.frame.caption := projectoptionstext(po_backup);
-  tabstops.frame.caption := projectoptionstext(po_tabstops);
-  blockindent.frame.caption := projectoptionstext(po_indent);
-  usedefaulteditoroptions.frame.caption := settingstext(se_usedefaulteditoroptions);
-  spacetabs.frame.caption := projectoptionstext(po_spacetab);
-  colornote.frame.caption := projectoptionstext(po_colornote);
-  colorerror.frame.caption := projectoptionstext(po_colorerror);
-  colorwarning.frame.caption := projectoptionstext(po_colorwarning);
-  stripmessageesc.frame.caption := projectoptionstext(po_stripmessageesc);
-  stripmessageesc.hint := projectoptionstext(po_stripmessageeschint);
+  group_sourceeditor.frame.caption := lang_settings[Ord(se_groupsourceeditor)];
+  trimtrailingwhitespace.frame.caption := lang_projectoptions[Ord(po_trimtrailing)];
+  rightmarginchars.frame.caption := lang_projectoptions[Ord(po_rightmarginline)];
+  encoding.frame.caption := lang_projectoptions[Ord(po_encoding)];
+  backupfilecount.frame.caption := lang_projectoptions[Ord(po_backup)];
+  tabstops.frame.caption := lang_projectoptions[Ord(po_tabstops)];
+  blockindent.frame.caption := lang_projectoptions[Ord(po_indent)];
+  usedefaulteditoroptions.frame.caption := lang_settings[Ord(se_usedefaulteditoroptions)];
+  spacetabs.frame.caption := lang_projectoptions[Ord(po_spacetab)];
+  colornote.frame.caption := lang_projectoptions[Ord(po_colornote)];
+  colorerror.frame.caption := lang_projectoptions[Ord(po_colorerror)];
+  colorwarning.frame.caption := lang_projectoptions[Ord(po_colorwarning)];
+  stripmessageesc.frame.caption := lang_projectoptions[Ord(po_stripmessageesc)];
+  stripmessageesc.hint := lang_projectoptions[Ord(po_stripmessageeschint)];
   
-  deflayout.frame.caption := stockobjects.captions[sc_layout];
-  defsynt.frame.caption := stockobjects.captions[sc_syntax];
-  closemessages.frame.caption := projectoptionstext(po_closemessages);
-  addwhiteaftercomma.frame.caption := settingstext(se_addwhiteaftercomma);
+  deflayout.frame.caption := lang_stockcaption[ord(sc_layout)];
+  defsynt.frame.caption := lang_stockcaption[ord(sc_syntax)];
+  closemessages.frame.caption := lang_projectoptions[Ord(po_closemessages)];
+  addwhiteaftercomma.frame.caption := lang_settings[Ord(se_addwhiteaftercomma)];
   
-  group_file_change.frame.caption := settingstext(se_groupfilechange);
-  tbfilereload.frame.caption := settingstext(se_filereload);
-  fullpath.frame.caption := settingstext(se_fullpath);
-  tbfilenoload.frame.caption := settingstext(se_filenoload);
-  tbfileaskload.frame.caption := settingstext(se_fileaskload);
-   rectanglearea.frame.caption := settingstext(se_rectanglearea);
+  group_file_change.frame.caption := lang_settings[Ord(se_groupfilechange)];
+  tbfilereload.frame.caption := lang_settings[Ord(se_filereload)];
+  fullpath.frame.caption := lang_settings[Ord(se_fullpath)];
+  tbfilenoload.frame.caption := lang_settings[Ord(se_filenoload)];
+  tbfileaskload.frame.caption := lang_settings[Ord(se_fileaskload)];
+   rectanglearea.frame.caption := lang_settings[Ord(se_rectanglearea)];
  
 end;
 

@@ -26,6 +26,7 @@ uses
  msegraphutils,mseevent,mseclasses,mseforms,msedataedits,mseedit,msegrids,
  msestrings,msetypes,msewidgetgrid,msedatanodes,mselistbrowser,mseactions,
  msesimplewidgets,msewidgets,msegridsglob,msetimer,msesplitter,mseificomp,
+ po2const,
  mseificompglob,mseifiglob,mseact,msestatfile,msestream,sysutils;
 
 type
@@ -124,7 +125,7 @@ var
 begin
  fo1:= tmseshortcutdialogfo.create(nil);
  try
-  no1:= tsysshortcutitem.create(stockobjects.captions[sc_system]);
+  no1:= tsysshortcutitem.create(lang_stockcaption[ord(sc_system)]);
   for ss1:= low(ss1) to high(ss1) do begin
    no1.add(tsysshortcutitem.create(acontroller,ss1));
   end;

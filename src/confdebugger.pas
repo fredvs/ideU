@@ -5,6 +5,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   msetypes,
   mseglob,
@@ -35,8 +36,7 @@ uses
   msestream,
   msestrings,
   msesys,
-  SysUtils,
-  {$I useslang.inc};
+  SysUtils;
 
 type
   tconfdebuggerfo = class(tmseform)
@@ -64,8 +64,8 @@ end;
 
 procedure tconfdebuggerfo.setlangdebuggers();
 begin
-  Caption         := stockobjects.captions[sc_configdebuggers];
-  tnClose.Caption := stockobjects.modalresulttext[mr_ok];
+  Caption        := lang_stockcaption[ord(sc_configdebuggers)];
+  tnClose.Caption := lang_modalresult[ord(mr_ok)];
 end;
 
 end.

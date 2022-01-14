@@ -22,6 +22,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   mseforms,
   msesimplewidgets,
@@ -52,8 +53,7 @@ uses
   msedropdownlist,
   mseedit,
   msestream,
-  SysUtils,
-  {$I useslang.inc};
+  SysUtils;
 
 type
 
@@ -268,18 +268,18 @@ end;
 procedure tfinddialogfo.setlangfind();
 begin
 
-  Caption          := stockobjects.captions[sc_search];
-  tbutton2.Caption := stockobjects.captions[sc_next];
-  tbutton3.Caption := stockobjects.captions[sc_prior];
+  Caption          := lang_stockcaption[ord(sc_search)];
+  tbutton2.Caption := lang_stockcaption[ord(sc_next)];
+  tbutton3.Caption := lang_stockcaption[ord(sc_prior)];
 
-  findtext.frame.Caption  := stockobjects.captions[sc_texttofind] + ' 1';
-  findtext2.frame.Caption := stockobjects.captions[sc_texttofind] + ' 2';
-  findtext3.frame.Caption := stockobjects.captions[sc_texttofind] + ' 3';
-  findtext4.frame.Caption := stockobjects.captions[sc_texttofind] + ' 4';
+  findtext.frame.Caption  := lang_stockcaption[ord(sc_texttofind)] + ' 1';
+  findtext2.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 2';
+  findtext3.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 3';
+  findtext4.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 4';
 
-  casesensitive.frame.Caption := stockobjects.captions[sc_casesensitive];
-  selectedonly.frame.Caption  := stockobjects.captions[sc_selectedonly];
-  wholeword.frame.Caption     := stockobjects.captions[sc_wholeword];
+  casesensitive.frame.Caption := lang_stockcaption[ord(sc_casesensitive)];
+  selectedonly.frame.Caption  := lang_stockcaption[ord(sc_selectedonly)];
+  wholeword.frame.Caption     := lang_stockcaption[ord(sc_wholeword)];
 
 end;
 

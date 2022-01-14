@@ -22,6 +22,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   mseguiglob,
   msegui,
@@ -33,8 +34,7 @@ uses
   msestat,
   msestatfile,
   mseglob,
-  projectoptionsform,
-  {$I useslang.inc};
+  projectoptionsform;
 
 type
   treplacedialogfo = class(tmseform)
@@ -118,17 +118,17 @@ end;
 procedure treplacedialogfo.setlangfindreplace();
 begin
 
-  Caption := stockobjects.captions[sc_find_replace];
-  tintegerbutton1.Caption := stockobjects.captions[sc_replace];
-  tintegerbutton2.Caption := stockobjects.captions[sc_replaceall];
+  Caption := lang_stockcaption[ord(sc_find_replace)];
+  tintegerbutton1.Caption := lang_stockcaption[ord(sc_replace)];
+  tintegerbutton2.Caption := lang_stockcaption[ord(sc_replaceall)];
 
-  findtext.frame.Caption        := stockobjects.captions[sc_texttofind];
-  replacetext.frame.Caption     := stockobjects.captions[sc_replacewith];
-  promptonreplace.frame.Caption := stockobjects.captions[sc_promptonreplace];
+  findtext.frame.Caption        := lang_stockcaption[ord(sc_texttofind)];
+  replacetext.frame.Caption     := lang_stockcaption[ord(sc_replacewith)];
+  promptonreplace.frame.Caption := lang_stockcaption[ord(sc_promptonreplace)];
 
-  casesensitive.frame.Caption := stockobjects.captions[sc_casesensitive];
-  selectedonly.frame.Caption  := stockobjects.captions[sc_selectedonly];
-  wholeword.frame.Caption     := stockobjects.captions[sc_wholeword];
+  casesensitive.frame.Caption := lang_stockcaption[ord(sc_casesensitive)];
+  selectedonly.frame.Caption  := lang_stockcaption[ord(sc_selectedonly)];
+  wholeword.frame.Caption     := lang_stockcaption[ord(sc_wholeword)];
 
 end;
 

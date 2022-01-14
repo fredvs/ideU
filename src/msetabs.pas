@@ -15,7 +15,7 @@ interface
 uses
  msetabsglob,msewidgets,mseclasses,msearrayprops,classes,mclasses,mseshapes,
  mserichstring,msetypes,msegraphics,msegraphutils,mseevent,mseinterfaces,
- mseglob,mseguiglob,msegui,msebitmap,msedragglob,
+ mseglob,mseguiglob,msegui,msebitmap,msedragglob, po2const,
  {mseforms,}rtlconsts,msesimplewidgets,msedrag,mseact,
  mseobjectpicker,msepointer,msestat,msestatfile,msestrings,msemenus,
  msedrawtext,msetimer;
@@ -5206,7 +5206,7 @@ begin
   fpopuptab:= ftabs.tabatpos(translateclientpoint(mouseinfo.pos,self,ftabs));
   if fpopuptab >= 0 then begin
    tpopupmenu.additems(amenu,self,mouseinfo,
-      [stockobjects.captions[sc_close_page]],
+      [lang_stockcaption[ord(sc_close_page)]],
       [],[],[{$ifdef FPC}@{$endif}doclosepage]);
   end;
  end;

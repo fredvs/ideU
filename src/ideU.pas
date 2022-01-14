@@ -59,8 +59,7 @@ guitemplates,
 msegraphutils, 
 msefont, 
 fpg_iniutils_ideu, 
-stringconsts, 
-  {$I useslang.inc};
+stringconsts;
 
 var 
   MSELang : string = '';
@@ -68,6 +67,9 @@ var
 begin
 
   Gettext.GetLanguageIDs(MSELang,MSEFallbackLang);
+  
+ // MSEFallbackLang := 'fr';
+ //  MSELang := 'fr';
 
   nozorderhandling := true;
 

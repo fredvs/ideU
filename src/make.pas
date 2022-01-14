@@ -6,8 +6,7 @@ interface
 uses
   mseconsts_ide,
   msestockobjects,
- msestrings, msetypes, msesystypes, msegraphedits, msepipestream,
-  {$I useslang.inc};
+ msestrings, msetypes, msesystypes, msegraphedits, msepipestream;
 
 procedure domake(atag: integer);
 procedure abortmake;

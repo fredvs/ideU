@@ -28,8 +28,7 @@ uses
   mseforms,
   msedataedits,
   msestringcontainer,
-  msestrings,
-  {$I useslang.inc};
+  msestrings;
 
 type
   stringconsts = (

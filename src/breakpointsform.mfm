@@ -22,7 +22,6 @@ object breakpointsfo: tbreakpointsfo
   statfile = mainfo.projectstatfile
   caption = 'Breakpoints'
   icon.transparentcolor = -2147483642
-  oncreated = oncreat
   onshow = breakpointsonshow
   moduleclassname = 'tdockform'
   object grid: twidgetgrid

@@ -25,8 +25,7 @@ uses
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,
  msetypes{msestrings},
  msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,
- msestringcontainer,
-  {$I useslang.inc};
+ msestringcontainer;
 
 type
 

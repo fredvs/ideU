@@ -14,7 +14,7 @@ unit msepropertyeditors;
 interface
 uses
  classes,mclasses,TypInfo,msedesignintf,msetypes,msestrings,sysutils,
- msearrayutils,msedatalist,
+ msearrayutils,msedatalist, po2const,
  msemenus,mseevent,msegui,mseglob,mseguiglob,
  mseclasses,mseforms,msegraphics,mserichstring;
 {$ifndef mse_allwarnings}
@@ -1076,7 +1076,7 @@ begin
  result:= (toval < fromval) or
           askok(mo.c[ord(wishdelete)]+' '+inttostrmse(fromval) +
          ' '+mo.c[ord(str_to)]+' '+ inttostrmse(toval) + '?',
-         stockobjects.captions[sc_confirmation]);
+         lang_stockcaption[ord(sc_confirmation)]);
 end;
 
 function getcomponentpropname(const acomp: tcomponent): msestring;
@@ -2840,7 +2840,7 @@ function tclasspropertyeditor.checkfreeoptionalclass: boolean;
 begin
  result:= askok(mo.c[ord(wishdestroy)]+' ' + fname+' ('+
              msestring(ftypeinfo^.Name)+
-                     ')?',stockobjects.captions[sc_confirmation]);
+                     ')?',lang_stockcaption[ord(sc_confirmation)]);
 end;
 
 function tclasspropertyeditor.dispname: msestring;
@@ -3629,7 +3629,7 @@ begin
  int1:= tarrayprop(getpointervalue).count;
  if ( int1 > va) and not askok(mo.c[ord(wishdelete)]+' '+inttostrmse(va) +
          ' '+mo.c[ord(str_to)]+' '+ inttostrmse(int1-1) + '?',
-         stockobjects.captions[sc_confirmation]) then begin
+         lang_stockcaption[ord(sc_confirmation)]) then begin
   exit;
  end;
  if not ((ps_noadditems in fstate) and (va > int1)) then begin

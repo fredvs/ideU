@@ -10,7 +10,7 @@ unit projectoptionsform;
 interface
 
 uses
- mseconsts_ide,msestockobjects,mseforms,msefiledialogx,mseapplication,msegui,
+ mseconsts_ide, po2const, msestockobjects,mseforms,msefiledialogx,mseapplication,msegui,
  msestat,msestatfile,msetabs,msesimplewidgets,msetypes,msestrings,msedataedits,
  msetextedit,msegraphedits,msewidgetgrid,msegrids,msesplitter,msemacros,
  msegdbutils,msedispwidgets,msesys,mseclasses,msegraphutils,mseevent,
@@ -19,8 +19,7 @@ uses
  msedrawtext,msewidgets,msepointer,mseguiglob,msepipestream,msemenus,SysUtils,
  mseglob,mseedit,msedialog,msescrollbar,msememodialog,msecodetemplates,
  mseifiglob,msestream,msestringcontainer,mserttistat,mseificomp,mseificompglob,
- msedragglob,mserichstring,mseact,msecalendardatetimeedit,msegridsglob,
- {$I useslang.inc};
+ msedragglob,mserichstring,mseact,msecalendardatetimeedit,msegridsglob;
 
 const
   defaultsourceprintfont = 'Courier';
@@ -1367,12 +1366,8 @@ begin
   begin
     showoptions := True;
     icon        := mainfo.icon;
-    with stockobjects do
-    begin
-      captionopen := captions[sc_openproject];
-      captionsave := captions[sc_saveas];
-    end;
-
+    captionopen := lang_stockcaption[ord(sc_openproject)];
+    captionsave := lang_stockcaption[ord(sc_saveas)];
     fontheight := mainfo.font.Height;   // font height of dialogfile
     fontname   := msestring(mainfo.font.Name);       // font name of dialogfile
     fontcolor  := mainfo.font.color;    // font color of dialogfile
@@ -3604,164 +3599,164 @@ end;
 
 procedure tprojectoptionsfo.setlangprojectoptions();
 begin
-  Caption := projectoptionstext(po_projectoptions); // 'Project Options';
+  Caption := lang_projectoptions[Ord(po_projectoptions)]; // 'Project Options';
 
-  ok.Caption     := stockobjects.modalresulttext[mr_ok];
-  cancel.Caption := stockobjects.modalresulttext[mr_cancel];
+  ok.Caption     := lang_modalresult[Ord(mr_ok)];
+  cancel.Caption := lang_modalresult[Ord(mr_cancel)];
 
-  editorpage.Caption          := projectoptionstext(po_editor); // '&Editor';
-  rightmarginon.frame.Caption := projectoptionstext(po_rightmarginline); // 'Right Margin Line';
-  editmarkbrackets.frame.Caption := projectoptionstext(po_markbrackets);
-  linenumberson.frame.Caption := projectoptionstext(po_linenumbers);
-  editmarkpairwords.frame.Caption := projectoptionstext(po_markpairwords);
-  trimtrailingwhitespace.frame.Caption := projectoptionstext(po_trimtrailing);
-  autoindent.frame.Caption    := projectoptionstext(po_autoindent);
-  enablesource.frame.Caption  := projectoptionstext(po_nosource);
-  tabindent.frame.Caption     := projectoptionstext(po_tabindent);
-  spacetabs.frame.Caption     := projectoptionstext(po_spacetab);
-  showtabs.frame.Caption      := projectoptionstext(po_showtabs);
-  editfontantialiased.frame.Caption := projectoptionstext(po_antialiasedfont);
-  encoding.frame.Caption      := projectoptionstext(po_encoding);
-  pairmarkcolor.frame.Caption := projectoptionstext(po_markcolor);
+  editorpage.Caption          := lang_projectoptions[Ord(po_editor)]; // '&Editor';
+  rightmarginon.frame.Caption := lang_projectoptions[Ord(po_rightmarginline)]; // 'Right Margin Line';
+  editmarkbrackets.frame.Caption := lang_projectoptions[Ord(po_markbrackets)];
+  linenumberson.frame.Caption := lang_projectoptions[Ord(po_linenumbers)];
+  editmarkpairwords.frame.Caption := lang_projectoptions[Ord(po_markpairwords)];
+  trimtrailingwhitespace.frame.Caption := lang_projectoptions[Ord(po_trimtrailing)];
+  autoindent.frame.Caption    := lang_projectoptions[Ord(po_autoindent)];
+  enablesource.frame.Caption  := lang_projectoptions[Ord(po_nosource)];
+  tabindent.frame.Caption     := lang_projectoptions[Ord(po_tabindent)];
+  spacetabs.frame.Caption     := lang_projectoptions[Ord(po_spacetab)];
+  showtabs.frame.Caption      := lang_projectoptions[Ord(po_showtabs)];
+  editfontantialiased.frame.Caption := lang_projectoptions[Ord(po_antialiasedfont)];
+  encoding.frame.Caption      := lang_projectoptions[Ord(po_encoding)];
+  pairmarkcolor.frame.Caption := lang_projectoptions[Ord(po_markcolor)];
 
-  statementcolor.frame.Caption     := projectoptionstext(po_statcolor);
-  scrollheight.frame.Caption       := projectoptionstext(po_scrollbary);
-  rightmarginchars.frame.Caption   := projectoptionstext(po_nbchar);
-  eolstyle.frame.Caption           := projectoptionstext(po_eolstyle);
-  backupfilecount.frame.Caption    := projectoptionstext(po_backup);
-  tabstops.frame.Caption           := projectoptionstext(po_tabstops);
-  blockindent.frame.Caption        := projectoptionstext(po_indent);
-  editfontextraspace.frame.Caption := projectoptionstext(po_extraspace);
-  editfontextraspace.hint          := projectoptionstext(po_extraspacehint);
-  editfontwidth.frame.Caption      := projectoptionstext(po_width);
-  editfontheight.frame.Caption     := projectoptionstext(po_height);
-  editfontname.frame.Caption       := projectoptionstext(po_font);
-  editbkcolor.frame.Caption        := projectoptionstext(po_fontbkcolor);
-  editfontcolor.frame.Caption      := projectoptionstext(po_fontcolor);
+  statementcolor.frame.Caption     := lang_projectoptions[Ord(po_statcolor)];
+  scrollheight.frame.Caption       := lang_projectoptions[Ord(po_scrollbary)];
+  rightmarginchars.frame.Caption   := lang_projectoptions[Ord(po_nbchar)];
+  eolstyle.frame.Caption           := lang_projectoptions[Ord(po_eolstyle)];
+  backupfilecount.frame.Caption    := lang_projectoptions[Ord(po_backup)];
+  tabstops.frame.Caption           := lang_projectoptions[Ord(po_tabstops)];
+  blockindent.frame.Caption        := lang_projectoptions[Ord(po_indent)];
+  editfontextraspace.frame.Caption := lang_projectoptions[Ord(po_extraspace)];
+  editfontextraspace.hint          := lang_projectoptions[Ord(po_extraspacehint)];
+  editfontwidth.frame.Caption      := lang_projectoptions[Ord(po_width)];
+  editfontheight.frame.Caption     := lang_projectoptions[Ord(po_height)];
+  editfontname.frame.Caption       := lang_projectoptions[Ord(po_font)];
+  editbkcolor.frame.Caption        := lang_projectoptions[Ord(po_fontbkcolor)];
+  editfontcolor.frame.Caption      := lang_projectoptions[Ord(po_fontcolor)];
 
-  ttabpage13.Caption := projectoptionstext(po_filefilter);
+  ttabpage13.Caption := lang_projectoptions[Ord(po_filefilter)];
   filefiltergrid.fixrows[-1].captions.Count := 2;
-  filefiltergrid.fixrows[-1].captions[0].Caption := projectoptionstext(po_name);
-  filefiltergrid.fixrows[-1].captions[1].Caption := projectoptionstext(po_filemask);
+  filefiltergrid.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  filefiltergrid.fixrows[-1].captions[1].Caption := lang_projectoptions[Ord(po_filemask)];
 
-  ttabpage14.Caption := projectoptionstext(po_syntaxdeffile);
+  ttabpage14.Caption := lang_projectoptions[Ord(po_syntaxdeffile)];
   twidgetgrid6.fixrows[-1].captions.Count := 2;
-  twidgetgrid6.fixrows[-1].captions[0].Caption := projectoptionstext(po_name);
-  twidgetgrid6.fixrows[-1].captions[1].Caption := projectoptionstext(po_filemask);
+  twidgetgrid6.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  twidgetgrid6.fixrows[-1].captions[1].Caption := lang_projectoptions[Ord(po_filemask)];
 
-  ttabpage19.Caption         := projectoptionstext(po_codetemplate);
-  twidgetgrid5.frame.Caption := projectoptionstext(po_fontcodetemplatedir);
+  ttabpage19.Caption         := lang_projectoptions[Ord(po_codetemplate)];
+  twidgetgrid5.frame.Caption := lang_projectoptions[Ord(po_fontcodetemplatedir)];
 
-  codetemplatedirs.controller.captionopen := projectoptionstext(po_selectunitdir);
-  debuggerpage.Caption     := projectoptionstext(po_debuggerpage);
-  ttabpage77.Caption       := projectoptionstext(po_projectdebugger);
-  ttabpage6.Caption        := projectoptionstext(po_searchdirectories);
-  ttabpage6.hint           := projectoptionstext(po_searchdirectorieshint);
-  sourcedirs.controller.captionopen := projectoptionstext(po_selectsourcedir);
-  sourcebase.frame.Caption := projectoptionstext(po_objectbasedir);
-  sourcebase.controller.captionopen := projectoptionstext(po_selectsourcebasedir);
-  ttabpage9.Caption        := projectoptionstext(po_defines);
-  ttabpage7.Caption        := projectoptionstext(po_signals);
-  ttabpage8.Caption        := projectoptionstext(po_exception);
-  ttabpage16.Caption       := projectoptionstext(po_target);
-  gdbservercommandattach.frame.Caption := projectoptionstext(po_startgdbattachtarget);
-  nogdbserverexit.frame.Caption := projectoptionstext(po_nogdbserverexit);
-  beforeconnect.frame.Caption := projectoptionstext(po_beforeconnect);
-  beforeload.frame.Caption := projectoptionstext(po_beforeload);
-  afterconnect.frame.Caption := projectoptionstext(po_afterconnect);
-  afterload.frame.Caption  := projectoptionstext(po_afterload);
-  gdbservercommand.frame.Caption := projectoptionstext(po_gdbservercommand);
-  gdbserverwait.frame.Caption := projectoptionstext(po_gdbserverwait);
-  gdbserverstartonce.frame.Caption := projectoptionstext(po_gdbserverstartonce);
-  uploadcommand.frame.Caption := projectoptionstext(po_uploadcommand);
-  gdbprocessor.frame.Caption := projectoptionstext(po_gdbprocessor);
-  gdbsimulator.frame.Caption := projectoptionstext(po_gdbsimulator);
-  gdbdownload.frame.Caption := projectoptionstext(po_gdbdownload);
-  startupbkpt.frame.Caption := projectoptionstext(po_startupbkpt);
-  remoteconnection.frame.Caption := projectoptionstext(po_remoteconnection);
-  downloadalways.frame.Caption := projectoptionstext(po_downloadalways);
-  downloadalways.hint      := projectoptionstext(po_downloadalwayshint);
-  gdbloadtimeout.frame.Caption := projectoptionstext(po_gdbloadtimeout);
-  externalconsole.frame.Caption := projectoptionstext(po_externalconsole);
-  stoponexception.frame.Caption := projectoptionstext(po_stoponexception);
-  stoponexception.hint     := projectoptionstext(po_stoponexceptionhint);
-  activateonbreak.frame.Caption := projectoptionstext(po_activateonbreak);
-  activateonbreak.hint     := projectoptionstext(po_activateonbreakhint);
-  valuehints.frame.Caption := projectoptionstext(po_valuehints);
-  nodebugbeginend.frame.Caption := projectoptionstext(po_nodebugbeginend);
-  nodebugbeginend.hint     := projectoptionstext(po_nodebugbeginendhint);
-  settty.frame.Caption     := projectoptionstext(po_settty);
-  raiseonbreak.frame.Caption := projectoptionstext(po_raiseonbreak);
-  raiseonbreak.hint        := projectoptionstext(po_raiseonbreakhint);
-  fpcgdbworkaround.frame.Caption := projectoptionstext(po_fpcgdbworkaround);
-  fpcgdbworkaround.hint    := projectoptionstext(po_fpcgdbworkaroundhint);
+  codetemplatedirs.controller.captionopen := lang_projectoptions[Ord(po_selectunitdir)];
+  debuggerpage.Caption     := lang_projectoptions[Ord(po_debuggerpage)];
+  ttabpage77.Caption       := lang_projectoptions[Ord(po_projectdebugger)];
+  ttabpage6.Caption        := lang_projectoptions[Ord(po_searchdirectories)];
+  ttabpage6.hint           := lang_projectoptions[Ord(po_searchdirectorieshint)];
+  sourcedirs.controller.captionopen := lang_projectoptions[Ord(po_selectsourcedir)];
+  sourcebase.frame.Caption := lang_projectoptions[Ord(po_objectbasedir)];
+  sourcebase.controller.captionopen := lang_projectoptions[Ord(po_selectsourcebasedir)];
+  ttabpage9.Caption        := lang_projectoptions[Ord(po_defines)];
+  ttabpage7.Caption        := lang_projectoptions[Ord(po_signals)];
+  ttabpage8.Caption        := lang_projectoptions[Ord(po_exception)];
+  ttabpage16.Caption       := lang_projectoptions[Ord(po_target)];
+  gdbservercommandattach.frame.Caption := lang_projectoptions[Ord(po_startgdbattachtarget)];
+  nogdbserverexit.frame.Caption := lang_projectoptions[Ord(po_nogdbserverexit)];
+  beforeconnect.frame.Caption := lang_projectoptions[Ord(po_beforeconnect)];
+  beforeload.frame.Caption := lang_projectoptions[Ord(po_beforeload)];
+  afterconnect.frame.Caption := lang_projectoptions[Ord(po_afterconnect)];
+  afterload.frame.Caption  := lang_projectoptions[Ord(po_afterload)];
+  gdbservercommand.frame.Caption := lang_projectoptions[Ord(po_gdbservercommand)];
+  gdbserverwait.frame.Caption := lang_projectoptions[Ord(po_gdbserverwait)];
+  gdbserverstartonce.frame.Caption := lang_projectoptions[Ord(po_gdbserverstartonce)];
+  uploadcommand.frame.Caption := lang_projectoptions[Ord(po_uploadcommand)];
+  gdbprocessor.frame.Caption := lang_projectoptions[Ord(po_gdbprocessor)];
+  gdbsimulator.frame.Caption := lang_projectoptions[Ord(po_gdbsimulator)];
+  gdbdownload.frame.Caption := lang_projectoptions[Ord(po_gdbdownload)];
+  startupbkpt.frame.Caption := lang_projectoptions[Ord(po_startupbkpt)];
+  remoteconnection.frame.Caption := lang_projectoptions[Ord(po_remoteconnection)];
+  downloadalways.frame.Caption := lang_projectoptions[Ord(po_downloadalways)];
+  downloadalways.hint      := lang_projectoptions[Ord(po_downloadalwayshint)];
+  gdbloadtimeout.frame.Caption := lang_projectoptions[Ord(po_gdbloadtimeout)];
+  externalconsole.frame.Caption := lang_projectoptions[Ord(po_externalconsole)];
+  stoponexception.frame.Caption := lang_projectoptions[Ord(po_stoponexception)];
+  stoponexception.hint     := lang_projectoptions[Ord(po_stoponexceptionhint)];
+  activateonbreak.frame.Caption := lang_projectoptions[Ord(po_activateonbreak)];
+  activateonbreak.hint     := lang_projectoptions[Ord(po_activateonbreakhint)];
+  valuehints.frame.Caption := lang_projectoptions[Ord(po_valuehints)];
+  nodebugbeginend.frame.Caption := lang_projectoptions[Ord(po_nodebugbeginend)];
+  nodebugbeginend.hint     := lang_projectoptions[Ord(po_nodebugbeginendhint)];
+  settty.frame.Caption     := lang_projectoptions[Ord(po_settty)];
+  raiseonbreak.frame.Caption := lang_projectoptions[Ord(po_raiseonbreak)];
+  raiseonbreak.hint        := lang_projectoptions[Ord(po_raiseonbreakhint)];
+  fpcgdbworkaround.frame.Caption := lang_projectoptions[Ord(po_fpcgdbworkaround)];
+  fpcgdbworkaround.hint    := lang_projectoptions[Ord(po_fpcgdbworkaroundhint)];
 
-  debugtarget.frame.Caption  := projectoptionstext(po_debugtarget);
-  xtermcommand.frame.Caption := projectoptionstext(po_xtermcommand);
-  runcommand.frame.Caption   := projectoptionstext(po_runcommand);
-  debugcommand.frame.Caption := projectoptionstext(po_debugcommand);
-  debugoptions.frame.Caption := projectoptionstext(po_debugoptions);
-  makepage.Caption           := projectoptionstext(po_makepage);
+  debugtarget.frame.Caption  := lang_projectoptions[Ord(po_debugtarget)];
+  xtermcommand.frame.Caption := lang_projectoptions[Ord(po_xtermcommand)];
+  runcommand.frame.Caption   := lang_projectoptions[Ord(po_runcommand)];
+  debugcommand.frame.Caption := lang_projectoptions[Ord(po_debugcommand)];
+  debugoptions.frame.Caption := lang_projectoptions[Ord(po_debugoptions)];
+  makepage.Caption           := lang_projectoptions[Ord(po_makepage)];
 
-  defaultmake.frame.Caption       := projectoptionstext(po_defaultmake);
-  mainfile.frame.Caption          := projectoptionstext(po_mainfile);
-  mainfile.controller.captionopen := projectoptionstext(po_selectmainfile);
-  targetfile.frame.Caption        := projectoptionstext(po_targetfile);
-  targetfile.controller.captionopen := projectoptionstext(po_selecttargetfile);
-  makecommand.frame.Caption       := projectoptionstext(po_makecommand);
-  makecommand.controller.captionopen := projectoptionstext(po_selectmakecommand);
+  defaultmake.frame.Caption       := lang_projectoptions[Ord(po_defaultmake)];
+  mainfile.frame.Caption          := lang_projectoptions[Ord(po_mainfile)];
+  mainfile.controller.captionopen := lang_projectoptions[Ord(po_selectmainfile)];
+  targetfile.frame.Caption        := lang_projectoptions[Ord(po_targetfile)];
+  targetfile.controller.captionopen := lang_projectoptions[Ord(po_selecttargetfile)];
+  makecommand.frame.Caption       := lang_projectoptions[Ord(po_makecommand)];
+  makecommand.controller.captionopen := lang_projectoptions[Ord(po_selectmakecommand)];
 
-  showcommandline.Caption    := projectoptionstext(po_showcommandline);
-  copymessages.frame.Caption := projectoptionstext(po_copymessages);
+  showcommandline.Caption    := lang_projectoptions[Ord(po_showcommandline)];
+  copymessages.frame.Caption := lang_projectoptions[Ord(po_copymessages)];
 
-  closemessages.frame.Caption := projectoptionstext(po_closemessages);
-  checkmethods.frame.Caption  := projectoptionstext(po_checkmethods);
-  checkmethods.hint           := projectoptionstext(po_checkmethodshint);
-  ttabpage66.Caption          := projectoptionstext(po_projectcompiler);
-  ttabpage17.Caption          := projectoptionstext(po_commandbefore);
-  ttabpage12.Caption          := projectoptionstext(po_makeoptions);
-  ttabpage11.Caption          := projectoptionstext(po_directories);
-  unitdirs.controller.captionopen := projectoptionstext(po_unitdirs);
-  ttabpage18.Caption          := projectoptionstext(po_commandafter);
-  ttabpage88.Caption          := projectoptionstext(po_exeextension);
+  closemessages.frame.Caption := lang_projectoptions[Ord(po_closemessages)];
+  checkmethods.frame.Caption  := lang_projectoptions[Ord(po_checkmethods)];
+  checkmethods.hint           := lang_projectoptions[Ord(po_checkmethodshint)];
+  ttabpage66.Caption          := lang_projectoptions[Ord(po_projectcompiler)];
+  ttabpage17.Caption          := lang_projectoptions[Ord(po_commandbefore)];
+  ttabpage12.Caption          := lang_projectoptions[Ord(po_makeoptions)];
+  ttabpage11.Caption          := lang_projectoptions[Ord(po_directories)];
+  unitdirs.controller.captionopen := lang_projectoptions[Ord(po_unitdirs)];
+  ttabpage18.Caption          := lang_projectoptions[Ord(po_commandafter)];
+  ttabpage88.Caption          := lang_projectoptions[Ord(po_exeextension)];
 
-  ttabpage22.Caption := projectoptionstext(po_comments);
-  makedir.frame.Caption := projectoptionstext(po_makedir);
-  makedir.controller.captionopen := projectoptionstext(po_selectmakedir);
-  colorerror.frame.Caption := projectoptionstext(po_colorerror);
-  colorwarning.frame.Caption := projectoptionstext(po_colorwarning);
-  colornote.frame.Caption := projectoptionstext(po_colornote);
-  stripmessageesc.frame.Caption := projectoptionstext(po_stripmessageesc);
-  stripmessageesc.hint := projectoptionstext(po_stripmessageeschint);
-  showconsole.frame.Caption := projectoptionstext(po_showconsole);
-  enablepurpose.frame.Caption := projectoptionstext(po_enablepurpose);
-  messageoutputfile.frame.Caption := projectoptionstext(po_messageoutputfile);
-  messageoutputfile.controller.captionopen := projectoptionstext(po_selectmessageoutputfile);
-  ttabpage1.Caption  := projectoptionstext(po_macros);
-  selectactivegroupgrid.frame.Caption := projectoptionstext(po_selectactivegroupgrid);
-  fontaliaspage.Caption := projectoptionstext(po_fontaliaspage);
-  tabdesigners.Caption := projectoptionstext(po_designers);
-  ttabpage10.Caption := projectoptionstext(po_usercolors);
-  tbutton1.Caption   := projectoptionstext(po_copycolor);
-  ttabpage21.Caption := projectoptionstext(po_formatmacro);
-  ttabpage21.tabhint := projectoptionstext(po_formatmacrohint);
-  ttabpage2.Caption  := projectoptionstext(po_templates);
-  ttabpage3.Caption  := projectoptionstext(po_newproject);
-  scriptbeforecopy.frame.Caption := projectoptionstext(po_scriptbeforecopy);
-  scriptaftercopy.frame.Caption := projectoptionstext(po_scriptaftercopy);
-  ttabpage4.Caption  := projectoptionstext(po_newfile);
-  ttabpage5.Caption  := projectoptionstext(po_newform);
-  ttabpage15.Caption := projectoptionstext(po_tools);
-  ttabpage20.Caption := projectoptionstext(po_storage);
-  ttabpage23.Caption := projectoptionstext(po_infos);
+  ttabpage22.Caption := lang_projectoptions[Ord(po_comments)];
+  makedir.frame.Caption := lang_projectoptions[Ord(po_makedir)];
+  makedir.controller.captionopen := lang_projectoptions[Ord(po_selectmakedir)];
+  colorerror.frame.Caption := lang_projectoptions[Ord(po_colorerror)];
+  colorwarning.frame.Caption := lang_projectoptions[Ord(po_colorwarning)];
+  colornote.frame.Caption := lang_projectoptions[Ord(po_colornote)];
+  stripmessageesc.frame.Caption := lang_projectoptions[Ord(po_stripmessageesc)];
+  stripmessageesc.hint := lang_projectoptions[Ord(po_stripmessageeschint)];
+  showconsole.frame.Caption := lang_projectoptions[Ord(po_showconsole)];
+  enablepurpose.frame.Caption := lang_projectoptions[Ord(po_enablepurpose)];
+  messageoutputfile.frame.Caption := lang_projectoptions[Ord(po_messageoutputfile)];
+  messageoutputfile.controller.captionopen := lang_projectoptions[Ord(po_selectmessageoutputfile)];
+  ttabpage1.Caption  := lang_projectoptions[Ord(po_macros)];
+  selectactivegroupgrid.frame.Caption := lang_projectoptions[Ord(po_selectactivegroupgrid)];
+  fontaliaspage.Caption := lang_projectoptions[Ord(po_fontaliaspage)];
+  tabdesigners.Caption := lang_projectoptions[Ord(po_designers)];
+  ttabpage10.Caption := lang_projectoptions[Ord(po_usercolors)];
+  tbutton1.Caption   := lang_projectoptions[Ord(po_copycolor)];
+  ttabpage21.Caption := lang_projectoptions[Ord(po_formatmacro)];
+  ttabpage21.tabhint := lang_projectoptions[Ord(po_formatmacrohint)];
+  ttabpage2.Caption  := lang_projectoptions[Ord(po_templates)];
+  ttabpage3.Caption  := lang_projectoptions[Ord(po_newproject)];
+  scriptbeforecopy.frame.Caption := lang_projectoptions[Ord(po_scriptbeforecopy)];
+  scriptaftercopy.frame.Caption := lang_projectoptions[Ord(po_scriptaftercopy)];
+  ttabpage4.Caption  := lang_projectoptions[Ord(po_newfile)];
+  ttabpage5.Caption  := lang_projectoptions[Ord(po_newform)];
+  ttabpage15.Caption := lang_projectoptions[Ord(po_tools)];
+  ttabpage20.Caption := lang_projectoptions[Ord(po_storage)];
+  ttabpage23.Caption := lang_projectoptions[Ord(po_infos)];
   
-  project_name.frame.Caption := projectoptionstext(po_projectfullname);
-  project_creator.frame.Caption := projectoptionstext(po_creator);
-  project_license.frame.Caption := projectoptionstext(po_license);
-  project_date.frame.Caption := projectoptionstext(po_projectdate);
+  project_name.frame.Caption := lang_projectoptions[Ord(po_projectfullname)];
+  project_creator.frame.Caption := lang_projectoptions[Ord(po_creator)];
+  project_license.frame.Caption := lang_projectoptions[Ord(po_license)];
+  project_date.frame.Caption := lang_projectoptions[Ord(po_projectdate)];
  
-  project_copyright.frame.Caption := stockobjects.captions[sc_copyright] ;
-  project_comment.frame.Caption := projectoptionstext(po_comments);
+  project_copyright.frame.Caption := lang_stockcaption[ord(sc_copyright)] ;
+  project_comment.frame.Caption := lang_projectoptions[Ord(po_comments)];
 
 end;
 

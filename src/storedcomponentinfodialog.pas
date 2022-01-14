@@ -23,8 +23,7 @@ uses
  mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,msegraphics,
  msegraphutils,mseevent,mseclasses,mseforms,componentstore,msesimplewidgets,
  msewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,
- mselistbrowser,msestrings,msesys,msetypes,
-  {$I useslang.inc};
+ mselistbrowser,msestrings,msesys,msetypes;
   
 type
  tstoredcomponentinfodialogfo = class(tmseform)

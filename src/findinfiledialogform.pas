@@ -22,6 +22,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   finddialogform,
   findinfileform,
@@ -47,8 +48,7 @@ uses
   mseificompglob,
   mseifiglob,
   msescrollbar,
-  mseclasses,
-  {$I useslang.inc};
+  mseclasses;
 
 type
 
@@ -274,20 +274,20 @@ end;
 procedure tfindinfiledialogfo.setlangfindinfile();
 begin
 
-  Caption           := stockobjects.captions[sc_find_infile];
-  cancel.Caption        := stockobjects.modalresulttext[mr_cancel];
-  ok.Caption    := stockobjects.modalresulttext[mr_ok];
-  findtext.frame.Caption := stockobjects.captions[sc_texttofind] ;
-  casesensitive.frame.Caption := stockobjects.captions[sc_casesensitive];
-  wholeword.frame.Caption := stockobjects.captions[sc_wholeword];
-  incurrentfile.frame.Caption := stockobjects.captions[sc_searchincurrentfile];
-  inopenfiles.frame.Caption := stockobjects.captions[sc_searchinopenfiles];
-  inprojectdir.frame.Caption := stockobjects.captions[sc_searchinprojectdir];
-  indirectories.frame.Caption := stockobjects.captions[sc_searchindirectories];
+  Caption           := lang_stockcaption[ord(sc_find_infile)];
+  cancel.Caption        := lang_modalresult[ord(mr_cancel)];
+  ok.Caption    := lang_modalresult[ord(mr_ok)];
+  findtext.frame.Caption := lang_stockcaption[ord(sc_texttofind)] ;
+  casesensitive.frame.Caption := lang_stockcaption[ord(sc_casesensitive)];
+  wholeword.frame.Caption := lang_stockcaption[ord(sc_wholeword)];
+  incurrentfile.frame.Caption := lang_stockcaption[ord(sc_searchincurrentfile)];
+  inopenfiles.frame.Caption := lang_stockcaption[ord(sc_searchinopenfiles)];
+  inprojectdir.frame.Caption := lang_stockcaption[ord(sc_searchinprojectdir)];
+  indirectories.frame.Caption := lang_stockcaption[ord(sc_searchindirectories)];
  
-  dir.frame.Caption := stockobjects.captions[sc_directory];
-  Mask.frame.Caption := projectoptionstext(po_filemask);
-  subdirs.frame.Caption := stockobjects.captions[sc_includesubdir];
+  dir.frame.Caption := lang_stockcaption[ord(sc_directory)];
+  Mask.frame.Caption := lang_projectoptions[ord(po_filemask)];
+  subdirs.frame.Caption := lang_stockcaption[ord(sc_includesubdir)];
 
 end;
 

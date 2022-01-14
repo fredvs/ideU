@@ -118,7 +118,6 @@ type
 
 
 type
-
   stockbitmapty = (stb_default, stb_none,
     stb_dens0, stb_dens10, stb_dens25,
     stb_dens50, stb_dens75, stb_dens90, stb_dens100,

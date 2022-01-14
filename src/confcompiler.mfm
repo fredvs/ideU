@@ -23,7 +23,7 @@ object confcompilerfo: tconfcompilerfo
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   windowopacity = -Inf
-  oncreated = oncreatedev
+  onshow = oncreatedev
   moduleclassname = 'tmseform'
   object tab_compilers: ttabwidget
     bounds_x = 1

@@ -24,8 +24,7 @@ uses
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,
  msegraphutils,msegrids,breakpointsform,pascaldesignparser,msefilechange,
  msestrings,mserichstring,mseparser,msegridsglob,projectoptionsform,msegraphics,
- msemenus,msesimplewidgets,msewidgets,mseintegerenter,
-  {$I useslang.inc};
+ msemenus,msesimplewidgets,msewidgets,mseintegerenter;
 
 type
  sourcepageasynctagty = (spat_showasform{,spat_checkbracket},spat_showsource);

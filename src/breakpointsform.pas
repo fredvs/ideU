@@ -21,11 +21,11 @@ unit breakpointsform;
 interface
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
- msegui,msegraphics,mseguiglob,msestringcontainer,
-  {$I useslang.inc};
+ msegui,msegraphics,mseguiglob,msestringcontainer;
 
 type
  bkptstatety = (bkpts_none,bkpts_normal,bkpts_disabled,bkpts_error);
@@ -263,6 +263,7 @@ end;
 
 procedure tbreakpointsfo.breakpointsonshow(const sender: TObject);
 begin
+setlangbreakpoints();
  refresh;
 end;
 
@@ -818,7 +819,7 @@ end;
 
 procedure tbreakpointsfo.setlangbreakpoints();
 begin
-  Caption        := stockobjects.captions[sc_breakpoints];
+  Caption        := lang_stockcaption[ord(sc_breakpoints)];
 
 end;
 

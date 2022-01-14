@@ -46,7 +46,6 @@ type
     gridlangcaption: tstringedit;
     gridlangbool: tbooleaneditradio;
     gridlangcode: tstringedit;
-    procedure onchangelang(const Sender: TObject);
     procedure oncok(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
@@ -65,25 +64,15 @@ uses
   confdebugger,
   conflang_mfm;
 
-procedure tconflangfo.onchangelang(const Sender: TObject);
-begin
-  if conflangloaded > 0 then
-  begin
-    mainfo.setlang(MSEFallbackLang);
-    confideufo.setlangextrasettings();
-    confcompilerfo.setlangcompilers();
-    confdebuggerfo.setlangdebuggers();
-  end;
-
-end;
-
 procedure tconflangfo.oncok(const Sender: TObject);
 begin
+{
   mainfo.setlang(MSEFallbackLang);
   confideufo.setlangextrasettings();
   confcompilerfo.setlangcompilers();
   confdebuggerfo.setlangdebuggers();
-  Close;
+ } 
+   Close;
 end;
 
 procedure tconflangfo.oncreat(const Sender: TObject);
@@ -104,10 +93,12 @@ begin
         begin
           gridlangbool[x] := True;
           MSEFallbackLang := gridlangcode[x];
+       
           mainfo.setlang(MSEFallbackLang);
           confideufo.setlangextrasettings();
           confcompilerfo.setlangcompilers();
           confdebuggerfo.setlangdebuggers();
+          
         end
         else
           gridlangbool[x] := False;

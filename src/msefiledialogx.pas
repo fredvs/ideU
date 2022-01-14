@@ -32,6 +32,7 @@ interface
 
 uses
  {$ifdef unix}baseunix,{$endif}Math,mseglob,mseguiglob,mseforms,Classes,
+ po2const,
  mclasses,mseclasses,msewidgets,msegrids,mselistbrowser,mseedit,
  msesimplewidgets,msedataedits,msedialog,msetypes,msestrings,msesystypes,msesys,
  msedispwidgets,msedatalist,msestat,msestatfile,msebitmap,msedatanodes,
@@ -937,11 +938,10 @@ begin
       
     if acaption = '' then
     begin
-      with stockobjects do
         if fdo_save in aoptions then
-          str1 := captions[sc_save]
+          str1 := lang_stockcaption[ord(sc_save)]
         else
-          str1 := captions[sc_open];
+          str1 := lang_stockcaption[ord(sc_open)];
     end
     else
       str1 := acaption;
@@ -1348,9 +1348,8 @@ var
   mstr1: msestring;
 begin
   mstr1 := '';
-  with stockobjects do
-    if stringenter(mstr1, captions[sc_name],
-      captions[sc_create_new_directory]) = mr_ok then
+    if stringenter(mstr1, lang_stockcaption[ord(sc_name)],
+      lang_stockcaption[ord(sc_create_new_directory)]) = mr_ok then
     begin
       places.defocuscell;
       places.datacols.clearselection;
@@ -1468,41 +1467,6 @@ begin
   doup();
 end;
 
-{
-function tfiledialogxfo.readlist: boolean;
-begin
- result:= true;
- try
-  with listview do begin
-   readlist;
-  end;
- except
-  on ex: esys do begin
-   result:= false;
-  // if esys(ex).error = sye_dirstream then begin
-    listview.directory:= '';
-    with stockobjects do begin
-     showerror(captions[sc_can_not_read_directory]+ ' ' + esys(ex).text,
-               captions[sc_error]);
-//     showerror('Can not read directory '''+ esys(ex).text+'''.','Error');
-    end;
-    try
-     listview.readlist;
-    except
-     application.handleexception(self);
-    end;
-//   end
-//   else begin
-//    application.handleexception(self);
-//   end;
-  end;
-  else begin
-   result:= false;
-   application.handleexception(self);
-  end;
- end;
-end;
-}
 function tfiledialogxfo.tryreadlist(const adir: filenamety; const errormessage: Boolean): Boolean;
   //restores old dir on error
 var
@@ -1519,9 +1483,8 @@ begin
     begin
       Result := False;
       if errormessage then
-        with stockobjects do
-          showerror(captions[sc_can_not_read_directory] + ' ' +
-            msestring(esys(ex).Text), captions[sc_error]);
+          showerror(lang_stockcaption[ord(sc_can_not_read_directory)] + ' ' +
+            msestring(esys(ex).Text), lang_stockcaption[ord(sc_error)]);
     end;
     else
     begin
@@ -1556,8 +1519,8 @@ begin
 
   if (fdo_single in dialogoptions) and (high(fselectednames) > 0) then
   begin
-    with stockobjects do
-      ShowMessage(captions[sc_single_item_only] + '.', captions[sc_error]);
+    
+      ShowMessage(lang_stockcaption[ord(sc_single_item_only)] + '.', lang_stockcaption[ord(sc_error)]);
     accept := False;
     Exit;
   end;
@@ -1961,10 +1924,10 @@ begin
       if fdo_save in dialogoptions then
       begin
         if bo1 then
-          with stockobjects do
-            if not askok(captions[sc_file] + ' "' + filenames[0] +
-              '" ' + captions[sc_exists_overwrite],
-              captions[sc_warningupper]) then
+          
+            if not askok(lang_stockcaption[ord(sc_file)] + ' "' + filenames[0] +
+              '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
+              lang_stockcaption[ord(sc_warningupper)]) then
             begin
               //      if not askok('File "'+filenames[0]+
               //            '" exists, do you want to overwrite?','WARNING') then begin
@@ -1974,10 +1937,9 @@ begin
       end
       else if not bo1 then
       begin
-        with stockobjects do
-          showerror(captions[sc_file] + ' "' + filenames[0] + '" ' +
-            captions[sc_does_not_exist] + '.',
-            captions[sc_errorupper]);
+             showerror(lang_stockcaption[ord(sc_file)] + ' "' + filenames[0] + '" ' +
+            lang_stockcaption[ord(sc_does_not_exist)] + '.',
+            lang_stockcaption[ord(sc_errorupper)]);
         //      showerror('File "'+filenames[0]+'" does not exist.');
         filename.SetFocus;
         Exit;
@@ -2441,23 +2403,21 @@ procedure tfiledialogxfo.onformcreated(const Sender: TObject);
 begin
   fcourseid := -1;
 
-  with stockobjects do
-  begin
-    dir.frame.caption:= captions[sc_directory];
-    home.Caption         := captions[sc_homehk];
-    //  up.caption:= captions[sc_uphk];
-    createdir.Caption    := captions[sc_new_dirhk];
-    createdir.hint    := captions[sc_create_new_directory];
-    filename.frame.caption:= captions[sc_namehk];
-    filter.frame.Caption := captions[sc_filterhk];
-    showhidden.frame.caption:= captions[sc_show_hidden_fileshk];
-    ok.Caption           := modalresulttext[mr_ok];
-    cancel.Caption       := modalresulttext[mr_cancel];
-    bnoicon.frame.caption:= captions[sc_noicons];
-    blateral.frame.caption:= captions[sc_nolateral];
-    bcompact.frame.caption:= captions[sc_compact];
+
+    dir.frame.caption:= lang_stockcaption[ord(sc_directory)];
+    home.Caption         := lang_stockcaption[ord(sc_homehk)];
+    //  up.caption:= lang_stockcaption[ord(sc_uphk)];
+    createdir.Caption    := lang_stockcaption[ord(sc_new_dirhk)];
+    createdir.hint    := lang_stockcaption[ord(sc_create_new_directory)];
+    filename.frame.caption:= lang_stockcaption[ord(sc_namehk)];
+    filter.frame.Caption := lang_stockcaption[ord(sc_filterhk)];
+    showhidden.frame.caption:= lang_stockcaption[ord(sc_show_hidden_fileshk)];
+    ok.Caption           := lang_modalresult[Ord(mr_ok)];
+    cancel.Caption       := lang_modalresult[Ord(mr_cancel)];
+    bnoicon.frame.caption:= lang_stockcaption[ord(sc_noicons)];
+    blateral.frame.caption:= lang_stockcaption[ord(sc_nolateral)];
+    bcompact.frame.caption:= lang_stockcaption[ord(sc_compact)];
        // caption := 'Select a file';
-  end;
 
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
@@ -3013,17 +2973,17 @@ begin
     begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
-      fo.filename.frame.Caption := stockobjects.captions[sc_dirhk];
+      fo.filename.frame.Caption := lang_stockcaption[ord(sc_dirhk)];
     end
     else if (dialogkind in [fdk_save]) then
     begin
-      fo.filename.frame.Caption :=  stockobjects.captions[sc_namehk];
+      fo.filename.frame.Caption :=  lang_stockcaption[ord(sc_namehk)];
       fo.filename.tag           := 2;
     end  
     else if (dialogkind in [fdk_new]) then
-      fo.filename.frame.Caption := stockobjects.captions[sc_newfile]
+      fo.filename.frame.Caption := lang_stockcaption[ord(sc_newfile)]
     else
-      fo.filename.frame.Caption := stockobjects.captions[sc_namehk];
+      fo.filename.frame.Caption := lang_stockcaption[ord(sc_namehk)];
 
     if dialogkind <> fdk_none then
       if dialogkind in [fdk_save, fdk_new] then
@@ -3171,11 +3131,10 @@ end;
 
 function tfiledialogxcontroller.canoverwrite(): Boolean;
 begin
-  with stockobjects do
-    Result := not findfile(filename) or
-      askok(captions[sc_file] + ' "' + filename +
-      '" ' + captions[sc_exists_overwrite],
-      captions[sc_warningupper]);
+     Result := not findfile(filename) or
+      askok(lang_stockcaption[ord(sc_file)] + ' "' + filename +
+      '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
+      lang_stockcaption[ord(sc_warningupper)]);
 end;
 
 function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
@@ -3304,9 +3263,9 @@ procedure tfiledialogxcontroller.setoptions(Value: filedialogoptionsty);
 
 (*
 const
- mask1: filedialogoptionsty = [fdo_absolute,fdo_relative];
-// mask2: filedialogoptionsty = [fdo_directory,fdo_file];
- mask3: filedialogoptionsty = [fdo_filtercasesensitive,fdo_filtercaseinsensitive];
+ mask1: filedialogoptionsty = [fdo_absolute,fdo_relative)];
+// mask2: filedialogoptionsty = [fdo_directory,fdo_file)];
+ mask3: filedialogoptionsty = [fdo_filtercasesensitive,fdo_filtercaseinsensitive)];
 *)
 begin
   Value := filedialogoptionsty(setsinglebit(card32(Value), card32(foptions),

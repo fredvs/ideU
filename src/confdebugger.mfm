@@ -20,7 +20,7 @@ object confdebuggerfo: tconfdebuggerfo
   caption = 'Debuggers Configuration'
   icon.origformat = 'bmp'
   windowopacity = -Inf
-  oncreated = oncreat
+  onshow = oncreat
   moduleclassname = 'tmseform'
   object debugger4: tfilenameeditx
     Tag = 7

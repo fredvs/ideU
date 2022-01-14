@@ -8,6 +8,7 @@ interface
 
 uses
   mseconsts_ide,
+  po2const,
   msestockobjects,
   fpg_iniutils_ideu,
   mseglob,
@@ -55,8 +56,7 @@ uses
   mserichstring,
   msetextedit,
   msecolordialog,
-  projectoptionsform,
-  {$I useslang.inc};
+  projectoptionsform;
 
 type
   settingsmacroty = (sma_fpcdir, sma_fpclibdir, sma_msedir, sma_mselibdir,
@@ -529,108 +529,108 @@ end;
 procedure tsettingsfo.setlangsettings();
 begin
 
-  Caption := stockobjects.captions[sc_generalsettings];
+  Caption := lang_stockcaption[ord(sc_generalsettings)];
   
-  path.caption :=  '  ' + stockobjects.captions[sc_path] + '  ' ; 
-  but_ok.Caption  := stockobjects.modalresulttext[mr_ok];
+  path.caption :=  '  ' + lang_stockcaption[ord(sc_path)] + '  ' ; 
+  but_ok.Caption  := lang_modalresult[Ord(mr_ok)];
   
   layoutdir.frame.caption := '${LAYOUTDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_layout];
+  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_stockcaption[ord(sc_layout)];
    
-  layoutdir.controller.captiondir := stockobjects.captions[sc_directory] + 
-  ' / ' + stockobjects.captions[sc_layout];
+  layoutdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
+  ' / ' + lang_stockcaption[ord(sc_layout)];
   
   syntaxdefdir.frame.caption := '${SYNTAXDEFDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' + stockobjects.captions[sc_syntax];
+  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_stockcaption[ord(sc_syntax)];
    
-  syntaxdefdir.controller.captiondir := stockobjects.captions[sc_directory] + 
-  ' / ' + stockobjects.captions[sc_syntax];
+  syntaxdefdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
+  ' / ' + lang_stockcaption[ord(sc_syntax)];
   
   templatedir.frame.caption := '${TEMPLATEDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  projectoptionstext(po_templates);
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  lang_projectoptions[Ord(po_templates)];
    
-  templatedir.controller.captiondir := stockobjects.captions[sc_directory] + 
-  ' / ' + projectoptionstext(po_templates);
+  templatedir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
+  ' / ' + lang_projectoptions[Ord(po_templates)];
 
   docviewdir.frame.caption := '${DOCVIEWDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'DocView';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'DocView';
    
-  docviewdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  docviewdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / ' + 'DocView';
   
   fpguidir.frame.caption := '${FPGUIDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'fpGUI';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'fpGUI';
    
-  fpguidir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  fpguidir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'fpGUI';
 
   compstoredir.frame.caption := '${COMPSTOREDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'CompStore';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'CompStore';
    
-  compstoredir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  compstoredir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'CompStore';
   
   mselibdir.frame.caption := '${MSELIBDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'MSEgui/lib';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'MSEgui/lib';
    
-  mselibdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  mselibdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'MSEgui/lib';
   
   msedir.frame.caption := '${MSEDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'MSEgui';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'MSEgui';
    
-  msedir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  msedir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'MSEgui';
  
    debugger.frame.caption := '${DEBUGGER} ' + 
-  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_debugcommand);
+  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
    
-  debugger.controller.captiondir := stockobjects.captions[sc_file] + 
-  ' / '  + projectoptionstext(po_debugcommand);
+  debugger.controller.captiondir := lang_stockcaption[ord(sc_file)] + 
+  ' / '  + lang_projectoptions[Ord(po_debugcommand)];
   
      debugger.frame.caption := '${DEBUGGER} ' + 
-  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_debugcommand);
+  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
    
-  debugger.controller.captionopen := stockobjects.captions[sc_file] + 
-  ' / '  + projectoptionstext(po_debugcommand);
+  debugger.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
+  ' / '  + lang_projectoptions[Ord(po_debugcommand)];
 
   compiler.frame.caption := '${COMPILER} ' + 
-  stockobjects.captions[sc_file] + ' / ' +  projectoptionstext(po_makecommand);
+  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_makecommand)];
    
-  compiler.controller.captionopen := stockobjects.captions[sc_file] + 
-  ' / '  + projectoptionstext(po_makecommand);
+  compiler.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
+  ' / '  + lang_projectoptions[Ord(po_makecommand)];
   
   lcldir.frame.caption := '${LCLDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'LCL (Lazarus)';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'LCL (Lazarus)';
    
-  lcldir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  lcldir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'LCL (Lazarus)';
 
     fpcsrcdir.frame.caption := '${FPCSRCDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'fpcsrc';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'fpcsrc';
    
-  fpcsrcdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  fpcsrcdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'fpcsrc';
   
    bgrabitmapdir.frame.caption := '${BGRABITMAPDIR} ' + 
-  stockobjects.captions[sc_directory] + ' / ' +  'BGRABitmap';
+  lang_stockcaption[ord(sc_directory)] + ' / ' +  'BGRABitmap';
    
-  bgrabitmapdir.controller.captiondir := stockobjects.captions[sc_directory] + 
+  bgrabitmapdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / '  +  'BGRABitmap';
     
-  macros.caption := '  ' + projectoptionstext(po_macros) + '  ' ;
-  macrogrid.frame.caption := projectoptionstext(po_macros); 
+  macros.caption := '  ' + lang_projectoptions[Ord(po_macros)] + '  ' ;
+  macrogrid.frame.caption := lang_projectoptions[Ord(po_macros)]; 
   
  // macrogrid.fixrows[-1].captions.Count := 2;
-  macrogrid.fixrows[-1].captions[0].Caption := projectoptionstext(po_name);
-  macrogrid.fixrows[-1].captions[1].Caption := stockobjects.captions[sc_value];
+  macrogrid.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  macrogrid.fixrows[-1].captions[1].Caption := lang_stockcaption[ord(sc_value)];
  
-  other.caption := '  ' + stockobjects.captions[sc_other] + '  ' ;
-  printcomm.frame.caption := stockobjects.captions[sc_printcommand];
-  exeext.frame.caption := '${EXEEXT} ' + projectoptionstext(po_exeextension); 
-  target.frame.caption := '${TARGET} OS ' + stockobjects.captions[sc_target];
-  targetosdir.frame.caption := '${TARGETMSE} OS-MSEgui ' + stockobjects.captions[sc_target];
-  shortcutbu.caption := stockobjects.captions[sc_shortcut];
+  other.caption := '  ' + lang_stockcaption[ord(sc_other)] + '  ' ;
+  printcomm.frame.caption := lang_stockcaption[ord(sc_printcommand)];
+  exeext.frame.caption := '${EXEEXT} ' + lang_projectoptions[Ord(po_exeextension)]; 
+  target.frame.caption := '${TARGET} OS ' + lang_stockcaption[ord(sc_target)];
+  targetosdir.frame.caption := '${TARGETMSE} OS-MSEgui ' + lang_stockcaption[ord(sc_target)];
+  shortcutbu.caption := lang_stockcaption[ord(sc_shortcut)];
    
 end;
 

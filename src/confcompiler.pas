@@ -5,6 +5,7 @@ interface
 uses
   msestockobjects,
   mseconsts_ide,
+  po2const,
   msetypes,
   mseglob,
   mseguiglob,
@@ -39,8 +40,7 @@ uses
   msescrollbar,
   msedragglob,
   msetabs,
-  mseact,
-  {$I useslang.inc};
+  mseact;
 
 type
   tconfcompilerfo = class(tmseform)
@@ -180,8 +180,8 @@ end;
 
 procedure tconfcompilerfo.setlangcompilers();
 begin
-  Caption        := stockobjects.captions[sc_configcompilers];
-  but_ok.Caption := stockobjects.modalresulttext[mr_ok];
+Caption        := lang_stockcaption[ord(sc_configcompilers)];
+but_ok.Caption := lang_modalresult[ord(mr_ok)];
 end;
 
 

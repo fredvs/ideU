@@ -23,6 +23,7 @@ interface
 uses
   msestockobjects,
   mseconsts_ide,
+  po2const,
   mseforms,
   mselistbrowser,
   msetypes,
@@ -33,8 +34,7 @@ uses
   msestat,
   msesimplewidgets,
   mseglob,
-  msegridsglob,
-  {$I useslang.inc};
+  msegridsglob;
 
 type
   tselecteditpagefo = class(tmseform)
@@ -179,8 +179,8 @@ end;
 
 procedure tselecteditpagefo.setlangselectedit();
 begin
-  Caption := stockobjects.captions[sc_select_edit_Page] + '   (Ctrl+E)' ;
-  openfilebutton.caption := stockobjects.captions[sc_open];
+  Caption := lang_stockcaption[ord(sc_select_edit_Page)] + '   (Ctrl+E)' ;
+  openfilebutton.caption := lang_stockcaption[ord(sc_open)];
 end;
 
 initialization
