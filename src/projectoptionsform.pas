@@ -1868,55 +1868,91 @@ begin
     newfosources[1]      := '${TEMPLATEDIR}fpc_mse/default/simpleform.pas';
     newfoforms[1]        := '${TEMPLATEDIR}fpc_mse/default/simpleform.mfm';
 
-   // newfonames[2]        := lang_actionsmodule[ord(ac_dockingform)];
+    if length(lang_actionsmodule) > 0 then
+    newfonames[2]        := lang_actionsmodule[ord(ac_dockingform)]
+    else
+    newfonames[2]   := 'dockingform';
+   
     newfonamebases[2]    := 'form';
     newinheritedforms[2] := False;
     newfosources[2]      := '${TEMPLATEDIR}fpc_mse/default/dockingform.pas';
     newfoforms[2]        := '${TEMPLATEDIR}fpc_mse/default/dockingform.mfm';
 
-   // newfonames[3]        := lang_actionsmodule[ord(ac_datamodule)];
+    if length(lang_actionsmodule) > 0 then
+    newfonames[3]        := lang_actionsmodule[ord(ac_datamodule)]
+    else
+    newfonames[3]   := 'datamodule';
+  
     newfonamebases[3]    := 'module';
     newinheritedforms[3] := False;
     newfosources[3]      := '${TEMPLATEDIR}fpc_mse/default/datamodule.pas';
     newfoforms[3]        := '${TEMPLATEDIR}fpc_mse/default/datamodule.mfm';
 
-   // newfonames[4]        := lang_actionsmodule[ord(ac_subform)];
+    if length(lang_actionsmodule) > 0 then
+    newfonames[4]        := lang_actionsmodule[ord(ac_subform)]
+    else
+    newfonames[4]   := 'subform';
+     
     newfonamebases[4]    := 'form';
     newinheritedforms[4] := False;
     newfosources[4]      := '${TEMPLATEDIR}fpc_mse/default/subform.pas';
     newfoforms[4]        := '${TEMPLATEDIR}fpc_mse/default/subform.mfm';
 
-   // newfonames[5]        := lang_actionsmodule[ord(ac_scrollboxform)];
+   if length(lang_actionsmodule) > 0 then
+    newfonames[5]        := lang_actionsmodule[ord(ac_scrollboxform)]
+    else
+    newfonames[5]   := 'scrollboxform';
+  
     newfonamebases[5]    := 'form';
     newinheritedforms[5] := False;
     newfosources[5]      := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.pas';
     newfoforms[5]        := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.mfm';
 
-   // newfonames[6]        := lang_actionsmodule[ord(ac_tabform)];
+   if length(lang_actionsmodule) > 0 then
+    newfonames[6]        := lang_actionsmodule[ord(ac_tabform)]
+    else
+    newfonames[6]   := 'tabform';
+  
     newfonamebases[6]    := 'form';
     newinheritedforms[6] := False;
     newfosources[6]      := '${TEMPLATEDIR}fpc_mse/default/tabform.pas';
     newfoforms[6]        := '${TEMPLATEDIR}fpc_mse/default/tabform.mfm';
 
-   // newfonames[7]        := lang_actionsmodule[ord(ac_dockpanel)];
+  if length(lang_actionsmodule) > 0 then
+    newfonames[7]        := lang_actionsmodule[ord(ac_dockpanel)]
+    else
+    newfonames[7]   := 'dockpanel';
+  
     newfonamebases[7]    := 'form';
     newinheritedforms[7] := False;
     newfosources[7]      := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.pas';
     newfoforms[7]        := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.mfm';
 
-   // newfonames[8]        := lang_actionsmodule[ord(ac_report)];
+   if length(lang_actionsmodule) > 0 then
+    newfonames[8]        := lang_actionsmodule[ord(ac_report)]
+    else
+    newfonames[8]   := 'report';
+  
     newfonamebases[8]    := 'report';
     newinheritedforms[8] := False;
     newfosources[8]      := '${TEMPLATEDIR}fpc_mse/default/report.pas';
     newfoforms[8]        := '${TEMPLATEDIR}fpc_mse/default/report.mfm';
 
-   // newfonames[9]        := lang_actionsmodule[ord(ac_scriptform)];
+    if length(lang_actionsmodule) > 0 then
+    newfonames[9]        := lang_actionsmodule[ord(ac_scriptform)]
+    else
+    newfonames[9]   := 'scriptform';
+  
     newfonamebases[9]    := 'script';
     newinheritedforms[9] := False;
     newfosources[9]      := '${TEMPLATEDIR}fpc_mse/default/pascform.pas';
     newfoforms[9]        := '${TEMPLATEDIR}fpc_mse/default/pascform.mfm';
 
-   // newfonames[10]        := lang_actionsmodule[ord(ac_inheritedform)];
+   if length(lang_actionsmodule) > 0 then
+    newfonames[10]        := lang_actionsmodule[ord(ac_inheritedform)]
+    else
+    newfonames[10]   := 'inheritedform';
+  
     newfonamebases[10]    := 'form';
     newinheritedforms[10] := True;
     newfosources[10]      := '${TEMPLATEDIR}fpc_mse/default/inheritedform.pas';
@@ -1937,11 +1973,25 @@ begin
     additem(fsourcefilemasks, '"*.mfm"');
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
-   // additem(ffilemasknames, lang_actionsmodule[ord(ac_source)]);
+    if length(lang_actionsmodule) > 0 then
+    additem(ffilemasknames, lang_actionsmodule[ord(ac_source)])
+    else
+    additem(ffilemasknames, 'source');
+ 
+   
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
-   // additem(ffilemasknames, lang_actionsmodule[ord(ac_forms)]);
+    if length(lang_actionsmodule) > 0 then
+    additem(ffilemasknames, lang_actionsmodule[ord(ac_forms)])
+    else
+    additem(ffilemasknames, 'forms');
+    
     additem(ffilemasks, '*.mfm');
-   // additem(ffilemasknames, lang_actionsmodule[ord(ac_allfiles)]);
+  
+    if length(lang_actionsmodule) > 0 then
+    additem(ffilemasknames, lang_actionsmodule[ord(ac_allfiles)])
+    else
+    additem(ffilemasknames, 'all files');
+   
     additem(ffilemasks, '*');
 
   end;

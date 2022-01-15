@@ -5388,9 +5388,7 @@ begin
 
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
- onscale(Sender);
- width := width + 1;
- //application.processmessages;
+ TDummyThread.Create(False);
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);
