@@ -8,7 +8,6 @@ interface
 
 uses
   mseconsts_ide,
-  po2const,
   msestockobjects,
   fpg_iniutils_ideu,
   mseglob,

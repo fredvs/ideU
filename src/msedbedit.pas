@@ -2669,7 +2669,7 @@ function encoderowstate(const color: integer = -1; const font: integer = -1;
                             
 implementation
 uses
- msestockobjects,mseshapes,msereal,msebits, po2const,
+ msestockobjects,mseshapes,msereal,msebits, 
  mseassistiveserver,
  mseactions,mseact,rtlconsts,msedrawtext,sysutils,msedbdispwidgets;
 {$ifndef mse_allwarnings}

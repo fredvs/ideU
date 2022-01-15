@@ -57,7 +57,7 @@ mseguiintf,
 regunitgroups, 
 guitemplates, 
 msegraphutils, 
-msefont, po2const,
+msefont, 
 fpg_iniutils_ideu, 
 stringconsts;
 

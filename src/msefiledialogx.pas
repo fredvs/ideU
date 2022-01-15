@@ -9,7 +9,7 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 }
 
-{ msefiledialogx by fredvs 2020 - 2021 }
+{ msefiledialogx by fredvs 2020 - 2022 }
 
 unit msefiledialogx;
 
@@ -32,7 +32,6 @@ interface
 
 uses
  {$ifdef unix}baseunix,{$endif}Math,mseglob,mseguiglob,mseforms,Classes,
- po2const,
  mclasses,mseclasses,msewidgets,msegrids,mselistbrowser,mseedit,
  msesimplewidgets,msedataedits,msedialog,msetypes,msestrings,msesystypes,msesys,
  msedispwidgets,msedatalist,msestat,msestatfile,msebitmap,msedatanodes,

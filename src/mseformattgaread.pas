@@ -17,7 +17,6 @@ procedure registerformat;
  
 implementation
 uses
- po2const,
  classes,mclasses,msegraphics,msebitmap,msefpreadtga,msegraphicstream,
  msestockobjects;
 

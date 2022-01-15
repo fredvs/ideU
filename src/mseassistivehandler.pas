@@ -677,7 +677,7 @@ type
 
 implementation
 uses
- msekeyboard,sysutils,msesysutils,mserichstring,msemenus,mseactions, po2const,
+ msekeyboard,sysutils,msesysutils,mserichstring,msemenus,mseactions, 
  msegridsglob,mseeditglob,typinfo;
  {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}

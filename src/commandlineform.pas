@@ -49,8 +49,7 @@ implementation
 
 uses
   commandlineform_mfm,
-  make, po2const,
-  projectoptionsform;
+  make, projectoptionsform;
 
 procedure showcommandline;
 var

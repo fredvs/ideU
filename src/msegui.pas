@@ -35,7 +35,7 @@ uses
 
 const
  mseguiversiontext = '5.6.4';
- copyrighttext = 'Copyright 1999-2021';
+ copyrighttext = 'Copyright 1999-2022';
  defaultwidgetcolor = cl_default;
  defaulttoplevelwidgetcolor = cl_background;
  defaultfadecolor = cl_ltgray;
@@ -3318,7 +3318,7 @@ function debugwidgetname(const awidget: twidget; const atext: string): string;
 
 implementation
 uses
- msesysintf,typinfo,msestreaming,msetimer,msebits,msewidgets, po2const,
+ msesysintf,typinfo,msestreaming,msetimer,msebits,msewidgets, 
  mseshapes,msestockobjects,msefileutils,msedatalist,Math,msesysutils,
  rtlconsts,{$ifndef FPC}classes_del,{$endif}mseformatstr,
  mseprocutils,msesys,msesysdnd,mseassistiveserver;

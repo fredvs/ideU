@@ -649,7 +649,7 @@ function isdatasubmodule(const acomponent: tobject;
 
 implementation
 uses
- msestream,msefileutils, po2const,
+ msestream,msefileutils, 
 // {$ifdef mswindows}windows{$else}mselibc{$endif},
  designer_bmp,msesys,msewidgets,formdesigner,objectinspector,mseformatstr,
  msefiledialog,projectoptionsform,sourceupdate,sourceform,sourcepage,

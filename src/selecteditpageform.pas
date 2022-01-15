@@ -23,7 +23,6 @@ interface
 uses
   msestockobjects,
   mseconsts_ide,
-  po2const,
   mseforms,
   mselistbrowser,
   msetypes,

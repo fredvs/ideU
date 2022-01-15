@@ -26,7 +26,6 @@ uses
  msegraphutils,mseevent,mseclasses,mseforms,msedataedits,mseedit,msegrids,
  msestrings,msetypes,msewidgetgrid,msedatanodes,mselistbrowser,mseactions,
  msesimplewidgets,msewidgets,msegridsglob,msetimer,msesplitter,mseificomp,
- po2const,
  mseificompglob,mseifiglob,mseact,msestatfile,msestream,sysutils;
 
 type

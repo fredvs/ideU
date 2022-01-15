@@ -21,11 +21,6 @@ uses
   msedatamodules,
   mseguiglob;
 
-var
-  lang_stockcaption, lang_modalresult, lang_modalresultnoshortcut, lang_mainform, lang_settings,
-  lang_actionsmodule, lang_projectoptionscon, lang_projectoptions, lang_sourceform, lang_extended, 
-  lang_langnames: array of msestring;
-
 procedure createnewlang(alang: msestring);
 procedure dosearch(thearray: array of msestring; theindex: integer);
 procedure findpofiles();

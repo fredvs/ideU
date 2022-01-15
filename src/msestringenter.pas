@@ -13,7 +13,6 @@ unit msestringenter;
 
 interface
 uses
- po2const,
  mseforms,msedataedits,msesimplewidgets,msetypes,msegui,mseglob,mseguiglob,
  msedialog,msestrings,msestringcontainer,msemenus,msesplitter,msegraphics,
  msegraphutils,msewidgets,mseapplication,mseedit,mseificomp,mseificompglob,

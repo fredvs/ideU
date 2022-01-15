@@ -21,7 +21,6 @@ unit breakpointsform;
 interface
 uses
   mseconsts_ide,
-  po2const,
   msestockobjects,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,

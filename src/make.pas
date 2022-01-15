@@ -33,8 +33,8 @@ var
 implementation
 uses
  mseprocutils,main,projectoptionsform,sysutils,msegrids, confcompiler,
- sourceform,mseeditglob,msefileutils,msesys, po2const,
- msesysutils,msegraphics,messageform,msedesignintf,msedesigner,
+ sourceform,mseeditglob,msefileutils,msesys, msesysutils,msegraphics,
+ messageform,msedesignintf,msedesigner,
  mseprocmonitor,mseevent, confideu,
  classes,mclasses,mseclasses,mseapplication,msestream,
  msegui,actionsmodule;

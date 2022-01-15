@@ -24,7 +24,7 @@ interface
  {$endif}
 {$endif}
 uses
- msegui,mseguiglob,msegraphics,msedrawtext,msegraphutils, po2const,
+ msegui,mseguiglob,msegraphics,msedrawtext,msegraphutils, 
  mserichstring,msetimer,mseevent,msetypes,msestrings,mseeditglob,msedatalist,
  msemenus,mseactions,mseact,mseglob,msegridsglob,mseassistiveclient,
  mseificompglob{$ifdef mse_with_ifi},mseifiglob{$endif};

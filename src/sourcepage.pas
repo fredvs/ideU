@@ -185,7 +185,7 @@ autocomplet : integer = 0;
 implementation
 
 uses
- sourcepage_mfm,msefileutils,sourceform,main, commandorform, po2const,
+ sourcepage_mfm,msefileutils,sourceform,main, commandorform, 
  sysutils,finddialogform,replacedialogform,msekeyboard,
  sourceupdate,msefiledialog,msedesigner,mseformatstr,
  msesys,make,actionsmodule,sourcehintform,

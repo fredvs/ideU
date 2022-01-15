@@ -515,7 +515,6 @@ function checkstdpagesize(const awidth,aheight: flo64): stdpagesizety;
 
 implementation
 uses
- po2const,
  mseprocutils,msepipestream,msesysintf,msestockobjects,mseconsts_ide,msesys,
  mseformatstr;
 {$ifndef mse_allwarnings}

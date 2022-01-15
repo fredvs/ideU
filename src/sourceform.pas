@@ -19,7 +19,6 @@ interface
 
 uses
   mseconsts_ide,
-  po2const,
   msestockobjects,
   confideu,
   ideusettings,

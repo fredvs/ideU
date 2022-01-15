@@ -736,7 +736,7 @@ procedure paintdockingareacaption(const canvas: tcanvas; const sender: twidget;
 implementation
 uses
  msearrayutils,sysutils,msebits,{msetabs,}mseguiintf,{mseforms,}msestream,
- po2const,
+ 
  mseformatstr,msekeyboard;
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}

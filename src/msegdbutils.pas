@@ -699,8 +699,7 @@ implementation
 uses
  sysutils,mseformatstr,mseprocutils,msesysutils,msefileutils,msemacros,
  msebits,msesysintf,msesysintf1,mseguiintf,msearrayutils,msesys,msedate,
- actionsmodule, po2const
-        {$ifdef UNIX},mselibc{$else},windows,msedynload{$endif};
+ actionsmodule {$ifdef UNIX},mselibc{$else},windows,msedynload{$endif};
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}

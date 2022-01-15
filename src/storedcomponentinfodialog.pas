@@ -46,7 +46,7 @@ var
  
 implementation
 uses
- storedcomponentinfodialog_mfm, po2const, msefileutils,actionsmodule;
+ storedcomponentinfodialog_mfm, msefileutils,actionsmodule;
  
 { tstoredcomponentinfodialogfo }
 

@@ -14,7 +14,6 @@ unit mseintegerenter;
 interface
 uses
  msestockobjects,
- po2const,
  mseconsts_ide,
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
  msedialog,msestrings;

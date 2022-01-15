@@ -7,7 +7,6 @@ interface
 
 uses
   mseconsts_ide,
-  po2const,
   msestockobjects,
   Classes,
   mseclasses,

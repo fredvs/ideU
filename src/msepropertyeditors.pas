@@ -14,7 +14,7 @@ unit msepropertyeditors;
 interface
 uses
  classes,mclasses,TypInfo,msedesignintf,msetypes,msestrings,sysutils,
- msearrayutils,msedatalist, po2const,
+ msearrayutils,msedatalist, 
  msemenus,mseevent,msegui,mseglob,mseguiglob,
  mseclasses,mseforms,msegraphics,mserichstring;
 {$ifndef mse_allwarnings}

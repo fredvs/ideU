@@ -28,7 +28,6 @@ procedure registerformat;
 
 implementation
 uses
- po2const,
  classes,mclasses,msebitmap,msebits,msegraphutils,mseguiintf,msegraphicstream,
      msestockobjects,msegraphics;
 {$ifndef mse_allwarnings}

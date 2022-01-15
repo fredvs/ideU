@@ -5,7 +5,6 @@ interface
 
 uses
   mseconsts_ide,
-  po2const,
   msestockobjects,
   msetypes,
   mseglob,

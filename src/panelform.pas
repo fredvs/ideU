@@ -56,7 +56,7 @@ procedure endpanelplacement();
 implementation
 
 uses
- panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,confideu,po2const,
+ panelform_mfm,main,sysutils,msekeyboard,mselist,msedatalist,confideu,
  msearrayutils,mseformatstr;
 
 var

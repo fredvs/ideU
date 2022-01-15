@@ -26,7 +26,7 @@ interface
  {$endif}
 {$endif}
 uses
- classes,mclasses,sysutils,mseclasses,msegui,msedragglob, po2const,
+ classes,mclasses,sysutils,mseclasses,msegui,msedragglob, 
  msegraphics,msetypes,msestrings,msegraphutils,msebitmap,mseassistiveclient,
  msescrollbar,msearrayprops,mseglob,mseguiglob,typinfo,msearrayutils,
  msedatalist,msedrawtext,msewidgets,mseevent,mseinplaceedit,mseeditglob,

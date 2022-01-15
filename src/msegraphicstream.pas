@@ -96,7 +96,7 @@ function readfpgraphic(const source: tstream; const readerclass: fpreaderclassty
 
 implementation
 uses
- msestockobjects,msegraphutils, po2const, msearrayutils;
+ msestockobjects,msegraphutils, msearrayutils;
 
 type
  tmaskedbitmap1 = class(tmaskedbitmap);

@@ -24,7 +24,6 @@ interface
  {$endif}
 {$endif}
 uses
- po2const,
  classes,mclasses,mseact,mseglob,mseguiglob,msegui,mseevent,mseclasses,msebitmap,
  msekeyboard,msetypes,msestrings,msearrayprops,msestatfile,msestat,
  mseinterfaces;

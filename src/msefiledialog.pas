@@ -589,7 +589,7 @@ procedure updatefileinfo(const item: tlistitem; const info: fileinfoty;
 
 implementation
 uses
- msefiledialog_mfm,msebits,mseactions, po2const,
+ msefiledialog_mfm,msebits,mseactions, 
  msestringenter,msefiledialogres,msekeyboard,
  msestockobjects,msesysintf,msearrayutils;
 {$ifndef mse_allwarnings}

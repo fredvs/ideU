@@ -15,7 +15,6 @@ interface
 uses
   msestockobjects,
   mseglob,
-  po2const,
   msestrings,
   mseapplication,
   msetypes;
