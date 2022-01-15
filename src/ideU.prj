@@ -294,7 +294,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=866
  width0=47
@@ -688,7 +688,7 @@ aftcommand=0
 makeoptions=14
  -Mobjfpc -Sh -Fcutf8
  -dmse_with_zeoslib
- -gl
+ -ghl
  -B
  -Xs -CX -XX
  -O1
@@ -927,21 +927,27 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
  MAINFO
+ STOCKDATA
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=4
+ TEMPLATEEDITORFO
+moduletypes=6
  TACTIONSMO
  TMAINFO
+ TSTOCKDATA
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=4
+ TTEMPLATEEDITORFO
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msestockobjects.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/templateeditor.mfm
 befcommandon=0
 makeoptionson=14
  4095
@@ -959,8 +965,8 @@ makeoptionson=14
  4095
  0
 compilerusedon=29
- 1591
- 0
+ 1587
+ 4
  8
  256
  0
@@ -1621,55 +1627,80 @@ findhistory=20
  uses
  lang_stockcaption
 findoptions=1
-editpos=4
+editpos=6
+ 0,-1073741823
+ 0,5
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 6,1484
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.pas
+ /home/fred/ideu/src/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=4
+ ${PROJECTDIR}/msestockobjects.pas
+ ${PROJECTDIR}/templateeditor.pas
+relpaths=6
  actionsmodule.pas
  sourceform.pas
  main.pas
  projectoptionsform.pas
-ismoduletexts=4
+ msestockobjects.pas
+ templateeditor.pas
+ismoduletexts=6
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/msestockobjects.mfm
+ /home/fred/ideu/src/templateeditor.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 1
+ 2
+ 5
+ 3
+ 4
 firsttab=0
-index=3
+index=1
 [layout]
-windowlayout=563
+windowlayout=608
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1719,7 +1750,7 @@ windowlayout=563
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2113,24 +2144,24 @@ windowlayout=563
  nx=0
  ny=0
  ncx=1341
- ncy=52
+ ncy=49
  x=0
  y=0
  cx=1356
- cy=51
+ cy=48
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
- value=X
+ value=1
  [debuggerfo.edit_compilernum]
  value=0
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=3
-  /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/msegui.pas
  [debuggerfo.project_options]
  value=1
@@ -2153,8 +2184,15 @@ windowlayout=563
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  1
+  2
+  5
+  3
+  4
  firsttab=0
- index=3
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2217,7 +2255,7 @@ windowlayout=563
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_stockdata_mse_
  parent=
  mdistate=3
  nx=0
@@ -2228,6 +2266,44 @@ windowlayout=563
  y=62
  cx=734
  cy=620
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_stockdata_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_templateeditorfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=129
+ y=57
+ cx=198
+ cy=85
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_templateeditorfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=147
+ y=120
+ cx=483
+ cy=399
  rcx=0
  rcy=0
  wsize=0
