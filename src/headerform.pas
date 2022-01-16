@@ -4,59 +4,18 @@ unit headerform;
 interface
 
 uses
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msestat,
-  msemenus,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseevent,
-  mseclasses,
-  msewidgets,
-  mseforms,
-  mseact,
-  mclasses,
-  msedataedits,
-  msedropdownlist,
-  mseedit,
-  mseificomp,
-  mseificompglob,
-  msestockobjects,
-  mseifiglob,
-  msememodialog,
-  msestatfile,
-  msestream,
-  SysUtils,
-  msesimplewidgets,
-  mseconsts_ide,
-  msefileutils,
-  msebitmap,
-  msedatanodes,
-  msedragglob,
-  msegrids,
-  msegridsglob,
-  LazUTF8,
-  mselistbrowser,
-  msesys,
-  msegraphedits,
-  msescrollbar,
-  msetimer,
-  msedispwidgets,
-  mserichstring,
-  msestringcontainer,
-  msefiledialogx;
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
+ msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
+ mclasses,msedataedits,msedropdownlist,mseedit,mseificomp,mseificompglob,
+ msestockobjects,mseifiglob,msememodialog,msestatfile,msestream,SysUtils,
+ msesimplewidgets,mseconsts_ide,msefileutils,msebitmap,msedatanodes,msedragglob,
+ msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,msegraphedits,msescrollbar,
+ msetimer,msedispwidgets,mserichstring,msestringcontainer,msefiledialogx,
+ msefiledialog;
 
 type
   theaderfo = class(tmseform)
     memopoheader: tmemodialogedit;
-    initunit: tmemoedit;
-    endmemo: tmemoedit;
-    mseconstheader: tmemodialogedit;
-    tbutton3: TButton;
     tbutton2: TButton;
     alldir: tbooleanedit;
     tstatfile1: tstatfile;
@@ -66,8 +25,11 @@ type
     sc: tstringcontainer;
     outputdir: tfilenameeditx;
     tbutton4: TButton;
+   impexpfiledialog: tfiledialog;
     procedure createnew(const Sender: TObject);
+    procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure createnewpo(const Sender: TObject; fn: msestring);
+    procedure dosearch(thearray: array of msestring; theindex: integer);
     procedure oncreateform(const Sender: TObject);
     procedure ontime(const Sender: TObject);
   end;
@@ -84,6 +46,38 @@ implementation
 
 uses
   headerform_mfm;
+
+procedure theaderfo.dosearch(thearray: array of msestring; theindex: integer);
+var
+  str2: utf8String;
+  y: integer;
+begin
+  y        := 0;
+  hasfound := False;
+
+  while (y < length(constvaluearray)) and (hasfound = False) do
+  begin
+    str2  := (constvaluearray[y]);
+    acomp := UTF8Copy(str2, 1, system.pos(';', str2) - 1);
+    // writeln('---acomp:' + acomp);
+    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
+    astro := (UTF8Copy(str2, 1, system.pos(';', str2) - 1));
+    astro := utf8StringReplace(astro, '\"', '"', [rfReplaceAll]);
+    //  writeln('---astro:' + astro);
+    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
+    astrt := UTF8Copy(str2, 1, length(str2));
+    astrt := utf8StringReplace(astrt, '\"', '"', [rfReplaceAll]);
+
+    if thearray[theindex] = astro then
+      hasfound := True;
+    //  writeln('---astrt:' + astrt);
+
+    Inc(y);
+  end;
+end;
+
+/// debut
+
 
 procedure theaderfo.createnewpo(const Sender: TObject; fn: msestring);
 var
@@ -496,23 +490,253 @@ begin
 
 end;
 
+
+
+
+
+/////////////////////////////////////////// fin
+
 procedure theaderfo.createnew(const Sender: TObject);
 var
+  x: integer;
+  filterlista: msestringarty;
+  filterlistb: msestringarty;
   str1, str2: msestring;
- langall: msestring;
+  Info: TSearchRec;
+  langall: msestring;
 begin
-  str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'mseconst_ide.pas';
-  empty := true;
 
-  createnewpo(Sender, str1);
+  setlength(filterlista, 1);
+  setlength(filterlistb, 1);
+
+  if TButton(Sender).tag = 0 then
+  begin
+    empty          := False;
+    filterlista[0] := 'mseconsts_xx.po';
+    filterlistb[0] := '*.po';
+    impexpfiledialog.controller.filter := '*.po';
+    if alldir.Value then
+      impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
+    else
+      impexpfiledialog.controller.options := [fdo_savelastdir];
+  end;
+  if TButton(Sender).tag = 1 then
+  begin
+    empty          := False;
+    filterlista[0] := 'mseconsts_xx.pas';
+    filterlistb[0] := '*.pas';
+    impexpfiledialog.controller.filter := '*.pas';
+    if alldir.Value then
+      impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
+    else
+      impexpfiledialog.controller.options := [fdo_savelastdir];
+  end;
+
+  if TButton(Sender).tag = 2 then
+    empty := True;
+
+  if empty = False then
+  begin
+    with impexpfiledialog.controller.filterlist do
+    begin
+      asarraya := filterlista;
+      asarrayb := filterlistb;
+    end;
+
+    impexpfiledialog.controller.filterindex := 0;
+    application.ProcessMessages;
+
+    langall := '';
+
+    if impexpfiledialog.controller.Execute(str1, fdk_open) then
+    begin
+      paneldone.frame.colorclient := $FFD1A1;
+      labdone.Caption   := sc[0];
+      paneldone.Visible := True;
+      application.ProcessMessages;
+
+      if alldir.Value = False then
+      begin
+        if TButton(Sender).tag = 0 then
+          createnewconst(Sender, str1)
+        else
+          createnewpo(Sender, str1);
+      end
+      else
+      begin
+
+        if TButton(Sender).tag = 0 then
+          str2 := '*.po'
+        else
+          str2 := '*.pas';
+
+        if FindFirst(filedir(str1) + DirectorySeparator + str2, faAnyFile, Info) = 0 then
+          repeat
+            if TButton(Sender).tag = 0 then
+              createnewconst(Sender, filedir(str1) + Info.Name)
+            else
+              createnewpo(Sender, filedir(str1) + Info.Name);
+
+          until FindNext(Info) <> 0;
+        FindClose(Info);
+
+      end;
+    end;
+  end;
+
+  if empty = True then
+    createnewpo(Sender, filedir(str1) + Info.Name);
+
   paneldone.frame.colorclient := cl_ltgreen;
   labdone.Caption   := sc[1];
   paneldone.Visible := True;
   ttimer1.Enabled   := True;
+
 end;
 
 
 ///////////////
+
+procedure theaderfo.createnewconst(const Sender: TObject; fn: msestring);
+var
+  x, y: integer;
+  file1: ttextdatastream;
+  str1, strinit, strlang, filename1: msestring;
+  str2, str3, str4, strtemp: utf8String;
+  int1: integer;
+  isstring: Boolean = False;
+  isid: Boolean = False;
+  iscontext: Boolean = False;
+  ispocontext: Boolean = False;
+  imodalresultty: modalresultty;
+  imainformty: mainformty;
+  iextendedty: extendedty;
+  isourceformty: sourceformty;
+  iactionsmodulety: actionsmodulety;
+  iprojectoptionsconty: projectoptionsconty;
+  iprojectoptionsty: projectoptionsty;
+  iisettingsty: isettingsty;
+  itextgeneratorty: textgeneratorty;
+  istockcaptionty: stockcaptionty;
+begin
+  str1    := fn;
+  strlang := '';
+
+  if fileexists(str1) then
+  begin
+
+    file1 := ttextdatastream.Create(str1, fm_read);
+
+    filename1 := copy(filename(str1), 1, length(filename(str1)) - 3);
+    strlang   := trim(copy(filename1, system.pos('_', filename1) + 1, length(filename1)));
+
+    strlang := utf8StringReplace(strlang, '@', '_', [rfReplaceAll]);
+
+    file1.encoding := ce_utf8;
+
+    setlength(constvaluearray, 0);
+
+    file1.readln(str1);
+
+    str3 := '';
+    str2 := '';
+    str4 := '';
+
+    while not file1.EOF do
+    begin
+      str1    := '';
+      file1.readln(str1);
+      strtemp := '';
+       str2 := '';
+      if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
+        if (UTF8Copy(str1, 1, 6) = 'msgstr') then
+        begin
+          ispocontext := True;
+          str2 := UTF8Copy(str1, 8, length(str1));
+          str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+          str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+          str2      := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+          if str2 <> '' then
+          begin
+          setlength(constvaluearray, length(constvaluearray) + 1);
+          constvaluearray[length(constvaluearray) - 1] := trim(str2);
+          end;
+        end;
+      end;
+
+    file1.Free;
+
+    str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'ideu_empty.po';
+
+  if fileexists(str1) then
+  begin
+
+    file1 := ttextdatastream.Create(str1, fm_read);
+    file1.encoding := ce_utf8;
+
+    setlength(defaultresult, 0);
+
+    file1.readln(str1);
+
+    str3 := '';
+    str2 := '';
+    str4 := '';
+
+    while not file1.EOF do
+    begin
+      str1    := '';
+      file1.readln(str1);
+      strtemp := '';
+       str2 := '';
+      if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
+        if (UTF8Copy(str1, 1, 5) = 'msgid') then
+        begin
+          ispocontext := True;
+          str2 := UTF8Copy(str1, 7, length(str1));
+          str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+          str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+          str2      := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+          if trim(str2) <> '' then
+          begin
+          setlength(defaultresult, length(defaultresult) + 1);
+          defaultresult[length(defaultresult) - 1] := trim(str2);
+          end;
+        end;
+      end;
+
+    file1.Free;
+    end;
+
+    file1          := ttextdatastream.Create(outputdir.Value + 'ideu_' + strlang + '.po', fm_create);
+    file1.encoding := ce_utf8;
+
+    file1.writeln(memopoheader.Value);
+    file1.writeln();
+
+  writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
+   writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
+
+  for x := 0 to length(defaultresult) - 1 do
+   begin
+      file1.writeln('msgid "' + defaultresult[x] + '"');
+
+      if x < length(constvaluearray)  then
+      begin
+
+      if trim(constvaluearray[x]) <> '' then
+          file1.writeln('msgstr "' + constvaluearray[x] + '"')
+        else
+          file1.writeln('msgstr "' + defaultresult[x] + '"');
+      end;
+
+      file1.writeln('');
+    end;
+
+  file1.Free;
+
+
+  end;
+end;
 
 procedure theaderfo.oncreateform(const Sender: TObject);
 begin

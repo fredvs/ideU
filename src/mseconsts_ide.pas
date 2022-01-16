@@ -1,3 +1,4 @@
+
 { MSEgui Copyright (c) 1999-2018 by Martin Schreiber
 
     See the file COPYING.MSE, included in this distribution,
@@ -746,15 +747,22 @@ const
   'Delete %s selected rows?' // ex_del_rows_selected
   );
   
- en_langnamestext: array[0..6] of msestring = (
-    'English [en]',                                // 0_English
-    'Russian [ru]',                                // 1_Russian
-    'French [fr]',                                // 2_french
-    'German [de]',                                // 3_german
-    'Spanish [es]',                                // 4_spanish
-    'Portuguese [pt]',                            //5_portuguese
-    'Chinese (not complete) [zh]'                 //6_chinese
-    ); 
+ en_langnamestext: array[0..13] of msestring = (
+    'English [en]', 
+    'Russian [ru]',   
+    'French [fr]',  
+    'German [de]',
+    'Spanish [es]', 
+    'Portuguese [pt]', 
+    'Chinese [zh]',
+    'Italian [it]',
+    'Dutch [nl]',  
+    'Hebrew [he]', 
+    'Indonesian [id]',
+    'Polish [pl]',
+    'Espreranto [eo]',
+    'Greek [el]'   
+   ); 
 
 implementation
 

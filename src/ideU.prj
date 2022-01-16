@@ -1718,13 +1718,13 @@ editpos=59
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -2091,67 +2091,67 @@ nomenumodules=25
 order=59
  0
  1
- 4
- 7
- 45
- 58
- 20
- 9
- 37
  40
+ 35
+ 2
+ 25
+ 55
+ 3
+ 39
+ 7
+ 12
+ 23
+ 17
+ 42
+ 41
+ 19
+ 28
  21
  49
- 26
- 50
- 51
- 56
- 52
- 10
- 53
- 54
- 55
- 12
- 22
- 13
- 14
- 15
- 17
- 27
- 18
- 11
- 23
- 16
- 28
- 46
- 29
- 3
- 44
- 30
- 8
- 31
- 2
- 5
- 33
- 34
- 6
- 47
- 32
- 35
- 36
- 38
- 39
- 41
- 42
- 43
  48
  24
- 19
+ 26
+ 22
+ 52
+ 51
+ 56
+ 10
+ 27
+ 11
+ 30
+ 16
+ 32
+ 29
+ 43
+ 37
+ 47
+ 6
+ 31
+ 50
+ 46
+ 9
+ 58
+ 53
+ 8
+ 20
+ 4
+ 34
+ 45
+ 44
+ 13
+ 33
+ 5
+ 18
+ 38
+ 36
+ 14
+ 54
  57
- 25
+ 15
 firsttab=44
 index=50
 [layout]
-windowlayout=1027
+windowlayout=1029
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2295,7 +2295,7 @@ windowlayout=1027
  x=0
  y=0
  cx=205
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2366,7 +2366,7 @@ windowlayout=1027
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2385,10 +2385,10 @@ windowlayout=1027
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=308
+ width0=136
  sortdescend0=0
- width1=129
+ width1=166
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2583,7 +2583,7 @@ windowlayout=1027
  x=0
  y=0
  cx=1212
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2595,11 +2595,11 @@ windowlayout=1027
  nx=0
  ny=0
  ncx=1197
- ncy=37
+ ncy=25
  x=0
  y=0
  cx=1212
- cy=36
+ cy=23
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2609,8 +2609,10 @@ windowlayout=1027
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/lang/ideu_empty.po
- history=8
+ value=/home/fred/ideu/src/mseformatpngread.pas
+ history=10
+  /home/fred/ideu/src/mseformatpngread.pas
+  /home/fred/ideu/src/mseformatbmpicoread.pas
   /home/fred/ideu/src/lang/ideu_empty.po
   /home/fred/ideu/src/lang/ideu_zh.po
   /home/fred/ideu/src/lang/ideu_ru.po
@@ -2636,70 +2638,70 @@ windowlayout=1027
  x=208
  y=0
  cx=1004
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=59
   0
   1
-  4
-  7
-  45
-  58
-  20
-  9
-  37
   40
+  35
+  2
+  25
+  55
+  3
+  39
+  7
+  12
+  23
+  17
+  42
+  41
+  19
+  28
   21
   49
-  26
-  50
-  51
-  56
-  52
-  10
-  53
-  54
-  55
-  12
-  22
-  13
-  14
-  15
-  17
-  27
-  18
-  11
-  23
-  16
-  28
-  46
-  29
-  3
-  44
-  30
-  8
-  31
-  2
-  5
-  33
-  34
-  6
-  47
-  32
-  35
-  36
-  38
-  39
-  41
-  42
-  43
   48
   24
-  19
+  26
+  22
+  52
+  51
+  56
+  10
+  27
+  11
+  30
+  16
+  32
+  29
+  43
+  37
+  47
+  6
+  31
+  50
+  46
+  9
+  58
+  53
+  8
+  20
+  4
+  34
+  45
+  44
+  13
+  33
+  5
+  18
+  38
+  36
+  14
+  54
   57
-  25
+  15
  firsttab=44
  index=50
  [confideufo.fontname]
@@ -2737,9 +2739,9 @@ windowlayout=1027
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1212
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
