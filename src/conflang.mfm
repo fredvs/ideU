@@ -21,6 +21,9 @@ object conflangfo: tconflangfo
   oncreated = oncreat
   moduleclassname = 'tmseform'
   object ok: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
     bounds_x = 236
     bounds_y = 6
     bounds_cx = 78
@@ -159,11 +162,14 @@ object conflangfo: tconflangfo
       reffontheight = 15
     end
   end
-  object tbutton2: tbutton
+  object bpotools: tbutton
+    frame.optionsskin = [fso_flat]
+    frame.localprops = [frl_optionsskin]
+    frame.localprops1 = []
     taborder = 3
     bounds_x = 34
     bounds_y = 6
-    bounds_cx = 82
+    bounds_cx = 132
     bounds_cy = 26
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]

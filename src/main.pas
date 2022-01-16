@@ -5380,6 +5380,8 @@ begin
 
       conflangfo.setasdefault.frame.Caption := lang_stockcaption[Ord(sc_setasdefault)];
       conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
+      
+      conflangfo.bpotools.Caption    := 'Po ' + lang_projectoptions[Ord(po_tools)]; 
       conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
       
       application.processmessages;

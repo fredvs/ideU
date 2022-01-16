@@ -19,7 +19,7 @@ type
     gridlangcaption: tstringedit;
     gridlangbool: tbooleaneditradio;
     gridlangcode: tstringedit;
-   tbutton2: tbutton;
+   bpotools: tbutton;
     procedure oncok(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
