@@ -34,21 +34,12 @@ object conflangfo: tconflangfo
     onexecute = oncok
   end
   object setasdefault: tbooleanedit
-    frame.caption = 'Set as default'
     frame.captiondist = 4
     frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
-    frame.outerframe = (
-      0
-      2
-      89
-      2
-    )
     taborder = 1
-    bounds_x = 27
-    bounds_y = 188
-    bounds_cx = 102
-    bounds_cy = 17
+    bounds_x = 33
+    bounds_y = 190
     statfile = mainfo.mainstatfile
   end
   object gridlang: twidgetgrid
@@ -175,5 +166,15 @@ object conflangfo: tconflangfo
     state = [as_localcaption, as_localonexecute]
     caption = 'Po tools'
     onexecute = ontools
+  end
+  object lsetasdefault: tlabel
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
+    taborder = 4
+    bounds_x = 51
+    bounds_y = 175
+    bounds_cx = 263
+    bounds_cy = 42
+    caption = 'Set as default'
+    reffontheight = 15
   end
 end

@@ -20,6 +20,7 @@ type
     gridlangbool: tbooleaneditradio;
     gridlangcode: tstringedit;
    bpotools: tbutton;
+   lsetasdefault: tlabel;
     procedure oncok(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
@@ -35,7 +36,7 @@ implementation
 uses
   main,
   confideu,
-  headerform,
+  potools,
   confcompiler,
   confdebugger,
   conflang_mfm;

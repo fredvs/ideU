@@ -59,7 +59,7 @@ guitemplates,
 msegraphutils, 
 msefont, 
 fpg_iniutils_ideu,
-headerform,
+potools,
 stringconsts;
 
 var 

@@ -4916,7 +4916,34 @@ begin
 
   //  setlangconsts(thelang);
   createnewlang(thelang);
-
+  
+  if thelang = 'zh' then
+  begin
+   mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['menuwidth']).visible := true;
+   mainmenu1.options := [mo_shortcutright,mo_commonwidth,mo_activate,mo_updateonidle];   
+  end else
+  begin
+   mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := false;
+  
+   mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['menuwidth']).visible := false;
+   mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];   
+  end;
+ 
   application.ProcessMessages;
 
       mainmenu1.menu.itembynames(['file', 'quit']).Caption := lang_actionsmodule[Ord(
@@ -5378,7 +5405,7 @@ begin
           conflangfo.gridlangcode[x]    := str;
         end;
 
-      conflangfo.setasdefault.frame.Caption := lang_stockcaption[Ord(sc_setasdefault)];
+      conflangfo.lsetasdefault.Caption := lang_stockcaption[Ord(sc_setasdefault)];
       conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
       
       conflangfo.bpotools.Caption    := 'Po ' + lang_projectoptions[Ord(po_tools)]; 

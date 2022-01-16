@@ -44,7 +44,7 @@ object headerfo: theaderfo
   object tbutton2: tbutton
     taborder = 1
     bounds_x = 40
-    bounds_y = 144
+    bounds_y = 147
     bounds_cx = 370
     bounds_cy = 92
     state = [as_localdisabled, as_localcaption, as_localonexecute]
@@ -115,6 +115,43 @@ object headerfo: theaderfo
     controller.options = [fdo_directory, fdo_savelastdir]
     reffontheight = 15
   end
+  object booaddspace: tbooleanedit
+    frame.caption = 'Add space around words'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      2
+      153
+      2
+    )
+    taborder = 6
+    hint = 'Addespace around word (needed for ideograms)'
+    bounds_x = 63
+    bounds_y = 248
+    bounds_cx = 166
+    bounds_cy = 17
+  end
+  object numofspace: tintegeredit
+    frame.caption = 'Num of spaces'
+    frame.captionpos = cp_right
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.outerframe = (
+      0
+      0
+      92
+      0
+    )
+    taborder = 7
+    bounds_x = 243
+    bounds_y = 246
+    bounds_cx = 129
+    bounds_cy = 21
+    value = 2
+    valuedefault = 2
+    reffontheight = 15
+  end
   object paneldone: tgroupbox
     frame.colorclient = 16765345
     frame.localprops = [frl_colorclient]
@@ -122,9 +159,9 @@ object headerfo: theaderfo
     taborder = 3
     visible = False
     bounds_x = 3
-    bounds_y = 9
+    bounds_y = 4
     bounds_cx = 440
-    bounds_cy = 259
+    bounds_cy = 268
     object labdone: tlabel
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
       color = -2147483645
@@ -197,7 +234,7 @@ object headerfo: theaderfo
   end
   object tstatfile1: tstatfile
     filename = 'status.sta'
-    left = 14
-    top = 88
+    left = 26
+    top = 87
   end
 end

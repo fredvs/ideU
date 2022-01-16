@@ -13,10 +13,10 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 415
-  bounds_y = 258
-  bounds_cx = 745
-  bounds_cy = 76
+  bounds_x = 357
+  bounds_y = 252
+  bounds_cx = 732
+  bounds_cy = 101
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -30,8 +30,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     21
-    735
-    55
+    722
+    80
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -107,8 +107,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 720
-    bounds_cy = 59
+    bounds_cx = 722
+    bounds_cy = 80
     anchors = [an_top, an_bottom]
     font.color = -1610612734
     font.name = 'stf_default'
@@ -151,10 +151,10 @@ object mainfo: tmainfo
     itemfacetemplate = convex
     itemframetemplateactive = tframecomp3
     itemfacetemplateactive = concave
-    menu.submenu.count = 13
+    menu.submenu.count = 14
     menu.submenu.items = <    
       item
-        submenu.count = 14
+        submenu.count = 15
         submenu.items = <        
           item
             submenu.count = 3
@@ -325,13 +325,18 @@ object mainfo: tmainfo
               1
               16465
             )
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_localcaption]
           end>
         caption = '&File'
         name = 'file'
         state = [as_localcaption, as_localcolor]
       end    
       item
-        submenu.count = 10
+        submenu.count = 11
         submenu.items = <        
           item
             action = actionsmo.line
@@ -389,13 +394,18 @@ object mainfo: tmainfo
             state = [as_localimagelist, as_localimagenr]
             imagelist = actionsmo.buttonicons
             imagenr = 34
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption]
           end>
         caption = '&Search'
         name = 'search'
         state = [as_localcaption]
       end    
       item
-        submenu.count = 15
+        submenu.count = 16
         submenu.items = <        
           item
             action = actionsmo.selecteditpage
@@ -477,13 +487,18 @@ object mainfo: tmainfo
             caption = 'U&nindent'
             name = 'unindent'
             state = [as_localcaption]
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption]
           end>
         caption = '&Edit'
         name = 'edit'
         state = [as_localcaption]
       end    
       item
-        submenu.count = 5
+        submenu.count = 6
         submenu.items = <        
           item
             caption = 'En&vironment'
@@ -514,6 +529,11 @@ object mainfo: tmainfo
             caption = 'Download'
             name = 'download'
             state = [as_localcaption]
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption]
           end>
         caption = '&Target'
         name = 'target'
@@ -736,12 +756,10 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.toggleformunit
-            state = [as_invisible, as_localinvisible, as_localshortcut]
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption, as_localshortcut, as_localonexecute]
             options = []
-            sc = (
-              1
-              315
-            )
           end        
           item
             name = 'formmenuitemstart'
@@ -765,7 +783,7 @@ object mainfo: tmainfo
         onexecute = syntaxdefload
       end    
       item
-        submenu.count = 28
+        submenu.count = 29
         submenu.items = <        
           item
             action = actionsmo.makeact
@@ -1063,6 +1081,11 @@ object mainfo: tmainfo
             name = 'close'
             state = [as_localcaption, as_localonexecute]
             onexecute = closeprojectactonexecute
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption]
           end>
         caption = '&Project'
         hint = 'Actions for the project...'
@@ -1071,7 +1094,7 @@ object mainfo: tmainfo
         onexecute = aboutonexecute
       end    
       item
-        submenu.count = 24
+        submenu.count = 25
         submenu.items = <        
           item
             action = actionsmo.custmakemenu
@@ -1217,6 +1240,11 @@ object mainfo: tmainfo
           end        
           item
             options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_localcaption]
           end>
         caption = 'Edite&d'
         hint = 'Actions for Edited Source File'
@@ -1348,7 +1376,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 7
+        submenu.count = 8
         submenu.items = <        
           item
             caption = '&General Setting'
@@ -1417,6 +1445,11 @@ object mainfo: tmainfo
             caption = 'Themes'
             name = 'themes'
             state = [as_localcaption]
+          end        
+          item
+            caption = '                        '
+            name = 'menuwidth'
+            state = [as_invisible, as_localinvisible, as_localcaption]
           end>
         caption = 'Settings'
         hint = 'General and extra setting.'
@@ -1461,6 +1494,11 @@ object mainfo: tmainfo
         caption = '&About'
         name = 'about'
         state = [as_localcaption, as_localonexecute]
+      end    
+      item
+        caption = '               '
+        name = 'menuwidth'
+        state = [as_invisible, as_localinvisible, as_localcaption]
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
@@ -2508,8 +2546,8 @@ object mainfo: tmainfo
     template.frameimage_bottom = -4
     template.hiddenedges = [edg_bottom]
     template.optionsskin = [fso_flat]
-    left = 467
-    top = 30
+    left = 465
+    top = 27
   end
   object tframecomp3: tframecomp
     template.framei_left = 4

@@ -1,54 +1,16 @@
-unit headerform;
+unit potools;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 
 uses
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msestat,
-  msemenus,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseevent,
-  mseclasses,
-  msewidgets,
-  mseforms,
-  mseact,
-  mclasses,
-  msedataedits,
-  msedropdownlist,
-  mseedit,
-  mseificomp,
-  mseificompglob,
-  msestockobjects,
-  mseifiglob,
-  msememodialog,
-  msestatfile,
-  msestream,
-  SysUtils,
-  msesimplewidgets,
-  mseconsts_ide,
-  msefileutils,
-  msebitmap,
-  msedatanodes,
-  msedragglob,
-  msegrids,
-  msegridsglob,
-  LazUTF8,
-  mselistbrowser,
-  msesys,
-  msegraphedits,
-  msescrollbar,
-  msetimer,
-  msedispwidgets,
-  mserichstring,
-  msestringcontainer,
-  msefiledialogx;
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
+ msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
+ mclasses,msedataedits,msedropdownlist,mseedit,mseificomp,mseificompglob,
+ msestockobjects,mseifiglob,msememodialog,msestatfile,msestream,SysUtils,
+ msesimplewidgets,mseconsts_ide,msefileutils,msebitmap,msedatanodes,msedragglob,
+ msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,msegraphedits,msescrollbar,
+ msetimer,msedispwidgets,mserichstring,msestringcontainer,msefiledialogx;
 
 type
   theaderfo = class(tmseform)
@@ -63,6 +25,8 @@ type
     outputdir: tfilenameeditx;
     impexpfiledialog: tfiledialogx;
     tstatfile1: tstatfile;
+   booaddspace: tbooleanedit;
+   numofspace: tintegeredit;
     procedure createnew(const Sender: TObject);
     procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure createnewpo(const Sender: TObject; fn: msestring);
@@ -82,7 +46,7 @@ var
 implementation
 
 uses
-  headerform_mfm;
+  potools_mfm;
 
 procedure theaderfo.dosearch(thearray: array of msestring; theindex: integer);
 var
@@ -584,7 +548,9 @@ begin
       labdone.Caption   := sc[0];
       paneldone.Visible := True;
       application.ProcessMessages;
-
+      
+      str1 := impexpfiledialog.controller.filename;
+      
       if alldir.Value = False then
       begin
         if TButton(Sender).tag = 0 then
@@ -661,7 +627,7 @@ var
 begin
   str1    := fn;
   strlang := '';
-
+  
   if fileexists(str1) then
   begin
 
@@ -755,17 +721,27 @@ begin
 
     // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
     //  writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
+    str2 := '';
+    
+    if booaddspace.value = true then
+    begin
+    if numofspace.value > 0 then
+    for x := 1 to numofspace.value do
+    str2 := str2 + ' ';
+    end;
 
     for x := 0 to length(defaultresult) - 1 do
     begin
       file1.writeln('msgid "' + defaultresult[x] + '"');
 
       if x < length(constvaluearray) then
+      begin
         if trim(constvaluearray[x]) <> '' then
-          file1.writeln('msgstr "' + constvaluearray[x] + '"')
+          file1.writeln('msgstr "' + str2 + constvaluearray[x] + str2 + '"')
         else
           file1.writeln('msgstr "' + defaultresult[x] + '"');
-
+       end else file1.writeln('msgstr "' + defaultresult[x] + '"');
+  
       file1.writeln('');
     end;
 
