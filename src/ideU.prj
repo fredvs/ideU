@@ -81,9 +81,9 @@ findinfiledialog=92
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -136,8 +136,9 @@ findinfiledialog=92
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=po2const
+ value=fdk_open
  history=20
+  fdk_open
   po2const
   msestockobjects
   2021
@@ -157,7 +158,6 @@ findinfiledialog=92
   stockobjects.captions
   stockobjects.
   modalresulttext[
-  {$I useslang.inc}
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -1633,11 +1633,11 @@ editpos=9
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,4
  0,-1073741823
- 0,3
+ 0,0
  0,-1073741823
- 0,5
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1716,14 +1716,14 @@ order=9
  2
  3
  4
+ 6
  7
  5
- 6
  8
 firsttab=0
 index=7
 [layout]
-windowlayout=637
+windowlayout=638
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1773,7 +1773,7 @@ windowlayout=637
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1850,7 +1850,7 @@ windowlayout=637
  ncy=0
  x=239
  y=115
- cx=678
+ cx=880
  cy=414
  rcx=0
  rcy=0
@@ -2167,11 +2167,11 @@ windowlayout=637
  nx=0
  ny=0
  ncx=1197
- ncy=5
+ ncy=0
  x=0
  y=0
  cx=1212
- cy=3
+ cy=-2
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2182,7 +2182,8 @@ windowlayout=637
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/headerform.pas
- history=10
+ history=11
+  /home/fred/ideu/src/headerform.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/const2po.pas
   /home/fred/ideu/src/lang/ideu_empty.po
@@ -2220,9 +2221,9 @@ windowlayout=637
   2
   3
   4
+  6
   7
   5
-  6
   8
  firsttab=0
  index=7
@@ -2307,7 +2308,7 @@ windowlayout=637
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=_mse_headerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2326,7 +2327,7 @@ windowlayout=637
  [_mse_headerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_projectoptionsfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2345,7 +2346,7 @@ windowlayout=637
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

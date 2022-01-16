@@ -4,13 +4,51 @@ unit headerform;
 interface
 
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
- msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
- mclasses,msedataedits,msedropdownlist,mseedit,mseificomp,mseificompglob,
- msestockobjects,mseifiglob,msememodialog,msestatfile,msestream,SysUtils,
- msesimplewidgets,mseconsts_ide,msefileutils,msebitmap,msedatanodes,msedragglob,
- msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,msegraphedits,msescrollbar,
- msetimer,msedispwidgets,mserichstring,msestringcontainer, msefiledialogx;
+  msetypes,
+  mseglob,
+  mseguiglob,
+  mseguiintf,
+  mseapplication,
+  msestat,
+  msemenus,
+  msegui,
+  msegraphics,
+  msegraphutils,
+  mseevent,
+  mseclasses,
+  msewidgets,
+  mseforms,
+  mseact,
+  mclasses,
+  msedataedits,
+  msedropdownlist,
+  mseedit,
+  mseificomp,
+  mseificompglob,
+  msestockobjects,
+  mseifiglob,
+  msememodialog,
+  msestatfile,
+  msestream,
+  SysUtils,
+  msesimplewidgets,
+  mseconsts_ide,
+  msefileutils,
+  msebitmap,
+  msedatanodes,
+  msedragglob,
+  msegrids,
+  msegridsglob,
+  LazUTF8,
+  mselistbrowser,
+  msesys,
+  msegraphedits,
+  msescrollbar,
+  msetimer,
+  msedispwidgets,
+  mserichstring,
+  msestringcontainer,
+  msefiledialogx;
 
 type
   theaderfo = class(tmseform)
@@ -22,9 +60,9 @@ type
     labdone: tlabel;
     sc: tstringcontainer;
     tbutton4: TButton;
-   outputdir: tfilenameeditx;
-   impexpfiledialog: tfiledialogx;
-   tstatfile1: tstatfile;
+    outputdir: tfilenameeditx;
+    impexpfiledialog: tfiledialogx;
+    tstatfile1: tstatfile;
     procedure createnew(const Sender: TObject);
     procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure createnewpo(const Sender: TObject; fn: msestring);
@@ -75,9 +113,6 @@ begin
   end;
 end;
 
-/// debut
-
-
 procedure theaderfo.createnewpo(const Sender: TObject; fn: msestring);
 var
   x, y: integer;
@@ -109,7 +144,7 @@ var
   theend: Boolean = False;
 begin
 
-    str1 := fn;
+  str1 := fn;
 
   if fileexists(str1) and (empty = False) then
   begin
@@ -278,14 +313,14 @@ begin
           constvaluearray[length(constvaluearray) - 1] := trim(str1);
       end;
 
-        if system.pos('extendedtext', str1) > 0 then
+      if system.pos('extendedtext', str1) > 0 then
         isarray10 := True;
       if (isarray10 = True) and (system.pos(#039, str1) > 0) then
       begin
         isarray9 := False;
         setlength(constvaluearray, length(constvaluearray) + 1);
-        str1      := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1      := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
         if system.pos('//', str1) > 0 then
           str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
         if system.pos('{', str1) > 0 then
@@ -310,7 +345,7 @@ begin
           constvaluearray[length(constvaluearray) - 1] := trim(str1);
       end;
 
-       if system.pos('delete_n_selected_rows', str1) > 0 then
+      if system.pos('delete_n_selected_rows', str1) > 0 then
         theend := True;
     end;
     //writeln('5');
@@ -318,9 +353,7 @@ begin
   end;
 
   setlength(default_modalresulttext, length(en_modalresulttext));
-  for imodalresultty := Low(modalresultty) to High(modalresultty) do
-    default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
-
+  
   // default_modalresulttext := en_modalresulttext;
   for imodalresultty := Low(modalresultty) to High(modalresultty) do
     default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
@@ -434,7 +467,7 @@ begin
   for x := 0 to length(default_stockcaption) - 1 do
     defaultresult[x + y] := default_stockcaption[x];
 
- setlength(default_extendedtext, length(en_extendedtext));
+  setlength(default_extendedtext, length(en_extendedtext));
 
   //default_extendedtext := en_extendedtext;
   for iextendedty := Low(extendedty) to High(extendedty) do
@@ -460,8 +493,8 @@ begin
     defaultresult[x + y] := default_langnamestext[x];
 
   // writeln(length(defaultresult));
-   file1 := ttextdatastream.Create(outputdir.Value +
-      'ideu_empty.po', fm_create);
+  file1 := ttextdatastream.Create(outputdir.Value +
+    'ideu_empty.po', fm_create);
 
   file1.encoding := ce_utf8;
 
@@ -488,9 +521,6 @@ begin
   file1.Free;
 
 end;
-
-
-
 
 
 /////////////////////////////////////////// fin
@@ -548,7 +578,7 @@ begin
 
     langall := '';
 
-    if impexpfiledialog.controller.Execute(str1, fdk_open) then
+    if impexpfiledialog.execute(fdk_open) = mr_ok then 
     begin
       paneldone.frame.colorclient := $FFD1A1;
       labdone.Caption   := sc[0];
@@ -581,19 +611,26 @@ begin
         FindClose(Info);
 
       end;
+      paneldone.frame.colorclient := cl_ltgreen;
+      labdone.Caption   := sc[1];
+      paneldone.Visible := True;
+      ttimer1.Enabled   := True;
+
     end;
 
   end;
 
 
   if empty = True then
+  begin
     createnewpo(Sender, filedir(str1) + Info.Name);
     // else  createnewconst(Sender, thistoryedit1.text);
 
-  paneldone.frame.colorclient := cl_ltgreen;
-  labdone.Caption   := sc[1];
-  paneldone.Visible := True;
-  ttimer1.Enabled   := True;
+    paneldone.frame.colorclient := cl_ltgreen;
+    labdone.Caption   := sc[1];
+    paneldone.Visible := True;
+    ttimer1.Enabled   := True;
+  end;
 
 end;
 
@@ -650,63 +687,64 @@ begin
       str1    := '';
       file1.readln(str1);
       strtemp := '';
-       str2 := '';
+      str2    := '';
       if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-        if (UTF8Copy(str1, 1, 5) = 'msgid') then begin
+        if (UTF8Copy(str1, 1, 5) = 'msgid') then
+        begin
           ispocontext := True;
-          str2 := UTF8Copy(str1, 7, length(str1));
-          str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
-          str2      := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+          str2        := UTF8Copy(str1, 7, length(str1));
+          str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+          str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+          str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
           if str2 <> '' then
           begin
-          setlength(constvaluearray, length(constvaluearray) + 1);
-          constvaluearray[length(constvaluearray) - 1] := trim(str2);
+            setlength(constvaluearray, length(constvaluearray) + 1);
+            constvaluearray[length(constvaluearray) - 1] := trim(str2);
           end;
         end;
-      end;
+    end;
 
     file1.Free;
 
     str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator + 'ideu_empty.po';
 
-  if fileexists(str1) then
-  begin
-
-    file1 := ttextdatastream.Create(str1, fm_read);
-    file1.encoding := ce_utf8;
-
-    setlength(defaultresult, 0);
-
-    file1.readln(str1);
-
-    str3 := '';
-    str2 := '';
-    str4 := '';
-
-    while not file1.EOF do
+    if fileexists(str1) then
     begin
-      str1    := '';
+
+      file1          := ttextdatastream.Create(str1, fm_read);
+      file1.encoding := ce_utf8;
+
+      setlength(defaultresult, 0);
+
       file1.readln(str1);
-      strtemp := '';
-       str2 := '';
-      if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-        if (UTF8Copy(str1, 1, 5) = 'msgid') then
-        begin
-          ispocontext := True;
-          str2 := UTF8Copy(str1, 7, length(str1));
-          str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
-          str2      := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
-          if trim(str2) <> '' then
+
+      str3 := '';
+      str2 := '';
+      str4 := '';
+
+      while not file1.EOF do
+      begin
+        str1    := '';
+        file1.readln(str1);
+        strtemp := '';
+        str2    := '';
+        if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
+          if (UTF8Copy(str1, 1, 5) = 'msgid') then
           begin
-          setlength(defaultresult, length(defaultresult) + 1);
-          defaultresult[length(defaultresult) - 1] := trim(str2);
+            ispocontext := True;
+            str2        := UTF8Copy(str1, 7, length(str1));
+            str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+            str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+            str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+            if trim(str2) <> '' then
+            begin
+              setlength(defaultresult, length(defaultresult) + 1);
+              defaultresult[length(defaultresult) - 1] := trim(str2);
+            end;
           end;
-        end;
       end;
 
-    file1.Free;
+      file1.Free;
     end;
 
     file1          := ttextdatastream.Create(outputdir.Value + 'ideu_' + strlang + '.po', fm_create);
@@ -715,27 +753,23 @@ begin
     file1.writeln(memopoheader.Value);
     file1.writeln();
 
- // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
- //  writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
+    // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
+    //  writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
 
-  for x := 0 to length(defaultresult) - 1 do
-   begin
+    for x := 0 to length(defaultresult) - 1 do
+    begin
       file1.writeln('msgid "' + defaultresult[x] + '"');
 
-      if x < length(constvaluearray)  then
-      begin
-
-      if trim(constvaluearray[x]) <> '' then
+      if x < length(constvaluearray) then
+        if trim(constvaluearray[x]) <> '' then
           file1.writeln('msgstr "' + constvaluearray[x] + '"')
         else
           file1.writeln('msgstr "' + defaultresult[x] + '"');
-      end;
 
       file1.writeln('');
     end;
 
-  file1.Free;
-
+    file1.Free;
 
   end;
 end;
