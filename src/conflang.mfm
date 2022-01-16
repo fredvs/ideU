@@ -159,4 +159,15 @@ object conflangfo: tconflangfo
       reffontheight = 15
     end
   end
+  object tbutton2: tbutton
+    taborder = 3
+    bounds_x = 34
+    bounds_y = 6
+    bounds_cx = 82
+    bounds_cy = 26
+    anchors = [an_top, an_right]
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Po tools'
+    onexecute = ontools
+  end
 end

@@ -4,39 +4,12 @@ unit conflang;
 interface
 
 uses
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msestat,
-  msemenus,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseevent,
-  mseclasses,
-  msewidgets,
-  mseforms,
-  msesimplewidgets,
-  msegraphedits,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msescrollbar,
-  msestatfile,
-  mseact,
-  msedataedits,
-  msedragglob,
-  msedropdownlist,
-  mseedit,
-  msegrids,
-  msegridsglob,
-  msestream,
-  msewidgetgrid,
-  SysUtils,
-  msedispwidgets,
-  mserichstring;
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
+ msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,
+ msesimplewidgets,msegraphedits,mseificomp,mseificompglob,mseifiglob,
+ msescrollbar,msestatfile,mseact,msedataedits,msedragglob,msedropdownlist,
+ mseedit,msegrids,msegridsglob,msestream,msewidgetgrid,SysUtils,msedispwidgets,
+ mserichstring;
 
 type
   tconflangfo = class(tmseform)
@@ -46,9 +19,11 @@ type
     gridlangcaption: tstringedit;
     gridlangbool: tbooleaneditradio;
     gridlangcode: tstringedit;
+   tbutton2: tbutton;
     procedure oncok(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
+   procedure ontools(const sender: TObject);
   end;
 
 var
@@ -60,6 +35,7 @@ implementation
 uses
   main,
   confideu,
+  headerform,
   confcompiler,
   confdebugger,
   conflang_mfm;
@@ -97,6 +73,11 @@ begin
         else
           gridlangbool[x] := False;
     end;
+end;
+
+procedure tconflangfo.ontools(const sender: TObject);
+begin
+headerfo.visible := true;
 end;
 
 end.

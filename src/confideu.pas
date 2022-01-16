@@ -5,7 +5,7 @@ interface
 
 uses
  mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
-  msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
+ msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
  mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
  msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,
  msestrings,SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,

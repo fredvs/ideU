@@ -10,22 +10,21 @@ uses
  msestockobjects,mseifiglob,msememodialog,msestatfile,msestream,SysUtils,
  msesimplewidgets,mseconsts_ide,msefileutils,msebitmap,msedatanodes,msedragglob,
  msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,msegraphedits,msescrollbar,
- msetimer,msedispwidgets,mserichstring,msestringcontainer,msefiledialogx,
- msefiledialog;
+ msetimer,msedispwidgets,mserichstring,msestringcontainer, msefiledialogx;
 
 type
   theaderfo = class(tmseform)
     memopoheader: tmemodialogedit;
     tbutton2: TButton;
     alldir: tbooleanedit;
-    tstatfile1: tstatfile;
     ttimer1: ttimer;
     paneldone: tgroupbox;
     labdone: tlabel;
     sc: tstringcontainer;
-    outputdir: tfilenameeditx;
     tbutton4: TButton;
-   impexpfiledialog: tfiledialog;
+   outputdir: tfilenameeditx;
+   impexpfiledialog: tfiledialogx;
+   tstatfile1: tstatfile;
     procedure createnew(const Sender: TObject);
     procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure createnewpo(const Sender: TObject; fn: msestring);
@@ -520,6 +519,7 @@ begin
     else
       impexpfiledialog.controller.options := [fdo_savelastdir];
   end;
+
   if TButton(Sender).tag = 1 then
   begin
     empty          := False;
@@ -582,10 +582,13 @@ begin
 
       end;
     end;
+
   end;
+
 
   if empty = True then
     createnewpo(Sender, filedir(str1) + Info.Name);
+    // else  createnewconst(Sender, thistoryedit1.text);
 
   paneldone.frame.colorclient := cl_ltgreen;
   labdone.Caption   := sc[1];
@@ -649,10 +652,9 @@ begin
       strtemp := '';
        str2 := '';
       if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-        if (UTF8Copy(str1, 1, 6) = 'msgstr') then
-        begin
+        if (UTF8Copy(str1, 1, 5) = 'msgid') then begin
           ispocontext := True;
-          str2 := UTF8Copy(str1, 8, length(str1));
+          str2 := UTF8Copy(str1, 7, length(str1));
           str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
           str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
           str2      := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
@@ -666,7 +668,7 @@ begin
 
     file1.Free;
 
-    str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'ideu_empty.po';
+    str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator + 'ideu_empty.po';
 
   if fileexists(str1) then
   begin
@@ -713,8 +715,8 @@ begin
     file1.writeln(memopoheader.Value);
     file1.writeln();
 
-  writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
-   writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
+ // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
+ //  writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
 
   for x := 0 to length(defaultresult) - 1 do
    begin
@@ -740,7 +742,8 @@ end;
 
 procedure theaderfo.oncreateform(const Sender: TObject);
 begin
-  outputdir.Value := ExtractFilePath(ParamStr(0)) + directoryseparator + 'output' + directoryseparator;
+  outputdir.Value := ExtractFilePath(ParamStr(0)) + 'output' + directoryseparator;
+  //impexpfiledialog.controller.filename := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'ideu_empty.po';
 end;
 
 procedure theaderfo.ontime(const Sender: TObject);

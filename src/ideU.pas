@@ -58,7 +58,8 @@ regunitgroups,
 guitemplates, 
 msegraphutils, 
 msefont, 
-fpg_iniutils_ideu, 
+fpg_iniutils_ideu,
+headerform,
 stringconsts;
 
 var 
@@ -153,6 +154,8 @@ begin
 
   confcompilerfo.Close;
   confdebuggerfo.Close;
+  
+  application.createform(theaderfo, headerfo);
  
   application.createform(tmainfo, mainfo);
 
@@ -162,6 +165,8 @@ begin
   createcpufo;
 
   mainfo.ideureadconfig;
+  
+  headerfo.icon := mainfo.icon;
 
   splashfo.icon := mainfo.icon;
   confideufo.icon := mainfo.icon;
