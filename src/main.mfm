@@ -29,9 +29,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    21
+    19
     722
-    80
+    82
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -84,10 +84,10 @@ object mainfo: tmainfo
     10E7100129EF290131EF31010000000631EF310329EF290100E7000A29EF2901
     31EF31030000000742FF4A0231EF310110E7100100E7000810E7100131EF3101
     42FF4A020000000A39F7390110E7100100E7000700DE000110E7100139F73901
-    0000001E00000000007E000080FF0100C0FF0300E0FF0700F0FF0F00F8FF1F00
-    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00
-    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F0FF0F00C0FF0300
-    00000000
+    0000001E000000FF007E00FF80FF01FFC0FF03FFE0FF07FFF0FF0FFFF8FF1FFF
+    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFF
+    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF0FF0FFFC0FF03FF
+    000000FF
   }
   oncreate = mainfooncreate
   oncreated = manfocreated
@@ -108,7 +108,7 @@ object mainfo: tmainfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 722
-    bounds_cy = 80
+    bounds_cy = 82
     anchors = [an_top, an_bottom]
     font.color = -1610612734
     font.name = 'stf_default'
@@ -489,7 +489,7 @@ object mainfo: tmainfo
             state = [as_localcaption]
           end        
           item
-            caption = '                        '
+            caption = '                          '
             name = 'menuwidth'
             state = [as_invisible, as_localinvisible, as_localcaption]
           end>
@@ -756,7 +756,7 @@ object mainfo: tmainfo
           end        
           item
             action = actionsmo.toggleformunit
-            caption = '                        '
+            caption = '                              '
             name = 'menuwidth'
             state = [as_invisible, as_localinvisible, as_localcaption, as_localshortcut, as_localonexecute]
             options = []
@@ -1496,7 +1496,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localonexecute]
       end    
       item
-        caption = '               '
+        caption = '           '
         name = 'menuwidth'
         state = [as_invisible, as_localinvisible, as_localcaption]
       end>

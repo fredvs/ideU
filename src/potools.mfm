@@ -3,14 +3,14 @@ object headerfo: theaderfo
   bounds_x = 493
   bounds_y = 200
   bounds_cx = 446
-  bounds_cy = 274
+  bounds_cy = 290
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     446
-    274
+    290
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Po <> Po converter'
@@ -43,12 +43,12 @@ object headerfo: theaderfo
   end
   object tbutton2: tbutton
     taborder = 1
-    bounds_x = 40
-    bounds_y = 147
-    bounds_cx = 370
-    bounds_cy = 92
+    bounds_x = 41
+    bounds_y = 140
+    bounds_cx = 369
+    bounds_cy = 101
     state = [as_localdisabled, as_localcaption, as_localonexecute]
-    caption = '   After creating a new transated Po from "ide_empty.po"       (by Google translate for example and saved as                            "ideu_xz.po" ("xz" is the code lang)).                                                                                                                             Convert it into Po file with original + translated.'
+    caption = '   After creating a new transated Po from "ide_empty.po"   (by Google translate for example changing ext "po" into "txt" and saved as  "ideu_xz.po" ("xz" is the code lang)).   Make sure Google did not translate "msgid" into "msgstr" (fix it if needed)   Convert it into Po file with original + translated clicking here.'
     textflags = [tf_left, tf_xcentered, tf_ycentered, tf_wordbreak]
     onexecute = createnew
   end
@@ -127,8 +127,8 @@ object headerfo: theaderfo
     )
     taborder = 6
     hint = 'Addespace around word (needed for ideograms)'
-    bounds_x = 63
-    bounds_y = 248
+    bounds_x = 67
+    bounds_y = 255
     bounds_cx = 166
     bounds_cy = 17
   end
@@ -144,8 +144,8 @@ object headerfo: theaderfo
       0
     )
     taborder = 7
-    bounds_x = 243
-    bounds_y = 246
+    bounds_x = 247
+    bounds_y = 253
     bounds_cx = 129
     bounds_cy = 21
     value = 2
@@ -158,10 +158,10 @@ object headerfo: theaderfo
     frame.localprops1 = []
     taborder = 3
     visible = False
-    bounds_x = 3
-    bounds_y = 4
+    bounds_x = 4
+    bounds_y = 2
     bounds_cx = 440
-    bounds_cy = 268
+    bounds_cy = 282
     object labdone: tlabel
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
       color = -2147483645
