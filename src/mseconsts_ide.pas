@@ -760,7 +760,7 @@ const
     'Hebrew [he]', 
     'Indonesian [id]',
     'Polish [pl]',
-    'Espreranto [eo]',
+    'Esperanto [eo]',
     'Greek [el]',
     'Arabic (incomplete) [ar]'    
    ); 

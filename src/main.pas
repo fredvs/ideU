@@ -5405,13 +5405,25 @@ begin
           conflangfo.gridlangcode[x]    := str;
         end;
 
-      conflangfo.lsetasdefault.Caption := lang_stockcaption[Ord(sc_setasdefault)];
-      conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
+       if thelang = 'zh' then
+       begin
+         conflangfo.lsetasdefault.visible := true;
+         conflangfo.lsetasdefault.Caption := lang_stockcaption[Ord(sc_setasdefault)];
+         conflangfo.setasdefault.frame.Caption := '';
+       end else
+       begin
+         conflangfo.lsetasdefault.visible := false;
+         conflangfo.lsetasdefault.Caption := '';
+         conflangfo.setasdefault.frame.Caption := lang_stockcaption[Ord(sc_setasdefault)];
+       end;   
       
-      conflangfo.bpotools.Caption    := 'Po ' + lang_projectoptions[Ord(po_tools)]; 
-      conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
+       conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
       
-      application.processmessages;
+       conflangfo.bpotools.Caption    := 'Po ' + lang_projectoptions[Ord(po_tools)]; 
+      
+       conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
+      
+       application.processmessages;
 
   end;
 
