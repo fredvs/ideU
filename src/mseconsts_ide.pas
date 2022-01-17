@@ -762,7 +762,7 @@ const
     'Polish [pl]',
     'Esperanto [eo]',
     'Greek [el]',
-    'Arabic (incomplete) [ar]'    
+    'Arabic [ar]'    
    ); 
 
 implementation

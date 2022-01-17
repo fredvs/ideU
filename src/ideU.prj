@@ -71,7 +71,7 @@ order18=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=92
+findinfiledialog=93
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -87,15 +87,16 @@ findinfiledialog=92
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
- history=15
+ value="*.pas" "*.pp" "*.inc"  "*.po"
+ history=16
+  "*.pas" "*.pp" "*.inc"  "*.po"
+  "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*" 
   
   "*.pas" "*.pp" "*.inc" "*.sh"
   "*.pas" "*.pp" "*.inc" "*.*"
-  "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc"
   "*.mfm"
   "*.pas" "*.pp" "*.inc" "*.mfm"
@@ -106,13 +107,14 @@ findinfiledialog=92
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseide-msegui/
+  /home/fred/ideu_bin/
  filecolwidth=150
  x=459
  y=211
  cx=608
  cy=346
  filehistory=20
+  /home/fred/ideu_bin/
   /home/fred/mseide-msegui/
   /home/fred/fpc331trunk/
   /home/fred/strumpract/src/
@@ -132,12 +134,12 @@ findinfiledialog=92
   /home/fred/CodeTyphonIns700/
   /home/fred/msefpc/freepascal-ootb/
   /home/fred/svnfpctrunk/trunk/
-  /home/fred/ideu_ok/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc"
+ filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=espreranto
+ value=incomplete
  history=20
+  incomplete
   espreranto
   setasdefault.f
   header
@@ -157,7 +159,6 @@ findinfiledialog=92
   setlang(
   setlang
   replace
-  with stockobjects
  [findinfileadialogfo]
  stackedunder=
  x=601
@@ -926,18 +927,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
- CONFLANGFO
- MAINFO
- SOURCEFO
-moduletypes=3
- TCONFLANGFO
- TMAINFO
- TSOURCEFO
-modulefiles=3
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=14
  4095
@@ -1616,66 +1608,24 @@ findhistory=20
  actionsmoduletext(
  lang_projectoptionscon
 findoptions=1
-editpos=5
- 0,-1073741823
- 0,-1073741823
- 0,4
- 0,-1073741823
- 0,5401
+editpos=1
+ 0,0
 bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-sourcefiles=5
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/mseconsts_ide.pas
- ${PROJECTDIR}/main.pas
-relpaths=5
- main.pas
- sourceform.pas
- conflang.pas
- mseconsts_ide.pas
- main.pas
-ismoduletexts=5
+sourcefiles=1
+ ${PROJECTDIR}/ideU.pas
+relpaths=1
+ ideU.pas
+ismoduletexts=1
  0
- 0
- 0
- 0
- 0
-modules=4
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/conflang.mfm
-moduleoptions=4
- 0
- 0
- 0
- 0
-visiblemodules=4
- 0
- -1
- -1
- -1
-nomenumodules=4
- -1
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
-order=5
- 0
- 1
- 2
- 4
- 3
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=547
+windowlayout=508
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1689,13 +1639,13 @@ windowlayout=547
  ny=0
  ncx=0
  ncy=0
- x=61
- y=29
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1816,7 +1766,7 @@ windowlayout=547
  x=0
  y=0
  cx=205
- cy=450
+ cy=518
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1827,7 +1777,7 @@ windowlayout=547
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1906,10 +1856,10 @@ windowlayout=547
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=368
- width0=163
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=199
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1984,9 +1934,9 @@ windowlayout=547
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=583
+ cx=1356
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2085,8 +2035,8 @@ windowlayout=547
  ncy=0
  x=0
  y=0
- cx=1212
- cy=51
+ cx=1356
+ cy=59
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2097,12 +2047,12 @@ windowlayout=547
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=29
+ ncx=1356
+ ncy=61
  x=0
  y=0
- cx=1212
- cy=28
+ cx=1356
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2112,10 +2062,15 @@ windowlayout=547
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=2
+ value=/home/fred/ideu/src/ideU.pas
+ history=7
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu_bin/ideU_lin64/lang/ideu_id.po
+  /home/fred/ideu_bin/ideU_lin64/lang/ideu_es.po
+  /home/fred/ideu_bin/ideU_lin64/lang/ideu_de.po
+  /home/fred/ideu_bin/ideU_lin64/lang/ideu_fr.po
+  /home/fred/ideu_bin/ideU_lin64/lang/ideu_he.po
   /home/fred/ideu/src/mseconsts_ide.pas
-  /home/fred/ideu/src/conflang.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2132,19 +2087,13 @@ windowlayout=547
  ncy=0
  x=208
  y=0
- cx=1004
- cy=450
+ cx=1148
+ cy=518
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  1
-  2
-  4
-  3
  firsttab=0
- index=3
+ index=0
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2153,7 +2102,7 @@ windowlayout=547
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2180,49 +2129,11 @@ windowlayout=547
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1212
- cy=450
+ y=62
+ cx=1356
+ cy=518
  rcx=0
  rcy=0
- [_mse_actionsmo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=confdebuggerfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=323
- y=178
- cx=966
- cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=451
- y=270
- cx=341
- cy=222
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
