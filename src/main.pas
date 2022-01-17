@@ -752,13 +752,11 @@ end;
   themenr := gINI.ReadInteger('theme', 'main', 0);
   dotheme(themenr);
 
-  setstattext('Hello!', mtk_flat);
+  // setstattext('Hello!', mtk_flat);
 
   confideufo.onchangefont;
 
   objectinspectorfo.Close;
-
-  // splashfo.close;
 
 end;
 
