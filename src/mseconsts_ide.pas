@@ -747,7 +747,7 @@ const
   'Delete %s selected rows?' // ex_del_rows_selected
   );
   
- en_langnamestext: array[0..13] of msestring = (
+ en_langnamestext: array[0..14] of msestring = (
     'English [en]', 
     'Russian [ru]',   
     'French [fr]',  
@@ -761,7 +761,8 @@ const
     'Indonesian [id]',
     'Polish [pl]',
     'Espreranto [eo]',
-    'Greek [el]'   
+    'Greek [el]',
+    'Arabic (incomplete) [ar]'    
    ); 
 
 implementation
