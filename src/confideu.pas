@@ -724,7 +724,7 @@ begin
   debuggerfo.statdisp.font.Name := ansistring(fontname.Value);
 
   confideuresize;
-
+ 
 end;
 
 procedure tconfideufo.oncloseev(const Sender: TObject);
