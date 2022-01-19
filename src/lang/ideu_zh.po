@@ -21,7 +21,7 @@ msgid "&Cancel"
 msgstr "取消"
 
 msgid "&Abort"
-msgstr "Abort"
+msgstr "中止"
 
 msgid "&OK"
 msgstr "行"
@@ -32,7 +32,7 @@ msgstr "是"
 msgid "&No"
 msgstr "否"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "是&全部"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "是"
 msgid "No"
 msgstr "否"
 
-msgid "Yes all"
+msgid "All"
 msgstr "是的全部"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "挂断"
 msgid "Interrupt"
 msgstr "中断"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "退出"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "非法指令"
 msgid "Trace trap"
 msgstr "跟踪陷阱"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "中止"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "堆栈错误"
 msgid "Child status has changed"
 msgstr "子状态已改变"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "继续"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "继承的组件"
 
 msgid "can not be deleted."
 msgstr "无法删除。"
-
-msgid "ERROR"
-msgstr "错误"
 
 msgid "Make aborted."
 msgstr "使中止。"
@@ -311,12 +308,6 @@ msgstr "无效异常"
 msgid "T&ools"
 msgstr "工具&工具"
 
-msgid "Forms"
-msgstr "表格"
-
-msgid "Source"
-msgstr "来源"
-
 msgid "All Files"
 msgstr "所有文件"
 
@@ -365,23 +356,14 @@ msgstr "继承的表单"
 msgid "Do you want to replace the settings by"
 msgstr "你想把设置替换为"
 
-msgid "File"
-msgstr "文件"
-
 msgid "Do you want to overwrite?"
 msgstr "你想覆盖吗？"
 
 msgid "Unknown"
 msgstr "未知"
 
-msgid "Error"
-msgstr "错误"
-
 msgid "Startup"
 msgstr "启动"
-
-msgid "Exception"
-msgstr "异常"
 
 msgid "GDB died"
 msgstr "GDB 死了"
@@ -422,9 +404,6 @@ msgstr "停止错误"
 msgid "Can not read project"
 msgstr "无法读取项目"
 
-msgid "About"
-msgstr "关于"
-
 msgid "Object Inspector"
 msgstr "对象检查器"
 
@@ -446,9 +425,6 @@ msgstr "到"
 msgid "Do you wish to search the formfile?"
 msgstr "你想搜索表单文件吗？"
 
-msgid "WARNING"
-msgstr "警告"
-
 msgid "Formfile for"
 msgstr "Formfile for"
 
@@ -458,23 +434,8 @@ msgstr "表格文件"
 msgid "Recursive form hierarchy for"
 msgstr "的递归表单层次结构"
 
-msgid "ERROR"
-msgstr "错误"
-
 msgid "Classtype"
 msgstr "类类型"
-
-msgid "not found."
-msgstr "没有找到。"
-
-msgid "Project"
-msgstr "项目"
-
-msgid "is modified. Save?"
-msgstr "已修改。保存？"
-
-msgid "Confirmation"
-msgstr "确认"
 
 msgid "Unable to open file"
 msgstr "无法打开文件"
@@ -490,9 +451,6 @@ msgstr "已下载"
 
 msgid "Start gdb server command"
 msgstr "启动 gdb 服务器命令"
-
-msgid "running."
-msgstr "正在运行。"
 
 msgid "Start gdb Server"
 msgstr "启动 gdb 服务器"
@@ -518,18 +476,6 @@ msgstr "下载完成。"
 msgid "Download canceled."
 msgstr "下载已取消。"
 
-msgid "File"
-msgstr "文件"
-
-msgid "not found."
-msgstr "未找到。"
-
-msgid "exists."
-msgstr "存在。"
-
-msgid "New"
-msgstr "新"
-
 msgid "Select ancestor"
 msgstr "选择祖先"
 
@@ -538,9 +484,6 @@ msgstr "新表格"
 
 msgid "Pascal Files"
 msgstr "Pascal 文件"
-
-msgid "new"
-msgstr "新"
 
 msgid "Can not load Project"
 msgstr "无法加载项目"
@@ -572,9 +515,6 @@ msgstr "无法启动进程"
 msgid "Process"
 msgstr "进程"
 
-msgid "running."
-msgstr "正在运行。"
-
 msgid "Process terminated"
 msgstr "进程终止"
 
@@ -596,9 +536,6 @@ msgstr "加载窗口布局"
 msgid "Docking area"
 msgstr "停靠区"
 
-msgid "File"
-msgstr "文件"
-
 msgid "has changed."
 msgstr "已更改。"
 
@@ -607,9 +544,6 @@ msgstr "编辑缓冲区也有修改。"
 
 msgid "Do you wish to reload from disk?"
 msgstr "你想从磁盘重新加载吗？"
-
-msgid "Confirmation"
-msgstr "确认"
 
 msgid "<none>"
 msgstr "<无>"
@@ -629,9 +563,6 @@ msgstr "语法定义文件："
 msgid "Text"
 msgstr "文本"
 
-msgid "not found."
-msgstr "没有找到。"
-
 msgid "Restart from begin of file?"
 msgstr "从文件开头重新启动？"
 
@@ -646,9 +577,6 @@ msgstr "转到行号："
 
 msgid "Find line"
 msgstr "查找行"
-
-msgid "There are modifications in edit buffer also."
-msgstr "编辑缓冲区也有修改。"
 
 msgid "Apply"
 msgstr "应用"
@@ -785,9 +713,6 @@ msgstr "备份"
 msgid "Tabstops"
 msgstr "制表位"
 
-msgid "Indent"
-msgstr "缩进"
-
 msgid "ExtS"
 msgstr "ExtS"
 
@@ -811,9 +736,6 @@ msgstr "字体颜色"
 
 msgid "File filter"
 msgstr "文件过滤器"
-
-msgid "Name"
-msgstr "名称"
 
 msgid "File mask"
 msgstr "文件掩码"
@@ -1025,9 +947,6 @@ msgstr "制作选项"
 msgid "Directories"
 msgstr "目录"
 
-msgid "Select unit directory"
-msgstr "选择单元目录"
-
 msgid "Command after"
 msgstr "之后的命令"
 
@@ -1232,12 +1151,6 @@ msgstr "存在，你想覆盖吗？"
 msgid "is modified. Save?"
 msgstr "已修改。保存？"
 
-msgid "WARNING"
-msgstr "警告"
-
-msgid "ERROR"
-msgstr "错误"
-
 msgid "Exception"
 msgstr "异常"
 
@@ -1289,7 +1202,7 @@ msgstr "TARGA 图片"
 msgid "TIFF Image"
 msgstr "TIFF 图像"
 
-msgid "All"
+msgid "All Images"
 msgstr "全部"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "编辑"
 msgid "Post"
 msgstr "发布"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "取消"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "分离目标 "
 
 msgid "Download"
 msgstr "下载 "
-
-msgid "Tools"
-msgstr "工具"
 
 msgid "Make"
 msgstr "制作 "

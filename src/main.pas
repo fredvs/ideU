@@ -1344,14 +1344,14 @@ begin
       action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
                 moduleclassname) + ' ' +
                 lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
-                '.' + lineend + ' ' + lang_mainform[Ord(ma_wishsearch)], lang_mainform[Ord(
-                ma_warning)],
+                '.' + lineend + ' ' + lang_mainform[Ord(ma_wishsearch)],
+                 lang_stockcaption[Ord(sc_warningupper)],
                 [mr_ok, mr_cancel], mr_ok) else
                 
                 action := ShowMessage(lang_mainform[ord(ma_unresreferences)] + ' ' 
                 + utf8decode(amodule^.moduleclassname) + ' ' +
       lang_mainform[ord(ma_str_to)] + ' ' + utf8decode(aname) +
-      '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_mainform[ord(ma_warning)],
+      '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
       [mr_ok, mr_cancel], mr_ok);
                
       case action of 
@@ -1413,8 +1413,8 @@ begin
   // ar1:= nil; //compilerwarning
   if fcheckmodulelevel >= 16 then
     begin
-      ShowMessage(lang_mainform[Ord(ma_recursive)] + utf8decode(atypename) + '"', 
-      lang_mainform[Ord(ma_error)]);
+      ShowMessage(lang_mainform[Ord(ma_recursive)] + ' ' + utf8decode(atypename) + '"', 
+      uppercase(lang_stockcaption[ord(sc_Error)]));
       SysUtils.abort;
     end;
   Inc(fcheckmodulelevel);
@@ -1445,9 +1445,10 @@ begin
    }
     ;
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
-      if ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' + utf8decode(atypename) + ' ' +
-         lang_mainform[Ord(ma_notfound)] + lineend +
-         ' ' + lang_mainform[Ord(ma_wishsearch)], lang_mainform[Ord(ma_warning)],
+      if ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' + 
+        utf8decode(atypename) + ' ' +
+         lang_actionsmodule[ord(ac_notfound)] + lineend +
+         ' ' + lang_mainform[Ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
          [mr_yes, mr_cancel]) = mr_yes then
         begin
           wstr2 := '';
@@ -1865,7 +1866,7 @@ end;
         begin
           str1 := replacefileext(po1^.filename, pasfileext);
           if sourcefo.openfile(str1, True) = nil then
-            raise Exception.Create(ansistring(lang_mainform[Ord(ma_unableopen)] + str1 + '".'));
+            raise Exception.Create(ansistring(lang_mainform[Ord(ma_unableopen)] + ' "' + str1 + '".'));
         end
       else if designer.modules.Count > 0 then
              designer.modules[0]^.designform.activate(True);
@@ -2190,8 +2191,8 @@ begin
           if fgdbserverprocid <> invalidprochandle then
             begin
               fgdbservertimeout := timestep(round(1000000 * d.gdbserverwait));
-              if application.waitdialog(nil, lang_mainform[Ord(ma_startgdbservercommand)] +
-                 mstr1 + lang_mainform[Ord(ma_running2)], lang_mainform[Ord(ma_startgdbserver)],
+              if application.waitdialog(nil, lang_mainform[Ord(ma_startgdbservercommand)] + ' ' +
+                 mstr1 + ' ' + lang_actionsmodule[Ord(ac_running)], lang_mainform[Ord(ma_startgdbserver)],
               {$ifdef FPC}
                  @
 {$endif}
@@ -2376,9 +2377,9 @@ begin
                   (needsdownload or forcedownload) then
                  begin
                    dodownload;
-                   if application.waitdialog(nil, lang_mainform[Ord(ma_str_uploadcommand)] +
-                      uploadcommand +
-                      lang_mainform[Ord(ma_running2)], lang_mainform[Ord(ma_str_downloading)],
+                   if application.waitdialog(nil, lang_mainform[Ord(ma_str_uploadcommand)] + ' ' +
+                      uploadcommand + ' ' +
+                      lang_actionsmodule[Ord(ac_running)], lang_mainform[Ord(ma_str_downloading)],
 {$ifdef FPC}
                       @
 {$endif}
@@ -3391,15 +3392,18 @@ begin
   Result := False;
   path1  := searchfile(aname);
   if path1 = '' then
-    ShowMessage(lang_mainform[Ord(ma_str_file)] + aname + lang_mainform[Ord(ma_notfound2)], 
-    lang_mainform[Ord(ma_warning)])
+    ShowMessage(lang_actionsmodule[ord(ac_file)] + ' ' + aname + ' ' 
+    + lang_actionsmodule[ord(ac_notfound)], 
+    lang_stockcaption[Ord(sc_warningupper)])
   else
     begin
       path2 := filepath(newname);
       if not canoverwrite and findfile(path2) then
         if not autoincrement then
           begin
-            showerror(lang_mainform[Ord(ma_str_file)] + newname + lang_mainform[Ord(ma_exists)]);
+            showerror(lang_actionsmodule[ord(ac_file)] + ' ' + newname +
+            ' ' + lang_actionsmodule[ord(ac_exists)]);
+            
             Exit;
           end
       else
@@ -3448,7 +3452,7 @@ begin
   with projectoptions.o.texp do
     if newfisources[int1] = '' then
       sourcefo.newpage
-    else if filedialogx(str1, [fdo_save, fdo_checkexist], lang_mainform[Ord(ma_str_new)] + ' ' +
+    else if filedialogx(str1, [fdo_save, fdo_checkexist], lang_stockcaption[Ord(sc_newfile)] + ' ' +
             newfinames[int1], [newfinames[int1]],
             [newfifilters[int1]], newfiexts[int1]) = mr_ok then
            begin
@@ -3718,38 +3722,38 @@ begin
   if Assigned(debuggerfo) and (length(lang_mainform) > 0) and
      (length(lang_stockcaption) > 0) then
     begin
-      debuggerfo.project_make.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_make.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_make)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_start.hint     := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_start.hint     := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_debugrun)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_save.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_save.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_save)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_interrupt.hint := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_interrupt.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_abortmake)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_next.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_next.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_nextinstruction)] + ' '
                                            + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_step.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_step.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_stepinstruction)] + ' '
                                            + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_finish.hint    := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_finish.hint    := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_finish)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_next_instruction.hint := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_next_instruction.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                   ' : ' + lang_stockcaption[Ord(sc_nextinstruction)]
                                                   + ' ' +
                                                   lang_stockcaption[Ord(sc_assembler)] + ' ' +
                                                   ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_step_instruction.hint := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_step_instruction.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                   ' : ' + lang_stockcaption[Ord(sc_stepinstruction)]
                                                   + ' ' +
                                                   lang_stockcaption[Ord(sc_assembler)] + ' ' +
                                                   ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_reset.hint     := ' ' + lang_mainform[Ord(ma_project)] +
+      debuggerfo.project_reset.hint     := ' ' + lang_stockcaption[Ord(sc_project)] +
                                            ' : ' + lang_stockcaption[Ord(sc_reset)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
       debuggerfo.edited_make.hint       := ' ' + lang_stockcaption[Ord(sc_edited)] +
@@ -3775,7 +3779,7 @@ begin
           try
             setcurrentdirmse(removelastpathsection(aname));
           except
-            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + aname + '": ');
+            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + aname + '": ');
             Exit;
         end;
       if not readprojectoptions(aname) then
@@ -4014,8 +4018,8 @@ begin
                                 else
                                   try
                                     if not copyfile(Source, dest, False) then
-                                      showerror(lang_mainform[Ord(ma_str_file)] + dest +
-                                      lang_mainform[Ord(ma_exists)]);
+                                      showerror(lang_actionsmodule[ord(ac_file)] + ' ' + dest +
+                                      ' ' + lang_actionsmodule[ord(ac_exists)]);
                                   except
                                     application.handleexception(Nil);
                               end;
@@ -4216,7 +4220,7 @@ begin
         end;
     end;
   setstattext('*** ' + lang_mainform[Ord(ma_process)] + ' ' + inttostrmse(frunningprocess) + ' ' +
-  lang_mainform[Ord(ma_running3)] + ' ***', mtk_making);
+  trim(lang_actionsmodule[Ord(ac_running)]) + ' ***', mtk_making);
   debuggerfo.project_reset.Enabled     := True;
   debuggerfo.project_interrupt.Enabled := True;
 end;
@@ -4816,7 +4820,7 @@ begin
 
       //  writeln('ok tabind'); 
 
-      dialogfilesfo.selected_file.frame.Caption := lang_stockcaption[ord(sc_file)];
+      dialogfilesfo.selected_file.frame.Caption := lang_actionsmodule[ord(ac_file)];
 
       //'Selected Layout File';
       // from ' + dialogfilesfo.list_files.directory ;
@@ -4946,7 +4950,8 @@ begin
 
       mainmenu1.menu.itembynames(['file', 'quit']).Caption := lang_actionsmodule[Ord(
                                                               ac_configureideu)];
-      mainmenu1.menu.itembynames(['file']).Caption         := '&' + lang_stockcaption[Ord(sc_file)];
+      mainmenu1.menu.itembynames(['file']).Caption         :=
+       '&' + lang_actionsmodule[ord(ac_file)];
 
       mainmenu1.menu.itembynames(['file', 'new']).Caption   := lang_stockcaption[Ord(sc_newfile)];
       mainmenu1.menu.itembynames(['file', 'open']).Caption  := lang_stockcaption[Ord(sc_open)];
@@ -5346,38 +5351,38 @@ begin
           debuggerfo.find_in_edit.hint      := lang_stockcaption[Ord(sc_searchincurrentfile)];
           debuggerfo.project_save.hint      := lang_stockcaption[Ord(sc_save)];
           debuggerfo.project_option.hint    := lang_projectoptions[Ord(po_projectoptions)];
-          debuggerfo.project_make.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_make.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_make)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_start.hint     := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_start.hint     := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_debugrun)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_save.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_save.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_save)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_interrupt.hint := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_interrupt.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_abortmake)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_next.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_next.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_nextinstruction)] +
                                                ' ' + ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_step.hint      := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_step.hint      := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_stepinstruction)] +
                                                ' ' + ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_finish.hint    := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_finish.hint    := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_finish)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_next_instruction.hint := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_next_instruction.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                       ' : ' + lang_stockcaption[Ord(
                                                       sc_nextinstruction)] + ' ' +
                                                       lang_stockcaption[Ord(sc_assembler)] + ' ' +
                                                       ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_step_instruction.hint := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_step_instruction.hint := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                       ' : ' + lang_stockcaption[Ord(
                                                       sc_stepinstruction)] + ' ' +
                                                       lang_stockcaption[Ord(sc_assembler)] + ' ' +
                                                       ExtractFilename(theprojectname) + ' ';
-          debuggerfo.project_reset.hint     := ' ' + lang_mainform[Ord(ma_project)] +
+          debuggerfo.project_reset.hint     := ' ' + lang_stockcaption[Ord(sc_project)] +
                                                ' : ' + lang_stockcaption[Ord(sc_reset)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';
           debuggerfo.edited_make.hint       := ' ' + lang_stockcaption[Ord(sc_edited)] +
@@ -5417,7 +5422,7 @@ begin
       
        conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
       
-       conflangfo.bpotools.Caption    := 'Po ' + lang_projectoptions[Ord(po_tools)]; 
+       conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)]; 
       
        conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
       

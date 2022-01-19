@@ -32,7 +32,7 @@ msgstr "&Ναι"
 msgid "&No"
 msgstr "&Όχι"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "Ναι & όλα"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Ναι"
 msgid "No"
 msgstr "Όχι"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Ναι όλα"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Hangup"
 msgid "Interrupt"
 msgstr "Διακοπή"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Έξοδος"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Παράνομη οδηγία"
 msgid "Trace trap"
 msgstr "Παγίδα ιχνών"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Ακύρωση"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Σφάλμα στοίβας"
 msgid "Child status has changed"
 msgstr "Η κατάσταση του παιδιού έχει αλλάξει"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Συνέχεια"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "Κληρονομικό στοιχείο"
 
 msgid "can not be deleted."
 msgstr "δεν μπορεί να διαγραφεί."
-
-msgid "ERROR"
-msgstr "ΣΦΑΛΜΑ"
 
 msgid "Make aborted."
 msgstr "Κάνω ματαίωση."
@@ -311,12 +308,6 @@ msgstr "Μη έγκυρη εξαίρεση"
 msgid "T&ools"
 msgstr "Τ&εργαλεία"
 
-msgid "Forms"
-msgstr "Φόρμες"
-
-msgid "Source"
-msgstr "Πηγή"
-
 msgid "All Files"
 msgstr "Όλα τα αρχεία"
 
@@ -365,23 +356,14 @@ msgstr "Κληρονομική φόρμα"
 msgid "Do you want to replace the settings by"
 msgstr "Θέλετε να αντικαταστήσετε τις ρυθμίσεις από"
 
-msgid "File"
-msgstr "Αρχείο"
-
 msgid "Do you want to overwrite?"
 msgstr "Θέλετε να αντικαταστήσετε?"
 
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-msgid "Error"
-msgstr "Σφάλμα"
-
 msgid "Startup"
 msgstr "Εκκίνηση"
-
-msgid "Exception"
-msgstr "Εξαίρεση"
 
 msgid "GDB died"
 msgstr "Η GDB πέθανε"
@@ -422,9 +404,6 @@ msgstr "Σφάλμα διακοπής"
 msgid "Can not read project"
 msgstr "Δεν μπορώ να διαβάσω το έργο"
 
-msgid "About"
-msgstr "Σχετικά"
-
 msgid "Object Inspector"
 msgstr "Επιθεωρητής αντικειμένων"
 
@@ -446,9 +425,6 @@ msgstr "σε"
 msgid "Do you wish to search the formfile?"
 msgstr "Θέλετε να κάνετε αναζήτηση στο αρχείο φόρμας?"
 
-msgid "WARNING"
-msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ"
-
 msgid "Formfile for"
 msgstr "Αρχείο φόρμας για"
 
@@ -458,23 +434,8 @@ msgstr "Αρχεία φόρμας"
 msgid "Recursive form hierarchy for"
 msgstr "Αναδρομική ιεραρχία φόρμας για"
 
-msgid "ERROR"
-msgstr "ΣΦΑΛΜΑ"
-
 msgid "Classtype"
 msgstr "Τύπος τάξης"
-
-msgid "not found."
-msgstr "δεν βρέθηκε."
-
-msgid "Project"
-msgstr "Έργο"
-
-msgid "is modified. Save?"
-msgstr "έχει τροποποιηθεί. Αποθήκευση?"
-
-msgid "Confirmation"
-msgstr "Επιβεβαίωση"
 
 msgid "Unable to open file"
 msgstr "Δεν μπορώ να ανοίξω το αρχείο"
@@ -490,9 +451,6 @@ msgstr "Λήψη"
 
 msgid "Start gdb server command"
 msgstr "Έναρξη εντολής διακομιστή gdb"
-
-msgid "running."
-msgstr "εκτελείται."
 
 msgid "Start gdb Server"
 msgstr "Έναρξη διακομιστή gdb"
@@ -518,18 +476,6 @@ msgstr "Η λήψη ολοκληρώθηκε."
 msgid "Download canceled."
 msgstr "Η λήψη ακυρώθηκε."
 
-msgid "File"
-msgstr "Αρχείο"
-
-msgid "not found."
-msgstr "δεν βρέθηκε."
-
-msgid "exists."
-msgstr "υπάρχει."
-
-msgid "New"
-msgstr "Νέο"
-
 msgid "Select ancestor"
 msgstr "Επιλέξτε πρόγονο"
 
@@ -538,9 +484,6 @@ msgstr "Νέα φόρμα"
 
 msgid "Pascal Files"
 msgstr "Αρχεία Pascal"
-
-msgid "new"
-msgstr "νέο"
 
 msgid "Can not load Project"
 msgstr "Δεν είναι δυνατή η φόρτωση του έργου"
@@ -572,9 +515,6 @@ msgstr "Δεν είναι δυνατή η έναρξη της διαδικασί
 msgid "Process"
 msgstr "Διαδικασία"
 
-msgid "running."
-msgstr "εκτελείται."
-
 msgid "Process terminated"
 msgstr "Η διαδικασία τερματίστηκε"
 
@@ -596,9 +536,6 @@ msgstr "Φόρτωση διάταξης παραθύρου"
 msgid "Docking area"
 msgstr "Περιοχή σύνδεσης"
 
-msgid "File"
-msgstr "Αρχείο"
-
 msgid "has changed."
 msgstr "έχει αλλάξει."
 
@@ -607,9 +544,6 @@ msgstr "Υπάρχουν τροποποιήσεις και στο buffer επε�
 
 msgid "Do you wish to reload from disk?"
 msgstr "Θέλετε να φορτώσετε ξανά από το δίσκο?"
-
-msgid "Confirmation"
-msgstr "Επιβεβαίωση"
 
 msgid "<none>"
 msgstr "<κανένα>"
@@ -629,9 +563,6 @@ msgstr "Syntaxdeffile:"
 msgid "Text"
 msgstr "Κείμενο"
 
-msgid "not found."
-msgstr "δεν βρέθηκε."
-
 msgid "Restart from begin of file?"
 msgstr "Επανεκκίνηση από την αρχή του αρχείου?"
 
@@ -646,9 +577,6 @@ msgstr "Μετάβαση στον αριθμό γραμμής:"
 
 msgid "Find line"
 msgstr "Εύρεση γραμμής"
-
-msgid "There are modifications in edit buffer also."
-msgstr "Υπάρχουν τροποποιήσεις και στο buffer επεξεργασίας."
 
 msgid "Apply"
 msgstr "Εφαρμογή"
@@ -785,9 +713,6 @@ msgstr "Αντίγραφο ασφαλείας"
 msgid "Tabstops"
 msgstr "Οι καρτέλες"
 
-msgid "Indent"
-msgstr "Εσοχή"
-
 msgid "ExtS"
 msgstr "Εκτάσεις"
 
@@ -811,9 +736,6 @@ msgstr "Χρώμα γραμματοσειράς"
 
 msgid "File filter"
 msgstr "Φίλτρο αρχείου"
-
-msgid "Name"
-msgstr "Όνομα"
 
 msgid "File mask"
 msgstr "Μάσκα αρχείου"
@@ -1025,9 +947,6 @@ msgstr "Δημιουργία επιλογών"
 msgid "Directories"
 msgstr "Κατάλογοι"
 
-msgid "Select unit directory"
-msgstr "Επιλογή καταλόγου μονάδας"
-
 msgid "Command after"
 msgstr "Εντολή μετά"
 
@@ -1111,9 +1030,6 @@ msgstr "Νέο αρχείο"
 
 msgid "New Form"
 msgstr "Νέα Φόρμα"
-
-msgid "Tools"
-msgstr "Εργαλεία"
 
 msgid "Storage"
 msgstr "Αποθήκευση"
@@ -1232,12 +1148,6 @@ msgstr "Υπάρχει, θέλετε να αντικαταστήσετε?"
 msgid "is modified. Save?"
 msgstr "έχει τροποποιηθεί. Αποθήκευση?"
 
-msgid "WARNING"
-msgstr "ΠΡΟΕΙΔΟΠΟΙΗΣΗ"
-
-msgid "ERROR"
-msgstr "ΣΦΑΛΜΑ"
-
 msgid "Exception"
 msgstr "Εξαίρεση"
 
@@ -1289,7 +1199,7 @@ msgstr "Εικόνα TARGA"
 msgid "TIFF Image"
 msgstr "Εικόνα TIFF"
 
-msgid "All"
+msgid "All Images"
 msgstr "Όλα"
 
 msgid "Confirmation"
@@ -1328,7 +1238,7 @@ msgstr "Επεξεργασία"
 msgid "Post"
 msgstr "Δημοσίευση"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Ακύρωση"
 
 msgid "Refresh"

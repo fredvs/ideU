@@ -549,7 +549,7 @@ begin
    end;
   end;
  end;
- raise exception.Create(ansistring(lang_actionsmodule[ord(ac_unknownmodclass)]+
+ raise exception.Create(ansistring(lang_actionsmodule[ord(ac_unknownmodclass)]+ ' "' +
         msestring(aclassname^) +'": "'+ msestring(designmoduleclassname)+'".'));
 end;
 
@@ -1643,8 +1643,8 @@ begin
    for int1:= 0 to count - 1 do begin
     with items[int1] do begin
      if componentstate * [csancestor,csinline] = [csancestor] then begin
-      showmessage(lang_actionsmodule[ord(ac_inheritedcomp)]+msestring(name)+
-                      lang_actionsmodule[ord(ac_cannotdel)],lang_actionsmodule[ord(ac_error)]);
+      showmessage(lang_actionsmodule[ord(ac_inheritedcomp)]+ ' ' + msestring(name)+ ' ' +
+                      lang_actionsmodule[ord(ac_cannotdel)],uppercase(lang_stockcaption[ord(sc_Error)]));
       exit;
      end;
     end;

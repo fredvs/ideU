@@ -32,7 +32,7 @@ msgstr "&Sí"
 msgid "&No"
 msgstr "&No"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "&Todo"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Sí"
 msgid "No"
 msgstr "No"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Todo"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Colgar"
 msgid "Interrupt"
 msgstr "Interrumpir"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Dejar"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Instrucción ilegal"
 msgid "Trace trap"
 msgstr "Traza trampa"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Abortar"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Fallo de pila"
 msgid "Child status has changed"
 msgstr "El estado del niño ha cambiado"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Continuar"
 
 msgid "Stop, unblockable"
@@ -197,17 +197,14 @@ msgstr "Identificacion de proceso"
 msgid "Attach to process"
 msgstr "Adjuntar al proceso"
 
-msgid "Unknown moduleclass for ""
-msgstr "Clase de módulo desconocida para ""
+msgid "Unknown moduleclass for "
+msgstr "Clase de módulo desconocida para "
 
-msgid "Inherited component ""
-msgstr "Componente heredado ""
+msgid "Inherited component "
+msgstr "Componente heredado "
 
-msgid "" can not be deleted."
-msgstr ""no se puede eliminar."
-
-msgid "ERROR"
-msgstr "ERROR"
+msgid "can not be deleted."
+msgstr "no se puede eliminar."
 
 msgid "Make aborted."
 msgstr "Hacer abortado."
@@ -215,8 +212,8 @@ msgstr "Hacer abortado."
 msgid "Download aborted."
 msgstr "Descarga abortada."
 
-msgid "Runerror with ""
-msgstr "Runerror con ""
+msgid "Runerror with "
+msgstr "Runerror con "
 
 msgid "Error: Timeout."
 msgstr "Error: Timeout."
@@ -233,32 +230,32 @@ msgstr "Descargando."
 msgid "Download not running."
 msgstr "La descarga no se está ejecutando"
 
-msgid "" running."
-msgstr "" corriendo."
+msgid "running."
+msgstr "corriendo."
 
 msgid "Script"
 msgstr "Texto"
 
-msgid "Recursive form inheritance of ""
-msgstr "Herencia de forma recursiva de ""
+msgid "Recursive form inheritance of "
+msgstr "Herencia de forma recursiva de "
 
-msgid "Component ""
-msgstr "Componente ""
+msgid "Component "
+msgstr "Componente "
 
-msgid "" exists."
-msgstr ""existe."
+msgid "exists."
+msgstr "existe."
 
-msgid "Ancestor for ""
-msgstr "Ancestro de ""
+msgid "Ancestor for "
+msgstr "Ancestro de "
 
-msgid "" not found."
-msgstr "" extraviado."
+msgid "not found."
+msgstr "extraviado."
 
-msgid "Module ""
-msgstr "Módulo ""
+msgid "Module "
+msgstr "Módulo "
 
-msgid "Invalid name ""
-msgstr "Nombre inválido ""
+msgid "Invalid name "
+msgstr "Nombre inválido "
 
 msgid "Invalid methodname"
 msgstr "Nombre de método no válido"
@@ -287,11 +284,11 @@ msgstr "Método"
 msgid "has different parameters."
 msgstr "tiene diferentes parámetros."
 
-msgid "A module ""
-msgstr "Un módulo ""
+msgid "A module "
+msgstr "Un módulo "
 
-msgid "" is already open."
-msgstr ""ya está abierto."
+msgid "is already open."
+msgstr "ya está abierto."
 
 msgid "Unresolved reference(s) to"
 msgstr "Referencias no resueltas a"
@@ -299,8 +296,8 @@ msgstr "Referencias no resueltas a"
 msgid "Module(s):"
 msgstr "Módulo (s):"
 
-msgid "Can not read formfile ""
-msgstr "No se puede leer el archivo de formulario ""
+msgid "Can not read formfile "
+msgstr "No se puede leer el archivo de formulario "
 
 msgid "Invalid component name."
 msgstr "Nombre de componente no válido."
@@ -310,12 +307,6 @@ msgstr "Excepción no válida"
 
 msgid "T&ools"
 msgstr "Instrumentos"
-
-msgid "Forms"
-msgstr "Formularios"
-
-msgid "Source"
-msgstr "Fuente"
 
 msgid "All Files"
 msgstr "Todos los archivos"
@@ -365,23 +356,14 @@ msgstr "Forma heredada"
 msgid "Do you want to replace the settings by"
 msgstr "¿Desea reemplazar la configuración por"
 
-msgid "File ""
-msgstr "El archivo ""
-
 msgid "Do you want to overwrite?"
 msgstr "¿Quieres sobrescribir?"
 
 msgid "Unknown"
 msgstr "Desconocido"
 
-msgid "Error"
-msgstr "Error"
-
 msgid "Startup"
 msgstr "Puesta en marcha"
-
-msgid "Exception"
-msgstr "Excepción"
 
 msgid "GDB died"
 msgstr "GDB murió"
@@ -422,9 +404,6 @@ msgstr "Detener error"
 msgid "Can not read project"
 msgstr "No se puede leer el proyecto"
 
-msgid "About"
-msgstr "Sobre"
-
 msgid "Object Inspector"
 msgstr "Inspector de objetos"
 
@@ -446,38 +425,20 @@ msgstr "para"
 msgid "Do you wish to search the formfile?"
 msgstr "¿Desea buscar en el archivo de formulario?"
 
-msgid "WARNING"
-msgstr "ADVERTENCIA"
-
 msgid "Formfile for"
 msgstr "Formfile para"
 
 msgid "Formfiles"
 msgstr "Formfiles"
 
-msgid "Recursive form hierarchy for ""
-msgstr "Jerarquía de formas recursivas para ""
-
-msgid "ERROR"
-msgstr "ERROR"
+msgid "Recursive form hierarchy for "
+msgstr "Jerarquía de formas recursivas para "
 
 msgid "Classtype"
 msgstr "Tipo de clase"
 
-msgid "not found."
-msgstr "extraviado."
-
-msgid "Project"
-msgstr "Proyecto"
-
-msgid "is modified. Save?"
-msgstr "es modificado. ¿Ahorrar?"
-
-msgid "Confirmation"
-msgstr "Confirmación"
-
-msgid "Unable to open file ""
-msgstr "No es posible abrir el archivo ""
+msgid "Unable to open file "
+msgstr "No es posible abrir el archivo "
 
 msgid "*** Running ***"
 msgstr "*** Corriendo ***"
@@ -488,11 +449,8 @@ msgstr "Descargando"
 msgid "Downloaded"
 msgstr "Descargado"
 
-msgid "Start gdb server command ""
-msgstr "Iniciar comando del servidor gdb ""
-
-msgid "" running."
-msgstr "" corriendo."
+msgid "Start gdb server command "
+msgstr "Iniciar comando del servidor gdb "
 
 msgid "Start gdb Server"
 msgstr "Iniciar el servidor gdb"
@@ -506,8 +464,8 @@ msgstr "inicio del servidor gdb cancelado."
 msgid "Can not run start gdb command."
 msgstr "No se puede ejecutar el comando start gdb."
 
-msgid "Uploadcommand ""
-msgstr "Uploadcommand ""
+msgid "Uploadcommand "
+msgstr "Uploadcommand "
 
 msgid "Download ***ERROR***"
 msgstr "Error de descarga***"
@@ -518,18 +476,6 @@ msgstr "Descarga finalizada."
 msgid "Download canceled."
 msgstr "Descarga cancelada."
 
-msgid "File ""
-msgstr "El archivo ""
-
-msgid "" not found."
-msgstr "" extraviado."
-
-msgid "" exists."
-msgstr ""existe."
-
-msgid "New"
-msgstr "Nuevo"
-
 msgid "Select ancestor"
 msgstr "Seleccionar antepasado"
 
@@ -539,11 +485,8 @@ msgstr "Nueva forma"
 msgid "Pascal Files"
 msgstr "Archivos Pascal"
 
-msgid "new"
-msgstr "nuevo"
-
-msgid "Can not load Project ""
-msgstr "No se puede cargar el proyecto ""
+msgid "Can not load Project "
+msgstr "No se puede cargar el proyecto "
 
 msgid "Select project template"
 msgstr "Seleccionar plantilla de proyecto"
@@ -572,9 +515,6 @@ msgstr "No se puede iniciar el proceso"
 msgid "Process"
 msgstr "Proceso"
 
-msgid "running."
-msgstr "corriendo."
-
 msgid "Process terminated"
 msgstr "Proceso terminado"
 
@@ -596,20 +536,14 @@ msgstr "Cargar diseño de ventana"
 msgid "Docking area"
 msgstr "Área de atraque"
 
-msgid "File ""
-msgstr "El archivo ""
-
-msgid "" has changed."
-msgstr "" ha cambiado."
+msgid "has changed."
+msgstr "ha cambiado."
 
 msgid "There are modifications in edit buffer also."
 msgstr "También hay modificaciones en el búfer de edición."
 
 msgid "Do you wish to reload from disk?"
 msgstr "¿Desea recargar desde el disco?"
-
-msgid "Confirmation"
-msgstr "Confirmación"
 
 msgid "<none>"
 msgstr "<ninguno>"
@@ -629,9 +563,6 @@ msgstr "Syntaxdeffile:"
 msgid "Text"
 msgstr "Texto"
 
-msgid "not found."
-msgstr "extraviado."
-
 msgid "Restart from begin of file?"
 msgstr "¿Reiniciar desde el principio del archivo?"
 
@@ -646,9 +577,6 @@ msgstr "Ir al número de línea:"
 
 msgid "Find line"
 msgstr "Buscar línea"
-
-msgid "There are modifications in edit buffer also."
-msgstr "También hay modificaciones en el búfer de edición."
 
 msgid "Apply"
 msgstr "Aplicar"
@@ -785,9 +713,6 @@ msgstr "Respaldo"
 msgid "Tabstops"
 msgstr "Tabstops"
 
-msgid "Indent"
-msgstr "Sangrar"
-
 msgid "ExtS"
 msgstr "Esp.X"
 
@@ -811,9 +736,6 @@ msgstr "Color de fuente"
 
 msgid "File filter"
 msgstr "Filtro archivos"
-
-msgid "Name"
-msgstr "Nombre"
 
 msgid "File mask"
 msgstr "Máscara archivo"
@@ -1025,9 +947,6 @@ msgstr "Hacer opciones"
 msgid "Directories"
 msgstr "Directorios"
 
-msgid "Select unit directory"
-msgstr "Seleccionar directorio"
-
 msgid "Command after"
 msgstr "Comando después"
 
@@ -1085,8 +1004,8 @@ msgstr "Diseñadores"
 msgid "User &Colors"
 msgstr "Colores usuario"
 
-msgid "Copy "setcolormapvalue" code to clipboard"
-msgstr "Copiar el código "setcolormapvalue" al portapapeles"
+msgid "Copy setcolormapvalue code to clipboard"
+msgstr "Copiar el código setcolormapvalue al portapapeles"
 
 msgid "F&ormat Macros"
 msgstr "F&ormat Macros"
@@ -1232,12 +1151,6 @@ msgstr "existe ¿quiere sobreescribirlo?"
 msgid "is modified. Save?"
 msgstr "es modificado. ¿Ahorrar?"
 
-msgid "WARNING"
-msgstr "ADVERTENCIA"
-
-msgid "ERROR"
-msgstr "ERROR"
-
 msgid "Exception"
 msgstr "Excepción"
 
@@ -1289,7 +1202,7 @@ msgstr "Imagen TARGA"
 msgid "TIFF Image"
 msgstr "Imagen TIFF"
 
-msgid "All"
+msgid "All Images"
 msgstr "Todo"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "Editar"
 msgid "Post"
 msgstr "Guardar"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Cancelar"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "Separar objetivo"
 
 msgid "Download"
 msgstr "Descargar"
-
-msgid "Tools"
-msgstr "Instrumentos"
 
 msgid "Make"
 msgstr "Hacer"

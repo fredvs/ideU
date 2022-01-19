@@ -856,10 +856,10 @@ begin
           if filechanged then
           begin
             filechanged := False;
-            wstr1       := lang_sourceform[ord(sf_str_file)] + filepath +
-             lang_sourceform[ord(sf_haschanged)];
+            wstr1       := lang_actionsmodule[ord(ac_file)] + ' ' + filepath  + ' ' + 
+                         lang_sourceform[ord(sf_haschanged)];
             if modified then
-              wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_modieditalso)];
+              wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_therearemody)];
 
 
             wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_wishreload)];
@@ -875,7 +875,7 @@ begin
             end
             else if confideufo.tbfilenoload.Value = True then
               mainfo.setstattext(filepath + ' was changed by external program and not reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning)
-            else if askok(wstr1, lang_sourceform[ord(sf_confirmation)]) then
+            else if askok(wstr1, lang_stockcaption[ord(sc_confirmation)]) then
             begin
               mainfo.setstattext(filepath + ' was changed by external program and reloaded at ' + UTF8Decode(timetostr(now)), mtk_warning);
               filechanged := False;
@@ -1707,7 +1707,7 @@ begin
     mstr4          := messagestr(mstr2);
     if askyesno(lang_sourceform[ord(sf_wishreplace)] + lineend + mstr3 + lineend +
      lang_sourceform[ord(sf_str_with)] + lineend +
-      mstr4 + lineend + '?', lang_sourceform[ord(sf_confirmation)]) then
+      mstr4 + lineend + '?', lang_stockcaption[ord(sc_confirmation)]) then
     begin
       editor.begingroup;
       deleteselection;

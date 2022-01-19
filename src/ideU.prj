@@ -71,7 +71,7 @@ order18=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=93
+findinfiledialog=94
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -87,11 +87,12 @@ findinfiledialog=93
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc"  "*.po"
- history=16
-  "*.pas" "*.pp" "*.inc"  "*.po"
-  "*.pas" "*.pp" "*.inc"  "*.*"
+ value="*.po"
+ history=17
+  "*.po"
   "*.pas" "*.pp" "*.inc" 
+  "*.pas" "*.pp" "*.inc"  "*.*"
+  "*.pas" "*.pp" "*.inc"  "*.po"
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" "*.*" 
   
@@ -137,32 +138,32 @@ findinfiledialog=93
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=hello
+ value="Project"
  history=20
-  hello
-  incomplete
-  espreranto
-  setasdefault.f
-  header
-  fdk_open
-  po2const
-  msestockobjects
-  2021
-  delete_n_selected_rows
-  stocktextgenerators
-  formatxpm
-  formatjpg
-  registerformat
-  SEFORMATBMPICOREAD
-  caption:= msestring(displaylabel);
-  textgeneratorty
-  tg_delete_n_selected_rows
-  setlang(
-  setlang
+  "Project"
+  "Projectl"
+  "cancel"
+  sc_cancel
+  mr_cancel
+  lang_modalresultnoshortcut
+  "tools"
+  "name"
+  Select unit directory
+  "Indent"
+  There are modifications in edit buffer also.
+  "new"
+  "is modified. Save?"
+  "Confirmation"
+  "forms"
+  msgstr " 
+  msgstr "
+  msgid " 
+  msgid "
+   " 
  [findinfileadialogfo]
  stackedunder=
- x=601
- y=213
+ x=492
+ y=201
  cx=346
  cy=308
 finddialog=8
@@ -170,7 +171,7 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=802
+ x=889
  y=461
  cx=234
  cy=269
@@ -180,8 +181,12 @@ replacedialog=33
  [replacedialogfo.selectedonly]
  value=0
  [replacedialogfo.replacetext]
- value=lang_stockcaption[ord(
+ value= "
  history=20
+   "
+   " 
+  " 
+  msgid " 
   lang_stockcaption[ord(
   lang_actionsmodule[ord(
   )];
@@ -198,10 +203,6 @@ replacedialog=33
   @de
   @ru
   langdef.text
-  
-  tfiledialogx
-  tfilenameeditx
-  strexecext
  [replacedialogfo]
  stackedunder=
  x=958
@@ -246,7 +247,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -268,7 +269,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=216
+ y=215
  xprop=1
  yprop=0.39708561020036
  [projectoptionsfo.macrogrid]
@@ -295,7 +296,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=887
  width0=47
@@ -927,9 +928,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=1
+ HEADERFO
+moduletypes=1
+ THEADERFO
+modulefiles=1
+ /home/fred/ideu/src/potools.mfm
 befcommandon=0
 makeoptionson=14
  4095
@@ -977,12 +981,12 @@ compilerusedon=29
  0
  0
 debuggerusedon=6
- 3606
+ 3602
  1
  0
  0
  0
- 488
+ 492
 exeusedon=14
  3903
  0
@@ -1282,7 +1286,7 @@ line=31
  2129
  1183
  609
- 4062
+ 4066
  660
  119
  1115
@@ -1294,14 +1298,14 @@ line=31
  564
  483
  66
- 4337
+ 4341
  684
  98
  15
  786
  908
  2573
- 5802
+ 5807
  1882
  6135
  166
@@ -1309,7 +1313,7 @@ line=31
  18
  8
  90
- 3519
+ 3523
 address=31
  4879232
  4690754
@@ -1585,52 +1589,95 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=onchangefont
+finddtext='Project'
 findhistory=20
- onchangefont
- setlang
- setlangi
- '     
- menuwidth
- '        
-         
- mainmenu1.
- header
- tools
- close
- trim tra
- uses
- newfonames[2]
- oncreated
- dodeleteselectedrows
- lang_
- initpr
- sc(
- actionsmoduletext(
+ 'Project'
+ sc_cancel
+ 'Cancel'
+ Cancel'
+ "name"
+ po_name
+ 'name'
+ 'tools'
+ po_tools
+ Select target file
+ po_selectmessageoutputfile
+ Select unit directory
+ po_unitdirs
+ Indent
+ po_Indent
+ There are modifications in edit buffer also.
+ 'new'
+ is modified. Save?
+ Confirmation
+ confirmation
 findoptions=1
-editpos=2
+editpos=8
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+bookmarks3=0
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.mfm
-relpaths=2
+ ${PROJECTDIR}/sourceform.mfm
+ ${PROJECTDIR}/potools.pas
+relpaths=8
+ main.pas
+ sourceform.pas
  ideU.pas
+ actionsmodule.pas
+ sourceform.pas
  main.mfm
-ismoduletexts=2
+ sourceform.mfm
+ potools.pas
+ismoduletexts=8
+ 0
+ 0
+ 0
+ 0
  0
  -1
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ -1
+ 0
+modules=1
+ /home/fred/ideu/src/potools.mfm
+moduleoptions=1
+ 0
+visiblemodules=1
+ -1
+nomenumodules=1
+ 0
 [sourcefo.files_tab]
+order=8
+ 0
+ 4
+ 5
+ 6
+ 7
+ 1
+ 2
+ 3
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=521
+windowlayout=530
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2053,11 +2100,11 @@ windowlayout=521
  nx=0
  ny=0
  ncx=1197
- ncy=57
+ ncy=50
  x=0
  y=0
  cx=1212
- cy=56
+ cy=49
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2067,30 +2114,11 @@ windowlayout=521
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.mfm
- history=20
-  /home/fred/ideu/src/main.mfm
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
+ value=/home/fred/ideu/src/potools.pas
+ history=1
+  /home/fred/ideu/src/potools.pas
  [debuggerfo.project_options]
- value=M
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2110,8 +2138,17 @@ windowlayout=521
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  4
+  5
+  6
+  7
+  1
+  2
+  3
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2152,6 +2189,25 @@ windowlayout=521
  cy=450
  rcx=0
  rcy=0
+ [_mse_headerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=493
+ y=200
+ cx=456
+ cy=290
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0

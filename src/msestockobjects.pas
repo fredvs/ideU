@@ -29,39 +29,35 @@ uses
 const
   boxsize      = 11;      //for treelistitem expand box
   checkboxsize = 13;      //for listitem checkbox
-  
+
 var
-  lang_stockcaption, lang_modalresult, lang_modalresultnoshortcut, lang_mainform, lang_settings,
-  lang_actionsmodule, lang_projectoptionscon, lang_projectoptions, lang_sourceform, lang_extended, 
-  lang_langnames: array of msestring;
+  lang_stockcaption, lang_modalresult, lang_modalresultnoshortcut, lang_mainform, lang_settings, lang_actionsmodule, lang_projectoptionscon, lang_projectoptions, lang_sourceform, lang_extended, lang_langnames: array of msestring;
 
 type
- extendedty = (
+  extendedty = (
     ex_del_row_selected,
     ex_del_rows_selected
     );
 
 type
- mainformty = (
+  mainformty = (
     ma_unresreferences,        //0 Unresolved references in
     ma_str_to,                 //1 to
     ma_wishsearch,             //2 Do you wish to search the formfile?
-    ma_warning,                //3 WARNING
     ma_formfile,               //4 Formfile for
     ma_formfiles,              //5 Formfiles
     ma_recursive,              //6 Recursive form hierarchy for "
-    ma_error,                  //7 ERROR
     ma_str_classtype,          //8 Classtype
-    ma_notfound,               //9 not found.
-    ma_project,                //10 Project
-    ma_ismodified,             //11 is modified. Save?
-    ma_confirmation,           //12 Confirmation
+    // ma_notfound,               //9 not found.
+    // ma_project,                //10 Project
+    // ma_ismodified,             //11 is modified. Save?
+    // ma_confirmation,           //12 Confirmation
     ma_unableopen,             //13 Unable to open file "
     ma_running,                //14 *** Running ***
     ma_str_downloading,        //15 Downloading
     ma_str_downloaded,         //16 Downloaded
     ma_startgdbservercommand,  //17 Start gdb server command "
-    ma_running2,               //18 " running.
+    // ma_running2,               //18 " running.
     ma_startgdbserver,         //19 Start gdb Server
     ma_gdbserverstarterror,    //20 gdb server start error
     ma_gdbservercanceled,      //21 gdb server start canceled.
@@ -70,14 +66,14 @@ type
     ma_downloaderror,          //24 Download ***ERROR***
     ma_downloadfinished,       //25 Download finished.
     ma_downloadcanceled,       //26 Download canceled.
-    ma_str_file,               //27 File "
-    ma_notfound2,              //28 " not found.
-    ma_exists,                 //29 " exists.
-    ma_str_new,                //30 New
+    //ma_str_file,               //27 File "
+    //ma_notfound2,              //28 " not found.
+    //ma_exists,                 //29 " exists.
+    //ma_str_new,                //30 New
     ma_selectancestor,         //31 Select ancestor
     ma_newform,                //32 New form
     ma_pascalfiles,            //33 Pascal Files
-    ma_new2,                   //34 new
+    //ma_new2,                   //34 new
     ma_cannotloadproj,         //35 Can not load Project "
     ma_selecttemplate,         //36 Select project template
     ma_projectfiles,           //37 Project files
@@ -88,7 +84,7 @@ type
     ma_str_newproject,         //42 New Project
     ma_cannotstartprocess,     //43 Can not start process
     ma_process,                //44 Process
-    ma_running3,               //45 running.
+    //ma_running3,               //45 running.
     ma_processterminated,      //46 Process terminated.
     ma_proctermnormally,       //47 Process terminated normally.
     ma_makeerror,              //48 Make ***ERROR***
@@ -99,28 +95,27 @@ type
     );
 
 type
- sourceformty = (
-    sf_str_file,           //0 File "
+  sourceformty = (
+    //sf_str_file,           //0 File "
     sf_haschanged,         //1 " has changed.
     sf_therearemody,       //2 There are modifications in edit buffer also.
     sf_wishreload,         //3 Do you wish to reload from disk?
-    sf_confirmation,       //4 Confirmation
+    //sf_confirmation,       //4 Confirmation
     sf_none,               //5 <none>
     sf_wishreplace,        //6 Do you wish to replace:
     sf_str_with,           //7 with:
     sf_str_new,            //8 <new>
     sf_syntaxdeffile,      //9 Syntaxdeffile:
     sf_str_text,           //10 Text
-    sf_str_notfound,       //11 not found.
+    //sf_str_notfound,       //11 not found.
     sf_restartbegin,       //12 Restart from begin of file?
     sf_cancel,             //13 Cancel?
     sf_replaceoccu,        //14 Do you wish to to replace this occurence?
     sf_gotoline,           //15 Go to line number:
-    sf_findline,           //16 Find line
-    sf_modieditalso       //17 There are modifications in edit buffer also.
+    sf_findline           //16 Find line
+    //sf_modieditalso       //17 There are modifications in edit buffer also.
 
     );
-
 
 type
   stockbitmapty = (stb_default, stb_none,
@@ -241,7 +236,6 @@ type
     ac_unknownmodclass,    //3 Unknown moduleclass for "
     ac_inheritedcomp,      //4 Inherited component "
     ac_cannotdel,          //5 " can not be deleted.
-    ac_error,              //6 ERROR
     ac_makeaborted,        //7 Make aborted.
     ac_downloadaborted,    //8 Download aborted.
     ac_runerrorwith,       //9 Runerror with "
@@ -265,7 +259,7 @@ type
     ac_publishedmeth,      //27 Published (managed) method
     ac_doesnotexist,       //28 does not exist.
     ac_wishdelete,         //29 Do you wish to delete the event?
-    ac_warning,            //30 WARNING
+    //ac_warning,            //30 WARNING
     ac_method,             //31 Method
     ac_differentparams,    //32 has different parameters.
     ac_amodule,            //33 A module "
@@ -276,8 +270,8 @@ type
     ac_invalidcompname,    //38 Invalid component name.
     ac_invalidexception,   //39 Invalid exception
     ac_tools,              //40 T&ools
-    ac_forms,              //41 Forms
-    ac_source,             //42 Source
+    //ac_forms,              //41 Forms
+    //ac_source,             //42 Source
     ac_allfiles,           //43 All Files
     ac_program,            //44 Program
     ac_unit,               //45 Unit
@@ -297,9 +291,8 @@ type
     ac_file,               //59 File "
     ac_wantoverwrite,      //60 Do you want to overwrite?
     ac_sr_unknown,         //61 Unknown
-    ac_sr_error,           //62 Error
     ac_sr_startup,         //63 Startup
-    ac_sr_exception,       //64 Exception
+    //ac_sr_exception         //64 Exception
     ac_sr_gdbdied,         //65 GDB died
     ac_sr_breakpoint_hit,           //66 Breakpoint hit
     ac_sr_watchpointtrigger,        //67 Watchpoint triggered
@@ -313,7 +306,7 @@ type
     ac_sr_signal_received,          //75 Signal received
     ac_stoperror,                   //76 Stop error
     ac_cannotreadproject,           //77 Can not read project
-    ac_about,                       //78 About
+    //ac_about,                       //78 About
     ac_objectinspector,             //79 Object Inspector
     ac_storecomponent,              //80 Store Component
     ac_attachingprocess,            //81 Attaching Process
@@ -334,9 +327,12 @@ type
     po_markbrackets, po_linenumbers, po_markpairwords, po_trimtrailing,
     po_autoindent, po_nosource, po_tabindent, po_spacetab, po_showtabs,
     po_antialiasedfont, po_encoding, po_markcolor, po_statcolor, po_scrollbary,
-    po_nbchar, po_eolstyle, po_backup, po_tabstops, po_indent, po_extraspace,
-    po_extraspacehint, po_width, po_height, po_font, po_fontbkcolor,
-    po_fontcolor, po_filefilter, po_name, po_filemask, po_syntaxdeffile,
+    po_nbchar, po_eolstyle, po_backup, po_tabstops,
+    // po_indent, 
+    po_extraspace, po_extraspacehint, po_width, po_height, po_font, po_fontbkcolor,
+    po_fontcolor, po_filefilter,
+    // po_name,
+    po_filemask, po_syntaxdeffile,
     po_codetemplate, po_fontcodetemplatedir, po_selectunitdir,
     po_debuggerpage, po_projectdebugger, po_searchdirectories,
     po_searchdirectorieshint, po_selectsourcedir, po_objectbasedir,
@@ -354,15 +350,20 @@ type
     po_targetfile, po_selecttargetfile, po_makecommand, po_selectmakecommand,
     po_showcommandline, po_copymessages, po_closemessages, po_checkmethods,
     po_checkmethodshint, po_projectcompiler, po_commandbefore, po_makeoptions,
-    po_directories, po_unitdirs, po_commandafter, po_exeextension,
+    po_directories,
+    // po_unitdirs,
+    po_commandafter, po_exeextension,
     po_comments, po_makedir, po_selectmakedir, po_colorerror, po_colorwarning,
     po_colornote, po_stripmessageesc, po_stripmessageeschint,
-    po_showconsole, po_enablepurpose, po_messageoutputfile, po_selectmessageoutputfile,
+    po_showconsole, po_enablepurpose, po_messageoutputfile,
+    // po_selectmessageoutputfile,
     po_macros, po_selectactivegroupgrid, po_fontaliaspage, po_designers,
     po_usercolors, po_copycolor, po_formatmacro, po_formatmacrohint,
     po_templates, po_newproject, po_scriptbeforecopy, po_scriptaftercopy,
-    po_newfile, po_newform, po_tools, po_storage, po_infos,po_projectfullname,
-    po_creator,po_license,po_projectdate
+    po_newfile, po_newform,
+    // po_tools,
+    po_storage, po_infos, po_projectfullname,
+    po_creator, po_license, po_projectdate
 
     );
 
@@ -386,8 +387,9 @@ type
     sc_Save, sc_Open,
     sc_name, sc_create_new_directory,
     sc_back, sc_forward, sc_up,
-    sc_file, sc_exists_overwrite, sc_is_modified_save,
-    sc_warningupper, sc_errorupper, sc_exception, sc_system,
+    // sc_file, 
+    sc_exists_overwrite, sc_is_modified_save,
+    sc_warningupper, sc_exception, sc_system,
     sc_does_not_exist,
     sc_passwordupper, sc_enterpassword, sc_invalidpassword,
     sc_can_not_read_directory,
@@ -399,7 +401,9 @@ type
     sc_Copy_record_question,
     sc_close_page,
     sc_first, sc_prior, sc_next, sc_last,
-    sc_append, sc_delete, sc_edit, sc_post, sc_cancel, sc_refresh,
+    sc_append, sc_delete, sc_edit, sc_post,
+    sc_cancel,
+    sc_refresh,
     sc_edit_filter, sc_edit_filter_min, sc_edit_filter_max,
     sc_reset_filter,
     sc_filter_on, sc_search, sc_auto_edit, sc_copy_record,
@@ -445,10 +449,10 @@ type
     sc_openproject, sc_openfile, sc_path, sc_other, sc_printcommand, sc_shortcut, sc_value,
     sc_casesensitive, sc_selectedonly, sc_wholeword, sc_texttofind, sc_searchincurrentfile,
     sc_searchinopenfiles, sc_searchinprojectdir, sc_searchindirectories,
-    sc_includesubdir,sc_replace,sc_replaceall,sc_replacewith,sc_promptonreplace,
-    sc_componentspalette,sc_findcomponent,sc_reset,sc_cstep,sc_stepinstruction,
-    sc_nextinstruction,sc_restartdebugger,sc_togglebreakpoint,sc_tooglebreakpointenable,
-    sc_execlinehinton,sc_compileitfirst,sc_finish,sc_setasdefault,sc_host,sc_copyright
+    sc_includesubdir, sc_replace, sc_replaceall, sc_replacewith, sc_promptonreplace,
+    sc_componentspalette, sc_findcomponent, sc_reset, sc_cstep, sc_stepinstruction,
+    sc_nextinstruction, sc_restartdebugger, sc_togglebreakpoint, sc_tooglebreakpointenable,
+    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright
 
     );
 

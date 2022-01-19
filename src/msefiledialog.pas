@@ -1523,7 +1523,7 @@ begin
     end;
     if fdo_save in dialogoptions then begin
      if bo1 then begin
-       if not askok(lang_stockcaption[ord(sc_file)]+' "'+filenames[0]+
+       if not askok(lang_actionsmodule[ord(ac_file)] +' "'+filenames[0]+
             '" '+ lang_stockcaption[ord(sc_exists_overwrite)],
             lang_stockcaption[ord(sc_warningupper)]) then begin
 //      if not askok('File "'+filenames[0]+
@@ -1535,9 +1535,9 @@ begin
      end
     else begin
      if not bo1 then begin
-       showerror(lang_stockcaption[ord(sc_file)]+' "'+filenames[0]+'" '+
+       showerror(lang_actionsmodule[ord(ac_file)]+' "'+filenames[0]+'" '+
                                         lang_stockcaption[ord(sc_does_not_exist)]+'.',
-                  lang_stockcaption[ord(sc_errorupper)]);
+                  uppercase(lang_stockcaption[ord(sc_error)]));
       
 //      showerror('File "'+filenames[0]+'" does not exist.');
       filename.setfocus;
@@ -1946,7 +1946,7 @@ function tfiledialogcontroller.canoverwrite(): boolean;
 begin
 
   result:= not findfile(filename) or
-       askok(lang_stockcaption[ord(sc_file)]+' "'+filename+
+       askok(lang_actionsmodule[ord(ac_file)]+' "'+filename+
             '" '+ lang_stockcaption[ord(sc_exists_overwrite)],
             lang_stockcaption[ord(sc_warningupper)]);
 

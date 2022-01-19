@@ -1217,7 +1217,7 @@ procedure textnotfound(const ainfo: findinfoty);
 begin
  showmessage(lang_sourceform[ord(sf_str_text)]+' '''+
            ainfo.text+''' '+
-           lang_sourceform[ord(sf_str_notfound)]);
+           lang_actionsmodule[ord(ac_notfound)]);
 end;
 
 
@@ -1271,7 +1271,7 @@ begin
     else begin
      if isback then begin
       if askok(lang_sourceform[ord(sf_str_text)]+' '''+text+
-               ''' '+lang_sourceform[ord(sf_str_notfound)]+' '+
+               ''' '+lang_actionsmodule[ord(ac_notfound)] +' '+
                lang_sourceform[ord(sf_restartbegin)]) then begin
        findpos:= bigcoord;
        if not edit.find(text,options,findpos,edit.editpos,true,
@@ -1282,7 +1282,7 @@ begin
      end
      else begin
       if askok(lang_sourceform[ord(sf_str_text)]+' '''+text+
-               ''' '+lang_sourceform[ord(sf_str_notfound)]+' '+
+               ''' '+lang_actionsmodule[ord(ac_notfound)]+' '+
                lang_sourceform[ord(sf_restartbegin)]) then begin
        findpos:= nullcoord;
        if not edit.find(text,options,findpos,edit.editpos,true,

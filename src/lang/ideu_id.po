@@ -32,7 +32,7 @@ msgstr "&Ya"
 msgid "&No"
 msgstr "&Tidak"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "Ya & semua"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Ya"
 msgid "No"
 msgstr "Tidak"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Ya semua"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Tutup"
 msgid "Interrupt"
 msgstr "Interupsi"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Keluar"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Instruksi ilegal"
 msgid "Trace trap"
 msgstr "Jejak jebakan"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Batalkan"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Kesalahan tumpukan"
 msgid "Child status has changed"
 msgstr "Status anak telah berubah"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Lanjutkan"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "Komponen bawaan"
 
 msgid "can not be deleted."
 msgstr "tidak dapat dihapus."
-
-msgid "ERROR"
-msgstr "KESALAHAN"
 
 msgid "Make aborted."
 msgstr "Membuat dibatalkan."
@@ -311,12 +308,6 @@ msgstr "Pengecualian tidak valid"
 msgid "T&ools"
 msgstr "S&Alat"
 
-msgid "Forms"
-msgstr "Formulir"
-
-msgid "Source"
-msgstr "Sumber"
-
 msgid "All Files"
 msgstr "Semua File"
 
@@ -365,23 +356,14 @@ msgstr "Bentuk Warisan"
 msgid "Do you want to replace the settings by"
 msgstr "Apakah Anda ingin mengganti pengaturan dengan"
 
-msgid "File"
-msgstr "Berkas"
-
 msgid "Do you want to overwrite?"
 msgstr "Apakah Anda ingin menimpa?"
 
 msgid "Unknown"
 msgstr "Tidak diketahui"
 
-msgid "Error"
-msgstr "Kesalahan"
-
 msgid "Startup"
 msgstr "Memulai"
-
-msgid "Exception"
-msgstr "Pengecualian"
 
 msgid "GDB died"
 msgstr "GDB mati"
@@ -422,9 +404,6 @@ msgstr "Hentikan kesalahan"
 msgid "Can not read project"
 msgstr "Tidak dapat membaca proyek"
 
-msgid "About"
-msgstr "Tentang"
-
 msgid "Object Inspector"
 msgstr "Pemeriksa Objek"
 
@@ -446,9 +425,6 @@ msgstr "ke"
 msgid "Do you wish to search the formfile?"
 msgstr "Apakah Anda ingin mencari formfile?"
 
-msgid "WARNING"
-msgstr "PERINGATAN"
-
 msgid "Formfile for"
 msgstr "File formulir untuk"
 
@@ -458,23 +434,8 @@ msgstr "File Formulir"
 msgid "Recursive form hierarchy for"
 msgstr "Hierarki formulir rekursif untuk"
 
-msgid "ERROR"
-msgstr "KESALAHAN"
-
 msgid "Classtype"
 msgstr "Tipe Kelas"
-
-msgid "not found."
-msgstr "tidak ditemukan."
-
-msgid "Project"
-msgstr "Proyek"
-
-msgid "is modified. Save?"
-msgstr "sudah diubah. Simpan?"
-
-msgid "Confirmation"
-msgstr "Konfirmasi"
 
 msgid "Unable to open file"
 msgstr "Tidak dapat membuka file"
@@ -490,9 +451,6 @@ msgstr "Diunduh"
 
 msgid "Start gdb server command"
 msgstr "Mulai perintah server gdb"
-
-msgid "running."
-msgstr "berjalan."
 
 msgid "Start gdb Server"
 msgstr "Mulai Server gdb"
@@ -518,18 +476,6 @@ msgstr "Unduhan selesai."
 msgid "Download canceled."
 msgstr "Unduhan dibatalkan."
 
-msgid "File"
-msgstr "Berkas"
-
-msgid "not found."
-msgstr "tidak ditemukan."
-
-msgid "exists."
-msgstr "ada."
-
-msgid "New"
-msgstr "Baru"
-
 msgid "Select ancestor"
 msgstr "Pilih leluhur"
 
@@ -538,9 +484,6 @@ msgstr "Bentuk baru"
 
 msgid "Pascal Files"
 msgstr "Berkas Pascal"
-
-msgid "new"
-msgstr "baru"
 
 msgid "Can not load Project"
 msgstr "Tidak dapat memuat Proyek"
@@ -572,9 +515,6 @@ msgstr "Tidak dapat memulai proses"
 msgid "Process"
 msgstr "Proses"
 
-msgid "running."
-msgstr "berjalan."
-
 msgid "Process terminated"
 msgstr "Proses dihentikan"
 
@@ -596,9 +536,6 @@ msgstr "Muat Tata Letak Jendela"
 msgid "Docking area"
 msgstr "Area dok"
 
-msgid "File"
-msgstr "Berkas"
-
 msgid "has changed."
 msgstr "telah berubah."
 
@@ -607,9 +544,6 @@ msgstr "Ada juga modifikasi di edit buffer."
 
 msgid "Do you wish to reload from disk?"
 msgstr "Apakah Anda ingin memuat ulang dari disk?"
-
-msgid "Confirmation"
-msgstr "Konfirmasi"
 
 msgid "<none>"
 msgstr "<none>"
@@ -629,9 +563,6 @@ msgstr "Sintaksdeffile:"
 msgid "Text"
 msgstr "Teks"
 
-msgid "not found."
-msgstr "tidak ditemukan."
-
 msgid "Restart from begin of file?"
 msgstr "Mulai ulang dari awal file?"
 
@@ -646,9 +577,6 @@ msgstr "Pergi ke nomor baris:"
 
 msgid "Find line"
 msgstr "Temukan baris"
-
-msgid "There are modifications in edit buffer also."
-msgstr "Ada juga modifikasi di edit buffer."
 
 msgid "Apply"
 msgstr "Terapkan"
@@ -785,9 +713,6 @@ msgstr "Cadangan"
 msgid "Tabstops"
 msgstr "Tabstop"
 
-msgid "Indent"
-msgstr "Indentasi"
-
 msgid "ExtS"
 msgstr "ExtS"
 
@@ -811,9 +736,6 @@ msgstr "Warna font"
 
 msgid "File filter"
 msgstr "Filter file"
-
-msgid "Name"
-msgstr "Nama"
 
 msgid "File mask"
 msgstr "Masker file"
@@ -1025,9 +947,6 @@ msgstr "Buat opsi"
 msgid "Directories"
 msgstr "Direktori"
 
-msgid "Select unit directory"
-msgstr "Pilih direktori unit"
-
 msgid "Command after"
 msgstr "Perintah setelah"
 
@@ -1232,12 +1151,6 @@ msgstr "ada, apakah Anda ingin menimpa?"
 msgid "is modified. Save?"
 msgstr "sudah diubah. Simpan?"
 
-msgid "WARNING"
-msgstr "PERINGATAN"
-
-msgid "ERROR"
-msgstr "KESALAHAN"
-
 msgid "Exception"
 msgstr "Pengecualian"
 
@@ -1289,7 +1202,7 @@ msgstr "Gambar TARGA"
 msgid "TIFF Image"
 msgstr "Gambar TIFF"
 
-msgid "All"
+msgid "All Images"
 msgstr "Semua"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "Sunting"
 msgid "Post"
 msgstr "Posting"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Batalkan"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "Lepaskan target"
 
 msgid "Download"
 msgstr "Unduh"
-
-msgid "Tools"
-msgstr "Alat"
 
 msgid "Make"
 msgstr "Buat"

@@ -808,7 +808,7 @@ begin
   encoding.frame.caption := lang_projectoptions[Ord(po_encoding)];
   backupfilecount.frame.caption := lang_projectoptions[Ord(po_backup)];
   tabstops.frame.caption := lang_projectoptions[Ord(po_tabstops)];
-  blockindent.frame.caption := lang_projectoptions[Ord(po_indent)];
+  blockindent.frame.caption := lang_stockcaption[Ord(sc_indent)];
   usedefaulteditoroptions.frame.caption := lang_settings[Ord(se_usedefaulteditoroptions)];
   spacetabs.frame.caption := lang_projectoptions[Ord(po_spacetab)];
   colornote.frame.caption := lang_projectoptions[Ord(po_colornote)];

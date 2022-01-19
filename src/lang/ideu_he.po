@@ -32,7 +32,7 @@ msgstr "&כן"
 msgid "&No"
 msgstr "&לא"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "כן והכל"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "כן"
 msgid "No"
 msgstr "לא"
 
-msgid "Yes all"
+msgid "All"
 msgstr "כן הכל"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "נתק"
 msgid "Interrupt"
 msgstr "הפרעה"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "צא"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "הוראה לא חוקית"
 msgid "Trace trap"
 msgstr "מלכודת עקבות"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "הפסק"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "תקלת מחסנית"
 msgid "Child status has changed"
 msgstr "סטטוס הילד השתנה"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "המשך"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "רכיב שעבר בירושה"
 
 msgid "can not be deleted."
 msgstr "לא ניתן למחוק."
-
-msgid "ERROR"
-msgstr "שגיאה"
 
 msgid "Make aborted."
 msgstr "הפוך לביטול."
@@ -311,12 +308,6 @@ msgstr "חריג לא חוקי"
 msgid "T&ools"
 msgstr "כלים"
 
-msgid "Forms"
-msgstr "טפסים"
-
-msgid "Source"
-msgstr "מקור"
-
 msgid "All Files"
 msgstr "כל הקבצים"
 
@@ -365,23 +356,14 @@ msgstr "טופס בירושה"
 msgid "Do you want to replace the settings by"
 msgstr "האם אתה רוצה להחליף את ההגדרות ב"
 
-msgid "File"
-msgstr "קובץ"
-
 msgid "Do you want to overwrite?"
 msgstr "האם אתה רוצה להחליף?"
 
 msgid "Unknown"
 msgstr "לא ידוע"
 
-msgid "Error"
-msgstr "שגיאה"
-
 msgid "Startup"
 msgstr "אתחול"
-
-msgid "Exception"
-msgstr "חריג"
 
 msgid "GDB died"
 msgstr "GDB מת"
@@ -422,9 +404,6 @@ msgstr "שגיאת עצירה"
 msgid "Can not read project"
 msgstr "אי אפשר לקרוא את הפרויקט"
 
-msgid "About"
-msgstr "אודות"
-
 msgid "Object Inspector"
 msgstr "מפקח אובייקטים"
 
@@ -446,9 +425,6 @@ msgstr "אל"
 msgid "Do you wish to search the formfile?"
 msgstr "האם אתה רוצה לחפש בקובץ הטופס?"
 
-msgid "WARNING"
-msgstr "אזהרה"
-
 msgid "Formfile for"
 msgstr "קובץ טופס עבור"
 
@@ -458,23 +434,8 @@ msgstr "קבצי טופס"
 msgid "Recursive form hierarchy for"
 msgstr "היררכיית טפסים רקורסיבית עבור"
 
-msgid "ERROR"
-msgstr "שגיאה"
-
 msgid "Classtype"
 msgstr "סוג כיתה"
-
-msgid "not found."
-msgstr "לא נמצא."
-
-msgid "Project"
-msgstr "פרויקט"
-
-msgid "is modified. Save?"
-msgstr "השתנה. שמור?"
-
-msgid "Confirmation"
-msgstr "אישור"
 
 msgid "Unable to open file"
 msgstr "לא ניתן לפתוח את הקובץ"
@@ -490,9 +451,6 @@ msgstr "הורד"
 
 msgid "Start gdb server command"
 msgstr "התחל פקודת שרת gdb"
-
-msgid "running."
-msgstr "פועל."
 
 msgid "Start gdb Server"
 msgstr "הפעל שרת gdb"
@@ -518,18 +476,6 @@ msgstr "ההורדה הסתיימה."
 msgid "Download canceled."
 msgstr "ההורדה בוטלה."
 
-msgid "File"
-msgstr "קובץ"
-
-msgid "not found."
-msgstr "לא נמצא."
-
-msgid "exists."
-msgstr "קיים."
-
-msgid "New"
-msgstr "חדש"
-
 msgid "Select ancestor"
 msgstr "בחר אב קדמון"
 
@@ -538,9 +484,6 @@ msgstr "טופס חדש"
 
 msgid "Pascal Files"
 msgstr "קבצי פסקל"
-
-msgid "new"
-msgstr "חדש"
 
 msgid "Can not load Project"
 msgstr "לא ניתן לטעון את הפרויקט"
@@ -572,9 +515,6 @@ msgstr "לא ניתן להתחיל בתהליך"
 msgid "Process"
 msgstr "תהליך"
 
-msgid "running."
-msgstr "פועל."
-
 msgid "Process terminated"
 msgstr "התהליך הסתיים"
 
@@ -596,9 +536,6 @@ msgstr "טען פריסת חלון"
 msgid "Docking area"
 msgstr "אזור עגינה"
 
-msgid "File"
-msgstr "קובץ"
-
 msgid "has changed."
 msgstr "השתנה."
 
@@ -607,9 +544,6 @@ msgstr "ישנם שינויים גם במאגר העריכה."
 
 msgid "Do you wish to reload from disk?"
 msgstr "האם ברצונך לטעון מחדש מהדיסק?"
-
-msgid "Confirmation"
-msgstr "אישור"
 
 msgid "<none>"
 msgstr "<אין>"
@@ -629,9 +563,6 @@ msgstr "Syntaxdeffile:"
 msgid "Text"
 msgstr "טקסט"
 
-msgid "not found."
-msgstr "לא נמצא."
-
 msgid "Restart from begin of file?"
 msgstr "הפעל מחדש מתחילת הקובץ?"
 
@@ -646,9 +577,6 @@ msgstr "עבור למספר שורה:"
 
 msgid "Find line"
 msgstr "מצא קו"
-
-msgid "There are modifications in edit buffer also."
-msgstr "ישנם שינויים גם במאגר העריכה."
 
 msgid "Apply"
 msgstr "החל"
@@ -785,9 +713,6 @@ msgstr "גיבוי"
 msgid "Tabstops"
 msgstr "עצירות טאב"
 
-msgid "Indent"
-msgstr "כניסה"
-
 msgid "ExtS"
 msgstr "ExtS"
 
@@ -811,9 +736,6 @@ msgstr "צבע גופן"
 
 msgid "File filter"
 msgstr "מסנן קבצים"
-
-msgid "Name"
-msgstr "שם"
 
 msgid "File mask"
 msgstr "מסיכת קבצים"
@@ -1025,9 +947,6 @@ msgstr "צור אפשרויות"
 msgid "Directories"
 msgstr "ספריות"
 
-msgid "Select unit directory"
-msgstr "בחר ספריית יחידה"
-
 msgid "Command after"
 msgstr "פקודה אחרי"
 
@@ -1232,12 +1151,6 @@ msgstr "קיים, האם אתה רוצה להחליף?"
 msgid "is modified. Save?"
 msgstr "השתנה. שמור?"
 
-msgid "WARNING"
-msgstr "אזהרה"
-
-msgid "ERROR"
-msgstr "שגיאה"
-
 msgid "Exception"
 msgstr "חריג"
 
@@ -1289,7 +1202,7 @@ msgstr "תמונת TARGA"
 msgid "TIFF Image"
 msgstr "תמונת TIFF"
 
-msgid "All"
+msgid "All Images"
 msgstr "הכל"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "ערוך"
 msgid "Post"
 msgstr "פרסם"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "ביטול"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "נתק יעד"
 
 msgid "Download"
 msgstr "הורד"
-
-msgid "Tools"
-msgstr "כלים"
 
 msgid "Make"
 msgstr "עשה"

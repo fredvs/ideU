@@ -32,7 +32,7 @@ msgstr "&Ja"
 msgid "&No"
 msgstr "&Nee"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "Ja & alles"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nee"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Ja allemaal"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Ophangen"
 msgid "Interrupt"
 msgstr "Onderbreken"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Stop"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Illegale instructie"
 msgid "Trace trap"
 msgstr "Trace trap"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Afbreken"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Stapelfout"
 msgid "Child status has changed"
 msgstr "Kinderstatus is gewijzigd"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Doorgaan"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "Overgenomen component"
 
 msgid "can not be deleted."
 msgstr "kan niet worden verwijderd."
-
-msgid "ERROR"
-msgstr "FOUT"
 
 msgid "Make aborted."
 msgstr "Maak afgebroken."
@@ -311,12 +308,6 @@ msgstr "Ongeldige uitzondering"
 msgid "T&ools"
 msgstr "T&ools"
 
-msgid "Forms"
-msgstr "Formulieren"
-
-msgid "Source"
-msgstr "Bron"
-
 msgid "All Files"
 msgstr "Alle bestanden"
 
@@ -365,23 +356,14 @@ msgstr "Geërfde vorm"
 msgid "Do you want to replace the settings by"
 msgstr "Wilt u de instellingen vervangen door"
 
-msgid "File"
-msgstr "Bestand"
-
 msgid "Do you want to overwrite?"
 msgstr "Wilt u overschrijven?"
 
 msgid "Unknown"
 msgstr "Onbekend"
 
-msgid "Error"
-msgstr "Fout"
-
 msgid "Startup"
 msgstr "Opstarten"
-
-msgid "Exception"
-msgstr "Uitzondering"
 
 msgid "GDB died"
 msgstr "GDB is overleden"
@@ -422,9 +404,6 @@ msgstr "Stop fout"
 msgid "Can not read project"
 msgstr "Kan project niet lezen"
 
-msgid "About"
-msgstr "Over"
-
 msgid "Object Inspector"
 msgstr "Object Inspecteur"
 
@@ -446,9 +425,6 @@ msgstr "naar"
 msgid "Do you wish to search the formfile?"
 msgstr "Wilt u in het formulierbestand zoeken?"
 
-msgid "WARNING"
-msgstr "WAARSCHUWING"
-
 msgid "Formfile for"
 msgstr "Formulierbestand voor"
 
@@ -458,23 +434,8 @@ msgstr "Formulierbestanden"
 msgid "Recursive form hierarchy for"
 msgstr "Recursieve formulierhiërarchie voor"
 
-msgid "ERROR"
-msgstr "FOUT"
-
 msgid "Classtype"
 msgstr "Klassetype"
-
-msgid "not found."
-msgstr "niet gevonden."
-
-msgid "Project"
-msgstr "Project"
-
-msgid "is modified. Save?"
-msgstr "is gewijzigd. Opslaan?"
-
-msgid "Confirmation"
-msgstr "Bevestiging"
 
 msgid "Unable to open file"
 msgstr "Kan bestand niet openen"
@@ -490,9 +451,6 @@ msgstr "Gedownload"
 
 msgid "Start gdb server command"
 msgstr "Start gdb-serveropdracht"
-
-msgid "running."
-msgstr "running."
 
 msgid "Start gdb Server"
 msgstr "Start gdb-server"
@@ -518,18 +476,6 @@ msgstr "Download voltooid."
 msgid "Download canceled."
 msgstr "Download geannuleerd."
 
-msgid "File"
-msgstr "Bestand"
-
-msgid "not found."
-msgstr "niet gevonden."
-
-msgid "exists."
-msgstr "bestaat."
-
-msgid "New"
-msgstr "Nieuw"
-
 msgid "Select ancestor"
 msgstr "Selecteer voorouder"
 
@@ -538,9 +484,6 @@ msgstr "Nieuw formulier"
 
 msgid "Pascal Files"
 msgstr "Pascal-bestanden"
-
-msgid "new"
-msgstr "nieuw"
 
 msgid "Can not load Project"
 msgstr "Kan project niet laden"
@@ -572,9 +515,6 @@ msgstr "Kan proces niet starten"
 msgid "Process"
 msgstr "Proces"
 
-msgid "running."
-msgstr "lopen."
-
 msgid "Process terminated"
 msgstr "Proces beëindigd"
 
@@ -596,9 +536,6 @@ msgstr "Vensterlay-out laden"
 msgid "Docking area"
 msgstr "Aanleggebied"
 
-msgid "File"
-msgstr "Bestand"
-
 msgid "has changed."
 msgstr "is gewijzigd."
 
@@ -607,9 +544,6 @@ msgstr "Er zijn ook wijzigingen in de bewerkingsbuffer."
 
 msgid "Do you wish to reload from disk?"
 msgstr "Wilt u opnieuw laden vanaf schijf?"
-
-msgid "Confirmation"
-msgstr "Bevestiging"
 
 msgid "<none>"
 msgstr "<geen>"
@@ -629,9 +563,6 @@ msgstr "Syntaxdeffile:"
 msgid "Text"
 msgstr "Tekst"
 
-msgid "not found."
-msgstr "niet gevonden."
-
 msgid "Restart from begin of file?"
 msgstr "Herstarten vanaf het begin van het bestand?"
 
@@ -646,9 +577,6 @@ msgstr "Ga naar regelnummer:"
 
 msgid "Find line"
 msgstr "Zoek regel"
-
-msgid "There are modifications in edit buffer also."
-msgstr "Er zijn ook wijzigingen in de bewerkingsbuffer."
 
 msgid "Apply"
 msgstr "Toepassen"
@@ -785,9 +713,6 @@ msgstr "Back-up"
 msgid "Tabstops"
 msgstr "Tabstops"
 
-msgid "Indent"
-msgstr "Inspringen"
-
 msgid "ExtS"
 msgstr "ExtS"
 
@@ -811,9 +736,6 @@ msgstr "Letterkleur"
 
 msgid "File filter"
 msgstr "Bestandsfilter"
-
-msgid "Name"
-msgstr "Naam"
 
 msgid "File mask"
 msgstr "Bestandsmasker"
@@ -1025,9 +947,6 @@ msgstr "Opties maken"
 msgid "Directories"
 msgstr "Mappen"
 
-msgid "Select unit directory"
-msgstr "Selecteer unitdirectory"
-
 msgid "Command after"
 msgstr "Opdracht na"
 
@@ -1232,12 +1151,6 @@ msgstr "bestaat, wilt u overschrijven?"
 msgid "is modified. Save?"
 msgstr "is gewijzigd. Opslaan?"
 
-msgid "WARNING"
-msgstr "WAARSCHUWING"
-
-msgid "ERROR"
-msgstr "FOUT"
-
 msgid "Exception"
 msgstr "Uitzondering"
 
@@ -1289,7 +1202,7 @@ msgstr "TARGA Image"
 msgid "TIFF Image"
 msgstr "TIFF-afbeelding"
 
-msgid "All"
+msgid "All Images"
 msgstr "Alle"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "Bewerken"
 msgid "Post"
 msgstr "Posten"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Annuleren"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "Doel losmaken"
 
 msgid "Download"
 msgstr "Downloaden"
-
-msgid "Tools"
-msgstr "Gereedschap"
 
 msgid "Make"
 msgstr "Maken"

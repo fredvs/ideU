@@ -1508,8 +1508,8 @@ var
 
 begin
  if modifylevel >= 16 then begin
-  showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+
-                  amodule^.filename+'".',lang_actionsmodule[ord(ac_error)]);
+  showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+ ' "' +
+                  amodule^.filename+'".',uppercase(lang_stockcaption[ord(sc_Error)]));
   sysutils.abort;
  end;
  if modifylevel = 0 then begin
@@ -1804,8 +1804,8 @@ var
  begin
   if aancestor <> nil then begin
    if reclevel >= 16 then begin
-    showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+
-                       amodule^.filename+'".',lang_actionsmodule[ord(ac_error)]);
+    showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+ ' "' +
+                       amodule^.filename+'".',uppercase(lang_stockcaption[ord(sc_Error)]));
     sysutils.abort;
    end;
    inc(reclevel);
@@ -1832,8 +1832,8 @@ var
  begin
   if aancestor <> nil then begin
    if reclevel >= 16 then begin
-    showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+
-                 amodule^.filename+'".',lang_actionsmodule[ord(ac_error)]);
+    showmessage(lang_actionsmodule[ord(ac_recursiveforminheritance)]+ ' "' +
+                 amodule^.filename+'".',uppercase(lang_stockcaption[ord(sc_Error)]));
     sysutils.abort;
    end;
    inc(reclevel);
@@ -1842,9 +1842,9 @@ var
     if po1^.ancestor = aancestor^.instance then begin
      comp1:= findnestedcomponent(po1^.descendent,newpath);
      if comp1 <> nil then begin
-      raise exception.create(po1^.descendent.name+': '+
-             ansistring(lang_actionsmodule[ord(ac_component)])+
-             newpath+ansistring(lang_actionsmodule[ord(ac_exists)]));
+      raise exception.create(po1^.descendent.name+ ' :' +
+             ansistring(lang_actionsmodule[ord(ac_component)])+ ': '+
+             newpath+ ' ' +ansistring(lang_actionsmodule[ord(ac_exists)]));
      end;
      donamechange(fdesigner.modules.findmodule(po1^.descendent));
     end;
@@ -2599,7 +2599,7 @@ begin
    if ainherited then begin
     po1:= fdesigner.getinheritedmodule(designmoduleclassname);
     if po1 = nil then begin
-     raise exception.create(ansistring(lang_actionsmodule[ord(ac_ancestorfor)])+
+     raise exception.create(ansistring(lang_actionsmodule[ord(ac_ancestorfor)])+ ' ' +
            designmoduleclassname+ansistring(lang_actionsmodule[ord(ac_notfound)]));
     end;
     fdesigner.beginstreaming({po1});
@@ -3564,7 +3564,7 @@ function tdesigner.checkmodule(const filename: msestring): pmoduleinfoty;
 begin
  result:= fmodules.findmodule(filename);
  if result = nil then begin
-  raise exception.Create(ansistring(lang_actionsmodule[ord(ac_module)]+
+  raise exception.Create(ansistring(lang_actionsmodule[ord(ac_module)]+ ' ' +
                           filename+lang_actionsmodule[ord(ac_notfound)]));
  end;
 end;
@@ -3718,7 +3718,7 @@ end;
 procedure tdesigner.checkident(const aname: string);
 begin
  if not isvalidident(aname) or (aname = '') then begin
-  raise exception.Create(ansistring(lang_actionsmodule[ord(ac_invalidname)])+
+  raise exception.Create(ansistring(lang_actionsmodule[ord(ac_invalidname)])+ ' "' +
                                                                aname+'".');
  end;
 end;
@@ -4526,7 +4526,7 @@ var
                  msestring(po1^.name)+' ('+
                  msestring(comp1.name)+'.'+msestring(ar1[int1]^.name)+') '+
                  lang_actionsmodule[ord(ac_doesnotexist)]+lineend+
-                 lang_actionsmodule[ord(ac_wishdelete)],lang_actionsmodule[ord(ac_warning)]);
+                 lang_actionsmodule[ord(ac_wishdelete)],lang_stockcaption[Ord(sc_warningupper)]);
         end
         else begin
          if not parametersmatch(po1^.typeinfo,po2^.params) then begin
@@ -4536,7 +4536,7 @@ var
                 msestring(po1^.name)+' ('+
                  msestring(comp1.name)+'.'+msestring(ar1[int1]^.name)+') '+
                  lang_actionsmodule[ord(ac_differentparams)]+lineend+
-                 lang_actionsmodule[ord(ac_wishdelete)],lang_actionsmodule[ord(ac_warning)]);
+                 lang_actionsmodule[ord(ac_wishdelete)],lang_stockcaption[Ord(sc_warningupper)]);
          end;
         end;
         if mr1 = mr_yes then begin
@@ -4637,7 +4637,7 @@ begin
   comp1:= reader.root;
  end;
  with exception(ExceptObject) do begin
-  message:= ansistring(lang_actionsmodule[ord(ac_component)])+
+  message:= ansistring(lang_actionsmodule[ord(ac_component)])+  ' "'+
                             ownernamepath(comp1)+'":'+lineend+message;
  end;
 end;
@@ -4775,8 +4775,8 @@ strcoma := ', ' else strcoma := ',';
       if skipexisting and issamefilepath(result^.filename,filename) then begin
        exit;
       end;
-      raise exception.create(ansistring(lang_actionsmodule[ord(ac_amodule)])+
-                          modulename+ansistring(lang_actionsmodule[ord(ac_isopen)]));
+      raise exception.create(ansistring(lang_actionsmodule[ord(ac_amodule)])+ ' ' +
+                          modulename+ ' ' + ansistring(lang_actionsmodule[ord(ac_isopen)]));
      end;
      stream2.Position:= 0;
      loadingdesignerbefore:= loadingdesigner;
@@ -4929,7 +4929,7 @@ strcoma := ', ' else strcoma := ',';
      end;
     except
      on e: exception do begin
-      e.Message:= ansistring(lang_actionsmodule[ord(ac_cannotreadform)]+filename)+
+      e.Message:= ansistring(lang_actionsmodule[ord(ac_cannotreadform)]+ ' "' + filename)+
                                                         '".'+lineend+e.Message;
       raise;
      end;
@@ -4954,7 +4954,7 @@ strcoma := ', ' else strcoma := ',';
           str1:= '';
          end;
          exp1:= exception.create(ansistring(
-             lang_actionsmodule[ord(ac_cannotreadform)]+filename+'".'+lineend+
+             lang_actionsmodule[ord(ac_cannotreadform)]+' "' +filename+'".'+lineend+
              lang_actionsmodule[ord(ac_unresolvedref)]+
                                            msestring(rootnames[0]+str1+'.')));
         end;

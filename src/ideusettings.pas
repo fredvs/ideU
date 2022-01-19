@@ -582,21 +582,21 @@ begin
   ' / '  +  'MSEgui';
  
    debugger.frame.caption := '${DEBUGGER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
+  lang_actionsmodule[ord(ac_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
    
-  debugger.controller.captiondir := lang_stockcaption[ord(sc_file)] + 
+  debugger.controller.captiondir := lang_actionsmodule[ord(ac_file)] + 
   ' / '  + lang_projectoptions[Ord(po_debugcommand)];
   
      debugger.frame.caption := '${DEBUGGER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
+  lang_actionsmodule[ord(ac_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
    
-  debugger.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
+  debugger.controller.captionopen := lang_actionsmodule[ord(ac_file)] + 
   ' / '  + lang_projectoptions[Ord(po_debugcommand)];
 
   compiler.frame.caption := '${COMPILER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_makecommand)];
+  lang_actionsmodule[ord(ac_file)] + ' / ' +  lang_projectoptions[Ord(po_makecommand)];
    
-  compiler.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
+  compiler.controller.captionopen := lang_actionsmodule[ord(ac_file)] + 
   ' / '  + lang_projectoptions[Ord(po_makecommand)];
   
   lcldir.frame.caption := '${LCLDIR} ' + 
@@ -621,7 +621,7 @@ begin
   macrogrid.frame.caption := lang_projectoptions[Ord(po_macros)]; 
   
  // macrogrid.fixrows[-1].captions.Count := 2;
-  macrogrid.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  macrogrid.fixrows[-1].captions[0].Caption := lang_stockcaption[ord(sc_name)];
   macrogrid.fixrows[-1].captions[1].Caption := lang_stockcaption[ord(sc_value)];
  
   other.caption := '  ' + lang_stockcaption[ord(sc_other)] + '  ' ;

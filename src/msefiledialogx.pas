@@ -1924,7 +1924,7 @@ begin
       begin
         if bo1 then
           
-            if not askok(lang_stockcaption[ord(sc_file)] + ' "' + filenames[0] +
+            if not askok(lang_actionsmodule[ord(ac_file)]  + ' "' + filenames[0] +
               '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
               lang_stockcaption[ord(sc_warningupper)]) then
             begin
@@ -1936,9 +1936,9 @@ begin
       end
       else if not bo1 then
       begin
-             showerror(lang_stockcaption[ord(sc_file)] + ' "' + filenames[0] + '" ' +
+             showerror(lang_actionsmodule[ord(ac_file)] + ' "' + filenames[0] + '" ' +
             lang_stockcaption[ord(sc_does_not_exist)] + '.',
-            lang_stockcaption[ord(sc_errorupper)]);
+            uppercase(lang_stockcaption[ord(sc_error)]));
         //      showerror('File "'+filenames[0]+'" does not exist.');
         filename.SetFocus;
         Exit;
@@ -3131,7 +3131,7 @@ end;
 function tfiledialogxcontroller.canoverwrite(): Boolean;
 begin
      Result := not findfile(filename) or
-      askok(lang_stockcaption[ord(sc_file)] + ' "' + filename +
+      askok(lang_actionsmodule[ord(ac_file)] + ' "' + filename +
       '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
       lang_stockcaption[ord(sc_warningupper)]);
 end;

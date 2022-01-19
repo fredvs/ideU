@@ -928,7 +928,7 @@ begin
      fexitcode:= eoserror(e).error;
 {$warnings on}
     end;
-    application.handleexception(nil,lang_actionsmodule[ord(ac_runerrorwith)]+
+    application.handleexception(nil,lang_actionsmodule[ord(ac_runerrorwith)]+ ' "' +
                                                           UTF8Decode(acommandline)+'": ');
    end;
   end;
@@ -1243,7 +1243,7 @@ begin
  inherited create(aowner,false,setmakedir);
  if not fcanceled then begin
   fcanceled:= not application.waitdialog(nil,'"'+ascriptpath+
-               lang_actionsmodule[ord(ac_running)],
+               ' ' + lang_actionsmodule[ord(ac_running)],
      lang_actionsmodule[ord(ac_script)],nil,nil,nil);
  end;
 end;

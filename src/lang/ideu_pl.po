@@ -32,7 +32,7 @@ msgstr "&Tak"
 msgid "&No"
 msgstr "&Nie"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "Tak &wszystko"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Tak"
 msgid "No"
 msgstr "Nie"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Tak wszystkie"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Rozłączenie"
 msgid "Interrupt"
 msgstr "Przerwanie"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Zakończ"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Nielegalna instrukcja"
 msgid "Trace trap"
 msgstr "Pułapka śledzenia"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Przerwij"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Usterka stosu"
 msgid "Child status has changed"
 msgstr "Status dziecka uległ zmianie"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Kontynuuj"
 
 msgid "Stop, unblockable"
@@ -205,9 +205,6 @@ msgstr "Składnik dziedziczony"
 
 msgid "can not be deleted."
 msgstr "nie może zostać usunięty."
-
-msgid "ERROR"
-msgstr "BŁĄD"
 
 msgid "Make aborted."
 msgstr "Dokonaj przerwania."
@@ -311,12 +308,6 @@ msgstr "Nieprawidłowy wyjątek"
 msgid "T&ools"
 msgstr "&Narzędzia"
 
-msgid "Forms"
-msgstr "Formularze"
-
-msgid "Source"
-msgstr "Źródło"
-
 msgid "All Files"
 msgstr "Wszystkie pliki"
 
@@ -365,23 +356,14 @@ msgstr "Forma dziedziczona"
 msgid "Do you want to replace the settings by"
 msgstr "Czy chcesz zastąpić ustawienia przez"
 
-msgid "File"
-msgstr "Plik"
-
 msgid "Do you want to overwrite?"
 msgstr "Czy chcesz nadpisać?"
 
 msgid "Unknown"
 msgstr "Nieznany"
 
-msgid "Error"
-msgstr "Błąd"
-
 msgid "Startup"
 msgstr "Uruchamianie"
-
-msgid "Exception"
-msgstr "Wyjątek"
 
 msgid "GDB died"
 msgstr "GDB umarł"
@@ -422,9 +404,6 @@ msgstr "Zatrzymaj błąd"
 msgid "Can not read project"
 msgstr "Nie można odczytać projektu"
 
-msgid "About"
-msgstr "O"
-
 msgid "Object Inspector"
 msgstr "Inspektor obiektów"
 
@@ -446,9 +425,6 @@ msgstr "do"
 msgid "Do you wish to search the formfile?"
 msgstr "Czy chcesz przeszukać plik formularza?"
 
-msgid "WARNING"
-msgstr "OSTRZEŻENIE"
-
 msgid "Formfile for"
 msgstr "Plik formularza dla"
 
@@ -458,23 +434,8 @@ msgstr "Pliki formularzy"
 msgid "Recursive form hierarchy for"
 msgstr "Rekurencyjna hierarchia formularzy dla"
 
-msgid "ERROR"
-msgstr "BŁĄD"
-
 msgid "Classtype"
 msgstr "Typ klasy"
-
-msgid "not found."
-msgstr "„nie znaleziono”."
-
-msgid "Project"
-msgstr "Projekt"
-
-msgid "is modified. Save?"
-msgstr "jest zmodyfikowany. Zapisać?"
-
-msgid "Confirmation"
-msgstr "Potwierdzenie"
 
 msgid "Unable to open file"
 msgstr "Nie można otworzyć pliku"
@@ -490,9 +451,6 @@ msgstr "Pobrano"
 
 msgid "Start gdb server command"
 msgstr "Polecenie uruchomienia serwera gdb"
-
-msgid "running."
-msgstr "działa."
 
 msgid "Start gdb Server"
 msgstr "Uruchom serwer gdb"
@@ -518,18 +476,6 @@ msgstr "Pobieranie zakończone."
 msgid "Download canceled."
 msgstr "Pobieranie anulowane."
 
-msgid "File"
-msgstr "Plik"
-
-msgid "not found."
-msgstr "nie znaleziono."
-
-msgid "exists."
-msgstr "istnieje."
-
-msgid "New"
-msgstr "Nowy"
-
 msgid "Select ancestor"
 msgstr "Wybierz przodka"
 
@@ -538,9 +484,6 @@ msgstr "Nowy formularz"
 
 msgid "Pascal Files"
 msgstr "Pliki Pascala"
-
-msgid "new"
-msgstr "nowy"
 
 msgid "Can not load Project"
 msgstr "Nie można załadować projektu"
@@ -572,9 +515,6 @@ msgstr "Nie można rozpocząć procesu"
 msgid "Process"
 msgstr "Proces"
 
-msgid "running."
-msgstr "„uruchomiony”."
-
 msgid "Process terminated"
 msgstr "Proces zakończony"
 
@@ -596,9 +536,6 @@ msgstr "Wczytaj układ okna"
 msgid "Docking area"
 msgstr "Obszar dokowania"
 
-msgid "File"
-msgstr "Plik"
-
 msgid "has changed."
 msgstr "się zmienił."
 
@@ -607,9 +544,6 @@ msgstr "Istnieją również modyfikacje w buforze edycji."
 
 msgid "Do you wish to reload from disk?"
 msgstr "Czy chcesz załadować ponownie z dysku?"
-
-msgid "Confirmation"
-msgstr "Potwierdzenie"
 
 msgid "<none>"
 msgstr "<brak>"
@@ -629,9 +563,6 @@ msgstr "plik definicji składni:"
 msgid "Text"
 msgstr "Tekst"
 
-msgid "not found."
-msgstr "nie znaleziono”."
-
 msgid "Restart from begin of file?"
 msgstr "Uruchom ponownie od początku pliku?"
 
@@ -646,9 +577,6 @@ msgstr "Przejdź do wiersza numer:"
 
 msgid "Find line"
 msgstr "Znajdź linię"
-
-msgid "There are modifications in edit buffer also."
-msgstr "Istnieją również modyfikacje w buforze edycji."
 
 msgid "Apply"
 msgstr "Zastosuj"
@@ -785,9 +713,6 @@ msgstr "Kopia zapasowa"
 msgid "Tabstops"
 msgstr "Przyciski"
 
-msgid "Indent"
-msgstr "Wcięcie"
-
 msgid "ExtS"
 msgstr "ExtS"
 
@@ -811,9 +736,6 @@ msgstr "Kolor czcionki"
 
 msgid "File filter"
 msgstr "Filtr plików"
-
-msgid "Name"
-msgstr "Nazwa"
 
 msgid "File mask"
 msgstr "Maska pliku"
@@ -1025,9 +947,6 @@ msgstr "Dokonaj opcji"
 msgid "Directories"
 msgstr "Katalogi"
 
-msgid "Select unit directory"
-msgstr "Wybierz katalog jednostek"
-
 msgid "Command after"
 msgstr "Polecenie po"
 
@@ -1232,12 +1151,6 @@ msgstr "istnieje, czy chcesz nadpisać?"
 msgid "is modified. Save?"
 msgstr "jest zmodyfikowany. Zapisać?"
 
-msgid "WARNING"
-msgstr "OSTRZEŻENIE"
-
-msgid "ERROR"
-msgstr "BŁĄD"
-
 msgid "Exception"
 msgstr "Wyjątek"
 
@@ -1289,7 +1202,7 @@ msgstr "Obraz TARGA"
 msgid "TIFF Image"
 msgstr "Obraz TIFF"
 
-msgid "All"
+msgid "All Images"
 msgstr "Wszystkie"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "Edytuj"
 msgid "Post"
 msgstr "Post"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Anuluj"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "Odłącz cel"
 
 msgid "Download"
 msgstr "Pobierz"
-
-msgid "Tools"
-msgstr "Narzędzia"
 
 msgid "Make"
 msgstr "Utwórz"

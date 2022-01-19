@@ -1353,7 +1353,7 @@ begin
   if exceptobject is Exception then
   begin
     if ShowMessage(msestring(Exception(exceptobject).Message),
-      lang_actionsmodule[ord(ac_error)], [mr_skip, mr_cancel]) <> mr_skip then
+      uppercase(lang_stockcaption[ord(sc_Error)]), [mr_skip, mr_cancel]) <> mr_skip then
       Result := True;
   end
   else
@@ -1974,14 +1974,14 @@ begin
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
     if length(lang_actionsmodule) > 0 then
-    additem(ffilemasknames, lang_actionsmodule[ord(ac_source)])
+    additem(ffilemasknames, lang_stockcaption[ord(sc_source)])
     else
     additem(ffilemasknames, 'source');
  
    
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
     if length(lang_actionsmodule) > 0 then
-    additem(ffilemasknames, lang_actionsmodule[ord(ac_forms)])
+    additem(ffilemasknames, lang_stockcaption[ord(sc_forms)])
     else
     additem(ffilemasknames, 'forms');
     
@@ -2735,7 +2735,7 @@ begin
     on e: Exception do
     begin
       showerror(lang_actionsmodule[ord(ac_cannotreadproject)] + ' "' + filename + '".' +
-        lineend + msestring(e.message), lang_actionsmodule[ord(ac_error)]);
+        lineend + msestring(e.message), uppercase(lang_stockcaption[ord(sc_Error)]));
     end;
   end;
 end;
@@ -3275,7 +3275,7 @@ begin
     expandprmacros1(fname1);
     if not askyesno(lang_actionsmodule[ord(ac_replacesettings)] + lineend +
       '"' + fname1 + '"?',
-      lang_actionsmodule[ord(ac_warning)]) then
+      lang_stockcaption[Ord(sc_warningupper)]) then
       Exit;
   end
   else
@@ -3336,9 +3336,9 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if findfile(fname1) and not askyesno(lang_actionsmodule[ord(ac_file)] + fname1 +
+    if findfile(fname1) and not askyesno(lang_actionsmodule[ord(ac_file)] + fname1 + ' '+
       lang_actionsmodule[ord(ac_exists)] + lineend +
-      lang_actionsmodule[ord(ac_wantoverwrite)], lang_actionsmodule[ord(ac_warning)]) then
+      lang_actionsmodule[ord(ac_wantoverwrite)], lang_stockcaption[Ord(sc_warningupper)]) then
       Exit;
   end
   else
@@ -3697,7 +3697,7 @@ begin
   eolstyle.frame.Caption           := lang_projectoptions[Ord(po_eolstyle)];
   backupfilecount.frame.Caption    := lang_projectoptions[Ord(po_backup)];
   tabstops.frame.Caption           := lang_projectoptions[Ord(po_tabstops)];
-  blockindent.frame.Caption        := lang_projectoptions[Ord(po_indent)];
+  blockindent.frame.Caption        := lang_stockcaption[Ord(sc_indent)];
   editfontextraspace.frame.Caption := lang_projectoptions[Ord(po_extraspace)];
   editfontextraspace.hint          := lang_projectoptions[Ord(po_extraspacehint)];
   editfontwidth.frame.Caption      := lang_projectoptions[Ord(po_width)];
@@ -3708,12 +3708,12 @@ begin
 
   ttabpage13.Caption := lang_projectoptions[Ord(po_filefilter)];
   filefiltergrid.fixrows[-1].captions.Count := 2;
-  filefiltergrid.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  filefiltergrid.fixrows[-1].captions[0].Caption := lang_stockcaption[ord(sc_name)];
   filefiltergrid.fixrows[-1].captions[1].Caption := lang_projectoptions[Ord(po_filemask)];
 
   ttabpage14.Caption := lang_projectoptions[Ord(po_syntaxdeffile)];
   twidgetgrid6.fixrows[-1].captions.Count := 2;
-  twidgetgrid6.fixrows[-1].captions[0].Caption := lang_projectoptions[Ord(po_name)];
+  twidgetgrid6.fixrows[-1].captions[0].Caption := lang_stockcaption[ord(sc_name)];
   twidgetgrid6.fixrows[-1].captions[1].Caption := lang_projectoptions[Ord(po_filemask)];
 
   ttabpage19.Caption         := lang_projectoptions[Ord(po_codetemplate)];
@@ -3788,7 +3788,7 @@ begin
   ttabpage17.Caption          := lang_projectoptions[Ord(po_commandbefore)];
   ttabpage12.Caption          := lang_projectoptions[Ord(po_makeoptions)];
   ttabpage11.Caption          := lang_projectoptions[Ord(po_directories)];
-  unitdirs.controller.captionopen := lang_projectoptions[Ord(po_unitdirs)];
+  unitdirs.controller.captionopen := lang_projectoptions[Ord(po_selectunitdir)];
   ttabpage18.Caption          := lang_projectoptions[Ord(po_commandafter)];
   ttabpage88.Caption          := lang_projectoptions[Ord(po_exeextension)];
 
@@ -3803,7 +3803,7 @@ begin
   showconsole.frame.Caption := lang_projectoptions[Ord(po_showconsole)];
   enablepurpose.frame.Caption := lang_projectoptions[Ord(po_enablepurpose)];
   messageoutputfile.frame.Caption := lang_projectoptions[Ord(po_messageoutputfile)];
-  messageoutputfile.controller.captionopen := lang_projectoptions[Ord(po_selectmessageoutputfile)];
+  messageoutputfile.controller.captionopen := lang_projectoptions[Ord(po_selecttargetfile)];
   ttabpage1.Caption  := lang_projectoptions[Ord(po_macros)];
   selectactivegroupgrid.frame.Caption := lang_projectoptions[Ord(po_selectactivegroupgrid)];
   fontaliaspage.Caption := lang_projectoptions[Ord(po_fontaliaspage)];
@@ -3818,7 +3818,7 @@ begin
   scriptaftercopy.frame.Caption := lang_projectoptions[Ord(po_scriptaftercopy)];
   ttabpage4.Caption  := lang_projectoptions[Ord(po_newfile)];
   ttabpage5.Caption  := lang_projectoptions[Ord(po_newform)];
-  ttabpage15.Caption := lang_projectoptions[Ord(po_tools)];
+  ttabpage15.Caption := lang_stockcaption[Ord(sc_tools)];
   ttabpage20.Caption := lang_projectoptions[Ord(po_storage)];
   ttabpage23.Caption := lang_projectoptions[Ord(po_infos)];
   

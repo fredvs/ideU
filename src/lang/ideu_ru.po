@@ -32,7 +32,7 @@ msgstr "&Да"
 msgid "&No"
 msgstr "&Нет"
 
-msgid "Yes &all"
+msgid "&All"
 msgstr "&Все"
 
 msgid "Yes &all"
@@ -68,7 +68,7 @@ msgstr "Да"
 msgid "No"
 msgstr "Нет"
 
-msgid "Yes all"
+msgid "All"
 msgstr "Все"
 
 msgid "Yes all"
@@ -104,7 +104,7 @@ msgstr "Вешать трубку"
 msgid "Interrupt"
 msgstr "Прерывать"
 
-msgid "Quit"
+msgid "Quit process"
 msgstr "Покидать"
 
 msgid "Illegal instruction"
@@ -113,7 +113,7 @@ msgstr "Незаконное указание"
 msgid "Trace trap"
 msgstr "Trace trap"
 
-msgid "Abort"
+msgid "Abort Process"
 msgstr "Прервать"
 
 msgid "BUS error"
@@ -149,7 +149,7 @@ msgstr "Ошибка стека"
 msgid "Child status has changed"
 msgstr "Статус ребенка изменился"
 
-msgid "Continue"
+msgid "Continue process"
 msgstr "Продолжить"
 
 msgid "Stop, unblockable"
@@ -197,17 +197,14 @@ msgstr "Идентификатор процесса"
 msgid "Attach to process"
 msgstr "Присоединить к процессу"
 
-msgid "Unknown moduleclass for ""
-msgstr "Неизвестный класс модуля для ""
+msgid "Unknown moduleclass for "
+msgstr "Неизвестный класс модуля для "
 
-msgid "Inherited component ""
-msgstr "Унаследованный компонент ""
+msgid "Inherited component "
+msgstr "Унаследованный компонент "
 
-msgid "" can not be deleted."
-msgstr ""нельзя удалить."
-
-msgid "ERROR"
-msgstr "ОШИБКА"
+msgid "can not be deleted."
+msgstr "нельзя удалить."
 
 msgid "Make aborted."
 msgstr "Сделать прерванным."
@@ -215,8 +212,8 @@ msgstr "Сделать прерванным."
 msgid "Download aborted."
 msgstr "Загрузка прервана."
 
-msgid "Runerror with ""
-msgstr "Runerror с ""
+msgid "Runerror with "
+msgstr "Runerror с "
 
 msgid "Error: Timeout."
 msgstr "Ошибка: тайм-аут."
@@ -233,32 +230,32 @@ msgstr "Скачивание."
 msgid "Download not running."
 msgstr "Загрузка не выполняется."
 
-msgid "" running."
-msgstr "" Бег."
+msgid "running."
+msgstr "Бег."
 
 msgid "Script"
 msgstr "Сценарий"
 
-msgid "Recursive form inheritance of ""
-msgstr "Рекурсивное наследование формы ""
+msgid "Recursive form inheritance of "
+msgstr "Рекурсивное наследование формы "
 
-msgid "Component ""
-msgstr "Составная часть ""
+msgid "Component "
+msgstr "Составная часть "
 
-msgid "" exists."
-msgstr "" существуют."
+msgid "exists."
+msgstr "существуют."
 
-msgid "Ancestor for ""
-msgstr "Предок по ""
+msgid "Ancestor for "
+msgstr "Предок по "
 
-msgid "" not found."
-msgstr "" не найден."
+msgid "not found."
+msgstr "не найден."
 
-msgid "Module ""
-msgstr "Модуль ""
+msgid "Module "
+msgstr "Модуль "
 
-msgid "Invalid name ""
-msgstr "Неверное имя ""
+msgid "Invalid name "
+msgstr "Неверное имя "
 
 msgid "Invalid methodname"
 msgstr "Неверное имя метода"
@@ -287,11 +284,11 @@ msgstr "Метод"
 msgid "has different parameters."
 msgstr "имеет разные параметры."
 
-msgid "A module ""
-msgstr "Модуль ""
+msgid "A module "
+msgstr "Модуль "
 
-msgid "" is already open."
-msgstr ""уже открыт."
+msgid "is already open."
+msgstr "уже открыт."
 
 msgid "Unresolved reference(s) to"
 msgstr "Неразрешенные ссылки на"
@@ -299,8 +296,8 @@ msgstr "Неразрешенные ссылки на"
 msgid "Module(s):"
 msgstr "Модуль (и):"
 
-msgid "Can not read formfile ""
-msgstr "Невозможно прочитать файл формы ""
+msgid "Can not read formfile "
+msgstr "Невозможно прочитать файл формы "
 
 msgid "Invalid component name."
 msgstr "Недействительное имя компонента."
@@ -310,12 +307,6 @@ msgstr "Недействительное исключение"
 
 msgid "T&ools"
 msgstr "Инструменты"
-
-msgid "Forms"
-msgstr "Формы"
-
-msgid "Source"
-msgstr "Источник"
 
 msgid "All Files"
 msgstr "Все файлы"
@@ -365,23 +356,14 @@ msgstr "Унаследованная форма"
 msgid "Do you want to replace the settings by"
 msgstr "Вы хотите заменить настройки на"
 
-msgid "File ""
-msgstr "Файл ""
-
 msgid "Do you want to overwrite?"
 msgstr "Вы хотите перезаписать?"
 
 msgid "Unknown"
 msgstr "Неизвестный"
 
-msgid "Error"
-msgstr "Ошибка"
-
 msgid "Startup"
 msgstr "Запускать"
-
-msgid "Exception"
-msgstr "Исключение"
 
 msgid "GDB died"
 msgstr "GDB умер"
@@ -422,9 +404,6 @@ msgstr "Stop error"
 msgid "Can not read project"
 msgstr "Не могу прочитать проект"
 
-msgid "About"
-msgstr "О"
-
 msgid "Object Inspector"
 msgstr "Инспектор объектов"
 
@@ -446,38 +425,20 @@ msgstr "к"
 msgid "Do you wish to search the formfile?"
 msgstr "Вы хотите выполнить поиск в файле формы?"
 
-msgid "WARNING"
-msgstr "ПРЕДУПРЕЖДЕНИЕ"
-
 msgid "Formfile for"
 msgstr "Formfile для"
 
 msgid "Formfiles"
 msgstr "Formfiles"
 
-msgid "Recursive form hierarchy for ""
-msgstr "Иерархия рекурсивной формы для ""
-
-msgid "ERROR"
-msgstr "ОШИБКА"
+msgid "Recursive form hierarchy for "
+msgstr "Иерархия рекурсивной формы для "
 
 msgid "Classtype"
 msgstr "Тип занятия"
 
-msgid "not found."
-msgstr "не найден."
-
-msgid "Project"
-msgstr "Проект"
-
-msgid "is modified. Save?"
-msgstr "изменен. Сохранить?"
-
-msgid "Confirmation"
-msgstr "Подтверждение"
-
-msgid "Unable to open file ""
-msgstr "Невозможно открыть файл ""
+msgid "Unable to open file "
+msgstr "Невозможно открыть файл "
 
 msgid "*** Running ***"
 msgstr "*** Бег ***"
@@ -488,11 +449,8 @@ msgstr "Скачивание"
 msgid "Downloaded"
 msgstr "Скачано"
 
-msgid "Start gdb server command ""
-msgstr "Запустить команду сервера gdb ""
-
-msgid "" running."
-msgstr "" Бег."
+msgid "Start gdb server command "
+msgstr "Запустить команду сервера gdb "
 
 msgid "Start gdb Server"
 msgstr "Запустить сервер gdb"
@@ -506,8 +464,8 @@ msgstr "запуск сервера gdb отменен."
 msgid "Can not run start gdb command."
 msgstr "Невозможно запустить команду start gdb."
 
-msgid "Uploadcommand ""
-msgstr "Uploadcommand ""
+msgid "Uploadcommand "
+msgstr "Uploadcommand "
 
 msgid "Download ***ERROR***"
 msgstr "Download *** ERROR ***"
@@ -518,18 +476,6 @@ msgstr "Загрузка завершена."
 msgid "Download canceled."
 msgstr "Загрузка отменена."
 
-msgid "File ""
-msgstr "Файл ""
-
-msgid "" not found."
-msgstr "" не найден."
-
-msgid "" exists."
-msgstr "" существуют."
-
-msgid "New"
-msgstr "Новый"
-
 msgid "Select ancestor"
 msgstr "Выбрать предка"
 
@@ -539,11 +485,8 @@ msgstr "Новая форма"
 msgid "Pascal Files"
 msgstr "Файлы Паскаля"
 
-msgid "new"
-msgstr "новый"
-
-msgid "Can not load Project ""
-msgstr "Невозможно загрузить проект ""
+msgid "Can not load Project "
+msgstr "Невозможно загрузить проект "
 
 msgid "Select project template"
 msgstr "Выбрать шаблон проекта"
@@ -572,9 +515,6 @@ msgstr "Невозможно запустить процесс"
 msgid "Process"
 msgstr "Процесс"
 
-msgid "running."
-msgstr "Бег."
-
 msgid "Process terminated"
 msgstr "Процесс прекращен"
 
@@ -596,20 +536,14 @@ msgstr "Загрузить макет окна"
 msgid "Docking area"
 msgstr "Зона стыковки"
 
-msgid "File ""
-msgstr "Файл ""
-
-msgid "" has changed."
-msgstr ""изменилось."
+msgid "has changed."
+msgstr "изменилось."
 
 msgid "There are modifications in edit buffer also."
 msgstr "Также есть модификации в буфере редактирования."
 
 msgid "Do you wish to reload from disk?"
 msgstr "Вы хотите перезагрузить с диска?"
-
-msgid "Confirmation"
-msgstr "Подтверждение"
 
 msgid "<none>"
 msgstr "<нет>"
@@ -629,9 +563,6 @@ msgstr "Syntaxdeffile:"
 msgid "Text"
 msgstr "Текст"
 
-msgid "not found."
-msgstr "не найден."
-
 msgid "Restart from begin of file?"
 msgstr "Перезагрузить с начала файла?"
 
@@ -646,9 +577,6 @@ msgstr "Перейти к номеру строки:"
 
 msgid "Find line"
 msgstr "Найти линию"
-
-msgid "There are modifications in edit buffer also."
-msgstr "Также есть модификации в буфере редактирования."
 
 msgid "Apply"
 msgstr "Применять"
@@ -785,9 +713,6 @@ msgstr "Рез. коп."
 msgid "Tabstops"
 msgstr "Табуляторы"
 
-msgid "Indent"
-msgstr "Отступ"
-
 msgid "ExtS"
 msgstr "Доп. прос."
 
@@ -811,9 +736,6 @@ msgstr "Цвет шрифта"
 
 msgid "File filter"
 msgstr "Файловый фильтр"
-
-msgid "Name"
-msgstr "Имя"
 
 msgid "File mask"
 msgstr "Маска файла"
@@ -1025,9 +947,6 @@ msgstr "Сделать варианты"
 msgid "Directories"
 msgstr "Справочники"
 
-msgid "Select unit directory"
-msgstr "Выберите каталог объекта"
-
 msgid "Command after"
 msgstr "Команда после"
 
@@ -1085,7 +1004,7 @@ msgstr "Дизайнеров"
 msgid "User &Colors"
 msgstr "Пользовательские цвета"
 
-msgid "Copy "setcolormapvalue" code to clipboard"
+msgid "Copy setcolormapvalue code to clipboard"
 msgstr "Скопируйте код setcolormapvalue в буфер обмена"
 
 msgid "F&ormat Macros"
@@ -1232,12 +1151,6 @@ msgstr "уже есть‚ перезаписать?"
 msgid "is modified. Save?"
 msgstr "изменен. Сохранить?"
 
-msgid "WARNING"
-msgstr "ПРЕДУПРЕЖДЕНИЕ"
-
-msgid "ERROR"
-msgstr "ОШИБКА"
-
 msgid "Exception"
 msgstr "Исключение"
 
@@ -1289,7 +1202,7 @@ msgstr "TARGA-изображение"
 msgid "TIFF Image"
 msgstr "TIFF-изображение"
 
-msgid "All"
+msgid "All Images"
 msgstr "Все"
 
 msgid "Confirmation"
@@ -1328,7 +1241,7 @@ msgstr "Править"
 msgid "Post"
 msgstr "Постер"
 
-msgid "Cancel"
+msgid "Annul"
 msgstr "Отменить"
 
 msgid "Refresh"
@@ -1666,9 +1579,6 @@ msgstr "Отсоединить цель"
 
 msgid "Download"
 msgstr "Скачать"
-
-msgid "Tools"
-msgstr "Инструменты"
 
 msgid "Make"
 msgstr "Делать"

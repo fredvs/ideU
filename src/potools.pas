@@ -1,18 +1,58 @@
+
 unit potools;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
+
 interface
 
-uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
- msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms,mseact,
- mclasses,msedataedits,msedropdownlist,mseedit,mseificomp,mseificompglob,
- msestockobjects,mseifiglob,msememodialog,msestatfile,msestream,SysUtils,
- msesimplewidgets,mseconsts_ide,msefileutils,msebitmap,msedatanodes,msedragglob,
- msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,msegraphedits,msescrollbar,
- msetimer,msedispwidgets,mserichstring,msestringcontainer,msefiledialogx;
+uses 
+msetypes, 
+mseglob, 
+mseguiglob, 
+mseguiintf, 
+mseapplication, 
+msestat, 
+msemenus, 
+msegui, 
+msegraphics, 
+msegraphutils, 
+mseevent, 
+mseclasses, 
+msewidgets, 
+mseforms, 
+mseact, 
+mclasses, 
+msedataedits, 
+msedropdownlist, 
+mseedit, 
+mseificomp, 
+mseificompglob, 
+msestockobjects, 
+mseifiglob, 
+msememodialog, 
+msestatfile, 
+msestream, 
+SysUtils, 
+msesimplewidgets, 
+mseconsts_ide, 
+msefileutils, 
+msebitmap, 
+msedatanodes, 
+msedragglob, 
+msegrids, 
+msegridsglob, 
+LazUTF8, 
+mselistbrowser, 
+msesys, 
+msegraphedits, 
+msescrollbar, 
+msetimer, 
+msedispwidgets, 
+mserichstring, 
+msestringcontainer, 
+msefiledialogx;
 
-type
+type 
   theaderfo = class(tmseform)
     memopoheader: tmemodialogedit;
     tbutton2: TButton;
@@ -25,31 +65,34 @@ type
     outputdir: tfilenameeditx;
     impexpfiledialog: tfiledialogx;
     tstatfile1: tstatfile;
-   booaddspace: tbooleanedit;
-   numofspace: tintegeredit;
-    procedure createnew(const Sender: TObject);
-    procedure createnewconst(const Sender: TObject; fn: msestring);
-    procedure createnewpo(const Sender: TObject; fn: msestring);
-    procedure dosearch(thearray: array of msestring; theindex: integer);
-    procedure oncreateform(const Sender: TObject);
-    procedure ontime(const Sender: TObject);
+    booaddspace: tbooleanedit;
+    numofspace: tintegeredit;
+    procedure createnew(Const Sender: TObject);
+    procedure createnewconst(Const Sender: TObject; fn: msestring);
+    procedure createnewpo(Const Sender: TObject; fn: msestring);
+    procedure dosearch(thearray: Array Of msestring; theindex: integer);
+    procedure oncreateform(Const Sender: TObject);
+    procedure ontime(Const Sender: TObject);
   end;
 
-var
+var 
   headerfo: theaderfo;
   astro, astrt, acomp: utf8String;
   hasfound: Boolean = False;
   empty: Boolean = False;
-  defaultresult, default_resulttext, default_modalresulttext, default_modalresulttextnoshortcut, default_mainformtext, default_actionsmoduletext, default_projectoptionscontext, default_settingstext,
-  default_projectoptionstext, default_sourceformtext, default_stockcaption, default_langnamestext, default_extendedtext, constvaluearray: array of msestring;
+  defaultresult, default_resulttext, default_modalresulttext, default_modalresulttextnoshortcut, 
+  default_mainformtext, default_actionsmoduletext, default_projectoptionscontext, 
+  default_settingstext, 
+  default_projectoptionstext, default_sourceformtext, default_stockcaption, default_langnamestext, 
+  default_extendedtext, constvaluearray: array of msestring;
 
 implementation
 
-uses
-  potools_mfm;
+uses 
+potools_mfm;
 
-procedure theaderfo.dosearch(thearray: array of msestring; theindex: integer);
-var
+procedure theaderfo.dosearch(thearray: Array Of msestring; theindex: integer);
+var 
   str2: utf8String;
   y: integer;
 begin
@@ -57,28 +100,30 @@ begin
   hasfound := False;
 
   while (y < length(constvaluearray)) and (hasfound = False) do
-  begin
-    str2  := (constvaluearray[y]);
-    acomp := UTF8Copy(str2, 1, system.pos(';', str2) - 1);
-    // writeln('---acomp:' + acomp);
-    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
-    astro := (UTF8Copy(str2, 1, system.pos(';', str2) - 1));
-    astro := utf8StringReplace(astro, '\"', '"', [rfReplaceAll]);
-    //  writeln('---astro:' + astro);
-    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
-    astrt := UTF8Copy(str2, 1, length(str2));
-    astrt := utf8StringReplace(astrt, '\"', '"', [rfReplaceAll]);
+    begin
+      str2  := (constvaluearray[y]);
+      acomp := UTF8Copy(str2, 1, system.pos(';', str2) - 1);
+      // writeln('---acomp:' + acomp);
+      str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1))
+      ;
+      astro := (UTF8Copy(str2, 1, system.pos(';', str2) - 1));
+      astro := utf8StringReplace(astro, '\"', '"', [rfReplaceAll]);
+      //  writeln('---astro:' + astro);
+      str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1))
+      ;
+      astrt := UTF8Copy(str2, 1, length(str2));
+      astrt := utf8StringReplace(astrt, '\"', '"', [rfReplaceAll]);
 
-    if thearray[theindex] = astro then
-      hasfound := True;
-    //  writeln('---astrt:' + astrt);
+      if thearray[theindex] = astro then
+        hasfound := True;
+      //  writeln('---astrt:' + astrt);
 
-    Inc(y);
-  end;
+      Inc(y);
+    end;
 end;
 
-procedure theaderfo.createnewpo(const Sender: TObject; fn: msestring);
-var
+procedure theaderfo.createnewpo(Const Sender: TObject; fn: msestring);
+var 
   x, y: integer;
   file1: ttextdatastream;
   str1, strinit, strlang, filename1: msestring;
@@ -111,213 +156,213 @@ begin
   str1 := fn;
 
   if fileexists(str1) and (empty = False) then
-  begin
-    //  writeln('1');
-    file1          := ttextdatastream.Create(str1, fm_read);
-    //  writeln('2');
-    filename1      := copy(filename(str1), 1, length(filename(str1)) - 4);
-    strlang        := trim(copy(filename1, system.pos('_ide_', filename1) + 5,
-      length(filename1) - system.pos('_ide_', filename1)));
-    // writeln('3 ' + strlang);
-    file1.encoding := ce_utf8;
-
-    setlength(constvaluearray, 0);
-
-    file1.readln(str1);
-
-    str3 := '';
-    str2 := '';
-    str4 := '';
-
-    while (not file1.EOF) and (theend = False) do
     begin
-      str1    := '';
+      //  writeln('1');
+      file1          := ttextdatastream.Create(str1, fm_read);
+      //  writeln('2');
+      filename1      := copy(filename(str1), 1, length(filename(str1)) - 4);
+      strlang        := trim(copy(filename1, system.pos('_ide_', filename1) + 5,
+                        length(filename1) - system.pos('_ide_', filename1)));
+      // writeln('3 ' + strlang);
+      file1.encoding := ce_utf8;
+
+      setlength(constvaluearray, 0);
+
       file1.readln(str1);
-      strtemp := '';
-      //    writeln('4');
-      if system.pos('modalresulttext', str1) > 0 then
-        isarray1 := True;
-      if (isarray1 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1 := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1 := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-        // writeln(str1);
-      end;
 
-      if system.pos('modalresulttextnoshortcut', str1) > 0 then
-        isarray2 := True;
-      if (isarray2 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray1 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+      str3 := '';
+      str2 := '';
+      str4 := '';
 
-      if system.pos('projectoptionscontext', str1) > 0 then
-        isarray3 := True;
-      if (isarray3 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray2 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+      while (not file1.EOF) and (theend = False) do
+        begin
+          str1    := '';
+          file1.readln(str1);
+          strtemp := '';
+          //    writeln('4');
+          if system.pos('modalresulttext', str1) > 0 then
+            isarray1 := True;
+          if (isarray1 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1 := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1 := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+              // writeln(str1);
+            end;
 
-      if system.pos('actionsmoduletext', str1) > 0 then
-        isarray4 := True;
-      if (isarray4 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray3 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('modalresulttextnoshortcut', str1) > 0 then
+            isarray2 := True;
+          if (isarray2 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray1 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('mainformtext', str1) > 0 then
-        isarray5 := True;
-      if (isarray5 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray4 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('projectoptionscontext', str1) > 0 then
+            isarray3 := True;
+          if (isarray3 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray2 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('sourceformtext', str1) > 0 then
-        isarray6 := True;
-      if (isarray6 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray5 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('actionsmoduletext', str1) > 0 then
+            isarray4 := True;
+          if (isarray4 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray3 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('settingstext', str1) > 0 then
-        isarray7 := True;
-      if (isarray7 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray6 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('mainformtext', str1) > 0 then
+            isarray5 := True;
+          if (isarray5 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray4 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('projectoptionstext', str1) > 0 then
-        isarray8 := True;
-      if (isarray8 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray7 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('sourceformtext', str1) > 0 then
+            isarray6 := True;
+          if (isarray6 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray5 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('stockcaption', str1) > 0 then
-        isarray9 := True;
-      if (isarray9 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray8 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('settingstext', str1) > 0 then
+            isarray7 := True;
+          if (isarray7 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray6 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('extendedtext', str1) > 0 then
-        isarray10 := True;
-      if (isarray10 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray9 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('projectoptionstext', str1) > 0 then
+            isarray8 := True;
+          if (isarray8 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray7 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('langnamestext', str1) > 0 then
-        isarray11 := True;
-      if (isarray11 = True) and (system.pos(#039, str1) > 0) then
-      begin
-        isarray9 := False;
-        setlength(constvaluearray, length(constvaluearray) + 1);
-        str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
-        str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
-        if system.pos('//', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
-        if system.pos('{', str1) > 0 then
-          str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
-        if str1 <> '' then
-          constvaluearray[length(constvaluearray) - 1] := trim(str1);
-      end;
+          if system.pos('stockcaption', str1) > 0 then
+            isarray9 := True;
+          if (isarray9 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray8 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
 
-      if system.pos('delete_n_selected_rows', str1) > 0 then
-        theend := True;
+          if system.pos('extendedtext', str1) > 0 then
+            isarray10 := True;
+          if (isarray10 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray9 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
+
+          if system.pos('langnamestext', str1) > 0 then
+            isarray11 := True;
+          if (isarray11 = True) and (system.pos(#039, str1) > 0) then
+            begin
+              isarray9 := False;
+              setlength(constvaluearray, length(constvaluearray) + 1);
+              str1     := utf8StringReplace(str1, #039, '', [rfReplaceAll]);
+              str1     := utf8StringReplace(str1, #044, '', [rfReplaceAll]);
+              if system.pos('//', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('//', str1) - 1));
+              if system.pos('{', str1) > 0 then
+                str1 := trim(copy(str1, 1, system.pos('{', str1) - 1));
+              if str1 <> '' then
+                constvaluearray[length(constvaluearray) - 1] := trim(str1);
+            end;
+
+          if system.pos('delete_n_selected_rows', str1) > 0 then
+            theend := True;
+        end;
+      //writeln('5');
+      file1.Free;
     end;
-    //writeln('5');
-    file1.Free;
-  end;
 
   setlength(default_modalresulttext, length(en_modalresulttext));
-  
+
   // default_modalresulttext := en_modalresulttext;
   for imodalresultty := Low(modalresultty) to High(modalresultty) do
     default_modalresulttext[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
@@ -331,8 +376,9 @@ begin
 
   // default_modalresulttextnoshortcut := en_modalresulttextnoshortcut;
   for imodalresultty := Low(modalresultty) to High(modalresultty) do
-    default_modalresulttextnoshortcut[Ord(imodalresultty)] :=
-      en_modalresulttextnoshortcut[(imodalresultty)];
+    default_modalresulttextnoshortcut[Ord(imodalresultty)] := 
+                                                              en_modalresulttextnoshortcut[(
+                                                              imodalresultty)];
 
   y := length(defaultresult);
 
@@ -344,8 +390,9 @@ begin
 
   //default_projectoptionscontext := en_projectoptionscontext;
   for iprojectoptionsconty := Low(projectoptionsconty) to High(projectoptionsconty) do
-    default_projectoptionscontext[Ord(iprojectoptionsconty)] :=
-      en_projectoptionscontext[(iprojectoptionsconty)];
+    default_projectoptionscontext[Ord(iprojectoptionsconty)] := 
+                                                                en_projectoptionscontext[(
+                                                                iprojectoptionsconty)];
 
   y := length(defaultresult);
 
@@ -357,8 +404,8 @@ begin
 
   //default_actionsmoduletext := en_actionsmoduletext;
   for iactionsmodulety := Low(actionsmodulety) to High(actionsmodulety) do
-    default_actionsmoduletext[Ord(iactionsmodulety)] :=
-      en_actionsmoduletext[(iactionsmodulety)];
+    default_actionsmoduletext[Ord(iactionsmodulety)] := 
+                                                        en_actionsmoduletext[(iactionsmodulety)];
 
   y := length(defaultresult);
 
@@ -370,8 +417,8 @@ begin
 
   //default_mainformtext := en_mainformtext;
   for imainformty := Low(mainformty) to High(mainformty) do
-    default_mainformtext[Ord(imainformty)] :=
-      en_mainformtext[(imainformty)];
+    default_mainformtext[Ord(imainformty)] := 
+                                              en_mainformtext[(imainformty)];
 
   y := length(defaultresult);
 
@@ -383,8 +430,8 @@ begin
 
   //default_sourceformtext := en_sourceformtext;
   for isourceformty := Low(sourceformty) to High(sourceformty) do
-    default_sourceformtext[Ord(isourceformty)] :=
-      en_sourceformtext[(isourceformty)];
+    default_sourceformtext[Ord(isourceformty)] := 
+                                                  en_sourceformtext[(isourceformty)];
 
   y := length(defaultresult);
 
@@ -396,8 +443,8 @@ begin
 
   //default_settingstext := en_settingstext;
   for iisettingsty := Low(isettingsty) to High(isettingsty) do
-    default_settingstext[Ord(iisettingsty)] :=
-      en_settingstext[(iisettingsty)];
+    default_settingstext[Ord(iisettingsty)] := 
+                                               en_settingstext[(iisettingsty)];
 
   y := length(defaultresult);
 
@@ -409,8 +456,9 @@ begin
 
   //default_projectoptionstext := en_projectoptionstext;
   for iprojectoptionsty := Low(projectoptionsty) to High(projectoptionsty) do
-    default_projectoptionstext[Ord(iprojectoptionsty)] :=
-      en_projectoptionstext[(iprojectoptionsty)];
+    default_projectoptionstext[Ord(iprojectoptionsty)] := 
+                                                          en_projectoptionstext[(iprojectoptionsty)]
+  ;
 
   y := length(defaultresult);
 
@@ -422,8 +470,8 @@ begin
 
   // default_stockcaption := en_stockcaption;
   for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
-    default_stockcaption[Ord(istockcaptionty)] :=
-      en_stockcaption[(istockcaptionty)];
+    default_stockcaption[Ord(istockcaptionty)] := 
+                                                  en_stockcaption[(istockcaptionty)];
 
   y := length(defaultresult);
 
@@ -435,8 +483,8 @@ begin
 
   //default_extendedtext := en_extendedtext;
   for iextendedty := Low(extendedty) to High(extendedty) do
-    default_extendedtext[Ord(iextendedty)] :=
-      en_extendedtext[(iextendedty)];
+    default_extendedtext[Ord(iextendedty)] := 
+                                              en_extendedtext[(iextendedty)];
 
   y := length(defaultresult);
 
@@ -456,9 +504,26 @@ begin
   for x := 0 to length(default_langnamestext) - 1 do
     defaultresult[x + y] := default_langnamestext[x];
 
+
+{  // check if double "msgid"
+  str1 := '';
+  int1:= 0;
+  for x := 0 to length(defaultresult) - 1 do
+  begin
+    if int1 > 1 then writeln(str1 + ' = ' + inttostr(int1)) ; 
+    int1:= 0;
+    str1 := defaultresult[x];
+    if trim(str1) <> '' then 
+    for y := 0 to length(defaultresult) - y do
+    begin
+      if defaultresult[y] = str1 then inc(int1);
+     end;
+  end;
+ }
+  
   // writeln(length(defaultresult));
   file1 := ttextdatastream.Create(outputdir.Value +
-    'ideu_empty.po', fm_create);
+           'ideu_empty.po', fm_create);
 
   file1.encoding := ce_utf8;
 
@@ -467,30 +532,27 @@ begin
 
   for x := 0 to length(defaultresult) - 1 do
     if trim(defaultresult[x]) <> '' then
-    begin
-      file1.writeln('msgid "' + defaultresult[x] + '"');
-      if empty = False then
       begin
-        if trim(constvaluearray[x]) <> '' then
-          file1.writeln('msgstr "' + constvaluearray[x] + '"')
+        file1.writeln('msgid "' + defaultresult[x] + '"');
+        if empty = False then
+          begin
+            if trim(constvaluearray[x]) <> '' then
+              file1.writeln('msgstr "' + constvaluearray[x] + '"')
+            else
+              file1.writeln('msgstr "' + defaultresult[x] + '"');
+          end
         else
-          file1.writeln('msgstr "' + defaultresult[x] + '"');
-      end
-      else
-        file1.writeln('msgstr ""');
+          file1.writeln('msgstr ""');
 
-      file1.writeln('');
-    end;
+        file1.writeln('');
+      end;
 
   file1.Free;
 
 end;
 
-
-/////////////////////////////////////////// fin
-
-procedure theaderfo.createnew(const Sender: TObject);
-var
+procedure theaderfo.createnew(Const Sender: TObject);
+var 
   x: integer;
   filterlista: msestringarty;
   filterlistb: msestringarty;
@@ -503,108 +565,105 @@ begin
   setlength(filterlistb, 1);
 
   if TButton(Sender).tag = 0 then
-  begin
-    empty          := False;
-    filterlista[0] := 'mseconsts_xx.po';
-    filterlistb[0] := '*.po';
-    impexpfiledialog.controller.filter := '*.po';
-    if alldir.Value then
-      impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
-    else
-      impexpfiledialog.controller.options := [fdo_savelastdir];
-  end;
+    begin
+      empty          := False;
+      filterlista[0] := 'mseconsts_xx.po';
+      filterlistb[0] := '*.po';
+      impexpfiledialog.controller.filter := '*.po';
+      if alldir.Value then
+        impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
+      else
+        impexpfiledialog.controller.options := [fdo_savelastdir];
+    end;
 
   if TButton(Sender).tag = 1 then
-  begin
-    empty          := False;
-    filterlista[0] := 'mseconsts_xx.pas';
-    filterlistb[0] := '*.pas';
-    impexpfiledialog.controller.filter := '*.pas';
-    if alldir.Value then
-      impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
-    else
-      impexpfiledialog.controller.options := [fdo_savelastdir];
-  end;
+    begin
+      empty          := False;
+      filterlista[0] := 'mseconsts_xx.pas';
+      filterlistb[0] := '*.pas';
+      impexpfiledialog.controller.filter := '*.pas';
+      if alldir.Value then
+        impexpfiledialog.controller.options := [fdo_directory, fdo_savelastdir]
+      else
+        impexpfiledialog.controller.options := [fdo_savelastdir];
+    end;
 
   if TButton(Sender).tag = 2 then
     empty := True;
 
   if empty = False then
-  begin
-    with impexpfiledialog.controller.filterlist do
     begin
-      asarraya := filterlista;
-      asarrayb := filterlistb;
+      with impexpfiledialog.controller.filterlist do
+        begin
+          asarraya := filterlista;
+          asarrayb := filterlistb;
+        end;
+
+      impexpfiledialog.controller.filterindex := 0;
+      application.ProcessMessages;
+
+      langall := '';
+
+      if impexpfiledialog.Execute(fdk_open) = mr_ok then
+        begin
+          paneldone.frame.colorclient := $FFD1A1;
+          labdone.Caption   := sc[0];
+          paneldone.Visible := True;
+          application.ProcessMessages;
+
+          str1 := impexpfiledialog.controller.filename;
+
+          if alldir.Value = False then
+            begin
+              if TButton(Sender).tag = 0 then
+                createnewconst(Sender, str1)
+              else
+                createnewpo(Sender, str1);
+            end
+          else
+            begin
+
+              if TButton(Sender).tag = 0 then
+                str2 := '*.po'
+              else
+                str2 := '*.pas';
+
+              if FindFirst(filedir(str1) + DirectorySeparator + str2, faAnyFile, Info) = 0 then
+                repeat
+                  if TButton(Sender).tag = 0 then
+                    createnewconst(Sender, filedir(str1) + Info.Name)
+                  else
+                    createnewpo(Sender, filedir(str1) + Info.Name);
+
+                until FindNext(Info) <> 0;
+              FindClose(Info);
+
+            end;
+          paneldone.frame.colorclient := cl_ltgreen;
+          labdone.Caption   := sc[1];
+          paneldone.Visible := True;
+          ttimer1.Enabled   := True;
+
+        end;
+
     end;
 
-    impexpfiledialog.controller.filterindex := 0;
-    application.ProcessMessages;
 
-    langall := '';
-
-    if impexpfiledialog.execute(fdk_open) = mr_ok then 
+  if empty = True then
     begin
-      paneldone.frame.colorclient := $FFD1A1;
-      labdone.Caption   := sc[0];
-      paneldone.Visible := True;
-      application.ProcessMessages;
-      
-      str1 := impexpfiledialog.controller.filename;
-      
-      if alldir.Value = False then
-      begin
-        if TButton(Sender).tag = 0 then
-          createnewconst(Sender, str1)
-        else
-          createnewpo(Sender, str1);
-      end
-      else
-      begin
+      createnewpo(Sender, filedir(str1) + Info.Name);
+      // else  createnewconst(Sender, thistoryedit1.text);
 
-        if TButton(Sender).tag = 0 then
-          str2 := '*.po'
-        else
-          str2 := '*.pas';
-
-        if FindFirst(filedir(str1) + DirectorySeparator + str2, faAnyFile, Info) = 0 then
-          repeat
-            if TButton(Sender).tag = 0 then
-              createnewconst(Sender, filedir(str1) + Info.Name)
-            else
-              createnewpo(Sender, filedir(str1) + Info.Name);
-
-          until FindNext(Info) <> 0;
-        FindClose(Info);
-
-      end;
       paneldone.frame.colorclient := cl_ltgreen;
       labdone.Caption   := sc[1];
       paneldone.Visible := True;
       ttimer1.Enabled   := True;
-
     end;
-
-  end;
-
-
-  if empty = True then
-  begin
-    createnewpo(Sender, filedir(str1) + Info.Name);
-    // else  createnewconst(Sender, thistoryedit1.text);
-
-    paneldone.frame.colorclient := cl_ltgreen;
-    labdone.Caption   := sc[1];
-    paneldone.Visible := True;
-    ttimer1.Enabled   := True;
-  end;
 
 end;
 
-
-///////////////
-
-procedure theaderfo.createnewconst(const Sender: TObject; fn: msestring);
-var
+procedure theaderfo.createnewconst(Const Sender: TObject; fn: msestring);
+var 
   x, y: integer;
   file1: ttextdatastream;
   str1, strinit, strlang, filename1: msestring;
@@ -627,60 +686,20 @@ var
 begin
   str1    := fn;
   strlang := '';
-  
+
   if fileexists(str1) then
-  begin
-
-    file1 := ttextdatastream.Create(str1, fm_read);
-
-    filename1 := copy(filename(str1), 1, length(filename(str1)) - 3);
-    strlang   := trim(copy(filename1, system.pos('_', filename1) + 1, length(filename1)));
-
-    strlang := utf8StringReplace(strlang, '@', '_', [rfReplaceAll]);
-
-    file1.encoding := ce_utf8;
-
-    setlength(constvaluearray, 0);
-
-    file1.readln(str1);
-
-    str3 := '';
-    str2 := '';
-    str4 := '';
-
-    while not file1.EOF do
-    begin
-      str1    := '';
-      file1.readln(str1);
-      strtemp := '';
-      str2    := '';
-      if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-        if (UTF8Copy(str1, 1, 5) = 'msgid') then
-        begin
-          ispocontext := True;
-          str2        := UTF8Copy(str1, 7, length(str1));
-          str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
-          str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
-          if str2 <> '' then
-          begin
-            setlength(constvaluearray, length(constvaluearray) + 1);
-            constvaluearray[length(constvaluearray) - 1] := trim(str2);
-          end;
-        end;
-    end;
-
-    file1.Free;
-
-    str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator + 'ideu_empty.po';
-
-    if fileexists(str1) then
     begin
 
-      file1          := ttextdatastream.Create(str1, fm_read);
+      file1 := ttextdatastream.Create(str1, fm_read);
+
+      filename1 := copy(filename(str1), 1, length(filename(str1)) - 3);
+      strlang   := trim(copy(filename1, system.pos('_', filename1) + 1, length(filename1)));
+
+      strlang := utf8StringReplace(strlang, '@', '_', [rfReplaceAll]);
+
       file1.encoding := ce_utf8;
 
-      setlength(defaultresult, 0);
+      setlength(constvaluearray, 0);
 
       file1.readln(str1);
 
@@ -689,77 +708,118 @@ begin
       str4 := '';
 
       while not file1.EOF do
-      begin
-        str1    := '';
-        file1.readln(str1);
-        strtemp := '';
-        str2    := '';
-        if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-          if (UTF8Copy(str1, 1, 5) = 'msgid') then
-          begin
-            ispocontext := True;
-            str2        := UTF8Copy(str1, 7, length(str1));
-            str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-            str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
-            str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
-            if trim(str2) <> '' then
-            begin
-              setlength(defaultresult, length(defaultresult) + 1);
-              defaultresult[length(defaultresult) - 1] := trim(str2);
-            end;
-          end;
-      end;
+        begin
+          str1    := '';
+          file1.readln(str1);
+          strtemp := '';
+          str2    := '';
+          if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
+            if (UTF8Copy(str1, 1, 5) = 'msgid') then
+              begin
+                ispocontext := True;
+                str2        := UTF8Copy(str1, 7, length(str1));
+                str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+                str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+                str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+                if str2 <> '' then
+                  begin
+                    setlength(constvaluearray, length(constvaluearray) + 1);
+                    constvaluearray[length(constvaluearray) - 1] := trim(str2);
+                  end;
+              end;
+        end;
 
       file1.Free;
+
+      str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator +
+              'ideu_empty.po';
+
+      if fileexists(str1) then
+        begin
+
+          file1          := ttextdatastream.Create(str1, fm_read);
+          file1.encoding := ce_utf8;
+
+          setlength(defaultresult, 0);
+
+          file1.readln(str1);
+
+          str3 := '';
+          str2 := '';
+          str4 := '';
+
+          while not file1.EOF do
+            begin
+              str1    := '';
+              file1.readln(str1);
+              strtemp := '';
+              str2    := '';
+              if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
+                if (UTF8Copy(str1, 1, 5) = 'msgid') then
+                  begin
+                    ispocontext := True;
+                    str2        := UTF8Copy(str1, 7, length(str1));
+                    str2        := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
+                    str2        := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+                    str2        := utf8StringReplace(str2, '"', '', [rfReplaceAll]);
+                    if trim(str2) <> '' then
+                      begin
+                        setlength(defaultresult, length(defaultresult) + 1);
+                        defaultresult[length(defaultresult) - 1] := trim(str2);
+                      end;
+                  end;
+            end;
+
+          file1.Free;
+        end;
+
+      file1          := ttextdatastream.Create(outputdir.Value + 'ideu_' + strlang + '.po',
+                        fm_create);
+      file1.encoding := ce_utf8;
+
+      file1.writeln(memopoheader.Value);
+      file1.writeln();
+
+      // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
+      // writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
+      str2 := '';
+
+      if booaddspace.Value = True then
+        if numofspace.Value > 0 then
+          for x := 1 to numofspace.Value do
+            str2 := str2 + ' ';
+
+      for x := 0 to length(defaultresult) - 1 do
+        begin
+          file1.writeln('msgid "' + defaultresult[x] + '"');
+
+          if x < length(constvaluearray) then
+            begin
+              if trim(constvaluearray[x]) <> '' then
+                file1.writeln('msgstr "' + str2 + constvaluearray[x] + str2 + '"')
+              else
+                file1.writeln('msgstr "' + defaultresult[x] + '"');
+            end
+          else
+            file1.writeln('msgstr "' + defaultresult[x] + '"');
+
+          file1.writeln('');
+        end;
+
+      file1.Free;
+
     end;
-
-    file1          := ttextdatastream.Create(outputdir.Value + 'ideu_' + strlang + '.po', fm_create);
-    file1.encoding := ce_utf8;
-
-    file1.writeln(memopoheader.Value);
-    file1.writeln();
-
-    // writeln('length(defaultresult) ' + inttostr(length(defaultresult)));
-    //  writeln('length(constvaluearray) ' + inttostr(length(constvaluearray)));
-    str2 := '';
-    
-    if booaddspace.value = true then
-    begin
-    if numofspace.value > 0 then
-    for x := 1 to numofspace.value do
-    str2 := str2 + ' ';
-    end;
-
-    for x := 0 to length(defaultresult) - 1 do
-    begin
-      file1.writeln('msgid "' + defaultresult[x] + '"');
-
-      if x < length(constvaluearray) then
-      begin
-        if trim(constvaluearray[x]) <> '' then
-          file1.writeln('msgstr "' + str2 + constvaluearray[x] + str2 + '"')
-        else
-          file1.writeln('msgstr "' + defaultresult[x] + '"');
-       end else file1.writeln('msgstr "' + defaultresult[x] + '"');
-  
-      file1.writeln('');
-    end;
-
-    file1.Free;
-
-  end;
 end;
 
-procedure theaderfo.oncreateform(const Sender: TObject);
+procedure theaderfo.oncreateform(Const Sender: TObject);
 begin
   outputdir.Value := ExtractFilePath(ParamStr(0)) + 'output' + directoryseparator;
-  //impexpfiledialog.controller.filename := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'ideu_empty.po';
+//impexpfiledialog.controller.filename := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'ideu_empty.po';
 end;
 
-procedure theaderfo.ontime(const Sender: TObject);
+procedure theaderfo.ontime(Const Sender: TObject);
 begin
   paneldone.Visible := False;
 end;
 
 end.
-
