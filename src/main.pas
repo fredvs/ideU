@@ -412,7 +412,6 @@ var
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
   isactivated: Boolean = False;
-  MSEFallbacklang: string = '';
   theprojectname: string = '';
   thefilename: string = '';
 
@@ -4915,8 +4914,6 @@ var
   stca: stockcaptionty;
   str : string;
 begin
-
-  //  setlangconsts(thelang);
   createnewlang(thelang);
   
   if thelang = 'zh' then
@@ -5418,8 +5415,8 @@ begin
          conflangfo.lsetasdefault.visible := false;
          conflangfo.lsetasdefault.Caption := '';
          conflangfo.setasdefault.frame.Caption := lang_stockcaption[Ord(sc_setasdefault)];
-       end;   
-      
+       end;
+           
        conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
       
        conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)]; 

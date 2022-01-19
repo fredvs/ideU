@@ -32,6 +32,8 @@ uses
  msesystypes,msethread,mseguiintf,{msesysdnd,}mseassistiveclient,
  msebitmap,msearrayprops,msethreadcomp,mserichstring,msearrayutils
                    {$ifdef mse_with_ifi},mseifiglob,mseificompglob{$endif};
+ var                  
+ MSEFallbacklang: string = '';                   
 
 const
  mseguiversiontext = '5.6.4';

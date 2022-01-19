@@ -1,7 +1,7 @@
 object headerfo: theaderfo
   visible = False
-  bounds_x = 493
-  bounds_y = 200
+  bounds_x = 495
+  bounds_y = 202
   bounds_cx = 446
   bounds_cy = 290
   container.frame.localprops = []
@@ -29,17 +29,17 @@ object headerfo: theaderfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      16
       0
       0
     )
     bounds_x = 8
-    bounds_y = 9
+    bounds_y = 11
     bounds_cx = 428
-    bounds_cy = 36
+    bounds_cy = 32
     anchors = [an_left, an_top, an_right]
     value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
-    reffontheight = 15
+    reffontheight = 13
   end
   object tbutton2: tbutton
     taborder = 1
@@ -58,15 +58,15 @@ object headerfo: theaderfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      117
-      2
+      1
+      95
+      1
     )
     taborder = 2
     bounds_x = 264
-    bounds_y = 22
-    bounds_cx = 130
-    bounds_cy = 17
+    bounds_y = 23
+    bounds_cx = 108
+    bounds_cy = 15
     visible = False
   end
   object tbutton4: tbutton
@@ -92,15 +92,15 @@ object headerfo: theaderfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      16
       0
       0
     )
     taborder = 5
     bounds_x = 40
-    bounds_y = 52
+    bounds_y = 54
     bounds_cx = 370
-    bounds_cy = 39
+    bounds_cy = 35
     statfile = tstatfile1
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -113,7 +113,7 @@ object headerfo: theaderfo
     controller.hideicons = False
     controller.showhidden = False
     controller.options = [fdo_directory, fdo_savelastdir]
-    reffontheight = 15
+    reffontheight = 13
   end
   object booaddspace: tbooleanedit
     frame.caption = 'Add space around words'
@@ -121,16 +121,16 @@ object headerfo: theaderfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      153
-      2
+      1
+      122
+      1
     )
     taborder = 6
     hint = 'Addespace around word (needed for ideograms)'
     bounds_x = 67
-    bounds_y = 255
-    bounds_cx = 166
-    bounds_cy = 17
+    bounds_y = 256
+    bounds_cx = 135
+    bounds_cy = 15
   end
   object numofspace: tintegeredit
     frame.caption = 'Num of spaces'
@@ -140,17 +140,17 @@ object headerfo: theaderfo
     frame.outerframe = (
       0
       0
-      92
+      73
       0
     )
     taborder = 7
     bounds_x = 247
     bounds_y = 253
-    bounds_cx = 129
-    bounds_cy = 21
+    bounds_cx = 110
+    bounds_cy = 19
     value = 2
     valuedefault = 2
-    reffontheight = 15
+    reffontheight = 13
   end
   object paneldone: tgroupbox
     frame.colorclient = 16765345
@@ -158,8 +158,8 @@ object headerfo: theaderfo
     frame.localprops1 = []
     taborder = 3
     visible = False
-    bounds_x = 3
-    bounds_y = 2
+    bounds_x = 4
+    bounds_y = 5
     bounds_cx = 440
     bounds_cy = 282
     object labdone: tlabel

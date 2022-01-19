@@ -87,10 +87,10 @@ findinfiledialog=94
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.po"
+ value="*.pas" "*.pp" "*.inc" 
  history=17
-  "*.po"
   "*.pas" "*.pp" "*.inc" 
+  "*.po"
   "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc"  "*.po"
   "*.pas" "*.pp" "*.inc" "*.mfm" 
@@ -138,8 +138,13 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=Quit process
+ value=MSEFallbackLang :
  history=20
+  MSEFallbackLang :
+  MSEFallbackLang:
+  setlang
+  thelang:
+  thelang :
   Quit process
   Continue process
   c_SIGCONT
@@ -155,13 +160,8 @@ findinfiledialog=94
   Select unit directory
   "Indent"
   There are modifications in edit buffer also.
-  "new"
-  "is modified. Save?"
-  "Confirmation"
-  "forms"
-  msgstr " 
  [findinfileadialogfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=492
  y=201
  cx=346
@@ -170,19 +170,21 @@ finddialog=8
  [finddialogfo.selectedonly]
  value=0
  [finddialogfo]
- stackedunder=
- x=889
- y=461
+ stackedunder=objectinspectorfo
+ x=788
+ y=357
  cx=234
- cy=269
+ cy=258
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
  [replacedialogfo.selectedonly]
- value=0
+ value=1
  [replacedialogfo.replacetext]
- value= "
+ value=] + strz ;
  history=20
+  ] + strz ;
+  ] + str2 ;
    "
    " 
   " 
@@ -201,14 +203,12 @@ replacedialog=33
   @es
   @pt
   @de
-  @ru
-  langdef.text
  [replacedialogfo]
  stackedunder=
  x=958
  y=348
  cx=254
- cy=200
+ cy=192
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -247,7 +247,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=16
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -269,7 +269,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=215
+ y=216
  xprop=1
  yprop=0.39708561020036
  [projectoptionsfo.macrogrid]
@@ -928,30 +928,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=3
  ACTIONSMO
  MAINFO
- STOCKDATA
- HEADERFO
  SOURCEFO
-moduletypes=5
+moduletypes=3
  TACTIONSMO
  TMAINFO
- TSTOCKDATA
- THEADERFO
  TSOURCEFO
-modulefiles=5
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msestockobjects.mfm
- /home/fred/ideu/src/potools.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=14
  4095
  4095
  17
- 194
+ 192
  2046
  4095
  192
@@ -1601,8 +1595,14 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=process
+finddtext=];
 findhistory=20
+ ];
+ lang
+ setlang
+ msegui
+ uses
+ createnewlang
  process
  continue
  abort
@@ -1617,101 +1617,47 @@ findhistory=20
  po_tools
  Select target file
  po_selectmessageoutputfile
- Select unit directory
- po_unitdirs
- Indent
- po_Indent
- There are modifications in edit buffer also.
- 'new'
 findoptions=1
-editpos=11
- 0,-1073741823
- 0,4
+editpos=3
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-sourcefiles=11
+sourcefiles=3
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.mfm
- ${PROJECTDIR}/potools.pas
- ${PROJECTDIR}/mseconsts_ide.pas
- ${PROJECTDIR}/msestockobjects.pas
- ${PROJECTDIR}/actionsmodule.pas
-relpaths=11
+relpaths=3
+ actionsmodule.pas
  main.pas
  sourceform.pas
- ideU.pas
- actionsmodule.pas
- sourceform.pas
- main.mfm
- sourceform.mfm
- potools.pas
- mseconsts_ide.pas
- msestockobjects.pas
- actionsmodule.pas
-ismoduletexts=11
+ismoduletexts=3
  0
  0
  0
- 0
- 0
- -1
- -1
- 0
- 0
- 0
- 0
-modules=5
- /home/fred/ideu/src/potools.mfm
- /home/fred/ideu/src/msestockobjects.mfm
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=5
+moduleoptions=3
  0
  0
  0
- 0
- 0
-visiblemodules=5
+visiblemodules=3
  -1
  -1
  -1
- -1
- 0
-nomenumodules=5
- 0
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=578
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1942,10 +1888,10 @@ windowlayout=578
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=700
+ width0=311
  sortdescend0=0
- width1=129
+ width1=383
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2134,11 +2080,11 @@ windowlayout=578
  nx=0
  ny=0
  ncx=1197
- ncy=56
+ ncy=54
  x=0
  y=0
  cx=1212
- cy=55
+ cy=53
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2148,9 +2094,9 @@ windowlayout=578
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confcompiler.mfm
+ value=/home/fred/ideu/src/sourcepage.pas
  history=20
-  /home/fred/ideu/src/confcompiler.mfm
+  /home/fred/ideu/src/sourcepage.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2192,7 +2138,7 @@ windowlayout=578
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
@@ -2201,7 +2147,7 @@ windowlayout=578
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2233,44 +2179,6 @@ windowlayout=578
  cy=450
  rcx=0
  rcy=0
- [_mse_headerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_stockdata_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=493
- y=200
- cx=456
- cy=290
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_stockdata_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_mainfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=129
- y=57
- cx=198
- cy=85
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2281,8 +2189,8 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=357
- y=252
+ x=358
+ y=253
  cx=742
  cy=101
  rcx=0

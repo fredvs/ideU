@@ -61,7 +61,7 @@ object settings_form: tsettingsfo
     onactivepagechanged = onchange
     tab_frame.localprops = []
     tab_frame.localprops1 = []
-    tab_widthmin = 50
+    tab_widthmin = 100
     tab_coloractivetab = 16775390
     tab_frametab.frameimage_left = -4
     tab_frametab.frameimage_right = -4
@@ -71,7 +71,7 @@ object settings_form: tsettingsfo
     tab_frametab.localprops = [frl_hiddenedges, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom]
     tab_frametab.localprops1 = [frl1_extraspace]
     tab_sizemin = 50
-    tab_size = 80
+    tab_size = 100
     tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_destroywidgets]
     statfile = mainfo.mainstatfile
     reffontheight = 13

@@ -2399,23 +2399,25 @@ begin
 end;
 
 procedure tfiledialogxfo.onformcreated(const Sender: TObject);
+var
+strz : string = '';
 begin
-  fcourseid := -1;
+ if MSEFallbackLang = 'zh' then strz := '             ';
+ fcourseid := -1;
 
-
-    dir.frame.caption:= lang_stockcaption[ord(sc_directory)];
-    home.Caption         := lang_stockcaption[ord(sc_homehk)];
-    //  up.caption:= lang_stockcaption[ord(sc_uphk)];
-    createdir.Caption    := lang_stockcaption[ord(sc_new_dirhk)];
-    createdir.hint    := lang_stockcaption[ord(sc_create_new_directory)];
-    filename.frame.caption:= lang_stockcaption[ord(sc_namehk)];
-    filter.frame.Caption := lang_stockcaption[ord(sc_filterhk)];
-    showhidden.frame.caption:= lang_stockcaption[ord(sc_show_hidden_fileshk)];
-    ok.Caption           := lang_modalresult[Ord(mr_ok)];
-    cancel.Caption       := lang_modalresult[Ord(mr_cancel)];
-    bnoicon.frame.caption:= lang_stockcaption[ord(sc_noicons)];
-    blateral.frame.caption:= lang_stockcaption[ord(sc_nolateral)];
-    bcompact.frame.caption:= lang_stockcaption[ord(sc_compact)];
+    dir.frame.caption:= lang_stockcaption[ord(sc_directory)] + strz ;
+    home.Caption         := lang_stockcaption[ord(sc_homehk)] + strz ;
+    //  up.caption:= lang_stockcaption[ord(sc_uphk)] + strz ;
+    createdir.Caption    := lang_stockcaption[ord(sc_new_dirhk)] + strz ;
+    createdir.hint    := lang_stockcaption[ord(sc_create_new_directory)] + strz ;
+    filename.frame.caption:= lang_stockcaption[ord(sc_namehk)] + strz ;
+    filter.frame.Caption := lang_stockcaption[ord(sc_filterhk)] + strz ;
+    showhidden.frame.caption:= lang_stockcaption[ord(sc_show_hidden_fileshk)] + strz ;
+    ok.Caption           := lang_modalresult[Ord(mr_ok)] + strz ;
+    cancel.Caption       := lang_modalresult[Ord(mr_cancel)] + strz ;
+    bnoicon.frame.caption:= lang_stockcaption[ord(sc_noicons)] + strz ;
+    blateral.frame.caption:= lang_stockcaption[ord(sc_nolateral)] + strz ;
+    bcompact.frame.caption:= lang_stockcaption[ord(sc_compact)] + strz ;
        // caption := 'Select a file';
 
   back.tag    := Ord(sc_back);

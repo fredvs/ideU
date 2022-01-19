@@ -33,14 +33,17 @@ object confcompilerfo: tconfcompilerfo
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
     onactivepagechanged = onfocus
+    tab_frame.buttonframe.colorclient = -2147483645
     tab_frame.buttonframe.localprops = []
     tab_frame.buttonframe.localprops1 = [frl1_extraspace]
     tab_frame.localprops = []
     tab_frame.localprops1 = []
+    tab_widthmin = 80
     tab_frametab.extraspace = 6
     tab_frametab.localprops = []
     tab_frametab.localprops1 = [frl1_extraspace]
-    tab_size = 20
+    tab_sizemin = 40
+    tab_size = 40
     tab_optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     object tab_pascal: ttabpage
       frame.localprops = []
@@ -48,9 +51,9 @@ object confcompilerfo: tconfcompilerfo
       taborder = 1
       onfocus = onfocus
       bounds_x = 0
-      bounds_y = 20
+      bounds_y = 18
       bounds_cx = 593
-      bounds_cy = 589
+      bounds_cy = 591
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Pascal'
       object twinep3: tbooleanedit
@@ -60,15 +63,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 5
         bounds_x = 6
-        bounds_y = 194
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 195
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep4: tbooleanedit
         frame.caption = 'wine'
@@ -77,15 +80,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 7
         bounds_x = 6
-        bounds_y = 260
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 261
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep5: tbooleanedit
         frame.caption = 'wine'
@@ -94,15 +97,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 9
         bounds_x = 6
-        bounds_y = 336
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 337
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep6: tbooleanedit
         frame.caption = 'wine'
@@ -111,15 +114,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 11
         bounds_x = 6
-        bounds_y = 413
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 414
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep7: tbooleanedit
         frame.caption = 'wine'
@@ -128,15 +131,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 13
         bounds_x = 6
-        bounds_y = 486
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 487
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep8: tbooleanedit
         frame.caption = 'wine'
@@ -145,15 +148,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 15
         bounds_x = 6
-        bounds_y = 556
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 557
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object fpccompiler8: tfilenameeditx
         Tag = 7
@@ -178,16 +181,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 14
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 537
+        bounds_y = 539
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -244,7 +247,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler7: tfilenameeditx
         Tag = 7
@@ -269,16 +272,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 12
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 466
+        bounds_y = 468
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -335,7 +338,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler6: tfilenameeditx
         Tag = 7
@@ -360,16 +363,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 10
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 393
+        bounds_y = 395
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -426,7 +429,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler5: tfilenameeditx
         Tag = 7
@@ -451,16 +454,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 8
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 314
+        bounds_y = 316
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -517,7 +520,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler4: tfilenameeditx
         Tag = 7
@@ -542,16 +545,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 6
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 241
+        bounds_y = 243
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -608,7 +611,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler3: tfilenameeditx
         Tag = 7
@@ -633,16 +636,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 4
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 173
+        bounds_y = 175
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -699,7 +702,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler2: tfilenameeditx
         Tag = 7
@@ -724,16 +727,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 2
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 100
+        bounds_y = 102
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -790,7 +793,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object twinep2: tbooleanedit
         frame.caption = 'wine'
@@ -799,15 +802,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 3
         bounds_x = 6
-        bounds_y = 119
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 120
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinep1: tbooleanedit
         frame.caption = 'wine'
@@ -816,24 +819,24 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 1
         bounds_x = 6
-        bounds_y = 48
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 49
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object tlabel2: tlabel
         taborder = 16
         bounds_x = 9
         bounds_y = 11
-        bounds_cx = 55
-        bounds_cy = 15
+        bounds_cx = 42
+        bounds_cy = 13
         caption = 'Emulator'
-        reffontheight = 15
+        reffontheight = 13
       end
       object fpccompiler: tfilenameeditx
         frame.colorclient = 16769279
@@ -857,15 +860,15 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         hint = 'Path to pascal compiler'
         bounds_x = 90
-        bounds_y = 28
+        bounds_y = 30
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -922,7 +925,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
     end
     object tab_c: ttabpage
@@ -931,9 +934,9 @@ object confcompilerfo: tconfcompilerfo
       frame.template = mainfo.tframecomp3
       taborder = 2
       bounds_x = 0
-      bounds_y = 20
+      bounds_y = 18
       bounds_cx = 593
-      bounds_cy = 589
+      bounds_cy = 591
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&C'
       object ccompiler2: tfilenameeditx
@@ -959,16 +962,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 2
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 103
+        bounds_y = 105
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1025,7 +1028,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler3: tfilenameeditx
         Tag = 7
@@ -1050,16 +1053,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 4
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 178
+        bounds_y = 180
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1116,7 +1119,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler4: tfilenameeditx
         Tag = 7
@@ -1141,16 +1144,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 6
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 250
+        bounds_y = 252
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1207,7 +1210,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler5: tfilenameeditx
         Tag = 7
@@ -1232,16 +1235,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 8
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 323
+        bounds_y = 325
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1298,7 +1301,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler6: tfilenameeditx
         Tag = 7
@@ -1323,16 +1326,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 10
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 401
+        bounds_y = 403
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1389,7 +1392,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler7: tfilenameeditx
         Tag = 7
@@ -1414,16 +1417,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 12
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 470
+        bounds_y = 472
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1480,7 +1483,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler8: tfilenameeditx
         Tag = 7
@@ -1505,16 +1508,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 14
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 540
+        bounds_y = 542
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1571,7 +1574,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object twinec8: tbooleanedit
         frame.caption = 'wine'
@@ -1580,15 +1583,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 15
         bounds_x = 6
-        bounds_y = 562
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 563
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec7: tbooleanedit
         frame.caption = 'wine'
@@ -1597,15 +1600,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 13
         bounds_x = 6
-        bounds_y = 491
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 492
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec6: tbooleanedit
         frame.caption = 'wine'
@@ -1614,15 +1617,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 11
         bounds_x = 6
-        bounds_y = 422
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 423
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec5: tbooleanedit
         frame.caption = 'wine'
@@ -1631,15 +1634,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 9
         bounds_x = 6
-        bounds_y = 343
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 344
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec4: tbooleanedit
         frame.caption = 'wine'
@@ -1648,15 +1651,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 7
         bounds_x = 6
-        bounds_y = 273
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 274
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec3: tbooleanedit
         frame.caption = 'wine'
@@ -1665,15 +1668,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 5
         bounds_x = 6
-        bounds_y = 200
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 201
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec2: tbooleanedit
         frame.caption = 'wine'
@@ -1682,15 +1685,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 3
         bounds_x = 6
-        bounds_y = 127
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 128
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinec1: tbooleanedit
         frame.caption = 'wine'
@@ -1699,24 +1702,24 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 1
         bounds_x = 6
-        bounds_y = 53
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 54
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object tlabel7: tlabel
         taborder = 16
         bounds_x = 7
         bounds_y = 16
-        bounds_cx = 55
-        bounds_cy = 15
+        bounds_cx = 42
+        bounds_cy = 13
         caption = 'Emulator'
-        reffontheight = 15
+        reffontheight = 13
       end
       object ccompiler: tfilenameeditx
         Tag = 7
@@ -1741,15 +1744,15 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         hint = 'Path to C compiler'
         bounds_x = 90
-        bounds_y = 33
+        bounds_y = 35
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1806,7 +1809,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
     end
     object tab_java: ttabpage
@@ -1814,9 +1817,9 @@ object confcompilerfo: tconfcompilerfo
       frame.localprops1 = []
       taborder = 3
       bounds_x = 0
-      bounds_y = 20
+      bounds_y = 18
       bounds_cx = 593
-      bounds_cy = 589
+      bounds_cy = 591
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Java'
       object twinej1: tbooleanedit
@@ -1826,15 +1829,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          1
-          31
-          1
+          0
+          25
+          0
         )
         taborder = 1
         bounds_x = 6
-        bounds_y = 74
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 75
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinej2: tbooleanedit
         frame.caption = 'wine'
@@ -1843,15 +1846,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          1
-          31
-          1
+          0
+          25
+          0
         )
         taborder = 3
         bounds_x = 6
-        bounds_y = 154
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 155
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinej3: tbooleanedit
         frame.caption = 'wine'
@@ -1860,15 +1863,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          1
-          31
-          1
+          0
+          25
+          0
         )
         taborder = 5
         bounds_x = 6
-        bounds_y = 231
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 232
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinej4: tbooleanedit
         frame.caption = 'wine'
@@ -1877,15 +1880,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          1
-          31
-          1
+          0
+          25
+          0
         )
         taborder = 7
         bounds_x = 6
-        bounds_y = 308
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 309
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object javacompiler4: tfilenameeditx
         Tag = 7
@@ -1910,16 +1913,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 6
         hint = 'Path to Java compiler'
         bounds_x = 80
-        bounds_y = 286
+        bounds_y = 288
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -1976,7 +1979,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object javacompiler3: tfilenameeditx
         Tag = 7
@@ -2001,16 +2004,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 4
         hint = 'Path to Java compiler'
         bounds_x = 80
-        bounds_y = 210
+        bounds_y = 212
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2067,7 +2070,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object javacompiler2: tfilenameeditx
         Tag = 7
@@ -2092,16 +2095,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 2
         hint = 'Path to Java compiler'
         bounds_x = 80
-        bounds_y = 134
+        bounds_y = 136
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2158,7 +2161,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object javacompiler: tfilenameeditx
         Tag = 7
@@ -2183,15 +2186,15 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         hint = 'Path to Java compiler'
         bounds_x = 80
-        bounds_y = 54
+        bounds_y = 56
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2248,16 +2251,16 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object tlabel3: tlabel
         taborder = 8
         bounds_x = 9
         bounds_y = 26
-        bounds_cx = 55
-        bounds_cy = 15
+        bounds_cx = 42
+        bounds_cy = 13
         caption = 'Emulator'
-        reffontheight = 15
+        reffontheight = 13
       end
     end
     object tab_python: ttabpage
@@ -2265,9 +2268,9 @@ object confcompilerfo: tconfcompilerfo
       frame.localprops1 = []
       taborder = 4
       bounds_x = 0
-      bounds_y = 20
+      bounds_y = 18
       bounds_cx = 593
-      bounds_cy = 589
+      bounds_cy = 591
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'P&ython'
       object twinepy3: tbooleanedit
@@ -2277,15 +2280,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 5
         bounds_x = 6
-        bounds_y = 211
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 212
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinepy4: tbooleanedit
         frame.caption = 'wine'
@@ -2294,15 +2297,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 7
         bounds_x = 6
-        bounds_y = 298
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 299
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object pythoncompiler4: tfilenameeditx
         Tag = 7
@@ -2327,16 +2330,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 6
         hint = 'Path to python compiler'
         bounds_x = 80
-        bounds_y = 278
+        bounds_y = 280
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2393,7 +2396,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object pythoncompiler3: tfilenameeditx
         Tag = 7
@@ -2418,16 +2421,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 4
         hint = 'Path to python compiler'
         bounds_x = 80
-        bounds_y = 190
+        bounds_y = 192
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2484,7 +2487,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object pythoncompiler2: tfilenameeditx
         Tag = 7
@@ -2509,16 +2512,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 2
         hint = 'Path to python compiler'
         bounds_x = 80
-        bounds_y = 113
+        bounds_y = 115
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2575,7 +2578,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object twinepy2: tbooleanedit
         frame.caption = 'wine'
@@ -2584,15 +2587,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 3
         bounds_x = 6
-        bounds_y = 132
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 133
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twinepy1: tbooleanedit
         frame.caption = 'wine'
@@ -2601,15 +2604,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 1
         bounds_x = 6
-        bounds_y = 56
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 57
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object pythoncompiler: tfilenameeditx
         Tag = 7
@@ -2634,15 +2637,15 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         hint = 'Path to python compiler'
         bounds_x = 80
-        bounds_y = 37
+        bounds_y = 39
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2699,16 +2702,16 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object tlabel4: tlabel
         taborder = 8
         bounds_x = 11
         bounds_y = 17
-        bounds_cx = 55
-        bounds_cy = 15
+        bounds_cx = 42
+        bounds_cy = 13
         caption = 'Emulator'
-        reffontheight = 15
+        reffontheight = 13
       end
     end
     object tab_other: ttabpage
@@ -2716,9 +2719,9 @@ object confcompilerfo: tconfcompilerfo
       frame.localprops1 = []
       taborder = 5
       bounds_x = 0
-      bounds_y = 20
+      bounds_y = 18
       bounds_cx = 593
-      bounds_cy = 589
+      bounds_cy = 591
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
       object othercompiler3: tfilenameeditx
@@ -2744,16 +2747,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 4
         hint = 'Path to Other compiler'
         bounds_x = 80
-        bounds_y = 185
+        bounds_y = 187
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2810,7 +2813,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object twineo2: tbooleanedit
         frame.caption = 'wine'
@@ -2819,15 +2822,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 3
         bounds_x = 6
-        bounds_y = 124
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 125
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twineo1: tbooleanedit
         frame.caption = 'wine'
@@ -2836,15 +2839,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 1
         bounds_x = 6
-        bounds_y = 48
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 49
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object othercompiler: tfilenameeditx
         Tag = 7
@@ -2869,15 +2872,15 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         hint = 'Path to Other compiler'
         bounds_x = 82
-        bounds_y = 25
+        bounds_y = 27
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -2934,7 +2937,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object othercompiler4: tfilenameeditx
         Tag = 7
@@ -2959,16 +2962,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 6
         hint = 'Path to Other compiler'
         bounds_x = 80
-        bounds_y = 266
+        bounds_y = 268
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -3025,7 +3028,7 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object twineo4: tbooleanedit
         frame.caption = 'wine'
@@ -3034,15 +3037,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 7
         bounds_x = 6
-        bounds_y = 286
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 287
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object twineo3: tbooleanedit
         frame.caption = 'wine'
@@ -3051,15 +3054,15 @@ object confcompilerfo: tconfcompilerfo
         frame.template = mainfo.menuitemframe
         frame.outerframe = (
           0
-          2
-          31
-          2
+          1
+          25
+          1
         )
         taborder = 5
         bounds_x = 6
-        bounds_y = 206
-        bounds_cx = 44
-        bounds_cy = 17
+        bounds_y = 207
+        bounds_cx = 38
+        bounds_cy = 15
       end
       object othercompiler2: tfilenameeditx
         Tag = 7
@@ -3084,16 +3087,16 @@ object confcompilerfo: tconfcompilerfo
         frame.button.imagenr = 17
         frame.outerframe = (
           0
-          18
+          16
           0
           0
         )
         taborder = 2
         hint = 'Path to Other compiler'
         bounds_x = 80
-        bounds_y = 103
+        bounds_y = 105
         bounds_cx = 480
-        bounds_cy = 39
+        bounds_cy = 35
         controller.fontheight = 0
         controller.fontname = 'stf_default'
         controller.fontcolor = -1610612734
@@ -3150,16 +3153,16 @@ object confcompilerfo: tconfcompilerfo
         controller.showhidden = False
         controller.options = [fdo_sysfilename, fdo_savelastdir]
         controller.captionopen = 'Compiler path'
-        reffontheight = 15
+        reffontheight = 13
       end
       object tlabel5: tlabel
         taborder = 8
         bounds_x = 10
         bounds_y = 15
-        bounds_cx = 55
-        bounds_cy = 15
+        bounds_cx = 42
+        bounds_cy = 13
         caption = 'Emulator'
-        reffontheight = 15
+        reffontheight = 13
       end
     end
   end

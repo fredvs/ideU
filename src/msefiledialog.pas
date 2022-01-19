@@ -1583,16 +1583,20 @@ begin
 end;
 
 procedure tfiledialogfo.formoncreate(const sender: TObject);
+var
+strz : string = '';
 begin
+ if MSEFallbackLang = 'zh' then strz := '             ';
+
  fcourseid:= -1;
  
-  dir.frame.caption:= lang_stockcaption[ord(sc_dirhk)];
-  home.caption:= lang_stockcaption[ord(sc_homehk)];
-//  up.caption:= lang_stockcaption[ord(sc_uphk];
-  createdir.caption:= lang_stockcaption[ord(sc_new_dirhk)];
-  filename.frame.caption:= lang_stockcaption[ord(sc_namehk)];
-  filter.frame.caption:= lang_stockcaption[ord(sc_filterhk)];
-  showhidden.frame.caption:= lang_stockcaption[ord(sc_show_hidden_fileshk)];
+  dir.frame.caption:= lang_stockcaption[ord(sc_dirhk)] + strz ;
+  home.caption:= lang_stockcaption[ord(sc_homehk)] + strz ;
+//  up.caption:= lang_stockcaption[ord(sc_uphk] + strz ;
+  createdir.caption:= lang_stockcaption[ord(sc_new_dirhk)] + strz ;
+  filename.frame.caption:= lang_stockcaption[ord(sc_namehk)] + strz ;
+  filter.frame.caption:= lang_stockcaption[ord(sc_filterhk)] + strz ;
+  showhidden.frame.caption:= lang_stockcaption[ord(sc_show_hidden_fileshk)] + strz ;
   ok.caption:= lang_modalresult[ord(mr_ok)];
   cancel.caption:= lang_modalresult[ord(mr_cancel)];
  
