@@ -624,6 +624,7 @@ end;
 
 procedure tmainfo.mainfooncreate(Const Sender: TObject);
 begin
+ setlangideu(MSEFallbackLang);
 
   nozorderhandling := True;
   designer.ongetmodulenamefile := 
@@ -5995,19 +5996,23 @@ end;
 procedure tmainfo.onactiv(Const Sender: TObject);
 var 
   x: integer;
+  oldlang : msestring;
 begin
   if isactivated = False then
     begin
       isactivated        := True;
       conflangfo.Visible := False;
+      oldlang := MSEFallbackLang;
 
       if conflangfo.setasdefault.Value = True then
         begin
           for x := 0 to conflangfo.gridlang.rowcount - 1 do
             if conflangfo.gridlangbool[x] = True then
               MSEFallbackLang := conflangfo.gridlangcode[x];
+          
+          if oldlang <> MSEFallbackLang then setlangideu(MSEFallbackLang);    
         end;
-      setlangideu(MSEFallbackLang);
+      //
     end;       
 end;
 

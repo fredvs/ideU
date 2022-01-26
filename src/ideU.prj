@@ -1227,7 +1227,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=31
+on=28
  0
  0
  0
@@ -1256,10 +1256,7 @@ on=31
  0
  0
  0
- 0
- 0
- 0
-path=31
+path=28
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1285,17 +1282,14 @@ path=31
  /home/fred/ideu/src/main.pas
  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
  /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
- /home/fred/ideu/src/ideU.pas
- /home/fred/ideu/src/ideU.pas
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
  /home/fred/mseide-msegui/lib/common/db/firebird.pas
- /home/fred/ideu/src/ideU.pas
  /home/fred/ideu/src/main.pas
-line=31
+line=28
  2129
  1158
  609
- 4066
+ 4067
  660
  119
  1115
@@ -1307,23 +1301,20 @@ line=31
  564
  458
  66
- 4341
+ 4342
  684
  98
  15
  786
  908
  2573
- 5807
+ 5808
  1882
  6135
- 166
- 143
  18
  8
- 90
- 3523
-address=31
+ 3524
+address=28
  4879232
  4690754
  4841781
@@ -1349,13 +1340,10 @@ address=31
  4975711
  4992348
  6373763
- 4220837
- 4220544
  8629549
  10610941
- 4219764
  4911666
-addbkpt=31
+addbkpt=28
  0
  0
  0
@@ -1384,11 +1372,7 @@ addbkpt=31
  0
  0
  0
- 0
- 0
- 0
-ignore=31
- 0
+ignore=28
  0
  0
  0
@@ -1417,12 +1401,7 @@ ignore=31
  0
  0
  0
- 0
- 0
-condition=31
- 
- 
- 
+condition=28
  
  
  
@@ -1598,12 +1577,12 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=mseimagestr
+finddtext=setlang
 findhistory=20
+ setlang
  file
  ];
  lang
- setlang
  msegui
  uses
  createnewlang
@@ -1621,26 +1600,31 @@ findhistory=20
  po_tools
  Select target file
 findoptions=1
-editpos=4
+editpos=5
  0,-1073741823
- 0,91
+ 0,-1073741823
  0,-1073741823
  0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=4
+ ${PROJECTDIR}/ideU.pas
+relpaths=5
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
-ismoduletexts=4
+ ideU.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -1662,10 +1646,16 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 1
+ 3
+ 4
+ 2
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=540
+windowlayout=567
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1690,7 +1680,10 @@ windowlayout=540
  visible=1
  [findmessagefo.findtext]
  value=
- history=0
+ history=3
+  not inlined
+  linux
+  used
  [findmessagefo.casesensitive]
  value=0
  [findmessagefo.copytoclip]
@@ -1712,7 +1705,7 @@ windowlayout=540
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1922,7 +1915,25 @@ windowlayout=540
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=0
+ values0=18
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  width0=111
  sortdescend0=0
  width1=125
@@ -2102,7 +2113,7 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
   /home/fred/atest/test.prj
@@ -2145,8 +2156,14 @@ windowlayout=540
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  1
+  3
+  4
+  2
  firsttab=0
- index=1
+ index=2
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]
