@@ -4,8 +4,8 @@ unit make;
 
 interface
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
  msestrings, msetypes, msesystypes, msegraphedits, msepipestream;
 
 procedure domake(atag: integer);

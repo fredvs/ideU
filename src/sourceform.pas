@@ -18,8 +18,8 @@ interface
 {$endif}
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   confideu,
   ideusettings,
   commandorform,

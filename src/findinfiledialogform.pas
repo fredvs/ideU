@@ -21,8 +21,8 @@ unit findinfiledialogform;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   finddialogform,
   findinfileform,
   mseforms,

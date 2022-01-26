@@ -28,8 +28,8 @@ procedure findpofiles();
 implementation
 
 uses
-  msestockobjects,
-  mseconsts_ide;
+  msestockobjects_dynpo,
+  mseconsts_dynpo;
 
 var
   constvaluearray: array of msestring;

@@ -3,8 +3,8 @@ unit confcompiler;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
-  msestockobjects,
-  mseconsts_ide,
+  msestockobjects_dynpo,
+  mseconsts_dynpo,
   msetypes,
   mseglob,
   mseguiglob,

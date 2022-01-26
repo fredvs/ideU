@@ -20,8 +20,8 @@ unit breakpointsform;
 
 interface
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
  msegui,msegraphics,mseguiglob,msestringcontainer;

@@ -20,8 +20,8 @@ unit findinfilepage;
 
 interface
 uses
-  msestockobjects,mseglob,
-  mseconsts_ide,
+  msestockobjects_dynpo,mseglob,
+  mseconsts_dynpo,
   msetypes,msegui,mseclasses,mseforms,msetabs,msetextedit,msewidgetgrid,msegrids,
  msethreadcomp,findinfileform,msesimplewidgets,msedispwidgets,msestrings,
  classes,mclasses,msestringcontainer;

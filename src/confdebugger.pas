@@ -4,8 +4,8 @@ unit confdebugger;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   msetypes,
   mseglob,
   mseguiglob,

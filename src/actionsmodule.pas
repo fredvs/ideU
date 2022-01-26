@@ -6,36 +6,11 @@ unit actionsmodule;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
-  Classes,
-  mseclasses,
-  mseact,
-  msetabs,
-  mseactions,
-  msebitmap,
-  msestrings,
-  msegui,
-  commandorform,
-  dialogfiles,
-  msefileutils,
-  msedatamodules,
-  mseglob,
-  msestat,
-  msegraphics,
-  msegraphutils,
-  mseguiglob,
-  msemenus,
-  msesys,
-  msesysutils,
-  msesimplewidgets,
-  projecttreeform,
-  msestringcontainer,
-  targetconsole,
-  mclasses,
-  mseificomp,
-  mseificompglob,
-  mseifiglob;
+ mseconsts_dynpo,msestockobjects_dynpo,Classes,mseclasses,mseact,msetabs,
+ mseactions,msebitmap,msestrings,msegui,commandorform,dialogfiles,msefileutils,
+ msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
+ msesys,msesysutils,msesimplewidgets,projecttreeform,msestringcontainer,
+ targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob, msetypes;
 
 type
   tactionsmo = class(tmsedatamodule)
@@ -163,6 +138,7 @@ type
     procedurelist: taction;
     deleteword: taction;
     selectword: taction;
+   c: tstringcontainer;
     procedure findinfileonexecute(const Sender: TObject);
 
     //file
@@ -303,7 +279,6 @@ uses
   sourceform,
   sourcepage,
   msedesigner,
-  msetypes,
   msefiledialogx,
   projectoptionsform,
   findinfileform,

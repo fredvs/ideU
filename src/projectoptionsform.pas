@@ -10,7 +10,7 @@ unit projectoptionsform;
 interface
 
 uses
- mseconsts_ide, msestockobjects,mseforms,msefiledialogx,mseapplication,msegui,
+ mseconsts_dynpo, msestockobjects_dynpo,mseforms,msefiledialogx,mseapplication,msegui,
  msestat,msestatfile,msetabs,msesimplewidgets,msetypes,msestrings,msedataedits,
  msetextedit,msegraphedits,msewidgetgrid,msegrids,msesplitter,msemacros,
  msegdbutils,msedispwidgets,msesys,mseclasses,msegraphutils,mseevent,

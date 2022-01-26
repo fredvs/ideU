@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -108,15 +108,16 @@ findinfiledialog=94
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/ideu_bin/
+  /home/fred/mseide-msegui/
  filecolwidth=150
- x=459
- y=211
+ x=466
+ y=190
  cx=608
  cy=346
  filehistory=20
-  /home/fred/ideu_bin/
   /home/fred/mseide-msegui/
+  /home/fred/ideu_po/
+  /home/fred/ideu_bin/
   /home/fred/fpc331trunk/
   /home/fred/strumpract/src/
   /home/fred/ideu_github/
@@ -134,12 +135,19 @@ findinfiledialog=94
   /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
   /home/fred/CodeTyphonIns700/
   /home/fred/msefpc/freepascal-ootb/
-  /home/fred/svnfpctrunk/trunk/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.*"
+ filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=MSEFallbackLang :
+ value=actionsmodule
  history=20
+  actionsmodule
+  actionmodule
+  blinkingcaret
+  sc_file
+  mseconsts_ide
+  mseconsts_
+  msestockobjects
+  msestock
   MSEFallbackLang :
   MSEFallbackLang:
   setlang
@@ -152,29 +160,21 @@ findinfiledialog=94
   "Project"
   "Projectl"
   "cancel"
-  sc_cancel
-  mr_cancel
-  lang_modalresultnoshortcut
-  "tools"
-  "name"
-  Select unit directory
-  "Indent"
-  There are modifications in edit buffer also.
  [findinfileadialogfo]
  stackedunder=
- x=492
- y=201
+ x=707
+ y=177
  cx=346
  cy=308
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
  [finddialogfo]
- stackedunder=objectinspectorfo
+ stackedunder=
  x=788
  y=357
  cx=234
- cy=258
+ cy=269
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
@@ -247,7 +247,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -269,7 +269,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=216
+ y=215
  xprop=1
  yprop=0.39708561020036
  [projectoptionsfo.macrogrid]
@@ -686,7 +686,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=14
+makeoptions=15
  -Mobjfpc -Sh -Fcutf8
  -dmse_with_zeoslib
  -gl
@@ -697,11 +697,12 @@ makeoptions=14
  -Cg -k-pie -k-znow
  -k--gc-sections
  -dmorecomponents
+ -dmse_dynpo
  -SIcorba
  -FUunits
  -vewinhq
  -dclass_bridge
-makeoptpurpose=14
+makeoptpurpose=15
  Define Object Pascal
  Zeos components
  Debug infos
@@ -712,6 +713,7 @@ makeoptpurpose=14
  Make a PIE executable
  Garbage collector
  Add extended components
+ Use dynamic loading of po files
  Cobra Interface
  Output of units
  Verbosity
@@ -941,17 +943,18 @@ modulefiles=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=14
+makeoptionson=15
  4095
  4095
  17
- 192
+ 196
  2046
  4095
  192
  0
  0
  0
+ 4095
  4095
  2047
  4095
@@ -1290,7 +1293,7 @@ path=31
  /home/fred/ideu/src/main.pas
 line=31
  2129
- 1183
+ 1158
  609
  4066
  660
@@ -1302,7 +1305,7 @@ line=31
  3332
  119
  564
- 483
+ 458
  66
  4341
  684
@@ -1595,8 +1598,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=];
+finddtext=mseimagestr
 findhistory=20
+ file
  ];
  lang
  setlang
@@ -1616,24 +1620,28 @@ findhistory=20
  'tools'
  po_tools
  Select target file
- po_selectmessageoutputfile
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
+ 0,91
  0,-1073741823
- 23,2
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=3
+ ${PROJECTDIR}/ideU.pas
+relpaths=4
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=3
+ ideU.pas
+ismoduletexts=4
+ 0
  0
  0
  0
@@ -1655,7 +1663,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=1
 [layout]
 windowlayout=540
  [mainfo.basedock]
@@ -1704,7 +1712,7 @@ windowlayout=540
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1808,8 +1816,8 @@ windowlayout=540
  width1=86
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1888,10 +1896,10 @@ windowlayout=540
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=700
- width0=311
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=383
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2080,11 +2088,11 @@ windowlayout=540
  nx=0
  ny=0
  ncx=1197
- ncy=52
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=51
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2094,9 +2102,9 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourcepage.pas
+ value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/sourcepage.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2138,7 +2146,7 @@ windowlayout=540
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=1
  [confideufo.fontname]
  value=stf_default
  [confideufo.usedefaulteditoroptions]

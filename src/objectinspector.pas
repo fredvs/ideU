@@ -30,7 +30,7 @@ interface
   {$endif}
 {$endif}
 uses
- mseconsts_ide,
+ mseconsts_dynpo,
  mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
@@ -261,7 +261,7 @@ var
 implementation
 uses
  objectinspector_mfm,sysutils,msearrayprops,actionsmodule,mseformatstr,
- msebitmap,msedrag,mseeditglob,msestockobjects,msedropdownlist, confideu,
+ msebitmap,msedrag,mseeditglob,msestockobjects_dynpo,msedropdownlist, confideu,
  sourceupdate,sourceform,msekeyboard,main,msedatalist,msecolordialog;
 
 {$ifndef mse_allwarnings}

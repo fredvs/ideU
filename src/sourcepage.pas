@@ -17,8 +17,8 @@ interface
 {$endif}
 
 uses
- mseconsts_ide,
- msestockobjects,
+ mseconsts_dynpo,
+ msestockobjects_dynpo,
  msetextedit,msewidgetgrid,mseforms,classes,mclasses,msegdbutils, confideu,
  msegraphedits,mseevent,msehash,msebitmap,msetabs,msetypes,msedataedits,mseglob,
  mseguiglob,msegui,msesyntaxedit,mseeditglob,mseinplaceedit,msedispwidgets,

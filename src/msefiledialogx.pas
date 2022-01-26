@@ -679,7 +679,7 @@ uses
   mseactions,
   msestringenter,
   msekeyboard,
-  msestockobjects,
+  msestockobjects_dynpo,
   msesysintf,
   commandorform, // extra ideu
   msearrayutils;

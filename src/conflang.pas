@@ -36,7 +36,7 @@ implementation
 uses
   main,
   confideu,
-  msestockobjects,
+  msestockobjects_dynpo,
   potools,
   confcompiler,
   confdebugger,

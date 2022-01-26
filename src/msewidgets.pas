@@ -1476,14 +1476,20 @@ procedure getwindowicon(const abitmap: tmaskedbitmap; out aicon,amask: pixmapty;
 
 procedure buttonoptionstoshapestate(avalue: buttonoptionsty;
                                               var astate: shapestatesty);
-                                              
+
 var
 messagefontheight : integer = 12;
-messagefontname : msestring = 'stf_default';                                              
+messagefontname : msestring = 'stf_default';
 
 implementation
 uses
- msebits,mseguiintf,msestockobjects,msekeyboard,sysutils,msemenuwidgets, 
+ msebits,mseguiintf,
+{$ifdef mse_dynpo}
+ msestockobjects_dynpo,
+{$else}
+ msestockobjects,
+{$endif}
+ msekeyboard,sysutils,msemenuwidgets,
  mseactions,msepointer,msestreaming,msesys,msearrayutils,mseassistiveserver;
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -1692,9 +1698,10 @@ end;
 function confirmsavechangedfile(const filename: filenamety;
          out modalresult: modalresultty; multiple: boolean = false): boolean;
 begin
- 
+
   if multiple then begin
-   modalresult:= showmessage(lang_actionsmodule[ord(ac_file)] +' '+filename+' '+
+ {$ifdef mse_dynpo}
+ modalresult:= showmessage(lang_actionsmodule[ord(ac_file)] +' '+filename+' '+
                   lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(sc_confirmation)],
                    [mr_yes,mr_all,mr_no,mr_noall,mr_cancel],mr_yes);
   end
@@ -1702,6 +1709,17 @@ begin
    modalresult:= showmessage(lang_actionsmodule[ord(ac_file)]+' '+filename+' '+
                   lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(sc_confirmation)],
                    [mr_yes,mr_no,mr_cancel],mr_yes);
+
+{$else}
+  modalresult:= showmessage(sc(sc_file) +' '+filename+' '+
+                  sc(sc_is_modified_save),sc(sc_confirmation),
+                   [mr_yes,mr_all,mr_no,mr_noall,mr_cancel],mr_yes);
+  end
+  else begin
+   modalresult:= showmessage(sc(sc_file)+' '+filename+' '+
+                  sc(sc_is_modified_save),sc(sc_confirmation),
+                   [mr_yes,mr_no,mr_cancel],mr_yes);
+{$endif}
   end;
 
 {
@@ -1934,7 +1952,7 @@ begin
                high(actions) >= 0,exttext,pshowmessageinfoty(adata));
    widget.name:= '_showmessage'; //debug purpose
    widget.parentwidget:= widget1; //do not create window handle of widget
-   
+
    try
     acanvas:= widget1.getcanvas;
     acanvas.font.color := cl_black;
@@ -1942,8 +1960,12 @@ begin
     buttonwidth:= 50;
     for int1:= 0 to ord(high(buttons)) do begin
          int2:= acanvas.getstringwidth(
+{$ifdef mse_dynpo}
                  lang_modalresultnoshortcut[Ord(buttons[int1])]) + 10;
-     if int2 > buttonwidth then begin
+{$else}
+               stockobjects.modalresulttextnoshortcut[buttons[int1]]) + 10;
+{$endif}
+    if int2 > buttonwidth then begin
       buttonwidth:= int2;
      end;
     end;
@@ -1975,7 +1997,7 @@ begin
      text.text:= atext;
     end;
     int1:= length(buttons);
-    
+
     if int1 > 0 then begin
      int2:= int1 * buttonwidth;
      int2:= int2 + buttondist * (int1 - 1);
@@ -2022,19 +2044,21 @@ begin
       parentwidget:= widget;
       if buttons[int1] in noshortcut then begin
        caption:=
-                lang_modalresultnoshortcut[Ord(buttons[int1])];
-{
-       captiontorichstring(
-                lang_modalresultnoshortcut[Ord(buttons[int1]],
-                                                             finfo.ca.caption);
-}
-      end
+{$ifdef mse_dynpo}
+                 lang_modalresultnoshortcut[Ord(buttons[int1])];
+{$else}
+               stockobjects.modalresulttextnoshortcut[buttons[int1]];
+{$endif}
+
+     end
       else begin
-       caption:= lang_modalresult[Ord(buttons[int1])];
-{
-       captiontorichstring(stockobjects.modalresulttext[buttons[int1]],
-                               finfo.ca.caption);
-}
+       caption:=
+{$ifdef mse_dynpo}
+                 lang_modalresult[Ord(buttons[int1])];
+{$else}
+               stockobjects.modalresulttext[buttons[int1]];
+{$endif}
+
       end;
       if int1 <= high(actions) then begin
        onexecute:= actions[int1];
@@ -2218,7 +2242,11 @@ procedure showerror(const atext: msestring; caption: msestring = 'ERROR';
                     const async: boolean = false);
 begin
  if caption = 'ERROR' then begin
+{$ifdef mse_dynpo}
   caption:= uppercase(lang_stockcaption[ord(sc_error)]);
+{$else}
+ caption:= uppercase(sc(sc_error));
+{$endif}
  end;
  if async or not application.ismainthread then begin
   tshowerrormessageevent.create(atext,caption,minwidth,exttext);
@@ -2262,15 +2290,24 @@ function askconfirmation(const atext: msestring;
                     const minwidth: integer = 0): boolean;
                   //true if yes pressed
 begin
- result:= showmessage(atext,lang_stockcaption[ord(sc_confirmation)],[mr_yes,mr_no],defaultbutton,[],
-                          minwidth) = mr_yes;
+{$ifdef mse_dynpo}
+result:= showmessage(atext,lang_stockcaption[ord(sc_confirmation)],[mr_yes,mr_no],defaultbutton,[],
+                         minwidth) = mr_yes;
+{$else}
+result:= showmessage(atext,sc(sc_confirmation),[mr_yes,mr_no],defaultbutton,[],
+                         minwidth) = mr_yes;
+{$endif}
 end;
 
 function askconfirmationcancel(const atext: msestring;
                      const defaultbutton: modalresultty = mr_yes;
                      const minwidth: integer = 0): modalresultty;
 begin
+{$ifdef mse_dynpo}
  result:= askyesnocancel(atext,lang_stockcaption[ord(sc_confirmation)],defaultbutton,minwidth);
+{$else}
+ result:= askyesnocancel(atext,sc(sc_confirmation),defaultbutton,minwidth);
+{$endif}
 end;
 
 { tframefont}
@@ -6131,16 +6168,16 @@ begin
  fframe.framei_right:= 1;
  fframe.framei_bottom:= 1;
  color:= cl_infobackground;
- 
+
   rect2:= deflaterect(application.workarea(atransientfor),fframe.innerframe);
- 
+
   hintfont := tfont.create;
   hintfont.height := messagefontheight;
   hintfont.name := ansistring(messagefontname);
- 
+
  rect1:= textrect(getcanvas,info.caption,rect2,[tf_wordbreak],hintfont);
-                                            
- hintfont.free;                                        
+
+ hintfont.free;
  addsize1(rect1.size,fframe.innerframedim);
 // inc(rect1.cx,fframe.innerframedim.cx);
 // inc(rect1.cy,fframe.innerframedim.cy);

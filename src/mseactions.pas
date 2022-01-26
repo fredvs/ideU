@@ -449,7 +449,7 @@ var
 implementation
 uses
  sysutils,mserichstring,msestream,typinfo,mseformatstr,msestreaming,
- msestockobjects,mseassistiveserver,msearrayutils;
+ msestockobjects_dynpo,mseassistiveserver,msearrayutils;
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
   {$warn 5089 off}

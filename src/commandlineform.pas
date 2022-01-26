@@ -21,8 +21,8 @@ unit commandlineform;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   msegui,
   mseclasses,
   mseforms,

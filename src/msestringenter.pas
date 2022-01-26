@@ -37,7 +37,7 @@ function checkpassword(const password: msestring; var modalresult: modalresultty
 
 implementation
 uses
- msestringenter_mfm,msestockobjects;
+ msestringenter_mfm,msestockobjects_dynpo;
 
 function stringenter(var avalue: msestring; const text: msestring = '';
                                const acaption: msestring = ''): modalresultty;

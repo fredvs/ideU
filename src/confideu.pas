@@ -4,7 +4,7 @@ unit confideu;
 interface
 
 uses
- mseconsts_ide,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
+ mseconsts_dynpo,msestockobjects_dynpo,msetypes,mseglob,mseguiglob,mseguiintf,
  msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
  mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
  msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,

@@ -22,11 +22,16 @@ interface
  {$endif}
 {$endif}
 uses
- mseconsts_ide,
+{$ifdef mse_dynpo}
+ msestockobjects_dynpo,
+ mseconsts_dynpo,
+{$else}
  msestockobjects,
+ mseconsts,
+{$endif}
  msestream,mseclasses,classes,mclasses,msetypes,mseevent,msehash,msepipestream,
  msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess;
- 
+
 //todo: byte endianess for remote debugging
 
 type
@@ -1406,8 +1411,9 @@ begin
       end;
       bo1:= getstopinfo(values,flastconsoleoutput,stopinfo);
       if not bo1 then begin
-       stopinfo.messagetext:= ansistring(lang_actionsmodule[ord(ac_stoperror)])+': ' +
+  stopinfo.messagetext:= ansistring(actionsmo.c[ord(ac_stoperror)])+': ' +
                                                       stopinfo.messagetext;
+
       end
       else begin
        if (stopinfo.reason = sr_breakpoint_hit) and
@@ -5027,7 +5033,7 @@ var
  sr1: stopreasonty;
 begin
  for sr1:= sr_unknown to high(stopreasonty) do begin
-  stopreasontext[sr1]:= ansistring(lang_actionsmodule[ord(ac_sr_unknown)]);
+  stopreasontext[sr1]:= ansistring(actionsmo.c[ord(ac_sr_unknown)-1+ord(sr1)]);
  end;
 end;
 

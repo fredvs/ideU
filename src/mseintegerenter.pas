@@ -13,8 +13,8 @@ unit mseintegerenter;
 
 interface
 uses
- msestockobjects,
- mseconsts_ide,
+ msestockobjects_dynpo,
+ mseconsts_dynpo,
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
  msedialog,msestrings;
 

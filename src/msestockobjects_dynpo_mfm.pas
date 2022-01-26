@@ -1,11 +1,11 @@
-unit msestockobjects_mfm;
+unit msestockobjects_dynpo_mfm;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 interface
 
 implementation
 uses
- mseclasses,msestockobjects;
+ mseclasses,msestockobjects_dynpo;
 
 const
  objdata: record size: integer; data: array[0..8604] of byte end =

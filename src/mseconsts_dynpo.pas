@@ -11,13 +11,13 @@
 
 // Updated for dynamic loading of po files by fredvs
 
-unit mseconsts_ide;
+unit mseconsts_dynpo;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 
 uses
-  msestockobjects,
+  msestockobjects_dynpo,
   mseglob,
   msestrings,
   mseapplication,

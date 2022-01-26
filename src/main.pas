@@ -39,7 +39,7 @@ plugmanager,
 fpg_iniutils_ideu, 
 msetimer, 
 mseformatstr, 
-mseconsts_ide, 
+mseconsts_dynpo, 
 dialogfiles, 
 mseforms, 
 mseguiglob, 
@@ -53,7 +53,7 @@ msedataedits,
 msestat, 
 msestatfile, 
 msemenus, 
-msestockobjects, 
+msestockobjects_dynpo, 
 msebitmap, 
 msegrids, 
 msefiledialogx, 
@@ -89,7 +89,7 @@ mseedit,
 msewidgets;
 
 const 
-  versiontext = '2.8.0';
+  versiontext = '2.8.1';
   idecaption  = 'ideU';
   statname    = 'ideu';
 

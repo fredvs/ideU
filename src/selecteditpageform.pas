@@ -21,8 +21,8 @@ unit selecteditpageform;
 interface
 
 uses
-  msestockobjects,
-  mseconsts_ide,
+  msestockobjects_dynpo,
+  mseconsts_dynpo,
   mseforms,
   mselistbrowser,
   msetypes,

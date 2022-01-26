@@ -7,8 +7,8 @@ unit ideusettings;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   fpg_iniutils_ideu,
   mseglob,
   mseguiglob,

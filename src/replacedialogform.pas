@@ -21,8 +21,8 @@ unit replacedialogform;
 interface
 
 uses
-  mseconsts_ide,
-  msestockobjects,
+  mseconsts_dynpo,
+  msestockobjects_dynpo,
   mseguiglob,
   msegui,
   mseclasses,

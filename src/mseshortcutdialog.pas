@@ -70,7 +70,7 @@ function shortcutdialog(const acontroller: tshortcutcontroller): modalresultty;
 
 implementation
 uses
- mseshortcutdialog_mfm,msekeyboard,msedatalist,msearrayutils,msestockobjects;
+ mseshortcutdialog_mfm,msekeyboard,msedatalist,msearrayutils,msestockobjects_dynpo;
 
  {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
