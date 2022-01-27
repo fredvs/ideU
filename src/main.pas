@@ -688,6 +688,7 @@ begin
 
  debuggerfo.file_history.tag := 0;
  themenr := themenum.value;
+ if themenr <> 0 then
  dotheme(themenr);
  // setstattext('Hello!', mtk_flat);
   confideufo.onchangefont;
