@@ -9,7 +9,6 @@ interface
 uses
   mseconsts_dynpo,
   msestockobjects_dynpo,
-  fpg_iniutils_ideu,
   mseglob,
   mseguiglob,
   msegui,

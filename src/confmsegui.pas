@@ -10,7 +10,6 @@ type
    msedir: tfilenameedit;
    mselibdir: tfilenameedit;
    tbutton1: tbutton;
-   tstatfile1: tstatfile;
  end;
 var
  confmseguifo: tconfmseguifo;

@@ -1,4 +1,3 @@
-
 unit main;
 
 {$ifdef linux}{$define unix}{$endif}
@@ -30,64 +29,18 @@ interface
   {$endif}
 {$endif}
 
-uses 
-templateeditor, 
-po2const, 
-msearrayutils, 
-aboutform, 
-plugmanager, 
-fpg_iniutils_ideu, 
-msetimer, 
-mseformatstr, 
-mseconsts_dynpo, 
-dialogfiles, 
-mseforms, 
-mseguiglob, 
-msegui, 
-msegdbutils, 
-mseactions, 
-sak_mse, 
-msefileutils, 
-msedispwidgets, 
-msedataedits, 
-msestat, 
-msestatfile, 
-msemenus, 
-msestockobjects_dynpo, 
-msebitmap, 
-msegrids, 
-msefiledialogx, 
-msetypes, 
-sourcepage, 
-msedesignintf, 
-msedesigner, 
-Classes, 
-mclasses, 
-mseclasses, 
-msegraphutils, 
-typinfo, 
-msedock, 
-SysUtils, 
-msesysenv, 
-msemacros, 
-msestrings, 
-msepostscriptprinter, 
-msegraphics, 
-mseglob, 
-msestream, 
-msepointer, 
-mseprocmonitorcomp, 
-msesystypes, 
-mserttistat, 
-msedatalist, 
-mselistbrowser, 
-projecttreeform, 
-msepipestream, 
-msestringcontainer, 
-msesys, 
-mseedit, 
-msewidgets;
-
+uses
+ templateeditor,po2const,msearrayutils,aboutform,plugmanager,
+ msetimer,mseformatstr,mseconsts_dynpo,dialogfiles,mseforms,mseguiglob,msegui,
+ msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
+ msestat,msestatfile,msemenus,msestockobjects_dynpo,msebitmap,msegrids,
+ msefiledialogx,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
+ mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
+ msestrings,msepostscriptprinter,msegraphics,mseglob,msestream,msepointer,
+ mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
+ projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets,
+ msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
+ 
 const 
   versiontext = '2.8.1';
   idecaption  = 'ideU';
@@ -145,7 +98,9 @@ type
     tframecomp3: tframecomp;
     convexdark: tfacecomp;
     concavedark: tfacecomp;
-    ttimer1: ttimer;
+    bFirstLoad: tbooleanedit;
+    themenum: tintegeredit;
+   bCompletion: tbooleanedit;
     procedure newfileonexecute(Const Sender: TObject);
     procedure newformonexecute(Const Sender: TObject);
 
@@ -243,8 +198,6 @@ type
     procedure onclassic(Const Sender: TObject);
     procedure ondark(Const Sender: TObject);
     procedure ontoggleunitform(Const Sender: TObject);
-
-    procedure ontimersplash(Const Sender: TObject);
     procedure onlang(Const Sender: TObject);
     procedure onactiv(Const Sender: TObject);
 
@@ -426,7 +379,7 @@ implementation
 
 uses 
 conflang, 
-splash, 
+//splash, 
 confmsegui, 
 beauty, 
 conffpgui, 
@@ -715,7 +668,7 @@ begin
   thetimer.Enabled := False;
   componentpalettefo.Close;
   objectinspectorfo.Close;
-  if gINI.ReadBool('General', 'FirstLoad', True) then
+   if bFirstLoad.value = true then
     begin
       if thetimer.tag = 0 then
         begin
@@ -729,46 +682,32 @@ begin
         begin
           thetimer.Free;
           configureexecute(Sender);
-          gINI.WriteBool('General', 'FirstLoad', False);
+          bFirstLoad.value := false;
           activate;
         end;
     end
   else
-    activate// closeallmodule();
-{
-with settingsfo do
-begin
-activate;
-but_ok.execute;
-end;
-};
+    activate;
 
-{$ifdef polydev}
-  top := 56 ;
- {$endif}
-
-  debuggerfo.file_history.tag := 0;
-
-  themenr := gINI.ReadInteger('theme', 'main', 0);
-  dotheme(themenr);
-
-  // setstattext('Hello!', mtk_flat);
-
+ debuggerfo.file_history.tag := 0;
+ themenr := themenum.value;
+ dotheme(themenr);
+ // setstattext('Hello!', mtk_flat);
   confideufo.onchangefont;
-
   objectinspectorfo.Close;
-
+application.processmessages;
+   onactiv(Sender); 
+   
 end;
 
 procedure tmainfo.loadconfigform(Const Sender: TObject);
 begin
   thetimer          := ttimer.Create(TComponent(Sender));
-  thetimer.interval := 500000;
+  thetimer.interval := 1000000;
   thetimer.ontimer  := @onthetimer;
   thetimer.tag      := 0;
   thetimer.Enabled  := True;
 end;
-
 
 procedure tmainfo.ideureadconfig();
 var 
@@ -777,240 +716,44 @@ begin
   {$IFDEF Windows}
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
              'plugin\designer_ext\designer_ext.exe');
-    {$endif}
+  {$endif}
 
-     {$IFDEF linux}
+  {$IFDEF unix}
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
              'plugin/designer_ext/designer_ext');
-    {$endif}
+  {$endif}
 
-    {$IFDEF freebsd}
-     {$ifdef polydev}
-  libpath := utf8decode('/usr/local/share/designer_ext/designer_ext');
-    {$else}
-  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
-             'plugin/designer_ext/designer_ext');
-    {$endif}
-    {$endif}
-
-  if gINI.ReadBool('Completion', 'proplist', False) = False then
-    begin
+if bCompletion.value = false then
+begin
       debuggerfo.properties_list.tag := 0;
       debuggerfo.properties_list.face.image.alignment := 
                                                          [al_grayed, al_stretchx, al_stretchy];
       sourcefo.thetimer.Enabled      := False;
-      sourcefo.hidesourcehint;
-    end
-  else
-    begin
-      debuggerfo.properties_list.tag := 1;
-      debuggerfo.properties_list.face.image.alignment := 
+      sourcefo.hidesourcehint;  
+end else
+begin
+    debuggerfo.properties_list.tag := 1;
+    debuggerfo.properties_list.face.image.alignment := 
                                                          [al_stretchx, al_stretchy];
 
-    end;
-
-  conffpguifo.fpguidesigner.Value := utf8decode(gINI.ReadString('Path', 'designer_fpGUI', ansistring
-                                     (libpath)));
-
-  conffpguifo.ifloadfile.Value := gINI.ReadBool('ifloadfile', 'designer_fpGUI', True);
-  conffpguifo.edfilename.Text  := 
-                                  utf8decode(gINI.ReadString('edfilename', 'designer_fpGUI',
-                                  '${FILENAME}'));
-
-  conffpguifo.ifclose.Value := gINI.ReadBool('ifclose', 'designer_fpGUI', True);
-  conffpguifo.edclose.Text  := utf8decode(gINI.ReadString('edclose', 'designer_fpGUI', 'closeall'));
-  conffpguifo.ifshow.Value  := gINI.ReadBool('ifshow', 'designer_fpGUI', True);
-  conffpguifo.edshow.Text   := utf8decode(gINI.ReadString('edshow', 'designer_fpGUI', 'showit'));
-  conffpguifo.ifhide.Value  := gINI.ReadBool('ifhide', 'designer_fpGUI', True);
-  conffpguifo.edhide.Text   := utf8decode(gINI.ReadString('edhide', 'designer_fpGUI', 'hideit'));
-  conffpguifo.ifquit.Value  := gINI.ReadBool('ifquit', 'designer_fpGUI', True);
-  conffpguifo.edquit.Text   := utf8decode(gINI.ReadString('edquit', 'designer_fpGUI', 'quit'));
-
-  confcompilerfo.twinep1.Value := gINI.ReadBool('fpc', 'winep1', False);
-  confcompilerfo.twinep2.Value := gINI.ReadBool('fpc', 'winep2', False);
-  confcompilerfo.twinep3.Value := gINI.ReadBool('fpc', 'winep3', False);
-  confcompilerfo.twinep5.Value := gINI.ReadBool('fpc', 'winep5', False);
-  confcompilerfo.twinep6.Value := gINI.ReadBool('fpc', 'winep6', False);
-  confcompilerfo.twinep7.Value := gINI.ReadBool('fpc', 'winep7', False);
-  confcompilerfo.twinep8.Value := gINI.ReadBool('fpc', 'winep8', False);
-
- {$ifdef polydev}
-  confcompilerfo.fpccompiler.Value := 
-                                      utf8decode(gINI.ReadString('fpc', 'compiler1',
-                                      '/usr/local/lib/fpc/3.0.0/ppcx64'));
-  confcompilerfo.fpccompiler2.Value := 
-                                       utf8decode(gINI.ReadString('fpc', 'compiler2',
-                                       '/usr/local/lib/fpc/3.0.0/ppc386'));
-  confcompilerfo.fpccompiler3.Value := 
-                                       utf8decode(gINI.ReadString('fpc', 'compiler3',
-                                       '/usr/local/lib/fpc/3.0.0/ppcx64_linux'));
-  confcompilerfo.fpccompiler4.Value := 
-                                       utf8decode(gINI.ReadString('fpc', 'compiler4',
-                                       '/usr/local/lib/fpc/3.0.0/ppc386.exe'));
-  confcompilerfo.twinep4.Value := gINI.ReadBool('fpc', 'winep4', True);
-  confcompilerfo.fpccompiler5.Value := 
-                                       utf8decode(gINI.ReadString('fpc', 'compiler5',
-                                       '/usr/local/lib/fpc/3.0.0/ppc386_linux'));
-
-  {$else}
-  confcompilerfo.fpccompiler.Value  := utf8decode(gINI.ReadString('fpc', 'compiler1', 'fpc'));
-  confcompilerfo.fpccompiler2.Value := utf8decode(gINI.ReadString('fpc', 'compiler2', ''));
-  confcompilerfo.twinep4.Value      := gINI.ReadBool('fpc', 'winep4', False);
-  confcompilerfo.fpccompiler3.Value := utf8decode(gINI.ReadString('fpc', 'compiler3', ''));
-  confcompilerfo.fpccompiler4.Value := utf8decode(gINI.ReadString('fpc', 'compiler4', ''));
-  {$endif}
-
-  confcompilerfo.fpccompiler5.Value := utf8decode(gINI.ReadString('fpc', 'compiler5', ''));
-  confcompilerfo.fpccompiler6.Value := utf8decode(gINI.ReadString('fpc', 'compiler6', ''));
-  confcompilerfo.fpccompiler7.Value := utf8decode(gINI.ReadString('fpc', 'compiler7', ''));
-  confcompilerfo.fpccompiler8.Value := utf8decode(gINI.ReadString('fpc', 'compiler8', ''));
-
-  confcompilerfo.twinej1.Value := gINI.ReadBool('java', 'winej1', False);
-  confcompilerfo.twinej2.Value := gINI.ReadBool('java', 'winej2', False);
-  confcompilerfo.twinej3.Value := gINI.ReadBool('java', 'winej3', False);
-  confcompilerfo.twinej4.Value := gINI.ReadBool('java', 'winej4', False);
-
-  confcompilerfo.javacompiler.Value  := utf8decode(gINI.ReadString('java', 'compiler1', 'javac'));
-  confcompilerfo.javacompiler2.Value := utf8decode(gINI.ReadString('java', 'compiler2', ''));
-  confcompilerfo.javacompiler3.Value := utf8decode(gINI.ReadString('java', 'compiler3', ''));
-  confcompilerfo.javacompiler4.Value := utf8decode(gINI.ReadString('java', 'compiler4', ''));
-
-  confcompilerfo.twinec1.Value := gINI.ReadBool('C', 'winec1', False);
-  confcompilerfo.twinec2.Value := gINI.ReadBool('C', 'winec2', False);
-  confcompilerfo.twinec3.Value := gINI.ReadBool('C', 'winec3', False);
-  confcompilerfo.twinec4.Value := gINI.ReadBool('C', 'winec4', False);
-  confcompilerfo.twinec5.Value := gINI.ReadBool('C', 'winec5', False);
-  confcompilerfo.twinec6.Value := gINI.ReadBool('C', 'winec6', False);
-  confcompilerfo.twinec7.Value := gINI.ReadBool('C', 'winec7', False);
-  confcompilerfo.twinec8.Value := gINI.ReadBool('C', 'winec8', False);
-
-  confcompilerfo.ccompiler.Value  := utf8decode(gINI.ReadString('C', 'compiler1', ''));
-  confcompilerfo.ccompiler2.Value := utf8decode(gINI.ReadString('C', 'compiler2', ''));
-  confcompilerfo.ccompiler3.Value := utf8decode(gINI.ReadString('C', 'compiler3', ''));
-  confcompilerfo.ccompiler4.Value := utf8decode(gINI.ReadString('C', 'compiler4', ''));
-  confcompilerfo.ccompiler5.Value := utf8decode(gINI.ReadString('C', 'compiler5', ''));
-  confcompilerfo.ccompiler6.Value := utf8decode(gINI.ReadString('C', 'compiler6', ''));
-  confcompilerfo.ccompiler7.Value := utf8decode(gINI.ReadString('C', 'compiler7', ''));
-  confcompilerfo.ccompiler8.Value := utf8decode(gINI.ReadString('C', 'compiler8', ''));
-
-  confcompilerfo.twinepy1.Value := gINI.ReadBool('python', 'winepy1', False);
-  confcompilerfo.twinepy2.Value := gINI.ReadBool('python', 'winepy2', False);
-  confcompilerfo.twinepy3.Value := gINI.ReadBool('python', 'winepy3', False);
-  confcompilerfo.twinepy4.Value := gINI.ReadBool('python', 'winepy4', False);
-
-  confcompilerfo.pythoncompiler.Value  := utf8decode(gINI.ReadString('python', 'compiler1', ''));
-  confcompilerfo.pythoncompiler2.Value := utf8decode(gINI.ReadString('python', 'compiler2', ''));
-  confcompilerfo.pythoncompiler3.Value := utf8decode(gINI.ReadString('python', 'compiler3', ''));
-  confcompilerfo.pythoncompiler4.Value := utf8decode(gINI.ReadString('python', 'compiler4', ''));
-
-  confcompilerfo.twineo1.Value := gINI.ReadBool('other', 'wineo1', False);
-  confcompilerfo.twineo2.Value := gINI.ReadBool('other', 'wineo2', False);
-  confcompilerfo.twineo3.Value := gINI.ReadBool('other', 'wineo3', False);
-  confcompilerfo.twineo4.Value := gINI.ReadBool('other', 'wineo4', False);
-
-  confcompilerfo.othercompiler.Value  := utf8decode(gINI.ReadString('other', 'compiler1', ''));
-  confcompilerfo.othercompiler2.Value := utf8decode(gINI.ReadString('other', 'compiler2', ''));
-  confcompilerfo.othercompiler3.Value := utf8decode(gINI.ReadString('other', 'compiler3', ''));
-  confcompilerfo.othercompiler4.Value := utf8decode(gINI.ReadString('other', 'compiler4', ''));
-
-  confdebuggerfo.debugger1.Value := utf8decode(gINI.ReadString('debug', 'debugger1', ''));
-  confdebuggerfo.debugger2.Value := utf8decode(gINI.ReadString('debug', 'debugger2', ''));
-  confdebuggerfo.debugger3.Value := utf8decode(gINI.ReadString('debug', 'debugger3', ''));
-  confdebuggerfo.debugger4.Value := utf8decode(gINI.ReadString('debug', 'debugger4', ''));
-
-  conffpguifo.enablefpguidesigner.Value := 
-                                           gINI.Readbool('Integration', 'designer_fpGUI', True);
-  conffpguifo.tbfpgonlyone.Value        := 
-                                           gINI.Readbool('RunOnlyOnce', 'designer_fpGUI', True);
-
-  confideufo.modaldial.Value := gINI.Readbool('modaldial', 'general', True);
-
-  ismodal := confideufo.modaldial.Value;
-
-  confideufo.nozorderenable.Value := gINI.Readbool('nozorder', 'general', True);
-
-  confideufo.brepaintcanvas.Value := gINI.Readbool('repaintcanvas', 'general', False);
-  //mse_repaintcanvas := confideufo.brepaintcanvas.Value ;
-
-  noconfirmdelete := gINI.Readbool('noconfirmdel', 'general', False);
-  confideufo.confirmdel.Value := noconfirmdelete;
-
-  blinkingcaret := gINI.Readbool('blinkingcaret', 'general', True);
-  confideufo.blinkcaret.Value := blinkingcaret;
-
-  confideufo.universal_path.Value := gINI.Readbool('universaldir', 'general', False);
-
-  confideufo.autofocus_menu.Value := gINI.Readbool('autofocusmenu', 'general', False);
-
-  //  confideufo.key_accelerator.Value := gINI.Readbool('keyaccelerator', 'general', True);
-
-  confideufo.fullpath.Value := gINI.Readbool('fullpath', 'general', True);
-
-  confideufo.dirlayout(Nil);
-
-  confideufo.doubleclic.Value := gINI.ReadBool('2xclick', 'sourcepage', False);
-
-  confideufo.addwhiteaftercomma.Value := 
-                                         gINI.Readbool('addwhiteaftercomma', 'editor', False);
-
-  confideufo.usedefaulteditoroptions.Value := 
-                                              gINI.Readbool('usedefaulteditoroptions', 'editor',
-                                              False);
-
-  confideufo.blockindent.Value := gINI.ReadInteger('blockindent', 'editor', 1);
-
-  confideufo.tabindent.Value := gINI.Readbool('tabindent', 'editor', False);
-
-  confideufo.tabstops.Value := gINI.ReadInteger('tabstops', 'editor', 4);
-
-  confideufo.spacetabs.Value := gINI.Readbool('spacetabs', 'editor', False);
-
-  confideufo.fontsize.Value := gINI.ReadInteger('fontsize', 'system', 12);
-
-  confideufo.fontname.Value := utf8decode(gINI.Readstring('fontname', 'system', 'stf_default'));
-
-  // confideufo.onchangefont;
-
-  confideufo.trimtrailingwhitespace.Value := 
-                                             gINI.Readbool('trimtrailingwhitespace', 'editor', False
-                                             );
-
-  confideufo.rightmarginchars.Value := 
-                                       gINI.ReadInteger('rightmarginchars', 'editor', 80);
-
-  confideufo.closemessages.Value := gINI.Readbool('closemessages', 'message', False);
-
-  confideufo.colorerror.Value := 
-                                 gINI.ReadInt64('colorerror', 'message', 2684354579);
-
-  confideufo.colorwarning.Value := 
-                                   gINI.ReadInt64('colorwarning', 'message', 2684354584);
-
-  confideufo.colornote.Value := 
-                                gINI.ReadInt64('colornote', 'message', 2684354580);
-
-  confideufo.colorhint.Value := 
-                                gINI.ReadInt64('colorhint', 'message', $E6EDFF);
-
-  confideufo.encoding.Value := gINI.ReadInteger('encoding', 'editor', 0);
-
-  confideufo.backupfilecount.Value := gINI.ReadInteger('backupfilecount', 'editor', 0);
-
-  if confideufo.nozorderenable.Value = True then
+end;     
+    
+      blinkingcaret := confideufo.blinkcaret.Value;
+      
+      noconfirmdelete := confideufo.confirmdel.Value;
+       
+       if confideufo.nozorderenable.Value = True then
     nozorderhandling := True
   else
     nozorderhandling := False;
+    
+   confideufo.dirlayout(Nil);
 
-  // nostaticgravity:= true;
+   nostaticgravity:= true;
+   ismodal := confideufo.modaldial.Value;
 
-  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
-
-  confideufo.deflayout.Text := 
-                               utf8decode(gINI.ReadString('Layout', 'default', ansistring(libpath) +
-                               directoryseparator +
-                               'layout' + directoryseparator +
-                               'Dock_Commandor_Tree_Editor_Message.prj'));
-
+   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+  
   if not fileexists(confideufo.deflayout.Text) then
     confideufo.deflayout.Text := (libpath) + directoryseparator +
                                  'layout' + directoryseparator +
@@ -1019,73 +762,23 @@ begin
   confideufo.deflayout.Value        := confideufo.deflayout.Text;
   confideufo.deflayout.valuedefault := confideufo.deflayout.Text;
 
-  confideufo.defsynt.Text := 
-                             utf8decode(gINI.ReadString('Syntax', 'default', ansistring(libpath) +
-                             directoryseparator +
-                             'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef'));
-
-
   if not fileexists(confideufo.defsynt.Text) then
     confideufo.defsynt.Text := (libpath) + directoryseparator +
                                'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef';
-
+                               
   confideufo.defsynt.Value        := confideufo.defsynt.Text;
   confideufo.defsynt.valuedefault := confideufo.defsynt.Text;
-
-  confideufo.rectanglearea.Value := gINI.Readbool('rectanglearea', 'editor', False);
-
-
-     {$ifdef windows}
-  confideufo.tesakitdir.Text := 
-                                utf8decode(gINI.ReadString('Assistive', 'sakitdir', ansistring(
-                                libpath) + 'plugin\'));
-
-           {$else}
-         {$ifdef polydev}
-  confideufo.tesakitdir.Text := 
-                                utf8decode(gINI.ReadString('Assistive', 'sakitdir',
-                                '/usr/local/share/'));
-    {$else}
-  confideufo.tesakitdir.Text := utf8decode(gINI.ReadString('Assistive', 'sakitdir', ansistring(
-                                libpath) + 'plugin/'));
-       {$endif}
-         {$endif}
-
-  confideufo.tbassistive.Value := gINI.Readbool('Assistive', 'sak', False);
-
-
+  
   if trim(ParamStr(1)) = '-va' then
     begin
       vaparam := True;
       confideufo.tbassistive.Value := True;
       debuggerfo.assistive.face.image.alignment := 
-                                                   [al_stretchx, al_stretchy];
-
+                                               [al_stretchx, al_stretchy];
     end;
 
   if confideufo.tbassistive.Value = True then
     doassistive;
-
-  case gINI.ReadInteger('General', 'WarnChange', 2) of 
-    0:
-       begin
-         confideufo.tbfilereload.Value  := True;
-         confideufo.tbfilenoload.Value  := False;
-         confideufo.tbfileaskload.Value := False;
-       end;
-    1:
-       begin
-         confideufo.tbfilenoload.Value  := True;
-         confideufo.tbfilereload.Value  := False;
-         confideufo.tbfileaskload.Value := False;
-       end;
-    2:
-       begin
-         confideufo.tbfileaskload.Value := True;
-         confideufo.tbfilereload.Value  := False;
-         confideufo.tbfilenoload.Value  := False;
-       end;
-  end;
 
   {$ifdef linux}
   if conffpguifo.enablefpguidesigner.Value = True then
@@ -1099,184 +792,10 @@ end;
 
 procedure tmainfo.ideuwriteconfig();
 begin
-  gINI.writeString('Path', 'designer_fpGUI', ansistring(conffpguifo.fpguidesigner.Value));
-
-  gINI.writeString('Layout', 'default', ansistring(confideufo.deflayout.Text));
-
-  gINI.writeString('Syntax', 'default', ansistring(confideufo.defsynt.Text));
-
-
-  gINI.writebool('rectanglearea', 'editor', (confideufo.rectanglearea.Value));
-
-  gINI.writebool('Integration', 'designer_fpGUI',
-                 (conffpguifo.enablefpguidesigner.Value));
-  gINI.writebool('RunOnlyOnce', 'designer_fpGUI', (conffpguifo.tbfpgonlyone.Value));
-
-  gINI.writeBool('ifloadfile', 'designer_fpGUI', (conffpguifo.ifloadfile.Value));
-  gINI.writeString('edfilename', 'designer_fpGUI', ansistring(conffpguifo.edfilename.Text));
-
-  gINI.writeBool('ifclose', 'designer_fpGUI', (conffpguifo.ifclose.Value));
-  gINI.writeString('edclose', 'designer_fpGUI', ansistring(conffpguifo.edclose.Text));
-
-  gINI.writeBool('ifshow', 'designer_fpGUI', (conffpguifo.ifshow.Value));
-  gINI.writeString('edshow', 'designer_fpGUI', ansistring(conffpguifo.edshow.Text));
-
-  gINI.writeBool('2xclick', 'sourcepage', (confideufo.doubleclic.Value));
-
-  gINI.writeBool('addwhiteaftercomma', 'editor', (confideufo.addwhiteaftercomma.Value));
-
-  gINI.writeBool('usedefaulteditoroptions', 'editor',
-                 (confideufo.usedefaulteditoroptions.Value));
-
-  gINI.WriteInteger('blockindent', 'editor', (confideufo.blockindent.Value));
-
-  gINI.writeBool('tabindent', 'editor', (confideufo.tabindent.Value));
-
-  gINI.WriteInteger('tabstops', 'editor', (confideufo.tabstops.Value));
-
-  gINI.writeBool('spacetabs', 'editor', (confideufo.spacetabs.Value));
-
-  gINI.writeBool('trimtrailingwhitespace', 'editor',
-                 (confideufo.trimtrailingwhitespace.Value));
-
-  gINI.WriteInteger('rightmarginchars', 'editor', (confideufo.rightmarginchars.Value));
-
-  gINI.writebool('closemessages', 'message', (confideufo.closemessages.Value));
-
-  gINI.Writeint64('colorerror', 'message', (confideufo.colorerror.Value));
-
-  gINI.WriteInteger('fontsize', 'system', (confideufo.fontsize.Value));
-
-  gINI.writeString('fontname', 'system', ansistring(confideufo.fontname.Value));
-
-  gINI.Writeint64('colorwarning', 'message', (confideufo.colorwarning.Value));
-
-  gINI.Writeint64('colornote', 'message', (confideufo.colornote.Value));
-
-  gINI.Writeint64('colorhint', 'message', (confideufo.colorhint.Value));
-
-  gINI.WriteInteger('encoding', 'editor', (confideufo.encoding.Value));
-
-  gINI.WriteInteger('backupfilecount', 'editor', (confideufo.backupfilecount.Value));
-
-  gINI.writebool('noconfirmdel', 'general', (noconfirmdelete));
-
-  gINI.writebool('blinkingcaret', 'general', (blinkingcaret));
-
-  gINI.writebool('nozorder', 'general', (confideufo.nozorderenable.Value));
-
-  gINI.writebool('repaintcanvas', 'general', (confideufo.brepaintcanvas.Value));
-
-  gINI.writebool('modaldial', 'general', confideufo.modaldial.Value);
-
-  if debuggerfo.properties_list.tag = 0 then
-    gINI.writebool('Completion', 'proplist', False)
+   if debuggerfo.properties_list.tag = 0 then
+    bCompletion.value := false
   else
-    gINI.writebool('Completion', 'proplist', True);
-
-  gINI.writebool('Assistive', 'sak', (confideufo.tbassistive.Value));
-  gINI.writeString('Assistive', 'sakitdir', ansistring(confideufo.tesakitdir.Text));
-
-  gINI.writebool('universaldir', 'general', (confideufo.universal_path.Value));
-
-  //  gINI.writebool('keyaccelerator', 'general', ansistring(confideufo.key_accelerator.Value));
-
-  gINI.writebool('addwhiteaftercomma', 'general', (confideufo.addwhiteaftercomma.Value));
-
-  gINI.writebool('fullpath', 'general', (confideufo.fullpath.Value));
-
-  gINI.writebool('autofocusmenu', 'general', (confideufo.autofocus_menu.Value));
-
-  gINI.writeBool('ifhide', 'designer_fpGUI', (conffpguifo.ifhide.Value));
-  gINI.writeString('edhide', 'designer_fpGUI', ansistring(conffpguifo.edhide.Text));
-
-  gINI.writeBool('ifquit', 'designer_fpGUI', (conffpguifo.ifquit.Value));
-  gINI.writeString('edquit', 'designer_fpGUI', ansistring(conffpguifo.edquit.Text));
-
-  gINI.writeBool('fpc', 'winep1', (confcompilerfo.twinep1.Value));
-  gINI.writeBool('fpc', 'winep2', (confcompilerfo.twinep2.Value));
-  gINI.writeBool('fpc', 'winep3', (confcompilerfo.twinep3.Value));
-  gINI.writeBool('fpc', 'winep4', (confcompilerfo.twinep4.Value));
-  gINI.writeBool('fpc', 'winep5', (confcompilerfo.twinep5.Value));
-  gINI.writeBool('fpc', 'winep6', (confcompilerfo.twinep6.Value));
-  gINI.writeBool('fpc', 'winep7', (confcompilerfo.twinep7.Value));
-  gINI.writeBool('fpc', 'winep8', (confcompilerfo.twinep8.Value));
-
-  gINI.writeString('fpc', 'compiler1', ansistring(confcompilerfo.fpccompiler.Value));
-  gINI.writeString('fpc', 'compiler2', ansistring(confcompilerfo.fpccompiler2.Value));
-  gINI.writeString('fpc', 'compiler3', ansistring(confcompilerfo.fpccompiler3.Value));
-  gINI.writeString('fpc', 'compiler4', ansistring(confcompilerfo.fpccompiler4.Value));
-  gINI.writeString('fpc', 'compiler5', ansistring(confcompilerfo.fpccompiler5.Value));
-  gINI.writeString('fpc', 'compiler6', ansistring(confcompilerfo.fpccompiler6.Value));
-  gINI.writeString('fpc', 'compiler7', ansistring(confcompilerfo.fpccompiler7.Value));
-  gINI.writeString('fpc', 'compiler8', ansistring(confcompilerfo.fpccompiler8.Value));
-
-  gINI.writeBool('java', 'winej1', (confcompilerfo.twinej1.Value));
-  gINI.writeBool('java', 'winej2', (confcompilerfo.twinej2.Value));
-  gINI.writeBool('java', 'winej3', (confcompilerfo.twinej3.Value));
-  gINI.writeBool('java', 'winej4', (confcompilerfo.twinej4.Value));
-
-  gINI.writeString('java', 'compiler1', ansistring(confcompilerfo.javacompiler.Value));
-  gINI.writeString('java', 'compiler2', ansistring(confcompilerfo.javacompiler2.Value));
-  gINI.writeString('java', 'compiler3', ansistring(confcompilerfo.javacompiler3.Value));
-  gINI.writeString('java', 'compiler4', ansistring(confcompilerfo.javacompiler4.Value));
-
-  gINI.writeBool('C', 'winec1', (confcompilerfo.twinec1.Value));
-  gINI.writeBool('C', 'winec2', (confcompilerfo.twinec2.Value));
-  gINI.writeBool('C', 'winec3', (confcompilerfo.twinec3.Value));
-  gINI.writeBool('C', 'winec4', (confcompilerfo.twinec4.Value));
-  gINI.writeBool('C', 'winec5', (confcompilerfo.twinec5.Value));
-  gINI.writeBool('C', 'winec6', (confcompilerfo.twinec6.Value));
-  gINI.writeBool('C', 'winec7', (confcompilerfo.twinec7.Value));
-  gINI.writeBool('C', 'winec8', (confcompilerfo.twinec8.Value));
-
-  gINI.writeString('C', 'compiler1', ansistring(confcompilerfo.ccompiler.Value));
-  gINI.writeString('C', 'compiler2', ansistring(confcompilerfo.ccompiler2.Value));
-  gINI.writeString('C', 'compiler3', ansistring(confcompilerfo.ccompiler3.Value));
-  gINI.writeString('C', 'compiler4', ansistring(confcompilerfo.ccompiler4.Value));
-  gINI.writeString('C', 'compiler5', ansistring(confcompilerfo.ccompiler5.Value));
-  gINI.writeString('C', 'compiler6', ansistring(confcompilerfo.ccompiler6.Value));
-  gINI.writeString('C', 'compiler7', ansistring(confcompilerfo.ccompiler7.Value));
-  gINI.writeString('C', 'compiler8', ansistring(confcompilerfo.ccompiler8.Value));
-
-  gINI.writeBool('python', 'winepy1', (confcompilerfo.twinepy1.Value));
-  gINI.writeBool('python', 'winepy2', (confcompilerfo.twinepy2.Value));
-  gINI.writeBool('python', 'winepy3', (confcompilerfo.twinepy3.Value));
-  gINI.writeBool('python', 'winepy4', (confcompilerfo.twinepy4.Value));
-
-  gINI.writeString('python', 'compiler1', ansistring(confcompilerfo.pythoncompiler.Value));
-  gINI.writeString('python', 'compiler2', ansistring(confcompilerfo.pythoncompiler2.Value));
-  gINI.writeString('python', 'compiler3', ansistring(confcompilerfo.pythoncompiler3.Value));
-  gINI.writeString('python', 'compiler4', ansistring(confcompilerfo.pythoncompiler4.Value));
-
-  gINI.writeBool('other', 'wineo1', (confcompilerfo.twineo1.Value));
-  gINI.writeBool('other', 'wineo2', (confcompilerfo.twineo2.Value));
-  gINI.writeBool('other', 'wineo3', (confcompilerfo.twineo3.Value));
-  gINI.writeBool('other', 'wineo4', (confcompilerfo.twineo4.Value));
-
-  gINI.writeString('other', 'compiler1', ansistring(confcompilerfo.othercompiler.Value));
-  gINI.writeString('other', 'compiler2', ansistring(confcompilerfo.othercompiler2.Value));
-  gINI.writeString('other', 'compiler3', ansistring(confcompilerfo.othercompiler3.Value));
-  gINI.writeString('other', 'compiler4', ansistring(confcompilerfo.othercompiler4.Value));
-
-  gINI.writeString('debug', 'debugger1', ansistring(confdebuggerfo.debugger1.Value));
-  gINI.writeString('debug', 'debugger2', ansistring(confdebuggerfo.debugger2.Value));
-  gINI.writeString('debug', 'debugger3', ansistring(confdebuggerfo.debugger3.Value));
-  gINI.writeString('debug', 'debugger4', ansistring(confdebuggerfo.debugger4.Value));
-
-  gINI.writeInteger('theme', 'main', themenr);
-
-  if confideufo.tbfilereload.Value = True then
-    gINI.WriteInteger('General', 'WarnChange', 0)
-  else if confideufo.tbfilenoload.Value = True then
-         gINI.WriteInteger('General', 'WarnChange', 1)
-  else
-    gINI.WriteInteger('General', 'WarnChange', 2);
-
-  if (conffpguifo.enablefpguidesigner.Value = True) and
-     (conffpguifo.ifquit.Value = True) then
-    LoadfpgDesigner(ansistring(conffpguifo.edquit.Text));
-
+    bCompletion.value := true;
 end;
 
 procedure tmainfo.mainfoondestroy(Const Sender: TObject);
@@ -5957,18 +5476,6 @@ end;
 procedure tmainfo.ontoggleunitform(Const Sender: TObject);
 begin
   actionsmo.toggleformunitonexecute(Sender);
-end;
-
-procedure tmainfo.ontimersplash(Const Sender: TObject);
-begin
-  splashfo.windowopacity := splashfo.windowopacity - 0.1;
-  if splashfo.windowopacity <= 0 then
-    begin
-      ttimer1.Enabled := False;
-      splashfo.Close;
-      onactiv(Sender);
-    end;
-
 end;
 
 procedure tmainfo.onlang(Const Sender: TObject);

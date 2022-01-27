@@ -18,6 +18,7 @@ cthreads,  {$endif} {$endif}
   msestockobjects_dynpo,
   mseconsts_dynpo,
   conflang,
+  // splash,
   aboutform,
   confmsegui,
   confideu,
@@ -52,18 +53,14 @@ cthreads,  {$endif} {$endif}
   symbolform,
   targetconsole,
   main,
-  splash,
   mseguiintf,
   regunitgroups,
   guitemplates,
   msegraphutils,
   msefont,
-  fpg_iniutils_ideu,
   potools,
   stringconsts;
-
 begin
-
   Gettext.GetLanguageIDs(MSELang, MSEFallbackLang);
 
   // MSEFallbackLang := 'fr';
@@ -78,7 +75,7 @@ begin
 
   if application.terminated then Exit;
 
-  application.createform(tsplashfo, splashfo);
+  // application.createform(tsplashfo, splashfo);
 
   application.createform(tconfideufo, confideufo);
   application.createform(tconfmseguifo, confmseguifo);
@@ -111,8 +108,9 @@ begin
  
   confcompilerfo.Close;
   confdebuggerfo.Close;
-
+  
   application.createform(theaderfo, headerfo);
+  headerfo.Close;
 
   application.createform(tmainfo, mainfo);
 
@@ -123,8 +121,7 @@ begin
   mainfo.ideureadconfig;
 
   headerfo.icon := mainfo.icon;
-
-  splashfo.icon       := mainfo.icon;
+  // splashfo.icon       := mainfo.icon;
   confideufo.icon     := mainfo.icon;
   confmseguifo.icon   := mainfo.icon;
   conffpguifo.icon    := mainfo.icon;
@@ -138,6 +135,7 @@ begin
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
   conflangfo.icon     := mainfo.icon;
+  confideufo.Close;
 
   application.run;
 end.

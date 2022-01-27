@@ -16,7 +16,7 @@ object confmseguifo: tconfmseguifo
   )
   optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
-  statfile = tstatfile1
+  statfile = mainfo.mainstatfile
   caption = 'Configuration of MSEgui'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -46,6 +46,7 @@ object confmseguifo: tconfmseguifo
     bounds_cx = 360
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
+    statfile = mainfo.mainstatfile
     optionsedit = []
     value = '${MSEDIR}'
     controller.filename = '${MSEDIR}/'
@@ -79,6 +80,7 @@ object confmseguifo: tconfmseguifo
     bounds_cx = 359
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
+    statfile = mainfo.mainstatfile
     value = '${MSEDIR}lib/common/'
     controller.filename = '${MSEDIR}lib/common/'
     controller.lastdir = '/home/fred/ideu/src/${MSEDIR}lib/common/'
@@ -87,6 +89,7 @@ object confmseguifo: tconfmseguifo
     reffontheight = 15
   end
   object tbutton1: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
@@ -102,11 +105,5 @@ object confmseguifo: tconfmseguifo
     state = [as_default, as_localdefault, as_localcaption]
     caption = '&OK'
     modalresult = mr_ok
-  end
-  object tstatfile1: tstatfile
-    filename = 'confmse.sta'
-    options = [sfo_memory]
-    left = 16
-    top = 32
   end
 end

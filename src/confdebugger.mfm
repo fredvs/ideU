@@ -17,6 +17,7 @@ object confdebuggerfo: tconfdebuggerfo
   font.name = 'stf_default'
   font.localprops = []
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  statfile = mainfo.mainstatfile
   caption = 'Debuggers Configuration'
   icon.origformat = 'bmp'
   windowopacity = -Inf
@@ -47,6 +48,7 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 265
     bounds_cx = 504
     bounds_cy = 39
+    statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734
@@ -85,6 +87,7 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 188
     bounds_cx = 504
     bounds_cy = 39
+    statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734
@@ -123,6 +126,7 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 117
     bounds_cx = 504
     bounds_cy = 39
+    statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734
@@ -161,6 +165,7 @@ object confdebuggerfo: tconfdebuggerfo
     bounds_y = 52
     bounds_cx = 504
     bounds_cy = 39
+    statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734

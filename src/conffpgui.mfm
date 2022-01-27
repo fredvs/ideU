@@ -16,7 +16,7 @@ object conffpguifo: tconffpguifo
   )
   optionswindow = [wo_dialog]
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
-  statfile = tstatfile1
+  statfile = mainfo.mainstatfile
   caption = 'Configuration of fpGUI'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -32,11 +32,13 @@ object conffpguifo: tconffpguifo
     frame.buttons.count = 1
     frame.buttons.items = <    
       item
+        frame.hiddenedges = [edg_bottom]
         frame.localprops = []
         frame.localprops1 = []
         frame.template = mainfo.tframecomp2
         imagenr = 17
       end>
+    frame.button.frame.hiddenedges = [edg_bottom]
     frame.button.frame.localprops = []
     frame.button.frame.localprops1 = []
     frame.button.frame.template = mainfo.tframecomp2
@@ -53,6 +55,7 @@ object conffpguifo: tconffpguifo
     bounds_cx = 269
     bounds_cy = 41
     anchors = [an_left, an_top, an_right]
+    statfile = mainfo.mainstatfile
     controller.options = [fdo_sysfilename, fdo_savelastdir]
     controller.captionopen = 'fpGUI Designer path'
     reffontheight = 15
@@ -74,6 +77,7 @@ object conffpguifo: tconffpguifo
     bounds_y = 65
     bounds_cx = 139
     bounds_cy = 17
+    statfile = mainfo.mainstatfile
   end
   object tbfpgonlyone: tbooleanedit
     frame.caption = 'One Instance'
@@ -92,9 +96,11 @@ object conffpguifo: tconffpguifo
     bounds_y = 83
     bounds_cx = 96
     bounds_cy = 17
+    statfile = mainfo.mainstatfile
     value = True
   end
   object groupcommand: tgroupbox
+    frame.hiddenedges = [edg_bottom]
     frame.caption = 'Command line param'
     frame.captiontextflags = [tf_bottom]
     frame.localprops = []
@@ -119,6 +125,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 25
       bounds_cx = 94
       bounds_cy = 21
+      statfile = mainfo.mainstatfile
       text = '${FILENAME}'
       reffontheight = 15
     end
@@ -131,6 +138,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 47
       bounds_cx = 94
       bounds_cy = 21
+      statfile = mainfo.mainstatfile
       text = 'closeall'
       reffontheight = 15
     end
@@ -143,6 +151,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 91
       bounds_cx = 94
       bounds_cy = 21
+      statfile = mainfo.mainstatfile
       text = 'hideit'
       reffontheight = 15
     end
@@ -155,6 +164,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 69
       bounds_cx = 94
       bounds_cy = 21
+      statfile = mainfo.mainstatfile
       text = 'showit'
       reffontheight = 15
     end
@@ -167,6 +177,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 113
       bounds_cx = 94
       bounds_cy = 21
+      statfile = mainfo.mainstatfile
       text = 'quit'
       reffontheight = 15
     end
@@ -204,6 +215,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 47
       bounds_cx = 95
       bounds_cy = 17
+      statfile = mainfo.mainstatfile
       value = True
     end
     object ifshow: tbooleanedit
@@ -222,6 +234,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 69
       bounds_cx = 102
       bounds_cy = 17
+      statfile = mainfo.mainstatfile
       value = True
     end
     object ifhide: tbooleanedit
@@ -240,6 +253,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 91
       bounds_cx = 96
       bounds_cy = 17
+      statfile = mainfo.mainstatfile
       value = True
     end
     object ifquit: tbooleanedit
@@ -258,6 +272,7 @@ object conffpguifo: tconffpguifo
       bounds_y = 113
       bounds_cx = 94
       bounds_cy = 17
+      statfile = mainfo.mainstatfile
       value = True
     end
   end
@@ -271,6 +286,7 @@ object conffpguifo: tconffpguifo
     bounds_cx = 250
     bounds_cy = 21
     anchors = [an_left, an_top, an_right]
+    statfile = mainfo.mainstatfile
     text = '*.fpg , fpg_*.pas , fpgui_*.pas'
     reffontheight = 15
   end
@@ -290,11 +306,13 @@ object conffpguifo: tconffpguifo
     bounds_y = 257
     bounds_cx = 50
     bounds_cy = 17
+    statfile = mainfo.mainstatfile
   end
   object ok: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     color = -2147483645
+    frame.hiddenedges = [edg_bottom]
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
@@ -311,11 +329,5 @@ object conffpguifo: tconffpguifo
     caption = 'OK'
     modalresult = mr_ok
     reffontheight = 15
-  end
-  object tstatfile1: tstatfile
-    filename = 'conffpg.sta'
-    options = [sfo_memory]
-    left = 16
-    top = 32
   end
 end

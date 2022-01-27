@@ -24,7 +24,6 @@ type
    ifquit: tbooleanedit;
    edfilter: tedit;
    iffilter: tbooleanedit;
-   tstatfile1: tstatfile;
    ok: tbutton;
  end;
 var

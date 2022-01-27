@@ -13,8 +13,8 @@ object mainfo: tmainfo
   frame.grip_faceactive.localprops = [fal_fadirection]
   frame.grip_faceactive.template = tfacecomp3
   visible = False
-  bounds_x = 358
-  bounds_y = 253
+  bounds_x = 340
+  bounds_y = 268
   bounds_cx = 732
   bounds_cy = 101
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -29,9 +29,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    19
+    21
     722
-    82
+    80
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -84,10 +84,10 @@ object mainfo: tmainfo
     10E7100129EF290131EF31010000000631EF310329EF290100E7000A29EF2901
     31EF31030000000742FF4A0231EF310110E7100100E7000810E7100131EF3101
     42FF4A020000000A39F7390110E7100100E7000700DE000110E7100139F73901
-    0000001E000000FF007E00FF80FF01FFC0FF03FFE0FF07FFF0FF0FFFF8FF1FFF
-    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFF
-    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF0FF0FFFC0FF03FF
-    000000FF
+    0000001E00000000007E000080FF0100C0FF0300E0FF0700F0FF0F00F8FF1F00
+    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00
+    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F0FF0F00C0FF0300
+    00000000
   }
   oncreate = mainfooncreate
   oncreated = manfocreated
@@ -108,7 +108,7 @@ object mainfo: tmainfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 722
-    bounds_cy = 82
+    bounds_cy = 80
     anchors = [an_top, an_bottom]
     font.color = -1610612734
     font.name = 'stf_default'
@@ -119,6 +119,37 @@ object mainfo: tmainfo
     dragdock.caption = 'Use this panel to Drag Dock the window'
     dragdock.optionsdock = [od_acceptsdock, od_splitvert, od_splithorz, od_tabed, od_proportional, od_background, od_captionhint]
     statfile = projectstatfile
+    object bFirstLoad: tbooleanedit
+      frame.localprops = []
+      frame.localprops1 = []
+      bounds_x = 56
+      bounds_y = 48
+      statfile = mainstatfile
+      visible = False
+      value = True
+      valuedefault = True
+    end
+    object themenum: tintegeredit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 1
+      visible = False
+      bounds_x = 189
+      bounds_y = 46
+      bounds_cx = 38
+      bounds_cy = 21
+      statfile = mainstatfile
+      reffontheight = 15
+    end
+    object bCompletion: tbooleanedit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 2
+      bounds_x = 80
+      bounds_y = 51
+      statfile = mainstatfile
+      visible = False
+    end
   end
   object gdb: tgdbmi
     guiintf = True
@@ -2590,12 +2621,5 @@ object mainfo: tmainfo
     )
     left = 241
     top = 25
-  end
-  object ttimer1: ttimer
-    interval = 130000
-    ontimer = ontimersplash
-    enabled = True
-    left = 624
-    top = 15
   end
 end
