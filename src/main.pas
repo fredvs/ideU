@@ -671,7 +671,7 @@ begin
         begin
           thetimer.tag      := 1;
           thetimer.interval := 1000000;
-          thetimer.Enabled  := True;
+         thetimer.Enabled  := True;
           activate;
           //visible := true;
         end
@@ -5528,6 +5528,7 @@ end;
 
 procedure tmainfo.runtimer(const sender: TObject);
 begin
+if isactivated = False then
 loadconfigform(Sender);
 end;
 
