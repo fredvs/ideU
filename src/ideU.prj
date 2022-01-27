@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1021
- y=494
+ x=891
+ y=168
  cx=234
  cy=269
 replacedialog=33
@@ -1291,8 +1291,8 @@ path=28
 line=28
  2129
  1158
- 520
- 3139
+ 521
+ 3136
  660
  119
  1115
@@ -1301,22 +1301,22 @@ line=28
  2533
  3332
  119
- 475
+ 476
  458
  66
- 3414
+ 3411
  684
  98
  15
  786
  908
  2573
- 4880
+ 4877
  1882
  6135
  18
  8
- 2596
+ 2593
 address=28
  4868999
  4691734
@@ -1564,7 +1564,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/ideu/src/apps/ide/compstore/
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -1580,8 +1580,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=thetimer
+finddtext=loadconfigform
 findhistory=20
+ loadconfigform
  thetimer
  onactiv
  ini
@@ -1601,11 +1602,10 @@ findhistory=20
  ];
  lang
  msegui
- uses
 findoptions=1
 editpos=8
  0,-1073741823
- 23,7
+ 31,605
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1685,8 +1685,8 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=87
- y=58
+ x=84
+ y=76
  cx=1224
  cy=621
  rcx=0
@@ -1905,10 +1905,10 @@ windowlayout=578
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=579
+ width0=256
  sortdescend0=0
- width1=129
+ width1=317
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2072,7 +2072,7 @@ windowlayout=578
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2115,7 +2115,7 @@ windowlayout=578
  nx=0
  ny=0
  ncx=1212
- ncy=53
+ ncy=52
  x=0
  y=0
  cx=1212

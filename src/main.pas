@@ -202,6 +202,7 @@ type
     procedure onactiv(Const Sender: TObject);
 
     procedure ontemplateeditor(Const Sender: TObject);
+   procedure runtimer(const sender: TObject);
     private 
       fstartcommand: startcommandty;
       fnoremakecheck: Boolean;
@@ -605,10 +606,6 @@ begin
 {$ifndef mse_with_pascalscript}
   mainmenu1.menu.deleteitembynames(['file', 'newmse', 'form', 'pascform']);
 {$endif}
-
-  loadconfigform(Sender);
-
-  // sakloadlib;
 end;
 
 procedure sdefload(sdeffile: msestring);
@@ -695,7 +692,7 @@ begin
  // setstattext('Hello!', mtk_flat);
   confideufo.onchangefont;
   objectinspectorfo.Close;
-application.processmessages;
+  application.processmessages;
    onactiv(Sender); 
    
 end;
@@ -5527,6 +5524,11 @@ procedure tmainfo.ontemplateeditor(Const Sender: TObject);
 begin
   application.createform(ttemplateeditorfo, templateeditorfo);
   templateeditorfo.Show;
+end;
+
+procedure tmainfo.runtimer(const sender: TObject);
+begin
+loadconfigform(Sender);
 end;
 
 
