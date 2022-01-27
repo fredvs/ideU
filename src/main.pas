@@ -691,6 +691,7 @@ begin
  if themenr <> 0 then
  dotheme(themenr);
  // setstattext('Hello!', mtk_flat);
+ if confideufo.fontsize.value <> 12 then
   confideufo.onchangefont;
   objectinspectorfo.Close;
   application.processmessages;

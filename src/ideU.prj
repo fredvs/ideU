@@ -930,16 +930,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFIDEUFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFIDEUFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1289,7 +1292,7 @@ line=28
  2129
  1158
  521
- 3137
+ 3138
  660
  119
  1115
@@ -1301,19 +1304,19 @@ line=28
  476
  458
  66
- 3412
+ 3413
  684
  98
  15
  786
  908
  2573
- 4878
+ 4879
  1882
  6135
  18
  8
- 2594
+ 2595
 address=28
  4868999
  4691734
@@ -1577,8 +1580,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=dotheme
+finddtext=onchangefont
 findhistory=20
+ onchangefont
+ setfont
  dotheme
  theme
  settheme
@@ -1597,41 +1602,48 @@ findhistory=20
  readconfig
  onthetimer
  readcon
- gini
- setlang
 findoptions=1
-editpos=3
+editpos=4
  0,-1073741823
- 0,0
- 0,5029
+ 0,-1073741823
+ 34,688
+ 0,745
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+sourcefiles=4
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ ${PROJECTDIR}/confideu.pas
+relpaths=4
  sourceform.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=3
+ confideu.pas
+ismoduletexts=4
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
@@ -1639,7 +1651,7 @@ nomenumodules=3
 firsttab=0
 index=2
 [layout]
-windowlayout=559
+windowlayout=578
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1794,7 +1806,7 @@ windowlayout=559
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2099,8 +2111,8 @@ windowlayout=559
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
  history=20
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2183,7 +2195,7 @@ windowlayout=559
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2194,6 +2206,25 @@ windowlayout=559
  y=268
  cx=742
  cy=101
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=439
+ y=31
+ cx=639
+ cy=699
  rcx=0
  rcy=0
  wsize=0
