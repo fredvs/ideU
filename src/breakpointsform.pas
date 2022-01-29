@@ -20,8 +20,9 @@ unit breakpointsform;
 
 interface
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
+  mseconsts,
+  msestockobjects,
+  captionideu,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
  msegui,msegraphics,mseguiglob,msestringcontainer;
@@ -818,7 +819,7 @@ end;
 
 procedure tbreakpointsfo.setlangbreakpoints();
 begin
-  Caption        := lang_stockcaption[ord(sc_breakpoints)];
+  Caption        := lang_xstockcaption[ord(sc_breakpoints)];
 
 end;
 

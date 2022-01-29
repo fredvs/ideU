@@ -6,7 +6,7 @@ unit actionsmodule;
 interface
 
 uses
- mseconsts_dynpo,msestockobjects_dynpo,Classes,mseclasses,mseact,msetabs,
+ mseconsts,msestockobjects,captionideu,Classes,mseclasses,mseact,msetabs,
  mseactions,msebitmap,msestrings,msegui,commandorform,dialogfiles,msefileutils,
  msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
  msesys,msesysutils,msesimplewidgets,projecttreeform,msestringcontainer,
@@ -457,7 +457,7 @@ begin
     openfile.controller.icon        := icon;
     openfile.controller.showoptions := True;
 
-    openfile.controller.captionsave := lang_stockcaption[ord(sc_saveas)];
+    openfile.controller.captionsave := lang_xstockcaption[ord(sc_saveas)];
    
        if factivedesignmodule <> nil then
     begin
@@ -1023,7 +1023,7 @@ begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
         ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
   begin
@@ -1128,7 +1128,7 @@ begin
    if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
         ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + ' .  ' + 
-      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
   
   else
     with mainfo do
@@ -1143,7 +1143,7 @@ begin
  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
         ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do
@@ -1156,7 +1156,7 @@ begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
         ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do
@@ -1169,7 +1169,7 @@ begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
         ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_stockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
 
   else
     with mainfo do

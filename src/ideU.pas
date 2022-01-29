@@ -15,8 +15,9 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
 cthreads,  {$endif} {$endif}
-  msestockobjects_dynpo,
-  mseconsts_dynpo,
+  msestockobjects,
+  mseconsts,
+  captionideu,
   conflang,
   // splash,
   aboutform,

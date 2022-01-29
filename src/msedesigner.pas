@@ -32,8 +32,9 @@ interface
   {$endif}
 {$endif}
 uses
- mseconsts_dynpo,
- msestockobjects_dynpo,
+ mseconsts,
+ msestockobjects,
+ captionideu,
  classes,mclasses,msegraphutils,mseglob,mseguiglob,msedesignintf,
  mseforms,mselist,msearrayutils,msebitmap,msetypes,sysutils,msehash,mseclasses,
  mseformdatatools,typinfo,msepropertyeditors,msecomponenteditors,msegraphics,

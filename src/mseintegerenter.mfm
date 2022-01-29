@@ -2,7 +2,7 @@ object integerenterfo: tintegerenterfo
   visible = False
   bounds_x = 708
   bounds_y = 241
-  bounds_cx = 220
+  bounds_cx = 219
   bounds_cy = 80
   bounds_cxmin = 162
   bounds_cymin = 60
@@ -11,7 +11,7 @@ object integerenterfo: tintegerenterfo
   container.bounds = (
     0
     0
-    220
+    219
     80
   )
   optionswindow = [wo_message]
@@ -52,6 +52,7 @@ object integerenterfo: tintegerenterfo
     textflags = [tf_xcentered, tf_ycentered, tf_wordbreak]
   end
   object ok: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -67,14 +68,14 @@ object integerenterfo: tintegerenterfo
     onexecute = ondoline
   end
   object value: tintegeredit
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
     bounds_x = 3
     bounds_y = 30
-    bounds_cx = 103
+    bounds_cx = 102
     bounds_cy = 30
-    anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     reffontheight = 15

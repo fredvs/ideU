@@ -23,12 +23,10 @@ interface
 {$endif}
 uses
 {$ifdef mse_dynpo}
- msestockobjects_dynpo,
- mseconsts_dynpo,
-{$else}
+ captionideu,
+{$endif}
  msestockobjects,
  mseconsts,
-{$endif}
  msestream,mseclasses,classes,mclasses,msetypes,mseevent,msehash,msepipestream,
  msestrings,mseapplication,msegui,msedatalist,msesystypes,mseprocess;
 

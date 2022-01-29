@@ -3,8 +3,9 @@ unit confcompiler;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
-  msestockobjects_dynpo,
-  mseconsts_dynpo,
+  msestockobjects,
+  mseconsts,
+  captionideu,
   msetypes,
   mseglob,
   mseguiglob,
@@ -179,7 +180,7 @@ end;
 
 procedure tconfcompilerfo.setlangcompilers();
 begin
-Caption        := lang_stockcaption[ord(sc_configcompilers)];
+Caption        := lang_xstockcaption[ord(sc_configcompilers)];
 but_ok.Caption := lang_modalresult[ord(mr_ok)];
 end;
 

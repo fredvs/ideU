@@ -4,14 +4,14 @@ unit confideu;
 interface
 
 uses
- mseconsts_dynpo,msestockobjects_dynpo,msetypes,mseglob,mseguiglob,mseguiintf,
+ mseconsts,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
  msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
  mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
  msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,
  msestrings,SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,
  msesys,mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
  msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
- msetextedit,msefiledialogx;
+ msetextedit,msefiledialogx, captionideu;
 
 type
   tconfideufo = class(tmseform)
@@ -785,7 +785,7 @@ strz : string = '';
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
 
-  Caption := lang_stockcaption[ord(sc_extrasettings)] + strz ;
+  Caption := lang_xstockcaption[ord(sc_extrasettings)] + strz ;
   but_ok.Caption  := lang_modalresult[Ord(mr_ok)] + strz ;
   but_apply.Caption  := lang_settings[Ord(se_apply)] + strz ;
   group_assistive.frame.caption := lang_settings[Ord(se_groupassistive)] + strz ;
@@ -811,7 +811,7 @@ begin
   encoding.frame.caption := lang_projectoptions[Ord(po_encoding)] + strz ;
   backupfilecount.frame.caption := lang_projectoptions[Ord(po_backup)] + strz ;
   tabstops.frame.caption := lang_projectoptions[Ord(po_tabstops)] + strz ;
-  blockindent.frame.caption := lang_stockcaption[Ord(sc_indent)] + strz ;
+  blockindent.frame.caption := lang_xstockcaption[Ord(sc_indent)] + strz ;
   usedefaulteditoroptions.frame.caption := lang_settings[Ord(se_usedefaulteditoroptions)] + strz ;
   spacetabs.frame.caption := lang_projectoptions[Ord(po_spacetab)] + strz ;
   colornote.frame.caption := lang_projectoptions[Ord(po_colornote)] + strz ;
@@ -820,8 +820,8 @@ begin
   stripmessageesc.frame.caption := lang_projectoptions[Ord(po_stripmessageesc)] + strz ;
   stripmessageesc.hint := lang_projectoptions[Ord(po_stripmessageeschint)] + strz ;
   
-  deflayout.frame.caption := lang_stockcaption[ord(sc_layout)] + strz ;
-  defsynt.frame.caption := lang_stockcaption[ord(sc_syntax)] + strz ;
+  deflayout.frame.caption := lang_xstockcaption[ord(sc_layout)] + strz ;
+  defsynt.frame.caption := lang_xstockcaption[ord(sc_syntax)] + strz ;
   closemessages.frame.caption := lang_projectoptions[Ord(po_closemessages)] + strz ;
   addwhiteaftercomma.frame.caption := lang_settings[Ord(se_addwhiteaftercomma)] + strz ;
   

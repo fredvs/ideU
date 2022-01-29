@@ -35,12 +35,13 @@ implementation
 
 uses
   main,
+  msestockobjects,
   confideu,
-  msestockobjects_dynpo,
   potools,
   confcompiler,
   confdebugger,
-  conflang_mfm;
+  conflang_mfm,
+  captionideu;
 
 procedure tconflangfo.oncok(const Sender: TObject);
 begin
@@ -79,7 +80,7 @@ end;
 
 procedure tconflangfo.ontools(const sender: TObject);
 begin
-headerfo.visible := true;
+headerfo.show(true);
 end;
 
 end.

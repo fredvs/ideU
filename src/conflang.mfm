@@ -16,6 +16,7 @@ object conflangfo: tconflangfo
     331
     222
   )
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
   windowopacity = -Inf
   oncreated = oncreat
@@ -112,7 +113,7 @@ object conflangfo: tconflangfo
     datarowheight = 17
     statfile = mainfo.mainstatfile
     oncellevent = oncellev
-    reffontheight = 13
+    reffontheight = 15
     object gridlangcaption: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
@@ -126,7 +127,7 @@ object conflangfo: tconflangfo
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
       value = 'English'
-      reffontheight = 13
+      reffontheight = 15
     end
     object gridlangbool: tbooleaneditradio
       optionswidget1 = []
@@ -150,7 +151,7 @@ object conflangfo: tconflangfo
       bounds_y = 0
       bounds_cx = 1
       bounds_cy = 17
-      reffontheight = 13
+      reffontheight = 15
     end
   end
   object bpotools: tbutton
@@ -173,8 +174,8 @@ object conflangfo: tconflangfo
     bounds_x = 51
     bounds_y = 175
     bounds_cx = 263
-    bounds_cy = 40
+    bounds_cy = 42
     caption = 'Set as default'
-    reffontheight = 13
+    reffontheight = 15
   end
 end

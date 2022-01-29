@@ -20,8 +20,9 @@ unit panelform;
 
 interface
 uses
- mseconsts_dynpo,
- msestockobjects_dynpo,
+ mseconsts,
+ msestockobjects,
+ captionideu,
  classes,mclasses,msegui,mseclasses,mseforms,msemenus,msestat,
  msetypes{msestrings},
  msedock,msegraphutils,msegraphics,mseguiglob,msesimplewidgets,msewidgets,

@@ -4,8 +4,9 @@ unit confdebugger;
 interface
 
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
+  mseconsts,
+  msestockobjects,
+  captionideu,
   msetypes,
   mseglob,
   mseguiglob,
@@ -63,7 +64,7 @@ end;
 
 procedure tconfdebuggerfo.setlangdebuggers();
 begin
-  Caption        := lang_stockcaption[ord(sc_configdebuggers)];
+  Caption        := lang_xstockcaption[ord(sc_configdebuggers)];
   tnClose.Caption := lang_modalresult[ord(mr_ok)];
 end;
 

@@ -21,8 +21,6 @@ unit finddialogform;
 interface
 
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
   mseforms,
   msesimplewidgets,
   msedataedits,
@@ -98,7 +96,10 @@ uses
   finddialogform_mfm,
   sourceform,
   main,
-  confideu;
+  confideu,
+  mseconsts,
+  msestockobjects,
+  captionideu;
 
 procedure updatefindvalues(const astatfiler: tstatfiler; var aoptions: findinfoty);
 var
@@ -271,14 +272,13 @@ begin
   tbutton2.Caption := lang_stockcaption[ord(sc_next)];
   tbutton3.Caption := lang_stockcaption[ord(sc_prior)];
 
-  findtext.frame.Caption  := lang_stockcaption[ord(sc_texttofind)] + ' 1';
-  findtext2.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 2';
-  findtext3.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 3';
-  findtext4.frame.Caption := lang_stockcaption[ord(sc_texttofind)] + ' 4';
-
-  casesensitive.frame.Caption := lang_stockcaption[ord(sc_casesensitive)];
-  selectedonly.frame.Caption  := lang_stockcaption[ord(sc_selectedonly)];
-  wholeword.frame.Caption     := lang_stockcaption[ord(sc_wholeword)];
+  findtext.frame.Caption  := lang_xstockcaption[ord(sc_texttofind)] + ' 1';
+  findtext2.frame.Caption := lang_xstockcaption[ord(sc_texttofind)] + ' 2';
+  findtext3.frame.Caption := lang_xstockcaption[ord(sc_texttofind)] + ' 3';
+  findtext4.frame.Caption := lang_xstockcaption[ord(sc_texttofind)] + ' 4';
+  casesensitive.frame.Caption := lang_xstockcaption[ord(sc_casesensitive)];
+  selectedonly.frame.Caption  := lang_xstockcaption[ord(sc_selectedonly)];
+  wholeword.frame.Caption     := lang_xstockcaption[ord(sc_wholeword)];
 
 end;
 

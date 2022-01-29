@@ -679,10 +679,11 @@ uses
   mseactions,
   msestringenter,
   msekeyboard,
-  msestockobjects_dynpo,
   msesysintf,
   commandorform, // extra ideu
-  msearrayutils;
+  msearrayutils,
+  msestockobjects,
+  captionideu;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}

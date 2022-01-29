@@ -18,8 +18,9 @@ interface
 {$endif}
 
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
+  mseconsts,
+  msestockobjects,
+  captionideu,
   confideu,
   ideusettings,
   commandorform,
@@ -1186,14 +1187,14 @@ begin
       if Assigned(debuggerfo) and
         (length(lang_stockcaption) > 0) then
       begin
-        debuggerfo.edited_make.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
-          ' : ' + lang_stockcaption[Ord(sc_make)] + ' ' + Caption + ' ';
+        debuggerfo.edited_make.hint := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+          ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' + Caption + ' ';
 
-        debuggerfo.edited_run.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
-          ' : ' + lang_stockcaption[Ord(sc_debugrun)] + ' ' + Caption + ' ';
+        debuggerfo.edited_run.hint := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+          ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' + Caption + ' ';
 
-        debuggerfo.toggle_form_unit.hint := ' ' + lang_stockcaption[Ord(sc_edited)] +
-          ' : ' + lang_stockcaption[Ord(sc_toggleformunit)] + ' ' + Caption + ' ';
+        debuggerfo.toggle_form_unit.hint := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+          ' : ' + lang_xstockcaption[Ord(sc_toggleformunit)] + ' ' + Caption + ' ';
 
         debuggerfo.file_history.Value := tosysfilepath(filepath(ActivePage.pathdisp.Value, fk_file, True));
 
@@ -1707,7 +1708,7 @@ begin
     mstr4          := messagestr(mstr2);
     if askyesno(lang_sourceform[ord(sf_wishreplace)] + lineend + mstr3 + lineend +
      lang_sourceform[ord(sf_str_with)] + lineend +
-      mstr4 + lineend + '?', lang_stockcaption[ord(sc_confirmation)]) then
+      mstr4 + lineend + '?', lang_xstockcaption[ord(sc_confirmation)]) then
     begin
       editor.begingroup;
       deleteselection;

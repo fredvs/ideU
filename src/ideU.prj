@@ -138,8 +138,20 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=iniutils
+ value=_dynpo
  history=20
+  _dynpo
+  lang_langnamestmp
+  sc_print
+  sc_close
+  sc_edit
+  lang_stockcaption
+  msegraphicstream
+  headerfo
+  msestockobjects_dynpo
+  captionideu
+  all ok
+  all ok 4
   iniutils
   themenr
   actionsmodule
@@ -148,20 +160,8 @@ findinfiledialog=94
   sc_file
   mseconsts_ide
   mseconsts_
-  msestockobjects
-  msestock
-  MSEFallbackLang :
-  MSEFallbackLang:
-  setlang
-  thelang:
-  thelang :
-  Quit process
-  Continue process
-  c_SIGCONT
-  lang_modalresult
-  "Project"
  [findinfileadialogfo]
- stackedunder=finddialogfo
+ stackedunder=
  x=707
  y=177
  cx=346
@@ -171,9 +171,9 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=891
- y=168
- cx=234
+ x=678
+ y=430
+ cx=284
  cy=269
 replacedialog=33
  [replacedialogfo.promptonreplace]
@@ -316,8 +316,8 @@ options=114
  firsttab=0
  index=1
  [projectoptionsfo.setting_tab]
- firsttab=1
- index=2
+ firsttab=0
+ index=11
  [projectoptionsfo]
  stackedunder=
  x=106
@@ -930,20 +930,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=2
  ACTIONSMO
- CONFIDEUFO
- MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=2
  TACTIONSMO
- TCONFIDEUFO
- TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=15
@@ -1290,62 +1284,62 @@ path=28
  /home/fred/ideu/src/main.pas
 line=28
  2129
- 1158
+ 1156
  521
  3138
  660
  119
- 1115
+ 1116
  2340
  2256
  2533
  3332
  119
  476
- 458
+ 456
  66
  3413
  684
  98
  15
- 786
+ 787
  908
  2573
  4879
  1882
- 6135
+ 6131
  18
  8
  2595
 address=28
- 4868999
- 4691734
- 4841182
- 4893818
- 7494906
- 8550593
- 8305206
- 8098308
- 8096252
- 8104010
- 8121296
+ 4869079
+ 4691656
+ 4841198
+ 4893898
+ 8190586
+ 8513265
+ 8305830
+ 8099460
+ 8097404
+ 8105162
+ 8122448
  5887456
- 4840237
- 4679543
- 4412236
- 4900710
+ 4840253
+ 4679513
+ 4412252
+ 4900742
  0
- 4723497
+ 4723513
  0
- 8298130
- 4705597
- 8105143
- 4942037
- 4992348
- 6373763
- 8629549
- 10610941
- 4882452
+ 8298754
+ 4705578
+ 8106295
+ 4942008
+ 4974153
+ 6335368
+ 8591741
+ 10507213
+ 4882532
 addbkpt=28
  0
  0
@@ -1580,78 +1574,69 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=onchangefont
+finddtext=ac_objectinspector
 findhistory=20
- onchangefont
- setfont
- dotheme
- theme
- settheme
- onactiv
- isactivated
- loadconfigform
- thetimer
- ini
- writecon
- splash
- ttimer1
- themenum
- msestock
- ontheti
- ideureadc
- readconfig
- onthetimer
- readcon
+ ac_objectinspector
+ sc_toggleformunit
+ sc_findcomponent
+ sc_saveas
+ sc_saveall
+ sc_texttofind
+ sc_path
+ sc_layout
+ setlang
+ sc_shortcut
+ sc_value
+ sc_name
+ stockcaption
+ lang_stock
+ createnewconst
+ sc_print
+ sc_closeall
+ sc_close
+ sc_edit
+ sc_confirmation
 findoptions=1
-editpos=4
+editpos=3
  0,-1073741823
+ 0,5
  0,-1073741823
- 34,688
- 0,745
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/confideu.pas
-relpaths=4
+ /home/fred/ideu_captionideu/src/actionsmodule.pas
+relpaths=3
+ ideU.pas
  sourceform.pas
  actionsmodule.pas
- main.pas
- confideu.pas
-ismoduletexts=4
+ismoduletexts=3
  0
  0
  0
- 0
-modules=4
+modules=3
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/confideu.mfm
-moduleoptions=4
+moduleoptions=3
  0
  0
  0
- 0
-visiblemodules=4
+visiblemodules=3
  -1
  -1
  -1
+nomenumodules=3
  -1
-nomenumodules=4
- 0
- 0
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=1
 [layout]
-windowlayout=578
+windowlayout=559
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1665,8 +1650,8 @@ windowlayout=578
  ny=0
  ncx=0
  ncy=0
- x=86
- y=71
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1701,7 +1686,7 @@ windowlayout=578
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1805,8 +1790,8 @@ windowlayout=578
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=8
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1819,13 +1804,13 @@ windowlayout=578
  ncy=0
  x=423
  y=321
- cx=604
+ cx=344
  cy=155
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [watchpointsfo]
  splitdir=0
  useroptions=268451945
@@ -1866,7 +1851,7 @@ windowlayout=578
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1885,10 +1870,10 @@ windowlayout=578
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=579
- width0=256
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=317
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1969,7 +1954,7 @@ windowlayout=578
  [watchfo.watchon]
  [watchfo.expression]
  [watchfo.watcheson]
- value=1
+ value=0
  [messagefo]
  splitdir=0
  useroptions=268517483
@@ -2069,7 +2054,7 @@ windowlayout=578
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=1
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -2095,11 +2080,11 @@ windowlayout=578
  nx=0
  ny=0
  ncx=1212
- ncy=52
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=52
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2109,10 +2094,10 @@ windowlayout=578
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/sourceform.pas
  history=20
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu_captionideu/src/msestringenter.mfm
   /home/fred/atest/test.prj
   /home/fred/ideu/src/ideU.prj
   /home/fred/mseide-msegui/apps/ide/mseide.prj
@@ -2153,7 +2138,7 @@ windowlayout=578
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2206,25 +2191,6 @@ windowlayout=578
  y=268
  cx=742
  cy=101
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=439
- y=31
- cx=639
- cy=699
  rcx=0
  rcy=0
  wsize=0

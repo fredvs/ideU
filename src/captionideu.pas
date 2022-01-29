@@ -11,111 +11,382 @@
 
 // Updated for dynamic loading of po files by fredvs
 
-unit mseconsts_dynpo;
+unit captionideu;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 
 uses
-  msestockobjects_dynpo,
+  msestockobjects,
   mseglob,
   msestrings,
   mseapplication,
   msetypes;
 
 type
-  extendedaty  = array[extendedty] of msestring;
-  pextendedaty = ^extendedaty;
-
-  mainformaty  = array[mainformty] of msestring;
-  pmainformaty = ^mainformaty;
-
-  sourceformaty  = array[sourceformty] of msestring;
-  psourceformaty = ^sourceformaty;
-
-  actionsmoduleaty  = array[actionsmodulety] of msestring;
-  pactionsmoduleaty = ^actionsmoduleaty;
-
-  projectoptionsconaty  = array[projectoptionsconty] of msestring;
-  pprojectoptionsconaty = ^projectoptionsconaty;
-
-  projectoptionsaty  = array[projectoptionsty] of msestring;
-  pprojectoptionsaty = ^projectoptionsaty;
-
-  isettingsaty  = array[isettingsty] of msestring;
-  pisettingsaty = ^isettingsaty;
-
-  stockcaptionaty  = array[stockcaptionty] of msestring;
-  pstockcaptionaty = ^stockcaptionaty;
-
-  defaultmodalresulttextty  = array[modalresultty] of msestring;
-  pdefaultmodalresulttextty = ^defaultmodalresulttextty;
+  mainformty = (
+    ma_unresreferences,        //0 Unresolved references in
+    ma_str_to,                 //1 to
+    ma_wishsearch,             //2 Do you wish to search the formfile?
+    ma_formfile,               //4 Formfile for
+    ma_formfiles,              //5 Formfiles
+    ma_recursive,              //6 Recursive form hierarchy for "
+    ma_str_classtype,          //8 Classtype
+    // ma_notfound,               //9 not found.
+    // ma_project,                //10 Project
+    // ma_ismodified,             //11 is modified. Save?
+    // ma_confirmation,           //12 Confirmation
+    ma_unableopen,             //13 Unable to open file "
+    ma_running,                //14 *** Running ***
+    ma_str_downloading,        //15 Downloading
+    ma_str_downloaded,         //16 Downloaded
+    ma_startgdbservercommand,  //17 Start gdb server command "
+    // ma_running2,               //18 " running.
+    ma_startgdbserver,         //19 Start gdb Server
+    ma_gdbserverstarterror,    //20 gdb server start error
+    ma_gdbservercanceled,      //21 gdb server start canceled.
+    ma_cannotrunstartgdb,      //22 Can not run start gdb command.
+    ma_str_uploadcommand,      //23 Uploadcommand "
+    ma_downloaderror,          //24 Download ***ERROR***
+    ma_downloadfinished,       //25 Download finished.
+    ma_downloadcanceled,       //26 Download canceled.
+    //ma_str_file,               //27 File "
+    //ma_notfound2,              //28 " not found.
+    //ma_exists,                 //29 " exists.
+    //ma_str_new,                //30 New
+    ma_selectancestor,         //31 Select ancestor
+    ma_newform,                //32 New form
+    ma_pascalfiles,            //33 Pascal Files
+    //ma_new2,                   //34 new
+    ma_cannotloadproj,         //35 Can not load Project "
+    ma_selecttemplate,         //36 Select project template
+    ma_projectfiles,           //37 Project files
+    ma_str_allfiles,           //38 All files
+    ma_selectprogramfile,      //39 Select program file
+    ma_pascalprogfiles,        //40 Pascal program files
+    ma_cfiles,                 //41 C program files
+    ma_str_newproject,         //42 New Project
+    ma_cannotstartprocess,     //43 Can not start process
+    ma_process,                //44 Process
+    //ma_running3,               //45 running.
+    ma_processterminated,      //46 Process terminated.
+    ma_proctermnormally,       //47 Process terminated normally.
+    ma_makeerror,              //48 Make ***ERROR***
+    ma_makeok,                 //49 Make OK.
+    ma_str_sourcechanged,      //50 Source has changed, do you wish to remake project?
+    ma_str_loadwindowlayout,   //51 Load Window Layout
+    ma_dockingarea             //52 Docking Area
+    );
 
 type
-  langinfoty = record
-    Name: string;
-    extendedtext: pextendedaty;
-    mainformtext: pmainformaty;
-    stockcaption: pstockcaptionaty;
-    sourceformtext: psourceformaty;
-    settingstext: pisettingsaty;
-    projectoptionstext: pprojectoptionsaty;
-    projectoptionscontext: pprojectoptionsconaty;
-    actionsmoduletext: pactionsmoduleaty;
-    modalresulttext: pdefaultmodalresulttextty;
-    modalresulttextnoshortcut: pdefaultmodalresulttextty;
-  end;
+  sourceformty = (
+    //sf_str_file,           //0 File "
+    sf_haschanged,         //1 " has changed.
+    sf_therearemody,       //2 There are modifications in edit buffer also.
+    sf_wishreload,         //3 Do you wish to reload from disk?
+    //sf_confirmation,       //4 Confirmation
+    sf_none,               //5 <none>
+    sf_wishreplace,        //6 Do you wish to replace:
+    sf_str_with,           //7 with:
+    sf_str_new,            //8 <new>
+    sf_syntaxdeffile,      //9 Syntaxdeffile:
+    sf_str_text,           //10 Text
+    //sf_str_notfound,       //11 not found.
+    sf_restartbegin,       //12 Restart from begin of file?
+    sf_cancel,             //13 Cancel?
+    sf_replaceoccu,        //14 Do you wish to to replace this occurence?
+    sf_gotoline,           //15 Go to line number:
+    sf_findline           //16 Find line
+    //sf_modieditalso       //17 There are modifications in edit buffer also.
 
-  userlanginfoty = record
-    Name: string;
-    Caption: msestringarty;
-  end;
+    );
+
+type
+  projectoptionsconty = (
+    c_wrongencoding,    //0 Wrong encoding can damage your source files.
+    c_wishsetencoding,  //1 Do you wish to set encoding to
+    c_warning,          //2 *** WARNING ***
+    c_SIGHUP,           //3 Hangup
+    c_SIGINT,           //4 Interrupt
+    c_SIGQUIT,          //5 Quit
+    c_SIGILL,           //6 Illegal instruction
+    c_SIGTRAP,          //7 Trace trap
+    c_SIGABRT,          //8 Abort
+    c_SIGBUS,           //9 BUS error
+    c_SIGFPE,           //10 Floating-point exception
+    c_SIGKILL,          //11 Kill
+    c_SIGUSR1,          //12 User-defined signal 1
+    c_SIGSEGV,          //13 Segmentation violation
+    c_SIGUSR2,          //14 User-defined signal 2
+    c_SIGPIPE,          //15 Broken pipe
+    c_SIGALRM,          //16 Alarm clock
+    c_SIGTERM,          //17 Termination
+    c_SIGSTKFLT,        //18 Stack fault
+    c_SIGCHLD,          //19 Child status has changed
+    c_SIGCONT,          //20 Continue
+    c_SIGSTOP,          //21 Stop, unblockable
+    c_SIGTSTP,          //22 Keyboard stop
+    c_SIGTTIN,          //23 Background read from tty
+    c_SIGTTOU,          //24 Background write to tty
+    c_SIGURG,           //25 Urgent condition on socket
+    c_SIGXCPU,          //26 CPU limit exceeded
+    c_SIGXFSZ,          //27 File size limit exceeded
+    c_SIGTALRM,         //28 Virtual alarm clock
+    c_SIGPROF,          //29 Profiling alarm clock
+    c_SIGWINCH,         //30 Window size change
+    c_SIGIO,            //31 I/O now possible
+    c_SIGPWR            //32 Power failure restart
+    );
+
+type
+  actionsmodulety = (
+    ac_configureideu,      //0 Configure ideU
+    ac_processid,          //1 Process ID
+    ac_attachtoprocess,    //2 Attach to process
+    ac_unknownmodclass,    //3 Unknown moduleclass for "
+    ac_inheritedcomp,      //4 Inherited component "
+    ac_cannotdel,          //5 " can not be deleted.
+    ac_makeaborted,        //7 Make aborted.
+    ac_downloadaborted,    //8 Download aborted.
+    ac_runerrorwith,       //9 Runerror with "
+    ac_errortimeout,       //10 Error: Timeout.
+    ac_making,             //11 Making.
+    ac_makenotrunning,     //12 Make not running.
+    ac_downloading,        //13 Downloading.
+    ac_downloadnotrunning, //14 Download not running.
+    ac_running,            //15 " running.
+    ac_script,             //16 Script
+    ac_recursiveforminheritance, //17 Recursive form inheritance of "
+    ac_component,          //18 Component "
+    ac_exists,             //19 " exists.
+    ac_ancestorfor,        //20 Ancestor for "
+    ac_notfound,           //21 " not found.
+    ac_module,             //22 Module "
+    ac_invalidname,        //23 Invalid name "
+    ac_invalidmethodname,  //24 Invalid methodname
+    ac_modulenotfound,     //25 Module not found
+    ac_methodnotfound,     //26 Method not found
+    ac_publishedmeth,      //27 Published (managed) method
+    ac_doesnotexist,       //28 does not exist.
+    ac_wishdelete,         //29 Do you wish to delete the event?
+    //ac_warning,            //30 WARNING
+    ac_method,             //31 Method
+    ac_differentparams,    //32 has different parameters.
+    ac_amodule,            //33 A module "
+    ac_isopen,             //34 " is already open.
+    ac_unresolvedref,      //35 Unresolved reference(s) to
+    ac_modules,            //36 Module(s):
+    ac_cannotreadform,     //37 Can not read formfile "
+    ac_invalidcompname,    //38 Invalid component name.
+    ac_invalidexception,   //39 Invalid exception
+    ac_tools,              //40 T&ools
+    //ac_forms,              //41 Forms
+    //ac_source,             //42 Source
+    ac_allfiles,           //43 All Files
+    ac_program,            //44 Program
+    ac_unit,               //45 Unit
+    ac_textfile,           //46 Textfile
+    ac_mainform,           //47 Mainform
+    ac_simpleform,         //48 Simple Form
+    ac_dockingform,        //49 Docking Form
+    ac_datamodule,         //50 Datamodule
+    ac_subform,            //51 Subform
+    ac_scrollboxform,      //52 Scrollboxform
+    ac_tabform,            //53 Tabform
+    ac_dockpanel,          //54 Dockpanel
+    ac_report,             //55 Report
+    ac_scriptform,         //56 Scriptform
+    ac_inheritedform,      //57 Inherited Form
+    ac_replacesettings,    //58 Do you want to replace the settings by
+    ac_file,               //59 File "
+    ac_wantoverwrite,      //60 Do you want to overwrite?
+    ac_sr_unknown,         //61 Unknown
+    ac_sr_startup,         //63 Startup
+    //ac_sr_exception         //64 Exception
+    ac_sr_gdbdied,         //65 GDB died
+    ac_sr_breakpoint_hit,           //66 Breakpoint hit
+    ac_sr_watchpointtrigger,        //67 Watchpoint triggered
+    ac_sr_readwatchpointtrigger,    //68 Read Watchpoint triggered
+    ac_sr_accesswatchpointtrigger,  //69 Access Watchpoint triggered
+    ac_sr_end_stepping_range,       //70 End stepping range
+    ac_sr_function_finished,        //71 Function finished
+    ac_sr_exited_normally,          //72 Exited normally
+    ac_sr_exited,                   //73 Exited
+    ac_sr_detached,                 //74 Detached
+    ac_sr_signal_received,          //75 Signal received
+    ac_stoperror,                   //76 Stop error
+    ac_cannotreadproject,           //77 Can not read project
+    //ac_about,                       //78 About
+    ac_objectinspector,             //79 Object Inspector
+    ac_storecomponent,              //80 Store Component
+    ac_attachingprocess,            //81 Attaching Process
+    ac_loading                      //82 Loading
+    );
+
+type
+  isettingsty = (se_apply, se_groupassistive, se_sakitdir, se_enableassistive, se_groupsystemlayout,
+    se_universalpath, se_nozorder, se_doubleclic, se_autofocusmenu, se_fullpath, se_modaldial,
+    se_fontsize, se_fontname, se_confirmdel, se_blinkcaret, se_repaintcanvas,
+    se_groupsourceeditor, se_usedefaulteditoroptions, se_addwhiteaftercomma,
+    se_groupfilechange, se_filereload, se_filenoload, se_fileaskload, se_rectanglearea
+
+    );
+
+type
+  projectoptionsty = (po_projectoptions, po_editor, po_rightmarginline,
+    po_markbrackets, po_linenumbers, po_markpairwords, po_trimtrailing,
+    po_autoindent, po_nosource, po_tabindent, po_spacetab, po_showtabs,
+    po_antialiasedfont, po_encoding, po_markcolor, po_statcolor, po_scrollbary,
+    po_nbchar, po_eolstyle, po_backup, po_tabstops,
+    // po_indent, 
+    po_extraspace, po_extraspacehint, po_width, po_height, po_font, po_fontbkcolor,
+    po_fontcolor, po_filefilter,
+    // po_name,
+    po_filemask, po_syntaxdeffile,
+    po_codetemplate, po_fontcodetemplatedir, po_selectunitdir,
+    po_debuggerpage, po_projectdebugger, po_searchdirectories,
+    po_searchdirectorieshint, po_selectsourcedir, po_objectbasedir,
+    po_selectsourcebasedir, po_defines, po_signals, po_exception, po_target,
+    po_startgdbattachtarget, po_nogdbserverexit, po_beforeconnect,
+    po_beforeload, po_beforerun, po_afterconnect, po_afterload, po_gdbservercommand,
+    po_gdbserverwait, po_gdbserverstartonce, po_uploadcommand, po_gdbprocessor,
+    po_gdbsimulator, po_gdbdownload, po_startupbkpt, po_remoteconnection,
+    po_downloadalways, po_downloadalwayshint, po_gdbloadtimeout, po_externalconsole,
+    po_stoponexception, po_stoponexceptionhint, po_activateonbreak, po_activateonbreakhint,
+    po_valuehints, po_nodebugbeginend, po_nodebugbeginendhint, po_settty,
+    po_raiseonbreak, po_raiseonbreakhint, po_fpcgdbworkaround, po_fpcgdbworkaroundhint,
+    po_debugtarget, po_xtermcommand, po_runcommand, po_debugcommand,
+    po_debugoptions, po_makepage, po_defaultmake, po_mainfile, po_selectmainfile,
+    po_targetfile, po_selecttargetfile, po_makecommand, po_selectmakecommand,
+    po_showcommandline, po_copymessages, po_closemessages, po_checkmethods,
+    po_checkmethodshint, po_projectcompiler, po_commandbefore, po_makeoptions,
+    po_directories,
+    // po_unitdirs,
+    po_commandafter, po_exeextension,
+    po_comments, po_makedir, po_selectmakedir, po_colorerror, po_colorwarning,
+    po_colornote, po_stripmessageesc, po_stripmessageeschint,
+    po_showconsole, po_enablepurpose, po_messageoutputfile,
+    // po_selectmessageoutputfile,
+    po_macros, po_selectactivegroupgrid, po_fontaliaspage, po_designers,
+    po_usercolors, po_copycolor, po_formatmacro, po_formatmacrohint,
+    po_templates, po_newproject, po_scriptbeforecopy, po_scriptaftercopy,
+    po_newfile, po_newform,
+    // po_tools,
+    po_storage, po_infos, po_projectfullname,
+    po_creator, po_license, po_projectdate
+
+    );
+
+{
+type
+  stockcaptionty = (sc_none, sc_is_invalid, sc_Format_error, sc_Value_is_required,
+    sc_Error, sc_Min, sc_Max, sc_Range_error,
+    sc_Undohk, sc_Redohk, sc_copyhk, sc_cuthk, sc_pastehk,
+    sc_select_allhk,
+    sc_insert_rowhk, sc_append_rowhk, sc_delete_rowhk,
+    sc_Dirhk, sc_Homehk, sc_Uphk, sc_New_dirhk, sc_Namehk,
+    sc_Show_hidden_fileshk, sc_Filterhk,
+    sc_Save, sc_Open,
+    sc_name, sc_create_new_directory,
+    sc_back, sc_forward, sc_up,
+    // sc_file, 
+    sc_exists_overwrite, sc_is_modified_save,
+    sc_warningupper, sc_exception, sc_system,
+    sc_does_not_exist,
+    sc_passwordupper, sc_enterpassword, sc_invalidpassword,
+    sc_can_not_read_directory,
+    sc_graphic_format_not_supported, sc_graphic_format_error,
+    sc_MS_Bitmap, sc_MS_Icon, sc_JPEG_Image, sc_PNG_Image,
+    sc_XPM_Image, sc_PNM_Image, sc_TARGA_image, sc_TIFF_image,
+    sc_All,
+    sc_Confirmation, sc_Delete_record_question,
+    sc_Copy_record_question,
+    sc_close_page,
+    sc_first, sc_prior, sc_next, sc_last,
+    sc_append, sc_delete, sc_edit, sc_post,
+    sc_cancel,
+    sc_refresh,
+    sc_edit_filter, sc_edit_filter_min, sc_edit_filter_max,
+    sc_reset_filter,
+    sc_filter_on, sc_search, sc_auto_edit, sc_copy_record,
+    sc_dialog,
+    sc_insert, sc_copy, sc_paste,
+    sc_row_insert, sc_row_append, sc_row_delete,
+    sc_undo, sc_redo, sc_cut, sc_select_all,
+    sc_filter_off,
+    sc_portrait, sc_landscape,
+    sc_Delete_row_question, sc_selected_rows,
+    sc_Single_item_only, sc_Copy_Cells, sc_Paste_Cells,
+    sc_close, sc_maximize, sc_normalize, sc_minimize, sc_fix_size,
+    sc_float, sc_stay_on_top, sc_stay_in_background,
+    sc_lock_children, sc_no_lock,
+    sc_input, sc_button, sc_on, sc_off,
+    sc_leftborder, sc_topborder, sc_rightborder, sc_bottomborder,
+    sc_beginoftext, sc_endoftext, sc_inputmode, sc_overwrite,
+    sc_deleted, sc_copied, sc_inserted, sc_pasted, sc_withdrawn,
+    sc_windowactivated, sc_menu,
+    sc_bof, sc_eof,
+    sc_voiceoutput, sc_speakagain,
+    sc_firstcol, sc_firstrow, sc_lastcol, sc_lastrow,
+    sc_selection, sc_speakpath, sc_disabledbutton,
+    sc_firstfield, sc_lastfield,
+    sc_firstelement, sc_lastelement, sc_slower, sc_faster,
+    sc_window, sc_area, sc_areaactivated,
+    sc_volumedown, sc_volumeup, sc_cancelspeech, 
+}
+
+{ this are the ext from dynpo
+sc_newfile, sc_tools, sc_lang,
+    sc_directory, sc_noicons, sc_nolateral, sc_compact,
+    sc_path, sc_file
+}
+
+type
+  xstockcaptionty = (
+    sc_target, sc_view, sc_forms, sc_layout, sc_syntax, sc_project,
+    sc_edited, sc_widgets, sc_settings, sc_about, sc_newfile,
+    sc_saveas, sc_saveall, sc_closeall, sc_print, sc_quit,
+    sc_line, sc_search_again, sc_search_back, sc_find_replace,
+    sc_find_infile, sc_proclist, sc_select_edit_Page,
+    sc_Copy_word_cursor, sc_copy_latex, sc_indent, sc_unindent,
+    sc_environment, sc_attachprocess, sc_attachtarget, sc_detachtarget,
+    sc_download, sc_make, sc_build, sc_abortmake, sc_debugrun, sc_options,
+    sc_tree, sc_source, sc_opencopy, sc_saveascopy, sc_beautifier,
+    sc_panels, sc_forcezorder, sc_treelist, sc_messages,
+    sc_findresult, sc_commander, sc_symbols, sc_watches, sc_stack,
+    sc_threads, sc_cpu, sc_assembler, sc_breakpoints, sc_watchpoints,
+    sc_memory, sc_targetconsole, sc_toggleformunit, sc_msemod, sc_closeallmsemod,
+    sc_generalsettings, sc_extrasettings,  sc_configwidgets, sc_configcompilers,
+    sc_configdebuggers, sc_themes,  sc_openproject, sc_openfile, sc_other, sc_printcommand,
+    sc_shortcut, sc_value,
+    sc_casesensitive, sc_selectedonly, sc_wholeword, sc_texttofind, sc_searchincurrentfile,
+    sc_searchinopenfiles, sc_searchinprojectdir, sc_searchindirectories,
+    sc_includesubdir, sc_replace, sc_replaceall, sc_replacewith, sc_promptonreplace,
+    sc_componentspalette, sc_findcomponent, sc_reset, sc_cstep, sc_stepinstruction,
+    sc_nextinstruction, sc_restartdebugger, sc_togglebreakpoint, sc_tooglebreakpointenable,
+    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright
+    );
+    
+type
+  mainformaty  = array[mainformty] of msestring;
+  
+  sourceformaty  = array[sourceformty] of msestring;
+  
+  actionsmoduleaty  = array[actionsmodulety] of msestring;
+ 
+  projectoptionsconaty  = array[projectoptionsconty] of msestring;
+ 
+  projectoptionsaty  = array[projectoptionsty] of msestring;
+  
+  isettingsaty  = array[isettingsty] of msestring;
+   
+  xstockcaptionaty = array[xstockcaptionty] of msestring;
+ 
+var
+   lang_xstockcaption, lang_mainform, lang_settings, lang_actionsmodule, lang_projectoptionscon,
+     lang_projectoptions, lang_sourceform, lang_langnames: array of msestring;  
 
 const
-  en_modalresulttext: defaultmodalresulttextty =
-    ('',             //mr_none
-    '',              //mr_canclose
-    '',              //mr_windowclosed
-    '',              //mr_windowdestroyed
-    '',              //mr_escape
-    '',              //mr_f10
-    '',              //mr_exception
-    '&Cancel',       //mr_cancel
-    '&Abort',        //mr_abort
-    '&OK',           //mr_ok
-    '&Yes',          //mr_yes
-    '&No',           //mr_no
-    '&All',          //mr_all
-    'Yes &all',      //mr_yesall
-    'N&o all',       //mr_noall
-    '&Ignore',       //mr_ignore
-    '&Skip',         //mr_skip
-    'Skip a&ll',     //mr_skipall
-    'Co&ntinue'      //mr_continue
-    );
-
-  en_modalresulttextnoshortcut: defaultmodalresulttextty =
-    ('',            //mr_none
-    '',             //mr_canclose
-    '',             //mr_windowclosed
-    '',             //mr_windowdestroyed
-    '',             //mr_esc
-    '',             //mr_f10
-    '',             //mr_exception
-    'Cancel',       //mr_cancel
-    'Abort',        //mr_abort
-    'OK',           //mr_ok
-    'Yes',          //mr_yes
-    'No',           //mr_no
-    'All',          //mr_all
-    'Yes all',      //mr_yesall
-    'No all',       //mr_noall
-    'Ignore',       //mr_ignore
-    'Skip',         //mr_skip
-    'Skip all',     //mr_skipall
-    'Continue'      //mr_continue
-    );
-
   en_mainformtext: mainformaty           = (
     'Unresolved references in',
     'to',
@@ -453,155 +724,8 @@ const
     'Go to line number:',
     'Find line'
     );
-
-  en_stockcaption: stockcaptionaty       = (
-    '',                                        //sc_none
-    'is invalid',                              //sc_is_invalid
-    'Format error',                            //sc_Format_error
-    'Value is required',                       //sc_Value_is_required
-    'Error',                                   //sc_Error
-    'Min',                                     //sc_Min
-    'Max',                                     //sc_Max
-    'Range error',                             //sc_Range_error
-
-    '&Undo',                                   //sc_Undohk       ///         ///
-    '&Redo',                                   //sc_Redohk        //          //
-    '&Copy',                                   //sc_Copyhk        // hotkeys  //
-    'Cu&t',                                    //sc_Cuthk         //          //
-    '&Paste',                                  //sc_Pastehk       //          // hotkeys
-    'Select &all',                             //sc_Select_allhk ///          //
-    '&Insert Row',                             //sc_insert_rowhk ///          //
-    '&Append Row',                             //sc_append_rowhk  // hotkeys  //
-    '&Delete Row',                             //sc_delete_rowhk ///         ///
-
-    '&Dir',                                    //sc_Dirhk               ///
-    '&Home',                                   //sc_homehk               //
-    '&Up',                                     //sc_Uphk                 //
-    '&New',                                    //sc_New_dirhk            // hotkeys
-    '&Name',                                   //sc_Namehk               //
-    '&Show hidden files',                      //sc_Show_hidden_fileshk  //
-    '&Filter',                                 //sc_Filterhk            ///
-    'Save',                                    //sc_save
-    'Open',                                    //sc_open
-    'Name',                                    //sc_name
-    'Create new directory',                    //sc_create_new_directory
-    'Back',                                    //sc_back
-    'Forward',                                 //sc_forward
-    'Up',                                      //sc_up
-    'exists, do you want to overwrite?',       //sc_exists_overwrite
-    'is modified. Save?',                      //sc_is_modified_save
-    'WARNING',                                 //sc_warningupper
-    'Exception',                               //sc_exception
-    'System',                                  //sc_system
-    'does not exist',                          //sc_does_not_exist
-    'PASSWORD',                                //sc_passwordupper
-    'Enter password',                          //sc_enterpassword
-    'Invalid password!',                       //sc_invalidpassword
-    'Can not read directory',                  //sc_can_not_read_directory
-    'Graphic format not supported',            //sc_graphic_not_supported
-    'Graphic format error',                    //sc_graphic_format_error
-    'MS Bitmap',                               //sc_MS_Bitmap
-    'MS Icon',                                 //sc_MS_Icon
-    'JPEG Image',                              //sc_JPEG_Image
-    'PNG Image',                               //sc_PNG_Image
-    'XPM Image',                               //sc_XPM_Image
-    'PNM Image',                               //sc_PNM_Image
-    'TARGA Image',                             //sc_TARGA_image
-    'TIFF Image',                              //sc_TIFF_image
-    'All Images',                              //sc_All
-    'Confirmation',                            //sc_Confirmation
-    'Delete record?',                          //sc_Delete_record_question
-    'Copy record?',                            //sc_Copy_record_question
-    'Close page',                              //sc_close_page
-    'First',                                   //sc_first
-    'Prior',                                   //sc_prior
-    'Next',                                    //sc_next
-    'Last',                                    //sc_last
-    'Append',                                  //sc_append
-    'Delete',                                  //sc_delete
-    'Edit',                                    //sc_edit
-    'Post',                                    //sc_post
-    'Annul',                                   //sc_cancel
-    'Refresh',                                 //sc_refresh
-    'Edit filter',                             //sc_filter_filter
-    'Edit filter minimum',                     //sc_edit_filter_min
-    'Edit filter maximum',                     //sc_filter_edit_max
-    'Reset filter',                            //sc_reset_filter
-    'Filter on',                               //sc_filter_on
-    'Search',                                  //sc_search
-    'Auto edit',                               //sc_auto_edit
-    'Copy record',                             //sc_copy_record
-    'Dialog',                                  //sc_dialog
-    'Insert',                                  //sc_insert
-    'Copy',                                    //sc_copy
-    'Paste',                                   //sc_paste
-    'Row insert',                              //sc_row_insert
-    'Row append',                              //sc_row_append
-    'Row delete',                              //sc_row_delete
-    'Undo',                                    //sc_undo
-    'Redo',                                    //sc_redo
-    'Cut',                                     //sc_cut
-    'Select all',                              //sc_select_all
-    'Filter off',                              //sc_filter_off
-    'Portrait',                                //sc_portrait print orientation
-    'Landscape',                               //sc_landscape print orientation
-    'Delete row?',                             //sc_Delete_row_question
-    'selected rows?',                          //sc_selected_rows
-    'Single item only',                        //sc_Single_item_only
-    'Copy Cells',                              //sc_Copy_Cells
-    'Paste Cells',                             //sc_Paste_Cells
-    'Close',                                   //sc_close
-    'Maximize',                                //sc_maximize
-    'Normalize',                               //sc_normalize
-    'Minimize',                                //sc_minimize
-    'Fix size',                                //sc_fix_size
-    'Float',                                   //sc_float
-    'Stay on top',                             //sc_stay_on_top
-    'Stay in background',                      //sc_stay_in_background
-    'Lock children',                           //sc_lock_children
-    'No lock',                                 //sc_no_lock
-    'Input',                                   //sc_input
-    'Button',                                  //sc_button
-    'On',                                      //sc_on
-    'Off',                                     //sc_off
-    'Left border',                             //sc_leftborder
-    'Top border',                              //sc_topborder
-    'Right border',                            //sc_rightborder
-    'Bottom border',                           //sc_bottomborder
-    'Begin of text',                           //sc_beginoftext
-    'End of text',                             //sc_endoftext
-    'Inputmode',                               //sc_inputmode
-    'Overwrite',                               //sc_overwrite
-    'Deleted',                                 //sc_deleted
-    'Copied',                                  //sc_copied
-    'Inserted',                                //sc_inserted
-    'Pasted',                                  //sc_pasted
-    'Withdrawn',                               //sc_withdrawn
-    'Window activated',                        //sc_windowactivated
-    'Menu',                                    //sc_menu
-    'Beginning of file',                       //sc_bof
-    'End of file',                             //sc_eof
-    'Voice output',                            //sc_voiceoutput
-    'Speak again',                             //sc_speakagain
-    'First column',                            //sc_firstcol
-    'First row',                               //sc_firstrow
-    'Last column',                             //sc_lastcol
-    'Last row',                                //sc_lastrow
-    'Selection',                               //sc_selection
-    'Speak path',                              //sc_speakpath
-    'Disabled button',                         //sc_disabledbutton
-    'First field',                             //sc_firstfield
-    'Last field',                              //sc_lastfield
-    'First element',                           //sc_firstelement
-    'Last element',                            //sc_lastelement
-    'Slower',                                  //sc_slower
-    'Faster',                                  //sc_faster
-    'Window',                                  //sc_window
-    'Area',                                    //sc_area
-    'Area activated',                          //sc_areaactivated
-    'Volume down',                             //sc_volumedown
-    'Volume up',                               //sc_volumeup
-    'Cancel speech',                           //sc_cancelspeech
+    
+  en_xstockcaption: xstockcaptionaty       = (
     'Target',                                  //sc_target
     'View',                                    //sc_view
     'Forms',                                   //sc_forms
@@ -634,7 +758,6 @@ const
     'Attach target',                           //sc_attachtarget
     'Detach target',                           //sc_detachtarget
     'Download',                                //sc_download
-    'Tools',                                   //sc_tools
     'Make',                                    // sc_make
     'Build',                                   // sc_build
     'Abort make',                              // sc_abortmake
@@ -666,18 +789,12 @@ const
     'Close all MSE modules',                   // sc_closeallmsemod
     'General settings',                        // sc_generalsettings
     'Extra settings',                          // sc_extrasettings
-    'Languages',                               // sc_lang
     'Configure widgets',                       // sc_configwidgets
     'Configure compilers',                     // sc_configcompilers
     'Configure debuggers',                     // sc_configdebuggers
     'Themes',                                  // sc_themes
-    'Directory',                               // sc_directory
-    'No icons',                                // sc_noicons
-    'No lateral',                              // sc_themes
-    'Compact',                                 // sc_compact
     'Open project',                            // sc_openproject
     'Open file',                               // sc_openfile
-    'Path',                                    // sc_path
     'Other',                                   // sc_other
     'Print command',                           // sc_printcommand
     'Shortcut',                                // sc_shortcut
@@ -712,12 +829,7 @@ const
     'Copyright'                                // sc_copyright
     );
 
-  en_extendedtext: extendedaty =
-    ('Delete selected row?',    // ex_del_row_selected
-    'Delete %s selected rows?'  // ex_del_rows_selected
-    );
-
-  en_langnamestext: array[0..14] of msestring = (
+   en_langnamestext: array[0..14] of msestring = (
     'English [en]',
     'Russian [ru]',
     'French [fr]',

@@ -10,7 +10,7 @@ unit projectoptionsform;
 interface
 
 uses
- mseconsts_dynpo, msestockobjects_dynpo,mseforms,msefiledialogx,mseapplication,msegui,
+ mseconsts, msestockobjects, captionideu, mseforms,msefiledialogx,mseapplication,msegui,
  msestat,msestatfile,msetabs,msesimplewidgets,msetypes,msestrings,msedataedits,
  msetextedit,msegraphedits,msewidgetgrid,msegrids,msesplitter,msemacros,
  msegdbutils,msedispwidgets,msesys,mseclasses,msegraphutils,mseevent,
@@ -1366,8 +1366,8 @@ begin
   begin
     showoptions := True;
     icon        := mainfo.icon;
-    captionopen := lang_stockcaption[ord(sc_openproject)];
-    captionsave := lang_stockcaption[ord(sc_saveas)];
+    captionopen := lang_xstockcaption[ord(sc_openproject)];
+    captionsave := lang_xstockcaption[ord(sc_saveas)];
     fontheight := mainfo.font.Height;   // font height of dialogfile
     fontname   := msestring(mainfo.font.Name);       // font name of dialogfile
     fontcolor  := mainfo.font.color;    // font color of dialogfile
@@ -1974,14 +1974,14 @@ begin
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
     if length(lang_actionsmodule) > 0 then
-    additem(ffilemasknames, lang_stockcaption[ord(sc_source)])
+    additem(ffilemasknames, lang_xstockcaption[ord(sc_source)])
     else
     additem(ffilemasknames, 'source');
  
    
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
     if length(lang_actionsmodule) > 0 then
-    additem(ffilemasknames, lang_stockcaption[ord(sc_forms)])
+    additem(ffilemasknames, lang_xstockcaption[ord(sc_forms)])
     else
     additem(ffilemasknames, 'forms');
     
@@ -3830,7 +3830,7 @@ begin
   project_license.frame.Caption := lang_projectoptions[Ord(po_license)] + strz ;
   project_date.frame.Caption := lang_projectoptions[Ord(po_projectdate)] + strz ;
  
-  project_copyright.frame.Caption := lang_stockcaption[ord(sc_copyright)] ;
+  project_copyright.frame.Caption := lang_xstockcaption[ord(sc_copyright)] ;
   project_comment.frame.Caption := lang_projectoptions[Ord(po_comments)] + strz ;
 
 end;

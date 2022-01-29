@@ -28,8 +28,9 @@ procedure findpofiles();
 implementation
 
 uses
-  msestockobjects_dynpo,
-  mseconsts_dynpo;
+  msestockobjects,
+  mseconsts,
+  captionideu;
 
 var
   constvaluearray: array of msestring;
@@ -131,8 +132,10 @@ var
   iisettingsty: isettingsty;
   itextgeneratorty: textgeneratorty;
   istockcaptionty: stockcaptionty;
+  ixstockcaptionty: xstockcaptionty;
   defaultresult, default_resulttext, default_modalresulttext, default_modalresulttextnoshortcut, default_mainformtext, default_actionsmoduletext, default_projectoptionscontext, default_settingstext,
-  default_projectoptionstext, default_sourceformtext, default_stockcaption, default_langnamestext, default_extendedtext: array of msestring;
+  default_projectoptionstext, default_sourceformtext, default_stockcaption,
+  default_xstockcaption, default_langnamestext, default_extendedtext: array of msestring;
 begin
   strlang := '';
 
@@ -183,18 +186,26 @@ begin
     for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
       lang_stockcaption[Ord(istockcaptionty)] :=
         en_stockcaption[(istockcaptionty)];
-
+        
+     setlength(lang_xstockcaption, length(en_xstockcaption));
+    for ixstockcaptionty := Low(xstockcaptionty) to High(xstockcaptionty) do
+      lang_xstockcaption[Ord(ixstockcaptionty)] :=
+        en_xstockcaption[(ixstockcaptionty)];
+     
     setlength(lang_extended, length(en_extendedtext));
     for iextendedty := Low(extendedty) to High(extendedty) do
       lang_extended[Ord(iextendedty)] :=
         en_extendedtext[(iextendedty)];
-        
+
      findpofiles();
 
+if length(lang_langnamestmp) < length(en_langnamestext)  then
+    setlength(lang_langnames, length(en_langnamestext)) else 
     setlength(lang_langnames, length(lang_langnamestmp));
+    
     for x := 0 to length(en_langnamestext) - 1 do
       lang_langnames[x] := en_langnamestext[x];
-      
+   
     if length(lang_langnames) > length(en_langnamestext) then
     begin
     for x := 0 to high(lang_langnames) do
@@ -211,7 +222,7 @@ begin
       lang_langnames[x2] := 'Language ' + trim(lang_langnamestmp[x]);
       inc(x2);
      end;
-     
+  
      end;
   end
   else if fileexists(str1) then
@@ -362,6 +373,11 @@ begin
     for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
       default_stockcaption[Ord(istockcaptionty)] :=
         en_stockcaption[(istockcaptionty)];
+        
+     setlength(default_xstockcaption, length(en_xstockcaption));
+    for ixstockcaptionty := Low(xstockcaptionty) to High(xstockcaptionty) do
+      default_xstockcaption[Ord(ixstockcaptionty)] :=
+        en_xstockcaption[(ixstockcaptionty)];
 
     setlength(default_langnamestext, length(en_langnamestext));
     for x := 0 to length(en_langnamestext) - 1 do
@@ -537,6 +553,25 @@ begin
       lang_stockcaption[x] := astrt;
 
     end;
+    
+  setlength(lang_xstockcaption, length(default_xstockcaption));
+
+    for x := 0 to length(default_xstockcaption) - 1 do
+    begin
+      dosearch(default_xstockcaption, x);
+
+      if hasfound then
+      else
+        astrt := default_xstockcaption[x];
+      if trim(astrt) = '' then
+        astrt := default_xstockcaption[x];
+
+      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+
+      lang_xstockcaption[x] := astrt;
+
+    end;   
 
     setlength(lang_extended, length(default_extendedtext));
 

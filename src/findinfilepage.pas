@@ -20,8 +20,9 @@ unit findinfilepage;
 
 interface
 uses
-  msestockobjects_dynpo,mseglob,
-  mseconsts_dynpo,
+  msestockobjects,mseglob,
+  mseconsts,
+  captionideu,
   msetypes,msegui,mseclasses,mseforms,msetabs,msetextedit,msewidgetgrid,msegrids,
  msethreadcomp,findinfileform,msesimplewidgets,msedispwidgets,msestrings,
  classes,mclasses,msestringcontainer;
@@ -386,9 +387,9 @@ end;
 
 procedure tfindinfilepagefo.setlangfindpage();
 begin
-   Caption        := lang_stockcaption[ord(sc_findresult)];
+   Caption        := lang_xstockcaption[ord(sc_findresult)];
   cancel.Caption := lang_stockcaption[ord(sc_cancel)];
-  again.Caption := lang_stockcaption[ord(sc_search_again)];
+  again.Caption := lang_xstockcaption[ord(sc_search_again)];
 end;
 
 

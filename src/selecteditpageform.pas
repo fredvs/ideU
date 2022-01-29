@@ -21,8 +21,9 @@ unit selecteditpageform;
 interface
 
 uses
-  msestockobjects_dynpo,
-  mseconsts_dynpo,
+  msestockobjects,
+  mseconsts,
+  captionideu,
   mseforms,
   mselistbrowser,
   msetypes,
@@ -178,7 +179,7 @@ end;
 
 procedure tselecteditpagefo.setlangselectedit();
 begin
-  Caption := lang_stockcaption[ord(sc_select_edit_Page)] + '   (Ctrl+E)' ;
+   Caption := lang_xstockcaption[ord(sc_select_edit_Page)] + '   (Ctrl+E)' ;
   openfilebutton.caption := lang_stockcaption[ord(sc_open)];
 end;
 

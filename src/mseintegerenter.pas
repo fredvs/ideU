@@ -13,8 +13,9 @@ unit mseintegerenter;
 
 interface
 uses
- msestockobjects_dynpo,
- mseconsts_dynpo,
+ msestockobjects,
+ mseconsts,
+ captionideu,
  mseforms,msedataedits,msesimplewidgets,msetypes,mseglob,mseguiglob,msegui,
  msedialog,msestrings;
 
@@ -85,7 +86,7 @@ end;
 
 procedure tintegerenterfo.setlangsearchline();
 begin
-  Caption        := lang_stockcaption[ord(sc_line)];
+  Caption        := lang_xstockcaption[ord(sc_line)];
   ok.Caption := lang_modalresult[Ord(mr_ok)];
 
 end;

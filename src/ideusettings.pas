@@ -7,8 +7,9 @@ unit ideusettings;
 interface
 
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
+  mseconsts,
+  msestockobjects,
+  captionideu,
   mseglob,
   mseguiglob,
   msegui,
@@ -397,7 +398,7 @@ begin
       if shortcuts = nil then
         shortcutbu.Visible := False;
 
-      setlangsettings();
+       setlangsettings();
       //  settingsfo.Caption := 'Global Settings of ideU';
 
       if Show(True) = mr_ok then
@@ -527,26 +528,26 @@ end;
 procedure tsettingsfo.setlangsettings();
 begin
 
-  Caption := lang_stockcaption[ord(sc_generalsettings)];
-  
+  Caption := lang_xstockcaption[ord(sc_generalsettings)];
+ 
   path.caption :=  '  ' + lang_stockcaption[ord(sc_path)] + '  ' ; 
   but_ok.Caption  := lang_modalresult[Ord(mr_ok)];
   
   layoutdir.frame.caption := '${LAYOUTDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_stockcaption[ord(sc_layout)];
+  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_xstockcaption[ord(sc_layout)];
    
   layoutdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + lang_stockcaption[ord(sc_layout)];
+  ' / ' + lang_xstockcaption[ord(sc_layout)];
   
   syntaxdefdir.frame.caption := '${SYNTAXDEFDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_stockcaption[ord(sc_syntax)];
+  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_xstockcaption[ord(sc_syntax)];
    
   syntaxdefdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + lang_stockcaption[ord(sc_syntax)];
+  ' / ' + lang_xstockcaption[ord(sc_syntax)];
   
   templatedir.frame.caption := '${TEMPLATEDIR} ' + 
   lang_stockcaption[ord(sc_directory)] + ' / ' +  lang_projectoptions[Ord(po_templates)];
-   
+  
   templatedir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
   ' / ' + lang_projectoptions[Ord(po_templates)];
 
@@ -621,15 +622,15 @@ begin
   
  // macrogrid.fixrows[-1].captions.Count := 2;
   macrogrid.fixrows[-1].captions[0].Caption := lang_stockcaption[ord(sc_name)];
-  macrogrid.fixrows[-1].captions[1].Caption := lang_stockcaption[ord(sc_value)];
+  macrogrid.fixrows[-1].captions[1].Caption := lang_xstockcaption[ord(sc_value)];
  
-  other.caption := '  ' + lang_stockcaption[ord(sc_other)] + '  ' ;
-  printcomm.frame.caption := lang_stockcaption[ord(sc_printcommand)];
+  other.caption := '  ' + lang_xstockcaption[ord(sc_other)] + '  ' ;
+  printcomm.frame.caption := lang_xstockcaption[ord(sc_printcommand)];
   exeext.frame.caption := '${EXEEXT} ' + lang_projectoptions[Ord(po_exeextension)]; 
-  target.frame.caption := '${TARGET} OS ' + lang_stockcaption[ord(sc_target)];
-  targetosdir.frame.caption := '${TARGETMSE} OS-MSEgui ' + lang_stockcaption[ord(sc_target)];
-  shortcutbu.caption := lang_stockcaption[ord(sc_shortcut)];
-   
+  target.frame.caption := '${TARGET} OS ' + lang_xstockcaption[ord(sc_target)];
+  targetosdir.frame.caption := '${TARGETMSE} OS-MSEgui ' + lang_xstockcaption[ord(sc_target)];
+  shortcutbu.caption := lang_xstockcaption[ord(sc_shortcut)];
+
 end;
 
 procedure tsettingsfo.checkdirlayout(const Sender: TObject);

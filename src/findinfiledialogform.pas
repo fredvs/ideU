@@ -21,8 +21,9 @@ unit findinfiledialogform;
 interface
 
 uses
-  mseconsts_dynpo,
-  msestockobjects_dynpo,
+  mseconsts,
+  msestockobjects,
+  captionideu,
   finddialogform,
   findinfileform,
   mseforms,
@@ -273,20 +274,20 @@ end;
 procedure tfindinfiledialogfo.setlangfindinfile();
 begin
 
-  Caption           := lang_stockcaption[ord(sc_find_infile)];
+  Caption           := lang_xstockcaption[ord(sc_find_infile)];
   cancel.Caption        := lang_modalresult[ord(mr_cancel)];
   ok.Caption    := lang_modalresult[ord(mr_ok)];
-  findtext.frame.Caption := lang_stockcaption[ord(sc_texttofind)] ;
-  casesensitive.frame.Caption := lang_stockcaption[ord(sc_casesensitive)];
-  wholeword.frame.Caption := lang_stockcaption[ord(sc_wholeword)];
-  incurrentfile.frame.Caption := lang_stockcaption[ord(sc_searchincurrentfile)];
-  inopenfiles.frame.Caption := lang_stockcaption[ord(sc_searchinopenfiles)];
-  inprojectdir.frame.Caption := lang_stockcaption[ord(sc_searchinprojectdir)];
-  indirectories.frame.Caption := lang_stockcaption[ord(sc_searchindirectories)];
+  findtext.frame.Caption := lang_xstockcaption[ord(sc_texttofind)] ;
+  casesensitive.frame.Caption := lang_xstockcaption[ord(sc_casesensitive)];
+  wholeword.frame.Caption := lang_xstockcaption[ord(sc_wholeword)];
+  incurrentfile.frame.Caption := lang_xstockcaption[ord(sc_searchincurrentfile)];
+  inopenfiles.frame.Caption := lang_xstockcaption[ord(sc_searchinopenfiles)];
+  inprojectdir.frame.Caption := lang_xstockcaption[ord(sc_searchinprojectdir)];
+  indirectories.frame.Caption := lang_xstockcaption[ord(sc_searchindirectories)];
  
   dir.frame.Caption := lang_stockcaption[ord(sc_directory)];
   Mask.frame.Caption := lang_projectoptions[ord(po_filemask)];
-  subdirs.frame.Caption := lang_stockcaption[ord(sc_includesubdir)];
+  subdirs.frame.Caption := lang_xstockcaption[ord(sc_includesubdir)];
 
 end;
 

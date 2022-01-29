@@ -18,8 +18,9 @@ unit storedcomponentinfodialog;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- mseconsts_dynpo,
- msestockobjects_dynpo,
+ mseconsts,
+ msestockobjects,
+ captionideu,
  mseglob,mseguiglob,mseapplication,msestat,msemenus,msegui,msegraphics,
  msegraphutils,mseevent,mseclasses,mseforms,componentstore,msesimplewidgets,
  msewidgets,msebitmap,msedataedits,msedatanodes,mseedit,msefiledialog,msegrids,

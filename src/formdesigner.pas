@@ -31,8 +31,9 @@ interface
   {$endif}
 {$endif}
 uses
- mseconsts_dynpo,
- msestockobjects_dynpo,
+ mseconsts,
+ msestockobjects,
+ captionideu,
  msetypes,classes,mclasses,mseforms,mseguiglob,msegui,mseevent,msegraphutils,
  msegraphics,
  msedesignintf,mseclasses,msemenuwidgets,msemenus,msefiledialog,msedesigner,
