@@ -30,7 +30,7 @@ interface
 {$endif}
 
 uses
- templateeditor,po2const,msearrayutils,aboutform,plugmanager,
+ templateeditor,po2arrays,msearrayutils,aboutform,plugmanager,
  msetimer,mseformatstr,mseconsts,dialogfiles,mseforms,mseguiglob,msegui,
  msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
  msestat,msestatfile,msemenus,msestockobjects,  captionideu, msebitmap,msegrids,

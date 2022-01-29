@@ -168,7 +168,8 @@ object mainfo: tmainfo
     options = [sfo_createpath, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
     onstatupdate = mainstatfileonupdatestat
     onstatbeforewrite = mainstatbeforewriteexe
-    left = 37
+    left = 15
+    top = 14
   end
   object mainmenu1: tmainmenu
     options = [mo_shortcutright, mo_activate, mo_updateonidle]
@@ -1563,7 +1564,8 @@ object mainfo: tmainfo
     filename = 'status.sta'
     onstatbeforeread = statbefread
     onstatafterread = statafterread
-    left = 33
+    left = 17
+    top = 43
   end
   object vievmenuicons: timagelist
     width = 18
@@ -2390,8 +2392,8 @@ object mainfo: tmainfo
     }
   end
   object viewmenu: tframecomp
-    left = 64
-    top = 8
+    left = 254
+    top = 41
   end
   object runprocmon: tprocessmonitor
     onchilddied = runprocdied
@@ -2400,7 +2402,8 @@ object mainfo: tmainfo
   end
   object statoptions: trttistat
     ongetobjects = getstatobjs
-    left = 42
+    left = 593
+    top = 43
   end
   object projectfiledia: tfiledialogx
     statfile = mainstatfile
@@ -2429,8 +2432,8 @@ object mainfo: tmainfo
     controller.defaultext = 'prj'
     controller.captionopen = 'Open Project'
     controller.captionsave = 'Save Project'
-    left = 376
-    top = 11
+    left = 358
+    top = 47
   end
   object targetpipe: tpipereadercomp
     oninputavailable = targetpipeinput
@@ -2461,7 +2464,8 @@ object mainfo: tmainfo
     controller.options = [fdo_sysfilename, fdo_file, fdo_checkexist]
     controller.captionopen = 'Open Form File'
     dialogkind = fdk_open
-    left = 63
+    left = 495
+    top = 47
   end
   object formbg: tbitmapcomp
     bitmap.origformat = 'png'
@@ -2489,8 +2493,8 @@ object mainfo: tmainfo
       12434877
     )
     template.fade_direction = gd_down
-    left = 165
-    top = 12
+    left = 565
+    top = 7
   end
   object tfacecomp2: tfacecomp
     template.fade_pos.count = 2
@@ -2504,8 +2508,8 @@ object mainfo: tmainfo
       12434877
     )
     template.fade_direction = gd_down
-    left = 155
-    top = 24
+    left = 585
+    top = 6
   end
   object tfacecomp3: tfacecomp
     template.fade_pos.count = 2
@@ -2519,7 +2523,7 @@ object mainfo: tmainfo
       8882055
     )
     template.fade_direction = gd_down
-    left = 80
+    left = 575
     top = 8
   end
   object menuitemframe: tframecomp
@@ -2564,8 +2568,7 @@ object mainfo: tmainfo
       -1610612732
       -1610612731
     )
-    left = 450
-    top = 16
+    left = 597
   end
   object tframecomp2: tframecomp
     template.framei_left = 8
@@ -2620,7 +2623,7 @@ object mainfo: tmainfo
       -1610612734
       -1610612733
     )
-    left = 241
-    top = 25
+    left = 590
+    top = 4
   end
 end

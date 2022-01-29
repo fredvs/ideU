@@ -1,21 +1,22 @@
 object headerfo: theaderfo
   visible = False
-  bounds_x = 495
-  bounds_y = 202
-  bounds_cx = 446
-  bounds_cy = 290
+  bounds_x = 476
+  bounds_y = 138
+  bounds_cx = 427
+  bounds_cy = 486
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    446
-    290
+    427
+    486
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Po <> Po converter'
   windowopacity = -Inf
   oncreate = oncreateform
+  oncreated = oncreated
   moduleclassname = 'tmseform'
   object memopoheader: tmemodialogedit
     frame.caption = 'Default PO header'
@@ -33,22 +34,21 @@ object headerfo: theaderfo
       0
       0
     )
-    bounds_x = 8
-    bounds_y = 9
-    bounds_cx = 421
+    bounds_x = 24
+    bounds_y = 112
+    bounds_cx = 380
     bounds_cy = 36
-    anchors = [an_left, an_top, an_right]
     value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
     reffontheight = 15
   end
   object tbutton2: tbutton
     taborder = 1
-    bounds_x = 41
-    bounds_y = 140
-    bounds_cx = 369
-    bounds_cy = 101
+    bounds_x = 24
+    bounds_y = 268
+    bounds_cx = 380
+    bounds_cy = 117
     state = [as_localdisabled, as_localcaption, as_localonexecute]
-    caption = '   After creating a new transated Po from "ideu_empty.po"   (by Google translate for example changing ext "po" into "txt" and saved as  "ideu_xz.po" ("xz" is the code lang)).   Make sure Google did not translate "msgid" into "msgstr" (fix it if needed)   Convert it into Po file with original + translated clicking here.'
+    caption = 'After creating a translation from "ideu_empty.txt"   (by Google translate for example and saved as  "ideu_xz.txt" ("xz" is the code lang)).  Check if Google keep all the original lang code and did not translate some.  Convert it into Po file with original "msgid" + translated "msgstr" clicking here.    When done, paste that new po file into /lang directory.'
     textflags = [tf_left, tf_xcentered, tf_ycentered, tf_wordbreak]
     onexecute = createnew
   end
@@ -63,21 +63,22 @@ object headerfo: theaderfo
       2
     )
     taborder = 2
-    bounds_x = 212
-    bounds_y = 46
+    bounds_x = 264
+    bounds_y = 22
     bounds_cx = 130
     bounds_cy = 17
     visible = False
   end
   object tbutton4: tbutton
-    Tag = 2
+    Tag = 1
     taborder = 4
-    bounds_x = 40
-    bounds_y = 104
-    bounds_cx = 370
-    bounds_cy = 28
+    bounds_x = 24
+    bounds_y = 151
+    bounds_cx = 380
+    bounds_cy = 52
     state = [as_localdisabled, as_localcaption, as_localonexecute]
-    caption = 'Create new "ideu_empty.po" file ready to be translated.'
+    caption = 'Create new "ideu_empty.po" file ready to be translated.   Paste a copy of it in /lang directory if arrays were updated.'
+    textflags = [tf_left, tf_xcentered, tf_ycentered, tf_wordbreak]
     onexecute = createnew
   end
   object outputdir: tfilenameeditx
@@ -97,9 +98,9 @@ object headerfo: theaderfo
       0
     )
     taborder = 5
-    bounds_x = 40
-    bounds_y = 52
-    bounds_cx = 370
+    bounds_x = 24
+    bounds_y = 54
+    bounds_cx = 380
     bounds_cy = 39
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -114,55 +115,65 @@ object headerfo: theaderfo
     controller.options = [fdo_directory, fdo_savelastdir]
     reffontheight = 15
   end
-  object booaddspace: tbooleanedit
-    frame.caption = 'Add space around words'
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.outerframe = (
-      0
-      2
-      153
-      2
-    )
+  object tlabel1: tlabel
+    optionswidget1 = [ow1_fontglyphheight]
     taborder = 6
-    hint = 'Addespace around word (needed for ideograms)'
-    bounds_x = 67
-    bounds_y = 255
-    bounds_cx = 166
-    bounds_cy = 17
+    bounds_x = 72
+    bounds_y = 424
+    bounds_cx = 298
+    bounds_cy = 43
+    caption = 'Sorry this form is not yet translated, feel free to do it as exercice! '
+    font.height = 16
+    font.name = 'stf_default'
+    font.localprops = [flp_height]
+    textflags = [tf_ycentered, tf_wordbreak]
+    reffontheight = 19
   end
-  object numofspace: tintegeredit
-    frame.caption = 'Num of spaces'
-    frame.captionpos = cp_right
+  object tbutton3: tbutton
+    Tag = 2
+    taborder = 7
+    bounds_x = 24
+    bounds_y = 219
+    bounds_cx = 380
+    bounds_cy = 36
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Create new "ideu_empty.txt" file ready for Google Translate'
+    onexecute = createnew
+  end
+  object tbutton5: tbutton
+    Tag = 3
+    taborder = 8
+    bounds_x = 16
+    bounds_y = 8
+    bounds_cx = 338
+    bounds_cy = 28
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Extract all the captions from a form.mfm file '
+    onexecute = createnew
+  end
+  object tmemoedit1: tmemoedit
     frame.localprops = []
     frame.localprops1 = []
-    frame.outerframe = (
-      0
-      0
-      92
-      0
-    )
-    taborder = 7
-    bounds_x = 247
-    bounds_y = 253
-    bounds_cx = 129
-    bounds_cy = 21
-    value = 2
-    valuedefault = 2
+    frame.sbhorz.pagesize = 1
+    frame.sbvert.pagesize = 1
+    taborder = 9
+    visible = False
+    bounds_x = -1
+    bounds_y = 40
+    bounds_cx = 426
+    bounds_cy = 436
+    anchors = [an_left, an_top, an_right, an_bottom]
     reffontheight = 15
   end
-  object ok: tbutton
-    frame.optionsskin = [fso_flat]
-    frame.localprops = [frl_optionsskin]
-    frame.localprops1 = []
-    taborder = 8
-    bounds_x = 347
-    bounds_y = 1
-    bounds_cx = 78
-    bounds_cy = 22
+  object tbutton1: tbutton
+    taborder = 10
+    bounds_x = 367
+    bounds_y = 8
+    bounds_cx = 50
+    bounds_cy = 28
     anchors = [an_top, an_right]
-    state = [as_localcaption, as_localonexecute]
-    caption = 'OK'
+    state = [as_invisible, as_localinvisible, as_localcaption, as_localonexecute]
+    caption = 'Close'
     onexecute = onclose
   end
   object paneldone: tgroupbox
@@ -171,15 +182,16 @@ object headerfo: theaderfo
     frame.localprops1 = []
     taborder = 3
     visible = False
-    bounds_x = -3
-    bounds_y = 185
-    bounds_cx = 440
-    bounds_cy = 282
+    bounds_x = 0
+    bounds_y = 7
+    bounds_cx = 427
+    bounds_cy = 480
+    anchors = [an_left, an_top, an_right, an_bottom]
     object labdone: tlabel
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]
       color = -2147483645
       bounds_x = 44
-      bounds_y = 101
+      bounds_y = 197
       bounds_cx = 353
       bounds_cy = 48
       caption = 'Done.'
@@ -194,19 +206,18 @@ object headerfo: theaderfo
     interval = 500000
     options = [to_single]
     ontimer = ontime
-    left = 80
-    top = 112
+    left = 74
+    top = 115
   end
   object sc: tstringcontainer
     strings.data = (
       'Working'
       'Done'
     )
-    left = 16
-    top = 120
+    left = 13
+    top = 77
   end
   object impexpfiledialog: tfiledialogx
-    statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734

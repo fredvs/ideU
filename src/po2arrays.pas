@@ -1,4 +1,4 @@
-unit po2const;
+unit po2arrays;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
@@ -234,8 +234,6 @@ if length(lang_langnamestmp) < length(en_langnamestext)  then
 
     setlength(constvaluearray, 0);
 
-    file1.readln(str1);
-
     str3 := '';
     str2 := '';
     str4 := '';
@@ -322,6 +320,7 @@ if length(lang_langnamestmp) < length(en_langnamestext)  then
             str3    := str3 + strtemp;
         end;
     end;
+ 
     setlength(constvaluearray, length(constvaluearray) + 1);
     str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
     str2 := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
