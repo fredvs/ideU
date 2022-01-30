@@ -89,12 +89,13 @@ var
 implementation
 
 uses
-  captionideu, potools_mfm;
+  captionideu,
+  potools_mfm;
 
 procedure theaderfo.extractcaption(const Sender: TObject; fn: msestring);
 var
   file1: ttextdatastream;
-  str1: msestring;
+  str1, str2: msestring;
   strobject, strcaption, strcaptionmenu, strmenu, strmenusub2, strmenusub3, strmenusub1: mseString;
   isfirst: Boolean = True;
   ismenu: Boolean = False;
@@ -238,12 +239,19 @@ end;
 
 procedure theaderfo.createnewpo(const Sender: TObject; fn: msestring);
 var
-  x, y: integer;
+  x, y, int1: integer;
+  str1, str2: msestring;
   file1: ttextdatastream;
   imodalresultty: modalresultty;
   iextendedty: extendedty;
   istockcaptionty: stockcaptionty;
   ixstockcaptionty: xstockcaptionty;
+  imainformty: mainformty;
+  isourceformty: sourceformty;
+  iprojectoptionsconty: projectoptionsconty;
+  iactionsmodulety: actionsmodulety;
+  iisettingsty: isettingsty;
+  iprojectoptionsty: projectoptionsty;
 begin
 
   setlength(defaultresult, length(en_modalresulttext));
@@ -256,19 +264,53 @@ begin
     defaultresult[y + Ord(imodalresultty)] := en_modalresulttextnoshortcut[(imodalresultty)];
 
   y := length(defaultresult);
+  setlength(defaultresult, length(en_mainformtext) + y);
+  for imainformty := Low(mainformty) to High(mainformty) do
+    defaultresult[y + Ord(imainformty)] := en_mainformtext[(imainformty)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_sourceformtext) + y);
+  for isourceformty := Low(sourceformty) to High(sourceformty) do
+    defaultresult[y + Ord(isourceformty)] := en_sourceformtext[(isourceformty)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_projectoptionscontext) + y);
+  for iprojectoptionsconty := Low(projectoptionsconty) to High(projectoptionsconty) do
+    defaultresult[y + Ord(iprojectoptionsconty)] :=
+      en_projectoptionscontext[(iprojectoptionsconty)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_actionsmoduletext) + y);
+  for iactionsmodulety := Low(actionsmodulety) to High(actionsmodulety) do
+    defaultresult[y + Ord(iactionsmodulety)] :=
+      en_actionsmoduletext[(iactionsmodulety)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_settingstext) + y);
+  for iisettingsty := Low(isettingsty) to High(isettingsty) do
+    defaultresult[y + Ord(iisettingsty)] :=
+      en_settingstext[(iisettingsty)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_projectoptionstext) + y);
+  for iprojectoptionsty := Low(projectoptionsty) to High(projectoptionsty) do
+    defaultresult[y + Ord(iprojectoptionsty)] :=
+      en_projectoptionstext[(iprojectoptionsty)];
+
+  y := length(defaultresult);
   setlength(defaultresult, length(en_stockcaption) + y);
   for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
     defaultresult[y + Ord(istockcaptionty)] := en_stockcaption[(istockcaptionty)];
 
   y := length(defaultresult);
-  setlength(defaultresult, length(en_extendedtext) + y);
-  for iextendedty := Low(extendedty) to High(extendedty) do
-    defaultresult[y + Ord(iextendedty)] := en_extendedtext[(iextendedty)];
-
-  y := length(defaultresult);
   setlength(defaultresult, length(en_xstockcaption) + y);
   for ixstockcaptionty := Low(xstockcaptionty) to High(xstockcaptionty) do
     defaultresult[y + Ord(ixstockcaptionty)] := en_xstockcaption[(ixstockcaptionty)];
+
+  y := length(defaultresult);
+  setlength(defaultresult, length(en_extendedtext) + y);
+  for iextendedty := Low(extendedty) to High(extendedty) do
+    defaultresult[y + Ord(iextendedty)] := en_extendedtext[(iextendedty)];
 
   // Languages must be the last in po
   y     := length(defaultresult);
@@ -277,21 +319,29 @@ begin
     defaultresult[x + y] := en_langnamestext[x];
 
   // check if double "msgid"
- {
+
   str1 := '';
-  int1:= 0;
+  str2 := '';
+  int1 := 0;
   for x := 0 to length(defaultresult) - 1 do
   begin
-    if int1 > 1 then writeln('Similar msgid = ' + destr1 + ' = ' + inttostr(int1)) ;
-    int1:= 0;
-    str1 := defaultresult[x];
+    if int1 > 1 then
+      str2 := str2 +
+        'Similar msgid = ' + str1 + ' = ' + IntToStr(int1) + lineend;
+    int1   := 0;
+    str1   := defaultresult[x];
     if trim(str1) <> '' then
-    for y := 0 to length(defaultresult) - y do
-    begin
-      if defaultresult[y] = str1 then inc(int1);
-     end;
+      for y := 0 to length(defaultresult) - y do
+        if defaultresult[y] = str1 then
+          Inc(int1);
   end;
- }
+
+  if trim(str2) = '' then
+    ShowMessage('   Good: No double similar "msgid" found!   ',
+      'Result of double "msegid"')
+  else
+    ShowMessage('Those double similar "msgid" were found:' + lineend + str2,
+      'Result of check for double "msegid"');
 
   if forgoogle = False then
     file1 := ttextdatastream.Create(outputdir.Value +
@@ -319,7 +369,7 @@ begin
       end
       else
         file1.writeln('msgstr "' + defaultresult[x] + '"');
-      file1.writeln('');
+      file1.writeln();
     end;
   file1.Free;
 end;

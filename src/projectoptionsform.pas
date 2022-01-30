@@ -3336,7 +3336,7 @@ begin
     storemacros(Sender);
     fname1 := Sender.settingsfile.Value;
     expandprmacros1(fname1);
-    if findfile(fname1) and not askyesno(lang_actionsmodule[ord(ac_file)] + fname1 + ' '+
+    if findfile(fname1) and not askyesno(lang_stockcaption[ord(sc_file)] + fname1 + ' '+
       lang_actionsmodule[ord(ac_exists)] + lineend +
       lang_actionsmodule[ord(ac_wantoverwrite)], lang_stockcaption[Ord(sc_warningupper)]) then
       Exit;

@@ -2910,7 +2910,7 @@ begin
   Result := False;
   path1  := searchfile(aname);
   if path1 = '' then
-    ShowMessage(lang_actionsmodule[ord(ac_file)] + ' ' + aname + ' ' 
+    ShowMessage(lang_stockcaption[ord(sc_file)] + ' ' + aname + ' ' 
     + lang_actionsmodule[ord(ac_notfound)], 
     lang_stockcaption[Ord(sc_warningupper)])
   else
@@ -2919,7 +2919,7 @@ begin
       if not canoverwrite and findfile(path2) then
         if not autoincrement then
           begin
-            showerror(lang_actionsmodule[ord(ac_file)] + ' ' + newname +
+            showerror(lang_stockcaption[ord(sc_file)] + ' ' + newname +
             ' ' + lang_actionsmodule[ord(ac_exists)]);
             
             Exit;
@@ -3536,7 +3536,7 @@ begin
                                 else
                                   try
                                     if not copyfile(Source, dest, False) then
-                                      showerror(lang_actionsmodule[ord(ac_file)] + ' ' + dest +
+                                      showerror(lang_stockcaption[ord(sc_file)] + ' ' + dest +
                                       ' ' + lang_actionsmodule[ord(ac_exists)]);
                                   except
                                     application.handleexception(Nil);
@@ -4338,7 +4338,7 @@ begin
 
       //  writeln('ok tabind'); 
 
-      dialogfilesfo.selected_file.frame.Caption := lang_actionsmodule[ord(ac_file)];
+      dialogfilesfo.selected_file.frame.Caption := lang_stockcaption[ord(sc_file)];
 
       //'Selected Layout File';
       // from ' + dialogfilesfo.list_files.directory ;
@@ -4467,7 +4467,7 @@ begin
       mainmenu1.menu.itembynames(['file', 'quit']).Caption := lang_actionsmodule[Ord(
                                                               ac_configureideu)];
       mainmenu1.menu.itembynames(['file']).Caption         :=
-       '&' + lang_actionsmodule[ord(ac_file)];
+       '&' + lang_stockcaption[ord(sc_file)];
 
       mainmenu1.menu.itembynames(['file', 'new']).Caption   := lang_stockcaption[Ord(sc_newfile)];
       mainmenu1.menu.itembynames(['file', 'open']).Caption  := lang_stockcaption[Ord(sc_open)];

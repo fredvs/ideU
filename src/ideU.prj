@@ -138,8 +138,20 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=po2const
+ value=message
  history=20
+  message
+  messagedlg
+  Do you want to overwrite
+  'file'
+  setstattext
+  statdisp
+  statdisp.
+  sr_exited
+  sr_exited_normally
+  ac_sr_exited_normally
+  exited normally
+  exited normaly
   po2const
   sg_editor
   _dynpo
@@ -148,18 +160,6 @@ findinfiledialog=94
   sc_close
   sc_edit
   lang_stockcaption
-  msegraphicstream
-  headerfo
-  msestockobjects_dynpo
-  captionideu
-  all ok
-  all ok 4
-  iniutils
-  themenr
-  actionsmodule
-  actionmodule
-  blinkingcaret
-  sc_file
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=678
- y=430
+ x=717
+ y=494
  cx=284
  cy=269
 replacedialog=33
@@ -229,7 +229,7 @@ options=114
  sortdescend6=0
  width7=64
  sortdescend7=0
- width8=95
+ width8=92
  sortdescend8=0
  width9=365
  sortdescend9=0
@@ -930,20 +930,26 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
+ SETTINGS_FORM
  MAINFO
- PROJECTOPTIONSFO
+ FILEDIALOGXFO
+ HEADERFO
  SOURCEFO
-moduletypes=4
+moduletypes=6
  TACTIONSMO
+ TSETTINGSFO
  TMAINFO
- TPROJECTOPTIONSFO
+ TFILEDIALOGXFO
+ THEADERFO
  TSOURCEFO
-modulefiles=4
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/msefiledialogx.mfm
+ /home/fred/ideu/src/potools.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=15
@@ -1580,8 +1586,16 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=38
-finddtext=podemo
+finddtext=sc_warning
 findhistory=20
+ sc_warning
+ unkn
+ file
+ new
+ 'new'
+ 'file'
+ Compile
+ normally
  podemo
  podem
  stat
@@ -1594,23 +1608,25 @@ findhistory=20
  sc_path
  sc_layout
  setlang
- sc_shortcut
- sc_value
- sc_name
- stockcaption
- lang_stock
- createnewconst
- sc_print
- sc_closeall
 findoptions=1
-editpos=7
+editpos=17
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,100
+ 0,-1073741823
+ 0,580
+ 0,-1073741823
+ 14,292
+ 0,935
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1618,7 +1634,17 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+sourcefiles=17
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1626,7 +1652,17 @@ sourcefiles=7
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/po2arrays.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=7
+ ${PROJECTDIR}/potools.pas
+ ${PROJECTDIR}/msegdbutils.pas
+ ${PROJECTDIR}/captionideu.pas
+ ${PROJECTDIR}/main.pas
+ /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts.pas
+ ${PROJECTDIR}/captionideu.pas
+ ${PROJECTDIR}/ideusettings.pas
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/msefiledialogx.pas
+relpaths=17
  ideU.pas
  sourceform.pas
  actionsmodule.pas
@@ -1634,7 +1670,17 @@ relpaths=7
  projectoptionsform.pas
  po2arrays.pas
  ideU.pas
-ismoduletexts=7
+ potools.pas
+ msegdbutils.pas
+ captionideu.pas
+ main.pas
+ mseide-msegui/lib/common/lang_consts/mseconsts.pas
+ captionideu.pas
+ ideusettings.pas
+ main.pas
+ sourceform.pas
+ msefiledialogx.pas
+ismoduletexts=17
  0
  0
  0
@@ -1642,31 +1688,67 @@ ismoduletexts=7
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/potools.mfm
+ /home/fred/ideu/src/ideusettings.mfm
+ /home/fred/ideu/src/msefiledialogx.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-firsttab=3
-index=6
+order=17
+ 0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 13
+ 8
+ 14
+ 18
+ 12
+ 15
+ 6
+ 7
+ 10
+ 9
+ 16
+firsttab=8
+index=13
 [layout]
-windowlayout=571
+windowlayout=629
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1680,8 +1762,8 @@ windowlayout=571
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=139
+ y=125
  cx=1224
  cy=621
  rcx=0
@@ -1708,8 +1790,8 @@ windowlayout=571
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=5
+ y=404
  cx=497
  cy=314
  rcx=0
@@ -1784,16 +1866,16 @@ windowlayout=571
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=678
+ x=216
+ y=44
+ cx=965
  cy=414
  rcx=0
  rcy=0
@@ -1821,7 +1903,7 @@ windowlayout=571
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=6
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2124,10 +2206,12 @@ windowlayout=571
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=13
+ value=/home/fred/ideu/src/potools.pas
+ history=15
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/potools.pas
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/potools.mfm
   /home/fred/msegui_dynpo/demo/po2arrays.pas
   /home/fred/mseide-msegui/apps/ide/po2arrays.pas
   /home/fred/ideu/src/po2arrays.pas
@@ -2160,8 +2244,26 @@ windowlayout=571
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- firsttab=3
- index=6
+ order=17
+  0
+  1
+  2
+  3
+  4
+  5
+  13
+  8
+  14
+  18
+  12
+  15
+  6
+  7
+  10
+  9
+  16
+ firsttab=8
+ index=13
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2203,7 +2305,7 @@ windowlayout=571
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=findinfilefo
  parent=
  mdistate=3
  nx=0
@@ -2219,20 +2321,58 @@ windowlayout=571
  wsize=0
  active=0
  visible=1
- [_mse_projectoptionsfo_mse_]
+ [_mse_headerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=212
- y=56
- cx=834
- cy=574
+ x=476
+ y=138
+ cx=437
+ cy=486
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_settings_form_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_filedialogxfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=473
+ y=107
+ cx=464
+ cy=492
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogxfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_headerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=656
+ y=61
+ cx=618
+ cy=484
  rcx=0
  rcy=0
  wsize=0

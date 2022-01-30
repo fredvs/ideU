@@ -198,7 +198,6 @@ type
     ac_scriptform,         //56 Scriptform
     ac_inheritedform,      //57 Inherited Form
     ac_replacesettings,    //58 Do you want to replace the settings by
-    ac_file,               //59 File "
     ac_wantoverwrite,      //60 Do you want to overwrite?
     ac_sr_unknown,         //61 Unknown
     ac_sr_startup,         //63 Startup
@@ -344,7 +343,7 @@ sc_newfile, sc_tools, sc_lang,
 type
   xstockcaptionty = (
     sc_target, sc_view, sc_forms, sc_layout, sc_syntax, sc_project,
-    sc_edited, sc_widgets, sc_settings, sc_about, sc_newfile,
+    sc_edited, sc_widgets, sc_settings, sc_about, 
     sc_saveas, sc_saveall, sc_closeall, sc_print, sc_quit,
     sc_line, sc_search_again, sc_search_back, sc_find_replace,
     sc_find_infile, sc_proclist, sc_select_edit_Page,
@@ -486,7 +485,6 @@ const
     'Scriptform',
     'Inherited Form',
     'Do you want to replace the settings by',
-    'File',
     'Do you want to overwrite?',
     'Unknown',
     'Startup',
@@ -736,7 +734,6 @@ const
     'Widgets',                                 //sc_widgets
     'Settings',                                //sc_settings
     'About',                                   //sc_about
-    'New',                                     //sc_newfile
     'Save as...',                              //sc_saveas
     'Save all',                                //sc_saveall
     'Close all',                               //sc_closeall

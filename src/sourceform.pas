@@ -857,7 +857,7 @@ begin
           if filechanged then
           begin
             filechanged := False;
-            wstr1       := lang_actionsmodule[ord(ac_file)] + ' ' + filepath  + ' ' + 
+            wstr1       := lang_stockcaption[ord(sc_file)] + ' ' + filepath  + ' ' + 
                          lang_sourceform[ord(sf_haschanged)];
             if modified then
               wstr1 := wstr1 + ' ' + lang_sourceform[ord(sf_therearemody)];
