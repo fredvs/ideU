@@ -578,8 +578,6 @@ end;
 
 procedure tmainfo.mainfooncreate(Const Sender: TObject);
 begin
- setlangideu(MSEFallbackLang);
-
   nozorderhandling := True;
   designer.ongetmodulenamefile := 
 {$ifdef FPC}
@@ -4949,6 +4947,7 @@ begin
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
  TDummyThread.Create(False);
+  
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);
@@ -5517,9 +5516,8 @@ begin
               MSEFallbackLang := conflangfo.gridlangcode[x];
           
           if oldlang <> MSEFallbackLang then setlangideu(MSEFallbackLang);    
-        end;
-      //
-    end;       
+        end else setlangideu(MSEFallbackLang);
+     end;       
 end;
 
 procedure tmainfo.ontemplateeditor(Const Sender: TObject);

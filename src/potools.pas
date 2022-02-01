@@ -6,6 +6,7 @@ unit potools;
 interface
 
 uses
+  projectoptionsform,
   msetypes,
   mseglob,
   mseguiglob,
@@ -319,7 +320,6 @@ begin
     defaultresult[x + y] := en_langnamestext[x];
 
   // check if double "msgid"
-
   str1 := '';
   str2 := '';
   int1 := 0;
@@ -488,8 +488,8 @@ begin
 
     file1.Free;
 
-    str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator +
-      'ideu_empty.po';
+  //  str1 := ExtractFilePath(ParamStr(0)) + directoryseparator + 'lang' + directoryseparator +
+    str1 := expandprmacros('${LANGDIR}')  + directoryseparator +  'ideu_empty.po';
 
     if fileexists(str1) then
     begin

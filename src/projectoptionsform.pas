@@ -1042,6 +1042,7 @@ procedure expandprojectmacros;
 function expandprmacros(const atext: msestring): msestring;
 procedure expandprmacros1(var atext: msestring);
 function projecttemplatedir: filenamety;
+function languagedir: filenamety;
 function projectfiledialog(var aname: filenamety; save: Boolean): modalresultty;
 procedure projectoptionsmodified;
 function checkprojectloadabort: Boolean; //true on load abort
@@ -1424,6 +1425,12 @@ function projecttemplatedir: filenamety;
 begin
   Result := expandprmacros('${TEMPLATEDIR}');
 end;
+
+function languagedir: filenamety;
+begin
+  Result := expandprmacros('${LANGDIR}');
+end;
+
 
 function expandprmacros(const atext: msestring): msestring;
 begin

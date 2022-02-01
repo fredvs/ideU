@@ -28,6 +28,7 @@ procedure findpofiles();
 implementation
 
 uses
+  projectoptionsform,
   msestockobjects,
   mseconsts,
   captionideu;
@@ -55,8 +56,8 @@ begin
    
   SetLength(ListOfFiles, 0);
  
- str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator;
-
+  str1 := expandprmacros('${LANGDIR}');
+ 
   // List the files
   FindFirst(str1+ '*.po', Attribute, SearchResult);
   while (i = 0) do
@@ -137,10 +138,10 @@ var
   default_projectoptionstext, default_sourceformtext, default_stockcaption,
   default_xstockcaption, default_langnamestext, default_extendedtext: array of msestring;
 begin
+
   strlang := '';
-
-  str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + 'ideu_' + alang + '.po';
-
+  str1 := expandprmacros('${LANGDIR}') + 'ideu_' + alang + '.po';
+   
    if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
   begin
    setlength(lang_modalresult, length(en_modalresulttext));

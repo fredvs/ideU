@@ -7,60 +7,19 @@ unit ideusettings;
 interface
 
 uses
-  mseconsts,
-  msestockobjects,
-  captionideu,
-  mseglob,
-  mseguiglob,
-  msegui,
-  mseclasses,
-  mseforms,
-  msestat,
-  msestatfile,
-  msesimplewidgets,
-  msefiledialogx,
-  msestrings,
-  msemacros,
-  msedataedits,
-  msebitmap,
-  msedatanodes,
-  mseedit,
-  mseevent,
-  msegraphutils,
-  msegrids,
-  mselistbrowser,
-  msemenus,
-  msesys,
-  msetypes,
-  msegraphics,
-  msewidgets,
-  mseactions,
-  mseifiglob,
-  msesplitter,
-  mseificomp,
-  mseificompglob,
-  msememodialog,
-  msewidgetgrid,
-  mseapplication,
-  msestream,
-  SysUtils,
-  mseact,
-  msedragglob,
-  msescrollbar,
-  msetabs,
-  msegraphedits,
-  msedropdownlist,
-  msegridsglob,
-  mseeditglob,
-  mserichstring,
-  msetextedit,
-  msecolordialog,
-  projectoptionsform;
+ mseconsts,msestockobjects,captionideu,mseglob,mseguiglob,msegui,mseclasses,
+ mseforms,msestat,msestatfile,msesimplewidgets,msefiledialogx,msestrings,
+ msemacros,msedataedits,msebitmap,msedatanodes,mseedit,mseevent,msegraphutils,
+ msegrids,mselistbrowser,msemenus,msesys,msetypes,msegraphics,msewidgets,
+ mseactions,mseifiglob,msesplitter,mseificomp,mseificompglob,msememodialog,
+ msewidgetgrid,mseapplication,msestream,SysUtils,mseact,msedragglob,
+ msescrollbar,msetabs,msegraphedits,msedropdownlist,msegridsglob,mseeditglob,
+ mserichstring,msetextedit,msecolordialog,projectoptionsform;
 
 type
   settingsmacroty = (sma_fpcdir, sma_fpclibdir, sma_msedir, sma_mselibdir,
     sma_syntaxdefdir, sma_templatedir, sma_layoutdir, sma_compstoredir,
-    sma_compiler, sma_debugger,
+    sma_compiler, sma_debugger, sma_langdir,
     sma_exeext, sma_target, sma_targetosdir, sma_fpguidir, sma_ideudir,
     sma_docviewdir, sma_projectdir, sma_fpgui, sma_lcldir, sma_bgrabitmapdir, sma_fpcsrcdir);
 
@@ -70,7 +29,7 @@ const
   settingsmacronames: array[settingsmacroty] of msestring =
     ('fpcdir', 'fpclibdir', 'msedir',
     'mselibdir', 'syntaxdefdir', 'templatedir', 'layoutdir',
-    'compstoredir', 'compiler', 'debugger',
+    'compstoredir', 'compiler', 'debugger', 'langdir',
     'exeext', 'target', 'targetosdir', 'fpguidir',
     'ideudir', 'docview', 'projectdir', 'fpgui', 'lcldir', 'bgrabitmapdir', 'fpcsrcdir');
  {$ifdef mswindows}
@@ -80,7 +39,7 @@ const
     '', '', '', '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
-    'ppcx64.exe', 'gdb.exe', '.exe', 'x86_64-win64', 'windows',
+    'ppcx64.exe', 'gdb.exe', '${IDEUDIR}lang\', '.exe', 'x86_64-win64', 'windows',
     '', '', '${IDEUDIR}docview\', '', '', '', '', '');
  {$else}
 
@@ -88,7 +47,7 @@ const
     '', '', '', '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
-    'ppc386.exe', 'gdb.exe', '.exe', 'i386-win32', 'windows',
+    'ppc386.exe', 'gdb.exe', '${IDEUDIR}lang\', '.exe', 'i386-win32', 'windows',
     '', '', '${IDEUDIR}docview\', '', '', '', '', '');
 
  {$endif}
@@ -101,7 +60,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb', '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+    'ppcx64', 'gdb', '${IDEUDIR}lang/' , '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
     '', '', '', '/usr/share/fpcsrc/');
   {$endif}
 
@@ -113,7 +72,7 @@ const
     '/usr/local/share/ideu/syntaxdefs/',
     '/usr/local/share/ideu/templates/', '/usr/local/share/ideu/layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', '/usr/local/bin/gdb', '', 'x86_64-freebsd', 'linux',
+    'ppcx64', '/usr/local/bin/gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux',
     '/usr/local/share/fpgui/', '/usr/local/share/ideu/',
     '/usr/local/share/docview/', '', '', '', '','');
    {$else}
@@ -121,7 +80,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb', '', 'x86_64-freebsd', 'linux', '', '',
+    'ppcx64', 'gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
    {$endif}
 
@@ -133,7 +92,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcarm', 'gdb', '', 'arm-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+    'ppcarm', 'gdb', '${IDEUDIR}lang/' , '', 'arm-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
     '', '', '','');
    {$endif}
 
@@ -142,7 +101,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb', '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/',
     '', '', '','', '/usr/share/fpcsrc/');
    {$endif}
 
@@ -152,12 +111,10 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb', '', 'i386-freebsd', 'linux', '', '',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-freebsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
 
     {$endif}
-
-
   {$endif}
  {$endif}
 
@@ -203,6 +160,8 @@ type
     shortcutbu: TButton;
     but_ok: TButton;
     bgrabitmapdir: tfilenameeditx;
+    ideudir: tfilenameeditx;
+    langdir: tfilenameeditx;
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
     procedure formoncreate(const Sender: TObject);
     procedure setvalue(const Sender: TObject; var avalue: msestring; var accept: Boolean);
@@ -275,7 +234,7 @@ var
   int1: integer;
 begin
   Result   := getsettingsmacros1(settings.macros);
-  for int1 := 0 to Ord(sma_debugger) do
+  for int1 := 0 to Ord(sma_langdir) do
     Result[int1].Value := tosysfilepath(Result[int1].Value);
 end;
 
@@ -334,7 +293,6 @@ begin
 
       compiler.invalidate;
 
-
       debugger.top   := compiler.top + compiler.Height + 2;
       debugger.Width := compiler.Width;
 
@@ -358,8 +316,11 @@ begin
 
       lcldir.top   := docviewdir.top + compiler.Height + 2;
       lcldir.Width := compiler.Width;
+      
+      ideudir.top   := lcldir.top + compiler.Height + 2;
+      ideudir.Width := compiler.Width;
 
-      layoutdir.top   := lcldir.top + compiler.Height + 2;
+      layoutdir.top   := ideudir.top + compiler.Height + 2;
       layoutdir.Width := compiler.Width;
 
       templatedir.top   := layoutdir.top + compiler.Height + 2;
@@ -367,17 +328,18 @@ begin
 
       syntaxdefdir.top   := templatedir.top + compiler.Height + 2;
       syntaxdefdir.Width := compiler.Width;
+      
+      langdir.top   := syntaxdefdir.top + compiler.Height + 2;
+      langdir.Width := compiler.Width;
 
-      bgrabitmapdir.top   := syntaxdefdir.top + compiler.Height + 2;
+      bgrabitmapdir.top   := langdir.top + compiler.Height + 2;
       bgrabitmapdir.Width := compiler.Width;
-
 
       setting_tab.Height := bgrabitmapdir.bottom + compiler.Height;
 
       Height := setting_tab.Height + 4;
 
       path.Height := setting_tab.Height;
-
 
       exeext.top   := 60;
       exeext.Width := compiler.Width;
@@ -422,6 +384,21 @@ procedure tsettingsfo.formoncreate(const Sender: TObject);
 begin
   with settings, macros do
   begin
+  
+   {
+    if (trim(ideudir.value) = '') then
+    begin
+    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+    writeln('not exist');
+    end
+    else
+    begin
+     writeln('Exist');
+     macros[sma_ideudir] := ideudir.value ;
+    end;
+    }
+    
+    ideudir.value := macros[sma_ideudir];
     // fpcdir.value:= macros[sma_fpcdir];
     // fpclibdir.value:= macros[sma_fpclibdir];
     msedir.Value       := macros[sma_msedir];
@@ -429,6 +406,7 @@ begin
     mselibdir.Value    := macros[sma_mselibdir];
     syntaxdefdir.Value := macros[sma_syntaxdefdir];
     layoutdir.Value    := macros[sma_layoutdir];
+    langdir.Value      := macros[sma_langdir];
     templatedir.Value  := macros[sma_templatedir];
     targetosdir.Value  := macros[sma_targetosdir];
     compiler.Value     := macros[sma_compiler];
@@ -473,8 +451,10 @@ function tsettingsfo.widgetstomacros: settingsmacrosty;
 begin
   with Result do
   begin
+    if (trim(ideudir.value) = '') or (directoryexists(ideudir.value) = false) then
+    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))))
+    else macros[sma_ideudir] := ideudir.value ;
     macros[sma_projectdir] := TheProjectDirectory;
-    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
     macros[sma_lcldir] := lcldir.Value;
     macros[sma_fpguidir] := fpguidir.Value;
     macros[sma_bgrabitmapdir] := bgrabitmapdir.Value;
@@ -482,7 +462,7 @@ begin
     macros[sma_lcldir] := lcldir.Value;
     macros[sma_fpgui] := macros[sma_fpguidir];
     macros[sma_docviewdir] := docviewdir.Value;
-    // macros[sma_fpcdir]:= fpcdir.value;
+    macros[sma_langdir]:= langdir.value;
     // macros[sma_fpclibdir]:= fpclibdir.value;
     macros[sma_msedir] := msedir.Value;
     macros[sma_mselibdir] := mselibdir.Value;
@@ -534,88 +514,100 @@ begin
   but_ok.Caption  := lang_modalresult[Ord(mr_ok)];
   
   layoutdir.frame.caption := '${LAYOUTDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_xstockcaption[ord(sc_layout)];
+  lang_stockcaption[ord(sc_directory)] + ' | ' + lang_xstockcaption[ord(sc_layout)];
    
   layoutdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + lang_xstockcaption[ord(sc_layout)];
+  ' | ' + lang_xstockcaption[ord(sc_layout)];
   
+ 
+  ideudir.frame.caption := '${IDEUDIR} ' + 
+  lang_stockcaption[ord(sc_directory)] + ' | ideU';
+   ideudir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
+  ' | ' + 'ideU';
+  
+  langdir.frame.caption := '${LANGDIR} ' + 
+  lang_stockcaption[ord(sc_directory)] + ' | ' + lang_stockcaption[Ord(sc_lang)];
+  
+  langdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
+  ' | ' + lang_stockcaption[Ord(sc_lang)];
+   
   syntaxdefdir.frame.caption := '${SYNTAXDEFDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' + lang_xstockcaption[ord(sc_syntax)];
+  lang_stockcaption[ord(sc_directory)] + ' | ' + lang_xstockcaption[ord(sc_syntax)];
    
   syntaxdefdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + lang_xstockcaption[ord(sc_syntax)];
+  ' | ' + lang_xstockcaption[ord(sc_syntax)];
   
   templatedir.frame.caption := '${TEMPLATEDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  lang_projectoptions[Ord(po_templates)];
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  lang_projectoptions[Ord(po_templates)];
   
   templatedir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + lang_projectoptions[Ord(po_templates)];
+  ' | ' + lang_projectoptions[Ord(po_templates)];
 
   docviewdir.frame.caption := '${DOCVIEWDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'DocView';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'DocView';
    
   docviewdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / ' + 'DocView';
+  ' | ' + 'DocView';
   
   fpguidir.frame.caption := '${FPGUIDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'fpGUI';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'fpGUI';
    
   fpguidir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'fpGUI';
+  ' | '  +  'fpGUI';
 
   compstoredir.frame.caption := '${COMPSTOREDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'CompStore';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'CompStore';
    
   compstoredir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'CompStore';
+  ' | '  +  'CompStore';
   
   mselibdir.frame.caption := '${MSELIBDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'MSEgui/lib';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'MSEgui/lib';
    
   mselibdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'MSEgui/lib';
+  ' | '  +  'MSEgui/lib';
   
   msedir.frame.caption := '${MSEDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'MSEgui';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'MSEgui';
    
   msedir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'MSEgui';
+  ' | '  +  'MSEgui';
  
    debugger.frame.caption := '${DEBUGGER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
+  lang_stockcaption[ord(sc_file)] + ' | ' +  lang_projectoptions[Ord(po_debugcommand)];
    
   debugger.controller.captiondir := lang_stockcaption[ord(sc_file)] + 
-  ' / '  + lang_projectoptions[Ord(po_debugcommand)];
+  ' | '  + lang_projectoptions[Ord(po_debugcommand)];
   
      debugger.frame.caption := '${DEBUGGER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_debugcommand)];
+  lang_stockcaption[ord(sc_file)] + ' | ' +  lang_projectoptions[Ord(po_debugcommand)];
    
   debugger.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
-  ' / '  + lang_projectoptions[Ord(po_debugcommand)];
+  ' | '  + lang_projectoptions[Ord(po_debugcommand)];
 
   compiler.frame.caption := '${COMPILER} ' + 
-  lang_stockcaption[ord(sc_file)] + ' / ' +  lang_projectoptions[Ord(po_makecommand)];
+  lang_stockcaption[ord(sc_file)] + ' | ' +  lang_projectoptions[Ord(po_makecommand)];
    
   compiler.controller.captionopen := lang_stockcaption[ord(sc_file)] + 
-  ' / '  + lang_projectoptions[Ord(po_makecommand)];
+  ' | '  + lang_projectoptions[Ord(po_makecommand)];
   
   lcldir.frame.caption := '${LCLDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'LCL (Lazarus)';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'LCL (Lazarus)';
    
   lcldir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'LCL (Lazarus)';
+  ' | '  +  'LCL (Lazarus)';
 
     fpcsrcdir.frame.caption := '${FPCSRCDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'fpcsrc';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'fpcsrc';
    
   fpcsrcdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'fpcsrc';
+  ' | '  +  'fpcsrc';
   
    bgrabitmapdir.frame.caption := '${BGRABITMAPDIR} ' + 
-  lang_stockcaption[ord(sc_directory)] + ' / ' +  'BGRABitmap';
+  lang_stockcaption[ord(sc_directory)] + ' | ' +  'BGRABitmap';
    
   bgrabitmapdir.controller.captiondir := lang_stockcaption[ord(sc_directory)] + 
-  ' / '  +  'BGRABitmap';
+  ' | '  +  'BGRABitmap';
     
   macros.caption := '  ' + lang_projectoptions[Ord(po_macros)] + '  ' ;
   macrogrid.frame.caption := lang_projectoptions[Ord(po_macros)]; 
@@ -649,6 +641,8 @@ begin
     templatedir.controller.options   := [fdo_sysfilename, fdo_directory];
     syntaxdefdir.controller.options  := [fdo_sysfilename, fdo_directory];
     layoutdir.controller.options     := [fdo_sysfilename, fdo_directory];
+    langdir.controller.options     := [fdo_sysfilename, fdo_directory];
+    ideudir.controller.options     := [fdo_sysfilename, fdo_directory];
   end
   else
   begin
@@ -665,7 +659,9 @@ begin
     templatedir.controller.options   := [fdo_directory];
     syntaxdefdir.controller.options  := [fdo_directory];
     layoutdir.controller.options     := [fdo_directory];
-  end;
+    langdir.controller.options     := [fdo_directory];
+    ideudir.controller.options     := [fdo_directory];
+   end;
 end;
 
 procedure tsettingsfo.onchange(const sender: TObject);
