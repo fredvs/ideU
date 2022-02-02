@@ -4462,8 +4462,6 @@ begin
  
   application.ProcessMessages;
 
-      mainmenu1.menu.itembynames(['file', 'quit']).Caption := lang_actionsmodule[Ord(
-                                                              ac_configureideu)];
       mainmenu1.menu.itembynames(['file']).Caption         :=
        '&' + lang_stockcaption[ord(sc_file)];
 
@@ -4476,7 +4474,7 @@ begin
       mainmenu1.menu.itembynames(['file', 'closeall']).Caption := lang_xstockcaption[Ord(sc_closeall)
                                                                   ];
       mainmenu1.menu.itembynames(['file', 'print']).Caption := lang_xstockcaption[Ord(sc_print)];
-      mainmenu1.menu.itembynames(['file', 'quit']).Caption  := lang_xstockcaption[Ord(sc_quit)];
+      mainmenu1.menu.itembynames(['file', 'quit']).Caption  := lang_mainform[Ord(ma_exit)];
       mainmenu1.menu.itembynames(['search']).Caption        := '&' + lang_stockcaption[Ord(sc_search
                                                                )];
       mainmenu1.menu.itembynames(['search', 'line']).Caption := lang_xstockcaption[Ord(sc_line)];
@@ -4790,6 +4788,13 @@ begin
       mainmenu1.menu.itembynames(['edited', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
 
       mainmenu1.menu.itembynames(['widgets']).Caption := lang_xstockcaption[Ord(sc_widgets)];
+      
+      mainmenu1.menu.itembynames(['widgets', 'fpgui', 'reset']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_reset)];
+    
+      mainmenu1.menu.itembynames(['widgets', 'fpgui', 'formdesigner']).Caption :=
+          lang_mainform[Ord(ma_formdesigner)];
+           
       mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := lang_xstockcaption[Ord(
                                                                              sc_msemod)];
       mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := 
@@ -4851,6 +4856,9 @@ begin
                                                                     ];
 
       mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
+      
+      if assigned(objectinspectorfo) then objectinspectorfo.caption := 
+         lang_actionsmodule[Ord(ac_objectinspector)];
 
       if Assigned(debuggerfo) then
         begin
@@ -4864,7 +4872,7 @@ begin
           debuggerfo.procedure_list.hint    := lang_xstockcaption[Ord(sc_proclist)];
           debuggerfo.find_in_edit.hint      := lang_xstockcaption[Ord(sc_searchincurrentfile)];
           debuggerfo.project_save.hint      := lang_stockcaption[Ord(sc_save)];
-          debuggerfo.project_option.hint    := lang_xstockcaption[Ord(po_projectoptions)];
+          debuggerfo.project_option.hint    := lang_projectoptions[Ord(po_projectoptions)];
           debuggerfo.project_make.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
                                                ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
                                                ExtractFilename(theprojectname) + ' ';

@@ -58,17 +58,17 @@ end;
 
 procedure tcomponentpalettefo.componentpagesactivetabchange(const sender: TObject);
 begin
- tabcloser := false;
+ //tabcloser := false;
  updatecomponentpalette(false);
  componentpalette.firstbutton:= 0;
- tabcloser := false;
+ //tabcloser := false;
 end;
 
 procedure tcomponentpalettefo.componentpalettebuttonchanged(const sender: TObject;
   const button: tcustomtoolbutton);
 begin
  if not application.terminated then begin
- tabcloser := false;
+ //tabcloser := false;
   with registeredcomponents do begin
    if tclass(button.tagpo) = selectedclass then begin
     selectedclass:= nil;
@@ -159,7 +159,7 @@ end;
 
 procedure tcomponentpalettefo.onfocus(const sender: TObject);
 begin
-tabcloser := false;
+//tabcloser := false;
 end;
 
 end.

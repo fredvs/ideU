@@ -109,6 +109,7 @@ begin
  
   confcompilerfo.Close;
   confdebuggerfo.Close;
+  conffpguifo.Close;
   
   application.createform(theaderfo, headerfo);
   headerfo.Close;

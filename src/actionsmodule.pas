@@ -556,7 +556,7 @@ begin
 if (sourcefo.ActivePage <> nil) then
 begin
   mainfo.toggleformunit;
-  tabcloser := False;
+  //tabcloser := False;
 end;  
 end;
 

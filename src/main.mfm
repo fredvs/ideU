@@ -1383,7 +1383,8 @@ object mainfo: tmainfo
             submenu.count = 3
             submenu.items = <            
               item
-                caption = 'Designer'
+                caption = 'Form Designer'
+                name = 'formdesigner'
                 state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 19
@@ -1393,7 +1394,8 @@ object mainfo: tmainfo
                 options = [mao_separator, mao_shortcutcaption]
               end            
               item
-                caption = 'Reset Designer'
+                caption = 'Reset'
+                name = 'reset'
                 state = [as_localcaption, as_localonexecute]
                 onexecute = resetfpguidesigneronexecute
               end>
@@ -1404,7 +1406,7 @@ object mainfo: tmainfo
             imagenr = 21
           end>
         caption = '&Widgets'
-        hint = 'MSE and fpGUI widgets'
+        hint = 'MSE - fpGUI widgets'
         name = 'widgets'
         state = [as_localcaption, as_localhint]
       end    

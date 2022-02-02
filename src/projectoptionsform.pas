@@ -3518,7 +3518,7 @@ end;
 
 procedure tprojectoptionsfo.onfocus(const Sender: TObject);
 begin
-  tabcloser := False;
+  //tabcloser := False;
 end;
 
 
@@ -3745,6 +3745,7 @@ begin
   nogdbserverexit.frame.Caption := lang_projectoptions[Ord(po_nogdbserverexit)] + strz ;
   beforeconnect.frame.Caption := lang_projectoptions[Ord(po_beforeconnect)] + strz ;
   beforeload.frame.Caption := lang_projectoptions[Ord(po_beforeload)] + strz ;
+  beforerun.frame.Caption := lang_projectoptions[Ord(po_beforerun)] + strz ;
   afterconnect.frame.Caption := lang_projectoptions[Ord(po_afterconnect)] + strz ;
   afterload.frame.Caption  := lang_projectoptions[Ord(po_afterload)] + strz ;
   gdbservercommand.frame.Caption := lang_projectoptions[Ord(po_gdbservercommand)] + strz ;
@@ -3808,6 +3809,7 @@ begin
   colorerror.frame.Caption := lang_projectoptions[Ord(po_colorerror)] + strz ;
   colorwarning.frame.Caption := lang_projectoptions[Ord(po_colorwarning)] + strz ;
   colornote.frame.Caption := lang_projectoptions[Ord(po_colornote)] + strz ;
+  colorhint.frame.Caption := lang_projectoptions[Ord(po_colorhint)] + strz ;
   stripmessageesc.frame.Caption := lang_projectoptions[Ord(po_stripmessageesc)] + strz ;
   stripmessageesc.hint := lang_projectoptions[Ord(po_stripmessageeschint)] + strz ;
   showconsole.frame.Caption := lang_projectoptions[Ord(po_showconsole)] + strz ;

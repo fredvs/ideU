@@ -1090,7 +1090,7 @@ procedure tsourcepage.ontimerhint(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
   
-if tabcloser then begin
+//if tabcloser then begin
  
 if sourcefo.tabdeleted = false then
 begin
@@ -1105,17 +1105,17 @@ begin
    activate(false,true); //get focus back
   end;
 end else sourcefo.tabdeleted := false;
-end;
+//end;
 end;
 
 // fred
 procedure tsourcepage.ontimerhide(const Sender: TObject);
 begin
   sourcefo.thetimer.Enabled := False;
-if tabcloser then begin
+//if tabcloser then begin
   debuggerfo.statdisp.value:= '';
  sourcefo.hidesourcehint;
- end;
+// end;
 end;
 
 procedure tsourcepage.sourcefooncreate(const sender: tobject);
@@ -1745,7 +1745,7 @@ begin
 // fred
  if (info.eventkind = cek_buttonpress) then
  begin
- tabcloser := true;
+ //tabcloser := true;
  sourcefo.thetimer.Enabled := false;
  sourcefo.hidesourcehint;
  end;
@@ -2162,12 +2162,12 @@ end;
 
 procedure tsourcepage.ondefocus(const sender: TObject);
 begin
-tabcloser := false;
+//tabcloser := false;
 end;
 
 procedure tsourcepage.onfocus(const sender: TObject);
 begin
-tabcloser := true;
+//tabcloser := true;
 end;
 
 procedure tsourcepage.onselectchange(const sender: TObject);

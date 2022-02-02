@@ -666,7 +666,7 @@ end;
 
 procedure tsettingsfo.onchange(const sender: TObject);
 begin
-tabcloser := false;
+//tabcloser := false;
 end;
 
 

@@ -63,7 +63,9 @@ type
     ma_makeok,                 //49 Make OK.
     ma_str_sourcechanged,      //50 Source has changed, do you wish to remake project?
     ma_str_loadwindowlayout,   //51 Load Window Layout
-    ma_dockingarea             //52 Docking Area
+    ma_dockingarea,             //52 Docking Area
+    ma_formdesigner,
+    ma_exit
     );
 
 type
@@ -251,7 +253,7 @@ type
     // po_unitdirs,
     po_commandafter, po_exeextension,
     po_comments, po_makedir, po_selectmakedir, po_colorerror, po_colorwarning,
-    po_colornote, po_stripmessageesc, po_stripmessageeschint,
+    po_colornote, po_colorhint, po_stripmessageesc, po_stripmessageeschint,
     po_showconsole, po_enablepurpose, po_messageoutputfile,
     // po_selectmessageoutputfile,
     po_macros, po_selectactivegroupgrid, po_fontaliaspage, po_designers,
@@ -414,7 +416,9 @@ const
     'Make OK.',
     'Source has changed, do you wish to remake project?',
     'Load Window Layout',
-    'Docking area'
+    'Docking area',
+    'Form designer',
+    'Exit'
     );
 
   en_actionsmoduletext: actionsmoduleaty = (
@@ -666,6 +670,7 @@ const
     'Error Color',                               // po_colorerror
     'Warning Color',                             // po_colorwarning
     'Note Color',                                // po_colornote
+    'Hint Color',                                // po_colorhint
     'Strip ESC',                                 // po_stripmessageesc
     'Strip ESC sequences in Messages and Terminal form', // po_stripmessageeschint
     'Show Console',                              // po_showconsole

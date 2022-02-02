@@ -175,7 +175,7 @@ end;
 
 procedure tconfcompilerfo.onfocus(const Sender: TObject);
 begin
-  tabcloser := False;
+  //tabcloser := False;
 end;
 
 procedure tconfcompilerfo.setlangcompilers();

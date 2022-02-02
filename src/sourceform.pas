@@ -1158,7 +1158,7 @@ begin
     tsourcepage(files_tab[x]).tabhint := tsourcepage(files_tab[x]).pathdisp.Value + lineend + 'Last modification: ' + UTF8Decode(formatdatetime('YYYY-MM-DD HH:mm:ss', UniversalTimeToLocal(ainfo.extinfo1.modtime))) +
       ' | Size: ' + UTF8Decode(IntToStr(ainfo.extinfo1.size div 1000)) + ' Kb.';
 
-    tsourcepage(files_tab[x]).Caption := trim(tsourcepage(files_tab[x]).Caption) + '   ';
+    tsourcepage(files_tab[x]).Caption := trim(tsourcepage(files_tab[x]).Caption) ;
 
   end;
 end;
@@ -1213,7 +1213,7 @@ begin
       if plformcreated then
         procedurelistfo.updatelist(debuggerfo.file_history.Value);
     end;
-    tsourcepage(files_tab.ActivePage).Caption := trim(tsourcepage(files_tab.ActivePage).Caption) + '   ';
+  //  tsourcepage(files_tab.ActivePage).Caption := trim(tsourcepage(files_tab.ActivePage).Caption) + '   ';
   end
   else
     Caption := lang_sourceform[ord(sf_none)];
@@ -1227,7 +1227,7 @@ var
   thedir: msestring;
   ratio: double;
 begin
-  tabcloser := True;
+  //tabcloser := True;
   updatecaption;
   ratio     := confideufo.fontsize.Value / 12;
 
@@ -1761,12 +1761,12 @@ end;
 
 procedure tsourcefo.ondefocus(const Sender: TObject);
 begin
-  tabcloser := False;
+  //tabcloser := False;
 end;
 
 procedure tsourcefo.onfocus(const Sender: TObject);
 begin
-  tabcloser := True;
+  //tabcloser := True;
 end;
 
 procedure tsourcefo.oncreat(const Sender: TObject);
