@@ -110,10 +110,10 @@ begin
   confcompilerfo.Close;
   confdebuggerfo.Close;
   conffpguifo.Close;
-  
+    
   application.createform(theaderfo, headerfo);
   headerfo.Close;
-
+ 
   application.createform(tmainfo, mainfo);
 
   application.createform(taboutfo, aboutfo);

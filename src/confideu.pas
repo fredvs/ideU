@@ -815,6 +815,7 @@ begin
   usedefaulteditoroptions.frame.caption := lang_settings[Ord(se_usedefaulteditoroptions)] + strz ;
   spacetabs.frame.caption := lang_projectoptions[Ord(po_spacetab)] + strz ;
   colornote.frame.caption := lang_projectoptions[Ord(po_colornote)] + strz ;
+  colorhint.frame.caption := lang_projectoptions[Ord(po_colorhint)] + strz ;
   colorerror.frame.caption := lang_projectoptions[Ord(po_colorerror)] + strz ;
   colorwarning.frame.caption := lang_projectoptions[Ord(po_colorwarning)] + strz ;
   stripmessageesc.frame.caption := lang_projectoptions[Ord(po_stripmessageesc)] + strz ;

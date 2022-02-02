@@ -930,11 +930,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=11
+modulenames=12
  ACTIONSMO
  DEBUGGERFO
  COMPONENTPALETTEFO
  CONFCOMPILERFO
+ CONFIDEUFO
  SETTINGS_FORM
  MAINFO
  OBJECTINSPECTORFO
@@ -942,11 +943,12 @@ modulenames=11
  SOURCEFO
  SOURCEPAGE
  TARGETCONSOLEFO
-moduletypes=11
+moduletypes=12
  TACTIONSMO
  TDEBUGGERFO
  TCOMPONENTPALETTEFO
  TCONFCOMPILERFO
+ TCONFIDEUFO
  TSETTINGSFO
  TMAINFO
  TOBJECTINSPECTORFO
@@ -954,11 +956,12 @@ moduletypes=11
  TSOURCEFO
  TSOURCEPAGE
  TTARGETCONSOLEFO
-modulefiles=11
+modulefiles=12
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
  /home/fred/ideu/src/confcompiler.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/ideusettings.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/objectinspector.mfm
@@ -1601,8 +1604,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=+ '   '
+finddtext=colornote
 findhistory=20
+ colornote
+ notecolor
  updatepopupmenu
  tabcloser
  po_projectoptions
@@ -1621,10 +1626,8 @@ findhistory=20
  getmacros
  projecttemplatedir
  macros
- expandm
- lang
 findoptions=1
-editpos=19
+editpos=21
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1635,7 +1638,6 @@ editpos=19
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1643,7 +1645,10 @@ editpos=19
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,5
  0,-1073741823
+ 0,817
+ 24,122
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1663,7 +1668,9 @@ bookmarks15=0
 bookmarks16=0
 bookmarks17=0
 bookmarks18=0
-sourcefiles=19
+bookmarks19=0
+bookmarks20=0
+sourcefiles=21
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1683,7 +1690,9 @@ sourcefiles=19
  ${PROJECTDIR}/componentpaletteform.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/targetconsole.pas
-relpaths=19
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/ideU.pas
+relpaths=21
  actionsmodule.pas
  main.pas
  sourceform.pas
@@ -1703,7 +1712,9 @@ relpaths=19
  componentpaletteform.pas
  projectoptionsform.pas
  targetconsole.pas
-ismoduletexts=19
+ confideu.pas
+ ideU.pas
+ismoduletexts=21
  0
  0
  0
@@ -1723,7 +1734,9 @@ ismoduletexts=19
  0
  0
  0
-modules=11
+ 0
+ 0
+modules=12
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1735,7 +1748,8 @@ modules=11
  /home/fred/ideu/src/confcompiler.mfm
  /home/fred/ideu/src/componentpaletteform.mfm
  /home/fred/ideu/src/targetconsole.mfm
-moduleoptions=11
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=12
  0
  0
  0
@@ -1747,7 +1761,8 @@ moduleoptions=11
  0
  0
  0
-visiblemodules=11
+ 0
+visiblemodules=12
  -1
  -1
  -1
@@ -1759,7 +1774,9 @@ visiblemodules=11
  -1
  -1
  -1
-nomenumodules=11
+ -1
+nomenumodules=12
+ 0
  0
  0
  0
@@ -1772,30 +1789,32 @@ nomenumodules=11
  0
  0
 [sourcefo.files_tab]
-order=19
+order=21
  0
  1
- 4
- 7
  3
+ 6
+ 7
+ 16
  18
  5
- 6
+ 4
  2
+ 15
  8
  17
+ 19
+ 20
  9
  10
  11
  12
  13
  14
- 15
- 16
 firsttab=10
-index=12
+index=14
 [layout]
-windowlayout=731
+windowlayout=752
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1845,7 +1864,7 @@ windowlayout=731
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1950,8 +1969,8 @@ windowlayout=731
  sortdescend1=0
  sorted=0
  col=0
- row=15
- rowheight=17
+ row=10
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -2010,7 +2029,7 @@ windowlayout=731
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2253,7 +2272,7 @@ windowlayout=731
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/msetabs.pas
@@ -2296,28 +2315,30 @@ windowlayout=731
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=19
+ order=21
   0
   1
-  4
-  7
   3
+  6
+  7
+  16
   18
   5
-  6
+  4
   2
+  15
   8
   17
+  19
+  20
   9
   10
   11
   12
   13
   14
-  15
-  16
  firsttab=10
- index=12
+ index=14
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2511,7 +2532,7 @@ windowlayout=731
  [_mse_targetconsolefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2522,6 +2543,25 @@ windowlayout=731
  y=169
  cx=603
  cy=384
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=439
+ y=31
+ cx=639
+ cy=699
  rcx=0
  rcy=0
  wsize=0
