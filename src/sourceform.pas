@@ -141,11 +141,7 @@ type
     procedure convpasex(const Sender: TObject);
     procedure insuidexec(const Sender: TObject);
     procedure stephintev(const Sender: TObject; var info: hintinfoty);
-    procedure onpageadd(const Sender: TObject; const awidget: twidget);
-    procedure ondefocus(const Sender: TObject);
-    procedure onfocus(const Sender: TObject);
-    procedure oncreat(const Sender: TObject);
-  private
+   private
     fasking: Boolean;
     fgdbpage: tsourcepage;
     ffileloading: Boolean;
@@ -1755,24 +1751,6 @@ begin
     encodeshortcutname(tstockglyphbutton(Sender).shortcut) + ').';
 end;
 
-procedure tsourcefo.onpageadd(const Sender: TObject; const awidget: twidget);
-begin
-end;
-
-procedure tsourcefo.ondefocus(const Sender: TObject);
-begin
-  //tabcloser := False;
-end;
-
-procedure tsourcefo.onfocus(const Sender: TObject);
-begin
-  //tabcloser := True;
-end;
-
-procedure tsourcefo.oncreat(const Sender: TObject);
-begin
-  //icon := mainfo.icon;
-end;
 
 end.
 

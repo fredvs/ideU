@@ -958,7 +958,7 @@ end;
 
 procedure tactionsmo.togglebkptenableactonexecute(const Sender: TObject);
 begin
-  sourcefo.ActivePage.togglebreakpointenabled;
+   sourcefo.ActivePage.togglebreakpointenabled;
 end;
 
 procedure tactionsmo.instemplateactonexecute(const Sender: TObject);

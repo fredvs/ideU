@@ -1,8 +1,8 @@
 object actionsmo: tactionsmo
   bounds_cx = 956
   bounds_cy = 472
-  left = 324
-  top = 364
+  left = 271
+  top = 143
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
@@ -279,7 +279,7 @@ object actionsmo: tactionsmo
     )
   end
   object togglebkptenable: taction
-    caption = 'Toggle Bkpt. &enabled'
+    caption = 'Toggle breakpoint enabled'
     onexecute = togglebkptenableactonexecute
     left = 152
     top = 204

@@ -4859,6 +4859,62 @@ begin
       
       if assigned(objectinspectorfo) then objectinspectorfo.caption := 
          lang_actionsmodule[Ord(ac_objectinspector)];
+         
+       if assigned(sourcefo) then
+       with sourcefo do
+       begin
+       caption := lang_settings[Ord(se_groupsourceeditor)];
+       tpopupmenu1.menu.itembynames(['selectpage']).Caption := 
+       lang_xstockcaption[Ord(sc_select_edit_Page)];
+           
+      tpopupmenu1.menu.itembynames(['openfile']).Caption  := lang_stockcaption[Ord(sc_open)];
+      tpopupmenu1.menu.itembynames(['savefile']).Caption  := lang_stockcaption[Ord(sc_save)];
+      tpopupmenu1.menu.itembynames(['closefile']).Caption := lang_stockcaption[Ord(sc_close)];
+      tpopupmenu1.menu.itembynames(['saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
+      tpopupmenu1.menu.itembynames(['showasform']).Caption := lang_xstockcaption[Ord(sc_showasform)];
+      tpopupmenu1.menu.itembynames(['delete']).Caption := lang_stockcaption[Ord(sc_delete)];
+     
+    
+        tpopupmenu1.menu.itembynames(['undo']).Caption  := lang_stockcaption[Ord(sc_Undohk)];
+      tpopupmenu1.menu.itembynames(['redo']).Caption  := lang_stockcaption[Ord(sc_Redohk)];
+      tpopupmenu1.menu.itembynames(['copy']).Caption  := lang_stockcaption[Ord(sc_Copyhk)];
+      tpopupmenu1.menu.itembynames(['cut']).Caption   := lang_stockcaption[Ord(sc_Cuthk)];
+      tpopupmenu1.menu.itembynames(['paste']).Caption := lang_stockcaption[Ord(sc_pastehk)];
+      tpopupmenu1.menu.itembynames(['selectall']).Caption := lang_stockcaption[Ord(
+                                                                   sc_Select_allhk)];
+      tpopupmenu1.menu.itembynames(['copycursor']).Caption := lang_xstockcaption[Ord(
+                                                                sc_Copy_word_cursor)];
+      tpopupmenu1.menu.itembynames(['deleteword']).Caption   := lang_xstockcaption[Ord(sc_deletewordatcursor)];
+         
+      tpopupmenu1.menu.itembynames(['copylatex']).Caption := lang_xstockcaption[Ord(
+                                                                   sc_copy_latex)];
+      tpopupmenu1.menu.itembynames(['indent']).Caption := lang_xstockcaption[Ord(sc_indent)];
+      tpopupmenu1.menu.itembynames(['unindent']).Caption := lang_xstockcaption[Ord(sc_unindent)];
+      
+      tpopupmenu1.menu.itembynames(['lowercase']).Caption := lang_xstockcaption[Ord(sc_lowercase)];
+      tpopupmenu1.menu.itembynames(['uppercase']).Caption := lang_xstockcaption[Ord(sc_uppercase)];
+      
+      tpopupmenu1.menu.itembynames(['comment']).Caption := lang_xstockcaption[Ord(sc_comment)];
+      tpopupmenu1.menu.itembynames(['uncomment']).Caption := lang_xstockcaption[Ord(sc_uncomment)];
+      
+      tpopupmenu1.menu.itembynames(['convpas']).Caption := lang_xstockcaption[Ord(sc_convpas)];
+      tpopupmenu1.menu.itembynames(['togglebreak']).Caption := lang_xstockcaption[Ord(sc_togglebreakpoint)];
+      
+      tpopupmenu1.menu.itembynames(['togglebkptend']).Caption := lang_xstockcaption[Ord(sc_tooglebreakpointenable)];
+     
+      tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(sc_editbreakpoint)];
+   
+      tpopupmenu1.menu.itembynames(['addwatch']).Caption := lang_xstockcaption[Ord(sc_addwatch)];
+      tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(sc_editbreakpoint)];
+   
+      tpopupmenu1.menu.itembynames(['setbm']).Caption := lang_xstockcaption[Ord(sc_setbookmark)];
+      tpopupmenu1.menu.itembynames(['findbookmark']).Caption := lang_xstockcaption[Ord(sc_findbookmark)];
+  
+      tpopupmenu1.menu.itembynames(['insgui']).Caption := lang_xstockcaption[Ord(sc_insgui)];
+      tpopupmenu1.menu.itembynames(['insuid']).Caption := lang_xstockcaption[Ord(sc_insuid)];
+      tpopupmenu1.menu.itembynames(['instempl']).Caption := lang_xstockcaption[Ord(sc_instempl)];
+      tpopupmenu1.menu.itembynames(['completeclass']).Caption := lang_xstockcaption[Ord(sc_completeclass)];
+      end;  
 
       if Assigned(debuggerfo) then
         begin

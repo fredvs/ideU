@@ -353,7 +353,12 @@ type
     sc_includesubdir, sc_replace, sc_replaceall, sc_replacewith, sc_promptonreplace,
     sc_componentspalette, sc_findcomponent, sc_reset, sc_cstep, sc_stepinstruction,
     sc_nextinstruction, sc_restartdebugger, sc_togglebreakpoint, sc_tooglebreakpointenable,
-    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright
+    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright,
+  
+    sc_showasform, sc_deletewordatcursor, sc_lowercase, sc_uppercase,
+     sc_comment, sc_uncomment, sc_convpas, sc_editbreakpoint, sc_addwatch,
+     sc_bookmark, sc_setbookmark, sc_findbookmark,
+     sc_insgui, sc_insuid, sc_instempl, sc_completeclass
     );
     
 type
@@ -816,7 +821,24 @@ const
     'Finish',                                  // sc_finish
     'Set as default',                          // sc_setasdefault
     'Host',                                    // sc_host
-    'Copyright'                                // sc_copyright
+    'Copyright',                                // sc_copyright
+    'Show as form',                              // sc_showasform 
+    'Delete word at cursor',
+    'Lowercase',
+    'Uppercase',
+    'Comment',
+    'Uncomment',
+    'Convert to Pascal string',
+    'Edit breakpoint',
+    'Add watch at cursor',
+    'Bookmark',
+    'Set Bookmark',
+    'Find Bookmark',
+    'Insert GUID',
+    'Insert UID',
+    'Insert Template',
+    'Complete Class at Cursor'
+    
     );
 
    en_langnamestext: array[0..14] of msestring = (

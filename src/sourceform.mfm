@@ -22,7 +22,6 @@ object sourcefo: tsourcefo
   frame.grip_faceactive.fade_direction = gd_down
   frame.grip_faceactive.localprops = []
   onenter = enterexe
-  ondefocus = ondefocus
   onactivate = enterexe
   visible = False
   bounds_x = 506
@@ -50,7 +49,6 @@ object sourcefo: tsourcefo
   icon.transparentcolor = -2147483642
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
-  oncreated = oncreat
   onclosequery = sourcefoonclosequery
   onidle = formonidle
   moduleclassname = 'tdockform'
@@ -64,7 +62,6 @@ object sourcefo: tsourcefo
     anchors = []
     popupmenu = tpopupmenu1
     onactivepagechanged = tabwidgetonactivepagechanged
-    onpageadded = onpageadd
     onpageremoved = tabwidgetpageremoved
     font.name = 'stf_default'
     font.localprops = []
@@ -512,17 +509,20 @@ object sourcefo: tsourcefo
       item
         action = actionsmo.selecteditpage
         caption = 'Select Page'
+        name = 'selectpage'
         state = [as_localcaption, as_localonexecute]
         onexecute = doselectpage
       end    
       item
         action = actionsmo.opensource
         caption = '&Open File'
+        name = 'openfile'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.close
         caption = 'Close File'
+        name = 'closefile'
         state = [as_localcaption, as_localshortcut]
         options = [mao_shortcutcaption, mao_asyncexecute]
         sc = (
@@ -533,10 +533,12 @@ object sourcefo: tsourcefo
       item
         action = actionsmo.save
         caption = '&Save File'
+        name = 'savefile'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.saveas
+        name = 'saveas'
       end    
       item
         caption = 'Show as Form'
@@ -549,32 +551,40 @@ object sourcefo: tsourcefo
       end    
       item
         action = actionsmo.delete
+        name = 'delete'
       end    
       item
         action = actionsmo.cut
+        name = 'cut'
       end    
       item
         action = actionsmo.copy
+        name = 'copy'
       end    
       item
         action = actionsmo.copyword
         caption = 'Copy &Word at Cursor'
+        name = 'copycursor'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.deleteword
         caption = 'Delete word at cursor'
+        name = 'deleteword'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.copylatexact
+        name = 'copylatex'
       end    
       item
         action = actionsmo.paste
+        name = 'paste'
       end    
       item
         action = actionsmo.selectall
         caption = 'Select &All'
+        name = 'selectall'
         state = [as_localcaption]
       end    
       item
@@ -582,36 +592,44 @@ object sourcefo: tsourcefo
       end    
       item
         action = actionsmo.undo
+        name = 'undo'
       end    
       item
         action = actionsmo.redo
+        name = 'redo'
       end    
       item
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
         action = actionsmo.indent
+        name = 'indent'
       end    
       item
         action = actionsmo.unindent
+        name = 'unindent'
       end    
       item
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
         action = actionsmo.lowercase
+        name = 'lowercase'
       end    
       item
         action = actionsmo.uppercase
+        name = 'uppercase'
       end    
       item
         action = actionsmo.comment
         caption = 'Comment'
+        name = 'comment'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.uncomment
         caption = 'Uncomment'
+        name = 'uncomment'
         state = [as_localcaption]
       end    
       item
@@ -625,19 +643,25 @@ object sourcefo: tsourcefo
       end    
       item
         action = actionsmo.togglebkpt
+        caption = 'Toggle breakpoint'
+        name = 'togglebreak'
+        state = [as_localcaption]
       end    
       item
         action = actionsmo.togglebkptenable
+        caption = 'Toggle breakpoint enabled'
+        name = 'togglebkptend'
+        state = [as_localcaption, as_localonexecute]
       end    
       item
-        caption = '&Edit breakpoint'
+        caption = 'Edit breakpoint'
         name = 'editbreakpoint'
         state = [as_localcaption, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
         onexecute = editbreakpointexec
       end    
       item
-        caption = 'Add &Watch at Cursor'
+        caption = 'Add Watch at Cursor'
         name = 'addwatch'
         state = [as_localcaption, as_localonexecute]
         onexecute = addwatchactonexecute
@@ -742,6 +766,7 @@ object sourcefo: tsourcefo
             action = actionsmo.findbm9
           end>
         caption = 'Find Bookmark'
+        name = 'findbookmark'
         state = [as_localcaption]
       end    
       item
@@ -768,6 +793,7 @@ object sourcefo: tsourcefo
       item
         action = completeclassact
         caption = 'Complete Class at Cursor'
+        name = 'completeclass'
         state = [as_localcaption]
       end>
     menu.font.name = 'stf_menu'
