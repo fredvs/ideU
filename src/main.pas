@@ -2829,6 +2829,7 @@ begin
     left := posx.value;
     height := poscy.value;
     width := poscx.value;
+    basedock.height := height;
     end;
     
     expandprojectmacros;

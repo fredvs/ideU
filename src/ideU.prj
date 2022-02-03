@@ -1289,7 +1289,7 @@ line=28
  2129
  1163
  526
- 3152
+ 3153
  660
  119
  1116
@@ -1301,14 +1301,14 @@ line=28
  481
  456
  66
- 3433
+ 3434
  684
  98
  15
  787
  904
  2583
- 4947
+ 4948
  1882
  6131
  18
@@ -1601,9 +1601,9 @@ findhistory=20
  delete
 findoptions=1
 editpos=3
- 0,4
+ 0,0
  0,-1073741823
- 0,-1073741823
+ 30,2831
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1637,9 +1637,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=559
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1653,8 +1653,8 @@ windowlayout=559
  ny=0
  ncx=0
  ncy=0
- x=80
- y=52
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1711,7 +1711,7 @@ windowlayout=559
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1783,7 +1783,7 @@ windowlayout=559
  x=0
  y=0
  cx=205
- cy=448
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1873,10 +1873,10 @@ windowlayout=559
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=526
- width0=234
+ propcolwidthref=394
+ width0=175
  sortdescend0=0
- width1=286
+ width1=213
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2071,7 +2071,7 @@ windowlayout=559
  x=0
  y=0
  cx=1212
- cy=54
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2082,12 +2082,12 @@ windowlayout=559
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=61
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=61
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2097,28 +2097,9 @@ windowlayout=559
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=20
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/main.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
+ value=/home/fred/ideu/src/main.pas
+ history=1
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2136,12 +2117,12 @@ windowlayout=559
  x=208
  y=0
  cx=1004
- cy=448
+ cy=445
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2164,22 +2145,6 @@ windowlayout=559
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=57
- cx=1212
- cy=448
- rcx=0
- rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2199,6 +2164,22 @@ windowlayout=559
  wsize=0
  active=0
  visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=60
+ cx=1212
+ cy=445
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
