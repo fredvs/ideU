@@ -1188,7 +1188,8 @@ begin
   page1 := sourcefo.ActivePage;
   if (page1 <> nil) then
     begin
-      setstattext('  Compile ' + page1.filepath, mtk_info);
+      setstattext( lang_actionsmodule[Ord(ac_making)] +
+       ' ' + page1.filepath, mtk_info);
       customdomake(page1.filepath, settypecompiler, setcompiler, customoption);
     end;
 end;
@@ -1291,7 +1292,7 @@ begin
                   createmodulemenuitem(po1);
                   po1^.designform.activate(True);
 
-                  setstattext('  Toggled mse form/unit...', mtk_flat);
+                  setstattext(lang_xstockcaption[Ord(sc_toggleformunit)], mtk_flat);
 
                   page1 := Nil;
                 end
@@ -1307,7 +1308,7 @@ begin
                           po1 := designer.loadformfile(str1, False);
                           if po1 <> nil then
                             begin
-                              setstattext('  Toggled to form...', mtk_flat);
+                              setstattext(lang_xstockcaption[Ord(sc_toggleformunit)], mtk_flat);
                               createmodulemenuitem(po1);
                               po1^.designform.activate(True);
                             end;
@@ -1324,7 +1325,7 @@ begin
                           begin
                             // if fpgfilename <> page1.filepath then
                             //  begin
-                            setstattext('  Toggled to form...', mtk_flat);
+                            setstattext(lang_xstockcaption[Ord(sc_toggleformunit)], mtk_flat);
                             toogletag := True;
 
                             sysfilename := ansistring(tosysfilepath(filepath(str3, fk_file, True)));
@@ -1336,7 +1337,7 @@ begin
                           end
                       else
                         begin
-                          setstattext('  Toggled to source...', mtk_flat);
+                          setstattext(lang_xstockcaption[Ord(sc_toggleformunit)], mtk_flat);
                           toogletag := False;
                           if (conffpguifo.tbfpgonlyone.Value = True) and (conffpguifo.ifhide.Value =
                              True) then
@@ -1366,7 +1367,7 @@ end;
             end
           else if str2 = formfileext then
                  begin
-                   setstattext('  Toggled to mse source...', mtk_flat);
+                   setstattext(lang_xstockcaption[Ord(sc_toggleformunit)], mtk_flat);
 
                    page1 := sourcefo.findsourcepage(
                             replacefileext(page1.filepath, pasfileext));
@@ -5525,14 +5526,14 @@ procedure tmainfo.onclassic(Const Sender: TObject);
 begin
   themenr := 0;
   dotheme(0);
-  setstattext('Light theme is set.', mtk_flat);
+ // setstattext('Light theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.ondark(Const Sender: TObject);
 begin
   themenr := 1;
   dotheme(1);
-  setstattext('Dark theme is set.', mtk_flat);
+ // setstattext('Dark theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.ontoggleunitform(Const Sender: TObject);

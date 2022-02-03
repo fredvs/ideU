@@ -138,8 +138,9 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=sc_insertcomp
+ value=toggled
  history=20
+  toggled
   sc_insertcomp
   hide component
   hie component
@@ -159,7 +160,6 @@ findinfiledialog=94
   findpofiles
   ${TEMPLATEDIR}
   expandprmacros
-  getprojectmacro
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=578
- y=461
+ x=540
+ y=420
  cx=284
  cy=269
 replacedialog=33
@@ -1295,7 +1295,7 @@ line=28
  2129
  1163
  521
- 3136
+ 3137
  660
  119
  1116
@@ -1307,19 +1307,19 @@ line=28
  476
  456
  66
- 3411
+ 3412
  684
  98
  15
  787
  904
  2583
- 4926
+ 4927
  1882
  6131
  18
  8
- 2593
+ 2594
 address=28
  4871769
  4692708
@@ -1583,8 +1583,13 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=showall
+finddtext=setstattext(
 findhistory=20
+ setstattext(
+ making
+ compile
+ sc_toggleformunit
+ toggle
  showall
  hide
  uses
@@ -1600,40 +1605,40 @@ findhistory=20
  sc_cut
  copy
  text
- show
- palette
- lang_
- object in
- pbject in
 findoptions=1
-editpos=6
+editpos=7
+ 0,-1073741823
+ 45,304
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/formdesigner.pas
  ${PROJECTDIR}/captionideu.pas
-relpaths=6
+ ${PROJECTDIR}/main.pas
+relpaths=7
  actionsmodule.pas
  main.pas
  sourceform.pas
  projectoptionsform.pas
  formdesigner.pas
  captionideu.pas
-ismoduletexts=6
+ main.pas
+ismoduletexts=7
+ 0
  0
  0
  0
@@ -1657,7 +1662,7 @@ visiblemodules=5
  -1
  -1
  -1
- -1
+ 0
 nomenumodules=5
  0
  0
@@ -1665,17 +1670,18 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=6
+order=7
  0
  1
  2
  5
+ 6
  3
  4
 firsttab=0
-index=3
+index=1
 [layout]
-windowlayout=565
+windowlayout=567
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1816,7 +1822,7 @@ windowlayout=565
  x=0
  y=0
  cx=205
- cy=445
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1887,7 +1893,7 @@ windowlayout=565
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1984,9 +1990,9 @@ windowlayout=565
  ncx=0
  ncy=0
  x=0
- y=508
+ y=507
  cx=1212
- cy=92
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2086,7 +2092,7 @@ windowlayout=565
  x=0
  y=0
  cx=1212
- cy=57
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2098,11 +2104,11 @@ windowlayout=565
  nx=0
  ny=0
  ncx=1212
- ncy=64
+ ncy=57
  x=0
  y=0
  cx=1212
- cy=64
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2112,8 +2118,9 @@ windowlayout=565
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/formdesigner.pas
- history=2
+ value=/home/fred/ideu/src/main.pas
+ history=3
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/formdesigner.pas
   /home/fred/ideu/src/captionideu.pas
  [debuggerfo.project_options]
@@ -2133,19 +2140,20 @@ windowlayout=565
  x=208
  y=0
  cx=1004
- cy=445
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
+ order=7
   0
   1
   2
   5
+  6
   3
   4
  firsttab=0
- index=3
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2179,9 +2187,9 @@ windowlayout=565
  ncx=0
  ncy=0
  x=0
- y=60
+ y=53
  cx=1212
- cy=445
+ cy=451
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
@@ -2206,7 +2214,7 @@ windowlayout=565
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_formdesignerfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2225,7 +2233,7 @@ windowlayout=565
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2240,7 +2248,7 @@ windowlayout=565
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=
 findhistory=0
