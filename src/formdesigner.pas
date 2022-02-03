@@ -4167,8 +4167,9 @@ end;
 procedure tformdesignerfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
- if fdactivated = false then
- begin
+// if fdactivated = false then
+ if 1=1 then
+  begin
  if length(lang_actionsmodule) > 0 then
  begin
  popupme.menu.itembynames(['showobjectinspector']).Caption := lang_actionsmodule[Ord(ac_objectinspector)];
@@ -4198,7 +4199,12 @@ begin
  popupme.menu.itembynames(['insertsub']).Caption := lang_xstockcaption[Ord(sc_insertsub)];
  popupme.menu.itembynames(['insertcomp']).Caption := lang_xstockcaption[Ord(sc_insertcomp)];
  
- end;
+ hidecompact.Caption := lang_xstockcaption[Ord(sc_hidecomp)];
+ hidewidgetact.Caption := lang_xstockcaption[Ord(sc_hidewidget)];
+ togglehideact.Caption := lang_xstockcaption[Ord(sc_togglehide)];
+ showallact.Caption := lang_xstockcaption[Ord(sc_showall)];
+ 
+  end;
  end;
  fdactivated := true; 
 end;

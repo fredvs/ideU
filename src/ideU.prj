@@ -138,8 +138,11 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=Show object
+ value=sc_insertcomp
  history=20
+  sc_insertcomp
+  hide component
+  hie component
   Show object
   : tpopupmenu
   tpopupmenu
@@ -157,9 +160,6 @@ findinfiledialog=94
   ${TEMPLATEDIR}
   expandprmacros
   getprojectmacro
-  sma_msedir
-  'lang'
-  sc_lang
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -930,18 +930,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
+ FORMDESIGNERFO
  MAINFO
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TACTIONSMO
+ TFORMDESIGNERFO
  TMAINFO
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/formdesigner.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1580,8 +1583,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=uses
+finddtext=showall
 findhistory=20
+ showall
+ hide
  uses
  touch
  revert
@@ -1600,58 +1605,77 @@ findhistory=20
  lang_
  object in
  pbject in
- togglebkptenableactonexecute
- 'open
 findoptions=1
-editpos=4
+editpos=6
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
- 0,11
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=4
+ ${PROJECTDIR}/formdesigner.pas
+ ${PROJECTDIR}/captionideu.pas
+relpaths=6
  actionsmodule.pas
  main.pas
  sourceform.pas
  projectoptionsform.pas
-ismoduletexts=4
+ formdesigner.pas
+ captionideu.pas
+ismoduletexts=6
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+modules=5
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/formdesigner.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+nomenumodules=5
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 1
+ 2
+ 5
+ 3
+ 4
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=557
+windowlayout=565
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1698,7 +1722,7 @@ windowlayout=557
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1863,7 +1887,7 @@ windowlayout=557
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2088,28 +2112,10 @@ windowlayout=557
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
- history=20
-  /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/atest/test.prj
-  /home/fred/ideu/src/ideU.prj
-  /home/fred/mseide-msegui/apps/ide/mseide.prj
-  /home/fred/uos/examples/simpleplayer.prj
-  /home/fred/ideu_ok/src/ideU.prj
-  /home/fred/eschecs_mse/eschecs.prj
-  /home/fred/mselang-master/src/mselang.prj
-  /home/fred/mseide-msegui/apps/ide/mseide_zeos.prj
-  /home/fred/strumpract/src/strumpract.prj
-  /home/fred/ideu_badplug/src/demos/voiceassist/helloworld/helloworld.prj
-  /home/fred/xtop/src/ptop.prj
-  /home/fred/xtop/src/jtop.prj
-  /home/fred/idegraeme/mseide.prj
-  /home/fred/fptop/src/jtop.prj
-  /home/fred/fptop/src/ptop.prj
-  /home/fred/ptop_fred/ptop.prj
-  /home/fred/eschecs_mse_argh/eschecs.prj
-  /home/fred/Downloads/jcf-cli-master/CommandLine/Lazarus/jcf.prj
-  /home/fred/mseuniverse/samples/widgets/grids/chessboard/chessboard.prj
+ value=/home/fred/ideu/src/formdesigner.pas
+ history=2
+  /home/fred/ideu/src/formdesigner.pas
+  /home/fred/ideu/src/captionideu.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2131,8 +2137,15 @@ windowlayout=557
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  1
+  2
+  5
+  3
+  4
  firsttab=0
- index=2
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2193,7 +2206,7 @@ windowlayout=557
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2204,6 +2217,25 @@ windowlayout=557
  y=56
  cx=825
  cy=606
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_formdesignerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=378
+ y=251
+ cx=297
+ cy=300
  rcx=0
  rcy=0
  wsize=0

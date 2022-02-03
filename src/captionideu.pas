@@ -361,7 +361,8 @@ type
      sc_insgui, sc_insuid, sc_instempl, sc_completeclass, sc_showastext, sc_undelete,
      sc_selectchild, sc_iconify, sc_deiconify, sc_editcomp, sc_synctofo, sc_bringtofro,
      sc_sendtoba, sc_setwidgetord, sc_settabord, sc_setcreaord, sc_revert, sc_touchform,
-     sc_touchallforms, sc_insertsub, sc_insertcomp 
+     sc_touchallforms, sc_insertsub, sc_insertcomp, sc_hidecomp, sc_hidewidget,
+     sc_togglehide, sc_showall 
     );
     
 type
@@ -857,8 +858,11 @@ const
     'Touch Form',
     'Touch all Forms',
     'Insert Submodule',
-    'Insert Component'
-   
+    'Insert Component',
+    'Hide Components',
+    'Hide Widgets',
+    'Hide Widgets<>Components',
+    'Show all'
     );
 
    en_langnamestext: array[0..14] of msestring = (

@@ -142,17 +142,21 @@ object formdesignerfo: tformdesignerfo
       end    
       item
         action = hidecompact
+        name = 'hidecomp'
         options = [mao_checkbox, mao_shortcutcaption]
       end    
       item
         action = hidewidgetact
+        name = 'hidewidg'
         options = [mao_checkbox, mao_shortcutcaption]
       end    
       item
         action = togglehideact
+        name = 'togglehide'
       end    
       item
         action = showallact
+        name = 'showall'
       end    
       item
         options = [mao_separator, mao_shortcutcaption]
