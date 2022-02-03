@@ -19,8 +19,8 @@ object formdesignerfo: tformdesignerfo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 68
-  bounds_y = 277
+  bounds_x = 378
+  bounds_y = 251
   bounds_cx = 287
   bounds_cy = 300
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel]
@@ -110,6 +110,7 @@ object formdesignerfo: tformdesignerfo
     DDDDDD01DCDCDC01DBDBDB01DADADA01D9D9D901D7D7D701D6D6D601D5D5D501
     D4D4D401D3D3D301D2D2D201D1D1D101D0D0D00180808019
   }
+  oncreated = oncreated
   onclose = formdeonclose
   left = 239
   top = 180
@@ -119,16 +120,19 @@ object formdesignerfo: tformdesignerfo
     menu.submenu.items = <    
       item
         caption = 'Show objectinspector'
+        name = 'showobjectinspector'
         state = [as_localcaption, as_localonexecute]
         onexecute = doshowobjectinspector
       end    
       item
         caption = 'Show componentpalette'
+        name = 'showpalette'
         state = [as_localcaption, as_localonexecute]
         onexecute = doshowcomponentpalette
       end    
       item
         caption = 'Show as Text'
+        name = 'showastext'
         state = [as_localcaption, as_localonexecute]
         options = [mao_shortcutcaption, mao_asyncexecute]
         onexecute = doshowastext
@@ -207,6 +211,7 @@ object formdesignerfo: tformdesignerfo
       item
         action = actionsmo.findcompallact
         caption = 'Find Component'
+        name = 'findcomponent'
         state = [as_localcaption]
       end    
       item
@@ -267,6 +272,7 @@ object formdesignerfo: tformdesignerfo
       end    
       item
         caption = 'Set Creation Order'
+        name = 'setcreaord'
         state = [as_localcaption, as_localonexecute]
         onexecute = dosetcreationorder
       end    
@@ -282,11 +288,13 @@ object formdesignerfo: tformdesignerfo
       end    
       item
         caption = 'Touch Form'
+        name = 'touchform'
         state = [as_localcaption, as_localonexecute]
         onexecute = dotouch
       end    
       item
         caption = 'Touch all Forms'
+        name = 'touchallforms'
         state = [as_localcaption, as_localonexecute]
         onexecute = touchallexe
       end    

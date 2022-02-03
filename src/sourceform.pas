@@ -218,7 +218,7 @@ type
 
 var
   sourcefo: tsourcefo;
-
+ 
 function checkerrormessage(const Text: msestring; out alevel: errorlevelty; out afilename: filenamety; out col, row: integer): Boolean;
 function locateerrormessage(const Text: msestring; var apage: tsourcepage; minlevel: errorlevelty = el_all): Boolean;
 //true if valid errormessage

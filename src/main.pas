@@ -4859,8 +4859,8 @@ begin
       
       if assigned(objectinspectorfo) then objectinspectorfo.caption := 
          lang_actionsmodule[Ord(ac_objectinspector)];
-         
-       if assigned(sourcefo) then
+      
+      if assigned(sourcefo) then
        with sourcefo do
        begin
        caption := lang_settings[Ord(se_groupsourceeditor)];

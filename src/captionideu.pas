@@ -355,10 +355,13 @@ type
     sc_nextinstruction, sc_restartdebugger, sc_togglebreakpoint, sc_tooglebreakpointenable,
     sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright,
   
-    sc_showasform, sc_deletewordatcursor, sc_lowercase, sc_uppercase,
+     sc_showasform, sc_deletewordatcursor, sc_lowercase, sc_uppercase,
      sc_comment, sc_uncomment, sc_convpas, sc_editbreakpoint, sc_addwatch,
      sc_bookmark, sc_setbookmark, sc_findbookmark,
-     sc_insgui, sc_insuid, sc_instempl, sc_completeclass
+     sc_insgui, sc_insuid, sc_instempl, sc_completeclass, sc_showastext, sc_undelete,
+     sc_selectchild, sc_iconify, sc_deiconify, sc_editcomp, sc_synctofo, sc_bringtofro,
+     sc_sendtoba, sc_setwidgetord, sc_settabord, sc_setcreaord, sc_revert, sc_touchform,
+     sc_touchallforms, sc_insertsub, sc_insertcomp 
     );
     
 type
@@ -837,8 +840,25 @@ const
     'Insert GUID',
     'Insert UID',
     'Insert Template',
-    'Complete Class at Cursor'
-    
+    'Complete Class at Cursor',
+    'Show as text',
+    'Undelete',
+    'Select Childwidget',
+    'Iconify',
+    'Deiconify',
+    'Edit component',
+    'Sync. to Font Height',
+    'Bring to Front',
+    'Send to Back',
+    'Set Widget Order',
+    'Set Tab Order',
+    'Set Creation Order',
+    'Revert to inherited',
+    'Touch Form',
+    'Touch all Forms',
+    'Insert Submodule',
+    'Insert Component'
+   
     );
 
    en_langnamestext: array[0..14] of msestring = (

@@ -1028,6 +1028,7 @@ type
     procedure oncreated(const Sender: TObject);
     procedure setlangprojectoptions();
 
+   procedure onactiv(const sender: TObject);
   private
     procedure activegroupchanged;
   end;
@@ -1124,6 +1125,7 @@ uses
 var
   projectoptionsfo: tprojectoptionsfo;
   fo: tprojectoptionsfo;
+  ispoactivated : boolean = false;
 
 const
   firstsiginfocomment = c_sighup;
@@ -3847,7 +3849,14 @@ end;
 
 procedure tprojectoptionsfo.oncreated(const Sender: TObject);
 begin
-  setlangprojectoptions();
+ // setlangprojectoptions();
+end;
+
+procedure tprojectoptionsfo.onactiv(const sender: TObject);
+begin
+if ispoactivated = false then
+ setlangprojectoptions();
+ ispoactivated := true;
 end;
 
 

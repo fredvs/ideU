@@ -170,6 +170,7 @@ type
    procedure floatexe(const sender: TObject);
    procedure enterexe(const sender: TObject);
    procedure dosetwidgetorder(const sender: TObject);
+   procedure oncreated(const sender: TObject);
   private
    fdesigner: tdesigner;
    fform: twidget;
@@ -492,6 +493,8 @@ type
 
 var
  fregistereddesignmoduleclasses: tdesignmoduleinfoar;
+ fdactivated : boolean = false;
+
 
 function registereddesignmoduleclasses: tdesignmoduleinfoar;
 begin
@@ -4164,12 +4167,51 @@ end;
 procedure tformdesignerfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
+ if fdactivated = false then
+ begin
+ if length(lang_actionsmodule) > 0 then
+ begin
+ popupme.menu.itembynames(['showobjectinspector']).Caption := lang_actionsmodule[Ord(ac_objectinspector)];
+ popupme.menu.itembynames(['showpalette']).Caption := lang_xstockcaption[Ord(sc_componentspalette)];
+ popupme.menu.itembynames(['showastext']).Caption := lang_xstockcaption[Ord(sc_showastext)];
+ popupme.menu.itembynames(['copy']).Caption := lang_stockcaption[Ord(sc_copy)];
+ popupme.menu.itembynames(['cut']).Caption := lang_stockcaption[Ord(sc_cut)];
+ popupme.menu.itembynames(['paste']).Caption := lang_stockcaption[Ord(sc_paste)];
+ popupme.menu.itembynames(['delete']).Caption := lang_stockcaption[Ord(sc_delete)];
+ popupme.menu.itembynames(['undelete']).Caption := lang_xstockcaption[Ord(sc_undelete)];
+ 
+ popupme.menu.itembynames(['findcomponent']).Caption := lang_xstockcaption[Ord(sc_findcomponent)];
+ popupme.menu.itembynames(['iconify']).Caption := lang_xstockcaption[Ord(sc_iconify)];
+ popupme.menu.itembynames(['deiconify']).Caption := lang_xstockcaption[Ord(sc_deiconify)];
+ popupme.menu.itembynames(['selectchild']).Caption := lang_xstockcaption[Ord(sc_selectchild)];
+ popupme.menu.itembynames(['editcomp']).Caption := lang_xstockcaption[Ord(sc_editcomp)];
+ 
+ popupme.menu.itembynames(['synctofo']).Caption := lang_xstockcaption[Ord(sc_synctofo)];
+ popupme.menu.itembynames(['bringtofro']).Caption := lang_xstockcaption[Ord(sc_bringtofro)];
+ popupme.menu.itembynames(['sendtoba']).Caption := lang_xstockcaption[Ord(sc_sendtoba)];
+ popupme.menu.itembynames(['setwidgetord']).Caption := lang_xstockcaption[Ord(sc_setwidgetord)];
+ popupme.menu.itembynames(['settabord']).Caption := lang_xstockcaption[Ord(sc_settabord)];
+ popupme.menu.itembynames(['setcreaord']).Caption := lang_xstockcaption[Ord(sc_setcreaord)];
+ popupme.menu.itembynames(['revert']).Caption := lang_xstockcaption[Ord(sc_revert)];
+ popupme.menu.itembynames(['touchform']).Caption := lang_xstockcaption[Ord(sc_touchform)];
+ popupme.menu.itembynames(['touchallforms']).Caption := lang_xstockcaption[Ord(sc_touchallforms)];
+ popupme.menu.itembynames(['insertsub']).Caption := lang_xstockcaption[Ord(sc_insertsub)];
+ popupme.menu.itembynames(['insertcomp']).Caption := lang_xstockcaption[Ord(sc_insertcomp)];
+ 
+ end;
+ end;
+ fdactivated := true; 
 end;
 
 procedure tformdesignerfo.setactarea(const avalue: areaty);
 begin
  factarea:= avalue;
  fmovearea:= factarea;
+end;
+
+procedure tformdesignerfo.oncreated(const sender: TObject);
+begin
+    
 end;
 
 
