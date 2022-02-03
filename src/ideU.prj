@@ -316,8 +316,8 @@ options=114
  firsttab=0
  index=1
  [projectoptionsfo.setting_tab]
- firsttab=1
- index=2
+ firsttab=0
+ index=11
  [projectoptionsfo]
  stackedunder=
  x=106
@@ -1606,14 +1606,15 @@ findhistory=20
  copy
  text
 findoptions=1
-editpos=7
+editpos=8
  0,-1073741823
  45,304
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
+ 0,0
+ 0,0
+ 0,0
+ 0,0
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1621,7 +1622,8 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1629,7 +1631,8 @@ sourcefiles=7
  ${PROJECTDIR}/formdesigner.pas
  ${PROJECTDIR}/captionideu.pas
  ${PROJECTDIR}/main.pas
-relpaths=7
+ ${PROJECTDIR}/sourceform.pas
+relpaths=8
  actionsmodule.pas
  main.pas
  sourceform.pas
@@ -1637,7 +1640,9 @@ relpaths=7
  formdesigner.pas
  captionideu.pas
  main.pas
-ismoduletexts=7
+ sourceform.pas
+ismoduletexts=8
+ 0
  0
  0
  0
@@ -1670,18 +1675,19 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=7
+order=8
  0
  1
+ 7
  2
- 5
- 6
  3
  4
+ 5
+ 6
 firsttab=0
-index=1
+index=7
 [layout]
-windowlayout=567
+windowlayout=568
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1750,7 +1756,7 @@ windowlayout=567
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1834,7 +1840,7 @@ windowlayout=567
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1893,7 +1899,7 @@ windowlayout=567
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2144,16 +2150,17 @@ windowlayout=567
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=7
+ order=8
   0
   1
+  7
   2
-  5
-  6
   3
   4
+  5
+  6
  firsttab=0
- index=1
+ index=7
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2195,7 +2202,7 @@ windowlayout=567
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -2233,7 +2240,7 @@ windowlayout=567
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
