@@ -1601,7 +1601,7 @@ findhistory=20
  delete
 findoptions=1
 editpos=3
- 0,0
+ 0,-1073741823
  0,-1073741823
  30,2831
 bookmarks0=0
@@ -1639,7 +1639,7 @@ nomenumodules=3
 firsttab=0
 index=2
 [layout]
-windowlayout=540
+windowlayout=541
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1653,8 +1653,8 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=98
+ y=48
  cx=1224
  cy=621
  rcx=0
@@ -1711,7 +1711,7 @@ windowlayout=540
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1873,10 +1873,10 @@ windowlayout=540
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=394
- width0=175
+ propcolwidthref=526
+ width0=234
  sortdescend0=0
- width1=213
+ width1=286
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2040,7 +2040,7 @@ windowlayout=540
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2082,8 +2082,8 @@ windowlayout=540
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1212
+ ncy=64
  x=0
  y=0
  cx=1212
@@ -2098,7 +2098,8 @@ windowlayout=540
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
- history=1
+ history=2
+  /home/fred/ideu/src/main.pas
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -2145,6 +2146,22 @@ windowlayout=540
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=60
+ cx=1212
+ cy=445
+ rcx=0
+ rcy=0
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2164,22 +2181,6 @@ windowlayout=540
  wsize=0
  active=0
  visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=60
- cx=1212
- cy=445
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
