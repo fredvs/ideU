@@ -14,10 +14,12 @@ object mainfo: tmainfo
   frame.grip_faceactive.template = tfacecomp3
   onactivate = runtimer
   visible = False
-  bounds_x = 340
-  bounds_y = 268
-  bounds_cx = 732
-  bounds_cy = 101
+  bounds_x = 282
+  bounds_y = 239
+  bounds_cx = 800
+  bounds_cy = 100
+  bounds_cxmin = 100
+  bounds_cymin = 20
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.framei_left = 0
   container.frame.framei_top = 0
@@ -31,8 +33,8 @@ object mainfo: tmainfo
   container.bounds = (
     0
     21
-    722
-    80
+    790
+    79
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -108,7 +110,7 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 722
+    bounds_cx = 790
     bounds_cy = 80
     anchors = [an_top, an_bottom]
     font.color = -1610612734
@@ -135,8 +137,8 @@ object mainfo: tmainfo
       frame.localprops1 = []
       taborder = 1
       visible = False
-      bounds_x = 189
-      bounds_y = 46
+      bounds_x = 649
+      bounds_y = 30
       bounds_cx = 38
       bounds_cy = 21
       statfile = mainstatfile
@@ -150,6 +152,58 @@ object mainfo: tmainfo
       bounds_y = 51
       statfile = mainstatfile
       visible = False
+    end
+    object posx: tintegeredit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 3
+      visible = False
+      bounds_x = 246
+      bounds_y = 45
+      bounds_cx = 38
+      bounds_cy = 21
+      statfile = mainstatfile
+      value = 340
+      reffontheight = 15
+    end
+    object posy: tintegeredit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 4
+      visible = False
+      bounds_x = 293
+      bounds_y = 45
+      bounds_cx = 38
+      bounds_cy = 21
+      statfile = mainstatfile
+      value = 268
+      reffontheight = 15
+    end
+    object poscx: tintegeredit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 5
+      visible = False
+      bounds_x = 341
+      bounds_y = 46
+      bounds_cx = 38
+      bounds_cy = 21
+      statfile = mainstatfile
+      value = 800
+      reffontheight = 15
+    end
+    object poscy: tintegeredit
+      frame.localprops = []
+      frame.localprops1 = []
+      taborder = 6
+      visible = False
+      bounds_x = 385
+      bounds_y = 46
+      bounds_cx = 38
+      bounds_cy = 21
+      statfile = mainstatfile
+      value = 100
+      reffontheight = 15
     end
   end
   object gdb: tgdbmi
@@ -1566,8 +1620,8 @@ object mainfo: tmainfo
     filename = 'status.sta'
     onstatbeforeread = statbefread
     onstatafterread = statafterread
-    left = 17
-    top = 43
+    left = 15
+    top = 26
   end
   object vievmenuicons: timagelist
     width = 18
@@ -2394,8 +2448,8 @@ object mainfo: tmainfo
     }
   end
   object viewmenu: tframecomp
-    left = 254
-    top = 41
+    left = 293
+    top = 10
   end
   object runprocmon: tprocessmonitor
     onchilddied = runprocdied
@@ -2434,8 +2488,8 @@ object mainfo: tmainfo
     controller.defaultext = 'prj'
     controller.captionopen = 'Open Project'
     controller.captionsave = 'Save Project'
-    left = 358
-    top = 47
+    left = 489
+    top = 4
   end
   object targetpipe: tpipereadercomp
     oninputavailable = targetpipeinput

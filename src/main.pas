@@ -40,6 +40,7 @@ uses
  mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
  projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets,
  msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
+
  
 const 
   versiontext = '2.8.1';
@@ -101,6 +102,10 @@ type
     bFirstLoad: tbooleanedit;
     themenum: tintegeredit;
    bCompletion: tbooleanedit;
+   posx: tintegeredit;
+   posy: tintegeredit;
+   poscx: tintegeredit;
+   poscy: tintegeredit;
     procedure newfileonexecute(Const Sender: TObject);
     procedure newformonexecute(Const Sender: TObject);
 
@@ -2815,7 +2820,17 @@ begin
   {$ifdef bsd}
     mainstatfile.filename := statname + 'bsd.sta';
   {$endif}
+  
     mainstatfile.readstat;
+    
+    if (poscy.value <> 100) and (poscx.value <> 800) then 
+    begin
+    top :=  posy.value;
+    left := posx.value;
+    height := poscy.value;
+    width := poscx.value;
+    end;
+    
     expandprojectmacros;
     onscale(Nil);
   finally
@@ -3162,6 +3177,12 @@ procedure tmainfo.mainfoonterminate(Var terminate: Boolean);
 //var
 // modres: modalresultty;
 begin
+
+  posy.value := top;
+  posx.value := left;
+  poscy.value := height;
+  poscx.value := width;
+   
   if checksave = mr_cancel then
     terminate := False
   else
@@ -4336,7 +4357,6 @@ begin
       tabind := sourcefo.files_tab.activepageindex;
 
       //  writeln('ok tabind'); 
-
       dialogfilesfo.selected_file.frame.Caption := lang_stockcaption[ord(sc_file)];
 
       //'Selected Layout File';
@@ -4367,7 +4387,7 @@ begin
     begin
       Caption        := idecaption;
       fprojectloaded := False;
-      str2           := expandprmacros('${LAYOUTDIR}') + 'Menu_Only.prj';
+      str2           := expandprmacros('${LAYOUTDIR}') + 'AfterClose.prj';
       if fileexists(str2) then
         begin
           str1 := ttextstream.Create(str2);
@@ -4400,7 +4420,7 @@ begin
     paintdockingareacaption(acanvas, Sender, lang_mainform[Ord(ma_dockingarea)])
   else
     paintdockingareacaption(acanvas, Sender, '');
-  ;
+    ;
 end;
 
 procedure tmainfo.copywordatcur(Const Sender: TObject);
