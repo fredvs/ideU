@@ -3688,13 +3688,22 @@ begin
 
   ok.Caption     := lang_modalresult[Ord(mr_ok)];
   cancel.Caption := lang_modalresult[Ord(mr_cancel)];
-
   
- macrogrid.fixrows[-1].captions[10].Caption := lang_stockcaption[ord(sc_name)] + strz ;
- macrogrid.fixrows[-1].captions[11].Caption := lang_xstockcaption[ord(sc_value)] + strz ;
+  debuggerusedgrid.fixrows[-1].captions[12].Caption := 
+  lang_projectoptions[ord(po_projectdebugger)] + strz;
+
+  macrogrid.fixrows[-1].captions[10].Caption := lang_stockcaption[ord(sc_name)] + strz ;
+  macrogrid.fixrows[-1].captions[11].Caption := lang_xstockcaption[ord(sc_value)] + strz ;
  
  fontaliasgrid.fixrows[-1].captions[0].Caption := 
    lang_projectoptions[ord(po_fontaliaspage)] + strz ;
+ 
+ twidgetgrid2.fixrows[-1].captions[0].Caption :=   
+  lang_stockcaption[ord(sc_on)] + strz ;
+   
+ twidgetgrid2.fixrows[-1].captions[1].Caption :=   
+  lang_xstockcaption[ord(sc_spacesepared)] + strz ;
+     
  fontaliasgrid.fixrows[-1].captions[1].Caption := lang_settings[ord(se_fontname)] + strz ;
  fontaliasgrid.fixrows[-1].captions[2].Caption := lang_projectoptions[ord(po_height)] + strz ;
  fontaliasgrid.fixrows[-1].captions[3].Caption := lang_projectoptions[ord(po_width)] + strz ;

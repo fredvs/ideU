@@ -1986,13 +1986,13 @@ object projectoptionsfo: tprojectoptionsfo
               datacols.options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
               datacols.items = <              
                 item[defineson]
-                  width = 33
+                  width = 75
                   options = [co_drawfocus, co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   widgetname = 'defineson'
                   dataclass = tgridintegerdatalist
                 end              
                 item[defines]
-                  width = 763
+                  width = 721
                   options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
                   onshowhint = colonshowhint
                   widgetname = 'defines'
@@ -2010,7 +2010,7 @@ object projectoptionsfo: tprojectoptionsfo
                 taborder = 1
                 bounds_x = 0
                 bounds_y = 0
-                bounds_cx = 33
+                bounds_cx = 75
                 bounds_cy = 17
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate, oe1_checkvalueafterstatread]
@@ -2026,9 +2026,9 @@ object projectoptionsfo: tprojectoptionsfo
                 frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
                 taborder = 2
                 visible = False
-                bounds_x = 34
+                bounds_x = 76
                 bounds_y = 0
-                bounds_cx = 763
+                bounds_cx = 721
                 bounds_cy = 17
                 optionsedit1 = []
                 optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]

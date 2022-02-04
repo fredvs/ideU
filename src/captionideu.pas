@@ -367,7 +367,9 @@ type
      sc_ancestor, sc_xscale, sc_copiedfiles, sc_destination, 
      sc_kind, sc_sourcefile, sc_formfile, sc_parameters,
      sc_settingseditor, sc_settingsautoload, sc_settingsautosave, sc_load, sc_settingsfile,
-     sc_settingsdebugger, sc_settingsstorage, sc_settingsprojecttree
+     sc_settingsdebugger, sc_settingsstorage, sc_settingsprojecttree,
+     
+     sc_spacesepared
 
     );
     
@@ -884,7 +886,8 @@ const
     'Settings File',
     'Load/save debugger settings',
     'Load/save storage settings',
-    'Load/save project tree'
+    'Load/save project tree',
+    'Space separated defines for {$ifdef}'
     
     );
 
