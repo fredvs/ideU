@@ -362,7 +362,13 @@ type
      sc_selectchild, sc_iconify, sc_deiconify, sc_editcomp, sc_synctofo, sc_bringtofro,
      sc_sendtoba, sc_setwidgetord, sc_settabord, sc_setcreaord, sc_revert, sc_touchform,
      sc_touchallforms, sc_insertsub, sc_insertcomp, sc_hidecomp, sc_hidewidget,
-     sc_togglehide, sc_showall 
+     sc_togglehide, sc_showall,
+     
+     sc_ancestor, sc_xscale, sc_copiedfiles, sc_destination, 
+     sc_kind, sc_sourcefile, sc_formfile, sc_parameters,
+     sc_settingseditor, sc_settingsautoload, sc_settingsautosave, sc_load, sc_settingsfile,
+     sc_settingsdebugger, sc_settingsstorage, sc_settingsprojecttree
+
     );
     
 type
@@ -687,9 +693,9 @@ const
     'Message output file',                       // po_messageoutputfile
     'Macros',                                    // po_macros
     'Active group',                              // po_selectactivegroupgrid
-    '&Font Alias',                               // po_fontaliaspage
+    'Font Alias',                               // po_fontaliaspage
     'Designers',                                 // po_designers
-    'User &Colors',                              // po_usercolors
+    'User Colors',                              // po_usercolors
     'Copy "setcolormapvalue" code to clipboard', // po_copycolor
     'F&ormat Macros',                            // po_formatmacro
     'Used by formatfloatmse() and formatdatetimemse()', // po_formatmacrohint
@@ -862,7 +868,24 @@ const
     'Hide Components',
     'Hide Widgets',
     'Hide Widgets<>Components',
-    'Show all'
+    'Show all',
+    'Ancestor',
+    'XScale',
+    'Copied Files',
+    'Destination',
+    'Kind',
+    'Source File',
+    'Form File',
+    'Parameters',
+    'Load/save editor settings',
+    'Auto load',
+    'Auto save',
+    'Load',
+    'Settings File',
+    'Load/save debugger settings',
+    'Load/save storage settings',
+    'Load/save project tree'
+    
     );
 
    en_langnamestext: array[0..14] of msestring = (

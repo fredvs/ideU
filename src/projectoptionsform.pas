@@ -3689,6 +3689,53 @@ begin
   ok.Caption     := lang_modalresult[Ord(mr_ok)];
   cancel.Caption := lang_modalresult[Ord(mr_cancel)];
 
+  
+ macrogrid.fixrows[-1].captions[10].Caption := lang_stockcaption[ord(sc_name)] + strz ;
+ macrogrid.fixrows[-1].captions[11].Caption := lang_xstockcaption[ord(sc_value)] + strz ;
+ 
+ fontaliasgrid.fixrows[-1].captions[0].Caption := 
+   lang_projectoptions[ord(po_fontaliaspage)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[1].Caption := lang_settings[ord(se_fontname)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[2].Caption := lang_projectoptions[ord(po_height)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[3].Caption := lang_projectoptions[ord(po_width)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[4].Caption := lang_xstockcaption[ord(sc_options)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[5].Caption := lang_xstockcaption[ord(sc_xscale)] + strz ;
+ fontaliasgrid.fixrows[-1].captions[6].Caption := lang_xstockcaption[ord(sc_ancestor)] + strz ;
+ 
+  colgrid.fixrows[-1].captionsfix[-1].Caption := lang_stockcaption[ord(sc_name)] + strz ;
+  colgrid.fixrows[-1].captions[1].Caption := lang_projectoptions[ord(po_usercolors)] + strz ;
+  colgrid.fixrows[-1].captions[2].Caption := lang_projectoptions[ord(po_comments)] + strz ;
+  
+  formatmacrogrid.fixrows[-1].captions[0].Caption := lang_stockcaption[ord(sc_name)] + strz ;  
+  formatmacrogrid.fixrows[-1].captions[1].Caption := lang_xstockcaption[ord(sc_value)] + strz ;
+  
+  copygrid.fixrows[-1].captions[2].Caption := lang_xstockcaption[ord(sc_copiedfiles)] + strz ;
+  copygrid.fixrows[-1].captions[3].Caption := lang_xstockcaption[ord(sc_destination)] + strz ;
+  
+  twidgetgrid1.fixrows[-1].captions[0].Caption := lang_xstockcaption[ord(sc_kind)] + strz ;
+  twidgetgrid1.fixrows[-1].captions[1].Caption := lang_stockcaption[ord(sc_Filterhk)] + strz ;  
+  twidgetgrid1.fixrows[-1].captions[3].Caption := lang_xstockcaption[ord(sc_source)] + strz ;
+  
+  twidgetgrid4.fixrows[-1].captions[0].Caption := lang_xstockcaption[ord(sc_kind)] + strz ;
+  twidgetgrid4.fixrows[-1].captions[2].Caption := lang_stockcaption[ord(sc_name)] + strz ;  
+  twidgetgrid4.fixrows[-1].captions[3].Caption := lang_xstockcaption[ord(sc_sourcefile)] + strz ;  
+  twidgetgrid4.fixrows[-1].captions[4].Caption := lang_xstockcaption[ord(sc_formfile)] + strz ;   
+   
+  twidgetgrid3.fixrows[-1].captions[4].Caption := lang_stockcaption[ord(sc_menu)] + strz ;  
+  twidgetgrid3.fixrows[-1].captions[5].Caption := lang_xstockcaption[ord(sc_shortcut)] + strz ;  
+  twidgetgrid3.fixrows[-1].captions[8].Caption := lang_stockcaption[ord(sc_file)] + strz ;  
+  twidgetgrid3.fixrows[-1].captions[9].Caption := lang_xstockcaption[ord(sc_parameters)] + strz ;  
+
+  settingseditor.frame.caption := lang_xstockcaption[ord(sc_settingseditor)] + strz ;
+  settingsautoload.frame.caption := lang_xstockcaption[ord(sc_settingsautoload)] + strz ;
+  settingsautosave.frame.caption := lang_xstockcaption[ord(sc_settingsautosave)] + strz ;
+  savebu.caption := lang_stockcaption[ord(sc_save)] + strz ;
+  loadbu.caption := lang_xstockcaption[ord(sc_load)] + strz ;
+  settingsfile.frame.caption := lang_xstockcaption[ord(sc_settingsfile)] + strz ;
+  settingsdebugger.frame.caption := lang_xstockcaption[ord(sc_settingsdebugger)] + strz ;
+  settingsstorage.frame.caption := lang_xstockcaption[ord(sc_settingsstorage)] + strz ;
+  settingsprojecttree.frame.caption := lang_xstockcaption[ord(sc_settingsprojecttree)] + strz ;
+ 
   editorpage.Caption          := lang_projectoptions[Ord(po_editor)] + strz ; // '&Editor';
   rightmarginon.frame.Caption := lang_projectoptions[Ord(po_rightmarginline)] + strz ; // 'Right Margin Line';
   editmarkbrackets.frame.Caption := lang_projectoptions[Ord(po_markbrackets)] + strz ;
@@ -3854,9 +3901,9 @@ end;
 
 procedure tprojectoptionsfo.onactiv(const sender: TObject);
 begin
-if ispoactivated = false then
+//if ispoactivated = false then
  setlangprojectoptions();
- ispoactivated := true;
+// ispoactivated := true;
 end;
 
 

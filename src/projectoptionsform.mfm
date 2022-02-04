@@ -9524,7 +9524,7 @@ object projectoptionsfo: tprojectoptionsfo
         bounds_cx = 813
         bounds_cy = 547
         anchors = [an_left, an_top, an_right, an_bottom]
-        caption = 'Storage '
+        caption = 'Storage'
         coloractivetab = 16776396
         object settingseditor: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9604,9 +9604,9 @@ object projectoptionsfo: tprojectoptionsfo
             face.localprops = []
             face.template = mainfo.convex
             taborder = 2
-            bounds_x = 759
+            bounds_x = 712
             bounds_y = 9
-            bounds_cx = 49
+            bounds_cx = 96
             bounds_cy = 22
             anchors = [an_top, an_right]
             state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
@@ -9622,9 +9622,9 @@ object projectoptionsfo: tprojectoptionsfo
             face.localprops = []
             face.template = mainfo.convex
             taborder = 1
-            bounds_x = 705
+            bounds_x = 611
             bounds_y = 9
-            bounds_cx = 49
+            bounds_cx = 96
             bounds_cy = 22
             anchors = [an_top, an_right]
             state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
@@ -9637,8 +9637,9 @@ object projectoptionsfo: tprojectoptionsfo
             frame.caption = 'Settings File'
             frame.captiontextflags = [tf_ycentered]
             frame.captionpos = cp_right
+            frame.captiondist = 4
             frame.localprops = []
-            frame.localprops1 = []
+            frame.localprops1 = [frl1_captiondist, frl1_extraspace]
             frame.template = mainfo.tframecomp3
             frame.buttons.count = 1
             frame.buttons.items = <            
@@ -9657,13 +9658,13 @@ object projectoptionsfo: tprojectoptionsfo
             frame.outerframe = (
               0
               0
-              77
+              80
               0
             )
             onshowhint = hintexpandedmacros
             bounds_x = 5
             bounds_y = 5
-            bounds_cx = 695
+            bounds_cx = 601
             bounds_cy = 30
             anchors = [an_left, an_top, an_right]
             ondataentered = settingsdataent
