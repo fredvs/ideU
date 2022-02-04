@@ -77,6 +77,7 @@ object findinfilepagefo: tfindinfilepagefo
     end
   end
   object filename: tstringdisp
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -93,6 +94,7 @@ object findinfilepagefo: tfindinfilepagefo
     reffontheight = 15
   end
   object foundcount: tintegerdisp
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2

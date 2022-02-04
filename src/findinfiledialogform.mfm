@@ -300,6 +300,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     statfile = statfile1
   end
   object ok: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -315,6 +316,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     modalresult = mr_ok
   end
   object cancel: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2

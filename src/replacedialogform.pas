@@ -21,20 +21,9 @@ unit replacedialogform;
 interface
 
 uses
-  mseconsts,
-  msestockobjects,
-  captionideu,
-  mseguiglob,
-  msegui,
-  mseclasses,
-  mseforms,
-  msegraphedits,
-  msedataedits,
-  msesimplewidgets,
-  msestat,
-  msestatfile,
-  mseglob,
-  projectoptionsform;
+ mseconsts,msestockobjects,captionideu,mseguiglob,msegui,mseclasses,mseforms,
+ msegraphedits,msedataedits,msesimplewidgets,msestat,msestatfile,mseglob,
+ projectoptionsform, msegraphics, msegraphutils, msemenus, msewidgets;
 
 type
   treplacedialogfo = class(tmseform)
@@ -48,7 +37,9 @@ type
     tintegerbutton2: TButton;
     wholeword: tbooleanedit;
 
+   butok: tbutton;
    procedure oncreat(const sender: TObject);
+   procedure onok(const sender: TObject);
   private
     procedure valuestoinfo(out info: replaceinfoty);
     procedure infotovalues(const info: replaceinfoty);
@@ -120,7 +111,7 @@ begin
   Caption := lang_xstockcaption[ord(sc_find_replace)];
   tintegerbutton1.Caption := lang_xstockcaption[ord(sc_replace)];
   tintegerbutton2.Caption := lang_xstockcaption[ord(sc_replaceall)];
-
+  butok.Caption := lang_stockcaption[ord(sc_close)];
   findtext.frame.Caption        := lang_xstockcaption[ord(sc_texttofind)];
   replacetext.frame.Caption     := lang_xstockcaption[ord(sc_replacewith)];
   promptonreplace.frame.Caption := lang_xstockcaption[ord(sc_promptonreplace)];
@@ -145,6 +136,11 @@ end;
 procedure treplacedialogfo.oncreat(const sender: TObject);
 begin
 setlangfindreplace();
+end;
+
+procedure treplacedialogfo.onok(const sender: TObject);
+begin
+close;
 end;
 
 end.

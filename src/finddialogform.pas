@@ -21,36 +21,11 @@ unit finddialogform;
 interface
 
 uses
-  mseforms,
-  msesimplewidgets,
-  msedataedits,
-  msegraphedits,
-  msetextedit,
-  msestrings,
-  msetypes,
-  msestat,
-  msestatfile,
-  projectoptionsform,
-  mseglob,
-  mseevent,
-  msegui,
-  msemenus,
-  msesplitter,
-  msegraphics,
-  msegraphutils,
-  msewidgets,
-  mseclasses,
-  mseguiglob,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msescrollbar,
-  mseact,
-  mseapplication,
-  msedropdownlist,
-  mseedit,
-  msestream,
-  SysUtils;
+ mseforms,msesimplewidgets,msedataedits,msegraphedits,msetextedit,msestrings,
+ msetypes,msestat,msestatfile,projectoptionsform,mseglob,mseevent,msegui,
+ msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseclasses,
+ mseguiglob,mseificomp,mseificompglob,mseifiglob,msescrollbar,mseact,
+ mseapplication,msedropdownlist,mseedit,msestream,SysUtils;
 
 type
 
@@ -71,11 +46,13 @@ type
     casesensitive: tbooleanedit;
     wholeword: tbooleanedit;
     selectedonly: tbooleanedit;
+   butok: tbutton;
     procedure oncloseev(const Sender: TObject);
     procedure onok(const Sender: TObject);
     procedure onprior(const Sender: TObject);
     procedure oncre(const Sender: TObject);
     procedure setlangfind();
+   procedure onbutclose(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfoty);
     procedure infotovalues(const info: findinfoty);
@@ -271,6 +248,7 @@ begin
   Caption          := lang_stockcaption[ord(sc_search)];
   tbutton2.Caption := lang_stockcaption[ord(sc_next)];
   tbutton3.Caption := lang_stockcaption[ord(sc_prior)];
+  butok.Caption := lang_stockcaption[ord(sc_close)];
 
   findtext.frame.Caption  := lang_xstockcaption[ord(sc_texttofind)] + ' 1';
   findtext2.frame.Caption := lang_xstockcaption[ord(sc_texttofind)] + ' 2';
@@ -280,6 +258,11 @@ begin
   selectedonly.frame.Caption  := lang_xstockcaption[ord(sc_selectedonly)];
   wholeword.frame.Caption     := lang_xstockcaption[ord(sc_wholeword)];
 
+end;
+
+procedure tfinddialogfo.onbutclose(const sender: TObject);
+begin
+close;
 end;
 
 end.

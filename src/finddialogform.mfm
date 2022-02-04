@@ -3,9 +3,9 @@ object finddialogfo: tfinddialogfo
   visible = False
   bounds_x = 944
   bounds_y = 114
-  bounds_cx = 234
-  bounds_cy = 430
-  bounds_cxmin = 234
+  bounds_cx = 266
+  bounds_cy = 435
+  bounds_cxmin = 266
   bounds_cymin = 220
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -13,8 +13,8 @@ object finddialogfo: tfinddialogfo
   container.bounds = (
     0
     0
-    234
-    430
+    266
+    435
   )
   optionswindow = [wo_message]
   options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
@@ -50,7 +50,7 @@ object finddialogfo: tfinddialogfo
     )
     bounds_x = 24
     bounds_y = 56
-    bounds_cx = 206
+    bounds_cx = 238
     bounds_cy = 40
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -65,7 +65,7 @@ object finddialogfo: tfinddialogfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 225
+    bounds_x = 257
     bounds_y = 88
     bounds_cx = 0
     bounds_cy = 0
@@ -78,6 +78,7 @@ object finddialogfo: tfinddialogfo
     place_mode = wam_end
   end
   object tbutton2: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
@@ -85,8 +86,8 @@ object finddialogfo: tfinddialogfo
     face.template = mainfo.convex
     taborder = 2
     bounds_x = 2
-    bounds_y = 0
-    bounds_cx = 114
+    bounds_y = 2
+    bounds_cx = 90
     bounds_cy = 30
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
     caption = 'Find Next'
@@ -126,7 +127,7 @@ object finddialogfo: tfinddialogfo
     taborder = 4
     bounds_x = 24
     bounds_y = 125
-    bounds_cx = 206
+    bounds_cx = 238
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -162,7 +163,7 @@ object finddialogfo: tfinddialogfo
     taborder = 5
     bounds_x = 24
     bounds_y = 186
-    bounds_cx = 206
+    bounds_cx = 238
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -198,7 +199,7 @@ object finddialogfo: tfinddialogfo
     taborder = 6
     bounds_x = 24
     bounds_y = 257
-    bounds_cx = 206
+    bounds_cx = 238
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -234,17 +235,17 @@ object finddialogfo: tfinddialogfo
     bounds_y = 276
   end
   object tbutton3: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = mainfo.convex
     taborder = 10
-    bounds_x = 118
-    bounds_y = 0
-    bounds_cx = 114
+    bounds_x = 97
+    bounds_y = 2
+    bounds_cx = 90
     bounds_cy = 30
-    anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
     caption = 'Find Prior'
     onexecute = onprior
@@ -300,6 +301,24 @@ object finddialogfo: tfinddialogfo
     bounds_cx = 95
     bounds_cy = 17
     statfile = statfile1
+  end
+  object butok: tbutton
+    frame.hiddenedges = [edg_bottom]
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 14
+    bounds_x = 193
+    bounds_y = 2
+    bounds_cx = 70
+    bounds_cy = 30
+    anchors = [an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = 'OK'
+    captiondist = 1
+    onexecute = onbutclose
   end
   object statfile1: tstatfile
     filename = 'finddialogfo.sta'

@@ -2,15 +2,15 @@ object replacedialogfo: treplacedialogfo
   visible = False
   bounds_x = 447
   bounds_y = 253
-  bounds_cx = 254
+  bounds_cx = 333
   bounds_cy = 229
-  bounds_cxmin = 254
+  bounds_cxmin = 333
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    254
+    333
     229
   )
   font.name = 'stf_default'
@@ -73,7 +73,7 @@ object replacedialogfo: treplacedialogfo
     )
     bounds_x = 4
     bounds_y = 40
-    bounds_cx = 246
+    bounds_cx = 325
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
@@ -109,7 +109,7 @@ object replacedialogfo: treplacedialogfo
     taborder = 1
     bounds_x = 4
     bounds_y = 84
-    bounds_cx = 246
+    bounds_cx = 325
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
@@ -161,7 +161,7 @@ object replacedialogfo: treplacedialogfo
     face.template = mainfo.convex
     taborder = 6
     bounds_x = 4
-    bounds_y = 0
+    bounds_y = 2
     bounds_cx = 114
     bounds_cy = 30
     state = [as_localcaption]
@@ -175,11 +175,10 @@ object replacedialogfo: treplacedialogfo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 7
-    bounds_x = 120
-    bounds_y = 0
+    bounds_x = 123
+    bounds_y = 2
     bounds_cx = 130
     bounds_cy = 30
-    anchors = [an_top, an_right]
     state = [as_localcaption]
     caption = 'Replace &all'
     modalresult = mr_all
@@ -220,6 +219,24 @@ object replacedialogfo: treplacedialogfo
     bounds_cy = 17
     statfile = statfile1
     value = True
+  end
+  object butok: tbutton
+    frame.hiddenedges = [edg_bottom]
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.template = mainfo.tframecomp2
+    face.localprops = []
+    face.template = mainfo.convex
+    taborder = 8
+    bounds_x = 258
+    bounds_y = 2
+    bounds_cx = 70
+    bounds_cy = 30
+    anchors = [an_top, an_right]
+    state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
+    caption = 'OK'
+    captiondist = 1
+    onexecute = onok
   end
   object statfile1: tstatfile
     filename = 'replacedialogfo.sta'
