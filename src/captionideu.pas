@@ -369,7 +369,9 @@ type
      sc_settingseditor, sc_settingsautoload, sc_settingsautosave, sc_load, sc_settingsfile,
      sc_settingsdebugger, sc_settingsstorage, sc_settingsprojecttree,
      
-     sc_spacesepared
+     sc_spacesepared, sc_copyall, sc_copyselected, sc_copyline, sc_findinmessages,
+     sc_addunit, sc_removeunit, sc_addfile, sc_removefile, sc_removecmodule, sc_addcmodule,
+     sc_adddir, sc_removedir, sc_editdir, sc_deleteall, sc_clear
 
     );
     
@@ -887,8 +889,23 @@ const
     'Load/save debugger settings',
     'Load/save storage settings',
     'Load/save project tree',
-    'Space separated defines for {$ifdef}'
-    
+    'Space separated defines for {$ifdef}',
+    'Copy All',
+    'Copy Selected',
+    'Copy Line',
+    'Find in messages',
+    'Add Unit',
+    'Remove Unit',
+    'Add Text File',
+    'Remove Text File',
+    'Remove C-File',
+    'Add C-File',
+    'Add Directory',
+    'Remove Directory',
+    'Edit Directory Caption',
+    'Delete All',
+    'Clear'
+     
     );
 
    en_langnamestext: array[0..14] of msestring = (

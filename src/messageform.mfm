@@ -21,8 +21,8 @@ object messagefo: tmessagefo
   frame.grip_faceactive.fade_direction = gd_down
   frame.grip_faceactive.localprops = []
   visible = False
-  bounds_x = 404
-  bounds_y = 523
+  bounds_x = 537
+  bounds_y = 299
   bounds_cx = 457
   bounds_cy = 281
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -424,7 +424,8 @@ object messagefo: tmessagefo
     menu.submenu.count = 5
     menu.submenu.items = <    
       item
-        caption = ' Copy &All to clipboard '
+        caption = 'Copy All'
+        name = 'copyall'
         state = [as_localcaption, as_localcolor, as_localshortcut, as_localshortcut1, as_localonexecute]
         color = 14606046
         coloractive = 15263976
@@ -435,8 +436,9 @@ object messagefo: tmessagefo
         )
       end    
       item
-        caption = ' Copy &Selected to clipboard '
+        caption = 'Copy Selected'
         hint = 'Use Shift+Click to select'
+        name = 'copyselected'
         state = [as_localcaption, as_localcolor, as_localhint, as_localshortcut, as_localonexecute]
         color = 14606046
         coloractive = 15263976
@@ -447,7 +449,8 @@ object messagefo: tmessagefo
         )
       end    
       item
-        caption = ' Copy &Line to clipboard '
+        caption = 'Copy Line'
+        name = 'copyline'
         state = [as_localcaption, as_localcolor, as_localshortcut, as_localonexecute]
         color = 14606046
         coloractive = 15263976
@@ -461,7 +464,8 @@ object messagefo: tmessagefo
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
-        caption = ' &Find in messages '
+        caption = 'Find in messages'
+        name = 'findinmessages'
         state = [as_localcaption, as_localcolor, as_localshortcut, as_localonexecute]
         color = 14606046
         coloractive = 15263976

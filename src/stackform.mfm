@@ -193,6 +193,7 @@ object stackfo: tstackfo
     menu.submenu.items = <    
       item
         caption = 'Copy to Clipboard'
+        name = 'copy'
         state = [as_localcaption, as_localonexecute]
         onexecute = copytoclipboard
       end>

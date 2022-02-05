@@ -1,4 +1,3 @@
-
 unit main;
 
 {$ifdef linux}{$define unix}{$endif}
@@ -30,19 +29,19 @@ interface
   {$endif}
 {$endif}
 
-uses 
-templateeditor, po2arrays, msearrayutils, aboutform, plugmanager, 
-msetimer, mseformatstr, mseconsts, dialogfiles, mseforms, mseguiglob, msegui, 
-msegdbutils, mseactions, sak_mse, msefileutils, msedispwidgets, msedataedits, 
-msestat, msestatfile, msemenus, msestockobjects,  captionideu, msebitmap, msegrids, 
-msefiledialogx, msetypes, sourcepage, msedesignintf, msedesigner, Classes, mclasses, 
-mseclasses, msegraphutils, typinfo, msedock, SysUtils, msesysenv, msemacros, 
-msestrings, msepostscriptprinter, msegraphics, mseglob, msestream, msepointer, 
-mseprocmonitorcomp, msesystypes, mserttistat, msedatalist, mselistbrowser, 
-projecttreeform, msepipestream, msestringcontainer, msesys, mseedit, msewidgets, 
-msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
+uses
+ templateeditor,po2arrays,msearrayutils,aboutform,plugmanager,
+ msetimer,mseformatstr,mseconsts,dialogfiles,mseforms,mseguiglob,msegui,
+ msegdbutils,mseactions,sak_mse,msefileutils,msedispwidgets,msedataedits,
+ msestat,msestatfile,msemenus,msestockobjects,  captionideu, msebitmap,msegrids,
+ msefiledialogx,msetypes,sourcepage,msedesignintf,msedesigner,Classes,mclasses,
+ mseclasses,msegraphutils,typinfo,msedock,SysUtils,msesysenv,msemacros,
+ msestrings,msepostscriptprinter,msegraphics,mseglob,msestream,msepointer,
+ mseprocmonitorcomp,msesystypes,mserttistat,msedatalist,mselistbrowser,
+ projecttreeform,msepipestream,msestringcontainer,msesys,mseedit,msewidgets,
+ msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
-
+ 
 const 
   versiontext = '2.8.1';
   idecaption  = 'ideU';
@@ -102,11 +101,11 @@ type
     concavedark: tfacecomp;
     bFirstLoad: tbooleanedit;
     themenum: tintegeredit;
-    bCompletion: tbooleanedit;
-    posx: tintegeredit;
-    posy: tintegeredit;
-    poscx: tintegeredit;
-    poscy: tintegeredit;
+   bCompletion: tbooleanedit;
+   posx: tintegeredit;
+   posy: tintegeredit;
+   poscx: tintegeredit;
+   poscy: tintegeredit;
     procedure newfileonexecute(Const Sender: TObject);
     procedure newformonexecute(Const Sender: TObject);
 
@@ -208,7 +207,7 @@ type
     procedure onactiv(Const Sender: TObject);
 
     procedure ontemplateeditor(Const Sender: TObject);
-    procedure runtimer(Const sender: TObject);
+   procedure runtimer(const sender: TObject);
     private 
       fstartcommand: startcommandty;
       fnoremakecheck: Boolean;
@@ -669,13 +668,13 @@ begin
   thetimer.Enabled := False;
   componentpalettefo.Close;
   objectinspectorfo.Close;
-  if bFirstLoad.value = true then
+   if bFirstLoad.value = true then
     begin
       if thetimer.tag = 0 then
         begin
           thetimer.tag      := 1;
           thetimer.interval := 1000000;
-          thetimer.Enabled  := True;
+         thetimer.Enabled  := True;
           activate;
           //visible := true;
         end
@@ -690,17 +689,17 @@ begin
   else
     activate;
 
-  debuggerfo.file_history.tag := 0;
-  themenr := themenum.value;
-  if themenr <> 0 then
-    dotheme(themenr);
-  // setstattext('Hello!', mtk_flat);
-  if confideufo.fontsize.value <> 12 then
-    confideufo.onchangefont;
+ debuggerfo.file_history.tag := 0;
+ themenr := themenum.value;
+ if themenr <> 0 then
+ dotheme(themenr);
+ // setstattext('Hello!', mtk_flat);
+ if confideufo.fontsize.value <> 12 then
+  confideufo.onchangefont;
   objectinspectorfo.Close;
   application.processmessages;
-  onactiv(Sender);
-
+   onactiv(Sender); 
+   
 end;
 
 procedure tmainfo.loadconfigform(Const Sender: TObject);
@@ -726,38 +725,37 @@ begin
              'plugin/designer_ext/designer_ext');
   {$endif}
 
-  if bCompletion.value = false then
-    begin
+if bCompletion.value = false then
+begin
       debuggerfo.properties_list.tag := 0;
       debuggerfo.properties_list.face.image.alignment := 
                                                          [al_grayed, al_stretchx, al_stretchy];
       sourcefo.thetimer.Enabled      := False;
-      sourcefo.hidesourcehint;
-    end
-  else
-    begin
-      debuggerfo.properties_list.tag := 1;
-      debuggerfo.properties_list.face.image.alignment := 
+      sourcefo.hidesourcehint;  
+end else
+begin
+    debuggerfo.properties_list.tag := 1;
+    debuggerfo.properties_list.face.image.alignment := 
                                                          [al_stretchx, al_stretchy];
 
-    end;
-
-  blinkingcaret := confideufo.blinkcaret.Value;
-
-  noconfirmdelete := confideufo.confirmdel.Value;
-
-  if confideufo.nozorderenable.Value = True then
+end;     
+    
+      blinkingcaret := confideufo.blinkcaret.Value;
+      
+      noconfirmdelete := confideufo.confirmdel.Value;
+       
+       if confideufo.nozorderenable.Value = True then
     nozorderhandling := True
   else
     nozorderhandling := False;
+    
+   confideufo.dirlayout(Nil);
 
-  confideufo.dirlayout(Nil);
+   nostaticgravity:= true;
+   ismodal := confideufo.modaldial.Value;
 
-  nostaticgravity := true;
-  ismodal := confideufo.modaldial.Value;
-
-  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
-
+   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+  
   if not fileexists(confideufo.deflayout.Text) then
     confideufo.deflayout.Text := (libpath) + directoryseparator +
                                  'layout' + directoryseparator +
@@ -769,16 +767,16 @@ begin
   if not fileexists(confideufo.defsynt.Text) then
     confideufo.defsynt.Text := (libpath) + directoryseparator +
                                'syntaxdefs' + directoryseparator + 'pascal_ideu.sdef';
-
+                               
   confideufo.defsynt.Value        := confideufo.defsynt.Text;
   confideufo.defsynt.valuedefault := confideufo.defsynt.Text;
-
+  
   if trim(ParamStr(1)) = '-va' then
     begin
       vaparam := True;
       confideufo.tbassistive.Value := True;
       debuggerfo.assistive.face.image.alignment := 
-                                                   [al_stretchx, al_stretchy];
+                                               [al_stretchx, al_stretchy];
     end;
 
   if confideufo.tbassistive.Value = True then
@@ -796,7 +794,7 @@ end;
 
 procedure tmainfo.ideuwriteconfig();
 begin
-  if debuggerfo.properties_list.tag = 0 then
+   if debuggerfo.properties_list.tag = 0 then
     bCompletion.value := false
   else
     bCompletion.value := true;
@@ -819,7 +817,6 @@ var
   wstr2: msestring;
 
 function dofind(Const modulenames: Array Of msestring; Const modulefilenames: Array Of filenamety):
-
                                                                                              Boolean
 ;
 var 
@@ -864,22 +861,20 @@ begin
     action := mr_ok
   else
     begin
-      if length(lang_mainform) > 0 then
-        action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
-                  moduleclassname) + ' ' +
-                  lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
-                  '.' + lineend + ' ' + lang_mainform[Ord(ma_wishsearch)],
-                  lang_stockcaption[Ord(sc_warningupper)],
-                  [mr_ok, mr_cancel], mr_ok)
-      else
-
-        action := ShowMessage(lang_mainform[ord(ma_unresreferences)] + ' '
-                  + utf8decode(amodule^.moduleclassname) + ' ' +
-                  lang_mainform[ord(ma_str_to)] + ' ' + utf8decode(aname) +
-                  '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_stockcaption[Ord(
-                  sc_warningupper)],
-                  [mr_ok, mr_cancel], mr_ok);
-
+    if length(lang_mainform) > 0 then
+      action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
+                moduleclassname) + ' ' +
+                lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
+                '.' + lineend + ' ' + lang_mainform[Ord(ma_wishsearch)],
+                 lang_stockcaption[Ord(sc_warningupper)],
+                [mr_ok, mr_cancel], mr_ok) else
+                
+                action := ShowMessage(lang_mainform[ord(ma_unresreferences)] + ' ' 
+                + utf8decode(amodule^.moduleclassname) + ' ' +
+      lang_mainform[ord(ma_str_to)] + ' ' + utf8decode(aname) +
+      '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
+      [mr_ok, mr_cancel], mr_ok);
+               
       case action of 
         mr_ok:
                begin
@@ -891,7 +886,6 @@ begin
                     lang_mainform[Ord(ma_formfile)] + ' ' + utf8decode(aname)) then
                    openformfile(wstr2, False, False, True, True, False)
                    //    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
-
 
               //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
                    //                 //defaultvalues don't work on kylix
@@ -961,7 +955,6 @@ begin
     if po1 = nil then
       if projecttree.units.findformbyclass(ansistring(wstr2), mstr1) then
         checkmodule(mstr1)
-
 {
    ar1:= projecttree.units.moduleclassnames;
    for int1:= 0 to high(ar1) do begin
@@ -973,8 +966,8 @@ begin
    }
     ;
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
-      if ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' +
-         utf8decode(atypename) + ' ' +
+      if ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' + 
+        utf8decode(atypename) + ' ' +
          lang_actionsmodule[ord(ac_notfound)] + lineend +
          ' ' + lang_mainform[Ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
          [mr_yes, mr_cancel]) = mr_yes then
@@ -1068,11 +1061,9 @@ begin
             with projectoptions, o, texp do
               if modified and not savechecked then
                 begin
-                  Result := ShowMessage(lang_xstockcaption[ord(sc_project)] + ' ' + fprojectname +
-                            ' '
-                            + lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(
-                            sc_Confirmation)],
-                            [mr_yes, mr_no, mr_cancel], mr_yes);
+                    Result := ShowMessage(lang_xstockcaption[ord(sc_project)] + ' ' + fprojectname + ' '
+                     + lang_stockcaption[ord(sc_is_modified_save)],lang_stockcaption[ord(sc_Confirmation)],
+                              [mr_yes, mr_no, mr_cancel], mr_yes);
 
                   if Result = mr_yes then
                     begin
@@ -1203,7 +1194,7 @@ begin
   if (page1 <> nil) then
     begin
       setstattext( lang_actionsmodule[Ord(ac_making)] +
-      ' ' + page1.filepath, mtk_info);
+       ' ' + page1.filepath, mtk_info);
       customdomake(page1.filepath, settypecompiler, setcompiler, customoption);
     end;
 end;
@@ -1224,7 +1215,6 @@ var
 begin
   if nodebugset then
     setstattext(
-
 'No debugger set, please check Project-Option|Debugger|Project-debugger.  Running without debugging...'
                 , mtk_error)
   else
@@ -1360,7 +1350,6 @@ begin
                         end;
 
 
-
 { TODO => libraries
 if fpgdlib_enabled = true then
 begin
@@ -1399,8 +1388,7 @@ end;
         begin
           str1 := replacefileext(po1^.filename, pasfileext);
           if sourcefo.openfile(str1, True) = nil then
-            raise Exception.Create(ansistring(lang_mainform[Ord(ma_unableopen)] + ' "' + str1 + '".'
-            ));
+            raise Exception.Create(ansistring(lang_mainform[Ord(ma_unableopen)] + ' "' + str1 + '".'));
         end
       else if designer.modules.Count > 0 then
              designer.modules[0]^.designform.activate(True);
@@ -1492,7 +1480,6 @@ begin
     end;
 
 
-
 {
 with mainfo do begin
   case akind of
@@ -1570,7 +1557,6 @@ begin
         programfinished;
       if projectoptions.d.activateonbreak then
         application.activate()
-
 {
    if application.activewindow <> nil then begin
     application.activewindow.activate;
@@ -1728,8 +1714,7 @@ begin
             begin
               fgdbservertimeout := timestep(round(1000000 * d.gdbserverwait));
               if application.waitdialog(nil, lang_mainform[Ord(ma_startgdbservercommand)] + ' ' +
-                 mstr1 + ' ' + lang_actionsmodule[Ord(ac_running)], lang_mainform[Ord(
-                 ma_startgdbserver)],
+                 mstr1 + ' ' + lang_actionsmodule[Ord(ac_running)], lang_mainform[Ord(ma_startgdbserver)],
               {$ifdef FPC}
                  @
 {$endif}
@@ -2835,17 +2820,17 @@ begin
   {$ifdef bsd}
     mainstatfile.filename := statname + 'bsd.sta';
   {$endif}
-
+  
     mainstatfile.readstat;
-
-    if (poscy.value <> 100) and (poscx.value <> 800) then
-      begin
-        top :=  posy.value;
-        left := posx.value;
-        height := poscy.value;
-        width := poscx.value;
-      end;
-
+    
+    if (poscy.value <> 100) and (poscx.value <> 800) then 
+    begin
+    top :=  posy.value;
+    left := posx.value;
+    height := poscy.value;
+    width := poscx.value;
+    end;
+    
     expandprojectmacros;
     onscale(Nil);
   finally
@@ -2899,7 +2884,6 @@ finally
 end;
 po1           := openformfile(str1, True, False, True, True, False);
 
-
 {
   if kind = fok_main then begin
    with tmseform(po1^.instance) do begin
@@ -2940,7 +2924,7 @@ begin
   Result := False;
   path1  := searchfile(aname);
   if path1 = '' then
-    ShowMessage(lang_stockcaption[ord(sc_file)] + ' ' + aname + ' '
+    ShowMessage(lang_stockcaption[ord(sc_file)] + ' ' + aname + ' ' 
     + lang_actionsmodule[ord(ac_notfound)], 
     lang_stockcaption[Ord(sc_warningupper)])
   else
@@ -2951,7 +2935,7 @@ begin
           begin
             showerror(lang_stockcaption[ord(sc_file)] + ' ' + newname +
             ' ' + lang_actionsmodule[ord(ac_exists)]);
-
+            
             Exit;
           end
       else
@@ -3176,7 +3160,6 @@ begin
 end;
 
 
-
 {
 procedure tmainfo.mainfoonclosequery(const sender: tcustommseform;
             var modalresult: modalresultty);
@@ -3199,7 +3182,7 @@ begin
   posx.value := left;
   poscy.value := height;
   poscx.value := width;
-
+   
   if checksave = mr_cancel then
     terminate := False
   else
@@ -3207,7 +3190,6 @@ begin
       sourcefo.filechangenotifyer.Clear;
       mainstatfile.writestat;
     end;
-
 
 {
   modres:= mr_windowclosed;
@@ -3300,14 +3282,12 @@ begin
                                            ' : ' + lang_xstockcaption[Ord(sc_finish)] + ' ' +
                                            ExtractFilename(theprojectname) + ' ';
       debuggerfo.project_next_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                                  ' : ' + lang_xstockcaption[Ord(sc_nextinstruction)
-                                                  ]
+                                                  ' : ' + lang_xstockcaption[Ord(sc_nextinstruction)]
                                                   + ' ' +
                                                   lang_xstockcaption[Ord(sc_assembler)] + ' ' +
                                                   ExtractFilename(theprojectname) + ' ';
       debuggerfo.project_step_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                                  ' : ' + lang_xstockcaption[Ord(sc_stepinstruction)
-                                                  ]
+                                                  ' : ' + lang_xstockcaption[Ord(sc_stepinstruction)]
                                                   + ' ' +
                                                   lang_xstockcaption[Ord(sc_assembler)] + ' ' +
                                                   ExtractFilename(theprojectname) + ' ';
@@ -3321,8 +3301,7 @@ begin
                                            ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' +
                                            thefilename + ' ';
       debuggerfo.toggle_form_unit.hint  := ' ' + lang_xstockcaption[Ord(sc_edited)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_toggleformunit)] + ' '
-                                           +
+                                           ' : ' + lang_xstockcaption[Ord(sc_toggleformunit)] + ' ' +
                                            thefilename + ' ';
 
     end;
@@ -3338,8 +3317,7 @@ begin
           try
             setcurrentdirmse(removelastpathsection(aname));
           except
-            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + aname +
-            '": ');
+            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + aname + '": ');
             Exit;
         end;
       if not readprojectoptions(aname) then
@@ -4442,7 +4420,7 @@ begin
     paintdockingareacaption(acanvas, Sender, lang_mainform[Ord(ma_dockingarea)])
   else
     paintdockingareacaption(acanvas, Sender, '');
-  ;
+    ;
 end;
 
 procedure tmainfo.copywordatcur(Const Sender: TObject);
@@ -4475,678 +4453,629 @@ var
   str : string;
 begin
   createnewlang(thelang);
-
+  
   if thelang = 'zh' then
-    begin
-      mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['menuwidth']).visible := true;
-      mainmenu1.options := [mo_shortcutright,mo_commonwidth,mo_activate,mo_updateonidle];
-    end
-  else
-    begin
-      mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := false;
-
-      mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['menuwidth']).visible := false;
-      mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];
-    end;
-
+  begin
+   mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := true;
+   mainmenu1.menu.itembynames(['menuwidth']).visible := true;
+   mainmenu1.options := [mo_shortcutright,mo_commonwidth,mo_activate,mo_updateonidle];   
+  end else
+  begin
+   mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := false;
+  
+   mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := false;
+   mainmenu1.menu.itembynames(['menuwidth']).visible := false;
+   mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];   
+  end;
+ 
   application.ProcessMessages;
 
-  mainmenu1.menu.itembynames(['file']).Caption         := 
-                                                          '&' + lang_stockcaption[ord(sc_file)];
+      mainmenu1.menu.itembynames(['file']).Caption         :=
+       '&' + lang_stockcaption[ord(sc_file)];
 
-  mainmenu1.menu.itembynames(['file', 'new']).Caption   := lang_stockcaption[Ord(sc_newfile)];
-  mainmenu1.menu.itembynames(['file', 'open']).Caption  := lang_stockcaption[Ord(sc_open)];
-  mainmenu1.menu.itembynames(['file', 'save']).Caption  := lang_stockcaption[Ord(sc_save)];
-  mainmenu1.menu.itembynames(['file', 'saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
-  mainmenu1.menu.itembynames(['file', 'saveall']).Caption := lang_xstockcaption[Ord(sc_saveall)];
-  mainmenu1.menu.itembynames(['file', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
-  mainmenu1.menu.itembynames(['file', 'closeall']).Caption := lang_xstockcaption[Ord(sc_closeall)
-                                                              ];
-  mainmenu1.menu.itembynames(['file', 'print']).Caption := lang_xstockcaption[Ord(sc_print)];
-  mainmenu1.menu.itembynames(['file', 'quit']).Caption  := lang_mainform[Ord(ma_exit)];
-  mainmenu1.menu.itembynames(['search']).Caption        := '&' + lang_stockcaption[Ord(sc_search
-                                                           )];
-  mainmenu1.menu.itembynames(['search', 'line']).Caption := lang_xstockcaption[Ord(sc_line)];
-  mainmenu1.menu.itembynames(['search', 'find']).Caption := lang_stockcaption[Ord(sc_search)];
-  mainmenu1.menu.itembynames(['search', 'searchagain']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_search_again)];
-  mainmenu1.menu.itembynames(['search', 'searchback']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_search_back)];
-  mainmenu1.menu.itembynames(['search', 'findreplace']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_find_replace)];
-  mainmenu1.menu.itembynames(['search', 'findinfile']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_find_infile)];
-  mainmenu1.menu.itembynames(['search', 'proclist']).Caption := lang_xstockcaption[Ord(
-                                                                sc_proclist)];
-  mainmenu1.menu.itembynames(['edit']).Caption          := '&' + lang_stockcaption[Ord(sc_edit)]
-  ;
-  mainmenu1.menu.itembynames(['edit', 'undo']).Caption  := lang_stockcaption[Ord(sc_Undohk)];
-  mainmenu1.menu.itembynames(['edit', 'redo']).Caption  := lang_stockcaption[Ord(sc_Redohk)];
-  mainmenu1.menu.itembynames(['edit', 'copy']).Caption  := lang_stockcaption[Ord(sc_Copyhk)];
-  mainmenu1.menu.itembynames(['edit', 'cut']).Caption   := lang_stockcaption[Ord(sc_Cuthk)];
-  mainmenu1.menu.itembynames(['edit', 'paste']).Caption := lang_stockcaption[Ord(sc_pastehk)];
-  mainmenu1.menu.itembynames(['edit', 'delete']).Caption := lang_stockcaption[Ord(sc_delete)];
-  mainmenu1.menu.itembynames(['edit', 'selectall']).Caption := lang_stockcaption[Ord(
-                                                               sc_Select_allhk)];
-  mainmenu1.menu.itembynames(['edit', 'selecteditpage']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_select_edit_Page)];
-  mainmenu1.menu.itembynames(['edit', 'copyatcursor']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_Copy_word_cursor)];
-  mainmenu1.menu.itembynames(['edit', 'copylatex']).Caption := lang_xstockcaption[Ord(
-                                                               sc_copy_latex)];
-  mainmenu1.menu.itembynames(['edit', 'indent']).Caption := lang_xstockcaption[Ord(sc_indent)];
-  mainmenu1.menu.itembynames(['edit', 'unindent']).Caption := lang_xstockcaption[Ord(sc_unindent)
-                                                              ];
-  mainmenu1.menu.itembynames(['target']).Caption        := lang_xstockcaption[Ord(sc_target)];
-  mainmenu1.menu.itembynames(['target', 'environment']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_environment)];
-  mainmenu1.menu.itembynames(['target', 'attachprocess']).Caption := lang_xstockcaption[Ord(
-                                                                     sc_attachprocess)];
-  mainmenu1.menu.itembynames(['target', 'attachtarget']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_attachtarget)];
-  mainmenu1.menu.itembynames(['target', 'detachtarget']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_detachtarget)];
-  mainmenu1.menu.itembynames(['target', 'download']).Caption := lang_xstockcaption[Ord(
-                                                                sc_download)];
+      mainmenu1.menu.itembynames(['file', 'new']).Caption   := lang_stockcaption[Ord(sc_newfile)];
+      mainmenu1.menu.itembynames(['file', 'open']).Caption  := lang_stockcaption[Ord(sc_open)];
+      mainmenu1.menu.itembynames(['file', 'save']).Caption  := lang_stockcaption[Ord(sc_save)];
+      mainmenu1.menu.itembynames(['file', 'saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
+      mainmenu1.menu.itembynames(['file', 'saveall']).Caption := lang_xstockcaption[Ord(sc_saveall)];
+      mainmenu1.menu.itembynames(['file', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
+      mainmenu1.menu.itembynames(['file', 'closeall']).Caption := lang_xstockcaption[Ord(sc_closeall)
+                                                                  ];
+      mainmenu1.menu.itembynames(['file', 'print']).Caption := lang_xstockcaption[Ord(sc_print)];
+      mainmenu1.menu.itembynames(['file', 'quit']).Caption  := lang_mainform[Ord(ma_exit)];
+      mainmenu1.menu.itembynames(['search']).Caption        := '&' + lang_stockcaption[Ord(sc_search
+                                                               )];
+      mainmenu1.menu.itembynames(['search', 'line']).Caption := lang_xstockcaption[Ord(sc_line)];
+      mainmenu1.menu.itembynames(['search', 'find']).Caption := lang_stockcaption[Ord(sc_search)];
+      mainmenu1.menu.itembynames(['search', 'searchagain']).Caption := lang_xstockcaption[Ord(
+                                                                       sc_search_again)];
+      mainmenu1.menu.itembynames(['search', 'searchback']).Caption := lang_xstockcaption[Ord(
+                                                                      sc_search_back)];
+      mainmenu1.menu.itembynames(['search', 'findreplace']).Caption := lang_xstockcaption[Ord(
+                                                                       sc_find_replace)];
+      mainmenu1.menu.itembynames(['search', 'findinfile']).Caption := lang_xstockcaption[Ord(
+                                                                      sc_find_infile)];
+      mainmenu1.menu.itembynames(['search', 'proclist']).Caption := lang_xstockcaption[Ord(
+                                                                    sc_proclist)];
+      mainmenu1.menu.itembynames(['edit']).Caption          := '&' + lang_stockcaption[Ord(sc_edit)]
+      ;
+      mainmenu1.menu.itembynames(['edit', 'undo']).Caption  := lang_stockcaption[Ord(sc_Undohk)];
+      mainmenu1.menu.itembynames(['edit', 'redo']).Caption  := lang_stockcaption[Ord(sc_Redohk)];
+      mainmenu1.menu.itembynames(['edit', 'copy']).Caption  := lang_stockcaption[Ord(sc_Copyhk)];
+      mainmenu1.menu.itembynames(['edit', 'cut']).Caption   := lang_stockcaption[Ord(sc_Cuthk)];
+      mainmenu1.menu.itembynames(['edit', 'paste']).Caption := lang_stockcaption[Ord(sc_pastehk)];
+      mainmenu1.menu.itembynames(['edit', 'delete']).Caption := lang_stockcaption[Ord(sc_delete)];
+      mainmenu1.menu.itembynames(['edit', 'selectall']).Caption := lang_stockcaption[Ord(
+                                                                   sc_Select_allhk)];
+      mainmenu1.menu.itembynames(['edit', 'selecteditpage']).Caption := lang_xstockcaption[Ord(
+                                                                        sc_select_edit_Page)];
+      mainmenu1.menu.itembynames(['edit', 'copyatcursor']).Caption := lang_xstockcaption[Ord(
+                                                                      sc_Copy_word_cursor)];
+      mainmenu1.menu.itembynames(['edit', 'copylatex']).Caption := lang_xstockcaption[Ord(
+                                                                   sc_copy_latex)];
+      mainmenu1.menu.itembynames(['edit', 'indent']).Caption := lang_xstockcaption[Ord(sc_indent)];
+      mainmenu1.menu.itembynames(['edit', 'unindent']).Caption := lang_xstockcaption[Ord(sc_unindent)
+                                                                  ];
+      mainmenu1.menu.itembynames(['target']).Caption        := lang_xstockcaption[Ord(sc_target)];
+      mainmenu1.menu.itembynames(['target', 'environment']).Caption := lang_xstockcaption[Ord(
+                                                                       sc_environment)];
+      mainmenu1.menu.itembynames(['target', 'attachprocess']).Caption := lang_xstockcaption[Ord(
+                                                                         sc_attachprocess)];
+      mainmenu1.menu.itembynames(['target', 'attachtarget']).Caption := lang_xstockcaption[Ord(
+                                                                        sc_attachtarget)];
+      mainmenu1.menu.itembynames(['target', 'detachtarget']).Caption := lang_xstockcaption[Ord(
+                                                                        sc_detachtarget)];
+      mainmenu1.menu.itembynames(['target', 'download']).Caption := lang_xstockcaption[Ord(
+                                                                    sc_download)];
+                                                                    
+                                                                    
 
-  item1 := mainmenu1.menu.itembynames(['tools']);
-  if item1 <> nil then
-    mainmenu1.menu.itembynames(['tools']).Caption := lang_stockcaption[Ord(sc_tools)];
+      item1 := mainmenu1.menu.itembynames(['tools']);
+      if item1 <> nil then
+        mainmenu1.menu.itembynames(['tools']).Caption := lang_stockcaption[Ord(sc_tools)];
 
-  mainmenu1.menu.itembynames(['view']).Caption := lang_xstockcaption[Ord(sc_view)];
-  mainmenu1.menu.itembynames(['view', 'panels']).Caption := lang_xstockcaption[Ord(sc_panels)];
-  mainmenu1.menu.itembynames(['view', 'forcezorder']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_forcezorder)];
-  mainmenu1.menu.itembynames(['view', 'source']).Caption := lang_xstockcaption[Ord(sc_source)];
-  mainmenu1.menu.itembynames(['view', 'treelist']).Caption := lang_xstockcaption[Ord(sc_treelist)
-                                                              ];
-  mainmenu1.menu.itembynames(['view', 'messages']).Caption := lang_xstockcaption[Ord(sc_messages)
-                                                              ];
-  mainmenu1.menu.itembynames(['view', 'findresult']).Caption := lang_xstockcaption[Ord(
-                                                                sc_findresult)];
-  mainmenu1.menu.itembynames(['view', 'commander']).Caption := lang_xstockcaption[Ord(
-                                                               sc_commander)];
-  mainmenu1.menu.itembynames(['view', 'symbols']).Caption := lang_xstockcaption[Ord(sc_symbols)];
-  mainmenu1.menu.itembynames(['view', 'watches']).Caption := lang_xstockcaption[Ord(sc_watches)];
-  mainmenu1.menu.itembynames(['view', 'stack']).Caption := lang_xstockcaption[Ord(sc_stack)];
-  mainmenu1.menu.itembynames(['view', 'threads']).Caption := lang_xstockcaption[Ord(sc_threads)];
-  mainmenu1.menu.itembynames(['view', 'cpu']).Caption := lang_xstockcaption[Ord(sc_cpu)];
-  mainmenu1.menu.itembynames(['view', 'assembler']).Caption := lang_xstockcaption[Ord(
-                                                               sc_assembler)];
-  mainmenu1.menu.itembynames(['view', 'memory']).Caption := lang_xstockcaption[Ord(sc_memory)];
-  mainmenu1.menu.itembynames(['view', 'targetconsole']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_targetconsole)];
-  mainmenu1.menu.itembynames(['view', 'breakpoints']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_breakpoints)];
-  mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_watchpoints)];
-  mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_toggleformunit)];
-  mainmenu1.menu.itembynames(['layout']).Caption := lang_xstockcaption[Ord(sc_layout)];
-  mainmenu1.menu.itembynames(['syntax']).Caption := lang_xstockcaption[Ord(sc_syntax)];
-  mainmenu1.menu.itembynames(['project']).Caption := lang_xstockcaption[Ord(sc_project)];
-  mainmenu1.menu.itembynames(['project', 'make']).Caption := lang_xstockcaption[Ord(sc_make)];
-  mainmenu1.menu.itembynames(['project', 'build']).Caption := lang_xstockcaption[Ord(sc_build)];
-  x := 0;
+      mainmenu1.menu.itembynames(['view']).Caption := lang_xstockcaption[Ord(sc_view)];
+      mainmenu1.menu.itembynames(['view', 'panels']).Caption := lang_xstockcaption[Ord(sc_panels)];
+      mainmenu1.menu.itembynames(['view', 'forcezorder']).Caption := lang_xstockcaption[Ord(
+                                                                     sc_forcezorder)];
+      mainmenu1.menu.itembynames(['view', 'source']).Caption := lang_xstockcaption[Ord(sc_source)];
+      mainmenu1.menu.itembynames(['view', 'treelist']).Caption := lang_xstockcaption[Ord(sc_treelist)
+                                                                  ];
+      mainmenu1.menu.itembynames(['view', 'messages']).Caption := lang_xstockcaption[Ord(sc_messages)
+                                                                  ];
+      mainmenu1.menu.itembynames(['view', 'findresult']).Caption := lang_xstockcaption[Ord(
+                                                                    sc_findresult)];
+      mainmenu1.menu.itembynames(['view', 'commander']).Caption := lang_xstockcaption[Ord(
+                                                                   sc_commander)];
+      mainmenu1.menu.itembynames(['view', 'symbols']).Caption := lang_xstockcaption[Ord(sc_symbols)];
+      mainmenu1.menu.itembynames(['view', 'watches']).Caption := lang_xstockcaption[Ord(sc_watches)];
+      mainmenu1.menu.itembynames(['view', 'stack']).Caption := lang_xstockcaption[Ord(sc_stack)];
+      mainmenu1.menu.itembynames(['view', 'threads']).Caption := lang_xstockcaption[Ord(sc_threads)];
+      mainmenu1.menu.itembynames(['view', 'cpu']).Caption := lang_xstockcaption[Ord(sc_cpu)];
+      mainmenu1.menu.itembynames(['view', 'assembler']).Caption := lang_xstockcaption[Ord(
+                                                                   sc_assembler)];
+      mainmenu1.menu.itembynames(['view', 'memory']).Caption := lang_xstockcaption[Ord(sc_memory)];
+      mainmenu1.menu.itembynames(['view', 'targetconsole']).Caption := lang_xstockcaption[Ord(
+                                                                       sc_targetconsole)];
+      mainmenu1.menu.itembynames(['view', 'breakpoints']).Caption := lang_xstockcaption[Ord(
+                                                                     sc_breakpoints)];
+      mainmenu1.menu.itembynames(['view', 'watchpoints']).Caption := lang_xstockcaption[Ord(
+                                                                     sc_watchpoints)];
+      mainmenu1.menu.itembynames(['view', 'toggleformunit']).Caption := lang_xstockcaption[Ord(
+                                                                        sc_toggleformunit)];
+      mainmenu1.menu.itembynames(['layout']).Caption := lang_xstockcaption[Ord(sc_layout)];
+      mainmenu1.menu.itembynames(['syntax']).Caption := lang_xstockcaption[Ord(sc_syntax)];
+      mainmenu1.menu.itembynames(['project']).Caption := lang_xstockcaption[Ord(sc_project)];
+      mainmenu1.menu.itembynames(['project', 'make']).Caption := lang_xstockcaption[Ord(sc_make)];
+      mainmenu1.menu.itembynames(['project', 'build']).Caption := lang_xstockcaption[Ord(sc_build)];
+      x := 0;
 
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_make)] + ' &' +
-                                                                           IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['project', 'make' + IntToStr(x)]).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_make)] + ' &' +
+                                                                               IntToStr(x);
 
-  mainmenu1.menu.itembynames(['project', 'make0']).Caption := 
-                                                              lang_xstockcaption[Ord(sc_make)] +
-                                                              ' &0';
+      mainmenu1.menu.itembynames(['project', 'make0']).Caption := 
+                                                                  lang_xstockcaption[Ord(sc_make)] +
+                                                                  ' &0';
 
-  mainmenu1.menu.itembynames(['project', 'abortmake']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_abortmake)];
-  mainmenu1.menu.itembynames(['project', 'debugrun']).Caption  := lang_xstockcaption[Ord(
-                                                                  sc_debugrun)];
+      mainmenu1.menu.itembynames(['project', 'abortmake']).Caption := lang_xstockcaption[Ord(
+                                                                      sc_abortmake)];
+      mainmenu1.menu.itembynames(['project', 'debugrun']).Caption  := lang_xstockcaption[Ord(
+                                                                      sc_debugrun)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'continue']).Caption := 
-                                                                             lang_modalresult[
-                                                                             Ord(mr_continue)];
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'continue']).Caption := 
+                                                                                 lang_modalresult[
+                                                                                 Ord(mr_continue)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption := 
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'interrupt']).Caption := 
 
-                                                                              lang_projectoptionscon
-                                                                              [Ord(c_SIGINT)];
+                                                                      lang_projectoptionscon[Ord(c_SIGINT)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption := 
-                                                                         lang_xstockcaption[Ord(
-                                                                         sc_next)];
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'next']).Caption := 
+                                                                             lang_xstockcaption[Ord(
+                                                                             sc_next)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'reset']).Caption := lang_xstockcaption[Ord(
-                                                                          sc_reset)];
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'reset']).Caption := lang_xstockcaption[Ord(
+                                                                              sc_reset)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'step']).Caption := lang_xstockcaption[Ord(
-                                                                         sc_cstep)];
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'step']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_cstep)];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'stepinstruction']).Caption := 
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'stepinstruction']).Caption := 
 
-
-                                                                                  lang_xstockcaption
-                                                                                    [Ord(
-
+                                                                                   lang_xstockcaption
+                                                                                        [Ord(
                                                                                   sc_stepinstruction
-                                                                                    )];
+                                                                                        )];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'nextinstruction']).Caption := 
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'nextinstruction']).Caption := 
 
-
-                                                                                  lang_xstockcaption
-                                                                                    [Ord(
-
+                                                                                   lang_xstockcaption
+                                                                                        [Ord(
                                                                                   sc_nextinstruction
-                                                                                    )];
+                                                                                        )];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'restartdebugger']).Caption := 
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'restartdebugger']).Caption := 
 
-
-                                                                                  lang_xstockcaption
-                                                                                    [Ord(
-
+                                                                                   lang_xstockcaption
+                                                                                        [Ord(
                                                                                   sc_restartdebugger
-                                                                                    )];
+                                                                                        )];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'togglebreakpoint']).Caption := 
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'togglebreakpoint']).Caption := 
 
-
-                                                                                  lang_xstockcaption
-                                                                                     [Ord(
-
+                                                                                   lang_xstockcaption
+                                                                                         [Ord(
                                                                                  sc_togglebreakpoint
+                                                                                         )];
+
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'tooglebreakpointenable']).Caption := 
+
+                                                                                   lang_xstockcaption
+                                                                                               [Ord(
+                                                                           sc_tooglebreakpointenable
+                                                                                               )];
+
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption := 
+                                                                               lang_xstockcaption[Ord
+                                                                               (sc_finish)];
+
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption :=
+                                                              lang_projectoptionscon[Ord(c_SIGABRT)];
+ 
+                  
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption := 
+
+                                                                                   lang_xstockcaption
+                                                                                      [Ord(
+                                                                                      sc_breakpoints
+                                                                                      )] + ' ' +
+                                                                                   lang_stockcaption
+                                                                                      [Ord(sc_on)];
+
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'watcheson']).Caption := 
+                                                                                  lang_xstockcaption[
+                                                                                  Ord(sc_watches)] +
+                                                                                  ' ' +
+                                                                                  lang_stockcaption[
+                                                                                  Ord(sc_on)];
+
+      mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption := 
+
+                                                                                   lang_xstockcaption
+                                                                                       [Ord(
+                                                                                   sc_execlinehinton
+                                                                                       )];
+
+      mainmenu1.menu.itembynames(['project', 'options']).Caption := lang_xstockcaption[Ord(sc_options
+                                                                    )];
+      mainmenu1.menu.itembynames(['project', 'tree']).Caption := lang_xstockcaption[Ord(sc_tree)];
+      mainmenu1.menu.itembynames(['project', 'source']).Caption := lang_xstockcaption[Ord(sc_source)]
+      ;
+      mainmenu1.menu.itembynames(['project', 'opencopy']).Caption := lang_xstockcaption[Ord(
+                                                                     sc_opencopy)];
+      mainmenu1.menu.itembynames(['project', 'saveascopy']).Caption := lang_xstockcaption[Ord(
+                                                                       sc_saveascopy)];
+      mainmenu1.menu.itembynames(['project', 'new']).Caption := lang_stockcaption[Ord(sc_newfile)];
+      mainmenu1.menu.itembynames(['project', 'open']).Caption := lang_stockcaption[Ord(sc_open)];
+      mainmenu1.menu.itembynames(['project', 'save']).Caption := lang_stockcaption[Ord(sc_save)];
+      mainmenu1.menu.itembynames(['project', 'saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)]
+      ;
+      mainmenu1.menu.itembynames(['project', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
+      mainmenu1.menu.itembynames(['edited']).Caption        := lang_xstockcaption[Ord(sc_edited)];
+      mainmenu1.menu.itembynames(['edited', 'make']).Caption := lang_xstockcaption[Ord(sc_make)];
+      mainmenu1.menu.itembynames(['edited', 'build']).Caption := lang_xstockcaption[Ord(sc_build)];
+      mainmenu1.menu.itembynames(['edited', 'abortmake']).Caption := lang_xstockcaption[Ord(
+                                                                     sc_abortmake)];
+      mainmenu1.menu.itembynames(['edited', 'run']).Caption := lang_xstockcaption[Ord(sc_debugrun)];
+      mainmenu1.menu.itembynames(['edited', 'beautifier']).Caption := lang_xstockcaption[Ord(
+                                                                      sc_beautifier)];
+
+      x := 0;
+
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+
+      Inc(x);
+      mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
+                                                                              lang_xstockcaption[Ord(
+                                                                              sc_make)] + ' ' +
+                                                                              IntToStr(x);
+
+      mainmenu1.menu.itembynames(['edited', 'make0']).Caption := 
+                                                                 lang_xstockcaption[Ord(sc_make)] +
+                                                                 ' 0';
+
+      mainmenu1.menu.itembynames(['edited', 'makeX']).Caption := 
+                                                                 lang_xstockcaption[Ord(sc_make)] +
+                                                                 ' X';
+
+      mainmenu1.menu.itembynames(['edited', 'open']).Caption := lang_stockcaption[Ord(sc_open)];
+      mainmenu1.menu.itembynames(['edited', 'save']).Caption := lang_stockcaption[Ord(sc_save)];
+      mainmenu1.menu.itembynames(['edited', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
+
+      mainmenu1.menu.itembynames(['widgets']).Caption := lang_xstockcaption[Ord(sc_widgets)];
+      
+      mainmenu1.menu.itembynames(['widgets', 'fpgui', 'reset']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_reset)];
+    
+      mainmenu1.menu.itembynames(['widgets', 'fpgui', 'formdesigner']).Caption :=
+          lang_mainform[Ord(ma_formdesigner)];
+           
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_msemod)];
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := 
+                                                                                   lang_xstockcaption
+                                                                                     [Ord(
+                                                                                   sc_closeallmsemod
                                                                                      )];
 
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'tooglebreakpointenable']).Caption := 
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentspalette']).Caption := 
 
-
-                                                                                  lang_xstockcaption
-                                                                                           [Ord(
-
-                                                                           sc_tooglebreakpointenable
-                                                                                           )];
-
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption := 
-                                                                           lang_xstockcaption[Ord
-                                                                           (sc_finish)];
-
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'finish']).Caption := 
-                                                                           lang_projectoptionscon[
-                                                                           Ord(c_SIGABRT)];
-
-
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'breakpointson']).Caption := 
-
-                                                                                  lang_xstockcaption
-                                                                                  [Ord(
-                                                                                  sc_breakpoints
-                                                                                  )] + ' ' +
-                                                                                  lang_stockcaption
-                                                                                  [Ord(sc_on)];
-
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'watcheson']).Caption := 
-                                                                              lang_xstockcaption[
-                                                                              Ord(sc_watches)] +
-                                                                              ' ' +
-                                                                              lang_stockcaption[
-                                                                              Ord(sc_on)];
-
-  mainmenu1.menu.itembynames(['project', 'debugrun', 'execlinehinton']).Caption := 
-
-
-                                                                                  lang_xstockcaption
-                                                                                   [Ord(
-                                                                                   sc_execlinehinton
-                                                                                   )];
-
-  mainmenu1.menu.itembynames(['project', 'options']).Caption := lang_xstockcaption[Ord(sc_options
-                                                                )];
-  mainmenu1.menu.itembynames(['project', 'tree']).Caption := lang_xstockcaption[Ord(sc_tree)];
-  mainmenu1.menu.itembynames(['project', 'source']).Caption := lang_xstockcaption[Ord(sc_source)]
-  ;
-  mainmenu1.menu.itembynames(['project', 'opencopy']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_opencopy)];
-  mainmenu1.menu.itembynames(['project', 'saveascopy']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_saveascopy)];
-  mainmenu1.menu.itembynames(['project', 'new']).Caption := lang_stockcaption[Ord(sc_newfile)];
-  mainmenu1.menu.itembynames(['project', 'open']).Caption := lang_stockcaption[Ord(sc_open)];
-  mainmenu1.menu.itembynames(['project', 'save']).Caption := lang_stockcaption[Ord(sc_save)];
-  mainmenu1.menu.itembynames(['project', 'saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)]
-  ;
-  mainmenu1.menu.itembynames(['project', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
-  mainmenu1.menu.itembynames(['edited']).Caption        := lang_xstockcaption[Ord(sc_edited)];
-  mainmenu1.menu.itembynames(['edited', 'make']).Caption := lang_xstockcaption[Ord(sc_make)];
-  mainmenu1.menu.itembynames(['edited', 'build']).Caption := lang_xstockcaption[Ord(sc_build)];
-  mainmenu1.menu.itembynames(['edited', 'abortmake']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_abortmake)];
-  mainmenu1.menu.itembynames(['edited', 'run']).Caption := lang_xstockcaption[Ord(sc_debugrun)];
-  mainmenu1.menu.itembynames(['edited', 'beautifier']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_beautifier)];
-
-  x := 0;
-
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-
-  Inc(x);
-  mainmenu1.menu.itembynames(['edited', 'make' + IntToStr(x)]).Caption := 
-                                                                          lang_xstockcaption[Ord(
-                                                                          sc_make)] + ' ' +
-                                                                          IntToStr(x);
-
-  mainmenu1.menu.itembynames(['edited', 'make0']).Caption := 
-                                                             lang_xstockcaption[Ord(sc_make)] +
-                                                             ' 0';
-
-  mainmenu1.menu.itembynames(['edited', 'makeX']).Caption := 
-                                                             lang_xstockcaption[Ord(sc_make)] +
-                                                             ' X';
-
-  mainmenu1.menu.itembynames(['edited', 'open']).Caption := lang_stockcaption[Ord(sc_open)];
-  mainmenu1.menu.itembynames(['edited', 'save']).Caption := lang_stockcaption[Ord(sc_save)];
-  mainmenu1.menu.itembynames(['edited', 'close']).Caption := lang_stockcaption[Ord(sc_close)];
-
-  mainmenu1.menu.itembynames(['widgets']).Caption := lang_xstockcaption[Ord(sc_widgets)];
-
-  mainmenu1.menu.itembynames(['widgets', 'fpgui', 'reset']).Caption := lang_xstockcaption[Ord(
-                                                                       sc_reset)];
-
-  mainmenu1.menu.itembynames(['widgets', 'fpgui', 'formdesigner']).Caption := 
-                                                                              lang_mainform[Ord(
-                                                                              ma_formdesigner)];
-
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'msemod']).Caption := lang_xstockcaption[Ord(
-                                                                         sc_msemod)];
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'closeallmsemod']).Caption := 
-                                                                                 lang_xstockcaption
-                                                                                 [Ord(
-                                                                                 sc_closeallmsemod
-                                                                                 )];
-
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentspalette']).Caption := 
-
-
-                                                                                  lang_xstockcaption
-                                                                                    [Ord(
-
+                                                                                   lang_xstockcaption
+                                                                                        [Ord(
                                                                                 sc_componentspalette
+                                                                                        )];
+
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentsstore']).Caption := 
+
+                                                                                  lang_actionsmodule
+                                                                                      [Ord(
+                                                                                   ac_storecomponent
+                                                                                      )];
+
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'objectinspector']).Caption := 
+
+                                                                                  lang_actionsmodule
+                                                                                      [Ord(
+                                                                                  ac_objectinspector
+                                                                                      )];
+
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'toggleformunit']).Caption := 
+
+                                                                                   lang_xstockcaption
+                                                                                     [Ord(
+                                                                                   sc_toggleformunit
+                                                                                     )];
+
+      mainmenu1.menu.itembynames(['widgets', 'msegui', 'findcomponent']).Caption := 
+
+                                                                                   lang_xstockcaption
+                                                                                    [Ord(
+                                                                                    sc_findcomponent
                                                                                     )];
 
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'componentsstore']).Caption := 
+      mainmenu1.menu.itembynames(['settings']).Caption := lang_xstockcaption[Ord(sc_settings)];
+      mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_generalsettings)];
+      mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := lang_xstockcaption[Ord(
+                                                                           sc_extrasettings)];
+      mainmenu1.menu.itembynames(['settings', 'lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
+                                                                  '     (Lang)';
+      mainmenu1.menu.itembynames(['settings', 'configwidgets']).Caption := 
+                                                                           lang_xstockcaption[Ord(
+                                                                           sc_configwidgets)];
+      mainmenu1.menu.itembynames(['settings', 'configcompilers']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_configcompilers)];
+      mainmenu1.menu.itembynames(['settings', 'configdebuggers']).Caption := lang_xstockcaption[Ord(
+                                                                             sc_configdebuggers)];
+      mainmenu1.menu.itembynames(['settings', 'themes']).Caption := lang_xstockcaption[Ord(sc_themes)
+                                                                    ];
 
-                                                                                  lang_actionsmodule
-                                                                                  [Ord(
-                                                                                  ac_storecomponent
-                                                                                  )];
-
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'objectinspector']).Caption := 
-
-                                                                                  lang_actionsmodule
-                                                                                  [Ord(
-                                                                                  ac_objectinspector
-                                                                                  )];
-
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'toggleformunit']).Caption := 
-
-                                                                                 lang_xstockcaption
-                                                                                 [Ord(
-                                                                                 sc_toggleformunit
-                                                                                 )];
-
-  mainmenu1.menu.itembynames(['widgets', 'msegui', 'findcomponent']).Caption := 
-
-                                                                                lang_xstockcaption
-                                                                                [Ord(
-                                                                                sc_findcomponent
-                                                                                )];
-
-  mainmenu1.menu.itembynames(['settings']).Caption := lang_xstockcaption[Ord(sc_settings)];
-  mainmenu1.menu.itembynames(['settings', 'generalsettings']).Caption := lang_xstockcaption[Ord(
-                                                                         sc_generalsettings)];
-  mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := lang_xstockcaption[Ord(
-                                                                       sc_extrasettings)];
-  mainmenu1.menu.itembynames(['settings', 'lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
-                                                              '     (Lang)';
-  mainmenu1.menu.itembynames(['settings', 'configwidgets']).Caption := 
-                                                                       lang_xstockcaption[Ord(
-                                                                       sc_configwidgets)];
-  mainmenu1.menu.itembynames(['settings', 'configcompilers']).Caption := lang_xstockcaption[Ord(
-                                                                         sc_configcompilers)];
-  mainmenu1.menu.itembynames(['settings', 'configdebuggers']).Caption := lang_xstockcaption[Ord(
-                                                                         sc_configdebuggers)];
-  mainmenu1.menu.itembynames(['settings', 'themes']).Caption := lang_xstockcaption[Ord(sc_themes)
-                                                                ];
-
-  mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
-
-  if assigned(objectinspectorfo) then objectinspectorfo.caption := 
-                                                                   lang_actionsmodule[Ord(
-                                                                   ac_objectinspector)];
-
-  if assigned(projecttreefo) then
-    with projecttreefo do
-      begin
-        addunitfileact.Caption := lang_xstockcaption[Ord(sc_addunit)];
-        removeunitfileact.Caption := lang_xstockcaption[Ord(sc_removeunit)];
-        addfileact.Caption := lang_xstockcaption[Ord(sc_addfile)];
-        removefileact.Caption := lang_xstockcaption[Ord(sc_removefile)];
-        removecmoduleact.Caption := lang_xstockcaption[Ord(sc_removecmodule)];
-        addcmoduleact.Caption := lang_xstockcaption[Ord(sc_addcmodule)];
-        adddiract.Caption := lang_xstockcaption[Ord(sc_adddir)];
-        removediract.Caption := lang_xstockcaption[Ord(sc_removedir)];
-        editdiract.Caption := lang_xstockcaption[Ord(sc_editdir)];
-      end;
-
-  symbolfo.caption := lang_xstockcaption[Ord(sc_symbols)];
-  symbolfo.tpopupmenu1.menu.itembynames(['deleteall']).Caption := 
-                                                                  lang_xstockcaption[Ord(
-                                                                  sc_deleteall)] ;
+      mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
+      
+      if assigned(objectinspectorfo) then objectinspectorfo.caption := 
+         lang_actionsmodule[Ord(ac_objectinspector)];
+         
+       if assigned(projecttreefo) then
+       with projecttreefo do  
+       begin   
+       addunitfileact.Caption := lang_xstockcaption[Ord(sc_addunit)];
+       removeunitfileact.Caption := lang_xstockcaption[Ord(sc_removeunit)];
+       addfileact.Caption := lang_xstockcaption[Ord(sc_addfile)];
+       removefileact.Caption := lang_xstockcaption[Ord(sc_removefile)];
+       removecmoduleact.Caption := lang_xstockcaption[Ord(sc_removecmodule)];
+       addcmoduleact.Caption := lang_xstockcaption[Ord(sc_addcmodule)];
+       adddiract.Caption := lang_xstockcaption[Ord(sc_adddir)];
+       removediract.Caption := lang_xstockcaption[Ord(sc_removedir)];
+       editdiract.Caption := lang_xstockcaption[Ord(sc_editdir)];
+          end;
+          
+       symbolfo.caption := lang_xstockcaption[Ord(sc_symbols)];  
+       symbolfo.tpopupmenu1.menu.itembynames(['deleteall']).Caption :=
+           lang_xstockcaption[Ord(sc_deleteall)] ;
+           
+       targetconsolefo.caption :=  lang_xstockcaption[Ord(sc_targetconsole)];  
+       actionsmo.find.caption :=  lang_stockcaption[Ord(sc_search)]; 
+       actionsmo.repeatfind.caption :=  lang_stockcaption[Ord(sc_next)]; 
+       actionsmo.findback.caption :=  lang_stockcaption[Ord(sc_prior)]; 
   
-  stackfo.caption := lang_xstockcaption[Ord(sc_stack)];
-   threadsfo.caption := lang_xstockcaption[Ord(sc_threads)];                                                                
- 
-  stackfo.tpopupmenu1.menu.itembynames(['copy']).Caption := 
-                                                                  lang_stockcaption[Ord(
-                                                                  sc_copy)] ;
- 
-  
-  threadsfo.caption := lang_xstockcaption[Ord(sc_threads)];                                                                
-  
-  threadsfo.tpopupmenu1.menu.itembynames(['copy']).Caption := 
-                                                                  lang_stockcaption[Ord(
-                                                                  sc_copy)] ;
-                                                                
-  targetconsolefo.caption :=  lang_xstockcaption[Ord(sc_targetconsole)];
-  //actionsmo.find.caption :=  lang_stockcaption[Ord(sc_search)];
-  //actionsmo.repeatfind.caption :=  lang_stockcaption[Ord(sc_next)];
-  //actionsmo.findback.caption :=  lang_stockcaption[Ord(sc_prior)];
-
-  targetconsolefo.popupmen.menu.itembynames(['clear']).Caption := 
-                                                                  lang_xstockcaption[Ord(sc_clear)]
-  ;
-
-  targetconsolefo.popupmen.menu.itembynames(['find']).Caption := 
-                                                                 lang_stockcaption[Ord(sc_search)];
-
-  targetconsolefo.popupmen.menu.itembynames(['findrepeat']).Caption := 
-                                                                       lang_stockcaption[Ord(sc_next
-                                                                       )];
-
-  targetconsolefo.popupmen.menu.itembynames(['findback']).Caption := 
-                                                                     lang_stockcaption[Ord(sc_prior)
-                                                                     ];
-
-  if assigned(messagefo) then
-    with messagefo do
-      begin
-        tpopupmenu1.menu.itembynames(['copyall']).Caption := lang_xstockcaption[Ord(sc_copyall)];
-        tpopupmenu1.menu.itembynames(['copyselected']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_copyselected)];
-        tpopupmenu1.menu.itembynames(['copyline']).Caption := lang_xstockcaption[Ord(sc_copyline)];
-        tpopupmenu1.menu.itembynames(['findinmessages']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_findinmessages)];
-      end;
-
-  if assigned(sourcefo) then
-    with sourcefo do
-      begin
-        caption := lang_settings[Ord(se_groupsourceeditor)];
-        tpopupmenu1.menu.itembynames(['selectpage']).Caption := 
-                                                                lang_xstockcaption[Ord(
-                                                                sc_select_edit_Page)];
-        tpopupmenu1.menu.itembynames(['openfile']).Caption  := lang_stockcaption[Ord(sc_open)];
-        tpopupmenu1.menu.itembynames(['savefile']).Caption  := lang_stockcaption[Ord(sc_save)];
-        tpopupmenu1.menu.itembynames(['closefile']).Caption := lang_stockcaption[Ord(sc_close)];
-        tpopupmenu1.menu.itembynames(['saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
-        tpopupmenu1.menu.itembynames(['showasform']).Caption := lang_xstockcaption[Ord(sc_showasform
-                                                                )];
-        tpopupmenu1.menu.itembynames(['delete']).Caption := lang_stockcaption[Ord(sc_delete)];
-        tpopupmenu1.menu.itembynames(['undo']).Caption  := lang_stockcaption[Ord(sc_Undohk)];
-        tpopupmenu1.menu.itembynames(['redo']).Caption  := lang_stockcaption[Ord(sc_Redohk)];
-        tpopupmenu1.menu.itembynames(['copy']).Caption  := lang_stockcaption[Ord(sc_Copyhk)];
-        tpopupmenu1.menu.itembynames(['cut']).Caption   := lang_stockcaption[Ord(sc_Cuthk)];
-        tpopupmenu1.menu.itembynames(['paste']).Caption := lang_stockcaption[Ord(sc_pastehk)];
-        tpopupmenu1.menu.itembynames(['selectall']).Caption := lang_stockcaption[Ord(
-                                                               sc_Select_allhk)];
-        tpopupmenu1.menu.itembynames(['copycursor']).Caption := lang_xstockcaption[Ord(
+       targetconsolefo.popupmen.menu.itembynames(['clear']).Caption :=
+       lang_xstockcaption[Ord(sc_clear)] ; 
+       
+       targetconsolefo.popupmen.menu.itembynames(['find']).Caption :=
+       lang_stockcaption[Ord(sc_search)]; 
+       
+       targetconsolefo.popupmen.menu.itembynames(['findrepeat']).Caption :=
+       lang_stockcaption[Ord(sc_next)]; 
+     
+       targetconsolefo.popupmen.menu.itembynames(['findback']).Caption :=
+       lang_stockcaption[Ord(sc_prior)]; 
+     
+      if assigned(messagefo) then
+       with messagefo do  
+       begin
+       tpopupmenu1.menu.itembynames(['copyall']).Caption := lang_xstockcaption[Ord(sc_copyall)];
+       tpopupmenu1.menu.itembynames(['copyselected']).Caption := lang_xstockcaption[Ord(sc_copyselected)];
+       tpopupmenu1.menu.itembynames(['copyline']).Caption := lang_xstockcaption[Ord(sc_copyline)];       
+       tpopupmenu1.menu.itembynames(['findinmessages']).Caption := lang_xstockcaption[Ord(sc_findinmessages)];
+       end;
+       
+      if assigned(sourcefo) then
+       with sourcefo do
+       begin
+       caption := lang_settings[Ord(se_groupsourceeditor)];
+       tpopupmenu1.menu.itembynames(['selectpage']).Caption := 
+       lang_xstockcaption[Ord(sc_select_edit_Page)];
+       tpopupmenu1.menu.itembynames(['openfile']).Caption  := lang_stockcaption[Ord(sc_open)];
+       tpopupmenu1.menu.itembynames(['savefile']).Caption  := lang_stockcaption[Ord(sc_save)];
+       tpopupmenu1.menu.itembynames(['closefile']).Caption := lang_stockcaption[Ord(sc_close)];
+       tpopupmenu1.menu.itembynames(['saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
+       tpopupmenu1.menu.itembynames(['showasform']).Caption := lang_xstockcaption[Ord(sc_showasform)];
+       tpopupmenu1.menu.itembynames(['delete']).Caption := lang_stockcaption[Ord(sc_delete)];
+       tpopupmenu1.menu.itembynames(['undo']).Caption  := lang_stockcaption[Ord(sc_Undohk)];
+       tpopupmenu1.menu.itembynames(['redo']).Caption  := lang_stockcaption[Ord(sc_Redohk)];
+       tpopupmenu1.menu.itembynames(['copy']).Caption  := lang_stockcaption[Ord(sc_Copyhk)];
+       tpopupmenu1.menu.itembynames(['cut']).Caption   := lang_stockcaption[Ord(sc_Cuthk)];
+       tpopupmenu1.menu.itembynames(['paste']).Caption := lang_stockcaption[Ord(sc_pastehk)];
+       tpopupmenu1.menu.itembynames(['selectall']).Caption := lang_stockcaption[Ord(
+                                                                   sc_Select_allhk)];
+       tpopupmenu1.menu.itembynames(['copycursor']).Caption := lang_xstockcaption[Ord(
                                                                 sc_Copy_word_cursor)];
-        tpopupmenu1.menu.itembynames(['deleteword']).Caption   := lang_xstockcaption[Ord(
-                                                                  sc_deletewordatcursor)];
+       tpopupmenu1.menu.itembynames(['deleteword']).Caption   := lang_xstockcaption[Ord(sc_deletewordatcursor)];
+          
+       tpopupmenu1.menu.itembynames(['copylatex']).Caption := lang_xstockcaption[Ord(
+                                                                   sc_copy_latex)];
+       tpopupmenu1.menu.itembynames(['indent']).Caption := lang_xstockcaption[Ord(sc_indent)];
+       tpopupmenu1.menu.itembynames(['unindent']).Caption := lang_xstockcaption[Ord(sc_unindent)];
+      
+       tpopupmenu1.menu.itembynames(['lowercase']).Caption := lang_xstockcaption[Ord(sc_lowercase)];
+       tpopupmenu1.menu.itembynames(['uppercase']).Caption := lang_xstockcaption[Ord(sc_uppercase)];
+      
+       tpopupmenu1.menu.itembynames(['comment']).Caption := lang_xstockcaption[Ord(sc_comment)];
+       tpopupmenu1.menu.itembynames(['uncomment']).Caption := lang_xstockcaption[Ord(sc_uncomment)];
+      
+      tpopupmenu1.menu.itembynames(['convpas']).Caption := lang_xstockcaption[Ord(sc_convpas)];
+      tpopupmenu1.menu.itembynames(['togglebreak']).Caption := lang_xstockcaption[Ord(sc_togglebreakpoint)];
+      
+      tpopupmenu1.menu.itembynames(['togglebkptend']).Caption := lang_xstockcaption[Ord(sc_tooglebreakpointenable)];
+     
+      tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(sc_editbreakpoint)];
+   
+      tpopupmenu1.menu.itembynames(['addwatch']).Caption := lang_xstockcaption[Ord(sc_addwatch)];
+      tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(sc_editbreakpoint)];
+   
+      tpopupmenu1.menu.itembynames(['setbm']).Caption := lang_xstockcaption[Ord(sc_setbookmark)];
+      tpopupmenu1.menu.itembynames(['findbookmark']).Caption := lang_xstockcaption[Ord(sc_findbookmark)];
+  
+      tpopupmenu1.menu.itembynames(['insgui']).Caption := lang_xstockcaption[Ord(sc_insgui)];
+      tpopupmenu1.menu.itembynames(['insuid']).Caption := lang_xstockcaption[Ord(sc_insuid)];
+      tpopupmenu1.menu.itembynames(['instempl']).Caption := lang_xstockcaption[Ord(sc_instempl)];
+      tpopupmenu1.menu.itembynames(['completeclass']).Caption := lang_xstockcaption[Ord(sc_completeclass)];
+      end;  
 
-        tpopupmenu1.menu.itembynames(['copylatex']).Caption := lang_xstockcaption[Ord(
-                                                               sc_copy_latex)];
-        tpopupmenu1.menu.itembynames(['indent']).Caption := lang_xstockcaption[Ord(sc_indent)];
-        tpopupmenu1.menu.itembynames(['unindent']).Caption := lang_xstockcaption[Ord(sc_unindent)];
+      if Assigned(debuggerfo) then
+        begin
+          debuggerfo.find_in_directory.hint := lang_xstockcaption[Ord(sc_searchindirectories)];
+          debuggerfo.line_number.hint       := lang_projectoptions[Ord(po_linenumbers)];
+          debuggerfo.terminal_run.hint      := lang_projectoptions[Ord(po_showconsole)];
+          debuggerfo.project_open.hint      := lang_xstockcaption[Ord(sc_openproject)];
+          debuggerfo.open_file.hint         := lang_stockcaption[Ord(sc_openfile)];
+          debuggerfo.save_file.hint         := lang_stockcaption[Ord(sc_save)];
+          debuggerfo.code_beauty.hint       := lang_xstockcaption[Ord(sc_beautifier)];
+          debuggerfo.procedure_list.hint    := lang_xstockcaption[Ord(sc_proclist)];
+          debuggerfo.find_in_edit.hint      := lang_xstockcaption[Ord(sc_searchincurrentfile)];
+          debuggerfo.project_save.hint      := lang_stockcaption[Ord(sc_save)];
+          debuggerfo.project_option.hint    := lang_projectoptions[Ord(po_projectoptions)];
+          debuggerfo.project_make.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_start.hint     := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_save.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_stockcaption[Ord(sc_save)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_interrupt.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_abortmake)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_next.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_nextinstruction)] +
+                                               ' ' + ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_step.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_stepinstruction)] +
+                                               ' ' + ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_finish.hint    := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_finish)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_next_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                                      ' : ' + lang_xstockcaption[Ord(
+                                                      sc_nextinstruction)] + ' ' +
+                                                      lang_xstockcaption[Ord(sc_assembler)] + ' ' +
+                                                      ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_step_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                                      ' : ' + lang_stockcaption[Ord(
+                                                      sc_stepinstruction)] + ' ' +
+                                                      lang_xstockcaption[Ord(sc_assembler)] + ' ' +
+                                                      ExtractFilename(theprojectname) + ' ';
+          debuggerfo.project_reset.hint     := ' ' + lang_xstockcaption[Ord(sc_project)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_reset)] + ' ' +
+                                               ExtractFilename(theprojectname) + ' ';
+          debuggerfo.edited_make.hint       := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
+                                               thefilename + ' ';
+          debuggerfo.edited_run.hint        := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' +
+                                               thefilename + ' ';
+          debuggerfo.toggle_form_unit.hint  := ' ' + lang_xstockcaption[Ord(sc_edited)] +
+                                               ' : ' + lang_xstockcaption[Ord(sc_toggleformunit)] +
+                                               ' ' + thefilename + ' ';
 
-        tpopupmenu1.menu.itembynames(['lowercase']).Caption := lang_xstockcaption[Ord(sc_lowercase)]
-        ;
-        tpopupmenu1.menu.itembynames(['uppercase']).Caption := lang_xstockcaption[Ord(sc_uppercase)]
-        ;
+        end;
 
-        tpopupmenu1.menu.itembynames(['comment']).Caption := lang_xstockcaption[Ord(sc_comment)];
-        tpopupmenu1.menu.itembynames(['uncomment']).Caption := lang_xstockcaption[Ord(sc_uncomment)]
-        ;
+      conflangfo.gridlang.rowcount := length(lang_langnames);
 
-        tpopupmenu1.menu.itembynames(['convpas']).Caption := lang_xstockcaption[Ord(sc_convpas)];
-        tpopupmenu1.menu.itembynames(['togglebreak']).Caption := lang_xstockcaption[Ord(
-                                                                 sc_togglebreakpoint)];
+      for x := 0 to length(lang_langnames) - 1 do
+        begin
+          conflangfo.gridlangcaption[x] := lang_langnames[x] ;
+          str := trim(copy(lang_langnames[x], system.pos('[',lang_langnames[x]), 10));
+          str :=  StringReplace(str, '[', '', [rfReplaceAll]);
+          str :=  StringReplace(str, ']', '', [rfReplaceAll]);
+          conflangfo.gridlangcode[x]    := str;
+        end;
 
-        tpopupmenu1.menu.itembynames(['togglebkptend']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_tooglebreakpointenable)];
+       if thelang = 'zh' then
+       begin
+         conflangfo.lsetasdefault.visible := true;
+         conflangfo.lsetasdefault.Caption := lang_xstockcaption[Ord(sc_setasdefault)];
+         conflangfo.setasdefault.frame.Caption := '';
+       end else
+       begin
+         conflangfo.lsetasdefault.visible := false;
+         conflangfo.lsetasdefault.Caption := '';
+         conflangfo.setasdefault.frame.Caption := lang_xstockcaption[Ord(sc_setasdefault)];
+       end;
+           
+       conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
+      
+       conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)]; 
+      
+       conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
+      
+       application.processmessages;
 
-        tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_editbreakpoint)];
-
-        tpopupmenu1.menu.itembynames(['addwatch']).Caption := lang_xstockcaption[Ord(sc_addwatch)];
-        tpopupmenu1.menu.itembynames(['editbreakpoint']).Caption := lang_xstockcaption[Ord(
-                                                                    sc_editbreakpoint)];
-
-        tpopupmenu1.menu.itembynames(['setbm']).Caption := lang_xstockcaption[Ord(sc_setbookmark)];
-        tpopupmenu1.menu.itembynames(['findbookmark']).Caption := lang_xstockcaption[Ord(
-                                                                  sc_findbookmark)];
-
-        tpopupmenu1.menu.itembynames(['insgui']).Caption := lang_xstockcaption[Ord(sc_insgui)];
-        tpopupmenu1.menu.itembynames(['insuid']).Caption := lang_xstockcaption[Ord(sc_insuid)];
-        tpopupmenu1.menu.itembynames(['instempl']).Caption := lang_xstockcaption[Ord(sc_instempl)];
-        tpopupmenu1.menu.itembynames(['completeclass']).Caption := lang_xstockcaption[Ord(
-                                                                   sc_completeclass)];
-      end;
-
-  if Assigned(debuggerfo) then
-    begin
-      debuggerfo.find_in_directory.hint := lang_xstockcaption[Ord(sc_searchindirectories)];
-      debuggerfo.line_number.hint       := lang_projectoptions[Ord(po_linenumbers)];
-      debuggerfo.terminal_run.hint      := lang_projectoptions[Ord(po_showconsole)];
-      debuggerfo.project_open.hint      := lang_xstockcaption[Ord(sc_openproject)];
-      debuggerfo.open_file.hint         := lang_stockcaption[Ord(sc_openfile)];
-      debuggerfo.save_file.hint         := lang_stockcaption[Ord(sc_save)];
-      debuggerfo.code_beauty.hint       := lang_xstockcaption[Ord(sc_beautifier)];
-      debuggerfo.procedure_list.hint    := lang_xstockcaption[Ord(sc_proclist)];
-      debuggerfo.find_in_edit.hint      := lang_xstockcaption[Ord(sc_searchincurrentfile)];
-      debuggerfo.project_save.hint      := lang_stockcaption[Ord(sc_save)];
-      debuggerfo.project_option.hint    := lang_projectoptions[Ord(po_projectoptions)];
-      debuggerfo.project_make.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_start.hint     := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_save.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_stockcaption[Ord(sc_save)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_interrupt.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_abortmake)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_next.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_nextinstruction)] +
-                                           ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_step.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_stepinstruction)] +
-                                           ' ' + ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_finish.hint    := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_finish)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_next_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                                  ' : ' + lang_xstockcaption[Ord(
-                                                  sc_nextinstruction)] + ' ' +
-                                                  lang_xstockcaption[Ord(sc_assembler)] + ' ' +
-                                                  ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_step_instruction.hint := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                                  ' : ' + lang_stockcaption[Ord(
-                                                  sc_stepinstruction)] + ' ' +
-                                                  lang_xstockcaption[Ord(sc_assembler)] + ' ' +
-                                                  ExtractFilename(theprojectname) + ' ';
-      debuggerfo.project_reset.hint     := ' ' + lang_xstockcaption[Ord(sc_project)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_reset)] + ' ' +
-                                           ExtractFilename(theprojectname) + ' ';
-      debuggerfo.edited_make.hint       := ' ' + lang_xstockcaption[Ord(sc_edited)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
-                                           thefilename + ' ';
-      debuggerfo.edited_run.hint        := ' ' + lang_xstockcaption[Ord(sc_edited)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_debugrun)] + ' ' +
-                                           thefilename + ' ';
-      debuggerfo.toggle_form_unit.hint  := ' ' + lang_xstockcaption[Ord(sc_edited)] +
-                                           ' : ' + lang_xstockcaption[Ord(sc_toggleformunit)] +
-                                           ' ' + thefilename + ' ';
-
-    end;
-
-  conflangfo.gridlang.rowcount := length(lang_langnames);
-
-  for x := 0 to length(lang_langnames) - 1 do
-    begin
-      conflangfo.gridlangcaption[x] := lang_langnames[x] ;
-      str := trim(copy(lang_langnames[x], system.pos('[',lang_langnames[x]), 10));
-      str :=  StringReplace(str, '[', '', [rfReplaceAll]);
-      str :=  StringReplace(str, ']', '', [rfReplaceAll]);
-      conflangfo.gridlangcode[x]    := str;
-    end;
-
-  if thelang = 'zh' then
-    begin
-      conflangfo.lsetasdefault.visible := true;
-      conflangfo.lsetasdefault.Caption := lang_xstockcaption[Ord(sc_setasdefault)];
-      conflangfo.setasdefault.frame.Caption := '';
-    end
-  else
-    begin
-      conflangfo.lsetasdefault.visible := false;
-      conflangfo.lsetasdefault.Caption := '';
-      conflangfo.setasdefault.frame.Caption := lang_xstockcaption[Ord(sc_setasdefault)];
-    end;
-
-  conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
-
-  conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)];
-
-  conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
-
-  application.processmessages;
-
-end;
+  end;
 
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
-  TDummyThread.Create(False);
-
+ TDummyThread.Create(False);
+  
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);
@@ -5660,14 +5589,14 @@ procedure tmainfo.onclassic(Const Sender: TObject);
 begin
   themenr := 0;
   dotheme(0);
-  // setstattext('Light theme is set.', mtk_flat);
+ // setstattext('Light theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.ondark(Const Sender: TObject);
 begin
   themenr := 1;
   dotheme(1);
-  // setstattext('Dark theme is set.', mtk_flat);
+ // setstattext('Dark theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.ontoggleunitform(Const Sender: TObject);
@@ -5713,11 +5642,10 @@ begin
           for x := 0 to conflangfo.gridlang.rowcount - 1 do
             if conflangfo.gridlangbool[x] = True then
               MSEFallbackLang := conflangfo.gridlangcode[x];
-
-          if oldlang <> MSEFallbackLang then setlangideu(MSEFallbackLang);
-        end
-      else setlangideu(MSEFallbackLang);
-    end;
+          
+          if oldlang <> MSEFallbackLang then setlangideu(MSEFallbackLang);    
+        end else setlangideu(MSEFallbackLang);
+     end;       
 end;
 
 procedure tmainfo.ontemplateeditor(Const Sender: TObject);
@@ -5726,10 +5654,10 @@ begin
   templateeditorfo.Show;
 end;
 
-procedure tmainfo.runtimer(Const sender: TObject);
+procedure tmainfo.runtimer(const sender: TObject);
 begin
-  if isactivated = False then
-    loadconfigform(Sender);
+if isactivated = False then
+loadconfigform(Sender);
 end;
 
 

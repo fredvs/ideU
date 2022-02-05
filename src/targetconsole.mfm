@@ -135,21 +135,25 @@ object targetconsolefo: ttargetconsolefo
       item
         action = actionsmo.find
         caption = 'Find'
+        name = 'find'
         state = [as_localcaption]
       end    
       item
         action = actionsmo.repeatfind
+        name = 'findrepeat'
       end    
       item
         action = actionsmo.findback
         caption = 'Find back'
+        name = 'findback'
         state = [as_localcaption]
       end    
       item
         options = [mao_separator, mao_shortcutcaption]
       end    
       item
-        caption = '&Clear'
+        caption = 'Clear'
+        name = 'clear'
         state = [as_localcaption, as_localonexecute]
         onexecute = clearexe
       end>

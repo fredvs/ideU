@@ -102,6 +102,7 @@ object symbolfo: tsymbolfo
     rowfonts.items = <    
       item
         color = -1610612729
+        height = 12
         name = 'stf_default'
         xscale = 1
         localprops = [flp_color, flp_xscale]
@@ -224,6 +225,7 @@ object symbolfo: tsymbolfo
     menu.submenu.items = <    
       item
         caption = 'Delete all'
+        name = 'deleteall'
         state = [as_localcaption, as_localonexecute]
         onexecute = deleteallex
       end>
