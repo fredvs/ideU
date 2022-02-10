@@ -3453,6 +3453,7 @@ var
  aname: filenamety;
  mstr1,mstr2: msestring;
  i1: integer;
+ isfromtemplate: boolean = false;
  curdir,source,dest: filenamety;
  macrolist: tmacrolist;
  copiedfiles: filenamearty;
@@ -3478,7 +3479,9 @@ begin
      if filedialogx(aname, [fdo_checkexist], lang_mainform[Ord(ma_selecttemplate)],
                  [lang_mainform[Ord(ma_projectfiles)], lang_mainform[Ord(ma_str_allfiles)]],
                  ['*.prj', '*'], 'prj') = mr_ok then begin
+                 isfromtemplate := true;
                 readprojectoptions(aname);
+                 
    end;
    end;
    aname:= '';
@@ -3603,6 +3606,7 @@ begin
       end;
      end;
     end;
+    if isfromtemplate then openproject(aname);
    end
    else begin
       if not directoryexists(filedir(aname) + directoryseparator + 'units') then
@@ -3612,7 +3616,7 @@ begin
    end;
   end
   else begin
-endlab:
+ endlab:
    projectoptions.projectfilename:= '';
    projectoptions.modified:= true;
   end;
