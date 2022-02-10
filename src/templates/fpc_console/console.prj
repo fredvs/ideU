@@ -16,7 +16,11 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
+order18=0
 [projectoptions]
+projectdir=/home/fred/ideu/src/templates/fpc_console
+projectfilename=/home/fred/ideu/src/templates/fpc_console/console.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -24,38 +28,38 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=817
+ propcolwidthref=799
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=111
+ width4=109
  sortdescend4=0
- width5=88
+ width5=86
  sortdescend5=0
- width6=56
+ width6=55
  sortdescend6=0
- width7=56
+ width7=55
  sortdescend7=0
- width8=118
+ width8=83
  sortdescend8=0
- width9=334
+ width9=327
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=641
+ propcolwidthref=634
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=73
  sortdescend2=0
- width3=307
+ width3=304
  sortdescend3=0
- width4=324
+ width4=320
  sortdescend4=0
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=16
+ rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
@@ -77,9 +81,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=201
+ y=198
  xprop=1
- yprop=0.39417475728155
+ yprop=0.39334637964775
  [projectoptionsfo.macrogrid]
  propcolwidthref=572
  sortdescend0=0
@@ -104,28 +108,28 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=6
+ index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=801
+ propcolwidthref=790
  width0=47
  sortdescend0=0
- width1=795
+ width1=784
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=1
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=709
+ propcolwidthref=734
  width0=112
  sortdescend0=0
- width1=702
+ width1=727
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=1
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=195
@@ -248,7 +252,7 @@ newfosources=1
  ${TEMPLATEDIR}/fpc_fpgui/files/fpg_single.pas
 newfoforms=1
  
-forcezorder=-1
+forcezorder=1
 stripmessageesc=0
 copymessages=0
 closemessages=0
@@ -258,6 +262,7 @@ checkmethods=1
 colorerror=-1610612712
 colorwarning=-1610612717
 colornote=-1610612716
+colorhint=15134207
 usercolors=30
  0
  0
@@ -461,9 +466,9 @@ fontoptions=0
 fontxscales=0
 expandprojectfilemacros=4
  1
- -1
- -1
- -1
+ 1
+ 1
+ 1
 loadprojectfile=4
  1
  0
@@ -635,7 +640,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
-storedir=/home/fred/msegui/apps/ide/compstore/
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -673,7 +678,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=536
+windowlayout=526
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -687,15 +692,22 @@ windowlayout=536
  ny=0
  ncx=0
  ncy=0
- x=125
- y=46
- cx=1157
+ x=83
+ y=64
+ cx=1229
  cy=621
  rcx=0
  rcy=0
  wsize=0
  active=1
  visible=1
+ [findmessagefo.findtext]
+ value=
+ history=0
+ [findmessagefo.casesensitive]
+ value=0
+ [findmessagefo.copytoclip]
+ value=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -807,19 +819,19 @@ windowlayout=536
  x=0
  y=0
  cx=205
- cy=456
+ cy=447
  rcx=0
  rcy=0
  [projecttreefo.grid]
  propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=82
+ width1=86
  sortdescend1=0
  sorted=0
  col=0
  row=1
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -878,7 +890,7 @@ windowlayout=536
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -896,25 +908,6 @@ windowlayout=536
  visible=0
  [breakpointsfo.bkptson]
  value=0
- [objectinspectorfo]
- splitdir=0
- useroptions=268451947
- stackedunder=
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=316
- y=249
- cx=316
- cy=484
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
  [objectinspectorfo.grid]
  propcolwidthref=306
  width0=136
@@ -1020,9 +1013,9 @@ windowlayout=536
  ncx=0
  ncy=0
  x=0
- y=513
- cx=1147
- cy=92
+ y=509
+ cx=1217
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -1121,8 +1114,8 @@ windowlayout=536
  ncy=0
  x=0
  y=0
- cx=1147
- cy=51
+ cx=1217
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1137,8 +1130,8 @@ windowlayout=536
  ncy=54
  x=0
  y=0
- cx=1147
- cy=54
+ cx=1217
+ cy=60
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1167,18 +1160,20 @@ windowlayout=536
  ncy=0
  x=208
  y=0
- cx=939
- cy=456
+ cx=1009
+ cy=447
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
  index=-1
+ [confideufo.usedefaulteditoroptions]
+ value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1205,9 +1200,9 @@ windowlayout=536
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1147
- cy=456
+ y=59
+ cx=1217
+ cy=447
  rcx=0
  rcy=0
 [targetconsole]

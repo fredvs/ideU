@@ -67,6 +67,7 @@ type
 //   function getcaption: captionty;
    fface: tfacecomp;
    ffaceactive: tfacecomp;
+   
    procedure setcaption(const avalue: captionty);
    procedure changed;
    procedure setstate(const Value: tabstatesty);
@@ -96,6 +97,7 @@ type
    procedure objectevent(const sender: tobject;
                                      const event: objecteventty); override;
   public
+   fbuttonclose : TButton;
    constructor create(const aowner: tcustomtabbar); reintroduce;
    destructor destroy; override;
    procedure createfont;
@@ -159,6 +161,7 @@ type
    fcoloractive: colorty;
    fimagepos: imageposty;
    flabel: Tlabel;
+   fbuttonclose : TButton;
    //   fcaptionframe: framety;
    //   fimagedist: integer;
    fframe: ttabframe;
@@ -1553,9 +1556,19 @@ constructor ttab.create(const aowner: tcustomtabbar);
 begin
  fcolor:= cl_default;
  fcoloractive:= cl_default;
+ //fcaption := 'boom';
+{
+ fbuttonclose := TButton.Create(tcomponent(self));
+  fbuttonclose.top := 0;
+  fbuttonclose.left := 0;
+  fbuttonclose.width := 30;
+  fbuttonclose.height := 15;
+  }
+
  fimagenr:= -1;
  fimagenrdisabled:= -2;
  inherited create(aowner,aowner.flayoutinfo.tabs);
+
 end;
 
 destructor ttab.destroy;
@@ -1846,7 +1859,7 @@ constructor ttabs.create(const aowner: tcustomtabbar;
                                   aclasstype: indexpersistentclassty);
 begin
  flabel := Tlabel.create(nil);
- flabel.visible := false;
+  flabel.visible := false;
  fcolor:= cl_default;
  fcoloractive:= cl_default;
  fimagepos:= defaultimagepos;
@@ -1862,7 +1875,12 @@ begin
  ftabshift:= 1;
  fedge_level:= defaultedgelevel;
  initdefaultvalues(fedge);
+
+    
  inherited create(aowner,aclasstype);
+  // fbuttonclose.create(nil);
+    
+   
 end;
 
 destructor ttabs.destroy;
