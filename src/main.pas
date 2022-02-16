@@ -699,8 +699,9 @@ begin
     confideufo.onchangefont;
   objectinspectorfo.Close;
   application.processmessages;
+  ideureadconfig();
+  //confideufo.close;
   onactiv(Sender);
-
 end;
 
 procedure tmainfo.loadconfigform(Const Sender: TObject);
@@ -752,10 +753,11 @@ begin
     nozorderhandling := False;
 
   confideufo.dirlayout(Nil);
-
-  nostaticgravity := true;
+  
   ismodal := confideufo.modaldial.Value;
 
+  nostaticgravity := true;
+ 
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
 
   if not fileexists(confideufo.deflayout.Text) then
@@ -5143,7 +5145,6 @@ end;
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
   TDummyThread.Create(False);
-
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);

@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=newprojectfromprogramexe
+ value=ideureadconfig
  history=20
+  ideureadconfig
+  ismodal
   newprojectfromprogramexe
   button.cre
   fbutton.cre
@@ -158,8 +160,6 @@ findinfiledialog=94
   : tpopupmenu
   tpopupmenu
   tpopupmenu :
-  tpopupmenu:
-  popupmenu
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=834
- y=425
+ x=836
+ y=239
  cx=284
  cy=269
 replacedialog=33
@@ -930,23 +930,32 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=6
  ACTIONSMO
+ DEBUGGERFO
+ CONFIDEUFO
+ FINDDIALOGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=6
  TACTIONSMO
+ TDEBUGGERFO
+ TCONFIDEUFO
+ TFINDDIALOGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/finddialogform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=15
  4095
  4095
- 21
+ 17
  194
  2046
  4095
@@ -1289,7 +1298,7 @@ line=28
  2129
  1163
  526
- 3153
+ 3155
  660
  119
  1116
@@ -1301,19 +1310,19 @@ line=28
  481
  456
  66
- 3434
+ 3436
  684
  98
  15
  787
  904
  2583
- 5000
+ 5002
  1882
  6131
  18
  8
- 2599
+ 2601
 address=28
  4868715
  4692069
@@ -1577,8 +1586,16 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=openproject
+finddtext=ideureadconfig
 findhistory=20
+ ideureadconfig
+ ismodal
+ onactiv
+ confideufo.
+ onthetimer
+ ontimer
+ modaldial
+  mainfo.ismodal := confideufo.modaldial.Value;
  openproject
  fromprogram
  .newproject(
@@ -1591,52 +1608,71 @@ findhistory=20
  fbuttonclose
  stackfo.caption
  stack
- sc_search
- sc_next
- clear
- symbol
- search
- find
- sc_deleteall
- sc_targetconsole
 findoptions=1
-editpos=4
+editpos=7
  0,-1073741823
- 6,3609
+ 35,692
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
- ${PROJECTDIR}/ideu/src/ideU.pas
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/ideu/src/sourceform.pas
- ${PROJECTDIR}/ideu/src/actionsmodule.pas
-relpaths=4
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/finddialogform.pas
+relpaths=7
  ideU.pas
  main.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=4
+ confideu.pas
+ commandorform.pas
+ finddialogform.pas
+ismoduletexts=7
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/confideu.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/finddialogform.mfm
+moduleoptions=6
  0
  0
  0
-visiblemodules=3
+ 0
+ 0
+ 0
+visiblemodules=6
  -1
  -1
  -1
-nomenumodules=3
+ -1
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1644,7 +1680,7 @@ nomenumodules=3
 firsttab=0
 index=1
 [layout]
-windowlayout=543
+windowlayout=601
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1658,8 +1694,8 @@ windowlayout=543
  ny=0
  ncx=0
  ncy=0
- x=81
- y=64
+ x=62
+ y=67
  cx=1224
  cy=621
  rcx=0
@@ -1691,7 +1727,7 @@ windowlayout=543
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1796,7 +1832,7 @@ windowlayout=543
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=6
  rowheight=17
  [stackfo]
  splitdir=0
@@ -2100,8 +2136,9 @@ windowlayout=543
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/main.pas
- history=7
+ history=8
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/ideU.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/sak_mse.pas
@@ -2183,6 +2220,63 @@ windowlayout=543
  y=268
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_debuggerfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=439
+ y=31
+ cx=639
+ cy=699
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=_mse_finddialogfo_mse_
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=102
+ y=109
+ cx=1164
+ cy=52
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_finddialogfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=944
+ y=114
+ cx=276
+ cy=435
  rcx=0
  rcy=0
  wsize=0
