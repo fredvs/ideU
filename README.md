@@ -10,7 +10,6 @@ https://github.com/mse-org/mseide-msegui
 Binaries-executable for Windows 64/32, Linux 64/32, FreeBSD 64/32 and Raspberry Pi are here:
 https://github.com/fredvs/ideU/releases
 
-
 Included in release binaries of plugin:
 
 fpGUI uidesigner_ext:

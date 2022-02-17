@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=ideureadconfig
+ value=msecwstring
  history=20
+  msecwstring
+  cwstring
   ideureadconfig
   ismodal
   newprojectfromprogramexe
@@ -158,8 +160,6 @@ findinfiledialog=94
   hie component
   Show object
   : tpopupmenu
-  tpopupmenu
-  tpopupmenu :
  [findinfileadialogfo]
  stackedunder=
  x=707
@@ -296,7 +296,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=860
  width0=47
@@ -1586,8 +1586,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=ideureadconfig
+finddtext=setlength(de
 findhistory=20
+ setlength(de
  ideureadconfig
  ismodal
  onactiv
@@ -1607,16 +1608,16 @@ findhistory=20
  flabel
  fbuttonclose
  stackfo.caption
- stack
 findoptions=1
-editpos=7
- 0,-1073741823
- 35,692
+editpos=8
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,0
+ 14,259
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1624,7 +1625,8 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1632,7 +1634,8 @@ sourcefiles=7
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/commandorform.pas
  ${PROJECTDIR}/finddialogform.pas
-relpaths=7
+ /home/fred/mseide-msegui/lib/common/kernel/linux/msecwstring.pas
+relpaths=8
  ideU.pas
  main.pas
  sourceform.pas
@@ -1640,7 +1643,9 @@ relpaths=7
  confideu.pas
  commandorform.pas
  finddialogform.pas
-ismoduletexts=7
+ ../mseide-msegui/lib/common/kernel/linux/msecwstring.pas
+ismoduletexts=8
+ 0
  0
  0
  0
@@ -1677,10 +1682,19 @@ nomenumodules=6
  0
  0
 [sourcefo.files_tab]
+order=8
+ 0
+ 1
+ 6
+ 7
+ 2
+ 3
+ 4
+ 5
 firsttab=0
-index=1
+index=3
 [layout]
-windowlayout=601
+windowlayout=611
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1795,7 +1809,7 @@ windowlayout=601
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2135,8 +2149,9 @@ windowlayout=601
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=8
+ value=/home/fred/mseide-msegui/lib/common/kernel/linux/msecwstring.pas
+ history=9
+  /home/fred/mseide-msegui/lib/common/kernel/linux/msecwstring.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
@@ -2166,8 +2181,17 @@ windowlayout=601
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  1
+  6
+  7
+  2
+  3
+  4
+  5
  firsttab=0
- index=1
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2266,7 +2290,7 @@ windowlayout=601
  [_mse_finddialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=findinfilefo
  parent=
  mdistate=3
  nx=0

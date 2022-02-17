@@ -44,7 +44,7 @@ msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
 
 const 
-  versiontext = '2.8.1';
+  versiontext = '2.8.2';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
