@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=400
- y=120
+ x=763
+ y=105
  cx=284
  cy=269
 replacedialog=33
@@ -359,18 +359,12 @@ programparameters=18
  y=191
  cx=328
  cy=348
-settings=14
- [settingsfo.macrogrid]
- propcolwidthref=302
- width0=151
- sortdescend0=0
- width1=144
- sortdescend1=0
- [settingsfo]
- x=528
- y=128
- cx=348
- cy=570
+settings=8
+ [settings_form]
+ x=457
+ y=70
+ cx=446
+ cy=660
  wsize=0
  active=1
  visible=1
@@ -1475,7 +1469,7 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=findactonexecute
+finddtext=setlangideu
 findhistory=20
  findactonexecute
  findon
@@ -1498,30 +1492,35 @@ findhistory=20
   mainfo.ismodal := confideufo.modaldial.Value;
  openproject
 findoptions=1
-editpos=5
+editpos=6
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 4,77
  0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=5
+ ${PROJECTDIR}/ideU.pas
+relpaths=6
  ideU.pas
  main.pas
  actionsmodule.pas
  sourceform.pas
  conflang.pas
-ismoduletexts=5
+ ideU.pas
+ismoduletexts=6
+ 0
  0
  0
  0
@@ -1549,9 +1548,9 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=5
 [layout]
-windowlayout=557
+windowlayout=558
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1565,8 +1564,8 @@ windowlayout=557
  ny=0
  ncx=0
  ncy=0
- x=28
- y=73
+ x=60
+ y=56
  cx=1224
  cy=621
  rcx=0
@@ -1598,7 +1597,7 @@ windowlayout=557
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1782,10 +1781,10 @@ windowlayout=557
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=423
- width0=187
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=230
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2006,8 +2005,9 @@ windowlayout=557
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=2
+ value=/home/fred/ideu/src/conflang.pas
+ history=3
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/ideU.pas
   
  [debuggerfo.project_options]
@@ -2032,7 +2032,7 @@ windowlayout=557
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=5
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2093,7 +2093,7 @@ windowlayout=557
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

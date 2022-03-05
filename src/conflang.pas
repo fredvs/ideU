@@ -26,6 +26,8 @@ type
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
    procedure ontools(const sender: TObject);
+   procedure onsetmo(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
   end;
 
 var
@@ -69,10 +71,6 @@ begin
           MSEFallbackLang := gridlangcode[x];
        
           mainfo.setlangideu(MSEFallbackLang);
-          confideufo.setlangextrasettings();
-          confcompilerfo.setlangcompilers();
-          confdebuggerfo.setlangdebuggers();
-          
         end
         else
           gridlangbool[x] := False;
@@ -82,6 +80,12 @@ end;
 procedure tconflangfo.ontools(const sender: TObject);
 begin
 headerfo.show(true);
+end;
+
+procedure tconflangfo.onsetmo(const sender: TObject; var avalue: Boolean;
+               var accept: Boolean);
+begin
+// mainfo.setlangideu(MSEFallbackLang);
 end;
 
 end.
