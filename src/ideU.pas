@@ -1,5 +1,3 @@
-
-
 program ideU;
 
 {$ifdef FPC}
