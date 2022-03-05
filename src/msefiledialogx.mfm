@@ -1,5 +1,6 @@
 object filedialogxfo: Tfiledialogxfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
+  onactivate = onactiv
   visible = False
   bounds_x = 656
   bounds_y = 61

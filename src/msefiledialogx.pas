@@ -625,6 +625,7 @@ type
     procedure oncellevcustplaces(const Sender: TObject; var info: celleventinfoty);
     procedure onmovesplit(const Sender: TObject);
     procedure onsetvalnoicon(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+   procedure onactiv(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -2424,8 +2425,11 @@ begin
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
-
+ 
   application.ProcessMessages;
+  
+ left := 200;
+ top :=  100;
 
 end;
 
@@ -2657,6 +2661,16 @@ begin
     placescust[0][x] := tmp + trim(placescust[0][x]);
 
   listview.readlist;
+end;
+
+procedure tfiledialogxfo.onactiv(const sender: TObject);
+begin
+if tag = 0 then
+begin
+ left := 200;
+ top :=  100;
+end; 
+tag := 1;
 end;
 
 { tfiledialogxcontroller }

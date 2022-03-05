@@ -78,6 +78,7 @@ type
     procedure currentsetval(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
     procedure setlangfindinfile();
 
+   procedure onactiv(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfileinfoty);
     procedure infotovalues(const info: findinfileinfoty);
@@ -289,6 +290,16 @@ begin
   Mask.frame.Caption := lang_projectoptions[ord(po_filemask)];
   subdirs.frame.Caption := lang_xstockcaption[ord(sc_includesubdir)];
 
+end;
+
+procedure tfindinfiledialogfo.onactiv(const sender: TObject);
+begin
+if tag = 0 then
+begin
+ left := 200;
+ top :=  100;
+end; 
+tag := 1;
 end;
 
 end.

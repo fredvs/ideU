@@ -139,6 +139,7 @@ type
     deleteword: taction;
     selectword: taction;
    c: tstringcontainer;
+   findmenu: taction;
     procedure findinfileonexecute(const Sender: TObject);
 
     //file
@@ -929,13 +930,16 @@ end;
 
 procedure tactionsmo.findactonexecute(const Sender: TObject);
 begin
+
   if targetconsolefo.activeentered then
     targetconsolefo.dofind
   else if findformcreated then
     finddialogfo.bringtofront
   else
-    finddialogexecute(findinfos)// sourcefo.activepage.dofind;
-  ;
+    finddialogexecute(findinfos);
+     
+  //  finddialogfo.left := 500;
+  //  finddialogfo.top := 120;
 end;
 
 procedure tactionsmo.repeatfindactonexecute(const Sender: TObject);

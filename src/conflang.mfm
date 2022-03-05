@@ -1,20 +1,20 @@
 object conflangfo: tconflangfo
   visible = False
-  bounds_x = 452
-  bounds_y = 271
+  bounds_x = 405
+  bounds_y = 266
   bounds_cx = 331
-  bounds_cy = 222
+  bounds_cy = 260
   bounds_cxmin = 331
-  bounds_cymin = 222
+  bounds_cymin = 260
   bounds_cxmax = 331
-  bounds_cymax = 222
+  bounds_cymax = 260
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     331
-    222
+    260
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
@@ -177,5 +177,23 @@ object conflangfo: tconflangfo
     bounds_cy = 42
     caption = 'Set as default'
     reffontheight = 15
+  end
+  object bousemo: tbooleanedit
+    frame.caption = 'Use MO files instead of PO files'
+    frame.captiondist = 4
+    frame.localprops = []
+    frame.localprops1 = [frl1_captiondist]
+    frame.outerframe = (
+      0
+      2
+      188
+      2
+    )
+    taborder = 5
+    bounds_x = 35
+    bounds_y = 224
+    bounds_cx = 201
+    bounds_cy = 17
+    statfile = mainfo.mainstatfile
   end
 end

@@ -21,6 +21,7 @@ type
     gridlangcode: tstringedit;
    bpotools: tbutton;
    lsetasdefault: tlabel;
+   bousemo: tbooleanedit;
     procedure oncok(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);

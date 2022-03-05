@@ -31,7 +31,13 @@ interface
 {$endif}
 
 uses 
-templateeditor, po2arrays, msearrayutils, aboutform, plugmanager, 
+templateeditor,
+ //{$ifdef usemo}
+ mo2arrays,  mo4stock,
+ // {$else} 
+ po2arrays,
+ // {$endif} 
+ msearrayutils, aboutform, plugmanager, 
 msetimer, mseformatstr, mseconsts, dialogfiles, mseforms, mseguiglob, msegui, 
 msegdbutils, mseactions, sak_mse, msefileutils, msedispwidgets, msedataedits, 
 msestat, msestatfile, msemenus, msestockobjects,  captionideu, msebitmap, msegrids, 
@@ -4473,6 +4479,9 @@ var
   stca: stockcaptionty;
   str : string;
 begin
+ if conflangfo.bousemo.value then
+  createnewlangmo(thelang)
+ else
   createnewlang(thelang);
 
   if thelang = 'zh' then
@@ -5137,6 +5146,10 @@ begin
   conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)];
 
   conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
+  
+         confideufo.setlangextrasettings();
+          confcompilerfo.setlangcompilers();
+          confdebuggerfo.setlangdebuggers();
 
   application.processmessages;
 

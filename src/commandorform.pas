@@ -96,6 +96,7 @@ var
 implementation
 uses
  commandorform_mfm, targetconsole, confdebugger, actionsmodule, confideu,
+ finddialogform,
  plugmanager, breakpointsform, main, sourceform, sourcepage, projectoptionsform ;
 
 procedure tdebuggerfo.onscale(const sender: TObject);

@@ -53,6 +53,7 @@ type
     procedure oncre(const Sender: TObject);
     procedure setlangfind();
    procedure onbutclose(const sender: TObject);
+   procedure onactiv(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfoty);
     procedure infotovalues(const info: findinfoty);
@@ -66,6 +67,9 @@ var
   finddialogfo: tfinddialogfo;
   findformcreated: Boolean = False;
   findinfos: findinfoty;
+  findposx: integer = 400;
+  findposy: integer = 120;
+ 
 
 implementation
 
@@ -263,6 +267,18 @@ end;
 procedure tfinddialogfo.onbutclose(const sender: TObject);
 begin
 close;
+end;
+
+procedure tfinddialogfo.onactiv(const sender: TObject);
+begin
+
+if tag = 0 then
+begin
+ left := findposx;
+ top :=  findposy;
+end; 
+tag := 1;
+
 end;
 
 end.
