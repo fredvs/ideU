@@ -6,52 +6,14 @@ unit potools;
 interface
 
 uses
-  projectoptionsform,
-  msetypes,
-  mseglob,
-  mseguiglob,
-  mseguiintf,
-  mseapplication,
-  msestat,
-  msemenus,
-  msegui,
-  msegraphics,
-  msegraphutils,
-  mseevent,
-  mseclasses,
-  msewidgets,
-  mseforms,
-  mseact,
-  mclasses,
-  msedataedits,
-  msedropdownlist,
-  mseedit,
-  mseificomp,
-  mseificompglob,
-  msestockobjects,
-  mseifiglob,
-  msememodialog,
-  msestatfile,
-  msestream,
-  SysUtils,
-  msesimplewidgets,
-  mseconsts,
-  msefileutils,
-  msebitmap,
-  msedatanodes,
-  msedragglob,
-  msegrids,
-  msegridsglob,
-  LazUTF8,
-  mselistbrowser,
-  msesys,
-  msegraphedits,
-  msescrollbar,
-  msetimer,
-  msedispwidgets,
-  mserichstring,
-  msestringcontainer,
-  msefiledialogx;
+ projectoptionsform,msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,
+ msestat,msemenus,msegui,msegraphics,msegraphutils,mseevent,mseclasses,
+ msewidgets,mseforms,mseact,mclasses,msedataedits,msedropdownlist,mseedit,
+ mseificomp,mseificompglob,msestockobjects,mseifiglob,msememodialog,msestatfile,
+ msestream,SysUtils,msesimplewidgets,mseconsts,msefileutils,msebitmap,
+ msedatanodes,msedragglob,msegrids,msegridsglob,LazUTF8,mselistbrowser,msesys,
+ msegraphedits,msescrollbar,msetimer,msedispwidgets,mserichstring,
+ msestringcontainer,msefiledialogx;
 
 type
   theaderfo = class(tmseform)
@@ -70,10 +32,12 @@ type
     tbutton5: TButton;
     tmemoedit1: tmemoedit;
     tbutton1: TButton;
+   tbutton6: tbutton;
     procedure createnew(const Sender: TObject);
     procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure extractcaption(const Sender: TObject; fn: msestring);
     procedure createnewpo(const Sender: TObject; fn: msestring);
+    procedure convert2mo(const Sender: TObject; fn: msestring);
     procedure oncreateform(const Sender: TObject);
     procedure ontime(const Sender: TObject);
     procedure oncreated(const Sender: TObject);
@@ -91,7 +55,24 @@ implementation
 
 uses
   captionideu,
+  POtoMO,
   potools_mfm;
+  
+procedure theaderfo.convert2mo(const Sender: TObject; fn: msestring);
+var
+MOmake: MObuilder;
+begin
+ if fileexists(fn) then
+  begin
+   MOmake:= MObuilder.Create;
+  WITH MOmake DO
+    TRY
+      MObuild (fn);
+    FINALLY
+      Free;
+    END;
+  end;
+end;  
 
 procedure theaderfo.extractcaption(const Sender: TObject; fn: msestring);
 var
@@ -236,8 +217,6 @@ begin
   end;
 end;
 
-///////////////////////
-
 procedure theaderfo.createnewpo(const Sender: TObject; fn: msestring);
 var
   x, y, int1: integer;
@@ -380,7 +359,8 @@ var
   str1: msestring;
 begin
 
-  if (TButton(Sender).tag = 0) or (TButton(Sender).tag = 3) then
+  if (TButton(Sender).tag = 0) or (TButton(Sender).tag = 3) or
+     (TButton(Sender).tag = 4) then
   begin
     setlength(filterlista, 1);
     setlength(filterlistb, 1);
@@ -395,6 +375,12 @@ begin
       filterlista[0] := '.mfm to extract captions ';
       filterlistb[0] := '*.mfm';
       impexpfiledialog.controller.filter := '*.mfm';
+    end;
+    if (TButton(Sender).tag = 4) then
+    begin
+      filterlista[0] := '.po to convert to .mo ';
+      filterlistb[0] := '*.po';
+      impexpfiledialog.controller.filter := '*.po';
     end;
     impexpfiledialog.controller.options := [fdo_savelastdir];
 
@@ -418,6 +404,8 @@ begin
         createnewconst(Sender, str1);
       if (TButton(Sender).tag = 3) then
         extractcaption(Sender, str1);
+      if (TButton(Sender).tag = 4) then
+        convert2mo(Sender, str1);  
       paneldone.frame.colorclient := cl_ltgreen;
       labdone.Caption   := sc[1];
       paneldone.Visible := True;

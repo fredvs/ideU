@@ -34,8 +34,8 @@ object headerfo: theaderfo
       0
       0
     )
-    bounds_x = 24
-    bounds_y = 112
+    bounds_x = 20
+    bounds_y = 140
     bounds_cx = 380
     bounds_cy = 36
     value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
@@ -43,8 +43,8 @@ object headerfo: theaderfo
   end
   object tbutton2: tbutton
     taborder = 1
-    bounds_x = 24
-    bounds_y = 268
+    bounds_x = 23
+    bounds_y = 292
     bounds_cx = 380
     bounds_cy = 117
     state = [as_localdisabled, as_localcaption, as_localonexecute]
@@ -72,8 +72,8 @@ object headerfo: theaderfo
   object tbutton4: tbutton
     Tag = 1
     taborder = 4
-    bounds_x = 24
-    bounds_y = 151
+    bounds_x = 25
+    bounds_y = 187
     bounds_cx = 380
     bounds_cy = 52
     state = [as_localdisabled, as_localcaption, as_localonexecute]
@@ -98,8 +98,8 @@ object headerfo: theaderfo
       0
     )
     taborder = 5
-    bounds_x = 24
-    bounds_y = 54
+    bounds_x = 20
+    bounds_y = 82
     bounds_cx = 380
     bounds_cy = 39
     controller.fontheight = 0
@@ -133,7 +133,7 @@ object headerfo: theaderfo
     Tag = 2
     taborder = 7
     bounds_x = 24
-    bounds_y = 219
+    bounds_y = 245
     bounds_cx = 380
     bounds_cy = 36
     state = [as_localdisabled, as_localcaption, as_localonexecute]
@@ -151,20 +151,6 @@ object headerfo: theaderfo
     caption = 'Extract all the captions from a form.mfm file '
     onexecute = createnew
   end
-  object tmemoedit1: tmemoedit
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.sbhorz.pagesize = 1
-    frame.sbvert.pagesize = 1
-    taborder = 9
-    visible = False
-    bounds_x = -1
-    bounds_y = 40
-    bounds_cx = 426
-    bounds_cy = 436
-    anchors = [an_left, an_top, an_right, an_bottom]
-    reffontheight = 15
-  end
   object tbutton1: tbutton
     taborder = 10
     bounds_x = 367
@@ -176,6 +162,31 @@ object headerfo: theaderfo
     caption = 'Close'
     onexecute = onclose
   end
+  object tbutton6: tbutton
+    Tag = 4
+    taborder = 11
+    bounds_x = 16
+    bounds_y = 44
+    bounds_cx = 338
+    bounds_cy = 28
+    state = [as_localdisabled, as_localcaption, as_localonexecute]
+    caption = 'Create a MO file from a PO file'
+    onexecute = createnew
+  end
+  object tmemoedit1: tmemoedit
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.sbhorz.pagesize = 1
+    frame.sbvert.pagesize = 1
+    taborder = 9
+    visible = False
+    bounds_x = 0
+    bounds_y = 40
+    bounds_cx = 426
+    bounds_cy = 436
+    anchors = [an_left, an_top, an_right, an_bottom]
+    reffontheight = 15
+  end
   object paneldone: tgroupbox
     frame.colorclient = 16765345
     frame.localprops = [frl_colorclient]
@@ -183,7 +194,7 @@ object headerfo: theaderfo
     taborder = 3
     visible = False
     bounds_x = 0
-    bounds_y = 3
+    bounds_y = 2
     bounds_cx = 427
     bounds_cy = 480
     anchors = [an_left, an_top, an_right, an_bottom]
@@ -206,8 +217,8 @@ object headerfo: theaderfo
     interval = 500000
     options = [to_single]
     ontimer = ontime
-    left = 74
-    top = 115
+    left = 72
+    top = 128
   end
   object sc: tstringcontainer
     strings.data = (
