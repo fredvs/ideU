@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=200
- y=100
+ x=400
+ y=120
  cx=284
  cy=269
 replacedialog=33
@@ -245,8 +245,8 @@ options=114
  width4=357
  sortdescend4=0
  sorted=0
- col=-1073741823
- row=-1073741823
+ col=0
+ row=0
  rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
@@ -269,7 +269,7 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=215
+ y=209
  xprop=1
  yprop=0.39708561020036
  [projectoptionsfo.macrogrid]
@@ -296,7 +296,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=0
+ index=6
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=860
  width0=47
@@ -317,13 +317,13 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=11
  [projectoptionsfo]
  stackedunder=
  x=184
  y=70
  cx=920
- cy=608
+ cy=593
 settaborder=15
  [setcreateorderfo.grid]
  propcolwidthref=331
@@ -1617,7 +1617,7 @@ findhistory=20
 findoptions=1
 editpos=10
  0,-1073741823
- 12,4
+ 0,2
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1638,7 +1638,7 @@ bookmarks8=0
 bookmarks9=0
 sourcefiles=10
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
+ /home/fred/ideu/src/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msefiledialogx.pas
@@ -1709,7 +1709,7 @@ nomenumodules=8
 firsttab=0
 index=1
 [layout]
-windowlayout=636
+windowlayout=632
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1862,7 +1862,7 @@ windowlayout=636
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -2150,7 +2150,7 @@ windowlayout=636
  nx=0
  ny=0
  ncx=1212
- ncy=58
+ ncy=57
  x=0
  y=0
  cx=1212
@@ -2164,13 +2164,9 @@ windowlayout=636
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=5
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/finddialogform.pas
+ value=/home/fred/ideu/src/
+ history=1
   /home/fred/ideu/src/
-  /home/fred/mseide-msegui/lib/common/dialogs/msestringenter.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
