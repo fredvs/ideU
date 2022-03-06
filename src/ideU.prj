@@ -1638,7 +1638,7 @@ bookmarks8=0
 bookmarks9=0
 sourcefiles=10
  ${PROJECTDIR}/ideU.pas
- /home/fred/ideu/src/main.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/msefiledialogx.pas
@@ -1709,7 +1709,7 @@ nomenumodules=8
 firsttab=0
 index=1
 [layout]
-windowlayout=632
+windowlayout=633
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1862,7 +1862,7 @@ windowlayout=632
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1921,7 +1921,7 @@ windowlayout=632
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2164,8 +2164,9 @@ windowlayout=632
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/
- history=1
+ value=/home/fred/ideu/src/main.pas
+ history=2
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/
  [debuggerfo.project_options]
  value=1
