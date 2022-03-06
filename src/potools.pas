@@ -71,6 +71,9 @@ begin
     FINALLY
       Free;
     END;
+    
+  if trim(po2moerror) <> '' then showmessage1(po2moerror, 'Warning!');
+    
   end;
 end;  
 

@@ -7,7 +7,7 @@ UNIT POtoMO;
 INTERFACE
 
 USES
-  SysUtils, StrUtils, Classes, StreamIO;
+  SysUtils, msetypes, StrUtils, Classes, StreamIO;
 
 TYPE
   MOhead = RECORD
@@ -51,7 +51,10 @@ TYPE
                 // Read named PO file, build data structures & write out MO file w/ equivalent name
                 PROCEDURE MObuild (POfilename: String);
               END;
-
+              
+VAR
+  po2moerror : string = '';   
+ 
 IMPLEMENTATION
 
 TYPE
@@ -69,8 +72,7 @@ CONST
   MsgStr =  'msgstr ';
   EscapeSeqs:  StringArray = ('\n', '\r', '\f', '\b', '\t', '\e', '\0', '\\');
   Escapeds:    StringArray = (#10, #13, #12, #8, #9, #27, #0, '\');
-
-
+  
 FUNCTION MObuilder.HashSpace (Entries: integer): integer;
  BEGIN
    HashSpace:= succ (4* Entries) DIV 3;
@@ -136,7 +138,7 @@ PROCEDURE MObuilder.POparse (POstream: TStream);
    POfile:  TextFile;
  BEGIN
    AssignStream (POfile, POstream); Reset (POfile);
-
+   po2moerror := '';
    IDs:= TStringList.Create; 
    WITH IDs DO BEGIN
      sorted:= true; CaseSensitive:= true; Duplicates:= dupError{Ignore};
@@ -159,14 +161,17 @@ PROCEDURE MObuilder.POparse (POstream: TStream);
                  BEGIN
                    InpLine:= Copy (InpLine, 2, Length (InpLine)- 2);
                    IF IDs.Count <> 0 THEN IDs [n]:= IDs [n]+ parsed (InpLine)
-                   ELSE WriteLn (StdErr, 'MsgID continuation found w/o MsgID: "', InpLine, '"');
+                   ELSE
+                   po2moerror := po2moerror + lineend + 'MsgID continuation found w/o MsgID: "' + InpLine + '"';
+                   // WriteLn (StdErr, 'MsgID continuation found w/o MsgID: "', InpLine, '"');
                  END (* isID *);
                isStr:
                  IF NOT skipdup THEN BEGIN
                    InpLine:= Copy (InpLine, 2, Length (InpLine)- 2);
                    IF Copy (InpLine, 1, 12) <> 'POT-Creation' THEN
                    IF IDs.Count <> 0 THEN Msgs [n]:= Msgs [n]+ parsed (InpLine)
-                   ELSE WriteLn (StdErr, 'MsgStr continuation found w/o MsgID: "', InpLine, '"');
+                   ELSE po2moerror := po2moerror + lineend + 'MsgStr continuation found w/o MsgID: "' + InpLine + '"';
+                   //WriteLn (StdErr, 'MsgStr continuation found w/o MsgID: "', InpLine, '"');
                  END (* isID *);
              END (* CASE MsgKind *);
            END (* Quote: *);
@@ -182,7 +187,8 @@ PROCEDURE MObuilder.POparse (POstream: TStream);
                EXCEPT
                  ON EStringListError DO BEGIN
                    skipdup:= true;
-                   WriteLn (StdErr, 'Duplicate MsgID found: "', InpLine, '"')
+                   po2moerror := po2moerror + lineend + 'Duplicate MsgID found: "' + InpLine + '"';
+                   // WriteLn (StdErr, 'Duplicate MsgID found: "', InpLine, '"')
                  END (* ON EStringListError *);
                END (* TRY *);
              END (* IF Copy (InpLine, 1, Length (MsgId)) ... *)
@@ -192,7 +198,9 @@ PROCEDURE MObuilder.POparse (POstream: TStream);
                  i:= Pos (Quote, InpLine);
                  InpLine:= parsed (Copy (InpLine, succ (i), pred (Length (InpLine)- i)));
                  IF IDs.Count <> 0 THEN Msgs.Insert (n, InpLine)
-                 ELSE WriteLn (StdErr, 'MsgStr found w/o MsgID: "', InpLine, '"');
+                 ELSE 
+                 po2moerror := po2moerror + lineend + 'MsgStr found w/o MsgID: "'+ InpLine+ '"'
+                 // WriteLn (StdErr, 'MsgStr found w/o MsgID: "', InpLine, '"');
                END (* IF NOT skipdup *);
              END (* IF Copy (InpLine, 1, Length (MsgStr)) ... *)
              { ELSE perhaps more, but ignored for now };
