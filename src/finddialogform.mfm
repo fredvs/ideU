@@ -2,11 +2,11 @@ object finddialogfo: tfinddialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   onactivate = onactiv
   visible = False
-  bounds_x = 944
-  bounds_y = 114
-  bounds_cx = 266
+  bounds_x = 690
+  bounds_y = 111
+  bounds_cx = 298
   bounds_cy = 435
-  bounds_cxmin = 266
+  bounds_cxmin = 298
   bounds_cymin = 220
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
@@ -14,7 +14,7 @@ object finddialogfo: tfinddialogfo
   container.bounds = (
     0
     0
-    266
+    298
     435
   )
   optionswindow = [wo_message]
@@ -51,7 +51,7 @@ object finddialogfo: tfinddialogfo
     )
     bounds_x = 24
     bounds_y = 56
-    bounds_cx = 238
+    bounds_cx = 270
     bounds_cy = 40
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -66,7 +66,7 @@ object finddialogfo: tfinddialogfo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 257
+    bounds_x = 289
     bounds_y = 88
     bounds_cx = 0
     bounds_cy = 0
@@ -128,7 +128,7 @@ object finddialogfo: tfinddialogfo
     taborder = 4
     bounds_x = 24
     bounds_y = 125
-    bounds_cx = 238
+    bounds_cx = 270
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -164,7 +164,7 @@ object finddialogfo: tfinddialogfo
     taborder = 5
     bounds_x = 24
     bounds_y = 186
-    bounds_cx = 238
+    bounds_cx = 270
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -200,7 +200,7 @@ object finddialogfo: tfinddialogfo
     taborder = 6
     bounds_x = 24
     bounds_y = 257
-    bounds_cx = 238
+    bounds_cx = 270
     bounds_cy = 39
     anchors = [an_left, an_top, an_right]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -311,9 +311,9 @@ object finddialogfo: tfinddialogfo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 14
-    bounds_x = 193
+    bounds_x = 198
     bounds_y = 2
-    bounds_cx = 70
+    bounds_cx = 97
     bounds_cy = 30
     anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localonexecute]
