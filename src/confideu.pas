@@ -66,6 +66,7 @@ type
     procedure updownacc(const Sender: TObject);
     procedure oncloseev(const Sender: TObject);
     procedure onchangefont;
+    procedure scalecommander(ratio : double);
     procedure onapply(const Sender: TObject);
     procedure onok(const Sender: TObject);
     procedure oncreated(const Sender: TObject);
@@ -369,24 +370,8 @@ begin
   left := (rect1.cx - Width) div 2;
   end;
 
-procedure tconfideufo.onchangefont;
-var
-  ratio: double;
-  rect1: rectty;
+procedure tconfideufo.scalecommander(ratio : double);
 begin
-
-  ratio := fontsize.Value / 12;
-
-  mainfo.font.Height     := fontsize.Value;
-  mainfo.font.Name       := ansistring(fontname.Value);
-  mainfo.frame.grip_size := round(12 * ratio);
-
-  // message
-
-  messagefontheight := fontsize.Value;
-  messagefontname   := UTF8Decode(fontsize.Name);
-
-  // commandor
 
   debuggerfo.font.Height     := fontsize.Value;
   debuggerfo.font.Name       := ansistring(fontname.Value);
@@ -564,6 +549,29 @@ begin
 
   debuggerfo.Height := debuggerfo.statdisp.bottom + 2;
 
+
+end;
+
+procedure tconfideufo.onchangefont;
+var
+  ratio: double;
+  rect1: rectty;
+begin
+
+  ratio := fontsize.Value / 12;
+
+  mainfo.font.Height     := fontsize.Value;
+  mainfo.font.Name       := ansistring(fontname.Value);
+  mainfo.frame.grip_size := round(12 * ratio);
+
+  // message
+
+  messagefontheight := fontsize.Value;
+  messagefontname   := UTF8Decode(fontsize.Name);
+
+  // commandor
+  scalecommander(ratio);
+  
   if Assigned(objectinspectorfo) then
   begin
     objectinspectorfo.frame.grip_size    := round(12 * ratio);

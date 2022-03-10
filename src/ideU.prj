@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=757
- y=189
+ x=400
+ y=120
  cx=284
  cy=269
 replacedialog=33
@@ -316,8 +316,8 @@ options=114
  firsttab=0
  index=1
  [projectoptionsfo.setting_tab]
- firsttab=1
- index=1
+ firsttab=0
+ index=2
  [projectoptionsfo]
  stackedunder=
  x=184
@@ -930,18 +930,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
+ DEBUGGERFO
+ CONFIDEUFO
  CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=6
  TACTIONSMO
+ TDEBUGGERFO
+ TCONFIDEUFO
  TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=6
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1290,7 +1296,7 @@ line=27
  2129
  1164
  524
- 3155
+ 3156
  660
  119
  1116
@@ -1308,12 +1314,12 @@ line=27
  787
  904
  2583
- 5007
+ 5008
  1882
  6131
  18
  8
- 2601
+ 2602
 address=27
  4868715
  4692069
@@ -1573,8 +1579,12 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=setlangi
+finddtext=<> 12
 findhistory=20
+ <> 12
+ onactiv
+ = 12
+ =12
  setlangi
  (Lang
  ideureadconfig
@@ -1583,7 +1593,6 @@ findhistory=20
  LocalisationReference
  lang_langnames
  findpofiles();
- onactiv
  MObuild
  findactonexecute
  tfiledialogxcontroller
@@ -1592,64 +1601,93 @@ findhistory=20
  setlength(de
  ismodal
  confideufo.
- onthetimer
- ontimer
- modaldial
 findoptions=1
-editpos=5
+editpos=8
+ 0,-1073741823
+ 0,697
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,4
+ 0,234
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=5
+ ${PROJECTDIR}/commandorform.pas
+ ${PROJECTDIR}/confideu.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=8
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
  conflang.pas
-ismoduletexts=5
+ commandorform.pas
+ confideu.pas
+ commandorform.pas
+ismoduletexts=8
  0
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+ 0
+modules=6
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/conflang.mfm
-moduleoptions=4
+ /home/fred/ideu/src/commandorform.mfm
+ /home/fred/ideu/src/confideu.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 2
+ 0
+visiblemodules=6
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=8
+ 0
+ 1
+ 7
+ 2
+ 3
+ 4
+ 5
+ 6
 firsttab=0
-index=4
+index=2
 [layout]
-windowlayout=540
+windowlayout=586
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1663,8 +1701,8 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=50
- y=63
+ x=59
+ y=29
  cx=1224
  cy=621
  rcx=0
@@ -1801,7 +1839,7 @@ windowlayout=540
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=6
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2072,11 +2110,11 @@ windowlayout=540
  nx=0
  ny=0
  ncx=1197
- ncy=38
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=36
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2086,10 +2124,9 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=3
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/commandorform.pas
+ history=2
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/conflang.pas
  [debuggerfo.project_options]
  value=1
@@ -2112,8 +2149,17 @@ windowlayout=540
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  1
+  7
+  2
+  3
+  4
+  5
+  6
  firsttab=0
- index=4
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2174,7 +2220,7 @@ windowlayout=540
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2185,6 +2231,44 @@ windowlayout=540
  y=266
  cx=341
  cy=260
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=99
+ y=76
+ cx=1213
+ cy=52
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=439
+ y=31
+ cx=639
+ cy=699
  rcx=0
  rcy=0
  wsize=0
