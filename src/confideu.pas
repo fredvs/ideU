@@ -716,7 +716,7 @@ begin
   conffpguifo.Width  := conffpguifo.groupcommand.Width + 26;
   conffpguifo.Height := conffpguifo.edfilter.bottom + 10;
   
-   messagefo.Messages.font.Height := fontsize.Value;
+  messagefo.Messages.font.Height := fontsize.Value;
   messagefo.frame.grip_size      := round(12 * ratio);
 
   messagefo.Messages.font.Name := ansistring(fontname.Value);

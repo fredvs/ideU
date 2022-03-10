@@ -26,6 +26,9 @@ type
     procedure oncreat(const Sender: TObject);
     procedure oncellev(const Sender: TObject; var info: celleventinfoty);
    procedure ontools(const sender: TObject);
+   procedure onsetval(const sender: TObject; var avalue: Boolean;
+                   var accept: Boolean);
+   procedure onchange(const sender: TObject);
    end;
 
 var
@@ -78,6 +81,18 @@ end;
 procedure tconflangfo.ontools(const sender: TObject);
 begin
 headerfo.show(true);
+end;
+
+procedure tconflangfo.onsetval(const sender: TObject; var avalue: Boolean;
+               var accept: Boolean);
+begin
+ mainfo.setlangideu(MSEFallbackLang);
+end;
+
+procedure tconflangfo.onchange(const sender: TObject);
+begin
+if conflangloaded > 0 then
+ mainfo.setlangideu(MSEFallbackLang);
 end;
 
 

@@ -17,9 +17,7 @@ CONST
 
 VAR
   realizeApplicationLanguages: PROCEDURE;
-  isinit : boolean = false;
-
-
+ 
 procedure createnewlangmo (alang: msestring);
 procedure findpofiles ();
 
@@ -35,7 +33,8 @@ uses
   gettext,
   msestockobjects,
   projectoptionsform,
-  mseconsts;
+  mseconsts,
+  captionideu;
 
 TYPE
   Localisator = ARRAY OF msestringarty;
@@ -101,7 +100,7 @@ begin
   str1 := expandprmacros('${LANGDIR}') + directoryseparator;
 
   // List the files
-  FindFirst(str1 + '*.po', Attribute, SearchResult);
+  FindFirst(str1 + '*.mo', Attribute, SearchResult);
   while (i = 0) do
   begin
     SetLength(ListOfFiles, Length(ListOfFiles) + 1);     // Increase the list
@@ -131,7 +130,7 @@ var
   x: integer;
   astrt: utf8String;
 begin
-    setlength (lang_stocktext, length (default_stocktext));
+    setlength (lang_stocktext, length(default_stocktext));
 
     for x:= 0 to length (default_stocktext) - 1 do
     begin
@@ -156,8 +155,8 @@ PROCEDURE buildlangtext (VAR LocalisationArea: Localisator);
 procedure createnewlangmo (alang: msestring);
 var
   x, x2, x3: integer;
-  str1: msestring;
-  str2: utf8String;
+  str1, str2: msestring;
+  lang_tmp: array of msestring;
   MOfile: TMOfile;
 
 begin
@@ -181,38 +180,23 @@ begin
     lang_langnames:=             LocalisationActive [LangnameArea];
 
     findpofiles();
-
-    if length(lang_langnamestmp) > length(en_langnamestext) then
-      setlength(lang_langnames, length(lang_langnamestmp))
-    else
-      setlength(lang_langnames, length(en_langnamestext));
-
-    //    writeln('length(en_langnamestext) ' + inttostr(length(en_langnamestext)));
-    //       writeln('lang_langnames[x] ' + inttostr(length(lang_langnames)));
-
-    for x := 0 to length(en_langnamestext) - 1 do
-      lang_langnames [x] := en_langnamestext [x];
-
-    if length(lang_langnames) > length(en_langnamestext) then
+    
+{           
+    setlength(lang_langnames, length(lang_langnamestmp));
+ 
+  for x := 0 to high(lang_langnames) do
     begin
-      for x := 0 to high(lang_langnames) do
-      begin
-        str2   := trim(copy(lang_langnames[x], system.pos('[', lang_langnames[x]), 10));
-        for x2 := 0 to high(lang_langnamestmp) do
-          if trim(lang_langnamestmp[x2]) = str2 then
-            lang_langnamestmp[x2] := '';
-      end;
-{
-      x2    := length(en_langnamestext);
-      for x := 0 to high(lang_langnamestmp) do
-        if trim(lang_langnamestmp[x]) <> '' then
+     str2 := trim(copy(lang_langnamestmp[x], system.pos('[',lang_langnamestmp[x]), 10));
+     lang_langnames[x] := '';
+     for x2 := 0 to high(en_langnamestext) do
         begin
-          lang_langnames[x2] := 'Language ' + trim(lang_langnamestmp[x]);
-          Inc(x2);
-        end;
-}        
-        
+           if trim(copy(en_langnamestext[x2], system.pos('[',en_langnamestext[x2]), 10)) = str2 then
+             lang_langnames[x] := en_langnamestext[x2];
+         end;
+     if lang_langnames[x] = '' then lang_langnames[x] := 'Language ' + str2;
     end;
+}
+
   end
   else if fileexists(str1) then
   begin
@@ -224,37 +208,33 @@ begin
     MOfile.Destroy;
   
     findpofiles();
-   
-    if length(lang_langnamestmp) > length(lang_langnames) then
+  {  
+    setlength(lang_tmp, length(lang_langnames));
+    for x := 0 to high(lang_tmp) do
+    lang_tmp[x] := lang_langnames[x];
+         
+    setlength(lang_langnames, length(lang_langnamestmp));
+ 
+  for x := 0 to high(lang_langnames) do
     begin
-      x3     := length(lang_langnames);
-      setlength(lang_langnames, length(lang_langnamestmp));
-      for x  := 0 to high(lang_langnames) do
-      begin
-        str2 := trim(copy(lang_langnames[x], system.pos('[', lang_langnames[x]), 10));
-        for x2 := 0 to high(lang_langnamestmp) do
-          if trim(lang_langnamestmp[x2]) = str2 then
-            lang_langnamestmp[x2] := '';
-      end;
-      
-     
-{
-      for x := 0 to high(lang_langnamestmp) do
-        if trim(lang_langnamestmp[x]) <> '' then
+     str2 := trim(copy(lang_langnamestmp[x], system.pos('[',lang_langnamestmp[x]), 10));
+     lang_langnames[x] := '';
+     for x2 := 0 to high(lang_tmp) do
         begin
-          lang_langnames[x3] := 'Language ' + trim(lang_langnamestmp[x]);
-          Inc(x3);
-        end;
- }      
-      
-        
+           if trim(copy(lang_tmp[x2], system.pos('[',lang_tmp[x2]), 10)) = str2 then
+             lang_langnames[x] := lang_tmp[x2];
+         end;
+     if lang_langnames[x] = '' then lang_langnames[x] := 'Language ' + str2;
     end;
-  end;
+   } 
+    
+   end;
   lang_modalresult:=           LocalisationActive [0];
   lang_modalresultnoshortcut:= LocalisationActive [ModalresultnoShortcutArea];
   lang_stockcaption:=          LocalisationActive [StockcaptionArea];
   lang_extended:=              LocalisationActive [ExtendedArea];
   lang_langnames:=             LocalisationActive [LangnameArea];
+ 
   IF assigned (realizeApplicationLanguages) THEN 
   realizeApplicationLanguages;
 end;

@@ -32,12 +32,10 @@ interface
 
 uses 
 templateeditor,
- //{$ifdef usemo}
- mo2arrays,  mo4stock,
- // {$else} 
+ mo2arrays,
+ mo4stock,
  po2arrays,
- // {$endif} 
- msearrayutils, aboutform, plugmanager, 
+msearrayutils, aboutform, plugmanager, 
 msetimer, mseformatstr, mseconsts, dialogfiles, mseforms, mseguiglob, msegui, 
 msegdbutils, mseactions, sak_mse, msefileutils, msedispwidgets, msedataedits, 
 msestat, msestatfile, msemenus, msestockobjects,  captionideu, msebitmap, msegrids, 
@@ -707,7 +705,8 @@ begin
   application.processmessages;
   ideureadconfig();
   //confideufo.close;
-  onactiv(Sender);
+   onactiv(Sender);
+  
 end;
 
 procedure tmainfo.loadconfigform(Const Sender: TObject);
@@ -5143,7 +5142,7 @@ begin
 
   conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
 
-  conflangfo.bpotools.Caption    := 'Po ' + lang_stockcaption[Ord(sc_tools)];
+  conflangfo.bpotools.Caption    := 'PO ' + lang_stockcaption[Ord(sc_tools)];
 
   conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
   
@@ -5715,7 +5714,6 @@ var
 begin
   if isactivated = False then
     begin
-      isactivated        := True;
       conflangfo.Visible := False;
       oldlang := MSEFallbackLang;
 
@@ -5729,7 +5727,8 @@ begin
         end
       else setlangideu(MSEFallbackLang);
     end;
-end;
+  isactivated        := True;
+ end;
 
 procedure tmainfo.ontemplateeditor(Const Sender: TObject);
 begin
@@ -5740,7 +5739,9 @@ end;
 procedure tmainfo.runtimer(Const sender: TObject);
 begin
   if isactivated = False then
-    loadconfigform(Sender);
+  begin
+     loadconfigform(Sender);
+   end;
 end;
 
 

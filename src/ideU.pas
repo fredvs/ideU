@@ -119,7 +119,7 @@ begin
   
   createcpufo;
 
-  mainfo.ideureadconfig;
+  //mainfo.ideureadconfig;
 
   headerfo.icon := mainfo.icon;
   // splashfo.icon       := mainfo.icon;
@@ -136,7 +136,7 @@ begin
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
   conflangfo.icon     := mainfo.icon;
-  confideufo.Close;
+  confideufo.visible  := false;
 
   application.run;
 end.
