@@ -4,7 +4,7 @@ object dialogfilesfo: tdialogfilesfo
   bounds_x = 596
   bounds_y = 300
   bounds_cx = 382
-  bounds_cy = 366
+  bounds_cy = 402
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,7 +12,7 @@ object dialogfilesfo: tdialogfilesfo
     0
     0
     382
-    366
+    402
   )
   optionswindow = [wo_message]
   options = [fo_screencentered, fo_closeonenter, fo_closeonf10, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
@@ -29,7 +29,7 @@ object dialogfilesfo: tdialogfilesfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 380
-    bounds_cy = 364
+    bounds_cy = 400
     anchors = [an_left, an_top, an_right, an_bottom]
     reffontheight = 15
     object list_files: tfilelistview
@@ -38,7 +38,7 @@ object dialogfilesfo: tdialogfilesfo
       bounds_x = 1
       bounds_y = 69
       bounds_cx = 378
-      bounds_cy = 290
+      bounds_cy = 326
       anchors = [an_top, an_bottom]
       colorselect = 16760476
       colorglyph = 16449400
@@ -77,6 +77,7 @@ object dialogfilesfo: tdialogfilesfo
     reffontheight = 15
   end
   object tbutton2: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.optionsskin = [fso_flat]
     frame.font.name = 'stf_default'
     frame.font.localprops = []
@@ -97,6 +98,7 @@ object dialogfilesfo: tdialogfilesfo
     onexecute = butcancel
   end
   object tbutton1: tbutton
+    frame.hiddenedges = [edg_bottom]
     frame.optionsskin = [fso_flat]
     frame.font.name = 'stf_default'
     frame.font.localprops = []

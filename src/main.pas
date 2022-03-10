@@ -5221,7 +5221,7 @@ begin
   dialogfilesfo.list_files.font.Height := confideufo.fontsize.Value;
   dialogfilesfo.list_files.font.Name   := ansistring(confideufo.fontname.Value);
 
-  dialogfilesfo.Height := round((ratio) * 366);
+  dialogfilesfo.Height := round((ratio) * 400);
   dialogfilesfo.Width  := round((ratio) * 336);
   //dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.width - 6 ;
 
