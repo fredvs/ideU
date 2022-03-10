@@ -1573,8 +1573,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=lang_langnames
+finddtext=setfocus
 findhistory=20
+ setfocus
  lang_langnames
  onlang
  setlangi
@@ -1594,7 +1595,6 @@ findhistory=20
  findactonexecute
  tfiledialogxcontroller
  uses
- setlang
 findoptions=1
 editpos=7
  0,-1073741823
@@ -1602,8 +1602,8 @@ editpos=7
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,593
- 0,5708
+ 9,78
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1659,7 +1659,7 @@ nomenumodules=4
 firsttab=0
 index=5
 [layout]
-windowlayout=541
+windowlayout=539
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1673,8 +1673,8 @@ windowlayout=541
  ny=0
  ncx=0
  ncy=0
- x=44
- y=45
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1698,15 +1698,15 @@ windowlayout=541
  ny=0
  ncx=0
  ncy=0
- x=40
- y=60
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1800,7 +1800,7 @@ windowlayout=541
  x=0
  y=0
  cx=205
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1811,7 +1811,7 @@ windowlayout=541
  sortdescend1=0
  sorted=0
  col=1
- row=0
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1890,10 +1890,10 @@ windowlayout=541
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=334
- width0=148
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=180
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1968,9 +1968,9 @@ windowlayout=541
  ncx=0
  ncy=0
  x=0
- y=506
+ y=507
  cx=1212
- cy=94
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2082,11 +2082,11 @@ windowlayout=541
  nx=0
  ny=0
  ncx=1197
- ncy=37
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=35
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2097,11 +2097,9 @@ windowlayout=541
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/po2arrays.pas
- history=4
-  /home/fred/ideu/src/main.pas
+ history=2
   /home/fred/ideu/src/po2arrays.pas
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/conflang.pas
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2119,7 +2117,7 @@ windowlayout=541
  x=208
  y=0
  cx=1004
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2160,7 +2158,7 @@ windowlayout=541
  x=0
  y=53
  cx=1212
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2185,7 +2183,7 @@ windowlayout=541
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0

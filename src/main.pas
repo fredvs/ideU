@@ -5711,8 +5711,9 @@ begin
     begin
       conflangfo.Show;
       conflangfo.bringtofront;
+      conflangfo.setfocus;  
     end;
-  conflangfo.setfocus;  
+
 end;
 
 procedure tmainfo.onactiv(Const Sender: TObject);

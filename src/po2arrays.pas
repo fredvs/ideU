@@ -79,6 +79,9 @@ begin
     begin
       setlength(lang_langnames, length(lang_langnames) + 1);
       str1 := ListOfFiles[i];
+      
+      // writeln(str1 + '  ' + inttostr(FileAge(str1)));
+      
       //writeln(pat+str1);
       file1 := ttextdatastream.Create(pat+str1, fm_read);
       file1.encoding := ce_utf8;
