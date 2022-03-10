@@ -689,6 +689,7 @@ begin
           configureexecute(Sender);
           bFirstLoad.value := false;
           activate;
+          setlangideu('');
         end;
     end
   else
