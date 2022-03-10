@@ -40,9 +40,7 @@ var
   astro, astrt, acomp: utf8String;
   hasfound: Boolean = False;
   empty: Boolean = False;
-  lang_langnamestmp: array of msestring;
-
-
+  
 procedure listpofiles();
 var
   ListOfFiles: array of string;
@@ -71,15 +69,15 @@ begin
   end;
   FindClose(SearchResult);
 
-  setlength(lang_langnamestmp, 1);
-  lang_langnamestmp[0] :=  'English [en]';
+  setlength(lang_langnames, 1);
+  lang_langnames[0] :=  'English [en]';
   
   pat := expandprmacros('${LANGDIR}');
 
   for i := Low(ListOfFiles) to High(ListOfFiles) do
     if system.pos('empty', ListOfFiles[i]) = 0 then
     begin
-      setlength(lang_langnamestmp, length(lang_langnamestmp) + 1);
+      setlength(lang_langnames, length(lang_langnames) + 1);
       str1 := ListOfFiles[i];
       //writeln(pat+str1);
       file1 := ttextdatastream.Create(pat+str1, fm_read);
@@ -97,9 +95,8 @@ begin
             x := 1;
             str1 := utf8StringReplace(str1, 'msgstr', '', [rfReplaceAll]);
             str1 := utf8StringReplace(str1, '"', '', [rfReplaceAll]);
-            lang_langnamestmp[length(lang_langnamestmp) - 1] := trim(str1);
+            lang_langnames[length(lang_langnames) - 1] := trim(str1);
           end;
-
          // writeln(lang_langnamestmp[length(lang_langnamestmp) - 1]);
           end;
       end;
@@ -224,10 +221,6 @@ begin
         en_extendedtext[(iextendedty)];
 
     listpofiles();
-
-    setlength(lang_langnames, length(lang_langnamestmp));
-    for x := 0 to high(lang_langnames) do
-      lang_langnames[x] := lang_langnamestmp[x];
 
   end
   else if fileexists(str1) then
@@ -598,10 +591,6 @@ begin
 
     listpofiles();
     
-     setlength(lang_langnames, length(lang_langnamestmp));
-    for x := 0 to high(lang_langnames) do
-      lang_langnames[x] := lang_langnamestmp[x];
-
  end;
 end;
 
