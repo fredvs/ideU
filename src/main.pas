@@ -5712,7 +5712,6 @@ begin
       conflangfo.Show;
       conflangfo.bringtofront;
     end;
-    
   conflangfo.setfocus;  
 end;
 

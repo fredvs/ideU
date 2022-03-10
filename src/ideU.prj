@@ -138,8 +138,9 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=(Lang
+ value=listpofiles
  history=20
+  listpofiles
   (Lang
   [Lang
   isinit
@@ -159,7 +160,6 @@ findinfiledialog=94
   lineend
   setfocus
   msecwstring
-  cwstring
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -1573,18 +1573,20 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=conflangfo
+finddtext=findpofiles
 findhistory=20
+ onlang
+ setlangi
+ findpofiles
+ system.pos
  conflangfo
  <> 12
  onactiv
  = 12
  =12
- setlangi
  (Lang
  ideureadconfig
  langname
- onlang
  LocalisationReference
  lang_langnames
  findpofiles();
@@ -1593,33 +1595,41 @@ findhistory=20
  tfiledialogxcontroller
  uses
  setlang
- setlength(de
- ismodal
 findoptions=1
-editpos=5
- 0,-1073741823
- 0,5715
+editpos=7
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 25,5708
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=5
+ ${PROJECTDIR}/po2arrays.pas
+ ${PROJECTDIR}/main.pas
+relpaths=7
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
  conflang.pas
-ismoduletexts=5
+ po2arrays.pas
+ main.pas
+ismoduletexts=7
+ 0
+ 0
  0
  0
  0
@@ -1646,16 +1656,10 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=5
- 0
- 1
- 3
- 4
- 2
 firsttab=0
-index=1
+index=6
 [layout]
-windowlayout=547
+windowlayout=541
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1669,8 +1673,8 @@ windowlayout=547
  ny=0
  ncx=0
  ncy=0
- x=78
- y=75
+ x=44
+ y=45
  cx=1224
  cy=621
  rcx=0
@@ -1694,8 +1698,8 @@ windowlayout=547
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=40
+ y=60
  cx=497
  cy=314
  rcx=0
@@ -1807,7 +1811,7 @@ windowlayout=547
  sortdescend1=0
  sorted=0
  col=1
- row=-1073741823
+ row=0
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1867,7 +1871,7 @@ windowlayout=547
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2078,11 +2082,11 @@ windowlayout=547
  nx=0
  ny=0
  ncx=1197
- ncy=53
+ ncy=39
  x=0
  y=0
  cx=1212
- cy=51
+ cy=37
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2095,8 +2099,8 @@ windowlayout=547
  value=/home/fred/ideu/src/main.pas
  history=4
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/po2arrays.pas
   /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/conflang.pas
  [debuggerfo.project_options]
  value=1
@@ -2119,14 +2123,8 @@ windowlayout=547
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  1
-  3
-  4
-  2
  firsttab=0
- index=1
+ index=6
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
