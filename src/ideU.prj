@@ -930,24 +930,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=4
  ACTIONSMO
- DEBUGGERFO
- CONFIDEUFO
  CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=6
+moduletypes=4
  TACTIONSMO
- TDEBUGGERFO
- TCONFIDEUFO
  TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=6
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1602,92 +1596,66 @@ findhistory=20
  ismodal
  confideufo.
 findoptions=1
-editpos=8
- 0,-1073741823
- 0,697
+editpos=5
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,4
- 0,234
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-sourcefiles=8
+sourcefiles=5
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/commandorform.pas
-relpaths=8
+relpaths=5
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
  conflang.pas
- commandorform.pas
- confideu.pas
- commandorform.pas
-ismoduletexts=8
+ismoduletexts=5
  0
  0
  0
  0
  0
- 0
- 0
- 0
-modules=6
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/confideu.mfm
-moduleoptions=6
+moduleoptions=4
  0
  0
  0
  0
- 2
- 0
-visiblemodules=6
+visiblemodules=4
  -1
  -1
  -1
  -1
- -1
- -1
-nomenumodules=6
- 0
- 0
+nomenumodules=4
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=8
+order=5
  0
  1
- 7
- 2
  3
  4
- 5
- 6
+ 2
 firsttab=0
-index=2
+index=3
 [layout]
-windowlayout=586
+windowlayout=546
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1701,8 +1669,8 @@ windowlayout=586
  ny=0
  ncx=0
  ncy=0
- x=59
- y=29
+ x=65
+ y=63
  cx=1224
  cy=621
  rcx=0
@@ -1839,7 +1807,7 @@ windowlayout=586
  sortdescend1=0
  sorted=0
  col=0
- row=6
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2110,11 +2078,11 @@ windowlayout=586
  nx=0
  ny=0
  ncx=1197
- ncy=52
+ ncy=42
  x=0
  y=0
  cx=1212
- cy=50
+ cy=40
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2124,9 +2092,10 @@ windowlayout=586
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
- history=2
+ value=/home/fred/ideu/src/confideu.pas
+ history=3
   /home/fred/ideu/src/confideu.pas
+  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/conflang.pas
  [debuggerfo.project_options]
  value=1
@@ -2149,24 +2118,21 @@ windowlayout=586
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=8
+ order=5
   0
   1
-  7
-  2
   3
   4
-  5
-  6
+  2
  firsttab=0
- index=2
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2220,7 +2186,7 @@ windowlayout=586
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_confideufo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2231,44 +2197,6 @@ windowlayout=586
  y=266
  cx=341
  cy=260
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=99
- y=76
- cx=1213
- cy=52
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=439
- y=31
- cx=639
- cy=699
  rcx=0
  rcy=0
  wsize=0
