@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=isinit
+ value=(Lang
  history=20
+  (Lang
+  [Lang
   isinit
   ideureadconfig
   realizeApplicationLanguages
@@ -158,8 +160,6 @@ findinfiledialog=94
   setfocus
   msecwstring
   cwstring
-  ismodal
-  newprojectfromprogramexe
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=400
- y=120
+ x=757
+ y=189
  cx=284
  cy=269
 replacedialog=33
@@ -930,16 +930,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1287,7 +1290,7 @@ line=27
  2129
  1164
  524
- 3154
+ 3155
  660
  119
  1116
@@ -1305,12 +1308,12 @@ line=27
  787
  904
  2583
- 5001
+ 5007
  1882
  6131
  18
  8
- 2600
+ 2601
 address=27
  4868715
  4692069
@@ -1570,8 +1573,13 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=isinit
+finddtext=setlangi
 findhistory=20
+ setlangi
+ (Lang
+ ideureadconfig
+ langname
+ onlang
  LocalisationReference
  lang_langnames
  findpofiles();
@@ -1580,69 +1588,68 @@ findhistory=20
  findactonexecute
  tfiledialogxcontroller
  uses
- onlang
  setlang
  setlength(de
- ideureadconfig
  ismodal
  confideufo.
  onthetimer
  ontimer
  modaldial
-  mainfo.ismodal := confideufo.modaldial.Value;
- openproject
- fromprogram
 findoptions=1
-editpos=4
+editpos=5
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,0
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=4
+ ${PROJECTDIR}/conflang.pas
+relpaths=5
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
-ismoduletexts=4
+ conflang.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-order=4
- 0
- 2
- 3
- 1
 firsttab=0
-index=1
+index=4
 [layout]
-windowlayout=525
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1656,8 +1663,8 @@ windowlayout=525
  ny=0
  ncx=0
  ncy=0
- x=97
- y=56
+ x=50
+ y=63
  cx=1224
  cy=621
  rcx=0
@@ -1873,10 +1880,10 @@ windowlayout=525
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=334
+ width0=148
  sortdescend0=0
- width1=129
+ width1=180
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2065,11 +2072,11 @@ windowlayout=525
  nx=0
  ny=0
  ncx=1197
- ncy=52
+ ncy=38
  x=0
  y=0
  cx=1212
- cy=50
+ cy=36
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2080,9 +2087,10 @@ windowlayout=525
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
- history=2
+ history=3
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/main.mfm
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/conflang.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2104,20 +2112,15 @@ windowlayout=525
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=4
-  0
-  2
-  3
-  1
  firsttab=0
- index=1
+ index=4
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2163,6 +2166,25 @@ windowlayout=525
  y=180
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=266
+ cx=341
+ cy=260
  rcx=0
  rcy=0
  wsize=0

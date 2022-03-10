@@ -699,9 +699,10 @@ begin
   if themenr <> 0 then
     dotheme(themenr);
   // setstattext('Hello!', mtk_flat);
-  if confideufo.fontsize.value <> 12 then
-    confideufo.onchangefont;
+//  if confideufo.fontsize.value <> 12 then
+  confideufo.onchangefont;
   objectinspectorfo.Close;
+  confideufo.visible  := false;
   application.processmessages;
   ideureadconfig();
   //confideufo.close;
@@ -4910,8 +4911,10 @@ begin
                                                                          sc_generalsettings)];
   mainmenu1.menu.itembynames(['settings', 'extrasettings']).Caption := lang_xstockcaption[Ord(
                                                                        sc_extrasettings)];
-  mainmenu1.menu.itembynames(['settings', 'lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
-                                                              '     (Lang)';
+ 
+ // mainmenu1.menu.itembynames(['settings', 'lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
+ //                                                             '     (Lang)';
+  
   mainmenu1.menu.itembynames(['settings', 'configwidgets']).Caption := 
                                                                        lang_xstockcaption[Ord(
                                                                        sc_configwidgets)];
@@ -4921,6 +4924,9 @@ begin
                                                                          sc_configdebuggers)];
   mainmenu1.menu.itembynames(['settings', 'themes']).Caption := lang_xstockcaption[Ord(sc_themes)
                                                                 ];
+
+  mainmenu1.menu.itembynames(['lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
+                                                              ' (Lang)';
 
   mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
 

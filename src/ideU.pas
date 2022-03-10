@@ -136,8 +136,7 @@ begin
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
   conflangfo.icon     := mainfo.icon;
-  confideufo.visible  := false;
-
+  
   application.run;
 end.
 

@@ -238,7 +238,7 @@ object mainfo: tmainfo
     itemfacetemplate = convex
     itemframetemplateactive = tframecomp3
     itemfacetemplateactive = concave
-    menu.submenu.count = 14
+    menu.submenu.count = 15
     menu.submenu.items = <    
       item
         submenu.count = 15
@@ -1466,7 +1466,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 8
+        submenu.count = 7
         submenu.items = <        
           item
             caption = '&General Setting'
@@ -1479,12 +1479,6 @@ object mainfo: tmainfo
             name = 'extrasettings'
             state = [as_localcaption, as_localonexecute]
             onexecute = viewconfideuexecute
-          end        
-          item
-            caption = 'Language'
-            name = 'lang'
-            state = [as_localcaption, as_localonexecute]
-            onexecute = onlang
           end        
           item
             submenu.count = 2
@@ -1545,6 +1539,12 @@ object mainfo: tmainfo
         hint = 'General and extra setting.'
         name = 'settings'
         state = [as_localcaption, as_localhint, as_localonexecute]
+      end    
+      item
+        caption = 'Language (Lang)'
+        name = 'lang'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = onlang
       end    
       item
         submenu.count = 1
