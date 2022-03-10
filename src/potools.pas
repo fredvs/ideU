@@ -295,12 +295,6 @@ begin
   for iextendedty := Low(extendedty) to High(extendedty) do
     defaultresult[y + Ord(iextendedty)] := en_extendedtext[(iextendedty)];
 
-  // Languages must be the last in po
-  y     := length(defaultresult);
-  setlength(defaultresult, length(en_langnamestext) + y);
-  for x := 0 to length(en_langnamestext) - 1 do
-    defaultresult[x + y] := en_langnamestext[x];
-
   // check if double "msgid"
   str1 := '';
   str2 := '';
