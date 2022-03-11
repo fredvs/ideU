@@ -10,8 +10,9 @@ VAR
   IndexSettings,
   IndexProjectoptions,
   IndexSourceform,
-  IndexXstockcaption, 
-  IndexLangnames: integer;
+  IndexXstockcaption 
+//  IndexLangnames
+  : integer;
 
 
 IMPLEMENTATION
@@ -31,7 +32,7 @@ PROCEDURE setApplicationLanguages;
    lang_projectoptions:=    getApplicationLanguage (IndexProjectoptions);
    lang_sourceform:=        getApplicationLanguage (IndexSourceform);
    lang_xstockcaption:=     getApplicationLanguage (IndexXstockcaption);
-   lang_langnames:=         getApplicationLanguage (IndexLangnames);
+  // lang_langnames:=         getApplicationLanguage (IndexLangnames);
  END;
 
 INITIALIZATION
@@ -43,7 +44,7 @@ INITIALIZATION
   lang_projectoptions:=    addApplicationStrings (en_projectoptionstext,    IndexProjectoptions);
   lang_sourceform:=        addApplicationStrings (en_sourceformtext,        IndexSourceform);
   lang_xstockcaption:=     addApplicationStrings (en_xstockcaption,         IndexXstockcaption);
-  lang_langnames:=         addApplicationStrings (en_langnamestext,         IndexLangnames);
+ // lang_langnames:=         addApplicationStrings (en_langnamestext,         IndexLangnames);
 {$else}
   IndexMainform:=       addApplicationStrings (en_mainformtext,          lang_mainform);
   IndexAction:=         addApplicationStrings (en_actionsmoduletext,     lang_actionsmodule);
@@ -52,7 +53,7 @@ INITIALIZATION
   IndexProjectoptions:= addApplicationStrings (en_projectoptionstext,    lang_projectoptions);
   IndexSourceform:=     addApplicationStrings (en_sourceformtext,        lang_sourceform);
   IndexXstockcaption:=  addApplicationStrings (en_xstockcaption,         lang_xstockcaption);
-  IndexLangnames:=      addApplicationStrings (en_langnamestext,         lang_langnames);
+ // IndexLangnames:=      addApplicationStrings (en_langnamestext,         lang_langnames);
 {$endif}
   realizeApplicationLanguages:= @setApplicationLanguages;
 END.

@@ -49,7 +49,7 @@ var
   Attribute: word;
   i: integer = 0;
   x: integer;
-  str1, pat: string;
+  str1, str2, pat: string;
 begin
   Attribute := faReadOnly or faArchive;
 
@@ -79,9 +79,21 @@ begin
     begin
       setlength(lang_langnames, length(lang_langnames) + 1);
       str1 := ListOfFiles[i];
+     { 
+      writeln(str1 + '  ' + inttostr(FileAge(str1)));
+      writeln(str1 + DateTimeToStr(FileDateToDateTime(FileAge(pat + directoryseparator + str1))));
+         
+      str2 := copy(str1,1,system.pos('.',str1)) + 'mo';
+      writeln(str2 +DateTimeToStr(FileDateToDateTime(FileAge(pat + directoryseparator + str2))));
+   
+     if FileDateToDateTime(FileAge(pat + directoryseparator + str1))
+      < FileDateToDateTime(FileAge(pat + directoryseparator + str2)) then
+      writeln(str1 + ' is younger than ' + str2) else
+       writeln(str1 + ' is older than ' + str2);
       
-      // writeln(str1 + '  ' + inttostr(FileAge(str1)));
-      
+      writeln();
+      }
+     
       //writeln(pat+str1);
       file1 := ttextdatastream.Create(pat+str1, fm_read);
       file1.encoding := ce_utf8;
