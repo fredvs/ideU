@@ -1348,10 +1348,9 @@ begin
       filechangenotifyer.removenotification(str1);
       Inc(fpagedestroying);
       try
-        bo1 := files_tab.entered;
+        //bo1 := files_tab.entered;
         apage.Free;
-        if bo1 then
-          files_tab.SetFocus;
+        // if bo1 then files_tab.SetFocus;
       finally
         Dec(fpagedestroying);
       end;

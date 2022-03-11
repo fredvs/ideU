@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -108,13 +108,14 @@ findinfiledialog=94
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/fpc-ootb_322/
+  /home/fred/bgrabitmap-11.4/
  filecolwidth=150
  x=466
  y=190
  cx=608
  cy=346
  filehistory=20
+  /home/fred/bgrabitmap-11.4/
   /home/fred/fpc-ootb_322/installer/
   /home/fred/mseide-msegui/
   /home/fred/fpc-ootb_322/
@@ -134,12 +135,15 @@ findinfiledialog=94
   /home/fred/strumpract/
   /home/fred/eschecs_mse/
   /home/fred/jcf-cli-master/
-  /home/fred/CodeTyphonIns700/CodeTyphonIns/cddata/
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=GetLanguageIDs
+ value=setfocus
  history=20
+  setfocus
+  loadconfigform
+  BGRAFreeType
+  BGRAText
   GetLanguageIDs
   gettext
   lang_langnames
@@ -156,10 +160,6 @@ findinfiledialog=94
   mo2arrays
   lang_langnamestmp
   Gettext
-  focus
-  message
-  msessaged
-  mdlg
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -1286,8 +1286,8 @@ path=27
 line=27
  2129
  1164
- 524
- 3157
+ 523
+ 3155
  660
  119
  1116
@@ -1296,7 +1296,7 @@ line=27
  2543
  3342
  119
- 479
+ 478
  456
  66
  684
@@ -1305,12 +1305,12 @@ line=27
  787
  904
  2583
- 5009
+ 5010
  1882
  6131
  18
  8
- 2603
+ 2601
 address=27
  4868715
  4692069
@@ -1593,26 +1593,51 @@ findhistory=20
  MObuild
  findactonexecute
 findoptions=1
-editpos=4
+editpos=9
+ 0,-1073741823
+ 0,-1073741823
+ 23,3430
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=4
+ /home/fred/bgrabitmap-11.4/bgrabitmap/bgratext.pas
+ /home/fred/bgrabitmap-11.4/bgrabitmap/bgrafreetype.pas
+ /home/fred/bgrabitmap-11.4/bgrabitmap/bgranoguibitmap.pas
+ ${PROJECTDIR}/define.inc
+ ${PROJECTDIR}/sourceform.pas
+relpaths=9
  actionsmodule.pas
  sourceform.pas
  main.pas
  ideU.pas
-ismoduletexts=4
+ bgrabitmap-11.4/bgrabitmap/bgratext.pas
+ bgrabitmap-11.4/bgrabitmap/bgrafreetype.pas
+ bgrabitmap-11.4/bgrabitmap/bgranoguibitmap.pas
+ define.inc
+ sourceform.pas
+ismoduletexts=9
+ 0
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1634,10 +1659,20 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=9
+ 0
+ 1
+ 2
+ 5
+ 6
+ 7
+ 8
+ 3
+ 4
 firsttab=0
-index=3
+index=2
 [layout]
-windowlayout=539
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1651,8 +1686,8 @@ windowlayout=539
  ny=0
  ncx=0
  ncy=0
- x=83
- y=72
+ x=52
+ y=67
  cx=1224
  cy=621
  rcx=0
@@ -1676,8 +1711,8 @@ windowlayout=539
  ny=0
  ncx=0
  ncy=0
- x=27
- y=351
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
@@ -1778,7 +1813,7 @@ windowlayout=539
  x=0
  y=0
  cx=205
- cy=431
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1789,7 +1824,7 @@ windowlayout=539
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=11
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1964,9 +1999,9 @@ windowlayout=539
  ncx=0
  ncy=0
  x=0
- y=504
+ y=507
  cx=1212
- cy=96
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2066,7 +2101,7 @@ windowlayout=539
  x=0
  y=0
  cx=1212
- cy=67
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2078,11 +2113,11 @@ windowlayout=539
  nx=0
  ny=0
  ncx=1197
- ncy=18
+ ncy=56
  x=0
  y=0
  cx=1212
- cy=33
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2092,11 +2127,10 @@ windowlayout=539
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=3
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/mo4stock.pas
-  /home/fred/ideu/src/potools.pas
+ value=/home/fred/ideu/src/main.pas
+ history=2
+  /home/fred/ideu/src/main.pas
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2114,12 +2148,22 @@ windowlayout=539
  x=208
  y=0
  cx=1004
- cy=431
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=9
+  0
+  1
+  2
+  5
+  6
+  7
+  8
+  3
+  4
  firsttab=0
- index=3
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2153,9 +2197,9 @@ windowlayout=539
  ncx=0
  ncy=0
  x=0
- y=70
+ y=53
  cx=1212
- cy=431
+ cy=451
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]

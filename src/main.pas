@@ -46,7 +46,6 @@ mseprocmonitorcomp, msesystypes, mserttistat, msedatalist, mselistbrowser,
 projecttreeform, msepipestream, msestringcontainer, msesys, mseedit, msewidgets, 
 msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
-
 const 
   versiontext = '2.8.3';
   idecaption  = 'ideU';
@@ -637,7 +636,6 @@ begin
 
       dothemedialog();
 
-
       dialogfilesfo.tag := 0;
 
       thesdef := projectoptions.e.t.syntaxdeffiles[0];
@@ -648,7 +646,6 @@ begin
 
       dialogfilesfo.tbutton1.Caption := lang_modalresult[Ord(mr_ok)];
       dialogfilesfo.tbutton2.Caption := lang_modalresult[Ord(mr_cancel)];
-
 
       dialogfilesfo.list_files.path    := expandprmacros('${SYNTAXDEFDIR}');
       dialogfilesfo.list_files.mask    := '*.sdef';
@@ -663,6 +660,7 @@ begin
         begin
           dialogfilesfo.Show;
           dialogfilesfo.bringtofront;
+          dialogfilesfo.setfocus;
         end;
 
     end;
@@ -3439,6 +3437,9 @@ if (confideufo.usedefaulteditoroptions.Value) then
     layoutbusy := False;
 
   end;
+  
+  if assigned(sourcefo.ActivePage) then sourcefo.ActivePage.SetFocus;
+
 
 //}
 end;
