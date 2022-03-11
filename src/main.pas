@@ -3422,27 +3422,24 @@ if (confideufo.usedefaulteditoroptions.Value) then
         debuggerfo.Close;
         loadwindowlayout(str1);
 
-
+       {
         if (tabind < 0) and (sourcefo.files_tab.Count > 0) then
           sourcefo.files_tab.activepageindex := 0;
 
         if (tabind > -1) and (sourcefo.files_tab.Count > 0) then
           sourcefo.files_tab.activepageindex := tabind;
-
+        }
+        
         str1.Destroy();
       end;
 
-    sourcefo.files_tab.activepageindex := 0;
-    sourcefo.ActivePage.SetFocus;
-
-    layoutbusy := False;
+     layoutbusy := False;
 
   end;
   
+  if sourcefo.files_tab.Count > 0 then sourcefo.files_tab.activepageindex := 0;
   if assigned(sourcefo.ActivePage) then sourcefo.ActivePage.SetFocus;
 
-
-//}
 end;
 
 procedure tmainfo.saveproject(aname: filenamety; Const ascopy: Boolean = False);
