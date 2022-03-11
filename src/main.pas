@@ -2781,6 +2781,7 @@ begin
   componentpalettefo.window.bringtofront;
   componentpalettefo.Caption := lang_xstockcaption[Ord(sc_componentspalette)];
   componentpalettefo.Show;
+  componentpalettefo.setfocus;
 end;
 
 procedure tmainfo.viewcomponentstoreonexecute(Const Sender: TObject);
@@ -4402,6 +4403,7 @@ begin
         begin
           dialogfilesfo.Show;
           dialogfilesfo.bringtofront;
+          dialogfilesfo.setfocus
         end;
 
     end;
@@ -5204,6 +5206,7 @@ begin
     begin
       beautyfo.Show;
       beautyfo.bringtofront;
+      beautyfo.setfocus;
     end;
 end;
 

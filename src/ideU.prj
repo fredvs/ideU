@@ -1287,7 +1287,7 @@ line=27
  2129
  1164
  523
- 3155
+ 3156
  660
  119
  1116
@@ -1305,7 +1305,7 @@ line=27
  787
  904
  2583
- 5010
+ 5012
  1882
  6131
  18
@@ -1570,8 +1570,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=findpofiles
+finddtext=.show
 findhistory=20
+ .show
  time
  firstload
  setlangi
@@ -1591,61 +1592,35 @@ findhistory=20
  LocalisationReference
  findpofiles();
  MObuild
- findactonexecute
 findoptions=1
-editpos=9
+editpos=4
  0,-1073741823
  0,-1073741823
- 23,3430
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,5749
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-sourcefiles=9
+sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
- /home/fred/bgrabitmap-11.4/bgrabitmap/bgratext.pas
- /home/fred/bgrabitmap-11.4/bgrabitmap/bgrafreetype.pas
- /home/fred/bgrabitmap-11.4/bgrabitmap/bgranoguibitmap.pas
- ${PROJECTDIR}/define.inc
- ${PROJECTDIR}/sourceform.pas
-relpaths=9
+relpaths=4
  actionsmodule.pas
  sourceform.pas
  main.pas
  ideU.pas
- bgrabitmap-11.4/bgrabitmap/bgratext.pas
- bgrabitmap-11.4/bgrabitmap/bgrafreetype.pas
- bgrabitmap-11.4/bgrabitmap/bgranoguibitmap.pas
- define.inc
- sourceform.pas
-ismoduletexts=9
- 0
- 0
- 0
- 0
- 0
+ismoduletexts=4
  0
  0
  0
  0
 modules=3
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/main.mfm
 moduleoptions=3
  0
  0
@@ -1659,20 +1634,10 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
-order=9
- 0
- 1
- 2
- 5
- 6
- 7
- 8
- 3
- 4
 firsttab=0
 index=2
 [layout]
-windowlayout=548
+windowlayout=519
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1686,8 +1651,8 @@ windowlayout=548
  ny=0
  ncx=0
  ncy=0
- x=52
- y=67
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1719,7 +1684,7 @@ windowlayout=548
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1813,7 +1778,7 @@ windowlayout=548
  x=0
  y=0
  cx=205
- cy=451
+ cy=446
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1823,8 +1788,8 @@ windowlayout=548
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=11
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1929,25 +1894,7 @@ windowlayout=548
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=18
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ values0=0
  width0=111
  sortdescend0=0
  width1=125
@@ -1999,9 +1946,9 @@ windowlayout=548
  ncx=0
  ncy=0
  x=0
- y=507
+ y=504
  cx=1212
- cy=93
+ cy=96
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2101,7 +2048,7 @@ windowlayout=548
  x=0
  y=0
  cx=1212
- cy=50
+ cy=52
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2112,12 +2059,12 @@ windowlayout=548
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=56
+ ncx=1212
+ ncy=75
  x=0
  y=0
  cx=1212
- cy=54
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2127,10 +2074,9 @@ windowlayout=548
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=2
-  /home/fred/ideu/src/main.pas
-  ${PROJECTDIR}/main.pas
+ value=/home/fred/ideu/src/main.mfm
+ history=1
+  /home/fred/ideu/src/main.mfm
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2148,20 +2094,10 @@ windowlayout=548
  x=208
  y=0
  cx=1004
- cy=451
+ cy=446
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=9
-  0
-  1
-  2
-  5
-  6
-  7
-  8
-  3
-  4
  firsttab=0
  index=2
  [confideufo.usedefaulteditoroptions]
@@ -2197,25 +2133,25 @@ windowlayout=548
  ncx=0
  ncy=0
  x=0
- y=53
+ y=55
  cx=1212
- cy=451
+ cy=446
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
+ [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=287
- y=268
- cx=810
- cy=100
+ x=213
+ y=180
+ cx=966
+ cy=472
  rcx=0
  rcy=0
  wsize=0
