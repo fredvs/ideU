@@ -1584,13 +1584,14 @@ findhistory=20
  MObuild
  findactonexecute
 findoptions=1
-editpos=7
- 0,0
+editpos=8
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,230
+ 0,-1073741823
+ 0,12
  0,0
 bookmarks0=0
 bookmarks1=0
@@ -1599,7 +1600,8 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-sourcefiles=7
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
@@ -1607,7 +1609,8 @@ sourcefiles=7
  ${PROJECTDIR}/mo4stock.pas
  ${PROJECTDIR}/sourceform.mfm
  ${PROJECTDIR}/actionsmodule.mfm
-relpaths=7
+ ${PROJECTDIR}/captionideu.pas
+relpaths=8
  actionsmodule.pas
  main.pas
  sourceform.pas
@@ -1615,7 +1618,8 @@ relpaths=7
  mo4stock.pas
  sourceform.mfm
  actionsmodule.mfm
-ismoduletexts=7
+ captionideu.pas
+ismoduletexts=8
  0
  0
  0
@@ -1623,15 +1627,25 @@ ismoduletexts=7
  0
  -1
  -1
+ 0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
+order=8
+ 0
+ 1
+ 2
+ 3
+ 4
+ 7
+ 5
+ 6
 firsttab=0
-index=5
+index=4
 [layout]
-windowlayout=499
+windowlayout=508
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1670,8 +1684,8 @@ windowlayout=499
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=27
+ y=351
  cx=497
  cy=314
  rcx=0
@@ -1700,7 +1714,7 @@ windowlayout=499
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1772,7 +1786,7 @@ windowlayout=499
  x=0
  y=0
  cx=205
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2011,7 +2025,7 @@ windowlayout=499
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2042,7 +2056,7 @@ windowlayout=499
  x=0
  y=0
  cx=1212
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2053,12 +2067,12 @@ windowlayout=499
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=64
+ ncx=1197
+ ncy=58
  x=0
  y=0
  cx=1212
- cy=58
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2068,10 +2082,10 @@ windowlayout=499
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.mfm
+ value=/home/fred/ideu/src/mo4stock.pas
  history=0
  [debuggerfo.project_options]
- value=M
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2087,19 +2101,28 @@ windowlayout=499
  x=208
  y=0
  cx=1004
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  1
+  2
+  3
+  4
+  7
+  5
+  6
  firsttab=0
- index=6
+ index=4
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2126,9 +2149,9 @@ windowlayout=499
  ncx=0
  ncy=0
  x=0
- y=54
+ y=53
  cx=1212
- cy=450
+ cy=451
  rcx=0
  rcy=0
 [targetconsole]

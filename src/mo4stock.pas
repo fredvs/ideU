@@ -226,7 +226,7 @@ initialization
   Appname:= 'ideu_';
   
   LocalisationReference:= Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
-                                              en_stockcaption, en_extendedtext, en_langnamestext);
+                                              en_stockcaption, en_extendedtext);
   LocalisationActive:=    Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
-                                              en_stockcaption, en_extendedtext, en_langnamestext);
+                                              en_stockcaption, en_extendedtext);
 end.
