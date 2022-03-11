@@ -32,8 +32,7 @@ uses
   gettext,
   msestockobjects,
   projectoptionsform,
-  mseconsts,
-  captionideu;
+  mseconsts;
 
 TYPE
   Localisator = ARRAY OF msestringarty;
@@ -89,14 +88,12 @@ var
   file1: ttextdatastream;
   Attribute: word;
   i: integer = 0;
-  str1, str2, str3: msestring;
+  str1, str2: msestring;
 begin
   Attribute := faReadOnly or faArchive;
 
   SetLength(ListOfFiles, 0);
 
-  //str1 := LangDir + directoryseparator;
-  
   str1 := expandprmacros('${LANGDIR}') + directoryseparator;
 
   // List the files
@@ -112,17 +109,15 @@ begin
   setlength(lang_langnames, 1);
   lang_langnames[0] :=  'English [en]';
    
-   str2 := expandprmacros('${LANGDIR}') + directoryseparator;
-
   for i := Low(ListOfFiles) to High(ListOfFiles) do
     if system.pos('empty', ListOfFiles[i]) = 0 then
     begin
        setlength(lang_langnames, length(lang_langnames) + 1);
-       str1 := ListOfFiles[i];
-       MOfile:= TMOfile.Create (str2+str1);
-       str1 := MOfile.Translate('English [en]');
+       str2 := ListOfFiles[i];
+       MOfile:= TMOfile.Create (str1+str2);
+       str2 := MOfile.Translate('English [en]');
        //writeln(str1);
-       lang_langnames[length(lang_langnames) - 1] := trim(str1);
+       lang_langnames[length(lang_langnames) - 1] := trim(str2);
        MOfile.Destroy;
     end;
 end;
@@ -163,43 +158,11 @@ var
   MOfile: TMOfile;
 
 begin
-//  str1 := ExtractFilePath(ParamStr(0)) + 'lang' + directoryseparator + appname + alang + langext;
   str1 := expandprmacros('${LANGDIR}')  + appname + alang + langext;
-  
- //  writeln(str1);
-
+ 
   if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
   begin
     buildlangtext (LocalisationActive);
-
-//    SetLength (LocalisationActive [LangnameArea], x);
-//    FOR x:= 0 to pred (x) DO
-//      LocalisationActive [LangnameArea][x]:= en_langnamestext [x];
-
-    lang_modalresult:=           LocalisationActive [0];
-    lang_modalresultnoshortcut:= LocalisationActive [ModalresultnoShortcutArea];
-    lang_stockcaption:=          LocalisationActive [StockcaptionArea];
-    lang_extended:=              LocalisationActive [ExtendedArea];
-    //lang_langnames:=             LocalisationActive [LangnameArea];
-
-    findmofiles();
-    
-{           
-    setlength(lang_langnames, length(lang_langnamestmp));
- 
-  for x := 0 to high(lang_langnames) do
-    begin
-     str2 := trim(copy(lang_langnamestmp[x], system.pos('[',lang_langnamestmp[x]), 10));
-     lang_langnames[x] := '';
-     for x2 := 0 to high(en_langnamestext) do
-        begin
-           if trim(copy(en_langnamestext[x2], system.pos('[',en_langnamestext[x2]), 10)) = str2 then
-             lang_langnames[x] := en_langnamestext[x2];
-         end;
-     if lang_langnames[x] = '' then lang_langnames[x] := 'Language ' + str2;
-    end;
-}
-
   end
   else if fileexists(str1) then
   begin
@@ -209,10 +172,9 @@ begin
       translate_stock (LocalisationActive [x], LocalisationReference{Default} [x], MOfile);
 
     MOfile.Destroy;
-  
-    findmofiles();
-      
-   end;
+  end;
+    
+  findmofiles();
   lang_modalresult:=           LocalisationActive [0];
   lang_modalresultnoshortcut:= LocalisationActive [ModalresultnoShortcutArea];
   lang_stockcaption:=          LocalisationActive [StockcaptionArea];

@@ -32,7 +32,7 @@ type
     tbutton5: TButton;
     tmemoedit1: tmemoedit;
     tbutton1: TButton;
-   tbutton6: tbutton;
+    tbutton6: tbutton;
     procedure createnew(const Sender: TObject);
     procedure createnewconst(const Sender: TObject; fn: msestring);
     procedure extractcaption(const Sender: TObject; fn: msestring);
@@ -40,9 +40,7 @@ type
     procedure convert2mo(const Sender: TObject; fn: msestring);
     procedure oncreateform(const Sender: TObject);
     procedure ontime(const Sender: TObject);
-    procedure oncreated(const Sender: TObject);
     procedure onclose(const Sender: TObject);
-    procedure onactiv(const Sender: TObject);
   end;
 
 var
@@ -334,6 +332,12 @@ begin
     file1.writeln();
 
   file1.writeln();
+ 
+ 
+   file1.writeln('msgid "English [en]"');
+   if forgoogle = False then file1.writeln('msgstr ""');
+  
+   file1.writeln();
 
   for x := 0 to length(defaultresult) - 1 do
     if trim(defaultresult[x]) <> '' then
@@ -552,20 +556,10 @@ begin
   paneldone.Visible := False;
 end;
 
-procedure theaderfo.oncreated(const Sender: TObject);
-begin
-  //headerfo.visible := false;
-end;
-
 procedure theaderfo.onclose(const Sender: TObject);
 begin
   tbutton1.Visible   := False;
   tmemoedit1.Visible := False;
-end;
-
-procedure theaderfo.onactiv(const Sender: TObject);
-begin
-  //visible := false;
 end;
 
 end.
