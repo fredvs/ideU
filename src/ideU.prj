@@ -930,15 +930,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=2
- ACTIONSMO
- SOURCEFO
-moduletypes=2
- TACTIONSMO
- TSOURCEFO
-modulefiles=2
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=15
  4095
@@ -1590,56 +1584,54 @@ findhistory=20
  MObuild
  findactonexecute
 findoptions=1
-editpos=5
+editpos=7
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,0
  0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/mo4stock.pas
-relpaths=5
+ ${PROJECTDIR}/sourceform.mfm
+ ${PROJECTDIR}/actionsmodule.mfm
+relpaths=7
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
  mo4stock.pas
-ismoduletexts=5
+ sourceform.mfm
+ actionsmodule.mfm
+ismoduletexts=7
  0
  0
  0
- 0
- 0
-modules=3
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
-moduleoptions=3
- 0
- 0
- 0
-visiblemodules=3
- -1
- -1
- 0
-nomenumodules=3
  0
  0
  -1
+ -1
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=4
+index=5
 [layout]
-windowlayout=540
+windowlayout=499
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1653,8 +1645,8 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=126
- y=85
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1664,10 +1656,7 @@ windowlayout=540
  visible=1
  [findmessagefo.findtext]
  value=
- history=3
-  not inlined
-  linux
-  used
+ history=0
  [findmessagefo.casesensitive]
  value=0
  [findmessagefo.copytoclip]
@@ -1681,15 +1670,15 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=37
- y=372
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1711,7 +1700,7 @@ windowlayout=540
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1783,7 +1772,7 @@ windowlayout=540
  x=0
  y=0
  cx=205
- cy=448
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1793,8 +1782,8 @@ windowlayout=540
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=10
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1854,7 +1843,7 @@ windowlayout=540
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1899,25 +1888,7 @@ windowlayout=540
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=18
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ values0=0
  width0=111
  sortdescend0=0
  width1=125
@@ -1969,9 +1940,9 @@ windowlayout=540
  ncx=0
  ncy=0
  x=0
- y=504
+ y=507
  cx=1212
- cy=96
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2040,7 +2011,7 @@ windowlayout=540
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2071,7 +2042,7 @@ windowlayout=540
  x=0
  y=0
  cx=1212
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2082,12 +2053,12 @@ windowlayout=540
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=9
+ ncx=1212
+ ncy=64
  x=0
  y=0
  cx=1212
- cy=7
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2097,11 +2068,10 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/po2arrays.pas
- history=1
-  /home/fred/ideu/src/mo4stock.pas
+ value=/home/fred/ideu/src/actionsmodule.mfm
+ history=0
  [debuggerfo.project_options]
- value=1
+ value=M
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2117,19 +2087,19 @@ windowlayout=540
  x=208
  y=0
  cx=1004
- cy=448
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=4
+ index=6
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2156,30 +2126,11 @@ windowlayout=540
  ncx=0
  ncy=0
  x=0
- y=53
+ y=54
  cx=1212
- cy=448
+ cy=450
  rcx=0
  rcy=0
- [_mse_actionsmo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=213
- y=180
- cx=966
- cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
