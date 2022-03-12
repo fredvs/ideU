@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -138,13 +138,14 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=tabind
+ value=TMSEFontRenderer
  history=20
+  TMSEFontRenderer
+  BGRAText
   tabind
   setfocus
   loadconfigform
   BGRAFreeType
-  BGRAText
   GetLanguageIDs
   gettext
   lang_langnames
@@ -159,7 +160,6 @@ findinfiledialog=94
   ideureadconfig
   realizeApplicationLanguages
   mo2arrays
-  lang_langnamestmp
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -245,8 +245,8 @@ options=114
  width4=357
  sortdescend4=0
  sorted=0
- col=-1073741823
- row=-1073741823
+ col=0
+ row=0
  rowheight=17
  [projectoptionsfo.newfile]
  firsttab=0
@@ -317,7 +317,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=8
  [projectoptionsfo]
  stackedunder=
  x=184
@@ -1570,8 +1570,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=setfocus
+finddtext=BGRABITMAP_USE_MSEGUI
 findhistory=20
+ BGRABITMAP_USE_MSEGUI
  setfocus
  .show
  time
@@ -1591,13 +1592,12 @@ findhistory=20
  langname
  LocalisationReference
  findpofiles();
- MObuild
 findoptions=1
 editpos=4
- 0,-1073741823
- 0,-1073741823
- 0,3426
+ 0,6
  0,0
+ 0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1634,10 +1634,15 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=4
+ 0
+ 3
+ 1
+ 2
 firsttab=0
-index=2
+index=0
 [layout]
-windowlayout=520
+windowlayout=544
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1651,8 +1656,8 @@ windowlayout=520
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=40
+ y=61
  cx=1224
  cy=621
  rcx=0
@@ -1752,7 +1757,7 @@ windowlayout=520
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1894,7 +1899,25 @@ windowlayout=520
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=0
+ values0=18
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  width0=111
  sortdescend0=0
  width1=125
@@ -2058,13 +2081,13 @@ windowlayout=520
  visible=1
  mdistate=0
  nx=0
- ny=0
- ncx=1197
- ncy=56
+ ny=1
+ ncx=1199
+ ncy=44
  x=0
- y=0
+ y=1
  cx=1212
- cy=54
+ cy=42
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2074,8 +2097,9 @@ windowlayout=520
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=2
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=3
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/main.mfm
  [debuggerfo.project_options]
@@ -2099,8 +2123,13 @@ windowlayout=520
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  3
+  1
+  2
  firsttab=0
- index=2
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2142,7 +2171,7 @@ windowlayout=520
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
