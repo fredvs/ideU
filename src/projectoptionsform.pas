@@ -647,7 +647,6 @@ type
    editfontextraspace: tintegeredit;
    editfontwidth: tintegeredit;
    editfontheight: tintegeredit;
-   editfontname: tstringedit;
    editbkcolor: tcoloredit;
    editfontcolor: tcoloredit;
    tlayouter10: tlayouter;
@@ -980,6 +979,7 @@ type
    project_license: tstringedit;
    project_name: tstringedit;
    project_date: tstringedit;
+   editfontname: tdropdownlistedit;
     procedure acttiveselectondataentered(const Sender: TObject);
     procedure colonshowhint(const Sender: tdatacol; const arow: integer; var info: hintinfoty);
     procedure hintexpandedmacros(const Sender: TObject; var info: hintinfoty);

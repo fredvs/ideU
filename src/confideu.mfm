@@ -341,7 +341,7 @@ object confideufo: tconfideufo
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'stf_default'
-      dropdown.dropdownrowcount = 5
+      dropdown.dropdownrowcount = 6
       dropdown.cols.count = 1
       dropdown.cols.items = <      
         item
@@ -351,6 +351,7 @@ object confideufo: tconfideufo
             'stf_helvetica'
             'stf_roman'
             'stf_proportional'
+            'Unifont'
           )
         end>
       reffontheight = 15

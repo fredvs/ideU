@@ -881,33 +881,6 @@ object projectoptionsfo: tprojectoptionsfo
                 ondataentered = fontondataentered
                 reffontheight = 15
               end
-              object editfontname: tstringedit
-                optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_destroywidgets]
-                color = 15262906
-                frame.levelo = 0
-                frame.framei_left = 0
-                frame.framei_top = 0
-                frame.framei_right = 0
-                frame.framei_bottom = 0
-                frame.caption = 'Font'
-                frame.captiontextflags = [tf_bottom]
-                frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-                frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
-                frame.outerframe = (
-                  0
-                  18
-                  0
-                  0
-                )
-                taborder = 12
-                bounds_x = 5
-                bounds_y = 117
-                bounds_cx = 109
-                bounds_cy = 39
-                ondataentered = fontondataentered
-                value = 'mseide_source'
-                reffontheight = 15
-              end
               object editbkcolor: tcoloredit
                 color = 15262906
                 frame.hiddenedges = [edg_bottom]
@@ -946,7 +919,7 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                 )
-                taborder = 13
+                taborder = 12
                 bounds_x = 189
                 bounds_y = 178
                 bounds_cx = 118
@@ -996,7 +969,7 @@ object projectoptionsfo: tprojectoptionsfo
                   0
                   0
                 )
-                taborder = 14
+                taborder = 13
                 bounds_x = 4
                 bounds_y = 179
                 bounds_cx = 126
@@ -1006,6 +979,59 @@ object projectoptionsfo: tprojectoptionsfo
                 ondataentered = fontondataentered
                 value = -1879048183
                 dropdown.options = [deo_autodropdown, deo_keydropdown, deo_cliphint]
+                reffontheight = 15
+              end
+              object editfontname: tdropdownlistedit
+                frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+                frame.caption = 'Font'
+                frame.localprops = [frl_hiddenedges, frl_frameimagelist, frl_colorclient]
+                frame.localprops1 = [frl1_captiondist]
+                frame.template = mainfo.tframecomp3
+                frame.button.width = 16
+                frame.button.face.fade_direction = gd_down
+                frame.button.face.localprops = [fal_fadirection]
+                frame.button.frame.localprops = []
+                frame.button.frame.localprops1 = []
+                frame.button.frame.template = mainfo.mainmenuframe
+                frame.buttons.count = 1
+                frame.buttons.items = <                
+                  item
+                    width = 16
+                    face.fade_direction = gd_down
+                    face.localprops = [fal_fadirection]
+                    frame.localprops = []
+                    frame.localprops1 = []
+                    frame.template = mainfo.mainmenuframe
+                  end>
+                frame.outerframe = (
+                  0
+                  18
+                  0
+                  0
+                )
+                taborder = 14
+                hint = 'Font name editor text'
+                bounds_x = 3
+                bounds_y = 116
+                bounds_cx = 113
+                bounds_cy = 39
+                optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+                ondataentered = fontondataentered
+                value = 'mseide_source'
+                dropdown.dropdownrowcount = 7
+                dropdown.cols.count = 1
+                dropdown.cols.items = <                
+                  item
+                    data = (
+                      'mseide_source'
+                      'stf_default'
+                      'stf_courier'
+                      'stf_helvetica'
+                      'stf_roman'
+                      'stf_proportional'
+                      'Unifont'
+                    )
+                  end>
                 reffontheight = 15
               end
             end
