@@ -1339,9 +1339,17 @@ procedure projectoptionstofont(const afont: tfont);
 begin
   with projectoptions, afont do
   begin
-    Name       := ansistring(e.editfontname);
-    Height     := e.editfontheight;
-    Width      := e.editfontwidth;
+   if (confideufo.usedefaulteditoroptions.value) and (assigned(confideufo)) then
+   begin
+   Name       := confideufo.editfontnamesrc.value;
+   Height     := confideufo.editfontheightsrc.value;
+   end else
+   begin
+   Name       := ansistring(e.editfontname);
+   Height     := e.editfontheight;
+     end;
+  
+   Width      := e.editfontwidth;
     extraspace := e.editfontextraspace;
     if e.editfontantialiased then
       options := options + [foo_antialiased2]

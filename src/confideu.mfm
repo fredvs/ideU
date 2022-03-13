@@ -460,8 +460,8 @@ object confideufo: tconfideufo
         2
       )
       hint = 'Trim trailing whitespace on save'
-      bounds_x = 10
-      bounds_y = 155
+      bounds_x = 8
+      bounds_y = 134
       bounds_cx = 115
       bounds_cy = 17
       statfile = mainfo.mainstatfile
@@ -1049,6 +1049,84 @@ object confideufo: tconfideufo
       bounds_cy = 39
       statfile = mainfo.mainstatfile
       value = 15134207
+      reffontheight = 15
+    end
+    object editfontheightsrc: tintegeredit
+      color = -2147483645
+      frame.levelo = 0
+      frame.framei_left = 0
+      frame.framei_top = 0
+      frame.framei_right = 0
+      frame.framei_bottom = 0
+      frame.caption = 'Height'
+      frame.captiontextflags = [tf_bottom]
+      frame.localprops = [frl_fileft, frl_fitop, frl_firight, frl_fibottom, frl_frameimagelist, frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+      frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 17
+      bounds_x = 172
+      bounds_y = 155
+      bounds_cx = 57
+      bounds_cy = 39
+      statfile = mainfo.mainstatfile
+      reffontheight = 15
+    end
+    object editfontnamesrc: tdropdownlistedit
+      frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
+      frame.caption = 'Font'
+      frame.localprops = [frl_hiddenedges, frl_frameimagelist, frl_colorclient]
+      frame.localprops1 = [frl1_captiondist]
+      frame.template = mainfo.tframecomp3
+      frame.button.width = 16
+      frame.button.face.fade_direction = gd_down
+      frame.button.face.localprops = [fal_fadirection]
+      frame.button.frame.localprops = []
+      frame.button.frame.localprops1 = []
+      frame.button.frame.template = mainfo.mainmenuframe
+      frame.buttons.count = 1
+      frame.buttons.items = <      
+        item
+          width = 16
+          face.fade_direction = gd_down
+          face.localprops = [fal_fadirection]
+          frame.localprops = []
+          frame.localprops1 = []
+          frame.template = mainfo.mainmenuframe
+        end>
+      frame.outerframe = (
+        0
+        18
+        0
+        0
+      )
+      taborder = 18
+      hint = 'Font name editor text'
+      bounds_x = 6
+      bounds_y = 155
+      bounds_cx = 113
+      bounds_cy = 39
+      statfile = mainfo.mainstatfile
+      optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+      value = 'mseide_source'
+      dropdown.cols.count = 1
+      dropdown.cols.items = <      
+        item
+          data = (
+            'mseide_source'
+            'unifont_source'
+            'stf_default'
+            'stf_courier'
+            'stf_helvetica'
+            'stf_roman'
+            'stf_proportional'
+            'Unifont'
+          )
+        end>
       reffontheight = 15
     end
   end

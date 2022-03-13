@@ -4,12 +4,12 @@ unit confideu;
 interface
 
 uses
- mseconsts,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,
- msefileutils,mseapplication,msegui,msegraphics,msegraphutils,mseclasses,
- mseforms,msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,
- msemenus,msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,
- msestrings,SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,
- msesys,mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
+ mseconsts,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,msefileutils,
+ mseapplication,msegui,msegraphics,msegraphutils,mseclasses,mseforms,
+ msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,msemenus,
+ msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,msestrings,
+ SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,msesys,
+ mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
  msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
  msetextedit,msefiledialogx, captionideu;
 
@@ -56,6 +56,8 @@ type
    rectanglearea: tbooleanedit;
    addwhiteaftercomma: tbooleanedit;
    colorhint: tcoloredit;
+   editfontheightsrc: tintegeredit;
+   editfontnamesrc: tdropdownlistedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -317,7 +319,12 @@ begin
   closemessages.top   := backupfilecount.top + backupfilecount.Height + 6;
 
   trimtrailingwhitespace.top := closemessages.top + closemessages.Height + 2;
-  encoding.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
+  
+  editfontnamesrc.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
+ 
+  editfontheightsrc.top := editfontnamesrc.top;
+    
+  encoding.top := editfontnamesrc.top + editfontnamesrc.Height + 2;
 
   encoding.Width := round(ratio * 84);
   tabstops.top   := encoding.top;
@@ -812,9 +819,16 @@ begin
   confirmdel.frame.caption := lang_settings[Ord(se_confirmdel)] + strz ;
   blinkcaret.frame.caption := lang_settings[Ord(se_blinkcaret)] + strz ;
   brepaintcanvas.frame.caption := lang_settings[Ord(se_repaintcanvas)] + strz ;
+  
+  // todo in lang
+  rectanglearea.frame.caption := 'Rectangle area for multi-select' + strz ;
 
   group_sourceeditor.frame.caption := lang_settings[Ord(se_groupsourceeditor)] + strz ;
   trimtrailingwhitespace.frame.caption := lang_projectoptions[Ord(po_trimtrailing)] + strz ;
+  
+  editfontnamesrc.frame.caption := lang_settings[Ord(se_fontname)] + strz ;
+  editfontheightsrc.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
+  
   rightmarginchars.frame.caption := lang_projectoptions[Ord(po_rightmarginline)] + strz ;
   encoding.frame.caption := lang_projectoptions[Ord(po_encoding)] + strz ;
   backupfilecount.frame.caption := lang_projectoptions[Ord(po_backup)] + strz ;
