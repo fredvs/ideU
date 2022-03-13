@@ -1597,7 +1597,7 @@ editpos=4
  0,5
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1651,10 +1651,10 @@ windowlayout=542
  ny=0
  ncx=0
  ncy=0
- x=90
- y=58
+ x=34
+ y=53
  cx=1224
- cy=634
+ cy=621
  rcx=0
  rcy=0
  wsize=0
@@ -1684,7 +1684,7 @@ windowlayout=542
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1706,7 +1706,7 @@ windowlayout=542
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1759,10 +1759,10 @@ windowlayout=542
  ny=0
  ncx=0
  ncy=0
- x=0
- y=29
- cx=1368
- cy=711
+ x=239
+ y=115
+ cx=678
+ cy=414
  rcx=0
  rcy=0
  [projecttreefo]
@@ -1778,7 +1778,7 @@ windowlayout=542
  x=0
  y=0
  cx=205
- cy=469
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1788,8 +1788,8 @@ windowlayout=542
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=10
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1964,9 +1964,9 @@ windowlayout=542
  ncx=0
  ncy=0
  x=0
- y=525
+ y=507
  cx=1212
- cy=88
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2066,7 +2066,7 @@ windowlayout=542
  x=0
  y=0
  cx=1212
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2077,12 +2077,12 @@ windowlayout=542
  mdistate=0
  nx=0
  ny=0
- ncx=1197
- ncy=56
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=54
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2117,7 +2117,7 @@ windowlayout=542
  x=208
  y=0
  cx=1004
- cy=469
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2129,7 +2129,7 @@ windowlayout=542
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2145,22 +2145,6 @@ windowlayout=542
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=53
- cx=1212
- cy=469
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2180,6 +2164,22 @@ windowlayout=542
  wsize=0
  active=0
  visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1212
+ cy=450
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
