@@ -1594,7 +1594,7 @@ findhistory=20
  =12
 findoptions=1
 editpos=4
- 0,5
+ 0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1637,7 +1637,7 @@ nomenumodules=3
 firsttab=0
 index=0
 [layout]
-windowlayout=542
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1706,7 +1706,7 @@ windowlayout=542
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1778,7 +1778,7 @@ windowlayout=542
  x=0
  y=0
  cx=205
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2066,7 +2066,7 @@ windowlayout=542
  x=0
  y=0
  cx=1212
- cy=51
+ cy=50
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2077,12 +2077,12 @@ windowlayout=542
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1212
+ ncy=56
  x=0
  y=0
  cx=1212
- cy=58
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2092,8 +2092,9 @@ windowlayout=542
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=6
+ value=/home/fred/ideu/src/commandorform.pas
+ history=7
+  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/ideU.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/projectoptionsform.pas
@@ -2117,7 +2118,7 @@ windowlayout=542
  x=208
  y=0
  cx=1004
- cy=450
+ cy=451
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2129,7 +2130,7 @@ windowlayout=542
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2145,6 +2146,22 @@ windowlayout=542
  wsize=0
  active=0
  visible=0
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=53
+ cx=1212
+ cy=451
+ rcx=0
+ rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2164,22 +2181,6 @@ windowlayout=542
  wsize=0
  active=0
  visible=1
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=54
- cx=1212
- cy=450
- rcx=0
- rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
