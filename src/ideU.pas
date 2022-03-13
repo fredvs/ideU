@@ -70,7 +70,10 @@ begin
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);
-
+    
+  registerfontalias('unifont_source', 'Unifont',
+    fam_fixnooverwrite, 18);
+  
   application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
   if application.terminated then Exit;

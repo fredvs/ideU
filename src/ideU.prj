@@ -108,16 +108,16 @@ findinfiledialog=94
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/bgrabitmap-11.4/
+  /home/fred/mseide-msegui/
  filecolwidth=150
  x=466
  y=190
  cx=608
  cy=346
  filehistory=20
+  /home/fred/mseide-msegui/
   /home/fred/bgrabitmap-11.4/
   /home/fred/fpc-ootb_322/installer/
-  /home/fred/mseide-msegui/
   /home/fred/fpc-ootb_322/
   /home/fred/ideu_po/
   /home/fred/ideu_bin/
@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=TMSEFontRenderer
+ value=fonts
  history=20
+  fonts
+  Screen.Fonts
   TMSEFontRenderer
   BGRAText
   tabind
@@ -158,8 +160,6 @@ findinfiledialog=94
   [Lang
   isinit
   ideureadconfig
-  realizeApplicationLanguages
-  mo2arrays
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -317,11 +317,11 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
- x=184
- y=70
+ x=275
+ y=66
  cx=920
  cy=593
 settaborder=15
@@ -930,30 +930,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=3
  ACTIONSMO
- CONFIDEUFO
  MAINFO
- PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=5
+moduletypes=3
  TACTIONSMO
- TCONFIDEUFO
  TMAINFO
- TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=5
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/confideu.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=15
  4095
  4095
  17
- 198
+ 194
  2046
  4095
  192
@@ -1599,76 +1593,51 @@ findhistory=20
  ideureadconfig
  langname
 findoptions=1
-editpos=6
- 4,7
- 0,0
+editpos=4
+ 0,6
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,76
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=4
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/projectoptionsform.pas
-relpaths=6
+relpaths=4
  actionsmodule.pas
  sourceform.pas
  main.pas
  ideU.pas
- confideu.pas
- projectoptionsform.pas
-ismoduletexts=6
+ismoduletexts=4
  0
  0
  0
  0
- 0
- 0
-modules=5
+modules=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=5
+moduleoptions=3
  0
  0
  0
- 0
- 0
-visiblemodules=5
+visiblemodules=3
  -1
  -1
  -1
- -1
- -1
-nomenumodules=5
- 0
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 3
- 1
- 5
- 2
- 4
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=585
+windowlayout=542
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1682,8 +1651,8 @@ windowlayout=585
  ny=0
  ncx=0
  ncy=0
- x=40
- y=61
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1715,7 +1684,7 @@ windowlayout=585
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1737,7 +1706,7 @@ windowlayout=585
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1809,7 +1778,7 @@ windowlayout=585
  x=0
  y=0
  cx=205
- cy=446
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1819,8 +1788,8 @@ windowlayout=585
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=12
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1880,7 +1849,7 @@ windowlayout=585
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1900,9 +1869,9 @@ windowlayout=585
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=320
- width0=141
+ width0=142
  sortdescend0=0
- width1=173
+ width1=172
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1995,9 +1964,9 @@ windowlayout=585
  ncx=0
  ncy=0
  x=0
- y=502
+ y=507
  cx=1212
- cy=98
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2097,7 +2066,7 @@ windowlayout=585
  x=0
  y=0
  cx=1212
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2107,13 +2076,13 @@ windowlayout=585
  visible=1
  mdistate=0
  nx=0
- ny=1
- ncx=1197
- ncy=33
+ ny=0
+ ncx=1212
+ ncy=64
  x=0
- y=1
+ y=0
  cx=1212
- cy=31
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2123,8 +2092,10 @@ windowlayout=585
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
- history=4
+ value=/home/fred/ideu/src/ideU.pas
+ history=6
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
@@ -2146,26 +2117,19 @@ windowlayout=585
  x=208
  y=0
  cx=1004
- cy=446
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  3
-  1
-  5
-  2
-  4
  firsttab=0
- index=0
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2181,22 +2145,6 @@ windowlayout=585
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=53
- cx=1212
- cy=446
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2216,44 +2164,22 @@ windowlayout=585
  wsize=0
  active=0
  visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_projectoptionsfo_mse_
- parent=
- mdistate=3
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=439
- y=31
- cx=639
- cy=699
+ x=0
+ y=54
+ cx=1212
+ cy=450
  rcx=0
  rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=212
- y=56
- cx=825
- cy=606
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

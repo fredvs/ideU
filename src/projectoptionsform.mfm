@@ -1018,12 +1018,12 @@ object projectoptionsfo: tprojectoptionsfo
                 optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
                 ondataentered = fontondataentered
                 value = 'mseide_source'
-                dropdown.dropdownrowcount = 7
                 dropdown.cols.count = 1
                 dropdown.cols.items = <                
                   item
                     data = (
                       'mseide_source'
+                      'unifont_source'
                       'stf_default'
                       'stf_courier'
                       'stf_helvetica'
