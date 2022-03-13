@@ -572,9 +572,8 @@ begin
   mainfo.frame.grip_size := round(12 * ratio);
 
   // message
-
   messagefontheight := fontsize.Value;
-  messagefontname   := UTF8Decode(fontsize.Name);
+  messagefontname   := fontname.value;
 
   // commandor
   scalecommander(ratio);

@@ -138,8 +138,9 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=usedefaulteditoroptions
+ value=messagefontname
  history=20
+  messagefontname
   usedefaulteditoroptions
   editfontname
   deflayout
@@ -159,7 +160,6 @@ findinfiledialog=94
   gettext
   lang_langnames
   langnames
-  en_langnamestext
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -947,7 +947,7 @@ makeoptionson=15
  4095
  4095
  17
- 194
+ 198
  2046
  4095
  192
@@ -1594,10 +1594,10 @@ findhistory=20
  =12
 findoptions=1
 editpos=4
- 0,6
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,3
+ 18,9
+ 0,0
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1634,10 +1634,15 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=4
+ 0
+ 3
+ 1
+ 2
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=543
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1651,8 +1656,8 @@ windowlayout=543
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=82
+ y=77
  cx=1224
  cy=621
  rcx=0
@@ -1788,8 +1793,8 @@ windowlayout=543
  width1=86
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1868,10 +1873,10 @@ windowlayout=543
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=320
- width0=142
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=172
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2092,13 +2097,13 @@ windowlayout=543
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
+ value=/home/fred/ideu/src/confideu.pas
  history=7
-  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/commandorform.pas
   /home/fred/ideu/src/confideu.pas
   /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/main.mfm
  [debuggerfo.project_options]
@@ -2122,15 +2127,20 @@ windowlayout=543
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=4
+  0
+  3
+  1
+  2
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0

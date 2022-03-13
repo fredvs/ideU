@@ -299,8 +299,9 @@ object confideufo: tconfideufo
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       value = 12
+      valuedefault = 12
       valuemin = 1
-      valuemax = 100
+      valuemax = 1000
       reffontheight = 15
     end
     object fontname: tdropdownlistedit
