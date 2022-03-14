@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=689
- y=217
+ x=375
+ y=298
  cx=298
  cy=269
 replacedialog=33
@@ -1573,8 +1573,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=createnewlang
+finddtext=conflangfo.sh
 findhistory=20
+ conflangfo.sh
  createnewlang
  conflangfo.ok
  setlangi
@@ -1594,14 +1595,13 @@ findhistory=20
  system.pos
  conflangfo
  <> 12
- onactiv
 findoptions=1
 editpos=5
- 0,5
+ 0,3
  0,-1073741823
- 0,4475
- 0,-1073741823
- 0,-1073741823
+ 51,5703
+ 0,0
+ 0,156
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1647,7 +1647,7 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=2
 [layout]
 windowlayout=561
  [mainfo.basedock]
@@ -1663,8 +1663,8 @@ windowlayout=561
  ny=0
  ncx=0
  ncy=0
- x=99
- y=60
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1696,7 +1696,7 @@ windowlayout=561
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1718,7 +1718,7 @@ windowlayout=561
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1790,7 +1790,7 @@ windowlayout=561
  x=0
  y=0
  cx=205
- cy=449
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1800,8 +1800,8 @@ windowlayout=561
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=8
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1976,9 +1976,9 @@ windowlayout=561
  ncx=0
  ncy=0
  x=0
- y=509
+ y=507
  cx=1212
- cy=91
+ cy=93
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2078,7 +2078,7 @@ windowlayout=561
  x=0
  y=0
  cx=1212
- cy=54
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2089,12 +2089,12 @@ windowlayout=561
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=58
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=62
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2129,19 +2129,19 @@ windowlayout=561
  x=208
  y=0
  cx=1004
- cy=449
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2157,22 +2157,6 @@ windowlayout=561
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=57
- cx=1212
- cy=449
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2195,7 +2179,7 @@ windowlayout=561
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2211,6 +2195,22 @@ windowlayout=561
  wsize=0
  active=0
  visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1212
+ cy=450
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

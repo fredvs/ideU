@@ -5156,10 +5156,6 @@ begin
 
   conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
   
- //{$ifdef unix}
-  conflangfo.listlangfont(MSEFallbackLang);
- //{$endif}
-  
   confideufo.setlangextrasettings();
   confcompilerfo.setlangcompilers();
   confdebuggerfo.setlangdebuggers();
@@ -5712,6 +5708,8 @@ begin
       conflangfo.gridlangbool[x] := False;
 
   conflangloaded := 1;
+  
+  conflangfo.listlangfont(MSEFallbackLang);
 
   if ismodal then
     conflangfo.Show(True)

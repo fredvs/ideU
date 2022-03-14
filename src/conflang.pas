@@ -151,8 +151,9 @@ begin
             begin
               gridlangbool[x] := True;
               MSEFallbackLang := gridlangcode[x];
-
+              lfontselected.caption := '';
               mainfo.setlangideu(MSEFallbackLang);
+              listlangfont(MSEFallbackLang);
             end
           else
             gridlangbool[x] := False;
