@@ -6,8 +6,8 @@ When done, rename the file with the code of your language after the "_" , like '
 You may also add the translation of the new language name at end of each .po file (not obligatory).
 Example add this at end of of the po files:
 
-msgid "Mylanguage [xz]"
-msgstr "MyTranslatedLanguage [xz]"
+msgid "English [en]"
+msgstr "MyLanguage [xz]"
 
 When your .po file is ready, just add it into '/ideu/lang/' folder.
 It will be available via the menu Settings-Language.
