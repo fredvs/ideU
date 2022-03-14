@@ -1,48 +1,56 @@
-unit mo4stock;
-
+UNIT mo4stock;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-interface
 
-uses
-  msestream,
+INTERFACE
+
+USES
   msetypes,
   SysUtils;
 
 CONST
-  ModalresultArea =           1;
+  ModalresultArea =           0;
   ModalresultnoShortcutArea = 1;
   StockcaptionArea =          2;
   ExtendedArea =              3;
- 
+  LangFlag =                '*';
+
 VAR
+  customsetLangFilePattern: FUNCTION: string;
   realizeApplicationLanguages: PROCEDURE;
- 
-procedure createnewlangmo (alang: msestring);
-procedure findmofiles ();
+  LangDir: string = 'lang';
+  Appname: string;
+
+PROCEDURE createnewlang (alang: msestring);
+FUNCTION findmofiles: msestringarty;
+// procedure createnewlangmo (alang: msestring);
+// procedure findmofiles ();
+// FUNCTION findpofiles (LinuxSystem: boolean = false): msestringarty;
 
 FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
 FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Index: integer): msestringarty;
 FUNCTION addApplicationStrings (ApplicationStrings: msestringarty): integer;
 FUNCTION getApplicationString (Area, Index: integer): msestring;
 FUNCTION getApplicationLanguage (Index: integer): msestringarty;
+FUNCTION ApplicationStringCount (Area: integer): integer;
 
-implementation
+IMPLEMENTATION
 
-uses
+USES
+  Classes,
+  StrUtils,
   gettext,
-  msestockobjects,
-  projectoptionsform,
-  mseconsts;
+  mseconsts,
+  msestockobjects;
 
 TYPE
   Localisator = ARRAY OF msestringarty;
 
-const
-  langext = '.mo';  // '.po';
+CONST
+  LangExt =   '.mo';
+  BaseLang =  'English [en]';
+  LinuxFlag = '/LC_MESSAGES/';
 
-var
-  Appname: string;
-  Lang_langnamestmp: msestringarty;
+VAR
   LocalisationReference,
   LocalisationActive: Localisator;
 
@@ -79,7 +87,88 @@ FUNCTION getApplicationLanguage (Index: integer): msestringarty;
    Result:= LocalisationActive [Index];
  END;
 
+FUNCTION ApplicationStringCount (Area: integer): integer;
+ BEGIN
+   Result:= Length (LocalisationActive [Area]);
+ END;
 
+
+FUNCTION findMOfiles: msestringarty;
+ VAR
+   i, l:         integer;
+   ListOfFiles:  TStringList;
+   Langname:     string;
+   MOfile: TMOfile;
+
+ FUNCTION findMOfilesLangdir: TStringList;
+  VAR
+    SearchResult: TSearchRec;
+    Attribute:    word;
+  BEGIN
+    Attribute:= faReadOnly OR faArchive;
+    Result:= TStringList.Create; i:= 0;
+
+    // List the files, LangDir:= expandprmacros('${LANGDIR}');
+    FindFirst (LangDir+ Appname+ LangFlag+ LangExt, Attribute, SearchResult);
+    WHILE i = 0 DO BEGIN
+      Result.Add (SearchResult.Name);       // Add it to the the list
+      i:= FindNext (SearchResult);
+    END;
+    FindClose (SearchResult);
+  END;
+
+{$ifdef Linux}
+ FUNCTION findMOfilesLinuxSys: TStringList;  // !!!!!!!!!!!!!!!!!!!!!
+  VAR
+    SearchResult: TSearchRec;
+    Attribute:    word;
+  BEGIN
+    Attribute:= faReadOnly OR faArchive OR faDirectory;
+    Result:= TStringList.Create; i:= 0;
+
+    // List the files, Linux: LangDir = /usr/share/locale/<language>/LC_MESSAGES
+    FindFirst (LangDir+ LangFlag{+ Appname+ LangExt}, Attribute, SearchResult);
+    WHILE i = 0 DO BEGIN
+      IF (SearchResult.Name <> '.') AND
+         DirectoryExists (LangDir+ SearchResult.Name) AND
+         FileExists (LangDir+ SearchResult.Name+ Appname+ LangExt)
+      THEN
+      Result.Add (SearchResult.Name+ Appname+ LangExt);       // Add it to the list
+      i:= FindNext (SearchResult);
+    END;
+    FindClose (SearchResult);
+  END;
+{$endif}
+
+ BEGIN
+{$ifdef Linux}
+   IF System.Pos (LinuxFlag, LangDir+ Appname) <> 0  // Linux System
+     THEN ListOfFiles:= findMOfilesLinuxSys
+     ELSE
+     {$endif} ListOfFiles:= findMOfilesLangdir;
+
+   IF ListOfFiles.Count = 0 THEN BEGIN               // NO files?
+     SetLength (Result, 1); Result [0]:= BaseLang;   // 'English'
+     Exit;
+   END;
+   ListOfFiles.Sort;
+   SetLength (Result, ListOfFiles.Count); Result [0]:= BaseLang;  // 'English'
+   l:= 0;
+   FOR i:= 0 TO pred (ListOfFiles.Count) DO BEGIN
+     Langname:= ListOfFiles [i];
+
+     IF System.Pos ('empty', Langname) = 0 THEN BEGIN
+       MOfile:= TMOfile.Create (LangDir+ Langname);
+       Langname:= MOfile.Translate (BaseLang); Inc (l);
+       //writeln (Lang);
+       MOfile.Destroy;
+       IF l >= Length (Result)
+         THEN setLength (Result, succ (Length (Result)));  // maybe no 'empty' lang file?
+       Result [l]:= Trim (Langname);
+     END;
+   END;
+ END;
+(*
 procedure findmofiles ();
 var
   ListOfFiles: array of string;
@@ -88,56 +177,62 @@ var
   file1: ttextdatastream;
   Attribute: word;
   i: integer = 0;
-  str1, str2: msestring;
+  str1, str2, str3: msestring;
 begin
   Attribute := faReadOnly or faArchive;
 
   SetLength(ListOfFiles, 0);
 
-  str1 := expandprmacros('${LANGDIR}') + directoryseparator;
+  //str1 := LangDir + directoryseparator;
+
+//  str1 := expandprmacros('${LANGDIR}') + directoryseparator;
 
   // List the files
-  FindFirst(str1 + '*.mo', Attribute, SearchResult);
-  while (i = 0) do
-  begin
-    SetLength(ListOfFiles, Length(ListOfFiles) + 1);     // Increase the list
-    ListOfFiles[High(ListOfFiles)] := SearchResult.Name; // Add it at the end of the list
-    i := FindNext(SearchResult);
-  end;
+  FindFirst(LangDir{str1} + '*'+ LangExt, Attribute, SearchResult);
+   WHILE i = 0 DO BEGIN
+     SetLength (ListOfFiles, succ (Length (ListOfFiles)));      // Increase the list
+     ListOfFiles [High (ListOfFiles)]:= SearchResult.Name;      // Add it at the end of the list
+     i:= FindNext (SearchResult);
+   END;
   FindClose(SearchResult);
 
   setlength(lang_langnames, 1);
-  lang_langnames[0] :=  'English [en]';
-   
+  lang_langnames[0] :=  BaseLang;
+
+//   str2 := expandprmacros('${LANGDIR}') + directoryseparator;
+
   for i := Low(ListOfFiles) to High(ListOfFiles) do
     if system.pos('empty', ListOfFiles[i]) = 0 then
     begin
        setlength(lang_langnames, length(lang_langnames) + 1);
-       str2 := ListOfFiles[i];
-       MOfile:= TMOfile.Create (str1+str2);
-       str2 := MOfile.Translate('English [en]');
+       str1 := ListOfFiles[i];
+       MOfile:= TMOfile.Create (LangDir{str2}+str1);
+       str1 := MOfile.Translate (BaseLang);
        //writeln(str1);
-       lang_langnames[length(lang_langnames) - 1] := trim(str2);
+       lang_langnames[length(lang_langnames) - 1] := trim(str1);
        MOfile.Destroy;
     end;
 end;
+*)
 
-procedure translate_stock (var lang_stocktext, default_stocktext: msestringarty;
+PROCEDURE translate_stock (VAR lang_stocktext, default_stocktext: msestringarty;
                            MOfile: TMOfile);
-var
+VAR
   x: integer;
   astrt: mseString;
-begin
-    setlength (lang_stocktext, length(default_stocktext));
+BEGIN
+   SetLength (lang_stocktext, Length (default_stocktext));
 
-    for x:= 0 to length (default_stocktext) - 1 do
-    begin
+   FOR x:= 0 TO High (default_stocktext) DO BEGIN
       astrt:= MOfile.translate (default_stocktext [x]);
-      astrt:= StringReplace (astrt, ',',  '‚', [rfReplaceAll]);
-      astrt:= StringReplace (astrt, #039, '‘', [rfReplaceAll]);
-      lang_stocktext [x]:= astrt;
-    end;
-end;
+      IF astrt <> '' THEN BEGIN
+        astrt:= StringReplace (astrt, ',',  '‚', [rfReplaceAll]);
+        astrt:= StringReplace (astrt, #039, '‘', [rfReplaceAll]);
+        lang_stocktext [x]:= astrt;
+      END
+      ELSE lang_stocktext [x]:= default_stocktext [x];
+   END;
+END;
 
 PROCEDURE buildlangtext (VAR LocalisationArea: Localisator);
  VAR
@@ -150,45 +245,85 @@ PROCEDURE buildlangtext (VAR LocalisationArea: Localisator);
     END;
  END;
 
-procedure createnewlangmo (alang: msestring);
-var
-  x, x2, x3: integer;
-  str1, str2: msestring;
-  lang_tmp: array of msestring;
-  MOfile: TMOfile;
+PROCEDURE createnewlang (alang: msestring);
+ VAR
+   x:               integer;
+   currentLangFile: msestring;
+   MOfile:          TMOfile;
+ BEGIN
+   // Patterns of language file names are:
+   // - for "standard" location (below applications directory):
+   //   LangDir = ExtractFilePath (ParamStr (0))+ LangDir+ directoryseparator+ Appname+ alang+ LangExt;
+   // - for files residing in Linux' system locale repository:
+   //   LangDir = "/usr/share/locale/"+ alang+ "/LC_MESSAGES"+ directoryseparator+ Appname+ LangExt;
+   // Different formats handled through "variable replacement"
+   // - Variable "LangPath"; Contains complete path of language file w/ place holders for variables,
+   //                        "Standard":   <applcation dirextory>/$Appname_$Language.<LangExt>
+   //                        Linux system: /usr/share/locale/$Language/LC_MESSAGES/$Appname.<LangExt>
+   // - Variable "Appname";  Content like currently
+   // - Variable "Language"; Conuains current "alang"
+   // Variables can be replaced by fpc's StrUtils function "StringReplace"
+   // Pattern of "LangPath" can determine search function required,
+   //   decided e.g. by occurrence of substring "LC_MESSAGES"
 
-begin
-  str1 := expandprmacros('${LANGDIR}')  + appname + alang + langext;
- 
-  if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
-  begin
-    buildlangtext (LocalisationActive);
-  end
-  else if fileexists(str1) then
-  begin
-  
-    MOfile:= TMOfile.Create (str1);
-    FOR x:= 0 TO pred (Length (LocalisationReference)) DO
-      translate_stock (LocalisationActive [x], LocalisationReference{Default} [x], MOfile);
+   IF assigned (customsetLangFilePattern) THEN LangDir:= customsetLangFilePattern ();
+   x:= System.Pos (LangFlag, LangDir);
 
-    MOfile.Destroy;
-  end;
-    
-  findmofiles();
-  lang_modalresult:=           LocalisationActive [0];
-  lang_modalresultnoshortcut:= LocalisationActive [ModalresultnoShortcutArea];
-  lang_stockcaption:=          LocalisationActive [StockcaptionArea];
-  lang_extended:=              LocalisationActive [ExtendedArea];
-  
-  IF assigned (realizeApplicationLanguages) THEN 
-  realizeApplicationLanguages;
-end;
+   IF x > 0 THEN BEGIN
+     Appname:= Copy (LangDir, succ (x), Length (LangDir));
+     System.Delete (LangDir, x, Length (LangDir));
+     x:= High (LangDir);
 
-initialization
-  Appname:= 'ideu_';
-  
+     WHILE (x > 0) AND (LangDir [x] <> directoryseparator) DO Dec (x);
+     IF x < High (LangDir) THEN BEGIN
+       Appname:= Copy (LangDir, succ (x), Length (LangDir));
+       System.Delete (LangDir, succ (x), Length (LangDir));
+     END;
+   END;
+{$ifdef Linux}
+   IF System.Pos (LinuxFlag, LangDir+ Appname) <> 0  // Linux System
+     THEN currentLangFile := LangDir+ alang+ Appname+ LangExt
+     ELSE currentLangFile := LangDir+ Appname+ alang+ LangExt;
+{$endif}
+
+//  writeln(currentLangFile);
+
+   IF (NOT FileExists (currentLangFile)) OR {(lowercase (alang) = BaseLang) OR} (Trim (alang) = '')
+   THEN BEGIN
+     buildlangtext (LocalisationActive);
+
+     lang_modalresult:=           getApplicationLanguage (ModalresultArea);
+     lang_modalresultnoshortcut:= getApplicationLanguage (ModalresultnoShortcutArea);
+     lang_stockcaption:=          getApplicationLanguage (StockcaptionArea);
+     lang_extended:=              getApplicationLanguage (ExtendedArea);
+
+     lang_langnames:= findmofiles;
+   END
+   ELSE IF FileExists (currentLangFile) THEN BEGIN
+     MOfile:= TMOfile.Create (currentLangFile);
+
+     FOR x:= 0 TO pred (Length (LocalisationReference)) DO
+       translate_stock (LocalisationActive [x], LocalisationReference [x], MOfile);
+
+     MOfile.Destroy;
+
+     lang_langnames:= findmofiles;
+   END;
+
+   lang_modalresult:=           getApplicationLanguage (ModalresultArea);
+   lang_modalresultnoshortcut:= getApplicationLanguage (ModalresultnoShortcutArea);
+   lang_stockcaption:=          getApplicationLanguage (StockcaptionArea);
+   lang_extended:=              getApplicationLanguage (ExtendedArea);
+
+   IF assigned (realizeApplicationLanguages) THEN realizeApplicationLanguages;
+ END;
+
+INITIALIZATION
+  Appname:= lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), '_'));
+  LangDir:= ExtractFilePath (ParamStr (0))+ LangDir+ directoryseparator;
+
   LocalisationReference:= Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
                                               en_stockcaption, en_extendedtext);
   LocalisationActive:=    Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
                                               en_stockcaption, en_extendedtext);
-end.
+END.

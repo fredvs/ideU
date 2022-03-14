@@ -13,7 +13,7 @@ program ideU;
 uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
-cthreads,  {$endif} {$endif}
+cthreads,   {$endif} {$endif}
   msestockobjects,
   mseconsts,
   captionideu,
@@ -60,6 +60,7 @@ cthreads,  {$endif} {$endif}
   msefont,
   potools,
   stringconsts;
+
 begin
   Gettext.GetLanguageIDs(MSELang, MSEFallbackLang);
 
@@ -70,13 +71,14 @@ begin
 
   registerfontalias('mseide_source', gui_getdefaultfontnames[stf_courier],
     fam_fixnooverwrite, 16);
-    
+
   registerfontalias('unifont_source', 'Unifont',
     fam_fixnooverwrite, 18);
-  
+
   application.createdatamodule(tguitemplatesmo, guitemplatesmo);
 
-  if application.terminated then Exit;
+  if application.terminated then
+    Exit;
 
   // application.createform(tsplashfo, splashfo);
 
@@ -108,23 +110,23 @@ begin
   application.createform(ttargetconsolefo, targetconsolefo);
   application.createform(tdialogfilesfo, dialogfilesfo);
   application.createform(tfindmessagefo, findmessagefo);
- 
+
   confcompilerfo.Close;
   confdebuggerfo.Close;
   conffpguifo.Close;
-    
+
   application.createform(theaderfo, headerfo);
   headerfo.Close;
- 
+
   application.createform(tmainfo, mainfo);
 
   application.createform(taboutfo, aboutfo);
-  
+
   createcpufo;
 
   //mainfo.ideureadconfig;
 
-  headerfo.icon := mainfo.icon;
+  headerfo.icon       := mainfo.icon;
   // splashfo.icon       := mainfo.icon;
   confideufo.icon     := mainfo.icon;
   confmseguifo.icon   := mainfo.icon;
@@ -139,7 +141,7 @@ begin
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
   conflangfo.icon     := mainfo.icon;
-  
+
   application.run;
 end.
 

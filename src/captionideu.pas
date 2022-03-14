@@ -353,7 +353,7 @@ type
     sc_includesubdir, sc_replace, sc_replaceall, sc_replacewith, sc_promptonreplace,
     sc_componentspalette, sc_findcomponent, sc_reset, sc_cstep, sc_stepinstruction,
     sc_nextinstruction, sc_restartdebugger, sc_togglebreakpoint, sc_tooglebreakpointenable,
-    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_host, sc_copyright,
+    sc_execlinehinton, sc_compileitfirst, sc_finish, sc_setasdefault, sc_usemo, sc_host, sc_copyright,
   
      sc_showasform, sc_deletewordatcursor, sc_lowercase, sc_uppercase,
      sc_comment, sc_uncomment, sc_convpas, sc_editbreakpoint, sc_addwatch,
@@ -392,7 +392,7 @@ type
  
 var
    lang_xstockcaption, lang_mainform, lang_settings, lang_actionsmodule, lang_projectoptionscon,
-     lang_projectoptions, lang_sourceform, lang_langnames: array of msestring;  
+     lang_projectoptions, lang_sourceform{, lang_langnames}: array of msestring;  
 
 const
   en_mainformtext: mainformaty           = (
@@ -834,6 +834,7 @@ const
     'Please compile it first.',                // sc_compileitfirst
     'Finish',                                  // sc_finish
     'Set as default',                          // sc_setasdefault
+    'Use MO files instead of PO files',        // sc_usemo
     'Host',                                    // sc_host
     'Copyright',                                // sc_copyright
     'Show as form',                              // sc_showasform 

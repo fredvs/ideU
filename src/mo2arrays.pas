@@ -10,13 +10,15 @@ VAR
   IndexSettings,
   IndexProjectoptions,
   IndexSourceform,
-  IndexXstockcaption : integer;
+  IndexXstockcaption: integer;
 
 IMPLEMENTATION
 
 USES
+  SysUtils,
   mo4stock,
-  captionideu;
+  projectoptionsform,  // <<<<<<<<<<< !!!!!!!!!!!
+  captionideu;         // <<<<<<<<<<< !!!!!!!!!!!
 
 PROCEDURE setApplicationLanguages;
  BEGIN
@@ -27,6 +29,16 @@ PROCEDURE setApplicationLanguages;
    lang_projectoptions:=    getApplicationLanguage (IndexProjectoptions);
    lang_sourceform:=        getApplicationLanguage (IndexSourceform);
    lang_xstockcaption:=     getApplicationLanguage (IndexXstockcaption);
+ END;
+
+FUNCTION setLangFilePattern: string;
+ BEGIN
+{$ifdef language_files_in_linux_locale_dirs}
+   Appname:= lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), ''));
+   Result:= '/usr/share/locale/'+ LangFlag+ '/LC_MESSAGES/'+ Appname;  // w/o LangExt!
+{$else}
+   Result:= expandprmacros ('${LANGDIR}')+ Appname+ LangFlag;  // w/o LangExt!
+{$endif}
  END;
 
 INITIALIZATION
@@ -48,4 +60,5 @@ INITIALIZATION
   IndexXstockcaption:=  addApplicationStrings (en_xstockcaption,         lang_xstockcaption);
 {$endif}
   realizeApplicationLanguages:= @setApplicationLanguages;
+  customsetLangFilePattern:= @setLangFilePattern;
 END.

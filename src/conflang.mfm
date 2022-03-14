@@ -2,19 +2,17 @@ object conflangfo: tconflangfo
   visible = False
   bounds_x = 405
   bounds_y = 266
-  bounds_cx = 331
-  bounds_cy = 260
-  bounds_cxmin = 331
-  bounds_cymin = 260
-  bounds_cxmax = 331
-  bounds_cymax = 260
+  bounds_cx = 570
+  bounds_cy = 222
+  bounds_cxmin = 570
+  bounds_cymin = 222
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    331
-    260
+    570
+    222
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
@@ -25,11 +23,10 @@ object conflangfo: tconflangfo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
-    bounds_x = 236
+    bounds_x = 481
     bounds_y = 6
     bounds_cx = 78
     bounds_cy = 26
-    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'OK'
     onexecute = oncok
@@ -39,18 +36,19 @@ object conflangfo: tconflangfo
     frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
     taborder = 1
-    bounds_x = 33
-    bounds_y = 190
+    bounds_x = 20
+    bounds_y = 13
     statfile = mainfo.mainstatfile
   end
   object gridlang: twidgetgrid
-    frame.localprops = []
+    frame.levelo = 0
+    frame.localprops = [frl_levelo]
     frame.localprops1 = []
     taborder = 2
     bounds_x = 20
-    bounds_y = 39
+    bounds_y = 40
     bounds_cx = 290
-    bounds_cy = 131
+    bounds_cy = 130
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     rowcount = 7
     datacols.count = 3
@@ -159,11 +157,10 @@ object conflangfo: tconflangfo
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     taborder = 3
-    bounds_x = 34
+    bounds_x = 311
     bounds_y = 6
-    bounds_cx = 132
+    bounds_cx = 164
     bounds_cy = 26
-    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'Po tools'
     onexecute = ontools
@@ -171,8 +168,8 @@ object conflangfo: tconflangfo
   object lsetasdefault: tlabel
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     taborder = 4
-    bounds_x = 51
-    bounds_y = 175
+    bounds_x = 38
+    bounds_y = -2
     bounds_cx = 263
     bounds_cy = 42
     caption = 'Set as default'
@@ -190,11 +187,106 @@ object conflangfo: tconflangfo
       2
     )
     taborder = 5
-    bounds_x = 33
-    bounds_y = 224
+    bounds_x = 43
+    bounds_y = 186
     bounds_cx = 201
     bounds_cy = 17
     statfile = mainfo.mainstatfile
     onchange = onchange
+  end
+  object fontsize: tintegeredit
+    frame.caption = 'Height '
+    frame.captiontextflags = [tf_bottom]
+    frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
+    frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+    frame.template = mainfo.tframecomp3
+    frame.outerframe = (
+      0
+      18
+      16
+      0
+    )
+    taborder = 6
+    hint = 'Font height for all ideU text'
+    bounds_x = 517
+    bounds_y = 175
+    bounds_cx = 46
+    bounds_cy = 39
+    optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
+    optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
+    value = 12
+    valuedefault = 12
+    valuemin = 1
+    valuemax = 1000
+    reffontheight = 15
+  end
+  object lfontselected: tlabel
+    taborder = 7
+    bounds_x = 325
+    bounds_y = 187
+    bounds_cx = 20
+    bounds_cy = 15
+    caption = '     '
+    reffontheight = 15
+  end
+  object gridlistfont: tstringgrid
+    optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_noclampinview]
+    frame.levelo = 0
+    frame.sbvert.width = 14
+    frame.sbvert.buttonminlength = 14
+    frame.sbvert.face.localprops = []
+    frame.sbvert.face1.localprops = []
+    frame.sbvert.facebutton.localprops = []
+    frame.sbhorz.width = 10
+    frame.sbhorz.face.localprops = []
+    frame.sbhorz.face1.localprops = []
+    frame.sbhorz.facebutton.localprops = []
+    frame.localprops = [frl_levelo, frl_fileft, frl_fitop, frl_firight, frl_fibottom]
+    frame.localprops1 = []
+    face.localprops = []
+    taborder = 8
+    bounds_x = 319
+    bounds_y = 40
+    bounds_cx = 236
+    bounds_cy = 130
+    optionsgrid = [og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_savestate, og_colchangeontabkey, og_wrapcol, og_mousescrollcol]
+    datacols.count = 1
+    datacols.colorselect = 16763002
+    datacols.options = [co_readonly, co_savevalue, co_savestate, co_mousescrollrow]
+    datacols.optionsedit1 = [oe1_noselectall, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+    datacols.items = <    
+      item
+        colorselect = 16763002
+        width = 219
+        options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+        optionsedit1 = [oe1_noselectall, oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
+        valuefalse = '0'
+        valuetrue = '1'
+      end>
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        frame.localprops = []
+        frame.localprops1 = []
+        height = 16
+        numstep = 1
+        captions.count = 1
+        captions.items = <        
+          item
+            caption = 'Compatible Fonts'
+            face.localprops = []
+          end>
+      end>
+    rowcolors.count = 3
+    rowcolors.items = (
+      2752308
+      16744576
+      28173
+    )
+    zebra_start = 1
+    datarowheight = 17
+    statpriority = 1
+    oncellevent = ongridfontcellev
+    reffontheight = 15
   end
 end

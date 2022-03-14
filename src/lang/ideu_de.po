@@ -17,9 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "English [en]"
-msgstr "Deutsch [de]"
-
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
@@ -96,121 +93,121 @@ msgid "Wrong encoding can damage your source files."
 msgstr "Eine falsche Kodierung kann Ihre Quelldateien beschädigen."
 
 msgid "Do you wish to set encoding to"
-msgstr "Möchten Sie die Kodierung auf setzen"
+msgstr "Möchten Sie die Kodierung setzen auf"
 
 msgid "*** WARNING ***"
 msgstr "*** WARNUNG ***"
 
 msgid "Hangup"
-msgstr "Auflegen"
+msgstr "Aufgelegt"
 
 msgid "Interrupt"
-msgstr "Unterbrechen"
+msgstr "Unterbrechung"
 
 msgid "Leave"
-msgstr "Aufhören"
+msgstr "Verlassen"
 
 msgid "Illegal instruction"
-msgstr "Illegaler Unterricht"
+msgstr "Unzulässiger Befehl"
 
 msgid "Trace trap"
-msgstr "Spurenfalle"
+msgstr "Unterbrechung Ablaufverfolgung"
 
 msgid "Abort Process"
-msgstr "Abbrechen"
+msgstr "Abbruchbefehl"
 
 msgid "BUS error"
 msgstr "BUS-Fehler"
 
 msgid "Floating-point exception"
-msgstr "Gleitkomma-Ausnahme"
+msgstr "Gleitkommafehler"
 
 msgid "Kill"
-msgstr "Töten"
+msgstr "Zwangsabbruch"
 
 msgid "User-defined signal 1"
 msgstr "Benutzerdefiniertes Signal 1"
 
 msgid "Segmentation violation"
-msgstr "Segmentierungsverletzung"
+msgstr "Unzulässiger Speicherzugriff"
 
 msgid "User-defined signal 2"
 msgstr "Benutzerdefiniertes Signal 2"
 
 msgid "Broken pipe"
-msgstr "Rohrbruch"
+msgstr "Pipe-Fehler"
 
 msgid "Alarm clock"
-msgstr "Wecker"
+msgstr "Alarmzeitgebersignal"
 
 msgid "Termination"
-msgstr "Beendigung"
+msgstr "Abbruchanforderung"
 
 msgid "Stack fault"
-msgstr "Stack-Fehler"
+msgstr "Stapelfehler"
 
 msgid "Child status has changed"
-msgstr "Kinderstatus hat sich geändert"
+msgstr "Kindprozess beendet"
 
 msgid "Proceed"
-msgstr "Fortfahren"
+msgstr "Fortsetzen"
 
 msgid "Stop, unblockable"
-msgstr "Stopp nicht blockierbar"
+msgstr "Stop, nicht blockierbar"
 
 msgid "Keyboard stop"
-msgstr "Tastaturstopp"
+msgstr "Stop von Tastatur"
 
 msgid "Background read from tty"
-msgstr "Hintergrund von tty gelesen"
+msgstr "Terminaleingabe für Hintergrund"
 
 msgid "Background write to tty"
-msgstr "Hintergrund an tty schreiben"
+msgstr "Terminalausgabe für Hintergrund"
 
 msgid "Urgent condition on socket"
-msgstr "Dringender Zustand an Steckdose"
+msgstr "Dringlicher Zustand an Socket"
 
 msgid "CPU limit exceeded"
-msgstr "CPU Limit überschritten"
+msgstr "CPU-Begrenzung überschritten"
 
 msgid "File size limit exceeded"
-msgstr "Dateigrößenbeschränkung überschritten"
+msgstr "Dateigrößengrenze überschritten"
 
 msgid "Virtual alarm clock"
-msgstr "Virtueller Wecker"
+msgstr "Alarm virtueller Zeitgeber"
 
 msgid "Profiling alarm clock"
-msgstr "Profiling-Wecker"
+msgstr "Alarm Profiling-Zeitgeber"
 
 msgid "Window size change"
-msgstr "Fenstergröße ändern"
+msgstr "Fenstergrößenänderung"
 
 msgid "I/O now possible"
-msgstr "I/O jetzt möglich"
+msgstr "Ein/Ausgabe freigegeben"
 
 msgid "Power failure restart"
-msgstr "Neustart bei Stromausfall"
+msgstr "Spannungsausfall"
 
 msgid "Configure ideU"
 msgstr "ideU konfigurieren"
 
 msgid "Process ID"
-msgstr "Prozess ID"
+msgstr "Prozess-ID"
 
 msgid "Attach to process"
-msgstr "An Prozess anhängen"
+msgstr "Mit Prozess verbinden"
 
 msgid "Unknown moduleclass for "
 msgstr "Unbekannte Modulklasse für "
 
 msgid "Inherited component "
-msgstr "Geerbte Komponente"
+msgstr "Ererbte Komponente"
 
 msgid "can not be deleted."
 msgstr "kann nicht gelöscht werden."
 
 msgid "Make aborted."
-msgstr "Abbruch machen."
+msgstr "Erstellung abgebrochen."
 
 msgid "Download aborted."
 msgstr "Download abgebrochen."
@@ -222,10 +219,10 @@ msgid "Error: Timeout."
 msgstr "Fehler: Zeitüberschreitung."
 
 msgid "Making."
-msgstr "Herstellung."
+msgstr "Erstellung."
 
 msgid "Make not running."
-msgstr "Nicht laufen lassen."
+msgstr "Erstellung läuft nicht."
 
 msgid "Downloading."
 msgstr "Wird heruntergeladen."
@@ -234,13 +231,13 @@ msgid "Download not running."
 msgstr "Download läuft nicht."
 
 msgid "running."
-msgstr "Laufen."
+msgstr "Läuft."
 
 msgid "Script"
 msgstr "Skript"
 
 msgid "Recursive form inheritance of "
-msgstr "Rekursive Formvererbung von "
+msgstr "Rekursive Formularvererbung von "
 
 msgid "Component "
 msgstr "Komponente"
@@ -276,7 +273,7 @@ msgid "does not exist."
 msgstr "ist nicht vorhanden."
 
 msgid "Do you wish to delete the event?"
-msgstr "Möchten Sie die Veranstaltung löschen?"
+msgstr "Wollen Sie das Ereignis löschen?"
 
 msgid "WARNING"
 msgstr "WARNUNG"
@@ -285,7 +282,7 @@ msgid "Method"
 msgstr "Methode"
 
 msgid "has different parameters."
-msgstr "hat verschiedene Parameter."
+msgstr "hat unterschiedliche Parameter."
 
 msgid "A module "
 msgstr "Ein Modul"
@@ -294,13 +291,13 @@ msgid "is already open."
 msgstr "ist bereits geöffnet."
 
 msgid "Unresolved reference(s) to"
-msgstr "Ungelöste Referenz(en) auf"
+msgstr "Unaufgelöste Referenz(en) auf"
 
 msgid "Module(s):"
 msgstr "Modul(e):"
 
 msgid "Can not read formfile "
-msgstr "Formdatei kann nicht gelesen werden "
+msgstr "Formulardatei kann nicht gelesen werden "
 
 msgid "Invalid component name."
 msgstr "Ungültiger Komponentenname."
@@ -318,16 +315,16 @@ msgid "MSE Program"
 msgstr "MSE-Programm"
 
 msgid "MSE Unit"
-msgstr "MSE-Einheit"
+msgstr "MSE-Unit"
 
 msgid "MSE Textfile"
 msgstr "MSE-Textdatei"
 
 msgid "Mainform"
-msgstr "Hauptform"
+msgstr "Hauptformular"
 
 msgid "Simple Form"
-msgstr "Einfache Form"
+msgstr "Einfaches Formular"
 
 msgid "Docking Form"
 msgstr "Andockformular"
@@ -339,28 +336,28 @@ msgid "Subform"
 msgstr "Unterformular"
 
 msgid "Scrollboxform"
-msgstr "Scrollboxform"
+msgstr "Scrollbox-Formular"
 
 msgid "Tabform"
-msgstr "Tabsform"
+msgstr "Formular mit Reitern"
 
 msgid "Dockpanel"
 msgstr "Dockpanel"
 
 msgid "Report"
-msgstr "Prüfbericht"
+msgstr "Bericht"
 
 msgid "Scriptform"
-msgstr "Schriftform"
+msgstr "Skript-Formular"
 
 msgid "Inherited Form"
-msgstr "Geerbte Form"
+msgstr "Ererbtes Formular"
 
 msgid "Do you want to replace the settings by"
 msgstr "Möchten Sie die Einstellungen ersetzen durch"
 
 msgid "Do you want to overwrite?"
-msgstr "Möchtest du überschreiben?"
+msgstr "Möchten Sie überschreiben?"
 
 msgid "Unknown"
 msgstr "Unbekannt"
@@ -369,40 +366,40 @@ msgid "Startup"
 msgstr "Anlaufen"
 
 msgid "GDB died"
-msgstr "GDB gestorben"
+msgstr "GDB abgestürzt"
 
 msgid "Breakpoint hit"
-msgstr "Breakpoint-Treffer"
+msgstr "Unterbrechungsstelle erreicht"
 
 msgid "Watchpoint triggered"
 msgstr "Watchpoint ausgelöst"
 
 msgid "Read Watchpoint triggered"
-msgstr "Watchpoint lesen ausgelöst"
+msgstr "Lese-Watchpoint ausgelöst"
 
 msgid "Access Watchpoint triggered"
-msgstr "Zugriff auf Watchpoint ausgelöst"
+msgstr "Zugriffs-Watchpoint ausgelöst"
 
 msgid "End stepping range"
-msgstr "Endschaltbereich"
+msgstr "Ende schrittweise Ausführung"
 
 msgid "Function finished"
 msgstr "Funktion beendet"
 
 msgid "Exited normally"
-msgstr "Normalerweise beendet"
+msgstr "Normal beendet"
 
 msgid "Exited"
-msgstr "beendet"
+msgstr "verlassen"
 
 msgid "Detached"
-msgstr "Löste sich"
+msgstr "Verbindung gelöst"
 
 msgid "Signal received"
 msgstr "Signal empfangen"
 
 msgid "Stop error"
-msgstr "Stopp-Fehler"
+msgstr "Stop mit Fehler"
 
 msgid "Can not read project"
 msgstr "Projekt kann nicht gelesen werden"
@@ -411,10 +408,10 @@ msgid "Object Inspector"
 msgstr "Objektinspektor"
 
 msgid "Store Component"
-msgstr "Komponentenlager"
+msgstr "Komponentenablage"
 
 msgid "Attaching Process"
-msgstr "Anhängeprozess"
+msgstr "Verbinde mit Prozess"
 
 msgid "Loading"
 msgstr "Wird geladen"
@@ -432,7 +429,7 @@ msgid "Formfile for"
 msgstr "Formular für"
 
 msgid "Formfiles"
-msgstr "Formdateien"
+msgstr "Formulardateien"
 
 msgid "Recursive form hierarchy for "
 msgstr "Rekursive Formularhierarchie für "
@@ -453,7 +450,7 @@ msgid "Downloaded"
 msgstr "Heruntergeladen"
 
 msgid "Start gdb server command "
-msgstr "Gdb-Server-Befehl starten "
+msgstr "Gdb-Server-Startbefehl "
 
 msgid "Start gdb Server"
 msgstr "gdb-Server starten"
@@ -462,16 +459,16 @@ msgid "gdb server start error"
 msgstr "gdb-Server-Startfehler"
 
 msgid "gdb server start canceled."
-msgstr "gdb-Serverstart abgebrochen."
+msgstr "Start gdb-Server abgebrochen."
 
 msgid "Can not run start gdb command."
-msgstr "Der Befehl start gdb kann nicht ausgeführt werden."
+msgstr "Der Befehl 'Start gdb' kann nicht ausgeführt werden."
 
 msgid "Uploadcommand "
-msgstr "Hochladenbefehl"
+msgstr "Hochladebefehl"
 
 msgid "Download ***ERROR***"
-msgstr "Download Fehler***"
+msgstr "Download ***Fehler***"
 
 msgid "Download finished."
 msgstr "Download abgeschlossen."
@@ -483,7 +480,7 @@ msgid "Select ancestor"
 msgstr "Vorfahren auswählen"
 
 msgid "New form"
-msgstr "Neue Form"
+msgstr "Neues Formular"
 
 msgid "Pascal Files"
 msgstr "Pascal-Dateien"
@@ -522,19 +519,19 @@ msgid "Process terminated"
 msgstr "Prozess beendet"
 
 msgid "Process terminated normally."
-msgstr "Prozess wurde normal beendet."
+msgstr "Prozess normal beendet."
 
 msgid "Make ***ERROR***"
 msgstr "Make ***FEHLER***"
 
 msgid "Make OK."
-msgstr "Gut machen."
+msgstr "Erstellung OK."
 
 msgid "Source has changed, do you wish to remake project?"
-msgstr "Quelle hat sich geändert möchten Sie das Projekt neu erstellen?"
+msgstr "Quelle hat sich geändert, möchten Sie das Projekt neu erstellen?"
 
 msgid "Load Window Layout"
-msgstr "Fensterlayout laden"
+msgstr "Fensteranordnung laden"
 
 msgid "Docking area"
 msgstr "Andockbereich"
@@ -546,7 +543,7 @@ msgid "There are modifications in edit buffer also."
 msgstr "Es gibt auch Änderungen im Bearbeitungspuffer."
 
 msgid "Do you wish to reload from disk?"
-msgstr "Möchten Sie von Diskette neu laden?"
+msgstr "Möchten Sie von Platte neu laden?"
 
 msgid "<none>"
 msgstr "<keiner>"
@@ -561,7 +558,7 @@ msgid "<new>"
 msgstr "<Neu>"
 
 msgid "Syntaxdeffile:"
-msgstr "Syntaxdeffile:"
+msgstr "Syntaxdefinitionsdatei:"
 
 msgid "Text"
 msgstr "Text"
@@ -573,10 +570,10 @@ msgid "Cancel?"
 msgstr "Abbrechen?"
 
 msgid "Do you wish to to replace this occurence?"
-msgstr "Möchten Sie dieses Ereignis ersetzen?"
+msgstr "Möchten Sie dieses Auftreten ersetzen?"
 
 msgid "Go to line number:"
-msgstr "Go to line number:"
+msgstr "Gehe zu Zeile Nummer:"
 
 msgid "Find line"
 msgstr "Zeile suchen"
@@ -597,13 +594,13 @@ msgid "System layout"
 msgstr "Systemaufbau"
 
 msgid "Universal path layout"
-msgstr "Universelles Pfadlayout"
+msgstr "Universelles Pfad-Layout"
 
 msgid "No Z order handling"
-msgstr "Keine Z-Auftragsabwicklung"
+msgstr "Keine Z-Anordnung"
 
 msgid "Use shift key to select a word"
-msgstr "Umschalttaste um Wort auszuwählen"
+msgstr "Umschalttaste, um Wort auszuwählen"
 
 msgid "Auto focus in main-menu"
 msgstr "Autofokus im Hauptmenü"
@@ -621,34 +618,34 @@ msgid "Font name"
 msgstr "Schriftname"
 
 msgid "No confirmation to delete row"
-msgstr "Keine Bestätigung zum Löschen Zeile"
+msgstr "Keine Bestätigung zum Löschen einer Zeile"
 
 msgid "Blinking caret"
-msgstr "Blinkendes Caret-Symbol"
+msgstr "Blinkender Text-Cursor"
 
 msgid "Repaint canvas"
-msgstr "Canvas neu lackieren"
+msgstr "Canvas neu zeichnen"
 
 msgid "Source Editor"
 msgstr "Quelleneditor"
 
 msgid "Use those options instead of project options"
-msgstr "Verwenden Sie diese Optionen"
+msgstr "Diese statt der Projekt-Optionen verwenden"
 
 msgid "Add space after comma -> auto-parsing"
-msgstr "Leerzeichen nach Komma > Auto-Parsing"
+msgstr "Leerzeichen nach Komma -> Auto-Parsing"
 
 msgid "When a file has changed"
 msgstr "Wenn sich eine Datei geändert hat:"
 
 msgid "No dialog box => reload the new one"
-msgstr "Kein Dialog => Neu laden"
+msgstr "Kein Dialog => Neue Datei laden"
 
 msgid "No dialog box => keep the old one"
-msgstr "Kein Dialog => das Alte behalten"
+msgstr "Kein Dialog => Alte Datei behalten"
 
 msgid "A dialog box ask what to do..."
-msgstr "Ein Dialog fragt was zu tun ist..."
+msgstr "Dialoganfrage, was zu tun ist..."
 
 msgid "Rectangle around multi-select"
 msgstr "Rechteck um Mehrfachauswahl"
@@ -657,7 +654,7 @@ msgid "Project options"
 msgstr "Projektoptionen"
 
 msgid "Editor"
-msgstr "Herausgeber"
+msgstr "Editor"
 
 msgid "Right margin line"
 msgstr "Rechter Rand"
@@ -666,13 +663,13 @@ msgid "Mark Brackets"
 msgstr "Klammern markieren"
 
 msgid "Line Numbers"
-msgstr "Linien Nummern"
+msgstr "Zeilennummern"
 
 msgid "Mark Pairwords"
-msgstr "Paarwörter markieren"
+msgstr "Wortpaare markieren"
 
 msgid "Trim trailing whitespace"
-msgstr "Nachgestellte abschneiden"
+msgstr "Anhängende Leerz. abschneiden"
 
 msgid "Auto Indent"
 msgstr "Automatischer Einzug"
@@ -681,43 +678,43 @@ msgid "No Source Editor"
 msgstr "Kein Quelleneditor"
 
 msgid "Tab indent"
-msgstr "Tab-Einzug"
+msgstr "Einzug mit Tabulator"
 
 msgid "Space tab"
-msgstr "Tab Raum"
+msgstr "Leerzeichen für Tabulator"
 
 msgid "Show tabs"
-msgstr "Tabs Anzeigen"
+msgstr "Tabulatorzeichen anzeigen"
 
 msgid "Anti aliased font"
-msgstr "Anti-Aliasing-Schriftart"
+msgstr "Schrift mit Antialiasing"
 
 msgid "Encoding"
-msgstr "Codierung"
+msgstr "Kodierung"
 
 msgid "Mark Color"
-msgstr "Farbe der Marke"
+msgstr "Markierungsfarbe"
 
 msgid "Stat Color"
-msgstr "Farbe der Stat"
+msgstr "Statusfarbe"
 
 msgid "Scr Y"
 msgstr "Bild. Y"
 
 msgid "Nb char"
-msgstr "Anz. Char."
+msgstr "Zeichenanzahl"
 
 msgid "EOL Style"
-msgstr "EOL-Stil"
+msgstr "Zeilenende-Stil"
 
 msgid "Backup"
 msgstr "Sicherung"
 
 msgid "Tabstops"
-msgstr "Tabstopps"
+msgstr "Tabulatorpositionen"
 
 msgid "ExtS"
-msgstr "Zus.Pla."
+msgstr "Zeilenabstand"
 
 msgid "Extra space between lines"
 msgstr "Zusätzlicher Abstand zwischen den Zeilen"
@@ -732,7 +729,7 @@ msgid "Font"
 msgstr "Schriftart"
 
 msgid "Font Bk. color"
-msgstr "Schriftfarbe Hintergrunds"
+msgstr "Schriftfarbe Hintergrund"
 
 msgid "Font color"
 msgstr "Schriftfarbe"
@@ -750,10 +747,10 @@ msgid "Code Templates"
 msgstr "Codevorlagen"
 
 msgid "Code template directories, file extension = .mct"
-msgstr "Codevorlagenverzeichnisse Dateierweiterung = .mct"
+msgstr "Dateierweiterung für Codevorlagenverzeichnis = .mct"
 
 msgid "Select unit directory"
-msgstr "Geräteverzeichnis auswählen"
+msgstr "Unit-Verzeichnis auswählen"
 
 msgid "&Debugger"
 msgstr "&Debugger"
@@ -762,10 +759,10 @@ msgid "Project Debugger"
 msgstr "Projekt-Debugger"
 
 msgid "Search &Directories"
-msgstr "&Verzeichnisse suchen"
+msgstr "Such&verzeichnisse"
 
 msgid "Search path to get infos about code"
-msgstr "Suchpfad um Infos zum Code zu erhalten"
+msgstr "Suchpfad  für Informationen zum Code"
 
 msgid "Select source directory"
 msgstr "Quellverzeichnis auswählen"
@@ -777,7 +774,7 @@ msgid "Select source base directory"
 msgstr "Quellbasisverzeichnis auswählen"
 
 msgid "Defi&nes"
-msgstr "Def&iniert"
+msgstr "Def&initionen"
 
 msgid "&Signals"
 msgstr "&Signale"
@@ -789,34 +786,34 @@ msgid "&Target"
 msgstr "&Ziel"
 
 msgid "Start gdb server command attach target"
-msgstr "Starten Sie den gdb-Serverbefehl zum Anhängen des Ziels"
+msgstr "gdb-Serverbefehl 'Verbinden mit Ziel' starten"
 
 msgid "No wait for exit"
-msgstr "Kein Warten auf den Ausgang"
+msgstr "Kein Warten auf Beendigung"
 
 msgid "Before connect gdb script"
-msgstr "gdb-Skript von vor der Verbindung"
+msgstr "gdb-Skript vor dem Verbinden"
 
 msgid "Before load gdb script"
 msgstr "gdb-Skript von vor dem Laden"
 
 msgid "Before run gdb script"
-msgstr "gdb-Skript von vor der Ausführung"
+msgstr "gdb-Skript vor Ausführung"
 
 msgid "After connect gdb script"
-msgstr "gdb-Skript von after connect"
+msgstr "gdb-Skript nach Verbindung"
 
 msgid "After load gdb script"
-msgstr "gdb-Skript von nach dem Laden"
+msgstr "gdb-Skript nach dem Laden"
 
 msgid "Start gdb server command run target"
-msgstr "Starten gdb-Serverbefehl Ziels ausführen"
+msgstr "gdb-Serverbefehl 'Ziel ausführen' starten"
 
 msgid "Wait before connect"
-msgstr "Warten bevor Verbindung"
+msgstr "Warten vor Verbindung"
 
 msgid "Start once"
-msgstr "Einmal anfangen"
+msgstr "Einmal starten"
 
 msgid "Download command"
 msgstr "Befehl zum Herunterladen"
@@ -828,10 +825,10 @@ msgid "Simulator"
 msgstr "Simulator"
 
 msgid "gdb download"
-msgstr "gdb herunterladen"
+msgstr "Herunterladen durch gdb"
 
 msgid "Startup BKPT"
-msgstr "Startup BKPT"
+msgstr "Unterbrechung nach Start"
 
 msgid "Target connection"
 msgstr "Zielverbindung"
@@ -843,31 +840,31 @@ msgid "Always download before run"
 msgstr "Immer vor dem Ausführen herunterladen"
 
 msgid "Load Timeout"
-msgstr "Zeitüberschreitung beim Laden"
+msgstr "Ladedauerbeschränkung"
 
 msgid "&Extern Console"
 msgstr "&Externe Konsole"
 
 msgid "&Stop on Exc"
-msgstr "&Aus.halt."
+msgstr "Halt bei &Ausnahme"
 
 msgid "Stop on exceptions"
 msgstr "Bei Ausnahme anhalten"
 
 msgid "&Acti-Break"
-msgstr "&Paus.akti."
+msgstr "Bei Unterbr. &aktivieren"
 
 msgid "Activate on Break"
-msgstr "Bei Pause aktivieren"
+msgstr "Bei Unterbrechung aktivieren"
 
 msgid "&Value Hints"
-msgstr "&Wert Hinweise"
+msgstr "&Wert-Hinweise"
 
 msgid "Call GUI_DEB"
-msgstr "Rufen GUI_DEB"
+msgstr "GUI-Debugger aufrufen"
 
 msgid "Release mouse grab by target stop. gdb sometimes crashes with this option."
-msgstr "Lassen Sie den Mausgriff am Zielstopp los. gdb stürzt manchmal mit dieser Option ab."
+msgstr "Mauszeiger bei Stop Zielprogramm freigeben. gdb stürzt mit dieser Option manchmal ab."
 
 msgid "Set TT&Y"
 msgstr "TT&Y einstellen"
@@ -882,7 +879,7 @@ msgid "&FPC bugs"
 msgstr "&FPC-Fehler"
 
 msgid "Use workarounds for FPC/gdb bugs"
-msgstr "Verwenden Sie Problemumgehungen für FPC/gdb-Fehler"
+msgstr "Problemumgehungen für FPC/gdb-Fehler verwenden"
 
 msgid "Debug &target"
 msgstr "Debug-Ziel"
@@ -891,7 +888,7 @@ msgid "xterm command"
 msgstr "xterm-Befehl"
 
 msgid "Run command"
-msgstr "&Führen Befehl"
+msgstr "Aus&führen-Befehl"
 
 msgid "Default Debugger"
 msgstr "&Standard-Debugger"
@@ -900,10 +897,10 @@ msgid "Debug &options"
 msgstr "Debug-Optionen"
 
 msgid "&Make"
-msgstr "&Machen"
+msgstr "&Make"
 
 msgid "Default make col"
-msgstr "Standard machen"
+msgstr "Standard-Erstellung"
 
 msgid "Mainfile"
 msgstr "Hauptdatei"
@@ -912,7 +909,7 @@ msgid "Select mainfile"
 msgstr "Hauptdatei auswählen"
 
 msgid "Targetfile name"
-msgstr "Name Zieldatei"
+msgstr "Zieldateiname"
 
 msgid "Select target file"
 msgstr "Zieldatei auswählen"
@@ -921,7 +918,7 @@ msgid "Default Compiler"
 msgstr "Standard-Compiler"
 
 msgid "Select make command"
-msgstr "Wählen Befehl für Machen"
+msgstr "Make-Befehl auswählen"
 
 msgid "Show Command Line"
 msgstr "Befehlszeile anzeigen"
@@ -933,10 +930,10 @@ msgid "Close message"
 msgstr "Nachrichten schließen"
 
 msgid "Check head"
-msgstr "Überprüfen Header"
+msgstr "Header prüfen"
 
 msgid "Check method headers"
-msgstr "Überprüfen Sie die Methodenheader"
+msgstr "Überprüfen der Methodenheader"
 
 msgid "Project Compiler"
 msgstr "Projekt-Compiler"
@@ -945,13 +942,13 @@ msgid "Command before"
 msgstr "Befehl vorher"
 
 msgid "Make options"
-msgstr "Optionen machen"
+msgstr "Make-Optionen"
 
 msgid "Directories"
 msgstr "Verzeichnisse"
 
 msgid "Command after"
-msgstr "Befehl nach"
+msgstr "Befehl danach"
 
 msgid "Exe Extension"
 msgstr "Exe-Erweiterung"
@@ -960,19 +957,19 @@ msgid "Comments"
 msgstr "Kommentare"
 
 msgid "Make Directory"
-msgstr "Verzeichnis Machen"
+msgstr "Make-Verzeichnis"
 
 msgid "Select make directory"
-msgstr "Verzeichnis Machen"
+msgstr "Make-Verzeichnis auswählen"
 
 msgid "Error Color"
 msgstr "Fehlerfarbe"
 
 msgid "Warning Color"
-msgstr "Warnungfarbe"
+msgstr "Warnungsfarbe"
 
 msgid "Note Color"
-msgstr "Notizfarbe"
+msgstr "Anmerkungsfarbe"
 
 msgid "Form designer"
 msgstr "Formular-Designer"
@@ -984,7 +981,7 @@ msgid "Hint Color"
 msgstr "Hinweisfarbe"
 
 msgid "Strip ESC"
-msgstr "Strip ESC"
+msgstr "ESC entfernen"
 
 msgid "Strip ESC sequences in Messages and Terminal form"
 msgstr "ESC-Sequenzen in Nachrichten und Terminal entfernen"
@@ -996,7 +993,7 @@ msgid "Purpose"
 msgstr "Zweck"
 
 msgid "Message output file"
-msgstr "Ausgabedatei Nachrichten"
+msgstr "Ausgabedatei für Nachrichten"
 
 msgid "Select target file"
 msgstr "Zieldatei auswählen"
@@ -1017,13 +1014,13 @@ msgid "User Colors"
 msgstr "Benutzerfarben"
 
 msgid "Copy setcolormapvalue code to clipboard"
-msgstr "Kopieren Code setcolormapvalue in Zwischenablage"
+msgstr "setcolormapvalue-Code in Zwischenablage kopieren"
 
 msgid "F&ormat Macros"
-msgstr "Makros formatieren"
+msgstr "F&ormat-Makros"
 
 msgid "Used by formatfloatmse() and formatdatetimemse()"
-msgstr "Used by formatfloatmse() and formatdatetimemse()"
+msgstr "Von formatfloatmse() und formatdatetimemse() benutzt"
 
 msgid "Templates"
 msgstr "Vorlagen"
@@ -1041,19 +1038,19 @@ msgid "New File"
 msgstr "Neue Datei"
 
 msgid "New Form"
-msgstr "Neue Form"
+msgstr "Neues Formular"
 
 msgid "Storage"
-msgstr "Lagerung"
+msgstr "Ablage"
 
 msgid "Infos"
-msgstr "Infos"
+msgstr "Information"
 
 msgid "Full name of project"
 msgstr "Vollständiger Projektname"
 
 msgid "Creator"
-msgstr "Schöpfer"
+msgstr "Ersteller"
 
 msgid "License"
 msgstr "Lizenz"
@@ -1065,7 +1062,7 @@ msgid "is invalid"
 msgstr "ist ungültig"
 
 msgid "Format error"
-msgstr "Format Fehler"
+msgstr "Formatfehler"
 
 msgid "Value is required"
 msgstr "Wert wird benötigt"
@@ -1080,13 +1077,13 @@ msgid "Max"
 msgstr "Max"
 
 msgid "Range error"
-msgstr "Bereichs Fehler"
+msgstr "Bereichsfehler"
 
 msgid "&Undo"
 msgstr "&Rückgängig"
 
 msgid "&Redo"
-msgstr "&Redo"
+msgstr "Wiede&rholen"
 
 msgid "&Copy"
 msgstr "&Kopieren"
@@ -1110,16 +1107,16 @@ msgid "&Delete Row"
 msgstr "Zeile &löschen"
 
 msgid "&Dir"
-msgstr "&Dir"
+msgstr "&Verzeichnis"
 
 msgid "&Home"
 msgstr "&Home"
 
 msgid "&Up"
-msgstr "&Auf"
+msgstr "&Hoch"
 
 msgid "&New"
-msgstr "Dir &neu"
+msgstr "&neues Verz."
 
 msgid "&Name"
 msgstr "N&ame"
@@ -1140,25 +1137,25 @@ msgid "Name"
 msgstr "Name"
 
 msgid "Create new directory"
-msgstr "Verzeichnis erstellen"
+msgstr "Neues Verzeichnis erstellen"
 
 msgid "Back"
 msgstr "Zurück"
 
 msgid "Forward"
-msgstr "Forwärts"
+msgstr "Vorwärts"
 
 msgid "Up"
-msgstr "Aufwärts"
+msgstr "Hoch"
 
 msgid "File"
 msgstr "Datei"
 
 msgid "exists, do you want to overwrite?"
-msgstr "existiert wollen Sie überschreiben?"
+msgstr "existiert, wollen Sie überschreiben?"
 
 msgid "is modified. Save?"
-msgstr "wird modifiziert. Speichern?"
+msgstr "ist geändert. Speichern?"
 
 msgid "Exception"
 msgstr "Ausnahme"
@@ -1173,46 +1170,46 @@ msgid "PASSWORD"
 msgstr "PASSWORT"
 
 msgid "Enter password"
-msgstr "Ppassworteingabe"
+msgstr "Passworteingabe"
 
 msgid "Invalid password!"
 msgstr "Ungültiges Passwort!"
 
 msgid "Can not read directory"
-msgstr "Verzeichnis kann nicht gelesen werden"
+msgstr "Verzeichnis nicht lesbar"
 
 msgid "Graphic format not supported"
-msgstr "Grafik Format nicht unterstützt"
+msgstr "Grafikformat nicht unterstützt"
 
 msgid "Graphic format error"
-msgstr "Grafik Format Fehler"
+msgstr "Grafikformatfehler"
 
 msgid "MS Bitmap"
-msgstr "MS Bitmap"
+msgstr "MS-Bitmap"
 
 msgid "MS Icon"
-msgstr "MS Icon"
+msgstr "MS-Icon"
 
 msgid "JPEG Image"
-msgstr "JPEG Bild"
+msgstr "JPEG-Bild"
 
 msgid "PNG Image"
-msgstr "PNG Bild"
+msgstr "PNG-Bild"
 
 msgid "XPM Image"
-msgstr "XPM Bild"
+msgstr "XPM-Bild"
 
 msgid "PNM Image"
-msgstr "PNM Bild"
+msgstr "PNM-Bild"
 
 msgid "TARGA Image"
-msgstr "TARGA Bild"
+msgstr "TARGA-Bild"
 
 msgid "TIFF Image"
-msgstr "TIFF Bild"
+msgstr "TIFF-Bild"
 
 msgid "All Images"
-msgstr "Alle"
+msgstr "Alle Bilder"
 
 msgid "Confirmation"
 msgstr "Bestätigung"
@@ -1260,13 +1257,13 @@ msgid "Edit filter"
 msgstr "Filter bearbeiten"
 
 msgid "Edit filter minimum"
-msgstr "Filter Minimum bearbeiten"
+msgstr "Filter-Minimum bearbeiten"
 
 msgid "Edit filter maximum"
-msgstr "Filter Maximum bearbeiten"
+msgstr "Filter-Maximum bearbeiten"
 
 msgid "Reset filter"
-msgstr "Filter rückstellen"
+msgstr "Filter zurücksetzen"
 
 msgid "Filter on"
 msgstr "Filter ein"
@@ -1326,7 +1323,7 @@ msgid "Delete row?"
 msgstr "Zeile löschen?"
 
 msgid "selected rows?"
-msgstr "gewählte Zeilen"
+msgstr "gewählte Zeilen?"
 
 msgid "Single item only"
 msgstr "Nur Einzeleintrag erlaubt"
@@ -1344,7 +1341,7 @@ msgid "Maximize"
 msgstr "Maximieren"
 
 msgid "Normalize"
-msgstr "Normalisieren"
+msgstr "Normieren"
 
 msgid "Minimize"
 msgstr "Minimieren"
@@ -1356,16 +1353,16 @@ msgid "Float"
 msgstr "Lösen"
 
 msgid "Stay on top"
-msgstr "Im Fordergrund"
+msgstr "Im Vordergrund halten"
 
 msgid "Stay in background"
-msgstr "Im Hintergrund"
+msgstr "Im Hintergrund halten"
 
 msgid "Lock children"
-msgstr "Blockiere Unterfenster"
+msgstr "Unterfenster blockieren"
 
 msgid "No lock"
-msgstr "Kein Blockieren"
+msgstr "Nicht Blockieren"
 
 msgid "Input"
 msgstr "Eingabe"
@@ -1392,13 +1389,13 @@ msgid "Bottom border"
 msgstr "Unterer Rand"
 
 msgid "Begin of text"
-msgstr "Text start"
+msgstr "Textanfang"
 
 msgid "End of text"
 msgstr "Text ende"
 
 msgid "Inputmode"
-msgstr "Eingabe Modus"
+msgstr "Eingabemodus"
 
 msgid "Overwrite"
 msgstr "Überschreiben"
@@ -1425,10 +1422,10 @@ msgid "Menu"
 msgstr "Menü"
 
 msgid "Beginning of file"
-msgstr "Datei Beginn"
+msgstr "Dateianfang"
 
 msgid "End of file"
-msgstr "Datei Ende"
+msgstr "Dateiende"
 
 msgid "Voice output"
 msgstr "Sprachausgabe"
@@ -1500,10 +1497,10 @@ msgid "View"
 msgstr "Ansicht"
 
 msgid "Forms"
-msgstr "Formen"
+msgstr "Formulare"
 
 msgid "Layout"
-msgstr "Layout"
+msgstr "Anordnung"
 
 msgid "Syntax"
 msgstr "Syntax"
@@ -1530,7 +1527,7 @@ msgid "Save as..."
 msgstr "Speichern als ..."
 
 msgid "Save all"
-msgstr "Rette alle"
+msgstr "Alles sichern"
 
 msgid "Close all"
 msgstr "Alle schließen"
@@ -1539,28 +1536,28 @@ msgid "Print"
 msgstr "Drucken"
 
 msgid "Quit"
-msgstr "Aufhören"
+msgstr "Beenden"
 
 msgid "Line"
-msgstr "Linie"
+msgstr "Zeile"
 
 msgid "Search again"
 msgstr "Erneut suchen"
 
 msgid "Search back"
-msgstr "Zurück suchen"
+msgstr "Rückwärts suchen"
 
 msgid "Find & replace"
-msgstr "Ersatz finden"
+msgstr "Suchen & Ersetzen"
 
 msgid "Find in files"
 msgstr "In Dateien suchen"
 
 msgid "Procedures list"
-msgstr "Verfahrensliste"
+msgstr "Prozedur-Liste"
 
 msgid "Select edit page"
-msgstr "Seite bearbeiten auswählen"
+msgstr "Zu bearbeitende Seite auswählen"
 
 msgid "Copy word at cursor"
 msgstr "Wort am Cursor kopieren"
@@ -1569,22 +1566,22 @@ msgid "Copy LaTeX"
 msgstr "Kopieren LaTeX"
 
 msgid "Indent"
-msgstr "Einzug"
+msgstr "Einrückung"
 
 msgid "Unindent"
-msgstr "Einrückung"
+msgstr "Ausrückung"
 
 msgid "Environment"
 msgstr "Umgebung"
 
 msgid "Attach process"
-msgstr "Prozess anhängen"
+msgstr "Mit Prozess verbinden"
 
 msgid "Attach target"
-msgstr "Ziel anhängen"
+msgstr "Mit Ziel verbinden"
 
 msgid "Detach target"
-msgstr "Ziel abtrennen"
+msgstr "Von Ziel trennen"
 
 msgid "Download"
 msgstr "Herunterladen"
@@ -1593,16 +1590,16 @@ msgid "Tools"
 msgstr "Werkzeuge"
 
 msgid "Make"
-msgstr "Machen"
+msgstr "Erstellen"
 
 msgid "Build"
-msgstr "Bauen"
+msgstr "Neu erstellen"
 
 msgid "Abort make"
-msgstr "Abbrechen"
+msgstr "Erstelleung abbrechen"
 
 msgid "Debug-Run"
-msgstr "Debuggen/Ausführen"
+msgstr "Debug-Lauf"
 
 msgid "Options"
 msgstr "Optionen"
@@ -1623,34 +1620,34 @@ msgid "Beautifier"
 msgstr "Verschönerer"
 
 msgid "Panels"
-msgstr "Platten"
+msgstr "Panels"
 
 msgid "Force Z order"
 msgstr "Z-Reihenfolge erzwingen"
 
 msgid "Tree list"
-msgstr "Baumstruktur"
+msgstr "Baumdarstellung"
 
 msgid "Messages"
 msgstr "Mitteilungen"
 
 msgid "Find result"
-msgstr "Ergebnis der Suche"
+msgstr "Suchergebnis"
 
 msgid "Commander"
-msgstr "Kommandant"
+msgstr "Befehlszentrale"
 
 msgid "Symbols"
 msgstr "Symbole"
 
 msgid "Watches"
-msgstr "Uhren"
+msgstr "Überwachungen"
 
 msgid "Stack"
 msgstr "Stapel"
 
 msgid "Threads"
-msgstr "Fäden"
+msgstr "Threads"
 
 msgid "CPU"
 msgstr "CPU"
@@ -1671,13 +1668,13 @@ msgid "Target console"
 msgstr "Zielkonsole"
 
 msgid "Toggle form/unit"
-msgstr "Form/Einheit umschalten"
+msgstr "Formular/Unit umschalten"
 
 msgid "MSE modules"
 msgstr "MSE-Module"
 
 msgid "Close all MSE modules"
-msgstr "Schließen Sie alle MSE-Module"
+msgstr "Alle MSE-Module schließen"
 
 msgid "General settings"
 msgstr "Allgemeine Einstellungen"
@@ -1704,19 +1701,19 @@ msgid "Directory"
 msgstr "Verzeichnis"
 
 msgid "No icons"
-msgstr "Ohne Symbole"
+msgstr "Keine Symbole"
 
 msgid "No lateral"
-msgstr "Ohne seitliche"
+msgstr "Keine Randleiste"
 
 msgid "Compact"
 msgstr "Kompakt"
 
 msgid "Open project"
-msgstr "Öffnen das Projekt"
+msgstr "Projekt öffnen"
 
 msgid "Open file"
-msgstr "Öffne die Datei"
+msgstr "Datei öffnen"
 
 msgid "Path"
 msgstr "Pfad"
@@ -1734,28 +1731,28 @@ msgid "Value"
 msgstr "Wert"
 
 msgid "Case sensitive"
-msgstr "Case sensitive"
+msgstr "Schreibweise beachten"
 
 msgid "Selected only"
-msgstr "Nur ausgewählt"
+msgstr "Nur Auswahl"
 
 msgid "Whole word"
-msgstr "Ganze Welt"
+msgstr "Ganzes Wort"
 
 msgid "Text to find"
-msgstr "Text zu finden"
+msgstr "Suchtext"
 
 msgid "Search in current file"
-msgstr "In aktuellen Datei suchen"
+msgstr "In aktueller Datei suchen"
 
 msgid "Search in open files"
 msgstr "In geöffneten Dateien suchen"
 
 msgid "Search in project directory"
-msgstr "Suche im Projektverzeichnis"
+msgstr "Im Projektverzeichnis suchen"
 
 msgid "Search in directories"
-msgstr "Suche in Verzeichnissen"
+msgstr "In Verzeichnissen suchen"
 
 msgid "Include subdirectories"
 msgstr "Unterverzeichnisse einschließen"
@@ -1770,13 +1767,13 @@ msgid "Replace with"
 msgstr "Ersetzen mit"
 
 msgid "Prompt on replace"
-msgstr "Nach Ersetzen fragen"
+msgstr "Vor Ersetzen fragen"
 
 msgid "Components palette"
 msgstr "Komponentenpalette"
 
 msgid "Find components"
-msgstr "Komponenten finden"
+msgstr "Komponenten suchen"
 
 msgid "Reset"
 msgstr "Zurücksetzen"
@@ -1785,10 +1782,10 @@ msgid "Step"
 msgstr "Schritt"
 
 msgid "Step instruction"
-msgstr "Schrittanweisung"
+msgstr "Befehlsschritt"
 
 msgid "Next instruction"
-msgstr "Nächste Anweisung"
+msgstr "Nächster Befehl"
 
 msgid "Restart debugger"
 msgstr "Debugger neu starten"
@@ -1797,19 +1794,19 @@ msgid "Toggle breakpoint"
 msgstr "Haltepunkt umschalten"
 
 msgid "Toggle breakpoint enabled"
-msgstr "Haltepunkt umschalten aktiviert"
+msgstr "Haltepunkt umschalten aktiv"
 
 msgid "Executed lines hint on/off"
-msgstr "Ausgeführter Zeilenhinweis ein/aus"
+msgstr "Markierung ausführbare Zeilen ein/aus"
 
 msgid "Please compile it first."
 msgstr "Bitte zuerst kompilieren."
 
 msgid "Finish"
-msgstr "Finish"
+msgstr "Ende"
 
 msgid "Set as default"
-msgstr "Als Standard eingestellt"
+msgstr "Als Standard einstellen"
 
 msgid "Host"
 msgstr "Host"
@@ -1872,10 +1869,10 @@ msgid "Undelete"
 msgstr "Wiederherstellen"
 
 msgid "Select Childwidget"
-msgstr "Untergeordnetes Widget auswählen"
+msgstr "Unter-Widget auswählen"
 
 msgid "Iconify"
-msgstr "Iconify"
+msgstr "Ikonisieren"
 
 msgid "Deiconify"
 msgstr "Entikonisieren"
@@ -1884,7 +1881,7 @@ msgid "Edit component"
 msgstr "Komponente bearbeiten"
 
 msgid "Sync. to Font Height"
-msgstr "Sync. zu Schrifthöhe"
+msgstr "Sync. auf Schrifthöhe"
 
 msgid "Bring to Front"
 msgstr "Nach vorne bringen"
@@ -1905,10 +1902,10 @@ msgid "Revert to inherited"
 msgstr "Auf geerbt zurücksetzen"
 
 msgid "Touch Form"
-msgstr "Formular berühren"
+msgstr "Formular erneuern"
 
 msgid "Touch all Forms"
-msgstr "Alle Formulare berühren"
+msgstr "Alle Formulare erneuern"
 
 msgid "Insert Submodule"
 msgstr "Submodul einfügen"
@@ -1926,7 +1923,7 @@ msgid "Hide Widgets<>Components"
 msgstr "Widgets<>Komponenten ausblenden"
 
 msgid "Show all"
-msgstr "Alle anzeigen"
+msgstr "Alles anzeigen"
 
 msgid "Ancestor"
 msgstr "Vorfahr"
@@ -1944,7 +1941,7 @@ msgid "Kind"
 msgstr "Art"
 
 msgid "Source File"
-msgstr "Quelldatei"
+msgstr "Quellendatei"
 
 msgid "Form File"
 msgstr "Formulardatei"
@@ -1956,10 +1953,10 @@ msgid "Load/save editor settings"
 msgstr "Editoreinstellungen laden/speichern"
 
 msgid "Auto load"
-msgstr "Automatisches Laden"
+msgstr "Automatisches laden"
 
 msgid "Auto save"
-msgstr "Automatisch speichern"
+msgstr "Automatisches speichern"
 
 msgid "Load"
 msgstr "Laden"
@@ -1977,13 +1974,13 @@ msgid "Load/save project tree"
 msgstr "Projektbaum laden/speichern"
 
 msgid "Space separated defines for {$ifdef}"
-msgstr "Leerzeichen getrennt definiert für {$ifdef}"
+msgstr "Leerzeichengetrennte Definitionen für {$ifdef}"
 
 msgid "Copy All"
 msgstr "Alles kopieren"
 
 msgid "Copy Selected"
-msgstr "Ausgewählte kopieren"
+msgstr "Auswahl kopieren"
 
 msgid "Copy Line"
 msgstr "Zeile kopieren"
@@ -1992,10 +1989,10 @@ msgid "Find in messages"
 msgstr "In Nachrichten suchen"
 
 msgid "Add Unit"
-msgstr "Einheit hinzufügen"
+msgstr "Unit hinzufügen"
 
 msgid "Remove Unit"
-msgstr "Einheit entfernen"
+msgstr "Unit entfernen"
 
 msgid "Add Text File"
 msgstr "Textdatei hinzufügen"
@@ -2019,17 +2016,23 @@ msgid "Edit Directory Caption"
 msgstr "Verzeichnistitel bearbeiten"
 
 msgid "Delete All"
-msgstr "Alle löschen"
+msgstr "Alles löschen"
 
 msgid "Clear"
 msgstr "Löschen"
 
 msgid "Space separated defines for {$ifdef}"
-msgstr "Leerzeichen getrennt definiert für {$ifdef}"
+msgstr "Leerzeichengetrennte Definitionen für {$ifdef}"
 
 msgid "Delete selected row?"
 msgstr "Gewählte Zeile löschen?"
 
 msgid "Delete %s selected rows?"
 msgstr "%s gewählte Zeilen löschen?"
+
+msgid "Use MO files instead of PO files"
+msgstr "MO-Dateien statt PO-Dateien benutzen"
+
+msgid "English [en]"
+msgstr "Deutsch [de]"
 

@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=400
- y=120
+ x=689
+ y=217
  cx=298
  cy=269
 replacedialog=33
@@ -930,16 +930,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -947,7 +950,7 @@ makeoptionson=15
  4095
  4095
  17
- 198
+ 194
  2046
  4095
  192
@@ -1570,8 +1573,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=uses
+finddtext=createnewlang
 findhistory=20
+ createnewlang
+ conflangfo.ok
+ setlangi
  uses
  usedefaulteditoroptions
  trimtrailingwhitespace
@@ -1582,7 +1588,6 @@ findhistory=20
  .show
  time
  firstload
- setlangi
  lang_langnames
  onlang
  findpofiles
@@ -1590,59 +1595,61 @@ findhistory=20
  conflangfo
  <> 12
  onactiv
- = 12
- =12
 findoptions=1
-editpos=4
- 0,3
+editpos=5
+ 0,5
+ 0,-1073741823
+ 0,4475
  0,-1073741823
  0,-1073741823
- 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
- /home/fred/ideu/src/actionsmodule.pas
+bookmarks4=0
+sourcefiles=5
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
- /home/fred/ideu/src/ideU.pas
-relpaths=4
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/conflang.pas
+relpaths=5
  actionsmodule.pas
  sourceform.pas
  main.pas
  ideU.pas
-ismoduletexts=4
+ conflang.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-order=4
- 0
- 2
- 3
- 1
 firsttab=0
 index=0
 [layout]
-windowlayout=548
+windowlayout=561
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1656,8 +1663,8 @@ windowlayout=548
  ny=0
  ncx=0
  ncy=0
- x=82
- y=77
+ x=99
+ y=60
  cx=1224
  cy=621
  rcx=0
@@ -1783,7 +1790,7 @@ windowlayout=548
  x=0
  y=0
  cx=205
- cy=451
+ cy=449
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1795,7 +1802,7 @@ windowlayout=548
  sorted=0
  col=0
  row=8
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1854,7 +1861,7 @@ windowlayout=548
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1873,10 +1880,10 @@ windowlayout=548
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=244
- width0=108
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=130
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1969,9 +1976,9 @@ windowlayout=548
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1214
- cy=93
+ y=509
+ cx=1212
+ cy=91
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2070,8 +2077,8 @@ windowlayout=548
  ncy=0
  x=0
  y=0
- cx=1214
- cy=50
+ cx=1212
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2083,11 +2090,11 @@ windowlayout=548
  nx=0
  ny=0
  ncx=1212
- ncy=56
+ ncy=58
  x=0
  y=0
- cx=1214
- cy=56
+ cx=1212
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2097,15 +2104,14 @@ windowlayout=548
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
- history=7
-  /home/fred/ideu/src/confideu.pas
-  /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/commandorform.pas
-  /home/fred/ideu/src/projectoptionsform.pas
+ value=/home/fred/ideu/src/main.pas
+ history=6
   /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/main.mfm
+  /home/fred/ideu/src/conflang.pas
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/dialogfiles.pas
+  /home/fred/strumpract/src/infos.pas
+  /home/fred/strumpract/src/conflang.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2122,16 +2128,11 @@ windowlayout=548
  ncy=0
  x=208
  y=0
- cx=1006
- cy=451
+ cx=1004
+ cy=449
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=4
-  0
-  2
-  3
-  1
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]
@@ -2140,7 +2141,7 @@ windowlayout=548
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2167,9 +2168,9 @@ windowlayout=548
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1214
- cy=451
+ y=57
+ cx=1212
+ cy=449
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]
@@ -2186,6 +2187,25 @@ windowlayout=548
  y=180
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=266
+ cx=580
+ cy=222
  rcx=0
  rcy=0
  wsize=0

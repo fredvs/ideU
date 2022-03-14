@@ -4482,9 +4482,9 @@ var
   str : string;
 begin
  if conflangfo.bousemo.value then
-  createnewlangmo(thelang)
+  mo4stock.createnewlang(thelang)
  else
-  createnewlang(thelang);
+  po2arrays.createnewlang(thelang);
 
   if thelang = 'zh' then
     begin
@@ -5150,13 +5150,19 @@ begin
 
   conflangfo.ok.Caption := lang_modalresult[Ord(mr_ok)];
 
+  conflangfo.bousemo.frame.Caption := lang_xstockcaption[Ord(sc_usemo)];
+   
   conflangfo.bpotools.Caption    := 'PO ' + lang_stockcaption[Ord(sc_tools)];
 
   conflangfo.Caption    := lang_stockcaption[Ord(sc_lang)];
   
-         confideufo.setlangextrasettings();
-          confcompilerfo.setlangcompilers();
-          confdebuggerfo.setlangdebuggers();
+ //{$ifdef unix}
+  conflangfo.listlangfont(MSEFallbackLang);
+ //{$endif}
+  
+  confideufo.setlangextrasettings();
+  confcompilerfo.setlangcompilers();
+  confdebuggerfo.setlangdebuggers();
 
   application.processmessages;
 
