@@ -5710,6 +5710,8 @@ begin
   conflangloaded := 1;
   
   conflangfo.listlangfont(MSEFallbackLang);
+  
+  conflangfo.updatefontcap();
 
   if ismodal then
     conflangfo.Show(True)

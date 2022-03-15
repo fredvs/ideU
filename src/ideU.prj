@@ -108,18 +108,19 @@ findinfiledialog=94
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/strumpract/
+  /home/fred/lazarus/
  filecolwidth=150
  x=466
  y=190
  cx=608
  cy=346
  filehistory=20
-  /home/fred/strumpract/
+  /home/fred/lazarus/
+  /home/fred/fpc-ootb_322/
   /home/fred/mseide-msegui/
+  /home/fred/strumpract/
   /home/fred/bgrabitmap-11.4/
   /home/fred/fpc-ootb_322/installer/
-  /home/fred/fpc-ootb_322/
   /home/fred/ideu_po/
   /home/fred/ideu_bin/
   /home/fred/fpc331trunk/
@@ -134,12 +135,17 @@ findinfiledialog=94
   /home/fred/CodeTyphonIns700/CodeTyphonIns/
   /home/fred/freepascal-ootb/
   /home/fred/eschecs_mse/
-  /home/fred/jcf-cli-master/
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=screen
+ value=DEFAULT_PITCH
  history=20
+  DEFAULT_PITCH
+  Screen.Fonts
+  fonts.
+  Screen
+  lfFaceName
+  EnumFontFamilies
   screen
   customsetLangFilePattern
   LangDir
@@ -153,17 +159,11 @@ findinfiledialog=94
   backupfilecount
   confideufo.encoding
   fonts
-  Screen.Fonts
   TMSEFontRenderer
-  BGRAText
-  tabind
-  setfocus
-  loadconfigform
-  BGRAFreeType
  [findinfileadialogfo]
  stackedunder=
- x=428
- y=220
+ x=594
+ y=247
  cx=346
  cy=308
 finddialog=8
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=702
- y=204
+ x=789
+ y=197
  cx=298
  cy=269
 replacedialog=33
@@ -953,7 +953,7 @@ makeoptionson=15
  4095
  4095
  17
- 194
+ 130
  2046
  4095
  192
@@ -1576,8 +1576,17 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=rect1
+finddtext=ANSI_CHARSET
 findhistory=20
+ ANSI_CHARSET
+ GetCharSet
+ EnumFontsNoDups
+ EnableEvents
+ DEFAULT_PITCH
+ defaultfontname
+ enumfontfamiliesex
+ fontenumcallback
+ defaultfontinfo
  se_fontname
  font name
  po_
@@ -1589,44 +1598,55 @@ findhistory=20
  setlangi
  uses
  usedefaulteditoroptions
- trimtrailingwhitespace
- editfontname
- fontname
- BGRABITMAP_USE_MSEGUI
- setfocus
- .show
- time
- firstload
- lang_langnames
 findoptions=1
-editpos=6
+editpos=10
  0,2
- 0,20
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 8,142
+ 0,-1073741823
+ 0,292
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,1503
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+sourcefiles=10
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/finddialogform.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=6
+ /home/fred/mseide-msegui/lib/common/graphics/msegdi32gdi.pas
+ /home/fred/fpc-ootb_322/packages/winunits-base/src/commdlg.pp
+ /home/fred/lazarus/examples/fontenum/mainunit.pas
+ /home/fred/lazarus/lcl/lcltype.pp
+relpaths=10
  actionsmodule.pas
  ideU.pas
  main.pas
  sourceform.pas
  finddialogform.pas
  conflang.pas
-ismoduletexts=6
+ mseide-msegui/lib/common/graphics/msegdi32gdi.pas
+ fpc-ootb_322/packages/winunits-base/src/commdlg.pp
+ lazarus/examples/fontenum/mainunit.pas
+ ../lazarus/lcl/lcltype.pp
+ismoduletexts=10
+ 0
+ 0
+ 0
+ 0
  0
  0
  0
@@ -1658,17 +1678,21 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=6
+order=10
  0
  1
- 5
+ 9
  2
  3
  4
+ 6
+ 5
+ 7
+ 8
 firsttab=0
-index=2
+index=7
 [layout]
-windowlayout=564
+windowlayout=569
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1682,13 +1706,13 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=33
- y=67
- cx=1224
- cy=621
+ x=0
+ y=29
+ cx=1368
+ cy=711
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1792,7 +1816,7 @@ windowlayout=564
  ncy=0
  x=239
  y=115
- cx=678
+ cx=923
  cy=414
  rcx=0
  rcy=0
@@ -1809,7 +1833,7 @@ windowlayout=564
  x=0
  y=0
  cx=205
- cy=451
+ cy=526
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1880,7 +1904,7 @@ windowlayout=564
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1977,9 +2001,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1212
- cy=93
+ y=582
+ cx=1356
+ cy=108
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2078,7 +2102,7 @@ windowlayout=564
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1356
  cy=50
  rcx=0
  rcy=0
@@ -2090,12 +2114,12 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=57
+ ncx=1356
+ ncy=58
  x=0
  y=0
- cx=1212
- cy=57
+ cx=1356
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2106,7 +2130,8 @@ windowlayout=564
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/conflang.pas
- history=1
+ history=2
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/finddialogform.pas
  [debuggerfo.project_options]
  value=1
@@ -2124,20 +2149,24 @@ windowlayout=564
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1148
+ cy=526
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
+ order=10
   0
   1
-  5
+  9
   2
   3
   4
+  6
+  5
+  7
+  8
  firsttab=0
- index=2
+ index=7
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2172,8 +2201,8 @@ windowlayout=564
  ncy=0
  x=0
  y=53
- cx=1212
- cy=451
+ cx=1356
+ cy=526
  rcx=0
  rcy=0
  [_mse_actionsmo_mse_]

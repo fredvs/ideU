@@ -6,6 +6,9 @@ unit conflang;
 interface
 
 uses 
+{$ifdef windows}
+windows,
+{$endif}
 process, classes, msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, 
 msemenus, 
 msegui, 
@@ -37,7 +40,8 @@ type
     procedure onchange(Const sender: TObject);
     procedure ongridfontcellev(Const sender: TObject; Var info: celleventinfoty);
     procedure onchangefontsize(Const sender: TObject);
-  end;
+    procedure updatefontcap();
+ end;
 
 var 
   conflangloaded: shortint = 0;
@@ -55,18 +59,126 @@ confdebugger,
 conflang_mfm, 
 captionideu;
 
+{$ifdef windows}
+function EnumFontsNoDups(
+  var LogFont: TEnumLogFontEx;
+  var Metric: TNewTextMetricEx;
+  FontType: Longint;
+  Data: LParam):LongInt; stdcall;
+var
+  L: TStringList;
+  S: String;
+begin
+  L := TStringList(ptrint(Data));
+  S := LogFont.elfLogFont.lfFaceName;
+  if L.IndexOf(S)<0 then
+    L.Add(S);
+  result := 1;
+end;
+  
+procedure tconflangfo.listlangfont(lang : String);
+var
+  DC: HDC;
+  lf: TLogFont;
+  L: TStringList;
+  i, x: Integer;
+begin
+ 
+  {
+  DEFAULT_PITCH  = 0;
+  FIXED_PITCH    = 1;
+  VARIABLE_PITCH = 2;
+  MONO_FONT      = 8;
+
+  // font character sets
+  ANSI_CHARSET        = 0;
+  DEFAULT_CHARSET     = 1;
+  SYMBOL_CHARSET      = 2;
+  // added for ISO_8859_2 under gtk
+  FCS_ISO_10646_1     = 4;  // Unicode;
+  FCS_ISO_8859_1      = 5;  //  ISO Latin-1 (Western Europe);
+  FCS_ISO_8859_2      = 6;  //  ISO Latin-2 (Eastern Europe);
+  FCS_ISO_8859_3      = 7;  //  ISO Latin-3 (Southern Europe);
+  FCS_ISO_8859_4      = 8;  //  ISO Latin-4 (Northern Europe);
+  FCS_ISO_8859_5      = 9;  //  ISO Cyrillic;
+  FCS_ISO_8859_6      = 10; //  ISO Arabic;
+  FCS_ISO_8859_7      = 11; //  ISO Greek;
+  FCS_ISO_8859_8      = 12; //  ISO Hebrew;
+  FCS_ISO_8859_9      = 13; //  ISO Latin-5 (Turkish);
+  FCS_ISO_8859_10     = 14; //  ISO Latin-6 (Nordic);
+  FCS_ISO_8859_15     = 15; //  ISO Latin-9, or Latin-0 (Revised Western-European);
+  //FCS_koi8_r          = 16; //  KOI8 Russian;
+  //FCS_koi8_u          = 17; //  KOI8 Ukrainian (see RFC 2319);
+  //FCS_koi8_ru         = 18; //  KOI8 Russian/Ukrainian
+  //FCS_koi8_uni        = 19; //  KOI8 ``Unified'' (Russian, Ukrainian, and Byelorussian);
+  //FCS_koi8_e          = 20; //  KOI8 ``European,'' ISO-IR-111, or ECMA-Cyrillic;
+  // end of our own additions
+  MAC_CHARSET         = 77;
+  SHIFTJIS_CHARSET    = 128;
+  HANGEUL_CHARSET     = 129;
+  JOHAB_CHARSET       = 130;
+  GB2312_CHARSET      = 134;
+  CHINESEBIG5_CHARSET = 136;
+  GREEK_CHARSET       = 161;
+  TURKISH_CHARSET     = 162;
+  VIETNAMESE_CHARSET  = 163;
+  HEBREW_CHARSET      = 177;
+  ARABIC_CHARSET      = 178;
+  BALTIC_CHARSET      = 186;
+  RUSSIAN_CHARSET     = 204;
+  THAI_CHARSET        = 222;
+  EASTEUROPE_CHARSET  = 238;
+  OEM_CHARSET         = 255;
+  // additional charsets
+  }
+  
+  lf.lfPitchAndFamily := 0;
+  lf.lfCharSet := 0;
+  lf.lfFaceName := '';
+  
+  L := TStringList.create;
+  L.Sorted := True;
+  L.Duplicates := dupIgnore;
+  
+  x := 0;
+  
+  DC := GetDC(0);
+  try
+    EnumFontFamiliesEX(DC, @lf, @EnumFontsNoDups, ptrint(L), 0);
+    // L.Sort;
+    caption := inttostr(L.count);
+    
+          gridlistfont.rowcount := 5;
+          gridlistfont[0][0] := 'stf_default';
+          gridlistfont[0][1] := 'stf_courier';
+          gridlistfont[0][2] := 'stf_helvetica';
+          gridlistfont[0][3] := 'stf_roman';
+          gridlistfont[0][4] := 'stf_proportional';
+   
+      while x < L.count do
+        begin
+          gridlistfont.rowcount :=  gridlistfont.rowcount + 1;
+          gridlistfont[0][gridlistfont.rowcount - 1] := L[x];
+          inc(x);
+        end;
+  
+    finally
+    ReleaseDC(0, DC);
+    L.Free;
+  end;
+end;
+{$endif}
+
+
+{$ifdef unix}
 procedure tconflangfo.listlangfont(lang : String);
 var 
   x, y: integer;
   s, S2, s3 : string;
   comstr : string;
   sl: TStringList;
-  strz : string = '';
-begin
+ begin
 
- if MSEFallbackLang = 'zh' then strz := '             ';
-
-{$ifdef unix}
   comstr := '';
 
   if fileexists('/usr/bin/fc-list') then
@@ -131,18 +243,9 @@ begin
           gridlistfont[0][3] := 'stf_roman';
           gridlistfont[0][4] := 'stf_proportional';
         end;
-    {$endif}
-
-{$ifdef windows}
-          gridlistfont.rowcount := 5;
-          gridlistfont[0][0] := 'stf_default';
-          gridlistfont[0][1] := 'stf_courier';
-          gridlistfont[0][2] := 'stf_helvetica';
-          gridlistfont[0][3] := 'stf_roman';
-          gridlistfont[0][4] := 'stf_proportional';
-{$endif}
-
+ 
 end;
+{$endif}
 
 procedure tconflangfo.oncok(Const Sender: TObject);
 begin
@@ -154,10 +257,24 @@ begin
   Visible := False;
 end;
 
+procedure tconflangfo.updatefontcap();
+var 
+  strz : string = '';
+begin
+ if MSEFallbackLang = 'zh' then strz := '             ';
+              fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
+              gridlistfont.fixrows[-1].captions[0].caption :=
+              inttostr(gridlistfont.rowcount) + ' ' +
+              lang_settings[Ord(se_fontname)]  + strz ;
+ end;             
+
+
 procedure tconflangfo.oncellev(Const Sender: TObject; Var info: celleventinfoty);
 var 
   x: integer;
+
 begin
+
   if conflangloaded > 0 then
     if info.eventkind = cek_buttonrelease then
       begin
@@ -169,8 +286,12 @@ begin
               MSEFallbackLang := gridlangcode[x];
               lfontselected.caption := '';
               mainfo.setlangideu(MSEFallbackLang);
-              listlangfont(MSEFallbackLang);
-            end
+               {$ifndef windows}
+                listlangfont(MSEFallbackLang);
+               {$endif}
+               updatefontcap();
+                          
+             end
           else
             gridlangbool[x] := False;
       end;
