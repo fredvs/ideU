@@ -129,11 +129,17 @@ begin
   THAI_CHARSET        = 222;
   EASTEUROPE_CHARSET  = 238;
   OEM_CHARSET         = 255;
-  // additional charsets
   }
   
   lf.lfPitchAndFamily := 0;
-  lf.lfCharSet := 0;
+  
+  if lang = 'ru' then lf.lfCharSet := 204 else
+  if lang = 'ar' then lf.lfCharSet := 178 else
+  if lang = 'he' then lf.lfCharSet := 177 else
+  if lang = 'el' then lf.lfCharSet := 161 else
+  if lang = 'zh' then lf.lfCharSet := 136 else
+  lf.lfCharSet := 1;  
+  
   lf.lfFaceName := '';
   
   L := TStringList.create;
@@ -145,8 +151,7 @@ begin
   DC := GetDC(0);
   try
     EnumFontFamiliesEX(DC, @lf, @EnumFontsNoDups, ptrint(L), 0);
-    // L.Sort;
-    caption := inttostr(L.count);
+     L.Sort;
     
           gridlistfont.rowcount := 5;
           gridlistfont[0][0] := 'stf_default';
@@ -285,9 +290,9 @@ begin
               MSEFallbackLang := gridlangcode[x];
               lfontselected.caption := '';
               mainfo.setlangideu(MSEFallbackLang);
-               {$ifndef windows}
+              // {$ifndef windows}
                 listlangfont(MSEFallbackLang);
-               {$endif}
+              // {$endif}
                updatefontcap();
             end
           else

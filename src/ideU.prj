@@ -1573,8 +1573,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=ANSI_CHARSET
+finddtext=caption
 findhistory=20
+ caption
  ANSI_CHARSET
  GetCharSet
  EnumFontsNoDups
@@ -1594,14 +1595,13 @@ findhistory=20
  conflangfo.ok
  setlangi
  uses
- usedefaulteditoroptions
 findoptions=1
 editpos=5
- 9,5
+ 0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
+ 26,162
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1647,7 +1647,7 @@ nomenumodules=4
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=4
 [layout]
 windowlayout=539
  [mainfo.basedock]
@@ -1696,7 +1696,7 @@ windowlayout=539
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1718,7 +1718,7 @@ windowlayout=539
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1790,7 +1790,7 @@ windowlayout=539
  x=0
  y=0
  cx=205
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -2060,7 +2060,7 @@ windowlayout=539
  x=0
  y=0
  cx=1212
- cy=50
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2071,12 +2071,12 @@ windowlayout=539
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=57
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
- cy=57
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2091,7 +2091,7 @@ windowlayout=539
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/finddialogform.pas
  [debuggerfo.project_options]
- value=1
+ value=5
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2107,12 +2107,12 @@ windowlayout=539
  x=208
  y=0
  cx=1004
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=4
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2135,22 +2135,6 @@ windowlayout=539
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=53
- cx=1212
- cy=451
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2173,7 +2157,7 @@ windowlayout=539
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2189,6 +2173,22 @@ windowlayout=539
  wsize=0
  active=0
  visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1212
+ cy=450
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0
