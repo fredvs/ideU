@@ -118,8 +118,8 @@ begin
           inc(x);
         end;
 
-      // gridlistfont.fixrows[0].captions[0].caption :=
-      // inttostr(gridlistfont.rowcount) + ' Compatible Fonts';
+       gridlistfont.fixrows[-1].captions[0].caption :=
+       inttostr(gridlistfont.rowcount) + ' Compatible Fonts';
 
       sl.free;
 {$endif}

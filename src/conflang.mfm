@@ -47,7 +47,7 @@ object conflangfo: tconflangfo
     taborder = 2
     bounds_x = 20
     bounds_y = 40
-    bounds_cx = 290
+    bounds_cx = 285
     bounds_cy = 130
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     rowcount = 7
@@ -234,9 +234,6 @@ object conflangfo: tconflangfo
     frame.levelo = 0
     frame.sbvert.width = 14
     frame.sbvert.buttonminlength = 14
-    frame.sbvert.face.localprops = []
-    frame.sbvert.face1.localprops = []
-    frame.sbvert.facebutton.localprops = []
     frame.sbhorz.width = 10
     frame.sbhorz.face.localprops = []
     frame.sbhorz.face1.localprops = []
@@ -247,7 +244,7 @@ object conflangfo: tconflangfo
     taborder = 8
     bounds_x = 319
     bounds_y = 40
-    bounds_cx = 236
+    bounds_cx = 235
     bounds_cy = 130
     optionsgrid = [og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_savestate, og_colchangeontabkey, og_wrapcol, og_mousescrollcol]
     datacols.count = 1
