@@ -133,11 +133,13 @@ begin
   
   lf.lfPitchAndFamily := 0;
   
+  {
   if lang = 'ru' then lf.lfCharSet := 204 else
   if lang = 'ar' then lf.lfCharSet := 178 else
   if lang = 'he' then lf.lfCharSet := 177 else
   if lang = 'el' then lf.lfCharSet := 161 else
   if lang = 'zh' then lf.lfCharSet := 136 else
+  }
   lf.lfCharSet := 1;  
   
   lf.lfFaceName := '';
@@ -269,7 +271,7 @@ begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
  gridlistfont.fixrows[-1].captions[0].caption :=
- inttostr(gridlistfont.rowcount) + ' ' +
+ {$ifndef windows} inttostr(gridlistfont.rowcount) + ' ' + {$endif}
  lang_settings[Ord(se_fontname)]  + strz ;
  end;             
 
