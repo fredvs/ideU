@@ -81,7 +81,7 @@ var
   DC: HDC;
   lf: TLogFont;
   L: TStringList;
-  i, x: Integer;
+  x: Integer;
 begin
  
   {
@@ -174,7 +174,7 @@ end;
 procedure tconflangfo.listlangfont(lang : String);
 var 
   x, y: integer;
-  s, S2, s3 : string;
+  s, S2 : string;
   comstr : string;
   sl: TStringList;
  begin
@@ -262,12 +262,11 @@ var
   strz : string = '';
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
-              fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
-              gridlistfont.fixrows[-1].captions[0].caption :=
-              inttostr(gridlistfont.rowcount) + ' ' +
-              lang_settings[Ord(se_fontname)]  + strz ;
+ fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
+ gridlistfont.fixrows[-1].captions[0].caption :=
+ inttostr(gridlistfont.rowcount) + ' ' +
+ lang_settings[Ord(se_fontname)]  + strz ;
  end;             
-
 
 procedure tconflangfo.oncellev(Const Sender: TObject; Var info: celleventinfoty);
 var 
@@ -290,8 +289,7 @@ begin
                 listlangfont(MSEFallbackLang);
                {$endif}
                updatefontcap();
-                          
-             end
+            end
           else
             gridlangbool[x] := False;
       end;
@@ -342,8 +340,8 @@ begin
   if conflangloaded > 0 then
     if (confideufo.fontsize.value <> fontsize.value) then
       begin
-       // confideufo.fontsize.value := fontsize.value;
-       // confideufo.onchangefont;
+        confideufo.fontsize.value := fontsize.value;
+        confideufo.onchangefont;
       end;
 end;
 
