@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=400
- y=120
+ x=702
+ y=204
  cx=298
  cy=269
 replacedialog=33
@@ -930,18 +930,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
+ CONFLANGFO
  FINDDIALOGFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TACTIONSMO
+ TCONFLANGFO
  TFINDDIALOGFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/finddialogform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1596,66 +1599,76 @@ findhistory=20
  firstload
  lang_langnames
 findoptions=1
-editpos=5
- 0,4
+editpos=6
+ 0,2
+ 0,20
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 5,274
+ 8,142
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/finddialogform.pas
-relpaths=5
+ ${PROJECTDIR}/conflang.pas
+relpaths=6
  actionsmodule.pas
  ideU.pas
  main.pas
  sourceform.pas
  finddialogform.pas
-ismoduletexts=5
+ conflang.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=4
+ 0
+modules=5
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/finddialogform.mfm
-moduleoptions=4
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+nomenumodules=5
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
-order=5
+order=6
  0
- 4
  1
+ 5
  2
  3
+ 4
 firsttab=0
-index=1
+index=2
 [layout]
-windowlayout=543
+windowlayout=564
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1669,8 +1682,8 @@ windowlayout=543
  ny=0
  ncx=0
  ncy=0
- x=108
- y=70
+ x=33
+ y=67
  cx=1224
  cy=621
  rcx=0
@@ -1702,7 +1715,7 @@ windowlayout=543
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1867,7 +1880,7 @@ windowlayout=543
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2092,8 +2105,9 @@ windowlayout=543
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/finddialogform.pas
- history=0
+ value=/home/fred/ideu/src/conflang.pas
+ history=1
+  /home/fred/ideu/src/finddialogform.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2115,21 +2129,22 @@ windowlayout=543
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
+ order=6
   0
-  4
   1
+  5
   2
   3
+  4
  firsttab=0
- index=1
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2183,7 +2198,7 @@ windowlayout=543
  [_mse_finddialogfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_conflangfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2194,6 +2209,25 @@ windowlayout=543
  y=111
  cx=308
  cy=435
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=266
+ cx=580
+ cy=222
  rcx=0
  rcy=0
  wsize=0

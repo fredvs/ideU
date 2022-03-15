@@ -6,7 +6,8 @@ unit conflang;
 interface
 
 uses 
-process, classes, msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, msemenus, 
+process, classes, msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, 
+msemenus, 
 msegui, 
 msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, 
 msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob, 
@@ -65,7 +66,6 @@ begin
 
  if MSEFallbackLang = 'zh' then strz := '             ';
 
-
 {$ifdef unix}
   comstr := '';
 
@@ -98,7 +98,6 @@ begin
 
       //writeln('String lines ' + inttostr(x));
       //writeln('TStringList ' + inttostr(sl.count));
-{$endif}
 
       if (lang = 'zh') or (lang = 'ar') or  (lang = 'he') then
         gridlistfont.rowcount := 0
@@ -112,8 +111,7 @@ begin
           gridlistfont[0][4] := 'stf_proportional';
         end;
 
- {$ifdef unix}
-      x :=  gridlistfont.rowcount;
+     x :=  gridlistfont.rowcount;
 
       while x < sl.count do
         begin
@@ -122,16 +120,27 @@ begin
           inc(x);
         end;
         
-       fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
-    
-       gridlistfont.fixrows[-1].captions[0].caption :=
-       inttostr(gridlistfont.rowcount) + ' ' +
-       lang_settings[Ord(se_fontname)]  + strz ;
-
       sl.free;
-{$endif}
+      
+      end else
+       begin
+          gridlistfont.rowcount := 5;
+          gridlistfont[0][0] := 'stf_default';
+          gridlistfont[0][1] := 'stf_courier';
+          gridlistfont[0][2] := 'stf_helvetica';
+          gridlistfont[0][3] := 'stf_roman';
+          gridlistfont[0][4] := 'stf_proportional';
+        end;
+    {$endif}
 
-    end;
+{$ifdef windows}
+          gridlistfont.rowcount := 5;
+          gridlistfont[0][0] := 'stf_default';
+          gridlistfont[0][1] := 'stf_courier';
+          gridlistfont[0][2] := 'stf_helvetica';
+          gridlistfont[0][3] := 'stf_roman';
+          gridlistfont[0][4] := 'stf_proportional';
+{$endif}
 
 end;
 
