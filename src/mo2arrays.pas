@@ -1,5 +1,7 @@
 UNIT mo2arrays;
 
+// Sieghard 2022
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 INTERFACE
 
@@ -17,8 +19,8 @@ IMPLEMENTATION
 USES
   SysUtils,
   mo4stock,
-  projectoptionsform,  // <<<<<<<<<<< !!!!!!!!!!!
-  captionideu;         // <<<<<<<<<<< !!!!!!!!!!!
+  projectoptionsform,  
+  captionideu;         
 
 PROCEDURE setApplicationLanguages;
  BEGIN

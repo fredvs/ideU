@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=fixrows
+ value=customsetLangFilePattern
  history=20
+  customsetLangFilePattern
+  LangDir
   fixrows
   messagefontname
   usedefaulteditoroptions
@@ -158,8 +160,6 @@ findinfiledialog=94
   loadconfigform
   BGRAFreeType
   GetLanguageIDs
-  gettext
-  lang_langnames
  [findinfileadialogfo]
  stackedunder=
  x=200
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=400
- y=120
+ x=902
+ y=153
  cx=298
  cy=269
 replacedialog=33
@@ -1576,7 +1576,7 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=se_fontname
+finddtext=customsetLangFilePattern
 findhistory=20
  se_fontname
  font name
@@ -1600,13 +1600,13 @@ findhistory=20
  lang_langnames
 findoptions=1
 editpos=7
- 0,4
+ 0,7
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,0
  0,0
- 0,568
- 13,118
- 0,800
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1665,16 +1665,16 @@ nomenumodules=5
 [sourcefo.files_tab]
 order=7
  0
+ 6
+ 3
  5
  1
  2
- 3
  4
- 6
 firsttab=0
-index=1
+index=3
 [layout]
-windowlayout=585
+windowlayout=586
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1789,7 +1789,7 @@ windowlayout=585
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1798,7 +1798,7 @@ windowlayout=585
  ncy=0
  x=239
  y=115
- cx=678
+ cx=868
  cy=414
  rcx=0
  rcy=0
@@ -1886,7 +1886,7 @@ windowlayout=585
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2129,8 +2129,9 @@ windowlayout=585
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/conflang.pas
- history=3
+ value=/home/fred/ideu/src/mo4stock.pas
+ history=4
+  /home/fred/ideu/src/mo4stock.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/captionideu.pas
   /home/fred/strumpract/src/conflang.pas
@@ -2157,21 +2158,21 @@ windowlayout=585
  [sourcefo.files_tab]
  order=7
   0
+  6
+  3
   5
   1
   2
-  3
   4
-  6
  firsttab=0
- index=1
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2225,7 +2226,7 @@ windowlayout=585
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_confideufo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2244,7 +2245,7 @@ windowlayout=585
  [_mse_confideufo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_conflangfo_mse_
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

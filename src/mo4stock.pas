@@ -1,4 +1,7 @@
 UNIT mo4stock;
+
+// Sieghard 2022
+
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
 INTERFACE
@@ -22,9 +25,6 @@ VAR
 
 PROCEDURE createnewlang (alang: msestring);
 FUNCTION findmofiles: msestringarty;
-// procedure createnewlangmo (alang: msestring);
-// procedure findmofiles ();
-// FUNCTION findpofiles (LinuxSystem: boolean = false): msestringarty;
 
 FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
 FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Index: integer): msestringarty;
@@ -168,52 +168,6 @@ FUNCTION findMOfiles: msestringarty;
      END;
    END;
  END;
-(*
-procedure findmofiles ();
-var
-  ListOfFiles: array of string;
-  MOfile: TMOfile;
-  SearchResult: TSearchRec;
-  file1: ttextdatastream;
-  Attribute: word;
-  i: integer = 0;
-  str1, str2, str3: msestring;
-begin
-  Attribute := faReadOnly or faArchive;
-
-  SetLength(ListOfFiles, 0);
-
-  //str1 := LangDir + directoryseparator;
-
-//  str1 := expandprmacros('${LANGDIR}') + directoryseparator;
-
-  // List the files
-  FindFirst(LangDir{str1} + '*'+ LangExt, Attribute, SearchResult);
-   WHILE i = 0 DO BEGIN
-     SetLength (ListOfFiles, succ (Length (ListOfFiles)));      // Increase the list
-     ListOfFiles [High (ListOfFiles)]:= SearchResult.Name;      // Add it at the end of the list
-     i:= FindNext (SearchResult);
-   END;
-  FindClose(SearchResult);
-
-  setlength(lang_langnames, 1);
-  lang_langnames[0] :=  BaseLang;
-
-//   str2 := expandprmacros('${LANGDIR}') + directoryseparator;
-
-  for i := Low(ListOfFiles) to High(ListOfFiles) do
-    if system.pos('empty', ListOfFiles[i]) = 0 then
-    begin
-       setlength(lang_langnames, length(lang_langnames) + 1);
-       str1 := ListOfFiles[i];
-       MOfile:= TMOfile.Create (LangDir{str2}+str1);
-       str1 := MOfile.Translate (BaseLang);
-       //writeln(str1);
-       lang_langnames[length(lang_langnames) - 1] := trim(str1);
-       MOfile.Destroy;
-    end;
-end;
-*)
 
 PROCEDURE translate_stock (VAR lang_stocktext, default_stocktext: msestringarty;
                            MOfile: TMOfile);
