@@ -119,7 +119,8 @@ begin
         end;
 
        gridlistfont.fixrows[-1].captions[0].caption :=
-       inttostr(gridlistfont.rowcount) + ' Compatible Fonts';
+       inttostr(gridlistfont.rowcount) + ' ' +
+       lang_settings[Ord(se_fontname)] ;
 
       sl.free;
 {$endif}
