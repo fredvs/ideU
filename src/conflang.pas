@@ -60,7 +60,11 @@ var
   s, S2, s3 : string;
   comstr : string;
   sl: TStringList;
+  strz : string = '';
 begin
+
+ if MSEFallbackLang = 'zh' then strz := '             ';
+
 
 {$ifdef unix}
   comstr := '';
@@ -117,10 +121,12 @@ begin
           gridlistfont[0][x] := sl[x];
           inc(x);
         end;
-
+        
+       fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
+    
        gridlistfont.fixrows[-1].captions[0].caption :=
        inttostr(gridlistfont.rowcount) + ' ' +
-       lang_settings[Ord(se_fontname)] ;
+       lang_settings[Ord(se_fontname)]  + strz ;
 
       sl.free;
 {$endif}

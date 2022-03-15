@@ -197,18 +197,19 @@ object conflangfo: tconflangfo
   object fontsize: tintegeredit
     frame.caption = 'Height '
     frame.captiontextflags = [tf_bottom]
+    frame.captionpos = cp_topright
     frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
     frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
-      0
-      18
       16
+      18
+      0
       0
     )
     taborder = 6
     hint = 'Font height for all ideU text'
-    bounds_x = 517
+    bounds_x = 501
     bounds_y = 175
     bounds_cx = 46
     bounds_cy = 39
