@@ -133,13 +133,11 @@ begin
   
   lf.lfPitchAndFamily := 0;
   
-  {
   if lang = 'ru' then lf.lfCharSet := 204 else
   if lang = 'ar' then lf.lfCharSet := 178 else
   if lang = 'he' then lf.lfCharSet := 177 else
   if lang = 'el' then lf.lfCharSet := 161 else
   if lang = 'zh' then lf.lfCharSet := 136 else
-  }
   lf.lfCharSet := 1;  
   
   lf.lfFaceName := '';
