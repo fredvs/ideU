@@ -21,6 +21,7 @@ unit findinfiledialogform;
 interface
 
 uses
+  sysutils,
   mseconsts,
   msestockobjects,
   captionideu,
@@ -293,11 +294,15 @@ begin
 end;
 
 procedure tfindinfiledialogfo.onactiv(const sender: TObject);
+var
+ rect1: rectty;
 begin
 if tag = 0 then
 begin
- left := 200;
- top :=  100;
+ rect1 := application.screenrect(window);
+   
+ if left > (rect1.cx) - 200 then left := 200;
+ if top > (rect1.cy) - 200 then top :=  100;
 end; 
 tag := 1;
 end;

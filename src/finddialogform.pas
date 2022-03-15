@@ -270,15 +270,20 @@ close;
 end;
 
 procedure tfinddialogfo.onactiv(const sender: TObject);
+var
+ rect1: rectty;
 begin
-
 if tag = 0 then
 begin
+{
+  rect1 := application.screenrect(window);
+ if left > (rect1.cx) - 200 then left := findposx;
+ if top > (rect1.cy) - 200 then top :=  findposy;
+ }
  left := findposx;
  top :=  findposy;
 end; 
 tag := 1;
-
 end;
 
 end.
