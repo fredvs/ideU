@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=918
- y=494
+ x=749
+ y=232
  cx=298
  cy=269
 replacedialog=33
@@ -930,16 +930,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1305,7 +1308,7 @@ line=27
  787
  904
  2591
- 4983
+ 4984
  1882
  6131
  18
@@ -1570,12 +1573,14 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=copy
+finddtext=mainfo
 findhistory=20
- copy
  mainfo
- createnew
+ newlang
+ new
  setlangideu
+ copy
+ createnew
  FindFirst
  ListOfFiles
  replace
@@ -1590,49 +1595,67 @@ findhistory=20
  EnumFontsNoDups
  EnableEvents
  DEFAULT_PITCH
- defaultfontname
- enumfontfamiliesex
 findoptions=1
-editpos=3
- 0,4
+editpos=5
+ 0,3
  0,-1073741823
+ 0,4440
+ 0,38
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-sourcefiles=3
+bookmarks3=0
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/main.pas
-relpaths=3
+ ${PROJECTDIR}/mo4stock.pas
+ ${PROJECTDIR}/conflang.pas
+relpaths=5
  actionsmodule.pas
  sourceform.pas
  main.pas
-ismoduletexts=3
+ mo4stock.pas
+ conflang.pas
+ismoduletexts=5
  0
  0
  0
-modules=3
+ 0
+ 0
+modules=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
-moduleoptions=3
+ /home/fred/ideu/src/conflang.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 4
+ 5
+ 1
+ 2
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=520
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1679,7 +1702,7 @@ windowlayout=520
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -2069,9 +2092,12 @@ windowlayout=520
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/confideu.pas
- history=2
-  /home/fred/ideu/src/confideu.pas
+ value=/home/fred/ideu/src/mo4stock.pas
+ history=5
+  /home/fred/ideu/src/conflang.pas
+  /home/fred/ideu/src/mo4stock.pas
+  /home/fred/ideu/src/mo4stocknew.pas
+  /home/fred/ideu/src/po2arrays.pas
   /home/fred/strumpract/src/conflang.pas
  [debuggerfo.project_options]
  value=1
@@ -2094,8 +2120,14 @@ windowlayout=520
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  4
+  5
+  1
+  2
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2148,6 +2180,25 @@ windowlayout=520
  y=180
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=266
+ cx=580
+ cy=222
  rcx=0
  rcy=0
  wsize=0

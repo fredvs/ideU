@@ -4455,6 +4455,7 @@ var
   stca: stockcaptionty;
   str : string;
 begin
+
  if conflangfo.bousemo.value then
   mo4stock.createnewlang(thelang)
  else
