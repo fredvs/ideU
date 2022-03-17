@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=789
- y=197
+ x=941
+ y=185
  cx=298
  cy=269
 replacedialog=33
@@ -1290,7 +1290,7 @@ line=27
  2129
  1164
  523
- 3156
+ 3143
  660
  119
  1116
@@ -1308,12 +1308,12 @@ line=27
  787
  904
  2591
- 5009
+ 4996
  1882
  6131
  18
  8
- 2601
+ 2588
 address=27
  4868715
  4692069
@@ -1573,7 +1573,7 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=caption
+finddtext=onthetimer
 findhistory=20
  caption
  ANSI_CHARSET
@@ -1597,11 +1597,11 @@ findhistory=20
  uses
 findoptions=1
 editpos=5
- 0,5
+ 0,4
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 4,264
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1649,7 +1649,7 @@ nomenumodules=4
 firsttab=0
 index=0
 [layout]
-windowlayout=539
+windowlayout=540
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1663,8 +1663,8 @@ windowlayout=539
  ny=0
  ncx=0
  ncy=0
- x=82
- y=77
+ x=74
+ y=55
  cx=1224
  cy=621
  rcx=0
@@ -1861,7 +1861,7 @@ windowlayout=539
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -2086,12 +2086,13 @@ windowlayout=539
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/conflang.pas
- history=2
+ value=/home/fred/ideu/src/main.pas
+ history=3
+  /home/fred/ideu/src/main.pas
   /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/finddialogform.pas
  [debuggerfo.project_options]
- value=5
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]

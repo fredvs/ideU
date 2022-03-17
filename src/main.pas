@@ -669,44 +669,30 @@ end;
 procedure tmainfo.onthetimer(Const Sender: TObject);
 begin
   thetimer.Enabled := False;
+   thetimer.Free;
   componentpalettefo.Close;
-  objectinspectorfo.Close;
-  if bFirstLoad.value = true then
-    begin
-      if thetimer.tag = 0 then
-        begin
-          thetimer.tag      := 1;
-          thetimer.interval := 1000000;
-          thetimer.Enabled  := True;
-          activate;
-          //visible := true;
-        end
-      else
-        begin
-          thetimer.Free;
-          configureexecute(Sender);
-          bFirstLoad.value := false;
-          activate;
-          setlangideu('');
-        end;
-    end
-  else
-    activate;
-
   debuggerfo.file_history.tag := 0;
   themenr := themenum.value;
   if themenr <> 0 then
     dotheme(themenr);
-  // setstattext('Hello!', mtk_flat);
-  if (confideufo.fontsize.value <> 12) or (confideufo.fontname.value <> 'stf_default') then
+  if (confideufo.fontsize.value <> 12) or
+     (confideufo.fontname.value <> 'stf_default') then
   confideufo.onchangefont;
-  //confideufo.scalecommander(1);
-  objectinspectorfo.Close;
+   objectinspectorfo.Close;
   confideufo.visible  := false;
   application.processmessages;
   ideureadconfig();
   //confideufo.close;
    onactiv(Sender);
+   
+    if bFirstLoad.value = true then
+    begin
+       configureexecute(Sender);
+       bFirstLoad.value := false;
+       activate;
+       setlangideu('');
+       // end;
+    end; 
   
 end;
 
@@ -717,6 +703,7 @@ begin
   thetimer.ontimer  := @onthetimer;
   thetimer.tag      := 0;
   thetimer.Enabled  := True;
+  //thetimer.single := true;
 end;
 
 procedure tmainfo.ideureadconfig();
