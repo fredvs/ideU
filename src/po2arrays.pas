@@ -31,6 +31,7 @@ implementation
 
 uses
   projectoptionsform,
+  main,
   msestockobjects,
   mseconsts,
   captionideu;
@@ -240,7 +241,7 @@ begin
   end
   else if fileexists(str1) then
   begin
-
+ 
     file1 := ttextdatastream.Create(str1, fm_read);
 
     file1.encoding := ce_utf8;

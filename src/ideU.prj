@@ -138,8 +138,12 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=tstringdisp2
+ value=customsetLangFilePattern
  history=20
+  customsetLangFilePattern
+  newlang
+  setlangnew
+  setnewlang
   tstringdisp2
   onscale
   DEFAULT_PITCH
@@ -149,7 +153,6 @@ findinfiledialog=94
   lfFaceName
   EnumFontFamilies
   screen
-  customsetLangFilePattern
   LangDir
   fixrows
   messagefontname
@@ -157,9 +160,6 @@ findinfiledialog=94
   editfontname
   deflayout
   encoding
-  fontname
-  backupfilecount
-  confideufo.encoding
  [findinfileadialogfo]
  stackedunder=
  x=594
@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=775
- y=192
+ x=918
+ y=494
  cx=298
  cy=269
 replacedialog=33
@@ -930,22 +930,16 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=5
+modulenames=3
  ACTIONSMO
- DEBUGGERFO
- CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=5
+moduletypes=3
  TACTIONSMO
- TDEBUGGERFO
- TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=5
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/commandorform.mfm
- /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
@@ -1576,8 +1570,17 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=onactiv
+finddtext=copy
 findhistory=20
+ copy
+ mainfo
+ createnew
+ setlangideu
+ FindFirst
+ ListOfFiles
+ replace
+ mainfo.caption
+ writeln
  onactiv
  timer
  onthetimer
@@ -1589,86 +1592,47 @@ findhistory=20
  DEFAULT_PITCH
  defaultfontname
  enumfontfamiliesex
- fontenumcallback
- defaultfontinfo
- se_fontname
- font name
- po_
- po_font
- createnewlang
- font
- conflangfo.sh
 findoptions=1
-editpos=6
- 0,6
- 0,-1073741823
- 0,-1073741823
+editpos=3
+ 0,3
  0,-1073741823
  0,0
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=3
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/commandorform.pas
-relpaths=6
+ ${PROJECTDIR}/main.pas
+relpaths=3
  actionsmodule.pas
- ideU.pas
- main.pas
  sourceform.pas
- conflang.pas
- commandorform.pas
-ismoduletexts=6
+ main.pas
+ismoduletexts=3
  0
  0
  0
- 0
- 0
- 0
-modules=5
+modules=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/commandorform.mfm
-moduleoptions=5
+moduleoptions=3
  0
  0
  0
- 0
- 0
-visiblemodules=5
+visiblemodules=3
  -1
  -1
  -1
- -1
- -1
-nomenumodules=5
- 0
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 1
- 2
- 4
- 5
- 3
 firsttab=0
 index=0
 [layout]
-windowlayout=564
+windowlayout=520
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1880,7 +1844,7 @@ windowlayout=564
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -2048,7 +2012,7 @@ windowlayout=564
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2090,8 +2054,8 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=64
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
@@ -2105,9 +2069,10 @@ windowlayout=564
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
- history=1
-  ${PROJECTDIR}/main.pas
+ value=/home/fred/ideu/src/confideu.pas
+ history=2
+  /home/fred/ideu/src/confideu.pas
+  /home/fred/strumpract/src/conflang.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2129,13 +2094,6 @@ windowlayout=564
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  1
-  2
-  4
-  5
-  3
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]
@@ -2174,44 +2132,6 @@ windowlayout=564
  y=180
  cx=966
  cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_debuggerfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=405
- y=266
- cx=580
- cy=222
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_debuggerfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=99
- y=76
- cx=1213
- cy=56
  rcx=0
  rcy=0
  wsize=0
