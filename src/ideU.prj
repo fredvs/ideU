@@ -1602,10 +1602,10 @@ findoptions=1
 editpos=6
  0,6
  0,-1073741823
- 0,5492
+ 0,-1073741823
+ 0,-1073741823
  0,0
- 0,0
- 24,51
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1662,11 +1662,11 @@ order=6
  0
  1
  2
+ 4
  5
  3
- 4
 firsttab=0
-index=3
+index=0
 [layout]
 windowlayout=564
  [mainfo.basedock]
@@ -1682,9 +1682,9 @@ windowlayout=564
  ny=0
  ncx=0
  ncy=0
- x=93
- y=52
- cx=1245
+ x=34
+ y=53
+ cx=1224
  cy=621
  rcx=0
  rcy=0
@@ -1715,7 +1715,7 @@ windowlayout=564
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1783,7 +1783,7 @@ windowlayout=564
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1809,7 +1809,7 @@ windowlayout=564
  x=0
  y=0
  cx=205
- cy=450
+ cy=448
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1977,9 +1977,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=507
- cx=1233
- cy=93
+ y=508
+ cx=1212
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2048,7 +2048,7 @@ windowlayout=564
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=dialogfilesfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -2078,8 +2078,8 @@ windowlayout=564
  ncy=0
  x=0
  y=0
- cx=1233
- cy=51
+ cx=1212
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2090,12 +2090,12 @@ windowlayout=564
  mdistate=0
  nx=0
  ny=0
- ncx=1111
- ncy=52
+ ncx=1212
+ ncy=64
  x=0
  y=0
- cx=1233
- cy=58
+ cx=1212
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2124,8 +2124,8 @@ windowlayout=564
  ncy=0
  x=208
  y=0
- cx=1025
- cy=450
+ cx=1004
+ cy=448
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2133,18 +2133,18 @@ windowlayout=564
   0
   1
   2
+  4
   5
   3
-  4
  firsttab=0
- index=3
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2182,7 +2182,7 @@ windowlayout=564
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=findinfilefo
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2201,7 +2201,7 @@ windowlayout=564
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -2228,9 +2228,9 @@ windowlayout=564
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1233
- cy=450
+ y=57
+ cx=1212
+ cy=448
  rcx=0
  rcy=0
 [targetconsole]
