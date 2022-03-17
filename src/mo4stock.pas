@@ -40,7 +40,6 @@ USES
   StrUtils,
   gettext,
   mseconsts,
-  main,
   msestockobjects;
 
 TYPE
@@ -127,7 +126,6 @@ FUNCTION findMOfiles: msestringarty;
    {$else} 
       LangDir := system.copy(LangDir,1,system.pos('\lang\ideu_',LangDir)) +
        '\lang\';
-     //mainfo.caption := LangDir+  '*.mo' ;
      FindFirst (LangDir+  '*.mo' , Attribute, SearchResult);
       while (i = 0) do
      begin
@@ -138,7 +136,6 @@ FUNCTION findMOfiles: msestringarty;
      i := FindNext(SearchResult);
     end;
      result := ListOfFiles;
-   //  mainfo.caption := 'Length(ListOfFiles ' + inttostr(Length(ListOfFiles));
     {$endif}
        
     FindClose (SearchResult);
@@ -186,8 +183,7 @@ FUNCTION findMOfiles: msestringarty;
    l:= 0;
    FOR i:= 0 TO pred (ListOfFiles.Count) DO BEGIN
      Langname:= ListOfFiles [i];
-    // mainfo.caption := LangDir+ Langname ;
-
+   
      IF System.Pos ('empty', Langname) = 0 THEN BEGIN
        MOfile:= TMOfile.Create (LangDir+ Langname);
        Langname:= MOfile.Translate (BaseLang); Inc (l);
@@ -310,11 +306,6 @@ PROCEDURE createnewlang (alang: msestring);
 
    IF (NOT FileExists (currentLangFile)) OR (lowercase (alang) = 'en') OR (Trim (alang) = '')
    THEN BEGIN
-   
-      mainfo.caption := 'Yeppp NO exist' + (currentLangFile);
-
-   
-    // mainfo.caption := 'NO file';
      buildlangtext (LocalisationActive);
     
      lang_modalresult:=           getApplicationLanguage (ModalresultArea);
@@ -322,15 +313,11 @@ PROCEDURE createnewlang (alang: msestring);
      lang_stockcaption:=          getApplicationLanguage (StockcaptionArea);
      lang_extended:=              getApplicationLanguage (ExtendedArea);
      
-    // mainfo.caption := 'Before find';
      lang_langnames:= findmofiles;
-     // mainfo.caption := 'after find';
-   
+    
    END
    ELSE IF FileExists (currentLangFile) THEN BEGIN
    
-     mainfo.caption := 'Yeppp exist' + (currentLangFile);
-
      MOfile:= TMOfile.Create (currentLangFile);
    
      if assigned(mofile) then
