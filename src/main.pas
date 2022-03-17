@@ -196,8 +196,7 @@ type
     procedure runwithoutdebugger;
     procedure ideuwriteconfig;
     procedure ideureadconfig;
-    procedure loadconfigform(Const Sender: TObject);
-    procedure onthetimer(Const Sender: TObject);
+    procedure beforeactiv(Const Sender: TObject);
     procedure syntaxdefload(Const Sender: TObject);
     procedure copywordatcur(Const Sender: TObject);
     procedure onresizemain(Const Sender: TObject);
@@ -208,10 +207,9 @@ type
     procedure ondark(Const Sender: TObject);
     procedure ontoggleunitform(Const Sender: TObject);
     procedure onlang(Const Sender: TObject);
-    procedure onactiv(Const Sender: TObject);
+    procedure setlanginit(Const Sender: TObject);
 
     procedure ontemplateeditor(Const Sender: TObject);
-    procedure runtimer(Const sender: TObject);
     private 
       fstartcommand: startcommandty;
       fnoremakecheck: Boolean;
@@ -371,7 +369,6 @@ var
   mainfo: tmainfo;
   toogletag: Boolean = False;
   layoutbusy: Boolean = True;
-  thetimer: TTimer;
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
   isactivated: Boolean = False;
@@ -666,10 +663,8 @@ begin
     end;
 end;
 
-procedure tmainfo.onthetimer(Const Sender: TObject);
+procedure tmainfo.beforeactiv(Const Sender: TObject);
 begin
-  thetimer.Enabled := False;
-   thetimer.Free;
   componentpalettefo.Close;
   debuggerfo.file_history.tag := 0;
   themenr := themenum.value;
@@ -678,32 +673,18 @@ begin
   if (confideufo.fontsize.value <> 12) or
      (confideufo.fontname.value <> 'stf_default') then
   confideufo.onchangefont;
-   objectinspectorfo.Close;
+  objectinspectorfo.Close;
   confideufo.visible  := false;
-  application.processmessages;
   ideureadconfig();
-  //confideufo.close;
-   onactiv(Sender);
+  setlanginit(Sender);
    
     if bFirstLoad.value = true then
     begin
        configureexecute(Sender);
        bFirstLoad.value := false;
-       activate;
        setlangideu('');
-       // end;
-    end; 
+   end; 
   
-end;
-
-procedure tmainfo.loadconfigform(Const Sender: TObject);
-begin
-  thetimer          := ttimer.Create(TComponent(Sender));
-  thetimer.interval := 1000000;
-  thetimer.ontimer  := @onthetimer;
-  thetimer.tag      := 0;
-  thetimer.Enabled  := True;
-  //thetimer.single := true;
 end;
 
 procedure tmainfo.ideureadconfig();
@@ -730,6 +711,7 @@ begin
     end
   else
     begin
+      
       debuggerfo.properties_list.tag := 1;
       debuggerfo.properties_list.face.image.alignment := 
                                                          [al_stretchx, al_stretchy];
@@ -2844,6 +2826,8 @@ begin
 
     expandprojectmacros;
     onscale(Nil);
+    beforeactiv(nil);
+
   finally
     mainfo.activate;
 end;
@@ -5711,7 +5695,7 @@ begin
 
 end;
 
-procedure tmainfo.onactiv(Const Sender: TObject);
+procedure tmainfo.setlanginit(Const Sender: TObject);
 var 
   x: integer;
   oldlang : msestring;
@@ -5738,14 +5722,6 @@ procedure tmainfo.ontemplateeditor(Const Sender: TObject);
 begin
   application.createform(ttemplateeditorfo, templateeditorfo);
   templateeditorfo.Show;
-end;
-
-procedure tmainfo.runtimer(Const sender: TObject);
-begin
-  if isactivated = False then
-  begin
-     loadconfigform(Sender);
-   end;
 end;
 
 
