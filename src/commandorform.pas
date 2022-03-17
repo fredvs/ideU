@@ -59,7 +59,6 @@ type
    code_beauty: tbutton;
    procedure_list: tbutton;
    templateprojectdark: tfacecomp;
-   tstringdisp2: tstringdisp;
    timagelist1: timagelist;
    templatemaindark: tfacecomp;
    templatemain: tfacecomp;

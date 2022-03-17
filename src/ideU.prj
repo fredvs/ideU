@@ -81,9 +81,9 @@ findinfiledialog=94
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -108,16 +108,16 @@ findinfiledialog=94
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/lazarus/
+  /home/fred/mseide-msegui/
  filecolwidth=150
  x=466
  y=190
  cx=608
  cy=346
  filehistory=20
+  /home/fred/mseide-msegui/
   /home/fred/lazarus/
   /home/fred/fpc-ootb_322/
-  /home/fred/mseide-msegui/
   /home/fred/strumpract/
   /home/fred/bgrabitmap-11.4/
   /home/fred/fpc-ootb_322/installer/
@@ -138,8 +138,10 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=DEFAULT_PITCH
+ value=tstringdisp2
  history=20
+  tstringdisp2
+  onscale
   DEFAULT_PITCH
   Screen.Fonts
   fonts.
@@ -158,8 +160,6 @@ findinfiledialog=94
   fontname
   backupfilecount
   confideufo.encoding
-  fonts
-  TMSEFontRenderer
  [findinfileadialogfo]
  stackedunder=
  x=594
@@ -930,18 +930,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
+ DEBUGGERFO
  CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TACTIONSMO
+ TDEBUGGERFO
  TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=4
+modulefiles=5
  /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/commandorform.mfm
  /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
@@ -1290,7 +1293,7 @@ line=27
  2129
  1164
  520
- 3127
+ 3130
  660
  119
  1116
@@ -1303,17 +1306,17 @@ line=27
  456
  66
  684
- 98
+ 97
  15
  787
  904
  2591
- 4980
+ 4983
  1882
  6131
  18
  8
- 2570
+ 2573
 address=27
  4868715
  4692069
@@ -1596,60 +1599,76 @@ findhistory=20
  font
  conflangfo.sh
 findoptions=1
-editpos=5
- 0,7
+editpos=6
+ 0,6
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,5492
+ 0,0
+ 0,0
+ 24,51
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/conflang.pas
-relpaths=5
+ ${PROJECTDIR}/commandorform.pas
+relpaths=6
  actionsmodule.pas
  ideU.pas
  main.pas
  sourceform.pas
  conflang.pas
-ismoduletexts=5
+ commandorform.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=4
+ 0
+modules=5
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/conflang.mfm
-moduleoptions=4
+ /home/fred/ideu/src/commandorform.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+nomenumodules=5
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 1
+ 2
+ 5
+ 3
+ 4
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=540
+windowlayout=564
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1663,9 +1682,9 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
- cx=1224
+ x=93
+ y=52
+ cx=1245
  cy=621
  rcx=0
  rcy=0
@@ -1718,7 +1737,7 @@ windowlayout=540
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1764,7 +1783,7 @@ windowlayout=540
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1790,7 +1809,7 @@ windowlayout=540
  x=0
  y=0
  cx=205
- cy=451
+ cy=450
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1959,7 +1978,7 @@ windowlayout=540
  ncy=0
  x=0
  y=507
- cx=1212
+ cx=1233
  cy=93
  rcx=0
  rcy=0
@@ -2029,7 +2048,7 @@ windowlayout=540
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=dialogfilesfo
  parent=
  mdistate=3
  nx=0
@@ -2059,8 +2078,8 @@ windowlayout=540
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1233
+ cy=51
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2071,12 +2090,12 @@ windowlayout=540
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=57
+ ncx=1111
+ ncy=52
  x=0
  y=0
- cx=1212
- cy=57
+ cx=1233
+ cy=58
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2086,11 +2105,9 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
- history=3
-  /home/fred/ideu/src/main.pas
-  /home/fred/ideu/src/conflang.pas
-  /home/fred/ideu/src/finddialogform.pas
+ value=/home/fred/ideu/src/commandorform.pas
+ history=1
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2107,20 +2124,27 @@ windowlayout=540
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1025
+ cy=450
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  1
+  2
+  5
+  3
+  4
  firsttab=0
- index=0
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2136,22 +2160,6 @@ windowlayout=540
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=1
- useroptions=302087659
- parent=mainfo.basedock
- visible=1
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=0
- y=53
- cx=1212
- cy=451
- rcx=0
- rcy=0
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
@@ -2174,7 +2182,7 @@ windowlayout=540
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=findinfilefo
  parent=
  mdistate=3
  nx=0
@@ -2190,6 +2198,41 @@ windowlayout=540
  wsize=0
  active=0
  visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=99
+ y=76
+ cx=1213
+ cy=56
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [mainfo.panel1]
+ splitdir=1
+ useroptions=302087659
+ parent=mainfo.basedock
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=54
+ cx=1233
+ cy=450
+ rcx=0
+ rcy=0
 [targetconsole]
 finddtext=
 findhistory=0

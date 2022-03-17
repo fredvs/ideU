@@ -2109,8 +2109,11 @@ procedure tmainfo.onscale(Const Sender: TObject);
 begin
   // fred
   basedock.bounds_y  := 0;
-  // basedock.bounds_y:= statdisp.bottom + 1;
   basedock.bounds_cy := container.paintrect.cy;
+  
+ // basedock.bounds_y:= statdisp.bottom + 1;
+ // basedock.bounds_cy:= container.paintrect.cy - basedock.bounds_y;
+
 end;
 
 procedure tmainfo.parametersonexecute(Const Sender: TObject);
@@ -5324,7 +5327,7 @@ begin
       debuggerfo.project_step_instruction.face.template := debuggerfo.templproject;
       debuggerfo.project_reset.face.template     := debuggerfo.templproject;
       debuggerfo.project_interrupt.face.template := debuggerfo.templproject;
-      debuggerfo.tstringdisp2.face.template      := debuggerfo.templatemain;
+      debuggerfo.statdisp.face.template      := debuggerfo.templatemain;
       debuggerfo.timagelist1.getimage(0, debuggerfo.eyesimage.bitmap, 0);
 
       debuggerfo.paneledited.face.template      := debuggerfo.templfile;
@@ -5490,7 +5493,7 @@ begin
       debuggerfo.project_step_instruction.face.template := debuggerfo.templateprojectdark;
       debuggerfo.project_reset.face.template        := debuggerfo.templateprojectdark;
       debuggerfo.project_interrupt.face.template    := debuggerfo.templateprojectdark;
-      debuggerfo.tstringdisp2.face.template         := debuggerfo.templatemaindark;
+      debuggerfo.statdisp.face.template         := debuggerfo.templatemaindark;
 
       debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
       //{   
