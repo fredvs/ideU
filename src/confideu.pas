@@ -87,6 +87,7 @@ uses
   confideu_mfm,
   main,
   messageform,
+  conflang,
   sourceform,
   finddialogform,
   targetconsole,
@@ -566,7 +567,10 @@ var
 begin
 
   ratio := fontsize.Value / 12;
-
+  
+  conflangfo.gridlang.font.Height     := fontsize.Value;
+  conflangfo.gridlistfont.font.Height     := fontsize.Value;
+ 
   mainfo.font.Height     := fontsize.Value;
   mainfo.font.Name       := ansistring(fontname.Value);
   mainfo.frame.grip_size := round(12 * ratio);

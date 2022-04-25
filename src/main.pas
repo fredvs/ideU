@@ -31,7 +31,7 @@ interface
 {$endif}
 
 uses 
-templateeditor,
+ templateeditor,
  mo2arrays,
  mo4stock,
  po2arrays,
@@ -47,7 +47,7 @@ projecttreeform, msepipestream, msestringcontainer, msesys, mseedit, msewidgets,
 msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
 const 
-  versiontext = '2.8.3';
+  versiontext = '2.8.4';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -4461,32 +4461,18 @@ begin
  else
   po2arrays.createnewlang(thelang);
 
-  if thelang = 'zh' then
-    begin
-      mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := true;
-      mainmenu1.menu.itembynames(['menuwidth']).visible := true;
-      mainmenu1.options := [mo_shortcutright,mo_commonwidth,mo_activate,mo_updateonidle];
-    end
-  else
-    begin
-      mainmenu1.menu.itembynames(['file', 'menuwidth']).visible := false;
-
-      mainmenu1.menu.itembynames(['search', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['edit', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['target', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['view', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['project', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['edited', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['settings', 'menuwidth']).visible := false;
-      mainmenu1.menu.itembynames(['menuwidth']).visible := false;
-      mainmenu1.options := [mo_shortcutright,mo_activate,mo_updateonidle];
+  with mainmenu1 do begin
+      menu.itembynames (['file', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['search', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['edit', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['target', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['view', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['project', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['edited', 'menuwidth']).visible := thelang = 'zh';
+      menu.itembynames (['settings', 'menuwidth']).visible :=thelang = 'zh';
+      menu.itembynames (['menuwidth']).visible := thelang = 'zh';
+      options:= [mo_shortcutright,mo_activate,mo_updateonidle];
+      if thelang = 'zh' then options:= options+ [mo_commonwidth];
     end;
 
   application.ProcessMessages;

@@ -3,7 +3,7 @@ object conflangfo: tconflangfo
   bounds_x = 405
   bounds_y = 266
   bounds_cx = 570
-  bounds_cy = 222
+  bounds_cy = 243
   bounds_cxmin = 570
   bounds_cymin = 222
   container.frame.localprops = []
@@ -12,7 +12,7 @@ object conflangfo: tconflangfo
     0
     0
     570
-    222
+    243
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
@@ -23,10 +23,10 @@ object conflangfo: tconflangfo
     frame.optionsskin = [fso_flat]
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
-    bounds_x = 481
-    bounds_y = 6
+    bounds_x = 480
+    bounds_y = 9
     bounds_cx = 78
-    bounds_cy = 26
+    bounds_cy = 36
     state = [as_localcaption, as_localonexecute]
     caption = 'OK'
     onexecute = oncok
@@ -36,8 +36,8 @@ object conflangfo: tconflangfo
     frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
     taborder = 1
-    bounds_x = 20
-    bounds_y = 13
+    bounds_x = 21
+    bounds_y = 22
     statfile = mainfo.mainstatfile
   end
   object gridlang: twidgetgrid
@@ -46,9 +46,12 @@ object conflangfo: tconflangfo
     frame.localprops1 = []
     taborder = 2
     bounds_x = 20
-    bounds_y = 40
+    bounds_y = 58
     bounds_cx = 285
     bounds_cy = 130
+    font.height = 12
+    font.name = 'unifont'
+    font.localprops = [flp_height]
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     rowcount = 7
     datacols.count = 3
@@ -111,7 +114,7 @@ object conflangfo: tconflangfo
     datarowheight = 17
     statfile = mainfo.mainstatfile
     oncellevent = oncellev
-    reffontheight = 15
+    reffontheight = 13
     object gridlangcaption: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
@@ -125,7 +128,7 @@ object conflangfo: tconflangfo
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
       value = 'English'
-      reffontheight = 15
+      reffontheight = 13
     end
     object gridlangbool: tbooleaneditradio
       optionswidget1 = []
@@ -149,7 +152,7 @@ object conflangfo: tconflangfo
       bounds_y = 0
       bounds_cx = 1
       bounds_cy = 17
-      reffontheight = 15
+      reffontheight = 13
     end
   end
   object bpotools: tbutton
@@ -157,10 +160,10 @@ object conflangfo: tconflangfo
     frame.localprops = [frl_optionsskin]
     frame.localprops1 = []
     taborder = 3
-    bounds_x = 311
-    bounds_y = 6
+    bounds_x = 310
+    bounds_y = 9
     bounds_cx = 164
-    bounds_cy = 26
+    bounds_cy = 36
     state = [as_localcaption, as_localonexecute]
     caption = 'Po tools'
     onexecute = ontools
@@ -169,9 +172,9 @@ object conflangfo: tconflangfo
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
     taborder = 4
     bounds_x = 38
-    bounds_y = -2
+    bounds_y = 3
     bounds_cx = 263
-    bounds_cy = 42
+    bounds_cy = 49
     caption = 'Set as default'
     reffontheight = 15
   end
@@ -187,8 +190,8 @@ object conflangfo: tconflangfo
       2
     )
     taborder = 5
-    bounds_x = 20
-    bounds_y = 186
+    bounds_x = 23
+    bounds_y = 205
     bounds_cx = 201
     bounds_cy = 17
     statfile = mainfo.mainstatfile
@@ -197,37 +200,28 @@ object conflangfo: tconflangfo
   object fontsize: tintegeredit
     frame.caption = 'Height '
     frame.captiontextflags = [tf_bottom]
-    frame.captionpos = cp_topright
+    frame.captionpos = cp_left
     frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
     frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
-      16
-      18
+      47
+      0
       0
       0
     )
     taborder = 6
     hint = 'Font height for all ideU text'
-    bounds_x = 501
-    bounds_y = 175
-    bounds_cx = 46
-    bounds_cy = 39
+    bounds_x = 471
+    bounds_y = 200
+    bounds_cx = 77
+    bounds_cy = 21
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     value = 12
     valuedefault = 12
     valuemin = 1
     valuemax = 1000
-    reffontheight = 15
-  end
-  object lfontselected: tlabel
-    taborder = 7
-    bounds_x = 325
-    bounds_y = 187
-    bounds_cx = 20
-    bounds_cy = 15
-    caption = '     '
     reffontheight = 15
   end
   object gridlistfont: tstringgrid
@@ -242,11 +236,14 @@ object conflangfo: tconflangfo
     frame.localprops = [frl_levelo, frl_fileft, frl_fitop, frl_firight, frl_fibottom]
     frame.localprops1 = []
     face.localprops = []
-    taborder = 8
+    taborder = 7
     bounds_x = 319
-    bounds_y = 40
+    bounds_y = 58
     bounds_cx = 235
     bounds_cy = 130
+    font.height = 12
+    font.name = 'unifont'
+    font.localprops = [flp_height]
     optionsgrid = [og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_savestate, og_colchangeontabkey, og_wrapcol, og_mousescrollcol]
     datacols.count = 1
     datacols.colorselect = 16763002
@@ -266,7 +263,7 @@ object conflangfo: tconflangfo
       item
         frame.localprops = []
         frame.localprops1 = []
-        height = 16
+        height = 14
         numstep = 1
         captions.count = 1
         captions.items = <        
@@ -282,9 +279,9 @@ object conflangfo: tconflangfo
       28173
     )
     zebra_start = 1
-    datarowheight = 17
+    datarowheight = 15
     statpriority = 1
     oncellevent = ongridfontcellev
-    reffontheight = 15
+    reffontheight = 13
   end
 end

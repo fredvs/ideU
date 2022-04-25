@@ -14,7 +14,6 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
 cthreads,   {$endif} {$endif}
-
   msestockobjects,
   mseconsts,
   captionideu,
@@ -125,11 +124,8 @@ begin
 
   createcpufo;
 
-{$ifdef FormScanner}
- ///////////////////////////////////////////
-  ShowFormItems;
-///////////////////////////////////////////
-{$endif}
+  //mainfo.ideureadconfig;
+
   headerfo.icon       := mainfo.icon;
   // splashfo.icon       := mainfo.icon;
   confideufo.icon     := mainfo.icon;

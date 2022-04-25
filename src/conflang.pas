@@ -30,7 +30,6 @@ type
     lsetasdefault: tlabel;
     bousemo: tbooleanedit;
     fontsize: tintegeredit;
-    lfontselected: tlabel;
     gridlistfont: tstringgrid;
     procedure oncok(Const Sender: TObject);
     procedure oncreat(Const Sender: TObject);
@@ -269,7 +268,9 @@ begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
  gridlistfont.fixrows[-1].captions[0].caption :=
- {$ifndef windows} inttostr(gridlistfont.rowcount) + ' ' + {$endif}
+ {$ifndef windows}
+  inttostr(gridlistfont.rowcount) + ' ' +
+ {$endif}
  lang_settings[Ord(se_fontname)]  + strz ;
  end;             
 
@@ -288,7 +289,7 @@ begin
             begin
               gridlangbool[x] := True;
               MSEFallbackLang := gridlangcode[x];
-              lfontselected.caption := '';
+              //lfontselected.caption := '';
               mainfo.setlangideu(MSEFallbackLang);
               // {$ifndef windows}
                 listlangfont(MSEFallbackLang);
@@ -327,7 +328,7 @@ begin
         begin
           cellpos.col := 0;
           gridlistfont.selectcell(cellpos, csm_select, False);
-          lfontselected.caption :=  gridlistfont[0][cellpos.row] ;
+          //lfontselected.caption :=  gridlistfont[0][cellpos.row] ;
 
           if (confideufo.fontname.value <> gridlistfont[0][cellpos.row])
              or (confideufo.fontsize.value <> fontsize.value) then
