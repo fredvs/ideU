@@ -1606,7 +1606,7 @@ editpos=13
  0,6
  0,-1073741823
  0,-1073741823
- 0,-1073741823
+ 0,127
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1703,19 +1703,19 @@ nomenumodules=6
 order=13
  0
  1
- 9
+ 5
  3
  4
- 12
- 2
- 5
+ 9
  7
- 8
+ 2
+ 6
+ 12
  10
  11
- 6
+ 8
 firsttab=0
-index=0
+index=3
 [layout]
 windowlayout=622
  [mainfo.basedock]
@@ -1835,7 +1835,7 @@ windowlayout=622
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0
@@ -1873,7 +1873,7 @@ windowlayout=622
  sorted=0
  col=0
  row=8
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1951,10 +1951,10 @@ windowlayout=622
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=338
- width0=150
+ propcolwidthref=340
+ width0=151
  sortdescend0=0
- width1=182
+ width1=183
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2048,7 +2048,7 @@ windowlayout=622
  ncy=0
  x=0
  y=512
- cx=1212
+ cx=1214
  cy=88
  rcx=0
  rcy=0
@@ -2148,7 +2148,7 @@ windowlayout=622
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=54
  rcx=0
  rcy=0
@@ -2164,7 +2164,7 @@ windowlayout=622
  ncy=61
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=61
  rcx=0
  rcy=0
@@ -2175,7 +2175,7 @@ windowlayout=622
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/main.pas
+ value=/home/fred/ideu/src/ideU.pas
  history=12
   /home/fred/ideu/src/main.pas
   /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
@@ -2190,7 +2190,7 @@ windowlayout=622
   /home/fred/ideu/src/mo4stocknew.pas
   /home/fred/ideu/src/po2arrays.pas
  [debuggerfo.project_options]
- value=6
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2205,7 +2205,7 @@ windowlayout=622
  ncy=0
  x=208
  y=0
- cx=1004
+ cx=1006
  cy=452
  rcx=0
  rcy=0
@@ -2213,26 +2213,26 @@ windowlayout=622
  order=13
   0
   1
-  9
+  5
   3
   4
-  12
-  2
-  5
+  9
   7
-  8
+  2
+  6
+  12
   10
   11
-  6
+  8
  firsttab=0
- index=0
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2260,7 +2260,7 @@ windowlayout=622
  ncy=0
  x=0
  y=57
- cx=1212
+ cx=1214
  cy=452
  rcx=0
  rcy=0

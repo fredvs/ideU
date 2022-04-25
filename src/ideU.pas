@@ -125,11 +125,6 @@ begin
 
   createcpufo;
 
-{$ifdef FormScanner}
- ///////////////////////////////////////////
-  ShowFormItems;
-///////////////////////////////////////////
-{$endif}
   headerfo.icon       := mainfo.icon;
   // splashfo.icon       := mainfo.icon;
   confideufo.icon     := mainfo.icon;
