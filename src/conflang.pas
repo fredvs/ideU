@@ -259,6 +259,9 @@ end;
 procedure tconflangfo.oncreat(Const Sender: TObject);
 begin
   Visible := False;
+ {$ifndef usemo}
+ bousemo.visible := false;
+ {$endif}
 end;
 
 procedure tconflangfo.updatefontcap();

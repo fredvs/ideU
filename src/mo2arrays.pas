@@ -3,6 +3,8 @@ UNIT mo2arrays;
 // Sieghard 2022
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
+{$modeswitch arraytodynarray}
+
 INTERFACE
 
 VAR

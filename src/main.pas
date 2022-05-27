@@ -32,8 +32,11 @@ interface
 
 uses 
  templateeditor,
+ 
+ {$ifdef usemo}
  mo2arrays,
  mo4stock,
+ {$endif}
  po2arrays,
 msearrayutils, aboutform, plugmanager, 
 msetimer, mseformatstr, mseconsts, dialogfiles, mseforms, mseguiglob, msegui, 
@@ -4455,10 +4458,11 @@ var
   stca: stockcaptionty;
   str : string;
 begin
-
+ {$ifdef usemo}
  if conflangfo.bousemo.value then
   mo4stock.createnewlang(thelang)
  else
+ {$endif}
   po2arrays.createnewlang(thelang);
 
   with mainmenu1 do begin

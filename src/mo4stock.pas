@@ -3,6 +3,7 @@ UNIT mo4stock;
 // Sieghard 2022
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
+{$modeswitch arraytodynarray}
 
 INTERFACE
 

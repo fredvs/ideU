@@ -686,7 +686,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=15
+makeoptions=16
  -Mobjfpc -Sh -Fcutf8
  -dmse_with_zeoslib
  -gl
@@ -702,7 +702,8 @@ makeoptions=15
  -FUunits
  -vewinhq
  -dclass_bridge
-makeoptpurpose=15
+ -dusemo
+makeoptpurpose=16
  Define Object Pascal
  Zeos components
  Debug infos
@@ -718,6 +719,7 @@ makeoptpurpose=15
  Output of units
  Verbosity
  Use Class Briddge
+ Use mo files
 compilerused=29
  ${COMPILER} (Default)
  Pascal 1
@@ -930,33 +932,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=3
  ACTIONSMO
- BREAKPOINTSFO
- CONFIDEUFO
- CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=6
+moduletypes=3
  TACTIONSMO
- TBREAKPOINTSFO
- TCONFIDEUFO
- TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=6
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/breakpointsform.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/conflang.mfm
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=15
+makeoptionson=16
  4095
  4095
- 17
- 194
+ 1
+ 1230
  2046
  4095
  192
@@ -965,11 +958,12 @@ makeoptionson=15
  0
  4095
  4095
- 2047
+ 4095
  4095
  0
+ 4095
 compilerusedon=29
- 1591
+ 567
  0
  8
  256
@@ -977,7 +971,7 @@ compilerusedon=29
  64
  128
  0
- 0
+ 1024
  0
  0
  0
@@ -1042,11 +1036,11 @@ project_comment=
 aftcommandon=0
 unitdirson=8
  983048
- 983095
+ 984119
  198655
  196800
  65536
- 65855
+ 67391
  198655
  67583
 macroon=0
@@ -1295,8 +1289,8 @@ path=27
 line=27
  2129
  1164
- 523
- 3156
+ 526
+ 3159
  660
  119
  1116
@@ -1305,7 +1299,7 @@ line=27
  2551
  3350
  119
- 478
+ 481
  456
  66
  684
@@ -1314,12 +1308,12 @@ line=27
  787
  904
  2591
- 5009
+ 5075
  1882
  6131
  18
  8
- 2601
+ 2604
 address=27
  4868715
  4692069
@@ -1602,122 +1596,51 @@ findhistory=20
  editfontname
  fontname
 findoptions=1
-editpos=13
- 0,6
+editpos=4
+ 0,0
  0,-1073741823
  0,-1073741823
- 0,127
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-sourcefiles=13
- ${PROJECTDIR}/actionsmodule.pas
+sourcefiles=4
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/formscanner.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/mo4stock.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/confideu.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/breakpointsform.pas
- /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
- ${PROJECTDIR}/ideU.pas
-relpaths=13
- actionsmodule.pas
+ ${PROJECTDIR}/actionsmodule.pas
+relpaths=4
+ ideU.pas
  main.pas
  sourceform.pas
- ideU.pas
- formscanner.pas
- main.pas
- mo4stock.pas
- ideU.pas
- confideu.pas
- conflang.pas
- breakpointsform.pas
- mseide-msegui/lib/common/widgets/msewidgets.pas
- ideU.pas
-ismoduletexts=13
+ actionsmodule.pas
+ismoduletexts=4
  0
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-modules=6
+modules=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/confideu.mfm
- /home/fred/ideu/src/conflang.mfm
- /home/fred/ideu/src/breakpointsform.mfm
-moduleoptions=6
+moduleoptions=3
  0
  0
  0
- 0
- 0
- 0
-visiblemodules=6
+visiblemodules=3
  -1
  -1
  -1
- -1
- -1
- -1
-nomenumodules=6
- 0
- 0
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=13
- 0
- 1
- 5
- 3
- 4
- 9
- 7
- 2
- 6
- 12
- 10
- 11
- 8
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=622
+windowlayout=549
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1731,7 +1654,7 @@ windowlayout=622
  ny=0
  ncx=0
  ncy=0
- x=56
+ x=97
  y=65
  cx=1224
  cy=621
@@ -1835,7 +1758,7 @@ windowlayout=622
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1872,8 +1795,8 @@ windowlayout=622
  sortdescend1=0
  sorted=0
  col=0
- row=8
- rowheight=17
+ row=2
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1951,10 +1874,10 @@ windowlayout=622
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=340
- width0=151
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=183
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2048,7 +1971,7 @@ windowlayout=622
  ncy=0
  x=0
  y=512
- cx=1214
+ cx=1212
  cy=88
  rcx=0
  rcy=0
@@ -2148,7 +2071,7 @@ windowlayout=622
  ncy=0
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=54
  rcx=0
  rcy=0
@@ -2164,7 +2087,7 @@ windowlayout=622
  ncy=61
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=61
  rcx=0
  rcy=0
@@ -2175,17 +2098,15 @@ windowlayout=622
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=12
-  /home/fred/ideu/src/main.pas
-  /home/fred/mseide-msegui/lib/common/widgets/msewidgets.pas
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=10
   /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/conflang.pas
   /home/fred/strumpract/src/uos_flat.pas
   /home/fred/uos/src/uos.pas
   /home/fred/strumpract/src/uos.pas
   /home/fred/strumpract/src/infos.pas
   /home/fred/strumpract/src/conflang.pas
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/mo4stock.pas
   /home/fred/ideu/src/mo4stocknew.pas
   /home/fred/ideu/src/po2arrays.pas
@@ -2205,34 +2126,20 @@ windowlayout=622
  ncy=0
  x=208
  y=0
- cx=1006
+ cx=1004
  cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=13
-  0
-  1
-  5
-  3
-  4
-  9
-  7
-  2
-  6
-  12
-  10
-  11
-  8
  firsttab=0
- index=3
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2260,7 +2167,7 @@ windowlayout=622
  ncy=0
  x=0
  y=57
- cx=1214
+ cx=1212
  cy=452
  rcx=0
  rcy=0
@@ -2278,63 +2185,6 @@ windowlayout=622
  y=180
  cx=966
  cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_conflangfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=439
- y=31
- cx=639
- cy=699
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_breakpointsfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=405
- y=266
- cx=580
- cy=243
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_breakpointsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=107
- y=404
- cx=646
- cy=128
  rcx=0
  rcy=0
  wsize=0
