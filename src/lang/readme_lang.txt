@@ -3,11 +3,10 @@ To add a new language, use a copy of '/ideu/lang/ideu_empty.po' and fill all the
 
 When done, rename the file with the code of your language after the "_" , like 'ideu_xz.po'.
 
-You may also add the translation of the new language name at end of each .po file (not obligatory).
-Example add this at end of of the po files:
+Check the  language name at begin of the po file, example:
 
-msgid "Mylanguage [xz]"
-msgstr "MyTranslatedLanguage [xz]"
+msgid "English [en]"
+msgstr "MyLanguage [xz]"
 
 When your .po file is ready, just add it into '/ideu/lang/' folder.
 It will be available via the menu Settings-Language.

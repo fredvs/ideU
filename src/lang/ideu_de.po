@@ -17,41 +17,80 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Cancel"
-msgstr "Ab&brechen"
+msgid "English [en]"
+msgstr "Deutsch [de]"
 
-msgid "Abort"
-msgstr "Ab&brechen"
+msgid "&Cancel"
+msgstr "&Abbrechen"
 
-msgid "Yes"
+msgid "&Abort"
+msgstr "&Abbrechen"
+
+msgid "&OK"
+msgstr "&OK"
+
+msgid "&Yes"
 msgstr "&Ja"
 
-msgid "No"
+msgid "&No"
 msgstr "&Nein"
 
-msgid "All"
-msgstr "&Alle"
+msgid "&All"
+msgstr "A&lle"
 
-msgid "Yes all"
-msgstr "Ja &alle"
+msgid "Yes &all"
+msgstr "A&lle"
 
-msgid "No all"
+msgid "N&o all"
 msgstr "N&ein alle"
 
-msgid "Ignore"
+msgid "&Ignore"
 msgstr "&Ignorieren"
 
-msgid "Skip"
+msgid "&Skip"
 msgstr "Übers&pringen"
 
 msgid "Skip a&ll"
 msgstr "Alles ü&berspringen"
 
-msgid "Continue"
-msgstr "&Fortsetzen"
+msgid "Co&ntinue"
+msgstr "&Fortfahren"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Abort"
+msgstr "Abbrechen"
 
 msgid "OK"
-msgstr "in &Ordnung"
+msgstr "OK"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Yes all"
+msgstr "Alle"
+
+msgid "No all"
+msgstr "Nein alle"
+
+msgid "Ignore"
+msgstr "Ignorieren"
+
+msgid "Skip"
+msgstr "Überspringen"
+
+msgid "Skip all"
+msgstr "Alles überspringen"
+
+msgid "Continue"
+msgstr "Fortfahren"
 
 msgid "Wrong encoding can damage your source files."
 msgstr "Eine falsche Kodierung kann Ihre Quelldateien beschädigen."
@@ -182,6 +221,9 @@ msgstr "Ausführungsfehler mit "
 msgid "Error: Timeout."
 msgstr "Fehler: Zeitüberschreitung."
 
+msgid "Making."
+msgstr "Erstellung."
+
 msgid "Make not running."
 msgstr "Erstellung läuft nicht."
 
@@ -230,6 +272,9 @@ msgstr "Methode nicht gefunden"
 msgid "Published (managed) method"
 msgstr "Veröffentlichte (verwaltete) Methode"
 
+msgid "does not exist."
+msgstr "ist nicht vorhanden."
+
 msgid "Do you wish to delete the event?"
 msgstr "Wollen Sie das Ereignis löschen?"
 
@@ -263,6 +308,9 @@ msgstr "Ungültiger Komponentenname."
 msgid "Invalid exception"
 msgstr "Ungültige Ausnahme"
 
+msgid "T&ools"
+msgstr "Werkzeuge"
+
 msgid "All Files"
 msgstr "Alle Dateien"
 
@@ -290,6 +338,12 @@ msgstr "Datenmodul"
 msgid "Subform"
 msgstr "Unterformular"
 
+msgid "Scrollboxform"
+msgstr "Scrollbox-Formular"
+
+msgid "Tabform"
+msgstr "Formular mit Reitern"
+
 msgid "Dockpanel"
 msgstr "Dockpanel"
 
@@ -303,19 +357,31 @@ msgid "Inherited Form"
 msgstr "Ererbtes Formular"
 
 msgid "Do you want to replace the settings by"
-msgstr "Wollen Sie die Einstellungen ersetzen durch"
+msgstr "Möchten Sie die Einstellungen ersetzen durch"
 
 msgid "Do you want to overwrite?"
-msgstr "Wollen Sie überschreiben?"
+msgstr "Möchten Sie überschreiben?"
 
 msgid "Unknown"
 msgstr "Unbekannt"
+
+msgid "Startup"
+msgstr "Anlaufen"
 
 msgid "GDB died"
 msgstr "GDB abgestürzt"
 
 msgid "Breakpoint hit"
 msgstr "Unterbrechungsstelle erreicht"
+
+msgid "Watchpoint triggered"
+msgstr "Watchpoint ausgelöst"
+
+msgid "Read Watchpoint triggered"
+msgstr "Lese-Watchpoint ausgelöst"
+
+msgid "Access Watchpoint triggered"
+msgstr "Zugriffs-Watchpoint ausgelöst"
 
 msgid "End stepping range"
 msgstr "Ende schrittweise Ausführung"
@@ -326,14 +392,26 @@ msgstr "Funktion beendet"
 msgid "Exited normally"
 msgstr "Normal beendet"
 
+msgid "Exited"
+msgstr "verlassen"
+
 msgid "Detached"
-msgstr "getrennt"
+msgstr "Verbindung gelöst"
+
+msgid "Signal received"
+msgstr "Signal empfangen"
 
 msgid "Stop error"
 msgstr "Stop mit Fehler"
 
 msgid "Can not read project"
 msgstr "Projekt kann nicht gelesen werden"
+
+msgid "Object Inspector"
+msgstr "Objektinspektor"
+
+msgid "Store Component"
+msgstr "Komponentenablage"
 
 msgid "Attaching Process"
 msgstr "Verbinde mit Prozess"
@@ -419,6 +497,9 @@ msgstr "Projektvorlage auswählen"
 msgid "Project files"
 msgstr "Projektdateien"
 
+msgid "All files"
+msgstr "Alle Dateien"
+
 msgid "Select program file"
 msgstr "Programmdatei auswählen"
 
@@ -447,7 +528,7 @@ msgid "Make ***ERROR***"
 msgstr "Make ***FEHLER***"
 
 msgid "Make OK."
-msgstr "Erstellung in Ordnung."
+msgstr "Erstellung OK."
 
 msgid "Source has changed, do you wish to remake project?"
 msgstr "Quelle hat sich geändert, möchten Sie das Projekt neu erstellen?"
@@ -499,6 +580,9 @@ msgstr "Gehe zu Zeile Nummer:"
 
 msgid "Find line"
 msgstr "Zeile suchen"
+
+msgid "Apply"
+msgstr "Anwenden"
 
 msgid "sak voice assistive config"
 msgstr "sak Sprachassistenz-Konfiguration"
@@ -671,7 +755,7 @@ msgstr "Dateierweiterung für Codevorlagenverzeichnis = .mct"
 msgid "Select unit directory"
 msgstr "Unit-Verzeichnis auswählen"
 
-msgid "Debugger"
+msgid "&Debugger"
 msgstr "&Debugger"
 
 msgid "Project Debugger"
@@ -693,13 +777,16 @@ msgid "Select source base directory"
 msgstr "Quellbasisverzeichnis auswählen"
 
 msgid "Defi&nes"
-msgstr "Defi&nitionen"
+msgstr "Def&initionen"
 
 msgid "&Signals"
 msgstr "&Signale"
 
-msgid "Exception"
+msgid "&Exception"
 msgstr "&Ausnahme"
+
+msgid "&Target"
+msgstr "&Ziel"
 
 msgid "Start gdb server command attach target"
 msgstr "gdb-Serverbefehl 'Verbinden mit Ziel' starten"
@@ -812,6 +899,9 @@ msgstr "&Standard-Debugger"
 msgid "Debug &options"
 msgstr "Debug-Optionen"
 
+msgid "&Make"
+msgstr "&Make"
+
 msgid "Default make col"
 msgstr "Standard-Erstellung"
 
@@ -837,10 +927,10 @@ msgid "Show Command Line"
 msgstr "Befehlszeile anzeigen"
 
 msgid "Copy messages to file"
-msgstr "Mitteilungen in Datei kopieren"
+msgstr "Nachrichten in Datei kopieren"
 
 msgid "Close message"
-msgstr "Mitteilung schließen"
+msgstr "Nachrichten schließen"
 
 msgid "Check head"
 msgstr "Header prüfen"
@@ -888,7 +978,7 @@ msgid "Form designer"
 msgstr "Formular-Designer"
 
 msgid "Exit"
-msgstr "Be&enden"
+msgstr "Beenden"
 
 msgid "Hint Color"
 msgstr "Hinweisfarbe"
@@ -897,7 +987,7 @@ msgid "Strip ESC"
 msgstr "ESC entfernen"
 
 msgid "Strip ESC sequences in Messages and Terminal form"
-msgstr "ESC-Sequenzen in Mitteilungen und Terminal entfernen"
+msgstr "ESC-Sequenzen in Nachrichten und Terminal entfernen"
 
 msgid "Show Console"
 msgstr "Konsole zeigen"
@@ -907,6 +997,9 @@ msgstr "Zweck"
 
 msgid "Message output file"
 msgstr "Ausgabedatei für Nachrichten"
+
+msgid "Select target file"
+msgstr "Zieldatei auswählen"
 
 msgid "Macros"
 msgstr "Makros"
@@ -989,62 +1082,62 @@ msgstr "Max"
 msgid "Range error"
 msgstr "Bereichsfehler"
 
-msgid "Undo"
+msgid "&Undo"
 msgstr "&Rückgängig"
 
-msgid "Redo"
+msgid "&Redo"
 msgstr "Wiede&rholen"
 
-msgid "Copy"
+msgid "&Copy"
 msgstr "&Kopieren"
 
-msgid "Cut"
-msgstr "Aus&schneiden"
+msgid "Cu&t"
+msgstr "&Ausschneiden"
 
-msgid "Paste"
+msgid "&Paste"
 msgstr "&Einfügen"
 
-msgid "Select all"
-msgstr "&Alles auswählen"
+msgid "Select &all"
+msgstr "Alles &markieren"
 
 msgid "&Insert Row"
 msgstr "Zeile e&infügen"
 
-msgid "Append Row"
+msgid "&Append Row"
 msgstr "Zeile a&nfügen"
 
-msgid "Delete Row"
+msgid "&Delete Row"
 msgstr "Zeile &löschen"
 
-msgid "Dir"
+msgid "&Dir"
 msgstr "&Verzeichnis"
 
-msgid "Home"
+msgid "&Home"
 msgstr "&Home"
 
-msgid "Up"
+msgid "&Up"
 msgstr "&Hoch"
 
-msgid "New Dir"
+msgid "&New"
 msgstr "&neues Verz."
 
-msgid "New"
-msgstr "&Neu"
-
-msgid "Name"
+msgid "&Name"
 msgstr "N&ame"
 
-msgid "Show hidden files"
+msgid "&Show hidden files"
 msgstr "&Verst.Dat.anzeigen"
 
-msgid "Filter"
+msgid "&Filter"
 msgstr "&Filter"
 
 msgid "Save"
-msgstr "&Speichern"
+msgstr "Speichern"
 
 msgid "Open"
-msgstr "&Öffnen"
+msgstr "Öffnen"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Create new directory"
 msgstr "Neues Verzeichnis erstellen"
@@ -1055,14 +1148,20 @@ msgstr "Zurück"
 msgid "Forward"
 msgstr "Vorwärts"
 
+msgid "Up"
+msgstr "Hoch"
+
 msgid "File"
-msgstr "&Datei"
+msgstr "Datei"
 
 msgid "exists, do you want to overwrite?"
 msgstr "existiert, wollen Sie überschreiben?"
 
 msgid "is modified. Save?"
 msgstr "ist geändert. Speichern?"
+
+msgid "Exception"
+msgstr "Ausnahme"
 
 msgid "System"
 msgstr "System"
@@ -1125,7 +1224,7 @@ msgid "Copy record?"
 msgstr "Datensatz kopieren?"
 
 msgid "Close page"
-msgstr "Seite schließen"
+msgstr "Seite schliessen"
 
 msgid "First"
 msgstr "Erster"
@@ -1143,13 +1242,16 @@ msgid "Append"
 msgstr "Anfügen"
 
 msgid "Delete"
-msgstr "&Löschen"
+msgstr "Löschen"
+
+msgid "Edit"
+msgstr "Bearbeiten"
 
 msgid "Post"
 msgstr "Eintragen"
 
 msgid "Annul"
-msgstr "Anullieren"
+msgstr "Abbrechen"
 
 msgid "Refresh"
 msgstr "Auffrischen"
@@ -1158,10 +1260,10 @@ msgid "Edit filter"
 msgstr "Filter bearbeiten"
 
 msgid "Edit filter minimum"
-msgstr "Filterminimum bearbeiten"
+msgstr "Filter-Minimum bearbeiten"
 
 msgid "Edit filter maximum"
-msgstr "Filtermaximum bearbeiten"
+msgstr "Filter-Maximum bearbeiten"
 
 msgid "Reset filter"
 msgstr "Filter zurücksetzen"
@@ -1184,6 +1286,12 @@ msgstr "Dialog"
 msgid "Insert"
 msgstr "Einfügen"
 
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Paste"
+msgstr "Einfügen"
+
 msgid "Row insert"
 msgstr "Zeile einfügen"
 
@@ -1192,6 +1300,18 @@ msgstr "Zeile anfügen"
 
 msgid "Row delete"
 msgstr "Zeile löschen"
+
+msgid "Undo"
+msgstr "Rückgängig"
+
+msgid "Redo"
+msgstr "Wiederherstellen"
+
+msgid "Cut"
+msgstr "Ausschneiden"
+
+msgid "Select all"
+msgstr "Alles markieren"
 
 msgid "Filter off"
 msgstr "Filter aus"
@@ -1209,13 +1329,16 @@ msgid "selected rows?"
 msgstr "gewählte Zeilen?"
 
 msgid "Single item only"
-msgstr "Nur Einzeleintrag"
+msgstr "Nur Einzeleintrag erlaubt"
 
 msgid "Copy Cells"
 msgstr "Zellen kopieren"
 
 msgid "Paste Cells"
 msgstr "Zellen einfügen"
+
+msgid "Close"
+msgstr "Schliessen"
 
 msgid "Maximize"
 msgstr "Maximieren"
@@ -1329,7 +1452,7 @@ msgid "Selection"
 msgstr "Auswahl"
 
 msgid "Speak path"
-msgstr "Pfad ansagen"
+msgstr "Spreche Pfad"
 
 msgid "Disabled button"
 msgstr "Deaktiviertes Schaltfeld"
@@ -1370,8 +1493,17 @@ msgstr "Lauter"
 msgid "Cancel speech"
 msgstr "Ansage abbrechen"
 
+msgid "Target"
+msgstr "Ziel"
+
 msgid "View"
 msgstr "Ansicht"
+
+msgid "Forms"
+msgstr "Formulare"
+
+msgid "Layout"
+msgstr "Anordnung"
 
 msgid "Syntax"
 msgstr "Syntax"
@@ -1379,11 +1511,20 @@ msgstr "Syntax"
 msgid "Project"
 msgstr "Projekt"
 
+msgid "Edited"
+msgstr "Bearbeitet"
+
 msgid "Widgets"
 msgstr "Widgets"
 
 msgid "Settings"
 msgstr "Einstellungen"
+
+msgid "About"
+msgstr "Über"
+
+msgid "New"
+msgstr "Neu"
 
 msgid "Save as..."
 msgstr "Speichern als ..."
@@ -1445,6 +1586,18 @@ msgstr "Mit Ziel verbinden"
 msgid "Detach target"
 msgstr "Von Ziel trennen"
 
+msgid "Download"
+msgstr "Herunterladen"
+
+msgid "Tools"
+msgstr "Werkzeuge"
+
+msgid "Make"
+msgstr "Erstellen"
+
+msgid "Build"
+msgstr "Neu erstellen"
+
 msgid "Abort make"
 msgstr "Erstelleung abbrechen"
 
@@ -1460,8 +1613,14 @@ msgstr "Baum"
 msgid "Source"
 msgstr "Quelle"
 
+msgid "Open copy"
+msgstr "Kopie öffnen"
+
 msgid "Save copy as"
 msgstr "Kopie speichern unter..."
+
+msgid "Beautifier"
+msgstr "Verschönerer"
 
 msgid "Panels"
 msgstr "Panels"
@@ -1472,11 +1631,23 @@ msgstr "Z-Reihenfolge erzwingen"
 msgid "Tree list"
 msgstr "Baumdarstellung"
 
+msgid "Messages"
+msgstr "Mitteilungen"
+
 msgid "Find result"
 msgstr "Suchergebnis"
 
 msgid "Commander"
 msgstr "Befehlszentrale"
+
+msgid "Symbols"
+msgstr "Symbole"
+
+msgid "Watches"
+msgstr "Überwachungen"
+
+msgid "Stack"
+msgstr "Stapel"
 
 msgid "Threads"
 msgstr "Threads"
@@ -1491,10 +1662,19 @@ msgid "Breakpoints"
 msgstr "Haltepunkte"
 
 msgid "Watchpoints"
-msgstr "Überwachungen"
+msgstr "Beobachtungspunkte"
+
+msgid "Memory"
+msgstr "Speicher"
+
+msgid "Target console"
+msgstr "Zielkonsole"
 
 msgid "Toggle form/unit"
 msgstr "Formular/Unit umschalten"
+
+msgid "MSE modules"
+msgstr "MSE-Module"
 
 msgid "Close all MSE modules"
 msgstr "Alle MSE-Module schließen"
@@ -1507,6 +1687,15 @@ msgstr "Zusätzliche Einstellungen"
 
 msgid "Languages"
 msgstr "Sprachen"
+
+msgid "Configure widgets"
+msgstr "Widgets konfigurieren"
+
+msgid "Configure compilers"
+msgstr "Compiler konfigurieren"
+
+msgid "Configure debuggers"
+msgstr "Debugger konfigurieren"
 
 msgid "Themes"
 msgstr "Themen"
@@ -1526,6 +1715,9 @@ msgstr "Kompakt"
 msgid "Open project"
 msgstr "Projekt öffnen"
 
+msgid "Open file"
+msgstr "Datei öffnen"
+
 msgid "Path"
 msgstr "Pfad"
 
@@ -1541,11 +1733,17 @@ msgstr "Abkürzung"
 msgid "Value"
 msgstr "Wert"
 
+msgid "Case sensitive"
+msgstr "Schreibweise beachten"
+
 msgid "Selected only"
 msgstr "Nur Auswahl"
 
 msgid "Whole word"
 msgstr "Ganzes Wort"
+
+msgid "Text to find"
+msgstr "Suchtext"
 
 msgid "Search in current file"
 msgstr "In aktueller Datei suchen"
@@ -1580,6 +1778,15 @@ msgstr "Komponentenpalette"
 msgid "Find components"
 msgstr "Komponenten suchen"
 
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgid "Step"
+msgstr "Schritt"
+
+msgid "Step instruction"
+msgstr "Befehlsschritt"
+
 msgid "Next instruction"
 msgstr "Nächster Befehl"
 
@@ -1587,13 +1794,22 @@ msgid "Restart debugger"
 msgstr "Debugger neu starten"
 
 msgid "Toggle breakpoint"
-msgstr "Hal&tepunkt umschalten"
+msgstr "Haltepunkt umschalten"
 
 msgid "Toggle breakpoint enabled"
-msgstr "Haltepunktumschaltung aktiv"
+msgstr "Haltepunkt umschalten aktiv"
+
+msgid "Executed lines hint on/off"
+msgstr "Markierung ausführbare Zeilen ein/aus"
 
 msgid "Please compile it first."
 msgstr "Bitte zuerst kompilieren."
+
+msgid "Finish"
+msgstr "Ende"
+
+msgid "Set as default"
+msgstr "Als Standard einstellen"
 
 msgid "Host"
 msgstr "Host"
@@ -1607,8 +1823,23 @@ msgstr "Als Formular anzeigen"
 msgid "Delete word at cursor"
 msgstr "Wort am Cursor löschen"
 
+msgid "Lowercase"
+msgstr "Kleinbuchstaben"
+
+msgid "Uppercase"
+msgstr "Großbuchstaben"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Uncomment"
+msgstr "Kommentar entfernen"
+
 msgid "Convert to Pascal string"
 msgstr "In Pascal-String konvertieren"
+
+msgid "Edit breakpoint"
+msgstr "Haltepunkt bearbeiten"
 
 msgid "Add watch at cursor"
 msgstr "Überwachung am Cursor hinzufügen"
@@ -1630,6 +1861,9 @@ msgstr "UID einfügen"
 
 msgid "Insert Template"
 msgstr "Vorlage einfügen"
+
+msgid "Complete Class at Cursor"
+msgstr "Klasse am Cursor abschließen"
 
 msgid "Show as text"
 msgstr "Als Text anzeigen"
@@ -1668,7 +1902,7 @@ msgid "Set Creation Order"
 msgstr "Erstellungsreihenfolge festlegen"
 
 msgid "Revert to inherited"
-msgstr "Auf ererbt zurücksetzen"
+msgstr "Auf geerbt zurücksetzen"
 
 msgid "Touch Form"
 msgstr "Formular erneuern"
@@ -1755,7 +1989,13 @@ msgid "Copy Line"
 msgstr "Zeile kopieren"
 
 msgid "Find in messages"
-msgstr "In Mitteilungen suchen"
+msgstr "In Nachrichten suchen"
+
+msgid "Add Unit"
+msgstr "Unit hinzufügen"
+
+msgid "Remove Unit"
+msgstr "Unit entfernen"
 
 msgid "Add Text File"
 msgstr "Textdatei hinzufügen"
@@ -1778,8 +2018,14 @@ msgstr "Verzeichnis entfernen"
 msgid "Edit Directory Caption"
 msgstr "Verzeichnistitel bearbeiten"
 
+msgid "Delete All"
+msgstr "Alles löschen"
+
 msgid "Clear"
 msgstr "Löschen"
+
+msgid "Space separated defines for {$ifdef}"
+msgstr "Leerzeichengetrennte Definitionen für {$ifdef}"
 
 msgid "Delete selected row?"
 msgstr "Gewählte Zeile löschen?"
@@ -1787,923 +2033,6 @@ msgstr "Gewählte Zeile löschen?"
 msgid "Delete %s selected rows?"
 msgstr "%s gewählte Zeilen löschen?"
 
-msgid "Po tools"
-msgstr "Po-Werkzeuge"
-
-msgid "Extra Settings of ideU"
-msgstr "Weitere Enstellungen der ideU"
-
-msgid "What to do if a file is changed by a external application"
-msgstr "Was zu tun ist, wenn eine Datei von einer externen Anwendung geändert wurde"
-
-msgid "Apply"
-msgstr "&Anwenden"
-
-msgid "Add space after comma when auto-parsing MSEgui code from designer"
-msgstr "Leerzeichen nach Komma bei automatischer Prüfung von MSEgui Code des Designers einfügen"
-
-msgid "Rectangle area for multi-select"
-msgstr "Rechteckfeld für Mehrfachauswahl"
-
-msgid "Configuration of MSEgui"
-msgstr "MSEgui-Konfiguration"
-
-msgid "Root directory of msegui."
-msgstr "msegui-Wurzelverzeichnis"
-
-msgid "Root directory of msegui library."
-msgstr "Wurzelverzeichnis der msegui-Bibliothek"
-
-msgid "Configuration of fpGUI"
-msgstr "fpGUI-Konfiguration"
-
-msgid "Path of fpGUI Designer"
-msgstr "Pfad des fpGUI-Designers"
-
-msgid "Enable designer integration"
-msgstr "Designer-Integration aktivieren"
-
-msgid "Designer integration"
-msgstr "Designer-Integration"
-
-msgid "Only One Instance (setup designer too)"
-msgstr "Nur Einzelaufruf (Designer-Einstellung)"
-
-msgid "One Instance"
-msgstr "Einzelaufruf"
-
-msgid "Command line param"
-msgstr "Befehlszeilenparameter"
-
-msgid "Filter:"
-msgstr "Filter:"
-
-msgid "Configuration of Compilers"
-msgstr "Compiler-Konfiguration"
-
-msgid "O&ther"
-msgstr "An&dere"
-
-msgid "Debuggers Configuration"
-msgstr "Debugger-Konfiguration"
-
-msgid "Path to debugger 4"
-msgstr "Pfad für Debugger 4"
-
-msgid "Path to debugger 3"
-msgstr "Pfad für Debugger 3"
-
-msgid "Path to debugger 2"
-msgstr "Pfad für Debugger 2"
-
-msgid "Path to debugger 1"
-msgstr "Pfad für Debugger 1"
-
-msgid "Make"
-msgstr "&Erstellen"
-
-msgid "&Run"
-msgstr "&Ausführen"
-
-msgid "Run"
-msgstr "Ausführen"
-
-msgid "Finish"
-msgstr "Beenden"
-
-msgid "Close"
-msgstr "&Schließen"
-
-msgid "&Abort Make"
-msgstr "Erstellung &abbrechen"
-
-msgid "Sa&ve all"
-msgstr "Alles &sichern"
-
-msgid "&Find"
-msgstr "&Suchen"
-
-msgid "&Search again"
-msgstr "&Weitersuchen"
-
-msgid "Find in F&iles"
-msgstr "&in Dateien suchen"
-
-msgid "C&lose all"
-msgstr "Alles sch&ließen"
-
-msgid "Save &as"
-msgstr "Sichern &als"
-
-msgid "&Breakpoints on"
-msgstr "Unter&brechungen ein"
-
-msgid "Breakpoints on/off"
-msgstr "Unterbrechungen ein/aus"
-
-msgid "Watches on"
-msgstr "Über&wachungen ein"
-
-msgid "Watches on/off"
-msgstr ""Überwachungen ein/aus"
-
-msgid "&Line"
-msgstr "&Zeile"
-
-msgid "Select &Edit Page"
-msgstr "Zu bearbeitende &Seite wählen"
-
-msgid "&Indent"
-msgstr "&Einrücken"
-
-msgid "U&nindent"
-msgstr "&Ausrücken"
-
-msgid "Exec Line Hint on"
-msgstr "Ausführungshinweis ein"
-
-msgid "Executable lines hint on/off"
-msgstr "Ausführungshinweis ein/aus"
-
-msgid "Find && &Replace"
-msgstr "Suchen && E&rsetzen"
-
-msgid "&Print"
-msgstr "&Drucken"
-
-msgid "Detach"
-msgstr "Trennen"
-
-msgid "Lowercase"
-msgstr "Kleinschreibung"
-
-msgid "Uppercase"
-msgstr "Großschreibung"
-
-msgid "Toggle Form/Inspector"
-msgstr "Formular/Inspektor wechseln"
-
-msgid "Download"
-msgstr "Herunterladen"
-
-msgid "Bookmark &0"
-msgstr "Lesezeichen &0"
-
-msgid "Bookmark &1"
-msgstr "Lesezeichen &1"
-
-msgid "Bookmark &2"
-msgstr "Lesezeichen &2"
-
-msgid "Bookmark &3"
-msgstr "Lesezeichen &3"
-
-msgid "Bookmark &4"
-msgstr "Lesezeichen &4"
-
-msgid "Bookmark &5"
-msgstr "Lesezeichen &5"
-
-msgid "Bookmark &6"
-msgstr "Lesezeichen &6"
-
-msgid "Bookmark &7"
-msgstr "Lesezeichen &7"
-
-msgid "Bookmark &8"
-msgstr "Lesezeichen &8"
-
-msgid "Bookmark &9"
-msgstr "Lesezeichen &9"
-
-msgid "NONE"
-msgstr "Keiner"
-
-msgid "O&pen"
-msgstr "&Öffnen"
-
-msgid "&Options"
-msgstr "&Optionen"
-
-msgid "&Tree"
-msgstr "&Baum"
-
-msgid "So&urce"
-msgstr "&Quelle"
-
-msgid "Copy &LaTeX"
-msgstr "&LaTeX kopieren"
-
-msgid "&Find Component"
-msgstr "Komponente &suchen"
-
-msgid "Force &Z-Order"
-msgstr "&Z-Anordnung erzwingen"
-
-msgid "custom run"
-msgstr "Anwendungslauf"
-
-msgid "assistive"
-msgstr "Assitiv"
-
-msgid "Comment"
-msgstr "&Kommentieren"
-
-msgid "Uncomment"
-msgstr "Entk&ommentieren"
-
-msgid "Copy &Word at Cursor"
-msgstr "&Wort an Cursor kopieren"
-
-msgid "Procedure List"
-msgstr "Proedur-Liste"
-
-msgid "Delete Word at Cursor"
-msgstr "Wort an Cursor löschen"
-
-msgid "Select Word"
-msgstr "Wort auswählen"
-
-msgid "Configure MSEide"
-msgstr "MSEide konfigurieren"
-
-msgid "Unknown moduleclass for \""
-msgstr "Unbekannte Modulklasse \""
-
-msgid "Inherited component \""
-msgstr "Ererbte Komponente \""
-
-msgid "\" can not be deleted."
-msgstr "\" kann nicht gelöscht werden"
-
-msgid "ERROR"
-msgstr "FEHLER"
-
-msgid "Runerror with \""
-msgstr "Ablauffehler mit \""
-
-msgid "Making."
-msgstr "Erstelle."
-
-msgid "\" running."
-msgstr "\" läuft."
-
-msgid "Recursive form inheritance of \""
-msgstr "Rekursive Formularvererbung von \""
-
-msgid "Component \""
-msgstr "Komponente \""
-
-msgid "\" exists."
-msgstr "\" vorhanden."
-
-msgid "Ancestor for \""
-msgstr "Vorgänger für \""
-
-msgid "\" not found."
-msgstr "\" nicht gefunden"
-
-msgid "Module \""
-msgstr "Modul \""
-
-msgid "Invalid name \""
-msgstr "ungültiger Name \""
-
-msgid "does not exist."
-msgstr "existiert nicht."
-
-msgid "A module \""
-msgstr "Ein Modul \""
-
-msgid "\" is already open."
-msgstr "\" ist bereits offen."
-
-msgid "Can not read formfile \""
-msgstr "Kann Formulardatei nicht lesen: \""
-
-msgid "Tools"
-msgstr "&Werkzeuge"
-
-msgid "Program"
-msgstr "Programm"
-
-msgid "Unit"
-msgstr "Unit"
-
-msgid "Textfile"
-msgstr "Textdatei"
-
-msgid "Tabform"
-msgstr "Register-Formular"
-
-msgid "File \""
-msgstr "Datei \""
-
-msgid "Startup"
-msgstr "Anlauf"
-
-msgid "Watchpoint triggered"
-msgstr "Überwachung angesprochen"
-
-msgid "Read Watchpoint triggered"
-msgstr "Lese-Überwachung angesprochen"
-
-msgid "Access Watchpoint triggered"
-msgstr "Zugriffs-Überwachung angesprochen"
-
-msgid "Exited"
-msgstr "Beendet"
-
-msgid "Signal received"
-msgstr "Signal erhalten"
-
-msgid "Store Component"
-msgstr "Speichere Komponente"
-
-msgid "Sizing Form"
-msgstr "Formulargröße einstellen"
-
-msgid "Step back in code navigation (Ctrl+LeftClick)."
-msgstr "Rückwärtsschritt in Code-Navigation (Strg+Linksklick)"
-
-msgid "Step forward in code navigation."
-msgstr "Vorwärtsschritt in Code-Navigation"
-
-msgid "Select Page"
-msgstr "Seite auswählen"
-
-msgid "Open File"
-msgstr "Datei &öffnen"
-
-msgid "Close File"
-msgstr "Datei schließen"
-
-msgid "&Save File"
-msgstr "Datei &sichern"
-
-msgid "Edit breakpoint"
-msgstr "Unterbrechung editieren"
-
-msgid "Add Watch at Cursor"
-msgstr "Überprüfung an Cursor eintragen"
-
-msgid "Complete Class at Cursor"
-msgstr "Klasse an Cursor vervollständigen"
-
-msgid "Commandor"
-msgstr "Commandor"
-
-msgid "Panel of Edited file"
-msgstr "Seite der Editor-Datei"
-
-msgid "Panel of project."
-msgstr "Projekt-Seite"
-
-msgid "Copy Component"
-msgstr "Komponente &kopieren"
-
-msgid "Paste Component(s)"
-msgstr "Komponente ein&fügen"
-
-msgid "Copy Component(s)"
-msgstr "Komponente(n) kopieren"
-
-msgid "Add Componentfile"
-msgstr "Komponentendatei einfügen"
-
-msgid "Update Component(s)"
-msgstr "Komponente(n) aktualisieren"
-
-msgid "Remove Component(s)"
-msgstr "Komponente(n) entfernen"
-
-msgid "New  Node"
-msgstr "Neuer Knoten"
-
-msgid "Remove Node"
-msgstr "Knoten entfernen"
-
-msgid "Copy Node"
-msgstr "Knoten kopieren"
-
-msgid "Paste Node"
-msgstr "Knoten einfügen"
-
-msgid "New Store"
-msgstr "Neuer Speicherbereich"
-
-msgid "Add Store"
-msgstr "Speicherbereich einfügen"
-
-msgid "Remove Store"
-msgstr "Speicherbereich entfernen"
-
-msgid "Open Store Group"
-msgstr "Speichergruppe öffnen"
-
-msgid "Save Store Group"
-msgstr "Speichergruppe sichern"
-
-msgid "Save Store Group as"
-msgstr "Speichergruppe sichern als"
-
-msgid "Component Store"
-msgstr "Komponentenspeicher"
-
-msgid "Component read error."
-msgstr "Fehler beim Lesen einer Komponente"
-
-msgid "Do you want to overwrite \""
-msgstr "Wollen Sie \""
-
-msgid "\" with current clipboard content?"
-msgstr "\" mit aktuellem Clipboard-Inhalt überschreiben?"
-
-msgid "No component(s) in clipboard."
-msgstr "Keine Komponente(n) im Clipboard"
-
-msgid "Error while writing the storegroup."
-msgstr "Fehler beim Schreiben der Speichergruppe"
-
-msgid "Do you want to remove \""
-msgstr "Wollen Sie entfernen: \""
-
-msgid "\"?"
-msgstr "\"?"
-
-msgid "\" branch?"
-msgstr "\" Zweig?"
-
-msgid "\" does not exist, do you want to create it?"
-msgstr "\" existiert nicht, wllen Sie es erzeugen?"
-
-msgid "Save Component Store Group"
-msgstr "Komponentenspeichergruppe sichern?"
-
-msgid "Use Shift+Click to select"
-msgstr "Benutzen Sie Umschalt+Click zum auswählen"
-
-msgid "Watches &on"
-msgstr ""Überwachungen &ein"
-
-msgid "Delete all"
-msgstr "Alles löschen"
-
-msgid "Add Watchpoint"
-msgstr "Überwachung einfügen"
-
-msgid "Address Watchpoint 8"
-msgstr "Adresse Überwachung 8"
-
-msgid "Address Watchpoint 16"
-msgstr "Adresse Überwachung 16"
-
-msgid "Address Watchpoint 32"
-msgstr "Adresse Überwachung 32"
-
-msgid "Address Watchpoint 64"
-msgstr "Adresse Überwachung 64"
-
-msgid "&Format default"
-msgstr "Vorgabe&format"
-
-msgid "&Binary"
-msgstr "&Binär"
-
-msgid "D&ecimal signed"
-msgstr "D&zimal mit Vorzeichen"
-
-msgid "Decimal &unsigned"
-msgstr "Dezimal &ohne Vorzeichen"
-
-msgid "&Hex"
-msgstr "&Hex"
-
-msgid "&Size default"
-msgstr "Vorgabegröße"
-
-msgid "&Reset Formats"
-msgstr "Formate zu&rückseten"
-
-msgid "Do you wish to delete all watches?"
-msgstr "Wollen Sie alle Überwachungen löschen?"
-
-msgid "<disabled>"
-msgstr "<unwirksam>"
-
-msgid "GDB not active."
-msgstr "GDB nicht aktiv."
-
-msgid "Do you wish to delete all symbols?"
-msgstr "Wollen Sie alle Symbole löschen?"
-
-msgid "Edit component list"
-msgstr "Komponentenliste editieren"
-
-msgid "Collapse tree"
-msgstr "Baum zusammenfalten"
-
-msgid "Clear Selection"
-msgstr "Auswahl löschen"
-
-msgid "Breakpoints &on"
-msgstr "Unterbrechungen &ein"
-
-msgid "Breakpoint error."
-msgstr "Unterbrechungsfehler"
-
-msgid "BREAKPOINT ERROR"
-msgstr "UNTERBRECHUNGSFEHLER"
-
-msgid "Do you wish to delete all breakpoints?"
-msgstr "Wollen Sie alle Unterbrechungen löschen?"
-
-msgid "Watchpoint error."
-msgstr "Überwachungsfehler"
-
-msgid "WATCHPOINT ERROR"
-msgstr "ÜBERWACHUNGSFEHLER"
-
-msgid "Program not loaded."
-msgstr "Programm nicht geladen."
-
-msgid "Do you wish to delete all watchpoints?"
-msgstr "Wollen Sie alle Überwachungen löschen?"
-
-msgid "Copy to Clipboard"
-msgstr "Ins Clipboard kopieren"
-
-msgid "Project Tree"
-msgstr "Projekt-Baum"
-
-msgid "&Add Unit"
-msgstr "Unit &hinzufügen"
-
-msgid "Remove Unit"
-msgstr "Unit ent&fernen"
-
-msgid "Pascal Units"
-msgstr "Pascal-Units"
-
-msgid "C Modules"
-msgstr "C-Module"
-
-msgid "Text Files"
-msgstr "Textdateien"
-
-msgid "Do you wish to remove \""
-msgstr "Wollen Sie entfernen: \""
-
-msgid "Select Directory"
-msgstr "Verzeichnis wählen"
-
-msgid "Do you want to remove"
-msgstr "Wollen Sie entfernen:"
-
-msgid "with the sub-items from project?"
-msgstr "mit Unter-Teilen aus dem Project?"
-
-msgid "Set as default"
-msgstr "Als Voreinstellung seten"
-
 msgid "Use MO files instead of PO files"
-msgstr "MO- statt PO-Dateien benutzen"
-
-msgid "Font height for all ideU text"
-msgstr "Zeichenhöhe für ideU-Text"
-
-msgid "Find in file result"
-msgstr "Dateisuchergebnis"
-
-msgid "Show &Breakpoint"
-msgstr "Unter&brechung anzeigen"
-
-msgid "*active*"
-msgstr "*aktiv*"
-
-msgid "Find"
-msgstr "Suchen"
-
-msgid "Find back"
-msgstr "Rückwärts suchen"
-
-msgid "Load a Syntax Definition File"
-msgstr "Syntax-Definitions-Datei laden"
-
-msgid "Selected Syntax Definition File"
-msgstr "ausgewählte Syntax-Definitions-Datei"
-
-msgid "E&xit"
-msgstr "Be&enden"
-
-msgid "Find &Next"
-msgstr "&nächste Stelle"
-
-msgid "Text to find"
-msgstr "&Suchtext"
-
-msgid "Case Sensitive"
-msgstr "Gemäß &Schreibweise"
-
-msgid "Reset"
-msgstr "&Rücksetzen"
-
-msgid "Reset index to 0"
-msgstr "Index auf 0 zurücksetzen"
-
-msgid "Find A&ll"
-msgstr "&Alles Suchen"
-
-msgid "Copy to clipboard"
-msgstr "Ins Clipboard &kopieren"
-
-msgid "Po <> Po converter"
-msgstr "Konverter Po <> Po"
-
-msgid "Default PO header"
-msgstr "PO-Vorgabe-Kopftext"
-
-msgid "All files of directory"
-msgstr "Alle Dateien im Verzeichnis"
-
-msgid "Create new \"ideu_empty.po\" file ready to be translated.   Paste a co"
-"py of it in /lang directory if arrays were updated."
-msgstr "Neue übersetzungsfertige Datei \"ideu_empty.po\" erzeugen. Fügen Sie "
-"eine Kopie in das Verzeichnis /lang ein, wenn die Felder aktualisiert sind."
-
-msgid "Output Directory"
-msgstr "Ausgabeverzeichnis"
-
-msgid "Create new \"ideu_empty.txt\" file ready for Google Translate"
-msgstr "Neue Datei \"ideu_empty.txt\" fertig für Google Translate erzeugen."
-
-msgid "Extract all the captions from a form.mfm file"
-msgstr "Alle Beschriftungen einer Formulardatei extrahieren"
-
-msgid "Create a MO file from a PO file"
-msgstr "Eine MO- aus einer PO-Datei erstellen"
-
-msgid "Working"
-msgstr "Arbeite"
-
-msgid "Done"
-msgstr "Fertig"
-
-msgid "Forms"
-msgstr "&Formulare"
-
-msgid "simpleform"
-msgstr "Einfaches Formular"
-
-msgid "dockingform"
-msgstr "Andockformular"
-
-msgid "scrollboxform"
-msgstr "Rollbalken-Formular"
-
-msgid "program"
-msgstr "Programm"
-
-msgid "unit"
-msgstr "Unit"
-
-msgid "textfile"
-msgstr "Textdatei"
-
-msgid "TODO (you may use fpGUI designer)"
-msgstr "Fehlt (Sie können den fpGUI-Designer verwenden)"
-
-msgid "TODO"
-msgstr "Fehlt"
-
-msgid "&Quit"
-msgstr "&Verlassen"
-
-msgid "&Search"
-msgstr "&Suchen"
-
-msgid "Do a search backward"
-msgstr "Rückwärtssuche ausführen"
-
-msgid "Edit"
-msgstr "&Editieren"
-
-msgid "Target"
-msgstr "&Ziel"
-
-msgid "En&vironment"
-msgstr "&Umgebung"
-
-msgid "&View"
-msgstr "&Ansicht"
-
-msgid "Pan&els"
-msgstr "&Paneele"
-
-msgid "&New Panel"
-msgstr "&Neues Paneel"
-
-msgid "Template Editor"
-msgstr "Vorlagen-Editor"
-
-msgid "Component &Palette"
-msgstr "Komponenten-&Palette"
-
-msgid "Component Sto&re"
-msgstr "Komponenten-Ablage"
-
-msgid "Object Inspector"
-msgstr "Objekt-&Inspektor"
-
-msgid "Show Source Editor"
-msgstr "Quellentext-Editor anzeigen"
-
-msgid "&TreeList"
-msgstr "&Baum-Liste"
-
-msgid "Messages"
-msgstr "&Mitteilungen"
-
-msgid "Show Message Panel"
-msgstr "Meldungs-Panel anzeigen"
-
-msgid "&Find Results"
-msgstr "&Suchergebnisse"
-
-msgid "Show Find Result Panel"
-msgstr "Suchergebnis-Panel anzeigen"
-
-msgid "Show Commandor-Debugger"
-msgstr "Commandor-Debugger anzeigen"
-
-msgid "Symbols"
-msgstr "Symbo&le"
-
-msgid "Watches"
-msgstr "&Überwachungen"
-
-msgid "Stack"
-msgstr "&Stapel"
-
-msgid "Memory"
-msgstr "S&peicher"
-
-msgid "Target Console"
-msgstr "&Programm-Konsole"
-
-msgid "Show Console Panel"
-msgstr "Konsolen-Panel anzeigen"
-
-msgid "&Breakpoints"
-msgstr "Unter&brecungspunkte"
-
-msgid "Watchp&oints"
-msgstr "Über&wachungspunkte"
-
-msgid "Switch Source/Form"
-msgstr "Formular/Unit umschalten"
-
-msgid "Layout"
-msgstr "An&ordnung"
-
-msgid "Load layout for current project."
-msgstr "Anordnung für aktuelles Projekt laden"
-
-msgid "&Project"
-msgstr "&Projekt"
-
-msgid "Actions for the project..."
-msgstr "Aktionen für Projekt ---"
-
-msgid "Build"
-msgstr "&Neu erstellen"
-
-msgid "Make 1"
-msgstr "Erstellen &1"
-
-msgid "Make 2"
-msgstr "Erstellen &2"
-
-msgid "Make 3"
-msgstr "Erstellen &3"
-
-msgid "Make 4"
-msgstr "Erstellen &4"
-
-msgid "Make 5"
-msgstr "Erstellen &5"
-
-msgid "Make 6"
-msgstr "Erstellen &6"
-
-msgid "Make 7"
-msgstr "Erstellen &7"
-
-msgid "Make 8"
-msgstr "Erstellen &8"
-
-msgid "Make 9"
-msgstr "Erstellen &9"
-
-msgid "Make 0"
-msgstr "Erstellen &0"
-
-msgid "Debug/Run"
-msgstr "Debug/Lauf"
-
-msgid "Step"
-msgstr "&Schritt"
-
-msgid "Step Instruction"
-msgstr "Befehl weitergehen"
-
-msgid "Enable toggle breakpoint"
-msgstr "Unterbrechungen umschalten ein"
-
-msgid "Executed lines hint on/off"
-msgstr "Ausführungshinweis ein/aus"
-
-msgid "From &Template"
-msgstr "Von &Vorlage"
-
-msgid "From &Program"
-msgstr "Von &Programm"
-
-msgid "Empty"
-msgstr "L&eer"
-
-msgid "Open copy"
-msgstr "&Kopie öffnen"
-
-msgid "Save as copy"
-msgstr "als Kopie speichern"
-
-msgid "Edite&d"
-msgstr "E&ditiert"
-
-msgid "Actions for Edited Source File"
-msgstr "Aktionen für editierte Quellendatei"
-
-msgid "Make X"
-msgstr "Erstellen X"
-
-msgid "Compile without parameters"
-msgstr "Ohne Parameter kompilieren"
-
-msgid "Beautifier"
-msgstr "Formatierer"
-
-msgid "Beautifier of the edited code"
-msgstr "Editierten Code formatieren"
-
-msgid "&Widgets"
-msgstr "&Widgets"
-
-msgid "MSE - fpGUI widgets"
-msgstr "MSE - fpGUI Widgets"
-
-msgid "MSE Modules"
-msgstr "MSE-Module"
-
-msgid "Find &Component"
-msgstr "&Komponente suchen"
-
-msgid "Form Designer"
-msgstr "Formular-Designer"
-
-msgid "General and extra setting."
-msgstr "Allgemeine und zusätzliche Einstellungen"
-
-msgid "&General Setting"
-msgstr "All&gemeine Einstellungen"
-
-msgid "&Extra Setting"
-msgstr "Zusätzliche &Einstellungen"
-
-msgid "Configure Widgets"
-msgstr "&Widgets konfigurieren"
-
-msgid "Configure Compilers"
-msgstr "Compiler konfigurieren"
-
-msgid "Configure Debuggers"
-msgstr "Debugger konfigurieren"
-
-msgid "Silver"
-msgstr "Silber"
-
-msgid "Carbon"
-msgstr "Carbon"
-
-msgid "Language (Lang)"
-msgstr "Sprache (Lang)"
-
-msgid "Help"
-msgstr "&Hilfe"
-
-msgid "About"
-msgstr "&Über"
-
-msgid "English [en]"
-msgstr "Deutsch [de]"
+msgstr "MO-Dateien statt PO-Dateien benutzen"
 

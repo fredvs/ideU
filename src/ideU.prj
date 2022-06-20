@@ -1597,19 +1597,19 @@ findhistory=20
  fontname
 findoptions=1
 editpos=4
- 0,4
+ 20,3
  0,-1073741823
  0,-1073741823
- 0,5
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 sourcefiles=4
- /home/fred/ideu/src/ideU.pas
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- /home/fred/ideu/src/actionsmodule.pas
+ ${PROJECTDIR}/actionsmodule.pas
 relpaths=4
  ideU.pas
  main.pas
@@ -1638,9 +1638,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=551
+windowlayout=552
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1712,7 +1712,7 @@ windowlayout=551
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1796,7 +1796,7 @@ windowlayout=551
  sorted=0
  col=0
  row=2
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1855,7 +1855,7 @@ windowlayout=551
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1971,7 +1971,7 @@ windowlayout=551
  ncy=0
  x=0
  y=512
- cx=1214
+ cx=1212
  cy=88
  rcx=0
  rcy=0
@@ -2041,7 +2041,7 @@ windowlayout=551
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -2071,7 +2071,7 @@ windowlayout=551
  ncy=0
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=54
  rcx=0
  rcy=0
@@ -2087,7 +2087,7 @@ windowlayout=551
  ncy=61
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=61
  rcx=0
  rcy=0
@@ -2098,9 +2098,10 @@ windowlayout=551
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msepointer.pas
- history=12
+ value=/home/fred/ideu/src/ideU.pas
+ history=13
   /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu/src/potools.pas
   /home/fred/ideu/src/po2arrays.pas
   /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
@@ -2128,20 +2129,20 @@ windowlayout=551
  ncy=0
  x=208
  y=0
- cx=1006
+ cx=1004
  cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=3
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2169,7 +2170,7 @@ windowlayout=551
  ncy=0
  x=0
  y=57
- cx=1214
+ cx=1212
  cy=452
  rcx=0
  rcy=0
