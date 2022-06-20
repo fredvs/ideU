@@ -13,7 +13,7 @@ program ideU;
 uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
-cthreads,   {$endif} {$endif}
+  cthreads,   {$endif} {$endif}
 
   msestockobjects,
   mseconsts,

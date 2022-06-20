@@ -1,4 +1,3 @@
-
 unit potools;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
@@ -59,6 +58,9 @@ uses
 procedure theaderfo.convert2mo(const Sender: TObject; fn: msestring);
 var
 MOmake: MObuilder;
+
+po2moerror: mseString;
+
 begin
  if fileexists(fn) then
   begin
@@ -66,6 +68,9 @@ begin
   WITH MOmake DO
     TRY
       MObuild (fn);
+
+      po2moerror:= Errors.Text;
+
     FINALLY
       Free;
     END;
@@ -237,12 +242,12 @@ begin
 
   setlength(defaultresult, length(en_modalresulttext));
   for imodalresultty := Low(modalresultty) to High(modalresultty) do
-    defaultresult[Ord(imodalresultty)] := en_modalresulttext[(imodalresultty)];
+    defaultresult[Ord(imodalresultty)] := en_modalresulttext[{$ifdef mse_dynpo}ord{$endif} (imodalresultty)];
 
   y := length(defaultresult);
   setlength(defaultresult, length(en_modalresulttextnoshortcut) + y);
   for imodalresultty := Low(modalresultty) to High(modalresultty) do
-    defaultresult[y + Ord(imodalresultty)] := en_modalresulttextnoshortcut[(imodalresultty)];
+    defaultresult[y + Ord(imodalresultty)] := en_modalresulttextnoshortcut[{$ifdef mse_dynpo}ord{$endif} (imodalresultty)];
 
   y := length(defaultresult);
   setlength(defaultresult, length(en_mainformtext) + y);
@@ -281,7 +286,7 @@ begin
   y := length(defaultresult);
   setlength(defaultresult, length(en_stockcaption) + y);
   for istockcaptionty := Low(stockcaptionty) to High(stockcaptionty) do
-    defaultresult[y + Ord(istockcaptionty)] := en_stockcaption[(istockcaptionty)];
+    defaultresult[y + Ord(istockcaptionty)] := en_stockcaption[{$ifdef mse_dynpo}ord{$endif} (istockcaptionty)];
 
   y := length(defaultresult);
   setlength(defaultresult, length(en_xstockcaption) + y);
@@ -291,7 +296,7 @@ begin
   y := length(defaultresult);
   setlength(defaultresult, length(en_extendedtext) + y);
   for iextendedty := Low(extendedty) to High(extendedty) do
-    defaultresult[y + Ord(iextendedty)] := en_extendedtext[(iextendedty)];
+    defaultresult[y + Ord(iextendedty)] := en_extendedtext[{$ifdef mse_dynpo}ord{$endif} (iextendedty)];
 
   // check if double "msgid"
   str1 := '';

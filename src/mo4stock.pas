@@ -1,9 +1,5 @@
 UNIT mo4stock;
-
-// Sieghard 2022
-
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-{$modeswitch arraytodynarray}
 
 INTERFACE
 
@@ -20,18 +16,24 @@ CONST
 
 VAR
   customsetLangFilePattern: FUNCTION: string;
-  realizeApplicationLanguages: PROCEDURE;
+  realizeApplicationLanguages: PROCEDURE = NIL;
   LangDir: string = 'lang';
   Appname: string;
 
 PROCEDURE createnewlang (alang: msestring);
 FUNCTION findmofiles: msestringarty;
+// procedure createnewlangmo (alang: msestring);
+// procedure findmofiles ();
+// FUNCTION findpofiles (LinuxSystem: boolean = false): msestringarty;
 
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Index: integer): msestringarty;
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty): integer;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Area: integer): msestringarty;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty): integer;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring; VAR ApplicationDefaults: msestringarty): integer;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring; VAR Area: integer): msestringarty;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring): integer;
 FUNCTION getApplicationString (Area, Index: integer): msestring;
-FUNCTION getApplicationLanguage (Index: integer): msestringarty;
+FUNCTION getApplicationLanguage (Area: integer): msestringarty;
 FUNCTION ApplicationStringCount (Area: integer): integer;
 
 IMPLEMENTATION
@@ -56,25 +58,33 @@ VAR
   LocalisationActive: Localisator;
 
 
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR ApplicationDefaults: msestringarty): integer;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring; VAR ApplicationDefaults: msestringarty): integer;
  BEGIN
    Result:= addApplicationStrings (ApplicationStrings);
    ApplicationDefaults:= LocalisationActive [Result];
  END;
 
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Index: integer): msestringarty;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty; VAR Area: integer): msestringarty;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring; VAR Area: integer): msestringarty;
  BEGIN
-   Index:=  addApplicationStrings (ApplicationStrings);
-   Result:= LocalisationActive [Index];
+   Area:=  addApplicationStrings (ApplicationStrings);
+   Result:= LocalisationActive [Area];
  END;
 
-FUNCTION addApplicationStrings (ApplicationStrings: msestringarty): integer;
+// FUNCTION addApplicationStrings (ApplicationStrings: msestringarty): integer;
+FUNCTION addApplicationStrings (ApplicationStrings: ARRAY OF msestring): integer;
+ VAR
+   i: integer;
  BEGIN
    Result:= Length (LocalisationReference);
    SetLength (LocalisationReference, succ (Result));
    SetLength (LocalisationActive,    succ (Result));
 
-   LocalisationReference [Result]:= ApplicationStrings;
+   SetLength (LocalisationReference [Result], Length (ApplicationStrings));
+   FOR i:= 0 TO High (ApplicationStrings) DO
+     LocalisationReference [Result][i]:= ApplicationStrings [i];
+
    SetLength (LocalisationActive [Result], 0);
  END;
 
@@ -83,9 +93,9 @@ FUNCTION getApplicationString (Area, Index: integer): msestring;
    Result:= LocalisationActive [Area][Index];
  END;
 
-FUNCTION getApplicationLanguage (Index: integer): msestringarty;
+FUNCTION getApplicationLanguage (Area: integer): msestringarty;
  BEGIN
-   Result:= LocalisationActive [Index];
+   Result:= LocalisationActive [Area];
  END;
 
 FUNCTION ApplicationStringCount (Area: integer): integer;
@@ -169,6 +179,52 @@ FUNCTION findMOfiles: msestringarty;
      END;
    END;
  END;
+(*
+procedure findmofiles ();
+var
+  ListOfFiles: array of string;
+  MOfile: TMOfile;
+  SearchResult: TSearchRec;
+  file1: ttextdatastream;
+  Attribute: word;
+  i: integer = 0;
+  str1, str2, str3: msestring;
+begin
+  Attribute := faReadOnly or faArchive;
+
+  SetLength(ListOfFiles, 0);
+
+  //str1 := LangDir + directoryseparator;
+
+//  str1 := expandprmacros('${LANGDIR}') + directoryseparator;
+
+  // List the files
+  FindFirst(LangDir{str1} + '*'+ LangExt, Attribute, SearchResult);
+   WHILE i = 0 DO BEGIN
+     SetLength (ListOfFiles, succ (Length (ListOfFiles)));      // Increase the list
+     ListOfFiles [High (ListOfFiles)]:= SearchResult.Name;      // Add it at the end of the list
+     i:= FindNext (SearchResult);
+   END;
+  FindClose(SearchResult);
+
+  setlength(lang_langnames, 1);
+  lang_langnames[0] :=  BaseLang;
+
+//   str2 := expandprmacros('${LANGDIR}') + directoryseparator;
+
+  for i := Low(ListOfFiles) to High(ListOfFiles) do
+    if system.pos('empty', ListOfFiles[i]) = 0 then
+    begin
+       setlength(lang_langnames, length(lang_langnames) + 1);
+       str1 := ListOfFiles[i];
+       MOfile:= TMOfile.Create (LangDir{str2}+str1);
+       str1 := MOfile.Translate (BaseLang);
+       //writeln(str1);
+       lang_langnames[length(lang_langnames) - 1] := trim(str1);
+       MOfile.Destroy;
+    end;
+end;
+*)
 
 PROCEDURE translate_stock (VAR lang_stocktext, default_stocktext: msestringarty;
                            MOfile: TMOfile);
@@ -180,12 +236,25 @@ BEGIN
 
    FOR x:= 0 TO High (default_stocktext) DO BEGIN
       astrt:= MOfile.translate (default_stocktext [x]);
-      IF astrt <> '' THEN BEGIN
-        astrt:= StringReplace (astrt, ',',  '‚', [rfReplaceAll]);
-        astrt:= StringReplace (astrt, #039, '‘', [rfReplaceAll]);
-        lang_stocktext [x]:= astrt;
-      END
-      ELSE lang_stocktext [x]:= default_stocktext [x];
+{$ifndef no_remove_hot_chars}
+      // if no translation, but original contains '&', try w/ '&' characters removed
+      IF (astrt = '') AND (Pos ('&', default_stocktext [x]) <> 0) THEN
+        astrt:= MOfile.translate (StringReplace (default_stocktext [x], '&',  '', [rfReplaceAll]));
+
+      // if no translation still, try w/ default upper cased
+      IF (astrt = '') AND (Pos ('&', default_stocktext [x]) <> 0) THEN
+        astrt:= MOfile.translate (uppercase (StringReplace (default_stocktext [x], '&',  '', [rfReplaceAll])));
+
+      // if translated but original doesn't contain '&', remove from translation too
+      IF (astrt <> '') AND (Pos ('&', default_stocktext [x]) = 0) THEN
+        astrt:= {Unicode}StringReplace (astrt, '&',  '', [rfReplaceAll]);
+{$endif}
+      IF astrt = '' THEN astrt:= default_stocktext [x]
+      ELSE BEGIN
+        astrt:= {Unicode}StringReplace (astrt, ',',  '‚', [rfReplaceAll]);
+        astrt:= {Unicode}StringReplace (astrt, #039, '‘', [rfReplaceAll]);
+      END;
+      lang_stocktext [x]:= astrt;
    END;
 END;
 
@@ -216,15 +285,13 @@ PROCEDURE createnewlang (alang: msestring);
    //                        "Standard":   <applcation dirextory>/$Appname_$Language.<LangExt>
    //                        Linux system: /usr/share/locale/$Language/LC_MESSAGES/$Appname.<LangExt>
    // - Variable "Appname";  Content like currently
-   // - Variable "Language"; Conuains current "alang"
+   // - Variable "Language"; Contains current "alang"
    // Variables can be replaced by fpc's StrUtils function "StringReplace"
    // Pattern of "LangPath" can determine search function required,
    //   decided e.g. by occurrence of substring "LC_MESSAGES"
-   
-  
+
    IF assigned (customsetLangFilePattern) THEN LangDir:= customsetLangFilePattern ();
    x:= System.Pos (LangFlag, LangDir);
-     
 
    IF x > 0 THEN BEGIN
      Appname:= Copy (LangDir, succ (x), Length (LangDir));
@@ -243,21 +310,11 @@ PROCEDURE createnewlang (alang: msestring);
      ELSE currentLangFile := LangDir+ Appname+ alang+ LangExt;
 {$endif}
 
-{$ifdef windows}
- currentLangFile := LangDir + 'ideu_' + alang + '.mo';
- //mainfo.caption := (' currentLangFile ' + currentLangFile);
-{$endif}
+//  writeln(currentLangFile);
 
-   IF (NOT FileExists (currentLangFile)) OR (lowercase (alang) = BaseLang) OR (Trim (alang) = '')
+   IF (Trim (alang) = '') OR {(lowercase (alang) = BaseLang) OR} (NOT FileExists (currentLangFile))
    THEN BEGIN
      buildlangtext (LocalisationActive);
-
-     lang_modalresult:=           getApplicationLanguage (ModalresultArea);
-     lang_modalresultnoshortcut:= getApplicationLanguage (ModalresultnoShortcutArea);
-     lang_stockcaption:=          getApplicationLanguage (StockcaptionArea);
-     lang_extended:=              getApplicationLanguage (ExtendedArea);
-
-     lang_langnames:= findmofiles;
    END
    ELSE IF FileExists (currentLangFile) THEN BEGIN
      MOfile:= TMOfile.Create (currentLangFile);
@@ -266,9 +323,8 @@ PROCEDURE createnewlang (alang: msestring);
        translate_stock (LocalisationActive [x], LocalisationReference [x], MOfile);
 
      MOfile.Destroy;
-
-     lang_langnames:= findmofiles;
    END;
+   lang_langnames:= findmofiles;
 
    lang_modalresult:=           getApplicationLanguage (ModalresultArea);
    lang_modalresultnoshortcut:= getApplicationLanguage (ModalresultnoShortcutArea);

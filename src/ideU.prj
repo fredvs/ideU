@@ -138,8 +138,9 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=FormScanner
+ value=caret
  history=20
+  caret
   FormScanner
   -dFormScanner
   message
@@ -159,13 +160,12 @@ findinfiledialog=94
   setfocus
   loadconfigform
   BGRAFreeType
-  GetLanguageIDs
  [findinfileadialogfo]
  stackedunder=
  x=200
- y=100
+ y=106
  cx=346
- cy=308
+ cy=302
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
@@ -1597,19 +1597,19 @@ findhistory=20
  fontname
 findoptions=1
 editpos=4
- 0,0
+ 0,4
  0,-1073741823
  0,-1073741823
- 0,0
+ 0,5
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 sourcefiles=4
- ${PROJECTDIR}/ideU.pas
+ /home/fred/ideu/src/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
+ /home/fred/ideu/src/actionsmodule.pas
 relpaths=4
  ideU.pas
  main.pas
@@ -1638,9 +1638,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=3
 [layout]
-windowlayout=549
+windowlayout=551
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1654,8 +1654,8 @@ windowlayout=549
  ny=0
  ncx=0
  ncy=0
- x=97
- y=65
+ x=50
+ y=63
  cx=1224
  cy=621
  rcx=0
@@ -1796,7 +1796,7 @@ windowlayout=549
  sorted=0
  col=0
  row=2
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1855,7 +1855,7 @@ windowlayout=549
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1874,10 +1874,10 @@ windowlayout=549
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=388
+ width0=172
  sortdescend0=0
- width1=129
+ width1=210
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1971,7 +1971,7 @@ windowlayout=549
  ncy=0
  x=0
  y=512
- cx=1212
+ cx=1214
  cy=88
  rcx=0
  rcy=0
@@ -2041,7 +2041,7 @@ windowlayout=549
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2071,7 +2071,7 @@ windowlayout=549
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=54
  rcx=0
  rcy=0
@@ -2087,7 +2087,7 @@ windowlayout=549
  ncy=61
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=61
  rcx=0
  rcy=0
@@ -2098,18 +2098,20 @@ windowlayout=549
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=10
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/strumpract/src/uos_flat.pas
-  /home/fred/uos/src/uos.pas
-  /home/fred/strumpract/src/uos.pas
-  /home/fred/strumpract/src/infos.pas
-  /home/fred/strumpract/src/conflang.pas
-  /home/fred/ideu/src/conflang.pas
-  /home/fred/ideu/src/mo4stock.pas
-  /home/fred/ideu/src/mo4stocknew.pas
+ value=/home/fred/ideu/src/msepointer.pas
+ history=12
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/potools.pas
   /home/fred/ideu/src/po2arrays.pas
+  /home/fred/mseide-msegui/lib/common/kernel/windows/mseguiintf.pas
+  /home/fred/mseide-msegui (copy 1)/lib/common/kernel/linux/mseguiintf.pas
+  /home/fred/mseide-msegui (copy 1)/lib/common/kernel/msectypes.pas
+  /home/fred/demo_mse/testtransp/msepointer.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/mseguiintf.pas
+  /home/fred/demo_mse/testtransp/mseguiintf.pas
+  /home/fred/demo_mse/testtransp/testtransp.pas
+  /home/fred/uos/examples/uos_mpg123.pas
+  /home/fred/uos/examples/uos_libsndfile.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2126,20 +2128,20 @@ windowlayout=549
  ncy=0
  x=208
  y=0
- cx=1004
+ cx=1006
  cy=452
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2167,7 +2169,7 @@ windowlayout=549
  ncy=0
  x=0
  y=57
- cx=1212
+ cx=1214
  cy=452
  rcx=0
  rcy=0
