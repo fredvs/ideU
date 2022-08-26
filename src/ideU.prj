@@ -1588,8 +1588,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=okon
+finddtext=inc(x
 findhistory=20
+ inc(x
  okon
  project_history
  comm
@@ -1609,11 +1610,13 @@ findhistory=20
  setlangid
  setlangi
  conflangfo.sh
- conflangfo.s
 findoptions=1
 editpos=16
- 0,6
- 0,1
+ 0,35
+ 0,-1073741823
+ 0,0
+ 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1622,12 +1625,9 @@ editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,2903
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,1907
- 0,1913
- 0,2
+ 0,2991
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1658,9 +1658,9 @@ sourcefiles=16
  ${PROJECTDIR}/sourcepage.pas
  ${PROJECTDIR}/confideu.pas
  ${PROJECTDIR}/ideusettings.pas
- /home/fred/Downloads/msefiledialogx.pas
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/commandorform.pas
+ /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
 relpaths=16
  ideU.pas
  main.pas
@@ -1675,9 +1675,9 @@ relpaths=16
  sourcepage.pas
  confideu.pas
  ideusettings.pas
- ../Downloads/msefiledialogx.pas
  msefiledialogx.pas
  commandorform.pas
+ ../mseide-msegui/lib/common/dialogx/msefiledialogx.pas
 ismoduletexts=16
  0
  0
@@ -1734,25 +1734,25 @@ nomenumodules=8
 [sourcefo.files_tab]
 order=16
  0
- 13
- 14
- 11
- 1
- 15
- 3
- 6
- 4
- 8
- 5
- 7
- 9
  12
  10
+ 7
  2
-firsttab=0
-index=2
+ 11
+ 3
+ 1
+ 16
+ 4
+ 15
+ 6
+ 8
+ 9
+ 5
+ 14
+firsttab=7
+index=15
 [layout]
-windowlayout=651
+windowlayout=653
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1772,7 +1772,7 @@ windowlayout=651
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1893,7 +1893,7 @@ windowlayout=651
  x=0
  y=0
  cx=205
- cy=448
+ cy=516
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1905,7 +1905,7 @@ windowlayout=651
  sorted=0
  col=0
  row=6
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1983,10 +1983,10 @@ windowlayout=651
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=359
- width0=158
+ propcolwidthref=376
+ width0=166
  sortdescend0=0
- width1=195
+ width1=204
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2079,9 +2079,9 @@ windowlayout=651
  ncx=0
  ncy=0
  x=0
- y=508
- cx=1212
- cy=92
+ y=584
+ cx=1356
+ cy=106
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2180,8 +2180,8 @@ windowlayout=651
  ncy=0
  x=0
  y=0
- cx=1212
- cy=54
+ cx=1356
+ cy=62
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2196,8 +2196,8 @@ windowlayout=651
  ncy=61
  x=0
  y=0
- cx=1212
- cy=61
+ cx=1356
+ cy=69
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2208,7 +2208,9 @@ windowlayout=651
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideU/src/msefiledialogx.pas
- history=3
+ history=5
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
+  /home/fred/ideU/src/msefiledialogx.pas
   /home/fred/Downloads/msefiledialogx.pas
   /home/fred/msefiledialogx.pas
   /home/fred/strumpract/src/uos.pas
@@ -2228,37 +2230,37 @@ windowlayout=651
  ncy=0
  x=208
  y=0
- cx=1004
- cy=448
+ cx=1148
+ cy=516
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=16
   0
-  13
-  14
-  11
-  1
-  15
-  3
-  6
-  4
-  8
-  5
-  7
-  9
   12
   10
+  7
   2
- firsttab=0
- index=2
+  11
+  3
+  1
+  16
+  4
+  15
+  6
+  8
+  9
+  5
+  14
+ firsttab=7
+ index=15
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2285,15 +2287,15 @@ windowlayout=651
  ncx=0
  ncy=0
  x=0
- y=57
- cx=1212
- cy=448
+ y=65
+ cx=1356
+ cy=516
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2369,7 +2371,7 @@ windowlayout=651
  [_mse_filedialogxfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_mainfo_mse_
+ stackedunder=_mse_debuggerfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2388,7 +2390,7 @@ windowlayout=651
  [_mse_debuggerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
