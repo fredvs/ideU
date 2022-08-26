@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=805
- y=109
+ x=901
+ y=103
  cx=298
  cy=269
 replacedialog=33
@@ -964,7 +964,7 @@ makeoptionson=16
  4095
  4095
  1
- 1230
+ 1226
  2046
  4095
  192
@@ -1588,8 +1588,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=inc(x
+finddtext=statfilestr
 findhistory=20
+ statfilestr
+ tosys
+ message
  inc(x
  okon
  project_history
@@ -1607,16 +1610,10 @@ findhistory=20
  writeln
  }
  setlangideu
- setlangid
- setlangi
- conflangfo.sh
 findoptions=1
-editpos=16
+editpos=13
  0,35
- 0,-1073741823
- 0,0
- 0,-1073741823
- 0,0
+ 0,786
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1625,9 +1622,9 @@ editpos=16
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,2903
  0,-1073741823
- 0,2991
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1641,16 +1638,11 @@ bookmarks9=0
 bookmarks10=0
 bookmarks11=0
 bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-bookmarks15=0
-sourcefiles=16
+sourcefiles=13
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/sourceform.mfm
- ${PROJECTDIR}/main.mfm
  ${PROJECTDIR}/actionsmodule.mfm
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
@@ -1660,14 +1652,11 @@ sourcefiles=16
  ${PROJECTDIR}/ideusettings.pas
  ${PROJECTDIR}/msefiledialogx.pas
  ${PROJECTDIR}/commandorform.pas
- /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
-relpaths=16
+relpaths=13
  ideU.pas
  main.pas
  sourceform.pas
  actionsmodule.pas
- sourceform.mfm
- main.mfm
  actionsmodule.mfm
  sourceform.pas
  actionsmodule.pas
@@ -1677,16 +1666,12 @@ relpaths=16
  ideusettings.pas
  msefiledialogx.pas
  commandorform.pas
- ../mseide-msegui/lib/common/dialogx/msefiledialogx.pas
-ismoduletexts=16
+ismoduletexts=13
  0
  0
  0
  0
  -1
- -1
- -1
- 0
  0
  0
  0
@@ -1732,27 +1717,10 @@ nomenumodules=8
  0
  0
 [sourcefo.files_tab]
-order=16
- 0
- 12
- 10
- 7
- 2
- 11
- 3
- 1
- 16
- 4
- 15
- 6
- 8
- 9
- 5
- 14
-firsttab=7
-index=15
+firsttab=0
+index=0
 [layout]
-windowlayout=653
+windowlayout=638
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1893,7 +1861,7 @@ windowlayout=653
  x=0
  y=0
  cx=205
- cy=516
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1905,7 +1873,7 @@ windowlayout=653
  sorted=0
  col=0
  row=6
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1983,10 +1951,10 @@ windowlayout=653
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=376
- width0=166
+ propcolwidthref=374
+ width0=165
  sortdescend0=0
- width1=204
+ width1=203
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2079,9 +2047,9 @@ windowlayout=653
  ncx=0
  ncy=0
  x=0
- y=584
- cx=1356
- cy=106
+ y=583
+ cx=1354
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2180,8 +2148,8 @@ windowlayout=653
  ncy=0
  x=0
  y=0
- cx=1356
- cy=62
+ cx=1354
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2192,12 +2160,12 @@ windowlayout=653
  mdistate=0
  nx=0
  ny=0
- ncx=1212
+ ncx=1354
  ncy=61
  x=0
  y=0
- cx=1356
- cy=69
+ cx=1354
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2207,8 +2175,10 @@ windowlayout=653
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/msefiledialogx.pas
- history=5
+ value=/home/fred/ideU/src/main.pas
+ history=7
+  /home/fred/ideU/src/main.pas
+  /home/fred/ideU/src/main.mfm
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
   /home/fred/ideU/src/msefiledialogx.pas
   /home/fred/Downloads/msefiledialogx.pas
@@ -2230,37 +2200,20 @@ windowlayout=653
  ncy=0
  x=208
  y=0
- cx=1148
- cy=516
+ cx=1146
+ cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=16
-  0
-  12
-  10
-  7
-  2
-  11
-  3
-  1
-  16
-  4
-  15
-  6
-  8
-  9
-  5
-  14
- firsttab=7
- index=15
+ firsttab=0
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2287,9 +2240,9 @@ windowlayout=653
  ncx=0
  ncy=0
  x=0
- y=65
- cx=1356
- cy=516
+ y=57
+ cx=1354
+ cy=523
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]

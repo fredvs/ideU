@@ -213,6 +213,7 @@ type
     procedure setlanginit(Const Sender: TObject);
 
     procedure ontemplateeditor(Const Sender: TObject);
+   procedure onresetsettings(const sender: TObject);
     private 
       fstartcommand: startcommandty;
       fnoremakecheck: Boolean;
@@ -375,8 +376,10 @@ var
   vaparam: Boolean = False;
   nodebugset: Boolean = False;
   isactivated: Boolean = False;
+  resetsettings: Boolean = False;
   theprojectname: string = '';
   thefilename: string = '';
+  statfilestr: string = '';
 
 
 procedure doassistive;
@@ -790,7 +793,8 @@ begin
   abortmake;
   abortdownload;
   sourceupdate.deinit(designer);
-  ideuwriteconfig();
+  if resetsettings then 
+    deletedir(tosysfilepath(statfilestr)) else ideuwriteconfig();
 end;
 
 procedure tmainfo.dofindmodulebyname(Const amodule: pmoduleinfoty; Const aname: String; Var action:
@@ -798,10 +802,8 @@ procedure tmainfo.dofindmodulebyname(Const amodule: pmoduleinfoty; Const aname: 
 var 
   wstr2: msestring;
 
-function dofind(Const modulenames: Array Of msestring; Const modulefilenames: Array Of filenamety):
-
-                                                                                             Boolean
-;
+function dofind(Const modulenames: Array Of msestring; 
+Const modulefilenames: Array Of filenamety): Boolean;
 var 
   int1: integer;
   wstr1: msestring;
@@ -2811,6 +2813,7 @@ begin
     {$endif}
 
     mainstatfile.filedir  := wstr1;
+ 
   {$ifdef mswindows}
     mainstatfile.filename := statname + 'wi.sta';
   {$endif}
@@ -2824,7 +2827,9 @@ begin
     mainstatfile.filename := statname + 'bsd.sta';
   {$endif}
 
-    mainstatfile.readstat;
+   statfilestr := mainstatfile.filedir;
+   
+   mainstatfile.readstat;
 
     if (poscy.value <> 100) and (poscx.value <> 800) then
       begin
@@ -5729,6 +5734,16 @@ procedure tmainfo.ontemplateeditor(Const Sender: TObject);
 begin
   application.createform(ttemplateeditorfo, templateeditorfo);
   templateeditorfo.Show;
+end;
+
+procedure tmainfo.onresetsettings(const sender: TObject);
+begin
+if ShowMessage('Do you want to reset to Original Settings for next run ?' , lang_stockcaption[Ord(sc_warningupper)],
+         [mr_yes, mr_cancel]) = mr_yes then
+        begin
+        resetsettings := true;
+        end else resetsettings := false;
+
 end;
 
 

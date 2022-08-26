@@ -1465,7 +1465,7 @@ object mainfo: tmainfo
         state = [as_localcaption, as_localhint]
       end    
       item
-        submenu.count = 7
+        submenu.count = 9
         submenu.items = <        
           item
             caption = '&General Setting'
@@ -1528,6 +1528,15 @@ object mainfo: tmainfo
             caption = 'Themes'
             name = 'themes'
             state = [as_localcaption]
+          end        
+          item
+            options = [mao_separator, mao_shortcutcaption]
+          end        
+          item
+            caption = 'Reset Settings'
+            name = 'resetsetting'
+            state = [as_localcaption, as_localonexecute]
+            onexecute = onresetsettings
           end        
           item
             caption = '                        '
