@@ -31,9 +31,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    19
+    21
     790
-    81
+    79
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -86,10 +86,10 @@ object mainfo: tmainfo
     10E7100129EF290131EF31010000000631EF310329EF290100E7000A29EF2901
     31EF31030000000742FF4A0231EF310110E7100100E7000810E7100131EF3101
     42FF4A020000000A39F7390110E7100100E7000700DE000110E7100139F73901
-    0000001E000000FF007E00FF80FF01FFC0FF03FFE0FF07FFF0FF0FFFF8FF1FFF
-    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFF
-    F8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF8FF1FFFF0FF0FFFC0FF03FF
-    000000FF
+    0000001E00000000007E000080FF0100C0FF0300E0FF0700F0FF0F00F8FF1F00
+    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00
+    F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F8FF1F00F0FF0F00C0FF0300
+    00000000
   }
   oncreate = mainfooncreate
   oncreated = manfocreated
@@ -110,7 +110,7 @@ object mainfo: tmainfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 790
-    bounds_cy = 81
+    bounds_cy = 79
     anchors = []
     font.color = -1610612734
     font.name = 'stf_default'
@@ -139,9 +139,9 @@ object mainfo: tmainfo
       bounds_x = 649
       bounds_y = 30
       bounds_cx = 38
-      bounds_cy = 19
+      bounds_cy = 21
       statfile = mainstatfile
-      reffontheight = 13
+      reffontheight = 15
     end
     object bCompletion: tbooleanedit
       frame.localprops = []
@@ -160,10 +160,10 @@ object mainfo: tmainfo
       bounds_x = 246
       bounds_y = 45
       bounds_cx = 38
-      bounds_cy = 19
+      bounds_cy = 21
       statfile = mainstatfile
       value = 340
-      reffontheight = 13
+      reffontheight = 15
     end
     object posy: tintegeredit
       frame.localprops = []
@@ -173,10 +173,10 @@ object mainfo: tmainfo
       bounds_x = 293
       bounds_y = 45
       bounds_cx = 38
-      bounds_cy = 19
+      bounds_cy = 21
       statfile = mainstatfile
       value = 268
-      reffontheight = 13
+      reffontheight = 15
     end
     object poscx: tintegeredit
       frame.localprops = []
@@ -186,10 +186,10 @@ object mainfo: tmainfo
       bounds_x = 341
       bounds_y = 46
       bounds_cx = 38
-      bounds_cy = 19
+      bounds_cy = 21
       statfile = mainstatfile
       value = 800
-      reffontheight = 13
+      reffontheight = 15
     end
     object poscy: tintegeredit
       frame.localprops = []
@@ -199,10 +199,10 @@ object mainfo: tmainfo
       bounds_x = 385
       bounds_y = 46
       bounds_cx = 38
-      bounds_cy = 19
+      bounds_cy = 21
       statfile = mainstatfile
       value = 100
-      reffontheight = 13
+      reffontheight = 15
     end
   end
   object gdb: tgdbmi

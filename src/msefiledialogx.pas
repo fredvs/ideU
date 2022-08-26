@@ -681,7 +681,9 @@ uses
   msekeyboard,
   msestockobjects,
   msesysintf,
-  msearrayutils;
+  commandorform, // extra ideu
+  msearrayutils,
+  captionideu;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -1901,6 +1903,25 @@ var
   int1: integer;
   str1: filenamety;
 begin
+
+// extra ideu
+
+ if (debuggerfo.project_history.tag = 1) then
+  begin
+    debuggerfo.project_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
+
+    debuggerfo.project_history.Value := dir.Value + filename.Value;
+
+  end
+  else if (debuggerfo.project_history.tag = 2) then
+  begin
+    debuggerfo.file_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
+    debuggerfo.file_history.Value := dir.Value + filename.Value;
+  end;
+
+  debuggerfo.project_history.tag := 0;
+
+// end extra ideu
 
   if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (filename.tag = 1) then
   begin
