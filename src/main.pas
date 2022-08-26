@@ -1275,11 +1275,14 @@ begin
       if (page1 <> nil) then
         begin
           str2 := fileext(page1.filepath);
+          str2 := tosysfilepath(str2);
           str3 := page1.filepath;
+           str3 := tosysfilepath(str3);
           if str2 = pasfileext then
             begin
               /// it is pascal
               str1 := replacefileext(page1.filepath, formfileext);
+               str1 := tosysfilepath(str1);
               po1  := designer.modules.findmodule(str1);
               if po1 <> nil then
                 begin
@@ -1378,6 +1381,7 @@ end;
       if po1 <> nil then
         begin
           str1 := replacefileext(po1^.filename, pasfileext);
+          str1 := tosysfilepath(str1);
           if sourcefo.openfile(str1, True) = nil then
             raise Exception.Create(ansistring(lang_mainform[Ord(ma_unableopen)] + ' "' + str1 + '".'
             ));
@@ -3250,16 +3254,21 @@ var
   projectdirbefore: msestring;
   str1: ttextstream;
   thedir: msestring;
+  anamesys: msestring;
 begin
   gdb.abort;
   terminategdbserver(True);
   Result := False;
+  
+  application.processmessages;
 
-  TheProjectDirectory := ExtractFilePath(ExpandFileName(aname));
+  TheProjectDirectory := tosysfilepath(ExtractFilePath(ExpandFileName(aname)));
 
-  debuggerfo.project_history.Value := ExpandFileName(aname);
+  debuggerfo.project_history.Value := tosysfilepath(ExpandFileName(aname));
 
-  theprojectname := aname;
+  theprojectname :=  tosysfilepath(ExpandFileName(aname));
+  
+  anamesys := aname;
 
   if Assigned(debuggerfo) and (length(lang_mainform) > 0) and
      (length(lang_stockcaption) > 0) then
@@ -3321,14 +3330,18 @@ begin
       closepro;
       if aname <> '' then
         begin
+        
+        {$ifndef mswindows}
           try
-            setcurrentdirmse(removelastpathsection(aname));
+            setcurrentdirmse(removelastpathsection(tosysfilepath(aname)));
           except
-            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + aname +
+            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' " ' + (aname) +
             '": ');
             Exit;
         end;
-      if not readprojectoptions(aname) then
+          {$endif}
+    
+      if not readprojectoptions(tosysfilepath(aname)) then
         closepro
       else
         begin
@@ -3336,7 +3349,7 @@ begin
           gdb.closegdb;
           cleardebugdisp;
           if not ascopy then
-            setprojectname(aname)
+            setprojectname(tosysfilepath(aname))
           else
             begin
               projectoptions.projectfilename := projectfilebefore;

@@ -982,16 +982,16 @@ function tsourcefo.openfile(const filename: filenamety; aactivate: Boolean = Fal
   var
     po1: pmoduleinfoty;
   begin
-    po1 := designer.modules.findmodule(filepath(aname));
+    po1 := designer.modules.findmodule(tosysfilepath(filepath(aname)));
     if not mainfo.closemodule(po1, True) then
       SysUtils.abort;
     ffileloading := True;
     try
-      Result     := createnewpage(aname);
+      Result     := createnewpage(tosysfilepath(aname));
       if Result <> nil then
       begin
         Result.ismoduletext := (po1 <> nil);
-        mainfo.loadformbysource(aname);
+        mainfo.loadformbysource(tosysfilepath(aname));
       end;
     finally
       ffileloading := False;
@@ -1007,13 +1007,13 @@ begin
     Exit;
   application.beginwait;
   try
-    bo1 := isrootpath(filename);
+    bo1 := isrootpath(tosysfilepath(filename));
     if bo1 then
     begin
-      Result := findsourcepage(filename);
+      Result := findsourcepage(tosysfilepath(filename));
       if Result = nil then
-        if findfile(filename) then
-          Result := loadfile(filename);
+        if findfile(tosysfilepath(filename)) then
+          Result := loadfile(tosysfilepath(filename));
     end;
     if Result = nil then
       if bo1 and findfile(msefileutils.filename(filename),
@@ -1033,7 +1033,7 @@ end;
 
 function tsourcefo.showsourceline(const filename: filenamety; line: integer; col: integer = 0; asetfocus: Boolean = False; const aposition: cellpositionty = cep_rowcentered): tsourcepage;
 begin
-  Result := openfile(filename);
+  Result := openfile(tosysfilepath(filename));
   if Result <> nil then
   begin
     Result.Show;
@@ -1071,7 +1071,7 @@ begin
   resetactiverow;
   if info.filename <> '' then
   begin
-    Result := openfile(filepath(projectoptions.o.texp.makedir, info.filename));
+    Result := openfile(tosysfilepath(filepath(projectoptions.o.texp.makedir, info.filename)));
     if Result <> nil then
     begin
       Result.activerow := info.line - 1;
@@ -1171,12 +1171,12 @@ begin
 
     if Assigned(ActivePage) then
     begin
-      if fileexists(ActivePage.pathdisp.Value) then
+      if fileexists(tosysfilepath(ActivePage.pathdisp.Value)) then
         if Assigned(mainfo) then
           if Assigned(mainfo.openfile) then
           begin
             mainfo.openfile.controller.icon    := mainfo.icon;
-            mainfo.openfile.controller.lastdir := ExtractFilePath(ActivePage.pathdisp.Value);
+            mainfo.openfile.controller.lastdir := tosysfilepath(ExtractFilePath(ActivePage.pathdisp.Value));
           end;
       thefilename := Caption;
 
@@ -1469,7 +1469,7 @@ begin
   page1 := findsourcepage(filename, True, True);
   if forwrite then
     if page1 = nil then
-      page1 := openfile(filename);
+      page1 := openfile(tosysfilepath(filename));
   if page1 <> nil then
     Result  := page1.edit.datalist.dataastextstream
   else if not forwrite then
@@ -1482,7 +1482,7 @@ function tsourcefo.getfiletext(const filename: filenamety; const startpos, endpo
 var
   apage: tsourcepage;
 begin
-  apage    := openfile(filename);
+  apage    := openfile(tosysfilepath(filename));
   if apage <> nil then
     Result := apage.edit.gettext(startpos, endpos)
   else
@@ -1493,7 +1493,7 @@ procedure tsourcefo.replacefiletext(const filename: filenamety; const startpos, 
 var
   apage: tsourcepage;
 begin
-  apage := openfile(filename);
+  apage := openfile(tosysfilepath(filename));
   if apage <> nil then
   begin
     apage.edit.deletetext(startpos, endpos);

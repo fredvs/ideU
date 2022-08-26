@@ -1282,7 +1282,7 @@ begin
   debuggerfo.project_history.tag := 1;
   if projectfiledialog(fna1, False) = mr_ok then
   begin
-    mainfo.openproject(fna1);
+    mainfo.openproject(tosysfilepath(fna1));
     mainfo.activate;
     sourcefo.updatehinttab;
   end;

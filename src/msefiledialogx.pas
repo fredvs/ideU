@@ -625,7 +625,6 @@ type
     procedure oncellevcustplaces(const Sender: TObject; var info: celleventinfoty);
     procedure onmovesplit(const Sender: TObject);
     procedure onsetvalnoicon(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
-   procedure onactiv(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -680,11 +679,9 @@ uses
   mseactions,
   msestringenter,
   msekeyboard,
-  msesysintf,
-  commandorform, // extra ideu
-  msearrayutils,
   msestockobjects,
-  captionideu;
+  msesysintf,
+  msearrayutils;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -701,7 +698,7 @@ uses
 
 type
   tdirtreefo1 = class(tdirtreefo);
-  
+
 procedure getfileicon(const info: fileinfoty; var imagelist: timagelist; out imagenr: integer);
 begin
   if assigned(theimagelist) then
@@ -750,12 +747,12 @@ end;
 
 function filedialogx1(dialog: tfiledialogxfo; var afilenames: filenamearty;
  const filterdesc: array of msestring;
-  const filtermask: 
- array of msestring; const filterindex: pinteger; 
+  const filtermask:
+ array of msestring; const filterindex: pinteger;
   const afilter: pfilenamety;      //nil -> unused
   const colwidth: pinteger;        //nil -> default
-  const includeattrib: fileattributesty; 
-  const excludeattrib: fileattributesty; 
+  const includeattrib: fileattributesty;
+  const excludeattrib: fileattributesty;
   const history: pmsestringarty;
    const historymaxcount: integer;
     const acaption: msestring;
@@ -836,10 +833,10 @@ begin
       filename.Value := ExtractFilePath(filename.Value);
 
     abool := True;
-    
+
     if bhidehistory.Value then filename.visible := false
-    else filename.visible := true;  
-   
+    else filename.visible := true;
+
     if blateral.Value then
       onlateral(nil, abool, abool);
     if bcompact.Value then
@@ -847,7 +844,7 @@ begin
     if showhidden.Value then
       showhiddenonsetvalue(nil, abool, abool);
     //  showhidden.Value := not (fa_hidden in excludeattrib);
-    
+
     if bshowoptions.value then
     begin
     bnoicon.visible := true;
@@ -877,16 +874,16 @@ begin
     showhidden.visible := false;
     blateral.visible := false;
     end;
-    
+
     if filename.visible = false then
     height := list_log.bottom + 8
     else
     height := filename.bottom + 8;
-        
+
     placespan.anchors := [an_left,an_top, an_bottom];
     list_log.anchors := [an_left,an_top, an_bottom];
     listview.anchors := [an_left,an_top, an_bottom];
-    
+
     Show(True);
     Result      := window.modalresult;
     if Result <> mr_ok then
@@ -910,21 +907,21 @@ begin
   end;
 end;
 
-function filedialogx(var afilenames: filenamearty; 
+function filedialogx(var afilenames: filenamearty;
   const aoptions: filedialogoptionsty;
   const acaption: msestring;
-  const filterdesc: array of msestring; 
+  const filterdesc: array of msestring;
   const filtermask: array of msestring;
   const adefaultext: filenamety = '';
-  const filterindex: pinteger = nil; 
+  const filterindex: pinteger = nil;
   const filter: pfilenamety = nil;       //nil -> unused
   const colwidth: pinteger = nil;        //nil -> default
-  const includeattrib: fileattributesty = [fa_all]; 
+  const includeattrib: fileattributesty = [fa_all];
   const excludeattrib: fileattributesty = [fa_hidden];
-  const history: pmsestringarty = nil; 
+  const history: pmsestringarty = nil;
   const historymaxcount: integer = defaulthistorymaxcount;
-  const imagelist: timagelist = nil; 
-  const ongetfileicon: getfileiconeventty = nil; 
+  const imagelist: timagelist = nil;
+  const ongetfileicon: getfileiconeventty = nil;
   const oncheckfile: checkfileeventty = nil): modalresultty;
 var
   dialog: tfiledialogxfo;
@@ -933,16 +930,23 @@ begin
   application.lock;
   try
     dialog := tfiledialogxfo.Create(nil);
-    
+
     dialog.blateral.value  := true;
     dialog.bcompact.value  := true;
-      
+
     if acaption = '' then
     begin
         if fdo_save in aoptions then
+   {$ifdef mse_dynpo}
           str1 := lang_stockcaption[ord(sc_save)]
         else
           str1 := lang_stockcaption[ord(sc_open)];
+   {$else}
+          str1 := sc(sc_save)
+        else
+          str1 := sc(sc_open);
+   {$endif}
+
     end
     else
       str1 := acaption;
@@ -1349,8 +1353,15 @@ var
   mstr1: msestring;
 begin
   mstr1 := '';
+
+{$ifdef mse_dynpo}
     if stringenter(mstr1, lang_stockcaption[ord(sc_name)],
       lang_stockcaption[ord(sc_create_new_directory)]) = mr_ok then
+{$else}
+    if stringenter(mstr1, sc(sc_name),
+      sc(sc_create_new_directory)) = mr_ok then
+{$endif}
+
     begin
       places.defocuscell;
       places.datacols.clearselection;
@@ -1408,7 +1419,7 @@ begin
    imImage.visible := false;
    filename.left := 4 ;
    filename.width := width - 8 ;
-  end;  
+  end;
  end;
 
 function tfiledialogxfo.changedir(const adir: filenamety): Boolean;
@@ -1484,8 +1495,13 @@ begin
     begin
       Result := False;
       if errormessage then
+{$ifdef mse_dynpo}
           showerror(lang_stockcaption[ord(sc_can_not_read_directory)] + ' ' +
             msestring(esys(ex).Text), lang_stockcaption[ord(sc_error)]);
+{$else}
+          showerror(sc(sc_can_not_read_directory) + ' ' +
+            msestring(esys(ex).Text), sc(sc_error));
+{$endif}
     end;
     else
     begin
@@ -1520,8 +1536,11 @@ begin
 
   if (fdo_single in dialogoptions) and (high(fselectednames) > 0) then
   begin
-    
+{$ifdef mse_dynpo}
       ShowMessage(lang_stockcaption[ord(sc_single_item_only)] + '.', lang_stockcaption[ord(sc_error)]);
+{$else}
+      ShowMessage(sc(sc_single_item_only) + '.', sc(sc_error));
+{$endif}
     accept := False;
     Exit;
   end;
@@ -1577,12 +1596,12 @@ begin
       avalue := listview.directory;
   end;
   listview.selectednames := fselectednames;
-  theexist := -1; 
-  
+  theexist := -1;
+
   for theint := 0 to list_log.rowcount - 1 do
          if trim(copy(list_log[0][theint], 2, length(list_log[0][theint])))  = str2 then
                  theexist := theint;
-  
+
     if theexist > 0 then
       begin
           sel.col := 0;
@@ -1592,12 +1611,12 @@ begin
           list_log.datacols.clearselection;
           list_log.selectcell(sel,csm_select);
           list_log.frame.sbvert.value := theexist/ (list_log.rowcount-1);
-        end; 
+        end;
          places.defocuscell;
          places.datacols.clearselection;
          placescust.defocuscell;
          placescust.datacols.clearselection;
-                        
+
 end;
 
 procedure tfiledialogxfo.filepathentered(const Sender: TObject);
@@ -1617,7 +1636,7 @@ begin
   if accept then
     course(avalue);
   listview.directory := avalue;
-  
+
  if filename.tag <> 2 then begin // save file
   if filename.tag = 1 then
     filename.Value   := dir.Value
@@ -1630,9 +1649,9 @@ procedure tfiledialogxfo.listviewonlistread(const Sender: TObject);
 var
   x, x2, y, y2, z: integer;
   fsize : longint;
-  {$ifdef unix}  
+  {$ifdef unix}
   info: Stat;
-   {$else} 
+   {$else}
   info: fileinfoty;
   {$endif}
   thedir, thestrnum, thestrfract, thestrx, thestrext, tmp, tmp2, tmp3: msestring;
@@ -1693,7 +1712,7 @@ begin
 
   y  := 0;
   x2 := 0;
-  
+
   if listview.rowcount > 0 then
     for x := 0 to listview.rowcount - 1 do
     begin
@@ -1721,8 +1740,8 @@ begin
           tmp          := '.' + tmp;
         list_log[1][x] := msestring(tmp);
         list_log[0][x] := list_log[0][x] + list_log[1][x];
-       { 
-        if (lowercase(list_log[1][x]) = '.png')   
+       {
+        if (lowercase(list_log[1][x]) = '.png')
             or (lowercase(list_log[1][x]) = '.jpg')
             or (lowercase(list_log[1][x]) = '.jpeg')
             or (lowercase(list_log[1][x]) = '.bmp') then
@@ -1730,32 +1749,32 @@ begin
             writeln(dir.Value + listview.itemlist[x].Caption);
             // tbitmapcomp2.bitmap.LoadFromFile(dir.Value + listview.itemlist[x].Caption);
              timagelist2.addimage(tbitmapcomp2.bitmap);
-             list_log[5][x] := inttostr(x); 
-            end;  
+             list_log[5][x] := inttostr(x);
+            end;
         }
          end;
 
       dir.Value := tosysfilepath(dir.Value);
 
       thedir := tosysfilepath(dir.Value + (listview.itemlist[x].Caption));
-       
+
         {$ifdef unix}
-       FpStat(RawByteString(thedir), info); 
-        {$else} 
+       FpStat(RawByteString(thedir), info);
+        {$else}
          getfileinfo(msestring(trim(thedir)), info);
         {$endif}
-      
+
       if not listview.filelist.isdir(x) then
       begin
-        {$ifdef unix}  
+        {$ifdef unix}
         fsize := info.st_size;
-        {$else} 
+        {$else}
          fsize := info.extinfo1.size;
         {$endif}
 
         if fsize div 1000000000 > 0 then
-        
-        
+
+
         begin
           y2        := Trunc(Frac(fsize / 1000000000) * Power(10, 1));
           y         := fsize div 1000000000;
@@ -1802,12 +1821,12 @@ begin
       else
         list_log[2][x] := ' ';
 
-      {$ifdef unix}  
+      {$ifdef unix}
        list_log[3][x] := msestring(formatdatetime('YY-MM-DD hh:mm:ss', FileDateToDateTime(info.st_mtime)));
-      {$else} 
+      {$else}
       list_log[3][x] := msestring(formatdatetime('YY-MM-DD hh:mm:ss', info.extinfo1.modtime));
       {$endif}
-       
+
       if listview.filelist.isdir(x) then
         list_log[3][x] := ' ' + list_log[3][x];
     end; // else dir.frame.caption := 'Directory with 0 files';
@@ -1883,52 +1902,38 @@ var
   str1: filenamety;
 begin
 
-// extra ideu
-
- if (debuggerfo.project_history.tag = 1) then
-  begin
-    debuggerfo.project_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
-
-    debuggerfo.project_history.Value := dir.Value + filename.Value;
-
-  end
-  else if (debuggerfo.project_history.tag = 2) then
-  begin
-    debuggerfo.file_history.dropdown.valuelist.asarray := filename.dropdown.valuelist.asarray;
-    debuggerfo.file_history.Value := dir.Value + filename.Value;
-  end;
-
-  debuggerfo.project_history.tag := 0;
-
-// end extra ideu
-
   if (filename.Value <> '') or (fdo_acceptempty in dialogoptions) or (filename.tag = 1) then
   begin
-  
+
      if (fdo_directory in dialogoptions) or (filename.tag = 1) then
-      str1 := quotefilename(listview.directory)
+      str1 := tosysfilepath(quotefilename(listview.directory))
     else
     begin
-      str1 := quotefilename(listview.directory, filename.Value);
+      str1 := tosysfilepath(quotefilename(listview.directory, filename.Value));
     end;
     unquotefilename(str1, filenames);
     if (defaultext <> '') then
       for int1 := 0 to high(filenames) do
         if not hasfileext(filenames[int1]) then
-          filenames[int1] := filenames[int1] + '.' + defaultext;
+          filenames[int1] := tosysfilepath(filenames[int1] + '.' + defaultext);
     if (fdo_checkexist in dialogoptions) and not ((filename.Value = '') and (fdo_acceptempty in dialogoptions)) then
     begin
       if fdo_directory in dialogoptions then
-        bo1 := finddir(filenames[0])
+        bo1 := finddir(tosysfilepath(filenames[0]))
       else
-        bo1 := findfile(filenames[0]);
+        bo1 := findfile(tosysfilepath(filenames[0]));
       if fdo_save in dialogoptions then
       begin
         if bo1 then
-          
-            if not askok(lang_stockcaption[ord(sc_file)]  + ' "' + filenames[0] +
+{$ifdef mse_dynpo}
+           if not askok(lang_stockcaption[ord(sc_file)]  + ' "' + tosysfilepath(filenames[0]) +
               '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
               lang_stockcaption[ord(sc_warningupper)]) then
+{$else}
+           if not askok(sc(sc_file)  + ' "' + tosysfilepath(filenames[0]) +
+              '" ' + sc(sc_exists_overwrite),
+              sc(sc_warningupper)) then
+{$endif}
             begin
               //      if not askok('File "'+filenames[0]+
               //            '" exists, do you want to overwrite?','WARNING') then begin
@@ -1938,9 +1943,15 @@ begin
       end
       else if not bo1 then
       begin
-             showerror(lang_stockcaption[ord(sc_file)] + ' "' + filenames[0] + '" ' +
+{$ifdef mse_dynpo}
+             showerror(lang_stockcaption[ord(sc_file)] + ' "' + tosysfilepath(filenames[0]) + '" ' +
             lang_stockcaption[ord(sc_does_not_exist)] + '.',
             uppercase(lang_stockcaption[ord(sc_error)]));
+{$else}
+             showerror(sc(sc_file) + ' "' + tosysfilepath(filenames[0]) + '" ' +
+            sc(sc_does_not_exist) + '.',
+            uppercase(sc(sc_error)));
+{$endif}
         //      showerror('File "'+filenames[0]+'" does not exist.');
         filename.SetFocus;
         Exit;
@@ -2049,7 +2060,11 @@ end;
 procedure tfiledialogxfo.buttonshowhint(const Sender: TObject; var ainfo: hintinfoty);
 begin
   with tcustombutton(Sender) do
+{$ifdef mse_dynpo}
     ainfo.Caption := lang_stockcaption[ord(stockcaptionty(tag))] + ' ' +
+{$else}
+    ainfo.Caption := sc(stockcaptionty(tag)) + ' ' +
+{$endif}
       '(' + encodeshortcutname(shortcut) + ')';
 end;
 
@@ -2088,7 +2103,7 @@ begin
             else
             begin
               changedir(str1);
-              
+
                if filename.tag <> 2 then  // save file
               filename.Value := '';
             end;
@@ -2146,10 +2161,10 @@ var
    thefilename : msestring;
 begin
  if list_log.visible then
- begin 
+ begin
   if bnoicon.Value = False then
-  begin 
-  
+  begin
+
     if (trim(list_log[1][cellinfo.cell.row]) = '') and (trim(list_log[2][cellinfo.cell.row]) = '') then
       aicon := 0
     else if (lowercase(list_log[1][cellinfo.cell.row]) = '.txt') or
@@ -2229,29 +2244,29 @@ begin
 
     apoint.x := 2;
     apoint.y := 1;
- 
-  if aicon <> 13 then 
+
+  if aicon <> 13 then
     iconslist.paint(Canvas, aicon, apoint, cl_default,
       cl_default, cl_default, 0)
-     
+
    else
     begin
-    
+
     thefilename := list_log[0][cellinfo.cell.row];
     thefilename := dir.value + trim(copy(thefilename,2,length(thefilename)));
- 
+
 //    writeln(thefilename);
      tbitmapcomp1.bitmap.LoadFromFile(tosysfilepath(thefilename));
- 
+
     recti.x := 0;
     recti.y := 0;
     recti.cx := list_log.datarowheight;
     recti.cy := recti.cx;
-    
+
       tbitmapcomp1.bitmap.paint(Canvas, Recti);
-   
-    end;  
-    
+
+    end;
+
    end;
 
   end;
@@ -2276,13 +2291,13 @@ begin
     listview.Width   := 40;
     listview.invalidate;
     list_log.Visible := True;
-     theexist := -1; 
-  
+     theexist := -1;
+
   for theint := 0 to list_log.rowcount - 1 do
          if trim(copy(list_log[0][theint], 2,
           length(list_log[0][theint]))) = filename.value then
                  theexist := theint;
-  
+
     if theexist > 0 then
       begin
           sel.col := 0;
@@ -2291,7 +2306,7 @@ begin
           list_log.datacols.clearselection;
           list_log.selectcell(sel,csm_select);
           list_log.frame.sbvert.value := theexist/ (list_log.rowcount-1);
-      end; 
+      end;
   end;
 end;
 
@@ -2365,7 +2380,7 @@ begin
   begin
     astr := trim(places[0][cellinfo.cell.row]);
 
-    if (lowercase(astr) = 'c:\') or (lowercase(astr) = 'd:\') or 
+    if (lowercase(astr) = 'c:\') or (lowercase(astr) = 'd:\') or
     (astr = '/') or (lowercase(astr) = '/usr') or
      (lowercase(astr) = 'c:\users') then
       aicon := 0
@@ -2407,7 +2422,10 @@ begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fcourseid := -1;
 
-    dir.frame.caption:= lang_stockcaption[ord(sc_directory)] + strz ;
+     // caption := 'Select a file';
+
+ {$ifdef mse_dynpo}
+   dir.frame.caption:= lang_stockcaption[ord(sc_directory)] + strz ;
     home.Caption         := lang_stockcaption[ord(sc_homehk)] + strz ;
     //  up.caption:= lang_stockcaption[ord(sc_uphk)] + strz ;
     createdir.Caption    := lang_stockcaption[ord(sc_new_dirhk)] + strz ;
@@ -2420,16 +2438,27 @@ begin
     bnoicon.frame.caption:= lang_stockcaption[ord(sc_noicons)] + strz ;
     blateral.frame.caption:= lang_stockcaption[ord(sc_nolateral)] + strz ;
     bcompact.frame.caption:= lang_stockcaption[ord(sc_compact)] + strz ;
-       // caption := 'Select a file';
+{$else}
+    dir.frame.caption:= sc(sc_directory) + strz ;
+    home.Caption         := sc(sc_homehk) + strz ;
+    //  up.caption:= lang_stockcaption[ord(sc_uphk)] + strz ;
+    createdir.Caption    := sc(sc_new_dirhk) + strz ;
+    createdir.hint    := sc(sc_create_new_directory) + strz ;
+    filename.frame.caption:= sc(sc_namehk) + strz ;
+    filter.frame.Caption := sc(sc_filterhk) + strz ;
+    showhidden.frame.caption:= sc(sc_show_hidden_fileshk) + strz ;
+    ok.caption:= stockobjects.modalresulttext[mr_ok] + strz ;
+    cancel.caption:= stockobjects.modalresulttext[mr_cancel] + strz ;
+    bnoicon.frame.caption:= sc(sc_noicons) + strz ;
+    blateral.frame.caption:= sc(sc_nolateral) + strz ;
+    bcompact.frame.caption:= sc(sc_compact) + strz ;
+{$endif}
 
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
- 
+
   application.ProcessMessages;
-  
- left := 200;
- top :=  100;
 
 end;
 
@@ -2451,7 +2480,7 @@ begin
     tsplitter1.Visible := False;
     list_log.left      := tsplitter1.Width;
   end;
-  
+
   list_log.invalidate;
 
   listview.left := list_log.left;
@@ -2591,7 +2620,7 @@ begin
             dir.Value := tosysfilepath(listview.directory);
             course(listview.directory);
           end;
-          
+
            if filename.tag <> 2 then begin // save file
 
           if filename.tag = 1 then
@@ -2627,7 +2656,7 @@ begin
   end;
   tsplitter3.width := placespan.width;
   listview.left := list_log.left;
-  
+
 end;
 
 procedure tfiledialogxfo.onsetvalnoicon(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
@@ -2661,16 +2690,6 @@ begin
     placescust[0][x] := tmp + trim(placescust[0][x]);
 
   listview.readlist;
-end;
-
-procedure tfiledialogxfo.onactiv(const sender: TObject);
-begin
-if tag = 0 then
-begin
- left := 200;
- top :=  100;
-end; 
-tag := 1;
 end;
 
 { tfiledialogxcontroller }
@@ -2869,36 +2888,42 @@ begin
       tmp := ' ';
 
     x := -1;
-
+    fo.places.rowcount := 0;
+    
     {$ifdef windows}
     if directoryexists('C:\') then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'C:\';
       fo.places[1][x] := msestring('C:\');
-    end;  
+    end;
     if directoryexists('D:\') then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'D:\';
-      fo.places[1][x] := msestring('D:\');  
-    end; 
+      fo.places[1][x] := msestring('D:\');
+    end;
     if directoryexists('C:\users') then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'C:\users';
-      fo.places[1][x] := msestring('C:\users');  
-    end; 
+      fo.places[1][x] := msestring('C:\users');
+    end;
     {$else}
     if directoryexists('/') then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + '/';
       fo.places[1][x] := msestring('/');
     end;
     if directoryexists('/usr') then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + '/usr';
       fo.places[1][x] := msestring('/usr');
     end;
@@ -2907,47 +2932,54 @@ begin
     if directoryexists(tosysfilepath(sys_getuserhomedir)) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Home';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Desktop';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Desktop'));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Music';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Music'));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Pictures';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Pictures'));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Videos';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Videos'));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Documents';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Documents'));
     end;
     if directoryexists(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads')) then
     begin
       Inc(x);
+      fo.places.rowcount := x+1;
       fo.places[0][x] := tmp + 'Downloads';
       fo.places[1][x] := msestring(tosysfilepath(sys_getuserhomedir + directoryseparator + 'Downloads'));
     end;
 
-    fo.places.rowcount := x + 1;
+    fo.places.rowcount := fo.places.rowcount +1;;
 
     if length(ffilenamescust) > 0 then
     begin
@@ -2969,9 +3001,9 @@ begin
     fo.bcompact.Value   := fcompact;
     fo.showhidden.Value := fshowhidden;
     fo.bshowoptions.Value := fshowoptions;
-    fo.bhidehistory.Value := fhidehistory;    
+    fo.bhidehistory.Value := fhidehistory;
     fo.bnoicon.Value := fhideicons;
-  
+
     if fcolnamewidth > 0 then
       fo.list_log.datacols[0].Width := fcolnamewidth;
     if fcolextwidth > 0 then
@@ -2989,18 +3021,31 @@ begin
     begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
+{$ifdef mse_dynpo}
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_dirhk)];
     end
     else if (dialogkind in [fdk_save]) then
     begin
       fo.filename.frame.Caption :=  lang_stockcaption[ord(sc_namehk)];
       fo.filename.tag           := 2;
-    end  
+    end
     else if (dialogkind in [fdk_new]) then
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_newfile)]
     else
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_namehk)];
-
+{$else}
+      fo.filename.frame.Caption := sc(sc_dirhk);
+    end
+    else if (dialogkind in [fdk_save]) then
+    begin
+      fo.filename.frame.Caption :=  sc(sc_namehk);
+      fo.filename.tag           := 2;
+    end
+    else if (dialogkind in [fdk_new]) then
+      fo.filename.frame.Caption := sc(sc_newfile)
+    else
+      fo.filename.frame.Caption := sc(sc_namehk);
+{$endif}
     if dialogkind <> fdk_none then
       if dialogkind in [fdk_save, fdk_new] then
         system.include(aoptions, fdo_save)
@@ -3041,9 +3086,9 @@ begin
     fcompact        := fo.bcompact.Value;
     fshowoptions    := fo.bshowoptions.Value;
     fshowhidden     := fo.showhidden.Value;
-    fhidehistory    := fo.bhidehistory.Value ;    
-    fhideicons       := fo.bnoicon.Value ;    
-  
+    fhidehistory    := fo.bhidehistory.Value ;
+    fhideicons       := fo.bnoicon.Value ;
+
     fcolnamewidth   := fo.list_log.datacols[0].Width;
     fcolextwidth    := fo.list_log.datacols[1].Width;
     fcolsizewidth   := fo.list_log.datacols[2].Width;
@@ -3066,7 +3111,7 @@ begin
     fo.Free;
   end;
 end;
-    
+
 function tfiledialogxcontroller.Execute(const dialogkind: filedialogkindty; const acaption: msestring): modalresultty;
 begin
   Result := Execute(dialogkind, acaption, foptions);
@@ -3104,7 +3149,7 @@ begin
       dialogkind := fdk_save
     else
       dialogkind := fdk_none;
-   if fdo_directory in foptions then   
+   if fdo_directory in foptions then
    Result := Execute(dialogkind, fcaptiondir) else
   Result := Execute(dialogkind, actcaption(dialogkind));
 end;
@@ -3116,8 +3161,8 @@ begin
       dialogkind := fdk_save
     else
       dialogkind := fdk_none;
-      
-    if fdo_directory in foptions then   
+
+    if fdo_directory in foptions then
    Result := Execute(avalue, dialogkind, fcaptiondir) else
   Result := Execute(avalue, dialogkind, actcaption(dialogkind));
 end;
@@ -3148,9 +3193,15 @@ end;
 function tfiledialogxcontroller.canoverwrite(): Boolean;
 begin
      Result := not findfile(filename) or
+{$ifdef mse_dynpo}
       askok(lang_stockcaption[ord(sc_file)] + ' "' + filename +
       '" ' + lang_stockcaption[ord(sc_exists_overwrite)],
       lang_stockcaption[ord(sc_warningupper)]);
+{$else}
+      askok(sc(sc_file) + ' "' + filename +
+      '" ' + sc(sc_exists_overwrite),
+      sc(sc_warningupper));
+{$endif}
 end;
 
 function tfiledialogxcontroller.Execute(var avalue: filenamety; const dialogkind: filedialogkindty; const acaption: msestring): Boolean;
