@@ -171,8 +171,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=901
- y=103
+ x=944
+ y=195
  cx=298
  cy=269
 replacedialog=33
@@ -296,7 +296,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=860
  width0=47
@@ -932,16 +932,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ DEBUGGERFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TDEBUGGERFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
+ /home/fred/ideU/src/commandorform.mfm
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
@@ -1573,8 +1576,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=themenr
+finddtext=edit_compilernum
 findhistory=20
+ edit_compilernum
  themenr
  themnr
  theme
@@ -1594,53 +1598,73 @@ findhistory=20
  Menuitem
  'Menuitem
  Menuitems
- Menuitemss
 findoptions=1
-editpos=4
+editpos=6
+ 0,4
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,7
- 0,5729
- 0,-1073741823
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
-relpaths=4
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/commandorform.pas
+relpaths=6
  actionsmodule.pas
  main.pas
  sourceform.pas
  ideU.pas
-ismoduletexts=4
+ main.pas
+ commandorform.pas
+ismoduletexts=6
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+modules=4
  /home/fred/ideU/src/sourceform.mfm
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
-moduleoptions=3
+ /home/fred/ideU/src/commandorform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 4
+ 5
+ 1
+ 2
+ 3
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=549
+windowlayout=576
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1660,7 +1684,7 @@ windowlayout=549
  cy=621
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1781,7 +1805,7 @@ windowlayout=549
  x=0
  y=0
  cx=205
- cy=448
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1792,7 +1816,7 @@ windowlayout=549
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=6
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1852,7 +1876,7 @@ windowlayout=549
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=conflangfo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -1871,10 +1895,10 @@ windowlayout=549
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=359
- width0=158
+ propcolwidthref=374
+ width0=165
  sortdescend0=0
- width1=195
+ width1=203
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1967,9 +1991,9 @@ windowlayout=549
  ncx=0
  ncy=0
  x=0
- y=508
- cx=1212
- cy=92
+ y=583
+ cx=1354
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2068,7 +2092,7 @@ windowlayout=549
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1354
  cy=54
  rcx=0
  rcy=0
@@ -2080,11 +2104,11 @@ windowlayout=549
  mdistate=0
  nx=0
  ny=0
- ncx=1212
+ ncx=1354
  ncy=61
  x=0
  y=0
- cx=1212
+ cx=1354
  cy=61
  rcx=0
  rcy=0
@@ -2096,9 +2120,10 @@ windowlayout=549
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideU/src/main.pas
- history=13
-  /home/fred/ideU/src/ideU.pas
+ history=14
   /home/fred/ideU/src/main.pas
+  /home/fred/ideU/src/actionsmodule.pas
+  /home/fred/ideU/src/ideU.pas
   /usr/share/fpcsrc/3.2.2/packages/cdrom/src/lincd.pp
   /usr/share/fpcsrc/3.2.2/rtl/linux/system.pp
   /home/fred/mseide-msegui/apps/ide/main.mfm
@@ -2126,20 +2151,27 @@ windowlayout=549
  ncy=0
  x=208
  y=0
- cx=1004
- cy=448
+ cx=1146
+ cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  4
+  5
+  1
+  2
+  3
  firsttab=0
- index=1
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2167,14 +2199,14 @@ windowlayout=549
  ncy=0
  x=0
  y=57
- cx=1212
- cy=448
+ cx=1354
+ cy=523
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2185,6 +2217,25 @@ windowlayout=549
  y=257
  cx=706
  cy=352
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_debuggerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=99
+ y=76
+ cx=1213
+ cy=67
  rcx=0
  rcy=0
  wsize=0

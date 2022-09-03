@@ -5292,9 +5292,9 @@ begin
       debuggerfo.project_history.dropdown.colorclient := cl_white;
       debuggerfo.project_history.dropdown.cols[0].colorselect := cl_ltgray;
       
-      debuggerfo.edit_compilernum.face.template := debuggerfo.templhistory;
+      debuggerfo.edit_compilernum.face.template := debuggerfo.templlang;
       debuggerfo.edit_compilernum.frame.buttons[0].colorglyph := cl_black;
-      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templhistory;
+      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templlang;
       debuggerfo.edit_compilernum.dropdown.colorclient := cl_white;
       debuggerfo.edit_compilernum.dropdown.cols[0].colorselect := cl_ltgray;
   
@@ -5439,9 +5439,9 @@ begin
       debuggerfo.project_history.dropdown.colorclient := $3D3D3D;
       debuggerfo.project_history.dropdown.cols[0].colorselect := cl_black;
     
-      debuggerfo.edit_compilernum.face.template := debuggerfo.templhistorydark;
+      debuggerfo.edit_compilernum.face.template := debuggerfo.templlangdark;
       debuggerfo.edit_compilernum.frame.buttons[0].colorglyph := cl_white;
-      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templhistorydark;
+      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templlangdark;
       debuggerfo.edit_compilernum.dropdown.colorclient := $3D3D3D;
       debuggerfo.edit_compilernum.dropdown.cols[0].colorselect := cl_black;
     

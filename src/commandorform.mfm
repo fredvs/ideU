@@ -1444,7 +1444,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templhistory
+      frame.button.face.template = templlang
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -1454,13 +1454,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templhistory
+          face.template = templlang
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
       face.localprops = []
-      face.template = templhistory
+      face.template = templlang
       taborder = 4
       hint = 'Compiler number for Edited file'
       bounds_x = 305
