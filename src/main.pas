@@ -5723,14 +5723,16 @@ end;
 procedure tmainfo.onclassic(Const Sender: TObject);
 begin
   themenr := 0;
-  dotheme(0);
+  dotheme(themenr);
+  themenum.value := themenr;
   // setstattext('Light theme is set.', mtk_flat);
 end;
 
 procedure tmainfo.ondark(Const Sender: TObject);
 begin
   themenr := 1;
-  dotheme(1);
+  dotheme(themenr);
+  themenum.value := themenr;
   // setstattext('Dark theme is set.', mtk_flat);
 end;
 
