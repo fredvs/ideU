@@ -15,7 +15,7 @@ object debuggerfo: tdebuggerfo
   bounds_x = 99
   bounds_y = 76
   bounds_cx = 1203
-  bounds_cy = 56
+  bounds_cy = 67
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent]
   container.frame.optionsskin = [fso_flat]
   container.frame.localprops = [frl_optionsskin, frl_colorclient]
@@ -139,7 +139,7 @@ object debuggerfo: tdebuggerfo
     0
     0
     1193
-    56
+    67
   )
   dragdock.caption = 'Commandor'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_background]
@@ -157,7 +157,7 @@ object debuggerfo: tdebuggerfo
     bounds_x = 0
     bounds_y = 53
     bounds_cx = 1193
-    bounds_cy = 2
+    bounds_cy = 13
     anchors = [an_top, an_bottom]
     font.name = 'stf_default'
     font.xscale = 1
@@ -1386,7 +1386,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
+      frame.button.face.template = templnr
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -1396,11 +1396,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templfile
+          face.template = templnr
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templnr
       taborder = 3
       hint = 'Project Option for Edited file. X --> no parameter, otherwise parameter of project.'
       bounds_x = 343
@@ -1442,7 +1444,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
+      frame.button.face.template = templhistory
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -1452,11 +1454,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templfile
+          face.template = templhistory
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templhistory
       taborder = 4
       hint = 'Compiler number for Edited file'
       bounds_x = 305
@@ -1494,7 +1498,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
+      frame.button.face.template = templlang
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -1504,11 +1508,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templfile
+          face.template = templlang
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templlang
       taborder = 5
       hint = 'Compiler Type for Edited file'
       bounds_x = 259
@@ -2472,7 +2478,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templfile
+      frame.button.face.template = templfilehistory
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -2482,11 +2488,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templfile
+          face.template = templfilehistory
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templfilehistory
       taborder = 7
       hint = 'History of files.'
       bounds_x = 84
@@ -7025,7 +7033,7 @@ object debuggerfo: tdebuggerfo
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templproject
+      frame.button.face.template = templnr
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -7035,11 +7043,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templproject
+          face.template = templnr
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templnr
       taborder = 10
       hint = 'Project Option Num'
       bounds_x = 176
@@ -8256,11 +8266,11 @@ object debuggerfo: tdebuggerfo
       frame.colorclient = 16056304
       frame.localprops = [frl_hiddenedges, frl_colorclient]
       frame.localprops1 = []
-      frame.template = mainfo.tframecomp2
+      frame.template = mainfo.tframecomp2dark
       frame.button.width = 16
       frame.button.face.fade_direction = gd_down
       frame.button.face.localprops = [fal_fadirection]
-      frame.button.face.template = templproject
+      frame.button.face.template = templhistory
       frame.button.frame.localprops = []
       frame.button.frame.localprops1 = []
       frame.button.frame.template = mainfo.mainmenuframe
@@ -8270,11 +8280,13 @@ object debuggerfo: tdebuggerfo
           width = 16
           face.fade_direction = gd_down
           face.localprops = [fal_fadirection]
-          face.template = templproject
+          face.template = templhistory
           frame.localprops = []
           frame.localprops1 = []
           frame.template = mainfo.mainmenuframe
         end>
+      face.localprops = []
+      face.template = templhistory
       taborder = 14
       hint = 'History of projects.'
       bounds_x = 58
@@ -8308,8 +8320,8 @@ object debuggerfo: tdebuggerfo
       10004626
     )
     template.fade_direction = gd_down
-    left = 828
-    top = 3
+    left = 865
+    top = 23
   end
   object templfile: tfacecomp
     template.fade_pos.count = 2
@@ -8338,8 +8350,8 @@ object debuggerfo: tdebuggerfo
       2568994
     )
     template.fade_direction = gd_down
-    left = 548
-    top = 17
+    left = 385
+    top = 22
   end
   object timagelist1: timagelist
     width = 55
@@ -8547,8 +8559,8 @@ object debuggerfo: tdebuggerfo
       3355443
     )
     template.fade_direction = gd_down
-    left = 623
-    top = 20
+    left = 655
+    top = 24
   end
   object templatemain: tfacecomp
     template.fade_pos.count = 2
@@ -8562,8 +8574,8 @@ object debuggerfo: tdebuggerfo
       12105912
     )
     template.fade_direction = gd_down
-    left = 570
-    top = 21
+    left = 733
+    top = 24
   end
   object templfiledark: tfacecomp
     template.fade_pos.count = 2
@@ -8577,8 +8589,8 @@ object debuggerfo: tdebuggerfo
       2829079
     )
     template.fade_direction = gd_down
-    left = 549
-    top = 20
+    left = 290
+    top = 14
   end
   object imagebut: timagelist
     width = 64
@@ -9518,5 +9530,125 @@ object debuggerfo: tdebuggerfo
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFF
     }
+  end
+  object templhistory: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      14217425
+      10926240
+    )
+    template.fade_direction = gd_down
+    left = 983
+    top = 22
+  end
+  object templhistorydark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      7569519
+      2435363
+    )
+    template.fade_direction = gd_down
+    left = 1007
+    top = 17
+  end
+  object templfilehistory: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      16775651
+      14277042
+    )
+    template.fade_direction = gd_down
+    left = 591
+    top = 24
+  end
+  object templfilehistorydark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      6381398
+      2368541
+    )
+    template.fade_direction = gd_down
+    left = 271
+    top = 36
+  end
+  object templnr: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      16773360
+      15785437
+    )
+    template.fade_direction = gd_down
+    left = 36
+    top = 38
+  end
+  object templnrdark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      9079434
+      2038812
+    )
+    template.fade_direction = gd_down
+    left = 147
+    top = 38
+  end
+  object templlang: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      16769276
+      13744335
+    )
+    template.fade_direction = gd_down
+    left = 441
+    top = 37
+  end
+  object templlangdark: tfacecomp
+    template.fade_pos.count = 2
+    template.fade_pos.items = (
+      0
+      1
+    )
+    template.fade_color.count = 2
+    template.fade_color.items = (
+      9864341
+      2827819
+    )
+    template.fade_direction = gd_down
+    left = 557
+    top = 36
   end
 end

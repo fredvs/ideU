@@ -2646,8 +2646,8 @@ object mainfo: tmainfo
     template.frameimage_bottom = -4
     template.hiddenedges = [edg_bottom]
     template.optionsskin = [fso_flat]
-    left = 465
-    top = 27
+    left = 415
+    top = 40
   end
   object tframecomp3: tframecomp
     template.framei_left = 4
@@ -2690,5 +2690,20 @@ object mainfo: tmainfo
     )
     left = 590
     top = 4
+  end
+  object tframecomp2dark: tframecomp
+    template.framei_left = 8
+    template.framei_top = 3
+    template.framei_right = 8
+    template.framei_bottom = 4
+    template.frameimage_left = -4
+    template.frameimage_top = -4
+    template.frameimage_right = -4
+    template.frameimage_bottom = -4
+    template.colorclient = 4421699
+    template.hiddenedges = [edg_bottom]
+    template.optionsskin = [fso_flat]
+    left = 424
+    top = 27
   end
 end

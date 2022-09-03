@@ -30,24 +30,18 @@ interface
   {$endif}
 {$endif}
 
-uses 
- templateeditor,
- 
- {$ifdef usemo}
- mo2arrays,
- mo4stock,
- {$endif}
- po2arrays,
-msearrayutils, aboutform, plugmanager, 
-msetimer, mseformatstr, mseconsts, dialogfiles, mseforms, mseguiglob, msegui, 
-msegdbutils, mseactions, sak_mse, msefileutils, msedispwidgets, msedataedits, 
-msestat, msestatfile, msemenus, msestockobjects,  captionideu, msebitmap, msegrids, 
-msefiledialogx, msetypes, sourcepage, msedesignintf, msedesigner, Classes, mclasses, 
-mseclasses, msegraphutils, typinfo, msedock, SysUtils, msesysenv, msemacros, 
-msestrings, msepostscriptprinter, msegraphics, mseglob, msestream, msepointer, 
-mseprocmonitorcomp, msesystypes, mserttistat, msedatalist, mselistbrowser, 
-projecttreeform, msepipestream, msestringcontainer, msesys, mseedit, msewidgets, 
-msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
+uses
+ templateeditor,{$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
+ msearrayutils, aboutform, plugmanager,msetimer, mseformatstr, mseconsts,
+  dialogfiles, mseforms, mseguiglob, msegui,msegdbutils, mseactions, sak_mse,
+  msefileutils, msedispwidgets, msedataedits,msestat, msestatfile, msemenus,
+  msestockobjects,  captionideu, msebitmap, msegrids,msefiledialogx, msetypes,
+  sourcepage, msedesignintf, msedesigner, Classes, mclasses,mseclasses,
+  msegraphutils, typinfo, msedock, SysUtils, msesysenv, msemacros,msestrings,
+  msepostscriptprinter, msegraphics, mseglob, msestream, msepointer,
+ mseprocmonitorcomp, msesystypes, mserttistat, msedatalist, mselistbrowser,
+ projecttreeform, msepipestream, msestringcontainer, msesys, mseedit,
+  msewidgets,msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
 const 
   versiontext = '2.8.4';
@@ -113,6 +107,7 @@ type
     posy: tintegeredit;
     poscx: tintegeredit;
     poscy: tintegeredit;
+   tframecomp2dark: tframecomp;
     procedure newfileonexecute(Const Sender: TObject);
     procedure newformonexecute(Const Sender: TObject);
 
@@ -3259,8 +3254,7 @@ var
   projectdirbefore: msestring;
   str1: ttextstream;
   thedir: msestring;
-  anamesys: msestring;
-begin
+ begin
   gdb.abort;
   terminategdbserver(True);
   Result := False;
@@ -3272,8 +3266,6 @@ begin
   debuggerfo.project_history.Value := tosysfilepath(ExpandFileName(aname));
 
   theprojectname :=  tosysfilepath(ExpandFileName(aname));
-  
-  anamesys := aname;
 
   if Assigned(debuggerfo) and (length(lang_mainform) > 0) and
      (length(lang_stockcaption) > 0) then
@@ -3338,10 +3330,10 @@ begin
         
         {$ifndef mswindows}
           try
-            setcurrentdirmse(removelastpathsection(tosysfilepath(aname)));
+            setcurrentdirmse(removelastpathsection(aname));
           except
-            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' " ' + (aname) +
-            '": ');
+            application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + (aname) +
+            ' ": ');
             Exit;
         end;
           {$endif}
@@ -5249,7 +5241,7 @@ begin
 
       debuggerfo.color          := cl_gray;
       debuggerfo.basedock.color := cl_gray;
-
+      
       color          := cl_gray;
       basedock.color := cl_gray;
 
@@ -5291,12 +5283,45 @@ begin
       debuggerfo.project_abort_compil.face.template := debuggerfo.templproject;
       debuggerfo.project_start.face.template := debuggerfo.templproject;
       debuggerfo.project_next.face.template := debuggerfo.templproject;
-
-      if Assigned(debuggerfo) then
-        begin
-          debuggerfo.container.color := color0;
-          debuggerfo.color           := color0;
-
+      debuggerfo.container.color := color0;
+      debuggerfo.color           := color0;
+          
+      debuggerfo.project_history.face.template := debuggerfo.templhistory;
+      debuggerfo.project_history.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.project_history.frame.buttons[0].face.template := debuggerfo.templhistory;
+      debuggerfo.project_history.dropdown.colorclient := cl_white;
+      debuggerfo.project_history.dropdown.cols[0].colorselect := cl_ltgray;
+      
+      debuggerfo.edit_compilernum.face.template := debuggerfo.templhistory;
+      debuggerfo.edit_compilernum.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templhistory;
+      debuggerfo.edit_compilernum.dropdown.colorclient := cl_white;
+      debuggerfo.edit_compilernum.dropdown.cols[0].colorselect := cl_ltgray;
+  
+      debuggerfo.file_history.face.template := debuggerfo.templfilehistory;
+      debuggerfo.file_history.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.file_history.frame.buttons[0].face.template := debuggerfo.templfilehistory;
+      debuggerfo.file_history.dropdown.colorclient := cl_white;
+      debuggerfo.file_history.dropdown.cols[0].colorselect := cl_ltgray;
+   
+      debuggerfo.project_options.face.template := debuggerfo.templnr;
+      debuggerfo.project_options.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.project_options.frame.buttons[0].face.template := debuggerfo.templnr;
+      debuggerfo.project_options.dropdown.colorclient := cl_white;
+      debuggerfo.project_options.dropdown.cols[0].colorselect := cl_ltgray;
+   
+      debuggerfo.edit_options.face.template := debuggerfo.templnr;
+      debuggerfo.edit_options.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.edit_options.frame.buttons[0].face.template := debuggerfo.templnr;
+      debuggerfo.edit_options.dropdown.colorclient := cl_white;
+      debuggerfo.edit_options.dropdown.cols[0].colorselect := cl_ltgray;
+       
+      debuggerfo.edit_compiler.face.template := debuggerfo.templlang;
+      debuggerfo.edit_compiler.frame.buttons[0].colorglyph := cl_black;
+      debuggerfo.edit_compiler.frame.buttons[0].face.template := debuggerfo.templlang;
+      debuggerfo.edit_compiler.dropdown.colorclient := cl_white;
+      debuggerfo.edit_compiler.dropdown.cols[0].colorselect := cl_ltgray;
+     
           debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
           debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
           debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
@@ -5320,8 +5345,7 @@ begin
           debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[0] := color0;
           debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
           debuggerfo.container.frame.sbvert.colorglyph := color2;
-        end;
-
+     
       debuggerfo.panelmain.face.template         := debuggerfo.templatemain;
       debuggerfo.assistive.face.template         := debuggerfo.templatemain;
       debuggerfo.properties_list.face.template   := debuggerfo.templatemain;
@@ -5349,7 +5373,7 @@ begin
       debuggerfo.edited_make.face.template      := debuggerfo.templfile;
       debuggerfo.edited_abort.face.template     := debuggerfo.templfile;
       debuggerfo.edited_run.face.template       := debuggerfo.templfile;
-
+  
       if Assigned(sourcefo.ActivePage) then
         begin
           sourcefo.ActivePage.pathdisp.face.template := debuggerfo.templatemain;
@@ -5358,8 +5382,7 @@ begin
           sourcefo.ActivePage.linedisp.font.color := cl_black;
           sourcefo.ActivePage.color           := cl_ltgray;
           sourcefo.ActivePage.container.color := cl_ltgray;
-        end;
-
+       
       sourcefo.tpopupmenu1.menu.font.color        := cl_black;
       sourcefo.tpopupmenu1.menu.fontactive.color  := cl_black;
       sourcefo.tpopupmenu1.facetemplate           := convex;
@@ -5379,7 +5402,9 @@ begin
       sourcefo.files_tab.tab_font.color          := cl_black;
       sourcefo.files_tab.tab_fontactivetab.color := cl_black;
       sourcefo.files_tab.tab_fonttab.color       := cl_black;
-
+    end;
+    
+    
       projecttreefo.projectedit.face.template       := projecttreefo.templatemain;
       projecttreefo.projectedit.font.color          := cl_black;
       projecttreefo.projectedit.itemlist.colorline  := cl_black;
@@ -5406,7 +5431,45 @@ begin
 
       debuggerfo.color          := cl_dkgray;
       debuggerfo.basedock.color := cl_dkgray;
-
+      
+      debuggerfo.project_history.face.template := debuggerfo.templhistorydark;
+      debuggerfo.project_history.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.project_history.frame.buttons[0].face.template := debuggerfo.templhistorydark;
+      
+      debuggerfo.project_history.dropdown.colorclient := $3D3D3D;
+      debuggerfo.project_history.dropdown.cols[0].colorselect := cl_black;
+    
+      debuggerfo.edit_compilernum.face.template := debuggerfo.templhistorydark;
+      debuggerfo.edit_compilernum.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.edit_compilernum.frame.buttons[0].face.template := debuggerfo.templhistorydark;
+      debuggerfo.edit_compilernum.dropdown.colorclient := $3D3D3D;
+      debuggerfo.edit_compilernum.dropdown.cols[0].colorselect := cl_black;
+    
+      debuggerfo.file_history.face.template := debuggerfo.templfilehistorydark;
+      debuggerfo.file_history.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.file_history.frame.buttons[0].face.template := debuggerfo.templfilehistorydark;
+       debuggerfo.file_history.dropdown.colorclient := $3D3D3D;
+      debuggerfo.file_history.dropdown.cols[0].colorselect := cl_black;
+    
+      debuggerfo.project_options.face.template := debuggerfo.templnrdark;
+      debuggerfo.project_options.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.project_options.frame.buttons[0].face.template := debuggerfo.templnrdark;
+      debuggerfo.project_options.dropdown.colorclient := $3D3D3D;
+      debuggerfo.project_options.dropdown.cols[0].colorselect := cl_black;
+  
+      debuggerfo.edit_options.face.template := debuggerfo.templnrdark;
+      debuggerfo.edit_options.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.edit_options.frame.buttons[0].face.template := debuggerfo.templnrdark;
+      debuggerfo.edit_options.dropdown.colorclient := $3D3D3D;
+      debuggerfo.edit_options.dropdown.cols[0].colorselect := cl_black;
+   
+      debuggerfo.edit_compiler.face.template := debuggerfo.templlangdark;
+      debuggerfo.edit_compiler.frame.buttons[0].colorglyph := cl_white;
+      debuggerfo.edit_compiler.frame.buttons[0].face.template := debuggerfo.templlangdark;
+      debuggerfo.edit_compiler.dropdown.colorclient := $3D3D3D;
+      debuggerfo.edit_compiler.dropdown.cols[0].colorselect := cl_black;
+   
+      
       color          := cl_dkgray;
       basedock.color := cl_dkgray;
 
@@ -5437,7 +5500,8 @@ begin
       mainmenu1.itemfacetemplateactive := concavedark;
       mainmenu1.popupitemfacetemplate := concavedark;
       mainmenu1.popupitemfacetemplateactive := convexdark;
-
+     
+      
       debuggerfo.panelmain.face.template         := debuggerfo.templatemaindark;
       debuggerfo.assistive.face.template         := debuggerfo.templatemaindark;
       debuggerfo.properties_list.face.template   := debuggerfo.templatemaindark;
@@ -5506,11 +5570,8 @@ begin
 
       debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
       //{   
-      if Assigned(debuggerfo) then
-        begin
           debuggerfo.container.color := color0;
           debuggerfo.color           := color0;
-
           debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
           debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[0] := color1;
           debuggerfo.container.frame.sbhorz.face.fade_color.items[0] := color0;
@@ -5535,8 +5596,7 @@ begin
           debuggerfo.container.frame.sbvert.faceendbutton.fade_color.items[1] := color1;
           debuggerfo.container.frame.sbvert.colorglyph := color2;
 
-        end;
-      //}
+       
       debuggerfo.paneledited.face.template      := debuggerfo.templfiledark;
       debuggerfo.toggle_form_unit.face.template := debuggerfo.templfiledark;
       debuggerfo.code_beauty.face.template      := debuggerfo.templfiledark;

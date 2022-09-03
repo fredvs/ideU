@@ -66,6 +66,14 @@ type
    find_in_edit: tbutton;
    debug_on: tbutton;
    imagebut: timagelist;
+   templhistory: tfacecomp;
+   templhistorydark: tfacecomp;
+   templfilehistory: tfacecomp;
+   templfilehistorydark: tfacecomp;
+   templnr: tfacecomp;
+   templnrdark: tfacecomp;
+   templlang: tfacecomp;
+   templlangdark: tfacecomp;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
