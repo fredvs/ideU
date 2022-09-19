@@ -139,8 +139,7 @@ begin
   dialogfilesfo.icon  := mainfo.icon;
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
-  conflangfo.icon     := mainfo.icon;
-
+ 
   application.run;
 end.
 

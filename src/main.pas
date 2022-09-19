@@ -4902,8 +4902,7 @@ begin
   mainmenu1.menu.itembynames(['settings', 'themes']).Caption := lang_xstockcaption[Ord(sc_themes)
                                                                 ];
 
-  mainmenu1.menu.itembynames(['lang']).Caption := lang_stockcaption[Ord(sc_lang)] +
-                                                              ' (Lang)';
+  mainmenu1.menu.itembynames(['lang']).Caption := lang_stockcaption[Ord(sc_lang)] ;
 
   mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
 
@@ -5800,11 +5799,11 @@ end;
 
 procedure tmainfo.onresetsettings(const sender: TObject);
 begin
+resetsettings := true;
 if ShowMessage('Do you want to reset to Original Settings for next run ?' , lang_stockcaption[Ord(sc_warningupper)],
          [mr_yes, mr_cancel]) = mr_yes then
-        begin
-        resetsettings := true;
-        end else resetsettings := false;
+          resetsettings := true
+        else resetsettings := false;
 
 end;
 
