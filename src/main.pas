@@ -5771,22 +5771,18 @@ end;
 procedure tmainfo.setlanginit(Const Sender: TObject);
 var 
   x: integer;
-  oldlang : msestring;
-begin
+ begin
   if isactivated = False then
     begin
       conflangfo.Visible := False;
-      oldlang := MSEFallbackLang;
-
+   
       if conflangfo.setasdefault.Value = True then
         begin
           for x := 0 to conflangfo.gridlang.rowcount - 1 do
             if conflangfo.gridlangbool[x] = True then
               MSEFallbackLang := conflangfo.gridlangcode[x];
-
-          if oldlang <> MSEFallbackLang then setlangideu(MSEFallbackLang);
-        end
-      else setlangideu(MSEFallbackLang);
+          end;
+      setlangideu(MSEFallbackLang);
     end;
   isactivated        := True;
  end;

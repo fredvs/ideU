@@ -918,26 +918,17 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
+modulenames=3
  ACTIONSMO
- CONFLANGFO
  MAINFO
- FILEDIALOGXFO
- INTEGERENTERFO
  SOURCEFO
-moduletypes=6
+moduletypes=3
  TACTIONSMO
- TCONFLANGFO
  TMAINFO
- TFILEDIALOGXFO
- TINTEGERENTERFO
  TSOURCEFO
-modulefiles=6
+modulefiles=3
  /home/fred/ideU/src/actionsmodule.mfm
- /home/fred/ideU/src/conflang.mfm
  /home/fred/ideU/src/main.mfm
- /home/fred/ideU/src/msefiledialogx.mfm
- /home/fred/ideU/src/mseintegerenter.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
 makeoptionson=16
@@ -1568,8 +1559,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=list
+finddtext=setlanginit
 findhistory=20
+ setlanginit
+ setlang
  list
  FpStat
  info :=
@@ -1588,137 +1581,52 @@ findhistory=20
  message
  inc(x
  okon
- project_history
- comm
 findoptions=1
-editpos=15
- 0,4902
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=4
  0,5
- 37,130
+ 0,-1073741823
+ 0,5784
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
-bookmarks12=0
-bookmarks13=0
-bookmarks14=0
-sourcefiles=15
+sourcefiles=4
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/commandorform.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/msefiledialogx.pas
- /home/fred/mseide-msegui/lib/common/kernel/msesys.pas
- /usr/share/fpcsrc/3.2.2/packages/fcl-passrc/src/pasresolver.pp
- /home/fred/mseide-msegui/lib/common/graphics/msedrawtext.pas
- ${PROJECTDIR}/mseintegerenter.pas
- ${PROJECTDIR}/mseintegerenter.mfm
- ${PROJECTDIR}/mseintegerenter.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/conflang.pas
- ${PROJECTDIR}/ideU.pas
-relpaths=15
+relpaths=4
+ ideU.pas
+ actionsmodule.pas
  main.pas
  sourceform.pas
- ideU.pas
- commandorform.pas
- sourceform.pas
- msefiledialogx.pas
- mseide-msegui/lib/common/kernel/msesys.pas
- usr/share/fpcsrc/3.2.2/packages/fcl-passrc/src/pasresolver.pp
- mseide-msegui/lib/common/graphics/msedrawtext.pas
- mseintegerenter.pas
- mseintegerenter.mfm
- mseintegerenter.pas
- actionsmodule.pas
- conflang.pas
- ideU.pas
-ismoduletexts=15
+ismoduletexts=4
  0
  0
  0
  0
- 0
- 0
- 0
- 0
- 0
- 0
- -1
- 0
- 0
- 0
- 0
-modules=6
- /home/fred/ideU/src/msefiledialogx.mfm
- /home/fred/ideU/src/mseintegerenter.mfm
+modules=3
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
- /home/fred/ideU/src/conflang.mfm
-moduleoptions=6
+moduleoptions=3
  0
  0
  0
- 0
- 0
- 0
-visiblemodules=6
+visiblemodules=3
  -1
  -1
  -1
- -1
- -1
- -1
-nomenumodules=6
- 0
- 0
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=15
- 0
- 3
- 1
- 10
- 6
- 13
- 14
- 2
- 12
- 9
- 7
- 8
- 5
- 11
- 4
 firsttab=0
-index=6
+index=2
 [layout]
-windowlayout=596
+windowlayout=543
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1732,10 +1640,10 @@ windowlayout=596
  ny=0
  ncx=0
  ncy=0
- x=65
- y=51
- cx=1224
- cy=621
+ x=5
+ y=29
+ cx=1366
+ cy=711
  rcx=0
  rcy=0
  wsize=0
@@ -1833,7 +1741,7 @@ windowlayout=596
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1859,7 +1767,7 @@ windowlayout=596
  x=0
  y=0
  cx=205
- cy=448
+ cy=523
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1870,7 +1778,7 @@ windowlayout=596
  sortdescend1=0
  sorted=0
  col=0
- row=10
+ row=15
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1949,10 +1857,10 @@ windowlayout=596
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=514
- width0=227
+ propcolwidthref=374
+ width0=165
  sortdescend0=0
- width1=281
+ width1=203
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2045,9 +1953,9 @@ windowlayout=596
  ncx=0
  ncy=0
  x=0
- y=508
- cx=1212
- cy=92
+ y=583
+ cx=1354
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2146,7 +2054,7 @@ windowlayout=596
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1354
  cy=54
  rcx=0
  rcy=0
@@ -2158,11 +2066,11 @@ windowlayout=596
  mdistate=0
  nx=0
  ny=0
- ncx=1212
+ ncx=1354
  ncy=61
  x=0
  y=0
- cx=1212
+ cx=1354
  cy=61
  rcx=0
  rcy=0
@@ -2173,9 +2081,10 @@ windowlayout=596
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/ideU.pas
- history=6
+ value=/home/fred/ideU/src/main.pas
+ history=7
   /home/fred/ideU/src/main.pas
+  /home/fred/ideU/src/ideU.pas
   /home/fred/ideU/src/conflang.pas
   /home/fred/strumpract/src/conflang.pas
   /home/fred/msewidgets.pas
@@ -2197,36 +2106,20 @@ windowlayout=596
  ncy=0
  x=208
  y=0
- cx=1004
- cy=448
+ cx=1146
+ cy=523
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=15
-  0
-  3
-  1
-  10
-  6
-  13
-  14
-  2
-  12
-  9
-  7
-  8
-  5
-  11
-  4
  firsttab=0
- index=6
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2254,30 +2147,11 @@ windowlayout=596
  ncy=0
  x=0
  y=57
- cx=1212
- cy=448
+ cx=1354
+ cy=523
  rcx=0
  rcy=0
- [_mse_filedialogxfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_integerenterfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=656
- y=61
- cx=618
- cy=484
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_integerenterfo_mse_]
+ [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
  stackedunder=_mse_actionsmo_mse_
@@ -2287,29 +2161,10 @@ windowlayout=596
  ny=0
  ncx=0
  ncy=0
- x=708
- y=241
- cx=229
- cy=80
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=405
- y=266
- cx=580
- cy=243
+ x=287
+ y=268
+ cx=810
+ cy=100
  rcx=0
  rcy=0
  wsize=0
