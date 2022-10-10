@@ -3254,16 +3254,42 @@ var
   projectdirbefore: msestring;
   str1: ttextstream;
   thedir: msestring;
+  str2: msestring;
  begin
   gdb.abort;
   terminategdbserver(True);
   Result := False;
   
   application.processmessages;
-
-  TheProjectDirectory := tosysfilepath(ExtractFilePath(ExpandFileName(aname)));
-
-  debuggerfo.project_history.Value := tosysfilepath(ExpandFileName(aname));
+ 
+  if (not fileexists(ExpandFileName(aname))) and ( aname <> '' ) then
+  begin
+  closepro;
+ //writeln('Project ' + aname + ' does not exist.');
+ //ShowMessage('Project ' + aname + ' does not exist.' , lang_stockcaption[Ord(sc_warningupper)],[mr_yes]);
+  application.processmessages;
+   Caption        := idecaption;
+   fprojectloaded := False;
+   str2           := expandprmacros('${LAYOUTDIR}') + 'AfterClose.prj';
+      if fileexists(str2) then
+        begin
+          str1 := ttextstream.Create(str2);
+          try
+            debuggerfo.Close;
+            mainfo.loadwindowlayout(str1);
+          finally
+            str1.Destroy();
+        end;
+    end;
+  application.processmessages;
+  closeprojectactonexecute(nil);
+ 
+  end else
+  begin
+  
+   TheProjectDirectory := tosysfilepath(ExtractFilePath(ExpandFileName(aname)));
+  
+   debuggerfo.project_history.Value := tosysfilepath(ExpandFileName(aname));
 
   theprojectname :=  tosysfilepath(ExpandFileName(aname));
 
@@ -3426,7 +3452,8 @@ if (confideufo.usedefaulteditoroptions.Value) then
   
   if sourcefo.files_tab.Count > 0 then sourcefo.files_tab.activepageindex := 0;
   if assigned(sourcefo.ActivePage) then sourcefo.ActivePage.SetFocus;
-
+ 
+ end;
 end;
 
 procedure tmainfo.saveproject(aname: filenamety; Const ascopy: Boolean = False);

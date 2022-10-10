@@ -238,12 +238,14 @@ ratio := confideufo.fontsize.value / 12;
 
 project_history.width := round(ratio * 88);
 
-//if (fileexists(project_history.value)) and
 if (file_history.tag = 0) and
  (projectoptions.projectfilename <> project_history.value) then
 begin
 sleep(50);
-mainfo.openproject(project_history.value);
+if not fileexists(project_history.value) then
+
+ShowMessage('Project ' + project_history.value + ' does not exist.' , 'Warning!',[mr_yes])
+else mainfo.openproject(project_history.value);
 mainfo.activate;
 end;
 
