@@ -1575,6 +1575,9 @@ begin
           end;
           Inc(int2);
         end;
+ 
+    // tools temporaly disabled.
+      
       with mainfo.mainmenu1.menu.submenu do
       begin
         item1 := itembyname('tools');
@@ -1584,7 +1587,10 @@ begin
           begin
             item1         := tmenuitem.Create;
             item1.Name    := 'tools';
-            item1.Caption := lang_actionsmodule[ord(ac_tools)];
+            if length(lang_actionsmodule) > ord(ac_tools) then
+            item1.Caption := lang_actionsmodule[ord(ac_tools)]
+            else
+            item1.Caption := 'Tools';
             insert(itemindexbyname('settings'), item1);
           end;
           with item1.submenu do
@@ -1614,6 +1620,8 @@ begin
         else if item1 <> nil then
           Delete(item1.index);
       end;
+     // end tools  
+      
     end;
     ignoreexceptionclasses := nil;
     for int1 := 0 to high(d.exceptignore) do

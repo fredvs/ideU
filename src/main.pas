@@ -4578,7 +4578,7 @@ begin
 
   item1 := mainmenu1.menu.itembynames(['tools']);
   if item1 <> nil then
-    mainmenu1.menu.itembynames(['tools']).Caption := lang_stockcaption[Ord(sc_tools)];
+  mainmenu1.menu.itembynames(['tools']).Caption := lang_stockcaption[Ord(sc_tools)];
 
   mainmenu1.menu.itembynames(['view']).Caption := lang_xstockcaption[Ord(sc_view)];
   mainmenu1.menu.itembynames(['view', 'panels']).Caption := lang_xstockcaption[Ord(sc_panels)];
