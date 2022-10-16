@@ -1543,7 +1543,7 @@ files=
   )
  )
 [componentstore]
-storedir=/home/fred/ideU/src/apps/ide/compstore/
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -1559,7 +1559,7 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=openproject
+finddtext=lang_
 findhistory=20
  openproject
  initprojectoptions
@@ -1583,9 +1583,9 @@ findhistory=20
  ifndef msw
 findoptions=1
 editpos=5
- 0,8
+ 18,8
  0,-1073741823
- 0,-1073741823
+ 0,1859
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1631,7 +1631,7 @@ nomenumodules=3
 firsttab=0
 index=0
 [layout]
-windowlayout=520
+windowlayout=521
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1784,7 +1784,7 @@ windowlayout=520
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1941,7 +1941,7 @@ windowlayout=520
  ncy=0
  x=0
  y=508
- cx=1214
+ cx=1212
  cy=92
  rcx=0
  rcy=0
@@ -2041,7 +2041,7 @@ windowlayout=520
  ncy=0
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=54
  rcx=0
  rcy=0
@@ -2057,7 +2057,7 @@ windowlayout=520
  ncy=61
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=61
  rcx=0
  rcy=0
@@ -2068,8 +2068,9 @@ windowlayout=520
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/ideU.pas
- history=2
+ value=/home/fred/ideU/src/projectoptionsform.pas
+ history=3
+  /home/fred/ideU/src/projectoptionsform.pas
   /home/fred/ideU/src/ideU.pas
   /home/fred/ideU/src/main.mfm
  [debuggerfo.project_options]
@@ -2088,7 +2089,7 @@ windowlayout=520
  ncy=0
  x=208
  y=0
- cx=1006
+ cx=1004
  cy=448
  rcx=0
  rcy=0
@@ -2101,7 +2102,7 @@ windowlayout=520
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_mainfo_mse_
+ stackedunder=objectinspectorfo
  parent=
  mdistate=0
  nx=0
@@ -2129,7 +2130,7 @@ windowlayout=520
  ncy=0
  x=0
  y=57
- cx=1214
+ cx=1212
  cy=448
  rcx=0
  rcy=0

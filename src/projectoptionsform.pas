@@ -1576,8 +1576,6 @@ begin
           Inc(int2);
         end;
  
-    // tools temporaly disabled.
-      
       with mainfo.mainmenu1.menu.submenu do
       begin
         item1 := itembyname('tools');
@@ -1841,7 +1839,7 @@ begin
     setlength(fnewfisources, 3);
     
     
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_program) then
     newfinames[0]   := lang_actionsmodule[ord(ac_program)] 
     else
     newfinames[0]   := 'program';
@@ -1850,7 +1848,7 @@ begin
     newfiexts[0]    := 'pas';
     newfisources[0] := '${TEMPLATEDIR}/fpc_mse/default/program.pas';
     
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_unit) then
     newfinames[1]   := lang_actionsmodule[ord(ac_unit)] 
     else
     newfinames[1]   := 'unit';
@@ -1859,7 +1857,7 @@ begin
     newfiexts[1]    := 'pas';
     newfisources[1] := '${TEMPLATEDIR}/fpc_mse/default/unit.pas';
     
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_textfile) then
     newfinames[2]   := lang_actionsmodule[ord(ac_textfile)] 
     else
     newfinames[2]   := 'textfile';
@@ -1874,7 +1872,7 @@ begin
     setlength(fnewfosources, 11);
     setlength(fnewfoforms, 11);
     
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_mainform) then
     newfonames[0]        := lang_actionsmodule[ord(ac_mainform)]
     else
     newfonames[0]   := 'mainform';
@@ -1884,7 +1882,7 @@ begin
     newfosources[0]      := '${TEMPLATEDIR}fpc_mse/default/mainform.pas';
     newfoforms[0]        := '${TEMPLATEDIR}fpc_mse/default/mainform.mfm';
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_simpleform) then
     newfonames[1]        := lang_actionsmodule[ord(ac_simpleform)]
     else
     newfonames[1]   := 'simpleform';
@@ -1894,7 +1892,7 @@ begin
     newfosources[1]      := '${TEMPLATEDIR}fpc_mse/default/simpleform.pas';
     newfoforms[1]        := '${TEMPLATEDIR}fpc_mse/default/simpleform.mfm';
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_dockingform) then
     newfonames[2]        := lang_actionsmodule[ord(ac_dockingform)]
     else
     newfonames[2]   := 'dockingform';
@@ -1904,7 +1902,7 @@ begin
     newfosources[2]      := '${TEMPLATEDIR}fpc_mse/default/dockingform.pas';
     newfoforms[2]        := '${TEMPLATEDIR}fpc_mse/default/dockingform.mfm';
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_datamodule) then
     newfonames[3]        := lang_actionsmodule[ord(ac_datamodule)]
     else
     newfonames[3]   := 'datamodule';
@@ -1914,7 +1912,7 @@ begin
     newfosources[3]      := '${TEMPLATEDIR}fpc_mse/default/datamodule.pas';
     newfoforms[3]        := '${TEMPLATEDIR}fpc_mse/default/datamodule.mfm';
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_subform) then
     newfonames[4]        := lang_actionsmodule[ord(ac_subform)]
     else
     newfonames[4]   := 'subform';
@@ -1924,7 +1922,7 @@ begin
     newfosources[4]      := '${TEMPLATEDIR}fpc_mse/default/subform.pas';
     newfoforms[4]        := '${TEMPLATEDIR}fpc_mse/default/subform.mfm';
 
-   if length(lang_actionsmodule) > 0 then
+   if length(lang_actionsmodule) > ord(ac_scrollboxform) then
     newfonames[5]        := lang_actionsmodule[ord(ac_scrollboxform)]
     else
     newfonames[5]   := 'scrollboxform';
@@ -1934,7 +1932,7 @@ begin
     newfosources[5]      := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.pas';
     newfoforms[5]        := '${TEMPLATEDIR}fpc_mse/default/scrollboxform.mfm';
 
-   if length(lang_actionsmodule) > 0 then
+   if length(lang_actionsmodule) > ord(ac_tabform) then
     newfonames[6]        := lang_actionsmodule[ord(ac_tabform)]
     else
     newfonames[6]   := 'tabform';
@@ -1944,7 +1942,7 @@ begin
     newfosources[6]      := '${TEMPLATEDIR}fpc_mse/default/tabform.pas';
     newfoforms[6]        := '${TEMPLATEDIR}fpc_mse/default/tabform.mfm';
 
-  if length(lang_actionsmodule) > 0 then
+  if length(lang_actionsmodule) > ord(ac_dockpanel) then
     newfonames[7]        := lang_actionsmodule[ord(ac_dockpanel)]
     else
     newfonames[7]   := 'dockpanel';
@@ -1954,7 +1952,7 @@ begin
     newfosources[7]      := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.pas';
     newfoforms[7]        := '${TEMPLATEDIR}fpc_mse/default/dockpanelform.mfm';
 
-   if length(lang_actionsmodule) > 0 then
+   if length(lang_actionsmodule) > ord(ac_report) then
     newfonames[8]        := lang_actionsmodule[ord(ac_report)]
     else
     newfonames[8]   := 'report';
@@ -1964,7 +1962,7 @@ begin
     newfosources[8]      := '${TEMPLATEDIR}fpc_mse/default/report.pas';
     newfoforms[8]        := '${TEMPLATEDIR}fpc_mse/default/report.mfm';
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_scriptform) then
     newfonames[9]        := lang_actionsmodule[ord(ac_scriptform)]
     else
     newfonames[9]   := 'scriptform';
@@ -1974,7 +1972,7 @@ begin
     newfosources[9]      := '${TEMPLATEDIR}fpc_mse/default/pascform.pas';
     newfoforms[9]        := '${TEMPLATEDIR}fpc_mse/default/pascform.mfm';
 
-   if length(lang_actionsmodule) > 0 then
+   if length(lang_actionsmodule) > ord(ac_inheritedform) then
     newfonames[10]        := lang_actionsmodule[ord(ac_inheritedform)]
     else
     newfonames[10]   := 'inheritedform';
@@ -1999,21 +1997,21 @@ begin
     additem(fsourcefilemasks, '"*.mfm"');
     additem(fsyntaxdeffiles, '${SYNTAXDEFDIR}objecttext.sdef');
 
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_xstockcaption) > ord(sc_source) then
     additem(ffilemasknames, lang_xstockcaption[ord(sc_source)])
     else
     additem(ffilemasknames, 'source');
  
    
     additem(ffilemasks, '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"');
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_xstockcaption) > ord(sc_forms) then
     additem(ffilemasknames, lang_xstockcaption[ord(sc_forms)])
     else
     additem(ffilemasknames, 'forms');
     
     additem(ffilemasks, '*.mfm');
   
-    if length(lang_actionsmodule) > 0 then
+    if length(lang_actionsmodule) > ord(ac_allfiles) then
     additem(ffilemasknames, lang_actionsmodule[ord(ac_allfiles)])
     else
     additem(ffilemasknames, 'all files');
@@ -2760,8 +2758,16 @@ begin
   except
     on e: Exception do
     begin
-      showerror(lang_actionsmodule[ord(ac_cannotreadproject)] + ' "' + filename + '".' +
-        lineend + msestring(e.message), uppercase(lang_stockcaption[ord(sc_Error)]));
+    
+     if (length(lang_actionsmodule) > ord(ac_cannotreadproject)) and 
+     (length(lang_stockcaption) > ord(sc_Error))  then
+        showerror(lang_actionsmodule[ord(ac_cannotreadproject)] + ' "' + filename + '".' +
+        lineend + msestring(e.message), uppercase(lang_stockcaption[ord(sc_Error)])) 
+        else
+         showerror('Cannot read project "' + filename + '".' +
+        lineend + msestring(e.message), 'ERROR'); 
+   
+        
     end;
   end;
 end;
