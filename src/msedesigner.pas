@@ -4890,10 +4890,16 @@ strcoma := ', ' else strcoma := ',';
           for int1:= 1 to rootnames.Count - 1 do begin
            wstr1:= wstr1 + UTF8Decode(strcoma) +msestring(rootnames[int1]); // fred
           end;
+          if length(lang_actionsmodule) > ord(ac_unresolvedref) then
           raise exception.Create(ansistring(
                                    lang_actionsmodule[ord(ac_unresolvedref)]+' '+
                                             msestring(lastmissed)+lineend+
-                          lang_actionsmodule[ord(ac_modules)]+' '+wstr1+'.'));
+                          lang_actionsmodule[ord(ac_modules)]+' '+wstr1+'.')) else
+          
+           raise exception.Create(ansistring(
+                                   'Unresolved reference to '+
+                                            msestring(lastmissed)+lineend+
+                          'Module '+wstr1+'.'))                
          end;
          result^.resolved:= true;
         except
@@ -4930,8 +4936,14 @@ strcoma := ', ' else strcoma := ',';
      end;
     except
      on e: exception do begin
+    if length(lang_actionsmodule) > ord(ac_cannotreadform) then
       e.Message:= ansistring(lang_actionsmodule[ord(ac_cannotreadform)]+ ' "' + filename)+
+                                                        '".'+lineend+e.Message 
+     else
+       e.Message:= ansistring('Can not read formfile "' + filename)+
                                                         '".'+lineend+e.Message;
+ 
+                                                    
       raise;
      end;
     end;

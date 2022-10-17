@@ -17,9 +17,10 @@ order14=0
 order15=0
 order16=0
 order17=0
+order18=0
 [projectoptions]
-projectdir=/home/fred/ideu_bin/ideU_lin64/templates/fpc_lazarus
-projectfilename=/home/fred/ideu_bin/ideU_lin64/templates/fpc_lazarus/lazarus_bgrabitmap.prj
+projectdir=/home/fred/ideU/src/templates/fpc_lazarus
+projectfilename=/home/fred/ideU/src/templates/fpc_lazarus/lazarus_bgrabitmap.prj
 findinfiledialog=50
  [findinfileadialogfo.subdirs]
  value=1
@@ -829,7 +830,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=563
+windowlayout=535
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -852,6 +853,13 @@ windowlayout=563
  wsize=0
  active=1
  visible=1
+ [findmessagefo.findtext]
+ value=
+ history=0
+ [findmessagefo.casesensitive]
+ value=0
+ [findmessagefo.copytoclip]
+ value=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -963,19 +971,19 @@ windowlayout=563
  x=0
  y=0
  cx=205
- cy=451
+ cy=445
  rcx=0
  rcy=0
  [projecttreefo.grid]
  propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=82
+ width1=86
  sortdescend1=0
  sorted=0
  col=0
  row=1
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1034,7 +1042,7 @@ windowlayout=563
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1150,7 +1158,7 @@ windowlayout=563
  ncy=0
  x=0
  y=507
- cx=1212
+ cx=1214
  cy=93
  rcx=0
  rcy=0
@@ -1183,67 +1191,34 @@ windowlayout=563
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
- filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- panel=0
- noicon=0
- compact=0
- showhidden=0
- colnamewidth=0
- colsizewidth=0
- colextwidth=0
- coldatewidth=0
- splitterplaces=0
- splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
- filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- panel=0
- noicon=0
- compact=0
- showhidden=0
- colnamewidth=0
- colsizewidth=0
- colextwidth=0
- coldatewidth=0
- splitterplaces=0
- splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.compfiledialog]
- filenamescust=0
  filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- panel=0
- noicon=0
- compact=0
- showhidden=0
- colnamewidth=0
- colsizewidth=0
- colextwidth=0
- coldatewidth=0
- splitterplaces=0
- splitterlateral=0
  lastdir=
  filehistory=0
  filefilterindex=0
@@ -1251,7 +1226,7 @@ windowlayout=563
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=cpuc86_64fo
  parent=
  mdistate=3
  nx=0
@@ -1281,8 +1256,8 @@ windowlayout=563
  ncy=0
  x=0
  y=0
- cx=1212
- cy=50
+ cx=1214
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1297,8 +1272,8 @@ windowlayout=563
  ncy=34
  x=0
  y=0
- cx=1212
- cy=32
+ cx=1214
+ cy=34
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1346,22 +1321,20 @@ windowlayout=563
  ncy=0
  x=208
  y=0
- cx=1004
- cy=451
+ cx=1006
+ cy=445
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
  index=-1
- [confideufo.fontname]
- value=stf_default
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1388,9 +1361,9 @@ windowlayout=563
  ncx=0
  ncy=0
  x=0
- y=53
- cx=1212
- cy=451
+ y=59
+ cx=1214
+ cy=445
  rcx=0
  rcy=0
 [targetconsole]

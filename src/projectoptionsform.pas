@@ -1364,12 +1364,24 @@ begin
   Result := False;
   if exceptobject is Exception then
   begin
+  if length(lang_stockcaption) > ord(sc_Error) then
+  begin
     if ShowMessage(msestring(Exception(exceptobject).Message),
       uppercase(lang_stockcaption[ord(sc_Error)]), [mr_skip, mr_cancel]) <> mr_skip then
       Result := True;
+   end else
+   begin
+   ShowMessage(msestring(Exception(exceptobject).Message),
+      'ERROR');
+     Result := True;
+   end;   
   end
   else
-    raise Exception.Create(ansistring(lang_actionsmodule[ord(ac_invalidexception)]));
+   if length(lang_actionsmodule) > ord(ac_invalidexception) then
+  
+    raise Exception.Create(ansistring(lang_actionsmodule[ord(ac_invalidexception)]))
+    
+    else raise Exception.Create(ansistring('Invalid exception'));
 end;
 
 function projectfiledialog(var aname: filenamety; save: Boolean): modalresultty;

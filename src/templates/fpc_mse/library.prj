@@ -17,9 +17,10 @@ order14=0
 order15=0
 order16=0
 order17=0
+order18=0
 [projectoptions]
-projectdir=/home/fred/ideu/src/templates/fpc_mse
-projectfilename=/home/fred/ideu/src/templates/fpc_mse/library.prj
+projectdir=/home/fred/ideU/src/templates/fpc_mse
+projectfilename=/home/fred/ideU/src/templates/fpc_mse/library.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -696,7 +697,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=521
+windowlayout=526
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -712,13 +713,20 @@ windowlayout=521
  ncy=0
  x=125
  y=46
- cx=1157
+ cx=1217
  cy=621
  rcx=0
  rcy=0
  wsize=0
  active=1
  visible=1
+ [findmessagefo.findtext]
+ value=
+ history=0
+ [findmessagefo.casesensitive]
+ value=0
+ [findmessagefo.copytoclip]
+ value=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -830,19 +838,19 @@ windowlayout=521
  x=0
  y=0
  cx=205
- cy=452
+ cy=446
  rcx=0
  rcy=0
  [projecttreefo.grid]
  propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=82
+ width1=86
  sortdescend1=0
  sorted=0
  col=1
  row=-1073741823
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -901,7 +909,7 @@ windowlayout=521
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1025,7 +1033,7 @@ windowlayout=521
  ncy=0
  x=0
  y=509
- cx=1145
+ cx=1207
  cy=91
  rcx=0
  rcy=0
@@ -1095,7 +1103,7 @@ windowlayout=521
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1125,8 +1133,8 @@ windowlayout=521
  ncy=0
  x=0
  y=0
- cx=1145
- cy=51
+ cx=1207
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1142,7 +1150,7 @@ windowlayout=521
  x=0
  y=0
  cx=1207
- cy=54
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1171,22 +1179,20 @@ windowlayout=521
  ncy=0
  x=208
  y=0
- cx=937
- cy=452
+ cx=999
+ cy=446
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
  index=-1
- [confideufo.fontname]
- value=stf_default
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1213,9 +1219,9 @@ windowlayout=521
  ncx=0
  ncy=0
  x=0
- y=54
- cx=1145
- cy=452
+ y=60
+ cx=1207
+ cy=446
  rcx=0
  rcy=0
 [targetconsole]

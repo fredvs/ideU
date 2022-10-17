@@ -842,7 +842,8 @@ begin
     action := mr_ok
   else
     begin
-      if length(lang_mainform) > 0 then
+      if (length(lang_mainform) > Ord(ma_unresreferences)) and
+           (length(lang_stockcaption) > Ord(ma_unresreferences))then
         action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
                   moduleclassname) + ' ' +
                   lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
@@ -850,13 +851,17 @@ begin
                   lang_stockcaption[Ord(sc_warningupper)],
                   [mr_ok, mr_cancel], mr_ok)
       else
-
-        action := ShowMessage(lang_mainform[ord(ma_unresreferences)] + ' '
-                  + utf8decode(amodule^.moduleclassname) + ' ' +
-                  lang_mainform[ord(ma_str_to)] + ' ' + utf8decode(aname) +
-                  '.' + lineend + ' ' + lang_mainform[ord(ma_wishsearch)], lang_stockcaption[Ord(
-                  sc_warningupper)],
-                  [mr_ok, mr_cancel], mr_ok);
+      
+      begin
+        ShowMessage('Unresolved references in ' +
+                   utf8decode(amodule^.moduleclassname) +
+                  ' to ' +
+                   utf8decode(aname) + '.' + lineend +
+                  'Do you wish to search the formfile?',
+                  'WARNING');
+        
+         action := mr_ok;           
+        end;          
 
       case action of 
         mr_ok:
@@ -865,17 +870,19 @@ begin
                  //    openform.controller.filename:= '';
                  //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
                  openform.controller.showoptions := True;
+                 if length(lang_mainform) > Ord(ma_formfile) then
+                 begin
                  if openform.controller.Execute(wstr2, fdk_open,
-                    lang_mainform[Ord(ma_formfile)] + ' ' + utf8decode(aname)) then
-                   openformfile(wstr2, False, False, True, True, False)
-                   //    action:= filedialog(wstr2,[fdo_checkexist],c[ord(formfile)]+' '+ aname,
-
-
-              //                 [c[ord(formfiles)]],['*.mfm'],'',nil,nil,nil,[fa_all],[fa_hidden]);
-                   //                 //defaultvalues don't work on kylix
-                   //    if action = mr_ok then begin
-                   //     openformfile(openform.controller.filename,false,false,true,true,false);
-                 ;
+                   lang_mainform[Ord(ma_formfile)] + ' ' + utf8decode(aname)) then
+                   openformfile(wstr2, False, False, True, True, False);
+                 end else
+                 begin
+                     if openform.controller.Execute(wstr2, fdk_open,
+                   'Formfile for ' + utf8decode(aname)) then
+                   openformfile(wstr2, False, False, True, True, False);
+             
+                 end;  
+           
                end;
       end;
     end;
@@ -886,10 +893,11 @@ var
   wstr2: msestring;
   int1: integer;
   po1: pmoduleinfoty;
-
+ 
 procedure checkmodule(fname: filenamety);
 var 
   wstr1: filenamety;
+  
 begin
   with projectoptions do
     if findfile(fname, d.texp.sourcedirs, wstr1) or
@@ -914,12 +922,21 @@ end;
 var 
   // ar1: msestringarty;
   mstr1: filenamety;
+   action: modalresultty;
+ 
 begin
   // ar1:= nil; //compilerwarning
   if fcheckmodulelevel >= 16 then
     begin
+    
+        if (length(lang_mainform) > Ord(ma_recursive)) and
+           (length(lang_stockcaption) > Ord(sc_Error))then
       ShowMessage(lang_mainform[Ord(ma_recursive)] + ' ' + utf8decode(atypename) + '"', 
-      uppercase(lang_stockcaption[ord(sc_Error)]));
+      uppercase(lang_stockcaption[ord(sc_Error)])) else
+ 
+       ShowMessage('Form recursive "' + utf8decode(atypename) + '"', 
+      'ERROR');
+       
       SysUtils.abort;
     end;
   Inc(fcheckmodulelevel);
@@ -951,16 +968,35 @@ begin
    }
     ;
     if (po1 = nil) or (stringicomp(po1^.moduleclassname, atypename) <> 0) then
-      if ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' +
+    
+          if (length(lang_mainform) > Ord(ma_str_classtype)) and
+           (length(lang_stockcaption) > Ord(sc_warningupper))then
+
+      action := ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' +
          utf8decode(atypename) + ' ' +
          lang_actionsmodule[ord(ac_notfound)] + lineend +
          ' ' + lang_mainform[Ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
-         [mr_yes, mr_cancel]) = mr_yes then
+         [mr_yes, mr_cancel], mr_yes ) else
+         
+         begin
+          action := ShowMessage('ma_str_classtype) ' +
+         utf8decode(atypename) + ' ' +
+         'ac_notfound' + lineend +
+         ' ma_wishsearch?', 'sc_warningupper');
+         action := mr_yes;
+         end;
+         
+         if action = mr_yes
+         
+          then
         begin
           wstr2 := '';
           openform.controller.showoptions := True;
 
-          if openform.controller.Execute(wstr2, fdk_open, lang_mainform[Ord(ma_formfile)] + ' ' +
+       //   if openform.controller.Execute(wstr2, fdk_open, lang_mainform[Ord(ma_formfile)] + ' ' +
+         
+           if openform.controller.Execute(wstr2, fdk_open, 'ma_formfile' +
+       
              msestring(atypename), [fdo_checkexist]) then
             openformfile(wstr2, False, False, False, False, False);
         end;

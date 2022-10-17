@@ -2446,6 +2446,8 @@ begin
      // caption := 'Select a file';
 
  {$ifdef mse_dynpo}
+ if length(lang_stockcaption) > 0 then
+ begin
    dir.frame.caption:= lang_stockcaption[ord(sc_directory)] + strz ;
     home.Caption         := lang_stockcaption[ord(sc_homehk)] + strz ;
     //  up.caption:= lang_stockcaption[ord(sc_uphk)] + strz ;
@@ -2459,6 +2461,7 @@ begin
     bnoicon.frame.caption:= lang_stockcaption[ord(sc_noicons)] + strz ;
     blateral.frame.caption:= lang_stockcaption[ord(sc_nolateral)] + strz ;
     bcompact.frame.caption:= lang_stockcaption[ord(sc_compact)] + strz ;
+    end;
 {$else}
     dir.frame.caption:= sc(sc_directory) + strz ;
     home.Caption         := sc(sc_homehk) + strz ;
@@ -3120,16 +3123,20 @@ begin
       fo.filename.tag           := 1;
       fo.filename.Value         := fo.dir.Value;
 {$ifdef mse_dynpo}
+     if length(lang_stockcaption) > 0 then
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_dirhk)];
     end
     else if (dialogkind in [fdk_save]) then
     begin
+      if length(lang_stockcaption) > 0 then
       fo.filename.frame.Caption :=  lang_stockcaption[ord(sc_namehk)];
       fo.filename.tag           := 2;
     end
     else if (dialogkind in [fdk_new]) then
+      if length(lang_stockcaption) > 0 then
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_newfile)]
     else
+      if length(lang_stockcaption) > 0 then
       fo.filename.frame.Caption := lang_stockcaption[ord(sc_namehk)];
 {$else}
       fo.filename.frame.Caption := sc(sc_dirhk);
