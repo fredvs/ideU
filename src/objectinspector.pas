@@ -706,8 +706,13 @@ procedure tobjectinspectorfo.moduleactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
  factmodule:= amodule;
+ if length(lang_actionsmodule) > ord(ac_objectinspector) then
  caption:= lang_actionsmodule[ord(ac_objectinspector)] + ' (' +
+                                        msestring(amodule.Name)+')'
+ else
+ caption:= 'Object Inspector (' +
                                         msestring(amodule.Name)+')';
+ 
  updatecomponentname;
 // clear;
 end;
@@ -715,7 +720,9 @@ end;
 procedure tobjectinspectorfo.moduledeactivated(const adesigner: idesigner;
                   const amodule: tmsecomponent);
 begin
- caption:= lang_actionsmodule[ord(ac_objectinspector)];
+if length(lang_actionsmodule) > ord(ac_objectinspector) then
+ caption:= lang_actionsmodule[ord(ac_objectinspector)] else
+ caption:= 'Object Inspector';
 // clear;
  factmodule:= nil;
 end;

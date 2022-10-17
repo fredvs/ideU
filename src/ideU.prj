@@ -936,7 +936,7 @@ makeoptionson=16
  4095
  4095
  1
- 1226
+ 1230
  2046
  4095
  192
@@ -1302,17 +1302,17 @@ line=27
  8
  2604
 address=27
- 4882385
+ 4882535
  4704597
  4854269
- 4907503
- 8234634
- 8515793
- 8950726
- 8138461
- 8136296
- 8144137
- 8161628
+ 4907667
+ 8235018
+ 8516177
+ 8951110
+ 8138476
+ 8136598
+ 8144218
+ 8161835
  5887456
  4853389
  4692233
@@ -1320,15 +1320,15 @@ address=27
  0
  4736457
  0
- 8943650
+ 8944034
  4718330
- 8145274
- 4957868
- 4995993
- 6686216
- 8594301
- 10540221
- 4895689
+ 8145404
+ 4957910
+ 4996201
+ 6686424
+ 8594685
+ 10540605
+ 4895837
 addbkpt=27
  0
  0
@@ -1584,24 +1584,24 @@ findhistory=20
  info :=
 findoptions=1
 editpos=4
- 22,992
  0,0
  0,-1073741823
- 0,18
+ 0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 sourcefiles=4
- ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/captionideu.pas
+ ${PROJECTDIR}/main.pas
 relpaths=4
- main.pas
+ ideU.pas
  sourceform.pas
  actionsmodule.pas
- captionideu.pas
+ main.pas
 ismoduletexts=4
  0
  0
@@ -1626,13 +1626,13 @@ nomenumodules=3
 [sourcefo.files_tab]
 order=4
  0
+ 2
  3
  1
- 2
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=531
+windowlayout=532
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1646,13 +1646,13 @@ windowlayout=531
  ny=0
  ncx=0
  ncy=0
- x=109
- y=70
+ x=79
+ y=109
  cx=1224
  cy=621
  rcx=0
  rcy=0
- wsize=6
+ wsize=0
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1692,15 +1692,15 @@ windowlayout=531
  ny=0
  ncx=0
  ncy=0
- x=421
- y=562
- cx=760
+ x=444
+ y=431
+ cx=418
  cy=126
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [memoryfo]
  splitdir=0
  useroptions=268451963
@@ -1750,7 +1750,7 @@ windowlayout=531
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1759,7 +1759,7 @@ windowlayout=531
  ncy=0
  x=239
  y=115
- cx=832
+ cx=678
  cy=414
  rcx=0
  rcy=0
@@ -1776,7 +1776,7 @@ windowlayout=531
  x=0
  y=0
  cx=205
- cy=522
+ cy=448
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1800,13 +1800,13 @@ windowlayout=531
  ncy=0
  x=423
  y=321
- cx=764
- cy=297
+ cx=344
+ cy=155
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [watchpointsfo]
  splitdir=0
  useroptions=268451945
@@ -1944,9 +1944,9 @@ windowlayout=531
  ncx=0
  ncy=0
  x=0
- y=583
- cx=1354
- cy=107
+ y=508
+ cx=1212
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2045,8 +2045,8 @@ windowlayout=531
  ncy=0
  x=0
  y=0
- cx=1354
- cy=55
+ cx=1212
+ cy=54
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2061,8 +2061,8 @@ windowlayout=531
  ncy=61
  x=0
  y=0
- cx=1354
- cy=62
+ cx=1212
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2072,10 +2072,11 @@ windowlayout=531
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/main.pas
- history=5
+ value=/home/fred/ideU/src/objectinspector.pas
+ history=6
+  /home/fred/ideU/src/main.pas
+  /home/fred/ideU/src/ideU.pas
   /home/fred/ideU/src/actionsmodule.pas
-  /home/fred/mseide-msegui/apps/ide/actionsmodule.mfm
   
   /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
@@ -2095,18 +2096,18 @@ windowlayout=531
  ncy=0
  x=208
  y=0
- cx=1146
- cy=522
+ cx=1004
+ cy=448
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  order=4
   0
+  2
   3
   1
-  2
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2140,9 +2141,9 @@ windowlayout=531
  ncx=0
  ncy=0
  x=0
- y=58
- cx=1354
- cy=522
+ y=57
+ cx=1212
+ cy=448
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
