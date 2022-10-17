@@ -373,6 +373,7 @@ var
   isactivated: Boolean = False;
   resetsettings: Boolean = False;
   theprojectname: string = '';
+  theprojectfilename: string = '';
   thefilename: string = '';
   statfilestr: string = '';
 
@@ -2844,6 +2845,16 @@ end;
  {$ifdef mse_dumpunitgroups}
 dumpunitgr;
  {$endif}
+ 
+ if fprojectloaded = False then
+ begin   
+    closeprojectactonexecute(nil);
+    if trim(theprojectfilename) <> '' then
+    ShowMessage(lang_stockcaption[ord(sc_file)] + ' ' + theprojectfilename + ' '
+    + lang_actionsmodule[ord(ac_notfound)], 
+    lang_stockcaption[Ord(sc_warningupper)]); 
+ end;
+  
 end;
 
 function getmodulename(Const aname, suffix: String): string;
@@ -3261,29 +3272,13 @@ var
   Result := False;
   
   application.processmessages;
- 
+
   if (not fileexists(ExpandFileName(aname))) and ( aname <> '' ) then
   begin
-  closepro;
- //writeln('Project ' + aname + ' does not exist.');
- //ShowMessage('Project ' + aname + ' does not exist.' , lang_stockcaption[Ord(sc_warningupper)],[mr_yes]);
-  application.processmessages;
-   Caption        := idecaption;
+   closepro;
+   Caption        := idecaption + ' v' + versiontext;
+   theprojectfilename := ExpandFileName(aname);
    fprojectloaded := False;
-   str2           := expandprmacros('${LAYOUTDIR}') + 'AfterClose.prj';
-      if fileexists(str2) then
-        begin
-          str1 := ttextstream.Create(str2);
-          try
-            debuggerfo.Close;
-            mainfo.loadwindowlayout(str1);
-          finally
-            str1.Destroy();
-        end;
-    end;
-  application.processmessages;
-  closeprojectactonexecute(nil);
- 
   end else
   begin
   
@@ -4432,7 +4427,7 @@ var
 begin
   if mainfo.openproject('') then
     begin
-      Caption        := idecaption;
+      Caption        := idecaption + ' v' + versiontext;
       fprojectloaded := False;
       str2           := expandprmacros('${LAYOUTDIR}') + 'AfterClose.prj';
       if fileexists(str2) then
