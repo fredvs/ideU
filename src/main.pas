@@ -971,35 +971,41 @@ begin
     
           if (length(lang_mainform) > Ord(ma_str_classtype)) and
            (length(lang_stockcaption) > Ord(sc_warningupper))then
-
-      action := ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' +
+           
+         action := ShowMessage(lang_mainform[Ord(ma_str_classtype)] + ' ' +
          utf8decode(atypename) + ' ' +
          lang_actionsmodule[ord(ac_notfound)] + lineend +
          ' ' + lang_mainform[Ord(ma_wishsearch)], lang_stockcaption[Ord(sc_warningupper)],
          [mr_yes, mr_cancel], mr_yes ) else
          
          begin
-          action := ShowMessage('ma_str_classtype) ' +
-         utf8decode(atypename) + ' ' +
-         'ac_notfound' + lineend +
-         ' ma_wishsearch?', 'sc_warningupper');
+          action := ShowMessage('Classtype ' +
+         utf8decode(atypename) + 
+         ' not found.' + lineend +
+         'Do you wish to search the formfile?', 'WARNING');
          action := mr_yes;
          end;
          
          if action = mr_yes
          
-          then
+        then
         begin
           wstr2 := '';
           openform.controller.showoptions := True;
-
-       //   if openform.controller.Execute(wstr2, fdk_open, lang_mainform[Ord(ma_formfile)] + ' ' +
-         
-           if openform.controller.Execute(wstr2, fdk_open, 'ma_formfile' +
-       
-             msestring(atypename), [fdo_checkexist]) then
+          
+          if length(lang_mainform) > Ord(ma_formfile)
+          then
+          begin
+           if openform.controller.Execute(wstr2, fdk_open, lang_mainform[Ord(ma_formfile)] + ' ' +
+              msestring(atypename), [fdo_checkexist]) then
             openformfile(wstr2, False, False, False, False, False);
-        end;
+          end else
+          begin
+          if openform.controller.Execute(wstr2, fdk_open, 'Formfile for ' +
+            msestring(atypename), [fdo_checkexist]) then
+            openformfile(wstr2, False, False, False, False, False);
+          end;
+         end; 
   finally
     Dec(fcheckmodulelevel);
 end;
