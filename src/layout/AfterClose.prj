@@ -85,6 +85,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
+projectdir=/home/fred/ideU/src/layout
+projectfilename=/home/fred/ideU/src/layout/AfterClose.prj
 findinfiledialog=82
  [findinfileadialogfo.subdirs]
  value=1
@@ -145,6 +147,29 @@ findinfiledialog=82
  y=225
  cx=339
  cy=308
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
@@ -409,6 +434,59 @@ imagelisteditor=89
  wsize=0
  active=1
  visible=1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 colordialog=5
  [colordialogfo]
  x=1019
@@ -442,6 +520,62 @@ bmpfiledialog=76
  splitterlateral=126
  filefilterindex=0
  filefilter="All" "*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 mainfile=strumpract.pas
 targetfile=strumpract${EXEEXT}
 messageoutputfile=
@@ -455,6 +589,7 @@ unitdirs=8
  ${MSELIBDIR}kernel/windows
  ${MSELIBDIR}kernel/$TARGETOSDIR/
  ${MSELIBDIR}*/
+ 
 unitpref=-Fu
 incpref=-Fi
 libpref=-Fl
@@ -795,6 +930,7 @@ comment_8=
 comment_9=
 comment_0=
 project_name=
+project_creator=
 project_copyright=
 project_license=
 project_time=02:09:29
@@ -1031,6 +1167,7 @@ on=36
  0
  -1
  0
+path=0
 line=36
  553
  6389
@@ -1453,6 +1590,7 @@ files=
   )
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -1503,7 +1641,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=534
+windowlayout=533
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1519,7 +1657,7 @@ windowlayout=534
  ncy=0
  x=334
  y=290
- cx=752
+ cx=807
  cy=114
  rcx=0
  rcy=0
@@ -1575,7 +1713,7 @@ windowlayout=534
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1825,7 +1963,7 @@ windowlayout=534
  [messagefo]
  splitdir=0
  useroptions=268484715
- stackedunder=
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
@@ -1871,20 +2009,25 @@ windowlayout=534
  sortdescend3=0
  [componentstorefo.storefiledialog]
  filenames=1
+  
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
+ filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=
@@ -1902,7 +2045,7 @@ windowlayout=534
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=mainfo.panel1
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1923,7 +2066,7 @@ windowlayout=534
  [debuggerfo]
  splitdir=0
  useroptions=33579115
- stackedunder=mainfo
+ stackedunder=sourcefo
  parent=
  mdistate=3
  nx=0
@@ -1951,7 +2094,7 @@ windowlayout=534
  ncy=55
  x=0
  y=0
- cx=1211
+ cx=1213
  cy=70
  rcx=0
  rcy=0
@@ -1961,6 +2104,11 @@ windowlayout=534
  value=0
  [debuggerfo.edit_compiler]
  value=Pascal
+ [debuggerfo.file_history]
+ value=/home/fred/ideU/src/layout
+ history=2
+  /home/fred/ideU/src/layout
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=3
  [debuggerfo.hints]
@@ -1992,7 +2140,7 @@ windowlayout=534
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2011,7 +2159,7 @@ windowlayout=534
  [mainfo.panel1]
  splitdir=1
  useroptions=268467691
- stackedunder=debuggerfo
+ stackedunder=messagefo
  parent=
  mdistate=0
  nx=0

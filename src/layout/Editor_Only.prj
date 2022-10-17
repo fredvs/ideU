@@ -19,6 +19,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
+projectdir=/home/fred/ideU/src/layout
+projectfilename=/home/fred/ideU/src/layout/Editor_Only.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -674,6 +676,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -704,7 +707,7 @@ nomenumodules=0
 firsttab=0
 index=-1
 [layout]
-windowlayout=535
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -776,7 +779,7 @@ windowlayout=535
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -838,7 +841,7 @@ windowlayout=535
  [projecttreefo]
  splitdir=0
  useroptions=268484715
- stackedunder=mainfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -863,7 +866,7 @@ windowlayout=535
  sorted=0
  col=0
  row=-1073741823
- rowheight=17
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -945,10 +948,10 @@ windowlayout=535
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=306
- width0=73
+ propcolwidthref=242
+ width0=58
  sortdescend0=0
- width1=227
+ width1=178
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1136,7 +1139,7 @@ windowlayout=535
  [debuggerfo]
  splitdir=0
  useroptions=24683
- stackedunder=projecttreefo
+ stackedunder=objectinspectorfo
  parent=
  mdistate=3
  nx=0
@@ -1146,7 +1149,7 @@ windowlayout=535
  x=221
  y=447
  cx=960
- cy=192
+ cy=54
  rcx=0
  rcy=0
  wsize=0
@@ -1160,12 +1163,12 @@ windowlayout=535
  mdistate=0
  nx=0
  ny=47
- ncx=1207
+ ncx=1190
  ncy=143
  x=0
  y=47
  cx=1207
- cy=143
+ cy=20
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1175,8 +1178,11 @@ windowlayout=535
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- history=2
+ value=/home/fred/ideU/src/layout
+ history=3
+  /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
+  
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1206,7 +1212,7 @@ windowlayout=535
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0

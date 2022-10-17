@@ -16,7 +16,11 @@ order13=0
 order14=0
 order15=0
 order16=0
+order17=0
+order18=0
 [projectoptions]
+projectdir=/home/fred/ideU/src/layout
+projectfilename=/home/fred/ideU/src/layout/Dock_Commandor_Tree_Editor_Message_MSE.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -378,11 +382,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
- MAINFO
-moduletypes=1
- TMAINFO
-modulefiles=1
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=6
  4095
@@ -674,6 +676,7 @@ files=
  a=0,8228,6,Text Files
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -695,27 +698,28 @@ findoptions=1
 editpos=1
  0,0
 bookmarks0=0
+sourcefiles=1
+ ${PROJECTDIR}/
+relpaths=1
+ ./
 ismoduletexts=1
- 0
-modules=1
-moduleoptions=1
- 0
-visiblemodules=1
  -1
-nomenumodules=1
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=533
+windowlayout=523
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=dialogfilesfo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -731,6 +735,16 @@ windowlayout=533
  wsize=0
  active=1
  visible=1
+ [findmessagefo.findtext]
+ value=
+ history=3
+  not inlined
+  linux
+  used
+ [findmessagefo.casesensitive]
+ value=0
+ [findmessagefo.copytoclip]
+ value=0
  [targetconsolefo]
  splitdir=0
  useroptions=268451945
@@ -770,7 +784,7 @@ windowlayout=533
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=about_form
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -849,7 +863,7 @@ windowlayout=533
  propcolwidthref=88
  width0=117
  sortdescend0=0
- width1=82
+ width1=86
  sortdescend1=0
  sorted=0
  col=1
@@ -917,7 +931,7 @@ windowlayout=533
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1033,7 +1047,7 @@ windowlayout=533
  ncy=0
  x=0
  y=500
- cx=1216
+ cx=1218
  cy=100
  rcx=0
  rcy=0
@@ -1112,7 +1126,7 @@ windowlayout=533
  ncy=0
  x=0
  y=0
- cx=1216
+ cx=1218
  cy=79
  rcx=0
  rcy=0
@@ -1130,7 +1144,7 @@ windowlayout=533
  ncy=0
  x=0
  y=82
- cx=1216
+ cx=1218
  cy=57
  rcx=0
  rcy=0
@@ -1146,7 +1160,7 @@ windowlayout=533
  ncy=52
  x=0
  y=0
- cx=1216
+ cx=1218
  cy=64
  rcx=0
  rcy=0
@@ -1157,7 +1171,9 @@ windowlayout=533
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- history=1
+ value=/home/fred/ideU/src/layout
+ history=2
+  /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
@@ -1175,22 +1191,20 @@ windowlayout=533
  ncy=0
  x=208
  y=0
- cx=1008
+ cx=1010
  cy=355
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
  index=0
- [confideufo.fontname]
- value=stf_default
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confcompilerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -1206,25 +1220,6 @@ windowlayout=533
  wsize=0
  active=0
  visible=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=291
- y=247
- cx=413
- cy=280
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [mainfo.panel1]
  splitdir=1
  useroptions=302087659
@@ -1237,7 +1232,7 @@ windowlayout=533
  ncy=0
  x=0
  y=142
- cx=1216
+ cx=1218
  cy=355
  rcx=0
  rcy=0

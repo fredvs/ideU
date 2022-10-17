@@ -69,6 +69,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
+projectdir=/home/fred/ideU/src/layout
+projectfilename=/home/fred/ideU/src/layout/Float_compact.prj
 findinfiledialog=92
  [findinfileadialogfo.subdirs]
  value=1
@@ -139,6 +141,29 @@ findinfiledialog=92
  y=213
  cx=346
  cy=308
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
@@ -178,6 +203,10 @@ replacedialog=33
  y=321
  cx=254
  cy=200
+ 
+ 
+ 
+ 
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -425,6 +454,60 @@ imagelisteditor=89
  wsize=0
  active=1
  visible=1
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 sysenvmanagereditor=34
  [msesysenvmanagereditorfo.grid]
  propcolwidthref=1019
@@ -494,6 +577,31 @@ bmpfiledialog=46
  splitterlateral=126
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 codetemplateselect=21
  [msetemplateselectfo.grid]
  propcolwidthref=528
@@ -550,6 +658,11 @@ codetemplateedit=38
  wsize=0
  active=1
  visible=1
+ 
+ 
+ 
+ 
+ 
 mainfile=ideU.pas
 targetfile=ideU${EXEEXT}
 messageoutputfile=
@@ -809,20 +922,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=6
- CONFIDEUFO
- CONFLANGFO
- MAINFO
- STOCKDATA
- PROJECTOPTIONSFO
- SOURCEFO
-moduletypes=6
- TCONFIDEUFO
- TCONFLANGFO
- TMAINFO
- TSTOCKDATA
- TPROJECTOPTIONSFO
- TSOURCEFO
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=13
  4095
@@ -1135,6 +1237,7 @@ on=30
  0
  0
  0
+path=0
 line=30
  2129
  1186
@@ -1421,6 +1524,7 @@ files=
   )
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
 [components]
 [selecteditpage]
@@ -1459,57 +1563,26 @@ findhistory=20
  indent
  blokin
 findoptions=1
-editpos=12
- 0,5576
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
- 0,0
- 0,-1073741823
-bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-bookmarks7=0
-bookmarks8=0
-bookmarks9=0
-bookmarks10=0
-bookmarks11=0
- mseconsts_ide.pas
-ismoduletexts=12
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=-1
 [layout]
-windowlayout=629
+windowlayout=533
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
  [mainfo]
  splitdir=0
  useroptions=268435579
- stackedunder=debuggerfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1518,7 +1591,7 @@ windowlayout=629
  ncy=0
  x=66
  y=56
- cx=258
+ cx=315
  cy=62
  rcx=0
  rcy=0
@@ -1574,7 +1647,7 @@ windowlayout=629
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=findmessagefo
+ stackedunder=dialogfilesfo
  parent=
  mdistate=0
  nx=0
@@ -1653,10 +1726,10 @@ windowlayout=629
  active=0
  visible=0
  [projecttreefo.grid]
- propcolwidthref=521
+ propcolwidthref=523
  width0=165
  sortdescend0=0
- width1=515
+ width1=521
  sortdescend1=0
  sorted=0
  col=0
@@ -1871,20 +1944,26 @@ windowlayout=629
  width3=230
  sortdescend3=0
  [componentstorefo.storefiledialog]
-  filecolwidth=0
- x=0
- y=0
- cx=0
- cy=0
- filefilterindex=0
- filefilter=*.sto
- [componentstorefo.groupfiledialog]
  filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
+ filehistory=0
+ filefilterindex=0
+ filefilter=*.sto
+ [componentstorefo.groupfiledialog]
+ filenames=1
+  
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
  filehistory=0
  filefilterindex=0
  filefilter=*.stg
@@ -1909,8 +1988,8 @@ windowlayout=629
  ny=0
  ncx=0
  ncy=0
- x=367
- y=58
+ x=438
+ y=44
  cx=466
  cy=107
  rcx=0
@@ -1923,7 +2002,7 @@ windowlayout=629
  [debuggerfo]
  splitdir=0
  useroptions=24683
- stackedunder=_mse_projectoptionsfo_mse_
+ stackedunder=
  parent=
  mdistate=3
  nx=0
@@ -1932,12 +2011,12 @@ windowlayout=629
  ncy=0
  x=66
  y=157
- cx=258
+ cx=1211
  cy=66
  rcx=0
  rcy=0
  wsize=0
- active=0
+ active=1
  visible=1
  [debuggerfo.basedock]
  splitdir=2
@@ -1947,12 +2026,12 @@ windowlayout=629
  mdistate=0
  nx=0
  ny=0
- ncx=1207
- ncy=55
- x=-402
+ ncx=1190
+ ncy=56
+ x=0
  y=0
- cx=1207
- cy=56
+ cx=1201
+ cy=68
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1962,7 +2041,9 @@ windowlayout=629
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- history=1
+ value=/home/fred/ideU/src/layout
+ history=2
+  /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=3
@@ -1986,16 +2067,14 @@ windowlayout=629
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
- [confideufo.fontname]
- value=stf_default
+ index=-1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=confdebuggerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2011,105 +2090,10 @@ windowlayout=629
  wsize=0
  active=0
  visible=0
- [_mse_actionsmo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=projecttreefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=323
- y=178
- cx=966
- cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=0
- [_mse_confideufo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_conflangfo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=242
- y=29
- cx=639
- cy=699
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=componentpalettefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=404
- y=62
- cx=854
- cy=620
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_conflangfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_stockdata_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=410
- y=250
- cx=310
- cy=204
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_stockdata_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=mainfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=129
- y=57
- cx=198
- cy=85
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
  [mainfo.panel1]
  splitdir=2
  useroptions=268467691
- stackedunder=
+ stackedunder=debuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2123,7 +2107,7 @@ windowlayout=629
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
 [targetconsole]
 finddtext=
