@@ -667,7 +667,7 @@ end;
 
 procedure tmainfo.beforeactiv(Const Sender: TObject);
 begin
-  componentpalettefo.Close;
+  // componentpalettefo.Close;
   debuggerfo.file_history.tag := 0;
   themenr := themenum.value;
   if themenr <> 0 then

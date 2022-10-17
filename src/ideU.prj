@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=colorerror
+ value=enablesource
  history=20
+  enablesource
   colorerror
   tools
   toolmenus
@@ -160,7 +161,6 @@ findinfiledialog=95
   /proc/self/exe
   setcurrentdirmse(removelast
   sys_getcurrentdir
-  TProcess
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -172,7 +172,7 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=920
+ x=642
  y=461
  cx=298
  cy=269
@@ -318,7 +318,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo]
  stackedunder=
  x=275
@@ -919,17 +919,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/main.mfm
+ /home/fred/ideU/src/projectoptionsform.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
 makeoptionson=16
@@ -1560,8 +1563,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=closeprojectactonexecute
+finddtext=componentpalettefo
 findhistory=20
+ componentpalettefo
  openproject
  var
  openproj
@@ -1581,53 +1585,73 @@ findhistory=20
  themnr
  theme
  dothem
- carbon
 findoptions=1
-editpos=4
- 0,120
+editpos=6
+ 0,95
  0,-1073741823
- 42,2851
  0,-1073741823
+ 0,-1073741823
+ 0,3046
+ 15,465
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/projectoptionsform.pas
+ ${PROJECTDIR}/main.pas
+relpaths=6
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=4
+ projectoptionsform.pas
+ main.pas
+ismoduletexts=6
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+modules=4
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
  /home/fred/ideU/src/main.mfm
-moduleoptions=3
+ /home/fred/ideU/src/projectoptionsform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 4
+ 5
+ 1
+ 2
+ 3
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=542
+windowlayout=568
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1641,8 +1665,8 @@ windowlayout=542
  ny=0
  ncx=0
  ncy=0
- x=60
- y=45
+ x=70
+ y=61
  cx=1224
  cy=621
  rcx=0
@@ -1745,16 +1769,16 @@ windowlayout=542
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=239
- y=115
- cx=678
+ x=243
+ y=349
+ cx=920
  cy=414
  rcx=0
  rcy=0
@@ -1781,8 +1805,8 @@ windowlayout=542
  width1=86
  sortdescend1=0
  sorted=0
- col=1
- row=11
+ col=0
+ row=12
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2028,7 +2052,7 @@ windowlayout=542
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2111,15 +2135,22 @@ windowlayout=542
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  4
+  5
+  1
+  2
+  3
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=objectinspectorfo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2165,6 +2196,25 @@ windowlayout=542
  y=180
  cx=966
  cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=findinfilefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=212
+ y=56
+ cx=847
+ cy=606
  rcx=0
  rcy=0
  wsize=0
