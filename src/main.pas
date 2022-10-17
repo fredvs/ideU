@@ -3294,7 +3294,7 @@ var
   theprojectname :=  tosysfilepath(ExpandFileName(aname));
 
   if Assigned(debuggerfo) and (length(lang_mainform) > 0) and
-     (length(lang_stockcaption) > 0) then
+     (length(lang_xstockcaption) > 0) then
     begin
       debuggerfo.project_make.hint      := ' ' + lang_xstockcaption[Ord(sc_project)] +
                                            ' : ' + lang_xstockcaption[Ord(sc_make)] + ' ' +
@@ -3358,8 +3358,12 @@ var
           try
             setcurrentdirmse(removelastpathsection(aname));
           except
+         if length(lang_mainform) > Ord(ma_cannotloadproj) then
             application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + (aname) +
-            ' ": ');
+            '"') else
+             application.handleexception(Nil, 'Cannot load project "' + (aname) +
+            '"') ;
+            
             Exit;
         end;
           {$endif}

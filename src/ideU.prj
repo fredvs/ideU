@@ -71,7 +71,7 @@ order18=0
 [projectoptions]
 projectdir=/home/fred/ideU/src
 projectfilename=/home/fred/ideU/src/ideU.prj
-findinfiledialog=94
+findinfiledialog=95
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -87,8 +87,9 @@ findinfiledialog=94
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
- history=17
+ value="*.pas" "*.pp" "*.inc"  "*.prj"
+ history=18
+  "*.pas" "*.pp" "*.inc"  "*.prj"
   "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.po"
@@ -138,8 +139,9 @@ findinfiledialog=94
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=tools
+ value=colorerror
  history=20
+  colorerror
   tools
   toolmenus
   version
@@ -159,7 +161,6 @@ findinfiledialog=94
   setcurrentdirmse(removelast
   sys_getcurrentdir
   TProcess
-  param
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -296,7 +297,7 @@ options=114
  value=
  [projectoptionsfo.makegroupbox]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo.exceptionsgrid]
  propcolwidthref=860
  width0=47
@@ -317,7 +318,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=9
  [projectoptionsfo]
  stackedunder=
  x=275
@@ -844,7 +845,7 @@ enablepurpose=1
 enablesource=1
 checkmethods=1
 colorerror=-1610612717
-colorwarning=-1610612724
+colorwarning=-1610612712
 colornote=-1610612716
 colorhint=15134207
 usercolors=30
@@ -1559,8 +1560,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=lang_
+finddtext=openproj
 findhistory=20
+ openproj
  openproject
  initprojectoptions
  closeproject
@@ -1580,41 +1582,35 @@ findhistory=20
  dothem
  carbon
  execpathstr
- ifndef msw
 findoptions=1
-editpos=5
- 18,8
+editpos=4
+ 0,145
  0,-1073741823
- 0,1859
- 0,-1073741823
+ 18,3399
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-sourcefiles=5
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=5
+ ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/sourceform.pas
+relpaths=4
  ideU.pas
- main.pas
- projectoptionsform.pas
- sourceform.pas
  actionsmodule.pas
-ismoduletexts=5
- 0
+ main.pas
+ sourceform.pas
+ismoduletexts=4
  0
  0
  0
  0
 modules=3
- /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
+ /home/fred/ideU/src/main.mfm
 moduleoptions=3
  0
  0
@@ -1629,9 +1625,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=521
+windowlayout=539
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1645,8 +1641,8 @@ windowlayout=521
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=78
+ y=79
  cx=1224
  cy=621
  rcx=0
@@ -1782,8 +1778,8 @@ windowlayout=521
  width1=86
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=2
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1888,7 +1884,25 @@ windowlayout=521
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=0
+ values0=18
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  width0=111
  sortdescend0=0
  width1=125
@@ -2068,11 +2082,11 @@ windowlayout=521
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/projectoptionsform.pas
+ value=/home/fred/ideU/src/main.pas
  history=3
-  /home/fred/ideU/src/projectoptionsform.pas
+  /home/fred/ideU/src/actionsmodule.mfm
   /home/fred/ideU/src/ideU.pas
-  /home/fred/ideU/src/main.mfm
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2095,7 +2109,7 @@ windowlayout=521
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2134,20 +2148,20 @@ windowlayout=521
  cy=448
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
+ [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=287
- y=268
- cx=810
- cy=100
+ x=213
+ y=180
+ cx=966
+ cy=472
  rcx=0
  rcy=0
  wsize=0
