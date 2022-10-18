@@ -81,9 +81,9 @@ findinfiledialog=95
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.findtext]
- value=ma_str_classtype
+ value=sc_exists_overwrite
  history=20
+  sc_exists_overwrite
   ma_str_classtype
   ac_invalidexception
   sc_exception
@@ -160,7 +161,6 @@ findinfiledialog=95
   toolmenus
   version
   openpro
-  openproject
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -919,24 +919,27 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ FILEDIALOGXFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TFILEDIALOGXFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/main.mfm
+ /home/fred/ideU/src/msefiledialogx.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
 makeoptionson=16
  4095
  4095
  1
- 1230
+ 1226
  2046
  4095
  192
@@ -1560,15 +1563,15 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=sc_exception
+finddtext=lang_
 findhistory=20
+ lang_
  sc_exception
  ac_cannotreadform
  ma_formfile
  ac_modules
  ????
  openproject
- lang_
  openfile
  componentpalettefo
  var
@@ -1583,56 +1586,90 @@ findhistory=20
  FpStat
  info :=
 findoptions=1
-editpos=4
- 0,0
+editpos=9
+ 0,5
  0,-1073741823
- 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,2510
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
- ${PROJECTDIR}/ideU.pas
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+sourcefiles=9
+ /home/fred/ideU/src/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=4
+ ${PROJECTDIR}/msegui.pas
+ /home/fred/ideU/src/msefiledialogx.pas
+ ${PROJECTDIR}/captionideu.pas
+ /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
+ /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+relpaths=9
  ideU.pas
  sourceform.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=4
+ msegui.pas
+ msefiledialogx.pas
+ captionideu.pas
+ mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
+ mseide-msegui/lib/common/kernel/mseclasses.pas
+ismoduletexts=9
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=4
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideU/src/msefiledialogx.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-order=4
+order=9
  0
- 2
+ 5
+ 4
  3
+ 8
+ 7
+ 6
  1
+ 2
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=532
+windowlayout=571
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1646,8 +1683,8 @@ windowlayout=532
  ny=0
  ncx=0
  ncy=0
- x=79
- y=109
+ x=47
+ y=83
  cx=1224
  cy=621
  rcx=0
@@ -1682,7 +1719,7 @@ windowlayout=532
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1759,7 +1796,7 @@ windowlayout=532
  ncy=0
  x=239
  y=115
- cx=678
+ cx=951
  cy=414
  rcx=0
  rcy=0
@@ -1788,7 +1825,7 @@ windowlayout=532
  sorted=0
  col=0
  row=11
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1866,10 +1903,10 @@ windowlayout=532
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=358
+ width0=158
  sortdescend0=0
- width1=129
+ width1=194
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1892,7 +1929,25 @@ windowlayout=532
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=0
+ values0=18
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  width0=111
  sortdescend0=0
  width1=125
@@ -1945,7 +2000,7 @@ windowlayout=532
  ncy=0
  x=0
  y=508
- cx=1212
+ cx=1214
  cy=92
  rcx=0
  rcy=0
@@ -2015,17 +2070,17 @@ windowlayout=532
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=240
- y=139
- cx=956
- cy=77
+ x=230
+ y=191
+ cx=862
+ cy=81
  rcx=0
  rcy=0
  wsize=0
@@ -2045,7 +2100,7 @@ windowlayout=532
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=54
  rcx=0
  rcy=0
@@ -2061,7 +2116,7 @@ windowlayout=532
  ncy=61
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=61
  rcx=0
  rcy=0
@@ -2072,14 +2127,11 @@ windowlayout=532
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/objectinspector.pas
- history=6
+ value=/home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+ history=3
+  /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
   /home/fred/ideU/src/main.pas
-  /home/fred/ideU/src/ideU.pas
-  /home/fred/ideU/src/actionsmodule.pas
-  
-  /home/fred/ideU/src/layout
-  ${PROJECTDIR}/main.pas
+  /home/fred/ideU/src/msegui.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2096,18 +2148,23 @@ windowlayout=532
  ncy=0
  x=208
  y=0
- cx=1004
+ cx=1006
  cy=448
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=4
+ order=9
   0
-  2
+  5
+  4
   3
+  8
+  7
+  6
   1
+  2
  firsttab=0
- index=1
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2142,7 +2199,7 @@ windowlayout=532
  ncy=0
  x=0
  y=57
- cx=1212
+ cx=1214
  cy=448
  rcx=0
  rcy=0
@@ -2160,6 +2217,25 @@ windowlayout=532
  y=268
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogxfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=656
+ y=61
+ cx=618
+ cy=484
  rcx=0
  rcy=0
  wsize=0
