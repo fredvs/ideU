@@ -139,8 +139,10 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.findtext]
- value=lang_
+ value=versiontxt
  history=20
+  versiontxt
+  version
   lang_
   emptyclip
   closeclipboard
@@ -159,8 +161,6 @@ findinfiledialog=95
   mr_yes
   ShowMessage
   ma_unresreferences
-  do you wish to search
-  enablesource
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -1560,10 +1560,13 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=.messages.
+finddtext=designformintf.mo
 findhistory=20
- .messages.
+ designformintf.mo
+ module
  .message
+ version
+ .messages.
  lang_
  datacol
  messages.
@@ -1579,15 +1582,12 @@ findhistory=20
  openproj
  initprojectoptions
  closeproject
- message
- messagedlg
- setlanginit
 findoptions=1
 editpos=4
- 0,0
+ 0,14
  0,-1073741823
- 0,5350
- 18,11
+ 0,-1073741823
+ 0,793
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1625,7 +1625,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=2
+index=3
 [layout]
 windowlayout=548
  [mainfo.basedock]
@@ -1641,8 +1641,8 @@ windowlayout=548
  ny=0
  ncx=0
  ncy=0
- x=88
- y=58
+ x=27
+ y=190
  cx=1224
  cy=672
  rcx=0
@@ -2085,19 +2085,19 @@ windowlayout=548
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/main.pas
+ value=/home/fred/ideU/src/sourceform.pas
  history=9
+  /home/fred/ideU/src/ideU.pas
+  /home/fred/ideU/src/main.pas
   /home/fred/ideU/src/sourceform.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
   /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
   /home/fred/mseide-msegui/apps/ide/componentstore.pas
-  /home/fred/ideU/src/ideU.pas
   /home/fred/mseide-msegui/apps/ide/componentstore.mfm
-  /home/fred/ideU/src/main.pas
   /home/fred/ideU/src/msefiledialogx.pas
   /home/fred/ideU/src/msegui.pas
  [debuggerfo.project_options]
- value=6
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]
@@ -2118,7 +2118,7 @@ windowlayout=548
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=2
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]

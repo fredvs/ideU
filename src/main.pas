@@ -638,14 +638,22 @@ begin
       dialogfilesfo.tag := 0;
 
       thesdef := projectoptions.e.t.syntaxdeffiles[0];
-
+      
+      if length(lang_projectoptions) > Ord(po_syntaxdeffile) then
+      begin
       dialogfilesfo.Caption := lang_projectoptions[Ord(po_syntaxdeffile)];
-
-      // 'Load a Syntax Definition File';
-
       dialogfilesfo.tbutton1.Caption := lang_modalresult[Ord(mr_ok)];
       dialogfilesfo.tbutton2.Caption := lang_modalresult[Ord(mr_cancel)];
+      end      
+      else
+      begin
+      dialogfilesfo.Caption := 'Syntax definition file';
+      dialogfilesfo.tbutton1.Caption := 'Ok';
+      dialogfilesfo.tbutton2.Caption := 'Cancel';
+      end; 
+      // 'Load a Syntax Definition File';
 
+     
       dialogfilesfo.list_files.path    := expandprmacros('${SYNTAXDEFDIR}');
       dialogfilesfo.list_files.mask    := '*.sdef';
       dialogfilesfo.selected_file.frame.Caption := lang_projectoptions[Ord(po_syntaxdeffile)];
@@ -843,7 +851,7 @@ begin
   else
     begin
       if (length(lang_mainform) > Ord(ma_unresreferences)) and
-           (length(lang_stockcaption) > Ord(ma_unresreferences))then
+           (length(lang_stockcaption) > Ord(sc_warningupper))then
         action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
                   moduleclassname) + ' ' +
                   lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
