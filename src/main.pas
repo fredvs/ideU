@@ -5331,6 +5331,9 @@ begin
       messagefo.frame.grip_colorglyphactive := cl_black;
 
       messagefo.color := cl_ltgray;
+      messagefo.messages.datacols[0].colorfocused := $FFEAA3;
+      messagefo.messages.datacols[0].colorselect := $FFDEBA;
+       
       messagefo.Messages.color := cl_ltgray;
       basedock.color := cl_ltgray;
       color := cl_ltgray;
@@ -5715,7 +5718,10 @@ begin
     end;
 
   messagefo.Messages.datacols.color := color3;
-
+  
+  messagefo.messages.datacols[0].colorfocused := $735800;
+  messagefo.messages.datacols[0].colorselect := $FFDEBA;
+     
   messagefo.Messages.font.color           := color2;
   messagefo.Messages.font.colorbackground := cl_none;
 

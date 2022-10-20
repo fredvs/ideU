@@ -14,7 +14,8 @@ uses
   cmem,
  {$ifdef FPC} {$ifdef unix}
   cthreads,   {$endif} {$endif}
-
+ 
+  msegraphicstream,
   msestockobjects,
   mseconsts,
   captionideu,

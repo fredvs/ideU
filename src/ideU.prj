@@ -139,8 +139,13 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.findtext]
- value=sc_exists_overwrite
+ value=lang_
  history=20
+  lang_
+  emptyclip
+  closeclipboard
+  clipboard
+  datacol
   sc_exists_overwrite
   ma_str_classtype
   ac_invalidexception
@@ -156,11 +161,6 @@ findinfiledialog=95
   ma_unresreferences
   do you wish to search
   enablesource
-  colorerror
-  tools
-  toolmenus
-  version
-  openpro
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -172,8 +172,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=642
- y=461
+ x=911
+ y=494
  cx=298
  cy=269
 replacedialog=33
@@ -1297,38 +1297,38 @@ line=27
  2591
  5075
  1882
- 6139
+ 6181
  18
  8
  2604
 address=27
- 4882535
- 4704597
- 4854269
- 4907667
- 8235018
- 8516177
- 8951110
- 8138476
- 8136598
- 8144218
- 8161835
+ 4881895
+ 4703733
+ 4853629
+ 4907027
+ 8235562
+ 8516721
+ 8951654
+ 8139020
+ 8137142
+ 8144762
+ 8162379
  5887456
- 4853389
- 4692233
- 4422044
+ 4852749
+ 4691369
+ 4421180
  0
- 4736457
+ 4735593
  0
- 8944034
- 4718330
- 8145404
- 4957910
- 4996201
- 6686424
- 8594685
- 10540605
- 4895837
+ 8944578
+ 4717466
+ 8145948
+ 4957270
+ 4995769
+ 6685793
+ 8595229
+ 10541149
+ 4895197
 addbkpt=27
  0
  0
@@ -1560,9 +1560,13 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=lang_
+finddtext=.messages.
 findhistory=20
+ .messages.
+ .message
  lang_
+ datacol
+ messages.
  sc_exception
  ac_cannotreadform
  ma_formfile
@@ -1578,29 +1582,25 @@ findhistory=20
  message
  messagedlg
  setlanginit
- setlang
- list
- FpStat
- info :=
 findoptions=1
 editpos=4
- 0,5
+ 0,0
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,5350
+ 18,11
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 sourcefiles=4
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
 relpaths=4
  ideU.pas
- main.pas
  actionsmodule.pas
+ main.pas
  sourceform.pas
 ismoduletexts=4
  0
@@ -1625,9 +1625,9 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=2
 [layout]
-windowlayout=544
+windowlayout=548
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1641,10 +1641,10 @@ windowlayout=544
  ny=0
  ncx=0
  ncy=0
- x=93
- y=44
+ x=88
+ y=58
  cx=1224
- cy=621
+ cy=672
  rcx=0
  rcy=0
  wsize=0
@@ -1669,15 +1669,15 @@ windowlayout=544
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=484
+ y=207
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1771,7 +1771,7 @@ windowlayout=544
  x=0
  y=0
  cx=205
- cy=448
+ cy=469
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1861,10 +1861,10 @@ windowlayout=544
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=356
- width0=157
+ propcolwidthref=242
+ width0=107
  sortdescend0=0
- width1=193
+ width1=129
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1957,9 +1957,9 @@ windowlayout=544
  ncx=0
  ncy=0
  x=0
- y=508
+ y=529
  cx=1212
- cy=92
+ cy=122
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2086,11 +2086,15 @@ windowlayout=544
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideU/src/main.pas
- history=5
-  /home/fred/ideU/src/main.pas
+ history=9
   /home/fred/ideU/src/sourceform.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
+  /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
+  /home/fred/mseide-msegui/apps/ide/componentstore.pas
   /home/fred/ideU/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+  /home/fred/mseide-msegui/apps/ide/componentstore.mfm
+  /home/fred/ideU/src/main.pas
+  /home/fred/ideU/src/msefiledialogx.pas
   /home/fred/ideU/src/msegui.pas
  [debuggerfo.project_options]
  value=6
@@ -2109,12 +2113,12 @@ windowlayout=544
  x=208
  y=0
  cx=1004
- cy=448
+ cy=469
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2150,7 +2154,7 @@ windowlayout=544
  x=0
  y=57
  cx=1212
- cy=448
+ cy=469
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
