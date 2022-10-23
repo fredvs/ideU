@@ -919,20 +919,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
- ACTIONSMO
+modulenames=2
  FORMDESIGNERFO
- MAINFO
  SOURCEFO
-moduletypes=4
- TACTIONSMO
+moduletypes=2
  TFORMDESIGNERFO
- TMAINFO
  TSOURCEFO
-modulefiles=4
- /home/fred/ideU/src/actionsmodule.mfm
+modulefiles=2
  /home/fred/mseide-msegui/apps/ide/formdesigner.mfm
- /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
 makeoptionson=16
@@ -1563,8 +1557,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=longword
+finddtext=A:
 findhistory=20
+ A:
  longword
  setmoduleoptions
  designformintf.mo
@@ -1584,12 +1579,10 @@ findhistory=20
  ????
  openproject
  openfile
- componentpalettefo
 findoptions=1
-editpos=8
+editpos=7
  0,2
- 0,-1073741823
- 0,-1073741823
+ 0,0
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1602,27 +1595,23 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 bookmarks6=0
-bookmarks7=0
-sourcefiles=8
- /home/fred/ideU/src/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
+sourcefiles=7
+ ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
  ${PROJECTDIR}/msedesigner.pas
  /home/fred/mseide-msegui/apps/ide/formdesigner.pas
  /home/fred/mseide-msegui/lib/common/kernel/mseglob.pas
-relpaths=8
+relpaths=7
  ideU.pas
- actionsmodule.pas
  main.pas
  sourceform.pas
  mseide-msegui/lib/common/kernel/msetypes.pas
  msedesigner.pas
  ../mseide-msegui/apps/ide/formdesigner.pas
  mseide-msegui/lib/common/kernel/mseglob.pas
-ismoduletexts=8
- 0
+ismoduletexts=7
  0
  0
  0
@@ -1641,20 +1630,20 @@ moduleoptions=4
  0
  0
 visiblemodules=4
- -1
- -1
+ 0
+ 0
  -1
  -1
 nomenumodules=4
- 0
- 0
+ -1
+ -1
  0
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=568
+windowlayout=571
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1808,9 +1797,9 @@ windowlayout=568
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=15
- rowheight=17
+ col=1
+ row=11
+ rowheight=16
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1985,7 +1974,7 @@ windowlayout=568
  ncy=0
  x=0
  y=529
- cx=1214
+ cx=1212
  cy=122
  rcx=0
  rcy=0
@@ -2085,7 +2074,7 @@ windowlayout=568
  ncy=0
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=54
  rcx=0
  rcy=0
@@ -2101,7 +2090,7 @@ windowlayout=568
  ncy=60
  x=0
  y=0
- cx=1214
+ cx=1212
  cy=60
  rcx=0
  rcy=0
@@ -2112,18 +2101,12 @@ windowlayout=568
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/sourceform.pas
- history=10
-  /home/fred/ideU/src/sourceform.pas
-  /home/fred/ideU/src/main.pas
-  /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
-  /home/fred/ideU/src/ideU.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
-  /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
-  /home/fred/mseide-msegui/apps/ide/componentstore.pas
-  /home/fred/mseide-msegui/apps/ide/componentstore.mfm
+ value=/home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
+ history=4
   /home/fred/ideU/src/msefiledialogx.pas
-  /home/fred/ideU/src/msegui.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+  /home/fred/mseide-msegui/apps/ide/sourceform.pas
+  /home/fred/strumpract/src/drums.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2140,13 +2123,22 @@ windowlayout=568
  ncy=0
  x=208
  y=0
- cx=1006
+ cx=1004
  cy=469
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  2
+  1
+  3
+  4
+  5
+  6
+  7
  firsttab=0
- index=0
+ index=2
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2181,7 +2173,7 @@ windowlayout=568
  ncy=0
  x=0
  y=57
- cx=1214
+ cx=1212
  cy=469
  rcx=0
  rcy=0
@@ -2203,7 +2195,7 @@ windowlayout=568
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
