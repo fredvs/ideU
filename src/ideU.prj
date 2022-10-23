@@ -172,7 +172,7 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=911
+ x=797
  y=494
  cx=298
  cy=269
@@ -939,7 +939,7 @@ makeoptionson=16
  4095
  4095
  1
- 1226
+ 1230
  2046
  4095
  192
@@ -1563,8 +1563,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=designformintf.mo
+finddtext=longword
 findhistory=20
+ longword
+ setmoduleoptions
  designformintf.mo
  arm
  moduleoptions
@@ -1583,18 +1585,16 @@ findhistory=20
  openproject
  openfile
  componentpalettefo
- var
- openproj
 findoptions=1
 editpos=8
- 0,14
+ 0,2
  0,-1073741823
- 0,0
- 0,786
  0,-1073741823
- 0,305
- 0,56
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,3266
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1604,23 +1604,23 @@ bookmarks5=0
 bookmarks6=0
 bookmarks7=0
 sourcefiles=8
- ${PROJECTDIR}/ideU.pas
+ /home/fred/ideU/src/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
- /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
  /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
  ${PROJECTDIR}/msedesigner.pas
  /home/fred/mseide-msegui/apps/ide/formdesigner.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseglob.pas
 relpaths=8
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
- Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
- ../mseide-msegui/lib/common/kernel/msetypes.pas
+ mseide-msegui/lib/common/kernel/msetypes.pas
  msedesigner.pas
  ../mseide-msegui/apps/ide/formdesigner.pas
+ mseide-msegui/lib/common/kernel/mseglob.pas
 ismoduletexts=8
  0
  0
@@ -1651,19 +1651,10 @@ nomenumodules=4
  0
  0
 [sourcefo.files_tab]
-order=8
- 0
- 1
- 2
- 3
- 6
- 7
- 5
- 4
 firsttab=0
-index=3
+index=0
 [layout]
-windowlayout=577
+windowlayout=568
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1781,7 +1772,7 @@ windowlayout=577
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_formdesignerfo_mse_
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -1819,7 +1810,7 @@ windowlayout=577
  sorted=0
  col=0
  row=15
- rowheight=16
+ rowheight=17
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1994,7 +1985,7 @@ windowlayout=577
  ncy=0
  x=0
  y=529
- cx=1212
+ cx=1214
  cy=122
  rcx=0
  rcy=0
@@ -2064,7 +2055,7 @@ windowlayout=577
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2094,7 +2085,7 @@ windowlayout=577
  ncy=0
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=54
  rcx=0
  rcy=0
@@ -2110,7 +2101,7 @@ windowlayout=577
  ncy=60
  x=0
  y=0
- cx=1212
+ cx=1214
  cy=60
  rcx=0
  rcy=0
@@ -2123,10 +2114,10 @@ windowlayout=577
  [debuggerfo.file_history]
  value=/home/fred/ideU/src/sourceform.pas
  history=10
-  /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
   /home/fred/ideU/src/sourceform.pas
-  /home/fred/ideU/src/ideU.pas
   /home/fred/ideU/src/main.pas
+  /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
+  /home/fred/ideU/src/ideU.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
   /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
   /home/fred/mseide-msegui/apps/ide/componentstore.pas
@@ -2149,22 +2140,13 @@ windowlayout=577
  ncy=0
  x=208
  y=0
- cx=1004
+ cx=1006
  cy=469
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=8
-  0
-  1
-  2
-  3
-  6
-  7
-  5
-  4
  firsttab=0
- index=3
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2199,7 +2181,7 @@ windowlayout=577
  ncy=0
  x=0
  y=57
- cx=1212
+ cx=1214
  cy=469
  rcx=0
  rcy=0
@@ -2225,7 +2207,7 @@ windowlayout=577
  [_mse_formdesignerfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
