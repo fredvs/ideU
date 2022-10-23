@@ -646,10 +646,9 @@ begin
 
           modulenames[int1] := filename;
           
-           {$if defined(linux) and defined(cpuarm)} {$else}
-          moduleoptions[int1] := longword(designformintf.moduleoptions);
-          {$endif}
-         
+         if assigned(designformintf) then
+            moduleoptions[int1] := integer(designformintf.moduleoptions);
+                
           ar1[int1]           := designform.Visible;
           ar2[int1]           := not hasmenuitem;
           //     moduledock[int1]:= encodemoduledock(dockinfo);
@@ -786,12 +785,11 @@ begin
             else
               po1 := mainfo.openformfile(modulenames[int1], bo1, False, False, not ar2[int1], True);
             
-           {$if defined(linux) and defined(cpuarm)} {$else}
            if (po1 <> nil) then
               with po1^ do
-                designformintf.moduleoptions := moduleoptionsty(longword
+              if assigned(designformintf) then
+               designformintf.moduleoptions := moduleoptionsty(integer
                   (moduleoptions[int1])) * [mo_hidewidgets, mo_hidecomp] ;
-           {$endif}
           
           except
             if checkprojectloadabort then

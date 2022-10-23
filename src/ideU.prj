@@ -117,6 +117,7 @@ findinfiledialog=95
  cy=346
  filehistory=20
   /home/fred/mseide-msegui/
+  /home/fred/Downloads/fpc-wayland-master/
   /usr/share/fpcsrc/3.2.2/packages/x11/
   /usr/share/fpcsrc/3.2.2/
   /home/fred/bgrabitmap-11.4/
@@ -135,12 +136,14 @@ findinfiledialog=95
   /home/fred/mseide-msegui-avantcircular/
   /home/fred/CodeTyphonIns700/CodeTyphonIns/
   /home/fred/freepascal-ootb/
-  /home/fred/strumpract/
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.findtext]
- value=versiontxt
+ value=mo_hidewidgets
  history=20
+  mo_hidewidgets
+  designformintf
+  wl_display_connect
   versiontxt
   version
   lang_
@@ -158,9 +161,6 @@ findinfiledialog=95
   ac_cannotreadform
   can not read formfile
   ma_wishsearch
-  mr_yes
-  ShowMessage
-  ma_unresreferences
  [findinfileadialogfo]
  stackedunder=
  x=205
@@ -919,16 +919,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ FORMDESIGNERFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TFORMDESIGNERFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
+ /home/fred/mseide-msegui/apps/ide/formdesigner.mfm
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
@@ -1563,6 +1566,8 @@ hintheight=0
 finddtext=designformintf.mo
 findhistory=20
  designformintf.mo
+ arm
+ moduleoptions
  module
  .message
  version
@@ -1580,54 +1585,85 @@ findhistory=20
  componentpalettefo
  var
  openproj
- initprojectoptions
- closeproject
 findoptions=1
-editpos=4
+editpos=8
  0,14
  0,-1073741823
+ 0,0
+ 0,786
  0,-1073741823
- 0,793
+ 0,305
+ 0,56
+ 0,3266
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+sourcefiles=8
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
+ ${PROJECTDIR}/msedesigner.pas
+ /home/fred/mseide-msegui/apps/ide/formdesigner.pas
+relpaths=8
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=4
+ Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
+ ../mseide-msegui/lib/common/kernel/msetypes.pas
+ msedesigner.pas
+ ../mseide-msegui/apps/ide/formdesigner.pas
+ismoduletexts=8
  0
  0
  0
  0
-modules=3
+ 0
+ 0
+ 0
+ 0
+modules=4
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/mseide-msegui/apps/ide/formdesigner.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=8
+ 0
+ 1
+ 2
+ 3
+ 6
+ 7
+ 5
+ 4
 firsttab=0
 index=3
 [layout]
-windowlayout=548
+windowlayout=577
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1641,8 +1677,8 @@ windowlayout=548
  ny=0
  ncx=0
  ncy=0
- x=27
- y=190
+ x=62
+ y=58
  cx=1224
  cy=672
  rcx=0
@@ -1745,7 +1781,7 @@ windowlayout=548
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_formdesignerfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2086,10 +2122,11 @@ windowlayout=548
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideU/src/sourceform.pas
- history=9
+ history=10
+  /home/fred/Downloads/fpc-wayland-master/waylandpkg/wayland_client.pas
+  /home/fred/ideU/src/sourceform.pas
   /home/fred/ideU/src/ideU.pas
   /home/fred/ideU/src/main.pas
-  /home/fred/ideU/src/sourceform.pas
   /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.mfm
   /home/fred/mseide-msegui/lib/common/db/msedbedit.pas
   /home/fred/mseide-msegui/apps/ide/componentstore.pas
@@ -2117,6 +2154,15 @@ windowlayout=548
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=8
+  0
+  1
+  2
+  3
+  6
+  7
+  5
+  4
  firsttab=0
  index=3
  [confideufo.usedefaulteditoroptions]
@@ -2171,6 +2217,25 @@ windowlayout=548
  y=268
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_formdesignerfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=68
+ y=277
+ cx=297
+ cy=300
  rcx=0
  rcy=0
  wsize=0
