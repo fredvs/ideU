@@ -44,7 +44,7 @@ uses
   msewidgets,msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
 const 
-  versiontext = '2.8.7';
+  versiontext = '2.8.6';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
@@ -5313,6 +5313,10 @@ begin
 
       basedock.face.template           := convex;
       basedock.dragdock.splitter_color := cl_ltgray;
+      
+        messagefo.messages.datacols[0].colorfocused := $FFEAA3;
+     messagefo.messages.datacols[0].colorselect := $FFDEBA;
+    
 
       debuggerfo.color          := cl_gray;
       debuggerfo.basedock.color := cl_gray;
@@ -5339,9 +5343,7 @@ begin
       messagefo.frame.grip_colorglyphactive := cl_black;
 
       messagefo.color := cl_ltgray;
-      messagefo.messages.datacols[0].colorfocused := $FFEAA3;
-      messagefo.messages.datacols[0].colorselect := $FFDEBA;
-       
+         
       messagefo.Messages.color := cl_ltgray;
       basedock.color := cl_ltgray;
       color := cl_ltgray;
@@ -5481,8 +5483,8 @@ begin
       sourcefo.files_tab.tab_fontactivetab.color := cl_black;
       sourcefo.files_tab.tab_fonttab.color       := cl_black;
     end;
-    
-    
+     
+     
       projecttreefo.projectedit.face.template       := projecttreefo.templatemain;
       projecttreefo.projectedit.font.color          := cl_black;
       projecttreefo.projectedit.itemlist.colorline  := cl_black;
@@ -5506,6 +5508,10 @@ begin
       basedock.face.template := convexdark;
 
       basedock.dragdock.splitter_color := cl_black;
+      
+        messagefo.messages.datacols[0].colorfocused := $735800;
+       messagefo.messages.datacols[0].colorselect := $FFDEBA;
+
 
       debuggerfo.color          := cl_dkgray;
       debuggerfo.basedock.color := cl_dkgray;
@@ -5727,9 +5733,7 @@ begin
 
   messagefo.Messages.datacols.color := color3;
   
-  messagefo.messages.datacols[0].colorfocused := $735800;
-  messagefo.messages.datacols[0].colorselect := $FFDEBA;
-     
+
   messagefo.Messages.font.color           := color2;
   messagefo.Messages.font.colorbackground := cl_none;
 

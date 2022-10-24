@@ -191,6 +191,7 @@ object filedialogxfo: Tfiledialogxfo
     onchange = onchangdir
     dropdown.options = [deo_selectonly, deo_keydropdown]
     onsetvalue = dironsetvalue
+    onafterclosedropdown = afclosdropdir
     reffontheight = 15
   end
   object up: tstockglyphbutton

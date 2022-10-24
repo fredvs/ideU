@@ -625,6 +625,7 @@ type
     procedure oncellevcustplaces(const Sender: TObject; var info: celleventinfoty);
     procedure onmovesplit(const Sender: TObject);
     procedure onsetvalnoicon(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
+   procedure afclosdropdir(const sender: TObject);
   private
     fselectednames: filenamearty;
     finit: Boolean;
@@ -2790,6 +2791,11 @@ begin
     placescust[0][x] := tmp + trim(placescust[0][x]);
 
   listview.readlist;
+end;
+
+procedure tfiledialogxfo.afclosdropdir(const sender: TObject);
+begin
+dir.Value        := tosysfilepath(dir.Value,true);
 end;
 
 { tfiledialogxcontroller }
