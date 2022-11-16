@@ -12,10 +12,8 @@ program ideU;
 
 uses
   cmem,
- {$ifdef FPC} {$ifdef unix}
+  {$ifdef FPC} {$ifdef unix}
   cthreads,   {$endif} {$endif}
- 
-  msegraphicstream,
   msestockobjects,
   mseconsts,
   captionideu,

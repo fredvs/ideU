@@ -270,9 +270,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=237
+ y=178
  xprop=1
- yprop=0.39669421487603
+ yprop=0.3969298245614
  [projectoptionsfo.macrogrid]
  propcolwidthref=642
  sortdescend0=0
@@ -321,10 +321,10 @@ options=114
  index=2
  [projectoptionsfo]
  stackedunder=
- x=275
- y=66
+ x=256
+ y=85
  cx=920
- cy=664
+ cy=515
 settaborder=15
  [setcreateorderfo.grid]
  propcolwidthref=331
@@ -673,7 +673,7 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=16
+makeoptions=17
  -Mobjfpc -Sh -Fcutf8
  -dmse_with_zeoslib
  -gl
@@ -685,12 +685,13 @@ makeoptions=16
  -k--gc-sections
  -dmorecomponents
  -dmse_dynpo
+ -Clv13.0 -XlS-13
  -SIcorba
  -FUunits
  -vewinhq
  -dclass_bridge
  -dusemo
-makeoptpurpose=16
+makeoptpurpose=17
  Define Object Pascal
  Zeos components
  Debug infos
@@ -702,6 +703,7 @@ makeoptpurpose=16
  Garbage collector
  Add extended components
  Use dynamic loading of po files
+ LLVM
  Cobra Interface
  Output of units
  Verbosity
@@ -919,41 +921,45 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFLANGFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFLANGFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
+ /home/fred/ideU/src/conflang.mfm
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
-makeoptionson=16
+makeoptionson=17
  4095
  4095
  1
- 1230
+ 1246
  2046
- 4095
+ 4079
  192
  0
  0
  0
  4095
+ 16
  4095
  4095
  4095
- 0
+ 512
  4095
 compilerusedon=29
- 567
+ 551
  0
  8
- 256
+ 272
  0
  64
  128
@@ -1583,51 +1589,66 @@ findhistory=20
  datacol
  messages.
 findoptions=1
-editpos=4
- 0,5
- 0,5302
- 0,0
- 0,0
+editpos=5
+ 0,4
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,6
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=4
+ ${PROJECTDIR}/conflang.pas
+relpaths=5
  ideU.pas
  main.pas
  sourceform.pas
  actionsmodule.pas
-ismoduletexts=4
+ conflang.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideU/src/conflang.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 4
+ 1
+ 2
+ 3
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=550
+windowlayout=566
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1641,8 +1662,8 @@ windowlayout=550
  ny=0
  ncx=0
  ncy=0
- x=62
- y=58
+ x=55
+ y=42
  cx=1224
  cy=672
  rcx=0
@@ -1745,7 +1766,7 @@ windowlayout=550
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -1782,7 +1803,7 @@ windowlayout=550
  sortdescend1=0
  sorted=0
  col=0
- row=15
+ row=10
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1861,10 +1882,10 @@ windowlayout=550
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=371
- width0=164
+ propcolwidthref=383
+ width0=169
  sortdescend0=0
- width1=201
+ width1=208
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1928,7 +1949,7 @@ windowlayout=550
  rcx=1262
  rcy=583
  [watchfo.grid]
- propcolwidthref=121
+ propcolwidthref=111
  values0=0
  values0_ci=-1
  sortdescend0=0
@@ -2071,7 +2092,7 @@ windowlayout=550
  nx=0
  ny=0
  ncx=1212
- ncy=60
+ ncy=63
  x=0
  y=0
  cx=1212
@@ -2085,19 +2106,10 @@ windowlayout=550
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/ideU.pas
- history=11
-  /home/fred/ideU/src/ideU.pas
-  /home/fred/ideU/src/msefiledialogx.pas
-  /home/fred/ideU/src/main.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.mfm
-  /home/fred/mseide-msegui/apps/ide/sourcepage.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
-  /home/fred/mseide-msegui/lib/common/dialogs/msedirtreesub_mfm.pas
-  /home/fred/mseide-msegui/apps/ide/make.pas
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
-  /home/fred/mseide-msegui/apps/ide/sourceform.pas
-  /home/fred/strumpract/src/drums.pas
+ value=/home/fred/ideU/src/conflang.pas
+ history=2
+  /home/fred/strumpract/src/config.pas
+  /home/fred/strumpract/src/uos.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2119,8 +2131,14 @@ windowlayout=550
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  4
+  1
+  2
+  3
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2162,7 +2180,7 @@ windowlayout=550
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2173,6 +2191,25 @@ windowlayout=550
  y=268
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conflangfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=405
+ y=266
+ cx=580
+ cy=243
  rcx=0
  rcy=0
  wsize=0

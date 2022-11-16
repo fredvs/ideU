@@ -259,7 +259,7 @@ end;
 procedure tconflangfo.oncreat(Const Sender: TObject);
 begin
   Visible := False;
- {$ifndef usemo}
+ {$if (defined(windows)) or (not defined(usemo))}
  bousemo.visible := false;
  {$endif}
 end;
