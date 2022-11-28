@@ -271,9 +271,9 @@ begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
  gridlistfont.fixrows[-1].captions[0].caption :=
- {$ifndef windows}
+// {$ifndef windows}
   inttostr(gridlistfont.rowcount) + ' ' +
- {$endif}
+// {$endif}
  lang_settings[Ord(se_fontname)]  + strz ;
  end;             
 

@@ -450,7 +450,7 @@ const
     'Download aborted.',
     'Runerror with',
     'Error: Timeout.',
-    'Making.',
+    'Making',
     'Make not running.',
     'Downloading.',
     'Download not running.',

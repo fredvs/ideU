@@ -2379,6 +2379,7 @@ begin
           mainmenu1.menu.itembynames(['project', 'saveas']).Enabled := True;
           mainmenu1.menu.itembynames(['project', 'saveascopy']).Enabled := True;
           mainmenu1.menu.itembynames(['project', 'close']).Enabled := True;
+          mainmenu1.menu.itembynames(['settings', 'extrasettings']).Enabled := True;
         end
       else
         begin
@@ -2403,7 +2404,8 @@ begin
           mainmenu1.menu.itembynames(['project', 'saveas']).Enabled := False;
           mainmenu1.menu.itembynames(['project', 'saveascopy']).Enabled := False;
           mainmenu1.menu.itembynames(['project', 'close']).Enabled := False;
-        end;
+          mainmenu1.menu.itembynames(['settings', 'extrasettings']).Enabled := false;
+          end;
 
       if (sourcefo.ActivePage <> nil) and
          sourcefo.ActivePage.activeentered then
@@ -2415,8 +2417,6 @@ begin
           setbm4.Enabled := True;
           setbm5.Enabled := True;
           setbm6.Enabled := True;
-
-
           setbm7.Enabled    := True;
           setbm8.Enabled    := True;
           setbm8.Enabled    := True;
@@ -2471,7 +2471,6 @@ begin
               copy.Enabled         := edit.hasselection;
               copylatexact.Enabled := edit.hasselection;
               copyword.Enabled     := True;
-
               cut.Enabled        := edit.hasselection;
               paste.Enabled      := edit.canpaste;
               Delete.Enabled     := edit.hasselection;
@@ -4544,7 +4543,7 @@ var
   stca: stockcaptionty;
   str : string;
 begin
- {$ifdef usemo}
+ {$if (defined(usemo)) and (not defined(windows))}
  if conflangfo.bousemo.value then
   mo4stock.createnewlang(thelang)
  else
