@@ -248,7 +248,7 @@ options=114
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=17
+ rowheight=20
  [projectoptionsfo.newfile]
  firsttab=0
  index=2
@@ -270,9 +270,9 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=178
+ y=176
  xprop=1
- yprop=0.3969298245614
+ yprop=0.39777777777778
  [projectoptionsfo.macrogrid]
  propcolwidthref=642
  sortdescend0=0
@@ -1587,11 +1587,11 @@ findhistory=20
  module
 findoptions=1
 editpos=6
- 0,3
+ 0,7
  0,-1073741823
  0,-1073741823
+ 39,3
  0,-1073741823
- 13,142
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1658,10 +1658,10 @@ windowlayout=562
  ny=0
  ncx=0
  ncy=0
- x=97
- y=45
+ x=34
+ y=53
  cx=1224
- cy=718
+ cy=621
  rcx=0
  rcy=0
  wsize=0
@@ -1686,15 +1686,15 @@ windowlayout=562
  ny=0
  ncx=0
  ncy=0
- x=484
- y=207
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1769,9 +1769,9 @@ windowlayout=562
  ny=0
  ncx=0
  ncy=0
- x=208
- y=77
- cx=951
+ x=239
+ y=115
+ cx=678
  cy=414
  rcx=0
  rcy=0
@@ -1788,7 +1788,7 @@ windowlayout=562
  x=0
  y=0
  cx=205
- cy=505
+ cy=442
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1798,8 +1798,8 @@ windowlayout=562
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=11
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1838,14 +1838,14 @@ windowlayout=562
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=332
+ propcolwidthref=352
  sortdescend0=0
  values1=0
  values1_ci=-1
  width1=33
  sortdescend1=0
  values2=0
- width2=149
+ width2=158
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1854,12 +1854,12 @@ windowlayout=562
  width5=38
  sortdescend5=0
  values6=0
- width6=172
+ width6=184
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
  useroptions=268451947
- stackedunder=memoryfo
+ stackedunder=conflangfo
  parent=
  mdistate=0
  nx=0
@@ -1879,9 +1879,9 @@ windowlayout=562
  value=1
  [objectinspectorfo.grid]
  propcolwidthref=383
- width0=169
+ width0=170
  sortdescend0=0
- width1=208
+ width1=207
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1974,9 +1974,9 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=565
+ y=505
  cx=1212
- cy=132
+ cy=92
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2045,24 +2045,24 @@ windowlayout=562
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=241
- y=84
- cx=862
- cy=81
+ x=240
+ y=139
+ cx=956
+ cy=77
  rcx=0
  rcy=0
  wsize=0
  active=0
  visible=0
  [componentpalettefo.componentpages]
- activetab=1
+ activetab=0
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -2076,7 +2076,7 @@ windowlayout=562
  x=0
  y=0
  cx=1212
- cy=54
+ cy=57
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2088,11 +2088,11 @@ windowlayout=562
  nx=0
  ny=0
  ncx=1212
- ncy=60
+ ncy=64
  x=0
  y=0
  cx=1212
- cy=60
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2102,12 +2102,12 @@ windowlayout=562
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/captionideu.pas
+ value=/home/fred/ideU/src/conflang.pas
  history=4
-  /home/fred/ideU/src/captionideu.pas
   /home/fred/ideU/src/conflang.pas
-  /home/fred/strumpract/src/config.pas
-  /home/fred/strumpract/src/uos.pas
+  
+  /home/fred/ideU/src/layout
+  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2125,7 +2125,7 @@ windowlayout=562
  x=208
  y=0
  cx=1004
- cy=505
+ cy=442
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2139,15 +2139,15 @@ windowlayout=562
  useroptions=268451947
  stackedunder=_mse_mainfo_mse_
  parent=
- mdistate=3
+ mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
  x=183
  y=113
- cx=369
- cy=307
+ cx=352
+ cy=277
  rcx=0
  rcy=0
  wsize=0
@@ -2164,9 +2164,9 @@ windowlayout=562
  ncx=0
  ncy=0
  x=0
- y=57
+ y=60
  cx=1212
- cy=505
+ cy=442
  rcx=0
  rcy=0
  [_mse_mainfo_mse_]
@@ -2191,7 +2191,7 @@ windowlayout=562
  [_mse_conflangfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0

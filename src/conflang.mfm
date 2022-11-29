@@ -116,11 +116,12 @@ object conflangfo: tconflangfo
       end>
     rowcount = 7
     datacols.count = 3
+    datacols.colorselect = 16763002
+    datacols.colorfocused = 16763002
     datacols.items = <    
       item[gridlangcaption]
-        colorselect = -1610612731
-        coloractive = -1610612731
-        colorfocused = -1610612731
+        colorselect = 16763002
+        colorfocused = 16763002
         width = 216
         options = [co_readonly, co_disabled, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'gridlangcaption'
@@ -138,6 +139,8 @@ object conflangfo: tconflangfo
         )
       end    
       item[gridlangcode]
+        colorselect = 16763002
+        colorfocused = 16763002
         width = 1
         options = [co_invisible, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'gridlangcode'
@@ -155,6 +158,8 @@ object conflangfo: tconflangfo
         )
       end    
       item[gridlangbool]
+        colorselect = 16763002
+        colorfocused = 16763002
         options = [co_drawfocus, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'gridlangbool'
         dataclass = tgridintegerdatalist
@@ -254,23 +259,24 @@ object conflangfo: tconflangfo
     onchange = onchange
   end
   object fontsize: tintegeredit
-    frame.caption = 'Height '
+    frame.caption = 'Height'
     frame.captiontextflags = [tf_bottom]
     frame.captionpos = cp_left
+    frame.captiondist = 4
     frame.localprops = [frl_frameimageleft, frl_frameimagetop, frl_frameimageright, frl_frameimagebottom, frl_frameimageoffset, frl_frameimageoffsetmouse, frl_frameimageoffsetclicked, frl_frameimageoffsetactive]
-    frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
+    frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive, frl1_captiondist]
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
-      47
+      46
       0
       0
       0
     )
     taborder = 6
     hint = 'Font height for all ideU text'
-    bounds_x = 471
+    bounds_x = 472
     bounds_y = 200
-    bounds_cx = 77
+    bounds_cx = 76
     bounds_cy = 21
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -319,7 +325,7 @@ object conflangfo: tconflangfo
       item
         frame.localprops = []
         frame.localprops1 = []
-        height = 14
+        height = 17
         numstep = 1
         captions.count = 1
         captions.items = <        
