@@ -3,14 +3,14 @@ object headerfo: theaderfo
   bounds_x = 476
   bounds_y = 138
   bounds_cx = 427
-  bounds_cy = 486
+  bounds_cy = 488
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
     427
-    486
+    488
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Po <> Po converter'
@@ -182,7 +182,7 @@ object headerfo: theaderfo
     bounds_x = 0
     bounds_y = 40
     bounds_cx = 426
-    bounds_cy = 436
+    bounds_cy = 438
     anchors = [an_left, an_top, an_right, an_bottom]
     reffontheight = 15
   end
@@ -193,9 +193,9 @@ object headerfo: theaderfo
     taborder = 3
     visible = False
     bounds_x = 0
-    bounds_y = 2
+    bounds_y = 0
     bounds_cx = 427
-    bounds_cy = 480
+    bounds_cy = 488
     anchors = [an_left, an_top, an_right, an_bottom]
     object labdone: tlabel
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autoheight]

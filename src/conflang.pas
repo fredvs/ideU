@@ -309,6 +309,9 @@ end;
 
 procedure tconflangfo.ontools(Const sender: TObject);
 begin
+ {$ifdef mswindows}
+ headerfo.tbutton6.visible := false;
+  {$endif}
   headerfo.show(true);
 end;
 
