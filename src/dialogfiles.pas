@@ -73,6 +73,8 @@ if assigned(list_files.selectednames) and (tag = 1) then
  debuggerfo.close;
 
  mainfo.loadwindowlayout(str1);
+ 
+  mainfo.Window.RecreateWindow;
 
   if (tabind < 0) and (sourcefo.files_tab.count > 0) then
       sourcefo.files_tab.activepageindex:= 0;
@@ -82,6 +84,8 @@ if (tabind > -1) and (sourcefo.files_tab.count > 0) then
 
   finally
   str1.destroy();
+  application.processmessages;
+  setfocus;
  end;
 end;
 

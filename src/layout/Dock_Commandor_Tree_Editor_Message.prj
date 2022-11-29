@@ -19,8 +19,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
-projectdir=/home/fred/ideU/src/layout
-projectfilename=/home/fred/ideU/src/layout/Dock_Commandor_Tree_Editor_Message.prj
+projectdir=/home/fred/ideU_lin64/layout
+projectfilename=/home/fred/ideU_lin64/layout/Dock_Commandor_Tree_Editor_Message.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -695,24 +695,19 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=1
- 0,0
-bookmarks0=0
-sourcefiles=1
- ${PROJECTDIR}/
-relpaths=1
- ./
-ismoduletexts=1
- 0
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=-1
 [layout]
-windowlayout=527
+windowlayout=528
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -784,7 +779,7 @@ windowlayout=527
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -856,7 +851,7 @@ windowlayout=527
  x=0
  y=0
  cx=205
- cy=445
+ cy=446
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1148,7 +1143,7 @@ windowlayout=527
  x=0
  y=0
  cx=1214
- cy=57
+ cy=56
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1164,7 +1159,7 @@ windowlayout=527
  x=0
  y=0
  cx=1214
- cy=64
+ cy=63
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1174,8 +1169,9 @@ windowlayout=527
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/layout
- history=3
+ value=/home/fred/ideU_lin64/layout/${PROJECTDIR}
+ history=4
+  /home/fred/ideU_lin64/layout/${PROJECTDIR}
   
   /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
@@ -1196,19 +1192,19 @@ windowlayout=527
  x=208
  y=0
  cx=1006
- cy=445
+ cy=446
  rcx=0
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=-1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -1235,9 +1231,9 @@ windowlayout=527
  ncx=0
  ncy=0
  x=0
- y=60
+ y=59
  cx=1214
- cy=445
+ cy=446
  rcx=0
  rcy=0
 [targetconsole]

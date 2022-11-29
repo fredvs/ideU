@@ -19,8 +19,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
-projectdir=/home/fred/ideU/src/layout
-projectfilename=/home/fred/ideU/src/layout/Dock_Commandor_Tree_Editor_Message_MSE.prj
+projectdir=/home/fred/ideU_lin64/layout
+projectfilename=/home/fred/ideU_lin64/layout/Dock_Commandor_Tree_Editor_Message_MSE.prj
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -695,24 +695,19 @@ hintheight=0
 finddtext=
 findhistory=0
 findoptions=1
-editpos=1
- 0,0
-bookmarks0=0
-sourcefiles=1
- ${PROJECTDIR}/
-relpaths=1
- ./
-ismoduletexts=1
- -1
+editpos=0
+sourcefiles=0
+relpaths=0
+ismoduletexts=0
 modules=0
 moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=-1
 [layout]
-windowlayout=523
+windowlayout=524
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -784,7 +779,7 @@ windowlayout=523
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1171,8 +1166,9 @@ windowlayout=523
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/layout
- history=2
+ value=/home/fred/ideU_lin64/layout/${PROJECTDIR}
+ history=3
+  /home/fred/ideU_lin64/layout/${PROJECTDIR}
   /home/fred/ideU/src/layout
   ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
@@ -1197,14 +1193,14 @@ windowlayout=523
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=-1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=mainfo
  parent=
  mdistate=0
  nx=0

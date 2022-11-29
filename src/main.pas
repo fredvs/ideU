@@ -4412,7 +4412,7 @@ begin
       str1 := ttextstream.Create(windowlayoutfile);
       try
         loadwindowlayout(str1);
-      finally
+        finally
         str1.Destroy();
     end;
 end;
