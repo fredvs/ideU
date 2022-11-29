@@ -1,7 +1,7 @@
 object conflangfo: tconflangfo
   visible = False
-  bounds_x = 547
-  bounds_y = 285
+  bounds_x = 325
+  bounds_y = 282
   bounds_cx = 570
   bounds_cy = 243
   bounds_cxmin = 570
@@ -99,6 +99,21 @@ object conflangfo: tconflangfo
     font.name = 'unifont'
     font.localprops = [flp_height]
     optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    fixrows.count = 1
+    fixrows.items = <    
+      item
+        height = 17
+        captions.count = 3
+        captions.items = <        
+          item
+            caption = 'Languages'
+          end        
+          item
+          end        
+          item
+            caption = 'X'
+          end>
+      end>
     rowcount = 7
     datacols.count = 3
     datacols.items = <    
@@ -106,7 +121,7 @@ object conflangfo: tconflangfo
         colorselect = -1610612731
         coloractive = -1610612731
         colorfocused = -1610612731
-        width = 224
+        width = 216
         options = [co_readonly, co_disabled, co_savevalue, co_savestate, co_mousescrollrow]
         widgetname = 'gridlangcaption'
         dataclass = tgridmsestringdatalist
@@ -119,24 +134,6 @@ object conflangfo: tconflangfo
             ''
             ''
             ''
-          )
-        )
-      end    
-      item[gridlangbool]
-        color = -1610612731
-        width = 44
-        options = [co_drawfocus, co_savevalue, co_savestate, co_mousescrollrow]
-        widgetname = 'gridlangbool'
-        dataclass = tgridintegerdatalist
-        data = (
-          (
-            0
-            0
-            0
-            0
-            0
-            0
-            0
           )
         )
       end    
@@ -156,6 +153,22 @@ object conflangfo: tconflangfo
             ''
           )
         )
+      end    
+      item[gridlangbool]
+        options = [co_drawfocus, co_savevalue, co_savestate, co_mousescrollrow]
+        widgetname = 'gridlangbool'
+        dataclass = tgridintegerdatalist
+        data = (
+          (
+            0
+            0
+            0
+            0
+            0
+            0
+            0
+          )
+        )
       end>
     datarowheight = 17
     statfile = mainfo.mainstatfile
@@ -169,36 +182,33 @@ object conflangfo: tconflangfo
       visible = False
       bounds_x = 0
       bounds_y = 0
-      bounds_cx = 224
+      bounds_cx = 216
       bounds_cy = 17
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
       value = 'English'
       reffontheight = 13
     end
-    object gridlangbool: tbooleaneditradio
-      optionswidget1 = []
-      optionsskin = [osk_framebuttononly]
-      color = -1610612731
-      taborder = 2
-      bounds_x = 225
-      bounds_y = 0
-      bounds_cx = 44
-      bounds_cy = 17
-      statfile = mainfo.mainstatfile
-      visible = False
-      value = True
-    end
     object gridlangcode: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
-      taborder = 3
+      taborder = 2
       visible = False
-      bounds_x = 270
+      bounds_x = 217
       bounds_y = 0
       bounds_cx = 1
       bounds_cy = 17
       reffontheight = 13
+    end
+    object gridlangbool: tbooleaneditradio
+      optionswidget1 = []
+      optionsskin = [osk_framebuttononly]
+      taborder = 3
+      bounds_x = 219
+      bounds_y = 0
+      bounds_cx = 50
+      bounds_cy = 17
+      visible = False
     end
   end
   object bpotools: tbutton
@@ -325,7 +335,7 @@ object conflangfo: tconflangfo
       28173
     )
     zebra_start = 1
-    datarowheight = 15
+    datarowheight = 17
     statpriority = 1
     oncellevent = ongridfontcellev
     reffontheight = 13

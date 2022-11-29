@@ -5,18 +5,13 @@ unit conflang;
 
 interface
 
-uses 
-{$ifdef windows}
-windows,
-{$endif}
-process, classes, msetypes, mseglob, mseguiglob, mseguiintf, mseapplication, msestat, 
-msemenus, 
-msegui, 
-msegraphics, msegraphutils, mseevent, mseclasses, msewidgets, mseforms, 
-msesimplewidgets, msegraphedits, mseificomp, mseificompglob, mseifiglob, 
-msescrollbar, msestatfile, mseact, msedataedits, msedragglob, msedropdownlist, 
-mseedit, msegrids, msegridsglob, msestream, msewidgetgrid, SysUtils, msedispwidgets, 
-mserichstring;
+uses
+ {$ifdef windows}windows,{$endif}process, classes, msetypes, mseglob,mseguiglob,
+  mseguiintf, mseapplication, msestat,msemenus,msegui,msegraphics,msegraphutils,
+  mseevent, mseclasses, msewidgets, mseforms,msesimplewidgets,msegraphedits,
+  mseificomp, mseificompglob, mseifiglob,msescrollbar,msestatfile, mseact,
+  msedataedits, msedragglob, msedropdownlist,mseedit,msegrids, msegridsglob,
+  msestream, msewidgetgrid, SysUtils, msedispwidgets,mserichstring;
 
 type 
   tconflangfo = class(tmseform)
@@ -24,13 +19,13 @@ type
     setasdefault: tbooleanedit;
     gridlang: twidgetgrid;
     gridlangcaption: tstringedit;
-    gridlangbool: tbooleaneditradio;
     gridlangcode: tstringedit;
     bpotools: tbutton;
     lsetasdefault: tlabel;
     bousemo: tbooleanedit;
     fontsize: tintegeredit;
     gridlistfont: tstringgrid;
+   gridlangbool: tbooleaneditradio;
     procedure oncok(Const Sender: TObject);
     procedure oncreat(Const Sender: TObject);
     procedure oncellev(Const Sender: TObject; Var info: celleventinfoty);
@@ -165,6 +160,10 @@ begin
           gridlistfont[0][gridlistfont.rowcount - 1] := L[x];
           inc(x);
         end;
+        
+     gridlang.fixrows[-1].captions[0].caption :=
+         inttostr(gridlang.rowcount) + ' ' +
+         lang_stockcaption[Ord(sc_lang)];   
   
     finally
     ReleaseDC(0, DC);
@@ -247,6 +246,10 @@ var
           gridlistfont[0][3] := 'stf_roman';
           gridlistfont[0][4] := 'stf_proportional';
         end;
+        
+     gridlang.fixrows[-1].captions[0].caption :=
+  inttostr(gridlang.rowcount) + ' ' +
+ lang_stockcaption[Ord(sc_lang)]; 
  
 end;
 {$endif}
