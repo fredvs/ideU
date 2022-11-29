@@ -70,7 +70,7 @@ object confideufo: tconfideufo
       statfile = mainfo.mainstatfile
       Value = '${IDEUDIR}/plugin'
       controller.filename = '${IDEUDIR}/plugin/'
-      controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/plugin/'
+      controller.lastdir = '/home/fred/ideU/src/${IDEUDIR}/plugin/'
       controller.fontheight = 0
       controller.fontname = 'stf_default'
       controller.fontcolor = -1610612734
@@ -291,9 +291,9 @@ object confideufo: tconfideufo
       )
       taborder = 6
       hint = 'Font height for all ideU text'
-      bounds_x = 15
+      bounds_x = 14
       bounds_y = 290
-      bounds_cx = 107
+      bounds_cx = 208
       bounds_cy = 21
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -335,9 +335,9 @@ object confideufo: tconfideufo
       )
       taborder = 7
       hint = 'Font name for all ideU text'
-      bounds_x = 16
+      bounds_x = 14
       bounds_y = 251
-      bounds_cx = 208
+      bounds_cx = 258
       bounds_cy = 21
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
@@ -476,7 +476,7 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         18
-        45
+        7
         0
       )
       taborder = 1
@@ -521,7 +521,7 @@ object confideufo: tconfideufo
       taborder = 2
       bounds_x = 7
       bounds_y = 186
-      bounds_cx = 84
+      bounds_cx = 108
       bounds_cy = 39
       statfile = mainfo.mainstatfile
       dropdown.options = [deo_selectonly, deo_forceselect, deo_autodropdown, deo_keydropdown]
@@ -546,13 +546,13 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         18
-        50
+        0
         0
       )
       taborder = 3
       bounds_x = 8
       bounds_y = 67
-      bounds_cx = 86
+      bounds_cx = 108
       bounds_cy = 39
       statfile = mainfo.mainstatfile
       valuemax = 10
@@ -591,13 +591,13 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         18
-        35
+        0
         0
       )
       taborder = 6
       bounds_x = 127
       bounds_y = 252
-      bounds_cx = 78
+      bounds_cx = 81
       bounds_cy = 39
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
@@ -782,8 +782,8 @@ object confideufo: tconfideufo
       )
       taborder = 11
       hint = 'Strip ESC sequences in Messages and Terminal form'
-      bounds_x = 165
-      bounds_y = 87
+      bounds_x = 194
+      bounds_y = 84
       bounds_cx = 78
       bounds_cy = 18
       statfile = mainfo.mainstatfile
@@ -1070,7 +1070,7 @@ object confideufo: tconfideufo
         0
       )
       taborder = 17
-      bounds_x = 172
+      bounds_x = 233
       bounds_y = 155
       bounds_cx = 57
       bounds_cy = 39
@@ -1109,7 +1109,7 @@ object confideufo: tconfideufo
       hint = 'Font name editor text'
       bounds_x = 6
       bounds_y = 155
-      bounds_cx = 113
+      bounds_cx = 217
       bounds_cy = 39
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
