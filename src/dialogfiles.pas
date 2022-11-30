@@ -74,6 +74,7 @@ if assigned(list_files.selectednames) and (tag = 1) then
 
  mainfo.loadwindowlayout(str1);
  
+ if lowercase(system.copy(selected_file.text,1,4)) = 'full' then 
   mainfo.Window.RecreateWindow;
 
   if (tabind < 0) and (sourcefo.files_tab.count > 0) then

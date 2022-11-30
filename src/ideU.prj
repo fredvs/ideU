@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.findtext]
- value=bousemo
+ value=ismodal
  history=20
+  ismodal
   bousemo
   conflangfo.caption
   conflang.caption
@@ -160,11 +161,10 @@ findinfiledialog=95
   emptyclip
   closeclipboard
   clipboard
-  datacol
  [findinfileadialogfo]
  stackedunder=
- x=205
- y=135
+ x=210
+ y=164
  cx=346
  cy=308
 finddialog=8
@@ -921,16 +921,19 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ DIALOGFILESFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TDIALOGFILESFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideU/src/actionsmodule.mfm
+ /home/fred/ideU/src/dialogfiles.mfm
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
@@ -938,7 +941,7 @@ makeoptionson=17
  4095
  4095
  1
- 2043
+ 2047
  2046
  4079
  192
@@ -1586,43 +1589,52 @@ findhistory=20
  longword
  setmoduleoptions
 findoptions=1
-editpos=4
+editpos=5
  0,5
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 11,72
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/dialogfiles.pas
+relpaths=5
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=4
+ dialogfiles.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideU/src/dialogfiles.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  0
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
@@ -1630,7 +1642,7 @@ nomenumodules=3
 firsttab=0
 index=0
 [layout]
-windowlayout=545
+windowlayout=563
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1644,8 +1656,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=34
- y=53
+ x=39
+ y=82
  cx=1224
  cy=621
  rcx=0
@@ -1672,15 +1684,15 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=432
+ y=267
  cx=497
  cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1784,8 +1796,8 @@ windowlayout=545
  width1=86
  sortdescend1=0
  sorted=0
- col=0
- row=11
+ col=1
+ row=-1073741823
  rowheight=16
  [stackfo]
  splitdir=0
@@ -2088,10 +2100,9 @@ windowlayout=545
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/ideU.pas
- history=6
-  /home/fred/ideU/src/ideU.pas
-  /home/fred/ideU/src/conflang.pas
+ value=/home/fred/ideU/src/dialogfiles.pas
+ history=5
+  /home/fred/ideU/src/dialogfiles.pas
   /home/fred/ideU_lin64/layout/${PROJECTDIR}
   
   /home/fred/ideU/src/layout
@@ -2171,6 +2182,25 @@ windowlayout=545
  y=268
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_dialogfilesfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=596
+ y=300
+ cx=392
+ cy=402
  rcx=0
  rcy=0
  wsize=0
