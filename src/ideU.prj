@@ -921,27 +921,33 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=6
  ACTIONSMO
+ CONFIDEUFO
  DIALOGFILESFO
  MAINFO
+ MESSAGEFO
  SOURCEFO
-moduletypes=4
+moduletypes=6
  TACTIONSMO
+ TCONFIDEUFO
  TDIALOGFILESFO
  TMAINFO
+ TMESSAGEFO
  TSOURCEFO
-modulefiles=4
+modulefiles=6
  /home/fred/ideU/src/actionsmodule.mfm
+ /home/fred/ideU/src/confideu.mfm
  /home/fred/ideU/src/dialogfiles.mfm
  /home/fred/ideU/src/main.mfm
+ /home/fred/ideU/src/messageform.mfm
  /home/fred/ideU/src/sourceform.mfm
 befcommandon=0
 makeoptionson=17
  4095
  4095
  1
- 2047
+ 2043
  2046
  4079
  192
@@ -1223,7 +1229,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=27
+on=28
  0
  0
  0
@@ -1251,7 +1257,8 @@ on=27
  0
  0
  0
-path=27
+ -1
+path=28
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1279,7 +1286,8 @@ path=27
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
  /home/fred/mseide-msegui/lib/common/db/firebird.pas
  /home/fred/ideu/src/main.pas
-line=27
+ /home/fred/ideU/src/main.pas
+line=28
  2129
  1164
  526
@@ -1307,7 +1315,8 @@ line=27
  18
  8
  2604
-address=27
+ 2386
+address=28
  4881895
  4703733
  4853629
@@ -1335,7 +1344,8 @@ address=27
  8595229
  10541149
  4895197
-addbkpt=27
+ 0
+addbkpt=28
  0
  0
  0
@@ -1363,7 +1373,8 @@ addbkpt=27
  0
  0
  0
-ignore=27
+ 0
+ignore=28
  0
  0
  0
@@ -1391,7 +1402,9 @@ ignore=27
  0
  0
  0
-condition=27
+ 0
+condition=28
+ 
  
  
  
@@ -1566,8 +1579,11 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=layout
+finddtext=extrasettings
 findhistory=20
+ extrasettings
+ extrase
+ extra
  layout
  use mo
  defaultresult
@@ -1585,64 +1601,87 @@ findhistory=20
  ondrawcellpl
  for achar
  icon
- A:
- longword
- setmoduleoptions
 findoptions=1
-editpos=5
- 0,5
+editpos=7
+ 0,7
  0,-1073741823
+ 0,2410
  0,-1073741823
+ 0,0
  0,-1073741823
- 11,72
+ 0,9
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/dialogfiles.pas
-relpaths=5
+ ${PROJECTDIR}/messageform.pas
+ ${PROJECTDIR}/confideu.pas
+relpaths=7
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
  dialogfiles.pas
-ismoduletexts=5
+ messageform.pas
+ confideu.pas
+ismoduletexts=7
  0
  0
  0
  0
  0
-modules=4
+ 0
+ 0
+modules=6
  /home/fred/ideU/src/main.mfm
  /home/fred/ideU/src/actionsmodule.mfm
  /home/fred/ideU/src/sourceform.mfm
  /home/fred/ideU/src/dialogfiles.mfm
-moduleoptions=4
+ /home/fred/ideU/src/messageform.mfm
+ /home/fred/ideU/src/confideu.mfm
+moduleoptions=6
  0
  0
  0
  0
-visiblemodules=4
+ 0
+ 0
+visiblemodules=6
  -1
  0
  -1
  -1
-nomenumodules=4
+ -1
+ -1
+nomenumodules=6
+ 0
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=7
+ 0
+ 4
+ 5
+ 1
+ 2
+ 6
+ 3
 firsttab=0
-index=0
+index=4
 [layout]
-windowlayout=563
+windowlayout=605
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1656,8 +1695,8 @@ windowlayout=563
  ny=0
  ncx=0
  ncy=0
- x=39
- y=82
+ x=34
+ y=53
  cx=1224
  cy=621
  rcx=0
@@ -1684,8 +1723,8 @@ windowlayout=563
  ny=0
  ncx=0
  ncy=0
- x=432
- y=267
+ x=493
+ y=171
  cx=497
  cy=314
  rcx=0
@@ -1796,8 +1835,8 @@ windowlayout=563
  width1=86
  sortdescend1=0
  sorted=0
- col=1
- row=-1073741823
+ col=0
+ row=8
  rowheight=16
  [stackfo]
  splitdir=0
@@ -1876,10 +1915,10 @@ windowlayout=563
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=242
- width0=107
+ propcolwidthref=463
+ width0=205
  sortdescend0=0
- width1=129
+ width1=252
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2043,7 +2082,7 @@ windowlayout=563
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
@@ -2085,8 +2124,8 @@ windowlayout=563
  mdistate=0
  nx=0
  ny=0
- ncx=1212
- ncy=61
+ ncx=1111
+ ncy=52
  x=0
  y=0
  cx=1212
@@ -2100,13 +2139,9 @@ windowlayout=563
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU/src/dialogfiles.pas
- history=5
+ value=/home/fred/ideU/src/main.pas
+ history=1
   /home/fred/ideU/src/dialogfiles.pas
-  /home/fred/ideU_lin64/layout/${PROJECTDIR}
-  
-  /home/fred/ideU/src/layout
-  ${PROJECTDIR}/main.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2128,8 +2163,16 @@ windowlayout=563
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=7
+  0
+  4
+  5
+  1
+  2
+  6
+  3
  firsttab=0
- index=0
+ index=4
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2190,7 +2233,7 @@ windowlayout=563
  [_mse_dialogfilesfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_messagefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2201,6 +2244,44 @@ windowlayout=563
  y=300
  cx=392
  cy=402
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_messagefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=537
+ y=299
+ cx=467
+ cy=281
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_confideufo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=439
+ y=31
+ cx=639
+ cy=699
  rcx=0
  rcy=0
  wsize=0

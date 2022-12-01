@@ -2379,8 +2379,9 @@ begin
           mainmenu1.menu.itembynames(['project', 'saveas']).Enabled := True;
           mainmenu1.menu.itembynames(['project', 'saveascopy']).Enabled := True;
           mainmenu1.menu.itembynames(['project', 'close']).Enabled := True;
-          mainmenu1.menu.itembynames(['settings', 'extrasettings']).Enabled := True;
-        end
+          confideufo.group_sourceeditor.enabled := true;
+          confideufo.rectanglearea.enabled := true;
+          end
       else
         begin
           mainmenu1.menu.itembynames(['project', 'make']).Enabled := False;
@@ -2404,7 +2405,9 @@ begin
           mainmenu1.menu.itembynames(['project', 'saveas']).Enabled := False;
           mainmenu1.menu.itembynames(['project', 'saveascopy']).Enabled := False;
           mainmenu1.menu.itembynames(['project', 'close']).Enabled := False;
-          mainmenu1.menu.itembynames(['settings', 'extrasettings']).Enabled := false;
+          //mainmenu1.menu.itembynames(['settings', 'extrasettings']).Enabled := false;
+          confideufo.group_sourceeditor.enabled := false;
+          confideufo.rectanglearea.enabled := false;
           end;
 
       if (sourcefo.ActivePage <> nil) and
