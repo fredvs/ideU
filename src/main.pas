@@ -674,8 +674,18 @@ begin
 end;
 
 procedure tmainfo.beforeactiv(Const Sender: TObject);
+var
+rect1: rectty;
+fontheightsugg: integer;
 begin
-  // componentpalettefo.Close;
+
+  rect1 := application.screenrect(window);
+  fontheightsugg := round(rect1.cx / 1368 * 12);
+  confideufo.autoheight.frame.caption := 'Suggested font height: ' + inttostr(fontheightsugg);
+
+ if confideufo.autoheight.Value then
+   confideufo.fontsize.value := fontheightsugg ;
+
   debuggerfo.file_history.tag := 0;
   themenr := themenum.value;
   if themenr <> 0 then

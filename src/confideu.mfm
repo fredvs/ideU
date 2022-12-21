@@ -70,7 +70,7 @@ object confideufo: tconfideufo
       statfile = mainfo.mainstatfile
       Value = '${IDEUDIR}/plugin'
       controller.filename = '${IDEUDIR}/plugin/'
-      controller.lastdir = '/home/fred/ideU/src/${IDEUDIR}/plugin/'
+      controller.lastdir = '/home/fred/ideU-main/src/${IDEUDIR}/plugin/'
       controller.fontheight = 0
       controller.fontname = 'stf_default'
       controller.fontcolor = -1610612734
@@ -292,7 +292,7 @@ object confideufo: tconfideufo
       taborder = 6
       hint = 'Font height for all ideU text'
       bounds_x = 14
-      bounds_y = 290
+      bounds_y = 275
       bounds_cx = 208
       bounds_cy = 21
       statfile = mainfo.mainstatfile
@@ -434,6 +434,27 @@ object confideufo: tconfideufo
       bounds_x = 11
       bounds_y = 322
       bounds_cx = 255
+      bounds_cy = 17
+      statfile = mainfo.mainstatfile
+      value = True
+      valuedefault = True
+    end
+    object autoheight: tbooleanedit
+      frame.caption = 'Use font height suggested: 12'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        2
+        187
+        2
+      )
+      taborder = 12
+      hint = 'Use font height suggested for your screen resolution at loading'
+      bounds_x = 11
+      bounds_y = 301
+      bounds_cx = 200
       bounds_cy = 17
       statfile = mainfo.mainstatfile
       value = True

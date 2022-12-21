@@ -58,6 +58,7 @@ type
    colorhint: tcoloredit;
    editfontheightsrc: tintegeredit;
    editfontnamesrc: tdropdownlistedit;
+   autoheight: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -292,15 +293,18 @@ begin
  confirmdel.top :=  brepaintcanvas.top + brepaintcanvas.height + 2 ;
 {$endif}
 
-  fontname.top := confirmdel.top + confirmdel.Height + 2;
+  fontname.top := confirmdel.top + confirmdel.Height + 4;
   fontsize.top := fontname.top + fontname.Height + 2;
   
   fontname.left := 8;
-   fontsize.left := 8;
+  fontsize.left := 8;
    
-    addwhiteaftercomma.left := 6;
-  
-  addwhiteaftercomma.top := fontsize.top + fontsize.Height + 2;
+  autoheight.left := 8;
+  autoheight.top := fontsize.top + fontsize.Height + 2;
+
+  addwhiteaftercomma.left := 6;
+  addwhiteaftercomma.top := autoheight.top + autoheight.Height + 4;
+
 
   group_system_layout.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
 
