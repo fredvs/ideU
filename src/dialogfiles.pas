@@ -55,7 +55,6 @@ var
   dialogfilesfo: tdialogfilesfo;
   tabind: integer = -1;
   dialogfilesformcreated: Boolean = True;
-
   thesdef: msestring = '';
   theactivepage: msestring = '';
   han: integer = -1;
@@ -110,10 +109,16 @@ begin
       debuggerfo.Close;
 
       mainfo.loadwindowlayout(str1);
-
+    
       fontheightused := confideufo.fontsize.Value;
 
-      if fontheightused <> 12 then
+   if ((system.copy(selected_file.Text, 1, 5) = 'Menu_') or
+      (system.copy(selected_file.Text, 1, 5) = 'Dock_') or
+      (system.copy(selected_file.Text, 1, 4) = 'All_') or
+      (system.copy(selected_file.Text, 1, 6) = 'Float_') or
+      (system.copy(selected_file.Text, 1, 7) = 'Editor_')) and
+      (fontheightused <> 12) 
+    then
       begin
         mainfo.Width  := round(mainfo.Width * fontheightused / 12);
         mainfo.Height := round(mainfo.Height * fontheightused / 12);
