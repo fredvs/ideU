@@ -398,16 +398,13 @@ begin
 
  debuggerfo.edited_run.visible := enableedited.value;
  
- if enableedited.value then 
- begin
-  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4;
-  mainfo.mainmenu1.menu.itembynames(['edited']).visible := true;
- end  else
- begin
-  debuggerfo.paneledited.Width := debuggerfo.procedure_list.right + 4;
-  mainfo.mainmenu1.menu.itembynames(['edited']).visible := false;
- end;
+ mainfo.mainmenu1.menu.itembynames(['edited']).visible := enableedited.value;
  
+ if enableedited.value then 
+  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4
+  else
+  debuggerfo.paneledited.Width := debuggerfo.procedure_list.right + 4;
+
  end;
 
 procedure tconfideufo.scalecommander(ratio : double);
