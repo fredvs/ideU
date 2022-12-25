@@ -59,6 +59,7 @@ type
    editfontheightsrc: tintegeredit;
    editfontnamesrc: tdropdownlistedit;
    autoheight: tbooleanedit;
+   enableedited: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -75,7 +76,8 @@ type
     procedure oncreated(const Sender: TObject);
     procedure setlangextrasettings();
     procedure confideuresize ;
-   procedure onshow(const sender: TObject);
+    procedure onshow(const sender: TObject);
+    procedure seteditedenable();  
   end;
 
 var
@@ -278,7 +280,10 @@ begin
     group_file_change.Height + 10;
 
   universal_path.top := universal_path.Height + 2;
-  doubleclic.top     := universal_path.top + universal_path.Height + 2;
+ 
+  enableedited.top     := universal_path.top + universal_path.Height + 2;
+ 	 
+  doubleclic.top     := enableedited.top + enableedited.Height + 2;
   blinkcaret.top     := doubleclic.top + doubleclic.Height + 2;
 
   fullpath.top       := blinkcaret.top + blinkcaret.Height + 2;
@@ -374,13 +379,36 @@ begin
 
   Width := group_sourceeditor.left + group_assistive.Width + round(40 * ratio);
 
-   //dialogfilesfo.selected_file.frame.font.height := fontsize.value;
-  //group_file_change.width := group_sourceeditor.width;
-
   invalidate;
 
   left := (rect1.cx - Width) div 2;
   end;
+  
+procedure tconfideufo.seteditedenable();  
+begin
+ debuggerfo.edit_compiler.visible := enableedited.value;
+
+ debuggerfo.edit_compilernum.visible := enableedited.value;
+
+ debuggerfo.edit_options.visible := enableedited.value;
+
+ debuggerfo.edited_make.visible := enableedited.value;
+
+ debuggerfo.edited_abort.visible := enableedited.value;
+
+ debuggerfo.edited_run.visible := enableedited.value;
+ 
+ if enableedited.value then 
+ begin
+  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4;
+  mainfo.mainmenu1.menu.itembynames(['edited']).visible := true;
+ end  else
+ begin
+  debuggerfo.paneledited.Width := debuggerfo.procedure_list.right + 4;
+  mainfo.mainmenu1.menu.itembynames(['edited']).visible := false;
+ end;
+ 
+ end;
 
 procedure tconfideufo.scalecommander(ratio : double);
 begin
@@ -497,7 +525,6 @@ begin
 
   debuggerfo.panelproject.Width := debuggerfo.project_reset.right + 4;
 
-
   debuggerfo.paneledited.Height := debuggerfo.panelmain.Height;
   debuggerfo.paneledited.left   := debuggerfo.panelproject.right + 2;
 
@@ -552,12 +579,11 @@ begin
   debuggerfo.edited_run.Height := debuggerfo.assistive.Height;
   debuggerfo.edited_run.Width  := debuggerfo.assistive.Height;
   debuggerfo.edited_run.left   := debuggerfo.edited_abort.right + 2;
-
+  
+  seteditedenable();
+  
   debuggerfo.panelproject.Height := debuggerfo.panelmain.Height;
   debuggerfo.panelproject.left   := debuggerfo.panelmain.right + 2;
-
-  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4;
-
 
   debuggerfo.Height := debuggerfo.statdisp.bottom + 2;
 

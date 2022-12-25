@@ -682,10 +682,12 @@ begin
   rect1 := application.screenrect(window);
   fontheightsugg := round(rect1.cx / 1368 * 12);
   confideufo.autoheight.frame.caption := 'Suggested font height: ' + inttostr(fontheightsugg);
-
+  
  if confideufo.autoheight.Value then
    confideufo.fontsize.value := fontheightsugg ;
 
+  conflangfo.fontsize.value := confideufo.fontsize.value;
+ 
   debuggerfo.file_history.tag := 0;
   themenr := themenum.value;
   if themenr <> 0 then
@@ -5854,6 +5856,10 @@ begin
   conflangfo.listlangfont(MSEFallbackLang);
   
   conflangfo.updatefontcap();
+  
+  conflangfo.updatefontcap();
+  
+  conflangfo.fontsize.value := confideufo.fontsize.value;
 
   if ismodal then
     conflangfo.Show(True)
