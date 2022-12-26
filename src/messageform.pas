@@ -134,6 +134,12 @@ begin
 
 atext2 := atext;
 
+while system.pos('?25h', atext2) > 0 do
+        system.delete(atext2, system.pos('?25h', atext2)-2, 6);
+
+while system.pos('?25l', atext2) > 0 do
+        system.delete(atext2, system.pos('?25l', atext2)-2, 6);
+
 while system.pos('31m', atext2) > 0 do
         system.delete(atext2, system.pos('31m', atext2)-2, 5);
 

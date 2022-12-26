@@ -680,7 +680,13 @@ fontheightsugg: integer;
 begin
 
   rect1 := application.screenrect(window);
-  fontheightsugg := round(rect1.cx / 1368 * 12);
+  
+ {$ifdef mswindows}
+ fontheightsugg := round(rect1.cx / 1280 * 12);
+ {$else}
+ fontheightsugg := round(rect1.cx / 1368 * 12);
+ {$endif}
+
   confideufo.autoheight.frame.caption := 'Suggested font height: ' + inttostr(fontheightsugg);
   
  if confideufo.autoheight.Value then
