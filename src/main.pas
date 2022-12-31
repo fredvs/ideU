@@ -44,7 +44,7 @@ uses
   msewidgets,msegraphedits, mseificomp, mseificompglob, mseifiglob, msescrollbar;
 
 const 
-  versiontext = '2.8.6';
+  versiontext = '2.10.0';
   idecaption  = 'ideU';
   statname    = 'ideu';
 
