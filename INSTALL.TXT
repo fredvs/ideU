@@ -1,6 +1,6 @@
-To install ideU, just unzip the release and run ideU from here:
+To install ideU, just unzip the release from here:
 https://github.com/fredvs/ideU/releases/
-choose the asset of your system and unzip it.
+choose the asset of your system, unzip it and run:
 
 For Unix system: (The last character of ideU is a U majuscule)
 # /directory/of/ideU/ideU
@@ -10,16 +10,16 @@ For Windows system:
 
 -------------------------------------------
 
-If you want to compile-use last commit of ideU, then download ideU source code.
+To compile-use last commit of ideU, download ideU source code from here:
 https://github.com/fredvs/ideU/archive/refs/heads/main.zip
-And compile the project-file: /ideu/src/ideU.prj using ideU release.
+Unzip it and compile the project-file: /ideu/src/ideU.prj using ideU release.
 
-- Compiling ideU from commandline in directory ideu/src/:
-  for Linux:
+If you want to compile ideU from commandline, go in directory ideu/src/ and
+  for Linux use that command:
 
  fpc -oideU -Fu/directory_of_mseide-msegui/lib/common/kernel/linux -Fu/directory_of_mseide-msegui/lib/common/* -Mobjfpc -Sh -Fcutf8 -dmse_with_zeoslib -gl -B -Xs -CX -XX -O1 -dmse_dynpo -SIcorba -FUunits -vewinhq -dusemo ideU.pas 
 
- for Windows:
+ for Windows use that command:
 
   fpc.exe -oideU.exe -Fu/directory_of_mseide-msegui/lib/common/kernel/windows -Fu/directory_of_mseide-msegui/lib/common/* -Mobjfpc -Sh -Fcutf8 -dmse_with_zeoslib -B -Xs -CX -XX -O1 -WG -dmse_dynpo -SIcorba -FUunits -vewinhq -dusemo ideU.pas 
 
@@ -57,8 +57,6 @@ C:\Users\You_User\AppData\Roaming\.ideu
 
 For Unix:
 /home_user_directory/.ideu
-and
-/home_user_directory/.config/ideU
 
 ---------------------------------------------------------------------------------------
 
