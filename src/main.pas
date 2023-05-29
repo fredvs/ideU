@@ -45,7 +45,7 @@ uses
 
 const 
   versiontext = '2.10.0';
-  idecaption  = 'ideU';
+  idecaption  = 'ideU' {$ifdef pacpas} + '_PacPas'{$endif} ;
   statname    = 'ideu';
 
 type 
@@ -586,6 +586,23 @@ end;
 
 procedure tmainfo.mainfooncreate(Const Sender: TObject);
 begin
+{$ifdef pacpas}
+ mainstatfile.filedir  := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    'ini');
+ mainstatfile.filename := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
+    'ini' + directoryseparator + 'ideu.sta');
+ 
+ {$ifdef widows}   
+ conffpguifo.fpguidesigner.value := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '\plugin\designer_ext\designer_ext.exe');  
+ {$endif}
+ 
+  {$ifdef linux}   
+ conffpguifo.fpguidesigner.value := 
+ msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '/plugin/designer_ext/designer_ext');  
+ {$endif}
+ 
+{$endif}
+
   nozorderhandling := True;
   designer.ongetmodulenamefile := 
 {$ifdef FPC}
@@ -681,11 +698,11 @@ begin
 
   rect1 := application.screenrect(window);
   
- {$ifdef mswindows}
- fontheightsugg := round(rect1.cx / 1280 * 12);
- {$else}
+// {$ifdef mswindows}
+// fontheightsugg := round(rect1.cx / 1280 * 12);
+// {$else}
  fontheightsugg := round(rect1.cx / 1368 * 12);
- {$endif}
+// {$endif}
 
   confideufo.autoheight.frame.caption := 'Suggested font height: ' + inttostr(fontheightsugg);
   
@@ -2869,6 +2886,9 @@ var
   wstr1: msestring;
 begin
   try
+  
+   {$ifndef pacpas}
+  
     wstr1 := filepath(statdirname);
     if not finddir(wstr1) then
       createdir(wstr1);
@@ -2891,6 +2911,8 @@ begin
   {$endif}
   {$ifdef bsd}
     mainstatfile.filename := statname + 'bsd.sta';
+  {$endif}
+  
   {$endif}
 
    statfilestr := mainstatfile.filedir;
@@ -3335,7 +3357,7 @@ var
   projectdirbefore: msestring;
   str1: ttextstream;
   thedir: msestring;
-  str2: msestring;
+  
  begin
   gdb.abort;
   terminategdbserver(True);
@@ -4221,17 +4243,19 @@ end;
 procedure tmainfo.aboutideuonexecute(Const Sender: TObject);
 begin
   aboutfo.font.Height      := confideufo.fontsize.Value;
-  aboutfo.Caption          := lang_xstockcaption[Ord(sc_about)] + ' ideU';
+  aboutfo.Caption          := lang_xstockcaption[Ord(sc_about)] + ' ideU'
+   {$ifdef pacpas} + '_PacPas'{$endif};
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value := 
-                              c_linefeed + 'ideU v' + versiontext +
+                              c_linefeed + 'ideU' 
+                               {$ifdef pacpas} + '_PacPas'{$endif} + ' v' + versiontext +
                               c_linefeed + c_linefeed + c_linefeed +
                               lang_xstockcaption[Ord(sc_host)] + ': ' + platformtext +
                               c_linefeed + c_linefeed + c_linefeed +
                               'Fred van Stappen' +
                               c_linefeed +
                               '<fiens@hotmail.com>' + c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2022';
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
@@ -4561,7 +4585,6 @@ procedure tmainfo.setlangideu(thelang: String);
 var 
   item1: tmenuitem;
   x: shortint;
-  stca: stockcaptionty;
   str : string;
 begin
  {$if (defined(usemo)) and (not defined(windows))}
@@ -5237,6 +5260,7 @@ end;
 procedure tmainfo.manfocreated(Const Sender: TObject);
 begin
   TDummyThread.Create(False);
+  
 end;
 
 procedure tmainfo.onbeauty(Const Sender: TObject);

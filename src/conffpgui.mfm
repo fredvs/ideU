@@ -45,20 +45,24 @@ object conffpguifo: tconffpguifo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     hint = 'Path of fpGUI Designer'
     bounds_x = 2
-    bounds_y = 21
+    bounds_y = 19
     bounds_cx = 269
-    bounds_cy = 41
+    bounds_cy = 45
     anchors = [an_left, an_top, an_right]
     statfile = mainfo.mainstatfile
+    value = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
+    valuedefault = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
+    controller.filename = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
+    controller.lastdir = '${IDEUDIR}/plugin/designer_ext/'
     controller.options = [fdo_sysfilename, fdo_savelastdir]
     controller.captionopen = 'fpGUI Designer path'
-    reffontheight = 15
+    reffontheight = 17
   end
   object enablefpguidesigner: tbooleanedit
     frame.caption = 'Designer integration'
@@ -67,16 +71,16 @@ object conffpguifo: tconffpguifo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      126
-      2
+      3
+      118
+      3
     )
     taborder = 1
     hint = 'Enable designer integration'
     bounds_x = 18
-    bounds_y = 65
-    bounds_cx = 139
-    bounds_cy = 17
+    bounds_y = 64
+    bounds_cx = 131
+    bounds_cy = 19
     statfile = mainfo.mainstatfile
   end
   object tbfpgonlyone: tbooleanedit
@@ -86,16 +90,16 @@ object conffpguifo: tconffpguifo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      83
-      2
+      3
+      77
+      3
     )
     taborder = 2
     hint = 'Only One Instance (setup designer too)'
     bounds_x = 18
-    bounds_y = 83
-    bounds_cx = 96
-    bounds_cy = 17
+    bounds_y = 82
+    bounds_cx = 90
+    bounds_cy = 19
     statfile = mainfo.mainstatfile
     value = True
   end
@@ -108,26 +112,26 @@ object conffpguifo: tconffpguifo
     frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      9
+      10
       0
       0
     )
     taborder = 3
     bounds_x = 12
-    bounds_y = 105
+    bounds_y = 104
     bounds_cx = 238
-    bounds_cy = 144
+    bounds_cy = 145
     object edfilename: tedit
       frame.localprops = []
       frame.localprops1 = []
       frame.template = mainfo.tframecomp3
       bounds_x = 124
-      bounds_y = 25
+      bounds_y = 26
       bounds_cx = 94
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       text = '${FILENAME}'
-      reffontheight = 15
+      reffontheight = 17
     end
     object edclose: tedit
       frame.localprops = []
@@ -135,12 +139,12 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.tframecomp3
       taborder = 1
       bounds_x = 124
-      bounds_y = 47
+      bounds_y = 48
       bounds_cx = 94
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       text = 'closeall'
-      reffontheight = 15
+      reffontheight = 17
     end
     object edhide: tedit
       frame.localprops = []
@@ -148,12 +152,12 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.tframecomp3
       taborder = 2
       bounds_x = 124
-      bounds_y = 91
+      bounds_y = 92
       bounds_cx = 94
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       text = 'hideit'
-      reffontheight = 15
+      reffontheight = 17
     end
     object edshow: tedit
       frame.localprops = []
@@ -161,12 +165,12 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.tframecomp3
       taborder = 3
       bounds_x = 124
-      bounds_y = 69
+      bounds_y = 70
       bounds_cx = 94
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       text = 'showit'
-      reffontheight = 15
+      reffontheight = 17
     end
     object edquit: tedit
       frame.localprops = []
@@ -174,12 +178,12 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.tframecomp3
       taborder = 4
       bounds_x = 124
-      bounds_y = 113
+      bounds_y = 114
       bounds_cx = 94
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       text = 'quit'
-      reffontheight = 15
+      reffontheight = 17
     end
     object ifloadfile: tbooleanedit
       frame.caption = 'Load File =>'
@@ -188,15 +192,15 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        80
-        2
+        3
+        69
+        3
       )
       taborder = 5
       bounds_x = 12
       bounds_y = 25
-      bounds_cx = 93
-      bounds_cy = 17
+      bounds_cx = 82
+      bounds_cy = 19
       value = True
     end
     object ifclose: tbooleanedit
@@ -206,15 +210,15 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        82
-        2
+        3
+        73
+        3
       )
       taborder = 6
       bounds_x = 12
       bounds_y = 47
-      bounds_cx = 95
-      bounds_cy = 17
+      bounds_cx = 86
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -225,15 +229,15 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        89
-        2
+        3
+        78
+        3
       )
       taborder = 7
       bounds_x = 12
       bounds_y = 69
-      bounds_cx = 102
-      bounds_cy = 17
+      bounds_cx = 91
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -244,15 +248,15 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        83
-        2
+        3
+        74
+        3
       )
       taborder = 8
       bounds_x = 12
       bounds_y = 91
-      bounds_cx = 96
-      bounds_cy = 17
+      bounds_cx = 87
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -263,15 +267,15 @@ object conffpguifo: tconffpguifo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        81
-        2
+        3
+        71
+        3
       )
       taborder = 9
       bounds_x = 12
       bounds_y = 113
-      bounds_cx = 94
-      bounds_cy = 17
+      bounds_cx = 84
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -284,11 +288,11 @@ object conffpguifo: tconffpguifo
     bounds_x = 12
     bounds_y = 279
     bounds_cx = 250
-    bounds_cy = 21
+    bounds_cy = 23
     anchors = [an_left, an_top, an_right]
     statfile = mainfo.mainstatfile
     text = '*.fpg , fpg_*.pas , fpgui_*.pas'
-    reffontheight = 15
+    reffontheight = 17
   end
   object iffilter: tbooleanedit
     frame.caption = 'Filter:'
@@ -297,15 +301,15 @@ object conffpguifo: tconffpguifo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      37
-      2
+      3
+      34
+      3
     )
     taborder = 5
     bounds_x = 20
-    bounds_y = 257
-    bounds_cx = 50
-    bounds_cy = 17
+    bounds_y = 256
+    bounds_cx = 47
+    bounds_cy = 19
     statfile = mainfo.mainstatfile
   end
   object ok: tbutton
@@ -323,11 +327,11 @@ object conffpguifo: tconffpguifo
     bounds_x = 173
     bounds_y = 2
     bounds_cx = 92
-    bounds_cy = 30
+    bounds_cy = 32
     anchors = [an_top, an_right]
     state = [as_default, as_localdefault, as_localcaption, as_localcolor]
     caption = 'OK'
     modalresult = mr_ok
-    reffontheight = 15
+    reffontheight = 17
   end
 end

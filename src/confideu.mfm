@@ -57,15 +57,15 @@ object confideufo: tconfideufo
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       hint = 'Parent directory of sakit'
       bounds_x = 6
-      bounds_y = 71
+      bounds_y = 69
       bounds_cx = 259
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       Value = '${IDEUDIR}/plugin'
@@ -128,7 +128,7 @@ object confideufo: tconfideufo
       controller.options = [fdo_sysfilename, fdo_directory]
       controller.captionopen = 'Parent directory of sakit'
       controller.captiondir = 'Parent directory of sakit'
-      reffontheight = 15
+      reffontheight = 17
     end
     object tbassistive: tbooleanedit
       frame.caption = 'Enable sak assistive at loading'
@@ -137,15 +137,15 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        186
-        2
+        3
+        172
+        3
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 30
-      bounds_cx = 199
-      bounds_cy = 17
+      bounds_y = 29
+      bounds_cx = 185
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
   end
@@ -165,16 +165,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        157
-        2
+        3
+        146
+        3
       )
       taborder = 1
       hint = 'Use the mse universal directory layout'
       bounds_x = 8
-      bounds_y = 21
-      bounds_cx = 170
-      bounds_cy = 17
+      bounds_y = 20
+      bounds_cx = 159
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object nozorderenable: tbooleanedit
@@ -184,15 +184,15 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        124
-        2
+        3
+        114
+        3
       )
       hint = 'No focus on window when mouse-move on it.'
       bounds_x = 8
-      bounds_y = 196
-      bounds_cx = 137
-      bounds_cy = 17
+      bounds_y = 195
+      bounds_cx = 127
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
       valuedefault = True
@@ -204,16 +204,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        180
-        2
+        3
+        165
+        3
       )
       taborder = 2
       hint = 'Use shift + 2x click to select a word.'
       bounds_x = 8
-      bounds_y = 66
-      bounds_cx = 193
-      bounds_cy = 17
+      bounds_y = 65
+      bounds_cx = 178
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object autofocus_menu: tbooleanedit
@@ -223,16 +223,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        155
-        2
+        3
+        142
+        3
       )
       taborder = 3
       hint = 'Set auto focus if mouse moves on main-menu'
       bounds_x = 8
-      bounds_y = 178
-      bounds_cx = 168
-      bounds_cy = 17
+      bounds_y = 177
+      bounds_cx = 155
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object fullpath: tbooleanedit
@@ -242,16 +242,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        209
-        2
+        3
+        188
+        3
       )
       taborder = 4
       hint = 'Show the full path of project in main window title.'
       bounds_x = 8
-      bounds_y = 105
-      bounds_cx = 222
-      bounds_cy = 17
+      bounds_y = 104
+      bounds_cx = 201
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
       valuedefault = True
@@ -263,16 +263,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        223
-        2
+        3
+        207
+        3
       )
       taborder = 5
       hint = 'Set find-dialog-form, beautifier,... as modal, otherwise as tool.'
       bounds_x = 8
-      bounds_y = 142
-      bounds_cx = 236
-      bounds_cy = 17
+      bounds_y = 141
+      bounds_cx = 220
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -284,17 +284,17 @@ object confideufo: tconfideufo
       frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
-        77
+        68
         0
         0
         0
       )
       taborder = 6
       hint = 'Font height for all ideU text'
-      bounds_x = 14
+      bounds_x = 23
       bounds_y = 275
-      bounds_cx = 208
-      bounds_cy = 21
+      bounds_cx = 199
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
@@ -302,7 +302,7 @@ object confideufo: tconfideufo
       valuedefault = 12
       valuemin = 1
       valuemax = 1000
-      reffontheight = 15
+      reffontheight = 17
     end
     object fontname: tdropdownlistedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
@@ -328,17 +328,17 @@ object confideufo: tconfideufo
           frame.template = mainfo.mainmenuframe
         end>
       frame.outerframe = (
-        72
+        65
         0
         0
         0
       )
       taborder = 7
       hint = 'Font name for all ideU text'
-      bounds_x = 14
+      bounds_x = 21
       bounds_y = 251
-      bounds_cx = 258
-      bounds_cy = 21
+      bounds_cx = 251
+      bounds_cy = 23
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'stf_default'
@@ -355,7 +355,7 @@ object confideufo: tconfideufo
             'Unifont'
           )
         end>
-      reffontheight = 15
+      reffontheight = 17
     end
     object confirmdel: tbooleanedit
       frame.caption = 'No confirmation to delete row'
@@ -364,16 +364,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        182
-        2
+        3
+        169
+        3
       )
       taborder = 8
       hint = 'No confirmation dialog when deleting a row'
       bounds_x = 8
-      bounds_y = 225
-      bounds_cx = 195
-      bounds_cy = 17
+      bounds_y = 224
+      bounds_cx = 182
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object blinkcaret: tbooleanedit
@@ -384,16 +384,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        1
-        86
         2
+        79
+        3
       )
       taborder = 9
       hint = 'Blinking caret on-off'
       bounds_x = 8
-      bounds_y = 85
-      bounds_cx = 99
-      bounds_cy = 17
+      bounds_y = 84
+      bounds_cx = 92
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
       valuedefault = True
@@ -405,16 +405,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        95
-        2
+        3
+        87
+        3
       )
       taborder = 10
       hint = 'Repaint the canvas of selected component. Could be needed on some graphic cards.'
       bounds_x = 8
-      bounds_y = 212
-      bounds_cx = 108
-      bounds_cy = 17
+      bounds_y = 211
+      bounds_cx = 100
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       valuedefault = True
     end
@@ -425,16 +425,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        242
-        2
+        3
+        223
+        3
       )
       taborder = 11
       hint = 'Add space after comma when auto-parsing MSEgui code from designer'
       bounds_x = 8
-      bounds_y = 322
-      bounds_cx = 255
-      bounds_cy = 17
+      bounds_y = 321
+      bounds_cx = 236
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
       valuedefault = True
@@ -446,16 +446,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        187
-        2
+        3
+        169
+        3
       )
       taborder = 12
       hint = 'Use font height suggested for your screen resolution at loading'
       bounds_x = 11
-      bounds_y = 301
-      bounds_cx = 200
-      bounds_cy = 17
+      bounds_y = 300
+      bounds_cx = 182
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
       valuedefault = True
@@ -467,16 +467,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        184
-        2
+        3
+        169
+        3
       )
       taborder = 13
       hint = 'Enable compilation only of  edited sourced'
       bounds_x = 8
-      bounds_y = 42
-      bounds_cx = 197
-      bounds_cy = 17
+      bounds_y = 41
+      bounds_cx = 182
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
   end
@@ -496,15 +496,15 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        102
-        2
+        3
+        95
+        3
       )
       hint = 'Trim trailing whitespace on save'
       bounds_x = 8
-      bounds_y = 134
-      bounds_cx = 115
-      bounds_cy = 17
+      bounds_y = 133
+      bounds_cx = 108
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object rightmarginchars: tintegeredit
@@ -515,22 +515,22 @@ object confideufo: tconfideufo
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
-        18
-        7
+        20
+        0
         0
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 247
-      bounds_cx = 81
-      bounds_cy = 39
+      bounds_y = 245
+      bounds_cx = 74
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       value = 80
       valuemin = 1
       valuemax = 100
-      reffontheight = 15
+      reffontheight = 17
     end
     object encoding: tenumedit
       frame.caption = 'Encoding'
@@ -554,15 +554,15 @@ object confideufo: tconfideufo
         end>
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 2
       bounds_x = 7
-      bounds_y = 186
+      bounds_y = 184
       bounds_cx = 108
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       dropdown.options = [deo_selectonly, deo_forceselect, deo_autodropdown, deo_keydropdown]
       dropdown.cols.count = 1
@@ -575,7 +575,7 @@ object confideufo: tconfideufo
           )
         end>
       value = 1
-      reffontheight = 15
+      reffontheight = 17
     end
     object backupfilecount: tintegeredit
       frame.caption = 'Backup count'
@@ -585,18 +585,18 @@ object confideufo: tconfideufo
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 3
       bounds_x = 8
-      bounds_y = 67
+      bounds_y = 65
       bounds_cx = 108
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       valuemax = 10
-      reffontheight = 15
+      reffontheight = 17
     end
     object tabstops: tintegeredit
       frame.caption = 'Tab Stop'
@@ -606,21 +606,21 @@ object confideufo: tconfideufo
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
-        18
-        1
+        20
+        0
         0
       )
       taborder = 5
       bounds_x = 138
-      bounds_y = 196
-      bounds_cx = 56
-      bounds_cy = 39
+      bounds_y = 194
+      bounds_cx = 55
+      bounds_cy = 43
       anchors = [an_top, an_right]
       statfile = mainfo.mainstatfile
       value = 4
       valuemin = 1
       valuemax = 50
-      reffontheight = 15
+      reffontheight = 17
     end
     object blockindent: tintegeredit
       frame.caption = 'Block Indent'
@@ -630,22 +630,22 @@ object confideufo: tconfideufo
       frame.template = mainfo.tframecomp3
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 6
       bounds_x = 127
-      bounds_y = 252
+      bounds_y = 250
       bounds_cx = 81
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       value = 1
       valuemin = 1
       valuemax = 100
-      reffontheight = 15
+      reffontheight = 17
     end
     object usedefaulteditoroptions: tbooleanedit
       color = -2147483645
@@ -656,15 +656,15 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         0
-        271
-        0
+        250
+        1
       )
       taborder = 7
       hint = 'Use the options that follow instead of project options.'
       bounds_x = 7
       bounds_y = 26
-      bounds_cx = 290
-      bounds_cy = 18
+      bounds_cx = 269
+      bounds_cy = 19
       statfile = mainfo.projectstatfile
     end
     object spacetabs: tbooleanedit
@@ -675,14 +675,14 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         0
-        40
-        0
+        37
+        1
       )
       taborder = 4
       bounds_x = 220
       bounds_y = 214
-      bounds_cx = 59
-      bounds_cy = 18
+      bounds_cx = 56
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object colorerror: tcoloredit
@@ -712,19 +712,19 @@ object confideufo: tconfideufo
       frame.buttonellipse.options = [fbo_inactiveinvisible]
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 8
       bounds_x = 8
-      bounds_y = 407
+      bounds_y = 405
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       value = -1610612717
-      reffontheight = 15
+      reffontheight = 17
     end
     object colorwarning: tcoloredit
       color = -2147483645
@@ -753,19 +753,19 @@ object confideufo: tconfideufo
       frame.buttonellipse.options = [fbo_inactiveinvisible]
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 9
       bounds_x = 8
-      bounds_y = 367
+      bounds_y = 365
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       value = -1610612712
-      reffontheight = 15
+      reffontheight = 17
     end
     object colornote: tcoloredit
       color = -2147483645
@@ -794,19 +794,19 @@ object confideufo: tconfideufo
       frame.buttonellipse.options = [fbo_inactiveinvisible]
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 10
       bounds_x = 8
-      bounds_y = 308
+      bounds_y = 306
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       value = -1610612716
-      reffontheight = 15
+      reffontheight = 17
     end
     object stripmessageesc: tbooleanedit
       color = -2147483645
@@ -817,15 +817,15 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         0
-        60
-        0
+        54
+        1
       )
       taborder = 11
       hint = 'Strip ESC sequences in Messages and Terminal form'
       bounds_x = 194
       bounds_y = 84
-      bounds_cx = 78
-      bounds_cy = 18
+      bounds_cx = 72
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object deflayout: tfilenameeditx
@@ -850,16 +850,16 @@ object confideufo: tconfideufo
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 12
       hint = 'Default layout for all projects'
       bounds_x = 8
-      bounds_y = 488
+      bounds_y = 486
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       controller.lastdir = '${IDEUDIR}/layout/'
@@ -919,7 +919,7 @@ object confideufo: tconfideufo
       controller.showhidden = False
       controller.options = [fdo_sysfilename, fdo_file]
       controller.captionopen = 'Open File'
-      reffontheight = 15
+      reffontheight = 17
     end
     object defsynt: tfilenameeditx
       Tag = 3
@@ -943,16 +943,16 @@ object confideufo: tconfideufo
       frame.button.imagenr = 17
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 13
       hint = 'Default synthax file for all projects'
       bounds_x = 8
-      bounds_y = 555
+      bounds_y = 553
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       anchors = [an_left, an_top, an_right]
       statfile = mainfo.mainstatfile
       controller.lastdir = '${IDEUDIR}/syntaxdefs/'
@@ -1012,7 +1012,7 @@ object confideufo: tconfideufo
       controller.showhidden = False
       controller.options = [fdo_sysfilename, fdo_file]
       controller.captionopen = 'Open File'
-      reffontheight = 15
+      reffontheight = 17
     end
     object closemessages: tbooleanedit
       color = -2147483645
@@ -1022,16 +1022,16 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        1
-        174
         2
+        165
+        3
       )
       taborder = 14
       hint = 'Close messages window after compile.'
       bounds_x = 10
-      bounds_y = 113
-      bounds_cx = 187
-      bounds_cy = 17
+      bounds_y = 112
+      bounds_cx = 178
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object tabindent: tbooleanedit
@@ -1042,14 +1042,14 @@ object confideufo: tconfideufo
       frame.outerframe = (
         0
         0
-        25
-        0
+        24
+        1
       )
       taborder = 15
       bounds_x = 224
       bounds_y = 267
-      bounds_cx = 44
-      bounds_cy = 18
+      bounds_cx = 43
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object colorhint: tcoloredit
@@ -1079,18 +1079,18 @@ object confideufo: tconfideufo
       frame.buttonellipse.options = [fbo_inactiveinvisible]
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 16
       bounds_x = 8
-      bounds_y = 442
+      bounds_y = 440
       bounds_cx = 292
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       value = 15134207
-      reffontheight = 15
+      reffontheight = 17
     end
     object editfontheightsrc: tintegeredit
       color = -2147483645
@@ -1105,17 +1105,17 @@ object confideufo: tconfideufo
       frame.localprops1 = [frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 17
       bounds_x = 233
-      bounds_y = 155
+      bounds_y = 153
       bounds_cx = 57
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
-      reffontheight = 15
+      reffontheight = 17
     end
     object editfontnamesrc: tdropdownlistedit
       frame.hiddenedges = [edg_right, edg_top, edg_left, edg_bottom]
@@ -1141,16 +1141,16 @@ object confideufo: tconfideufo
         end>
       frame.outerframe = (
         0
-        18
+        20
         0
         0
       )
       taborder = 18
       hint = 'Font name editor text'
       bounds_x = 6
-      bounds_y = 155
+      bounds_y = 153
       bounds_cx = 217
-      bounds_cy = 39
+      bounds_cy = 43
       statfile = mainfo.mainstatfile
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_readonlydialog, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
       value = 'mseide_source'
@@ -1168,7 +1168,7 @@ object confideufo: tconfideufo
             'Unifont'
           )
         end>
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object group_file_change: tgroupbox
@@ -1188,14 +1188,14 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        233
-        2
+        3
+        209
+        3
       )
       bounds_x = 8
-      bounds_y = 28
-      bounds_cx = 246
-      bounds_cy = 17
+      bounds_y = 27
+      bounds_cx = 222
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
       value = True
     end
@@ -1206,15 +1206,15 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        218
-        2
+        3
+        194
+        3
       )
       taborder = 1
       bounds_x = 8
-      bounds_y = 69
-      bounds_cx = 231
-      bounds_cy = 17
+      bounds_y = 68
+      bounds_cx = 207
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
     object tbfileaskload: tbooleaneditradio
@@ -1224,15 +1224,15 @@ object confideufo: tconfideufo
       frame.template = mainfo.menuitemframe
       frame.outerframe = (
         0
-        2
-        182
-        2
+        3
+        163
+        3
       )
       taborder = 2
       bounds_x = 8
-      bounds_y = 112
-      bounds_cx = 195
-      bounds_cy = 17
+      bounds_y = 111
+      bounds_cx = 176
+      bounds_cy = 19
       statfile = mainfo.mainstatfile
     end
   end
@@ -1274,16 +1274,16 @@ object confideufo: tconfideufo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      187
-      2
+      3
+      174
+      3
     )
     taborder = 6
     hint = 'Add space after comma when auto-parsing MSEgui code from designer'
     bounds_x = 313
-    bounds_y = 666
-    bounds_cx = 200
-    bounds_cy = 17
+    bounds_y = 665
+    bounds_cx = 187
+    bounds_cy = 19
     statfile = mainfo.mainstatfile
   end
 end

@@ -36,19 +36,35 @@ const
  {$ifdef CPU64}
 
   defaultsettingmacros: array[settingsmacroty] of msestring = (
-    '', '', '', '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
+    '', '', 
+     {$ifdef pacpas} '${IDEUDIR}\pack\mse\'  {$else} '' {$endif},
+    '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
-    'ppcx64.exe', 'gdb.exe', '${IDEUDIR}lang\', '.exe', 'x86_64-win64', 'windows',
-    '', '', '${IDEUDIR}docview\', '', '', '', '', '');
+     {$ifdef pacpas} '${IDEUDIR}\pack\fpc\fpc-ootb-64.exe' {$else}'ppcx64.exe' {$endif}, 
+     {$ifdef pacpas} '${IDEUDIR}\pack\fpc\tools\gdb.exe' {$else} 'gdb.exe' {$endif},
+     '${IDEUDIR}lang\', '.exe', 'x86_64-win64', 'windows',
+    '', '', '${IDEUDIR}docview\', '',
+      {$ifdef pacpas} '${IDEUDIR}\pack\fpgui\'  {$else} '' {$endif},
+     '', 
+     {$ifdef pacpas} '${IDEUDIR}\pack\bgrabitmap\'  {$else} '' {$endif},
+    '');
  {$else}
 
   defaultsettingmacros: array[settingsmacroty] of msestring = (
-    '', '', '', '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
+    '', '',
+    {$ifdef pacpas} '${IDEUDIR}\pack\mse\'  {$else} '' {$endif},
+    '${MSEDIR}lib\common\', '${IDEUDIR}syntaxdefs\',
     '${IDEUDIR}templates\', '${IDEUDIR}layout\',
     '${MSEDIR}apps\mse\compstore\',
-    'ppc386.exe', 'gdb.exe', '${IDEUDIR}lang\', '.exe', 'i386-win32', 'windows',
-    '', '', '${IDEUDIR}docview\', '', '', '', '', '');
+     {$ifdef pacpas} '${IDEUDIR}\pack\fpc\fpc-ootb-32.exe' {$else}'ppc386.exe' {$endif}, 
+     {$ifdef pacpas} '${IDEUDIR}\pack\fpc\tools\gdb.exe' {$else} 'gdb.exe' {$endif},
+    '${IDEUDIR}lang\', '.exe', 'i386-win32', 'windows',
+    '', '', '${IDEUDIR}docview\', '', 
+     {$ifdef pacpas} '${IDEUDIR}\pack\fpgui\'  {$else} '' {$endif},
+     '',
+    {$ifdef pacpas} '${IDEUDIR}\pack\bgrabitmap\'  {$else} '' {$endif},
+     '');
 
  {$endif}
 
@@ -57,11 +73,18 @@ const
 
   {$ifdef linux}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
-    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '', '', 
+     {$ifdef pacpas} '${IDEUDIR}/pack/mse/'  {$else} '' {$endif},
+    '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb', '${IDEUDIR}lang/' , '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
-    '', '', '', '/usr/share/fpcsrc/');
+     {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
+     'gdb',
+     '${IDEUDIR}lang/' , '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+      {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
+     '',
+     {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
+      '/usr/share/fpcsrc/');
   {$endif}
 
   {$ifdef freebsd}
@@ -97,12 +120,21 @@ const
    {$endif}
 
     {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}
-  defaultsettingmacros: array[settingsmacroty] of msestring = (
-    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', 
+     {$ifdef pacpas} '${IDEUDIR}/pack/mse/'  {$else} '' {$endif},
+    '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/',
-    '', '', '','', '/usr/share/fpcsrc/');
+     {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-32' {$else}'ppc386' {$endif}, 
+     'gdb',
+     '${IDEUDIR}lang/' , '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+      {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
+     '',
+     {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
+      '/usr/share/fpcsrc/');
+  
+  
    {$endif}
 
 
@@ -423,6 +455,38 @@ begin
     debugger.Value        := macros[sma_debugger];
     exeext.Value          := macros[sma_exeext];
     target.Value          := macros[sma_target];
+    
+  {$ifdef pacpas}
+   {$ifdef windows}
+   if debugger.value = '' then debugger.value := '${IDEUDIR}\pack\fpc\tools\gdb.exe';
+   if msedir.value = '' then msedir.value := '${IDEUDIR}\pack\mse\';
+   if fpguidir.value = '' then fpguidir.value := '${IDEUDIR}\pack\fpgui\';
+   if bgrabitmapdir.value = '' then bgrabitmapdir.value := '${IDEUDIR}\pack\bgrabitmap\';
+   if ideudir.value = '' then ideudir.value := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+ 
+   {$ifdef CPU64}
+   if compiler.value = '' then compiler.value := '${IDEUDIR}\pack\fpc\fpc-ootb-64.exe';
+   {$else}
+   if compiler.value = '' then compiler.value := '${IDEUDIR}\pack\fpc\fpc-ootb-32.exe';
+   {$endif}
+ 
+   {$endif}
+    {$ifdef linux}
+   if msedir.value = '' then msedir.value := '${IDEUDIR}/pack/mse/';
+   if fpguidir.value = '' then fpguidir.value := '${IDEUDIR}/pack/fpgui/';
+   if bgrabitmapdir.value = '' then bgrabitmapdir.value := '${IDEUDIR}/pack/bgrabitmap/';
+   if ideudir.value = '' then ideudir.value := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+ 
+   {$ifdef CPU64}
+   if compiler.value = '' then compiler.value := '${IDEUDIR}/pack/fpc/fpc-ootb-64';
+   {$else}
+   if compiler.value = '' then compiler.value := '${IDEUDIR}/pack/fpc/fpc-ootb-32';
+   {$endif}
+ 
+   {$endif}
+      
+  {$endif}
+    
     printcomm.Value       := UTF8Decode(printcommand);
     macroname.gridvalues  := globmacronames;
     macrovalue.gridvalues := globmacrovalues;
