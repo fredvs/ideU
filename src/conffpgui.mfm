@@ -56,9 +56,6 @@ object conffpguifo: tconffpguifo
     bounds_cy = 45
     anchors = [an_left, an_top, an_right]
     statfile = mainfo.mainstatfile
-    value = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
-    valuedefault = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
-    controller.filename = '${IDEUDIR}/plugin/designer_ext/designer_ext.exe'
     controller.lastdir = '${IDEUDIR}/plugin/designer_ext/'
     controller.options = [fdo_sysfilename, fdo_savelastdir]
     controller.captionopen = 'fpGUI Designer path'
