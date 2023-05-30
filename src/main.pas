@@ -4206,7 +4206,7 @@ begin
                               c_linefeed + c_linefeed + c_linefeed +
                               ' Martin Schreiber' +
                               c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2022' +
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023' +
                               c_linefeed +
                               'https://github.com/mse-org/mseide-msegui';
 
@@ -4232,7 +4232,7 @@ begin
                               c_linefeed +
                               '<graemeg@gmail.com>' +
                               c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2022';
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023';
 
   aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
