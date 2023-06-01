@@ -104,7 +104,7 @@ const
       '/usr/share/fpcsrc/');
   {$endif}
 
-  {$ifdef freebsd}
+  {$ifdef bsd}
  {$ifdef polydev}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
     '/usr/local/lib/fpc/3.0.0/', '/usr/local/lib/fpc/3.0.0/units/x86_64-freebsd/',
