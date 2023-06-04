@@ -68,6 +68,7 @@ uses
 (*
 {$define darwin}
 {$define freebsd}
+{$define openbsd}
 {$define windows}
 {$define cpu64}
 {$define cpu86}
@@ -246,13 +247,13 @@ function SakCancel: integer;
 const
   male = 1;
   female = 2;
-  {$IFDEF FREEBSD}
+
+  {$IFDEF BSD}
 // These are missing for FreeBSD in FPC's RTL
   S_IRWXU = S_IRUSR or S_IWUSR or S_IXUSR;
   S_IRWXG = S_IRGRP or S_IWGRP or S_IXGRP;
   S_IRWXO = S_IROTH or S_IWOTH or S_IXOTH;
 {$ENDIF}
-
 
 var
 atrue,
@@ -419,6 +420,9 @@ sakininame = 'sak.ini';
 {$endif}
 {$if defined(freebsd) and  defined(cpu64)}
  espeaklibdir = 'libfreebsd64';
+{$endif}
+{$if defined(openbsd) and  defined(cpu64)}
+ espeaklibdir = 'libopenbsd64';
 {$endif}
 {$if defined(freebsd) and defined(cpu86) }
  espeaklibdir = 'libfreebsd32';
@@ -751,7 +755,7 @@ Sender := iaSender.getinstance;
   begin
     if (trim(TButton(Sender).Caption) <> '') then
       Result := 'button, ' + TButton(Sender).Caption
-    else  
+    else 
     if (trim(TButton(Sender).hint) <> '') then
       Result := 'button, ' + TButton(Sender).hint
      else
@@ -770,7 +774,7 @@ Sender := iaSender.getinstance;
  if assigned(tfilelistviewx(Sender).selectednames) then
     Result := 'file list, ' + utf8decode(tfilelistviewx(Sender).name) + ' , ' + tfilelistviewx(Sender).selectednames[0]
  else Result := 'file list, ' + utf8decode(tfilelistviewx(Sender).name) ;
-  end else  
+  end else 
    if (Sender is thistoryedit) then
   begin
    if trim(thistoryedit(Sender).hint) = '' then
@@ -1400,7 +1404,7 @@ if WhatName(TheSender, true)  <> lastname then
        espeak_Key(
        //aleft + ' , ' + utf8decode(inttostr(twidget(TheSender.getinstance).left+ TheMouseinfo.pos.x)) + ' . ' + atop + ', ' +
        //  utf8decode(inttostr(twidget(TheSender.getinstance).top + TheMouseinfo.pos.y)) + ' . ' +
-         
+        
           afocused + ', ' +
         WhatName(TheSender, true) + stringtemp );
       lastname := WhatName(TheSender, true);
@@ -1670,8 +1674,8 @@ oldlang := MSEFallbackLang;
 
  end else
  begin
- 	if 	(isfilelist = true) and (assigned(Thesender)) then
-	begin
+         if       (isfilelist = true) and (assigned(Thesender)) then
+        begin
  if assigned(tfilelistview(TheSender.getinstance).selectednames) then
  TheCell := tfilelistview(TheSender.getinstance).selectednames[0]
  else
@@ -1679,19 +1683,19 @@ oldlang := MSEFallbackLang;
    TheCell := adirectory + ' , ' +  tfilelistview(TheSender.getinstance).focuseditem.caption;
  end;
  
- if 	(isfilelistx = true) and (assigned(Thesender)) then
-	begin
+ if       (isfilelistx = true) and (assigned(Thesender)) then
+        begin
  if assigned(tfilelistviewx(TheSender.getinstance).selectednames) then
  TheCell := tfilelistviewx(TheSender.getinstance).selectednames[0]
  else
  if trim(tfilelistviewx(TheSender.getinstance).focuseditem.caption) <> '' then
    TheCell := adirectory + ' , ' +  tfilelistviewx(TheSender.getinstance).focuseditem.caption;
  end;
-  
+ 
      espeak_Key(thecell);
-   
-  end;
   
+  end;
+ 
  end;
 
 procedure TSAK.docellevent(const sender: iassistiveclientgrid;
@@ -1710,9 +1714,9 @@ if (assigned(Sender)) and
  isgridsource := false;
 
  if (TheExtraChar = 'Up') or (TheExtraChar = 'Down') or
-    			  (TheExtraChar = 'Prior') or (TheExtraChar = 'Next') or
-    			  (TheExtraChar = 'Backspace') or (TheExtraChar = 'Delete') or
-    			 (TheExtraChar = 'Right') or (TheExtraChar = 'Left') then
+                           (TheExtraChar = 'Prior') or (TheExtraChar = 'Next') or
+                           (TheExtraChar = 'Backspace') or (TheExtraChar = 'Delete') or
+                          (TheExtraChar = 'Right') or (TheExtraChar = 'Left') then
  lrkeyused := true;
 
   isfilelist := false;
@@ -1725,77 +1729,77 @@ if (assigned(Sender)) and
 
  if info.eventkind = cek_keyup then
  begin
- 	 if  (Sender.getinstance is tfilelistview) then
- 	begin
- 	TheSender := sender;
- 	isfilelist := true;
- 	thetimer.enabled := true;
- 	end
+          if  (Sender.getinstance is tfilelistview) then
+         begin
+         TheSender := sender;
+         isfilelist := true;
+         thetimer.enabled := true;
+         end
  else
   if  (Sender.getinstance is tfilelistviewx) then
- 	begin
- 	TheSender := sender;
- 	isfilelistx := true;
- 	thetimer.enabled := true;
- 	end
+         begin
+         TheSender := sender;
+         isfilelistx := true;
+         thetimer.enabled := true;
+         end
  else
  begin
  if (sender.getassistivecaretindex() > -1) and (info.cell.row > -1) then
  begin
-  	mstr1:= sender.getassistivecelltext(info.cell,aflags);
-	if ((lrkeyused = true) and not (Sender.getinstance is Twidgetgrid)) or
-	(TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row)
-	 then
-			begin
-			if (Sender.getinstance is Tstringgrid) or
-			(Sender.getinstance is Tcustomstringgrid) then
-		begin
-		  if (Sender.getinstance is Tstringgrid) then if
-		  Tstringgrid(Sender.getinstance).datacols.count > 1 then
-			TheCell := acolumn + ' , '+ inttostrmse(info.cell.col) + ' , ' + arow + ' , '
-    		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
-    		TheCell :=  arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
+         mstr1:= sender.getassistivecelltext(info.cell,aflags);
+        if ((lrkeyused = true) and not (Sender.getinstance is Twidgetgrid)) or
+        (TheLastCell.row > info.cell.row) or (TheLastCell.row < info.cell.row)
+         then
+                        begin
+                        if (Sender.getinstance is Tstringgrid) or
+                        (Sender.getinstance is Tcustomstringgrid) then
+                begin
+                  if (Sender.getinstance is Tstringgrid) then if
+                  Tstringgrid(Sender.getinstance).datacols.count > 1 then
+                        TheCell := acolumn + ' , '+ inttostrmse(info.cell.col) + ' , ' + arow + ' , '
+                 + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
+                 TheCell :=  arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
 
-    	 if (Sender.getinstance is Tcustomstringgrid) then if
-		  Tcustomstringgrid(Sender.getinstance).datacols.count > 1 then
-			TheCell := acolumn + '  , '+ inttostrmse(info.cell.col) +  ' , ' + arow + ' , '
-    		+ inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
-    		TheCell := arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
+          if (Sender.getinstance is Tcustomstringgrid) then if
+                  Tcustomstringgrid(Sender.getinstance).datacols.count > 1 then
+                        TheCell := acolumn + '  , '+ inttostrmse(info.cell.col) +  ' , ' + arow + ' , '
+                 + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1) else
+                 TheCell := arow + ' , ' + inttostrmse(info.cell.row) + ' , ' + formatcode(mstr1);
 
-			end else
-    	TheCell := arow + ' , '
-    		+ inttostrmse(info.cell.row + 1) + ' , ' + formatcode(mstr1) ;
+                        end else
+         TheCell := arow + ' , '
+                 + inttostrmse(info.cell.row + 1) + ' , ' + formatcode(mstr1) ;
 
-    		TheTypCell := 0 ;
-    		thetimer.enabled := true;
-			end  else
-	if length(mstr1) > 0 then
-			begin
-			mstr2 := mstr1[sender.getassistivecaretindex()] ;
+                 TheTypCell := 0 ;
+                 thetimer.enabled := true;
+                        end  else
+        if length(mstr1) > 0 then
+                        begin
+                        mstr2 := mstr1[sender.getassistivecaretindex()] ;
 
-			{
-			if sender.getassistivecaretindex() < TheLastCell.col then
-			mstr3 := ' Colon , '+ inttostrmse(sender.getassistivecaretindex()) + ' , ' else
-			mstr3 := '';
-			}
-  			        	if (mstr2 = ' ') or (mstr2 = '.') or (mstr2 = ',') or (mstr2 = '"') or
-        	(mstr2 = '[') or (mstr2 = ']') or (mstr2 = '{') or (mstr2 = '}')
-        	or (mstr2 = '(') or (mstr2 = ')') or (mstr2 = '[') or (mstr2 = ']') then
-   				begin
-   			TheCell := Theword ;
-    		TheTypCell := 1 ;
-    		thetimer.enabled := true;
-   			Theword := '';
-    			end else
- 			if mstr2 = ';'  then
-   				begin
- 			    TheTypCell := 1 ;
-    			TheCell := formatcode(mstr1);
-    			thetimer.enabled := true;
-      			end  else
-       		if (TheExtraChar = 'F4') then
-   				begin
-   				gridcoo.col := info.cell.col;
+                        {
+                        if sender.getassistivecaretindex() < TheLastCell.col then
+                        mstr3 := ' Colon , '+ inttostrmse(sender.getassistivecaretindex()) + ' , ' else
+                        mstr3 := '';
+                        }
+                                   if (mstr2 = ' ') or (mstr2 = '.') or (mstr2 = ',') or (mstr2 = '"') or
+         (mstr2 = '[') or (mstr2 = ']') or (mstr2 = '{') or (mstr2 = '}')
+         or (mstr2 = '(') or (mstr2 = ')') or (mstr2 = '[') or (mstr2 = ']') then
+                                 begin
+                         TheCell := Theword ;
+                 TheTypCell := 1 ;
+                 thetimer.enabled := true;
+                         Theword := '';
+                         end else
+                         if mstr2 = ';'  then
+                                 begin
+                             TheTypCell := 1 ;
+                         TheCell := formatcode(mstr1);
+                         thetimer.enabled := true;
+                         end  else
+                 if (TheExtraChar = 'F4') then
+                                 begin
+                                 gridcoo.col := info.cell.col;
                 gridcoo.row := info.cell.row;
 
                 if gridcoo.row - 4 < 0 then
@@ -1812,48 +1816,48 @@ if (assigned(Sender)) and
                 info.cell.row + 1
                //  info.grid.rowcount -1
                 do
-				begin
-				mstr1 := mstr1 + ' , ' +  arow + ' , ' + utf8decode(inttostr(gridcoo.row + 1)) + ' , ' +
-				formatcode(sender.getassistivecelltext(gridcoo,aflags));
-				inc(gridcoo.row);
-				end;
+                                begin
+                                mstr1 := mstr1 + ' , ' +  arow + ' , ' + utf8decode(inttostr(gridcoo.row + 1)) + ' , ' +
+                                formatcode(sender.getassistivecelltext(gridcoo,aflags));
+                                inc(gridcoo.row);
+                                end;
 
-				thetimer.enabled := false;
-   			    TheTypCell := 0 ;
-   			    thetimer.interval := 800000 ;
-    			TheCell := mstr1 ;
-    			thetimer.enabled := true;
-      			end  else
-      		   begin
-    			Theword := Theword + mstr2;
-    			TheTypCell := 0 ;
-    			if lrkeyused = true then
-    			begin
-    			TheTypCell := 0 ;
-    			thetimer.interval := 800000 ;
-    			TheCell :=  formatcode(mstr2);
-     			thetimer.enabled := true;
-     			 end;
-   			end;
- 		end;
- 	TheLastCell.col := sender.getassistivecaretindex() ;
-	TheLastCell.row := info.cell.row;
- 		end;
- 		 end; end else
+                                thetimer.enabled := false;
+                             TheTypCell := 0 ;
+                             thetimer.interval := 800000 ;
+                         TheCell := mstr1 ;
+                         thetimer.enabled := true;
+                         end  else
+                    begin
+                         Theword := Theword + mstr2;
+                         TheTypCell := 0 ;
+                         if lrkeyused = true then
+                         begin
+                         TheTypCell := 0 ;
+                         thetimer.interval := 800000 ;
+                         TheCell :=  formatcode(mstr2);
+                         thetimer.enabled := true;
+                          end;
+                         end;
+                 end;
+         TheLastCell.col := sender.getassistivecaretindex() ;
+        TheLastCell.row := info.cell.row;
+                 end;
+                  end; end else
  if info.eventkind = cek_mousemove then
   begin
   if itementer = false then
   begin
      mstr2:= acolumn + ' , '+ inttostrmse(sender.getassistivecaretindex())+
        ' , ' + arow +  ' , ' +  inttostrmse(info.cell.row+1) + ' , ';
-	mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell,aflags));
+        mstr1 := mstr2 + formatcode(sender.getassistivecelltext(info.cell,aflags));
 
- 	Theword := '';
- 	TheLastCell.col := sender.getassistivecaretindex() ;
-	TheLastCell.row := info.cell.row;
-	TheTypCell := 0 ;
-	TheCell :=  mstr1;
-	 thetimer.interval := 300000;
+         Theword := '';
+         TheLastCell.col := sender.getassistivecaretindex() ;
+        TheLastCell.row := info.cell.row;
+        TheTypCell := 0 ;
+        TheCell :=  mstr1;
+         thetimer.interval := 300000;
      thetimer.enabled := true;
     end;
    itementer := false;
@@ -1973,7 +1977,7 @@ begin
   acolumn := 'column';
   arow := 'row';
   end else
-  
+ 
   if (MSEFallbackLang = 'fr') then
   begin
   atrue := 'vrai';
@@ -1987,7 +1991,7 @@ begin
   acolumn := 'colonne';
   arow := 'ligne';
   end else
-  
+ 
   if (MSEFallbackLang = 'es') then
   begin
   atrue := 'verdadero';
@@ -2001,7 +2005,7 @@ begin
   acolumn := 'columna';
   arow := 'fila';
   end else
-  
+ 
   if (MSEFallbackLang = 'de') then
   begin
   atrue := 'wahr';
@@ -2015,7 +2019,7 @@ begin
   acolumn := 'Spalte';
   arow := 'Zeile';
   end else
-   
+  
   if (MSEFallbackLang = 'ru') then
   begin
   atrue := 'правда';
