@@ -986,7 +986,7 @@ object filedialogxfo: Tfiledialogxfo
     bounds_cy = 48
   end
   object tbitmapcomp1: tbitmapcomp
-    bitmap.options = []
+    bitmap.options = [bmo_graymask]
     bitmap.alignment = [al_stretchx, al_stretchy]
     left = 240
     top = 194
@@ -994,7 +994,7 @@ object filedialogxfo: Tfiledialogxfo
   object iconslist: timagelist
     width = 18
     height = 18
-    options = [bmo_masked]
+    options = [bmo_masked, bmo_graymask]
     transparentcolor = -2147483647
     count = 20
     left = 240

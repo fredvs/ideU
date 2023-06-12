@@ -16,7 +16,7 @@ object conflangfo: tconflangfo
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
-  icon.options = [bmo_masked]
+  icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   icon.image = {
     0000000012000000120000001200000094030000000000000000000000000000

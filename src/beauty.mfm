@@ -21,7 +21,7 @@ object beautyfo: tbeautyfo
   fontempty.localprops = []
   options = [fo_freeonclose, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Code Beautifier'
-  icon.options = [bmo_masked]
+  icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   icon.image = {
     000000001200000018000000180000005C030000000000000000000000000000

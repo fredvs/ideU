@@ -18,7 +18,7 @@ object conffpguifo: tconffpguifo
   options = [fo_screencentered, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = mainfo.mainstatfile
   caption = 'Configuration of fpGUI'
-  icon.options = [bmo_masked]
+  icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   windowopacity = -Inf
   moduleclassname = 'tmseform'

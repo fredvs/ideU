@@ -1,8 +1,8 @@
 object actionsmo: tactionsmo
   bounds_cx = 956
   bounds_cy = 472
-  left = 330
-  top = 395
+  left = 260
+  top = 336
   moduleclassname = 'tmsedatamodule'
   object makeact: taction
     Tag = 1
@@ -291,7 +291,7 @@ object actionsmo: tactionsmo
   object buttonicons: timagelist
     width = 24
     height = 24
-    options = [bmo_masked]
+    options = [bmo_masked, bmo_graymask]
     count = 45
     left = 355
     top = 31
