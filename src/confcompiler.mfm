@@ -21,7 +21,7 @@ object confcompilerfo: tconfcompilerfo
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   statfile = mainfo.mainstatfile
   caption = 'Configuration of Compilers'
-  icon.options = [bmo_masked, bmo_graymask]
+  icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf
   onshow = oncreatedev

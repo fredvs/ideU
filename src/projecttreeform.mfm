@@ -706,7 +706,7 @@ object projecttreefo: tprojecttreefo
     top = 120
   end
   object nodeicons: timagelist
-    options = [bmo_masked, bmo_graymask]
+    options = [bmo_masked]
     count = 8
     left = 144
     top = 120
@@ -872,7 +872,7 @@ object projecttreefo: tprojecttreefo
   object dummyimage: timagelist
     width = 0
     height = 0
-    options = [bmo_masked, bmo_graymask]
+    options = [bmo_masked]
     left = 144
     top = 144
   end

@@ -25,7 +25,7 @@ object sourcefo: tsourcefo
   onactivate = enterexe
   visible = False
   bounds_x = 506
-  bounds_y = 257
+  bounds_y = 411
   bounds_cx = 696
   bounds_cy = 352
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -47,8 +47,9 @@ object sourcefo: tsourcefo
   statfile = mainfo.projectstatfile
   caption = '<none>'
   icon.transparentcolor = -2147483642
-  icon.options = [bmo_masked, bmo_graymask]
+  icon.options = [bmo_masked]
   icon.origformat = 'png'
+  windowopacity = -Inf
   onclosequery = sourcefoonclosequery
   onidle = formonidle
   moduleclassname = 'tdockform'
@@ -93,15 +94,15 @@ object sourcefo: tsourcefo
     tab_face.fade_direction = gd_up
     tab_face.localprops = [fal_fadirection, fal_image]
     tab_face.template = tfacecomp1
-    tab_color = -2147483642
+    tab_color = -2147483645
     tab_edge_colordkshadow = -2147483642
     tab_edge_colorshadow = -2147483642
     tab_edge_colorlight = -2147483642
     tab_edge_colorhighlight = -2147483642
     tab_edge_colordkwidth = 0
     tab_edge_colorhlwidth = 0
-    tab_colortab = -2147483642
-    tab_coloractivetab = -2147483642
+    tab_colortab = -2147483645
+    tab_coloractivetab = -2147483645
     tab_frametab.colorframe = -2147483642
     tab_frametab.colorframeactive = -2147483642
     tab_frametab.colorframeclicked = -2147483642
@@ -202,7 +203,7 @@ object sourcefo: tsourcefo
     top = 64
   end
   object imagelist: timagelist
-    options = [bmo_masked, bmo_graymask]
+    options = [bmo_masked]
     count = 14
     left = 56
     top = 144
@@ -816,7 +817,7 @@ object sourcefo: tsourcefo
   object timagelist2: timagelist
     width = 4
     height = 4
-    options = [bmo_masked, bmo_graymask]
+    options = [bmo_masked]
     count = 8
     cornermask_topleft = #2#1
     cornermask_bottomleft = #2#1
@@ -904,7 +905,7 @@ object sourcefo: tsourcefo
   object buttonimage: timagelist
     width = 9
     height = 14
-    options = [bmo_masked, bmo_graymask]
+    options = [bmo_masked]
     count = 4
     left = 275
     top = 69
