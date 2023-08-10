@@ -11,7 +11,6 @@ uses
   msesys,
   mseguiintf,
   SysUtils,
-  LazUTF8,
   msefileutils,
   msegraphics,
   mseglob,
@@ -110,8 +109,8 @@ begin
           if system.pos('msgstr', str1) > 0 then
           begin
             x := 1;
-            str1 := utf8StringReplace(str1, 'msgstr', '', [rfReplaceAll]);
-            str1 := utf8StringReplace(str1, '"', '', [rfReplaceAll]);
+            str1 := StringReplace(str1, 'msgstr', '', [rfReplaceAll]);
+            str1 := StringReplace(str1, '"', '', [rfReplaceAll]);
             lang_langnames[length(lang_langnames) - 1] := trim(str1);
           end;
          // writeln(lang_langnamestmp[length(lang_langnamestmp) - 1]);
@@ -132,15 +131,15 @@ begin
   while (y < length(constvaluearray)) and (hasfound = False) do
   begin
     str2  := (constvaluearray[y]);
-    acomp := UTF8Copy(str2, 1, system.pos(';', str2) - 1);
+    acomp := Copy(str2, 1, system.pos(';', str2) - 1);
     // writeln('---acomp:' + acomp);
-    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
-    astro := (UTF8Copy(str2, 1, system.pos(';', str2) - 1));
-    astro := utf8StringReplace(astro, '\"', '"', [rfReplaceAll]);
+    str2  := (Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
+    astro := (Copy(str2, 1, system.pos(';', str2) - 1));
+    astro := StringReplace(astro, '\"', '"', [rfReplaceAll]);
     //  writeln('---astro:' + astro);
-    str2  := (UTF8Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
-    astrt := UTF8Copy(str2, 1, length(str2));
-    astrt := utf8StringReplace(astrt, '\"', '"', [rfReplaceAll]);
+    str2  := (Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
+    astrt := Copy(str2, 1, length(str2));
+    astrt := StringReplace(astrt, '\"', '"', [rfReplaceAll]);
 
     if thearray[theindex] = astro then
       hasfound := True;
@@ -259,19 +258,19 @@ begin
       file1.readln(str1);
       strtemp := '';
 
-      if (trim(str1) <> '') and (UTF8Copy(str1, 1, 1) <> '#') then
-        if (UTF8Copy(str1, 1, 7) = 'msgctxt') then
+      if (trim(str1) <> '') and (Copy(str1, 1, 1) <> '#') then
+        if (Copy(str1, 1, 7) = 'msgctxt') then
         begin
           ispocontext := True;
 
           setlength(constvaluearray, length(constvaluearray) + 1);
           str2      := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-          str2      := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2      := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+          str2      := StringReplace(str2, '\n', '', [rfReplaceAll]);
+          str2      := StringReplace(str2, '\', '', [rfReplaceAll]);
           constvaluearray[length(constvaluearray) - 1] := str2;
           str3      := '';
           str4      := '';
-          str4      := (UTF8Copy(str1, 10, length(str1) - 10));
+          str4      := (Copy(str1, 10, length(str1) - 10));
           iscontext := True;
           isid      := False;
           isstring  := False;
@@ -282,31 +281,31 @@ begin
           begin
             setlength(constvaluearray, length(constvaluearray) + 1);
             str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-            str2 := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-            str2 := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+            str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
+            str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
             constvaluearray[length(constvaluearray) - 1] := str2;
             str3 := '';
             str4 := '';
           end;
-          str2 := UTF8Copy(str1, 8, length(str1) - 8);
+          str2 := Copy(str1, 8, length(str1) - 8);
           iscontext := False;
           isid      := True;
           isstring  := False;
         end
-        else if (UTF8Copy(str1, 1, 6) = 'msgstr') then
+        else if (Copy(str1, 1, 6) = 'msgstr') then
         begin
-          str3      := (UTF8Copy(str1, 9, length(str1) - 9));
-          str3      := utf8StringReplace(str3, '\n', '', [rfReplaceAll]);
+          str3      := (Copy(str1, 9, length(str1) - 9));
+          str3      := StringReplace(str3, '\n', '', [rfReplaceAll]);
           iscontext := False;
           isid      := False;
           isstring  := True;
         end
         else if iscontext then
         begin
-          strtemp := UTF8Copy(str1, 2, length(str1) - 2);
+          strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := utf8StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
             str4    := str4 + strtemp + utf8String(sLineBreak);
           end
           else
@@ -314,10 +313,10 @@ begin
         end
         else if isid then
         begin
-          strtemp := UTF8Copy(str1, 2, length(str1) - 2);
+          strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := utf8StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
             str2    := str2 + strtemp + utf8String(sLineBreak);
           end
           else
@@ -325,10 +324,10 @@ begin
         end
         else if isstring then
         begin
-          strtemp := UTF8Copy(str1, 2, length(str1) - 2);
+          strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := utf8StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
             str3    := (str3 + strtemp + utf8String(sLineBreak));
           end
           else
@@ -338,8 +337,8 @@ begin
 
     setlength(constvaluearray, length(constvaluearray) + 1);
     str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-    str2 := utf8StringReplace(str2, '\n', '', [rfReplaceAll]);
-    str2 := utf8StringReplace(str2, '\', '', [rfReplaceAll]);
+    str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
+    str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
     constvaluearray[length(constvaluearray) - 1] := str2;
 
     file1.Free;
@@ -414,8 +413,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_modalresulttext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_modalresult[x] := astrt;
 
@@ -433,8 +432,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_modalresulttextnoshortcut[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_modalresultnoshortcut[x] := astrt;
     end;
@@ -451,8 +450,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_projectoptionscontext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_projectoptionscon[x] := astrt;
     end;
@@ -469,8 +468,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_actionsmoduletext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_actionsmodule[x] := astrt;
 
@@ -488,8 +487,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_mainformtext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_mainform[x] := astrt;
     end;
@@ -506,8 +505,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_sourceformtext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_sourceform[x] := astrt;
     end;
@@ -524,8 +523,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_settingstext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_settings[x] := astrt;
     end;
@@ -542,8 +541,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_projectoptionstext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_projectoptions[x] := astrt;
 
@@ -561,8 +560,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_stockcaption[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_stockcaption[x] := astrt;
 
@@ -580,8 +579,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_xstockcaption[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_xstockcaption[x] := astrt;
 
@@ -599,8 +598,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_extendedtext[x];
 
-      astrt := utf8StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := utf8StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
+      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
 
       lang_extended[x] := astrt;
 

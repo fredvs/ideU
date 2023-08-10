@@ -29,16 +29,16 @@ object headerfo: theaderfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     bounds_x = 20
-    bounds_y = 140
+    bounds_y = 138
     bounds_cx = 380
-    bounds_cy = 36
+    bounds_cy = 40
     value = '# SOME DESCRIPTIVE TITLE.'#10'# Copyright (C) YEAR THE PACKAGE''S COPYRIGHT HOLDER'#10'# This file is distributed under the same license as the PACKAGE package.'#10'# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.'#10'#'#10'#, fuzzy'#10'msgid ""'#10'msgstr ""'#10'"Project-Id-Version: \n"'#10'"Report-Msgid-Bugs-To: \n"'#10'"POT-Creation-Date: 2019-03-04 23:54+0300\n"'#10'"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"'#10'"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"'#10'"Language-Team: LANGUAGE <LL@li.org>\n"'#10'"Language: \n"'#10'"MIME-Version: 1.0\n"'#10'"Content-Type: text/plain; charset=UTF-8\n"'#10'"Content-Transfer-Encoding: 8bit\n"'
-    reffontheight = 15
+    reffontheight = 17
   end
   object tbutton2: tbutton
     taborder = 1
@@ -57,15 +57,15 @@ object headerfo: theaderfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      117
-      2
+      3
+      110
+      3
     )
     taborder = 2
     bounds_x = 264
-    bounds_y = 22
-    bounds_cx = 130
-    bounds_cy = 17
+    bounds_y = 21
+    bounds_cx = 123
+    bounds_cy = 19
     visible = False
   end
   object tbutton4: tbutton
@@ -92,15 +92,15 @@ object headerfo: theaderfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 5
     bounds_x = 20
-    bounds_y = 82
+    bounds_y = 80
     bounds_cx = 380
-    bounds_cy = 39
+    bounds_cy = 43
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734
@@ -112,7 +112,7 @@ object headerfo: theaderfo
     controller.hideicons = False
     controller.showhidden = False
     controller.options = [fdo_directory, fdo_savelastdir]
-    reffontheight = 15
+    reffontheight = 17
   end
   object tlabel1: tlabel
     optionswidget1 = [ow1_fontglyphheight]
@@ -126,7 +126,7 @@ object headerfo: theaderfo
     font.name = 'stf_default'
     font.localprops = [flp_height]
     textflags = [tf_ycentered, tf_wordbreak]
-    reffontheight = 19
+    reffontheight = 23
   end
   object tbutton3: tbutton
     Tag = 2
@@ -184,7 +184,7 @@ object headerfo: theaderfo
     bounds_cx = 426
     bounds_cy = 438
     anchors = [an_left, an_top, an_right, an_bottom]
-    reffontheight = 15
+    reffontheight = 17
   end
   object paneldone: tgroupbox
     frame.colorclient = 16765345
@@ -203,13 +203,13 @@ object headerfo: theaderfo
       bounds_x = 44
       bounds_y = 197
       bounds_cx = 353
-      bounds_cy = 48
+      bounds_cy = 55
       caption = 'Done.'
       font.height = 40
       font.name = 'stf_default'
       font.localprops = [flp_height]
       textflags = [tf_xcentered, tf_ycentered]
-      reffontheight = 48
+      reffontheight = 55
     end
   end
   object ttimer1: ttimer
