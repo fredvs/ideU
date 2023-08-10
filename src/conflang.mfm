@@ -102,7 +102,7 @@ object conflangfo: tconflangfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 19
+        height = 17
         captions.count = 3
         captions.items = <        
           item
@@ -178,7 +178,7 @@ object conflangfo: tconflangfo
     datarowheight = 17
     statfile = mainfo.mainstatfile
     oncellevent = oncellev
-    reffontheight = 15
+    reffontheight = 13
     object gridlangcaption: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
@@ -192,7 +192,7 @@ object conflangfo: tconflangfo
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
       value = 'English'
-      reffontheight = 15
+      reffontheight = 13
     end
     object gridlangcode: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -203,7 +203,7 @@ object conflangfo: tconflangfo
       bounds_y = 0
       bounds_cx = 1
       bounds_cy = 17
-      reffontheight = 15
+      reffontheight = 13
     end
     object gridlangbool: tbooleaneditradio
       optionswidget1 = []
@@ -235,9 +235,9 @@ object conflangfo: tconflangfo
     bounds_x = 38
     bounds_y = 3
     bounds_cx = 263
-    bounds_cy = 49
+    bounds_cy = 51
     caption = 'Set as default'
-    reffontheight = 15
+    reffontheight = 17
   end
   object bousemo: tbooleanedit
     frame.caption = 'Use MO files instead of PO files'
@@ -246,15 +246,15 @@ object conflangfo: tconflangfo
     frame.localprops1 = [frl1_captiondist]
     frame.outerframe = (
       0
-      2
-      188
-      2
+      3
+      180
+      3
     )
     taborder = 5
     bounds_x = 23
-    bounds_y = 205
-    bounds_cx = 201
-    bounds_cy = 17
+    bounds_y = 191
+    bounds_cx = 193
+    bounds_cy = 19
     statfile = mainfo.mainstatfile
     onchange = onchange
   end
@@ -267,24 +267,24 @@ object conflangfo: tconflangfo
     frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive, frl1_captiondist]
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
-      46
+      43
       0
       0
       0
     )
     taborder = 6
     hint = 'Font height for all ideU text'
-    bounds_x = 472
-    bounds_y = 200
-    bounds_cx = 76
-    bounds_cy = 21
+    bounds_x = 475
+    bounds_y = 215
+    bounds_cx = 73
+    bounds_cy = 23
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     value = 12
     valuedefault = 12
     valuemin = 1
     valuemax = 1000
-    reffontheight = 15
+    reffontheight = 17
   end
   object gridlistfont: tstringgrid
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_noclampinview]
@@ -325,7 +325,7 @@ object conflangfo: tconflangfo
       item
         frame.localprops = []
         frame.localprops1 = []
-        height = 19
+        height = 17
         numstep = 1
         captions.count = 1
         captions.items = <        
@@ -341,9 +341,9 @@ object conflangfo: tconflangfo
       28173
     )
     zebra_start = 1
-    datarowheight = 19
+    datarowheight = 17
     statpriority = 1
     oncellevent = ongridfontcellev
-    reffontheight = 15
+    reffontheight = 13
   end
 end
