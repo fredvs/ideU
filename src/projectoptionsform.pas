@@ -1339,6 +1339,7 @@ procedure projectoptionstofont(const afont: tfont);
 begin
   with projectoptions, afont do
   begin
+  
    if (confideufo.usedefaulteditoroptions.value) and (assigned(confideufo)) then
    begin
    Name       := confideufo.editfontnamesrc.value;

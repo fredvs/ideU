@@ -38,16 +38,16 @@ object confdebuggerfo: tconfdebuggerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 4
     hint = 'Path to debugger 4'
     bounds_x = 10
-    bounds_y = 265
+    bounds_y = 263
     bounds_cx = 504
-    bounds_cy = 39
+    bounds_cy = 43
     statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -60,7 +60,7 @@ object confdebuggerfo: tconfdebuggerfo
     controller.hideicons = False
     controller.showhidden = False
     controller.captionopen = 'Debugger Path'
-    reffontheight = 15
+    reffontheight = 17
   end
   object debugger3: tfilenameeditx
     Tag = 7
@@ -77,16 +77,16 @@ object confdebuggerfo: tconfdebuggerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 3
     hint = 'Path to debugger 3'
     bounds_x = 11
-    bounds_y = 188
+    bounds_y = 186
     bounds_cx = 504
-    bounds_cy = 39
+    bounds_cy = 43
     statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -99,7 +99,7 @@ object confdebuggerfo: tconfdebuggerfo
     controller.hideicons = False
     controller.showhidden = False
     controller.captionopen = 'Debugger Path'
-    reffontheight = 15
+    reffontheight = 17
   end
   object debugger2: tfilenameeditx
     Tag = 7
@@ -116,16 +116,16 @@ object confdebuggerfo: tconfdebuggerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 2
     hint = 'Path to debugger 2'
     bounds_x = 11
-    bounds_y = 117
+    bounds_y = 115
     bounds_cx = 504
-    bounds_cy = 39
+    bounds_cy = 43
     statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -138,7 +138,7 @@ object confdebuggerfo: tconfdebuggerfo
     controller.hideicons = False
     controller.showhidden = False
     controller.captionopen = 'Debugger Path'
-    reffontheight = 15
+    reffontheight = 17
   end
   object debugger1: tfilenameeditx
     Tag = 7
@@ -155,16 +155,16 @@ object confdebuggerfo: tconfdebuggerfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 1
     hint = 'Path to debugger 1'
     bounds_x = 11
-    bounds_y = 52
+    bounds_y = 50
     bounds_cx = 504
-    bounds_cy = 39
+    bounds_cy = 43
     statfile = mainfo.mainstatfile
     controller.fontheight = 0
     controller.fontname = 'stf_default'
@@ -177,7 +177,7 @@ object confdebuggerfo: tconfdebuggerfo
     controller.hideicons = False
     controller.showhidden = False
     controller.captionopen = 'Debugger Path'
-    reffontheight = 15
+    reffontheight = 17
   end
   object tnClose: tbutton
     frame.optionsskin = [fso_flat]

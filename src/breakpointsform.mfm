@@ -22,6 +22,7 @@ object breakpointsfo: tbreakpointsfo
   statfile = mainfo.projectstatfile
   caption = 'Breakpoints'
   icon.transparentcolor = -2147483642
+  windowopacity = -Inf
   onshow = breakpointsonshow
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
@@ -46,7 +47,7 @@ object breakpointsfo: tbreakpointsfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 17
+        height = 19
         captions.count = 11
         captions.items = <        
           item
@@ -169,18 +170,18 @@ object breakpointsfo: tbreakpointsfo
         widgetname = 'flags'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 17
+    datarowheight = 19
     onrowsdeleting = gridonrowsdeleting
     onrowsdeleted = gridonrowsdeleted
     oncellevent = gridoncellevent
-    reffontheight = 15
+    reffontheight = 17
     object bkpton: tbooleanedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       ondataentered = ondataentered
@@ -197,11 +198,11 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 17
       bounds_y = 0
       bounds_cx = 158
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       ondataentered = ondataenterednewbkpt
       onsetvalue = filenameonsetvalue
-      reffontheight = 15
+      reffontheight = 17
     end
     object path: tstringedit
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -211,9 +212,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 176
       bounds_y = 0
       bounds_cx = 50
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 15
+      reffontheight = 17
     end
     object line: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -224,12 +225,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 227
       bounds_y = 0
       bounds_cx = 50
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       ondataentered = ondataenterednewbkpt
       onsetvalue = lineonsetvalue
       valuemin = 1
-      reffontheight = 15
+      reffontheight = 17
     end
     object address: tint64edit
       optionswidget1 = [ow1_fontglyphheight]
@@ -243,7 +244,7 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 278
       bounds_y = 0
       bounds_cx = 61
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       font.name = 'stf_fixed'
       font.xscale = 1
@@ -251,7 +252,7 @@ object breakpointsfo: tbreakpointsfo
       ondataentered = addressentered
       base = nb_hex
       valuemax = -1
-      reffontheight = 15
+      reffontheight = 17
     end
     object addressbkpt: tbooleanedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -264,9 +265,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 340
       bounds_y = 0
       bounds_cx = 6
-      bounds_cy = 17
+      bounds_cy = 19
       visible = False
-      reffontheight = 15
+      reffontheight = 17
     end
     object bkptno: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -277,9 +278,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 347
       bounds_y = 0
       bounds_cx = 19
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 15
+      reffontheight = 17
     end
     object count: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -290,10 +291,10 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 367
       bounds_y = 0
       bounds_cx = 31
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 15
+      reffontheight = 17
     end
     object ignore: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -304,12 +305,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 399
       bounds_y = 0
       bounds_cx = 30
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       ondataentered = ondataentered
       onsetvalue = ignoreonsetvalue
-      reffontheight = 15
+      reffontheight = 17
     end
     object conderr: tdataicon
       optionswidget1 = [ow1_fontglyphheight]
@@ -318,13 +319,13 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 430
       bounds_y = 0
       bounds_cx = 7
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       visible = False
       imagelist = actionsmo.buttonicons
       imageoffset = 10
-      reffontheight = 15
+      reffontheight = 17
     end
     object condition: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -335,12 +336,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 438
       bounds_y = 0
       bounds_cx = 124
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick, oe_trimright, oe_trimleft]
       ondataentered = ondataentered
       onsetvalue = conditiononsetvalue
-      reffontheight = 15
+      reffontheight = 17
     end
     object errormessage: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -350,10 +351,10 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 563
       bounds_y = 0
       bounds_cx = 19
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 15
+      reffontheight = 17
     end
     object flags: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -364,9 +365,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 583
       bounds_y = 0
       bounds_cx = 17
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object bkptson: tbooleanedit
@@ -375,14 +376,14 @@ object breakpointsfo: tbreakpointsfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      93
-      2
+      3
+      87
+      3
     )
     bounds_x = 8
-    bounds_y = 3
-    bounds_cx = 106
-    bounds_cy = 17
+    bounds_y = 2
+    bounds_cx = 100
+    bounds_cy = 19
     statfile = mainfo.projectstatfile
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
     onchange = bkptsononchange

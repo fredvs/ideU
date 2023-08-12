@@ -59,7 +59,7 @@ uses
 
 procedure tconfdebuggerfo.oncreat(const Sender: TObject);
 begin
-  setlangdebuggers();
+ // setlangdebuggers();
 end;
 
 procedure tconfdebuggerfo.setlangdebuggers();

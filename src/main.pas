@@ -3502,6 +3502,8 @@ sourcefo.updatehinttab;
 if (confideufo.usedefaulteditoroptions.Value) then
   begin
     layoutbusy := True;
+    
+    {
     if Assigned(sourcefo.ActivePage) then
       begin
         if han <> -1 then
@@ -3516,7 +3518,7 @@ if (confideufo.usedefaulteditoroptions.Value) then
         sourcefo.ActivePage.updatestatvalues;
         str1.Destroy();
       end;
-
+}
     thedir := tosysfilepath(confideufo.deflayout.Text);
 
     if fileexists(thedir) then
@@ -4156,6 +4158,9 @@ end;
 procedure tmainfo.viewconfideuexecute(Const Sender: TObject);
 begin
   //confideufo.activate;
+  
+  confideufo.setlangextrasettings();
+  confideufo.confideuresize;
   confideufo.Show(True);
 end;
 

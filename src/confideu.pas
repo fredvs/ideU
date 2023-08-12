@@ -92,6 +92,7 @@ uses
   messageform,
   conflang,
   sourceform,
+  sourcepage,
   finddialogform,
   targetconsole,
   ideusettings,
@@ -783,6 +784,7 @@ var
  str1: ttextstream;
  thedir : string;
 begin
+
   messagefo.updateprojectoptions;
   onchangefont;
   noconfirmdelete := confirmdel.Value;
@@ -790,15 +792,8 @@ begin
   
   if usedefaulteditoroptions.value then
   begin
-  if fileexists(defsynt.text) then begin
-  if hanconf <> -1 then sourcefo.syntaxpainter.freedeffile(hanconf);
-  thedir := tosysfilepath(defsynt.Text);
-  str1 := ttextstream.Create(thedir);
-  hanconf := sourcefo.syntaxpainter.readdeffile(str1);
-  sourcefo.activepage.edit.setsyntaxdef(hanconf);
-  sourcefo.activepage.updatestatvalues;
-  str1.Destroy();
-  end;
+  
+  
   if fileexists(deflayout.text) then begin
   thedir := tosysfilepath(deflayout.Text);
   str1:= ttextstream.create(thedir);
@@ -806,7 +801,19 @@ begin
   mainfo.loadwindowlayout(str1);
   str1.Destroy();
   end; 
+  
+  sourcefo.files_tab.activepageindex := 0;
+  sourcefo.activepage.updatestatvalues;
+   
+   if fileexists(defsynt.text) then begin
+  if hanconf <> -1 then sourcefo.syntaxpainter.freedeffile(hanconf);
+  thedir := tosysfilepath(defsynt.Text);
+  str1 := ttextstream.Create(thedir);
+  hanconf := sourcefo.syntaxpainter.readdeffile(str1);
+  str1.Destroy();
   end;
+ 
+ end;
  
 end;
 
@@ -829,7 +836,6 @@ var
 strz : string = '';
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
-
   Caption := lang_xstockcaption[ord(sc_extrasettings)] + strz ;
   but_ok.Caption  := lang_modalresult[Ord(mr_ok)] + strz ;
   but_apply.Caption  := lang_settings[Ord(se_apply)] + strz ;
@@ -884,13 +890,13 @@ begin
   tbfilenoload.frame.caption := lang_settings[Ord(se_filenoload)] + strz ;
   tbfileaskload.frame.caption := lang_settings[Ord(se_fileaskload)] + strz ;
    rectanglearea.frame.caption := lang_settings[Ord(se_rectanglearea)] + strz ;
- 
+
 end;
 
 procedure tconfideufo.onshow(const sender: TObject);
 begin
-setlangextrasettings();
-confideuresize;
+//setlangextrasettings();
+//confideuresize;
 end;
 
 end.

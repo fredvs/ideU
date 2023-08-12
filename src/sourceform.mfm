@@ -49,6 +49,7 @@ object sourcefo: tsourcefo
   icon.transparentcolor = -2147483642
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
+  windowopacity = -Inf
   onclosequery = sourcefoonclosequery
   onidle = formonidle
   moduleclassname = 'tdockform'

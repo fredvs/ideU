@@ -134,7 +134,7 @@ end;
 
 procedure tconfcompilerfo.oncreatedev(const Sender: TObject);
 begin
-  setlangcompilers();
+ // setlangcompilers();
 
 {$ifdef windows}
 
