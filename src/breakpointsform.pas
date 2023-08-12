@@ -97,8 +97,7 @@ type
    procedure changed;
    procedure insertbkpt(index: integer;
                                withcondition,witherrormessage: boolean);
-   procedure setlangbreakpoints();
-                             
+                                
   public
    gdb: tgdbmi;
 
@@ -110,6 +109,7 @@ type
    breakpointignore: integerarty;
    breakpointconditions: msestringarty;
 
+   procedure setlangbreakpoints();
    procedure clear;
    procedure refresh;
    procedure updatestat(const statfiler: tstatfiler);
@@ -263,7 +263,7 @@ end;
 
 procedure tbreakpointsfo.breakpointsonshow(const sender: TObject);
 begin
-setlangbreakpoints();
+//setlangbreakpoints();
  refresh;
 end;
 
@@ -814,7 +814,7 @@ end;
 
 procedure tbreakpointsfo.oncreat(const sender: TObject);
 begin
-setlangbreakpoints();
+//setlangbreakpoints();
 end;
 
 procedure tbreakpointsfo.setlangbreakpoints();

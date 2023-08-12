@@ -76,7 +76,6 @@ type
     procedure oncreated(const Sender: TObject);
     procedure setlangextrasettings();
     procedure confideuresize ;
-    procedure onshow(const sender: TObject);
     procedure seteditedenable();  
   end;
 
@@ -92,7 +91,6 @@ uses
   messageform,
   conflang,
   sourceform,
-  sourcepage,
   finddialogform,
   targetconsole,
   ideusettings,
@@ -893,11 +891,6 @@ begin
 
 end;
 
-procedure tconfideufo.onshow(const sender: TObject);
-begin
-//setlangextrasettings();
-//confideuresize;
-end;
 
 end.
 

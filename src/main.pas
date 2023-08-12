@@ -2167,6 +2167,7 @@ end;
 
 procedure tmainfo.viewbreakpointsonexecute(Const Sender: TObject);
 begin
+  breakpointsfo.setlangbreakpoints();
   breakpointsfo.activate;
   if breakpointsfo.Width < 50 then
     begin
