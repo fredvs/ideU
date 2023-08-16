@@ -291,13 +291,21 @@ procedure tdebuggerfo.onsetdebug(const sender: TObject);
 begin
 if debug_on.tag = 0 then
 begin
-debug_on.tag := 1 ;
-imagebut.getimage(0, debug_on.face.image);
+  debug_on.tag := 1 ;
+ {$ifndef netbsd}
+ imagebut.getimage(0, debug_on.face.image);
+ {$else}
+ debug_on.imagenr := 40;
+ {$endif}
  end
  else
  begin
   debug_on.tag := 0;
+  {$ifndef netbsd}
   imagebut.getimage(1, debug_on.face.image);
+  {$else}
+  debug_on.imagenr := 41;
+  {$endif}
  end;
 end;
 
