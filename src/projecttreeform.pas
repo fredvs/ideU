@@ -1233,7 +1233,13 @@ end;
 
 procedure tprojecttreefo.projecttreefooncreate(const sender: tobject);
 begin
- projecttree:= tprojecttree.create;
+ 
+  {$ifdef netbsd}
+  nodeicons.options := [bmo_masked];
+  {$endif};
+ 
+  projecttree:= tprojecttree.create;
+
 end;
 
 procedure tprojecttreefo.projecttreefoonloaded(const sender: tobject);

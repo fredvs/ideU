@@ -309,6 +309,7 @@ object projecttreefo: tprojecttreefo
     00E0FFFFFFFF070000C0FFFFFFFF030000000000000000000000000000000000
     00000000000000000000000000000000
   }
+  windowopacity = -Inf
   oncreate = projecttreefooncreate
   oneventloopstart = projecttreefoonloaded
   ondestroy = projecttreefoondestroy
@@ -465,10 +466,10 @@ object projecttreefo: tprojecttreefo
         widgetname = 'edit'
         dataclass = titemeditlist
       end>
-    datarowheight = 16
+    datarowheight = 18
     statfile = mainfo.projectstatfile
     oncellevent = gridcellevent
-    reffontheight = 15
+    reffontheight = 17
     object projectedit: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -485,7 +486,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 141
-      bounds_cy = 17
+      bounds_cy = 19
       empty_color = -2147483647
       empty_textcolor = -2147483647
       empty_textcolorbackground = -2147483647
@@ -527,7 +528,7 @@ object projecttreefo: tprojecttreefo
       bounds_x = 142
       bounds_y = 0
       bounds_cx = 150
-      bounds_cy = 16
+      bounds_cy = 18
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       font.name = 'stf_default'
@@ -538,7 +539,7 @@ object projecttreefo: tprojecttreefo
       dropdown.cols.items = <      
         item
         end>
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object unitpopup: tpopupmenu
@@ -708,8 +709,8 @@ object projecttreefo: tprojecttreefo
   object nodeicons: timagelist
     options = [bmo_masked, bmo_graymask]
     count = 8
-    left = 144
-    top = 120
+    left = 173
+    top = 85
     image = {
       00000000120000003000000030000000380A0000000000000000000000000000
       0000000000000000000000000000000000000000FF00FF6300000006FF00FF0A
@@ -873,8 +874,8 @@ object projecttreefo: tprojecttreefo
     width = 0
     height = 0
     options = [bmo_masked, bmo_graymask]
-    left = 144
-    top = 144
+    left = 154
+    top = 127
   end
   object editdiract: taction
     caption = 'Edit Directory Caption'
