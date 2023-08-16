@@ -2409,14 +2409,15 @@ begin
     fo.project_creator.Value   := o.project_creator;
     fo.project_copyright.Value := o.project_copyright;
     fo.project_license.Value   := o.project_license;
-
-    if trim(o.project_date) <> '' then
+    
+    {$ifndef netbsd}
+     if trim(o.project_date) <> '' then
       fo.project_date.Value := o.project_date
     else
       fo.project_date.Value := UTF8Decode(timetostr(now) + ' ' + datetostr(now));
-
+    {$endif}
+        
     fo.project_comment.Value := o.project_comment;
-
 
     /// fred exe ext
 
