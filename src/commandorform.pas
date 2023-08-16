@@ -74,6 +74,7 @@ type
    templnrdark: tfacecomp;
    templlang: tfacecomp;
    templlangdark: tfacecomp;
+   tfacecompnul: tfacecomp;
    procedure watchonexecute(const sender: TObject);
    procedure breakonexecute(const sender: TObject);
    procedure hintonexecute(const sender: TObject);
@@ -378,6 +379,11 @@ procedure tdebuggerfo.oncreat(const sender: TObject);
 begin
 
 {$ifdef netbsd}
+
+panelmain.face.template := tfacecompnul;
+panelproject.face.template := tfacecompnul;
+paneledited.face.template := tfacecompnul;
+
 assistive.imagelist := actionsmo.buttonicons;
 assistive.face.image := statdisp.face.image;
 

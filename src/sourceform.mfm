@@ -50,6 +50,7 @@ object sourcefo: tsourcefo
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   windowopacity = -Inf
+  oncreate = oncreated
   onclosequery = sourcefoonclosequery
   onidle = formonidle
   moduleclassname = 'tdockform'
@@ -59,7 +60,7 @@ object sourcefo: tsourcefo
     bounds_y = 0
     bounds_cx = 686
     bounds_cy = 352
-    color = -1610612731
+    color = -2147483645
     anchors = []
     popupmenu = tpopupmenu1
     onactivepagechanged = tabwidgetonactivepagechanged
@@ -94,15 +95,15 @@ object sourcefo: tsourcefo
     tab_face.fade_direction = gd_up
     tab_face.localprops = [fal_fadirection, fal_image]
     tab_face.template = tfacecomp1
-    tab_color = -2147483642
+    tab_color = -2147483645
     tab_edge_colordkshadow = -2147483642
     tab_edge_colorshadow = -2147483642
     tab_edge_colorlight = -2147483642
     tab_edge_colorhighlight = -2147483642
     tab_edge_colordkwidth = 0
     tab_edge_colorhlwidth = 0
-    tab_colortab = -2147483642
-    tab_coloractivetab = -2147483642
+    tab_colortab = -2147483645
+    tab_coloractivetab = -2147483645
     tab_frametab.colorframe = -2147483642
     tab_frametab.colorframeactive = -2147483642
     tab_frametab.colorframeclicked = -2147483642

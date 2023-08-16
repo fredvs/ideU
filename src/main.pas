@@ -586,6 +586,10 @@ end;
 
 procedure tmainfo.mainfooncreate(Const Sender: TObject);
 begin
+ {$ifdef netbsd}
+  vievmenuicons.options := [bmo_masked]; 
+ {$endif}
+
 {$ifdef pacpas}
  mainstatfile.filedir  := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
     'ini');

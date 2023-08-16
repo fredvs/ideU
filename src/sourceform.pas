@@ -141,6 +141,7 @@ type
     procedure convpasex(const Sender: TObject);
     procedure insuidexec(const Sender: TObject);
     procedure stephintev(const Sender: TObject; var info: hintinfoty);
+   procedure oncreated(const sender: TObject);
    private
     fasking: Boolean;
     fgdbpage: tsourcepage;
@@ -1741,6 +1742,15 @@ procedure tsourcefo.stephintev(const Sender: TObject; var info: hintinfoty);
 begin
   info.Caption := info.Caption + '(' +
     encodeshortcutname(tstockglyphbutton(Sender).shortcut) + ').';
+end;
+
+procedure tsourcefo.oncreated(const sender: TObject);
+begin
+ {$ifdef netbsd}
+  buttonimage.options := [bmo_masked];
+  imagelist.options := [bmo_masked]; 
+  timagelist2.options := [bmo_masked]; 
+ {$endif}
 end;
 
 

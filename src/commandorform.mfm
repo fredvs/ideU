@@ -191,7 +191,7 @@ object debuggerfo: tdebuggerfo
   end
   object paneledited: tdockpanel
     helpcontext = ' '
-    color = -2147483645
+    color = 14210238
     frame.framewidth = 1
     frame.colorframe = 6710886
     frame.localprops = [frl_framewidth, frl_colorframe]
@@ -2515,7 +2515,7 @@ object debuggerfo: tdebuggerfo
     end
   end
   object panelmain: tdockpanel
-    color = -2147483645
+    color = 13619151
     frame.framewidth = 1
     frame.colorframe = 6710886
     frame.localprops = [frl_framewidth, frl_colorframe]
@@ -3483,7 +3483,7 @@ object debuggerfo: tdebuggerfo
     end
   end
   object panelproject: tdockpanel
-    color = -2147483645
+    color = 12176818
     frame.framewidth = 1
     frame.colorframe = 6710886
     frame.localprops = [frl_framewidth, frl_colorframe]
@@ -9659,5 +9659,9 @@ object debuggerfo: tdebuggerfo
     template.fade_direction = gd_down
     left = 557
     top = 36
+  end
+  object tfacecompnul: tfacecomp
+    left = 1080
+    top = 22
   end
 end
