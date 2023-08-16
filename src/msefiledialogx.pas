@@ -2401,6 +2401,11 @@ end;
 
 procedure tfiledialogxfo.oncreat(const Sender: TObject);
 begin
+
+  {$ifdef netbsd}
+  iconslist.options := [bmo_masked]; 
+  {$endif}
+ 
   theimagelist    := iconslist;
   fsplitterpanpos := tsplitter1.left;
   fisfixedrow     := False;

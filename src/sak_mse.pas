@@ -75,6 +75,7 @@ Math, Classes, Process, dynlibs
 {$define darwin}
 {$define freebsd}
 {$define openbsd}
+{$define netbsd}
 {$define windows}
 {$define cpu64}
 {$define cpu86}
@@ -447,6 +448,9 @@ const
 {$endif}
 {$if defined(openbsd) and  defined(cpu64)}
   espeaklibdir = 'libopenbsd64';
+{$endif}
+{$if defined(netbsd) and  defined(cpu64)}
+  espeaklibdir = 'libnetbsd64';
 {$endif}
 {$if defined(freebsd) and defined(cpu86) }
   espeaklibdir = 'libfreebsd32';

@@ -376,7 +376,94 @@ end;
 
 procedure tdebuggerfo.oncreat(const sender: TObject);
 begin
-//icon := mainfo.icon;
+
+{$ifdef netbsd}
+assistive.imagelist := actionsmo.buttonicons;
+assistive.face.image := statdisp.face.image;
+
+properties_list.imagelist := actionsmo.buttonicons;
+properties_list.face.image := statdisp.face.image;
+
+find_in_directory.imagelist := actionsmo.buttonicons;
+find_in_directory.face.image := statdisp.face.image;
+
+line_number.imagelist := actionsmo.buttonicons;
+line_number.face.image := statdisp.face.image;
+
+terminal_run.imagelist := actionsmo.buttonicons;
+terminal_run.face.image := statdisp.face.image;
+
+project_open.imagelist := actionsmo.buttonicons;
+project_open.face.image := statdisp.face.image;
+
+project_save.imagelist := actionsmo.buttonicons;
+project_save.face.image := statdisp.face.image;
+
+project_option.imagelist := actionsmo.buttonicons;
+project_option.face.image := statdisp.face.image;
+
+project_make.imagelist := actionsmo.buttonicons;
+project_make.face.image := statdisp.face.image;
+
+project_abort_compil.imagelist := actionsmo.buttonicons;
+project_abort_compil.face.image := statdisp.face.image;
+
+debug_on.imagelist := actionsmo.buttonicons;
+debug_on.face.image := statdisp.face.image;
+
+project_start.imagelist := actionsmo.buttonicons;
+project_start.face.image := statdisp.face.image;
+
+project_next.imagelist := actionsmo.buttonicons;
+project_next.face.image := statdisp.face.image;
+
+project_step.imagelist := actionsmo.buttonicons;
+project_step.face.image := statdisp.face.image;
+
+project_finish.imagelist := actionsmo.buttonicons;
+project_finish.face.image := statdisp.face.image;
+
+project_next_instruction.imagelist := actionsmo.buttonicons;
+project_next_instruction.face.image := statdisp.face.image;
+
+project_step_instruction.imagelist := actionsmo.buttonicons;
+project_step_instruction.face.image := statdisp.face.image;
+
+project_reset.imagelist := actionsmo.buttonicons;
+project_reset.face.image := statdisp.face.image;
+
+project_interrupt.imagelist := actionsmo.buttonicons;
+project_interrupt.face.image := statdisp.face.image;
+
+open_file.imagelist := actionsmo.buttonicons;
+open_file.face.image := statdisp.face.image;
+
+save_file.imagelist := actionsmo.buttonicons;
+save_file.face.image := statdisp.face.image;
+
+find_in_edit.imagelist := actionsmo.buttonicons;
+find_in_edit.face.image := statdisp.face.image;
+
+toggle_form_unit.imagelist := actionsmo.buttonicons;
+toggle_form_unit.face.image := statdisp.face.image;
+
+code_beauty.imagelist := actionsmo.buttonicons;
+code_beauty.face.image := statdisp.face.image;
+
+procedure_list.imagelist := actionsmo.buttonicons;
+procedure_list.face.image := statdisp.face.image;
+
+edited_make.imagelist := actionsmo.buttonicons;
+edited_make.face.image := statdisp.face.image;
+
+edited_abort.imagelist := actionsmo.buttonicons;
+edited_abort.face.image := statdisp.face.image;
+
+edited_run.imagelist := actionsmo.buttonicons;
+edited_run.face.image := statdisp.face.image;
+
+{$endif}
+
 end;
 
 end.
