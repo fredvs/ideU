@@ -1871,7 +1871,7 @@ end;
 
 procedure tobjectinspectorfo.objectinspectoronchildscaled(const sender: TObject);
 begin
- placeyorder(0,[2],[compselector,grid]);placeyorder(0,[2],[compselector,grid]);
+ placeyorder(0,[2],[compselector,grid]);
 // aligny(wam_center,[compselector,findbu,compedit]);
 end;
 
