@@ -446,15 +446,21 @@ const
 {$if defined(freebsd) and  defined(cpu64)}
   espeaklibdir = 'libfreebsd64';
 {$endif}
+{$if defined(freebsd) and defined(cpu86) }
+  espeaklibdir = 'libfreebsd32';
+ {$endif}
+{$if defined(dragonfly) and defined(cpu64) }
+  espeaklibdir = 'libdragonfly64';
+ {$endif}
 {$if defined(openbsd) and  defined(cpu64)}
   espeaklibdir = 'libopenbsd64';
 {$endif}
 {$if defined(netbsd) and  defined(cpu64)}
   espeaklibdir = 'libnetbsd64';
 {$endif}
-{$if defined(freebsd) and defined(cpu86) }
-  espeaklibdir = 'libfreebsd32';
- {$endif}
+{$if defined(netbsd) and  defined(cpu32)}
+  espeaklibdir = 'libnetbsd32';
+{$endif}
 {$ifdef darwin}
   espeaklibdir = 'libmac32';
 {$endif}

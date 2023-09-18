@@ -110,8 +110,8 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 790
-    bounds_cy = 77
+    bounds_cx = 775
+    bounds_cy = 79
     anchors = []
     font.color = -1610612734
     font.name = 'stf_default'
@@ -1377,10 +1377,14 @@ object mainfo: tmainfo
               item
                 caption = 'Component &Palette'
                 name = 'componentspalette'
-                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localonexecute]
+                state = [as_localcaption, as_localimagelist, as_localimagenr, as_localshortcut, as_localonexecute]
                 imagelist = vievmenuicons
                 imagenr = 1
                 onexecute = viewcomponentpaletteonexecute
+                sc = (
+                  1
+                  313
+                )
               end            
               item
                 caption = 'Component Sto&re'
@@ -1629,10 +1633,11 @@ object mainfo: tmainfo
   end
   object projectstatfile: tstatfile
     filename = 'status.sta'
+    options = [sfo_createpath, sfo_transaction, sfo_activatorread, sfo_activatorwrite]
     onstatbeforeread = statbefread
     onstatafterread = statafterread
-    left = 15
-    top = 26
+    left = 40
+    top = 50
   end
   object vievmenuicons: timagelist
     width = 18

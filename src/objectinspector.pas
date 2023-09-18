@@ -35,7 +35,7 @@ uses
  msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
  msedesigner,msetypes,msestrings,mselist,msegraphics, msedispwidgets,
- mserichstring;
+ mserichstring, msetimer;
  
 type
  tobjectinspectorfo = class;
@@ -92,6 +92,7 @@ type
    mainpopup: tpopupmenu;
    findbu: tbutton;
    compedit: tbutton;
+   ttimer1: ttimer;
    procedure propsoncheckrowmove(const curindex: Integer;
                   const newindex: Integer; var accept: Boolean);
    procedure createexe(const sender: TObject);
@@ -144,6 +145,7 @@ type
    procedure enterexe(const sender: TObject);
    procedure onexecfindbu(const sender: TObject);
    procedure onpainttree(const sender: twidget; const acanvas: tcanvas);
+   procedure ontimeroi(const sender: TObject);
   private
    factmodule: tmsecomponent;
    factcomp: tcomponent;
@@ -694,7 +696,7 @@ begin
   props.itemlist.endupdate;
   values.itemlist.endupdate;
  end;
- 
+
 end;
 
 procedure tobjectinspectorfo.valuesenterexe(const sender: TObject);
@@ -1869,7 +1871,7 @@ end;
 
 procedure tobjectinspectorfo.objectinspectoronchildscaled(const sender: TObject);
 begin
- placeyorder(0,[2],[compselector,grid]);
+ placeyorder(0,[2],[compselector,grid]);placeyorder(0,[2],[compselector,grid]);
 // aligny(wam_center,[compselector,findbu,compedit]);
 end;
 
@@ -2089,6 +2091,7 @@ end;
 procedure tobjectinspectorfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
+ ttimer1.enabled := true;
 end;
 
 procedure tobjectinspectorfo.onexecfindbu(const sender: TObject);
@@ -2099,6 +2102,12 @@ end;
 procedure tobjectinspectorfo.onpainttree(const sender: twidget;
                const acanvas: tcanvas);
 begin
+end;
+
+procedure tobjectinspectorfo.ontimeroi(const sender: TObject);
+begin
+height := height + 1;
+height := height - 1;
 end;
 
 initialization

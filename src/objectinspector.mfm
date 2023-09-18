@@ -11,10 +11,10 @@ object objectinspectorfo: tobjectinspectorfo
   onenter = enterexe
   onactivate = enterexe
   visible = False
-  bounds_x = 651
-  bounds_y = 142
+  bounds_x = 903
+  bounds_y = 103
   bounds_cx = 254
-  bounds_cy = 353
+  bounds_cy = 421
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = objectinspectoronchildscaled
@@ -22,7 +22,7 @@ object objectinspectorfo: tobjectinspectorfo
     0
     0
     244
-    353
+    421
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Objectinspector'
@@ -99,6 +99,7 @@ object objectinspectorfo: tobjectinspectorfo
     E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501
     D3D3D301D2D2D201D0D0D001
   }
+  windowopacity = -Inf
   oncreate = createexe
   oneventloopstart = objectinspectorfoonloaded
   onasyncevent = asyncexe
@@ -120,7 +121,7 @@ object objectinspectorfo: tobjectinspectorfo
     bounds_x = 0
     bounds_y = 1
     bounds_cx = 163
-    bounds_cy = 21
+    bounds_cy = 23
     anchors = [an_left, an_top, an_right]
     onsetvalue = compselectoronsetvalue
     dropdown.options = [deo_selectonly, deo_autodropdown, deo_keydropdown]
@@ -129,16 +130,16 @@ object objectinspectorfo: tobjectinspectorfo
       item
       end>
     onbeforedropdown = compselectorbeforedropdown
-    reffontheight = 15
+    reffontheight = 17
   end
   object grid: twidgetgrid
     frame.localprops = [frl_levelo, frl_colorclient]
     frame.localprops1 = []
     popupmenu = gridpopup
     bounds_x = 0
-    bounds_y = 30
+    bounds_y = 26
     bounds_cx = 244
-    bounds_cy = 322
+    bounds_cy = 390
     anchors = [an_top, an_bottom]
     optionsgrid = [og_colsizing, og_colmoving, og_colchangeontabkey, og_wrapcol]
     optionsgrid1 = [og1_noresetselect]
@@ -229,7 +230,7 @@ object objectinspectorfo: tobjectinspectorfo
     drag.onbeforedragbegin = gridondragbegin
     drag.onbeforedragover = gridondragover
     drag.onbeforedragdrop = gridondragdrop
-    reffontheight = 15
+    reffontheight = 17
     object props: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -245,7 +246,7 @@ object objectinspectorfo: tobjectinspectorfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 90
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext, oe_locate]
       onkeydown = propskeydownexe
@@ -297,7 +298,7 @@ object objectinspectorfo: tobjectinspectorfo
         item
         end>
       onbeforedropdown = valuesbeforedropdown
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object findbu: tbutton
@@ -361,5 +362,12 @@ object objectinspectorfo: tobjectinspectorfo
       end>
     left = 56
     top = 56
+  end
+  object ttimer1: ttimer
+    interval = 100000
+    options = [to_single]
+    ontimer = ontimeroi
+    left = 70
+    top = 164
   end
 end

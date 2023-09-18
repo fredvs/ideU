@@ -81,7 +81,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'x86_64-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -97,14 +97,14 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'aarch64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'aarch64-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
       '/usr/share/fpcsrc/');
   {$endif}
 
-  {$ifdef bsd}
+  {$ifdef freebsd}
  {$ifdef polydev}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
     '/usr/local/lib/fpc/3.0.0/', '/usr/local/lib/fpc/3.0.0/units/x86_64-freebsd/',
@@ -112,7 +112,7 @@ const
     '/usr/local/share/ideu/syntaxdefs/',
     '/usr/local/share/ideu/templates/', '/usr/local/share/ideu/layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', '/usr/local/bin/gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux',
+    'ppcx64', '/usr/local/bin/gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'unix',
     '/usr/local/share/fpgui/', '/usr/local/share/ideu/',
     '/usr/local/share/docview/', '', '', '', '','');
    {$else}
@@ -124,14 +124,36 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'unix', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
       '/usr/share/fpcsrc/');   {$endif}
    {$endif}
+   
+   
+  {$ifdef netbsd}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-netbsd', 'unix', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+    {$endif}
+    
+   {$ifdef openbsd}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-openbsd', 'unix', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+    {$endif}  
+   
+   
 
-  {$else}
+  {$else} // 32 bit
+  
    {$if defined(linux) and defined(cpuarm)}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
     '', '', 
@@ -141,14 +163,14 @@ const
     '${MSEDIR}apps/ide/compstore/',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-32' {$else}'ppc386' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'arm-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'arm-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
       '/usr/share/fpcsrc/');
    {$endif}
 
-    {$if defined(cpu32) and defined(linux) and not defined(cpuarm)}
+    {$if defined(linux) and not defined(cpuarm)}
     defaultsettingmacros: array[settingsmacroty] of msestring = (
     '', '', 
      {$ifdef pacpas} '${IDEUDIR}/pack/mse/'  {$else} '' {$endif},
@@ -157,11 +179,21 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-32' {$else}'ppc386' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'i386-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
       '/usr/share/fpcsrc/');
+    {$endif}
+    
+      {$ifdef netbsd}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-netbsd', 'unix', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+
     {$endif}
 
 
@@ -170,7 +202,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-freebsd', 'linux', '', '',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-freebsd', 'unix', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
 
     {$endif}
