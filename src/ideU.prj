@@ -69,8 +69,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
-projectdir=/home/fred/ideU-main/src
-projectfilename=/home/fred/ideU-main/src/ideU.prj
+projectdir=/home/fred/ideUmain/src
+projectfilename=/home/fred/ideUmain/src/ideU.prj
 findinfiledialog=95
  [findinfileadialogfo.subdirs]
  value=1
@@ -172,10 +172,10 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=538
- y=217
+ x=1002
+ y=158
  cx=298
- cy=258
+ cy=324
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
@@ -364,8 +364,8 @@ settings=8
  [settings_form]
  x=492
  y=29
- cx=482
- cy=756
+ cx=518
+ cy=820
  wsize=0
  active=1
  visible=1
@@ -923,18 +923,21 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=3
- /home/fred/ideU-main/src/actionsmodule.mfm
- /home/fred/ideU-main/src/main.mfm
- /home/fred/ideU-main/src/sourceform.mfm
+modulefiles=4
+ /home/fred/ideUmain/src/actionsmodule.mfm
+ /home/fred/ideUmain/src/main.mfm
+ /home/fred/ideUmain/src/projectoptionsform.mfm
+ /home/fred/ideUmain/src/sourceform.mfm
 befcommandon=0
 makeoptionson=18
  4095
@@ -1573,8 +1576,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=fiens
+finddtext=item1.submenu[int2].options 
 findhistory=20
+ item1.submenu[int2].options 
+ newformonexecute
  fiens
  pacpas
  macro
@@ -1593,46 +1598,53 @@ findhistory=20
  beforeactiv
  onscale
  fontsize
- extrasettings
- extrase
 findoptions=1
-editpos=4
- 67,5
+editpos=5
  0,0
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 0,4
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/actionsmodule.pas
-relpaths=4
+ ${PROJECTDIR}/main.pas
+relpaths=5
  ideU.pas
- main.pas
  sourceform.pas
+ projectoptionsform.pas
  actionsmodule.pas
-ismoduletexts=4
+ main.pas
+ismoduletexts=5
  0
  0
  0
  0
-modules=3
- /home/fred/ideU-main/src/main.mfm
- /home/fred/ideU-main/src/actionsmodule.mfm
- /home/fred/ideU-main/src/sourceform.mfm
-moduleoptions=3
+ 0
+modules=4
+ /home/fred/ideUmain/src/sourceform.mfm
+ /home/fred/ideUmain/src/main.mfm
+ /home/fred/ideUmain/src/actionsmodule.mfm
+ /home/fred/ideUmain/src/projectoptionsform.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
@@ -1640,7 +1652,7 @@ nomenumodules=3
 firsttab=0
 index=0
 [layout]
-windowlayout=544
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1654,10 +1666,10 @@ windowlayout=544
  ny=0
  ncx=0
  ncy=0
- x=70
- y=57
- cx=1326
- cy=673
+ x=22
+ y=128
+ cx=1562
+ cy=724
  rcx=0
  rcy=0
  wsize=0
@@ -1690,7 +1702,7 @@ windowlayout=544
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1784,7 +1796,7 @@ windowlayout=544
  x=0
  y=0
  cx=205
- cy=484
+ cy=522
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1796,7 +1808,7 @@ windowlayout=544
  sorted=0
  col=1
  row=-1073741823
- rowheight=17
+ rowheight=19
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1874,10 +1886,10 @@ windowlayout=544
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=241
- width0=107
+ propcolwidthref=440
+ width0=196
  sortdescend0=0
- width1=128
+ width1=238
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1900,25 +1912,7 @@ windowlayout=544
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=18
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ values0=0
  width0=111
  sortdescend0=0
  width1=125
@@ -1970,9 +1964,9 @@ windowlayout=544
  ncx=0
  ncy=0
  x=0
- y=549
- cx=1313
- cy=100
+ y=591
+ cx=1548
+ cy=107
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2071,8 +2065,8 @@ windowlayout=544
  ncy=0
  x=0
  y=0
- cx=1313
- cy=59
+ cx=1548
+ cy=63
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2083,12 +2077,12 @@ windowlayout=544
  mdistate=0
  nx=0
  ny=0
- ncx=1313
- ncy=63
+ ncx=1548
+ ncy=66
  x=0
  y=0
- cx=1313
- cy=63
+ cx=1548
+ cy=66
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2098,9 +2092,9 @@ windowlayout=544
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideU-main/src/main.pas
+ value=/home/fred/ideUmain/src/actionsmodule.pas
  history=5
-  /home/fred/ideU-main/src/main.pas
+  /home/fred/ideUmain/src/actionsmodule.pas
   /home/fred/ideU_lin64/layout/${PROJECTDIR}
   
   /home/fred/ideU/src/layout
@@ -2121,8 +2115,8 @@ windowlayout=544
  ncy=0
  x=208
  y=0
- cx=1105
- cy=484
+ cx=1340
+ cy=522
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -2161,25 +2155,44 @@ windowlayout=544
  ncx=0
  ncy=0
  x=0
- y=62
- cx=1313
- cy=484
+ y=66
+ cx=1548
+ cy=522
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
+ [_mse_sourcefo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=287
- y=268
- cx=810
- cy=100
+ x=506
+ y=257
+ cx=706
+ cy=352
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_projectoptionsfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=212
+ y=56
+ cx=823
+ cy=606
  rcx=0
  rcy=0
  wsize=0

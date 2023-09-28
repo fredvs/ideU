@@ -1554,7 +1554,7 @@ begin
 
       item1 := mainfo.mainmenu1.menu.itembynames(['file', 'new', 'msegui', 'form']);
       item1.submenu.Count := 0;
-      item1.submenu.Count := length(newfonames) + 1;
+      item1.submenu.Count := length(newfonames);
       int2  := 0;
       for int1 := 0 to high(newfonames) do
         if not newinheritedforms[int1] then
@@ -1571,8 +1571,8 @@ begin
           end;
           Inc(int2);
         end;
-      item1.submenu[int2].options := [mao_separator];
-      Inc(int2);
+      //item1.submenu[int2].options := [mao_separator];
+      //Inc(int2);
       for int1 := 0 to high(newfonames) do
         if newinheritedforms[int1] then
         begin

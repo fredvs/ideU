@@ -3116,8 +3116,8 @@ var
   po1: pmoduleinfoty;
   ancestorclass, ancestorunit: msestring;
 begin
-  // if formkindty(tmenuitem(sender).tag) = fok_inherited then begin
-  if projectoptions.o.newinheritedforms[tmenuitem(Sender).tag] then
+ // if projectoptions.o.newinheritedforms[tmenuitem(Sender).tag] then
+ if (system.Pos('inherited',lowercase(tmenuitem(sender).caption)) <> 0) then
     begin
       po1 := selectinheritedmodule(Nil, lang_mainform[Ord(ma_selectancestor)]);
       if po1 = nil then
