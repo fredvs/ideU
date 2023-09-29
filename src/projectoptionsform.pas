@@ -1557,22 +1557,22 @@ begin
       item1.submenu.Count := length(newfonames);
       int2  := 0;
       for int1 := 0 to high(newfonames) do
-        if not newinheritedforms[int1] then
+     //  if not newinheritedforms[int1] then
         begin
           with item1.submenu[int2] do
           begin
             Caption   := newfonames[int1];
             tag       := int1;
             onexecute :=
-{$ifdef FPC}
-              @
-{$endif}
-              mainfo.newformonexecute;
+
+              @ mainfo.newformonexecute;
           end;
           Inc(int2);
         end;
-      //item1.submenu[int2].options := [mao_separator];
-      //Inc(int2);
+      {
+      item1.submenu[int2].options := [mao_separator];
+      Inc(int2);
+      
       for int1 := 0 to high(newfonames) do
         if newinheritedforms[int1] then
         begin
@@ -1581,13 +1581,11 @@ begin
             Caption   := newfonames[int1];
             tag       := int1;
             onexecute :=
-{$ifdef FPC}
-              @
-{$endif}
-              mainfo.newformonexecute;
+              @mainfo.newformonexecute;
           end;
           Inc(int2);
         end;
+        }
  
       with mainfo.mainmenu1.menu.submenu do
       begin
