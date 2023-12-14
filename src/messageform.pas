@@ -172,11 +172,11 @@ while system.pos('0m', atext2) > 0 do
      case lev1 of
       el_error: begin
       if mainfo.themenr = 0 then
-       setrowcolor(0) else setrowcolor(4) ;
+       setrowcolor(0) else setrowcolor(5) ;
       end;
       el_warning: begin
         if mainfo.themenr = 0 then
-       setrowcolor(1) else setrowcolor(5) ;
+       setrowcolor(1) else setrowcolor(4) ;
       end;
       el_note: begin
         if mainfo.themenr = 0 then

@@ -69,8 +69,8 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
-projectdir=/home/fred/ideUmain/src
-projectfilename=/home/fred/ideUmain/src/ideU.prj
+projectdir=/home/fred/ideu/src
+projectfilename=/home/fred/ideu/src/ideU.prj
 findinfiledialog=95
  [findinfileadialogfo.subdirs]
  value=1
@@ -923,21 +923,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=5
  ACTIONSMO
  MAINFO
+ MESSAGEFO
  PROJECTOPTIONSFO
  SOURCEFO
-moduletypes=4
+moduletypes=5
  TACTIONSMO
  TMAINFO
+ TMESSAGEFO
  TPROJECTOPTIONSFO
  TSOURCEFO
-modulefiles=4
- /home/fred/ideUmain/src/actionsmodule.mfm
- /home/fred/ideUmain/src/main.mfm
- /home/fred/ideUmain/src/projectoptionsform.mfm
- /home/fred/ideUmain/src/sourceform.mfm
+modulefiles=5
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/messageform.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=18
  4095
@@ -1599,60 +1602,76 @@ findhistory=20
  onscale
  fontsize
 findoptions=1
-editpos=5
+editpos=6
+ 0,19
+ 0,-1073741823
+ 0,-1073741823
  0,0
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,4
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=5
+ ${PROJECTDIR}/messageform.pas
+relpaths=6
  ideU.pas
  sourceform.pas
  projectoptionsform.pas
  actionsmodule.pas
  main.pas
-ismoduletexts=5
+ messageform.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=4
- /home/fred/ideUmain/src/sourceform.mfm
- /home/fred/ideUmain/src/main.mfm
- /home/fred/ideUmain/src/actionsmodule.mfm
- /home/fred/ideUmain/src/projectoptionsform.mfm
-moduleoptions=4
+ 0
+modules=5
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/projectoptionsform.mfm
+ /home/fred/ideu/src/messageform.mfm
+moduleoptions=5
  0
  0
  0
  0
-visiblemodules=4
+ 0
+visiblemodules=5
  -1
  -1
  -1
  -1
-nomenumodules=4
+ -1
+nomenumodules=5
+ 0
  0
  0
  0
  0
 [sourcefo.files_tab]
+order=6
+ 0
+ 2
+ 3
+ 4
+ 5
+ 1
 firsttab=0
 index=0
 [layout]
-windowlayout=545
+windowlayout=584
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1666,10 +1685,10 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=22
- y=128
- cx=1562
- cy=724
+ x=5
+ y=29
+ cx=1590
+ cy=866
  rcx=0
  rcy=0
  wsize=0
@@ -1796,7 +1815,7 @@ windowlayout=545
  x=0
  y=0
  cx=205
- cy=522
+ cy=643
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1886,10 +1905,10 @@ windowlayout=545
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=440
- width0=196
+ propcolwidthref=446
+ width0=199
  sortdescend0=0
- width1=238
+ width1=241
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1964,9 +1983,9 @@ windowlayout=545
  ncx=0
  ncy=0
  x=0
- y=591
- cx=1548
- cy=107
+ y=710
+ cx=1576
+ cy=133
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2065,8 +2084,8 @@ windowlayout=545
  ncy=0
  x=0
  y=0
- cx=1548
- cy=63
+ cx=1576
+ cy=61
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2077,12 +2096,12 @@ windowlayout=545
  mdistate=0
  nx=0
  ny=0
- ncx=1548
- ncy=66
+ ncx=1576
+ ncy=79
  x=0
  y=0
- cx=1548
- cy=66
+ cx=1576
+ cy=64
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2092,13 +2111,26 @@ windowlayout=545
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideUmain/src/actionsmodule.pas
- history=5
-  /home/fred/ideUmain/src/actionsmodule.pas
-  /home/fred/ideU_lin64/layout/${PROJECTDIR}
-  
-  /home/fred/ideU/src/layout
-  ${PROJECTDIR}/main.pas
+ value=/home/fred/ideu/src/messageform.pas
+ history=18
+  /home/fred/ideu/src/messageform.pas
+  /home/fred/strumpract/src/piano.pas
+  /home/fred/strumpract/src/filelistform.pas
+  /home/fred/strumpract/src/msepulsesimple.pas
+  /home/fred/msepulsesimple.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgramseguibitmap.pas
+  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/sysnr.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/syscallh.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/syscall.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/bsyscall.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/x86_64/si_c.inc
+  /home/fred/strumpract/src/imagedancer.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgraanimatedgif.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/avifbgra.pas
+  /home/fred/Downloads/strumpract-betterdrum0/src/alsa_mixer.pas
+  /home/fred/Downloads/strumpract-360/src/drums.pas
+  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrafreetype.pas
+  /home/fred/strumpract/src/infosd.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2115,11 +2147,18 @@ windowlayout=545
  ncy=0
  x=208
  y=0
- cx=1340
- cy=522
+ cx=1368
+ cy=643
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=6
+  0
+  2
+  3
+  4
+  5
+  1
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]
@@ -2155,9 +2194,9 @@ windowlayout=545
  ncx=0
  ncy=0
  x=0
- y=66
- cx=1548
- cy=522
+ y=64
+ cx=1576
+ cy=643
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
@@ -2182,7 +2221,7 @@ windowlayout=545
  [_mse_projectoptionsfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=mainfo
+ stackedunder=_mse_messagefo_mse_
  parent=
  mdistate=3
  nx=0
@@ -2193,6 +2232,25 @@ windowlayout=545
  y=56
  cx=823
  cy=606
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_messagefo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=mainfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=642
+ y=581
+ cx=467
+ cy=281
  rcx=0
  rcy=0
  wsize=0
