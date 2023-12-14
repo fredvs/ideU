@@ -63,7 +63,7 @@ var
 
 implementation
 uses
- actionsmodule, finddialogform, findmessage,
+ actionsmodule, finddialogform, findmessage, main,
  messageform_mfm,sourcepage, confideu,projectoptionsform,
  sourceform,msewidgets,msestrings,msedatalist;
 
@@ -171,16 +171,20 @@ while system.pos('0m', atext2) > 0 do
                                            lev1,fn1,col1,row1) then begin
      case lev1 of
       el_error: begin
-       setrowcolor(0);
+      if mainfo.themenr = 0 then
+       setrowcolor(0) else setrowcolor(4) ;
       end;
       el_warning: begin
-       setrowcolor(1);
+        if mainfo.themenr = 0 then
+       setrowcolor(1) else setrowcolor(5) ;
       end;
       el_note: begin
-       setrowcolor(2);
+        if mainfo.themenr = 0 then
+       setrowcolor(2) else setrowcolor(6) ;
       end;
       el_hint: begin
-       setrowcolor(3);
+        if mainfo.themenr = 0 then
+       setrowcolor(3) else setrowcolor(7) ;
       end;
      end;
     end;

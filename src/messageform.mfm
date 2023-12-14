@@ -233,6 +233,7 @@ object messagefo: tmessagefo
     00E0FFFFFFFF070000C0FFFFFFFF030000000000000000000000000000000000
     00000000000000000000000000000000
   }
+  windowopacity = -Inf
   oncreated = oncreated
   moduleclassname = 'tdockform'
   object messages: tstringgrid
@@ -406,12 +407,16 @@ object messagefo: tmessagefo
         valuetrue = '1'
       end>
     rowcountmax = 10000
-    rowcolors.count = 4
+    rowcolors.count = 8
     rowcolors.items = (
       -1610612712
       -1610612717
       -1610612716
       14935039
+      8355590
+      9372419
+      28672
+      145
     )
     datarowlinewidth = 0
     datarowheight = 17
