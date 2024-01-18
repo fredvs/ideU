@@ -166,16 +166,16 @@ findinfiledialog=95
  x=210
  y=164
  cx=346
- cy=347
+ cy=334
 finddialog=8
  [finddialogfo.selectedonly]
  value=0
  [finddialogfo]
  stackedunder=
- x=1002
- y=158
+ x=1148
+ y=166
  cx=298
- cy=324
+ cy=291
 replacedialog=33
  [replacedialogfo.promptonreplace]
  value=1
@@ -1579,8 +1579,12 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=item1.submenu[int2].options 
+finddtext=unix
 findhistory=20
+ unix
+ ifdef unix
+ targetfrom
+ targetform
  item1.submenu[int2].options 
  newformonexecute
  fiens
@@ -1597,39 +1601,40 @@ findhistory=20
  autoheight
  u1
  universal_path
- onactiv
- beforeactiv
- onscale
- fontsize
 findoptions=1
-editpos=6
- 0,19
+editpos=7
+ 0,143
  0,-1073741823
  0,-1073741823
- 0,0
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
+ 41,12
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
 bookmarks5=0
-sourcefiles=6
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/projectoptionsform.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/messageform.pas
-relpaths=6
+ ${PROJECTDIR}/msegdbutils.pas
+relpaths=7
  ideU.pas
  sourceform.pas
  projectoptionsform.pas
  actionsmodule.pas
  main.pas
  messageform.pas
-ismoduletexts=6
+ msegdbutils.pas
+ismoduletexts=7
+ 0
  0
  0
  0
@@ -1661,17 +1666,18 @@ nomenumodules=5
  0
  0
 [sourcefo.files_tab]
-order=6
+order=7
  0
- 2
+ 6
  3
  4
  5
  1
+ 2
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=584
+windowlayout=573
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1685,13 +1691,13 @@ windowlayout=584
  ny=0
  ncx=0
  ncy=0
- x=5
- y=29
- cx=1590
- cy=866
+ x=0
+ y=24
+ cx=1600
+ cy=843
  rcx=0
  rcy=0
- wsize=0
+ wsize=6
  active=1
  visible=1
  [findmessagefo.findtext]
@@ -1815,7 +1821,7 @@ windowlayout=584
  x=0
  y=0
  cx=205
- cy=643
+ cy=618
  rcx=0
  rcy=0
  [projecttreefo.grid]
@@ -1905,10 +1911,10 @@ windowlayout=584
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=446
- width0=199
+ propcolwidthref=240
+ width0=107
  sortdescend0=0
- width1=241
+ width1=127
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1983,9 +1989,9 @@ windowlayout=584
  ncx=0
  ncy=0
  x=0
- y=710
- cx=1576
- cy=133
+ y=693
+ cx=1586
+ cy=127
  rcx=0
  rcy=0
  [componentstorefo]
@@ -2084,8 +2090,8 @@ windowlayout=584
  ncy=0
  x=0
  y=0
- cx=1576
- cy=61
+ cx=1586
+ cy=69
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -2097,11 +2103,11 @@ windowlayout=584
  nx=0
  ny=0
  ncx=1576
- ncy=79
+ ncy=64
  x=0
  y=0
- cx=1576
- cy=64
+ cx=1586
+ cy=72
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -2111,26 +2117,14 @@ windowlayout=584
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/messageform.pas
- history=18
-  /home/fred/ideu/src/messageform.pas
-  /home/fred/strumpract/src/piano.pas
-  /home/fred/strumpract/src/filelistform.pas
-  /home/fred/strumpract/src/msepulsesimple.pas
-  /home/fred/msepulsesimple.pas
-  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgramseguibitmap.pas
-  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/sysnr.inc
-  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/syscallh.inc
-  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/syscall.inc
-  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/aarch64/bsyscall.inc
-  /home/fred/Downloads/freepascal-ootb-main/rtl/linux/x86_64/si_c.inc
-  /home/fred/strumpract/src/imagedancer.pas
-  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgraanimatedgif.pas
-  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/avifbgra.pas
-  /home/fred/Downloads/strumpract-betterdrum0/src/alsa_mixer.pas
-  /home/fred/Downloads/strumpract-360/src/drums.pas
-  /home/fred/Downloads/bgrabitmap-dev-bgrabitmap/bgrabitmap/bgrafreetype.pas
-  /home/fred/strumpract/src/infosd.pas
+ value=/home/fred/ideu/src/msegdbutils.pas
+ history=6
+  /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
+  /home/fred/ideu/src/sak_mse.pas
+  /home/fred/mseide-msegui-mac/lib/common/opengl/mseglext.pas
+  /home/fred/mseide-msegui-mac/lib/common/kernel/msepipestream.pas
+  /home/fred/mseide-msegui-mac/lib/common/designutils/msegdbutils.pas
+  /home/fred/mseide-msegui/lib/common/designutils/msedoublereallisteditor.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2147,20 +2141,21 @@ windowlayout=584
  ncy=0
  x=208
  y=0
- cx=1368
- cy=643
+ cx=1378
+ cy=618
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
+ order=7
   0
-  2
+  6
   3
   4
   5
   1
+  2
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2194,9 +2189,9 @@ windowlayout=584
  ncx=0
  ncy=0
  x=0
- y=64
- cx=1576
- cy=643
+ y=72
+ cx=1586
+ cy=618
  rcx=0
  rcy=0
  [_mse_sourcefo_mse_]
@@ -2209,8 +2204,8 @@ windowlayout=584
  ny=0
  ncx=0
  ncy=0
- x=506
- y=257
+ x=560
+ y=438
  cx=706
  cy=352
  rcx=0

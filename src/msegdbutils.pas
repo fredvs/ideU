@@ -248,8 +248,8 @@ type
   stackframe: string;
  end;
  threadinfoarty = array of threadinfoty;
-
-{$ifdef UNIX}
+ 
+  {$if defined(UNIX) and not defined(darwin)}
  tpseudoterminal = class
   private
    fdevicename: string;
@@ -281,7 +281,7 @@ type
   private
    fgdbto: tpipewriter;
    fgdbfrom{,fgdberror}: tpipereader;
-   {$ifdef UNIX}
+    {$if defined(UNIX) and not defined(darwin)}
    ftargetterminal: tpseudoterminal;
    ftargetconsole: tcustommseprocess;
    {$endif}
@@ -357,7 +357,7 @@ type
   protected
    fpointersize: integer;
    fpointerhexdigits: integer;
-   {$ifdef UNIX}
+    {$if defined(UNIX) and not defined(darwin)}
    procedure targetfrom(const sender: tpipereader);
    procedure killtargetconsole;
    function createtargetconsole: boolean;
@@ -1012,7 +1012,7 @@ begin
   clicommand('set breakpoint pending on');
   clicommand('set height 0');
   clicommand('set width 0');
-  {$ifdef UNIX}
+   {$if defined(UNIX) and not defined(darwin)}
   {
   bo1:= true;
   if synccommand('-gdb-show inferior-tty') = gdb_ok then begin
