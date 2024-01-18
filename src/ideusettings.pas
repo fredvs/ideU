@@ -141,6 +141,15 @@ const
     '${IDEUDIR}docview/', '', '', '', '','');
     {$endif}
     
+  {$ifdef darwin}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-darwin', 'unix', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+    {$endif}  
+    
    {$ifdef openbsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',

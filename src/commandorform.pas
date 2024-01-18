@@ -292,7 +292,7 @@ begin
 if debug_on.tag = 0 then
 begin
   debug_on.tag := 1 ;
- {$ifndef netbsd}
+ {$if not defined(netbsd) and not defined(darwin)}
  imagebut.getimage(0, debug_on.face.image);
  {$else}
  debug_on.imagenr := 40;
@@ -301,7 +301,7 @@ begin
  else
  begin
   debug_on.tag := 0;
-  {$ifndef netbsd}
+   {$if not defined(netbsd) and not defined(darwin)}
   imagebut.getimage(1, debug_on.face.image);
   {$else}
   debug_on.imagenr := 41;
@@ -386,7 +386,7 @@ end;
 procedure tdebuggerfo.oncreat(const sender: TObject);
 begin
 
-{$ifdef netbsd}
+{$if defined(netbsd) or defined(darwin)}
 
 panelmain.face.template := tfacecompnul;
 panelproject.face.template := tfacecompnul;

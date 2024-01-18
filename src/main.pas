@@ -586,9 +586,9 @@ end;
 
 procedure tmainfo.mainfooncreate(Const Sender: TObject);
 begin
- {$ifdef netbsd}
+{$if defined(netbsd) or defined(darwin)}
   vievmenuicons.options := [bmo_masked]; 
- {$endif}
+{$endif}
 
 {$ifdef pacpas}
  mainstatfile.filedir  := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +

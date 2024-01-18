@@ -1233,8 +1233,8 @@ end;
 
 procedure tprojecttreefo.projecttreefooncreate(const sender: tobject);
 begin
- 
-  {$ifdef netbsd}
+
+ {$if defined(netbsd) or defined(darwin)}
   nodeicons.options := [bmo_masked];
   {$endif};
  

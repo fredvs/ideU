@@ -1746,7 +1746,7 @@ end;
 
 procedure tsourcefo.oncreated(const sender: TObject);
 begin
- {$ifdef netbsd}
+ {$if defined(netbsd) or defined(darwin)}
   buttonimage.options := [bmo_masked];
   imagelist.options := [bmo_masked]; 
   timagelist2.options := [bmo_masked]; 

@@ -2402,7 +2402,7 @@ end;
 procedure tfiledialogxfo.oncreat(const Sender: TObject);
 begin
 
-  {$ifdef netbsd}
+ {$if defined(netbsd) or defined(darwin)}
   iconslist.options := [bmo_masked]; 
   {$endif}
  

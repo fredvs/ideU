@@ -875,7 +875,7 @@ begin
  fsourcefiles:= tmsestringhashdatalist.create();
 // fsourcefiles:= thashedmsestrings.create;
  fstoptime:= emptydatetime;
- {$ifdef UNIX}
+  {$if defined(UNIX) and not defined(darwin)}
  ftargetterminal:= tpseudoterminal.create;
  ftargetterminal.input.oninputavailable:= {$ifdef FPC}@{$endif}targetfrom;
  ftargetconsole:= tcustommseprocess.create(nil);
@@ -892,7 +892,7 @@ begin
  closegdb;
  inherited;
  fsourcefiles.free;
- {$ifdef UNIX}
+ {$if defined(UNIX) and not defined(darwin)}
  ftargetconsole.free;
  ftargetterminal.free;
  {$endif}
@@ -1451,7 +1451,7 @@ begin
         end;
         fprocid:= 0;
         getprocid(fprocid);
-        {$ifdef UNIX}
+         {$if defined(UNIX) and not defined(darwin)}
         if not fnewconsole then begin
          ftargetterminal.restart;
         end;
@@ -1875,7 +1875,7 @@ begin
  until not b2; //all data read
 end;
 
-{$ifdef UNIX}
+ {$if defined(UNIX) and not defined(darwin)}
 procedure tgdbmi.targetfrom(const sender: tpipereader);
 begin
  if not sender.eof then begin
@@ -2308,7 +2308,7 @@ var
  frames1: frameinfoarty;
  ev: tgdbstartupevent;
 begin
-{$ifdef unix}
+ {$if defined(UNIX) and not defined(darwin)}
  killtargetconsole;
  if fnewconsole then begin
   if not createtargetconsole then begin
@@ -2564,7 +2564,7 @@ begin
    internalcommand('-exec-interrupt'); //runs in async mode
   end
   else begin
-  {$ifdef unix}     //how to do on windows?
+   {$if defined(UNIX) and not defined(darwin)}    //how to do on windows?
    kill(fgdb,sigint);
   {$else}
    internalcommand('-exec-interrupt'); //probably no success because
@@ -4836,7 +4836,7 @@ end;
 procedure tgdbmi.targetwriteln(const avalue: string);
 begin
  if running then begin
-  {$ifdef UNIX}
+  {$if defined(UNIX) and not defined(darwin)}
   ftargetterminal.output.writeln(avalue);
   {$else}
   fgdbto.writeln(avalue);
@@ -4891,7 +4891,7 @@ begin
   fgdberror.overloadsleepus:= avalue;
  end;
 }
-{$ifdef UNIX}
+ {$if defined(UNIX) and not defined(darwin)}
  ftargetterminal.input.overloadsleepus:= avalue;
 {$endif}
 end;
@@ -4916,7 +4916,8 @@ begin
  getsourcename(fna1,fcurrentlanguage);
 end;
 
-{$ifdef UNIX}
+
+ {$if defined(UNIX) and not defined(darwin)}
 { tpseudoterminal }
 
 constructor tpseudoterminal.create;

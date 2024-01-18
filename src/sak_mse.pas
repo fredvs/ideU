@@ -462,7 +462,7 @@ const
   espeaklibdir = 'libnetbsd32';
 {$endif}
 {$ifdef darwin}
-  espeaklibdir = 'libmac32';
+  espeaklibdir = 'libmac64';
 {$endif}
 
 begin
