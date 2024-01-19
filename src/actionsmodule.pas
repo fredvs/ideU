@@ -1279,9 +1279,11 @@ procedure tactionsmo.projectopenexe(const Sender: TObject);
 var
   fna1: filenamety;
 begin
+  
   debuggerfo.project_history.tag := 1;
   if projectfiledialog(fna1, False) = mr_ok then
   begin
+    mainfo.closeallmod(sender);
     mainfo.openproject(tosysfilepath(fna1));
     mainfo.activate;
     sourcefo.updatehinttab;
