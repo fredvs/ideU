@@ -11,7 +11,9 @@ program ideU;
 {$endif}
 
 uses
+ {$ifndef windows}
   cmem,
+ {$endif} 
  {$ifdef FPC} {$ifdef unix}
   cthreads,    {$endif}  {$endif}
   msestockobjects,
