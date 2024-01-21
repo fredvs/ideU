@@ -81,9 +81,9 @@ findinfiledialog=95
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=enablesource
+ value=pipestream
  history=20
+  pipestream
   enablesource
   removelastpathsection
   setcurrentdir
@@ -160,7 +161,6 @@ findinfiledialog=95
   GetPointerProp
   IsStoredProp
    IsStoredProp
-  ScriptProcess.Execute
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -318,7 +318,7 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo]
  stackedunder=
  x=452
@@ -1564,8 +1564,9 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=setcurrentdirmse
+finddtext=darwin
 findhistory=20
+ darwin
  openproject
  eiconv
  unix
@@ -1585,37 +1586,31 @@ findhistory=20
  twidget.findtagchild
  theme
  opac
- autoheight
 findoptions=1
-editpos=6
- 0,8
+editpos=5
+ 0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,-1073741823
- 0,-1073741823
+ 0,0
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-bookmarks5=0
-sourcefiles=6
- /home/fred/ideu/src/sourceform.pas
+sourcefiles=5
+ ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=6
+relpaths=5
  sourceform.pas
  ideU.pas
  actionsmodule.pas
  main.pas
- actionsmodule.pas
  projectoptionsform.pas
-ismoduletexts=6
- 0
+ismoduletexts=5
  0
  0
  0
@@ -1629,7 +1624,7 @@ nomenumodules=0
 firsttab=0
 index=0
 [layout]
-windowlayout=508
+windowlayout=524
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1674,7 +1669,7 @@ windowlayout=508
  x=493
  y=171
  cx=497
- cy=314
+ cy=341
  rcx=0
  rcy=0
  wsize=0
@@ -1754,8 +1749,8 @@ windowlayout=508
  ny=0
  ncx=0
  ncy=0
- x=319
- y=360
+ x=230
+ y=165
  cx=1190
  cy=414
  rcx=0
@@ -1889,7 +1884,25 @@ windowlayout=508
  visible=0
  [symbolfo.grid]
  propcolwidthref=207
- values0=0
+ values0=18
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
  width0=111
  sortdescend0=0
  width1=125
@@ -2069,16 +2082,14 @@ windowlayout=508
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/projectoptionsform.pas
- history=6
-  /home/fred/ideu/src/projectoptionsform.pas
-  /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideU_lin64/layout/${PROJECTDIR}
-  
-  /home/fred/ideU/src/layout
-  ${PROJECTDIR}/main.pas
+ value=/home/fred/mseide-msegui/apps/ide/main.pas
+ history=4
+  /home/fred/mseide-msegui/apps/ide/main.pas
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/mseide-msegui/apps/ide/main.mfm
+  /home/fred/ideu/src/msegdbutils.pas
  [debuggerfo.project_options]
- value=6
+ value=1
  [debuggerfo.hints]
  value=1
  [sourcefo]
