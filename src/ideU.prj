@@ -923,21 +923,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
- ACTIONSMO
- MAINFO
- PROJECTOPTIONSFO
- SOURCEFO
-moduletypes=4
- TACTIONSMO
- TMAINFO
- TPROJECTOPTIONSFO
- TSOURCEFO
-modulefiles=4
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=18
  4095
@@ -1604,7 +1592,7 @@ editpos=6
  0,-1073741823
  0,-1073741823
  0,-1073741823
- 0,13
+ 0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
@@ -1613,7 +1601,7 @@ bookmarks3=0
 bookmarks4=0
 bookmarks5=0
 sourcefiles=6
- ${PROJECTDIR}/sourceform.pas
+ /home/fred/ideu/src/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
@@ -1633,31 +1621,15 @@ ismoduletexts=6
  0
  0
  0
-modules=4
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/projectoptionsform.mfm
-moduleoptions=4
- 0
- 0
- 0
- 0
-visiblemodules=4
- -1
- -1
- 0
- -1
-nomenumodules=4
- 0
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=546
+windowlayout=508
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -2134,7 +2106,7 @@ windowlayout=546
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=0
  nx=0
@@ -2166,44 +2138,6 @@ windowlayout=546
  cy=526
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=453
- y=266
- cx=810
- cy=100
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_projectoptionsfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=targetconsolefo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=212
- y=58
- cx=823
- cy=606
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
