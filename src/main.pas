@@ -3352,8 +3352,7 @@ begin
   breakpointsfo.Clear;
   watchpointsfo.Clear(True);
   cleardebugdisp;
-  designer.savecanceled();
-  //reset saveall flag
+  designer.savecanceled(); //reset saveall flag
 end;
 
 var 
@@ -3368,7 +3367,7 @@ var
   terminategdbserver(True);
   Result := False;
   
-  application.processmessages;
+//  application.processmessages;
 
   if (not fileexists(ExpandFileName(aname))) and ( aname <> '' ) then
   begin
@@ -3446,20 +3445,18 @@ var
       if aname <> '' then
         begin
         
-        {$ifndef mswindows}
-          try
-            setcurrentdirmse(removelastpathsection(aname));
+         try
+           setcurrentdir(ExtractFileDir(tosysfilepath(aname)));
+            
           except
          if length(lang_mainform) > Ord(ma_cannotloadproj) then
             application.handleexception(Nil, lang_mainform[Ord(ma_cannotloadproj)] + ' "' + (aname) +
             '"') else
              application.handleexception(Nil, 'Cannot load project "' + (aname) +
             '"') ;
-            
-            Exit;
+           Exit;
         end;
-          {$endif}
-    
+           
       if not readprojectoptions(tosysfilepath(aname)) then
         closepro
       else
@@ -3496,9 +3493,10 @@ var
     end;
   application.ProcessMessages;
 
-  if projectoptions.o.enablesource = False then
-    actionsmo.projectsourceexe(Nil)
-  else if sourcefo.files_tab.Count = 0 then
+//  if projectoptions.o.enablesource = False then
+//    actionsmo.projectsourceexe(Nil)
+//  else
+ if sourcefo.files_tab.Count = 0 then
          actionsmo.projectsourceexe(Nil);
 
 end;
