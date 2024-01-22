@@ -426,7 +426,7 @@ imagelisteditor=89
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/lang.png
+  /home/fred/Pictures/graeme.png
  filenamescust=0
  filecolwidth=588
  x=489
@@ -447,6 +447,14 @@ imagelisteditor=89
  splitterlateral=137
  lastdir=/home/fred/Pictures/
  filehistory=50
+  /home/fred/Pictures/graeme.png
+  /home/fred/Pictures/findfile.png
+  /home/fred/Pictures/find.png
+  /home/fred/Pictures/tools.png
+  /home/fred/Pictures/lamp.png
+  /home/fred/Pictures/lips.png
+  /home/fred/Pictures/pause.png
+  /home/fred/Pictures/abort.png
   /home/fred/Pictures/lang.png
   /home/fred/ideu/src/ideu24.png
   /home/fred/Documents/fpgui_windows.png
@@ -489,14 +497,6 @@ imagelisteditor=89
   /home/fred/ideu/src/images/stopdisable.png
   /home/fred/ideu/src/images/right.png
   /home/fred/ideu/src/images/righton.png
-  /home/fred/ideu/src/images/left.png
-  /home/fred/ideu/src/images/lefton.png
-  /home/fred/ideu/src/images/stopenable.png
-  /home/fred/ideu/src/images/eyesdark.png
-  /home/fred/ideu/src/images/eyeslight.png
-  /home/fred/ideu/src/images/glist2.png
-  /home/fred/ideu/src/images/glist.png
-  /home/fred/ideu/src/images/beauty.png
  filefilterindex=4
  filefilter=*.png
  [imagelisteditorfo.transparentcolor]
@@ -504,8 +504,8 @@ imagelisteditor=89
  [imagelisteditorfo.stretch]
  value=1
  [imagelisteditorfo]
- x=40
- y=175
+ x=397
+ y=218
  cx=785
  cy=421
  wsize=0
@@ -923,9 +923,18 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=3
+ ACTIONSMO
+ MAINFO
+ SOURCEFO
+moduletypes=3
+ TACTIONSMO
+ TMAINFO
+ TSOURCEFO
+modulefiles=3
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=18
  4095
@@ -1587,44 +1596,74 @@ findhistory=20
  theme
  opac
 findoptions=1
-editpos=5
+editpos=7
  0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
+ 0,-1073741823
  0,0
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+bookmarks6=0
+sourcefiles=7
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/projectoptionsform.pas
-relpaths=5
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+relpaths=7
  sourceform.pas
  ideU.pas
  actionsmodule.pas
  main.pas
  projectoptionsform.pas
-ismoduletexts=5
+ actionsmodule.pas
+ main.pas
+ismoduletexts=7
  0
  0
  0
  0
  0
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ 0
+ 0
+modules=3
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/main.mfm
+moduleoptions=3
+ 0
+ 0
+ 0
+visiblemodules=3
+ -1
+ 0
+ -1
+nomenumodules=3
+ 0
+ 0
+ 0
 [sourcefo.files_tab]
+order=7
+ 0
+ 5
+ 6
+ 1
+ 2
+ 3
+ 4
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=524
+windowlayout=552
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1638,8 +1677,8 @@ windowlayout=524
  ny=0
  ncx=0
  ncy=0
- x=91
- y=80
+ x=64
+ y=55
  cx=1428
  cy=724
  rcx=0
@@ -1779,7 +1818,7 @@ windowlayout=524
  sortdescend1=0
  sorted=0
  col=0
- row=13
+ row=2
  rowheight=19
  [stackfo]
  splitdir=0
@@ -2082,8 +2121,9 @@ windowlayout=524
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/apps/ide/main.pas
- history=4
+ value=/home/fred/ideu/src/actionsmodule.pas
+ history=5
+  /home/fred/ideu/src/sourceform.pas
   /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
@@ -2109,8 +2149,16 @@ windowlayout=524
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=7
+  0
+  5
+  6
+  1
+  2
+  3
+  4
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2149,6 +2197,25 @@ windowlayout=524
  cy=526
  rcx=0
  rcy=0
+ [_mse_actionsmo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=314
+ y=216
+ cx=966
+ cy=472
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
