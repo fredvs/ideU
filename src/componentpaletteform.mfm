@@ -4,7 +4,6 @@ object componentpalettefo: tcomponentpalettefo
   frame.localprops1 = []
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton, go_buttonhints]
-  onfocus = onfocus
   visible = False
   bounds_x = 131
   bounds_y = 289
@@ -22,8 +21,6 @@ object componentpalettefo: tcomponentpalettefo
   )
   dragdock.caption = 'Component Palette'
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_proportional, od_propsize, od_captionhint]
-  font.name = 'stf_default'
-  font.localprops = []
   options = [fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.projectstatfile
   icon.transparentcolor = -2147483642
@@ -103,7 +100,6 @@ object componentpalettefo: tcomponentpalettefo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    onfocus = onfocus
     bounds_x = 0
     bounds_y = 26
     bounds_cx = 728
@@ -122,7 +118,6 @@ object componentpalettefo: tcomponentpalettefo
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
     frame.localprops = []
     frame.localprops1 = []
-    onfocus = onfocus
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 728

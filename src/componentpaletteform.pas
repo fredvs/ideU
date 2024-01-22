@@ -1,5 +1,5 @@
 { MSEide Copyright (c) 1999-2013 by Martin Schreiber
-   
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -20,7 +20,7 @@ unit componentpaletteform;
 
 interface
 uses
- msegui,mseclasses,mseforms,msetabs,msetoolbar,msegraphutils,msestat,mseguiglob, msebitmap,
+ msegui,mseclasses,mseforms,msetabs,msetoolbar,msegraphutils,msestat,mseguiglob,msebitmap,
  msedragglob,msetypes{msestrings};
 
 type
@@ -34,7 +34,6 @@ type
    procedure componentpalettebuttonchanged(const sender: tobject;
                                              const button: tcustomtoolbutton);
    procedure foonreadstat(const sender: TObject; const reader: tstatreader);
-   procedure onfocus(const sender: TObject);
   public
    procedure updatecomponentpalette(init: boolean);
    procedure resetselected;
@@ -58,17 +57,14 @@ end;
 
 procedure tcomponentpalettefo.componentpagesactivetabchange(const sender: TObject);
 begin
- //tabcloser := false;
  updatecomponentpalette(false);
  componentpalette.firstbutton:= 0;
- //tabcloser := false;
 end;
 
 procedure tcomponentpalettefo.componentpalettebuttonchanged(const sender: TObject;
   const button: tcustomtoolbutton);
 begin
  if not application.terminated then begin
- //tabcloser := false;
   with registeredcomponents do begin
    if tclass(button.tagpo) = selectedclass then begin
     selectedclass:= nil;
@@ -106,8 +102,8 @@ begin
     for int1:= 0 to tabs.count - 1 do begin
      with tabs[int1] do begin
       tag:= int1 + 1;
-      caption:= ' ' + ar1[int1].caption + ' ';
-      hint:= ' ' + ar1[int1].hint  + ' ';
+      caption:= ar1[int1].caption;
+      hint:= ar1[int1].hint;
      end;
     end;
    finally
@@ -128,9 +124,9 @@ begin
       with componentpalette.buttons.add do begin
        options:= [mao_checkbox,mao_radiobutton];
        imagelist:= registeredcomponents.imagelist;
-       imagelist.options := [bmo_masked, bmo_graymask];
+       imagelist.options := [bmo_masked];
        imagenr:= icon;
-       hint:= ' ' + msestring(classtyp.classname)  + ' ';
+       hint:= msestring(classtyp.classname);
        tagpo:= classtyp;
       end;
      end;
@@ -155,11 +151,6 @@ end;
 procedure tcomponentpalettefo.resetselected;
 begin
  componentpalette.buttons.resetradioitems(0);
-end;
-
-procedure tcomponentpalettefo.onfocus(const sender: TObject);
-begin
-//tabcloser := false;
 end;
 
 end.

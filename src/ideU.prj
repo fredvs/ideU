@@ -81,19 +81,19 @@ findinfiledialog=95
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- value="*.pas" "*.pp" "*.inc" 
+ value="*.pas" "*.pp" "*.inc" "*.mfm" 
  history=18
+  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.pas" "*.pp" "*.inc" 
   "*.pas" "*.pp" "*.inc" "*.*" 
   
   "*.pas" "*.pp" "*.inc"  "*.prj"
-  "*.pas" "*.pp" "*.inc" "*.mfm" 
   "*.po"
   "*.pas" "*.pp" "*.inc"  "*.*"
   "*.pas" "*.pp" "*.inc"  "*.po"
@@ -139,8 +139,12 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=pipestream
+ value=netbsd
  history=20
+  netbsd
+  timagelist
+  (timagelist)
+  bmo_colormask
   pipestream
   enablesource
   removelastpathsection
@@ -157,10 +161,6 @@ findinfiledialog=95
   compiler.value
   monitor
   RunCommandLoop
-  runcommandloop
-  GetPointerProp
-  IsStoredProp
-   IsStoredProp
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -426,7 +426,7 @@ imagelisteditor=89
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/graeme.png
+  /home/fred/Pictures/lamp.png
  filenamescust=0
  filecolwidth=588
  x=489
@@ -447,11 +447,11 @@ imagelisteditor=89
  splitterlateral=137
  lastdir=/home/fred/Pictures/
  filehistory=50
+  /home/fred/Pictures/lamp.png
   /home/fred/Pictures/graeme.png
+  /home/fred/Pictures/tools.png
   /home/fred/Pictures/findfile.png
   /home/fred/Pictures/find.png
-  /home/fred/Pictures/tools.png
-  /home/fred/Pictures/lamp.png
   /home/fred/Pictures/lips.png
   /home/fred/Pictures/pause.png
   /home/fred/Pictures/abort.png
@@ -1596,41 +1596,26 @@ findhistory=20
  theme
  opac
 findoptions=1
-editpos=7
- 0,6
- 0,-1073741823
- 0,-1073741823
+editpos=4
+ 0,0
  0,-1073741823
  0,-1073741823
  0,0
- 0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-bookmarks6=0
-sourcefiles=7
- ${PROJECTDIR}/sourceform.pas
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
- ${PROJECTDIR}/projectoptionsform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
-relpaths=7
- sourceform.pas
+ ${PROJECTDIR}/sourceform.pas
+relpaths=4
  ideU.pas
  actionsmodule.pas
  main.pas
- projectoptionsform.pas
- actionsmodule.pas
- main.pas
-ismoduletexts=7
- 0
- 0
- 0
+ sourceform.pas
+ismoduletexts=4
  0
  0
  0
@@ -1645,25 +1630,17 @@ moduleoptions=3
  0
 visiblemodules=3
  -1
- 0
+ -1
  -1
 nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=7
- 0
- 5
- 6
- 1
- 2
- 3
- 4
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=552
+windowlayout=545
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1818,7 +1795,7 @@ windowlayout=552
  sortdescend1=0
  sorted=0
  col=0
- row=2
+ row=16
  rowheight=19
  [stackfo]
  splitdir=0
@@ -1897,10 +1874,10 @@ windowlayout=552
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=240
- width0=107
+ propcolwidthref=413
+ width0=203
  sortdescend0=0
- width1=127
+ width1=204
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2121,11 +2098,12 @@ windowlayout=552
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/actionsmodule.pas
- history=5
+ value=/home/fred/ideu/src/sourceform.pas
+ history=6
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu/src/msegui.pas
+  /home/fred/mseide-msegui/apps/ide/main.pas
   /home/fred/mseide-msegui/apps/ide/main.mfm
   /home/fred/ideu/src/msegdbutils.pas
  [debuggerfo.project_options]
@@ -2149,16 +2127,8 @@ windowlayout=552
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=7
-  0
-  5
-  6
-  1
-  2
-  3
-  4
  firsttab=0
- index=1
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2200,15 +2170,15 @@ windowlayout=552
  [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=314
- y=216
+ x=317
+ y=316
  cx=966
  cy=472
  rcx=0
