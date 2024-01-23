@@ -139,12 +139,13 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=netbsd
+ value=bmo_graymask
  history=20
+  bmo_graymask
+  bmo_colormask
   netbsd
   timagelist
   (timagelist)
-  bmo_colormask
   pipestream
   enablesource
   removelastpathsection
@@ -160,7 +161,6 @@ findinfiledialog=95
   mainstatfile
   compiler.value
   monitor
-  RunCommandLoop
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -1598,8 +1598,8 @@ findhistory=20
 findoptions=1
 editpos=4
  0,0
- 0,-1073741823
- 0,-1073741823
+ 0,3
+ 0,22
  0,0
 bookmarks0=0
 bookmarks1=0
@@ -1638,7 +1638,7 @@ nomenumodules=3
  0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=3
 [layout]
 windowlayout=545
  [mainfo.basedock]
@@ -1654,8 +1654,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=64
- y=55
+ x=96
+ y=116
  cx=1428
  cy=724
  rcx=0
@@ -1758,15 +1758,15 @@ windowlayout=545
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=230
- y=165
+ x=160
+ y=267
  cx=1190
  cy=414
  rcx=0
@@ -2098,7 +2098,7 @@ windowlayout=545
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
  history=6
   /home/fred/ideu/src/sourceform.pas
   /home/fred/ideu/src/actionsmodule.pas
@@ -2128,7 +2128,7 @@ windowlayout=545
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=3
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
