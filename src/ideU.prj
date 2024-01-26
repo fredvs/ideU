@@ -139,8 +139,15 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=bmo_graymask
+ value=lang/
  history=20
+  lang/
+  'lang'
+  langdir
+  languagedir
+  'lang
+  /lang
+  fontconfig
   bmo_graymask
   bmo_colormask
   netbsd
@@ -154,13 +161,6 @@ findinfiledialog=95
   sys_setcurrentdir
   msecwstring
   .so'
-  initializedynlib
-  libfontconfig
-  pacpas
-  paspack
-  mainstatfile
-  compiler.value
-  monitor
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -1223,7 +1223,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=28
+on=27
  0
  0
  0
@@ -1251,8 +1251,7 @@ on=28
  0
  0
  0
- -1
-path=28
+path=27
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
@@ -1280,8 +1279,7 @@ path=28
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
  /home/fred/mseide-msegui/lib/common/db/firebird.pas
  /home/fred/ideu/src/main.pas
- /home/fred/ideU-main/src/main.pas
-line=28
+line=27
  2129
  1164
  526
@@ -1303,14 +1301,13 @@ line=28
  787
  904
  2591
- 5074
+ 5075
  1882
  6181
  18
  8
  2604
- 5263
-address=28
+address=27
  4884497
  4705877
  4856125
@@ -1338,8 +1335,7 @@ address=28
  8677773
  10548957
  4897909
- 4967023
-addbkpt=28
+addbkpt=27
  0
  0
  0
@@ -1367,9 +1363,7 @@ addbkpt=28
  0
  0
  0
- 0
-ignore=28
- 0
+ignore=27
  0
  0
  0
@@ -1397,8 +1391,7 @@ ignore=28
  0
  0
  0
-condition=28
- 
+condition=27
  
  
  
@@ -1573,8 +1566,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=darwin
+finddtext=linux
 findhistory=20
+ linux
+ lang
  darwin
  openproject
  eiconv
@@ -1593,14 +1588,12 @@ findhistory=20
  win32
  .ini
  twidget.findtagchild
- theme
- opac
 findoptions=1
 editpos=4
  0,0
- 0,3
- 0,22
- 0,0
+ 0,6
+ 0,8
+ 9,4
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
@@ -1621,9 +1614,9 @@ ismoduletexts=4
  0
  0
 modules=3
+ /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
 moduleoptions=3
  0
  0
@@ -1640,7 +1633,7 @@ nomenumodules=3
 firsttab=0
 index=3
 [layout]
-windowlayout=545
+windowlayout=546
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1654,8 +1647,8 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=96
- y=116
+ x=36
+ y=49
  cx=1428
  cy=724
  rcx=0
@@ -1758,7 +1751,7 @@ windowlayout=545
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2098,13 +2091,14 @@ windowlayout=545
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/lib/common/graphics/msebitmap.pas
- history=6
+ value=/home/fred/ideu/src/sourceform.pas
+ history=7
   /home/fred/ideu/src/sourceform.pas
-  /home/fred/ideu/src/actionsmodule.pas
-  /home/fred/ideu/src/msegui.pas
-  /home/fred/mseide-msegui/apps/ide/main.pas
-  /home/fred/mseide-msegui/apps/ide/main.mfm
+  /home/fred/ideu/src/ideusettings.pas
+  /home/fred/uos/examples/uos.pas
+  /home/fred/uos/examples/consolesynth.pas
+  /home/fred/uos/examples/consoleplay.pas
+  /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
   /home/fred/ideu/src/msegdbutils.pas
  [debuggerfo.project_options]
  value=1
@@ -2167,7 +2161,7 @@ windowlayout=545
  cy=526
  rcx=0
  rcy=0
- [_mse_actionsmo_mse_]
+ [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
  stackedunder=_mse_sourcefo_mse_
@@ -2177,10 +2171,10 @@ windowlayout=545
  ny=0
  ncx=0
  ncy=0
- x=317
- y=316
- cx=966
- cy=472
+ x=453
+ y=266
+ cx=810
+ cy=100
  rcx=0
  rcy=0
  wsize=0
