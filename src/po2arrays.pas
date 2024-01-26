@@ -57,7 +57,6 @@ begin
   SetLength(ListOfFiles, 0);
 
   str1 := expandprmacros('${LANGDIR}');
-  
 
   // List the files
   FindFirst(str1 + '*.po', Attribute, SearchResult);
@@ -174,9 +173,6 @@ var
   ixstockcaptionty: xstockcaptionty;
   defaultresult, default_resulttext, default_modalresulttext, default_modalresulttextnoshortcut, default_mainformtext, default_actionsmoduletext, default_projectoptionscontext,
   default_settingstext, default_projectoptionstext, default_sourceformtext, default_stockcaption, default_xstockcaption, default_extendedtext: array of msestring;
-begin
-
-if directoryexists(expandprmacros('${LANGDIR}')) then
 begin
 
   strlang := '';
@@ -611,7 +607,6 @@ begin
 
     listpofiles();
     
-  end;    
  end;
 end;
 

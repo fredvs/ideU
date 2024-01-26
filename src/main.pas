@@ -4595,7 +4595,6 @@ var
   x: shortint;
   str : string;
 begin
-
  {$if (defined(usemo)) and (not defined(windows))}
  if conflangfo.bousemo.value then
   mo4stock.createnewlang(thelang)
