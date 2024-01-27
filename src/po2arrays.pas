@@ -57,7 +57,9 @@ begin
   SetLength(ListOfFiles, 0);
 
   str1 := expandprmacros('${LANGDIR}');
-
+ 
+ if directoryexists(str1) then
+ begin
   // List the files
   FindFirst(str1 + '*.po', Attribute, SearchResult);
   while (i = 0) do
@@ -69,12 +71,16 @@ begin
     i := FindNext(SearchResult);
   end;
   FindClose(SearchResult);
+ end;
+
 
   setlength(lang_langnames, 1);
   lang_langnames[0] :=  'English [en]';
   
   pat := expandprmacros('${LANGDIR}');
 
+if Length(ListOfFiles) > 0 then
+ begin
   for i := Low(ListOfFiles) to High(ListOfFiles) do
     if system.pos('empty', ListOfFiles[i]) = 0 then
     begin
@@ -118,6 +124,7 @@ begin
       end;
        file1.Free;
     end;
+   end; 
  end;
 
 procedure dosearch(thearray: array of msestring; theindex: integer);
@@ -177,7 +184,7 @@ begin
 
   strlang := '';
   str1    := expandprmacros('${LANGDIR}') + 'ideu_' + alang + '.po';
-
+  
   if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
   begin
     setlength(lang_modalresult, length(en_modalresulttext));

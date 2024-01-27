@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=lang/
+ value=expandprmacros('${LANGDIR}
  history=20
+  expandprmacros('${LANGDIR}
   lang/
   'lang'
   langdir
@@ -160,7 +161,6 @@ findinfiledialog=95
   setcurrentdirectoryw
   sys_setcurrentdir
   msecwstring
-  .so'
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -318,11 +318,11 @@ options=114
  index=1
  [projectoptionsfo.setting_tab]
  firsttab=0
- index=0
+ index=2
  [projectoptionsfo]
  stackedunder=
- x=452
- y=58
+ x=697
+ y=87
  cx=887
  cy=618
 settaborder=15
@@ -940,7 +940,7 @@ makeoptionson=18
  4095
  4095
  1
- 2045
+ 2041
  2046
  4095
  640
@@ -1566,8 +1566,10 @@ envvarons=0
 [edit]
 hintwidth=382
 hintheight=0
-finddtext=linux
+finddtext=newlang
 findhistory=20
+ newlang
+ createnew
  linux
  lang
  darwin
@@ -1586,29 +1588,32 @@ findhistory=20
  paspack
  mainstatfile
  win32
- .ini
- twidget.findtagchild
 findoptions=1
-editpos=4
- 0,0
- 0,6
- 0,8
+editpos=5
+ 0,4
+ 0,-1073741823
+ 0,5271
  9,4
+ 39,58
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=4
+ ${PROJECTDIR}/po2arrays.pas
+relpaths=5
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
-ismoduletexts=4
+ po2arrays.pas
+ismoduletexts=5
+ 0
  0
  0
  0
@@ -1630,10 +1635,16 @@ nomenumodules=3
  0
  0
 [sourcefo.files_tab]
+order=5
+ 0
+ 4
+ 1
+ 2
+ 3
 firsttab=0
-index=3
+index=1
 [layout]
-windowlayout=546
+windowlayout=552
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1647,8 +1658,8 @@ windowlayout=546
  ny=0
  ncx=0
  ncy=0
- x=36
- y=49
+ x=52
+ y=101
  cx=1428
  cy=724
  rcx=0
@@ -1751,7 +1762,7 @@ windowlayout=546
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=
+ stackedunder=targetconsolefo
  parent=
  mdistate=0
  nx=0
@@ -2091,9 +2102,9 @@ windowlayout=546
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
+ value=/home/fred/ideu/src/po2arrays.pas
  history=7
-  /home/fred/ideu/src/sourceform.pas
+  /home/fred/ideu/src/conflang.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/uos/examples/uos.pas
   /home/fred/uos/examples/consolesynth.pas
@@ -2121,8 +2132,14 @@ windowlayout=546
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  4
+  1
+  2
+  3
  firsttab=0
- index=3
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2164,7 +2181,7 @@ windowlayout=546
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
