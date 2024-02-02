@@ -426,7 +426,7 @@ imagelisteditor=89
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/lamp.png
+  /home/fred/Pictures/download2-ico.png
  filenamescust=0
  filecolwidth=588
  x=489
@@ -443,10 +443,11 @@ imagelisteditor=89
  colsizewidth=81
  colextwidth=45
  coldatewidth=119
- splitterplaces=252
+ splitterplaces=250
  splitterlateral=137
  lastdir=/home/fred/Pictures/
  filehistory=50
+  /home/fred/Pictures/download2-ico.png
   /home/fred/Pictures/lamp.png
   /home/fred/Pictures/graeme.png
   /home/fred/Pictures/tools.png
@@ -496,7 +497,6 @@ imagelisteditor=89
   /home/fred/ideu/src/images/playdisable.png
   /home/fred/ideu/src/images/stopdisable.png
   /home/fred/ideu/src/images/right.png
-  /home/fred/ideu/src/images/righton.png
  filefilterindex=4
  filefilter=*.png
  [imagelisteditorfo.transparentcolor]
@@ -923,17 +923,20 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
  MAINFO
+ FILEDIALOGXFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
  TMAINFO
+ TFILEDIALOGXFO
  TSOURCEFO
-modulefiles=3
+modulefiles=4
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/msefiledialogx.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=18
@@ -1589,62 +1592,72 @@ findhistory=20
  mainstatfile
  win32
 findoptions=1
-editpos=5
+editpos=6
  0,4
  0,-1073741823
- 0,5271
+ 0,-1073741823
  9,4
- 39,58
+ 0,-1073741823
+ 0,12
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
 bookmarks4=0
-sourcefiles=5
+bookmarks5=0
+sourcefiles=6
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/po2arrays.pas
-relpaths=5
+ ${PROJECTDIR}/msefiledialogx.pas
+relpaths=6
  ideU.pas
  actionsmodule.pas
  main.pas
  sourceform.pas
  po2arrays.pas
-ismoduletexts=5
+ msefiledialogx.pas
+ismoduletexts=6
  0
  0
  0
  0
  0
-modules=3
+ 0
+modules=4
  /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
-moduleoptions=3
+ /home/fred/ideu/src/msefiledialogx.mfm
+moduleoptions=4
  0
  0
  0
-visiblemodules=3
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
-order=5
+order=6
  0
+ 5
+ 3
  4
  1
  2
- 3
 firsttab=0
 index=1
 [layout]
-windowlayout=552
+windowlayout=575
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1658,8 +1671,8 @@ windowlayout=552
  ny=0
  ncx=0
  ncy=0
- x=52
- y=101
+ x=96
+ y=116
  cx=1428
  cy=724
  rcx=0
@@ -1762,7 +1775,7 @@ windowlayout=552
  [findinfilefo]
  splitdir=0
  useroptions=268451947
- stackedunder=targetconsolefo
+ stackedunder=
  parent=
  mdistate=0
  nx=0
@@ -2102,9 +2115,12 @@ windowlayout=552
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/po2arrays.pas
- history=7
-  /home/fred/ideu/src/conflang.pas
+ value=/home/fred/ideu/src/msefiledialogx.pas
+ history=10
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/strumpract/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/ideu/src/ideusettings.pas
   /home/fred/uos/examples/uos.pas
   /home/fred/uos/examples/consolesynth.pas
@@ -2132,12 +2148,13 @@ windowlayout=552
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
+ order=6
   0
+  5
+  3
   4
   1
   2
-  3
  firsttab=0
  index=1
  [confideufo.usedefaulteditoroptions]
@@ -2192,6 +2209,25 @@ windowlayout=552
  y=266
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_filedialogxfo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=objectinspectorfo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=656
+ y=61
+ cx=618
+ cy=484
  rcx=0
  rcy=0
  wsize=0
