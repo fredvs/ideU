@@ -426,11 +426,11 @@ imagelisteditor=89
  currentversion=0
  [imagelisteditorfo.filedialog]
  filenames=1
-  /home/fred/Pictures/download2-ico.png
+  /home/fred/Pictures/
  filenamescust=0
  filecolwidth=588
- x=489
- y=233
+ x=459
+ y=464
  cx=635
  cy=431
  nopanel=0
@@ -561,18 +561,20 @@ compnamedialog=5
 bmpfiledialog=32
  [filedialog]
  filenames=1
-  /home/fred/Pictures/lang.png
+  /home/fred/ideu/src/ideu24.png
  filecolwidth=150
  x=497
  y=203
  cx=608
  cy=431
- lastdir=/home/fred/Pictures/
+ lastdir=/home/fred/ideu/src/
  filehistory=20
+  /home/fred/ideu/src/ideu24.png
+  /home/fred/ideu/src/ideu24.bmp
+  /home/fred/ideu/src/ideu32.png
   /home/fred/Pictures/lang.png
   /home/fred/Pictures/imagesideu/ideu64.png
   /home/fred/Pictures/imagesideu/beauty.png
-  /home/fred/ideu/src/ideu24.png
   /home/fred/ideu/src/ideu.png
   /home/fred/Pictures/tab_but2.png
   /home/fred/Pictures/tab_but.png
@@ -587,8 +589,6 @@ bmpfiledialog=32
   /home/fred/Pictures/imagesideu/bulbin.png
   /home/fred/Pictures/imagesideu/terminal.png
   /home/fred/Pictures/imagesideu/searchindir.png
-  /home/fred/Pictures/imagesideu/save641proj.png
-  /home/fred/Pictures/imagesideu/switch.png
  filefilterindex=0
  filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 codetemplateselect=21
@@ -923,20 +923,17 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=4
+modulenames=3
  ACTIONSMO
  MAINFO
- FILEDIALOGXFO
  SOURCEFO
-moduletypes=4
+moduletypes=3
  TACTIONSMO
  TMAINFO
- TFILEDIALOGXFO
  TSOURCEFO
-modulefiles=4
+modulefiles=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/msefiledialogx.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=18
@@ -1567,15 +1564,15 @@ progparamhistory=0
 workdirparamhistory=0
 envvarons=0
 [edit]
-hintwidth=382
-hintheight=0
-finddtext=newlang
+hintwidth=314
+hintheight=214
+finddtext=darwin
 findhistory=20
+ darwin
  newlang
  createnew
  linux
  lang
- darwin
  openproject
  eiconv
  unix
@@ -1592,72 +1589,51 @@ findhistory=20
  mainstatfile
  win32
 findoptions=1
-editpos=6
- 0,4
+editpos=4
+ 0,0
  0,-1073741823
  0,-1073741823
- 9,4
  0,-1073741823
- 0,12
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-bookmarks5=0
-sourcefiles=6
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/po2arrays.pas
- ${PROJECTDIR}/msefiledialogx.pas
-relpaths=6
+relpaths=4
  ideU.pas
- actionsmodule.pas
  main.pas
+ actionsmodule.pas
  sourceform.pas
- po2arrays.pas
- msefiledialogx.pas
-ismoduletexts=6
+ismoduletexts=4
  0
  0
  0
  0
- 0
- 0
-modules=4
- /home/fred/ideu/src/main.mfm
+modules=3
  /home/fred/ideu/src/actionsmodule.mfm
  /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/msefiledialogx.mfm
-moduleoptions=4
+ /home/fred/ideu/src/main.mfm
+moduleoptions=3
  0
  0
  0
- 0
-visiblemodules=4
+visiblemodules=3
  -1
  -1
  -1
- -1
-nomenumodules=4
- 0
+nomenumodules=3
  0
  0
  0
 [sourcefo.files_tab]
-order=6
- 0
- 5
- 3
- 4
- 1
- 2
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=575
+windowlayout=556
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1671,8 +1647,8 @@ windowlayout=575
  ny=0
  ncx=0
  ncy=0
- x=96
- y=116
+ x=139
+ y=77
  cx=1428
  cy=724
  rcx=0
@@ -2115,10 +2091,17 @@ windowlayout=575
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/msefiledialogx.pas
- history=10
-  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
+ value=/home/fred/ideu/src/ideU.pas
+ history=17
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/panelform.pas
+  /home/fred/ideu/src/selecteditpageform.pas
+  /home/fred/ideu/src/programparametersform.pas
+  /home/fred/ideu/src/mseintegerenter.pas
+  /home/fred/ideu/src/mseimagelisteditor.pas
+  /home/fred/ideu/src/mseparamentryform.pas
   /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/mseide-msegui/lib/common/dialogx/msefiledialogx.pas
   /home/fred/strumpract/src/msefiledialogx.pas
   /home/fred/mseide-msegui/lib/common/dialogs/msefiledialog.pas
   /home/fred/ideu/src/ideusettings.pas
@@ -2148,15 +2131,8 @@ windowlayout=575
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=6
-  0
-  5
-  3
-  4
-  1
-  2
  firsttab=0
- index=1
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2195,39 +2171,20 @@ windowlayout=575
  cy=526
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
+ [_mse_actionsmo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=_mse_sourcefo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=453
- y=266
- cx=810
- cy=100
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [_mse_filedialogxfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=objectinspectorfo
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=656
- y=61
- cx=618
- cy=484
+ x=317
+ y=316
+ cx=966
+ cy=472
  rcx=0
  rcy=0
  wsize=0

@@ -27,7 +27,6 @@ uses
   conffpgui,
   confcompiler,
   confdebugger,
-  //mselibc,
   dialogfiles,
   findmessage,
   mseskindesign,
