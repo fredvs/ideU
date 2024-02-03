@@ -171,10 +171,13 @@ end;
 
 procedure tselecteditpagefo.formonchildscaled(const Sender: TObject);
 begin
+ openfilebutton.Height := pathdisp.Height;
+{
   placeyorder(0, [1], [list, pathdisp], 1);
   openfilebutton.Height := pathdisp.Height;
   aligny(wam_center, [pathdisp, openfilebutton]);
   list.synctofontheight;
+}  
 end;
 
 procedure tselecteditpagefo.setlangselectedit();

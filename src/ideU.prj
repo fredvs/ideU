@@ -923,18 +923,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
- ACTIONSMO
- MAINFO
- SOURCEFO
-moduletypes=3
- TACTIONSMO
- TMAINFO
- TSOURCEFO
-modulefiles=3
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
- /home/fred/ideu/src/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=18
  4095
@@ -1590,8 +1581,8 @@ findhistory=20
  win32
 findoptions=1
 editpos=4
+ 0,13
  0,0
- 0,-1073741823
  0,-1073741823
  0,-1073741823
 bookmarks0=0
@@ -1613,27 +1604,15 @@ ismoduletexts=4
  0
  0
  0
-modules=3
- /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/sourceform.mfm
- /home/fred/ideu/src/main.mfm
-moduleoptions=3
- 0
- 0
- 0
-visiblemodules=3
- -1
- -1
- -1
-nomenumodules=3
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
-index=0
+index=1
 [layout]
-windowlayout=556
+windowlayout=536
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1867,10 +1846,10 @@ windowlayout=556
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=413
- width0=203
+ propcolwidthref=523
+ width0=257
  sortdescend0=0
- width1=204
+ width1=260
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2034,7 +2013,7 @@ windowlayout=556
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=confdebuggerfo
+ stackedunder=targetconsolefo
  parent=
  mdistate=3
  nx=0
@@ -2091,9 +2070,8 @@ windowlayout=556
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/ideU.pas
- history=17
-  /home/fred/ideu/src/ideU.pas
+ value=/home/fred/ideu/src/selecteditpageform.pas
+ history=16
   /home/fred/ideu/src/panelform.pas
   /home/fred/ideu/src/selecteditpageform.pas
   /home/fred/ideu/src/programparametersform.pas
@@ -2132,14 +2110,14 @@ windowlayout=556
  rcy=0
  [sourcefo.files_tab]
  firsttab=0
- index=0
+ index=1
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2171,25 +2149,6 @@ windowlayout=556
  cy=526
  rcx=0
  rcy=0
- [_mse_actionsmo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_sourcefo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=317
- y=316
- cx=966
- cy=472
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

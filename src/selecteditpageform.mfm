@@ -2,16 +2,16 @@ object selecteditpagefo: tselecteditpagefo
   visible = False
   bounds_x = 651
   bounds_y = 215
-  bounds_cx = 583
-  bounds_cy = 360
+  bounds_cx = 597
+  bounds_cy = 298
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = formonchildscaled
   container.bounds = (
     0
     0
-    583
-    360
+    597
+    298
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -70,9 +70,9 @@ object selecteditpagefo: tselecteditpagefo
     frame.localprops = [frl_colorclient]
     frame.localprops1 = []
     bounds_x = 0
-    bounds_y = 28
-    bounds_cx = 578
-    bounds_cy = 330
+    bounds_y = 26
+    bounds_cx = 594
+    bounds_cy = 272
     anchors = [an_left, an_top, an_right, an_bottom]
     datarowlinewidth = 0
     datacollinewidth = 0
@@ -92,16 +92,16 @@ object selecteditpagefo: tselecteditpagefo
     taborder = 2
     bounds_x = 0
     bounds_y = 2
-    bounds_cx = 506
+    bounds_cx = 520
     anchors = [an_left, an_top, an_right]
     textflags = [tf_ycentered, tf_ellipseleft]
     reffontheight = 15
   end
   object openfilebutton: tbutton
     taborder = 1
-    bounds_x = 514
+    bounds_x = 523
     bounds_y = 2
-    bounds_cx = 61
+    bounds_cx = 70
     bounds_cy = 20
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
