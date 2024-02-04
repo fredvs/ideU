@@ -570,14 +570,30 @@ function tstockobjects.gettextgenerator(index: textgeneratorty): textgeneratorfu
 begin
  result:= stocktextgenerators(index);
 end;
+
  {$else}
+
 function tstockobjects.getmodalresulttext (index: modalresultty): msestring;
 begin
 // result:= mseconsts.modalresulttext(index);
  stockobjects;   // assure initialization
  if length(lang_modalresult) >= ord(index) -1 then
  result:= lang_modalresult [ord(index)] else
+ begin
+ if ord(index) = 7 then result:= '&Cancel' else
+ if ord(index) = 8 then result:= '&Abort' else
+ if ord(index) = 9 then result:= '&OK' else
+ if ord(index) = 10 then result:= '&Yes' else
+ if ord(index) = 11 then result:= '&No' else
+ if ord(index) = 12 then result:= '&All' else
+ if ord(index) = 13 then result:= 'Yes &all' else
+ if ord(index) = 14 then result:= 'N&o all' else
+ if ord(index) = 15 then result:= '&Ignore' else
+ if ord(index) = 16 then result:= '&Skip' else
+ if ord(index) = 17 then result:= 'Skip a&ll' else
+ if ord(index) = 18 then result:= 'Co&ntinue' else
  result:= inttostr(ord(index));
+ end;
 end;
 
 function tstockobjects.getmodalresulttextnoshortcut (index: modalresultty): msestring;
@@ -585,8 +601,23 @@ begin
 // result:= mseconsts.modalresulttextnoshortcut(index);
  stockobjects;   // assure initialization
  if length(lang_modalresultnoshortcut) >= ord(index) -1 then
- result:= lang_modalresultnoshortcut [ord(index)] else
+ result:= lang_modalresultnoshortcut [ord(index)]
+ else
+ begin
+ if ord(index) = 7 then result:= 'Cancel' else
+ if ord(index) = 8 then result:= 'Abort' else
+ if ord(index) = 9 then result:= 'OK' else
+ if ord(index) = 10 then result:= 'Yes' else
+ if ord(index) = 11 then result:= 'No' else
+ if ord(index) = 12 then result:= 'All' else
+ if ord(index) = 13 then result:= 'Yes all' else
+ if ord(index) = 14 then result:= 'No all' else
+ if ord(index) = 15 then result:= 'Ignore' else
+ if ord(index) = 16 then result:= 'Skip' else
+ if ord(index) = 17 then result:= 'Skip all' else
+ if ord(index) = 18 then result:= 'Continue' else
  result:= inttostr(ord(index));
+ end;
 end;
 
 function tstockobjects.getcaptions (index: stockcaptionty): msestring;

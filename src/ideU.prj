@@ -81,9 +81,9 @@ findinfiledialog=95
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -139,8 +139,9 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.*"
  [findinfileadialogfo.findtext]
- value=expandprmacros('${LANGDIR}
+ value=lang_modalresult
  history=20
+  lang_modalresult
   expandprmacros('${LANGDIR}
   lang/
   'lang'
@@ -160,7 +161,6 @@ findinfiledialog=95
   setcurrentdir
   setcurrentdirectoryw
   sys_setcurrentdir
-  msecwstring
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -925,9 +925,12 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=0
-moduletypes=0
-modulefiles=0
+modulenames=1
+ STOCKDATA
+moduletypes=1
+ TSTOCKDATA
+modulefiles=1
+ /home/fred/ideu/src/msestockobjects.mfm
 befcommandon=0
 makeoptionson=19
  4095
@@ -1560,8 +1563,9 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=getmodalres
+finddtext=lang_modalresult
 findhistory=20
+ lang_modalresult
  getmodalres
  darwin
  newlang
@@ -1581,31 +1585,55 @@ findhistory=20
  macro
  paspac
  paspack
- mainstatfile
 findoptions=1
-editpos=2
+editpos=5
  0,3
- 0,5
+ 0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
 bookmarks0=0
 bookmarks1=0
-sourcefiles=2
+bookmarks2=0
+bookmarks3=0
+bookmarks4=0
+sourcefiles=5
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
-relpaths=2
+ ${PROJECTDIR}/msestockobjects.pas
+ /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts.pas
+ /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
+relpaths=5
  ideU.pas
  sourceform.pas
-ismoduletexts=2
+ msestockobjects.pas
+ mseide-msegui/lib/common/lang_consts/mseconsts.pas
+ mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
+ismoduletexts=5
  0
  0
-modules=0
-moduleoptions=0
-visiblemodules=0
-nomenumodules=0
+ 0
+ 0
+ 0
+modules=1
+ /home/fred/ideu/src/msestockobjects.mfm
+moduleoptions=1
+ 0
+visiblemodules=1
+ -1
+nomenumodules=1
+ 0
 [sourcefo.files_tab]
+order=5
+ 0
+ 4
+ 1
+ 3
+ 2
 firsttab=0
-index=1
+index=0
 [layout]
-windowlayout=532
+windowlayout=558
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1619,8 +1647,8 @@ windowlayout=532
  ny=0
  ncx=0
  ncy=0
- x=27
- y=58
+ x=35
+ y=51
  cx=1428
  cy=724
  rcx=0
@@ -2063,8 +2091,9 @@ windowlayout=532
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/sourceform.pas
- history=12
+ value=/home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
+ history=13
+  /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
   /home/fred/ideu/src/msestockobjects.pas
   /home/fred/strumpract/src/piano.pas
   /home/fred/strumpract/src/randomnote.pas
@@ -2098,8 +2127,14 @@ windowlayout=532
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=5
+  0
+  4
+  1
+  3
+  2
  firsttab=0
- index=1
+ index=0
  [confideufo.usedefaulteditoroptions]
  value=0
  [cpuc86_64fo]
@@ -2138,6 +2173,25 @@ windowlayout=532
  cy=526
  rcx=0
  rcy=0
+ [_mse_stockdata_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=targetconsolefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=129
+ y=57
+ cx=198
+ cy=85
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
 [targetconsole]
 finddtext=
 findhistory=0
