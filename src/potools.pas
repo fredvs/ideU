@@ -552,8 +552,17 @@ begin
 end;
 
 procedure theaderfo.oncreateform(const Sender: TObject);
+ {$if defined(darwin) and defined(macapp)}
+  var
+  binPath: string;
+  {$ENDIF}  
 begin
+{$if defined(darwin) and defined(macapp)}
+  binPath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+  outputdir.Value := copy(binPath, 1, length(binPath) -6) + 'Resources/output/';
+  {$else}
   outputdir.Value := ExtractFilePath(ParamStr(0)) + 'output' + directoryseparator;
+  {$ENDIF}  
 end;
 
 procedure theaderfo.ontime(const Sender: TObject);

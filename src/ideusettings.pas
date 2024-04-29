@@ -81,7 +81,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'x86_64-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'x86_64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -97,7 +97,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'aarch64-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'aarch64-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -112,7 +112,7 @@ const
     '/usr/local/share/ideu/syntaxdefs/',
     '/usr/local/share/ideu/templates/', '/usr/local/share/ideu/layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', '/usr/local/bin/gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'unix',
+    'ppcx64', '/usr/local/bin/gdb', '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux',
     '/usr/local/share/fpgui/', '/usr/local/share/ideu/',
     '/usr/local/share/docview/', '', '', '', '','');
    {$else}
@@ -124,7 +124,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-64' {$else}'ppcx64' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'unix', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'x86_64-freebsd', 'linux', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -137,7 +137,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-netbsd', 'unix', '', '',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-netbsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
     {$endif}
     
@@ -146,7 +146,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-darwin', 'unix', '', '',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-darwin', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
     {$endif}  
     
@@ -155,7 +155,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-openbsd', 'unix', '', '',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-openbsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
     {$endif}  
    
@@ -172,7 +172,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-32' {$else}'ppc386' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'arm-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'arm-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -188,7 +188,7 @@ const
     '${MSEDIR}apps/ide/compstore/',
      {$ifdef pacpas} '${IDEUDIR}/pack/fpc/fpc-ootb-32' {$else}'ppc386' {$endif}, 
      'gdb',
-     '${IDEUDIR}lang/' , '', 'i386-linux', 'unix', '', '', '${IDEUDIR}docview/', '',
+     '${IDEUDIR}lang/' , '', 'i386-linux', 'linux', '', '', '${IDEUDIR}docview/', '',
       {$ifdef pacpas} '${IDEUDIR}/pack/fpgui/'  {$else} '' {$endif},
      '',
      {$ifdef pacpas} '${IDEUDIR}/pack/bgrabitmap/'  {$else} '' {$endif},
@@ -200,7 +200,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-netbsd', 'unix', '', '',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-netbsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
 
     {$endif}
@@ -211,7 +211,7 @@ const
     '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
     '${IDEUDIR}templates/', '${IDEUDIR}layout/',
     '${MSEDIR}apps/ide/compstore/',
-    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-freebsd', 'unix', '', '',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-freebsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
 
     {$endif}
@@ -484,20 +484,7 @@ procedure tsettingsfo.formoncreate(const Sender: TObject);
 begin
   with settings, macros do
   begin
-  
-   {
-    if (trim(ideudir.value) = '') then
-    begin
-    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
-    writeln('not exist');
-    end
-    else
-    begin
-     writeln('Exist');
-     macros[sma_ideudir] := ideudir.value ;
-    end;
-    }
-    
+     
     ideudir.value := macros[sma_ideudir];
     // fpcdir.value:= macros[sma_fpcdir];
     // fpclibdir.value:= macros[sma_fpclibdir];
@@ -580,11 +567,24 @@ begin
 end;
 
 function tsettingsfo.widgetstomacros: settingsmacrosty;
+ {$if defined(darwin) and defined(macapp)}
+  var
+  binPath: string;
+ {$ENDIF}  
 begin
   with Result do
   begin
     if (trim(ideudir.value) = '') or (directoryexists(ideudir.value) = false) then
-    macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))))
+
+  {$if defined(darwin) and defined(macapp)}
+  begin
+  binPath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+  macros[sma_ideudir] := UTF8Decode(copy(binPath, 1, length(binPath) -6) + 'Resources/');
+  end 
+  {$else}
+  macros[sma_ideudir] := UTF8Decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))))
+  {$ENDIF}    
+     
     else macros[sma_ideudir] := ideudir.value ;
     macros[sma_projectdir] := TheProjectDirectory;
     macros[sma_lcldir] := lcldir.Value;

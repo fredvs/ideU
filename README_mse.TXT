@@ -1,10 +1,16 @@
 MSEide+MSEgui Pascal Cross Platform GUI Development System.
 
-2017-04-08 Version 4.4.2
-Copyright (c) 1999-2017 by Martin Schreiber
+2024-04-13 MSEgui Version 5.10.4.
+Copyright (c) 1999-2024 by Martin Schreiber and friends.
 
-- Compiles with FPC 2.6.4, 3.0.0 or 3.0.2
-- For FreeBSD-x86_64, Linux-i386, Linux-x86_64, Linux-arm(Raspberry Pi),
+- Compiles with FPC 2.6.4, 3.0.0, 3.0.2, 3.2.0, 3.2.2 or 3.3.1.
+- Compiles with FPC-LLVM 3.3.1.
+- For FreeBSD-x86_64, FreeBSD-i386,
+  Linux-x86_64, Linux-i386,
+  Linux-Rpi-arm32, Linux-Rpi-aarch64,
+  NetBSD-x86_64, NetBSD-i386,
+  OpenBSD x86_64, OpenBSD-i386,
+  Darwin-MacOs-x86_64,  Darwin-MacOs-aarch64,
   Windows-i386, Windows-x86_64.
 - Links to xlib and gdi32, no external widget library needed.
 - Internal character encoding is utf-16.
@@ -15,13 +21,15 @@ Copyright (c) 1999-2017 by Martin Schreiber
 - Has sophisticated database access components and data edit widgets.
 - Internationalization functionality with resource modules.
 - Report generator.
+- BGRABitmap graphic library compatible.
 
 IDE:
 - Integrated debugging.
 - Source code highlighting.
 - Source code navigation with support for include files.
 - Code completion for classes.
-- Integrated visual form designer with source code update for components and 
+- Procedures list.
+- Integrated visual form designer with source code update for components and
   events.
 - Flexible and handy build system with switchable macros.
 - Visual form inheritance.
@@ -29,22 +37,27 @@ IDE:
 
 License:
 IDE and tools are under GPL, library under modified LGPL like FPC-RTL.
-Package maintainers may delete the files "apps/ide/COPYING.GPL", 
+Package maintainers may delete the files "apps/ide/COPYING.GPL",
 "lib/common/COPYING.LGPL" and "lib/common/COPYING.MSE".
 
 Installation:
 *************
-1. Download and install FPC 3.0.2, you can get it from 
+1. Download and install FPC, you can get it from 
    http://www.freepascal.org/download.var
-2. Download mseide_msegui_src_4_4_2.zip and the mseide_* archive
-   for your system.
-   http://sourceforge.net/projects/mseide-msegui/files/mseide-msegui/4.4.2/
+2. Download mseide_msegui from 
+   https://github.com/mse-org/mseide-msegui/archive/master.zip
 3. Extract them to a directory of your choice ('yourdirectory') .
-4. Run 'yourdirectory/bin/mseide' on linux and freebsed or 
+4. Run 'yourdirectory/bin/mseide' on Linux and FreeBSD or
    'yourdirectory\bin\mseide.exe' on windows.
 5. In 'Settings'-'Configure MSEide'-'${MSEDIR}' select 'yourdirectory/msegui'.
 6. In 'Project'-'Open' select 'yourdirectory/msegui/apps/demo/demo.prj'.
 7. 'Target'-'Continue'.
+
+If you get the error "/usr/bin/ld: cannot find -lX11" install the
+libX11-devel or libX11-dev package or make a symbolic link
+/usr/lib/libX11.so -> /usr/lib/libX11.so.6
+see
+https://bugs.freepascal.org/view.php?id=32367
 
 If you wish to to compile the IDE:
 
@@ -109,7 +122,7 @@ MSEgui command line parameters
 
 --NOSTATICGRAVITY
  Simulates staticgravity for buggy window managers.
- 
+
 MSEide command line parameters
 ******************************
 -np
@@ -118,7 +131,7 @@ MSEide command line parameters
 -ns
  Do not use a skin, no fades.
 
---globstatfile=<filepath> 
+--globstatfile=<filepath>
  Use <filepath> instead the default global MSEide status file.
 
 --macrogroup=<n>
@@ -131,12 +144,12 @@ MSEide command line parameters
 --storeglobalmacros
  Store --macrodef defines as global 'Settings'-'Configure MSEide' macros and
  terminate MSEide.
-   
+
 MSEide environment variables
 ****************************
 Macros in 'Settings'-'Configure MSEide' can be overridden by environment
 variables. They will be overriden by --macrodef and 'Project'-'Options'-'Macros'.
-Possible names: 
+Possible names:
 FPCDIR, FPCLIBDIR, MSEDIR, MSELIBDIR, SYNTAXDEFDIR, TEMPLATEDIR,
 COMPSTOREDIR, COMPILER, DEBUGGER, EXEEXT, TARGET, TARGETOSDIR.
 
@@ -194,7 +207,7 @@ FILE_NOEXT     no file name extension.
 
 MSEide exec macros
 ******************
-${EXEC_OUT(commandline[,timeoutms])} 
+${EXEC_OUT(commandline[,timeoutms])}
  Executes commandline, returns the process output. Timeout in
  milli seconds, default = 1000, -1 = infinite.
 
@@ -212,7 +225,7 @@ CURSOURCEFILE current source file.
 CURMODULEFILE current *.mfm file.
 CURSSELECTION selected text in source editor.
 CURSWORD word at cursor in source editor
-CURSDEFINITION} definition of the current token at cursor 
+CURSDEFINITION} definition of the current token at cursor
  (Ctrl+LClick destination), needs activated P-column
  (Parse source before call) to be current.
 CURCOMPONENTCLASS current selected component class in form editor.
@@ -225,19 +238,20 @@ package if necessary.
 
 Popup widgets behind the forms
 ******************************
-If the popup widgets are showed behind the forms, try to start the 
+If the popup widgets are showed behind the forms, try to start the
 MSEgui program with the option '--TOPLEVELRAISE'. Do *not* use this option
 if is not necessary (KDE, Gnome... work well without).
 
-Display problems with Linux radeon driver
-*****************************************
-If the display is distorted or slow add 
+Display problems with Linux radeon and other EXA drivers
+********************************************************
+If the display is distorted or slow add
 Option "EXAPixmaps" "off"
-to 
+to
 Section "Device"
 of xorg.conf, see
 https://bugs.freedesktop.org/show_bug.cgi?id=69543
 https://bugs.freedesktop.org/show_bug.cgi?id=84253
+or use the proprietary video driver for your video chip.
 
 Flashing taskbar widgets in IceWM
 *********************************
@@ -250,7 +264,7 @@ The utf-8 setup in Ubuntu seems to be incomplete. If you get the exception
 "egui : Invalid inputmanager tinternalapplication ." at program start, try to
 replace your language locale in /usr/share/X11/locale/locale.dir
 by en_US as a workaround. Example for ru_RU.UTF-8:
-replace 
+replace
 ru_RU.UTF-8/XLC_LOCALE ru_RU.UTF-8
 by
 en_US.UTF-8/XLC_LOCALE ru_RU.UTF-8
@@ -274,24 +288,27 @@ Binary name is 'mymseide' (linux) or 'mymseide.exe' (win32).
 
 If you wish to do it from scratch:
 
-- Create a register unit for your components 
+- Create a register unit for your components
   (see 'apps/myide/regmycomps.pas' for an example).
-- Enter the unitname followed by a comma 
-  ('myregunit,' if your regunitfile is 'myregunit.pas') in 
+- Enter the unitname followed by a comma
+  ('myregunit,' if your regunitfile is 'myregunit.pas') in
   a file named 'regcomponents.inc'.
 - Build the IDE with -dmorecomponents as option.
 
-If you want add custom icons to your components:
+Component units integrated by this mechanism don't need to be GPL, see
+apps/ide/COPYING.IDE
+
+If you want to add custom icons to your components:
 
 - Convert 24*24 pixel BMP or PNG files with tools/bmp2pas to
   an icon unit ('*_bmp.pas').
 - Add the name of the icon unit to 'uses' in your register unit.
- 
+
 How to run i18ndemo
 *******************
 - Start MSEide.
 - 'Project'-'Open'-'yourdirectory/msegui/apps/i18ndemo/i18ndemo.prj'.
-- 'Project'-'Make' to create the rst files.
+- 'Project'-'Make' to create the rsj files.
 - 'Project'-'Open'-'yourdirectory/msegui/tools/i18n/msei18n.prj'.
 - 'Target'-'Continue'.
 In MSEi18n:
@@ -331,20 +348,22 @@ tsqlite3connection field type mapping:
 
 ZeosLib
 *******
-In order to install the Zeos components add the path to the Zeos source to 
+In order to install the Zeos components add the path to the Zeos source to
 'Project'-'Options'-'Make'-'Directories' and compile the IDE with
 -dmse_with_zeoslib -dMSEgui.
 There is a predefined IDE project apps/ide/mseide_zeos.prj, update 'Project'-
 'Options'-'Macros' according to your installation.
 
-Crosscompiling and remote debugging i386-linux -> arm-linux
+Crosscompiling and remote debugging i386/x84_64-linux -> arm-linux
 ***********************************************************
 For Raspberry Pi:
 - Establish a ssh login without password (public key authentication).
 
-- On the i386-linux host install the scp program
-- download and extract 
-  http://sourceforge.net/projects/mseide-msegui/files/fpcrossarm/crossfpc-i386_linux-eabihf_3_0_1a.tar.gz
+On the i386/x84_64-linux host:
+- install the scp program
+- download and extract
+  https://sourceforge.net/projects/mseide-msegui/files/fpcrossarm/crossfpc-i386_linux_eabihf_3_0_5.tar.gz
+  (or crossfpc-x86_64_linux_eabihf_3_0_5.tar.gz)
   to <your crossfpc directory>.
 
 - Start MSEide, in 'Settings'-'Configure MSEide'-'Global Macros' add:
@@ -353,9 +372,9 @@ Name            Value
 
 CROSSMSEDIR     <MSEide+MSEgui directory>
 CROSSFPCDIR     <your crossfpc directory>
-CROSSFPCVERSION 3.0.1
-HOSTIP          <the IP of the host>
-REMOTEIP        <the IP of the remote target>
+CROSSFPCVERSION 3.0.5
+HOSTIP          <the IP address of the host>
+REMOTEIP        <the IP address of the remote target>
 REMOTEPORT      <the remote port, ex: 2345>
 REMOTEUSER      pi
 
@@ -370,8 +389,9 @@ REMOTEUSER      pi
   <your crossfpc directory>/eabihf/lib
 
 Press F9 and hope the best. ;-)
-If there is a debugger timout at startup enlarge the 
-'Project'-'Options'-'Target'-'Wait before connect' value.
+
+If there is a debugger timeout at startup enlarge the
+'Project'-'Options'-'Debugger'-'Target'-'Wait before connect' value.
 
 Have a lot of fun!
 

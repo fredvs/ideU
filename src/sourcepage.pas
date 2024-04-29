@@ -413,6 +413,7 @@ begin
  except
   on e: exception do begin
  {$ifndef darwin} 
+  
    handleerror(e,ansistring(lang_sourceform[ord(sf_syntaxdeffile)]));
  {$endif}  
   end;

@@ -739,6 +739,9 @@ end;
 procedure tmainfo.ideureadconfig();
 var 
   libpath: msestring;
+  {$if defined(darwin) and defined(macapp)}
+  binPath: string;
+  {$ENDIF}  
 begin
   {$IFDEF Windows}
   libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
@@ -782,8 +785,13 @@ begin
 
   nostaticgravity := true;
  
-  libpath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
-
+  {$if defined(darwin) and defined(macapp)}
+  binPath := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+  libpath := copy(binPath, 1, length(binPath) -6) + 'Resources/';
+  {$else}
+  libpath   := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))));
+  {$ENDIF}   
+ 
   if not fileexists(confideufo.deflayout.Text) then
     confideufo.deflayout.Text := (libpath) + directoryseparator +
                                  'layout' + directoryseparator +
@@ -4214,7 +4222,7 @@ begin
                               c_linefeed + c_linefeed + c_linefeed +
                               ' Martin Schreiber' +
                               c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023' +
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2024' +
                               c_linefeed +
                               'https://github.com/mse-org/mseide-msegui';
 
@@ -4240,7 +4248,7 @@ begin
                               c_linefeed +
                               '<graemeg@gmail.com>' +
                               c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023';
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2024';
 
   aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;
@@ -4263,7 +4271,7 @@ begin
                               'Fred van Stappen' +
                               c_linefeed +
                               '<fiens@hotmail.com>' + c_linefeed +
-                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2023';
+                              lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2024';
 
   aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
   aboutfo.Height := aboutfo.about_text.Height + 16;

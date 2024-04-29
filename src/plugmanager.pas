@@ -281,9 +281,15 @@ Begin
         Else
           thecommand := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
         AProcess := TProcess.Create(Nil);
-      {$WARN SYMBOL_DEPRECATED OFF}
-        AProcess.CommandLine := thecommand + Aparam;
-     {$WARN SYMBOL_DEPRECATED ON}
+      
+       // {$WARN SYMBOL_DEPRECATED OFF}
+       //   AProcess.CommandLine := thecommand + Aparam;
+       // {$WARN SYMBOL_DEPRECATED ON}
+        
+        AProcess.Executable:= ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
+
+        AProcess.Parameters.Add(Aparam);
+        
         AProcess.Priority := ppRealTime;
         AProcess.Options := [poNoConsole];
         AProcess.Execute;

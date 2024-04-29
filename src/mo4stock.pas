@@ -18,6 +18,11 @@ VAR
   customsetLangFilePattern: FUNCTION: string;
   realizeApplicationLanguages: PROCEDURE = NIL;
   LangDir: string = 'lang';
+  
+  {$if defined(darwin) and defined(macapp)}
+  binPath: string;
+  {$ENDIF}  
+  
   Appname: string;
 
 PROCEDURE createnewlang (alang: msestring);
@@ -336,8 +341,14 @@ PROCEDURE createnewlang (alang: msestring);
 
 INITIALIZATION
   Appname:= lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), '_'));
+  
+  {$if defined(darwin) and defined(macapp)}
+  binPath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
+  LangDir := copy(binPath, 1, length(binPath) -6) + 'Resources/lang/';
+  {$else}
   LangDir:= ExtractFilePath (ParamStr (0))+ LangDir+ directoryseparator;
-
+  {$ENDIF}  
+ 
   LocalisationReference:= Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
                                               en_stockcaption, en_extendedtext);
   LocalisationActive:=    Localisator.Create (en_modalresulttext, en_modalresulttextnoshortcut,
