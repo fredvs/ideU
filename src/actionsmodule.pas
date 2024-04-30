@@ -6,11 +6,38 @@ unit actionsmodule;
 interface
 
 uses
- mseconsts,msestockobjects,captionideu,Classes,mseclasses,mseact,msetabs,
- mseactions,msebitmap,msestrings,msegui,commandorform,dialogfiles,msefileutils,
- msedatamodules,mseglob,msestat,msegraphics,msegraphutils,mseguiglob,msemenus,
- msesys,msesysutils,msesimplewidgets,projecttreeform,msestringcontainer,
- targetconsole,mclasses,mseificomp,mseificompglob,mseifiglob, msetypes;
+  mseconsts,
+  msestockobjects,
+  captionideu,
+  Classes,
+  mseclasses,
+  mseact,
+  msetabs,
+  mseactions,
+  msebitmap,
+  msestrings,
+  msegui,
+  commandorform,
+  dialogfiles,
+  msefileutils,
+  msedatamodules,
+  mseglob,
+  msestat,
+  msegraphics,
+  msegraphutils,
+  mseguiglob,
+  msemenus,
+  msesys,
+  msesysutils,
+  msesimplewidgets,
+  projecttreeform,
+  msestringcontainer,
+  targetconsole,
+  mclasses,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msetypes;
 
 type
   tactionsmo = class(tmsedatamodule)
@@ -138,8 +165,8 @@ type
     procedurelist: taction;
     deleteword: taction;
     selectword: taction;
-   c: tstringcontainer;
-   findmenu: taction;
+    c: tstringcontainer;
+    findmenu: taction;
     procedure findinfileonexecute(const Sender: TObject);
 
     //file
@@ -302,7 +329,7 @@ uses
 procedure configureide;
 begin
   disassfo.resetshortcuts();
-  if editsettings(lang_actionsmodule[ord(ac_configureideu)],
+  if editsettings(lang_actionsmodule[Ord(ac_configureideu)],
     actionsmo.shortcuts) then
   begin
     mainfo.mainstatfile.writestat();
@@ -314,32 +341,30 @@ end;
 
 procedure tactionsmo.procedurelistonexecute(const Sender: TObject);
 begin
-if (sourcefo.ActivePage <> nil)
-then
-begin
-
-  if not plformcreated then
-    doProcedureList;
-
-
-  procedurelistfo.font.Height := confideufo.fontsize.Value;
-  procedurelistfo.font.Name   := ansistring(confideufo.fontname.Value);
-
-  procedurelistfo.edtSearch.Width      := (procedurelistfo.Width div 2) - 40;
-  procedurelistfo.cbObjects.Width      := procedurelistfo.edtSearch.Width;
-  procedurelistfo.cbObjects.left       := procedurelistfo.edtSearch.right + 20;
-  procedurelistfo.grdProcedures.top    := procedurelistfo.cbObjects.bottom + 10;
-  procedurelistfo.grdProcedures.Height := procedurelistfo.Height -
-    procedurelistfo.cbObjects.bottom - 14;
-
-  if mainfo.ismodal then
-    procedurelistfo.Show(True)
-  else
+  if (sourcefo.ActivePage <> nil) then
   begin
-    procedurelistfo.Show;
-    procedurelistfo.bringtofront;
+
+    if not plformcreated then
+      doProcedureList;
+
+    procedurelistfo.font.Height := confideufo.fontsize.Value;
+    procedurelistfo.font.Name   := ansistring(confideufo.fontname.Value);
+
+    procedurelistfo.edtSearch.Width      := (procedurelistfo.Width div 2) - 40;
+    procedurelistfo.cbObjects.Width      := procedurelistfo.edtSearch.Width;
+    procedurelistfo.cbObjects.left       := procedurelistfo.edtSearch.right + 20;
+    procedurelistfo.grdProcedures.top    := procedurelistfo.cbObjects.bottom + 10;
+    procedurelistfo.grdProcedures.Height := procedurelistfo.Height -
+      procedurelistfo.cbObjects.bottom - 14;
+
+    if mainfo.ismodal then
+      procedurelistfo.Show(True)
+    else
+    begin
+      procedurelistfo.Show;
+      procedurelistfo.bringtofront;
+    end;
   end;
- end; 
 end;
 
 function tactionsmo.gettoolshortcutaction(const index: int32; out act: taction): Boolean;
@@ -435,17 +460,17 @@ procedure tactionsmo.savecustom(const Sender: TObject);
 var
   sysfilename: msestring;
 begin
-if (sourcefo.ActivePage <> nil) then
-begin
-  saveactonexecute(Sender);
-  if (conffpguifo.enablefpguidesigner.Value = True) then
+  if (sourcefo.ActivePage <> nil) then
   begin
-    sysfilename := tosysfilepath(filepath(sourcefo.ActivePage.filename, fk_file, True));
-    LoadfpgDesigner(ansistring(sysfilename));
+    saveactonexecute(Sender);
+    if (conffpguifo.enablefpguidesigner.Value = True) then
+    begin
+      sysfilename := tosysfilepath(filepath(sourcefo.ActivePage.filename, fk_file, True));
+      LoadfpgDesigner(ansistring(sysfilename));
+    end;
+    sourcefo.activate;
+    sourcefo.updatehinttab;
   end;
-  sourcefo.activate;
-  sourcefo.updatehinttab;
-end;  
 end;
 
 procedure tactionsmo.saveasactonexecute(const Sender: TObject);
@@ -458,9 +483,9 @@ begin
     openfile.controller.icon        := icon;
     openfile.controller.showoptions := True;
 
-    openfile.controller.captionsave := lang_xstockcaption[ord(sc_saveas)];
-   
-       if factivedesignmodule <> nil then
+    openfile.controller.captionsave := lang_xstockcaption[Ord(sc_saveas)];
+
+    if factivedesignmodule <> nil then
     begin
       str1 := factivedesignmodule^.filename;
       if openfile.controller.Execute(str1, fdk_save) then
@@ -554,22 +579,20 @@ end;
 
 procedure tactionsmo.toggleformunitonexecute(const Sender: TObject);
 begin
-if (sourcefo.ActivePage <> nil) then
-begin
-  mainfo.toggleformunit;
-  //tabcloser := False;
-end;  
+  if (sourcefo.ActivePage <> nil) then
+    mainfo.toggleformunit//tabcloser := False;
+  ;
 end;
-
 
 // fred
 
 procedure tactionsmo.initproject;
 begin
+ {$ifndef darwin}
   debuggerfo.project_abort_compil.Enabled := True;
   debuggerfo.project_abort_compil.face.image.alignment :=
     [al_stretchx, al_stretchy];
-
+  {$endif}
 end;
 
 procedure tactionsmo.finishcustom;
@@ -595,7 +618,6 @@ begin
 
   debuggerfo.edited_abort.Enabled := False;
 
-
   debuggerfo.edited_abort.face.image.alignment :=
     [al_grayed, al_stretchx, al_stretchy];
 
@@ -620,18 +642,23 @@ procedure tactionsmo.compileproject(const Sender: TObject);
 begin
 
   iscompiling := True;
+
+  {$ifndef darwin}
+  // mainfo.setstattext('Compiling ' + UTF8Decode(ansistring(AFilename)) + '...', mtk_notok);
+
+  mainfo.setstattext('Compiling ' + gettargetfile + '...', mtk_notok);
+
   debuggerfo.project_make.Enabled := False;
 
   debuggerfo.project_make.face.image.alignment :=
     [al_grayed, al_stretchx, al_stretchy];
-
-  //debuggerfo.imagebut.getimage(1, debuggerfo.project_make.face.image);
 
   debuggerfo.project_abort_compil.Enabled := True;
   //debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
 
   debuggerfo.project_abort_compil.face.image.alignment :=
     [al_stretchx, al_stretchy];
+  {$endif}
 
   case debuggerfo.project_options.Value of
     'M':
@@ -702,19 +729,21 @@ end;
 procedure tactionsmo.custcompileproject(const Sender: TObject);
 begin
   if theprojectname <> '' then
-begin
-  saveallactonexecute(Sender);
-  compileproject(Sender);
-end;  
+  begin
+  {$ifdef darwin}
+   mainfo.setstattext('Compiling ' + theprojectname + '...' , mtk_notok);
+  {$endif}
+    saveallactonexecute(Sender);
+    compileproject(Sender);
+  end;
 end;
 
 procedure tactionsmo.setupcustom;
 begin
+  {$ifndef darwin}
   debuggerfo.edited_make.Enabled := False;
-
   debuggerfo.edited_make.face.image.alignment :=
     [al_grayed, al_stretchx, al_stretchy];
-
 
   debuggerfo.edited_abort.Enabled := True;
 
@@ -725,6 +754,7 @@ begin
 
   debuggerfo.edited_run.face.image.alignment :=
     [al_grayed, al_stretchx, al_stretchy];
+  {$endif}
 
   case debuggerfo.edit_compiler.Value of
     'Pascal': mainfo.settypecompiler := 1;
@@ -756,16 +786,20 @@ end;
 
 procedure tactionsmo.compilecustom(const Sender: TObject);
 begin
-if (sourcefo.ActivePage <> nil) then
-begin
-  saveactonexecute(Sender);
-  setupcustom;
-  mainfo.customcompile(Sender);
-end;  
+  if (sourcefo.ActivePage <> nil) then
+  begin
+    saveactonexecute(Sender);
+    setupcustom;
+  {$ifdef darwin}
+  mainfo.setstattext('Compiling ' + sourcefo.ActivePage.filename + '...' , mtk_notok);
+ {$endif}
+    mainfo.customcompile(Sender);
+  end;
 end;
 
 procedure tactionsmo.setupcustommenu(const Sender: TObject);
 begin
+ {$ifndef darwin}
   debuggerfo.edited_make.Enabled := False;
 
   debuggerfo.edited_make.face.image.alignment :=
@@ -779,7 +813,7 @@ begin
 
   debuggerfo.edited_abort.face.image.alignment :=
     [al_stretchx, al_stretchy];
-
+  {$endif}
 
   case debuggerfo.edit_compiler.Value of
     'Pascal': mainfo.settypecompiler := 1;
@@ -818,10 +852,13 @@ end;
 
 procedure tactionsmo.runcustom(const Sender: TObject);
 begin
-if (sourcefo.ActivePage <> nil) then
-begin
-  mainfo.customrun(Sender);
-end;  
+  if (sourcefo.ActivePage <> nil) then
+  begin
+   mainfo.setstattext('Running ' + sourcefo.ActivePage.filename + '...' , mtk_notok);
+   sleep(300);
+   mainfo.customrun(Sender);
+   mainfo.setstattext('Process done.' , mtk_notok);
+   end;  
 end;
 
 procedure tactionsmo.undoactonexecute(const Sender: TObject);
@@ -922,7 +959,7 @@ begin
     linefo.bringtofront
   else
     integerenter(fgototheline, 1, sourcefo.ActivePage.source_editor.rowcount,
-      lang_sourceform[ord(sf_gotoline)], lang_sourceform[ord(sf_findline)]);
+      lang_sourceform[Ord(sf_gotoline)], lang_sourceform[Ord(sf_findline)]);
   linefo.font.Height := confideufo.fontsize.Value;
   linefo.font.Name   := ansistring(confideufo.fontname.Value);
   // sourcefo.activepage.doline;
@@ -937,7 +974,7 @@ begin
     finddialogfo.bringtofront
   else
     finddialogexecute(findinfos);
-     
+
   //  finddialogfo.left := 500;
   //  finddialogfo.top := 120;
 end;
@@ -962,14 +999,13 @@ end;
 
 procedure tactionsmo.togglebkptenableactonexecute(const Sender: TObject);
 begin
-   sourcefo.ActivePage.togglebreakpointenabled;
+  sourcefo.ActivePage.togglebreakpointenabled;
 end;
 
 procedure tactionsmo.instemplateactonexecute(const Sender: TObject);
 begin
   sourcefo.ActivePage.inserttemplate;
 end;
-
 
 //make
 
@@ -1000,6 +1036,7 @@ end;
 
 procedure tactionsmo.resetactonexecute(const Sender: TObject);
 begin
+{$ifndef darwin}
   with mainfo do
   begin
     gdb.abort;
@@ -1008,6 +1045,7 @@ begin
     setstattext('');
     startgdb(False);
   end;
+{$endif}  
 end;
 
 procedure tactionsmo.interruptactonexecute(const Sender: TObject);
@@ -1021,13 +1059,14 @@ var
   str3: msestring;
   int1, int2, int3: integer;
 begin
+ {$ifndef darwin}
   nodebugset := False;
   str3       := gettargetfile;//to initialize
   str3       := '';
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
+      lang_xstockcaption[Ord(sc_compileitfirst)], mtk_error)
 
   else
   begin
@@ -1072,17 +1111,13 @@ begin
 
       if (pos('Default', str3) > 0) then
         str3 := 'Default Debugger'
-      else
-      if (str3 = 'Debugger 1') then
+      else if (str3 = 'Debugger 1') then
         str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger1.Value))
-      else
-      if (str3 = 'Debugger 2') then
+      else if (str3 = 'Debugger 2') then
         str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger2.Value))
-      else
-      if (str3 = 'Debugger 3') then
+      else if (str3 = 'Debugger 3') then
         str3 := quotefilename(tosysfilepath(confdebuggerfo.debugger3.Value))
-      else
-      if (str3 = 'Debugger 4') then
+      else if (str3 = 'Debugger 4') then
         str3 := (quotefilename(tosysfilepath(confdebuggerfo.debugger4.Value)))
       else
         str3 := '';
@@ -1121,6 +1156,10 @@ begin
     else
       mainfo.runwithoutdebugger;
   end;
+  {$else}
+   mainfo.setstattext('Running ' + gettargetfile + '...' ,mtk_flat);
+   mainfo.runwithoutdebugger;
+  {$endif}
 end;
 
 
@@ -1128,12 +1167,11 @@ procedure tactionsmo.stepactonexecute(const Sender: TObject);
 begin
   gettargetfile;//to initialize
 
- 
-   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
+  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + ' .  ' + 
-      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
-  
+      ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + ' .  ' +
+      lang_xstockcaption[Ord(sc_compileitfirst)], mtk_error)
+
   else
     with mainfo do
       if checkremake(sc_step) then
@@ -1144,10 +1182,10 @@ procedure tactionsmo.stepiactonexecute(const Sender: TObject);
 begin
   gettargetfile;//to initializez
 
- if not fileexists(tosysfilepath(msestring(gettargetfile))) then
+  if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
+      lang_xstockcaption[Ord(sc_compileitfirst)], mtk_error)
 
   else
     with mainfo do
@@ -1159,8 +1197,8 @@ procedure tactionsmo.nextactonexecute(const Sender: TObject);
 begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
+      lang_xstockcaption[Ord(sc_compileitfirst)], mtk_error)
 
   else
     with mainfo do
@@ -1172,8 +1210,8 @@ procedure tactionsmo.nextiactonexecute(const Sender: TObject);
 begin
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
-        ' ' + lang_actionsmodule[ord(ac_doesnotexist)] + '  ' + 
-      lang_xstockcaption[ord(sc_compileitfirst)]  , mtk_error)
+      ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
+      lang_xstockcaption[Ord(sc_compileitfirst)], mtk_error)
 
   else
     with mainfo do
@@ -1225,10 +1263,10 @@ begin
   with mainfo do
   begin
     int1 := 0;
-    if integerenter(int1, minint, maxint, lang_actionsmodule[ord(ac_processid)],
-      lang_actionsmodule[ord(ac_attachtoprocess)]) = mr_ok then
+    if integerenter(int1, minint, maxint, lang_actionsmodule[Ord(ac_processid)],
+      lang_actionsmodule[Ord(ac_attachtoprocess)]) = mr_ok then
     begin
-      setstattext(lang_actionsmodule[ord(ac_attachingprocess)] + ' ' + UTF8Decode(IntToStr(int1)), mtk_making);
+      setstattext(lang_actionsmodule[Ord(ac_attachingprocess)] + ' ' + UTF8Decode(IntToStr(int1)), mtk_making);
       application.ProcessMessages;
       startgdb(False);
       gdb.attach(int1, info);
@@ -1279,11 +1317,11 @@ procedure tactionsmo.projectopenexe(const Sender: TObject);
 var
   fna1: filenamety;
 begin
-  
+
   debuggerfo.project_history.tag := 1;
   if projectfiledialog(fna1, False) = mr_ok then
   begin
-    mainfo.closeallmod(sender);
+    mainfo.closeallmod(Sender);
     mainfo.openproject(tosysfilepath(fna1));
     mainfo.activate;
     sourcefo.updatehinttab;
@@ -1292,10 +1330,8 @@ end;
 
 procedure tactionsmo.projectoptionsexe(const Sender: TObject);
 begin
-if theprojectname <> '' then
-begin
-  editprojectoptions;
-end;  
+  if theprojectname <> '' then
+    editprojectoptions;
 end;
 
 procedure tactionsmo.projecttreeexe(const Sender: TObject);
@@ -1310,15 +1346,11 @@ end;
 
 procedure tactionsmo.projectsaveexe(const Sender: TObject);
 begin
-if theprojectname <> '' then
-begin
-
-  if projectoptions.projectfilename = '' then
-    mainfo.saveprojectasonexecute(Sender)
-  else
-    mainfo.saveproject(projectoptions.projectfilename);
-    
- end;   
+  if theprojectname <> '' then
+    if projectoptions.projectfilename = '' then
+      mainfo.saveprojectasonexecute(Sender)
+    else
+      mainfo.saveproject(projectoptions.projectfilename);
 end;
 
 procedure tactionsmo.projectcloeseexe(const Sender: TObject);

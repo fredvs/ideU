@@ -3,410 +3,414 @@
  Fred van Stappen / fiens@hotmail.com
 }
 
-Unit plugmanager;
+unit plugmanager;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 
-Interface
+interface
 
-Uses 
+uses
 {$IFDEF UNIX}
 cthreads, {$ENDIF}
-Process, conffpgui, msefileutils, make,
-Classes,
-SysUtils;
+  Process,
+  conffpgui,
+  msefileutils,
+{$IFDEF darwin}
+msegui, commandorform, {$ENDIF}
+  make,
+  Classes,
+  SysUtils;
 
+function DoBeautifier(const AFilename: string; formatengine: integer; backup: Boolean): Boolean;
 
-{  // for future libraries
-type
-   TPlugin = class(TThread)
-  protected
-  procedure Execute; override;
- function execute(athread: tmsethread): integer; override;
-     public
-  constructor Create(CreateSuspended: boolean;
-      const StackSize: SizeUInt = DefaultStackSize);
-end;
+procedure RunCustomCompiled(const AFilename: string; acompiler: string);
 
-procedure fpgd_mainproc();
-}
+procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
-Function DoBeautifier(Const AFilename: String; formatengine: integer;
-                      backup: boolean): boolean;
-
-Procedure RunCustomCompiled(Const AFilename: String; acompiler: String);
-
-Procedure RunWithoutDebug(Const AFilename: String; Aparam: String);
+{$ifdef darwin}
+procedure RunWithoutDebugMac(Const AFilename: String; Aparam: String);
+{$endif}
 
 // for fpGUI
-Procedure LoadfpgDesigner(Const AfpgFilename: String);
+procedure LoadfpgDesigner(const AfpgFilename: string);
 
-Procedure CleanfpgDesigner();
-
-
-{ for future libraries
-function fpgd_loadlib(const libfilename: string): boolean; 
-procedure fpgd_unloadlib;
-procedure fpgd_hide();
-procedure fpgd_close();
-function fpgd_loadfile(afilename : PChar) : integer ;
+procedure CleanfpgDesigner();
 
 var
-fpgdlib_isloaded : boolean = false;
-fpgdlib_enabled : boolean = true;
-fpgdprog_enabled : boolean = false;
-fpgplug : TPlugin ;
-}
+  iffpgdconsumed: Boolean = False;
 
-Var 
-  iffpgdconsumed: boolean = False;
+implementation
 
-Implementation
+uses
+ {$ifdef darwin}
+main, beauty, projectoptionsform, messageform ;
+ {$else}
+  main,
+  beauty;
 
-Uses 
-main, beauty;
+ {$endif}
 
 
-{ // for libraries
- constructor TPlugin.Create(CreateSuspended: boolean;
-  const StackSize: SizeUInt);
-  begin
-   inherited Create(CreateSuspended, StackSize);
-  FreeOnTerminate := true;
-    end;
- 
- //// fpgui designer_ext
-// function TPlugin.execute(athread: tmsethread): integer;
-  procedure TPlugin.execute();
-  begin
-if fpgdlib_isloaded then
- h_fpgdxt.fpgdxtmainproc() ;
-  end;  
-
-function fpgd_loadlib(const libfilename: string): boolean;
-begin
- fpgdlib_isloaded := h_fpgdxt.fpgdxtloadlib(libfilename);
- result := fpgdlib_isloaded ;
- fpgplug  := TPlugin.Create(false) ;
-end;
-
-procedure fpgd_unloadlib();
-begin
-h_fpgdxt.fpgdxtunloadlib() ;
-fpgdlib_enabled := false;
-end;
-
- procedure fpgd_hide(); 
- begin
-   h_fpgdxt.fpgdxthide();
- end;
- 
- procedure fpgd_close(); 
- begin
-   h_fpgdxt.fpgdxtclose();
- end;
- 
-function fpgd_loadfile(afilename : PChar) : integer ;
- begin
-  result := -1;
-  if FileExists(afilename) then
-  begin
-  result := h_fpgdxt.fpgdxtloadfile(afilename);
-  end;
-  end;
- 
-  procedure fpgd_mainproc(); 
-  begin
-    //  fpgplug.execute(fpgplug);
-       fpgplug.execute();
-   end;
- }
-
-Procedure RunCustomCompiled(Const AFilename: String; acompiler: String);
-
-Var 
+procedure RunCustomCompiled(const AFilename: string; acompiler: string);
+var
   dataf, dataf2, conso: string;
   len1: integer;
-Begin
+begin
+  {$ifdef darwin}
+  if (acompiler = 'macos') then
+    RunWithoutDebugMac(ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)), fk_file,
+    True))), acompiler)
+  else
+   {$endif}
+  if (acompiler = '') or (acompiler = '1w') or (acompiler = '3w') then
+  begin
+    if (acompiler = '') then
+      RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))),
+        acompiler)
+    else
+      RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))),
+        'wine');
+  end
+  else if fileexists(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))) then
+  begin
+    dataf2 := ansistring(trim(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))));
+    len1   := pos('.', dataf2);
 
-  If (acompiler = '') Or (acompiler = '1w') Or (acompiler = '3w') Then
-    Begin
-      If (acompiler = '') Then
-        RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))), acompiler)
-      Else
-        RunWithoutDebug(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))), 'wine');
-    End
-  Else
-    Begin
-      If fileexists(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))) Then
-        Begin
-          dataf2 := ansistring(trim(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))));
-          len1 := pos('.', dataf2);
-
-          If (acompiler = 'Pascal') Or (acompiler = 'C') Or (acompiler = '1') Or
-             (acompiler = '3') Then
-            Begin
- {$IFDEF Windows}
-              dataf := copy(dataf2, 1, len1) + 'exe';
+    if (acompiler = 'Pascal') or (acompiler = 'C') or (acompiler = '1') or
+      (acompiler = '3') then
+    begin
+    {$IFDEF Windows}
+      dataf := copy(dataf2, 1, len1) + 'exe';
     {$else}
-              dataf := copy(dataf2, 1, len1 - 1);
+      dataf := copy(dataf2, 1, len1 - 1);
     {$endif}
 
-              dataf := ansistring(tosysfilepath(filepath(UTF8Decode(trim(dataf)), fk_file, True)));
+      dataf := ansistring(tosysfilepath(filepath(UTF8Decode(trim(dataf)), fk_file, True)));
 
-              If fileexists(dataf) Then
-                Begin
-                  RunWithoutDebug(dataf, '');
-                End
-              Else
-                mainfo.setstattext(UTF8Decode(dataf + ' is not executable...'), mtk_notok);
-            End;
+      if fileexists(dataf) then
+        RunWithoutDebug(dataf, '')
+      else
+        mainfo.setstattext(UTF8Decode(dataf + ' is not executable...'), mtk_notok);
+    end;
 
-          If (acompiler = 'Java') Or (acompiler = '2') Then
-            Begin
+    if (acompiler = 'Java') or (acompiler = '2') then
+    begin
 
-              dataf := copy(dataf2, 1, len1 - 1);
+      dataf := copy(dataf2, 1, len1 - 1);
 
+      if fileexists(dataf + '.class') then
+      begin
 
-              If fileexists(dataf + '.class') Then
-                Begin
+        conso := ExtractFilePath(dataf);
 
-                  conso := ExtractFilePath(dataf);
-
-                  dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
+        dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
 
 {$ifdef windows}
-                  dataf := 'java.exe -Djava.library.path=. ' + dataf;
+        dataf := 'java.exe -Djava.library.path=. ' + dataf;
 {$else}
-                  dataf := 'java -Djava.library.path=. ' + dataf;
+        dataf := 'java -Djava.library.path=. ' + dataf;
 {$endif}
 
-                  RunWithoutDebug(dataf, 'java');
+        RunWithoutDebug(dataf, 'java');
 
-                End
-              Else
-                mainfo.setstattext(UTF8Decode(dataf + '.class' + ' does not exist...'), mtk_notok);
-            End;
+      end
+      else
+        mainfo.setstattext(UTF8Decode(dataf + '.class' + ' does not exist...'), mtk_notok);
+    end;
 
-          If (acompiler = 'Python') Or (acompiler = '4') Then
-            Begin
+    if (acompiler = 'Python') or (acompiler = '4') then
+    begin
 
-              dataf := copy(dataf2, 1, len1 - 1);
+      dataf := copy(dataf2, 1, len1 - 1);
 
+      if fileexists(dataf + '.pywc') then
+      begin
 
-              If fileexists(dataf + '.pywc') Then
-                Begin
+        conso := ExtractFilePath(dataf);
 
-                  conso := ExtractFilePath(dataf);
-
-                  dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
+        dataf := copy(dataf, length(conso) + 1, length(dataf) - length(conso));
 
 {$ifdef windows}
-                  dataf := 'python.exe ' + dataf + '.pywc';
+                   dataf := 'python.exe ' + dataf + '.pywc';
 {$else}
-                  dataf := 'python ' + dataf + '.pywc';
+        dataf := 'python ' + dataf + '.pywc';
 {$endif}
 
-                  RunWithoutDebug(dataf, 'pywc');
+        RunWithoutDebug(dataf, 'pywc');
 
-                End
-              Else
-                mainfo.setstattext(UTF8Decode(dataf + '.pywc' + ' does not exist...'), mtk_notok);
-            End;
+      end
+      else
+        mainfo.setstattext(UTF8Decode(dataf + '.pywc' + ' does not exist...'), mtk_notok);
+    end;
+  end;
+end;
 
-        End;
+{$ifdef darwin}
+procedure RunWithoutDebugMac(Const AFilename: String; Aparam: String);
 
-    End;
-
-End;
-
-
-Procedure RunWithoutDebug(Const AFilename: String; Aparam: String);
-
-Var 
+var 
   AProcess: TProcess;
   thecommand: string;
-Begin
+  AStringList: TStringList;
+  BytesRead    : longint;
+  Buffer       : array[1..2048] of byte;
+  OutputStream, OutputStream2 : TStream;
 
-  If Aparam = 'cd' Then
-    Begin
-      AProcess := TProcess.Create(Nil);
+begin
+  if Aparam = 'wine' then
+    begin
+      Aparam := '';
+      wineneeded := True;
+    end;
+
+  if (wineneeded = True) then
+    thecommand := 'wine ' + ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)),
+                  fk_file, True)))
+  else
+    thecommand := ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)), fk_file, True
+                  )));
+  AProcess := TProcess.Create(Nil);
+
+        {$WARN SYMBOL_DEPRECATED OFF}
+  AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True))) ;
+       {$WARN SYMBOL_DEPRECATED ON}
+
+  AProcess.Options := [poUsePipes];
+
+  messagefo.messages.clear;
+
+  application.processmessages;
+
+  AProcess.Execute;
+
+  AStringList := TStringList.Create;
+
+  OutputStream := TMemoryStream.Create;
+
+  repeat
+    BytesRead := AProcess.Output.Read(Buffer, 2048);
+
+    OutputStream.write(Buffer, BytesRead);
+
+    OutputStream2 := OutputStream;
+
+    OutputStream2.Position := 0;
+
+    AStringList.LoadFromStream(OutputStream2);
+
+    messagefo.addtext(AStringList.text);
+
+    application.processmessages;
+
+  until BytesRead = 0;
+ 
+  messagefo.messages.clear;
+
+  OutputStream.Position := 0;
+  
+  AStringList.LoadFromStream(OutputStream);
+
+  messagefo.addtext(AStringList.text);
+
+  //   application.processmessages; 
+
+  mainfo.setstattext('Process done', mtk_flat);
+
+  debuggerfo.project_make.Enabled := True;
+
+  AStringList.Free;
+  AProcess.Free;
+  OutputStream.Free;
+end;
+{$endif}
+
+procedure RunWithoutDebug(const AFilename: string; Aparam: string);
+var
+  AProcess: TProcess;
+  thecommand: string;
+begin
+ {$ifdef darwin}
+  if (Aparam = 'macos') then
+    RunWithoutDebugMac(ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)), fk_file,
+    True))), Aparam)
+  else
+   {$endif}
+  if Aparam = 'cd' then
+  begin
+    AProcess          := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-      AProcess.CommandLine := Aparam + ' ' + ansistring(tosysfilepath(
-                              filepath(UTF8Decode(AFilename), fk_file, True)));
+    AProcess.CommandLine := Aparam + ' ' + ansistring(tosysfilepath(
+      filepath(UTF8Decode(AFilename), fk_file, True)));
      {$WARN SYMBOL_DEPRECATED ON}
-      AProcess.Priority := ppRealTime;
-      AProcess.Options := [poNoConsole];
-      AProcess.Execute;
-      AProcess.Free;
-    End
-  Else
-
-    If (Aparam = 'java') Then
-      Begin
-        AProcess := TProcess.Create(Nil);
+    AProcess.Priority := ppRealTime;
+    AProcess.Options  := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else if (Aparam = 'java') then
+  begin
+    AProcess          := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-        AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
+    AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file,
+      True)));
      {$WARN SYMBOL_DEPRECATED ON}
-        AProcess.Priority := ppRealTime;
-        AProcess.Options := [poNoConsole];
-        AProcess.Execute;
-        AProcess.Free;
-      End
-  Else
-
-    If (Aparam = 'pywc') Then
-      Begin
-        AProcess := TProcess.Create(Nil);
+    AProcess.Priority := ppRealTime;
+    AProcess.Options  := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else if (Aparam = 'pywc') then
+  begin
+    AProcess          := TProcess.Create(nil);
       {$WARN SYMBOL_DEPRECATED OFF}
-        AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
+    AProcess.CommandLine := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file,
+      True)));
      {$WARN SYMBOL_DEPRECATED ON}
-        AProcess.Priority := ppRealTime;
-        AProcess.Options := [poNoConsole];
-        AProcess.Execute;
-        AProcess.Free;
-      End
-  Else
+    AProcess.Priority := ppRealTime;
+    AProcess.Options  := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+  end
+  else if fileexists(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)))) then
+  begin
+    if Aparam = 'wine' then
+    begin
+      Aparam     := '';
+      wineneeded := True;
+    end;
 
-    If fileexists(ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)))) Then
-      Begin
-        If Aparam = 'wine' Then
-          Begin
-            Aparam := '';
-            wineneeded := True;
-          End;
+    if (wineneeded = True) then
+      thecommand := 'wine ' + ansistring(tosysfilepath(filepath(UTF8Decode(AFilename),
+        fk_file, True)))
+    else
+      thecommand := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
 
-        If (wineneeded = True) Then
-          thecommand := 'wine ' + ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)))
-        Else
-          thecommand := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
-        AProcess := TProcess.Create(Nil);
-      
-       // {$WARN SYMBOL_DEPRECATED OFF}
-       //   AProcess.CommandLine := thecommand + Aparam;
-       // {$WARN SYMBOL_DEPRECATED ON}
-        
-        AProcess.Executable:= ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
+    AProcess := TProcess.Create(nil);
 
-        AProcess.Parameters.Add(Aparam);
-        
-        AProcess.Priority := ppRealTime;
-        AProcess.Options := [poNoConsole];
-        AProcess.Execute;
-        AProcess.Free;
-       // mainfo.setstattext('', mtk_flat);
-      End
-  Else
+    {$WARN SYMBOL_DEPRECATED OFF}
+    AProcess.CommandLine := thecommand + Aparam;
+    {$WARN SYMBOL_DEPRECATED ON}
+
+    //AProcess.Executable := ansistring(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)));
+    // AProcess.Parameters.Add(Aparam);
+
+    AProcess.Priority := ppRealTime;
+    AProcess.Options  := [poNoConsole];
+    AProcess.Execute;
+    AProcess.Free;
+    // mainfo.setstattext('', mtk_flat);
+  end
+  else
     mainfo.setstattext(UTF8Decode(AFilename) + ' does not exist...', mtk_notok);
-End;
+end;
 
 //Beautifier
-Function DoBeautifier(Const AFilename: String; formatengine: integer; backup: boolean): boolean;
-
-Var 
+function DoBeautifier(const AFilename: string; formatengine: integer; backup: Boolean): Boolean;
+var
   plugpath, exename, param: string;
-Begin
+begin
 
-  result := false;
+  Result := False;
 
   plugpath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) +
-              'plugin' + directoryseparator ;
+    'plugin' + directoryseparator;
 
-  tosysfilepath(filepath(UTF8Decode(plugpath), fk_file, True)) ;
+  tosysfilepath(filepath(UTF8Decode(plugpath), fk_file, True));
 
-  If backup Then
+  if backup then
     CopyFile(tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)),
-    tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)) + '.bak_' +
-     UTF8Decode(formatdatetime('YYYY_MM_DD_HH_mm_ss',now)))  ;
+      tosysfilepath(filepath(UTF8Decode(AFilename), fk_file, True)) + '.bak_' +
+      UTF8Decode(formatdatetime('YYYY_MM_DD_HH_mm_ss', now)));
 
-  If formatengine = 0 Then
-    Begin
-      exename := 'ptop';
-      param := ' -c ' +
-               ansistring(tosysfilepath(filepath(UTF8Decode(plugpath + exename +
-               directoryseparator + exename + '.cfg '), fk_file, True))) + ' ';
-               ;
-     //writeln(param);          
-    End
-  Else
-    Begin
-      param := ' -inplace ';
-      exename := 'jcf';
-    End;
+  if formatengine = 0 then
+  begin
+    exename := 'ptop';
+    param   := ' -c ' +
+      ansistring(tosysfilepath(filepath(UTF8Decode(plugpath + exename +
+      directoryseparator + exename + '.cfg '), fk_file, True))) + ' ';
+    ;
+    //writeln(param);          
+  end
+  else
+  begin
+    param   := ' -inplace ';
+    exename := 'jcf';
+  end;
 
   //writeln('plugpath = ' + plugpath);
   //writeln('param = ' + param);
 
   plugpath := plugpath + exename +
-              directoryseparator + exename ;
+    directoryseparator + exename;
 
  {$IFDEF windows}
   plugpath := plugpath + '.exe';
-{$ENDIF}
+ {$ENDIF}
 
   plugpath := ansistring(tosysfilepath(filepath(UTF8Decode(plugpath), fk_file, True)));
-  
- // writeln(plugpath);  
- 
-  If fileexists(tosysfilepath(filepath(UTF8Decode(trim(AFilename)),
-     fk_file, True))) Then
-    Begin
-      result := true;
-         
- //writeln(param + AFilename);  
-  // beautyfo.filetoclean.value := plugpath + param + AFilename ;
 
-      If formatengine = 0 Then
-        RunWithoutDebug(plugpath, param + ansistring(tosysfilepath(filepath(UTF8Decode(trim(AFilename)),
-     fk_file, True))) + ' ' + ansistring(tosysfilepath(filepath(utf8decode(trim(AFilename)),
-     fk_file, True))))
-      Else
-        RunWithoutDebug(plugpath, param + ansistring(tosysfilepath((filepath(UTF8Decode(trim(AFilename)),
-     fk_file, True)))));
-    End;
-End;
+  // writeln(plugpath);  
+
+  if fileexists(tosysfilepath(filepath(UTF8Decode(trim(AFilename)),
+    fk_file, True))) then
+  begin
+    Result := True;
+
+    //writeln(param + AFilename);  
+    // beautyfo.filetoclean.value := plugpath + param + AFilename ;
+
+    if formatengine = 0 then
+      RunWithoutDebug(plugpath, param + ansistring(tosysfilepath(filepath(UTF8Decode(trim(
+        AFilename)),
+        fk_file, True))) + ' ' + ansistring(tosysfilepath(filepath(utf8decode(trim(AFilename)),
+        fk_file, True))))
+    else
+      RunWithoutDebug(plugpath, param + ansistring(tosysfilepath((filepath(UTF8Decode(trim(
+        AFilename)),
+        fk_file, True)))));
+  end;
+end;
 
 //fpGUI designer
-Procedure LoadfpgDesigner(Const AfpgFilename: String);
-
-Var 
+procedure LoadfpgDesigner(const AfpgFilename: string);
+var
   dataf: string;
-Begin
-  If fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
-     fk_file, True))) Then
-    Begin
-      If ((iffpgdconsumed = False) And (AfpgFilename = 'quit')) Or
-         ((iffpgdconsumed = False) And (AfpgFilename = 'closeall')) Or
-         ((iffpgdconsumed = False) And (AfpgFilename = 'hideit')) Then
-      Else
-        If (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) Or
-           (AfpgFilename = 'closeall') Or (AfpgFilename = 'quit') Or
-           (AfpgFilename = 'showit') Or (AfpgFilename = 'hideit') Then
-          Begin
-            iffpgdconsumed := True;
-            dataf := ansistring(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
-                     fk_file, True)));
-            If (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) Then
-              RunWithoutDebug(dataf, ' ' +
-                              ansistring(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True))))
-            Else
-              RunWithoutDebug(dataf, ' ' + ansistring(AfpgFilename));
-          End;
-    End;
-End;
+begin
+  if fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
+    fk_file, True))) then
+    if ((iffpgdconsumed = False) and (AfpgFilename = 'quit')) or
+      ((iffpgdconsumed = False) and (AfpgFilename = 'closeall')) or
+      ((iffpgdconsumed = False) and (AfpgFilename = 'hideit')) then
+    else if (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) or
+      (AfpgFilename = 'closeall') or (AfpgFilename = 'quit') or
+      (AfpgFilename = 'showit') or (AfpgFilename = 'hideit') then
+    begin
+      iffpgdconsumed := True;
+      dataf          := ansistring(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value)
+        ,
+        fk_file, True)));
+      if (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) then
+        RunWithoutDebug(dataf, ' ' +
+          ansistring(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file,
+          True))))
+      else
+        RunWithoutDebug(dataf, ' ' + ansistring(AfpgFilename));
+    end;
+end;
 
 //fpGUI designer
-Procedure CleanfpgDesigner();
+procedure CleanfpgDesigner();
 {$ifdef unix}
 
-Var 
+var 
   dataf: string;
   {$endif}
-Begin
+begin
  {$ifdef unix}
   dataf := '/usr/bin/killall';
   RunWithoutDebug(dataf, ' designer_ext');
    {$endif}
-End;
+end;
 
-End.
+end.
+

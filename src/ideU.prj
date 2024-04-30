@@ -81,9 +81,9 @@ findinfiledialog=95
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -109,13 +109,14 @@ findinfiledialog=95
   "*.pas" "*.pp" "*.inc" "*.prj"
  [findinfileadialogfo.dir]
  filenames=1
-  /home/fred/mseide-msegui/
+  /home/fred/ideu_darwin/
  filecolwidth=150
- x=466
- y=190
- cx=608
- cy=346
+ x=254
+ y=244
+ cx=587
+ cy=307
  filehistory=20
+  /home/fred/ideu_darwin/
   /home/fred/mseide-msegui/
   /usr/share/fpcsrc/3.2.2/
   /usr/share/lazarus/
@@ -135,32 +136,31 @@ findinfiledialog=95
   /home/fred/biotray/
   /home/fred/A Alphabetical listing of command line options_files/
   /home/fred/svnfpc32/fixes_3_2/
-  /home/fred/mseide-msegui-avantcircular/
  filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc" "*.*"
+ filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=lang_modalresult
+ value=setstattext(''
  history=20
+  setstattext(''
+  project_make
+  project_start
+  mainfo.setstattext(''
+  edited_abort
+  RunWithoutDebug
+  gettargetfile
+  Making
+  poUsePipes
+  application.proc
+  messagefo
+  Warning
+  #13
+  messagesfo
+  pipe2
+  unit mselibc
+  mselibc
   lang_modalresult
   expandprmacros('${LANGDIR}
   lang/
-  'lang'
-  langdir
-  languagedir
-  'lang
-  /lang
-  fontconfig
-  bmo_graymask
-  bmo_colormask
-  netbsd
-  timagelist
-  (timagelist)
-  pipestream
-  enablesource
-  removelastpathsection
-  setcurrentdir
-  setcurrentdirectoryw
-  sys_setcurrentdir
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -321,8 +321,8 @@ options=114
  index=2
  [projectoptionsfo]
  stackedunder=
- x=304
- y=110
+ x=401
+ y=191
  cx=887
  cy=618
 settaborder=15
@@ -925,18 +925,24 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=1
- STOCKDATA
-moduletypes=1
- TSTOCKDATA
-modulefiles=1
- /home/fred/ideu/src/msestockobjects.mfm
+modulenames=3
+ ACTIONSMO
+ MAINFO
+ SOURCEFO
+moduletypes=3
+ TACTIONSMO
+ TMAINFO
+ TSOURCEFO
+modulefiles=3
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=19
  4095
  4095
  1
- 2041
+ 1791
  2046
  4095
  192
@@ -1220,7 +1226,7 @@ sigsettings=27
  30,30,T,F
 defaultmake=4
 [breakpoints]
-on=27
+on=25
  0
  0
  0
@@ -1246,23 +1252,19 @@ on=27
  0
  0
  0
- 0
- 0
-path=27
+path=25
  /usr/home/fred/ideu_prog/src/main.pas
  /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/main.pas
  /home/fred/ideu/src/msesyntaxpainter.pas
  /home/fred/ideu/src/msesyntaxedit.pas
- /home/fred/ideu/src/make.pas
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/ideu/src/projectoptionsform.pas
  /home/fred/msegui/lib/common/kernel/linux/cwstring.pas
  /home/fred/ideu/src/main.pas
- /home/fred/ideu/src/actionsmodule.pas
  /home/fred/ideu/src/dialogfiles.pas
  /home/fred/ideu/src/templates/fpc_mse/default.prj
  /home/fred/ideu/src/commandorform.pas
@@ -1276,21 +1278,19 @@ path=27
  /home/fred/mseide-msegui/lib/common/image/mseformattgaread.pas
  /home/fred/mseide-msegui/lib/common/db/firebird.pas
  /home/fred/ideu/src/main.pas
-line=27
+line=25
  2129
- 1164
+ 1186
  526
- 3159
+ 3183
  660
  119
- 1116
  2358
  2274
  2551
  3350
  119
  481
- 456
  66
  684
  98
@@ -1298,27 +1298,25 @@ line=27
  787
  904
  2591
- 5075
+ 5099
  1882
  6181
  18
  8
- 2604
-address=27
+ 2628
+address=25
  4884497
  4705877
  4856125
  4909793
  8610010
  8536081
- 8514886
  8144892
  8143014
  8150634
  8168251
  5887456
  4855245
- 4693513
  4421277
  0
  4737769
@@ -1332,7 +1330,7 @@ address=27
  8677773
  10548957
  4897909
-addbkpt=27
+addbkpt=25
  0
  0
  0
@@ -1358,10 +1356,7 @@ addbkpt=27
  0
  0
  0
- 0
- 0
-ignore=27
- 0
+ignore=25
  0
  0
  0
@@ -1387,10 +1382,7 @@ ignore=27
  0
  0
  0
- 0
-condition=27
- 
- 
+condition=25
  
  
  
@@ -1563,8 +1555,18 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=lang_modalresult
+finddtext=customrun
 findhistory=20
+ setst
+ runwithoutdebugger
+ RunCustomCompiled(ansistring(get
+ tactionsmo.compileproject(
+ tactionsmo.initproject
+ tmaker.create(at
+ macos
+ runprog
+ espeak_key
+ pipe
  lang_modalresult
  getmodalres
  darwin
@@ -1575,20 +1577,9 @@ findhistory=20
  openproject
  eiconv
  unix
- ifdef unix
- targetfrom
- targetform
- item1.submenu[int2].options 
- newformonexecute
- fiens
- pacpas
- macro
- paspac
- paspack
 findoptions=1
-editpos=5
- 0,3
- 0,0
+editpos=4
+ 0,6
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1596,40 +1587,38 @@ bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-bookmarks4=0
-sourcefiles=5
+sourcefiles=4
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/msestockobjects.pas
- /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts.pas
- /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
-relpaths=5
+ ${PROJECTDIR}/actionsmodule.pas
+ ${PROJECTDIR}/main.pas
+relpaths=4
  ideU.pas
  sourceform.pas
- msestockobjects.pas
- mseide-msegui/lib/common/lang_consts/mseconsts.pas
- mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
-ismoduletexts=5
+ actionsmodule.pas
+ main.pas
+ismoduletexts=4
  0
  0
  0
  0
+modules=3
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
+moduleoptions=3
  0
-modules=1
- /home/fred/ideu/src/msestockobjects.mfm
-moduleoptions=1
  0
-visiblemodules=1
+ 0
+visiblemodules=3
  -1
-nomenumodules=1
+ -1
+ -1
+nomenumodules=3
+ 0
+ 0
  0
 [sourcefo.files_tab]
-order=5
- 0
- 4
- 1
- 3
- 2
 firsttab=0
 index=0
 [layout]
@@ -1647,8 +1636,8 @@ windowlayout=558
  ny=0
  ncx=0
  ncy=0
- x=35
- y=51
+ x=31
+ y=98
  cx=1428
  cy=724
  rcx=0
@@ -1675,8 +1664,8 @@ windowlayout=558
  ny=0
  ncx=0
  ncy=0
- x=493
- y=171
+ x=467
+ y=288
  cx=497
  cy=341
  rcx=0
@@ -1758,8 +1747,8 @@ windowlayout=558
  ny=0
  ncx=0
  ncy=0
- x=160
- y=267
+ x=158
+ y=323
  cx=1190
  cy=414
  rcx=0
@@ -1788,7 +1777,7 @@ windowlayout=558
  sortdescend1=0
  sorted=0
  col=0
- row=16
+ row=11
  rowheight=19
  [stackfo]
  splitdir=0
@@ -1867,10 +1856,10 @@ windowlayout=558
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=465
- width0=229
+ propcolwidthref=355
+ width0=165
  sortdescend0=0
- width1=230
+ width1=184
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -2085,27 +2074,33 @@ windowlayout=558
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
- value=X
+ value=1
  [debuggerfo.edit_compilernum]
  value=0
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
- history=13
-  /home/fred/mseide-msegui/lib/common/lang_consts/mseconsts_strings.inc
-  /home/fred/ideu/src/msestockobjects.pas
-  /home/fred/strumpract/src/piano.pas
-  /home/fred/strumpract/src/randomnote.pas
-  /home/fred/strumpract/src/infosd.pas
-  /home/fred/strumpract/src/guitars.pas
-  /home/fred/strumpract/src/synthe.pas
+ value=/home/fred/ideu/src/commandorform.pas
+ history=19
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/actionsmodule.pas
+  /home/fred/ideu_darwin/src/main.mfm
   /home/fred/ideu/src/ideusettings.pas
-  /home/fred/uos/examples/uos.pas
-  /home/fred/uos/examples/consolesynth.pas
-  /home/fred/uos/examples/consoleplay.pas
-  /home/fred/mseide-msegui/lib/common/designutils/msegdbutils.pas
-  /home/fred/ideu/src/msegdbutils.pas
+  /home/fred/strumpract/src/uos_define.inc
+  /home/fred/mseide-msegui/apps/ide/mseide.pas
+  /home/fred/mseide-msegui/apps/ide/sourceform.pas
+  /home/fred/strumpract/src/config.pas
+  /home/fred/strumpract/src/aboutform.pas
+  /home/fred/strumpract/src/configlayout.pas
+  /home/fred/Downloads/strumpract-main/src/configlayout.pas
+  /home/fred/strumpract/src/splash.pas
+  /home/fred/Downloads/cairo-experiment/demo.pas
+  /home/fred/strumpract/src/infosd.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/mxft.pas
+  /home/fred/mseide-msegui/lib/common/kernel/linux/mx.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -2127,12 +2122,6 @@ windowlayout=558
  rcx=0
  rcy=0
  [sourcefo.files_tab]
- order=5
-  0
-  4
-  1
-  3
-  2
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]
@@ -2173,20 +2162,20 @@ windowlayout=558
  cy=526
  rcx=0
  rcy=0
- [_mse_stockdata_mse_]
+ [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=targetconsolefo
+ stackedunder=_mse_actionsmo_mse_
  parent=
  mdistate=3
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=129
- y=57
- cx=198
- cy=85
+ x=453
+ y=266
+ cx=810
+ cy=100
  rcx=0
  rcy=0
  wsize=0

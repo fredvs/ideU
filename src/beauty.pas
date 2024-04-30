@@ -41,7 +41,7 @@ type
     procedure dobeauti(const Sender: TObject);
     procedure doclose(const Sender: TObject);
     procedure ondestroyev(const Sender: TObject);
-   procedure oncreat(const sender: TObject);
+    procedure oncreat(const Sender: TObject);
   end;
 
 var
@@ -54,7 +54,8 @@ implementation
 
 uses
   beauty_mfm,
-  plugmanager, main,
+  plugmanager,
+  main,
   commandorform;
 
 procedure doBeauty;
@@ -64,7 +65,7 @@ begin
     beautyfo.filetoclean.Value := ExtractFileName(debuggerfo.file_history.Value);
     beautyfo.filetoclean.hint  := debuggerfo.file_history.Value;
 
-    beautyformcreated          := True;
+    beautyformcreated := True;
   finally
   end;
 end;
@@ -90,9 +91,9 @@ begin
   beautyformcreated := False;
 end;
 
-procedure tbeautyfo.oncreat(const sender: TObject);
+procedure tbeautyfo.oncreat(const Sender: TObject);
 begin
-//icon := mainfo.icon;
+  //icon := mainfo.icon;
 end;
 
 end.

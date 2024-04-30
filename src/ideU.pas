@@ -10,12 +10,10 @@ program ideU;
  {$R ideu.res}
 {$endif}
 
-uses
- {$ifndef windows}
+uses {$ifndef windows}
   cmem,
- {$endif} 
- {$ifdef FPC} {$ifdef unix}
-  cthreads,    {$endif}  {$endif}
+ {$endif} {$ifdef FPC} {$ifdef unix}
+  cthreads,        {$endif} {$endif}
   msestockobjects,
   mseconsts,
   captionideu,
@@ -125,20 +123,21 @@ begin
 
   createcpufo;
 
-  headerfo.icon := mainfo.icon;
+  headerfo.icon       := mainfo.icon;
   // splashfo.icon       := mainfo.icon;
-  confideufo.icon := mainfo.icon;
-  confmseguifo.icon := mainfo.icon;
-  conffpguifo.icon := mainfo.icon;
+  confideufo.icon     := mainfo.icon;
+  confmseguifo.icon   := mainfo.icon;
+  conffpguifo.icon    := mainfo.icon;
   confcompilerfo.icon := mainfo.icon;
   confdebuggerfo.icon := mainfo.icon;
-  sourcefo.icon := mainfo.icon;
-  debuggerfo.icon := mainfo.icon;
-  findinfilefo.icon := mainfo.icon;
-  messagefo.icon := mainfo.icon;
-  dialogfilesfo.icon := mainfo.icon;
-  findmessagefo.icon := mainfo.icon;
-  aboutfo.icon := mainfo.icon;
+  sourcefo.icon       := mainfo.icon;
+  debuggerfo.icon     := mainfo.icon;
+  findinfilefo.icon   := mainfo.icon;
+  messagefo.icon      := mainfo.icon;
+  dialogfilesfo.icon  := mainfo.icon;
+  findmessagefo.icon  := mainfo.icon;
+  aboutfo.icon        := mainfo.icon;
 
   application.run;
 end.
+

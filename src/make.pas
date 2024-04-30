@@ -35,7 +35,7 @@ implementation
 uses
  mseprocutils,main,projectoptionsform,sysutils,msegrids, confcompiler,
  sourceform,mseeditglob,msefileutils,msesys, msesysutils,msegraphics,
- messageform,msedesignintf,msedesigner,
+ messageform,msedesignintf,msedesigner,plugmanager,
  mseprocmonitor,mseevent, confideu,
  classes,mclasses,mseclasses,mseapplication,msestream,
  msegui,actionsmodule;
@@ -913,14 +913,23 @@ begin
  fmessagefinished:= false;
  ffinished:= false;
 
- procid:= invalidprochandle;
+ {$ifdef darwin}
+ procid:= 0;
+ {$else}
+  procid:= invalidprochandle; 
+ {$endif} 
+  
  with projectoptions,o.texp do begin
   if fsetmakedir and (makedir <> '') then begin
    wdbefore:= setcurrentdirmse(makedir);
   end;
   try
-   procid:= execmse2(UTF8Decode(acommandline),nil,messagepipe,messagepipe,-1,
-                                                   [exo_inactive,exo_tty]);
+  {$ifdef darwin}
+  RunCustomCompiled(ansistring(acommandline), 'macos');
+ {$else}
+   procid:= execmse2(UTF8Decode(acommandline),nil,messagepipe,messagepipe,-1,[exo_inactive,exo_tty]);
+ {$endif} 
+                                                   
   except
    on e1: exception do begin
     fcanceled:= true;
@@ -1008,7 +1017,9 @@ begin
  actionsmo.initproject ;
  //mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
 
+ {$ifndef darwin}
   mainfo.setstattext(lang_actionsmodule[ord(ac_making)] + ' ' + gettargetfile + '...' ,mtk_making);
+ {$endif} 
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
@@ -1114,7 +1125,10 @@ begin
  inherited create(nil,true,true);
  if procid <> invalidprochandle then begin
  // mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
+  
+ {$ifndef darwin}
   mainfo.setstattext( lang_actionsmodule[ord(ac_making)] + ' ' + aname + '...' ,mtk_making);
+ {$endif} 
 
   messagefo.messages.font.options:= messagefo.messages.font.options +
                                                       [foo_nonantialiased];
