@@ -149,6 +149,7 @@ object debuggerfo: tdebuggerfo
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
   windowopacity = -Inf
+  oncreate = oncr
   oncreated = oncreat
   moduleclassname = 'tdockform'
   object basedock: tdockpanel
@@ -168,6 +169,7 @@ object debuggerfo: tdebuggerfo
   end
   object statdisp: tstringdisp
     optionswidget = [ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
+    color = -1610612731
     face.fade_pos.count = 2
     face.fade_pos.items = (
       0
@@ -176,10 +178,11 @@ object debuggerfo: tdebuggerfo
     face.fade_color.count = 2
     face.fade_color.items = (
       -1610612731
-      8553090
+      -1610612731
     )
-    face.fade_direction = gd_up
-    face.localprops = [fal_fadirection]
+    face.fade_direction = gd_down
+    face.fade_opacity = -2147483645
+    face.localprops = [fal_fadirection, fal_faopacity]
     taborder = 1
     bounds_x = 0
     bounds_y = 30

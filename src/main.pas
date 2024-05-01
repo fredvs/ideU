@@ -1537,7 +1537,42 @@ begin
     colore1  := cl_black;
   end;
 
+{$if defined(netbsd) or defined(darwin)}
   with debuggerfo.statdisp do
+  begin
+    Value := removelinebreaks(atext);
+    case akind of
+      mtk_warning:
+      begin
+       color := $DBFFDB;
+      end;
+      mtk_finished:
+      begin
+        color := colorf0;
+      end;
+      mtk_error:
+      begin
+        color := colore0;
+      end;
+      mtk_signal:
+      begin
+        color := cl_ltred;
+      end;
+      mtk_making:
+      begin
+        color := $DEA8FF;
+      end;
+      mtk_notok:
+      begin
+        color := colornf0;
+      end
+      else
+      begin
+        color := color0;
+      end;
+    end;
+{$else}
+ with debuggerfo.statdisp do
   begin
     Value := removelinebreaks(atext);
     case akind of
@@ -1579,6 +1614,8 @@ begin
         face.fade_color.items[1] := color1;
       end;
     end;
+{$endif}
+
 
     font.color := color3;
 
@@ -2315,7 +2352,7 @@ begin
       {$ifdef darwin}
        run.Enabled       := true;
       {$else}
-    run.Enabled := not gdb.running and not gdb.downloading and not iscompiling;
+      run.Enabled := not gdb.running and not gdb.downloading and not iscompiling;
        {$endif}
 
     debuggerfo.debug_on.Enabled      := run.Enabled;
@@ -5514,7 +5551,9 @@ begin
     debuggerfo.project_step_instruction.face.template := debuggerfo.templproject;
     debuggerfo.project_reset.face.template     := debuggerfo.templproject;
     debuggerfo.project_interrupt.face.template := debuggerfo.templproject;
+    {$ifndef darwin}    
     debuggerfo.statdisp.face.template          := debuggerfo.templatemain;
+    {$endif}
     debuggerfo.timagelist1.getimage(0, debuggerfo.eyesimage.bitmap, 0);
 
     debuggerfo.paneledited.face.template      := debuggerfo.templfile;
@@ -5724,10 +5763,11 @@ begin
     debuggerfo.project_step_instruction.face.template := debuggerfo.templateprojectdark;
     debuggerfo.project_reset.face.template := debuggerfo.templateprojectdark;
     debuggerfo.project_interrupt.face.template := debuggerfo.templateprojectdark;
-    debuggerfo.statdisp.face.template := debuggerfo.templatemaindark;
-
+    {$ifndef darwin}    
+    debuggerfo.statdisp.face.template          := debuggerfo.templatemaindark;
+    {$endif}
     debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
-    //{   
+   
     debuggerfo.container.color := color0;
     debuggerfo.color           := color0;
     debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;

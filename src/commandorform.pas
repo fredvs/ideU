@@ -98,6 +98,7 @@ type
    procedure onbeauty(const sender: TObject);
    procedure procedurelistonexecute(const sender: TObject);
    procedure oncreat(const sender: TObject);
+   procedure oncr(const sender: TObject);
   end;
 var
  debuggerfo: tdebuggerfo;
@@ -475,9 +476,15 @@ edited_abort.face.image := statdisp.face.image;
 
 edited_run.imagelist := actionsmo.buttonicons;
 edited_run.face.image := statdisp.face.image;
-
 {$endif}
 
+end;
+
+procedure tdebuggerfo.oncr(const sender: TObject);
+begin
+{$if defined(netbsd) or defined(darwin)}
+  statdisp.face.fade_color.count := 0;
+{$endif}
 end;
 
 end.

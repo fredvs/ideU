@@ -139,8 +139,18 @@ findinfiledialog=95
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc" "*.mfm"
  [findinfileadialogfo.findtext]
- value=setstattext(''
+ value=color.count
  history=20
+  color.count
+  color_count
+  setstattext
+  setsta
+  setstatdis
+  statdisp.f
+  'fpc'
+  netbsd
+  noz
+  darwin
   setstattext(''
   project_make
   project_start
@@ -151,16 +161,6 @@ findinfiledialog=95
   Making
   poUsePipes
   application.proc
-  messagefo
-  Warning
-  #13
-  messagesfo
-  pipe2
-  unit mselibc
-  mselibc
-  lang_modalresult
-  expandprmacros('${LANGDIR}
-  lang/
  [findinfileadialogfo]
  stackedunder=
  x=210
@@ -209,7 +209,7 @@ replacedialog=33
  x=281
  y=237
  cx=389
- cy=224
+ cy=216
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -925,17 +925,14 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=2
  ACTIONSMO
- MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=2
  TACTIONSMO
- TMAINFO
  TSOURCEFO
-modulefiles=3
+modulefiles=2
  /home/fred/ideu/src/actionsmodule.mfm
- /home/fred/ideu/src/main.mfm
  /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
 makeoptionson=19
@@ -1282,7 +1279,7 @@ line=25
  2129
  1186
  526
- 3183
+ 3220
  660
  119
  2358
@@ -1298,12 +1295,12 @@ line=25
  787
  904
  2591
- 5099
+ 5136
  1882
  6181
  18
  8
- 2628
+ 2665
 address=25
  4884497
  4705877
@@ -1555,8 +1552,13 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=customrun
+finddtext=debuggerfo.statdisp
 findhistory=20
+ setstattext(const
+ setstatt
+ fpc
+ darwin
+ loadexec
  setst
  runwithoutdebugger
  RunCustomCompiled(ansistring(get
@@ -1569,36 +1571,26 @@ findhistory=20
  pipe
  lang_modalresult
  getmodalres
- darwin
  newlang
  createnew
  linux
- lang
- openproject
- eiconv
- unix
 findoptions=1
-editpos=4
- 0,6
- 0,-1073741823
+editpos=3
+ 0,0
  0,-1073741823
  0,-1073741823
 bookmarks0=0
 bookmarks1=0
 bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=3
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
-relpaths=4
+relpaths=3
  ideU.pas
  sourceform.pas
  actionsmodule.pas
- main.pas
-ismoduletexts=4
- 0
+ismoduletexts=3
  0
  0
  0
@@ -1611,18 +1603,18 @@ moduleoptions=3
  0
  0
 visiblemodules=3
- -1
+ 0
  -1
  -1
 nomenumodules=3
- 0
+ -1
  0
  0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=558
+windowlayout=559
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1636,8 +1628,8 @@ windowlayout=558
  ny=0
  ncx=0
  ncy=0
- x=31
- y=98
+ x=97
+ y=84
  cx=1428
  cy=724
  rcx=0
@@ -1777,7 +1769,7 @@ windowlayout=558
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=10
  rowheight=19
  [stackfo]
  splitdir=0
@@ -2080,12 +2072,14 @@ windowlayout=558
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=/home/fred/ideu/src/commandorform.pas
- history=19
-  /home/fred/ideu/src/commandorform.pas
+ value=/home/fred/ideu/src/ideU.pas
+ history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideu/src/plugmanager.pas
+  /home/fred/ideu/src/commandorform.pas
+  /home/fred/ideu/src/projectoptionsform.pas
   /home/fred/ideu/src/main.pas
+  /home/fred/ideu/src/make.pas
+  /home/fred/ideu/src/plugmanager.pas
   /home/fred/ideu/src/actionsmodule.pas
   /home/fred/ideu_darwin/src/main.mfm
   /home/fred/ideu/src/ideusettings.pas
@@ -2100,11 +2094,10 @@ windowlayout=558
   /home/fred/Downloads/cairo-experiment/demo.pas
   /home/fred/strumpract/src/infosd.pas
   /home/fred/mseide-msegui/lib/common/kernel/linux/mxft.pas
-  /home/fred/mseide-msegui/lib/common/kernel/linux/mx.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
- value=1
+ value=0
  [sourcefo]
  splitdir=0
  useroptions=16489
@@ -2130,7 +2123,7 @@ windowlayout=558
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2165,7 +2158,7 @@ windowlayout=558
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
+ stackedunder=componentpalettefo
  parent=
  mdistate=3
  nx=0
@@ -2180,7 +2173,7 @@ windowlayout=558
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
 [targetconsole]
 finddtext=
 findhistory=0
