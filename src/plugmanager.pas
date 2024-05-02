@@ -16,7 +16,7 @@ cthreads, {$ENDIF}
   conffpgui,
   msefileutils,
 {$IFDEF darwin}
-msegui, commandorform, {$ENDIF}
+msegui, commandorform, targetconsole,{$ENDIF}
   make,
   Classes,
   SysUtils;
@@ -177,7 +177,8 @@ begin
 
   AProcess.Options := [poUsePipes];
 
-  messagefo.messages.clear;
+  if targetcons  = false then
+  messagefo.messages.clear else targetconsolefo.clear;
 
   application.processmessages;
 
@@ -198,19 +199,24 @@ begin
 
     AStringList.LoadFromStream(OutputStream2);
 
-    messagefo.addtext(AStringList.text);
+    if targetcons  = false then
+       messagefo.addtext(AStringList.text) else   
+       targetconsolefo.addtext(AStringList.text);
 
     application.processmessages;
 
   until BytesRead = 0;
  
-  messagefo.messages.clear;
+   if targetcons  = false then
+  messagefo.messages.clear else targetconsolefo.clear;
 
   OutputStream.Position := 0;
   
   AStringList.LoadFromStream(OutputStream);
 
-  messagefo.addtext(AStringList.text);
+   if targetcons  = false then
+       messagefo.addtext(AStringList.text) else   
+       targetconsolefo.addtext(AStringList.text);
 
   //   application.processmessages; 
 
@@ -221,6 +227,7 @@ begin
   AStringList.Free;
   AProcess.Free;
   OutputStream.Free;
+  targetcons := false;
 end;
 {$endif}
 

@@ -30,6 +30,9 @@ function runscript(const script: filenamety;
 
 var
  wineneeded: boolean = false;
+{$ifdef darwin} 
+ targetcons: boolean = false;
+{$endif} 
 
 implementation
 uses
@@ -925,6 +928,7 @@ begin
   end;
   try
   {$ifdef darwin}
+  targetcons  := false;
   RunCustomCompiled(ansistring(acommandline), 'macos');
  {$else}
    procid:= execmse2(UTF8Decode(acommandline),nil,messagepipe,messagepipe,-1,[exo_inactive,exo_tty]);

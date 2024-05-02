@@ -731,7 +731,7 @@ begin
   if theprojectname <> '' then
   begin
   {$ifdef darwin}
-   mainfo.setstattext('Compiling ' + theprojectname + '...' , mtk_notok);
+   mainfo.setstattext('Compiling ' + theprojectname + '...' , mtk_making);
   {$endif}
     saveallactonexecute(Sender);
     compileproject(Sender);
@@ -791,7 +791,7 @@ begin
     saveactonexecute(Sender);
     setupcustom;
   {$ifdef darwin}
-  mainfo.setstattext('Compiling ' + sourcefo.ActivePage.filename + '...' , mtk_notok);
+  mainfo.setstattext('Compiling ' + sourcefo.ActivePage.filename + '...' , mtk_making);
  {$endif}
     mainfo.customcompile(Sender);
   end;
@@ -854,7 +854,7 @@ procedure tactionsmo.runcustom(const Sender: TObject);
 begin
   if (sourcefo.ActivePage <> nil) then
   begin
-   mainfo.setstattext('Running ' + sourcefo.ActivePage.filename + '...' , mtk_notok);
+   mainfo.setstattext('Running ' + sourcefo.ActivePage.filename + '...' , mtk_signal);
    sleep(300);
    mainfo.customrun(Sender);
    mainfo.setstattext('Process done.' , mtk_notok);

@@ -1354,6 +1354,13 @@ begin
   end
   else
   begin
+    {$ifdef darwin}
+    if projectoptions.d.showconsole then
+    begin
+    targetconsolefo.activate;
+    targetconsolefo.bringtofront; 
+    end;
+   {$endif}
     strwine   := '';
    {$ifdef linux}
     if (system.pos('.exe', gettargetfile) > 0) then
@@ -1370,9 +1377,10 @@ begin
    {$endif}
 
       {$ifdef darwin}
+      targetcons  := true;
       RunCustomCompiled(ansistring(gettargetfile), 'macos');
       {$else}
-    RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
+      RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
       {$endif}
   end;
 end;
@@ -1556,11 +1564,11 @@ begin
       end;
       mtk_signal:
       begin
-        color := cl_ltred;
+        color := $6DFF45;
       end;
       mtk_making:
       begin
-        color := $DEA8FF;
+        color := $E2B8FF;
       end;
       mtk_notok:
       begin
