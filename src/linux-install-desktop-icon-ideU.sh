@@ -29,7 +29,7 @@ Version=1.0
 Type=Application
 Name=$APP
 Comment=Pascal IDE
-Exec=$SCRDIR/ideU --globstatfile=$SCRDIR/ideU.sta %F
+Exec=$SCRDIR/ideU %F
 Icon=$SCRDIR/ideu64.png
 Path=$SCRDIR/
 Terminal=false
