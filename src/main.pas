@@ -1318,7 +1318,7 @@ begin
   else
     setstattext('', mtk_flat);
   {$endif}
-  
+
   int1 := 1;
 
   with projectoptions, o, texp do
@@ -1572,7 +1572,7 @@ begin
       end;
     end;
 {$else}
- with debuggerfo.statdisp do
+  with debuggerfo.statdisp do
   begin
     Value := removelinebreaks(atext);
     case akind of
@@ -2352,7 +2352,7 @@ begin
       {$ifdef darwin}
        run.Enabled       := true;
       {$else}
-      run.Enabled := not gdb.running and not gdb.downloading and not iscompiling;
+    run.Enabled := not gdb.running and not gdb.downloading and not iscompiling;
        {$endif}
 
     debuggerfo.debug_on.Enabled      := run.Enabled;
@@ -2961,27 +2961,47 @@ end;
 procedure tmainfo.mainonloaded(const Sender: TObject);
 var
   wstr1: msestring;
+  glob: Boolean = False;
 begin
   try
 
+  {$ifndef netbsd}
+    if guitemplatesmo.sysenv.defined[Ord(env_globstatfile)] then
+    begin
+      wstr1 := guitemplatesmo.sysenv.Value[Ord(env_globstatfile)];
+      if wstr1 <> '' then
+      begin
+        mainstatfile.filename := wstr1;
+        glob := True;
+      end;
+    end;
+
+    if glob = False then
+    begin
+      wstr1 := filepath(statdirname);
+      if not finddir(wstr1) then
+        createdir(wstr1);
+    end;
+  {$endif}
+
+    if glob = False then
+    begin
    {$ifndef pacpas}
-
-    wstr1 := filepath(statdirname);
-    if not finddir(wstr1) then
-      createdir(wstr1);
-
+      wstr1 := filepath(statdirname);
+      if not finddir(wstr1) then
+        createdir(wstr1);
     {$ifdef linux}
-    if not fileexists(wstr1 + '/ideuli.sta') then
-      Filecreate(wstr1 + '/ideuli.sta');
+      if not fileexists(wstr1 + '/ideuli.sta') then
+        Filecreate(wstr1 + '/ideuli.sta');
     {$endif}
 
-    mainstatfile.filedir := wstr1;
+      mainstatfile.filedir := wstr1;
 
   {$ifdef mswindows}
-    mainstatfile.filename := statname + 'wi.sta';
+      mainstatfile.filename := statname + 'wi.sta';
   {$endif}
   {$ifdef linux}
-    mainstatfile.filename := statname + 'li.sta';
+      mainstatfile.filename := statname + 'li.sta';
   {$endif}
   {$ifdef openbsd}
     mainstatfile.filename := statname + 'obsd.sta';
@@ -2993,6 +3013,8 @@ begin
   {$endif}
 
     statfilestr := mainstatfile.filedir;
+
+    end;
 
     mainstatfile.readstat;
 
@@ -5551,7 +5573,7 @@ begin
     debuggerfo.project_step_instruction.face.template := debuggerfo.templproject;
     debuggerfo.project_reset.face.template     := debuggerfo.templproject;
     debuggerfo.project_interrupt.face.template := debuggerfo.templproject;
-    {$ifndef darwin}    
+    {$ifndef darwin}
     debuggerfo.statdisp.face.template          := debuggerfo.templatemain;
     {$endif}
     debuggerfo.timagelist1.getimage(0, debuggerfo.eyesimage.bitmap, 0);
@@ -5763,11 +5785,11 @@ begin
     debuggerfo.project_step_instruction.face.template := debuggerfo.templateprojectdark;
     debuggerfo.project_reset.face.template := debuggerfo.templateprojectdark;
     debuggerfo.project_interrupt.face.template := debuggerfo.templateprojectdark;
-    {$ifndef darwin}    
-    debuggerfo.statdisp.face.template          := debuggerfo.templatemaindark;
+    {$ifndef darwin}
+    debuggerfo.statdisp.face.template := debuggerfo.templatemaindark;
     {$endif}
     debuggerfo.timagelist1.getimage(1, debuggerfo.eyesimage.bitmap, 0);
-   
+
     debuggerfo.container.color := color0;
     debuggerfo.color           := color0;
     debuggerfo.container.frame.sbhorz.facebutton.fade_color.items[1] := color0;
