@@ -33,7 +33,7 @@ Exec=$SCRDIR/ideU %F
 Icon=$SCRDIR/ideu64.png
 Path=$SCRDIR/
 Terminal=false
-StartupNotify=true
+StartupNotify=false
 Categories=Application;IDE;Development;GUIDesigner;Programming;
 Keywords=editor;Pascal;IDE;FreePascal;fpc;Design;Designer;
 EOF
