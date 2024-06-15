@@ -1627,7 +1627,7 @@ object mainfo: tmainfo
     controller.options = [fdo_sysfilename, fdo_file, fdo_checkexist]
     controller.captionopen = 'Open file'
     controller.captionsave = 'Save file as'
-    dialogkind = fdk_open
+    dialogkind = fdk_save
     optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_saveoptions, oe1_checkvalueafterstatread, oe1_thumbtrack]
     left = 65
   end
@@ -2303,8 +2303,8 @@ object mainfo: tmainfo
     controller.defaultext = 'prj'
     controller.captionopen = 'Open Project'
     controller.captionsave = 'Save Project'
-    left = 489
-    top = 4
+    left = 284
+    top = 10
   end
   object targetpipe: tpipereadercomp
     oninputavailable = targetpipeinput

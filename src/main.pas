@@ -1380,7 +1380,7 @@ begin
       targetcons  := true;
       RunCustomCompiled(ansistring(gettargetfile), 'macos');
       {$else}
-      RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
+    RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
       {$endif}
   end;
 end;
@@ -2843,10 +2843,31 @@ var
   page: tsourcepage;
   str1: filenamety;
   po1: pmoduleinfoty;
+  ara, arb: msestringarty;
 begin
   //opensourceactonexecute
   //writeln('hello');
-  openfile.controller.captionopen := lang_xstockcaption[Ord(sc_openfile)];
+      openfile.controller.captionopen := lang_xstockcaption[Ord(sc_openfile)];
+      openfile.dialogkind := fdk_open;
+      
+      setlength(ara, 5);
+      setlength(arb, 5);
+
+      ara[0] := 'All';
+      ara[1] := 'Pascal';
+      ara[2] := 'C';
+      ara[3] := 'Java';
+      ara[4] := 'Python';
+
+      arb[0] := '"*.*"';
+      arb[1] := '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"';
+      arb[2] := '"*.c" "*.cpp" "*.h"';
+      arb[3] := '"*.java"';
+      arb[4] := '"*.py"';
+
+      openfile.controller.filter      := 'Pascal ("*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr")';
+      openfile.controller.filterlist.asarraya := ara;
+      openfile.controller.filterlist.asarrayb := arb;
 
   openfile.controller.showoptions := True;
 
@@ -3020,7 +3041,7 @@ begin
 
   {$endif}
 
-    statfilestr := mainstatfile.filedir;
+      statfilestr := mainstatfile.filedir;
 
     end;
 
@@ -3663,6 +3684,7 @@ end;
 procedure tmainfo.newproject(const fromprogram, empty: Boolean);
 var
   aname: filenamety;
+  ara, arb: msestringarty;
   mstr1, mstr2: msestring;
   i1: integer;
   isfromtemplate: Boolean = False;
@@ -3691,13 +3713,42 @@ begin
       if not empty then
       begin
         aname := mstr2 + 'default.prj';
-        if filedialogx(aname, [fdo_checkexist], lang_mainform[Ord(ma_selecttemplate)],
-          [lang_mainform[Ord(ma_projectfiles)], lang_mainform[Ord(ma_str_allfiles)]],
-          ['*.prj', '*'], 'prj') = mr_ok then
+
+        // if filedialogx(aname, [fdo_checkexist], lang_mainform[Ord(ma_selecttemplate)],
+        //   [lang_mainform[Ord(ma_projectfiles)], lang_mainform[Ord(ma_str_allfiles)]],
+        //   ['*.prj', '*'], 'prj') = mr_ok then
+
+        setlength(ara, 2);
+        setlength(arb, 2);
+
+        ara[0] := 'Project files';
+        ara[1] := 'All';
+
+        arb[0] := '"*.prj"';
+        arb[1] := '"*.*"';
+        
+        openfile.dialogkind := fdk_open;
+
+        openfile.controller.filterlist.asarraya := ara;
+        openfile.controller.filterlist.asarrayb := arb;
+        openfile.controller.filter := 'Project files ("*.prj")';
+
+        openfile.controller.filename    := aname;
+        openfile.controller.captionopen := lang_mainform[Ord(ma_selecttemplate)];
+        openfile.controller.showoptions := True;
+        openfile.controller.icon        := icon;
+        openfile.controller.fontheight  := font.Height;
+        // font height of dialogfile
+        openfile.controller.fontname    := msestring(font.Name);
+        // font name of dialogfile
+        openfile.controller.fontcolor   := font.color;
+        // font color of dialogfile
+
+        if openfile.Execute = mr_ok then
         begin
+          aname          := openfile.controller.filename;
           isfromtemplate := True;
           readprojectoptions(aname);
-
         end;
       end;
       aname := '';
@@ -3705,14 +3756,53 @@ begin
     else
     begin
       aname := '';
+      {
       if filedialogx(aname, [fdo_checkexist], lang_mainform[Ord(ma_selectprogramfile)],
         [lang_mainform[Ord(ma_pascalprogfiles)], lang_mainform[Ord(ma_cfiles)],
         lang_mainform[Ord(ma_str_allfiles)]],
         ['"*.pas" "*.pp" "*.mla" "*.dpr" "*.lpr"', '"*.c" "*.cc" "*.cpp"', '*'],
-        'pas') = mr_ok then
-      begin
+        'pas') = mr_ok 
+       }
+       
+      openfile.dialogkind := fdk_open;
+       
+      setlength(ara, 5);
+      setlength(arb, 5);
 
-        //  writeln(filedir(aname));     
+      ara[0] := 'All';
+      ara[1] := 'Pascal';
+      ara[2] := 'C';
+      ara[3] := 'Java';
+      ara[4] := 'Python';
+
+      arb[0] := '"*.*"';
+      arb[1] := '"*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr"';
+      arb[2] := '"*.c" "*.cpp" "*.h"';
+      arb[3] := '"*.java"';
+      arb[4] := '"*.py"';
+
+      openfile.controller.filter      := 'Pascal ("*.pp" "*.pas" "*.inc" "*.dpr" "*.lpr")';
+      openfile.controller.filterlist.asarraya := ara;
+      openfile.controller.filterlist.asarrayb := arb;
+      openfile.controller.filename    := aname;
+      openfile.controller.captionopen := lang_mainform[Ord(ma_selectprogramfile)];
+      openfile.controller.showoptions := True;
+
+      openfile.controller.icon := icon;
+
+      openfile.controller.fontheight := font.Height;
+      // font height of dialogfile
+
+      openfile.controller.fontname := msestring(font.Name);
+      // font name of dialogfile
+
+      openfile.controller.fontcolor := font.color;
+      // font color of dialogfile
+
+      if openfile.Execute = mr_ok then
+      begin
+        //  writeln(filedir(aname));   
+        aname := openfile.controller.filename;
         setcurrentdirmse(filedir(aname));
         with projectoptions do
         begin
@@ -3729,10 +3819,31 @@ begin
       else
         goto endlab;
     end;
-    if filedialogx(aname, [fdo_save, fdo_checkexist], lang_mainform[Ord(ma_str_newproject)],
-      [lang_mainform[Ord(ma_projectfiles)], lang_mainform[Ord(ma_str_allfiles)]],
-      ['*.prj', '*'], 'prj') = mr_ok then
+    //  if filedialogx(aname, [fdo_save, fdo_checkexist], lang_mainform[Ord(ma_str_newproject)],
+    //    [lang_mainform[Ord(ma_projectfiles)], lang_mainform[Ord(ma_str_allfiles)]],
+    //    ['*.prj', '*'], 'prj') = mr_ok then
+        
+    setlength(ara, 2);
+    setlength(arb, 2);
+
+    ara[0] := 'Project files';
+    ara[1] := 'All';
+
+    arb[0] := '"*.prj"';
+    arb[1] := '"*.*"';
+
+    openfile.controller.filterlist.asarraya := ara;
+    openfile.controller.filterlist.asarrayb := arb;
+    openfile.controller.filter := 'Project files ("*.prj")';
+    
+    openfile.dialogkind := fdk_save;
+    
+    openfile.controller.filename    := aname;
+    openfile.controller.captionsave := lang_mainform[Ord(ma_str_newproject)];
+    
+    if openfile.Execute = mr_ok then
     begin
+      aname  := openfile.controller.filename;
       curdir := filedir(aname);
       setcurrentdirmse(curdir);
       if not directoryexists(curdir + directoryseparator + 'units') then
