@@ -71,7 +71,33 @@ order18=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=44
+findinfiledialog=61
+ [findinfileadialogfo.dir]
+ filenames=1
+  /home/fred/mseide-msegui/
+ filenamescust=0
+ filecolwidth=174
+ x=0
+ y=0
+ cx=0
+ cy=0
+ nopanel=0
+ compact=0
+ showoptions=0
+ hidehistory=0
+ hideicons=0
+ showhidden=0
+ colnamewidth=0
+ colsizewidth=0
+ colextwidth=0
+ coldatewidth=0
+ splitterplaces=0
+ splitterlateral=0
+ lastdir=/home/fred/mseide-msegui/
+ filehistory=1
+  /home/fred/mseide-msegui/
+ filefilterindex=0
+ filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -81,30 +107,21 @@ findinfiledialog=44
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=1
- [findinfileadialogfo.inprojectdir]
  value=0
+ [findinfileadialogfo.inprojectdir]
+ value=1
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
  value="*.pas" "*.pp" "*.inc"
  history=1
   "*.pas" "*.pp" "*.inc"
- [findinfileadialogfo.dir]
- filenames=1
-  /home/fred/mseide-msegui/
- filecolwidth=174
- x=0
- y=0
- cx=0
- cy=0
- filehistory=1
-  /home/fred/mseide-msegui/
- filefilterindex=0
- filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=fdk_dir
- history=5
+ value=msefiledialog
+ history=8
+  msefiledialog
+  , msefiledialog
+  , filedialog
   fdk_dir
   filedialogx(
   lock
@@ -1583,7 +1600,7 @@ windowlayout=559
  ncy=0
  x=239
  y=115
- cx=678
+ cx=1242
  cy=414
  rcx=0
  rcy=0
@@ -1917,6 +1934,7 @@ windowlayout=559
  value=/home/fred/ideu/src/ideU.pas
  history=20
   /home/fred/ideu/src/ideU.pas
+  /home/fred/ideu/src/msefiledialogx.pas
   /home/fred/Pictures/about_mseide_win64.png
   /home/fred/strumpract/src/uos.pas
   /home/fred/strumpract/src/uos_flat.pas
@@ -1935,7 +1953,6 @@ windowlayout=559
   /home/fred/mseide-msegui/lib/common/kernel/msectypes.pas
   /home/fred/mseide-msegui_sdl/lib/common/kernel/msegui.pas
   /home/fred/msegui_form_savetofile/form2file.pas
-  /home/fred/mseide-msegui_sdl/lib/common/kernel/linux/msesocketintf.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
