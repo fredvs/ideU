@@ -21,42 +21,17 @@ unit findinfiledialogform;
 interface
 
 uses
-  sysutils,
-  mseconsts,
-  msestockobjects,
-  captionideu,
-  finddialogform,
-  findinfileform,
-  mseforms,
-  msedataedits,
-  msesimplewidgets,
-  msegraphedits,
-  msefiledialog,
-  msetypes,
-  mseglob,
-  mseguiglob,
-  msegui,
-  msestat,
-  msestatfile,
-  mseevent,
-  msemenus,
-  msesplitter,
-  msegraphics,
-  msegraphutils,
-  msewidgets,
-  msestrings,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msescrollbar,
-  mseclasses;
+ sysutils,mseconsts,msestockobjects,captionideu,finddialogform,findinfileform,
+ mseforms,msedataedits,msesimplewidgets,msegraphedits,msefiledialog,msetypes,
+ mseglob,mseguiglob,msegui,msestat,msestatfile,mseevent,msemenus,msesplitter,
+ msegraphics,msegraphutils,msewidgets,msestrings,mseificomp,mseificompglob,
+ mseifiglob,msescrollbar,mseclasses, msefiledialogx;
 
 type
 
   tfindinfiledialogfo = class(tmseform)
     findtext: thistoryedit;
     statfile1: tstatfile;
-    dir: tfilenameedit;
     mask: thistoryedit;
     casesensitive: tbooleanedit;
     inprojectdir: tbooleaneditradio;
@@ -67,6 +42,7 @@ type
     subdirs: tbooleanedit;
     ok: TButton;
     cancel: TButton;
+   dir: tfilenameeditx;
     procedure dironbeforeexecute(const Sender: tfiledialogcontroller; var dialogkind: filedialogkindty; var aresult: modalresultty);
     procedure dirshowhint(const Sender: TObject; var info: hintinfoty);
     procedure sourcechangeexe(const Sender: TObject);
@@ -80,6 +56,9 @@ type
     procedure setlangfindinfile();
 
    procedure onactiv(const sender: TObject);
+   procedure onbefexec(const Sender: tfiledialogxcontroller;
+                   var dialogkind: filedialogkindty;
+                   var aresult: modalresultty);
   private
     procedure valuestoinfo(out info: findinfileinfoty);
     procedure infotovalues(const info: findinfileinfoty);
@@ -305,6 +284,13 @@ begin
  if top > (rect1.cy) - 200 then top :=  100;
 end; 
 tag := 1;
+end;
+
+procedure tfindinfiledialogfo.onbefexec(const Sender: tfiledialogxcontroller;
+               var dialogkind: filedialogkindty; var aresult: modalresultty);
+begin
+  Sender.filterlist.asarrayb := Mask.dropdown.valuelist.asarray;
+  Sender.filter := Mask.Value;
 end;
 
 end.

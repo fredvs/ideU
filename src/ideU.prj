@@ -71,7 +71,7 @@ order18=0
 [projectoptions]
 projectdir=/home/fred/ideu/src
 projectfilename=/home/fred/ideu/src/ideU.prj
-findinfiledialog=43
+findinfiledialog=44
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -81,9 +81,9 @@ findinfiledialog=43
  [findinfileadialogfo.wholeword]
  value=0
  [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
  value=1
+ [findinfileadialogfo.inprojectdir]
+ value=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
@@ -103,8 +103,9 @@ findinfiledialog=43
  filefilterindex=0
  filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
- value=filedialogx(
- history=4
+ value=fdk_dir
+ history=5
+  fdk_dir
   filedialogx(
   lock
   netbsd
@@ -120,8 +121,8 @@ finddialog=8
  value=0
  [finddialogfo]
  stackedunder=
- x=1099
- y=342
+ x=1030
+ y=317
  cx=298
  cy=291
 options=114
@@ -437,39 +438,20 @@ compnamedialog=5
  y=204
  cx=303
  cy=205
-bmpfiledialog=32
+bmpfiledialog=13
  [filedialog]
- [msetemplateselectfo.grid]
- propcolwidthref=528
- width0=60
- sortdescend0=0
- width1=252
- sortdescend1=0
- width2=51
- sortdescend2=0
- width3=51
- sortdescend3=0
- width4=51
- sortdescend4=0
- width5=51
- sortdescend5=0
- sortdescend6=0
- [msetemplateselectfo]
- stackedunder=
- x=398
- y=233
- cx=569
- cy=277
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ filenames=1
+  /home/fred/ideu/src/ideu24.png
+ filecolwidth=174
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/ideu/src/
+ filehistory=1
+  /home/fred/ideu/src/ideu24.png
+ filefilterindex=0
+ filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 codetemplateedit=38
  [templateeditorfo.savefiledialog]
  [templateeditorfo.tsplitter1]
@@ -1412,8 +1394,13 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=.filter
+finddtext=fdk_
 findhistory=20
+ fdk_
+ fdk_dir
+ dk_
+ filter
+ before
  .filter
  openfile.controller
  filedialogx1(
@@ -1429,11 +1416,6 @@ findhistory=20
  setst
  runwithoutdebugger
  RunCustomCompiled(ansistring(get
- tactionsmo.compileproject(
- tactionsmo.initproject
- tmaker.create(at
- macos
- runprog
 findoptions=1
 editpos=3
  0,0
@@ -1474,7 +1456,7 @@ nomenumodules=3
 firsttab=0
 index=0
 [layout]
-windowlayout=544
+windowlayout=559
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1488,8 +1470,8 @@ windowlayout=544
  ny=0
  ncx=0
  ncy=0
- x=107
- y=105
+ x=122
+ y=88
  cx=1428
  cy=724
  rcx=0
@@ -1524,7 +1506,7 @@ windowlayout=544
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1668,14 +1650,14 @@ windowlayout=544
  active=0
  visible=0
  [watchpointsfo.grid]
- propcolwidthref=352
+ propcolwidthref=332
  sortdescend0=0
  values1=0
  values1_ci=-1
  width1=33
  sortdescend1=0
  values2=0
- width2=158
+ width2=149
  sortdescend2=0
  width4=34
  sortdescend4=0
@@ -1684,7 +1666,7 @@ windowlayout=544
  width5=38
  sortdescend5=0
  values6=0
- width6=184
+ width6=172
  sortdescend6=0
  [breakpointsfo]
  splitdir=0
@@ -1708,10 +1690,10 @@ windowlayout=544
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=355
- width0=158
+ propcolwidthref=467
+ width0=246
  sortdescend0=0
- width1=191
+ width1=215
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1775,7 +1757,7 @@ windowlayout=544
  rcx=1262
  rcy=583
  [watchfo.grid]
- propcolwidthref=111
+ propcolwidthref=121
  values0=0
  values0_ci=-1
  sortdescend0=0
@@ -1875,7 +1857,7 @@ windowlayout=544
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=confdebuggerfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1890,9 +1872,9 @@ windowlayout=544
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=3
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1918,7 +1900,7 @@ windowlayout=544
  nx=0
  ny=0
  ncx=1414
- ncy=64
+ ncy=63
  x=0
  y=0
  cx=1414
@@ -1933,12 +1915,27 @@ windowlayout=544
  value=Pascal
  [debuggerfo.file_history]
  value=/home/fred/ideu/src/ideU.pas
- history=5
+ history=20
   /home/fred/ideu/src/ideU.pas
-  /home/fred/ideU_lin64/layout/${PROJECTDIR}
-  
-  /home/fred/ideU/src/layout
-  ${PROJECTDIR}/main.pas
+  /home/fred/Pictures/about_mseide_win64.png
+  /home/fred/strumpract/src/uos.pas
+  /home/fred/strumpract/src/uos_flat.pas
+  /home/fred/atest/test1.prj
+  /home/fred/atest/test1.pas
+  /home/fred/atest/test1
+  /home/fred/ideU_lin64/templates/fpc_mse/default.prj
+  /home/fred/simplerecoder/uos.pas
+  /home/fred/ideu/src/aboutform.pas
+  /home/fred/uos/src/uos_flat.pas
+  /home/fred/uos/src/uos.pas
+  /home/fred/uos/examples/main_sr.pas
+  /home/fred/sdl4msegui/testsdl/form2.pas
+  /home/fred/sdl4msegui/testsdl/testsdl.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msegui.pas
+  /home/fred/mseide-msegui/lib/common/kernel/msectypes.pas
+  /home/fred/mseide-msegui_sdl/lib/common/kernel/msegui.pas
+  /home/fred/msegui_form_savetofile/form2file.pas
+  /home/fred/mseide-msegui_sdl/lib/common/kernel/linux/msesocketintf.pas
  [debuggerfo.project_options]
  value=1
  [debuggerfo.hints]
@@ -1968,7 +1965,7 @@ windowlayout=544
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=_mse_mainfo_mse_
  parent=
  mdistate=0
  nx=0
@@ -2003,7 +2000,7 @@ windowlayout=544
  [_mse_mainfo_mse_]
  splitdir=0
  useroptions=268451963
- stackedunder=objectinspectorfo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=3
  nx=0
