@@ -22,46 +22,6 @@ object conffpguifo: tconffpguifo
   icon.origformat = 'png'
   windowopacity = -Inf
   moduleclassname = 'tmseform'
-  object fpguidesigner: tfilenameedit
-    Tag = 7
-    frame.caption = '${FPGUIDESIGNER}'
-    frame.captiontextflags = [tf_bottom]
-    frame.localprops = []
-    frame.localprops1 = []
-    frame.template = mainfo.tframecomp3
-    frame.buttons.count = 1
-    frame.buttons.items = <    
-      item
-        frame.hiddenedges = [edg_bottom]
-        frame.localprops = []
-        frame.localprops1 = []
-        frame.template = mainfo.tframecomp2
-        imagenr = 17
-      end>
-    frame.button.frame.hiddenedges = [edg_bottom]
-    frame.button.frame.localprops = []
-    frame.button.frame.localprops1 = []
-    frame.button.frame.template = mainfo.tframecomp2
-    frame.button.imagenr = 17
-    frame.outerframe = (
-      0
-      18
-      0
-      0
-    )
-    hint = 'Path of fpGUI Designer'
-    bounds_x = 2
-    bounds_y = 21
-    bounds_cx = 269
-    bounds_cy = 41
-    anchors = [an_left, an_top, an_right]
-    statfile = mainfo.mainstatfile
-    controller.lastdir = '${IDEUDIR}/plugin/designer_ext/'
-    controller.options = [fdo_sysfilename, fdo_savelastdir]
-    controller.captionopen = 'fpGUI Designer path'
-    controller.onchange = nil
-    reffontheight = 15
-  end
   object enablefpguidesigner: tbooleanedit
     frame.caption = 'Designer integration'
     frame.localprops = []
@@ -73,7 +33,6 @@ object conffpguifo: tconffpguifo
       126
       2
     )
-    taborder = 1
     hint = 'Enable designer integration'
     bounds_x = 18
     bounds_y = 65
@@ -92,7 +51,7 @@ object conffpguifo: tconffpguifo
       83
       2
     )
-    taborder = 2
+    taborder = 1
     hint = 'Only One Instance (setup designer too)'
     bounds_x = 18
     bounds_y = 83
@@ -114,7 +73,7 @@ object conffpguifo: tconffpguifo
       0
       0
     )
-    taborder = 3
+    taborder = 2
     bounds_x = 12
     bounds_y = 105
     bounds_cx = 238
@@ -282,7 +241,7 @@ object conffpguifo: tconffpguifo
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp3
-    taborder = 4
+    taborder = 3
     bounds_x = 12
     bounds_y = 279
     bounds_cx = 250
@@ -303,12 +262,46 @@ object conffpguifo: tconffpguifo
       37
       2
     )
-    taborder = 5
+    taborder = 4
     bounds_x = 20
     bounds_y = 257
     bounds_cx = 50
     bounds_cy = 17
     statfile = mainfo.mainstatfile
+  end
+  object fpguidesigner: tfilenameeditx
+    frame.caption = '${FPGUIDESIGNER}'
+    frame.localprops = []
+    frame.localprops1 = []
+    frame.buttons.count = 1
+    frame.buttons.items = <    
+      item
+        imagenr = 17
+      end>
+    frame.button.imagenr = 17
+    frame.outerframe = (
+      0
+      18
+      0
+      0
+    )
+    taborder = 6
+    hint = 'Path of fpGUI Designer'
+    bounds_x = 12
+    bounds_y = 17
+    bounds_cx = 245
+    bounds_cy = 39
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
+    reffontheight = 15
   end
   object ok: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -321,7 +314,7 @@ object conffpguifo: tconffpguifo
     frame.template = mainfo.tframecomp2
     face.localprops = []
     face.template = sourcefo.tfacecomp1
-    taborder = 6
+    taborder = 5
     bounds_x = 173
     bounds_y = 2
     bounds_cx = 92

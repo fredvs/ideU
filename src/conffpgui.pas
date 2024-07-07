@@ -3,12 +3,11 @@ unit conffpgui;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msefiledialog,
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,
  msegraphics,msegraphutils,mseclasses,mseforms, mseedit,msegraphedits,
- msesimplewidgets,msestat,msestatfile,msemenus,msewidgets;
+ msesimplewidgets,msestat,msestatfile,msemenus,msewidgets, msefiledialogx;
 type
  tconffpguifo = class(tmseform)
-   fpguidesigner: tfilenameedit;
    enablefpguidesigner: tbooleanedit;
    tbfpgonlyone: tbooleanedit;
    groupcommand: tgroupbox;
@@ -25,6 +24,7 @@ type
    edfilter: tedit;
    iffilter: tbooleanedit;
    ok: tbutton;
+   fpguidesigner: tfilenameeditx;
  end;
 var
  conffpguifo: tconffpguifo;

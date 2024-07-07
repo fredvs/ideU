@@ -69,6 +69,37 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
+projectdir=/home/fred/ideu/src
+projectfilename=/home/fred/ideu/src/ideU.prj
+findinfiledialog=75
+ [findinfileadialogfo.dir]
+ filenames=1
+  /home/fred/mseide-msegui/
+ filenamescust=0
+ filecolwidth=174
+ x=532
+ y=196
+ cx=608
+ cy=431
+ nopanel=0
+ compact=0
+ showoptions=0
+ hidehistory=0
+ hideicons=0
+ showhidden=0
+ colnamewidth=211
+ colsizewidth=81
+ colextwidth=45
+ coldatewidth=119
+ splitterplaces=242
+ splitterlateral=126
+ lastdir=/home/fred/mseide-msegui/
+ filehistory=3
+  /home/fred/mseide-msegui/
+  /home/fred/Downloads/freepascal-ootb-main/
+  /home/fred/freepascal-ootb/
+ filefilterindex=0
+ filefilter="*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.subdirs]
  value=1
  [findinfileadialogfo.incurrentfile]
@@ -84,86 +115,47 @@ order18=0
  [findinfileadialogfo.casesensitive]
  value=0
  [findinfileadialogfo.mask]
- [findinfileadialogfo.dir]
+ value="*.pas" "*.pp" "*.inc"
+ history=1
+  "*.pas" "*.pp" "*.inc"
  [findinfileadialogfo.findtext]
+ value=conffpgui
+ history=20
+  conffpgui
+  fpguidesigner
+  readprojecto
+  openproject(
+  mmap
+  mmap(
+  popaddr
+  readdir
+  sys_readdirstream
+  readdir64_r
+  aarch64
+  libfontconfig
+  ld.so.1
+  strcopy
+  registrer_frame
+  call syscall
+  call do_syscall
+  call 
+  msyscall
+  do_syscall
  [findinfileadialogfo]
+ stackedunder=
+ x=573
+ y=142
+ cx=234
+ cy=334
+finddialog=8
  [finddialogfo.selectedonly]
- [replacedialogfo.promptonreplace]
- [replacedialogfo.selectedonly]
- [replacedialogfo.replacetext]
- [replacedialogfo]
- [projectoptionsfo.toolshortcuts]
- dropdowncolwidths=3
-  70
-  70
-  70
- [projectoptionsfo.twidgetgrid3]
- propcolwidthref=836
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- width4=113
- sortdescend4=0
- width5=90
- sortdescend5=0
- width6=60
- sortdescend6=0
- width7=60
- sortdescend7=0
- width8=86
- sortdescend8=0
- width9=340
- sortdescend9=0
- [projectoptionsfo.twidgetgrid4]
- propcolwidthref=691
- width0=96
- sortdescend0=0
- sortdescend1=0
- width2=73
- sortdescend2=0
- width3=331
- sortdescend3=0
- width4=351
- sortdescend4=0
- sorted=0
- col=-1073741823
- row=-1073741823
- rowheight=19
- [projectoptionsfo.newfile]
- firsttab=0
- index=2
- [projectoptionsfo.fontaliasgrid]
- propcolwidthref=517
- width0=98
- sortdescend0=0
- width1=506
- sortdescend1=0
- width2=50
- sortdescend2=0
- width3=50
- sortdescend3=0
- width4=50
- sortdescend4=0
- width5=50
- sortdescend5=0
- width6=70
- sortdescend6=0
- [projectoptionsfo.macrosplitter]
- x=0
- y=218
- xprop=1
- yprop=0.3981981981982
- [projectoptionsfo.macrogrid]
- propcolwidthref=609
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- sortdescend4=0
- sortdescend5=0
- sortdescend6=0
- sortdescend7=0
+ value=0
+ [finddialogfo]
+ stackedunder=
+ x=1030
+ y=317
+ cx=298
+ cy=291
 options=114
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -171,33 +163,33 @@ options=114
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=762
+ propcolwidthref=1009
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=104
+ width4=137
  sortdescend4=0
- width5=92
+ width5=121
  sortdescend5=0
- width6=85
+ width6=113
  sortdescend6=0
- width7=77
+ width7=102
  sortdescend7=0
- width8=39
+ width8=58
  sortdescend8=0
- width9=284
+ width9=376
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=590
+ propcolwidthref=837
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=100
  sortdescend2=0
- width3=274
+ width3=389
  sortdescend3=0
- width4=307
+ width4=439
  sortdescend4=0
  sorted=0
  col=-1073741823
@@ -207,10 +199,10 @@ options=114
  firsttab=0
  index=0
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=313
+ propcolwidthref=560
  width0=143
  sortdescend0=0
- width1=302
+ width1=549
  sortdescend1=0
  width2=66
  sortdescend2=0
@@ -228,7 +220,7 @@ options=114
  xprop=1
  yprop=0.37384898710866
  [projectoptionsfo.macrogrid]
- propcolwidthref=535
+ propcolwidthref=782
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -241,7 +233,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=519
+ width11=766
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -253,31 +245,31 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=723
+ propcolwidthref=970
  width0=77
  sortdescend0=0
- width1=717
+ width1=964
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=0
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=660
+ propcolwidthref=845
  width0=186
  sortdescend0=0
- width1=653
+ width1=838
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=2
- index=11
+ index=2
  [projectoptionsfo]
  stackedunder=
- x=212
- y=58
- cx=813
+ x=409
+ y=78
+ cx=1060
  cy=606
 settaborder=15
  [setcreateorderfo.grid]
@@ -477,39 +469,20 @@ compnamedialog=5
  y=204
  cx=303
  cy=205
-bmpfiledialog=32
+bmpfiledialog=13
  [filedialog]
- [msetemplateselectfo.grid]
- propcolwidthref=528
- width0=60
- sortdescend0=0
- width1=252
- sortdescend1=0
- width2=51
- sortdescend2=0
- width3=51
- sortdescend3=0
- width4=51
- sortdescend4=0
- width5=51
- sortdescend5=0
- sortdescend6=0
- [msetemplateselectfo]
- stackedunder=
- x=398
- y=233
- cx=569
- cy=277
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ filenames=1
+  /home/fred/ideu/src/ideu24.png
+ filecolwidth=174
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/ideu/src/
+ filehistory=1
+  /home/fred/ideu/src/ideu24.png
+ filefilterindex=0
+ filefilter="*.jpg" "*.jpeg" "*.bmp" "*.ico" "*.png" "*.pnm" "*.pgm" "*.pbm" "*.tga" "*.tif" "*.tiff" "*.xpm"
 codetemplateedit=38
  [templateeditorfo.savefiledialog]
  [templateeditorfo.tsplitter1]
@@ -555,8 +528,8 @@ messageoutputfile=
 makecommand=${COMPILER}
 makedir=
 unitdirs=8
- /usr/lib/gcc/x86_64-linux-gnu/12/32
- /usr/lib/gcc/x86_64-linux-gnu/12
+ /usr/lib/gcc/x86_64-linux-gnu/11/32
+ /home/fred/fpcupdeluxe/cross/lib/aarch64-freebsd
  ${MSEDIR}lib/addon/*/
  ${MSELIBDIR}kernel/windows
  ${MSELIBDIR}kernel/linux
@@ -570,11 +543,11 @@ objpref=-Fo
 targpref=-o
 befcommand=0
 aftcommand=0
-makeoptions=19
+makeoptions=20
  -Mobjfpc -Sh -Fcutf8
  -dmse_with_zeoslib
- -gl
- -B
+ -gl -B
+ -B 
  -Xs -CX -XX
  -O2
  -WG
@@ -585,12 +558,13 @@ makeoptions=19
  -Clv13.0 -XlS-13
  -dpacpas
  -SIcorba
- -FUunits
- -Tdarwin -Fl~/fpcupdeluxe/cross/lib/all-darwin/
+  -FUunits -FD/home/fred/fpcupdeluxe/cross/bin/aarch64-freebsd 
+ -Tfreebsd -Fu/home/fred/fpcupdeluxe/cross/lib/aarch64-freebsd
+ -Tdarwin -Fl/home/fred/fpcupdeluxe/cross/lib/aarch64-freebsd/
  -vewinhq
  -dclass_bridge
  -dusemo
-makeoptpurpose=19
+makeoptpurpose=20
  Define Object Pascal
  Zeos components
  Debug infos
@@ -606,6 +580,7 @@ makeoptpurpose=19
  For PacPas
  Cobra Interface
  Output of units
+ 
  Darwin Target
  Verbosity
  Use Class Briddge
@@ -822,24 +797,27 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
+modulenames=4
  ACTIONSMO
+ CONFFPGUIFO
  MAINFO
  SOURCEFO
-moduletypes=3
+moduletypes=4
  TACTIONSMO
+ TCONFFPGUIFO
  TMAINFO
  TSOURCEFO
-modulefiles=3
- ${PROJECTDIR}/actionsmodule.mfm
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.mfm
+modulefiles=4
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/conffpgui.mfm
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/sourceform.mfm
 befcommandon=0
-makeoptionson=19
+makeoptionson=20
  4095
  4095
  1
- 1791
+ 2047
  2046
  4095
  192
@@ -851,20 +829,21 @@ makeoptionson=19
  0
  4095
  4095
+ 1024
  768
  4095
  0
  3327
 compilerusedon=29
- 2111
- 0
+ 59
+ 4
  0
  0
  0
  64
  128
  256
- 1536
+ 3584
  0
  0
  0
@@ -928,8 +907,8 @@ project_date=20:25:05 03/02/2012
 project_comment=Fork from MSEide.
 aftcommandon=0
 unitdirson=8
- 65560
- 67367
+ 327704
+ 460583
  65536
  65728
  69376
@@ -1124,32 +1103,57 @@ sigsettings=27
 defaultmake=4
 [breakpoints]
 on=25
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
-path=0
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+ -1
+path=25
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 line=25
  2129
  1186
@@ -1411,6 +1415,8 @@ files=
   )
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
+filename=
 [components]
 [selecteditpage]
 colwidth=100
@@ -1425,31 +1431,56 @@ envvarons=0
 [edit]
 hintwidth=314
 hintheight=214
-finddtext=debuggerfo.statdisp
+finddtext=irent64
 findhistory=20
- setstattext(const
- setstatt
- fpc
- darwin
- loadexec
- setst
- runwithoutdebugger
- RunCustomCompiled(ansistring(get
- tactionsmo.compileproject(
- tactionsmo.initproject
- tmaker.create(at
- macos
- runprog
- espeak_key
- pipe
- lang_modalresult
- getmodalres
- newlang
- createnew
- linux
+ irent64
+ readdir
+ freebsd
+ fpguidesigner
+ onchange
+ initializedynlib
+ fontconfiglib
+ { OpenBSD seems to use a wrong 
+ ld.so
+ linker
+ Dynlinker
+ SetupDynlinker
+ defdynlinker
+ fdk_
+ fdk_dir
+ dk_
+ filter
+ before
+ .filter
+ openfile.controller
 findoptions=1
-editpos=4
+editpos=29
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,0
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,138
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
+ 0,-1073741823
  0,-1073741823
  0,-1073741823
  0,-1073741823
@@ -1457,42 +1488,176 @@ bookmarks0=0
 bookmarks1=0
 bookmarks2=0
 bookmarks3=0
-sourcefiles=4
+bookmarks4=0
+bookmarks5=0
+bookmarks6=0
+bookmarks7=0
+bookmarks8=0
+bookmarks9=0
+bookmarks10=0
+bookmarks11=0
+bookmarks12=0
+bookmarks13=0
+bookmarks14=0
+bookmarks15=0
+bookmarks16=0
+bookmarks17=0
+bookmarks18=0
+bookmarks19=0
+bookmarks20=0
+bookmarks21=0
+bookmarks22=0
+bookmarks23=0
+bookmarks24=0
+bookmarks25=0
+bookmarks26=0
+bookmarks27=0
+bookmarks28=0
+sourcefiles=29
  ${PROJECTDIR}/ideU.pas
  ${PROJECTDIR}/sourceform.pas
  ${PROJECTDIR}/actionsmodule.pas
+ /home/fred/Downloads/freepascal-ootb-main/compiler/link.pas
+ /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/sysnr.inc
+ /home/fred/Downloads/freepascal-ootb-main/compiler/x86_64/nx64cal.pas
+ /home/fred/Downloads/freepascal-ootb-main/tests/test/cpu16/i8086/tfarcal1.pp
+ /home/fred/Downloads/freepascal-ootb-main/tests/utils/redir.pp
+ /home/fred/Downloads/freepascal-ootb-main/compiler/systems/t_linux.pas
+ /home/fred/freepascal-ootb/compiler/systems/t_bsd.pas
+ /home/fred/mseide-msegui/lib/common/graphics/msefontconfig.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msedynload.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msetypes.pas
+ ${PROJECTDIR}/ideU.pas
+ ${PROJECTDIR}/conffpgui.pas
+ ${PROJECTDIR}/sourceform.pas
+ ${PROJECTDIR}/actionsmodule.pas
  ${PROJECTDIR}/main.pas
-relpaths=4
+ /home/fred/mseide-msegui/lib/common/kernel/mselibc.pas
+ /home/fred/mseide-msegui/lib/common/kernel/mseclasses.pas
+ /home/fred/mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msesys.pas
+ /home/fred/mseide-msegui/lib/common/kernel/msesysintf.inc
+ /home/fred/freepascal-ootb/rtl/bsd/ossysc.inc
+ /home/fred/Downloads/freepascal-ootb-main/rtl/inc/compproc.inc
+ /home/fred/Downloads/freepascal-ootb-main/rtl/inc/except.inc
+ /home/fred/Downloads/freepascal-ootb-main/packages/rtl-objpas/src/inc/rtti.pp
+ /home/fred/Downloads/freepascal-ootb-main/rtl/java/jcompproc.inc
+ /home/fred/Downloads/freepascal-ootb-main/compiler/ncgflw.pas
+relpaths=29
  ideU.pas
  sourceform.pas
  actionsmodule.pas
+ Downloads/freepascal-ootb-main/compiler/link.pas
+ Downloads/freepascal-ootb-main/rtl/openbsd/sysnr.inc
+ Downloads/freepascal-ootb-main/compiler/x86_64/nx64cal.pas
+ ../Downloads/freepascal-ootb-main/tests/test/cpu16/i8086/tfarcal1.pp
+ Downloads/freepascal-ootb-main/tests/utils/redir.pp
+ Downloads/freepascal-ootb-main/compiler/systems/t_linux.pas
+ freepascal-ootb/compiler/systems/t_bsd.pas
+ mseide-msegui/lib/common/graphics/msefontconfig.pas
+ mseide-msegui/lib/common/kernel/msedynload.pas
+ mseide-msegui/lib/common/kernel/msetypes.pas
+ ideU.pas
+ conffpgui.pas
+ sourceform.pas
+ actionsmodule.pas
  main.pas
-ismoduletexts=4
+ mseide-msegui/lib/common/kernel/mselibc.pas
+ mseide-msegui/lib/common/kernel/mseclasses.pas
+ mseide-msegui/lib/common/kernel/linux/msesysintf.pas
+ ../mseide-msegui/lib/common/kernel/msesys.pas
+ mseide-msegui/lib/common/kernel/msesysintf.inc
+ freepascal-ootb/rtl/bsd/ossysc.inc
+ Downloads/freepascal-ootb-main/rtl/inc/compproc.inc
+ Downloads/freepascal-ootb-main/rtl/inc/except.inc
+ Downloads/freepascal-ootb-main/packages/rtl-objpas/src/inc/rtti.pp
+ Downloads/freepascal-ootb-main/rtl/java/jcompproc.inc
+ Downloads/freepascal-ootb-main/compiler/ncgflw.pas
+ismoduletexts=29
  0
  0
  0
  0
-modules=3
- ${PROJECTDIR}/actionsmodule.mfm
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.mfm
-moduleoptions=3
  0
  0
  0
-visiblemodules=3
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+modules=4
+ /home/fred/ideu/src/main.mfm
+ /home/fred/ideu/src/actionsmodule.mfm
+ /home/fred/ideu/src/sourceform.mfm
+ /home/fred/ideu/src/conffpgui.mfm
+moduleoptions=4
+ 0
+ 0
+ 0
+ 0
+visiblemodules=4
  -1
  -1
  -1
-nomenumodules=3
+ -1
+nomenumodules=4
+ 0
  0
  0
  0
 [sourcefo.files_tab]
+order=29
+ 21
+ 28
+ 10
+ 4
+ 13
+ 12
+ 16
+ 24
+ 17
+ 9
+ 2
+ 8
+ 5
+ 26
+ 1
+ 0
+ 14
+ 3
+ 22
+ 27
+ 20
+ 23
+ 18
+ 7
+ 25
+ 15
+ 11
+ 19
+ 6
 firsttab=0
 index=0
 [layout]
-windowlayout=540
+windowlayout=608
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1506,8 +1671,8 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=94
- y=88
+ x=61
+ y=77
  cx=1428
  cy=724
  rcx=0
@@ -1534,15 +1699,15 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=467
- y=288
+ x=493
+ y=171
  cx=497
- cy=341
+ cy=314
  rcx=0
  rcy=0
  wsize=0
  active=0
- visible=1
+ visible=0
  [threadsfo]
  splitdir=0
  useroptions=268451945
@@ -1617,9 +1782,9 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=158
- y=323
- cx=1190
+ x=239
+ y=115
+ cx=1242
  cy=414
  rcx=0
  rcy=0
@@ -1647,7 +1812,7 @@ windowlayout=540
  sortdescend1=0
  sorted=0
  col=0
- row=11
+ row=10
  rowheight=19
  [stackfo]
  splitdir=0
@@ -1726,10 +1891,10 @@ windowlayout=540
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=355
- width0=165
+ propcolwidthref=467
+ width0=246
  sortdescend0=0
- width1=184
+ width1=215
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1856,7 +2021,29 @@ windowlayout=540
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
+ filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
+ filehistory=0
+ filefilterindex=0
+ filefilter=
  [componentstorefo.groupfiledialog]
+ filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
+ filehistory=0
+ filefilterindex=0
+ filefilter=
  [componentstorefo.compfiledialog]
  filenames=0
  filecolwidth=0
@@ -1871,7 +2058,7 @@ windowlayout=540
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=confdebuggerfo
+ stackedunder=mainfo
  parent=
  mdistate=3
  nx=0
@@ -1886,9 +2073,9 @@ windowlayout=540
  rcy=0
  wsize=0
  active=0
- visible=0
+ visible=1
  [componentpalettefo.componentpages]
- activetab=0
+ activetab=3
  [debuggerfo]
  splitdir=0
  useroptions=24683
@@ -1914,11 +2101,11 @@ windowlayout=540
  nx=0
  ny=0
  ncx=1414
- ncy=65
+ ncy=63
  x=0
  y=0
  cx=1414
- cy=65
+ cy=63
  rcx=0
  rcy=0
  [debuggerfo.edit_options]
@@ -1928,11 +2115,30 @@ windowlayout=540
  [debuggerfo.edit_compiler]
  value=Pascal
  [debuggerfo.file_history]
- value=
- history=1
-  
+ value=/home/fred/ideu/src/conffpgui.pas
+ history=20
+  /home/fred/ideu/src/conffpgui.pas
+  /home/fred/Downloads/freepascal-ootb-main/tests/utils/redir.pp
+  /home/fred/freepascal-ootb/compiler/systems/t_bsd.pas
+  /home/fred/Downloads/freepascal-ootb-main/compiler/systems/t_bsd.pas
+  /home/fred/Downloads/freepascal-ootb-main/rtl/freebsd/x86_64/si_c.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/si_dll.pp
+  /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/si_c.pp
+  /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/x86_64/si_c.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/x86_64/openbsd_ident.inc
+  /home/fred/Downloads/freepascal-ootb-main/rtl/openbsd/x86_64/bsyscall.inc
+  /home/fred/ideu/src/findinfiledialogform.pas
+  /home/fred/ideu/src/msefiledialogx.pas
+  /home/fred/Pictures/about_mseide_win64.png
+  /home/fred/strumpract/src/uos.pas
+  /home/fred/strumpract/src/uos_flat.pas
+  /home/fred/atest/test1.prj
+  /home/fred/atest/test1.pas
+  /home/fred/atest/test1
+  /home/fred/ideU_lin64/templates/fpc_mse/default.prj
+  /home/fred/simplerecoder/uos.pas
  [debuggerfo.project_options]
- value=1
+ value=9
  [debuggerfo.hints]
  value=0
  [sourcefo]
@@ -1952,6 +2158,36 @@ windowlayout=540
  rcx=0
  rcy=0
  [sourcefo.files_tab]
+ order=29
+  21
+  28
+  10
+  4
+  13
+  12
+  16
+  24
+  17
+  9
+  2
+  8
+  5
+  26
+  1
+  0
+  14
+  3
+  22
+  27
+  20
+  23
+  18
+  7
+  25
+  15
+  11
+  19
+  6
  firsttab=0
  index=0
  [confideufo.usedefaulteditoroptions]
@@ -1960,7 +2196,7 @@ windowlayout=540
  irqoff=0
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=confdebuggerfo
  parent=
  mdistate=0
  nx=0
@@ -2006,6 +2242,25 @@ windowlayout=540
  y=266
  cx=810
  cy=100
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [_mse_conffpguifo_mse_]
+ splitdir=0
+ useroptions=268451963
+ stackedunder=componentpalettefo
+ parent=
+ mdistate=3
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=415
+ y=169
+ cx=283
+ cy=326
  rcx=0
  rcy=0
  wsize=0
