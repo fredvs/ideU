@@ -2564,7 +2564,7 @@ begin
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
 
-  application.ProcessMessages;
+ // application.ProcessMessages;
 
 end;
 
