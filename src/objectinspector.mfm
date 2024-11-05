@@ -121,7 +121,7 @@ object objectinspectorfo: tobjectinspectorfo
     bounds_x = 0
     bounds_y = 1
     bounds_cx = 163
-    bounds_cy = 23
+    bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     onsetvalue = compselectoronsetvalue
     dropdown.options = [deo_selectonly, deo_autodropdown, deo_keydropdown]
@@ -130,7 +130,7 @@ object objectinspectorfo: tobjectinspectorfo
       item
       end>
     onbeforedropdown = compselectorbeforedropdown
-    reffontheight = 17
+    reffontheight = 15
   end
   object grid: twidgetgrid
     frame.localprops = [frl_levelo, frl_colorclient]
@@ -230,7 +230,7 @@ object objectinspectorfo: tobjectinspectorfo
     drag.onbeforedragbegin = gridondragbegin
     drag.onbeforedragover = gridondragover
     drag.onbeforedragdrop = gridondragdrop
-    reffontheight = 17
+    reffontheight = 15
     object props: ttreeitemedit
       optionswidget1 = [ow1_autoheight]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -246,7 +246,7 @@ object objectinspectorfo: tobjectinspectorfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 90
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_resetselectonexit, oe_exitoncursor, oe_hintclippedtext, oe_locate]
       onkeydown = propskeydownexe
@@ -298,7 +298,7 @@ object objectinspectorfo: tobjectinspectorfo
         item
         end>
       onbeforedropdown = valuesbeforedropdown
-      reffontheight = 17
+      reffontheight = 15
     end
   end
   object findbu: tbutton

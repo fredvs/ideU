@@ -32,7 +32,7 @@ interface
 uses
  mseforms,msewidgets,msegrids,msewidgetgrid,classes,mclasses,mseclasses,
  msepropertyeditors,mseglob,mseguiglob,msearrayutils,msedragglob,msegui,mseedit,
- msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,
+ msedataedits,mselistbrowser,msedatanodes,msedesignintf,typinfo,msegridsglob,
  msecomponenteditors,msesimplewidgets,msegraphutils,msemenus,mseevent,
  msedesigner,msetypes,msestrings,mselist,msegraphics, msedispwidgets,
  mserichstring, msetimer;
@@ -1478,6 +1478,8 @@ end;
 procedure tobjectinspectorfo.gridcellevent(const sender: tobject;
   var info: celleventinfoty);
 begin
+
+/////////////
  if isrowenter(info) then begin
   values.itemlist.beginupdate;
   try
@@ -1493,7 +1495,7 @@ begin
   finally
    values.itemlist.decupdate;
   end;
-  tpropertyitem(props.item).feditor.focused();
+//  tpropertyitem(props.item).feditor.focused();  // moi
 //  tpropertyvalue(values[info.cellbefore.row]).updatestate(false);
  end
  else begin
@@ -1502,6 +1504,20 @@ begin
    tpropertyvalue(values[info.cellbefore.row]).updatestate(true);
   end;
  end;
+
+/////////////// 
+
+if info.eventkind = cek_buttonrelease then
+begin
+//writeln('Yep');
+//grid.visible := false;
+//grid.width := grid.width +1;
+//grid.width := grid.width +1;
+// grid.invalidate;
+//grid.visible := true;
+end; 
+
+ 
 end;
 
 procedure tobjectinspectorfo.valuesbuttonaction(const sender: tobject;

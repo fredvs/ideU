@@ -25,7 +25,7 @@ uses
   captionideu,
  mseforms,msewidgetgrid,msedataedits,msegdbutils,msetypes,msegrids,
  msegraphedits,msestat,msemenuwidgets,msemenus,msestrings,mseedit,mseevent,
- msegui,msegraphics,mseguiglob,msestringcontainer;
+ msegui,msegraphics,mseguiglob, msegridsglob, msestringcontainer;
 
 type
  bkptstatety = (bkpts_none,bkpts_normal,bkpts_disabled,bkpts_error);
@@ -81,6 +81,7 @@ type
    procedure errhint(const sender: tdatacol; const arow: Integer;
                    var info: hintinfoty);
    procedure oncreat(const sender: TObject);
+   procedure onscrollev(const sender: tcustomgrid; var step: Integer);
   private
    fbreakpointsvalid: boolean;
    function infotolineinfo(const info: breakpointinfoty): bkptlineinfoty;
@@ -273,6 +274,11 @@ begin
  if iscellclick(info,[ccr_dblclick]) then begin
   sourcefo.showsourceline(path[info.cell.row],line[info.cell.row]-1,0,true);
  end;
+ 
+ if info.eventkind = cek_focusedcellchanged then
+begin
+twidgetgrid(sender).invalidatewidget;
+end; 
 end;
 
 procedure tbreakpointsfo.gridonrowsdeleted(const sender: tcustomgrid;
@@ -821,6 +827,12 @@ procedure tbreakpointsfo.setlangbreakpoints();
 begin
   Caption        := lang_xstockcaption[ord(sc_breakpoints)];
 
+end;
+
+procedure tbreakpointsfo.onscrollev(const sender: tcustomgrid;
+               var step: Integer);
+begin
+twidgetgrid(sender).invalidatewidget;
 end;
 
 end.

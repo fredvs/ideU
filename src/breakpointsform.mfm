@@ -4,8 +4,8 @@ object breakpointsfo: tbreakpointsfo
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_floatbutton, go_topbutton, go_backgroundbutton, go_nolockbutton]
   visible = False
-  bounds_x = 107
-  bounds_y = 404
+  bounds_x = 240
+  bounds_y = 336
   bounds_cx = 636
   bounds_cy = 128
   container.frame.localprops = []
@@ -22,6 +22,65 @@ object breakpointsfo: tbreakpointsfo
   statfile = mainfo.projectstatfile
   caption = 'Breakpoints'
   icon.transparentcolor = -2147483642
+  icon.origformat = 'png'
+  icon.image = {
+    00000000000000001800000018000000CC060000000000000000000000000000
+    0000000000000000000000000000000000000000F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E6E6E601E5E5E501
+    E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01E8E8E801E1E1E601B9B9EA01
+    8989EE018888ED01B5B5E601DBDBE001DDDDDD01DBDBDB01DADADA01D8D8D801
+    D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F001EEEEEE01EDEDED01EBEBEB01E4E4EA017171F4010707FE010000FF04
+    0707FE016A6AED01D5D5DB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301
+    D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01
+    C5C5EE012828FB010000FF081F1FF201B4B4DD01D7D7D702D5D5D501D3D3D301
+    D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01E7E7ED01
+    2929FC010000FF0A1818EB01C5C5CB01D6D6D601D5D5D501D3D3D301D2D2D201
+    D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE017373F6010000FF0C
+    3636B901C9C9C901D4D4D401D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301
+    F2F2F201F0F0F001E9E9EE010707FE010000FF0C0303FA0186868B01D2D2D201
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001C0C0F101
+    0000FF0E51518201B0B0B001D2D2D202D0D0D001F5F5F501F3F3F301F2F2F201
+    F0F0F0019090F5010000FF0E3C3CA10191919101D1D1D101D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F0019090F5010000FF0E3B3BA0017A7A7A01
+    D1D1D101D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001C0C0F101
+    0000FF0E4E4E7F016A6A6A01D0D0D001D2D2D201D0D0D001F5F5F501F3F3F301
+    F2F2F201F0F0F001E9E9EE010707FE010000FF0C0303FA01606065017A7A7A01
+    D1D1D101D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01
+    7272F5010000FF0C2F2FB2016363630191919101D1D1D101D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01E6E6EC012121F4010000FF0A
+    1111E4015F5F650164646401B0B0B001D2D2D202D0D0D001F5F5F501F3F3F301
+    F2F2F201F0F0F001EEEEEE01EDEDED01C2C2EB011A1AED010000FF081111E401
+    52527B016363630189898901D2D2D201D3D3D301D2D2D201D0D0D001F5F5F501
+    F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EAEAEA01D5D5DB013A3ABD01
+    0303FA010000FF040303FA013131B401616167016464640170707001C9C9C901
+    D4D4D401D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001
+    EEEEEE01EDEDED01EBEBEB01E9E9E901D9D9D9018F8F9401565687013F3FA401
+    3E3EA3015252830163636801656565028A8A8A01CACACA01D6D6D601D5D5D501
+    D3D3D301D2D2D201D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01
+    EDEDED01EBEBEB01EAEAEA01E7E7E701E3E3E301BDBDBD019A9A9A0181818101
+    707070018080800196969601B5B5B501D7D7D703D5D5D501D3D3D301D2D2D201
+    D0D0D001F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EBEBEB01
+    EAEAEA01E8E8E801E6E6E601E4E4E401E1E1E101DFDFDF01DDDDDD01DCDCDC01
+    DBDBDB01DADADA02D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01
+    E8E8E801E6E6E601E5E5E501E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01
+    DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+    F5F5F501F3F3F301F2F2F201F0F0F001EEEEEE01EDEDED01EBEBEB01EAEAEA01
+    E8E8E801E6E6E601E5E5E501E3E3E301E2E2E201E0E0E001DFDFDF01DDDDDD01
+    DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301D2D2D201D0D0D001
+  }
   windowopacity = -Inf
   onshow = breakpointsonshow
   moduleclassname = 'tdockform'
@@ -47,7 +106,7 @@ object breakpointsfo: tbreakpointsfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 19
+        height = 17
         captions.count = 11
         captions.items = <        
           item
@@ -170,18 +229,19 @@ object breakpointsfo: tbreakpointsfo
         widgetname = 'flags'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 19
+    datarowheight = 17
     onrowsdeleting = gridonrowsdeleting
     onrowsdeleted = gridonrowsdeleted
+    onscrollrows = onscrollev
     oncellevent = gridoncellevent
-    reffontheight = 17
+    reffontheight = 15
     object bkpton: tbooleanedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 16
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       ondataentered = ondataentered
@@ -198,11 +258,11 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 17
       bounds_y = 0
       bounds_cx = 158
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       ondataentered = ondataenterednewbkpt
       onsetvalue = filenameonsetvalue
-      reffontheight = 17
+      reffontheight = 15
     end
     object path: tstringedit
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -212,9 +272,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 176
       bounds_y = 0
       bounds_cx = 50
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 17
+      reffontheight = 15
     end
     object line: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -225,12 +285,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 227
       bounds_y = 0
       bounds_cx = 50
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       ondataentered = ondataenterednewbkpt
       onsetvalue = lineonsetvalue
       valuemin = 1
-      reffontheight = 17
+      reffontheight = 15
     end
     object address: tint64edit
       optionswidget1 = [ow1_fontglyphheight]
@@ -244,7 +304,7 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 278
       bounds_y = 0
       bounds_cx = 61
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       font.name = 'stf_fixed'
       font.xscale = 1
@@ -252,7 +312,7 @@ object breakpointsfo: tbreakpointsfo
       ondataentered = addressentered
       base = nb_hex
       valuemax = -1
-      reffontheight = 17
+      reffontheight = 15
     end
     object addressbkpt: tbooleanedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -265,9 +325,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 340
       bounds_y = 0
       bounds_cx = 6
-      bounds_cy = 19
+      bounds_cy = 17
       visible = False
-      reffontheight = 17
+      reffontheight = 15
     end
     object bkptno: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -278,9 +338,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 347
       bounds_y = 0
       bounds_cx = 19
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 17
+      reffontheight = 15
     end
     object count: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -291,10 +351,10 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 367
       bounds_y = 0
       bounds_cx = 31
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 17
+      reffontheight = 15
     end
     object ignore: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -305,12 +365,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 399
       bounds_y = 0
       bounds_cx = 30
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
       ondataentered = ondataentered
       onsetvalue = ignoreonsetvalue
-      reffontheight = 17
+      reffontheight = 15
     end
     object conderr: tdataicon
       optionswidget1 = [ow1_fontglyphheight]
@@ -319,13 +379,13 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 430
       bounds_y = 0
       bounds_cx = 7
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savestate]
       visible = False
       imagelist = actionsmo.buttonicons
       imageoffset = 10
-      reffontheight = 17
+      reffontheight = 15
     end
     object condition: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -336,12 +396,12 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 438
       bounds_y = 0
       bounds_cx = 124
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick, oe_trimright, oe_trimleft]
       ondataentered = ondataentered
       onsetvalue = conditiononsetvalue
-      reffontheight = 17
+      reffontheight = 15
     end
     object errormessage: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -351,10 +411,10 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 563
       bounds_y = 0
       bounds_cx = 19
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
-      reffontheight = 17
+      reffontheight = 15
     end
     object flags: tintegeredit
       optionswidget1 = [ow1_fontglyphheight]
@@ -365,9 +425,9 @@ object breakpointsfo: tbreakpointsfo
       bounds_x = 583
       bounds_y = 0
       bounds_cx = 17
-      bounds_cy = 19
+      bounds_cy = 17
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 17
+      reffontheight = 15
     end
   end
   object bkptson: tbooleanedit
@@ -376,14 +436,14 @@ object breakpointsfo: tbreakpointsfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      3
-      87
-      3
+      2
+      93
+      2
     )
     bounds_x = 8
-    bounds_y = 2
-    bounds_cx = 100
-    bounds_cy = 19
+    bounds_y = 3
+    bounds_cx = 106
+    bounds_cy = 17
     statfile = mainfo.projectstatfile
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
     onchange = bkptsononchange

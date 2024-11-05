@@ -7,6 +7,7 @@ uses
   msetypes,
   mseglob,
   mseguiglob,
+  msegridsglob,
   mseguiintf,
   mseapplication,
   msestat,
@@ -49,6 +50,9 @@ type
     procedure butok(const Sender: TObject);
     procedure butcancel(const Sender: TObject);
     procedure oncloseev(const Sender: TObject);
+   procedure onitem(const sender: tcustomlistview; const index: Integer;
+                   var info: celleventinfoty);
+   procedure onshow(const sender: TObject);
   end;
 
 var
@@ -157,6 +161,8 @@ begin
       SetFocus;
     end;
   end;
+  
+  invalidatewidget;
 
   layoutbusy := False;
 end;
@@ -191,6 +197,21 @@ end;
 procedure tdialogfilesfo.oncloseev(const Sender: TObject);
 begin
   //dialogfilesformcreated:= false;
+end;
+
+procedure tdialogfilesfo.onitem(const sender: tcustomlistview;
+               const index: Integer; var info: celleventinfoty);
+begin
+if info.eventkind = cek_select then
+begin
+invalidatewidget;
+end;
+
+end;
+
+procedure tdialogfilesfo.onshow(const sender: TObject);
+begin
+invalidatewidget;
 end;
 
 end.

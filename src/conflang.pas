@@ -35,6 +35,8 @@ type
     procedure ongridfontcellev(Const sender: TObject; Var info: celleventinfoty);
     procedure onchangefontsize(Const sender: TObject);
     procedure updatefontcap();
+   procedure onscroll(const sender: tcustomgrid; var step: Integer);
+   procedure onscroll2(const sender: tcustomgrid; var step: Integer);
  end;
 
 var 
@@ -305,6 +307,11 @@ begin
           else
             gridlangbool[x] := False;
       end;
+   
+   if info.eventkind = cek_focusedcellchanged then
+   begin
+   twidgetgrid(sender).invalidatewidget;
+   end;    
 end;
 
 procedure tconflangfo.ontools(Const sender: TObject);
@@ -348,6 +355,12 @@ begin
             end;
         end;
     end;
+    
+     if info.eventkind = cek_focusedcellchanged then
+   begin
+   twidgetgrid(sender).invalidatewidget;
+   end;   
+    
 end;
 
 procedure tconflangfo.onchangefontsize(Const sender: TObject);
@@ -358,6 +371,16 @@ begin
         confideufo.fontsize.value := fontsize.value;
         confideufo.onchangefont;
       end;
+end;
+
+procedure tconflangfo.onscroll(const sender: tcustomgrid; var step: Integer);
+begin
+twidgetgrid(sender).invalidatewidget;
+end;
+
+procedure tconflangfo.onscroll2(const sender: tcustomgrid; var step: Integer);
+begin
+tstringgrid(sender).invalidatewidget;
 end;
 
 end.

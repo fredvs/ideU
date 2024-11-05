@@ -1029,6 +1029,8 @@ type
     procedure setlangprojectoptions();
 
    procedure onactiv(const sender: TObject);
+   procedure cellevcomm(const sender: TObject; var info: celleventinfoty);
+   procedure onscrollev(const sender: tcustomgrid; var step: Integer);
   private
     procedure activegroupchanged;
   end;
@@ -3947,6 +3949,21 @@ begin
 //if ispoactivated = false then
  setlangprojectoptions();
 // ispoactivated := true;
+end;
+
+procedure tprojectoptionsfo.cellevcomm(const sender: TObject;
+               var info: celleventinfoty);
+begin
+if info.eventkind = cek_focusedcellchanged then
+begin
+twidgetgrid(sender).invalidatewidget;
+end; 
+end;
+
+procedure tprojectoptionsfo.onscrollev(const sender: tcustomgrid;
+               var step: Integer);
+begin
+twidgetgrid(sender).invalidatewidget;
 end;
 
 

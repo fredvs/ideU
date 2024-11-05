@@ -31,66 +31,17 @@ interface
 {$endif}
 
 uses
-  templateeditor,{$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
-  msearrayutils,
-  aboutform,
-  plugmanager,
-  msetimer,
-  mseformatstr,
-  mseconsts,
-  dialogfiles,
-  mseforms,
-  mseguiglob,
-  msegui,
-  msegdbutils,
-  mseactions,
-  sak_mse,
-  msefileutils,
-  msedispwidgets,
-  msedataedits,
-  msestat,
-  msestatfile,
-  msemenus,
-  msestockobjects,
-  captionideu,
-  msebitmap,
-  msegrids,
-  msefiledialogx,
-  msetypes,
-  sourcepage,
-  msedesignintf,
-  msedesigner,
-  Classes,
-  mclasses,
-  mseclasses,
-  msegraphutils,
-  typinfo,
-  msedock,
-  SysUtils,
-  msesysenv,
-  msemacros,
-  msestrings,
-  msepostscriptprinter,
-  msegraphics,
-  mseglob,
-  msestream,
-  msepointer,
-  mseprocmonitorcomp,
-  msesystypes,
-  mserttistat,
-  msedatalist,
-  mselistbrowser,
-  projecttreeform,
-  msepipestream,
-  msestringcontainer,
-  msesys,
-  mseedit,
-  msewidgets,
-  msegraphedits,
-  mseificomp,
-  mseificompglob,
-  mseifiglob,
-  msescrollbar;
+ templateeditor,{$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
+ msearrayutils,aboutform,plugmanager,msetimer,mseformatstr,mseconsts,
+ dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
+ msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
+ msestockobjects,captionideu,msebitmap,msegrids,msefiledialogx,msetypes,
+ sourcepage,msedesignintf,msedesigner,Classes,mclasses,mseclasses,msegraphutils,
+ typinfo,msedock,SysUtils,msesysenv,msemacros,msestrings,msepostscriptprinter,
+ msegraphics,mseglob,msestream,msepointer,mseprocmonitorcomp,msesystypes,
+ mserttistat,msedatalist,mselistbrowser,projecttreeform,msepipestream,
+ msestringcontainer,msesys,mseedit,msewidgets,msegraphedits,mseificomp,
+ mseificompglob,mseifiglob,msescrollbar;
 
 const
   versiontext = '2.14.0';
@@ -157,6 +108,7 @@ type
     poscx: tintegeredit;
     poscy: tintegeredit;
     tframecomp2dark: tframecomp;
+   ttimer1: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -255,6 +207,7 @@ type
 
     procedure ontemplateeditor(const Sender: TObject);
     procedure onresetsettings(const Sender: TObject);
+   procedure ontimerdialog(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -720,7 +673,10 @@ begin
       dialogfilesfo.bringtofront;
       dialogfilesfo.SetFocus;
     end;
-
+    
+    ttimer1.tag := 0;
+    ttimer1.enabled := true;
+       
   end;
 end;
 
@@ -4721,6 +4677,12 @@ begin
       dialogfilesfo.bringtofront;
       dialogfilesfo.SetFocus;
     end;
+    
+    ttimer1.enabled := true;
+    
+ //   sleep(200);
+    
+  //  dialogfilesfo.invalidatewidget;
 
   end;
 
@@ -6110,7 +6072,10 @@ begin
     conflangfo.bringtofront;
     conflangfo.SetFocus;
   end;
-
+ 
+ ttimer1.tag := 1;
+ ttimer1.enabled := true;
+ 
 end;
 
 procedure tmainfo.setlanginit(const Sender: TObject);
@@ -6144,6 +6109,13 @@ begin
     resetsettings := True
   else
     resetsettings := False;
+end;
+
+procedure tmainfo.ontimerdialog(const sender: TObject);
+begin
+if ttimer1.tag = 0 then
+   dialogfilesfo.invalidatewidget
+   else conflangfo.invalidatewidget;
 end;
 
 end.
