@@ -264,9 +264,9 @@ end;
 procedure tconflangfo.oncreat(Const Sender: TObject);
 begin
   Visible := False;
- {$if (defined(windows)) or (not defined(usemo))}
+ //{$if (defined(windows)) or (not defined(usemo))}
  bousemo.visible := false;
- {$endif}
+// {$endif}
 end;
 
 procedure tconflangfo.updatefontcap();

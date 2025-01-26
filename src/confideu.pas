@@ -594,9 +594,27 @@ begin
 
   ratio := fontsize.Value / 12;
   
-  conflangfo.gridlang.font.Height     := fontsize.Value;
-  conflangfo.gridlistfont.font.Height     := fontsize.Value;
- 
+   conflangfo.font.Height     := fontsize.Value;
+   conflangfo.gridlang.font.Height     := fontsize.Value;
+   conflangfo.gridlistfont.font.Height     := fontsize.Value;
+   conflangfo.gridlang.font.Height     := fontsize.Value;
+  
+   conflangfo.width := round(570 * ratio);
+   conflangfo.height := round(244 * ratio);
+   
+   conflangfo.gridlang.width := round(286 * ratio);
+   conflangfo.gridlang.height := round(142 * ratio);
+   //conflangfo.gridlang.left := round(58 * ratio);
+   conflangfo.gridlang.top := round(58 * ratio);
+   conflangfo.gridlang[0].Width := round(236 * ratio);
+   conflangfo.gridlang[2].Width := round(50 * ratio);
+    
+   conflangfo.gridlistfont.width := round(236 * ratio); 
+   conflangfo.gridlistfont.height := round(142 * ratio);
+   conflangfo.gridlistfont.left := round(320 * ratio);
+   conflangfo.gridlistfont.top := round(58 * ratio);
+   conflangfo.gridlistfont[0].Width :=round(220 * ratio);
+      
   mainfo.font.Height     := fontsize.Value;
   mainfo.font.Name       := ansistring(fontname.Value);
   mainfo.frame.grip_size := round(12 * ratio);
@@ -604,7 +622,15 @@ begin
   // message
   messagefontheight := fontsize.Value;
   messagefontname   := fontname.value;
-
+  
+  if Assigned(targetconsolefo) then
+  begin
+   targetconsolefo.Height := round((ratio) * 400);
+   targetconsolefo.Width  := round((ratio) * 600);
+   targetconsolefo.font.Height     := round(12 * ratio);
+   targetconsolefo.grid.font.Height     := round(12 * ratio);
+  end;
+  
   // commandor
   scalecommander(ratio);
   

@@ -62,14 +62,13 @@ object about_form: taboutfo
     frame.localprops1 = []
     frame.sbhorz.pagesize = 1
     frame.sbvert.pagesize = 1
-    bounds_x = 7
-    bounds_y = 9
-    bounds_cx = 357
-    bounds_cy = 331
-    anchors = [an_left, an_top, an_right]
+    bounds_x = 8
+    bounds_y = 10
+    bounds_cx = 358
+    bounds_cy = 333
     optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_resetselectonexit, oe_nofirstarrownavig, oe_focusrectonreadonly]
     textflags = [tf_xcentered, tf_wordbreak, tf_noselect]
     textflagsactive = [tf_xcentered, tf_wordbreak]
-    reffontheight = 15
+    reffontheight = 17
   end
 end

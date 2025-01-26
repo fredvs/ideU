@@ -1,9 +1,9 @@
 object conflangfo: tconflangfo
   visible = False
-  bounds_x = 325
-  bounds_y = 282
+  bounds_x = 463
+  bounds_y = 302
   bounds_cx = 570
-  bounds_cy = 243
+  bounds_cy = 244
   bounds_cxmin = 570
   bounds_cymin = 222
   container.frame.localprops = []
@@ -12,7 +12,7 @@ object conflangfo: tconflangfo
     0
     0
     570
-    243
+    244
   )
   options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = mainfo.mainstatfile
@@ -73,6 +73,7 @@ object conflangfo: tconflangfo
     bounds_y = 9
     bounds_cx = 78
     bounds_cy = 36
+    anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = 'OK'
     onexecute = oncok
@@ -93,12 +94,13 @@ object conflangfo: tconflangfo
     taborder = 2
     bounds_x = 20
     bounds_y = 58
-    bounds_cx = 285
-    bounds_cy = 130
+    bounds_cx = 286
+    bounds_cy = 142
+    anchors = [an_left, an_top, an_bottom]
     font.height = 12
     font.name = 'unifont'
     font.localprops = [flp_height]
-    optionsgrid = [og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
+    optionsgrid = [og_colmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     fixrows.count = 1
     fixrows.items = <    
       item
@@ -124,6 +126,8 @@ object conflangfo: tconflangfo
         colorfocused = 16763002
         width = 216
         options = [co_readonly, co_disabled, co_savevalue, co_savestate, co_mousescrollrow]
+        widthmin = 216
+        widthmax = 2000
         widgetname = 'gridlangcaption'
         dataclass = tgridmsestringdatalist
         data = (
@@ -236,9 +240,10 @@ object conflangfo: tconflangfo
     bounds_x = 38
     bounds_y = 3
     bounds_cx = 263
-    bounds_cy = 49
+    bounds_cy = 51
+    anchors = [an_left, an_top, an_right]
     caption = 'Set as default'
-    reffontheight = 15
+    reffontheight = 17
   end
   object bousemo: tbooleanedit
     frame.caption = 'Use MO files instead of PO files'
@@ -247,15 +252,16 @@ object conflangfo: tconflangfo
     frame.localprops1 = [frl1_captiondist]
     frame.outerframe = (
       0
-      2
-      188
-      2
+      3
+      180
+      3
     )
     taborder = 5
-    bounds_x = 23
-    bounds_y = 192
-    bounds_cx = 201
-    bounds_cy = 17
+    bounds_x = 25
+    bounds_y = 210
+    bounds_cx = 193
+    bounds_cy = 19
+    anchors = [an_left, an_bottom]
     statfile = mainfo.mainstatfile
     onchange = onchange
   end
@@ -268,24 +274,25 @@ object conflangfo: tconflangfo
     frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive, frl1_captiondist]
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
-      46
+      43
       0
       0
       0
     )
     taborder = 6
     hint = 'Font height for all ideU text'
-    bounds_x = 472
-    bounds_y = 215
-    bounds_cx = 76
-    bounds_cy = 21
+    bounds_x = 473
+    bounds_y = 209
+    bounds_cx = 82
+    bounds_cy = 23
+    anchors = [an_right, an_bottom]
     optionsedit1 = [oe1_autopopupmenu, oe1_savevalue, oe1_savestate]
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick]
     value = 12
     valuedefault = 12
     valuemin = 1
     valuemax = 1000
-    reffontheight = 15
+    reffontheight = 17
   end
   object gridlistfont: tstringgrid
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_noclampinview]
@@ -300,10 +307,11 @@ object conflangfo: tconflangfo
     frame.localprops1 = []
     face.localprops = []
     taborder = 7
-    bounds_x = 319
+    bounds_x = 320
     bounds_y = 58
-    bounds_cx = 235
-    bounds_cy = 130
+    bounds_cx = 236
+    bounds_cy = 140
+    anchors = [an_left, an_top, an_bottom]
     font.height = 12
     font.name = 'unifont'
     font.localprops = [flp_height]
@@ -315,7 +323,7 @@ object conflangfo: tconflangfo
     datacols.items = <    
       item
         colorselect = 16763002
-        width = 219
+        width = 220
         options = [co_readonly, co_nofocus, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
         optionsedit1 = [oe1_noselectall, oe1_keyexecute, oe1_savevalue, oe1_savestate, oe1_checkvalueafterstatread]
         valuefalse = '0'

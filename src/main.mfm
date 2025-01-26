@@ -31,9 +31,9 @@ object mainfo: tmainfo
   container.onlayout = onscale
   container.bounds = (
     0
-    21
+    23
     790
-    79
+    77
   )
   dragdock.splitter_color = -1879048190
   dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_cansize, od_canfloat, od_candock, od_captionhint]
@@ -110,7 +110,7 @@ object mainfo: tmainfo
     onpaint = basedockpaintexe
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 790
+    bounds_cx = 775
     bounds_cy = 79
     anchors = []
     font.color = -1610612734
@@ -140,9 +140,9 @@ object mainfo: tmainfo
       bounds_x = 649
       bounds_y = 30
       bounds_cx = 38
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainstatfile
-      reffontheight = 15
+      reffontheight = 17
     end
     object bCompletion: tbooleanedit
       frame.localprops = []
@@ -161,10 +161,10 @@ object mainfo: tmainfo
       bounds_x = 246
       bounds_y = 45
       bounds_cx = 38
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainstatfile
       value = 340
-      reffontheight = 15
+      reffontheight = 17
     end
     object posy: tintegeredit
       frame.localprops = []
@@ -174,10 +174,10 @@ object mainfo: tmainfo
       bounds_x = 293
       bounds_y = 45
       bounds_cx = 38
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainstatfile
       value = 268
-      reffontheight = 15
+      reffontheight = 17
     end
     object poscx: tintegeredit
       frame.localprops = []
@@ -187,10 +187,10 @@ object mainfo: tmainfo
       bounds_x = 341
       bounds_y = 46
       bounds_cx = 38
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainstatfile
       value = 800
-      reffontheight = 15
+      reffontheight = 17
     end
     object poscy: tintegeredit
       frame.localprops = []
@@ -200,10 +200,10 @@ object mainfo: tmainfo
       bounds_x = 385
       bounds_y = 46
       bounds_cx = 38
-      bounds_cy = 21
+      bounds_cy = 23
       statfile = mainstatfile
       value = 100
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object gdb: tgdbmi

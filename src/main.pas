@@ -691,7 +691,7 @@ begin
   // {$ifdef mswindows}
   // fontheightsugg := round(rect1.cx / 1280 * 12);
   // {$else}
-  fontheightsugg := round(rect1.cx / 1368 * 12);
+  fontheightsugg := round(rect1.cy / 768 * 12);
   // {$endif}
 
   confideufo.autoheight.frame.Caption := 'Suggested font height: ' + IntToStr(fontheightsugg);
@@ -4360,8 +4360,20 @@ begin
 end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
+var
+ratio :double;
 begin
+  ratio := confideufo.fontsize.Value /12;
+  aboutfo.about_text.font.Height := confideufo.fontsize.Value;
   aboutfo.font.Height := confideufo.fontsize.Value;
+  aboutfo.width := round( ratio * 320 );
+  aboutfo.height := round( ratio * 220);
+  
+   aboutfo.about_text.width := round(300 * ratio); 
+   aboutfo.about_text.height := round(200 * ratio);
+   aboutfo.about_text.left := round(10 * ratio);
+   aboutfo.about_text.top := round(10 * ratio);
+    
   aboutfo.Caption     := lang_xstockcaption[Ord(sc_about)] + ' MSEgui';
 
   aboutfo.about_text.frame.colorclient := $B2F4FF;
@@ -4377,8 +4389,8 @@ begin
     c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
-  aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+ // aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
+ // aboutfo.Height := aboutfo.about_text.Height + 16;
 
 
   aboutfo.Show(True);
@@ -4386,7 +4398,21 @@ begin
 end;
 
 procedure tmainfo.aboutfpguionexecute(const Sender: TObject);
+var
+ratio :double;
 begin
+
+  ratio := confideufo.fontsize.Value /12;
+  aboutfo.about_text.font.Height := confideufo.fontsize.Value;
+  aboutfo.font.Height := confideufo.fontsize.Value;
+  aboutfo.width := round( ratio * 220 );
+  aboutfo.height := round( ratio * 220);
+  
+   aboutfo.about_text.width := round(200 * ratio); 
+   aboutfo.about_text.height := round(200 * ratio);
+   aboutfo.about_text.left := round(10 * ratio);
+   aboutfo.about_text.top := round(10 * ratio);
+ 
   aboutfo.font.Height      := confideufo.fontsize.Value;
   aboutfo.Caption          := lang_xstockcaption[Ord(sc_about)] + ' fpGUI';
   aboutfo.about_text.frame.colorclient := $FFF5B2;
@@ -4401,18 +4427,33 @@ begin
     c_linefeed +
     lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2024';
 
-  aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+ // aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
+ // aboutfo.Height := aboutfo.about_text.Height + 16;
 
   aboutfo.Show(True);
 end;
 
 procedure tmainfo.aboutideuonexecute(const Sender: TObject);
+var
+ratio :double;
 begin
+  ratio := confideufo.fontsize.Value /12;
+  aboutfo.about_text.font.Height := confideufo.fontsize.Value;
+  aboutfo.font.Height := confideufo.fontsize.Value;
+  aboutfo.width := round( ratio * 220 );
+  aboutfo.height := round( ratio * 220);
+  
+   aboutfo.about_text.width := round(200 * ratio); 
+   aboutfo.about_text.height := round(200 * ratio);
+   aboutfo.about_text.left := round(10 * ratio);
+   aboutfo.about_text.top := round(10 * ratio);
+  
   aboutfo.font.Height      := confideufo.fontsize.Value;
+  
   aboutfo.Caption          := lang_xstockcaption[Ord(sc_about)] + ' ideU'
-   {$ifdef pacpas} + '_PacPas'{$endif}
-  ;
+  
+  {$ifdef pacpas} + '_PacPas'{$endif};
+   
   aboutfo.about_text.frame.colorclient := $DFFFB2;
   aboutfo.about_text.Value :=
     c_linefeed + 'ideU'
@@ -4426,8 +4467,8 @@ begin
     '<fiens@hotmail.com>' + c_linefeed +
     lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2024';
 
-  aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
-  aboutfo.Height := aboutfo.about_text.Height + 16;
+ // aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
+ // aboutfo.Height := aboutfo.about_text.Height + 16;
 
   aboutfo.Show(True);
 end;
