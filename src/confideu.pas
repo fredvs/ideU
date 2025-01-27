@@ -724,7 +724,7 @@ begin
     projecttreefo.edit.font.Height        := fontsize.Value;
     projecttreefo.projectedit.font.Name   := ansistring(fontname.Value);
     projecttreefo.edit.font.Name          := ansistring(fontname.Value);
-    projecttreefo.grid.datarowheight      := round(ratio * 16);
+    projecttreefo.grid.datarowheight      := round(ratio * 24);
   end;
 
   confcompilerfo.font.Height := fontsize.Value;
