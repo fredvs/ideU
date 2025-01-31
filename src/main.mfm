@@ -28,6 +28,24 @@ object mainfo: tmainfo
   container.frame.localprops1 = []
   container.frame.sbhorz.options = [sbo_moveauto, sbo_showauto]
   container.frame.sbvert.options = [sbo_moveauto, sbo_showauto]
+  container.frame.sbvert.face.localprops = []
+  container.frame.sbvert.face.template = concave
+  container.frame.sbvert.facebutton.localprops = []
+  container.frame.sbvert.facebutton.template = convex
+  container.frame.sbvert.faceendbutton.localprops = []
+  container.frame.sbvert.faceendbutton.template = concave
+  container.frame.sbvert.framebutton.hiddenedges = [edg_bottom]
+  container.frame.sbvert.framebutton.localprops = []
+  container.frame.sbvert.framebutton.localprops1 = []
+  container.frame.sbvert.framebutton.template = tframecomp2
+  container.frame.sbvert.frameendbutton1.hiddenedges = [edg_bottom]
+  container.frame.sbvert.frameendbutton1.localprops = []
+  container.frame.sbvert.frameendbutton1.localprops1 = []
+  container.frame.sbvert.frameendbutton1.template = tframecomp2
+  container.frame.sbvert.frameendbutton2.hiddenedges = [edg_bottom]
+  container.frame.sbvert.frameendbutton2.localprops = []
+  container.frame.sbvert.frameendbutton2.localprops1 = []
+  container.frame.sbvert.frameendbutton2.template = tframecomp2
   container.onlayout = onscale
   container.bounds = (
     0
