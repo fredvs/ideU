@@ -832,6 +832,7 @@ begin
       fillrect(po1^.markers[mt_bottomright],cl_dkgray);
       canvas.restore;
      end;
+     else; // Case statment added to make compiler happy...
     end;
     inc(po1);
    end;
@@ -852,6 +853,7 @@ begin
       fillrect(po1^.handles[ht_bottom],cl_black);
       canvas.restore();
      end;
+     else; // Case statment added to make compiler happy...
     end;
     inc(po1);
    end;
@@ -1310,6 +1312,7 @@ begin
      drawxorframe(fpickpos,fxorpicoffset,1,stockobjects.bitmaps[stb_block3]);
     end;
    end;
+   else; // Case statment added to make compiler happy...
   end;
   canvas.restore;
  end;
@@ -2322,8 +2325,7 @@ var
   isroot,iswidget,issub: boolean;
   comp1: tcomponent;
 //  bo1: boolean;
- label
-  endlab;
+  endlab: boolean = false;
  begin
   isroot:= level = 0;
   inc(level);
@@ -2345,17 +2347,24 @@ var
     end
     else begin
      if hidewidgetact.checked then begin
-      goto endlab;
+      endlab := true;
      end;
+    if endlab = false then
+    begin
      rect1:= twidget(component).widgetrect;
      if level = 2 then begin
       addpoint1(rect1.pos,gridrect1.pos);
      end;
+     end;
     end
    end
    else begin
-    rect1:= getcomponentrect(component,level <= 2);
+    if endlab = false then rect1:= getcomponentrect(component,level <= 2);
    end;
+   
+   if endlab = false then
+   begin
+   
    if not (iswidget or issub) then begin
     if isdatasubmodule(component,true) then begin
      canvas.fillrect(rect1,cl_ltgray);
@@ -2413,7 +2422,8 @@ var
     end;
    end;
   end;
- endlab:
+  end;
+ // endlab:
   dec(level);
  end;
 
@@ -2533,6 +2543,7 @@ begin
   fde_showastext: begin
    fdesigner.showastext(fdesigner.modules.findmodule(fmodule));
   end;
+  else; // Case statment added to make compiler happy...
  end;
 end;
 
@@ -3441,6 +3452,7 @@ begin
    ht_bottomleft: shape:= cr_bottomleftcorner;
    ht_top,ht_bottom: shape:= cr_sizever;
    ht_left,ht_right: shape:= cr_sizehor;
+   else; // Case statment added to make compiler happy...
   end;
  end;
  application.widgetcursorshape:= shape;
@@ -3478,6 +3490,7 @@ var
      end;
      factsizerect.size.cx:= size.cx + x;
     end;
+    else; // Case statment added to make compiler happy...
    end;
    case actarea of
     ht_topleft,ht_top,ht_topright: begin
@@ -3493,6 +3506,7 @@ var
      end;
      factsizerect.size.cy:= size.cy + y;
     end;
+    else; // Case statment added to make compiler happy...
    end;
   end;
   case actarea of
@@ -3502,6 +3516,7 @@ var
    ht_left,ht_right: begin
     mousepos1.y:= fpickpos.y;
    end;
+   else; // Case statment added to make compiler happy...
   end;
   application.mouse.move(subpoint(pos1,posbefore));
  end;
@@ -3549,8 +3564,7 @@ var
  po1: pformselectedinfoty;
  pt1: pointty;
  hintinfo1: hintinfoty;
-label
- 1;
+ // label 1;
 begin
  if (module = nil) or (info.mouse.eventkind = ek_mousewheel) then begin
   exit; //continue normal handling
@@ -3810,6 +3824,7 @@ begin
         end;
        end;
       end;
+      else; // Case statment added to make compiler happy...
      end;
      fpickwidget:= nil;
      actarea:= ar_none;
@@ -3861,7 +3876,7 @@ begin
     end;
    end;
   end;
-1:
+  // 1:
   if (eventkind in mouseposevents) and (fselections.count = 1) then begin
    fselections.updateinfos;
    po1:= fselections.itempo(0);
@@ -3990,9 +4005,8 @@ begin
           selectparentwidget(twidget(comp1));
            end
            else begin
-           selectcomponent(comp1);
-           //activate; // fred added
-            end;
+            selectcomponent(comp1);
+           end;
           end
           else begin
            selectcomponent(module);
@@ -4167,9 +4181,6 @@ end;
 procedure tformdesignerfo.enterexe(const sender: TObject);
 begin
  mainfo.designformactivated(self);
-// if fdactivated = false then
- if 1=1 then
-  begin
  if length(lang_actionsmodule) > 0 then
  begin
  popupme.menu.itembynames(['showobjectinspector']).Caption := lang_actionsmodule[Ord(ac_objectinspector)];
@@ -4203,8 +4214,6 @@ begin
  hidewidgetact.Caption := lang_xstockcaption[Ord(sc_hidewidget)];
  togglehideact.Caption := lang_xstockcaption[Ord(sc_togglehide)];
  showallact.Caption := lang_xstockcaption[Ord(sc_showall)];
- 
-  end;
  end;
  fdactivated := true; 
 end;
