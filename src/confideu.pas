@@ -614,10 +614,15 @@ begin
    conflangfo.gridlistfont.left := round(320 * ratio);
    conflangfo.gridlistfont.top := round(58 * ratio);
    conflangfo.gridlistfont[0].Width :=round(220 * ratio);
+   
+   debuggerfo.font.Height     := fontsize.Value; 
+   debuggerfo.statdisp.font.Height     := fontsize.Value; 
       
   mainfo.font.Height     := fontsize.Value;
   mainfo.font.Name       := ansistring(fontname.Value);
   mainfo.frame.grip_size := round(12 * ratio);
+  mainfo.mainmenu1.menu.font.Height     := fontsize.Value;
+  mainfo.mainmenu1.menu.fontactive.Height     := fontsize.Value;
 
   // message
   messagefontheight := fontsize.Value;
