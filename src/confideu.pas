@@ -602,12 +602,14 @@ begin
    conflangfo.width := round(570 * ratio);
    conflangfo.height := round(244 * ratio);
    
+   conflangfo.gridlang.datarowheight := round(20 * ratio);  
+    
    conflangfo.gridlang.width := round(286 * ratio);
    conflangfo.gridlang.height := round(142 * ratio);
    //conflangfo.gridlang.left := round(58 * ratio);
    conflangfo.gridlang.top := round(58 * ratio);
-   conflangfo.gridlang[0].Width := round(236 * ratio);
-   conflangfo.gridlang[2].Width := round(50 * ratio);
+   conflangfo.gridlang.datacols[0].Width := round(228 * ratio);
+   conflangfo.gridlang.datacols[1].Width := round(44 * ratio);
     
    conflangfo.gridlistfont.width := round(236 * ratio); 
    conflangfo.gridlistfont.height := round(142 * ratio);

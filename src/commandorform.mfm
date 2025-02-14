@@ -191,8 +191,10 @@ object debuggerfo: tdebuggerfo
     bounds_cx = 1222
     bounds_cy = 24
     anchors = [an_top]
+    font.shadow_color = -1610612730
+    font.style = [fs_bold, fs_italic]
     font.name = 'stf_default'
-    font.localprops = []
+    font.localprops = [flp_shadow_color, flp_style]
     textflags = [tf_xcentered, tf_ycentered]
     reffontheight = 17
   end

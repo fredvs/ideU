@@ -5,7 +5,7 @@ unit main;
 {$ifdef FPC}
  {$mode objfpc}{$h+}
 {$endif}
-{$ifndef mse_no_ifi}
+{$ifndef mse_no_ifi} 
  {$define mse_with_ifi}
 {$endif}
 {$ifdef mse_no_ifi}
@@ -5609,6 +5609,8 @@ begin
     mainmenu1.itemfacetemplateactive := concave;
     mainmenu1.popupitemfacetemplate := concave;
     mainmenu1.popupitemfacetemplateactive := convex;
+    
+    debuggerfo.font.color := cl_black;
     debuggerfo.panelproject.face.template := debuggerfo.templproject;
     debuggerfo.panelwatch.face.template := debuggerfo.templproject;
     debuggerfo.project_open.face.template := debuggerfo.templproject;
@@ -5769,7 +5771,8 @@ begin
     messagefo.Messages.datacols[0].colorfocused := $735800;
     messagefo.Messages.datacols[0].colorselect  := $FFDEBA;
 
-
+    debuggerfo.font.color := cl_white;
+    
     debuggerfo.color          := cl_dkgray;
     debuggerfo.basedock.color := cl_dkgray;
 
