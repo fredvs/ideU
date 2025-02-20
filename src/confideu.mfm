@@ -30,8 +30,8 @@ object confideufo: tconfideufo
     frame.localprops = []
     frame.localprops1 = []
     taborder = 1
-    bounds_x = 10
-    bounds_y = 539
+    bounds_x = 9
+    bounds_y = 551
     bounds_cx = 277
     bounds_cy = 122
     object tesakitdir: tfilenameeditx
@@ -156,7 +156,7 @@ object confideufo: tconfideufo
     bounds_x = 11
     bounds_y = 180
     bounds_cx = 281
-    bounds_cy = 350
+    bounds_cy = 362
     object universal_path: tbooleanedit
       frame.caption = 'Universal directory layout'
       frame.localprops = []
@@ -475,6 +475,25 @@ object confideufo: tconfideufo
       bounds_x = 8
       bounds_y = 41
       bounds_cx = 182
+      bounds_cy = 19
+      statfile = mainfo.mainstatfile
+    end
+    object runaftercompile: tbooleanedit
+      frame.caption = 'Run/Debug after compile'
+      frame.localprops = []
+      frame.localprops1 = []
+      frame.template = mainfo.menuitemframe
+      frame.outerframe = (
+        0
+        3
+        142
+        3
+      )
+      taborder = 14
+      hint = 'Run/Debug the application after compilation'
+      bounds_x = 11
+      bounds_y = 339
+      bounds_cx = 155
       bounds_cy = 19
       statfile = mainfo.mainstatfile
     end

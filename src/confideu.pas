@@ -60,6 +60,7 @@ type
    editfontnamesrc: tdropdownlistedit;
    autoheight: tbooleanedit;
    enableedited: tbooleanedit;
+   runaftercompile: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -308,9 +309,13 @@ begin
 
   addwhiteaftercomma.left := 6;
   addwhiteaftercomma.top := autoheight.top + autoheight.Height + 4;
+  
+   runaftercompile.left := 6;
+  runaftercompile.top := addwhiteaftercomma.top + addwhiteaftercomma.Height + 4;
 
 
-  group_system_layout.Height := addwhiteaftercomma.top + addwhiteaftercomma.Height + 10;
+
+  group_system_layout.Height := runaftercompile.top + runaftercompile.Height + 10;
 
   
   tbassistive.top := tbassistive.Height + 2;
@@ -364,7 +369,7 @@ begin
   
   rectanglearea.top := group_sourceeditor.bottom + 4;
 
-  Height := rectanglearea.bottom + 10;
+  Height := group_assistive.bottom + 10;
 
   if findformcreated then
     finddialogdotextsize;

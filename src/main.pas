@@ -4212,10 +4212,13 @@ begin
           else
             str3 := '';
 
-    if str3 <> '' then
+  if confideufo.runaftercompile.value then
+  begin
+    if str3 <> '' then runwithoutdebugger
     else if fstartcommand <> sc_none then
-      runtarget;
-
+      runtarget else runwithoutdebugger ;
+  end;
+  
   end;
 end;
 
