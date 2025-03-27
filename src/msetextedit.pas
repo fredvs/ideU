@@ -1419,10 +1419,10 @@ begin
     (stop.row < 0) then
     Exit;
 
+   sourcefo.ActivePage.source_editor.datacols.clearselection;
+
   if (sourcefo.ActivePage <> nil) and (confideufo.rectanglearea.Value = True) then
   begin
-
-    sourcefo.ActivePage.source_editor.datacols.clearselection;
 
     if start.row <> stop.row then
     begin
@@ -1436,9 +1436,7 @@ begin
       else
       begin
         new2.row := stop.row;
-        ;
         rangerow := start.row;
-        ;
       end;
 
       while new2.row <= rangerow do
