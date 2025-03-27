@@ -1419,7 +1419,7 @@ begin
     (stop.row < 0) then
     Exit;
 
-   sourcefo.ActivePage.source_editor.datacols.clearselection;
+  if (sourcefo.ActivePage <> nil) then sourcefo.ActivePage.source_editor.datacols.clearselection;
 
   if (sourcefo.ActivePage <> nil) and (confideufo.rectanglearea.Value = True) then
   begin
