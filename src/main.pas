@@ -207,7 +207,7 @@ type
 
     procedure ontemplateeditor(const Sender: TObject);
     procedure onresetsettings(const Sender: TObject);
-   procedure ontimerdialog(const sender: TObject);
+    procedure ontimerdialog(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -4832,6 +4832,8 @@ begin
 
   mainmenu1.menu.itembynames(['file']).Caption :=
     '&' + lang_stockcaption[Ord(sc_file)];
+    
+  mainmenu1.menu.itembynames(['exit']).Caption := '     ' + lang_mainform[Ord(ma_exit)] + '     ';
 
   mainmenu1.menu.itembynames(['file', 'new']).Caption    := lang_stockcaption[Ord(sc_newfile)];
   mainmenu1.menu.itembynames(['file', 'open']).Caption   := lang_stockcaption[Ord(sc_open)];
@@ -4839,12 +4841,11 @@ begin
   mainmenu1.menu.itembynames(['file', 'saveas']).Caption := lang_xstockcaption[Ord(sc_saveas)];
   mainmenu1.menu.itembynames(['file', 'saveall']).Caption := lang_xstockcaption[Ord(sc_saveall)];
   mainmenu1.menu.itembynames(['file', 'close']).Caption  := lang_stockcaption[Ord(sc_close)];
-  mainmenu1.menu.itembynames(['file', 'closeall']).Caption := lang_xstockcaption[Ord(sc_closeall)
-    ];
+  mainmenu1.menu.itembynames(['file', 'closeall']).Caption := lang_xstockcaption[Ord(sc_closeall)];
   mainmenu1.menu.itembynames(['file', 'print']).Caption  := lang_xstockcaption[Ord(sc_print)];
   mainmenu1.menu.itembynames(['file', 'quit']).Caption   := lang_mainform[Ord(ma_exit)];
-  mainmenu1.menu.itembynames(['search']).Caption         := '&' + lang_stockcaption[Ord(sc_search
-    )];
+  
+  mainmenu1.menu.itembynames(['search']).Caption         := '&' + lang_stockcaption[Ord(sc_search)];
   mainmenu1.menu.itembynames(['search', 'line']).Caption := lang_xstockcaption[Ord(sc_line)];
   mainmenu1.menu.itembynames(['search', 'find']).Caption := lang_stockcaption[Ord(sc_search)];
   mainmenu1.menu.itembynames(['search', 'searchagain']).Caption := lang_xstockcaption[Ord(
@@ -5240,7 +5241,7 @@ begin
 
   mainmenu1.menu.itembynames(['lang']).Caption := lang_stockcaption[Ord(sc_lang)];
 
-  mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)];
+  mainmenu1.menu.itembynames(['about']).Caption := lang_xstockcaption[Ord(sc_about)] + '      ';
 
   if Assigned(objectinspectorfo) then
     objectinspectorfo.Caption :=

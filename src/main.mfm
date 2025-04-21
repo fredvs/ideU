@@ -255,7 +255,7 @@ object mainfo: tmainfo
     itemfacetemplate = convex
     itemframetemplateactive = tframecomp3
     itemfacetemplateactive = concave
-    menu.submenu.count = 15
+    menu.submenu.count = 16
     menu.submenu.items = <    
       item
         submenu.count = 15
@@ -1621,6 +1621,12 @@ object mainfo: tmainfo
         caption = '           '
         name = 'menuwidth'
         state = [as_invisible, as_localinvisible, as_localcaption]
+      end    
+      item
+        caption = '    E&xit     '
+        name = 'exit'
+        state = [as_localcaption, as_localonexecute]
+        onexecute = exitonexecute
       end>
     menu.state = [as_localtag, as_localonexecute]
     menu.coloractive = 15592941
