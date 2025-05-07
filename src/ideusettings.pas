@@ -205,6 +205,15 @@ const
 
     {$endif}
 
+{$ifdef openbsd}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppc386', 'gdb' , '${IDEUDIR}lang/', '', 'i386-openbsd', 'linux', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+    {$endif}  
+
 
     {$ifdef freebsd}
   defaultsettingmacros: array[settingsmacroty] of msestring = (

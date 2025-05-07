@@ -455,6 +455,9 @@ const
 {$if defined(openbsd) and  defined(cpu64)}
   espeaklibdir = 'libopenbsd64';
 {$endif}
+{$if defined(openbsd) and  defined(cpu86)}
+  espeaklibdir = 'libopenbsd32';
+{$endif}
 {$if defined(netbsd) and  defined(cpu64)}
   espeaklibdir = 'libnetbsd64';
 {$endif}
