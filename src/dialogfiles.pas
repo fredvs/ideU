@@ -93,8 +93,10 @@ var
 begin
   layoutbusy := True;
   if Assigned(list_files.selectednames) and (tag = 0) then
+  if fileexists(list_files.directory +
+      directoryseparator + list_files.selectednames[0]) then
   begin
-    if han <> -1 then
+   if han <> -1 then
       sourcefo.syntaxpainter.freedeffile(han);
     selected_file.Text := list_files.selectednames[0];
     han           := sourcefo.syntaxpainter.readdeffile(list_files.directory +
@@ -106,6 +108,7 @@ begin
   end;
 
   if Assigned(list_files.selectednames) and (tag = 1) then
+  if fileexists(list_files.directory + directoryseparator + list_files.selectednames[0]) then
   begin
     selected_file.Text := list_files.selectednames[0];
     str1 := ttextstream.Create(list_files.directory + directoryseparator + selected_file.Text);
@@ -146,8 +149,8 @@ begin
         end;
       end;
 
-      if lowercase(system.copy(selected_file.Text, 1, 4)) = 'full' then
-        mainfo.Window.RecreateWindow;
+     // if lowercase(system.copy(selected_file.Text, 1, 4)) = 'full' then
+     //   mainfo.Window.RecreateWindow;
 
       if (tabind < 0) and (sourcefo.files_tab.Count > 0) then
         sourcefo.files_tab.activepageindex := 0;
@@ -157,11 +160,11 @@ begin
 
     finally
       str1.Destroy();
-      application.ProcessMessages;
-      SetFocus;
+     // application.ProcessMessages;
+     // SetFocus;
     end;
   end;
-  
+ 
   invalidatewidget;
 
   layoutbusy := False;
