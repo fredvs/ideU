@@ -11,7 +11,7 @@ esac
 declare -ar OPS=(
     -Fuuse/mseide-msegui/lib/common/kernel/linux
     -Fuuse/mseide-msegui/lib/common/*
-    -Mobjfpc -Sh -Fcutf8 -dmse_with_zeoslib -gl -B -Xs -CX -XX -O1 -dmse_dynpo -SIcorba -FUunits -vewinhq -dusemo
+    -Mobjfpc -Sh -Fcutf8 -dmse_with_zeoslib -B -Xs -CX -XX -O1 -dmse_dynpo -SIcorba -vewinhq -dusemo
 )
 declare -i exitCode=0
 mapfile -t < <(
