@@ -5,6 +5,8 @@ object templateeditorfo: ttemplateeditorfo
   bounds_cx = 473
   bounds_cy = 399
   container.frame.clientwidthmin = 473
+  container.frame.localprops = []
+  container.frame.localprops1 = []
   container.bounds = (
     0
     0
@@ -14,6 +16,7 @@ object templateeditorfo: ttemplateeditorfo
   options = [fo_freeonclose, fo_closeonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   statfile = tstatfile1
   caption = 'Code Template Editor'
+  windowopacity = -Inf
   onloaded = createexe
   onclosequery = closeq
   moduleclassname = 'tmseform'
@@ -40,52 +43,56 @@ object templateeditorfo: ttemplateeditorfo
   end
   object nameed: tstringedit
     frame.caption = '&Name'
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      20
       0
       0
     )
     taborder = 1
     bounds_x = 0
-    bounds_y = 4
+    bounds_y = 1
     bounds_cx = 109
-    bounds_cy = 37
+    bounds_cy = 43
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_notnull]
-    reffontheight = 14
+    reffontheight = 17
   end
   object commented: tstringedit
     frame.caption = 'C&omment'
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      20
       0
       0
     )
     taborder = 2
     bounds_x = 112
-    bounds_y = 4
+    bounds_y = 1
     bounds_cx = 361
-    bounds_cy = 37
+    bounds_cy = 43
     anchors = [an_left, an_top, an_right]
-    reffontheight = 14
+    reffontheight = 17
   end
   object paramgrid: tstringgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
     frame.caption = '&Parameter'
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      20
       0
       0
     )
     taborder = 3
     bounds_x = 0
-    bounds_y = 46
+    bounds_y = 49
     bounds_cx = 473
-    bounds_cy = 122
+    bounds_cy = 119
     anchors = [an_top]
     optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
     datacols.count = 2
@@ -113,7 +120,7 @@ object templateeditorfo: ttemplateeditorfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 16
+        height = 19
         captions.count = 2
         captions.items = <        
           item
@@ -123,14 +130,14 @@ object templateeditorfo: ttemplateeditorfo
             caption = 'Default Value'
           end>
       end>
-    datarowheight = 16
+    datarowheight = 19
     statfile = tstatfile1
-    reffontheight = 14
+    reffontheight = 17
   end
   object tspacer1: tspacer
     taborder = 13
     bounds_x = 192
-    bounds_y = 41
+    bounds_y = 44
     bounds_cx = 50
     bounds_cy = 5
     linktop = commented
@@ -151,6 +158,8 @@ object templateeditorfo: ttemplateeditorfo
   end
   object templgrid: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets]
+    frame.localprops = []
+    frame.localprops1 = []
     taborder = 4
     bounds_x = 0
     bounds_y = 171
@@ -181,8 +190,8 @@ object templateeditorfo: ttemplateeditorfo
         )
       end>
     datarowlinewidth = 0
-    datarowheight = 15
-    reffontheight = 14
+    datarowheight = 18
+    reffontheight = 17
     object templed: tundotextedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
@@ -190,33 +199,33 @@ object templateeditorfo: ttemplateeditorfo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 1016
-      bounds_cy = 15
+      bounds_cy = 18
       font.name = 'stf_default'
       font.xscale = 1
-      font.dummy = 0
+      font.localprops = [flp_xscale]
       oneditnotifcation = editnotify
-      reffontheight = 14
+      reffontheight = 17
     end
   end
   object cursordisp: tstringdisp
     frame.caption = 'Cursor'
     frame.captiondist = 2
+    frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
-    frame.dummy = 0
     frame.outerframe = (
       0
-      18
+      21
       0
       0
     )
     taborder = 15
     bounds_x = 8
-    bounds_y = 359
+    bounds_y = 353
     bounds_cx = 68
-    bounds_cy = 36
+    bounds_cy = 42
     anchors = [an_left, an_bottom]
     textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 14
+    reffontheight = 17
   end
   object tsplitter2: tsplitter
     color = -1879048189
@@ -233,41 +242,43 @@ object templateeditorfo: ttemplateeditorfo
   end
   object coled: tintegeredit
     frame.caption = 'Col'
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      20
       0
       0
     )
     taborder = 7
     bounds_x = 216
-    bounds_y = 359
+    bounds_y = 353
     bounds_cx = 52
-    bounds_cy = 37
+    bounds_cy = 43
     anchors = [an_left, an_bottom]
     value = 1
-    min = 1
-    reffontheight = 14
+    valuemin = 1
+    reffontheight = 17
   end
   object rowed: tintegeredit
     frame.caption = 'Row'
-    frame.dummy = 0
+    frame.localprops = []
+    frame.localprops1 = []
     frame.outerframe = (
       0
-      17
+      20
       0
       0
     )
     taborder = 6
     bounds_x = 160
-    bounds_y = 359
+    bounds_y = 353
     bounds_cx = 52
-    bounds_cy = 37
+    bounds_cy = 43
     anchors = [an_left, an_bottom]
     value = 1
-    min = 1
-    reffontheight = 14
+    valuemin = 1
+    reffontheight = 17
   end
   object tbutton3: tbutton
     taborder = 5
@@ -284,38 +295,38 @@ object templateeditorfo: ttemplateeditorfo
     frame.caption = '&select'
     frame.captionpos = cp_top
     frame.captiondist = 4
+    frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
-    frame.dummy = 0
     frame.outerframe = (
-      13
-      20
-      14
+      11
+      23
+      11
       0
     )
     taborder = 8
-    bounds_x = 267
-    bounds_y = 359
-    bounds_cx = 40
-    bounds_cy = 33
+    bounds_x = 269
+    bounds_y = 356
+    bounds_cx = 35
+    bounds_cy = 36
     anchors = [an_left, an_bottom]
   end
   object indented: tbooleanedit
     frame.caption = '&indent'
     frame.captionpos = cp_top
     frame.captiondist = 4
+    frame.localprops = []
     frame.localprops1 = [frl1_captiondist]
-    frame.dummy = 0
     frame.outerframe = (
-      14
-      20
-      15
+      12
+      23
+      12
       0
     )
     taborder = 9
-    bounds_x = 306
-    bounds_y = 359
-    bounds_cx = 42
-    bounds_cy = 33
+    bounds_x = 308
+    bounds_y = 356
+    bounds_cx = 37
+    bounds_cy = 36
     anchors = [an_left, an_bottom]
   end
   object deletebu: tbutton

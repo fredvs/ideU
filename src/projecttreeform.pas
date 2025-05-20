@@ -1320,6 +1320,7 @@ end;
 procedure tprojecttreefo.addcmoduleonexecute(const sender: TObject);
 begin
  cmoduledialog.controller.filename:= gettreedir;
+ cmoduledialog.controller.fontheight := mainfo.font.Height;
  if cmoduledialog.execute = mr_ok then begin
   projecttree.cmodules.addfiles(tprojectnode(projectedit.item),
                                   cmoduledialog.controller.filenames);

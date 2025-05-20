@@ -482,6 +482,7 @@ begin
   begin
     openfile.controller.icon        := icon;
     openfile.controller.showoptions := True;
+    openfile.controller.fontheight := mainfo.font.Height;
 
     openfile.controller.captionsave := lang_xstockcaption[Ord(sc_saveas)];
 
@@ -496,6 +497,7 @@ begin
       str1       := sourcefo.ActivePage.filepath;
       namebefore := str1;
       openfile.controller.showoptions := True;
+      openfile.controller.fontheight := mainfo.font.Height;
 
       if openfile.controller.Execute(str1, fdk_save) then
       begin

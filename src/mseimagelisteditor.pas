@@ -58,6 +58,7 @@ type
    procedure createitemev(const sender: tcustomitemlist;
                    var item: tlistedititem);
    procedure statupdateev(const sender: TObject; const filer: tstatfiler);
+   procedure oncreate(const sender: TObject);
   private
    fcopyitems: integerarty;
    procedure listchange(const sender: tobject);
@@ -69,7 +70,7 @@ function editimagelist(aimagelist: timagelist): modalresultty;
 
 implementation
 uses
- mseimagelisteditor_mfm,mseformatstr,msegridsglob,mseactions,
+ mseimagelisteditor_mfm,mseformatstr,msegridsglob,mseactions,main,
  msekeyboard,msefileutils,msegraphicstream;
 
 var
@@ -122,6 +123,7 @@ var
  int1: integer;
  i1: int32;
 begin
+ filedialog.controller.fontheight := mainfo.font.Height;
  filedialog.controller.filename:= filedialog.controller.lastdir;
  filedialog.controller.filterlist.asarraya:= graphicfilefilternames;
  filedialog.controller.filterlist.asarrayb:= graphicfilefiltermasks;
@@ -374,6 +376,11 @@ procedure timagelisteditorfo.statupdateev(const sender: TObject;
                const filer: tstatfiler);
 begin
  filer.updatevalue('currentversion',currentversion);
+end;
+
+procedure timagelisteditorfo.oncreate(const sender: TObject);
+begin
+font.Height := mainfo.font.Height;
 end;
 
 { timageitem }

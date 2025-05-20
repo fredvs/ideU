@@ -18,6 +18,7 @@ object imagelisteditorfo: timagelisteditorfo
   statfile = statfile1
   caption = 'Imagelist Editor'
   windowopacity = -Inf
+  oncreate = oncreate
   moduleclassname = 'tmseform'
   object disp: tlistview
     optionswidget1 = [ow1_fontglyphheight]
@@ -27,7 +28,7 @@ object imagelisteditorfo: timagelisteditorfo
     bounds_x = 0
     bounds_y = 0
     bounds_cx = 508
-    bounds_cy = 290
+    bounds_cy = 284
     anchors = [an_top, an_bottom]
     cellheight = 62
     optionsgrid = [og_colsizing, og_rowsizing, og_focuscellonenter, og_wraprow, og_wrapcol, og_autopopup]
@@ -40,7 +41,7 @@ object imagelisteditorfo: timagelisteditorfo
     onlayoutchanged = layoutchanged
     onitemevent = disponitemevent
     onitemsmoved = disponitemsmoved
-    reffontheight = 15
+    reffontheight = 17
   end
   object tlayouter1: tlayouter
     frame.framei_bottom = 5
@@ -48,9 +49,9 @@ object imagelisteditorfo: timagelisteditorfo
     frame.localprops1 = []
     taborder = 1
     bounds_x = 0
-    bounds_y = 293
-    bounds_cx = 308
-    bounds_cy = 62
+    bounds_y = 287
+    bounds_cx = 300
+    bounds_cy = 68
     anchors = [an_left, an_bottom]
     optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
     linktop = disp
@@ -59,9 +60,9 @@ object imagelisteditorfo: timagelisteditorfo
     object la2: tlayouter
       taborder = 1
       bounds_x = 0
-      bounds_y = 35
+      bounds_y = 39
       bounds_cx = 295
-      bounds_cy = 22
+      bounds_cy = 24
       optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
       optionslayout = [lao_aligny]
       dist_top = 4
@@ -70,7 +71,7 @@ object imagelisteditorfo: timagelisteditorfo
         bounds_x = 80
         bounds_y = 0
         bounds_cx = 215
-        bounds_cy = 22
+        bounds_cy = 24
         optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
         optionslayout = [lao_placex]
         place_mindist = 5
@@ -82,12 +83,12 @@ object imagelisteditorfo: timagelisteditorfo
           bounds_x = 110
           bounds_y = 1
           bounds_cx = 50
-          bounds_cy = 21
+          bounds_cy = 23
           bounds_cxmin = 50
           state = [as_default, as_localdefault, as_localcaption]
           caption = '&OK'
           modalresult = mr_ok
-          reffontheight = 15
+          reffontheight = 17
         end
         object cancel: tbutton
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
@@ -95,12 +96,12 @@ object imagelisteditorfo: timagelisteditorfo
           bounds_x = 165
           bounds_y = 1
           bounds_cx = 50
-          bounds_cy = 21
+          bounds_cy = 23
           bounds_cxmin = 50
           state = [as_localcaption]
           caption = '&Cancel'
           modalresult = mr_cancel
-          reffontheight = 15
+          reffontheight = 17
         end
         object clear: tbutton
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
@@ -108,24 +109,24 @@ object imagelisteditorfo: timagelisteditorfo
           bounds_x = 55
           bounds_y = 1
           bounds_cx = 50
-          bounds_cy = 21
+          bounds_cy = 23
           bounds_cxmin = 50
           state = [as_localcaption, as_localonexecute]
           caption = 'C&lear'
           onexecute = clearonexecute
-          reffontheight = 15
+          reffontheight = 17
         end
         object add: tbutton
           optionswidget1 = [ow1_fontglyphheight, ow1_autoscale, ow1_autowidth]
           bounds_x = 0
           bounds_y = 1
           bounds_cx = 50
-          bounds_cy = 21
+          bounds_cy = 23
           bounds_cxmin = 50
           state = [as_localcaption, as_localonexecute]
           caption = '&Add'
           onexecute = addonexecute
-          reffontheight = 15
+          reffontheight = 17
         end
       end
       object stretch: tbooleanedit
@@ -134,14 +135,14 @@ object imagelisteditorfo: timagelisteditorfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
-          46
-          2
+          3
+          42
+          3
         )
         bounds_x = 6
         bounds_y = 3
-        bounds_cx = 59
-        bounds_cy = 17
+        bounds_cx = 55
+        bounds_cy = 19
         statfile = statfile1
         value = True
       end
@@ -149,8 +150,8 @@ object imagelisteditorfo: timagelisteditorfo
     object la1: tlayouter
       bounds_x = 6
       bounds_y = 0
-      bounds_cx = 302
-      bounds_cy = 32
+      bounds_cx = 294
+      bounds_cy = 36
       optionsscale = [osc_expandx, osc_shrinkx, osc_expandy, osc_shrinky]
       optionslayout = [lao_placex, lao_aligny]
       align_glue = wam_start
@@ -181,19 +182,19 @@ object imagelisteditorfo: timagelisteditorfo
         frame.buttonellipse.imagenr = 17
         frame.outerframe = (
           0
-          5
-          48
           6
+          45
+          7
         )
         taborder = 1
         hint = 'Transparent color'
-        bounds_x = 67
+        bounds_x = 64
         bounds_y = 0
-        bounds_cx = 154
-        bounds_cy = 32
+        bounds_cx = 151
+        bounds_cy = 36
         statfile = statfile1
         value = -2147483647
-        reffontheight = 15
+        reffontheight = 17
       end
       object masked: tbooleanedit
         frame.caption = '&masked'
@@ -201,14 +202,14 @@ object imagelisteditorfo: timagelisteditorfo
         frame.localprops1 = []
         frame.outerframe = (
           0
-          2
-          50
-          2
+          3
+          47
+          3
         )
         bounds_x = 0
-        bounds_y = 7
-        bounds_cx = 63
-        bounds_cy = 17
+        bounds_y = 8
+        bounds_cx = 60
+        bounds_cy = 19
         value = True
       end
       object versionnum: tenumedit
@@ -222,16 +223,16 @@ object imagelisteditorfo: timagelisteditorfo
           end>
         frame.outerframe = (
           0
-          5
-          33
           6
+          31
+          7
         )
         taborder = 2
         hint = 'Current imagelist version number'
-        bounds_x = 225
+        bounds_x = 219
         bounds_y = 0
-        bounds_cx = 77
-        bounds_cy = 32
+        bounds_cx = 75
+        bounds_cy = 36
         optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
         ondataentered = versiondatentev
         dropdown.cols.count = 1
@@ -242,7 +243,7 @@ object imagelisteditorfo: timagelisteditorfo
         valuedefault = 0
         valuemin = 0
         onsetvalue = versionsetev
-        reffontheight = 15
+        reffontheight = 17
       end
     end
   end

@@ -52,6 +52,7 @@ implementation
 
 uses
   captionideu,
+  main,
   POtoMO,
   potools_mfm;
   
@@ -398,6 +399,8 @@ begin
 
     impexpfiledialog.controller.filterindex := 0;
     application.ProcessMessages;
+    
+    impexpfiledialog.controller.fontheight := mainfo.font.Height;
 
     if impexpfiledialog.Execute(fdk_open) = mr_ok then
     begin

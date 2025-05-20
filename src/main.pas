@@ -910,6 +910,8 @@ begin
         //    openform.controller.filename:= '';
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
         openform.controller.showoptions := True;
+        openfile.controller.fontheight := font.Height;
+
         if length(lang_mainform) > Ord(ma_formfile) then
         begin
           if openform.controller.Execute(wstr2, fdk_open,
@@ -1025,6 +1027,7 @@ begin
     begin
       wstr2 := '';
       openform.controller.showoptions := True;
+      openform.controller.fontheight := font.Height;
 
       if length(lang_mainform) > Ord(ma_formfile) then
       begin
@@ -3796,6 +3799,8 @@ begin
     
     openfile.controller.filename    := aname;
     openfile.controller.captionsave := lang_mainform[Ord(ma_str_newproject)];
+    
+    openfile.controller.fontheight := font.Height;
     
     if openfile.Execute = mr_ok then
     begin
