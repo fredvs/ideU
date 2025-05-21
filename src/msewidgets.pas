@@ -1937,7 +1937,6 @@ begin
                high(actions) >= 0,exttext,pshowmessageinfoty(adata));
    widget.name:= '_showmessage'; //debug purpose
    widget.parentwidget:= widget1; //do not create window handle of widget
-
    try
     acanvas:= widget1.getcanvas;
     acanvas.font.color := cl_black;
@@ -1997,6 +1996,10 @@ begin
 
     widget.parentwidget:= nil;  //remove dummy parent
     widget.clientsize:= rect1.size;
+
+    widget.window.windowpos:= wp_screencentered;
+    
+   {
     if placementrect = nil then begin
      widget.window.windowpos:= wp_screencentered;
     end
@@ -2011,7 +2014,8 @@ begin
      widget.widgetrect:= placepopuprect(transientfor,
                                        placementrect^,placement,widget.size);
     end;
-
+    }
+    
     with widget.info.dest do begin
      rect1.x:= x + (cx - int2) div 2;
      rect1.y:= y + cy + verttextdist + widget.paintpos.y;
