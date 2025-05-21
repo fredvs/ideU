@@ -18,8 +18,8 @@ uses
  msegraphics,msegraphutils,mseevent,mseclasses,mseforms,msestatfile,
  msesimplewidgets,msewidgets,msedataedits,mseedit,msegrids,msestrings,msetypes,
  msewidgetgrid,msegraphedits,msesplitter,mseeditglob,msetextedit,msedispwidgets,
- msebitmap,msedatanodes,msefiledialog,mselistbrowser,msescrollbar,msesystypes,
- msesys,msestringcontainer;
+ msebitmap,msedatanodes,mselistbrowser,msescrollbar,msesystypes,
+ msesys,msestringcontainer, msefiledialogx;
 type
  ttemplateeditorfo = class(tmseform)
    tstatfile1: tstatfile;
@@ -39,10 +39,10 @@ type
    tbutton3: tbutton;
    selected: tbooleanedit;
    indented: tbooleanedit;
-   savefiledialog: tfiledialog;
    deletebu: tbutton;
    saveasbu: tbutton;
    c: tstringcontainer;
+   savefiledialog: tfiledialogx;
    procedure afterstatreadexe(const sender: TObject);
    procedure editnotify(const sender: TObject;
                    var info: editnotificationinfoty);

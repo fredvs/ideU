@@ -250,6 +250,7 @@ begin
   if sourcefo.ActivePage = nil then
     incurrentfile.Enabled := False;
   setlangfindinfile();
+  dir.controller.fontheight := mainfo.font.height;
 end;
 
 procedure tfindinfiledialogfo.setlangfindinfile();

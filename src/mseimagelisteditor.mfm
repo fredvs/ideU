@@ -1,8 +1,8 @@
 object imagelisteditorfo: timagelisteditorfo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 220
-  bounds_y = 297
+  bounds_x = 409
+  bounds_y = 226
   bounds_cx = 508
   bounds_cy = 355
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -253,7 +253,6 @@ object imagelisteditorfo: timagelisteditorfo
     top = 176
   end
   object filedialog: tfiledialogx
-    statfile = statfile1
     controller.fontheight = 0
     controller.fontname = 'stf_default'
     controller.fontcolor = -1610612734

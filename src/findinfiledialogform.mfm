@@ -68,21 +68,21 @@ object findinfileadialogfo: tfindinfiledialogfo
       end>
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     bounds_x = 4
-    bounds_y = 34
+    bounds_y = 32
     bounds_cx = 227
-    bounds_cy = 39
+    bounds_cy = 43
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 17
   end
   object mask: thistoryedit
     frame.caption = '&File Mask'
@@ -104,15 +104,15 @@ object findinfileadialogfo: tfindinfiledialogfo
       end>
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 1
     bounds_x = 4
-    bounds_y = 234
+    bounds_y = 232
     bounds_cx = 227
-    bounds_cy = 39
+    bounds_cy = 43
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     value = '"*.pas" "*.pp" "*.inc"'
@@ -120,7 +120,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 17
   end
   object casesensitive: tbooleanedit
     frame.caption = 'C&asesensitive'
@@ -129,15 +129,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      83
-      2
+      3
+      80
+      3
     )
     taborder = 2
     bounds_x = 4
-    bounds_y = 70
-    bounds_cx = 96
-    bounds_cy = 17
+    bounds_y = 69
+    bounds_cx = 93
+    bounds_cy = 19
     statfile = statfile1
   end
   object inprojectdir: tbooleaneditradio
@@ -147,15 +147,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      126
-      2
+      3
+      115
+      3
     )
     taborder = 3
     bounds_x = 4
-    bounds_y = 160
-    bounds_cx = 139
-    bounds_cy = 17
+    bounds_y = 159
+    bounds_cx = 128
+    bounds_cy = 19
     statfile = statfile1
     ondataentered = sourcechangeexe
     onsetvalue = dirsetval
@@ -168,15 +168,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      127
-      2
+      3
+      118
+      3
     )
     taborder = 4
     bounds_x = 4
-    bounds_y = 179
-    bounds_cx = 140
-    bounds_cy = 17
+    bounds_y = 178
+    bounds_cx = 131
+    bounds_cy = 19
     statfile = statfile1
     ondataentered = sourcechangeexe
     onsetvalue = dirsetval
@@ -188,15 +188,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      74
-      2
+      3
+      69
+      3
     )
     taborder = 5
     bounds_x = 4
-    bounds_y = 91
-    bounds_cx = 87
-    bounds_cy = 17
+    bounds_y = 90
+    bounds_cx = 82
+    bounds_cy = 19
     statfile = statfile1
   end
   object inopenfiles: tbooleaneditradio
@@ -207,15 +207,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      121
-      2
+      3
+      112
+      3
     )
     taborder = 6
     bounds_x = 4
-    bounds_y = 138
-    bounds_cx = 134
-    bounds_cy = 17
+    bounds_y = 137
+    bounds_cx = 125
+    bounds_cy = 19
     statfile = statfile1
     ondataentered = sourcechangeexe
     onsetvalue = opensetval
@@ -228,15 +228,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      130
-      2
+      3
+      119
+      3
     )
     taborder = 7
     bounds_x = 4
-    bounds_y = 121
-    bounds_cx = 143
-    bounds_cy = 17
+    bounds_y = 120
+    bounds_cx = 132
+    bounds_cy = 19
     statfile = statfile1
     ondataentered = sourcechangeexe
     onsetvalue = currentsetval
@@ -248,15 +248,15 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      137
-      2
+      3
+      127
+      3
     )
     taborder = 8
     bounds_x = 4
-    bounds_y = 280
-    bounds_cx = 150
-    bounds_cy = 17
+    bounds_y = 279
+    bounds_cx = 140
+    bounds_cy = 19
     statfile = statfile1
   end
   object ok: tbutton
@@ -304,16 +304,16 @@ object findinfileadialogfo: tfindinfiledialogfo
     frame.button.imagenr = 17
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 11
     onshowhint = dirshowhint
     bounds_x = 4
-    bounds_y = 193
+    bounds_y = 191
     bounds_cx = 227
-    bounds_cy = 39
+    bounds_cy = 43
     statfile = statfile1
     onsetvalue = dirsetvalue
     controller.fontheight = 0
@@ -374,7 +374,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     controller.captiondir = 'Select search directory'
     controller.ongetfilename = dirgetfilenameexe
     controller.onbeforeexecute = onbefexec
-    reffontheight = 15
+    reffontheight = 17
   end
   object statfile1: tstatfile
     filename = 'findinfiledialogfo.sta'

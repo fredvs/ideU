@@ -358,19 +358,6 @@ object templateeditorfo: ttemplateeditorfo
     left = 104
     top = 192
   end
-  object savefiledialog: tfiledialog
-    statfile = tstatfile1
-    controller.filterlist.data = (
-      (
-        'Code Temlate Files'
-        '*.mct'
-      )
-    )
-    controller.defaultext = 'mct'
-    controller.options = [fdo_save, fdo_checkexist, fdo_savelastdir]
-    left = 200
-    top = 192
-  end
   object c: tstringcontainer
     strings.data = (
       'Do you want to delete "'
@@ -379,5 +366,20 @@ object templateeditorfo: ttemplateeditorfo
     )
     left = 104
     top = 232
+  end
+  object savefiledialog: tfiledialogx
+    statfile = tstatfile1
+    controller.fontheight = 0
+    controller.fontname = 'stf_default'
+    controller.fontcolor = -1610612734
+    controller.backcolor = -2147483647
+    controller.nopanel = False
+    controller.compact = False
+    controller.showoptions = False
+    controller.hidehistory = False
+    controller.hideicons = False
+    controller.showhidden = False
+    left = 201
+    top = 233
   end
 end

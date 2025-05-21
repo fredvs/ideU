@@ -57,9 +57,8 @@ object findinfilepagefo: tfindinfilepagefo
           )
         )
       end>
-    datarowheight = 18
     oncellevent = foundlistoncellevent
-    reffontheight = 15
+    reffontheight = 17
     object foundlist: ttextedit
       optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
       optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_destroywidgets]
@@ -69,11 +68,10 @@ object findinfilepagefo: tfindinfilepagefo
       bounds_x = 0
       bounds_y = 0
       bounds_cx = 1500
-      bounds_cy = 18
       optionsedit1 = [oe1_keyexecute, oe1_savestate]
       optionsedit = [oe_readonly, oe_closequery, oe_checkmrcancel, oe_linebreak, oe_eatreturn, oe_exitoncursor]
       oncellevent = foundlistoncellevent
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object filename: tstringdisp
@@ -87,11 +85,11 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 1
     bounds_y = 0
     bounds_cx = 186
-    bounds_cy = 24
+    bounds_cy = 26
     bounds_cxmin = 140
     anchors = [an_left, an_top, an_right]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 15
+    reffontheight = 17
   end
   object foundcount: tintegerdisp
     frame.hiddenedges = [edg_bottom]
@@ -104,9 +102,9 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 188
     bounds_y = 0
     bounds_cx = 66
-    bounds_cy = 24
+    bounds_cy = 26
     anchors = [an_top, an_right]
-    reffontheight = 15
+    reffontheight = 17
   end
   object cancel: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -121,12 +119,12 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 425
     bounds_y = 0
     bounds_cx = 82
-    bounds_cy = 24
+    bounds_cy = 26
     anchors = [an_top, an_right]
     state = [as_disabled, as_localdisabled, as_localcaption, as_localonexecute]
     caption = '&Cancel'
     onexecute = cancelonexecute
-    reffontheight = 15
+    reffontheight = 17
   end
   object again: tbutton
     optionswidget1 = [ow1_fontglyphheight, ow1_autoscale]
@@ -141,12 +139,12 @@ object findinfilepagefo: tfindinfilepagefo
     bounds_x = 256
     bounds_y = 0
     bounds_cx = 167
-    bounds_cy = 24
+    bounds_cy = 26
     anchors = [an_top, an_right]
     state = [as_localcaption, as_localonexecute]
     caption = '&Again'
     onexecute = againonexecute
-    reffontheight = 15
+    reffontheight = 17
   end
   object thread: tthreadcomp
     onstart = threadonstart
