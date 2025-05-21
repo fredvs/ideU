@@ -31,7 +31,8 @@ interface
 {$endif}
 
 uses
- templateeditor,{$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
+ //templateeditor,
+ {$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
  msearrayutils,aboutform,plugmanager,msetimer,mseformatstr,mseconsts,
  dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
  msefileutils,msedispwidgets,msedataedits,msestat,msestatfile,msemenus,
@@ -6150,8 +6151,8 @@ end;
 
 procedure tmainfo.ontemplateeditor(const Sender: TObject);
 begin
-  application.createform(ttemplateeditorfo, templateeditorfo);
-  templateeditorfo.Show;
+ // application.createform(ttemplateeditorfo, templateeditorfo);
+ // templateeditorfo.Show;
 end;
 
 procedure tmainfo.onresetsettings(const Sender: TObject);
