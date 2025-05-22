@@ -969,16 +969,12 @@ end;
 
 procedure tactionsmo.findactonexecute(const Sender: TObject);
 begin
-
   if targetconsolefo.activeentered then
     targetconsolefo.dofind
   else if findformcreated then
     finddialogfo.bringtofront
   else
     finddialogexecute(findinfos);
-
-  //  finddialogfo.left := 500;
-  //  finddialogfo.top := 120;
 end;
 
 procedure tactionsmo.repeatfindactonexecute(const Sender: TObject);

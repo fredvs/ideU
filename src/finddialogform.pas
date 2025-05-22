@@ -55,7 +55,6 @@ type
    procedure onbutclose(const sender: TObject);
    procedure onactiv(const sender: TObject);
    procedure oncreated(const sender: TObject);
-   procedure onnovisible(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfoty);
     procedure infotovalues(const info: findinfoty);
@@ -138,7 +137,9 @@ begin
       info.selectedonly := False;
     info.Text           := sourcefo.ActivePage.edit.selectedtext;
     finddialogfo.infotovalues(info);
-
+    
+    application.processmessages;
+   
     if mainfo.ismodal then
       finddialogfo.Show(True)
     else
@@ -289,10 +290,6 @@ procedure tfinddialogfo.oncreated(const sender: TObject);
 begin
 visible := false;
 invalidatewidget;
-end;
-
-procedure tfinddialogfo.onnovisible(const sender: TObject);
-begin
 end;
 
 end.
