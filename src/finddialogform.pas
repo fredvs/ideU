@@ -25,7 +25,7 @@ uses
  msetypes,msestat,msestatfile,projectoptionsform,mseglob,mseevent,msegui,
  msemenus,msesplitter,msegraphics,msegraphutils,msewidgets,mseclasses,
  mseguiglob,mseificomp,mseificompglob,mseifiglob,msescrollbar,mseact,
- mseapplication,msedropdownlist,mseedit,msestream,SysUtils;
+ msedropdownlist,mseedit,msestream,SysUtils;
 
 type
 
@@ -55,6 +55,7 @@ type
    procedure onbutclose(const sender: TObject);
    procedure onactiv(const sender: TObject);
    procedure oncreated(const sender: TObject);
+   procedure onnovisible(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfoty);
     procedure infotovalues(const info: findinfoty);
@@ -243,9 +244,12 @@ end;
 
 procedure tfinddialogfo.oncre(const Sender: TObject);
 begin
+  visible := false;
+  invalidatewidget;
   icon := mainfo.icon;
   setlangfind();
   onactiv(nil);
+  activate;
   invalidatewidget;
 end;
 
@@ -276,16 +280,19 @@ procedure tfinddialogfo.onactiv(const sender: TObject);
 var
  rect1: rectty;
 begin
-//rect1 := application.screenrect(window);
-
-left := mainfo.left + ((mainfo.width - width) div 2);
-top := mainfo.top + ((mainfo.height - height) div 2);
+ rect1 := application.screenrect(window);
+ left := (rect1.cx - width) div 2;
+ top := (rect1.cy - height) div 2;
 end;
 
 procedure tfinddialogfo.oncreated(const sender: TObject);
 begin
 visible := false;
 invalidatewidget;
+end;
+
+procedure tfinddialogfo.onnovisible(const sender: TObject);
+begin
 end;
 
 end.

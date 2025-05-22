@@ -17,7 +17,7 @@ object replacedialogfo: treplacedialogfo
   font.localprops = []
   fontempty.name = 'stf_empty'
   fontempty.localprops = []
-  options = [fo_freeonclose, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  options = [fo_freeonclose, fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find and Replace Text'
   icon.options = [bmo_masked]
@@ -67,20 +67,20 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     bounds_x = 4
-    bounds_y = 40
+    bounds_y = 38
     bounds_cx = 381
-    bounds_cy = 39
+    bounds_cy = 43
     anchors = [an_left, an_top, an_right]
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 17
   end
   object replacetext: thistoryedit
     frame.caption = '&Replace with'
@@ -102,22 +102,22 @@ object replacedialogfo: treplacedialogfo
       end>
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     taborder = 1
     bounds_x = 4
-    bounds_y = 84
+    bounds_y = 82
     bounds_cx = 381
-    bounds_cy = 39
+    bounds_cy = 43
     anchors = [an_left, an_top, an_right]
     statfile = statfile1
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 15
+    reffontheight = 17
   end
   object casesensitive: tbooleanedit
     frame.caption = '&casesensitive'
@@ -126,15 +126,15 @@ object replacedialogfo: treplacedialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      0
-      82
       1
+      78
+      2
     )
     taborder = 2
     bounds_x = 4
-    bounds_y = 133
-    bounds_cx = 95
-    bounds_cy = 17
+    bounds_y = 132
+    bounds_cx = 91
+    bounds_cy = 19
   end
   object wholeword: tbooleanedit
     frame.caption = '&whole word'
@@ -143,15 +143,15 @@ object replacedialogfo: treplacedialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      72
-      2
+      3
+      67
+      3
     )
     taborder = 3
     bounds_x = 4
-    bounds_y = 154
-    bounds_cx = 85
-    bounds_cy = 17
+    bounds_y = 153
+    bounds_cx = 80
+    bounds_cy = 19
   end
   object tintegerbutton1: tbutton
     frame.localprops = []
@@ -190,15 +190,15 @@ object replacedialogfo: treplacedialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      82
-      2
+      3
+      76
+      3
     )
     taborder = 4
     bounds_x = 4
-    bounds_y = 175
-    bounds_cx = 95
-    bounds_cy = 17
+    bounds_y = 174
+    bounds_cx = 89
+    bounds_cy = 19
     statfile = statfile1
   end
   object promptonreplace: tbooleanedit
@@ -208,15 +208,15 @@ object replacedialogfo: treplacedialogfo
     frame.template = mainfo.menuitemframe
     frame.outerframe = (
       0
-      2
-      115
-      2
+      3
+      106
+      3
     )
     taborder = 5
     bounds_x = 4
-    bounds_y = 201
-    bounds_cx = 128
-    bounds_cy = 17
+    bounds_y = 200
+    bounds_cx = 119
+    bounds_cy = 19
     statfile = statfile1
     value = True
   end

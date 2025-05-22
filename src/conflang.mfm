@@ -104,7 +104,7 @@ object conflangfo: tconflangfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 21
+        height = 17
         captions.count = 3
         captions.items = <        
           item
@@ -182,7 +182,7 @@ object conflangfo: tconflangfo
     statfile = mainfo.mainstatfile
     onscrollrows = onscroll
     oncellevent = oncellev
-    reffontheight = 17
+    reffontheight = 13
     object gridlangcaption: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
       optionsskin = [osk_framebuttononly]
@@ -195,7 +195,7 @@ object conflangfo: tconflangfo
       statfile = mainfo.mainstatfile
       optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_nogray, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
       value = 'English'
-      reffontheight = 17
+      reffontheight = 13
     end
     object gridlangcode: tstringedit
       optionswidget1 = [ow1_fontglyphheight]
@@ -205,7 +205,7 @@ object conflangfo: tconflangfo
       bounds_x = 217
       bounds_y = 0
       bounds_cx = 1
-      reffontheight = 17
+      reffontheight = 13
     end
     object gridlangbool: tbooleaneditradio
       optionswidget1 = []
@@ -331,7 +331,7 @@ object conflangfo: tconflangfo
       item
         frame.localprops = []
         frame.localprops1 = []
-        height = 21
+        height = 17
         numstep = 1
         captions.count = 1
         captions.items = <        
@@ -347,10 +347,10 @@ object conflangfo: tconflangfo
       28173
     )
     zebra_start = 1
-    datarowheight = 21
+    datarowheight = 17
     statpriority = 1
     onscrollrows = onscroll2
     oncellevent = ongridfontcellev
-    reffontheight = 17
+    reffontheight = 13
   end
 end

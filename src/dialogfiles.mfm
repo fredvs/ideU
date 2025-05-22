@@ -32,7 +32,7 @@ object dialogfilesfo: tdialogfilesfo
     bounds_cx = 380
     bounds_cy = 400
     anchors = [an_left, an_top, an_right, an_bottom]
-    reffontheight = 15
+    reffontheight = 17
     object list_files: tfilelistview
       frame.localprops = []
       frame.localprops1 = []
@@ -49,7 +49,7 @@ object dialogfilesfo: tdialogfilesfo
       options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_leftbuttonfocusonly, lvo_focusselect, lvo_mouseselect, lvo_locate]
       onselectionchanged = loaddef
       filelist.options = [flo_sortname, flo_sorttype]
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object selected_file: tedit
@@ -63,19 +63,19 @@ object dialogfilesfo: tdialogfilesfo
     frame.template = mainfo.tframecomp3
     frame.outerframe = (
       0
-      18
+      20
       0
       0
     )
     bounds_x = 5
-    bounds_y = 24
+    bounds_y = 22
     bounds_cx = 370
-    bounds_cy = 39
+    bounds_cy = 41
     anchors = [an_left, an_top, an_right]
     optionsedit = [oe_readonly, oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly]
     font.name = 'stf_default'
     font.localprops = []
-    reffontheight = 15
+    reffontheight = 17
   end
   object tbutton2: tbutton
     frame.hiddenedges = [edg_bottom]

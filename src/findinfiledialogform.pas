@@ -251,6 +251,7 @@ begin
     incurrentfile.Enabled := False;
   setlangfindinfile();
   dir.controller.fontheight := mainfo.font.height;
+  application.processmessages;
   onactiv(nil);
   invalidatewidget;
 end;
@@ -279,10 +280,9 @@ procedure tfindinfiledialogfo.onactiv(const sender: TObject);
 var
  rect1: rectty;
 begin
-rect1 := application.screenrect(window);
-
-left := (rect1.cx - width) div 2;
-top := (rect1.cy - height) div 2;
+ rect1 := application.screenrect(window);
+ left := (rect1.cx - width) div 2;
+ top := (rect1.cy - height) div 2;
 end;
 
 procedure tfindinfiledialogfo.onbefexec(const Sender: tfiledialogxcontroller;

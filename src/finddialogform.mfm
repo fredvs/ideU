@@ -4,9 +4,7 @@ object finddialogfo: tfinddialogfo
   bounds_x = 499
   bounds_y = 219
   bounds_cx = 298
-  bounds_cy = 435
-  bounds_cxmin = 298
-  bounds_cymin = 220
+  bounds_cy = 448
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -14,7 +12,7 @@ object finddialogfo: tfinddialogfo
     0
     0
     298
-    435
+    448
   )
   optionswindow = [wo_message]
   options = [fo_freeonclose, fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
@@ -22,6 +20,8 @@ object finddialogfo: tfinddialogfo
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf
+  oncreate = onactiv
+  oncreated = onactiv
   oneventloopstart = oncre
   onclose = oncloseev
   moduleclassname = 'tmseform'
