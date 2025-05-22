@@ -1,9 +1,8 @@
 object findinfileadialogfo: tfindinfiledialogfo
   optionswidget = [ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
-  onactivate = onactiv
   visible = False
-  bounds_x = 573
-  bounds_y = 142
+  bounds_x = 511
+  bounds_y = 246
   bounds_cx = 234
   bounds_cy = 309
   bounds_cxmin = 234
@@ -18,7 +17,7 @@ object findinfileadialogfo: tfindinfiledialogfo
   )
   font.name = 'stf_default'
   font.localprops = []
-  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
   statfile = statfile1
   caption = 'Find Text in Files'
   icon.options = [bmo_masked]
@@ -46,7 +45,7 @@ object findinfileadialogfo: tfindinfiledialogfo
     00000000
   }
   windowopacity = -Inf
-  oncreate = cereateev
+  oneventloopstart = cereateev
   moduleclassname = 'tmseform'
   object findtext: thistoryedit
     frame.caption = '&Text to find'

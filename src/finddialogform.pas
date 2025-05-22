@@ -54,6 +54,7 @@ type
     procedure setlangfind();
    procedure onbutclose(const sender: TObject);
    procedure onactiv(const sender: TObject);
+   procedure oncreated(const sender: TObject);
   private
     procedure valuestoinfo(out info: findinfoty);
     procedure infotovalues(const info: findinfoty);
@@ -244,6 +245,8 @@ procedure tfinddialogfo.oncre(const Sender: TObject);
 begin
   icon := mainfo.icon;
   setlangfind();
+  onactiv(nil);
+  invalidatewidget;
 end;
 
 procedure tfinddialogfo.setlangfind();
@@ -273,17 +276,16 @@ procedure tfinddialogfo.onactiv(const sender: TObject);
 var
  rect1: rectty;
 begin
-if tag = 0 then
+//rect1 := application.screenrect(window);
+
+left := mainfo.left + ((mainfo.width - width) div 2);
+top := mainfo.top + ((mainfo.height - height) div 2);
+end;
+
+procedure tfinddialogfo.oncreated(const sender: TObject);
 begin
-{
-  rect1 := application.screenrect(window);
- if left > (rect1.cx) - 200 then left := findposx;
- if top > (rect1.cy) - 200 then top :=  findposy;
- }
- left := findposx;
- top :=  findposy;
-end; 
-tag := 1;
+visible := false;
+invalidatewidget;
 end;
 
 end.
