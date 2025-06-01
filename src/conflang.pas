@@ -266,7 +266,9 @@ begin
   Visible := False;
  //{$if (defined(windows)) or (not defined(usemo))}
  bousemo.visible := false;
-// {$endif}
+{$if (defined(windows))} 
+gridlang.font.name := stf_default;
+{$endif}
 end;
 
 procedure tconflangfo.updatefontcap();
