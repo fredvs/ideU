@@ -37,6 +37,7 @@ type
     procedure updatefontcap();
    procedure onscroll(const sender: tcustomgrid; var step: Integer);
    procedure onscroll2(const sender: tcustomgrid; var step: Integer);
+   procedure oneventloop(const sender: TObject);
  end;
 
 var 
@@ -263,11 +264,8 @@ end;
 
 procedure tconflangfo.oncreat(Const Sender: TObject);
 begin
-  Visible := False;
- //{$if (defined(windows)) or (not defined(usemo))}
- bousemo.visible := false;
 {$if (defined(windows))} 
-gridlang.font.name := stf_default;
+gridlang.font.name := 'stf_default';
 {$endif}
 end;
 
@@ -383,6 +381,12 @@ end;
 procedure tconflangfo.onscroll2(const sender: tcustomgrid; var step: Integer);
 begin
 tstringgrid(sender).invalidatewidget;
+end;
+
+procedure tconflangfo.oneventloop(const sender: TObject);
+begin
+Visible := False;
+bousemo.visible := false;
 end;
 
 end.
