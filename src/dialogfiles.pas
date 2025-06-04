@@ -79,6 +79,10 @@ begin
   try
     ratio := confideufo.fontsize.Value / 12;
     application.createform(tdialogfilesfo, dialogfilesfo);
+    
+    {$ifdef windows}dialogfilesfo.options := [fo_freeonclose,fo_closeonenter,
+     fo_closeonf10,fo_autoreadstat,fo_autowritestat,fo_savepos,fo_savestate]{$endif}
+    
     dialogfilesfo.icon  := mainfo.icon;
     dialogfilesfo.selected_file.font.Height := confideufo.fontsize.Value;
     dialogfilesfo.selected_file.font.Name   := ansistring(confideufo.fontname.Value);
@@ -108,8 +112,6 @@ var
 begin
   layoutbusy := True;
   if Assigned(list_files.selectednames) and (tag = 0) then
-  if fileexists(list_files.directory +
-      directoryseparator + list_files.selectednames[0]) then
   begin
    if han <> -1 then
       sourcefo.syntaxpainter.freedeffile(han);
@@ -123,7 +125,6 @@ begin
   end;
 
   if Assigned(list_files.selectednames) and (tag = 1) then
-  if fileexists(list_files.directory + directoryseparator + list_files.selectednames[0]) then
   begin
     selected_file.Text := list_files.selectednames[0];
     str1 := ttextstream.Create(list_files.directory + directoryseparator + selected_file.Text);
@@ -181,6 +182,8 @@ begin
   end;
  
   invalidatewidget;
+  
+  bringtofront;
 
   layoutbusy := False;
 end;
