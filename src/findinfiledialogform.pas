@@ -258,7 +258,6 @@ end;
 
 procedure tfindinfiledialogfo.setlangfindinfile();
 begin
-
   Caption           := lang_xstockcaption[ord(sc_find_infile)];
   cancel.Caption        := lang_modalresult[ord(mr_cancel)];
   ok.Caption    := lang_modalresult[ord(mr_ok)];

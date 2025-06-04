@@ -45,7 +45,7 @@ uses
  mseificompglob,mseifiglob,msescrollbar;
 
 const
-  versiontext = '2.16.0';
+  versiontext = '2.18.0';
   idecaption  = 'ideU' {$ifdef pacpas} + '_PacPas'{$endif} ;
   statname    = 'ideu';
 
@@ -109,7 +109,7 @@ type
     poscx: tintegeredit;
     poscy: tintegeredit;
     tframecomp2dark: tframecomp;
-   ttimer1: ttimer;
+    ttimer1: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 

@@ -245,13 +245,9 @@ end;
 
 procedure tfinddialogfo.oncre(const Sender: TObject);
 begin
-  visible := false;
-  invalidatewidget;
   icon := mainfo.icon;
   setlangfind();
   onactiv(nil);
-  activate;
-  invalidatewidget;
 end;
 
 procedure tfinddialogfo.setlangfind();

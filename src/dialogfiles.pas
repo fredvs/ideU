@@ -52,7 +52,6 @@ type
     procedure oncloseev(const Sender: TObject);
    procedure onitem(const sender: tcustomlistview; const index: Integer;
                    var info: celleventinfoty);
-   procedure onshow(const sender: TObject);
   end;
 
 var
@@ -210,11 +209,6 @@ begin
 invalidatewidget;
 end;
 
-end;
-
-procedure tdialogfilesfo.onshow(const sender: TObject);
-begin
-invalidatewidget;
 end;
 
 end.

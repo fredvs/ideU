@@ -25,6 +25,11 @@ interface
   {$warn 6058 off}
  {$endif}
 {$endif}
+
+{$if defined(BGRABITMAP_USE_MSEGUI)}
+ {$define class_bridge}
+{$endif} 
+
 uses
  classes,mclasses,sysutils,msegraphics,msetypes,mseact,
  msestrings,mseerr,msegraphutils,mseapplication,msedragglob,
@@ -33,7 +38,7 @@ uses
  msebitmap,msearrayprops,msethreadcomp,mserichstring,msearrayutils
                    {$ifdef mse_with_ifi},mseifiglob,mseificompglob{$endif};
  const
- mseguiversiontext = '5.10.4';
+ mseguiversiontext = '5.10.6';
  copyrighttext = 'Copyright 1999-2025';
  defaultwidgetcolor = cl_default;
  defaulttoplevelwidgetcolor = cl_background;
@@ -675,7 +680,7 @@ type
    constructor create(const intf: iframe); reintroduce;
    destructor destroy; override;
    procedure checktemplate(const sender: tobject); virtual;
-   procedure assign(source: tpersistent); override;
+   procedure assign(source: {$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif}); override;
    procedure scale(const ascale: real); virtual;
    procedure checkwidgetsize(var asize: sizety); virtual;
                 //extends to minimal size
@@ -1392,7 +1397,7 @@ type
    constructor create(const intf: iface); reintroduce; overload;
    destructor destroy; override;
    procedure checktemplate(const sender: tobject);
-   procedure assign(source: tpersistent); override;
+   procedure assign(source: {$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif}); override;
    procedure paint(const canvas: tcanvas; const arect: rectty);
    property options: faceoptionsty read fi.options write setoptions
                    stored isoptionsstored default [];
@@ -5946,11 +5951,11 @@ end;
 procedure tcustomframe.checktemplate(const sender: tobject);
 begin
  if sender = ftemplate then begin
-  assign(tpersistent(sender));
+  assign({$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif}(sender));
  end;
 end;
 
-procedure tcustomframe.assign(source: tpersistent);
+procedure tcustomframe.assign(source: {$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif});
 begin
  if source is tcustomframe then begin
   if not (csdesigning in fintf.getcomponentstate) then begin
@@ -7191,11 +7196,11 @@ end;
 procedure tcustomface.checktemplate(const sender: tobject);
 begin
  if sender = ftemplate then begin
-  assign(tpersistent(sender));
+  assign({$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif}(sender));
  end;
 end;
 
-procedure tcustomface.assign(source: tpersistent);
+procedure tcustomface.assign(source: {$ifdef class_bridge}tpersistentbridge{$else}tpersistent{$endif});
 begin
  if source is tcustomface then begin
   if not (csdesigning in fintf.getcomponentstate) then begin
@@ -7234,7 +7239,7 @@ var
    falphabuffer:= tmaskedbitmap.create(bmk_rgb);
   end;
   if amasked then begin
-   falphabuffer.options:= [bmo_masked {$if not defined(darwin) and not defined(netbsd)} ,bmo_colormask {$endif}];
+   falphabuffer.options:= [bmo_masked {$if not defined(darwin) and not defined(netbsd)} ,bmo_colormask{$endif}];
   end;
   falphabuffer.size:= rect1.size;
   falphabufferdest:= rect1.pos;
@@ -15248,7 +15253,10 @@ begin
   widget1:= widget1.fparentwidget;
  until widget1 = nil;
 {$warnings off}
+ {$push}
+    {$objectChecks off}          
  result:= twidgetfontempty(stockobjects.fonts[stf_empty]);
+ {$pop}
 {$warnings on}
 end;
 
