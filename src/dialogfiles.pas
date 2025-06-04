@@ -57,7 +57,6 @@ type
 var
   dialogfilesfo: tdialogfilesfo;
   tabind: integer = -1;
-  dialogfilesformcreated: Boolean = True;
   thesdef: msestring = '';
   theactivepage: msestring = '';
   han: integer = -1;
@@ -75,13 +74,31 @@ uses
   messageform;
 
 procedure dodialogfiles;
+var
+  ratio: double;
 begin
   try
+    ratio := confideufo.fontsize.Value / 12;
     application.createform(tdialogfilesfo, dialogfilesfo);
-    dialogfilesfo.Show;
-    dialogfilesfo.bringtofront;
-    dialogfilesformcreated := True;
-  finally
+    dialogfilesfo.icon  := mainfo.icon;
+    dialogfilesfo.selected_file.font.Height := confideufo.fontsize.Value;
+    dialogfilesfo.selected_file.font.Name   := ansistring(confideufo.fontname.Value);
+
+    dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
+
+    dialogfilesfo.selected_file.frame.font.Height := confideufo.fontsize.Value;
+
+    dialogfilesfo.selected_file.frame.font.Name := ansistring(confideufo.fontname.Value);
+
+    dialogfilesfo.list_files.cellheight  := round((ratio) * 19);
+    dialogfilesfo.list_files.font.Height := confideufo.fontsize.Value;
+    dialogfilesfo.list_files.font.Name   := ansistring(confideufo.fontname.Value);
+
+    dialogfilesfo.Height := round((ratio) * 400);
+    dialogfilesfo.Width  := round((ratio) * 336);
+    dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.Width - 6;
+
+    finally
   end;
 end;
 

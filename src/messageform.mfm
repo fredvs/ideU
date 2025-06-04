@@ -21,8 +21,8 @@ object messagefo: tmessagefo
   frame.grip_faceactive.fade_direction = gd_down
   frame.grip_faceactive.localprops = []
   visible = False
-  bounds_x = 642
-  bounds_y = 581
+  bounds_x = 458
+  bounds_y = 282
   bounds_cx = 457
   bounds_cy = 281
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -419,10 +419,10 @@ object messagefo: tmessagefo
       145
     )
     datarowlinewidth = 0
-    datarowheight = 17
+    datarowheight = 19
     onrowcountchanged = onrowcountchanged
     oncellevent = messagesoncellevent
-    reffontheight = 15
+    reffontheight = 17
   end
   object tpopupmenu1: tpopupmenu
     frametemplate = mainfo.tframecomp2

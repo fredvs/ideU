@@ -107,7 +107,6 @@ begin
   application.createform(tmemoryfo, memoryfo);
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
-  application.createform(tdialogfilesfo, dialogfilesfo);
   application.createform(tfindmessagefo, findmessagefo);
 
   confcompilerfo.Close;
@@ -134,7 +133,6 @@ begin
   debuggerfo.icon     := mainfo.icon;
   findinfilefo.icon   := mainfo.icon;
   messagefo.icon      := mainfo.icon;
-  dialogfilesfo.icon  := mainfo.icon;
   findmessagefo.icon  := mainfo.icon;
   aboutfo.icon        := mainfo.icon;
 

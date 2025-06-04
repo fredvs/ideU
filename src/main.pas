@@ -637,8 +637,7 @@ begin
   if Assigned(sourcefo.ActivePage) then
   begin
 
-    if not dialogfilesformcreated then
-      dodialogfiles;
+    dodialogfiles;
 
     dothemedialog();
 
@@ -660,7 +659,6 @@ begin
     end;
     // 'Load a Syntax Definition File';
 
-
     dialogfilesfo.list_files.path    := expandprmacros('${SYNTAXDEFDIR}');
     dialogfilesfo.list_files.mask    := '*.sdef';
     dialogfilesfo.selected_file.frame.Caption := lang_projectoptions[Ord(po_syntaxdeffile)];
@@ -668,27 +666,8 @@ begin
     // + dialogfilesfo.list_files.directory ;
     dialogfilesfo.selected_file.Text := '';
     
-    if ismodal then
-     begin
-      ttimer1.interval := 2000000;
-      dialogfilesfo.Show(True);
-     end  
-    else
-    begin
-      dialogfilesfo.Show;
-      dialogfilesfo.bringtofront;
-      dialogfilesfo.SetFocus;
-      ttimer1.interval := 500000;
-    end;
-    
-    rect1 := application.screenrect(window);
-    dialogfilesfo.left := (rect1.cx - dialogfilesfo.width) div 2;
-    dialogfilesfo.top := (rect1.cy - dialogfilesfo.height) div 2;
- 
-    dialogfilesfo.invalidatewidget;
-    ttimer1.tag := 0;
-    ttimer1.enabled := true;
-       
+    dialogfilesfo.Show(True);
+     
   end;
 end;
 
@@ -4699,8 +4678,7 @@ procedure tmainfo.menuwindowlayoutexe(const Sender: TObject);
 begin
   if Assigned(sourcefo.ActivePage) then
   begin
-    if not dialogfilesformcreated then
-      dodialogfiles;
+    dodialogfiles;
 
     //  writeln('ok dodialogfiles'); 
 
@@ -4730,33 +4708,8 @@ begin
     //dialogfilesfo.activate;
 
     //  writeln('ok selected_file'); 
-    
-     if ismodal then
-     begin
-      ttimer1.interval := 2000000;
-      dialogfilesfo.Show(True);
-     end 
-    else
-    begin
-      ttimer1.interval := 500000; 
-      dialogfilesfo.Show;
-      dialogfilesfo.bringtofront;
-      dialogfilesfo.SetFocus;
-    end;
-   
-    rect1 := application.screenrect(window);
-    dialogfilesfo.left := (rect1.cx - dialogfilesfo.width) div 2;
-    dialogfilesfo.top := (rect1.cy - dialogfilesfo.height) div 2;
-
-    dialogfilesfo.invalidatewidget;
-   
-    ttimer1.tag := 0;
-    ttimer1.enabled := true;
-    
- //   sleep(200);
-    
-  //  dialogfilesfo.invalidatewidget;
-
+    dialogfilesfo.Show(True);
+       
   end;
 
 end;
@@ -5553,7 +5506,6 @@ var
 begin
 
   ratio := confideufo.fontsize.Value / 12;
-
   dialogfilesfo.selected_file.font.Height       := confideufo.fontsize.Value;
   dialogfilesfo.selected_file.font.Name         := ansistring(confideufo.fontname.Value);
   dialogfilesfo.selected_file.frame.font.Height := confideufo.fontsize.Value;
@@ -6203,19 +6155,9 @@ var
 begin
     application.processmessages;
     rect1 := application.screenrect(window);
-   
-if ttimer1.tag = 0 then
-begin
-    dialogfilesfo.left := (rect1.cx - dialogfilesfo.width) div 2;
-    dialogfilesfo.top := (rect1.cy - dialogfilesfo.height) div 2;
-    dialogfilesfo.invalidatewidget;
-end   
-   else
-begin  
     conflangfo.left := (rect1.cx - conflangfo.width) div 2;
     conflangfo.top := (rect1.cy - conflangfo.height) div 2;
-    conflangfo.invalidatewidget;
-end;      
+    conflangfo.invalidatewidget;      
 end;
 
 end.

@@ -671,27 +671,6 @@ begin
   targetconsolefo.grid.font.Height := fontsize.Value;
   //targetconsolefo.grid.font.name := ansistring(fontname.value);
 
-  if Assigned(dialogfilesfo) then
-  begin
-    dialogfilesfo.selected_file.font.Height := fontsize.Value;
-    dialogfilesfo.selected_file.font.Name   := ansistring(fontname.Value);
-
-    dialogfilesfo.list_files.cellwidth := round((ratio) * 262);
-
-    dialogfilesfo.selected_file.frame.font.Height := fontsize.Value;
-
-    dialogfilesfo.selected_file.frame.font.Name := ansistring(fontname.Value);
-
-    dialogfilesfo.list_files.cellheight  := round((ratio) * 19);
-    dialogfilesfo.list_files.font.Height := fontsize.Value;
-    dialogfilesfo.list_files.font.Name   := ansistring(fontname.Value);
-
-    dialogfilesfo.Height := round((ratio) * 400);
-    dialogfilesfo.Width  := round((ratio) * 336);
-    dialogfilesfo.list_files.cellwidth := dialogfilesfo.list_files.Width - 6;
-
-  end;
-
   mainfo.mainmenu1.menu.font.Height := fontsize.Value;
   sourcefo.files_tab.font.Height    := fontsize.Value;
   sourcefo.frame.grip_size          := round(12 * ratio);
