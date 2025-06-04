@@ -1,5 +1,6 @@
 object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
+  visible = False
   bounds_x = 596
   bounds_y = 300
   bounds_cx = 382
@@ -19,7 +20,6 @@ object dialogfilesfo: tdialogfilesfo
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf
-  onclose = oncloseev
   moduleclassname = 'tmseform'
   object tstringdisp1: tstringdisp
     frame.localprops = [frl_colorclient]

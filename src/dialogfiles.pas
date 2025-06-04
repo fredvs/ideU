@@ -49,8 +49,7 @@ type
     procedure loaddef(const Sender: tcustomlistview);
     procedure butok(const Sender: TObject);
     procedure butcancel(const Sender: TObject);
-    procedure oncloseev(const Sender: TObject);
-   procedure onitem(const sender: tcustomlistview; const index: Integer;
+    procedure onitem(const sender: tcustomlistview; const index: Integer;
                    var info: celleventinfoty);
   end;
 
@@ -211,11 +210,6 @@ begin
       theactivepage := '';
     end;
   layoutbusy := False;
-end;
-
-procedure tdialogfilesfo.oncloseev(const Sender: TObject);
-begin
-  //dialogfilesformcreated:= false;
 end;
 
 procedure tdialogfilesfo.onitem(const sender: tcustomlistview;
