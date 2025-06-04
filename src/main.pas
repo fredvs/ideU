@@ -109,7 +109,6 @@ type
     poscx: tintegeredit;
     poscy: tintegeredit;
     tframecomp2dark: tframecomp;
-    ttimer1: ttimer;
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -208,7 +207,6 @@ type
 
     procedure ontemplateeditor(const Sender: TObject);
     procedure onresetsettings(const Sender: TObject);
-    procedure ontimerdialog(const sender: TObject);
   private
     fstartcommand: startcommandty;
     fnoremakecheck: Boolean;
@@ -6094,26 +6092,20 @@ begin
 
   conflangfo.fontsize.Value := confideufo.fontsize.Value;
   
-  rect1 := application.screenrect(window);
-  conflangfo.left := (rect1.cx - conflangfo.width) div 2;
-  conflangfo.top := (rect1.cy - conflangfo.height) div 2;
+//  rect1 := application.screenrect(window);
+ // conflangfo.left := (rect1.cx - conflangfo.width) div 2;
+//  conflangfo.top := (rect1.cy - conflangfo.height) div 2;
  
   if ismodal then
    begin
-    ttimer1.interval := 2000000; 
     conflangfo.Show(True);
     end else
   begin
-    ttimer1.interval := 500000;
     conflangfo.Show;
     conflangfo.bringtofront;
     conflangfo.SetFocus;
   end;
- 
- conflangfo.invalidatewidget;
- ttimer1.tag := 1;
- ttimer1.enabled := true;
- 
+
 end;
 
 procedure tmainfo.setlanginit(const Sender: TObject);
@@ -6147,17 +6139,6 @@ begin
     resetsettings := True
   else
     resetsettings := False;
-end;
-
-procedure tmainfo.ontimerdialog(const sender: TObject);
-var
- rect1: rectty;
-begin
-    application.processmessages;
-    rect1 := application.screenrect(window);
-    conflangfo.left := (rect1.cx - conflangfo.width) div 2;
-    conflangfo.top := (rect1.cy - conflangfo.height) div 2;
-    conflangfo.invalidatewidget;      
 end;
 
 end.
