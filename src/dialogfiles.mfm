@@ -1,8 +1,8 @@
 object dialogfilesfo: tdialogfilesfo
   optionswidget = [ow_arrowfocus, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 596
-  bounds_y = 300
+  bounds_x = 543
+  bounds_y = 278
   bounds_cx = 382
   bounds_cy = 402
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
@@ -15,7 +15,7 @@ object dialogfilesfo: tdialogfilesfo
     402
   )
   optionswindow = [wo_message]
-  options = [fo_freeonclose, fo_screencentered, fo_closeonenter, fo_closeonf10, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
+  options = [fo_freeonclose, fo_defaultpos, fo_closeonenter, fo_closeonf10, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savestate]
   caption = 'Load a Syntax Definition File'
   icon.options = [bmo_masked]
   icon.origformat = 'png'
