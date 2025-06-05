@@ -80,8 +80,6 @@ begin
     ratio := confideufo.fontsize.Value / 12;
     application.createform(tdialogfilesfo, dialogfilesfo);
     
-    {$ifdef unix}dialogfilesfo.options := dialogfilesfo.options + [fo_defaultpos];{$endif}
-    
     dialogfilesfo.icon  := mainfo.icon;
     dialogfilesfo.selected_file.font.Height := confideufo.fontsize.Value;
     dialogfilesfo.selected_file.font.Name   := ansistring(confideufo.fontname.Value);
