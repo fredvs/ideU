@@ -17,7 +17,7 @@ object findinfilepagefo: tfindinfilepagefo
   )
   font.name = 'stf_default'
   font.localprops = []
-  options = [fo_autoreadstat, fo_autowritestat]
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat]
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf

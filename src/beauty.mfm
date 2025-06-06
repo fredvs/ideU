@@ -1,7 +1,7 @@
 object beautyfo: tbeautyfo
   visible = False
-  bounds_x = 1045
-  bounds_y = 125
+  bounds_x = 560
+  bounds_y = 332
   bounds_cx = 200
   bounds_cy = 164
   bounds_cxmin = 200
@@ -19,7 +19,7 @@ object beautyfo: tbeautyfo
   font.localprops = []
   fontempty.name = 'stf_empty'
   fontempty.localprops = []
-  options = [fo_freeonclose, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_freeonclose, fo_screencentered, fo_autoreadstat, fo_autowritestat]
   caption = 'Code Beautifier'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -82,29 +82,29 @@ object beautyfo: tbeautyfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      8
+      9
       0
       0
     )
     bounds_x = 4
-    bounds_y = 24
+    bounds_y = 23
     bounds_cx = 194
-    bounds_cy = 74
+    bounds_cy = 75
     object tbjedi: tbooleaneditradio
       frame.caption = 'Jedi Code Formatter'
       frame.localprops = []
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
-        123
-        2
+        3
+        114
+        3
       )
       taborder = 1
       bounds_x = 6
       bounds_y = 54
-      bounds_cx = 136
-      bounds_cy = 17
+      bounds_cx = 127
+      bounds_cy = 19
     end
     object tbptop: tbooleaneditradio
       frame.caption = 'Ptop FPC source beautifier '
@@ -112,14 +112,14 @@ object beautyfo: tbeautyfo
       frame.localprops1 = []
       frame.outerframe = (
         0
-        2
-        165
-        2
+        3
+        153
+        3
       )
       bounds_x = 6
       bounds_y = 24
-      bounds_cx = 178
-      bounds_cy = 17
+      bounds_cx = 166
+      bounds_cy = 19
       value = True
     end
   end
@@ -129,16 +129,16 @@ object beautyfo: tbeautyfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      123
-      2
+      3
+      114
+      3
     )
     taborder = 1
     hint = 'Create a .bak file of the original file'
     bounds_x = 31
-    bounds_y = 100
-    bounds_cx = 136
-    bounds_cy = 17
+    bounds_y = 99
+    bounds_cx = 127
+    bounds_cy = 19
     value = True
   end
   object filetoclean: tstringdisp
@@ -149,10 +149,10 @@ object beautyfo: tbeautyfo
     bounds_x = 4
     bounds_y = 0
     bounds_cx = 194
-    bounds_cy = 19
+    bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 15
+    reffontheight = 17
   end
   object butdobeauty: tbutton
     frame.optionsskin = [fso_flat]

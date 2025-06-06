@@ -15,7 +15,7 @@ object procedurelistfo: tprocedurelistfo
   optionswindow = [wo_message]
   font.name = 'stf_default'
   font.localprops = []
-  options = [fo_freeonclose, fo_cancelonesc, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_freeonclose, fo_screencentered, fo_cancelonesc, fo_autoreadstat, fo_autowritestat]
   caption = 'Procedure List'
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
@@ -79,24 +79,25 @@ object procedurelistfo: tprocedurelistfo
   ondestroy = formdestroy
   moduleclassname = 'tmseform'
   object edtSearch: tedit
+    frame.hiddenedges = [edg_bottom]
     frame.caption = 'Search'
     frame.localprops = []
     frame.localprops1 = []
     frame.template = mainfo.tframecomp2
     frame.outerframe = (
       0
-      16
+      20
       0
       0
     )
     bounds_x = 3
-    bounds_y = 14
+    bounds_y = 10
     bounds_cx = 173
-    bounds_cy = 35
+    bounds_cy = 43
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselectonfirstclick, oe_focusrectonreadonly]
     ontextedited = FilterTextChanged
     onkeydown = FilterTextKeyDown
-    reffontheight = 13
+    reffontheight = 17
   end
   object grdProcedures: tstringgrid
     frame.localprops = []
@@ -247,7 +248,7 @@ object procedurelistfo: tprocedurelistfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 15
+        height = 19
         captions.count = 4
         captions.items = <        
           item
@@ -265,10 +266,12 @@ object procedurelistfo: tprocedurelistfo
     rowcount = 20
     zebra_color = 16511743
     zebra_height = 1
+    datarowheight = 24
     oncellevent = oncellev
-    reffontheight = 13
+    reffontheight = 17
   end
   object cbObjects: tdropdownlistedit
+    frame.hiddenedges = [edg_bottom]
     frame.caption = 'Objects'
     frame.localprops = []
     frame.localprops1 = []
@@ -279,20 +282,20 @@ object procedurelistfo: tprocedurelistfo
       end>
     frame.outerframe = (
       0
-      16
+      20
       0
       0
     )
     taborder = 1
     bounds_x = 306
-    bounds_y = 14
+    bounds_y = 10
     bounds_cx = 160
-    bounds_cy = 35
+    bounds_cy = 43
     onchange = onchangeev
     dropdown.cols.count = 1
     dropdown.cols.items = <    
       item
       end>
-    reffontheight = 13
+    reffontheight = 17
   end
 end

@@ -6101,6 +6101,7 @@ begin
  // conflangfo.left := (rect1.cx - conflangfo.width) div 2;
 //  conflangfo.top := (rect1.cy - conflangfo.height) div 2;
  
+{
   if ismodal then
    begin
     conflangfo.Show(True);
@@ -6110,7 +6111,12 @@ begin
     conflangfo.bringtofront;
     conflangfo.SetFocus;
   end;
-
+  
+ }
+ 
+ conflangfo.Show(True);
+ conflangfo.bringtofront;
+ 
 end;
 
 procedure tmainfo.setlanginit(const Sender: TObject);

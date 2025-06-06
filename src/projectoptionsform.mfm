@@ -3,8 +3,8 @@ object projectoptionsfo: tprojectoptionsfo
   onfocus = onfocus
   onactivate = onactiv
   visible = False
-  bounds_x = 212
-  bounds_y = 58
+  bounds_x = 292
+  bounds_y = 101
   bounds_cx = 822
   bounds_cy = 606
   bounds_cxmin = 724
@@ -25,7 +25,7 @@ object projectoptionsfo: tprojectoptionsfo
   font.localprops = []
   fontempty.name = 'stf_empty'
   fontempty.localprops = []
-  options = [fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder]
+  options = [fo_screencentered, fo_closeonesc, fo_localshortcuts, fo_autoreadstat, fo_autowritestat]
   statfile = statfile1
   caption = 'Project Options'
   icon.options = [bmo_masked]
@@ -2351,7 +2351,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = []
               taborder = 2
               bounds_x = 0
-              bounds_y = 103
+              bounds_y = 110
               bounds_cx = 722
               bounds_cy = 59
               optionsscale = [osc_expandy, osc_shrinky]
@@ -2644,7 +2644,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 5
               bounds_x = 0
-              bounds_y = 334
+              bounds_y = 336
               bounds_cx = 794
               bounds_cy = 59
               anchors = [an_top]
@@ -2772,7 +2772,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = [frl1_framefaceoffset, frl1_framefaceoffsetdisabled, frl1_framefaceoffsetmouse, frl1_framefaceoffsetclicked, frl1_framefaceoffsetactive]
               taborder = 1
               bounds_x = 0
-              bounds_y = 52
+              bounds_y = 54
               bounds_cx = 794
               bounds_cy = 58
               anchors = [an_top]
