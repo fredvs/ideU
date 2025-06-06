@@ -1,10 +1,10 @@
 object findinfilepagefo: tfindinfilepagefo
   optionswidget = [ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_destroywidgets, ow_hinton]
   visible = False
-  bounds_x = 437
-  bounds_y = 207
-  bounds_cx = 512
-  bounds_cy = 229
+  bounds_x = 325
+  bounds_y = 232
+  bounds_cx = 787
+  bounds_cy = 376
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_destroywidgets]
   container.frame.localprops = []
   container.frame.localprops1 = []
@@ -12,11 +12,12 @@ object findinfilepagefo: tfindinfilepagefo
   container.bounds = (
     0
     0
-    512
-    229
+    787
+    376
   )
   font.name = 'stf_default'
   font.localprops = []
+  options = [fo_autoreadstat, fo_autowritestat]
   icon.options = [bmo_masked]
   icon.origformat = 'png'
   windowopacity = -Inf
@@ -31,8 +32,8 @@ object findinfilepagefo: tfindinfilepagefo
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 24
-    bounds_cx = 510
-    bounds_cy = 191
+    bounds_cx = 785
+    bounds_cy = 338
     anchors = [an_left, an_top, an_right, an_bottom]
     fixcols.count = 1
     fixcols.items = <    
@@ -84,7 +85,7 @@ object findinfilepagefo: tfindinfilepagefo
     taborder = 2
     bounds_x = 1
     bounds_y = 0
-    bounds_cx = 186
+    bounds_cx = 461
     bounds_cy = 26
     bounds_cxmin = 140
     anchors = [an_left, an_top, an_right]
@@ -99,7 +100,7 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 1
-    bounds_x = 188
+    bounds_x = 463
     bounds_y = 0
     bounds_cx = 66
     bounds_cy = 26
@@ -116,7 +117,7 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 4
-    bounds_x = 425
+    bounds_x = 700
     bounds_y = 0
     bounds_cx = 82
     bounds_cy = 26
@@ -136,7 +137,7 @@ object findinfilepagefo: tfindinfilepagefo
     face.localprops = []
     face.template = mainfo.convex
     taborder = 3
-    bounds_x = 256
+    bounds_x = 531
     bounds_y = 0
     bounds_cx = 167
     bounds_cy = 26

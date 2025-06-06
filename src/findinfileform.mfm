@@ -4,22 +4,22 @@ object findinfilefo: tfindinfilefo
   frame.grip_size = 10
   frame.grip_options = [go_closebutton, go_fixsizebutton, go_topbutton, go_nolockbutton]
   visible = False
-  bounds_x = 386
-  bounds_y = 323
-  bounds_cx = 369
-  bounds_cy = 198
+  bounds_x = 304
+  bounds_y = 304
+  bounds_cx = 789
+  bounds_cy = 388
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.bounds = (
     0
     0
-    359
-    198
+    779
+    388
   )
   dragdock.splitter_size = 0
   dragdock.caption = 'Findresults'
-  dragdock.optionsdock = [od_savepos, od_savezorder, od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
-  options = [fo_screencentered, fo_savepos, fo_savezorder]
+  dragdock.optionsdock = [od_canmove, od_canfloat, od_candock, od_propsize, od_captionhint]
+  options = [fo_screencentered]
   caption = 'Find in file result'
   icon.transparentcolor = -2147483642
   icon.options = [bmo_masked]
@@ -29,8 +29,8 @@ object findinfilefo: tfindinfilefo
   object tabs: ttabwidget
     bounds_x = 0
     bounds_y = 0
-    bounds_cx = 359
-    bounds_cy = 198
+    bounds_cx = 779
+    bounds_cy = 388
     anchors = []
     font.name = 'stf_default'
     font.localprops = []
