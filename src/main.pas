@@ -4352,9 +4352,7 @@ end;
 
 procedure tmainfo.viewfindresults(const Sender: TObject);
 begin
-  application.createform(tfindinfilefo, findinfilefo);
-  findinfilefo.icon   := mainfo.icon;
-  findinfilefo.show(true);
+  findinfilefo.activate;
 end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);

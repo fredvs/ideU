@@ -41,6 +41,7 @@ uses {$ifndef windows}
   watchpointsform,
   stackform,
   projecttreeform,
+  findinfileform,
   cpuform,
   disassform,
   memoryform,
@@ -101,6 +102,7 @@ begin
   application.createform(tthreadsfo, threadsfo);
   application.createform(ttargetconsolefo, targetconsolefo);
   application.createform(tfindmessagefo, findmessagefo);
+  application.createform(tfindinfilefo, findinfilefo);
 
   confcompilerfo.Close;
   confdebuggerfo.Close;
@@ -118,6 +120,7 @@ begin
   debuggerfo.icon     := mainfo.icon;
   messagefo.icon      := mainfo.icon;
   findmessagefo.icon  := mainfo.icon;
+  findinfilefo.icon   := mainfo.icon;
  
   application.run;
 end.
