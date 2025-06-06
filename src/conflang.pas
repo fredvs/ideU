@@ -316,6 +316,8 @@ end;
 
 procedure tconflangfo.ontools(Const sender: TObject);
 begin
+  application.createform(theaderfo, headerfo);
+  headerfo.icon       := mainfo.icon;
  {$ifdef mswindows}
  headerfo.tbutton6.visible := false;
   {$endif}

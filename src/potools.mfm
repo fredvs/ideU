@@ -12,7 +12,7 @@ object headerfo: theaderfo
     427
     488
   )
-  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
+  options = [fo_freeonclose, fo_screencentered, fo_autoreadstat, fo_autowritestat, fo_savepos, fo_savezorder, fo_savestate]
   caption = 'Po <> Po converter'
   windowopacity = -Inf
   oncreate = oncreateform

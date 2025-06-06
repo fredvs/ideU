@@ -18,8 +18,6 @@ uses {$ifndef windows}
   mseconsts,
   captionideu,
   conflang,
-  // splash,
-  aboutform,
   confmsegui,
   confideu,
   conffpgui,
@@ -43,7 +41,6 @@ uses {$ifndef windows}
   watchpointsform,
   stackform,
   projecttreeform,
-  findinfileform,
   cpuform,
   disassform,
   memoryform,
@@ -57,7 +54,6 @@ uses {$ifndef windows}
   guitemplates,
   msegraphutils,
   msefont,
-  potools,
   stringconsts;
 
 begin
@@ -78,8 +74,6 @@ begin
 
   if application.terminated then
     Exit;
-
-  // application.createform(tsplashfo, splashfo);
 
   application.createform(tconfideufo, confideufo);
   application.createform(tconfmseguifo, confmseguifo);
@@ -102,7 +96,6 @@ begin
   application.createform(tstackfo, stackfo);
   application.createform(tprojecttreefo, projecttreefo);
   application.createform(tconflangfo, conflangfo);
-//  application.createform(tfindinfilefo, findinfilefo);
   application.createform(tdisassfo, disassfo);
   application.createform(tmemoryfo, memoryfo);
   application.createform(tthreadsfo, threadsfo);
@@ -113,17 +106,9 @@ begin
   confdebuggerfo.Close;
   conffpguifo.Close;
 
-  application.createform(theaderfo, headerfo);
-  headerfo.Close;
-
   application.createform(tmainfo, mainfo);
 
-  //application.createform(taboutfo, aboutfo);
-
   createcpufo;
-
-  headerfo.icon       := mainfo.icon;
-  // splashfo.icon       := mainfo.icon;
   confideufo.icon     := mainfo.icon;
   confmseguifo.icon   := mainfo.icon;
   conffpguifo.icon    := mainfo.icon;
@@ -131,11 +116,9 @@ begin
   confdebuggerfo.icon := mainfo.icon;
   sourcefo.icon       := mainfo.icon;
   debuggerfo.icon     := mainfo.icon;
-//  findinfilefo.icon   := mainfo.icon;
   messagefo.icon      := mainfo.icon;
   findmessagefo.icon  := mainfo.icon;
- //  aboutfo.icon        := mainfo.icon;
-
+ 
   application.run;
 end.
 
