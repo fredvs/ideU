@@ -14,7 +14,7 @@ object conflangfo: tconflangfo
     570
     244
   )
-  options = [fo_screencenteredvirt, fo_autoreadstat, fo_autowritestat]
+  options = [fo_screencentered, fo_autoreadstat, fo_autowritestat]
   statfile = mainfo.mainstatfile
   icon.options = [bmo_masked, bmo_graymask]
   icon.origformat = 'png'
