@@ -102,7 +102,7 @@ begin
   application.createform(tstackfo, stackfo);
   application.createform(tprojecttreefo, projecttreefo);
   application.createform(tconflangfo, conflangfo);
-  application.createform(tfindinfilefo, findinfilefo);
+//  application.createform(tfindinfilefo, findinfilefo);
   application.createform(tdisassfo, disassfo);
   application.createform(tmemoryfo, memoryfo);
   application.createform(tthreadsfo, threadsfo);
@@ -118,7 +118,7 @@ begin
 
   application.createform(tmainfo, mainfo);
 
-  application.createform(taboutfo, aboutfo);
+  //application.createform(taboutfo, aboutfo);
 
   createcpufo;
 
@@ -131,10 +131,10 @@ begin
   confdebuggerfo.icon := mainfo.icon;
   sourcefo.icon       := mainfo.icon;
   debuggerfo.icon     := mainfo.icon;
-  findinfilefo.icon   := mainfo.icon;
+//  findinfilefo.icon   := mainfo.icon;
   messagefo.icon      := mainfo.icon;
   findmessagefo.icon  := mainfo.icon;
-  aboutfo.icon        := mainfo.icon;
+ //  aboutfo.icon        := mainfo.icon;
 
   application.run;
 end.

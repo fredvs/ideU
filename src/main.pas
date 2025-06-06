@@ -4352,8 +4352,9 @@ end;
 
 procedure tmainfo.viewfindresults(const Sender: TObject);
 begin
-  findinfilefo.activate;
-
+  application.createform(tfindinfilefo, findinfilefo);
+  findinfilefo.icon   := mainfo.icon;
+  findinfilefo.show(true);
 end;
 
 procedure tmainfo.aboutonexecute(const Sender: TObject);
@@ -4361,6 +4362,8 @@ var
 ratio :double;
 begin
   ratio := confideufo.fontsize.Value /12;
+  application.createform(taboutfo, aboutfo);
+  aboutfo.icon        := mainfo.icon;
   aboutfo.about_text.font.Height := confideufo.fontsize.Value;
   aboutfo.font.Height := confideufo.fontsize.Value;
   aboutfo.width := round( ratio * 320 );
@@ -4400,6 +4403,8 @@ ratio :double;
 begin
 
   ratio := confideufo.fontsize.Value /12;
+  application.createform(taboutfo, aboutfo);
+  aboutfo.icon        := mainfo.icon;
   aboutfo.about_text.font.Height := confideufo.fontsize.Value;
   aboutfo.font.Height := confideufo.fontsize.Value;
   aboutfo.width := round( ratio * 220 );
@@ -4435,6 +4440,8 @@ var
 ratio :double;
 begin
   ratio := confideufo.fontsize.Value /12;
+  application.createform(taboutfo, aboutfo);
+  aboutfo.icon        := mainfo.icon;
   aboutfo.about_text.font.Height := confideufo.fontsize.Value;
   aboutfo.font.Height := confideufo.fontsize.Value;
   aboutfo.width := round( ratio * 220 );
