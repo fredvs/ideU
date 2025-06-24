@@ -396,51 +396,66 @@ begin
       setting_tab.Width := Width - 4;
 
       path.Width := Width;
-
+      
+       compiler.controller.fontheight := confideufo.fontsize.Value;  
       compiler.top   := 4;
       compiler.Width := round(ratio * 430);
 
       compiler.invalidate;
 
+      debugger.controller.fontheight := confideufo.fontsize.Value;  
       debugger.top   := compiler.top + compiler.Height + 2;
       debugger.Width := compiler.Width;
 
+      fpcsrcdir.controller.fontheight := confideufo.fontsize.Value;  
       fpcsrcdir.top   := debugger.top + debugger.Height + 2;
       fpcsrcdir.Width := compiler.Width;
 
+      msedir.controller.fontheight := confideufo.fontsize.Value;  
       msedir.top   := fpcsrcdir.top + compiler.Height + 2;
       msedir.Width := compiler.Width;
 
+      mselibdir.controller.fontheight := confideufo.fontsize.Value;  
       mselibdir.top   := msedir.top + compiler.Height + 2;
       mselibdir.Width := compiler.Width;
 
+      compstoredir.controller.fontheight := confideufo.fontsize.Value;  
       compstoredir.top   := mselibdir.top + compiler.Height + 2;
       compstoredir.Width := compiler.Width;
 
+      fpguidir.controller.fontheight := confideufo.fontsize.Value;  
       fpguidir.top   := compstoredir.top + compiler.Height + 2;
       fpguidir.Width := compiler.Width;
 
+      docviewdir.controller.fontheight := confideufo.fontsize.Value;  
       docviewdir.top   := fpguidir.top + compiler.Height + 2;
       docviewdir.Width := compiler.Width;
 
+      lcldir.controller.fontheight := confideufo.fontsize.Value;  
       lcldir.top   := docviewdir.top + compiler.Height + 2;
       lcldir.Width := compiler.Width;
-      
+
+      ideudir.controller.fontheight := confideufo.fontsize.Value;        
       ideudir.top   := lcldir.top + compiler.Height + 2;
       ideudir.Width := compiler.Width;
-
+      
+      layoutdir.controller.fontheight := confideufo.fontsize.Value;
       layoutdir.top   := ideudir.top + compiler.Height + 2;
       layoutdir.Width := compiler.Width;
-
+      
+      templatedir.controller.fontheight := confideufo.fontsize.Value;
       templatedir.top   := layoutdir.top + compiler.Height + 2;
       templatedir.Width := compiler.Width;
 
+      syntaxdefdir.controller.fontheight := confideufo.fontsize.Value;
       syntaxdefdir.top   := templatedir.top + compiler.Height + 2;
       syntaxdefdir.Width := compiler.Width;
       
+      langdir.controller.fontheight := confideufo.fontsize.Value;
       langdir.top   := syntaxdefdir.top + compiler.Height + 2;
       langdir.Width := compiler.Width;
 
+      bgrabitmapdir.controller.fontheight := confideufo.fontsize.Value;
       bgrabitmapdir.top   := langdir.top + compiler.Height + 2;
       bgrabitmapdir.Width := compiler.Width;
 
@@ -468,8 +483,8 @@ begin
       fshortcutcontroller  := shortcuts;
       if shortcuts = nil then
         shortcutbu.Visible := False;
-
-       setlangsettings();
+        
+      setlangsettings();
       //  settingsfo.Caption := 'Global Settings of ideU';
 
       if Show(True) = mr_ok then
