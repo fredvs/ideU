@@ -821,6 +821,8 @@ begin
 
   debuggerfo.statdisp.font.Name := ansistring(fontname.Value);
 
+  tesakitdir.controller.fontheight  := fontsize.Value;
+ 
   confcompilerfo.fpccompiler.controller.fontheight  := fontsize.Value;
   confcompilerfo.fpccompiler2.controller.fontheight := fontsize.Value;
   confcompilerfo.fpccompiler3.controller.fontheight := fontsize.Value;
