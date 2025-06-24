@@ -4,14 +4,54 @@ unit confideu;
 interface
 
 uses
- mseconsts,msestockobjects,msetypes,mseglob,mseguiglob,mseguiintf,msefileutils,
- mseapplication,msegui,msegraphics,msegraphutils,mseclasses,mseforms,
- msegraphedits,msesimplewidgets,mseificomp,mseificompglob,mseifiglob,msemenus,
- msescrollbar,msedataedits,mseedit,msestat,msestatfile,msestream,msestrings,
- SysUtils,msewidgets,msebitmap,msedatanodes,msegrids,mselistbrowser,msesys,
- mseact,msedragglob,msetabs,msedropdownlist,msegridsglob,msewidgetgrid,
- msepointer,msememodialog,msesplitter,msecolordialog,mseeditglob,mserichstring,
- msetextedit,msefiledialogx, captionideu;
+  mseconsts,
+  msestockobjects,
+  msetypes,
+  mseglob,
+  mseguiglob,
+  mseguiintf,
+  msefileutils,
+  mseapplication,
+  msegui,
+  msegraphics,
+  msegraphutils,
+  mseclasses,
+  mseforms,
+  msegraphedits,
+  msesimplewidgets,
+  mseificomp,
+  mseificompglob,
+  mseifiglob,
+  msemenus,
+  msescrollbar,
+  msedataedits,
+  mseedit,
+  msestat,
+  msestatfile,
+  msestream,
+  msestrings,
+  SysUtils,
+  msewidgets,
+  msebitmap,
+  msedatanodes,
+  msegrids,
+  mselistbrowser,
+  msesys,
+  mseact,
+  msedragglob,
+  msetabs,
+  msedropdownlist,
+  msegridsglob,
+  msewidgetgrid,
+  msepointer,
+  msememodialog,
+  msesplitter,
+  msecolordialog,
+  mseeditglob,
+  mserichstring,
+  msetextedit,
+  msefiledialogx,
+  captionideu;
 
 type
   tconfideufo = class(tmseform)
@@ -53,14 +93,14 @@ type
     tabindent: tbooleanedit;
     blinkcaret: tbooleanedit;
     brepaintcanvas: tbooleanedit;
-   rectanglearea: tbooleanedit;
-   addwhiteaftercomma: tbooleanedit;
-   colorhint: tcoloredit;
-   editfontheightsrc: tintegeredit;
-   editfontnamesrc: tdropdownlistedit;
-   autoheight: tbooleanedit;
-   enableedited: tbooleanedit;
-   runaftercompile: tbooleanedit;
+    rectanglearea: tbooleanedit;
+    addwhiteaftercomma: tbooleanedit;
+    colorhint: tcoloredit;
+    editfontheightsrc: tintegeredit;
+    editfontnamesrc: tdropdownlistedit;
+    autoheight: tbooleanedit;
+    enableedited: tbooleanedit;
+    runaftercompile: tbooleanedit;
     procedure zorderhandle(const Sender: TObject);
     procedure epandfilenamemacro(const Sender: TObject; var avalue: msestring; var accept: Boolean);
 
@@ -71,18 +111,18 @@ type
     procedure updownacc(const Sender: TObject);
     procedure oncloseev(const Sender: TObject);
     procedure onchangefont;
-    procedure scalecommander(ratio : double);
+    procedure scalecommander(ratio: double);
     procedure onapply(const Sender: TObject);
     procedure onok(const Sender: TObject);
     procedure oncreated(const Sender: TObject);
     procedure setlangextrasettings();
-    procedure confideuresize ;
-    procedure seteditedenable();  
+    procedure confideuresize;
+    procedure seteditedenable();
   end;
 
 var
   confideufo: tconfideufo;
-  hanconf : integer = -1;
+  hanconf: integer = -1;
 
 implementation
 
@@ -250,14 +290,14 @@ begin
   //updownaccelerator := key_accelerator.Value;
 end;
 
-procedure tconfideufo.confideuresize ;
+procedure tconfideufo.confideuresize;
 var
   ratio: double;
   rect1: rectty;
 begin
 
-  ratio := fontsize.Value / 12;
- // confideufo
+  ratio       := fontsize.Value / 12;
+  // confideufo
   font.Height := fontsize.Value;
   font.Name   := ansistring(fontname.Value);
 
@@ -280,11 +320,11 @@ begin
     group_file_change.Height + 10;
 
   universal_path.top := universal_path.Height + 2;
- 
-  enableedited.top     := universal_path.top + universal_path.Height + 2;
- 	 
-  doubleclic.top     := enableedited.top + enableedited.Height + 2;
-  blinkcaret.top     := doubleclic.top + doubleclic.Height + 2;
+
+  enableedited.top := universal_path.top + universal_path.Height + 2;
+
+  doubleclic.top := enableedited.top + enableedited.Height + 2;
+  blinkcaret.top := doubleclic.top + doubleclic.Height + 2;
 
   fullpath.top       := blinkcaret.top + blinkcaret.Height + 2;
   modaldial.top      := fullpath.top + fullpath.Height + 2;
@@ -300,24 +340,23 @@ begin
 
   fontname.top := confirmdel.top + confirmdel.Height + 4;
   fontsize.top := fontname.top + fontname.Height + 2;
-  
+
   fontname.left := 8;
   fontsize.left := 8;
-   
+
   autoheight.left := 8;
-  autoheight.top := fontsize.top + fontsize.Height + 2;
+  autoheight.top  := fontsize.top + fontsize.Height + 2;
 
   addwhiteaftercomma.left := 6;
-  addwhiteaftercomma.top := autoheight.top + autoheight.Height + 4;
-  
-   runaftercompile.left := 6;
-  runaftercompile.top := addwhiteaftercomma.top + addwhiteaftercomma.Height + 4;
+  addwhiteaftercomma.top  := autoheight.top + autoheight.Height + 4;
 
+  runaftercompile.left := 6;
+  runaftercompile.top  := addwhiteaftercomma.top + addwhiteaftercomma.Height + 4;
 
 
   group_system_layout.Height := runaftercompile.top + runaftercompile.Height + 10;
 
-  
+
   tbassistive.top := tbassistive.Height + 2;
   tesakitdir.top  := tbassistive.top + tbassistive.Height + 2;
 
@@ -333,11 +372,11 @@ begin
   closemessages.top   := backupfilecount.top + backupfilecount.Height + 6;
 
   trimtrailingwhitespace.top := closemessages.top + closemessages.Height + 2;
-  
+
   editfontnamesrc.top := trimtrailingwhitespace.top + trimtrailingwhitespace.Height + 2;
- 
+
   editfontheightsrc.top := editfontnamesrc.top;
-    
+
   encoding.top := editfontnamesrc.top + editfontnamesrc.Height + 2;
 
   encoding.Width := round(ratio * 84);
@@ -358,15 +397,15 @@ begin
   colornote.top    := rightmarginchars.top + rightmarginchars.Height + 2;
   colorwarning.top := colornote.top + colornote.Height + 2;
   colorerror.top   := colorwarning.top + colorwarning.Height + 2;
-  colorhint.top   := colorerror.top + colorerror.Height + 2;
+  colorhint.top    := colorerror.top + colorerror.Height + 2;
 
 
   deflayout.top := colorhint.top + colorhint.Height + 2;
   defsynt.top   := deflayout.top + deflayout.Height + 2;
-   group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
-  
+  group_sourceeditor.Height := defsynt.top + defsynt.Height + 10;
+
   rectanglearea.left := group_sourceeditor.left + 10;
-  
+
   rectanglearea.top := group_sourceeditor.bottom + 4;
 
   Height := group_assistive.bottom + 10;
@@ -386,32 +425,32 @@ begin
   invalidate;
 
   left := (rect1.cx - Width) div 2;
-  end;
-  
-procedure tconfideufo.seteditedenable();  
+end;
+
+procedure tconfideufo.seteditedenable();
 begin
- debuggerfo.edit_compiler.visible := enableedited.value;
+  debuggerfo.edit_compiler.Visible := enableedited.Value;
 
- debuggerfo.edit_compilernum.visible := enableedited.value;
+  debuggerfo.edit_compilernum.Visible := enableedited.Value;
 
- debuggerfo.edit_options.visible := enableedited.value;
+  debuggerfo.edit_options.Visible := enableedited.Value;
 
- debuggerfo.edited_make.visible := enableedited.value;
+  debuggerfo.edited_make.Visible := enableedited.Value;
 
- debuggerfo.edited_abort.visible := enableedited.value;
+  debuggerfo.edited_abort.Visible := enableedited.Value;
 
- debuggerfo.edited_run.visible := enableedited.value;
- 
- mainfo.mainmenu1.menu.itembynames(['edited']).visible := enableedited.value;
- 
- if enableedited.value then 
-  debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4
+  debuggerfo.edited_run.Visible := enableedited.Value;
+
+  mainfo.mainmenu1.menu.itembynames(['edited']).Visible := enableedited.Value;
+
+  if enableedited.Value then
+    debuggerfo.paneledited.Width := debuggerfo.edited_run.right + 4
   else
-  debuggerfo.paneledited.Width := debuggerfo.procedure_list.right + 4;
+    debuggerfo.paneledited.Width := debuggerfo.procedure_list.right + 4;
 
- end;
+end;
 
-procedure tconfideufo.scalecommander(ratio : double);
+procedure tconfideufo.scalecommander(ratio: double);
 begin
 
   debuggerfo.font.Height     := fontsize.Value;
@@ -580,14 +619,13 @@ begin
   debuggerfo.edited_run.Height := debuggerfo.assistive.Height;
   debuggerfo.edited_run.Width  := debuggerfo.assistive.Height;
   debuggerfo.edited_run.left   := debuggerfo.edited_abort.right + 2;
-  
+
   seteditedenable();
-  
+
   debuggerfo.panelproject.Height := debuggerfo.panelmain.Height;
   debuggerfo.panelproject.left   := debuggerfo.panelmain.right + 2;
 
   debuggerfo.Height := debuggerfo.statdisp.bottom + 2;
-
 
 end;
 
@@ -598,54 +636,54 @@ var
 begin
 
   ratio := fontsize.Value / 12;
-  
-   conflangfo.font.Height     := fontsize.Value;
-   conflangfo.gridlang.font.Height     := fontsize.Value;
-   conflangfo.gridlistfont.font.Height     := fontsize.Value;
-   conflangfo.gridlang.font.Height     := fontsize.Value;
-  
-   conflangfo.width := round(570 * ratio);
-   conflangfo.height := round(244 * ratio);
-   
-   conflangfo.gridlang.datarowheight := round(20 * ratio);  
-    
-   conflangfo.gridlang.width := round(286 * ratio);
-   conflangfo.gridlang.height := round(142 * ratio);
-   //conflangfo.gridlang.left := round(58 * ratio);
-   conflangfo.gridlang.top := round(58 * ratio);
-   conflangfo.gridlang.datacols[0].Width := round(228 * ratio);
-   conflangfo.gridlang.datacols[1].Width := round(44 * ratio);
-    
-   conflangfo.gridlistfont.width := round(236 * ratio); 
-   conflangfo.gridlistfont.height := round(142 * ratio);
-   conflangfo.gridlistfont.left := round(320 * ratio);
-   conflangfo.gridlistfont.top := round(58 * ratio);
-   conflangfo.gridlistfont[0].Width :=round(220 * ratio);
-   
-   debuggerfo.font.Height     := fontsize.Value; 
-   debuggerfo.statdisp.font.Height     := fontsize.Value; 
-      
+
+  conflangfo.font.Height          := fontsize.Value;
+  conflangfo.gridlang.font.Height := fontsize.Value;
+  conflangfo.gridlistfont.font.Height := fontsize.Value;
+  conflangfo.gridlang.font.Height := fontsize.Value;
+
+  conflangfo.Width  := round(570 * ratio);
+  conflangfo.Height := round(244 * ratio);
+
+  conflangfo.gridlang.datarowheight := round(20 * ratio);
+
+  conflangfo.gridlang.Width  := round(286 * ratio);
+  conflangfo.gridlang.Height := round(142 * ratio);
+  //conflangfo.gridlang.left := round(58 * ratio);
+  conflangfo.gridlang.top    := round(58 * ratio);
+  conflangfo.gridlang.datacols[0].Width := round(228 * ratio);
+  conflangfo.gridlang.datacols[1].Width := round(44 * ratio);
+
+  conflangfo.gridlistfont.Width    := round(236 * ratio);
+  conflangfo.gridlistfont.Height   := round(142 * ratio);
+  conflangfo.gridlistfont.left     := round(320 * ratio);
+  conflangfo.gridlistfont.top      := round(58 * ratio);
+  conflangfo.gridlistfont[0].Width := round(220 * ratio);
+
+  debuggerfo.font.Height          := fontsize.Value;
+  debuggerfo.statdisp.font.Height := fontsize.Value;
+
   mainfo.font.Height     := fontsize.Value;
   mainfo.font.Name       := ansistring(fontname.Value);
   mainfo.frame.grip_size := round(12 * ratio);
-  mainfo.mainmenu1.menu.font.Height     := fontsize.Value;
-  mainfo.mainmenu1.menu.fontactive.Height     := fontsize.Value;
+  mainfo.mainmenu1.menu.font.Height := fontsize.Value;
+  mainfo.mainmenu1.menu.fontactive.Height := fontsize.Value;
 
   // message
   messagefontheight := fontsize.Value;
-  messagefontname   := fontname.value;
-  
+  messagefontname   := fontname.Value;
+
   if Assigned(targetconsolefo) then
   begin
-   targetconsolefo.Height := round((ratio) * 400);
-   targetconsolefo.Width  := round((ratio) * 600);
-   targetconsolefo.font.Height     := round(12 * ratio);
-   targetconsolefo.grid.font.Height     := round(12 * ratio);
+    targetconsolefo.Height      := round((ratio) * 400);
+    targetconsolefo.Width       := round((ratio) * 600);
+    targetconsolefo.font.Height := round(12 * ratio);
+    targetconsolefo.grid.font.Height := round(12 * ratio);
   end;
-  
+
   // commandor
   scalecommander(ratio);
-  
+
   if Assigned(objectinspectorfo) then
   begin
     objectinspectorfo.frame.grip_size    := round(12 * ratio);
@@ -769,14 +807,13 @@ begin
   conffpguifo.groupcommand.Height := conffpguifo.ifquit.top + conffpguifo.edclose.Height + 10;
   conffpguifo.groupcommand.Width  := conffpguifo.edfilename.right + 14;
 
-
   conffpguifo.iffilter.top := conffpguifo.groupcommand.top + conffpguifo.groupcommand.Height + 10;
   conffpguifo.edfilter.top := conffpguifo.iffilter.top + conffpguifo.iffilter.Height + 4;
   conffpguifo.Height       := conffpguifo.edfilter.top + conffpguifo.edfilter.Height + 10;
 
   conffpguifo.Width  := conffpguifo.groupcommand.Width + 26;
   conffpguifo.Height := conffpguifo.edfilter.bottom + 10;
-  
+
   messagefo.Messages.font.Height := fontsize.Value;
   messagefo.frame.grip_size      := round(12 * ratio);
 
@@ -784,8 +821,46 @@ begin
 
   debuggerfo.statdisp.font.Name := ansistring(fontname.Value);
 
+  confcompilerfo.fpccompiler.controller.fontheight  := fontsize.Value;
+  confcompilerfo.fpccompiler2.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler3.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler4.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler5.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler6.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler7.controller.fontheight := fontsize.Value;
+  confcompilerfo.fpccompiler8.controller.fontheight := fontsize.Value;
+
+  confcompilerfo.ccompiler.controller.fontheight  := fontsize.Value;
+  confcompilerfo.ccompiler2.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler3.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler4.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler5.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler6.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler7.controller.fontheight := fontsize.Value;
+  confcompilerfo.ccompiler8.controller.fontheight := fontsize.Value;
+
+  confcompilerfo.javacompiler.controller.fontheight  := fontsize.Value;
+  confcompilerfo.javacompiler2.controller.fontheight := fontsize.Value;
+  confcompilerfo.javacompiler3.controller.fontheight := fontsize.Value;
+  confcompilerfo.javacompiler4.controller.fontheight := fontsize.Value;
+
+  confcompilerfo.pythoncompiler.controller.fontheight  := fontsize.Value;
+  confcompilerfo.pythoncompiler2.controller.fontheight := fontsize.Value;
+  confcompilerfo.pythoncompiler3.controller.fontheight := fontsize.Value;
+  confcompilerfo.pythoncompiler4.controller.fontheight := fontsize.Value;
+
+  confcompilerfo.othercompiler.controller.fontheight  := fontsize.Value;
+  confcompilerfo.othercompiler2.controller.fontheight := fontsize.Value;
+  confcompilerfo.othercompiler3.controller.fontheight := fontsize.Value;
+  confcompilerfo.othercompiler4.controller.fontheight := fontsize.Value;
+
+  confdebuggerfo.debugger1.controller.fontheight := fontsize.Value;
+  confdebuggerfo.debugger2.controller.fontheight := fontsize.Value;
+  confdebuggerfo.debugger3.controller.fontheight := fontsize.Value;
+  confdebuggerfo.debugger4.controller.fontheight := fontsize.Value;
+
   confideuresize;
- 
+
 end;
 
 procedure tconfideufo.oncloseev(const Sender: TObject);
@@ -796,47 +871,47 @@ end;
 
 procedure tconfideufo.onapply(const Sender: TObject);
 var
- str1: ttextstream;
- thedir : string;
+  str1: ttextstream;
+  thedir: string;
 begin
 
   messagefo.updateprojectoptions;
   onchangefont;
   noconfirmdelete := confirmdel.Value;
   blinkingcaret   := blinkcaret.Value;
-  
-  if usedefaulteditoroptions.value then
+
+  if usedefaulteditoroptions.Value then
   begin
-  
-  
-  if fileexists(deflayout.text) then begin
-  thedir := tosysfilepath(deflayout.Text);
-  str1:= ttextstream.create(thedir);
-  debuggerfo.close;
-  mainfo.loadwindowlayout(str1);
-  str1.Destroy();
-  end; 
-  
-  sourcefo.files_tab.activepageindex := 0;
-  sourcefo.activepage.updatestatvalues;
-   
-   if fileexists(defsynt.text) then begin
-  if hanconf <> -1 then sourcefo.syntaxpainter.freedeffile(hanconf);
-  thedir := tosysfilepath(defsynt.Text);
-  str1 := ttextstream.Create(thedir);
-  hanconf := sourcefo.syntaxpainter.readdeffile(str1);
-  str1.Destroy();
+
+    if fileexists(deflayout.Text) then
+    begin
+      thedir := tosysfilepath(deflayout.Text);
+      str1   := ttextstream.Create(thedir);
+      debuggerfo.Close;
+      mainfo.loadwindowlayout(str1);
+      str1.Destroy();
+    end;
+
+    sourcefo.files_tab.activepageindex := 0;
+    sourcefo.ActivePage.updatestatvalues;
+
+    if fileexists(defsynt.Text) then
+    begin
+      if hanconf <> -1 then
+        sourcefo.syntaxpainter.freedeffile(hanconf);
+      thedir  := tosysfilepath(defsynt.Text);
+      str1    := ttextstream.Create(thedir);
+      hanconf := sourcefo.syntaxpainter.readdeffile(str1);
+      str1.Destroy();
+    end;
   end;
- 
- end;
- 
 end;
 
 procedure tconfideufo.onok(const Sender: TObject);
 begin
   onapply(Sender);
   Close;
-  application.processmessages;
+  application.ProcessMessages;
 end;
 
 procedure tconfideufo.oncreated(const Sender: TObject);
@@ -848,66 +923,66 @@ end;
 
 procedure tconfideufo.setlangextrasettings();
 var
-strz : string = '';
+  strz: string = '';
 begin
- if MSEFallbackLang = 'zh' then strz := '             ';
-  Caption := lang_xstockcaption[ord(sc_extrasettings)] + strz ;
-  but_ok.Caption  := lang_modalresult[Ord(mr_ok)] + strz ;
-  but_apply.Caption  := lang_settings[Ord(se_apply)] + strz ;
-  group_assistive.frame.caption := lang_settings[Ord(se_groupassistive)] + strz ;
-  tesakitdir.frame.caption := lang_settings[Ord(se_sakitdir)] + strz ;
-  tesakitdir.controller.captiondir := lang_settings[Ord(se_sakitdir)] + strz ;
-    
-  tbassistive.frame.caption := lang_settings[Ord(se_enableassistive)] + strz ;
-  group_system_layout.frame.caption := lang_settings[Ord(se_groupsystemlayout)] + strz ;
-  universal_path.frame.caption := lang_settings[Ord(se_universalpath)] + strz ;
-  nozorderenable.frame.caption := lang_settings[Ord(se_nozorder)] + strz ;
-  doubleclic.frame.caption := lang_settings[Ord(se_doubleclic)] + strz ;
-  autofocus_menu.frame.caption := lang_settings[Ord(se_autofocusmenu)] + strz ;
-  modaldial.frame.caption := lang_settings[Ord(se_modaldial)] + strz ;
-  fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
-  fontname.frame.caption := lang_settings[Ord(se_fontname)] + strz ;
-  confirmdel.frame.caption := lang_settings[Ord(se_confirmdel)] + strz ;
-  blinkcaret.frame.caption := lang_settings[Ord(se_blinkcaret)] + strz ;
-  brepaintcanvas.frame.caption := lang_settings[Ord(se_repaintcanvas)] + strz ;
-  
-  // todo in lang
-  rectanglearea.frame.caption := 'Rectangle area for multi-select' + strz ;
+  if MSEFallbackLang = 'zh' then
+    strz         := '             ';
+  Caption        := lang_xstockcaption[Ord(sc_extrasettings)] + strz;
+  but_ok.Caption := lang_modalresult[Ord(mr_ok)] + strz;
+  but_apply.Caption := lang_settings[Ord(se_apply)] + strz;
+  group_assistive.frame.Caption := lang_settings[Ord(se_groupassistive)] + strz;
+  tesakitdir.frame.Caption := lang_settings[Ord(se_sakitdir)] + strz;
+  tesakitdir.controller.captiondir := lang_settings[Ord(se_sakitdir)] + strz;
 
-  group_sourceeditor.frame.caption := lang_settings[Ord(se_groupsourceeditor)] + strz ;
-  trimtrailingwhitespace.frame.caption := lang_projectoptions[Ord(po_trimtrailing)] + strz ;
-  
-  editfontnamesrc.frame.caption := lang_settings[Ord(se_fontname)] + strz ;
-  editfontheightsrc.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
-  
-  rightmarginchars.frame.caption := lang_projectoptions[Ord(po_rightmarginline)] + strz ;
-  encoding.frame.caption := lang_projectoptions[Ord(po_encoding)] + strz ;
-  backupfilecount.frame.caption := lang_projectoptions[Ord(po_backup)] + strz ;
-  tabstops.frame.caption := lang_projectoptions[Ord(po_tabstops)] + strz ;
-  blockindent.frame.caption := lang_xstockcaption[Ord(sc_indent)] + strz ;
-  usedefaulteditoroptions.frame.caption := lang_settings[Ord(se_usedefaulteditoroptions)] + strz ;
-  spacetabs.frame.caption := lang_projectoptions[Ord(po_spacetab)] + strz ;
-  colornote.frame.caption := lang_projectoptions[Ord(po_colornote)] + strz ;
-  colorhint.frame.caption := lang_projectoptions[Ord(po_colorhint)] + strz ;
-  colorerror.frame.caption := lang_projectoptions[Ord(po_colorerror)] + strz ;
-  colorwarning.frame.caption := lang_projectoptions[Ord(po_colorwarning)] + strz ;
-  stripmessageesc.frame.caption := lang_projectoptions[Ord(po_stripmessageesc)] + strz ;
-  stripmessageesc.hint := lang_projectoptions[Ord(po_stripmessageeschint)] + strz ;
-  
-  deflayout.frame.caption := lang_xstockcaption[ord(sc_layout)] + strz ;
-  defsynt.frame.caption := lang_xstockcaption[ord(sc_syntax)] + strz ;
-  closemessages.frame.caption := lang_projectoptions[Ord(po_closemessages)] + strz ;
-  addwhiteaftercomma.frame.caption := lang_settings[Ord(se_addwhiteaftercomma)] + strz ;
-  
-  group_file_change.frame.caption := lang_settings[Ord(se_groupfilechange)] + strz ;
-  tbfilereload.frame.caption := lang_settings[Ord(se_filereload)] + strz ;
-  fullpath.frame.caption := lang_settings[Ord(se_fullpath)] + strz ;
-  tbfilenoload.frame.caption := lang_settings[Ord(se_filenoload)] + strz ;
-  tbfileaskload.frame.caption := lang_settings[Ord(se_fileaskload)] + strz ;
-   rectanglearea.frame.caption := lang_settings[Ord(se_rectanglearea)] + strz ;
+  tbassistive.frame.Caption    := lang_settings[Ord(se_enableassistive)] + strz;
+  group_system_layout.frame.Caption := lang_settings[Ord(se_groupsystemlayout)] + strz;
+  universal_path.frame.Caption := lang_settings[Ord(se_universalpath)] + strz;
+  nozorderenable.frame.Caption := lang_settings[Ord(se_nozorder)] + strz;
+  doubleclic.frame.Caption     := lang_settings[Ord(se_doubleclic)] + strz;
+  autofocus_menu.frame.Caption := lang_settings[Ord(se_autofocusmenu)] + strz;
+  modaldial.frame.Caption      := lang_settings[Ord(se_modaldial)] + strz;
+  fontsize.frame.Caption       := lang_settings[Ord(se_fontsize)] + strz;
+  fontname.frame.Caption       := lang_settings[Ord(se_fontname)] + strz;
+  confirmdel.frame.Caption     := lang_settings[Ord(se_confirmdel)] + strz;
+  blinkcaret.frame.Caption     := lang_settings[Ord(se_blinkcaret)] + strz;
+  brepaintcanvas.frame.Caption := lang_settings[Ord(se_repaintcanvas)] + strz;
+
+  // todo in lang
+  rectanglearea.frame.Caption := 'Rectangle area for multi-select' + strz;
+
+  group_sourceeditor.frame.Caption     := lang_settings[Ord(se_groupsourceeditor)] + strz;
+  trimtrailingwhitespace.frame.Caption := lang_projectoptions[Ord(po_trimtrailing)] + strz;
+
+  editfontnamesrc.frame.Caption   := lang_settings[Ord(se_fontname)] + strz;
+  editfontheightsrc.frame.Caption := lang_settings[Ord(se_fontsize)] + strz;
+
+  rightmarginchars.frame.Caption := lang_projectoptions[Ord(po_rightmarginline)] + strz;
+  encoding.frame.Caption         := lang_projectoptions[Ord(po_encoding)] + strz;
+  backupfilecount.frame.Caption  := lang_projectoptions[Ord(po_backup)] + strz;
+  tabstops.frame.Caption         := lang_projectoptions[Ord(po_tabstops)] + strz;
+  blockindent.frame.Caption      := lang_xstockcaption[Ord(sc_indent)] + strz;
+  usedefaulteditoroptions.frame.Caption := lang_settings[Ord(se_usedefaulteditoroptions)] + strz;
+  spacetabs.frame.Caption        := lang_projectoptions[Ord(po_spacetab)] + strz;
+  colornote.frame.Caption        := lang_projectoptions[Ord(po_colornote)] + strz;
+  colorhint.frame.Caption        := lang_projectoptions[Ord(po_colorhint)] + strz;
+  colorerror.frame.Caption       := lang_projectoptions[Ord(po_colorerror)] + strz;
+  colorwarning.frame.Caption     := lang_projectoptions[Ord(po_colorwarning)] + strz;
+  stripmessageesc.frame.Caption  := lang_projectoptions[Ord(po_stripmessageesc)] + strz;
+  stripmessageesc.hint           := lang_projectoptions[Ord(po_stripmessageeschint)] + strz;
+
+  deflayout.frame.Caption     := lang_xstockcaption[Ord(sc_layout)] + strz;
+  defsynt.frame.Caption       := lang_xstockcaption[Ord(sc_syntax)] + strz;
+  closemessages.frame.Caption := lang_projectoptions[Ord(po_closemessages)] + strz;
+  addwhiteaftercomma.frame.Caption := lang_settings[Ord(se_addwhiteaftercomma)] + strz;
+
+  group_file_change.frame.Caption := lang_settings[Ord(se_groupfilechange)] + strz;
+  tbfilereload.frame.Caption      := lang_settings[Ord(se_filereload)] + strz;
+  fullpath.frame.Caption          := lang_settings[Ord(se_fullpath)] + strz;
+  tbfilenoload.frame.Caption      := lang_settings[Ord(se_filenoload)] + strz;
+  tbfileaskload.frame.Caption     := lang_settings[Ord(se_fileaskload)] + strz;
+  rectanglearea.frame.Caption     := lang_settings[Ord(se_rectanglearea)] + strz;
 
 end;
-
 
 end.
 
