@@ -920,7 +920,11 @@ begin
         autocomplet := 0 ;
         showsourceitems(edit.editpos);
         sourcefo.thetimer.Enabled := false;
-        end
+        end;
+        key_Backspace: begin
+        selectwordatcursor();
+        edit.deleteselection;
+        end;
         else begin
          exclude(eventstate,es_processed);
         end;
