@@ -3,12 +3,13 @@ unit ${%UNITNAME%};
 interface
 uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
- msegraphics,msegraphutils,mseevent,mseclasses,mseforms,msedock,msedockpanelform;
+ msegraphics,msegraphutils,mseevent,mseclasses,mseforms,msesizingform;
 
 type
- t${%FORMNAME%} = class(tdockpanelform)
+ t${%FORMNAME%} = class(tsizingform)
  end;
-
+var
+ ${%FORMNAME%}: t${%FORMNAME%};
 implementation
 uses
  ${%UNITNAME%}_mfm;

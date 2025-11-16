@@ -7,8 +7,7 @@ uses
  msereport;
 
 type
- t${%FORMNAME%} = class(treport)
-   treportpage1: treportpage;
+ t${%FORMNAME%} = class(treppageform)
  end;
 var
  ${%FORMNAME%}: t${%FORMNAME%};

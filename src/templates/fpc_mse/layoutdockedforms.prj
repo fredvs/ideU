@@ -20,7 +20,7 @@ order17=0
 order18=0
 [projectoptions]
 projectdir=/home/fred/mseide-msegui/apps/ide/templates
-projectfilename=/home/fred/mseide-msegui/apps/ide/templates/zeos.prj
+projectfilename=/home/fred/mseide-msegui/apps/ide/templates/layoutdockedforms.prj
 options=131
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
@@ -115,10 +115,10 @@ options=131
  sortdescend6=0
  sortdescend7=0
  values8=4
-  -l -Mdelphi -Sh
+  -l -Mobjfpc -Sh -Fcutf8
   -gl -O-
   -B
-  -OG2p3 -XX -Xs
+  -O2 -XX -CX -Xs
  sortdescend8=0
  [projectoptionsfo.makegroupbox]
  firsttab=0
@@ -146,11 +146,11 @@ options=131
  index=0
  [projectoptionsfo.tabwidget]
  firsttab=0
- index=2
+ index=0
  [projectoptionsfo]
  stackedunder=
- x=154
- y=97
+ x=207
+ y=59
  cx=832
  cy=581
 sourcefilemasks=3
@@ -254,14 +254,11 @@ exceptignore=1
  0
 nodebugbeginend=0
 fpcgdbworkaround=1
-mainfile=${PROJECTNAME}.pas
-targetfile=${PROJECTNAME}${EXEEXT}
+mainfile=
+targetfile=
 makecommand=${COMPILER}
 makedir=
-unitdirs=5
- ${MSEDIR}lib/addon/*/
- ${zeosdir}src/*/
- ${zeosdir}src/
+unitdirs=2
  ${MSELIBDIR}kernel/$TARGETOSDIR/
  ${MSELIBDIR}*/
 unitpref=-Fu
@@ -272,10 +269,10 @@ targpref=-o
 befcommand=0
 aftcommand=0
 makeoptions=4
- -l -Mdelphi -Sh
+ -l -Mobjfpc -Sh -Fcutf8
  -gl -O-
  -B
- -OG2p3 -XX -Xs
+ -O2 -XX -CX -Xs
 reversepathorder=0
 makeoptpurpose=4
  
@@ -289,19 +286,13 @@ makeoptionson=4
  34
  32
 aftcommandon=0
-unitdirson=5
- 196671
- 983103
- 983103
+unitdirson=2
  65599
  65599
 uid=0
-macroon=1
- 63
-macronames=1
- zeosdir
-macrovalues=1
- /home/mse/packs/standard/svn/zeos/trunk/
+macroon=0
+macronames=0
+macrovalues=0
 groupcomments=6
  
  
@@ -382,16 +373,8 @@ formatmacronames=0
 formatmacrovalues=0
 scriptbeforecopy=
 scriptaftercopy=
-newprojectfiles=4
- ${TEMPLATEDIR}default/project.pas
- ${TEMPLATEDIR}default/main.pas
- ${TEMPLATEDIR}default/main.mfm
- ${TEMPLATEDIR}default/main_mfm.pas
-newprojectfilesdest=4
- ${%PROJECTNAME%}.pas
- 
- 
- 
+newprojectfiles=0
+newprojectfilesdest=0
 newfinames=3
  Program
  Unit
@@ -468,16 +451,8 @@ newfoforms=11
  ${TEMPLATEDIR}default/report.mfm
  ${TEMPLATEDIR}default/pascform.mfm
  ${TEMPLATEDIR}default/inheritedform.mfm
-expandprojectfilemacros=4
- 1
- 1
- 1
- 0
-loadprojectfile=4
- 1
- 1
- 1
- 0
+expandprojectfilemacros=0
+loadprojectfile=0
 newinheritedforms=11
  0
  0
@@ -524,7 +499,7 @@ stripmessageesc=0
 copymessages=0
 closemessages=0
 checkmethods=1
-colorerror=-1610612712
+colorerror=-1610612717
 colorwarning=-1610612712
 colornote=-1610612716
 sigsettings=27
@@ -576,9 +551,13 @@ address=0
 addbkpt=0
 ignore=0
 condition=0
-panels=2
+panels=6
  panel1
  panel2
+ panel3
+ panel4
+ panel5
+ panel6
 [componentstore]
 storedir=/home/fred/mseide-msegui/apps/ide/compstore/
 filename=
@@ -608,11 +587,11 @@ moduleoptions=0
 visiblemodules=0
 nomenumodules=0
 [sourcefo.tabwidget]
-tabsize=114
+tabsize=127
 firsttab=0
 index=-1
 [layout]
-windowlayout=555
+windowlayout=614
  [mainfo.openform]
  filenames=0
  filecolwidth=0
@@ -645,7 +624,7 @@ windowlayout=555
  [mainfo]
  splitdir=0
  useroptions=301990011
- stackedunder=
+ stackedunder=mainfo.panel2
  parent=
  mdistate=0
  nx=0
@@ -659,7 +638,7 @@ windowlayout=555
  rcx=0
  rcy=0
  wsize=0
- active=1
+ active=0
  visible=1
  [targetconsolefo]
  splitdir=0
@@ -700,7 +679,7 @@ windowlayout=555
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=breakpointsfo
+ stackedunder=componentstorefo
  parent=
  mdistate=0
  nx=0
@@ -727,7 +706,7 @@ windowlayout=555
  [disassfo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentpalettefo
+ stackedunder=mainfo.panel1
  parent=
  mdistate=0
  nx=0
@@ -769,7 +748,7 @@ windowlayout=555
  [projecttreefo]
  splitdir=0
  useroptions=268451947
- stackedunder=componentstorefo
+ stackedunder=memoryfo
  parent=
  mdistate=0
  nx=0
@@ -872,27 +851,24 @@ windowlayout=555
  [objectinspectorfo]
  splitdir=0
  useroptions=268451947
- stackedunder=mainfo.panel1
- parent=
+ parent=mainfo.panel5.container
+ visible=1
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=724
- y=157
- cx=296
- cy=566
+ x=518
+ y=0
+ cx=233
+ cy=517
  rcx=0
  rcy=0
- wsize=0
- active=0
- visible=1
  [objectinspectorfo.grid]
- propcolwidthref=286
- width0=105
+ propcolwidthref=233
+ width0=86
  sortdescend0=0
- width1=175
+ width1=141
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1019,26 +995,24 @@ windowlayout=555
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
- filenames=1
-  /home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
+ filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- lastdir=/home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
+ lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
  [componentstorefo.groupfiledialog]
- filenames=1
-  /home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
+ filenames=0
  filecolwidth=0
  x=0
  y=0
  cx=0
  cy=0
- lastdir=/home/mse/packs/standard/git/mseide-msegui/apps/ide/compstore/
+ lastdir=
  filehistory=0
  filefilterindex=0
  filefilter=
@@ -1056,22 +1030,19 @@ windowlayout=555
  [componentpalettefo]
  splitdir=0
  useroptions=268460139
- stackedunder=objectinspectorfo
- parent=
+ parent=mainfo.panel4.container
+ visible=1
  mdistate=0
  nx=0
  ny=0
  ncx=0
  ncy=0
- x=335
- y=29
- cx=685
- cy=103
+ x=0
+ y=0
+ cx=761
+ cy=75
  rcx=0
  rcy=0
- wsize=0
- active=0
- visible=1
  [componentpalettefo.componentpages]
  activetab=0
  [debuggerfo]
@@ -1110,6 +1081,111 @@ windowlayout=555
  checked=1
  [actionsmo.bluedotsonact]
  checked=1
+ [mainfo.panel1]
+ splitdir=2
+ useroptions=302022123
+ stackedunder=mainfo
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=5
+ y=118
+ cx=685
+ cy=605
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [mainfo.panel2]
+ splitdir=2
+ useroptions=302022123
+ stackedunder=mainfo.panel3
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=697
+ y=29
+ cx=323
+ cy=534
+ rcx=0
+ rcy=0
+ wsize=0
+ active=0
+ visible=1
+ [mainfo.panel3]
+ splitdir=1
+ useroptions=268467691
+ stackedunder=
+ parent=
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=249
+ y=118
+ cx=771
+ cy=605
+ rcx=0
+ rcy=0
+ wsize=0
+ active=1
+ visible=1
+ [mainfo.panel4]
+ splitdir=2
+ useroptions=268467691
+ parent=mainfo.panel3.container
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=0
+ cx=761
+ cy=605
+ rcx=0
+ rcy=0
+ [mainfo.panel5]
+ splitdir=1
+ useroptions=268467691
+ parent=mainfo.panel4.container
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=78
+ cx=761
+ cy=517
+ rcx=0
+ rcy=0
+ [mainfo.panel6]
+ splitdir=2
+ useroptions=268467691
+ parent=mainfo.panel5.container
+ visible=1
+ mdistate=0
+ nx=0
+ ny=0
+ ncx=0
+ ncy=0
+ x=0
+ y=0
+ cx=515
+ cy=517
+ rcx=0
+ rcy=0
  [cpuc86_64fo]
  irqoff=0
  splitdir=0
@@ -1130,44 +1206,6 @@ windowlayout=555
  wsize=0
  active=0
  visible=0
- [mainfo.panel1]
- splitdir=2
- useroptions=302022123
- stackedunder=mainfo.panel2
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=5
- y=118
- cx=685
- cy=605
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
- [mainfo.panel2]
- splitdir=2
- useroptions=302022123
- stackedunder=mainfo
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=697
- y=189
- cx=323
- cy=534
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0

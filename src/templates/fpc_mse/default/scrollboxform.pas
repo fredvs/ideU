@@ -5,7 +5,7 @@ uses
  msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msestat,msemenus,msegui,
  msegraphics,msegraphutils,mseevent,mseclasses,msewidgets,mseforms;
 type
- t${%FORMNAME%} = class(tsubform)
+ t${%FORMNAME%} = class(tscrollboxform)
  end;
 var
  ${%FORMNAME%}: t${%FORMNAME%};
