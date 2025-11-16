@@ -50,13 +50,20 @@ implementation
 
 uses
   commandlineform_mfm,
-  make, projectoptionsform;
+  make, projectoptionsform, confideu;
 
 procedure showcommandline;
 var
   fo: tcommandlinefo;
+  ratio :double;
+  
 begin
   fo := tcommandlinefo.Create(nil);
+  
+  ratio := confideufo.fontsize.Value /12;
+  fo.width := round( ratio * 542 );
+  fo.height := round( ratio * 100);
+  fo.font.height := confideufo.fontsize.Value;
   try
     if projectoptions.defaultmake >= maxdefaultmake then
       fo.disp.Value := fo.c[Ord(makedisabled)]
