@@ -24,6 +24,7 @@ uses
   msestockobjects,
   mseconsts,
   captionideu,
+  confideu,
   mseforms,
   mselistbrowser,
   msetypes,
@@ -141,7 +142,26 @@ end;
 procedure tselecteditpagefo.fooncreate(const Sender: TObject);
 var
   int1, int2: integer;
+  ratio: double;
+  
 begin
+  ratio       := confideufo.fontsize.Value / 12;
+  font.height := confideufo.fontsize.Value;
+  Width := round(ratio * 600);
+  height := round(ratio * 300);
+  
+  pathdisp.Width := round(ratio * 523);
+  pathdisp.height := round(ratio * 22);
+  
+  openfilebutton.Width := round(ratio * 70);
+  openfilebutton.height := round(ratio * 20);
+  openfilebutton.left := round(ratio * 526);
+  
+  list.Width := round(ratio * 600);
+  list.height := round(ratio * 274);
+  list.top := round(ratio * 26);
+  list.cellwidth := round(ratio * 150);
+     
   setlength(fpaths, sourcefo.Count);
   setlength(frelpaths, sourcefo.Count);
   setlength(fnames, sourcefo.Count);

@@ -1,17 +1,17 @@
 object selecteditpagefo: tselecteditpagefo
   visible = False
-  bounds_x = 651
-  bounds_y = 215
-  bounds_cx = 597
-  bounds_cy = 298
+  bounds_x = 442
+  bounds_y = 277
+  bounds_cx = 600
+  bounds_cy = 300
   container.frame.localprops = []
   container.frame.localprops1 = []
   container.onlayout = formonchildscaled
   container.bounds = (
     0
     0
-    597
-    298
+    600
+    300
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -71,12 +71,12 @@ object selecteditpagefo: tselecteditpagefo
     frame.localprops1 = []
     bounds_x = 0
     bounds_y = 26
-    bounds_cx = 594
-    bounds_cy = 272
+    bounds_cx = 600
+    bounds_cy = 274
     anchors = [an_left, an_top, an_right, an_bottom]
     datarowlinewidth = 0
     datacollinewidth = 0
-    cellwidth = 100
+    cellwidth = 150
     cellheight = 20
     cellframe.leveli = 1
     cellframe.localprops = [frl_leveli]
@@ -84,7 +84,7 @@ object selecteditpagefo: tselecteditpagefo
     optionsgrid = [og_colsizing, og_focuscellonenter, og_colchangeontabkey, og_wraprow, og_wrapcol, og_autopopup]
     options = [lvo_readonly, lvo_horz, lvo_drawfocus, lvo_mousemovefocus, lvo_focusselect, lvo_mouseselect, lvo_locate, lvo_hintclippedtext]
     onitemevent = doonitemevent
-    reffontheight = 15
+    reffontheight = 17
   end
   object pathdisp: tstringdisp
     frame.localprops = []
@@ -92,14 +92,15 @@ object selecteditpagefo: tselecteditpagefo
     taborder = 2
     bounds_x = 0
     bounds_y = 2
-    bounds_cx = 520
+    bounds_cx = 523
+    bounds_cy = 22
     anchors = [an_left, an_top, an_right]
     textflags = [tf_ycentered, tf_ellipseleft]
-    reffontheight = 15
+    reffontheight = 17
   end
   object openfilebutton: tbutton
     taborder = 1
-    bounds_x = 523
+    bounds_x = 526
     bounds_y = 2
     bounds_cx = 70
     bounds_cy = 20
