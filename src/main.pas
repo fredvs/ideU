@@ -41,7 +41,7 @@ uses
  msegraphics,mseglob,msestream,msepointer,mseprocmonitorcomp,msesystypes,
  mserttistat,msedatalist,mselistbrowser,projecttreeform,msepipestream,
  msestringcontainer,msesys,mseedit,msewidgets,msegraphedits,mseificomp,
- mseificompglob,mseifiglob,msescrollbar,msesimplewidgets;
+ mseificompglob,mseifiglob,msescrollbar;
 
 const
   versiontext = '2.18.0';
@@ -108,8 +108,6 @@ type
     poscx: tintegeredit;
     poscy: tintegeredit;
     tframecomp2dark: tframecomp;
-    dialogtext : tlabel;
-  
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
