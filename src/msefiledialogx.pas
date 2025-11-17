@@ -770,6 +770,7 @@ var
 begin
   with dialog do
   begin
+        
     dir.checksubdir      := fdo_checksubdir in aoptions;
     listview.checksubdir := fdo_checksubdir in aoptions;
     dialogoptions        := aoptions;
@@ -936,7 +937,7 @@ begin
 
     dialog.blateral.value  := true;
     dialog.bcompact.value  := true;
-
+    
     if acaption = '' then
     begin
    {$ifdef mse_dynpo}
@@ -2521,12 +2522,16 @@ end;
 procedure tfiledialogxfo.onformcreated(const Sender: TObject);
 var
 strz : string = '';
+rect1: rectty;
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fcourseid := -1;
 
      // caption := 'Select a file';
-
+  rect1 := application.screenrect(window);
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+ 
  {$ifdef mse_dynpo}
  if length(lang_stockcaption) > 0 then
  begin
