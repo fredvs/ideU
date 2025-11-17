@@ -2527,12 +2527,7 @@ begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fcourseid := -1;
 
-     // caption := 'Select a file';
-  rect1 := application.screenrect(window);
-  left := (rect1.cx - Width) div 2;
-  top := (rect1.cy - height) div 2;
- 
- {$ifdef mse_dynpo}
+  {$ifdef mse_dynpo}
  if length(lang_stockcaption) > 0 then
  begin
    dir.frame.caption:= lang_stockcaption[ord(sc_directory)] + strz ;
@@ -2569,7 +2564,9 @@ begin
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
 
- // application.ProcessMessages;
+  rect1 := application.screenrect(window);
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
 
 end;
 
