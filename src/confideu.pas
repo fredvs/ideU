@@ -414,7 +414,7 @@ begin
   if findformcreated then
     finddialogdotextsize;
 
-  rect1 := application.screenrect(window);
+  rect1 := application.screenrect();
 
   fontname.left := 10;
   fontsize.left := 10;

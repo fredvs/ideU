@@ -1697,8 +1697,8 @@ function confirmsavechangedfile(const filename: filenamety;
 begin
 
   if multiple then begin
-  modalresult:= showmessage(sc(sc_file) + ' ' +filename+ #13 + 
-                  sc(sc_is_modified_save)+ #13 ,sc(sc_confirmation),
+  modalresult:= showmessage(sc(sc_file) + ' ' +filename+ ' ' + 
+                  sc(sc_is_modified_save) ,sc(sc_confirmation),
                    [mr_yes,mr_all,mr_no,mr_noall,mr_cancel],mr_yes);
   end
   else begin
@@ -1923,8 +1923,10 @@ var
  acanvas: tcanvas;
  textoffset: integer;
  transientfor: twindow;
-
+ //textwidth: integer;
+ //ratio : double;
 begin
+
  with pshowmessageinfoty(adata)^ do begin
   application.lockifnotmainthread;
   try
@@ -2055,7 +2057,20 @@ begin
                         placementrect^,placement,widget.window.decoratedsize);
     end;
    }
+   
+    rect1 := application.screenrect();
+    application.processmessages();
+    //ratio := rect1.cx / 1024 ;
+    //widget.width := round(((length(atext) * 5) + 40) * ratio);
+    widget.left := (rect1.cx - widget.width) div 2;
+    widget.top := (rect1.cy - widget.height) div 2;
     result:= widget.show(true,transientfor);
+    widget.invalidate; 
+    if widget.top <> (rect1.cy - widget.height) div 2
+    then     widget.top := (rect1.cy - widget.height) div 2;
+    if widget.left <> (rect1.cx - widget.width) div 2 then
+     widget.left := (rect1.cx - widget.width) div 2;
+       
    finally
     widget1.free;
     widget.Free;
@@ -2076,7 +2091,17 @@ function internalshowmessage(const atext_,caption_: msestring;
                   const async_: boolean = false): modalresultty;
 var
  info: showmessageinfoty;
+ textwidth : integer = 350;
+ rect1: rectty;
+ ratio: double;
+ 
 begin
+
+rect1 := application.screenrect();
+
+ratio := rect1.cx / 1024 ;
+textwidth := round(((length(atext_) * 5) + 40) * ratio);
+
  with info do begin
   atext:= atext_;
   caption:= caption_;
@@ -2085,8 +2110,8 @@ begin
   defaultbutton:= defaultbutton_;
   noshortcut:= noshortcut_;
   placementrect:= placementrect_;
-  placement:= placement_;
-  minwidth:= minwidth_;
+  placement:= cp_center;
+  minwidth:= textwidth;
   setlength(actions,length(actions_));
   move(actions_[0],actions[0],length(actions)*
                              sizeof({$ifndef FPC}@{$endif}actions[0]));

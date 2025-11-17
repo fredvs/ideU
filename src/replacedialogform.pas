@@ -40,6 +40,7 @@ type
    butok: tbutton;
    procedure oncreat(const sender: TObject);
    procedure onok(const sender: TObject);
+   procedure onevenloop(const sender: TObject);
   private
     procedure valuestoinfo(out info: replaceinfoty);
     procedure infotovalues(const info: replaceinfoty);
@@ -141,6 +142,15 @@ end;
 procedure treplacedialogfo.onok(const sender: TObject);
 begin
 close;
+end;
+
+procedure treplacedialogfo.onevenloop(const sender: TObject);
+var
+ rect1: rectty;
+begin
+ rect1 := application.screenrect();
+ left := (rect1.cx - width) div 2;
+ top := (rect1.cy - height) div 2;
 end;
 
 end.

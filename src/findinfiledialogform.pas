@@ -279,7 +279,7 @@ procedure tfindinfiledialogfo.onactiv(const sender: TObject);
 var
  rect1: rectty;
 begin
- rect1 := application.screenrect(window);
+ rect1 := application.screenrect();
  left := (rect1.cx - width) div 2;
  top := (rect1.cy - height) div 2;
 end;

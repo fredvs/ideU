@@ -223,6 +223,16 @@ object mainfo: tmainfo
       value = 100
       reffontheight = 17
     end
+    object dialogtext: tlabel
+      taborder = 7
+      visible = False
+      bounds_x = 707
+      bounds_y = 33
+      bounds_cx = 38
+      bounds_cy = 17
+      caption = 'tlabel1'
+      reffontheight = 17
+    end
   end
   object gdb: tgdbmi
     guiintf = True

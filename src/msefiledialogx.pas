@@ -2565,7 +2565,8 @@ begin
   up.tag      := Ord(sc_up);
 
   application.processmessages;
-  rect1 := application.screenrect(window);
+  rect1 := application.screenrect();
+
   left := (rect1.cx - Width) div 2;
   top := (rect1.cy - height) div 2;
   invalidatewidget;

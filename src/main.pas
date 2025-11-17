@@ -31,7 +31,6 @@ interface
 {$endif}
 
 uses
- //templateeditor,
  {$ifdef usemo}mo2arrays,mo4stock,{$endif}po2arrays,
  msearrayutils,aboutform,plugmanager,msetimer,mseformatstr,mseconsts,
  dialogfiles,mseforms,mseguiglob,msegui,msegdbutils,mseactions,sak_mse,
@@ -42,7 +41,7 @@ uses
  msegraphics,mseglob,msestream,msepointer,mseprocmonitorcomp,msesystypes,
  mserttistat,msedatalist,mselistbrowser,projecttreeform,msepipestream,
  msestringcontainer,msesys,mseedit,msewidgets,msegraphedits,mseificomp,
- mseificompglob,mseifiglob,msescrollbar;
+ mseificompglob,mseifiglob,msescrollbar,msesimplewidgets;
 
 const
   versiontext = '2.18.0';
@@ -109,6 +108,8 @@ type
     poscx: tintegeredit;
     poscy: tintegeredit;
     tframecomp2dark: tframecomp;
+    dialogtext : tlabel;
+  
     procedure newfileonexecute(const Sender: TObject);
     procedure newformonexecute(const Sender: TObject);
 
@@ -675,7 +676,7 @@ var
   fontheightsugg: integer;
 begin
 
-  rect1 := application.screenrect(window);
+  rect1 := application.screenrect();
 
   // {$ifdef mswindows}
   // fontheightsugg := round(rect1.cx / 1280 * 12);
