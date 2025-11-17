@@ -2804,8 +2804,46 @@ procedure dofontsize;
 begin
   fo.font.Height := confideufo.fontsize.Value;
   fo.font.Name   := ansistring(confideufo.fontname.Value);
-
   fo.container.frame.font.Height := confideufo.fontsize.Value;
+  fo.unitdirs.controller.fontHeight := confideufo.fontsize.Value;
+  fo.unitdirs.controller.icon := mainfo.icon;
+  fo.runcommand.controller.fontHeight := confideufo.fontsize.Value;
+  fo.runcommand.controller.icon := mainfo.icon;
+  fo.debugtarget.controller.fontHeight := confideufo.fontsize.Value;
+  fo.debugtarget.controller.icon := mainfo.icon;
+  fo.debugcommand.controller.fontHeight := confideufo.fontsize.Value;
+  fo.debugcommand.controller.icon := mainfo.icon;
+  fo.mainfile.controller.fontHeight := confideufo.fontsize.Value;
+  fo.mainfile.controller.icon := mainfo.icon;
+  fo.targetfile.controller.fontHeight := confideufo.fontsize.Value;
+  fo.targetfile.controller.icon := mainfo.icon;
+  fo.makecommand.controller.fontHeight := confideufo.fontsize.Value;
+  fo.makecommand.controller.icon := mainfo.icon;
+  fo.makedir.controller.fontHeight := confideufo.fontsize.Value;
+  fo.makedir.controller.icon := mainfo.icon;
+  fo.messageoutputfile.controller.fontHeight := confideufo.fontsize.Value;
+  fo.messageoutputfile.controller.icon := mainfo.icon;
+  fo.codetemplatedirs.controller.fontHeight := confideufo.fontsize.Value;
+  fo.codetemplatedirs.controller.icon := mainfo.icon;
+  fo.sourcedirs.controller.fontHeight := confideufo.fontsize.Value;
+  fo.sourcedirs.controller.icon := mainfo.icon;
+  fo.sourcebase.controller.fontHeight := confideufo.fontsize.Value;
+  fo.sourcebase.controller.icon := mainfo.icon;
+  fo.settingsfile.controller.fontHeight := confideufo.fontsize.Value;
+  fo.settingsfile.controller.icon := mainfo.icon;
+  fo.uploadcommand.controller.fontHeight := confideufo.fontsize.Value;
+  fo.uploadcommand.controller.icon := mainfo.icon;
+  fo.gdbservercommand.controller.fontHeight := confideufo.fontsize.Value;
+  fo.gdbservercommand.controller.icon := mainfo.icon;
+  fo.gdbservercommandattach.controller.fontHeight := confideufo.fontsize.Value;
+  fo.gdbservercommandattach.controller.icon := mainfo.icon;
+  fo.scriptbeforecopy.controller.fontHeight := confideufo.fontsize.Value;
+  fo.scriptbeforecopy.controller.icon := mainfo.icon;
+  fo.scriptaftercopy.controller.fontHeight := confideufo.fontsize.Value;
+  fo.scriptaftercopy.controller.icon := mainfo.icon;
+  fo.newprojectfiles.controller.fontHeight := confideufo.fontsize.Value;
+  fo.newprojectfiles.controller.icon := mainfo.icon;
+
 end;
 
 function editprojectoptions: Boolean;

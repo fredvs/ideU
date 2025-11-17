@@ -300,6 +300,7 @@ begin
   // confideufo
   font.Height := fontsize.Value;
   font.Name   := ansistring(fontname.Value);
+  tesakitdir.controller.fontheight := fontsize.Value;
 
   group_file_change.Width := round(ratio * 280);
   group_system_layout.Width := round(ratio * 280);
@@ -750,6 +751,12 @@ begin
   begin
     projecttreefo.frame.grip_size         := round(12 * ratio);
     projecttreefo.projectedit.font.Height := fontsize.Value;
+    projecttreefo.filedialog.controller.fontHeight := fontsize.Value;
+    projecttreefo.filedialog.controller.icon := mainfo.icon;
+    
+    projecttreefo.cmoduledialog.controller.fontHeight := fontsize.Value;
+    projecttreefo.cmoduledialog.controller.icon := mainfo.icon;
+
     projecttreefo.edit.font.Height        := fontsize.Value;
     projecttreefo.projectedit.font.Name   := ansistring(fontname.Value);
     projecttreefo.edit.font.Name          := ansistring(fontname.Value);
