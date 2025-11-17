@@ -1558,10 +1558,10 @@ object settings_form: tsettingsfo
             captions.count = 4
             captions.items = <            
               item
-                caption = 'Value'
+                caption = 'Name'
               end            
               item
-                caption = 'Name'
+                caption = 'Value'
               end            
               item
               end            
@@ -1571,33 +1571,20 @@ object settings_form: tsettingsfo
         datacols.count = 2
         datacols.options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
         datacols.items = <        
-          item[macrovalue]
-            width = 256
-            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
-            widgetname = 'macrovalue'
-            dataclass = tgridmsestringdatalist
-          end        
           item[macroname]
             width = 142
             options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_proportional, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
             widgetname = 'macroname'
             dataclass = tgridmsestringdatalist
+          end        
+          item[macrovalue]
+            width = 256
+            options = [co_focusselect, co_mouseselect, co_keyselect, co_multiselect, co_rowselect, co_fill, co_savevalue, co_savestate, co_cancopy, co_canpaste, co_mousescrollrow]
+            widgetname = 'macrovalue'
+            dataclass = tgridmsestringdatalist
           end>
         datarowheight = 24
         reffontheight = 17
-        object macroname: tstringedit
-          optionswidget1 = [ow1_fontglyphheight]
-          optionsskin = [osk_framebuttononly]
-          taborder = 1
-          visible = False
-          bounds_x = 257
-          bounds_y = 0
-          bounds_cx = 142
-          bounds_cy = 24
-          optionsedit1 = [oe1_savevalue]
-          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-          reffontheight = 17
-        end
         object macrovalue: tmemodialogedit
           optionswidget1 = [ow1_fontglyphheight]
           optionsskin = [osk_framebuttononly]
@@ -1613,13 +1600,26 @@ object settings_form: tsettingsfo
             end>
           frame.button.color = -1879048187
           frame.button.imagenr = 17
-          taborder = 2
+          taborder = 1
           visible = False
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 400
           bounds_cy = 24
           anchors = [an_top]
+          optionsedit1 = [oe1_savevalue]
+          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+          reffontheight = 17
+        end
+        object macroname: tstringedit
+          optionswidget1 = [ow1_fontglyphheight]
+          optionsskin = [osk_framebuttononly]
+          taborder = 2
+          visible = False
+          bounds_x = 0
+          bounds_y = 0
+          bounds_cx = 142
+          bounds_cy = 24
           optionsedit1 = [oe1_savevalue]
           optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
           reffontheight = 17
