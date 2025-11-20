@@ -2059,12 +2059,13 @@ begin
    }
    
     rect1 := application.screenrect();
-    application.processmessages();
     //ratio := rect1.cx / 1024 ;
     //widget.width := round(((length(atext) * 5) + 40) * ratio);
     widget.left := (rect1.cx - widget.width) div 2;
     widget.top := (rect1.cy - widget.height) div 2;
     result:= widget.show(true,transientfor);
+    application.processmessages();
+    widget.invalidate;  
     sleep(100);
     if widget.top <> (rect1.cy - widget.height) div 2
     then     widget.top := (rect1.cy - widget.height) div 2;
@@ -2101,7 +2102,7 @@ rect1 := application.screenrect();
 
 ratio := rect1.cx / 1024 ;
 textwidth := round(((length(atext_) * 5) + 40) * ratio);
-
+if textwidth > 500 then textwidth := 520;
  with info do begin
   atext:= atext_;
   caption:= caption_;

@@ -4893,13 +4893,12 @@ strcoma := ', ' else strcoma := ',';
           if length(lang_actionsmodule) > ord(ac_unresolvedref) then
           raise exception.Create(ansistring(
                                    lang_actionsmodule[ord(ac_unresolvedref)]+' '+
-                                            msestring(lastmissed)+lineend+
+                                            msestring(lastmissed)+ '.  ' +
                           lang_actionsmodule[ord(ac_modules)]+' '+wstr1+'.')) else
           
            raise exception.Create(ansistring(
                                    'Unresolved reference to '+
-                                            msestring(lastmissed)+lineend+
-                          'Module '+wstr1+'.'))                
+                                            msestring(lastmissed)+ '.  Module '+wstr1+'.'))                
          end;
          result^.resolved:= true;
         except
@@ -4938,10 +4937,10 @@ strcoma := ', ' else strcoma := ',';
      on e: exception do begin
     if length(lang_actionsmodule) > ord(ac_cannotreadform) then
       e.Message:= ansistring(lang_actionsmodule[ord(ac_cannotreadform)]+ ' "' + filename)+
-                                                        '".'+lineend+e.Message 
+                                                        '".  '+e.Message 
      else
        e.Message:= ansistring('Can not read formfile "' + filename)+
-                                                        '".'+lineend+e.Message;
+                                                        '".  '+e.Message;
  
                                                     
       raise;
@@ -4967,7 +4966,7 @@ strcoma := ', ' else strcoma := ',';
           str1:= '';
          end;
          exp1:= exception.create(ansistring(
-             lang_actionsmodule[ord(ac_cannotreadform)]+' "' +filename+'".'+lineend+
+             lang_actionsmodule[ord(ac_cannotreadform)]+' "' +filename+'".  '+
              lang_actionsmodule[ord(ac_unresolvedref)]+
                                            msestring(rootnames[0]+str1+'.')));
         end;

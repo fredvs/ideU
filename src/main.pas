@@ -876,7 +876,7 @@ begin
       action := ShowMessage(lang_mainform[Ord(ma_unresreferences)] + ' ' + utf8decode(amodule^.
         moduleclassname) + ' ' +
         lang_mainform[Ord(ma_str_to)] + ' ' + utf8decode(aname) +
-        '.' + lineend + ' ' + lang_mainform[Ord(ma_wishsearch)],
+        '.  ' + lang_mainform[Ord(ma_wishsearch)],
         lang_stockcaption[Ord(sc_warningupper)],
         [mr_ok, mr_cancel], mr_ok)
     else
@@ -884,7 +884,7 @@ begin
       ShowMessage('Unresolved references in ' +
         utf8decode(amodule^.moduleclassname) +
         ' to ' +
-        utf8decode(aname) + '.' + lineend +
+        utf8decode(aname) + '.  ' +
         'Do you wish to search the formfile?',
         'WARNING');
 
