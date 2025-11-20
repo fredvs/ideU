@@ -1919,7 +1919,7 @@ var
  widget1: twidget; //dummy parent to get invisible canvas
  but: array[0..integer(high(modalresultty))] of tmessagebutton;
  int1,int2: integer;
- rect1{,rect2}: rectty;
+ rect1,rect2: rectty;
  acanvas: tcanvas;
  textoffset: integer;
  transientfor: twindow;
@@ -1933,6 +1933,8 @@ begin
    transientfor:= application.unreleasedactivewindow;
    widget1:= twidget.create(nil);
    widget1.visible:= false;
+   
+   rect2 := application.screenrect();
          //stays invisible, no wm_configured processing on win32
    widget:= tshowmessagewidget.create(nil,(transientfor <> nil) and
                (transientfor.ispopup) and transientfor.owner.visible,
@@ -2058,11 +2060,9 @@ begin
     end;
    }
     
-    application.processmessages();
-    sleep(10);
-    rect1 := application.screenrect();
-    widget.left := (rect1.cx - widget.width) div 2;
-    widget.top := (rect1.cy - widget.height) div 2;  
+    rect2 := application.screenrect();
+    widget.left := (rect2.cx - widget.width) div 2;
+    widget.top := (rect2.cy - widget.height) div 2;  
     result:= widget.show(true,transientfor);
     finally
     widget1.free;
