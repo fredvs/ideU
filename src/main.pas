@@ -589,6 +589,7 @@ begin
 {$endif}
 
   nozorderhandling := True;
+
   designer.ongetmodulenamefile :=
 {$ifdef FPC}
     @
@@ -881,15 +882,14 @@ begin
         [mr_ok, mr_cancel], mr_ok)
     else
     begin
-      ShowMessage('Unresolved references in ' +
+       action := ShowMessage('Unresolved references in ' +
         utf8decode(amodule^.moduleclassname) +
         ' to ' +
         utf8decode(aname) + '.  ' +
         'Do you wish to search the formfile?',
-        'WARNING');
+        'WARNING',[mr_ok, mr_cancel], mr_ok);
 
-      action := mr_ok;
-    end;
+        end;
 
     case action of
       mr_ok:
@@ -1107,8 +1107,7 @@ begin
         with projectoptions, o, texp do
           if modified and not savechecked then
           begin
-            application.processmessages;
-            sleep(100);
+            sleep(10);
             Result := ShowMessage(lang_xstockcaption[Ord(sc_project)] + ' ' + fprojectname +
               ' ' + lang_stockcaption[Ord(sc_is_modified_save)] + '       ', lang_stockcaption[Ord(
               sc_Confirmation)],
@@ -3557,8 +3556,8 @@ begin
       //  if projectoptions.o.enablesource = False then
       //    actionsmo.projectsourceexe(Nil)
       //  else
-      if sourcefo.files_tab.Count = 0 then
-        actionsmo.projectsourceexe(nil);
+     if sourcefo.files_tab.Count = 0 then
+       actionsmo.projectsourceexe(nil);
 
     end;
     sourcefo.updatehinttab;

@@ -2569,7 +2569,9 @@ begin
 
     fo.makeoptionsgrid.datacols[0].Visible := False;
 
-  //   if fo.enablesource.value = true then  actionsmo.projectsourceexe(nil);
+    //if fo.enablesource.value = true then
+    
+      actionsmo.projectsourceexe(nil);
 
 end;
 
