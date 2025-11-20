@@ -2057,22 +2057,14 @@ begin
                         placementrect^,placement,widget.window.decoratedsize);
     end;
    }
-   
-    rect1 := application.screenrect();
-    //ratio := rect1.cx / 1024 ;
-    //widget.width := round(((length(atext) * 5) + 40) * ratio);
-    widget.left := (rect1.cx - widget.width) div 2;
-    widget.top := (rect1.cy - widget.height) div 2;
-    result:= widget.show(true,transientfor);
+    
     application.processmessages();
-    widget.invalidate;  
-    sleep(100);
-    if widget.top <> (rect1.cy - widget.height) div 2
-    then     widget.top := (rect1.cy - widget.height) div 2;
-    if widget.left <> (rect1.cx - widget.width) div 2 then
-     widget.left := (rect1.cx - widget.width) div 2;
-    widget.invalidate;    
-   finally
+    sleep(10);
+    rect1 := application.screenrect();
+    widget.left := (rect1.cx - widget.width) div 2;
+    widget.top := (rect1.cy - widget.height) div 2;  
+    result:= widget.show(true,transientfor);
+    finally
     widget1.free;
     widget.Free;
    end;
