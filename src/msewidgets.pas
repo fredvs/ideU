@@ -1697,13 +1697,13 @@ function confirmsavechangedfile(const filename: filenamety;
 begin
 
   if multiple then begin
-  application.processmessages;
-  sleep(100);
+  sleep(10);
   modalresult:= showmessage(sc(sc_file) + ' ' +filename+ ' ' + 
                   sc(sc_is_modified_save) + '       ',sc(sc_confirmation),
                    [mr_yes,mr_all,mr_no,mr_noall,mr_cancel],mr_yes);
   end
   else begin
+  sleep(10);
    modalresult:= showmessage(sc(sc_file)+' '+filename+' '+
                   sc(sc_is_modified_save) + '       ',sc(sc_confirmation),
                    [mr_yes,mr_no,mr_cancel],mr_yes);
