@@ -1107,8 +1107,10 @@ begin
         with projectoptions, o, texp do
           if modified and not savechecked then
           begin
+            application.processmessages;
+            sleep(100);
             Result := ShowMessage(lang_xstockcaption[Ord(sc_project)] + ' ' + fprojectname +
-              ' ' + lang_stockcaption[Ord(sc_is_modified_save)], lang_stockcaption[Ord(
+              ' ' + lang_stockcaption[Ord(sc_is_modified_save)] + '       ', lang_stockcaption[Ord(
               sc_Confirmation)],
               [mr_yes, mr_no, mr_cancel], mr_yes);
 
