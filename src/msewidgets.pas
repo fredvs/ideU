@@ -2065,12 +2065,12 @@ begin
     widget.left := (rect1.cx - widget.width) div 2;
     widget.top := (rect1.cy - widget.height) div 2;
     result:= widget.show(true,transientfor);
-    widget.invalidate; 
+    sleep(100);
     if widget.top <> (rect1.cy - widget.height) div 2
     then     widget.top := (rect1.cy - widget.height) div 2;
     if widget.left <> (rect1.cx - widget.width) div 2 then
      widget.left := (rect1.cx - widget.width) div 2;
-       
+    widget.invalidate;    
    finally
     widget1.free;
     widget.Free;
