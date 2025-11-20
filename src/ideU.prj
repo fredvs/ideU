@@ -69,148 +69,55 @@ order16=0
 order17=0
 order18=0
 [projectoptions]
- [findinfileadialogfo.subdirs]
- value=1
- [findinfileadialogfo.incurrentfile]
- value=0
- [findinfileadialogfo.inopenfiles]
- value=0
- [findinfileadialogfo.wholeword]
- value=0
- [findinfileadialogfo.indirectories]
- value=0
- [findinfileadialogfo.inprojectdir]
- value=1
- [findinfileadialogfo.casesensitive]
- value=0
- [findinfileadialogfo.mask]
- [findinfileadialogfo.dir]
- [findinfileadialogfo.findtext]
- [findinfileadialogfo]
- [finddialogfo.selectedonly]
- [replacedialogfo.promptonreplace]
- [replacedialogfo.selectedonly]
- [replacedialogfo.replacetext]
- [replacedialogfo]
+projectdir=/home/fred/ideU_work/src
+projectfilename=/home/fred/ideU_work/src/ideU.prj
+options=109
  [projectoptionsfo.toolshortcuts]
  dropdowncolwidths=3
   70
   70
   70
  [projectoptionsfo.twidgetgrid3]
- propcolwidthref=836
+ propcolwidthref=775
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
  sortdescend3=0
- width4=113
+ width4=106
  sortdescend4=0
- width5=90
+ width5=94
  sortdescend5=0
- width6=60
+ width6=86
  sortdescend6=0
- width7=60
+ width7=78
  sortdescend7=0
- width8=86
+ width8=41
  sortdescend8=0
- width9=340
+ width9=289
  sortdescend9=0
  [projectoptionsfo.twidgetgrid4]
- propcolwidthref=691
- width0=96
- sortdescend0=0
- sortdescend1=0
- width2=73
- sortdescend2=0
- width3=331
- sortdescend3=0
- width4=351
- sortdescend4=0
- sorted=0
- col=-1073741823
- row=-1073741823
- rowheight=19
- [projectoptionsfo.newfile]
- firsttab=0
- index=2
- [projectoptionsfo.fontaliasgrid]
- propcolwidthref=517
- width0=98
- sortdescend0=0
- width1=506
- sortdescend1=0
- width2=50
- sortdescend2=0
- width3=50
- sortdescend3=0
- width4=50
- sortdescend4=0
- width5=50
- sortdescend5=0
- width6=70
- sortdescend6=0
- [projectoptionsfo.macrosplitter]
- x=0
- y=218
- xprop=1
- yprop=0.3981981981982
- [projectoptionsfo.macrogrid]
- propcolwidthref=609
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- sortdescend4=0
- sortdescend5=0
- sortdescend6=0
- sortdescend7=0
-options=114
- [projectoptionsfo.toolshortcuts]
- dropdowncolwidths=3
-  70
-  70
-  70
- [projectoptionsfo.twidgetgrid3]
- propcolwidthref=762
- sortdescend0=0
- sortdescend1=0
- sortdescend2=0
- sortdescend3=0
- width4=104
- sortdescend4=0
- width5=92
- sortdescend5=0
- width6=85
- sortdescend6=0
- width7=77
- sortdescend7=0
- width8=39
- sortdescend8=0
- width9=284
- sortdescend9=0
- [projectoptionsfo.twidgetgrid4]
- propcolwidthref=590
+ propcolwidthref=603
  width0=96
  sortdescend0=0
  sortdescend1=0
  width2=100
  sortdescend2=0
- width3=274
+ width3=280
  sortdescend3=0
- width4=307
+ width4=314
  sortdescend4=0
  sorted=0
  col=-1073741823
  row=-1073741823
- rowheight=19
+ rowheight=22
  [projectoptionsfo.newfile]
  firsttab=0
  index=0
  [projectoptionsfo.fontaliasgrid]
- propcolwidthref=313
+ propcolwidthref=326
  width0=143
  sortdescend0=0
- width1=302
+ width1=315
  sortdescend1=0
  width2=66
  sortdescend2=0
@@ -224,11 +131,11 @@ options=114
  sortdescend6=0
  [projectoptionsfo.macrosplitter]
  x=0
- y=200
+ y=199
  xprop=1
- yprop=0.37384898710866
+ yprop=0.37407407407407
  [projectoptionsfo.macrogrid]
- propcolwidthref=535
+ propcolwidthref=548
  sortdescend0=0
  sortdescend1=0
  sortdescend2=0
@@ -241,7 +148,7 @@ options=114
  sortdescend9=0
  width10=146
  sortdescend10=0
- width11=519
+ width11=532
  sortdescend11=0
  [projectoptionsfo.comment_1]
  value=
@@ -253,32 +160,27 @@ options=114
  firsttab=0
  index=2
  [projectoptionsfo.exceptionsgrid]
- propcolwidthref=723
+ propcolwidthref=736
  width0=77
  sortdescend0=0
- width1=717
+ width1=730
  sortdescend1=0
  [projectoptionsfo.ttabwidget1]
  firsttab=0
  index=0
  [projectoptionsfo.filefiltergrid]
- propcolwidthref=660
+ propcolwidthref=562
  width0=186
  sortdescend0=0
- width1=653
+ width1=555
  sortdescend1=0
  [projectoptionsfo.ttabwidget2]
  firsttab=0
  index=0
  [projectoptionsfo.setting_tab]
  firsttab=2
- index=11
+ index=2
  [projectoptionsfo]
- stackedunder=
- x=212
- y=58
- cx=813
- cy=606
 settaborder=15
  [setcreateorderfo.grid]
  propcolwidthref=331
@@ -822,18 +724,9 @@ settingsstorage=0
 settingsprojecttree=0
 settingsautoload=0
 settingsautosave=0
-modulenames=3
- ACTIONSMO
- MAINFO
- SOURCEFO
-moduletypes=3
- TACTIONSMO
- TMAINFO
- TSOURCEFO
-modulefiles=3
- ${PROJECTDIR}/actionsmodule.mfm
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.mfm
+modulenames=0
+moduletypes=0
+modulefiles=0
 befcommandon=0
 makeoptionson=19
  4095
@@ -1411,6 +1304,8 @@ files=
   )
  )
 [componentstore]
+storedir=/home/fred/mseide-msegui/apps/ide/compstore/
+filename=
 [components]
 [selecteditpage]
 colwidth=100
@@ -1448,51 +1343,24 @@ findhistory=20
  createnew
  linux
 findoptions=1
-editpos=4
- 0,0
- 0,-1073741823
- 0,-1073741823
- 0,-1073741823
+editpos=1
+ 0,1
 bookmarks0=0
-bookmarks1=0
-bookmarks2=0
-bookmarks3=0
-sourcefiles=4
+sourcefiles=1
  ${PROJECTDIR}/ideU.pas
- ${PROJECTDIR}/sourceform.pas
- ${PROJECTDIR}/actionsmodule.pas
- ${PROJECTDIR}/main.pas
-relpaths=4
+relpaths=1
  ideU.pas
- sourceform.pas
- actionsmodule.pas
- main.pas
-ismoduletexts=4
+ismoduletexts=1
  0
- 0
- 0
- 0
-modules=3
- ${PROJECTDIR}/actionsmodule.mfm
- ${PROJECTDIR}/main.mfm
- ${PROJECTDIR}/sourceform.mfm
-moduleoptions=3
- 0
- 0
- 0
-visiblemodules=3
- -1
- -1
- -1
-nomenumodules=3
- 0
- 0
- 0
+modules=0
+moduleoptions=0
+visiblemodules=0
+nomenumodules=0
 [sourcefo.files_tab]
 firsttab=0
 index=0
 [layout]
-windowlayout=540
+windowlayout=508
  [mainfo.basedock]
  splitdir=2
  useroptions=268450944
@@ -1506,15 +1374,18 @@ windowlayout=540
  ny=0
  ncx=0
  ncy=0
- x=94
- y=88
- cx=1428
+ x=113
+ y=75
+ cx=1214
  cy=724
  rcx=0
  rcy=0
  wsize=0
  active=1
  visible=1
+ [findinfilefo.tabs]
+ firsttab=0
+ index=-1
  [findmessagefo.findtext]
  value=
  history=3
@@ -1536,8 +1407,8 @@ windowlayout=540
  ncy=0
  x=467
  y=288
- cx=497
- cy=341
+ cx=700
+ cy=467
  rcx=0
  rcy=0
  wsize=0
@@ -1564,7 +1435,7 @@ windowlayout=540
  [memoryfo]
  splitdir=0
  useroptions=268451963
- stackedunder=dialogfilesfo
+ stackedunder=findmessagefo
  parent=
  mdistate=0
  nx=0
@@ -1607,22 +1478,6 @@ windowlayout=540
  wsize=0
  active=0
  visible=0
- [findinfilefo]
- splitdir=0
- useroptions=268451947
- stackedunder=
- parent=
- mdistate=0
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=158
- y=323
- cx=1190
- cy=414
- rcx=0
- rcy=0
  [projecttreefo]
  splitdir=0
  useroptions=268484715
@@ -1636,19 +1491,19 @@ windowlayout=540
  x=0
  y=0
  cx=205
- cy=526
+ cy=520
  rcx=0
  rcy=0
  [projecttreefo.grid]
- propcolwidthref=88
+ propcolwidthref=73
  width0=117
  sortdescend0=0
- width1=86
+ width1=71
  sortdescend1=0
  sorted=0
  col=0
  row=11
- rowheight=19
+ rowheight=28
  [stackfo]
  splitdir=0
  useroptions=268460137
@@ -1726,10 +1581,10 @@ windowlayout=540
  [breakpointsfo.bkptson]
  value=1
  [objectinspectorfo.grid]
- propcolwidthref=355
- width0=165
+ propcolwidthref=430
+ width0=200
  sortdescend0=0
- width1=184
+ width1=224
  sortdescend1=0
  [symbolfo]
  splitdir=0
@@ -1822,8 +1677,8 @@ windowlayout=540
  ncx=0
  ncy=0
  x=0
- y=592
- cx=1414
+ y=589
+ cx=1200
  cy=109
  rcx=0
  rcy=0
@@ -1856,7 +1711,29 @@ windowlayout=540
  width3=185
  sortdescend3=0
  [componentstorefo.storefiledialog]
+ filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
+ filehistory=0
+ filefilterindex=0
+ filefilter=
  [componentstorefo.groupfiledialog]
+ filenames=1
+  /home/fred/mseide-msegui/apps/ide/compstore/
+ filecolwidth=0
+ x=0
+ y=0
+ cx=0
+ cy=0
+ lastdir=/home/fred/mseide-msegui/apps/ide/compstore/
+ filehistory=0
+ filefilterindex=0
+ filefilter=
  [componentstorefo.compfiledialog]
  filenames=0
  filecolwidth=0
@@ -1901,8 +1778,8 @@ windowlayout=540
  ncy=0
  x=0
  y=0
- cx=1414
- cy=60
+ cx=1200
+ cy=63
  rcx=0
  rcy=0
  [debuggerfo.basedock]
@@ -1913,11 +1790,11 @@ windowlayout=540
  mdistate=0
  nx=0
  ny=0
- ncx=1414
+ ncx=1200
  ncy=65
  x=0
  y=0
- cx=1414
+ cx=1200
  cy=65
  rcx=0
  rcy=0
@@ -1947,8 +1824,8 @@ windowlayout=540
  ncy=0
  x=208
  y=0
- cx=1206
- cy=526
+ cx=992
+ cy=520
  rcx=0
  rcy=0
  [sourcefo.files_tab]
@@ -1987,30 +1864,11 @@ windowlayout=540
  ncx=0
  ncy=0
  x=0
- y=63
- cx=1414
- cy=526
+ y=66
+ cx=1200
+ cy=520
  rcx=0
  rcy=0
- [_mse_mainfo_mse_]
- splitdir=0
- useroptions=268451963
- stackedunder=_mse_actionsmo_mse_
- parent=
- mdistate=3
- nx=0
- ny=0
- ncx=0
- ncy=0
- x=453
- y=266
- cx=810
- cy=100
- rcx=0
- rcy=0
- wsize=0
- active=0
- visible=1
 [targetconsole]
 finddtext=
 findhistory=0
