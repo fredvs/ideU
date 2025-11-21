@@ -386,11 +386,18 @@ tstringgrid(sender).invalidatewidget;
 end;
 
 procedure tconflangfo.oneventloop(const sender: TObject);
+var
+rect1: rectty;
 begin
 Visible := False;
  {$if defined(windows))}
  bousemo.visible := false;
  {$endif}
+  rect1 := application.screenrect();
+
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+  invalidatewidget;
 end;
 
 end.
