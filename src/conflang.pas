@@ -388,7 +388,9 @@ end;
 procedure tconflangfo.oneventloop(const sender: TObject);
 begin
 Visible := False;
-bousemo.visible := false;
+ {$if defined(windows))}
+ bousemo.visible := false;
+ {$endif}
 end;
 
 end.
