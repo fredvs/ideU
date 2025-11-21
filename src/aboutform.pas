@@ -9,10 +9,23 @@ uses
 type
  taboutfo = class(tmseform)
    about_text: tmemoedit;
+   procedure onloop(const sender: TObject);
  end;
 var
  aboutfo: taboutfo;
 implementation
 uses
  aboutform_mfm;
+procedure taboutfo.onloop(const sender: TObject);
+var
+rect1: rectty;
+begin
+  application.processmessages;
+  rect1 := application.screenrect();
+
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+  invalidatewidget;
+end;
+
 end.

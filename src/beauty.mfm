@@ -1,7 +1,7 @@
 object beautyfo: tbeautyfo
   visible = False
-  bounds_x = 560
-  bounds_y = 332
+  bounds_x = 629
+  bounds_y = 343
   bounds_cx = 200
   bounds_cy = 164
   bounds_cxmin = 200
@@ -74,6 +74,7 @@ object beautyfo: tbeautyfo
   }
   windowopacity = -Inf
   oncreated = oncreat
+  oneventloopstart = onloop
   ondestroy = ondestroyev
   moduleclassname = 'tmseform'
   object group_file_changed: tgroupbox

@@ -80,6 +80,7 @@ type
    procedure JumpToSelectedLine;
    procedure oncellev(const sender: TObject; var info: celleventinfoty);
    procedure onchangeev(const sender: TObject);
+   procedure onloop(const sender: TObject);
  private
     FFilename: mseString;
     FLanguage: TSourceLanguage;
@@ -839,6 +840,18 @@ begin
 procedure tprocedurelistfo.onchangeev(const sender: TObject);
 begin
 FillGrid;
+end;
+
+procedure tprocedurelistfo.onloop(const sender: TObject);
+var
+rect1: rectty;
+begin
+  application.processmessages;
+  rect1 := application.screenrect();
+
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+  invalidatewidget;
 end;
 
 { TSimpleEngine }

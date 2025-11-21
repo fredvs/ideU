@@ -42,6 +42,7 @@ type
     procedure doclose(const Sender: TObject);
     procedure ondestroyev(const Sender: TObject);
     procedure oncreat(const Sender: TObject);
+   procedure onloop(const sender: TObject);
   end;
 
 var
@@ -94,6 +95,18 @@ end;
 procedure tbeautyfo.oncreat(const Sender: TObject);
 begin
   //icon := mainfo.icon;
+end;
+
+procedure tbeautyfo.onloop(const sender: TObject);
+var
+rect1: rectty;
+begin
+  application.processmessages;
+  rect1 := application.screenrect();
+
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+  invalidatewidget;
 end;
 
 end.

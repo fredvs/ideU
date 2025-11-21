@@ -2563,14 +2563,11 @@ begin
   back.tag    := Ord(sc_back);
   forward.tag := Ord(sc_forward);
   up.tag      := Ord(sc_up);
-
   application.processmessages;
   rect1 := application.screenrect();
-
   left := (rect1.cx - Width) div 2;
   top := (rect1.cy - height) div 2;
   invalidatewidget;
-
 end;
 
 procedure tfiledialogxfo.onlateral(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
