@@ -82,7 +82,7 @@ begin
   application.createform(tconffpguifo, conffpguifo);
   application.createform(tconfcompilerfo, confcompilerfo);
   application.createform(tconfdebuggerfo, confdebuggerfo);
-  conffpguifo.fpguidesigner.Value := '';
+  //conffpguifo.fpguidesigner.Value := '';
   application.createdatamodule(tstringconstsmo, s);
   application.createdatamodule(tactionsmo, actionsmo);
   application.createform(tsourcefo, sourcefo);

@@ -777,7 +777,11 @@ begin
 
   conffpguifo.font.Height := fontsize.Value;
   conffpguifo.font.Name   := ansistring(fontname.Value);
+  
+  conffpguifo.fpguidesigner.controller.fontheight := confideufo.fontsize.Value;
 
+  conffpguifo.fpguidesigner.controller.icon := mainfo.icon;
+  
   conffpguifo.fpguidesigner.top       := 40;
   conffpguifo.enablefpguidesigner.top := conffpguifo.fpguidesigner.top + conffpguifo.fpguidesigner.Height + 2;
   conffpguifo.tbfpgonlyone.top        := conffpguifo.enablefpguidesigner.top + conffpguifo.enablefpguidesigner.Height + 2;

@@ -5,7 +5,7 @@ object settings_form: tsettingsfo
   bounds_x = 473
   bounds_y = 107
   bounds_cx = 455
-  bounds_cy = 606
+  bounds_cy = 712
   container.optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_subfocus, ow_mousetransparent, ow_mousewheel, ow_destroywidgets]
   container.frame.clientwidthmin = 340
   container.frame.localprops = []
@@ -14,7 +14,7 @@ object settings_form: tsettingsfo
     0
     0
     455
-    606
+    712
   )
   font.name = 'stf_default'
   font.localprops = []
@@ -55,7 +55,7 @@ object settings_form: tsettingsfo
     bounds_x = 2
     bounds_y = 0
     bounds_cx = 447
-    bounds_cy = 596
+    bounds_cy = 702
     anchors = [an_left, an_top, an_right, an_bottom]
     activepageindex = 0
     onactivepagechanged = onchange
@@ -84,7 +84,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 22
       bounds_cx = 447
-      bounds_cy = 574
+      bounds_cy = 680
       caption = '&Path  '
       reffontheight = 17
       object layoutdir: tfilenameeditx
@@ -415,8 +415,8 @@ object settings_form: tsettingsfo
         )
         taborder = 6
         hint = 'Root directory of DocView'
-        bounds_x = 6
-        bounds_y = 296
+        bounds_x = 5
+        bounds_y = 290
         bounds_cx = 430
         bounds_cy = 43
         controller.fontheight = 0
@@ -1065,8 +1065,8 @@ object settings_form: tsettingsfo
         )
         taborder = 10
         hint = 'Root directory of Lazarus or Typhon'
-        bounds_x = 6
-        bounds_y = 276
+        bounds_x = 4
+        bounds_y = 327
         bounds_cx = 430
         bounds_cy = 43
         controller.lastdir = '/usr/local/share/fpgui/'
@@ -1343,7 +1343,7 @@ object settings_form: tsettingsfo
         taborder = 13
         hint = 'Directory of ideU root'
         bounds_x = 4
-        bounds_y = 316
+        bounds_y = 340
         bounds_cx = 430
         bounds_cy = 43
         controller.lastdir = '/home/fred/ideu/src/${IDEUDIR}/syntaxdefs/'
@@ -1522,7 +1522,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 22
       bounds_cx = 447
-      bounds_cy = 574
+      bounds_cy = 680
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = '&Macros'
       reffontheight = 17
@@ -1540,7 +1540,7 @@ object settings_form: tsettingsfo
         bounds_x = 7
         bounds_y = 12
         bounds_cx = 433
-        bounds_cy = 555
+        bounds_cy = 661
         bounds_cymin = 80
         anchors = [an_left, an_top, an_right, an_bottom]
         optionsgrid = [og_colsizing, og_rowmoving, og_keyrowmoving, og_rowinserting, og_rowdeleting, og_focuscellonenter, og_autofirstrow, og_autoappend, og_noinsertempty, og_colchangeontabkey, og_wrapcol, og_autopopup, og_mousescrollcol]
@@ -1585,6 +1585,19 @@ object settings_form: tsettingsfo
           end>
         datarowheight = 24
         reffontheight = 17
+        object macroname: tstringedit
+          optionswidget1 = [ow1_fontglyphheight]
+          optionsskin = [osk_framebuttononly]
+          taborder = 1
+          visible = False
+          bounds_x = 0
+          bounds_y = 0
+          bounds_cx = 142
+          bounds_cy = 24
+          optionsedit1 = [oe1_savevalue]
+          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
+          reffontheight = 17
+        end
         object macrovalue: tmemodialogedit
           optionswidget1 = [ow1_fontglyphheight]
           optionsskin = [osk_framebuttononly]
@@ -1600,26 +1613,13 @@ object settings_form: tsettingsfo
             end>
           frame.button.color = -1879048187
           frame.button.imagenr = 17
-          taborder = 1
+          taborder = 2
           visible = False
           bounds_x = 0
           bounds_y = 0
           bounds_cx = 400
           bounds_cy = 24
           anchors = [an_top]
-          optionsedit1 = [oe1_savevalue]
-          optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
-          reffontheight = 17
-        end
-        object macroname: tstringedit
-          optionswidget1 = [ow1_fontglyphheight]
-          optionsskin = [osk_framebuttononly]
-          taborder = 2
-          visible = False
-          bounds_x = 0
-          bounds_y = 0
-          bounds_cx = 142
-          bounds_cy = 24
           optionsedit1 = [oe1_savevalue]
           optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_focusrectonreadonly, oe_hintclippedtext]
           reffontheight = 17
@@ -1635,7 +1635,7 @@ object settings_form: tsettingsfo
       bounds_x = 0
       bounds_y = 22
       bounds_cx = 447
-      bounds_cy = 574
+      bounds_cy = 680
       anchors = [an_left, an_top, an_right, an_bottom]
       caption = 'O&ther'
       reffontheight = 17

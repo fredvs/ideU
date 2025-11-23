@@ -381,9 +381,15 @@ end;
 //fpGUI designer
 procedure LoadfpgDesigner(const AfpgFilename: string);
 var
-  dataf: string;
-begin
-  if fileexists(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value),
+  dataf, thedir: string;
+ begin
+ 
+  if conffpguifo.fpguidesigner.Value = '${IDEUDIR}/plugin/designer_ext/designer_ext' then
+  thedir :=  utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)))) +
+  'plugin' + directoryseparator + 'designer_ext' + directoryseparator +
+  'designer_ext' {$ifdef windows}+ '.exe'{$endif} else thedir := conffpguifo.fpguidesigner.Value; 
+ 
+  if fileexists(tosysfilepath(filepath(trim(thedir),
     fk_file, True))) then
     if ((iffpgdconsumed = False) and (AfpgFilename = 'quit')) or
       ((iffpgdconsumed = False) and (AfpgFilename = 'closeall')) or
@@ -393,7 +399,7 @@ begin
       (AfpgFilename = 'showit') or (AfpgFilename = 'hideit') then
     begin
       iffpgdconsumed := True;
-      dataf          := ansistring(tosysfilepath(filepath(trim(conffpguifo.fpguidesigner.Value)
+      dataf          := ansistring(tosysfilepath(filepath(trim(thedir)
         ,
         fk_file, True)));
       if (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) then

@@ -4218,7 +4218,14 @@ begin
 end;
 
 procedure tmainfo.viewconffpguiexecute(const Sender: TObject);
+var
+rect1: rectty;
 begin
+  application.processmessages;
+  rect1 := application.screenrect();
+  conffpguifo.left := (rect1.cx - conffpguifo.Width) div 2;
+  conffpguifo.top := (rect1.cy - conffpguifo.height) div 2;
+  conffpguifo.invalidatewidget;
   // conffpguifo.activate;
   conffpguifo.Show(True);
 end;

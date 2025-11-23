@@ -3,9 +3,9 @@ unit conffpgui;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 interface
 uses
- msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,
- msegraphics,msegraphutils,mseclasses,mseforms, mseedit,msegraphedits,
- msesimplewidgets,msestat,msestatfile,msemenus,msewidgets, msefiledialogx;
+ msetypes,mseglob,mseguiglob,mseguiintf,mseapplication,msegui,msegraphics,
+ msegraphutils,mseclasses,mseforms, mseedit,msegraphedits,msesimplewidgets,
+ msestat,msestatfile,msemenus,msewidgets, msefiledialogx;
 type
  tconffpguifo = class(tmseform)
    enablefpguidesigner: tbooleanedit;
@@ -25,10 +25,23 @@ type
    iffilter: tbooleanedit;
    ok: tbutton;
    fpguidesigner: tfilenameeditx;
+   procedure onloop(const sender: TObject);
  end;
 var
  conffpguifo: tconffpguifo;
 implementation
 uses
  conffpgui_mfm, confideu;
+procedure tconffpguifo.onloop(const sender: TObject);
+var
+rect1: rectty;
+begin
+  application.processmessages;
+  rect1 := application.screenrect();
+
+  left := (rect1.cx - Width) div 2;
+  top := (rect1.cy - height) div 2;
+  invalidatewidget;
+end;
+
 end.
