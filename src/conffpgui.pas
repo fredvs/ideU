@@ -41,6 +41,14 @@ begin
 
   left := (rect1.cx - Width) div 2;
   top := (rect1.cy - height) div 2;
+  
+  if conffpguifo.fpguidesigner.value  = '' then
+  {$ifdef widows}   
+  conffpguifo.fpguidesigner.value := '${IDEUDIR}\plugin\designer_ext\designer_ext.exe';  
+  {$else}
+  conffpguifo.fpguidesigner.value := '${IDEUDIR}/plugin/designer_ext/designer_ext';  
+  {$endif}
+ 
   invalidatewidget;
 end;
 

@@ -578,12 +578,11 @@ begin
     'ini' + directoryseparator + 'ideu.sta');
  
  {$ifdef widows}   
- conffpguifo.fpguidesigner.value := msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '\plugin\designer_ext\designer_ext.exe');  
+ conffpguifo.fpguidesigner.value := '${IDEUDIR}\plugin\designer_ext\designer_ext.exe';  
  {$endif}
  
   {$ifdef linux}   
- conffpguifo.fpguidesigner.value := 
- msestring(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0))) + '/plugin/designer_ext/designer_ext');  
+ conffpguifo.fpguidesigner.value := '${IDEUDIR}/plugin/designer_ext/designer_ext';  
  {$endif}
  
 {$endif}
@@ -4221,14 +4220,14 @@ procedure tmainfo.viewconffpguiexecute(const Sender: TObject);
 var
 rect1: rectty;
 begin
+  conffpguifo.Show(True);
   application.processmessages;
   rect1 := application.screenrect();
   conffpguifo.left := (rect1.cx - conffpguifo.Width) div 2;
   conffpguifo.top := (rect1.cy - conffpguifo.height) div 2;
   conffpguifo.invalidatewidget;
   // conffpguifo.activate;
-  conffpguifo.Show(True);
-end;
+ end;
 
 procedure tmainfo.viewsymbolsonexecute(const Sender: TObject);
 begin

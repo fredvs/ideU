@@ -294,8 +294,7 @@ object conffpguifo: tconffpguifo
     bounds_y = 15
     bounds_cx = 245
     bounds_cy = 43
-    Value = '${IDEUDIR}/plugin/designer_ext/designer_ext'
-    controller.filename = '${IDEUDIR}/plugin/designer_ext/designer_ext'
+    statfile = mainfo.mainstatfile
     controller.lastdir = '${IDEUDIR}/plugin/designer_ext/'
     controller.fontheight = 0
     controller.fontname = 'stf_default'

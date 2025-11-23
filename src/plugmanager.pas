@@ -19,6 +19,7 @@ cthreads, {$ENDIF}
 msegui, commandorform, targetconsole,{$ENDIF}
   make,
   Classes,
+  projectoptionsform,
   SysUtils;
 
 function DoBeautifier(const AFilename: string; formatengine: integer; backup: Boolean): Boolean;
@@ -384,10 +385,11 @@ var
   dataf, thedir: string;
  begin
  
-  if conffpguifo.fpguidesigner.Value = '${IDEUDIR}/plugin/designer_ext/designer_ext' then
-  thedir :=  utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)))) +
-  'plugin' + directoryseparator + 'designer_ext' + directoryseparator +
-  'designer_ext' {$ifdef windows}+ '.exe'{$endif} else thedir := conffpguifo.fpguidesigner.Value; 
+ if copy(conffpguifo.fpguidesigner.Value, 1, 10) = '${IDEUDIR}' then
+ thedir := expandprmacros('${IDEUDIR}') + directoryseparator + 'plugin' 
+  + directoryseparator + 'designer_ext' +
+   directoryseparator + 'designer_ext' {$ifdef windows}+ '.exe'{$endif} 
+   else thedir := conffpguifo.fpguidesigner.Value; 
  
   if fileexists(tosysfilepath(filepath(trim(thedir),
     fk_file, True))) then
