@@ -490,8 +490,7 @@ var
 begin
 
   if (copy(confideufo.tesakitdir.Text, 1, 10) = '${IDEUDIR}') then
-    thedir := utf8decode(IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)))) +
-      copy(confideufo.tesakitdir.Text, 11, length(confideufo.tesakitdir.Text) - 10)
+  thedir := expandprmacros('${IDEUDIR}') + directoryseparator + 'plugin' + directoryseparator
   else
     thedir := confideufo.tesakitdir.Text;
 
