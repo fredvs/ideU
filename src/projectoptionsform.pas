@@ -31,8 +31,12 @@ const
   defaultxtermcommand    = 'xterm -S${PTSN}/${PTSH}';
 
 type
-  settinggroupty  = (sg_editor, sg_debugger);
-  settinggroupsty = set of settinggroupty;
+  settinggroupty = (sg_editor,sg_debugger,sg_make,sg_templates,
+                   sg_macros,sg_fontalias,sg_usercolors,
+                   sg_formatmacros,sg_tools,sg_storage,
+                   sg_state);
+ settinggroupsty = set of settinggroupty;
+
 
   findinfoty = record
     Text: msestring;
@@ -394,14 +398,28 @@ type
 
     fsettingsfile: filenamety;
     fsettingseditor: Boolean;
-    fsettingsdebugger: Boolean;
+    fsettingsdebugger: Boolean;   
     fsettingsstorage: Boolean;
     fsettingsprojecttree: Boolean;
     fsettingsautoload: Boolean;
     fsettingsautosave: Boolean;
+    
+    // added
+    fsettingsmake: boolean;
+   fsettingsmacros: boolean;
+   fsettingsfontalias: boolean;
+   fsettingsusercolors: boolean;
+   fsettingsformatmacros: boolean;
+   fsettingstemplates: boolean;
+   fsettingstools: boolean;
+   fsettingslayout: boolean;
+   fsettingscomponentstore: boolean;
+       
     fmodulenames: msestringarty;
     fmoduletypes: msestringarty;
     fmodulefiles: filenamearty;
+  
+  
     // fred compiler
     fcompilerusedon: integerarty;
 
@@ -501,6 +519,26 @@ type
     property settingsprojecttree: Boolean read fsettingsprojecttree write fsettingsprojecttree;
     property settingsautoload: Boolean read fsettingsautoload write fsettingsautoload;
     property settingsautosave: Boolean read fsettingsautosave write fsettingsautosave;
+    
+    // added
+    property settingsmake: boolean read fsettingsmake
+                                               write fsettingsmake;
+   property settingsmacros: boolean read fsettingsmacros
+                                               write fsettingsmacros;
+   property settingsfontalias: boolean read fsettingsfontalias
+                                               write fsettingsfontalias;
+   property settingsusercolors: boolean read fsettingsusercolors
+                                               write fsettingsusercolors;
+   property settingsformatmacros: boolean read fsettingsformatmacros
+                                               write fsettingsformatmacros;
+   property settingstemplates: boolean read fsettingstemplates
+                                               write fsettingstemplates;
+   property settingstools: boolean read fsettingstools
+                                               write fsettingstools;
+   property settingscomponentstore: boolean read fsettingscomponentstore
+                                             write fsettingscomponentstore;
+    property settingslayout: boolean read fsettingslayout
+                                               write fsettingslayout;
 
     property modulenames: msestringarty read fmodulenames write fmodulenames;
     property moduletypes: msestringarty read fmoduletypes write fmoduletypes;
@@ -962,16 +1000,12 @@ type
    toolfiles: tfilenameeditx;
    toolparams: tstringedit;
    ttabpage20: ttabpage;
-   settingseditor: tbooleanedit;
    settingsautoload: tbooleanedit;
    settingsautosave: tbooleanedit;
    tlayouter6: tlayouter;
    savebu: tbutton;
    loadbu: tbutton;
    settingsfile: tfilenameeditx;
-   settingsdebugger: tbooleanedit;
-   settingsstorage: tbooleanedit;
-   settingsprojecttree: tbooleanedit;
    ttabpage23: ttabpage;
    project_comment: tmemoedit;
    project_creator: tstringedit;
@@ -980,6 +1014,19 @@ type
    project_name: tstringedit;
    project_date: tstringedit;
    editfontname: tdropdownlistedit;
+   settingslayout: tbooleanedit;
+   settingsprojecttree: tbooleanedit;
+   settingsstorage: tbooleanedit;
+   settingstools: tbooleanedit;
+   settingstemplates: tbooleanedit;
+   settingsformatmacros: tbooleanedit;
+   settingsusercolors: tbooleanedit;
+   settingsfontalias: tbooleanedit;
+   settingsmacros: tbooleanedit;
+   settingsmake: tbooleanedit;
+   settingsdebugger: tbooleanedit;
+   settingseditor: tbooleanedit;
+   settingscomponentstore: tbooleanedit;
     procedure acttiveselectondataentered(const Sender: TObject);
     procedure colonshowhint(const Sender: tdatacol; const arow: integer; var info: hintinfoty);
     procedure hintexpandedmacros(const Sender: TObject; var info: hintinfoty);
@@ -3337,15 +3384,53 @@ end;
 
 function getdisabledoptions: settinggroupsty;
 begin
+  {
   Result := [];
   with projectoptions do
   begin
-    if not o.settingseditor then
+      if not o.settingseditor then
       include(Result, sg_editor);
     if not o.settingsdebugger then
       include(Result, sg_debugger);
+    if not o.settingsmake then 
+   include(result,sg_make);
   end;
+  }
+ result:= [sg_state];
+ with projectoptions do begin
+  if not o.settingseditor then begin
+   include(result,sg_editor);
+  end;
+  if not o.settingsdebugger then begin
+   include(result,sg_debugger);
+  end;
+  if not o.settingsmake then begin
+   include(result,sg_make);
+  end;
+  if not o.settingsmacros then begin
+   include(result,sg_macros);
+  end;
+  if not o.settingsfontalias then begin
+   include(result,sg_fontalias);
+  end;
+  if not o.settingsusercolors then begin
+   include(result,sg_usercolors);
+  end;
+  if not o.settingsformatmacros then begin
+   include(result,sg_formatmacros);
+  end;
+  if not o.settingstemplates then begin
+   include(result,sg_templates);
+  end;
+  if not o.settingstools then begin
+   include(result,sg_tools);
+  end;
+  if not o.settingsstorage then begin
+   include(result,sg_storage);
+  end;
+ end;
 end;
+ 
 
 procedure doloadexe(const Sender: tprojectoptionsfo);
 var
