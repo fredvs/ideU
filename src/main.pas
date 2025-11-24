@@ -791,13 +791,13 @@ begin
   if confideufo.tbassistive.Value = True then
     doassistive;
 
-  {$ifdef linux}
+ // {$ifdef linux}
   if conffpguifo.enablefpguidesigner.Value = True then
   begin
     CleanfpgDesigner();
     sleep(250);
   end;
-   {$endif}
+ //  {$endif}
 
 end;
 
@@ -1409,9 +1409,12 @@ begin
                 toogletag := False;
                 if (conffpguifo.tbfpgonlyone.Value = True) and (conffpguifo.ifhide.Value =
                   True) then
+                  {$ifdef unix}
                   LoadfpgDesigner(ansistring(conffpguifo.edhide.Text));
+                  {$else}
+                  CleanfpgDesigner();
+                 {$endif}
               end;
-
 
 { TODO => libraries
 if fpgdlib_enabled = true then
@@ -2914,16 +2917,17 @@ end;
 
 procedure tmainfo.resetfpguidesigneronexecute(const Sender: TObject);
 begin
+  {$ifdef unix}
   if (conffpguifo.enablefpguidesigner.Value = True) and
     (conffpguifo.ifshow.Value = True) then
   begin
     LoadfpgDesigner('hideit');
-    sleep(1000);
+    sleep(500);
     LoadfpgDesigner(ansistring(conffpguifo.edshow.Text));
   end;
-
-
-  //CleanfpgDesigner();
+ {$else}
+  CleanfpgDesigner();
+ {$endif}
 end;
 
 procedure tmainfo.viewdebuggertoolbaronexecute(const Sender: TObject);
@@ -3368,6 +3372,7 @@ begin
     mainstatfile.writestat;
   end;
 
+   CleanfpgDesigner();
 
 {
   modres:= mr_windowclosed;

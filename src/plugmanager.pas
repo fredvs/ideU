@@ -415,17 +415,17 @@ end;
 
 //fpGUI designer
 procedure CleanfpgDesigner();
-{$ifdef unix}
-
 var 
   dataf: string;
-  {$endif}
-begin
+ begin
  {$ifdef unix}
   dataf := '/usr/bin/killall';
   RunWithoutDebug(dataf, ' designer_ext');
+   {$else}
+   dataf := 'C:\Windows\System32\taskkill.exe';
+  RunWithoutDebug(dataf, ' /F /IM designer_ext.exe');
    {$endif}
-end;
+ end;
 
 end.
 
