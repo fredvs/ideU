@@ -4626,7 +4626,11 @@ var
   str1: ttextstream;
   str2: msestring;
 begin
-  if mainfo.openproject('') then
+   layoutbusy := True;
+    closeall(False);
+   layoutbusy := False;
+ 
+  if openproject('') then
   begin
     Caption        := idecaption + ' v' + versiontext;
     fprojectloaded := False;
