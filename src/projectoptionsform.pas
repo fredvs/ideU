@@ -102,6 +102,7 @@ type
     fnewfisources: filenamearty;
     fnewfonames: msestringarty;
     fnewfonamebases: msestringarty;
+    fnewfoformsuffixes: msestringarty;
     fnewfosources: msestringarty;
     fnewfoforms: msestringarty;
   public
@@ -118,7 +119,7 @@ type
     property libpref: msestring read flibpref write flibpref;
     property objpref: msestring read fobjpref write fobjpref;
     property targpref: msestring read ftargpref write ftargpref;
-
+    
     property befcommand: msestringarty read fbefcommand write fbefcommand;
     property aftcommand: msestringarty read faftcommand write faftcommand;
     property makeoptions: msestringarty read fmakeoptions write fmakeoptions;
@@ -152,7 +153,8 @@ type
     property newfifilters: msestringarty read fnewfifilters write fnewfifilters;
     property newfiexts: msestringarty read fnewfiexts write fnewfiexts;
     property newfisources: filenamearty read fnewfisources write fnewfisources;
-
+    property newfoformsuffixes: msestringarty read fnewfoformsuffixes
+                                                   write fnewfoformsuffixes;
     property newfonames: msestringarty read fnewfonames write fnewfonames;
     property newfonamebases: msestringarty read fnewfonamebases write fnewfonamebases;
     property newfosources: msestringarty read fnewfosources write fnewfosources;
@@ -2143,6 +2145,7 @@ begin
   end;
 end;
 
+{
 procedure updateprojectsettings(const statfiler: tstatfiler);
 var
   int1: integer;
@@ -2213,6 +2216,94 @@ begin
     end;
   end;
 end;
+}
+
+procedure updateprojectsettings(const statfiler: tstatfiler;
+                                    const disabledoptions: settinggroupsty);
+var
+ int1: integer;
+ i2: int32;
+begin
+ with statfiler,projectoptions,o,t do begin
+
+  if iswriter then begin
+   mainfo.statoptions.writestat(tstatwriter(statfiler));
+  end
+  else begin
+   mainfo.statoptions.readstat(tstatreader(statfiler));
+   with projectoptions.o do begin
+    setlength(ftoolmessages,length(ftoolsave));
+   end;
+  end;
+  if not (sg_debugger in disabledoptions) then begin
+   if iswriter then begin
+    with tstatwriter(statfiler) do begin
+     writerecordarray('sigsettings',length(sigsettings),
+                      {$ifdef FPC}@{$endif}getsignalinforec);
+    end;
+   end
+   else begin
+    with tstatreader(statfiler) do begin
+     readrecordarray('sigsettings',{$ifdef FPC}@{$endif}setsignalinfocount,
+              {$ifdef FPC}@{$endif}storesignalinforec);
+    end;
+   end;
+  end;
+  if not (sg_state in disabledoptions) then begin
+   updatevalue('defaultmake',defaultmake,1,maxdefaultmake+1);
+  end;
+  with o,t do begin
+   if not iswriter then begin
+    int1:= length(newfinames);
+    if int1 > length(newfifilters) then begin
+     int1:= length(newfifilters);
+    end;
+    if int1 > length(newfiexts) then begin
+     int1:= length(newfiexts);
+    end;
+    if int1 > length(newfisources) then begin
+     int1:= length(newfisources);
+    end;
+    setlength(fnewfinames,int1);
+    setlength(fnewfifilters,int1);
+    setlength(fnewfiexts,int1);
+    setlength(fnewfisources,int1);
+   end;
+
+   if not iswriter then begin
+    int1:= length(newfonames);
+    if int1 > length(newfonamebases) then begin
+     int1:= length(newfonamebases);
+    end;
+    if high(newfoformsuffixes) <> high(newfonamebases) then begin
+                      //probably old statfile
+     setlength(fnewfoformsuffixes,length(newfonamebases));
+     for i2:= 0 to high(fnewfoformsuffixes) do begin
+      fnewfoformsuffixes[i2]:= copy(fnewfonamebases[i2],1,2)
+     end;
+    end;
+    if int1 > length(newfoformsuffixes) then begin
+     int1:= length(newfoformsuffixes);
+    end;
+    if int1 > length(newinheritedforms) then begin
+     int1:= length(newinheritedforms);
+    end;
+    if int1 > length(newfosources) then begin
+     int1:= length(newfosources);
+    end;
+    if int1 > length(newfoforms) then begin
+     int1:= length(newfoforms);
+    end;
+    setlength(fnewfonames,int1);
+    setlength(fnewfonamebases,int1);
+    setlength(fnewfoformsuffixes,int1);
+    setlength(fnewinheritedforms,int1);
+    setlength(fnewfosources,int1);
+    setlength(fnewfoforms,int1);
+   end;
+  end;
+ end;
+end;
 
 procedure doloadexe(const Sender: tprojectoptionsfo); forward;
 procedure dosaveexe(const Sender: tprojectoptionsfo); forward;
@@ -2239,8 +2330,6 @@ begin
         setlength(moduletypes1, int2);
         setlength(modulefiles1, int2);
         //    setlength(moduledock1,int2);
-
-
         for int1 := 0 to high(modulenames1) do
           with pmoduleinfoty(submenu[int1 + int3].tagpo)^ do
           begin
@@ -2287,7 +2376,7 @@ begin
     updatememorystatstream('ififieldeditor', ififieldeditorstatname);
 {$endif}{$endif}
 
-    updateprojectsettings(statfiler);
+    updateprojectsettings(statfiler,[]);
     breakpointsfo.updatestat(statfiler);
     panelform.updatestat(statfiler); //uses section breakpoints!
 
@@ -2330,9 +2419,138 @@ begin
     else if o.settingsautoload then
       doloadexe(nil);
   end;
-
 end;
 
+{
+
+procedure updateprojectoptions(const statfiler: tstatfiler;
+                  const afilename: filenamety);
+var
+ int1,int2,int3: integer;
+ b1: boolean;
+ modulenames1: msestringarty;
+ moduletypes1: msestringarty;
+
+ modulefiles1: filenamearty;
+// moduledock1: msestringarty;
+begin
+ with statfiler,projectoptions do begin
+  if iswriter then begin
+   projectdir:= getcurrentdirmse;
+   with mainfo,mainmenu1.menu.itembyname('view') do begin
+    int3:= formmenuitemstart;
+    int2:= count - int3;
+    setlength(modulenames1,int2);
+    setlength(moduletypes1,int2);
+    setlength(modulefiles1,int2);
+//    setlength(moduledock1,int2);
+    for int1:= 0 to high(modulenames1) do begin
+     with pmoduleinfoty(submenu[int1+int3].tagpo)^ do begin
+      modulenames1[int1]:= msestring(struppercase(instance.name));
+      moduletypes1[int1]:= msestring(struppercase(string(moduleclassname)));
+      modulefiles1[int1]:= filename;
+     end;
+    end;
+    o.modulenames:= modulenames1;
+    o.moduletypes:= moduletypes1;
+    o.modulefiles:= modulefiles1;
+   end;
+  end;
+  registeredcomponents.updatestat(statfiler);
+  setsection('projectoptions');
+  updatevalue('projectdir',projectdir);
+  updatevalue('projectfilename',projectfilename);
+  projectfilename:= afilename;
+  updatememorystatstream('findinfiledialog',findinfiledialogstatname);
+  updatememorystatstream('finddialog',finddialogstatname);
+  updatememorystatstream('replacedialog',replacedialogstatname);
+  updatememorystatstream('options',optionsstatname);
+  updatememorystatstream('settaborder',settaborderstatname);
+  updatememorystatstream('setcreateorder',setcreateorderstatname);
+  updatememorystatstream('programparameters',programparametersstatname);
+  updatememorystatstream('settings',settingsstatname);
+  updatememorystatstream('printer',printerstatname);
+  updatememorystatstream('imageselector',imageselectorstatname);
+  updatememorystatstream('fadeeditor',fadeeditorstatname);
+  updatememorystatstream('stringlisteditor',stringlisteditorstatname);
+  updatememorystatstream('imagelisteditor',imagelisteditorstatname);
+  updatememorystatstream('sysenvmanagereditor',sysenvmanagereditorstatname);
+  updatememorystatstream('texteditor',texteditorstatname);
+  updatememorystatstream('colordialog',colordialogstatname);
+  updatememorystatstream('compnamedialog',compnamedialogstatname);
+  updatememorystatstream('bmpfiledialog',bmpfiledialogstatname);
+  updatememorystatstream('codetemplateselect',codetemplateselectstatname);
+  updatememorystatstream('codetemplateparam',codetemplateparamstatname);
+  updatememorystatstream('codetemplateedit',codetemplateeditstatname);
+  
+  {updatememorystatstream('cornermaskedit',cornermaskeditstatname);
+  updatememorystatstream('memodialog',memodialogstatname);
+  updatememorystatstream('richmemodialog',richmemodialogstatname);
+  updatememorystatstream('fontformatdialog',fontformatdialogstatname);
+  updatememorystatstream('taborderoverridedialog',
+                                            taborderoverridedialogstatname);
+  }                                          
+                                            
+{$ifndef mse_no_db}{$ifdef FPC}
+  updatememorystatstream('dbfieldeditor',dbfieldeditorstatname);
+{$endif}{$endif}
+{$ifndef mse_no_ifi}{$ifdef FPC}
+  updatememorystatstream('ificlienteditor',ificlienteditorstatname);
+  updatememorystatstream('ififieldeditor',ififieldeditorstatname);
+{$endif}{$endif}
+
+  updateprojectsettings(statfiler,[]);
+  b1:= statfiler.iswriter;
+  // projecttree.updatestat(statfiler) or statfiler.iswriter;
+  breakpointsfo.updatestat(statfiler);
+  panelform.updatestat(statfiler); //uses section breakpoints!
+  if not b1 then begin
+   projecttree.updatestat(statfiler); //backward compatibility with section
+                                      //breakpoints
+  end;
+  componentstorefo.updatestat(statfiler);
+
+  setsection('components');
+  selecteditpageform.updatestat(statfiler);
+  programparametersform.updatestat(statfiler);
+  projectoptionstofont(textpropertyfont);
+
+  if not iswriter then begin
+   if guitemplatesmo.sysenv.getintegervalue(int1,
+                                             ord(env_vargroup),1,6) then begin
+    o.macrogroup:= int1-1;
+   end;
+   expandprojectmacros;
+   projecttree.updatelist;
+  end;
+
+  beginpanelplacement();
+  try
+   sourcefo.updatestat(statfiler);   //needs actual fontalias
+   setsection('layout');
+   mainfo.projectstatfile.updatestat('windowlayout',statfiler);
+  finally
+   endpanelplacement();
+  end;
+  setsection('targetconsole');
+  targetconsole.updatestat(statfiler);
+
+  modified:= false;
+  savechecked:= false;
+
+  if iswriter then begin
+   if o.settingsautosave then begin
+    dosaveexe(nil);
+   end;
+  end
+  else begin
+   if o.settingsautoload then begin
+    doloadexe(nil);
+   end;
+  end;
+ end;
+end;
+}
 
 procedure projectoptionstoform(fo: tprojectoptionsfo);
 var
@@ -3276,126 +3494,154 @@ begin
   placeyorder(4, [4, 4], [scriptbeforecopy, scriptaftercopy, copygrid], 0);
 end;
 
-type
-  valuebufferty = record
-    settingsfile: filenamety;
-    settingseditor: Boolean;
-    settingsdebugger: Boolean;
-    settingsstorage: Boolean;
-    settingsprojecttree: Boolean;
-    settingsautoload: Boolean;
-    settingsautosave: Boolean;
-    projectfilename: filenamety;
-    projectdir: filenamety;
-  end;
-
-procedure savevalues(fo: tprojectoptionsfo; out buffer: valuebufferty);
+ type
+ valuebufferty = record
+  settingsfile: filenamety;
+  settingseditor: boolean;
+  settingsdebugger: boolean;
+  settingsmake: boolean;
+  settingsmacros: boolean;
+  settingsfontalias: boolean;
+  settingsusercolors: boolean;
+  settingsformatmacros: boolean;
+  settingstemplates: boolean;
+  settingstools: boolean;
+  settingsstorage: boolean;
+  settingscomponentstore: boolean;
+  settingsprojecttree: boolean;
+  settingslayout: boolean;
+//  settingsautoload: boolean;
+//  settingsautosave: boolean;
+  projectfilename: filenamety;
+  projectdir: filenamety;
+ end;
+ 
+procedure savesettingsvalues(fo: tprojectoptionsfo; out buffer: valuebufferty);
 begin
-  with buffer do
-  begin
-    projectfilename := projectoptions.projectfilename;
-    projectdir      := projectoptions.projectdir;
-
-    if fo <> nil then
-    begin
-      settingsfile        := fo.settingsfile.Value;
-      settingseditor      := fo.settingseditor.Value;
-      settingsdebugger    := fo.settingsdebugger.Value;
-      settingsstorage     := fo.settingsstorage.Value;
-      settingsprojecttree := fo.settingsprojecttree.Value;
-      settingsautoload    := fo.settingsautoload.Value;
-      settingsautosave    := fo.settingsautosave.Value;
-    end
-    else
-    begin
-      settingsfile        := projectoptions.o.settingsfile;
-      settingseditor      := projectoptions.o.settingseditor;
-      settingsdebugger    := projectoptions.o.settingsdebugger;
-      settingsstorage     := projectoptions.o.settingsstorage;
-      settingsprojecttree := projectoptions.o.settingsprojecttree;
-      settingsautoload    := projectoptions.o.settingsautoload;
-      settingsautosave    := projectoptions.o.settingsautosave;
-    end;
+ with buffer do begin
+  projectfilename:= projectoptions.projectfilename;
+  projectdir:= projectoptions.projectdir;
+  if fo <> nil then begin
+   settingsfile:= fo.settingsfile.value;
+   settingseditor:= fo.settingseditor.value;
+   settingsdebugger:= fo.settingsdebugger.value;
+   settingsmake:= fo.settingsmake.value;
+   settingsmacros:= fo.settingsmacros.value;
+   settingsfontalias:= fo.settingsfontalias.value;
+   settingsusercolors:= fo.settingsusercolors.value;
+   settingsformatmacros:= fo.settingsformatmacros.value;
+   settingstemplates:= fo.settingstemplates.value;
+   settingstools:= fo.settingstools.value;
+   settingsstorage:= fo.settingsstorage.value;
+   settingscomponentstore:= fo.settingscomponentstore.value;
+   settingsprojecttree:= fo.settingsprojecttree.value;
+   settingslayout:= fo.settingslayout.value;
+//   settingsautoload:= fo.settingsautoload.value;
+//   settingsautosave:= fo.settingsautosave.value;
+  end
+  else begin
+   settingsfile:= projectoptions.o.settingsfile;
+   settingseditor:= projectoptions.o.settingseditor;
+   settingsdebugger:= projectoptions.o.settingsdebugger;
+   settingsmake:= projectoptions.o.settingsmake;
+   settingsmacros:= projectoptions.o.settingsmacros;
+   settingsfontalias:= projectoptions.o.settingsfontalias;
+   settingsusercolors:= projectoptions.o.settingsusercolors;
+   settingsformatmacros:= projectoptions.o.settingsformatmacros;
+   settingstemplates:= projectoptions.o.settingstemplates;
+   settingstools:= projectoptions.o.settingstools;
+   settingsstorage:= projectoptions.o.settingsstorage;
+   settingscomponentstore:= projectoptions.o.settingscomponentstore;
+   settingsprojecttree:= projectoptions.o.settingsprojecttree;
+   settingslayout:= projectoptions.o.settingslayout;
+//   settingsautoload:= projectoptions.r.settingsautoload;
+//   settingsautosave:= projectoptions.r.settingsautosave;
   end;
+ end;
 end;
 
-procedure restorevalues(fo: tprojectoptionsfo; const buffer: valuebufferty);
+procedure restoresettingsvalues(fo: tprojectoptionsfo;
+                                               const buffer: valuebufferty);
 begin
-  with buffer do
-  begin
-    projectoptions.projectfilename := projectfilename;
-    projectoptions.projectdir      := projectdir;
-    if fo <> nil then
-    begin
-      if not settingsstorage then
-      begin
-        fo.settingsfile.Value        := settingsfile;
-        fo.settingseditor.Value      := settingseditor;
-        fo.settingsdebugger.Value    := settingsdebugger;
-        fo.settingsstorage.Value     := settingsstorage;
-        fo.settingsprojecttree.Value := settingsprojecttree;
-        fo.settingsautoload.Value    := settingsautoload;
-        fo.settingsautosave.Value    := settingsautosave;
-      end;
-      fo.fontondataentered(nil);
-      fo.settingsdataent(nil);
-    end
-    else if not settingsstorage then
-    begin
-      projectoptions.o.settingsfile        := settingsfile;
-      projectoptions.o.settingseditor      := settingseditor;
-      projectoptions.o.settingsdebugger    := settingsdebugger;
-      projectoptions.o.settingsstorage     := settingsstorage;
-      projectoptions.o.settingsprojecttree := settingsprojecttree;
-      projectoptions.o.settingsautoload    := settingsautoload;
-      projectoptions.o.settingsautosave    := settingsautosave;
-    end;
+ with buffer do begin
+  projectoptions.projectfilename:= projectfilename;
+  projectoptions.projectdir:= projectdir;
+  if fo <> nil then begin
+   if not settingsstorage then begin
+    fo.settingsfile.value:= settingsfile;
+    fo.settingseditor.value:= settingseditor;
+    fo.settingsdebugger.value:= settingsdebugger;
+    fo.settingsmake.value:= settingsmake;
+    fo.settingsmacros.value:= settingsmacros;
+    fo.settingsfontalias.value:= settingsfontalias;
+    fo.settingsusercolors.value:= settingsusercolors;
+    fo.settingsformatmacros.value:= settingsformatmacros;
+    fo.settingstemplates.value:= settingstemplates;
+    fo.settingstools.value:= settingstools;
+    fo.settingsstorage.value:= settingsstorage;
+    fo.settingscomponentstore.value:= settingscomponentstore;
+    fo.settingsprojecttree.value:= settingsprojecttree;
+    fo.settingslayout.value:= settingslayout;
+//    fo.settingsautoload.value:= settingsautoload;
+//    fo.settingsautosave.value:= settingsautosave;
+   end;
+   fo.fontondataentered(nil);
+   fo.settingsdataent(nil);
+  end
+  else begin
+   if not settingsstorage then begin
+    projectoptions.o.settingsfile:= settingsfile;
+    projectoptions.o.settingseditor:= settingseditor;
+    projectoptions.o.settingsdebugger:= settingsdebugger;
+    projectoptions.o.settingsmake:= settingsmake;
+    projectoptions.o.settingsmacros:= settingsmacros;
+    projectoptions.o.settingsfontalias:= settingsfontalias;
+    projectoptions.o.settingsusercolors:= settingsusercolors;
+    projectoptions.o.settingsformatmacros:= settingsformatmacros;
+    projectoptions.o.settingstemplates:= settingstemplates;
+    projectoptions.o.settingstools:= settingstools;
+    projectoptions.o.settingsstorage:= settingsstorage;
+    projectoptions.o.settingscomponentstore:= settingscomponentstore;
+    projectoptions.o.settingsprojecttree:= settingsprojecttree;
+    projectoptions.o.settingslayout:= settingslayout;
+//    projectoptions.r.settingsautoload:= settingsautoload;
+//    projectoptions.r.settingsautosave:= settingsautosave;
+   end;
   end;
-end;
+ end;
+end; 
 
 procedure savestat(out astream: ttextstream);
 var
-  write1: tstatwriter;
+ write1: tstatwriter;
 begin
-  astream := ttextstream.Create; //memory stream
-  write1  := tstatwriter.Create(astream, ce_utf8);
-  try
-    write1.setsection('projectoptions');
-    updateprojectsettings(write1); //save projectoptions state
-  finally
-    write1.Free;
-  end;
+ astream:= ttextstream.create; //memory stream
+ write1:= tstatwriter.create(astream,ce_utf8);
+ try
+  write1.setsection('projectoptions');
+  updateprojectsettings(write1,[]); //save projectoptions state
+ finally
+  write1.free;
+ end;
 end;
 
 procedure restorestat(var astream: ttextstream);
 var
-  read1: tstatreader;
+ read1: tstatreader;
 begin
-  astream.position := 0;
-  read1 := tstatreader.Create(astream, ce_utf8);
-  try
-    read1.setsection('projectoptions');
-    updateprojectsettings(read1); //restore projectoptions state
-  finally
-    read1.Free;
-    astream.Free;
-  end;
+ astream.position:= 0;
+ read1:= tstatreader.create(astream,ce_utf8);
+ try
+  read1.setsection('projectoptions');
+  updateprojectsettings(read1,[]); //restore projectoptions state
+ finally
+  read1.free;
+  astream.free;
+ end;
 end;
 
 function getdisabledoptions: settinggroupsty;
 begin
-  {
-  Result := [];
-  with projectoptions do
-  begin
-      if not o.settingseditor then
-      include(Result, sg_editor);
-    if not o.settingsdebugger then
-      include(Result, sg_debugger);
-    if not o.settingsmake then 
-   include(result,sg_make);
-  end;
-  }
  result:= [sg_state];
  with projectoptions do begin
   if not o.settingseditor then begin
@@ -3430,65 +3676,69 @@ begin
   end;
  end;
 end;
- 
 
-procedure doloadexe(const Sender: tprojectoptionsfo);
+procedure doloadexe(const sender: tprojectoptionsfo);
 var
-  read1: tstatreader;
-  buffer: valuebufferty;
-  stream1: ttextstream;
-  fname1: filenamety;
+ read1: tstatreader;
+ buffer: valuebufferty;
+ stream1: ttextstream;
+ fname1: filenamety;
 begin
-  if (Sender <> nil) then
-  begin
-    storemacros(Sender);
-    fname1 := Sender.settingsfile.Value;
-    expandprmacros1(fname1);
-    if not askyesno(lang_actionsmodule[ord(ac_replacesettings)] + lineend +
+ if (sender <> nil) then begin
+  storemacros(sender);
+  fname1:= sender.settingsfile.value;
+  expandprmacros1(fname1);
+     if not askyesno(lang_actionsmodule[ord(ac_replacesettings)] + lineend +
       '"' + fname1 + '"?',
-      lang_stockcaption[Ord(sc_warningupper)]) then
-      Exit;
+      lang_stockcaption[Ord(sc_warningupper)]) then begin
+   exit;
+  end;
+ end
+ else begin
+  fname1:= projectoptions.o.settingsfile;
+  expandprmacros1(fname1);
+ end;
+ if fname1 <> '' then begin
+  savesettingsvalues(sender,buffer);
+  savestat(stream1);
+  if sender <> nil then begin //manual
+   formtoprojectoptions(sender);
+  end;
+  projectoptions.disabled:= getdisabledoptions;
+  try
+   read1:= tstatreader.create(fname1,ce_utf8);
+   try
+    if projectoptions.o.settingscomponentstore then begin
+     componentstorefo.updatestat(read1);
+    end;
+    if projectoptions.o.settingslayout then begin
+     mainfo.loadwindowlayout(read1);
+    end;
+    read1.setsection('projectoptions');
+    if projectoptions.o.settingsprojecttree then begin
+     projecttree.updatestat(read1);
+     projecttree.updatelist;
+    end;
+    updateprojectsettings(read1,[]);
+   finally
+    read1.free;
+   end;
+   if sender <> nil then begin
+    projectoptionstoform(sender);
+   end;
+   restoresettingsvalues(sender,buffer);
+  except
+   application.handleexception;
+  end;
+  projectoptions.disabled:= [];
+  if sender <> nil then begin //manual
+   restorestat(stream1);
   end
-  else
-  begin
-    fname1 := projectoptions.o.settingsfile;
-    expandprmacros1(fname1);
+  else begin
+   stream1.free;
+   expandprojectmacros;
   end;
-  if fname1 <> '' then
-  begin
-    savevalues(Sender, buffer);
-    savestat(stream1);
-    if Sender <> nil then
-      formtoprojectoptions(Sender);
-    projectoptions.disabled := getdisabledoptions;
-    try
-      read1 := tstatreader.Create(fname1, ce_utf8);
-      try
-        read1.setsection('projectoptions');
-        if projectoptions.o.settingsprojecttree then
-        begin
-          projecttree.updatestat(read1);
-          projecttree.updatelist;
-        end;
-        updateprojectsettings(read1);
-      finally
-        read1.Free;
-      end;
-      if Sender <> nil then
-        projectoptionstoform(Sender);
-      restorevalues(Sender, buffer);
-    except
-      application.handleexception;
-    end;
-    projectoptions.disabled := [];
-    if Sender <> nil then
-      restorestat(stream1)
-    else
-    begin
-      stream1.Free;
-      expandprojectmacros;
-    end;
-  end;
+ end;
 end;
 
 procedure tprojectoptionsfo.loadexe(const Sender: TObject);
@@ -3496,58 +3746,71 @@ begin
   doloadexe(self);
 end;
 
-procedure dosaveexe(const Sender: tprojectoptionsfo);
+procedure dosaveexe(const sender: tprojectoptionsfo);
 var
-  stat1: tstatwriter;
-  stream1: ttextstream;
-  fname1: filenamety;
+ stat1: tstatwriter;
+ stream1: ttextstream;
+ fname1: filenamety;
 begin
-  if Sender <> nil then
-  begin
-    storemacros(Sender);
-    fname1 := Sender.settingsfile.Value;
-    expandprmacros1(fname1);
-    if findfile(fname1) and not askyesno(lang_stockcaption[ord(sc_file)] + fname1 + ' '+
+ if sender <> nil then begin //manual save
+  storemacros(sender);
+  fname1:= sender.settingsfile.value;
+  expandprmacros1(fname1);
+  if findfile(fname1) and not askyesno(lang_stockcaption[ord(sc_file)] + fname1 + ' '+
       lang_actionsmodule[ord(ac_exists)] + lineend +
-      lang_actionsmodule[ord(ac_wantoverwrite)], lang_stockcaption[Ord(sc_warningupper)]) then
-      Exit;
-  end
-  else
-  begin
-    fname1 := projectoptions.o.settingsfile;
-    expandprmacros1(fname1);
+      lang_actionsmodule[ord(ac_wantoverwrite)], lang_stockcaption[Ord(sc_warningupper)]) then begin
+   exit;
   end;
-  if fname1 <> '' then
-  begin
-    stat1 := tstatwriter.Create(fname1, ce_utf8, True);
-    with projectoptions do
-      try
-        savestat(stream1);
-        if Sender <> nil then
-          formtoprojectoptions(Sender);
-
-        //    e.fpgdesigner := projectoptionsfo.fpgdesignerenabled.value;
-        disabled := getdisabledoptions;
-        stat1.setsection('projectoptions');
-        if o.settingsprojecttree then
-          projecttree.updatestat(stat1);
-        if not o.settingsstorage then
-        begin
-          o.settingsfile        := '';
-          o.settingseditor      := False;
-          o.settingsdebugger    := False;
-          o.settingsstorage     := False;
-          o.settingsprojecttree := False;
-          o.settingsautoload    := False;
-          o.settingsautosave    := False;
-        end;
-        updateprojectsettings(stat1);
-      finally
-        disabled := [];
-        stat1.Free;
-        restorestat(stream1);
-      end;
+ end
+ else begin
+  fname1:= projectoptions.o.settingsfile;
+  expandprmacros1(fname1);
+ end;
+ if fname1 <> '' then begin
+  stat1:= tstatwriter.create(fname1,ce_utf8,true);
+  with projectoptions do begin
+   try
+    savestat(stream1);
+    if sender <> nil then begin
+     formtoprojectoptions(sender);
+    end;
+    disabled:= getdisabledoptions;
+    if o.settingscomponentstore then begin
+     componentstorefo.updatestat(stat1);
+    end;
+    if o.settingslayout then begin
+     mainfo.savewindowlayout(stat1);
+    end;
+    stat1.setsection('projectoptions');
+    if o.settingsprojecttree then begin
+     projecttree.updatestat(stat1);
+    end;
+    if not o.settingsstorage then begin
+     o.settingsfile:= '';
+     o.settingseditor:= false;
+     o.settingsdebugger:= false;
+     o.settingsmake:= false;
+     o.settingsmacros:= false;
+     o.settingsfontalias:= false;
+     o.settingsusercolors:= false;
+     o.settingsformatmacros:= false;
+     o.settingstemplates:= false;
+     o.settingstools:= false;
+     o.settingsstorage:= false;
+     o.settingscomponentstore:= false;
+     o.settingsprojecttree:= false;
+     o.settingslayout:= false;
+//     r.settingsautoload:= false;
+//     r.settingsautosave:= false;
+    end;
+    updateprojectsettings(stat1,disabled);
+   finally
+    disabled:= [];
+    stat1.free;
+    restorestat(stream1);
+   end;
   end;
+ end;
 end;
 
 procedure tprojectoptionsfo.saveexe(const Sender: TObject);
@@ -3631,7 +3894,6 @@ end;
 procedure tprojectoptionsfo.onshowpurpose(const Sender: TObject; var avalue: Boolean; var accept: Boolean);
 begin
   // if avalue then makeoptpurpose.visible := true else makeoptpurpose.visible := false;
-
   if avalue then
     makeoptionsgrid.datacols[0].Visible := True
   else
@@ -3655,9 +3917,9 @@ var
 begin
   if (info.eventkind = cek_buttonrelease) then
     for int1 := 0 to fo.exeextgrid.rowhigh do
-      tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := False//tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
-  ;
-end;
+      tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := False;
+      //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
+  end;
 
 procedure tprojectoptionsfo.oncellevcomp(const Sender: TObject; var info: celleventinfoty);
 var
@@ -3675,16 +3937,15 @@ var
 begin
   if (info.eventkind = cek_buttonrelease) then
     for int1 := 0 to fo.debuggerusedgrid.rowhigh do
-      tbooleanedit(debuggerusedgrid.datacols[info.cell.col].editwidget).gridvalue[int1] := False//tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
-  ;
-
+      tbooleanedit(debuggerusedgrid.datacols[info.cell.col].editwidget).gridvalue[int1] 
+      := False;
+      //tbooleanedit(exeextgrid.datacols[info.cell.col].editwidget).gridvalue[info.cell.row] := true;
 end;
 
 procedure tprojectoptionsfo.onfocus(const Sender: TObject);
 begin
   //tabcloser := False;
 end;
-
 
 { tprojectoptions }
 
@@ -3703,14 +3964,6 @@ begin
   inherited;
 end;
 
-{
-destructor tprojectoptions.destroy;
-begin
- ft.free;
- ftexp.free;
- inherited;
-end;
-}
 function tprojectoptions.gett: TObject;
 begin
   Result := ft;

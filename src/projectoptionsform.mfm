@@ -2351,7 +2351,7 @@ object projectoptionsfo: tprojectoptionsfo
               frame.localprops1 = []
               taborder = 2
               bounds_x = 0
-              bounds_y = 112
+              bounds_y = 109
               bounds_cx = 722
               bounds_cy = 59
               optionsscale = [osc_expandy, osc_shrinky]
@@ -9602,6 +9602,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 74
           bounds_cx = 69
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsautosave: tbooleanedit
           frame.caption = 'Auto save'
@@ -9619,6 +9620,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 74
           bounds_cx = 71
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object tlayouter6: tlayouter
           frame.framei_left = 5
@@ -9752,6 +9754,8 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 402
           bounds_cx = 222
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
+          value = True
         end
         object settingsprojecttree: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9769,6 +9773,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 378
           bounds_cx = 206
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingscomponentstore: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9786,23 +9791,25 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 354
           bounds_cx = 236
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsstorage: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
-          frame.caption = 'Load/save settings of Load/save settings ofStorage'
+          frame.caption = 'Load/save settings of Storage'
           frame.localprops = []
           frame.localprops1 = []
           frame.outerframe = (
             0
             3
-            286
+            168
             3
           )
           taborder = 5
           bounds_x = 30
           bounds_y = 163
-          bounds_cx = 300
+          bounds_cx = 182
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingstools: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9820,6 +9827,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 309
           bounds_cx = 168
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingstemplates: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9837,6 +9845,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 285
           bounds_cx = 197
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsformatmacros: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9854,6 +9863,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 261
           bounds_cx = 223
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsusercolors: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9871,6 +9881,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 237
           bounds_cx = 204
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsfontalias: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9888,6 +9899,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 213
           bounds_cx = 192
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsmacros: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9905,6 +9917,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 332
           bounds_cx = 180
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingsmake: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9922,7 +9935,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 188
           bounds_cx = 169
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
           value = True
+          valuedefault = True
         end
         object settingsdebugger: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9940,6 +9955,7 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 141
           bounds_cx = 194
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
         end
         object settingseditor: tbooleanedit
           optionsskin = [osk_nolayoutcx, osk_nolayoutcy]
@@ -9957,6 +9973,9 @@ object projectoptionsfo: tprojectoptionsfo
           bounds_y = 117
           bounds_cx = 171
           bounds_cy = 19
+          statfile = mainfo.mainstatfile
+          value = True
+          valuedefault = True
         end
       end
       object ttabpage23: ttabpage
