@@ -319,8 +319,9 @@ type
     function openproject(const aname: filenamety; const ascopy: Boolean = False): Boolean;
     procedure saveproject(aname: filenamety; const ascopy: Boolean = False);
     procedure savewindowlayout(const astream: ttextstream);
+    procedure savewindowlayout(const awriter: tstatwriter);
     procedure loadwindowlayout(const astream: ttextstream);
-
+   
     procedure sourcechanged(const Sender: tsourcepage);
     function opensource(const filekind: filekindty; const addtoproject: Boolean; const aactivate: Boolean = True; const currentnode: tprojectnode = nil): Boolean;
     //true if filedialog not canceled
@@ -4506,6 +4507,25 @@ begin
     if not (sg_debugger in disabled) then
       addobjectinfoitem(aobjects, d);
   end;
+end;
+
+procedure tmainfo.savewindowlayout(const awriter: tstatwriter);
+var
+ opt1: statfileoptionsty;
+begin
+ opt1:= projectstatfile.options;
+ projectstatfile.options:= mainfo.projectstatfile.options +
+                                        [sfo_nodata,sfo_nooptions];
+ awriter.setsection('breakpoints');
+ beginpanelplacement();
+ try
+  panelform.updatestat(awriter);
+  awriter.setsection('layout');
+  projectstatfile.updatestat('windowlayout',awriter);
+ finally
+  endpanelplacement();
+  mainfo.projectstatfile.options:= opt1;
+ end;
 end;
 
 procedure tmainfo.savewindowlayout(const astream: ttextstream);
