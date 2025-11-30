@@ -44,7 +44,7 @@ uses
  mseificompglob,mseifiglob,msescrollbar;
 
 const
-  versiontext = '2.18.0';
+  versiontext = '2.20.0';
   idecaption  = 'ideU' {$ifdef pacpas} + '_PacPas'{$endif} ;
   statname    = 'ideu';
 
