@@ -418,13 +418,19 @@ procedure CleanfpgDesigner();
 var 
   dataf: string;
  begin
- {$ifdef unix}
+ {$ifdef windows}
+  if fileexists('C:\Windows\System32\taskkill.exe') then
+  begin
+  dataf := 'C:\Windows\System32\taskkill.exe';
+  RunWithoutDebug(dataf, ' /F /IM designer_ext.exe');
+  end;
+ {$else}
+ if fileexists('/usr/bin/killall') then
+ begin
   dataf := '/usr/bin/killall';
   RunWithoutDebug(dataf, ' designer_ext');
-   {$else}
-   dataf := 'C:\Windows\System32\taskkill.exe';
-  RunWithoutDebug(dataf, ' /F /IM designer_ext.exe');
-   {$endif}
+ end; 
+ {$endif}
  end;
 
 end.
