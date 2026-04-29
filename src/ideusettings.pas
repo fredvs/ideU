@@ -158,9 +158,16 @@ const
     'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-openbsd', 'linux', '', '',
     '${IDEUDIR}docview/', '', '', '', '','');
     {$endif}  
-   
-   
-
+    
+   {$ifdef dragonfly}
+  defaultsettingmacros: array[settingsmacroty] of msestring = (
+    '', '', '', '${MSEDIR}lib/common/', '${IDEUDIR}syntaxdefs/',
+    '${IDEUDIR}templates/', '${IDEUDIR}layout/',
+    '${MSEDIR}apps/ide/compstore/',
+    'ppcx64', 'gdb' , '${IDEUDIR}lang/', '', 'x86_64-dragonfly', 'linux', '', '',
+    '${IDEUDIR}docview/', '', '', '', '','');
+    {$endif}    
+      
   {$else} // 32 bit
   
    {$if defined(linux) and defined(cpuarm)}
