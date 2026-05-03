@@ -4054,8 +4054,11 @@ begin
   end
   else
   begin
-
+  {$if defined(dragonfly)}
+    setstattext('Process done', mtk_info);
+  {$else}
     setstattext(lang_mainform[Ord(ma_makeok)], mtk_finished);
+  {$endif} 
     fcurrent       := True;
     fnoremakecheck := False;
     messagefo.Messages.lastrow;
