@@ -44,7 +44,7 @@ implementation
 
 uses
 {$if defined(darwin) or defined(dragonfly)}
-main, beauty, projectoptionsform, messageform ;
+main, beauty, messageform ;
  {$else}
   main,
   beauty;
