@@ -15,7 +15,7 @@ cthreads, {$ENDIF}
   Process,
   conffpgui,
   msefileutils,
-{$IFDEF darwin}
+{$if defined(darwin) or defined(dragonfly)}
 msegui, commandorform, targetconsole,{$ENDIF}
   make,
   Classes,
@@ -28,7 +28,7 @@ procedure RunCustomCompiled(const AFilename: string; acompiler: string);
 
 procedure RunWithoutDebug(const AFilename: string; Aparam: string);
 
-{$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
 procedure RunWithoutDebugMac(Const AFilename: String; Aparam: String);
 {$endif}
 
@@ -43,7 +43,7 @@ var
 implementation
 
 uses
- {$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
 main, beauty, projectoptionsform, messageform ;
  {$else}
   main,
@@ -57,7 +57,7 @@ var
   dataf, dataf2, conso: string;
   len1: integer;
 begin
-  {$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
   if (acompiler = 'macos') then
     RunWithoutDebugMac(ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)), fk_file,
     True))), acompiler)
@@ -146,7 +146,7 @@ begin
   end;
 end;
 
-{$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
 procedure RunWithoutDebugMac(Const AFilename: String; Aparam: String);
 
 var 
@@ -237,7 +237,7 @@ var
   AProcess: TProcess;
   thecommand: string;
 begin
- {$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
   if (Aparam = 'macos') then
     RunWithoutDebugMac(ansistring(tosysfilepath(filepath(UTF8Decode(ansistring(AFilename)), fk_file,
     True))), Aparam)
