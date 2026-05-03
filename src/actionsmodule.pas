@@ -590,7 +590,7 @@ end;
 
 procedure tactionsmo.initproject;
 begin
- {$ifndef darwin}
+ {$if defined(darwin) or defined(dragonfly)}
   debuggerfo.project_abort_compil.Enabled := True;
   debuggerfo.project_abort_compil.face.image.alignment :=
     [al_stretchx, al_stretchy];
@@ -645,7 +645,7 @@ begin
 
   iscompiling := True;
 
-  {$ifndef darwin}
+  {$if not defined(darwin) and not defined(dragonfly)}
   // mainfo.setstattext('Compiling ' + UTF8Decode(ansistring(AFilename)) + '...', mtk_notok);
 
   mainfo.setstattext('Compiling ' + gettargetfile + '...', mtk_notok);
@@ -732,7 +732,7 @@ procedure tactionsmo.custcompileproject(const Sender: TObject);
 begin
   if theprojectname <> '' then
   begin
-  {$ifdef darwin}
+{$if defined(darwin) or defined(dragonfly)}
    mainfo.setstattext('Compiling ' + theprojectname + '...' , mtk_making);
   {$endif}
     saveallactonexecute(Sender);
@@ -742,7 +742,7 @@ end;
 
 procedure tactionsmo.setupcustom;
 begin
-  {$ifndef darwin}
+ {$if not defined(darwin) and not defined(dragonfly)}
   debuggerfo.edited_make.Enabled := False;
   debuggerfo.edited_make.face.image.alignment :=
     [al_grayed, al_stretchx, al_stretchy];
@@ -792,7 +792,7 @@ begin
   begin
     saveactonexecute(Sender);
     setupcustom;
-  {$ifdef darwin}
+ {$if defined(darwin) or defined(dragonfly)}
   mainfo.setstattext('Compiling ' + sourcefo.ActivePage.filename + '...' , mtk_making);
  {$endif}
     mainfo.customcompile(Sender);
@@ -801,7 +801,7 @@ end;
 
 procedure tactionsmo.setupcustommenu(const Sender: TObject);
 begin
- {$ifndef darwin}
+{$if not defined(darwin) and not defined(dragonfly)}
   debuggerfo.edited_make.Enabled := False;
 
   debuggerfo.edited_make.face.image.alignment :=
@@ -1034,7 +1034,7 @@ end;
 
 procedure tactionsmo.resetactonexecute(const Sender: TObject);
 begin
-{$ifndef darwin}
+{$if not defined(darwin) and not defined(dragonfly)}
   with mainfo do
   begin
     gdb.abort;
@@ -1057,7 +1057,7 @@ var
   str3: msestring;
   int1, int2, int3: integer;
 begin
- {$ifndef darwin}
+{$if not defined(darwin) and not defined(dragonfly)}
   nodebugset := False;
   str3       := gettargetfile;//to initialize
   str3       := '';

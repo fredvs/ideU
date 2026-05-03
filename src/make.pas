@@ -30,7 +30,7 @@ function runscript(const script: filenamety;
 
 var
  wineneeded: boolean = false;
-{$ifdef darwin} 
+{$if defined(darwin) or defined(dragonfly)}
  targetcons: boolean = false;
 {$endif} 
 
@@ -912,7 +912,6 @@ procedure tprogrunner.runprog(const acommandline: string);
 var
  wdbefore: filenamety;
 begin
- fexitcode:= 1; //defaulterror
  fmessagefinished:= false;
  ffinished:= false;
 
@@ -921,13 +920,19 @@ begin
  {$else}
   procid:= invalidprochandle; 
  {$endif} 
+ 
+ {$if defined(dragonfly)}
+ fexitcode:= 0;
+ {$else}
+ fexitcode:= 1; 
+ {$endif} 
   
  with projectoptions,o.texp do begin
   if fsetmakedir and (makedir <> '') then begin
    wdbefore:= setcurrentdirmse(makedir);
   end;
   try
-  {$ifdef darwin}
+ {$if defined(darwin) or defined(dragonfly)}
   targetcons  := false;
   RunCustomCompiled(ansistring(acommandline), 'macos');
  {$else}
@@ -1021,7 +1026,7 @@ begin
  actionsmo.initproject ;
  //mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
 
- {$ifndef darwin}
+ {$if not defined(darwin) and not defined(dragonfly)}
   mainfo.setstattext(lang_actionsmodule[ord(ac_making)] + ' ' + gettargetfile + '...' ,mtk_making);
  {$endif} 
 
@@ -1130,7 +1135,7 @@ begin
  if procid <> invalidprochandle then begin
  // mainfo.setstattext(actionsmo.c[ord(ac_making)],mtk_running);
   
- {$ifndef darwin}
+ {$if not defined(darwin) and not defined(dragonfly)}
   mainfo.setstattext( lang_actionsmodule[ord(ac_making)] + ' ' + aname + '...' ,mtk_making);
  {$endif} 
 
