@@ -450,9 +450,6 @@ const
 {$if defined(freebsd) and defined(cpu86) }
   espeaklibdir = 'libfreebsd32';
  {$endif}
-{$if defined(dragonfly) and defined(cpu64) }
-  espeaklibdir = 'libdragonfly64';
- {$endif}
 {$if defined(openbsd) and  defined(cpu64)}
   espeaklibdir = 'libopenbsd64';
 {$endif}
