@@ -478,6 +478,10 @@ edited_run.imagelist := actionsmo.buttonicons;
 edited_run.face.image := statdisp.face.image;
 {$endif}
 
+{$if defined(netbsd) or defined(darwin) or defined(openbsdbsd) or defined(dragonfly)}
+code_beauty.visible := false;
+{$endif}
+
 end;
 
 procedure tdebuggerfo.oncr(const sender: TObject);
