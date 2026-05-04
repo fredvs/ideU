@@ -478,7 +478,7 @@ edited_run.imagelist := actionsmo.buttonicons;
 edited_run.face.image := statdisp.face.image;
 {$endif}
 
-{$if defined(netbsd) or defined(darwin) or defined(openbsdbsd) or defined(dragonfly)}
+{$if defined(netbsd) or defined(darwin) or defined(openbsd) or defined(dragonfly)}
 code_beauty.visible := false;
 {$endif}
 
