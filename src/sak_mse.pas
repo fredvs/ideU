@@ -76,6 +76,7 @@ Math, Classes, Process, dynlibs
 {$define freebsd}
 {$define openbsd}
 {$define netbsd}
+{$define dragonfly}
 {$define windows}
 {$define cpu64}
 {$define cpu86}
@@ -457,6 +458,9 @@ const
 {$endif}
 {$if defined(openbsd) and  defined(cpu86)}
   espeaklibdir = 'libopenbsd32';
+{$endif}
+{$if defined(dragonfly) and  defined(cpu64)}
+  espeaklibdir = 'libdragonflybsd64';
 {$endif}
 {$if defined(netbsd) and  defined(cpu64)}
   espeaklibdir = 'libnetbsd64';
