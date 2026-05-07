@@ -12,6 +12,7 @@ FreeBSD-x86_64, FreeBSD-i386, FreeBSD-aarch64,
 Linux-x86_64, Linux-i386, Linux-Rpi-arm32, Linux-Rpi-aarch64,
 NetBSD-x86_64, NetBSD-i386,
 OpenBSD x86_64, OpenBSD-i386,
+DragonFlyBSD x86_64,
 Darwin-MacOs-x86_64, Darwin-MacOs-aarch64. 
 are here: https://github.com/fredvs/ideU/releases .
 

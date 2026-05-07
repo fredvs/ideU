@@ -44,7 +44,7 @@ uses
  mseificompglob,mseifiglob,msescrollbar;
 
 const
-  versiontext = '2.20.0';
+  versiontext = '2.22.0';
   idecaption  = 'ideU' {$ifdef pacpas} + '_PacPas'{$endif} ;
   statname    = 'ideu';
 
@@ -4291,7 +4291,7 @@ begin
     c_linefeed + c_linefeed + c_linefeed +
     ' Martin Schreiber' +
     c_linefeed +
-    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2025' +
+    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2026' +
     c_linefeed +
     'https://github.com/mse-org/mseide-msegui';
 
@@ -4333,7 +4333,7 @@ begin
     c_linefeed +
     '<graemeg@gmail.com>' +
     c_linefeed +
-    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2025';
+    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2026';
 
  // aboutfo.about_text.Height := 13 * confideufo.fontsize.Value;
  // aboutfo.Height := aboutfo.about_text.Height + 16;
@@ -4375,7 +4375,7 @@ begin
     'Fred van Stappen' +
     c_linefeed +
     '<fiens@hotmail.com>' + c_linefeed +
-    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2025';
+    lang_xstockcaption[Ord(sc_copyright)] + ' 1999-2026';
 
  // aboutfo.about_text.Height := 15 * confideufo.fontsize.Value;
  // aboutfo.Height := aboutfo.about_text.Height + 16;
