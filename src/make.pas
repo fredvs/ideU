@@ -221,6 +221,13 @@ begin
  end;
 end;
 
+{$IFDEF WINDOWS}
+  {$PUSH}
+  // Force safe -O2 rules exclusively for Windows under FPC trunk
+  {$OPTIMIZATION LEVEL2}
+  {$OPTIMIZATION NOREGVAR}
+{$ENDIF}
+
 function buildmakecommandline(const atag: integer): string;
 
  function normalizename(const aname: filenamety): filenamety;
@@ -594,6 +601,8 @@ for int1:= 0 to high(compilerused) do begin
    result:= ansistring(trim(str1 + strextra)) ;
  end;
 
+
+
 /// fred
 function customcommandline(const aname: filenamety; const acompiler, acompilertag, atag: integer) : string;
 
@@ -841,6 +850,10 @@ str1:= winestr + str1 + ' ';
 // writeln(str1);
  result:= ansistring(str1) ;
 end;
+
+{$IFDEF WINDOWS}
+  {$POP}
+{$ENDIF}
 
 procedure dodownload;
 begin
