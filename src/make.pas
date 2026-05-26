@@ -221,7 +221,7 @@ begin
  end;
 end;
 
-{$IFDEF WINDOWS}
+{$IF DEFINED(WINDOWS) AND (FPC_FULLVERSION >= 30301)}
   {$PUSH}
   // Force safe -O2 rules exclusively for Windows under FPC trunk
   {$OPTIMIZATION LEVEL2}
