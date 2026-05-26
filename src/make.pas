@@ -851,7 +851,7 @@ str1:= winestr + str1 + ' ';
  result:= ansistring(str1) ;
 end;
 
-{$IFDEF WINDOWS}
+{$IF DEFINED(WINDOWS) AND (FPC_FULLVERSION >= 30301)}
   {$POP}
 {$ENDIF}
 
