@@ -556,9 +556,15 @@ for int1:= 0 to high(compilerused) do begin
   
   
   if (targetfile <> '') and  (acompiler <> 3) then
- if (targpref <> '') then
-   str1:= strcompiler + ' -o' +
-    quotefilename(targpref+normalizename(targetfile+strexecext))
+ if (targpref <> '') and (targpref <> '-o') then
+ begin
+ 
+ if targpref.StartsWith('-o') then
+   str1:= strcompiler + ' ' +
+    quotefilename(targpref+normalizename(targetfile+strexecext)) else
+  str1:= strcompiler + ' -o' +
+    quotefilename(targpref+normalizename(targetfile+strexecext)) ;
+end
  else str1:= strcompiler;
  
   int2:= high(unitdirs);

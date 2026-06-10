@@ -1322,7 +1322,7 @@ end;
 
 function gettargetfile: filenamety;
 var
-  strtarget, strexecext: msestring;
+  strtarget, strexecext, strtargpref : msestring;
   int1, inttypecomp: integer;
 begin
 
@@ -1381,8 +1381,14 @@ begin
       Result := objpath(debugtarget)
     else
     with projectoptions,o,texp do
-      Result := objpath(ExpandFileName(targpref+targetfile+strexecext)); //o.texp.targetfile
- 
+    begin
+     strtargpref := targpref;
+     if (Length(strtargpref) >= 2) and (Copy(strtargpref, 1, 2) = '-o') then
+  begin
+    Delete(strtargpref, 1, 2); // (String, StartIndex, Count)
+  end;
+      Result := objpath(ExpandFileName(strtargpref+targetfile+strexecext)); //o.texp.targetfile
+   end;
 end;
 
 procedure projectoptionstofont(const afont: tfont);
