@@ -1054,13 +1054,15 @@ end;
 
 procedure tactionsmo.continueactonexecute(const Sender: TObject);
 var
-  str3: msestring;
+  str3, CurrentDir: msestring;
   int1, int2, int3: integer;
 begin
 {$if not defined(darwin) and not defined(dragonfly)}
   nodebugset := False;
   str3       := gettargetfile;//to initialize
   str3       := '';
+  CurrentDir := GetCurrentDir;
+  
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
       ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
@@ -1069,6 +1071,10 @@ begin
   else
   begin
 
+  str3 := ExtractFilePath(gettargetfile);
+  ChDir(str3); 
+  str3       := '';
+  
     mainfo.terminategdbserver(True);
 
     if debuggerfo.debug_on.tag = 0 then
@@ -1158,6 +1164,7 @@ begin
    mainfo.setstattext('Running ' + gettargetfile + '...' ,mtk_flat);
    mainfo.runwithoutdebugger;
   {$endif}
+  chdir(CurrentDir);
 end;
 
 

@@ -1353,8 +1353,6 @@ begin
   if int1 > 0 then
     strtarget := system.copy(strtarget, 0, int1 - 1);
 
-  // writeln(projectoptions.o.texp.targetfile);
-
   strexecext := '';
 
   if (inttypecomp = 2) then
@@ -1382,8 +1380,9 @@ begin
     if trim(debugtarget) <> '' then
       Result := objpath(debugtarget)
     else
-      Result := objpath(strtarget + strexecext)//o.texp.targetfile
-  ;
+    with projectoptions,o,texp do
+      Result := objpath(ExpandFileName(targpref+targetfile+strexecext)); //o.texp.targetfile
+ 
 end;
 
 procedure projectoptionstofont(const afont: tfont);

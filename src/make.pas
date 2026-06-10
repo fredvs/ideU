@@ -221,7 +221,7 @@ begin
  end;
 end;
 
-{$IF DEFINED(WINDOWS) AND (FPC_FULLVERSION >= 30301)}
+{$IFDEF WINDOWS}
   {$PUSH}
   // Force safe -O2 rules exclusively for Windows under FPC trunk
   {$OPTIMIZATION LEVEL2}
@@ -555,12 +555,12 @@ for int1:= 0 to high(compilerused) do begin
   //str1:= strcompiler;
   
   
-  if (targetfile <> '') and (targpref <> '') then begin
-
- if  acompiler <> 3 then
-   str1:= strcompiler + ' ' + quotefilename(targpref+normalizename(targetfile+strexecext));
-
-  end;
+  if (targetfile <> '') and  (acompiler <> 3) then
+ if (targpref <> '') then
+   str1:= strcompiler + ' -o' +
+    quotefilename(targpref+normalizename(targetfile+strexecext))
+ else str1:= strcompiler;
+ 
   int2:= high(unitdirs);
   int1:= high(unitdirson);
   if int1 < int2 then begin
@@ -851,7 +851,7 @@ str1:= winestr + str1 + ' ';
  result:= ansistring(str1) ;
 end;
 
-{$IF DEFINED(WINDOWS) AND (FPC_FULLVERSION >= 30301)}
+{$IFDEF WINDOWS}
   {$POP}
 {$ENDIF}
 
