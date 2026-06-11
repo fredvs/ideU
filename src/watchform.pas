@@ -35,7 +35,8 @@ interface
 uses
  mseforms,msedataedits,msewidgetgrid,msegdbutils,msegraphedits,msedock,msegrids,
  msegui,msestrings,msemenus,mseedit,mseevent,msetypes,msegraphics,msebitmap,
- msestringcontainer;
+ msestringcontainer, msedispwidgets, msegraphutils, mseguiglob, mserichstring,
+  mseclasses, msesimplewidgets, msewidgets;
 
 type
  twatchfo = class(tdockform)
@@ -49,6 +50,7 @@ type
    formatcode: tdatabutton;
    timagelist1: timagelist;
    c: tstringcontainer;
+   tbutton1: tbutton;
    procedure expressionondataentered(const sender: tobject);
    procedure expresultonsetvalue(const sender: tobject; var avalue: msestring; var accept: boolean);
    procedure resultcellevent(const sender: TObject; var info: celleventinfoty);
@@ -63,6 +65,7 @@ type
    procedure addresswatch(const sender: TObject);
    procedure formatent(const sender: TObject);
    procedure resetformats(const sender: TObject);
+   procedure onclose(const sender: TObject);
   public
    gdb: tgdbmi;
    procedure clear(const all: boolean = false);
@@ -77,8 +80,8 @@ var
 
 implementation
 uses
- watchform_mfm,main,msewidgets,projectoptionsform,actionsmodule,msegraphutils,
- mseguiglob,mseformatstr,msebits,sysutils,watchpointsform,memoryform;
+ watchform_mfm,main,projectoptionsform,actionsmodule,
+ mseformatstr,msebits,sysutils,watchpointsform,memoryform;
 
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -356,6 +359,11 @@ begin
  else begin
   showerror(msestring(str1));
  end;
+end;
+
+procedure twatchfo.onclose(const sender: TObject);
+begin
+close;
 end;
 
 end.

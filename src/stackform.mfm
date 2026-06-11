@@ -31,6 +31,7 @@ object stackfo: tstackfo
   statfile = mainfo.projectstatfile
   caption = 'Stack'
   icon.transparentcolor = -2147483642
+  icon.origformat = 'png'
   icon.image = {
     0000000000000000180000001800000094080000000000000000000000000000
     0000000000000000000000000000000000000000F5F5F501F3F3F301F2F2F201
@@ -104,6 +105,7 @@ object stackfo: tstackfo
     DFDFDF01DDDDDD01DBDBDB01DADADA01D8D8D801D7D7D701D5D5D501D3D3D301
     D2D2D201D0D0D001
   }
+  windowopacity = -Inf
   onshow = stackfoonshow
   onlayout = formonchildscaled
   moduleclassname = 'tdockform'
@@ -161,9 +163,9 @@ object stackfo: tstackfo
         valuefalse = '0'
         valuetrue = '1'
       end>
-    datarowheight = 17
+    datarowheight = 19
     oncellevent = gridoncellevent
-    reffontheight = 15
+    reffontheight = 17
   end
   object filedisp: tstringdisp
     frame.localprops = []
@@ -172,11 +174,11 @@ object stackfo: tstackfo
     bounds_x = 71
     bounds_y = 0
     bounds_cx = 172
-    bounds_cy = 19
+    bounds_cy = 21
     anchors = [an_left, an_top, an_right]
     textflags = [tf_ycentered, tf_ellipseleft]
     options = [dwo_hintclippedtext]
-    reffontheight = 15
+    reffontheight = 17
   end
   object address: tstringdisp
     frame.localprops = []
@@ -184,9 +186,9 @@ object stackfo: tstackfo
     bounds_x = 1
     bounds_y = 0
     bounds_cx = 70
-    bounds_cy = 19
+    bounds_cy = 21
     textflags = [tf_xcentered, tf_ycentered]
-    reffontheight = 15
+    reffontheight = 17
   end
   object tpopupmenu1: tpopupmenu
     menu.submenu.count = 1

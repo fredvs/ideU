@@ -56,10 +56,11 @@ object watchfo: twatchfo
     D5D5D501D9D9D903FFFFFF017C7C7C01D9D9D903B9B9B90192929201D9D9D905
     99999901B2B2B201D9D9D904C8C8C80186868601D9D9D904FFFFFF017C7C7C01
     D9D9D916FFFFFF017C7C7C01D9D9D916FFFFFF017C7C7C01FFFFFF17D0D0D060
-    00000000000000000000000000000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+    0000008E00000000000000A400000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000000000000000000000000000000
   }
+  windowopacity = -Inf
   moduleclassname = 'tdockform'
   object grid: twidgetgrid
     optionswidget = [ow_mousefocus, ow_tabfocus, ow_arrowfocus, ow_arrowfocusin, ow_arrowfocusout, ow_focusbackonesc, ow_mousewheel, ow_destroywidgets, ow_hinton]
@@ -83,7 +84,7 @@ object watchfo: twatchfo
     fixrows.count = 1
     fixrows.items = <    
       item
-        height = 17
+        height = 19
         captions.count = 6
         captions.items = <        
           item
@@ -152,15 +153,15 @@ object watchfo: twatchfo
         widgetname = 'sizecode'
         dataclass = tgridintegerdatalist
       end>
-    datarowheight = 17
+    datarowheight = 19
     statfile = mainfo.projectstatfile
-    reffontheight = 15
+    reffontheight = 17
     object watchon: tbooleanedit
       optionsskin = [osk_framebuttononly]
       taborder = 1
       bounds_x = 0
       bounds_y = 0
-      bounds_cy = 17
+      bounds_cy = 19
       statfile = mainfo.projectstatfile
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
       optionsedit1 = [oe1_autopopupmenu, oe1_keyexecute, oe1_savevalue, oe1_savestate]
@@ -177,12 +178,12 @@ object watchfo: twatchfo
       bounds_x = 14
       bounds_y = 0
       bounds_cx = 152
-      bounds_cy = 17
+      bounds_cy = 19
       statfile = mainfo.projectstatfile
       optionsedit1 = [oe1_savevalue]
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_forcereturncheckvalue, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       ondataentered = expressionondataentered
-      reffontheight = 15
+      reffontheight = 17
     end
     object expresult: tstringedit
       optionswidget1 = [ow1_autoscale]
@@ -193,7 +194,7 @@ object watchfo: twatchfo
       bounds_x = 167
       bounds_y = 0
       bounds_cx = 80
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = []
       optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_shiftreturn, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_endonenter, oe_autoselect, oe_autoselectonfirstclick, oe_hintclippedtext]
       textflags = [tf_ycentered, tf_noselect, tf_ellipseright]
@@ -204,7 +205,7 @@ object watchfo: twatchfo
       bounds_x = 248
       bounds_y = 0
       bounds_cx = 12
-      bounds_cy = 17
+      bounds_cy = 19
       ondataentered = formatent
       state = [as_invisible, as_localimagelist]
       imagelist = timagelist1
@@ -234,9 +235,9 @@ object watchfo: twatchfo
       bounds_x = 261
       bounds_y = 0
       bounds_cx = 13
-      bounds_cy = 17
+      bounds_cy = 19
       optionsedit1 = [oe1_savevalue]
-      reffontheight = 15
+      reffontheight = 17
     end
   end
   object watcheson: tbooleanedit
@@ -245,19 +246,29 @@ object watchfo: twatchfo
     frame.localprops1 = []
     frame.outerframe = (
       0
-      2
-      74
-      2
+      3
+      68
+      3
     )
     bounds_x = 8
-    bounds_y = 3
-    bounds_cx = 87
-    bounds_cy = 17
+    bounds_y = 2
+    bounds_cx = 81
+    bounds_cy = 19
     statfile = mainfo.projectstatfile
     optionsedit = [oe_undoonesc, oe_closequery, oe_checkmrcancel, oe_eatreturn, oe_resetselectonexit, oe_exitoncursor, oe_autoselect, oe_autoselectonfirstclick]
     onchange = watchesononchange
     onsetvalue = watchesononsetvalue
     value = True
+  end
+  object tbutton1: tbutton
+    taborder = 2
+    bounds_x = 170
+    bounds_y = 3
+    bounds_cx = 61
+    bounds_cy = 19
+    state = [as_localcaption, as_localonexecute]
+    caption = 'Close'
+    onexecute = onclose
   end
   object gripopup: tpopupmenu
     onupdate = popupdate

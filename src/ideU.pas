@@ -117,9 +117,9 @@ begin
   conffpguifo.icon    := mainfo.icon;
   confcompilerfo.icon := mainfo.icon;
   confdebuggerfo.icon := mainfo.icon;
-  sourcefo.icon       := mainfo.icon;
-  debuggerfo.icon     := mainfo.icon;
-  messagefo.icon      := mainfo.icon;
+  // sourcefo.icon       := mainfo.icon;
+  // debuggerfo.icon     := mainfo.icon;
+  //messagefo.icon      := mainfo.icon;
   // findmessagefo.icon  := mainfo.icon;
   //findinfilefo.icon   := mainfo.icon;
  
