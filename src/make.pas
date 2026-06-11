@@ -558,8 +558,7 @@ for int1:= 0 to high(compilerused) do begin
   if (targetfile <> '') and  (acompiler <> 3) then
  if (targpref <> '') and (targpref <> '-o') then
  begin
- 
- if targpref.StartsWith('-o') then
+ if  (Copy(targpref, 1, 2) = '-o') then
    str1:= strcompiler + ' ' +
     quotefilename(targpref+normalizename(targetfile+strexecext)) else
   str1:= strcompiler + ' -o' +
