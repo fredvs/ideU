@@ -1253,6 +1253,9 @@ begin
   projectedit.itemlist.add(ttreelistedititem(projecttree.cmodules));
   projectedit.itemlist.add(ttreelistedititem(projecttree.files));
  end;
+ unitpopup.menu.font.height := mainfo.font.height;
+ filepopup.menu.font.height := mainfo.font.height;
+ cmodulepopup.menu.font.height := mainfo.font.height;
 end;
 
 procedure tprojecttreefo.clear;

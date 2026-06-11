@@ -897,6 +897,7 @@ begin
         //    openform.controller.filename:= '';
         //    openform.controller.captionopen:= c[ord(formfile)]+' '+ aname;
         openform.controller.showoptions := True;
+        openform.controller.fontheight := font.Height;
         openfile.controller.fontheight := font.Height;
 
         if length(lang_mainform) > Ord(ma_formfile) then

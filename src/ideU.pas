@@ -120,8 +120,8 @@ begin
   sourcefo.icon       := mainfo.icon;
   debuggerfo.icon     := mainfo.icon;
   messagefo.icon      := mainfo.icon;
-  findmessagefo.icon  := mainfo.icon;
-  findinfilefo.icon   := mainfo.icon;
+  // findmessagefo.icon  := mainfo.icon;
+  //findinfilefo.icon   := mainfo.icon;
  
   application.run;
 end.

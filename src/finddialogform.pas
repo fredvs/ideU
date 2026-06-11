@@ -245,7 +245,7 @@ end;
 
 procedure tfinddialogfo.oncre(const Sender: TObject);
 begin
-  icon := mainfo.icon;
+  // icon := mainfo.icon;
   setlangfind();
   onactiv(nil);
 end;

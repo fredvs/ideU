@@ -564,6 +564,8 @@ object projecttreefo: tprojecttreefo
       item
         action = editdiract
       end>
+    menu.font.name = 'stf_menu'
+    menu.font.localprops = []
     left = 8
     top = 31
   end
@@ -618,6 +620,8 @@ object projecttreefo: tprojecttreefo
         action = editdiract
       end>
     menu.state = [as_localhint]
+    menu.font.name = 'stf_menu'
+    menu.font.localprops = []
     left = 24
     top = 55
   end
@@ -656,6 +660,8 @@ object projecttreefo: tprojecttreefo
         action = editdiract
       end>
     menu.state = [as_localhint]
+    menu.font.name = 'stf_menu'
+    menu.font.localprops = []
     left = 8
     top = 72
   end
