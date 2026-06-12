@@ -334,8 +334,7 @@ procedure tconflangfo.ongridfontcellev(Const sender: TObject;
                                        Var info: celleventinfoty);
 var 
   cellpos: gridcoordty;
-  x: integer;
-begin
+ begin
   cellpos := info.cell;
 
   if (info.eventkind = cek_buttonrelease) then

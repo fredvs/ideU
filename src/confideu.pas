@@ -633,7 +633,7 @@ end;
 procedure tconfideufo.onchangefont;
 var
   ratio: double;
-  rect1: rectty;
+ 
 begin
 
   ratio := fontsize.Value / 12;

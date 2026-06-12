@@ -1327,8 +1327,7 @@ end;
 function tsourcefo.closepage(const apage: tsourcepage; noclosecheck: Boolean = False): Boolean;
 var
   str1: filenamety;
-  bo1: Boolean;
-begin
+ begin
   Result := apage = nil;
   if not Result then
     if apage.checksave(False, False) <> mr_cancel then

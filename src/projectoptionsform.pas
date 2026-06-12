@@ -1176,8 +1176,7 @@ uses
 var
   projectoptionsfo: tprojectoptionsfo;
   fo: tprojectoptionsfo;
-  ispoactivated : boolean = false;
-
+  
 const
   firstsiginfocomment = c_sighup;
   lastsiginfocomment  = c_sigpwr;

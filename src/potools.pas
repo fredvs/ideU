@@ -84,7 +84,7 @@ end;
 procedure theaderfo.extractcaption(const Sender: TObject; fn: msestring);
 var
   file1: ttextdatastream;
-  str1, str2: msestring;
+  str1: msestring;
   strobject, strcaption, strcaptionmenu, strmenu, strmenusub2, strmenusub3, strmenusub1: mseString;
   isfirst: Boolean = True;
   ismenu: Boolean = False;

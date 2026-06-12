@@ -627,8 +627,6 @@ begin
 end;
 
 procedure tmainfo.syntaxdefload(const Sender: TObject);
-var
- rect1: rectty;
 begin
 
   if Assigned(sourcefo.ActivePage) then
@@ -4604,9 +4602,7 @@ end;
 
 // fred layout
 procedure tmainfo.menuwindowlayoutexe(const Sender: TObject);
- var
- rect1: rectty;
-begin
+ begin
   if Assigned(sourcefo.ActivePage) then
   begin
     dodialogfiles;
@@ -6010,8 +6006,7 @@ end;
 procedure tmainfo.onlang(const Sender: TObject);
 var
   x: integer;
-  rect1: rectty;
-begin
+ begin
 
   for x := 0 to conflangfo.gridlang.rowcount - 1 do
     if MSEFallbackLang = conflangfo.gridlangcode[x] then

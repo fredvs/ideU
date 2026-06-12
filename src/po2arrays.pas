@@ -50,7 +50,7 @@ var
   Attribute: word;
   i: integer = 0;
   x: integer;
-  str1, str2, pat: string;
+  str1, pat: string;
 begin
   Attribute := faReadOnly or faArchive;
 
