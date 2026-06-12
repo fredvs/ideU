@@ -885,7 +885,7 @@ end;
 procedure tconfideufo.onapply(const Sender: TObject);
 var
   str1: ttextstream;
-  thedir: string;
+  thedir: msestring;
 begin
 
   messagefo.updateprojectoptions;
@@ -936,7 +936,7 @@ end;
 
 procedure tconfideufo.setlangextrasettings();
 var
-  strz: string = '';
+  strz: msestring = '';
 begin
   if MSEFallbackLang = 'zh' then
     strz         := '             ';

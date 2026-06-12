@@ -3894,7 +3894,7 @@ end;
 
 procedure tprojectoptionsfo.setlangprojectoptions();
 var
-strz : string = '';
+strz : msestring = '';
 begin
   if MSEFallbackLang = 'zh' then strz := '             ';
 

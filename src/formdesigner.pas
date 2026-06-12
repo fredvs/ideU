@@ -493,7 +493,7 @@ type
 
 var
  fregistereddesignmoduleclasses: tdesignmoduleinfoar;
- fdactivated : boolean = false;
+ //fdactivated : boolean = false;
 
 
 function registereddesignmoduleclasses: tdesignmoduleinfoar;
@@ -4215,7 +4215,7 @@ begin
  togglehideact.Caption := lang_xstockcaption[Ord(sc_togglehide)];
  showallact.Caption := lang_xstockcaption[Ord(sc_showall)];
  end;
- fdactivated := true; 
+ //fdactivated := true; 
 end;
 
 procedure tformdesignerfo.setactarea(const avalue: areaty);

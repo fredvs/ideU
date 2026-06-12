@@ -23,7 +23,7 @@ VAR
   binPath: string;
   {$ENDIF}  
   
-  Appname: string;
+  Appname: msestring;
 
 PROCEDURE createnewlang (alang: msestring);
 FUNCTION findmofiles: msestringarty;

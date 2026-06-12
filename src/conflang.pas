@@ -181,7 +181,7 @@ procedure tconflangfo.listlangfont(lang : String);
 var 
   x, y: integer;
   s, S2 : string;
-  comstr : string;
+  comstr : msestring;
   sl: TStringList;
  begin
 

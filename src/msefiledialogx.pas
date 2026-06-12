@@ -2521,7 +2521,7 @@ end;
 
 procedure tfiledialogxfo.onformcreated(const Sender: TObject);
 var
-strz : string = '';
+strz : msestring = '';
 rect1: rectty;
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
