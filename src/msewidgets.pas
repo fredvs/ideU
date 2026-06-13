@@ -2004,24 +2004,7 @@ begin
     widget.clientsize:= rect1.size;
 
     widget.window.windowpos:= wp_screencentered;
-    
-   {
-    if placementrect = nil then begin
-     widget.window.windowpos:= wp_screencentered;
-    end
-    else begin
-//     rect2:= placementrect^;
-     {
-     if placement = cp_bottomleft then begin
-      dec(rect2.y,8);
-      inc(rect2.cy,28); //for windowdecoration
-     end;
-     }
-     widget.widgetrect:= placepopuprect(transientfor,
-                                       placementrect^,placement,widget.size);
-    end;
-    }
-    
+      
     with widget.info.dest do begin
      rect1.x:= x + (cx - int2) div 2;
      rect1.y:= y + cy + verttextdist + widget.paintpos.y;

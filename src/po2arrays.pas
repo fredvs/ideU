@@ -2,7 +2,7 @@
 unit po2arrays;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-{$modeswitch arraytodynarray}
+//{$modeswitch arraytodynarray}
 
 interface
 
@@ -38,10 +38,9 @@ uses
 
 var
   constvaluearray: array of msestring;
-  astro, astrt, acomp: utf8String;
+  astro, astrt, acomp: msestring;
   hasfound: Boolean = False;
-  empty: Boolean = False;
-  
+    
 procedure listpofiles();
 var
   ListOfFiles: array of string;
@@ -50,7 +49,7 @@ var
   Attribute: word;
   i: integer = 0;
   x: integer;
-  str1, pat: string;
+  str1, pat: msestring;
 begin
   Attribute := faReadOnly or faArchive;
 
@@ -61,7 +60,7 @@ begin
  if directoryexists(str1) then
  begin
   // List the files
-  FindFirst(str1 + '*.po', Attribute, SearchResult);
+  FindFirst(ansistring(str1) + '*.po', Attribute, SearchResult);
   while (i = 0) do
   begin
     SetLength(ListOfFiles, Length(ListOfFiles) + 1);
@@ -85,7 +84,7 @@ if Length(ListOfFiles) > 0 then
     if system.pos('empty', ListOfFiles[i]) = 0 then
     begin
       setlength(lang_langnames, length(lang_langnames) + 1);
-      str1 := ListOfFiles[i];
+      str1 := msestring(ListOfFiles[i]);
      { 
       writeln(str1 + '  ' + inttostr(FileAge(str1)));
       writeln(str1 + DateTimeToStr(FileDateToDateTime(FileAge(pat + directoryseparator + str1))));
@@ -115,8 +114,8 @@ if Length(ListOfFiles) > 0 then
           if system.pos('msgstr', str1) > 0 then
           begin
             x := 1;
-            str1 := StringReplace(str1, 'msgstr', '', [rfReplaceAll]);
-            str1 := StringReplace(str1, '"', '', [rfReplaceAll]);
+            str1 := msestring(StringReplace(ansistring(str1), 'msgstr', '', [rfReplaceAll]));
+            str1 := msestring(StringReplace(ansistring(str1), '"', '', [rfReplaceAll]));
             lang_langnames[length(lang_langnames) - 1] := trim(str1);
           end;
          // writeln(lang_langnamestmp[length(lang_langnamestmp) - 1]);
@@ -129,7 +128,7 @@ if Length(ListOfFiles) > 0 then
 
 procedure dosearch(thearray: array of msestring; theindex: integer);
 var
-  str2: utf8String;
+  str2: mseString;
   y: integer;
 begin
   y        := 0;
@@ -142,11 +141,11 @@ begin
     // writeln('---acomp:' + acomp);
     str2  := (Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
     astro := (Copy(str2, 1, system.pos(';', str2) - 1));
-    astro := StringReplace(astro, '\"', '"', [rfReplaceAll]);
+    astro := msestring(StringReplace(ansistring(astro), '\"', '"', [rfReplaceAll]));
     //  writeln('---astro:' + astro);
     str2  := (Copy(str2, system.pos(';', str2) + 1, length(str2) - system.pos(';', str2) + 1));
     astrt := Copy(str2, 1, length(str2));
-    astrt := StringReplace(astrt, '\"', '"', [rfReplaceAll]);
+    astrt := msestring(StringReplace(ansistring(astrt), '\"', '"', [rfReplaceAll]));
 
     if thearray[theindex] = astro then
       hasfound := True;
@@ -158,11 +157,10 @@ end;
 
 procedure createnewlang(alang: msestring);
 var
-  x, x2, x3: integer;
+  x: integer;
   file1: ttextdatastream;
-  str1, strinit, strlang, filename1: msestring;
-  str2, str3, str4, strtemp: utf8String;
-  int1: integer;
+  str1: msestring;
+  str2, str3, str4, strtemp: msestring;
   isstring: Boolean = False;
   isid: Boolean = False;
   iscontext: Boolean = False;
@@ -175,14 +173,12 @@ var
   iprojectoptionsconty: projectoptionsconty;
   iprojectoptionsty: projectoptionsty;
   iisettingsty: isettingsty;
-  itextgeneratorty: textgeneratorty;
   istockcaptionty: stockcaptionty;
   ixstockcaptionty: xstockcaptionty;
-  defaultresult, default_resulttext, default_modalresulttext, default_modalresulttextnoshortcut, default_mainformtext, default_actionsmoduletext, default_projectoptionscontext,
+  default_modalresulttext, default_modalresulttextnoshortcut, default_mainformtext, default_actionsmoduletext, default_projectoptionscontext,
   default_settingstext, default_projectoptionstext, default_sourceformtext, default_stockcaption, default_xstockcaption, default_extendedtext: array of msestring;
 begin
 
-  strlang := '';
   str1    := expandprmacros('${LANGDIR}') + 'ideu_' + alang + '.po';
   
   if (not fileexists(str1)) or (lowercase(alang) = 'en') or (trim(alang) = '') then
@@ -272,8 +268,8 @@ begin
 
           setlength(constvaluearray, length(constvaluearray) + 1);
           str2      := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-          str2      := StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2      := StringReplace(str2, '\', '', [rfReplaceAll]);
+          str2      := msestring(StringReplace(ansistring(str2), '\n', '', [rfReplaceAll]));
+          str2      := msestring(StringReplace(ansistring(str2), '\', '', [rfReplaceAll]));
           constvaluearray[length(constvaluearray) - 1] := str2;
           str3      := '';
           str4      := '';
@@ -288,8 +284,8 @@ begin
           begin
             setlength(constvaluearray, length(constvaluearray) + 1);
             str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-            str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
-            str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
+            str2 := msestring(StringReplace(ansistring(str2), '\n', '', [rfReplaceAll]));
+            str2 := msestring(StringReplace(ansistring(str2), '\', '', [rfReplaceAll]));
             constvaluearray[length(constvaluearray) - 1] := str2;
             str3 := '';
             str4 := '';
@@ -302,7 +298,7 @@ begin
         else if (Copy(str1, 1, 6) = 'msgstr') then
         begin
           str3      := (Copy(str1, 9, length(str1) - 9));
-          str3      := StringReplace(str3, '\n', '', [rfReplaceAll]);
+          str3      := msestring(StringReplace(ansistring(str3), '\n', '', [rfReplaceAll]));
           iscontext := False;
           isid      := False;
           isstring  := True;
@@ -312,7 +308,7 @@ begin
           strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := msestring(StringReplace(ansistring(strtemp), '\n', '', [rfReplaceAll]));
             str4    := str4 + strtemp + utf8String(sLineBreak);
           end
           else
@@ -323,7 +319,7 @@ begin
           strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := msestring(StringReplace(ansistring(strtemp), '\n', '', [rfReplaceAll]));
             str2    := str2 + strtemp + utf8String(sLineBreak);
           end
           else
@@ -334,7 +330,7 @@ begin
           strtemp := Copy(str1, 2, length(str1) - 2);
           if (system.pos('\n', strtemp) > 0) then
           begin
-            strtemp := StringReplace(strtemp, '\n', '', [rfReplaceAll]);
+            strtemp := msestring(StringReplace(ansistring(strtemp), '\n', '', [rfReplaceAll]));
             str3    := (str3 + strtemp + utf8String(sLineBreak));
           end
           else
@@ -344,8 +340,8 @@ begin
 
     setlength(constvaluearray, length(constvaluearray) + 1);
     str2 := str4 + utf8String(';') + str2 + utf8String(';') + str3;
-    str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
-    str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
+    str2 := msestring(StringReplace(ansistring(str2), '\n', '', [rfReplaceAll]));
+    str2 := msestring(StringReplace(ansistring(str2), '\', '', [rfReplaceAll]));
     constvaluearray[length(constvaluearray) - 1] := str2;
 
     file1.Free;
@@ -420,8 +416,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_modalresulttext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_modalresult[x] := astrt;
 
@@ -439,8 +435,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_modalresulttextnoshortcut[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_modalresultnoshortcut[x] := astrt;
     end;
@@ -457,8 +453,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_projectoptionscontext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_projectoptionscon[x] := astrt;
     end;
@@ -475,8 +471,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_actionsmoduletext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_actionsmodule[x] := astrt;
 
@@ -494,8 +490,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_mainformtext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_mainform[x] := astrt;
     end;
@@ -512,8 +508,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_sourceformtext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_sourceform[x] := astrt;
     end;
@@ -530,8 +526,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_settingstext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_settings[x] := astrt;
     end;
@@ -548,8 +544,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_projectoptionstext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_projectoptions[x] := astrt;
 
@@ -567,8 +563,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_stockcaption[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_stockcaption[x] := astrt;
 
@@ -586,8 +582,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_xstockcaption[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_xstockcaption[x] := astrt;
 
@@ -605,8 +601,8 @@ begin
       if trim(astrt) = '' then
         astrt := default_extendedtext[x];
 
-      astrt := StringReplace(astrt, ',', '‚', [rfReplaceAll]);
-      astrt := StringReplace(astrt, #039, '‘', [rfReplaceAll]);
+      astrt := msestring(StringReplace(ansistring(astrt), ',', '‚', [rfReplaceAll]));
+      astrt := msestring(StringReplace(ansistring(astrt), #039, '‘', [rfReplaceAll]));
 
       lang_extended[x] := astrt;
 

@@ -382,7 +382,7 @@ end;
 //fpGUI designer
 procedure LoadfpgDesigner(const AfpgFilename: string);
 var
-  dataf, thedir: string;
+  dataf, thedir: unicodestring;
  begin
  
  if copy(conffpguifo.fpguidesigner.Value, 1, 10) = '${IDEUDIR}' then
@@ -401,15 +401,15 @@ var
       (AfpgFilename = 'showit') or (AfpgFilename = 'hideit') then
     begin
       iffpgdconsumed := True;
-      dataf          := ansistring(tosysfilepath(filepath(trim(thedir)
+      dataf          := (tosysfilepath(filepath(trim(thedir)
         ,
         fk_file, True)));
       if (fileexists(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file, True)))) then
-        RunWithoutDebug(dataf, ' ' +
+        RunWithoutDebug(ansistring(dataf), ' ' +
           ansistring(tosysfilepath(filepath(UTF8Decode(AfpgFilename), fk_file,
           True))))
       else
-        RunWithoutDebug(dataf, ' ' + ansistring(AfpgFilename));
+        RunWithoutDebug(ansistring(dataf), ' ' + ansistring(AfpgFilename));
     end;
 end;
 

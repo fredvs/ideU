@@ -102,8 +102,8 @@ type
       CheckPoint: Tpoint;
       CheckShift: TShiftState;
 
-      voice_language: msestring;
-      voice_gender: msestring;
+      voice_language: string;
+      voice_gender: string;
       voice_speed: integer;
       //-s
       voice_pitch: integer;
@@ -1319,7 +1319,7 @@ begin
   if TheTypCell = 1 then
     begin
 
-      oldlang := MSEFallbackLang;
+      oldlang := unicodestring(MSEFallbackLang);
       if voice_gender = '' then
         oldgender := -1
       else
@@ -1349,7 +1349,7 @@ begin
   if (assigned(Sender)) and
      (isblock = false) then
     begin
-      oldlang := MSEFallbackLang;
+      oldlang := unicodestring(MSEFallbackLang);
       if voice_gender = '' then
         oldgender := -1
       else
@@ -1805,7 +1805,7 @@ end;
 
 procedure TSAK.ontimercell(Const Sender: TObject);
 var 
-  oldlang : msestring;
+  oldlang : string;
   oldspeed, oldgender , oldpitch, oldvolume : integer;
 begin
   thetimer.Enabled := False;
@@ -1829,7 +1829,7 @@ begin
 
       SAKSetVoice(2,'',150,-1,-1);
       espeak_Key(TheCell);
-      SAKSetVoice(oldgender,oldlang,oldspeed,oldpitch,oldvolume);
+      SAKSetVoice(oldgender,unicodestring(oldlang),oldspeed,oldpitch,oldvolume);
 
     end
   else
@@ -2277,17 +2277,17 @@ begin
       params := params + '-v';
       if voice_language <> '' then
         begin
-          params := params+MSEFallbackLang;
+          params := params+ unicodestring(MSEFallbackLang);
           if voice_gender <> '' then
             begin
-              params := params+'+'+voice_gender;
+              params := params+'+'+ unicodestring(voice_gender);
             end;
         end
       else
         begin
           if voice_gender <> '' then
             begin
-              params := params+ voice_gender;
+              params := params+ unicodestring(voice_gender);
             end;
         end;
     end;

@@ -12,7 +12,7 @@ uses
  msestream,SysUtils,msesimplewidgets,mseconsts,msefileutils,msebitmap,
  msedatanodes,msedragglob,msegrids,msegridsglob,mselistbrowser,msesys,
  msegraphedits,msescrollbar,msetimer,msedispwidgets,mserichstring,
- msestringcontainer,msefiledialogx;
+ msestringcontainer,msefiledialogx,mseformatstr;
 
 type
   theaderfo = class(tmseform)
@@ -68,9 +68,9 @@ begin
    MOmake:= MObuilder.Create;
   WITH MOmake DO
     TRY
-      MObuild (fn);
+      MObuild (ansistring(fn));
 
-      po2moerror:= Errors.Text;
+      po2moerror:= mseString(Errors.Text);
 
     FINALLY
       Free;
@@ -85,8 +85,10 @@ procedure theaderfo.extractcaption(const Sender: TObject; fn: msestring);
 var
   file1: ttextdatastream;
   str1: msestring;
-  strobject, strcaption, strcaptionmenu, strmenu, strmenusub2, strmenusub3, strmenusub1: mseString;
+  strobject, strmenu, strmenusub2, strmenusub3, strmenusub1: mseString;
   isfirst: Boolean = True;
+  strcaption : msestring = '';
+  strcaptionmenu : msestring = '';
   ismenu: Boolean = False;
   issubmenubegin: Boolean = False;
   issubmenuend: Boolean = False;
@@ -102,8 +104,8 @@ begin
     tbutton1.Visible := True;
 
     file1.readln(str1);
-    str1      := trim(StringReplace(str1, 'object', '', [rfReplaceAll]));
-    str1      := trim(copy(str1, 1, system.pos(':', str1) - 1));
+    str1      := msestring(trim(StringReplace(ansistring(str1), 'object', '', [rfReplaceAll])));
+    str1      := msestring(trim(copy(str1, 1, system.pos(':', str1) - 1)));
     strobject := trim(str1);
 
 
@@ -142,7 +144,7 @@ begin
         end;
         isfirst    := False;
         strobject  := trim(str1);
-        strobject  := StringReplace(strobject, 'object', '', [rfReplaceAll]);
+        strobject  := msestring(StringReplace(ansistring(strcaption), 'object', '', [rfReplaceAll]));
         strobject  := trim(copy(strobject, 1, system.pos(':', strobject) - 1));
         strcaption := '';
       end;
@@ -154,7 +156,7 @@ begin
         if (system.pos('name =', str1) > 0) then
         begin
           strmenu        := trim(copy(str1, system.pos('name =', str1) + 7, length(str1)));
-          strcaptionmenu := StringReplace(strcaptionmenu, 'menuxyz', strmenu, [rfReplaceAll]);
+          strcaptionmenu := msestring(StringReplace(ansistring(strcaptionmenu), 'menuxyz', ansistring(strmenu), [rfReplaceAll]));
           //  if issubmenubegin then strcaptionmenu := StringReplace(strcaptionmenu, 'parentmenu', strmenusub, [rfReplaceAll]);
           strcaption     := strcaption + lineend + strcaptionmenu;
           strcaptionmenu := '';
@@ -184,7 +186,7 @@ begin
         (system.pos('state = [', str1) = 0) and (system.pos('options = [', str1) = 0) and
         ((system.pos('caption', str1) > 0) or (system.pos('hint', str1) > 0)) then
       begin
-        str1 := trim(StringReplace(str1, '=', ':=', [rfReplaceAll]));
+        str1 := msestring(trim(StringReplace(ansistring(str1), '=', ':=', [rfReplaceAll])));
 
         if isfirst = False then
         begin
@@ -307,7 +309,7 @@ begin
   begin
     if int1 > 1 then
       str2 := str2 +
-        'Similar msgid = ' + str1 + ' = ' + IntToStr(int1) + lineend;
+        'Similar msgid = ' + str1 + ' = ' + IntToStrmse(int1) + lineend;
     int1   := 0;
     str1   := defaultresult[x];
     if trim(str1) <> '' then
@@ -442,7 +444,7 @@ var
   x: integer;
   file1: ttextdatastream;
   str1, strlang, filename1: msestring;
-  str2: utf8String;
+  str2: unicodestring;
 begin
   str1    := fn;
   strlang := '';
@@ -455,7 +457,7 @@ begin
     filename1 := copy(filename(str1), 1, length(filename(str1)) - 4);
     strlang   := trim(copy(filename1, system.pos('_', filename1) + 1, length(filename1)));
 
-    strlang := StringReplace(strlang, '@', '_', [rfReplaceAll]);
+    strlang := msestring(StringReplace(ansistring(strlang), '@', '_', [rfReplaceAll]));
 
     file1.encoding := ce_utf8;
 
@@ -472,9 +474,9 @@ begin
         if (Copy(str1, 1, 6) = 'msgstr') then
         begin
           str2 := Copy(str1, 7, length(str1));
-          str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
-          str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
-          str2 := StringReplace(str2, '"', '', [rfReplaceAll]);
+          str2 := msestring(StringReplace(ansistring(str2), '\n', '', [rfReplaceAll]));
+          str2 := msestring(StringReplace(ansistring(str2), '\', '', [rfReplaceAll]));
+          str2 := msestring(StringReplace(ansistring(str2), '"', '', [rfReplaceAll]));
           if str2 <> '' then
           begin
             setlength(constvaluearray, length(constvaluearray) + 1);
@@ -507,9 +509,9 @@ begin
           if (Copy(str1, 1, 5) = 'msgid') then
           begin
             str2 := Copy(str1, 7, length(str1));
-            str2 := StringReplace(str2, '\n', '', [rfReplaceAll]);
-            str2 := StringReplace(str2, '\', '', [rfReplaceAll]);
-            str2 := StringReplace(str2, '"', '', [rfReplaceAll]);
+            str2 := msestring(StringReplace(ansistring(str2), '\n', '', [rfReplaceAll]));
+            str2 := msestring(StringReplace(ansistring(str2), '\', '', [rfReplaceAll]));
+            str2 := msestring(StringReplace(ansistring(str2), '"', '', [rfReplaceAll]));
             if trim(str2) <> '' then
             begin
               setlength(defaultresult, length(defaultresult) + 1);
@@ -564,7 +566,7 @@ begin
   binPath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));
   outputdir.Value := copy(binPath, 1, length(binPath) -6) + 'Resources/output/';
   {$else}
-  outputdir.Value := ExtractFilePath(ParamStr(0)) + 'output' + directoryseparator;
+  outputdir.Value := msestring(ExtractFilePath(ParamStr(0)) + 'output' + directoryseparator);
   {$ENDIF}  
 end;
 

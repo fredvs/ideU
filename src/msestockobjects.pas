@@ -14,7 +14,7 @@ unit msestockobjects;
 interface
 uses
  msetypes,msegraphics,mseglob,msegui,msebitmap,msegraphutils,mseclasses,
- msestrings,msedatamodules,mseguiglob;
+ msestrings,msedatamodules,mseguiglob,mseformatstr;
 
 const
  boxsize = 11;      //for treelistitem expand box
@@ -592,7 +592,7 @@ begin
  if ord(index) = 16 then result:= '&Skip' else
  if ord(index) = 17 then result:= 'Skip a&ll' else
  if ord(index) = 18 then result:= 'Co&ntinue' else
- result:= inttostr(ord(index));
+ result:= inttostrmse(ord(index));
  end;
 end;
 
@@ -616,7 +616,7 @@ begin
  if ord(index) = 16 then result:= 'Skip' else
  if ord(index) = 17 then result:= 'Skip all' else
  if ord(index) = 18 then result:= 'Continue' else
- result:= inttostr(ord(index));
+ result:= inttostrmse(ord(index));
  end;
 end;
 
@@ -626,7 +626,7 @@ begin
  stockobjects;   // assure initialization
  if length(lang_stockcaption) >= ord(index) -1 then
  result:= lang_stockcaption [ord(index)] else
- result:= inttostr(ord(index)); 
+ result:= inttostrmse(ord(index)); 
 end;
 
 function tstockobjects.getextended (index: extendedty): msestring;
@@ -635,7 +635,7 @@ begin
  stockobjects;   // assure initialization
  if length(lang_extended) >= ord(index) -1 then
  result:= lang_extended [ord(index)] else
- result:= inttostr(ord(index));  
+ result:= inttostrmse(ord(index));  
 end;
 
 function tstockobjects.getlangnames (index: integer): msestring;
@@ -644,7 +644,7 @@ begin
  stockobjects;   // assure initialization
  if length(lang_langnames) >= ord(index) -1 then
  result:= lang_langnames [ord(index)] else
- result:= inttostr(ord(index));  
+ result:= inttostrmse(ord(index));  
 end;
  {$endif}
 

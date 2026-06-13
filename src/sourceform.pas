@@ -1172,7 +1172,7 @@ begin
             mainfo.openfile.controller.icon    := mainfo.icon;
             mainfo.openfile.controller.lastdir := tosysfilepath(ExtractFilePath(ActivePage.pathdisp.Value));
           end;
-      thefilename := Caption;
+      thefilename := ansistring(Caption);
 
       if Assigned(debuggerfo) and
         (length(lang_stockcaption) > 0) then

@@ -3,7 +3,7 @@ UNIT mo2arrays;
 // Sieghard 2022
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-{$modeswitch arraytodynarray}
+// {$modeswitch arraytodynarray}
 
 INTERFACE
 
@@ -41,7 +41,7 @@ FUNCTION setLangFilePattern: string;
    Appname:= lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), ''));
    Result:= '/usr/share/locale/'+ LangFlag+ '/LC_MESSAGES/'+ Appname;  // w/o LangExt!
 {$else}
-   Result:= expandprmacros ('${LANGDIR}')+ Appname+ LangFlag;  // w/o LangExt!
+   Result:= string(expandprmacros ('${LANGDIR}')+ appname + langflag);  // w/o LangExt!
 {$endif}
  END;
 

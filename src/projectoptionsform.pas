@@ -1397,7 +1397,7 @@ begin
   
    if (confideufo.usedefaulteditoroptions.value) and (assigned(confideufo)) then
    begin
-   Name       := confideufo.editfontnamesrc.value;
+   Name       := ansistring(confideufo.editfontnamesrc.value);
    Height     := confideufo.editfontheightsrc.value;
    end else
    begin
@@ -3164,35 +3164,35 @@ begin
   for int1 := Ord(firstsiginfocomment) to Ord(lastsiginfocomment) do
   begin
     case int1 of
-      3: sigstring  := lang_projectoptionscon[Ord(c_SIGHUP)];
-      5: sigstring  := lang_projectoptionscon[Ord(c_SIGQUIT)];
-      6: sigstring  := lang_projectoptionscon[Ord(c_SIGILL)];
-      7: sigstring  := lang_projectoptionscon[Ord(c_SIGABRT)];
-      8: sigstring  := lang_projectoptionscon[Ord(c_SIGBUS)];
-      9: sigstring  := lang_projectoptionscon[Ord(c_SIGFPE)];
-      10: sigstring := lang_projectoptionscon[Ord(c_SIGILL)];
-      11: sigstring := lang_projectoptionscon[Ord(c_SIGKILL)];
-      12: sigstring := lang_projectoptionscon[Ord(c_SIGUSR1)];
-      13: sigstring := lang_projectoptionscon[Ord(c_SIGSEGV)];
-      14: sigstring := lang_projectoptionscon[Ord(c_SIGUSR2)];
-      15: sigstring := lang_projectoptionscon[Ord(c_SIGPIPE)];
-      16: sigstring := lang_projectoptionscon[Ord(c_SIGALRM)];
-      17: sigstring := lang_projectoptionscon[Ord(c_SIGTERM)];
-      18: sigstring := lang_projectoptionscon[Ord(c_SIGSTKFLT)];
-      19: sigstring := lang_projectoptionscon[Ord(c_SIGCHLD)];
-      20: sigstring := lang_projectoptionscon[Ord(c_SIGCONT)];
-      21: sigstring := lang_projectoptionscon[Ord(c_SIGSTOP)];
-      22: sigstring := lang_projectoptionscon[Ord(c_SIGTSTP)];
-      23: sigstring := lang_projectoptionscon[Ord(c_SIGTTIN)];
-      24: sigstring := lang_projectoptionscon[Ord(c_SIGTTOU)];
-      25: sigstring := lang_projectoptionscon[Ord(c_SIGURG)];
-      26: sigstring := lang_projectoptionscon[Ord(c_SIGXCPU)];
-      27: sigstring := lang_projectoptionscon[Ord(c_SIGXFSZ)];
-      28: sigstring := lang_projectoptionscon[Ord(c_SIGTALRM)];
-      29: sigstring := lang_projectoptionscon[Ord(c_SIGPROF)];
-      30: sigstring := lang_projectoptionscon[Ord(c_SIGWINCH)];
-      31: sigstring := lang_projectoptionscon[Ord(c_SIGIO)];
-      32: sigstring := lang_projectoptionscon[Ord(c_SIGPWR)];
+      3: sigstring  := ansistring(lang_projectoptionscon[Ord(c_SIGHUP)]);
+      5: sigstring  :=  ansistring(lang_projectoptionscon[Ord(c_SIGQUIT)]);
+      6: sigstring  :=  ansistring(lang_projectoptionscon[Ord(c_SIGILL)]);
+      7: sigstring  :=  ansistring(lang_projectoptionscon[Ord(c_SIGABRT)]);
+      8: sigstring  :=  ansistring(lang_projectoptionscon[Ord(c_SIGBUS)]);
+      9: sigstring  :=  ansistring(lang_projectoptionscon[Ord(c_SIGFPE)]);
+      10: sigstring := ansistring(lang_projectoptionscon[Ord(c_SIGILL)]);
+      11: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGKILL)]);
+      12: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGUSR1)]);
+      13: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGSEGV)]);
+      14: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGUSR2)]);
+      15: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGPIPE)]);
+      16: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGALRM)]);
+      17: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGTERM)]);
+      18: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGSTKFLT)]);
+      19: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGCHLD)]);
+      20: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGCONT)]);
+      21: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGSTOP)]);
+      22: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGTSTP)]);
+      23: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGTTIN)]);
+      24: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGTTOU)]);
+      25: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGURG)]);
+      26: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGXCPU)]);
+      27: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGXFSZ)]);
+      28: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGTALRM)]);
+      29: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGPROF)]);
+      30: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGWINCH)]);
+      31: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGIO)]);
+      32: sigstring :=  ansistring(lang_projectoptionscon[Ord(c_SIGPWR)]);
     end;
 
     siginfos[int1 - Ord(firstsiginfocomment)].comment := ansistring(sigstring);

@@ -56,6 +56,7 @@ uses {$ifndef windows}
   guitemplates,
   msegraphutils,
   msefont,
+  mseformatstr,
   stringconsts;
 
 begin

@@ -125,7 +125,7 @@ FUNCTION findMOfiles: msestringarty;
     Result:= TStringList.Create; i:= 0;
 
     // List the files, LangDir:= expandprmacros('${LANGDIR}');
-    FindFirst (LangDir+ Appname+ LangFlag+ LangExt, Attribute, SearchResult);
+    FindFirst (rawbytestring(unicodestring(LangDir)+ Appname+ LangFlag+ LangExt), Attribute, SearchResult);
     WHILE i = 0 DO BEGIN
       Result.Add (SearchResult.Name);       // Add it to the the list
       i:= FindNext (SearchResult);
@@ -147,9 +147,9 @@ FUNCTION findMOfiles: msestringarty;
     WHILE i = 0 DO BEGIN
       IF (SearchResult.Name <> '.') AND
          DirectoryExists (LangDir+ SearchResult.Name) AND
-         FileExists (LangDir+ SearchResult.Name+ Appname+ LangExt)
+         FileExists (rawbytestring(unicodestring(LangDir)+ unicodestring(SearchResult.Name)+ Appname+ LangExt))
       THEN
-      Result.Add (SearchResult.Name+ Appname+ LangExt);       // Add it to the list
+      Result.Add (ansistring(unicodestring(SearchResult.Name)+ Appname+ LangExt));       // Add it to the list
       i:= FindNext (SearchResult);
     END;
     FindClose (SearchResult);
@@ -158,7 +158,7 @@ FUNCTION findMOfiles: msestringarty;
 
  BEGIN
 {$ifdef Linux}
-   IF System.Pos (LinuxFlag, LangDir+ Appname) <> 0  // Linux System
+   IF System.Pos (LinuxFlag, unicodestring(LangDir)+ Appname) <> 0  // Linux System
      THEN ListOfFiles:= findMOfilesLinuxSys
      ELSE
      {$endif} ListOfFiles:= findMOfilesLangdir;
@@ -180,7 +180,7 @@ FUNCTION findMOfiles: msestringarty;
        MOfile.Destroy;
        IF l >= Length (Result)
          THEN setLength (Result, succ (Length (Result)));  // maybe no 'empty' lang file?
-       Result [l]:= Trim (Langname);
+       Result [l]:= unicodestring(Trim (Langname));
      END;
    END;
  END;
@@ -240,19 +240,19 @@ BEGIN
    SetLength (lang_stocktext, Length (default_stocktext));
 
    FOR x:= 0 TO High (default_stocktext) DO BEGIN
-      astrt:= MOfile.translate (default_stocktext [x]);
+      astrt:= msestring(MOfile.translate (ansistring(default_stocktext [x])));
 {$ifndef no_remove_hot_chars}
       // if no translation, but original contains '&', try w/ '&' characters removed
       IF (astrt = '') AND (Pos ('&', default_stocktext [x]) <> 0) THEN
-        astrt:= MOfile.translate (StringReplace (default_stocktext [x], '&',  '', [rfReplaceAll]));
+        astrt:= msestring(MOfile.translate (StringReplace (ansistring(default_stocktext [x]), '&',  '', [rfReplaceAll])));
 
       // if no translation still, try w/ default upper cased
       IF (astrt = '') AND (Pos ('&', default_stocktext [x]) <> 0) THEN
-        astrt:= MOfile.translate (uppercase (StringReplace (default_stocktext [x], '&',  '', [rfReplaceAll])));
+        astrt:= msestring(MOfile.translate (uppercase (StringReplace (ansistring(default_stocktext [x]), '&',  '', [rfReplaceAll]))));
 
       // if translated but original doesn't contain '&', remove from translation too
       IF (astrt <> '') AND (Pos ('&', default_stocktext [x]) = 0) THEN
-        astrt:= {Unicode}StringReplace (astrt, '&',  '', [rfReplaceAll]);
+        astrt:= msestring(StringReplace (ansistring(astrt), '&',  '', [rfReplaceAll]));
 {$endif}
       IF astrt = '' THEN astrt:= default_stocktext [x]
       ELSE BEGIN
@@ -299,20 +299,20 @@ PROCEDURE createnewlang (alang: msestring);
    x:= System.Pos (LangFlag, LangDir);
 
    IF x > 0 THEN BEGIN
-     Appname:= Copy (LangDir, succ (x), Length (LangDir));
+     Appname:= msestring(Copy (LangDir, succ (x), Length (LangDir)));
      System.Delete (LangDir, x, Length (LangDir));
      x:= High (LangDir);
 
      WHILE (x > 0) AND (LangDir [x] <> directoryseparator) DO Dec (x);
      IF x < High (LangDir) THEN BEGIN
-       Appname:= Copy (LangDir, succ (x), Length (LangDir));
+       Appname:= msestring(Copy (LangDir, succ (x), Length (LangDir)));
        System.Delete (LangDir, succ (x), Length (LangDir));
      END;
    END;
 {$ifdef Linux}
-   IF System.Pos (LinuxFlag, LangDir+ Appname) <> 0  // Linux System
-     THEN currentLangFile := LangDir+ alang+ Appname+ LangExt
-     ELSE currentLangFile := LangDir+ Appname+ alang+ LangExt;
+   IF System.Pos (LinuxFlag, msestring(LangDir)+ Appname) <> 0  // Linux System
+     THEN currentLangFile := msestring(LangDir)+ alang+ Appname+ LangExt
+     ELSE currentLangFile := msestring(LangDir)+ Appname+ alang+ LangExt;
 {$endif}
 
 //  writeln(currentLangFile);
@@ -322,7 +322,7 @@ PROCEDURE createnewlang (alang: msestring);
      buildlangtext (LocalisationActive);
    END
    ELSE IF FileExists (currentLangFile) THEN BEGIN
-     MOfile:= TMOfile.Create (currentLangFile);
+     MOfile:= TMOfile.Create (ansistring(currentLangFile));
 
      FOR x:= 0 TO pred (Length (LocalisationReference)) DO
        translate_stock (LocalisationActive [x], LocalisationReference [x], MOfile);
@@ -340,7 +340,7 @@ PROCEDURE createnewlang (alang: msestring);
  END;
 
 INITIALIZATION
-  Appname:= lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), '_'));
+  Appname:= msestring(lowercase (ChangeFileExt (ExtractFileName (ParamStr (0)), '_')));
   
   {$if defined(darwin) and defined(macapp)}
   binPath := IncludeTrailingBackslash(ExtractFilePath(ParamStr(0)));

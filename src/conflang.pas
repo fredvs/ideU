@@ -54,6 +54,7 @@ potools,
 confcompiler, 
 confdebugger, 
 conflang_mfm, 
+mseformatstr,
 captionideu;
 
 {$ifdef windows}
@@ -181,7 +182,7 @@ procedure tconflangfo.listlangfont(lang : String);
 var 
   x, y: integer;
   s, S2 : string;
-  comstr : msestring;
+  comstr : ansistring;
   sl: TStringList;
  begin
 
@@ -234,7 +235,7 @@ var
       while x < sl.count do
         begin
           gridlistfont.rowcount :=  gridlistfont.rowcount + 1;
-          gridlistfont[0][x] := sl[x];
+          gridlistfont[0][x] := msestring(sl[x]);
           inc(x);
         end;
         
@@ -251,7 +252,7 @@ var
         end;
         
      gridlang.fixrows[-1].captions[0].caption :=
-  inttostr(gridlang.rowcount) + ' ' +
+  inttostrmse(gridlang.rowcount) + ' ' +
  lang_stockcaption[Ord(sc_lang)]; 
  
 end;
@@ -271,13 +272,13 @@ end;
 
 procedure tconflangfo.updatefontcap();
 var 
-  strz : string = '';
+  strz : msestring = '';
 begin
  if MSEFallbackLang = 'zh' then strz := '             ';
  fontsize.frame.caption := lang_settings[Ord(se_fontsize)] + strz ;
  gridlistfont.fixrows[-1].captions[0].caption :=
 // {$ifndef windows}
-  inttostr(gridlistfont.rowcount) + ' ' +
+  inttostrmse(gridlistfont.rowcount) + ' ' +
 // {$endif}
  lang_settings[Ord(se_fontname)]  + strz ;
  end;             
@@ -296,9 +297,9 @@ begin
           if x = info.cell.row then
             begin
               gridlangbool[x] := True;
-              MSEFallbackLang := gridlangcode[x];
+              MSEFallbackLang := ansistring(gridlangcode[x]);
               //lfontselected.caption := '';
-              mainfo.setlangideu(MSEFallbackLang);
+              mainfo.setlangideu(msestring(MSEFallbackLang));
               // {$ifndef windows}
                 listlangfont(MSEFallbackLang);
               // {$endif}
@@ -327,7 +328,7 @@ end;
 procedure tconflangfo.onchange(Const sender: TObject);
 begin
   if conflangloaded > 0 then
-    mainfo.setlangideu(MSEFallbackLang);
+    mainfo.setlangideu(msestring(MSEFallbackLang));
 end;
 
 procedure tconflangfo.ongridfontcellev(Const sender: TObject;
