@@ -10,6 +10,7 @@ program ideU;
 {$ifdef mswindows}
  {$R ideu.res}
 {$endif}
+{$R-}{$Q-}
 
 uses {$ifndef windows}
   cmem,

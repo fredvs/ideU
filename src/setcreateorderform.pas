@@ -16,6 +16,7 @@
 }
 unit setcreateorderform;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
+{$R-}{$Q-}
 interface
 uses
  classes,mclasses,msegui,mseclasses,mseforms,msestat,msestatfile,msestrings,

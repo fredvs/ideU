@@ -17,7 +17,7 @@
 unit settaborderform;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-
+{$R-}{$Q-}
 interface
 uses
  msetypes,mseforms,msegrids,msegui,msewidgetgrid,msedataedits,msesimplewidgets,

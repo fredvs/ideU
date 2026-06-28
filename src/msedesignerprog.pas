@@ -24,6 +24,7 @@ program msedesignerprog;
 {$ifdef mswindows}
  {$R mseide.res}
 {$endif}
+{$R-}{$Q-}
 uses
 {$ifdef FPC}{$ifdef unix}cthreads,{$endif}{$endif}
 //  mseopenglgdiinit,

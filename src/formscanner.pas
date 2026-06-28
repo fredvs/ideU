@@ -1,7 +1,7 @@
 UNIT FormScanner;
 
 {$mode objfpc}{$H+}{$inline on}
-
+{$R-}{$Q-}
 INTERFACE
 
 USES

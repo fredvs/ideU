@@ -6,6 +6,7 @@ unit projectoptionsform;
   {$define mse_with_ifi}
 //MSEide needs mse_with_ifi, switch for compiling test only
 {$endif}
+{$R-}{$Q-}
 
 interface
 

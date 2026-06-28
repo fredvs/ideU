@@ -1,7 +1,7 @@
 unit sourcepage;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-
+{$R-}{$Q-}
 interface
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -15,7 +15,7 @@ interface
   {$warn 6018 off}
   {$endif}
 {$endif}
-
+{$R-}{$Q-}
 uses
  mseconsts,
  msestockobjects,

@@ -11,7 +11,7 @@ unit main;
 {$ifdef mse_no_ifi}
  {$define mse_no_db}
 {$endif}
-
+{$R-}{$Q-}
 // for custom compil, edit define.inc
 {$I define.inc}
 

@@ -17,7 +17,7 @@
 unit formdesigner;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$GOTO ON}{$interfaces corba}{$endif}
-
+{$R-}{$Q-}
 interface
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -2096,10 +2096,12 @@ end;
 
 procedure tformdesignerfo.setshowgrid(const avalue: boolean);
 begin
+
  if fshowgrid <> avalue then begin
   fshowgrid:= avalue;
   invalidate();
  end;
+
 end;
 
 procedure tformdesignerfo.setgridsizex(const avalue: integer);

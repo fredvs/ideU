@@ -2,7 +2,7 @@ unit actionsmodule;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
 {$ifdef linux}{$define unix}{$endif}
-
+{$R-}{$Q-}
 interface
 
 uses

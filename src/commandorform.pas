@@ -1,7 +1,7 @@
 unit commandorform;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-
+{$R-}{$Q-}
 interface
 uses
  msegui,mseclasses, msefileutils, mclasses, mseforms,msegraphics,msegraphutils,

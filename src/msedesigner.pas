@@ -17,7 +17,7 @@
 unit msedesigner;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$interfaces corba}{$endif}
-
+{$R-}{$Q-}
 interface
 {$ifndef mse_allwarnings}
  {$if fpc_fullversion >= 030100}
@@ -31,6 +31,7 @@ interface
   {$warn 6018 off}
   {$endif}
 {$endif}
+
 uses
  mseconsts,
  msestockobjects,
