@@ -11,6 +11,7 @@ unit msegdbutils;
 
 {$ifdef FPC}{$mode objfpc}{$h+}{$goto on}{$endif}
 {$ifndef FPC}{$ifdef linux} {$define UNIX} {$endif}{$endif}
+{$R-}{$Q-}
 //{$define mse_usedebugbreakprocess}
 interface
 {$ifndef mse_allwarnings}

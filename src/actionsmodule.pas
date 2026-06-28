@@ -6,6 +6,7 @@ unit actionsmodule;
 interface
 
 uses
+  msewidgets,
   mseconsts,
   msestockobjects,
   captionideu,
@@ -482,7 +483,7 @@ begin
   begin
     openfile.controller.icon        := icon;
     openfile.controller.showoptions := True;
-    openfile.controller.fontheight := mainfo.font.Height;
+    openfile.controller.fontheight  := mainfo.font.Height;
 
     openfile.controller.captionsave := lang_xstockcaption[Ord(sc_saveas)];
 
@@ -641,90 +642,99 @@ begin
 end;
 
 procedure tactionsmo.compileproject(const Sender: TObject);
+var
+  ValStr: string;
 begin
+  ValStr := debuggerfo.project_options.Value;
 
-  iscompiling := True;
+  if (Length(ValStr) <> 1) or not (ValStr[1] in ['M', 'B', '0'..'9']) then
+
+    ShowMessage('The value of Project Option Num :' + debuggerfo.project_options.Value + ': is not correct.', 'Warning!', [mr_yes])
+  else
+  begin
+    iscompiling := True;
 
   {$if not defined(darwin) and not defined(dragonfly)}
-  // mainfo.setstattext('Compiling ' + UTF8Decode(ansistring(AFilename)) + '...', mtk_notok);
+    // mainfo.setstattext('Compiling ' + UTF8Decode(ansistring(AFilename)) + '...', mtk_notok);
 
-  mainfo.setstattext('Compiling ' + gettargetfile + '...', mtk_notok);
+    mainfo.setstattext('Compiling ' + gettargetfile + '...', mtk_notok);
 
-  debuggerfo.project_make.Enabled := False;
+    debuggerfo.project_make.Enabled := False;
 
-  debuggerfo.project_make.face.image.alignment :=
-    [al_grayed, al_stretchx, al_stretchy];
+    debuggerfo.project_make.face.image.alignment :=
+      [al_grayed, al_stretchx, al_stretchy];
 
-  debuggerfo.project_abort_compil.Enabled := True;
-  //debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
+    debuggerfo.project_abort_compil.Enabled := True;
+    //debuggerfo.imagebut.getimage(11, debuggerfo.project_abort_compil.face.image);
 
-  debuggerfo.project_abort_compil.face.image.alignment :=
-    [al_stretchx, al_stretchy];
+    debuggerfo.project_abort_compil.face.image.alignment :=
+      [al_stretchx, al_stretchy];
   {$endif}
 
-  case debuggerfo.project_options.Value of
-    'M':
-    begin
-      domake(1);
-      mainfo.thetag := 1;
+    case debuggerfo.project_options.Value of
+      'M':
+      begin
+        domake(1);
+        mainfo.thetag := 1;
+      end;
+      'B':
+      begin
+        domake(2);
+        mainfo.thetag := 2;
+      end;
+      '1':
+      begin
+        domake(4);
+        mainfo.thetag := 4;
+      end;
+      '2':
+      begin
+        domake(8);
+        mainfo.thetag := 8;
+      end;
+      '3':
+      begin
+        domake(16);
+        mainfo.thetag := 16;
+      end;
+      '4':
+      begin
+        domake(32);
+        mainfo.thetag := 32;
+      end;
+      '5':
+      begin
+        domake(64);
+        mainfo.thetag := 64;
+      end;
+      '6':
+      begin
+        domake(128);
+        mainfo.thetag := 128;
+      end;
+      '7':
+      begin
+        domake(256);
+        mainfo.thetag := 256;
+      end;
+      '8':
+      begin
+        domake(512);
+        mainfo.thetag := 512;
+      end;
+      '9':
+      begin
+        domake(1024);
+        mainfo.thetag := 1024;
+      end;
+      '0':
+      begin
+        domake(2048);
+        mainfo.thetag := 2048;
+      end;
     end;
-    'B':
-    begin
-      domake(2);
-      mainfo.thetag := 2;
-    end;
-    '1':
-    begin
-      domake(4);
-      mainfo.thetag := 4;
-    end;
-    '2':
-    begin
-      domake(8);
-      mainfo.thetag := 8;
-    end;
-    '3':
-    begin
-      domake(16);
-      mainfo.thetag := 16;
-    end;
-    '4':
-    begin
-      domake(32);
-      mainfo.thetag := 32;
-    end;
-    '5':
-    begin
-      domake(64);
-      mainfo.thetag := 64;
-    end;
-    '6':
-    begin
-      domake(128);
-      mainfo.thetag := 128;
-    end;
-    '7':
-    begin
-      domake(256);
-      mainfo.thetag := 256;
-    end;
-    '8':
-    begin
-      domake(512);
-      mainfo.thetag := 512;
-    end;
-    '9':
-    begin
-      domake(1024);
-      mainfo.thetag := 1024;
-    end;
-    '0':
-    begin
-      domake(2048);
-      mainfo.thetag := 2048;
-    end;
+    mainfo.resetstartcommand;
   end;
-  mainfo.resetstartcommand;
 end;
 
 // Project cust compile
@@ -856,11 +866,11 @@ procedure tactionsmo.runcustom(const Sender: TObject);
 begin
   if (sourcefo.ActivePage <> nil) then
   begin
-   mainfo.setstattext('Running ' + sourcefo.ActivePage.filename + '...' , mtk_signal);
-   sleep(300);
-   mainfo.customrun(Sender);
-   mainfo.setstattext('Process done.' , mtk_notok);
-   end;  
+    mainfo.setstattext('Running ' + sourcefo.ActivePage.filename + '...', mtk_signal);
+    sleep(300);
+    mainfo.customrun(Sender);
+    mainfo.setstattext('Process done.', mtk_notok);
+  end;
 end;
 
 procedure tactionsmo.undoactonexecute(const Sender: TObject);
@@ -1043,7 +1053,7 @@ begin
     setstattext('');
     startgdb(False);
   end;
-{$endif}  
+{$endif}
 end;
 
 procedure tactionsmo.interruptactonexecute(const Sender: TObject);
@@ -1056,13 +1066,22 @@ procedure tactionsmo.continueactonexecute(const Sender: TObject);
 var
   str3, CurrentDir: msestring;
   int1, int2, int3: integer;
+  ValStr: string;
 begin
+  ValStr := debuggerfo.project_options.Value;
+
+  if (Length(ValStr) <> 1) or not (ValStr[1] in ['M', 'B', '0'..'9']) then
+
+    ShowMessage('The value of Project Option Num :' + debuggerfo.project_options.Value + ': is not correct.', 'Warning!', [mr_yes])
+  else
+  begin
+
 {$if not defined(darwin) and not defined(dragonfly)}
   nodebugset := False;
   str3       := gettargetfile;//to initialize
   str3       := '';
   CurrentDir := GetCurrentDir;
-  
+
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
       ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
@@ -1071,10 +1090,10 @@ begin
   else
   begin
 
-  str3 := ExtractFilePath(gettargetfile);
-  ChDir(str3); 
-  str3       := '';
-  
+    str3 := ExtractFilePath(gettargetfile);
+    ChDir(str3);
+    str3 := '';
+
     mainfo.terminategdbserver(True);
 
     if debuggerfo.debug_on.tag = 0 then
@@ -1165,6 +1184,7 @@ begin
    mainfo.runwithoutdebugger;
   {$endif}
   chdir(CurrentDir);
+end;
 end;
 
 

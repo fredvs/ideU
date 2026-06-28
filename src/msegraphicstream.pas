@@ -9,7 +9,7 @@
 }
 unit msegraphicstream;
 {$ifdef FPC}{$mode objfpc}{$h+}{$endif}
-
+{$R-}{$Q-}
 {.$define class_bridge} // uncomment to use bridge for BGRABitmap
 
 interface

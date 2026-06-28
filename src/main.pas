@@ -2088,7 +2088,15 @@ procedure tmainfo.startgdb(const killserver: Boolean);
 var
   int1, int2, int3: integer;
   str3: msestring;
+  ValStr: string;
 begin
+  ValStr := debuggerfo.project_options.Value;
+
+  if (Length(ValStr) <> 1) or not (ValStr[1] in ['M', 'B', '0'..'9']) then
+
+    ShowMessage('The value of Project Option Num :' + debuggerfo.project_options.Value + ': is not correct.', 'Warning!', [mr_yes])
+  else
+  begin
 
   terminategdbserver(killserver);
 
@@ -2174,6 +2182,7 @@ begin
   end
   else
     runwithoutdebugger;
+  end;  
 end;
 
 
