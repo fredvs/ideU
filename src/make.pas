@@ -564,7 +564,8 @@ for int1:= 0 to high(compilerused) do begin
   str1:= strcompiler + ' -o' +
     quotefilename(targpref+normalizename(targetfile+strexecext)) ;
 end
- else str1:= strcompiler;
+ else if targpref = '-o' then str1:=  strcompiler + ' -o' +
+    quotefilename(normalizename(targetfile+strexecext)) ;
  
   int2:= high(unitdirs);
   int1:= high(unitdirson);
