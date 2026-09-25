@@ -35,12 +35,15 @@ uses
  {$ifdef unix}baseunix,{$endif}Math,mseglob,mseguiglob,mseforms,Classes,
  mclasses,mseclasses,msewidgets,msegrids,mselistbrowser,mseedit,
  msesimplewidgets,msedataedits,msedialog,msetypes,msestrings,msesystypes,msesys,
- msedispwidgets,msedatalist,msestat,msestatfile,msebitmap,msedatanodes,
+ msedispwidgets,msedatalist,msestat,msestatfile,msedatanodes,
  msefileutils,msedropdownlist,mseevent,msegraphedits,mseeditglob,msesplitter,
  msemenus,msegridsglob,msegraphics,msegraphutils,msedirtree,msewidgetgrid,
  mseact,mseapplication,msegui,mseificomp,mseificompglob,mseifiglob,msestream,
  SysUtils,msemenuwidgets,msescrollbar,msedragglob,mserichstring,msetimer,
- mseimage;
+ {$ifdef BGRABITMAP_USE_MSEGUI}BGRABitmap,BGRADefaultBitmap,BGRABitmapTypes,
+ {$endif}mseformatbmpicoread,mseformatjpgread,mseformatpngread,mseformatwebpread,
+ mseformatpnmread,mseformattgaread,mseformatxpmread,mseimage,msebitmap;
+
 
 const
   defaultlistviewoptionsfile = defaultlistviewoptions + [lvo_readonly, lvo_horz];
@@ -1442,7 +1445,7 @@ begin
 
  if (lowercase(fileext(filename.Value)) = 'xpm') or
     (lowercase(fileext(filename.Value)) = 'jpeg') or
-  //   (lowercase(fileext(filename.Value)) = 'ico') or
+     (lowercase(fileext(filename.Value)) = 'webp') or
       (lowercase(fileext(filename.Value)) = 'bmp') or
       (lowercase(fileext(filename.Value)) ='png') or
       (lowercase(fileext(filename.Value)) = 'jpg') then
