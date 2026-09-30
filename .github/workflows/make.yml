@@ -23,17 +23,40 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
+          - windows-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v7
       with:
-        submodules: true
+        submodules: recursive
 
     - name: Update submodules to latest remote HEAD
-      run: git submodule update --remote --recursive
+      run: git submodule update --init --recursive --remote
+
+    # Windows handles path mapping and fpc.cfg creation out-of-the-box via this action
+    - name: Install Lazarus/FPC on Windows
+      if: runner.os == 'Windows'
+      uses: gcarreno/setup-lazarus@v3
+      with:
+        lazarus-version: stable
+
+    # Maps the Lazarus action's FPC path directly into the custom Bash environment layer
+    - name: Add FPC binary path to Bash environment on Windows
+      if: runner.os == 'Windows'
+      shell: bash
+      run: |
+        FPC_DIR=$(find /c/ -maxdepth 4 -type d -name "i386-win32" -o -name "x86_64-win64" 2>/dev/null | head -n 1)
+        if [ -n "$FPC_DIR" ]; then
+          echo "$FPC_DIR" >> $GITHUB_PATH
+        fi
 
     - name: Build on Linux
       if: runner.os == 'Linux'
+      shell: bash
+      run: bash .github/workflows/make.sh
+
+    - name: Build on Windows
+      if: runner.os == 'Windows'
       shell: bash
       run: bash .github/workflows/make.sh
