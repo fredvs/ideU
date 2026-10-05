@@ -1327,6 +1327,7 @@ begin
       targetcons  := true;
       RunCustomCompiled(ansistring(gettargetfile), 'macos');
       {$else}
+      writeln('RunCustomCompiled ' + ansistring(targettorun));
        RunCustomCompiled(ansistring(targettorun), ansistring(strwine));
          {$endif}
   end;

@@ -1078,11 +1078,7 @@ begin
 
 {$if not defined(darwin) and not defined(dragonfly)}
   nodebugset := False;
-  str3       := gettargetfile;//to initialize
-  str3       := '';
   CurrentDir := GetCurrentDir;
-
-//writeln(ExtractFilePath(gettargetfile));
 
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
@@ -1092,10 +1088,7 @@ begin
   else
   begin
     targettorun := tosysfilepath(msestring(gettargetfile));
-    str3 := ExtractFilePath(gettargetfile);
-    ChDir(str3);
-    str3 := '';
-
+       
     mainfo.terminategdbserver(True);
 
     if debuggerfo.debug_on.tag = 0 then
@@ -1149,11 +1142,7 @@ begin
 
     end;
 
-    // mainfo.setstattext(str + ' = ' +str3, mtk_flat);
-    // application.processmessages;
-    // sleep(10000);
-
-    int1 := 1;
+     int1 := 1;
 
     with projectoptions, o, texp do
       for int2 := 0 to high(compilerused) do
@@ -1180,7 +1169,9 @@ begin
         end;
     end
     else
+      begin
       mainfo.runwithoutdebugger;
+      end;
   end;
    {$else}
    mainfo.setstattext('Running ' + gettargetfile + '...' ,mtk_flat);
