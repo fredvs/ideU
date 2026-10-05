@@ -358,6 +358,7 @@ var
   theprojectfilename: string = '';
   thefilename: string = '';
   statfilestr: string = '';
+  targettorun: msestring = '';
 
 
 procedure doassistive;
@@ -1326,8 +1327,8 @@ begin
       targetcons  := true;
       RunCustomCompiled(ansistring(gettargetfile), 'macos');
       {$else}
-    RunCustomCompiled(ansistring(gettargetfile), ansistring(strwine));
-      {$endif}
+       RunCustomCompiled(ansistring(targettorun), ansistring(strwine));
+         {$endif}
   end;
 end;
 

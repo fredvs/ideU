@@ -1082,6 +1082,8 @@ begin
   str3       := '';
   CurrentDir := GetCurrentDir;
 
+//writeln(ExtractFilePath(gettargetfile));
+
   if not fileexists(tosysfilepath(msestring(gettargetfile))) then
     mainfo.setstattext(tosysfilepath(gettargetfile) +
       ' ' + lang_actionsmodule[Ord(ac_doesnotexist)] + '  ' +
@@ -1089,7 +1091,7 @@ begin
 
   else
   begin
-
+    targettorun := tosysfilepath(msestring(gettargetfile));
     str3 := ExtractFilePath(gettargetfile);
     ChDir(str3);
     str3 := '';
@@ -1169,6 +1171,7 @@ begin
 
     if (str3 <> '') and ((int1 = 1) or (int1 = 3)) then
     begin
+      chdir(CurrentDir);
       with mainfo do
         if checkremake(sc_continue) then
         begin
@@ -1179,7 +1182,7 @@ begin
     else
       mainfo.runwithoutdebugger;
   end;
-  {$else}
+   {$else}
    mainfo.setstattext('Running ' + gettargetfile + '...' ,mtk_flat);
    mainfo.runwithoutdebugger;
   {$endif}

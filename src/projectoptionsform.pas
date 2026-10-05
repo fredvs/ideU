@@ -1387,7 +1387,11 @@ begin
   begin
     Delete(strtargpref, 1, 2); // (String, StartIndex, Count)
   end;
-      Result := objpath(ExpandFileName(strtargpref+targetfile+strexecext)); //o.texp.targetfile
+
+    Result := objpath(ExpandFileName(strtargpref+targetfile+strexecext)); //o.texp.targetfile
+   // result:= objpath(d.texp.targetfile);
+  
+  // writeln('gettargetfile ' + Result);
    end;
 end;
 
